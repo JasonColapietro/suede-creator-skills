@@ -10,8 +10,7 @@ optimization.
 The public page presents the workflow as a Suede Creator Passport: website
 visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
 Codex and Claude installs, release linting, transfer packaging, Suede Holder
-status, and Suede's patented signing device become stampable participation
-signals.
+context, and Suede signing workflows become stampable participation signals.
 
 Suede is creator ownership infrastructure for programmable IP, registry-backed
 media, royalty routing, licensing readiness, and agent commerce. These skills
@@ -226,12 +225,12 @@ Passport stamp language:
 - GitHub install, star, or fork
 - Codex install
 - Claude install
-- Suede Holder verified journey stamp
-- Suede patented signing device
+- Suede Holder participation stamp
+- Suede signing workflow
 - release lint
 - rights passport package
-- future rewards signal
-- points-ready participation trail
+- future engagement signal
+- careful participation trail
 
 ## Public Safety
 
