@@ -3,24 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Creator Skills</title>
+    <title>Suede Creator Passport Skills | Codex and Claude Skills for Rights, Releases, and Rewards</title>
     <meta
       name="description"
-      content="Public Suede agent skills for release metadata linting, rights passporting, provenance, royalty routing, and creator ownership workflows."
+      content="Install Suede Creator Passport Skills for Codex and Claude. Audit music releases, prepare rights passports, stamp Suede locations, and create a points-ready creator trail."
     >
+    <meta
+      name="keywords"
+      content="Suede AI, Suede Labs, Codex skills, Claude skills, SKILL.md, music release metadata linter, rights passport, creator ownership, programmable IP, provenance, royalty routing, licensing, agent commerce, airdrop points"
+    >
+    <meta name="author" content="Suede Labs">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/">
+    <link rel="icon" href="./assets/suede-skill-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Suede Creator Passport Skills">
+    <meta property="og:description" content="Codex and Claude-ready skills for release linting, rights passporting, Suede stamps, and points-ready creator workflows.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede Creator Passport Skills">
+    <meta name="twitter:description" content="Install the Suede Rights Passport and Release Metadata Linter for Codex and Claude.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Suede Creator Passport Skills",
+        "description": "Public Codex and Claude skills for music release metadata linting, rights passport transfer packages, provenance, royalty routing, licensing readiness, and agent commerce.",
+        "codeRepository": "https://github.com/jasoncolapietro/suede-creator-skills",
+        "programmingLanguage": "Python",
+        "applicationCategory": "DeveloperTool",
+        "creator": {
+          "@type": "Organization",
+          "name": "Suede Labs",
+          "url": "https://suedeai.ai"
+        },
+        "keywords": [
+          "Codex skills",
+          "Claude skills",
+          "SKILL.md",
+          "creator ownership",
+          "rights passport",
+          "music metadata linter",
+          "provenance",
+          "royalty routing",
+          "agent commerce"
+        ]
+      }
+    </script>
     <style>
       :root {
         color-scheme: dark;
-        --bg: #090909;
-        --panel: #141414;
-        --panel-2: #1d1d1d;
-        --text: #f7f2ee;
-        --muted: #c8bbb4;
-        --line: rgba(255, 255, 255, 0.14);
-        --red: #d71920;
-        --red-2: #ff4d42;
-        --gold: #f0c36a;
-        --cyan: #58d7e8;
+        --ink: oklch(0.16 0.026 28);
+        --bg: oklch(0.12 0.028 28);
+        --bg-soft: oklch(0.18 0.035 28);
+        --paper: oklch(0.88 0.052 72);
+        --paper-deep: oklch(0.78 0.058 70);
+        --cream: oklch(0.96 0.018 62);
+        --muted: oklch(0.76 0.035 58);
+        --line: oklch(0.96 0.018 62 / 0.16);
+        --red: oklch(0.55 0.21 28);
+        --red-deep: oklch(0.36 0.16 28);
+        --gold: oklch(0.78 0.12 78);
+        --cyan: oklch(0.74 0.12 205);
+        --green: oklch(0.68 0.13 148);
       }
 
       * {
@@ -29,17 +75,23 @@
 
       html {
         background: var(--bg);
+        scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
-        color: var(--text);
+        color: var(--cream);
         background:
-          radial-gradient(circle at 18% 12%, rgba(215, 25, 32, 0.36), transparent 34rem),
-          radial-gradient(circle at 82% 18%, rgba(88, 215, 232, 0.16), transparent 28rem),
-          linear-gradient(180deg, #090909 0%, #120909 48%, #090909 100%);
+          linear-gradient(115deg, oklch(0.22 0.12 28 / 0.7), transparent 38%),
+          linear-gradient(245deg, oklch(0.30 0.09 205 / 0.24), transparent 34%),
+          linear-gradient(180deg, var(--bg) 0%, oklch(0.17 0.04 31) 52%, var(--bg) 100%);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.5;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
       }
 
       a {
@@ -47,24 +99,24 @@
       }
 
       .shell {
-        width: min(1120px, calc(100% - 32px));
+        width: min(1180px, calc(100% - 32px));
         margin: 0 auto;
       }
 
       header {
         position: sticky;
         top: 0;
-        z-index: 2;
+        z-index: 10;
         border-bottom: 1px solid var(--line);
-        background: rgba(9, 9, 9, 0.82);
+        background: oklch(0.12 0.028 28 / 0.88);
         backdrop-filter: blur(18px);
       }
 
       .nav {
         display: flex;
+        min-height: 72px;
         align-items: center;
         justify-content: space-between;
-        min-height: 68px;
         gap: 18px;
       }
 
@@ -72,144 +124,174 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        font-weight: 800;
+        font-weight: 900;
       }
 
-      .mark {
-        display: grid;
-        width: 38px;
-        height: 38px;
-        place-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+        border: 1px solid oklch(0.96 0.018 62 / 0.24);
         border-radius: 8px;
-        background: linear-gradient(135deg, var(--red), #711015 65%, #24100c);
-        color: white;
-        font-weight: 900;
+        object-fit: cover;
       }
 
       .nav-links {
         display: flex;
+        flex-wrap: wrap;
         gap: 18px;
         color: var(--muted);
         font-size: 14px;
+        font-weight: 700;
       }
 
       .hero {
-        min-height: 78vh;
-        display: grid;
-        align-items: center;
-        padding: 72px 0 44px;
+        padding: 30px 0 64px;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-        gap: 40px;
-        align-items: center;
+        gap: 26px;
       }
 
       .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
         color: var(--gold);
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 900;
         letter-spacing: 0;
         text-transform: uppercase;
       }
 
+      .eyebrow::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 0 5px oklch(0.55 0.21 28 / 0.18);
+      }
+
       h1 {
-        margin: 14px 0 18px;
-        max-width: 820px;
-        font-size: clamp(46px, 8vw, 92px);
-        line-height: 0.95;
+        margin: 18px 0;
+        max-width: 780px;
+        color: var(--cream);
+        font-size: clamp(38px, 5vw, 70px);
+        line-height: 0.98;
         letter-spacing: 0;
       }
 
       .lead {
-        max-width: 720px;
+        max-width: 760px;
         color: var(--muted);
-        font-size: 20px;
+        font-size: clamp(18px, 2.3vw, 22px);
+      }
+
+      .hero-media {
+        position: relative;
+      }
+
+      .hero-media img {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        width: 100%;
+        aspect-ratio: 1672 / 941;
+        object-fit: cover;
+        box-shadow: 0 32px 110px oklch(0.04 0.02 28 / 0.7);
+      }
+
+      .hero-copy {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) max-content;
+        gap: 24px;
+        align-items: end;
+      }
+
+      .actions,
+      .link-grid,
+      .install-grid,
+      .skill-grid,
+      .stamp-grid {
+        display: grid;
+        gap: 14px;
       }
 
       .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 28px;
+        grid-template-columns: repeat(2, max-content);
+        margin-top: 30px;
       }
 
       .button {
         display: inline-flex;
-        min-height: 44px;
+        min-height: 46px;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid oklch(0.96 0.018 62 / 0.22);
         border-radius: 8px;
-        padding: 0 16px;
+        padding: 0 18px;
         background: var(--red);
-        color: white;
-        font-weight: 800;
+        color: var(--cream);
+        font-weight: 900;
         text-decoration: none;
       }
 
       .button.secondary {
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .artifact {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-        padding: 20px;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-      }
-
-      .artifact pre {
-        overflow: auto;
-        margin: 0;
-        color: #ffe8e8;
-        font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        background: oklch(0.96 0.018 62 / 0.08);
       }
 
       section {
-        padding: 72px 0;
+        padding: 78px 0;
         border-top: 1px solid var(--line);
       }
 
       h2 {
-        margin: 0 0 18px;
-        font-size: clamp(30px, 5vw, 56px);
-        line-height: 1;
+        margin: 0 0 16px;
+        color: var(--cream);
+        font-size: clamp(34px, 5vw, 64px);
+        line-height: 0.98;
         letter-spacing: 0;
       }
 
       .section-lead {
-        max-width: 760px;
+        max-width: 830px;
+        margin: 0;
         color: var(--muted);
         font-size: 18px;
       }
 
-      .grid {
-        display: grid;
+      .skill-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        margin-top: 28px;
+        margin-top: 34px;
       }
 
-      .card {
+      .passport-card {
+        overflow: hidden;
+        min-width: 0;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgba(20, 20, 20, 0.78);
+        background: oklch(0.17 0.035 28 / 0.86);
+      }
+
+      .passport-card img {
+        aspect-ratio: 1300 / 820;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .passport-card-body {
         padding: 24px;
       }
 
-      .card h3 {
+      .passport-card h3 {
         margin: 0 0 10px;
-        font-size: 24px;
+        color: var(--cream);
+        font-size: 27px;
       }
 
-      .card p {
-        color: var(--muted);
+      .passport-card p {
         margin: 0 0 18px;
+        color: var(--muted);
       }
 
       .tag-row {
@@ -219,62 +301,190 @@
       }
 
       .tag {
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        border: 1px solid oklch(0.96 0.018 62 / 0.16);
         border-radius: 999px;
-        padding: 6px 10px;
-        color: #f7e7de;
-        background: rgba(255, 255, 255, 0.06);
+        padding: 7px 10px;
+        color: var(--cream);
+        background: oklch(0.96 0.018 62 / 0.07);
         font-size: 13px;
+        font-weight: 800;
+      }
+
+      .passport-image {
+        overflow: hidden;
+        margin-top: 32px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: oklch(0.16 0.032 28);
+      }
+
+      .stamp-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 26px;
+      }
+
+      .stamp {
+        min-height: 138px;
+        border: 2px solid oklch(0.96 0.018 62 / 0.18);
+        border-radius: 8px;
+        background:
+          repeating-linear-gradient(145deg, oklch(0.96 0.018 62 / 0.07) 0 1px, transparent 1px 12px),
+          oklch(0.18 0.04 28 / 0.78);
+        padding: 16px;
+      }
+
+      .stamp strong {
+        display: block;
+        color: var(--gold);
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+
+      .stamp span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .points-note {
+        margin-top: 22px;
+        border: 1px solid oklch(0.78 0.12 78 / 0.35);
+        border-radius: 8px;
+        background: oklch(0.22 0.065 52 / 0.68);
+        padding: 18px;
+        color: var(--cream);
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 30px;
+      }
+
+      .link-card {
+        position: relative;
+        min-width: 0;
+        min-height: 148px;
+        border: 2px solid oklch(0.78 0.12 78 / 0.42);
+        border-radius: 8px;
+        background:
+          linear-gradient(150deg, oklch(0.55 0.21 28 / 0.18), transparent 46%),
+          repeating-linear-gradient(-18deg, oklch(0.96 0.018 62 / 0.07) 0 1px, transparent 1px 13px),
+          oklch(0.16 0.035 28 / 0.9);
+        padding: 48px 18px 18px;
+        text-decoration: none;
+      }
+
+      .link-card::before {
+        content: attr(data-stamp);
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        border: 2px solid oklch(0.55 0.21 28 / 0.72);
+        border-radius: 999px;
+        padding: 5px 10px;
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .link-card b {
+        display: block;
+        color: var(--cream);
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+
+      .link-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+      }
+
+      .install-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 30px;
+      }
+
+      .install {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: oklch(0.15 0.028 28 / 0.9);
+        padding: 22px;
+      }
+
+      .install p,
+      .passport-card p,
+      .stamp span {
+        overflow-wrap: anywhere;
+      }
+
+      .install h3 {
+        margin: 0 0 12px;
+        font-size: 25px;
+      }
+
+      pre {
+        overflow: auto;
+        max-width: 100%;
+        margin: 16px 0 0;
+        border: 1px solid oklch(0.96 0.018 62 / 0.12);
+        border-radius: 8px;
+        background: oklch(0.08 0.02 28);
+        padding: 16px;
+        color: oklch(0.93 0.04 72);
+        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       }
 
       .flow {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 28px;
+        gap: 14px;
+        margin-top: 30px;
       }
 
-      .step {
-        min-height: 130px;
-        border-left: 3px solid var(--red);
-        background: rgba(255, 255, 255, 0.06);
-        padding: 18px;
-      }
-
-      .step strong {
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      .step span {
-        color: var(--muted);
-      }
-
-      .terminal {
-        margin-top: 28px;
+      .flow-step {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: #050505;
+        background: oklch(0.96 0.018 62 / 0.07);
         padding: 18px;
-        overflow: auto;
       }
 
-      .terminal code {
-        color: #f3ddd2;
-        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      .flow-step b {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--cream);
+      }
+
+      .flow-step span {
+        color: var(--muted);
       }
 
       footer {
         border-top: 1px solid var(--line);
-        color: var(--muted);
         padding: 34px 0;
+        color: var(--muted);
         font-size: 14px;
       }
 
-      @media (max-width: 860px) {
-        .hero-grid,
-        .grid,
-        .flow {
+      @media (max-width: 920px) {
+        .skill-grid,
+        .install-grid,
+        .link-grid,
+        .flow,
+        .stamp-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
           grid-template-columns: 1fr;
         }
 
@@ -283,21 +493,18 @@
           flex-direction: column;
           padding: 14px 0;
         }
-
-        .nav-links {
-          flex-wrap: wrap;
-        }
       }
     </style>
   </head>
   <body>
     <header>
       <div class="shell nav">
-        <div class="brand"><span class="mark">S</span><span>Suede Creator Skills</span></div>
+        <div class="brand"><img class="brand-logo" src="./assets/suede-ai-logo-transparent.png" alt=""><span>Suede Creator Passport</span></div>
         <nav class="nav-links" aria-label="Primary">
           <a href="#skills">Skills</a>
-          <a href="#flow">Workflow</a>
-          <a href="#use">Use</a>
+          <a href="#stamps">Stamps</a>
+          <a href="#install">Install</a>
+          <a href="#links">Links</a>
         </nav>
       </div>
     </header>
@@ -305,104 +512,159 @@
     <main>
       <section class="hero">
         <div class="shell hero-grid">
-          <div>
-            <div class="eyebrow">Creator ownership infrastructure</div>
-            <h1>Prepare creative work for rights-aware optimization.</h1>
-            <p class="lead">
-              Two public agent skills from Suede: one audits a release for missing metadata
-              and rights blockers, the other turns a messy project folder into a Suede-ready
-              rights passport transfer package.
-            </p>
-            <div class="actions">
-              <a class="button" href="https://github.com/jasoncolapietro/suede-creator-skills">View on GitHub</a>
-              <a class="button secondary" href="#use">Run locally</a>
-            </div>
+          <div class="hero-media">
+            <img src="./assets/passport-hero.png" alt="A premium Suede Creator Passport with the Suede emblem, Suede's patented signing device, website, app, Discord, X, Telegram, GitHub, Codex, Claude, and Suede Holder passport stamps.">
           </div>
-          <div class="artifact" aria-label="Package artifact preview">
-            <pre>creator-folder/
-  final-master.wav
-  stems/
-  lyrics.txt
-  cover.png
-  split-sheet.pdf
-
-release-lint-report.md
-suede-transfer-package/
-  RIGHTS_PASSPORT.md
-  suede-intake.json
-  provenance.md
-  credits-and-splits.md
-  license-notes.md
-  optimization-brief.md</pre>
+          <div class="hero-copy">
+            <div>
+            <div class="eyebrow">Codex and Claude skills for Suede creators</div>
+            <h1>Stamp every creator journey into a rights-aware passport.</h1>
+            <p class="lead">
+              Install the Suede Rights Passport and Release Metadata Linter to audit music
+              projects, prepare transfer packages, document Suede locations visited, and build
+              a points-ready trail for future rewards signals.
+            </p>
+            </div>
+            <div class="actions">
+              <a class="button" href="https://github.com/jasoncolapietro/suede-creator-skills">View GitHub Repo</a>
+              <a class="button secondary" href="#install">Install Skills</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="skills">
         <div class="shell">
-          <h2>The skills</h2>
+          <h2>Two skills, one passport system.</h2>
           <p class="section-lead">
-            These skills are offline-first and public-safe. They do not upload files, write to
-            a registry, call private Suede services, request secrets, or claim legal clearance.
+            The linter checks whether a music project can travel. The Rights Passport packages
+            the project so Suede can review provenance, splits, licensing, optimization, and
+            agent commerce readiness.
           </p>
-          <div class="grid">
-            <article class="card">
-              <h3>Suede Rights Passport</h3>
-              <p>
-                Creates a structured transfer package for Suede review, provenance cleanup,
-                registry readiness, licensing, royalty routing, and media optimization.
-              </p>
-              <div class="tag-row">
-                <span class="tag">rights passport</span>
-                <span class="tag">provenance</span>
-                <span class="tag">splits</span>
-                <span class="tag">Suede intake</span>
+          <div class="skill-grid">
+            <article class="passport-card">
+              <img src="./assets/rights-passport-card.png" alt="Passport page for the Suede Rights Passport skill.">
+              <div class="passport-card-body">
+                <h3>Suede Rights Passport</h3>
+                <p>Create <code>RIGHTS_PASSPORT.md</code>, <code>suede-intake.json</code>, provenance notes, splits, licenses, optimization brief, and missing-info report.</p>
+                <div class="tag-row">
+                  <span class="tag">rights passport</span>
+                  <span class="tag">provenance</span>
+                  <span class="tag">royalty routing</span>
+                  <span class="tag">registry readiness</span>
+                </div>
               </div>
             </article>
-            <article class="card">
-              <h3>Music Release Metadata Linter</h3>
-              <p>
-                Audits release folders for missing title, artist, masters, artwork, lyrics,
-                stems, credits, split totals, sample status, release history, and Suede blockers.
-              </p>
-              <div class="tag-row">
-                <span class="tag">metadata lint</span>
-                <span class="tag">release readiness</span>
-                <span class="tag">rights risks</span>
-                <span class="tag">agent commerce</span>
+            <article class="passport-card">
+              <img src="./assets/release-linter-card.png" alt="Passport page for the Music Release Metadata Linter skill.">
+              <div class="passport-card-body">
+                <h3>Music Release Metadata Linter</h3>
+                <p>Audit title, artist, masters, artwork, lyrics, stems, credits, split totals, sample status, release history, and Suede blockers.</p>
+                <div class="tag-row">
+                  <span class="tag">metadata lint</span>
+                  <span class="tag">release readiness</span>
+                  <span class="tag">sample status</span>
+                  <span class="tag">agent commerce</span>
+                </div>
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section id="stamps">
+        <div class="shell">
+          <h2>Passport stamps for Suede locations.</h2>
+          <p class="section-lead">
+            Every creator action can become a stamp: website visit, Discord join, X follow,
+            release lint, rights passport, registry review, royalty routing, licensing,
+            optimization, and agent commerce. The public skill pack frames that history as a
+            points-ready trail, not a guaranteed airdrop or payout.
+          </p>
+          <div class="passport-image">
+            <img src="./assets/location-stamps.png" alt="Suede passport stamps for website visits, app opens, Discord joins, X follows, Telegram, GitHub, Suede Holder status, Suede's patented signing device, linting, passporting, registry, royalties, licensing, optimization, Codex, Claude, and agent commerce.">
+          </div>
+          <div class="stamp-grid" aria-label="Suede passport stamp locations">
+            <div class="stamp"><strong>Website</strong><span>Visit <code>suedeai.ai</code> and start the public creator journey.</span></div>
+            <div class="stamp"><strong>App</strong><span>Open <code>app.suedeai.ai</code> for creator tools and agent-ready surfaces.</span></div>
+            <div class="stamp"><strong>Discord</strong><span>Join the community at <code>discord.gg/suedeai</code>.</span></div>
+            <div class="stamp"><strong>X Follow</strong><span>Follow <code>@AISUEDE</code> for public announcements and drops.</span></div>
+            <div class="stamp"><strong>Telegram</strong><span>Visit <code>t.me/suedeai</code> as another public community stamp.</span></div>
+            <div class="stamp"><strong>GitHub</strong><span>Install, fork, star, or use the public skill pack.</span></div>
+            <div class="stamp"><strong>Suede Holder</strong><span>Hold a verified journey stamp for participation history.</span></div>
+            <div class="stamp"><strong>Signing Device</strong><span>Connect the passport to Suede's patented signing device.</span></div>
+            <div class="stamp"><strong>Lint</strong><span>Generate a release-readiness report.</span></div>
+            <div class="stamp"><strong>Passport</strong><span>Create a Suede transfer package.</span></div>
+            <div class="stamp"><strong>Registry</strong><span>Prepare a work for provenance review.</span></div>
+            <div class="stamp"><strong>Royalties</strong><span>Confirm splits for routing and payout readiness.</span></div>
+            <div class="stamp"><strong>Agent Commerce</strong><span>Make the work understandable to payable agents.</span></div>
+            <div class="stamp"><strong>Codex/Claude</strong><span>Install the skills into an agent workspace and run the passport flow.</span></div>
+          </div>
+          <p class="points-note">
+            Points and airdrop language should stay careful: stamps are a future rewards signal
+            and a creator activity trail. They are not a promise of token allocation, eligibility,
+            payment, or legal status.
+          </p>
         </div>
       </section>
 
       <section id="flow">
         <div class="shell">
-          <h2>How they work together</h2>
-          <p class="section-lead">
-            Start with a release audit. Fix the blockers. Then package the work for Suede.
-          </p>
+          <h2>Creator flow.</h2>
+          <p class="section-lead">Start from a folder. End with a passported, Suede-ready evidence package.</p>
           <div class="flow">
-            <div class="step"><strong>1. Inspect</strong><span>Inventory media, metadata, lyrics, artwork, stems, and documents.</span></div>
-            <div class="step"><strong>2. Lint</strong><span>Find release gaps, split problems, rights uncertainty, and missing files.</span></div>
-            <div class="step"><strong>3. Confirm</strong><span>Collect creator answers for ownership, contributors, samples, and release history.</span></div>
-            <div class="step"><strong>4. Transfer</strong><span>Create a Suede-ready package for optimization and review.</span></div>
+            <div class="flow-step"><b>1. Inspect</b><span>Inventory files, metadata, lyrics, artwork, stems, and documents.</span></div>
+            <div class="flow-step"><b>2. Lint</b><span>Find release gaps, split problems, rights uncertainty, and missing files.</span></div>
+            <div class="flow-step"><b>3. Confirm</b><span>Collect owner, contributor, sample, release, and wallet details.</span></div>
+            <div class="flow-step"><b>4. Stamp</b><span>Create the transfer package and record Suede locations visited.</span></div>
           </div>
         </div>
       </section>
 
-      <section id="use">
+      <section id="install">
         <div class="shell">
-          <h2>Run locally</h2>
+          <h2>Install for Codex and Claude.</h2>
           <p class="section-lead">
-            The scripts use the Python standard library. Optional packages can improve parsing
-            or artwork checks, but the core workflow stays portable.
+            These are standard <code>SKILL.md</code> folders with bundled references, templates, and Python
+            scripts. Review the contents before enabling code execution.
           </p>
-          <div class="terminal">
-            <code>python3 skills/music-release-metadata-linter/scripts/lint_release.py /path/to/music-project --output /path/to/release-lint-output</code>
+          <div class="install-grid">
+            <article class="install">
+              <h3>Codex</h3>
+              <p>Install into <code>$CODEX_HOME/skills</code>, or <code>~/.codex/skills</code> when <code>CODEX_HOME</code> is not set.</p>
+              <pre><code>git clone https://github.com/jasoncolapietro/suede-creator-skills.git
+cd suede-creator-skills
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R skills/suede-rights-passport "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R skills/music-release-metadata-linter "${CODEX_HOME:-$HOME/.codex}/skills/"</code></pre>
+            </article>
+            <article class="install">
+              <h3>Claude Code</h3>
+              <p>Install into a project <code>.claude/skills</code> folder or your user-level <code>~/.claude/skills</code> folder.</p>
+              <pre><code>git clone https://github.com/jasoncolapietro/suede-creator-skills.git
+cd your-project
+mkdir -p .claude/skills
+cp -R ../suede-creator-skills/skills/suede-rights-passport .claude/skills/
+cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skills/</code></pre>
+            </article>
           </div>
-          <div class="terminal">
-            <code>python3 skills/suede-rights-passport/scripts/create_transfer_package.py /path/to/creator-project --output /path/to/suede-transfer-package --copy-assets</code>
+        </div>
+      </section>
+
+      <section id="links">
+        <div class="shell">
+          <h2>Stampable linkset.</h2>
+          <p class="section-lead">Each public destination is a passport stamp: visit the site, open the app, join Discord, follow on X, enter Telegram, install the repo, or read the agent install docs.</p>
+          <div class="link-grid">
+            <a class="link-card" data-stamp="Website Stamp" href="https://suedeai.ai"><b>Suede Website</b><span>https://suedeai.ai</span></a>
+            <a class="link-card" data-stamp="App Stamp" href="https://app.suedeai.ai"><b>Suede App</b><span>https://app.suedeai.ai</span></a>
+            <a class="link-card" data-stamp="Archive Stamp" href="https://suedeai.org"><b>Suede Long-Form Site</b><span>https://suedeai.org</span></a>
+            <a class="link-card" data-stamp="X Follow Stamp" href="https://x.com/aisuede"><b>Follow On X</b><span>https://x.com/aisuede</span></a>
+            <a class="link-card" data-stamp="Discord Stamp" href="https://discord.gg/suedeai"><b>Join Discord</b><span>https://discord.gg/suedeai</span></a>
+            <a class="link-card" data-stamp="Telegram Stamp" href="https://t.me/suedeai"><b>Telegram</b><span>https://t.me/suedeai</span></a>
+            <a class="link-card" data-stamp="GitHub Stamp" href="https://github.com/jasoncolapietro/suede-creator-skills"><b>GitHub Repo</b><span>github.com/jasoncolapietro/suede-creator-skills</span></a>
+            <a class="link-card" data-stamp="Codex Stamp" href="https://github.com/openai/skills"><b>OpenAI Skills</b><span>github.com/openai/skills</span></a>
+            <a class="link-card" data-stamp="Claude Stamp" href="https://docs.claude.com/en/docs/claude-code/skills"><b>Claude Code Skills</b><span>docs.claude.com/en/docs/claude-code/skills</span></a>
           </div>
         </div>
       </section>
@@ -410,8 +672,9 @@ suede-transfer-package/
 
     <footer>
       <div class="shell">
-        Suede is creator ownership infrastructure for programmable IP, provenance,
-        registry-backed media, royalty routing, licensing readiness, and agent commerce.
+        Suede Creator Passport Skills: creator ownership infrastructure for programmable IP,
+        provenance, registry-backed media, royalty routing, licensing readiness, points-ready
+        participation trails, and agent commerce.
       </div>
     </footer>
   </body>

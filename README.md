@@ -1,36 +1,49 @@
 # Suede Creator Skills
 
-Public agent skills for preparing creative work for ownership, provenance,
-release readiness, royalty routing, licensing, and agent commerce.
+![Suede Creator Skills preview](docs/assets/og-image.png)
 
-Suede is creator ownership infrastructure: tools and workflows that help music
-and media become organized, attributable, rights-aware, registry-ready, and
-usable by humans and agents. This repository publishes two offline-first skills
-that help creators and agents clean up a project before deeper Suede
+**Suede Creator Skills** is a public skill pack for AI coding agents and
+creator workflows. It helps music, audio, video, and media projects become
+release-ready, rights-aware, provenance-ready, and easier to prepare for Suede
 optimization.
+
+The public page presents the workflow as a Suede Creator Passport: website
+visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
+Codex and Claude installs, release linting, transfer packaging, Suede Holder
+status, and Suede's patented signing device become stampable participation
+signals.
+
+Suede is creator ownership infrastructure for programmable IP, registry-backed
+media, royalty routing, licensing readiness, and agent commerce. These skills
+are offline-first and public-safe: they inspect and organize local project
+folders, but they do not upload files, write to a registry, call private Suede
+services, request secrets, or claim legal clearance.
 
 ## Public Page
 
-The GitHub Pages landing page is in `docs/index.html`. Once this repo exists
-under `jasoncolapietro` and Pages is enabled from `/docs` on `main`, it will be
-available at:
+GitHub Pages site:
 
 ```text
 https://jasoncolapietro.github.io/suede-creator-skills/
 ```
 
-## The Skills
+Repository:
+
+```text
+https://github.com/jasoncolapietro/suede-creator-skills
+```
+
+## Skills Included
 
 ### Suede Rights Passport
 
-`skills/suede-rights-passport`
+![Suede Rights Passport preview](docs/assets/rights-passport-preview.png)
 
-Turn a messy creator folder into a Suede-ready transfer package.
+Folder: `skills/suede-rights-passport`
 
-It inventories media, documents, lyrics, artwork, stems, credits, splits,
-licenses, provenance notes, and missing rights information. The output is a
-structured package Suede can review before registry setup, royalty routing,
-licensing, media optimization, or agent-commerce packaging.
+Turn a messy creator folder into a Suede-ready transfer package. The skill
+inventories media, documents, lyrics, artwork, stems, credits, splits, licenses,
+provenance notes, missing rights information, and optimization blockers.
 
 Outputs include:
 
@@ -55,12 +68,13 @@ python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
 
 ### Music Release Metadata Linter
 
-`skills/music-release-metadata-linter`
+![Music Release Metadata Linter preview](docs/assets/release-linter-preview.png)
 
-Audit a song, album, catalog, stem pack, or media folder before release or Suede
-intake.
+Folder: `skills/music-release-metadata-linter`
 
-It checks for missing title, artist, metadata, final masters, artwork, lyrics,
+Audit a song, album, catalog, stem pack, or media project before release,
+licensing, registry preparation, agent commerce, or Suede intake. The linter
+checks for missing title, artist, metadata, final masters, artwork, lyrics,
 stems, contributors, split totals, sample status, release history, provenance
 notes, and Suede-readiness blockers.
 
@@ -86,35 +100,112 @@ python3 skills/music-release-metadata-linter/scripts/lint_release.py \
   --output /path/to/release-lint-output
 ```
 
-## How They Work Together
+## Install For Codex
 
-Use the linter first when you want a fast audit. It tells you what is missing,
-what is risky, and whether the project is blocked.
+Codex skills live in `$CODEX_HOME/skills`, falling back to `~/.codex/skills`
+when `CODEX_HOME` is not set.
 
-Use the Rights Passport when you are ready to organize the project for Suede
-intake. It creates the transfer package Suede can use for optimization,
-provenance review, registry readiness, licensing, and royalty routing.
+```bash
+git clone https://github.com/jasoncolapietro/suede-creator-skills.git
+cd suede-creator-skills
+
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R skills/suede-rights-passport "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R skills/music-release-metadata-linter "${CODEX_HOME:-$HOME/.codex}/skills/"
+```
+
+Example Codex prompts:
+
+```text
+Use $music-release-metadata-linter to audit this album folder for release readiness.
+```
+
+```text
+Use $suede-rights-passport to prepare this creator project as a Suede transfer package.
+```
+
+## Install For Claude Code
+
+Claude Code skills use `SKILL.md` files in `.claude/skills/` directories. For a
+project-level install:
+
+```bash
+git clone https://github.com/jasoncolapietro/suede-creator-skills.git
+cd your-project
+
+mkdir -p .claude/skills
+cp -R ../suede-creator-skills/skills/suede-rights-passport .claude/skills/
+cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skills/
+```
+
+For a user-level install:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/suede-rights-passport ~/.claude/skills/
+cp -R skills/music-release-metadata-linter ~/.claude/skills/
+```
+
+Example Claude Code prompts:
+
+```text
+Use the music-release-metadata-linter skill to check this release folder.
+```
+
+```text
+Use the suede-rights-passport skill to organize this catalog for Suede intake.
+```
+
+Claude.ai and organization-managed Claude Skills may use upload or admin-managed
+skill flows instead of direct filesystem copy. Review the skill contents before
+enabling code execution.
+
+## How The Workflow Fits Together
 
 ```text
 creator folder
   -> release metadata lint
-  -> fixes and confirmations
+  -> missing info and rights fixes
   -> Suede Rights Passport package
-  -> Suede review and optimization
+  -> Suede review, registry readiness, royalty routing, licensing, optimization
 ```
 
-## Public Safety
+Use the linter first when you want a fast audit. Use the Rights Passport when
+you are ready to create a durable transfer package for Suede review and
+optimization.
 
-These skills are offline-first. They do not upload files, write to a registry,
-call private Suede services, request secrets, or claim legal clearance.
+## Full Linkset
 
-A clean report or completed transfer package is not a legal opinion. It means
-the project is better organized for creator confirmation, Suede review, and
-next-step optimization.
+These public links are also passport stamp locations. The page frames each
+creator action as a stampable signal: visit, join, follow, install, lint, and
+passport.
 
-## What Suede Cares About
+Suede public links:
 
-Suede public copy should stay focused on:
+- Website: <https://suedeai.ai>
+- App: <https://app.suedeai.ai>
+- Long-form site: <https://suedeai.org>
+- Follow on X: <https://x.com/aisuede>
+- Join Discord: <https://discord.gg/suedeai>
+- Telegram: <https://t.me/suedeai>
+
+Project links:
+
+- GitHub repository: <https://github.com/jasoncolapietro/suede-creator-skills>
+- GitHub Pages site: <https://jasoncolapietro.github.io/suede-creator-skills/>
+- Rights Passport skill: `skills/suede-rights-passport/SKILL.md`
+- Rights Passport script: `skills/suede-rights-passport/scripts/create_transfer_package.py`
+- Release Linter skill: `skills/music-release-metadata-linter/SKILL.md`
+- Release Linter script: `skills/music-release-metadata-linter/scripts/lint_release.py`
+- Page source: `docs/index.html`
+
+Platform references:
+
+- OpenAI Skills examples: <https://github.com/openai/skills>
+- Claude Code skills documentation: <https://docs.claude.com/en/docs/claude-code/skills>
+- Claude Skills help center: <https://support.claude.com/en/articles/12512180-using-skills-in-claude>
+
+Suede language to preserve:
 
 - creator ownership infrastructure
 - programmable IP
@@ -125,32 +216,32 @@ Suede public copy should stay focused on:
 - rights-aware media workflows
 - agent commerce
 
-Suede is not just an AI music app. These skills are small public pieces of the
-larger ownership and commerce layer for creative work.
+Passport stamp language:
 
-## Repo Layout
+- website visit
+- app visit
+- Discord join
+- X follow
+- Telegram visit
+- GitHub install, star, or fork
+- Codex install
+- Claude install
+- Suede Holder verified journey stamp
+- Suede patented signing device
+- release lint
+- rights passport package
+- future rewards signal
+- points-ready participation trail
 
-```text
-skills/
-  suede-rights-passport/
-  music-release-metadata-linter/
-docs/
-  index.html
-```
+## Public Safety
 
-## Install As Local Codex Skills
-
-Copy either skill folder into your Codex skills directory:
-
-```bash
-mkdir -p ~/.codex/skills
-cp -R skills/suede-rights-passport ~/.codex/skills/
-cp -R skills/music-release-metadata-linter ~/.codex/skills/
-```
+A clean lint report or completed transfer package is not a legal opinion,
+distributor approval, registry write, or rights clearance. These skills prepare
+materials so creators, Suede, and advisors can review the work with better
+structure.
 
 ## Status
 
-Both skills have been validated locally with the Codex skill validator. The
-scripts are dependency-light Python and run with the standard library. Optional
-enhancements use installed packages when available, such as Pillow for artwork
-dimension checks or PyYAML for YAML metadata parsing.
+The scripts are dependency-light Python and run with the standard library.
+Optional enhancements use installed packages when available, such as Pillow for
+artwork dimension checks or PyYAML for YAML metadata parsing.
