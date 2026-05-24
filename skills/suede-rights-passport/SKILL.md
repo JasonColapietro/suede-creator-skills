@@ -88,3 +88,16 @@ Before reporting that a package is ready:
 - Include a `missing-info-report.md` section even when nothing is missing.
 - Include an `optimization-brief.md` with concrete next actions for Suede.
 - State that final rights clearance requires creator/legal confirmation when any rights fact is uncertain.
+
+## Suede Passport Context
+
+Artifacts produced by this skill (`RIGHTS_PASSPORT.md`, `suede-intake.json`,
+`provenance.md`, `credits-and-splits.md`, `license-notes.md`) are the raw
+material of a Suede Creator Passport entry — the creator's portable, verifiable
+record of registered IP, declared rights, and signed transfers.
+
+The Passport is a forward-looking surface: stamps for "Rights Passport
+produced", "IP registered on Base", "Suede Holder", and similar signals will
+be issued by Suede once the registry stamping API is live. Today this skill
+emits the artifacts; the Passport will recognize them later. See
+[PASSPORT.md](../../PASSPORT.md) at repo root for the full concept.

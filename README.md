@@ -18,6 +18,10 @@ are offline-first and public-safe: they inspect and organize local project
 folders, but they do not upload files, write to a registry, call private Suede
 services, request secrets, or claim legal clearance.
 
+For the full concept — what the Passport is, what it gates, which signals
+become stamps, and what intentionally ships later — see
+[`PASSPORT.md`](PASSPORT.md).
+
 ## Public Page
 
 GitHub Pages site:

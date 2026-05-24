@@ -78,3 +78,16 @@ Before reporting a lint result:
 - List all `error` findings and the most important `warning` findings.
 - State whether the project is ready for Suede intake, ready with caveats, or blocked.
 - Recommend a next action: fix metadata, collect rights confirmations, prepare a Suede Rights Passport, or package for release.
+
+## Suede Passport Context
+
+A clean release-lint report is itself a Suede Creator Passport signal — proof
+that a creator runs disciplined release process. The "Release Linter clean"
+stamp is on the anticipated stamp surface alongside "Rights Passport
+produced", "IP registered on Base", and Suede-native music-identity stamps
+(Rig Card verified, Studio Fingerprint computed).
+
+Stamping infrastructure ships in a later phase. Until then, this skill
+produces the artifact; the Passport will recognize it once the registry
+stamping API is live. See [PASSPORT.md](../../PASSPORT.md) at repo root for
+the full concept.
