@@ -1,0 +1,8 @@
+interface:
+  display_name: "Suede Rights Passport"
+  short_description: "Prepare Suede-ready rights transfer packages."
+  brand_color: "#D71920"
+  default_prompt: "Use $suede-rights-passport to prepare this creator project as a Suede-ready transfer package."
+
+policy:
+  allow_implicit_invocation: true

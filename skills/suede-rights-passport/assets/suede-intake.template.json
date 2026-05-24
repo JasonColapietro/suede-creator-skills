@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1.0",
+  "package_type": "suede-transfer-package",
+  "generated_at": null,
+  "project": {
+    "title": "unknown",
+    "artist_name": "unknown",
+    "work_type": "unknown",
+    "description": "",
+    "release_status": "unknown",
+    "public_urls": []
+  },
+  "creator": {
+    "name": "unknown",
+    "email": "",
+    "wallet_address": "",
+    "organization": "",
+    "confirmation_status": "unknown"
+  },
+  "assets": [],
+  "rights": {
+    "owner_claim": "unknown",
+    "ownership_status": "unknown",
+    "contributors_confirmed": false,
+    "splits_confirmed": false,
+    "contains_samples": "unknown",
+    "sample_clearance_status": "unknown",
+    "cover_or_interpolation": "unknown",
+    "license_restrictions": []
+  },
+  "provenance": {
+    "source_root": "",
+    "creation_notes": "",
+    "chain_of_custody": [],
+    "registry_status": "unknown"
+  },
+  "optimization": {
+    "requested_services": [],
+    "recommended_services": [],
+    "priority": "normal",
+    "notes": ""
+  },
+  "missing_information": [],
+  "risk_flags": []
+}
