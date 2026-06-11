@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasoncolapietro.github.io/suede-creator-skills/sitemap.xml
