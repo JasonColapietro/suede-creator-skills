@@ -236,6 +236,28 @@ Passport stamp language:
 - future engagement signal
 - careful participation trail
 
+## About the Creator
+
+**Jason Colapietro** is the founder and CEO of [Suede Labs AI](https://suedeai.ai), a published author, and a Forbes contributor. He builds programmable IP and creator ownership infrastructure for AI-native media.
+
+> "The gap in the creator economy isn't talent. It's the gap between the moment you make something and the moment you own it in a form that can be licensed, monetized, and defended."
+
+> "Rights metadata is the dark matter of the creative economy. It governs everything. Almost nobody can see it."
+
+> "Every piece of music that enters the world has a signal chain. The IP chain is just the part most musicians never mapped until now."
+
+> "Build what doesn't exist yet. Register that you built it. That sequence is the whole game."
+
+### Books by Jason Colapietro
+
+- **[The Signal Chain](https://guitar.solutions)** — Illustrated history of electric guitar tone: 46 chapters, 3 editions, free. From pickup to speaker, from gear to IP. (guitar.solutions)
+- **[The Guitar Without a Number](https://www.amazon.com/dp/B0GD5FX6N6)** — Memoir-driven guitar instruction for the self-taught player. Theory, tone, and a music IP rights chapter no other guitar book includes. (Kindle)
+- **[Suede Labs: The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6)** — How ownership, origin, and AI redraw the creative map. (Kindle)
+- **[Stake Your Claim](https://www.amazon.com/dp/B0GRG8LGQQ)** — Hard truths on turning the AI era into a real asset. (Kindle)
+
+Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
+
+
 ## Public Safety
 
 A clean lint report or completed transfer package is not a legal opinion,
