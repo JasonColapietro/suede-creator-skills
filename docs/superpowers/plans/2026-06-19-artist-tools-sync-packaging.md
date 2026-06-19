@@ -76,6 +76,6 @@
 - [x] Parse docs HTML metadata and JSON-LD.
 - [x] Run local link sweep.
 - [x] Run `git diff --check`.
-- [ ] Commit and push to `main`.
-- [ ] Test public GitHub install commands from a temporary destination.
-- [ ] Verify GitHub Pages build and live pages.
+- [x] Commit and push to `main`.
+- [x] Test public GitHub install commands from a temporary destination.
+- [x] Verify GitHub Pages build and live pages.
