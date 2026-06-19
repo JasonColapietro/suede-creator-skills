@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for Suede design, copywriting, SEO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
+description: Public umbrella workflow for Suede design, copywriting, SEO/AEO/AI EO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
 ---
 
 # Suede Workflow Skills
@@ -17,8 +17,8 @@ This skill is the public entry point for:
   copy, FAQ answers, and claim boundaries.
 - **Suede Brand Voice:** keep public copy specific, creator-owned,
   rights-aware, and free of generic AI phrasing.
-- **Suede SEO Audit:** check metadata, schema, search intent, internal links,
-  sitemap fit, and discoverability.
+- **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
+  AI EO, internal links, sitemap fit, and discoverability.
 - **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
   conversion surface.
 - **Suede Code Review:** review changes for real bugs, regressions, security
@@ -88,7 +88,7 @@ If only this umbrella skill is installed, follow the condensed workflow below.
 ## Core Rule
 
 Start from current truth. Inspect the live URL, repo, docs, screenshots, or
-rendered output before making design, copy, SEO, code, or QA claims.
+rendered output before making design, copy, SEO/AEO/AI EO, code, or QA claims.
 
 Keep public Suede language anchored in creator ownership, programmable IP,
 rights, provenance, registry-backed media, royalty routing, licensing
@@ -101,7 +101,7 @@ Use the Suede MCP only when it adds structure:
 
 - list available Suede skills;
 - explain install options;
-- scaffold a full SEO copy audit;
+- scaffold a full SEO/AEO/AI EO copy audit;
 - generate a QA checklist;
 - help another agent understand the Suede stack quickly.
 
@@ -169,7 +169,7 @@ can be checked.
 ## Copy And SEO Workflow
 
 For public copy, docs, README, landing pages, skill pages, plugin listings, and
-SEO passes:
+SEO passes, including AEO and AI EO:
 
 1. Identify reader, page type, primary action, proof, and claim boundaries.
 2. Write the clearest outcome first.
@@ -178,7 +178,7 @@ SEO passes:
 4. Keep titles under 60 characters when practical and meta descriptions under
    160 characters when practical.
 5. Check H1, headings, internal links, schema/JSON-LD, CTA clarity, FAQ fit,
-   and search intent.
+   search intent, answer intent, and sourceable proof.
 6. Remove generic AI phrasing, filler, vague claims, and unsupported promises.
 
 Full audit output:
@@ -198,6 +198,7 @@ Subhead:
 Primary CTA:
 Internal links:
 Schema changes:
+Answer-ready summary:
 Claim boundaries:
 Ship gate: ship | ship-with-caveats | hold
 ```

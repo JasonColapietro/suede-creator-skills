@@ -7,28 +7,30 @@ clear, search-friendly, specific language and careful claim boundaries.
 
 ## Core Positioning
 
-Suede gives AI agents a reusable product workflow for design, copywriting, SEO,
-Suedify reference-site mimicry, code review, QA, public skill installs, local
-plugin notes, MCP-assisted discovery, and creator workflow support.
+Suede gives AI agents a reusable product workflow for design, copywriting,
+SEO/AEO/AI EO, Suedify reference-site mimicry, code review, QA, public skill
+installs, local plugin notes, MCP-assisted discovery, and creator workflow
+support.
 
 The pack helps agents do more than answer prompts. It gives them a Suede way to
-ship sharper public work: better-looking pages, stronger copy, real SEO checks,
-reference-site style transfer, stronger repo packaging, repeatable QA, and
-optional MCP tools when a catalog, checklist, or audit would help.
+ship sharper public work: better-looking pages, stronger copy, real SEO checks
+that include AEO and AI EO, reference-site style transfer, stronger repo
+packaging, repeatable QA, and optional MCP tools when a catalog, checklist, or
+audit would help.
 
 ## Short Explanation
 
 Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
-product, design, copywriting, SEO, Suedify, QA, install, launch, ambassador,
-claim-checking, agent-commerce, and creator-workflow assistant.
+product, design, copywriting, SEO/AEO/AI EO, Suedify, QA, install, launch,
+ambassador, claim-checking, agent-commerce, and creator-workflow assistant.
 
 Use the skills directly for normal work. Use the MCP when structure helps:
-skill discovery, install guidance, SEO copy audits, or QA checklists.
+skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 
 ## One-Line Ambassador Lines
 
 - Stop prompting from scratch. Load Suede.
-- A product, design, copywriting, SEO, Suedify, and QA workflow for AI agents.
+- A product, design, copywriting, SEO/AEO/AI EO, Suedify, and QA workflow for AI agents.
 - Give your agent taste, process, review discipline, and public-safe copy.
 - Suede turns rough prompts into polished product work.
 - Suedify any site: give the agent a reference URL and a target URL.
@@ -49,7 +51,7 @@ Suede fixes that by packaging the working system:
 - how it should review code;
 - how it should inspect a public page;
 - how it should mimic a reference site safely;
-- how it should audit SEO and metadata;
+- how it should audit SEO, AEO, AI EO, and metadata;
 - how it should improve when the operator gives feedback;
 - how it should run QA before handoff;
 - when it should use MCP;
@@ -66,9 +68,9 @@ Use this for product and website work:
 
 - Suedify: mimic one site style and apply it to another site.
 - Suede Design: product-aware design direction and QA.
-- Suede Copy: public-safe copy, SEO copy, repo copy, docs, CTAs, and audits.
+- Suede Copy: public-safe copy, SEO/AEO/AI EO copy, repo copy, docs, CTAs, and audits.
 - Suede Brand Voice: keep public copy specific, rights-aware, and non-generic.
-- Suede SEO Audit: check search intent, metadata, schema, links, and trust.
+- Suede SEO Audit: check search intent, answer intent, metadata, schema, links, and trust.
 - Suede Agent Teams: multi-lane planning, QA, code review, release verification, and handoff.
 - Suede Code Review: senior-review style checks for correctness, security, regressions, and tests.
 - Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
@@ -115,7 +117,7 @@ Use MCP only when it creates value:
 
 - list the available Suede skills;
 - return install options;
-- generate an SEO copy audit scaffold;
+- generate an SEO/AEO/AI EO copy audit scaffold;
 - generate a QA checklist;
 - give another agent structured context without making it read every file first.
 
@@ -131,7 +133,7 @@ person to the right skill, doc, MCP option, or install path.
 ### For Founders
 
 Suede gives your AI agent a reusable product team: design direction,
-copywriting, SEO, reference-site restyling, code review, QA, public docs, and
+copywriting, SEO/AEO/AI EO, reference-site restyling, code review, QA, public docs, and
 shipping discipline in one workflow.
 
 Use it when your site, repo, launch page, or product docs need to look sharper,
@@ -154,14 +156,14 @@ surfaces, and optional MCP-assisted lookup.
 ### For Agencies
 
 Suede gives every client build a baseline workflow: reference-site analysis,
-sharper copy, better UI checks, SEO cleanup, repo docs, skill packaging, code
+sharper copy, better UI checks, SEO/AEO/AI EO cleanup, repo docs, skill packaging, code
 review, and QA before handoff.
 
 ### For Creators
 
 Suede helps creators turn a song, drop, catalog moment, or site into something
 people can understand: visual systems, campaign worlds, hooks, captions,
-landing-page copy, SEO, QA, and optional creator utility reports.
+landing-page copy, SEO/AEO/AI EO, QA, and optional creator utility reports.
 
 ### For AI Power Users
 
@@ -174,7 +176,7 @@ discipline, QA loops, and optional MCP tools when structured context helps.
 ```text
 Suede Creator Skills
 
-Design, copy, SEO, Suedify, QA, code review, MCP, and creator workflows for AI agents.
+Design, copy, SEO/AEO/AI EO, Suedify, QA, code review, MCP, and creator workflows for AI agents.
 
 Install the public Suede skills to give Codex a reusable system for sharper product work, better public docs, cleaner websites, reference-site restyling, structured QA, safer public claims, and creator campaign workflows.
 ```
@@ -194,7 +196,7 @@ Read the ambassador guide
 Create a rights passport
 Audit a release folder
 Run Suedify
-Audit SEO
+Audit SEO/AEO/AI EO
 Rewrite the page
 ```
 
@@ -203,7 +205,7 @@ Rewrite the page
 ### Suede Workflow Skills
 
 ```text
-Product, design, copywriting, SEO, code review, QA, launch packaging, install support, claim checks, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to mimic a reference site, improve a page, ship public docs, review code, run design QA, audit SEO, or coordinate multiple review lanes.
+Product, design, copywriting, SEO/AEO/AI EO, code review, QA, launch packaging, install support, claim checks, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to mimic a reference site, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, or coordinate multiple review lanes.
 ```
 
 ### Suede Creator Skills
@@ -215,19 +217,19 @@ Artist campaign and creator utility skills for music and media workflows. Build 
 ### Suede Skills MCP
 
 ```text
-Optional MCP tools for structured Suede skill discovery, install guidance, SEO copy audit scaffolds, and QA checklists. Use MCP when structure helps. Skip it when a direct skill prompt is enough.
+Optional MCP tools for structured Suede skill discovery, install guidance, SEO/AEO/AI EO copy audit scaffolds, and QA checklists. Use MCP when structure helps. Skip it when a direct skill prompt is enough.
 ```
 
 ## GitHub Repo Description
 
 ```text
-Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO audits, agent QA, artist campaigns, and creator utilities.
+Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, agent QA, artist campaigns, and creator utilities.
 ```
 
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suedify reference-site mimicry, design direction, copywriting, SEO audits, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suedify reference-site mimicry, design direction, copywriting, SEO/AEO/AI EO audits, QA, public install support, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -247,7 +249,7 @@ Suede skills give the agent a repeatable way to write, design, audit, review, pa
 ```text
 MCP is useful when the task needs structure.
 
-Use it to list Suede skills, return install paths, build an SEO audit scaffold, or generate a QA checklist. For simple execution, call the skill directly and keep moving.
+Use it to list Suede skills, return install paths, build an SEO/AEO/AI EO audit scaffold, or generate a QA checklist. For simple execution, call the skill directly and keep moving.
 ```
 
 ### Section: Progressive Updating
@@ -269,7 +271,7 @@ Suede skills organize work, generate reports, improve public docs, and prepare r
 ### One-Liner
 
 ```text
-Suedify lets you give the agent a reference URL and a target URL, then push the target toward the reference style with Suede design, copy, SEO, and QA checks.
+Suedify lets you give the agent a reference URL and a target URL, then push the target toward the reference style with Suede design, copy, SEO/AEO/AI EO, and QA checks.
 ```
 
 ### Full Explanation
@@ -283,7 +285,7 @@ Give it a website you want to mimic and the website you want improved. The agent
 ### Example Prompt
 
 ```text
-Use Suedify. Mimic https://apple.com and apply that direction to https://example.com. Keep the brand content, but move the target toward the reference style as closely as possible. Use Suede design, copy, SEO, code review, and QA. Use MCP only if it helps with audit or checklist structure.
+Use Suedify. Mimic https://apple.com and apply that direction to https://example.com. Keep the brand content, but move the target toward the reference style as closely as possible. Use Suede design, copy, SEO/AEO/AI EO, code review, and QA. Use MCP only if it helps with audit or checklist structure.
 ```
 
 ## MCP Copy
@@ -291,7 +293,7 @@ Use Suedify. Mimic https://apple.com and apply that direction to https://example
 ### Plain-English Explanation
 
 ```text
-The MCP is the structured interface for Suede. It helps agents discover which skills exist, return install options, build SEO audit scaffolds, and generate QA checklists.
+The MCP is the structured interface for Suede. It helps agents discover which skills exist, return install options, build SEO/AEO/AI EO audit scaffolds, and generate QA checklists.
 ```
 
 ### When To Use MCP
@@ -300,7 +302,7 @@ Use MCP when the task needs:
 
 - a skill catalog;
 - an install path;
-- a full SEO audit scaffold;
+- a full SEO/AEO/AI EO audit scaffold;
 - a QA checklist;
 - another agent to understand the Suede stack quickly;
 - public docs that need repeatable structure.
@@ -316,7 +318,7 @@ Skip MCP when the task is:
 ### MCP Explanation
 
 ```text
-Suede MCP is not required for every task. It is there when structure helps: discovery, install guidance, SEO audits, and QA. The default is still simple: call the Suede skill, do the work, verify it.
+Suede MCP is not required for every task. It is there when structure helps: discovery, install guidance, SEO/AEO/AI EO audits, and QA. The default is still simple: call the Suede skill, do the work, verify it.
 ```
 
 ## Public Install Copy
@@ -408,7 +410,7 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ```text
 I packaged the Suede agent workflow into installable public skills.
 
-Suedify, design, copywriting, SEO audits, code review, QA, install support, claim checks, artist campaign tools, and optional MCP support.
+Suedify, design, copywriting, SEO/AEO/AI EO audits, code review, QA, install support, claim checks, artist campaign tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```
@@ -421,12 +423,12 @@ Most agent workflows fail because they have no house style.
 Suede adds one:
 - design direction
 - copy discipline
-- SEO checks
+- SEO/AEO/AI EO checks
 - code review
 - QA loops
 - Suedify site mimicry
 - copywriting
-- SEO and metadata
+- SEO/AEO/AI EO and metadata
 - artist campaign packaging
 - optional MCP discovery
 
@@ -441,7 +443,7 @@ New Suede workflow:
 1. Give the agent a reference site
 2. Give it the site you want improved
 3. Run Suedify
-4. QA design, copy, SEO, and code
+4. QA design, copy, SEO/AEO/AI EO, and code
 5. Ship cleaner
 
 The point is simple: agents with taste and process.
@@ -455,7 +457,7 @@ Give it two URLs:
 1. the site whose feel you want
 2. the site you want improved
 
-Suedify studies the layout, rhythm, type, color, motion, copy pattern, and proof stack. Then it pushes the target toward that style with Suede-safe design, copy, SEO, and QA.
+Suedify studies the layout, rhythm, type, color, motion, copy pattern, and proof stack. Then it pushes the target toward that style with Suede-safe design, copy, SEO/AEO/AI EO, and QA.
 ```
 
 ### MCP Post
@@ -463,7 +465,7 @@ Suedify studies the layout, rhythm, type, color, motion, copy pattern, and proof
 ```text
 I added MCP to Suede, but only where it helps.
 
-Use it for skill discovery, install guidance, SEO audit scaffolds, and QA checklists.
+Use it for skill discovery, install guidance, SEO/AEO/AI EO audit scaffolds, and QA checklists.
 
 Skip it when a direct skill prompt is faster.
 ```
@@ -477,13 +479,13 @@ The pack gives agents a reusable way to handle:
 
 - design
 - copy
-- SEO
+- SEO/AEO/AI EO
 - code review
 - QA
 - site restyling
 - Suedify
 - copywriting
-- SEO audits
+- SEO/AEO/AI EO audits
 - artist campaign tools
 - skill packaging
 - MCP-assisted lookup
@@ -494,7 +496,7 @@ The pack gives agents a reusable way to handle:
 ### Founder DM
 
 ```text
-I built a Suede skill pack for Codex-style agents. It gives the agent reusable workflows for Suedify, design, copywriting, SEO audits, code review, QA, and public docs.
+I built a Suede skill pack for Codex-style agents. It gives the agent reusable workflows for Suedify, design, copywriting, SEO/AEO/AI EO audits, code review, QA, and public docs.
 
 The useful part is that you do not need to keep writing giant setup prompts. You call the Suede skills, and the agent gets the process.
 ```
@@ -502,13 +504,13 @@ The useful part is that you do not need to keep writing giant setup prompts. You
 ### Developer DM
 
 ```text
-The Suede pack is a public skill workflow for agents. It includes Suedify, design, copywriting, SEO, QA, code-review skills, artist campaign skills, creator utilities, and an optional MCP server for structured discovery, install options, SEO audit scaffolds, and QA checklists.
+The Suede pack is a public skill workflow for agents. It includes Suedify, design, copywriting, SEO/AEO/AI EO, QA, code-review skills, artist campaign skills, creator utilities, and an optional MCP server for structured discovery, install options, SEO/AEO/AI EO audit scaffolds, and QA checklists.
 ```
 
 ### Creator DM
 
 ```text
-Suede Creator Skills help turn a song, site, drop, or artist idea into something sharper: a visual world, campaign copy, hook map, landing-page copy, SEO pass, fan prompt, visualizer direction, and optional local utility reports.
+Suede Creator Skills help turn a song, site, drop, or artist idea into something sharper: a visual world, campaign copy, hook map, landing-page copy, SEO/AEO/AI EO pass, fan prompt, visualizer direction, and optional local utility reports.
 
 The point is not paperwork. The point is giving the agent a creative workflow it can keep improving as you react to the output.
 ```
@@ -516,7 +518,7 @@ The point is not paperwork. The point is giving the agent a creative workflow it
 ### Agency DM
 
 ```text
-Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO checks, code review, docs, and handoff.
+Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO/AEO/AI EO checks, code review, docs, and handoff.
 
 It is useful when you want the agent to behave like a small product team instead of a blank chat box.
 ```
@@ -525,7 +527,7 @@ It is useful when you want the agent to behave like a small product team instead
 
 ### Subject Lines
 
-- Suede agent workflows for design, copy, SEO, and QA
+- Suede agent workflows for design, copy, SEO/AEO/AI EO, and QA
 - I packaged the Suede agent workflow
 - A reusable product workflow for AI agents
 - Suedify: reference-site style transfer for your site
@@ -538,7 +540,7 @@ Hey,
 
 I packaged the Suede workflow into installable public agent skills.
 
-It covers Suedify site-style transfer, design direction, copywriting, SEO audits, code review, QA, artist campaign tools, and optional MCP support when structured discovery or checklists help.
+It covers Suedify site-style transfer, design direction, copywriting, SEO/AEO/AI EO audits, code review, QA, artist campaign tools, and optional MCP support when structured discovery or checklists help.
 
 The goal is to stop rebuilding the same prompt stack every time. Call the Suede skills, give feedback as it works, and let the agent tighten the next pass.
 
@@ -556,7 +558,7 @@ https://jasoncolapietro.github.io/suede-creator-skills/
 ```text
 One agent. A full Suede workflow.
 
-Suede gives Codex-style agents a reusable system for Suedify, design direction, copywriting, SEO, code review, QA, public docs, and artist campaign packaging.
+Suede gives Codex-style agents a reusable system for Suedify, design direction, copywriting, SEO/AEO/AI EO, code review, QA, public docs, and artist campaign packaging.
 ```
 
 ### Block: Better Prompts Are Not Enough
@@ -570,7 +572,7 @@ Suede packages the judgment, checklists, language, and review habits that make a
 ### Block: Built For Public Work
 
 ```text
-Suede copy is written for real public surfaces: GitHub repos, install pages, skill docs, launch pages, SEO snippets, FAQs, and social posts.
+Suede copy is written for real public surfaces: GitHub repos, install pages, skill docs, launch pages, SEO/AEO/AI EO snippets, FAQs, and social posts.
 
 It keeps the claim boundary visible so the work can be shared without pretending the agent copied protected assets, invented proof, cleared rights, published releases, or approved payouts.
 ```
@@ -586,7 +588,7 @@ No. The public side ships as standard skill folders, docs, scripts, templates, a
 ### Do I need MCP?
 
 ```text
-No. MCP is optional. Use it for structured discovery, install guidance, SEO audit scaffolds, or QA checklists. For normal execution, call the skill directly.
+No. MCP is optional. Use it for structured discovery, install guidance, SEO/AEO/AI EO audit scaffolds, or QA checklists. For normal execution, call the skill directly.
 ```
 
 ### Why does install say @personal?
@@ -612,10 +614,14 @@ Founders, builders, creators, agencies, and AI power users who already use agent
 ### What makes it different?
 
 ```text
-It is not only about making an agent write nicer. It combines Suedify site mimicry, design, copywriting, SEO, code review, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
+It is not only about making an agent write nicer. It combines Suedify site mimicry, design, copywriting, SEO/AEO/AI EO, code review, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
 ```
 
 ## SEO Metadata
+
+In this pack, SEO includes AEO and AI EO: search snippets, answer engines, AI
+summaries, schema, sourceable claims, internal links, and proof that can be
+cited without inventing facts.
 
 ### Homepage Title
 
@@ -626,7 +632,7 @@ Suede Creator Skills | Design, Copy, SEO, Suedify
 ### Homepage Meta Description
 
 ```text
-Install public Suede skills and MCP tools for Suedify, design, copywriting, SEO audits, agent QA, artist campaigns, and creator workflows.
+Install public Suede skills and MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, agent QA, artist campaigns, and creator workflows.
 ```
 
 ### Ambassador Page Title
@@ -638,7 +644,7 @@ Suede Ambassador Guide | Design, Copy, SEO, QA, MCP
 ### Ambassador Page Meta Description
 
 ```text
-Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO audits, agent QA, and artist campaign tools.
+Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, agent QA, and artist campaign tools.
 ```
 
 ### Durable Keywords
@@ -659,7 +665,11 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 - SKILL.md
 - AI agent workflow
 - agent QA
-- SEO copy audit
+- SEO/AEO/AI EO copy audit
+- AEO
+- AI EO
+- AI engine optimization
+- answer engine optimization
 - artist campaign
 - reference-site mimicry
 - music release metadata
@@ -696,13 +706,13 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 ### What is the Suede Ambassador Explainer Pack?
 
 Suede Ambassador Explainer Pack is the public explanation and copy system for
-the Suede skills, MCP server, Suedify workflow, design, copywriting, SEO audit
-flow, QA workflow, artist campaign tools, and creator utilities.
+the Suede skills, MCP server, Suedify workflow, design, copywriting, SEO/AEO/AI EO
+audit flow, QA workflow, artist campaign tools, and creator utilities.
 
 ### What should ambassadors explain first?
 
 Explain the outcome first: agents that ship better public work with less setup.
-Then explain the lanes: Suedify, design, copywriting, SEO, code review, QA,
+Then explain the lanes: Suedify, design, copywriting, SEO/AEO/AI EO, code review, QA,
 artist campaigns, creator utilities, and optional MCP.
 
 ### What should I not lead with?
@@ -718,7 +728,7 @@ should use that feedback as working context.
 
 ### What is the safest public claim?
 
-Suede skills help agents restyle sites, write better public copy, run SEO
+Suede skills help agents restyle sites, write better public copy, run SEO/AEO/AI EO
 audits, coordinate QA, package artist campaigns, and prepare optional creator
 utility materials. They do not make legal, payout, registry, or distribution
 decisions on their own.
@@ -735,8 +745,8 @@ decisions on their own.
 - Keep `@personal` out of headline copy.
 - Include claim boundaries.
 - Include Suedify as the marketable design workflow.
-- Include Suedify, design, copywriting, SEO, QA, and artist campaign keywords.
-- Include SEO audit and QA language.
+- Include Suedify, design, copywriting, SEO/AEO/AI EO, QA, and artist campaign keywords.
+- Include SEO/AEO/AI EO audit and QA language.
 - Include progressive updating language.
 - Verify every public link before posting.
 
@@ -745,7 +755,7 @@ decisions on their own.
 ```text
 Suede is the workflow layer for AI agents that need to ship better public product work.
 
-It packages Suedify, design direction, copywriting, SEO, code review, QA, launch packaging, install support, public claim checks, artist campaign tools, creator utilities, public skill installs, and optional MCP support into one reusable Suede system.
+It packages Suedify, design direction, copywriting, SEO/AEO/AI EO, code review, QA, launch packaging, install support, public claim checks, artist campaign tools, creator utilities, public skill installs, and optional MCP support into one reusable Suede system.
 ```
 
 ## Copy Score

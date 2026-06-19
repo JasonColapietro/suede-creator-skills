@@ -3,17 +3,19 @@
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
 **Suede Creator Skills** is a public 34-skill pack for AI coding agents,
-design-heavy website work, copywriting, SEO, Suedify-style site mimicry, QA,
-and creator workflows. It includes one umbrella workflow, design and copy
-lanes, SEO audits, site alchemy, install support, MCP QA, launch packaging,
-ambassador explainers, claim checks, agent-commerce prep, artist campaign
-tools, and creator utility skills.
+design-heavy website work, copywriting, SEO/AEO/AI EO, Suedify-style site
+mimicry, QA, and creator workflows. It includes one umbrella workflow, design
+and copy lanes, SEO/AEO/AI EO audits, site alchemy, install support, MCP QA, launch
+packaging, ambassador explainers, claim checks, agent-commerce prep, artist
+campaign tools, and creator utility skills.
 
 The main sell is the Suede workflow: give the agent taste, page structure,
 copy standards, SEO discipline, reference-site analysis, review gates, and a
-way to improve as feedback comes in. When the agent does something that works,
-tell it what to keep. When it misses, tell it exactly what to change. The next
-pass should self-correct inside the current work session.
+way to improve as feedback comes in. In this pack, SEO includes AEO and AI EO:
+search snippets, answer engines, AI summaries, schema, sourceable claims, and
+citation-ready proof. When the agent does something that works, tell it what
+to keep. When it misses, tell it exactly what to change. The next pass should
+self-correct inside the current work session.
 
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
@@ -51,18 +53,18 @@ become stamps, and what intentionally ships later — see
 - [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/)
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
-- [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO metadata, FAQ, and claim boundaries.
-- [Suede Creator Skills copy bank](COPY.md) - public copy for GitHub descriptions, docs pages, CTAs, SEO snippets, FAQs, social posts, and safety language.
+- [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
+- [Suede Creator Skills copy bank](COPY.md) - public copy for GitHub descriptions, docs pages, CTAs, SEO/AEO/AI EO snippets, FAQs, social posts, and safety language.
 - [Copy bank page](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) - live copy bank for sharing, explaining, and documentation work.
-- [Public installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - GitHub skill install commands plus the Suede Skills MCP server for skill discovery, SEO copy audits, install guidance, and QA checklists.
+- [Public installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - GitHub skill install commands plus the Suede Skills MCP server for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with primary skill pages, install links, manifests, scripts, folders, and resource maps.
 - [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
 - [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
 ## Quick Start
 
-Install the umbrella workflow and call it for design, copy, SEO, or Suedify
-work:
+Install the umbrella workflow and call it for design, copy, SEO/AEO/AI EO, or
+Suedify work:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -73,11 +75,11 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 Example prompts:
 
 ```text
-Use $suedify. Study https://apple.com and push https://example.com toward that design language with Suede-safe design, copy, SEO, and QA.
+Use $suedify. Study https://apple.com and push https://example.com toward that design language with Suede-safe design, copy, SEO/AEO/AI EO, and QA.
 ```
 
 ```text
-Use $suede-workflow-skills to rewrite this page, audit SEO, check design quality, and run final QA.
+Use $suede-workflow-skills to rewrite this page, audit SEO/AEO/AI EO, check design quality, and run final QA.
 ```
 
 Utility scripts are available when the project needs local creator reports:
@@ -107,12 +109,12 @@ Use [`PROMO.md`](PROMO.md) when explaining the full Suede workflow publicly. It
 includes founder, designer, developer, agency, creator, and AI power-user
 positioning plus reusable copy for Suedify, Suede Workflow Skills, Suede
 Creator Skills, the optional MCP, install listings, social posts, DMs, email,
-SEO metadata, FAQ answers, objection handling, and safe claim boundaries.
+SEO/AEO/AI EO metadata, FAQ answers, objection handling, and safe claim boundaries.
 
 The ambassador rule: explain the outcome first. Suede gives agents a repeatable
-workflow for design, copywriting, SEO, Suedify site restyling, code review, QA,
-agent-team coordination, and optional MCP-assisted discovery. Keep local
-install details such as `@personal` inside technical setup sections.
+workflow for design, copywriting, SEO/AEO/AI EO, Suedify site restyling, code
+review, QA, agent-team coordination, and optional MCP-assisted discovery. Keep
+local install details such as `@personal` inside technical setup sections.
 
 Safety-oriented CLI flags:
 
@@ -127,7 +129,7 @@ Safety-oriented CLI flags:
 
 Suede skills can be installed from this public GitHub repo as plain Codex
 skills. Use the Suede Skills MCP when structured discovery, install guidance,
-SEO copy audit scaffolds, or QA checklists would help the agent.
+SEO/AEO/AI EO copy audit scaffolds, or QA checklists would help the agent.
 
 Public Codex skill installs:
 
@@ -222,7 +224,7 @@ MCP tools:
 Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 
 Install the public umbrella workflow when you want one skill to load the Suede
-design, copy, SEO, site polish, code review, QA, launch, install support, MCP
+design, copy, SEO/AEO/AI EO, site polish, code review, QA, launch, install support, MCP
 QA, ambassador explanation, claim-checking, agent-commerce, Suedify,
 progressive feedback, artist campaign, and creator utility workflow. The
 repository now ships **34 public skill folders**.
@@ -442,10 +444,10 @@ Project links:
 - GitHub repository: <https://github.com/JasonColapietro/suede-creator-skills>
 - GitHub Pages site: <https://jasoncolapietro.github.io/suede-creator-skills/>
 - Skill docs catalog: <https://jasoncolapietro.github.io/suede-creator-skills/skills/> - public index for every Suede Creator Skill and its install/resource links.
-- Ambassador guide source: [PROMO.md](PROMO.md) - full public explanation kit for Suede skills, MCP, Suedify, SEO audits, QA, social posts, emails, FAQ, and claim boundaries.
-- Copy bank page: <https://jasoncolapietro.github.io/suede-creator-skills/copy.html> - live GitHub, docs, CTA, SEO, FAQ, social, and safety copy for Suede Creator Skills.
+- Ambassador guide source: [PROMO.md](PROMO.md) - full public explanation kit for Suede skills, MCP, Suedify, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries.
+- Copy bank page: <https://jasoncolapietro.github.io/suede-creator-skills/copy.html> - live GitHub, docs, CTA, SEO/AEO/AI EO, FAQ, social, and safety copy for Suede Creator Skills.
 - Copy bank source: [COPY.md](COPY.md) - reusable public copy for repo metadata, skill pages, install surfaces, launch posts, and claim boundaries.
-- Public installs and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - GitHub skill install commands and Suede Skills MCP docs for skill discovery, SEO copy audits, install guidance, and QA checklists.
+- Public installs and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - GitHub skill install commands and Suede Skills MCP docs for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - MCP source: [mcp/](mcp/) - dependency-free stdio MCP server, catalog, and MCP README.
 - Suede Rights Passport docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
 - Music Release Metadata Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.

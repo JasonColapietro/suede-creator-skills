@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Copy"
-  short_description: "Write Suede copy and run SEO copy audits"
-  default_prompt: "Use $suede-copy to write or audit Suede website, GitHub, docs, SEO, CTA, and launch copy."
+  short_description: "Write Suede copy and run SEO/AEO/AI EO audits"
+  default_prompt: "Use $suede-copy to write or audit Suede website, GitHub, docs, SEO/AEO/AI EO, CTA, and launch copy."
 policy:
   allow_implicit_invocation: true

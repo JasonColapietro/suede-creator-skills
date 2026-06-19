@@ -78,7 +78,7 @@ function installMarkdown(data, surface = "all") {
   if (surface === "all" || surface === "mcp") {
     lines.push("");
     lines.push("## MCP option");
-    lines.push("Use the MCP when structured skill discovery, install options, SEO copy audits, or QA checklists materially help the task.");
+    lines.push("Use the MCP when structured skill discovery, install options, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
     for (const plugin of data.plugins) {
       lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
     }
@@ -95,25 +95,29 @@ function seoAuditTemplate(args = {}) {
   const target = boundedString(args.url || args.pageType, "the target page");
   const intent = boundedString(args.primaryIntent, "one clear search intent");
   return [
-    `# Suede SEO Copy Audit: ${target}`,
+    `# Suede SEO/AEO/AI EO Copy Audit: ${target}`,
     "",
     `Primary intent: ${intent}`,
+    "",
+    "SEO scope: includes AEO and AI EO for search snippets, answer engines, AI summaries, schema, sourceable claims, and citation-ready proof.",
     "",
     "## Crawl And Index Check",
     "- Confirm canonical URL, robots/indexability, sitemap presence, and internal links.",
     "- Flag redirects, duplicate URLs, missing titles, and missing descriptions.",
     "",
-    "## On-Page Copy Check",
+    "## On-Page Copy And Answer Check",
     "- One H1 that names the outcome.",
     "- Search-ready title under 60 characters when practical.",
     "- Meta description around 120-160 characters when practical.",
     "- H2/H3 structure matches actual page sections.",
     "- Durable Suede terms appear naturally, not stuffed.",
+    "- Answer-ready definitions and FAQ copy are visible, sourceable, and claim-safe.",
     "",
-    "## Structured Data Check",
+    "## Structured Data And AI EO Check",
     "- Match schema to visible content.",
     "- Validate JSON-LD syntax.",
     "- Use FAQPage only when the questions and answers are visible.",
+    "- Check whether AI summaries can cite the page without inventing partners, metrics, legal clearance, payouts, or private access.",
     "",
     "## Conversion And Trust Check",
     "- One primary CTA.",
@@ -122,7 +126,7 @@ function seoAuditTemplate(args = {}) {
     "",
     "## Output",
     "- Findings ranked HIGH, MEDIUM, LOW.",
-    "- Exact rewrites for title, meta, H1, subhead, CTA, and FAQ.",
+    "- Exact rewrites for title, meta, H1, subhead, CTA, FAQ, and answer-ready summary.",
     "- Verification commands or live URLs to check.",
     "- Copy score out of 50."
   ].join("\n");
@@ -144,8 +148,8 @@ function qaChecklist(args = {}) {
     "- Validate `.mcp.json` and server startup.",
     "- Exercise `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.",
     "",
-    "## SEO And Copy Lane",
-    "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, CTA copy, and claim boundaries.",
+    "## SEO/AEO/AI EO And Copy Lane",
+    "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, answer-ready copy, CTA copy, and claim boundaries.",
     "",
     "## Code And Security Lane",
     "- Check input validation, path handling, protocol errors, no secrets, no destructive operations, and safe failure behavior.",
@@ -203,8 +207,8 @@ const tools = [
   },
   {
     name: "suede_copy_seo_audit",
-    title: "Suede Copy SEO Audit",
-    description: "Create a Suede-specific SEO copy audit scaffold for a page, repo, or docs surface.",
+    title: "Suede Copy SEO/AEO/AI EO Audit",
+    description: "Create a Suede-specific SEO/AEO/AI EO copy audit scaffold for a page, repo, or docs surface.",
     inputSchema: {
       type: "object",
       properties: {
@@ -247,8 +251,8 @@ const resources = [
   {
     uri: "suede://copy-seo-audit",
     name: "copy-seo-audit",
-    title: "Suede SEO Copy Audit Template",
-    description: "Full SEO copy audit scaffold for Suede public pages, docs, repos, and skill pages.",
+    title: "Suede SEO/AEO/AI EO Copy Audit Template",
+    description: "Full SEO/AEO/AI EO copy audit scaffold for Suede public pages, docs, repos, and skill pages.",
     mimeType: "text/markdown"
   },
   {
@@ -263,8 +267,8 @@ const resources = [
 const prompts = [
   {
     name: "suede-copy-seo-audit",
-    title: "Run Suede SEO Copy Audit",
-    description: "Audit a Suede page, README, skill page, or docs surface for SEO and copy quality.",
+    title: "Run Suede SEO/AEO/AI EO Copy Audit",
+    description: "Audit a Suede page, README, skill page, or docs surface for SEO, AEO, AI EO, and copy quality.",
     arguments: [
       { name: "target", description: "URL, file, repo, or page to audit.", required: true },
       { name: "intent", description: "Primary search intent or reader action.", required: false }
@@ -356,13 +360,13 @@ function readResource(uri) {
 
 function getPrompt(name, args = {}) {
   if (name === "suede-copy-seo-audit") {
-    const skillRef = isSkillAvailable("suede-copy") ? "$suede-copy" : "the Suede SEO copy audit MCP template";
+    const skillRef = isSkillAvailable("suede-copy") ? "$suede-copy" : "the Suede SEO/AEO/AI EO copy audit MCP template";
     return {
-      description: "Audit Suede public copy for SEO, trust, specificity, schema, and conversion.",
+      description: "Audit Suede public copy for SEO, AEO, AI EO, trust, specificity, schema, and conversion.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${skillRef} to run a full SEO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent and reader action")}. Include technical SEO, on-page copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, and a copy score.`)
+          content: text(`Use ${skillRef} to run a full SEO/AEO/AI EO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent, answer intent, and reader action")}. Include technical SEO, answer-ready copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, and a copy score.`)
         }
       ]
     };
@@ -386,7 +390,7 @@ function getPrompt(name, args = {}) {
       messages: [
         {
           role: "user",
-          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/docs, public site links, browser QA, code/security, and live verification where applicable.`)
+          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, browser QA, code/security, and live verification where applicable.`)
         }
       ]
     };
@@ -404,7 +408,7 @@ function handleRequest(message) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: {}, resources: {}, prompts: {} },
       serverInfo: { name: "suede-skills-mcp", version: catalog.version },
-      instructions: "Use this MCP when Suede skill discovery, install guidance, SEO copy audits, or QA checklists will materially help the task."
+      instructions: "Use this MCP when Suede skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
     };
   }
   if (method === "ping") return {};

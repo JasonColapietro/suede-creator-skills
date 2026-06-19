@@ -4,10 +4,10 @@
 
 It is useful when an agent needs structured access to:
 
-- Suede skill discovery for Suedify, design, copywriting, SEO, QA, artist
+- Suede skill discovery for Suedify, design, copywriting, SEO/AEO/AI EO, QA, artist
   campaigns, and creator utilities;
 - public GitHub skill installs, local plugin notes, MCP, and skill-copy install options;
-- SEO copy audit scaffolds;
+- SEO/AEO/AI EO copy audit scaffolds;
 - multi-lane QA checklists for skill, MCP, docs, and public site changes.
 
 For public positioning, launch copy, ambassador language, Suedify messaging,
@@ -23,7 +23,7 @@ node mcp/suede-skills-mcp.mjs --profile all
 Profiles:
 
 - `all`: expose workflow, artist, and creator utility skill context.
-- `workflow`: expose Suedify, design, copywriting, SEO, QA, and public workflow context.
+- `workflow`: expose Suedify, design, copywriting, SEO/AEO/AI EO, QA, and public workflow context.
 - `artist`: expose artist campaign skill context.
 - `creator`: expose public artist and creator utility context.
 

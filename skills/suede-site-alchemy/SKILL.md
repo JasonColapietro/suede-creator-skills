@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: Transform websites, landing pages, campaign pages, and product microsites into polished Suede-grade conversion engines with aesthetic audit moves, sharper copy, CTA routing, SEO/AEO checks, mobile/browser QA, and clear scope boundaries. Use for improving existing pages, packaging Suede Sites-style website growth offers, or routing larger app requests into Suede's proprietary app-builder workflow.
+description: Transform websites, landing pages, campaign pages, and product microsites into polished Suede-grade conversion engines with aesthetic audit moves, sharper copy, CTA routing, SEO/AEO/AI EO checks, mobile/browser QA, and clear scope boundaries. Use for improving existing pages, packaging Suede Sites-style website growth offers, or routing larger app requests into Suede's proprietary app-builder workflow.
 ---
 
 # Suede Site Alchemy
@@ -20,8 +20,8 @@ visitor toward the next real action.
 - Keep Suede public copy on creator ownership, programmable IP, rights,
   provenance, registry-backed media, royalty routing, and agent commerce.
 - For Promo/Sites work, position Suede as a brand growth platform: creator
-  campaigns create demand; Suede Sites converts it with pages, SEO/AEO, visitor
-  signals, CRM follow-up, and campaign attribution.
+  campaigns create demand; Suede Sites converts it with pages, SEO/AEO/AI EO,
+  visitor signals, CRM follow-up, and campaign attribution.
 - Do not publish module pricing unless current product docs or source already
   authorize it.
 - "Sexy" means precise, visual, confident, and conversion-aware. Avoid vague
@@ -36,7 +36,7 @@ For a meaningful page, campaign, or conversion pass, define this before edits:
 - done signal: local preview, desktop/mobile screenshots, CTA/link sweep, build,
   deploy readback, or live URL verification;
 - constraints: claims, pricing, assets, and routes that are not approved;
-- lanes: copy, layout, SEO/AEO, assets, CTA plumbing, and QA. Run lanes in
+- lanes: copy, layout, SEO/AEO/AI EO, assets, CTA plumbing, and QA. Run lanes in
   parallel only when they do not write the same files.
 
 Use exact status words: inspected, changed locally, verified locally, deployed,
@@ -44,8 +44,8 @@ verified live, or blocked. Do not summarize a page as fixed until the stated
 done signal has been checked.
 
 Use `suede-agent-teams` when the page pass has multiple independent lanes, a
-campaign launch deadline, SEO/AEO plus implementation plus QA, or cross-surface
-CTA routing. Use `suede-code-review` when the work touches CTA plumbing, forms,
+campaign launch deadline, SEO/AEO/AI EO plus implementation plus QA, or
+cross-surface CTA routing. Use `suede-code-review` when the work touches CTA plumbing, forms,
 auth, payments, analytics, API routes, deployment config, shared components, or
 claims that must match product behavior. Skip the extra gates for pure copy or
 layout polish after live/source inspection and rendered QA.
@@ -57,7 +57,8 @@ For a major page or campaign, lock this before implementation:
 - buyer and one action the page must earn;
 - offer spine, proof stack, CTA ladder, and route targets;
 - visual system: type, color, spacing, imagery, motion, and mobile rhythm;
-- SEO/AEO target, title/meta angle, schema needs, and internal links;
+- SEO/AEO/AI EO target, title/meta angle, schema needs, answer-ready copy, and
+  internal links;
 - source-truth limits for pricing, claims, partners, metrics, and testimonials;
 - acceptance checks: desktop/mobile render, link sweep, copy fit, accessibility,
   build, deploy readback, and live verification when public.
@@ -74,7 +75,7 @@ Handle as Suede Site Alchemy:
 - Link-in-bio or creator profile pages.
 - Product microsites.
 - Static site builds.
-- SEO or AEO page upgrades.
+- SEO, AEO, or AI EO page upgrades.
 - Conversion fixes tied to an active campaign.
 - Suede Sites positioning, cross-sells, CTAs, and module menus.
 
@@ -165,8 +166,9 @@ Subheads:
 
 - "Suede ingests the page, learns the brand system, writes the next move, and
   routes visitors into the workflow that actually closes."
-- "Run creator campaigns, ship the landing page, tune SEO and AEO, identify
-  visitors, and hand warm intent to the team without waiting on a dev queue."
+- "Run creator campaigns, ship the landing page, tune SEO, AEO, and AI EO,
+  identify visitors, and hand warm intent to the team without waiting on a dev
+  queue."
 - "For focused pages, Suede Sites sharpens the surface. For real products,
   Suede's app-builder workflow takes the build the rest of the way."
 

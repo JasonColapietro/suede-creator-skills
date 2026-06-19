@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Suede design, copywriting, SEO, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
+  "summary": "Local MCP access to Suede design, copywriting, SEO/AEO/AI EO, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -14,12 +14,12 @@
     {
       "label": "Ambassador explainer",
       "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md",
-      "description": "Long-form Markdown guide for ambassadors explaining Suedify, public skills, MCP, SEO audits, QA, social posts, emails, FAQ, and claim boundaries."
+      "description": "Long-form Markdown guide for ambassadors explaining Suedify, public skills, MCP, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries."
     },
     {
       "label": "Copy bank",
       "url": "https://jasoncolapietro.github.io/suede-creator-skills/copy.html",
-      "description": "Public copy bank for GitHub, docs, CTA, SEO, FAQ, social, and safety copy."
+      "description": "Public copy bank for GitHub, docs, CTA, SEO/AEO/AI EO, FAQ, social, and safety copy."
     },
     {
       "label": "Public installs and MCP",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for design, copywriting, SEO, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
+      "description": "Public Suede workflow skills for design, copywriting, SEO/AEO/AI EO, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -111,7 +111,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for design, copywriting, SEO, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
+      "description": "Public umbrella Suede workflow for design, copywriting, SEO/AEO/AI EO, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
     },
     {
@@ -129,8 +129,8 @@
     {
       "name": "suede-copy",
       "area": "workflow",
-      "description": "Suede conversion copy, public docs copy, GitHub README copy, SEO snippets, CTAs, launch copy, line editing, and full SEO copy audit workflow.",
-      "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO copy audits."
+      "description": "Suede conversion copy, public docs copy, GitHub README copy, SEO/AEO/AI EO snippets, CTAs, launch copy, line editing, and full SEO/AEO/AI EO copy audit workflow.",
+      "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO/AEO/AI EO copy audits."
     },
     {
       "name": "suede-brand-voice",
@@ -141,13 +141,13 @@
     {
       "name": "suede-seo-audit",
       "area": "workflow",
-      "description": "Suede SEO, AEO, metadata, schema, internal-link, crawlability, search-intent, and public docs audit workflow.",
+      "description": "Suede SEO, AEO, AI EO, metadata, schema, internal-link, crawlability, search-intent, answer-intent, and public docs audit workflow.",
       "useWhen": "Use when auditing Suede pages, GitHub Pages sites, README files, skill docs, launch pages, copy banks, install pages, sitemap entries, or public surfaces."
     },
     {
       "name": "suede-site-alchemy",
       "area": "workflow",
-      "description": "Suede website, landing page, campaign page, SEO/AEO, CTA routing, conversion, and page polish workflow.",
+      "description": "Suede website, landing page, campaign page, SEO/AEO/AI EO, CTA routing, conversion, and page polish workflow.",
       "useWhen": "Use for improving pages, packaging Suede Sites-style website growth offers, or routing app requests into Suede app-builder workflow."
     },
     {
@@ -177,14 +177,14 @@
     {
       "name": "suede-mcp-qa",
       "area": "workflow",
-      "description": "Suede MCP server QA workflow for stdio JSON-RPC tools, resources, prompts, catalog output, install options, SEO audit scaffolds, QA checklists, protocol errors, and docs alignment.",
+      "description": "Suede MCP server QA workflow for stdio JSON-RPC tools, resources, prompts, catalog output, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, protocol errors, and docs alignment.",
       "useWhen": "Use when building, changing, testing, or explaining the Suede Skills MCP."
     },
     {
       "name": "suede-ambassador-explainer",
       "area": "workflow",
       "description": "Suede ambassador explanation workflow for public talk tracks, DMs, posts, emails, FAQs, onboarding copy, skill-pack explanations, install guidance, objection handling, and claim-safe routing.",
-      "useWhen": "Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, design, copywriting, SEO, artist campaign tools, creator utilities, or public install paths."
+      "useWhen": "Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, design, copywriting, SEO/AEO/AI EO, artist campaign tools, creator utilities, or public install paths."
     },
     {
       "name": "suede-public-claim-check",

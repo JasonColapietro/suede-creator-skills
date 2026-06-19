@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: Suede-owned conversion copy, website copy, GitHub README copy, skill documentation copy, SEO snippets, CTAs, taglines, launch copy, product descriptions, public repo copy, social proof language, and line-editing workflow. Use when writing or improving Suede website text, skill pages, public docs, GitHub Pages copy, README sections, repo descriptions, metadata, headings, subheads, buttons, FAQ answers, launch notes, or any public copy that needs to be clear, specific, persuasive, and free of generic AI phrasing.
+description: Suede-owned conversion copy, website copy, GitHub README copy, skill documentation copy, SEO/AEO/AI EO snippets, CTAs, taglines, launch copy, product descriptions, public repo copy, social proof language, and line-editing workflow. Use when writing or improving Suede website text, skill pages, public docs, GitHub Pages copy, README sections, repo descriptions, metadata, headings, subheads, buttons, FAQ answers, launch notes, or any public copy that needs to be clear, specific, persuasive, and free of generic AI phrasing.
 ---
 
 # Suede Copy
@@ -90,13 +90,16 @@ For a small section, use only the pieces that fit.
 
 ## SEO And GitHub Copy
 
-For GitHub repositories, skill docs, and Pages sites, include:
+For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella
+for search, AEO, and AI EO. Include:
 
 - a search-ready title under 60 characters when practical;
 - a meta description under 160 characters when practical;
 - repo description under GitHub's practical limit;
 - 8-20 topic keywords if the repo surface supports them;
 - a first paragraph that repeats the durable entity names naturally;
+- answer-ready definitions, FAQ copy, and proof links that AI summaries can
+  cite without inventing facts;
 - links to install docs, skill manifests, scripts, references, examples, live
   Pages, and source;
 - a safe public claim boundary.
@@ -108,6 +111,9 @@ Prefer durable keywords:
 - Music Release Metadata Linter
 - Suedify
 - Suede Copy
+- AI EO
+- AEO
+- answer engine optimization
 - Codex skills
 - Claude Code skills
 - SKILL.md
@@ -127,23 +133,24 @@ keyword where a human would notice.
 ## SEO Audit Mode
 
 When the user asks for an SEO audit, SEO rewrite, search optimization, metadata
-pass, AEO pass, page audit, or full audit, inspect the actual page, repo, or
-docs source before writing recommendations. If a live URL exists, verify the
-live page. If only files exist, inspect the source and rendered HTML when
-practical.
+pass, AEO pass, AI EO pass, answer-engine optimization, page audit, or full
+audit, inspect the actual page, repo, or docs source before writing
+recommendations. If a live URL exists, verify the live page. If only files
+exist, inspect the source and rendered HTML when practical.
 
 Run the audit in these lanes:
 
 1. **Technical access:** canonical URL, robots/indexability, sitemap entry,
    redirects, status code, crawl path, and duplicate URL risk.
-2. **Search intent:** one primary reader, one primary query/theme, one action
-   the page should earn, and any likely keyword cannibalization.
+2. **Search and answer intent:** one primary reader, one primary query/theme,
+   one AI-answer-ready definition, one action the page should earn, and any
+   likely keyword cannibalization.
 3. **Metadata:** title, meta description, Open Graph, Twitter card, image alt,
    author/publisher, and durable entity names.
 4. **Structure:** one H1, useful H2/H3 hierarchy, section order, FAQ fit,
    internal links, and descriptive anchor text.
-5. **Schema:** JSON-LD validity and whether each schema type matches visible
-   page content.
+5. **Schema:** JSON-LD validity, FAQ/source fit, and whether each schema type
+   matches visible page content.
 6. **Copy quality:** directness, proof, claim boundaries, CTA clarity, trust
    language, filler removal, and Suede vocabulary fit.
 7. **Conversion:** primary CTA, secondary CTA, proof stack, next-step friction,

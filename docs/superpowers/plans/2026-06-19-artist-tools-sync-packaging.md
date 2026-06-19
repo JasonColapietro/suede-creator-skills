@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add a design-forward Suede skill layer centered on Suedify, copywriting, SEO, QA, progressive feedback, and creative artist campaign tools, while keeping sync/licensing prep free of promo CTAs.
+**Goal:** Add a design-forward Suede skill layer centered on Suedify, copywriting, SEO/AEO/AI EO, QA, progressive feedback, and creative artist campaign tools, while keeping sync/licensing prep free of promo CTAs.
 
 **Architecture:** Keep the existing public skills repo structure. Add new `skills/<name>/SKILL.md` folders with `agents/openai.yaml`, update `mcp/catalog.json` as the source catalog, and refresh README, PROMO, COPY, and GitHub Pages HTML so public installs and CTAs match the new pack.
 
@@ -45,7 +45,7 @@
 - [x] Expand the creator plugin from 6 to 19 skills.
 - [x] Keep the umbrella install as the simplest public path.
 - [x] Update direct install examples to include the new artist tools.
-- [x] Reframe the public copy from rights-admin tooling to Suedify, design, copywriting, SEO, QA, and creative artist campaign tooling.
+- [x] Reframe the public copy from rights-admin tooling to Suedify, design, copywriting, SEO/AEO/AI EO, QA, and creative artist campaign tooling.
 - [x] Add sync packaging copy without a Suede CTA, placement promise, clearance claim, or outreach claim.
 
 ### Task 3: Update GitHub Pages Docs
