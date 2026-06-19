@@ -736,13 +736,25 @@
       }
 
       .stamp {
+        display: block;
         min-height: 138px;
         border: 2px solid oklch(0.96 0.018 62 / 0.18);
         border-radius: 8px;
         background:
           repeating-linear-gradient(145deg, oklch(0.96 0.018 62 / 0.07) 0 1px, transparent 1px 12px),
           oklch(0.18 0.04 28 / 0.78);
+        color: inherit;
         padding: 16px;
+        text-decoration: none;
+        transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+      }
+
+      .stamp:hover {
+        border-color: oklch(0.78 0.12 78 / 0.62);
+        background:
+          repeating-linear-gradient(145deg, oklch(0.96 0.018 62 / 0.08) 0 1px, transparent 1px 12px),
+          oklch(0.22 0.055 28 / 0.9);
+        transform: translateY(-2px);
       }
 
       .stamp strong {
@@ -1179,20 +1191,20 @@
             </picture>
           </div>
           <div class="stamp-grid" aria-label="Suede passport stamp locations">
-            <div class="stamp"><strong>Website</strong><span>Visit <code>suedeai.ai</code> and start the public creator journey.</span></div>
-            <div class="stamp"><strong>App</strong><span>Open <code>app.suedeai.ai</code> for creator tools and agent-ready surfaces.</span></div>
-            <div class="stamp"><strong>Discord</strong><span>Join the community at <code>discord.gg/suedeai</code>.</span></div>
-            <div class="stamp"><strong>X Follow</strong><span>Follow <code>@AISUEDE</code> for public announcements and drops.</span></div>
-            <div class="stamp"><strong>Telegram</strong><span>Visit <code>t.me/suedeai</code> as another public community stamp.</span></div>
-            <div class="stamp"><strong>GitHub</strong><span>Install, fork, star, or use the public skill pack.</span></div>
-            <div class="stamp"><strong>Suede Holder</strong><span>Record public holder context when the creator provides it.</span></div>
-            <div class="stamp"><strong>Signing Flow</strong><span>Connect the passport to Suede signing workflows.</span></div>
-            <div class="stamp"><strong>Lint</strong><span>Generate a release-readiness report.</span></div>
-            <div class="stamp"><strong>Passport</strong><span>Create a Suede transfer package.</span></div>
-            <div class="stamp"><strong>Registry</strong><span>Prepare a work for provenance review.</span></div>
-            <div class="stamp"><strong>Royalties</strong><span>Confirm splits for routing and payout readiness.</span></div>
-            <div class="stamp"><strong>Agent Commerce</strong><span>Make the work understandable to payable agents.</span></div>
-            <div class="stamp"><strong>Codex/Claude</strong><span>Install the skills into an agent workspace and run the passport flow.</span></div>
+            <a class="stamp" href="https://suedeai.ai"><strong>Website</strong><span>Visit <code>suedeai.ai</code> and start the public creator journey.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai"><strong>App</strong><span>Open <code>app.suedeai.ai</code> for creator tools and agent-ready surfaces.</span></a>
+            <a class="stamp" href="https://discord.gg/suedeai"><strong>Discord</strong><span>Join the community at <code>discord.gg/suedeai</code>.</span></a>
+            <a class="stamp" href="https://x.com/aisuede"><strong>X Follow</strong><span>Follow <code>@AISUEDE</code> for public announcements and drops.</span></a>
+            <a class="stamp" href="https://t.me/suedeai"><strong>Telegram</strong><span>Visit <code>t.me/suedeai</code> as another public community stamp.</span></a>
+            <a class="stamp" href="https://github.com/JasonColapietro/suede-creator-skills"><strong>GitHub</strong><span>Install, fork, star, or use the public skill pack.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai/vaults"><strong>Suede Holder</strong><span>Record public holder context when the creator provides it.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai/licenses"><strong>Signing Flow</strong><span>Connect the passport to Suede signing workflows.</span></a>
+            <a class="stamp" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter"><strong>Lint</strong><span>Generate a release-readiness report.</span></a>
+            <a class="stamp" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport"><strong>Passport</strong><span>Create a Suede transfer package.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai/registry"><strong>Registry</strong><span>Prepare a work for provenance review.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai/royalties"><strong>Royalties</strong><span>Confirm splits for routing and payout readiness.</span></a>
+            <a class="stamp" href="https://app.suedeai.ai/agent-commerce"><strong>Agent Commerce</strong><span>Make the work understandable to payable agents.</span></a>
+            <a class="stamp" href="#install"><strong>Codex/Claude</strong><span>Install the skills into an agent workspace and run the passport flow.</span></a>
           </div>
           <p class="participation-note">
             Participation language should stay careful: stamps are a future engagement signal
