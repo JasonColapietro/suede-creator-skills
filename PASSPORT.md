@@ -3,7 +3,7 @@
 A creator's portable proof of craft.
 
 The Suede Creator Passport is a single, Suede-native identity that travels with
-a creator across every Suede surface — the registry, the IP terminal, the
+a creator across every Suede surface: the registry, the IP terminal, the
 agentic commerce catalog, the social tier, and the rewards layer. It is owned
 by the creator, recognized by Suede, and legible to agents.
 
@@ -22,8 +22,8 @@ Not an OAuth bingo card.
 The Passport is a creator's accumulated, verifiable record of doing the work
 that matters on Suede: registering IP, declaring credits, completing rights
 intake, publishing releases, signing transfers, holding Suede tokens,
-participating in the registry community. It is **Suede-native** — composed of
-signals Suede already controls and verifies — so it cannot be cloned by a
+participating in the registry community. It is **Suede-native**: composed of
+signals Suede already controls and verifies, so it cannot be cloned by a
 sybil farm with a GitHub account and a Discord handle.
 
 Two purposes drive every Passport decision:
@@ -36,7 +36,7 @@ Two purposes drive every Passport decision:
    author handles, IP registry entries, and forum posts as the trust signal
    readers and buyers look for.
 
-It is not an access gate. The Passport is positive surface — something a
+It is not an access gate. The Passport is positive surface: something a
 creator earns, not a velvet rope.
 
 ---
@@ -57,7 +57,7 @@ provenance trail.
 ### `music-release-metadata-linter`
 
 Audits releases for the metadata, splits, contributor, and provenance fields
-the Passport expects. A clean lint report is itself a Passport signal — it
+the Passport expects. A clean lint report is itself a Passport signal: it
 proves a creator runs disciplined release process.
 
 ---
@@ -65,22 +65,22 @@ proves a creator runs disciplined release process.
 ## Stamps (forward-looking)
 
 Stampable participation lives on the landing page today as a brand surface.
-The actual stamping infrastructure — the registry of who has done what, the
-nightly snapshot, the on-chain attestation roots on Base — ships in a later
+The actual stamping infrastructure, the registry of who has done what, the
+nightly snapshot, and the on-chain attestation roots on Base, ships in a later
 phase. The skills here are designed so that when stamping comes online, every
 artifact they produce can be retroactively recognized.
 
 Anticipated stamp surface (subject to change):
 
-- **Apple linked**, **EVM wallet linked**, **Solana wallet linked** — basic
+- **Apple linked**, **EVM wallet linked**, **Solana wallet linked**: basic
   identity composition.
-- **Rig Card verified**, **Studio Fingerprint computed** — Suede-native music
+- **Rig Card verified**, **Studio Fingerprint computed**: Suede-native music
   identity primitives.
-- **IP registered on Base** — provenance and ownership.
-- **Rights Passport produced**, **Release Linter clean** — artifacts emitted
+- **IP registered on Base**: provenance and ownership.
+- **Rights Passport produced**, **Release Linter clean**: artifacts emitted
   by skills in this repo.
-- **Suede Holder** — token-gated participation.
-- **Forum standing** — durable community contribution.
+- **Suede Holder**: token-gated participation.
+- **Forum standing**: durable community contribution.
 
 The visual hierarchy is intentional: the most defensible stamps are the
 Suede-native music-identity ones (Rig Card, Fingerprint, IP Trail). Generic
@@ -106,7 +106,7 @@ produce the artifacts; the Passport recognizes them later.
 
 ## Aesthetic
 
-Institutional IP Terminal — Deep Ink `#050505`, Paper `#f5f1e8`, Registry
+Institutional IP Terminal: Deep Ink `#050505`, Paper `#f5f1e8`, Registry
 Cyan `#00b3c7`, Rights Red `#d4351c`, Hush `#1a1a1a`. Inter and IBM Plex
 Mono. The Passport is registry surface, not gamification. Stamps read as
 authoritative marks, not badges.
@@ -117,7 +117,7 @@ authoritative marks, not badges.
 
 - **Concept**: ratified.
 - **Surface (landing page, skills)**: shipped.
-- **Stamping infrastructure**: deferred — see project tracker.
-- **Reward allocation**: deferred — depends on future published rules and
+- **Stamping infrastructure**: deferred, see project tracker.
+- **Reward allocation**: deferred, depends on future published rules and
   stamping.
-- **On-chain attestation roots**: deferred — depends on stamping.
+- **On-chain attestation roots**: deferred, depends on stamping.
