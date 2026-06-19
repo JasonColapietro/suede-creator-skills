@@ -10,7 +10,7 @@
     >
     <meta
       name="keywords"
-      content="music skills, Codex skills, Claude skills, SKILL.md, music release metadata linter, Suede Rights Passport, creator rights, music metadata, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, Suede AI"
+      content="music skills, Codex skills, Claude skills, SKILL.md, music release metadata linter, Suede Rights Passport, creator rights, music metadata, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, Suede AI, Jason Colapietro books, Proof as Infrastructure, Stake Your Claim, The Signal Chain"
     >
     <meta name="author" content="Jason Colapietro">
     <meta name="publisher" content="Suede Labs AI">
@@ -136,6 +136,64 @@
               "agent commerce",
               "programmable IP"
             ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro",
+            "name": "Jason Colapietro",
+            "alternateName": "Johnny Suede",
+            "url": "https://suedeai.ai/founder",
+            "sameAs": [
+              "https://github.com/JasonColapietro",
+              "https://x.com/johnnysuede",
+              "https://guitar.solutions",
+              "https://www.amazon.com/author/johnnysuede"
+            ]
+          },
+          {
+            "@type": "Book",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-the-signal-chain",
+            "name": "The Signal Chain",
+            "url": "https://guitar.solutions",
+            "author": {
+              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+            }
+          },
+          {
+            "@type": "Book",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-the-guitar-without-a-number",
+            "name": "The Guitar Without a Number",
+            "url": "https://www.amazon.com/author/johnnysuede",
+            "author": {
+              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+            }
+          },
+          {
+            "@type": "Book",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-human-authenticity-layer",
+            "name": "Suede Labs: The Human Authenticity Layer",
+            "url": "https://www.amazon.com/dp/B0GD5FX6N6",
+            "author": {
+              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+            }
+          },
+          {
+            "@type": "Book",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-proof-as-infrastructure",
+            "name": "Proof as Infrastructure",
+            "url": "https://www.amazon.com/dp/B0GMB2VLXQ",
+            "author": {
+              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+            }
+          },
+          {
+            "@type": "Book",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-stake-your-claim",
+            "name": "Stake Your Claim",
+            "url": "https://www.amazon.com/dp/B0GRG8LGQQ",
+            "author": {
+              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+            }
           },
           {
             "@type": "FAQPage",
@@ -428,6 +486,7 @@
       .install-grid,
       .skill-grid,
       .use-grid,
+      .book-grid,
       .faq-grid,
       .stamp-grid {
         display: grid;
@@ -644,6 +703,36 @@
         color: var(--muted);
       }
 
+      .book-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 30px;
+      }
+
+      .book-card {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, oklch(0.78 0.12 78 / 0.13), transparent),
+          oklch(0.14 0.028 28 / 0.92);
+        padding: 18px;
+        text-decoration: none;
+      }
+
+      .book-card b {
+        display: block;
+        color: var(--cream);
+        font-size: 18px;
+        line-height: 1.12;
+      }
+
+      .book-card span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+      }
+
       .link-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         margin-top: 30px;
@@ -793,6 +882,7 @@
         .link-grid,
         .faq-grid,
         .flow,
+        .book-grid,
         .stamp-grid {
           grid-template-columns: 1fr;
         }
@@ -819,6 +909,7 @@
           <a href="#use-cases">Use cases</a>
           <a href="#stamps">Stamps</a>
           <a href="#install">Install</a>
+          <a href="#books">Books</a>
           <a href="#faq">FAQ</a>
           <a href="#links">Links</a>
         </nav>
@@ -1008,6 +1099,39 @@ mkdir -p .claude/skills
 cp -R ../suede-creator-skills/skills/suede-rights-passport .claude/skills/
 cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skills/</code></pre>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="books">
+        <div class="shell">
+          <span class="section-kicker">Published author</span>
+          <h2>Books by Jason Colapietro.</h2>
+          <p class="section-lead">
+            The public creator profile lists five book surfaces across guitar, AI ownership,
+            proof systems, and creator rights infrastructure.
+          </p>
+          <div class="book-grid" aria-label="Books by Jason Colapietro">
+            <a class="book-card" href="https://guitar.solutions">
+              <b>The Signal Chain</b>
+              <span>Electric-guitar tone history, memoir, method, and workbook editions.</span>
+            </a>
+            <a class="book-card" href="https://www.amazon.com/author/johnnysuede">
+              <b>The Guitar Without a Number</b>
+              <span>Self-taught guitar method with theory, tone, songbooks, and music IP rights.</span>
+            </a>
+            <a class="book-card" href="https://www.amazon.com/dp/B0GD5FX6N6">
+              <b>Suede Labs: The Human Authenticity Layer</b>
+              <span>Ownership, origin, and AI in the creative map.</span>
+            </a>
+            <a class="book-card" href="https://www.amazon.com/dp/B0GMB2VLXQ">
+              <b>Proof as Infrastructure</b>
+              <span>Durable systems built around proof instead of trust assumptions.</span>
+            </a>
+            <a class="book-card" href="https://www.amazon.com/dp/B0GRG8LGQQ">
+              <b>Stake Your Claim</b>
+              <span>Creator ownership, authorship, provenance, agents, and durable rights.</span>
+            </a>
           </div>
         </div>
       </section>
