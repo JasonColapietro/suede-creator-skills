@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Public Claim Check"
+  short_description: "Check public Suede claims before sharing"
+  default_prompt: "Use $suede-public-claim-check to review this public Suede copy for unsupported claims, risky language, and safer alternatives."

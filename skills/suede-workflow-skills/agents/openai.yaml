@@ -1,3 +1,6 @@
-display_name: Suede Workflow Skills
-short_description: Public umbrella workflow for Suedify, design, copy, SEO, code review, QA, and agent-team delivery.
-default_prompt: Use suede-workflow-skills to improve this site, copy, docs, code, or launch surface. Use MCP only if it helps.
+interface:
+  display_name: "Suede Workflow Skills"
+  short_description: "Umbrella workflow across 21 public Suede skills"
+  default_prompt: "Use $suede-workflow-skills to improve this site, copy, docs, code, creator-rights workflow, or launch surface. Use MCP only if it helps."
+policy:
+  allow_implicit_invocation: true

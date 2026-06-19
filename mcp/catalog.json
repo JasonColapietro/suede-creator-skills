@@ -31,30 +31,42 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for design, copy, code review, agent team orchestration, site polish, and reference-site restyling.",
+      "description": "Public Suede workflow skills for design, copy, SEO, code review, agent teams, launch packaging, install support, claim checks, site polish, and reference-site restyling.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
       "skills": [
         "suede-workflow-skills",
+        "suedify",
         "suede-design",
         "suede-copy",
+        "suede-brand-voice",
+        "suede-seo-audit",
+        "suede-site-alchemy",
         "suede-code-review",
         "suede-agent-teams",
-        "suede-site-alchemy",
-        "suedify"
+        "suede-launch-packaging",
+        "suede-install-support",
+        "suede-mcp-qa",
+        "suede-ambassador-explainer",
+        "suede-public-claim-check",
+        "suede-agent-commerce"
       ]
     },
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public creator skills for music release linting and Suede Rights Passport transfer packages.",
-      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter skills/suede-rights-passport",
+      "description": "Public creator skills for music release linting, rights passports, rights audits, provenance maps, licensing prep, and royalty routing briefs.",
+      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter skills/suede-rights-passport skills/suede-rights-audit skills/suede-provenance-map skills/suede-licensing-prep skills/suede-royalty-routing-brief",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
       "skills": [
         "music-release-metadata-linter",
-        "suede-rights-passport"
+        "suede-rights-passport",
+        "suede-rights-audit",
+        "suede-provenance-map",
+        "suede-licensing-prep",
+        "suede-royalty-routing-brief"
       ]
     }
   ],
@@ -62,8 +74,14 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for Suedify, design, copy, SEO audits, site polish, code review, and agent-team QA.",
+      "description": "Public umbrella Suede workflow for Suedify, design, copy, SEO audits, site polish, code review, agent-team QA, install support, launch packaging, and claim checks.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
+    },
+    {
+      "name": "suedify",
+      "area": "workflow",
+      "description": "Two-URL website restyling workflow that studies a reference URL and transforms a target URL with Suede-safe design fidelity.",
+      "useWhen": "Use when asked to mimic, restyle, or make one website feel like another reference site while preserving brand and legal safety."
     },
     {
       "name": "suede-design",
@@ -78,6 +96,24 @@
       "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO copy audits."
     },
     {
+      "name": "suede-brand-voice",
+      "area": "workflow",
+      "description": "Suede brand voice workflow for public copy, README prose, docs, CTAs, FAQs, social copy, launch language, skill descriptions, and ambassador text.",
+      "useWhen": "Use when copy should sound specific, creator-owned, rights-aware, agent-commerce-aware, polished, and free of generic AI phrasing."
+    },
+    {
+      "name": "suede-seo-audit",
+      "area": "workflow",
+      "description": "Suede SEO, AEO, metadata, schema, internal-link, crawlability, search-intent, and public docs audit workflow.",
+      "useWhen": "Use when auditing Suede pages, GitHub Pages sites, README files, skill docs, launch pages, copy banks, install pages, sitemap entries, or public surfaces."
+    },
+    {
+      "name": "suede-site-alchemy",
+      "area": "workflow",
+      "description": "Suede website, landing page, campaign page, SEO/AEO, CTA routing, conversion, and page polish workflow.",
+      "useWhen": "Use for improving pages, packaging Suede Sites-style website growth offers, or routing app requests into Suede app-builder workflow."
+    },
+    {
       "name": "suede-code-review",
       "area": "workflow",
       "description": "Suede full-context code review, PR review, release gate, security sweep, architecture critique, regression hunt, and fix brief workflow.",
@@ -90,16 +126,40 @@
       "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from parallel lanes."
     },
     {
-      "name": "suede-site-alchemy",
+      "name": "suede-launch-packaging",
       "area": "workflow",
-      "description": "Suede website, landing page, campaign page, SEO/AEO, CTA routing, conversion, and page polish workflow.",
-      "useWhen": "Use for improving pages, packaging Suede Sites-style website growth offers, or routing app requests into Suede's app-builder workflow."
+      "description": "Suede launch packaging workflow for public releases, GitHub Pages updates, README launches, skill-pack releases, docs launches, social/email copy, proof links, install commands, QA, and handoff notes.",
+      "useWhen": "Use when preparing a Suede skill, repo, site, MCP server, feature, or public docs update to be shared."
     },
     {
-      "name": "suedify",
+      "name": "suede-install-support",
       "area": "workflow",
-      "description": "Two-URL website restyling workflow that studies a reference URL and transforms a target URL with Suede-safe design fidelity.",
-      "useWhen": "Use when asked to mimic, restyle, or make one website feel like another reference site while preserving brand and legal safety."
+      "description": "Suede public install support for Codex skills, Claude skills, GitHub skill folders, MCP setup, local plugin notes, installer command QA, and ambassador-safe install instructions.",
+      "useWhen": "Use when install commands fail, public users cannot add a skill, @personal appears in public copy, or docs need a simpler install path."
+    },
+    {
+      "name": "suede-mcp-qa",
+      "area": "workflow",
+      "description": "Suede MCP server QA workflow for stdio JSON-RPC tools, resources, prompts, catalog output, install options, SEO audit scaffolds, QA checklists, protocol errors, and docs alignment.",
+      "useWhen": "Use when building, changing, testing, or explaining the Suede Skills MCP."
+    },
+    {
+      "name": "suede-ambassador-explainer",
+      "area": "workflow",
+      "description": "Suede ambassador explanation workflow for public talk tracks, DMs, posts, emails, FAQs, onboarding copy, skill-pack explanations, install guidance, objection handling, and claim-safe routing.",
+      "useWhen": "Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, creator-rights tooling, or public install paths."
+    },
+    {
+      "name": "suede-public-claim-check",
+      "area": "workflow",
+      "description": "Suede public claim check workflow for copy, docs, READMEs, launch pages, skill descriptions, ambassador language, social posts, emails, metadata, and MCP output.",
+      "useWhen": "Use when public wording may imply unsupported traction, legal clearance, payouts, registry writes, private access, guaranteed outcomes, or misleading install availability."
+    },
+    {
+      "name": "suede-agent-commerce",
+      "area": "workflow",
+      "description": "Suede agent commerce preparation workflow for making creative works, skill packs, docs, rights packages, licensing notes, install commands, and public metadata readable to agents.",
+      "useWhen": "Use when a Suede asset should be easier for AI agents to inspect, route, license, recommend, transact around, or QA safely."
     },
     {
       "name": "music-release-metadata-linter",
@@ -112,6 +172,30 @@
       "area": "creator",
       "description": "Prepare creator folders for Suede intake with provenance, rights, credits, splits, licenses, media optimization notes, and missing-info reports.",
       "useWhen": "Use when packaging a project into a Suede-ready transfer package."
+    },
+    {
+      "name": "suede-rights-audit",
+      "area": "creator",
+      "description": "Suede creator-rights audit workflow for ownership claims, contributors, credits, royalty splits, sample status, license notes, release history, public URLs, metadata gaps, and provenance gaps.",
+      "useWhen": "Use before rights passporting, licensing prep, registry readiness, royalty routing, or Suede creator intake."
+    },
+    {
+      "name": "suede-provenance-map",
+      "area": "creator",
+      "description": "Suede provenance mapping workflow for source files, stems, masters, artwork, lyrics, documents, metadata, public URLs, hashes, evidence trails, unknown origins, and review notes.",
+      "useWhen": "Use when mapping where a creative work came from before rights passporting, licensing review, registry prep, or agent commerce."
+    },
+    {
+      "name": "suede-licensing-prep",
+      "area": "creator",
+      "description": "Suede licensing preparation workflow for music, media, rights notes, sample status, contributor approvals, public URLs, sync/licensing readiness, restrictions, clearance gaps, and safe outreach materials.",
+      "useWhen": "Use when a creator project needs to be organized for licensing discussion, sync review, brand use, or partner review without claiming clearance."
+    },
+    {
+      "name": "suede-royalty-routing-brief",
+      "area": "creator",
+      "description": "Suede royalty routing brief workflow for split readiness, contributor payment roles, royalty destinations, payout caveats, missing confirmations, data needed for routing, and public-safe royalty language.",
+      "useWhen": "Use when preparing creator projects for royalty routing discussion, intake review, or agent-readable rights packaging."
     }
   ],
   "mcp": {

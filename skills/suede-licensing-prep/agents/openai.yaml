@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Licensing Prep"
+  short_description: "Prepare creator materials for licensing"
+  default_prompt: "Use $suede-licensing-prep to organize this project for licensing review, claim boundaries, missing rights facts, and next steps."

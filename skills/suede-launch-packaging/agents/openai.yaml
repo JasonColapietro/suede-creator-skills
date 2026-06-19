@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Launch Packaging"
+  short_description: "Package Suede launches for public release"
+  default_prompt: "Use $suede-launch-packaging to prepare this Suede launch for public docs, links, proof, copy, QA, and handoff."

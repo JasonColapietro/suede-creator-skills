@@ -22,10 +22,10 @@ commerce.
 ### Full description
 
 Suede Creator Skills is a public skill pack for music creators, labels,
-managers, and developers. It includes the Music Release Metadata Linter and
-Suede Rights Passport, two offline-first skills that inspect local folders,
-flag missing metadata, organize rights evidence, and create Suede-ready
-transfer packages without uploading private files.
+managers, and developers. It ships 21 public `SKILL.md` folders: one umbrella
+workflow, design, copy, SEO, QA, install support, ambassador, and launch lanes,
+plus creator-rights skills for release metadata, rights passports, provenance,
+licensing prep, royalty routing briefs, and agent commerce.
 
 ## GitHub Pages Copy
 
@@ -44,9 +44,10 @@ Turn music folders into rights-ready creator passports.
 
 ### Subhead
 
-Install two public Suede skills that audit release metadata, organize rights
-evidence, document provenance, and prepare a transfer package before licensing,
-registry review, royalty routing, or agent commerce.
+Install a 21-skill Suede pack that audits release metadata, organizes rights
+evidence, documents provenance, improves public copy, checks install paths, and
+prepares creator work for licensing, registry review, royalty routing, or agent
+commerce.
 
 ### Primary CTA
 
@@ -261,18 +262,19 @@ review.
 
 ### Short post
 
-Suede Creator Skills are live: two public agent skills for music release
-metadata, rights evidence, provenance, splits, and Suede-ready transfer
-packages.
+Suede Creator Skills are live: 21 public agent skills for music release
+metadata, rights evidence, provenance, splits, SEO, install support, QA, launch
+packaging, and Suede-ready transfer packages.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
 ### Builder post
 
 I published Suede Creator Skills, a public `SKILL.md` pack for Codex and Claude
-Code. It includes a music release metadata linter and a rights passport package
-builder. Both run offline, write local reports, and keep private files off the
-network.
+Code. It includes an umbrella workflow plus focused skills for release
+metadata, rights passports, provenance, copy, SEO, install support, QA, launch
+packaging, royalty routing briefs, and agent commerce. The creator-rights tools
+run offline, write local reports, and keep private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills
 

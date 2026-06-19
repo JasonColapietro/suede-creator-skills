@@ -2,11 +2,15 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public skill pack for AI coding agents and
-creator workflows. It turns a music release folder into two concrete outputs:
-a release-readiness lint report and a Suede Rights Passport transfer package.
-Use it to make music, audio, video, and media projects release-ready,
-rights-aware, provenance-ready, and easier to prepare for Suede optimization.
+**Suede Creator Skills** is a public 21-skill pack for AI coding agents and
+creator workflows. It includes one umbrella workflow, design and copy lanes,
+SEO audits, install support, MCP QA, launch packaging, ambassador explainers,
+claim checks, agent-commerce prep, and creator-rights tools for music, audio,
+video, and media projects.
+
+The creator-rights lane turns a music release folder into concrete outputs:
+a release-readiness lint report, provenance map, rights audit, licensing prep
+notes, royalty routing brief, and Suede Rights Passport transfer package.
 
 The public page presents the workflow as a Suede Creator Passport: website
 visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
@@ -93,7 +97,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Install individual workflow skills when you want direct triggers:
+Install individual workflow and operations skills when you want direct triggers:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -101,9 +105,17 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suedify \
   skills/suede-design \
   skills/suede-copy \
+  skills/suede-brand-voice \
+  skills/suede-seo-audit \
   skills/suede-site-alchemy \
   skills/suede-code-review \
-  skills/suede-agent-teams
+  skills/suede-agent-teams \
+  skills/suede-launch-packaging \
+  skills/suede-install-support \
+  skills/suede-mcp-qa \
+  skills/suede-ambassador-explainer \
+  skills/suede-public-claim-check \
+  skills/suede-agent-commerce
 ```
 
 Install creator workflow skills:
@@ -112,7 +124,11 @@ Install creator workflow skills:
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/music-release-metadata-linter \
-  skills/suede-rights-passport
+  skills/suede-rights-passport \
+  skills/suede-rights-audit \
+  skills/suede-provenance-map \
+  skills/suede-licensing-prep \
+  skills/suede-royalty-routing-brief
 ```
 
 Restart Codex after installing new skills.
@@ -152,8 +168,10 @@ MCP tools:
 
 Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 
-Install the public umbrella workflow when you want one skill to load Suedify,
-design, copy, SEO audits, site polish, code review, and multi-lane QA guidance.
+Install the public umbrella workflow when you want one skill to load the Suede
+design, copy, SEO, site polish, code review, QA, launch, install support, MCP
+QA, ambassador explanation, claim-checking, agent-commerce, and creator-rights
+workflow. The repository now ships **21 public skill folders**.
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -161,14 +179,31 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual public workflow skills:
+Individual public workflow and operations skills:
 
 - [`skills/suedify`](skills/suedify)
 - [`skills/suede-design`](skills/suede-design)
 - [`skills/suede-copy`](skills/suede-copy)
+- [`skills/suede-brand-voice`](skills/suede-brand-voice)
+- [`skills/suede-seo-audit`](skills/suede-seo-audit)
 - [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-code-review`](skills/suede-code-review)
 - [`skills/suede-agent-teams`](skills/suede-agent-teams)
+- [`skills/suede-launch-packaging`](skills/suede-launch-packaging)
+- [`skills/suede-install-support`](skills/suede-install-support)
+- [`skills/suede-mcp-qa`](skills/suede-mcp-qa)
+- [`skills/suede-ambassador-explainer`](skills/suede-ambassador-explainer)
+- [`skills/suede-public-claim-check`](skills/suede-public-claim-check)
+- [`skills/suede-agent-commerce`](skills/suede-agent-commerce)
+
+Creator-rights support skills:
+
+- [`skills/music-release-metadata-linter`](skills/music-release-metadata-linter)
+- [`skills/suede-rights-passport`](skills/suede-rights-passport)
+- [`skills/suede-rights-audit`](skills/suede-rights-audit)
+- [`skills/suede-provenance-map`](skills/suede-provenance-map)
+- [`skills/suede-licensing-prep`](skills/suede-licensing-prep)
+- [`skills/suede-royalty-routing-brief`](skills/suede-royalty-routing-brief)
 
 ### Suede Rights Passport
 

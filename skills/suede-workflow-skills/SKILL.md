@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for Suede design, copy, SEO audits, site restyling, code review, agent-team QA, plugin docs, and public launch packaging. Use when a user asks to load the full Suede workflow pack, use Suedify, improve a website, write Suede copy, audit SEO, run design QA, review code, prepare public docs, or coordinate multiple Suede work lanes.
+description: Public umbrella workflow for Suede design, copy, SEO audits, site restyling, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, creator-rights review, provenance, licensing prep, royalty routing briefs, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, use Suedify, improve a website, write Suede copy, audit SEO, run design QA, review code, prepare public docs, package a creator-rights workflow, or coordinate multiple Suede work lanes.
 ---
 
 # Suede Workflow Skills
@@ -15,6 +15,10 @@ This skill is the public entry point for:
   polished, responsive, and Suede-native.
 - **Suede Copy:** write direct public copy, docs, SEO metadata, CTAs, launch
   copy, FAQ answers, and claim boundaries.
+- **Suede Brand Voice:** keep public copy specific, creator-owned,
+  rights-aware, and free of generic AI phrasing.
+- **Suede SEO Audit:** check metadata, schema, search intent, internal links,
+  sitemap fit, and discoverability.
 - **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
   conversion surface.
 - **Suede Code Review:** review changes for real bugs, regressions, security
@@ -22,6 +26,21 @@ This skill is the public entry point for:
 - **Suede Agent Teams:** split important work into clear lanes for scout,
   planner, builder, design reviewer, code reviewer, release verifier, and
   handoff writer.
+- **Suede Launch Packaging:** prepare public releases, proof links, install
+  commands, QA, and handoff notes.
+- **Suede Install Support:** fix public GitHub skill installs, local plugin
+  notes, and ambassador-safe setup copy.
+- **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
+  output, install options, and docs alignment.
+- **Suede Ambassador Explainer:** write public talk tracks, DMs, emails, FAQs,
+  onboarding copy, and objection handling.
+- **Suede Public Claim Check:** remove unsupported public claims around rights,
+  payouts, registry writes, private access, traction, and install availability.
+- **Suede Agent Commerce:** make creative works, docs, skill packs, and rights
+  packages readable to agents.
+- **Creator-rights lanes:** use the creator skills for release linting, rights
+  passporting, rights audits, provenance maps, licensing prep, and royalty
+  routing briefs.
 
 If the individual public skills are also installed, use them directly when
 their names match the task:
@@ -29,9 +48,23 @@ their names match the task:
 - `suedify`
 - `suede-design`
 - `suede-copy`
+- `suede-brand-voice`
+- `suede-seo-audit`
 - `suede-site-alchemy`
 - `suede-code-review`
 - `suede-agent-teams`
+- `suede-launch-packaging`
+- `suede-install-support`
+- `suede-mcp-qa`
+- `suede-ambassador-explainer`
+- `suede-public-claim-check`
+- `suede-agent-commerce`
+- `music-release-metadata-linter`
+- `suede-rights-passport`
+- `suede-rights-audit`
+- `suede-provenance-map`
+- `suede-licensing-prep`
+- `suede-royalty-routing-brief`
 
 If only this umbrella skill is installed, follow the condensed workflow below.
 
@@ -218,6 +251,27 @@ Done Signal:
 Ship Gate:
 ```
 
+## Specialized Lane Router
+
+When the task names a narrower Suede lane, route directly:
+
+- Public copy or tone: `suede-copy`, `suede-brand-voice`,
+  `suede-public-claim-check`.
+- Search/discovery: `suede-seo-audit`.
+- Launch or public packaging: `suede-launch-packaging`.
+- Install confusion: `suede-install-support`.
+- MCP changes: `suede-mcp-qa`.
+- Ambassador language: `suede-ambassador-explainer`.
+- Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
+  `music-release-metadata-linter`.
+- Provenance: `suede-provenance-map`.
+- Licensing: `suede-licensing-prep`.
+- Royalty routing: `suede-royalty-routing-brief`.
+- Agent-readable commerce: `suede-agent-commerce`.
+
+Use the umbrella workflow when the user wants the whole Suede stack or when the
+task crosses several lanes.
+
 Useful lanes:
 
 - Scout: repo, docs, live state, dirty files, and blast radius.
@@ -238,17 +292,31 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Install the individual public workflow skills when direct triggering matters:
+Install individual public skills when direct triggering matters:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suedify \
-  --path skills/suede-design \
-  --path skills/suede-copy \
-  --path skills/suede-site-alchemy \
-  --path skills/suede-code-review \
-  --path skills/suede-agent-teams
+  skills/suede-design \
+  skills/suede-copy \
+  skills/suede-brand-voice \
+  skills/suede-seo-audit \
+  skills/suede-site-alchemy \
+  skills/suede-code-review \
+  skills/suede-agent-teams \
+  skills/suede-launch-packaging \
+  skills/suede-install-support \
+  skills/suede-mcp-qa \
+  skills/suede-ambassador-explainer \
+  skills/suede-public-claim-check \
+  skills/suede-agent-commerce \
+  skills/music-release-metadata-linter \
+  skills/suede-rights-passport \
+  skills/suede-rights-audit \
+  skills/suede-provenance-map \
+  skills/suede-licensing-prep \
+  skills/suede-royalty-routing-brief
 ```
 
 Restart Codex after installing new skills.

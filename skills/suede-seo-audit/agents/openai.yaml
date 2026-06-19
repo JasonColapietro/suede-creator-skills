@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede SEO Audit"
+  short_description: "Audit Suede pages for search and trust"
+  default_prompt: "Use $suede-seo-audit to audit this Suede page for search intent, metadata, structure, trust, and verification."

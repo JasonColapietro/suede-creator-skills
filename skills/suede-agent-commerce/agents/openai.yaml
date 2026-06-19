@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Agent Commerce"
+  short_description: "Prepare works for agent-readable commerce"
+  default_prompt: "Use $suede-agent-commerce to make this creative work easier for agents to inspect, route, license, or transact around safely."

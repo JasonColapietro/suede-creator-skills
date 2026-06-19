@@ -148,7 +148,7 @@
     <main class="shell">
       <div class="eyebrow">Public installs and MCP</div>
       <h1>Install public Suede skills from GitHub. Use MCP when it helps.</h1>
-      <p class="lead">Suede skills install from this public repo as standard Codex skill folders. The optional MCP gives agents structured access to the skill catalog, install options, SEO copy audit scaffolds, and multi-lane QA checklists.</p>
+      <p class="lead">Suede ships 21 public skill folders from this repo. Install the umbrella workflow for normal use, or install direct skills when you want narrow triggers. The optional MCP gives agents structured access to the skill catalog, install options, SEO copy audit scaffolds, and multi-lane QA checklists.</p>
 
       <section class="panel">
         <h2>Ambassador explanation</h2>
@@ -158,7 +158,7 @@
       <section class="grid">
         <article class="card">
           <h2>Public Suede Workflow Skills</h2>
-          <p>Design, copy, review, agent teams, site alchemy, and two-URL restyling for public Suede work. This installs the public umbrella skill from GitHub.</p>
+          <p>Design, copy, SEO, review, agent teams, site alchemy, launch packaging, install support, claim checks, creator-rights routing, and two-URL restyling. This installs the public umbrella skill from GitHub.</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-workflow-skills</code></pre>
@@ -166,11 +166,15 @@
         </article>
         <article class="card">
           <h2>Public Suede Creator Skills</h2>
-          <p>Music release metadata linting and Suede Rights Passport transfer packages for creator folders. These install directly from the public repo.</p>
+          <p>Music release metadata linting, Suede Rights Passport transfer packages, rights audits, provenance maps, licensing prep, and royalty routing briefs. These install directly from the public repo.</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/music-release-metadata-linter \
-  skills/suede-rights-passport</code></pre>
+  skills/suede-rights-passport \
+  skills/suede-rights-audit \
+  skills/suede-provenance-map \
+  skills/suede-licensing-prep \
+  skills/suede-royalty-routing-brief</code></pre>
           <p>Optional local MCP server: <code>suede_creator_mcp</code></p>
         </article>
       </section>
