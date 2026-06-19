@@ -9,6 +9,10 @@ It is useful when an agent needs structured access to:
 - SEO copy audit scaffolds;
 - multi-lane QA checklists for plugin, MCP, docs, and public site changes.
 
+For public positioning, launch copy, Suedify messaging, MCP explanation,
+social posts, emails, FAQ answers, and claim boundaries, use
+[`PROMO.md`](../PROMO.md).
+
 Run it directly:
 
 ```bash

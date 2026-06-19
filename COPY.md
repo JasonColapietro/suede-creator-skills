@@ -93,6 +93,40 @@ The MCP returns catalog, install, audit, and QA context. It does not upload
 files, clear rights, write to a registry, distribute music, approve payouts, or
 make public claims on its own.
 
+## Full Promo Pack Copy
+
+Canonical source: [`PROMO.md`](PROMO.md)
+
+### Core pitch
+
+Suede gives AI agents a reusable product workflow for design, copy, SEO, code
+review, QA, plugin packaging, MCP-assisted discovery, and creator-rights
+documentation.
+
+### Best overall pitch
+
+Suede is the workflow layer for AI agents that need to ship better public
+product work. It packages design direction, copy, SEO, code review, QA,
+Suedify, creator-rights documentation, plugins, and optional MCP support into
+one reusable Suede system.
+
+### Suedify pitch
+
+Give the agent a reference URL and a target URL. Suedify studies layout,
+hierarchy, spacing, color, interaction cues, and content rhythm, then pushes
+the target toward the reference with Suede design, copy, SEO, and QA checks.
+
+### Progressive updating note
+
+When the agent does something you like, name what worked. When it misses, name
+the exact correction. The next pass should use that feedback as working
+context.
+
+### Local install note
+
+The `@personal` suffix is a local Codex marketplace namespace. It is not a
+brand term and should not lead public promo copy.
+
 ## Skill Docs Catalog Copy
 
 ### Title

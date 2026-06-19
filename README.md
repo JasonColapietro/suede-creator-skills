@@ -28,6 +28,7 @@ become stamps, and what intentionally ships later — see
 - [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/)
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
+- [Suede Full Promo Pack](PROMO.md) - long-form pitch kit for founders, builders, agencies, creators, AI power users, Suedify, MCP, plugins, social posts, emails, SEO metadata, FAQ, and claim boundaries.
 - [Suede Creator Skills copy bank](COPY.md) - public copy for GitHub descriptions, docs pages, CTAs, SEO snippets, FAQs, social posts, and safety language.
 - [Copy bank page](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) - live copy bank for sharing, pitching, and documentation work.
 - [Plugins and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - Codex plugin install options plus the Suede Skills MCP server for skill discovery, SEO copy audits, install guidance, and QA checklists.
@@ -55,6 +56,19 @@ python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
 
 Both scripts skip hidden files, secret-like files, dependency folders, build
 outputs, and unrecognized file types by default.
+
+## Promo Pack
+
+Use [`PROMO.md`](PROMO.md) when pitching the full Suede workflow publicly. It
+includes founder, designer, developer, agency, creator, and AI power-user
+positioning plus reusable copy for Suedify, Suede Workflow Skills, Suede
+Creator Skills, the optional MCP, plugin listings, social posts, DMs, email,
+SEO metadata, FAQ answers, objection handling, and safe claim boundaries.
+
+The headline rule: pitch the outcome first. Suede gives agents a repeatable
+workflow for design, copy, SEO, code review, QA, creator-rights packaging, and
+optional MCP-assisted discovery. Keep local install details such as
+`@personal` inside technical setup sections.
 
 Safety-oriented CLI flags:
 
@@ -274,6 +288,7 @@ Project links:
 - GitHub repository: <https://github.com/JasonColapietro/suede-creator-skills>
 - GitHub Pages site: <https://jasoncolapietro.github.io/suede-creator-skills/>
 - Skill docs catalog: <https://jasoncolapietro.github.io/suede-creator-skills/skills/> - public index for every Suede Creator Skill and its install/resource links.
+- Promo kit source: [PROMO.md](PROMO.md) - full public pitch kit for Suede skills, plugins, MCP, Suedify, SEO audits, QA, social posts, emails, FAQ, and claim boundaries.
 - Copy bank page: <https://jasoncolapietro.github.io/suede-creator-skills/copy.html> - live GitHub, docs, CTA, SEO, FAQ, social, and safety copy for Suede Creator Skills.
 - Copy bank source: [COPY.md](COPY.md) - reusable public copy for repo metadata, skill pages, install surfaces, launch posts, and claim boundaries.
 - Plugins and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - Codex plugin install options and Suede Skills MCP docs for skill discovery, SEO copy audits, install guidance, and QA checklists.

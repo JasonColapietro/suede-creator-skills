@@ -5,6 +5,28 @@
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to Suede plugin, skill, copy, SEO, and QA context.",
+  "publicLinks": [
+    {
+      "label": "GitHub Pages site",
+      "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
+      "description": "Public landing page for Suede Creator Skills, install paths, docs, and stampable linkset."
+    },
+    {
+      "label": "Full promo pack",
+      "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md",
+      "description": "Long-form Markdown pitch kit for Suedify, plugins, MCP, SEO audits, QA, social posts, emails, FAQ, and claim boundaries."
+    },
+    {
+      "label": "Copy bank",
+      "url": "https://jasoncolapietro.github.io/suede-creator-skills/copy.html",
+      "description": "Public copy bank for GitHub, docs, CTA, SEO, FAQ, social, and safety copy."
+    },
+    {
+      "label": "Plugins and MCP",
+      "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
+      "description": "Plugin install options and Suede Skills MCP guidance."
+    }
+  ],
   "plugins": [
     {
       "name": "suede-workflow-skills",
