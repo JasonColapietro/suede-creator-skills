@@ -2,15 +2,34 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 21-skill pack for AI coding agents and
-creator workflows. It includes one umbrella workflow, design and copy lanes,
-SEO audits, install support, MCP QA, launch packaging, ambassador explainers,
-claim checks, agent-commerce prep, and creator-rights tools for music, audio,
-video, and media projects.
+**Suede Creator Skills** is a public 34-skill pack for AI coding agents,
+design-heavy website work, copywriting, SEO, Suedify-style site mimicry, QA,
+and creator workflows. It includes one umbrella workflow, design and copy
+lanes, SEO audits, site alchemy, install support, MCP QA, launch packaging,
+ambassador explainers, claim checks, agent-commerce prep, artist campaign
+tools, and creator utility skills.
 
-The creator-rights lane turns a music release folder into concrete outputs:
-a release-readiness lint report, provenance map, rights audit, licensing prep
-notes, royalty routing brief, and Suede Rights Passport transfer package.
+The main sell is the Suede workflow: give the agent taste, page structure,
+copy standards, SEO discipline, reference-site analysis, review gates, and a
+way to improve as feedback comes in. When the agent does something that works,
+tell it what to keep. When it misses, tell it exactly what to change. The next
+pass should self-correct inside the current work session.
+
+Suedify is the marketable site workflow: give the agent a reference URL and a
+target URL, then have it study layout, hierarchy, spacing, type, color, motion,
+proof structure, and content rhythm before pushing the target toward the
+reference with Suede-safe design, copy, SEO, and QA.
+
+The artist lane turns a song, catalog moment, show, or drop into campaign
+material: era systems, song worlds, hook maps, release stunts, fan rituals,
+visualizer directions, merch objects, setlist theater, catalog resurrections,
+identity guides, collab angles, campaign-in-a-box plans, and sync-style review
+packages. Sync packaging stops at clean review prep: no placement promises,
+clearance claims, outreach claims, or Suede promo funnel.
+
+Creator utility skills for release metadata, provenance, rights passports, and
+royalty notes are included for projects that need them, but they are support
+tools, not the headline.
 
 The public page presents the workflow as a Suede Creator Passport: website
 visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
@@ -19,9 +38,9 @@ context, and Suede signing workflows become stampable participation signals.
 
 Suede is creator ownership infrastructure for programmable IP, registry-backed
 media, royalty routing, licensing readiness, and agent commerce. These skills
-are offline-first and public-safe: they inspect and organize local project
-folders, but they do not upload files, write to a registry, call private Suede
-services, request secrets, or claim legal clearance.
+are public-safe: they inspect current files, pages, repos, and local folders,
+but they do not upload files, write to a registry, call private Suede services,
+request secrets, or claim legal clearance.
 
 For the full concept — what the Passport is, what it gates, which signals
 become stamps, and what intentionally ships later — see
@@ -41,6 +60,27 @@ become stamps, and what intentionally ships later — see
 - [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
 ## Quick Start
+
+Install the umbrella workflow and call it for design, copy, SEO, or Suedify
+work:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-workflow-skills
+```
+
+Example prompts:
+
+```text
+Use $suedify. Study https://apple.com and push https://example.com toward that design language with Suede-safe design, copy, SEO, and QA.
+```
+
+```text
+Use $suede-workflow-skills to rewrite this page, audit SEO, check design quality, and run final QA.
+```
+
+Utility scripts are available when the project needs local creator reports:
 
 ```bash
 git clone https://github.com/jasoncolapietro/suede-creator-skills.git
@@ -70,9 +110,9 @@ Creator Skills, the optional MCP, install listings, social posts, DMs, email,
 SEO metadata, FAQ answers, objection handling, and safe claim boundaries.
 
 The ambassador rule: explain the outcome first. Suede gives agents a repeatable
-workflow for design, copy, SEO, code review, QA, creator-rights packaging, and
-optional MCP-assisted discovery. Keep local install details such as
-`@personal` inside technical setup sections.
+workflow for design, copywriting, SEO, Suedify site restyling, code review, QA,
+agent-team coordination, and optional MCP-assisted discovery. Keep local
+install details such as `@personal` inside technical setup sections.
 
 Safety-oriented CLI flags:
 
@@ -118,12 +158,25 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-agent-commerce
 ```
 
-Install creator workflow skills:
+Install artist and creator workflow skills:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/music-release-metadata-linter \
+  --path skills/suede-era-builder \
+  skills/suede-song-to-universe \
+  skills/suede-hook-hunter \
+  skills/suede-release-stunt-lab \
+  skills/suede-fan-rituals \
+  skills/suede-visualizer-director \
+  skills/suede-merch-object-lab \
+  skills/suede-setlist-theater \
+  skills/suede-catalog-resurrection \
+  skills/suede-artist-identity-forge \
+  skills/suede-collab-matchmaker \
+  skills/suede-campaign-in-a-box \
+  skills/suede-sync-packaging \
+  skills/music-release-metadata-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit \
   skills/suede-provenance-map \
@@ -170,8 +223,9 @@ Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 
 Install the public umbrella workflow when you want one skill to load the Suede
 design, copy, SEO, site polish, code review, QA, launch, install support, MCP
-QA, ambassador explanation, claim-checking, agent-commerce, and creator-rights
-workflow. The repository now ships **21 public skill folders**.
+QA, ambassador explanation, claim-checking, agent-commerce, Suedify,
+progressive feedback, artist campaign, and creator utility workflow. The
+repository now ships **34 public skill folders**.
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -196,8 +250,21 @@ Individual public workflow and operations skills:
 - [`skills/suede-public-claim-check`](skills/suede-public-claim-check)
 - [`skills/suede-agent-commerce`](skills/suede-agent-commerce)
 
-Creator-rights support skills:
+Artist campaign and creator utility skills:
 
+- [`skills/suede-era-builder`](skills/suede-era-builder)
+- [`skills/suede-song-to-universe`](skills/suede-song-to-universe)
+- [`skills/suede-hook-hunter`](skills/suede-hook-hunter)
+- [`skills/suede-release-stunt-lab`](skills/suede-release-stunt-lab)
+- [`skills/suede-fan-rituals`](skills/suede-fan-rituals)
+- [`skills/suede-visualizer-director`](skills/suede-visualizer-director)
+- [`skills/suede-merch-object-lab`](skills/suede-merch-object-lab)
+- [`skills/suede-setlist-theater`](skills/suede-setlist-theater)
+- [`skills/suede-catalog-resurrection`](skills/suede-catalog-resurrection)
+- [`skills/suede-artist-identity-forge`](skills/suede-artist-identity-forge)
+- [`skills/suede-collab-matchmaker`](skills/suede-collab-matchmaker)
+- [`skills/suede-campaign-in-a-box`](skills/suede-campaign-in-a-box)
+- [`skills/suede-sync-packaging`](skills/suede-sync-packaging)
 - [`skills/music-release-metadata-linter`](skills/music-release-metadata-linter)
 - [`skills/suede-rights-passport`](skills/suede-rights-passport)
 - [`skills/suede-rights-audit`](skills/suede-rights-audit)

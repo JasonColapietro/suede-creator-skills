@@ -1,53 +1,52 @@
 # Suede Creator Skills Copy Bank
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
-Skills. Keep claims public-safe. These skills organize local folders and write
-reports. They do not upload files, clear rights, write to a registry, distribute
-music, or promise payouts.
+Skills. Lead with design, copywriting, SEO, Suedify site mimicry, QA, and
+agent-team workflow. Keep claims public-safe. The skills do not upload files,
+clear rights, write to a registry, distribute music, or promise payouts.
 
 ## Repo Copy
 
 ### One-line description
 
-Free Codex and Claude Code skills for music creators who need release metadata,
-rights evidence, provenance notes, royalty splits, and Suede-ready transfer
-packages.
+Free Codex and Claude Code skills for design, copywriting, SEO, Suedify website
+restyling, public docs, QA, artist campaigns, and creator utility workflows.
 
 ### Short description
 
-Suede Creator Skills help creators audit music release folders and package
-rights evidence before licensing, registry review, royalty routing, or agent
-commerce.
+Suede Creator Skills help agents improve websites, rewrite copy, audit SEO,
+mimic reference-site style safely, coordinate QA, package public docs, and
+support creator workflows.
 
 ### Full description
 
-Suede Creator Skills is a public skill pack for music creators, labels,
-managers, and developers. It ships 21 public `SKILL.md` folders: one umbrella
-workflow, design, copy, SEO, QA, install support, ambassador, and launch lanes,
-plus creator-rights skills for release metadata, rights passports, provenance,
-licensing prep, royalty routing briefs, and agent commerce.
+Suede Creator Skills is a public skill pack for builders, designers, founders,
+creators, agencies, and AI power users. It ships 34 public `SKILL.md` folders:
+one umbrella workflow, Suedify, design, copy, SEO, site alchemy, QA, install
+support, ambassador, launch, agent-team, code-review, artist-campaign, and
+creator utility lanes.
 
 ## GitHub Pages Copy
 
 ### Page title
 
-Suede Creator Skills | Music Rights Agent Skills
+Suede Creator Skills | Design, Copy, SEO, Suedify
 
 ### Meta description
 
-Install free Codex and Claude Code skills for music release metadata, rights
-passporting, provenance, royalty splits, licensing readiness, and Suede intake.
+Install free Codex and Claude Code skills for Suedify website restyling,
+design QA, copywriting, SEO audits, public docs, agent teams, and creator
+workflows.
 
 ### Hero
 
-Turn music folders into rights-ready creator passports.
+Give your agent design taste, copy discipline, SEO, and QA.
 
 ### Subhead
 
-Install a 21-skill Suede pack that audits release metadata, organizes rights
-evidence, documents provenance, improves public copy, checks install paths, and
-prepares creator work for licensing, registry review, royalty routing, or agent
-commerce.
+Install a 34-skill Suede pack that helps agents mimic reference-site style,
+improve visual systems, rewrite public copy, audit SEO, check install paths,
+coordinate QA, package artist campaigns, and support creator workflows.
 
 ### Primary CTA
 
@@ -59,8 +58,10 @@ Install the skills
 - Open the GitHub repo
 - Install the public skill
 - Use the MCP
-- Create a rights passport
-- Audit a release folder
+- Run Suedify
+- Audit SEO
+- Improve a site
+- Rewrite public copy
 
 ## Public Installs And MCP Copy
 
@@ -100,16 +101,16 @@ Canonical source: [`PROMO.md`](PROMO.md)
 
 ### Core explanation
 
-Suede gives AI agents a reusable product workflow for design, copy, SEO, code
-review, QA, public skill installs, local plugin notes, MCP-assisted discovery,
-and creator-rights documentation.
+Suede gives AI agents a reusable product workflow for design, copywriting, SEO,
+Suedify reference-site mimicry, code review, QA, public skill installs, local
+plugin notes, and MCP-assisted discovery.
 
 ### Best overall explanation
 
 Suede is the workflow layer for AI agents that need to ship better public
-product work. It packages design direction, copy, SEO, code review, QA,
-Suedify, creator-rights documentation, public skill installs, and optional MCP
-support into one reusable Suede system.
+product work. It packages design direction, copywriting, SEO, Suedify,
+site-alchemy, code review, QA, public skill installs, progressive feedback
+handling, and optional MCP support into one reusable Suede system.
 
 ### Suedify explanation
 
@@ -121,7 +122,7 @@ the target toward the reference with Suede design, copy, SEO, and QA checks.
 
 When the agent does something you like, name what worked. When it misses, name
 the exact correction. The next pass should use that feedback as working
-context.
+context and tighten the output inside the current session.
 
 ### Local install note
 
@@ -132,13 +133,14 @@ brand term and should not lead public ambassador copy.
 
 ### Title
 
-Public music creator skills for rights-ready agent workflows.
+Public Suede skills for design, copy, SEO, Suedify, and QA.
 
 ### Description
 
-Each Suede Creator Skill ships as a standard `SKILL.md` folder with scripts,
-references, templates, install metadata, safety rules, and public docs. Creators
-can inspect the workflow before an agent touches a release folder.
+Each Suede Creator Skill ships as a standard `SKILL.md` folder with install
+metadata, safety rules, public docs, and task-specific workflow instructions.
+Builders can inspect the workflow before an agent touches a site, doc, repo, or
+creator project.
 
 ### CTA
 
@@ -238,9 +240,10 @@ CTA: Install for Claude Code
 
 ### What are Suede Creator Skills?
 
-Suede Creator Skills are public `SKILL.md` folders for music and media
-workflows. They help agents audit release metadata, organize rights evidence,
-and prepare Suede-ready transfer packages from local files.
+Suede Creator Skills are public `SKILL.md` folders for design, copywriting,
+SEO, Suedify website restyling, QA, artist campaign, and creator workflows.
+They help agents work from a repeatable Suede process instead of a blank
+prompt.
 
 ### Do these skills upload my music?
 
@@ -254,36 +257,36 @@ manager, label, or legal reviewer still needs to confirm rights.
 
 ### Which skill should I run first?
 
-Run Music Release Metadata Linter first when you need a fast audit. Run Suede
-Rights Passport when you are ready to package files and rights evidence for
-review.
+Run `suedify` when you have a reference URL and a target URL. Run
+`suede-design` for visual systems and responsive QA, `suede-copy` for public
+copy, `suede-seo-audit` for search and metadata, and `suede-agent-teams` when a
+major pass needs multiple review lanes.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 21 public agent skills for music release
-metadata, rights evidence, provenance, splits, SEO, install support, QA, launch
-packaging, and Suede-ready transfer packages.
+Suede Creator Skills are live: 34 public agent skills for design, copywriting,
+SEO, Suedify website restyling, QA, install support, launch packaging, artist
+campaigns, and creator utility workflows.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
 ### Builder post
 
 I published Suede Creator Skills, a public `SKILL.md` pack for Codex and Claude
-Code. It includes an umbrella workflow plus focused skills for release
-metadata, rights passports, provenance, copy, SEO, install support, QA, launch
-packaging, royalty routing briefs, and agent commerce. The creator-rights tools
-run offline, write local reports, and keep private files off the network.
+Code. It includes an umbrella workflow plus focused skills for Suedify, design
+QA, copywriting, SEO audits, site alchemy, install support, QA, launch
+packaging, agent teams, artist campaigns, and creator utilities. The utility
+tools run offline, write local reports, and keep private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills
 
 ### Creator post
 
-Before you share, license, register, or route royalties for a track, run the
-folder through Suede Creator Skills. The linter finds missing release details.
-The Rights Passport packages provenance, credits, splits, licenses, and intake
-notes.
+Give the agent a reference site, a target site, and the Suede workflow. It can
+study the design language, rewrite the offer, audit SEO, check QA, and keep
+improving when you tell it what worked or missed.
 
 ## Repo Topics
 
@@ -293,6 +296,11 @@ notes.
 - claude-code
 - claude-skills
 - music-skills
+- website-design
+- copywriting
+- seo-audit
+- website-restyling
+- design-systems
 - music-rights
 - music-metadata
 - music-release

@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Suede skill, copy, SEO, install, and QA context.",
+  "summary": "Local MCP access to Suede design, copywriting, SEO, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -25,13 +25,18 @@
       "label": "Public installs and MCP",
       "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
       "description": "Public GitHub skill install commands and Suede Skills MCP guidance."
+    },
+    {
+      "label": "Develop with Suede",
+      "url": "https://suedeai.ai",
+      "description": "CTA for people who want Suede to turn a site, campaign, app surface, or design system into a more polished public workflow."
     }
   ],
   "plugins": [
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for design, copy, SEO, code review, agent teams, launch packaging, install support, claim checks, site polish, and reference-site restyling.",
+      "description": "Public Suede workflow skills for design, copywriting, SEO, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -50,17 +55,49 @@
         "suede-mcp-qa",
         "suede-ambassador-explainer",
         "suede-public-claim-check",
-        "suede-agent-commerce"
+        "suede-agent-commerce",
+        "suede-era-builder",
+        "suede-song-to-universe",
+        "suede-hook-hunter",
+        "suede-release-stunt-lab",
+        "suede-fan-rituals",
+        "suede-visualizer-director",
+        "suede-merch-object-lab",
+        "suede-setlist-theater",
+        "suede-catalog-resurrection",
+        "suede-artist-identity-forge",
+        "suede-collab-matchmaker",
+        "suede-campaign-in-a-box",
+        "suede-sync-packaging",
+        "music-release-metadata-linter",
+        "suede-rights-passport",
+        "suede-rights-audit",
+        "suede-provenance-map",
+        "suede-licensing-prep",
+        "suede-royalty-routing-brief"
       ]
     },
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public creator skills for music release linting, rights passports, rights audits, provenance maps, licensing prep, and royalty routing briefs.",
-      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter skills/suede-rights-passport skills/suede-rights-audit skills/suede-provenance-map skills/suede-licensing-prep skills/suede-royalty-routing-brief",
+      "description": "Public artist and creator skills for eras, song worlds, hooks, stunts, fan rituals, visualizers, merch objects, setlists, catalog revival, campaigns, neutral sync review packaging, release linting, rights passports, and provenance support.",
+      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-era-builder skills/suede-song-to-universe skills/suede-hook-hunter skills/suede-release-stunt-lab skills/suede-fan-rituals skills/suede-visualizer-director skills/suede-merch-object-lab skills/suede-setlist-theater skills/suede-catalog-resurrection skills/suede-artist-identity-forge skills/suede-collab-matchmaker skills/suede-campaign-in-a-box skills/suede-sync-packaging skills/music-release-metadata-linter skills/suede-rights-passport skills/suede-rights-audit skills/suede-provenance-map skills/suede-licensing-prep skills/suede-royalty-routing-brief",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
       "skills": [
+        "suede-era-builder",
+        "suede-song-to-universe",
+        "suede-hook-hunter",
+        "suede-release-stunt-lab",
+        "suede-fan-rituals",
+        "suede-visualizer-director",
+        "suede-merch-object-lab",
+        "suede-setlist-theater",
+        "suede-catalog-resurrection",
+        "suede-artist-identity-forge",
+        "suede-collab-matchmaker",
+        "suede-campaign-in-a-box",
+        "suede-sync-packaging",
         "music-release-metadata-linter",
         "suede-rights-passport",
         "suede-rights-audit",
@@ -74,7 +111,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for Suedify, design, copy, SEO audits, site polish, code review, agent-team QA, install support, launch packaging, and claim checks.",
+      "description": "Public umbrella Suede workflow for design, copywriting, SEO, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
     },
     {
@@ -147,7 +184,7 @@
       "name": "suede-ambassador-explainer",
       "area": "workflow",
       "description": "Suede ambassador explanation workflow for public talk tracks, DMs, posts, emails, FAQs, onboarding copy, skill-pack explanations, install guidance, objection handling, and claim-safe routing.",
-      "useWhen": "Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, creator-rights tooling, or public install paths."
+      "useWhen": "Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, design, copywriting, SEO, artist campaign tools, creator utilities, or public install paths."
     },
     {
       "name": "suede-public-claim-check",
@@ -160,6 +197,84 @@
       "area": "workflow",
       "description": "Suede agent commerce preparation workflow for making creative works, skill packs, docs, rights packages, licensing notes, install commands, and public metadata readable to agents.",
       "useWhen": "Use when a Suede asset should be easier for AI agents to inspect, route, license, recommend, transact around, or QA safely."
+    },
+    {
+      "area": "artist",
+      "name": "suede-era-builder",
+      "description": "Build an artist era with visual language, symbols, fan rituals, content rules, rollout tone, rights awareness, and Suede-safe campaign CTAs.",
+      "useWhen": "Use when a musician wants a song, EP, album, or campaign to become a recognizable world."
+    },
+    {
+      "area": "artist",
+      "name": "suede-song-to-universe",
+      "description": "Expand one song into story scenes, imagery, captions, fan prompts, merch objects, drop mechanics, and campaign ideas.",
+      "useWhen": "Use when a track needs a creative universe around it."
+    },
+    {
+      "area": "artist",
+      "name": "suede-hook-hunter",
+      "description": "Find the 5 to 15 second lyrical, visual, emotional, and fan-participation hooks that can travel across short-form platforms.",
+      "useWhen": "Use when an artist needs the clip, caption, chant, teaser, or trailer moment people repeat."
+    },
+    {
+      "area": "artist",
+      "name": "suede-release-stunt-lab",
+      "description": "Design public-safe release stunts, fan missions, clues, timed drops, unlocks, collector actions, and campaign surprises.",
+      "useWhen": "Use when a release needs a memorable moment beyond an announcement post."
+    },
+    {
+      "area": "artist",
+      "name": "suede-fan-rituals",
+      "description": "Create repeatable fan behaviors such as phrases, comments, gestures, unlock actions, live moments, and stampable participation tasks.",
+      "useWhen": "Use when an artist wants fans to do something recognizable together."
+    },
+    {
+      "area": "artist",
+      "name": "suede-visualizer-director",
+      "description": "Create treatments for visualizers, lyric videos, canvas loops, stage screens, cover motion, teaser edits, and AI video prompts.",
+      "useWhen": "Use when a song needs visual direction that matches its world."
+    },
+    {
+      "area": "artist",
+      "name": "suede-merch-object-lab",
+      "description": "Turn lyrics, lore, symbols, inside jokes, and visual codes into merch objects, bundles, collector items, and drop mechanics.",
+      "useWhen": "Use when merch should feel like an artifact from the artist world, not a generic logo item."
+    },
+    {
+      "area": "artist",
+      "name": "suede-setlist-theater",
+      "description": "Design live set arcs, transitions, crowd moments, visual cues, talk breaks, encore moves, and post-show actions.",
+      "useWhen": "Use when a performance should feel staged, memorable, and tied to the release world."
+    },
+    {
+      "area": "artist",
+      "name": "suede-catalog-resurrection",
+      "description": "Turn dormant songs, demos, stems, alternate takes, covers, live clips, and old assets into new campaigns, fan drops, or catalog revival packages.",
+      "useWhen": "Use when an artist wants old catalog to move again."
+    },
+    {
+      "area": "artist",
+      "name": "suede-artist-identity-forge",
+      "description": "Sharpen artist identity across voice, visuals, lore, values, audience promise, symbols, anti-references, and public positioning.",
+      "useWhen": "Use before bios, websites, visuals, release rollouts, or campaigns when the artist identity is still fuzzy."
+    },
+    {
+      "area": "artist",
+      "name": "suede-collab-matchmaker",
+      "description": "Design collaboration lanes with producers, remixers, visual artists, venues, brands, creators, and campaign partners.",
+      "useWhen": "Use when an artist wants stronger collaboration angles than obvious feature requests."
+    },
+    {
+      "area": "artist",
+      "name": "suede-campaign-in-a-box",
+      "description": "Package a complete artist rollout with announce copy, teaser sequence, release-week plan, fan actions, email, site sections, and press angles.",
+      "useWhen": "Use when a musician wants the whole rollout turned into usable moves."
+    },
+    {
+      "area": "artist",
+      "name": "suede-sync-packaging",
+      "description": "Prepare tracks for sync-style review with scene-fit angles, one-sheet copy, clean and instrumental asset needs, lyric flags, mood tags, rights gaps, and safe pitch copy.",
+      "useWhen": "Use when a song or catalog asset should be organized for film, TV, ads, games, trailers, creator campaigns, or brand briefs without claiming clearance."
     },
     {
       "name": "music-release-metadata-linter",

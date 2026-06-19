@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Catalog Resurrection"
+  short_description: "Revive dormant songs and assets"
+  default_prompt: "Use $suede-catalog-resurrection to turn an old song, demo, clip, stem pack, or catalog moment into a new campaign, fan drop, or catalog revival."

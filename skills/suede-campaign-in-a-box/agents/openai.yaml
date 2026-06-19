@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Campaign In A Box"
+  short_description: "Package a complete artist rollout"
+  default_prompt: "Use $suede-campaign-in-a-box to package this release, era, show, catalog moment, or drop into a complete artist campaign."

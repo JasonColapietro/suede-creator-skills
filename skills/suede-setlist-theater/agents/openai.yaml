@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Setlist Theater"
+  short_description: "Shape a live set like a show"
+  default_prompt: "Use $suede-setlist-theater to design the set arc, transitions, crowd moments, visuals, talk breaks, and post-show actions for this artist."

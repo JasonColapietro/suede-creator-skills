@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Release Stunt Lab"
+  short_description: "Design memorable release moments"
+  default_prompt: "Use $suede-release-stunt-lab to design a public-safe release stunt, unlock, fan mission, clue, drop, or collector moment for this artist campaign."

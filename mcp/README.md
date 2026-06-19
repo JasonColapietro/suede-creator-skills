@@ -4,7 +4,8 @@
 
 It is useful when an agent needs structured access to:
 
-- Suede skill discovery;
+- Suede skill discovery for Suedify, design, copywriting, SEO, QA, artist
+  campaigns, and creator utilities;
 - public GitHub skill installs, local plugin notes, MCP, and skill-copy install options;
 - SEO copy audit scaffolds;
 - multi-lane QA checklists for skill, MCP, docs, and public site changes.
@@ -21,9 +22,10 @@ node mcp/suede-skills-mcp.mjs --profile all
 
 Profiles:
 
-- `all`: expose workflow and creator skill context.
-- `workflow`: expose Suede workflow skill context.
-- `creator`: expose public creator skill context.
+- `all`: expose workflow, artist, and creator utility skill context.
+- `workflow`: expose Suedify, design, copywriting, SEO, QA, and public workflow context.
+- `artist`: expose artist campaign skill context.
+- `creator`: expose public artist and creator utility context.
 
 The server is dependency-free and speaks newline-delimited JSON-RPC over stdio.
 It supports `initialize`, `ping`, `tools/list`, `tools/call`,

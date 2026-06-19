@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for Suede design, copy, SEO audits, site restyling, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, creator-rights review, provenance, licensing prep, royalty routing briefs, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, use Suedify, improve a website, write Suede copy, audit SEO, run design QA, review code, prepare public docs, package a creator-rights workflow, or coordinate multiple Suede work lanes.
+description: Public umbrella workflow for Suede design, copywriting, SEO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
 ---
 
 # Suede Workflow Skills
@@ -38,9 +38,13 @@ This skill is the public entry point for:
   payouts, registry writes, private access, traction, and install availability.
 - **Suede Agent Commerce:** make creative works, docs, skill packs, and rights
   packages readable to agents.
-- **Creator-rights lanes:** use the creator skills for release linting, rights
+- **Artist campaign lanes:** use the artist skills for era systems, song
+  worlds, hooks, release stunts, fan rituals, visualizers, merch objects,
+  setlist arcs, catalog revival, identity, collabs, campaign-in-a-box plans,
+  and sync-style review packages.
+- **Creator utility lanes:** use the creator skills for release linting, rights
   passporting, rights audits, provenance maps, licensing prep, and royalty
-  routing briefs.
+  routing briefs when those support the work.
 
 If the individual public skills are also installed, use them directly when
 their names match the task:
@@ -59,6 +63,19 @@ their names match the task:
 - `suede-ambassador-explainer`
 - `suede-public-claim-check`
 - `suede-agent-commerce`
+- `suede-era-builder`
+- `suede-song-to-universe`
+- `suede-hook-hunter`
+- `suede-release-stunt-lab`
+- `suede-fan-rituals`
+- `suede-visualizer-director`
+- `suede-merch-object-lab`
+- `suede-setlist-theater`
+- `suede-catalog-resurrection`
+- `suede-artist-identity-forge`
+- `suede-collab-matchmaker`
+- `suede-campaign-in-a-box`
+- `suede-sync-packaging`
 - `music-release-metadata-linter`
 - `suede-rights-passport`
 - `suede-rights-audit`
@@ -258,10 +275,20 @@ When the task names a narrower Suede lane, route directly:
 - Public copy or tone: `suede-copy`, `suede-brand-voice`,
   `suede-public-claim-check`.
 - Search/discovery: `suede-seo-audit`.
+- Reference-site mimicry: `suedify`.
+- Page polish and conversion: `suede-site-alchemy`.
 - Launch or public packaging: `suede-launch-packaging`.
 - Install confusion: `suede-install-support`.
 - MCP changes: `suede-mcp-qa`.
 - Ambassador language: `suede-ambassador-explainer`.
+- Artist campaign work: `suede-era-builder`, `suede-song-to-universe`,
+  `suede-hook-hunter`, `suede-release-stunt-lab`, `suede-fan-rituals`,
+  `suede-visualizer-director`, `suede-merch-object-lab`,
+  `suede-setlist-theater`, `suede-catalog-resurrection`,
+  `suede-artist-identity-forge`, `suede-collab-matchmaker`,
+  `suede-campaign-in-a-box`.
+- Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
+  placement promise, clearance claim, or outreach claim to sync packaging.
 - Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
   `music-release-metadata-linter`.
 - Provenance: `suede-provenance-map`.
@@ -311,6 +338,19 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-ambassador-explainer \
   skills/suede-public-claim-check \
   skills/suede-agent-commerce \
+  skills/suede-era-builder \
+  skills/suede-song-to-universe \
+  skills/suede-hook-hunter \
+  skills/suede-release-stunt-lab \
+  skills/suede-fan-rituals \
+  skills/suede-visualizer-director \
+  skills/suede-merch-object-lab \
+  skills/suede-setlist-theater \
+  skills/suede-catalog-resurrection \
+  skills/suede-artist-identity-forge \
+  skills/suede-collab-matchmaker \
+  skills/suede-campaign-in-a-box \
+  skills/suede-sync-packaging \
   skills/music-release-metadata-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit \

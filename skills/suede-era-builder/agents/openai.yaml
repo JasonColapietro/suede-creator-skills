@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Era Builder"
+  short_description: "Turn a release into a recognizable artist era"
+  default_prompt: "Use $suede-era-builder to turn this song, EP, album, or campaign into an artist era with visual language, rituals, content rules, and Suede-safe next steps."

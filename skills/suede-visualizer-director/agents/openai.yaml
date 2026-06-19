@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Visualizer Director"
+  short_description: "Write visualizer and lyric-video treatments"
+  default_prompt: "Use $suede-visualizer-director to create a visualizer, lyric video, canvas, stage loop, or AI video treatment for this song."

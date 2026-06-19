@@ -30,11 +30,14 @@ function boundedString(value, fallback = "") {
 }
 
 function profileCatalog() {
-  if (profile === "workflow" || profile === "creator") {
+  if (profile === "workflow" || profile === "artist" || profile === "creator") {
+    const areaSet = profile === "creator" ? new Set(["artist", "creator"]) : new Set([profile]);
     return {
       ...catalog,
-      plugins: catalog.plugins.filter((plugin) => plugin.name.includes(profile)),
-      skills: catalog.skills.filter((skill) => skill.area === profile)
+      plugins: catalog.plugins.filter((plugin) =>
+        plugin.name.includes(profile) || (profile === "artist" && plugin.name === "suede-creator-skills")
+      ),
+      skills: catalog.skills.filter((skill) => areaSet.has(skill.area))
     };
   }
   return catalog;
@@ -165,7 +168,7 @@ const tools = [
       properties: {
         area: {
           type: "string",
-          enum: ["all", "workflow", "creator"],
+          enum: ["all", "workflow", "artist", "creator"],
           description: "Optional area filter."
         }
       }
@@ -289,7 +292,7 @@ const prompts = [
 function callTool(name, args = {}) {
   const data = profileCatalog();
   if (name === "list_suede_skills") {
-    const area = args.area || profile;
+    const area = args.area || (profile === "creator" ? "all" : profile);
     const scoped = area === "all" ? data.skills : data.skills.filter((skill) => skill.area === area);
     return {
       content: [text(asMarkdownSkillList({ skills: scoped }))],
