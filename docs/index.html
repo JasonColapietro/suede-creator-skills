@@ -113,10 +113,10 @@
             "softwareRequirements": ["Codex", "Claude Code", "Python 3"],
             "hasPart": [
               {
-                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-suede-rights-passport"
+                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html#article"
               },
               {
-                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-music-release-metadata-linter"
+                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html#article"
               }
             ],
             "creator": {
@@ -150,7 +150,7 @@
             "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-suede-rights-passport",
             "name": "Suede Rights Passport",
             "description": "A public Codex and Claude skill for packaging music and media folders into Suede-ready rights passport transfer packages.",
-            "url": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport",
+            "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html",
             "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport",
             "programmingLanguage": "Python",
             "applicationCategory": "DeveloperTool",
@@ -169,7 +169,7 @@
             "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-music-release-metadata-linter",
             "name": "Music Release Metadata Linter",
             "description": "A public Codex and Claude skill for auditing music release folders for metadata, rights, split, artwork, lyric, stem, and Suede-readiness gaps.",
-            "url": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter",
+            "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html",
             "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter",
             "programmingLanguage": "Python",
             "applicationCategory": "DeveloperTool",
@@ -1046,6 +1046,7 @@
         </div>
         <nav class="nav-links" aria-label="Primary">
           <a href="#skills">Skills</a>
+          <a href="./skills/">Docs</a>
           <a href="#use-cases">Use cases</a>
           <a href="#stamps">Stamps</a>
           <a href="#install">Install</a>
@@ -1114,7 +1115,8 @@
               <div class="passport-card-body">
                 <h3 id="skill-rights-passport-title">Suede Rights Passport</h3>
                 <p>Create <code>RIGHTS_PASSPORT.md</code>, <code>suede-intake.json</code>, provenance notes, splits, licenses, optimization brief, and missing-info report.</p>
-                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport">View skill manifest</a>
+                <a class="inline-card-link" href="./skills/suede-rights-passport.html">Read skill docs</a>
+                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport">View skill folder</a>
                 <div class="tag-row">
                   <span class="tag">rights passport</span>
                   <span class="tag">provenance</span>
@@ -1131,7 +1133,8 @@
               <div class="passport-card-body">
                 <h3 id="skill-release-linter-title">Music Release Metadata Linter</h3>
                 <p>Audit title, artist, masters, artwork, lyrics, stems, credits, split totals, sample status, release history, and Suede blockers.</p>
-                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter">View skill manifest</a>
+                <a class="inline-card-link" href="./skills/music-release-metadata-linter.html">Read skill docs</a>
+                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter">View skill folder</a>
                 <div class="tag-row">
                   <span class="tag">metadata lint</span>
                   <span class="tag">release readiness</span>
@@ -1329,6 +1332,9 @@ cp -R /tmp/suede-creator-skills/skills/music-release-metadata-linter .claude/ski
             <a class="link-card" data-stamp="Discord Stamp" href="https://discord.gg/suedeai"><b>Join Discord</b><span>https://discord.gg/suedeai</span></a>
             <a class="link-card" data-stamp="Telegram Stamp" href="https://t.me/suedeai"><b>Telegram</b><span>https://t.me/suedeai</span></a>
             <a class="link-card" data-stamp="GitHub Stamp" href="https://github.com/jasoncolapietro/suede-creator-skills"><b>GitHub Repo</b><span>github.com/jasoncolapietro/suede-creator-skills</span></a>
+            <a class="link-card" data-stamp="Docs Stamp" href="./skills/"><b>Skill Docs Catalog</b><span>Every skill page, install link, manifest link, script link, and resource map.</span></a>
+            <a class="link-card" data-stamp="Rights Docs" href="./skills/suede-rights-passport.html"><b>Rights Passport Docs</b><span>Transfer package docs for provenance, splits, licenses, intake JSON, and templates.</span></a>
+            <a class="link-card" data-stamp="Lint Docs" href="./skills/music-release-metadata-linter.html"><b>Release Linter Docs</b><span>Release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, and reports.</span></a>
             <a class="link-card" data-stamp="Passport Concept" href="https://github.com/jasoncolapietro/suede-creator-skills/blob/main/PASSPORT.md"><b>Passport Concept</b><span>GitHub PASSPORT.md</span></a>
             <a class="link-card" data-stamp="Codex Stamp" href="https://github.com/openai/skills"><b>OpenAI Skills</b><span>github.com/openai/skills</span></a>
             <a class="link-card" data-stamp="Claude Stamp" href="https://docs.claude.com/en/docs/claude-code/skills"><b>Claude Code Skills</b><span>docs.claude.com/en/docs/claude-code/skills</span></a>

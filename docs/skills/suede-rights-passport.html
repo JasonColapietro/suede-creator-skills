@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede Rights Passport Skill | Music Rights Transfer Package Docs</title>
+    <meta name="description" content="Full documentation for the Suede Rights Passport skill: create Suede-ready music rights transfer packages with provenance, credits, splits, license notes, intake JSON, and optimization briefs.">
+    <meta name="keywords" content="Suede Rights Passport, music rights passport, creator rights package, music provenance, royalty splits, licensing readiness, Suede intake, Codex skill, Claude Code skill, SKILL.md, programmable IP, agent commerce">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html">
+    <link rel="icon" href="../assets/suede-skill-icon.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede Rights Passport Skill">
+    <meta property="og:description" content="Create Suede-ready transfer packages for music rights, provenance, splits, licenses, and agent commerce readiness.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/rights-passport-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede Rights Passport Skill">
+    <meta name="twitter:description" content="Music rights transfer package docs for Suede Creator Skills.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/rights-passport-preview.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html#article",
+        "headline": "Suede Rights Passport Skill",
+        "description": "Create Suede-ready music rights transfer packages with provenance, credits, splits, license notes, intake JSON, optimization briefs, and missing-info reports.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html",
+        "author": {
+          "@type": "Person",
+          "name": "Jason Colapietro",
+          "url": "https://github.com/JasonColapietro"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Suede Labs AI",
+          "url": "https://suedeai.ai"
+        },
+        "about": ["music rights", "creator provenance", "royalty splits", "licensing readiness", "Suede intake", "agent commerce"],
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "suede-rights-passport",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport",
+          "programmingLanguage": "Python",
+          "applicationCategory": "DeveloperTool",
+          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: oklch(0.12 0.028 28);
+        --panel: oklch(0.17 0.035 28 / 0.92);
+        --cream: oklch(0.96 0.018 62);
+        --muted: oklch(0.76 0.035 58);
+        --line: oklch(0.96 0.018 62 / 0.16);
+        --red: oklch(0.50 0.21 28);
+        --gold: oklch(0.78 0.12 78);
+        --cyan: oklch(0.74 0.12 205);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--cream);
+        background:
+          linear-gradient(115deg, oklch(0.22 0.12 28 / 0.7), transparent 38%),
+          linear-gradient(245deg, oklch(0.30 0.09 205 / 0.24), transparent 34%),
+          var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+      .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      header { border-bottom: 1px solid var(--line); background: oklch(0.12 0.028 28 / 0.9); }
+      nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px; }
+      .brand { font-weight: 950; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; font-weight: 800; }
+      .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
+      main { padding: 58px 0 80px; }
+      .eyebrow { color: var(--gold); font-size: 13px; font-weight: 950; text-transform: uppercase; }
+      h1 { max-width: 920px; margin: 14px 0 18px; font-size: clamp(42px, 6vw, 76px); line-height: 0.98; }
+      h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 48px); line-height: 1; }
+      h3 { margin: 0 0 10px; font-size: 24px; }
+      p, li { color: var(--muted); }
+      .lead { max-width: 880px; font-size: 19px; }
+      .hero-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.6fr); gap: 28px; align-items: center; }
+      .hero-grid img { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+      .card, .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 24px;
+      }
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        border: 1px solid oklch(0.78 0.12 78 / 0.42);
+        border-radius: 8px;
+        background: var(--red);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+      .button.secondary { background: oklch(0.96 0.018 62 / 0.08); }
+      pre {
+        overflow: auto;
+        border: 1px solid oklch(0.96 0.018 62 / 0.12);
+        border-radius: 8px;
+        background: oklch(0.08 0.02 28);
+        padding: 16px;
+        color: oklch(0.93 0.04 72);
+        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        white-space: pre-wrap;
+      }
+      .links { display: grid; gap: 12px; }
+      .link-row {
+        display: grid;
+        grid-template-columns: minmax(210px, 0.4fr) minmax(0, 1fr);
+        gap: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+      }
+      .link-row b { color: var(--cream); }
+      .link-row span { color: var(--muted); overflow-wrap: anywhere; }
+      section { margin-top: 52px; }
+      footer { border-top: 1px solid var(--line); color: var(--muted); padding: 28px 0; }
+      @media (max-width: 820px) {
+        nav, .hero-grid, .grid, .link-row { grid-template-columns: 1fr; display: grid; }
+        .nav-links { gap: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="shell" aria-label="Primary">
+        <a class="brand" href="../">Suede Creator Skills</a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skill Docs</a>
+          <a href="music-release-metadata-linter.html">Release Linter</a>
+          <a href="https://github.com/JasonColapietro/suede-creator-skills">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Skill documentation</div>
+          <h1>Suede Rights Passport.</h1>
+          <p class="lead">Turn a messy creator folder into a Suede-ready transfer package for rights review, provenance, splits, license notes, optimization, registry readiness, royalty routing, and agent commerce prep. Public v1 is offline-first: it inventories and organizes files, but it does not upload files, write to a registry, ask for private keys, or claim legal clearance.</p>
+          <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport">View skill folder</a> <a class="button secondary" href="music-release-metadata-linter.html">Pair with release linter</a></p>
+        </div>
+        <img src="../assets/rights-passport-preview.png" width="1200" height="760" alt="Suede Rights Passport preview card for provenance, splits, license notes, and Suede intake.">
+      </div>
+
+      <section class="grid">
+        <article class="card">
+          <h2>What it produces</h2>
+          <ul>
+            <li><code>RIGHTS_PASSPORT.md</code> - project summary, ownership status, contributor facts, and review flags.</li>
+            <li><code>suede-intake.json</code> - machine-readable intake data with relative paths and SHA-256 hashes where available.</li>
+            <li><code>provenance.md</code> - origin notes, source materials, asset trail, and evidence gaps.</li>
+            <li><code>credits-and-splits.md</code> - contributors, roles, split status, and unresolved confirmations.</li>
+            <li><code>license-notes.md</code> - sample, sync, distribution, public URL, and clearance notes.</li>
+            <li><code>optimization-brief.md</code> - concrete next steps for Suede review and media optimization.</li>
+            <li><code>missing-info-report.md</code> - the blockers a creator or manager still needs to answer.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Best for</h2>
+          <ul>
+            <li>Artists preparing a catalog for Suede intake.</li>
+            <li>Labels cleaning up credits, splits, samples, and provenance before licensing.</li>
+            <li>Managers packaging a release for registry-backed media review.</li>
+            <li>Developers building agent-readable media workflows without exposing private files.</li>
+            <li>Creator teams preparing for royalty routing, license review, and programmable IP.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Run it locally</h2>
+        <p>Use the script when the source folder is available on disk. Pass public-safe metadata when known facts should prefill the package.</p>
+        <pre><code>python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
+  /path/to/creator-project \
+  --output /path/to/suede-transfer-package \
+  --metadata /path/to/creator-project/metadata.json \
+  --project-title "Project Title" \
+  --artist "Artist Name" \
+  --copy-assets</code></pre>
+        <p>Safety defaults skip hidden files, dependency folders, build outputs, caches, secret-like files, and unrecognized file types. The output folder cannot be the source folder or live inside it. Existing generated files require <code>--force</code> before replacement.</p>
+      </section>
+
+      <section class="panel">
+        <h2>All skill links</h2>
+        <div class="links">
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/SKILL.md"><b>Skill manifest</b><span>Agent-facing workflow, trigger description, safety rules, package standards, and completion checklist.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/agents/openai.yaml"><b>OpenAI metadata</b><span>Display name, short description, and default prompt for skill-list surfaces.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/scripts/create_transfer_package.py"><b>Transfer package script</b><span>Inventories files, hashes assets, applies safety skips, writes the transfer package, and can copy selected assets.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/references"><b>References</b><span>Package standard, intake schema, optimization checklist, creator questions, and passport context.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/assets"><b>Templates</b><span>Markdown and JSON templates for the generated passport, intake, provenance, splits, license, optimization, and missing-info artifacts.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PASSPORT.md"><b>Passport concept</b><span>Public explanation of how generated artifacts become future Suede Creator Passport signals.</span></a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Install prompts</h2>
+          <p>After copying the skill folder into an agent skill root, use prompts like:</p>
+          <pre><code>Use $suede-rights-passport to prepare this creator project as a Suede transfer package.</code></pre>
+          <pre><code>Use the suede-rights-passport skill to organize this catalog for Suede intake.</code></pre>
+        </article>
+        <article class="card">
+          <h2>Public safety</h2>
+          <p>The skill should never claim a work is cleared unless the creator provides proof. It should not ask for seed phrases, private keys, full payment credentials, unreleased secrets, or private Suede implementation details. Generated packages are drafts until reviewed and redacted by the creator or operator.</p>
+        </article>
+      </section>
+    </main>
+    <footer><div class="shell">Suede Rights Passport: provenance, registry readiness, royalty routing, licensing readiness, and agent commerce prep.</div></footer>
+  </body>
+</html>

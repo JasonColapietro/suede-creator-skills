@@ -28,6 +28,9 @@ become stamps, and what intentionally ships later — see
 - [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/)
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
+- [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with every skill page, install link, manifest link, script link, and resource map.
+- [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
+- [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
 ## Quick Start
 
@@ -230,12 +233,22 @@ Project links:
 
 - GitHub repository: <https://github.com/JasonColapietro/suede-creator-skills>
 - GitHub Pages site: <https://jasoncolapietro.github.io/suede-creator-skills/>
+- Skill docs catalog: <https://jasoncolapietro.github.io/suede-creator-skills/skills/> - public index for every Suede Creator Skill and its install/resource links.
+- Suede Rights Passport docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
+- Music Release Metadata Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.
 - Rights Passport skill: [skills/suede-rights-passport/SKILL.md](skills/suede-rights-passport/SKILL.md)
 - Rights Passport script: [skills/suede-rights-passport/scripts/create_transfer_package.py](skills/suede-rights-passport/scripts/create_transfer_package.py)
+- Rights Passport OpenAI metadata: [skills/suede-rights-passport/agents/openai.yaml](skills/suede-rights-passport/agents/openai.yaml)
+- Rights Passport references: [skills/suede-rights-passport/references/](skills/suede-rights-passport/references/)
+- Rights Passport templates: [skills/suede-rights-passport/assets/](skills/suede-rights-passport/assets/)
 - Release Linter skill: [skills/music-release-metadata-linter/SKILL.md](skills/music-release-metadata-linter/SKILL.md)
 - Release Linter script: [skills/music-release-metadata-linter/scripts/lint_release.py](skills/music-release-metadata-linter/scripts/lint_release.py)
+- Release Linter OpenAI metadata: [skills/music-release-metadata-linter/agents/openai.yaml](skills/music-release-metadata-linter/agents/openai.yaml)
+- Release Linter references: [skills/music-release-metadata-linter/references/](skills/music-release-metadata-linter/references/)
+- Release Linter templates: [skills/music-release-metadata-linter/assets/](skills/music-release-metadata-linter/assets/)
 - Passport concept: [PASSPORT.md](PASSPORT.md)
 - Page source: [docs/index.html](docs/index.html)
+- Skill docs source: [docs/skills/](docs/skills/)
 
 Platform references:
 
