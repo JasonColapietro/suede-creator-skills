@@ -24,6 +24,9 @@ sourceable claims, schema, internal links, and citation-ready proof.
    and dead or misleading links.
 6. Replace vague public claims with concrete artifacts, commands, docs, scripts,
    URLs, examples, or verification steps.
+7. When the page needs a blunt public-readiness score, run the visibility grade:
+   findability, first-screen clarity, CTA pull, proof and trust, AI
+   readability, design signal, and overall A-F.
 
 ## Output
 
@@ -36,6 +39,7 @@ Findings:
 Exact rewrites:
 Internal links:
 Schema changes:
+Visibility grade:
 Claim boundaries:
 Verification:
 Ship gate: ship | ship-with-caveats | hold

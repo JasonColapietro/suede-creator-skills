@@ -108,7 +108,7 @@ Before reporting that a package is ready:
 
 Artifacts produced by this skill (`RIGHTS_PASSPORT.md`, `suede-intake.json`,
 `provenance.md`, `credits-and-splits.md`, `license-notes.md`) are the raw
-material of a Suede Creator Passport entry — the creator's portable, verifiable
+material of a Suede Creator Passport entry: the creator's portable, verifiable
 record of registered IP, declared rights, and signed transfers.
 
 The Passport is a forward-looking surface: stamps for "Rights Passport

@@ -2,12 +2,13 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 34-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 35-skill pack for AI coding agents,
 design-heavy website work, copywriting, SEO/AEO/AI EO, Suedify-style site
 mimicry, QA, and creator workflows. It includes one umbrella workflow, design
-and copy lanes, SEO/AEO/AI EO audits, site alchemy, install support, MCP QA, launch
-packaging, ambassador explainers, claim checks, agent-commerce prep, artist
-campaign tools, and creator utility skills.
+and copy lanes, SEO/AEO/AI EO audits, visibility and CTA grading, site
+alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
+ambassador explainers, claim checks, agent-commerce prep, artist campaign
+tools, and creator utility skills.
 
 The main sell is the Suede workflow: give the agent taste, page structure,
 copy standards, SEO discipline, reference-site analysis, review gates, and a
@@ -25,6 +26,14 @@ Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
 proof structure, and content rhythm before pushing the target toward the
 reference with Suede-safe design, copy, SEO, and QA.
+
+Suede Visibility Grader turns a public page into an A-F visibility and CTA
+brief. It checks whether a site can be found, understood, trusted, cited by AI
+systems, and acted on. Suede Code Review adds A-F code grades for correctness,
+security, state, UX, tests, deployment risk, and public docs. Suede Agent Teams
+adds grouping loops for major work: scout, build, adversarial review, design
+visibility review, release verification, and handoff without lanes stepping on
+the same files.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,
@@ -48,13 +57,13 @@ are public-safe: they inspect current files, pages, repos, and local folders,
 but they do not upload files, write to a registry, call private Suede services,
 request secrets, or claim legal clearance.
 
-For the full concept — what the Passport is, what it gates, which signals
-become stamps, and what intentionally ships later — see
+For the full concept, including what the Passport is, what it gates, which
+signals become stamps, and what intentionally ships later, see
 [`PASSPORT.md`](PASSPORT.md).
 
 ## Public Page
 
-- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/)
+- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - the actual public documentation generated from this GitHub repository, not a separate marketing site.
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
 - [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
@@ -117,8 +126,16 @@ SEO/AEO/AI EO metadata, FAQ answers, objection handling, and safe claim boundari
 
 The ambassador rule: explain the outcome first. Suede gives agents a repeatable
 workflow for design, copywriting, SEO/AEO/AI EO, Suedify site restyling, code
-review, QA, agent-team coordination, and optional MCP-assisted discovery. Keep
-local install details such as `@personal` inside technical setup sections.
+review with A-F Suede grades, visibility and CTA grading, QA, agent-team
+coordination, and optional MCP-assisted discovery. Keep local install details
+such as `@personal` inside technical setup sections.
+
+Founder context ambassadors can explain: Jason is not a coder by background,
+so the workflow was built from live pressure, not theory. He had to learn fast,
+turning every agent miss into a reusable Suede rule. Over Suede's life he hired
+and fired six marketing firms, and the lesson was blunt: public work is not
+done until it is findable across Google and Gemini result surfaces, readable to
+AI systems, backed by proof, and clear enough for a real visitor to act.
 
 Safety-oriented CLI flags:
 
@@ -154,6 +171,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-brand-voice \
   skills/suede-seo-audit \
   skills/suede-site-alchemy \
+  skills/suede-visibility-grader \
   skills/suede-code-review \
   skills/suede-agent-teams \
   skills/suede-launch-packaging \
@@ -228,10 +246,12 @@ MCP tools:
 Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 
 Install the public umbrella workflow when you want one skill to load the Suede
-design, copy, SEO/AEO/AI EO, site polish, code review, QA, launch, install support, MCP
-QA, ambassador explanation, claim-checking, agent-commerce, Suedify,
-progressive feedback, two-level final explanations, Cue Suede choices, artist campaign, and creator utility workflow. The
-repository now ships **34 public skill folders**.
+design, copy, SEO/AEO/AI EO, site polish, visibility and CTA grading, code
+review with A-F Suede grades, QA, launch, install support, MCP QA, ambassador
+explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
+two-level final explanations, Cue Suede choices, agent-team grouping loops,
+artist campaign, and creator utility workflow. The repository now ships **35
+public skill folders**.
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -247,6 +267,7 @@ Individual public workflow and operations skills:
 - [`skills/suede-brand-voice`](skills/suede-brand-voice)
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
 - [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
+- [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
 - [`skills/suede-code-review`](skills/suede-code-review)
 - [`skills/suede-agent-teams`](skills/suede-agent-teams)
 - [`skills/suede-launch-packaging`](skills/suede-launch-packaging)

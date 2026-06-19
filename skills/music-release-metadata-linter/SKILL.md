@@ -94,7 +94,7 @@ Before reporting a lint result:
 
 ## Suede Passport Context
 
-A clean release-lint report is itself a Suede Creator Passport signal — proof
+A clean release-lint report is itself a Suede Creator Passport signal: proof
 that a creator runs disciplined release process. The "Release Linter clean"
 stamp is on the anticipated stamp surface alongside "Rights Passport
 produced", "IP registered on Base", and Suede-native music-identity stamps

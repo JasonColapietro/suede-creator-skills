@@ -78,7 +78,7 @@ function installMarkdown(data, surface = "all") {
   if (surface === "all" || surface === "mcp") {
     lines.push("");
     lines.push("## MCP option");
-    lines.push("Use the MCP when structured skill discovery, install options, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
+    lines.push("Use the MCP when structured skill discovery, install options, visibility grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
     for (const plugin of data.plugins) {
       lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
     }
@@ -132,6 +132,52 @@ function seoAuditTemplate(args = {}) {
   ].join("\n");
 }
 
+function visibilityGradeTemplate(args = {}) {
+  const target = boundedString(args.url || args.pageType, "the target page");
+  const action = boundedString(args.primaryAction, "one clear next action");
+  const notes = boundedString(args.notes || args.copy, "");
+  const lines = [
+    `# Suede Visibility Grade: ${target}`,
+    "",
+    `Primary action: ${action}`,
+    "",
+    "Goal: decide whether the right person or agent can find this page, understand it, trust it, cite it, and take the intended next action.",
+    "",
+    "## Source Truth To Inspect",
+    "- Live URL status, redirects, canonical, robots, sitemap, title, and description.",
+    "- Rendered desktop and mobile first viewport.",
+    "- H1, headings, body copy, proof links, screenshots, install commands, docs, and CTA targets.",
+    "- Open Graph, Twitter card, schema/JSON-LD, image alt text, and internal links.",
+    "- Google and Gemini result-surface receipts only when the receipts are actually available and named correctly.",
+    "",
+    "## Grade Lanes",
+    "- Findability: A-F.",
+    "- First-screen clarity: A-F.",
+    "- CTA pull: A-F.",
+    "- Proof and trust: A-F.",
+    "- AI readability: A-F.",
+    "- Design signal: A-F.",
+    "- Overall: A-F.",
+    "",
+    "## Required Output",
+    "- Simple explanation for a non-coder.",
+    "- Usual breakdown with checked URL or source, primary reader, primary action, and lane grades.",
+    "- Top three fixes in priority order.",
+    "- CTA rewrite: primary CTA, secondary CTA, final CTA.",
+    "- Verification: what was checked, what was not checked, and ship gate.",
+    "- Cue Suede choices: change something, preserve what worked, or keep as-is by saying nothing.",
+    "",
+    "## Boundaries",
+    "- Do not invent traffic, ranking, conversion, partner, legal, payout, or placement claims.",
+    "- Do not treat the grade as an audited business metric.",
+    "- Do not call screenshot receipts a surface they do not actually show."
+  ];
+  if (notes) {
+    lines.push("", "## Supplied Notes Or Copy", notes);
+  }
+  return lines.join("\n");
+}
+
 function qaChecklist(args = {}) {
   const scope = boundedString(args.scope, "full");
   const target = boundedString(args.target, "the changed Suede surface");
@@ -151,8 +197,14 @@ function qaChecklist(args = {}) {
     "## SEO/AEO/AI EO And Copy Lane",
     "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, answer-ready copy, CTA copy, and claim boundaries.",
     "",
+    "## Visibility And CTA Grade Lane",
+    "- Grade findability, first-screen clarity, CTA pull, proof and trust, AI readability, design signal, and overall readiness from A-F.",
+    "- Verify Google and Gemini result-surface wording only names receipts for the surfaces they actually show.",
+    "- Rewrite primary, secondary, and final CTAs when the action is vague or buried.",
+    "",
     "## Code And Security Lane",
     "- Check input validation, path handling, protocol errors, no secrets, no destructive operations, and safe failure behavior.",
+    "- Give A-F Suede code grades for correctness, security, data/state, UX risk, tests, deployment readiness, and docs.",
     "",
     "## Browser QA Lane",
     "- Serve locally, check desktop and mobile, run link sweep, verify text fit, and confirm no broken public routes.",
@@ -226,6 +278,21 @@ const tools = [
     }
   },
   {
+    name: "suede_visibility_grade",
+    title: "Suede Visibility Grade",
+    description: "Create a Suede A-F visibility and CTA grading scaffold for a public page, docs surface, repo page, launch page, or campaign page.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        url: { type: "string", description: "Optional URL to grade." },
+        pageType: { type: "string", description: "Page or docs type when no URL is available." },
+        primaryAction: { type: "string", description: "Main action the page should drive." },
+        notes: { type: "string", description: "Optional context, screenshot notes, or constraints." },
+        copy: { type: "string", description: "Optional pasted page copy." }
+      }
+    }
+  },
+  {
     name: "suede_qa_checklist",
     title: "Suede QA Checklist",
     description: "Generate a multi-lane QA checklist for Suede skills, local plugin notes, MCP servers, docs, or public pages.",
@@ -262,6 +329,13 @@ const resources = [
     mimeType: "text/markdown"
   },
   {
+    uri: "suede://visibility-grade",
+    name: "visibility-grade",
+    title: "Suede Visibility Grade Template",
+    description: "A-F website visibility and CTA grading scaffold for public pages, docs, repos, launch pages, and campaign pages.",
+    mimeType: "text/markdown"
+  },
+  {
     uri: "suede://qa-checklist",
     name: "qa-checklist",
     title: "Suede Full QA Checklist",
@@ -286,6 +360,15 @@ const prompts = [
     description: "Explain public skill, local plugin, MCP, and skill-copy install options.",
     arguments: [
       { name: "surface", description: "codex, mcp, claude, plugin, or all.", required: false }
+    ]
+  },
+  {
+    name: "suede-visibility-grade",
+    title: "Run Suede Visibility Grade",
+    description: "Grade a public page A-F for findability, CTA pull, proof, AI readability, design signal, and action clarity.",
+    arguments: [
+      { name: "target", description: "URL, file, repo, or page to grade.", required: true },
+      { name: "action", description: "Primary action the page should drive.", required: false }
     ]
   },
   {
@@ -335,6 +418,15 @@ function callTool(name, args = {}) {
       }
     };
   }
+  if (name === "suede_visibility_grade") {
+    return {
+      content: [text(visibilityGradeTemplate(args))],
+      structuredContent: {
+        target: args.url || args.pageType ? boundedString(args.url || args.pageType) : null,
+        primaryAction: args.primaryAction ? boundedString(args.primaryAction) : null
+      }
+    };
+  }
   if (name === "suede_qa_checklist") {
     return {
       content: [text(qaChecklist(args))],
@@ -357,6 +449,9 @@ function readResource(uri) {
   }
   if (uri === "suede://copy-seo-audit") {
     return { uri, mimeType: "text/markdown", text: seoAuditTemplate({ pageType: "Suede public surface" }) };
+  }
+  if (uri === "suede://visibility-grade") {
+    return { uri, mimeType: "text/markdown", text: visibilityGradeTemplate({ pageType: "Suede public surface" }) };
   }
   if (uri === "suede://qa-checklist") {
     return { uri, mimeType: "text/markdown", text: qaChecklist({ target: "Suede change", scope: "full" }) };
@@ -388,6 +483,18 @@ function getPrompt(name, args = {}) {
       ]
     };
   }
+  if (name === "suede-visibility-grade") {
+    const graderRef = isSkillAvailable("suede-visibility-grader") ? "$suede-visibility-grader" : "the Suede visibility grade MCP template";
+    return {
+      description: "Grade Suede public-page visibility, CTA pull, proof, AI readability, and design signal.",
+      messages: [
+        {
+          role: "user",
+          content: text(`Use ${graderRef} to grade ${boundedString(args.target, "this page")} A-F for findability, first-screen clarity, CTA pull, proof and trust, AI readability, design signal, and overall readiness. Primary action: ${boundedString(args.action, "identify the intended next click")}. Include a simple non-coder explanation, usual breakdown, CTA rewrites, verification notes, and Cue Suede choices.`)
+        }
+      ]
+    };
+  }
   if (name === "suede-full-qa") {
     const teamRef = isSkillAvailable("suede-agent-teams") ? "$suede-agent-teams" : "the Suede QA checklist MCP template";
     const reviewRef = isSkillAvailable("suede-code-review") ? " and $suede-code-review" : "";
@@ -414,7 +521,7 @@ function handleRequest(message) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: {}, resources: {}, prompts: {} },
       serverInfo: { name: "suede-skills-mcp", version: catalog.version },
-      instructions: "Use this MCP when Suede skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
+      instructions: "Use this MCP when Suede skill discovery, install guidance, visibility grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
     };
   }
   if (method === "ping") return {};

@@ -26,6 +26,9 @@ visitor toward the next real action.
   authorize it.
 - "Sexy" means precise, visual, confident, and conversion-aware. Avoid vague
   hype, fake numbers, fake testimonials, and generic SaaS fog.
+- For public pages, use the visibility grade when the page needs an A-F read on
+  findability, first-screen clarity, CTA pull, proof, AI readability, and
+  design signal.
 
 ## Delivery Contract
 
@@ -37,7 +40,8 @@ For a meaningful page, campaign, or conversion pass, define this before edits:
   deploy readback, or live URL verification;
 - constraints: claims, pricing, assets, and routes that are not approved;
 - lanes: copy, layout, SEO/AEO/AI EO, assets, CTA plumbing, and QA. Run lanes in
-  parallel only when they do not write the same files.
+  parallel only when they do not write the same files. Add a visibility grading
+  lane when the page will be promoted publicly.
 
 Use exact status words: inspected, changed locally, verified locally, deployed,
 verified live, or blocked. Do not summarize a page as fixed until the stated
@@ -140,6 +144,8 @@ Default stack for a fast polish pass:
    - Desktop and mobile browser QA.
    - Text fit and no overlap.
    - CTA/link sweep.
+   - Visibility grade when public promotion or GitHub Pages discoverability is
+     part of the ask.
    - `git diff --check`.
    - Live URL/API verification before claiming a production fix.
 8. Ship gate:

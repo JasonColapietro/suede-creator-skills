@@ -87,6 +87,53 @@ Collect consensus first. Keep divergent concerns when they are plausible and
 impactful. If high-severity concerns persist after a fix cycle, keep status at
 `hold` and name the smallest next check or patch.
 
+## Suede A-F Code Grade
+
+For important code, MCP, plugin, public-site, or release-bound changes, include
+an A-F code grade after findings. The grade is not a lint score. It is a ship
+risk summary tied to evidence.
+
+Grade each lane:
+
+- **Correctness:** the changed behavior works for the intended path and likely
+  edge cases.
+- **Security and permissions:** auth, secrets, payment, wallet, injection, path,
+  and data exposure risks fail closed.
+- **Data and state:** schemas, migrations, caches, jobs, webhooks, retries, and
+  state transitions stay consistent.
+- **Suede truth:** rights, provenance, registry, royalty, agent-commerce, public
+  copy, and product claims match implemented behavior.
+- **UX and release behavior:** user-visible states, mobile/native shells,
+  metadata, screenshots, links, and public routes hold together.
+- **Tests and verification:** changed behavior has meaningful tests, builds,
+  screenshots, simulator runs, live/API readbacks, or documented caveats.
+- **Deploy readiness:** env vars, feature flags, configs, docs, install paths,
+  and rollback expectations are clear.
+
+Grade meaning:
+
+- **A:** ship and use as a reference for similar work.
+- **B:** ship-with-caveats; no blocker, but named follow-ups remain.
+- **C:** hold until focused fixes land and the weak lanes are rechecked.
+- **D:** hold; serious production, release, security, or claim risk remains.
+- **F:** do not ship; core behavior, safety, or source truth is broken.
+
+Output:
+
+```text
+Code grade:
+Correctness: A-F
+Security and permissions: A-F
+Data and state: A-F
+Suede truth: A-F
+UX and release behavior: A-F
+Tests and verification: A-F
+Deploy readiness: A-F
+Overall: A-F
+Why:
+Required upgrades:
+```
+
 ## Finding Format
 
 Lead with findings, ordered by severity.
@@ -162,6 +209,7 @@ For a review:
 
 ```text
 Findings
+Code Grade
 Open Questions
 Verification Checked
 Ship Gate

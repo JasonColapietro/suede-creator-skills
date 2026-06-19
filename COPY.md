@@ -2,30 +2,31 @@
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
 Skills. Lead with design, copywriting, SEO/AEO/AI EO, Suedify site mimicry,
-QA, and agent-team workflow. Keep claims public-safe. The skills do not upload
-files, clear rights, write to a registry, distribute music, or promise payouts.
+visibility grading, A-F code review, QA, and agent-team workflow. Keep claims
+public-safe. The skills do not upload files, clear rights, write to a registry,
+distribute music, or promise payouts.
 
 ## Repo Copy
 
 ### One-line description
 
 Free Codex and Claude Code skills for design, copywriting, SEO/AEO/AI EO,
-Suedify website restyling, public docs, QA, artist campaigns, and creator
-utility workflows.
+Suedify website restyling, visibility grading, A-F code review, public docs,
+QA, artist campaigns, and creator utility workflows.
 
 ### Short description
 
 Suede Creator Skills help agents improve websites, rewrite copy, audit
-SEO/AEO/AI EO, mimic reference-site style safely, coordinate QA, package public
-docs, and support creator workflows.
+SEO/AEO/AI EO, grade visibility and CTA strength, mimic reference-site style
+safely, coordinate QA, package public docs, and support creator workflows.
 
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 34 public `SKILL.md` folders:
-one umbrella workflow, Suedify, design, copy, SEO/AEO/AI EO, site alchemy, QA,
-install support, ambassador, launch, agent-team, code-review, artist-campaign,
-and creator utility lanes.
+creators, agencies, and AI power users. It ships 35 public `SKILL.md` folders:
+one umbrella workflow, Suedify, design, copy, SEO/AEO/AI EO, site alchemy,
+visibility grading, A-F code review, QA, install support, ambassador, launch,
+agent-team, artist-campaign, and creator utility lanes.
 
 ## GitHub Pages Copy
 
@@ -36,8 +37,8 @@ Suede Creator Skills | Design, Copy, SEO, Suedify
 ### Meta description
 
 Install free Codex and Claude Code skills for Suedify website restyling,
-design QA, copywriting, SEO/AEO/AI EO audits, public docs, agent teams, and creator
-workflows.
+design QA, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code
+review, public docs, agent teams, and creator workflows.
 
 ### Hero
 
@@ -45,10 +46,10 @@ Give your agent design taste, copy discipline, SEO, and QA.
 
 ### Subhead
 
-Install a 34-skill Suede pack that helps agents mimic reference-site style,
-improve visual systems, rewrite public copy, audit SEO/AEO/AI EO, check
-install paths, coordinate QA, package artist campaigns, and support creator
-workflows.
+Install a 35-skill Suede pack that helps agents mimic reference-site style,
+improve visual systems, rewrite public copy, audit SEO/AEO/AI EO, grade
+visibility and CTA clarity, check install paths, coordinate QA, package artist
+campaigns, and support creator workflows.
 
 ### Primary CTA
 
@@ -89,6 +90,7 @@ QA checklists without turning MCP into a checkbox.
 - Use the MCP
 - List Suede skills
 - Run an SEO/AEO/AI EO copy audit
+- Grade visibility and CTA clarity
 - Build a QA checklist
 
 ### Safety note
@@ -104,15 +106,17 @@ Canonical source: [`PROMO.md`](PROMO.md)
 ### Core explanation
 
 Suede gives AI agents a reusable product workflow for design, copywriting,
-SEO/AEO/AI EO, Suedify reference-site mimicry, code review, QA, public skill
-installs, local plugin notes, and MCP-assisted discovery.
+SEO/AEO/AI EO, Suedify reference-site mimicry, visibility grading, A-F code
+review, QA, public skill installs, local plugin notes, and MCP-assisted
+discovery.
 
 ### Best overall explanation
 
 Suede is the workflow layer for AI agents that need to ship better public
 product work. It packages design direction, copywriting, SEO/AEO/AI EO,
-Suedify, site-alchemy, code review, QA, public skill installs, progressive
-feedback handling, and optional MCP support into one reusable Suede system.
+Suedify, site-alchemy, visibility grading, A-F code review, QA, public skill
+installs, progressive feedback handling, and optional MCP support into one
+reusable Suede system.
 
 ### Suedify explanation
 
@@ -120,6 +124,27 @@ Give the agent a reference URL and a target URL. Suedify studies layout,
 hierarchy, spacing, color, interaction cues, and content rhythm, then pushes
 the target toward the reference with Suede design, copy, SEO/AEO/AI EO, and QA
 checks.
+
+### Visibility grader explanation
+
+Suede Visibility Grader checks whether a public page can be found, understood,
+trusted, cited by AI systems, and acted on. It returns A-F grades for
+findability, first-screen clarity, CTA pull, proof, AI readability, design
+signal, and the next fixes.
+
+### Code grade explanation
+
+Suede Code Review gives A-F Suede grades for correctness, security, data and
+state handling, UX risk, tests, deployment readiness, and docs. The grade is a
+ship gate, not decoration.
+
+### Founder context
+
+Jason is not a coder by background. He had to learn fast and turn repeated
+agent failures into reusable Suede workflows. Over Suede's life he hired and
+fired six marketing firms, and the visibility lesson became part of the system:
+public work has to show up across Google and Gemini result surfaces, make sense
+to AI systems, carry proof, and move a real visitor toward a clear action.
 
 ### Progressive updating note
 
@@ -247,9 +272,9 @@ CTA: Install for Claude Code
 ### What are Suede Creator Skills?
 
 Suede Creator Skills are public `SKILL.md` folders for design, copywriting,
-SEO/AEO/AI EO, Suedify website restyling, QA, artist campaign, and creator workflows.
-They help agents work from a repeatable Suede process instead of a blank
-prompt.
+SEO/AEO/AI EO, Suedify website restyling, visibility grading, A-F code review,
+QA, artist campaign, and creator workflows. They help agents work from a
+repeatable Suede process instead of a blank prompt.
 
 ### Do these skills upload my music?
 
@@ -266,15 +291,17 @@ manager, label, or legal reviewer still needs to confirm rights.
 Run `suedify` when you have a reference URL and a target URL. Run
 `suede-design` for visual systems and responsive QA, `suede-copy` for public
 copy, `suede-seo-audit` for search, answer intent, and metadata, and
+`suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
 `suede-agent-teams` when a major pass needs multiple review lanes.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 34 public agent skills for design, copywriting,
-SEO/AEO/AI EO, Suedify website restyling, QA, install support, launch
-packaging, artist campaigns, and creator utility workflows.
+Suede Creator Skills are live: 35 public agent skills for design, copywriting,
+SEO/AEO/AI EO, Suedify website restyling, visibility grading, A-F code review,
+QA, install support, launch packaging, artist campaigns, and creator utility
+workflows.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
@@ -282,17 +309,19 @@ Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
 I published Suede Creator Skills, a public `SKILL.md` pack for Codex and Claude
 Code. It includes an umbrella workflow plus focused skills for Suedify, design
-QA, copywriting, SEO/AEO/AI EO audits, site alchemy, install support, QA,
-launch packaging, agent teams, artist campaigns, and creator utilities. The utility
-tools run offline, write local reports, and keep private files off the network.
+QA, copywriting, SEO/AEO/AI EO audits, site alchemy, visibility grading, A-F
+code review, install support, QA, launch packaging, agent teams, artist
+campaigns, and creator utilities. The utility tools run offline, write local
+reports, and keep private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills
 
 ### Creator post
 
 Give the agent a reference site, a target site, and the Suede workflow. It can
-study the design language, rewrite the offer, audit SEO/AEO/AI EO, check QA, and keep
-improving when you tell it what worked or missed.
+study the design language, rewrite the offer, audit SEO/AEO/AI EO, grade
+visibility and CTA clarity, check QA, and keep improving when you tell it what
+worked or missed.
 
 ## Repo Topics
 
@@ -308,7 +337,10 @@ improving when you tell it what worked or missed.
 - ai-eo
 - answer-engine-optimization
 - website-restyling
+- website-visibility
+- cta-grader
 - design-systems
+- code-review
 - music-rights
 - music-metadata
 - music-release

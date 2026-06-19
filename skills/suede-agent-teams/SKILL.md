@@ -53,6 +53,9 @@ Choose the smallest useful roster.
 - **Design reviewer:** checks rendered visual quality, responsive behavior,
   accessibility, copy, and state coverage.
 - **Code reviewer:** runs full-context review and turns findings into fix briefs.
+- **Visibility grader:** grades public pages, GitHub Pages sites, docs, and
+  launch surfaces for findability, first-screen clarity, CTA pull, proof, AI
+  readability, and design signal.
 - **Release verifier:** checks build, deploy, live/API behavior, App Store/iOS
   truth, secrets, and public claims.
 - **Handoff writer:** records target, files changed, commands, verification,
@@ -77,6 +80,31 @@ Run the loop at the smallest scale that fits:
 
 If verification fails, diagnose the root cause, create a gap plan, execute only
 the gap, and re-run the failing checks.
+
+## Grouping Loops
+
+Pick the loop that matches the risk. Keep ownership explicit and keep parallel
+lanes away from the same files.
+
+- **Linear delivery loop:** scout, plan, build, verify, review, ship. Use for
+  normal multi-file work where sequencing matters more than speed.
+- **Parallel surface loop:** scout once, then split copy, design, code, SEO, and
+  release lanes only when their write surfaces do not collide.
+- **Adversarial review loop:** builder delivers, then at least one reviewer tries
+  to break the work from production, user, release, public-claim, and abuse
+  angles before fixes are accepted.
+- **Design and visibility loop:** design reviewer checks the rendered page while
+  visibility grader scores findability, first-screen clarity, CTA pull, proof,
+  AI readability, and design signal.
+- **Code grade loop:** code reviewer assigns an A-F grade across correctness,
+  security, data/state, public-claim truth, tests, and deploy readiness, then
+  converts weak lanes into fix briefs.
+- **Release lock loop:** release verifier owns build, deploy, live/API readback,
+  public copy truth, and handoff before any public completion claim.
+
+For large Suede work, run scout first, build in parallel only where safe, then
+converge through adversarial review, code grade, visibility grade, release
+lock, and handoff.
 
 ## Planning Quality Gate
 

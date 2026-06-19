@@ -2,6 +2,8 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+**Historical note:** This completed implementation plan captured an earlier pass before the visibility grader was added. Current skill counts live in the repo catalog and public docs.
+
 **Goal:** Add a design-forward Suede skill layer centered on Suedify, copywriting, SEO/AEO/AI EO, QA, progressive feedback, and creative artist campaign tools, while keeping sync/licensing prep free of promo CTAs.
 
 **Architecture:** Keep the existing public skills repo structure. Add new `skills/<name>/SKILL.md` folders with `agents/openai.yaml`, update `mcp/catalog.json` as the source catalog, and refresh README, PROMO, COPY, and GitHub Pages HTML so public installs and CTAs match the new pack.
@@ -57,7 +59,7 @@
 - Modify: `docs/skills/index.html`
 - Modify: `docs/skills/suede-workflow-skills.html`
 
-- [x] Change public count from 21 to 34.
+- [x] Change the public count from the older baseline to the then-current skill total.
 - [x] Add an artist tools section and keep sync packaging as a review-prep tool without a promo CTA.
 - [x] Update install commands and skill folder lists.
 - [x] Keep `@personal` copy local-only.
@@ -68,7 +70,7 @@
 **Files:**
 - Review all changed files.
 
-- [x] Count `SKILL.md` files and confirm 34.
+- [x] Count `SKILL.md` files and confirm the then-current skill total.
 - [x] Run a no-dependency skill structure validator.
 - [x] Run `node --check mcp/suede-skills-mcp.mjs`.
 - [x] Parse `mcp/catalog.json`.

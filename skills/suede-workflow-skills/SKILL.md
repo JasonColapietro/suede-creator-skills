@@ -19,13 +19,16 @@ This skill is the public entry point for:
   rights-aware, and free of generic AI phrasing.
 - **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
   AI EO, internal links, sitemap fit, and discoverability.
+- **Suede Visibility Grader:** grade public pages, GitHub Pages sites, docs,
+  launch pages, and campaign pages for findability, first-screen clarity, CTA
+  pull, proof, AI readability, and design signal.
 - **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
   conversion surface.
 - **Suede Code Review:** review changes for real bugs, regressions, security
-  risk, public-claim drift, and missing verification.
+  risk, public-claim drift, missing verification, and A-F ship readiness.
 - **Suede Agent Teams:** split important work into clear lanes for scout,
-  planner, builder, design reviewer, code reviewer, release verifier, and
-  handoff writer.
+  planner, builder, design reviewer, visibility grader, code reviewer, release
+  verifier, and handoff writer.
 - **Suede Launch Packaging:** prepare public releases, proof links, install
   commands, QA, and handoff notes.
 - **Suede Install Support:** fix public GitHub skill installs, local plugin
@@ -54,6 +57,7 @@ their names match the task:
 - `suede-copy`
 - `suede-brand-voice`
 - `suede-seo-audit`
+- `suede-visibility-grader`
 - `suede-site-alchemy`
 - `suede-code-review`
 - `suede-agent-teams`
@@ -243,6 +247,28 @@ Claim boundaries:
 Ship gate: ship | ship-with-caveats | hold
 ```
 
+## Visibility Grading Workflow
+
+For public pages, GitHub Pages sites, docs, campaign pages, launch pages, and
+creator pages, use `suede-visibility-grader` when the question is whether the
+right person or agent can find the page, understand it, trust it, cite it, and
+take the next action.
+
+Grade:
+
+```text
+Findability: A-F
+First-screen clarity: A-F
+CTA pull: A-F
+Proof and trust: A-F
+AI readability: A-F
+Design signal: A-F
+Overall: A-F
+```
+
+Treat the grade as an execution guide, not an audited traffic metric. Inspect
+the live URL or source before grading and name anything that was not checked.
+
 ## Site Alchemy Workflow
 
 For landing pages, campaign pages, product microsites, public repo pages, or
@@ -292,6 +318,20 @@ Ship gate:
 - `ship-with-caveats`: no blocker remains, but caveats are named.
 - `hold`: blocker or high-risk unknown remains.
 
+For important work, include a Suede A-F code grade:
+
+```text
+Code grade:
+Correctness: A-F
+Security and permissions: A-F
+Data and state: A-F
+Suede truth: A-F
+UX and release behavior: A-F
+Tests and verification: A-F
+Deploy readiness: A-F
+Overall: A-F
+```
+
 ## Agent Team Workflow
 
 Use team lanes for large, risky, cross-surface, public, design-heavy, or
@@ -309,6 +349,15 @@ Done Signal:
 Ship Gate:
 ```
 
+Useful grouping loops:
+
+- Linear delivery loop: scout, plan, build, verify, review, ship.
+- Parallel surface loop: split lanes only when file ownership does not collide.
+- Adversarial review loop: one lane tries to break the work before release.
+- Design and visibility loop: rendered QA plus A-F page visibility grading.
+- Code grade loop: A-F code grade plus fix briefs for weak lanes.
+- Release lock loop: build, deploy, live/API readback, claim truth, handoff.
+
 ## Specialized Lane Router
 
 When the task names a narrower Suede lane, route directly:
@@ -316,6 +365,7 @@ When the task names a narrower Suede lane, route directly:
 - Public copy or tone: `suede-copy`, `suede-brand-voice`,
   `suede-public-claim-check`.
 - Search/discovery: `suede-seo-audit`.
+- Page visibility and CTA grade: `suede-visibility-grader`.
 - Reference-site mimicry: `suedify`.
 - Page polish and conversion: `suede-site-alchemy`.
 - Launch or public packaging: `suede-launch-packaging`.
@@ -346,6 +396,8 @@ Useful lanes:
 - Planner: tasks, dependencies, and acceptance criteria.
 - Builder: narrow code/content changes.
 - Design reviewer: responsive visual QA, accessibility basics, copy, states.
+- Visibility grader: findability, first-screen clarity, CTA pull, proof, AI
+  readability, and design signal.
 - Code reviewer: correctness, security, regression, tests, install paths.
 - Release verifier: build, deploy, live/API behavior, public claims.
 - Handoff writer: files changed, commands, verification, caveats, next step.
@@ -370,6 +422,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-copy \
   skills/suede-brand-voice \
   skills/suede-seo-audit \
+  skills/suede-visibility-grader \
   skills/suede-site-alchemy \
   skills/suede-code-review \
   skills/suede-agent-teams \
