@@ -78,7 +78,7 @@ function installMarkdown(data, surface = "all") {
   if (surface === "all" || surface === "mcp") {
     lines.push("");
     lines.push("## MCP option");
-    lines.push("Use the MCP when structured skill discovery, install options, visibility grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
+    lines.push("Use the MCP when structured skill discovery, install options, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
     for (const plugin of data.plugins) {
       lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
     }
@@ -178,6 +178,54 @@ function visibilityGradeTemplate(args = {}) {
   return lines.join("\n");
 }
 
+function codeGradeTemplate(args = {}) {
+  const target = boundedString(args.repo || args.diff || args.target, "the target code change");
+  const intent = boundedString(args.intent || args.changeIntent, "the intended behavior");
+  const notes = boundedString(args.notes || args.context || "");
+  const lines = [
+    `# Suede Code Grade: ${target}`,
+    "",
+    `Change intent: ${intent}`,
+    "",
+    "Goal: decide whether this code is ready to ship, why it earned the grade, and which upgrades would move the grade.",
+    "",
+    "## Source Truth To Inspect",
+    "- Repo, branch, remote, dirty state, and relevant local guidance.",
+    "- Diff, changed files, generated files, touched routes, APIs, scripts, MCP tools, or app surfaces.",
+    "- Imports, callers, schemas, configs, env requirements, jobs, webhooks, tests, docs, and release paths.",
+    "- Build, test, lint, typecheck, browser, simulator, MCP, or live/API evidence that exercises the changed behavior.",
+    "- Suede public claims, rights/provenance, payment/wallet, registry, royalty, and agent-commerce contracts when relevant.",
+    "",
+    "## Grade Lanes",
+    "- Correctness: A-F.",
+    "- Security and permissions: A-F.",
+    "- Data and state: A-F.",
+    "- Suede truth: A-F.",
+    "- UX and release behavior: A-F.",
+    "- Tests and verification: A-F.",
+    "- Deploy readiness: A-F.",
+    "- Overall: A-F.",
+    "",
+    "## Required Output",
+    "- Simple explanation for a non-coder.",
+    "- Usual breakdown with target, change reviewed, runtime surfaces, and lane grades.",
+    "- Why the overall grade landed there.",
+    "- Required upgrades in priority order.",
+    "- Verification: what was checked, what was not checked, and ship gate.",
+    "- Cue Suede choices: change something, preserve what worked, or keep as-is by saying nothing.",
+    "",
+    "## Boundaries",
+    "- Do not grade from memory when source or diff can be inspected.",
+    "- Do not treat the grade as a certification or audited security result.",
+    "- Do not invent tests, screenshots, live checks, deploy status, or public claim evidence.",
+    "- Do not ship a C, D, or F without naming the required upgrade."
+  ];
+  if (notes) {
+    lines.push("", "## Supplied Notes Or Context", notes);
+  }
+  return lines.join("\n");
+}
+
 function qaChecklist(args = {}) {
   const scope = boundedString(args.scope, "full");
   const target = boundedString(args.target, "the changed Suede surface");
@@ -202,9 +250,13 @@ function qaChecklist(args = {}) {
     "- Verify Google and Gemini result-surface wording only names receipts for the surfaces they actually show.",
     "- Rewrite primary, secondary, and final CTAs when the action is vague or buried.",
     "",
+    "## Code Grade Lane",
+    "- Grade correctness, security and permissions, data/state, Suede truth, UX/release behavior, tests, deploy readiness, and overall readiness from A-F.",
+    "- Explain why the grade landed there and name the required upgrades before ship.",
+    "",
     "## Code And Security Lane",
     "- Check input validation, path handling, protocol errors, no secrets, no destructive operations, and safe failure behavior.",
-    "- Give A-F Suede code grades for correctness, security, data/state, UX risk, tests, deployment readiness, and docs.",
+    "- Convert weak code-grade lanes into fix briefs when the change should not ship yet.",
     "",
     "## Browser QA Lane",
     "- Serve locally, check desktop and mobile, run link sweep, verify text fit, and confirm no broken public routes.",
@@ -293,6 +345,22 @@ const tools = [
     }
   },
   {
+    name: "suede_code_grade",
+    title: "Suede Code Grade",
+    description: "Create a Suede A-F code grading scaffold for a diff, PR, branch, MCP server, plugin, API, app surface, public-site change, or release candidate.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        target: { type: "string", description: "Target repo, PR, branch, diff, file, or change to grade." },
+        repo: { type: "string", description: "Optional repository or project path." },
+        diff: { type: "string", description: "Optional pasted diff or change summary." },
+        intent: { type: "string", description: "Intended behavior or release goal." },
+        notes: { type: "string", description: "Optional constraints, verification notes, or risk context." },
+        context: { type: "string", description: "Optional pasted context or review notes." }
+      }
+    }
+  },
+  {
     name: "suede_qa_checklist",
     title: "Suede QA Checklist",
     description: "Generate a multi-lane QA checklist for Suede skills, local plugin notes, MCP servers, docs, or public pages.",
@@ -336,6 +404,13 @@ const resources = [
     mimeType: "text/markdown"
   },
   {
+    uri: "suede://code-grade",
+    name: "code-grade",
+    title: "Suede Code Grade Template",
+    description: "A-F code grading scaffold for diffs, PRs, branches, MCP servers, plugins, APIs, app surfaces, and release candidates.",
+    mimeType: "text/markdown"
+  },
+  {
     uri: "suede://qa-checklist",
     name: "qa-checklist",
     title: "Suede Full QA Checklist",
@@ -369,6 +444,15 @@ const prompts = [
     arguments: [
       { name: "target", description: "URL, file, repo, or page to grade.", required: true },
       { name: "action", description: "Primary action the page should drive.", required: false }
+    ]
+  },
+  {
+    name: "suede-code-grade",
+    title: "Run Suede Code Grade",
+    description: "Grade a code change A-F for ship risk, explain why, and list required upgrades.",
+    arguments: [
+      { name: "target", description: "Repo, PR, branch, diff, file, or change to grade.", required: true },
+      { name: "intent", description: "Intended behavior or release goal.", required: false }
     ]
   },
   {
@@ -427,6 +511,15 @@ function callTool(name, args = {}) {
       }
     };
   }
+  if (name === "suede_code_grade") {
+    return {
+      content: [text(codeGradeTemplate(args))],
+      structuredContent: {
+        target: args.target || args.repo || args.diff ? boundedString(args.target || args.repo || args.diff) : null,
+        intent: args.intent ? boundedString(args.intent) : null
+      }
+    };
+  }
   if (name === "suede_qa_checklist") {
     return {
       content: [text(qaChecklist(args))],
@@ -452,6 +545,9 @@ function readResource(uri) {
   }
   if (uri === "suede://visibility-grade") {
     return { uri, mimeType: "text/markdown", text: visibilityGradeTemplate({ pageType: "Suede public surface" }) };
+  }
+  if (uri === "suede://code-grade") {
+    return { uri, mimeType: "text/markdown", text: codeGradeTemplate({ target: "Suede code change" }) };
   }
   if (uri === "suede://qa-checklist") {
     return { uri, mimeType: "text/markdown", text: qaChecklist({ target: "Suede change", scope: "full" }) };
@@ -495,15 +591,28 @@ function getPrompt(name, args = {}) {
       ]
     };
   }
+  if (name === "suede-code-grade") {
+    const graderRef = isSkillAvailable("suede-code-grader") ? "$suede-code-grader" : "the Suede code grade MCP template";
+    return {
+      description: "Grade Suede code readiness, ship risk, verification gaps, and required upgrades.",
+      messages: [
+        {
+          role: "user",
+          content: text(`Use ${graderRef} to grade ${boundedString(args.target, "this code change")} A-F for correctness, security and permissions, data and state, Suede truth, UX and release behavior, tests and verification, deploy readiness, and overall ship risk. Intent: ${boundedString(args.intent, "identify the intended behavior")}. Include a simple non-coder explanation, usual breakdown, why the grade landed there, required upgrades, verification notes, ship gate, and Cue Suede choices.`)
+        }
+      ]
+    };
+  }
   if (name === "suede-full-qa") {
     const teamRef = isSkillAvailable("suede-agent-teams") ? "$suede-agent-teams" : "the Suede QA checklist MCP template";
+    const gradeRef = isSkillAvailable("suede-code-grader") ? ", $suede-code-grader" : "";
     const reviewRef = isSkillAvailable("suede-code-review") ? " and $suede-code-review" : "";
     return {
       description: "Run multi-lane Suede QA.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, browser QA, code/security, and live verification where applicable.`)
+          content: text(`Use ${teamRef}${gradeRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, browser QA, A-F code grade, code/security, and live verification where applicable.`)
         }
       ]
     };
@@ -521,7 +630,7 @@ function handleRequest(message) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: {}, resources: {}, prompts: {} },
       serverInfo: { name: "suede-skills-mcp", version: catalog.version },
-      instructions: "Use this MCP when Suede skill discovery, install guidance, visibility grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
+      instructions: "Use this MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
     };
   }
   if (method === "ping") return {};

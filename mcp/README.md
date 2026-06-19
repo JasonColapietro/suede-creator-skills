@@ -8,6 +8,7 @@ It is useful when an agent needs structured access to:
   campaigns, and creator utilities;
 - public GitHub skill installs, local plugin notes, MCP, and skill-copy install options;
 - SEO/AEO/AI EO copy audit scaffolds;
+- A-F website visibility, CTA, and code-grade scaffolds;
 - multi-lane QA checklists for skill, MCP, docs, and public site changes.
 
 For public positioning, launch copy, ambassador language, Suedify messaging,

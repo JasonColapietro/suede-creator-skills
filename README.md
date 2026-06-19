@@ -2,7 +2,7 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 35-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 36-skill pack for AI coding agents,
 design-heavy website work, copywriting, SEO/AEO/AI EO, Suedify-style site
 mimicry, QA, and creator workflows. It includes one umbrella workflow, design
 and copy lanes, SEO/AEO/AI EO audits, visibility and CTA grading, site
@@ -29,11 +29,12 @@ reference with Suede-safe design, copy, SEO, and QA.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI
-systems, and acted on. Suede Code Review adds A-F code grades for correctness,
-security, state, UX, tests, deployment risk, and public docs. Suede Agent Teams
-adds grouping loops for major work: scout, build, adversarial review, design
-visibility review, release verification, and handoff without lanes stepping on
-the same files.
+systems, and acted on. Suede Code Grader gives code an A-F ship-risk grade with
+the reason why across correctness, security, state, UX, tests, deploy readiness,
+and public-claim truth. Suede Code Review keeps the deeper findings and fix
+brief workflow. Suede Agent Teams adds grouping loops for major work: scout,
+build, adversarial review, design visibility review, release verification, and
+handoff without lanes stepping on the same files.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,
@@ -172,6 +173,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-seo-audit \
   skills/suede-site-alchemy \
   skills/suede-visibility-grader \
+  skills/suede-code-grader \
   skills/suede-code-review \
   skills/suede-agent-teams \
   skills/suede-launch-packaging \
@@ -237,6 +239,8 @@ MCP tools:
 - `get_suede_skill`
 - `suede_install_options`
 - `suede_copy_seo_audit`
+- `suede_visibility_grade`
+- `suede_code_grade`
 - `suede_qa_checklist`
 
 ## Skills Included
@@ -250,7 +254,7 @@ design, copy, SEO/AEO/AI EO, site polish, visibility and CTA grading, code
 review with A-F Suede grades, QA, launch, install support, MCP QA, ambassador
 explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, agent-team grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **35
+artist campaign, and creator utility workflow. The repository now ships **36
 public skill folders**.
 
 ```bash
@@ -268,6 +272,7 @@ Individual public workflow and operations skills:
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
 - [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
+- [`skills/suede-code-grader`](skills/suede-code-grader)
 - [`skills/suede-code-review`](skills/suede-code-review)
 - [`skills/suede-agent-teams`](skills/suede-agent-teams)
 - [`skills/suede-launch-packaging`](skills/suede-launch-packaging)

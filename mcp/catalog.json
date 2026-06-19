@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Suede design, copywriting, SEO/AEO/AI EO, visibility grading, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
+  "summary": "Local MCP access to Suede design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for design, copywriting, SEO/AEO/AI EO, visibility grading, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
+      "description": "Public Suede workflow skills for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -49,6 +49,7 @@
         "suede-seo-audit",
         "suede-visibility-grader",
         "suede-site-alchemy",
+        "suede-code-grader",
         "suede-code-review",
         "suede-agent-teams",
         "suede-launch-packaging",
@@ -112,7 +113,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for design, copywriting, SEO/AEO/AI EO, visibility grading, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
+      "description": "Public umbrella Suede workflow for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
     },
     {
@@ -156,6 +157,12 @@
       "area": "workflow",
       "description": "Suede website, landing page, campaign page, SEO/AEO/AI EO, visibility grading, CTA routing, conversion, and page polish workflow.",
       "useWhen": "Use for improving pages, packaging Suede Sites-style website growth offers, or routing app requests into Suede app-builder workflow."
+    },
+    {
+      "name": "suede-code-grader",
+      "area": "workflow",
+      "description": "Suede direct A-F code grading workflow for diffs, PRs, branches, MCP servers, plugins, APIs, app surfaces, public-site changes, and release candidates with lane scores and an explanation why.",
+      "useWhen": "Use when a user wants a code grade from A-F, the reason for that grade, required upgrades, and a ship gate without a full review report."
     },
     {
       "name": "suede-code-review",
@@ -327,6 +334,7 @@
       "suede_install_options",
       "suede_copy_seo_audit",
       "suede_visibility_grade",
+      "suede_code_grade",
       "suede_qa_checklist"
     ],
     "resources": [
@@ -334,12 +342,14 @@
       "suede://plugins",
       "suede://copy-seo-audit",
       "suede://visibility-grade",
+      "suede://code-grade",
       "suede://qa-checklist"
     ],
     "prompts": [
       "suede-copy-seo-audit",
       "suede-plugin-install",
       "suede-visibility-grade",
+      "suede-code-grade",
       "suede-full-qa"
     ]
   }

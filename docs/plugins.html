@@ -148,11 +148,11 @@
     <main class="shell">
       <div class="eyebrow">Public installs and MCP</div>
       <h1>Install public Suede skills from GitHub. Use MCP when it helps.</h1>
-      <p class="lead">Suede ships 35 public skill folders from this repo. Install the umbrella workflow for normal use, or install direct skills when you want narrow triggers. The optional MCP gives agents structured access to Suedify, design, copywriting, visibility grading, SEO/AEO/AI EO audit scaffolds, install options, and multi-lane QA checklists.</p>
+      <p class="lead">Suede ships 36 public skill folders from this repo. Install the umbrella workflow for normal use, or install direct skills when you want narrow triggers. The optional MCP gives agents structured access to Suedify, design, copywriting, visibility grading, A-F code grading, SEO/AEO/AI EO audit scaffolds, install options, and multi-lane QA checklists.</p>
 
       <section class="panel">
         <h2>Ambassador explanation</h2>
-        <p>Use <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">PROMO.md</a> when ambassadors need to explain the full Suede workflow: Suedify, design, copywriting, visibility and CTA grading, SEO/AEO/AI EO audits, A-F code review, agent-team loops, artist campaign tools, public installs, and optional MCP. Keep <code>@personal</code> in local operator notes, not public ambassador copy.</p>
+        <p>Use <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">PROMO.md</a> when ambassadors need to explain the full Suede workflow: Suedify, design, copywriting, visibility and CTA grading, SEO/AEO/AI EO audits, A-F code grading, code review, agent-team loops, artist campaign tools, public installs, and optional MCP. Keep <code>@personal</code> in local operator notes, not public ambassador copy.</p>
         <p>This page is the GitHub Pages surface generated from the public repo, not a separate marketing site. The install commands, docs, sitemap, and skill pages live beside the source.</p>
       </section>
 
@@ -167,7 +167,7 @@
         </article>
         <article class="card">
           <h2>Direct Website Workflow Skills</h2>
-          <p>Install narrow website triggers when a project needs direct calls for Suedify, design, copy, SEO/AEO/AI EO, visibility grading, site alchemy, A-F code review, and agent-team loops.</p>
+          <p>Install narrow website triggers when a project needs direct calls for Suedify, design, copy, SEO/AEO/AI EO, visibility grading, site alchemy, A-F code grading, full code review, and agent-team loops.</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suedify \
@@ -176,9 +176,10 @@
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
+  skills/suede-code-grader \
   skills/suede-code-review \
   skills/suede-agent-teams</code></pre>
-          <p><a class="button secondary" href="./skills/suede-visibility-grader.html">Read visibility grader docs</a></p>
+          <p><a class="button secondary" href="./skills/suede-visibility-grader.html">Read visibility grader docs</a> <a class="button secondary" href="./skills/suede-code-grader.html">Read code grader docs</a></p>
         </article>
         <article class="card">
           <h2>Public Suede Creator Skills</h2>
@@ -221,8 +222,9 @@ codex plugin add suede-creator-skills@personal</code></pre>
           <div class="link-row"><b>Skill discovery</b><span>Agents can ask for the right Suede skill for Suedify, design, copy, SEO/AEO/AI EO, QA, artist campaigns, or utilities instead of guessing from memory.</span></div>
           <div class="link-row"><b>Install options</b><span>Public skill installs, MCP, local plugin notes, and skill-copy paths are returned as structured guidance.</span></div>
           <div class="link-row"><b>Visibility and CTA grading</b><span>Agents can route website checks through a focused grader for findability, first-screen clarity, CTA pull, proof, AI readability, design signal, and Google and Gemini result-surface readiness.</span></div>
+          <div class="link-row"><b>A-F code grading</b><span>Agents can route code checks through a focused grader for correctness, security, data/state, Suede truth, UX and release behavior, tests, deploy readiness, and required upgrades.</span></div>
           <div class="link-row"><b>SEO/AEO/AI EO copy audits</b><span>The MCP provides a full Suede SEO/AEO/AI EO audit scaffold for pages, repos, README files, skill docs, answer-ready copy, and AI summary-safe proof.</span></div>
-          <div class="link-row"><b>QA checklists</b><span>Agents can generate a full QA pass for skills, MCP, docs, local plugin notes, public site changes, A-F code grades, and adversarial review loops.</span></div>
+          <div class="link-row"><b>QA checklists</b><span>Agents can generate a full QA pass for skills, MCP, docs, local plugin notes, public site changes, code grades, and adversarial review loops.</span></div>
         </div>
       </section>
 
@@ -234,6 +236,7 @@ codex plugin add suede-creator-skills@personal</code></pre>
           <div class="link-row"><b><code>suede_install_options</code></b><span>Returns public skill, MCP, local plugin, and skill-copy install options.</span></div>
           <div class="link-row"><b><code>suede_copy_seo_audit</code></b><span>Builds an SEO/AEO/AI EO copy audit scaffold with metadata, schema, CTA, proof, and verification checks.</span></div>
           <div class="link-row"><b><code>suede_visibility_grade</code></b><span>Builds an A-F visibility and CTA grading scaffold for findability, first-screen clarity, proof, AI readability, design signal, and ship readiness.</span></div>
+          <div class="link-row"><b><code>suede_code_grade</code></b><span>Builds an A-F code grading scaffold for correctness, security, data/state, Suede truth, UX and release behavior, tests, deploy readiness, required upgrades, and ship gate.</span></div>
           <div class="link-row"><b><code>suede_qa_checklist</code></b><span>Builds a multi-lane QA checklist for MCP, skills, docs, local plugin notes, and public site work.</span></div>
         </div>
       </section>

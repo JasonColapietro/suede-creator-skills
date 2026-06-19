@@ -40,7 +40,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Use MCP only when the workflow benefits from a catalog, audit, or checklist.
 - A public skill pack for people who want AI agents to ship better work with fewer resets.
 - Agent workflows for people who care about public pages, repo quality, and claim boundaries.
-- Thirty-five public Suede skills, led by one design-forward umbrella workflow.
+- Thirty-six public Suede skills, led by one design-forward umbrella workflow.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
 
@@ -198,7 +198,7 @@ context helps.
 ```text
 Suede Creator Skills
 
-Design, copy, SEO/AEO/AI EO, Suedify, visibility grading, A-F code review, MCP, and creator workflows for AI agents.
+Design, copy, SEO/AEO/AI EO, Suedify, visibility grading, A-F code grading, MCP, and creator workflows for AI agents.
 
 Install the public Suede skills to give Codex a reusable system for sharper product work, better public docs, cleaner websites, reference-site restyling, visibility and CTA grading, structured QA, safer public claims, and creator campaign workflows.
 ```
@@ -228,7 +228,7 @@ Rewrite the page
 ### Suede Workflow Skills
 
 ```text
-Product, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code review, QA, launch packaging, install support, claim checks, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to mimic a reference site, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+Product, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading, QA, launch packaging, install support, claim checks, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to mimic a reference site, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
 ```
 
 ### Suede Creator Skills
@@ -246,13 +246,13 @@ Optional MCP tools for structured Suede skill discovery, install guidance, SEO/A
 ## GitHub Repo Description
 
 ```text
-Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code review, agent QA, artist campaigns, and creator utilities.
+Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, artist campaigns, and creator utilities.
 ```
 
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 35-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suedify reference-site mimicry, design direction, copywriting, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code review, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 36-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suedify reference-site mimicry, design direction, copywriting, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -454,9 +454,9 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 35 installable public skills.
+I packaged the Suede agent workflow into 36 installable public skills.
 
-Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code review, QA, install support, claim checks, artist campaign tools, and optional MCP support.
+Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, QA, install support, claim checks, artist campaign tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```
@@ -471,7 +471,7 @@ Suede adds one:
 - copy discipline
 - SEO/AEO/AI EO checks
 - visibility and CTA grades
-- A-F code review
+- A-F code grading
 - QA loops
 - Suedify site mimicry
 - copywriting
@@ -547,7 +547,7 @@ The pack gives agents a reusable way to handle:
 ### Founder DM
 
 ```text
-I built a Suede skill pack for Codex-style agents. It gives the agent reusable workflows for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code review, QA, and public docs.
+I built a Suede skill pack for Codex-style agents. It gives the agent reusable workflows for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, QA, and public docs.
 
 The useful part is that you do not need to keep writing giant setup prompts. You call the Suede skills, and the agent gets the process.
 ```
@@ -555,7 +555,7 @@ The useful part is that you do not need to keep writing giant setup prompts. You
 ### Developer DM
 
 ```text
-The Suede pack is a public skill workflow for agents. It includes Suedify, design, copywriting, SEO/AEO/AI EO, QA, visibility grading, A-F code-review skills, artist campaign skills, creator utilities, and an optional MCP server for structured discovery, install options, SEO/AEO/AI EO audit scaffolds, and QA checklists.
+The Suede pack is a public skill workflow for agents. It includes Suedify, design, copywriting, SEO/AEO/AI EO, QA, visibility grading, A-F code-grading skills, artist campaign skills, creator utilities, and an optional MCP server for structured discovery, install options, SEO/AEO/AI EO audit scaffolds, and QA checklists.
 ```
 
 ### Creator DM
@@ -569,7 +569,7 @@ The point is not paperwork. The point is giving the agent a creative workflow it
 ### Agency DM
 
 ```text
-Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO/AEO/AI EO checks, visibility grading, A-F code review, docs, adversarial review, and handoff.
+Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO/AEO/AI EO checks, visibility grading, A-F code grading, docs, adversarial review, and handoff.
 
 It is useful when you want the agent to behave like a small product team instead of a blank chat box.
 ```
@@ -591,7 +591,7 @@ Hey,
 
 I packaged the Suede workflow into installable public agent skills.
 
-It covers Suedify site-style transfer, design direction, copywriting, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code review, QA, artist campaign tools, and optional MCP support when structured discovery or checklists help.
+It covers Suedify site-style transfer, design direction, copywriting, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, artist campaign tools, and optional MCP support when structured discovery or checklists help.
 
 The goal is to stop rebuilding the same prompt stack every time. Call the Suede skills, give feedback as it works, and let the agent tighten the next pass.
 
@@ -609,7 +609,7 @@ https://jasoncolapietro.github.io/suede-creator-skills/
 ```text
 One agent. A full Suede workflow.
 
-Suede gives Codex-style agents a reusable system for Suedify, design direction, copywriting, SEO/AEO/AI EO, visibility grading, A-F code review, QA, public docs, and artist campaign packaging.
+Suede gives Codex-style agents a reusable system for Suedify, design direction, copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading, QA, public docs, and artist campaign packaging.
 ```
 
 ### Block: Better Prompts Are Not Enough
@@ -665,7 +665,7 @@ Founders, builders, creators, agencies, and AI power users who already use agent
 ### What makes it different?
 
 ```text
-It is not only about making an agent write nicer. It combines Suedify site mimicry, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code review, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
+It is not only about making an agent write nicer. It combines Suedify site mimicry, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
 ```
 
 ## SEO Metadata
@@ -683,7 +683,7 @@ Suede Creator Skills | Design, Copy, SEO, Suedify
 ### Homepage Meta Description
 
 ```text
-Install public Suede skills and MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code review, agent QA, artist campaigns, and creator workflows.
+Install public Suede skills and MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, artist campaigns, and creator workflows.
 ```
 
 ### Ambassador Page Title
@@ -695,7 +695,7 @@ Suede Ambassador Guide | Design, Copy, SEO, QA, MCP
 ### Ambassador Page Meta Description
 
 ```text
-Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code review, agent QA, and artist campaign tools.
+Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, and artist campaign tools.
 ```
 
 ### Durable Keywords
@@ -718,7 +718,7 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 - SKILL.md
 - AI agent workflow
 - agent QA
-- A-F code review
+- A-F code grading
 - adversarial review
 - SEO/AEO/AI EO copy audit
 - AEO

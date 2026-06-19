@@ -52,6 +52,8 @@ Choose the smallest useful roster.
 - **Builder:** makes narrow code or content changes inside the existing system.
 - **Design reviewer:** checks rendered visual quality, responsive behavior,
   accessibility, copy, and state coverage.
+- **Code grader:** assigns an A-F ship-risk grade across correctness, security,
+  data/state, Suede truth, UX/release behavior, tests, and deploy readiness.
 - **Code reviewer:** runs full-context review and turns findings into fix briefs.
 - **Visibility grader:** grades public pages, GitHub Pages sites, docs, and
   launch surfaces for findability, first-screen clarity, CTA pull, proof, AI
@@ -96,9 +98,9 @@ lanes away from the same files.
 - **Design and visibility loop:** design reviewer checks the rendered page while
   visibility grader scores findability, first-screen clarity, CTA pull, proof,
   AI readability, and design signal.
-- **Code grade loop:** code reviewer assigns an A-F grade across correctness,
+- **Code grade loop:** code grader assigns an A-F grade across correctness,
   security, data/state, public-claim truth, tests, and deploy readiness, then
-  converts weak lanes into fix briefs.
+  code reviewer converts weak lanes into fix briefs when fixes are needed.
 - **Release lock loop:** release verifier owns build, deploy, live/API readback,
   public copy truth, and handoff before any public completion claim.
 

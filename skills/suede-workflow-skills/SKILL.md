@@ -24,8 +24,11 @@ This skill is the public entry point for:
   pull, proof, AI readability, and design signal.
 - **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
   conversion surface.
+- **Suede Code Grader:** grade code changes A-F for correctness, security,
+  data/state, Suede truth, UX/release behavior, tests, and deploy readiness
+  with an explanation of why the grade landed there.
 - **Suede Code Review:** review changes for real bugs, regressions, security
-  risk, public-claim drift, missing verification, and A-F ship readiness.
+  risk, public-claim drift, missing verification, and fix briefs.
 - **Suede Agent Teams:** split important work into clear lanes for scout,
   planner, builder, design reviewer, visibility grader, code reviewer, release
   verifier, and handoff writer.
@@ -60,6 +63,7 @@ their names match the task:
 - `suede-visibility-grader`
 - `suede-site-alchemy`
 - `suede-code-review`
+- `suede-code-grader`
 - `suede-agent-teams`
 - `suede-launch-packaging`
 - `suede-install-support`
@@ -332,6 +336,9 @@ Deploy readiness: A-F
 Overall: A-F
 ```
 
+When the user asks for a grade more than a full findings report, route to
+`suede-code-grader` and include the explanation for why the grade landed there.
+
 ## Agent Team Workflow
 
 Use team lanes for large, risky, cross-surface, public, design-heavy, or
@@ -366,6 +373,8 @@ When the task names a narrower Suede lane, route directly:
   `suede-public-claim-check`.
 - Search/discovery: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
+- Code grade only: `suede-code-grader`.
+- Full code review and fix briefs: `suede-code-review`.
 - Reference-site mimicry: `suedify`.
 - Page polish and conversion: `suede-site-alchemy`.
 - Launch or public packaging: `suede-launch-packaging`.
@@ -398,6 +407,7 @@ Useful lanes:
 - Design reviewer: responsive visual QA, accessibility basics, copy, states.
 - Visibility grader: findability, first-screen clarity, CTA pull, proof, AI
   readability, and design signal.
+- Code grader: A-F ship-risk grade with lane scores and required upgrades.
 - Code reviewer: correctness, security, regression, tests, install paths.
 - Release verifier: build, deploy, live/API behavior, public claims.
 - Handoff writer: files changed, commands, verification, caveats, next step.
@@ -424,6 +434,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
+  skills/suede-code-grader \
   skills/suede-code-review \
   skills/suede-agent-teams \
   skills/suede-launch-packaging \
