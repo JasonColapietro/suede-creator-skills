@@ -56,8 +56,42 @@ Install the skills
 
 - Read the docs
 - Open the GitHub repo
+- Install the plugin
+- Use the MCP
 - Create a rights passport
 - Audit a release folder
+
+## Plugins And MCP Copy
+
+### One-line description
+
+Install Suede skills as local Codex plugins, or use the Suede Skills MCP for
+structured skill discovery, install guidance, SEO copy audits, and QA
+checklists.
+
+### Page hero
+
+Install Suede skills as plugins. Use MCP when it helps.
+
+### Page subhead
+
+The Suede Skills MCP gives agents structured access to the skill catalog,
+plugin install options, full SEO copy audit scaffolds, and multi-lane QA
+checklists without turning MCP into a checkbox.
+
+### CTA options
+
+- Install the plugin
+- Use the MCP
+- List Suede skills
+- Run an SEO copy audit
+- Build a QA checklist
+
+### Safety note
+
+The MCP returns catalog, install, audit, and QA context. It does not upload
+files, clear rights, write to a registry, distribute music, approve payouts, or
+make public claims on its own.
 
 ## Skill Docs Catalog Copy
 
@@ -241,6 +275,8 @@ notes.
 Use these lines when the copy needs a safety guard:
 
 - Public v1 runs offline and writes local files.
+- MCP returns structured context and checklists. It does not perform release,
+  registry, payout, legal, or publishing actions on its own.
 - Generated reports are drafts until a creator or operator reviews them.
 - These skills organize evidence. They do not provide legal clearance.
 - The scripts skip hidden files, dependency folders, build outputs, caches, and

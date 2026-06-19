@@ -1,0 +1,106 @@
+{
+  "name": "Suede Skills MCP",
+  "version": "0.1.0",
+  "updated": "2026-06-19",
+  "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
+  "repository": "https://github.com/JasonColapietro/suede-creator-skills",
+  "summary": "Local MCP access to Suede plugin, skill, copy, SEO, and QA context.",
+  "plugins": [
+    {
+      "name": "suede-workflow-skills",
+      "displayName": "Suede Workflow Skills",
+      "description": "Local Codex plugin for Suede design, copy, code review, agent team orchestration, site polish, and reference-site restyling.",
+      "install": "codex plugin add suede-workflow-skills@personal",
+      "mcpServer": "suede_workflow_mcp",
+      "skills": [
+        "suede-design",
+        "suede-copy",
+        "suede-code-review",
+        "suede-agent-teams",
+        "suede-site-alchemy",
+        "suedify"
+      ]
+    },
+    {
+      "name": "suede-creator-skills",
+      "displayName": "Suede Creator Skills",
+      "description": "Public Codex plugin for music release linting and Suede Rights Passport transfer packages.",
+      "install": "codex plugin add suede-creator-skills@personal",
+      "mcpServer": "suede_creator_mcp",
+      "skills": [
+        "music-release-metadata-linter",
+        "suede-rights-passport"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "suede-design",
+      "area": "workflow",
+      "description": "Suede frontend design, redesign, UI polish, visual audit, design-system, responsive QA, and implementation handoff workflow.",
+      "useWhen": "Use for Suede websites, app surfaces, dashboards, campaign pages, onboarding, empty states, forms, components, tokens, typography, layout, motion, imagery, public copy, or design-related frontend changes."
+    },
+    {
+      "name": "suede-copy",
+      "area": "workflow",
+      "description": "Suede conversion copy, public docs copy, GitHub README copy, SEO snippets, CTAs, launch copy, line editing, and full SEO copy audit workflow.",
+      "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO copy audits."
+    },
+    {
+      "name": "suede-code-review",
+      "area": "workflow",
+      "description": "Suede full-context code review, PR review, release gate, security sweep, architecture critique, regression hunt, and fix brief workflow.",
+      "useWhen": "Use for production behavior, auth, payments, rights/provenance, registry systems, royalty routing, agent commerce, dashboards, APIs, public claims, shared components, or multi-repo contracts."
+    },
+    {
+      "name": "suede-agent-teams",
+      "area": "workflow",
+      "description": "Suede agent team orchestration for major planning, implementation, review, design QA, release, and recovery work.",
+      "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from parallel lanes."
+    },
+    {
+      "name": "suede-site-alchemy",
+      "area": "workflow",
+      "description": "Suede website, landing page, campaign page, SEO/AEO, CTA routing, conversion, and page polish workflow.",
+      "useWhen": "Use for improving pages, packaging Suede Sites-style website growth offers, or routing app requests into Suede's app-builder workflow."
+    },
+    {
+      "name": "suedify",
+      "area": "workflow",
+      "description": "Two-URL website restyling workflow that studies a reference URL and transforms a target URL with Suede-safe design fidelity.",
+      "useWhen": "Use when asked to mimic, restyle, or make one website feel like another reference site while preserving brand and legal safety."
+    },
+    {
+      "name": "music-release-metadata-linter",
+      "area": "creator",
+      "description": "Audit music, audio, video, artwork, and creative release folders for metadata, rights, split, file, and Suede intake gaps.",
+      "useWhen": "Use before release, licensing, registry preparation, royalty routing, agent commerce, or Suede transfer."
+    },
+    {
+      "name": "suede-rights-passport",
+      "area": "creator",
+      "description": "Prepare creator folders for Suede intake with provenance, rights, credits, splits, licenses, media optimization notes, and missing-info reports.",
+      "useWhen": "Use when packaging a project into a Suede-ready transfer package."
+    }
+  ],
+  "mcp": {
+    "tools": [
+      "list_suede_skills",
+      "get_suede_skill",
+      "suede_install_options",
+      "suede_copy_seo_audit",
+      "suede_qa_checklist"
+    ],
+    "resources": [
+      "suede://catalog",
+      "suede://plugins",
+      "suede://copy-seo-audit",
+      "suede://qa-checklist"
+    ],
+    "prompts": [
+      "suede-copy-seo-audit",
+      "suede-plugin-install",
+      "suede-full-qa"
+    ]
+  }
+}

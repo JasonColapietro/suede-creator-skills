@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "suede_creator_mcp": {
+      "title": "Suede Creator Skills MCP",
+      "description": "Local MCP access to Suede Creator Skills, install options, SEO copy audits, and QA checklists.",
+      "cwd": ".",
+      "command": "node",
+      "args": [
+        "./mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "creator"
+      ]
+    }
+  }
+}

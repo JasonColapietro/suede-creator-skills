@@ -6,11 +6,7 @@
     <title>Suede Creator Skills | Music Rights Passport for Agents</title>
     <meta
       name="description"
-      content="Free Codex and Claude skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows."
-    >
-    <meta
-      name="keywords"
-      content="music skills, Codex skills, Claude skills, SKILL.md, music release metadata linter, Suede Rights Passport, creator rights, music metadata, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, Suede AI, Jason Colapietro books, Proof as Infrastructure, Stake Your Claim, The Signal Chain"
+      content="Install Suede Codex plugins, MCP server, and skills for music release linting, rights passporting, provenance, splits, and intake prep."
     >
     <meta name="author" content="Jason Colapietro">
     <meta name="publisher" content="Suede Labs AI">
@@ -62,7 +58,7 @@
             "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#website",
             "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
             "name": "Suede Creator Skills",
-            "description": "Free Codex and Claude skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows.",
+            "description": "Free Codex plugins, MCP server, and skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows.",
             "publisher": {
               "@id": "https://suedeai.ai/#organization"
             },
@@ -73,7 +69,7 @@
             "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#webpage",
             "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
             "name": "Suede Creator Skills | Music Rights Passport for Agents",
-            "description": "Free Codex and Claude skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows.",
+            "description": "Free Codex plugins, MCP server, and skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows.",
             "isPartOf": {
               "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#website"
             },
@@ -120,6 +116,9 @@
               },
               {
                 "@id": "https://jasoncolapietro.github.io/suede-creator-skills/copy.html#article"
+              },
+              {
+                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html#article"
               }
             ],
             "creator": {
@@ -140,6 +139,7 @@
               "creator rights",
               "rights passport",
               "music metadata linter",
+              "MCP server",
               "release readiness",
               "provenance",
               "royalty splits",
@@ -1050,6 +1050,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="#skills">Skills</a>
           <a href="./skills/">Docs</a>
+          <a href="./plugins.html">Plugins</a>
           <a href="./copy.html">Copy</a>
           <a href="#use-cases">Use cases</a>
           <a href="#stamps">Stamps</a>
@@ -1075,6 +1076,7 @@
             <div class="actions">
               <a class="button" href="https://github.com/jasoncolapietro/suede-creator-skills">View GitHub Repo</a>
               <a class="button secondary" href="#install">Install Skills</a>
+              <a class="button secondary" href="./plugins.html">Plugins + MCP</a>
               <a class="button secondary" href="./copy.html">Open Copy Bank</a>
               <a class="button secondary" href="https://github.com/jasoncolapietro/suede-creator-skills/blob/main/PASSPORT.md">Read Passport Concept</a>
             </div>
@@ -1245,6 +1247,13 @@
             scripts. Review the contents before enabling code execution.
           </p>
           <div class="install-grid">
+            <article class="install" aria-labelledby="install-plugin-title">
+              <h3 id="install-plugin-title">Plugins + MCP</h3>
+              <p>Install the local Suede plugin bundles when your Codex personal marketplace has them registered. Use the bundled MCP server for structured skill discovery, SEO copy audits, install options, and QA checklists.</p>
+              <pre><code>codex plugin add suede-workflow-skills@personal
+codex plugin add suede-creator-skills@personal</code></pre>
+              <p><a class="button secondary" href="./plugins.html">Read plugin and MCP docs</a></p>
+            </article>
             <article class="install" aria-labelledby="install-codex-title">
               <h3 id="install-codex-title">Codex</h3>
               <p>Install into <code>$CODEX_HOME/skills</code>, or <code>~/.codex/skills</code> when <code>CODEX_HOME</code> is not set.</p>
@@ -1338,6 +1347,7 @@ cp -R /tmp/suede-creator-skills/skills/music-release-metadata-linter .claude/ski
             <a class="link-card" data-stamp="Telegram Stamp" href="https://t.me/suedeai"><b>Telegram</b><span>https://t.me/suedeai</span></a>
             <a class="link-card" data-stamp="GitHub Stamp" href="https://github.com/jasoncolapietro/suede-creator-skills"><b>GitHub Repo</b><span>github.com/jasoncolapietro/suede-creator-skills</span></a>
             <a class="link-card" data-stamp="Docs Stamp" href="./skills/"><b>Skill Docs Catalog</b><span>Every skill page, install link, manifest link, script link, and resource map.</span></a>
+            <a class="link-card" data-stamp="MCP Option" href="./plugins.html"><b>Plugins + MCP</b><span>Local plugin installs, Suede Skills MCP tools, SEO audit scaffolds, and QA checklists.</span></a>
             <a class="link-card" data-stamp="Copy Bank" href="./copy.html"><b>Copy Bank</b><span>GitHub, docs, CTA, SEO, FAQ, social, and safety copy for Suede Creator Skills.</span></a>
             <a class="link-card" data-stamp="Rights Docs" href="./skills/suede-rights-passport.html"><b>Rights Passport Docs</b><span>Transfer package docs for provenance, splits, licenses, intake JSON, and templates.</span></a>
             <a class="link-card" data-stamp="Lint Docs" href="./skills/music-release-metadata-linter.html"><b>Release Linter Docs</b><span>Release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, and reports.</span></a>

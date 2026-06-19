@@ -1,0 +1,459 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const PROTOCOL_VERSION = "2025-06-18";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function parseArgs(argv) {
+  const args = { profile: "all" };
+  for (let i = 2; i < argv.length; i += 1) {
+    if (argv[i] === "--profile" && argv[i + 1]) {
+      args.profile = argv[i + 1];
+      i += 1;
+    }
+  }
+  return args;
+}
+
+const { profile } = parseArgs(process.argv);
+const catalogPath = path.join(__dirname, "catalog.json");
+const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const MAX_INPUT_BUFFER_CHARS = 1024 * 1024;
+const MAX_TEXT_CHARS = 2000;
+
+function boundedString(value, fallback = "") {
+  const raw = value === undefined || value === null ? fallback : String(value);
+  return raw.length > MAX_TEXT_CHARS ? `${raw.slice(0, MAX_TEXT_CHARS)}...` : raw;
+}
+
+function profileCatalog() {
+  if (profile === "workflow" || profile === "creator") {
+    return {
+      ...catalog,
+      plugins: catalog.plugins.filter((plugin) => plugin.name.includes(profile)),
+      skills: catalog.skills.filter((skill) => skill.area === profile)
+    };
+  }
+  return catalog;
+}
+
+function text(content) {
+  return { type: "text", text: content };
+}
+
+function asMarkdownSkillList(data) {
+  return data.skills
+    .map((skill) => `- $${skill.name}: ${skill.description} Use when: ${skill.useWhen}`)
+    .join("\n");
+}
+
+function isSkillAvailable(name) {
+  return profileCatalog().skills.some((skill) => skill.name === name);
+}
+
+function installMarkdown(data, surface = "all") {
+  const lines = [];
+  if (surface === "all" || surface === "plugin" || surface === "codex") {
+    lines.push("## Codex plugin install");
+    for (const plugin of data.plugins) {
+      lines.push(`- ${plugin.displayName}: \`${plugin.install}\``);
+    }
+  }
+  if (surface === "all" || surface === "mcp") {
+    lines.push("");
+    lines.push("## MCP option");
+    lines.push("Install the plugin, start a new Codex thread, and use the bundled MCP server for structured skill discovery, install options, SEO copy audits, and QA checklists.");
+    for (const plugin of data.plugins) {
+      lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
+    }
+  }
+  if (surface === "all" || surface === "claude") {
+    lines.push("");
+    lines.push("## Claude Code skill install");
+    lines.push("Copy the relevant skill folders into a project `.claude/skills` directory or user-level `~/.claude/skills` directory.");
+  }
+  return lines.join("\n");
+}
+
+function seoAuditTemplate(args = {}) {
+  const target = boundedString(args.url || args.pageType, "the target page");
+  const intent = boundedString(args.primaryIntent, "one clear search intent");
+  return [
+    `# Suede SEO Copy Audit: ${target}`,
+    "",
+    `Primary intent: ${intent}`,
+    "",
+    "## Crawl And Index Check",
+    "- Confirm canonical URL, robots/indexability, sitemap presence, and internal links.",
+    "- Flag redirects, duplicate URLs, missing titles, and missing descriptions.",
+    "",
+    "## On-Page Copy Check",
+    "- One H1 that names the outcome.",
+    "- Search-ready title under 60 characters when practical.",
+    "- Meta description around 120-160 characters when practical.",
+    "- H2/H3 structure matches actual page sections.",
+    "- Durable Suede terms appear naturally, not stuffed.",
+    "",
+    "## Structured Data Check",
+    "- Match schema to visible content.",
+    "- Validate JSON-LD syntax.",
+    "- Use FAQPage only when the questions and answers are visible.",
+    "",
+    "## Conversion And Trust Check",
+    "- One primary CTA.",
+    "- Claim boundaries are visible.",
+    "- Proof links point to real docs, scripts, manifests, pages, or repos.",
+    "",
+    "## Output",
+    "- Findings ranked HIGH, MEDIUM, LOW.",
+    "- Exact rewrites for title, meta, H1, subhead, CTA, and FAQ.",
+    "- Verification commands or live URLs to check.",
+    "- Copy score out of 50."
+  ].join("\n");
+}
+
+function qaChecklist(args = {}) {
+  const scope = boundedString(args.scope, "full");
+  const target = boundedString(args.target, "the changed Suede surface");
+  return [
+    `# Suede QA Checklist: ${target}`,
+    "",
+    `Scope: ${scope}`,
+    "",
+    "## Scout Lane",
+    "- Verify exact repo, branch, remote, dirty state, target URL, and source docs.",
+    "",
+    "## MCP And Plugin Lane",
+    "- Validate plugin manifests.",
+    "- Validate `.mcp.json` and server startup.",
+    "- Exercise `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.",
+    "",
+    "## SEO And Copy Lane",
+    "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, CTA copy, and claim boundaries.",
+    "",
+    "## Code And Security Lane",
+    "- Check input validation, path handling, protocol errors, no secrets, no destructive operations, and safe failure behavior.",
+    "",
+    "## Browser QA Lane",
+    "- Serve locally, check desktop and mobile, run link sweep, verify text fit, and confirm no broken public routes.",
+    "",
+    "## Release Lane",
+    "- Run validation commands, commit only scoped files, push, wait for Pages build, and verify live URLs before claiming public completion."
+  ].join("\n");
+}
+
+const tools = [
+  {
+    name: "list_suede_skills",
+    title: "List Suede Skills",
+    description: "List Suede skills available through the current MCP profile.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        area: {
+          type: "string",
+          enum: ["all", "workflow", "creator"],
+          description: "Optional area filter."
+        }
+      }
+    }
+  },
+  {
+    name: "get_suede_skill",
+    title: "Get Suede Skill",
+    description: "Return details for one Suede skill.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        name: { type: "string", description: "Skill name, with or without a leading dollar sign." }
+      },
+      required: ["name"]
+    }
+  },
+  {
+    name: "suede_install_options",
+    title: "Suede Install Options",
+    description: "Return Codex plugin, MCP, and skill-copy install options.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        surface: {
+          type: "string",
+          enum: ["all", "codex", "plugin", "mcp", "claude"],
+          description: "Install surface to explain."
+        }
+      }
+    }
+  },
+  {
+    name: "suede_copy_seo_audit",
+    title: "Suede Copy SEO Audit",
+    description: "Create a Suede-specific SEO copy audit scaffold for a page, repo, or docs surface.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        url: { type: "string", description: "Optional URL to audit." },
+        pageType: { type: "string", description: "Page or docs type when no URL is available." },
+        primaryIntent: { type: "string", description: "Primary search intent or reader action." },
+        copy: { type: "string", description: "Optional pasted copy to audit." }
+      }
+    }
+  },
+  {
+    name: "suede_qa_checklist",
+    title: "Suede QA Checklist",
+    description: "Generate a multi-lane QA checklist for Suede plugins, skills, MCP servers, docs, or public pages.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        target: { type: "string", description: "Target repo, URL, plugin, page, or change." },
+        scope: { type: "string", description: "QA depth, such as fast, full, release, seo, or mcp." }
+      }
+    }
+  }
+];
+
+const resources = [
+  {
+    uri: "suede://catalog",
+    name: "catalog",
+    title: "Suede Skill And Plugin Catalog",
+    description: "Structured Suede plugin, skill, MCP, and public link catalog.",
+    mimeType: "application/json"
+  },
+  {
+    uri: "suede://plugins",
+    name: "plugins",
+    title: "Suede Plugin Install Options",
+    description: "Codex plugin and MCP install options.",
+    mimeType: "text/markdown"
+  },
+  {
+    uri: "suede://copy-seo-audit",
+    name: "copy-seo-audit",
+    title: "Suede SEO Copy Audit Template",
+    description: "Full SEO copy audit scaffold for Suede public pages, docs, repos, and skill pages.",
+    mimeType: "text/markdown"
+  },
+  {
+    uri: "suede://qa-checklist",
+    name: "qa-checklist",
+    title: "Suede Full QA Checklist",
+    description: "Multi-agent QA checklist for plugin, MCP, skill, docs, and public site changes.",
+    mimeType: "text/markdown"
+  }
+];
+
+const prompts = [
+  {
+    name: "suede-copy-seo-audit",
+    title: "Run Suede SEO Copy Audit",
+    description: "Audit a Suede page, README, skill page, or docs surface for SEO and copy quality.",
+    arguments: [
+      { name: "target", description: "URL, file, repo, or page to audit.", required: true },
+      { name: "intent", description: "Primary search intent or reader action.", required: false }
+    ]
+  },
+  {
+    name: "suede-plugin-install",
+    title: "Explain Suede Plugin Install",
+    description: "Explain Codex plugin, MCP, and skill-copy install options.",
+    arguments: [
+      { name: "surface", description: "codex, mcp, claude, plugin, or all.", required: false }
+    ]
+  },
+  {
+    name: "suede-full-qa",
+    title: "Run Suede Full QA",
+    description: "Create a multi-agent QA plan for a Suede plugin, skill, MCP, docs, or site change.",
+    arguments: [
+      { name: "target", description: "Target change or surface.", required: true },
+      { name: "scope", description: "fast, full, release, seo, or mcp.", required: false }
+    ]
+  }
+];
+
+function callTool(name, args = {}) {
+  const data = profileCatalog();
+  if (name === "list_suede_skills") {
+    const area = args.area || profile;
+    const scoped = area === "all" ? data.skills : data.skills.filter((skill) => skill.area === area);
+    return {
+      content: [text(asMarkdownSkillList({ skills: scoped }))],
+      structuredContent: { skills: scoped }
+    };
+  }
+  if (name === "get_suede_skill") {
+    const requested = boundedString(args.name).replace(/^\$/, "");
+    const skill = data.skills.find((item) => item.name === requested);
+    if (!skill) {
+      return { content: [text(`Unknown Suede skill: ${requested}`)], structuredContent: { found: false }, isError: true };
+    }
+    return {
+      content: [text(`$${skill.name}: ${skill.description}\n\nUse when: ${skill.useWhen}`)],
+      structuredContent: { found: true, skill }
+    };
+  }
+  if (name === "suede_install_options") {
+    return {
+      content: [text(installMarkdown(data, args.surface || "all"))],
+      structuredContent: { plugins: data.plugins, surface: args.surface || "all" }
+    };
+  }
+  if (name === "suede_copy_seo_audit") {
+    return {
+      content: [text(seoAuditTemplate(args))],
+      structuredContent: {
+        target: args.url || args.pageType ? boundedString(args.url || args.pageType) : null,
+        primaryIntent: args.primaryIntent ? boundedString(args.primaryIntent) : null
+      }
+    };
+  }
+  if (name === "suede_qa_checklist") {
+    return {
+      content: [text(qaChecklist(args))],
+      structuredContent: {
+        target: args.target ? boundedString(args.target) : null,
+        scope: boundedString(args.scope, "full")
+      }
+    };
+  }
+  throw Object.assign(new Error(`Unknown tool: ${name}`), { code: -32602 });
+}
+
+function readResource(uri) {
+  const data = profileCatalog();
+  if (uri === "suede://catalog") {
+    return { uri, mimeType: "application/json", text: JSON.stringify(data, null, 2) };
+  }
+  if (uri === "suede://plugins") {
+    return { uri, mimeType: "text/markdown", text: installMarkdown(data, "all") };
+  }
+  if (uri === "suede://copy-seo-audit") {
+    return { uri, mimeType: "text/markdown", text: seoAuditTemplate({ pageType: "Suede public surface" }) };
+  }
+  if (uri === "suede://qa-checklist") {
+    return { uri, mimeType: "text/markdown", text: qaChecklist({ target: "Suede change", scope: "full" }) };
+  }
+  throw Object.assign(new Error(`Unknown resource URI: ${uri}`), { code: -32602 });
+}
+
+function getPrompt(name, args = {}) {
+  if (name === "suede-copy-seo-audit") {
+    const skillRef = isSkillAvailable("suede-copy") ? "$suede-copy" : "the Suede SEO copy audit MCP template";
+    return {
+      description: "Audit Suede public copy for SEO, trust, specificity, schema, and conversion.",
+      messages: [
+        {
+          role: "user",
+          content: text(`Use ${skillRef} to run a full SEO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent and reader action")}. Include technical SEO, on-page copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, and a copy score.`)
+        }
+      ]
+    };
+  }
+  if (name === "suede-plugin-install") {
+    return {
+      description: "Explain Suede plugin, MCP, and skill install options.",
+      messages: [
+        {
+          role: "user",
+          content: text(`Use the Suede Skills MCP to explain ${boundedString(args.surface, "all")} install options. Include Codex plugin install, MCP server availability, and when to use each bundled skill.`)
+        }
+      ]
+    };
+  }
+  if (name === "suede-full-qa") {
+    const teamRef = isSkillAvailable("suede-agent-teams") ? "$suede-agent-teams" : "the Suede QA checklist MCP template";
+    const reviewRef = isSkillAvailable("suede-code-review") ? " and $suede-code-review" : "";
+    return {
+      description: "Run multi-lane Suede QA.",
+      messages: [
+        {
+          role: "user",
+          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP/plugin validation, skill validation, SEO/docs, public site links, browser QA, code/security, and live verification where applicable.`)
+        }
+      ]
+    };
+  }
+  throw Object.assign(new Error(`Unknown prompt: ${name}`), { code: -32602 });
+}
+
+function handleRequest(message) {
+  const { id, method, params = {} } = message;
+  if (!method || typeof method !== "string") {
+    throw Object.assign(new Error("Invalid JSON-RPC request: method must be a string"), { code: -32600 });
+  }
+  if (method === "initialize") {
+    return {
+      protocolVersion: PROTOCOL_VERSION,
+      capabilities: { tools: {}, resources: {}, prompts: {} },
+      serverInfo: { name: "suede-skills-mcp", version: catalog.version },
+      instructions: "Use this MCP when Suede skill/plugin discovery, install guidance, SEO copy audits, or QA checklists will materially help the task."
+    };
+  }
+  if (method === "ping") return {};
+  if (method === "tools/list") return { tools };
+  if (method === "tools/call") return callTool(params.name, params.arguments || {});
+  if (method === "resources/list") return { resources };
+  if (method === "resources/read") return { contents: [readResource(params.uri)] };
+  if (method === "prompts/list") return { prompts };
+  if (method === "prompts/get") return getPrompt(params.name, params.arguments || {});
+  throw Object.assign(new Error(`Unsupported MCP method: ${method}`), { code: -32601 });
+}
+
+function send(payload) {
+  process.stdout.write(`${JSON.stringify(payload)}\n`);
+}
+
+function sendResult(id, result) {
+  send({ jsonrpc: "2.0", id, result });
+}
+
+function sendError(id, error) {
+  send({
+    jsonrpc: "2.0",
+    id,
+    error: {
+      code: Number.isInteger(error && error.code) ? error.code : -32603,
+      message: error instanceof Error ? error.message : String(error)
+    }
+  });
+}
+
+let buffer = "";
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", (chunk) => {
+  buffer += chunk;
+  if (buffer.length > MAX_INPUT_BUFFER_CHARS) {
+    buffer = "";
+    sendError(null, new Error("MCP input buffer exceeded 1 MiB"));
+    return;
+  }
+  const lines = buffer.split("\n");
+  buffer = lines.pop() || "";
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    let message;
+    try {
+      message = JSON.parse(line);
+    } catch (error) {
+      sendError(null, Object.assign(new Error("Parse error"), { code: -32700 }));
+      continue;
+    }
+    try {
+      if (!message || typeof message !== "object" || message.jsonrpc !== "2.0") {
+        throw Object.assign(new Error("Invalid JSON-RPC request"), { code: -32600 });
+      }
+      if (message.id === undefined) {
+        continue;
+      }
+      sendResult(message.id, handleRequest(message));
+    } catch (error) {
+      sendError(message && Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null, error);
+    }
+  }
+});

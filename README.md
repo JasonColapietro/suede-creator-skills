@@ -30,6 +30,7 @@ become stamps, and what intentionally ships later — see
 - [Suede Creator Passport concept](PASSPORT.md)
 - [Suede Creator Skills copy bank](COPY.md) - public copy for GitHub descriptions, docs pages, CTAs, SEO snippets, FAQs, social posts, and safety language.
 - [Copy bank page](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) - live copy bank for sharing, pitching, and documentation work.
+- [Plugins and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - Codex plugin install options plus the Suede Skills MCP server for skill discovery, SEO copy audits, install guidance, and QA checklists.
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with every skill page, install link, manifest link, script link, and resource map.
 - [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
 - [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
@@ -63,6 +64,43 @@ Safety-oriented CLI flags:
 - `--include-absolute-paths`: write absolute local paths into reports for
   private operator workflows. Reports use share-safer paths by default.
 - `--force`: replace existing generated report/package files.
+
+## Install As Plugins Or MCP
+
+Suede skills can be installed as local Codex plugins, copied as plain skill
+folders, or exposed through the Suede Skills MCP when structured discovery,
+install guidance, SEO copy audit scaffolds, or QA checklists would help the
+agent.
+
+Local personal marketplace installs:
+
+```bash
+codex plugin add suede-workflow-skills@personal
+codex plugin add suede-creator-skills@personal
+```
+
+These commands are for a local Codex personal marketplace where the Suede plugin
+sources are registered. For public/source use, clone the repo and copy the
+skill folders or run the MCP server directly.
+
+MCP servers included by the plugins:
+
+- `suede_workflow_mcp`
+- `suede_creator_mcp`
+
+The public repo also includes the dependency-free stdio MCP server:
+
+```bash
+node mcp/suede-skills-mcp.mjs --profile all
+```
+
+MCP tools:
+
+- `list_suede_skills`
+- `get_suede_skill`
+- `suede_install_options`
+- `suede_copy_seo_audit`
+- `suede_qa_checklist`
 
 ## Skills Included
 
@@ -238,6 +276,8 @@ Project links:
 - Skill docs catalog: <https://jasoncolapietro.github.io/suede-creator-skills/skills/> - public index for every Suede Creator Skill and its install/resource links.
 - Copy bank page: <https://jasoncolapietro.github.io/suede-creator-skills/copy.html> - live GitHub, docs, CTA, SEO, FAQ, social, and safety copy for Suede Creator Skills.
 - Copy bank source: [COPY.md](COPY.md) - reusable public copy for repo metadata, skill pages, install surfaces, launch posts, and claim boundaries.
+- Plugins and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - Codex plugin install options and Suede Skills MCP docs for skill discovery, SEO copy audits, install guidance, and QA checklists.
+- MCP source: [mcp/](mcp/) - dependency-free stdio MCP server, catalog, and MCP README.
 - Suede Rights Passport docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
 - Music Release Metadata Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.
 - Rights Passport skill: [skills/suede-rights-passport/SKILL.md](skills/suede-rights-passport/SKILL.md)
