@@ -156,6 +156,8 @@ Risk:
 For final handoff:
 
 ```text
+Simple explanation:
+Usual breakdown:
 Target:
 Changed:
 Verification:

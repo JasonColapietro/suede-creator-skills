@@ -257,7 +257,7 @@ Use it to list Suede skills, return install paths, build an SEO/AEO/AI EO audit 
 ```text
 Suede workflows improve inside the work session when feedback is clear.
 
-When the agent does something you like, say what worked. When it misses, say exactly what to change. You can also say `Cue Suede` mid-workflow or at the end to bring up choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing.
+When the agent does something you like, say what worked. When it misses, say exactly what to change. You can also say `Cue Suede` mid-workflow or at the end to bring up choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing. Final handoffs should explain the result twice: first in plain non-coder language, then in the usual detailed breakdown.
 ```
 
 ### Section: Claim Boundary
@@ -725,7 +725,9 @@ plumbing. Lead with the result. Put local install commands in technical docs.
 Use progressive updating. When the agent does something right, name the pattern
 you want preserved. When it misses, name the exact correction. To make the
 choices appear, say `Cue Suede`. The agent should offer: change something,
-preserve this for later mimicry, or keep as-is by saying nothing.
+preserve this for later mimicry, or keep as-is by saying nothing. At the end,
+it should also give a very simple explanation for non-coders followed by the
+usual breakdown.
 
 ### What is the safest public claim?
 

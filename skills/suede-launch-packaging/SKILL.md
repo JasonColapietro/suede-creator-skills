@@ -20,8 +20,9 @@ clean public package.
 5. Check install commands from a temporary destination, not only the local repo.
 6. Run copy, SEO, link, and claim-boundary checks before publishing.
 7. Write a short handoff when another agent or computer may need the result.
-8. End meaningful launches with `Cue Suede` so the operator can request a
-   change, preserve what worked, or say nothing to keep it as-is.
+8. End meaningful launches with a simple non-coder explanation, the usual
+   breakdown, and `Cue Suede` so the operator can request a change, preserve
+   what worked, or say nothing to keep it as-is.
 
 ## Output
 
@@ -32,6 +33,8 @@ Primary action:
 Public copy:
 Install or access path:
 Proof links:
+Simple explanation:
+Usual breakdown:
 Verification:
 Caveats:
 Status: ship | ship-with-caveats | hold

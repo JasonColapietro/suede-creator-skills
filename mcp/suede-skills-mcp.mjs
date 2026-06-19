@@ -162,6 +162,7 @@ function qaChecklist(args = {}) {
     "",
     "## Cue Suede Lane",
     "- Accept feedback mid-workflow and use it immediately.",
+    "- At final handoff, give two explanations first: a very simple non-coder explanation, then the usual breakdown.",
     "- At final handoff, ask: Cue Suede: 1. Change something. 2. Preserve this so I can mimic it later. 3. Keep as-is by saying nothing.",
     "- Do not block completion waiting for a feedback answer."
   ].join("\n");

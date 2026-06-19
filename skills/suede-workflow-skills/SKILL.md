@@ -112,11 +112,28 @@ Cue Suede:
 3. Keep as-is - say nothing and I will treat it as accepted.
 ```
 
-At the end of meaningful Suede work, after verification and status, include the
-same `Cue Suede` prompt unless the user explicitly asked for no follow-up.
-Do not block completion waiting for an answer. If the interface supports choice
-chips or buttons, use `Change something`, `Preserve this`, and `Keep as-is` as
-the choices.
+At the end of meaningful Suede work, after verification, close in this order:
+
+```text
+Simple explanation:
+One or two plain sentences for a non-coder explaining what changed and why it
+matters.
+
+Usual breakdown:
+Changed:
+Verification:
+Caveats:
+Status:
+
+Cue Suede:
+1. Change something - tell me what to revise and I will adjust it.
+2. Preserve this - tell me what worked so I can mimic it later.
+3. Keep as-is - say nothing and I will treat it as accepted.
+```
+
+Do not block completion waiting for a `Cue Suede` answer. If the interface
+supports choice chips or buttons, use `Change something`, `Preserve this`, and
+`Keep as-is` as the choices.
 
 ## When To Use MCP
 
