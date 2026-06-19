@@ -143,9 +143,14 @@ before ship. Suede Code Review is the deeper findings and fix-brief workflow.
 
 Jason is not a coder by background. He had to learn fast and turn repeated
 agent failures into reusable Suede workflows. Over Suede's life he hired and
-fired six marketing firms, and the visibility lesson became part of the system:
-public work has to show up across Google and Gemini result surfaces, make sense
-to AI systems, carry proof, and move a real visitor toward a clear action.
+fired six marketing firms. Not one registered Suede's property in Google Search
+Console, and he did not even know the tool existed until he got close enough to
+the work to see what had been skipped. The lesson became part of the system:
+you learn how poorly things were done when you can finally get involved, and no
+one will ever care as much as the founder/operator who has to live with the
+result. That is why public work has to show up across Google, Gemini, and AI
+result surfaces, make sense to AI systems, carry proof, and move a real visitor
+toward a clear action.
 
 ### Progressive updating note
 

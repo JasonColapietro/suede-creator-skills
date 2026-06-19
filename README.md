@@ -134,9 +134,14 @@ such as `@personal` inside technical setup sections.
 Founder context ambassadors can explain: Jason is not a coder by background,
 so the workflow was built from live pressure, not theory. He had to learn fast,
 turning every agent miss into a reusable Suede rule. Over Suede's life he hired
-and fired six marketing firms, and the lesson was blunt: public work is not
-done until it is findable across Google and Gemini result surfaces, readable to
-AI systems, backed by proof, and clear enough for a real visitor to act.
+and fired six marketing firms. Not one registered Suede's property in Google
+Search Console, and he did not even know the tool existed until he got close
+enough to the work to see what had been skipped. The lesson was blunt: you
+learn how poorly things were done when you can finally get involved, and no one
+will ever care as much as the founder/operator who has to live with the result.
+That is why public work is not done until it is findable across Google, Gemini,
+and AI result surfaces, readable to AI systems, backed by proof, and clear
+enough for a real visitor to act.
 
 Safety-oriented CLI flags:
 

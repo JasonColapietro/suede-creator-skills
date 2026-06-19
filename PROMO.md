@@ -144,11 +144,16 @@ failure became a reusable Suede rule, every design miss became a design check,
 every copy miss became a voice rule, every handoff problem became QA, and every
 visibility miss became a grader.
 
-He also hired and fired six marketing firms over Suede's life. The lesson was
-not that marketing language was hard. The lesson was that public work has to be
-visible where people and AI systems look: Google result surfaces, Gemini result
-surfaces, docs pages, repo pages, metadata, schema, CTAs, proof, and pages that
-can actually be explained by an ambassador without inventing claims.
+He also hired and fired six marketing firms over Suede's life. Not one
+registered Suede's property in Google Search Console, and he did not even know
+the tool existed until he got close enough to the work to see what had been
+skipped. The lesson was not that marketing language was hard. The lesson was
+that you learn how poorly things were done when you can finally get involved,
+and no one will ever care as much as the founder/operator who has to live with
+the result. Public work has to be visible where people and AI systems look:
+Google result surfaces, Gemini result surfaces, docs pages, repo pages,
+metadata, schema, CTAs, proof, and pages that can actually be explained by an
+ambassador without inventing claims.
 
 ### For Founders
 
