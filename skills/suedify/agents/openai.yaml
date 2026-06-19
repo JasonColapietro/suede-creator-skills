@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suedify"
+  short_description: "Make a target site match a reference style"
+  default_prompt: "Use $suedify with a reference URL and target URL to restyle the target with Suede-safe fidelity."
+policy:
+  allow_implicit_invocation: true

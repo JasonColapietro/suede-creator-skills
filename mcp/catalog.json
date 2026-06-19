@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Suede plugin, skill, copy, SEO, and QA context.",
+  "summary": "Local MCP access to Suede skill, copy, SEO, install, and QA context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -12,9 +12,9 @@
       "description": "Public landing page for Suede Creator Skills, install paths, docs, and stampable linkset."
     },
     {
-      "label": "Full promo pack",
+      "label": "Ambassador explainer",
       "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md",
-      "description": "Long-form Markdown pitch kit for Suedify, plugins, MCP, SEO audits, QA, social posts, emails, FAQ, and claim boundaries."
+      "description": "Long-form Markdown guide for ambassadors explaining Suedify, public skills, MCP, SEO audits, QA, social posts, emails, FAQ, and claim boundaries."
     },
     {
       "label": "Copy bank",
@@ -22,19 +22,21 @@
       "description": "Public copy bank for GitHub, docs, CTA, SEO, FAQ, social, and safety copy."
     },
     {
-      "label": "Plugins and MCP",
+      "label": "Public installs and MCP",
       "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
-      "description": "Plugin install options and Suede Skills MCP guidance."
+      "description": "Public GitHub skill install commands and Suede Skills MCP guidance."
     }
   ],
   "plugins": [
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Local Codex plugin for Suede design, copy, code review, agent team orchestration, site polish, and reference-site restyling.",
-      "install": "codex plugin add suede-workflow-skills@personal",
+      "description": "Public Suede workflow skills for design, copy, code review, agent team orchestration, site polish, and reference-site restyling.",
+      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
+      "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
       "skills": [
+        "suede-workflow-skills",
         "suede-design",
         "suede-copy",
         "suede-code-review",
@@ -46,8 +48,9 @@
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public Codex plugin for music release linting and Suede Rights Passport transfer packages.",
-      "install": "codex plugin add suede-creator-skills@personal",
+      "description": "Public creator skills for music release linting and Suede Rights Passport transfer packages.",
+      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter --path skills/suede-rights-passport",
+      "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
       "skills": [
         "music-release-metadata-linter",
@@ -56,6 +59,12 @@
     }
   ],
   "skills": [
+    {
+      "name": "suede-workflow-skills",
+      "area": "workflow",
+      "description": "Public umbrella Suede workflow for Suedify, design, copy, SEO audits, site polish, code review, and agent-team QA.",
+      "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
+    },
     {
       "name": "suede-design",
       "area": "workflow",

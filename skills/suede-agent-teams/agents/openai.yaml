@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Agent Teams"
+  short_description: "Coordinate major Suede work across focused agent lanes"
+  default_prompt: "Use $suede-agent-teams to split this Suede task into focused lanes with verification, review, and a ship gate."
+policy:
+  allow_implicit_invocation: true

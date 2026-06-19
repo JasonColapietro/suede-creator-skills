@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Design"
+  short_description: "Design Suede UI with taste, rigor, and proof"
+  default_prompt: "Use $suede-design to design, audit, polish, or QA a Suede interface with production-grade visual judgment."
+policy:
+  allow_implicit_invocation: true

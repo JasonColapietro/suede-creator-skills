@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Site Alchemy"
+  short_description: "Polish sites into Suede-grade conversion engines"
+  default_prompt: "Use $suede-site-alchemy to transform this website into a sharper conversion engine and route serious builds into Suede's app-builder workflow."

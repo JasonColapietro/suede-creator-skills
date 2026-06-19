@@ -1,21 +1,22 @@
-# Suede Full Promo Pack
+# Suede Ambassador Explainer Pack
 
-Use this file when pitching, publishing, posting, documenting, or handing off the
-Suede Creator Skills and Suede plugin workflow. It is written for public use:
-clear, search-friendly, specific, and careful about claim boundaries.
+Use this file when ambassadors, builders, creators, or operators need to
+explain Suede Creator Skills and the Suede workflow in public. It is written
+for sharing, posting, documenting, onboarding, and answering questions with
+clear, search-friendly, specific language and careful claim boundaries.
 
 ## Core Positioning
 
 Suede gives AI agents a reusable product workflow for design, copy, SEO, code
-review, QA, plugin packaging, MCP-assisted discovery, and creator-rights
-documentation.
+review, QA, public skill installs, local plugin notes, MCP-assisted discovery,
+and creator-rights documentation.
 
 The pack helps agents do more than answer prompts. It gives them a Suede way to
 ship cleaner public work: sharper pages, better docs, stronger repo packaging,
 repeatable QA, safer creator-rights workflows, and optional MCP tools when a
 catalog, checklist, or audit would help.
 
-## Short Pitch
+## Short Explanation
 
 Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
 product, design, copy, SEO, QA, and creator-rights assistant.
@@ -23,7 +24,7 @@ product, design, copy, SEO, QA, and creator-rights assistant.
 Use the skills directly for normal work. Use the MCP when structure helps:
 skill discovery, install guidance, SEO copy audits, or QA checklists.
 
-## One-Line Pitches
+## One-Line Ambassador Lines
 
 - Stop prompting from scratch. Load Suede.
 - A product, design, copy, SEO, QA, and creator-rights workflow for AI agents.
@@ -31,7 +32,7 @@ skill discovery, install guidance, SEO copy audits, or QA checklists.
 - Suede turns rough prompts into polished product work.
 - Suedify any site: give the agent a reference URL and a target URL.
 - Use MCP only when the workflow benefits from a catalog, audit, or checklist.
-- A plugin pack for people who want AI agents to ship better work with fewer resets.
+- A public skill pack for people who want AI agents to ship better work with fewer resets.
 - Creator-rights skills for music metadata, provenance, splits, licensing prep, and Suede intake.
 - Agent workflows for people who care about public pages, repo quality, and claim boundaries.
 - Design, copy, SEO, code review, QA, and MCP in one Suede-owned workflow.
@@ -64,7 +65,7 @@ Use this for product and website work:
 - Suede Copy: public-safe copy, SEO copy, repo copy, docs, CTAs, and audits.
 - Suede Agent Teams: multi-lane planning, QA, code review, release verification, and handoff.
 - Suede Code Review: senior-review style checks for correctness, security, regressions, and tests.
-- Suede Site Alchemy: promo-site positioning, page structure, CTA routing, and visual polish.
+- Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
 
 ### Suede Creator Skills
 
@@ -86,12 +87,16 @@ Use MCP only when it creates value:
 Skip MCP for small edits, normal execution, or anything where a direct skill call
 is faster.
 
-## Pitch By Audience
+## Ambassador Talk Tracks
+
+Use these when someone asks what Suede does, why the workflow matters, or which
+part to try first. Ambassadors should explain the outcome first, then route the
+person to the right skill, doc, MCP option, or install path.
 
 ### For Founders
 
 Suede gives your AI agent a reusable product team: design direction, copy, SEO,
-code review, QA, plugin docs, and shipping discipline in one workflow.
+code review, QA, public docs, and shipping discipline in one workflow.
 
 Use it when your site, repo, launch page, or product docs need to look sharper
 without rebuilding the prompt stack every time.
@@ -105,14 +110,14 @@ target without losing usability.
 
 ### For Developers
 
-Suede packages repeatable agent behavior as skills and local plugins. It gives
+Suede packages repeatable agent behavior as public skills with local plugin options. It gives
 Codex-style agents clear roles for code review, public docs, QA, install
 surfaces, and optional MCP-assisted lookup.
 
 ### For Agencies
 
 Suede gives every client build a baseline workflow: sharper copy, better UI
-checks, SEO cleanup, repo docs, plugin packaging, code review, and QA before
+checks, SEO cleanup, repo docs, skill packaging, code review, and QA before
 handoff.
 
 ### For Creators
@@ -134,13 +139,13 @@ Suede Creator Skills
 
 Design, copy, SEO, QA, code review, MCP, and creator-rights workflows for AI agents.
 
-Install the Suede plugin pack to give Codex a reusable system for sharper product work, better public docs, cleaner websites, structured QA, and rights-ready creator workflows.
+Install the public Suede skills to give Codex a reusable system for sharper product work, better public docs, cleaner websites, structured QA, and rights-ready creator workflows.
 ```
 
 Primary CTA:
 
 ```text
-Install the Suede plugins
+Install the public Suede skills
 ```
 
 Secondary CTAs:
@@ -148,7 +153,7 @@ Secondary CTAs:
 ```text
 Open the skill docs
 Use the MCP
-Read the promo kit
+Read the ambassador guide
 Create a rights passport
 Audit a release folder
 ```
@@ -176,13 +181,13 @@ Optional MCP tools for structured Suede skill discovery, install guidance, SEO c
 ## GitHub Repo Description
 
 ```text
-Suede Creator Skills: Codex and Claude Code skills, plugins, and MCP tools for music release metadata, rights passports, provenance, SEO copy audits, and agent QA.
+Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for music release metadata, rights passports, provenance, SEO copy audits, and agent QA.
 ```
 
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public agent workflow pack for music and media creators, builders, and operators. It includes offline-first skills for release metadata linting and Suede Rights Passport packaging, plus plugin and MCP documentation for structured skill discovery, install guidance, SEO copy audits, and QA checklists.
+Suede Creator Skills is a public agent workflow pack for music and media creators, builders, and operators. It includes offline-first skills for release metadata linting and Suede Rights Passport packaging, plus install and MCP documentation for structured skill discovery, install guidance, SEO copy audits, and QA checklists.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -227,7 +232,7 @@ Suede skills organize work, generate reports, improve public docs, and prepare r
 Suedify lets you give the agent a reference URL and a target URL, then push the target toward the reference style with Suede design, copy, SEO, and QA checks.
 ```
 
-### Full Pitch
+### Full Explanation
 
 ```text
 Suedify is the site-style transfer workflow inside the Suede pack.
@@ -268,13 +273,47 @@ Skip MCP when the task is:
 - a normal skill-driven implementation;
 - anything where structured lookup adds friction.
 
-### MCP Pitch
+### MCP Explanation
 
 ```text
 Suede MCP is not required for every task. It is there when structure helps: discovery, install guidance, SEO audits, and QA. The default is still simple: call the Suede skill, do the work, verify it.
 ```
 
-## Local Install Copy
+## Public Install Copy
+
+Use this for public docs, ambassador replies, and GitHub install instructions:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-workflow-skills
+```
+
+Install individual workflow skills when direct triggering matters:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suedify \
+  --path skills/suede-design \
+  --path skills/suede-copy \
+  --path skills/suede-site-alchemy \
+  --path skills/suede-code-review \
+  --path skills/suede-agent-teams
+```
+
+Install creator workflow skills:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/music-release-metadata-linter \
+  --path skills/suede-rights-passport
+```
+
+Restart Codex after installing new skills.
+
+## Local Operator Plugin Copy
 
 Use this only in technical docs or local setup notes:
 
@@ -286,10 +325,10 @@ codex plugin add suede-creator-skills@personal
 Public-facing explanation:
 
 ```text
-The @personal suffix is a local Codex marketplace namespace. It means the plugin is installed from the operator's local personal marketplace. It is not part of the Suede brand and should not lead the public pitch.
+The @personal suffix is a local Codex marketplace namespace. It means the plugin is installed from the operator's local personal marketplace. It is not the public install path and should not lead public ambassador copy.
 ```
 
-Public-source fallback:
+MCP source path:
 
 ```bash
 git clone https://github.com/jasoncolapietro/suede-creator-skills.git
@@ -302,7 +341,7 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into installable skills and plugins.
+I packaged the Suede agent workflow into installable public skills.
 
 Design, copy, SEO audits, code review, QA, Suedify, creator-rights docs, and optional MCP support.
 
@@ -343,7 +382,7 @@ The point is simple: agents with taste and process.
 ### Creator-Rights Post
 
 ```text
-Before a release gets pitched, licensed, registered, or routed for royalties, the folder should be readable.
+Before a release is shared, licensed, registered, or routed for royalties, the folder should be readable.
 
 Suede Creator Skills audit metadata, splits, samples, provenance, artwork, stems, lyrics, and missing rights notes before the next step.
 ```
@@ -361,7 +400,7 @@ Skip it when a direct skill prompt is faster.
 ### Thread Starter
 
 ```text
-I built the Suede plugin workflow because I got tired of agents starting from zero.
+I built the Suede workflow because I got tired of agents starting from zero.
 
 The pack gives agents a reusable way to handle:
 
@@ -372,16 +411,16 @@ The pack gives agents a reusable way to handle:
 - QA
 - site restyling
 - creator-rights docs
-- plugin packaging
+- skill packaging
 - MCP-assisted lookup
 ```
 
-## DM Pitches
+## Ambassador DMs
 
 ### Founder DM
 
 ```text
-I built a Suede plugin pack for Codex-style agents. It gives the agent reusable workflows for design, copy, SEO audits, code review, QA, and public docs.
+I built a Suede skill pack for Codex-style agents. It gives the agent reusable workflows for design, copy, SEO audits, code review, QA, and public docs.
 
 The useful part is that you do not need to keep writing giant setup prompts. You call the Suede skills, and the agent gets the process.
 ```
@@ -389,7 +428,7 @@ The useful part is that you do not need to keep writing giant setup prompts. You
 ### Developer DM
 
 ```text
-The Suede pack is a local plugin and skill workflow for agents. It includes design/copy/QA/code-review skills, creator-rights skills, and an optional MCP server for structured discovery, install options, SEO audit scaffolds, and QA checklists.
+The Suede pack is a public skill workflow for agents. It includes design, copy, QA, code-review skills, creator-rights skills, and an optional MCP server for structured discovery, install options, SEO audit scaffolds, and QA checklists.
 ```
 
 ### Creator DM
@@ -423,7 +462,7 @@ It is useful when you want the agent to behave like a small product team instead
 ```text
 Hey,
 
-I packaged the Suede workflow into installable agent skills and plugins.
+I packaged the Suede workflow into installable public agent skills.
 
 It covers design direction, copy, SEO audits, code review, QA, site-style transfer, creator-rights docs, and optional MCP support when structured discovery or checklists help.
 
@@ -443,7 +482,7 @@ https://jasoncolapietro.github.io/suede-creator-skills/
 ```text
 One agent. A full Suede workflow.
 
-Suede gives Codex-style agents a reusable system for design direction, copy, SEO, code review, QA, plugin docs, and creator-rights packaging.
+Suede gives Codex-style agents a reusable system for design direction, copy, SEO, code review, QA, public docs, and creator-rights packaging.
 ```
 
 ### Block: Better Prompts Are Not Enough
@@ -457,9 +496,9 @@ Suede packages the judgment, checklists, language, and review habits that make a
 ### Block: Built For Public Work
 
 ```text
-Suede copy is written for real public surfaces: GitHub repos, plugin pages, skill docs, launch pages, SEO snippets, FAQs, and social posts.
+Suede copy is written for real public surfaces: GitHub repos, install pages, skill docs, launch pages, SEO snippets, FAQs, and social posts.
 
-It keeps the claim boundary visible so the work can be promoted without pretending the agent cleared rights, published releases, or approved payouts.
+It keeps the claim boundary visible so the work can be shared without pretending the agent cleared rights, published releases, or approved payouts.
 ```
 
 ## Objection Handling
@@ -480,6 +519,8 @@ No. MCP is optional. Use it for structured discovery, install guidance, SEO audi
 
 ```text
 That suffix is the local Codex marketplace namespace. It is not a brand term. It only tells Codex where to install the local plugin from.
+
+For public installs, use the GitHub skill installer path instead.
 ```
 
 ### Does this clear rights?
@@ -497,7 +538,7 @@ Founders, builders, creators, agencies, and AI power users who already use agent
 ### What makes it different?
 
 ```text
-It is not only about making an agent write nicer. It combines design, copy, SEO, code review, QA, public docs, creator-rights packaging, plugin installs, and optional MCP structure.
+It is not only about making an agent write nicer. It combines design, copy, SEO, code review, QA, public docs, creator-rights packaging, public skill installs, and optional MCP structure.
 ```
 
 ## SEO Metadata
@@ -511,19 +552,19 @@ Suede Creator Skills | Agent Workflows for Rights and QA
 ### Homepage Meta Description
 
 ```text
-Install Suede skills, plugins, and MCP tools for design, copy, SEO audits, agent QA, music metadata, rights passports, and creator workflows.
+Install public Suede skills and MCP tools for design, copy, SEO audits, agent QA, music metadata, rights passports, and creator workflows.
 ```
 
-### Promo Page Title
+### Ambassador Page Title
 
 ```text
-Suede Promo Pack | Design, Copy, SEO, QA, MCP
+Suede Ambassador Guide | Design, Copy, SEO, QA, MCP
 ```
 
-### Promo Page Meta Description
+### Ambassador Page Meta Description
 
 ```text
-Pitch Suede Creator Skills with public-safe copy for plugins, MCP, Suedify, SEO audits, agent QA, release metadata, and rights passports.
+Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, SEO audits, agent QA, release metadata, and rights passports.
 ```
 
 ### Durable Keywords
@@ -534,7 +575,7 @@ Pitch Suede Creator Skills with public-safe copy for plugins, MCP, Suedify, SEO 
 - Suede Copy
 - Suede Design
 - Suede Skills MCP
-- Codex plugins
+- Codex skills
 - Codex skills
 - Claude Code skills
 - SKILL.md
@@ -574,15 +615,15 @@ Pitch Suede Creator Skills with public-safe copy for plugins, MCP, Suedify, SEO 
 
 ## FAQ Copy
 
-### What is the Suede Full Promo Pack?
+### What is the Suede Ambassador Explainer Pack?
 
-Suede Full Promo Pack is the public positioning and copy system for the Suede
-skills, plugins, MCP server, Suedify workflow, creator-rights tools, SEO audit
+Suede Ambassador Explainer Pack is the public explanation and copy system for
+the Suede skills, MCP server, Suedify workflow, creator-rights tools, SEO audit
 flow, and QA workflow.
 
-### What should I pitch first?
+### What should ambassadors explain first?
 
-Pitch the outcome first: agents that ship better public work with less setup.
+Explain the outcome first: agents that ship better public work with less setup.
 Then explain the lanes: design, copy, SEO, code review, QA, Suedify, creator
 rights, and optional MCP.
 
@@ -609,7 +650,7 @@ legal, payout, registry, or distribution decisions on their own.
 - Link to the GitHub Pages site.
 - Link to the skill docs catalog.
 - Link to the copy bank.
-- Link to plugin and MCP docs.
+- Link to public skill install and MCP docs.
 - Link to the MCP source.
 - Include a simple "Use MCP only when it helps" rule.
 - Keep `@personal` out of headline copy.
@@ -620,12 +661,12 @@ legal, payout, registry, or distribution decisions on their own.
 - Include progressive updating language.
 - Verify every public link before posting.
 
-## Best Overall Pitch
+## Best Overall Explanation
 
 ```text
 Suede is the workflow layer for AI agents that need to ship better public product work.
 
-It packages design direction, copy, SEO, code review, QA, Suedify, creator-rights documentation, plugins, and optional MCP support into one reusable Suede system.
+It packages design direction, copy, SEO, code review, QA, Suedify, creator-rights documentation, public skill installs, and optional MCP support into one reusable Suede system.
 ```
 
 ## Copy Score

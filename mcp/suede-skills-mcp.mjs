@@ -56,16 +56,26 @@ function isSkillAvailable(name) {
 
 function installMarkdown(data, surface = "all") {
   const lines = [];
-  if (surface === "all" || surface === "plugin" || surface === "codex") {
-    lines.push("## Codex plugin install");
+  if (surface === "all" || surface === "codex") {
+    lines.push("## Public Codex skill install");
     for (const plugin of data.plugins) {
-      lines.push(`- ${plugin.displayName}: \`${plugin.install}\``);
+      if (plugin.publicInstall) lines.push(`- ${plugin.displayName}: \`${plugin.publicInstall}\``);
+    }
+    lines.push("");
+    lines.push("Restart Codex after installing new public skills.");
+  }
+  if (surface === "all" || surface === "plugin") {
+    lines.push("");
+    lines.push("## Local plugin install");
+    lines.push("Use this only on machines where the local personal marketplace already registers the Suede plugin sources.");
+    for (const plugin of data.plugins) {
+      if (plugin.localPluginInstall) lines.push(`- ${plugin.displayName}: \`${plugin.localPluginInstall}\``);
     }
   }
   if (surface === "all" || surface === "mcp") {
     lines.push("");
     lines.push("## MCP option");
-    lines.push("Install the plugin, start a new Codex thread, and use the bundled MCP server for structured skill discovery, install options, SEO copy audits, and QA checklists.");
+    lines.push("Use the MCP when structured skill discovery, install options, SEO copy audits, or QA checklists materially help the task.");
     for (const plugin of data.plugins) {
       lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
     }
@@ -126,8 +136,8 @@ function qaChecklist(args = {}) {
     "## Scout Lane",
     "- Verify exact repo, branch, remote, dirty state, target URL, and source docs.",
     "",
-    "## MCP And Plugin Lane",
-    "- Validate plugin manifests.",
+    "## MCP And Install Lane",
+    "- Validate public skill folders, install commands, MCP behavior, and any local plugin manifests.",
     "- Validate `.mcp.json` and server startup.",
     "- Exercise `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.",
     "",
@@ -176,7 +186,7 @@ const tools = [
   {
     name: "suede_install_options",
     title: "Suede Install Options",
-    description: "Return Codex plugin, MCP, and skill-copy install options.",
+    description: "Return public Codex skill, local plugin, MCP, and skill-copy install options.",
     inputSchema: {
       type: "object",
       properties: {
@@ -205,11 +215,11 @@ const tools = [
   {
     name: "suede_qa_checklist",
     title: "Suede QA Checklist",
-    description: "Generate a multi-lane QA checklist for Suede plugins, skills, MCP servers, docs, or public pages.",
+    description: "Generate a multi-lane QA checklist for Suede skills, local plugin notes, MCP servers, docs, or public pages.",
     inputSchema: {
       type: "object",
       properties: {
-        target: { type: "string", description: "Target repo, URL, plugin, page, or change." },
+        target: { type: "string", description: "Target repo, URL, skill, MCP server, page, or change." },
         scope: { type: "string", description: "QA depth, such as fast, full, release, seo, or mcp." }
       }
     }
@@ -220,15 +230,15 @@ const resources = [
   {
     uri: "suede://catalog",
     name: "catalog",
-    title: "Suede Skill And Plugin Catalog",
-    description: "Structured Suede plugin, skill, MCP, and public link catalog.",
+    title: "Suede Skill And Install Catalog",
+    description: "Structured Suede skill, install, MCP, and public link catalog.",
     mimeType: "application/json"
   },
   {
     uri: "suede://plugins",
     name: "plugins",
-    title: "Suede Plugin Install Options",
-    description: "Codex plugin and MCP install options.",
+    title: "Suede Public Install Options",
+    description: "Public Codex skill installs, local plugin notes, and MCP options.",
     mimeType: "text/markdown"
   },
   {
@@ -242,7 +252,7 @@ const resources = [
     uri: "suede://qa-checklist",
     name: "qa-checklist",
     title: "Suede Full QA Checklist",
-    description: "Multi-agent QA checklist for plugin, MCP, skill, docs, and public site changes.",
+    description: "Multi-agent QA checklist for skill, MCP, docs, local plugin notes, and public site changes.",
     mimeType: "text/markdown"
   }
 ];
@@ -259,8 +269,8 @@ const prompts = [
   },
   {
     name: "suede-plugin-install",
-    title: "Explain Suede Plugin Install",
-    description: "Explain Codex plugin, MCP, and skill-copy install options.",
+    title: "Explain Suede Installs",
+    description: "Explain public skill, local plugin, MCP, and skill-copy install options.",
     arguments: [
       { name: "surface", description: "codex, mcp, claude, plugin, or all.", required: false }
     ]
@@ -268,7 +278,7 @@ const prompts = [
   {
     name: "suede-full-qa",
     title: "Run Suede Full QA",
-    description: "Create a multi-agent QA plan for a Suede plugin, skill, MCP, docs, or site change.",
+    description: "Create a multi-agent QA plan for a Suede skill, MCP, docs, local plugin note, or site change.",
     arguments: [
       { name: "target", description: "Target change or surface.", required: true },
       { name: "scope", description: "fast, full, release, seo, or mcp.", required: false }
@@ -356,11 +366,11 @@ function getPrompt(name, args = {}) {
   }
   if (name === "suede-plugin-install") {
     return {
-      description: "Explain Suede plugin, MCP, and skill install options.",
+      description: "Explain Suede public skill, local plugin, and MCP install options.",
       messages: [
         {
           role: "user",
-          content: text(`Use the Suede Skills MCP to explain ${boundedString(args.surface, "all")} install options. Include Codex plugin install, MCP server availability, and when to use each bundled skill.`)
+          content: text(`Use the Suede Skills MCP to explain ${boundedString(args.surface, "all")} install options. Lead with the public Codex skill install, include local plugin install only as an operator note, include MCP server availability, and explain when to use each bundled skill.`)
         }
       ]
     };
@@ -373,7 +383,7 @@ function getPrompt(name, args = {}) {
       messages: [
         {
           role: "user",
-          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP/plugin validation, skill validation, SEO/docs, public site links, browser QA, code/security, and live verification where applicable.`)
+          content: text(`Use ${teamRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/docs, public site links, browser QA, code/security, and live verification where applicable.`)
         }
       ]
     };
@@ -391,7 +401,7 @@ function handleRequest(message) {
       protocolVersion: PROTOCOL_VERSION,
       capabilities: { tools: {}, resources: {}, prompts: {} },
       serverInfo: { name: "suede-skills-mcp", version: catalog.version },
-      instructions: "Use this MCP when Suede skill/plugin discovery, install guidance, SEO copy audits, or QA checklists will materially help the task."
+      instructions: "Use this MCP when Suede skill discovery, install guidance, SEO copy audits, or QA checklists will materially help the task."
     };
   }
   if (method === "ping") return {};

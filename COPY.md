@@ -1,6 +1,6 @@
 # Suede Creator Skills Copy Bank
 
-Use this copy when linking, sharing, pitching, or documenting Suede Creator
+Use this copy when linking, sharing, explaining, or documenting Suede Creator
 Skills. Keep claims public-safe. These skills organize local folders and write
 reports. They do not upload files, clear rights, write to a registry, distribute
 music, or promise payouts.
@@ -56,32 +56,32 @@ Install the skills
 
 - Read the docs
 - Open the GitHub repo
-- Install the plugin
+- Install the public skill
 - Use the MCP
 - Create a rights passport
 - Audit a release folder
 
-## Plugins And MCP Copy
+## Public Installs And MCP Copy
 
 ### One-line description
 
-Install Suede skills as local Codex plugins, or use the Suede Skills MCP for
-structured skill discovery, install guidance, SEO copy audits, and QA
+Install Suede skills from the public GitHub repo, or use the Suede Skills MCP
+for structured skill discovery, install guidance, SEO copy audits, and QA
 checklists.
 
 ### Page hero
 
-Install Suede skills as plugins. Use MCP when it helps.
+Install public Suede skills from GitHub. Use MCP when it helps.
 
 ### Page subhead
 
 The Suede Skills MCP gives agents structured access to the skill catalog,
-plugin install options, full SEO copy audit scaffolds, and multi-lane QA
+public install options, full SEO copy audit scaffolds, and multi-lane QA
 checklists without turning MCP into a checkbox.
 
 ### CTA options
 
-- Install the plugin
+- Install the public skill
 - Use the MCP
 - List Suede skills
 - Run an SEO copy audit
@@ -93,24 +93,24 @@ The MCP returns catalog, install, audit, and QA context. It does not upload
 files, clear rights, write to a registry, distribute music, approve payouts, or
 make public claims on its own.
 
-## Full Promo Pack Copy
+## Ambassador Explainer Copy
 
 Canonical source: [`PROMO.md`](PROMO.md)
 
-### Core pitch
+### Core explanation
 
 Suede gives AI agents a reusable product workflow for design, copy, SEO, code
-review, QA, plugin packaging, MCP-assisted discovery, and creator-rights
-documentation.
+review, QA, public skill installs, local plugin notes, MCP-assisted discovery,
+and creator-rights documentation.
 
-### Best overall pitch
+### Best overall explanation
 
 Suede is the workflow layer for AI agents that need to ship better public
 product work. It packages design direction, copy, SEO, code review, QA,
-Suedify, creator-rights documentation, plugins, and optional MCP support into
-one reusable Suede system.
+Suedify, creator-rights documentation, public skill installs, and optional MCP
+support into one reusable Suede system.
 
-### Suedify pitch
+### Suedify explanation
 
 Give the agent a reference URL and a target URL. Suedify studies layout,
 hierarchy, spacing, color, interaction cues, and content rhythm, then pushes
@@ -125,7 +125,7 @@ context.
 ### Local install note
 
 The `@personal` suffix is a local Codex marketplace namespace. It is not a
-brand term and should not lead public promo copy.
+brand term and should not lead public ambassador copy.
 
 ## Skill Docs Catalog Copy
 
@@ -278,7 +278,7 @@ Repo: https://github.com/JasonColapietro/suede-creator-skills
 
 ### Creator post
 
-Before you pitch, license, register, or route royalties for a track, run the
+Before you share, license, register, or route royalties for a track, run the
 folder through Suede Creator Skills. The linter finds missing release details.
 The Rights Passport packages provenance, credits, splits, licenses, and intake
 notes.

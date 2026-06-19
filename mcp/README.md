@@ -1,16 +1,16 @@
 # Suede Skills MCP
 
-`suede-skills-mcp.mjs` is a small local stdio MCP server for Suede skills and plugins.
+`suede-skills-mcp.mjs` is a small local stdio MCP server for Suede skills.
 
 It is useful when an agent needs structured access to:
 
-- Suede plugin and skill discovery;
-- Codex plugin, MCP, and skill-copy install options;
+- Suede skill discovery;
+- public GitHub skill installs, local plugin notes, MCP, and skill-copy install options;
 - SEO copy audit scaffolds;
-- multi-lane QA checklists for plugin, MCP, docs, and public site changes.
+- multi-lane QA checklists for skill, MCP, docs, and public site changes.
 
-For public positioning, launch copy, Suedify messaging, MCP explanation,
-social posts, emails, FAQ answers, and claim boundaries, use
+For public positioning, launch copy, ambassador language, Suedify messaging,
+MCP explanation, social posts, emails, FAQ answers, and claim boundaries, use
 [`PROMO.md`](../PROMO.md).
 
 Run it directly:
