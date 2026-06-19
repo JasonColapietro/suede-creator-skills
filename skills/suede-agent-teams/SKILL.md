@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: Suede-owned agent team orchestration for major planning, implementation, review, design QA, release, and recovery work. Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from parallel lanes with clear ownership and review gates.
+description: Suede-owned agent team orchestration for scout, safe parallel build, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops. Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership and review gates.
 ---
 
 # Suede Agent Teams
@@ -92,21 +92,33 @@ lanes away from the same files.
   normal multi-file work where sequencing matters more than speed.
 - **Parallel surface loop:** scout once, then split copy, design, code, SEO, and
   release lanes only when their write surfaces do not collide.
+- **Scout and constraints loop:** one lane maps repo state, docs, WIP, owners,
+  live routes, risky files, and no-touch boundaries before any builder edits.
 - **Adversarial review loop:** builder delivers, then at least one reviewer tries
   to break the work from production, user, release, public-claim, and abuse
   angles before fixes are accepted.
+- **Consensus review loop:** two reviewers inspect the same result from
+  different lenses, then merge findings into blockers, accepted caveats, and
+  fixes to run now.
 - **Design and visibility loop:** design reviewer checks the rendered page while
   visibility grader scores findability, first-screen clarity, CTA pull, proof,
   AI readability, and design signal.
 - **Code grade loop:** code grader assigns an A-F grade across correctness,
   security, data/state, public-claim truth, tests, and deploy readiness, then
   code reviewer converts weak lanes into fix briefs when fixes are needed.
+- **WIP protection loop:** builder lanes claim allowed files up front, reviewers
+  flag collisions, and the orchestrator sequences any lane that needs the same
+  file.
 - **Release lock loop:** release verifier owns build, deploy, live/API readback,
   public copy truth, and handoff before any public completion claim.
+- **Recovery loop:** when a check fails, stop broad work, isolate the failing
+  unit, assign diagnosis, patch only the gap, and rerun the failed check.
+- **Evidence handoff loop:** final lane gathers screenshots, commands, URLs,
+  test results, caveats, and next action so the next agent does not restart.
 
 For large Suede work, run scout first, build in parallel only where safe, then
 converge through adversarial review, code grade, visibility grade, release
-lock, and handoff.
+lock, recovery if needed, and evidence handoff.
 
 ## Planning Quality Gate
 

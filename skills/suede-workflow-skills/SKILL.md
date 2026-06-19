@@ -360,10 +360,18 @@ Useful grouping loops:
 
 - Linear delivery loop: scout, plan, build, verify, review, ship.
 - Parallel surface loop: split lanes only when file ownership does not collide.
-- Adversarial review loop: one lane tries to break the work before release.
+- Scout and constraints loop: map docs, WIP, risky files, live routes, owners,
+  and no-touch boundaries before edits.
+- Adversarial review loop: one lane tries to break the work from production,
+  user, release, public-claim, and abuse angles before release.
+- Consensus review loop: two review lenses merge blockers, caveats, and fixes.
 - Design and visibility loop: rendered QA plus A-F page visibility grading.
 - Code grade loop: A-F code grade plus fix briefs for weak lanes.
+- WIP protection loop: claim allowed files and sequence lanes that collide.
 - Release lock loop: build, deploy, live/API readback, claim truth, handoff.
+- Recovery loop: isolate a failed check, patch the gap, rerun the failed check.
+- Evidence handoff loop: gather screenshots, commands, URLs, caveats, and next
+  action for the next agent.
 
 ## Specialized Lane Router
 

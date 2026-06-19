@@ -58,7 +58,7 @@ Suede fixes that by packaging the working system:
 - how it should audit SEO, AEO, AI EO, and metadata;
 - how it should improve when the operator gives feedback;
 - how it should run QA before handoff;
-- how it should run parallel, adversarial, and release-verification loops when a major task needs agent teams;
+- how it should run scout, parallel build, adversarial review, consensus review, WIP protection, release-verification, recovery, and evidence handoff loops when a major task needs agent teams;
 - when it should use MCP;
 - when MCP is unnecessary ceremony.
 
@@ -77,7 +77,7 @@ Use this for product and website work:
 - Suede Brand Voice: keep public copy specific, rights-aware, and non-generic.
 - Suede SEO Audit: check search intent, answer intent, metadata, schema, links, and trust.
 - Suede Visibility Grader: grade a website or docs page for findability, CTA pull, proof, AI readability, trust, and design signal.
-- Suede Agent Teams: multi-lane planning, adversarial review, design visibility loops, code review, release verification, and handoff.
+- Suede Agent Teams: multi-lane planning, adversarial review, consensus review, design visibility loops, code grading, WIP protection, release verification, recovery, and handoff.
 - Suede Code Review: senior-review style checks with A-F Suede grades for correctness, security, regressions, state, tests, and deploy risk.
 - Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
 - Suede Launch Packaging: prepare public releases with proof, links, QA, and handoff.
@@ -291,7 +291,7 @@ Suede Visibility Grader checks whether a page can be found, understood, trusted,
 ```text
 Major work needs lanes.
 
-Suede Agent Teams can run scout, builder, reviewer, adversarial review, design visibility review, release verification, and handoff loops without having every agent touch the same files at once.
+Suede Agent Teams can run scout and constraints loops, safe parallel build loops, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff without having every agent touch the same files at once.
 ```
 
 ### Section: What The MCP Adds
@@ -574,7 +574,7 @@ The point is not paperwork. The point is giving the agent a creative workflow it
 ### Agency DM
 
 ```text
-Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO/AEO/AI EO checks, visibility grading, A-F code grading, docs, adversarial review, and handoff.
+Suede gives your AI agent a repeatable client-delivery workflow: site style transfer, design QA, copy cleanup, SEO/AEO/AI EO checks, visibility grading, A-F code grading, docs, adversarial review, consensus review, WIP protection, release lock, recovery, and evidence handoff.
 
 It is useful when you want the agent to behave like a small product team instead of a blank chat box.
 ```

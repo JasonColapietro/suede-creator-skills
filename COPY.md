@@ -298,7 +298,9 @@ Run `suedify` when you have a reference URL and a target URL. Run
 `suede-design` for visual systems and responsive QA, `suede-copy` for public
 copy, `suede-seo-audit` for search, answer intent, and metadata, and
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
-`suede-agent-teams` when a major pass needs multiple review lanes.
+`suede-agent-teams` when a major pass needs scout, safe parallel build,
+adversarial review, consensus review, WIP protection, release lock, recovery,
+and evidence handoff loops.
 
 ## Social Copy
 

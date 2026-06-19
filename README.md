@@ -33,8 +33,9 @@ systems, and acted on. Suede Code Grader gives code an A-F ship-risk grade with
 the reason why across correctness, security, state, UX, tests, deploy readiness,
 and public-claim truth. Suede Code Review keeps the deeper findings and fix
 brief workflow. Suede Agent Teams adds grouping loops for major work: scout,
-build, adversarial review, design visibility review, release verification, and
-handoff without lanes stepping on the same files.
+constraints mapping, safe parallel build, adversarial review, consensus review,
+design visibility review, A-F code grading, WIP protection, release lock,
+recovery, and evidence handoff without lanes stepping on the same files.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,

@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Suede design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site mimicry, install, QA, artist campaign, and creator utility context.",
+  "summary": "Local MCP access to Suede design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site mimicry, agent-team loops, install, QA, artist campaign, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify reference-site restyling, code review, agent teams, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
+      "description": "Public Suede workflow skills for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify reference-site restyling, code review, agent-team loops, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -113,7 +113,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site restyling, code review, agent-team QA, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
+      "description": "Public umbrella Suede workflow for design, copywriting, SEO/AEO/AI EO, visibility grading, code grading, Suedify site restyling, code review, agent-team loops, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
     },
     {
@@ -173,8 +173,8 @@
     {
       "name": "suede-agent-teams",
       "area": "workflow",
-      "description": "Suede agent team orchestration for major planning, implementation, review, design QA, visibility grading, adversarial review loops, release, and recovery work.",
-      "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from parallel lanes."
+      "description": "Suede agent team orchestration for scout, safe parallel build, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops.",
+      "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership."
     },
     {
       "name": "suede-launch-packaging",
