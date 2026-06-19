@@ -95,6 +95,29 @@ rights, provenance, registry-backed media, royalty routing, licensing
 readiness, and agent commerce. Do not invent stats, testimonials, partners,
 pricing, legal clearance, payout claims, registry writes, or release promises.
 
+## Progressive Calibration
+
+Accept feedback at any point in the workflow, not only after final handoff.
+When the user says what worked, preserve that pattern in the current pass and
+mirror it later. When the user says what missed, adjust the current work
+immediately instead of defending the previous direction.
+
+If the user says `cue suede`, asks for feedback choices, or seems to be
+calibrating the work mid-stream, pause at the next safe checkpoint and offer:
+
+```text
+Cue Suede:
+1. Change something - tell me what to revise and I will adjust it.
+2. Preserve this - tell me what worked so I can mimic it later.
+3. Keep as-is - say nothing and I will treat it as accepted.
+```
+
+At the end of meaningful Suede work, after verification and status, include the
+same `Cue Suede` prompt unless the user explicitly asked for no follow-up.
+Do not block completion waiting for an answer. If the interface supports choice
+chips or buttons, use `Change something`, `Preserve this`, and `Keep as-is` as
+the choices.
+
 ## When To Use MCP
 
 Use the Suede MCP only when it adds structure:

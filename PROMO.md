@@ -35,7 +35,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Suede turns rough prompts into polished product work.
 - Suedify any site: give the agent a reference URL and a target URL.
 - Clone the feel of a site without stealing its assets or claims.
-- Use progressive feedback: tell it what worked, tell it what missed, then let the next pass self-correct.
+- Use progressive feedback: tell it what worked, tell it what missed, or say `Cue Suede` to bring up choices.
 - Use MCP only when the workflow benefits from a catalog, audit, or checklist.
 - A public skill pack for people who want AI agents to ship better work with fewer resets.
 - Agent workflows for people who care about public pages, repo quality, and claim boundaries.
@@ -257,7 +257,7 @@ Use it to list Suede skills, return install paths, build an SEO/AEO/AI EO audit 
 ```text
 Suede workflows improve inside the work session when feedback is clear.
 
-When the agent does something you like, say what worked. When it misses, say exactly what to change. The workflow uses that correction as current context and tightens the next pass.
+When the agent does something you like, say what worked. When it misses, say exactly what to change. You can also say `Cue Suede` mid-workflow or at the end to bring up choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing.
 ```
 
 ### Section: Claim Boundary
@@ -723,8 +723,9 @@ plumbing. Lead with the result. Put local install commands in technical docs.
 ### How should feedback work?
 
 Use progressive updating. When the agent does something right, name the pattern
-you want preserved. When it misses, name the exact correction. The next pass
-should use that feedback as working context.
+you want preserved. When it misses, name the exact correction. To make the
+choices appear, say `Cue Suede`. The agent should offer: change something,
+preserve this for later mimicry, or keep as-is by saying nothing.
 
 ### What is the safest public claim?
 

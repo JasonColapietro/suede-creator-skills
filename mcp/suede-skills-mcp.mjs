@@ -158,7 +158,12 @@ function qaChecklist(args = {}) {
     "- Serve locally, check desktop and mobile, run link sweep, verify text fit, and confirm no broken public routes.",
     "",
     "## Release Lane",
-    "- Run validation commands, commit only scoped files, push, wait for Pages build, and verify live URLs before claiming public completion."
+    "- Run validation commands, commit only scoped files, push, wait for Pages build, and verify live URLs before claiming public completion.",
+    "",
+    "## Cue Suede Lane",
+    "- Accept feedback mid-workflow and use it immediately.",
+    "- At final handoff, ask: Cue Suede: 1. Change something. 2. Preserve this so I can mimic it later. 3. Keep as-is by saying nothing.",
+    "- Do not block completion waiting for a feedback answer."
   ].join("\n");
 }
 

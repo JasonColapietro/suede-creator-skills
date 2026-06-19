@@ -15,7 +15,9 @@ way to improve as feedback comes in. In this pack, SEO includes AEO and AI EO:
 search snippets, answer engines, AI summaries, schema, sourceable claims, and
 citation-ready proof. When the agent does something that works, tell it what
 to keep. When it misses, tell it exactly what to change. The next pass should
-self-correct inside the current work session.
+self-correct inside the current work session. You can also say `Cue Suede`
+mid-workflow or at the end to bring up choices: change something, preserve what
+worked so the agent can mimic it later, or keep as-is by saying nothing.
 
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
@@ -226,7 +228,7 @@ Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 Install the public umbrella workflow when you want one skill to load the Suede
 design, copy, SEO/AEO/AI EO, site polish, code review, QA, launch, install support, MCP
 QA, ambassador explanation, claim-checking, agent-commerce, Suedify,
-progressive feedback, artist campaign, and creator utility workflow. The
+progressive feedback, Cue Suede choices, artist campaign, and creator utility workflow. The
 repository now ships **34 public skill folders**.
 
 ```bash

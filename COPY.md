@@ -124,8 +124,9 @@ checks.
 ### Progressive updating note
 
 When the agent does something you like, name what worked. When it misses, name
-the exact correction. The next pass should use that feedback as working
-context and tighten the output inside the current session.
+the exact correction. You can say `Cue Suede` during the work or at the end
+to bring up choices: change something, preserve what worked so the agent can
+mimic it later, or keep as-is by saying nothing.
 
 ### Local install note
 
