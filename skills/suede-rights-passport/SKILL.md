@@ -37,6 +37,7 @@ For a local project folder:
 python3 /path/to/suede-rights-passport/scripts/create_transfer_package.py \
   /path/to/source-project \
   --output /path/to/suede-transfer-package \
+  --metadata /path/to/source-project/metadata.json \
   --project-title "Project Title" \
   --artist "Artist Name"
 ```
@@ -49,6 +50,18 @@ python3 /path/to/suede-rights-passport/scripts/create_transfer_package.py \
   --output /path/to/suede-transfer-package \
   --copy-assets
 ```
+
+Safety defaults:
+
+- Hidden files, dependency folders, build outputs, caches, and secret-like files are skipped by default.
+- Unrecognized file types are skipped unless `--include-other` is passed.
+- Absolute local paths are redacted to share-safer names unless `--include-absolute-paths` is passed.
+- Existing generated package files are not overwritten unless `--force` is passed.
+- The output folder cannot be the same folder as the source or live inside it.
+- Public-safe JSON, YAML, or key=value text metadata can prefill known project,
+  rights, contributor, release, wallet, and provenance facts. Do not point
+  metadata at real `.env`, credential, wallet, or deployment config files.
+  Unknown facts remain flagged. YAML metadata requires PyYAML.
 
 ## Package Standards
 
@@ -76,6 +89,8 @@ Use the bundled assets as templates when creating or repairing a package:
 - Do not ask for private keys, seed phrases, unreleased account secrets, or full payment credentials.
 - Do not include private Suede implementation details, private endpoints, internal provider names, or non-public pricing.
 - Do not upload files or call live Suede services unless the user explicitly asks and provides the relevant authenticated workflow.
+- Treat generated reports and transfer packages as private drafts until a
+  creator or operator reviews and redacts them for the intended audience.
 - Keep public positioning focused on creator ownership infrastructure, programmable IP, provenance, registry readiness, royalty routing, licensing, and agent commerce.
 
 ## Completion Checklist
@@ -100,4 +115,5 @@ The Passport is a forward-looking surface: stamps for "Rights Passport
 produced", "IP registered on Base", "Suede Holder", and similar signals will
 be issued by Suede once the registry stamping API is live. Today this skill
 emits the artifacts; the Passport will recognize them later. See
-[PASSPORT.md](../../PASSPORT.md) at repo root for the full concept.
+`references/passport-context.md` for install-safe context and the repo-root
+`PASSPORT.md` for the full public concept.

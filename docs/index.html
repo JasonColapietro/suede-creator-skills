@@ -20,7 +20,7 @@
     <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/">
     <link rel="icon" href="./assets/suede-skill-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="./assets/suede-skill-icon.png">
-    <link rel="preload" as="image" href="./assets/passport-hero.png">
+    <link rel="preload" as="image" href="./assets/passport-hero.webp" type="image/webp">
     <link rel="image_src" href="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Suede Creator Skills | Music Rights Passport for Agents">
@@ -35,7 +35,7 @@
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
-    <meta name="twitter:creator" content="@JasonColapietro">
+    <meta name="twitter:creator" content="@johnnysuede">
     <meta name="twitter:title" content="Suede Creator Skills">
     <meta name="twitter:description" content="Free Codex and Claude music skills for release linting, rights passporting, provenance, splits, and Suede intake prep.">
     <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
@@ -47,7 +47,7 @@
         "@graph": [
           {
             "@type": "Organization",
-            "@id": "https://suedeai.ai/#org",
+            "@id": "https://suedeai.ai/#organization",
             "name": "Suede Labs AI",
             "url": "https://suedeai.ai",
             "logo": "https://jasoncolapietro.github.io/suede-creator-skills/assets/suede-ai-logo-transparent.png",
@@ -64,7 +64,7 @@
             "name": "Suede Creator Skills",
             "description": "Free Codex and Claude skills that audit music releases, package creator rights, document provenance, splits, licensing readiness, and Suede intake workflows.",
             "publisher": {
-              "@id": "https://suedeai.ai/#org"
+              "@id": "https://suedeai.ai/#organization"
             },
             "inLanguage": "en-US"
           },
@@ -111,15 +111,23 @@
             "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE",
             "isAccessibleForFree": true,
             "softwareRequirements": ["Codex", "Claude Code", "Python 3"],
+            "hasPart": [
+              {
+                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-suede-rights-passport"
+              },
+              {
+                "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-music-release-metadata-linter"
+              }
+            ],
             "creator": {
               "@type": "Person",
-              "@id": "https://github.com/JasonColapietro",
+              "@id": "https://suedeai.ai/founder#person",
               "name": "Jason Colapietro",
-              "url": "https://github.com/JasonColapietro",
-              "sameAs": ["https://twitter.com/JasonColapietro"]
+              "url": "https://suedeai.ai/founder",
+              "sameAs": ["https://x.com/johnnysuede"]
             },
             "publisher": {
-              "@id": "https://suedeai.ai/#org"
+              "@id": "https://suedeai.ai/#organization"
             },
             "keywords": [
               "music skills",
@@ -138,8 +146,46 @@
             ]
           },
           {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-suede-rights-passport",
+            "name": "Suede Rights Passport",
+            "description": "A public Codex and Claude skill for packaging music and media folders into Suede-ready rights passport transfer packages.",
+            "url": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport",
+            "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport",
+            "programmingLanguage": "Python",
+            "applicationCategory": "DeveloperTool",
+            "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE",
+            "isAccessibleForFree": true,
+            "creator": {
+              "@id": "https://suedeai.ai/founder#person"
+            },
+            "publisher": {
+              "@id": "https://suedeai.ai/#organization"
+            },
+            "keywords": ["rights passport", "music rights", "provenance", "royalty splits", "Suede intake"]
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#skill-music-release-metadata-linter",
+            "name": "Music Release Metadata Linter",
+            "description": "A public Codex and Claude skill for auditing music release folders for metadata, rights, split, artwork, lyric, stem, and Suede-readiness gaps.",
+            "url": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter",
+            "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter",
+            "programmingLanguage": "Python",
+            "applicationCategory": "DeveloperTool",
+            "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE",
+            "isAccessibleForFree": true,
+            "creator": {
+              "@id": "https://suedeai.ai/founder#person"
+            },
+            "publisher": {
+              "@id": "https://suedeai.ai/#organization"
+            },
+            "keywords": ["music metadata", "release readiness", "music rights", "Codex skills", "Claude skills"]
+          },
+          {
             "@type": "Person",
-            "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro",
+            "@id": "https://suedeai.ai/founder#person",
             "name": "Jason Colapietro",
             "alternateName": "Johnny Suede",
             "url": "https://suedeai.ai/founder",
@@ -147,7 +193,9 @@
               "https://github.com/JasonColapietro",
               "https://x.com/johnnysuede",
               "https://guitar.solutions",
-              "https://www.amazon.com/author/johnnysuede"
+              "https://www.amazon.com/stores/author/B0GD5FX6N6",
+              "https://www.linkedin.com/in/jasoncolapietro",
+              "https://www.crunchbase.com/person/jason-colapietro-d83e"
             ]
           },
           {
@@ -156,16 +204,16 @@
             "name": "The Signal Chain",
             "url": "https://guitar.solutions",
             "author": {
-              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+              "@id": "https://suedeai.ai/founder#person"
             }
           },
           {
             "@type": "Book",
             "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#book-the-guitar-without-a-number",
             "name": "The Guitar Without a Number",
-            "url": "https://www.amazon.com/author/johnnysuede",
+            "url": "https://www.amazon.com/stores/author/B0GD5FX6N6",
             "author": {
-              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+              "@id": "https://suedeai.ai/founder#person"
             }
           },
           {
@@ -174,7 +222,7 @@
             "name": "Suede Labs: The Human Authenticity Layer",
             "url": "https://www.amazon.com/dp/B0GD5FX6N6",
             "author": {
-              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+              "@id": "https://suedeai.ai/founder#person"
             }
           },
           {
@@ -183,7 +231,7 @@
             "name": "Proof as Infrastructure",
             "url": "https://www.amazon.com/dp/B0GMB2VLXQ",
             "author": {
-              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+              "@id": "https://suedeai.ai/founder#person"
             }
           },
           {
@@ -192,7 +240,7 @@
             "name": "Stake Your Claim",
             "url": "https://www.amazon.com/dp/B0GRG8LGQQ",
             "author": {
-              "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#jason-colapietro"
+              "@id": "https://suedeai.ai/founder#person"
             }
           },
           {
@@ -257,7 +305,7 @@
         --cream: oklch(0.96 0.018 62);
         --muted: oklch(0.76 0.035 58);
         --line: oklch(0.96 0.018 62 / 0.16);
-        --red: oklch(0.55 0.21 28);
+        --red: oklch(0.50 0.21 28);
         --red-deep: oklch(0.36 0.16 28);
         --gold: oklch(0.78 0.12 78);
         --cyan: oklch(0.74 0.12 205);
@@ -270,7 +318,7 @@
 
       html {
         background: var(--bg);
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
       }
 
       body {
@@ -289,6 +337,10 @@
         max-width: 100%;
       }
 
+      picture {
+        display: block;
+      }
+
       a {
         color: inherit;
       }
@@ -298,6 +350,15 @@
       summary:focus-visible {
         outline: 3px solid var(--cyan);
         outline-offset: 4px;
+      }
+
+      #main {
+        scroll-margin-top: 112px;
+      }
+
+      #main:focus {
+        outline: 3px solid var(--cyan);
+        outline-offset: -8px;
       }
 
       ::selection {
@@ -368,6 +429,13 @@
         color: var(--muted);
         font-size: 14px;
         font-weight: 700;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 4px 2px;
       }
 
       .hero {
@@ -494,7 +562,8 @@
       }
 
       .actions {
-        grid-template-columns: repeat(2, max-content);
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 30px;
       }
 
@@ -551,6 +620,7 @@
       }
 
       section {
+        scroll-margin-top: 96px;
         padding: 78px 0;
         border-top: 1px solid var(--line);
       }
@@ -618,6 +688,27 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+      }
+
+      .passport-card .tag-row {
+        margin-top: 16px;
+      }
+
+      .inline-card-link {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        margin-top: 2px;
+        border: 1px solid oklch(0.78 0.12 78 / 0.42);
+        border-radius: 8px;
+        padding: 0 12px;
+        color: var(--cream);
+        background: oklch(0.96 0.018 62 / 0.08);
+        font-size: 13px;
+        font-weight: 900;
+        text-decoration: none;
       }
 
       .tag {
@@ -691,8 +782,9 @@
         padding: 20px;
       }
 
-      .use-card b {
+      .use-card h3 {
         display: block;
+        margin: 0;
         color: var(--cream);
         font-size: 18px;
       }
@@ -815,6 +907,13 @@
         padding: 16px;
         color: oklch(0.93 0.04 72);
         font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+
+      pre:focus-visible {
+        outline: 3px solid var(--cyan);
+        outline-offset: 4px;
       }
 
       .flow {
@@ -896,6 +995,28 @@
           flex-direction: column;
           padding: 14px 0;
         }
+
+        .nav-links a {
+          min-height: 44px;
+        }
+
+        section {
+          scroll-margin-top: 170px;
+        }
+
+        #main {
+          scroll-margin-top: 220px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
       }
     </style>
   </head>
@@ -903,7 +1024,13 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header>
       <div class="shell nav">
-        <div class="brand"><img class="brand-logo" src="./assets/suede-ai-logo-transparent.png" alt="Suede Labs AI logo"><span>Suede Creator Skills</span></div>
+        <div class="brand">
+          <picture>
+            <source srcset="./assets/suede-ai-logo-transparent.webp" type="image/webp">
+            <img class="brand-logo" src="./assets/suede-ai-logo-transparent.png" width="400" height="400" alt="Suede Labs AI logo" decoding="async">
+          </picture>
+          <span>Suede Creator Skills</span>
+        </div>
         <nav class="nav-links" aria-label="Primary">
           <a href="#skills">Skills</a>
           <a href="#use-cases">Use cases</a>
@@ -916,7 +1043,7 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero">
         <div class="shell hero-grid">
           <div class="hero-copy">
@@ -930,6 +1057,7 @@
             <div class="actions">
               <a class="button" href="https://github.com/jasoncolapietro/suede-creator-skills">View GitHub Repo</a>
               <a class="button secondary" href="#install">Install Skills</a>
+              <a class="button secondary" href="https://github.com/jasoncolapietro/suede-creator-skills/blob/main/PASSPORT.md">Read Passport Concept</a>
             </div>
             <div class="hero-panel" aria-label="What the skill pack prepares">
               <span class="panel-kicker">Release evidence, not hype</span>
@@ -947,7 +1075,10 @@
             </div>
           </div>
           <div class="hero-media">
-            <img src="./assets/passport-hero.png" alt="A premium Suede Creator Passport with the Suede emblem, Suede signing workflow, website, app, Discord, X, Telegram, GitHub, Codex, Claude, and Suede Holder passport stamps.">
+            <picture>
+              <source srcset="./assets/passport-hero.webp" type="image/webp">
+              <img src="./assets/passport-hero.png" width="1672" height="941" alt="A premium Suede Creator Passport with the Suede emblem, Suede signing workflow, website, app, Discord, X, Telegram, GitHub, Codex, Claude, and Suede Holder passport stamps." fetchpriority="high" decoding="async">
+            </picture>
           </div>
         </div>
       </section>
@@ -962,11 +1093,15 @@
             agent commerce readiness.
           </p>
           <div class="skill-grid">
-            <article class="passport-card">
-              <img src="./assets/rights-passport-card.png" alt="Passport page for the Suede Rights Passport skill.">
+            <article class="passport-card" aria-labelledby="skill-rights-passport-title">
+              <picture>
+                <source srcset="./assets/rights-passport-card.webp" type="image/webp">
+                <img src="./assets/rights-passport-card.png" width="1300" height="820" alt="Passport page for the Suede Rights Passport skill." loading="lazy" decoding="async">
+              </picture>
               <div class="passport-card-body">
-                <h3>Suede Rights Passport</h3>
+                <h3 id="skill-rights-passport-title">Suede Rights Passport</h3>
                 <p>Create <code>RIGHTS_PASSPORT.md</code>, <code>suede-intake.json</code>, provenance notes, splits, licenses, optimization brief, and missing-info report.</p>
+                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport">View skill manifest</a>
                 <div class="tag-row">
                   <span class="tag">rights passport</span>
                   <span class="tag">provenance</span>
@@ -975,11 +1110,15 @@
                 </div>
               </div>
             </article>
-            <article class="passport-card">
-              <img src="./assets/release-linter-card.png" alt="Passport page for the Music Release Metadata Linter skill.">
+            <article class="passport-card" aria-labelledby="skill-release-linter-title">
+              <picture>
+                <source srcset="./assets/release-linter-card.webp" type="image/webp">
+                <img src="./assets/release-linter-card.png" width="1300" height="820" alt="Passport page for the Music Release Metadata Linter skill." loading="lazy" decoding="async">
+              </picture>
               <div class="passport-card-body">
-                <h3>Music Release Metadata Linter</h3>
+                <h3 id="skill-release-linter-title">Music Release Metadata Linter</h3>
                 <p>Audit title, artist, masters, artwork, lyrics, stems, credits, split totals, sample status, release history, and Suede blockers.</p>
+                <a class="inline-card-link" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/music-release-metadata-linter">View skill manifest</a>
                 <div class="tag-row">
                   <span class="tag">metadata lint</span>
                   <span class="tag">release readiness</span>
@@ -1001,20 +1140,20 @@
             platforms, agents, and rights teams rarely see but every serious music project needs.
           </p>
           <div class="use-grid">
-            <article class="use-card">
-              <b>Before release</b>
+            <article class="use-card" aria-labelledby="use-before-release">
+              <h3 id="use-before-release">Before release</h3>
               <span>Check titles, artist names, masters, artwork, lyrics, stems, contributors, sample status, and platform-delivery blockers.</span>
             </article>
-            <article class="use-card">
-              <b>Before licensing</b>
+            <article class="use-card" aria-labelledby="use-before-licensing">
+              <h3 id="use-before-licensing">Before licensing</h3>
               <span>Collect provenance, split details, license notes, missing confirmations, and the evidence needed for a cleaner rights review.</span>
             </article>
-            <article class="use-card">
-              <b>Before Suede intake</b>
+            <article class="use-card" aria-labelledby="use-before-suede-intake">
+              <h3 id="use-before-suede-intake">Before Suede intake</h3>
               <span>Generate a structured transfer package with <code>RIGHTS_PASSPORT.md</code>, <code>suede-intake.json</code>, and optimization notes.</span>
             </article>
-            <article class="use-card">
-              <b>Before agent commerce</b>
+            <article class="use-card" aria-labelledby="use-before-agent-commerce">
+              <h3 id="use-before-agent-commerce">Before agent commerce</h3>
               <span>Make a creative work understandable to payable agents without exposing secrets, uploading files, or overclaiming clearance.</span>
             </article>
           </div>
@@ -1026,13 +1165,17 @@
           <span class="section-kicker">Participation trail</span>
           <h2>Passport stamps for Suede locations.</h2>
           <p class="section-lead">
-            Every creator action can become a stamp: website visit, Discord join, X follow,
-            release lint, rights passport, registry review, royalty routing, licensing,
-            optimization, and agent commerce. The public skill pack frames that history as a
-            careful participation trail, not a financial, legal, distribution, or payout promise.
+            Passport stamps are a forward-looking participation trail for website visits,
+            community joins, release linting, rights passport packages, registry review, royalty
+            routing, licensing, optimization, and agent commerce. This public skill pack does not
+            issue stamps, allocate rewards, or promise financial, legal, distribution, or payout
+            outcomes.
           </p>
           <div class="passport-image">
-            <img src="./assets/location-stamps.png" alt="Suede passport stamps for website visits, app opens, Discord joins, X follows, Telegram, GitHub, Suede Holder context, Suede signing workflow, linting, passporting, registry, royalties, licensing, optimization, Codex, Claude, and agent commerce.">
+            <picture>
+              <source srcset="./assets/location-stamps.webp" type="image/webp">
+              <img src="./assets/location-stamps.png" width="1672" height="941" alt="Suede passport stamps for website visits, app opens, Discord joins, X follows, Telegram, GitHub, Suede Holder context, Suede signing workflow, linting, passporting, registry, royalties, licensing, optimization, Codex, Claude, and agent commerce." loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="stamp-grid" aria-label="Suede passport stamp locations">
             <div class="stamp"><strong>Website</strong><span>Visit <code>suedeai.ai</code> and start the public creator journey.</span></div>
@@ -1081,8 +1224,8 @@
             scripts. Review the contents before enabling code execution.
           </p>
           <div class="install-grid">
-            <article class="install">
-              <h3>Codex</h3>
+            <article class="install" aria-labelledby="install-codex-title">
+              <h3 id="install-codex-title">Codex</h3>
               <p>Install into <code>$CODEX_HOME/skills</code>, or <code>~/.codex/skills</code> when <code>CODEX_HOME</code> is not set.</p>
               <pre><code>git clone https://github.com/jasoncolapietro/suede-creator-skills.git
 cd suede-creator-skills
@@ -1090,14 +1233,14 @@ mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 cp -R skills/suede-rights-passport "${CODEX_HOME:-$HOME/.codex}/skills/"
 cp -R skills/music-release-metadata-linter "${CODEX_HOME:-$HOME/.codex}/skills/"</code></pre>
             </article>
-            <article class="install">
-              <h3>Claude Code</h3>
+            <article class="install" aria-labelledby="install-claude-title">
+              <h3 id="install-claude-title">Claude Code</h3>
               <p>Install into a project <code>.claude/skills</code> folder or your user-level <code>~/.claude/skills</code> folder.</p>
-              <pre><code>git clone https://github.com/jasoncolapietro/suede-creator-skills.git
-cd your-project
+              <pre><code>git clone https://github.com/jasoncolapietro/suede-creator-skills.git /tmp/suede-creator-skills
+cd /path/to/your-project
 mkdir -p .claude/skills
-cp -R ../suede-creator-skills/skills/suede-rights-passport .claude/skills/
-cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skills/</code></pre>
+cp -R /tmp/suede-creator-skills/skills/suede-rights-passport .claude/skills/
+cp -R /tmp/suede-creator-skills/skills/music-release-metadata-linter .claude/skills/</code></pre>
             </article>
           </div>
         </div>
@@ -1116,7 +1259,7 @@ cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skill
               <b>The Signal Chain</b>
               <span>Electric-guitar tone history, memoir, method, and workbook editions.</span>
             </a>
-            <a class="book-card" href="https://www.amazon.com/author/johnnysuede">
+            <a class="book-card" href="https://www.amazon.com/stores/author/B0GD5FX6N6">
               <b>The Guitar Without a Number</b>
               <span>Self-taught guitar method with theory, tone, songbooks, and music IP rights.</span>
             </a>
@@ -1144,16 +1287,16 @@ cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skill
             Short answers for creators, labels, managers, developers, and agents deciding whether the public Suede skill pack fits their workflow.
           </p>
           <div class="faq-grid">
-            <article class="faq-card">
-              <h3>What are Suede Creator Skills?</h3>
+            <article class="faq-card" aria-labelledby="faq-what-title">
+              <h3 id="faq-what-title">What are Suede Creator Skills?</h3>
               <p>Suede Creator Skills are free Codex and Claude skill folders for music and media creators. They audit release metadata, organize rights evidence, and prepare Suede-ready transfer packages without uploading private files.</p>
             </article>
-            <article class="faq-card">
-              <h3>Which music workflows do the skills support?</h3>
+            <article class="faq-card" aria-labelledby="faq-workflows-title">
+              <h3 id="faq-workflows-title">Which music workflows do the skills support?</h3>
               <p>The skills support song, album, catalog, stem pack, artwork, lyrics, credits, split, sample-status, provenance, licensing-readiness, and agent-commerce preparation workflows.</p>
             </article>
-            <article class="faq-card">
-              <h3>Do the skills clear music rights or guarantee distribution?</h3>
+            <article class="faq-card" aria-labelledby="faq-clearance-title">
+              <h3 id="faq-clearance-title">Do the skills clear music rights or guarantee distribution?</h3>
               <p>No. The public skills organize evidence and flag missing information. They do not provide legal clearance, write to a registry, distribute music, or promise payouts.</p>
             </article>
           </div>
@@ -1167,12 +1310,13 @@ cp -R ../suede-creator-skills/skills/music-release-metadata-linter .claude/skill
           <p class="section-lead">Each public destination is a passport stamp: visit the site, open the app, join Discord, follow on X, enter Telegram, install the repo, or read the agent install docs.</p>
           <div class="link-grid">
             <a class="link-card" data-stamp="Website Stamp" href="https://suedeai.ai"><b>Suede Website</b><span>https://suedeai.ai</span></a>
-            <a class="link-card" data-stamp="App Stamp" href="https://app.suedeai.ai"><b>Suede App</b><span>https://app.suedeai.ai</span></a>
+            <a class="link-card" data-stamp="App Stamp" href="https://app.suedeai.ai"><b>Suede App / Vaults</b><span>https://app.suedeai.ai</span></a>
             <a class="link-card" data-stamp="Archive Stamp" href="https://suedeai.org"><b>Suede Long-Form Site</b><span>https://suedeai.org</span></a>
             <a class="link-card" data-stamp="X Follow Stamp" href="https://x.com/aisuede"><b>Follow On X</b><span>https://x.com/aisuede</span></a>
             <a class="link-card" data-stamp="Discord Stamp" href="https://discord.gg/suedeai"><b>Join Discord</b><span>https://discord.gg/suedeai</span></a>
             <a class="link-card" data-stamp="Telegram Stamp" href="https://t.me/suedeai"><b>Telegram</b><span>https://t.me/suedeai</span></a>
             <a class="link-card" data-stamp="GitHub Stamp" href="https://github.com/jasoncolapietro/suede-creator-skills"><b>GitHub Repo</b><span>github.com/jasoncolapietro/suede-creator-skills</span></a>
+            <a class="link-card" data-stamp="Passport Concept" href="https://github.com/jasoncolapietro/suede-creator-skills/blob/main/PASSPORT.md"><b>Passport Concept</b><span>GitHub PASSPORT.md</span></a>
             <a class="link-card" data-stamp="Codex Stamp" href="https://github.com/openai/skills"><b>OpenAI Skills</b><span>github.com/openai/skills</span></a>
             <a class="link-card" data-stamp="Claude Stamp" href="https://docs.claude.com/en/docs/claude-code/skills"><b>Claude Code Skills</b><span>docs.claude.com/en/docs/claude-code/skills</span></a>
           </div>

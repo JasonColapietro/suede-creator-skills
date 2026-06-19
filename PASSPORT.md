@@ -24,8 +24,10 @@ sybil farm with a GitHub account and a Discord handle.
 
 Two purposes drive every Passport decision:
 
-1. **Sybil-resistant rewards allocation.** When Suede distributes tokens,
-   perks, or NFTs, allocation weight is determined by Passport activity.
+1. **Sybil-resistant rewards readiness.** If Suede later uses Passport
+   activity for rewards, perks, or NFTs, published rules should define
+   eligibility and weighting. This repo does not allocate, guarantee, or gate
+   rewards today.
 2. **Author credibility on Suede Social.** A Passport tier shows up next to
    author handles, IP registry entries, and forum posts as the trust signal
    readers and buyers look for.
@@ -112,5 +114,6 @@ authoritative marks, not badges.
 - **Concept**: ratified.
 - **Surface (landing page, skills)**: shipped.
 - **Stamping infrastructure**: deferred — see project tracker.
-- **Reward allocation**: deferred — depends on stamping.
+- **Reward allocation**: deferred — depends on future published rules and
+  stamping.
 - **On-chain attestation roots**: deferred — depends on stamping.

@@ -34,6 +34,72 @@ DOC_EXTS = {
 }
 
 SKIP_NAMES = {".ds_store", "thumbs.db"}
+DENY_DIR_NAMES = {
+    ".aws",
+    ".azure",
+    ".cache",
+    ".config",
+    ".docker",
+    ".gnupg",
+    ".gcloud",
+    ".git",
+    ".hg",
+    ".kube",
+    ".mypy_cache",
+    ".next",
+    ".nuxt",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".ssh",
+    ".svn",
+    ".turbo",
+    ".venv",
+    "__pycache__",
+    "build",
+    "coverage",
+    "dist",
+    "env",
+    "node_modules",
+    "venv",
+}
+DENY_FILENAMES = {
+    ".env",
+    ".env.development",
+    ".env.local",
+    ".env.production",
+    ".env.test",
+    ".envrc",
+    ".netrc",
+    ".npmrc",
+    ".pypirc",
+    "credentials",
+    "credentials.json",
+    "id_ed25519",
+    "id_rsa",
+    "kubeconfig",
+    "secrets.json",
+    "wallet.json",
+}
+DENY_SUFFIXES = {".env", ".key", ".pem", ".p12", ".pfx"}
+SECRET_NAME_TOKENS = {
+    "access_token",
+    "api_key",
+    "apikey",
+    "auth_token",
+    "client_secret",
+    "credential",
+    "credentials",
+    "password",
+    "private_key",
+    "private-key",
+    "privatekey",
+    "refresh_token",
+    "secret",
+    "seed_phrase",
+    "seed-phrase",
+    "service_account",
+}
+GENERATED_FILENAMES = {"release-lint-report.md", "release-lint-report.json"}
 METADATA_CANDIDATES = {
     "metadata.json",
     "release.json",
@@ -42,8 +108,6 @@ METADATA_CANDIDATES = {
     "metadata.yml",
     "release.yaml",
     "release.yml",
-    "release.env",
-    "metadata.env",
 }
 STEM_KEYWORDS = {
     "stem",
@@ -84,7 +148,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         default="release-lint-output",
-        help="Output folder for release-lint-report.md/json.",
+        help="Output folder for release-lint-report.md/json. Must be outside the source folder.",
+    )
+    parser.add_argument(
+        "--include-hidden",
+        action="store_true",
+        help="Include hidden files and folders. Secret-like files are still skipped.",
+    )
+    parser.add_argument(
+        "--include-other",
+        action="store_true",
+        help="Include unrecognized file types in the inventory.",
+    )
+    parser.add_argument(
+        "--include-absolute-paths",
+        action="store_true",
+        help="Write absolute local paths into reports. Off by default for public-safe sharing.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite existing generated report files in the output folder.",
     )
     return parser.parse_args()
 
@@ -131,6 +215,8 @@ def discover_metadata(source: Path, explicit: str) -> Path | None:
         path = Path(explicit).expanduser().resolve()
         if not path.exists():
             raise SystemExit(f"Metadata file not found: {path}")
+        if is_denied_path(path, source):
+            raise SystemExit("Refusing to use a secret-like metadata path. Use a public-safe metadata JSON, YAML, or key=value text file.")
         return path
     for name in METADATA_CANDIDATES:
         candidate = source / name
@@ -183,19 +269,75 @@ def classify_file(path: Path) -> tuple[str, str]:
     return "other", "unknown"
 
 
-def inventory_files(source: Path, output: Path) -> list[dict[str, Any]]:
+def is_under(child: Path, parent: Path) -> bool:
+    try:
+        child.resolve().relative_to(parent.resolve())
+        return True
+    except ValueError:
+        return False
+
+
+def is_hidden_path(path: Path, source: Path) -> bool:
+    try:
+        relative = path.relative_to(source)
+    except ValueError:
+        relative = path
+    return any(part.startswith(".") for part in relative.parts)
+
+
+def is_denied_path(path: Path, source: Path) -> bool:
+    try:
+        relative = path.relative_to(source)
+    except ValueError:
+        relative = path
+    lowered_parts = [part.lower() for part in relative.parts]
+    if any(part in DENY_DIR_NAMES for part in lowered_parts[:-1]):
+        return True
+    filename = lowered_parts[-1]
+    if filename in DENY_FILENAMES or filename.startswith(".env"):
+        return True
+    if path.suffix.lower() in DENY_SUFFIXES:
+        return True
+    normalized = filename.replace(".", "_")
+    return any(token in normalized for token in SECRET_NAME_TOKENS)
+
+
+def display_path(path: Path, source: Path, include_absolute: bool) -> str:
+    if include_absolute:
+        return str(path)
+    try:
+        return path.relative_to(source).as_posix()
+    except ValueError:
+        return path.name
+
+
+def validate_output(source: Path, output: Path, force: bool) -> None:
+    if output == source:
+        raise SystemExit("Output folder must be separate from the source folder.")
+    if is_under(output, source):
+        raise SystemExit("Output folder must be outside the source folder.")
+    existing = [output / filename for filename in GENERATED_FILENAMES if (output / filename).exists()]
+    if existing and not force:
+        names = ", ".join(path.name for path in existing)
+        raise SystemExit(f"Refusing to overwrite existing report files ({names}); pass --force to replace them.")
+
+
+def inventory_files(source: Path, output: Path, include_hidden: bool, include_other: bool) -> list[dict[str, Any]]:
     assets = []
     for path in sorted(source.rglob("*")):
         if not path.is_file():
             continue
         if path.name.lower() in SKIP_NAMES:
             continue
-        try:
-            path.relative_to(output)
+        if is_under(path, output):
             continue
-        except ValueError:
-            pass
+        if is_denied_path(path, source):
+            continue
+        if not include_hidden and is_hidden_path(path, source):
+            continue
         category, role = classify_file(path)
+        if category == "other" and not include_other:
+            continue
         assets.append(
             {
                 "relative_path": path.relative_to(source).as_posix(),
@@ -279,18 +421,61 @@ def contributor_sums(contributors: Any) -> tuple[float | None, float | None, boo
     )
 
 
-def rights_value(metadata: dict[str, Any], key: str, default: Any = None) -> Any:
-    rights = metadata.get("rights")
-    if isinstance(rights, dict) and key in rights and rights[key] not in (None, ""):
-        return rights[key]
-    return metadata.get(key, default)
+def scoped_value(metadata: dict[str, Any], scope_name: str, keys: str | list[str], default: Any = None) -> Any:
+    aliases = [keys] if isinstance(keys, str) else keys
+    scoped = metadata.get(scope_name)
+    if isinstance(scoped, dict):
+        for key in aliases:
+            if key in scoped and scoped[key] not in (None, ""):
+                return scoped[key]
+    for key in aliases:
+        if key in metadata and metadata[key] not in (None, ""):
+            return metadata[key]
+    return default
 
 
-def suede_value(metadata: dict[str, Any], key: str, default: Any = None) -> Any:
-    suede = metadata.get("suede")
-    if isinstance(suede, dict) and key in suede and suede[key] not in (None, ""):
-        return suede[key]
-    return metadata.get(key, default)
+def rights_value(metadata: dict[str, Any], keys: str | list[str], default: Any = None) -> Any:
+    return scoped_value(metadata, "rights", keys, default)
+
+
+def project_value(metadata: dict[str, Any], keys: str | list[str], default: Any = None) -> Any:
+    return scoped_value(metadata, "project", keys, default)
+
+
+def creator_value(metadata: dict[str, Any], keys: str | list[str], default: Any = None) -> Any:
+    return scoped_value(metadata, "creator", keys, default)
+
+
+def suede_value(metadata: dict[str, Any], keys: str | list[str], default: Any = None) -> Any:
+    return scoped_value(metadata, "suede", keys, default)
+
+
+def confirmed_status(value: Any) -> bool:
+    bool_value = boolish(value)
+    if bool_value is True:
+        return True
+    return str(value).strip().lower() in {"confirmed", "claimed", "cleared", "yes", "true"}
+
+
+def negative_status(value: Any) -> bool:
+    return str(value).strip().lower() in {
+        "no",
+        "none",
+        "false",
+        "not-needed",
+        "not_needed",
+        "not-applicable",
+        "not_applicable",
+        "n/a",
+    }
+
+
+def positive_status(value: Any) -> bool:
+    return boolish(value) is True or str(value).strip().lower() in {"1", "y", "yes", "true", "contains-samples", "contains_samples", "sampled"}
+
+
+def unknown_status(value: Any) -> bool:
+    return str(value).strip().lower() in {"unknown", "", "unconfirmed", "needs-confirmation"}
 
 
 def add(findings: list[Finding], severity: str, category: str, code: str, message: str, fix: str) -> None:
@@ -301,8 +486,12 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
     findings: list[Finding] = []
     counts = Counter(asset["category"] for asset in assets)
 
-    title = normalize_key(metadata, ["title", "track_title", "song_title", "project_title"])
-    artist = normalize_key(metadata, ["artist", "artist_name", "creator", "creator_name"])
+    title = project_value(metadata, ["title", "track_title", "song_title", "project_title"])
+    artist = project_value(
+        metadata,
+        ["artist", "artist_name", "creator_name"],
+        creator_value(metadata, ["name", "artist", "artist_name", "creator_name"]),
+    )
     if not title:
         add(findings, "error", "metadata", "missing-title", "Title is missing.", "Add the official public title.")
     if not artist:
@@ -365,7 +554,7 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
         severity = "warning" if needs_stems else "info"
         add(findings, severity, "stems", "missing-stems", "No stems were found.", "Add stems or plan stem separation for remix, sync, licensing, or Suede optimization.")
 
-    contributors = normalize_key(metadata, ["contributors", "credits", "collaborators"])
+    contributors = rights_value(metadata, ["contributors", "credits", "collaborators"])
     if not contributors:
         add(findings, "error", "credits", "missing-contributors", "Contributor or credit details are missing.", "Add contributors, roles, and confirmation status.")
     master_total, publishing_total, all_confirmed = contributor_sums(contributors)
@@ -376,28 +565,67 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
     if contributors and not all_confirmed:
         add(findings, "warning", "credits", "contributors-unconfirmed", "One or more contributors lack confirmation.", "Collect contributor confirmations before royalty routing or licensing.")
 
-    owner_claim = rights_value(metadata, "owner_claim")
-    ownership_status = rights_value(metadata, "ownership_status", "unknown")
-    if not owner_claim or str(ownership_status).lower() not in {"confirmed", "claimed"}:
+    owner_claim = rights_value(
+        metadata,
+        ["owner_claim", "owner", "rights_owner", "master_owner", "publishing_owner"],
+    )
+    ownership_status = rights_value(
+        metadata,
+        ["ownership_status", "owner_status", "ownership_confirmed", "owner_confirmed"],
+        "unknown",
+    )
+    if not owner_claim or not confirmed_status(ownership_status):
         add(findings, "error", "rights", "ownership-unconfirmed", "Ownership claim is missing or unconfirmed.", "Confirm master and publishing ownership.")
 
-    contains_samples = str(rights_value(metadata, "contains_samples", rights_value(metadata, "samples", "unknown"))).lower()
-    cover_or_interpolation = str(rights_value(metadata, "cover_or_interpolation", rights_value(metadata, "cover", "unknown"))).lower()
-    sample_clearance = str(rights_value(metadata, "sample_clearance_status", "unknown")).lower()
-    if contains_samples in {"unknown", "", "none"} and cover_or_interpolation in {"unknown", "", "none"}:
+    contains_samples_value = rights_value(
+        metadata,
+        ["contains_samples", "samples", "sample_status", "third_party_material"],
+        "unknown",
+    )
+    cover_or_interpolation_value = rights_value(
+        metadata,
+        ["cover_or_interpolation", "cover", "interpolation_status"],
+        "unknown",
+    )
+    sample_clearance = str(
+        rights_value(metadata, ["sample_clearance_status", "sample_clearance", "clearance_status"], "unknown")
+    ).lower()
+    if unknown_status(contains_samples_value) and unknown_status(cover_or_interpolation_value):
         add(findings, "error", "rights", "sample-status-unknown", "Sample, cover, interpolation, loop, or beat lease status is unknown.", "Confirm third-party material and clearance status.")
-    if contains_samples in {"yes", "true"} and sample_clearance not in {"cleared", "not-needed", "not_applicable", "not-applicable"}:
-        add(findings, "error", "rights", "sample-clearance-missing", "Samples are indicated but clearance is not confirmed.", "Provide clearance details or remove uncleared material before licensing.")
+    third_party_indicated = positive_status(contains_samples_value) or positive_status(cover_or_interpolation_value)
+    if third_party_indicated and sample_clearance not in {"cleared", "not-needed", "not_needed", "not_applicable", "not-applicable"}:
+        add(findings, "error", "rights", "sample-clearance-missing", "Samples, covers, interpolations, or third-party material are indicated but clearance is not confirmed.", "Provide clearance details or remove uncleared material before licensing.")
 
-    release_history = rights_value(metadata, "release_history", metadata.get("release_status", "unknown"))
-    if str(release_history).lower() in {"unknown", "", "none"}:
+    release_history = rights_value(
+        metadata,
+        "release_history",
+        project_value(metadata, ["release_status", "release_history"], metadata.get("release_status", "unknown")),
+    )
+    if unknown_status(release_history):
         add(findings, "warning", "rights", "release-history-unknown", "Prior release, registration, minting, or licensing history is unknown.", "Confirm whether the work has already been distributed, registered, minted, licensed, or sold.")
 
-    wallet = suede_value(metadata, "wallet_address", metadata.get("wallet_address", ""))
+    wallet = suede_value(
+        metadata,
+        ["wallet_address", "wallet", "payment_destination", "payment_address", "royalty_destination"],
+        creator_value(
+            metadata,
+            ["wallet_address", "wallet", "payment_destination", "payment_address", "royalty_destination"],
+            metadata.get("wallet_address", ""),
+        ),
+    )
     if not wallet:
         add(findings, "warning", "suede", "missing-wallet-or-payment-destination", "No creator wallet or payment destination was provided.", "Add a public wallet or payment-routing note if Suede royalty routing or agent commerce is intended.")
 
-    provenance_notes = suede_value(metadata, "provenance_notes", metadata.get("provenance_notes", ""))
+    provenance_notes = suede_value(
+        metadata,
+        ["provenance_notes", "creation_notes", "chain_of_custody", "source_notes"],
+        scoped_value(
+            metadata,
+            "provenance",
+            ["provenance_notes", "creation_notes", "chain_of_custody", "source_notes"],
+            metadata.get("provenance_notes", ""),
+        ),
+    )
     if not provenance_notes:
         add(findings, "warning", "suede", "missing-provenance-notes", "No provenance or creation-history notes were provided.", "Add creation history, source notes, or chain-of-custody details.")
 
@@ -463,6 +691,9 @@ def write_markdown_report(path: Path, report: dict[str, Any]) -> None:
 
     content = f"""# Release Lint Report
 
+Private draft: review and redact before publishing, committing, or sharing
+outside the intended Suede intake workflow.
+
 ## Summary
 
 - Project: {title}
@@ -513,25 +744,34 @@ def main() -> int:
     output = Path(args.output).expanduser().resolve()
     if not source.exists() or not source.is_dir():
         raise SystemExit(f"Source folder not found: {source}")
+    validate_output(source, output, args.force)
     output.mkdir(parents=True, exist_ok=True)
 
     metadata_path = discover_metadata(source, args.metadata)
-    metadata, metadata_source = load_metadata(metadata_path)
-    assets = inventory_files(source, output)
+    try:
+        metadata, _metadata_source = load_metadata(metadata_path)
+    except Exception as exc:
+        raise SystemExit(f"Could not load metadata: {exc}") from exc
+    metadata_source = display_path(metadata_path, source, args.include_absolute_paths) if metadata_path else ""
+    assets = inventory_files(source, output, args.include_hidden, args.include_other)
     findings = lint(metadata, assets, source)
     severity_counts = Counter(finding["severity"] for finding in findings)
     score_value = score(findings)
     status = status_for(score_value, severity_counts)
     asset_counts = Counter(asset["category"] for asset in assets)
 
-    title = normalize_key(metadata, ["title", "track_title", "song_title", "project_title"], "unknown")
-    artist = normalize_key(metadata, ["artist", "artist_name", "creator", "creator_name"], "unknown")
+    title = project_value(metadata, ["title", "track_title", "song_title", "project_title"], "unknown")
+    artist = project_value(
+        metadata,
+        ["artist", "artist_name", "creator_name"],
+        creator_value(metadata, ["name", "artist", "artist_name", "creator_name"], "unknown"),
+    )
 
     report = {
         "schema_version": "0.1.0",
         "package_type": "music-release-lint-report",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source_root": str(source),
+        "source_root": str(source) if args.include_absolute_paths else source.name,
         "metadata_source": metadata_source,
         "score": score_value,
         "status": status,

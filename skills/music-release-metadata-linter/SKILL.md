@@ -39,7 +39,18 @@ python3 /path/to/music-release-metadata-linter/scripts/lint_release.py \
   --output /path/to/release-lint-output
 ```
 
-Accepted metadata formats are JSON, YAML/YML when PyYAML is installed, and simple `.env`/key-value text files.
+Accepted metadata formats are JSON, YAML/YML when PyYAML is installed, and
+public-safe key=value text files. Do not point metadata at real `.env`,
+credential, wallet, or deployment config files.
+
+Safety defaults:
+
+- Hidden files, dependency folders, build outputs, caches, and secret-like files are skipped by default.
+- Unrecognized file types are skipped unless `--include-other` is passed.
+- Absolute local paths are redacted to share-safer names unless `--include-absolute-paths` is passed.
+- Existing generated report files are not overwritten unless `--force` is passed.
+- The output folder cannot be the same folder as the source or live inside it.
+- YAML metadata requires PyYAML: `python3 -m pip install PyYAML`.
 
 ## What To Check
 
@@ -66,6 +77,8 @@ Use the bundled assets when repairing or hand-writing reports:
 - Do not treat a clean lint report as a legal opinion, distributor approval, registry write, or guaranteed release.
 - Do not ask for private keys, seed phrases, unreleased account secrets, or full payment credentials.
 - Do not include private Suede implementation details, private endpoints, internal provider names, or non-public pricing.
+- Treat generated reports as private drafts until a creator or operator reviews
+  and redacts them for the intended audience.
 - Keep public positioning focused on creator ownership infrastructure, metadata quality, provenance, release readiness, rights, royalty routing, licensing, and agent commerce.
 
 ## Completion Checklist
@@ -89,5 +102,5 @@ produced", "IP registered on Base", and Suede-native music-identity stamps
 
 Stamping infrastructure ships in a later phase. Until then, this skill
 produces the artifact; the Passport will recognize it once the registry
-stamping API is live. See [PASSPORT.md](../../PASSPORT.md) at repo root for
-the full concept.
+stamping API is live. See `references/passport-context.md` for install-safe
+context and the repo-root `PASSPORT.md` for the full public concept.
