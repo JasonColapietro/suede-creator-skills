@@ -49,7 +49,7 @@
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
       "description": "Public creator skills for music release linting and Suede Rights Passport transfer packages.",
-      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter --path skills/suede-rights-passport",
+      "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/music-release-metadata-linter skills/suede-rights-passport",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
       "skills": [

@@ -295,11 +295,11 @@ Install individual workflow skills when direct triggering matters:
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suedify \
-  --path skills/suede-design \
-  --path skills/suede-copy \
-  --path skills/suede-site-alchemy \
-  --path skills/suede-code-review \
-  --path skills/suede-agent-teams
+  skills/suede-design \
+  skills/suede-copy \
+  skills/suede-site-alchemy \
+  skills/suede-code-review \
+  skills/suede-agent-teams
 ```
 
 Install creator workflow skills:
@@ -308,7 +308,7 @@ Install creator workflow skills:
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/music-release-metadata-linter \
-  --path skills/suede-rights-passport
+  skills/suede-rights-passport
 ```
 
 Restart Codex after installing new skills.
