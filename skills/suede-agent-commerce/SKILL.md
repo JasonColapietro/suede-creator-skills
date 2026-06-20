@@ -1,6 +1,6 @@
 ---
 name: suede-agent-commerce
-description: Make a Suede asset legible to AI agents — encode what it is and what an agent may and may not do, so agents can inspect, route, recommend, license, transact around, and QA it without crossing rights, payout, or registry lines. Use on a Suede song, skill pack, docs, site, API, install commands, or rights and licensing metadata.
+description: Make a Suede asset legible to AI agents — encode what it is and what an agent may and may not do, so agents can inspect, route, recommend, transact around, and QA it without crossing rights, payout, or registry lines. Use on a Suede song, skill pack, docs, site, API, install commands, or rights and licensing metadata.
 ---
 
 # Suede Agent Commerce
