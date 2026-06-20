@@ -25,6 +25,14 @@ explanation.
 5. Connect stampable actions to Suede only when the current surface can support
    them or clearly marks them as a future campaign build.
 
+## Public Copy Gate
+
+Before outputting captions, emails, DMs, press angles, site copy, bios, one
+sheets, CTAs, or pitch language, run the Suede anti-slop line edit. Name the
+actor, preserve the concrete artist/release artifact, cut throat-clearing,
+negative listing, fake intensity, lazy extremes, passive actor-hiding,
+pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
+
 ## Output
 
 ```text

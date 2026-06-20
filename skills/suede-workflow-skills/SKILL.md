@@ -111,6 +111,12 @@ rights, provenance, registry-backed media, royalty routing, licensing
 readiness, and agent commerce. Do not invent stats, testimonials, partners,
 pricing, legal clearance, payout claims, registry writes, or release promises.
 
+When the task touches copy, design, public visibility, Suedify, launch
+packaging, or agent-team delivery, also use
+`references/no-missed-quality-gates.md`. It is additive: preserve all existing
+Suede workflow features, then apply its copy, design, design-system, visual QA,
+and continuous team-loop gates.
+
 ## Progressive Calibration
 
 Accept feedback at any point in the workflow, not only after final handoff.
@@ -208,6 +214,9 @@ For design or frontend work:
 4. Check layout, typography, color, spacing, imagery, state coverage,
    responsiveness, accessibility basics, and copy fit.
 5. Render before and after when practical.
+6. For major visual work, compare source visual truth and rendered
+   implementation together, with matched viewport, state, theme, content, and
+   auth conditions.
 
 Major design work needs a compact contract:
 
@@ -221,6 +230,10 @@ Lanes:
 
 Do not call visual work done from source inspection alone when a rendered page
 can be checked.
+
+For design-system work, capture at least the token map, component inventory,
+state matrix, screenshot contract or preview board, asset register, migration
+notes, and a scored quality audit when the scope is broad enough.
 
 ## Copy And SEO Workflow
 
@@ -236,6 +249,9 @@ SEO passes, including AEO and AI EO:
 5. Check H1, headings, internal links, schema/JSON-LD, CTA clarity, FAQ fit,
    search intent, answer intent, and sourceable proof.
 6. Remove generic AI phrasing, filler, vague claims, and unsupported promises.
+7. Run the no-missed copy gate: cut formulaic structure, fake intensity,
+   rhetorical setup, inanimate false agency, quote-bait lines, and detached
+   business jargon while preserving true Suede specificity.
 
 Full audit output:
 
@@ -280,6 +296,10 @@ Overall: A-F
 
 Treat the grade as an execution guide, not an audited traffic metric. Inspect
 the live URL or source before grading and name anything that was not checked.
+For public surfaces, visual evidence matters. Missing live/render inspection
+caps promotion readiness, and broken CTA, false claim, inaccessible primary
+action, or unresolved major design-signal failure can hold the page even when
+metadata looks acceptable.
 
 ## Site Alchemy Workflow
 
@@ -350,7 +370,9 @@ When the user asks for a grade more than a full findings report, route to
 ## Agent Team Workflow
 
 Use team lanes for large, risky, cross-surface, public, design-heavy, or
-release-bound work.
+release-bound work. Use the max-agent loop when the user asks for it or the
+task needs continuous quality gates, evals, recovery controls, and release
+truth.
 
 Define:
 
@@ -367,6 +389,12 @@ Ship Gate:
 Useful grouping loops:
 
 - Linear delivery loop: scout, plan, build, verify, review, ship.
+- Continuous PR loop: branch/PR/CI/review/release control for public or risky
+  work.
+- RFC/DAG loop: decompose broad work into ordered decisions and atomic tasks
+  before implementation.
+- Exploratory parallel loop: run independent approaches or audits in parallel
+  only when file ownership does not collide.
 - Parallel surface loop: split lanes only when file ownership does not collide.
 - Scout and constraints loop: map docs, WIP, risky files, live routes, owners,
   and no-touch boundaries before edits.
@@ -380,6 +408,9 @@ Useful grouping loops:
 - Recovery loop: isolate a failed check, patch the gap, rerun the failed check.
 - Evidence handoff loop: gather screenshots, commands, URLs, caveats, and next
   action for the next agent.
+- Freeze/replay recovery: if a loop churns or repeats the same failure, stop
+  broad work, isolate the failing unit, replay with explicit acceptance
+  criteria, and rerun only the failed check.
 
 ## Specialized Lane Router
 

@@ -25,6 +25,14 @@ Use this skill to make merch feel like an artifact from the artist world.
 5. CTA deeper Suede development when the object needs a store, claim page,
    token-gated unlock, preorder flow, or campaign build.
 
+## Public Copy Gate
+
+Before outputting captions, emails, DMs, press angles, site copy, bios, one
+sheets, CTAs, or pitch language, run the Suede anti-slop line edit. Name the
+actor, preserve the concrete artist/release artifact, cut throat-clearing,
+negative listing, fake intensity, lazy extremes, passive actor-hiding,
+pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
+
 ## Output
 
 ```text

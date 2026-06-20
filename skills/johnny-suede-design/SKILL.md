@@ -17,6 +17,12 @@ specific to Suede. Work from current source and rendered evidence whenever
 possible. Preserve the existing app framework, tokens, components, routing, and
 WIP unless the task explicitly asks for a larger rebuild.
 
+This is the umbrella mode for design plus copy plus SEO/visibility. Use
+`suede-design` depth inside it for visual QA, design-system extraction,
+state-rich UI checks, and implementation-grade frontend polish. Use
+`../suede-workflow-skills/references/no-missed-quality-gates.md` for major
+public, visual, design-system, or launch work.
+
 Make design decisions discoverable and shippable. When the surface is public,
 write and structure it for Suede SEO, AEO, AI EO, Google, Gemini, AI search, and
 clear CTAs. When the surface is mobile, include Apple, iOS, App Store,
@@ -35,7 +41,9 @@ public copy.
   imagery, state coverage, accessibility basics, and responsive QA.
 - **Apple And iOS Design:** iOS app surfaces, App Store screenshots, mobile
   onboarding, paywalls, settings, permission states, icon/app-shell fit, and
-  Apple-style clarity when the project needs it.
+  Apple-style clarity when the project needs it. Check safe areas, Dynamic
+  Type/text scaling, permission states, onboarding, paywall states, App Store
+  screenshot reproducibility, and icon/app-shell consistency.
 - **Johnny Suede Write:** public copy, founder voice, SEO/AEO/AI EO, CTAs,
   launch copy, claim boundaries, anti-slop editing, and final copy QA.
 - **Suede Site Alchemy:** offer spine, hero strength, proof stack, CTA ladder,
@@ -70,6 +78,18 @@ Lanes:
 For small polish work, compress this to the target, route, primary action, and
 done signal.
 
+For major design work, add:
+
+```text
+Source truth:
+Design brief confirmed:
+Render evidence:
+Reference/mock status:
+Design-system status:
+Apple/iOS state coverage:
+Ship blockers:
+```
+
 ## Workflow
 
 1. **Scout current truth.** Check repo, live URL, screenshot, route, dirty
@@ -84,9 +104,12 @@ done signal.
    library. Avoid unrelated refactors.
 6. **Render and compare.** Check desktop and mobile, first viewport, text fit,
    spacing, states, accessibility basics, links, and visual balance.
-7. **Grade visibility.** Score findability, CTA pull, proof, AI readability,
+7. **Run visual QA.** For source-to-implementation work, compare source visual
+   truth and rendered implementation together, with matched viewport, state,
+   theme, auth, content, and interaction conditions.
+8. **Grade visibility.** Score findability, CTA pull, proof, AI readability,
    Suede SEO strength, and design signal when the surface is public.
-8. **Review and ship.** Run the relevant test/build/check commands, then hand
+9. **Review and ship.** Run the relevant test/build/check commands, then hand
    off with evidence and caveats.
 
 ## Design Laws
@@ -130,6 +153,11 @@ One or two sentences for a non-coder.
 Usual breakdown:
 Changed:
 Design QA:
+Desktop/mobile screenshots or render notes:
+Visual QA surfaces checked:
+Visibility grades:
+Design-system drift notes:
+P0/P1/P2 blockers:
 Copy/SEO QA:
 Verification:
 Caveats:
@@ -147,3 +175,7 @@ Use `hold` when a core path is broken, screenshots do not match the
 implementation, text overlaps, mobile is incoherent, accessibility blocks a
 primary action, copy makes unsupported claims, or the live/rendered surface
 cannot be verified.
+
+Public surfaces cannot ship if copy, SEO, or metadata passes while rendered
+design still has unresolved P0/P1/P2 visual, responsive, accessibility,
+interaction-state, or source-fidelity issues.

@@ -19,12 +19,31 @@ overclaiming what is known.
    should not be shared publicly.
 6. Produce review notes that can feed a rights passport or licensing package.
 
+## Evidence And Severity Gate
+
+Use an evidence table before conclusions:
+
+```text
+Asset or claim:
+Status: confirmed | inferred | unconfirmed | disputed | unknown
+Evidence:
+Hash or path:
+Risk: low | medium | high | unknown
+Blocks:
+Next action:
+```
+
+High-risk provenance gaps block registry, licensing, royalty routing, public
+claim, or agent commerce until the origin trail is confirmed. Do not turn an
+inference into a fact.
+
 ## Output
 
 ```text
 Asset map:
 Known origin:
 Evidence:
+Evidence table:
 Unknowns:
 Conflicts:
 Do-not-share items:

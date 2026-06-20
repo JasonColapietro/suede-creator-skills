@@ -1,4 +1,4 @@
 interface:
   display_name: "Suede Brand Voice"
-  short_description: "Keep Suede copy specific and public-safe"
-  default_prompt: "Use $suede-brand-voice to align this Suede copy with creator ownership, rights, provenance, and agent commerce."
+  short_description: "Keep Suede copy specific, public-safe, and unsloppy"
+  default_prompt: "Use $suede-brand-voice to align this Suede copy with creator ownership, rights, provenance, agent commerce, concrete actors, proof artifacts, and non-generic line edits."

@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Agent Teams"
-  short_description: "Coordinate major Suede work across scout, build, review, release, recovery, and handoff loops"
-  default_prompt: "Use $suede-agent-teams to split this Suede task into focused lanes with scout constraints, safe parallel build, adversarial review, consensus review, WIP protection, release lock, recovery, evidence handoff, and a ship gate."
+  short_description: "Coordinate major Suede work across max-agent loops"
+  default_prompt: "Use $suede-agent-teams to split this Suede task into focused lanes with loop selection, scout constraints, safe parallel build, adversarial review, consensus review, WIP protection, quality/eval gates, release lock, recovery replay, evidence handoff, and a ship gate."
 policy:
   allow_implicit_invocation: true

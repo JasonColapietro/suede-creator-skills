@@ -124,11 +124,15 @@ function seoAuditTemplate(args = {}) {
     "- Claim boundaries are visible.",
     "- Proof links point to real docs, scripts, manifests, pages, or repos.",
     "",
+    "## Anti-Slop Line Edit Check",
+    "- Cut throat-clearing, adverb padding, binary setup, negative listing, Wh-starter crutches, narrator distance, fake intensity, passive actor-hiding, false agency, pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.",
+    "- Score Directness, Rhythm, Trust, Specificity, Authenticity, Density, and Search/AI readability out of 70.",
+    "",
     "## Output",
     "- Findings ranked HIGH, MEDIUM, LOW.",
     "- Exact rewrites for title, meta, H1, subhead, CTA, FAQ, and answer-ready summary.",
     "- Verification commands or live URLs to check.",
-    "- Copy score out of 50."
+    "- Copy score out of 70."
   ].join("\n");
 }
 
@@ -146,6 +150,7 @@ function visibilityGradeTemplate(args = {}) {
     "## Source Truth To Inspect",
     "- Live URL status, redirects, canonical, robots, sitemap, title, and description.",
     "- Rendered desktop and mobile first viewport.",
+    "- Screenshot paths or URLs, viewport sizes, theme, state, and anything not visually checked.",
     "- H1, headings, body copy, proof links, screenshots, install commands, docs, and CTA targets.",
     "- Open Graph, Twitter card, schema/JSON-LD, image alt text, and internal links.",
     "- Google and Gemini result-surface receipts only when the receipts are actually available and named correctly.",
@@ -159,10 +164,16 @@ function visibilityGradeTemplate(args = {}) {
     "- Design signal: A-F.",
     "- Overall: A-F.",
     "",
+    "## Grade Caps",
+    "- No live page or rendered source inspected caps Overall at C.",
+    "- Broken primary CTA or false public claim caps promotion readiness at D/F.",
+    "- Design signal D/F blocks promotion as polished even if metadata is decent.",
+    "- Missing mobile/tablet/state checks prevents an A.",
+    "",
     "## Required Output",
     "- Simple explanation for a non-coder.",
-    "- Usual breakdown with checked URL or source, primary reader, primary action, and lane grades.",
-    "- Top three fixes in priority order.",
+    "- Usual breakdown with checked URL or source, live/source status, screenshot evidence, viewport sizes, visual states checked/not checked, primary reader, primary action, and lane grades.",
+    "- Top three fixes in priority order with severity, location, evidence, impact, and concrete patch.",
     "- CTA rewrite: primary CTA, secondary CTA, final CTA.",
     "- Verification: what was checked, what was not checked, and ship gate.",
     "- Cue Suede choices: change something, preserve what worked, or keep as-is by saying nothing.",
@@ -244,9 +255,11 @@ function qaChecklist(args = {}) {
     "",
     "## SEO/AEO/AI EO And Copy Lane",
     "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, answer-ready copy, CTA copy, and claim boundaries.",
+    "- Run the anti-slop line edit for actor clarity, proof artifacts, fake intensity, false agency, pull-quote slogans, generic phrasing, unsupported claims, and copy score.",
     "",
     "## Visibility And CTA Grade Lane",
     "- Grade findability, first-screen clarity, CTA pull, proof and trust, AI readability, design signal, and overall readiness from A-F.",
+    "- Include screenshot/source evidence, viewport/state notes, and grade caps.",
     "- Verify Google and Gemini result-surface wording only names receipts for the surfaces they actually show.",
     "- Rewrite primary, secondary, and final CTAs when the action is vague or buried.",
     "",
@@ -260,6 +273,10 @@ function qaChecklist(args = {}) {
     "",
     "## Browser QA Lane",
     "- Serve locally, check desktop and mobile, run link sweep, verify text fit, and confirm no broken public routes.",
+    "- For visual work, compare source visual truth and rendered implementation together with matched viewport, state, theme, auth/content conditions, full-view evidence, focused-region evidence, and pass/block status.",
+    "",
+    "## Skill Pack Integrity Lane",
+    "- Validate frontmatter, folder/name match, OpenAI manifests, catalog/filesystem match, docs links, install paths, private-path leaks, secret-like text, unsupported public claims, and generated docs drift.",
     "",
     "## Release Lane",
     "- Run validation commands, commit only scoped files, push, wait for Pages build, and verify live URLs before claiming public completion.",
@@ -559,11 +576,11 @@ function getPrompt(name, args = {}) {
   if (name === "suede-copy-seo-audit") {
     const skillRef = isSkillAvailable("suede-copy") ? "$suede-copy" : "the Suede SEO/AEO/AI EO copy audit MCP template";
     return {
-      description: "Audit Suede public copy for SEO, AEO, AI EO, trust, specificity, schema, and conversion.",
+      description: "Audit Suede public copy for SEO, AEO, AI EO, trust, specificity, schema, conversion, and anti-slop line quality.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${skillRef} to run a full SEO/AEO/AI EO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent, answer intent, and reader action")}. Include technical SEO, answer-ready copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, and a copy score.`)
+          content: text(`Use ${skillRef} to run a full SEO/AEO/AI EO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent, answer intent, and reader action")}. Include technical SEO, answer-ready copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, anti-slop line edits, and the full copy score.`)
         }
       ]
     };
@@ -582,11 +599,11 @@ function getPrompt(name, args = {}) {
   if (name === "suede-visibility-grade") {
     const graderRef = isSkillAvailable("suede-visibility-grader") ? "$suede-visibility-grader" : "the Suede visibility grade MCP template";
     return {
-      description: "Grade Suede public-page visibility, CTA pull, proof, AI readability, and design signal.",
+      description: "Grade Suede public-page visibility, CTA pull, proof, AI readability, rendered evidence, and design signal.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${graderRef} to grade ${boundedString(args.target, "this page")} A-F for findability, first-screen clarity, CTA pull, proof and trust, AI readability, design signal, and overall readiness. Primary action: ${boundedString(args.action, "identify the intended next click")}. Include a simple non-coder explanation, usual breakdown, CTA rewrites, verification notes, and Cue Suede choices.`)
+          content: text(`Use ${graderRef} to grade ${boundedString(args.target, "this page")} A-F for findability, first-screen clarity, CTA pull, proof and trust, AI readability, rendered design signal, and overall readiness. Primary action: ${boundedString(args.action, "identify the intended next click")}. Include screenshot/source evidence, viewport/state notes, grade caps, CTA rewrites, verification notes, ship gate, and Cue Suede choices.`)
         }
       ]
     };
@@ -608,11 +625,11 @@ function getPrompt(name, args = {}) {
     const gradeRef = isSkillAvailable("suede-code-grader") ? ", $suede-code-grader" : "";
     const reviewRef = isSkillAvailable("suede-code-review") ? " and $suede-code-review" : "";
     return {
-      description: "Run multi-lane Suede QA.",
+      description: "Run multi-lane Suede QA with no-missed quality gates.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${teamRef}${gradeRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, browser QA, A-F code grade, code/security, and live verification where applicable.`)
+          content: text(`Use ${teamRef}${gradeRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover no-missed quality gates, MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, rendered visual QA, browser QA, A-F code grade, code/security, recovery controls, and live verification where applicable.`)
         }
       ]
     };

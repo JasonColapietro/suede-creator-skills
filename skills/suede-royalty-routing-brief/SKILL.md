@@ -19,11 +19,30 @@ discussion.
    administration facts only at a safe level.
 5. Produce creator questions and a public-safe summary.
 
+## Evidence And Severity Gate
+
+Use an evidence table before routing status:
+
+```text
+Routing fact:
+Status: confirmed | unconfirmed | disputed | unknown | not-applicable
+Evidence:
+Risk: low | medium | high | unknown
+Blocks:
+Next action:
+```
+
+High-risk items block routing readiness when contributor identity, role, split
+percentage, payment destination, publisher, label, territory, tax, or rights
+administration facts are missing, disputed, or unsafe to expose. Do not imply
+money was approved, sent, scheduled, or guaranteed.
+
 ## Output
 
 ```text
 Routing status:
 Confirmed splits:
+Evidence table:
 Missing confirmations:
 Payout caveats:
 Creator questions:

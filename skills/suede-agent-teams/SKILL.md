@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: Suede-owned agent team orchestration for scout, safe parallel build, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops. Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership and review gates.
+description: Suede-owned agent team orchestration for scout, safe parallel build, continuous max-agent loops, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops. Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership, loop control, and review gates.
 ---
 
 # Suede Agent Teams
@@ -20,6 +20,8 @@ Use agent teams for:
 - App Store, iOS, deployment, or public-release gates;
 - confusing failures where diagnosis, implementation, and verification should
   stay separate;
+- continuous loops that need quality gates, evals, recovery controls, and
+  evidence handoff;
 - review convergence before a high-risk merge.
 
 Do not use a team for a narrow copy edit, one-file fix, or simple command.
@@ -82,6 +84,59 @@ Run the loop at the smallest scale that fits:
 
 If verification fails, diagnose the root cause, create a gap plan, execute only
 the gap, and re-run the failing checks.
+
+## Continuous Team Loop
+
+Use the smallest loop that can finish the work, but escalate deliberately when
+the task is broad, risky, release-bound, or the user asks for max agent teams.
+
+Choose the loop:
+
+- **Sequential:** default for normal scoped work.
+- **Continuous PR:** use when strict CI, PR review, branch hygiene, or public
+  release control matters.
+- **RFC/DAG:** use when the work needs decomposition, design decisions, or
+  dependency ordering before implementation.
+- **Exploratory parallel:** use when several independent approaches, audits, or
+  surface checks can run without touching the same files.
+- **Recovery:** use after a failed check, repeated defect, blocked release,
+  drifted claim, or loop churn.
+
+For max-agent work, escalate through this roster only as needed:
+
+```text
+Scout -> Planner -> Builder lane(s) -> Design reviewer -> Visibility grader
+-> Code grader -> Code reviewer -> Release verifier -> Handoff writer
+```
+
+Wrap the roster with these gates:
+
+1. **Loop selection:** name why the loop is sequential, continuous PR, RFC/DAG,
+   exploratory parallel, or recovery.
+2. **Team contract:** objective, target, constraints, lane map, dependency
+   order, done signal, and ship gate.
+3. **Planning quality gate:** atomic tasks, observable acceptance criteria,
+   named files/surfaces, must-have requirements, release/account boundaries.
+4. **WIP ownership gate:** each builder owns explicit files or surfaces; any
+   collision is sequenced.
+5. **Execute wave:** parallel lanes only when outputs do not collide.
+6. **Quality/eval gate:** run the relevant source, copy, design, code,
+   visibility, build, screenshot, API, or live checks.
+7. **Adversarial review:** ask how the result fails in production, release,
+   public claims, abuse, accessibility, mobile, or handoff.
+8. **Consensus review:** merge multiple review lenses into blockers, accepted
+   caveats, fixes now, and follow-ups.
+9. **Release lock:** build/deploy/live/API/App Store/iOS/public-claim truth is
+   owned by release verifier before any public completion claim.
+10. **Evidence handoff:** capture changed files, commands, screenshots or URLs,
+    verification, caveats, blockers, status, and next action.
+
+If the loop stalls, freeze broad work. Isolate the failing unit, reduce the
+scope, replay with explicit acceptance criteria, and rerun only the failed
+check before widening again.
+
+For copy, design, visibility, Suedify, launch, or public docs work, include the
+shared gate at `../suede-workflow-skills/references/no-missed-quality-gates.md`.
 
 ## Grouping Loops
 

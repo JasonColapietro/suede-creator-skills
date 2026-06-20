@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Design"
-  short_description: "Full Suede design mode with Apple, iOS, SEO, and copy"
-  default_prompt: "Use $johnny-suede-design to redesign, polish, QA, and package this Suede surface with design, copy, Suede SEO/AEO/AI EO, Apple and iOS needs when relevant, visibility, and final QA."
+  short_description: "Full Suede design mode with Apple, iOS, SEO, copy, and QA"
+  default_prompt: "Use $johnny-suede-design to redesign, polish, QA, and package this Suede surface with design, copy, Suede SEO/AEO/AI EO, Apple and iOS needs when relevant, visibility grades, visual QA, design-system checks, and final QA."
 policy:
   allow_implicit_invocation: true

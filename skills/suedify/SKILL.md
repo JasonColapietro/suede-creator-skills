@@ -64,7 +64,9 @@ each must map to a concrete implementation or QA action.
   sections, including bands, reveals, product blocks, proof, comparison, and
   closing CTA.
 - **Suede Copy Reframe:** rewrite target copy in Suede's voice while matching
-  the reference's sentence length, confidence, and scanning pattern.
+  the reference's sentence length, confidence, and scanning pattern after
+  removing reference-site filler, fake intensity, unsupported claims, and
+  formulaic AI patterns.
 - **Suede Asset Swap:** replace reference assets with target-owned product,
   logo, creator, media, or generated bitmap assets that serve the same visual
   role.
@@ -90,14 +92,19 @@ each must map to a concrete implementation or QA action.
 
 2. **Capture the reference**
    - Open the reference URL.
-   - Capture desktop and mobile screenshots.
+   - Capture desktop, tablet when useful, and mobile screenshots with named
+     file paths.
+   - Record viewport widths, theme, state, auth/content conditions, and any
+     interactions needed to reach the captured state.
    - Note nav, hero, page sections, typography, color, spacing, media, motion,
      CTAs, forms, footer, and mobile behavior.
    - Save the analysis as `suedify-style-fingerprint.md` for substantial work.
 
 3. **Capture the target**
    - Open the target URL and local source route when available.
-   - Capture desktop and mobile screenshots.
+   - Capture target screenshots at the same desktop, tablet when used, and
+     mobile widths, with the same state, theme, auth/content conditions, and
+     interaction state.
    - Identify what target content, assets, routes, and claims must remain.
    - Mark dead links, broken layout, weak copy, missing assets, and unverified
      claims.
@@ -112,6 +119,9 @@ each must map to a concrete implementation or QA action.
      - reference motion -> target motion
    - Do not copy exact proprietary assets, exact UI copy, or protected brand
      identifiers.
+   - Add a Suede Token Distiller block for target-safe color, type, spacing,
+     radius, shadow, motion, and state tokens, plus accepted and rejected
+     reference signals.
 
 5. **Implement**
    - Work inside the target's existing framework, tokens, routes, and component
@@ -134,8 +144,13 @@ each must map to a concrete implementation or QA action.
    - Run the local server or preview.
    - Capture target screenshots at the same desktop and mobile widths used for
      the reference.
-   - Compare hierarchy, spacing, contrast, typography, image treatment, section
-     rhythm, CTA visibility, and mobile composition.
+   - Compare reference and target together in the same visual pass, not from
+     memory.
+   - Compare hierarchy, spacing, contrast, typography, image treatment, icon
+     family, section rhythm, CTA visibility, interaction states, and mobile
+     composition.
+   - Use focused crops for hero, nav, cards, forms, CTAs, icons, logos, image
+     treatment, and any region where typography or assets matter.
    - Patch until the largest mismatches are either fixed or named.
 
 7. **Verify and ship**
@@ -170,15 +185,25 @@ The target must not copy:
 If the user asks for an exact clone of a protected site, produce a close,
 target-branded interpretation instead and state the constraint briefly.
 
+Hold the restyle when placeholder assets, CSS/div art, emoji, improvised SVG,
+or text approximations replace real target imagery, logos, product screenshots,
+or important icons without approval; when nav, forms, dropdowns, tabs, or CTAs
+do not work; when mobile composition breaks; or when the target no longer reads
+as its own brand.
+
 ## Output Artifacts
 
 For meaningful work, create or update:
 
 - `suedify-style-fingerprint.md`: reference analysis and target mapping.
+- `Suede Token Distiller` section or artifact: accepted/rejected reference
+  signals and target-safe color, type, spacing, radius, shadow, motion, and
+  state tokens.
 - `suedify-implementation-plan.md`: file plan, design token plan, component
   plan, and verification checklist.
 - `suedify-visual-qa.md`: reference screenshot, target screenshot, viewport,
-  findings, patches, caveats, and final status.
+  state/theme/auth/content conditions, full-view comparison, focused-region
+  comparison, findings, patches, caveats, and final status.
 
 Skip artifacts for tiny one-section fixes, but still report what reference
 signals were copied into the target.

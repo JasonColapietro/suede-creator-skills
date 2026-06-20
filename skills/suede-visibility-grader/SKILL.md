@@ -44,6 +44,9 @@ Score each lane A-F, then give one overall grade:
 - **Design signal:** hierarchy, spacing, typography, image quality, responsive
   behavior, contrast, and whether the page looks intentional rather than
   generated.
+  Subgrade hierarchy, first-viewport composition, typography, spacing rhythm,
+  color/contrast, asset quality, icon fidelity, interaction states, responsive
+  behavior, accessibility, and AI-slop pattern risk.
 
 Grade meaning:
 
@@ -53,6 +56,16 @@ Grade meaning:
 - **D:** visible but weak; needs a focused pass before promotion.
 - **F:** blocked by discoverability, broken CTA, false claim, broken render, or
   missing source truth.
+
+Grade caps:
+
+- If no live page or rendered source was inspected, cap Overall at `C`.
+- If the primary CTA is broken, cap promotion readiness at `D` or `F`.
+- If a public claim is false or unsupported, cap Overall at `D` or `F`.
+- If Design signal is `D` or `F`, the page cannot be promoted as polished even
+  when SEO metadata is decent.
+- If mobile, tablet, or interaction states were not checked, state that caveat
+  and do not give an `A`.
 
 ## Output Format
 
@@ -64,6 +77,11 @@ Usual breakdown:
 URL or source:
 Primary reader:
 Primary action:
+Live/source status:
+Screenshot evidence:
+Viewport sizes:
+Visual states checked:
+Visual states not checked:
 
 Grades:
 Findability: A-F
@@ -75,9 +93,9 @@ Design signal: A-F
 Overall: A-F
 
 Top fixes:
-1. Highest-impact fix.
-2. Second fix.
-3. Third fix.
+1. P1 - Highest-impact fix. Location, evidence, impact, concrete patch.
+2. P2 - Second fix. Location, evidence, impact, concrete patch.
+3. P3 - Third fix. Location, evidence, impact, concrete patch.
 
 CTA rewrite:
 Primary CTA:
@@ -93,6 +111,46 @@ Cue Suede:
 1. Change something - tell me what to revise and I will adjust it.
 2. Preserve this - tell me what worked so I can mimic it later.
 3. Keep as-is - say nothing and I will treat it as accepted.
+```
+
+## Sample Report
+
+```text
+Simple explanation:
+The page is findable, but the first screen does not make the action obvious.
+Fix the hero CTA and mobile proof block before promotion.
+
+Usual breakdown:
+URL or source: https://example.com
+Primary reader: creator preparing a release package
+Primary action: start the release-readiness audit
+Live/source status: live page inspected, source not available
+Screenshot evidence: screenshots/home-desktop.png, screenshots/home-mobile.png
+Viewport sizes: 1440x900, 390x844
+Visual states checked: default desktop, default mobile, primary CTA hover
+Visual states not checked: dark mode, logged-in state
+
+Grades:
+Findability: B
+First-screen clarity: C
+CTA pull: D
+Proof and trust: B
+AI readability: B
+Design signal: C
+Overall: C
+
+Top fixes:
+1. P1 - Weak CTA. Location: hero. Evidence: primary button says "Learn more."
+   Impact: visitors do not know what starts the audit. Fix: change to "Run the
+   release audit" and route to the verified audit path.
+2. P2 - Mobile proof is buried. Location: first mobile viewport. Evidence:
+   proof links start below the fold. Impact: trust arrives too late. Fix: move
+   one source link and one screenshot into the first mobile section.
+3. P3 - Generic image crop. Location: hero media. Evidence: artwork does not
+   show a release artifact. Impact: weak Suede signal. Fix: replace with a real
+   rights/provenance preview or approved generated bitmap.
+
+Ship gate: ship-with-caveats
 ```
 
 ## Boundaries

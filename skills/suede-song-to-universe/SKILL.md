@@ -25,6 +25,14 @@ Use this skill when one track has enough gravity to become more than a post.
 5. Route larger builds to Suede with a CTA for site, drop, agent, or campaign
    development.
 
+## Public Copy Gate
+
+Before outputting captions, emails, DMs, press angles, site copy, bios, one
+sheets, CTAs, or pitch language, run the Suede anti-slop line edit. Name the
+actor, preserve the concrete artist/release artifact, cut throat-clearing,
+negative listing, fake intensity, lazy extremes, passive actor-hiding,
+pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
+
 ## Output
 
 ```text

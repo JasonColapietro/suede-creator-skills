@@ -23,11 +23,34 @@ project.
    evidence trail.
 7. Public context: public URLs, release history, takedowns, and conflicts.
 
+## Evidence And Severity Gate
+
+Use an evidence table before giving recommendations:
+
+```text
+Item:
+Status: confirmed | unconfirmed | disputed | unknown | not-applicable
+Evidence:
+Risk: low | medium | high | unknown
+Blocks:
+Next action:
+```
+
+Severity model:
+
+- `high`: blocks registry, licensing, royalty routing, public claim, or agent
+  commerce until creator/legal confirmation exists.
+- `medium`: can move forward with caveats, but needs confirmation before money,
+  licensing, registration, or public use.
+- `low`: cleanup or documentation issue that does not block review.
+- `unknown`: not enough evidence to rate.
+
 ## Output
 
 ```text
 Confirmed facts:
 Missing facts:
+Evidence table:
 Blockers:
 Questions for creator:
 Safe public wording:

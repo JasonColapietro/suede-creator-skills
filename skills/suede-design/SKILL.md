@@ -31,6 +31,23 @@ Before editing files, state this preflight in the working update:
 SUEDE_DESIGN_PREFLIGHT: target=<repo-or-folder> surface=<route-or-url> register=<brand|product> context=<pass|partial> git=<pass|skipped:reason> render=<pass|pending|skipped:reason> mutation=open
 ```
 
+For major design work, reusable systems, reference visual matching, App Store
+assets, or public launch surfaces, keep `mutation=open` only after these are
+known:
+
+- `PRODUCT.md` or product context status;
+- `DESIGN.md` or design-system context status;
+- shape brief status for net-new or large redesigns;
+- source visual target status when a mock, screenshot, Figma frame, or
+  reference URL exists;
+- rendered implementation status;
+- ship blocker status.
+
+Also apply the shared no-missed gate at
+`../suede-workflow-skills/references/no-missed-quality-gates.md` when the work
+touches copy, design-system, visual QA, Suedify, visibility, or public launch
+quality.
+
 ## Task Router
 
 Choose the smallest path that fits the request.
@@ -200,6 +217,10 @@ device. Keep the surrounding UI disciplined so the signature move carries.
 For any major Suede surface, reusable app shell, launch system, or important
 component family, include the smallest useful version of these artifacts:
 
+- **Design source:** update or create `DESIGN.md` when the design decisions
+  need to survive the session.
+- **Machine tokens:** update or create `design-tokens.json`, `DESIGN.json`, or
+  the local token file when tokens are part of the deliverable.
 - **Token map:** color roles, type scale, spacing, radii, shadows, motion, z
   layers, chart/status colors, and semantic state names.
 - **Component inventory:** core controls, navigation, cards, lists, forms,
@@ -224,6 +245,27 @@ component family, include the smallest useful version of these artifacts:
 Scale this down for small fixes. A one-button polish pass may only need a token
 check, a state check, and a rendered screenshot. A new app or flagship page
 needs the full set.
+
+Extract a design-system issue when a token, component, spacing pattern, color,
+type treatment, or state pattern repeats at least three times or controls a
+high-visibility surface. Classify drift root cause as token missing, token
+ignored, component gap, content pressure, platform convention, or legacy debt.
+
+For broad design-system audits, score:
+
+```text
+Color consistency: /10
+Typography hierarchy: /10
+Spacing rhythm: /10
+Component consistency: /10
+Responsive behavior: /10
+Dark/light behavior: /10
+Motion restraint: /10
+Accessibility: /10
+Information density: /10
+Polish: /10
+Total: /100
+```
 
 ## Scoped Bans And Exceptions
 
@@ -303,14 +345,22 @@ When comparing a source visual target against an implementation, save
 - source visual truth path or URL
 - implementation path, URL, or screenshot
 - viewport and state
+- theme, auth state, content/data state, and interaction state
 - full-view comparison evidence
 - focused region comparison evidence, or why it was not needed
-- findings ordered by severity
+- findings ordered by P0/P1/P2/P3 severity
 - patches made after the previous pass
 - `final result: passed` or `final result: blocked`
 
-Block handoff if actionable major layout, typography, color, asset, copy,
-accessibility, or responsive issues remain.
+Compare source and implementation in the same visual pass, not from memory.
+Check typography, spacing/layout, colors/tokens, image and asset fidelity,
+logos/icons, copy/content, loading/empty/error/hover/focus/active states,
+responsiveness, accessibility, and motion where relevant.
+
+Use `final result: blocked` when the source or rendered artifact is missing for
+a required comparison, or when actionable P0/P1/P2 layout, typography, color,
+asset, copy, accessibility, responsive, interaction-state, or source-fidelity
+issues remain. Use `passed` only when no actionable P0/P1/P2 findings remain.
 
 ## Output Style
 

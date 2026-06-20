@@ -192,20 +192,68 @@ source. Say what was audited and what was not.
 
 ## Anti-Slop Pass
 
-Before delivering, remove:
+Before delivering, run this as a line-edit gate, not a vibe check.
+
+### Phrase Gate
+
+Remove:
 
 - throat-clearing openers;
 - filler transitions;
 - adverbs and softeners;
-- passive voice;
-- inanimate subjects doing human actions;
-- binary setup lines;
-- dramatic fragments;
-- rhetorical questions that answer themselves;
+- emphasis crutches;
+- business jargon;
+- meta-commentary about the writing;
+- performative sincerity;
 - vague declarations;
-- three-item cadence when two items work;
+- generic AI phrasing;
 - exclamation points;
 - em dashes.
+
+### Structure Gate
+
+Rewrite:
+
+- binary setup lines;
+- negative listing that defines Suede by what it is not;
+- formulaic `not X, but Y` pivots;
+- false transformation arcs;
+- dramatic fragments;
+- rhetorical questions that answer themselves;
+- three-item cadence when two items work;
+- repeated punchy paragraph endings;
+- Wh-starter crutches when a direct actor and verb would work better.
+
+### Actor Gate
+
+Name who does the action. Prefer the creator, operator, buyer, agent, page,
+repo, workflow, file, command, route, or proof artifact.
+
+Avoid false agency:
+
+- Weak: `The page converts traffic.`
+- Better: `The page routes visitors to the audit, the proof link, or the build
+  request.`
+- Weak: `The market rewards provenance.`
+- Better: `Licensing teams can inspect the provenance trail before they ask for
+  the split sheet.`
+
+### Rhythm Gate
+
+- Keep one idea per sentence.
+- Vary sentence length without using em dashes.
+- Do not stack slogans where a concrete sentence would build more trust.
+- Cut lazy extremes such as `always`, `never`, `everything`, and `nothing`
+  unless the claim is literally true.
+
+### Pull-Quote Gate
+
+If a line sounds manufactured for a quote card, rewrite it with a real artifact,
+action, or proof point.
+
+- Weak: `The future of creator ownership is here.`
+- Better: `Suede turns a release folder into rights, provenance, split, and
+  licensing evidence an agent can read.`
 
 Score the copy before handoff:
 
@@ -214,11 +262,14 @@ Directness: /10
 Rhythm: /10
 Trust: /10
 Specificity: /10
+Authenticity: /10
 Density: /10
-Total: /50
+Search/AI readability: /10
+Total: /70
 ```
 
-Revise below 40/50. For public launch copy, aim for 44/50 or higher.
+Revise below 58/70. For public launch, homepage, GitHub, App Store,
+investor-adjacent, or ambassador copy, aim for 62/70 or higher.
 
 ## Output Shapes
 

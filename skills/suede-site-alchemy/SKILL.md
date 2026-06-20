@@ -160,6 +160,12 @@ Default stack for a fast polish pass:
 
 Use these as source material, not mandatory slogans.
 
+Run Copy Bank QA before shipping any line from this section. Slogans are raw
+material, not final public copy. Convert fragments into concrete sentences when
+the page needs trust, and run the anti-slop gate for throat-clearing, fake
+intensity, unsupported claims, pull-quote phrasing, passive actor-hiding,
+generic SaaS language, and em dashes.
+
 Headlines:
 
 - "Your website. Working while you sleep."

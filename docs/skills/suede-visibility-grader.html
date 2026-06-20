@@ -149,7 +149,7 @@
     <main class="shell">
       <div class="eyebrow">Website visibility and CTA grading</div>
       <h1>Grade whether a page can be found, trusted, cited, and clicked.</h1>
-      <p class="lead">Suede Visibility Grader gives public pages an A-F report across findability, first-screen clarity, CTA pull, proof and trust, AI readability, and design signal. Use it for websites, GitHub Pages docs, launch pages, campaign pages, creator sites, and Suedify QA.</p>
+      <p class="lead">Suede Visibility Grader gives public pages an A-F report across findability, first-screen clarity, CTA pull, proof and trust, AI readability, rendered design signal, evidence, and grade caps. Use it for websites, GitHub Pages docs, launch pages, campaign pages, creator sites, and Suedify QA.</p>
       <p><a class="button" href="../plugins.html">Install the skill</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-visibility-grader">View skill folder</a></p>
 
       <section class="panel">
@@ -170,7 +170,7 @@
             <li>CTA pull: button text, proof path, secondary action, and next-step friction.</li>
             <li>Proof and trust: source files, screenshots, commands, manifests, authorship, docs, and claim boundaries.</li>
             <li>AI readability: answer-ready summaries, schema fit, sourceable claims, internal links, and citation-friendly headings.</li>
-            <li>Design signal: hierarchy, spacing, typography, image quality, responsive behavior, and contrast.</li>
+            <li>Design signal: hierarchy, first-viewport composition, spacing, typography, image quality, icon fidelity, responsive behavior, accessibility, AI-slop risk, and contrast.</li>
           </ul>
         </article>
         <article class="card">
@@ -195,7 +195,7 @@
       <section class="grid">
         <article class="card">
           <h2>Output format</h2>
-          <p>The grader starts with a simple non-coder explanation, then gives the usual breakdown, lane grades, top fixes, CTA rewrites, verification notes, and a ship gate.</p>
+          <p>The grader starts with a simple non-coder explanation, then gives the usual breakdown, source/live status, screenshot evidence, viewport states, lane grades, grade caps, top fixes, CTA rewrites, verification notes, and a ship gate.</p>
           <pre><code>Grades:
 Findability: A-F
 First-screen clarity: A-F
@@ -213,7 +213,7 @@ Overall: A-F</code></pre>
 
       <section class="panel">
         <h2>Best prompts</h2>
-        <pre><code>Use $suede-visibility-grader to grade this page A-F for findability, first-screen clarity, CTA pull, proof, AI readability, and design signal.</code></pre>
+        <pre><code>Use $suede-visibility-grader to grade this page A-F for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, and promotion readiness.</code></pre>
         <pre><code>Use $suede-visibility-grader on this GitHub Pages docs site. Treat it as the actual public repo docs surface, not a separate marketing site.</code></pre>
         <pre><code>Use $suede-visibility-grader to check whether this page is ready for Google and Gemini result surfaces, then rewrite the primary and secondary CTAs.</code></pre>
       </section>

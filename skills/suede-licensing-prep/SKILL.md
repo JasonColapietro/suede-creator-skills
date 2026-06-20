@@ -19,11 +19,29 @@ claim boundaries visible.
 6. Route unresolved provenance to `suede-provenance-map` and unresolved splits
    to `suede-royalty-routing-brief`.
 
+## Evidence And Severity Gate
+
+Use an evidence table before any outreach or one-sheet language:
+
+```text
+Licensing claim:
+Status: confirmed | unconfirmed | disputed | unknown | not-applicable
+Evidence:
+Risk: low | medium | high | unknown
+Blocks:
+Next action:
+```
+
+High-risk items block licensing language, sync pitch language, public claims,
+or agent-readable commerce until confirmed. Safe copy can say what is known and
+what still needs rights-holder review.
+
 ## Output
 
 ```text
 Licensing brief:
 Confirmed rights facts:
+Evidence table:
 Open questions:
 Restrictions:
 Unsafe claims removed:

@@ -34,6 +34,15 @@ rights are cleared when they are not.
 5. Stop at a clean review package. Do not turn sync prep into a Suede promo CTA,
    placement promise, clearance claim, or outreach claim.
 
+## Public Copy Gate
+
+Before outputting one-sheet copy, pitch email, captions, DMs, press angles,
+site copy, bios, CTAs, or review language, run the Suede anti-slop line edit.
+Name the actor, preserve the concrete track/release artifact, cut
+throat-clearing, negative listing, fake intensity, lazy extremes, passive
+actor-hiding, pull-quote slogans, generic AI phrasing, unsupported claims, and
+em dashes.
+
 ## Output
 
 ```text

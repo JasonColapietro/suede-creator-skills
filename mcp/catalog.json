@@ -4,7 +4,7 @@
   "updated": "2026-06-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Johnny Suede writing/design modes, Apple and iOS surface guidance, Suede design, copywriting, Suede SEO/AEO/AI EO, discoverability, visibility grading, code grading, Suedify site mimicry, agent-team loops, install, QA, artist campaign, and creator utility context.",
+  "summary": "Local MCP access to Johnny Suede writing/design modes, Apple and iOS surface guidance, Suede design, anti-slop copywriting, Suede SEO/AEO/AI EO, discoverability, visibility grading, code grading, Suedify site mimicry, max-agent loops, visual QA, install, artist campaign, rights evidence, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow skills for Johnny Suede Write, Johnny Suede Design, Apple and iOS surfaces, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, code grading, Suedify reference-site restyling, code review, agent-team loops, launch packaging, install support, claim checks, site polish, artist campaign tools, and creator utilities.",
+      "description": "Public Suede workflow skills for Johnny Suede Write, Johnny Suede Design, Apple and iOS surfaces, design, anti-slop copywriting, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, code grading, Suedify reference-site restyling, code review, max-agent loops, visual QA, launch packaging, install support, claim checks, site polish, artist campaign tools, rights evidence, and creator utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -84,7 +84,7 @@
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public artist and creator skills for eras, song worlds, hooks, stunts, fan rituals, visualizers, merch objects, setlists, catalog revival, campaigns, neutral sync review packaging, release linting, rights passports, and provenance support.",
+      "description": "Public artist and creator skills for eras, song worlds, hooks, stunts, fan rituals, visualizers, merch objects, setlists, catalog revival, campaigns, neutral sync review packaging, release linting, rights passports, provenance support, public-copy gates, and evidence tables.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-era-builder skills/suede-song-to-universe skills/suede-hook-hunter skills/suede-release-stunt-lab skills/suede-fan-rituals skills/suede-visualizer-director skills/suede-merch-object-lab skills/suede-setlist-theater skills/suede-catalog-resurrection skills/suede-artist-identity-forge skills/suede-collab-matchmaker skills/suede-campaign-in-a-box skills/suede-sync-packaging skills/music-release-metadata-linter skills/suede-rights-passport skills/suede-rights-audit skills/suede-provenance-map skills/suede-licensing-prep skills/suede-royalty-routing-brief",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
@@ -115,43 +115,43 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella Suede workflow for design, Apple and iOS surfaces, copywriting, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, code grading, Suedify site restyling, code review, agent-team loops, install support, MCP QA, artist campaign tools, creator utilities, and public launch packaging.",
-      "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path."
+      "description": "Public umbrella Suede workflow for design, Apple and iOS surfaces, anti-slop copywriting, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, code grading, Suedify site restyling, code review, max-agent team loops, visual QA, install support, MCP QA, artist campaign tools, rights utilities, and public launch packaging.",
+      "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
       "name": "johnny-suede-write",
       "area": "workflow",
-      "description": "Full Johnny Suede writing mode for public copy, founder voice, website copy, GitHub README copy, skill docs, Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI EO, CTAs, launch copy, social posts, emails, FAQs, claim boundaries, and anti-generic line editing.",
-      "useWhen": "Use when a user asks to write, rewrite, package, explain, promote, audit, or polish any Suede-facing copy with the whole writing stack loaded from one mode, including Apple/iOS copy and Suede SEO when relevant."
+      "description": "Full Johnny Suede writing mode for public copy, founder voice, website copy, GitHub README copy, skill docs, Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI EO, CTAs, launch copy, social posts, emails, FAQs, claim boundaries, and anti-slop line editing.",
+      "useWhen": "Use when a user asks to write, rewrite, package, explain, promote, audit, or polish any Suede-facing copy with the whole writing stack loaded from one mode, including Apple/iOS copy, Suede SEO, and strict line editing when relevant."
     },
     {
       "name": "johnny-suede-design",
       "area": "workflow",
-      "description": "Full Johnny Suede design mode for Suede websites, Apple and iOS app surfaces, App Store screenshots, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, responsive QA, copy refinement, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, CTAs, and implementation handoff.",
-      "useWhen": "Use when a user asks for the whole design stack, a redesign, a style mimic, a better website, an Apple/iOS app surface, a design-system pass, or any design-related frontend work that should include copy and Suede SEO."
+      "description": "Full Johnny Suede design mode for Suede websites, Apple and iOS app surfaces, App Store screenshots, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, visual QA, responsive QA, copy refinement, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, CTAs, and implementation handoff.",
+      "useWhen": "Use when a user asks for the whole design stack, a redesign, a style mimic, a better website, an Apple/iOS app surface, a design-system pass, or design-related frontend work that should include copy, Suede SEO, rendered evidence, and visual QA."
     },
     {
       "name": "suedify",
       "area": "workflow",
-      "description": "Two-URL website restyling workflow that studies a reference URL and transforms a target URL with Suede-safe design fidelity.",
+      "description": "Two-URL website restyling workflow that studies a reference URL and transforms a target URL with Suede-safe design fidelity, token distillation, matched screenshots, and visual QA.",
       "useWhen": "Use when asked to mimic, restyle, or make one website feel like another reference site while preserving brand and legal safety."
     },
     {
       "name": "suede-design",
       "area": "workflow",
-      "description": "Suede frontend design, redesign, UI polish, visual audit, design-system, responsive QA, and implementation handoff workflow.",
-      "useWhen": "Use for Suede websites, app surfaces, dashboards, campaign pages, onboarding, empty states, forms, components, tokens, typography, layout, motion, imagery, public copy, or design-related frontend changes."
+      "description": "Suede frontend design, redesign, UI polish, visual audit, design-system extraction, responsive QA, source-to-render comparison, and implementation handoff workflow.",
+      "useWhen": "Use for Suede websites, app surfaces, dashboards, campaign pages, onboarding, empty states, forms, components, tokens, typography, layout, motion, imagery, public copy, visual QA, or design-related frontend changes."
     },
     {
       "name": "suede-copy",
       "area": "workflow",
-      "description": "Suede conversion copy, public docs copy, GitHub README copy, SEO/AEO/AI EO snippets, CTAs, launch copy, line editing, and full SEO/AEO/AI EO copy audit workflow.",
-      "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO/AEO/AI EO copy audits."
+      "description": "Suede conversion copy, public docs copy, GitHub README copy, SEO/AEO/AI EO snippets, CTAs, launch copy, anti-slop line editing, and full SEO/AEO/AI EO copy audit workflow.",
+      "useWhen": "Use for Suede website text, skill pages, public docs, GitHub Pages copy, README sections, metadata, headings, subheads, buttons, FAQ answers, launch notes, or SEO/AEO/AI EO copy audits that need strict line editing."
     },
     {
       "name": "suede-brand-voice",
       "area": "workflow",
-      "description": "Suede brand voice workflow for public copy, README prose, docs, CTAs, FAQs, social copy, launch language, skill descriptions, and ambassador text.",
+      "description": "Suede brand voice workflow for public copy, README prose, docs, CTAs, FAQs, social copy, launch language, skill descriptions, ambassador text, and actor/proof line edits.",
       "useWhen": "Use when copy should sound specific, creator-owned, rights-aware, agent-commerce-aware, polished, and free of generic AI phrasing."
     },
     {
@@ -163,8 +163,8 @@
     {
       "name": "suede-visibility-grader",
       "area": "workflow",
-      "description": "Suede website visibility and CTA grading workflow for public pages, GitHub Pages sites, launch pages, docs, and campaign pages with A-F grades for findability, first-screen clarity, CTA pull, proof, AI readability, and design signal.",
-      "useWhen": "Use when a user wants to know whether a page can be found, understood, trusted, cited by AI systems, and acted on."
+      "description": "Suede website visibility and CTA grading workflow for public pages, GitHub Pages sites, launch pages, docs, and campaign pages with A-F grades, evidence, grade caps, and rendered design-signal checks.",
+      "useWhen": "Use when a user wants to know whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with visual confidence."
     },
     {
       "name": "suede-site-alchemy",
@@ -187,8 +187,8 @@
     {
       "name": "suede-agent-teams",
       "area": "workflow",
-      "description": "Suede agent team orchestration for scout, safe parallel build, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops.",
-      "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership."
+      "description": "Suede agent team orchestration for scout, safe parallel build, continuous max-agent loops, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery replay, and evidence handoff loops.",
+      "useWhen": "Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership and loop control."
     },
     {
       "name": "suede-launch-packaging",

@@ -3,7 +3,7 @@
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
 **Suede Creator Skills** is a public 38-skill pack for AI coding agents,
-design-heavy website work, Apple and iOS app surfaces, copywriting, Suede SEO
+design-heavy website work, Apple and iOS app surfaces, anti-slop copywriting, Suede SEO
 discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
 Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
@@ -13,8 +13,8 @@ ambassador explainers, claim checks, agent-commerce prep, artist campaign
 tools, and creator utility skills.
 
 The main sell is the Suede workflow: give the agent taste, page structure,
-copy standards, SEO discipline, reference-site analysis, review gates, and a
-way to improve as feedback comes in. In this pack, SEO includes AEO and AI EO:
+copy standards, SEO discipline, reference-site analysis, visual QA, review
+gates, and a way to improve as feedback comes in. In this pack, SEO includes AEO and AI EO:
 search snippets, answer engines, AI summaries, schema, sourceable claims, and
 citation-ready proof. When the agent does something that works, tell it what
 to keep. When it misses, tell it exactly what to change. The next pass should
@@ -27,25 +27,29 @@ simple non-coder version, then the usual breakdown.
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
 proof structure, and content rhythm before pushing the target toward the
-reference with Suede-safe design, copy, SEO, and QA.
+reference with Suede-safe design, matched screenshots, token distillation,
+copy, SEO, and QA.
 
 `johnny-suede-write` is the one-name writing mode: public copy, founder voice,
 Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI
 EO, CTAs, launch copy, social/email variants, claim checks, and anti-generic
-line editing. `johnny-suede-design` is the one-name design mode: Suedify,
+line editing with Directness, Rhythm, Trust, Specificity, Authenticity,
+Density, and Search/AI readability scoring. `johnny-suede-design` is the
+one-name design mode: Suedify,
 Apple and iOS app surfaces, App Store screenshots, UI polish, design-system QA,
-responsive checks, visibility grading, implementation handoff, and the full
-writing mode included.
+responsive checks, visual QA, visibility grading, implementation handoff, and
+the full writing mode included.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI
-systems, and acted on. Suede Code Grader gives code an A-F ship-risk grade with
+systems, acted on, and promoted with rendered design evidence. Suede Code Grader gives code an A-F ship-risk grade with
 the reason why across correctness, security, state, UX, tests, deploy readiness,
 and public-claim truth. Suede Code Review keeps the deeper findings and fix
 brief workflow. Suede Agent Teams adds grouping loops for major work: scout,
 constraints mapping, safe parallel build, adversarial review, consensus review,
-design visibility review, A-F code grading, WIP protection, release lock,
-recovery, and evidence handoff without lanes stepping on the same files.
+design visibility review, A-F code grading, WIP protection, quality/eval gates,
+release lock, recovery replay, and evidence handoff without lanes stepping on
+the same files.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,
@@ -55,8 +59,8 @@ packages. Sync packaging stops at clean review prep: no placement promises,
 clearance claims, outreach claims, or Suede promo funnel.
 
 Creator utility skills for release metadata, provenance, rights passports, and
-royalty notes are included for projects that need them, but they are support
-tools, not the headline.
+royalty notes include evidence tables and severity models for projects that
+need them, but they are support tools, not the headline.
 
 The public page presents the workflow as a Suede Creator Passport: website
 visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
@@ -268,10 +272,10 @@ MCP tools:
 Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 
 Install the public umbrella workflow when you want one skill to load the Suede
-design, copy, SEO/AEO/AI EO, site polish, visibility and CTA grading, code
-review with A-F Suede grades, QA, launch, install support, MCP QA, ambassador
-explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
-two-level final explanations, Cue Suede choices, agent-team grouping loops,
+design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
+code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
+ambassador explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
+two-level final explanations, Cue Suede choices, max-agent grouping loops,
 artist campaign, and creator utility workflow. The repository now ships **38
 public skill folders**.
 

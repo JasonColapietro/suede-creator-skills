@@ -20,11 +20,30 @@ commerce flows.
 5. Route metadata gaps to `suede-seo-audit`, rights gaps to
    `suede-rights-audit`, and install gaps to `suede-install-support`.
 
+## Evidence And Severity Gate
+
+Agents need explicit boundaries. Use a table before recommending actions:
+
+```text
+Agent-readable claim:
+Status: confirmed | unconfirmed | disputed | unknown | not-applicable
+Evidence:
+Allowed agent action:
+Disallowed agent claim:
+Risk: low | medium | high | unknown
+Next action:
+```
+
+High-risk items block payable, licensing, registry, distribution, routing, or
+public recommendation language until verified. Keep install commands, public
+URLs, rights notes, provenance notes, and proof links sourceable.
+
 ## Output
 
 ```text
 Agent-readable object:
 Metadata:
+Evidence table:
 Actions agents can take:
 Actions agents cannot claim:
 Proof links:

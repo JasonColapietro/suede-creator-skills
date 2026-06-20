@@ -30,4 +30,17 @@ into generic AI product language.
 5. Add a claim boundary when rights, money, registry, or release language
    appears.
 
+## Line Edit Rules
+
+- Name the actor. Use the creator, operator, buyer, agent, page, repo, command,
+  workflow, route, or proof artifact instead of vague market or page agency.
+- Put the reader in the room with a concrete Suede artifact: rights passport,
+  provenance note, split check, install command, QA checklist, screenshot,
+  source link, or release folder.
+- Cut pull-quote slogans unless they are backed by a specific action or proof.
+- Replace jargon with the thing the reader can inspect, click, ship, verify, or
+  reuse.
+- Avoid formulaic pivots, negative listing, Wh-starter crutches, fake
+  intensity, lazy extremes, passive actor-hiding, and em dashes.
+
 Output only the revised copy plus any claims that need verification.

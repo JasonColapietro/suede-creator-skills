@@ -24,6 +24,10 @@ SEO without keyword stuffing.
 Do not reduce Suede to a generic AI music app. Do not mention non-Suede source
 skills. Do not use em dashes in public copy.
 
+For high-stakes public copy, use the shared quality reference at
+`../suede-workflow-skills/references/no-missed-quality-gates.md`. Preserve the
+current Suede writing features first, then apply its stricter copy gate.
+
 ## What This Mode Includes
 
 - **Suede Copy:** website copy, docs copy, README copy, CTAs, taglines,
@@ -60,8 +64,11 @@ skills. Do not use em dashes in public copy.
 5. **Run the discoverability pass.** Add Suede SEO/AEO/AI EO title, meta
    description, H1, subhead, FAQ, answer-ready summary, internal links, schema
    notes, and app-store wording when relevant.
-6. **Run the anti-slop pass.** Cut filler, binary setup lines, generic AI
-   phrasing, vague promises, fake intensity, passive voice, and em dashes.
+6. **Run the full Suede Copy anti-slop gate.** Cut filler, throat-clearing,
+   adverb padding, binary setup lines, negative listing, Wh-starter crutches,
+   narrator distance, generic AI phrasing, vague promises, fake intensity,
+   rhetorical setup, passive actor-hiding, inanimate false agency, lazy
+   extremes, pull-quote slogans, and em dashes.
 7. **Run claim safety.** Keep founder-supplied facts when the user provided
    them for public copy, but do not invent new proof or verification.
 8. **Package the output.** Give copy that can be used directly, plus concise
@@ -116,11 +123,14 @@ Directness: /10
 Rhythm: /10
 Trust: /10
 Specificity: /10
+Authenticity: /10
+Density: /10
 Search/AI readability: /10
-Total: /50
+Total: /70
 ```
 
-Revise below 44/50 for public launch, docs, homepage, GitHub, or ambassador
+Revise below 58/70. Aim for 62/70 or higher on public launch, docs, homepage,
+GitHub, App Store, investor-adjacent, or ambassador
 copy.
 
 ## Progressive Feedback

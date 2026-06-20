@@ -24,6 +24,14 @@ Use this skill to find new life in old material without pretending it is new.
 5. Define the next build when the revival needs a campaign page, fan action,
    drop, or creator utility workflow.
 
+## Public Copy Gate
+
+Before outputting captions, emails, DMs, press angles, site copy, bios, one
+sheets, CTAs, or pitch language, run the Suede anti-slop line edit. Name the
+actor, preserve the concrete artist/release artifact, cut throat-clearing,
+negative listing, fake intensity, lazy extremes, passive actor-hiding,
+pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
+
 ## Output
 
 ```text
