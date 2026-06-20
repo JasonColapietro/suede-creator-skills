@@ -1,6 +1,6 @@
 ---
 name: suedify
-description: Two-URL website restyling workflow for making a target site feel like a reference site with Suede-safe design fidelity. Use when the user provides or implies a reference URL and a target URL, asks to mimic a website style, says to make one website look like another, says "suedify this", asks for Apple-style/Stripe-style/Linear-style/Supreme-style treatment, wants a site transformed into another site's design language, or needs reference-site analysis, visual fingerprinting, design-token extraction, implementation, responsive QA, and live verification.
+description: "Make any website feel like another website. Suedify studies a reference URL — Apple, Stripe, Linear, Supreme, or any site — extracts its design grammar, and implements the layout, hierarchy, typography, color, section rhythm, and motion into a target site you control. Includes visual fingerprinting, design-token distillation, screenshot comparison QA, responsive verification, and legal/brand safety guardrails. Use when asked to 'make this look like that' or to give any site a premium style treatment."
 ---
 
 # Suedify
@@ -54,9 +54,17 @@ each must map to a concrete implementation or QA action.
 
 - **Suede Style Fingerprint:** capture the reference site's grid, section
   rhythm, nav behavior, typography, color roles, imagery, motion, density, and
-  responsive breakpoints.
+  responsive breakpoints. Also capture and name the reference's aesthetic identity — required:
+  1. **Color strategy axis**: which strategy does the reference use? (Restrained / Committed / Full palette / Drenched)
+  2. **Aesthetic tone**: what is the reference's overall tone? (refined minimal / editorial / brutalist / retro-technical / organic / maximalist / luxury refined / product-utilitarian)
+  3. **Unforgettable factor**: what is the one move that makes this site memorable — the single design decision that someone will recall after closing the tab?
+  Include these three answers as required fields in `suedify-style-fingerprint.md`.
 - **Suede Token Distiller:** translate the reference look into target-safe color
-  roles, type roles, spacing, radii, shadows, motion, and state tokens.
+  roles, type roles, spacing, radii, shadows, motion, and state tokens. When extracting tokens, also extract and name the aesthetic strategy:
+  - What color strategy axis does the reference use? (Restrained / Committed / Full palette / Drenched)
+  - What is the reference's tone? (Pick the closest: refined minimal / editorial / brutalist / retro-technical / organic / maximalist / luxury refined / product-utilitarian)
+  - What is the reference's unforgettable factor — the one move that makes the site memorable?
+  Include these three fields in the Token Distiller output artifact alongside accepted and rejected reference signals.
 - **Suede Hero Lift:** rebuild the first viewport so the target inherits the
   reference's hierarchy, pacing, media treatment, and CTA emphasis without
   stealing copy or assets.
@@ -138,7 +146,8 @@ each must map to a concrete implementation or QA action.
      components, routing, auth, payments, analytics, API behavior, deploy config,
      or public claim truth.
    - Use `compose-suede-screenshots` when the work needs marketable before/after
-     panels, App Store assets, or social launch screenshots.
+     panels, App Store assets, or social launch screenshots (requires separate
+     installation — not bundled with this skill).
 
 6. **Render and compare**
    - Run the local server or preview.

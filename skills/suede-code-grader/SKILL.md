@@ -8,6 +8,19 @@ description: Suede A-F code grading workflow for diffs, pull requests, branches,
 Use this skill when code needs a blunt A-F read on whether it is ready to ship.
 The output is a grade with evidence, not a lint score or a pile of style notes.
 
+## Company Override
+
+This skill grades code for any codebase or team, not only Suede. If grading
+non-Suede work, ignore the "Suede truth" lane name — substitute the relevant
+product domain: public claim truth, API contract truth, data model truth, or
+whatever domain invariants the changed code must satisfy. All other lanes
+(correctness, security, data and state, UX and release behavior, tests and
+verification, deploy readiness) apply universally.
+
+When the work is Suede-specific, keep the full Suede truth lane covering
+rights, provenance, registry, royalty routing, agent-commerce, and public claim
+accuracy.
+
 ## Source Truth
 
 Before grading, inspect the current source and the current change:
@@ -45,11 +58,43 @@ Score each lane A-F, then give one overall grade:
 - **Deploy readiness:** env vars, feature flags, configs, migrations, rollback
   notes, install paths, docs, and release sequencing are clear.
 
+## Technical Debt Indicators
+
+Flag these patterns as part of the grade assessment:
+
+- **Magic numbers/strings**: constants with no name or explanation that appear
+  in logic.
+- **God objects/functions**: a single function or class doing 5+ unrelated
+  things.
+- **Deep coupling**: code that reaches across 3+ abstraction layers to access
+  internals.
+- **Missing abstraction**: the same 20-line block duplicated in 3+ places.
+- **Leaky abstraction**: a module that requires callers to know its internal
+  implementation details to use it correctly.
+- **Implicit state**: program behavior depends on hidden global or module-level
+  state.
+- **Dead code**: functions, branches, or imports that can never be reached.
+
+Grade impact:
+
+- Tech debt that **actively impairs correctness** or masks a real bug: lane
+  grade D.
+- Tech debt that **creates meaningful maintenance risk** for the changed area:
+  lane grade C.
+- Tech debt that is **present but manageable** with a clear follow-up path:
+  lane grade B.
+
+Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug.
+Name the debt in Required Upgrades and let the overall grade reflect it.
+
 ## Grade Meaning
 
 - **A:** ship and use as a reference for similar work.
 - **B:** ship-with-caveats; no blocker remains, but named follow-ups remain.
-- **C:** hold until focused fixes land and weak lanes are rechecked.
+- **C:** hold until focused fixes land and weak lanes are rechecked. Also holds
+  when there is significant technical debt in a lane critical to the change
+  (e.g., correctness or security) that creates real maintenance or regression
+  risk.
 - **D:** hold; serious production, release, security, data, or claim risk
   remains.
 - **F:** do not ship; core behavior, safety, verification, or source truth is

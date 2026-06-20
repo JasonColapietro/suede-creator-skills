@@ -9,6 +9,18 @@ Use this skill to split important Suede work into clear agent lanes without
 losing control of scope, WIP, or release truth. The output is a coordinated
 delivery path, not a meeting transcript.
 
+## Company Override
+
+This skill orchestrates agent teams for any large codebase or project, not
+only Suede. If the work belongs to a different company or repo, replace Suede
+domain references (rights/provenance, registry, royalty routing, agent
+commerce, wallet flows) with the relevant domain contracts for that product.
+Keep the full orchestration: scout, planner, builder, design reviewer, code
+reviewer, visibility grader, release verifier, and handoff writer.
+
+The Team Contract, Phase Loop, and Continuous Team Loop patterns apply to any
+engineering or creative project regardless of company.
+
 ## When To Use
 
 Use agent teams for:
@@ -68,19 +80,138 @@ Choose the smallest useful roster.
 For small work, one agent can wear several roles. For high-risk work, keep
 builder and reviewer separate.
 
+## RFC Mode
+
+For major architectural decisions, new feature designs, or changes with broad blast radius, run an RFC (Request for Comments) before spawning builders.
+
+An RFC forces alignment on WHAT and WHY before committing to HOW.
+
+RFC structure:
+
+```
+RFC: [Title]
+Date: [date]
+Status: draft | accepted | superseded | withdrawn
+Deciders: [who has final say]
+
+## Problem Statement
+One paragraph: what is broken, missing, or suboptimal? Include the user or system impact.
+
+## Proposed Solution
+What we will build or change. Be specific about interfaces, data shapes, and behavioral contracts.
+
+## Alternatives Considered
+2–3 alternatives with the reason each was not chosen.
+
+## Risks
+What could go wrong with the proposed solution? How is each risk mitigated?
+
+## Success Criteria
+How will we know this worked? Observable, measurable signals.
+
+## Decision Record
+[filled in after consensus] Accept / Modify / Reject + reason.
+```
+
+When to use RFC mode: before any change that modifies a shared interface, data schema, authentication flow, payment path, or public API contract. Also use when the team has not aligned on approach after 2 rounds of discussion.
+
+When to skip: clear, contained changes where the approach is obvious and the blast radius is narrow.
+
+## Feature Flag Strategy
+
+Not every change should ship as a hard deploy. Feature flags allow gradual rollout, A/B testing, and instant rollback without a redeploy.
+
+**Flag lifecycle:**
+1. **Introduce**: create the flag, default off in production. Ship the code behind the flag.
+2. **Ramp**: enable for internal users, then 1%, 10%, 50%, 100% of production traffic. Monitor at each ramp.
+3. **Remove**: once the flag is 100% and stable for ≥2 weeks, delete the flag and the conditional code.
+
+**When to flag:**
+- New user-facing features in production traffic paths
+- Changes to auth, payment, or data migration paths
+- Any change that cannot be instantly rolled back by revert (e.g., a schema migration)
+- A/B tests
+
+**When NOT to flag:**
+- Bug fixes with no behavioral change (ship directly)
+- Internal tooling with no external API contract
+- Refactors that don't change behavior (ship with a focused review)
+
+**Flag hygiene rules:**
+- Every flag gets a removal date at creation. Stale flags are a debt item (P3 code review finding).
+- Flag names describe the feature, not the state: `new_billing_flow` not `enable_billing`.
+- Never nest flags inside flags without a design review.
+
+## Rollback Decision Tree
+
+When something goes wrong after a deploy, the team needs a pre-agreed decision framework to avoid paralysis.
+
+```
+Is there active data loss or corruption? → ROLLBACK IMMEDIATELY. Don't investigate first.
+Is there a security exposure (PII, auth bypass, payment data)? → ROLLBACK IMMEDIATELY. Notify security.
+Is a primary user path broken (login, checkout, core workflow)? → ROLLBACK unless fix is <15 minutes away.
+Is performance degraded but functional? → Hold and investigate. Set a 30-minute timer.
+Is it a cosmetic issue? → Hot-fix forward. No rollback.
+```
+
+After rollback:
+1. Write an immediate summary: what rolled back, what was affected, who was notified.
+2. Leave rollback notes in the PR and open a follow-up issue.
+3. Run a lightweight post-mortem (see below) before re-shipping.
+
+## Post-Mortem Template
+
+For any production incident, failed release, or significant rollback, run a post-mortem. Blameless — focus on systems, not individuals.
+
+```
+Post-Mortem: [Brief title]
+Date of incident:
+Duration:
+Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cosmetic)
+Author(s):
+
+## Timeline
+[time] — [event]
+[time] — [detection]
+[time] — [first response]
+[time] — [resolution]
+
+## Impact
+Users affected:
+Revenue impact (if known):
+Data integrity: affected / not affected
+
+## Root Cause
+One sentence: the direct technical cause.
+
+## Contributing Factors
+The systemic conditions that made this possible. (What allowed the root cause to reach production?)
+
+## What Went Well
+Things that helped detect or contain the incident faster.
+
+## Action Items
+| Action | Owner | Due |
+|---|---|---|
+| ... | ... | ... |
+
+Status: open / closed
+```
+
+Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P2. Skip for P3.
+
 ## Phase Loop
 
 Run the loop at the smallest scale that fits:
 
-1. **Discuss:** capture decisions, unresolved assumptions, bans, and scope.
+1. **Discuss:** capture decisions, unresolved assumptions, bans, and scope. For changes with broad blast radius, unresolved architecture questions, or shared interface contracts, use **RFC Mode** before planning — it forces alignment on WHAT and WHY before committing to HOW.
 2. **Plan:** decompose into atomic tasks with file targets, dependencies, and
    verifiable acceptance criteria.
 3. **Execute:** work in lanes, wave by wave, with one outcome per lane.
 4. **Verify:** walk every user-observable deliverable and record pass/fail
    evidence.
 5. **Review:** run design and code review gates when the risk warrants it.
-6. **Ship:** commit, push, deploy, release, or hand off only after the done
-   signal is satisfied or the caveat is explicitly named.
+6. **Ship:** commit, push, deploy, release, or hand off only after the done signal is satisfied or the caveat is explicitly named. For high-risk changes, consult the **Rollback Decision Tree** before shipping. For gradual rollouts, use the **Feature Flag Strategy**.
 
 If verification fails, diagnose the root cause, create a gap plan, execute only
 the gap, and re-run the failing checks.
@@ -95,8 +226,7 @@ Choose the loop:
 - **Sequential:** default for normal scoped work.
 - **Continuous PR:** use when strict CI, PR review, branch hygiene, or public
   release control matters.
-- **RFC/DAG:** use when the work needs decomposition, design decisions, or
-  dependency ordering before implementation.
+- **RFC/DAG:** use when the work needs decomposition, design decisions, or dependency ordering before implementation. Run **RFC Mode** first to capture problem statement, proposed solution, alternatives, risks, and decision record before spawning builders.
 - **Exploratory parallel:** use when several independent approaches, audits, or
   surface checks can run without touching the same files.
 - **Recovery:** use after a failed check, repeated defect, blocked release,
@@ -137,6 +267,7 @@ check before widening again.
 
 For copy, design, visibility, Suedify, launch, or public docs work, include the
 shared gate at `../suede-workflow-skills/references/no-missed-quality-gates.md`.
+(Requires suede-workflow-skills from the same repo. If not installed, apply the five quality gates inline per the criteria in suede-design or suede-copy.)
 
 ## Grouping Loops
 

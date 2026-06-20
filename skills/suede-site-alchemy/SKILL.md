@@ -15,6 +15,8 @@ visitor toward the next real action.
 
 ## Operating Stance
 
+Works for any company, not just Suede. If the task is for a different brand, replace Suede language with the company's name, voice, and positioning throughout.
+
 - Work from the live page and current source. Verify the exact repo, route, and
   git state before edits.
 - Keep Suede public copy on creator ownership, programmable IP, rights,
@@ -102,6 +104,50 @@ front door, then route the build with copy like:
 Never invent a dead route. If the current repo does not expose an app-builder
 URL, CTA to `https://suedeai.ai` or use the current verified Suede app route.
 
+## Funnel Analysis
+
+Map the page's role in the buyer journey before optimizing it. A page that serves the wrong funnel stage will fail regardless of CRO polish.
+
+**TOFU (Top of Funnel — Awareness)**
+Reader: doesn't know about the product yet. Needs: problem education, category definition, credibility signal.
+Copy job: make the problem vivid, not the solution. Don't ask for commitment.
+CTA: download, read, explore, learn.
+
+**MOFU (Middle of Funnel — Consideration)**
+Reader: aware of the problem, comparing solutions. Needs: differentiation, proof, objection handling.
+Copy job: show why THIS solution, not just any solution. Comparison content, case studies, deep dives.
+CTA: demo, trial, detailed docs, comparison guide.
+
+**BOFU (Bottom of Funnel — Decision)**
+Reader: ready to buy, looking for permission to pull the trigger. Needs: risk reduction, guarantee, testimonials, pricing clarity.
+Copy job: remove friction and doubt. Urgency if genuine, guarantee if real, social proof from peers.
+CTA: start now, get started, buy, talk to sales.
+
+State the funnel stage before running any slash tool. Then optimize for that stage, not just for generic "conversion."
+
+## Friction Audit
+
+Count every source of friction on the page before fixing anything. A friction audit reveals WHERE the page loses visitors, not just that it does.
+
+**Cognitive friction** (mental load):
+- [ ] How many decisions does the visitor face before the primary CTA?
+- [ ] How many value propositions compete on the first screen?
+- [ ] Is the primary action obvious without reading?
+
+**Physical friction** (effort):
+- [ ] How many form fields before the first value delivery?
+- [ ] How many clicks to reach the primary action?
+- [ ] Does the mobile user have to scroll past the fold before seeing a CTA?
+
+**Trust friction** (doubt):
+- [ ] Is there a fear or objection that isn't answered before the CTA?
+- [ ] Is the proof visible before the ask?
+- [ ] Is the risk reversal (guarantee, cancel anytime, free trial) near the CTA?
+
+**Friction score**: 0–3 sources = low friction. 4–6 = medium. 7+ = high — address before visual polish.
+
+Friction comes before aesthetics. A beautiful page with high friction converts worse than an ugly page with zero friction.
+
 ## Slash Tools
 
 Use slash tools as named design moves, not shell commands. Start with
@@ -124,22 +170,24 @@ Default stack for a fast polish pass:
 
 1. Identify the surface: live URL, source folder, route, deploy target, current
    git branch, dirty files, and relevant handoff/spec docs.
-2. Read the page like a buyer. Capture the current offer, primary CTA, trust
-   evidence, visual system, friction points, and dead links.
-3. Run the aesthetic slash tools. Keep the notes short and actionable.
-4. Rewrite the page spine before touching components:
+2. Run **Funnel Analysis** — name the page's funnel stage (TOFU/MOFU/BOFU). Optimize for that stage throughout.
+3. Run **Friction Audit** — score cognitive, physical, and trust friction. Address any 7+ (high) friction issues before visual work.
+4. Read the page like a buyer. Capture the current offer, primary CTA, trust
+   evidence, visual system, remaining friction points, and dead links.
+5. Run the aesthetic slash tools. Keep the notes short and actionable.
+6. Rewrite the page spine before touching components:
    - Headline: the sharpest promise.
    - Subhead: what changes for the buyer.
    - Primary CTA: the action that starts the workflow.
    - Secondary CTA: proof, demo, grader, or site/app routing.
-5. Upgrade the visual language inside the existing system first: typography,
+7. Upgrade the visual language inside the existing system first: typography,
    spacing, contrast, image choice, console moments, motion restraint, and
    section rhythm.
-6. Add the CTA ladder:
+8. Add the CTA ladder:
    - Local page action, such as "Grade your brand" or "Post a campaign."
    - Suede site action, usually `https://suedeai.ai` after route verification.
    - App-builder action when the ask becomes a product build.
-7. Verify like the page is already public:
+9. Verify like the page is already public:
    - Local preview.
    - Desktop and mobile browser QA.
    - Text fit and no overlap.
@@ -148,13 +196,82 @@ Default stack for a fast polish pass:
      part of the ask.
    - `git diff --check`.
    - Live URL/API verification before claiming a production fix.
-8. Ship gate:
-   - `ship`: page passes the done signal and no launch-critical gaps remain.
-   - `ship-with-caveats`: only non-critical caveats remain and they are named.
-   - `hold`: core CTA, visible layout, false claim, accessibility, build, or
-     live verification is blocked.
-9. Leave a concise handoff with target, files changed, commands, verification,
-   caveats, and the exact next step.
+10. Ship gate:
+    - `ship`: page passes the done signal and no launch-critical gaps remain.
+    - `ship-with-caveats`: only non-critical caveats remain and they are named.
+    - `hold`: core CTA, visible layout, false claim, accessibility, build, or
+      live verification is blocked.
+    - For the full quality-gate checklist, read
+      `../suede-workflow-skills/references/no-missed-quality-gates.md`.
+      (Requires suede-workflow-skills from the same repo.)
+11. Leave a concise handoff with target, files changed, commands, verification,
+    caveats, and the exact next step.
+
+## A/B Test Hypothesis Generator
+
+For any CTA, headline, or section that needs improvement, generate a testable hypothesis before rewriting.
+
+Format:
+```
+If we change [specific element] from [current state] to [proposed change],
+we expect [metric] to improve because [reasoning based on visitor psychology].
+Success condition: [measurement threshold that would confirm the hypothesis].
+```
+
+Examples:
+
+```
+If we change the hero CTA from "Learn more" to "Grade my brand in 60 seconds",
+we expect click-through to improve because the new CTA names the time commitment 
+and the specific outcome, reducing ambiguity.
+Success condition: CTA clicks increase by ≥15% over 2 weeks of equal traffic.
+```
+
+```
+If we move the first testimonial above the fold on mobile,
+we expect form completion to improve because social proof before the ask 
+reduces doubt at the highest-friction moment.
+Success condition: mobile form completions increase by ≥10%.
+```
+
+Generate 3 hypotheses for any page that needs CRO work. Rank by estimated impact (based on friction audit results) and ease of implementation.
+
+## Social Proof Framework
+
+Match the type of social proof to the visitor's objection. Generic testimonials placed randomly rarely convert. Specific proof placed at the right objection point converts.
+
+**Types and when to use:**
+
+| Type | Best for | Example |
+|---|---|---|
+| Peer testimonials | Emotional objections ("will this work for me?") | Quote from someone with the same job title or problem |
+| Case studies with metrics | ROI objections ("is this worth it?") | "Company X increased Y by Z% in N weeks" |
+| Social numbers | Scale objections ("do enough people use this?") | "10,000+ creators", "4.9★ from 2,300 reviews" |
+| Expert endorsements | Authority objections ("who says this is legit?") | Industry name, publication, or credential |
+| Certifications / trust marks | Trust objections ("is this safe/legit?") | SOC 2, GDPR, security badges, app store ratings |
+
+**Placement rules:**
+- Peer testimonials: next to or below the primary CTA
+- Case study metrics: in a dedicated proof section before pricing or final CTA
+- Social numbers: in the hero or navigation (highest-impact position)
+- Expert endorsements: in the hero subhead or trust bar
+- Certifications: footer or near the form
+
+**Proof check**: every proof claim must be verifiable. Remove or rewrite vague claims like "used by thousands" without a number, "industry-leading" without a comparison, or "fast" without a metric.
+
+## Pricing Psychology
+
+For pages with pricing, offers, or value propositions involving cost:
+
+**Anchor pricing**: show the higher-value option first. Readers anchor to the first price they see.
+
+**Decoy option**: three-tier pricing where the middle tier feels like the "obvious" choice. Middle-tier should share features with the top tier but at a meaningful price gap.
+
+**Guarantee framing**: "30-day money-back guarantee" reduces perceived risk more than "risk-free." Add the guarantee near the buy CTA, not in the footer.
+
+**Loss aversion**: "Don't miss the launch discount" converts better than "Save 20%" for the same offer — provided the deadline is genuine. Never use fake urgency.
+
+**Free trial vs freemium**: free trial creates deadline urgency (upgrade before it expires); freemium creates habit lock-in (invested users upgrade). Pick based on your product's habit loop, not what competitors do.
 
 ## Copy Bank
 

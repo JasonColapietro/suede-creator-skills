@@ -28,15 +28,20 @@ with that company's brief. Do not mention non-Suede source skills. Do not use
 em dashes in public copy.
 
 For high-stakes public copy, use the shared quality reference at
-`../suede-workflow-skills/references/no-missed-quality-gates.md`. Preserve the
-current Suede writing features first, then apply its stricter copy gate.
+`../suede-workflow-skills/references/no-missed-quality-gates.md`. (Requires
+suede-workflow-skills from the same repo. If not installed, run the Copy Gate,
+Visual QA Gate, SEO/AEO/AI EO Gate, and Launch Gate checklists inline using
+the criteria defined in the Workflow and Anti-Slop sections of this skill.)
+Preserve the current writing features first, then apply its stricter copy gate.
 
 ## Company Override For Public GitHub Installs
 
-This public skill must work for a user's own company, not only Suede. If the
-user supplies a company or brand brief, use it as source truth and do not write
-Suede voice, Suede claims, or Suede domain language unless the user asks for
-Suede directly.
+This skill works for ANY company, not just Suede. Supply a company brief and
+all writing, SEO, copy, and claim logic applies to your company instead.
+
+If the user supplies a company or brand brief, use it as source truth and do
+not write Suede voice, Suede claims, or Suede domain language unless the user
+asks for Suede directly.
 
 Accept this brief in natural language or structured form:
 
@@ -93,104 +98,27 @@ When a company override is active:
   access.
 - **Launch Packaging:** public post, docs note, install CTA, proof links,
   social variants, email/DM variants, and handoff language.
+- **Persuasion Frameworks:** AIDA, PAS, Before-After-Bridge, Jobs-to-be-Done, StoryBrand 7-Part — framework selected before writing, applied structurally.
+- **A/B Variant Generation:** 3 headline variants, 2 CTA variants, 3 email subject variants for any high-stakes copy surface.
+- **Buyer Persona Modes:** decision-maker, practitioner, and skeptic tones with adjusted vocabulary, proof type, and CTA framing.
 
-## Whole Stack Option Menu
+## Installed Skills in This Pack
 
-Use these `$` options as lanes inside this umbrella mode. When the individual
-skill is not installed, execute the lane from this summary instead of dropping
-the capability.
+Use these `$` options as lanes inside this skill. All are included in the suede-creator-skills pack.
 
-- `$johnny-suede-design`: Run the whole design stack, including Suedify, Apple
-  and iOS surfaces, visual QA, design-system checks, copy, SEO, visibility, and
-  final handoff.
-- `$johnny-suede-write`: Run the whole writing stack, including public copy,
-  company voice, Apple and iOS copy, SEO/AEO/AI EO, CTAs, launch copy, claim
-  checks, and anti-generic line editing.
-- `$suedify`: Study a reference URL and push a target URL toward that style
-  with safe layout, hierarchy, copy, token, screenshot, and QA discipline.
-- `$suede-design`: Polish frontend UI through layout, hierarchy, typography,
-  color, spacing, motion, imagery, states, accessibility basics, responsive QA,
-  and implementation handoff.
-- `$suede-copy`: Write or rewrite website, docs, README, CTA, FAQ, launch,
-  social, email, and SEO/AEO/AI EO copy with claim boundaries.
-- `$suede-brand-voice`: Align public language to the selected brand voice,
-  cutting generic AI phrasing while preserving specific proof and vocabulary.
-- `$suede-seo-audit`: Audit metadata, headings, schema, crawlability, search
-  intent, answer intent, internal links, proof, and AI-readable structure.
-- `$suede-visibility-grader`: Grade whether a public page can be found,
-  understood, trusted, cited by AI systems, and acted on.
-- `$suede-site-alchemy`: Sharpen landing pages, campaign pages, product
-  microsites, CTAs, proof, mobile flow, and conversion rhythm.
-- `$suede-code-grader`: Give code, PRs, plugins, APIs, MCP servers, and release
-  candidates a direct A-F ship-risk grade with lane scores.
-- `$suede-code-review`: Review changes for behavior bugs, regressions,
-  security, tests, release gaps, install paths, public-claim drift, and fix
-  briefs.
-- `$suede-agent-teams`: Orchestrate scout, planning, safe parallel build,
-  adversarial review, consensus review, WIP protection, release lock, recovery,
-  and evidence handoff loops.
-- `$suede-launch-packaging`: Package public releases with proof links, install
-  commands, docs notes, social or email copy, QA, and handoff language.
-- `$suede-install-support`: Fix public skill install paths, local plugin notes,
-  MCP setup, installer command QA, and ambassador-safe setup instructions.
-- `$suede-mcp-qa`: Validate MCP tools, resources, prompts, catalog output,
-  install options, protocol behavior, and docs alignment.
-- `$suede-ambassador-explainer`: Create talk tracks, DMs, posts, emails, FAQs,
-  onboarding copy, objection handling, and public explanations.
-- `$suede-public-claim-check`: Remove unsupported claims around traction,
-  legal clearance, payouts, registry writes, private access, rankings, partners,
-  pricing, and install availability.
-- `$suede-agent-commerce`: Make creative works, docs, skill packs, rights
-  packages, licensing notes, metadata, and public boundaries readable to
-  agents.
-- `$suede-era-builder`: Build an artist era with visual language, symbols, fan
-  rituals, content rules, rollout tone, rights awareness, and campaign CTAs.
-- `$suede-song-to-universe`: Expand one song into story scenes, imagery,
-  captions, fan prompts, merch objects, drop mechanics, and campaign ideas.
-- `$suede-hook-hunter`: Find 5 to 15 second lyrical, visual, emotional, and
-  fan-participation hooks that can travel across short-form platforms.
-- `$suede-release-stunt-lab`: Design public-safe release stunts, fan missions,
-  clues, timed drops, unlocks, collector actions, and campaign surprises.
-- `$suede-fan-rituals`: Create repeatable fan phrases, comments, gestures,
-  unlock actions, live moments, and stampable participation tasks.
-- `$suede-visualizer-director`: Create treatments for visualizers, lyric
-  videos, canvas loops, stage screens, cover motion, teaser edits, and AI video
-  prompts.
-- `$suede-merch-object-lab`: Turn lyrics, lore, symbols, inside jokes, and
-  visual codes into merch objects, bundles, collector items, and drop
-  mechanics.
-- `$suede-setlist-theater`: Design live set arcs, transitions, crowd moments,
-  visual cues, talk breaks, encore moves, and post-show actions.
-- `$suede-catalog-resurrection`: Turn dormant songs, demos, stems, alternate
-  takes, covers, live clips, and old assets into new campaigns or fan drops.
-- `$suede-artist-identity-forge`: Sharpen artist identity across voice,
-  visuals, lore, values, audience promise, symbols, anti-references, and public
-  positioning.
-- `$suede-collab-matchmaker`: Design collaboration lanes with producers,
-  remixers, visual artists, venues, brands, creators, and campaign partners.
-- `$suede-campaign-in-a-box`: Package a complete rollout with announce copy,
-  teaser sequence, release-week plan, fan actions, email, site sections, and
-  press angles.
-- `$suede-sync-packaging`: Prepare tracks for sync-style review with scene-fit
-  angles, one-sheet copy, asset needs, lyric flags, rights gaps, and safe pitch
-  copy.
-- `$music-release-metadata-linter`: Audit music, audio, video, artwork, and
-  creative release folders for metadata, rights, split, file, and intake gaps.
-- `$suede-rights-passport`: Prepare creator folders for intake with
-  provenance, rights, credits, splits, licenses, media notes, and missing-info
-  reports.
-- `$suede-rights-audit`: Audit ownership claims, contributors, credits,
-  royalty splits, sample status, licenses, release history, metadata, and
-  provenance gaps.
-- `$suede-provenance-map`: Map source files, stems, masters, artwork, lyrics,
-  documents, metadata, public URLs, hashes, evidence trails, and conflicts.
-- `$suede-licensing-prep`: Prepare licensing review notes, restrictions, open
-  questions, clearance gaps, safe outreach materials, and public-safe summaries.
-- `$suede-royalty-routing-brief`: Summarize split readiness, contributor
-  payment roles, royalty destinations, payout caveats, missing confirmations,
-  and routing questions.
-- `$suede-workflow-skills`: Load the public umbrella workflow across all design,
-  copy, SEO, QA, review, artist, rights, agent-commerce, and launch lanes.
+- `$suedify`: Study a reference URL and push a target URL toward that design language with safe layout, hierarchy, copy, token distillation, screenshot comparison, and QA discipline.
+- `$suede-design`: Polish any frontend UI through layout, hierarchy, typography, color, spacing, motion, imagery, state coverage, accessibility basics, responsive QA, and implementation handoff.
+- `$suede-copy`: Write or rewrite website, docs, README, CTA, FAQ, launch, social, email, and SEO/AEO/AI EO copy with claim boundaries and the full anti-slop gate.
+- `$suede-seo-audit`: Full SEO, AEO, and AI EO audit covering technical access, schema, crawlability, answer intent, internal links, copy quality, conversion, and a scored visibility report.
+- `$suede-visibility-grader`: Grade any public page A-F for findability, first-screen clarity, CTA pull, proof and trust, AI readability, and design signal — with grade caps that prevent inflation.
+- `$suede-site-alchemy`: Transform landing pages, campaign pages, and microsites into conversion engines with offer spine, hero voltage, proof stack, CTA ladder, and mobile polish.
+- `$suede-code-grader`: Grade any code change, PR, plugin, API, or MCP server A-F across seven ship-risk lanes with required upgrades before ship.
+- `$suede-code-review`: Full-context code review for behavior bugs, regressions, security, tests, release gaps, install paths, public-claim drift, and fix briefs.
+- `$suede-agent-teams`: Orchestrate large or risky work into scout, planner, builder, reviewer, and release-verifier lanes with WIP protection, adversarial review, consensus review, and evidence handoff.
+
+For artist identity, creator campaigns, era building, music rights, provenance mapping, royalty routing, licensing prep, sync packaging, and release metadata — install the extended Suede creator packs from the same GitHub repo.
+
+When an individual skill is not installed, this umbrella skill runs a condensed version of that lane. Install the full suede-creator-skills pack for best results.
 
 Use these `/` options as site-alchemy notes, not shell commands:
 

@@ -10,6 +10,30 @@ alive without drifting into generic AI output. It covers product UI, brand
 surfaces, landing pages, dashboards, component systems, responsive polish, and
 visual QA.
 
+## Company Override
+
+This skill works for any company's frontend, not only Suede. If the target
+belongs to a different brand, replace Suede-specific design language (creator
+tools, rights ledgers, waveform proof, provenance timelines) with design
+decisions grounded in the target company's product, audience, and visual
+identity. Keep the full workflow: operating preflight, task router, design
+laws, visual QA, accessibility, responsive checks, and ship gate.
+
+Accept a brief in natural language or this form:
+
+```text
+Company:
+Product surface:
+Audience:
+Visual identity notes:
+Tone:
+Design system or tokens:
+Constraints:
+```
+
+When no brief is supplied and the work is Suede UI, default to Suede design
+identity and the Subject First / One Memorable Move laws.
+
 ## Operating Stance
 
 - Work from current source and a rendered screen. Do not design from memory
@@ -25,10 +49,17 @@ visual QA.
   or matches an established local pattern.
 - For visual work, render the result. Screenshots beat code inspection.
 
-Before editing files, state this preflight in the working update:
+Before any design work, read the surface context:
+- Local `PRODUCT.md` — users, brand, tone, anti-references, strategic principles
+- Local `DESIGN.md` — color tokens, type scale, component inventory, spacing
+- `AGENTS.md`, `AI_HANDOFF.md`, or `README.md` — agent guidance and surface context
+
+If PRODUCT.md or DESIGN.md is missing on a major surface, note it and proceed with available context. Offer to create them after completing the task.
+
+Then state this preflight in the working update:
 
 ```text
-SUEDE_DESIGN_PREFLIGHT: target=<repo-or-folder> surface=<route-or-url> register=<brand|product> context=<pass|partial> git=<pass|skipped:reason> render=<pass|pending|skipped:reason> mutation=open
+SUEDE_DESIGN_PREFLIGHT: target=<repo-or-folder> surface=<route-or-url> register=<brand|product> context=<pass|partial|none> design_system=<loaded|not_found> git=<pass|skipped:reason> render=<pass|pending|skipped:reason> mutation=open
 ```
 
 For major design work, reusable systems, reference visual matching, App Store
@@ -47,6 +78,7 @@ Also apply the shared no-missed gate at
 `../suede-workflow-skills/references/no-missed-quality-gates.md` when the work
 touches copy, design-system, visual QA, Suedify, visibility, or public launch
 quality.
+(Requires suede-workflow-skills from the same repo. If not installed, run Copy Gate, Visual QA Gate, SEO/AEO/AI EO Gate, Design System Gate, and Launch Gate checklists using the criteria defined in the Workflow section of this skill.)
 
 ## Task Router
 
@@ -150,15 +182,25 @@ device. Keep the surrounding UI disciplined so the signature move carries.
 
 ### Color
 
-- Pick a color strategy before picking values: restrained, committed, full
-  palette, or drenched.
-- For new CSS, prefer OKLCH when practical. Tint neutrals; do not use pure
-  `#000` or `#fff`.
+- Pick a strategy from the Color Strategy Axis below before picking any values.
 - Avoid one-note palettes. Do not default to purple-blue gradients, beige SaaS,
   dark navy dashboards, or crypto-neon unless the specific Suede surface
   demands it.
 - Color must encode meaning: ownership, proof, action, risk, state, tier,
   provenance, or momentum.
+
+### Color Strategy Axis
+
+Before picking values, commit to a strategy on this axis:
+
+- **Restrained**: tinted neutrals + one accent ≤10% of surface area. Default for product dashboards, admin, tools, and focus-heavy workflows.
+- **Committed**: one saturated color carries 30–60% of the surface. Default for brand pages and identity-driven screens. The "one accent ≤10%" rule does NOT apply here.
+- **Full palette**: 3–4 named color roles, each used deliberately. Use for data visualization, campaign pages, and multi-feature products.
+- **Drenched**: the surface IS the color. Use for campaign heroes, launch moments, and brand statements.
+
+Pick a strategy before picking values. Avoid defaulting to Restrained for everything — Committed and Full palette designs require it to feel intentional.
+
+For CSS color values, prefer OKLCH. Reduce chroma as lightness approaches 0 or 100 to avoid garish extremes. Tint every neutral toward the brand hue (chroma 0.005–0.01 is enough). Never use pure #000 or #fff.
 
 ### Typography
 
@@ -171,10 +213,28 @@ device. Keep the surrounding UI disciplined so the signature move carries.
 - Match type size to context. Dashboards, cards, and toolbars need compact
   hierarchy, not hero-scale text.
 
+Typography anti-patterns to avoid without explicit justification:
+- Overused system fonts: Inter, Roboto, Arial, SF Pro as the display face
+- Symmetric type pairing: display and body from the same family
+- Uniform weight: same weight across headline, subhead, and body
+- Letter-spacing on body copy
+- Negative letter-spacing on small text (under 16px)
+
+Pair typefaces deliberately: one font earns the display role (personality, brand signal), one earns the body role (readability, neutrality). They should contrast — a geometric display pairs with a humanist body; a serif display pairs with a sans body.
+
 ### Layout
 
 - Make structure explain the product. Use bands, rails, timelines, consoles,
   grids, tabs, and split panes because the content needs them.
+
+Spatial composition: intentional layouts use asymmetry, overlap, diagonal flow, and the tension between density and negative space. All of these are legitimate tools:
+- Asymmetry: column grids that don't divide evenly, intentional visual weight on one side
+- Overlap: elements that break their containing rows to create depth
+- Diagonal flow: content that leads the eye along a non-horizontal axis
+- Generous negative space OR controlled density — not an accidental middle ground
+
+Don't wrap everything in a container. Most things don't need one.
+
 - Cards are for repeated items, modals, and framed tools. Do not put cards
   inside cards. Do not turn every section into a floating card.
 - Stable UI elements need stable dimensions: boards, grids, icon buttons,
@@ -209,8 +269,10 @@ device. Keep the surrounding UI disciplined so the signature move carries.
 
 - Animate intent, not decoration.
 - Do not animate layout properties.
-- Use eased exits and entrances. Avoid bounce and elastic motion.
+- Use eased exits and entrances. Ease out with exponential curves (ease-out-quart / quint / expo). Avoid bounce and elastic motion.
 - Respect reduced motion.
+- Prefer one well-orchestrated page load with staggered reveals (animation-delay) over scattered micro-interactions. Use scroll-triggered reveals and hover states that create genuine surprise, not decoration.
+- When using React, prefer the Motion library for animation work.
 
 ## Design System Quality Of Life
 
@@ -298,6 +360,32 @@ earned.
 - Use the same action name across button, toast, empty state, and confirmation.
 - Errors must say what happened and how to fix it.
 - Empty states should point to the next useful action.
+
+## Aesthetic Direction
+
+For any new surface or significant redesign, commit to a clear aesthetic direction before writing code. Name it explicitly.
+
+Tonal spectrum — choose one and execute it with precision:
+- **Refined minimal**: restraint, negative space, weight as the only accent, no ornamentation
+- **Editorial**: strong typography hierarchy, asymmetry, text as structure, headline-first layout
+- **Brutalist**: raw grids, exposed structure, high contrast, deliberate anti-polish
+- **Retro-technical**: monospace, terminal palette, scan-line texture, system-UI references
+- **Organic**: rounded forms, warm neutrals, tactile texture, soft shadow
+- **Maximalist**: density as delight, layered elements, multiple active typefaces, controlled chaos
+- **Luxury refined**: generous space, serif hierarchy, muted palette, detail-obsessed craft
+- **Product-utilitarian**: information density, data-first, compact controls, no decorative chrome
+
+Bold maximalism and refined minimalism both work. The failure mode is neither — a design that has no committed direction reads as generic. Pick one tone and execute it fully.
+
+**Unforgettable factor**: every major surface should have one move that earns memory. For Suede that might be a rights ledger, a waveform proof panel, or a chain-of-title timeline. For other companies, it should be one subject-native device — something that only makes sense for THEIR product. Name it before implementation.
+
+**AI slop check**: before committing to an aesthetic, run two reflex tests:
+1. Could someone guess the theme and palette from the product category alone ("observability → dark blue", "healthcare → white + teal")? That's the first-order training-data reflex. Reject it.
+2. Could someone guess the aesthetic family from category-plus-anti-references? That's the second-order trap — the first reflex was avoided but the second wasn't. Go further.
+
+**Theme sentence**: name the physical scene concretely enough that it forces the design answer. "A studio engineer reviewing a rights dispute at 2am on a secondary monitor" forces different choices than "a user looking at data." If the sentence doesn't force the answer, it's not concrete enough. Add detail until it does. Dark vs. light is never a default — not dark because tools look cool dark, not light to be safe.
+
+**Background and atmosphere**: gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, and decorative borders are all legitimate tools when they serve the aesthetic. Do not substitute generic gradient blobs, bokeh orbs, or CSS-only approximations for real art direction.
 
 ## Implementation Workflow
 
