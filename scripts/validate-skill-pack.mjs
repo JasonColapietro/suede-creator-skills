@@ -47,6 +47,7 @@ const requiredDocsPages = new Set([
   "johnny-suede-design",
   "johnny-suede-write",
   "music-release-metadata-linter",
+  "suede-agent-teams",
   "suede-code-grader",
   "suede-rights-passport",
   "suede-visibility-grader",

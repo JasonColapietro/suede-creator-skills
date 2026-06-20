@@ -92,6 +92,7 @@ signals become stamps, and what intentionally ships later, see
 - [Copy bank page](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) - live copy bank for sharing, explaining, and documentation work.
 - [Public installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - GitHub skill install commands plus the Suede Skills MCP server for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with primary skill pages, install links, manifests, scripts, folders, and resource maps.
+- [Suede Agent Teams docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html) - controlled max-agent loops for scout, safe parallel build, adversarial review, visibility grading, code grading, release lock, recovery, and evidence handoff.
 - [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
 - [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
