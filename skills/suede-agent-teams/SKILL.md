@@ -287,15 +287,11 @@ Repeat fix and review cycles until no blocker remains or the work is held.
 
 ## Status Vocabulary
 
-The only valid state progression:
+Valid states in order: `scoped` → `planned` → `executing` → `changed locally` → `verified locally` → `reviewed` → `committed` → `pushed` → `deployed` → `verified live` → `released`
 
-```
-scoped → planned → executing → changed locally → verified locally → reviewed → committed → pushed → deployed → verified live → released
-     ↕                                                                                                              ↕
-  blocked (at any stage)                                                                            held (pending action item)
-```
+Interrupt states: `blocked` (needs external action) | `held` (needs named fix before continuing)
 
-Do not skip states. `changed locally` is not `verified locally`. `deployed` is not `verified live`. Do not mark `released` until the done signal from the Team Contract is satisfied.
+Do not skip. `changed locally` is not `verified locally`. `deployed` is not `verified live`. Do not mark `released` until the done signal from the Team Contract passes.
 
 ## Scenario Templates
 

@@ -134,38 +134,11 @@ For `--deep` reviews on auth changes, payment flows, data migrations, or public 
 
 Collect consensus first. If high-severity concerns persist after a fix cycle, keep status at `hold` and name the smallest next check or patch.
 
-## Suede A-F Code Grade
+## A-F Code Grade
 
-For important code, MCP, plugin, public-site, or release-bound changes, include
-an A-F code grade after findings. The grade is not a lint score. It is a ship
-risk summary tied to evidence.
+For important code, MCP, plugin, public-site, or release-bound changes, include an A-F grade after findings. Use the $suede-code-grader rubric — 7 lanes (Correctness, Security, Data/State, Suede Truth, UX/Release, Tests, Deploy Readiness) with the same A-F meaning and Instant-F triggers defined there.
 
-Grade each lane:
-
-- **Correctness:** the changed behavior works for the intended path and likely
-  edge cases.
-- **Security and permissions:** auth, secrets, payment, wallet, injection, path,
-  and data exposure risks fail closed.
-- **Data and state:** schemas, migrations, caches, jobs, webhooks, retries, and
-  state transitions stay consistent.
-- **Suede truth:** rights, provenance, registry, royalty, agent-commerce, public
-  copy, and product claims match implemented behavior.
-- **UX and release behavior:** user-visible states, mobile/native shells,
-  metadata, screenshots, links, and public routes hold together.
-- **Tests and verification:** changed behavior has meaningful tests, builds,
-  screenshots, simulator runs, live/API readbacks, or documented caveats.
-- **Deploy readiness:** env vars, feature flags, configs, docs, install paths,
-  and rollback expectations are clear.
-
-Grade meaning:
-
-- **A:** ship and use as a reference for similar work.
-- **B:** ship-with-caveats; no blocker, but named follow-ups remain.
-- **C:** hold until focused fixes land and the weak lanes are rechecked.
-- **D:** hold; serious production, release, security, or claim risk remains.
-- **F:** do not ship; core behavior, safety, or source truth is broken.
-
-Output:
+Grade output block:
 
 ```text
 Code grade:

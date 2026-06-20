@@ -21,7 +21,7 @@ When no brief is supplied and the work is Suede UI, default to Suede design iden
 - Work from current source and a rendered screen. Do not design from memory when a repo, live URL, screenshot, or local preview can be checked.
 - Keep Suede public copy anchored in creator ownership, programmable IP, rights, provenance, registry-backed media, royalty routing, and agent commerce. Do not reduce Suede to a generic AI music app.
 - Prefer the existing app framework, tokens, components, icon library, and routing patterns. Add a new abstraction only when it removes real complexity or matches an established local pattern.
-- For visual work, render the result. Screenshots beat code inspection.
+- For visual work, render the result. Screenshots beat code inspection. Minimum: desktop at 1280px width, mobile at 390px width. For App Store submissions: 1290×2796px (6.7-inch), 1488×2266px (iPad Pro 13-inch).
 
 Before any design work, read the surface context:
 - Local `PRODUCT.md`: users, brand, tone, anti-references, strategic principles
