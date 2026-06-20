@@ -134,11 +134,36 @@ For `--deep` reviews on auth changes, payment flows, data migrations, or public 
 
 Collect consensus first. If high-severity concerns persist after a fix cycle, keep status at `hold` and name the smallest next check or patch.
 
-## A-F Code Grade
+## Deploy Safety Gate
 
-For important code, MCP, plugin, public-site, or release-bound changes, include an A-F grade after findings. Use the $suede-code-grader rubric — 7 lanes (Correctness, Security, Data/State, Suede Truth, UX/Release, Tests, Deploy Readiness) with the same A-F meaning and Instant-F triggers defined there.
+Run this automatically at the end of every review. No exceptions. It answers one question: **is this safe to deploy right now?**
 
-Grade output block:
+Grade each dimension. Each is pass / conditional / block:
+
+- **Breaking changes**: Does this change any public API signature, database schema, config key, or interface contract without a versioned migration or backward-compatible fallback? Block if yes without migration path.
+- **Rollback safety**: Can a `git revert` fully undo this? Red flags: schema migrations, irreversible external API calls (email sent, payment charged, data permanently deleted), S3/storage mutations, message queue publishes. Block if rollback requires manual data repair.
+- **Blast radius**: What fraction of users or requests does this code path serve? State it: `~0%` (new feature, flagged), `~partial` (specific flow), `~100%` (shared middleware, auth, DB query in hot path). Higher blast radius requires more evidence before deploy.
+- **Environment readiness**: Are all required env vars, secrets, feature flags, and config values already deployed to production? Block if a required env var doesn't exist in production yet.
+- **Dependency changes**: Are new or updated packages pinned to an exact version, from a trusted source, and CVE-free? Block if a new dependency has a known CVE or is unpinned in a production context.
+- **Data mutations**: Does this write, update, or delete production data in a way that can't be undone by revert alone? Block if yes without a tested restore path.
+- **Security delta**: Does this change improve, hold neutral, or worsen the security posture? Block if it introduces new attack surface without mitigation.
+
+Output block — required at the end of every review:
+
+```text
+DEPLOY SAFETY
+Breaking changes: pass | conditional | block — [evidence]
+Rollback safety: pass | conditional | block — [evidence or red flag]
+Blast radius: ~X% — [which path or user segment]
+Environment readiness: pass | conditional | block — [missing vars if any]
+Dependency changes: pass | conditional | block — [new deps and CVE status]
+Data mutations: pass | conditional | block — [irreversible operations if any]
+Security delta: improved | neutral | block — [surface changed]
+Verdict: SAFE TO DEPLOY | DEPLOY WITH CONDITIONS | DO NOT DEPLOY
+Conditions (if any):
+```
+
+Also run the $suede-code-grader rubric for the A-F lane grades:
 
 ```text
 Code grade:
