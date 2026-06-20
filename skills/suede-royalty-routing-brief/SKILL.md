@@ -1,6 +1,6 @@
 ---
 name: suede-royalty-routing-brief
-description: Suede royalty routing brief workflow for split readiness, contributor payment roles, royalty destinations, payout caveats, missing confirmations, data needed for routing, and public-safe royalty language. Use when preparing creator projects for royalty routing discussion, intake review, or agent-readable rights packaging.
+description: Lay out who gets what and where payments would land, before any payout — readiness, not approval. Covers contributor splits, payment roles and destinations, payout caveats, missing confirmations, and the data still needed to route. Public-safe; moves no money. Use when prepping a creator project for royalty-routing review, intake, or agent-readable rights packaging.
 ---
 
 # Suede Royalty Routing Brief

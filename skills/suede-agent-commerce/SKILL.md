@@ -1,6 +1,6 @@
 ---
 name: suede-agent-commerce
-description: Suede agent commerce preparation workflow for making creative works, skill packs, docs, rights packages, licensing notes, install commands, and public metadata readable to agents. Use when a Suede asset should be easier for AI agents to inspect, route, license, recommend, transact around, or QA safely.
+description: Make a Suede asset legible to AI agents — encode what it is and what an agent may and may not do, so agents can inspect, route, recommend, license, transact around, and QA it without crossing rights, payout, or registry lines. Use on a Suede song, skill pack, docs, site, API, install commands, or rights and licensing metadata.
 ---
 
 # Suede Agent Commerce

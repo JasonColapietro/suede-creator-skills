@@ -1,6 +1,6 @@
 ---
 name: suede-install-support
-description: Suede public install support for Codex skills, Claude skills, GitHub skill folders, MCP setup, local plugin notes, installer command QA, marketplace confusion, raw GitHub checks, and ambassador-safe install instructions. Use when install commands fail, public users cannot add a skill, @personal appears in public copy, or docs need a simpler install path.
+description: Get installs working public-first and keep the @personal path out of public docs. Fixes failing Codex and Claude installs, GitHub repo-and-path commands, raw GitHub checks, MCP setup, local plugin notes, and marketplace confusion. Use when an install fails, a public user cannot add a skill, @personal leaks into public copy, or a README, docs, or ambassador step needs a simpler path.
 ---
 
 # Suede Install Support

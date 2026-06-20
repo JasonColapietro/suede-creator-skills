@@ -1,6 +1,6 @@
 ---
 name: suede-mcp-qa
-description: Suede MCP server QA workflow for stdio JSON-RPC tools, resources, prompts, catalog output, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, protocol errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP.
+description: Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP.
 ---
 
 # Suede MCP QA

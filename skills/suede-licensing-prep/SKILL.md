@@ -1,6 +1,6 @@
 ---
 name: suede-licensing-prep
-description: Suede licensing preparation workflow for music, media, rights notes, sample status, contributor approvals, public URLs, sync/licensing readiness, restrictions, clearance gaps, and safe outreach materials. Use when a creator project needs to be organized for licensing discussion, sync review, brand use, or partner review without claiming clearance.
+description: Get a music or media project ready to talk licensing without claiming rights are cleared. Pulls contributor approvals, sample status, public URLs, restrictions, and rights notes into a brief that flags clearance gaps and confirmed-versus-unconfirmed claims. Use before a sync, brand, or partner licensing discussion — not a sync one-sheet or rights-gap audit.
 ---
 
 # Suede Licensing Prep

@@ -1,6 +1,6 @@
 ---
 name: suede-ambassador-explainer
-description: Suede ambassador explanation workflow for public talk tracks, DMs, posts, emails, FAQs, onboarding copy, skill-pack explanations, install guidance, objection handling, and claim-safe routing. Use when writing language for ambassadors who need to explain Suede skills, workflows, MCP, Suedify, design, copywriting, SEO/AEO/AI EO, artist campaign tools, creator utilities, or public install paths.
+description: Hand ambassadors hype-free talk tracks that explain Suede outcome-first, without an accidental false claim. Plain one-liners, DMs, posts, emails, FAQs, onboarding and install explanations, plus objection handling and claim-safe routing across skills, workflows, MCP, Suedify, design, copywriting, SEO/AEO/AI EO, artist campaigns, creator utilities, and public install paths. Use when an ambassador needs words to explain Suede to others — not to audit public copy or fix a failing install.
 ---
 
 # Suede Ambassador Explainer
