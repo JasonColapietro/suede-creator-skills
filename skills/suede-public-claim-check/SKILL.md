@@ -1,6 +1,6 @@
 ---
 name: suede-public-claim-check
-description: Suede public claim check workflow for copy, docs, READMEs, launch pages, skill descriptions, ambassador language, social posts, emails, metadata, and MCP output. Use when public wording may imply unsupported traction, legal clearance, payouts, registry writes, private access, guaranteed outcomes, or misleading install availability.
+description: Catch the over-claim before it ships — wording that implies traction, legal clearance, payouts, registry writes, private access, guaranteed outcomes, or misleading install availability. Scans copy, docs, READMEs, launch pages, skill descriptions, ambassador language, social, emails, metadata, and MCP output. Use before any public Suede wording goes live.
 ---
 
 # Suede Public Claim Check

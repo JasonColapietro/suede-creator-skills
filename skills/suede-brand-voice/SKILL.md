@@ -1,6 +1,6 @@
 ---
 name: suede-brand-voice
-description: Suede brand voice workflow for public copy, README prose, docs, CTAs, FAQs, social copy, launch language, skill descriptions, and ambassador text. Use when copy should sound like Suede: specific, creator-owned, rights-aware, agent-commerce-aware, polished, and free of generic AI phrasing.
+description: Align existing public copy to the Suede house voice — specific, creator-owned, rights-aware, never generic AI. Covers README prose, docs, CTAs, FAQs, social, launch language, skill descriptions, and ambassador text. Use when wording should carry the Suede voice, not the default.
 ---
 
 # Suede Brand Voice

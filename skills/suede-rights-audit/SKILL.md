@@ -1,6 +1,6 @@
 ---
 name: suede-rights-audit
-description: Suede creator-rights audit workflow for ownership claims, contributors, credits, royalty splits, sample status, license notes, release history, public URLs, metadata gaps, provenance gaps, and intake blockers. Use before rights passporting, licensing prep, registry readiness, royalty routing, or Suede creator intake.
+description: Find the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance, metadata gaps, public URLs, and intake blockers. Flags what's confirmed versus unknown across ownership, contributors, credits, licenses, and release history. Use before rights passporting, licensing prep, registry readiness, royalty routing, or Suede creator intake.
 ---
 
 # Suede Rights Audit

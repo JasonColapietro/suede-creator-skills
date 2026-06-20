@@ -1,6 +1,6 @@
 ---
 name: suede-provenance-map
-description: Suede provenance mapping workflow for source files, stems, masters, artwork, lyrics, documents, metadata, public URLs, hashes, evidence trails, unknown origins, and review notes. Use when mapping where a creative work came from before rights passporting, licensing review, registry prep, or agent commerce.
+description: Trace a creative work's origin trail — source files, stems, masters, artwork, lyrics, documents, metadata, public URLs, hashes, evidence trails, review notes. Flags unknown origins without overclaiming, so licensing and registry work build on a documented evidence trail. Use before rights passporting, licensing review, registry prep, or agent commerce.
 ---
 
 # Suede Provenance Map

@@ -1,6 +1,6 @@
 ---
 name: suede-launch-packaging
-description: Suede launch packaging workflow for public releases, GitHub Pages updates, README launches, skill-pack releases, docs launches, social/email copy, proof links, install commands, QA, and handoff notes. Use when preparing a Suede skill, repo, site, MCP server, feature, or public docs update to be shared.
+description: Ship Suede work as a launch, not a loose drop — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, and handoff notes, assembled and checked. Use when a skill, repo, site, MCP server, feature, or docs update is ready to share.
 ---
 
 # Suede Launch Packaging
