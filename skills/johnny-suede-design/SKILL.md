@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-design
-description: Entry point for any design request: routes to the right lane (visual, copy, SEO, iOS, CRO), runs the full pass, and hands off a shippable surface with grades and verified QA.
+description: Design anything Suede ships. Routes brand surfaces, product UI, and token systems through register classification, context gate, design laws, and visual QA. Use as the fast entry point for any design request.
 ---
 
 # Johnny Suede Design

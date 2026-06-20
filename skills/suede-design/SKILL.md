@@ -1,6 +1,6 @@
 ---
 name: suede-design
-description: Suede-specific frontend design, redesign, UI polish, visual audit, copy refinement, token extraction, responsive QA, and implementation handoff workflow. Use when work touches Suede websites, app surfaces, dashboards, campaign pages, onboarding, empty states, forms, components, tokens, typography, colors, layout, motion, imagery, public copy, or any design-related frontend change.
+description: Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell.
 ---
 
 # Suede Design

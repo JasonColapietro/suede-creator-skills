@@ -1,6 +1,6 @@
 ---
 name: suedify
-description: "Make any website feel like another website. Suedify studies a reference URL — Apple, Stripe, Linear, Supreme, or any site — extracts its design grammar, and implements the layout, hierarchy, typography, color, section rhythm, and motion into a target site you control. Includes visual fingerprinting, design-token distillation, screenshot comparison QA, responsive verification, and legal/brand safety guardrails. Use when asked to 'make this look like that' or to give any site a premium style treatment."
+description: Clone any site's visual DNA into transferable Suede tokens. Use when extracting color strategy, type system, spacing rhythm, motion fingerprint, or brand voice from a reference site, screenshot, or design.
 ---
 
 # Suedify

@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: Split high-risk work into coordinated agent lanes with quality gates, WIP protection, and a signed handoff. Use when the task has multiple write surfaces, a rollback cost, or a release gate.
+description: Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence.
 ---
 
 # Agent Team Orchestrator

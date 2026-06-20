@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Write"
-  short_description: "Full writing, company voice, SEO, Apple, iOS, and line-edit mode"
-  default_prompt: "Use $johnny-suede-write to write, rewrite, audit, and package this public copy for my company with SEO/AEO/AI EO, Apple and iOS copy when relevant, CTAs, company voice, claim boundaries, the full anti-slop line edit, and final QA."
+  short_description: "Write anything Suede ships — long-form, short-form, GitHub, social, email — with frameworks, variants, and a copy score."
+  default_prompt: "Use $johnny-suede-write to write [surface type and subject]. Identify the mode, choose the persuasion framework, generate variants, apply the anti-slop gate, and deliver a scored output."
 policy:
   allow_implicit_invocation: true

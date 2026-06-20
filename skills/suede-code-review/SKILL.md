@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: "Catches production regressions, security holes, and TS/React/Next.js-specific traps, ranked P0-P3 with one-line fixes. Full-context review: changed files, callers, contracts, deploy surface."
+description: Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade.
 ---
 
 # Suede Code Review

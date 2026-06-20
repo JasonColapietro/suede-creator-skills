@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: "A-F grader for any public page: findability, first-screen clarity, CTA pull, proof and trust, AI readability, and design signal. Evidence-required grade caps prevent inflation. Returns a ship gate (ship / ship-with-caveats / hold) and ranked fixes. Not an SEO audit — technical crawlability lives in suede-seo-audit."
+description: Grade any public page for findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Returns A-F grades with evidence and fixes. Use before any public launch, GitHub Pages promotion, or paid campaign.
 ---
 
 # Suede Visibility Grader

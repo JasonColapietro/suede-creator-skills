@@ -1,6 +1,6 @@
 ---
 name: suede-code-grader
-description: Instant A-F ship verdict for any code change — catches auth bypasses, payment gaps, and missing verification before they reach production. Grades correctness, security, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness.
+description: Get a blunt A-F ship verdict on any code change. 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and example situations for every grade level. Use when you need a direct grade, not a full review.
 ---
 
 # Suede Code Grader

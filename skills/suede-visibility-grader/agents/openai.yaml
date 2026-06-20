@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Visibility Grader"
-  short_description: "Grade websites for visibility, CTA, trust, AI readability, and design signal"
-  default_prompt: "Use $suede-visibility-grader to grade this page A-F for findability, first-screen clarity, CTA pull, proof, AI readability, and rendered design signal with evidence, grade caps, and promotion readiness."
+  short_description: "A-F grade for findability, first-screen clarity, CTA pull, proof, and AI citation readiness."
+  default_prompt: "Use $suede-visibility-grader to grade [URL or page]. Score findability, first-screen clarity, CTA pull, proof quality, AI citation readiness, and design signal. Return an A-F grade per dimension with evidence and prioritized fixes."
 policy:
   allow_implicit_invocation: true

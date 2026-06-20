@@ -1,4 +1,6 @@
 interface:
   display_name: "Suede SEO Audit"
-  short_description: "Audit Suede pages for SEO, AEO, AI EO, and trust"
-  default_prompt: "Use $suede-seo-audit to audit this Suede page for search intent, answer intent, metadata, structure, trust, and verification."
+  short_description: "Make any page undeniable — 9-lane SEO + AI visibility audit with schema generation and exact rewrites."
+  default_prompt: "Use $suede-seo-audit to audit [URL or source file]. Run all 9 lanes: technical access, keyword research, metadata, structure, schema markup, E-E-A-T, topic clusters, Core Web Vitals, AI EO. Generate a content brief, competitor gap analysis, and exact rewrites for every finding."
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 interface:
   display_name: "Suedify"
-  short_description: "Match a reference style with screenshot QA"
-  default_prompt: "Use $suedify with a reference URL and target URL to restyle the target with Suede-safe fidelity, matched screenshots, token distillation, legal/brand boundaries, and visual QA."
+  short_description: "Clone any site's visual DNA — color, type, spacing, motion, brand voice — into transferable Suede tokens."
+  default_prompt: "Use $suedify to clone the visual DNA of [URL, screenshot, or design]. Extract the color strategy axis, type system, spatial rhythm, motion fingerprint, and brand voice. Output a complete DESIGN.md token set and style fingerprint ready to inject anywhere."
 policy:
   allow_implicit_invocation: true

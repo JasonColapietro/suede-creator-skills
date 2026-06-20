@@ -1,6 +1,6 @@
 ---
 name: suede-seo-audit
-description: Full SEO, AEO, and AI EO audit for websites, GitHub Pages, landing pages, app listings, docs surfaces, and any public URL. Covers technical access, metadata, schema markup, crawlability, search intent, answer intent, internal linking, content structure, copy quality, conversion readiness, and AI citation readiness. Produces ranked findings, exact rewrites, and a scored visibility report. Use when a page needs to be found, understood, cited by AI systems, and acted on.
+description: Make any page undeniable to search engines and AI systems. 9-lane audit covering technical access, keyword research, E-E-A-T signals, topic clusters, schema generation, Core Web Vitals, competitor gap analysis, and AI citation readiness.
 ---
 
 # Suede SEO Audit

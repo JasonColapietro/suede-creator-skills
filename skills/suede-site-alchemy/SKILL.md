@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: Transform websites, landing pages, campaign pages, and product microsites into polished Suede-grade conversion engines with aesthetic audit moves, sharper copy, CTA routing, SEO/AEO/AI EO checks, mobile/browser QA, and clear scope boundaries. Use for improving existing pages, packaging Suede Sites-style website growth offers, or routing larger app requests into Suede's proprietary app-builder workflow.
+description: Transmute any page into a conversion engine. Funnel analysis, friction audit, conversion math, A/B hypothesis generation, social proof architecture, pricing psychology, mobile CRO rules, and a quick wins list ranked by lift.
 ---
 
 # Suede Site Alchemy

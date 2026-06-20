@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-write
-description: Full-stack writing mode for Suede or any supplied company: routes automatically to the right copy, SEO, or CRO lane. Use when the task spans multiple lanes or when you do not know which sub-skill applies. Handles public copy, brand voice, SEO/AEO/AI EO, CTAs, Apple/iOS app copy, launch packaging, claim safety, and anti-slop editing in one pass.
+description: Write anything Suede ships. Routes any writing request — long-form, short-form, GitHub docs, social, email — through mode-specific structure, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.
 ---
 
 # Johnny Suede Write

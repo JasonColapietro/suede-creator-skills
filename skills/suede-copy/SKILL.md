@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: Write and sharpen conversion copy for headlines, CTAs, emails, social posts, page copy, and GitHub docs. Includes a proof gate and copy score. Works for any company.
+description: Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships.
 ---
 
 # Suede Copy
