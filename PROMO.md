@@ -257,7 +257,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 38-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, Suedify reference-site mimicry, design direction, copywriting, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 38-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, Apple and iOS surface support, Suedify reference-site mimicry, design direction, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -463,7 +463,7 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ```text
 I packaged the Suede agent workflow into 38 installable public skills.
 
-Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, QA, install support, claim checks, artist campaign tools, and optional MCP support.
+Johnny Suede Write, Johnny Suede Design, Apple and iOS surfaces, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility grading, A-F code grading, QA, install support, claim checks, artist campaign tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```

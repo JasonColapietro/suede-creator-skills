@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-write
-description: Full Johnny Suede writing mode for public copy, conversion copy, founder voice, website copy, GitHub README copy, skill docs, SEO/AEO/AI EO, CTAs, launch copy, social posts, emails, FAQs, ambassador language, claim boundaries, and anti-generic line editing. Use when the user asks to write, rewrite, package, explain, promote, audit, or polish any Suede-facing copy.
+description: Full Johnny Suede writing mode for public copy, conversion copy, founder voice, website copy, GitHub README copy, skill docs, Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI EO, CTAs, launch copy, social posts, emails, FAQs, ambassador language, claim boundaries, and anti-generic line editing. Use when the user asks to write, rewrite, package, explain, promote, audit, or polish any Suede-facing copy.
 ---
 
 # Johnny Suede Write
@@ -17,6 +17,10 @@ operator-grade, and useful to a real reader. Anchor public language in creator
 ownership, programmable IP, provenance, registry-backed media, royalty routing,
 licensing readiness, and agent commerce.
 
+Make the work discoverable. When relevant, tune language for GitHub Pages,
+Google, Gemini, AI search, app listings, Apple surfaces, iOS screens, and Suede
+SEO without keyword stuffing.
+
 Do not reduce Suede to a generic AI music app. Do not mention non-Suede source
 skills. Do not use em dashes in public copy.
 
@@ -24,11 +28,14 @@ skills. Do not use em dashes in public copy.
 
 - **Suede Copy:** website copy, docs copy, README copy, CTAs, taglines,
   product descriptions, social copy, launch copy, FAQ answers, and line edits.
+- **Apple And iOS Copy:** App Store copy, iOS onboarding, paywall language,
+  screenshot captions, settings text, permission prompts, release notes, and
+  mobile conversion copy.
 - **Suede Brand Voice:** founder voice, public-safe sharpness, specific
   language, and removal of generic AI phrasing.
-- **SEO/AEO/AI EO:** titles, descriptions, headings, answer-ready summaries,
-  FAQ fit, schema notes, internal links, sourceable proof, and AI-readable
-  claim structure.
+- **Suede SEO/AEO/AI EO:** discoverability, titles, descriptions, headings,
+  answer-ready summaries, FAQ fit, schema notes, internal links, sourceable
+  proof, and AI-readable claim structure.
 - **Site Alchemy Copy:** hero rewrites, offer spine, proof stack, CTA ladder,
   mobile copy rhythm, and conversion clarity.
 - **Visibility And CTA Check:** A-F judgment on whether the page can be found,
@@ -42,16 +49,17 @@ skills. Do not use em dashes in public copy.
 ## Workflow
 
 1. **Scout the surface.** Identify reader, page type, channel, primary action,
-   proof, live/source URL, and claim boundaries.
+   proof, live/source URL, Apple or iOS context when relevant, and claim
+   boundaries.
 2. **Choose the register.** Founder, ambassador, product, docs, GitHub,
    agency/client, creator, or technical operator.
 3. **Write the outcome first.** Lead with what the reader can do, not a list of
    features.
 4. **Build the proof stack.** Use real files, links, screenshots, commands,
    docs, installs, live URLs, or product artifacts.
-5. **Run the search pass.** Add SEO/AEO/AI EO title, meta description, H1,
-   subhead, FAQ, answer-ready summary, internal links, and schema notes when
-   relevant.
+5. **Run the discoverability pass.** Add Suede SEO/AEO/AI EO title, meta
+   description, H1, subhead, FAQ, answer-ready summary, internal links, schema
+   notes, and app-store wording when relevant.
 6. **Run the anti-slop pass.** Cut filler, binary setup lines, generic AI
    phrasing, vague promises, fake intensity, passive voice, and em dashes.
 7. **Run claim safety.** Keep founder-supplied facts when the user provided

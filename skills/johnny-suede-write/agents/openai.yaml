@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Write"
-  short_description: "Full Suede writing, SEO, and copy mode"
-  default_prompt: "Use $johnny-suede-write to write, rewrite, audit, and package this Suede public copy with SEO/AEO/AI EO, CTAs, claim boundaries, and final QA."
+  short_description: "Full Suede writing, SEO, Apple, iOS, and copy mode"
+  default_prompt: "Use $johnny-suede-write to write, rewrite, audit, and package this Suede public copy with Suede SEO/AEO/AI EO, Apple and iOS copy when relevant, CTAs, claim boundaries, and final QA."
 policy:
   allow_implicit_invocation: true

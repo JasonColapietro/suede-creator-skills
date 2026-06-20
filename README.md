@@ -3,10 +3,11 @@
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
 **Suede Creator Skills** is a public 38-skill pack for AI coding agents,
-design-heavy website work, copywriting, SEO/AEO/AI EO, Suedify-style site
-mimicry, QA, and creator workflows. It includes one umbrella workflow, design
-and copy lanes, Johnny Suede writing and design modes, SEO/AEO/AI EO audits,
-visibility and CTA grading, site
+design-heavy website work, Apple and iOS app surfaces, copywriting, Suede SEO
+discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
+workflows. It includes one umbrella workflow, design and copy lanes, Johnny
+Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
+grading, site
 alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
 ambassador explainers, claim checks, agent-commerce prep, artist campaign
 tools, and creator utility skills.
@@ -29,10 +30,12 @@ proof structure, and content rhythm before pushing the target toward the
 reference with Suede-safe design, copy, SEO, and QA.
 
 `johnny-suede-write` is the one-name writing mode: public copy, founder voice,
-SEO/AEO/AI EO, CTAs, launch copy, social/email variants, claim checks, and
-anti-generic line editing. `johnny-suede-design` is the one-name design mode:
-Suedify, UI polish, design-system QA, responsive checks, visibility grading,
-implementation handoff, and the full writing mode included.
+Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI
+EO, CTAs, launch copy, social/email variants, claim checks, and anti-generic
+line editing. `johnny-suede-design` is the one-name design mode: Suedify,
+Apple and iOS app surfaces, App Store screenshots, UI polish, design-system QA,
+responsive checks, visibility grading, implementation handoff, and the full
+writing mode included.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI

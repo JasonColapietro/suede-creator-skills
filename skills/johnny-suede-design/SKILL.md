@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-design
-description: Full Johnny Suede design mode for Suede websites, app surfaces, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, responsive QA, visual audits, copy refinement, SEO/AEO/AI EO, visibility grading, CTAs, and implementation handoff. Use when the user asks for the whole design stack, a redesign, a style mimic, a better website, a design-system pass, or any design-related frontend work that should include copy.
+description: Full Johnny Suede design mode for Suede websites, Apple and iOS app surfaces, App Store screenshots, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, responsive QA, visual audits, copy refinement, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, CTAs, and implementation handoff. Use when the user asks for the whole design stack, a redesign, a style mimic, a better website, a design-system pass, or any design-related frontend work that should include copy.
 ---
 
 # Johnny Suede Design
@@ -17,6 +17,11 @@ specific to Suede. Work from current source and rendered evidence whenever
 possible. Preserve the existing app framework, tokens, components, routing, and
 WIP unless the task explicitly asks for a larger rebuild.
 
+Make design decisions discoverable and shippable. When the surface is public,
+write and structure it for Suede SEO, AEO, AI EO, Google, Gemini, AI search, and
+clear CTAs. When the surface is mobile, include Apple, iOS, App Store,
+screenshot, onboarding, paywall, and app-shell needs in the design pass.
+
 Anchor design and copy in creator ownership, programmable IP, provenance,
 registry-backed media, royalty routing, licensing readiness, and agent
 commerce. Do not mention non-Suede source skills. Do not use em dashes in
@@ -28,6 +33,9 @@ public copy.
   with Suede-safe fidelity.
 - **Suede Design:** layout, hierarchy, typography, color, spacing, motion,
   imagery, state coverage, accessibility basics, and responsive QA.
+- **Apple And iOS Design:** iOS app surfaces, App Store screenshots, mobile
+  onboarding, paywalls, settings, permission states, icon/app-shell fit, and
+  Apple-style clarity when the project needs it.
 - **Johnny Suede Write:** public copy, founder voice, SEO/AEO/AI EO, CTAs,
   launch copy, claim boundaries, anti-slop editing, and final copy QA.
 - **Suede Site Alchemy:** offer spine, hero strength, proof stack, CTA ladder,
@@ -70,13 +78,14 @@ done signal.
 3. **Lock the visual direction.** Choose layout, type, color roles, asset
    strategy, motion posture, and one memorable subject-native move.
 4. **Write with the design.** Improve headings, buttons, body copy, empty
-   states, errors, proof blocks, FAQ, SEO/AEO/AI EO, and answer-ready summary.
+   states, errors, proof blocks, FAQ, Suede SEO/AEO/AI EO, answer-ready summary,
+   and Apple or iOS copy when relevant.
 5. **Build narrowly.** Use existing framework, components, tokens, and icon
    library. Avoid unrelated refactors.
 6. **Render and compare.** Check desktop and mobile, first viewport, text fit,
    spacing, states, accessibility basics, links, and visual balance.
 7. **Grade visibility.** Score findability, CTA pull, proof, AI readability,
-   and design signal when the surface is public.
+   Suede SEO strength, and design signal when the surface is public.
 8. **Review and ship.** Run the relevant test/build/check commands, then hand
    off with evidence and caveats.
 

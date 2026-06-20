@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for Johnny Suede Write, Johnny Suede Design, Suede design, copywriting, SEO/AEO/AI EO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
+description: Public umbrella workflow for Johnny Suede Write, Johnny Suede Design, Apple and iOS surfaces, Suede design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
 ---
 
 # Suede Workflow Skills
@@ -11,10 +11,11 @@ from one installable GitHub skill path.
 This skill is the public entry point for:
 
 - **Johnny Suede Write:** one loadable writing mode for copy, brand voice,
-  SEO/AEO/AI EO, CTAs, launch copy, claim checks, and anti-slop editing.
+  Suede SEO discoverability, SEO/AEO/AI EO, Apple and iOS copy, CTAs, launch
+  copy, claim checks, and anti-slop editing.
 - **Johnny Suede Design:** one loadable design mode for Suedify, UI polish,
-  design-system QA, responsive checks, visibility grading, and the writing
-  stack.
+  Apple and iOS surfaces, App Store screenshots, design-system QA, responsive
+  checks, visibility grading, and the writing stack.
 - **Suedify:** study a reference URL and push a target URL toward that style.
 - **Suede Design:** make a site, app surface, or component feel intentional,
   polished, responsive, and Suede-native.
@@ -386,8 +387,10 @@ When the task names a narrower Suede lane, route directly:
 
 - Public copy or tone: `suede-copy`, `suede-brand-voice`,
   `suede-public-claim-check`, or `johnny-suede-write` when the user wants the
-  whole writing stack from one mode.
-- Full design stack: `johnny-suede-design`.
+  whole writing stack from one mode, including Suede SEO discoverability and
+  Apple or iOS copy when relevant.
+- Full design stack: `johnny-suede-design`, including Apple and iOS surface
+  design when relevant.
 - Search/discovery: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
 - Code grade only: `suede-code-grader`.
