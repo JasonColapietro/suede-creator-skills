@@ -28,7 +28,8 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 Suede Creator Skills is a public skill pack for builders, designers, founders,
 creators, agencies, and AI power users. It ships 38 public `SKILL.md` folders:
 one umbrella workflow, Johnny Suede Write, Johnny Suede Design, Suedify,
-Apple and iOS surface support, design, copy, Suede SEO/AEO/AI EO, site alchemy,
+Apple and iOS surface support, supplied-company voice support, design, copy,
+Suede SEO/AEO/AI EO, site alchemy,
 visual QA, visibility grading, A-F code grading, QA, install support,
 ambassador, launch, max-agent, artist-campaign, and creator utility lanes.
 
@@ -302,10 +303,10 @@ manager, label, or legal reviewer still needs to confirm rights.
 ### Which skill should I run first?
 
 Run `johnny-suede-write` when you want the whole writing stack in one mode:
-copy, founder voice, Apple and iOS copy, App Store copy, Suede SEO
-discoverability, SEO/AEO/AI EO, CTAs, claim checks, launch copy, and
-anti-slop line editing. Run `johnny-suede-design` when you want the whole design
-stack, including Apple and iOS surfaces, App Store screenshots, visual QA, and copy. Run
+copy, company voice, Apple and iOS copy, App Store copy, SEO/AEO/AI EO, CTAs,
+claim checks, launch copy, and anti-slop line editing. Run
+`johnny-suede-design` when you want the whole design stack, including Apple and
+iOS surfaces, App Store screenshots, visual QA, company voice, and copy. Run
 `suedify` when you have a reference URL and a target
 URL. Run `suede-design` for visual systems and responsive QA, `suede-copy` for
 public copy, `suede-seo-audit` for search, answer intent, and metadata, and

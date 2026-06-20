@@ -24,21 +24,26 @@ worked so the agent can mimic it later, or keep as-is by saying nothing. At the
 end of meaningful work, the agent should give two explanations first: a very
 simple non-coder version, then the usual breakdown.
 
+Public GitHub users can bring their own company. Use the Johnny Suede umbrella
+modes with a company brief, voice, audience, proof, allowed claims, forbidden
+claims, CTA, assets, and reference URLs; the workflow should keep the Suede
+quality gates while replacing Suede voice and domain language with the user's
+brand.
+
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
 proof structure, and content rhythm before pushing the target toward the
 reference with Suede-safe design, matched screenshots, token distillation,
 copy, SEO, and QA.
 
-`johnny-suede-write` is the one-name writing mode: public copy, founder voice,
-Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI
-EO, CTAs, launch copy, social/email variants, claim checks, and anti-generic
-line editing with Directness, Rhythm, Trust, Specificity, Authenticity,
-Density, and Search/AI readability scoring. `johnny-suede-design` is the
-one-name design mode: Suedify,
+`johnny-suede-write` is the one-name writing mode: public copy, company voice,
+Apple and iOS app copy, App Store copy, SEO/AEO/AI EO discoverability, CTAs,
+launch copy, social/email variants, claim checks, and anti-generic line
+editing with Directness, Rhythm, Trust, Specificity, Authenticity, Density, and
+Search/AI readability scoring. `johnny-suede-design` is the one-name design mode: Suedify,
 Apple and iOS app surfaces, App Store screenshots, UI polish, design-system QA,
-responsive checks, visual QA, visibility grading, implementation handoff, and
-the full writing mode included.
+responsive checks, visual QA, visibility grading, implementation handoff,
+company voice, and the full writing mode included.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI
@@ -109,6 +114,22 @@ Use $suedify. Study https://apple.com and push https://example.com toward that d
 
 ```text
 Use $suede-workflow-skills to rewrite this page, audit SEO/AEO/AI EO, check design quality, and run final QA.
+```
+
+```text
+Use $johnny-suede-write for my company instead of Suede voice.
+Company: Acme Robotics.
+Audience: operations leaders at mid-market manufacturers.
+Voice: precise, practical, slightly bold, never hype.
+Proof: customer quotes, uptime reports, factory screenshots, install docs.
+Forbidden claims: no guaranteed savings, no unverified rankings, no fake logos.
+Primary CTA: book a plant-floor workflow review.
+```
+
+```text
+Use $johnny-suede-design for my company. Redesign this landing page with our
+voice, proof, CTA, assets, and reference URLs while keeping the full design,
+copy, SEO/AEO/AI EO, visual QA, and ship-gate workflow.
 ```
 
 Utility scripts are available when the project needs local creator reports:

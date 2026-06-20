@@ -1,10 +1,10 @@
 {
   "name": "Suede Skills MCP",
   "version": "0.1.0",
-  "updated": "2026-06-19",
+  "updated": "2026-06-20",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to Johnny Suede writing/design modes, Apple and iOS surface guidance, Suede design, anti-slop copywriting, Suede SEO/AEO/AI EO, discoverability, visibility grading, code grading, Suedify site mimicry, max-agent loops, visual QA, install, artist campaign, rights evidence, and creator utility context.",
+  "summary": "Local MCP access to Johnny Suede writing/design modes, supplied-company voice support, Apple and iOS surface guidance, Suede design, anti-slop copywriting, Suede SEO/AEO/AI EO, discoverability, visibility grading, code grading, Suedify site mimicry, max-agent loops, visual QA, install, artist campaign, rights evidence, and creator utility context.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -121,14 +121,14 @@
     {
       "name": "johnny-suede-write",
       "area": "workflow",
-      "description": "Full Johnny Suede writing mode for public copy, founder voice, website copy, GitHub README copy, skill docs, Apple and iOS app copy, App Store copy, Suede SEO discoverability, SEO/AEO/AI EO, CTAs, launch copy, social posts, emails, FAQs, claim boundaries, and anti-slop line editing.",
-      "useWhen": "Use when a user asks to write, rewrite, package, explain, promote, audit, or polish any Suede-facing copy with the whole writing stack loaded from one mode, including Apple/iOS copy, Suede SEO, and strict line editing when relevant."
+      "description": "Full Johnny Suede writing mode for Suede or a supplied company: public copy, company voice, website copy, GitHub README copy, skill docs, Apple and iOS app copy, App Store copy, SEO/AEO/AI EO discoverability, CTAs, launch copy, social posts, emails, FAQs, claim boundaries, and anti-slop line editing.",
+      "useWhen": "Use when a user asks to write, rewrite, package, explain, promote, audit, or polish public copy with the whole writing stack loaded from one mode, including company voice, Apple/iOS copy, SEO, and strict line editing when relevant."
     },
     {
       "name": "johnny-suede-design",
       "area": "workflow",
-      "description": "Full Johnny Suede design mode for Suede websites, Apple and iOS app surfaces, App Store screenshots, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, visual QA, responsive QA, copy refinement, Suede SEO discoverability, SEO/AEO/AI EO, visibility grading, CTAs, and implementation handoff.",
-      "useWhen": "Use when a user asks for the whole design stack, a redesign, a style mimic, a better website, an Apple/iOS app surface, a design-system pass, or design-related frontend work that should include copy, Suede SEO, rendered evidence, and visual QA."
+      "description": "Full Johnny Suede design mode for Suede or a supplied company: websites, Apple and iOS app surfaces, App Store screenshots, dashboards, campaign pages, public docs, design systems, Suedify reference-site restyling, UI polish, visual QA, responsive QA, copy refinement, SEO/AEO/AI EO discoverability, visibility grading, CTAs, company voice, and implementation handoff.",
+      "useWhen": "Use when a user asks for the whole design stack, a redesign, a style mimic, a better website, an Apple/iOS app surface, a design-system pass, or design-related frontend work that should include copy, company SEO, rendered evidence, and visual QA."
     },
     {
       "name": "suedify",
