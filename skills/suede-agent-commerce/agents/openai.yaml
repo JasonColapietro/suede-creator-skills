@@ -1,4 +1,4 @@
 interface:
   display_name: "Suede Agent Commerce"
-  short_description: "Prepare works for agent-readable commerce"
-  default_prompt: "Use $suede-agent-commerce to make this creative work easier for agents to inspect, route, license, or transact around safely."
+  short_description: "Make a Suede asset legible to AI agents, with boundaries on what they may do with it."
+  default_prompt: "Use $suede-agent-commerce to make this creative work easier for agents to inspect, route, recommend, or transact around within rights, payout, and registry boundaries."
