@@ -7,7 +7,7 @@ description: Transmute any page into a conversion engine. Funnel analysis, frict
 
 ## Operating Stance
 
-Works for any company, not just Suede. If the task is for a different brand, replace Suede language with the company's name, voice, and positioning throughout.
+Use your company name, voice, and positioning throughout.
 
 - Work from the live page and current source. Verify the exact repo, route, and
   git state before edits.

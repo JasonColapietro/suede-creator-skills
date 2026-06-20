@@ -7,11 +7,9 @@ description: Write copy that earns the click. 12 headline formulas, 5 persuasion
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 
-## Company Override
+## Company Brief
 
-This skill works for any company. If a company brief is supplied, replace Suede voice, Suede domain language, and Suede proof with the company's own voice, vocabulary, audience, and proof. Keep the full workflow: anti-slop gate, SEO/AEO/AI EO pass, scoring rubric, claim safety, and ship gate.
-
-Accept a brief in natural language or this form:
+Supply a brief and all copy, voice, and claim logic applies to your company. Use natural language or this form:
 
 ```text
 Company:
@@ -25,8 +23,6 @@ Allowed claims:
 Forbidden claims:
 Primary CTA:
 ```
-
-When no company brief is supplied and the task is about Suede or this skill pack itself, default to Suede voice and positioning.
 
 ## Before Writing
 

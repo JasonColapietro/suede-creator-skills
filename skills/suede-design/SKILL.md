@@ -10,12 +10,6 @@ alive without drifting into generic AI output. It covers product UI, brand
 surfaces, landing pages, dashboards, component systems, responsive polish, and
 visual QA.
 
-## Company Override
-
-This skill works for any company's frontend, not only Suede. If the target belongs to a different brand, replace Suede-specific design language (creator tools, rights ledgers, waveform proof, provenance timelines) with design decisions grounded in the target company's product, audience, and visual identity. Keep the full workflow: operating preflight, task router, design laws, visual QA, accessibility, responsive checks, and ship gate.
-
-When no brief is supplied and the work is Suede UI, default to Suede design identity and the Subject First / One Memorable Move laws.
-
 ## Operating Stance
 
 - Work from current source and a rendered screen. Do not design from memory when a repo, live URL, screenshot, or local preview can be checked.

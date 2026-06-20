@@ -89,9 +89,9 @@ Discoverability is not optional. Every output gets an SEO title, meta descriptio
 
 Do not use em dashes in public copy.
 
-## Company Override
+## Company Brief
 
-This skill works for any company. Supply a company brief and all writing, SEO, copy, and claim logic applies to that company instead of Suede.
+Supply a brief and all writing, SEO, copy, and claim logic applies to your company. Use natural language or this form:
 
 ```text
 Company:
