@@ -23,8 +23,9 @@ safely, coordinate QA, package public docs, and support creator workflows.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 36 public `SKILL.md` folders:
-one umbrella workflow, Suedify, design, copy, SEO/AEO/AI EO, site alchemy,
+creators, agencies, and AI power users. It ships 38 public `SKILL.md` folders:
+one umbrella workflow, Johnny Suede Write, Johnny Suede Design, Suedify,
+design, copy, SEO/AEO/AI EO, site alchemy,
 visibility grading, A-F code grading, QA, install support, ambassador, launch,
 agent-team, artist-campaign, and creator utility lanes.
 
@@ -46,7 +47,7 @@ Give your agent design taste, copy discipline, SEO, and QA.
 
 ### Subhead
 
-Install a 36-skill Suede pack that helps agents mimic reference-site style,
+Install a 38-skill Suede pack that helps agents mimic reference-site style,
 improve visual systems, rewrite public copy, audit SEO/AEO/AI EO, grade
 visibility and CTA clarity, check install paths, coordinate QA, package artist
 campaigns, and support creator workflows.
@@ -294,9 +295,12 @@ manager, label, or legal reviewer still needs to confirm rights.
 
 ### Which skill should I run first?
 
-Run `suedify` when you have a reference URL and a target URL. Run
-`suede-design` for visual systems and responsive QA, `suede-copy` for public
-copy, `suede-seo-audit` for search, answer intent, and metadata, and
+Run `johnny-suede-write` when you want the whole writing stack in one mode:
+copy, founder voice, SEO/AEO/AI EO, CTAs, claim checks, launch copy, and
+anti-generic editing. Run `johnny-suede-design` when you want the whole design
+stack, including copy. Run `suedify` when you have a reference URL and a target
+URL. Run `suede-design` for visual systems and responsive QA, `suede-copy` for
+public copy, `suede-seo-audit` for search, answer intent, and metadata, and
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
 `suede-agent-teams` when a major pass needs scout, safe parallel build,
 adversarial review, consensus review, WIP protection, release lock, recovery,
@@ -306,7 +310,7 @@ and evidence handoff loops.
 
 ### Short post
 
-Suede Creator Skills are live: 36 public agent skills for design, copywriting,
+Suede Creator Skills are live: 38 public agent skills for design, copywriting,
 SEO/AEO/AI EO, Suedify website restyling, visibility grading, A-F code grading,
 QA, install support, launch packaging, artist campaigns, and creator utility
 workflows.

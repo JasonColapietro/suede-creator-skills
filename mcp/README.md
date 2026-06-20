@@ -4,8 +4,8 @@
 
 It is useful when an agent needs structured access to:
 
-- Suede skill discovery for Suedify, design, copywriting, SEO/AEO/AI EO, QA, artist
-  campaigns, and creator utilities;
+- Suede skill discovery for Johnny Suede writing/design modes, Suedify, design,
+  copywriting, SEO/AEO/AI EO, QA, artist campaigns, and creator utilities;
 - public GitHub skill installs, local plugin notes, MCP, and skill-copy install options;
 - SEO/AEO/AI EO copy audit scaffolds;
 - A-F website visibility, CTA, and code-grade scaffolds;

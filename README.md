@@ -2,10 +2,11 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 36-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 38-skill pack for AI coding agents,
 design-heavy website work, copywriting, SEO/AEO/AI EO, Suedify-style site
 mimicry, QA, and creator workflows. It includes one umbrella workflow, design
-and copy lanes, SEO/AEO/AI EO audits, visibility and CTA grading, site
+and copy lanes, Johnny Suede writing and design modes, SEO/AEO/AI EO audits,
+visibility and CTA grading, site
 alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
 ambassador explainers, claim checks, agent-commerce prep, artist campaign
 tools, and creator utility skills.
@@ -26,6 +27,12 @@ Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
 proof structure, and content rhythm before pushing the target toward the
 reference with Suede-safe design, copy, SEO, and QA.
+
+`johnny-suede-write` is the one-name writing mode: public copy, founder voice,
+SEO/AEO/AI EO, CTAs, launch copy, social/email variants, claim checks, and
+anti-generic line editing. `johnny-suede-design` is the one-name design mode:
+Suedify, UI polish, design-system QA, responsive checks, visibility grading,
+implementation handoff, and the full writing mode included.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI
@@ -173,6 +180,8 @@ Install individual workflow and operations skills when you want direct triggers:
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suedify \
+  skills/johnny-suede-write \
+  skills/johnny-suede-design \
   skills/suede-design \
   skills/suede-copy \
   skills/suede-brand-voice \
@@ -260,7 +269,7 @@ design, copy, SEO/AEO/AI EO, site polish, visibility and CTA grading, code
 review with A-F Suede grades, QA, launch, install support, MCP QA, ambassador
 explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, agent-team grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **36
+artist campaign, and creator utility workflow. The repository now ships **38
 public skill folders**.
 
 ```bash
@@ -271,6 +280,8 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 Individual public workflow and operations skills:
 
+- [`skills/johnny-suede-write`](skills/johnny-suede-write)
+- [`skills/johnny-suede-design`](skills/johnny-suede-design)
 - [`skills/suedify`](skills/suedify)
 - [`skills/suede-design`](skills/suede-design)
 - [`skills/suede-copy`](skills/suede-copy)
