@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: Suede website visibility and CTA grading workflow for public pages, GitHub Pages sites, launch pages, creator sites, docs surfaces, and campaign pages. Use when a user wants a clear A-F grade for whether a page can be found, understood, trusted, cited by AI systems, and acted on.
+description: "A-F grader for any public page: findability, first-screen clarity, CTA pull, proof and trust, AI readability, and design signal. Evidence-required grade caps prevent inflation. Returns a ship gate (ship / ship-with-caveats / hold) and ranked fixes. Not an SEO audit — technical crawlability lives in suede-seo-audit."
 ---
 
 # Suede Visibility Grader
@@ -14,9 +14,15 @@ Can the right person or agent find this page, understand it, trust it, cite it,
 and take the intended next action?
 ```
 
+## Routing
+
+Send to `suede-seo-audit` for: Core Web Vitals, crawl errors, structured data validation, keyword gap analysis, backlink profile, redirect chains, or page speed.
+
+Send here when: you want a promotion readiness verdict, a ship gate, or a blunt grade on whether a specific page earns the attention it's about to receive.
+
 ## Source Truth
 
-Before grading, inspect the current page or source:
+Inspect before grading. Do not grade from memory or description alone.
 
 - live URL, status code, redirects, canonical, robots, sitemap, and title;
 - rendered desktop and mobile page when practical;
@@ -33,39 +39,83 @@ Score each lane A-F, then give one overall grade:
 
 - **Findability:** status, canonical, robots, sitemap, title, description,
   durable keywords, and duplicate URL risk.
-- **First-screen clarity:** whether the first viewport says who it is for, what
-  changes for them, and what to do next.
+- **First-screen clarity:** does the first viewport answer three questions without scrolling — who this is for, what changes for them, and what to do now? Grade on the rendered first viewport, not the document structure.
 - **CTA pull:** primary action, secondary proof action, button text, link
   targets, and whether the visitor has a reason to click now.
 - **Proof and trust:** screenshots, commands, docs, manifests, live routes,
   source files, receipts, authorship, and claim boundaries.
-- **AI readability:** answer-ready summaries, schema fit, sourceable claims,
-  internal links, citation-friendly headings, and AI EO surface area.
-- **Design signal:** hierarchy, spacing, typography, image quality, responsive
-  behavior, contrast, and whether the page looks intentional rather than
-  generated.
-  Subgrade hierarchy, first-viewport composition, typography, spacing rhythm,
-  color/contrast, asset quality, icon fidelity, interaction states, responsive
-  behavior, accessibility, and AI-slop pattern risk.
+- **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Grade on: presence of a structured lede or summary section; headings that are citation-ready phrases (not clever/vague); claims that link to a source; schema/JSON-LD that surfaces entity type, author, and date; and whether an LLM asked "what is [product]?" would return a correct, attributable answer from this page.
 
-Grade meaning:
+  AI readability sub-rubric (each item is worth one grade step):
+  - Structured lede: first 100 words answer "what is this, who is it for, what does it do" without jargon.
+  - Citation-ready headings: headings read as answer fragments an LLM would quote directly. "Getting started" = F. "How to install X in 3 commands" = A.
+  - Sourceable claims: every quantitative or comparative claim links to a source or shows primary evidence.
+  - Entity schema: JSON-LD or OpenGraph declares entity type, author/organization, and published date.
+  - Internal link density: at least one link to a more-detailed resource per major section.
+  - AI test: if an LLM were asked "what is [product/page topic]?" right now, would this page produce a correct, non-hallucinated answer? If no, cap AI readability at C.
+- **Design signal:** grades on seven axes — each is pass/fail, grade is the worst three:
+  1. Hierarchy: H1 > H2 > body weight is visually obvious at a glance.
+  2. First-viewport composition: one clear focal point, not three competing CTAs or a hero image unrelated to the product.
+  3. Spacing rhythm: consistent padding/margin system. No collapsed margins or random gutters.
+  4. Typography: one or two font families. Body copy readable at 16px equivalent. Line length under 80ch.
+  5. Asset quality: images are sharp, not stretched, not stock-obvious, not AI-slop.
+  6. Contrast: primary CTA passes WCAG AA. Body text passes WCAG AA.
+  7. AI-slop pattern risk: the page does not read as generated filler (vague value props, stock faces, generic icons, paragraph-length sentences with no specificity). If two or more slop signals are present, cap Design signal at C.
 
-- **A:** ship and use as a reference.
-- **B:** strong, with specific improvements.
-- **C:** usable, but leaks attention or trust.
-- **D:** visible but weak; needs a focused pass before promotion.
-- **F:** blocked by discoverability, broken CTA, false claim, broken render, or
-  missing source truth.
+Grade meaning — assign on evidence, not impression:
 
-Grade caps:
+- **A:** every lane is strong. Ship. Post this as a reference for the next build.
+- **B:** one or two lanes are weak. Fix those; everything else is solid.
+- **C:** the page works but bleeds attention or trust somewhere in the first scroll. Not ready for paid promotion.
+- **D:** visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
+- **F:** assign when any of these are true: primary CTA is broken, a public claim is false, the page doesn't render, or robots/canonical actively blocks it.
 
-- If no live page or rendered source was inspected, cap Overall at `C`.
-- If the primary CTA is broken, cap promotion readiness at `D` or `F`.
-- If a public claim is false or unsupported, cap Overall at `D` or `F`.
-- If Design signal is `D` or `F`, the page cannot be promoted as polished even
-  when SEO metadata is decent.
-- If mobile, tablet, or interaction states were not checked, state that caveat
-  and do not give an `A`.
+Grade caps — non-negotiable:
+
+- No live inspection → Overall cap: `C`.
+- Broken primary CTA → Overall cap: `D`.
+- False or unsupported public claim → Overall cap: `D`. (If the claim is central to the product promise, `F`.)
+- Design signal `D` or `F` → Ship gate is **hold**, regardless of other lanes.
+- Mobile not inspected → `A` is blocked. State the caveat explicitly in Verification.
+
+## Surface-Type Standards
+
+Grade each page against its surface type. Caps and expectations differ:
+
+**Landing page (marketing, campaign, product launch)**
+- First-screen clarity and CTA pull are the primary gates. A page that can't convert in the first viewport fails at its job.
+- Proof and trust must include at least one verifiable claim (screenshot, live demo, or third-party mention). Testimonials without attribution cap Proof at C.
+- A is only available if the CTA pull lane is A or B.
+
+**GitHub Pages / repo README**
+- Findability matters less (GitHub handles most of it). First-screen clarity and AI readability are the primary gates.
+- The H1 must match or closely shadow the repo name and primary use case. A generic "Welcome to [repo]" caps First-screen clarity at C.
+- Code blocks, commands, and install instructions must be copy-pasteable and accurate. One broken command caps Proof at D.
+- AI readability grade is elevated: LLMs frequently cite GitHub READMEs. A missing structured summary or absent "What is this?" section caps AI readability at C.
+
+**Product page (within an existing product, not top-of-funnel)**
+- Proof and trust is the primary gate. The visitor already has intent; the page must close.
+- Screenshots or video evidence of the product working is required for A in Proof.
+- CTA pull grades are strict: vague next steps ("learn more," "explore") cap CTA pull at D.
+
+**Documentation page**
+- AI readability is the primary gate. Docs are the most-cited content by AI systems.
+- Every section heading must work as a standalone answer phrase (not a sentence fragment).
+- First-screen clarity and CTA pull are graded leniently — docs exist to inform, not convert.
+- Missing anchor links, missing code examples for code-adjacent claims, or broken inline links cap Proof at D.
+
+## Grade Modes
+
+**Quick grade** — triggered when asked for a fast read, first impression, or "gut check":
+- Grade the first viewport only (rendered desktop).
+- Score all six lanes based on what is visible without scrolling.
+- Output: one paragraph + lane grades + ship gate. No top fixes list.
+- Cap: Quick grades cannot assign A. Max is B.
+
+**Deep grade** (default):
+- Full inspection: live URL + source, desktop + mobile, all viewport states available.
+- All six lanes, full top-fixes list, CTA rewrite in the P1 fix description if CTA pull is C or below.
+- Ship gate is authoritative.
 
 ## Output Format
 
@@ -75,6 +125,7 @@ Plain-language summary of the grade and the one biggest fix.
 
 Usual breakdown:
 URL or source:
+Surface type:
 Primary reader:
 Primary action:
 Live/source status:
@@ -92,25 +143,15 @@ AI readability: A-F
 Design signal: A-F
 Overall: A-F
 
-Top fixes:
-1. P1 - Highest-impact fix. Location, evidence, impact, concrete patch.
-2. P2 - Second fix. Location, evidence, impact, concrete patch.
-3. P3 - Third fix. Location, evidence, impact, concrete patch.
-
-CTA rewrite:
-Primary CTA:
-Secondary CTA:
-Final CTA:
+Top fixes (max 5, ranked by impact on ship gate):
+1. [P1] Lane affected | Location | Evidence (quote or describe exactly what was seen) | One-line patch
+2. [P2] Lane affected | Location | Evidence | One-line patch
+3. [P3] Lane affected | Location | Evidence | One-line patch
 
 Verification:
 What was checked:
 What was not checked:
 Ship gate: ship | ship-with-caveats | hold
-
-Cue Suede:
-1. Change something - tell me what to revise and I will adjust it.
-2. Preserve this - tell me what worked so I can mimic it later.
-3. Keep as-is - say nothing and I will treat it as accepted.
 ```
 
 ## Sample Report
@@ -122,6 +163,7 @@ Fix the hero CTA and mobile proof block before promotion.
 
 Usual breakdown:
 URL or source: https://example.com
+Surface type: landing page
 Primary reader: creator preparing a release package
 Primary action: start the release-readiness audit
 Live/source status: live page inspected, source not available
@@ -139,24 +181,13 @@ AI readability: B
 Design signal: C
 Overall: C
 
-Top fixes:
-1. P1 - Weak CTA. Location: hero. Evidence: primary button says "Learn more."
-   Impact: visitors do not know what starts the audit. Fix: change to "Run the
-   release audit" and route to the verified audit path.
-2. P2 - Mobile proof is buried. Location: first mobile viewport. Evidence:
-   proof links start below the fold. Impact: trust arrives too late. Fix: move
-   one source link and one screenshot into the first mobile section.
-3. P3 - Generic image crop. Location: hero media. Evidence: artwork does not
-   show a release artifact. Impact: weak Suede signal. Fix: replace with a real
-   rights/provenance preview or approved generated bitmap.
+Top fixes (max 5, ranked by impact on ship gate):
+1. [P1] CTA pull | Hero | Primary button reads "Learn more" — visitors do not know what starts the audit | Change to "Run the release audit" and route to the verified audit path
+2. [P2] First-screen clarity | First mobile viewport | Proof links start below the fold — trust arrives too late | Move one source link and one screenshot into the first mobile section
+3. [P3] Design signal | Hero media | Artwork does not show a release artifact — weak product signal | Replace with a rights/provenance preview or an approved product screenshot
 
+Verification:
+What was checked: live URL, desktop viewport, mobile viewport, primary CTA hover state, Open Graph tags
+What was not checked: dark mode, logged-in state, source files
 Ship gate: ship-with-caveats
 ```
-
-## Boundaries
-
-- Do not invent traffic, ranking, conversion, partner, legal, or payout claims.
-- Do not treat an A-F grade as an audited business metric.
-- Do not recommend fake urgency, fake testimonials, or unsupported proof.
-- Do not bury the CTA behind vague brand language.
-- Do not call a page fixed until the current live URL or source was inspected.

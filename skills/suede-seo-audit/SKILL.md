@@ -1,15 +1,9 @@
 ---
 name: suede-seo-audit
-description: Full SEO, AEO, and AI EO audit for websites, GitHub Pages, landing pages, app listings, docs surfaces, and any public URL. Covers technical access, metadata, schema markup, crawlability, search intent, answer intent, internal linking, content structure, copy quality, conversion readiness, and AI citation readiness — with ranked findings, exact rewrites, and a scored visibility report. Use when a page needs to be found, understood, cited by AI systems, and acted on.
+description: Full SEO, AEO, and AI EO audit for websites, GitHub Pages, landing pages, app listings, docs surfaces, and any public URL. Covers technical access, metadata, schema markup, crawlability, search intent, answer intent, internal linking, content structure, copy quality, conversion readiness, and AI citation readiness. Produces ranked findings, exact rewrites, and a scored visibility report. Use when a page needs to be found, understood, cited by AI systems, and acted on.
 ---
 
 # Suede SEO Audit
-
-Use this skill to audit any public surface for discoverability, AI citation
-readiness, trust, and conversion. SEO here means the full stack: classical
-search, answer engines (Perplexity, SGE, Bing Chat), AI knowledge synthesis
-(ChatGPT Browse, Claude, Gemini), and long-tail schema-driven features. A
-surface that scores well here can be found, understood, quoted, and acted on.
 
 This skill goes deeper than an inline copy audit. It inspects live page source,
 validates schema, traces crawl access, checks AI EO signals, and produces exact
@@ -25,19 +19,19 @@ surface.
 
 ### Required pre-audit checks
 
-- HTTP status code (200, 301, 404, 503 — note exact code)
+- HTTP status code (200, 301, 404, 503): note exact code
 - Final URL after all redirects (is the canonical URL the destination?)
-- `robots.txt` — is the path allowed? Is `Disallow: /` blocking indexers?
-- `<meta name="robots">` or `<meta name="googlebot">` — noindex? nofollow?
-- `<link rel="canonical">` — does it match the intended URL exactly?
-- Sitemap entry — is the URL present in any listed sitemap?
-- `<title>` tag — exact text, character count
-- `<meta name="description">` — exact text, character count
-- Open Graph tags — og:title, og:description, og:image, og:url, og:type
-- Twitter card tags — twitter:card, twitter:title, twitter:description,
+- `robots.txt`: is the path allowed? Is `Disallow: /` blocking indexers?
+- `<meta name="robots">` or `<meta name="googlebot">`: noindex? nofollow?
+- `<link rel="canonical">`: does it match the intended URL exactly?
+- Sitemap entry: is the URL present in any listed sitemap?
+- `<title>` tag: exact text, character count
+- `<meta name="description">`: exact text, character count
+- Open Graph tags: og:title, og:description, og:image, og:url, og:type
+- Twitter card tags: twitter:card, twitter:title, twitter:description,
   twitter:image
-- JSON-LD presence — any `<script type="application/ld+json">` block present?
-- Primary H1 — exact text, position in document
+- JSON-LD presence: any `<script type="application/ld+json">` block present?
+- Primary H1: exact text, position in document
 
 If the URL is inaccessible, note that and audit from source files with caveats.
 If the page is behind auth or a paywall, say so and limit the audit to what is
@@ -54,41 +48,74 @@ was skipped and why.
 
 ### Lane 0: Keyword Research (optional mode)
 
-Activate this lane when the user asks "what should this page rank for", "find
-the right keywords", or any equivalent keyword-discovery request. Skip it for
-pure technical or copy audits.
+Activate when keyword discovery is requested; skip for technical-only or copy-only audits.
 
-**Goal:** produce a keyword brief the page can be built or optimized around.
+**Goal:** produce a keyword brief and content brief the page can be built or optimized around.
 
 1. **Primary keyword**: one phrase the page should be #1 for. Match search
-   intent precisely — classify as informational, navigational, commercial, or
-   transactional.
+   intent precisely. Classify as informational, navigational, commercial, or
+   transactional. Classify volume by inference from query specificity and topic
+   breadth: head terms like "music distribution" are high (>10K/mo); long-tail
+   phrases like "how to register a song copyright with SoundExchange" are low
+   (<1K/mo). Classify difficulty by competition density: head terms with
+   Wikipedia/major-brand dominance are high; niche product terms are low.
+   Agents must classify both. Do not skip.
 
 2. **Secondary keywords**: 3–5 phrases the page should rank on page 1 for.
    Related but not synonymous with the primary keyword.
 
 3. **LSI / supporting terms**: 5–10 phrases, entities, and related concepts
-   that should appear naturally in the content. These signal topic depth to
-   search engines.
+   that should appear naturally in the content. Group by subtopic.
 
-4. **Competitor gap**: name 2–3 queries that competitor pages rank for on this
-   topic but the target page does not cover.
+4. **Competitor content gap**: when a competitor URL is provided or can be
+   inferred from the niche, fetch the page and compare H2/H3 structure. For
+   each competitor:
+
+   a. List the H2/H3 headings the competitor covers that the target page does not.
+   b. Identify the queries those sections are likely targeting.
+   c. Classify each gap as: CRITICAL (directly on primary keyword intent),
+      IMPORTANT (secondary keyword), or INFORMATIONAL (supporting LSI term).
+
+   Output:
+   ```
+   Competitor: [URL]
+   Gap topic: [H2/H3 text from competitor] — [query it targets] — [CRITICAL|IMPORTANT|INFORMATIONAL]
+   Missing section recommended: [exact H2 to add] — [brief rationale]
+   ```
+
+   If no competitor URL is provided and none is inferable, name 2–3 queries
+   competitor pages likely rank for that the target page does not address,
+   derived from the keyword set and topic structure.
 
 5. **SERP feature opportunities**: which SERP features is the target eligible
    for? Options: Featured snippet, People Also Ask, Image pack, Video carousel,
-   Knowledge panel, Local pack, Site links.
+   Knowledge panel, Local pack, Site links. For each feature named, state the
+   eligibility reason.
 
-Output keyword brief:
+**Content brief**: generate when Lane 0 is active and a page is being built
+or significantly revised:
+
+| Field | Guidance |
+|---|---|
+| Target word count | Informational: 1,200–2,500 words. Commercial: 800–1,500 words. Transactional: 400–800 words. Match top 3 SERP competitors if estimable from URL structure. |
+| Required H2 sections | Pull from People Also Ask for the primary keyword + competitor H2/H3 structure. List every sub-topic the page must cover to match SERP depth. |
+| Schema type | State the exact `@type` value required (see Lane 5). |
+| Internal links to include | Name anchor text + destination for at least 2 existing site pages the new content must link to. |
+| External links to include | Name 1–3 authoritative sources (Wikipedia, official docs, standards body, peer-reviewed source) relevant to the primary keyword. |
+| NLP term density targets | Primary: in H1, in first 100 words, 2–4 additional times per 1,000 words. Each secondary keyword: 1–2 times per 1,000 words. Flag if current content misses these targets. |
+
+Output keyword brief (output content brief inline before this block when generated):
 
 ```
-Primary: [keyword] — [intent: info/nav/commercial/transactional]
-Secondary: [k1], [k2], [k3]
-LSI terms: [list]
-Competitor gap queries: [list]
-SERP feature targets: [list]
+Primary: [keyword] — [intent: info/nav/commercial/transactional] — [volume: low <1K/mo | medium 1K–10K | high >10K/mo] — [difficulty: low | medium | high]
+Secondary: [k1 — intent — volume], [k2 — intent — volume], [k3 — intent — volume]
+LSI terms: [list — grouped by subtopic]
+Competitor gap queries: [query — competitor URL that ranks — content angle missing from target page]
+SERP feature targets: [feature — eligibility reason]
+Content brief: primary keyword appears in H1 + first 100 words + [N] times per 1,000 words; secondary keywords appear [1–2] times each
 ```
 
-Lane 0 is informational only — it produces a brief, not a grade. Incorporate
+Lane 0 is informational only. It produces a brief, not a grade. Incorporate
 the brief into Lanes 2–7 findings where relevant.
 
 ---
@@ -111,8 +138,16 @@ Checklist:
 - [ ] Sitemap lists the canonical URL with a valid `<lastmod>` date
 - [ ] Page loads meaningful content without JavaScript execution (check
       `curl -A "Googlebot"` output or view-source)
-- [ ] Core Web Vitals: if LCP > 4s, CLS > 0.25, or INP > 500ms is observable
-      from available tooling, note it — do not invent scores
+- [ ] Core Web Vitals: run `curl -o /dev/null -s -w "%{time_total}" <URL>` as a
+      proxy for server response time. If PageSpeed Insights is accessible at
+      pagespeed.web.dev, fetch it. Report LCP, CLS, INP against these
+      thresholds: LCP ≤ 2.5s = Good, 2.5–4s = Needs Improvement, >4s = Poor.
+      CLS ≤ 0.1 = Good, 0.1–0.25 = Needs Improvement, >0.25 = Poor. INP ≤
+      200ms = Good, 200–500ms = Needs Improvement, >500ms = Poor. If tooling
+      is unavailable, check for render-blocking scripts, unoptimized images
+      (no `loading="lazy"`, no `width`/`height` attributes, no next-gen
+      formats), and missing `font-display:swap`. Flag each as a CWV risk.
+      Do not invent scores; do report observable risks.
 
 Lane 1 grade drops to C or below if: any indexability block is present, if the
 canonical is wrong, or if the page is JavaScript-only with no SSR/SSG fallback.
@@ -128,9 +163,12 @@ Checklist:
 
 - [ ] Name the primary reader in one phrase (e.g., "a creator who wants to
       register a music release")
-- [ ] Name the primary query theme — what someone types or asks to land here
-- [ ] Write the AI-answer-ready definition: one or two sentences that define the
-      page's subject precisely enough for an LLM to quote directly
+- [ ] Name the primary query theme (what someone types or asks to land here)
+- [ ] Write the AI-answer-ready definition: the sentence(s) an LLM would quote
+      if asked about this page's subject. Format: "[Entity] is [what it does]
+      for [who] by [how]. It [primary differentiator]." If this definition
+      cannot be constructed from the first 200 words of the page, that is a
+      HIGH finding.
 - [ ] Name one action the page should earn (install, sign up, read docs, fork
       repo, contact)
 - [ ] Check for keyword cannibalization: are there three or more other pages on
@@ -167,17 +205,17 @@ Checklist:
 - [ ] Does not contain structured data markup or JSON
 
 **Open Graph**
-- [ ] og:title — set, under 88 characters
-- [ ] og:description — set, under 200 characters
-- [ ] og:image — set, image is 1200x630px minimum, no text near edges
-- [ ] og:url — matches canonical URL
-- [ ] og:type — set to `website`, `article`, or appropriate type
+- [ ] og:title: set, under 88 characters
+- [ ] og:description: set, under 200 characters
+- [ ] og:image: set, image is 1200x630px minimum, no text near edges
+- [ ] og:url: matches canonical URL
+- [ ] og:type: set to `website`, `article`, or appropriate type
 
 **Twitter/X card**
-- [ ] twitter:card — `summary_large_image` for pages with a hero image
-- [ ] twitter:title and twitter:description — set and distinct from OG when
+- [ ] twitter:card: `summary_large_image` for pages with a hero image
+- [ ] twitter:title and twitter:description: set and distinct from OG when
       appropriate
-- [ ] twitter:image — set and accessible without authentication
+- [ ] twitter:image: set and accessible without authentication
 
 **Other**
 - [ ] Image alt text on all visible images (not empty, not "image", not
@@ -185,7 +223,7 @@ Checklist:
 - [ ] Author or publisher entity name appears in metadata or schema (not just
       visible copy)
 - [ ] Durable entity names (product name, company name, skill name) appear in
-      title, description, and H1 — at least one each
+      title, description, and H1; at least one each
 
 Lane 3 grade drops to D or below if: title is over 70 characters and truncates
 the entity name, meta description is missing, og:image is missing, or any entity
@@ -226,13 +264,32 @@ Checklist:
 **FAQ**
 - [ ] FAQ section present if the page makes a product or service claim
 - [ ] Each FAQ item is a real question a user or searcher would ask
-- [ ] Each FAQ answer is self-contained — the answer makes sense without reading
-      the question
+- [ ] Each FAQ answer is self-contained (the answer makes sense without reading
+      the question)
 - [ ] FAQ answers are under 100 words each (AI citation sweet spot)
+
+**Keyword density**
+- [ ] Primary keyword appears in: H1 (required), first 100 words (required),
+      title tag (required), meta description (recommended), and 2–4 additional
+      times per 1,000 words of body content
+- [ ] Each secondary keyword appears 1–2 times per 1,000 words; not zero
+      (invisible to search), not more than 3 (triggers keyword stuffing signals)
+- [ ] Primary keyword is not crammed into headings unnaturally. Every H2
+      containing the keyword must make grammatical and editorial sense without it
+- [ ] LSI/supporting terms are distributed across the body, not clustered in
+      one section
+
+Density check output format:
+```
+Primary "[keyword]": H1 ✓/✗ | first 100 words ✓/✗ | body density [N per 1,000 words] (target: 2–4) | status: OK | THIN | OVER
+Secondary "[keyword]": [N per 1,000 words] (target: 1–2) | status: OK | MISSING | OVER
+```
 
 Lane 4 grade drops to C or below if: H1 is missing, section order puts the FAQ
 or proof below the fold without any in-page anchor, or internal links use
-non-descriptive anchor text throughout.
+non-descriptive anchor text throughout. Lane 4 drops an additional letter grade
+if primary keyword density is 0 in the body or any secondary keyword is
+completely absent from the page.
 
 ---
 
@@ -256,12 +313,12 @@ Checklist:
 - [ ] `Organization` schema includes: `name`, `url`, `logo`, `sameAs` (GitHub,
       LinkedIn, App Store, or other authoritative profiles)
 - [ ] `SoftwareApplication` schema includes: `name`, `applicationCategory`,
-      `operatingSystem`, `offers` (even if free — use `price: "0"`)
+      `operatingSystem`, `offers` (even if free; use `price: "0"`)
 - [ ] `Article` schema includes: `headline`, `author`, `datePublished`,
       `dateModified`
 
 When schema is missing or broken, provide the exact corrected JSON-LD block
-inline in the findings — do not describe it in prose.
+inline in the findings. Do not describe it in prose.
 
 Example minimum Organization block:
 
@@ -284,65 +341,6 @@ factual product claims, or if FAQ schema items do not match visible text.
 
 ---
 
-**Schema Generator Mode**
-
-When schema is missing or broken, generate the complete, valid JSON-LD rather
-than just recommending it. Required inputs: page type, page title, primary
-content, URL.
-
-Templates to generate on request:
-
-FAQ schema (when a FAQ section is present):
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Question text",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Answer text"
-      }
-    }
-  ]
-}
-```
-
-SoftwareApplication (for apps and tools):
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "App name",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Web",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "description": "...",
-  "url": "..."
-}
-```
-
-Organization:
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "...",
-  "url": "...",
-  "logo": "...",
-  "sameAs": ["...social URLs..."]
-}
-```
-
-Validate generated schema at schema.org/validator before including in output.
-
----
-
 ### Lane 6: AI EO (Answer Engine Optimization)
 
 **Goal:** the page is structured so that LLMs, answer engines, and AI overviews
@@ -352,7 +350,7 @@ Checklist:
 
 **Summary and definitions**
 - [ ] First 200 words contain a clear, citable answer to the page's primary
-      question — the answer can stand alone without surrounding context
+      question. The answer can stand alone without surrounding context.
 - [ ] The product, skill, or service is defined plainly in the first section,
       not assumed
 - [ ] No jargon is used without an inline definition on first use
@@ -383,7 +381,7 @@ Checklist:
 
 **Hallucination risk**
 - [ ] Page does not make vague claims an LLM could cite incorrectly (e.g.,
-      "used by thousands" without evidence — state the real proof or remove it)
+      "used by thousands" without evidence. State the real proof or remove it.)
 - [ ] No stat, partner name, or pricing claim is present without a verification
       source
 
@@ -406,7 +404,7 @@ Checklist:
       metadata")
 - [ ] No throat-clearing openers ("Welcome to", "In today's digital landscape")
 - [ ] Active voice with a named actor in each key sentence
-- [ ] Subhead adds proof, audience, or workflow — not a restatement of the hero
+- [ ] Subhead adds proof, audience, or workflow, not a restatement of the hero
 
 **Proof**
 - [ ] At least one real artifact: link, command, screenshot reference, file
@@ -433,11 +431,15 @@ Checklist:
 - [ ] Brand vocabulary matches the actual product (no generic AI-music-app
       language when the product does rights infrastructure)
 
-**Filler removal**
-- [ ] No filler transitions ("Additionally", "Furthermore", "It is worth noting")
-- [ ] No exclamation points in body copy
-- [ ] No em dashes in public copy (use a comma, period, or recast the sentence)
-- [ ] No adverb softeners ("simply", "just", "easily", "seamlessly")
+**Filler removal**: the test is whether a sentence can be deleted without the reader
+missing any information, delete it. Apply to: transitions, throat-clearing,
+hedging, adverb softeners, and exclamation marks.
+
+Flag and remove:
+- [ ] Filler transitions ("Additionally", "Furthermore", "It is worth noting")
+- [ ] Exclamation points in body copy
+- [ ] Em dashes in public copy (use a comma, period, or recast the sentence)
+- [ ] Adverb softeners ("simply", "just", "easily", "seamlessly")
 
 Lane 7 grade drops to C or below if: the primary CTA is absent above the fold,
 any public claim is unverifiable, or the copy could belong to any competing
@@ -447,8 +449,8 @@ product without changing a word.
 
 ### Lane 8: E-E-A-T Signals
 
-**Goal:** confirm that Google's quality evaluator signals — Experience,
-Expertise, Authoritativeness, and Trustworthiness — are present and verifiable
+**Goal:** confirm that Google's quality evaluator signals (Experience,
+Expertise, Authoritativeness, and Trustworthiness) are present and verifiable
 on the page.
 
 **Experience**: Does the page show first-hand, real-world use of the product or
@@ -469,12 +471,12 @@ no misleading UI patterns, consistent authorship.
 
 Checklist:
 
-- [ ] First-person or company-specific proof present (E — Experience)
-- [ ] Accurate technical claims with no puffery (E — Expertise)
-- [ ] Author name and credentials visible when relevant (A — Authoritativeness)
-- [ ] Privacy policy, contact page, and HTTPS present (T — Trustworthiness)
-- [ ] No misleading UI patterns or dark patterns (T — Trustworthiness)
-- [ ] Claims are verifiable and sourced (T — Trustworthiness)
+- [ ] First-person or company-specific proof present (E: Experience)
+- [ ] Accurate technical claims with no puffery (E: Expertise)
+- [ ] Author name and credentials visible when relevant (A: Authoritativeness)
+- [ ] Privacy policy, contact page, and HTTPS present (T: Trustworthiness)
+- [ ] No misleading UI patterns or dark patterns (T: Trustworthiness)
+- [ ] Claims are verifiable and sourced (T: Trustworthiness)
 
 Grade: A (all four strong), B (3 strong), C (2 strong), D/F (1 or 0).
 
@@ -563,9 +565,10 @@ Hard caps:
 - Cannot earn A in Lane 8 if contact, privacy policy, or HTTPS is absent
 - Cannot earn A in Lane 9 if two or more pages compete for the same primary keyword
 
-Overall grade is the weighted average with Lane 1, 3, and 6 weighted 1.5x.
-Lane 8 and Lane 9 are weighted 1x. Lane 0 is informational and not included
-in the grade calculation.
+Overall grade: convert letter grades to points (A=4, B=3, C=2, D=1, F=0).
+Lanes 1, 3, and 6 count 1.5x. Lanes 2, 4, 5, 7, 8, 9 count 1x. Lane 0
+excluded. Max weighted score = (3 × 1.5 + 6 × 1) × 4 = 42. Overall letter:
+≥38 = A, ≥30 = B, ≥22 = C, ≥14 = D, <14 = F.
 
 ---
 
@@ -582,11 +585,12 @@ Audit date:
 Source checked: [live URL | source file | both]
 
 --- KEYWORD BRIEF (Lane 0 — omit if not requested) ---
-Primary: [keyword] — [intent: info/nav/commercial/transactional]
-Secondary: [k1], [k2], [k3]
-LSI terms: [list]
-Competitor gap queries: [list]
-SERP feature targets: [list]
+Primary: [keyword] — [intent: info/nav/commercial/transactional] — [volume: low <1K/mo | medium 1K–10K | high >10K/mo] — [difficulty: low | medium | high]
+Secondary: [k1 — intent — volume], [k2 — intent — volume], [k3 — intent — volume]
+LSI terms: [list — grouped by subtopic]
+Competitor gap queries: [query — competitor URL that ranks — content angle missing from target page]
+SERP feature targets: [feature — eligibility reason]
+Content brief: primary keyword appears in H1 + first 100 words + [N] times per 1,000 words; secondary keywords appear [1–2] times each
 
 --- METADATA ---
 SEO title (suggested):
@@ -599,11 +603,20 @@ Primary CTA (text and destination):
 Secondary CTA (text and destination):
 
 --- CONTENT ADDITIONS ---
+Content brief (from Lane 0 — omit if not requested):
+  Target word count: [N] words (based on [intent] + SERP competition)
+  Required H2 sections: [list — derived from PAA and competitor H2 structure]
+  NLP term density check:
+    Primary "[keyword]": appears in H1 [yes/no], first 100 words [yes/no], [N] times per 1,000 words (target: 2–4)
+    Secondary "[keyword]": [N] times per 1,000 words (target: 1–2 each)
 FAQ additions:
-  Q:
-  A:
+  Q: [real searcher question — match PAA wording]
+  A: [≤100 words, subject named explicitly, no pronouns as subject]
 Internal links to add (anchor text → destination URL):
 External links to add (anchor text → destination URL):
+Competitor content gap:
+  Competitor: [URL or "derived from niche"]
+  Missing sections: [H2 text — target query — priority: CRITICAL|IMPORTANT|INFORMATIONAL]
 
 --- SCHEMA ---
 Schema changes:
@@ -626,6 +639,13 @@ Pillar: [page] — [target keyword]
 Orphan pages:
 Cannibalization risks:
 
+--- CORE WEB VITALS ---
+LCP: [score or "not measurable" — reason]
+CLS: [score or "not measurable" — reason]
+INP: [score or "not measurable" — reason]
+Lighthouse score (if available): Performance [N] | Accessibility [N] | Best Practices [N] | SEO [N]
+CWV risk factors observed: [list or "none"]
+
 --- SCORES ---
 Copy score: /70
   Directness: /10
@@ -637,15 +657,15 @@ Copy score: /70
   Search/AI readability: /10
 
 Lane grades:
-  Lane 1 — Technical Access:
-  Lane 2 — Search and Answer Intent:
-  Lane 3 — Metadata:
-  Lane 4 — Structure:
-  Lane 5 — Schema Markup:
-  Lane 6 — AI EO:
-  Lane 7 — Copy and Conversion Quality:
-  Lane 8 — E-E-A-T Signals:
-  Lane 9 — Topic Cluster Architecture:
+  Lane 1 (Technical Access):
+  Lane 2 (Search and Answer Intent):
+  Lane 3 (Metadata):
+  Lane 4 (Structure):
+  Lane 5 (Schema Markup):
+  Lane 6 (AI EO):
+  Lane 7 (Copy and Conversion Quality):
+  Lane 8 (E-E-A-T Signals):
+  Lane 9 (Topic Cluster Architecture):
 
 Overall grade:
 
@@ -672,23 +692,7 @@ Reason:
 
 ---
 
-## 6. Company Override
-
-This skill works for any company, product, or site — not only Suede. When
-auditing a non-Suede surface, apply all seven lanes to the target company's
-pages without Suede-specific vocabulary or brand requirements.
-
-When a company brief is provided, read it before auditing and use:
-- the company's actual entity names, not generic placeholders
-- the company's stated product capabilities, not assumptions
-- the company's approved claims, not surmised ones
-
-If no brief is provided, derive entity names and capabilities from the live page
-and note what could not be verified from available sources.
-
----
-
-## 7. Workflow Steps
+## 6. Workflow Steps
 
 Follow these steps in order. Do not skip to findings before completing steps 1
 through 3.
@@ -705,7 +709,7 @@ through 3.
 
 4. **Scan all active lanes.** Lane 0 activates only when keyword discovery is
    requested. Lanes 1–9 run on every audit (Lane 9 is N/A for single-page
-   audits — note the skip). Work through each checklist item. Mark each item
+   audits; note the skip). Work through each checklist item. Mark each item
    pass, fail, or N/A. Note the location of each failure.
 
 5. **Write ranked findings.** Use the finding format from Section 3. Group by
@@ -713,7 +717,7 @@ through 3.
 
 6. **Write exact rewrites.** For every HIGH and MEDIUM finding involving copy,
    metadata, or schema: provide the literal replacement text or JSON-LD block.
-   Do not describe what the fix should say — write it.
+   Do not describe what the fix should say. Write it.
 
 7. **Fill the output template** from Section 5. Every field must be filled.
 
@@ -722,28 +726,14 @@ through 3.
 9. **Set the ship gate.** `ship` only if no HIGH findings remain and all hard
    caps are met. `ship-with-caveats` if only MEDIUM or LOW findings remain and
    no claim is false. `hold` if any HIGH finding is unresolved, any claim is
-   false, or the CTA destination is broken.
-
-10. **State what was not checked.** List any lane items that could not be
-    verified and why (e.g., "Core Web Vitals data not available without field
-    data access", "sitemap not publicly accessible").
+   false, or the CTA destination is broken. Name any lane items that could not
+   be verified and why (e.g., "Core Web Vitals: no field data access",
+   "sitemap not publicly accessible").
 
 ---
 
-## 8. Boundaries
+## 7. Boundaries
 
-This skill does not:
-
-- Invent traffic estimates, keyword search volume, ranking positions, or
-  conversion rates
-- Fabricate AI citation frequency or LLM mention counts
-- Estimate ROI from SEO changes
-- Claim a fix will produce a specific ranking outcome
-- Mark an audit complete without inspecting current page source or live URL
-- Report schema as valid without running it through a validator
-- Include any partner name, stat, or pricing claim not present on the target
-  page itself
-
-When a data point is not available, say so. Do not estimate or interpolate.
-Name what was checked, what was skipped, and what would require additional
-tooling or access to verify.
+Do not invent traffic estimates, ranking positions, citation frequency, or ROI
+from SEO changes. Name what was checked, what was skipped, and what requires
+additional tooling.

@@ -1,13 +1,11 @@
 ---
 name: suede-code-review
-description: "Full-context code review for any codebase or PR — behavior bugs, regressions, security, tests, release gaps, and fix briefs with P0/P1/P2/P3 severity ranking. Especially thorough on auth, payments, public claims, shared components, and multi-surface contracts."
+description: "Catches production regressions, security holes, and TS/React/Next.js-specific traps, ranked P0-P3 with one-line fixes. Full-context review: changed files, callers, contracts, deploy surface."
 ---
 
 # Suede Code Review
 
-Use this skill to review Suede code like a production reviewer with full
-context, not a diff-only lint pass. The goal is to catch real breakage, rank it
-by impact, and turn findings into fixable work.
+Review code with full context: changed files, callers, contracts, deploy surface. Find real breakage. Rank by production impact. Every finding has a file, evidence, and a fix path. No findings without evidence. No volume without signal.
 
 ## Operating Stance
 
@@ -26,18 +24,8 @@ Before review, identify:
 
 - target: repo, branch, PR, commit range, diff, route, API, or release build;
 - intent: what the change claims to accomplish;
-- source truth: task docs, local agent guidance, product docs, linked issue, or
-  user instruction;
 - risk lanes: frontend, backend, data, auth, payments, contracts, iOS, release,
-  public copy, analytics, secrets, deployment, and docs;
-- done signal: findings report, inline comments, fix briefs, test commands,
-  screenshots, live/API readback, or merge recommendation.
-
-Use this output status:
-
-- `hold`: a blocker or high-risk unknown remains.
-- `ship-with-caveats`: no blocker remains, but named non-critical caveats exist.
-- `ship`: no known blocker remains and required verification passed.
+  public copy, analytics, secrets, deployment, and docs.
 
 ## Context Graph
 
@@ -76,9 +64,7 @@ Add a `--depth` modifier to any review:
 - **`--quick`** (~2 min): Pattern-based scan. Flag obvious bugs, hardcoded
   secrets, missing null checks, SQL/command injection patterns, broken error
   handling. No cross-file analysis. Use for PRs with narrow blast radius.
-- **`--standard`** (default, ~10 min): Per-file analysis with language-specific
-  checks. Correctness, security, state handling, test coverage on changed
-  behavior. Call graph within changed files. Use for most PRs.
+- **`--standard`** (default, ~10 min): Per-file analysis: correctness on changed paths, language-specific traps (see checklists below), state handling, test coverage on changed behavior, call graph within changed files. Default for all PRs unless the user says otherwise.
 - **`--deep`** (~25 min): Cross-file analysis including full import graph and
   call chain tracing. Finds semantic bugs that only appear when you follow data
   across module boundaries. Use for auth changes, payment flows, data
@@ -86,23 +72,67 @@ Add a `--depth` modifier to any review:
 
 State depth level at the top of every review output.
 
-## Agent Team Review
+## TypeScript Traps
 
-For major changes, run the review as separate lanes:
+Check these on every TypeScript file in the diff:
+
+- **`any` vs `unknown`:** `any` disables type checking for everything downstream. If the type is truly unknown at the call site, use `unknown` and narrow with a type guard. Flag every `any` annotation that isn't in a third-party type shim.
+- **Non-null assertions (`!`):** Each `foo!.bar` is a runtime crash waiting for the condition that makes `foo` null. Flag unless the null case is provably eliminated by a guard two lines above.
+- **Missing discriminated unions:** When a function returns `{ type: 'a', ... } | { type: 'b', ... }`, the switch/if must be exhaustive. Missing `default: assertNever(x)` is a silent future bug.
+- **Unsafe casts (`as Foo`):** A cast without a preceding type guard means "trust me." Flag every `as` that isn't a DOM cast (`as HTMLInputElement`) or a narrow type refinement proven by the preceding condition.
+- **`Object.keys()` without `keyof typeof`:** `Object.keys(obj).forEach(k => obj[k])` fails type checking silently at runtime when keys are typed. Require `(Object.keys(obj) as Array<keyof typeof obj>)` or a typed `Object.entries()`.
+- **`Promise` without `await` in an `async` function:** Returns the Promise object instead of the resolved value. Flag any `return someAsyncFn()` inside an `async` that should `return await someAsyncFn()`.
+
+## React Traps
+
+Check these on every React component or hook in the diff:
+
+- **Missing `useEffect` dependency array:** `useEffect(fn)` (no array) runs on every render. `useEffect(fn, [])` runs once. `useEffect(fn, [dep])` runs when dep changes. Flag any effect where the deps array is absent or obviously incomplete (function references, object literals, values used inside the effect but not listed).
+- **Stale closures:** An effect or callback captures a value at mount time and never re-captures it. Most common pattern: a `setInterval` inside `useEffect(fn, [])` that reads a stateful value. The fix is either adding the dep or using a ref.
+- **Missing `key` props:** Any `.map()` returning JSX elements must have a stable, unique `key`. Using array index as key is a bug when the list can reorder or filter. Flag index-keyed lists where items have identity (id, slug, etc.).
+- **Unnecessary re-renders:** Flag components that receive object or function props without `useMemo`/`useCallback` when those objects are created inline in the parent render. Flag components that could be wrapped in `React.memo` but aren't, when rendered in tight loops or high-frequency update paths.
+- **Prop drilling past 2 levels:** If a prop is passed through 2+ components without being used at intermediate levels, flag as P3. The fix is context, Zustand, or component composition. Note which fits the existing pattern in this repo.
+- **State mutation without setter:** `arr.push(item)` on state does not trigger a re-render. Flag any direct mutation of state variables.
+
+## Next.js Traps
+
+Check these on every Next.js file in the diff:
+
+- **Server/client boundary:** Any file with `'use client'` cannot import server-only modules (DB clients, `fs`, `crypto`, server-side env vars). Any file without `'use client'` that uses `useState`, `useEffect`, browser globals (`window`, `document`), or event handlers is a runtime crash. Flag the mismatch, not just the symptom.
+- **Missing `Suspense` boundary:** Async server components that fetch data and are rendered inside a client component tree need a `<Suspense fallback={...}>` wrapper. Missing boundaries cause the entire parent tree to suspend without a fallback.
+- **Missing `error.tsx` / `loading.tsx`:** Any new route segment that fetches data or can throw should have both. Flag their absence as P2 when the route is user-facing.
+- **Server-only secrets in client bundle:** `process.env.SECRET_KEY` in a `'use client'` file or in a prop passed from server to client component is exposed in the browser bundle. Only `NEXT_PUBLIC_*` vars are safe client-side. Flag any non-`NEXT_PUBLIC_` env var referenced in client code.
+- **Unguarded `generateMetadata` / `getServerSideProps` fetches:** These run on every request. An uncached external fetch here is a latency and cost bomb. Flag missing `{ next: { revalidate: N } }` or `unstable_cache` wrapping.
+- **`useRouter` from `next/router` in App Router:** App Router uses `next/navigation`. Importing from `next/router` in an App Router project silently fails or returns stale data. Flag the wrong import.
+
+## Database Traps (Drizzle / Prisma)
+
+Check these on any file that touches DB queries:
+
+- **N+1 queries:** A loop that issues a query per iteration. The fix is a single query with `WHERE id IN (...)` or a join. Flag any `.map()` or `for` loop that calls `db.query()`, `prisma.find*()`, or `db.select()` inside the body.
+- **Missing index on filtered/sorted columns:** Any `WHERE`, `ORDER BY`, `GROUP BY`, or join condition on a column that isn't indexed is a full-table scan. Flag new query predicates on columns with no corresponding index in the migration/schema.
+- **Multi-table writes without transactions:** Two or more `INSERT`/`UPDATE`/`DELETE` calls that must succeed or fail together. Flag any multi-table write that isn't wrapped in `db.transaction()` / `prisma.$transaction()`.
+- **Missing unique constraints:** Fields that are logically unique (user email, slug, external ID) but lack a `UNIQUE` constraint are race-condition bugs at scale. Flag schema definitions where uniqueness is enforced in application code but not the DB.
+- **Unbounded queries:** `db.select().from(table)` with no `LIMIT` on a user-facing route is a DoS vector and a cost spike. Flag selects with no limit when the table can grow.
+
+## Performance Flags
+
+- **Large dependency import:** Any new `import` of a package not already in the bundle. If the package's minzipped size is >20 KB, flag as P3 with the size estimate. Prefer tree-shaken imports (`import { X } from 'pkg'` not `import pkg from 'pkg'`).
+- **Render-blocking scripts:** `<script src="...">` without `async` or `defer` in HTML head blocks page paint. Flag in any HTML template or `_document.tsx`.
+- **Missing lazy loading for non-critical routes:** Any page-level component imported with a static `import` at the top of `_app.tsx` or a layout file when it could be `next/dynamic` with `ssr: false`. Flag routes not in the critical path (settings pages, dashboards, modals).
+- **Images without `next/image`:** `<img src="...">` bypasses Next.js image optimization. Flag raw `<img>` tags in Next.js files pointing to non-SVG assets.
+
+## Agent Team Review (--deep only)
+
+For `--deep` reviews on auth changes, payment flows, data migrations, or public API changes, run as separate lanes:
 
 - **Change mapper:** summarizes what changed and which systems are touched.
-- **Runtime critic:** hunts execution failures, state drift, race conditions,
-  error paths, and deploy prerequisites.
-- **Security critic:** reviews auth, secrets, permissions, injection, SSRF,
-  payment safety, wallet flows, and data exposure.
-- **Product critic:** checks feature truth, Suede positioning, user-visible
-  behavior, empty/error states, and release claims.
-- **Test critic:** maps claims to tests, screenshots, simulator runs, builds,
-  and live/API checks.
+- **Runtime critic:** hunts execution failures, state drift, race conditions, error paths, and deploy prerequisites.
+- **Security critic:** reviews auth, secrets, permissions, injection, SSRF, payment safety, wallet flows, and data exposure.
+- **Product critic:** checks feature truth, Suede positioning, user-visible behavior, empty/error states, and release claims.
+- **Test critic:** maps claims to tests, screenshots, simulator runs, builds, and live/API checks.
 
-Collect consensus first. Keep divergent concerns when they are plausible and
-impactful. If high-severity concerns persist after a fix cycle, keep status at
-`hold` and name the smallest next check or patch.
+Collect consensus first. If high-severity concerns persist after a fix cycle, keep status at `hold` and name the smallest next check or patch.
 
 ## Suede A-F Code Grade
 
@@ -153,30 +183,34 @@ Required upgrades:
 
 ## Finding Format
 
-Lead with findings, ordered by severity.
+Lead with findings, ordered by severity. Group repeated patterns once: "This pattern appears in 4 files: [list]. Fix described once below."
 
-```text
-P0/P1/P2/P3 - Title
-File/route:
-Evidence:
-Impact:
-Fix:
-Verification:
-Confidence:
+**P0 / P1**: use the full block:
+
+```
+[P0] path/to/file.ts:142
+Issue: JWT secret falls back to empty string; any token is valid when SECRET is unset.
+Fix: `process.env.JWT_SECRET ?? (() => { throw new Error('JWT_SECRET required') })()`
+Verify: set JWT_SECRET="" and curl /api/me — expect 401, currently 200.
+OWASP: A02 Cryptographic Failures
+Confidence: high
+```
+
+**P2 / P3**: one line each:
+
+```
+[P2] components/Feed.tsx:88 — missing key prop on .map() return; use item.id not index. TS will catch post-fix.
+[P3] utils/format.ts:12 — magic number 86400; extract as SECONDS_PER_DAY.
 ```
 
 Severity:
 
-- **P0:** data loss, security exposure, payment loss, broken release, or public
-  behavior that must not ship.
-- **P1:** likely production regression, auth/permission bug, broken primary
-  path, false public claim, or missing critical deploy requirement.
-- **P2:** meaningful edge-case failure, incomplete state handling, test gap on
-  changed behavior, or maintainability issue with real cost.
+- **P0:** data loss, security exposure, payment loss, broken release, or public behavior that must not ship.
+- **P1:** likely production regression, auth/permission bug, broken primary path, false public claim, or missing critical deploy requirement.
+- **P2:** meaningful edge-case failure, incomplete state handling, test gap on changed behavior, or maintainability issue with real cost.
 - **P3:** low-risk improvement, clarity issue, local cleanup, or follow-up.
 
-Avoid vague findings. If the issue cannot be tied to a file, route, command,
-state, or user-visible behavior, mark it as an open question instead.
+If the issue cannot be tied to a file, route, command, state, or user-visible behavior, mark it as an open question instead.
 
 ## Fix Briefs
 
@@ -196,9 +230,8 @@ do not close the finding until evidence confirms it.
 
 When the user asks to apply fixes (`--fix` flag or equivalent instruction):
 
-1. Apply P2 and P3 findings automatically where the fix is unambiguous and
-   narrow.
-2. Present P0 and P1 findings as confirmed fix briefs before applying — do not
+1. Auto-apply P2/P3 fixes that are local (single file, no behavior contract change). Stage each fix as its own commit with the finding ID in the message.
+2. Present P0 and P1 findings as confirmed fix briefs before applying. Do not
    auto-apply to production-critical, auth, payment, or data-migration code
    without explicit user confirmation.
 3. After applying fixes, re-run the relevant review mode on only the changed
@@ -208,8 +241,7 @@ When the user asks to apply fixes (`--fix` flag or equivalent instruction):
 
 ## OWASP Top 10 Security Checklist (2021)
 
-For any code touching auth, API, data input, or public-facing routes, check
-these:
+OWASP check runs automatically on any file in: `auth/`, `api/`, `middleware/`, `routes/`, `pages/api/`, or any file importing a crypto, session, or payment module. Cite the OWASP category in the finding.
 
 - **A01 Broken Access Control**: Are authorization checks present at every data
   access? Are admin routes protected? Does the code prevent horizontal privilege
@@ -238,8 +270,6 @@ these:
 - **A10 SSRF**: Are URL inputs validated against an allowlist? Can the server be
   tricked into fetching internal network resources?
 
-For each relevant finding, cite the OWASP category.
-
 ## Suede-Specific Checks
 
 Always check these when relevant:
@@ -259,34 +289,9 @@ Always check these when relevant:
 - multi-repo or multi-surface contracts do not drift across web, backend,
   mobile, public sites, and docs.
 
-## Technical Debt Indicators
+## Technical Debt
 
-Flag (as P3 unless they introduce active risk) these patterns:
-
-- **Magic numbers/strings**: constants with no name or explanation that appear
-  in logic.
-- **God objects/functions**: a single function or class doing 5+ unrelated
-  things.
-- **Deep coupling**: code that reaches across 3+ abstraction layers to access
-  internals.
-- **Missing abstraction**: the same 20-line block duplicated in 3+ places.
-- **Leaky abstraction**: a module that requires callers to know its internal
-  implementation details to use it correctly.
-- **Implicit state**: program behavior depends on hidden global or module-level
-  state.
-- **Dead code**: functions, branches, or imports that can never be reached.
-
-Do not block a ship on P3 tech debt unless it directly obscures a P0/P1 bug.
-File it as follow-up.
-
-## Noise Rules
-
-- Do not repeat the same issue across many files; group it once with examples.
-- Do not comment on formatting already enforced by tools.
-- Do not block on personal taste.
-- Do not ask for tests that do not match the risk.
-- Do not approve a change because CI passed if the changed behavior was not
-  exercised.
+Flag tech debt patterns as P3, group by file, don't block ship. Do not block a ship on P3 tech debt unless it directly obscures a P0/P1 bug. File as follow-up.
 
 ## Output Shape
 
@@ -312,4 +317,13 @@ Verification
 Ship Gate
 ```
 
-Keep the final recommendation blunt: `ship`, `ship-with-caveats`, or `hold`.
+The ship gate is always the last line of a review output:
+
+```
+SHIP GATE: hold | ship-with-caveats | ship
+Reason: [one sentence, naming the blocking finding ID or named caveat]
+```
+
+- `hold`: a blocker or high-risk unknown remains.
+- `ship-with-caveats`: no blocker remains, but named non-critical caveats exist.
+- `ship`: no known blocker remains and required verification passed.

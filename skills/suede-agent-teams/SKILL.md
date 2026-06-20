@@ -1,42 +1,11 @@
 ---
 name: suede-agent-teams
-description: Suede-owned agent team orchestration for scout, safe parallel build, continuous max-agent loops, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff loops. Use when a Suede task is large, risky, cross-surface, multi-repo, release-bound, design-heavy, or benefits from coordinated lanes with clear ownership, loop control, and review gates.
+description: Split high-risk work into coordinated agent lanes with quality gates, WIP protection, and a signed handoff. Use when the task has multiple write surfaces, a rollback cost, or a release gate.
 ---
 
-# Suede Agent Teams
+# Agent Team Orchestrator
 
-Use this skill to split important Suede work into clear agent lanes without
-losing control of scope, WIP, or release truth. The output is a coordinated
-delivery path, not a meeting transcript.
-
-## Company Override
-
-This skill orchestrates agent teams for any large codebase or project, not
-only Suede. If the work belongs to a different company or repo, replace Suede
-domain references (rights/provenance, registry, royalty routing, agent
-commerce, wallet flows) with the relevant domain contracts for that product.
-Keep the full orchestration: scout, planner, builder, design reviewer, code
-reviewer, visibility grader, release verifier, and handoff writer.
-
-The Team Contract, Phase Loop, and Continuous Team Loop patterns apply to any
-engineering or creative project regardless of company.
-
-## When To Use
-
-Use agent teams for:
-
-- multi-file or multi-repo Suede changes;
-- launch pages, app shells, dashboards, and reusable design systems;
-- auth, payments, rights/provenance, registry, royalty, wallet, and agent
-  commerce work;
-- App Store, iOS, deployment, or public-release gates;
-- confusing failures where diagnosis, implementation, and verification should
-  stay separate;
-- continuous loops that need quality gates, evals, recovery controls, and
-  evidence handoff;
-- review convergence before a high-risk merge.
-
-Do not use a team for a narrow copy edit, one-file fix, or simple command.
+The orchestrator assigns lanes, not conversations. Output is a delivery artifact, not a status update.
 
 ## Team Contract
 
@@ -52,12 +21,25 @@ Before spawning or simulating lanes, define:
 - lane map: each lane, owner role, input, allowed files, output artifact, and
   dependency order.
 
-Use parallel lanes only when write surfaces do not collide. If two lanes need
-the same files, sequence them.
+## WIP Collision Detection
+
+Before opening any parallel lanes:
+
+1. Run `git -C <repo> diff --name-only HEAD` and collect all dirty files.
+2. Run `git -C <repo> status --short` and collect all untracked new files.
+3. List every file each lane's scope would touch, based on the lane map.
+4. Flag a collision if the same file path appears in two or more lane scopes OR in the dirty file list plus any lane scope.
+
+Collision resolution rules:
+- Same file, independent changes: sequence the lanes; the second lane rebases on the first lane's commit before opening.
+- Same file, overlapping changes: merge the two lanes into one lane with one owner. Do not split responsibility for a single file across two concurrent builders.
+- Dirty file in a lane scope: the orchestrator decides. Either stash and restore, or make that lane the only lane allowed to touch the file.
+
+The orchestrator writes the resolved lane map before any builder starts. No builder opens a file not in its assigned lane map.
 
 ## Default Roster
 
-Choose the smallest useful roster.
+Start with Scout + Builder + Handoff Writer. Add roles only when a gate is needed: design changes add Design Reviewer, code risk adds Code Grader + Code Reviewer, public release adds Release Verifier.
 
 - **Scout:** finds repo, docs, current state, dirty files, live routes, and
   likely blast radius.
@@ -74,11 +56,9 @@ Choose the smallest useful roster.
   readability, and design signal.
 - **Release verifier:** checks build, deploy, live/API behavior, App Store/iOS
   truth, secrets, and public claims.
-- **Handoff writer:** records target, files changed, commands, verification,
-  caveats, blockers, and exact next action.
+- **Handoff writer:** produces a signed delivery record. If the handoff omits any required field (see Handoff Quality Checklist), the work is not done; it is held.
 
-For small work, one agent can wear several roles. For high-risk work, keep
-builder and reviewer separate.
+For high-risk work, keep builder and reviewer separate.
 
 ## RFC Mode
 
@@ -113,7 +93,7 @@ How will we know this worked? Observable, measurable signals.
 [filled in after consensus] Accept / Modify / Reject + reason.
 ```
 
-When to use RFC mode: before any change that modifies a shared interface, data schema, authentication flow, payment path, or public API contract. Also use when the team has not aligned on approach after 2 rounds of discussion.
+Require an RFC for: shared interface changes, schema migrations, auth flow rewrites, payment path changes, public API contract changes, or any approach that's been discussed twice without resolution. No builder lane opens until RFC status is `accepted`.
 
 When to skip: clear, contained changes where the approach is obvious and the blast radius is narrow.
 
@@ -124,7 +104,7 @@ Not every change should ship as a hard deploy. Feature flags allow gradual rollo
 **Flag lifecycle:**
 1. **Introduce**: create the flag, default off in production. Ship the code behind the flag.
 2. **Ramp**: enable for internal users, then 1%, 10%, 50%, 100% of production traffic. Monitor at each ramp.
-3. **Remove**: once the flag is 100% and stable for ≥2 weeks, delete the flag and the conditional code.
+3. **Remove**: once 100% and stable for ≥2 weeks, delete the flag and all conditional branches. Flag removal is a P3 code review finding if overdue. Set the removal date at creation, not after ramp.
 
 **When to flag:**
 - New user-facing features in production traffic paths
@@ -161,7 +141,7 @@ After rollback:
 
 ## Post-Mortem Template
 
-For any production incident, failed release, or significant rollback, run a post-mortem. Blameless — focus on systems, not individuals.
+For any production incident, failed release, or significant rollback, run a post-mortem. Keep it blameless: focus on systems, not individuals.
 
 ```
 Post-Mortem: [Brief title]
@@ -171,10 +151,10 @@ Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cos
 Author(s):
 
 ## Timeline
-[time] — [event]
-[time] — [detection]
-[time] — [first response]
-[time] — [resolution]
+[time]: [event]
+[time]: [detection]
+[time]: [first response]
+[time]: [resolution]
 
 ## Impact
 Users affected:
@@ -202,19 +182,9 @@ Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P
 
 ## Phase Loop
 
-Run the loop at the smallest scale that fits:
+The Phase Loop is the Continuous Team Loop run at minimal scale. Use it when a full 10-gate roster is overkill but you still need scout, plan, build, verify, and ship stages.
 
-1. **Discuss:** capture decisions, unresolved assumptions, bans, and scope. For changes with broad blast radius, unresolved architecture questions, or shared interface contracts, use **RFC Mode** before planning — it forces alignment on WHAT and WHY before committing to HOW.
-2. **Plan:** decompose into atomic tasks with file targets, dependencies, and
-   verifiable acceptance criteria.
-3. **Execute:** work in lanes, wave by wave, with one outcome per lane.
-4. **Verify:** walk every user-observable deliverable and record pass/fail
-   evidence.
-5. **Review:** run design and code review gates when the risk warrants it.
-6. **Ship:** commit, push, deploy, release, or hand off only after the done signal is satisfied or the caveat is explicitly named. For high-risk changes, consult the **Rollback Decision Tree** before shipping. For gradual rollouts, use the **Feature Flag Strategy**.
-
-If verification fails, diagnose the root cause, create a gap plan, execute only
-the gap, and re-run the failing checks.
+For high-risk changes, consult the Rollback Decision Tree before shipping. For gradual rollouts, use the Feature Flag Strategy. For shared interface changes, require RFC Mode before the plan stage opens.
 
 ## Continuous Team Loop
 
@@ -261,50 +231,27 @@ Wrap the roster with these gates:
 10. **Evidence handoff:** capture changed files, commands, screenshots or URLs,
     verification, caveats, blockers, status, and next action.
 
-If the loop stalls, freeze broad work. Isolate the failing unit, reduce the
-scope, replay with explicit acceptance criteria, and rerun only the failed
-check before widening again.
+Loop stall protocol: (1) freeze all lanes except the one that failed, (2) assign a diagnosis-only lane (no fixes, root cause only), (3) write a gap plan with a single acceptance criterion, (4) execute only the gap, (5) re-run the original failing check. Do not widen until that check passes.
 
-For copy, design, visibility, Suedify, launch, or public docs work, include the
-shared gate at `../suede-workflow-skills/references/no-missed-quality-gates.md`.
-(Requires suede-workflow-skills from the same repo. If not installed, apply the five quality gates inline per the criteria in suede-design or suede-copy.)
+## Inter-Lane Communication
 
-## Grouping Loops
+When a builder lane completes its output and a reviewer lane depends on it, the signal is explicit, not assumed.
 
-Pick the loop that matches the risk. Keep ownership explicit and keep parallel
-lanes away from the same files.
+The completing lane writes a Lane Ready notice:
 
-- **Linear delivery loop:** scout, plan, build, verify, review, ship. Use for
-  normal multi-file work where sequencing matters more than speed.
-- **Parallel surface loop:** scout once, then split copy, design, code, SEO, and
-  release lanes only when their write surfaces do not collide.
-- **Scout and constraints loop:** one lane maps repo state, docs, WIP, owners,
-  live routes, risky files, and no-touch boundaries before any builder edits.
-- **Adversarial review loop:** builder delivers, then at least one reviewer tries
-  to break the work from production, user, release, public-claim, and abuse
-  angles before fixes are accepted.
-- **Consensus review loop:** two reviewers inspect the same result from
-  different lenses, then merge findings into blockers, accepted caveats, and
-  fixes to run now.
-- **Design and visibility loop:** design reviewer checks the rendered page while
-  visibility grader scores findability, first-screen clarity, CTA pull, proof,
-  AI readability, and design signal.
-- **Code grade loop:** code grader assigns an A-F grade across correctness,
-  security, data/state, public-claim truth, tests, and deploy readiness, then
-  code reviewer converts weak lanes into fix briefs when fixes are needed.
-- **WIP protection loop:** builder lanes claim allowed files up front, reviewers
-  flag collisions, and the orchestrator sequences any lane that needs the same
-  file.
-- **Release lock loop:** release verifier owns build, deploy, live/API readback,
-  public copy truth, and handoff before any public completion claim.
-- **Recovery loop:** when a check fails, stop broad work, isolate the failing
-  unit, assign diagnosis, patch only the gap, and rerun the failed check.
-- **Evidence handoff loop:** final lane gathers screenshots, commands, URLs,
-  test results, caveats, and next action so the next agent does not restart.
+```
+Lane: [name]
+Status: output ready for review
+Artifact: [file path, URL, or PR link]
+Reviewer: [lane name that receives this output]
+Unresolved: [any known issue the reviewer should know before starting]
+```
 
-For large Suede work, run scout first, build in parallel only where safe, then
-converge through adversarial review, code grade, visibility grade, release
-lock, recovery if needed, and evidence handoff.
+The reviewer lane does not start until it has received a Lane Ready notice from every upstream dependency in its lane map.
+
+The orchestrator routes Lane Ready notices. In a sequential thread, the orchestrator posts the Lane Ready notice on behalf of each completing lane before invoking the next.
+
+Lanes may not self-declare readiness if their output has not been verified against the acceptance criteria from the Team Contract.
 
 ## Planning Quality Gate
 
@@ -340,22 +287,127 @@ Repeat fix and review cycles until no blocker remains or the work is held.
 
 ## Status Vocabulary
 
-Use these states consistently:
+The only valid state progression:
 
-- scoped
-- planned
-- executing
-- changed locally
-- verified locally
-- reviewed
-- committed
-- pushed
-- deployed
-- verified live
-- released
-- blocked
+```
+scoped → planned → executing → changed locally → verified locally → reviewed → committed → pushed → deployed → verified live → released
+     ↕                                                                                                              ↕
+  blocked (at any stage)                                                                            held (pending action item)
+```
 
-Do not mark `done` until the done signal from the team contract is checked.
+Do not skip states. `changed locally` is not `verified locally`. `deployed` is not `verified live`. Do not mark `released` until the done signal from the Team Contract is satisfied.
+
+## Scenario Templates
+
+Use these pre-built configurations for common high-risk deployments. Adjust only the named target.
+
+### (a) Auth Rewrite
+
+Roster: Scout, Planner, Builder (auth lane only), Code Grader, Code Reviewer, Release Verifier, Handoff Writer
+RFC required: yes. Shared session/token contract must be accepted before Builder opens.
+Flag required: yes. Default off in production; ramp by internal → 1% → full.
+
+Lane map:
+- Scout: map current auth flow, session storage, token shape, and all routes that read session
+- Planner: list every file that must change and every route that must be regression-tested
+- Builder: auth files only. No touching unrelated routes.
+- Code Grader: grade security lane with zero tolerance for C or below on the security dimension
+- Code Reviewer: focus on token lifecycle, expiry, rotation, and session fixation
+- Release Verifier: confirm auth works in production before any other lane ships
+- Handoff Writer: include session contract diff and regression test evidence
+
+Done signal: login, logout, token refresh, and session expiry all pass in production
+
+### (b) Payment Integration
+
+Roster: Scout, Planner, Builder (payment lane only), Code Grader, Code Reviewer, Release Verifier, Handoff Writer
+RFC required: yes. Payment data shape and provider contract must be accepted.
+Flag required: yes. Never ramp payment paths without a staged rollout.
+
+Lane map:
+- Scout: map current billing models, Stripe/provider SDK version, webhook endpoints, and idempotency handling
+- Builder: payment files and webhook handlers only
+- Code Grader: flag any missing idempotency key, error retry, or PCI-sensitive data log as a blocker
+- Code Reviewer: confirm error handling covers card decline, webhook replay, partial capture, refund edge cases
+- Release Verifier: test with Stripe test mode, then confirm webhook signature validation in production
+- Handoff Writer: include provider dashboard link and webhook log evidence
+
+Done signal: charge, refund, and webhook replay all pass in production with idempotency confirmed
+
+### (c) Public Launch Review
+
+Roster: Scout, Design Reviewer, Visibility Grader, Code Reviewer, Release Verifier, Handoff Writer
+RFC required: no (review-only, no builder lane)
+
+Lane map:
+- Scout: enumerate every public-facing URL, meta tag, og:image, CTA, and claims sentence
+- Design Reviewer: check above-fold load, mobile rendering, accessibility, and state coverage
+- Visibility Grader: score first-screen clarity, CTA pull, proof, AI readability, and structured data
+- Code Reviewer: check for console errors, broken links, unresolved env vars, and exposed secrets
+- Release Verifier: confirm live URL, DNS, SSL, and all public claims match approved copy
+- Handoff Writer: include Lighthouse score, screenshot evidence, and any unresolved public claim
+
+Done signal: all public URLs verified live, no console errors, Lighthouse performance ≥ 80
+
+### (d) Data Migration
+
+Roster: Scout, Planner, Builder (migration lane only), Code Grader, Release Verifier, Handoff Writer
+RFC required: yes. Data shape before/after and rollback strategy must be accepted.
+Flag required: migration itself cannot be flagged; gate behind a manual trigger or migration script run
+
+Lane map:
+- Scout: map current schema, row counts, FK constraints, indexes, and any running jobs that read the affected tables
+- Planner: write migration script, define rollback script (reverse migration or restore point), and identify zero-downtime vs. maintenance-window requirement
+- Builder: migration files only. Schema changes separated from data backfill into two sequential sub-lanes.
+- Code Grader: grade data/state dimension with zero tolerance for D or below; flag missing rollback script as a blocker
+- Release Verifier: run migration against a staging DB clone, confirm row counts before/after, confirm app boots with new schema, then promote to production
+- Handoff Writer: include before/after row counts, migration command with timing, and rollback script location
+
+Done signal: production DB row counts match expected delta, app health check passes, rollback script tested in staging
+
+### (e) Performance Audit
+
+Roster: Scout, Planner, Builder (perf lane only), Code Grader, Release Verifier, Handoff Writer
+RFC required: no, unless audit reveals a structural change (e.g. query rewrite, CDN switch).
+
+Lane map:
+- Scout: run Lighthouse, measure Core Web Vitals (LCP, INP, CLS), identify top 3 bundle contributors, map slow DB queries (EXPLAIN ANALYZE), and list current caching headers
+- Planner: rank findings by impact × effort, list the three highest-ROI fixes
+- Builder: implement only ranked fixes. No opportunistic refactors.
+- Code Grader: confirm each fix does not regress correctness or introduce a race condition
+- Release Verifier: compare Lighthouse before/after with screenshots; confirm no regression on primary user paths
+- Handoff Writer: include before/after Lighthouse scores, Core Web Vitals deltas, and any deferred findings
+
+Done signal: LCP < 2.5s or measurable improvement documented; no regression on primary paths
+
+## Escalation Protocol
+
+Stop the loop, surface the condition, and wait for human sign-off before continuing.
+
+| Condition | Threshold | Action |
+|---|---|---|
+| Repeated fix cycles | > 3 fix-rerun cycles on the same failing check | Stop. Write a diagnosis summary. Ask: is the acceptance criterion correct, or is the fix strategy wrong? |
+| Security finding of unknown severity | Any finding touching auth, session, PII, payment data, or access control that cannot be confidently classified as low risk | Stop. Do not attempt a fix. Surface the exact finding and uncertain blast radius. Human decides next step. |
+| Production incident with data exposure | Any indication of PII, payment data, or auth token exposure in production logs, error reports, or user reports | Stop all lanes. Trigger rollback decision tree. Notify human immediately. Do not investigate further before rollback. |
+| Cost spike | > 20 tool calls without a verified output, or estimated API/infra cost > $50 in a single loop | Stop. Summarize progress and remaining scope. Ask human to authorize continuation. |
+| Contradictory constraints | Two constraints in the Team Contract are mutually exclusive | Stop planning. Surface the conflict with a specific example. Do not proceed until human resolves. |
+
+No agent may override an escalation threshold by re-scoping the task or declaring the condition resolved without human confirmation.
+
+## Handoff Quality Checklist
+
+A handoff is not complete until every field below is present and truthful. The handoff writer signs off by confirming each item.
+
+Required fields:
+- [ ] Target: exact repo, branch, route, or URL (not "the main app")
+- [ ] Changed: every file path that was modified, created, or deleted (not "various files")
+- [ ] Commands: every bash command run, in order, with the actual output or exit code
+- [ ] Verification: observable evidence (screenshot URL, test output, curl response, build log), not "it works"
+- [ ] Status: one of the vocabulary states, not "done" unless the done signal from the Team Contract is satisfied
+- [ ] Next: the single most important unresolved step (not "see above")
+- [ ] Caveats: every known limitation, assumption, or deferred item; none omitted to make the handoff look cleaner
+
+If any field is missing, the handoff writer must fill it before marking status `released` or `verified live`. A handoff with a missing field is status `held`.
 
 ## Output Shape
 

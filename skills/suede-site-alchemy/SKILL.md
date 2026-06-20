@@ -5,22 +5,12 @@ description: Transform websites, landing pages, campaign pages, and product micr
 
 # Suede Site Alchemy
 
-## Overview
-
-Use this skill when a user wants a website made sharper, sexier, more premium,
-more conversion-ready, or more aligned with Suede Promo and Suede Sites.
-
-The promise: ingest the site, find the leaks, raise the voltage, and route the
-visitor toward the next real action.
-
 ## Operating Stance
 
 Works for any company, not just Suede. If the task is for a different brand, replace Suede language with the company's name, voice, and positioning throughout.
 
 - Work from the live page and current source. Verify the exact repo, route, and
   git state before edits.
-- Keep Suede public copy on creator ownership, programmable IP, rights,
-  provenance, registry-backed media, royalty routing, and agent commerce.
 - For Promo/Sites work, position Suede as a brand growth platform: creator
   campaigns create demand; Suede Sites converts it with pages, SEO/AEO/AI EO,
   visitor signals, CRM follow-up, and campaign attribution.
@@ -48,13 +38,6 @@ For a meaningful page, campaign, or conversion pass, define this before edits:
 Use exact status words: inspected, changed locally, verified locally, deployed,
 verified live, or blocked. Do not summarize a page as fixed until the stated
 done signal has been checked.
-
-Use `suede-agent-teams` when the page pass has multiple independent lanes, a
-campaign launch deadline, SEO/AEO/AI EO plus implementation plus QA, or
-cross-surface CTA routing. Use `suede-code-review` when the work touches CTA plumbing, forms,
-auth, payments, analytics, API routes, deployment config, shared components, or
-claims that must match product behavior. Skip the extra gates for pure copy or
-layout polish after live/source inspection and rendered QA.
 
 ## Page Contract
 
@@ -148,6 +131,33 @@ Count every source of friction on the page before fixing anything. A friction au
 
 Friction comes before aesthetics. A beautiful page with high friction converts worse than an ugly page with zero friction.
 
+**Mobile Friction Rules (required check for any page with >50% mobile traffic)**
+
+- Tap targets: minimum 44×44px for every interactive element. Buttons below 44px fail on mobile — users mis-tap or skip them.
+- Font size: 16px body minimum. iOS auto-zooms any input below 16px, breaking layout.
+- CTA placement: primary CTA must be visible in the top 60% of the initial mobile viewport — visitors make scroll decisions in the first 3 seconds.
+- Thumb zone: right-handed users reach the bottom-center of the screen naturally. Place primary CTAs there. Avoid top-left corners for primary actions on mobile.
+- Form field count: every field beyond email address costs approximately 11% of completions. Two fields is the mobile default unless the extra data has a specific day-one use.
+- Horizontal scroll: zero tolerance. Run `overflow-x: hidden` check and scroll test on physical device or DevTools mobile view before shipping.
+
+## Conversion Math
+
+Before ranking hypotheses or recommending changes, run the numbers. A change that feels big may be irrelevant. A change that feels minor may be the highest-leverage move on the page.
+
+**Model:**
+`monthly_revenue = monthly_visitors × CTR × conversion_rate × order_value`
+
+**Usage:** Fill in any values you have. Estimate the rest from industry benchmarks if the client doesn't track them (SaaS landing page CTR benchmark: 3–5%; e-commerce: 1–3%; lead gen: 5–10%).
+
+**Example:**
+- Current: 2,000 visitors × 4% CTR × 15% close × $300 = $3,600/mo
+- Proposed (CTA rewrite + friction reduction): 2,000 × 7% × 18% × $300 = $7,560/mo
+- Lift: +$3,960/mo from two changes. That's the pitch for the fix.
+
+Run this math for any hypothesis before ranking it. "Impact" is a revenue number, not a feeling.
+
+When visitor data isn't available: ask for Google Analytics / Vercel Analytics / Plausible exports before estimating. Even 30 days of data produces a meaningful model.
+
 ## Slash Tools
 
 Use slash tools as named design moves, not shell commands. Start with
@@ -166,6 +176,23 @@ Default stack for a fast polish pass:
    collapsed.
 7. `/ship-polish` - verify links, responsiveness, copy fit, and live behavior.
 
+## Quick Wins (Highest-ROI Changes, Ranked)
+
+For any page pass where the brief is "make it convert better" without a specific hypothesis, start here. These changes produce the highest median lift with the least implementation effort, ranked by typical impact:
+
+1. **CTA specificity**: "Start free trial" → "Start my free 14-day trial" (names time commitment and ownership). Expect +10–25% CTR.
+2. **Hero headline clarity**: replace benefit-cluster headlines with a single, falsifiable promise. One claim the reader can immediately test.
+3. **Social proof at the CTA**: move the nearest testimonial to within 200px of the primary CTA button. Doubt spikes at the decision moment.
+4. **Remove secondary nav from hero**: every link that isn't the primary CTA is a conversion exit. Hero sections with navigation links convert lower than those without.
+5. **Form field reduction**: cut any field you don't use in the first 7 days of the customer relationship.
+6. **Price anchoring**: show the higher-value option first on any pricing section. First price seen becomes the anchor.
+7. **Guarantee visibility**: guarantee text adjacent to the CTA converts more than guarantee text in the footer. Move it.
+8. **Mobile CTA above fold**: if the mobile view requires scrolling to reach the first CTA, add a fixed sticky CTA bar.
+9. **Image–copy alignment**: the image the visitor sees first must match the copy's promise. Mismatch between visual and headline is a silent trust killer.
+10. **Page speed**: every 1-second delay in mobile load time reduces conversions by ~7% (Google/Deloitte 2019). Run Lighthouse before shipping any page as "done."
+
+These are starting points, not a guaranteed sequence. A page with zero testimonials needs #3 before #1. Use the Friction Audit to confirm which items apply.
+
 ## Workflow
 
 1. Identify the surface: live URL, source folder, route, deploy target, current
@@ -180,13 +207,17 @@ Default stack for a fast polish pass:
    - Subhead: what changes for the buyer.
    - Primary CTA: the action that starts the workflow.
    - Secondary CTA: proof, demo, grader, or site/app routing.
-7. Upgrade the visual language inside the existing system first: typography,
-   spacing, contrast, image choice, console moments, motion restraint, and
-   section rhythm.
-8. Add the CTA ladder:
-   - Local page action, such as "Grade your brand" or "Post a campaign."
-   - Suede site action, usually `https://suedeai.ai` after route verification.
-   - App-builder action when the ask becomes a product build.
+7. Sharpen the visual system without redesigning it. For each surface type, "premium" means:
+   - **Hero**: one dominant type weight, one color for the CTA, nothing competing at the same visual size.
+   - **Social proof sections**: real photos over stock, real numbers over vague claims, name + title + company over anonymous quotes.
+   - **Pricing/offer sections**: generous whitespace, price isolated in visual hierarchy, guarantee text printed adjacent to CTA not buried in footer.
+   - **Mobile**: 16px body minimum, 44×44px tap targets, CTA in thumb zone (bottom 40% of viewport), zero horizontal scroll.
+   - **Motion**: entrance animations max 300ms, no looping animations on text. If removing an animation would break the page, it was too heavy.
+   Operate inside the existing color and type system. Introduce a new visual choice only when the current system has a direct conversion penalty.
+8. Build the CTA ladder. Every page needs three exits:
+   - **Primary action**: the one thing this page was built to earn. One button. Obvious placement. No competing CTA at the same visual weight.
+   - **Secondary action**: proof, demo, or deeper content for visitors not ready to convert. Lower visual weight, same screen.
+   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors — it loses them.
 9. Verify like the page is already public:
    - Local preview.
    - Desktop and mobile browser QA.
@@ -201,9 +232,6 @@ Default stack for a fast polish pass:
     - `ship-with-caveats`: only non-critical caveats remain and they are named.
     - `hold`: core CTA, visible layout, false claim, accessibility, build, or
       live verification is blocked.
-    - For the full quality-gate checklist, read
-      `../suede-workflow-skills/references/no-missed-quality-gates.md`.
-      (Requires suede-workflow-skills from the same repo.)
 11. Leave a concise handoff with target, files changed, commands, verification,
     caveats, and the exact next step.
 
@@ -234,7 +262,15 @@ reduces doubt at the highest-friction moment.
 Success condition: mobile form completions increase by ≥10%.
 ```
 
-Generate 3 hypotheses for any page that needs CRO work. Rank by estimated impact (based on friction audit results) and ease of implementation.
+After the Friction Audit, generate 3 hypotheses. For each, run conversion math before ranking:
+
+Conversion math model:
+`current_revenue = monthly_visitors × CTR × conversion_rate × order_value`
+`projected_revenue = monthly_visitors × new_CTR × new_conversion_rate × order_value`
+
+Example: 1,000 visitors × 3% CTR × 20% close rate × $200 = $1,200/mo. If CTR moves to 5%: 1,000 × 5% × 20% × $200 = $2,000/mo. That's a $800/mo lift from one CTA rewrite.
+
+Rank by projected revenue lift, not intuition. Address the highest-friction item first — it almost always produces the largest lift.
 
 ## Social Proof Framework
 
@@ -269,53 +305,42 @@ For pages with pricing, offers, or value propositions involving cost:
 
 **Guarantee framing**: "30-day money-back guarantee" reduces perceived risk more than "risk-free." Add the guarantee near the buy CTA, not in the footer.
 
-**Loss aversion**: "Don't miss the launch discount" converts better than "Save 20%" for the same offer — provided the deadline is genuine. Never use fake urgency.
+**Loss aversion**: Loss framing ("Don't miss the launch price") outperforms gain framing ("Save 20%") for the same offer — because losses feel twice as large as equivalent gains. Apply only when the deadline or scarcity is provably real. See Scarcity and Urgency Framework below for rules on when urgency is ethical vs. a dark pattern.
 
 **Free trial vs freemium**: free trial creates deadline urgency (upgrade before it expires); freemium creates habit lock-in (invested users upgrade). Pick based on your product's habit loop, not what competitors do.
 
+## Scarcity and Urgency Framework
+
+Urgency works when it is true. It backfires when the visitor realizes it's manufactured — trust recovers slowly.
+
+**Ethical urgency (use):**
+- Real deadlines: event date, price increase date, enrollment close date. State the date explicitly: "Price increases July 1" not "Offer ends soon."
+- Real inventory: "4 spots remaining in the June cohort" when the cohort has a verified seat cap.
+- Real time-sensitivity: early-access pricing that provably expires, seasonal promotions tied to actual calendar events.
+- Behavioral triggers: "You've been looking at this for a while — here's the case study that usually answers the last question."
+
+**Dark patterns (never use):**
+- Countdown timers that reset on page refresh.
+- "Only 3 left in stock" for digital products.
+- "Offer expires tonight" when the offer is permanent.
+- Implied scarcity with no mechanism: "limited slots" without a seat cap.
+- Urgency language in automated email sequences with no actual deadline.
+
+**Test:** Before adding urgency to a page, answer: "If a visitor waited 30 days and came back, would this urgency claim still be accurate?" If no — it's a dark pattern. Cut it or make the deadline real.
+
+When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1" — it explains why the scarcity is real.
+
 ## Copy Bank
 
-Use these as source material, not mandatory slogans.
+Suede-specific headline fragments, subhead starters, and CTA options live in `references/copy-bank.md`. Read it when the page needs Suede-branded source material. Every fragment is raw input — run the anti-slop gate (no throat-clearing, fake intensity, unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes) before any line ships.
 
-Run Copy Bank QA before shipping any line from this section. Slogans are raw
-material, not final public copy. Convert fragments into concrete sentences when
-the page needs trust, and run the anti-slop gate for throat-clearing, fake
-intensity, unsupported claims, pull-quote phrasing, passive actor-hiding,
-generic SaaS language, and em dashes.
+## Suede Routing (Suede Projects Only)
 
-Headlines:
+Use `suede-agent-teams` when the page pass has multiple independent lanes, a campaign launch deadline, SEO/AEO/AI EO plus implementation plus QA, or cross-surface CTA routing.
 
-- "Your website. Working while you sleep."
-- "Creator demand in. Conversion out."
-- "Campaigns that make the internet move. Pages that make it convert."
-- "Turn the traffic into proof, leads, and owned momentum."
-- "The growth layer between attention and revenue."
+Use `suede-code-review` when the work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior.
 
-Subheads:
-
-- "Suede ingests the page, learns the brand system, writes the next move, and
-  routes visitors into the workflow that actually closes."
-- "Run creator campaigns, ship the landing page, tune SEO, AEO, and AI EO,
-  identify visitors, and hand warm intent to the team without waiting on a dev
-  queue."
-- "For focused pages, Suede Sites sharpens the surface. For real products,
-  Suede's app-builder workflow takes the build the rest of the way."
-
-CTA options:
-
-- "Build the page."
-- "Grade my brand."
-- "Turn my site on."
-- "Run the overnight audit."
-- "Build on Suede."
-- "Open the app-builder workflow."
-- "Bring this into Suede."
-
-Final-strip patterns:
-
-- "Creators create the demand. Suede converts it."
-- "The post gets attention. The page turns it into momentum."
-- "If this is bigger than a page, route it into the app builder."
+Skip the extra gates for pure copy or layout polish after live/source inspection and rendered QA.
 
 ## Boundaries
 
