@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suede Code Review (P0–P3)"
-  short_description: "Deep code review — TypeScript, React, Next.js, OWASP, DB patterns, three depths, findings and fix briefs."
-  default_prompt: "Use $suede-code-review on [diff/PR/files] at [--quick / --standard / --deep]. Run language-specific checklists, OWASP Top 10, database query patterns, and performance flags. Return findings ordered by severity with fix briefs, then a signed grade."
-policy:
-  allow_implicit_invocation: true

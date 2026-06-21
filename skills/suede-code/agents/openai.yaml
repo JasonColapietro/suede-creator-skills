@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Code"
+  short_description: "Review and grade code in one pass — deep findings plus an A-F ship verdict. Prompted-only; never auto-runs."
+  default_prompt: "Use $suede-code to review and grade this change — findings, an A-F grade by default, and a deploy-safety gate. Run only when I ask; do not auto-fire on a diff."

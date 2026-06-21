@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Write"
-  short_description: "Write anything Suede ships — long-form, short-form, GitHub, social, email — with frameworks, variants, and a copy score."
-  default_prompt: "Use $johnny-suede-write to write [surface type and subject]. Identify the mode, choose the persuasion framework, generate variants, apply the anti-slop gate, and deliver a scored output."
+  short_description: "Write anything Suede ships — long-form, short-form, GitHub, social, email, brand-voice retunes, and ambassador talk-tracks — with frameworks, variants, an anti-slop gate, and a copy score."
+  default_prompt: "Use $johnny-suede-write to write or rewrite [surface type and subject]. Pick the lane, identify the mode, persona, and persuasion framework, generate variants, run the anti-slop and claim-safety gates, and deliver a scored output."
 policy:
   allow_implicit_invocation: true

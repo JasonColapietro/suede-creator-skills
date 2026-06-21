@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Install Support"
-  short_description: "Fix public Suede install paths and docs"
-  default_prompt: "Use $suede-install-support to make this Suede skill install path public, accurate, and easy to explain."

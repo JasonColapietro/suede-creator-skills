@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Song To Universe"
-  short_description: "Expand one song into a campaign world"
-  default_prompt: "Use $suede-song-to-universe to build the story, visuals, scenes, fan prompts, merch ideas, and campaign mechanics around this track."

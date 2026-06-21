@@ -1,8 +1,0 @@
-interface:
-  display_name: "Suede Release Linter"
-  short_description: "Audit release files and metadata."
-  brand_color: "#D71920"
-  default_prompt: "Use $music-release-metadata-linter to audit this music project for release readiness."
-
-policy:
-  allow_implicit_invocation: true

@@ -2,7 +2,7 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 38-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 16-skill pack for AI coding agents,
 design-heavy website work, Apple and iOS app surfaces, anti-slop copywriting, Suede SEO
 discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
@@ -94,7 +94,7 @@ signals become stamps, and what intentionally ships later, see
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with primary skill pages, install links, manifests, scripts, folders, and resource maps.
 - [Suede Agent Teams docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html) - controlled max-agent loops for scout, safe parallel build, adversarial review, visibility grading, code grading, release lock, recovery, and evidence handoff.
 - [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
-- [Music Release Metadata Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
+- [Suede Release Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
 ## Quick Start
 
@@ -139,7 +139,7 @@ Utility scripts are available when the project needs local creator reports:
 git clone https://github.com/jasoncolapietro/suede-creator-skills.git
 cd suede-creator-skills
 
-python3 skills/music-release-metadata-linter/scripts/lint_release.py \
+python3 skills/suede-release-linter/scripts/lint_release.py \
   /path/to/music-project \
   --output /path/to/release-lint-output
 
@@ -208,50 +208,28 @@ Install individual workflow and operations skills when you want direct triggers:
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suedify \
+  --path skills/johnny-suede-design \
   skills/johnny-suede-write \
-  skills/johnny-suede-design \
-  skills/suede-design \
-  skills/suede-copy \
-  skills/suede-brand-voice \
+  skills/suede-code \
+  skills/suede-ship-gate \
   skills/suede-seo-audit \
-  skills/suede-site-alchemy \
   skills/suede-visibility-grader \
-  skills/suede-code-grader \
-  skills/suede-code-review \
-  skills/suede-agent-teams \
+  skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-install-support \
   skills/suede-mcp-qa \
-  skills/suede-ambassador-explainer \
-  skills/suede-public-claim-check \
-  skills/suede-agent-commerce
+  skills/suede-public-claim-check
 ```
 
-Install artist and creator workflow skills:
+Install creator skills:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-era-builder \
-  skills/suede-song-to-universe \
-  skills/suede-hook-hunter \
-  skills/suede-release-stunt-lab \
-  skills/suede-fan-rituals \
-  skills/suede-visualizer-director \
-  skills/suede-merch-object-lab \
-  skills/suede-setlist-theater \
-  skills/suede-catalog-resurrection \
-  skills/suede-artist-identity-forge \
-  skills/suede-collab-matchmaker \
-  skills/suede-campaign-in-a-box \
+  --path skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
-  skills/music-release-metadata-linter \
+  skills/suede-release-linter \
   skills/suede-rights-passport \
-  skills/suede-rights-audit \
-  skills/suede-provenance-map \
-  skills/suede-licensing-prep \
-  skills/suede-royalty-routing-brief
+  skills/suede-rights-audit
 ```
 
 Restart Codex after installing new skills.
@@ -298,7 +276,7 @@ design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
 code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
 ambassador explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, max-agent grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **38
+artist campaign, and creator utility workflow. The repository now ships **16
 public skill folders**.
 
 ```bash
@@ -307,48 +285,26 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual public workflow and operations skills:
+Individual workflow and operations skills (10):
 
-- [`skills/johnny-suede-write`](skills/johnny-suede-write)
 - [`skills/johnny-suede-design`](skills/johnny-suede-design)
-- [`skills/suedify`](skills/suedify)
-- [`skills/suede-design`](skills/suede-design)
-- [`skills/suede-copy`](skills/suede-copy)
-- [`skills/suede-brand-voice`](skills/suede-brand-voice)
+- [`skills/johnny-suede-write`](skills/johnny-suede-write)
+- [`skills/suede-code`](skills/suede-code)
+- [`skills/suede-ship-gate`](skills/suede-ship-gate)
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
-- [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
-- [`skills/suede-code-grader`](skills/suede-code-grader)
-- [`skills/suede-code-review`](skills/suede-code-review)
-- [`skills/suede-agent-teams`](skills/suede-agent-teams)
+- [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-launch-packaging`](skills/suede-launch-packaging)
-- [`skills/suede-install-support`](skills/suede-install-support)
 - [`skills/suede-mcp-qa`](skills/suede-mcp-qa)
-- [`skills/suede-ambassador-explainer`](skills/suede-ambassador-explainer)
 - [`skills/suede-public-claim-check`](skills/suede-public-claim-check)
-- [`skills/suede-agent-commerce`](skills/suede-agent-commerce)
 
-Artist campaign and creator utility skills:
+Creator skills (5):
 
-- [`skills/suede-era-builder`](skills/suede-era-builder)
-- [`skills/suede-song-to-universe`](skills/suede-song-to-universe)
-- [`skills/suede-hook-hunter`](skills/suede-hook-hunter)
-- [`skills/suede-release-stunt-lab`](skills/suede-release-stunt-lab)
-- [`skills/suede-fan-rituals`](skills/suede-fan-rituals)
-- [`skills/suede-visualizer-director`](skills/suede-visualizer-director)
-- [`skills/suede-merch-object-lab`](skills/suede-merch-object-lab)
-- [`skills/suede-setlist-theater`](skills/suede-setlist-theater)
-- [`skills/suede-catalog-resurrection`](skills/suede-catalog-resurrection)
-- [`skills/suede-artist-identity-forge`](skills/suede-artist-identity-forge)
-- [`skills/suede-collab-matchmaker`](skills/suede-collab-matchmaker)
 - [`skills/suede-campaign-in-a-box`](skills/suede-campaign-in-a-box)
 - [`skills/suede-sync-packaging`](skills/suede-sync-packaging)
-- [`skills/music-release-metadata-linter`](skills/music-release-metadata-linter)
+- [`skills/suede-release-linter`](skills/suede-release-linter)
 - [`skills/suede-rights-passport`](skills/suede-rights-passport)
 - [`skills/suede-rights-audit`](skills/suede-rights-audit)
-- [`skills/suede-provenance-map`](skills/suede-provenance-map)
-- [`skills/suede-licensing-prep`](skills/suede-licensing-prep)
-- [`skills/suede-royalty-routing-brief`](skills/suede-royalty-routing-brief)
 
 ### Suede Rights Passport
 
@@ -392,11 +348,11 @@ confirmations, splits status, sample status, clearance notes, wallet/payment
 destination, release history, public URLs, and provenance notes. Unknown or
 unconfirmed facts remain flagged in the generated reports.
 
-### Music Release Metadata Linter
+### Suede Release Linter
 
-![Music Release Metadata Linter preview](docs/assets/release-linter-preview.png)
+![Suede Release Linter preview](docs/assets/release-linter-preview.png)
 
-Folder: [`skills/music-release-metadata-linter`](skills/music-release-metadata-linter)
+Folder: [`skills/suede-release-linter`](skills/suede-release-linter)
 
 Audit a song, album, catalog, stem pack, or media project before release,
 licensing, registry preparation, agent commerce, or Suede intake. The linter
@@ -412,7 +368,7 @@ Outputs include:
 Run it locally:
 
 ```bash
-python3 skills/music-release-metadata-linter/scripts/lint_release.py \
+python3 skills/suede-release-linter/scripts/lint_release.py \
   /path/to/music-project \
   --output /path/to/release-lint-output
 ```
@@ -420,7 +376,7 @@ python3 skills/music-release-metadata-linter/scripts/lint_release.py \
 With metadata:
 
 ```bash
-python3 skills/music-release-metadata-linter/scripts/lint_release.py \
+python3 skills/suede-release-linter/scripts/lint_release.py \
   /path/to/music-project \
   --metadata /path/to/music-project/metadata.json \
   --output /path/to/release-lint-output
@@ -437,13 +393,13 @@ cd suede-creator-skills
 
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 cp -R skills/suede-rights-passport "${CODEX_HOME:-$HOME/.codex}/skills/"
-cp -R skills/music-release-metadata-linter "${CODEX_HOME:-$HOME/.codex}/skills/"
+cp -R skills/suede-release-linter "${CODEX_HOME:-$HOME/.codex}/skills/"
 ```
 
 Example Codex prompts:
 
 ```text
-Use $music-release-metadata-linter to audit this album folder for release readiness.
+Use $suede-release-linter to audit this album folder for release readiness.
 ```
 
 ```text
@@ -461,7 +417,7 @@ cd /path/to/your-project
 
 mkdir -p .claude/skills
 cp -R /tmp/suede-creator-skills/skills/suede-rights-passport .claude/skills/
-cp -R /tmp/suede-creator-skills/skills/music-release-metadata-linter .claude/skills/
+cp -R /tmp/suede-creator-skills/skills/suede-release-linter .claude/skills/
 ```
 
 For a user-level install:
@@ -469,13 +425,13 @@ For a user-level install:
 ```bash
 mkdir -p ~/.claude/skills
 cp -R skills/suede-rights-passport ~/.claude/skills/
-cp -R skills/music-release-metadata-linter ~/.claude/skills/
+cp -R skills/suede-release-linter ~/.claude/skills/
 ```
 
 Example Claude Code prompts:
 
 ```text
-Use the music-release-metadata-linter skill to check this release folder.
+Use the suede-release-linter skill to check this release folder.
 ```
 
 ```text
@@ -526,17 +482,17 @@ Project links:
 - Public installs and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - GitHub skill install commands and Suede Skills MCP docs for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - MCP source: [mcp/](mcp/) - dependency-free stdio MCP server, catalog, and MCP README.
 - Suede Rights Passport docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
-- Music Release Metadata Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.
+- Suede Release Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.
 - Rights Passport skill: [skills/suede-rights-passport/SKILL.md](skills/suede-rights-passport/SKILL.md)
 - Rights Passport script: [skills/suede-rights-passport/scripts/create_transfer_package.py](skills/suede-rights-passport/scripts/create_transfer_package.py)
 - Rights Passport OpenAI metadata: [skills/suede-rights-passport/agents/openai.yaml](skills/suede-rights-passport/agents/openai.yaml)
 - Rights Passport references: [skills/suede-rights-passport/references/](skills/suede-rights-passport/references/)
 - Rights Passport templates: [skills/suede-rights-passport/assets/](skills/suede-rights-passport/assets/)
-- Release Linter skill: [skills/music-release-metadata-linter/SKILL.md](skills/music-release-metadata-linter/SKILL.md)
-- Release Linter script: [skills/music-release-metadata-linter/scripts/lint_release.py](skills/music-release-metadata-linter/scripts/lint_release.py)
-- Release Linter OpenAI metadata: [skills/music-release-metadata-linter/agents/openai.yaml](skills/music-release-metadata-linter/agents/openai.yaml)
-- Release Linter references: [skills/music-release-metadata-linter/references/](skills/music-release-metadata-linter/references/)
-- Release Linter templates: [skills/music-release-metadata-linter/assets/](skills/music-release-metadata-linter/assets/)
+- Release Linter skill: [skills/suede-release-linter/SKILL.md](skills/suede-release-linter/SKILL.md)
+- Release Linter script: [skills/suede-release-linter/scripts/lint_release.py](skills/suede-release-linter/scripts/lint_release.py)
+- Release Linter OpenAI metadata: [skills/suede-release-linter/agents/openai.yaml](skills/suede-release-linter/agents/openai.yaml)
+- Release Linter references: [skills/suede-release-linter/references/](skills/suede-release-linter/references/)
+- Release Linter templates: [skills/suede-release-linter/assets/](skills/suede-release-linter/assets/)
 - Passport concept: [PASSPORT.md](PASSPORT.md)
 - Page source: [docs/index.html](docs/index.html)
 - Skill docs source: [docs/skills/](docs/skills/)

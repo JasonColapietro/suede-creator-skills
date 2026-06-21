@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for Johnny Suede Write, Johnny Suede Design, Apple and iOS surfaces, Suede design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, Suedify reference-site restyling, site alchemy, code review, agent-team QA, install support, MCP QA, ambassador explanation, brand voice, claim checks, artist campaign tools, creator utility review, agent commerce, and public launch packaging. Use when a user asks to load the full Suede workflow pack, clone the feel of a website, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code, prepare public docs, package an artist campaign, or coordinate multiple Suede work lanes.
+description: Public umbrella workflow for 16 public skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, Suede Public Claim Check, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
 ---
 
 # Suede Workflow Skills
@@ -16,13 +16,11 @@ This skill is the public entry point for:
 - **Johnny Suede Design:** one loadable design mode for Suedify, UI polish,
   Apple and iOS surfaces, App Store screenshots, design-system QA, responsive
   checks, visibility grading, and the writing stack.
-- **Suedify:** study a reference URL and push a target URL toward that style.
-- **Suede Design:** make a site, app surface, or component feel intentional,
-  polished, responsive, and Suede-native.
-- **Suede Copy:** write direct public copy, docs, SEO metadata, CTAs, launch
-  copy, FAQ answers, and claim boundaries.
-- **Suede Brand Voice:** keep public copy specific, creator-owned,
-  rights-aware, and free of generic AI phrasing.
+- **Suede Code:** unified code review and A-F grading for correctness,
+  security, data/state, deploy readiness, and ship risk — prompted only, never
+  auto-fires.
+- **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
+  checks fail — prompted only, plugs into any CI or workflow system.
 - **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
   AI EO, internal links, sitemap fit, and discoverability.
 - **Suede Visibility Grader:** grade public pages, GitHub Pages sites, docs,
@@ -30,74 +28,41 @@ This skill is the public entry point for:
   pull, proof, AI readability, and design signal.
 - **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
   conversion surface.
-- **Suede Code Grader:** grade code changes A-F for correctness, security,
-  data/state, Suede truth, UX/release behavior, tests, and deploy readiness
-  with an explanation of why the grade landed there.
-- **Suede Code Review:** review changes for real bugs, regressions, security
-  risk, public-claim drift, missing verification, and fix briefs.
-- **Suede Agent Teams:** split important work into clear lanes for scout,
-  planner, builder, design reviewer, visibility grader, code reviewer, release
-  verifier, and handoff writer.
 - **Suede Launch Packaging:** prepare public releases, proof links, install
   commands, QA, and handoff notes.
-- **Suede Install Support:** fix public GitHub skill installs, local plugin
-  notes, and ambassador-safe setup copy.
 - **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
   output, install options, and docs alignment.
-- **Suede Ambassador Explainer:** write public talk tracks, DMs, emails, FAQs,
-  onboarding copy, and objection handling.
 - **Suede Public Claim Check:** remove unsupported public claims around rights,
   payouts, registry writes, private access, traction, and install availability.
-- **Suede Agent Commerce:** make creative works, docs, skill packs, and rights
-  packages readable to agents.
-- **Artist campaign lanes:** use the artist skills for era systems, song
-  worlds, hooks, release stunts, fan rituals, visualizers, merch objects,
-  setlist arcs, catalog revival, identity, collabs, campaign-in-a-box plans,
-  and sync-style review packages.
-- **Creator utility lanes:** use the creator skills for release linting, rights
-  passporting, rights audits, provenance maps, licensing prep, and royalty
-  routing briefs when those support the work.
+- **Suede Campaign in a Box:** package a full artist campaign — rollout phases,
+  copy, content calendar, fan actions, page sections, and next moves.
+- **Suede Sync Packaging:** prepare clean sync review notes without placement
+  promises, clearance claims, outreach claims, or a Suede promo CTA.
+- **Suede Release Linter:** audit release folders for missing metadata,
+  artwork, masters, lyrics, stems, credits, splits, samples, and provenance.
+- **Suede Rights Passport:** package creator folders into structured transfer
+  material with provenance, credits, splits, license notes, and intake JSON.
+- **Suede Rights Audit:** identify ownership, contributor, split, sample,
+  license, and intake gaps.
 
 If the individual public skills are also installed, use them directly when
 their names match the task:
 
 - `johnny-suede-write`
 - `johnny-suede-design`
-- `suedify`
-- `suede-design`
-- `suede-copy`
-- `suede-brand-voice`
+- `suede-code`
+- `suede-ship-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
 - `suede-site-alchemy`
-- `suede-code-review`
-- `suede-code-grader`
-- `suede-agent-teams`
 - `suede-launch-packaging`
-- `suede-install-support`
 - `suede-mcp-qa`
-- `suede-ambassador-explainer`
 - `suede-public-claim-check`
-- `suede-agent-commerce`
-- `suede-era-builder`
-- `suede-song-to-universe`
-- `suede-hook-hunter`
-- `suede-release-stunt-lab`
-- `suede-fan-rituals`
-- `suede-visualizer-director`
-- `suede-merch-object-lab`
-- `suede-setlist-theater`
-- `suede-catalog-resurrection`
-- `suede-artist-identity-forge`
-- `suede-collab-matchmaker`
 - `suede-campaign-in-a-box`
 - `suede-sync-packaging`
-- `music-release-metadata-linter`
+- `suede-release-linter`
 - `suede-rights-passport`
 - `suede-rights-audit`
-- `suede-provenance-map`
-- `suede-licensing-prep`
-- `suede-royalty-routing-brief`
 
 If only this umbrella skill is installed, follow the condensed workflow below.
 
@@ -416,36 +381,23 @@ Useful grouping loops:
 
 When the task names a narrower Suede lane, route directly:
 
-- Public copy or tone: `suede-copy`, `suede-brand-voice`,
-  `suede-public-claim-check`, or `johnny-suede-write` when the user wants the
-  whole writing stack from one mode, including Suede SEO discoverability and
-  Apple or iOS copy when relevant.
-- Full design stack: `johnny-suede-design`, including Apple and iOS surface
-  design when relevant.
+- Public copy or tone: `suede-public-claim-check`, or `johnny-suede-write`
+  when the user wants the whole writing stack from one mode, including Suede
+  SEO discoverability and Apple or iOS copy when relevant.
+- Full design stack: `johnny-suede-design`, including Suedify, Apple and iOS
+  surface design, and visual QA when relevant.
 - Search/discovery: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
-- Code grade only: `suede-code-grader`.
-- Full code review and fix briefs: `suede-code-review`.
-- Reference-site mimicry: `suedify`.
+- Code review and A-F grade: `suede-code` — prompted only, never auto-fires.
+- CI merge gate: `suede-ship-gate` — prompted only.
 - Page polish and conversion: `suede-site-alchemy`.
 - Launch or public packaging: `suede-launch-packaging`.
-- Install confusion: `suede-install-support`.
 - MCP changes: `suede-mcp-qa`.
-- Ambassador language: `suede-ambassador-explainer`.
-- Artist campaign work: `suede-era-builder`, `suede-song-to-universe`,
-  `suede-hook-hunter`, `suede-release-stunt-lab`, `suede-fan-rituals`,
-  `suede-visualizer-director`, `suede-merch-object-lab`,
-  `suede-setlist-theater`, `suede-catalog-resurrection`,
-  `suede-artist-identity-forge`, `suede-collab-matchmaker`,
-  `suede-campaign-in-a-box`.
+- Artist campaign work: `suede-campaign-in-a-box`.
 - Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
   placement promise, clearance claim, or outreach claim to sync packaging.
 - Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
-  `music-release-metadata-linter`.
-- Provenance: `suede-provenance-map`.
-- Licensing: `suede-licensing-prep`.
-- Royalty routing: `suede-royalty-routing-brief`.
-- Agent-readable commerce: `suede-agent-commerce`.
+  `suede-release-linter`.
 
 Use the umbrella workflow when the user wants the whole Suede stack or when the
 task crosses several lanes.
@@ -473,48 +425,33 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Install individual public skills when direct triggering matters:
+Install workflow skills when direct triggering matters:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suedify \
-  skills/johnny-suede-write \
+  --path skills/johnny-suede-write \
   skills/johnny-suede-design \
-  skills/suede-design \
-  skills/suede-copy \
-  skills/suede-brand-voice \
+  skills/suede-code \
+  skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
-  skills/suede-code-grader \
-  skills/suede-code-review \
-  skills/suede-agent-teams \
   skills/suede-launch-packaging \
-  skills/suede-install-support \
   skills/suede-mcp-qa \
-  skills/suede-ambassador-explainer \
-  skills/suede-public-claim-check \
-  skills/suede-agent-commerce \
-  skills/suede-era-builder \
-  skills/suede-song-to-universe \
-  skills/suede-hook-hunter \
-  skills/suede-release-stunt-lab \
-  skills/suede-fan-rituals \
-  skills/suede-visualizer-director \
-  skills/suede-merch-object-lab \
-  skills/suede-setlist-theater \
-  skills/suede-catalog-resurrection \
-  skills/suede-artist-identity-forge \
-  skills/suede-collab-matchmaker \
-  skills/suede-campaign-in-a-box \
+  skills/suede-public-claim-check
+```
+
+Install creator skills:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
-  skills/music-release-metadata-linter \
+  skills/suede-release-linter \
   skills/suede-rights-passport \
-  skills/suede-rights-audit \
-  skills/suede-provenance-map \
-  skills/suede-licensing-prep \
-  skills/suede-royalty-routing-brief
+  skills/suede-rights-audit
 ```
 
 Restart Codex after installing new skills.

@@ -54,7 +54,7 @@ generated `RIGHTS_PASSPORT.md`, `suede-intake.json`, `provenance.md`,
 of a Passport entry: who made what, with whom, under what rights, on what
 provenance trail.
 
-### `music-release-metadata-linter`
+### `suede-release-linter`
 
 Audits releases for the metadata, splits, contributor, and provenance fields
 the Passport expects. A clean lint report is itself a Passport signal: it

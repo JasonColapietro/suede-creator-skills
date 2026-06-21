@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Collab Matchmaker"
-  short_description: "Design stronger collaboration lanes"
-  default_prompt: "Use $suede-collab-matchmaker to suggest collaborator lanes, outreach angles, asset exchanges, fan crossover mechanics, and public-safe collab concepts."

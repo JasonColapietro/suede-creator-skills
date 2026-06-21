@@ -69,7 +69,7 @@ D-level skills are too shallow, ambiguous, or risky to promote without a focused
 
 ### P1: The pack is uneven
 
-The strongest skills are full operating systems: `suedify`, `suede-design`, `suede-code-review`, `suede-agent-teams`, `suede-copy`, `suede-site-alchemy`, `suede-visibility-grader`, `suede-code-grader`, `music-release-metadata-linter`, and `suede-rights-passport`.
+The strongest skills are full operating systems: `suedify`, `suede-design`, `suede-code-review`, `suede-agent-teams`, `suede-copy`, `suede-site-alchemy`, `suede-visibility-grader`, `suede-code-grader`, `suede-release-linter`, and `suede-rights-passport`.
 
 The weaker skills are mostly short operator and utility micro-skills. They have good positioning and output shapes, but not enough intake, scoring, examples, or verification to compete in their niches.
 
@@ -150,7 +150,7 @@ Fix: decide whether all public skills should be implicitly invokable or only the
 | `suede-collab-matchmaker` | collaboration strategy | B | good lane model and "public proof needed" safety | no prioritization or research method | add fit/feasibility/reach scoring and outreach package template |
 | `suede-campaign-in-a-box` | artist campaign packaging | B | covers campaign phases and grounded-claims rule | too skeletal for a full rollout | add calendar, owners, dependencies, asset requests, and KPI checks |
 | `suede-sync-packaging` | sync review prep | A- | strongest artist readiness checklist and clean claim boundaries | needs full one-sheet/admin schema | add one-sheet template with rights, admin, contact, and link fields |
-| `music-release-metadata-linter` | release linting | A- | executable linter, references, score bands, severity model, MD/JSON reports, and safety defaults | needs fixture-backed examples/tests and clearer platform-delivery presets | add sample project fixtures, expected reports, and presets for release/distribution, registry, licensing, and royalty-routing readiness |
+| `suede-release-linter` | release linting | A- | executable linter, references, score bands, severity model, MD/JSON reports, and safety defaults | needs fixture-backed examples/tests and clearer platform-delivery presets | add sample project fixtures, expected reports, and presets for release/distribution, registry, licensing, and royalty-routing readiness |
 | `suede-rights-passport` | rights transfer package | A- | structured package generator, intake JSON, hashes, reports, missing-info flow, and references | no visible validator/sample output suite proving package completeness | add `validate_transfer_package.py` plus one complete sample package and one blocked package |
 | `suede-rights-audit` | rights gap review | C | right audit categories across ownership, contributors, splits, samples, licenses, provenance, and public context | overlaps with linter/passport but lacks its own severity model, proof requirements, and triage gates | make it the front-door triage skill with A-F readiness grade, blocker severity, proof checklist, and exact next-skill routing |
 | `suede-provenance-map` | provenance mapping | C+ | separates confirmed, inferred, unknown, evidence, conflicts, hashes, and do-not-share items | missing dated chain-of-custody schema, confidence levels, and derivative/source graph | add a provenance event table: date, actor, source, asset hash, evidence, confidence, public/private flag, next question |

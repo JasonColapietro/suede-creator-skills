@@ -49,25 +49,13 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html</loc>
-    <lastmod>2026-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/music-release-metadata-linter.html</loc>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suede Copy — Conversion & Launch Copy"
-  short_description: "Write copy that earns the click — frameworks, headline formulas, variants, anti-slop gate, and a score."
-  default_prompt: "Use $suede-copy to write [surface type]. Choose a persuasion framework, generate headline and CTA variants, apply the word substitution list and anti-slop gate, and score before delivery."
-policy:
-  allow_implicit_invocation: true
