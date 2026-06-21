@@ -38,6 +38,37 @@ function frontmatterName(markdown) {
   return name ? name[2].trim() : null;
 }
 
+// The skill loader parses frontmatter as strict YAML. The most common break is an
+// unquoted plain scalar that contains a colon-space (e.g. `description: Runs here: then`)
+// or a trailing colon — YAML reads those as a nested mapping and the load throws
+// "mapping values are not allowed in this context". Catch that class before it ships.
+function frontmatterYamlIssues(markdown) {
+  const match = markdown.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return ["missing or malformed frontmatter block"];
+  const issues = [];
+  match[1].split("\n").forEach((line, i) => {
+    if (!line.trim() || line.trimStart().startsWith("#")) return;
+    const kv = line.match(/^([A-Za-z0-9_-]+):(?:\s(.*))?$/);
+    if (!kv) {
+      issues.push(`line ${i + 1}: not a "key: value" pair`);
+      return;
+    }
+    const value = (kv[2] ?? "").trim();
+    if (!value) return;
+    const quoted =
+      (value.startsWith('"') && value.endsWith('"') && value.length > 1) ||
+      (value.startsWith("'") && value.endsWith("'") && value.length > 1);
+    if (quoted) return;
+    const colonSpace = line.indexOf(": ", line.indexOf(":") + 1);
+    if (colonSpace !== -1) {
+      issues.push(`line ${i + 1} col ${colonSpace + 1}: unquoted "${kv[1]}" value contains ': ' — wrap the value in double quotes`);
+    } else if (value.endsWith(":")) {
+      issues.push(`line ${i + 1}: unquoted "${kv[1]}" value ends with ':' — wrap the value in double quotes`);
+    }
+  });
+  return issues;
+}
+
 const skillsDir = path.join(repoRoot, "skills");
 const skillNames = listDirs(skillsDir);
 const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")));
@@ -64,9 +95,13 @@ for (const skillName of skillNames) {
     fail.push(`Missing SKILL.md for ${skillName}`);
     continue;
   }
-  const declaredName = frontmatterName(readText(skillFile));
+  const skillText = readText(skillFile);
+  const declaredName = frontmatterName(skillText);
   if (declaredName !== skillName) {
     fail.push(`Frontmatter name mismatch for ${skillName}: ${declaredName || "missing"}`);
+  }
+  for (const issue of frontmatterYamlIssues(skillText)) {
+    fail.push(`Frontmatter YAML issue in ${skillName}: ${issue}`);
   }
   if (!fs.existsSync(agentFile)) {
     fail.push(`Missing agents/openai.yaml for ${skillName}`);
