@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Provenance Map"
-  short_description: "Map asset origins and evidence trails"
-  default_prompt: "Use $suede-provenance-map to map the provenance trail for this creator project without overclaiming clearance."

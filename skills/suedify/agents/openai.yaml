@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suedify"
-  short_description: "Clone any site's visual DNA — color, type, spacing, motion, brand voice — into transferable Suede tokens."
-  default_prompt: "Use $suedify to clone the visual DNA of [URL, screenshot, or design]. Extract the color strategy axis, type system, spatial rhythm, motion fingerprint, and brand voice. Output a complete DESIGN.md token set and style fingerprint ready to inject anywhere."
-policy:
-  allow_implicit_invocation: true

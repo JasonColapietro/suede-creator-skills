@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Fan Rituals"
-  short_description: "Create repeatable fan actions"
-  default_prompt: "Use $suede-fan-rituals to design fan phrases, gestures, unlock actions, comments, show moments, and stampable campaign rituals."

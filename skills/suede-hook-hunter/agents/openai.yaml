@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Hook Hunter"
-  short_description: "Find the moments that travel"
-  default_prompt: "Use $suede-hook-hunter to find the strongest short-form hooks, captions, fan prompts, and trailer moments in this song or artist asset."

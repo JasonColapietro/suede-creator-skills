@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Ambassador Explainer"
-  short_description: "Explain Suede clearly for ambassadors"
-  default_prompt: "Use $suede-ambassador-explainer to write public ambassador language for this Suede skill, workflow, or docs page."

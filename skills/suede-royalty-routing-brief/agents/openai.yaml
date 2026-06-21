@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Royalty Routing Brief"
-  short_description: "Brief royalty routing requirements"
-  default_prompt: "Use $suede-royalty-routing-brief to summarize royalty routing readiness, split gaps, payout caveats, and needed confirmations."

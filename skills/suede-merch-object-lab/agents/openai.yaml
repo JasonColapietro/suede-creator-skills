@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Merch Object Lab"
-  short_description: "Turn artist lore into real objects"
-  default_prompt: "Use $suede-merch-object-lab to turn lyrics, symbols, lore, and fan behavior into merch objects, bundles, and drop mechanics."

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suede Code Grader"
-  short_description: "A-F ship verdict — 7 lanes, instant-F triggers, grade caps for auth and payment surfaces."
-  default_prompt: "Use $suede-code-grader on [diff/PR/branch/files]. Check instant-F triggers first, then grade all 7 lanes with evidence. Apply surface-type grade caps (auth, payment, migration). Return the overall grade, why it landed there, required upgrades, and ship gate verdict."
-policy:
-  allow_implicit_invocation: true

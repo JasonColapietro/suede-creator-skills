@@ -1,4 +1,4 @@
 interface:
   display_name: "Suede Rights Audit"
-  short_description: "Audit creator-rights gaps before intake"
-  default_prompt: "Use $suede-rights-audit to identify rights, credits, splits, sample, license, and provenance gaps in this creator project."
+  short_description: "Organize creator-rights readiness before intake"
+  default_prompt: "Use $suede-rights-audit to find and organize rights-readiness gaps in this creator project — ownership, contributors, credits, splits, samples, licenses, provenance, and royalty routing — flagging confirmed versus unknown without clearing rights or moving money."

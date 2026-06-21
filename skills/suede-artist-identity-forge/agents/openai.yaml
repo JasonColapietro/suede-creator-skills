@@ -1,4 +1,0 @@
-interface:
-  display_name: "Suede Artist Identity Forge"
-  short_description: "Sharpen an artist's world and voice"
-  default_prompt: "Use $suede-artist-identity-forge to define this artist's identity spine, visual codes, voice rules, fan promise, and public positioning."
