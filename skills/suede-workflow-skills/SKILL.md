@@ -379,6 +379,8 @@ Useful grouping loops:
 
 ## Specialized Lane Router
 
+Context handoff (required): When delegating to an individual skill, pass the original user request verbatim as the first input to that skill. Do not paraphrase or summarize. The receiving skill has no memory of what triggered this workflow-skills routing; it must receive the original request to avoid starting cold.
+
 When the task names a narrower Suede lane, route directly:
 
 - Public copy or tone: `suede-public-claim-check`, or `johnny-suede-write`

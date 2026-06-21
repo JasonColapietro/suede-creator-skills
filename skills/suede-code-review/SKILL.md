@@ -1,11 +1,14 @@
 ---
 name: suede-code-review
-description: Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade.
+description: Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade. NOT FOR: combined review+grade in one pass (use suede-code); grade-only (use suede-code-grader). Use this skill when you specifically need Accessibility and SEO lanes alongside findings, without a letter grade.
 ---
 
 # Suede Code Review
 
 Review code with full context: changed files, callers, contracts, deploy surface. Find real breakage. Rank by production impact. Every finding has a file, evidence, and a fix path. No findings without evidence. No volume without signal.
+
+## Model Routing
+Default: Sonnet. Recommend Opus for auth, payments, and public API surface reviews.
 
 ## Operating Stance
 

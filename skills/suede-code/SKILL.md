@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release.
+description: Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release. NOT FOR: findings-only review with Accessibility/SEO lanes (use suede-code-review); grade-only with no findings (use suede-code-grader).
 ---
 
 # Suede Code
@@ -10,6 +10,9 @@ One pass for code: a deep, evidence-based review **and** a blunt A-F ship grade,
 **Runs only when asked.** This skill never auto-fires on a diff, a save, or a commit. Invoke it explicitly (review this, grade this, security-check this, is this safe to ship). Do not run it as a side effect of other work.
 
 ## Operating Stance
+
+## Model Routing
+Default: Sonnet. Recommend Opus for auth, payments, and public API surface reviews.
 
 - Review current source, current diff, local docs, and relevant runtime behavior.
 - Keep code generation and review separate. If you authored the code, switch into review mode and look for what your implementation would miss.

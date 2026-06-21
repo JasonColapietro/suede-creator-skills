@@ -138,16 +138,20 @@ Checklist:
 - [ ] Sitemap lists the canonical URL with a valid `<lastmod>` date
 - [ ] Page loads meaningful content without JavaScript execution (check
       `curl -A "Googlebot"` output or view-source)
-- [ ] Core Web Vitals: run `curl -o /dev/null -s -w "%{time_total}" <URL>` as a
-      proxy for server response time. If PageSpeed Insights is accessible at
-      pagespeed.web.dev, fetch it. Report LCP, CLS, INP against these
-      thresholds: LCP ≤ 2.5s = Good, 2.5–4s = Needs Improvement, >4s = Poor.
-      CLS ≤ 0.1 = Good, 0.1–0.25 = Needs Improvement, >0.25 = Poor. INP ≤
-      200ms = Good, 200–500ms = Needs Improvement, >500ms = Poor. If tooling
-      is unavailable, check for render-blocking scripts, unoptimized images
-      (no `loading="lazy"`, no `width`/`height` attributes, no next-gen
-      formats), and missing `font-display:swap`. Flag each as a CWV risk.
-      Do not invent scores; do report observable risks.
+- [ ] Core Web Vitals risk factors (see below — do NOT grade via curl)
+
+#### Core Web Vitals (risk factor only — not gradeable via curl)
+
+curl measures server response time, not browser rendering. Actual CWV requires Lighthouse CI or PageSpeed Insights API.
+
+Instead, check these risk factors (low/medium/high):
+- [ ] Render-blocking scripts above the fold (→ high LCP risk)
+- [ ] Images without explicit width/height or loading=lazy (→ high CLS risk)
+- [ ] Missing font-display:swap on web fonts (→ medium LCP risk)
+- [ ] Large JS bundles without code-splitting (→ high INP risk)
+- [ ] No preconnect for third-party origins (→ medium LCP risk)
+
+Report as: CWV Risk: low / medium / high — do NOT include in A-F grade.
 
 Lane 1 grade drops to C or below if: any indexability block is present, if the
 canonical is wrong, or if the page is JavaScript-only with no SSR/SSG fallback.
@@ -639,12 +643,15 @@ Pillar: [page] — [target keyword]
 Orphan pages:
 Cannibalization risks:
 
---- CORE WEB VITALS ---
-LCP: [score or "not measurable" — reason]
-CLS: [score or "not measurable" — reason]
-INP: [score or "not measurable" — reason]
-Lighthouse score (if available): Performance [N] | Accessibility [N] | Best Practices [N] | SEO [N]
-CWV risk factors observed: [list or "none"]
+--- CORE WEB VITALS (risk factor only — not gradeable via curl) ---
+CWV Risk: low / medium / high
+Risk factors observed:
+  Render-blocking scripts above fold: [yes / no]
+  Images missing width/height or loading=lazy: [yes / no]
+  Missing font-display:swap: [yes / no]
+  Large JS bundles without code-splitting: [yes / no]
+  No preconnect for third-party origins: [yes / no]
+Note: LCP/CLS/INP scores require Lighthouse CI or PageSpeed Insights API — not reported here.
 
 --- SCORES ---
 Copy score: /70
