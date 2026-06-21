@@ -66,6 +66,16 @@ In branch protection, require **only `ci-success`** — never the individual job
 
 End with a **Simple explanation (plain, for a 10-year-old)** — see the umbrella workflow — so a non-coder gets the gist.
 
+## Post-Deploy Verification (required for production deploys)
+
+After a deploy lands:
+1. **Live URL check**: fetch the production URL and confirm the expected route/page responds with 200. Do not rely on the deploy pipeline's success status alone.
+2. **Critical path smoke test**: verify the primary user action works end-to-end on production (sign in, core action, result visible). If the deploy is backend-only, verify the API endpoint returns the expected shape.
+3. **Regression check**: confirm the three most-used routes still respond. If analytics or error monitoring is connected, check for a spike in the 5 minutes after deploy.
+4. **Rollback ready**: confirm the previous deploy is still accessible and rollback takes < 5 minutes. Document the rollback command before merging, not after.
+
+Ship verdict after post-deploy: **verified** (all checks pass) | **watch** (minor anomalies, monitoring) | **rollback** (critical failure, initiate rollback immediately).
+
 ## Safety
 
 Generate; don't enforce. This skill writes workflow files and tells you the protection settings — it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede or any specific project.
