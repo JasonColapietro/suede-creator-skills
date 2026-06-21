@@ -45,6 +45,50 @@ Build a lightweight graph before judging the diff:
 Flag beyond-the-diff risks when related files, defaults, docs, env, or deploy
 requirements no longer agree.
 
+## Run the Repo's Own Gates
+
+Do not hand-review for what a tool already decides. Before manual analysis, run the
+gates the repo already ships and fold the output into findings. Detect what exists
+from `package.json` scripts, config files, and lockfiles — run only those. Never
+introduce a tool the repo does not use, and never fabricate a result you did not run.
+
+- **Type check:** the repo's `typecheck` script, or the type checker directly. An error
+  on a changed line is at least P2; on a changed critical path, P1.
+- **Lint:** the repo's configured linter on changed files only. Report violations the
+  change introduces; ignore pre-existing noise outside the diff.
+- **Tests:** run the suite, or the changed-file subset. A failing test on changed
+  behavior is P1; a test that silently stopped running is P2.
+- **Dependency CVEs:** the repo's dependency auditor — the package manager's audit
+  command, or a vulnerability scanner — when dependencies changed. A known-exploitable
+  CVE reachable in a production path is P0/P1.
+- **Secret scan:** a real entropy-based secret scanner over the diff when the repo
+  provides one — it catches keys the Commit Dirt Score patterns miss. A verified live
+  secret is P0.
+- **Build:** for release reviews, the production build must pass. A broken build is P0.
+
+Cite the command, its exit status, and the file:line it implicates. If a gate cannot
+run (no script, missing deps, sandboxed), say so in Verification — never report a gate
+as passed that you did not execute.
+
+## Project Rules and Learnings
+
+A review that fights the house style produces noise, not signal. Honor what the repo
+already encodes.
+
+- **Read the rules first:** before judging, read `CLAUDE.md`, `AGENTS.md`,
+  `CONTRIBUTING.md`, `.editorconfig`, formatter/linter config, and any review-config
+  file at the repo root or in the changed directories. A documented convention is
+  binding — do not flag what a rule permits; do flag what it forbids.
+- **Most-specific rule wins:** a rule in a subdirectory config or a nearest-ancestor
+  `AGENTS.md` overrides a repo-root rule for files under that path.
+- **Record learnings:** when the user dismisses a finding as a false positive or a
+  deliberate house pattern, capture it in one line — pattern, why it is allowed, path
+  scope — and do not re-raise that pattern this review or in later ones. Repeat nitpicks
+  erode trust faster than a missed P3.
+- **No rule from silence:** the absence of a convention is not license to impose a
+  personal preference. A style choice not governed by a rule, a formatter, or a real
+  cost is not a finding.
+
 ## Review Modes
 
 - **Fast diff review:** small change, narrow blast radius, focused findings.
@@ -159,6 +203,17 @@ For `--deep` reviews on auth changes, payment flows, data migrations, or public 
 - **Test critic:** maps claims to tests, screenshots, simulator runs, builds, and live/API checks.
 
 Collect consensus first. If high-severity concerns persist after a fix cycle, keep status at `hold` and name the smallest next check or patch.
+
+## Whole-Repo and History Pass (--deep)
+
+The changed-file import graph is the floor. The bugs that ship hide outside the diff. On `--deep`, widen past the immediate callers:
+
+- **Reverse-dependency sweep:** find every caller of a changed function, type, route, or constant across the whole repo (search the symbol repo-wide, not just the changed file's imports). A signature, return-shape, or nullability change is safe only if every call site agrees — name the sites you checked.
+- **Shared-assumption check:** for a changed schema, env var, default, or invariant, find the other places that assume the old value — config read in two services, a default mirrored in a client, a magic value duplicated in a test. These drift silently.
+- **History of the touched lines:** `git log -L` or `git blame` the changed region. If this area was fixed before, a change that reintroduces the old shape is a regression — cite the prior commit. If it churns repeatedly, flag it as fragile.
+- **Sibling-pattern consistency:** find the nearest existing analog — the other route handlers, the other migrations — and confirm the change follows the established pattern. A lone handler that skips the shared auth wrapper the other four use is P1 even if it "works."
+
+State what you traced. A whole-repo claim with no symbols named is not evidence.
 
 ## Observability Delta
 
@@ -359,6 +414,20 @@ Always check these when relevant:
 - multi-repo or multi-surface contracts do not drift across web, backend,
   mobile, public sites, and docs.
 
+## Swift / iOS Traps
+
+Check on every Swift file in the diff. iOS ships on a release cycle with no hot-fix — a crash here is live for days.
+
+- **Force operations (`!`, `try!`, `as!`):** each crashes when the optional is nil or the cast fails. Flag unless the failure case is provably eliminated immediately above. `try!` on anything that throws at runtime (decoding, file I/O) is P1.
+- **Retain cycles in closures:** an escaping closure that strongly captures `self` inside a stored property, `Task`, Combine sink, or callback leaks the owner. Require `[weak self]` (or `[unowned self]` only when lifetime is provably bound).
+- **UI work off the main thread:** mutating `@State`, `@Published`, or UIKit views from a background context is undefined behavior. Flag observable or UI mutation inside `Task.detached`, a URLSession callback, or a background queue with no hop to `@MainActor` / `DispatchQueue.main`.
+- **Actor and concurrency misuse:** actor-isolated state mutated across a suspension point without re-checking invariants (reentrancy); `nonisolated` used to silence a warning rather than because access is truly isolation-free; `@MainActor` work awaited from a path that should already be on main.
+- **Codable fragility:** a non-optional property decoding a field the server may omit or send null fails the whole decode and drops the response. Match optionality to the real API contract; flag `decode` on fields the backend does not guarantee.
+- **SwiftUI identity and lifecycle:** `ForEach` over a non-stable `id` (index, or a value that changes) loses state and breaks animations; `onAppear` used for one-time work re-fires on re-insertion; `@StateObject` vs `@ObservedObject` confusion (owning vs observing) re-creates or prematurely releases models.
+- **Leaked resources:** unbounded image/data caches; URLSession tasks not cancelled on disappearance; observers or timers added with no matching removal.
+
+Pair with iOS / Native Contract Drift below: crash risk here, contract break there.
+
 ## iOS / Native Contract Drift
 
 Check on any API route, response shape, auth header, or shared type that iOS or other native consumers depend on:
@@ -375,6 +444,32 @@ Blast radius note: identify which iOS version is currently in production. If the
 ## Technical Debt
 
 Flag tech debt patterns as P3, group by file, don't block ship. Do not block a ship on P3 tech debt unless it directly obscures a P0/P1 bug. File as follow-up.
+
+## Intent Compliance and Scope
+
+Code that works but does not do what it claimed is still a defect.
+
+- **Claim vs diff:** restate what the change says it does — PR title, description, linked issue, commit subject — and confirm the diff delivers it. Map every acceptance criterion to a code path or a test. Claimed behavior with no corresponding change is a P1 truth gap.
+- **Scope creep:** flag changes that do more than they claim — an unrelated refactor riding inside a bugfix, a dependency bump bundled with a feature, a formatting sweep that buries the real diff. Name the unrelated clusters and recommend splitting.
+- **Review-effort signal:** state diff size (files / net lines) and an effort read — trivial / moderate / heavy / too-large-to-review-safely. A single PR mixing auth, payments, and a migration should be split before it is safe to judge.
+
+## Change Walkthrough (multi-file PRs)
+
+For a PR summary or any review spanning four or more files, lead with a walkthrough so the reader sees the shape before the findings:
+
+- **Per-file table:** file → one-line what-changed → risk lane. Collapse generated or trivial files into one row.
+- **Flow diagram when warranted:** emit a mermaid `sequenceDiagram` (request → handler → service → data) or `flowchart` when the change moves data across three or more boundaries or alters an async, auth, or payment path. Skip it for a localized edit — a diagram of a one-file change is noise.
+
+The walkthrough orients; it never replaces findings, and stays above the Findings block.
+
+## Precision Pass (before output)
+
+False positives are why reviewers get muted. Self-check the draft findings before emitting:
+
+- **Evidence test:** every finding ties to a file:line, a reproduction or trace, and a concrete fix. Drop what cannot.
+- **Already-handled test:** drop what a formatter, the type checker, a configured linter, or a documented project rule already covers — do not re-report a gate's job as a manual finding.
+- **Confidence gate:** mark each finding high / medium / low. Collapse low-confidence style observations into a single "nitpicks" line; never let them outrank a real P-level finding.
+- **Net-signal test:** if a finding would not change the ship decision and would not be worth a human reviewer's comment, cut it. Volume is not the product.
 
 ## Output Shape
 
