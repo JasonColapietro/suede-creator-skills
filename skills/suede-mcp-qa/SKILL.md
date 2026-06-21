@@ -7,6 +7,15 @@ description: Catch a broken Suede Skills MCP before it ships — one that lists 
 
 Use this skill when a Suede MCP server or MCP docs surface changes.
 
+## Operating Stance
+
+- Run against a live MCP server, not a spec document. If the server is not running, start it before checking.
+- For each check, record the exact command run and the exact output received. Do not summarize.
+- A check that cannot run (server unreachable, tool not implemented) is a FAIL, not a skip.
+- Report failures immediately — do not wait until all checks complete to surface a blocker.
+- Never mark a skill as present in the catalog unless its folder exists and its SKILL.md is readable.
+- Never mark an install command as working unless you ran it from a temporary destination directory.
+
 ## Checks
 
 1. Run syntax checks for the MCP source.
@@ -19,6 +28,23 @@ Use this skill when a Suede MCP server or MCP docs surface changes.
 6. Check bounded text handling, invalid tool names, invalid resources, and
    malformed JSON-RPC messages.
 7. Compare MCP output against README, docs pages, and public catalog language.
+
+## Failure Handling
+
+| Failure type | Severity | Action |
+|---|---|---|
+| Server fails to start | Critical | Stop. Report startup error verbatim. |
+| `tools/list` returns empty | Critical | Stop. The MCP is non-functional. |
+| Listed skill folder missing | High | Flag each missing folder. Continue checking others. |
+| Malformed JSON-RPC response | High | Report the raw response. Flag as broken. |
+| Install command leads with local-only path | High | Flag. Install output must lead with public GitHub route. |
+| Docs/catalog language mismatch | Medium | List each mismatch. Flag as hold-with-caveat. |
+| Tool implemented but not in catalog | Low | Flag as undocumented. Not a blocker. |
+
+Ship gate rules:
+- Any Critical or High failure → **hold**
+- Medium failures only → **ship-with-caveats** (list each caveat)
+- No failures → **ship**
 
 ## Output
 
@@ -33,3 +59,11 @@ Failures:
 Fixes:
 Ship gate: ship | ship-with-caveats | hold
 ```
+
+## Routing
+
+After QA:
+- MCP source needs fixes → return to the MCP source file and fix, then re-run this skill
+- Catalog JSON needs updates → edit `mcp/catalog.json` and re-run steps 2 and 7
+- Docs/README language mismatch → **suede-docs** to update the docs surface
+- Install command broken → **suede-launch-packaging** to fix and test the install path
