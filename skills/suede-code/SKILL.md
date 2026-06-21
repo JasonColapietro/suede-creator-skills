@@ -37,6 +37,10 @@ Build a lightweight graph before judging the diff:
 
 Flag beyond-the-diff risks when related files, defaults, docs, env, or deploy requirements no longer agree.
 
+## Run Gates and Honor Project Rules
+
+Before manual analysis, run the gates the repo already ships and fold results in — typecheck, the configured linter on changed files, the test suite, the dependency auditor when deps changed, and a real secret scanner over the diff. Detect what exists; run only that; never fabricate a result you did not run, and note in Verification when a gate could not run. Then read the repo's own conventions — `CLAUDE.md`, `AGENTS.md`, linter/formatter config, nearest-ancestor rules — and treat them as binding: do not flag what a rule permits, do flag what it forbids, and do not re-raise a pattern the user already accepted.
+
 ## Review Modes
 
 - **Fast diff review:** small change, narrow blast radius, focused findings.
@@ -79,6 +83,10 @@ Any single match is an automatic **F**. Stop, report the file and line, and do n
 **Database (Drizzle/Prisma)** — N+1 queries in loops; missing index on filtered/sorted/join columns; multi-table writes without a transaction; missing unique constraints on logically-unique fields; unbounded selects with no `LIMIT` on growable tables.
 
 **Performance** — new >20 KB minzipped imports (flag with size, prefer tree-shaken); render-blocking `<script>` without `async`/`defer`; non-critical routes not lazy-loaded (`next/dynamic`); raw `<img>` instead of `next/image` for non-SVG assets.
+
+**Swift / iOS** — force `!`/`try!`/`as!` without a proving guard (P1 on runtime-throwing `try!`); escaping closures capturing `self` strongly (need `[weak self]`); UI/`@Published`/`@State` mutation off the main thread; actor reentrancy across suspension points; non-optional `Codable` fields the server may omit; `ForEach` over non-stable `id`; URLSession tasks/observers not cancelled.
+
+**Whole-repo (`--deep`)** — past the changed-file import graph, sweep every caller of a changed symbol across the repo, check shared assumptions (config/defaults/env mirrored elsewhere), `git log -L`/`blame` the touched lines for reintroduced regressions, and confirm the change matches its sibling pattern. Name what you traced.
 
 ## Step 3 — OWASP Top 10 (auto-runs on auth/api/middleware/routes or crypto/session/payment imports)
 
@@ -131,6 +139,10 @@ Auto-apply local P2/P3 fixes (single file, no contract change), each as its own 
 ## Suede-Specific Checks
 
 Auth/session behavior across app, API, native shells, and server · creator rights/provenance/registry/licensing/royalty/agent-commerce claims match implemented behavior · payment/wallet/x402/checkout/credit flows fail closed · public pages invent no metrics, pricing, partners, testimonials, or release promises · Vercel/account/deploy assumptions match local guidance before prod claims · App Store/iOS screenshots, metadata, privacy answers, and build behavior match the app · migrations, env, flags, cron/jobs, queues, webhooks, secrets are documented and deployable · multi-surface contracts don't drift across web, backend, mobile, sites, docs.
+
+## Intent, Scope, and Precision
+
+Confirm the diff delivers what it claims — map each acceptance criterion to code or a test; unbacked claims are a P1 truth gap — and flag scope creep (unrelated refactors, bundled dep bumps, formatting sweeps that bury the change); recommend splitting an over-large PR. Before emitting, self-check: every finding has a file:line + fix, nothing duplicates a gate's job, low-confidence style notes collapse into one "nitpicks" line, and anything that would not move the ship decision is cut.
 
 ## Output Shape
 
