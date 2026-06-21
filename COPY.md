@@ -27,11 +27,12 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
 creators, agencies, and AI power users. It ships 16 public `SKILL.md` folders:
-one umbrella workflow, Johnny Suede Write, Johnny Suede Design, Suedify,
-Apple and iOS surface support, supplied-company voice support, design, copy,
-Suede SEO/AEO/AI EO, site alchemy,
-visual QA, visibility grading, A-F code grading, QA, install support,
-ambassador, launch, max-agent, artist-campaign, and creator utility lanes.
+one umbrella workflow (suede-workflow-skills), 10 workflow skills
+(johnny-suede-write, johnny-suede-design, suede-code, suede-ship-gate,
+suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
+suede-launch-packaging, suede-mcp-qa, suede-public-claim-check), and 5 creator
+skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
+suede-rights-passport, suede-rights-audit).
 
 ## GitHub Pages Copy
 
@@ -305,35 +306,32 @@ manager, label, or legal reviewer still needs to confirm rights.
 Run `johnny-suede-write` when you want the whole writing stack in one mode:
 copy, company voice, Apple and iOS copy, App Store copy, SEO/AEO/AI EO, CTAs,
 claim checks, launch copy, and anti-slop line editing. Run
-`johnny-suede-design` when you want the whole design stack, including Apple and
-iOS surfaces, App Store screenshots, visual QA, company voice, and copy. Run
-`suedify` when you have a reference URL and a target
-URL. Run `suede-design` for visual systems and responsive QA, `suede-copy` for
-public copy, `suede-seo-audit` for search, answer intent, and metadata, and
+`johnny-suede-design` when you want the whole design stack, including Suedify,
+Apple and iOS surfaces, App Store screenshots, visual QA, company voice, and
+copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
-`suede-agent-teams` when a major pass needs scout, safe parallel build,
-adversarial review, consensus review, WIP protection, quality/eval gates,
-release lock, recovery replay, and evidence handoff loops.
+`suede-code` when a change needs code review and A-F grading — prompted only.
+Run `suede-ship-gate` when you need a CI gate that blocks merges on failing
+checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 38 public agent skills for design, copywriting,
-SEO/AEO/AI EO, Suedify website restyling, visibility grading, A-F code grading,
-QA, install support, launch packaging, artist campaigns, and creator utility
-workflows.
+Suede Creator Skills are live: 16 public agent skills for design, copywriting,
+SEO/AEO/AI EO, Suedify website restyling, visibility grading, code review,
+CI gating, launch packaging, artist campaigns, and creator rights workflows.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
 ### Builder post
 
 I published Suede Creator Skills, a public `SKILL.md` pack for Codex and Claude
-Code. It includes an umbrella workflow plus focused skills for Suedify, design
-QA, copywriting, SEO/AEO/AI EO audits, site alchemy, visibility grading, A-F
-code review, install support, QA, launch packaging, agent teams, artist
-campaigns, and creator utilities. The utility tools run offline, write local
-reports, and keep private files off the network.
+Code. It includes an umbrella workflow plus focused skills for design QA,
+copywriting, SEO/AEO/AI EO audits, site alchemy, visibility grading, code
+review, CI gating, launch packaging, artist campaigns, and creator rights tools.
+The utility tools run offline, write local reports, and keep private files off
+the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills
 

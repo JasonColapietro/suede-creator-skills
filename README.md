@@ -208,50 +208,28 @@ Install individual workflow and operations skills when you want direct triggers:
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suedify \
+  --path skills/johnny-suede-design \
   skills/johnny-suede-write \
-  skills/johnny-suede-design \
-  skills/suede-design \
-  skills/suede-copy \
-  skills/suede-brand-voice \
+  skills/suede-code \
+  skills/suede-ship-gate \
   skills/suede-seo-audit \
-  skills/suede-site-alchemy \
   skills/suede-visibility-grader \
-  skills/suede-code-grader \
-  skills/suede-code-review \
-  skills/suede-agent-teams \
+  skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-install-support \
   skills/suede-mcp-qa \
-  skills/suede-ambassador-explainer \
-  skills/suede-public-claim-check \
-  skills/suede-agent-commerce
+  skills/suede-public-claim-check
 ```
 
-Install artist and creator workflow skills:
+Install creator skills:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-era-builder \
-  skills/suede-song-to-universe \
-  skills/suede-hook-hunter \
-  skills/suede-release-stunt-lab \
-  skills/suede-fan-rituals \
-  skills/suede-visualizer-director \
-  skills/suede-merch-object-lab \
-  skills/suede-setlist-theater \
-  skills/suede-catalog-resurrection \
-  skills/suede-artist-identity-forge \
-  skills/suede-collab-matchmaker \
-  skills/suede-campaign-in-a-box \
+  --path skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
   skills/suede-release-linter \
   skills/suede-rights-passport \
-  skills/suede-rights-audit \
-  skills/suede-provenance-map \
-  skills/suede-licensing-prep \
-  skills/suede-royalty-routing-brief
+  skills/suede-rights-audit
 ```
 
 Restart Codex after installing new skills.
@@ -307,48 +285,26 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual public workflow and operations skills:
+Individual workflow and operations skills (10):
 
-- [`skills/johnny-suede-write`](skills/johnny-suede-write)
 - [`skills/johnny-suede-design`](skills/johnny-suede-design)
-- [`skills/suedify`](skills/suedify)
-- [`skills/suede-design`](skills/suede-design)
-- [`skills/suede-copy`](skills/suede-copy)
-- [`skills/suede-brand-voice`](skills/suede-brand-voice)
+- [`skills/johnny-suede-write`](skills/johnny-suede-write)
+- [`skills/suede-code`](skills/suede-code)
+- [`skills/suede-ship-gate`](skills/suede-ship-gate)
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
-- [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
-- [`skills/suede-code-grader`](skills/suede-code-grader)
-- [`skills/suede-code-review`](skills/suede-code-review)
-- [`skills/suede-agent-teams`](skills/suede-agent-teams)
+- [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-launch-packaging`](skills/suede-launch-packaging)
-- [`skills/suede-install-support`](skills/suede-install-support)
 - [`skills/suede-mcp-qa`](skills/suede-mcp-qa)
-- [`skills/suede-ambassador-explainer`](skills/suede-ambassador-explainer)
 - [`skills/suede-public-claim-check`](skills/suede-public-claim-check)
-- [`skills/suede-agent-commerce`](skills/suede-agent-commerce)
 
-Artist campaign and creator utility skills:
+Creator skills (5):
 
-- [`skills/suede-era-builder`](skills/suede-era-builder)
-- [`skills/suede-song-to-universe`](skills/suede-song-to-universe)
-- [`skills/suede-hook-hunter`](skills/suede-hook-hunter)
-- [`skills/suede-release-stunt-lab`](skills/suede-release-stunt-lab)
-- [`skills/suede-fan-rituals`](skills/suede-fan-rituals)
-- [`skills/suede-visualizer-director`](skills/suede-visualizer-director)
-- [`skills/suede-merch-object-lab`](skills/suede-merch-object-lab)
-- [`skills/suede-setlist-theater`](skills/suede-setlist-theater)
-- [`skills/suede-catalog-resurrection`](skills/suede-catalog-resurrection)
-- [`skills/suede-artist-identity-forge`](skills/suede-artist-identity-forge)
-- [`skills/suede-collab-matchmaker`](skills/suede-collab-matchmaker)
 - [`skills/suede-campaign-in-a-box`](skills/suede-campaign-in-a-box)
 - [`skills/suede-sync-packaging`](skills/suede-sync-packaging)
 - [`skills/suede-release-linter`](skills/suede-release-linter)
 - [`skills/suede-rights-passport`](skills/suede-rights-passport)
 - [`skills/suede-rights-audit`](skills/suede-rights-audit)
-- [`skills/suede-provenance-map`](skills/suede-provenance-map)
-- [`skills/suede-licensing-prep`](skills/suede-licensing-prep)
-- [`skills/suede-royalty-routing-brief`](skills/suede-royalty-routing-brief)
 
 ### Suede Rights Passport
 
