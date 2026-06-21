@@ -26,7 +26,7 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 38 public `SKILL.md` folders:
+creators, agencies, and AI power users. It ships 16 public `SKILL.md` folders:
 one umbrella workflow, Johnny Suede Write, Johnny Suede Design, Suedify,
 Apple and iOS surface support, supplied-company voice support, design, copy,
 Suede SEO/AEO/AI EO, site alchemy,
@@ -52,7 +52,7 @@ Give your agent design taste, copy discipline, Suede SEO, and QA.
 
 ### Subhead
 
-Install a 38-skill Suede pack that helps agents mimic reference-site style,
+Install a 16-skill Suede pack that helps agents mimic reference-site style,
 improve visual systems, handle Apple and iOS surfaces, rewrite public copy,
 audit Suede SEO/AEO/AI EO, grade visibility and CTA clarity, run visual QA,
 check install paths, coordinate QA, package artist campaigns, and support
@@ -227,7 +227,7 @@ licensing, and agent commerce prep.
 This skill organizes evidence. It does not clear rights, sign agreements,
 upload files, write to a registry, or confirm ownership without creator proof.
 
-## Music Release Metadata Linter Copy
+## Suede Release Linter Copy
 
 ### One-line description
 
@@ -240,7 +240,7 @@ Find release gaps before they become rights problems.
 
 ### Page subhead
 
-Music Release Metadata Linter scans a song, album, catalog, stem pack, or media
+Suede Release Linter scans a song, album, catalog, stem pack, or media
 folder and writes a human-readable report plus JSON output for release cleanup,
 licensing prep, and Suede intake.
 

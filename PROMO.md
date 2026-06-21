@@ -110,7 +110,7 @@ package:
 
 Use this when a project needs local reports, file checks, or creator support:
 
-- Music Release Metadata Linter: audit release folders for missing metadata, artwork, masters, lyrics, stems, credits, splits, samples, provenance, and Suede-readiness gaps.
+- Suede Release Linter: audit release folders for missing metadata, artwork, masters, lyrics, stems, credits, splits, samples, provenance, and Suede-readiness gaps.
 - Suede Rights Passport: package creator folders into structured transfer material with provenance, credits, splits, license notes, intake JSON, optimization notes, and missing-info reports.
 - Suede Rights Audit: identify ownership, contributor, split, sample, license, and intake gaps.
 - Suede Provenance Map: map source files, evidence trails, unknown origins, and conflicts.
@@ -257,7 +257,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 38-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, Apple and iOS surface support, Suedify reference-site mimicry, design direction, copywriting, supplied-company voice support, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 16-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, Apple and iOS surface support, Suedify reference-site mimicry, design direction, copywriting, supplied-company voice support, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -423,7 +423,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-collab-matchmaker \
   skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
-  skills/music-release-metadata-linter \
+  skills/suede-release-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit \
   skills/suede-provenance-map \

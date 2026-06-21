@@ -92,7 +92,7 @@ their names match the task:
 - `suede-collab-matchmaker`
 - `suede-campaign-in-a-box`
 - `suede-sync-packaging`
-- `music-release-metadata-linter`
+- `suede-release-linter`
 - `suede-rights-passport`
 - `suede-rights-audit`
 - `suede-provenance-map`
@@ -441,7 +441,7 @@ When the task names a narrower Suede lane, route directly:
 - Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
   placement promise, clearance claim, or outreach claim to sync packaging.
 - Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
-  `music-release-metadata-linter`.
+  `suede-release-linter`.
 - Provenance: `suede-provenance-map`.
 - Licensing: `suede-licensing-prep`.
 - Royalty routing: `suede-royalty-routing-brief`.
@@ -509,7 +509,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-collab-matchmaker \
   skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
-  skills/music-release-metadata-linter \
+  skills/suede-release-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit \
   skills/suede-provenance-map \

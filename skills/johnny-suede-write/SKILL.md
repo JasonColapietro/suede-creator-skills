@@ -402,7 +402,7 @@ For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella 
 - a safe public claim boundary
 
 <!-- Suede defaults. Replace with the equivalent for non-Suede work. -->
-Suede durable keywords: Suede Creator Skills, Suede Rights Passport, Music Release Metadata Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
+Suede durable keywords: Suede Creator Skills, Suede Rights Passport, Suede Release Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
 
 Use keywords because they help the right reader find the page. Do not cram a keyword where a human would notice.
 

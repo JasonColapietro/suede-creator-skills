@@ -1,9 +1,9 @@
 ---
-name: music-release-metadata-linter
+name: suede-release-linter
 description: Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and Suede intake readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or Suede transfer.
 ---
 
-# Music Release Metadata Linter
+# Suede Release Linter
 
 ## Overview
 
@@ -25,7 +25,7 @@ Public v1 is offline-first: inspect local files and supplied metadata, do not up
 ## Quick Start
 
 ```bash
-python3 /path/to/music-release-metadata-linter/scripts/lint_release.py \
+python3 /path/to/suede-release-linter/scripts/lint_release.py \
   /path/to/music-project \
   --output /path/to/release-lint-output
 ```
@@ -33,7 +33,7 @@ python3 /path/to/music-release-metadata-linter/scripts/lint_release.py \
 If the source folder contains a metadata file, pass it explicitly:
 
 ```bash
-python3 /path/to/music-release-metadata-linter/scripts/lint_release.py \
+python3 /path/to/suede-release-linter/scripts/lint_release.py \
   /path/to/music-project \
   --metadata /path/to/music-project/metadata.json \
   --output /path/to/release-lint-output
