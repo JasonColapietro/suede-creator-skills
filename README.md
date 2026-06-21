@@ -2,14 +2,14 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 16-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 15-skill pack for AI coding agents,
 design-heavy website work, Apple and iOS app surfaces, anti-slop copywriting, Suede SEO
 discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
 Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
 grading, site
 alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
-ambassador explainers, claim checks, agent-commerce prep, artist campaign
+ambassador explainers, agent-commerce prep, artist campaign
 tools, and creator utility skills.
 
 The main sell is the Suede workflow: give the agent taste, page structure,
@@ -38,8 +38,8 @@ copy, SEO, and QA.
 
 `johnny-suede-write` is the one-name writing mode: public copy, company voice,
 Apple and iOS app copy, App Store copy, SEO/AEO/AI EO discoverability, CTAs,
-launch copy, social/email variants, claim checks, and anti-generic line
-editing with Directness, Rhythm, Trust, Specificity, Authenticity, Density, and
+launch copy, social/email variants, and anti-generic line editing with
+Directness, Rhythm, Trust, Specificity, Authenticity, Density, and
 Search/AI readability scoring. `johnny-suede-design` is the one-name design mode: Suedify,
 Apple and iOS app surfaces, App Store screenshots, UI polish, design-system QA,
 responsive checks, visual QA, visibility grading, implementation handoff,
@@ -216,8 +216,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-mcp-qa \
-  skills/suede-public-claim-check
+  skills/suede-mcp-qa
 ```
 
 Install creator skills:
@@ -274,9 +273,9 @@ Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 Install the public umbrella workflow when you want one skill to load the Suede
 design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
 code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
-ambassador explanation, claim-checking, agent-commerce, Suedify, progressive feedback,
+ambassador explanation, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, max-agent grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **16
+artist campaign, and creator utility workflow. The repository now ships **15
 public skill folders**.
 
 ```bash
@@ -285,7 +284,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual workflow and operations skills (10):
+Individual workflow and operations skills (9):
 
 - [`skills/johnny-suede-design`](skills/johnny-suede-design)
 - [`skills/johnny-suede-write`](skills/johnny-suede-write)
@@ -296,7 +295,6 @@ Individual workflow and operations skills (10):
 - [`skills/suede-site-alchemy`](skills/suede-site-alchemy)
 - [`skills/suede-launch-packaging`](skills/suede-launch-packaging)
 - [`skills/suede-mcp-qa`](skills/suede-mcp-qa)
-- [`skills/suede-public-claim-check`](skills/suede-public-claim-check)
 
 Creator skills (5):
 

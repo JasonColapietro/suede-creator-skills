@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for 16 public skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, Suede Public Claim Check, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
+description: Public umbrella workflow for 15 public skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
 ---
 
 # Suede Workflow Skills
@@ -12,7 +12,7 @@ This skill is the public entry point for:
 
 - **Johnny Suede Write:** one loadable writing mode for copy, brand voice,
   Suede SEO discoverability, SEO/AEO/AI EO, Apple and iOS copy, CTAs, launch
-  copy, claim checks, and anti-slop editing.
+  copy, and anti-slop editing.
 - **Johnny Suede Design:** one loadable design mode for Suedify, UI polish,
   Apple and iOS surfaces, App Store screenshots, design-system QA, responsive
   checks, visibility grading, and the writing stack.
@@ -32,8 +32,6 @@ This skill is the public entry point for:
   commands, QA, and handoff notes.
 - **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
   output, install options, and docs alignment.
-- **Suede Public Claim Check:** remove unsupported public claims around rights,
-  payouts, registry writes, private access, traction, and install availability.
 - **Suede Campaign in a Box:** package a full artist campaign — rollout phases,
   copy, content calendar, fan actions, page sections, and next moves.
 - **Suede Sync Packaging:** prepare clean sync review notes without placement
@@ -57,7 +55,6 @@ their names match the task:
 - `suede-site-alchemy`
 - `suede-launch-packaging`
 - `suede-mcp-qa`
-- `suede-public-claim-check`
 - `suede-campaign-in-a-box`
 - `suede-sync-packaging`
 - `suede-release-linter`
@@ -383,9 +380,9 @@ Context handoff (required): When delegating to an individual skill, pass the ori
 
 When the task names a narrower Suede lane, route directly:
 
-- Public copy or tone: `suede-public-claim-check`, or `johnny-suede-write`
-  when the user wants the whole writing stack from one mode, including Suede
-  SEO discoverability and Apple or iOS copy when relevant.
+- Public copy or tone: `johnny-suede-write` when the user wants the whole
+  writing stack from one mode, including Suede SEO discoverability and Apple
+  or iOS copy when relevant.
 - Full design stack: `johnny-suede-design`, including Suedify, Apple and iOS
   surface design, and visual QA when relevant.
 - Search/discovery: `suede-seo-audit`.
@@ -440,8 +437,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-mcp-qa \
-  skills/suede-public-claim-check
+  skills/suede-mcp-qa
 ```
 
 Install creator skills:

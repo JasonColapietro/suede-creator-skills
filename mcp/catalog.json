@@ -4,7 +4,7 @@
   "updated": "2026-06-21",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to the Suede skill pack: Johnny Suede design+copy and writing enchiladas, Suedify site mimicry, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, public claim checks, artist campaign tools, and creator rights utilities.",
+  "summary": "Local MCP access to the Suede skill pack: Johnny Suede design+copy and writing enchiladas, Suedify site mimicry, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow umbrella: Johnny Suede design+copy and writing enchiladas, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, public claim checks, launch + install packaging, artist campaigns, and creator rights utilities.",
+      "description": "Public Suede workflow umbrella: Johnny Suede design+copy and writing enchiladas, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -51,7 +51,6 @@
         "suede-site-alchemy",
         "suede-launch-packaging",
         "suede-mcp-qa",
-        "suede-public-claim-check",
         "suede-campaign-in-a-box",
         "suede-sync-packaging",
         "suede-release-linter",
@@ -79,7 +78,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella that loads the full Suede workflow — design, copywriting, Suede SEO/AEO/AI EO, Suedify restyling, one-pass code review+grade, CI ship-gate, agent-team orchestration, visual QA, launch and install packaging, claim checks, artist campaigns, and rights utilities — with progressive feedback and quality gates.",
+      "description": "Public umbrella that loads the full Suede workflow — design, copywriting, Suede SEO/AEO/AI EO, Suedify restyling, one-pass code review+grade, CI ship-gate, agent-team orchestration, visual QA, launch and install packaging, artist campaigns, and rights utilities — with progressive feedback and quality gates.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
@@ -165,12 +164,6 @@
       "area": "workflow",
       "description": "Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment.",
       "useWhen": "Use when building, changing, testing, or explaining the Suede Skills MCP."
-    },
-    {
-      "name": "suede-public-claim-check",
-      "area": "workflow",
-      "description": "Catch the over-claim before it ships — wording that implies traction, legal clearance, payouts, registry writes, private access, guaranteed outcomes, or installs that don't exist. Scans copy, docs, READMEs, launch pages, skill descriptions, ambassador language, social posts, emails, metadata, and MCP output.",
-      "useWhen": "Use before any public Suede wording goes live."
     },
     {
       "area": "creator",

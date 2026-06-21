@@ -26,11 +26,11 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 16 public `SKILL.md` folders:
-one umbrella workflow (suede-workflow-skills), 10 workflow skills
+creators, agencies, and AI power users. It ships 15 public `SKILL.md` folders:
+one umbrella workflow (suede-workflow-skills), 9 workflow skills
 (johnny-suede-write, johnny-suede-design, suede-code, suede-ship-gate,
 suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
-suede-launch-packaging, suede-mcp-qa, suede-public-claim-check), and 5 creator
+suede-launch-packaging, suede-mcp-qa), and 5 creator
 skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
 suede-rights-passport, suede-rights-audit).
 
@@ -305,7 +305,7 @@ manager, label, or legal reviewer still needs to confirm rights.
 
 Run `johnny-suede-write` when you want the whole writing stack in one mode:
 copy, company voice, Apple and iOS copy, App Store copy, SEO/AEO/AI EO, CTAs,
-claim checks, launch copy, and anti-slop line editing. Run
+launch copy, and anti-slop line editing. Run
 `johnny-suede-design` when you want the whole design stack, including Suedify,
 Apple and iOS surfaces, App Store screenshots, visual QA, company voice, and
 copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
