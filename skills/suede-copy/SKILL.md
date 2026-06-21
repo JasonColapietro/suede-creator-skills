@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); multi-email campaign arcs (use suede-growth); post-production AI-pattern removal only (use suede-deslop). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels.
+description: "Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); multi-email campaign arcs (use suede-growth); post-production AI-pattern removal only (use suede-deslop). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels."
 ---
 
 # Suede Copy

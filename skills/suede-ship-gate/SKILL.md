@@ -1,6 +1,6 @@
 ---
 name: suede-ship-gate
-description: Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder: detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes.
+description: Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes.
 ---
 
 # Suede Ship Gate

@@ -1,6 +1,6 @@
 ---
 name: suede-design
-description: Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); component visual iteration with the script harness (use suede-visual-qa); UX critique, accessibility audit, or design handoff doc (use suede-ui). Use suede-design for design system, token, and component-level decisions.
+description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); component visual iteration with the script harness (use suede-visual-qa); UX critique, accessibility audit, or design handoff doc (use suede-ui). Use suede-design for design system, token, and component-level decisions."
 ---
 
 # Suede Design

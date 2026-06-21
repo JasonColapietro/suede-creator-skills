@@ -1,6 +1,6 @@
 ---
 name: suede-code-grader
-description: Get a blunt A-F ship verdict on any code change. 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and example situations for every grade level. Use when you need a direct grade, not a full review. NOT FOR: full findings+grade in one pass (use suede-code); findings-only with Accessibility/SEO lanes (use suede-code-review). Use this skill ONLY when the deliverable is the letter grade alone.
+description: "Get a blunt A-F ship verdict on any code change. 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and example situations for every grade level. Use when you need a direct grade, not a full review. NOT FOR: full findings+grade in one pass (use suede-code); findings-only with Accessibility/SEO lanes (use suede-code-review). Use this skill ONLY when the deliverable is the letter grade alone."
 ---
 
 # Suede Code Grader

@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade. NOT FOR: combined review+grade in one pass (use suede-code); grade-only (use suede-code-grader). Use this skill when you specifically need Accessibility and SEO lanes alongside findings, without a letter grade.
+description: "Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade. NOT FOR: combined review+grade in one pass (use suede-code); grade-only (use suede-code-grader). Use this skill when you specifically need Accessibility and SEO lanes alongside findings, without a letter grade."
 ---
 
 # Suede Code Review
