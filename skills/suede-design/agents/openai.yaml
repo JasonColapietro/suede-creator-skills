@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Design"
+  short_description: "Evolve interfaces with design laws, component rules, dark mode, fluid type, and visual QA at every breakpoint."
+  default_prompt: "Use $suede-design on [repo/route]. Read PRODUCT.md and DESIGN.md, state the SUEDE_DESIGN_PREFLIGHT, apply design laws and component-specific rules, render at 1280px desktop and 390px mobile, and run visual QA."
+policy:
+  allow_implicit_invocation: true

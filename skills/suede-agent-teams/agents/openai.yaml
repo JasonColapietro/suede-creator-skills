@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Agent Teams"
+  short_description: "Coordinate multi-lane agent work — collision detection, RFC mode, gates, rollback, and signed handoff."
+  default_prompt: "Use $suede-agent-teams to orchestrate [task]. Define the Team Contract and lane map, run WIP collision detection, open parallel lanes only where safe, apply RFC mode for broad-blast-radius decisions, gate with quality checks, and close with a signed handoff."
+policy:
+  allow_implicit_invocation: true
