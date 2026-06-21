@@ -1,7 +1,7 @@
 {
   "name": "Suede Skills MCP",
   "version": "0.1.0",
-  "updated": "2026-06-20",
+  "updated": "2026-06-21",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to the Suede skill pack: Johnny Suede design+copy and writing enchiladas, Suedify site mimicry, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, public claim checks, artist campaign tools, and creator rights utilities.",
@@ -99,6 +99,36 @@
       "area": "workflow",
       "description": "Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default, with TypeScript, React, Next.js, OWASP, and database checklists, three depth levels, 10+ instant-F triggers, grade caps for auth and payment surfaces, a deploy-safety gate, and fix briefs. Prompted-only; never auto-fires.",
       "useWhen": "Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release."
+    },
+    {
+      "name": "suede-code-review",
+      "area": "workflow",
+      "description": "Deep-dive any diff with TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists — run the repo's own gates, honor project rules, trace whole-repo and git history, then return findings, fix briefs, and a signed grade across three depth levels.",
+      "useWhen": "Use when explicitly asked to review, deep-dive, or security-check a diff, PR, file, or release and you want full findings, not just a grade."
+    },
+    {
+      "name": "suede-code-grader",
+      "area": "workflow",
+      "description": "Get a blunt A-F ship verdict on any code change — 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and a worked example for every grade level.",
+      "useWhen": "Use when you need a direct ship/no-ship grade with evidence, not a full line-by-line review."
+    },
+    {
+      "name": "suede-copy",
+      "area": "workflow",
+      "description": "Write copy that earns the click — 12 headline formulas, 5 persuasion frameworks, A/B variant generation, a word-substitution list, email and social templates, an anti-slop gate, and a copy score before anything ships.",
+      "useWhen": "Use to write or rewrite headlines, CTAs, landing, email, or social copy with a conversion and anti-slop pass."
+    },
+    {
+      "name": "suede-design",
+      "area": "workflow",
+      "description": "Evolve any Suede interface from generic to intentional — design laws, component-specific rules, dark-mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell.",
+      "useWhen": "Use to polish UI, set up design tokens, fix visual hierarchy, or run a focused design pass on a single surface."
+    },
+    {
+      "name": "suede-agent-teams",
+      "area": "workflow",
+      "description": "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff — WIP collision detection, RFC mode, feature-flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence.",
+      "useWhen": "Use when a change is big enough to split across multiple agents or lanes and you need collision-safe coordination and a verified handoff."
     },
     {
       "name": "suede-ship-gate",
