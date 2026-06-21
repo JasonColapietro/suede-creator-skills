@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede Code Grader | Blunt A-F Ship Verdict on Any Code Change</title>
+    <meta name="description" content="Install Suede Code Grader for a blunt A-F ship verdict: 7 evidence-backed lanes, instant-F triggers, grade caps for auth and payment surfaces, and a required upgrade for every grade below A.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html">
+    <link rel="icon" href="../assets/suede-skill-icon.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede Code Grader">
+    <meta property="og:description" content="A blunt A-F ship verdict on any code change, with evidence-backed lanes, instant-F triggers, and grade caps for auth and payment surfaces.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede Code Grader">
+    <meta name="twitter:description" content="Get a direct A-F ship/no-ship grade on a diff, PR, file, or release. Evidence, not a lint score.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html#article",
+        "headline": "Suede Code Grader",
+        "description": "Public Codex skill for a blunt A-F ship verdict on any code change, with evidence-backed lanes, instant-F triggers, and grade caps for auth and payment surfaces.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html",
+        "author": {
+          "@type": "Person",
+          "name": "Jason Colapietro",
+          "url": "https://github.com/JasonColapietro"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Suede Labs AI",
+          "url": "https://suedeai.ai"
+        },
+        "about": ["code review", "ship verdict", "code grading", "security review", "deploy readiness", "Codex skills"],
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "suede-code-grader",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-grader",
+          "programmingLanguage": "Markdown",
+          "applicationCategory": "DeveloperTool",
+          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: oklch(0.12 0.028 28);
+        --panel: oklch(0.17 0.035 28 / 0.92);
+        --cream: oklch(0.96 0.018 62);
+        --muted: oklch(0.76 0.035 58);
+        --line: oklch(0.96 0.018 62 / 0.16);
+        --red: oklch(0.50 0.21 28);
+        --gold: oklch(0.78 0.12 78);
+        --cyan: oklch(0.74 0.12 205);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--cream);
+        background:
+          linear-gradient(115deg, oklch(0.22 0.12 28 / 0.7), transparent 38%),
+          linear-gradient(245deg, oklch(0.30 0.09 205 / 0.24), transparent 34%),
+          var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+      .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      header { border-bottom: 1px solid var(--line); background: oklch(0.12 0.028 28 / 0.9); }
+      nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px; }
+      .brand { font-weight: 950; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; font-weight: 800; }
+      .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
+      main { padding: 58px 0 80px; }
+      .eyebrow { color: var(--gold); font-size: 13px; font-weight: 950; text-transform: uppercase; }
+      h1 { max-width: 920px; margin: 14px 0 18px; font-size: clamp(42px, 6vw, 76px); line-height: 0.98; }
+      h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 48px); line-height: 1; }
+      h3 { margin: 0 0 10px; font-size: 24px; }
+      p, li { color: var(--muted); }
+      .lead { max-width: 880px; font-size: 19px; }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+      .card, .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 24px;
+      }
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        border: 1px solid oklch(0.78 0.12 78 / 0.42);
+        border-radius: 8px;
+        background: var(--red);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+      .button.secondary { background: oklch(0.96 0.018 62 / 0.08); }
+      pre {
+        overflow: auto;
+        border: 1px solid oklch(0.96 0.018 62 / 0.12);
+        border-radius: 8px;
+        background: oklch(0.08 0.02 28);
+        padding: 16px;
+        color: oklch(0.93 0.04 72);
+        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        white-space: pre-wrap;
+      }
+      .links { display: grid; gap: 12px; }
+      .link-row {
+        display: grid;
+        grid-template-columns: minmax(210px, 0.4fr) minmax(0, 1fr);
+        gap: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+      }
+      .link-row b { color: var(--cream); }
+      .link-row span { color: var(--muted); overflow-wrap: anywhere; }
+      section { margin-top: 52px; }
+      footer { border-top: 1px solid var(--line); color: var(--muted); padding: 28px 0; }
+      @media (max-width: 820px) {
+        nav, .grid, .link-row { grid-template-columns: 1fr; display: grid; }
+        .nav-links { gap: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="shell" aria-label="Primary">
+        <a class="brand" href="../">Suede Creator Skills</a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skill Docs</a>
+          <a href="../plugins.html">Public Installs + MCP</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="suede-workflow-skills.html">Workflow</a>
+          <a href="https://github.com/JasonColapietro/suede-creator-skills">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <div class="eyebrow">A-F code grading</div>
+      <h1>A blunt verdict on whether code is ready to ship.</h1>
+      <p class="lead">Suede Code Grader gives any diff, PR, file, or release a direct A-F grade across seven evidence-backed lanes. The output is a grade with evidence and a required upgrade, not a lint score and not a pile of style notes. Use it when you need the ship decision, not the full line-by-line review.</p>
+      <p><a class="button" href="../plugins.html">Install the skill</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-grader">View skill folder</a></p>
+
+      <section class="panel">
+        <h2>Public install command</h2>
+        <p>This is the public route. It installs from GitHub as a standard Codex skill folder.</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-code-grader</code></pre>
+        <p>Restart Codex after installing the skill.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>The seven lanes</h2>
+          <ul>
+            <li>Correctness: behavior, edge cases, error paths, async, routing, data flow, and regression risk.</li>
+            <li>Security and permissions: auth, secrets, payment, injection, path, SSRF, and data exposure fail closed.</li>
+            <li>Data and state: schemas, migrations, caches, jobs, queues, webhooks, retries, and idempotency stay consistent.</li>
+            <li>Domain truth: public claims, rights, provenance, royalty routing, and product claims match the implementation.</li>
+            <li>UX and release behavior: loading, empty, error, success, mobile, screenshot, and route states hold together.</li>
+            <li>Tests and verification: changed behavior has meaningful tests, builds, runs, readbacks, or named caveats.</li>
+            <li>Deploy readiness: env vars, flags, configs, migrations, rollback notes, and release sequencing are clear.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Where it fits</h2>
+          <p>Run it as the gate between "done" and "shipped." It reads the actual source and the evidence that exercises the change, not the PR description, then returns one overall grade with the single biggest reason and the upgrade that would move it.</p>
+          <p>Pair it with the full code review when you want findings and fix briefs too. The grader answers one question fast: does this ship, and if not, what is the smallest thing that changes the answer.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Instant-F triggers</h2>
+        <p>Any single match is an automatic F. The grade stops there and names the file and line. No other lane can raise it.</p>
+        <div class="links">
+          <div class="link-row"><b>Secrets in source</b><span>A hardcoded API key, token, password, private key, or signing secret committed to a real file.</span></div>
+          <div class="link-row"><b>Injection</b><span>SQL built by string concatenation with user input, a shell command from user input, or unescaped user input rendered where XSS is reachable.</span></div>
+          <div class="link-row"><b>Auth bypass</b><span>A path that skips the auth check, a permission check bypassable by a request param, or a token accepted with no real verification.</span></div>
+          <div class="link-row"><b>Payment and wallet</b><span>A handler that swallows errors silently, a webhook with no signature check, or an amount or recipient taken from untrusted input.</span></div>
+          <div class="link-row"><b>Data destruction</b><span>A destructive migration with no rollback, a bulk delete with no guard, or a cache wipe with no restore path.</span></div>
+          <div class="link-row"><b>Plaintext sensitive data</b><span>A password stored or logged in plaintext, or PII and payment or health data in an unencrypted field or log.</span></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Grade caps by surface</h2>
+          <p>Certain surfaces cannot earn an A or B on a passing build alone. The cap is stated in the output when it applies.</p>
+          <ul>
+            <li>Auth changes need the bypass and escalation path tested, not just the happy path, or the grade caps at C.</li>
+            <li>Payment and wallet flows need error paths tested and server-side amount and recipient validation, or they cap at C.</li>
+            <li>Data migrations need a documented, tested rollback; no rollback plan caps at D.</li>
+            <li>Breaking public API changes need verified backward compatibility or a versioned migration path, or they cap at C.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Output format</h2>
+          <p>It opens with a plain-language summary a non-coder can follow, then the seven lane grades, the overall grade, any cap, the evidence-backed why, and the ranked required upgrades.</p>
+          <pre><code>Correctness: A-F
+Security and permissions: A-F
+Data and state: A-F
+Domain truth: A-F
+UX and release behavior: A-F
+Tests and verification: A-F
+Deploy readiness: A-F
+Overall: A-F</code></pre>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Best prompts</h2>
+        <pre><code>Use $suede-code-grader to give this PR a blunt A-F ship verdict with evidence and the one required upgrade.</code></pre>
+        <pre><code>Use $suede-code-grader on this auth change. Apply the surface grade cap and tell me what evidence would lift it.</code></pre>
+        <pre><code>Use $suede-code-grader on this release build. I want the ship decision, not a full review.</code></pre>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Safety boundary</h2>
+          <p>The grade is a working review, not an audited guarantee. The skill does not invent tests, screenshots, live checks, or deploy status, and it does not raise a grade because the work was hard or because CI passed without exercising the change.</p>
+          <p>It never ships a C, D, or F without naming the upgrade that would move it.</p>
+        </article>
+        <article class="card">
+          <h2>Cue Suede</h2>
+          <p>Feedback can happen mid-workflow or at the end. Say <code>Cue Suede</code> to ask for choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing.</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">Suede Code Grader: a blunt A-F ship verdict with evidence-backed lanes, instant-F triggers, and grade caps for auth and payment surfaces.</div>
+    </footer>
+  </body>
+</html>

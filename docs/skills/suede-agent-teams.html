@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede Agent Teams | Coordinated Agent Lanes with Quality Gates</title>
+    <meta name="description" content="Install Suede Agent Teams to wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, scenario templates, and a handoff that won't close without evidence.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html">
+    <link rel="icon" href="../assets/suede-skill-icon.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede Agent Teams">
+    <meta property="og:description" content="Coordinate complex changes across agent lanes with quality gates, collision detection, rollback trees, and a signed evidence handoff.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede Agent Teams">
+    <meta name="twitter:description" content="Wire complex changes into coordinated agent lanes with quality gates and a handoff that won't close without evidence.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html#article",
+        "headline": "Suede Agent Teams",
+        "description": "Public Codex skill for coordinating complex changes across agent lanes with quality gates, collision detection, rollback trees, and a signed evidence handoff.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html",
+        "author": {
+          "@type": "Person",
+          "name": "Jason Colapietro",
+          "url": "https://github.com/JasonColapietro"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Suede Labs AI",
+          "url": "https://suedeai.ai"
+        },
+        "about": ["agent orchestration", "multi-agent", "quality gates", "rollback", "feature flags", "code review", "Codex skills"],
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "suede-agent-teams",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams",
+          "programmingLanguage": "Markdown",
+          "applicationCategory": "DeveloperTool",
+          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: oklch(0.12 0.028 28);
+        --panel: oklch(0.17 0.035 28 / 0.92);
+        --cream: oklch(0.96 0.018 62);
+        --muted: oklch(0.76 0.035 58);
+        --line: oklch(0.96 0.018 62 / 0.16);
+        --red: oklch(0.50 0.21 28);
+        --gold: oklch(0.78 0.12 78);
+        --cyan: oklch(0.74 0.12 205);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--cream);
+        background:
+          linear-gradient(115deg, oklch(0.22 0.12 28 / 0.7), transparent 38%),
+          linear-gradient(245deg, oklch(0.30 0.09 205 / 0.24), transparent 34%),
+          var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+      .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      header { border-bottom: 1px solid var(--line); background: oklch(0.12 0.028 28 / 0.9); }
+      nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px; }
+      .brand { font-weight: 950; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; font-weight: 800; }
+      .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
+      main { padding: 58px 0 80px; }
+      .eyebrow { color: var(--gold); font-size: 13px; font-weight: 950; text-transform: uppercase; }
+      h1 { max-width: 920px; margin: 14px 0 18px; font-size: clamp(42px, 6vw, 76px); line-height: 0.98; }
+      h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 48px); line-height: 1; }
+      h3 { margin: 0 0 10px; font-size: 24px; }
+      p, li { color: var(--muted); }
+      .lead { max-width: 880px; font-size: 19px; }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+      .card, .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 24px;
+      }
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        border: 1px solid oklch(0.78 0.12 78 / 0.42);
+        border-radius: 8px;
+        background: var(--red);
+        padding: 0 14px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+      .button.secondary { background: oklch(0.96 0.018 62 / 0.08); }
+      pre {
+        overflow: auto;
+        border: 1px solid oklch(0.96 0.018 62 / 0.12);
+        border-radius: 8px;
+        background: oklch(0.08 0.02 28);
+        padding: 16px;
+        color: oklch(0.93 0.04 72);
+        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        white-space: pre-wrap;
+      }
+      .links { display: grid; gap: 12px; }
+      .link-row {
+        display: grid;
+        grid-template-columns: minmax(210px, 0.4fr) minmax(0, 1fr);
+        gap: 14px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+      }
+      .link-row b { color: var(--cream); }
+      .link-row span { color: var(--muted); overflow-wrap: anywhere; }
+      section { margin-top: 52px; }
+      footer { border-top: 1px solid var(--line); color: var(--muted); padding: 28px 0; }
+      @media (max-width: 820px) {
+        nav, .grid, .link-row { grid-template-columns: 1fr; display: grid; }
+        .nav-links { gap: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="shell" aria-label="Primary">
+        <a class="brand" href="../">Suede Creator Skills</a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skill Docs</a>
+          <a href="../plugins.html">Public Installs + MCP</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="suede-workflow-skills.html">Workflow</a>
+          <a href="https://github.com/JasonColapietro/suede-creator-skills">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <div class="eyebrow">Agent orchestration</div>
+      <h1>Wire complex changes into coordinated lanes with a signed handoff.</h1>
+      <p class="lead">Suede Agent Teams assigns lanes, not conversations. It detects work-in-progress collisions before any builder opens a file, runs an RFC before high-blast-radius changes, gates the work through quality and adversarial review, and closes with a handoff that will not sign off until every required field is present and truthful.</p>
+      <p><a class="button" href="../plugins.html">Install the skill</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams">View skill folder</a></p>
+
+      <section class="panel">
+        <h2>Public install command</h2>
+        <p>This is the public route. It installs from GitHub as a standard Codex skill folder.</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-agent-teams</code></pre>
+        <p>Restart Codex after installing the skill.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>The default roster</h2>
+          <p>Start with Scout, Builder, and Handoff Writer. Add a role only when a gate needs it.</p>
+          <ul>
+            <li>Scout maps the repo, current state, dirty files, live routes, and likely blast radius.</li>
+            <li>Planner turns requirements into verifiable tasks with acceptance criteria and dependencies.</li>
+            <li>Builder makes narrow changes inside the existing system, in assigned files only.</li>
+            <li>Design reviewer, code grader, and code reviewer attach when design or code risk is present.</li>
+            <li>Release verifier owns build, deploy, live and API truth, and public-claim accuracy.</li>
+            <li>Handoff writer produces a signed delivery record, held if any required field is missing.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Where it fits</h2>
+          <p>Reach for it when a change is too broad, too risky, or too release-bound for one lane: shared interface changes, auth and payment paths, data migrations, and public launches. For high-risk work it keeps the builder and the reviewer separate so the implementation gets a second, adversarial set of eyes.</p>
+          <p>Use the smallest loop that can finish the work, and escalate deliberately when the task is broad, risky, release-bound, or you ask for max agent teams.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Collision detection and quality gates</h2>
+        <p>Before any parallel lanes open, the orchestrator collects every dirty and untracked file, maps each lane's scope, and flags a collision when two lanes, or a lane and existing work, would touch the same path. No builder opens a file outside its assigned lane map.</p>
+        <div class="links">
+          <div class="link-row"><b>RFC mode</b><span>Shared interfaces, schema, auth, payment, and public API changes require an accepted RFC before a builder opens.</span></div>
+          <div class="link-row"><b>Feature flags</b><span>Risky or non-revertible changes ship behind a flag with a removal date set at creation and a staged ramp.</span></div>
+          <div class="link-row"><b>Rollback tree</b><span>Pre-agreed decisions: roll back immediately on data loss or security exposure; hold and investigate on degraded performance.</span></div>
+          <div class="link-row"><b>Adversarial review</b><span>One lens asks whether it works; another asks how it fails in production, release, abuse, accessibility, and handoff.</span></div>
+          <div class="link-row"><b>Escalation protocol</b><span>Repeated fix cycles, unknown-severity security findings, and cost spikes stop the loop and surface for sign-off.</span></div>
+          <div class="link-row"><b>Status vocabulary</b><span>"Changed locally" is not "verified locally"; "deployed" is not "verified live." States do not skip.</span></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Scenario templates</h2>
+          <p>Pre-built rosters for common high-risk deployments. Adjust only the named target.</p>
+          <ul>
+            <li>Auth rewrite: RFC and flag required; builder touches auth files only; release verifier confirms in production.</li>
+            <li>Payment integration: idempotency, webhook signatures, and decline and replay paths tested before ramp.</li>
+            <li>Public launch review: review-only roster across design, visibility, links, secrets, and claim truth.</li>
+            <li>Data migration: rollback script defined and tested in staging before production promotion.</li>
+            <li>Performance audit: rank fixes by impact, implement only the ranked set, confirm no regression.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Handoff that won't fake done</h2>
+          <p>The delivery record is held until every field is present and truthful: exact target, every changed file, every command with output, observable verification, a real status, the single next step, and every caveat.</p>
+          <pre><code>Target:
+Changed:
+Verification:
+Caveats:
+Status:
+Next:</code></pre>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Best prompts</h2>
+        <pre><code>Use $suede-agent-teams to plan lanes for this multi-file change. Run WIP collision detection first and give me the lane map.</code></pre>
+        <pre><code>Use $suede-agent-teams with the auth-rewrite template. Require an RFC and a feature flag before any builder opens.</code></pre>
+        <pre><code>Use $suede-agent-teams to coordinate this public launch review and hold the handoff until every field has evidence.</code></pre>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Safety boundary</h2>
+          <p>No lane may override an escalation threshold by re-scoping the task or declaring a condition resolved without sign-off. Release truth, meaning build, deploy, live and API behavior, and public claims, is owned by the release verifier before any completion claim.</p>
+          <p>The orchestrator organizes the work; it does not invent verification, deploy status, or approved claims.</p>
+        </article>
+        <article class="card">
+          <h2>Cue Suede</h2>
+          <p>Feedback can happen mid-workflow or at the end. Say <code>Cue Suede</code> to ask for choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing.</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">Suede Agent Teams: coordinated agent lanes with collision detection, RFC mode, rollback trees, scenario templates, and a signed evidence handoff.</div>
+    </footer>
+  </body>
+</html>
