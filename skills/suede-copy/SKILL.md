@@ -1,9 +1,15 @@
 ---
 name: suede-copy
-description: Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships.
+description: Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and claim-check (use johnny-suede-write); multi-email campaign arcs (use suede-growth); post-production AI-pattern removal only (use suede-deslop). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels.
 ---
 
 # Suede Copy
+
+## When to use this skill instead of related skills
+- **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
+- **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization + public claim check)
+- **suede-growth**: multi-email campaign sequences and campaign performance reporting
+- **suede-deslop**: post-production pass to strip AI writing patterns from already-written copy
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 
