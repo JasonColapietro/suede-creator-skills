@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Public umbrella workflow for 17 public skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit), plus suede-ai-eval and suede-map. Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
+description: Umbrella workflow for 17 skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit), plus suede-ai-eval and suede-map. Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
 ---
 
 # Suede Workflow Skills
