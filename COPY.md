@@ -26,12 +26,13 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 15 public `SKILL.md` folders:
-one umbrella workflow (suede-workflow-skills), 9 workflow skills
-(johnny-suede-write, johnny-suede-design, suede-code, suede-ship-gate,
+creators, agencies, and AI power users. It ships 20 public `SKILL.md` folders:
+one umbrella workflow (suede-workflow-skills), 14 workflow skills
+(johnny-suede-write, johnny-suede-design, suede-code, suede-code-grader,
+suede-code-review, suede-copy, suede-design, suede-agent-teams, suede-ship-gate,
 suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
-suede-launch-packaging, suede-mcp-qa), and 5 creator
-skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
+suede-launch-packaging, suede-mcp-qa), and 5 creator skills
+(suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
 suede-rights-passport, suede-rights-audit).
 
 ## GitHub Pages Copy
@@ -149,16 +150,13 @@ before ship. Suede Code Review is the deeper findings and fix-brief workflow.
 
 ### Founder context
 
-Jason is not a coder by background. He had to learn fast and turn repeated
-agent failures into reusable Suede workflows. Over Suede's life he hired and
-fired six marketing firms. Not one registered Suede's property in Google Search
-Console, and he did not even know the tool existed until he got close enough to
-the work to see what had been skipped. The lesson became part of the system:
-you learn how poorly things were done when you can finally get involved, and no
-one will ever care as much as the founder/operator who has to live with the
-result. That is why public work has to show up across Google, Gemini, and AI
-result surfaces, make sense to AI systems, carry proof, and move a real visitor
-toward a clear action.
+Suede was built from live pressure, not theory. The workflow grew out of
+repeated agent failures that got turned into reusable rules. The core
+conviction: public work is not done until it is findable across Google, Gemini,
+and AI result surfaces, readable to AI systems, backed by proof, and clear
+enough for a real visitor to act. Suede's founder is
+[Jason Colapietro](https://suedeai.ai/founder), a published author and Forbes
+contributor building programmable IP and creator ownership infrastructure.
 
 ### Progressive updating note
 

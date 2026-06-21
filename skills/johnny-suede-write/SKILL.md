@@ -24,7 +24,7 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 
 Cross-lane jobs (e.g. "rewrite the homepage, retune it to our voice, and give me social variants") run sequentially with shared context: write the surface, run Brand-Voice Alignment on it, then spin variants. State the chain you ran.
 
-If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a design push toward a reference URL, or a code grade/review, those live in dedicated skills outside this writing enchilada (`$suede-seo-audit`, `$suede-site-alchemy`, `$suede-visibility-grader`, `$suedify`, `$suede-design`, `$suede-code-grader`, `$suede-code-review`, `$suede-agent-teams`). Route there and pass full context; do not reimplement them here. This skill owns the writing.
+If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a design push toward a reference URL, or a code grade/review, those live in dedicated skills outside this writing enchilada (`$suede-seo-audit`, `$suede-site-alchemy`, `$suede-visibility-grader`, `$suede-design`, `$suede-code-grader`, `$suede-code-review`, `$suede-agent-teams`, or `$suedify` _(private Suede Labs skill — not included in this pack)_). Route there and pass full context; do not reimplement them here. This skill owns the writing.
 
 ## Multi-Agent Default
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Suede Ship Gate"
-  short_description: "Wire any repo with path-aware CI and branch protection that actually gate the merge."
+  short_description: "Path-aware CI and branch protection setup"
   default_prompt: "Use $suede-ship-gate to set up path-aware CI and branch protection for this repo, or to audit why a required check is hanging. Detect the stack first; assume nothing."

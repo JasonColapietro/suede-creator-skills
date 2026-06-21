@@ -1,14 +1,14 @@
 ---
 name: suede-design
-description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); component visual iteration with the script harness (use suede-visual-qa); UX critique, accessibility audit, or design handoff doc (use suede-ui). Use suede-design for design system, token, and component-level decisions."
+description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); component visual iteration with the script harness (check your installed skill pack for visual QA workflows); UX critique, accessibility audit, or design handoff doc (check your installed skill pack for accessibility audit workflows). Use suede-design for design system, token, and component-level decisions."
 ---
 
 # Suede Design
 
 ## When to use this skill instead of related skills
 - **suede-design** (this skill): design system tokens, color ramps, type scale, component-level polish, brand identity decisions
-- **suede-visual-qa**: visual iteration with the local script harness (craft, shape, audit sub-commands)
-- **suede-ui**: UX critique, accessibility audit, information architecture, design handoff docs
+- **suede-visual-qa** _(private Suede Labs skill — not included in this pack)_: visual iteration with the local script harness (craft, shape, audit sub-commands)
+- **suede-ui** _(private Suede Labs skill — not included in this pack)_: UX critique, accessibility audit, information architecture, design handoff docs
 - **johnny-suede-design**: full-stack build combining design + copy + visual QA for a launch or redesign
 
 Use this skill to make Suede interfaces feel intentional, premium, legible, and

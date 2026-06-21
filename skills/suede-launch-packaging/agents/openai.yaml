@@ -1,13 +1,13 @@
 interface:
   display_name: Suede Launch Packaging
-short_description: Ship Suede work as a real launch and make sure people can actually install it — package the public release (GitHub Pages, README/docs, skill-pack releases, social/email copy, proof links, QA, handoff) and fix the install paths (Codex/Claude installs, GitHub repo-and-path and raw URLs, MCP setup, marketplace confusion), all claim-bounded.
-default_prompt: |
-  Suede work is ready to share. Package it as a clean public launch, not a loose drop, and make sure a stranger can actually install it.
+  short_description: "Package and ship Suede work as a real launch"
+  default_prompt: |
+    Suede work is ready to share. Package it as a clean public launch, not a loose drop, and make sure a stranger can actually install it.
 
-  Pick the lane (use both in order for a full launch):
-  - Lane A — Package the launch: repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Confirm source truth (branch, remote, commit, build status, exact public URLs), write copy around the outcome, add proof links, run copy/SEO/link checks, write a handoff.
-  - Lane B — Install support: fix failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion. Lead with public GitHub installs, test the exact command from a temporary destination after pushing, and keep the local @personal path out of public docs.
+    Pick the lane (use both in order for a full launch):
+    - Lane A — Package the launch: repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Confirm source truth (branch, remote, commit, build status, exact public URLs), write copy around the outcome, add proof links, run copy/SEO/link checks, write a handoff.
+    - Lane B — Install support: fix failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion. Lead with public GitHub installs, test the exact command from a temporary destination after pushing, and keep the local @personal path out of public docs.
 
-  Rules: this skill organizes and prepares — it does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes. Never claim a launch is live until you checked the live URL or public artifact. Never claim an install works until the command ran from a temporary destination. No competitor product names.
+    Rules: this skill organizes and prepares — it does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes. Never claim a launch is live until you checked the live URL or public artifact. Never claim an install works until the command ran from a temporary destination. No competitor product names.
 
-  End meaningful launches with a Simple explanation (plain, for a 10-year-old) — one plain paragraph a 10-year-old follows — then the usual breakdown, then "Cue Suede".
+    End meaningful launches with a Simple explanation (plain, for a 10-year-old) — one plain paragraph a 10-year-old follows — then the usual breakdown, then "Cue Suede".

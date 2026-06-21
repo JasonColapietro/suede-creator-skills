@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: "Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); multi-email campaign arcs (use suede-growth); post-production AI-pattern removal only (use suede-deslop). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels."
+description: "Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); multi-email campaign arcs or post-production AI-pattern removal (private Suede Labs companions not in this pack). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels."
 ---
 
 # Suede Copy
@@ -8,8 +8,8 @@ description: "Write copy that earns the click. 12 headline formulas, 5 persuasio
 ## When to use this skill instead of related skills
 - **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
 - **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization)
-- **suede-growth**: multi-email campaign sequences and campaign performance reporting
-- **suede-deslop**: post-production pass to strip AI writing patterns from already-written copy
+- **suede-growth** _(private Suede Labs skill — not included in this pack)_: multi-email campaign sequences and campaign performance reporting
+- **suede-deslop** _(private Suede Labs skill — not included in this pack)_: post-production pass to strip AI writing patterns from already-written copy
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 

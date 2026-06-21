@@ -4,7 +4,7 @@
   "updated": "2026-06-21",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to the Suede skill pack: Johnny Suede design+copy and writing enchiladas, Suedify site mimicry, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
+  "summary": "Local MCP access to the Suede skill pack: full-stack design and writing modes, Suedify site restyling, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow umbrella: Johnny Suede design+copy and writing enchiladas, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
+      "description": "Public Suede workflow umbrella: full-stack design and writing modes, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -61,7 +61,7 @@
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public artist and creator skills: the whole-enchilada artist campaign builder, neutral sync review packaging, release linting, rights passports, and a rights-readiness audit with provenance, licensing, and royalty-routing lanes.",
+      "description": "Public artist and creator skills: a full artist campaign builder, neutral sync review packaging, release linting, rights passports, and a rights-readiness audit with provenance, licensing, and royalty-routing lanes.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-campaign-in-a-box skills/suede-sync-packaging skills/suede-release-linter skills/suede-rights-passport skills/suede-rights-audit",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
@@ -78,13 +78,13 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Public umbrella that loads the full Suede workflow — design, copywriting, Suede SEO/AEO/AI EO, Suedify restyling, one-pass code review+grade, CI ship-gate, agent-team orchestration, visual QA, launch and install packaging, artist campaigns, and rights utilities — with progressive feedback and quality gates.",
+      "description": "Loads the full Suede workflow in one install — design, copywriting, Suede SEO/AEO/AI EO, Suedify restyling, one-pass code review+grade, CI ship-gate, agent-team orchestration, visual QA, launch and install packaging, artist campaigns, and rights utilities — with progressive feedback and quality gates.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
       "name": "johnny-suede-design",
       "area": "workflow",
-      "description": "Design and write any creative surface — landing pages, brand surfaces, product and app UI, Apple/iOS and App Store surfaces, dashboards, components — through design laws, tokens, fluid type, motion, Suedify visual-DNA cloning, full copywriting with an anti-slop gate and copy score, visual QA, and optional multi-agent orchestration. Writing mode is on by default.",
+      "description": "Design and write any creative surface — landing pages, brand surfaces, product and app UI, Apple/iOS and App Store surfaces, dashboards, components — through design laws, tokens, fluid type, motion, Suedify reference-site cloning, full copywriting with an anti-slop gate and copy score, visual QA, and optional multi-agent orchestration. Writing mode is on by default.",
       "useWhen": "Use to design, redesign, restyle, suedify, build a UI or app shell or App Store screenshots, write or rewrite copy and headlines and CTAs, build a design system or tokens, run visual QA, or coordinate a big multi-lane creative build. Website-only SEO, visibility, and conversion audits are separate on-demand companions."
     },
     {
@@ -151,7 +151,7 @@
       "name": "suede-site-alchemy",
       "area": "workflow",
       "description": "Suede website conversion and CRO workflow — funnel analysis, friction audit, conversion math, A/B hypotheses, social-proof architecture, pricing psychology, mobile CRO, and a quick-wins list ranked by lift. Website-specific; run on demand.",
-      "useWhen": "Use for improving page conversion, packaging website growth offers, or routing app requests into the design enchilada."
+      "useWhen": "Use for improving page conversion, packaging website growth offers, or routing conversion requests into the full design workflow."
     },
     {
       "name": "suede-launch-packaging",
@@ -168,7 +168,7 @@
     {
       "area": "creator",
       "name": "suede-campaign-in-a-box",
-      "description": "The whole-enchilada artist campaign skill — turn a song, release, era, or catalog moment into a complete rollout, with modes for artist identity, era systems, single-song universes, 5-15s hooks, release stunts, repeatable fan rituals, visualizer and lyric-video treatments, merch and collector objects, live setlist design, catalog revival, and collaborator matchmaking. Suede-safe: no fake hype or clearance/placement promises.",
+      "description": "Full-stack artist campaign skill — turn a song, release, era, or catalog moment into a complete rollout, with modes for artist identity, era systems, single-song universes, 5-15s hooks, release stunts, repeatable fan rituals, visualizer and lyric-video treatments, merch and collector objects, live setlist design, catalog revival, and collaborator matchmaking. No fake hype or clearance/placement promises.",
       "useWhen": "Use when a musician wants the whole artist world and rollout turned into usable moves."
     },
     {
@@ -192,7 +192,7 @@
     {
       "name": "suede-rights-audit",
       "area": "creator",
-      "description": "Rights-readiness enchilada — find and organize rights gaps before a creator project is packaged, with lanes for provenance and origin trail, ownership/contributors/credits/splits/samples gap audit, licensing-discussion readiness without claiming clearance, and royalty-routing readiness that moves no money. Organizes evidence only; never clears rights, confirms ownership, approves payouts, or writes to a registry.",
+      "description": "Find and organize rights gaps before a creator project is packaged — covers provenance and origin trail, ownership/contributors/credits/splits/samples gap audit, licensing-discussion readiness without claiming clearance, and royalty-routing readiness that moves no money. Organizes evidence only; never clears rights, confirms ownership, approves payouts, or writes to a registry.",
       "useWhen": "Use before rights passporting, provenance mapping, licensing prep, registry readiness, royalty routing, or Suede creator intake."
     }
   ],

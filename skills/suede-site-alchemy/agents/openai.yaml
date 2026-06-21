@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Site Alchemy"
-  short_description: "Transmute any page into a conversion engine — funnel, friction, math, hypotheses, proof, pricing psychology."
+  short_description: "Turn any page into a conversion engine"
   default_prompt: "Use $suede-site-alchemy on [URL or page]. Identify the funnel stage, run the friction audit, calculate conversion math, generate A/B hypotheses, audit social proof placement and pricing. Apply the quick wins list and close with a ship gate."
 policy:
   allow_implicit_invocation: true

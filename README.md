@@ -2,7 +2,7 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 15-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 20-skill pack for AI coding agents,
 design-heavy website work, Apple and iOS app surfaces, anti-slop copywriting, Suede SEO
 discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
@@ -168,17 +168,11 @@ review with A-F Suede grades, visibility and CTA grading, QA, agent-team
 coordination, and optional MCP-assisted discovery. Keep local install details
 such as `@personal` inside technical setup sections.
 
-Founder context ambassadors can explain: Jason is not a coder by background,
-so the workflow was built from live pressure, not theory. He had to learn fast,
-turning every agent miss into a reusable Suede rule. Over Suede's life he hired
-and fired six marketing firms. Not one registered Suede's property in Google
-Search Console, and he did not even know the tool existed until he got close
-enough to the work to see what had been skipped. The lesson was blunt: you
-learn how poorly things were done when you can finally get involved, and no one
-will ever care as much as the founder/operator who has to live with the result.
-That is why public work is not done until it is findable across Google, Gemini,
-and AI result surfaces, readable to AI systems, backed by proof, and clear
-enough for a real visitor to act.
+Founder context for ambassadors: the workflow was built from live pressure, not
+theory — turning repeated agent failures into reusable rules. The core
+conviction is that public work is not done until it is findable across Google,
+Gemini, and AI result surfaces, readable to AI systems, backed by proof, and
+clear enough for a real visitor to act.
 
 Safety-oriented CLI flags:
 
@@ -275,7 +269,7 @@ design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
 code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
 ambassador explanation, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, max-agent grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **15
+artist campaign, and creator utility workflow. The repository now ships **20
 public skill folders**.
 
 ```bash
@@ -284,11 +278,16 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual workflow and operations skills (9):
+Individual workflow and operations skills (14):
 
 - [`skills/johnny-suede-design`](skills/johnny-suede-design)
 - [`skills/johnny-suede-write`](skills/johnny-suede-write)
+- [`skills/suede-agent-teams`](skills/suede-agent-teams)
 - [`skills/suede-code`](skills/suede-code)
+- [`skills/suede-code-grader`](skills/suede-code-grader)
+- [`skills/suede-code-review`](skills/suede-code-review)
+- [`skills/suede-copy`](skills/suede-copy)
+- [`skills/suede-design`](skills/suede-design)
 - [`skills/suede-ship-gate`](skills/suede-ship-gate)
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
 - [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
@@ -405,6 +404,12 @@ Use $suede-rights-passport to prepare this creator project as a Suede transfer p
 ```
 
 ## Install For Claude Code
+
+Quick install (all 20 skills):
+
+```bash
+git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
+```
 
 Claude Code skills use `SKILL.md` files in `.claude/skills/` directories. For a
 project-level install:

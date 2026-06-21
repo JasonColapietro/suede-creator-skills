@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: Umbrella workflow for 17 skills — Johnny Suede Write, Johnny Suede Design, suede-code, suede-ship-gate, Suede SEO Audit, Suede Visibility Grader, Suede Site Alchemy, Suede Launch Packaging, Suede MCP QA, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit), plus suede-ai-eval and suede-map. Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.
+description: "Umbrella workflow for 19 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
 ---
 
 # Suede Workflow Skills
@@ -42,11 +42,6 @@ This skill is the public entry point for:
   material with provenance, credits, splits, license notes, and intake JSON.
 - **Suede Rights Audit:** identify ownership, contributor, split, sample,
   license, and intake gaps.
-- **Suede AI Eval:** design AI evaluation strategy, failure mode rubrics, and
-  AI-SPEC artifacts; audit retroactive eval coverage across AI-powered surfaces.
-- **Suede Map:** produce a codebase intelligence snapshot and persistent intel
-  layer so other skills can skip re-exploration on the same repo.
-
 If the individual public skills are also installed, use them directly when
 their names match the task:
 
@@ -64,8 +59,6 @@ their names match the task:
 - `suede-release-linter`
 - `suede-rights-passport`
 - `suede-rights-audit`
-- `suede-ai-eval`
-- `suede-map`
 
 If only this umbrella skill is installed, follow the condensed workflow below.
 
@@ -403,10 +396,6 @@ When the task names a narrower Suede lane, route directly:
   placement promise, clearance claim, or outreach claim to sync packaging.
 - Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
   `suede-release-linter`.
-- AI evaluation strategy, failure mode rubrics, AI-SPEC artifacts, or
-  retroactive eval coverage audit: `suede-ai-eval`.
-- Codebase intelligence snapshot, persistent intel layer, or skip
-  re-exploration for other skills: `suede-map`.
 
 Use the umbrella workflow when the user wants the whole Suede stack or when the
 task crosses several lanes.

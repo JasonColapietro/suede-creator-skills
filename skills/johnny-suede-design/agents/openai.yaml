@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Design"
-  short_description: "Design and write any creative surface Suede ships — landing pages, brand, product and app UI, iOS and App Store, tokens — with register classification, design laws, visual QA, reference-DNA cloning, full copywriting, and optional multi-agent builds."
+  short_description: "Full-stack design + copy skill for Suede"
   default_prompt: "Use $johnny-suede-design for [creative request]. Pick the lane (Design, Suedify, Copy, or Agent Teams), classify the register, run the context gate, apply the design laws, write the copy (writing mode is on by default), and verify through visual QA before handoff. For a reference-to-target restyle, give a reference_url and target_url. For a big multi-lane build, it will ask first whether to run as a multi-agent team or single-agent."
 policy:
   allow_implicit_invocation: true
