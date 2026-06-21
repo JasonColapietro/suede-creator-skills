@@ -6,3 +6,4 @@ venv/
 release-lint-output/
 suede-transfer-package/
 *.tmp
+node_modules/

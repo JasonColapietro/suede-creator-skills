@@ -3,8 +3,8 @@
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
 **Suede Creator Skills** is a public 20-skill pack for AI coding agents,
-design-heavy website work, Apple and iOS app surfaces, anti-slop copywriting, Suede SEO
-discoverability, SEO/AEO/AI EO, Suedify-style site mimicry, QA, and creator
+design-heavy website work, Apple and iOS app surfaces, copywriting, SEO/AEO/AI EO,
+Suedify website restyling, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
 Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
 grading, site
@@ -27,8 +27,7 @@ simple non-coder version, then the usual breakdown.
 Public GitHub users can bring their own company. Use the Johnny Suede umbrella
 modes with a company brief, voice, audience, proof, allowed claims, forbidden
 claims, CTA, assets, and reference URLs; the workflow should keep the Suede
-quality gates while replacing Suede voice and domain language with the user's
-brand.
+quality gates while using the user's brand voice and domain language.
 
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
@@ -118,7 +117,7 @@ Use $suede-workflow-skills to rewrite this page, audit SEO/AEO/AI EO, check desi
 ```
 
 ```text
-Use $johnny-suede-write for my company instead of Suede voice.
+Use $johnny-suede-write for my company with our brand voice.
 Company: Acme Robotics.
 Audience: operations leaders at mid-market manufacturers.
 Voice: precise, practical, slightly bold, never hype.

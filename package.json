@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "js-yaml": "^5.0.0"
+  }
+}

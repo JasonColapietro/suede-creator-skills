@@ -54,7 +54,7 @@ Give your agent design taste, copy discipline, Suede SEO, and QA.
 
 ### Subhead
 
-Install a 16-skill Suede pack that helps agents mimic reference-site style,
+Install the 20-skill Suede pack that helps agents mimic reference-site style,
 improve visual systems, handle Apple and iOS surfaces, rewrite public copy,
 audit Suede SEO/AEO/AI EO, grade visibility and CTA clarity, run visual QA,
 check install paths, coordinate QA, package artist campaigns, and support
@@ -143,8 +143,8 @@ signal, and the next fixes.
 
 ### Code grade explanation
 
-Suede Code Grader gives A-F Suede grades for correctness, security, data and
-state handling, Suede truth, UX and release behavior, tests, deploy readiness,
+Suede Code Grader gives A-F grades for correctness, security, data and
+state handling, UX and release behavior, tests, deploy readiness,
 and ship risk. The grade includes why it landed there and the required upgrades
 before ship. Suede Code Review is the deeper findings and fix-brief workflow.
 
@@ -316,7 +316,7 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### Short post
 
-Suede Creator Skills are live: 16 public agent skills for design, copywriting,
+Suede Creator Skills are live: 20 public agent skills for design, copywriting,
 SEO/AEO/AI EO, Suedify website restyling, visibility grading, code review,
 CI gating, launch packaging, artist campaigns, and creator rights workflows.
 
