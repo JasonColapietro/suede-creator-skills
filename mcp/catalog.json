@@ -84,13 +84,13 @@
     {
       "name": "johnny-suede-design",
       "area": "workflow",
-      "description": "Design and write any creative surface — landing pages, brand surfaces, product and app UI, Apple/iOS and App Store surfaces, dashboards, components — through design laws, tokens, fluid type, motion, Suedify reference-site cloning, full copywriting with an anti-slop gate and copy score, visual QA, and optional multi-agent orchestration. Writing mode is on by default.",
-      "useWhen": "Use to design, redesign, restyle, suedify, build a UI or app shell or App Store screenshots, write or rewrite copy and headlines and CTAs, build a design system or tokens, run visual QA, or coordinate a big multi-lane creative build. Website-only SEO, visibility, and conversion audits are separate on-demand companions."
+      "description": "Design and write high-polish creative surfaces for Suede or a supplied company — landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects — through design laws, tokens, motion, visual QA, Suedify reference-site restyling, copywriting, anti-slop scoring, and optional multi-agent coordination. Writing mode is on by default.",
+      "useWhen": "Use to design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite copy and headlines and CTAs, build a design system, run visual QA, or coordinate a big multi-lane creative build."
     },
     {
       "name": "johnny-suede-write",
       "area": "workflow",
-      "description": "Write anything Suede ships — long-form, short-form, GitHub docs, social, email, App Store copy, ambassador talk-tracks — through mode-specific structure, persuasion frameworks, A/B variants, brand-voice alignment, an anti-slop gate, and a copy score. Default voice Suede; a supplied company brief overrides everything.",
+      "description": "Write anything Suede ships — long-form, short-form, GitHub docs, social, email, product listing copy, ambassador talk-tracks — through mode-specific structure, persuasion frameworks, A/B variants, brand-voice alignment, an anti-slop gate, and a copy score. Default voice Suede; a supplied company brief overrides everything.",
       "useWhen": "Use to write, rewrite, package, explain, promote, audit, or polish public copy with the whole writing stack loaded from one mode."
     },
     {
@@ -102,7 +102,7 @@
     {
       "name": "suede-code-review",
       "area": "workflow",
-      "description": "Deep-dive any diff with TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists — run the repo's own gates, honor project rules, trace whole-repo and git history, then return findings, fix briefs, and a signed grade across three depth levels.",
+      "description": "Deep-dive any diff with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists — run the repo's own gates, honor project rules, trace whole-repo and git history, then return findings, fix briefs, and a signed grade across three depth levels.",
       "useWhen": "Use when explicitly asked to review, deep-dive, or security-check a diff, PR, file, or release and you want full findings, not just a grade."
     },
     {

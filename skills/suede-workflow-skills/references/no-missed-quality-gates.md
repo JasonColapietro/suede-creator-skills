@@ -1,11 +1,11 @@
 # No-Missed Quality Gates
 
 Use this reference when Suede work touches public copy, visual design, design
-systems, reference-site mimicry, page visibility, launch packaging, or
+systems, reference-site restyling, page visibility, launch packaging, or
 agent-team delivery. These gates add quality pressure without replacing the
 existing Suede rules for creator ownership, programmable IP, rights,
 provenance, registry-backed media, royalty routing, licensing readiness, agent
-commerce, Apple and iOS surfaces, SEO/AEO/AI EO, public claim safety, WIP
+commerce, mobile and product surfaces, SEO/AEO/AI EO, public claim safety, WIP
 protection, and evidence handoff.
 
 ## Preservation Gate
@@ -16,11 +16,11 @@ must survive the edit:
 - target skill trigger and description;
 - Suede-specific language around rights, provenance, royalties, licensing,
   agent commerce, and creator ownership;
-- Apple, iOS, App Store, screenshot, onboarding, paywall, and app-shell support
+- product screenshots, mobile onboarding, paywall, and app-shell support
   when already present;
 - SEO, AEO, AI EO, GitHub Pages, Google, Gemini, AI search, metadata, FAQ,
   schema, sourceable proof, and internal-link behavior;
-- Suedify reference-site capture, token distillation, safe mimicry, and
+- Suedify reference-site capture, token distillation, safe translation, and
   screenshot comparison behavior;
 - design-system quality of life artifacts, state coverage, accessibility, and
   responsive QA;
@@ -51,7 +51,7 @@ Run this gate before public copy is accepted.
   direct actor and verb would be clearer.
 - Keep one idea per sentence. Vary sentence length without using em dashes.
 - Do not sand off Suede specificity. Preserve rights, provenance, registry,
-  royalty, licensing, agent commerce, creator ownership, Apple/iOS, and
+  royalty, licensing, agent commerce, creator ownership, mobile product, and
   discoverability language when it is relevant and true.
 
 Score meaningful public copy:
@@ -67,13 +67,13 @@ Density: /10
 Total: /70
 ```
 
-Revise below 58/70. For launch, homepage, GitHub, App Store, ambassador, or
+Revise below 58/70. For launch, homepage, GitHub, product listing, ambassador, or
 investor-adjacent copy, aim for 62/70 or higher.
 
 ## Design Gate
 
 Run this gate before major visual work, reusable UI, public launch surfaces,
-Suedify work, App Store assets, or design-system passes.
+Suedify work, product screenshot assets, or design-system passes.
 
 - Name the subject, audience, page job, primary action, launch stage, and
   register before making visual decisions.

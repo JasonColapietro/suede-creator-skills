@@ -8,7 +8,7 @@ clear, search-friendly, specific language and careful claim boundaries.
 ## Core Positioning
 
 Suede gives AI agents a reusable product workflow for design, anti-slop
-copywriting, SEO/AEO/AI EO, Suedify reference-site mimicry, visual QA,
+copywriting, SEO/AEO/AI EO, Suedify reference-site restyling, visual QA,
 visibility and CTA grading, A-F Suede code grades, QA, public skill installs,
 local plugin notes, MCP-assisted discovery, and creator workflow support.
 
@@ -54,7 +54,7 @@ Suede fixes that by packaging the working system:
 - how it should review code;
 - how it should inspect a public page;
 - how it should grade website visibility and CTA strength;
-- how it should mimic a reference site safely;
+- how it should adapt a reference site's design grammar safely;
 - how it should audit SEO, AEO, AI EO, and metadata;
 - how it should improve when the operator gives feedback;
 - how it should run QA before handoff;
@@ -71,8 +71,8 @@ that need to build, package, explain, audit, and ship.
 
 Use this for product and website work:
 
-- Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/AI EO, Apple and iOS copy, CTAs, and anti-slop editing.
-- Johnny Suede Design: one loadable design mode for Suedify, UI polish, Apple and iOS surfaces, App Store screenshots, design-system QA, visual QA, visibility grading, and the writing stack.
+- Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
+- Johnny Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, design-system QA, visual QA, visibility grading, and the writing stack.
 - Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk — prompted only, never auto-fires.
 - Suede Ship Gate: any-repo CI gate that blocks a merge when required checks fail — prompted only.
 - Suede SEO Audit: check search intent, answer intent, metadata, schema, links, and trust.
@@ -207,7 +207,7 @@ Rewrite the page
 ### Suede Workflow Skills
 
 ```text
-Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to mimic a reference site, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
 ```
 
 ### Suede Creator Skills
@@ -231,7 +231,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 20-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, Apple and iOS surface support, Suedify reference-site mimicry, design direction, copywriting, supplied-company voice support, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 20-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, Suede SEO discoverability, SEO/AEO/AI EO audits, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
 ```
@@ -303,13 +303,13 @@ Suedify lets you give the agent a reference URL and a target URL, then push the 
 ```text
 Suedify is the site-style transfer workflow inside the Suede pack.
 
-Give it a website you want to mimic and the website you want improved. The agent studies the reference page for layout, hierarchy, color, spacing, navigation, content rhythm, component density, and interaction cues. Then it applies that direction to the target site and runs Suede QA so the result is not just similar, but usable.
+Give it a website you want to study and the website you want improved. The agent studies the reference page for layout, hierarchy, color, spacing, navigation, content rhythm, component density, and interaction cues. Then it adapts that direction to the target site and runs Suede QA so the result is not just similar, but usable.
 ```
 
 ### Example Prompt
 
 ```text
-Use Suedify. Mimic https://apple.com and apply that direction to https://example.com. Keep the brand content, but move the target toward the reference style as closely as possible. Use Suede design, copy, SEO/AEO/AI EO, code review, and QA. Use MCP only if it helps with audit or checklist structure.
+Use Suedify. Study https://apple.com and apply that direction to https://example.com. Keep the brand content, but move the target toward the reference style as closely as possible. Use Suede design, copy, SEO/AEO/AI EO, code review, and QA. Use MCP only if it helps with audit or checklist structure.
 ```
 
 ## MCP Copy
@@ -432,7 +432,7 @@ Suede adds one:
 - visibility and CTA grades
 - A-F code grading
 - QA loops
-- Suedify site mimicry
+- Suedify reference-site restyling
 - copywriting
 - SEO/AEO/AI EO and metadata
 - adversarial agent-team review
@@ -465,7 +465,7 @@ Give it two URLs:
 1. the site whose feel you want
 2. the site you want improved
 
-Suedify studies the layout, rhythm, type, color, motion, copy pattern, and proof stack. Then it pushes the target toward that style with Suede-safe design, copy, SEO/AEO/AI EO, and QA.
+Suedify studies the layout, rhythm, type, color, motion, copy pattern, and proof stack. Then it pushes the target toward that style with brand-safe design, copy, SEO/AEO/AI EO, and QA.
 ```
 
 ### MCP Post
@@ -624,7 +624,7 @@ Founders, builders, creators, agencies, and AI power users who already use agent
 ### What makes it different?
 
 ```text
-It is not only about making an agent write nicer. It combines Suedify site mimicry, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
+It is not only about making an agent write nicer. It combines Suedify reference-site restyling, design, copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading, QA, public docs, artist campaign tools, public skill installs, and optional MCP structure.
 ```
 
 ## SEO Metadata
@@ -666,7 +666,7 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 - copywriting
 - website design
 - website restyling
-- site mimicry
+- reference-site restyling
 - website visibility grader
 - CTA grader
 - Suede Design
@@ -685,7 +685,7 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 - AI engine optimization
 - answer engine optimization
 - artist campaign
-- reference-site mimicry
+- reference-site restyling
 - music release metadata
 - provenance
 - royalty splits

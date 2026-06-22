@@ -1,8 +1,8 @@
 # Suede Creator Skills Copy Bank
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
-Skills. Lead with design, Apple and iOS surfaces, anti-slop copywriting, Suede
-SEO discoverability, SEO/AEO/AI EO, Suedify site mimicry, visual QA,
+Skills. Lead with design, mobile and product surfaces, anti-slop copywriting, Suede
+SEO discoverability, SEO/AEO/AI EO, Suedify reference-site restyling, visual QA,
 visibility grading, A-F code grading, QA, and max-agent workflow. Keep claims public-safe. The skills
 do not upload files, clear rights, write to a registry, distribute music, or
 promise payouts.
@@ -11,16 +11,16 @@ promise payouts.
 
 ### One-line description
 
-Free Codex and Claude Code skills for design, Apple and iOS surfaces,
+Free Codex and Claude Code skills for design, mobile and product surfaces,
 anti-slop copywriting, Suede SEO discoverability, SEO/AEO/AI EO, Suedify website
 restyling, visual QA, visibility grading, A-F code grading, public docs, QA,
 artist campaigns, and creator utility workflows.
 
 ### Short description
 
-Suede Creator Skills help agents improve websites, handle Apple and iOS
+Suede Creator Skills help agents improve websites, handle mobile and product
 surfaces, rewrite copy, audit Suede SEO/AEO/AI EO, grade visibility and CTA
-strength, mimic reference-site style safely, coordinate QA, package public
+strength, adapt reference-site style safely, coordinate QA, package public
 docs, run evidence-backed rights utilities, and support creator workflows.
 
 ### Full description
@@ -44,7 +44,7 @@ Suede Creator Skills | Design, Copy, SEO, Suedify
 ### Meta description
 
 Install free Codex and Claude Code skills for Suedify website restyling,
-Apple and iOS surfaces, design QA, copywriting, Suede SEO/AEO/AI EO audits,
+mobile and product surfaces, design QA, copywriting, Suede SEO/AEO/AI EO audits,
 visibility grading, A-F code review, public docs, agent teams, and creator
 workflows.
 
@@ -54,8 +54,8 @@ Give your agent design taste, copy discipline, Suede SEO, and QA.
 
 ### Subhead
 
-Install the 20-skill Suede pack that helps agents mimic reference-site style,
-improve visual systems, handle Apple and iOS surfaces, rewrite public copy,
+Install the 20-skill Suede pack that helps agents adapt reference-site style,
+improve visual systems, handle mobile and product surfaces, rewrite public copy,
 audit Suede SEO/AEO/AI EO, grade visibility and CTA clarity, run visual QA,
 check install paths, coordinate QA, package artist campaigns, and support
 creator workflows.
@@ -115,7 +115,7 @@ Canonical source: [`PROMO.md`](PROMO.md)
 ### Core explanation
 
 Suede gives AI agents a reusable product workflow for design, copywriting,
-SEO/AEO/AI EO, Suedify reference-site mimicry, visibility grading, A-F code
+SEO/AEO/AI EO, Suedify reference-site restyling, visibility grading, A-F code
 review, QA, public skill installs, local plugin notes, and MCP-assisted
 discovery.
 
@@ -284,7 +284,7 @@ CTA: Install for Claude Code
 ### What are Suede Creator Skills?
 
 Suede Creator Skills are public `SKILL.md` folders for design, copywriting,
-Apple and iOS surfaces, Suede SEO/AEO/AI EO, Suedify website restyling,
+mobile and product surfaces, Suede SEO/AEO/AI EO, Suedify website restyling,
 visibility grading, A-F code grading, QA, artist campaign, and creator
 workflows. They help agents work from a repeatable Suede process instead of a
 blank prompt.
@@ -302,10 +302,10 @@ manager, label, or legal reviewer still needs to confirm rights.
 ### Which skill should I run first?
 
 Run `johnny-suede-write` when you want the whole writing stack in one mode:
-copy, company voice, Apple and iOS copy, App Store copy, SEO/AEO/AI EO, CTAs,
+copy, company voice, product and mobile copy, product listing copy, SEO/AEO/AI EO, CTAs,
 launch copy, and anti-slop line editing. Run
 `johnny-suede-design` when you want the whole design stack, including Suedify,
-Apple and iOS surfaces, App Store screenshots, visual QA, company voice, and
+mobile and product surfaces, product screenshots, visual QA, company voice, and
 copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
 `suede-code` when a change needs code review and A-F grading — prompted only.

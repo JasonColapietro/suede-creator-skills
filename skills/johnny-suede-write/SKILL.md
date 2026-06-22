@@ -1,11 +1,11 @@
 ---
 name: johnny-suede-write
-description: Write anything Suede ships and earn the click. Routes any writing request — long-form, short-form, GitHub and docs, social, email, App Store copy, brand-voice retuning, and ambassador talk-tracks — through mode-specific structure, 12 headline formulas, 5 persuasion frameworks, A/B variants, an anti-slop gate, and a copy score. Use when you need to write, rewrite, edit, align to the house voice, generate headlines or CTAs or subject lines, draft social or email or README or App Store copy, or hand an ambassador hype-free words to explain Suede. Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
+description: Write anything Suede ships and earn the click. Routes any writing request — long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and ambassador talk-tracks — through mode-specific structure, 12 headline formulas, 5 persuasion frameworks, A/B variants, an anti-slop gate, and a copy score. Use when you need to write, rewrite, edit, align to the house voice, generate headlines or CTAs or subject lines, draft social or email or README or product listing copy, or hand an ambassador hype-free words to explain Suede. Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
 ---
 
 # Johnny Suede Write
 
-The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, App Store copy, brand-voice alignment, and ambassador talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
+The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice alignment, and ambassador talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
 
 Write copy that earns its place on the page: concrete nouns, buyer-visible outcomes, real proof, one primary action. Nothing decorative.
 
@@ -34,7 +34,7 @@ If a job is large or risky enough to run as a coordinated agent team (for exampl
 
 Identify the mode before writing. Each mode has a different structure, length, and proof requirement. State the chosen mode in the output header.
 
-**Long-form** (blog post, case study, whitepaper, README, docs page, App Store description)
+**Long-form** (blog post, case study, whitepaper, README, docs page, product listing description)
 - Lead with the outcome, not the topic.
 - Structure: hook → problem → mechanism → proof → action.
 - Minimum: H1, 2-3 subheads, one FAQ block, meta description, answer-ready summary.
@@ -42,7 +42,7 @@ Identify the mode before writing. Each mode has a different structure, length, a
 
 **Short-form** (tagline, hero headline, CTA, product description, social caption, onboarding screen)
 - One concrete noun + one buyer-visible outcome + one verb. No filler.
-- Deliver 3 variants at different lengths. Character counts matter for iOS, social, and ads — state them.
+- Deliver 3 variants at different lengths. Character counts matter for mobile, social, and ads — state them.
 - Score target: 65/70 (density and specificity weighted higher).
 
 **GitHub / Docs** (README, SKILL.md, API docs, changelog, contributing guide)
@@ -491,7 +491,7 @@ When a claim is borderline, rewrite it as a testable behavior ("X happens when y
 ## Workflow
 
 1. **Pick the lane.** Use the router. Most jobs are one lane.
-2. **Scout the surface.** Identify reader, page type, channel, primary action, proof, live/source URL, Apple or iOS context when relevant, and claim boundaries.
+2. **Scout the surface.** Identify reader, page type, channel, primary action, proof, live/source URL, product or mobile context when relevant, and claim boundaries.
 3. **Identify register and persona.** Who is speaking (founder, product, docs, ambassador, technical operator) and the reader's relationship to the company (discovering, evaluating, already using). State the chosen register and persona mode in the output header.
 4. **Set write mode.** Long-form, short-form, GitHub/Docs, social, or email. State it before writing.
 5. **Write the outcome first.** Lead with what the reader can do, not a list of features. Apply the persuasion framework that fits the surface (AIDA, PAS, Before-After-Bridge, JTBD, or StoryBrand 7-Part). State which framework was applied.
@@ -564,7 +564,7 @@ Safety boundary:
 
 ## Score Before Handoff
 
-Score every public output before handoff. Revise anything below 58/70. Public launch, homepage, App Store, GitHub, investor-adjacent, and ambassador copy must reach 62/70. State the score and the two lowest dimensions; fix those first.
+Score every public output before handoff. Revise anything below 58/70. Public launch, homepage, product listing, GitHub, investor-adjacent, and ambassador copy must reach 62/70. State the score and the two lowest dimensions; fix those first.
 
 ```text
 Directness: /10

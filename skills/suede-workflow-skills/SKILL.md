@@ -11,11 +11,11 @@ from one installable GitHub skill path.
 This skill is the public entry point for:
 
 - **Johnny Suede Write:** one loadable writing mode for copy, brand voice,
-  Suede SEO discoverability, SEO/AEO/AI EO, Apple and iOS copy, CTAs, launch
-  copy, and anti-slop editing.
+  Suede SEO discoverability, SEO/AEO/AI EO, product and mobile conversion
+  copy, CTAs, launch copy, and anti-slop editing.
 - **Johnny Suede Design:** one loadable design mode for Suedify, UI polish,
-  Apple and iOS surfaces, App Store screenshots, design-system QA, responsive
-  checks, visibility grading, and the writing stack.
+  mobile and product surfaces, product screenshots, design-system QA,
+  responsive checks, visibility grading, and the writing stack.
 - **Suede Code:** unified code review and A-F grading for correctness,
   security, data/state, deploy readiness, and ship risk — prompted only, never
   auto-fires.
@@ -380,10 +380,10 @@ Context handoff (required): When delegating to an individual skill, pass the ori
 When the task names a narrower Suede lane, route directly:
 
 - Public copy or tone: `johnny-suede-write` when the user wants the whole
-  writing stack from one mode, including Suede SEO discoverability and Apple
-  or iOS copy when relevant.
-- Full design stack: `johnny-suede-design`, including Suedify, Apple and iOS
-  surface design, and visual QA when relevant.
+  writing stack from one mode, including Suede SEO discoverability and product
+  or mobile copy when relevant.
+- Full design stack: `johnny-suede-design`, including Suedify, product and
+  mobile surface design, and visual QA when relevant.
 - Search/discovery: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
 - Code review and A-F grade: `suede-code` — prompted only, never auto-fires.

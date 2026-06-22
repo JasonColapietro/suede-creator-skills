@@ -3,7 +3,7 @@
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
 **Suede Creator Skills** is a public 20-skill pack for AI coding agents,
-design-heavy website work, Apple and iOS app surfaces, copywriting, SEO/AEO/AI EO,
+design-heavy website work, mobile and product surfaces, copywriting, SEO/AEO/AI EO,
 Suedify website restyling, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
 Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
@@ -12,17 +12,18 @@ alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
 ambassador explainers, agent-commerce prep, artist campaign
 tools, and creator utility skills.
 
-The main sell is the Suede workflow: give the agent taste, page structure,
+The pack gives an agent a reusable product workflow: taste, page structure,
 copy standards, SEO discipline, reference-site analysis, visual QA, review
-gates, and a way to improve as feedback comes in. In this pack, SEO includes AEO and AI EO:
-search snippets, answer engines, AI summaries, schema, sourceable claims, and
-citation-ready proof. When the agent does something that works, tell it what
-to keep. When it misses, tell it exactly what to change. The next pass should
-self-correct inside the current work session. You can also say `Cue Suede`
-mid-workflow or at the end to bring up choices: change something, preserve what
-worked so the agent can mimic it later, or keep as-is by saying nothing. At the
-end of meaningful work, the agent should give two explanations first: a very
-simple non-coder version, then the usual breakdown.
+gates, and a way to improve as feedback comes in. In this pack, SEO includes
+AEO and AI EO: search snippets, answer engines, AI summaries, schema,
+sourceable claims, and citation-ready proof. When the agent does something
+that works, tell it what to keep. When it misses, tell it exactly what to
+change. The next pass should self-correct inside the current work session. You
+can also say `Cue Suede` mid-workflow or at the end to bring up choices:
+change something, preserve what worked so the agent can mimic it later, or keep
+as-is by saying nothing. At the end of meaningful work, the agent should give
+two explanations first: a very simple non-coder version, then the usual
+breakdown.
 
 Public GitHub users can bring their own company. Use the Johnny Suede umbrella
 modes with a company brief, voice, audience, proof, allowed claims, forbidden
@@ -32,15 +33,15 @@ quality gates while using the user's brand voice and domain language.
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
 proof structure, and content rhythm before pushing the target toward the
-reference with Suede-safe design, matched screenshots, token distillation,
+reference with brand-safe design, matched screenshots, token distillation,
 copy, SEO, and QA.
 
 `johnny-suede-write` is the one-name writing mode: public copy, company voice,
-Apple and iOS app copy, App Store copy, SEO/AEO/AI EO discoverability, CTAs,
+product and mobile conversion copy, SEO/AEO/AI EO discoverability, CTAs,
 launch copy, social/email variants, and anti-generic line editing with
 Directness, Rhythm, Trust, Specificity, Authenticity, Density, and
 Search/AI readability scoring. `johnny-suede-design` is the one-name design mode: Suedify,
-Apple and iOS app surfaces, App Store screenshots, UI polish, design-system QA,
+mobile and product surfaces, product screenshots, UI polish, design-system QA,
 responsive checks, visual QA, visibility grading, implementation handoff,
 company voice, and the full writing mode included.
 
@@ -109,7 +110,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 Example prompts:
 
 ```text
-Use $suedify. Study https://apple.com and push https://example.com toward that design language with Suede-safe design, copy, SEO/AEO/AI EO, and QA.
+Use $suedify. Study https://apple.com and push https://example.com toward that design language with brand-safe design, copy, SEO/AEO/AI EO, and QA.
 ```
 
 ```text

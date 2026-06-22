@@ -1,11 +1,11 @@
 ---
 name: johnny-suede-design
-description: Design and write any creative surface Suede ships — landing pages, brand surfaces, product and app UI, Apple iOS and App Store surfaces, dashboards, components, and creative projects. Routes through register classification, a context gate, design laws, tokens, fluid type, motion, and visual QA; clones a reference site's visual DNA into transferable tokens; writes the words too with persuasion frameworks, headline formulas, A/B variants, an anti-slop gate, and a copy score; and can coordinate a multi-agent build team via suede-agent-teams. Use when you design, redesign, restyle, suedify, clone a site's look, build a UI or app shell or App Store screenshots, write or rewrite copy, headlines, CTAs, email or social, build a design system or tokens, run visual QA, or coordinate a big multi-lane build. Writing mode is on by default. Website-only conversion, SEO, and visibility audits are separate companions you run on demand.
+description: Design and write high-polish creative surfaces for Suede or a supplied company — landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects. Routes through register classification, context gates, design laws, tokens, fluid type, motion, visual QA, Suedify reference-site restyling, full copywriting, anti-slop scoring, and optional multi-agent build coordination. Use when you design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite copy, headlines, CTAs, email or social, build a design system, run visual QA, or coordinate a multi-lane creative build.
 ---
 
 # Johnny Suede Design — The Any-Creatives Enchilada
 
-This is the full design-plus-copy stack for building any creative surface — not just websites. Landing pages, brand surfaces, product and app UI, dashboards, Apple/iOS and App Store surfaces, components, and creative projects all route through here. It classifies the surface, locks a visual direction, writes the words that carry it, renders and QAs the result, and can run the whole thing as a coordinated agent team when the build is big. Writing mode is ON by default: a surface is not finished until the copy pulls its weight.
+This is the full design-plus-copy stack for building any creative surface, not just websites. Landing pages, brand surfaces, product UI, dashboards, campaigns, components, and creative projects all route through here. It classifies the surface, locks a visual direction, writes the words that carry it, renders and QAs the result, and can run the whole thing as a coordinated agent team when the build is big. Writing mode is ON by default: a surface is not finished until the copy pulls its weight.
 
 This skill organizes and prepares creative work. It does not clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes. It produces drafts, designs, tokens, plans, and QA evidence for a human to verify and ship.
 
@@ -23,7 +23,7 @@ This skill is the entry point. Name which lanes are active and why before starti
 
 - **Visual polish / design pass** on a surface, no copy or restyle needed → run **Lane A: Design** directly.
 - **Copy or voice work only**, no layout changes → run **Lane C: Copy** directly. (Writing mode is on by default even inside a design pass.)
-- **Reference → target restyle / clone a site's look / "suedify"** → open with **Lane B: Suedify** to set the visual vocabulary, then Design and Copy lanes refine it.
+- **Reference → target restyle / adapt a site's look / "suedify"** → open with **Lane B: Suedify** to set the visual vocabulary, then Design and Copy lanes refine it.
 - **Full redesign, launch surface, app build, or conversion-shaped work** → this skill orchestrates: run the Design Contract, then route lanes in parallel where safe.
 - **Big, risky, cross-surface, release-bound, or "do it thoroughly" work** → **Lane D: Agent Teams** (see the multi-agent gate below — ASK first).
 - **Unknown scope** → run the scout step, read the surface, then name the register and lanes before touching anything.
@@ -54,11 +54,11 @@ Classify the surface before any design work starts. Misidentifying the register 
 | Product | App UI, dashboard, settings, onboarding, tool, form, admin, workflow | Density serves task completion, motion clarifies state, copy is instructional |
 | Docs | Reference, API, guides, changelog | Monospace hierarchy, zero decoration, copy is precise and scannable |
 | Campaign | Launch, landing, offer, event | Conversion architecture first, proof stack above the fold, CTA is singular |
-| App Store / iOS | Screenshots, paywall, onboarding | Apple clarity conventions, system-safe typography, no custom fonts in screenshots |
+| Product listing / mobile | Screenshots, paywall, onboarding | Mobile clarity conventions, system-safe typography, no custom fonts in screenshots |
 
 When the request spans registers (e.g., a dashboard with a marketing hero), name both and apply each register to its section.
 
-When the surface is public, structure it for SEO, AEO, AI EO, Google, Gemini, and AI search with clear CTAs. When the surface is mobile, include Apple, iOS, App Store, screenshot, onboarding, paywall, and app-shell needs in the design pass.
+When the surface is public, structure it for SEO, AEO, AI EO, Google, Gemini, and AI search with clear CTAs. When the surface is mobile, include screenshots, onboarding, paywall, responsive layout, and app-shell needs in the design pass.
 
 ## Minimum Signal Gate
 
@@ -68,7 +68,7 @@ Stop and ask only if none of these can be read from context:
 |---|---|
 | Target URL or file path | Supplied or inferable from repo |
 | Primary action the surface must drive | Supplied or read from existing CTA |
-| Register (brand / product / docs / campaign / iOS) | Inferable from surface type |
+| Register (brand / product / docs / campaign / mobile) | Inferable from surface type |
 | Company or brand (for non-Suede work) | Supplied in brief or inferable from domain |
 
 Everything else — tone, color direction, layout choices, copy angle — is a design decision. Make it, show the reasoning in the output, and let the user override. Do not ask about optional parameters before starting. If no brief and no explicit Suede context, ask for the company.
@@ -104,9 +104,9 @@ Before any design, copy, or QA claim, read the surface context:
 
 If `PRODUCT.md` or `DESIGN.md` is missing on a major surface, note it and proceed with available context. Offer to create them after completing the task.
 
-Render the result for visual work — screenshots beat code inspection. Minimum: desktop at 1280px width, mobile at 390px (or 375px) width. For App Store submissions: 1290×2796px (6.7-inch), 1488×2266px (iPad Pro 13-inch). Verify live URLs or APIs before claiming public behavior.
+Render the result for visual work — screenshots beat code inspection. Minimum: desktop at 1280px width and mobile at 390px or 375px width. For product screenshot sets, verify the required platform dimensions before generating assets. Verify live URLs or APIs before claiming public behavior.
 
-For major design work, reusable systems, reference visual matching, App Store assets, or public launch surfaces, keep work open only after these are known: PRODUCT.md / product context status; DESIGN.md / design-system status; shape-brief status for net-new or large redesigns; source visual-target status when a mock, screenshot, Figma frame, or reference URL exists; rendered implementation status; ship-blocker status.
+For major design work, reusable systems, reference visual matching, product screenshot assets, or public launch surfaces, keep work open only after these are known: PRODUCT.md / product context status; DESIGN.md / design-system status; shape-brief status for net-new or large redesigns; source visual-target status when a mock, screenshot, Figma frame, or reference URL exists; rendered implementation status; ship-blocker status.
 
 ## Five-Gate Checklist (Major / Public / Launch Work)
 
@@ -310,7 +310,7 @@ For any major surface, reusable app shell, launch system, or important component
 - **Token map:** color roles, type scale, spacing, radii, shadows, motion, z-layers, and semantic state names, stored in `DESIGN.md` or `design-tokens.json`.
 - **State matrix:** default, hover, focus, active, disabled, loading, empty, success, warning, error, and permission-denied states for every component that touches data.
 - **Copy vocabulary:** action labels, toast language, error messages, and empty-state prompts that stay consistent across the product.
-- **Screenshot contract:** named states with seeded demo data so marketing, App Store, QA, and docs reproduce the same visuals.
+- **Screenshot contract:** named states with seeded demo data so marketing, product listing, QA, and docs reproduce the same visuals.
 - **Accessibility pass:** contrast ratios, focus order, touch targets, keyboard paths, and reduced-motion compliance.
 - **Migration notes:** what old styles still exist, what not to touch, and how new work adopts the system without rewriting unrelated screens.
 
@@ -349,7 +349,7 @@ Compare source and implementation in the same visual pass, not from memory. Chec
 
 ---
 
-# Lane B — Suedify (reference → target visual-DNA cloning into tokens)
+# Lane B — Suedify (reference → target visual-DNA translation into tokens)
 
 Use this lane when the user wants:
 
@@ -390,7 +390,7 @@ If either URL is missing, ask for the missing URL. If no source repo is known, i
 1. **Verify target and permissions.** Identify the exact target repo/folder before editing. If inside a multi-repo workspace, do not edit from the container root. Run repo-local git status, remote, and recent log before changes. Preserve user and other-agent WIP.
 2. **Capture the reference.** Open the reference URL. Capture desktop, tablet when useful, and mobile screenshots with named paths. Record viewport widths, theme, state, auth/content conditions, and any interactions needed. Record grid column count and max-width, section band height ratios (hero : content : proof : CTA), type scale (H1 size+weight, body size+line-height, caption), primary/secondary/surface color values, border-radius and shadow signature, motion character, image treatment (full-bleed vs. contained; photography vs. illustration vs. 3D), icon family (outlined / filled / custom), and CTA hierarchy. Motion capture: open DevTools, run `getComputedStyle(document.body).getPropertyValue('--transition-base')`, inspect active elements for `transition`/`animation` values; note cubic-bezier or named easing, duration in ms, which elements animate on hover vs. scroll, and whether scroll animation is CSS `@keyframes` + IntersectionObserver or a JS library (GSAP, Framer Motion, AOS — the library signals the perf budget). Save the analysis as `DESIGN.md` in the target repo root.
 3. **Capture the target.** Open the target URL and local source route. Capture target screenshots at matching widths, state, theme, auth/content, and interaction state. Identify what target content, assets, routes, and claims must remain. Mark dead links, broken layout, weak copy, missing assets, and unverified claims.
-4. **Make the mimic map.** Map reference → target-safe equivalents (nav→nav, hero→hero, media→target-owned media, proof→target proof, CTA ladder→CTA ladder, motion→motion). Do not copy exact proprietary assets, exact UI copy, or protected brand identifiers. Run Token Distiller; output the full `:root {}` CSS block.
+4. **Make the translation map.** Map reference → target-safe equivalents (nav→nav, hero→hero, media→target-owned media, proof→target proof, CTA ladder→CTA ladder, motion→motion). Do not copy exact proprietary assets, exact UI copy, or protected brand identifiers. Run Token Distiller; output the full `:root {}` CSS block.
 5. **Implement.** Work inside the target's existing framework, tokens, routes, and component patterns. Update design tokens before one-off component styling when the restyle is broad. Keep content truthful to the target — a reference's claims do not become target claims.
 6. **Render and compare.** Run the local server or preview. Capture target screenshots at the same widths used for the reference. Compare reference and target together in the same pass, not from memory — hierarchy, spacing, contrast, typography, image treatment, icon family, section rhythm, CTA visibility, interaction states, mobile composition. Use focused crops for hero, nav, cards, forms, CTAs, icons, logos. Patch until the largest mismatches are fixed or named.
 7. **Verify and ship.** Run relevant lint, typecheck, test, build, or focused commands. Run `git diff --check` when files changed. Verify live URLs before claiming a public restyle. End with `ship`, `ship-with-caveats`, or `hold`.
@@ -653,7 +653,7 @@ Density: /10
 Search/AI readability: /10
 Total: /70
 ```
-Revise below 58/70. For public launch, homepage, GitHub, App Store, investor-adjacent, or ambassador copy, aim for 62/70 or higher.
+Revise below 58/70. For public launch, homepage, GitHub, product listing, investor-adjacent, or ambassador copy, aim for 62/70 or higher.
 
 ## Copy Output Shapes
 **Page Copy:** Title / Meta description / Hero / Subhead / Primary CTA / Sections / FAQ / Final CTA / Safety note.
@@ -677,7 +677,7 @@ For multi-agent orchestration, large cross-lane builds, WIP protection, RFC work
 1. **Read current truth first.** Open the live URL or screenshot. Read the source route. Check dirty files, docs, and existing copy. Identify the surface type (brand, product, app, campaign, docs) — this determines tone density, motion posture, and layout defaults before any pixel moves.
 2. **Shape the page job.** Decide what the surface must help the reader do.
 3. **Lock the visual direction.** Choose layout, type, color roles, asset strategy, motion posture, and one memorable subject-native move.
-4. **Write with the design.** Improve headings, buttons, body copy, empty states, errors, proof blocks, FAQ, SEO/AEO/AI EO, answer-ready summary, and Apple or iOS copy when relevant. (Writing mode is on by default.)
+4. **Write with the design.** Improve headings, buttons, body copy, empty states, errors, proof blocks, FAQ, SEO/AEO/AI EO, answer-ready summary, and product or mobile copy when relevant. (Writing mode is on by default.)
 5. **Build narrowly.** Use existing framework, components, tokens, and icon library. Avoid unrelated refactors.
 6. **Render and compare.** Check desktop and mobile, first viewport, text fit, spacing, states, accessibility basics, links, and visual balance.
 7. **Run visual QA.** For source-to-implementation work, compare source visual truth and rendered implementation together, with matched viewport, state, theme, auth, content, and interaction conditions.
@@ -697,7 +697,7 @@ Done signal:
 Constraints:
 Lanes:
 ```
-For small polish work, compress to target, route, primary action, and done signal. For major design work, add: Source truth / Design brief confirmed / Render evidence / Reference/mock status / Design-system status / Apple/iOS state coverage / Ship blockers.
+For small polish work, compress to target, route, primary action, and done signal. For major design work, add: Source truth / Design brief confirmed / Render evidence / Reference/mock status / Design-system status / mobile product state coverage / Ship blockers.
 
 ## Surface Modifier Moves (notes, not shell commands)
 Use these as lenses, named where useful:
