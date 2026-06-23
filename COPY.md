@@ -26,12 +26,12 @@ docs, run evidence-backed rights utilities, and support creator workflows.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 20 public `SKILL.md` folders:
-one umbrella workflow (suede-workflow-skills), 14 workflow skills
+creators, agencies, and AI power users. It ships 21 public `SKILL.md` folders:
+one umbrella workflow (suede-workflow-skills), 15 workflow skills
 (johnny-suede-write, johnny-suede-design, suede-code, suede-code-grader,
 suede-code-review, suede-copy, suede-design, suede-agent-teams, suede-ship-gate,
 suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
-suede-launch-packaging, suede-mcp-qa), and 5 creator skills
+suede-ai-eval, suede-launch-packaging, suede-mcp-qa), and 5 creator skills
 (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
 suede-rights-passport, suede-rights-audit).
 
@@ -54,10 +54,10 @@ Give your agent design taste, copy discipline, Suede SEO, and QA.
 
 ### Subhead
 
-Install the 20-skill Suede pack that helps agents adapt reference-site style,
+Install the 21-skill Suede pack that helps agents adapt reference-site style,
 improve visual systems, handle mobile and product surfaces, rewrite public copy,
-audit Suede SEO/AEO/AI EO, grade visibility and CTA clarity, run visual QA,
-check install paths, coordinate QA, package artist campaigns, and support
+audit Suede SEO/AEO/AI EO, design AI evals, grade visibility and CTA clarity,
+run visual QA, check install paths, coordinate QA, package artist campaigns, and support
 creator workflows.
 
 ### Primary CTA
@@ -316,9 +316,9 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### Short post
 
-Suede Creator Skills are live: 20 public agent skills for design, copywriting,
-SEO/AEO/AI EO, Suedify website restyling, visibility grading, code review,
-CI gating, launch packaging, artist campaigns, and creator rights workflows.
+Suede Creator Skills are live: 21 public agent skills for design, copywriting,
+AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility grading, code
+review, CI gating, launch packaging, artist campaigns, and creator rights workflows.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 

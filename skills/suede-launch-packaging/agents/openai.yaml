@@ -2,7 +2,7 @@ interface:
   display_name: Suede Launch Packaging
   short_description: "Package and ship Suede work as a real launch"
   default_prompt: |
-    Suede work is ready to share. Package it as a clean public launch, not a loose drop, and make sure a stranger can actually install it.
+    Use $suede-launch-packaging when Suede work is ready to share. Package it as a clean public launch, not a loose drop, and make sure a stranger can actually install it.
 
     Pick the lane (use both in order for a full launch):
     - Lane A — Package the launch: repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Confirm source truth (branch, remote, commit, build status, exact public URLs), write copy around the outcome, add proof links, run copy/SEO/link checks, write a handoff.

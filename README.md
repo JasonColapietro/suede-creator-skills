@@ -2,7 +2,7 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
-**Suede Creator Skills** is a public 20-skill pack for AI coding agents,
+**Suede Creator Skills** is a public 21-skill pack for AI coding agents,
 design-heavy website work, mobile and product surfaces, copywriting, SEO/AEO/AI EO,
 Suedify website restyling, QA, and creator
 workflows. It includes one umbrella workflow, design and copy lanes, Johnny
@@ -54,7 +54,9 @@ brief workflow. Suede Agent Teams adds grouping loops for major work: scout,
 constraints mapping, safe parallel build, adversarial review, consensus review,
 design visibility review, A-F code grading, WIP protection, quality/eval gates,
 release lock, recovery replay, and evidence handoff without lanes stepping on
-the same files.
+the same files. Suede AI Eval turns AI-powered surfaces into measurable
+AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage
+audits.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,
@@ -93,6 +95,7 @@ signals become stamps, and what intentionally ships later, see
 - [Public installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - GitHub skill install commands plus the Suede Skills MCP server for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with primary skill pages, install links, manifests, scripts, folders, and resource maps.
 - [Suede Agent Teams docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html) - controlled max-agent loops for scout, safe parallel build, adversarial review, visibility grading, code grading, release lock, recovery, and evidence handoff.
+- [Suede AI Eval docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html) - public eval workflow for AI-SPECs, failure-mode rubrics, prompt and retrieval test cases, acceptance gates, and coverage audits.
 - [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
 - [Suede Release Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
 
@@ -205,6 +208,12 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/johnny-suede-design \
   skills/johnny-suede-write \
   skills/suede-code \
+  skills/suede-code-review \
+  skills/suede-code-grader \
+  skills/suede-copy \
+  skills/suede-design \
+  skills/suede-agent-teams \
+  skills/suede-ai-eval \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
@@ -269,7 +278,7 @@ design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
 code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
 ambassador explanation, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, max-agent grouping loops,
-artist campaign, and creator utility workflow. The repository now ships **20
+artist campaign, and creator utility workflow. The repository now ships **21
 public skill folders**.
 
 ```bash
@@ -278,7 +287,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-Individual workflow and operations skills (14):
+Individual workflow and operations skills (15):
 
 - [`skills/johnny-suede-design`](skills/johnny-suede-design)
 - [`skills/johnny-suede-write`](skills/johnny-suede-write)
@@ -288,6 +297,7 @@ Individual workflow and operations skills (14):
 - [`skills/suede-code-review`](skills/suede-code-review)
 - [`skills/suede-copy`](skills/suede-copy)
 - [`skills/suede-design`](skills/suede-design)
+- [`skills/suede-ai-eval`](skills/suede-ai-eval)
 - [`skills/suede-ship-gate`](skills/suede-ship-gate)
 - [`skills/suede-seo-audit`](skills/suede-seo-audit)
 - [`skills/suede-visibility-grader`](skills/suede-visibility-grader)
@@ -405,7 +415,7 @@ Use $suede-rights-passport to prepare this creator project as a Suede transfer p
 
 ## Install For Claude Code
 
-Quick install (all 20 skills):
+Quick install (all 21 skills):
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

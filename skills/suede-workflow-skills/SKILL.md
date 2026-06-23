@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 19 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
+description: "Umbrella workflow for 20 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
 ---
 
 # Suede Workflow Skills
@@ -19,6 +19,8 @@ This skill is the public entry point for:
 - **Suede Code:** unified code review and A-F grading for correctness,
   security, data/state, deploy readiness, and ship risk — prompted only, never
   auto-fires.
+- **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
+  retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
 - **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
   checks fail — prompted only, plugs into any CI or workflow system.
 - **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
@@ -48,6 +50,12 @@ their names match the task:
 - `johnny-suede-write`
 - `johnny-suede-design`
 - `suede-code`
+- `suede-code-review`
+- `suede-code-grader`
+- `suede-copy`
+- `suede-design`
+- `suede-agent-teams`
+- `suede-ai-eval`
 - `suede-ship-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
@@ -387,6 +395,8 @@ When the task names a narrower Suede lane, route directly:
 - Search/discovery: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
 - Code review and A-F grade: `suede-code` — prompted only, never auto-fires.
+- AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
+  retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
 - CI merge gate: `suede-ship-gate` — prompted only.
 - Page polish and conversion: `suede-site-alchemy`.
 - Launch or public packaging: `suede-launch-packaging`.
@@ -431,6 +441,12 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/johnny-suede-write \
   skills/johnny-suede-design \
   skills/suede-code \
+  skills/suede-code-review \
+  skills/suede-code-grader \
+  skills/suede-copy \
+  skills/suede-design \
+  skills/suede-agent-teams \
+  skills/suede-ai-eval \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \

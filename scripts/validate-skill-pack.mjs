@@ -213,6 +213,12 @@ for (const skillName of skillNames) {
     fail.push(`Missing agents/openai.yaml for ${skillName}`);
   } else {
     const agentText = readText(agentFile);
+    let parsedAgent = null;
+    try {
+      parsedAgent = yamlLoad(agentText);
+    } catch {
+      // openaiYamlStructureIssues records the parse failure with the YAML error.
+    }
     for (const issue of openaiYamlStructureIssues(agentText)) {
       fail.push(`${skillName} agents/openai.yaml: ${issue}`);
     }
@@ -225,11 +231,10 @@ for (const skillName of skillNames) {
         fail.push(`${skillName} agents/openai.yaml: short_description length ${sd.length} outside 25-64 chars`);
       }
     }
-    const ifaceBlock = agentText.match(/^interface:\n((?:[ \t]+[^\n]*\n?)*)/m);
-    const ifaceDefaultPrompt = ifaceBlock
-      ? (ifaceBlock[1].match(/[ \t]+default_prompt:\s*([\s\S]*?)(?=\n[ \t]+\S|\n\S|$)/) || [])[1] || ""
+    const ifaceDefaultPrompt = typeof parsedAgent?.interface?.default_prompt === "string"
+      ? parsedAgent.interface.default_prompt
       : "";
-    const rootDefaultPrompt = /^default_prompt:/m.test(agentText);
+    const rootDefaultPrompt = Boolean(parsedAgent && Object.hasOwn(parsedAgent, "default_prompt"));
     if (!ifaceDefaultPrompt.trim()) {
       if (rootDefaultPrompt) {
         fail.push(`${skillName} agents/openai.yaml: default_prompt at root level (should be nested under interface)`);
@@ -321,7 +326,7 @@ for (const file of publicSkillFiles) {
   }
 }
 
-const knownPrivateSkills = ["suede-ai-eval", "suede-map", "suede-deslop", "suede-debug", "suede-docs",
+const knownPrivateSkills = ["suede-map", "suede-deslop", "suede-debug", "suede-docs",
   "suede-think", "suede-plan", "suede-spec", "suede-arch", "suede-ui",
   "suede-product", "suede-growth", "suede-verify", "suede-progress",
   "suede-roadmap", "suede-slides", "suede-visual-qa"].filter((n) => !skillNames.includes(n));

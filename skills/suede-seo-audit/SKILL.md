@@ -1,6 +1,6 @@
 ---
 name: suede-seo-audit
-description: Make any page undeniable to search engines and AI systems. 9-lane audit covering technical access, keyword research, E-E-A-T signals, topic clusters, schema generation, Core Web Vitals, competitor gap analysis, and AI citation readiness.
+description: Suede SEO, AEO, AI EO, metadata, schema, internal-link, crawlability, search-intent, answer-intent, and public docs audit workflow. Website-specific; run on demand.
 ---
 
 # Suede SEO Audit

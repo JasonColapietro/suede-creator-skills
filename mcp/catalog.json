@@ -1,10 +1,10 @@
 {
   "name": "Suede Skills MCP",
   "version": "0.1.0",
-  "updated": "2026-06-21",
+  "updated": "2026-06-23",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to the Suede skill pack: full-stack design and writing modes, Suedify site restyling, Suede SEO/AEO/AI EO, visibility grading, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
+  "summary": "Local MCP access to the Suede skill pack: full-stack design and writing modes, Suedify site restyling, Suede SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow umbrella: full-stack design and writing modes, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
+      "description": "Public Suede workflow umbrella: full-stack design and writing modes, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -45,6 +45,12 @@
         "johnny-suede-design",
         "johnny-suede-write",
         "suede-code",
+        "suede-code-review",
+        "suede-code-grader",
+        "suede-copy",
+        "suede-design",
+        "suede-agent-teams",
+        "suede-ai-eval",
         "suede-ship-gate",
         "suede-seo-audit",
         "suede-visibility-grader",
@@ -128,6 +134,12 @@
       "area": "workflow",
       "description": "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff — WIP collision detection, RFC mode, feature-flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence.",
       "useWhen": "Use when a change is big enough to split across multiple agents or lanes and you need collision-safe coordination and a verified handoff."
+    },
+    {
+      "name": "suede-ai-eval",
+      "area": "workflow",
+      "description": "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces.",
+      "useWhen": "Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks."
     },
     {
       "name": "suede-ship-gate",

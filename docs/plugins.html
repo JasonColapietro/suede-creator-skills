@@ -148,7 +148,7 @@
     <main class="shell">
       <div class="eyebrow">Public installs and MCP</div>
       <h1>Not a prompt pack. A house workflow your agent reuses.</h1>
-      <p class="lead">Sixteen public skills your agent loads as one workflow. Install the umbrella to restyle a reference site toward a target, grade your own code A-F, audit a page for SEO/AEO/AI EO, or run a creator's campaign-in-a-box. It self-corrects in the same session when you say what worked or missed, and the optional MCP hands agents those skills as callable tools.</p>
+      <p class="lead">Twenty-one public skills your agent loads as one workflow. Install the umbrella to restyle a reference site toward a target, grade your own code A-F, design AI evals, audit a page for SEO/AEO/AI EO, or run a creator's campaign-in-a-box. It self-corrects in the same session when you say what worked or missed, and the optional MCP hands agents those skills as callable tools.</p>
 
       <section class="panel">
         <h2>Ambassador explanation</h2>
@@ -167,12 +167,18 @@
         </article>
         <article class="card">
           <h2>Direct Website Workflow Skills</h2>
-          <p>Install individual workflow skills for direct calls: Johnny Suede Write (anti-slop copy, brand voice), Johnny Suede Design (Suedify, design, mobile and product surfaces, agent teams), code review and grading, ship gate CI, SEO/AEO/AI EO audits, visibility grading, site alchemy, MCP QA, and launch packaging.</p>
+          <p>Install individual workflow skills for direct calls: Johnny Suede Write (anti-slop copy, brand voice), Johnny Suede Design (Suedify, design, mobile and product surfaces, agent teams), code review and grading, AI eval design, ship gate CI, SEO/AEO/AI EO audits, visibility grading, site alchemy, MCP QA, and launch packaging.</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design \
   skills/johnny-suede-write \
   skills/suede-code \
+  skills/suede-code-review \
+  skills/suede-code-grader \
+  skills/suede-copy \
+  skills/suede-design \
+  skills/suede-agent-teams \
+  skills/suede-ai-eval \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
