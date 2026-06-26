@@ -626,7 +626,7 @@
     #hero-logo {
       width: 240px; height: 240px;
       object-fit: contain;
-      margin-bottom: 48px;
+      margin-bottom: 34px;
       opacity: .95;
     }
 
@@ -1507,7 +1507,13 @@
       }
 
       .nav-link { display: none; }
+      .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-logo img { height: 56px; }
+
+      /* Tall stacked hero content: top-align so nothing clips under the nav */
+      #hero { justify-content: flex-start !important; padding-top: 88px !important; }
+      #hero-logo { width: 180px; height: 180px; margin-bottom: 26px; }
     }
 
     @media (max-width: 480px) {
@@ -1515,6 +1521,333 @@
         --size-5xl: 2.75rem;
         --size-4xl: 2.25rem;
       }
+    }
+
+    /* ============================================================
+       CINEMATIC LAYER  (entrance, shimmer, depth, motion)
+    ============================================================ */
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes shimmer-move {
+      to { background-position: -200% center; }
+    }
+
+    /* ---- HERO depth + entrance ---- */
+    #hero-vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 95% 75% at 50% 42%, transparent 38%, rgba(0,0,0,0.62) 100%),
+        linear-gradient(to bottom, rgba(8,8,8,0.4) 0%, transparent 22%, transparent 78%, #080808 100%);
+    }
+
+    #hero-logo {
+      filter: drop-shadow(0 0 70px rgba(200, 169, 110, 0.20));
+    }
+
+    .hero-anim {
+      opacity: 0;
+      animation: rise-in 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    #hero-eyebrow.hero-anim   { animation-delay: 0.05s; }
+    #hero-logo.hero-anim      { animation-delay: 0.12s; }
+    #hero-headline.hero-anim  { animation-delay: 0.26s; }
+    #hero-subline.hero-anim   { animation-delay: 0.40s; }
+    #hero-proof.hero-anim     { animation-delay: 0.54s; }
+    #hero-ctas.hero-anim      { animation-delay: 0.68s; }
+
+    #hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 16px 7px 13px;
+      margin-bottom: 34px;
+      border: 1px solid rgba(200, 169, 110, 0.28);
+      border-radius: 999px;
+      background: rgba(200, 169, 110, 0.05);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #c8a96e;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    #hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #c8a96e;
+      box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.6);
+      animation: pulse-dot 2.2s ease-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%   { box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.55); }
+      70%  { box-shadow: 0 0 0 8px rgba(200, 169, 110, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(200, 169, 110, 0); }
+    }
+
+    .shimmer {
+      background: linear-gradient(100deg, #c8a96e 18%, #f6e7c2 40%, #ffffff 50%, #f6e7c2 60%, #c8a96e 82%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: shimmer-move 5s linear infinite;
+    }
+
+    /* ---- Premium hero CTA shine ---- */
+    #hero-cta-primary {
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 34px rgba(200, 169, 110, 0.20);
+    }
+    #hero-cta-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -130%;
+      width: 65%; height: 100%;
+      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.65s ease;
+      pointer-events: none;
+    }
+    #hero-cta-primary:hover::after { left: 150%; }
+
+    /* ---- SKILL MARQUEE ---- */
+    .marquee {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid #161616;
+      border-bottom: 1px solid #161616;
+      background: #0a0a0a;
+      padding: 22px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 11%, #000 89%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 48s linear infinite;
+      will-change: transform;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+      padding: 0 30px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b675f;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .marquee-item::after {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #c8a96e;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .marquee:hover .marquee-item { color: #8a857b; }
+
+    /* ---- STATS BAND ---- */
+    .stats-band {
+      background: #0a0a0a;
+      border-top: 1px solid #161616;
+      border-bottom: 1px solid #161616;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 76px 28px;
+      text-align: center;
+      position: relative;
+    }
+    .stat + .stat::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 28%;
+      width: 1px; height: 44%;
+      background: #1c1c1c;
+    }
+    .stat-num {
+      font-size: clamp(46px, 6.5vw, 78px);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      color: #f0ece4;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-num .unit { color: #c8a96e; }
+    .stat-label {
+      margin-top: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #888880;
+    }
+
+    /* ---- SCROLL REVEAL (progressive enhancement) ----
+       Hidden state only applies once JS adds .js-on to <html>, so the
+       page is fully visible if JS or IntersectionObserver ever fails. */
+    .reveal {
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-on .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+    }
+    .js-on .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.10s; }
+    .reveal-d2 { transition-delay: 0.20s; }
+
+    /* feature cards fade in staggered (opacity only, keeps hover free) */
+    .js-on .features-grid.reveal-group .feature-card { opacity: 0; }
+    .features-grid.reveal-group.in-view .feature-card {
+      animation: fade-in 0.6s ease forwards;
+    }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(1) { animation-delay: 0.04s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(2) { animation-delay: 0.10s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(3) { animation-delay: 0.16s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(4) { animation-delay: 0.22s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(5) { animation-delay: 0.28s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(6) { animation-delay: 0.34s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(7) { animation-delay: 0.40s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(8) { animation-delay: 0.46s; }
+
+    /* ---- FEATURE CARD glow-up ---- */
+    .feature-card {
+      overflow: hidden;
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(200, 169, 110, 0.10), transparent 72%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .feature-card:nth-child(3n)::before,
+    .feature-card:nth-child(5)::before,
+    .feature-card:nth-child(7)::before {
+      background: radial-gradient(circle at 50% 0%, rgba(139, 26, 26, 0.16), transparent 72%);
+    }
+    .feature-card:hover {
+      background: #1a1a1a;
+      box-shadow: inset 0 0 0 1px rgba(200, 169, 110, 0.10), 0 18px 44px rgba(0, 0, 0, 0.55);
+    }
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-num {
+      position: absolute;
+      top: 18px; right: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #2c2c2c;
+      font-variant-numeric: tabular-nums;
+      transition: color 0.25s ease;
+    }
+    .feature-card:hover .feature-num { color: #c8a96e; }
+    .feature-card:nth-child(3n):hover .feature-num,
+    .feature-card:nth-child(5):hover .feature-num,
+    .feature-card:nth-child(7):hover .feature-num { color: #c0524a; }
+
+    /* ---- INSTALL terminal frame ---- */
+    .install-terminal {
+      border: 1px solid #222222;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 48px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      background: #0d0d0d;
+    }
+    .install-terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: #131313;
+      border-bottom: 1px solid #1f1f1f;
+    }
+    .install-terminal-bar .tdot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+    }
+    .install-terminal-bar .tdot:nth-child(1) { background: #3a2222; }
+    .install-terminal-bar .tdot:nth-child(2) { background: #3a3322; }
+    .install-terminal-bar .tdot:nth-child(3) { background: #223a26; }
+    .install-terminal-title {
+      margin-left: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: #5c584f;
+    }
+    .install-terminal .install-code-block {
+      border: none;
+      border-radius: 0;
+      margin-bottom: 0;
+      background: #0d0d0d;
+      padding: 28px 28px;
+    }
+    .install-code-block code::before {
+      content: '$ ';
+      color: #8b1a1a;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 52px 20px; }
+      .stat:nth-child(3)::before { display: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid #161616; }
+    }
+
+    /* ---- REDUCED MOTION ---- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .hero-anim { opacity: 1 !important; }
+      .features-grid.reveal-group .feature-card { opacity: 1 !important; }
+      .marquee-track { animation: none !important; }
+      .shimmer { animation: none !important; }
     }
   </style>
 </head>
@@ -1563,26 +1896,29 @@
 </nav>
 
 <!-- HERO -->
-<section id="hero" style="position:relative;width:100%;height:100vh;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#080808;">
+<section id="hero" style="position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#080808;padding:104px 0 84px;">
 
   <div id="hero-bg-ring"></div>
   <div id="hero-bg-glow"></div>
+  <div id="hero-vignette" aria-hidden="true"></div>
 
   <div id="hero-inner">
-    <img id="hero-logo" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+    <span id="hero-eyebrow" class="hero-anim">Recursive self-improving skillset</span>
 
-    <h1 id="hero-headline">The first fully evolving<br>skillset on the internet.</h1>
+    <img id="hero-logo" class="hero-anim" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
 
-    <p id="hero-subline">Twenty-one public skills. One install.</p>
+    <h1 id="hero-headline" class="hero-anim">The first fully <span class="shimmer">evolving</span><br>skillset on the internet.</h1>
 
-    <div id="hero-proof">
+    <p id="hero-subline" class="hero-anim">Twenty-one public skills. One install.</p>
+
+    <div id="hero-proof" class="hero-anim">
       <span class="hero-proof-line">Built 9 iOS apps into App Store approval in a month</span>
       <span class="hero-proof-line">Built the best looking GitHub page on GitHub</span>
     </div>
 
-    <div id="hero-ctas">
+    <div id="hero-ctas" class="hero-anim">
       <a id="hero-cta-primary" href="#install">Install in one command</a>
-      <a id="hero-cta-secondary" href="https://jasoncolapietro.github.io/suede-creator-skills/" target="_blank" rel="noopener">Browse the index</a>
+      <a id="hero-cta-secondary" href="skills/">Browse all 21 skills</a>
     </div>
   </div>
 
@@ -1593,43 +1929,121 @@
 
 </section>
 
+<!-- SKILL MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">iOS App Factory</span>
+    <span class="marquee-item">Site Alchemy</span>
+    <span class="marquee-item">Code Grader</span>
+    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">AI Evals</span>
+    <span class="marquee-item">SEO / AEO / AI EO</span>
+    <span class="marquee-item">Visibility Grader</span>
+    <span class="marquee-item">Campaign in a Box</span>
+    <span class="marquee-item">Brand Voice</span>
+    <span class="marquee-item">Sync Packaging</span>
+    <span class="marquee-item">Rights Passport</span>
+    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">Launch Packaging</span>
+    <span class="marquee-item">MCP QA</span>
+    <span class="marquee-item">Design System</span>
+    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Release Linter</span>
+    <span class="marquee-item">Provenance Map</span>
+    <span class="marquee-item">Royalty Routing</span>
+    <span class="marquee-item">Agent Commerce</span>
+    <span class="marquee-item">Johnny Suede Write</span>
+    <span class="marquee-item">iOS App Factory</span>
+    <span class="marquee-item">Site Alchemy</span>
+    <span class="marquee-item">Code Grader</span>
+    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">AI Evals</span>
+    <span class="marquee-item">SEO / AEO / AI EO</span>
+    <span class="marquee-item">Visibility Grader</span>
+    <span class="marquee-item">Campaign in a Box</span>
+    <span class="marquee-item">Brand Voice</span>
+    <span class="marquee-item">Sync Packaging</span>
+    <span class="marquee-item">Rights Passport</span>
+    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">Launch Packaging</span>
+    <span class="marquee-item">MCP QA</span>
+    <span class="marquee-item">Design System</span>
+    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Release Linter</span>
+    <span class="marquee-item">Provenance Map</span>
+    <span class="marquee-item">Royalty Routing</span>
+    <span class="marquee-item">Agent Commerce</span>
+    <span class="marquee-item">Johnny Suede Write</span>
+  </div>
+</div>
+
 <!-- FEATURES GRID -->
 <section id="skills" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="features-inner">
-    <h2 class="features-headline">What it does</h2>
-    <div class="features-grid">
+    <h2 class="features-headline reveal">What it does</h2>
+    <div class="features-grid reveal-group">
       <div class="feature-card">
+        <span class="feature-num">01</span>
         <span class="feature-label">Site redesign</span>
         <p class="feature-copy">Drops your site into a full redesign toward any target you name</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">02</span>
         <span class="feature-label">Code grader</span>
         <p class="feature-copy">Grades your own code A through F to your face</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">03</span>
         <span class="feature-label">AI evals</span>
         <p class="feature-copy">Builds AI evals that actually test what matters</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">04</span>
         <span class="feature-label">SEO / AEO / AI EO</span>
         <p class="feature-copy">Tears through your page for SEO, AEO, and AI EO in one pass</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">05</span>
         <span class="feature-label">Creator campaign</span>
         <p class="feature-copy">Runs a complete creator campaign from brief to published</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">06</span>
         <span class="feature-label">iOS app factory</span>
         <p class="feature-copy">Points at a URL and ships a native iOS app, simulator booted, App Store screenshots done</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">07</span>
         <span class="feature-label">Plain English</span>
         <p class="feature-copy">Every piece of copy gets a real human read on top of the technical breakdown</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">08</span>
         <span class="feature-label">Worktree sync</span>
         <p class="feature-copy">Catches your dirty worktree before you close the laptop. Tells you exactly what to push.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band" aria-label="By the numbers">
+  <div class="stats-inner reveal">
+    <div class="stat">
+      <div class="stat-num"><span class="count" data-count="21">21</span></div>
+      <div class="stat-label">Public skills</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="count" data-count="9">9</span></div>
+      <div class="stat-label">iOS apps in a month</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Install command</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="unit">&infin;</span></div>
+      <div class="stat-label">Recursive sessions</div>
     </div>
   </div>
 </section>
@@ -1638,11 +2052,11 @@
 <section id="proof" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="proof-wrap">
 
-    <p class="proof-eyebrow">Session intelligence</p>
-    <h2 class="proof-headline">Skills that <span>sharpen</span><br>with every session.</h2>
-    <p class="proof-sub">Memory bloats, drifts, and rots. Skills don't.</p>
+    <p class="proof-eyebrow reveal">Session intelligence</p>
+    <h2 class="proof-headline reveal reveal-d1">Skills that <span>sharpen</span><br>with every session.</h2>
+    <p class="proof-sub reveal reveal-d2">Memory bloats, drifts, and rots. Skills don't.</p>
 
-    <div class="proof-cols">
+    <div class="proof-cols reveal">
 
       <div class="proof-col proof-col--left">
         <p class="col-label">Session loop</p>
@@ -1653,7 +2067,7 @@
             <div class="terminal-dot" style="background:#1e1e1e;"></div>
             <div class="terminal-dot" style="background:#1a1a1a;"></div>
           </div>
-          <p class="terminal-prompt">agent &mdash; end of session</p>
+          <p class="terminal-prompt">agent · end of session</p>
           <div class="terminal-question">
             <span>what did you like?</span>
             <span class="terminal-cursor"></span>
@@ -1746,29 +2160,37 @@
 <section id="install" style="background:#080808;padding:120px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
 
   <div class="install-inner">
-    <h2 class="install-headline">One command.</h2>
-    <p class="install-sub">Clone and install in under a minute. No accounts, no keys, no config required.</p>
+    <h2 class="install-headline reveal">One command.</h2>
+    <p class="install-sub reveal reveal-d1">Clone and install in under a minute. No accounts, no keys, no config required.</p>
 
-    <div class="install-code-block">
-      <code id="install-cmd">git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
-      <button class="copy-btn" id="copy-btn" onclick="
-        var cmd='git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh';
-        navigator.clipboard.writeText(cmd).then(function(){
-          var b=document.getElementById('copy-btn');
-          b.textContent='Copied';
-          b.classList.add('copied');
-          setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
-        }).catch(function(){
-          var b=document.getElementById('copy-btn');
-          b.textContent='Copy';
-        });
-      ">Copy</button>
+    <div class="install-terminal reveal reveal-d1">
+      <div class="install-terminal-bar" aria-hidden="true">
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="install-terminal-title">install.sh</span>
+      </div>
+      <div class="install-code-block">
+        <code id="install-cmd">git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
+        <button class="copy-btn" id="copy-btn" onclick="
+          var cmd='git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh';
+          navigator.clipboard.writeText(cmd).then(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copied';
+            b.classList.add('copied');
+            setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
+          }).catch(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copy';
+          });
+        ">Copy</button>
+      </div>
     </div>
 
-    <div class="install-links">
-      <a class="install-link install-link-primary" href="https://jasoncolapietro.github.io/suede-creator-skills/" target="_blank" rel="noopener">Browse the index</a>
+    <div class="install-links reveal reveal-d2">
+      <a class="install-link install-link-primary" href="skills/">Browse all 21 skills</a>
       <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
-      <a class="install-link" href="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html" target="_blank" rel="noopener">MCP docs</a>
+      <a class="install-link" href="plugins">MCP docs</a>
     </div>
   </div>
 
@@ -1824,6 +2246,71 @@
         menu.classList.remove('open');
       });
     });
+  })();
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal — only opt into the hidden state if we can also reveal it.
+  (function() {
+    var els = document.querySelectorAll('.reveal, .reveal-group');
+    if (!els.length) return;
+
+    // If we can't animate, leave everything visible (no .js-on, no hiding).
+    if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+    document.documentElement.classList.add('js-on');
+
+    function revealAll() { els.forEach(function(el) { el.classList.add('in-view'); }); }
+
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function(el) { io.observe(el); });
+
+    // Failsafe: if the observer never fires (some embedded webviews),
+    // reveal everything after a short grace period so nothing stays hidden.
+    setTimeout(function() {
+      var anyShown = document.querySelectorAll('.reveal.in-view, .reveal-group.in-view').length;
+      if (!anyShown) revealAll();
+    }, 1800);
+  })();
+
+  // Count-up stats
+  (function() {
+    var nums = document.querySelectorAll('.count[data-count]');
+    if (!nums.length) return;
+    function setFinal(el) { el.textContent = el.getAttribute('data-count'); }
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      nums.forEach(setFinal);
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        io.unobserve(el);
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var dur = 1500, start = null;
+        el.textContent = '0';
+        function step(ts) {
+          if (start === null) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * eased);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+        // Guarantee the final value even if rAF is throttled or stalls.
+        setTimeout(function() { el.textContent = target; }, dur + 200);
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(function(n) { io.observe(n); });
   })();
 </script>
 
