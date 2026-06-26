@@ -1,0 +1,39 @@
+# Suede Creator Skills
+
+> A public 21-skill pack for AI coding agents (Claude Code and OpenAI Codex), built by Johnny Suede (Jason Colapietro), founder of Suede Labs AI. Covers design, anti-slop copywriting, SEO/AEO/AI EO, Suedify website restyling, visual QA, A-F code grading, agent teams, and creator rights tooling. Part of the broader Johnny Suede / Suede Labs project constellation.
+
+## Skills site
+
+- [Suede Creator Skills — home](https://jasoncolapietro.github.io/suede-creator-skills/): Overview of the 21-skill pack, install options, and the Johnny Suede umbrella workflow.
+- [Skills docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browsable documentation for each skill — Suedify, design, copy, SEO/AEO/AI EO, visibility grading, code review, agent teams, rights passport, and release linter.
+- [Public installs + MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): How to install the skills as Claude/Codex plugins and connect the Suede MCP server.
+- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Reusable, anti-slop copy and positioning language for the pack.
+- [Projects — the Suede constellation](https://jasoncolapietro.github.io/suede-creator-skills/projects.html): Index of every public Johnny Suede / Jason Colapietro project and how they connect.
+
+## Key skills
+
+- [Suede Workflow Skills](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html): The umbrella product workflow — taste, page structure, copy standards, SEO discipline, visual QA, and review gates.
+- [Johnny Suede Write](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-write.html): One-name writing mode — public copy, conversion copy, SEO/AEO/AI EO discoverability, CTAs, and anti-generic line editing.
+- [Johnny Suede Design](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html): One-name design mode — Suedify, mobile and product surfaces, UI polish, design-system QA, and visibility grading.
+- [Suede Visibility Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html): Turns a public page into an A-F visibility and CTA brief — can it be found, understood, trusted, cited by AI, and acted on.
+- [Suede Code Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html): Gives code an A-F ship-risk grade across correctness, security, state, UX, tests, deploy readiness, and public-claim truth.
+- [Suede Agent Teams](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html): Grouping loops for major work — scout, safe parallel build, adversarial review, consensus, and evidence handoff.
+- [Suede AI Eval](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html): Turns AI-powered surfaces into measurable AI-SPECs, failure-mode rubrics, eval cases, and acceptance gates.
+- [Suede Rights Passport](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html): Turns a messy creator folder into a Suede-ready transfer package — provenance, credits, splits, and license notes.
+- [Suede Release Linter](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html): Audits releases for the metadata, splits, contributor, and provenance fields a clean release needs.
+
+## Founder & company
+
+- [Johnny Suede — founder](https://suedeai.ai/founder): Jason Colapietro (pen name Johnny Suede), founder of Suede Labs AI — programmable IP, creator ownership, provenance, x402 payments, and agent commerce.
+- [Suede Labs AI](https://suedeai.org): The company behind the tooling — creator-ownership infrastructure for the AI media era.
+
+## Guitar & tone
+
+- [The Signal Chain](https://guitar.solutions/): A 968-page illustrated history of guitar tone, amps, and effects with a memoir, theory curriculum, songbook, and 50 song lessons. Free chapter; $19.99 unlocks every edition.
+- [The Top 100 Pedals List That the Press Fears](https://github.com/JasonColapietro/the-top-100-pedals-list-that-the-press-fears): A ranked, no-sponsors guide to the 100 most important guitar effects pedals — the companion piece to The Signal Chain.
+
+## More projects
+
+- [iOS App Dev Skills](https://github.com/JasonColapietro/ios-app-dev-skills): Free Claude/Codex skills that turn any website into an App Store-ready iOS app — SwiftUI, Capacitor, ASO, screenshots, and release gates.
+- [Anti-Slop Templates](https://github.com/JasonColapietro/anti-slop-templates): Two no-build, single-file HTML/CSS template systems — warm editorial (Folio) and the Suede IP terminal.
+- [Tokenmaxxing — Is AI a Bubble?](https://github.com/JasonColapietro/tokenmaxxing): An essay on why AI is both the most transformative technology of our lifetime and a historic bubble.
