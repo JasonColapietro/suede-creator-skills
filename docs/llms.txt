@@ -1,0 +1,51 @@
+# Suede Creator Skills
+
+> A public, open-source (MIT) pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable product workflow: design, anti-slop copywriting, SEO/AEO/AI EO audits, reference-site restyling (Suedify), website visibility and CTA grading, A-F code grading, agent QA, launch packaging, artist-campaign tools, and creator rights utilities. No accounts, no API keys, no config required.
+
+Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is generated from the repo — the same repo holds the skill folders, docs, install commands, MCP source, and copy bank.
+
+Install (Codex / Claude Code skill installer):
+`python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`
+
+## Start here
+
+- [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): What Suede Creator Skills is, who it is for, and how to install in one command.
+- [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
+- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 21 skills.
+- [Plugins](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Local Codex/Claude Code plugin install paths.
+- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and ambassador language.
+
+## Workflow skills (design, copy, SEO, code, QA, launch)
+
+- [Suede Workflow Skills](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
+- [Johnny Suede Write](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-write.html): One loadable writing mode for copy, brand voice, SEO/AEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
+- [Johnny Suede Design](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, dashboards, components, Suedify restyling, and visual QA.
+- [Suede Code Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
+- [Suede Visibility Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
+- [Suede AI Eval](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
+- [Suede Agent Teams](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html): Coordinate complex changes into agent lanes with quality gates and a signed handoff.
+- Suede Code — Review and grade code in one pass: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md
+- Suede Code Review — Deep diff review with TS/React/Next.js/OWASP/DB checklists: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md
+- Suede Copy — Click-earning copy with headline formulas and persuasion frameworks: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md
+- Suede Design — Evolve any interface from generic to intentional with design laws and tokens: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-design/SKILL.md
+- Suede SEO Audit — SEO, AEO, AI EO, metadata, schema, link, and crawlability audit: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-audit/SKILL.md
+- Suede Site Alchemy — Turn a page into a conversion engine with funnel and friction analysis: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md
+- Suede Ship Gate — Wire any repo so CI actually gates the merge: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship-gate/SKILL.md
+- Suede Launch Packaging — Ship work as a launch people can actually install: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md
+- Suede MCP QA — Catch a broken Suede Skills MCP before it ships: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md
+
+## Creator skills (music, rights, campaigns)
+
+- [Suede Rights Passport](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html): Package creative folders into structured transfer material with provenance, credits, and splits.
+- [Suede Release Linter](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html): Audit release folders for missing metadata, artwork, masters, stems, credits, splits, and provenance gaps.
+- Suede Campaign in a Box — Turn a song, release, or era into a complete artist campaign: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md
+- Suede Rights Audit — Find ownership, split, sample, and provenance gaps before packaging: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md
+- Suede Sync Packaging — Package songs for sync pitching with scene-fit angles and clean asset checklists: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md
+
+## MCP server
+
+- Suede Skills MCP — Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/AI EO audit scaffolds, and QA checklists. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
+
+## Claim boundary
+
+Suede skills organize work, generate reports, improve public docs, and prepare review material. They do not clear legal rights, publish releases, write to registries, approve payouts, or upload private files unless a separate workflow explicitly does that and the operator approves it.

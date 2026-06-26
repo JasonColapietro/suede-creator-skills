@@ -11,7 +11,7 @@
   <meta property="og:title" content="Suede Creator Skills | DAV Michelangelo">
   <meta property="og:description" content="The first fully evolving skillset. Twenty-one public skills. One install. Built 9 iOS apps in a month.">
   <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
-  <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/dav/">
+  <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/">
   <meta property="og:site_name" content="Suede Creator Skills">
 
   <!-- Twitter Card -->
@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/dav/">
+  <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/">
 
   <!-- Favicon -->
   <link rel="icon" href="./assets/suede-ai-logo-transparent.png" type="image/png">
@@ -33,19 +33,72 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "name": "Suede Creator Skills — DAV Michelangelo",
-    "description": "The first fully evolving skillset for Claude Code. Twenty-one public skills covering iOS app factory, music publishing, brand voice, SEO, design, and agent commerce. One install.",
-    "url": "https://jasoncolapietro.github.io/suede-creator-skills/dav/",
-    "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills",
-    "programmingLanguage": ["TypeScript", "Swift", "Python"],
-    "author": {
-      "@type": "Organization",
-      "name": "Suede AI",
-      "url": "https://suedeai.ai"
-    },
-    "license": "https://opensource.org/licenses/MIT",
-    "keywords": ["Claude Code", "iOS app factory", "creator tools", "AI skills", "music publishing", "brand voice"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#website",
+        "name": "Suede Creator Skills",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
+        "description": "Public, open-source pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server.",
+        "publisher": { "@id": "https://suedeai.ai/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://suedeai.ai/#org",
+        "name": "Suede AI",
+        "url": "https://suedeai.ai",
+        "sameAs": ["https://github.com/JasonColapietro", "https://twitter.com/johnnysuede"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://suedeai.ai/founder#person",
+        "name": "Jason Colapietro",
+        "url": "https://suedeai.ai/founder",
+        "sameAs": ["https://github.com/JasonColapietro", "https://twitter.com/johnnysuede"]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "Suede Creator Skills",
+        "description": "Public, open-source (MIT) pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable product workflow: design, anti-slop copywriting, SEO/AEO/AI EO audits, Suedify reference-site restyling, website visibility and CTA grading, A-F code grading, agent QA, launch packaging, and creator rights utilities.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
+        "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills",
+        "programmingLanguage": ["TypeScript", "Swift", "Python", "Markdown"],
+        "runtimePlatform": ["Claude Code", "OpenAI Codex", "Model Context Protocol"],
+        "author": { "@id": "https://suedeai.ai/#org" },
+        "creator": { "@id": "https://suedeai.ai/founder#person" },
+        "license": "https://opensource.org/licenses/MIT",
+        "keywords": ["Claude Code skills", "Codex skills", "Agent Skills", "MCP server", "SEO AEO AI EO audit", "AI code review", "design system", "Suedify", "creator economy", "music rights", "agent commerce"]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Suede Creator Skills catalog",
+        "description": "The 21 public skills in the Suede Creator Skills pack.",
+        "numberOfItems": 21,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Suede Workflow Skills", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html" },
+          { "@type": "ListItem", "position": 2, "name": "Johnny Suede Write", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-write.html" },
+          { "@type": "ListItem", "position": 3, "name": "Johnny Suede Design", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html" },
+          { "@type": "ListItem", "position": 4, "name": "Suede Code Grader", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html" },
+          { "@type": "ListItem", "position": 5, "name": "Suede Visibility Grader", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html" },
+          { "@type": "ListItem", "position": 6, "name": "Suede AI Eval", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html" },
+          { "@type": "ListItem", "position": 7, "name": "Suede Agent Teams", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html" },
+          { "@type": "ListItem", "position": 8, "name": "Suede Code", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md" },
+          { "@type": "ListItem", "position": 9, "name": "Suede Code Review", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md" },
+          { "@type": "ListItem", "position": 10, "name": "Suede Copy", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md" },
+          { "@type": "ListItem", "position": 11, "name": "Suede Design", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-design/SKILL.md" },
+          { "@type": "ListItem", "position": 12, "name": "Suede SEO Audit", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-audit/SKILL.md" },
+          { "@type": "ListItem", "position": 13, "name": "Suede Site Alchemy", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md" },
+          { "@type": "ListItem", "position": 14, "name": "Suede Ship Gate", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship-gate/SKILL.md" },
+          { "@type": "ListItem", "position": 15, "name": "Suede Launch Packaging", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md" },
+          { "@type": "ListItem", "position": 16, "name": "Suede MCP QA", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md" },
+          { "@type": "ListItem", "position": 17, "name": "Suede Rights Passport", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html" },
+          { "@type": "ListItem", "position": 18, "name": "Suede Release Linter", "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html" },
+          { "@type": "ListItem", "position": 19, "name": "Suede Campaign in a Box", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md" },
+          { "@type": "ListItem", "position": 20, "name": "Suede Rights Audit", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md" },
+          { "@type": "ListItem", "position": 21, "name": "Suede Sync Packaging", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md" }
+        ]
+      }
+    ]
   }
   </script>
 
