@@ -2,6 +2,8 @@
 
 ![Suede Creator Skills preview](docs/assets/og-image.png)
 
+> **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
+
 **Suede Creator Skills** is a public 21-skill pack for AI coding agents,
 design-heavy website work, mobile and product surfaces, copywriting, SEO/AEO/AI EO,
 Suedify website restyling, QA, and creator
