@@ -372,15 +372,18 @@ if (readmeCountMatch) {
   fail.push("README first paragraph: could not find skill count (expected pattern: **N public skill folders**)");
 }
 
-const docsRootText = readText(path.join(repoRoot, "docs", "index.html"));
+// The "Install N public/free" install count lives on the guide/install page
+// (docs/guide.html). After the DAV restructure, docs/index.html became the
+// landing page and no longer carries the digit-form count, so check guide.html.
+const docsRootText = readText(path.join(repoRoot, "docs", "guide.html"));
 const docsCountMatch = docsRootText.match(/Install (\d+) (?:public|free)/);
 if (docsCountMatch) {
   const docsCount = parseInt(docsCountMatch[1], 10);
   if (docsCount !== skillNames.length) {
-    fail.push(`docs/index.html skill count (${docsCount}) does not match actual skill folder count (${skillNames.length})`);
+    fail.push(`docs/guide.html skill count (${docsCount}) does not match actual skill folder count (${skillNames.length})`);
   }
 } else {
-  fail.push("docs/index.html: could not find skill count (expected pattern: Install N public/free ...)");
+  fail.push("docs/guide.html: could not find skill count (expected pattern: Install N public/free ...)");
 }
 
 if (fail.length || warn.length) {

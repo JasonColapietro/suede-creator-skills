@@ -94,7 +94,8 @@ function installMarkdown(data, surface = "all") {
 function seoAuditTemplate(args = {}) {
   const target = boundedString(args.url || args.pageType, "the target page");
   const intent = boundedString(args.primaryIntent, "one clear search intent");
-  return [
+  const copy = boundedString(args.copy, "");
+  const lines = [
     `# Suede SEO/AEO/AI EO Copy Audit: ${target}`,
     "",
     `Primary intent: ${intent}`,
@@ -133,7 +134,11 @@ function seoAuditTemplate(args = {}) {
     "- Exact rewrites for title, meta, H1, subhead, CTA, FAQ, and answer-ready summary.",
     "- Verification commands or live URLs to check.",
     "- Copy score out of 70."
-  ].join("\n");
+  ];
+  if (copy) {
+    lines.push("", "## Supplied Copy", copy);
+  }
+  return lines.join("\n");
 }
 
 function visibilityGradeTemplate(args = {}) {

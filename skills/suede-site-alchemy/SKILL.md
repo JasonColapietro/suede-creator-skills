@@ -332,7 +332,7 @@ When genuine urgency exists, make the mechanism explicit. "This cohort closes Ju
 
 ## Copy Bank
 
-Suede-specific headline fragments, subhead starters, and CTA options live in `references/copy-bank.md`. Read it when the page needs Suede-branded source material. Every fragment is raw input — run the anti-slop gate (no throat-clearing, fake intensity, unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes) before any line ships.
+When the page needs Suede-branded source material, draft headline fragments, subhead starters, and CTA options inline from the page's real proof points. Every fragment is raw input — run the anti-slop gate (no throat-clearing, fake intensity, unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes) before any line ships.
 
 ## Suede Routing (Suede Projects Only)
 
