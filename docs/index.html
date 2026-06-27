@@ -720,6 +720,30 @@
 
     #hero-cta-secondary:hover { color: #c8a96e; border-color: #c8a96e; }
 
+    #hero-cta-star {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #f0ece4;
+      border: 1px solid #333333;
+      border-radius: 3px;
+      padding: 13px 22px;
+      background: #ffffff06;
+      transition: color .18s, border-color .18s, background .18s, transform .12s;
+    }
+
+    #hero-cta-star:hover {
+      color: #c8a96e;
+      border-color: #c8a96e;
+      background: #c8a96e10;
+      transform: translateY(-1px);
+    }
+
+    #hero-cta-star:active { transform: translateY(0); }
+
     #hero-scroll-hint {
       position: absolute;
       bottom: 32px; left: 50%;
@@ -1266,6 +1290,15 @@
       background: #8b1a1a33;
       border-color: #a02020;
     }
+    .install-link.install-link-star {
+      border-color: #c8a96e;
+      color: #f0ece4;
+      background: #c8a96e10;
+    }
+    .install-link.install-link-star:hover {
+      background: #c8a96e1f;
+      color: #c8a96e;
+    }
 
     footer {
       border-top: 1px solid #222222;
@@ -1521,6 +1554,24 @@
         --size-5xl: 2.75rem;
         --size-4xl: 2.25rem;
       }
+
+      #hero {
+        min-height: auto;
+        padding-top: 72px !important;
+        padding-bottom: 44px !important;
+      }
+
+      #hero-inner { padding: 0 18px; }
+      #hero-logo { width: 112px; height: 112px; margin-bottom: 18px; }
+      #hero-headline { font-size: 2.05rem; line-height: 1.05; margin-bottom: 14px; }
+      #hero-subline { font-size: 1rem; margin-bottom: 24px; }
+      #hero-proof { gap: 8px; margin-bottom: 28px; }
+      .hero-proof-line { font-size: .72rem; gap: 8px; letter-spacing: .03em; }
+      .hero-proof-line::before { width: 14px; }
+      #hero-ctas { gap: 12px; }
+      #hero-cta-primary { padding: 13px 26px; font-size: .82rem; }
+      #hero-cta-secondary { font-size: .78rem; }
+      #hero-cta-star { padding: 11px 18px; font-size: .78rem; }
     }
 
     /* ============================================================
@@ -1592,6 +1643,14 @@
       background: #c8a96e;
       box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.6);
       animation: pulse-dot 2.2s ease-out infinite;
+    }
+
+    @media (max-width: 480px) {
+      #hero-eyebrow {
+        margin-bottom: 18px;
+        padding: 6px 12px 6px 10px;
+        font-size: 10px;
+      }
     }
 
     @keyframes pulse-dot {
@@ -1909,7 +1968,7 @@
 
     <h1 id="hero-headline" class="hero-anim">The first fully <span class="shimmer">evolving</span><br>skillset on the internet.</h1>
 
-    <p id="hero-subline" class="hero-anim">Twenty-one public skills. One install.</p>
+    <p id="hero-subline" class="hero-anim">Install 21 public skills in one command.</p>
 
     <div id="hero-proof" class="hero-anim">
       <span class="hero-proof-line">Built 9 iOS apps into App Store approval in a month</span>
@@ -1919,6 +1978,7 @@
     <div id="hero-ctas" class="hero-anim">
       <a id="hero-cta-primary" href="#install">Install in one command</a>
       <a id="hero-cta-secondary" href="skills/">Browse all 21 skills</a>
+      <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
     </div>
   </div>
 
@@ -2189,6 +2249,7 @@
 
     <div class="install-links reveal reveal-d2">
       <a class="install-link install-link-primary" href="skills/">Browse all 21 skills</a>
+      <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
       <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
       <a class="install-link" href="plugins">MCP docs</a>
     </div>
