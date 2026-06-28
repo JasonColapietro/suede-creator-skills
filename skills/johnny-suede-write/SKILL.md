@@ -1,11 +1,11 @@
 ---
 name: johnny-suede-write
-description: Write anything Suede ships and earn the click. Routes any writing request — long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and ambassador talk-tracks — through mode-specific structure, 12 headline formulas, 5 persuasion frameworks, A/B variants, an anti-slop gate, and a copy score. Use when you need to write, rewrite, edit, align to the house voice, generate headlines or CTAs or subject lines, draft social or email or README or product listing copy, or hand an ambassador hype-free words to explain Suede. Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
+description: Write anything Suede ships and earn the click. Routes any writing request — long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and public explainer talk-tracks — through mode-specific structure, 12 headline formulas, 5 persuasion frameworks, A/B variants, an anti-slop gate, and a copy score. Use when you need to write, rewrite, edit, align to the house voice, generate headlines or CTAs or subject lines, draft social or email or README or product listing copy, or hand a public user hype-free words to explain Suede. Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
 ---
 
 # Johnny Suede Write
 
-The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice alignment, and ambassador talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
+The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice alignment, and public explainer talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
 
 Write copy that earns its place on the page: concrete nouns, buyer-visible outcomes, real proof, one primary action. Nothing decorative.
 
@@ -18,7 +18,7 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 | Write or rewrite any copy surface from scratch | **Write Modes** (below) — pick the mode |
 | Generate headlines, CTAs, or email subjects | **Headline Formulas / CTA Formulas / Variant Protocol** |
 | Tune existing copy to sound like Suede, not generic AI | **Brand-Voice Alignment** lane |
-| Hand an ambassador words to explain Suede to someone else | **Ambassador Talk-Track** lane |
+| Hand a public user words to explain Suede to someone else | **Public Explainer Talk-Track** lane |
 | Audit/review existing copy and return findings + score | **Copy Audit** output shape |
 | Do a metadata/structure/copy-quality SEO pass alongside copy | **SEO And GitHub Copy** + **SEO Audit Mode** |
 
@@ -57,7 +57,7 @@ Identify the mode before writing. Each mode has a different structure, length, a
 - Deliver: main post + short variant + CTA + 3 hook variants.
 - Platform-specific: Twitter/X = 280 chars max per post; LinkedIn = first 2 lines must hook before "more"; Instagram = hook before visual. Full per-platform structures live in **Social Post Formats**.
 
-**Email / DM** (cold outreach, launch email, nurture, ambassador brief)
+**Email / DM** (cold outreach, launch email, nurture, public explainer brief)
 - Subject line is the headline. Write it last.
 - Open with the reader's problem, not the sender's news.
 - One ask per email. One CTA.
@@ -365,9 +365,9 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 
 **Output of this lane:** the revised copy only, plus any claims that need verification. Do not append the full workflow scaffolding unless asked.
 
-## Ambassador Talk-Track Lane
+## Public Explainer Talk-Track Lane
 
-Use this lane when an ambassador needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, claim-safe, outcome-first. Use "explain" language, not "pitch" language.
+Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, claim-safe, outcome-first. Use "explain" language, not "pitch" language.
 
 **Explain:**
 1. Start with the outcome: agents ship better public work with less setup.
@@ -492,7 +492,7 @@ When a claim is borderline, rewrite it as a testable behavior ("X happens when y
 
 1. **Pick the lane.** Use the router. Most jobs are one lane.
 2. **Scout the surface.** Identify reader, page type, channel, primary action, proof, live/source URL, product or mobile context when relevant, and claim boundaries.
-3. **Identify register and persona.** Who is speaking (founder, product, docs, ambassador, technical operator) and the reader's relationship to the company (discovering, evaluating, already using). State the chosen register and persona mode in the output header.
+3. **Identify register and persona.** Who is speaking (founder, product, docs, public explainer, technical operator) and the reader's relationship to the company (discovering, evaluating, already using). State the chosen register and persona mode in the output header.
 4. **Set write mode.** Long-form, short-form, GitHub/Docs, social, or email. State it before writing.
 5. **Write the outcome first.** Lead with what the reader can do, not a list of features. Apply the persuasion framework that fits the surface (AIDA, PAS, Before-After-Bridge, JTBD, or StoryBrand 7-Part). State which framework was applied.
 6. **Build the proof stack.** Use real files, links, screenshots, commands, docs, installs, live URLs, or product artifacts. No invented proof.
@@ -506,7 +506,7 @@ When a claim is borderline, rewrite it as a testable behavior ("X happens when y
 
 For a page, docs surface, or launch asset:
 ```text
-Register: [founder / product / docs / ambassador / operator]
+Register: [founder / product / docs / public explainer / operator]
 Persona mode: [decision-maker / practitioner / skeptic / creator]
 Write mode: [long-form / short-form / GitHub-Docs / social / email]
 Persuasion framework: [AIDA / PAS / Before-After-Bridge / JTBD / StoryBrand]
@@ -523,7 +523,7 @@ Final CTA:
 Claim boundaries:
 ```
 
-For social, email, or ambassador copy:
+For social, email, or public explainer copy:
 ```text
 Register:
 Persona mode:
@@ -564,7 +564,7 @@ Safety boundary:
 
 ## Score Before Handoff
 
-Score every public output before handoff. Revise anything below 58/70. Public launch, homepage, product listing, GitHub, investor-adjacent, and ambassador copy must reach 62/70. State the score and the two lowest dimensions; fix those first.
+Score every public output before handoff. Revise anything below 58/70. Public launch, homepage, product listing, GitHub, investor-adjacent, and public explainer copy must reach 62/70. State the score and the two lowest dimensions; fix those first.
 
 ```text
 Directness: /10

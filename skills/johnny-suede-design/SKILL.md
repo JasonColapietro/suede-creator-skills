@@ -653,7 +653,7 @@ Density: /10
 Search/AI readability: /10
 Total: /70
 ```
-Revise below 58/70. For public launch, homepage, GitHub, product listing, investor-adjacent, or ambassador copy, aim for 62/70 or higher.
+Revise below 58/70. For public launch, homepage, GitHub, product listing, investor-adjacent, or public explainer copy, aim for 62/70 or higher.
 
 ## Copy Output Shapes
 **Page Copy:** Title / Meta description / Hero / Subhead / Primary CTA / Sections / FAQ / Final CTA / Safety note.

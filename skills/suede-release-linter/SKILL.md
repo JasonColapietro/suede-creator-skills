@@ -1,15 +1,15 @@
 ---
 name: suede-release-linter
-description: Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and Suede intake readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or Suede transfer.
+description: Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and downstream handoff readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or transfer package handoff.
 ---
 
-# Suede Release Linter
+# Release Metadata Linter
 
 ## Overview
 
-Audit a music or media project folder and produce a practical release-readiness report. The linter should help creators find missing files, weak metadata, rights risks, split gaps, platform-delivery blockers, and Suede intake issues before a release or transfer package is created.
+Audit a music or media project folder and produce a practical release-readiness report. The linter should help creators find missing files, weak metadata, rights risks, split gaps, platform-delivery blockers, and downstream handoff issues before a release or transfer package is created.
 
-Public v1 is offline-first: inspect local files and supplied metadata, do not upload to Suede, write to a registry, call distribution APIs, request private keys, or claim legal clearance.
+Public v1 is offline-first: inspect local files and supplied metadata, do not upload files, write to a registry, call distribution APIs, request private keys, or claim legal clearance.
 
 ## Workflow
 
@@ -18,7 +18,7 @@ Public v1 is offline-first: inspect local files and supplied metadata, do not up
 3. Read `references/lint-rules.md` for the lint categories and severity model.
 4. If working on a local folder, run `scripts/lint_release.py` to generate `release-lint-report.md` and `release-lint-report.json`.
 5. Read `references/fix-guidance.md` when turning findings into specific next actions.
-6. If the user wants Suede intake prep, use the report to decide whether to invoke or recommend the `suede-rights-passport` package workflow.
+6. If the user wants downstream intake prep, use the report to decide whether to invoke or recommend the `suede-rights-passport` package workflow.
 7. Do not invent release metadata. Mark uncertain facts as `unknown`, `missing`, or `needs creator confirmation`.
 8. End with a concise summary: report path, score, highest-severity findings, and next fixes.
 
@@ -58,7 +58,7 @@ Use the bundled references only as needed:
 
 - `references/lint-rules.md`: lint categories, severity levels, and pass/fail expectations.
 - `references/metadata-fields.md`: recommended release, contributor, rights, and delivery fields.
-- `references/fix-guidance.md`: suggested fixes and Suede next-step mapping.
+- `references/fix-guidance.md`: suggested fixes and downstream next-step mapping.
 
 The script writes:
 
@@ -76,10 +76,10 @@ Use the bundled assets when repairing or hand-writing reports:
 - Do not say a project is legally cleared unless the user provides explicit proof.
 - Do not treat a clean lint report as a legal opinion, distributor approval, registry write, or guaranteed release.
 - Do not ask for private keys, seed phrases, unreleased account secrets, or full payment credentials.
-- Do not include private Suede implementation details, private endpoints, internal provider names, or non-public pricing.
+- Do not include private implementation details, private endpoints, internal provider names, or non-public pricing.
 - Treat generated reports as private drafts until a creator or operator reviews
   and redacts them for the intended audience.
-- Keep public positioning focused on creator ownership infrastructure, metadata quality, provenance, release readiness, rights, royalty routing, licensing, and agent commerce.
+- Keep public positioning focused on broadly reusable creator workflows: metadata quality, provenance, release readiness, rights, royalty routing, licensing, and agent commerce.
 
 ## Completion Checklist
 
@@ -89,18 +89,12 @@ Before reporting a lint result:
 - Confirm whether metadata was discovered, supplied, or missing.
 - Report the score and severity counts.
 - List all `error` findings and the most important `warning` findings.
-- State whether the project is ready for Suede intake, ready with caveats, or blocked.
-- Recommend a next action: fix metadata, collect rights confirmations, prepare a Suede Rights Passport, or package for release.
+- State whether the project is ready for release or downstream intake, ready with caveats, or blocked.
+- Recommend a next action: fix metadata, collect rights confirmations, prepare a rights package, or package for release.
 
-## Suede Passport Context
+## Downstream Review Context
 
-A clean release-lint report is itself a Suede Creator Passport signal: proof
-that a creator runs disciplined release process. The "Release Linter clean"
-stamp is on the anticipated stamp surface alongside "Rights Passport
-produced", "IP registered on Base", and Suede-native music-identity stamps
-(Rig Card verified, Studio Fingerprint computed).
-
-Stamping infrastructure ships in a later phase. Until then, this skill
-produces the artifact; the Passport will recognize it once the registry
-stamping API is live. See `references/passport-context.md` for install-safe
-context and the repo-root `PASSPORT.md` for the full public concept.
+A clean release-lint report is a portable review artifact. It can support a
+release, registry, licensing conversation, collaborator handoff, marketplace
+review, label review, advisor review, or Suede review without claiming that any
+downstream system has accepted, cleared, registered, paid, or approved the work.

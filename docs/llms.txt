@@ -13,7 +13,7 @@ Install (Codex / Claude Code skill installer):
 - [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
 - [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 21 skills.
 - [Plugins](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Local Codex/Claude Code plugin install paths.
-- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and ambassador language.
+- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
 
 ## Workflow skills (design, copy, SEO, code, QA, launch)
 

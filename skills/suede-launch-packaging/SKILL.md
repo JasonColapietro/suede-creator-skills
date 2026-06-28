@@ -1,6 +1,6 @@
 ---
 name: suede-launch-packaging
-description: Ship Suede work as a launch, not a loose drop, and make sure people can actually install it — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, handoff notes, plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion while keeping the local @personal path out of public docs. Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, when a public user cannot add a skill, when @personal leaks into public copy, or when a README, docs, or ambassador step needs a simpler path.
+description: Ship Suede work as a launch, not a loose drop, and make sure people can actually install it — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, handoff notes, plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion while keeping the local @personal path out of public docs. Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, when a public user cannot add a skill, when @personal leaks into public copy, or when a README, docs, or public explainer step needs a simpler path.
 
 ---
 
@@ -15,7 +15,7 @@ This skill organizes and prepares a public release. It does NOT clear rights, co
 Most launches use both lanes in order: package the release, then prove the install. Pick what the request is asking for.
 
 - **Lane A — Package the launch.** Work is ready to leave the local machine and needs a clean public package: a repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Start here for "ship this," "write the release," "package this drop."
-- **Lane B — Install support.** An install fails, a public user cannot add a skill, `@personal` leaks into public copy, or a README, docs, MCP catalog, or ambassador step needs a simpler, public-first path. Start here for "the install is broken," "fix the install command," "why can't they add this skill," "the marketplace is confusing." Lane A always runs Lane B's command-test step before publishing.
+- **Lane B — Install support.** An install fails, a public user cannot add a skill, `@personal` leaks into public copy, or a README, docs, MCP catalog, or public explainer step needs a simpler, public-first path. Start here for "the install is broken," "fix the install command," "why can't they add this skill," "the marketplace is confusing." Lane A always runs Lane B's command-test step before publishing.
 
 When both apply (most full launches), run Lane A to assemble the package, then run Lane B to verify and correct every install path inside it before you ship.
 
@@ -64,7 +64,7 @@ Use this lane to make Suede install instructions accurate, public, and easy to e
 ### Rules
 
 - Lead with public GitHub skill installs.
-- Treat `@personal` as a local operator note only — keep it out of public docs, READMEs, MCP catalog output, and ambassador copy.
+- Treat `@personal` as a local operator note only — keep it out of public docs, READMEs, MCP catalog output, and public explainer copy.
 - Explain that GitHub skill installs need a repo and path because one repo can contain many skills.
 - Test installer commands from a temporary destination after pushing.
 - For multiple paths, use one `--path` flag followed by all skill paths.
@@ -75,7 +75,7 @@ Use this lane to make Suede install instructions accurate, public, and easy to e
 1. Identify the target installer: Codex GitHub skill installer, Claude skill folder copy, local plugin alias, or MCP server.
 2. Check whether the target skill folder exists publicly at `main`.
 3. Run the exact install command from a temporary directory.
-4. Fix docs, MCP catalog output, README commands, and ambassador copy together.
+4. Fix docs, MCP catalog output, README commands, and public explainer copy together.
 5. Keep local plugin commands available only under local operator setup.
 
 ### Lane B output

@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Release Linter Skill | Suede Creator Skills Docs</title>
-    <meta name="description" content="Docs for Suede Release Linter: audit release metadata, artwork, masters, lyrics, stems, credits, splits, samples, and Suede readiness.">
+    <title>Release Metadata Linter Skill | Suede Creator Skills Docs</title>
+    <meta name="description" content="Docs for the Release Metadata Linter: audit release metadata, artwork, masters, lyrics, stems, credits, splits, samples, and downstream readiness.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html">
     <link rel="icon" href="../assets/suede-skill-icon.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Suede Release Linter Skill">
-    <meta property="og:description" content="Audit music release folders for metadata, artwork, masters, lyrics, stems, credits, splits, sample status, provenance, and Suede readiness.">
+    <meta property="og:title" content="Release Metadata Linter Skill">
+    <meta property="og:description" content="Audit music release folders for metadata, artwork, masters, lyrics, stems, credits, splits, sample status, provenance, and downstream readiness.">
     <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html">
     <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/release-linter-preview.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Suede Release Linter Skill">
+    <meta name="twitter:title" content="Release Metadata Linter Skill">
     <meta name="twitter:description" content="Release-readiness linting docs for Suede Creator Skills.">
     <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/release-linter-preview.png">
     <script type="application/ld+json">
@@ -23,8 +23,8 @@
         "@context": "https://schema.org",
         "@type": "TechArticle",
         "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html#article",
-        "headline": "Suede Release Linter Skill",
-        "description": "Audit music release folders for missing metadata, artwork, masters, lyrics, stems, credits, split totals, sample status, provenance, release history, and Suede readiness gaps.",
+        "headline": "Release Metadata Linter Skill",
+        "description": "Audit music release folders for missing metadata, artwork, masters, lyrics, stems, credits, split totals, sample status, provenance, release history, and downstream readiness gaps.",
         "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html",
         "author": {
           "@type": "Person",
@@ -36,7 +36,7 @@
           "name": "Suede Labs AI",
           "url": "https://suedeai.ai"
         },
-        "about": ["music metadata", "release readiness", "sample status", "rights gaps", "Suede intake", "agent commerce"],
+        "about": ["music metadata", "release readiness", "sample status", "rights gaps", "downstream review", "agent commerce"],
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "suede-release-linter",
@@ -143,7 +143,7 @@
           <a href="./">Skill Docs</a>
           <a href="../plugins.html">Public Installs + MCP</a>
           <a href="../copy.html">Copy Bank</a>
-          <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">Ambassador Guide</a>
+          <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">Public Explainer</a>
           <a href="suede-rights-passport.html">Rights Passport</a>
           <a href="https://github.com/JasonColapietro/suede-creator-skills">GitHub</a>
         </div>
@@ -153,9 +153,9 @@
       <div class="hero-grid">
         <div>
           <div class="eyebrow">Skill documentation</div>
-          <h1>Suede Release Linter.</h1>
-          <p class="lead">Audit a song, album, catalog, stem pack, artwork, lyric folder, or media project before distribution, licensing, registry prep, royalty routing, agent commerce, or Suede transfer. The linter produces human-readable and machine-readable reports while keeping public v1 offline-first.</p>
-          <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter">View skill folder</a> <a class="button secondary" href="suede-rights-passport.html">Create a passport package</a></p>
+          <h1>Release Metadata Linter.</h1>
+          <p class="lead">Audit a song, album, catalog, stem pack, artwork, lyric folder, or media project before distribution, licensing, registry prep, royalty routing, agent commerce, or transfer package handoff. The linter produces human-readable and machine-readable reports while keeping public v1 offline-first.</p>
+          <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter">View skill folder</a> <a class="button secondary" href="suede-rights-passport.html">Create a rights package</a></p>
         </div>
         <img src="../assets/release-linter-preview.png" width="1200" height="760" alt="Suede Release Linter preview card for release readiness and missing metadata.">
       </div>
@@ -167,7 +167,7 @@
             <li>Title, artist, release type, project identity, and metadata files.</li>
             <li>Final masters, source sessions, stems, artwork, lyrics, and documents.</li>
             <li>Contributor credits, split totals, sample status, licenses, and release history.</li>
-            <li>Provenance notes, public URLs, platform-delivery blockers, and Suede intake readiness.</li>
+            <li>Provenance notes, public URLs, platform-delivery blockers, and downstream handoff readiness.</li>
             <li>Secret-like files and unsafe output choices that should not be shared publicly.</li>
           </ul>
         </article>
@@ -177,8 +177,8 @@
             <li>Creators checking a release folder before upload or distribution.</li>
             <li>Labels and managers cleaning metadata before licensing review.</li>
             <li>Catalog owners finding missing credits, stems, artwork, lyrics, and rights details.</li>
-            <li>Developers preparing structured media projects for Suede intake or agent workflows.</li>
-            <li>Teams deciding whether to move from linting into Rights Passport packaging.</li>
+            <li>Developers preparing structured media projects for review or agent workflows.</li>
+            <li>Teams deciding whether to move from linting into rights package generation.</li>
           </ul>
         </article>
       </section>
@@ -199,9 +199,9 @@
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-release-linter/SKILL.md"><b>Skill manifest</b><span>Agent-facing workflow, trigger description, lint flow, safety rules, and completion checklist.</span></a>
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-release-linter/agents/openai.yaml"><b>OpenAI metadata</b><span>Display name, short description, and default prompt for skill-list surfaces.</span></a>
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-release-linter/scripts/lint_release.py"><b>Lint script</b><span>Scans a release folder, classifies files, applies metadata rules, and writes markdown plus JSON reports.</span></a>
-          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter/references"><b>References</b><span>Lint rules, metadata fields, fix guidance, and Suede Passport context.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter/references"><b>References</b><span>Lint rules, metadata fields, fix guidance, and downstream review context.</span></a>
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter/assets"><b>Templates</b><span>Example metadata plus markdown and JSON report templates for repair or manual report work.</span></a>
-          <a class="link-row" href="suede-rights-passport.html"><b>Rights Passport next step</b><span>Use the lint report to decide whether the project is ready to become a Suede transfer package.</span></a>
+          <a class="link-row" href="suede-rights-passport.html"><b>Rights package next step</b><span>Use the lint report to decide whether the project is ready to become a local transfer package.</span></a>
         </div>
       </section>
 
@@ -218,6 +218,6 @@
         </article>
       </section>
     </main>
-    <footer><div class="shell">Built by <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede Labs AI</a>. Suede Release Linter: release readiness, provenance, metadata quality, rights gaps, and Suede intake prep.</div></footer>
+    <footer><div class="shell">Built by <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede Labs AI</a>. Release Metadata Linter: release readiness, provenance, metadata quality, rights gaps, and downstream handoff prep.</div></footer>
   </body>
 </html>

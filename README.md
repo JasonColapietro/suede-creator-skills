@@ -4,13 +4,13 @@
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
-**Suede Creator Skills** is a public 21-skill workflow pack that stops an agent
-from working like a blank chat box every time. Install it when Codex or Claude
-needs portable context: your preferences, linked guidance, Suedify from a
-reference URL, sharper copy, SEO/AEO/AI EO, GitHub Pages polish, visibility
-grades, A-F code review, coordinated agent teams, AI evals, iOS/product checks,
-launch evidence, and creator music/IP workflows without rebuilding the prompt
-stack.
+**Suede Creator Skills** is an open-source, MIT-licensed 21-skill workflow pack
+for Codex, Claude Code, and other agent-assisted product and creator workflows.
+It is broadly reusable tooling, not a closed Suede product funnel.
+Install it when an agent needs portable context, linked guidance, reference-site
+restyling, sharper copy, SEO/AEO/AI EO, GitHub Pages polish, visibility grades,
+A-F code review, coordinated agent teams, AI evals, iOS/product checks, launch
+evidence, and creator music/IP utilities without rebuilding the prompt stack.
 
 The pack gives an agent a reusable product workflow: page structure, copy
 standards, reference-site analysis, visual QA, review gates, install paths,
@@ -24,7 +24,7 @@ keep. When it misses, tell it exactly what to change. You can also say
 preserve what worked so the agent can mimic it later, or keep as-is by saying
 nothing.
 
-The components are the pitch:
+The components are reusable outside the Suede brand:
 
 - Evolving context: the skill links to preferences and project guidance instead
   of trapping the agent in one bloated memory page.
@@ -38,17 +38,17 @@ The components are the pitch:
   schema depth, Google and Gemini result-surface readiness, and brand clarity.
 - Code and project grading: run A-F review across correctness, security, data,
   UX, deploy readiness, public-claim truth, missing gates, and next fixes.
-- Music/IP suite: package campaigns, metadata, sync prep, rights passports,
-  release lints, provenance, credits, split notes, and intake reports.
+- Music/IP suite: package campaigns, metadata, sync prep, rights packages,
+  release lints, provenance, credits, split notes, and review reports.
 - MCP: use structured skill discovery, install options, SEO/AEO/GEO/AI EO audit
   scaffolds, QA checklists, and MCP validation only when structure helps.
 - Johnny Suede shortcuts: invoke Write, Design/Create, or Code to load the
-  whole workflow instead of rebuilding the prompt stack.
+  whole workflow; a supplied company brief overrides the default Suede voice.
 
-Public GitHub users can bring their own company. Use the Johnny Suede umbrella
-modes with a company brief, voice, audience, proof, allowed claims, forbidden
-claims, CTA, assets, and reference URLs; the workflow should keep the Suede
-quality gates while using the user's brand voice and domain language.
+Public GitHub users can bring their own company, repo, page, campaign, release,
+or product. Use the umbrella modes with a company brief, voice, audience, proof,
+allowed claims, forbidden claims, CTA, assets, and reference URLs; the workflow
+keeps the quality gates while using the user's brand voice and domain language.
 
 Suedify is the marketable site workflow: give the agent a reference URL and a
 target URL, then have it study layout, hierarchy, spacing, type, color, motion,
@@ -92,7 +92,7 @@ identity guides, collab angles, campaign-in-a-box plans, and sync-style review
 packages. Sync packaging stops at clean review prep: no placement promises,
 clearance claims, outreach claims, or Suede promo funnel.
 
-Creator utility skills for release metadata, provenance, rights passports, and
+Creator utility skills for release metadata, provenance, rights packages, and
 royalty notes include evidence tables and severity models for projects that
 need them, but they are support tools, not the headline.
 
@@ -100,30 +100,25 @@ The public site sells the workflow directly: install the umbrella skill, browse
 the 21 skill folders, use MCP only when structured discovery or QA helps, and
 keep legal, payout, registry, and distribution claims outside the public tools.
 
-Suede is creator ownership infrastructure for programmable IP, registry-backed
-media, royalty routing, licensing readiness, and agent commerce. These skills
-are public-safe: they inspect current files, pages, repos, and local folders,
-but they do not upload files, write to a registry, call private Suede services,
-request secrets, or claim legal clearance.
-
-For the full concept, including what the Passport is, what it gates, which
-signals become stamps, and what intentionally ships later, see
-[`PASSPORT.md`](PASSPORT.md).
+Suede is one downstream review workflow for creator ownership infrastructure,
+programmable IP, registry-backed media, royalty routing, licensing readiness,
+and agent commerce. The pack is useful without Suede: it inspects current files,
+pages, repos, and local folders, but it does not upload files, write to a
+registry, call private services, request secrets, or claim legal clearance.
 
 ## Public Page
 
 - [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - public documentation generated from this GitHub repository, not a separate marketing site; the page itself is proof of the design/copy/SEO bar.
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
-- [Suede Creator Passport concept](PASSPORT.md)
-- [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
+- [Public explainer pack](PROMO.md) - long-form public guide for founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
 - [Suede Creator Skills copy bank](COPY.md) - public copy for GitHub descriptions, docs pages, CTAs, SEO/AEO/AI EO snippets, FAQs, social posts, and safety language.
 - [Copy bank page](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) - live copy bank for sharing, explaining, and documentation work.
 - [Public installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) - GitHub skill install commands plus the Suede Skills MCP server for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) - public catalog with primary skill pages, install links, manifests, scripts, folders, and resource maps.
 - [Suede Agent Teams docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html) - controlled max-agent loops for scout, safe parallel build, adversarial review, visibility grading, code grading, release lock, recovery, and evidence handoff.
 - [Suede AI Eval docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html) - public eval workflow for AI-SPECs, failure-mode rubrics, prompt and retrieval test cases, acceptance gates, and coverage audits.
-- [Suede Rights Passport docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, Suede intake JSON, templates, safety defaults, and install prompts.
-- [Suede Release Linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and Suede next steps.
+- [Creator rights package docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html) - full documentation for transfer package generation, provenance, credits, splits, licenses, intake JSON, templates, safety defaults, and install prompts.
+- [Release linter docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html) - full documentation for music release linting, metadata checks, missing-file detection, rights blockers, report outputs, templates, and downstream next steps.
 
 ## Quick Start
 
@@ -175,7 +170,7 @@ python3 skills/suede-release-linter/scripts/lint_release.py \
 
 python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
   /path/to/creator-project \
-  --output /path/to/suede-transfer-package \
+  --output /path/to/transfer-package \
   --metadata /path/to/creator-project/metadata.json \
   --project-title "Project Title" \
   --artist "Artist Name"
@@ -184,22 +179,22 @@ python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
 Both scripts skip hidden files, secret-like files, dependency folders, build
 outputs, and unrecognized file types by default.
 
-## Ambassador Explainer Pack
+## Public Explainer Pack
 
-Use [`PROMO.md`](PROMO.md) when explaining the full Suede workflow publicly. It
+Use [`PROMO.md`](PROMO.md) when explaining the full workflow publicly. It
 includes founder, designer, developer, agency, creator, and AI power-user
-positioning plus reusable copy for Suedify, Suede Workflow Skills, Suede
-Creator Skills, the optional MCP, install listings, social posts, DMs, email,
-SEO/AEO/AI EO metadata, FAQ answers, objection handling, and safe claim boundaries.
+positioning plus reusable copy for Suedify, Suede Workflow Skills, the optional
+MCP, install listings, social posts, DMs, email, SEO/AEO/AI EO metadata, FAQ
+answers, objection handling, and safe claim boundaries.
 
-The ambassador rule: explain the outcome first. Suede gives agents a repeatable
+The public-explainer rule: explain the outcome first. The pack gives agents a repeatable
 workflow for Suedify, design, copywriting, SEO/AEO/AI EO, visibility and CTA
 grading, code review with A-F Suede grades, QA, agent-team coordination, AI
 evals, launch packaging, creator campaign tools, and optional MCP-assisted
 discovery. Keep local install details such as `@personal` inside technical
 setup sections.
 
-Founder context for ambassadors: the workflow was built from live pressure, not
+Founder context for public explanations: the workflow was built from live pressure, not
 theory, turning repeated agent failures into reusable rules. The core
 conviction is that public work is not done until it is findable across Google,
 Gemini, and AI result surfaces, readable to AI systems, backed by proof, and
@@ -304,7 +299,7 @@ Folder: [`skills/suede-workflow-skills`](skills/suede-workflow-skills)
 Install the public umbrella workflow when you want one skill to load the Suede
 design, anti-slop copy, SEO/AEO/AI EO, site polish, visibility and CTA grading,
 code review with A-F Suede grades, visual QA, launch, install support, MCP QA,
-ambassador explanation, agent-commerce, Suedify, progressive feedback,
+public explanation, agent-commerce, Suedify, progressive feedback,
 two-level final explanations, Cue Suede choices, max-agent grouping loops,
 artist campaign, and creator utility workflow. The repository now ships **21
 public skill folders**.
@@ -341,15 +336,18 @@ Creator skills (5):
 - [`skills/suede-rights-passport`](skills/suede-rights-passport)
 - [`skills/suede-rights-audit`](skills/suede-rights-audit)
 
-### Suede Rights Passport
+### Creator Rights Package Builder
 
 ![Suede Rights Passport preview](docs/assets/rights-passport-preview.png)
 
 Folder: [`skills/suede-rights-passport`](skills/suede-rights-passport)
 
-Turn a messy creator folder into a Suede-ready transfer package. The skill
-inventories media, documents, lyrics, artwork, stems, credits, splits, licenses,
-provenance notes, missing rights information, and optimization blockers.
+Turn a messy creator folder into a local rights and provenance transfer
+package. The skill inventories media, documents, lyrics, artwork, stems,
+credits, splits, licenses, provenance notes, missing rights information, and
+optimization blockers. Suede can be one downstream review workflow, but the
+package is broadly useful for creators, labels, managers, collaborators,
+registries, marketplaces, advisors, and agent-readable media workflows.
 
 Outputs include:
 
@@ -366,7 +364,7 @@ Run it locally:
 ```bash
 python3 skills/suede-rights-passport/scripts/create_transfer_package.py \
   /path/to/creator-project \
-  --output /path/to/suede-transfer-package \
+  --output /path/to/transfer-package \
   --project-title "Project Title" \
   --artist "Artist Name" \
   --copy-assets
@@ -390,10 +388,10 @@ unconfirmed facts remain flagged in the generated reports.
 Folder: [`skills/suede-release-linter`](skills/suede-release-linter)
 
 Audit a song, album, catalog, stem pack, or media project before release,
-licensing, registry preparation, agent commerce, or Suede intake. The linter
-checks for missing title, artist, metadata, final masters, artwork, lyrics,
-stems, contributors, split totals, sample status, release history, provenance
-notes, and Suede-readiness blockers.
+licensing, registry preparation, agent commerce, or downstream review. The
+linter checks for missing title, artist, metadata, final masters, artwork,
+lyrics, stems, contributors, split totals, sample status, release history,
+provenance notes, and readiness blockers.
 
 Outputs include:
 
@@ -438,7 +436,7 @@ Use $suede-release-linter to audit this album folder for release readiness.
 ```
 
 ```text
-Use $suede-rights-passport to prepare this creator project as a Suede transfer package.
+Use $suede-rights-passport to organize this creator project into a rights and provenance package.
 ```
 
 ## Install For Claude Code
@@ -476,7 +474,7 @@ Use the suede-release-linter skill to check this release folder.
 ```
 
 ```text
-Use the suede-rights-passport skill to organize this catalog for Suede intake.
+Use the suede-rights-passport skill to organize this catalog into a local rights package.
 ```
 
 Claude.ai and organization-managed Claude Skills may use upload or admin-managed
@@ -489,41 +487,29 @@ enabling code execution.
 creator folder
   -> release metadata lint
   -> missing info and rights fixes
-  -> Suede Rights Passport package
-  -> Suede review, registry readiness, royalty routing, licensing, optimization
+  -> rights and provenance transfer package
+  -> optional release, licensing, registry, collaborator, marketplace, or review workflow
 ```
 
-Use the linter first when you want a fast audit. Use the Rights Passport when
-you are ready to create a durable transfer package for Suede review and
-optimization.
+Use the linter first when you want a fast audit. Use the rights package builder
+when you are ready to create a durable transfer package with hashes,
+provenance, credits, splits, license notes, and unresolved questions.
 
-## Full Linkset
+## Project And Platform References
 
-These public links are also passport stamp locations. The page frames each
-creator action as a stampable signal: visit, join, follow, install, lint, and
-passport.
-
-Suede public links:
-
-- Website: <https://suedeai.ai>
-- App / Vaults: <https://app.suedeai.ai>
-- Long-form site: <https://suedeai.org>
-- Follow on X: <https://x.com/aisuede>
-- Join Discord: <https://discord.gg/suedeai>
-- Telegram: <https://t.me/suedeai>
-
-Project links:
+Use these links to inspect the open-source repo, install paths, docs pages, and
+skill resources.
 
 - GitHub repository: <https://github.com/JasonColapietro/suede-creator-skills>
 - GitHub Pages site: <https://jasoncolapietro.github.io/suede-creator-skills/>
 - Skill docs catalog: <https://jasoncolapietro.github.io/suede-creator-skills/skills/> - public index for every Suede Creator Skill and its install/resource links.
-- Ambassador guide source: [PROMO.md](PROMO.md) - full public explanation kit for Suede skills, MCP, Suedify, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries.
+- Public explainer source: [PROMO.md](PROMO.md) - full public explanation kit for Suede skills, MCP, Suedify, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries.
 - Copy bank page: <https://jasoncolapietro.github.io/suede-creator-skills/copy.html> - live GitHub, docs, CTA, SEO/AEO/AI EO, FAQ, social, and safety copy for Suede Creator Skills.
 - Copy bank source: [COPY.md](COPY.md) - reusable public copy for repo metadata, skill pages, install surfaces, launch posts, and claim boundaries.
 - Public installs and MCP page: <https://jasoncolapietro.github.io/suede-creator-skills/plugins.html> - GitHub skill install commands and Suede Skills MCP docs for skill discovery, SEO/AEO/AI EO copy audits, install guidance, and QA checklists.
 - MCP source: [mcp/](mcp/) - dependency-free stdio MCP server, catalog, and MCP README.
-- Suede Rights Passport docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
-- Suede Release Linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and Suede blockers.
+- Creator rights package docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html> - transfer package docs for creator rights, provenance, splits, license notes, intake JSON, and optimization briefs.
+- Release linter docs: <https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html> - release-readiness docs for metadata, artwork, masters, lyrics, stems, credits, samples, reports, and downstream blockers.
 - Rights Passport skill: [skills/suede-rights-passport/SKILL.md](skills/suede-rights-passport/SKILL.md)
 - Rights Passport script: [skills/suede-rights-passport/scripts/create_transfer_package.py](skills/suede-rights-passport/scripts/create_transfer_package.py)
 - Rights Passport OpenAI metadata: [skills/suede-rights-passport/agents/openai.yaml](skills/suede-rights-passport/agents/openai.yaml)
@@ -534,7 +520,6 @@ Project links:
 - Release Linter OpenAI metadata: [skills/suede-release-linter/agents/openai.yaml](skills/suede-release-linter/agents/openai.yaml)
 - Release Linter references: [skills/suede-release-linter/references/](skills/suede-release-linter/references/)
 - Release Linter templates: [skills/suede-release-linter/assets/](skills/suede-release-linter/assets/)
-- Passport concept: [PASSPORT.md](PASSPORT.md)
 - Page source: [docs/index.html](docs/index.html)
 - Skill docs source: [docs/skills/](docs/skills/)
 
@@ -543,34 +528,6 @@ Platform references:
 - OpenAI Skills examples: <https://github.com/openai/skills>
 - Claude Code skills documentation: <https://docs.claude.com/en/docs/claude-code/skills>
 - Claude Skills help center: <https://support.claude.com/en/articles/12512180-using-skills-in-claude>
-
-Suede language to preserve:
-
-- creator ownership infrastructure
-- programmable IP
-- provenance
-- registry-backed media
-- royalty routing
-- licensing readiness
-- rights-aware media workflows
-- agent commerce
-
-Passport stamp language:
-
-- website visit
-- app visit
-- Discord join
-- X follow
-- Telegram visit
-- GitHub install, star, or fork
-- Codex install
-- Claude install
-- Suede Holder participation stamp
-- Suede signing workflow
-- release lint
-- rights passport package
-- future engagement signal
-- careful participation trail
 
 ## About the Creator
 
@@ -598,9 +555,9 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 ## Public Safety
 
 A clean lint report or completed transfer package is not a legal opinion,
-distributor approval, registry write, or rights clearance. These skills prepare
-materials so creators, Suede, and advisors can review the work with better
-structure.
+distributor approval, registry write, rights clearance, payment guarantee, or
+platform approval. These skills prepare materials so creators, reviewers, and
+advisors can inspect the work with better structure.
 
 Generated reports and transfer packages are private drafts by default. They can
 contain creator names, wallet/payment notes, file names, hashes, rights claims,

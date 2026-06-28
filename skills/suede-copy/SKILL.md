@@ -462,7 +462,7 @@ Search/AI readability: /10
 Total: /70
 ```
 
-Revise below 58/70. For public launch, homepage, GitHub, App Store, investor-adjacent, or ambassador copy, aim for 62/70 or higher.
+Revise below 58/70. For public launch, homepage, GitHub, App Store, investor-adjacent, or public explainer copy, aim for 62/70 or higher.
 
 ## Output Shapes
 

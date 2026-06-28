@@ -4,17 +4,17 @@
   "updated": "2026-06-23",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "summary": "Local MCP access to the Suede skill pack: full-stack design and writing modes, Suedify site restyling, Suede SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
+  "summary": "Local MCP access to an open-source Suede skill pack: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
   "publicLinks": [
     {
       "label": "GitHub Pages site",
       "url": "https://jasoncolapietro.github.io/suede-creator-skills/",
-      "description": "Public landing page for Suede Creator Skills, install paths, docs, and stampable linkset."
+      "description": "Public landing page for Suede Creator Skills, install paths, docs, skill catalog, and open-source project links."
     },
     {
-      "label": "Ambassador explainer",
+      "label": "Public explainer",
       "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md",
-      "description": "Long-form Markdown guide for ambassadors explaining Suedify, public skills, MCP, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries."
+      "description": "Long-form Markdown guide explaining Suedify, public skills, MCP, SEO/AEO/AI EO audits, QA, social posts, emails, FAQ, and claim boundaries."
     },
     {
       "label": "Copy bank",
@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public Suede workflow umbrella: full-stack design and writing modes, Suedify restyling, Suede SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
+      "description": "Public open-source workflow umbrella: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "localPluginInstall": "codex plugin add suede-workflow-skills@personal",
       "mcpServer": "suede_workflow_mcp",
@@ -67,7 +67,7 @@
     {
       "name": "suede-creator-skills",
       "displayName": "Suede Creator Skills",
-      "description": "Public artist and creator skills: a full artist campaign builder, neutral sync review packaging, release linting, rights passports, and a rights-readiness audit with provenance, licensing, and royalty-routing lanes.",
+      "description": "Public artist and creator skills: a full artist campaign builder, neutral sync review packaging, release linting, rights packages, and a rights-readiness audit with provenance, licensing, and royalty-routing lanes.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-campaign-in-a-box skills/suede-sync-packaging skills/suede-release-linter skills/suede-rights-passport skills/suede-rights-audit",
       "localPluginInstall": "codex plugin add suede-creator-skills@personal",
       "mcpServer": "suede_creator_mcp",
@@ -96,7 +96,7 @@
     {
       "name": "johnny-suede-write",
       "area": "workflow",
-      "description": "Write anything Suede ships — long-form, short-form, GitHub docs, social, email, product listing copy, ambassador talk-tracks — through mode-specific structure, persuasion frameworks, A/B variants, brand-voice alignment, an anti-slop gate, and a copy score. Default voice Suede; a supplied company brief overrides everything.",
+      "description": "Write long-form, short-form, GitHub docs, social, email, product listing copy, and public explainers through mode-specific structure, persuasion frameworks, A/B variants, brand-voice alignment, an anti-slop gate, and a copy score. Default voice Suede; a supplied company brief overrides everything.",
       "useWhen": "Use to write, rewrite, package, explain, promote, audit, or polish public copy with the whole writing stack loaded from one mode."
     },
     {
@@ -192,20 +192,20 @@
     {
       "name": "suede-release-linter",
       "area": "creator",
-      "description": "Audit music, audio, video, artwork, and creative release folders for metadata, rights, split, file, and Suede intake gaps.",
-      "useWhen": "Use before release, licensing, registry preparation, royalty routing, agent commerce, or Suede transfer."
+      "description": "Audit music, audio, video, artwork, and creative release folders for metadata, rights, split, file, and downstream handoff gaps.",
+      "useWhen": "Use before release, licensing, registry preparation, royalty routing, agent commerce, or transfer package handoff."
     },
     {
       "name": "suede-rights-passport",
       "area": "creator",
-      "description": "Prepare creator folders for Suede intake with provenance, rights, credits, splits, licenses, media optimization notes, and missing-info reports.",
-      "useWhen": "Use when packaging a project into a Suede-ready transfer package."
+      "description": "Prepare creator folders for local rights packaging with provenance, rights, credits, splits, licenses, media optimization notes, and missing-info reports.",
+      "useWhen": "Use when packaging a project into a rights and provenance transfer package."
     },
     {
       "name": "suede-rights-audit",
       "area": "creator",
       "description": "Find and organize rights gaps before a creator project is packaged — covers provenance and origin trail, ownership/contributors/credits/splits/samples gap audit, licensing-discussion readiness without claiming clearance, and royalty-routing readiness that moves no money. Organizes evidence only; never clears rights, confirms ownership, approves payouts, or writes to a registry.",
-      "useWhen": "Use before rights passporting, provenance mapping, licensing prep, registry readiness, royalty routing, or Suede creator intake."
+      "useWhen": "Use before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or downstream creator review."
     }
   ],
   "mcp": {

@@ -30,7 +30,7 @@ real campaigns use several. If the request is "do the whole rollout," run
 | One track expanded into a creative universe: scenes, characters, imagery, captions, drop ideas, mechanics | **3 — Song To Universe** |
 | The 5-15 second moments that people clip, duet, remix, chant, or share | **4 — Hook Hunter** |
 | A memorable launch moment: stunt, fan mission, puzzle, timed drop, geo clue, unlock, collector action, street-team mechanic | **5 — Release Stunt Lab** |
-| Repeatable fan behavior: phrases, gestures, comments, unlock actions, live moments, collector rituals, stampable tasks | **6 — Fan Rituals** |
+| Repeatable fan behavior: phrases, gestures, comments, unlock actions, live moments, collector rituals, trackable tasks | **6 — Fan Rituals** |
 | Visual direction: visualizer, lyric video, canvas loop, stage loop, cover motion, AI video prompts, teaser edits, scene boards | **7 — Visualizer Director** |
 | Merch and physical/collector objects beyond generic logo shirts, tied to lyrics, lore, and fan behavior | **8 — Merch Object Lab** |
 | A live set shaped like a show: arc, intros, transitions, crowd moments, visual cues, encore, talk breaks, merch tie-ins | **9 — Setlist Theater** |
@@ -153,7 +153,7 @@ participate in — instead of a generic release plan.
    - wardrobe and styling cues;
    - language rules;
    - photo, video, and stage behavior;
-   - fan rituals and stampable actions.
+   - fan rituals and trackable actions.
 4. Connect the world to Suede: ownership, provenance, release assets, rights
    readiness, campaign actions, and agent-readable metadata.
 5. Remove generic "new single out now" language.
@@ -297,7 +297,7 @@ Use this to design behavior fans can repeat without needing a long explanation.
    - street-team task.
 3. Make each ritual low-friction and clear enough for a caption.
 4. Avoid manipulative claims, fake scarcity, or unsafe fan behavior.
-5. Connect stampable actions to Suede only when the current surface can support
+5. Connect trackable actions to Suede only when the current surface can support
    them or clearly marks them as a future campaign build.
 
 **Output**
