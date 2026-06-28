@@ -1,26 +1,27 @@
 # Suede Creator Skills Copy Bank
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
-Skills. Lead with design, mobile and product surfaces, anti-slop copywriting, Suede
-SEO discoverability, SEO/AEO/AI EO, Suedify reference-site restyling, visual QA,
-visibility grading, A-F code grading, QA, and max-agent workflow. Keep claims public-safe. The skills
-do not upload files, clear rights, write to a registry, distribute music, or
-promise payouts.
+Skills. Lead with the installable product workflow: Suedify reference-site
+restyling, design, anti-slop copywriting, SEO/AEO/AI EO, visibility grading,
+A-F code grading, agent teams, AI evals, launch packaging, optional MCP, artist
+campaigns, and creator rights utilities. Keep claims public-safe. The skills do
+not upload files by default, clear rights, write to a registry, distribute
+music, approve payouts, or promise outcomes.
 
 ## Repo Copy
 
 ### One-line description
 
-Free Codex and Claude Code skills for design, mobile and product surfaces,
-anti-slop copywriting, Suede SEO discoverability, SEO/AEO/AI EO, Suedify website
-restyling, visual QA, visibility grading, A-F code grading, public docs, QA,
-artist campaigns, and creator utility workflows.
+Free Codex and Claude Code skills for Suedify website restyling, design,
+anti-slop copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading,
+agent teams, AI evals, public docs, QA, artist campaigns, and creator utility
+workflows.
 
 ### Short description
 
-Suede Creator Skills help agents improve websites, handle mobile and product
-surfaces, rewrite copy, audit Suede SEO/AEO/AI EO, grade visibility and CTA
-strength, adapt reference-site style safely, coordinate QA, package public
+Suede Creator Skills help agents improve websites, rewrite copy, audit
+SEO/AEO/AI EO, grade visibility and CTA strength, adapt reference-site style
+safely, review code A-F, coordinate agent teams, design AI evals, package public
 docs, run evidence-backed rights utilities, and support creator workflows.
 
 ### Full description
@@ -50,15 +51,14 @@ workflows.
 
 ### Hero
 
-Give your agent design taste, copy discipline, Suede SEO, and QA.
+Give your agent a product team in one install.
 
 ### Subhead
 
 Install the 21-skill Suede pack that helps agents adapt reference-site style,
-improve visual systems, handle mobile and product surfaces, rewrite public copy,
-audit Suede SEO/AEO/AI EO, design AI evals, grade visibility and CTA clarity,
-run visual QA, check install paths, coordinate QA, package artist campaigns, and support
-creator workflows.
+improve visual systems, rewrite public copy, audit SEO/AEO/AI EO, design AI
+evals, grade visibility and CTA clarity, review code A-F, run agent-team QA,
+check install paths, package artist campaigns, and support creator workflows.
 
 ### Primary CTA
 
@@ -81,7 +81,7 @@ Install the skills
 
 Install Suede skills from the public GitHub repo, or use the Suede Skills MCP
 for structured skill discovery, install guidance, SEO/AEO/AI EO copy audits,
-and QA checklists.
+visibility and code grading scaffolds, and QA checklists.
 
 ### Page hero
 
@@ -122,10 +122,10 @@ discovery.
 ### Best overall explanation
 
 Suede is the workflow layer for AI agents that need to ship better public
-product work. It packages design direction, copywriting, SEO/AEO/AI EO,
-Suedify, site-alchemy, visibility grading, A-F code grading, QA, public skill
-installs, progressive feedback handling, and optional MCP support into one
-reusable Suede system.
+product work. It packages Suedify, design direction, copywriting, SEO/AEO/AI EO,
+site alchemy, visibility grading, A-F code grading, agent teams, AI evals, QA,
+public skill installs, progressive feedback handling, and optional MCP support
+into one reusable Suede system.
 
 ### Suedify explanation
 
@@ -308,7 +308,7 @@ launch copy, and anti-slop line editing. Run
 mobile and product surfaces, product screenshots, visual QA, company voice, and
 copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
-`suede-code` when a change needs code review and A-F grading — prompted only.
+`suede-code` when a change needs code review and A-F grading. Prompted only.
 Run `suede-ship-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 

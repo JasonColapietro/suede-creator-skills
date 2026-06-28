@@ -7,23 +7,24 @@ clear, search-friendly, specific language and careful claim boundaries.
 
 ## Core Positioning
 
-Suede gives AI agents a reusable product workflow for design, anti-slop
-copywriting, SEO/AEO/AI EO, Suedify reference-site restyling, visual QA,
-visibility and CTA grading, A-F Suede code grades, QA, public skill installs,
-local plugin notes, MCP-assisted discovery, and creator workflow support.
+Suede gives AI agents a reusable product workflow for Suedify reference-site
+restyling, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility
+and CTA grading, A-F Suede code grades, AI evals, agent teams, public skill
+installs, MCP-assisted discovery, launch packaging, and creator workflow
+support.
 
 The pack helps agents do more than answer prompts. It gives them a Suede way to
-ship sharper public work: better-looking pages, stronger line-edited copy, real SEO checks
-that include AEO and AI EO, reference-site style transfer, stronger repo
-packaging, website visibility scoring, code review grades, repeatable QA, rights evidence tables, and
-optional MCP tools when a catalog, checklist, or audit would help.
+ship sharper public work: reference-site style transfer, stronger page offers,
+line-edited copy, SEO checks that include AEO and AI EO, repo packaging,
+website visibility scoring, code review grades, repeatable QA, rights evidence
+tables, and optional MCP tools when a catalog, checklist, or audit would help.
 
 ## Short Explanation
 
 Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
 product, design, copywriting, SEO/AEO/AI EO, Suedify, QA, install, launch,
-ambassador, visibility-grading, code-review, agent-commerce,
-and creator-workflow assistant.
+visibility-grading, code-review, agent-team, AI-eval, and creator-workflow
+assistant.
 
 Use the skills directly for normal work. Use the MCP when structure helps:
 skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
@@ -73,8 +74,8 @@ Use this for product and website work:
 
 - Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
 - Johnny Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, design-system QA, visual QA, visibility grading, and the writing stack.
-- Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk — prompted only, never auto-fires.
-- Suede Ship Gate: any-repo CI gate that blocks a merge when required checks fail — prompted only.
+- Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk. Prompted only, never auto-fires.
+- Suede Ship Gate: any-repo CI gate that blocks a merge when required checks fail. Prompted only.
 - Suede SEO Audit: check search intent, answer intent, metadata, schema, links, and trust.
 - Suede Visibility Grader: grade a website or docs page for findability, CTA pull, proof, AI readability, trust, and design signal.
 - Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
@@ -85,7 +86,7 @@ Use this for product and website work:
 
 Use this for artist campaigns and creator rights work:
 
-- Suede Campaign in a Box: package a full artist campaign — rollout phases, copy, content calendar, fan actions, page sections, and next moves.
+- Suede Campaign in a Box: package a full artist campaign across rollout phases, copy, content calendar, fan actions, page sections, and next moves.
 - Suede Sync Packaging: prepare clean review notes for film, TV, ads, games, trailers, or brands without placement promises, clearance claims, outreach claims, or a Suede promo CTA.
 - Suede Release Linter: audit release folders for missing metadata, artwork, masters, lyrics, stems, credits, splits, samples, provenance, and Suede-readiness gaps.
 - Suede Rights Passport: package creator folders into structured transfer material with provenance, credits, splits, license notes, intake JSON, and missing-info reports.
@@ -177,15 +178,17 @@ context helps.
 ```text
 Suede Creator Skills
 
-Design, copy, SEO/AEO/AI EO, Suedify, visibility grading, A-F code grading, MCP, and creator workflows for AI agents.
+Give your agent a product team in one install.
 
-Install the public Suede skills to give Codex a reusable system for sharper product work, better public docs, cleaner websites, reference-site restyling, visibility and CTA grading, structured QA, safer public claims, and creator campaign workflows.
+Install 21 public Suede skills for Suedify, design, copywriting, SEO/AEO/AI EO,
+visibility grading, A-F code grading, agent teams, AI evals, MCP, launch
+packaging, creator campaigns, and rights utilities.
 ```
 
 Primary CTA:
 
 ```text
-Install the public Suede skills
+Install the workflow skill
 ```
 
 Secondary CTAs:
@@ -231,9 +234,9 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 21-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, Suede SEO discoverability, SEO/AEO/AI EO audits, AI eval design, visibility and CTA grading, A-F code grading, QA, public install support, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 21-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, AI eval design, visibility and CTA grading, A-F code grading, agent teams, launch packaging, MCP QA, artist campaign tools, and creator utilities.
 
-Use the skills directly for normal work. Use the MCP only when the task benefits from structured lookup, audit scaffolding, or repeatable QA.
+Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```
 
 ## Website Section Copy

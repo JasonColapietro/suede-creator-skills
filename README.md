@@ -4,28 +4,22 @@
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
-**Suede Creator Skills** is a public 21-skill pack for AI coding agents,
-design-heavy website work, mobile and product surfaces, copywriting, SEO/AEO/AI EO,
-Suedify website restyling, QA, and creator
-workflows. It includes one umbrella workflow, design and copy lanes, Johnny
-Suede writing and design modes, SEO/AEO/AI EO audits, visibility and CTA
-grading, site
-alchemy, A-F Suede code grades, install support, MCP QA, launch packaging,
-ambassador explainers, agent-commerce prep, artist campaign
-tools, and creator utility skills.
+**Suede Creator Skills** is a public 21-skill workflow pack for Codex and
+Claude Code agents. Install it when an agent needs to Suedify a site from a
+reference URL, rewrite copy, audit SEO/AEO/AI EO, grade visibility, review code
+A-F, coordinate agent teams, design AI evals, package launch evidence, or
+prepare creator campaign and rights material without rebuilding the prompt
+stack.
 
-The pack gives an agent a reusable product workflow: taste, page structure,
-copy standards, SEO discipline, reference-site analysis, visual QA, review
-gates, and a way to improve as feedback comes in. In this pack, SEO includes
-AEO and AI EO: search snippets, answer engines, AI summaries, schema,
-sourceable claims, and citation-ready proof. When the agent does something
-that works, tell it what to keep. When it misses, tell it exactly what to
-change. The next pass should self-correct inside the current work session. You
-can also say `Cue Suede` mid-workflow or at the end to bring up choices:
-change something, preserve what worked so the agent can mimic it later, or keep
-as-is by saying nothing. At the end of meaningful work, the agent should give
-two explanations first: a very simple non-coder version, then the usual
-breakdown.
+The pack gives an agent a reusable product workflow: page structure, copy
+standards, reference-site analysis, visual QA, review gates, install paths,
+MCP scaffolds, and a claim-safety boundary. In this pack, SEO includes AEO and
+AI EO: search snippets, answer engines, AI summaries, schema, sourceable
+claims, and citation-ready proof. When the agent does something that works,
+tell it what to keep. When it misses, tell it exactly what to change. You can
+also say `Cue Suede` mid-workflow or at the end to bring up choices: change
+something, preserve what worked so the agent can mimic it later, or keep as-is
+by saying nothing.
 
 Public GitHub users can bring their own company. Use the Johnny Suede umbrella
 modes with a company brief, voice, audience, proof, allowed claims, forbidden
@@ -71,10 +65,9 @@ Creator utility skills for release metadata, provenance, rights passports, and
 royalty notes include evidence tables and severity models for projects that
 need them, but they are support tools, not the headline.
 
-The public page presents the workflow as a Suede Creator Passport: website
-visits, app opens, Discord joins, X follows, Telegram visits, GitHub installs,
-Codex and Claude installs, release linting, transfer packaging, Suede Holder
-context, and Suede signing workflows become stampable participation signals.
+The public site sells the workflow directly: install the umbrella skill, browse
+the 21 skill folders, use MCP only when structured discovery or QA helps, and
+keep legal, payout, registry, and distribution claims outside the public tools.
 
 Suede is creator ownership infrastructure for programmable IP, registry-backed
 media, royalty routing, licensing readiness, and agent commerce. These skills
@@ -88,7 +81,7 @@ signals become stamps, and what intentionally ships later, see
 
 ## Public Page
 
-- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - the actual public documentation generated from this GitHub repository, not a separate marketing site.
+- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - public documentation generated from this GitHub repository, not a separate marketing site.
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
 - [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
@@ -103,8 +96,9 @@ signals become stamps, and what intentionally ships later, see
 
 ## Quick Start
 
-Install the umbrella workflow and call it for design, copy, SEO/AEO/AI EO, or
-Suedify work:
+Install the umbrella workflow first and call it for Suedify, design, copy,
+SEO/AEO/AI EO, visibility grading, code grading, agent teams, AI evals, launch
+packaging, or creator utility work:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -168,13 +162,14 @@ Creator Skills, the optional MCP, install listings, social posts, DMs, email,
 SEO/AEO/AI EO metadata, FAQ answers, objection handling, and safe claim boundaries.
 
 The ambassador rule: explain the outcome first. Suede gives agents a repeatable
-workflow for design, copywriting, SEO/AEO/AI EO, Suedify site restyling, code
-review with A-F Suede grades, visibility and CTA grading, QA, agent-team
-coordination, and optional MCP-assisted discovery. Keep local install details
-such as `@personal` inside technical setup sections.
+workflow for Suedify, design, copywriting, SEO/AEO/AI EO, visibility and CTA
+grading, code review with A-F Suede grades, QA, agent-team coordination, AI
+evals, launch packaging, creator campaign tools, and optional MCP-assisted
+discovery. Keep local install details such as `@personal` inside technical
+setup sections.
 
 Founder context for ambassadors: the workflow was built from live pressure, not
-theory — turning repeated agent failures into reusable rules. The core
+theory, turning repeated agent failures into reusable rules. The core
 conviction is that public work is not done until it is findable across Google,
 Gemini, and AI result surfaces, readable to AI systems, backed by proof, and
 clear enough for a real visitor to act.
