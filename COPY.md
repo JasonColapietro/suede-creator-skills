@@ -28,6 +28,23 @@ A-F, coordinate agent teams with shared context, design AI evals, package
 public docs, run evidence-backed rights utilities, and support creator
 workflows.
 
+### Component stack copy
+
+Suede is the agent workflow that evolves while you use it. It links to your
+preferences instead of bloating one giant memory page, Suedifies a target site
+from a reference URL, turns web/product work into iOS-ready copy and App Store
+metadata, coordinates agent teams through shared evidence, audits SEO/AEO/GEO/AI
+EO, scores visibility at the schema and answer-engine layer, grades code and
+project readiness, packages music/IP material, and uses MCP only when structured
+discovery or QA actually helps.
+
+### Short component line
+
+Linked preferences, Suedify, iOS packaging, communicating agent teams,
+SEO/AEO/GEO/AI EO, schema visibility scoring, A-F code and project grades,
+music/IP utilities, split notes, MCP tools, and Cue Suede feedback loops in one
+portable skill pack.
+
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
@@ -64,6 +81,13 @@ preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, visibility and CTA grades, A-F code review,
 coordinated agent teams, install-path checks, iOS/product checks, artist
 campaigns, and music/IP workflows.
+
+### Hero proof line
+
+Invoke Johnny Suede Write, Design/Create, or Code and the agent gets the whole
+workflow: taste, copy, SEO/AEO/GEO/AI EO, schema checks, code review, project
+grades, MCP scaffolds, iOS packaging, music/IP prep, and the Cue Suede feedback
+loop.
 
 ### Primary CTA
 

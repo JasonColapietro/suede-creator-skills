@@ -24,6 +24,27 @@ keep. When it misses, tell it exactly what to change. You can also say
 preserve what worked so the agent can mimic it later, or keep as-is by saying
 nothing.
 
+The components are the pitch:
+
+- Evolving context: the skill links to preferences and project guidance instead
+  of trapping the agent in one bloated memory page.
+- Suedify: give it a reference URL and a target URL, then push the target
+  toward that aesthetic with your own assets, copy, SEO/AEO/GEO/AI EO, and QA.
+- iOS/product packaging: turn a site or product into iOS-ready copy, App Store
+  metadata, screenshot direction, native-contract checks, and release QA.
+- Communicating agent teams: scout, build, review, verifier, and release lanes
+  share evidence so subagents do not disappear into disconnected silos.
+- Visibility scoring: grade findability, CTA pull, proof, AI readability,
+  schema depth, Google and Gemini result-surface readiness, and brand clarity.
+- Code and project grading: run A-F review across correctness, security, data,
+  UX, deploy readiness, public-claim truth, missing gates, and next fixes.
+- Music/IP suite: package campaigns, metadata, sync prep, rights passports,
+  release lints, provenance, credits, split notes, and intake reports.
+- MCP: use structured skill discovery, install options, SEO/AEO/GEO/AI EO audit
+  scaffolds, QA checklists, and MCP validation only when structure helps.
+- Johnny Suede shortcuts: invoke Write, Design/Create, or Code to load the
+  whole workflow instead of rebuilding the prompt stack.
+
 Public GitHub users can bring their own company. Use the Johnny Suede umbrella
 modes with a company brief, voice, audience, proof, allowed claims, forbidden
 claims, CTA, assets, and reference URLs; the workflow should keep the Suede

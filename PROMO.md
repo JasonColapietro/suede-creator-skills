@@ -21,6 +21,32 @@ checks that include AEO, GEO, and AI EO, exceptional GitHub Pages packaging,
 website visibility scoring, code review grades, repeatable QA, rights evidence
 tables, and optional MCP tools when a catalog, checklist, or audit would help.
 
+The big components deserve the spotlight:
+
+- It evolves with feedback. Say what worked or what missed, and Cue Suede turns
+  that into the next pass instead of letting it rot in vague chat memory.
+- It saves context by linking out to preferences, project rules, and proof
+  instead of packing every instruction into one swollen page.
+- It can take a reference site and your site, then build your site toward the
+  other aesthetic with target-owned content, safe assets, copy, SEO/AEO/GEO/AI
+  EO, and QA.
+- It can turn a web/product surface into an iOS-ready package: copy, screenshots,
+  App Store metadata, native contract checks, and release QA.
+- It coordinates agent teams that communicate through shared evidence instead
+  of running subagents in disconnected silos.
+- It grades public visibility at the schema and answer-engine layer: brand
+  clarity, metadata, proof, AI readability, Google and Gemini result surfaces,
+  CTA pull, and trust.
+- It gives code and project work A-F grades with the missing gates, evidence,
+  and fixes that need to happen before anyone calls it shipped.
+- It includes the creator lane: campaigns, metadata lint, online/search review,
+  sync prep, rights passports, release lints, provenance, credits, split notes,
+  and intake reports.
+- It includes optional MCP tools for structured skill discovery, install
+  choices, SEO/AEO/GEO/AI EO audit scaffolds, QA checklists, and tool validation.
+- It gives you one-command modes: Johnny Suede Write, Johnny Suede Design/Create,
+  and Suede Code load the whole workflow instead of another cold start.
+
 ## Short Explanation
 
 Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
@@ -48,6 +74,9 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Even the GitHub Pages site sells: polished docs, live catalog, install paths, copy bank, schema, sitemap, OG metadata, and mobile QA.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
+- Turn a site into an iOS-ready product set: copy, screenshots, metadata, QA, and release checks.
+- Score your brand at the schema, answer-engine, trust, and visibility layers.
+- Invoke Johnny Suede Write, Design/Create, or Code when you want the whole workflow loaded at once.
 
 ## The Main Story
 
@@ -63,6 +92,8 @@ and a short memory. Suede fixes that by packaging the working system:
 - how it should turn GitHub Pages into a product-grade public surface;
 - how it should adapt a reference site's design grammar safely;
 - how it should audit SEO, AEO, GEO, AI EO, schema, and metadata;
+- how it should score a brand for AI readability, schema depth, and result-surface readiness;
+- how it should turn web work into iOS/App Store-ready packaging;
 - how it should improve when the operator gives feedback;
 - how it should run QA before handoff;
 - how it should run scout, parallel build, adversarial review, consensus review, WIP protection, quality/eval gates, release verification, recovery replay, and evidence handoff loops when a major task needs agent teams that communicate instead of disappearing into silos;
@@ -82,6 +113,7 @@ Use this for product and website work:
 - Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/GEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
 - Johnny Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, GitHub Pages polish, design-system QA, visual QA, visibility grading, and the writing stack.
 - Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk. Prompted only, never auto-fires.
+- Project grading: final pass discipline for design, copy, SEO/AEO/GEO/AI EO, code, launch readiness, proof, and unresolved gates.
 - Suede Ship Gate: any-repo CI gate that blocks a merge when required checks fail. Prompted only.
 - Suede SEO Audit: check search intent, answer intent, GEO/AI answer readability, metadata, schema, links, and trust.
 - Suede Visibility Grader: grade a website or docs page for findability, CTA pull, proof, AI readability, trust, and design signal.

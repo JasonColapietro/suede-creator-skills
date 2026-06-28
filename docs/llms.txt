@@ -1,8 +1,8 @@
 # Suede Creator Skills
 
-> A public, open-source (MIT) pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent portable context and a reusable product workflow: linked preferences, design, anti-slop copywriting, SEO/AEO/GEO/AI EO audits, reference-site restyling (Suedify), exceptional GitHub Pages polish, website visibility and CTA grading, A-F code grading, coordinated agent-team QA, iOS/product checks, launch packaging, music/IP tools, artist-campaign tools, and creator rights utilities. No accounts, no API keys, no config required.
+> A public, open-source (MIT) pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent portable context and a reusable product workflow: linked preferences, evolving Cue Suede feedback, design, anti-slop copywriting, SEO/AEO/GEO/AI EO audits, reference-site restyling (Suedify), exceptional GitHub Pages polish, schema-level website visibility and CTA grading, A-F code and project grading, coordinated agent-team QA, iOS/product packaging, launch packaging, music/IP tools, artist-campaign tools, split notes, and creator rights utilities. No accounts, no API keys, no config required.
 
-Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is part of the proof: the same repo holds the polished landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, and visible founder attribution.
+Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is part of the proof: the same repo holds the polished landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, mobile QA, and visible founder attribution.
 
 Install (Codex / Claude Code skill installer):
 `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`
@@ -22,6 +22,7 @@ Install (Codex / Claude Code skill installer):
 - [Johnny Suede Design](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, GitHub Pages, product UI, dashboards, components, Suedify restyling, and visual QA.
 - [Suede Code Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
 - [Suede Visibility Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
+- Project grading: Final pass for design, copy, SEO/AEO/GEO/AI EO, code, launch readiness, proof, unresolved gates, and next fixes.
 - [Suede AI Eval](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
 - [Suede Agent Teams](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html): Coordinate complex changes into communicating agent lanes with shared context, quality gates, and a signed handoff.
 - Suede Code — Review and grade code in one pass: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md
