@@ -1,28 +1,32 @@
 # Suede Creator Skills Copy Bank
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
-Skills. Lead with the installable product workflow: Suedify reference-site
-restyling, design, anti-slop copywriting, SEO/AEO/AI EO, visibility grading,
-A-F code grading, agent teams, AI evals, launch packaging, optional MCP, artist
-campaigns, and creator rights utilities. Keep claims public-safe. The skills do
-not upload files by default, clear rights, write to a registry, distribute
-music, approve payouts, or promise outcomes.
+Skills. Lead with the real mechanism: portable agent context, linked
+preferences, Suedify reference-site restyling, coordinated agent teams,
+anti-slop copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading,
+GitHub Pages polish, AI evals, launch packaging, optional MCP, iOS/product
+checks, artist campaigns, music/IP metadata, and creator rights utilities. Keep
+claims public-safe. The skills do not upload files by default, clear rights,
+write to a registry, distribute music, approve payouts, or promise outcomes.
 
 ## Repo Copy
 
 ### One-line description
 
-Free Codex and Claude Code skills for Suedify website restyling, design,
-anti-slop copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading,
-agent teams, AI evals, public docs, QA, artist campaigns, and creator utility
+Free Codex and Claude Code skills for portable agent context, Suedify website
+restyling, design, anti-slop copywriting, SEO/AEO/AI EO, GitHub Pages polish,
+visibility grading, A-F code grading, coordinated agent teams, AI evals, QA,
+iOS/product checks, artist campaigns, music/IP metadata, and creator utility
 workflows.
 
 ### Short description
 
-Suede Creator Skills help agents improve websites, rewrite copy, audit
-SEO/AEO/AI EO, grade visibility and CTA strength, adapt reference-site style
-safely, review code A-F, coordinate agent teams, design AI evals, package public
-docs, run evidence-backed rights utilities, and support creator workflows.
+Suede Creator Skills help agents carry preferences across sessions, improve
+websites, rewrite copy, audit SEO/AEO/AI EO, polish GitHub Pages, grade
+visibility and CTA strength, adapt reference-site style safely, review code
+A-F, coordinate agent teams with shared context, design AI evals, package
+public docs, run evidence-backed rights utilities, and support creator
+workflows.
 
 ### Full description
 
@@ -40,25 +44,26 @@ suede-rights-passport, suede-rights-audit).
 
 ### Page title
 
-Suede Creator Skills | Design, Copy, SEO, Suedify
+Suede Creator Skills | Portable Agent Context, Design, SEO, Suedify
 
 ### Meta description
 
-Install free Codex and Claude Code skills for Suedify website restyling,
-mobile and product surfaces, design QA, copywriting, Suede SEO/AEO/AI EO audits,
-visibility grading, A-F code review, public docs, agent teams, and creator
-workflows.
+Install free Codex and Claude Code skills for portable agent context, Suedify
+website restyling, mobile and product surfaces, GitHub Pages polish, design QA,
+copywriting, Suede SEO/AEO/AI EO audits, visibility grading, A-F code review,
+coordinated agent teams, iOS/product checks, and creator workflows.
 
 ### Hero
 
-Give your agent a product team in one install.
+Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 21-skill Suede pack that helps agents adapt reference-site style,
-improve visual systems, rewrite public copy, audit SEO/AEO/AI EO, design AI
-evals, grade visibility and CTA clarity, review code A-F, run agent-team QA,
-check install paths, package artist campaigns, and support creator workflows.
+Install the 21-skill Suede pack that gives agents portable context: linked
+preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
+SEO/AEO/AI EO, AI evals, visibility and CTA grades, A-F code review,
+coordinated agent teams, install-path checks, iOS/product checks, artist
+campaigns, and music/IP workflows.
 
 ### Primary CTA
 
@@ -81,7 +86,8 @@ Install the skills
 
 Install Suede skills from the public GitHub repo, or use the Suede Skills MCP
 for structured skill discovery, install guidance, SEO/AEO/AI EO copy audits,
-visibility and code grading scaffolds, and QA checklists.
+visibility and code grading scaffolds, GitHub Pages QA, and repeatable
+checklists.
 
 ### Page hero
 
@@ -114,18 +120,19 @@ Canonical source: [`PROMO.md`](PROMO.md)
 
 ### Core explanation
 
-Suede gives AI agents a reusable product workflow for design, copywriting,
-SEO/AEO/AI EO, Suedify reference-site restyling, visibility grading, A-F code
-review, QA, public skill installs, local plugin notes, and MCP-assisted
-discovery.
+Suede gives AI agents a portable product workflow: preferences, linked context,
+design, copywriting, SEO/AEO/AI EO, Suedify reference-site restyling, GitHub
+Pages polish, visibility grading, A-F code review, QA, public skill installs,
+local plugin notes, and MCP-assisted discovery.
 
 ### Best overall explanation
 
 Suede is the workflow layer for AI agents that need to ship better public
-product work. It packages Suedify, design direction, copywriting, SEO/AEO/AI EO,
-site alchemy, visibility grading, A-F code grading, agent teams, AI evals, QA,
-public skill installs, progressive feedback handling, and optional MCP support
-into one reusable Suede system.
+product work. It packages linked preferences, Suedify, design direction,
+copywriting, SEO/AEO/AI EO, GitHub Pages polish, site alchemy, visibility
+grading, A-F code grading, coordinated agent teams, AI evals, QA, public skill
+installs, progressive feedback handling, and optional MCP support into one
+portable Suede system.
 
 ### Suedify explanation
 
@@ -133,6 +140,14 @@ Give the agent a reference URL and a target URL. Suedify studies layout,
 hierarchy, spacing, color, interaction cues, and content rhythm, then pushes
 the target toward the reference with Suede design, copy, SEO/AEO/AI EO, and QA
 checks.
+
+### GitHub Pages proof
+
+The Suede Creator Skills site is not a plain docs dump. The GitHub Pages
+surface is part of the product proof: a polished public landing page, install
+guide, skill catalog, copy bank, MCP page, sitemap, schema, Open Graph metadata,
+mobile-tested layout, and visible Jason Colapietro attribution generated from
+the same repo as the skills.
 
 ### Visibility grader explanation
 
@@ -163,9 +178,10 @@ contributor building programmable IP and creator ownership infrastructure.
 When the agent does something you like, name what worked. When it misses, name
 the exact correction. You can say `Cue Suede` during the work or at the end
 to bring up choices: change something, preserve what worked so the agent can
-mimic it later, or keep as-is by saying nothing. Final handoffs should include
-two explanations first: a very simple non-coder version, then the usual
-breakdown.
+mimic it later, or keep as-is by saying nothing. This is how the skill keeps
+evolving around your preferences without turning into one bloated memory page.
+Final handoffs should include two explanations first: a very simple non-coder
+version, then the usual breakdown.
 
 ### Local install note
 

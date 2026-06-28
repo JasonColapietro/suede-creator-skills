@@ -4,22 +4,25 @@
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
-**Suede Creator Skills** is a public 21-skill workflow pack for Codex and
-Claude Code agents. Install it when an agent needs to Suedify a site from a
-reference URL, rewrite copy, audit SEO/AEO/AI EO, grade visibility, review code
-A-F, coordinate agent teams, design AI evals, package launch evidence, or
-prepare creator campaign and rights material without rebuilding the prompt
+**Suede Creator Skills** is a public 21-skill workflow pack that stops an agent
+from working like a blank chat box every time. Install it when Codex or Claude
+needs portable context: your preferences, linked guidance, Suedify from a
+reference URL, sharper copy, SEO/AEO/AI EO, GitHub Pages polish, visibility
+grades, A-F code review, coordinated agent teams, AI evals, iOS/product checks,
+launch evidence, and creator music/IP workflows without rebuilding the prompt
 stack.
 
 The pack gives an agent a reusable product workflow: page structure, copy
 standards, reference-site analysis, visual QA, review gates, install paths,
-MCP scaffolds, and a claim-safety boundary. In this pack, SEO includes AEO and
-AI EO: search snippets, answer engines, AI summaries, schema, sourceable
-claims, and citation-ready proof. When the agent does something that works,
-tell it what to keep. When it misses, tell it exactly what to change. You can
-also say `Cue Suede` mid-workflow or at the end to bring up choices: change
-something, preserve what worked so the agent can mimic it later, or keep as-is
-by saying nothing.
+MCP scaffolds, a claim-safety boundary, and feedback loops that follow the
+work. It keeps context linked and inspectable instead of stuffing every
+preference into one giant prompt. In this pack, SEO includes AEO and AI EO:
+search snippets, answer engines, AI summaries, schema, sourceable claims, and
+citation-ready proof. When the agent does something that works, tell it what to
+keep. When it misses, tell it exactly what to change. You can also say
+`Cue Suede` mid-workflow or at the end to bring up choices: change something,
+preserve what worked so the agent can mimic it later, or keep as-is by saying
+nothing.
 
 Public GitHub users can bring their own company. Use the Johnny Suede umbrella
 modes with a company brief, voice, audience, proof, allowed claims, forbidden
@@ -32,27 +35,34 @@ proof structure, and content rhythm before pushing the target toward the
 reference with brand-safe design, matched screenshots, token distillation,
 copy, SEO, and QA.
 
+Even the GitHub Pages site is part of the pitch. It is not a README that got
+published by accident. The public site ships a polished landing page, docs
+guide, copy bank, skill catalog, MCP page, sitemap, schema, Open Graph assets,
+mobile-tested pages, and visible Jason Colapietro attribution from the same
+repo as the skills.
+
 `johnny-suede-write` is the one-name writing mode: public copy, company voice,
 product and mobile conversion copy, SEO/AEO/AI EO discoverability, CTAs,
 launch copy, social/email variants, and anti-generic line editing with
 Directness, Rhythm, Trust, Specificity, Authenticity, Density, and
-Search/AI readability scoring. `johnny-suede-design` is the one-name design mode: Suedify,
-mobile and product surfaces, product screenshots, UI polish, design-system QA,
-responsive checks, visual QA, visibility grading, implementation handoff,
-company voice, and the full writing mode included.
+Search/AI readability scoring. `johnny-suede-design` is the one-name design
+mode: Suedify, mobile and product surfaces, product screenshots, UI polish,
+design-system QA, responsive checks, visual QA, visibility grading,
+implementation handoff, company voice, and the full writing mode included.
 
 Suede Visibility Grader turns a public page into an A-F visibility and CTA
 brief. It checks whether a site can be found, understood, trusted, cited by AI
-systems, acted on, and promoted with rendered design evidence. Suede Code Grader gives code an A-F ship-risk grade with
+systems, acted on, and promoted with rendered design evidence. Suede Code
+Grader gives code an A-F ship-risk grade with
 the reason why across correctness, security, state, UX, tests, deploy readiness,
 and public-claim truth. Suede Code Review keeps the deeper findings and fix
 brief workflow. Suede Agent Teams adds grouping loops for major work: scout,
-constraints mapping, safe parallel build, adversarial review, consensus review,
-design visibility review, A-F code grading, WIP protection, quality/eval gates,
-release lock, recovery replay, and evidence handoff without lanes stepping on
-the same files. Suede AI Eval turns AI-powered surfaces into measurable
-AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage
-audits.
+constraints mapping, safe parallel build, shared context, adversarial review,
+consensus review, design visibility review, A-F code grading, WIP protection,
+quality/eval gates, release lock, recovery replay, and evidence handoff without
+lanes stepping on the same files or acting like siloed subagents. Suede AI Eval
+turns AI-powered surfaces into measurable AI-SPECs, failure-mode rubrics, eval
+cases, acceptance gates, and coverage audits.
 
 The artist lane turns a song, catalog moment, show, or drop into campaign
 material: era systems, song worlds, hook maps, release stunts, fan rituals,
@@ -81,7 +91,7 @@ signals become stamps, and what intentionally ships later, see
 
 ## Public Page
 
-- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - public documentation generated from this GitHub repository, not a separate marketing site.
+- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) - public documentation generated from this GitHub repository, not a separate marketing site; the page itself is proof of the design/copy/SEO bar.
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [Suede Creator Passport concept](PASSPORT.md)
 - [Suede Ambassador Explainer Pack](PROMO.md) - long-form public guide for ambassadors, founders, builders, agencies, creators, AI power users, Suedify, MCP, skills, social posts, emails, SEO/AEO/AI EO metadata, FAQ, and claim boundaries.
