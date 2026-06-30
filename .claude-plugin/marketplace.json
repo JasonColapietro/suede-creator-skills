@@ -1,0 +1,36 @@
+{
+  "name": "suede",
+  "description": "Agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. 21 MIT-licensed skills.",
+  "owner": {
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "plugins": [
+    {
+      "name": "suede-skills",
+      "source": "./",
+      "description": "Agent skills for Claude Code and Codex. Orchestrate multi-agent build lanes with quality gates and a signed handoff (suede-agent-teams), run end-to-end workflows (suede-workflow-skills), get code review plus a blunt A-F ship grade (suede-code, suede-code-review, suede-code-grader, suede-ship-gate), design measurable AI evals (suede-ai-eval), and ship public-facing work with the design, copy, SEO, and visibility lanes. Installs all 21 skills. Also includes a creator toolkit for music rights and release prep."
+    },
+    {
+      "name": "suede-agent-workflows",
+      "source": "./",
+      "skills": [
+        "./skills/suede-agent-teams",
+        "./skills/suede-workflow-skills",
+        "./skills/suede-ai-eval"
+      ],
+      "description": "Multi-agent orchestration subset: coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+    },
+    {
+      "name": "suede-code",
+      "source": "./",
+      "skills": [
+        "./skills/suede-code",
+        "./skills/suede-code-review",
+        "./skills/suede-code-grader",
+        "./skills/suede-ship-gate"
+      ],
+      "description": "Code quality subset: one-pass review plus an A-F ship verdict (suede-code), deep findings with TypeScript, React, Next.js, OWASP, and database checklists (suede-code-review), a grade-only verdict with instant-F triggers and grade caps (suede-code-grader), and CI branch protection that gates the merge (suede-ship-gate)."
+    }
+  ]
+}
