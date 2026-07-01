@@ -8,10 +8,12 @@ description: "Write copy that earns the click. 12 headline formulas, 5 persuasio
 ## When to use this skill instead of related skills
 - **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
 - **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization)
-- **suede-growth** _(private Suede Labs skill — not included in this pack)_: multi-email campaign sequences and campaign performance reporting
-- **suede-deslop** _(private Suede Labs skill — not included in this pack)_: post-production pass to strip AI writing patterns from already-written copy
+- Multi-email campaign sequences and campaign performance reporting: (use suede-growth — private)
+- Post-production pass to strip AI writing patterns from already-written copy: (use suede-deslop — private)
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
+
+**Core principle:** every claim is verifiable or it gets cut, and nothing ships below its score threshold.
 
 ## Company Brief
 
@@ -505,6 +507,16 @@ Score:
 Ready: yes | with caveats | no
 ```
 
+## Red Flags — Stop
+
+If any of these thoughts appear, stop and run the gate you were about to skip:
+
+- "This draft is already clean, skip the word list." Run the substitution table anyway; slop hides in clean-feeling drafts.
+- "It's only microcopy, no need to score it." Buttons and empty states get more reads than blog posts. Score everything that ships.
+- "That stat is probably right." Probably is not proof. Cut it or flag it for the human.
+- "The score feels like a 60." Score each dimension in writing or the total is fiction.
+- "The client wants more energy." Energy fails the gate; specificity converts and still reads confident.
+
 ## Ship Gate
 
 Do not ship copy when:
@@ -513,6 +525,14 @@ Do not ship copy when:
 - the page promises a feature the product does not implement
 - proof is fake or unverified
 - the copy hides a legal, payment, privacy, or release caveat
-- the writing sounds generic enough to belong to any AI product
+- the score is below 58/70, or below 62/70 for public launch, homepage, GitHub, App Store, or investor-adjacent surfaces
+- the copy fails the competitor-swap test: swap in a competitor's name and it still reads true
 
 End with the exact copy, not a long explanation of the copy.
+
+## Routing
+
+- Copy needs the full stack (SEO/AEO pass, multi-surface job, voice retune) → johnny-suede-write
+- Copy ships inside a design build → johnny-suede-design (suede-design for token or component decisions)
+- Words are done but the page still underperforms → suede-site-alchemy
+- Public launch surface → suede-visibility-grader for the A-F grade before it goes live

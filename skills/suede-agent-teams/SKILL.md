@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence.
+description: "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence. Use when work needs parallel agents or multiple coordinated lanes — an auth rewrite, payment integration, data migration, performance audit, or public launch review — or when parallel edits could collide with dirty WIP. NOT FOR: single-lane code review or grading (use suede-code); wiring CI and branch protection (use suede-ship-gate)."
 ---
 
 # Agent Team Orchestrator
@@ -390,6 +390,15 @@ Stop the loop, surface the condition, and wait for human sign-off before continu
 
 No agent may override an escalation threshold by re-scoping the task or declaring the condition resolved without human confirmation.
 
+## Red Flags — Stop
+
+- "The lanes probably won't touch the same files" — probably is not a lane map. Run WIP collision detection first.
+- "The approach is obvious, skip the RFC" — if it has been discussed twice without resolution, it is not obvious.
+- "Mark it done, the code is written" — `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
+- "Leave that caveat out so the handoff looks clean" — a handoff missing a field is status `held`, not done.
+- "One more fix cycle will crack it" — past 3 cycles on the same failing check, stop and run the loop stall protocol.
+- "The builder can review its own lane" — for high-risk work, builder and reviewer stay separate.
+
 ## Handoff Quality Checklist
 
 A handoff is not complete until every field below is present and truthful. The handoff writer signs off by confirming each item.
@@ -442,3 +451,10 @@ Status:
 Next:
 Cue Suede:
 ```
+
+## Routing
+
+- A code lane needs review or a ship grade → **suede-code** (combined), **suede-code-review** (findings only), or **suede-code-grader** (grade only)
+- The repo's merge gate is weak or missing → **suede-ship-gate**
+- A lane ships AI behavior → **suede-ai-eval** before that lane's quality gate closes
+- The public launch lane needs a page verdict → **suede-visibility-grader**, then **suede-launch-packaging**

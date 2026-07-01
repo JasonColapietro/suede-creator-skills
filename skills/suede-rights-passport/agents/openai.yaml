@@ -2,7 +2,7 @@ interface:
   display_name: "Creator Rights Package Builder"
   short_description: "Build offline creator rights packages."
   brand_color: "#D71920"
-  default_prompt: "Use $suede-rights-passport to organize this creator project into a rights and provenance package."
+  default_prompt: "Use $suede-rights-passport to organize this creator project into a rights and provenance transfer package — flagging unknown or unconfirmed rights facts without clearing them."
 
 policy:
   allow_implicit_invocation: true

@@ -1,13 +1,13 @@
 ---
 name: johnny-suede-write
-description: Write anything Suede ships and earn the click. Routes any writing request — long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and public explainer talk-tracks — through mode-specific structure, 12 headline formulas, 5 persuasion frameworks, A/B variants, an anti-slop gate, and a copy score. Use when you need to write, rewrite, edit, align to the house voice, generate headlines or CTAs or subject lines, draft social or email or README or product listing copy, or hand a public user hype-free words to explain Suede. Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
+description: "Write anything Suede ships and earn the click. One skill for every writing surface: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and public explainer talk-tracks, with persuasion frameworks, headline and CTA formula banks, A/B variants, an anti-slop gate, and a copy score before delivery. Use when you need to write, rewrite, or edit copy, align copy to the house voice, generate headlines, CTAs, or subject lines, draft social, email, README, or product listing copy, or hand a public user hype-free words to explain Suede. NOT FOR: a single standalone conversion surface with no SEO pass (use suede-copy); copy that ships inside a design or layout build (use johnny-suede-design). Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes."
 ---
 
 # Johnny Suede Write
 
 The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice alignment, and public explainer talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
 
-Write copy that earns its place on the page: concrete nouns, buyer-visible outcomes, real proof, one primary action. Nothing decorative.
+**Core principle:** copy earns its place on the page with concrete nouns, buyer-visible outcomes, real proof, and one primary action. Nothing decorative, nothing invented.
 
 ## Pick The Lane (Router)
 
@@ -22,9 +22,11 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 | Audit/review existing copy and return findings + score | **Copy Audit** output shape |
 | Do a metadata/structure/copy-quality SEO pass alongside copy | **SEO And GitHub Copy** + **SEO Audit Mode** |
 
+**Drop down instead of running this stack:** for a single standalone conversion surface (one email, one hero, one button set) with no SEO pass and no voice retune, run `$suede-copy` directly. When the copy ships inside a design or layout build, run `$johnny-suede-design`; its Copy lane applies these rules.
+
 Cross-lane jobs (e.g. "rewrite the homepage, retune it to our voice, and give me social variants") run sequentially with shared context: write the surface, run Brand-Voice Alignment on it, then spin variants. State the chain you ran.
 
-If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a design push toward a reference URL, or a code grade/review, those live in dedicated skills outside this writing enchilada (`$suede-seo-audit`, `$suede-site-alchemy`, `$suede-visibility-grader`, `$suede-design`, `$suede-code-grader`, `$suede-code-review`, `$suede-agent-teams`, or `$suedify` _(private Suede Labs skill — not included in this pack)_). Route there and pass full context; do not reimplement them here. This skill owns the writing.
+If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a code grade/review, or a reference-URL restyle, those live in dedicated skills outside this writing enchilada (`$suede-seo-audit`, `$suede-site-alchemy`, `$suede-visibility-grader`, `$suede-code-grader`, `$suede-code-review`, `$suede-agent-teams`, `$suede-design`, or `$johnny-suede-design` and its Suedify lane for restyles). Route there and pass full context; do not reimplement them here. This skill owns the writing.
 
 ## Multi-Agent Default
 
@@ -55,13 +57,13 @@ Identify the mode before writing. Each mode has a different structure, length, a
 - Open with the most specific claim or result, not the setup.
 - No "excited to announce." No "thrilled to share." No em dashes.
 - Deliver: main post + short variant + CTA + 3 hook variants.
-- Platform-specific: Twitter/X = 280 chars max per post; LinkedIn = first 2 lines must hook before "more"; Instagram = hook before visual. Full per-platform structures live in **Social Post Formats**.
+- Platform structures and limits: read `references/email-and-social-formats.md`.
 
 **Email / DM** (cold outreach, launch email, nurture, public explainer brief)
 - Subject line is the headline. Write it last.
 - Open with the reader's problem, not the sender's news.
 - One ask per email. One CTA.
-- Deliver: subject (3 variants) + preview text + body + CTA + P.S. line. Full mechanics live in **Email Copy**.
+- Deliver: subject (3 variants) + preview text + body + CTA + P.S. line. Full mechanics: read `references/email-and-social-formats.md`.
 
 ## Before Writing
 
@@ -128,52 +130,18 @@ Match framework to surface and reader temperature. State the chosen framework an
 
 ## Headline Formulas
 
-Generate 3 headline candidates minimum for any hero or email subject. Pick the formula that matches the reader's state and the page's job.
+Generate 3 headline candidates minimum for any hero or email subject, each from a different formula. Read `references/headline-and-cta-formulas.md` for the 12-formula bank with structures and examples (curiosity gap, number-led specificity, how-to outcome, because, specificity anchor, before-after, real question, objection flip, if-then, claim with proof hook, problem named exactly, authority plus specificity).
 
-| # | Formula | Structure | Example |
-|---|---------|-----------|---------|
-| 1 | Curiosity gap | [Intriguing partial claim] | "Most release folders fail the first licensing check. Here's why." |
-| 2 | Number-led specificity | [#] [specific thing] [timeframe/condition] | "12 rights fields missing from your release. Suede finds them in 60 seconds." |
-| 3 | How-to outcome | How to [achieve outcome] [without/with condition] | "How to package a release folder that licensing teams can actually use" |
-| 4 | Because | [Result] because [mechanism] | "Agents can read your music rights because Suede structures the provenance first." |
-| 5 | Specificity anchor | [Exact number or name] + [claim] | "47 fields. One linter. No guessing." |
-| 6 | Before-After | [Before state] → [After state] | "Scattered files and a split sheet in a Google Doc → a machine-readable rights package" |
-| 7 | Question (real, not rhetorical) | [Question reader actually asks] | "What does a licensing team check before they sign?" |
-| 8 | Objection flip | [Common objection] + [reframe] | "Rights metadata sounds like legal work. It's a 10-minute audit." |
-| 9 | If-then conditional | If [specific situation], then [specific outcome] | "If your release goes to a sync library, this is the metadata they'll reject first." |
-| 10 | Direct claim with proof hook | [Bold claim] + [verifiable detail] | "Suede reads your folder. You get ISRC, split, and flags before you pitch." |
-| 11 | Problem named exactly | [Specific failure mode the reader fears] | "Your ISRC is assigned. Your split sheet is a PDF. Neither is machine-readable." |
-| 12 | Authority + specificity | [Who trusts this] + [for what exact task] | "The metadata structure sync licensing teams check on day one." |
-
-Test: swap your product name for a competitor's. If the headline still works, it is not specific enough.
+Gate: swap your product name for a competitor's. If the headline still works, it is not specific enough. Rewrite before scoring.
 
 ## Persona Mode
 
 State the persona before writing. It changes vocabulary, proof type, and CTA framing. If multiple personas share a page, write the hero for the decision-maker and include practitioner proof in the secondary section.
 
-**Decision-maker** (exec, founder, buyer, investor)
-- Lead: outcome and cost of inaction, in revenue/risk/time terms.
-- Proof: outcomes, not features ("Cut release prep from 3 days to 40 minutes"); case study, metric, named customer.
-- CTA: low-risk, high-clarity ("See the workflow," "schedule," "commit," "sign") — not "Transform your process."
-- Skip: implementation details, CLI commands, technical jargon.
-
-**Practitioner** (developer, designer, operator, creator)
-- Lead: how it works, not why it matters.
-- Proof: commands, file paths, schema examples, error outputs, reproducible steps.
-- CTA: direct action ("Run the linter," "Fork the skill," "install," "clone," "run").
-- Skip: ROI language, vague transformation claims.
-
-**Skeptic** (comparison shopper, previously burned, evaluating an alternative)
-- Lead: the objection, named directly ("Every tool claims to solve this. Here's what's different.").
-- Proof: third-party verifiable, not internal ("Open the script. Read the output."); constraint acknowledgment + specific differentiator.
-- CTA: zero-pressure ("Read the code," "Run it yourself," "compare," "read the docs").
-- Skip: hype, superlatives, bold claims without evidence.
-
-**Creator / end-user** (non-technical)
-- Lead: what changes for them, in plain language.
-- Proof: before/after in human terms ("Your release looks like this. After Suede, it looks like this.").
-- CTA: lowest-friction path ("Try it with one release folder").
-- Skip: technical vocabulary, command syntax, implementation framing.
+- **Decision-maker** (exec, founder, buyer, investor): lead with outcome and cost of inaction in revenue/risk/time terms; proof is outcomes and named results, not features ("Cut release prep from 3 days to 40 minutes"); CTA low-risk and high-clarity ("See the workflow"); skip implementation details and CLI commands.
+- **Practitioner** (developer, designer, operator, creator): lead with how it works, not why it matters; proof is commands, file paths, schema examples, error outputs; CTA direct ("Run the linter", "Fork the skill"); skip ROI language and vague transformation claims.
+- **Skeptic** (comparison shopper, previously burned): lead with the objection, named directly ("Every tool claims to solve this. Here's what's different."); proof is third-party verifiable ("Open the script. Read the output."); CTA zero-pressure ("Read the code", "Run it yourself"); skip hype and superlatives.
+- **Creator / end-user** (non-technical): lead with what changes for them, in plain language; proof is before/after in human terms; CTA lowest-friction ("Try it with one release folder"); skip technical vocabulary and command syntax.
 
 Default to practitioner for GitHub/docs copy, decision-maker for sales/landing pages, and skeptic for competitive or comparison copy.
 
@@ -194,140 +162,23 @@ For a page, README, or docs surface, build this spine. For a small section, use 
 
 For any headline, CTA, subject line, or hero copy: generate 3 variants by default unless the user specifies otherwise. Label each variant, state which axis it targets, and recommend one. Let the user pick rather than guessing.
 
-Variant axes:
-- **Specificity axis:** one abstract, one mid-spec, one hyper-specific with a concrete number or named proof.
-- **Register axis:** one founder voice, one product voice, one skeptic-facing (answer the objection in the line itself).
-- **Length axis:** long (full thought), medium (compressed), short (one punch).
+Variant axes: specificity (one abstract, one mid-spec, one hyper-specific with a concrete number or named proof); register (founder voice, product voice, skeptic-facing); length (long full thought, medium compressed, short one punch).
 
-### A/B Variant Generation (by surface)
-
-For high-stakes copy, always generate variants:
-
-**Headlines** — 3 variants, different angles:
-1. Outcome-led: what the reader achieves.
-2. Problem-led: what the reader escapes.
-3. Mechanism-led: what makes this different.
-
-**CTAs** — 2 variants minimum. See CTA Formulas.
-
-**Email subjects** — 3 variants:
-1. Curiosity or benefit.
-2. Social proof or number.
-3. Direct question or challenge.
+Per surface: headlines get 3 angles (outcome-led, problem-led, mechanism-led); CTAs get 2 variants minimum; email subjects get 3 (curiosity or benefit; social proof or number; direct question or challenge).
 
 ## CTA Formulas
 
-CTAs fail when they describe the button, not the outcome. Every CTA answers: "What happens the moment I click this?"
+Every CTA answers: "What happens the moment I click this?" Four formulas with examples live in `references/headline-and-cta-formulas.md`: verb + immediate result; verb + object + benefit; low-commitment framing (skeptic/discovery); stakes-aware framing (decision-maker).
 
-**Formula A: Verb + immediate result** — [Action verb] + [what they get or see right now]
-- "Run the audit. Get your grade in 60 seconds."
-- "Fork the skill. Live in your Codex in under a minute."
-- "Paste your folder path. See your rights gaps."
+Anti-patterns to cut: "Get started" (started what?); "Learn more" (more about what?); "Sign up" (for what, exactly?); "Try for free" without naming what they're trying; any CTA with an exclamation point.
 
-**Formula B: Verb + object + benefit** — [Verb] + [specific object] + [value unlocked]
-- "Register a release. Make it readable to licensing agents."
-- "Install the skill. Audit any repo from your terminal."
-- "Download the schema. Stop building it by hand."
+Gate: describe what happens after clicking in 3 words. If you cannot, the CTA is too vague.
 
-**Formula C: Low-commitment framing** (skeptic / discovery stage) — [Passive discovery verb] + [what they'll see, not what they'll do]
-- "See how rights routing works" / "Read the spec" / "Open the repo" / "Watch a 90-second demo"
+## Email And Social Formats
 
-**Formula D: Stakes-aware framing** (decision-maker) — [Verb] + [outcome in their language]
-- "Start the audit before the pitch" / "Get the split sheet the label actually needs" / "Ship the release with provenance attached"
+Read `references/email-and-social-formats.md` before drafting any email, DM, LinkedIn, X/Twitter, or Instagram copy: subject-line formulas, preview-text rules, the 5-part email body structure, unsubscribe-reduction sequence, and per-platform post structures with formatting limits.
 
-**Anti-patterns to cut:** "Get started" (started what?); "Learn more" (more about what?); "Sign up" (for what, exactly?); "Try for free" without naming what they're trying; any CTA with an exclamation point.
-
-The 3-word test: describe what happens after clicking in 3 words. If you cannot, the CTA is too vague.
-
-## Email Copy
-
-### Subject Line Formulas
-Subject lines win opens on three mechanics: curiosity, self-interest, or specificity. Pick one per line. Write the subject last.
-
-**Curiosity:** "[Specific thing most people miss]" · "The [category] rule that [counterintuitive result]" · "What happens when [specific scenario]"
-**Self-interest:** "[Outcome] in [time] without [obstacle]" · "How [audience segment] [achieved result]" · "Your [specific thing] is [state]. Here's the fix."
-**Specificity anchor:** "[#] [specific mistakes/fields/steps] in your [thing]" · "[Exact name of thing]: [what it becomes]"
-**Avoid:** rhetorical questions ("Are you ready to take your music to the next level?"); all-caps words; "Re:" faking a reply thread; emojis in subject lines for B2B or technical audiences.
-
-### Preview Text
-A second subject line. Add information, don't echo the subject.
-- Subject: "12 metadata fields your release is missing"
-- Preview: "The ones sync libraries check before they respond."
-
-Keep preview text under 90 characters. If the client truncates at 40, the first 40 must stand alone.
-
-### Body Structure
-```text
-Hook (1-2 sentences): Name the problem or opportunity at the exact moment the reader is experiencing it.
-Proof or evidence (2-4 sentences): Specific, not general. One example beats three claims.
-Bridge (1 sentence): Connect the proof to the offer.
-CTA (1 sentence + link): One action, one link. No secondary options in the primary CTA block.
-P.S. (optional): Use for a single secondary offer or a time constraint. Not both.
-```
-
-### Unsubscribe-Reduction
-- Match email content to the opt-in promise. Topic or frequency drift is the primary unsubscribe driver.
-- Segment before sending. A technical how-to sent to decision-makers who opted in for strategy reads as list mismanagement.
-- Run a re-engagement sequence before suppressing inactive subscribers: three emails over 30 days (one value, one direct question, one break-up). Suppress non-openers after the sequence.
-
-## Social Post Formats
-
-### LinkedIn
-**Hook line (first 2 lines before "see more"):** The hook is the post. If the first two lines do not earn the click to expand, the rest does not matter.
-- Works: specific observation, counterintuitive claim, single concrete number, named failure mode.
-- Fails: vague industry wisdom, rhetorical questions, inspirational openers, "I'm excited to share."
-
-**Post structure:**
-```text
-[Hook: one specific claim, observation, or question]
-[2-4 line break]
-[Insight or story: 3-6 short paragraphs, one idea each]
-[Takeaway: what the reader does with this]
-[CTA: one, low-friction. "What's your experience?" or a link, not both]
-```
-**Formatting:** short paragraphs (1-2 sentences max); no bullet lists longer than 5 items; one link max (in comments if the algo penalizes in-post links); 1-2 targeted hashtags max, at the end.
-
-### X / Twitter
-**Standalone tweet:** `[Specific observation or fact] + [one implication or action]` — max 240 characters. If it reads like a self-contained thought from someone who knows something, it is working.
-
-**Thread opener:**
-```text
-[Bold specific claim]
-
-[Thread: number + what the reader gets]
-"Here's how it works, step by step:"
-```
-The opener must be the strongest tweet in the thread. Do not save the best point for tweet 5.
-
-**Reply to trend or news:**
-```text
-[Acknowledge the news in 1 sentence]
-[Specific take from your vantage point]
-[Optional: link to your related resource]
-```
-
-### Instagram
-**Product / feature reveal:**
-```text
-[Name what it does in one sentence (the hook)]
-[Why that matters for this specific audience]
-[One specific proof point or use case]
-[CTA in bio or link sticker]
-```
-**Behind-the-scenes / process:**
-```text
-[Name the specific moment or decision shown]
-[What you learned or chose and why]
-[Invitation: "What would you have done?"]
-```
-**Testimonial / social proof:**
-```text
-[Lead with the result, not the quote]
-[Quote or paraphrase the proof]
-[Bridge to your offer]
-[CTA]
-```
-**Caption rules:** first line must read as a complete thought (IG shows 1-2 lines before "more"); hashtags in the first comment or at the end after a line break, never inside body copy; no more than 10 hashtags per post.
+Non-negotiables that survive the summary: write the subject last; one ask and one CTA per email; preview text adds information instead of echoing the subject; the first two lines of a social post are the post; open with the most specific claim, never the setup.
 
 ## Suede Voice
 
@@ -419,44 +270,11 @@ When the copy workflow includes an SEO pass (metadata, structure, or copy qualit
 
 Run this as a line-edit gate before delivery, not a vibe check.
 
-### Word Substitution List
-Make these swaps. Non-negotiable.
-
-| Cut | Replace with |
-|-----|-------------|
-| utilize | use |
-| leverage (as verb) | use, apply, run |
-| seamless | remove or prove it: "no export step", "one command" |
-| powerful | prove it: "processes 10k records in 4 seconds" |
-| innovative | cut; name the innovation instead |
-| revolutionary | cut entirely |
-| game-changing | cut entirely |
-| solution | name what it actually does |
-| ecosystem | platform, system, toolchain (pick the accurate one) |
-| empower | cut; say what the person now controls |
-| unlock | cut; say what was blocked and is now accessible |
-| streamline | speed up, cut the step, reduce from X to Y |
-| intuitive | cut; prove it with a UX detail |
-| robust | cut; name the specific capability |
-| best-in-class | cut; or supply the benchmark |
-| next-generation | cut; name what changed |
-| cutting-edge | cut entirely |
-| world-class | cut; or name the credential |
-| end-to-end | name the actual start and end |
-| holistic | cut; describe the scope instead |
-| scalable | prove it: "handles X at Y load" |
-| simple / simply / just / easy | cut or prove it with a step count |
-| we believe / we think | cut; make the assertion directly |
-| in order to | to |
-| due to the fact that | because |
-| at this point in time | now |
-| going forward | cut; state the new behavior directly |
-| synergy / synergistic | cut entirely |
-| value-add | name the value |
-| best practices | name the practice |
+### Word Substitution Gate
+Apply every swap in `references/word-substitution-list.md` (29 entries: utilize→use, leverage→run, seamless/powerful/innovative/robust→prove or cut, and the rest). Non-negotiable, on every draft, including drafts that feel clean.
 
 ### Readability Gate
-Aim for Flesch-Kincaid Grade Level 8-10 for B2B general audiences, Grade 6-8 for consumer audiences and onboarding, Grade 10-14 for technical/developer audiences where precision requires complexity. Average sentence length under 18 words for consumer; under 22 words for B2B. Flag paragraphs over 4 sentences.
+Flesch-Kincaid Grade 8-10 for B2B general audiences; Grade 6-8 for consumer/onboarding; Grade 10-14 for technical/developer copy where precision requires complexity. Average sentence length under 18 words for consumer, under 22 for B2B. Flag paragraphs over 4 sentences.
 
 ### Structure Gate
 Rewrite: binary setup lines; negative listing that defines the product by what it is not; formulaic "not X, but Y" pivots; false transformation arcs; dramatic fragments; rhetorical questions that answer themselves; three-item cadence when two items work; repeated punchy paragraph endings; Wh-starter crutches when a direct actor and verb work better.
@@ -464,19 +282,12 @@ Rewrite: binary setup lines; negative listing that defines the product by what i
 ### Actor Gate
 Name who does the action. Prefer the creator, operator, buyer, agent, page, repo, workflow, file, command, route, or proof artifact.
 - Weak: `The page converts traffic.` → Better: `The page routes visitors to the audit, the proof link, or the build request.`
-- Weak: `The market rewards provenance.` → Better: `Licensing teams can inspect the provenance trail before they ask for the split sheet.`
 
 ### Rhythm Gate
-- Keep one idea per sentence.
-- Vary sentence length without using em dashes.
-- Do not stack slogans where a concrete sentence would build more trust.
-- Cut lazy extremes such as `always`, `never`, `everything`, `nothing` unless the claim is literally true.
+One idea per sentence. Vary sentence length without em dashes. Do not stack slogans where a concrete sentence would build more trust. Cut lazy extremes (`always`, `never`, `everything`, `nothing`) unless the claim is literally true.
 
 ### Pull-Quote Gate
-If a line sounds manufactured for a quote card, rewrite it with a real artifact, action, or proof point.
-- Weak: `The future of creator ownership is here.` → Better: `Suede turns a release folder into rights, provenance, split, and licensing evidence an agent can read.`
-- Weak: `We're changing how music rights work.` → Better: `Paste a folder path. Suede returns your ISRC status, missing fields, and a split-ready JSON file.`
-- Weak: `Built for the next generation of creators.` → Better: `A sync licensing team can open your release folder and read every rights claim without calling you.`
+If a line sounds manufactured for a quote card, rewrite it with a real artifact, action, or proof point. Weak: `The future of creator ownership is here.` Better: `Suede turns a release folder into rights, provenance, split, and licensing evidence an agent can read.` More weak/better pairs live in `references/word-substitution-list.md`.
 
 ## Claim Safety
 
@@ -523,18 +334,9 @@ Final CTA:
 Claim boundaries:
 ```
 
-For social, email, or public explainer copy:
-```text
-Register:
-Persona mode:
+For social, email, or public explainer copy: Register / Persona mode / Main copy / Short version / CTA / Proof links / Subject variants (email: 3 options) / Claim boundaries.
 
-Main copy:
-Short version:
-CTA:
-Proof links:
-Subject variants (email): [3 options]
-Claim boundaries:
-```
+For GitHub skill copy: Skill / One-line description / Reader / Primary action / Repo-Docs copy / Install CTA / SEO title / Meta description / Keywords / Safety boundary.
 
 For a copy audit:
 ```text
@@ -546,20 +348,6 @@ Claims to preserve:
 Claims to avoid:
 Copy score:
 Ship gate: ship | ship-with-caveats | hold
-```
-
-For GitHub skill copy:
-```text
-Skill:
-One-line description:
-Reader:
-Primary action:
-Repo/Docs copy:
-Install CTA:
-SEO title:
-Meta description:
-Keywords:
-Safety boundary:
 ```
 
 ## Score Before Handoff
@@ -579,6 +367,16 @@ Two lowest dimensions: [name them]
 Revised: yes / no
 ```
 
+## Red Flags — Stop
+
+If any of these thoughts appear, stop and run the gate you were about to skip:
+
+- "This draft is clean, skip the word list." Run it anyway; the gate exists because clean-feeling drafts hide slop.
+- "The mode is obvious, no need to state it." Stating mode, persona, and framework is what keeps the structure honest.
+- "It's one button label, skip the score." Microcopy ships to more readers than the blog post.
+- "That claim is close enough." Close enough is invented proof. Cut it or flag it.
+- "The user is in a hurry, deliver without variants." Variants are the deliverable for headlines, CTAs, and subjects.
+
 ## Ship Gate
 
 Do not ship copy when:
@@ -586,7 +384,15 @@ Do not ship copy when:
 - the page promises a feature the product does not implement
 - proof is fake or unverified
 - the copy hides a legal, payment, privacy, or release caveat
-- the writing sounds generic enough to belong to any AI product
+- the score is below 58/70, or below 62/70 for public launch, homepage, product listing, GitHub, investor-adjacent, or public explainer surfaces
+- the copy fails the competitor-swap test: swap in a competitor's name and it still reads true
+
+## Routing
+
+- One standalone conversion surface, no SEO pass → suede-copy
+- The surface needs design or layout work too → johnny-suede-design
+- Full standalone SEO/AEO audit → suede-seo-audit; A-F page grade before launch → suede-visibility-grader
+- Copy approved and ready to publish as a release → suede-launch-packaging
 
 ## End of Work
 

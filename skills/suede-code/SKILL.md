@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release. NOT FOR: findings-only review with Accessibility/SEO lanes (use suede-code-review); grade-only with no findings (use suede-code-grader)."
+description: "Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release. NOT FOR: findings-only review with Accessibility/SEO lanes (use suede-code-review); grade-only with no findings (use suede-code-grader); wiring CI or branch protection (use suede-ship-gate)."
 ---
 
 # Suede Code
@@ -9,10 +9,11 @@ One pass for code: a deep, evidence-based review **and** a blunt A-F ship grade,
 
 **Runs only when asked.** This skill never auto-fires on a diff, a save, or a commit. Invoke it explicitly (review this, grade this, security-check this, is this safe to ship). Do not run it as a side effect of other work.
 
-## Operating Stance
-
 ## Model Routing
+
 Default: Sonnet. Recommend Opus for auth, payments, and public API surface reviews.
+
+## Operating Stance
 
 - Review current source, current diff, local docs, and relevant runtime behavior.
 - Keep code generation and review separate. If you authored the code, switch into review mode and look for what your implementation would miss.
@@ -66,7 +67,7 @@ State the depth level at the top of every output.
 
 ## Step 1 — Instant-F Triggers (check before scoring anything)
 
-Any single match is an automatic **F**. Stop, report the file and line, and do not grade the remaining lanes — the grade cannot be raised by other lanes.
+Any single match is an automatic **F**. Stop, report the file and line, and do not grade the remaining lanes — the grade cannot be raised by other lanes. This list is the canonical copy; suede-code-grader carries the identical list — change both together.
 
 **Secrets and credentials** — hardcoded API key/secret/token/password in committed source; private key or certificate committed; OAuth/signing secret outside a secret manager.
 **Injection** — SQL built by string concatenation with user input; shell command from user input via exec/spawn/eval; template rendered with unescaped user input where XSS is reachable.
@@ -109,6 +110,8 @@ Score each lane A-F, then one overall. For non-Suede work, substitute "domain tr
 
 **Grade meaning:** **A** all lanes pass, runtime-verified, no follow-ups. **B** no blockers, named bounded follow-ups. **C** a real defect or unverified risk that could surface in production — hold until fixed. **D** a serious defect likely to cause data loss, auth bypass, broken payments, or user-visible failure — do not ship. **F** breaks core behavior, hits an Instant-F, or critical-surface evidence is absent.
 
+**Gate follows the grade, mechanically:** A → `ship`; B → `ship-with-caveats`; C, D, F → `hold`. A Deploy Safety block (Step 5) also forces `hold` regardless of grade.
+
 **Grade caps by surface** (state explicitly when they apply):
 - **Auth** (login, session, token, middleware, roles) — A needs the bypass/escalation path tested, not just happy path; B needs happy-path + named caveats; else cap **C**.
 - **Payment/wallet** (checkout, subscription, refund, payout, transfer, webhook) — A needs error paths tested (failed charge, declined, replay) + server-side amount/recipient validation + no silent swallowing; B needs happy-path + documented error-path risk; else cap **C**.
@@ -147,6 +150,17 @@ Auth/session behavior across app, API, native shells, and server · creator righ
 
 Confirm the diff delivers what it claims — map each acceptance criterion to code or a test; unbacked claims are a P1 truth gap — and flag scope creep (unrelated refactors, bundled dep bumps, formatting sweeps that bury the change); recommend splitting an over-large PR. Before emitting, self-check: every finding has a file:line + fix, nothing duplicates a gate's job, low-confidence style notes collapse into one "nitpicks" line, and anything that would not move the ship decision is cut.
 
+## Red Flags — Stop
+
+Catch yourself thinking any of these and re-run the gate you were about to skip:
+
+- "CI is green, so it's fine" — CI that never exercised the changed behavior is not evidence.
+- "The diff is small" — small diffs touch auth and payments too; Instant-F triggers run every time.
+- "I wrote this, I know it works" — switch into review mode and hunt what your implementation would miss.
+- "The author explains the intent well" — intent is not a test, a readback, or a screenshot.
+- "It was hard work, round up to B" — effort never moves a grade; evidence does.
+- "Skip the deploy gate, it's just a copy change" — Step 5 runs at the end, every time.
+
 ## Output Shape
 
 Lead with a **Simple explanation (plain, for a 10-year-old)** — one plain-English paragraph a 10-year-old follows: did it pass, and the single biggest reason. Then:
@@ -160,17 +174,17 @@ Verification       (checked / not checked)
 SHIP GATE: hold | ship-with-caveats | ship — [one sentence naming the blocker or caveat]
 ```
 
-For no findings, say so clearly and name any residual risk or unrun checks. Do not invent tests, screenshots, live checks, or deploy status. Do not raise a grade because the work was hard, because CI passed without exercising the change, or because the author explains intent well. To revise a grade, name what changed; to bank a pattern, name what worked; silence = accepted.
+For no findings, say so clearly and name any residual risk or unrun checks. Do not invent tests, screenshots, live checks, or deploy status. To revise a grade, name what changed; to bank a pattern, name what worked; silence = accepted.
 
 ---
 
 ## --threat-verify Mode
 
-Verify that threat mitigations declared in a threat model (ADR threat table, PLAN.md risk section, or suede-arch output) are actually implemented in the codebase.
+Verify that threat mitigations declared in a threat model (ADR threat table, PLAN.md risk section, or an architecture review's threat table) are actually implemented in the codebase.
 
 **Trigger:** pass `--threat-verify` or say "verify threat mitigations" / "check threat model compliance"
 
-**Input:** threat model source — file path or pasted content. Accepted formats: ADR threat table (from suede-arch), PLAN.md risk section, free-form "Threat: X / Mitigation: Y" pairs.
+**Input:** threat model source — file path or pasted content. Accepted formats: ADR threat table (e.g. from suede-arch — private), PLAN.md risk section, free-form "Threat: X / Mitigation: Y" pairs.
 
 **Process:**
 1. Parse the threat model into: { threat_id, description, declared_mitigation, expected_location }
@@ -189,3 +203,11 @@ Verify that threat mitigations declared in a threat model (ADR threat table, PLA
 **Blockers:** OPEN and UNREGISTERED are BLOCKERS. Do not ship until closed.
 
 **What this is NOT:** This mode does not scan for new vulnerabilities (that is what the OWASP lane does). It only verifies previously declared mitigations exist.
+
+## Routing
+
+- Findings-only, with Accessibility and SEO lanes → **suede-code-review**
+- The letter grade alone, no findings → **suede-code-grader**
+- Verdict delivered; make CI enforce it on every merge → **suede-ship-gate**
+- The diff ships AI behavior with no eval coverage → **suede-ai-eval**
+- Fixes span multiple coordinated lanes → **suede-agent-teams**

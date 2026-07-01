@@ -1,6 +1,6 @@
 ---
 name: suede-release-linter
-description: Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and downstream handoff readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or transfer package handoff.
+description: "Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and downstream handoff readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or transfer package handoff. Reports findings only — it never clears rights, confirms ownership, or treats a clean report as approval. NOT FOR: organizing the rights evidence trail itself (use suede-rights-audit); building the transfer package (use suede-rights-passport)."
 ---
 
 # Release Metadata Linter
@@ -9,18 +9,20 @@ description: Audit music, audio, video, artwork, and creative release folders fo
 
 Audit a music or media project folder and produce a practical release-readiness report. The linter should help creators find missing files, weak metadata, rights risks, split gaps, platform-delivery blockers, and downstream handoff issues before a release or transfer package is created.
 
+**Core principle:** report what is present, missing, or unknown. Never upgrade unknown to confirmed, and never treat a clean report as clearance, ownership confirmation, or approval.
+
 Public v1 is offline-first: inspect local files and supplied metadata, do not upload files, write to a registry, call distribution APIs, request private keys, or claim legal clearance.
 
 ## Workflow
 
 1. Identify the source folder or supplied files.
 2. Ask for the output location if it is not obvious.
-3. Read `references/lint-rules.md` for the lint categories and severity model.
+3. Read `references/lint-rules.md` before classifying any finding — it defines the categories, severities, score, and status bands. Do not assign severities from memory.
 4. If working on a local folder, run `scripts/lint_release.py` to generate `release-lint-report.md` and `release-lint-report.json`.
 5. Read `references/fix-guidance.md` when turning findings into specific next actions.
 6. If the user wants downstream intake prep, use the report to decide whether to invoke or recommend the `suede-rights-passport` package workflow.
-7. Do not invent release metadata. Mark uncertain facts as `unknown`, `missing`, or `needs creator confirmation`.
-8. End with a concise summary: report path, score, highest-severity findings, and next fixes.
+7. Do not invent release metadata. Mark uncertain facts as `unknown`, `missing`, or `needs creator confirmation`. Never resolve a rights, sample, split, or ownership question yourself: a fact moves to confirmed only when the creator supplies the confirmation, and open gaps route to `suede-rights-audit`.
+8. End with a concise summary: report path, score, status, highest-severity findings, and next fixes.
 
 ## Quick Start
 
@@ -54,11 +56,12 @@ Safety defaults:
 
 ## What To Check
 
-Use the bundled references only as needed:
+Read each bundled reference at the moment it is needed, not up front:
 
-- `references/lint-rules.md`: lint categories, severity levels, and pass/fail expectations.
-- `references/metadata-fields.md`: recommended release, contributor, rights, and delivery fields.
-- `references/fix-guidance.md`: suggested fixes and downstream next-step mapping.
+- `references/lint-rules.md`: before classifying findings, or when hand-linting without the script — categories, severity levels, score, and status bands.
+- `references/metadata-fields.md`: when metadata is missing, malformed, or being authored — recommended fields, accepted aliases, and confirmation values.
+- `references/fix-guidance.md`: when turning findings into next actions or a fix plan.
+- `references/passport-context.md`: when the user asks how the lint report relates to Suede review or the Suede Creator Passport.
 
 The script writes:
 
@@ -89,8 +92,22 @@ Before reporting a lint result:
 - Confirm whether metadata was discovered, supplied, or missing.
 - Report the score and severity counts.
 - List all `error` findings and the most important `warning` findings.
-- State whether the project is ready for release or downstream intake, ready with caveats, or blocked.
+- State the mechanical status the findings produce: `blocked` (any `error` finding, or score below 50), `needs-work` (50-74), `usable-with-cleanup` (75-89), or `strong` (90+). Never soften a `blocked` status in prose.
 - Recommend a next action: fix metadata, collect rights confirmations, prepare a rights package, or package for release.
+
+## Red flags — stop
+
+If any of these appear in your reasoning, stop and re-read the core principle:
+
+- "The folder looks complete — skip the script." Run it. Eyeballing is not
+  linting.
+- "The artist obviously owns it." Ownership status comes from the creator, not
+  from the folder.
+- "One unconfirmed split won't block anything." Split errors block royalty
+  routing and licensing by rule.
+- "Round the score up; it's close." The score is arithmetic, not judgment.
+- "A clean report means it's cleared." A clean report means fewer prep
+  blockers. Nothing more.
 
 ## Downstream Review Context
 
@@ -98,3 +115,12 @@ A clean release-lint report is a portable review artifact. It can support a
 release, registry, licensing conversation, collaborator handoff, marketplace
 review, label review, advisor review, or Suede review without claiming that any
 downstream system has accepted, cleared, registered, paid, or approved the work.
+
+## Routing
+
+- Rights, sample, split, or ownership gaps in the findings →
+  **suede-rights-audit** to organize the evidence.
+- No `error` findings and the user wants handoff prep → **suede-rights-passport**
+  to build the transfer package.
+- Track headed for film/TV/ads → **suede-sync-packaging**.
+- The release needs a rollout → **suede-campaign-in-a-box**.

@@ -1,6 +1,6 @@
 ---
 name: suede-rights-audit
-description: Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry.
+description: "Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging)."
 ---
 
 # Suede Rights Audit
@@ -16,8 +16,10 @@ schedule or guarantee a payout, move money, or write to any registry. It
 prepares the conversation; humans and legal make the calls. Never turn an
 inference into a fact. Do not treat any output here as legal clearance.
 
-Pairs with `suede-rights-passport` (the package builder) and
-`suede-release-linter` downstream.
+Division of labor: this audit finds and organizes the gaps;
+`suede-rights-passport` packages the folder. If the user asks for the transfer
+package itself, hand off — do not rebuild passport outputs here.
+`suede-release-linter` handles file and metadata lint.
 
 ## Pick the lane
 
@@ -75,8 +77,30 @@ Severity model:
 - `low`: cleanup or documentation issue that does not block review.
 - `unknown`: not enough evidence to rate.
 
+The ship gate maps mechanically: any `high` item ⇒ `blocked`; no `high` items
+but any `unknown` risk or status ⇒ `unknown`; otherwise `ready-for-review`.
+
 Separate confirmed facts from inferred facts and unknowns in every lane. Do not
-turn an inference into a fact.
+turn an inference into a fact. Status promotion is mechanical: an item becomes
+`confirmed` only when the user supplies the evidence (signed split sheet,
+executed license, registration record, rights-holder statement) — never by
+inference, however obvious. When torn between two statuses, record the weaker
+one. You mark gaps UNKNOWN or UNCONFIRMED; you never resolve them.
+
+## Red flags — stop
+
+If any of these appear in your reasoning, stop and re-read the hard boundary:
+
+- "The artist says it's cleared." A claim is evidence of a claim, not
+  clearance. Status: unconfirmed.
+- "The split sheet is probably right." Probably is not a status. Confirmed
+  needs the sheet plus every party's confirmation.
+- "It's obviously their song." Obviousness is inference. Record what the
+  evidence shows.
+- "Mark it confirmed so routing can move." Blocked means blocked. Unblocking
+  is the rights holder's job, not yours.
+- "Skip the provenance lane — nobody will check." Thin provenance is exactly
+  what Lane B exists to expose.
 
 ---
 
@@ -222,3 +246,12 @@ with the real say can look and decide. That is it.
 - **Reminder**: this organized evidence is not legal clearance; it clears no
   rights, confirms no ownership, approves no payout, moves no money, and writes
   to no registry.
+
+## Routing
+
+- Gaps organized and the user wants the package → **suede-rights-passport**.
+- Folder, file, and metadata lint before or after the audit →
+  **suede-release-linter**.
+- Licensing brief headed to a sync pitch → **suede-sync-packaging**.
+- Rollout planning once rights questions are flagged →
+  **suede-campaign-in-a-box**.

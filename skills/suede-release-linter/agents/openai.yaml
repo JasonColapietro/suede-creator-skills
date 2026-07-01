@@ -2,7 +2,7 @@ interface:
   display_name: "Release Metadata Linter"
   short_description: "Audit creator release files and rights gaps."
   brand_color: "#D71920"
-  default_prompt: "Use $suede-release-linter to audit this creator project for release readiness."
+  default_prompt: "Use $suede-release-linter to audit this creator project for release readiness — reporting findings without clearing rights or confirming ownership."
 
 policy:
   allow_implicit_invocation: true

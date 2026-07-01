@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Code Review (P0–P3)"
   short_description: "Deep code review with severity-ranked findings"
-  default_prompt: "Use $suede-code-review on [diff/PR/files] at [--quick / --standard / --deep]. Run language-specific checklists, OWASP Top 10, database query patterns, and performance flags. Return findings ordered by severity with fix briefs, then a signed grade."
+  default_prompt: "Use $suede-code-review on [diff/PR/files] at [--quick / --standard / --deep]. Run language-specific checklists, OWASP Top 10, Accessibility and SEO lanes, database query patterns, and performance flags. Return findings ordered by severity with fix briefs, then the deploy-safety gate and ship verdict — no letter grade."
 policy:
   allow_implicit_invocation: true

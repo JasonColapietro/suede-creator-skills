@@ -1,6 +1,6 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "updated": "2026-06-23",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
@@ -84,127 +84,127 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Loads the full Suede workflow in one install — design, copywriting, Suede SEO/AEO/AI EO, Suedify restyling, one-pass code review+grade, CI ship-gate, agent-team orchestration, visual QA, launch and install packaging, artist campaigns, and rights utilities — with progressive feedback and quality gates.",
+      "description": "Umbrella workflow for 20 public skills \u2014 johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
       "name": "johnny-suede-design",
       "area": "workflow",
-      "description": "Design and write high-polish creative surfaces for Suede or a supplied company — landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects — through design laws, tokens, motion, visual QA, Suedify reference-site restyling, copywriting, anti-slop scoring, and optional multi-agent coordination. Writing mode is on by default.",
+      "description": "Design and write high-polish creative surfaces for Suede or a supplied company: landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects, with design laws, tokens, fluid type, motion rules, Suedify reference-site restyling, full copywriting, visual QA, and optional multi-agent build coordination. Use when you design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite the copy for a surface being built, build a design system, run visual QA, or coordinate a multi-lane creative build. NOT FOR: copy-only jobs (use johnny-suede-write); a single design-token or component-level decision with no copy or build (use suede-design). Organizes and prepares creative work only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.",
       "useWhen": "Use to design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite copy and headlines and CTAs, build a design system, run visual QA, or coordinate a big multi-lane creative build."
     },
     {
       "name": "johnny-suede-write",
       "area": "workflow",
-      "description": "Write long-form, short-form, GitHub docs, social, email, product listing copy, and public explainers through mode-specific structure, persuasion frameworks, A/B variants, brand-voice alignment, an anti-slop gate, and a copy score. Default voice Suede; a supplied company brief overrides everything.",
+      "description": "Write anything Suede ships and earn the click. One skill for every writing surface: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and public explainer talk-tracks, with persuasion frameworks, headline and CTA formula banks, A/B variants, an anti-slop gate, and a copy score before delivery. Use when you need to write, rewrite, or edit copy, align copy to the house voice, generate headlines, CTAs, or subject lines, draft social, email, README, or product listing copy, or hand a public user hype-free words to explain Suede. NOT FOR: a single standalone conversion surface with no SEO pass (use suede-copy); copy that ships inside a design or layout build (use johnny-suede-design). Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.",
       "useWhen": "Use to write, rewrite, package, explain, promote, audit, or polish public copy with the whole writing stack loaded from one mode."
     },
     {
       "name": "suede-code",
       "area": "workflow",
-      "description": "Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default, with TypeScript, React, Next.js, OWASP, and database checklists, three depth levels, 10+ instant-F triggers, grade caps for auth and payment surfaces, a deploy-safety gate, and fix briefs. Prompted-only; never auto-fires.",
+      "description": "Review and grade code in one pass \u2014 deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release. NOT FOR: findings-only review with Accessibility/SEO lanes (use suede-code-review); grade-only with no findings (use suede-code-grader); wiring CI or branch protection (use suede-ship-gate).",
       "useWhen": "Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release."
     },
     {
       "name": "suede-code-review",
       "area": "workflow",
-      "description": "Deep-dive any diff with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists — run the repo's own gates, honor project rules, trace whole-repo and git history, then return findings, fix briefs, and a signed grade across three depth levels.",
+      "description": "Deep-dive any diff with TypeScript, React, Next.js, OWASP, Accessibility, SEO, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns severity-ranked findings, fix briefs, a deploy-safety gate, and a ship verdict \u2014 no letter grade. Use when asked for a findings-only review, or when Accessibility and SEO lanes matter alongside code findings. NOT FOR: full findings+grade in one pass (use suede-code); grade-only with no findings (use suede-code-grader).",
       "useWhen": "Use when explicitly asked to review, deep-dive, or security-check a diff, PR, file, or release and you want full findings, not just a grade."
     },
     {
       "name": "suede-code-grader",
       "area": "workflow",
-      "description": "Get a blunt A-F ship verdict on any code change — 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and a worked example for every grade level.",
+      "description": "Get a blunt A-F ship verdict on any code change. 7 evidence-backed lanes, 10+ instant-F triggers, grade caps for auth and payment surfaces, and example situations for every grade level. Use when you need a direct grade, not a full review. NOT FOR: full findings+grade in one pass (use suede-code); findings-only with Accessibility/SEO lanes (use suede-code-review). Use this skill ONLY when the deliverable is the letter grade alone.",
       "useWhen": "Use when you need a direct ship/no-ship grade with evidence, not a full line-by-line review."
     },
     {
       "name": "suede-copy",
       "area": "workflow",
-      "description": "Write copy that earns the click — 12 headline formulas, 5 persuasion frameworks, A/B variant generation, a word-substitution list, email and social templates, an anti-slop gate, and a copy score before anything ships.",
+      "description": "Write copy that earns the click. 12 headline formulas, 5 persuasion frameworks, A/B variant generation, 25-entry word substitution list, email and social templates, anti-slop gate, and a copy score before anything ships. NOT FOR: full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); multi-email campaign arcs or post-production AI-pattern removal (private Suede Labs companions not in this pack). Use suede-copy for standalone conversion email, landing page copy, microcopy, or button labels.",
       "useWhen": "Use to write or rewrite headlines, CTAs, landing, email, or social copy with a conversion and anti-slop pass."
     },
     {
       "name": "suede-design",
       "area": "workflow",
-      "description": "Evolve any Suede interface from generic to intentional — design laws, component-specific rules, dark-mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell.",
+      "description": "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. Use when picking color strategy or tokens, building or auditing a design system, polishing components, or comparing a mock against the rendered implementation. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); UX critique, accessibility audits, design handoff docs, or script-harness visual iteration (private Suede Labs companions not in this pack). Use suede-design for design system, token, and component-level decisions.",
       "useWhen": "Use to polish UI, set up design tokens, fix visual hierarchy, or run a focused design pass on a single surface."
     },
     {
       "name": "suede-agent-teams",
       "area": "workflow",
-      "description": "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff — WIP collision detection, RFC mode, feature-flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence.",
+      "description": "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence. Use when work needs parallel agents or multiple coordinated lanes \u2014 an auth rewrite, payment integration, data migration, performance audit, or public launch review \u2014 or when parallel edits could collide with dirty WIP. NOT FOR: single-lane code review or grading (use suede-code); wiring CI and branch protection (use suede-ship-gate).",
       "useWhen": "Use when a change is big enough to split across multiple agents or lanes and you need collision-safe coordination and a verified handoff."
     },
     {
       "name": "suede-ai-eval",
       "area": "workflow",
-      "description": "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces.",
+      "description": "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces. Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks \u2014 or when someone asks how we know the AI is good enough to ship. NOT FOR: reviewing the surrounding code (use suede-code); wiring the finished eval suite into CI (use suede-ship-gate).",
       "useWhen": "Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks."
     },
     {
       "name": "suede-ship-gate",
       "area": "workflow",
-      "description": "Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform in any folder.",
+      "description": "Wire any repo so CI actually gates the merge \u2014 path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes. NOT FOR: reviewing or grading the code the pipeline runs on (use suede-code); designing AI eval cases (use suede-ai-eval, then wire them in here).",
       "useWhen": "Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes."
     },
     {
       "name": "suede-seo-audit",
       "area": "workflow",
-      "description": "Suede SEO, AEO, AI EO, metadata, schema, internal-link, crawlability, search-intent, answer-intent, and public docs audit workflow. Website-specific; run on demand.",
+      "description": "Nine-lane SEO, AEO, and AI EO audit for any public page \u2014 technical access, search and answer intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters \u2014 with exact rewrites, lane grades, and a ship gate. Use when asked to audit SEO, find out why a page is not ranking or not cited by AI answers, validate schema or metadata, run keyword or competitor gap research, or check discoverability before a launch. NOT FOR: a fast A-F promotion-readiness verdict (use suede-visibility-grader), conversion and CRO rewrites (use suede-site-alchemy), or writing fresh copy (use suede-copy).",
       "useWhen": "Use when auditing Suede pages, GitHub Pages sites, README files, skill docs, launch pages, copy banks, install pages, sitemap entries, AI result surfaces, or public surfaces."
     },
     {
       "name": "suede-visibility-grader",
       "area": "workflow",
-      "description": "Suede website visibility and CTA grading workflow for public pages, GitHub Pages sites, launch pages, docs, and campaign pages with A-F grades, evidence, grade caps, and rendered design-signal checks. Website-specific; run on demand.",
+      "description": "Grade any public page for findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Returns A-F grades with evidence and fixes. Use before any public launch, GitHub Pages promotion, or paid campaign, or when asked to grade a page, judge promotion readiness, or give a blunt verdict on a public surface. NOT FOR: a full nine-lane SEO/schema/keyword audit (use suede-seo-audit) or hands-on conversion rewrites (use suede-site-alchemy).",
       "useWhen": "Use when a user wants to know whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with visual confidence."
     },
     {
       "name": "suede-site-alchemy",
       "area": "workflow",
-      "description": "Suede website conversion and CRO workflow — funnel analysis, friction audit, conversion math, A/B hypotheses, social-proof architecture, pricing psychology, mobile CRO, and a quick-wins list ranked by lift. Website-specific; run on demand.",
+      "description": "Transmute any page into a conversion engine. Funnel analysis, friction audit, conversion math, A/B hypothesis generation, social proof architecture, pricing psychology, mobile CRO rules, and a quick wins list ranked by lift. Use when asked to make a page convert better, fix a landing or campaign page that is not converting, sharpen a hero or CTA, run a CRO or friction pass, or build a conversion-focused microsite. NOT FOR: an A-F promotion-readiness grade (use suede-visibility-grader), a nine-lane SEO/schema audit (use suede-seo-audit), or standalone copywriting (use suede-copy).",
       "useWhen": "Use for improving page conversion, packaging website growth offers, or routing conversion requests into the full design workflow."
     },
     {
       "name": "suede-launch-packaging",
       "area": "workflow",
-      "description": "Ship Suede work as a launch, not a loose drop — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, and handoff notes — plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, and marketplace confusion while keeping @personal out of public docs.",
+      "description": "Ship Suede work as a launch, not a loose drop, and make sure people can actually install it \u2014 GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, handoff notes, plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion while keeping the local @personal path out of public docs. Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, when a public user cannot add a skill, when @personal leaks into public copy, or when a README, docs, or public explainer step needs a simpler path.",
       "useWhen": "Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, or when a public user cannot add a skill."
     },
     {
       "name": "suede-mcp-qa",
       "area": "workflow",
-      "description": "Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment.",
+      "description": "Catch a broken Suede Skills MCP before it ships \u2014 one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP, when the catalog may have drifted from the skill folders, or before shipping any MCP server or catalog change. NOT FOR: fixing a broken skill install command outside the MCP (use suede-launch-packaging).",
       "useWhen": "Use when building, changing, testing, or explaining the Suede Skills MCP."
     },
     {
       "area": "creator",
       "name": "suede-campaign-in-a-box",
-      "description": "Full-stack artist campaign skill — turn a song, release, era, or catalog moment into a complete rollout, with modes for artist identity, era systems, single-song universes, 5-15s hooks, release stunts, repeatable fan rituals, visualizer and lyric-video treatments, merch and collector objects, live setlist design, catalog revival, and collaborator matchmaking. No fake hype or clearance/placement promises.",
+      "description": "Turn a song, release, era, catalog moment, show, or drop into a complete artist campaign \u2014 sharpen the artist identity spine, build eras with visual codes and rituals, expand one track into a universe, hunt the 5-15s hooks that travel, design release stunts, fan missions, puzzles and timed drops, write repeatable fan rituals, direct visualizers and lyric videos, invent merch and collector objects, stage live setlists, resurrect dormant catalog, match collaborators, and package the full announce, teaser, release-week and post-drop rollout with copy, calendar, email, site sections, press angles, and fan actions. Use when a musician, artist, manager, label, creative director, or agent wants the whole rollout packaged into usable moves. Organizes and prepares only \u2014 it does not clear rights, confirm ownership, approve payouts, write to a registry, secure placements or cosigns, or guarantee outcomes. NOT FOR: sync pitching a track (use suede-sync-packaging); organizing rights gaps (use suede-rights-audit).",
       "useWhen": "Use when a musician wants the whole artist world and rollout turned into usable moves."
     },
     {
       "area": "creator",
       "name": "suede-sync-packaging",
-      "description": "Prepare tracks for sync-style review with scene-fit angles, one-sheet copy, clean and instrumental asset needs, lyric flags, mood tags, rights gaps, and safe pitch copy.",
+      "description": "Package songs for sync pitching \u2014 scene-fit angles, supervisor-safe one-sheet copy, clean and instrumental asset checklist, lyric flags, mood tags, confirmed-versus-open rights status, clearance questions, public links, and next review steps. Use when an artist, manager, publisher, label, or agent asks to prep a track for film, TV, ads, games, trailers, creator campaigns, or brand briefs, to build a sync one-sheet, or to answer a music-supervisor request. Never claims clearance and never turns sync prep into a promo funnel. NOT FOR: finding and organizing rights gaps across a project (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); a full release campaign (use suede-campaign-in-a-box).",
       "useWhen": "Use when a song or catalog asset should be organized for film, TV, ads, games, trailers, creator campaigns, or brand briefs without claiming clearance."
     },
     {
       "name": "suede-release-linter",
       "area": "creator",
-      "description": "Audit music, audio, video, artwork, and creative release folders for metadata, rights, split, file, and downstream handoff gaps.",
+      "description": "Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and downstream handoff readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or transfer package handoff. Reports findings only \u2014 it never clears rights, confirms ownership, or treats a clean report as approval. NOT FOR: organizing the rights evidence trail itself (use suede-rights-audit); building the transfer package (use suede-rights-passport).",
       "useWhen": "Use before release, licensing, registry preparation, royalty routing, agent commerce, or transfer package handoff."
     },
     {
       "name": "suede-rights-passport",
       "area": "creator",
-      "description": "Prepare creator folders for local rights packaging with provenance, rights, credits, splits, licenses, media optimization notes, and missing-info reports.",
+      "description": "Prepare music, audio, visual media, or creative project folders for rights packaging, provenance review, registry preparation, royalty split cleanup, licensing review, media optimization, and agent-commerce readiness. Use when a creator, label, manager, developer, or agent asks to organize files, metadata, rights details, credits, splits, licenses, stems, lyrics, artwork, or release notes into a local transfer package. A Suede review can be one downstream use, but the workflow is broadly reusable. Packages and flags only \u2014 it never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: finding and organizing the rights gaps themselves (use suede-rights-audit); linting a release folder for readiness (use suede-release-linter).",
       "useWhen": "Use when packaging a project into a rights and provenance transfer package."
     },
     {
       "name": "suede-rights-audit",
       "area": "creator",
-      "description": "Find and organize rights gaps before a creator project is packaged — covers provenance and origin trail, ownership/contributors/credits/splits/samples gap audit, licensing-discussion readiness without claiming clearance, and royalty-routing readiness that moves no money. Organizes evidence only; never clears rights, confirms ownership, approves payouts, or writes to a registry.",
+      "description": "Find and organize the rights gaps before a creator project gets packaged \u2014 missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only \u2014 never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging).",
       "useWhen": "Use before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or downstream creator review."
     }
   ],

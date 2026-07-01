@@ -1,14 +1,38 @@
 ---
 name: suede-launch-packaging
 description: Ship Suede work as a launch, not a loose drop, and make sure people can actually install it — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, handoff notes, plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion while keeping the local @personal path out of public docs. Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, when a public user cannot add a skill, when @personal leaks into public copy, or when a README, docs, or public explainer step needs a simpler path.
-
 ---
 
 # Suede Launch Packaging
 
-Ship Suede work as a launch, not a loose drop. This skill turns finished work into a clean public package AND makes sure a stranger can actually install and run it. Packaging a public release and proving the install both live here, because a release nobody can install is not a launch.
+Ship Suede work as a launch, not a loose drop. This skill turns finished work into a clean public package AND makes sure a stranger can actually install and run it. Packaging a public release and proving the install both live here.
+
+**Core principle:** a release nobody can install is not a launch. Nothing is "live" until you fetched it yourself, and no install path ships until the exact command ran from a clean temporary directory.
 
 This skill organizes and prepares a public release. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes. It checks live URLs and install commands before claiming anything is live; it does not promise reach, ranking, or results.
+
+## Step 0 — Inventory the launch (detect first)
+
+Before picking a lane, name exactly what is being launched. Do not assume from the request; check the repo, branch, and live surface. One request often spans several rows (a skill launch = repo + README + install command + social copy). List every row that applies — each needs its own verification.
+
+| Launch surface | Verify before writing copy | Proof artifact |
+|---|---|---|
+| Repo or release | Default branch is public; the launch commit is pushed; tags/releases exist if referenced | Repo URL + commit hash |
+| GitHub Pages or site | Page renders at the public URL; no stale build | Live URL + screenshot |
+| README or docs update | Rendered page matches the pushed source | Rendered docs URL |
+| Skill or skill pack | Skill folder exists at `main`; install command runs from a clean temp dir | Install command transcript |
+| MCP server | Server starts; `tools/list` matches the catalog | suede-mcp-qa output |
+| App feature | Feature is live behind the public route, not just merged | Live route readback |
+| Social or email copy | Every link resolves; every claim matches the live product | Link sweep results |
+
+## Hard gates
+
+Do not rationalize past these. Each one blocks the step after it.
+
+1. **No launch copy until the live surface is verified.** Fetch the live URL or public artifact and confirm the expected status or render first. Copy drafted against "it should be live" is a violation.
+2. **No install doc until the install command was run from a clean temporary directory after pushing.** Success from inside the local repo does not count — the local checkout masks missing pushes and private paths.
+3. **No announcement until the ship gate is set.** `hold` means nothing goes out, including "soft" posts.
+4. **`@personal` and local plugin aliases never appear in public docs, READMEs, MCP catalog output, or explainer copy.** They are local operator notes only.
 
 ## Pick the lane
 
@@ -27,7 +51,7 @@ Use this lane when Suede work is ready to leave the local machine and needs a cl
 
 ### Package steps
 
-1. Identify the public surface: repo, live URL, docs page, README section, install command, release note, or social/email copy.
+1. Run the Step 0 inventory: name every launch surface in play.
 2. Confirm the source truth: current branch, remote, commit, live build status, and exact public URLs.
 3. Write the public explanation around the outcome, not the implementation.
 4. Add proof links: source files, docs pages, scripts, MCP tools, screenshots, build output, live route, or raw GitHub URL.
@@ -75,8 +99,22 @@ Use this lane to make Suede install instructions accurate, public, and easy to e
 1. Identify the target installer: Codex GitHub skill installer, Claude skill folder copy, local plugin alias, or MCP server.
 2. Check whether the target skill folder exists publicly at `main`.
 3. Run the exact install command from a temporary directory.
-4. Fix docs, MCP catalog output, README commands, and public explainer copy together.
-5. Keep local plugin commands available only under local operator setup.
+4. Diagnose failures with the table below. Name the failure cause exactly — "it didn't work" is not a diagnosis.
+5. Fix docs, MCP catalog output, README commands, and public explainer copy together.
+6. Keep local plugin commands available only under local operator setup.
+
+### Install failure table
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Install command 404s | Skill folder not pushed to `main`, or path is wrong | Push, re-derive the path from the repo root, re-run from a clean temp dir |
+| Installer reports skill not found | Missing `--path`, or the repo hosts many skills | Add the repo-relative skill path after `--path` |
+| Multiple skills requested, only one installs | Repeated `--path` flags instead of one | Use one `--path` flag followed by all skill paths |
+| Raw-URL command returns HTML, not the file | GitHub blob URL used instead of the raw URL | Swap to the `raw.githubusercontent.com` form and re-fetch |
+| Install succeeds but the skill never triggers | Frontmatter `name` mismatch or vague description | Fix SKILL.md frontmatter, push, reinstall, restart |
+| Works locally, fails for a public user | Command references `@personal` or a local plugin alias | Replace with the public GitHub repo-and-path route |
+| New skill invisible after install (Codex) | Session has not reloaded skills | Restart Codex, then confirm the skill lists |
+| Catalog lists a skill the install cannot find | MCP catalog drifted from the repo | Route to suede-mcp-qa; fix catalog and docs together |
 
 ### Lane B output
 
@@ -98,6 +136,25 @@ Corrected copy:
 - Never claim an install works until the exact command ran from a temporary destination after pushing.
 - Keep `@personal` and any local-only plugin commands out of all public copy. They are local operator notes.
 - No competitor product names in any public copy.
+
+## Red flags — stop
+
+If you catch yourself thinking any of these, stop and run the gate:
+
+- "The README says it works." — The README is a claim, not a test. Run the command.
+- "I'll test the install after publishing." — Test from a clean temp dir first, or the launch holds.
+- "It installed fine on this machine." — The local checkout masks missing pushes. Clean temp dir only.
+- "The raw URL is obviously right." — Fetch it. Blob-vs-raw catches everyone eventually.
+- "Everyone reading this doc is internal, `@personal` is fine." — Public docs are public. Keep it out.
+- "We can announce now and fix the install path after." — The first-touch install IS the launch.
+
+## Routing
+
+- Launch page going public → `suede-visibility-grader` for a promotion-readiness grade before any push.
+- MCP server in the package → `suede-mcp-qa` before the install doc ships.
+- Page metadata, schema, or discoverability depth → `suede-seo-audit`.
+- Landing page must convert, not just inform → `suede-site-alchemy`.
+- Announcement or launch copy needs writing from scratch → `suede-copy` (or `johnny-suede-write` for the full writing stack).
 
 ## Simple explanation (plain, for a 10-year-old)
 

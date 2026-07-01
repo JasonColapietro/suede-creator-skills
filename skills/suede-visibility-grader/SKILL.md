@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: Grade any public page for findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Returns A-F grades with evidence and fixes. Use before any public launch, GitHub Pages promotion, or paid campaign.
+description: "Grade any public page for findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Returns A-F grades with evidence and fixes. Use before any public launch, GitHub Pages promotion, or paid campaign, or when asked to grade a page, judge promotion readiness, or give a blunt verdict on a public surface. NOT FOR: a full nine-lane SEO/schema/keyword audit (use suede-seo-audit) or hands-on conversion rewrites (use suede-site-alchemy)."
 ---
 
 # Suede Visibility Grader
@@ -14,11 +14,16 @@ Can the right person or agent find this page, understand it, trust it, cite it,
 and take the intended next action?
 ```
 
+**Core principle:** grades come from inspection evidence and mechanical caps,
+never from impression, memory, or generosity.
+
 ## Routing
 
 Send to `suede-seo-audit` for: Core Web Vitals, crawl errors, structured data validation, keyword gap analysis, backlink profile, redirect chains, or page speed.
 
 Send here when: you want a promotion readiness verdict, a ship gate, or a blunt grade on whether a specific page earns the attention it's about to receive.
+
+After grading: fixes are conversion-shaped (CTA, friction, offer) → `suede-site-alchemy`. Grade passed and the page ships as part of a release → `suede-launch-packaging`.
 
 ## Source Truth
 
@@ -64,10 +69,10 @@ Score each lane A-F, then give one overall grade:
 
 Grade meaning — assign on evidence, not impression:
 
-- **A:** every lane is strong. Ship. Post this as a reference for the next build.
-- **B:** one or two lanes are weak. Fix those; everything else is solid.
-- **C:** the page works but bleeds attention or trust somewhere in the first scroll. Not ready for paid promotion.
-- **D:** visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
+- **A:** every lane is strong (no lane below B). Ship. Post this as a reference for the next build.
+- **B:** one or two lanes at C; none below C. Fix those; everything else is solid.
+- **C:** three or more lanes at C, or any lane at D. The page works but bleeds attention or trust somewhere in the first scroll. Not ready for paid promotion.
+- **D:** two or more lanes at D, or any lane at F short of the overall-F conditions. Visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
 - **F:** assign when any of these are true: primary CTA is broken, a public claim is false, the page doesn't render, or robots/canonical actively blocks it.
 
 Grade caps — non-negotiable:
@@ -77,6 +82,12 @@ Grade caps — non-negotiable:
 - False or unsupported public claim → Overall cap: `D`. (If the claim is central to the product promise, `F`.)
 - Design signal `D` or `F` → Ship gate is **hold**, regardless of other lanes.
 - Mobile not inspected → `A` is blocked. State the caveat explicitly in Verification.
+
+Ship gate — mechanical:
+
+- **ship:** Overall B or better, no grade cap triggered, no lane below C.
+- **ship-with-caveats:** Overall C, or a higher grade blocked only by uninspected surfaces (mobile, live URL). Name every caveat in Verification.
+- **hold:** Overall D or F, broken primary CTA, false public claim, or Design signal at D or F.
 
 ## Surface-Type Standards
 
@@ -116,6 +127,16 @@ Grade each page against its surface type. Caps and expectations differ:
 - Full inspection: live URL + source, desktop + mobile, all viewport states available.
 - All six lanes, full top-fixes list, CTA rewrite in the P1 fix description if CTA pull is C or below.
 - Ship gate is authoritative.
+
+## Red Flags — Stop
+
+If you catch yourself thinking any of these, stop and inspect:
+
+- "The repo description tells me enough to grade." — Inspect the live page or source. No inspection caps Overall at C.
+- "Desktop looks fine; mobile will match." — Mobile not inspected blocks A. Check it or state the caveat.
+- "That claim is probably true." — Unverified public claims cap the grade. Verify or flag it.
+- "Every other lane is strong; I'll round up." — Grades come from lane evidence and caps, not generosity.
+- "A quick look is enough for a deep grade." — Quick mode exists for that, and it caps at B.
 
 ## Output Format
 

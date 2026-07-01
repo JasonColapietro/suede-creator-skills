@@ -1,11 +1,14 @@
 ---
 name: suede-mcp-qa
-description: Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP.
+description: "Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP, when the catalog may have drifted from the skill folders, or before shipping any MCP server or catalog change. NOT FOR: fixing a broken skill install command outside the MCP (use suede-launch-packaging)."
 ---
 
 # Suede MCP QA
 
 Use this skill when a Suede MCP server or MCP docs surface changes.
+
+**Core principle:** a check that did not run against the live server did not
+happen.
 
 ## Operating Stance
 
@@ -60,10 +63,17 @@ Fixes:
 Ship gate: ship | ship-with-caveats | hold
 ```
 
+## Red Flags — Stop
+
+- "The server ran fine last week; no need to restart it for this." — Run every check against the live server now.
+- "The catalog parses, so the folders are surely there." — Open every listed folder and read its SKILL.md.
+- "That check can't run, I'll mark it skipped." — A check that cannot run is a FAIL.
+- "The output looked right, close enough." — Record the exact command and exact output, verbatim.
+
 ## Routing
 
 After QA:
 - MCP source needs fixes → return to the MCP source file and fix, then re-run this skill
 - Catalog JSON needs updates → edit `mcp/catalog.json` and re-run steps 2 and 7
-- Docs/README language mismatch → **suede-docs** to update the docs surface
+- Docs/README language mismatch → update the docs surface to match live MCP output (use suede-docs — private), then re-run check 7
 - Install command broken → **suede-launch-packaging** to fix and test the install path

@@ -1,9 +1,12 @@
 ---
 name: suede-site-alchemy
-description: Transmute any page into a conversion engine. Funnel analysis, friction audit, conversion math, A/B hypothesis generation, social proof architecture, pricing psychology, mobile CRO rules, and a quick wins list ranked by lift.
+description: "Transmute any page into a conversion engine. Funnel analysis, friction audit, conversion math, A/B hypothesis generation, social proof architecture, pricing psychology, mobile CRO rules, and a quick wins list ranked by lift. Use when asked to make a page convert better, fix a landing or campaign page that is not converting, sharpen a hero or CTA, run a CRO or friction pass, or build a conversion-focused microsite. NOT FOR: an A-F promotion-readiness grade (use suede-visibility-grader), a nine-lane SEO/schema audit (use suede-seo-audit), or standalone copywriting (use suede-copy)."
 ---
 
 # Suede Site Alchemy
+
+**Core principle:** friction before aesthetics, math before opinion. No change
+ships on intuition when a friction audit and conversion math can rank it.
 
 ## Operating Stance
 
@@ -163,7 +166,8 @@ When visitor data isn't available: ask for Google Analytics / Vercel Analytics /
 Use slash tools as named design moves, not shell commands. Start with
 `/vibe-scan`, then pick the smallest set that fits the page.
 
-For the full menu, read `references/aesthetic-slash-tools.md`.
+For the full menu, read `references/aesthetic-slash-tools.md` in this skill's
+`references/` folder.
 
 Default stack for a fast polish pass:
 
@@ -262,13 +266,8 @@ reduces doubt at the highest-friction moment.
 Success condition: mobile form completions increase by ≥10%.
 ```
 
-After the Friction Audit, generate 3 hypotheses. For each, run conversion math before ranking:
-
-Conversion math model:
-`current_revenue = monthly_visitors × CTR × conversion_rate × order_value`
-`projected_revenue = monthly_visitors × new_CTR × new_conversion_rate × order_value`
-
-Example: 1,000 visitors × 3% CTR × 20% close rate × $200 = $1,200/mo. If CTR moves to 5%: 1,000 × 5% × 20% × $200 = $2,000/mo. That's a $800/mo lift from one CTA rewrite.
+After the Friction Audit, generate 3 hypotheses. For each, run the Conversion
+Math model above (current vs. projected revenue) before ranking.
 
 Rank by projected revenue lift, not intuition. Address the highest-friction item first — it almost always produces the largest lift.
 
@@ -332,13 +331,58 @@ When genuine urgency exists, make the mechanism explicit. "This cohort closes Ju
 
 ## Copy Bank
 
-Suede-specific headline fragments, subhead starters, and CTA options live in `references/copy-bank.md`. Read it when the page needs Suede-branded source material. Every fragment is raw input — run the anti-slop gate (no throat-clearing, fake intensity, unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes) before any line ships.
+Starter fragments for when the page needs raw material fast. Every fragment is
+raw input — run the anti-slop gate (no throat-clearing, fake intensity,
+unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes)
+before any line ships.
 
-## Suede Routing (Suede Projects Only)
+Headline shapes:
+- Name the buyer and the outcome: "Campaign pages that close the fans your drops create."
+- One falsifiable promise: "Grade your brand page in 60 seconds."
+- Kill the category label, state the change: "Your release, registered, routed, and ready to license."
 
-Use `suede-agent-teams` when the page pass has multiple independent lanes, a campaign launch deadline, SEO/AEO/AI EO plus implementation plus QA, or cross-surface CTA routing.
+Subhead starters:
+- "Built for [specific buyer] who need [specific outcome] without [named cost]."
+- "[Proof artifact] included — see exactly what you get before you commit."
 
-Use `suede-code-review` when the work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior.
+CTA fragments (action + object, never "Learn more"):
+- "Run the release audit" / "Grade my brand" / "Build the campaign page" /
+  "Start the free trial" / "See the live demo"
+
+For deeper copy work (formulas, frameworks, variants), route to `suede-copy`.
+
+## Red Flags — Stop
+
+If you catch yourself thinking any of these, stop and run the required step:
+
+- "The page just needs visual polish." — Run the Friction Audit first; friction beats aesthetics.
+- "This change feels high-impact." — Run the conversion math; impact is a revenue number, not a feeling.
+- "Urgency will lift conversions." — Only when the deadline is real; run the 30-day test before adding it.
+- "Source inspection is enough for visual work." — Render the page; check desktop and mobile.
+- "I'll estimate their traffic to fill in the model." — Ask for analytics exports; never invent numbers.
+
+## Output Contract
+
+Close every meaningful conversion pass with this block:
+
+```text
+Surface: [URL or route + repo/branch]
+Funnel stage: TOFU | MOFU | BOFU
+Friction score: [N sources — low | medium | high]
+Changed: [files or sections touched]
+Hypotheses (ranked by projected lift): [1–3, each with conversion math]
+Verification: [exact status words — inspected, changed locally, verified locally, deployed, verified live, blocked]
+Caveats: [or "none"]
+Ship gate: ship | ship-with-caveats | hold
+```
+
+## Routing
+
+- Page needs an A-F promotion-readiness verdict → `suede-visibility-grader` before any paid or public promotion.
+- Search, schema, crawl, or AI-citation depth → `suede-seo-audit`.
+- Page converts and the release is ready to announce → `suede-launch-packaging`.
+- Suede projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
+- Suede projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code-review`.
 
 Skip the extra gates for pure copy or layout polish after live/source inspection and rendered QA.
 

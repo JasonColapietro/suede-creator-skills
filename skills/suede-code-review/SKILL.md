@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: "Deep-dive any diff with TypeScript, React, Next.js, OWASP, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns findings, fix briefs, and a signed grade. NOT FOR: combined review+grade in one pass (use suede-code); grade-only (use suede-code-grader). Use this skill when you specifically need Accessibility and SEO lanes alongside findings, without a letter grade."
+description: "Deep-dive any diff with TypeScript, React, Next.js, OWASP, Accessibility, SEO, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns severity-ranked findings, fix briefs, a deploy-safety gate, and a ship verdict — no letter grade. Use when asked for a findings-only review, or when Accessibility and SEO lanes matter alongside code findings. NOT FOR: full findings+grade in one pass (use suede-code); grade-only with no findings (use suede-code-grader)."
 ---
 
 # Suede Code Review
@@ -259,21 +259,7 @@ Verdict: SAFE TO DEPLOY | DEPLOY WITH CONDITIONS | DO NOT DEPLOY
 Conditions (if any):
 ```
 
-Also run the $suede-code-grader rubric for the A-F lane grades:
-
-```text
-Code grade:
-Correctness: A-F
-Security and permissions: A-F
-Data and state: A-F
-Suede truth: A-F
-UX and release behavior: A-F
-Tests and verification: A-F
-Deploy readiness: A-F
-Overall: A-F
-Why:
-Required upgrades:
-```
+This skill emits no letter grade. When the caller wants lane grades too, run $suede-code (findings + grade) or $suede-code-grader (grade only) — those two carry the canonical Instant-F trigger list, grade caps, and A-F scale. Instant-F patterns found here (hardcoded secrets, injection, auth bypass, unverified payment webhooks, destructive migrations with no rollback, plaintext sensitive data) are P0 findings and set the Ship Gate to `hold`.
 
 ## Commit Dirt Score
 
@@ -474,13 +460,22 @@ False positives are why reviewers get muted. Self-check the draft findings befor
 - **Confidence gate:** mark each finding high / medium / low. Collapse low-confidence style observations into a single "nitpicks" line; never let them outrank a real P-level finding.
 - **Net-signal test:** if a finding would not change the ship decision and would not be worth a human reviewer's comment, cut it. Volume is not the product.
 
+## Red Flags — Stop
+
+- "CI is green, skim the checklists" — green CI that never exercised the change proves nothing.
+- "The PR description explains it" — review the diff, not the story about the diff.
+- "Small diff, skip the gates" — the Deploy Safety Gate and Commit Dirt Score run on every review, no exceptions.
+- "Flag everything to be safe" — volume is noise; run the Precision Pass and cut what won't move the ship decision.
+- "I wrote this code, a quick self-check will do" — switch fully into review mode and hunt what your implementation would miss.
+
 ## Output Shape
 
 For a review:
 
 ```text
 Findings
-Code Grade
+Deploy Safety
+Commit Dirt Score
 Open Questions
 Verification Checked
 Ship Gate
@@ -508,3 +503,11 @@ Reason: [one sentence, naming the blocking finding ID or named caveat]
 - `hold`: a blocker or high-risk unknown remains.
 - `ship-with-caveats`: no blocker remains, but named non-critical caveats exist.
 - `ship`: no known blocker remains and required verification passed.
+
+## Routing
+
+- Findings plus a letter grade in one pass → **suede-code**
+- The grade alone, no findings → **suede-code-grader**
+- Findings fixed; make CI block regressions on merge → **suede-ship-gate**
+- The diff touches an LLM, RAG, or agent surface → **suede-ai-eval**
+- Fixes need coordinated parallel lanes → **suede-agent-teams**

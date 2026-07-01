@@ -44,6 +44,7 @@ This skill is the public entry point for:
   material with provenance, credits, splits, license notes, and intake JSON.
 - **Suede Rights Audit:** identify ownership, contributor, split, sample,
   license, and intake gaps.
+
 If the individual public skills are also installed, use them directly when
 their names match the task:
 
@@ -81,10 +82,16 @@ readiness, and agent commerce. Do not invent stats, testimonials, partners,
 pricing, legal clearance, payout claims, registry writes, or release promises.
 
 When the task touches copy, design, public visibility, Suedify, launch
-packaging, or agent-team delivery, also use
-`references/no-missed-quality-gates.md`. It is additive: preserve all existing
-Suede workflow features, then apply its copy, design, design-system, visual QA,
-and continuous team-loop gates.
+packaging, or agent-team delivery, also read
+`references/no-missed-quality-gates.md` in this skill's `references/` folder.
+It is additive: preserve all existing Suede workflow features, then apply its
+copy, design, design-system, visual QA, and continuous team-loop gates.
+
+Red flags — stop:
+
+- "I'll summarize the request for the sub-skill." — Pass the original request verbatim; paraphrase loses the trigger.
+- "This crosses three lanes; faster to wing it inline." — Crossing lanes is exactly when this umbrella workflow runs.
+- "The live URL is probably unchanged since last time." — Start from current truth; inspect before claiming.
 
 ## Progressive Calibration
 
@@ -385,27 +392,48 @@ Useful grouping loops:
 
 Context handoff (required): When delegating to an individual skill, pass the original user request verbatim as the first input to that skill. Do not paraphrase or summarize. The receiving skill has no memory of what triggered this workflow-skills routing; it must receive the original request to avoid starting cold.
 
-When the task names a narrower Suede lane, route directly:
+When the task names a narrower Suede lane, route directly.
 
-- Public copy or tone: `johnny-suede-write` when the user wants the whole
-  writing stack from one mode, including Suede SEO discoverability and product
-  or mobile copy when relevant.
-- Full design stack: `johnny-suede-design`, including Suedify, product and
-  mobile surface design, and visual QA when relevant.
-- Search/discovery: `suede-seo-audit`.
-- Page visibility and CTA grade: `suede-visibility-grader`.
-- Code review and A-F grade: `suede-code` — prompted only, never auto-fires.
+Copy lane:
+
+- Whole writing stack from one mode (including Suede SEO discoverability and
+  product or mobile copy): `johnny-suede-write`.
+- Standalone conversion copy, email, microcopy, or button labels: `suede-copy`.
+
+Design lane:
+
+- Full design stack (including Suedify, product and mobile surface design, and
+  visual QA): `johnny-suede-design`.
+- Design-system, token, and component-level decisions: `suede-design`.
+
+Build and quality lane:
+
+- Code review and A-F grade in one pass: `suede-code` — prompted only, never
+  auto-fires.
+- Findings-only deep review: `suede-code-review`. Grade-only verdict:
+  `suede-code-grader`.
 - AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
   retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
 - CI merge gate: `suede-ship-gate` — prompted only.
-- Page polish and conversion: `suede-site-alchemy`.
+- Large, risky, cross-surface, or release-bound coordination:
+  `suede-agent-teams` (see Agent Team Workflow above).
+
+Launch lane, in pipeline order:
+
 - Launch or public packaging: `suede-launch-packaging`.
+- Search/discovery audit: `suede-seo-audit`.
+- Page visibility and CTA grade: `suede-visibility-grader`.
+- Page polish and conversion: `suede-site-alchemy`.
 - MCP changes: `suede-mcp-qa`.
+
+Creator lane:
+
 - Artist campaign work: `suede-campaign-in-a-box`.
 - Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
   placement promise, clearance claim, or outreach claim to sync packaging.
-- Rights and intake: `suede-rights-audit`, `suede-rights-passport`,
-  `suede-release-linter`.
+- Release folder audit: `suede-release-linter`.
+- Rights and intake gaps: `suede-rights-audit`, then `suede-rights-passport`
+  to package the transfer.
 
 Use the umbrella workflow when the user wants the whole Suede stack or when the
 task crosses several lanes.

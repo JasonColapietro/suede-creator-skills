@@ -1,20 +1,19 @@
 ---
 name: suede-campaign-in-a-box
-description: Turn a song, release, era, catalog moment, show, or drop into a complete artist campaign — sharpen the artist identity spine and world, build eras with visual codes and rituals, expand one track into a universe, hunt the 5-15s hooks that travel, design release stunts, fan missions, puzzles, timed drops, unlocks and collector moments, write repeatable fan rituals, direct visualizers and lyric videos, invent merch and collector objects, stage live setlists, resurrect dormant catalog, match collaborators, and package the full announce, teaser, release-week and post-drop rollout with copy, content calendar, email, site sections, press angles, fan actions, and build-next CTAs. Use when a musician, artist, manager, label, creative director, or agent wants the whole rollout packaged into usable moves. Organizes and prepares only — it does not clear rights, confirm ownership, approve payouts, write to a registry, secure placements or cosigns, or guarantee outcomes.
+description: "Turn a song, release, era, catalog moment, show, or drop into a complete artist campaign — sharpen the artist identity spine, build eras with visual codes and rituals, expand one track into a universe, hunt the 5-15s hooks that travel, design release stunts, fan missions, puzzles and timed drops, write repeatable fan rituals, direct visualizers and lyric videos, invent merch and collector objects, stage live setlists, resurrect dormant catalog, match collaborators, and package the full announce, teaser, release-week and post-drop rollout with copy, calendar, email, site sections, press angles, and fan actions. Use when a musician, artist, manager, label, creative director, or agent wants the whole rollout packaged into usable moves. Organizes and prepares only — it does not clear rights, confirm ownership, approve payouts, write to a registry, secure placements or cosigns, or guarantee outcomes. NOT FOR: sync pitching a track (use suede-sync-packaging); organizing rights gaps (use suede-rights-audit)."
 ---
 
 # Suede Campaign In A Box (Whole Enchilada)
 
-This is the all-in-one artist campaign skill. It turns a song, release, era,
-catalog moment, show, or drop into a complete campaign an artist can actually
-execute. Every Suede campaign capability lives here as a clearly-labeled
-internal mode (lane). Pick the lane you need, or run the full campaign package
-that stitches them together.
+The all-in-one artist campaign skill: it turns a song, release, era, catalog
+moment, show, or drop into a complete campaign an artist can actually execute.
+Every campaign capability lives here as a labeled lane. Pick the lane you need,
+or run the full package that stitches them together.
 
-You organize and prepare. You do not clear rights, confirm ownership, approve
-payouts, write to any registry, secure placements, manufacture cosigns, or
-guarantee that anything will go viral or sell. Say what to test; never promise
-the result.
+**Core principle:** you organize and prepare. You do not clear rights, confirm
+ownership, approve payouts, write to any registry, secure placements,
+manufacture cosigns, or guarantee that anything will go viral or sell. Say what
+to test; never promise the result.
 
 ## Pick the lane (router)
 
@@ -44,20 +43,13 @@ request names.
 
 ## Multi-agent vs single-agent (ask up front)
 
-This skill can run as a coordinated multi-agent team — one agent per lane
-(identity, era, hooks, stunts, rituals, visuals, merch, live, catalog, collab),
-plus a packager that reconciles them into one campaign. Before spawning any
-fleet, ASK:
-
-> "Run this as a multi-agent team (more thorough — each lane gets its own
-> dedicated agent, then a packager reconciles them) or as a single agent
-> (faster, one pass)?"
-
-Never silently spawn a fleet. Multi-agent mode may use slightly more tokens than
-most single-pass runs; say that plainly. If the user does not choose, default to
-single-agent and offer to escalate. When running multi-agent, keep one shared
-identity/era spine so the lanes do not contradict each other, and have the
-packager resolve conflicts before output.
+This skill can run as a coordinated multi-agent team — one agent per lane, plus
+a packager that reconciles them into one campaign. Before spawning any fleet,
+ASK: "Run this as a multi-agent team (more thorough, may use more tokens) or as
+a single agent (faster, one pass)?" Never silently spawn a fleet. If the user
+does not choose, default to single-agent and offer to escalate. In multi-agent
+mode, keep one shared identity/era spine so the lanes do not contradict each
+other, and have the packager resolve conflicts before output.
 
 ---
 
@@ -434,7 +426,7 @@ Use this to find new life in old material without pretending it is new.
    - acoustic or alternate version;
    - behind-the-scenes proof.
 3. Pick the revival path: reissue, edit, story campaign, fan drop, live moment,
-   or rights-passport prep.
+   or `suede-rights-passport` prep.
 4. Flag stale rights, sample, contributor, or clearance uncertainty.
 5. Define the next build when the revival needs a campaign page, fan action,
    drop, or creator utility workflow.
@@ -514,17 +506,40 @@ These lanes organize and prepare campaign material. They do NOT:
 - copy another artist's protected identity or assets; no competitor product
   names.
 
-When facts are unknown, mark them unknown. Keep safety, venue, privacy, payment,
-and platform-rule constraints visible in the output.
+Never resolve a rights question in-lane. When any lane touches ownership,
+samples, contributors, splits, likeness, or clearance, mark the item UNKNOWN or
+UNCONFIRMED and route it to `suede-rights-audit` — the campaign plans around
+the gap, never over it. When facts are unknown, mark them unknown. Keep safety,
+venue, privacy, payment, and platform-rule constraints visible in the output.
+
+## Red flags — stop
+
+If any of these appear in your reasoning, stop and re-read the claim-safety
+boundaries:
+
+- "The artist says the sample is cleared." A claim is not clearance. Mark it
+  UNCONFIRMED and route to `suede-rights-audit`.
+- "Imply the collab or placement is confirmed so the outreach lands harder."
+- "Say 'only 500 made'; scarcity sells." Not unless the cap is real.
+- "Write 'as seen in'; press will probably come." Invented traction.
+- "Promise this hook goes viral; it scores high." Say why it might work and
+  what to test. Never promise the result.
 
 ## How to close
 
 End with the relevant lane Output block(s). When the work produces a final
-explanation for the artist (for example a full campaign package or a pitch the
-artist will act on), close with a **Simple explanation (plain, for a 10-year-old)** before the
-usual breakdown.
+explanation the artist will act on (a full campaign package, a pitch), lead
+with a **Simple explanation (plain, for a 10-year-old)**: one plain paragraph
+covering what this campaign is, what the fan is asked to do, and what happens
+next; no jargon, no hype, no industry words. Then give the normal breakdown:
+the lane Output blocks, the build-next CTA, and any flagged rights/safety gaps.
 
-The simple explanation is one plain paragraph a 10-year-old can follow: what this campaign is,
-what the fan is being asked to do, and what happens next — no jargon, no hype,
-no industry words. Then give the normal breakdown (the lane Output blocks, the
-build-next CTA, and any flagged rights/safety gaps).
+## Routing
+
+- Rights, sample, split, or clearance gaps surfaced in any lane →
+  **suede-rights-audit** to organize them, then **suede-rights-passport** to
+  package.
+- Track pitched for film/TV/ads/games → **suede-sync-packaging**.
+- Release folder and metadata readiness → **suede-release-linter**.
+- Standalone conversion copy outside this campaign → **suede-copy** or
+  **johnny-suede-write**.

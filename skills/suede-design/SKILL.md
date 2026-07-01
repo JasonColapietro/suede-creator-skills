@@ -1,20 +1,22 @@
 ---
 name: suede-design
-description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); component visual iteration with the script harness (check your installed skill pack for visual QA workflows); UX critique, accessibility audit, or design handoff doc (check your installed skill pack for accessibility audit workflows). Use suede-design for design system, token, and component-level decisions."
+description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. Use when picking color strategy or tokens, building or auditing a design system, polishing components, or comparing a mock against the rendered implementation. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); UX critique, accessibility audits, design handoff docs, or script-harness visual iteration (private Suede Labs companions not in this pack). Use suede-design for design system, token, and component-level decisions."
 ---
 
 # Suede Design
 
 ## When to use this skill instead of related skills
 - **suede-design** (this skill): design system tokens, color ramps, type scale, component-level polish, brand identity decisions
-- **suede-visual-qa** _(private Suede Labs skill — not included in this pack)_: visual iteration with the local script harness (craft, shape, audit sub-commands)
-- **suede-ui** _(private Suede Labs skill — not included in this pack)_: UX critique, accessibility audit, information architecture, design handoff docs
+- Visual iteration with the local script harness (craft, shape, audit sub-commands): (use suede-visual-qa — private)
+- UX critique, accessibility audit, information architecture, design handoff docs: (use suede-ui — private)
 - **johnny-suede-design**: full-stack build combining design + copy + visual QA for a launch or redesign
 
 Use this skill to make Suede interfaces feel intentional, premium, legible, and
 alive without drifting into generic AI output. It covers product UI, brand
 surfaces, landing pages, dashboards, component systems, responsive polish, and
 visual QA.
+
+**Core principle:** strip the logo and the surface must still be unmistakably this product, and render the result before claiming it works.
 
 ## Operating Stance
 
@@ -49,10 +51,10 @@ known:
 - ship blocker status.
 
 Also apply the shared no-missed gate at
-`../suede-workflow-skills/references/no-missed-quality-gates.md` when the work
-touches copy, design-system, visual QA, Suedify, visibility, or public launch
-quality.
-(Requires suede-workflow-skills from the same repo. If not installed, run Copy Gate, Visual QA Gate, SEO/AEO/AI EO Gate, Design System Gate, and Launch Gate checklists using the criteria defined in the Workflow section of this skill.)
+`~/.claude/skills/suede-workflow-skills/references/no-missed-quality-gates.md`
+when the work touches copy, design-system, visual QA, Suedify, visibility, or
+public launch quality.
+(Requires suede-workflow-skills installed from this pack. If not installed, run the Copy Gate, Visual QA Gate, SEO/AEO/AI EO Gate, Design System Gate, and Launch Gate checklists using the criteria in the Implementation Workflow, Ship Gate, and Visual QA Report sections of this skill.)
 
 ## Task Router
 
@@ -324,6 +326,8 @@ Polish: /10
 Total: /100
 ```
 
+Below 70/100 the system is failing: fix the two lowest dimensions before styling new features on that surface. Any dimension at 4/10 or lower is a P1 finding in the audit report.
+
 ## Scoped Bans And Exceptions
 
 These are not blanket bans. Keep or recreate a pattern when source fidelity, platform convention, accessibility, a confirmed brand system, or a direct user request makes it the right choice. When making an exception, name why it is earned.
@@ -422,6 +426,17 @@ Bold maximalism and refined minimalism both work. The failure mode is neither: a
 7. **Handoff:** for meaningful work, record target, files changed, commands,
    verification, caveats, and the next step.
 
+## Red Flags — Stop
+
+If any of these thoughts appear, stop and run the check you were about to skip:
+
+- "The code reads right, so it will render right." Render it. Screenshots beat code inspection.
+- "This change is too small for visual QA." One-line CSS changes break mobile nav. Check desktop and mobile.
+- "Music tool, so dark purple." That is the first-order reflex the Color law exists to reject.
+- "A placeholder metric is fine for now." Fake numbers ship unless they carry a `[NEEDS REAL DATA]` flag.
+- "I remember what the reference looks like." Compare source and implementation in the same pass, never from memory.
+- "I'll write the tokens down later." Unlogged tokens are how drift starts. Note the gap now.
+
 ## Ship Gate
 
 For launch pages, app shells, public marketing surfaces, App Store assets, or
@@ -470,3 +485,11 @@ issues remain. Use `passed` only when no actionable P0/P1/P2 findings remain.
 ## Output Style
 
 Findings lead, rationale follows. Name the file and line. For builds, state what changed and show the render evidence. Never name internal process steps (preflight, task router, mutation) in user-visible output.
+
+## Routing
+
+- Full copy + design + QA build or launch → johnny-suede-design
+- Words that carry the surface → suede-copy (johnny-suede-write for the full writing stack)
+- Page conversion architecture beyond visual polish → suede-site-alchemy
+- Design change touches shared components, routing, auth, payments, or analytics → suede-code-review before the ship gate
+- Multi-lane build with parallel copy, layout, asset, and QA work → suede-agent-teams

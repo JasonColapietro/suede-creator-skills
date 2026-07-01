@@ -1,6 +1,6 @@
 ---
 name: suede-ship-gate
-description: Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes.
+description: "Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes. NOT FOR: reviewing or grading the code the pipeline runs on (use suede-code); designing AI eval cases (use suede-ai-eval, then wire them in here)."
 ---
 
 # Suede Ship Gate
@@ -19,6 +19,8 @@ From the repo root, inventory:
 - **Runtime versions:** `.nvmrc`, `package.json` `engines`, `.python-version`, `pytest.ini`/`pyproject`. Pin CI to these; never hardcode a guess.
 - **Deploy platform:** `vercel.json` / `.vercel`, `netlify.toml`, a `Dockerfile`. If the platform skips non-prod builds (e.g. Vercel `ignoreCommand` kills previews), CI is the *only* pre-merge build signal — so a build job is mandatory.
 - **Real scripts:** read each app's `scripts` / test config and use the real ones (`test`, `test:run`, `lint`, `build`). Don't invent commands.
+
+Do not write a single workflow line until this inventory is complete.
 
 ## The gate (the part everyone gets wrong)
 
@@ -58,13 +60,23 @@ In branch protection, require **only `ci-success`** — never the individual job
 - Hardcoded `node-version` / `python-version` that doesn't match the app → green in CI, broken in prod.
 - A job whose `paths:` never match → always skipped → a "green" check that tested nothing.
 
+## Red flags — stop
+
+The excuses that precede a broken gate:
+
+- "Just require each job directly" — a skipped path-filtered job deadlocks every unrelated PR. The aggregator is the only required check.
+- "CI is green" — green because it ran, or green because everything skipped? Name what actually executed.
+- "One big workflow that builds everything is simpler" — it also builds the world on a README typo. Path-filter it.
+- "We'll protect main after launch" — the riskiest merges happen before launch.
+- "The deploy platform builds it anyway" — if previews are off, CI is the only pre-merge proof the app compiles.
+
 ## Output
 
 1. The workflow file(s) under `.github/workflows/`.
 2. The exact branch-protection settings to apply (and the `gh api` calls, if asked).
 3. A short report: apps detected, package manager per app, what each job runs, what is required, and anything to fix first (dual lockfiles, duplicate workflows, runtime mismatches).
 
-End with a **Simple explanation (plain, for a 10-year-old)** — see the umbrella workflow — so a non-coder gets the gist.
+End with a **Simple explanation (plain, for a 10-year-old)**: one short paragraph, no jargon, saying what the gate now does and what it blocks — e.g. "Before anyone's changes join the main project, a robot builds and tests them. If the robot fails, the merge button locks."
 
 ## Post-Deploy Verification (required for production deploys)
 
@@ -79,3 +91,10 @@ Ship verdict after post-deploy: **verified** (all checks pass) | **watch** (mino
 ## Safety
 
 Generate; don't enforce. This skill writes workflow files and tells you the protection settings — it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede or any specific project.
+
+## Routing
+
+- The gate is failing on real defects → **suede-code** to review and grade the change
+- AI features need eval jobs in the pipeline → **suede-ai-eval** to design the cases, then wire them in here
+- Rollout needs flags, staged lanes, or a rollback tree → **suede-agent-teams**
+- Gate holds and the release goes public → **suede-launch-packaging**

@@ -26,7 +26,7 @@ If live, test, or runtime checks are not practical, grade the source and mark th
 
 ## Instant-F Triggers
 
-Check these before scoring any lane. Any single match is an automatic F — no other lanes matter until it is fixed.
+Check these before scoring any lane. Any single match is an automatic F — no other lanes matter until it is fixed. This list mirrors suede-code's canonical Step 1 list — change both together.
 
 **Secrets and credentials**
 - Hardcoded API key, secret, token, or password in source (not .env, not config — in the actual committed file)
@@ -153,6 +153,14 @@ Apply grade impact:
 
 Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug. Name the debt in Required Upgrades and let the overall grade reflect it.
 
+## Red Flags — Stop
+
+- "CI passed, round up" — CI that never exercised the changed behavior raises nothing.
+- "The work was clearly hard" — effort never moves a grade; evidence does.
+- "It's just a refactor" — Instant-F triggers run on every grade, every time.
+- "Happy path works, call it an A" — the grade caps exist because happy paths are never where the risk lives.
+- "The PR description is clear enough" — grade the diff and its evidence, or mark the lane unverified.
+
 ## Output Format
 
 ```text
@@ -189,6 +197,8 @@ Not checked:
 Ship gate: ship | ship-with-caveats | hold
 ```
 
+Ship gate follows the overall grade, mechanically: A → `ship`; B → `ship-with-caveats`; C, D, F → `hold`.
+
 To revise this grade: name what changed.
 To bank a pattern: name what worked so it can be reused.
 Silence = accepted.
@@ -199,3 +209,9 @@ Silence = accepted.
 - Do not invent tests, screenshots, live checks, deploy status, or public claim evidence.
 - Do not ship a C, D, or F without naming the required upgrade that would move the grade.
 - Keep the grade independent. Do not raise a grade because the implementation was hard, because CI passed without exercising the changed behavior, or because the author explains the intent well.
+
+## Routing
+
+- Findings and fix briefs behind the grade → **suede-code** (combined) or **suede-code-review** (findings only, plus Accessibility/SEO lanes)
+- Grade is C or below and the repo has no merge gate → **suede-ship-gate**
+- The change ships AI behavior with no eval coverage → **suede-ai-eval**

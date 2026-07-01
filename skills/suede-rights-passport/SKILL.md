@@ -1,6 +1,6 @@
 ---
 name: suede-rights-passport
-description: Prepare music, audio, visual media, or creative project folders for rights packaging, provenance review, registry preparation, royalty split cleanup, licensing review, media optimization, and agent-commerce readiness. Use when a creator, label, manager, developer, or agent asks to organize files, metadata, rights details, credits, splits, licenses, stems, lyrics, artwork, or release notes into a local transfer package. A Suede review can be one downstream use, but the workflow is broadly reusable.
+description: "Prepare music, audio, visual media, or creative project folders for rights packaging, provenance review, registry preparation, royalty split cleanup, licensing review, media optimization, and agent-commerce readiness. Use when a creator, label, manager, developer, or agent asks to organize files, metadata, rights details, credits, splits, licenses, stems, lyrics, artwork, or release notes into a local transfer package. A Suede review can be one downstream use, but the workflow is broadly reusable. Packages and flags only — it never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: finding and organizing the rights gaps themselves (use suede-rights-audit); linting a release folder for readiness (use suede-release-linter)."
 ---
 
 # Creator Rights Package Builder
@@ -9,7 +9,11 @@ description: Prepare music, audio, visual media, or creative project folders for
 
 Create a local rights and provenance transfer package from messy creator materials. The package should make the work easier for a creator, collaborator, advisor, registry, marketplace, label, or optional Suede reviewer to inspect, optimize, register, route royalties for, license, and expose to agent-readable commerce systems.
 
+**Core principle:** the package carries questions, not answers. Every rights fact ships as confirmed (with user-supplied evidence) or as unknown with a question in `missing-info-report.md`. The package never resolves a rights question, and building it clears nothing.
+
 Public v1 is offline-first: prepare files and metadata, do not upload files, write to a registry, request private keys, or claim legal clearance.
+
+Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill packages the folder. If the gaps themselves need investigation or evidence work, hand off to the audit first.
 
 ## Workflow
 
@@ -26,7 +30,7 @@ Public v1 is offline-first: prepare files and metadata, do not upload files, wri
    - `license-notes.md`
    - `optimization-brief.md`
    - `missing-info-report.md`
-7. Flag uncertainty clearly. Use `unknown`, `unconfirmed`, or `needs creator confirmation` instead of inventing rights facts.
+7. Flag uncertainty clearly. Use `unknown`, `unconfirmed`, or `needs creator confirmation` instead of inventing rights facts. Never resolve a rights question while packaging: ownership, split, sample, and license statuses move to confirmed only on user-supplied evidence, and every open gap ships as a question in `missing-info-report.md`.
 8. End with a concise transfer summary: package path, files found, missing info, risk flags, and recommended next step.
 
 ## Quick Start
@@ -65,12 +69,13 @@ Safety defaults:
 
 ## Package Standards
 
-Use the bundled references only as needed:
+Read each bundled reference at the moment it is needed, not up front:
 
-- `references/package-standard.md`: required output files, folder structure, risk language, and quality bar.
-- `references/intake-schema.md`: field definitions for `suede-intake.json`.
-- `references/optimization-checklist.md`: optimization categories and recommendation language for downstream review.
-- `references/creator-questions.md`: concise questions to resolve missing rights, provenance, and release data.
+- `references/package-standard.md`: before creating or repairing any package — required output files, folder structure, risk labels, and quality bar.
+- `references/intake-schema.md`: when filling or validating `suede-intake.json`.
+- `references/optimization-checklist.md`: when writing `optimization-brief.md`.
+- `references/creator-questions.md`: when information is missing — ask only the questions that block package quality.
+- `references/passport-context.md`: when the user asks how the package relates to Suede review or the Suede Creator Passport.
 
 Use the bundled assets as templates when creating or repairing a package:
 
@@ -99,10 +104,25 @@ Before reporting that a package is ready:
 
 - Confirm every media/document file is either inventoried or intentionally excluded.
 - Confirm every asset in `suede-intake.json` has a stable relative path and SHA-256 hash when available.
-- Mark contributors, splits, licenses, samples, and ownership facts as confirmed or unknown.
+- Mark contributors, splits, licenses, samples, and ownership facts as confirmed or unknown. Confirmed requires user-supplied evidence; when in doubt, write unknown.
 - Include a `missing-info-report.md` section even when nothing is missing.
 - Include an `optimization-brief.md` with concrete next actions for downstream review.
 - State that final rights clearance requires creator/legal confirmation when any rights fact is uncertain.
+
+## Red flags — stop
+
+If any of these appear in your reasoning, stop and re-read the core principle:
+
+- "Fill in the missing split so the total reaches 100." A guessed split is a
+  false rights fact. Record the shortfall and ask.
+- "The artist told me they own it — mark ownership confirmed." Record the
+  claim as `claimed`; `confirmed` needs evidence.
+- "Nothing seems missing — skip missing-info-report.md." The report ships even
+  when empty. That is the checklist.
+- "Copy all the assets; sorting is the reviewer's problem." Check for draft
+  and do-not-share files before any `--copy-assets` run.
+- "Call it registered or cleared since the package looks complete." A complete
+  package is organized, not approved.
 
 ## Downstream Review Context
 
@@ -112,3 +132,11 @@ review materials. They can support a release, registry, licensing conversation,
 collaborator handoff, marketplace review, label review, advisor review, or
 Suede review without claiming that any downstream system has accepted, cleared,
 registered, paid, or approved the work.
+
+## Routing
+
+- Rights gaps that need investigation or evidence organizing →
+  **suede-rights-audit** (it finds the gaps; this skill packages them).
+- Release-readiness lint before or after packaging → **suede-release-linter**.
+- Track headed to film/TV/ads once packaged → **suede-sync-packaging**.
+- The release needs a rollout → **suede-campaign-in-a-box**.

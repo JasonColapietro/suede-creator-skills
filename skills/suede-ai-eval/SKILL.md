@@ -1,13 +1,21 @@
 ---
 name: suede-ai-eval
-description: "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces. Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks."
+description: "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces. Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks — or when someone asks how we know the AI is good enough to ship. NOT FOR: reviewing the surrounding code (use suede-code); wiring the finished eval suite into CI (use suede-ship-gate)."
 ---
 
 # Suede AI Eval
 
-Use this skill to make AI behavior testable before it becomes a vague product promise.
+Make AI behavior testable before it becomes a vague product promise. **No eval plan, no ship verdict: an AI feature without one cannot be graded `ship`.**
 
 The deliverable is an eval plan or coverage audit, not a model benchmark leaderboard. Keep it grounded in the actual product surface, user promise, data sources, prompts, tools, logs, tests, and failure modes available now.
+
+## Hard Gates
+
+- No AI-SPEC → no eval plan. Write the one-paragraph spec first; cases written without a spec test nothing.
+- No eval plan → no ship verdict. Never emit `ship` or `ship-with-caveats` for an AI feature that lacks a failure-mode map and eval cases.
+- A failure mode without an eval case, an owner, and a gate is uncovered — regardless of how unlikely it feels.
+- A live surface that was never sampled gets the output stamped `source-only`; do not present source-only review as runtime evidence.
+- A model grading its own output is not evidence. LLM-as-judge scores count only after spot-checked agreement with a human-reviewed sample.
 
 ## Source Truth
 
@@ -108,6 +116,15 @@ Coverage gaps:
 Next implementation step:
 ```
 
+## Red Flags — Stop
+
+- "It looked good in the demo" — a demo is one happy-path sample, not coverage.
+- "We'll eval after launch" — after launch, the eval set is your users.
+- "The model seems smart" — vibes are not a rubric row; write the failure mode down and score it.
+- "We tested the prompt by hand" — prompt review and happy-path poking are not eval coverage.
+- "It passed once" — a pass with no fixture or scripted check protects nothing on the next model or prompt change.
+- "The judge model approved it" — self-judgment without human-agreement spot checks is not evidence.
+
 ## Output
 
 Return:
@@ -124,6 +141,8 @@ Required next step:
 Commands or evidence checked:
 ```
 
+Ship gate is mechanical: **hold** = any severity-5 failure mode uncovered, or no eval plan exists; **ship-with-caveats** = all severity-5 modes covered, remaining severity-4 gaps each have a named owner and follow-up; **ship** = every severity 4-5 failure mode has a case, a gate, and evidence.
+
 ## Boundaries
 
 - Do not claim legal, rights, licensing, medical, financial, or compliance clearance.
@@ -131,3 +150,10 @@ Commands or evidence checked:
 - Do not upload data, call private services, or run destructive workflows unless the user explicitly asks and the repo/tooling supports it.
 - Do not treat a model's self-judgment as sufficient evidence.
 - Do not mark eval coverage complete when only prompt review or happy-path manual testing exists.
+
+## Routing
+
+- The AI surface's implementation needs review or a ship grade → **suede-code**
+- Eval cases written and passing → **suede-ship-gate** to wire them into CI as a required check
+- Built feature needs UAT beyond the eval suite → (use suede-verify — private)
+- The eval work is one lane of a bigger coordinated build → **suede-agent-teams**
