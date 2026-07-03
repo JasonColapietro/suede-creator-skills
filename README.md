@@ -76,6 +76,8 @@ Use suede-code to review my staged diff and give it an A-F ship grade.
 
 The skill runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it.
 
+If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
+
 ## The skills
 
 ### Agent orchestration & workflows

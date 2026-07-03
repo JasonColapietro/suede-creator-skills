@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suede Creator Skills | Open-Source Agent Skill Pack</title>
+  <title>Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex</title>
   <meta name="description" content="Install 21 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO. One-command install.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Suede Creator Skills | Open-Source Agent Skill Pack">
+  <meta property="og:title" content="Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex">
   <meta property="og:description" content="Install 21 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO.">
   <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
   <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/">
@@ -16,7 +16,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Suede Creator Skills | Open-Source Agent Skill Pack">
+  <meta name="twitter:title" content="Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex">
   <meta name="twitter:description" content="Install 21 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO.">
   <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
 
@@ -96,6 +96,32 @@
           { "@type": "ListItem", "position": 19, "name": "Suede Campaign in a Box", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md" },
           { "@type": "ListItem", "position": 20, "name": "Suede Rights Audit", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md" },
           { "@type": "ListItem", "position": 21, "name": "Suede Sync Packaging", "url": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are Agent Skills?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. This pack ships 21 of them under the MIT license: orchestration, code review and grading, CI ship-gates, AI evals, design, copy, SEO, and a creator toolkit for music rights and release prep. Every folder is plain Markdown you can read before you install it." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install the Suede Creator Skills pack?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In Claude Code, run /plugin marketplace add JasonColapietro/suede-creator-skills, then /plugin install suede-skills@suede. Prefer a clone? install.sh copies all 21 skills into ~/.claude/skills/. Codex installs any skill folder with its built-in skill installer." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work with both Claude Code and Codex?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each skill is a standard SKILL.md folder, the format both runtimes read. Claude Code installs via the plugin marketplace or a folder copy into .claude/skills/; Codex installs via its skill installer into ~/.codex/skills." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it safe to run?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The skills inspect local files and pages and write local reports. They do not upload files by default, write to any registry, request secrets, or claim legal clearance. The whole pack is MIT licensed and inspectable before you enable anything." }
+          }
         ]
       }
     ]
@@ -1774,6 +1800,19 @@
       color: #888880;
     }
 
+    /* ---- FAQ ---- */
+    .faq-inner { max-width: 820px; margin: 0 auto; padding: 0 40px; }
+    .faq-headline { font-size: clamp(34px, 5vw, 56px); font-weight: 800; letter-spacing: -0.03em; color: #f0ece4; margin: 0 0 40px; }
+    .faq-item { border: 1px solid #222222; border-radius: 4px; background: #111111; margin-bottom: 12px; }
+    .faq-item summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; font-size: 16px; font-weight: 600; color: #f0ece4; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: #c8a96e; font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform 0.2s ease; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { padding: 0 22px 20px; margin: 0; font-size: 15px; line-height: 1.7; color: #888880; }
+    .faq-item p code { color: #c8a96e; font-size: 0.9em; }
+    .faq-item p a { color: #c8a96e; border-bottom: 1px solid rgba(200,169,110,0.3); }
+    @media (max-width: 640px) { .faq-inner { padding: 0 24px; } }
+
     /* ---- SCROLL REVEAL (progressive enhancement) ----
        Hidden state only applies once JS adds .js-on to <html>, so the
        page is fully visible if JS or IntersectionObserver ever fails. */
@@ -1962,13 +2001,13 @@
   <div id="hero-vignette" aria-hidden="true"></div>
 
   <div id="hero-inner">
-    <span id="hero-eyebrow" class="hero-anim">Open-source agent skills for Codex and Claude Code.</span>
+    <span id="hero-eyebrow" class="hero-anim">Open-source agent skills for Claude Code and Codex</span>
 
     <img id="hero-logo" class="hero-anim" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
 
-    <h1 id="hero-headline" class="hero-anim">Install reusable agent skills for orchestration, code review, and AI evals.</h1>
+    <h1 id="hero-headline" class="hero-anim">21 open-source skills that teach your coding agent to ship.</h1>
 
-    <p id="hero-subline" class="hero-anim">Suede Creator Skills is a 21-skill MIT-licensed pack for Claude Code and Codex: coordinate multi-agent build lanes with quality gates, run code review with a blunt A-F ship grade, design measurable AI evals, and ship public work with the design, copy, and SEO lanes. Bring your own company, repo, page, or product.</p>
+    <p id="hero-subline" class="hero-anim">Suede Creator Skills is a 21-skill, MIT-licensed pack for Claude Code and Codex. Coordinate multi-agent build lanes with quality gates. Run code review that ends in a blunt A-F ship grade. Wire CI that gates the merge, design measurable AI evals, and ship public work with the design, copy, and SEO lanes. Bring your own company, repo, page, or product.</p>
 
     <div id="hero-proof" class="hero-anim">
       <span class="hero-proof-line">Public install commands, MIT license, and inspectable SKILL.md folders</span>
@@ -1993,50 +2032,48 @@
 <!-- SKILL MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Suedify</span>
-    <span class="marquee-item">Site Alchemy</span>
-    <span class="marquee-item">Code Grader</span>
-    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">Workflow Skills</span>
+    <span class="marquee-item">Agent Teams</span>
     <span class="marquee-item">AI Evals</span>
+    <span class="marquee-item">Code + Grade</span>
+    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">Code Grader</span>
+    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Johnny Suede Write</span>
+    <span class="marquee-item">Johnny Suede Design</span>
+    <span class="marquee-item">Design System</span>
+    <span class="marquee-item">Conversion Copy</span>
     <span class="marquee-item">SEO / AEO / AI EO</span>
     <span class="marquee-item">Visibility Grader</span>
-    <span class="marquee-item">Campaign in a Box</span>
-    <span class="marquee-item">Agent Teams</span>
-    <span class="marquee-item">Sync Packaging</span>
-    <span class="marquee-item">Rights Passport</span>
-    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">Site Alchemy</span>
     <span class="marquee-item">Launch Packaging</span>
     <span class="marquee-item">MCP QA</span>
-    <span class="marquee-item">Design System</span>
-    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Campaign in a Box</span>
+    <span class="marquee-item">Sync Packaging</span>
     <span class="marquee-item">Release Linter</span>
-    <span class="marquee-item">Provenance Map</span>
-    <span class="marquee-item">Royalty Routing</span>
-    <span class="marquee-item">Agent Commerce</span>
-    <span class="marquee-item">Johnny Suede Write</span>
-    <span class="marquee-item">Exceptional GitHub Pages</span>
-    <span class="marquee-item">Suedify</span>
-    <span class="marquee-item">Site Alchemy</span>
-    <span class="marquee-item">Code Grader</span>
-    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">Rights Passport</span>
+    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">Workflow Skills</span>
+    <span class="marquee-item">Agent Teams</span>
     <span class="marquee-item">AI Evals</span>
+    <span class="marquee-item">Code + Grade</span>
+    <span class="marquee-item">Code Review</span>
+    <span class="marquee-item">Code Grader</span>
+    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Johnny Suede Write</span>
+    <span class="marquee-item">Johnny Suede Design</span>
+    <span class="marquee-item">Design System</span>
+    <span class="marquee-item">Conversion Copy</span>
     <span class="marquee-item">SEO / AEO / AI EO</span>
     <span class="marquee-item">Visibility Grader</span>
-    <span class="marquee-item">Campaign in a Box</span>
-    <span class="marquee-item">Agent Teams</span>
-    <span class="marquee-item">Sync Packaging</span>
-    <span class="marquee-item">Rights Passport</span>
-    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">Site Alchemy</span>
     <span class="marquee-item">Launch Packaging</span>
     <span class="marquee-item">MCP QA</span>
-    <span class="marquee-item">Design System</span>
-    <span class="marquee-item">Ship Gate</span>
+    <span class="marquee-item">Campaign in a Box</span>
+    <span class="marquee-item">Sync Packaging</span>
     <span class="marquee-item">Release Linter</span>
-    <span class="marquee-item">Provenance Map</span>
-    <span class="marquee-item">Royalty Routing</span>
-    <span class="marquee-item">Agent Commerce</span>
-    <span class="marquee-item">Johnny Suede Write</span>
-    <span class="marquee-item">Exceptional GitHub Pages</span>
+    <span class="marquee-item">Rights Passport</span>
+    <span class="marquee-item">Rights Audit</span>
   </div>
 </div>
 
@@ -2047,8 +2084,8 @@
     <div class="features-grid reveal-group">
       <div class="feature-card">
         <span class="feature-num">01</span>
-        <span class="feature-label">Portable memory</span>
-        <p class="feature-copy">Keeps preferences in linked skill context instead of bloating one giant prompt until the agent forgets the job</p>
+        <span class="feature-label">Skills, not prompts</span>
+        <p class="feature-copy">Every capability is an inspectable SKILL.md folder the agent loads on demand, so context stays lean and the job stays in focus</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">02</span>
@@ -2062,7 +2099,7 @@
       </div>
       <div class="feature-card">
         <span class="feature-num">04</span>
-        <span class="feature-label">Copy + GEO</span>
+        <span class="feature-label">Copy + SEO/AEO</span>
         <p class="feature-copy">Distills copy, CTAs, metadata, schema, FAQs, and answer-ready proof for Google, Gemini, and model-readable answer surfaces</p>
       </div>
       <div class="feature-card">
@@ -2072,13 +2109,13 @@
       </div>
       <div class="feature-card">
         <span class="feature-num">06</span>
-        <span class="feature-label">Cue Suede</span>
-        <p class="feature-copy">Tell it what you like or hate mid-run or at the end. The next pass uses the correction instead of vague memory</p>
+        <span class="feature-label">Feedback loop</span>
+        <p class="feature-copy">Say "Cue Suede" mid-run or at handoff and tell it what hit or missed. The next pass applies the correction instead of vague chat memory</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">07</span>
-        <span class="feature-label">GitHub Pages proof</span>
-        <p class="feature-copy">The public site is part of the product: polished docs, skill pages, copy bank, install paths, schema, sitemap, OG, and attribution</p>
+        <span class="feature-label">Launch packaging</span>
+        <p class="feature-copy">Packages work as a release strangers can actually install: verified commands, proof links, docs, and a QA gate before any public claim ships</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">08</span>
@@ -2087,8 +2124,8 @@
       </div>
       <div class="feature-card">
         <span class="feature-num">09</span>
-        <span class="feature-label">iOS set builder</span>
-        <p class="feature-copy">Turns a site or product idea into iOS-ready copy, screenshots, App Store metadata, native-contract checks, and release QA</p>
+        <span class="feature-label">CI ship gate</span>
+        <p class="feature-copy">Writes CI that actually gates the merge: stack and lockfile detection, one required check that can't deadlock, and branch protection that holds</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">10</span>
@@ -2117,12 +2154,12 @@
       <div class="stat-label">Public skills</div>
     </div>
     <div class="stat">
-      <div class="stat-num">1</div>
-      <div class="stat-label">portable context spine</div>
+      <div class="stat-num">2</div>
+      <div class="stat-label">runtimes: Claude Code + Codex</div>
     </div>
     <div class="stat">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Cue Suede feedback loop</div>
+      <div class="stat-num">7</div>
+      <div class="stat-label">MCP tools included</div>
     </div>
     <div class="stat">
       <div class="stat-num">0</div>
@@ -2239,12 +2276,37 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" style="background:#080808;padding:0 0 120px;font-family:system-ui,-apple-system,sans-serif;">
+  <div class="faq-inner">
+    <h2 class="faq-headline reveal">Questions, answered.</h2>
+    <div class="reveal reveal-d1">
+      <details class="faq-item" open>
+        <summary>What are Agent Skills?</summary>
+        <p>Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. This pack ships 21 of them under the MIT license: orchestration, code review and grading, CI ship-gates, AI evals, design, copy, SEO, and a creator toolkit for music rights and release prep. Every folder is plain Markdown you can read before you install it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I install the pack?</summary>
+        <p>In Claude Code, run <code>/plugin marketplace add JasonColapietro/suede-creator-skills</code>, then <code>/plugin install suede-skills@suede</code>. Prefer a clone? <code>install.sh</code> copies all 21 skills into <code>~/.claude/skills/</code>. Codex installs any skill folder with its built-in skill installer. Full paths live on the <a href="plugins.html">install page</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work with both Claude Code and Codex?</summary>
+        <p>Yes. Each skill is a standard SKILL.md folder, the format both runtimes read. Claude Code installs via the plugin marketplace or a folder copy into <code>.claude/skills/</code>; Codex installs via its skill installer into <code>~/.codex/skills</code>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is it safe to run?</summary>
+        <p>The skills inspect local files and pages and write local reports. They do not upload files by default, write to any registry, request secrets, or claim legal clearance. The whole pack is MIT licensed and inspectable before you enable anything.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- INSTALL + FOOTER -->
 <section id="install" style="background:#080808;padding:120px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
 
   <div class="install-inner">
     <h2 class="install-headline reveal">Install the open-source pack.</h2>
-    <p class="install-sub reveal reveal-d1">Add the marketplace in Claude Code and install all 21 skills in one command, or clone the repo. Either way the agent gets orchestration, code review and A-F grading, AI evals, design, copy, SEO, and CI rails it can reuse across your own work.</p>
+    <p class="install-sub reveal reveal-d1">Two lines in Claude Code install all 21 skills. Prefer less? <code>suede-agent-workflows@suede</code> and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Either way the agent gets orchestration, code review with A-F grading, AI evals, design, copy, SEO, and CI rails it can reuse across your own work.</p>
 
     <div class="install-terminal reveal reveal-d1">
       <div class="install-terminal-bar" aria-hidden="true">
@@ -2275,7 +2337,8 @@
       <a class="install-link install-link-primary" href="skills/">Browse all 21 skills</a>
       <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
       <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
-      <a class="install-link" href="plugins.html">MCP docs</a>
+      <a class="install-link" href="plugins.html">Codex + MCP install docs</a>
+      <a class="install-link" href="guide.html">Read the full guide</a>
     </div>
   </div>
 

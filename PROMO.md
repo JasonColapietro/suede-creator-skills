@@ -1,6 +1,6 @@
-# Suede Ambassador Explainer Pack
+# Suede Public Explainer Pack
 
-Use this file when ambassadors, builders, creators, or operators need to
+Use this file when builders, creators, or operators need to
 explain Suede Creator Skills and the Suede workflow in public. It is written
 for sharing, posting, documenting, onboarding, and answering questions with
 clear, search-friendly, specific language and careful claim boundaries.
@@ -11,7 +11,7 @@ Suede gives AI agents portable context and a reusable product workflow for
 Suedify reference-site restyling, design, anti-slop copywriting, SEO/AEO/GEO/AI
 EO, visual QA, visibility and CTA grading, A-F Suede code grades, AI evals,
 coordinated agent teams, GitHub Pages polish, public skill installs,
-MCP-assisted discovery, launch packaging, iOS/product checks, music/IP
+MCP-assisted discovery, launch packaging, CI ship-gates, music/IP
 metadata, and creator workflow support.
 
 The pack helps agents do more than answer prompts. It gives them a Suede way to
@@ -30,8 +30,8 @@ The big components deserve the spotlight:
 - It can take a reference site and your site, then build your site toward the
   other aesthetic with target-owned content, safe assets, copy, SEO/AEO/GEO/AI
   EO, and QA.
-- It can turn a web/product surface into an iOS-ready package: copy, screenshots,
-  App Store metadata, native contract checks, and release QA.
+- It can wire CI that actually gates the merge: stack detection, one required
+  check, and branch protection that holds.
 - It coordinates agent teams that communicate through shared evidence instead
   of running subagents in disconnected silos.
 - It grades public visibility at the schema and answer-engine layer: brand
@@ -52,12 +52,12 @@ The big components deserve the spotlight:
 Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
 product, design, copywriting, SEO/AEO/GEO/AI EO, Suedify, GitHub Pages, QA,
 install, launch, visibility-grading, code-review, agent-team, AI-eval,
-iOS/product, music/IP, and creator-workflow assistant.
+music/IP, and creator-workflow assistant.
 
 Use the skills directly for normal work. Use the MCP when structure helps:
 skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 
-## One-Line Ambassador Lines
+## One-Line Explainers
 
 - Stop prompting from scratch. Load Suede.
 - Stop prompting your agent like it has amnesia.
@@ -74,7 +74,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Even the GitHub Pages site sells: polished docs, live catalog, install paths, copy bank, schema, sitemap, OG metadata, and mobile QA.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
-- Turn a site into an iOS-ready product set: copy, screenshots, metadata, QA, and release checks.
+- Wire CI that gates the merge: one required check, branch protection, no deadlocks.
 - Score your brand at the schema, answer-engine, trust, and visibility layers.
 - Invoke Johnny Suede Write, Design/Create, or Code when you want the whole workflow loaded at once.
 
@@ -93,7 +93,7 @@ and a short memory. Suede fixes that by packaging the working system:
 - how it should adapt a reference site's design grammar safely;
 - how it should audit SEO, AEO, GEO, AI EO, schema, and metadata;
 - how it should score a brand for AI readability, schema depth, and result-surface readiness;
-- how it should turn web work into iOS/App Store-ready packaging;
+- how it should wire CI ship-gates that block a merge when required checks fail;
 - how it should improve when the operator gives feedback;
 - how it should run QA before handoff;
 - how it should run scout, parallel build, adversarial review, consensus review, WIP protection, quality/eval gates, release verification, recovery replay, and evidence handoff loops when a major task needs agent teams that communicate instead of disappearing into silos;
@@ -133,7 +133,7 @@ Use this for artist campaigns and creator rights work:
 
 Use this when the work is bigger than a page:
 
-- iOS/product surface checks: screenshot, mobile, App Store metadata, native contract, and public-claim checks that came from real Suede release work.
+- CI ship-gates: path-aware builds, one required check, and branch protection patterns that came from real Suede release work.
 - GitHub Pages polish: turn docs into a public product page with install CTAs, schema, sitemap, copy bank, OG assets, skill pages, and mobile QA.
 - Music/IP suite: campaign systems, release linting, rights passports, metadata checks, sync packaging, provenance, credits, split notes, and intake reports.
 
@@ -150,10 +150,10 @@ Use MCP only when it creates value:
 Skip MCP for small edits, normal execution, or anything where a direct skill call
 is faster.
 
-## Ambassador Talk Tracks
+## Public Talk Tracks
 
 Use these when someone asks what Suede does, why the workflow matters, or which
-part to try first. Ambassadors should explain the outcome first, then route the
+part to try first. Whoever is explaining it should lead with the outcome first, then route the
 person to the right skill, doc, MCP option, or install path.
 
 ### Founder Context
@@ -173,7 +173,7 @@ and no one will ever care as much as the founder/operator who has to live with
 the result. Public work has to be visible where people and AI systems look:
 Google result surfaces, Gemini result surfaces, docs pages, repo pages,
 metadata, schema, CTAs, proof, and pages that can actually be explained by an
-ambassador without inventing claims.
+public user without inventing claims.
 
 ### For Founders
 
@@ -241,7 +241,7 @@ Secondary CTAs:
 ```text
 Open the skill docs
 Use the MCP
-Read the ambassador guide
+Read the explainer guide
 Create a rights passport
 Audit a release folder
 Run Suedify
@@ -255,7 +255,7 @@ Rewrite the page
 ### Suede Workflow Skills
 
 ```text
-Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, ambassador explanation, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, public explainer support, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
 ```
 
 ### Suede Creator Skills
@@ -398,7 +398,7 @@ Suede MCP is not required for every task. It is there when structure helps: disc
 
 ## Public Install Copy
 
-Use this for public docs, ambassador replies, and GitHub install instructions:
+Use this for public docs, explainer replies, and GitHub install instructions:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -448,7 +448,7 @@ codex plugin add suede-creator-skills@personal
 Public-facing explanation:
 
 ```text
-The @personal suffix is a local Codex marketplace namespace. It means the plugin is installed from the operator's local personal marketplace. It is not the public install path and should not lead public ambassador copy.
+The @personal suffix is a local Codex marketplace namespace. It means the plugin is installed from the operator's local personal marketplace. It is not the public install path and should not lead public explainer copy.
 ```
 
 MCP source path:
@@ -552,7 +552,7 @@ The pack gives agents a reusable way to handle:
 - MCP-assisted lookup
 ```
 
-## Ambassador DMs
+## Explainer DMs
 
 ### Founder DM
 
@@ -601,7 +601,7 @@ Hey,
 
 I packaged the Suede workflow into installable public agent skills.
 
-It covers Suedify site-style transfer, GitHub Pages polish, design direction, copywriting, SEO/AEO/GEO/AI EO audits, visibility and CTA grading, A-F code grading, coordinated agent teams, QA, artist campaign tools, iOS/product checks, music/IP workflows, and optional MCP support when structured discovery or checklists help.
+It covers Suedify site-style transfer, GitHub Pages polish, design direction, copywriting, SEO/AEO/GEO/AI EO audits, visibility and CTA grading, A-F code grading, coordinated agent teams, QA, artist campaign tools, music/IP workflows, and optional MCP support when structured discovery or checklists help.
 
 The goal is to stop rebuilding the same prompt stack every time. Call the Suede skills, give feedback as it works, and let the agent tighten the next pass.
 
@@ -619,7 +619,7 @@ https://jasoncolapietro.github.io/suede-creator-skills/
 ```text
 One agent. A full Suede workflow.
 
-Suede gives Codex-style agents a reusable system for portable preferences, Suedify, design direction, copywriting, SEO/AEO/GEO/AI EO, exceptional GitHub Pages, visibility grading, A-F code grading, QA, public docs, iOS/product checks, music/IP, and artist campaign packaging.
+Suede gives Claude Code and Codex agents a reusable system for Suedify, design direction, copywriting, SEO/AEO/GEO/AI EO, exceptional GitHub Pages, visibility grading, A-F code grading, CI ship-gates, QA, public docs, music/IP, and artist campaign packaging.
 ```
 
 ### Block: Better Prompts Are Not Enough
@@ -696,13 +696,13 @@ Suede Creator Skills | Design, Copy, SEO, Suedify
 Install public Suede skills and MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, artist campaigns, and creator workflows.
 ```
 
-### Ambassador Page Title
+### Explainer Page Title
 
 ```text
-Suede Ambassador Guide | Design, Copy, SEO, QA, MCP
+Suede Public Explainer | Design, Copy, SEO, QA, MCP
 ```
 
-### Ambassador Page Meta Description
+### Explainer Page Meta Description
 
 ```text
 Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, and artist campaign tools.
@@ -768,13 +768,13 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 
 ## FAQ Copy
 
-### What is the Suede Ambassador Explainer Pack?
+### What is the Suede Public Explainer Pack?
 
-Suede Ambassador Explainer Pack is the public explanation and copy system for
+The Suede Public Explainer Pack is the public explanation and copy system for
 the Suede skills, MCP server, Suedify workflow, design, copywriting, SEO/AEO/AI EO
 audit flow, QA workflow, artist campaign tools, and creator utilities.
 
-### What should ambassadors explain first?
+### What should you explain first?
 
 Explain the outcome first: agents that ship better public work with less setup.
 Then explain the lanes: Suedify, design, copywriting, SEO/AEO/AI EO, code review, QA,
