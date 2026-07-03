@@ -33,6 +33,12 @@ Prefer a clone? `install.sh` copies all 21 skills into `~/.claude/skills/` and p
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
 ```
 
+Using Cursor, Copilot, Windsurf, or another agent? The [skills CLI](https://github.com/vercel-labs/skills) installs the pack into 25+ agents, Claude Code and Codex included:
+
+```bash
+npx skills add JasonColapietro/suede-creator-skills
+```
+
 You can also copy individual skill folders into `.claude/skills/` (project) or `~/.claude/skills/` (user).
 
 <details>
