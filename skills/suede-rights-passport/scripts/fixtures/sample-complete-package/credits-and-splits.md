@@ -8,8 +8,8 @@ sensitive. Review before sharing.
 
 | Name | Role | Master % | Publishing % | Confirmation |
 | --- | --- | ---: | ---: | --- |
-| Ari Fontaine | Songwriter/Producer | 60 | 60 | True |
-| Devon Okafor | Co-writer/Vocals | 40 | 40 | True |
+| Ari Fontaine | Songwriter/Producer | 60 | 60 | confirmed |
+| Devon Okafor | Co-writer/Vocals | 40 | 40 | confirmed |
 
 
 ## Organizations

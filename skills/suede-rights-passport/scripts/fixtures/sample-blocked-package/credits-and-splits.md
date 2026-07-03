@@ -8,8 +8,8 @@ sensitive. Review before sharing.
 
 | Name | Role | Master % | Publishing % | Confirmation |
 | --- | --- | ---: | ---: | --- |
-| Rae Marlowe | Songwriter/Producer | 70 | 70 | False |
-| Kai (last name unknown) | Co-writer, unconfirmed | 30 | 30 | False |
+| Rae Marlowe | Songwriter/Producer | 70 | 70 | needs creator confirmation |
+| Kai (last name unknown) | Co-writer, unconfirmed | 30 | 30 | needs creator confirmation |
 
 
 ## Organizations
