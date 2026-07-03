@@ -239,6 +239,59 @@ These are starting points, not a guaranteed sequence. A page with zero testimoni
 11. Leave a concise handoff with target, files changed, commands, verification,
     caveats, and the exact next step.
 
+## Worked Example
+
+A compact end-to-end pass, applying the rules above to one fictional page:
+**Ledgerly** (B2B SaaS, expense reconciliation for finance teams, 40-person
+company, MOFU landing page for a paid search campaign).
+
+**Before**
+
+```text
+Hero headline: "Smarter Financial Operations for Modern Teams"
+Hero subhead: "Ledgerly helps businesses streamline their financial workflows
+with powerful, intuitive tools."
+Primary CTA: "Learn More"
+Proof stack: "Trusted by thousands of companies worldwide." (no logos, no
+names, no numbers)
+```
+
+Friction Audit read: cognitive friction is high — the headline is a
+benefit-cluster ("smarter," "modern," "powerful," "intuitive") with no single
+falsifiable claim, so the reader can't tell what the product does or who it's
+for. The CTA doesn't name an action or outcome. The proof line fails the Proof
+Check — "thousands of companies" has no number, no name, no logo, so it's
+unverifiable and reads as filler.
+
+**After**
+
+```text
+Hero headline: "Close your books 5 days faster."
+Hero subhead: "Ledgerly auto-matches transactions across your bank, cards, and
+ERP so your finance team stops reconciling by hand."
+Primary CTA: "Start my free 14-day trial"
+Secondary CTA: "See a 2-minute product walkthrough"
+Escape valve: "Not ready? Compare Ledgerly to spreadsheets" (routes to a
+comparison page, not a dead link)
+Proof stack (adjacent to primary CTA): "Used by 240 finance teams, including
+Northwind Logistics and Aster Health — 4.8★ from 61 G2 reviews."
+```
+
+**What changed and why**
+
+- Headline: replaced the benefit-cluster with a single, falsifiable promise
+  (Quick Wins #2) — "5 days faster" is a claim the reader can test, not a mood.
+- CTA: "Learn More" became "Start my free 14-day trial," naming the time
+  commitment and ownership (Quick Wins #1), and the page now carries the full
+  CTA ladder — primary action, secondary proof action, and a named escape
+  valve (Workflow step 8) — instead of one dead-end link.
+- Proof: the unverifiable "thousands of companies" line was replaced with a
+  social number plus named peer companies placed next to the primary CTA
+  (Quick Wins #3; Social Proof Framework — social numbers read best in the
+  hero, peer proof reads best at the CTA), and every figure in the new line
+  is something the Proof Check would let ship: a count, two names, a rating
+  with a review count.
+
 ## A/B Test Hypothesis Generator
 
 For any CTA, headline, or section that needs improvement, generate a testable hypothesis before rewriting.

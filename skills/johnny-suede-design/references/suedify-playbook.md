@@ -21,6 +21,8 @@ Used by johnny-suede-design Lane B. Read when running a reference → target res
 
 Open the reference URL. Capture desktop, tablet when useful, and mobile screenshots with named paths. Record viewport widths, theme, state, auth/content conditions, and any interactions needed. Record grid column count and max-width, section band height ratios (hero : content : proof : CTA), type scale (H1 size+weight, body size+line-height, caption), primary/secondary/surface color values, border-radius and shadow signature, motion character, image treatment (full-bleed vs. contained; photography vs. illustration vs. 3D), icon family (outlined / filled / custom), and CTA hierarchy.
 
+Screenshot capture: `npx playwright screenshot <reference_url> --viewport-size=1280,900 reference-desktop.png`, then repeat with `--viewport-size=768,1024` for tablet and `--viewport-size=390,844` for mobile (one-time setup: `npx playwright install chromium`). Substitute your environment's built-in preview/screenshot tool if one is available. Run the same command against `target_url` in Screenshot Diff (below) to produce the comparison pair.
+
 Motion capture: open DevTools, run `getComputedStyle(document.body).getPropertyValue('--transition-base')`, inspect active elements for `transition`/`animation` values; note cubic-bezier or named easing, duration in ms, which elements animate on hover vs. scroll, and whether scroll animation is CSS `@keyframes` + IntersectionObserver or a JS library (GSAP, Framer Motion, AOS — the library signals the perf budget). Save the analysis as `DESIGN.md` in the target repo root.
 
 ## DESIGN.md Template

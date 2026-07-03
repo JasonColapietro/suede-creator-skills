@@ -88,6 +88,8 @@ Identify the surface: repo/folder, route, live URL, deployment target, branch, d
 
 Render the result for visual work — screenshots beat code inspection. Minimum: desktop at 1280px width and mobile at 390px or 375px width. For product screenshot sets, verify the required platform dimensions before generating assets. Verify live URLs or APIs before claiming public behavior.
 
+To actually capture the render: `npx playwright screenshot <url> --viewport-size=1280,900 desktop.png` and `npx playwright screenshot <url> --viewport-size=390,844 mobile.png` (installs on first run with `npx playwright install chromium`), or your environment's built-in preview/screenshot tool if one is available.
+
 For major design work, reusable systems, reference visual matching, product screenshot assets, or public launch surfaces, keep work open only after these are known: PRODUCT.md / product context status; DESIGN.md / design-system status; shape-brief status for net-new or large redesigns; source visual-target status when a mock, screenshot, Figma frame, or reference URL exists; rendered implementation status; ship-blocker status.
 
 ## Five-Gate Checklist (Major / Public / Launch Work)
@@ -185,7 +187,7 @@ When comparing a source visual target against an implementation, save `suede-vis
 - patches made after the previous pass
 - `final result: passed` or `final result: blocked`
 
-Compare source and implementation in the same visual pass, not from memory. Check typography, spacing/layout, colors/tokens, image and asset fidelity, logos/icons, copy/content, loading/empty/error/hover/focus/active states, responsiveness, accessibility, and motion where relevant. Use `final result: blocked` when the source or rendered artifact is missing for a required comparison, or when actionable P0/P1/P2 issues remain. Use `passed` only when no actionable P0/P1/P2 findings remain.
+Compare source and implementation in the same visual pass, not from memory. Render the implementation with `npx playwright screenshot <url> --viewport-size=1280,900 impl.png` (matching viewport to the source target), or your environment's built-in preview/screenshot tool if one is available. Check typography, spacing/layout, colors/tokens, image and asset fidelity, logos/icons, copy/content, loading/empty/error/hover/focus/active states, responsiveness, accessibility, and motion where relevant. Use `final result: blocked` when the source or rendered artifact is missing for a required comparison, or when actionable P0/P1/P2 issues remain. Use `passed` only when no actionable P0/P1/P2 findings remain.
 
 ---
 
@@ -205,11 +207,11 @@ Read `references/suedify-playbook.md` when this lane is active: it holds the ful
 **Run to completion in one pass.** Do not stop to ask clarifying questions once a reference URL and target are known. If depth or fidelity is not specified, default to homepage + hero + primary CTA section, close-visual-match fidelity. State what you chose in the Ship Gate.
 
 1. **Verify target and permissions.** Identify the exact target repo/folder before editing; never edit from a multi-repo container root. Run repo-local git status, remote, and recent log. Preserve user and other-agent WIP.
-2. **Capture the reference.** Screenshots at desktop/tablet/mobile with named paths, plus the full capture list and motion-capture procedure in the playbook. Save the analysis as `DESIGN.md` in the target repo root.
+2. **Capture the reference.** Screenshots at desktop/tablet/mobile with named paths, plus the full capture list and motion-capture procedure in the playbook. Save the analysis as `DESIGN.md` in the target repo root. Capture command: `npx playwright screenshot <reference_url> --viewport-size=1280,900 reference-desktop.png` (repeat per breakpoint), or your environment's built-in preview/screenshot tool if one is available.
 3. **Capture the target.** Matching widths, state, theme, auth/content, and interaction state. Identify what target content, assets, routes, and claims must remain. Mark dead links, broken layout, weak copy, missing assets, unverified claims.
 4. **Make the translation map.** Map reference → target-safe equivalents (nav→nav, hero→hero, media→target-owned media, proof→target proof, CTA ladder→CTA ladder, motion→motion). Run Token Distiller; output the full `:root {}` CSS block.
 5. **Implement.** Work inside the target's existing framework, tokens, routes, and component patterns. Update design tokens before one-off component styling when the restyle is broad. Keep content truthful to the target — a reference's claims do not become target claims.
-6. **Render and compare.** Capture target screenshots at the same widths used for the reference; compare together in the same pass, not from memory; use focused crops for hero, nav, cards, forms, CTAs, icons, logos. Patch until the largest mismatches are fixed or named.
+6. **Render and compare.** Capture target screenshots at the same widths used for the reference; compare together in the same pass, not from memory; use focused crops for hero, nav, cards, forms, CTAs, icons, logos. Patch until the largest mismatches are fixed or named. Same capture command as step 2, run against `target_url` at matching viewport sizes, or your environment's built-in preview/screenshot tool if one is available.
 7. **Verify and ship.** Run relevant lint, typecheck, test, build, or focused commands. Run `git diff --check` when files changed. Verify live URLs before claiming a public restyle. End with `ship`, `ship-with-caveats`, or `hold`.
 
 ## Fidelity Rules

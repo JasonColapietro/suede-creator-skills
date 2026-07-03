@@ -69,6 +69,19 @@ introduce a tool the repo does not use, and never fabricate a result you did not
   secret is P0.
 - **Build:** for release reviews, the production build must pass. A broken build is P0.
 
+### Gate Commands by Stack
+
+The categories above are universal; the actual command differs by surface. Use this as
+a reference, not a checklist — detect which of these apply to the target repo, run only
+what exists, and never fabricate a result you did not run.
+
+| Stack | Type check | Lint | Test | Other |
+|---|---|---|---|---|
+| Web / Node (TS/JS) | `npx tsc --noEmit` | `npm run lint` | `npm run test` | `npm audit` for dependency CVEs |
+| MCP server (Node) | `node --check <server>.mjs` | repo's configured linter, if any | — | JSON-RPC smoke test: pipe a minimal request over stdio, e.g. `echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' \| node <server>.mjs` and confirm a well-formed response |
+| iOS / Swift (Xcode) | — (compiler check is the build) | SwiftLint, if configured | XCTest target, if present | `xcodebuild -project X.xcodeproj -scheme X -destination 'platform=iOS Simulator,name=iPhone 16' build` |
+| API / backend (generic) | language's own type/compile step, if any | repo's configured linter | contract or schema test — e.g. OpenAPI/schema validation against the live route, or the repo's own contract-test suite | — |
+
 Cite the command, its exit status, and the file:line it implicates. If a gate cannot
 run (no script, missing deps, sandboxed), say so in Verification — never report a gate
 as passed that you did not execute.

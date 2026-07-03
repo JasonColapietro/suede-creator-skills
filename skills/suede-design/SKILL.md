@@ -24,6 +24,7 @@ visual QA.
 - Keep Suede public copy anchored in creator ownership, programmable IP, rights, provenance, registry-backed media, royalty routing, and agent commerce. Do not reduce Suede to a generic AI music app.
 - Prefer the existing app framework, tokens, components, icon library, and routing patterns. Add a new abstraction only when it removes real complexity or matches an established local pattern.
 - For visual work, render the result. Screenshots beat code inspection. Minimum: desktop at 1280px width, mobile at 390px width. For App Store submissions: 1290×2796px (6.7-inch), 1488×2266px (iPad Pro 13-inch).
+- To capture the render: `npx playwright screenshot <url> --viewport-size=1280,900 desktop.png` (swap the viewport for mobile/App Store dimensions above; one-time setup: `npx playwright install chromium`), or your environment's built-in preview/screenshot tool if one is available.
 
 Before any design work, read the surface context:
 - Local `PRODUCT.md`: users, brand, tone, anti-references, strategic principles
@@ -416,7 +417,10 @@ Bold maximalism and refined minimalism both work. The failure mode is neither: a
 3. **Build:** edit narrowly inside the local architecture. Keep unrelated
    refactors out.
 4. **Render:** run the local server or use the existing preview. Capture desktop
-   and mobile screenshots when practical.
+   and mobile screenshots when practical: `npx playwright screenshot <url>
+   --viewport-size=1280,900 desktop.png` and `--viewport-size=390,844
+   mobile.png`, or your environment's built-in preview/screenshot tool if one
+   is available.
 5. **Review:** check typography, spacing, colors, asset fidelity, copy,
    accessibility, responsive behavior, loading, empty, error, hover, focus, and
    active states.
@@ -473,7 +477,10 @@ When comparing a source visual target against an implementation, save
 - `final result: passed` or `final result: blocked`
 
 Compare source and implementation in the same visual pass, not from memory.
-Check typography, spacing/layout, colors/tokens, image and asset fidelity,
+Render the implementation with `npx playwright screenshot <url>
+--viewport-size=1280,900 impl.png` (matching viewport to the source target), or
+your environment's built-in preview/screenshot tool if one is available. Check
+typography, spacing/layout, colors/tokens, image and asset fidelity,
 logos/icons, copy/content, loading/empty/error/hover/focus/active states,
 responsiveness, accessibility, and motion where relevant.
 

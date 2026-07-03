@@ -44,11 +44,20 @@ function walk(dir, files = []) {
 }
 
 function extractNotForRedirects(text) {
+  // A NOT FOR clause can name several redirect targets in one sentence,
+  // separated by semicolons (e.g. "NOT FOR: X (use a); Y (use b)."). Find
+  // the full clause span first (NOT FOR: up to the next ". "), then collect
+  // every "(use X)" inside that span — anchoring per-match on a repeated
+  // "NOT FOR:" would silently stop after the first redirect target.
   const matches = [];
-  const re = /NOT FOR:[^.]*?\(use ([a-z][a-z0-9-]+)(?: — private)?\)/g;
-  let m;
-  while ((m = re.exec(text)) !== null) {
-    matches.push({ name: m[1], private: m[0].includes(' — private') });
+  const clauseRe = /NOT FOR:([^.]*)\./g;
+  let clauseMatch;
+  while ((clauseMatch = clauseRe.exec(text)) !== null) {
+    const useRe = /\(use ([a-z][a-z0-9-]+)(?: — private)?\)/g;
+    let m;
+    while ((m = useRe.exec(clauseMatch[1])) !== null) {
+      matches.push({ name: m[1], private: m[0].includes(' — private') });
+    }
   }
   return matches;
 }

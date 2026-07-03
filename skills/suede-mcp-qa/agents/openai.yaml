@@ -2,3 +2,5 @@ interface:
   display_name: "Suede MCP QA"
   short_description: "QA Suede MCP tools and resources"
   default_prompt: "Use $suede-mcp-qa to validate this Suede MCP server, tools, prompts, resources, and install guidance."
+policy:
+  allow_implicit_invocation: true

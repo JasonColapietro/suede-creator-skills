@@ -376,6 +376,22 @@ Lane map:
 
 Done signal: LCP < 2.5s or measurable improvement documented; no regression on primary paths
 
+### (f) Recovery / Incident Response
+
+Roster: Scout, Builder (fix lane only), Release Verifier, Handoff Writer
+RFC required: no (incident is already in progress; run the Rollback Decision Tree, not an RFC)
+Flag required: n/a — this scenario reacts to an existing deploy, it does not introduce one
+
+Lane map:
+- Scout: identify what shipped, when, and what changed; walk the Rollback Decision Tree (data loss/corruption, security exposure, primary path broken, degraded-but-functional, or cosmetic) and name which branch applies
+- Scout: if the branch is "ROLLBACK IMMEDIATELY" (data loss/corruption or security exposure), say so and stop — do not investigate further before rollback, per the Rollback Decision Tree
+- Builder: executes the rollback, or the <15-minute fix, or the hot-fix-forward, per the branch Scout named. No opportunistic changes outside the incident scope.
+- Builder: after rollback, write the immediate summary — what rolled back, what was affected, who was notified — and open a follow-up issue, per the Rollback Decision Tree's post-rollback steps
+- Release Verifier: confirm the primary path is restored in production before any other lane closes
+- Handoff Writer: run the Post-Mortem Template for any P0 or P1 incident (required) or P2 (optional but encouraged); skip for P3. Populate Timeline, Impact, Root Cause, Contributing Factors, What Went Well, and Action Items with owners and due dates.
+
+Done signal: primary path verified restored in production; for P0/P1, a completed post-mortem with status `open` and every action item assigned an owner
+
 ## Escalation Protocol
 
 Stop the loop, surface the condition, and wait for human sign-off before continuing.

@@ -32,6 +32,128 @@ happen.
    malformed JSON-RPC messages.
 7. Compare MCP output against README, docs pages, and public catalog language.
 
+## This Server's Real Surface
+
+`mcp/suede-skills-mcp.mjs` is the only server this skill QAs. Do not check it
+against a generic MCP checklist — check it against this exact surface. Read
+`mcp/catalog.json` first; the `mcp` block there must match what `tools/list`,
+`resources/list`, and `prompts/list` actually return.
+
+7 tools: `list_suede_skills`, `get_suede_skill`, `suede_install_options`,
+`suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`,
+`suede_qa_checklist`.
+
+6 resources: `suede://catalog`, `suede://plugins`, `suede://copy-seo-audit`,
+`suede://visibility-grade`, `suede://code-grade`, `suede://qa-checklist`.
+
+5 prompts: `suede-copy-seo-audit`, `suede-plugin-install`,
+`suede-visibility-grade`, `suede-code-grade`, `suede-full-qa`.
+
+If any count drifts, the source (`resources`/`tools`/`prompts` arrays in
+`suede-skills-mcp.mjs`) is ground truth, not this list — re-run `tools/list`,
+`resources/list`, and `prompts/list` and update both this section and
+`mcp/catalog.json`'s `mcp` block to match.
+
+## Stdio Test Blocks
+
+Run each from the repo root. The server speaks newline-delimited JSON-RPC over
+stdio — one line in, one line out. `--profile all` exposes the full catalog;
+swap in `workflow`, `artist`, or `creator` to test profile scoping.
+
+**`initialize`**
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2025-06-18","capabilities":{"tools":{},"resources":{},"prompts":{}},"serverInfo":{"name":"suede-skills-mcp","version":"0.2.0"},"instructions":"Use this MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."}}
+```
+
+**`tools/list`**
+
+```bash
+echo '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+Returns a `tools` array of exactly the 7 tools named above, each with
+`name`, `title`, `description`, and `inputSchema`. Confirm the count and every
+name — a missing or renamed tool here is a High failure per Checks item 3.
+
+**`tools/call` — successful call**
+
+```bash
+echo '{"jsonrpc":"2.0","id":9,"method":"tools/call","params":{"name":"suede_install_options","arguments":{"surface":"mcp"}}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":9,"result":{"content":[{"type":"text","text":"\n## MCP option\nUse the MCP when structured skill discovery, install options, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.\n- Suede Workflow Skills MCP server: `suede_workflow_mcp`\n- Suede Creator Skills MCP server: `suede_creator_mcp`"}],"structuredContent":{"plugins":[{"...":"truncated — full plugin objects from catalog.json"}],"surface":"mcp"}}}
+```
+
+Every successful `tools/call` returns both `content` (text for a model to
+read) and `structuredContent` (the same data as structured JSON). Check both
+are present, not just one.
+
+**`resources/read` — successful read**
+
+```bash
+echo '{"jsonrpc":"2.0","id":4,"method":"resources/read","params":{"uri":"suede://plugins"}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":4,"result":{"contents":[{"uri":"suede://plugins","mimeType":"text/markdown","text":"## Public Codex skill install\n- Suede Workflow Skills: `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`\n- Suede Creator Skills: `python3 ...` (truncated — full text continues with local plugin and Claude Code install sections)"}]}}
+```
+
+**Negative path — unknown tool name**
+
+```bash
+echo '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"not_a_real_tool","arguments":{}}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":5,"error":{"code":-32602,"message":"Unknown tool: not_a_real_tool"}}
+```
+
+**Negative path — unknown resource URI**
+
+```bash
+echo '{"jsonrpc":"2.0","id":8,"method":"resources/read","params":{"uri":"suede://not-a-real-resource"}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":8,"error":{"code":-32602,"message":"Unknown resource URI: suede://not-a-real-resource"}}
+```
+
+**Negative path — unsupported method**
+
+```bash
+echo '{"jsonrpc":"2.0","id":10,"method":"totally/bogus","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":10,"error":{"code":-32601,"message":"Unsupported MCP method: totally/bogus"}}
+```
+
+**Negative path — malformed JSON**
+
+```bash
+printf '{"jsonrpc":"2.0","id":6,"method":"tools/list", not valid json here}\n' | node mcp/suede-skills-mcp.mjs --profile all
+```
+
+```json
+{"jsonrpc":"2.0","id":null,"error":{"code":-32700,"message":"Parse error"}}
+```
+
+`id` comes back `null` on a parse error — the server never got far enough to
+read the request's `id`. Do not flag a `null` id here as broken; flag it if
+any other error response returns `null` when the request had a real id.
+
+Full JSON-RPC error code map observed from this server: `-32700` parse error,
+`-32600` invalid request (missing/bad `method`, or top-level `jsonrpc` isn't
+`"2.0"`), `-32601` unsupported method, `-32602` unknown tool name / unknown
+resource URI / unknown prompt name. Any other code, or a raw stack trace
+instead of a JSON-RPC error object, is a High failure.
+
 ## Failure Handling
 
 | Failure type | Severity | Action |

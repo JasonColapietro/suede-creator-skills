@@ -839,7 +839,7 @@ def contributors_table(contributors: list[Any]) -> str:
             role = contributor.get("role", "unknown")
             master = contributor.get("master_percent", contributor.get("master_share", 0))
             publishing = contributor.get("publishing_percent", contributor.get("publishing_share", 0))
-            confirmation = contributor.get("confirmation_status", contributor.get("confirmed", "needs creator confirmation"))
+            confirmation = "confirmed" if contributor_confirmed(contributor) else "needs creator confirmation"
         else:
             name = str(contributor)
             role = "unknown"
@@ -866,6 +866,11 @@ def write_reports(output: Path, manifest: dict) -> None:
     missing = manifest["missing_information"]
     flags = manifest["risk_flags"]
     rights_risk = "low" if not flags else "high until listed risk flags are resolved"
+    intake_status_text = (
+        "No outstanding missing-information questions or risk flags. Ready for final Suede intake review."
+        if not missing and not flags
+        else "Not ready for final Suede intake until high-severity questions are answered."
+    )
     contributor_ready = "yes" if rights["contributors_confirmed"] else "no"
     splits_ready = "yes" if rights["splits_confirmed"] else "no"
     restrictions = rights.get("license_restrictions", [])
@@ -1103,7 +1108,7 @@ Missing information must be resolved before Suede can confidently register, lice
 
 ## Status
 
-Not ready for final Suede intake until high-severity questions are answered.
+{intake_status_text}
 """,
     )
 

@@ -86,6 +86,10 @@ Campaign thesis:
 Primary action:
 Phase plan:
 Content calendar:
+Owner per phase:
+Dependency (what must land before what):
+Asset request (what you need from the artist/team, and by when):
+Success metric / KPI to watch:
 Fan actions:
 Email or DM copy:
 Site sections:

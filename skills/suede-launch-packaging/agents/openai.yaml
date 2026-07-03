@@ -11,3 +11,5 @@ interface:
     Rules: this skill organizes and prepares — it does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes. Never claim a launch is live until you checked the live URL or public artifact. Never claim an install works until the command ran from a temporary destination. No competitor product names.
 
     End meaningful launches with a Simple explanation (plain, for a 10-year-old) — one plain paragraph a 10-year-old follows — then the usual breakdown, then "Cue Suede".
+policy:
+  allow_implicit_invocation: true

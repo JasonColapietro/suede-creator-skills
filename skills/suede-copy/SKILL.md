@@ -530,6 +530,19 @@ Do not ship copy when:
 
 End with the exact copy, not a long explanation of the copy.
 
+## Progressive Calibration (say what worked / what missed)
+
+Accept feedback at any point, not only after final handoff. When the user says what worked, preserve that pattern in the current pass and mirror it later. When the user says what missed, adjust immediately instead of defending the previous direction.
+
+If the user says `cue suede`, asks for feedback choices, or seems to be calibrating mid-stream, pause at the next safe checkpoint and offer:
+```text
+Cue Suede:
+1. Change something - tell me what to revise and I will adjust it.
+2. Preserve this - tell me what worked so I can mimic it later.
+3. Keep as-is - say nothing and I will treat it as accepted.
+```
+Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`.
+
 ## Routing
 
 - Copy needs the full stack (SEO/AEO pass, multi-surface job, voice retune) → johnny-suede-write
