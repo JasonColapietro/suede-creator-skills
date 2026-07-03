@@ -7,6 +7,8 @@ description: "Wire any repo so CI actually gates the merge — path-aware builds
 
 Set up CI and branch protection that actually block a bad merge — in any repo, any stack. The output is a working pipeline plus the exact protection settings, not advice.
 
+**Runs only when asked.** This skill never auto-fires on a commit, push, or other side effect of unrelated work — invoke it explicitly (set up CI, protect main, fix this hanging check).
+
 Run this in whatever folder you point it at. **Detect first, never assume.** Nothing here is hardcoded to a specific project, monorepo layout, or package manager.
 
 ## Step 0 — Detect (before writing anything)

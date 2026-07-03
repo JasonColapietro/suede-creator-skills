@@ -4,8 +4,9 @@
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is part of the proof: the same repo holds the polished landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, mobile QA, and visible founder attribution.
 
-Install (Codex / Claude Code skill installer):
-`python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`
+Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`.
+
+Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`
 
 ## Start here
 

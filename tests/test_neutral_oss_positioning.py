@@ -39,7 +39,7 @@ class NeutralOssPositioningTests(unittest.TestCase):
             "public install",
             "installable",
             "bring your own company",
-            "does not upload files",
+            "do not upload files",
             "broadly reusable",
         ]
         for phrase in required_phrases:

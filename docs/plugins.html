@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Public Skill Installs and MCP | Codex Skills</title>
+    <title>Suede Public Skill Installs and MCP | Claude Code and Codex</title>
     <meta name="description" content="Install Suede skills from GitHub and use the optional MCP for skill discovery, mobile and product surfaces, visibility grading, visual QA, Suede SEO/AEO/AI EO audits, and QA.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Suede Public Skill Installs and MCP">
-    <meta name="twitter:description" content="Install public Suede Codex skills from GitHub and use the bundled MCP for discovery, mobile and product surfaces, visibility grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA.">
+    <meta name="twitter:description" content="Install public Suede skills for Claude Code and Codex from GitHub and use the bundled MCP for discovery, mobile and product surfaces, visibility grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA.">
     <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
     <script type="application/ld+json">
       {
@@ -24,7 +24,7 @@
         "@type": "TechArticle",
         "@id": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html#article",
         "headline": "Suede Public Skill Installs and MCP",
-        "description": "Install public Suede Codex skills from GitHub and use the Suede Skills MCP for Suedify, mobile and product surfaces, design, anti-slop copywriting, visibility grading, CTA grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA checklists.",
+        "description": "Install public Suede skills for Claude Code and Codex from GitHub and use the Suede Skills MCP for Suedify, mobile and product surfaces, design, anti-slop copywriting, visibility grading, CTA grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA checklists.",
         "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
         "author": {
           "@type": "Person",
@@ -36,7 +36,7 @@
           "name": "Suede Labs AI",
           "url": "https://suedeai.ai"
         },
-        "about": ["Codex skills", "MCP server", "Suede Creator Skills", "mobile product surfaces", "website visibility", "CTA grading", "Suede SEO", "SEO/AEO/AI EO copy audit", "AEO", "AI EO", "agent QA"],
+        "about": ["Claude Code skills", "Codex skills", "MCP server", "Suede Creator Skills", "mobile product surfaces", "website visibility", "CTA grading", "Suede SEO", "SEO/AEO/AI EO copy audit", "AEO", "AI EO", "agent QA"],
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "Suede Skills MCP",
@@ -151,6 +151,16 @@
       <p class="lead">Twenty-one public skills your agent can load as one workflow. Install the umbrella to Suedify a target page from a reference URL, rewrite copy, grade visibility, review code A-F, design AI evals, coordinate agent teams, or package creator campaign and rights evidence. Use MCP when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
 
       <section class="panel">
+        <h2>Claude Code — install in one command</h2>
+        <p>Add the marketplace and install the pack:</p>
+        <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code></pre>
+        <p><code>suede-skills</code> installs all 21 skills. Smaller subsets: <code>/plugin install suede-agent-workflows@suede</code> (orchestration, workflows, evals) or <code>/plugin install suede-code@suede</code> (review, grade, ship-gate). Prefer a clone? <code>install.sh</code> copies all 21 skills into <code>~/.claude/skills/</code>:</p>
+        <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh</code></pre>
+        <p>The three Codex install commands below work the same way for Claude Code: swap the <code>python3 ~/.codex/skills/...</code> line for a project-level copy, e.g. <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>.</p>
+      </section>
+
+      <section class="panel">
         <h2>Public explanation</h2>
         <p>Use <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">PROMO.md</a> when public users need to understand the full Suede workflow: Johnny Suede Write, Johnny Suede Design, supplied-company voice support, mobile and product surfaces, Suedify, design, anti-slop copywriting, visibility and CTA grading, visual QA, Suede SEO/AEO/AI EO audits, A-F code grading, code review, agent-team loops, artist campaign tools, public installs, and optional MCP. Keep <code>@personal</code> in local operator notes, not public repo copy.</p>
         <p>This page is the GitHub Pages surface generated from the public repo, not a separate marketing site. The install commands, docs, sitemap, and skill pages live beside the source.</p>
@@ -160,14 +170,16 @@
         <article class="card">
           <h2>Public Suede Workflow Skills</h2>
           <p>Install the umbrella first. Build: Suedify reference-site restyling, design, mobile and product surfaces, A-F code grading, and multi-lane QA. Write: anti-slop copy, brand voice, visibility and CTA grading, SEO/AEO/AI EO audits. Create: artist campaigns and rights-aware utilities that organize provenance evidence. The tools do not clear rights or approve payouts.</p>
+          <p><strong>Codex</strong> — install from GitHub:</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-workflow-skills</code></pre>
-          <p>Optional local MCP server: <code>suede_workflow_mcp</code></p>
+          <p>Optional local MCP server: <code>node mcp/suede-skills-mcp.mjs --profile workflow</code></p>
         </article>
         <article class="card">
           <h2>Direct Website Workflow Skills</h2>
           <p>Install individual workflow skills when you want direct triggers: Johnny Suede Write for copy and company voice, Johnny Suede Design for Suedify and visual QA, Suede Code and Code Grader for review and A-F verdicts, Agent Teams for parallel lanes, AI Eval for AI-SPECs, Ship Gate for CI, SEO Audit, Visibility Grader, Site Alchemy, MCP QA, and Launch Packaging.</p>
+          <p><strong>Codex</strong> — install from GitHub:</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design \
@@ -190,6 +202,7 @@
         <article class="card">
           <h2>Public Suede Creator Skills</h2>
           <p>Install creator skills when the work is music, media, or artist-campaign specific: campaign-in-a-box for eras, song worlds, hooks, fan rituals, visualizers, merch objects, setlists, catalog revival, and collabs; sync packaging for clean review notes; release linting and rights utilities for provenance evidence. They do not clear rights.</p>
+          <p><strong>Codex</strong> — install from GitHub:</p>
           <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-campaign-in-a-box \
@@ -197,15 +210,8 @@
   skills/suede-release-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit</code></pre>
-          <p>Optional local MCP server: <code>suede_creator_mcp</code></p>
+          <p>Optional local MCP server: <code>node mcp/suede-skills-mcp.mjs --profile creator</code></p>
         </article>
-      </section>
-
-      <section class="panel">
-        <h2>Local operator plugin path</h2>
-        <p>The <code>@personal</code> commands are local-personal marketplace installs for machines where the Suede plugin source is already registered. They are not the public install route.</p>
-        <pre><code>codex plugin add suede-workflow-skills@personal
-codex plugin add suede-creator-skills@personal</code></pre>
       </section>
 
       <section class="panel">

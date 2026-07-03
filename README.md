@@ -1,6 +1,6 @@
 # Suede Creator Skills
 
-Agent skills for Claude Code and Codex: orchestrate multi-agent teams, run code review with an A-F ship grade, and design AI evals.
+A 21-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams, run code review with an A-F ship grade, and design AI evals.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 21](https://img.shields.io/badge/Skills-21-black)
 
@@ -74,7 +74,7 @@ Install the pack, then ask for a code review with a ship grade on your current c
 Use suede-code to review my staged diff and give it an A-F ship grade.
 ```
 
-The skill runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a missing auth check on a paid route — the grade locks to F with the exact file and line, and no other lane can raise it.
+The skill runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it.
 
 ## The skills
 

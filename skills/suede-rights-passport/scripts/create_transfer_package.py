@@ -581,12 +581,20 @@ def build_risk_flags(counts: Counter, rights: dict) -> list[dict]:
                 "recommended_action": "Confirm master and publishing ownership before registry, licensing, or royalty routing.",
             }
         )
-    if not rights.get("contributors_confirmed") or not rights.get("splits_confirmed"):
+    contributors_ok = rights.get("contributors_confirmed")
+    splits_ok = rights.get("splits_confirmed")
+    if not contributors_ok or not splits_ok:
+        if not contributors_ok and not splits_ok:
+            detail = "Contributor list and splits are not confirmed."
+        elif not contributors_ok:
+            detail = "Contributor list is not confirmed."
+        else:
+            detail = "Splits are not confirmed."
         flags.append(
             {
                 "label": "contributors-unconfirmed",
                 "severity": "high",
-                "detail": "Contributor list and splits are not confirmed.",
+                "detail": detail,
                 "recommended_action": "Collect contributor roles and split confirmations.",
             }
         )

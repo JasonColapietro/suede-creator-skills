@@ -154,7 +154,10 @@
 
       <section class="panel">
         <h2>Public install command</h2>
-        <p>This is the public route. It installs from GitHub as a standard Codex skill folder.</p>
+        <p><strong>Claude Code</strong> — add the marketplace and install the code-quality subset:</p>
+        <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-code@suede</code></pre>
+        <p><strong>Codex</strong> — this is the public route. It installs from GitHub as a standard Codex skill folder.</p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-code-grader</code></pre>

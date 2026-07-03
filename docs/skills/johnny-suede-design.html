@@ -87,6 +87,12 @@
 
       <section class="panel">
         <h2>Public install command</h2>
+        <p><strong>Claude Code</strong> — project-level copy:</p>
+        <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
+mkdir -p .claude/skills
+cp -R /tmp/suede-creator-skills/skills/johnny-suede-design .claude/skills/</code></pre>
+        <p>Or install the full pack: <code>/plugin marketplace add JasonColapietro/suede-creator-skills</code> then <code>/plugin install suede-skills@suede</code>.</p>
+        <p><strong>Codex</strong> — install from GitHub:</p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design</code></pre>
