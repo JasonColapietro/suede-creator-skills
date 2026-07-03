@@ -31,7 +31,8 @@ Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill
    - `optimization-brief.md`
    - `missing-info-report.md`
 7. Flag uncertainty clearly. Use `unknown`, `unconfirmed`, or `needs creator confirmation` instead of inventing rights facts. Never resolve a rights question while packaging: ownership, split, sample, and license statuses move to confirmed only on user-supplied evidence, and every open gap ships as a question in `missing-info-report.md`.
-8. End with a concise transfer summary: package path, files found, missing info, risk flags, and recommended next step.
+8. Run `scripts/validate_transfer_package.py` against the output folder to confirm the package is structurally complete before handoff. A pass confirms shape and completeness only — it does not mean rights are confirmed.
+9. End with a concise transfer summary: package path, files found, missing info, risk flags, and recommended next step.
 
 ## Quick Start
 
@@ -66,6 +67,59 @@ Safety defaults:
   rights, contributor, release, wallet, and provenance facts. Do not point
   metadata at real `.env`, credential, wallet, or deployment config files.
   Unknown facts remain flagged. YAML metadata requires PyYAML.
+
+## Validate A Package
+
+After creating or editing a package, check that it is structurally complete
+with `scripts/validate_transfer_package.py`:
+
+```bash
+python3 /path/to/suede-rights-passport/scripts/validate_transfer_package.py \
+  /path/to/transfer-package
+```
+
+It is a thin, dependency-free (stdlib-only) check that confirms:
+
+- All 7 required report files are present (`RIGHTS_PASSPORT.md`,
+  `suede-intake.json`, `provenance.md`, `credits-and-splits.md`,
+  `license-notes.md`, `optimization-brief.md`, `missing-info-report.md`).
+- `suede-intake.json` is valid JSON and matches the top-level and nested
+  shape documented in `references/intake-schema.md`.
+- Every entry in `assets[]` has a `sha256` field that looks like a real
+  64-character hex digest.
+
+It exits non-zero with a specific error list on failure (missing file,
+invalid JSON, missing schema field, missing/malformed hash) and prints a
+short pass summary — including a risk-flag count — on success. Run
+`--help` for usage, or `--quiet` to suppress the success summary.
+
+**Structural validity is not a rights clearance.** This validator checks
+that a package is *shaped correctly and complete*, not that the rights
+facts inside it are confirmed. A package documenting a project with real
+open questions (unconfirmed ownership, unconfirmed splits, an uncleared
+sample) still passes validation as long as every required file exists and
+`suede-intake.json` is well-formed — the `risk_flags[]` and
+`missing_information[]` arrays are exactly where that uncertainty is
+supposed to live. Structural validity and rights confirmation are two
+independent checks; do not treat a validator PASS as a rights clearance,
+and do not expect the validator to fail a package just because it is
+risk-flagged.
+
+Two reference example packages under `scripts/fixtures/` show both ends of
+that range, generated end-to-end by `create_transfer_package.py` against
+synthetic (non-real) creator projects:
+
+- `scripts/fixtures/sample-complete-package/`: confirmed ownership,
+  confirmed contributors with matching split percentages, no samples.
+  Zero risk flags, zero open missing-information items, validates cleanly.
+- `scripts/fixtures/sample-blocked-package/`: disputed ownership,
+  unconfirmed contributors/splits, an uncleared sample. Three high-severity
+  and one medium-severity risk flag, four open missing-information items —
+  still structurally valid, but clearly not ready for registry, licensing,
+  or royalty routing.
+
+Both fixtures validate with `validate_transfer_package.py`; only their risk
+posture differs.
 
 ## Package Standards
 
@@ -108,6 +162,7 @@ Before reporting that a package is ready:
 - Include a `missing-info-report.md` section even when nothing is missing.
 - Include an `optimization-brief.md` with concrete next actions for downstream review.
 - State that final rights clearance requires creator/legal confirmation when any rights fact is uncertain.
+- Run `scripts/validate_transfer_package.py` against the output folder and report the result. If it fails, fix the structural gap it names before calling the package ready — a validator failure means a required file is missing or `suede-intake.json` is malformed, not that a rights fact is unresolved.
 
 ## Red flags — stop
 
