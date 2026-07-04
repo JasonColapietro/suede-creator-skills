@@ -685,7 +685,7 @@ process.stdin.on("data", (chunk) => {
   buffer += chunk;
   if (buffer.length > MAX_INPUT_BUFFER_CHARS) {
     buffer = "";
-    sendError(null, new Error("MCP input buffer exceeded 1 MiB"));
+    sendError(null, Object.assign(new Error("MCP input buffer exceeded 1 MiB"), { code: -32600 }));
     return;
   }
   const lines = buffer.split("\n");

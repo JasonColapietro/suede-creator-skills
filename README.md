@@ -68,7 +68,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-agent-teams .claude/skills/
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Exposes 7 tools (`list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 5 resources, and 5 prompts over JSON-RPC.
+Exposes 7 tools (`list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 6 resources, and 5 prompts over JSON-RPC.
 
 </details>
 
@@ -135,9 +135,9 @@ The repo ships a dependency-free stdio MCP server at [`mcp/`](mcp/). It implemen
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-| Tools (7) | Resources (5) | Prompts (5) |
+| Tools (7) | Resources (6) | Prompts (5) |
 |---|---|---|
-| `list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist` | catalog, plugins, copy-seo-audit, visibility-grade, code-grade | discovery and audit prompts |
+| `list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist` | catalog, plugins, copy-seo-audit, visibility-grade, code-grade, qa-checklist | discovery and audit prompts |
 
 ## Install for Codex
 
@@ -196,4 +196,3 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 Released under the [MIT License](LICENSE).
 
 Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
-

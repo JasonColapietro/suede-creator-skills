@@ -34,3 +34,11 @@ Profiles:
 The server is dependency-free and speaks newline-delimited JSON-RPC over stdio.
 It supports `initialize`, `ping`, `tools/list`, `tools/call`,
 `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.
+
+Current surface: 7 tools (`list_suede_skills`, `get_suede_skill`,
+`suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`,
+`suede_code_grade`, `suede_qa_checklist`), 6 resources (`suede://catalog`,
+`suede://plugins`, `suede://copy-seo-audit`, `suede://visibility-grade`,
+`suede://code-grade`, `suede://qa-checklist`), and 5 prompts
+(`suede-copy-seo-audit`, `suede-plugin-install`, `suede-visibility-grade`,
+`suede-code-grade`, `suede-full-qa`).
