@@ -333,10 +333,16 @@ def is_hidden_path(path: Path, source: Path) -> bool:
 def is_denied_path(path: Path, source: Path) -> bool:
     try:
         relative = path.relative_to(source)
+        within_source = True
     except ValueError:
         relative = path
+        within_source = False
     lowered_parts = [part.lower() for part in relative.parts]
-    if any(part in DENY_DIR_NAMES for part in lowered_parts[:-1]):
+    # Only apply the directory-name denylist to ancestors inside the source
+    # folder. For an explicit out-of-source --metadata path, the absolute path
+    # may pass through benign dirs (.cache, .config, .next, ...) that would
+    # otherwise trigger a false "secret-like path" rejection.
+    if within_source and any(part in DENY_DIR_NAMES for part in lowered_parts[:-1]):
         return True
     filename = lowered_parts[-1]
     if filename in DENY_FILENAMES or filename.startswith(".env"):
