@@ -182,6 +182,42 @@
       </section>
 
       <section class="panel">
+        <h2>Eval dimensions by system type</h2>
+        <p>Start the failure-mode map from the canonical dimensions for the surface's system type, then add product-specific failure modes on top. Safety and task completion apply regardless of type.</p>
+        <div class="links">
+          <div class="link-row"><b>RAG / retrieval</b><span>Context faithfulness, hallucination, answer relevance, retrieval precision, source citation.</span></div>
+          <div class="link-row"><b>Multi-agent</b><span>Task decomposition, inter-agent handoff correctness, goal completion, loop detection.</span></div>
+          <div class="link-row"><b>Conversational</b><span>Tone and style, safety, instruction following, escalation accuracy.</span></div>
+          <div class="link-row"><b>Extraction / structured output</b><span>Schema compliance, field accuracy, format validity.</span></div>
+          <div class="link-row"><b>Autonomous / tool-using agent</b><span>Safety guardrails, tool-use correctness, cost and token adherence, task completion.</span></div>
+          <div class="link-row"><b>Content generation</b><span>Factual accuracy, brand voice, tone, originality.</span></div>
+          <div class="link-row"><b>Code generation</b><span>Correctness, safety, test pass rate, instruction following.</span></div>
+        </div>
+        <p>Each dimension gets a measurement approach before the eval case is written: code-based checks for schema and thresholds, an LLM judge for tone and reasoning quality, calibrated against a human-reviewed sample before the score counts as evidence, or human review for edge cases and the calibration itself.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Default tooling</h2>
+          <p>Detected first, not mandated. An existing eval or tracing tool in the repo wins over any default.</p>
+          <ul>
+            <li>Tracing and observability defaults to Arize Phoenix — open-source, self-hostable, framework-agnostic.</li>
+            <li>RAG eval metrics default to RAGAS — faithfulness, answer relevance, context precision and recall out of the box.</li>
+            <li>Prompt regression in CI defaults to Promptfoo — CLI-first, no platform account required.</li>
+            <li>LangChain or LangGraph pipelines default to LangSmith instead of Phoenix.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Coverage scoring</h2>
+          <p>A reference dataset needs at least 10 examples to start, 20+ before coverage counts as production-grade, weighted toward edge cases and known failure modes over happy-path samples.</p>
+          <p>Coverage and infrastructure score separately, then combine:</p>
+          <pre><code>coverage = covered dimensions / total dimensions × 100
+infra = (tooling + dataset + CI/CD + guardrails + tracing) / 5 × 100
+overall = coverage × 0.6 + infra × 0.4</code></pre>
+        </article>
+      </section>
+
+      <section class="panel">
         <h2>Core gates</h2>
         <div class="links">
           <div class="link-row"><b>Severity 5</b><span>Legal, financial, rights/provenance, privacy, security, payment, irreversible user harm, or public trust collapse blocks release when uncovered.</span></div>

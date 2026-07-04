@@ -199,6 +199,29 @@
 
       <section class="grid">
         <article class="card">
+          <h2>Model tiering</h2>
+          <p>Assign the least capable model that can still do the role correctly. Cost and latency compound across a roster.</p>
+          <ul>
+            <li>Mechanical tasks — an isolated function, a single file, a complete spec with no judgment call — get the cheapest capable model.</li>
+            <li>Integration and judgment tasks — multi-file coordination, pattern-matching against the existing codebase, non-trivial debugging — get a standard model.</li>
+            <li>Architecture, design, and review roles — RFC authoring, code grading, security-sensitive review, release verification — get the most capable model available.</li>
+          </ul>
+          <p>When a lane's complexity is ambiguous, default up a tier. A cheap model returning a wrong answer costs more in re-dispatch than starting at the right tier.</p>
+        </article>
+        <article class="card">
+          <h2>Builder dispatch protocol</h2>
+          <p>A dispatched builder reports one of four states before its output reaches review.</p>
+          <ul>
+            <li>Done means the builder finished cleanly; proceed to the next roster stage.</li>
+            <li>Done with concerns means the builder flagged a doubt; resolve it first if it touches correctness or scope, otherwise note it in the handoff and proceed.</li>
+            <li>Needs context means the builder is missing information the lane map should have supplied; provide it and re-dispatch the same builder rather than guessing on its behalf.</li>
+            <li>Blocked means the builder cannot proceed; diagnose why before re-dispatching — a context gap gets more context, a reasoning gap gets a more capable model, an oversized task splits into smaller lanes, and a wrong plan escalates to the human.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card">
           <h2>Scenario templates</h2>
           <p>Pre-built rosters for common high-risk deployments. Adjust only the named target.</p>
           <ul>
