@@ -2,7 +2,7 @@
 
 A 21-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 21](https://img.shields.io/badge/Skills-21-black)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 21](https://img.shields.io/badge/Skills-21-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 

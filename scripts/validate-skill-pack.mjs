@@ -301,7 +301,7 @@ const publicFiles = walk(repoRoot).filter((file) => {
 });
 
 const privatePathPatterns = [
-  /\/Users\/(jason|jasoncolapietro)\/(?!Documents\/Ramboed\/suede-creator-skills)/,
+  /\/Users\/(jason|jasoncolapietro)\//,
   /GoogleDrive-jasoncola1@gmail\.com/,
   /johnnysuedes@gmail\.com/,
   /team_[A-Za-z0-9]{8,}/

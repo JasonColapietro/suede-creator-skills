@@ -436,25 +436,19 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 Restart Codex after installing new skills.
 
-## Local Operator Plugin Copy
+## Claude Code Plugin Copy
 
-Use this only in technical docs or local setup notes:
-
-```bash
-codex plugin add suede-workflow-skills@personal
-codex plugin add suede-creator-skills@personal
-```
-
-Public-facing explanation:
+The public plugin route for Claude Code:
 
 ```text
-The @personal suffix is a local Codex marketplace namespace. It means the plugin is installed from the operator's local personal marketplace. It is not the public install path and should not lead public explainer copy.
+/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede
 ```
 
 MCP source path:
 
 ```bash
-git clone https://github.com/jasoncolapietro/suede-creator-skills.git
+git clone https://github.com/JasonColapietro/suede-creator-skills.git
 cd suede-creator-skills
 node mcp/suede-skills-mcp.mjs --profile creator
 ```
@@ -652,14 +646,6 @@ No. The public side ships as standard skill folders, docs, scripts, templates, a
 No. MCP is optional. Use it for structured discovery, install guidance, SEO/AEO/AI EO audit scaffolds, or QA checklists. For normal execution, call the skill directly.
 ```
 
-### Why does install say @personal?
-
-```text
-That suffix is the local Codex marketplace namespace. It is not a brand term. It only tells Codex where to install the local plugin from.
-
-For public installs, use the GitHub skill installer path instead.
-```
-
 ### Does this clear rights?
 
 ```text
@@ -782,8 +768,8 @@ artist campaigns, creator utilities, and optional MCP.
 
 ### What should I not lead with?
 
-Do not lead with `@personal`, internal install paths, or implementation
-plumbing. Lead with the result. Put local install commands in technical docs.
+Do not lead with internal install paths or implementation plumbing. Lead with
+the result. Put local install commands in technical docs.
 
 ### How should feedback work?
 
@@ -810,7 +796,7 @@ decisions on their own.
 - Link to public skill install and MCP docs.
 - Link to the MCP source.
 - Include a simple "Use MCP only when it helps" rule.
-- Keep `@personal` out of headline copy.
+- Keep local-only install aliases out of public copy.
 - Include claim boundaries.
 - Include Suedify as the marketable design workflow.
 - Include Suedify, design, copywriting, SEO/AEO/AI EO, QA, and artist campaign keywords.

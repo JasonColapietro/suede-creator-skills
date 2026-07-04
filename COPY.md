@@ -209,8 +209,8 @@ version, then the usual breakdown.
 
 ### Local install note
 
-The `@personal` suffix is a local Codex marketplace namespace. It is not a
-brand term and should not lead public ambassador copy.
+Local plugin marketplace aliases are operator-only setup details. Public copy
+always leads with the GitHub repo-and-path install routes.
 
 ## Skill Docs Catalog Copy
 
