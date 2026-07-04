@@ -38,7 +38,7 @@ When the surface is already live, sample real behavior with safe inputs and reco
 3. **Build the rubric.** Score each failure mode with severity, likelihood, detectability, owner, gate, and required evidence.
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
 5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
-6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. For each dimension, mark COVERED (implementation exists, targets the rubric behavior, actually runs), PARTIAL (exists but incomplete, not automated, or has known gaps), or MISSING (no implementation found). Then audit infrastructure separately, ok/partial/missing: eval tooling is installed and actually called (not just a listed dependency), the reference dataset file exists and meets the size/composition spec, a CI/CD command runs the eval suite, each planned online guardrail is implemented in the request path (not stubbed), and tracing is configured and wrapping the real AI calls. Score `coverage = covered / total_dimensions × 100` and `infra = (tooling + dataset + cicd + guardrails + tracing) / 5 × 100`, then `overall = coverage × 0.6 + infra × 0.4`. Name every uncovered high-risk behavior regardless of the numeric score.
+6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Score coverage and infrastructure using the method under Tooling and Infrastructure below. Name every uncovered high-risk behavior regardless of the numeric score.
 7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step.
 
 ## Eval Dimensions By System Type
@@ -83,6 +83,8 @@ If nothing is detected, these are the default starting points, not a mandate to 
 **Reference dataset spec:** minimum 10 examples to start, 20+ before treating coverage as production-grade. Composition: critical paths, edge cases, known failure modes, and adversarial inputs, not just happy-path samples. Labeling: domain expert where stakes are high, LLM judge with calibration otherwise. Start building the dataset during implementation, not after the feature ships.
 
 **Production monitoring split:** classify every covered failure mode as either an online guardrail (catastrophic risk, runs on every request in the hot path, must be fast) or an offline flywheel check (quality signal, sampled batch, feeds the improvement loop, not latency-sensitive). Keep online guardrails minimal since each one adds latency to every request.
+
+**Coverage scoring:** for each dimension, mark COVERED (implementation exists, targets the rubric behavior, actually runs), PARTIAL (exists but incomplete, not automated, or has known gaps), or MISSING (no implementation found). Audit infrastructure separately, ok/partial/missing: eval tooling is installed and actually called (not just a listed dependency), the reference dataset file exists and meets the spec above, a CI/CD command runs the eval suite, each planned online guardrail is implemented in the request path (not stubbed), and tracing is configured and wrapping the real AI calls. Score `coverage = covered / total_dimensions × 100` and `infra = (tooling + dataset + cicd + guardrails + tracing) / 5 × 100`, then `overall = coverage × 0.6 + infra × 0.4`.
 
 ## Eval Case Design
 

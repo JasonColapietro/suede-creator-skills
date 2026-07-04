@@ -60,27 +60,6 @@ Start with Scout + Builder + Handoff Writer. Add roles only when a gate is neede
 
 For high-risk work, keep builder and reviewer separate.
 
-## Model Tiering
-
-Assign the least capable model that can still do the role correctly. Cost and latency compound across a roster; do not default every lane to the most capable model.
-
-- **Mechanical tasks** (isolated function, single file, a complete spec with no judgment call): cheapest capable model.
-- **Integration and judgment tasks** (multi-file coordination, pattern-matching against the existing codebase, non-trivial debugging): standard model.
-- **Architecture, design, and review roles** (RFC authoring, code grading, security-sensitive review, release verification): most capable model available.
-
-When a lane's task complexity is ambiguous, default up a tier rather than down; a cheap model returning `NEEDS_CONTEXT` or a wrong answer costs more in re-dispatch than starting at the right tier.
-
-## Builder Dispatch Protocol
-
-A dispatched builder reports one of four states before its output reaches review. Handle each before the lane proceeds to the next roster stage:
-
-- **Done**: proceed to the next stage in the roster.
-- **Done with concerns**: the builder finished but flagged a doubt. Read the concern. If it touches correctness or scope, resolve it before review; if it is a pure observation, note it in the handoff and proceed.
-- **Needs context**: the builder is missing information the lane map should have supplied. Provide it and re-dispatch the same builder; do not silently guess on its behalf.
-- **Blocked**: the builder cannot proceed. Diagnose why before re-dispatching: a context gap gets more context, a reasoning gap gets a more capable model, an oversized task gets split into smaller lanes, and a wrong plan escalates to the human. Never re-dispatch the same builder unchanged and hope for a different result.
-
-A builder that asks a clarifying question mid-task gets an answer before it continues; do not let it guess past an open question to hit a deadline.
-
 ## RFC Mode
 
 For major architectural decisions, new feature designs, or changes with broad blast radius, run an RFC (Request for Comments) before spawning builders.
@@ -206,6 +185,27 @@ Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P
 The Phase Loop is the Continuous Team Loop run at minimal scale. Use it when a full 10-gate roster is overkill but you still need scout, plan, build, verify, and ship stages.
 
 For high-risk changes, consult the Rollback Decision Tree before shipping. For gradual rollouts, use the Feature Flag Strategy. For shared interface changes, require RFC Mode before the plan stage opens.
+
+## Model Tiering
+
+Assign the least capable model that can still do the role correctly. Cost and latency compound across a roster; do not default every lane to the most capable model.
+
+- **Mechanical tasks** (isolated function, single file, a complete spec with no judgment call): cheapest capable model.
+- **Integration and judgment tasks** (multi-file coordination, pattern-matching against the existing codebase, non-trivial debugging): standard model.
+- **Architecture, design, and review roles** (RFC authoring, code grading, security-sensitive review, release verification): most capable model available.
+
+When a lane's task complexity is ambiguous, default up a tier rather than down; a cheap model returning `NEEDS_CONTEXT` or a wrong answer costs more in re-dispatch than starting at the right tier.
+
+## Builder Dispatch Protocol
+
+A dispatched builder reports one of four states before its output reaches review. Handle each before the lane proceeds to the next roster stage:
+
+- **Done**: proceed to the next stage in the roster.
+- **Done with concerns**: the builder finished but flagged a doubt. Read the concern. If it touches correctness or scope, resolve it before review; if it is a pure observation, note it in the handoff and proceed.
+- **Needs context**: the builder is missing information the lane map should have supplied. Provide it and re-dispatch the same builder; do not silently guess on its behalf.
+- **Blocked**: the builder cannot proceed. Diagnose why before re-dispatching: a context gap gets more context, a reasoning gap gets a more capable model, an oversized task gets split into smaller lanes, and a wrong plan escalates to the human (see Escalation Protocol). Never re-dispatch the same builder unchanged and hope for a different result.
+
+A builder that asks a clarifying question mid-task gets an answer before it continues; do not let it guess past an open question to hit a deadline.
 
 ## Continuous Team Loop
 
