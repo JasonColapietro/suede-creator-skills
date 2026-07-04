@@ -138,7 +138,7 @@ The MCP returns catalog, install, audit, and QA context. It does not upload
 files, clear rights, write to a registry, distribute music, approve payouts, or
 make public claims on its own.
 
-## Ambassador Explainer Copy
+## Public Explainer Copy
 
 Canonical source: [`PROMO.md`](PROMO.md)
 

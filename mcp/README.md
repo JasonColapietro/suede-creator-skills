@@ -14,9 +14,9 @@ It is useful when an agent needs structured access to:
 - multi-lane QA checklists for skill, MCP, docs, public site changes,
   max-agent loops, and rights evidence checks.
 
-For public positioning, launch copy, ambassador language, Suedify messaging,
-MCP explanation, social posts, emails, FAQ answers, and claim boundaries, use
-[`PROMO.md`](../PROMO.md).
+For public positioning, launch copy, public explainer language, Suedify
+messaging, MCP explanation, social posts, emails, FAQ answers, and claim
+boundaries, use [`PROMO.md`](../PROMO.md).
 
 Run it directly:
 

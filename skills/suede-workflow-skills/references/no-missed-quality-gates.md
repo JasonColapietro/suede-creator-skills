@@ -67,8 +67,8 @@ Density: /10
 Total: /70
 ```
 
-Revise below 58/70. For launch, homepage, GitHub, product listing, ambassador, or
-investor-adjacent copy, aim for 62/70 or higher.
+Revise below 58/70. For launch, homepage, GitHub, product listing, public
+explainer, or investor-adjacent copy, aim for 62/70 or higher.
 
 ## Design Gate
 
