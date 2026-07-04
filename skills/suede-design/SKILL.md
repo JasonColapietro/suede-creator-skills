@@ -233,6 +233,8 @@ Never use a card where a row would do. Use cards only for items that must be ind
 - Stable UI elements need stable dimensions: boards, grids, icon buttons,
   counters, tiles, canvases, and toolbars should not resize when labels, hover
   states, loading text, or data changes.
+- Build a semantic z-index scale: dropdown → sticky → modal-backdrop → modal →
+  toast → tooltip. Never arbitrary values like 999 or 9999.
 - On landing pages, the first viewport must show the brand, product, or offer
   clearly and leave a hint of the next section visible on mobile and desktop.
 - Text must not overlap, clip, or fight its container at any viewport.
@@ -242,6 +244,7 @@ Never use a card where a row would do. Use cards only for items that must be ind
 - Use icon buttons for familiar commands when the icon exists in the local icon set. Add tooltips for icons that are not obvious.
 - Use segmented controls for modes, toggles or checkboxes for binary settings, sliders or inputs for numeric values, tabs for views, menus for option sets, and text buttons for commands.
 - Keep touch targets usable and focus states visible.
+- A dropdown or popover rendered with `position: absolute` inside a parent with `overflow: hidden` or `overflow: auto` gets clipped. Use the native `<dialog>`/popover API, `position: fixed`, or a portal to escape the stacking context.
 
 ### Component Laws
 
@@ -373,6 +376,34 @@ No exception. Remove and replace with either: (a) a real stat with a source note
 **Em dashes in UI or marketing copy.**
 BEFORE: "Distribute your music. Own every right."
 AFTER: "Distribute your music. Own every right." Use a period, a colon, or a comma. If the clause needs an em dash, restructure the sentence.
+
+**Tiny uppercase tracked eyebrow above every section.**
+BEFORE: a small all-caps kicker ("ABOUT" · "PROCESS" · "PRICING") sitting above every section heading, page after page.
+AFTER: vary the cadence, or drop the kicker and let the heading carry weight. One deliberate kicker as a named brand device is voice; one on every section is AI grammar.
+
+**Numbered section markers as default scaffolding (01 / 02 / 03).**
+BEFORE: `01 · About` / `02 · Process` / `03 · Pricing` stamped above every section regardless of content.
+AFTER: reserve numbering for a real ordered sequence (an actual 3-step flow, a timeline) where the order carries information. Elsewhere, drop it.
+
+**The ghost-card pattern (thin border plus soft wide shadow, stacked).**
+BEFORE: `border: 1px solid` combined with `box-shadow: 0 16px+ blur` on the same card or button as decoration.
+AFTER: pick one: a defined border at the brand color, or a shadow no wider than 8px blur at the correct elevation token. Never both as ornament.
+
+**Over-rounded corners.**
+BEFORE: `border-radius: 32px` or higher on cards, sections, or inputs.
+AFTER: cap cards and inputs at 12-16px radius. Full-pill radius is fine for tags and buttons only.
+
+**Hand-drawn or sketchy SVG illustrations.**
+BEFORE: crude wavy-line doodles, `feTurbulence`/`feDisplacementMap` "paper grain" filters, or a 5-30 path sketch standing in for a real subject.
+AFTER: ship a real asset (photo, product screenshot, a properly illustrated scene) or ship no illustration at all.
+
+**Repeating-linear-gradient stripe backgrounds.**
+BEFORE: diagonal stripe patterns in a section or body background via `repeating-linear-gradient`.
+AFTER: a real art-direction choice: solid surface, noise texture, or a concrete product artifact.
+
+**Cream, sand, or beige as the default body background.**
+BEFORE: a near-white warm-tinted background (OKLCH lightness 0.84-0.97, chroma below 0.06, hue 40-100) used as the safe default for "warm" or "editorial" briefs, under a name like `--paper`, `--cream`, `--sand`, `--linen`, or `--ivory`.
+AFTER: pick a saturated brand color as the body, a true off-white at chroma 0 (or tinted toward the brand's own hue, not toward warmth by default), or a darker tinted neutral that reads as this brand's own. Carry "warmth" through accent color, typography, and imagery instead.
 
 ## Copy Rules
 

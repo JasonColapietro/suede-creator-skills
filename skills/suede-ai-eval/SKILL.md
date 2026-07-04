@@ -38,8 +38,51 @@ When the surface is already live, sample real behavior with safe inputs and reco
 3. **Build the rubric.** Score each failure mode with severity, likelihood, detectability, owner, gate, and required evidence.
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
 5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
-6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Name every uncovered high-risk behavior.
+6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. For each dimension, mark COVERED (implementation exists, targets the rubric behavior, actually runs), PARTIAL (exists but incomplete, not automated, or has known gaps), or MISSING (no implementation found). Then audit infrastructure separately, ok/partial/missing: eval tooling is installed and actually called (not just a listed dependency), the reference dataset file exists and meets the size/composition spec, a CI/CD command runs the eval suite, each planned online guardrail is implemented in the request path (not stubbed), and tracing is configured and wrapping the real AI calls. Score `coverage = covered / total_dimensions × 100` and `infra = (tooling + dataset + cicd + guardrails + tracing) / 5 × 100`, then `overall = coverage × 0.6 + infra × 0.4`. Name every uncovered high-risk behavior regardless of the numeric score.
 7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step.
+
+## Eval Dimensions By System Type
+
+Start the failure-mode map from the canonical dimensions for the surface's system type, then add product-specific failure modes on top. Always include safety (user-facing) and task completion (agentic) regardless of type.
+
+| System type | Canonical dimensions |
+|---|---|
+| RAG / retrieval | context faithfulness, hallucination, answer relevance, retrieval precision, source citation |
+| Multi-agent | task decomposition, inter-agent handoff correctness, goal completion, loop detection |
+| Conversational | tone/style, safety, instruction following, escalation accuracy |
+| Extraction / structured output | schema compliance, field accuracy, format validity |
+| Autonomous / tool-using agent | safety guardrails, tool-use correctness, cost/token adherence, task completion |
+| Content generation | factual accuracy, brand voice, tone, originality |
+| Code generation | correctness, safety, test pass rate, instruction following |
+
+For each dimension, assign a measurement approach before writing the eval case:
+
+- **Code-based**: schema validation, required-field presence, performance thresholds, regex checks. Fast, deterministic, cheap to run in CI.
+- **LLM judge**: tone, reasoning quality, safety-violation detection. Requires calibration against a human-reviewed sample before the score counts as evidence (see Hard Gates).
+- **Human review**: edge cases, LLM-judge calibration itself, high-stakes sampling that cannot be automated yet.
+
+## Tooling and Infrastructure
+
+Detect existing eval/tracing tooling before recommending anything new:
+
+```bash
+grep -rl "langfuse\|langsmith\|arize\|phoenix\|braintrust\|promptfoo\|ragas" \
+  --include="*.py" --include="*.ts" --include="*.toml" --include="*.json" . \
+  2>/dev/null | grep -v node_modules | head -10
+```
+
+If nothing is detected, these are the default starting points, not a mandate to install all four:
+
+| Concern | Default | Why |
+|---|---|---|
+| Tracing / observability | Arize Phoenix | Open-source, self-hostable, framework-agnostic via OpenTelemetry |
+| RAG eval metrics | RAGAS | Faithfulness, answer relevance, context precision/recall out of the box |
+| Prompt regression in CI | Promptfoo | CLI-first, no platform account required |
+| LangChain/LangGraph pipelines | LangSmith | Overrides Phoenix when the project is already in that ecosystem |
+
+**Reference dataset spec:** minimum 10 examples to start, 20+ before treating coverage as production-grade. Composition: critical paths, edge cases, known failure modes, and adversarial inputs, not just happy-path samples. Labeling: domain expert where stakes are high, LLM judge with calibration otherwise. Start building the dataset during implementation, not after the feature ships.
+
+**Production monitoring split:** classify every covered failure mode as either an online guardrail (catastrophic risk, runs on every request in the hot path, must be fast) or an offline flywheel check (quality signal, sampled batch, feeds the improvement loop, not latency-sensitive). Keep online guardrails minimal since each one adds latency to every request.
 
 ## Eval Case Design
 
