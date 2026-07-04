@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /dav/
 
 Sitemap: https://jasoncolapietro.github.io/suede-creator-skills/sitemap.xml
