@@ -1,6 +1,6 @@
 ---
 name: suede-ship-gate
-description: "Wire any repo so CI actually gates the merge — path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes. NOT FOR: reviewing or grading the code the pipeline runs on (use suede-code); designing AI eval cases (use suede-ai-eval, then wire them in here)."
+description: "Wire any repo so CI actually gates the merge: path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes. NOT FOR: reviewing or grading the code the pipeline runs on (use suede-code); designing AI eval cases (use suede-ai-eval, then wire them in here); Jason's private branch/worktree lifecycle, stale-mirror base selection, or finish/cleanup discipline (private Suede Labs companion, not in this pack: suede-git-hygiene)."
 ---
 
 # Suede Ship Gate
@@ -207,4 +207,5 @@ Generate; don't enforce. This skill writes workflow files and tells you the prot
 - The gate is failing on real defects → **suede-code** to review and grade the change
 - AI features need eval jobs in the pipeline → **suede-ai-eval** to design the cases, then wire them in here
 - Rollout needs flags, staged lanes, or a rollback tree → **suede-agent-teams**
+- Branch/worktree setup, stale local state, PR finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)
 - Gate holds and the release goes public → **suede-launch-packaging**
