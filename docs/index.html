@@ -1225,6 +1225,164 @@
     }
 
     /* ============================================================
+       SCORECARD (VS. THE FIELD)
+    ============================================================ */
+    .scorecard-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .scorecard-eyebrow {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #8b1a1a;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .scorecard-headline {
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.04;
+      color: #f0ece4;
+      margin: 0 0 20px;
+      max-width: 780px;
+    }
+
+    .scorecard-sub {
+      font-size: 17px;
+      color: #888880;
+      line-height: 1.7;
+      margin: 0 0 48px;
+      max-width: 660px;
+    }
+
+    .scorecard-sub strong { color: #f0ece4; font-weight: 600; }
+
+    .scorecard-table-wrap {
+      overflow-x: auto;
+      border: 1px solid #222222;
+      margin-bottom: 32px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scorecard-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .scorecard-table th {
+      text-align: left;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #888880;
+      font-weight: 600;
+      padding: 16px 20px;
+      background: #111111;
+      border-bottom: 1px solid #222222;
+      white-space: nowrap;
+    }
+
+    .scorecard-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #1a1a1a;
+      color: #f0ece4;
+      vertical-align: middle;
+    }
+
+    .scorecard-table tbody tr:last-child td { border-bottom: none; }
+    .scorecard-table tbody tr:hover td { background: #0e0d0c; }
+    .scorecard-table--usecase td:first-child { color: #888880; }
+
+    .sc-winner { font-weight: 600; color: #f0ece4; }
+    .sc-winner--suede { color: #c8a96e; }
+    .sc-tie {
+      font-size: 11px;
+      color: #888880;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    .grade-pill {
+      display: inline-block;
+      min-width: 38px;
+      text-align: center;
+      padding: 3px 10px;
+      border-radius: 3px;
+      background: #161616;
+      border: 1px solid #222222;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: #f0ece4;
+    }
+    .grade-pill.g-b { color: #888880; }
+    .grade-pill.g-c { color: #8b1a1a; border-color: rgba(139,26,26,0.35); }
+    .grade-pill.is-win {
+      color: #c8a96e;
+      background: rgba(200,169,110,0.08);
+      border-color: rgba(200,169,110,0.35);
+      font-weight: 700;
+    }
+
+    .scorecard-tally {
+      font-size: 15px;
+      color: #888880;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 0 40px;
+    }
+    .scorecard-tally strong { color: #f0ece4; }
+
+    .scorecard-details {
+      border: 1px solid #222222;
+      border-radius: 4px;
+      background: #111111;
+    }
+    .scorecard-details summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #f0ece4;
+    }
+    .scorecard-details summary::-webkit-details-marker { display: none; }
+    .scorecard-details summary::after {
+      content: '+';
+      color: #c8a96e;
+      font-size: 20px;
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .scorecard-details[open] summary::after { transform: rotate(45deg); }
+    .scorecard-details .scorecard-table-wrap { margin: 0 22px 20px; }
+    .scorecard-footnote {
+      padding: 0 22px 22px;
+      font-size: 13px;
+      color: #666660;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .scorecard-wrap { padding: 0 24px; }
+      .scorecard-table th, .scorecard-table td { padding: 11px 14px; font-size: 13px; }
+    }
+
+    /* ============================================================
        INSTALL + FOOTER
     ============================================================ */
     .install-inner {
@@ -1977,6 +2135,7 @@
 
     <div class="nav-right">
       <a href="skills/" class="nav-link">Skills</a>
+      <a href="#scorecard" class="nav-link">Scorecard</a>
       <a href="guide.html" class="nav-link">Guide</a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu">
@@ -1989,6 +2148,7 @@
 
   <div id="nav-mobile-menu" role="menu" aria-label="Mobile navigation">
     <a href="skills/" class="nav-mobile-link" role="menuitem">Skills</a>
+    <a href="#scorecard" class="nav-mobile-link" role="menuitem">Scorecard</a>
     <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
     <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
   </div>
@@ -2166,6 +2326,168 @@
       <div class="stat-num">0</div>
       <div class="stat-label">uploads by default</div>
     </div>
+  </div>
+</section>
+
+<!-- SCORECARD -->
+<section id="scorecard" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+  <div class="scorecard-wrap">
+
+    <p class="scorecard-eyebrow reveal">Self-graded, same rubric</p>
+    <h2 class="scorecard-headline reveal reveal-d1">Graded against the two skill packs builders name first.</h2>
+    <p class="scorecard-sub reveal reveal-d2">We ran our own ship-gate rubric on Suede Creator Skills against the two other named Claude Code skill packs builders reach for most: <strong>GSD</strong> (built for long project lifecycles) and <strong>Superpowers</strong> (built for strict engineering discipline). Here's who wins for which use case, and the full category breakdown below.</p>
+
+    <div class="scorecard-table-wrap reveal">
+      <table class="scorecard-table scorecard-table--usecase">
+        <thead>
+          <tr><th>Use case</th><th>Winner</th><th>Grade</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suede product / company work</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Public copy, design, SEO, rights, launch</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Long project lifecycle</td>
+            <td><span class="sc-winner">GSD</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Strict engineering discipline</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Multi-agent orchestration</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span> / <span class="sc-winner">GSD</span><span class="sc-tie">tie</span></td>
+            <td><span class="grade-pill">A</span></td>
+          </tr>
+          <tr>
+            <td>Skill ecosystem maintainability</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Ship-risk grading</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="scorecard-tally reveal">Suede wins outright on <strong>3 of 7</strong> use cases, plus a tie. GSD takes long project lifecycles. Superpowers takes strict engineering discipline and skill-ecosystem upkeep. Install the one that matches what you're doing this week. Most builders end up running more than one.</p>
+
+    <details class="scorecard-details reveal">
+      <summary>See the full 15-category scorecard</summary>
+      <div class="scorecard-table-wrap">
+        <table class="scorecard-table">
+          <thead>
+            <tr><th>Category</th><th>Suede Skills</th><th>GSD</th><th>Superpowers</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overall</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Breadth / Coverage</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Planning / Specs</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Execution Workflow</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Debugging Method</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Testing Discipline</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Verification Discipline</td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Git / Worktree Hygiene</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Durable State / Resume</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+            </tr>
+            <tr>
+              <td>Code Review / Ship Gate</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Skill Authoring / Governance</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Public Claims / Legal Safety</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Domain Expertise</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-c">C</span></td>
+            </tr>
+            <tr>
+              <td>Install / Portability</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Estate Cleanliness</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scorecard-footnote">Grades come from our own ship-gate rubric, run against all three packs with the same categories. Not an independent audit. We're publishing the rows where the field beats us on purpose, including the ones that say GSD or Superpowers outright win.</p>
+    </details>
+
   </div>
 </section>
 
