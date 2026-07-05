@@ -1716,20 +1716,6 @@
       user-select: none;
     }
 
-    .safety-note {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px 40px 40px;
-      border-top: 1px solid #161616;
-    }
-
-    .safety-note p {
-      font-size: 12px;
-      color: #666660;
-      line-height: 1.7;
-      max-width: 680px;
-    }
-
     /* ============================================================
        SCROLL-TO-TOP
     ============================================================ */
@@ -1799,7 +1785,14 @@
       .install-code-block { flex-direction: column; align-items: flex-start; }
       .copy-btn { align-self: flex-end; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .safety-note { padding: 20px 24px 40px; }
+    }
+
+    @media (max-width: 640px) {
+      #hero {
+        min-height: auto !important;
+        padding: 32px 0 56px !important;
+        justify-content: flex-start !important;
+      }
     }
 
     @media (max-width: 540px) {
@@ -2500,6 +2493,62 @@
   </div>
 </section>
 
+<!-- INSTALL -->
+<section id="install" style="background:#080808;padding:120px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
+
+  <div class="install-inner">
+    <h2 class="install-headline reveal">Install the open-source pack.</h2>
+    <p class="install-sub reveal reveal-d1">Two lines in Claude Code install all 22 skills. Prefer less? <code>suede-agent-workflows@suede</code> and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Either way the agent gets orchestration, code review with A-F grading, AI evals, design, copy, SEO, and CI rails it can reuse across your own work.</p>
+
+    <div class="install-terminal reveal reveal-d1">
+      <div class="install-terminal-bar" aria-hidden="true">
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="install-terminal-title">claude code</span>
+      </div>
+      <div class="install-code-block">
+        <code id="install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code>
+        <button class="copy-btn" id="copy-btn" onclick="
+          var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
+          navigator.clipboard.writeText(cmd).then(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copied';
+            b.classList.add('copied');
+            setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
+          }).catch(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copy';
+          });
+        ">Copy</button>
+      </div>
+    </div>
+
+    <div class="install-alts reveal reveal-d2">
+      <div class="install-alt">
+        <span class="install-alt-label">Any agent — Cursor, Copilot, Windsurf, 25+ more</span>
+        <code>npx skills add JasonColapietro/suede-creator-skills</code>
+      </div>
+      <div class="install-alt">
+        <span class="install-alt-label">Prefer a clone — copies all 22 into ~/.claude/skills/</span>
+        <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
+      </div>
+    </div>
+
+    <div class="install-links reveal reveal-d2">
+      <a class="install-link install-link-primary" href="skills/">Browse all 22 skills</a>
+      <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
+      <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
+      <a class="install-link" href="plugins.html">Codex + MCP install docs</a>
+      <a class="install-link" href="guide.html">Read the full guide</a>
+    </div>
+
+    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 0;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a> — stars are how other builders find it.</p>
+  </div>
+
+</section>
+
 <!-- CATALOG -->
 <section id="catalog" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="catalog-inner">
@@ -2943,66 +2992,7 @@
   </div>
 </section>
 
-<!-- INSTALL + FOOTER -->
-<section id="install" style="background:#080808;padding:120px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
-
-  <div class="install-inner">
-    <h2 class="install-headline reveal">Install the open-source pack.</h2>
-    <p class="install-sub reveal reveal-d1">Two lines in Claude Code install all 22 skills. Prefer less? <code>suede-agent-workflows@suede</code> and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Either way the agent gets orchestration, code review with A-F grading, AI evals, design, copy, SEO, and CI rails it can reuse across your own work.</p>
-
-    <div class="install-terminal reveal reveal-d1">
-      <div class="install-terminal-bar" aria-hidden="true">
-        <span class="tdot"></span>
-        <span class="tdot"></span>
-        <span class="tdot"></span>
-        <span class="install-terminal-title">claude code</span>
-      </div>
-      <div class="install-code-block">
-        <code id="install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede</code>
-        <button class="copy-btn" id="copy-btn" onclick="
-          var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
-          navigator.clipboard.writeText(cmd).then(function(){
-            var b=document.getElementById('copy-btn');
-            b.textContent='Copied';
-            b.classList.add('copied');
-            setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
-          }).catch(function(){
-            var b=document.getElementById('copy-btn');
-            b.textContent='Copy';
-          });
-        ">Copy</button>
-      </div>
-    </div>
-
-    <div class="install-alts reveal reveal-d2">
-      <div class="install-alt">
-        <span class="install-alt-label">Any agent — Cursor, Copilot, Windsurf, 25+ more</span>
-        <code>npx skills add JasonColapietro/suede-creator-skills</code>
-      </div>
-      <div class="install-alt">
-        <span class="install-alt-label">Prefer a clone — copies all 22 into ~/.claude/skills/</span>
-        <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
-      </div>
-    </div>
-
-    <div class="install-links reveal reveal-d2">
-      <a class="install-link install-link-primary" href="skills/">Browse all 22 skills</a>
-      <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
-      <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
-      <a class="install-link" href="plugins.html">Codex + MCP install docs</a>
-      <a class="install-link" href="guide.html">Read the full guide</a>
-    </div>
-
-    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 80px;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a> — stars are how other builders find it.</p>
-  </div>
-
-  <div class="safety-note">
-    <p>These skills inspect local files and pages. They do not upload files by default, write to a registry, approve payouts, or claim legal clearance.</p>
-  </div>
-
-</section>
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
