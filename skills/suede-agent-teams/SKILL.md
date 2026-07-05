@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence. Use when work needs parallel agents or multiple coordinated lanes — an auth rewrite, payment integration, data migration, performance audit, or public launch review — or when parallel edits could collide with dirty WIP. NOT FOR: single-lane code review or grading (use suede-code); wiring CI and branch protection (use suede-ship-gate)."
+description: "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence. Use when work needs parallel agents or multiple coordinated lanes, such as an auth rewrite, payment integration, data migration, performance audit, public launch review, or parallel edits that could collide with dirty WIP. NOT FOR: single-lane code review or grading (use suede-code); wiring CI and branch protection (use suede-ship-gate); Jason's private branch/worktree lifecycle and finish/cleanup discipline (private Suede Labs companion, not in this pack: suede-git-hygiene)."
 ---
 
 # Agent Team Orchestrator
@@ -493,5 +493,6 @@ Cue Suede:
 
 - A code lane needs review or a ship grade → **suede-code** (combined), **suede-code-review** (findings only), or **suede-code-grader** (grade only)
 - The repo's merge gate is weak or missing → **suede-ship-gate**
+- The work needs branch ownership, stale-mirror worktree setup, finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)
 - A lane ships AI behavior → **suede-ai-eval** before that lane's quality gate closes
 - The public launch lane needs a page verdict → **suede-visibility-grader**, then **suede-launch-packaging**
