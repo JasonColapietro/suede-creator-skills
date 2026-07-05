@@ -406,3 +406,5 @@ Verify that threat mitigations declared in a threat model (ADR threat table, PLA
 - Verdict delivered; make CI enforce it on every merge → **suede-ship-gate**
 - The diff ships AI behavior with no eval coverage → **suede-ai-eval**
 - Fixes span multiple coordinated lanes → **suede-agent-teams**
+- Completion-claim law for saying a fix is done, live, merged, or ready →
+  private Suede Labs companion, not in this pack: suede-verification-law
