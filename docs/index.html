@@ -2262,6 +2262,224 @@
       .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid #161616; }
     }
 
+    /* ============================================================
+       HERO V2 GRID AND BENCHMARK STRIP
+    ============================================================ */
+    #hero-inner {
+      max-width: 1160px;
+      align-items: stretch;
+      text-align: left;
+    }
+
+    #hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 64px;
+      align-items: center;
+      width: 100%;
+    }
+
+    #hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #hero-headline {
+      font-size: clamp(2.2rem, 4.3vw, 3.4rem);
+    }
+
+    #hero-subline {
+      color: #b8b4ac;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.65;
+      max-width: 34em;
+      margin-bottom: 36px;
+    }
+
+    #hero-subline strong {
+      color: #c8a96e;
+      font-weight: 600;
+    }
+
+    #hero-ctas {
+      justify-content: flex-start;
+    }
+
+    #hero-cta-star {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #c8a96e;
+      color: #080808;
+      border: none;
+      border-radius: 3px;
+      padding: 15px 28px;
+      font-size: .93rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 34px rgba(200, 169, 110, .2);
+    }
+
+    #hero-cta-star:hover {
+      background: #d9bc84;
+      color: #080808;
+      transform: translateY(-1px);
+    }
+
+    #hero-cta-star svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    #hero-star-count {
+      background: rgba(8, 8, 8, .14);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: .8rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #hero-term {
+      min-width: 0;
+    }
+
+    #hero-term .install-terminal {
+      margin-bottom: 0;
+    }
+
+    #hero-term .install-code-block {
+      padding: 22px 24px;
+    }
+
+    #hero-term .install-code-block code {
+      font-size: 13.5px;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    #hero-term-note {
+      font-size: 13px;
+      color: #888880;
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+
+    #hero-term-note a {
+      color: #c8a96e;
+      border-bottom: 1px solid rgba(200, 169, 110, .38);
+    }
+
+    #hero-bench {
+      width: 100%;
+      margin-top: 72px;
+    }
+
+    .bench-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #c8a96e;
+      margin-bottom: 14px;
+    }
+
+    .bench-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: #222222;
+      border: 1px solid #222222;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bench-tile {
+      background: #0d0d0c;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-decoration: none;
+      transition: background .18s;
+    }
+
+    .bench-tile:hover {
+      background: #14110d;
+    }
+
+    .bench-grade {
+      font-size: 26px;
+      font-weight: 800;
+      color: #c8a96e;
+      letter-spacing: -0.02em;
+    }
+
+    .bench-cat {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #f0ece4;
+    }
+
+    .bench-vs {
+      font-size: 11.5px;
+      color: #888880;
+      letter-spacing: .02em;
+    }
+
+    .bench-caption {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #66625a;
+    }
+
+    .bench-caption a {
+      color: #c8a96e;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200, 169, 110, .38);
+    }
+
+    #hero-term.hero-anim {
+      animation-delay: .48s;
+    }
+
+    #hero-bench.hero-anim {
+      animation-delay: .74s;
+    }
+
+    @media (max-width: 1080px) {
+      #hero-grid {
+        gap: 44px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      #hero-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      #hero-bench {
+        margin-top: 52px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bench-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bench-tile {
+        padding: 16px 18px;
+      }
+
+      #hero-term .install-code-block code {
+        font-size: 12px;
+      }
+    }
+
     /* ---- REDUCED MOTION ---- */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -2305,7 +2523,7 @@
 
     <div class="nav-right">
       <a href="skills/" class="nav-link">Skills</a>
-      <a href="#scorecard" class="nav-link">Scorecard</a>
+      <a href="#scorecard" class="nav-link">Benchmarks</a>
       <a href="guide.html" class="nav-link">Guide</a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu">
@@ -2318,39 +2536,95 @@
 
   <div id="nav-mobile-menu" role="menu" aria-label="Mobile navigation">
     <a href="skills/" class="nav-mobile-link" role="menuitem">Skills</a>
-    <a href="#scorecard" class="nav-mobile-link" role="menuitem">Scorecard</a>
+    <a href="#scorecard" class="nav-mobile-link" role="menuitem">Benchmarks</a>
     <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
     <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="hero" style="position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#080808;padding:104px 0 84px;">
+<section id="hero" style="position:relative;width:100%;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#080808;padding:120px 0 72px;">
 
   <div id="hero-bg-ring"></div>
   <div id="hero-bg-glow"></div>
   <div id="hero-vignette" aria-hidden="true"></div>
 
   <div id="hero-inner">
-    <span id="hero-eyebrow" class="hero-anim">Open-source agent skills for Claude Code and Codex</span>
 
-    <img id="hero-logo" class="hero-anim" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+    <div id="hero-grid">
+      <div id="hero-copy">
+        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT &middot; Claude Code + Codex</span>
 
-    <h1 id="hero-headline" class="hero-anim">22 open-source skills that teach your coding agent to ship.</h1>
+        <h1 id="hero-headline" class="hero-anim">22 open-source skills that teach your coding agent to ship.</h1>
 
-    <p id="hero-subline" class="hero-anim">A free 22-skill, MIT-licensed pack for Claude Code and Codex. Two lines to install. Your agent gets code review that ends in a blunt A-F ship grade, CI that actually blocks bad merges, coordinated agent teams with quality gates, reviewed OpenAI Codex worker fleets, measurable AI evals, and design, copy, and SEO lanes. Bring your own company, repo, page, or product.</p>
+        <p id="hero-subline" class="hero-anim">Code review that ends in a blunt <strong>A-F ship grade</strong>. CI that blocks bad merges. Agent teams, Codex worker fleets, measurable AI evals, and design, copy, and SEO lanes. MIT licensed, local-first, and two commands to install.</p>
 
-    <div id="hero-proof" class="hero-anim">
-      <span class="hero-proof-line">Public install commands, MIT license, and inspectable SKILL.md folders</span>
-      <span class="hero-proof-line">Reusable with any company brief, product surface, source repo, or landing page</span>
-      <span class="hero-proof-line">Local-first by default: no uploads, registry writes, payouts, or legal clearance claims</span>
+        <div id="hero-ctas" class="hero-anim">
+          <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+            Star on GitHub
+            <span id="hero-star-count" hidden></span>
+          </a>
+          <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
+        </div>
+      </div>
+
+      <div id="hero-term" class="hero-anim">
+        <div class="install-terminal">
+          <div class="install-terminal-bar" aria-hidden="true">
+            <span class="tdot"></span>
+            <span class="tdot"></span>
+            <span class="tdot"></span>
+            <span class="install-terminal-title">claude code</span>
+          </div>
+          <div class="install-code-block">
+            <code id="hero-install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code>
+            <button class="copy-btn" id="hero-copy-btn" onclick="
+              var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
+              navigator.clipboard.writeText(cmd).then(function(){
+                var b=document.getElementById('hero-copy-btn');
+                b.textContent='Copied';
+                b.classList.add('copied');
+                setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
+              }).catch(function(){
+                var b=document.getElementById('hero-copy-btn');
+                b.textContent='Copy';
+              });
+            ">Copy</button>
+          </div>
+        </div>
+        <p id="hero-term-note">Every skill is a plain-Markdown SKILL.md folder you can read before you enable it. No uploads, no registry writes. <a href="#install">More install paths</a> for Codex, Cursor, and 25+ agents.</p>
+      </div>
     </div>
 
-    <div id="hero-ctas" class="hero-anim">
-      <a id="hero-cta-primary" href="#install">Install the pack</a>
-      <a id="hero-cta-secondary" href="#catalog">See all 22 skills</a>
-      <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
+    <div id="hero-bench" class="hero-anim">
+      <p class="bench-label">Where it outgrades both GSD and Superpowers</p>
+      <div class="bench-grid">
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Code review + ship gate</span>
+          <span class="bench-vs">GSD A- &middot; Superpowers A</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Breadth of coverage</span>
+          <span class="bench-vs">GSD A &middot; Superpowers B</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Public claim safety</span>
+          <span class="bench-vs">GSD B &middot; Superpowers B</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Domain expertise</span>
+          <span class="bench-vs">GSD B &middot; Superpowers C</span>
+        </a>
+      </div>
+      <p class="bench-caption">Self-graded on the same 15-category ship-gate rubric, run on all three packs. Losses published too: <a href="#scorecard">see the full scorecard</a>.</p>
     </div>
+
   </div>
 
   <div id="hero-scroll-hint" aria-hidden="true">
@@ -2409,6 +2683,168 @@
     <span class="marquee-item">Rights Audit</span>
   </div>
 </div>
+
+<!-- SCORECARD -->
+<section id="scorecard" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+  <div class="scorecard-wrap">
+
+    <p class="scorecard-eyebrow reveal">Benchmarks: self-graded, losses shown</p>
+    <h2 class="scorecard-headline reveal reveal-d1">Suede against GSD and Superpowers, losses included.</h2>
+    <p class="scorecard-sub reveal reveal-d2">We ran our own 15-category ship-gate rubric on <strong>Suede Creator Skills</strong>, <strong>GSD</strong>, and <strong>Superpowers</strong> the same way. The full category breakdown is below, including the rows where GSD or Superpowers beats Suede.</p>
+
+    <div class="scorecard-table-wrap reveal">
+      <table class="scorecard-table scorecard-table--usecase">
+        <thead>
+          <tr><th>Use case</th><th>Winner</th><th>Grade</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suede product / company work</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Public copy, design, SEO, rights, launch</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Long project lifecycle</td>
+            <td><span class="sc-winner">GSD</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Strict engineering discipline</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Multi-agent orchestration</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span> / <span class="sc-winner">GSD</span><span class="sc-tie">tie</span></td>
+            <td><span class="grade-pill">A</span></td>
+          </tr>
+          <tr>
+            <td>Skill ecosystem maintainability</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Ship-risk grading</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="scorecard-tally reveal">Suede wins outright on <strong>3 of 7</strong> use cases, plus a tie with GSD on multi-agent orchestration. GSD takes long project lifecycles. Superpowers takes strict engineering discipline and skill ecosystem maintainability. Install the pack that matches this week's work.</p>
+
+    <details class="scorecard-details reveal">
+      <summary>See the full 15-category scorecard</summary>
+      <div class="scorecard-table-wrap">
+        <table class="scorecard-table">
+          <thead>
+            <tr><th>Category</th><th>Suede Skills</th><th>GSD</th><th>Superpowers</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overall</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Breadth / Coverage</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Planning / Specs</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Execution Workflow</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Debugging Method</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Testing Discipline</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Verification Discipline</td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Git / Worktree Hygiene</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Durable State / Resume</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+            </tr>
+            <tr>
+              <td>Code Review / Ship Gate</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Skill Authoring / Governance</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Public Claims / Legal Safety</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Domain Expertise</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-c">C</span></td>
+            </tr>
+            <tr>
+              <td>Install / Portability</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Estate Cleanliness</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scorecard-footnote">Grades come from our own ship-gate rubric, run against all three packs with the same categories. Not an independent audit. We're publishing the rows where the field beats us on purpose, including the ones that say GSD or Superpowers outright win.</p>
+    </details>
+
+  </div>
+</section>
 
 <!-- FEATURES GRID -->
 <section id="skills" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
@@ -2697,168 +3133,6 @@
   </div>
 </section>
 
-<!-- SCORECARD -->
-<section id="scorecard" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
-  <div class="scorecard-wrap">
-
-    <p class="scorecard-eyebrow reveal">Self-graded, same rubric</p>
-    <h2 class="scorecard-headline reveal reveal-d1">Graded against the two skill packs builders name first.</h2>
-    <p class="scorecard-sub reveal reveal-d2">We ran our own ship-gate rubric on Suede Creator Skills against the two other named Claude Code skill packs builders reach for most: <strong>GSD</strong> (built for long project lifecycles) and <strong>Superpowers</strong> (built for strict engineering discipline). Here's who wins for which use case, and the full category breakdown below.</p>
-
-    <div class="scorecard-table-wrap reveal">
-      <table class="scorecard-table scorecard-table--usecase">
-        <thead>
-          <tr><th>Use case</th><th>Winner</th><th>Grade</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Suede product / company work</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-          <tr>
-            <td>Public copy, design, SEO, rights, launch</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-          <tr>
-            <td>Long project lifecycle</td>
-            <td><span class="sc-winner">GSD</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Strict engineering discipline</td>
-            <td><span class="sc-winner">Superpowers</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Multi-agent orchestration</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span> / <span class="sc-winner">GSD</span><span class="sc-tie">tie</span></td>
-            <td><span class="grade-pill">A</span></td>
-          </tr>
-          <tr>
-            <td>Skill ecosystem maintainability</td>
-            <td><span class="sc-winner">Superpowers</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Ship-risk grading</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="scorecard-tally reveal">Suede wins outright on <strong>3 of 7</strong> use cases, plus a tie. GSD takes long project lifecycles. Superpowers takes strict engineering discipline and skill-ecosystem upkeep. Install the one that matches what you're doing this week. Most builders end up running more than one.</p>
-
-    <details class="scorecard-details reveal">
-      <summary>See the full 15-category scorecard</summary>
-      <div class="scorecard-table-wrap">
-        <table class="scorecard-table">
-          <thead>
-            <tr><th>Category</th><th>Suede Skills</th><th>GSD</th><th>Superpowers</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Overall</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Breadth / Coverage</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-            </tr>
-            <tr>
-              <td>Planning / Specs</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A</span></td>
-            </tr>
-            <tr>
-              <td>Execution Workflow</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Debugging Method</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Testing Discipline</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Verification Discipline</td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Git / Worktree Hygiene</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Durable State / Resume</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-            </tr>
-            <tr>
-              <td>Code Review / Ship Gate</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A</span></td>
-            </tr>
-            <tr>
-              <td>Skill Authoring / Governance</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Public Claims / Legal Safety</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-            </tr>
-            <tr>
-              <td>Domain Expertise</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-              <td><span class="grade-pill g-c">C</span></td>
-            </tr>
-            <tr>
-              <td>Install / Portability</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Estate Cleanliness</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="scorecard-footnote">Grades come from our own ship-gate rubric, run against all three packs with the same categories. Not an independent audit. We're publishing the rows where the field beats us on purpose, including the ones that say GSD or Superpowers outright win.</p>
-    </details>
-
-  </div>
-</section>
-
 <!-- PROOF + SESSION + MUSICIANS -->
 <section id="proof" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="proof-wrap">
@@ -3104,6 +3378,68 @@
       });
     }, { threshold: 0.5 });
     nums.forEach(function(n) { io.observe(n); });
+  })();
+
+  // Live GitHub star count (pill hidden below 10 stars and on any failure)
+  (function() {
+    var pill = document.getElementById('hero-star-count');
+    var key = 'suede-stars-v1';
+    var ttl = 60 * 60 * 1000;
+    var api = 'https://api.github.com/repos/JasonColapietro/suede-creator-skills';
+
+    if (!pill || !window.fetch) return;
+
+    function formatCount(n) {
+      var rounded;
+      if (n < 1000) return String(n);
+      rounded = Math.round(n / 100) / 10;
+      return String(rounded).replace(/\.0$/, '') + 'k';
+    }
+
+    function reveal(n) {
+      if (typeof n !== 'number' || n < 10) return;
+      pill.textContent = formatCount(n);
+      pill.removeAttribute('hidden');
+    }
+
+    function readCache() {
+      var raw;
+      var cached;
+      try {
+        raw = window.localStorage.getItem(key);
+        if (!raw) return null;
+        cached = JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+      if (!cached || typeof cached.n !== 'number' || typeof cached.t !== 'number') return null;
+      if (Date.now() - cached.t > ttl) return null;
+      return cached.n;
+    }
+
+    function writeCache(n) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify({ n: n, t: Date.now() }));
+      } catch (e) {}
+    }
+
+    var cached = readCache();
+    if (cached !== null) {
+      reveal(cached);
+      return;
+    }
+
+    window.fetch(api)
+      .then(function(res) {
+        if (!res.ok) return null;
+        return res.json();
+      })
+      .then(function(data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        writeCache(data.stargazers_count);
+        reveal(data.stargazers_count);
+      })
+      .catch(function() {});
   })();
 </script>
 
