@@ -392,6 +392,79 @@ if (docsCountMatch) {
   fail.push("docs/index.html: could not find skill count (expected pattern: Install N public/free ...)");
 }
 
+// Count-drift guard: every public-facing surface that states the pack size
+// in prose, metadata, or schema must agree with the real skills/ directory.
+// This is the guard the 2026-07-05 audit found missing — a published skill
+// went in without a matching sweep of titles, OG/Twitter tags, JSON-LD, the
+// plugin manifest, the umbrella skill's own docs, and the copy bank.
+const totalSkillCount = skillNames.length;
+const companionSkillCount = totalSkillCount - 1; // total minus suede-workflow-skills itself
+const numberWords = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
+
+function wordNumberAfterTwenty(word) {
+  const n = numberWords[word.toLowerCase()];
+  return n === undefined ? null : 20 + n;
+}
+
+const countChecks = [
+  { file: "docs/index.html", label: "title tag", re: /<title>Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "og:title", re: /property="og:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "twitter:title", re: /name="twitter:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2>Twenty-(\w+) skills, one portable/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
+  { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
+  { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /Twenty-(\w+) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/plugins.html", label: "lead paragraph", re: /Twenty-(\w+) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/dav/index.html", label: "meta description", re: /Install (\d+) public Codex and Claude skills/, expected: totalSkillCount },
+  { file: "docs/dav/index.html", label: "og:description", re: /property="og:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
+  { file: "docs/dav/index.html", label: "twitter:description", re: /name="twitter:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
+  { file: "docs/dav/index.html", label: "JSON-LD description", re: /"description":\s*"A (\d+)-skill public workflow/, expected: totalSkillCount },
+  { file: "docs/dav/index.html", label: "hero-subline", re: /Twenty-(\w+) public skills for Suedify/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/skills/suede-workflow-skills.html", label: "meta description", re: /routes the agent across all (\d+) skills/, expected: totalSkillCount },
+  { file: "docs/skills/suede-workflow-skills.html", label: "og:description", re: /Public Suede umbrella skill for (\d+) installable skills/, expected: totalSkillCount },
+  { file: "docs/skills/suede-workflow-skills.html", label: "twitter:description", re: /umbrella workflow skill for (\d+) public Johnny Suede/, expected: totalSkillCount },
+  { file: "docs/skills/suede-workflow-skills.html", label: "JSON-LD description", re: /umbrella entry point for (\d+) public Suede skill folders/, expected: totalSkillCount },
+  { file: "docs/skills/suede-workflow-skills.html", label: "lead paragraph", re: /route the agent across all (\d+) Suede skills/, expected: totalSkillCount },
+  { file: "docs/skills/suede-workflow-skills.html", label: "folders heading", re: /<h2>All (\d+) public skill folders<\/h2>/, expected: totalSkillCount },
+  { file: ".claude-plugin/plugin.json", label: "description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
+  { file: "mcp/catalog.json", label: "umbrella description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
+  { file: "skills/suede-workflow-skills/SKILL.md", label: "frontmatter description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
+  { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
+  { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
+  { file: "PROMO.md", label: "companion skill count", re: /Twenty-(\w+) public Suede skills, led by one/, expected: companionSkillCount, wordNumber: true },
+  { file: "PROMO.md", label: "README intro pack size", re: /public (\d+)-skill agent workflow pack/, expected: totalSkillCount },
+];
+
+for (const check of countChecks) {
+  const filePath = path.join(repoRoot, check.file);
+  if (!fs.existsSync(filePath)) {
+    warn.push(`Count check skipped — ${check.file} does not exist (${check.label})`);
+    continue;
+  }
+  const text = readText(filePath);
+  const match = text.match(check.re);
+  if (!match) {
+    warn.push(`Count check pattern not found in ${check.file} (${check.label}) — copy may have moved; update scripts/validate-skill-pack.mjs`);
+    continue;
+  }
+  const found = check.wordNumber ? wordNumberAfterTwenty(match[1]) : parseInt(match[1], 10);
+  if (found === null || Number.isNaN(found)) {
+    warn.push(`Count check could not parse a number in ${check.file} (${check.label}): "${match[1]}"`);
+    continue;
+  }
+  if (found !== check.expected) {
+    fail.push(`Stale skill count in ${check.file} (${check.label}): says ${found}, expected ${check.expected}`);
+  }
+}
+
+const indexJsonLdItemMatches = docsRootText.match(/"@type":\s*"ListItem"/g) || [];
+if (indexJsonLdItemMatches.length !== totalSkillCount) {
+  fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);
+}
+
 if (fail.length || warn.length) {
   if (warn.length) {
     console.error("Warnings:");
