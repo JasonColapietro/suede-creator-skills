@@ -225,9 +225,9 @@ Suede Creator Skills
 
 Give your agent a product team in one install.
 
-Install 21 public Suede skills for Suedify, design, copywriting, SEO/AEO/AI EO,
-visibility grading, A-F code grading, agent teams, AI evals, MCP, launch
-packaging, creator campaigns, and rights utilities.
+Install 22 public Suede skills for Suedify, design, copywriting, SEO/AEO/AI EO,
+visibility grading, A-F code grading, agent teams, Codex worker fleets, AI
+evals, MCP, launch packaging, creator campaigns, and rights utilities.
 ```
 
 Primary CTA:
@@ -279,7 +279,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 21-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, AI eval design, visibility and CTA grading, A-F code grading, agent teams, launch packaging, MCP QA, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 22-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, AI eval design, visibility and CTA grading, A-F code grading, agent teams, Codex CLI worker fleets, launch packaging, MCP QA, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```
@@ -458,9 +458,9 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 21 installable public skills.
+I packaged the Suede agent workflow into 22 installable public skills.
 
-Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, visibility grading, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
+Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, Codex CLI worker fleets, visibility grading, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```

@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 20 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
+description: "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-codex-fleet, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
 ---
 
 # Suede Workflow Skills
@@ -19,6 +19,9 @@ This skill is the public entry point for:
 - **Suede Code:** unified code review and A-F grading for correctness,
   security, data/state, deploy readiness, and ship risk — prompted only, never
   auto-fires.
+- **Suede Fable Fleet:** offload high-volume, well-specified generation to
+  parallel OpenAI Codex CLI workers — Claude decomposes, briefs, spawns
+  `codex exec` runs, and reviews every output before anything ships.
 - **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
   retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
 - **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
@@ -56,6 +59,7 @@ their names match the task:
 - `suede-copy`
 - `suede-design`
 - `suede-agent-teams`
+- `suede-codex-fleet`
 - `suede-ai-eval`
 - `suede-ship-gate`
 - `suede-seo-audit`
@@ -460,7 +464,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 21 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 21 skills into `~/.claude/skills/`:
+`suede-skills` installs all 22 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 22 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -487,6 +491,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-copy \
   skills/suede-design \
   skills/suede-agent-teams \
+  skills/suede-codex-fleet \
   skills/suede-ai-eval \
   skills/suede-ship-gate \
   skills/suede-seo-audit \

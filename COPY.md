@@ -48,10 +48,11 @@ portable skill pack.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 21 public `SKILL.md` folders:
-one umbrella workflow (suede-workflow-skills), 15 workflow skills
+creators, agencies, and AI power users. It ships 22 public `SKILL.md` folders:
+one umbrella workflow (suede-workflow-skills), 16 workflow skills
 (johnny-suede-write, johnny-suede-design, suede-code, suede-code-grader,
-suede-code-review, suede-copy, suede-design, suede-agent-teams, suede-ship-gate,
+suede-code-review, suede-copy, suede-design, suede-agent-teams,
+suede-codex-fleet, suede-ship-gate,
 suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
 suede-ai-eval, suede-launch-packaging, suede-mcp-qa), and 5 creator skills
 (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
@@ -76,7 +77,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 21-skill Suede pack that gives agents portable context: linked
+Install the 22-skill Suede pack that gives agents portable context: linked
 preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, visibility and CTA grades, A-F code review,
 coordinated agent teams, install-path checks, iOS/product checks, artist
@@ -356,7 +357,7 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### Short post
 
-Suede Creator Skills are live: 21 public agent skills for design, copywriting,
+Suede Creator Skills are live: 22 public agent skills for design, copywriting,
 AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility grading, code
 review, CI gating, launch packaging, artist campaigns, and creator rights workflows.
 

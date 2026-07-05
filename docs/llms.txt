@@ -1,6 +1,6 @@
 # Suede Creator Skills
 
-> A public, open-source (MIT) pack of 21 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
+> A public, open-source (MIT) pack of 22 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, parallel OpenAI Codex CLI worker fleets with a mandatory review gate, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is generated from the same repo: landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, and founder attribution live beside the source.
 
@@ -12,7 +12,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 
 - [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
 - [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
-- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 21 skills.
+- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 22 skills.
 - [Installs and MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
 
@@ -20,6 +20,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 
 - [Suede Workflow Skills](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
 - [Suede Agent Teams](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html): Coordinate complex changes into communicating agent lanes with shared context, quality gates, and a signed handoff.
+- Suede Fable Fleet (suede-codex-fleet) — Orchestrate parallel OpenAI Codex CLI workers from Claude with self-contained briefs, an AGENTS.md contract, and a mandatory review gate: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-codex-fleet/SKILL.md
 - [Suede AI Eval](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
 - Suede Code — Review and grade code in one pass: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md
 - Suede Code Review — Deep diff review with TS/React/Next.js/OWASP/DB checklists: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md
