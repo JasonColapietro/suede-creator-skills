@@ -162,7 +162,7 @@ one from memory.
   improvised SVGs, or text approximations as a blocking defect unless the user
   explicitly asked for that substitution.
 - Save the QA artifact named by the relevant skill, usually
-  `suede-visual-qa.md` or `suedify-visual-qa.md`, with source truth,
+  `visual-qa-report.md` or `suedify-visual-qa.md`, with source truth,
   implementation evidence, viewport/state, findings, patches, caveats, and
   `final result: passed` or `final result: blocked`.
 

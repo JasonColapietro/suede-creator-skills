@@ -8,8 +8,8 @@ description: "Write copy that earns the click. 12 headline formulas, 5 persuasio
 ## When to use this skill instead of related skills
 - **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
 - **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization)
-- Multi-email campaign sequences and campaign performance reporting: (use suede-growth — private)
-- Post-production pass to strip AI writing patterns from already-written copy: (use suede-deslop — private)
+- Multi-email campaign sequences and campaign performance reporting: (private Suede Labs companion, not in this pack: suede-growth)
+- Post-production pass to strip AI writing patterns from already-written copy: (private Suede Labs companion, not in this pack: suede-deslop)
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 

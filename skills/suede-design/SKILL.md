@@ -7,8 +7,8 @@ description: "Evolve any Suede interface from generic to intentional. Design law
 
 ## When to use this skill instead of related skills
 - **suede-design** (this skill): design system tokens, color ramps, type scale, component-level polish, brand identity decisions
-- Visual iteration with the local script harness (craft, shape, audit sub-commands): (use suede-visual-qa — private)
-- UX critique, accessibility audit, information architecture, design handoff docs: (use suede-ui — private)
+- Visual iteration with the local script harness (craft, shape, audit sub-commands): (private Suede Labs companion, not in this pack: suede-visual-qa)
+- UX critique, accessibility audit, information architecture, design handoff docs: (private Suede Labs companion, not in this pack: suede-ui)
 - **johnny-suede-design**: full-stack build combining design + copy + visual QA for a launch or redesign
 
 Use this skill to make Suede interfaces feel intentional, premium, legible, and
@@ -73,7 +73,7 @@ Choose the smallest path that fits the request.
   changes.
 - **Source-to-implementation QA:** if there is a mock, screenshot, Figma frame,
   or image target plus a rendered implementation, compare both visually before
-  handoff and save `suede-visual-qa.md` in the project root.
+  handoff and save `visual-qa-report.md` in the project root.
 - **Long polish loop:** iterate through a visible checklist. If the same failure
   repeats, freeze the loop, reduce scope to the failing unit, and rerun with
   explicit acceptance criteria.
@@ -501,7 +501,7 @@ non-critical, and acceptable for the launch stage.
 ## Visual QA Report
 
 When comparing a source visual target against an implementation, save
-`suede-visual-qa.md` with:
+`visual-qa-report.md` with:
 
 - source visual truth path or URL
 - implementation path, URL, or screenshot

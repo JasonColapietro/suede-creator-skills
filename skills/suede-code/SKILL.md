@@ -379,7 +379,7 @@ Verify that threat mitigations declared in a threat model (ADR threat table, PLA
 
 **Trigger:** pass `--threat-verify` or say "verify threat mitigations" / "check threat model compliance"
 
-**Input:** threat model source — file path or pasted content. Accepted formats: ADR threat table (e.g. from suede-arch — private), PLAN.md risk section, free-form "Threat: X / Mitigation: Y" pairs.
+**Input:** threat model source — file path or pasted content. Accepted formats: ADR threat table (private Suede Labs companion, not in this pack: suede-arch), PLAN.md risk section, free-form "Threat: X / Mitigation: Y" pairs.
 
 **Process:**
 1. Parse the threat model into: { threat_id, description, declared_mitigation, expected_location }

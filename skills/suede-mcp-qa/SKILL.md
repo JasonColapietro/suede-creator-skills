@@ -197,5 +197,5 @@ Ship gate: ship | ship-with-caveats | hold
 After QA:
 - MCP source needs fixes → return to the MCP source file and fix, then re-run this skill
 - Catalog JSON needs updates → edit `mcp/catalog.json` and re-run steps 2 and 7
-- Docs/README language mismatch → update the docs surface to match live MCP output (use suede-docs — private), then re-run check 7
+- Docs/README language mismatch → update the docs surface to match live MCP output (private Suede Labs companion, not in this pack: suede-docs), then re-run check 7
 - Install command broken → **suede-launch-packaging** to fix and test the install path
