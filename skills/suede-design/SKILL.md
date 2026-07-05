@@ -1,6 +1,6 @@
 ---
 name: suede-design
-description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. Use when picking color strategy or tokens, building or auditing a design system, polishing components, or comparing a mock against the rendered implementation. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); UX critique, accessibility audits, design handoff docs, or script-harness visual iteration (private Suede Labs companions not in this pack). Use suede-design for design system, token, and component-level decisions."
+description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. Use when picking color strategy or tokens, building or auditing a design system, polishing components, or comparing a mock against the rendered implementation. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); general-purpose UI/UX pattern lookup, framework examples, or broad accessibility heuristic searches (private Suede Labs companion, not in this pack: ui-ux-pro-max); deck-only or HTML presentation generation (private Suede Labs companion, not in this pack: power-design); UX critique, accessibility audits, design handoff docs, or script-harness visual iteration (private Suede Labs companions not in this pack). Use suede-design for design system, token, and component-level decisions."
 ---
 
 # Suede Design
@@ -9,6 +9,8 @@ description: "Evolve any Suede interface from generic to intentional. Design law
 - **suede-design** (this skill): design system tokens, color ramps, type scale, component-level polish, brand identity decisions
 - Visual iteration with the local script harness (craft, shape, audit sub-commands): (private Suede Labs companion, not in this pack: suede-visual-qa)
 - UX critique, accessibility audit, information architecture, design handoff docs: (private Suede Labs companion, not in this pack: suede-ui)
+- Broad UI/UX pattern lookup, framework examples, palette/font/chart searches, or non-Suede implementation heuristics: (private Suede Labs companion, not in this pack: ui-ux-pro-max)
+- Deck-only or HTML presentation generation: (private Suede Labs companion, not in this pack: power-design)
 - **johnny-suede-design**: full-stack build combining design + copy + visual QA for a launch or redesign
 
 Use this skill to make Suede interfaces feel intentional, premium, legible, and
@@ -533,6 +535,8 @@ Findings lead, rationale follows. Name the file and line. For builds, state what
 ## Routing
 
 - Full copy + design + QA build or launch → johnny-suede-design
+- Broad UI/UX pattern lookup or framework examples → (private Suede Labs companion, not in this pack: ui-ux-pro-max)
+- Deck-only or HTML presentation generation → (private Suede Labs companion, not in this pack: power-design)
 - Words that carry the surface → suede-copy (johnny-suede-write for the full writing stack)
 - Page conversion architecture beyond visual polish → suede-site-alchemy
 - Design change touches shared components, routing, auth, payments, or analytics → suede-code-review before the ship gate
