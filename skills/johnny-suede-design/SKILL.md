@@ -110,7 +110,7 @@ Choose the smallest path that fits the request.
 - **Ambiguous or net-new design:** gather context, propose 2–3 approaches with tradeoffs, recommend one, get approval before implementation.
 - **Large redesign:** write a compact shape brief first — audience, page job, register, scene, color strategy, typography, layout, signature moment, constraints, QA plan.
 - **Visual system work:** scan current CSS, tokens, components, spacing, shadows, breakpoints, icon usage, and repeated UI patterns before proposing changes.
-- **Source-to-implementation QA:** if there is a mock, screenshot, Figma frame, or image target plus a rendered implementation, compare both visually before handoff and save `suede-visual-qa.md` in the project root.
+- **Source-to-implementation QA:** if there is a mock, screenshot, Figma frame, or image target plus a rendered implementation, compare both visually before handoff and save `visual-qa-report.md` in the project root.
 - **Long polish loop:** iterate through a visible checklist. If the same failure repeats, freeze the loop, reduce scope to the failing unit, and rerun with explicit acceptance criteria.
 
 ## Delivery Discipline
@@ -176,7 +176,7 @@ Below 70/100 the system is failing: fix the two lowest dimensions before styling
 
 ## Visual QA Report (Lane A)
 
-When comparing a source visual target against an implementation, save `suede-visual-qa.md` with:
+When comparing a source visual target against an implementation, save `visual-qa-report.md` with:
 - source visual truth path or URL
 - implementation path, URL, or screenshot
 - viewport and state
