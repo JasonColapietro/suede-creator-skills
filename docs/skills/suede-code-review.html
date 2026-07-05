@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede Code Review | Findings Review | Suede Creator Skills</title>
+    <meta name="description" content="Use Suede Code Review for findings-only diff review in Claude Code and Codex, with repo gates, severity-ranked evidence, deploy safety, and ship verdicts.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-review.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede Code Review - Suede Creator Skills">
+    <meta property="og:description" content="Use Suede Code Review for findings-only diff review in Claude Code and Codex, with repo gates, severity-ranked evidence, deploy safety, and ship verdicts.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-review.html">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede Code Review - Suede Creator Skills">
+    <meta name="twitter:description" content="Findings-only diff review for Claude Code and Codex, with repo gates, severity-ranked evidence, deploy safety, and ship verdicts.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-review.html#article",
+        "headline": "Suede Code Review - Suede Creator Skills",
+        "description": "Suede Code Review documents a findings-only review skill for diffs and PRs. It runs repo gates, checks risk lanes, ranks evidence-backed findings, and ends with deploy safety and a ship gate.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-review.html",
+        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
+        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "code review", "findings-only review", "deploy safety", "Commit Dirt Score", "OWASP review", "accessibility review"],
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "suede-code-review",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-review",
+          "programmingLanguage": "Markdown",
+          "applicationCategory": "DeveloperTool",
+          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c0524a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      h1 {
+        font-size: clamp(42px, 6vw, 76px); font-weight: 800;
+        letter-spacing: -0.04em; line-height: 1.0; max-width: 920px;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(24px, 3vw, 34px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px;
+      }
+      h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+      p, li { color: var(--muted); }
+      p { margin-bottom: 12px; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { max-width: 780px; font-size: 18px; line-height: 1.7; margin-bottom: 24px; }
+      main a:not(.button):not(.link-row) { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:not(.button):not(.link-row):hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.9em; color: var(--gold); }
+      ul { list-style: none; margin-bottom: 12px; }
+      li { padding-left: 18px; position: relative; margin-bottom: 8px; font-size: 14.5px; line-height: 1.6; }
+      li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 1px; background: var(--gold); }
+      .hero-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.6fr); gap: 40px; align-items: center; }
+      .hero-grid img { width: 100%; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 28px; }
+      .grid .card { border: none; border-left: 3px solid var(--gold); border-radius: 0; margin: 0; }
+      .grid .card:nth-child(2n) { border-left-color: var(--red); }
+      .card, .panel {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 28px;
+      }
+      .panel { border-left: 3px solid var(--gold); }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--red) !important; border-radius: 4px;
+        background: rgba(139, 26, 26, 0.12);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(139, 26, 26, 0.28); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .button.star { border-color: var(--gold) !important; background: rgba(200, 169, 110, 0.08); }
+      .button.star:hover { background: rgba(200, 169, 110, 0.18); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .links { display: grid; gap: 0; border-top: 1px solid var(--border); margin-top: 20px; }
+      .link-row {
+        display: grid;
+        grid-template-columns: minmax(200px, 0.4fr) minmax(0, 1fr);
+        gap: 20px;
+        border-bottom: 1px solid var(--hairline);
+        padding: 14px 0;
+        transition: background 0.15s;
+      }
+      a.link-row:hover { background: var(--surface); }
+      .link-row b { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--gold); word-break: break-word; }
+      .link-row span { font-size: 14.5px; color: var(--muted); overflow-wrap: anywhere; }
+      section { margin-top: 56px; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      @media (max-width: 820px) {
+        .hero-grid { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: 1fr; }
+        .grid .card:nth-child(2n) { border-left-color: var(--gold); }
+      }
+      @media (max-width: 720px) {
+        .shell { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .link-row { grid-template-columns: 1fr; row-gap: 4px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <div class="eyebrow">Findings-only review</div>
+      <h1>Suede Code Review.</h1>
+      <p class="lead">Use Suede Code Review when you need a findings-only diff review with TypeScript, React, Next.js, OWASP, accessibility, SEO, and database query lanes. It ranks evidence-backed findings by severity, runs the repo gates the repo already ships, and ends with deploy safety and a ship verdict without a letter grade.</p>
+      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-review">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
+
+      <section class="panel">
+        <h2>Public install commands</h2>
+        <p><strong>Claude Code full pack</strong></p>
+        <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code></pre>
+        <p><strong>Claude Code project-level copy</strong></p>
+        <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
+mkdir -p .claude/skills
+cp -R /tmp/suede-creator-skills/skills/suede-code-review .claude/skills/</code></pre>
+        <p><strong>Codex installer</strong></p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/suede-code-review</code></pre>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>What it covers</h2>
+          <ul>
+            <li>Reviews changed files, callers, contracts, deploy surface, and relevant runtime behavior before judging a diff.</li>
+            <li>Runs existing repo gates for type checks, lint, tests, dependency CVEs, secret scans, and builds when those gates exist.</li>
+            <li>Supports quick, standard, and deep review depth levels, including import graph and call chain tracing for higher-risk changes.</li>
+            <li>Checks TypeScript, React, Next.js, accessibility, SEO, database, performance, observability, OWASP, Swift, and iOS contract risks.</li>
+            <li>Outputs severity-ranked P0 to P3 findings with file evidence, impact, fix path, verification, and confidence.</li>
+            <li>Adds deploy safety, Commit Dirt Score, open questions, verification checked, and a final ship gate.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>When to use it</h2>
+          <ul>
+            <li>Use it when the request is a findings-only review of a diff, PR, plan, release, or fix verification pass.</li>
+            <li>Use it when accessibility and SEO lanes matter alongside code findings.</li>
+            <li>Use it for auth, payments, and public API surface reviews when deeper model routing or cross-file analysis is warranted.</li>
+            <li>Not for: full findings+grade in one pass (use <a href="suede-code.html">Suede Code</a>).</li>
+            <li>Not for: grade-only with no findings (use <a href="suede-code-grader.html">Suede Code Grader</a>).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Best prompt</h2>
+        <pre><code>Use $suede-code-review to run a standard findings-only review of this PR. Check TypeScript, React, Next.js, accessibility, SEO, repo gates, deploy safety, and Commit Dirt Score. Return severity-ranked findings with file evidence and a ship gate, no letter grade.</code></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Related skills</h2>
+        <p>For findings plus a letter grade in one pass, use <a href="suede-code.html">Suede Code</a>. For grade-only review with no findings, use <a href="suede-code-grader.html">Suede Code Grader</a>.</p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">Suede Code Review is part of Suede Creator Skills: it runs findings-only code reviews with evidence-ranked findings, repo gates, deploy safety, and a ship gate.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
