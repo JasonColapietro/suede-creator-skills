@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-design
-description: "Design and write high-polish creative surfaces for Suede or a supplied company: landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects, with design laws, tokens, fluid type, motion rules, Suedify reference-site restyling, full copywriting, visual QA, and optional multi-agent build coordination. Use when you design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite the copy for a surface being built, build a design system, run visual QA, or coordinate a multi-lane creative build. NOT FOR: copy-only jobs (use johnny-suede-write); a single design-token or component-level decision with no copy or build (use suede-design). Organizes and prepares creative work only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes."
+description: "Design and write high-polish creative surfaces for Suede or a supplied company: landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects, with design laws, tokens, fluid type, motion rules, Suedify reference-site restyling, full copywriting, visual QA, and optional multi-agent build coordination. Use when you design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite the copy for a surface being built, build a design system, run visual QA, or coordinate a multi-lane creative build. NOT FOR: copy-only jobs (use johnny-suede-write); a single design-token or component-level decision with no copy or build (use suede-design); deck-only or HTML presentation generation (private Suede Labs companion, not in this pack: power-design); general-purpose UI/UX pattern lookup or framework examples (private Suede Labs companion, not in this pack: ui-ux-pro-max). Organizes and prepares creative work only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes."
 ---
 
 # Johnny Suede Design — The Any-Creatives Enchilada
@@ -28,7 +28,7 @@ This skill is the entry point. Name which lanes are active and why before starti
 - **Big, risky, cross-surface, release-bound, or "do it thoroughly" work** → **Lane D: Agent Teams** (see the multi-agent gate below — ASK first).
 - **Unknown scope** → run the scout step, read the surface, then name the register and lanes before touching anything.
 
-**Drop down instead of running this stack:** a design-token, dark-mode, or single-component decision with no copy and no build → run `$suede-design` directly. A writing job with no design or layout work → run `$johnny-suede-write` (or `$suede-copy` for one standalone conversion surface). Running the full enchilada on a one-lane job wastes the user's tokens and time.
+**Drop down instead of running this stack:** a design-token, dark-mode, or single-component decision with no copy and no build → run `$suede-design` directly. A writing job with no design or layout work → run `$johnny-suede-write` (or `$suede-copy` for one standalone conversion surface). A deck-only or HTML presentation job → use the private Suede Labs companion `power-design`. A broad UI/UX pattern lookup or framework-example search → use the private Suede Labs companion `ui-ux-pro-max`. Running the full enchilada on a one-lane job wastes the user's tokens and time.
 
 **On-demand website companions (do NOT inline — run only when asked):** CRO/funnel work → `$suede-site-alchemy`; deep standalone SEO/AEO/AI EO audit → `$suede-seo-audit`; findability + first-screen + CTA + proof + AI-citation grade → `$suede-visibility-grader`; deep diff review of changes touching shared components, auth, payments, routing, analytics, or public-claim truth → `$suede-code-review` (`$suede-code-grader` for a blunt A–F grade). These are separate skills for website analysis. Reference them; do not paste their content here.
 
@@ -437,6 +437,8 @@ If any of these thoughts appear, stop and run the check you were about to skip:
 ## Routing
 
 - Design-token, dark-mode, or single-component decision only → suede-design
+- Deck-only or HTML presentation generation → (private Suede Labs companion, not in this pack: power-design)
+- Broad UI/UX pattern lookup or framework examples → (private Suede Labs companion, not in this pack: ui-ux-pro-max)
 - Copy-only job → johnny-suede-write (suede-copy for one standalone conversion surface)
 - CRO/funnel work → suede-site-alchemy; standalone SEO/AEO audit → suede-seo-audit; A-F page grade → suede-visibility-grader
 - Shared components, auth, payments, routing, or analytics touched → suede-code-review
