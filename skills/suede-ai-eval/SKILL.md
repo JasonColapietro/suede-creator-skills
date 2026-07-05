@@ -186,7 +186,7 @@ Fictional AI surface: `TicketSort`, an LLM classifier that reads incoming suppor
 - **case id:** `ticketsort-regression-emoji-miscategorize-002`
 - **scenario:** a real production incident: tickets containing only emoji reactions plus a short phrase (e.g. a Slack-forwarded message) were being classified as `abuse` at a 40% false-positive rate because the model over-weighted a small set of emoji tokens seen in genuinely abusive training examples. Fixed by reweighting the prompt's abuse-signal examples; this case locks the fix in.
 - **input:** ticket body — "😤😤 my export button doesn't work" and a second variant "🙄 still waiting on that refund from last week".
-- **setup:** replay fixture built from the 12 anonymized tickets that triggered the original false-positive spike (`fixtures/ticketsort/regression-002-emoji-set.json`); same classifier version and prompt the fix shipped in.
+- **setup:** replay the available anonymized fixture set for the 12 tickets that triggered the original false-positive spike, or build the fixture from the two inline variants plus current incident samples; use the same classifier version and prompt the fix shipped in.
 - **expected pass traits:** both example tickets classify as their actual category (`bug`, `billing`) at normal priority, not `abuse`; false-positive rate across the full 12-ticket fixture set stays at 0.
 - **forbidden traits:** any ticket in the fixture set reverting to `category: abuse`; priority escalated to P0/P1 purely from emoji presence with no other abuse signal in the text.
 - **grade lane:** correctness
