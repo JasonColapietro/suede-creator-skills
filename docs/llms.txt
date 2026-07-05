@@ -1,6 +1,6 @@
 # Suede Creator Skills
 
-> A public, open-source (MIT) pack of 22 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, parallel OpenAI Codex CLI worker fleets with a mandatory review gate, code review with a blunt A-F ship grade across web stacks and Swift/iOS (including an iOS traps checklist and native contract drift checks), CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design with App Store screenshot specs, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
+> A public, open-source (MIT) pack of 23 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, parallel OpenAI Codex CLI worker fleets with a mandatory review gate, code review with a blunt A-F ship grade across web stacks and Swift/iOS (including an iOS traps checklist and native contract drift checks), CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design with App Store screenshot specs, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is generated from the same repo: landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, and founder attribution live beside the source.
 
@@ -12,7 +12,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 
 - [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
 - [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
-- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 22 skills.
+- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 23 skills.
 - [Installs and MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
 
@@ -35,6 +35,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 - Suede Site Alchemy — Turn a page into a conversion engine with funnel and friction analysis: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md
 - Suede Launch Packaging — Ship work as a launch people can actually install: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md
 - Suede MCP QA — Catch a broken Suede Skills MCP before it ships: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md
+- [Site to iOS App](https://jasoncolapietro.github.io/suede-creator-skills/skills/site-to-ios-app.html): Convert any website or web app into an App Store-ready iOS app plan or shell: URL audit, App Store 4.2 wrapper-risk gate, Capacitor or native-shell strategy, native value requirements, QA matrix, and an explicit release gate.
 
 ## Creator skills (music, rights, campaigns)
 

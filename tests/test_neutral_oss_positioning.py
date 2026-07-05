@@ -99,10 +99,10 @@ class NeutralOssPositioningTests(unittest.TestCase):
     def test_skill_count_copy_matches_catalog_and_folders(self) -> None:
         catalog = json.loads(read("mcp/catalog.json"))
         skill_dirs = sorted(path for path in (ROOT / "skills").iterdir() if path.is_dir())
-        self.assertEqual(22, len(skill_dirs))
-        self.assertEqual(22, len(catalog["skills"]))
-        self.assertIn("22-skill", read("README.md"))
-        self.assertIn("22-skill", read("docs/index.html"))
+        self.assertEqual(23, len(skill_dirs))
+        self.assertEqual(23, len(catalog["skills"]))
+        self.assertIn("23-skill", read("README.md"))
+        self.assertIn("23-skill", read("docs/index.html"))
 
     def test_docs_index_references_existing_local_assets(self) -> None:
         page = read("docs/index.html")

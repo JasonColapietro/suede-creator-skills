@@ -1,7 +1,7 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.3.0",
-  "updated": "2026-07-04",
+  "version": "0.4.0",
+  "updated": "2026-07-05",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to an open-source Suede skill pack: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, Codex CLI worker-fleet orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
@@ -61,7 +61,8 @@
         "suede-sync-packaging",
         "suede-release-linter",
         "suede-rights-passport",
-        "suede-rights-audit"
+        "suede-rights-audit",
+        "site-to-ios-app"
       ]
     },
     {
@@ -83,7 +84,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-codex-fleet, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.",
+      "description": "Umbrella workflow for 22 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-codex-fleet, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, site-to-ios-app, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
@@ -211,6 +212,12 @@
       "area": "creator",
       "description": "Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging).",
       "useWhen": "Use before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or downstream creator review."
+    },
+    {
+      "name": "site-to-ios-app",
+      "area": "workflow",
+      "description": "Convert any website, web app, PWA, SaaS dashboard, content site, or marketplace into an iOS app with the public Suede site-to-iOS workflow: URL audit, App Store 4.2 wrapper-risk gate, Capacitor or native-shell strategy, native value requirements, build scaffolding, QA matrix, screenshots, metadata, privacy answers, and an explicit release gate. Use when a user wants a site turned into an App Store-ready iOS app plan or shell.",
+      "useWhen": "Use when converting a website or web app into an iOS app and the plan must survive App Store review."
     }
   ],
   "mcp": {
