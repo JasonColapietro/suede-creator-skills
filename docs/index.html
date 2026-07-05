@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex</title>
+  <title>Suede Creator Skills | 22 Open-Source Agent Skills for Claude Code & Codex</title>
   <meta name="description" content="Install 22 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO. One-command install.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex">
+  <meta property="og:title" content="Suede Creator Skills | 22 Open-Source Agent Skills for Claude Code & Codex">
   <meta property="og:description" content="Install 22 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO.">
   <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
   <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/">
@@ -16,7 +16,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Suede Creator Skills | 21 Open-Source Agent Skills for Claude Code & Codex">
+  <meta name="twitter:title" content="Suede Creator Skills | 22 Open-Source Agent Skills for Claude Code & Codex">
   <meta name="twitter:description" content="Install 22 free MIT-licensed agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship-gates, AI evals, and design, copy, and SEO.">
   <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
 
@@ -948,13 +948,35 @@
       transition: background 0.2s;
     }
 
-    .feature-card:nth-child(3n),
-    .feature-card:nth-child(5),
-    .feature-card:nth-child(7) {
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(6),
+    .feature-card:nth-child(7),
+    .feature-card:nth-child(9),
+    .feature-card--red {
       border-left-color: #8b1a1a;
     }
 
     .feature-card:hover { background: #1c1c1c; }
+
+    .feature-card--wide {
+      grid-column: span 2;
+      padding: 44px 36px;
+      background: #131311;
+    }
+
+    .feature-card--wide .feature-copy {
+      font-size: 16.5px;
+      max-width: 52ch;
+    }
+
+    .feature-card--wide .feature-title {
+      font-size: clamp(22px, 2.6vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #f0ece4;
+      margin: 0 0 14px;
+    }
 
     .feature-label {
       font-size: 11px;
@@ -966,9 +988,11 @@
       display: block;
     }
 
-    .feature-card:nth-child(3n) .feature-label,
-    .feature-card:nth-child(5) .feature-label,
-    .feature-card:nth-child(7) .feature-label {
+    .feature-card:nth-child(4) .feature-label,
+    .feature-card:nth-child(6) .feature-label,
+    .feature-card:nth-child(7) .feature-label,
+    .feature-card:nth-child(9) .feature-label,
+    .feature-card--red .feature-label {
       color: #c0524a;
     }
 
@@ -978,6 +1002,116 @@
       color: #f0ece4;
       margin: 0;
       font-weight: 400;
+    }
+
+    /* ============================================================
+       CATALOG — all 22 skills
+    ============================================================ */
+    .catalog-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .catalog-eyebrow {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #8b1a1a;
+      font-weight: 600;
+      margin: 0 0 28px;
+    }
+
+    .catalog-headline {
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #f0ece4;
+      margin: 0 0 24px;
+      line-height: 1;
+    }
+
+    .catalog-sub {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #888880;
+      max-width: 640px;
+      margin: 0 0 72px;
+    }
+
+    .catalog-sub a {
+      color: #c8a96e;
+      border-bottom: 1px solid rgba(200, 169, 110, 0.3);
+      transition: border-color 0.2s;
+    }
+
+    .catalog-sub a:hover { border-bottom-color: #c8a96e; }
+
+    .catalog-lane { margin-bottom: 56px; }
+    .catalog-lane:last-child { margin-bottom: 0; }
+
+    .catalog-lane-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #222222;
+    }
+
+    .catalog-lane-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #f0ece4;
+    }
+
+    .catalog-lane-count {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      color: #c8a96e;
+    }
+
+    .catalog-row {
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      align-items: baseline;
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid #1a1a18;
+      transition: background 0.15s, padding 0.15s;
+    }
+
+    a.catalog-row:hover { background: #111110; }
+
+    .catalog-skill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: #c8a96e;
+      word-break: break-word;
+    }
+
+    .catalog-desc {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: #888880;
+    }
+
+    .catalog-arrow {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #44423c;
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    a.catalog-row:hover .catalog-arrow {
+      color: #c8a96e;
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 820px) {
+      .catalog-row { grid-template-columns: 220px 1fr auto; }
     }
 
     /* ============================================================
@@ -1428,6 +1562,45 @@
       flex: 1;
     }
 
+    .install-alts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #222222;
+      border: 1px solid #222222;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: -24px 0 48px;
+    }
+
+    .install-alt {
+      background: #0d0d0c;
+      padding: 20px 24px;
+    }
+
+    .install-alt-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888880;
+      margin-bottom: 10px;
+    }
+
+    .install-alt code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #c8a96e;
+      line-height: 1.6;
+      word-break: break-all;
+      display: block;
+    }
+
+    @media (max-width: 720px) {
+      .install-alts { grid-template-columns: 1fr; }
+    }
+
     .copy-btn {
       flex-shrink: 0;
       background: transparent;
@@ -1631,8 +1804,12 @@
 
     @media (max-width: 540px) {
       .features-grid { grid-template-columns: 1fr; }
+      .feature-card--wide { grid-column: span 1; padding: 36px 28px; }
       .features-inner { padding: 0 24px; }
       .features-headline { margin-bottom: 48px; }
+      .catalog-row { grid-template-columns: 1fr; row-gap: 6px; padding: 18px 0; }
+      .catalog-inner { padding: 0 24px; }
+      .catalog-lane-head { flex-wrap: wrap; }
     }
 
     /* ============================================================
@@ -2166,9 +2343,9 @@
 
     <img id="hero-logo" class="hero-anim" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
 
-    <h1 id="hero-headline" class="hero-anim">21 open-source skills that teach your coding agent to ship.</h1>
+    <h1 id="hero-headline" class="hero-anim">22 open-source skills that teach your coding agent to ship.</h1>
 
-    <p id="hero-subline" class="hero-anim">A free 22-skill, MIT-licensed pack for Claude Code and Codex. Two lines to install. Your agent gets code review that ends in a blunt A-F ship grade, CI that actually blocks bad merges, coordinated agent teams with quality gates, measurable AI evals, and design, copy, and SEO lanes. Bring your own company, repo, page, or product.</p>
+    <p id="hero-subline" class="hero-anim">A free 22-skill, MIT-licensed pack for Claude Code and Codex. Two lines to install. Your agent gets code review that ends in a blunt A-F ship grade, CI that actually blocks bad merges, coordinated agent teams with quality gates, reviewed OpenAI Codex worker fleets, measurable AI evals, and design, copy, and SEO lanes. Bring your own company, repo, page, or product.</p>
 
     <div id="hero-proof" class="hero-anim">
       <span class="hero-proof-line">Public install commands, MIT license, and inspectable SKILL.md folders</span>
@@ -2178,7 +2355,7 @@
 
     <div id="hero-ctas" class="hero-anim">
       <a id="hero-cta-primary" href="#install">Install the pack</a>
-      <a id="hero-cta-secondary" href="skills/">Browse all 22 skills</a>
+      <a id="hero-cta-secondary" href="#catalog">See all 22 skills</a>
       <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
     </div>
   </div>
@@ -2195,6 +2372,7 @@
   <div class="marquee-track">
     <span class="marquee-item">Workflow Skills</span>
     <span class="marquee-item">Agent Teams</span>
+    <span class="marquee-item">Codex Fleet</span>
     <span class="marquee-item">AI Evals</span>
     <span class="marquee-item">Code + Grade</span>
     <span class="marquee-item">Code Review</span>
@@ -2216,6 +2394,7 @@
     <span class="marquee-item">Rights Audit</span>
     <span class="marquee-item">Workflow Skills</span>
     <span class="marquee-item">Agent Teams</span>
+    <span class="marquee-item">Codex Fleet</span>
     <span class="marquee-item">AI Evals</span>
     <span class="marquee-item">Code + Grade</span>
     <span class="marquee-item">Code Review</span>
@@ -2243,63 +2422,55 @@
   <div class="features-inner">
     <h2 class="features-headline reveal">What it does</h2>
     <div class="features-grid reveal-group">
-      <div class="feature-card">
+      <div class="feature-card feature-card--wide">
         <span class="feature-num">01</span>
+        <span class="feature-label">Suede Fable Fleet — Codex worker fleets</span>
+        <h3 class="feature-title">Claude judges.<br>Codex generates.</h3>
+        <p class="feature-copy">Claude decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI workers billed to your ChatGPT plan, then reviews every output against acceptance criteria before anything ships.</p>
+      </div>
+      <div class="feature-card feature-card--wide feature-card--red">
+        <span class="feature-num">02</span>
+        <span class="feature-label">Code review → ship verdict</span>
+        <h3 class="feature-title">Review that ends in<br>a blunt A-F grade.</h3>
+        <p class="feature-copy">Deep findings across TypeScript, React, Next.js, OWASP, and database checklists, then a letter verdict across 7 evidence-backed lanes. A hardcoded secret is an instant F with the exact file and line — no other lane can raise it.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">03</span>
         <span class="feature-label">Skills, not prompts</span>
         <p class="feature-copy">Every capability is an inspectable SKILL.md folder the agent loads on demand, so context stays lean and the job stays in focus</p>
       </div>
       <div class="feature-card">
-        <span class="feature-num">02</span>
-        <span class="feature-label">Suedify</span>
-        <p class="feature-copy">Give it a reference URL and a target URL. It studies the reference's layout, type, and rhythm, then restyles your site in that direction — your own assets, plus a QA pass</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">03</span>
-        <span class="feature-label">Agent teams</span>
-        <p class="feature-copy">Runs scout, build, review, verifier, and release lanes that share context instead of acting like siloed subagents</p>
-      </div>
-      <div class="feature-card">
         <span class="feature-num">04</span>
-        <span class="feature-label">Copy + SEO/AEO</span>
-        <p class="feature-copy">Distills copy, CTAs, metadata, schema, FAQs, and answer-ready proof for Google, Gemini, and model-readable answer surfaces</p>
+        <span class="feature-label">Agent teams</span>
+        <p class="feature-copy">Runs scout, build, review, verifier, and release lanes that share context instead of acting like siloed subagents — with WIP collision detection and a signed handoff</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">05</span>
-        <span class="feature-label">Code review</span>
-        <p class="feature-copy">Runs deep review and A-F grading across correctness, security, data, UX, release behavior, and public-claim truth</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">06</span>
-        <span class="feature-label">Feedback loop</span>
-        <p class="feature-copy">Say "Cue Suede" when something hits or misses. The skill records the correction and the next pass applies it, instead of trusting vague chat memory</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">07</span>
-        <span class="feature-label">Launch packaging</span>
-        <p class="feature-copy">Packages work as a release strangers can actually install: verified commands, proof links, docs, and a QA gate before any public claim ships</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">08</span>
-        <span class="feature-label">AI eval</span>
+        <span class="feature-label">AI evals</span>
         <p class="feature-copy">Turns LLM, RAG, classifier, and agent surfaces into measurable AI-SPECs with failure-mode rubrics, eval cases, and acceptance gates you can fail a release on</p>
       </div>
       <div class="feature-card">
-        <span class="feature-num">09</span>
+        <span class="feature-num">06</span>
         <span class="feature-label">CI ship gate</span>
         <p class="feature-copy">Writes CI that actually gates the merge: stack and lockfile detection, one required check that can't deadlock, and branch protection that holds</p>
       </div>
       <div class="feature-card">
+        <span class="feature-num">07</span>
+        <span class="feature-label">Suedify</span>
+        <p class="feature-copy">Give it a reference URL and a target URL. It studies the reference's layout, type, and rhythm, then restyles your site in that direction — your own assets, plus a QA pass</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">08</span>
+        <span class="feature-label">Copy + SEO/AEO</span>
+        <p class="feature-copy">Distills copy, CTAs, metadata, schema, FAQs, and answer-ready proof for Google, Gemini, and model-readable answer surfaces</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">09</span>
+        <span class="feature-label">Visibility grade</span>
+        <p class="feature-copy">Scores brand and page visibility A-F across first-screen clarity, CTA pull, proof, AI readability, schema depth, and search result fit</p>
+      </div>
+      <div class="feature-card">
         <span class="feature-num">10</span>
-        <span class="feature-label">Visibility score</span>
-        <p class="feature-copy">Scores brand and page visibility across first-screen clarity, CTA pull, proof, AI readability, schema depth, and search result fit</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">11</span>
-        <span class="feature-label">Project grade</span>
-        <p class="feature-copy">Ends with blunt grades, missing gates, evidence, and the next fix so the agent does not hand back a pretty but unverified mess</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">12</span>
         <span class="feature-label">MCP tools</span>
         <p class="feature-copy">An optional dependency-free MCP server adds structured skill discovery, install options, audit scaffolds, and QA checklists</p>
       </div>
@@ -2311,7 +2482,7 @@
 <section class="stats-band" aria-label="By the numbers">
   <div class="stats-inner reveal">
     <div class="stat">
-      <div class="stat-num"><span class="count" data-count="21">21</span></div>
+      <div class="stat-num"><span class="count" data-count="22">22</span></div>
       <div class="stat-label">Public skills</div>
     </div>
     <div class="stat">
@@ -2326,6 +2497,154 @@
       <div class="stat-num">0</div>
       <div class="stat-label">uploads by default</div>
     </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+  <div class="catalog-inner">
+    <p class="catalog-eyebrow reveal">The full pack</p>
+    <h2 class="catalog-headline reveal reveal-d1">All 22 skills.</h2>
+    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder you can read before you install it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
+
+    <div class="catalog-lane reveal">
+      <div class="catalog-lane-head">
+        <span class="catalog-lane-name">Agent orchestration &amp; workflows</span>
+        <span class="catalog-lane-count">4 skills</span>
+      </div>
+      <a class="catalog-row" href="skills/suede-agent-teams.html">
+        <span class="catalog-skill">suede-agent-teams</span>
+        <span class="catalog-desc">Coordinate agent lanes with WIP collision detection, RFC mode, rollback trees, and a signed handoff</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-codex-fleet/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-codex-fleet</span>
+        <span class="catalog-desc">The Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-ai-eval.html">
+        <span class="catalog-skill">suede-ai-eval</span>
+        <span class="catalog-desc">AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-workflow-skills.html">
+        <span class="catalog-skill">suede-workflow-skills</span>
+        <span class="catalog-desc">Umbrella skill that loads the full pack as one workflow</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+
+    <div class="catalog-lane reveal">
+      <div class="catalog-lane-head">
+        <span class="catalog-lane-name">Code quality &amp; shipping</span>
+        <span class="catalog-lane-count">4 skills</span>
+      </div>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-code</span>
+        <span class="catalog-desc">Deep review plus the A-F ship grade in one pass</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-code-review</span>
+        <span class="catalog-desc">Findings-only review with TypeScript, React, Next.js, OWASP, accessibility, and database checklists</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-code-grader.html">
+        <span class="catalog-skill">suede-code-grader</span>
+        <span class="catalog-desc">A-F ship verdict only: 7 evidence lanes, instant-F triggers, grade caps for auth and payment surfaces</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship-gate/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-ship-gate</span>
+        <span class="catalog-desc">CI that gates the merge: stack and lockfile detection, one required check, branch protection</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+
+    <div class="catalog-lane reveal">
+      <div class="catalog-lane-head">
+        <span class="catalog-lane-name">Design, copy &amp; SEO</span>
+        <span class="catalog-lane-count">9 skills</span>
+      </div>
+      <a class="catalog-row" href="skills/johnny-suede-design.html">
+        <span class="catalog-skill">johnny-suede-design</span>
+        <span class="catalog-desc">Full design lane: brand and product surfaces, tokens, visual QA, ship gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/johnny-suede-write.html">
+        <span class="catalog-skill">johnny-suede-write</span>
+        <span class="catalog-desc">Full writing lane: structure, persuasion frameworks, anti-slop gate, copy score</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-design/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-design</span>
+        <span class="catalog-desc">Design laws, dark-mode tokens, fluid type, and component rules — includes Suedify</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-copy</span>
+        <span class="catalog-desc">Conversion copy: headline formulas, A/B variants, anti-slop gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-audit/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-seo-audit</span>
+        <span class="catalog-desc">SEO, AEO, and AI-EO audit: metadata, schema, internal links, and search intent</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-visibility-grader.html">
+        <span class="catalog-skill">suede-visibility-grader</span>
+        <span class="catalog-desc">A-F page grades for findability, clarity, CTA pull, proof, and AI citation readiness</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-site-alchemy</span>
+        <span class="catalog-desc">Funnel analysis, friction audit, conversion math, and ranked quick wins for landing pages</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-launch-packaging</span>
+        <span class="catalog-desc">Package work as a launch: docs, verified install commands, proof links, QA gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-mcp-qa</span>
+        <span class="catalog-desc">QA pass for the bundled Suede Skills MCP server before it ships</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+
+    <div class="catalog-lane reveal">
+      <div class="catalog-lane-head">
+        <span class="catalog-lane-name">Creator toolkit</span>
+        <span class="catalog-lane-count">5 skills</span>
+      </div>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-campaign-in-a-box</span>
+        <span class="catalog-desc">Turn a song, release, or drop into a full artist campaign: eras, hooks, stunts, and fan missions</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-sync-packaging</span>
+        <span class="catalog-desc">Package songs for sync pitching: scene-fit angles, supervisor-safe one-sheets, rights status</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-release-linter.html">
+        <span class="catalog-skill">suede-release-linter</span>
+        <span class="catalog-desc">Release folder audit before a drop: artwork, audio, metadata, and naming checks</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-rights-passport.html">
+        <span class="catalog-skill">suede-rights-passport</span>
+        <span class="catalog-desc">Prepare project folders for rights packaging: provenance, splits, licensing review, registry prep</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md" target="_blank" rel="noopener">
+        <span class="catalog-skill">suede-rights-audit</span>
+        <span class="catalog-desc">Rights and ownership gap check across a catalog or release</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -2653,6 +2972,17 @@
             b.textContent='Copy';
           });
         ">Copy</button>
+      </div>
+    </div>
+
+    <div class="install-alts reveal reveal-d2">
+      <div class="install-alt">
+        <span class="install-alt-label">Any agent — Cursor, Copilot, Windsurf, 25+ more</span>
+        <code>npx skills add JasonColapietro/suede-creator-skills</code>
+      </div>
+      <div class="install-alt">
+        <span class="install-alt-label">Prefer a clone — copies all 22 into ~/.claude/skills/</span>
+        <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
       </div>
     </div>
 

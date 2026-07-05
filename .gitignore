@@ -10,3 +10,4 @@ node_modules/
 
 # Internal working documents — never publish
 audits/
+.claude/

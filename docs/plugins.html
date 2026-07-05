@@ -1,260 +1,439 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Public Skill Installs and MCP | Claude Code and Codex</title>
-    <meta name="description" content="Install Suede skills for Claude Code and Codex from GitHub, plus the optional Suede Skills MCP for skill discovery, audit scaffolds, visibility and code grading, and QA checklists.">
-    <meta name="author" content="Jason Colapietro">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
-    <link rel="icon" href="./assets/suede-skill-icon.png" type="image/png">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Suede Public Skill Installs and MCP">
-    <meta property="og:description" content="Public GitHub skill installs for Claude Code and Codex, plus MCP options for skill discovery, Suedify, design, anti-slop copywriting, visibility grading, Suede SEO/AEO/AI EO audits, and QA checklists.">
-    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
-    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Suede Public Skill Installs and MCP">
-    <meta name="twitter:description" content="Install public Suede skills for Claude Code and Codex from GitHub and use the bundled MCP for discovery, mobile and product surfaces, visibility grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA.">
-    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html#article",
-        "headline": "Suede Public Skill Installs and MCP",
-        "description": "Install public Suede skills for Claude Code and Codex from GitHub and use the Suede Skills MCP for Suedify, mobile and product surfaces, design, anti-slop copywriting, visibility grading, CTA grading, visual QA, Suede SEO/AEO/AI EO copy audits, and QA checklists.",
-        "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
-        "author": {
-          "@type": "Person",
-          "name": "Jason Colapietro",
-          "url": "https://github.com/JasonColapietro"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Suede Labs AI",
-          "url": "https://suedeai.ai"
-        },
-        "about": ["Claude Code skills", "Codex skills", "MCP server", "Suede Creator Skills", "mobile product surfaces", "website visibility", "CTA grading", "Suede SEO", "SEO/AEO/AI EO copy audit", "AEO", "AI EO", "agent QA"],
-        "mainEntity": {
-          "@type": "SoftwareSourceCode",
-          "name": "Suede Skills MCP",
-          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp",
-          "programmingLanguage": "JavaScript",
-          "applicationCategory": "DeveloperTool",
-          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
-        }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install Suede Creator Skills | Claude Code, Codex, and MCP</title>
+  <meta name="description" content="Install all 22 Suede skills for Claude Code in two lines, for Codex with the skill installer, or into 25+ agents with the skills CLI. Plus the optional dependency-free Suede Skills MCP.">
+  <meta name="author" content="Jason Colapietro">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
+  <link rel="icon" href="./assets/suede-ai-logo-transparent.png" type="image/png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Install Suede Creator Skills | Claude Code, Codex, and MCP">
+  <meta property="og:description" content="Public GitHub skill installs for Claude Code and Codex, plus MCP options for skill discovery, Suedify, design, anti-slop copywriting, visibility grading, Suede SEO/AEO/AI EO audits, and QA checklists.">
+  <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
+  <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Install Suede Creator Skills | Claude Code, Codex, and MCP">
+  <meta name="twitter:description" content="Install public Suede skills for Claude Code and Codex from GitHub and use the bundled MCP for discovery, visibility grading, code grading, SEO/AEO/AI EO copy audits, and QA.">
+  <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "@id": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html#article",
+      "headline": "Install Suede Creator Skills: Claude Code, Codex, and MCP",
+      "description": "Install public Suede skills for Claude Code and Codex from GitHub and use the Suede Skills MCP for Suedify, design, anti-slop copywriting, visibility grading, code grading, Suede SEO/AEO/AI EO copy audits, and QA checklists.",
+      "url": "https://jasoncolapietro.github.io/suede-creator-skills/plugins.html",
+      "author": {
+        "@type": "Person",
+        "name": "Jason Colapietro",
+        "url": "https://github.com/JasonColapietro"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Suede Labs AI",
+        "url": "https://suedeai.ai"
+      },
+      "about": ["Claude Code skills", "Codex skills", "MCP server", "Suede Creator Skills", "AI code review", "website visibility", "SEO/AEO/AI EO copy audit", "agent QA"],
+      "mainEntity": {
+        "@type": "SoftwareSourceCode",
+        "name": "Suede Skills MCP",
+        "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp",
+        "programmingLanguage": "JavaScript",
+        "applicationCategory": "DeveloperTool",
+        "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
       }
-    </script>
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: oklch(0.12 0.028 28);
-        --panel: oklch(0.17 0.035 28 / 0.92);
-        --cream: oklch(0.96 0.018 62);
-        --muted: oklch(0.76 0.035 58);
-        --line: oklch(0.96 0.018 62 / 0.16);
-        --red: oklch(0.50 0.21 28);
-        --gold: oklch(0.78 0.12 78);
-        --cyan: oklch(0.74 0.12 205);
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--cream);
-        background:
-          linear-gradient(115deg, oklch(0.22 0.12 28 / 0.7), transparent 38%),
-          linear-gradient(245deg, oklch(0.30 0.09 205 / 0.24), transparent 34%),
-          var(--bg);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.55;
-      }
-      a { color: inherit; }
-      a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
-      .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-      header { border-bottom: 1px solid var(--line); background: oklch(0.12 0.028 28 / 0.9); }
-      nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 18px; }
-      .brand { font-weight: 950; }
-      .nav-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; font-weight: 800; }
-      .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
-      main { padding: 58px 0 80px; }
-      .eyebrow { color: var(--gold); font-size: 13px; font-weight: 950; text-transform: uppercase; }
-      h1 { max-width: 920px; margin: 14px 0 18px; font-size: clamp(42px, 6vw, 76px); line-height: 0.98; }
-      h2 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 48px); line-height: 1; }
-      h3 { margin: 0 0 10px; font-size: 24px; }
-      p, li { color: var(--muted); }
-      .lead { max-width: 880px; font-size: 19px; }
-      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
-      .card, .panel {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel);
-        padding: 24px;
-      }
-      .button {
-        display: inline-flex;
-        min-height: 44px;
-        align-items: center;
-        border: 1px solid oklch(0.78 0.12 78 / 0.42);
-        border-radius: 8px;
-        background: var(--red);
-        padding: 0 14px;
-        font-weight: 900;
-        text-decoration: none;
-      }
-      .button.secondary { background: oklch(0.96 0.018 62 / 0.08); }
-      pre {
-        overflow: auto;
-        border: 1px solid oklch(0.96 0.018 62 / 0.12);
-        border-radius: 8px;
-        background: oklch(0.08 0.02 28);
-        padding: 16px;
-        color: oklch(0.93 0.04 72);
-        font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        white-space: pre-wrap;
-      }
-      .links { display: grid; gap: 12px; }
-      .link-row {
-        display: grid;
-        grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr);
-        gap: 14px;
-        border-top: 1px solid var(--line);
-        padding-top: 12px;
-      }
-      .link-row b { color: var(--cream); }
-      .link-row span { color: var(--muted); overflow-wrap: anywhere; }
-      section { margin-top: 52px; }
-      footer { border-top: 1px solid var(--line); color: var(--muted); padding: 28px 0; }
-      @media (max-width: 820px) {
-        nav, .grid, .link-row { grid-template-columns: 1fr; display: grid; }
-        .nav-links { gap: 10px; }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="shell" aria-label="Primary">
-        <a class="brand" href="./">Suede Creator Skills</a>
-        <div class="nav-links">
-          <a href="./">Home</a>
-          <a href="./skills/">Skill Docs</a>
-          <a href="./copy.html">Copy Bank</a>
-          <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">Public Explainer</a>
-          <a href="https://github.com/JasonColapietro/suede-creator-skills">GitHub</a>
-        </div>
-      </nav>
-    </header>
-    <main class="shell">
-      <div class="eyebrow">Public installs and MCP</div>
-      <h1>Install Suede once. Stop rebuilding the agent brief.</h1>
-      <p class="lead">Twenty-one public skills your agent can load as one workflow. Install the umbrella to Suedify a target page from a reference URL, rewrite copy, grade visibility, review code A-F, design AI evals, coordinate agent teams, or package creator campaign and rights evidence. Use MCP when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080808;
+      --surface: #111111;
+      --card: #161616;
+      --border: #222222;
+      --hairline: #1a1a18;
+      --gold: #c8a96e;
+      --red: #8b1a1a;
+      --red-text: #c0524a;
+      --cream: #f0ece4;
+      --muted: #888880;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
 
-      <section class="panel">
-        <h2>Claude Code — install in one command</h2>
-        <p>Add the marketplace and install the pack:</p>
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px;
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 28px; height: 28px; }
+    .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-wordmark span { color: var(--gold); }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 6px 0; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a[aria-current="page"] { color: var(--gold); }
+    .nav-cta {
+      border: 1px solid var(--gold); border-radius: 4px;
+      padding: 8px 16px !important; color: var(--cream) !important;
+      background: rgba(200, 169, 110, 0.08);
+    }
+    .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+
+    /* PAGE HEAD */
+    .page-head { padding: 88px 0 64px; border-bottom: 1px solid var(--hairline); }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--red-text); margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(44px, 6.5vw, 84px); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.0; max-width: 900px;
+      margin-bottom: 24px;
+    }
+    .lead { font-size: 18px; line-height: 1.7; color: var(--muted); max-width: 720px; }
+    .lead a, .prose a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+    .lead a:hover, .prose a:hover { border-bottom-color: var(--gold); }
+
+    /* SECTIONS */
+    section { padding: 72px 0 0; }
+    section:last-of-type { padding-bottom: 96px; }
+    h2 {
+      font-size: clamp(28px, 3.6vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 14px;
+    }
+    h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .section-sub { font-size: 16px; color: var(--muted); max-width: 680px; margin-bottom: 36px; }
+    .prose p { color: var(--muted); margin-bottom: 14px; }
+    .prose strong { color: var(--cream); }
+    code {
+      font-family: var(--mono); font-size: 0.9em; color: var(--gold);
+      background: rgba(200, 169, 110, 0.07); border-radius: 3px; padding: 1px 6px;
+    }
+
+    /* TERMINAL BLOCK */
+    .terminal { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 24px 0; }
+    .terminal-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+    }
+    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #242424; }
+    .terminal-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+    .terminal-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; }
+    .terminal-body pre { flex: 1; overflow-x: auto; }
+    .terminal-body code, .terminal-body pre {
+      font-family: var(--mono); font-size: 13.5px; line-height: 1.7;
+      color: var(--gold); background: none; padding: 0; white-space: pre;
+    }
+    .copy-btn {
+      flex-shrink: 0; background: transparent; border: 1px solid var(--border);
+      color: var(--muted); font-family: inherit; font-size: 12.5px;
+      padding: 7px 15px; border-radius: 4px; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
+
+    /* CARD GRID */
+    .grid-2, .grid-3 { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 36px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cell { background: var(--card); padding: 30px 28px; border-left: 3px solid var(--gold); }
+    .cell--red { border-left-color: var(--red); }
+    .cell .cell-label {
+      display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+    .cell--red .cell-label { color: var(--red-text); }
+    .cell p { font-size: 14.5px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+    .cell pre {
+      font-family: var(--mono); font-size: 12px; line-height: 1.7; color: var(--gold);
+      background: var(--bg); border: 1px solid var(--hairline); border-radius: 4px;
+      padding: 14px 16px; overflow-x: auto; white-space: pre; margin: 12px 0;
+    }
+
+    /* LINK ROWS */
+    .rows { border-top: 1px solid var(--border); margin-top: 32px; }
+    .row {
+      display: grid; grid-template-columns: 280px 1fr; gap: 24px;
+      align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--hairline);
+    }
+    .row b { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--gold); word-break: break-word; }
+    .row span { font-size: 14.5px; line-height: 1.55; color: var(--muted); overflow-wrap: anywhere; }
+
+    /* BUTTON ROW */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--muted); font-size: 14px; font-weight: 500;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn:hover { color: var(--gold); border-color: var(--gold); }
+    .btn--gold { border-color: var(--gold); color: var(--cream); background: rgba(200, 169, 110, 0.08); }
+    .btn--gold:hover { background: rgba(200, 169, 110, 0.16); color: var(--cream); }
+    .btn--red { border-color: var(--red); color: var(--cream); background: rgba(139, 26, 26, 0.08); }
+    .btn--red:hover { background: rgba(139, 26, 26, 0.2); color: var(--cream); }
+
+    /* SAFETY + FOOTER */
+    .safety {
+      margin-top: 72px; padding: 24px 28px;
+      border: 1px solid var(--hairline); border-left: 3px solid var(--red);
+      border-radius: 4px; background: var(--surface);
+      font-size: 14px; color: var(--muted); line-height: 1.65;
+    }
+    footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+    .footer-brand img { width: 24px; height: 24px; }
+    .footer-brand strong { color: var(--cream); font-weight: 600; }
+    .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-divider { color: var(--border); }
+
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { padding: 0 24px; }
+      .page-head { padding: 64px 0 48px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; row-gap: 6px; padding: 18px 0; }
+      .terminal-body { flex-direction: column; }
+      .copy-btn { align-self: flex-end; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="shell nav-inner">
+    <a href="./" class="nav-logo" aria-label="Suede Creator Skills home">
+      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+      <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./skills/">Skills</a>
+      <a href="./guide.html">Guide</a>
+      <a href="./copy.html">Copy Bank</a>
+      <a href="./plugins.html" aria-current="page" class="nav-cta">Install</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="shell page-head">
+    <p class="eyebrow">Public installs and MCP</p>
+    <h1>Install Suede once. Stop rebuilding the agent brief.</h1>
+    <p class="lead">Twenty-two public skills your agent can load as one workflow. Install the umbrella to Suedify a target page from a reference URL, rewrite copy, grade visibility, review code A-F, design AI evals, coordinate agent teams, or package creator campaign and rights evidence. Use MCP when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
+  </div>
+
+  <section class="shell" id="claude-code">
+    <h2>Claude Code — two lines</h2>
+    <p class="section-sub">Add the marketplace, install the pack. <code>suede-skills</code> installs all 22 skills.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">claude code</span>
+      </div>
+      <div class="terminal-body">
         <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
 /plugin install suede-skills@suede</code></pre>
-        <p><code>suede-skills</code> installs all 22 skills. Smaller subsets: <code>/plugin install suede-agent-workflows@suede</code> (orchestration, workflows, evals) or <code>/plugin install suede-code@suede</code> (review, grade, ship-gate). Prefer a clone? <code>install.sh</code> copies all 22 skills into <code>~/.claude/skills/</code>:</p>
+        <button class="copy-btn" data-copy="/plugin marketplace add JasonColapietro/suede-creator-skills&#10;/plugin install suede-skills@suede">Copy</button>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Want less than the full pack? Two focused subsets install the same way: <code>/plugin install suede-agent-workflows@suede</code> (orchestration, workflows, evals) or <code>/plugin install suede-code@suede</code> (review, grade, ship-gate).</p>
+      <p>Prefer a clone? <code>install.sh</code> copies all 22 skills into <code>~/.claude/skills/</code> and never touches skills that are not part of the pack:</p>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">shell</span>
+      </div>
+      <div class="terminal-body">
         <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh</code></pre>
-        <p>Using Cursor, Copilot, Windsurf, or another agent? The open skills CLI installs the pack into 25+ agents, Claude Code and Codex included:</p>
+        <button class="copy-btn" data-copy="git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh">Copy</button>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Using Cursor, Copilot, Windsurf, or another agent? The open <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> installs the pack into 25+ agents, Claude Code and Codex included:</p>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">any agent</span>
+      </div>
+      <div class="terminal-body">
         <pre><code>npx skills add JasonColapietro/suede-creator-skills</code></pre>
-        <p>The three Codex install commands below work the same way for Claude Code: swap the <code>python3 ~/.codex/skills/...</code> line for a project-level copy, e.g. <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>.</p>
-      </section>
+        <button class="copy-btn" data-copy="npx skills add JasonColapietro/suede-creator-skills">Copy</button>
+      </div>
+    </div>
 
-      <section class="panel">
-        <h2>Public explanation</h2>
-        <p>Use <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md">PROMO.md</a> when public users need to understand the full Suede workflow: Johnny Suede Write, Johnny Suede Design, supplied-company voice support, Suedify, anti-slop copywriting, visibility and CTA grading, visual QA, Suede SEO/AEO/AI EO audits, A-F code grading, code review, CI ship-gates, agent-team loops, artist campaign tools, public installs, and optional MCP.</p>
-        <p>This page is the GitHub Pages surface generated from the public repo, not a separate marketing site. The install commands, docs, sitemap, and skill pages live beside the source.</p>
-      </section>
+    <div class="prose">
+      <p>For a project-level copy of a single skill in Claude Code: <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>.</p>
+    </div>
+  </section>
 
-      <section class="grid">
-        <article class="card">
-          <h2>Public Suede Workflow Skills</h2>
-          <p>Install the umbrella first. Build: Suedify reference-site restyling, design, mobile and product surfaces, A-F code grading, and multi-lane QA. Write: anti-slop copy, brand voice, visibility and CTA grading, SEO/AEO/AI EO audits. Create: artist campaigns and rights-aware utilities that organize provenance evidence. The tools do not clear rights or approve payouts.</p>
-          <p><strong>Codex</strong> — install from GitHub:</p>
-          <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  <section class="shell" id="codex">
+    <h2>Codex — pick your set</h2>
+    <p class="section-sub">Codex installs any skill folder from GitHub with its built-in skill installer. Skills land in <code>~/.codex/skills</code> (or <code>$CODEX_HOME/skills</code>). Restart Codex after installing.</p>
+
+    <div class="grid-3">
+      <article class="cell">
+        <span class="cell-label">The umbrella — start here</span>
+        <p>One skill that routes the whole public workflow: Suedify restyling, design, code grading, copy, visibility, SEO/AEO/AI EO, and QA lanes.</p>
+        <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-workflow-skills</code></pre>
-          <p>Optional local MCP server: <code>node mcp/suede-skills-mcp.mjs --profile workflow</code></p>
-        </article>
-        <article class="card">
-          <h2>Direct Website Workflow Skills</h2>
-          <p>Install individual workflow skills when you want direct triggers: Johnny Suede Write for copy and company voice, Johnny Suede Design for Suedify and visual QA, Suede Code and Code Grader for review and A-F verdicts, Agent Teams for parallel lanes, AI Eval for AI-SPECs, Ship Gate for CI, SEO Audit, Visibility Grader, Site Alchemy, MCP QA, and Launch Packaging.</p>
-          <p><strong>Codex</strong> — install from GitHub:</p>
-          <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --path skills/suede-workflow-skills</pre>
+      </article>
+      <article class="cell cell--red">
+        <span class="cell-label">Direct workflow skills</span>
+        <p>Install individual skills for direct triggers — write, design, review, grade, orchestrate, gate. Pass extra <code>skills/&lt;name&gt;</code> paths to install several at once:</p>
+        <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design \
   skills/johnny-suede-write \
   skills/suede-code \
-  skills/suede-code-review \
-  skills/suede-code-grader \
-  skills/suede-copy \
-  skills/suede-design \
   skills/suede-agent-teams \
+  skills/suede-codex-fleet \
   skills/suede-ai-eval \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
-  skills/suede-visibility-grader \
-  skills/suede-site-alchemy \
-  skills/suede-launch-packaging \
-  skills/suede-mcp-qa</code></pre>
-          <p><a class="button secondary" href="./skills/suede-visibility-grader.html">Read visibility grader docs</a> <a class="button secondary" href="./skills/suede-code-grader.html">Read code grader docs</a></p>
-        </article>
-        <article class="card">
-          <h2>Public Suede Creator Skills</h2>
-          <p>Install creator skills when the work is music, media, or artist-campaign specific: campaign-in-a-box for eras, song worlds, hooks, fan rituals, visualizers, merch objects, setlists, catalog revival, and collabs; sync packaging for clean review notes; release linting and rights utilities for provenance evidence. They do not clear rights.</p>
-          <p><strong>Codex</strong> — install from GitHub:</p>
-          <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  skills/suede-visibility-grader</pre>
+      </article>
+      <article class="cell">
+        <span class="cell-label">Creator toolkit</span>
+        <p>For music, media, and artist-campaign work: campaigns, sync packaging, release linting, rights evidence. They organize evidence; they do not clear rights.</p>
+        <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
   skills/suede-release-linter \
   skills/suede-rights-passport \
-  skills/suede-rights-audit</code></pre>
-          <p>Optional local MCP server: <code>node mcp/suede-skills-mcp.mjs --profile creator</code></p>
-        </article>
-      </section>
+  skills/suede-rights-audit</pre>
+      </article>
+    </div>
 
-      <section class="panel">
-        <h2>What the MCP adds</h2>
-        <div class="links">
-          <div class="link-row"><b>Skill discovery</b><span>Agents can ask for the right Suede skill for Suedify, design, copy, SEO/AEO/AI EO, QA, artist campaigns, or utilities instead of guessing from memory.</span></div>
-          <div class="link-row"><b>Install options</b><span>Public skill installs, MCP, local plugin notes, and skill-copy paths are returned as structured guidance.</span></div>
-          <div class="link-row"><b>Visibility and CTA grading</b><span>Agents can route website checks through a focused grader for findability, first-screen clarity, CTA pull, proof, AI readability, design signal, and Google and Gemini result-surface readiness.</span></div>
-          <div class="link-row"><b>A-F code grading</b><span>Agents can route code checks through a focused grader for correctness, security, data/state, Suede truth, UX and release behavior, tests, deploy readiness, and required upgrades.</span></div>
-          <div class="link-row"><b>SEO/AEO/AI EO copy audits</b><span>The MCP provides a full Suede SEO/AEO/AI EO audit scaffold for pages, repos, README files, skill docs, answer-ready copy, and AI summary-safe proof.</span></div>
-          <div class="link-row"><b>QA checklists</b><span>Agents can generate a full QA pass for skills, MCP, docs, local plugin notes, public site changes, code grades, and adversarial review loops.</span></div>
-        </div>
-      </section>
+    <div class="btn-row">
+      <a class="btn btn--gold" href="./skills/">Browse all 22 skills</a>
+      <a class="btn" href="./skills/suede-code-grader.html">Code grader docs</a>
+      <a class="btn" href="./skills/suede-visibility-grader.html">Visibility grader docs</a>
+    </div>
+  </section>
 
-      <section class="panel">
-        <h2>MCP tools</h2>
-        <div class="links">
-          <div class="link-row"><b><code>list_suede_skills</code></b><span>Lists Suede skills by workflow, creator, or all areas.</span></div>
-          <div class="link-row"><b><code>get_suede_skill</code></b><span>Returns one skill description and when to use it.</span></div>
-          <div class="link-row"><b><code>suede_install_options</code></b><span>Returns public skill, MCP, local plugin, and skill-copy install options.</span></div>
-          <div class="link-row"><b><code>suede_copy_seo_audit</code></b><span>Builds an SEO/AEO/AI EO copy audit scaffold with metadata, schema, CTA, proof, and verification checks.</span></div>
-          <div class="link-row"><b><code>suede_visibility_grade</code></b><span>Builds an A-F visibility and CTA grading scaffold for findability, first-screen clarity, proof, AI readability, rendered design signal, evidence, grade caps, and ship readiness.</span></div>
-          <div class="link-row"><b><code>suede_code_grade</code></b><span>Builds an A-F code grading scaffold for correctness, security, data/state, Suede truth, UX and release behavior, tests, deploy readiness, required upgrades, and ship gate.</span></div>
-          <div class="link-row"><b><code>suede_qa_checklist</code></b><span>Builds a multi-lane QA checklist for MCP, skills, docs, local plugin notes, and public site work.</span></div>
-        </div>
-      </section>
+  <section class="shell" id="mcp">
+    <h2>The Suede Skills MCP</h2>
+    <p class="section-sub">A dependency-free stdio MCP server ships in the repo at <a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid rgba(200,169,110,0.3);">mcp/</a>. Run it when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
 
-      <section class="grid">
-        <article class="card">
-          <h2>Run locally</h2>
-          <p>The public repo includes the dependency-free stdio MCP server for structured discovery, install options, SEO/AEO/AI EO audit scaffolds, and QA checklists.</p>
-          <pre><code>node mcp/suede-skills-mcp.mjs --profile all</code></pre>
-          <p>Profiles: <code>all</code>, <code>workflow</code>, or <code>creator</code>.</p>
-        </article>
-        <article class="card">
-          <h2>Safety boundary</h2>
-          <p>The MCP returns catalog, install, audit, and QA context. It does not upload music, clear rights, write to a registry, distribute releases, approve payouts, or make public claims on its own.</p>
-          <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp">View MCP source</a></p>
-        </article>
-      </section>
-    </main>
-    <footer><div class="shell">Built by <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede Labs AI</a>. Suede public installs and MCP: structured access to skill discovery, install paths, SEO/AEO/AI EO copy audits, visibility grading, code grading, creator release readiness, and QA.</div></footer>
-  </body>
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">mcp server</span>
+      </div>
+      <div class="terminal-body">
+        <pre><code>node mcp/suede-skills-mcp.mjs --profile all</code></pre>
+        <button class="copy-btn" data-copy="node mcp/suede-skills-mcp.mjs --profile all">Copy</button>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Profiles: <code>all</code>, <code>workflow</code>, or <code>creator</code>. It implements <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>resources/list</code>, <code>resources/read</code>, <code>prompts/list</code>, and <code>prompts/get</code> — 7 tools, 6 resources, 5 prompts.</p>
+    </div>
+
+    <h3 style="margin-top:40px;">The 7 tools</h3>
+    <div class="rows">
+      <div class="row"><b>list_suede_skills</b><span>Lists Suede skills by workflow, creator, or all areas.</span></div>
+      <div class="row"><b>get_suede_skill</b><span>Returns one skill description and when to use it.</span></div>
+      <div class="row"><b>suede_install_options</b><span>Returns public skill, MCP, local plugin, and skill-copy install options.</span></div>
+      <div class="row"><b>suede_copy_seo_audit</b><span>Builds an SEO/AEO/AI EO copy audit scaffold with metadata, schema, CTA, proof, and verification checks.</span></div>
+      <div class="row"><b>suede_visibility_grade</b><span>Builds an A-F visibility and CTA grading scaffold: findability, first-screen clarity, proof, AI readability, design signal, grade caps, ship readiness.</span></div>
+      <div class="row"><b>suede_code_grade</b><span>Builds an A-F code grading scaffold: correctness, security, data/state, UX and release behavior, tests, deploy readiness, required upgrades.</span></div>
+      <div class="row"><b>suede_qa_checklist</b><span>Builds a multi-lane QA checklist for MCP, skills, docs, local plugin notes, and public site work.</span></div>
+    </div>
+
+    <h3 style="margin-top:48px;">What it adds in practice</h3>
+    <div class="rows">
+      <div class="row"><b>Skill discovery</b><span>Agents ask for the right Suede skill for Suedify, design, copy, SEO/AEO/AI EO, QA, artist campaigns, or utilities instead of guessing from memory.</span></div>
+      <div class="row"><b>Install options</b><span>Public skill installs, MCP, local plugin notes, and skill-copy paths returned as structured guidance.</span></div>
+      <div class="row"><b>Grading scaffolds</b><span>Visibility and code checks route through focused A-F graders with evidence requirements instead of vibes.</span></div>
+      <div class="row"><b>QA loops</b><span>Full QA passes for skills, MCP, docs, public site changes, and adversarial review loops.</span></div>
+    </div>
+  </section>
+
+  <section class="shell" id="explainer">
+    <h2>Public explanation</h2>
+    <div class="prose" style="max-width:720px;">
+      <p>Use <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md" target="_blank" rel="noopener">PROMO.md</a> when public users need the full Suede workflow explained: Johnny Suede Write, Johnny Suede Design, supplied-company voice support, Suedify, anti-slop copywriting, visibility and CTA grading, visual QA, Suede SEO/AEO/AI EO audits, A-F code grading, CI ship-gates, agent-team loops, the Suede Fable Fleet, artist campaign tools, public installs, and optional MCP.</p>
+      <p>This page is the GitHub Pages surface generated from the public repo, not a separate marketing site. The install commands, docs, sitemap, and skill pages live beside the source.</p>
+    </div>
+
+    <div class="safety">
+      The skills and MCP inspect local files and pages and return structured context. They do not upload music, clear rights, write to a registry, distribute releases, approve payouts, or make public claims on their own.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+      <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+      <span class="footer-divider">|</span>
+      <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+      <span class="footer-divider">|</span>
+      <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function() {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  });
+</script>
+
+</body>
 </html>
