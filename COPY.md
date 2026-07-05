@@ -77,7 +77,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 22-skill Suede pack that gives agents portable context: linked
+Install the 23-skill Suede pack that gives agents portable context: linked
 preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, visibility and CTA grades, A-F code review,
 coordinated agent teams, install-path checks, iOS/product checks, artist

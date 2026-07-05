@@ -187,6 +187,12 @@ snippets against its own regexes and real frontmatter from this repo before
 writing the finding below. Depth: `--standard`. This is what the Output
 Shape looks like filled in, not a template.
 
+**Historical snapshot:** the pack had 21 public skills when this example was
+written; the counts and named skills below (21, "16 of 21") are frozen
+evidence from that run, not a claim about the current pack size. The finding
+itself — the regex only catching the first `(use X)` target per `NOT FOR`
+line — is still live regardless of pack size.
+
 **Simple explanation (plain, for a 10-year-old):** This robot checks that
 every skill folder has its paperwork in order before anything ships. It
 works, and running it right now says everything currently passes. But the

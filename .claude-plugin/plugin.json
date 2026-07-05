@@ -1,6 +1,6 @@
 {
   "name": "suede-skills",
-  "description": "Agent skills for Claude Code and Codex. Orchestrate multi-agent build lanes with quality gates and a signed handoff, spawn reviewed OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, design AI evals, and ship public-facing work with the design, copy, SEO, and visibility lanes. Installs all 22 skills. Also includes a creator toolkit for music rights and release prep.",
+  "description": "Agent skills for Claude Code and Codex. Orchestrate multi-agent build lanes with quality gates and a signed handoff, spawn reviewed OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, design AI evals, and ship public-facing work with the design, copy, SEO, and visibility lanes. Installs all 23 skills. Also includes a creator toolkit for music rights and release prep.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"

@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 22 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-codex-fleet, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, site-to-ios-app, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
+description: "Umbrella workflow for 23 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-codex-fleet, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, site-to-ios-app, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
 ---
 
 # Suede Workflow Skills
