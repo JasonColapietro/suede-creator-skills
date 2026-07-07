@@ -1,6 +1,6 @@
 ---
 name: suede-rights-audit
-description: "Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging)."
+description: "Find the rights gaps before packaging: ownership, splits, samples, provenance, metadata, licensing readiness, royalties, and intake blockers."
 ---
 
 # Suede Rights Audit

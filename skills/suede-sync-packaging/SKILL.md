@@ -1,6 +1,6 @@
 ---
 name: suede-sync-packaging
-description: "Package songs for sync pitching — scene-fit angles, supervisor-safe one-sheet copy, clean and instrumental asset checklist, lyric flags, mood tags, confirmed-versus-open rights status, clearance questions, public links, and next review steps. Use when an artist, manager, publisher, label, or agent asks to prep a track for film, TV, ads, games, trailers, creator campaigns, or brand briefs, to build a sync one-sheet, or to answer a music-supervisor request. Never claims clearance and never turns sync prep into a promo funnel. NOT FOR: finding and organizing rights gaps across a project (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); a full release campaign (use suede-campaign-in-a-box)."
+description: "Prep songs for sync pitches: scene angles, one-sheets, clean and instrumental assets, lyric flags, mood tags, rights questions, and links."
 ---
 
 # Suede Sync Package

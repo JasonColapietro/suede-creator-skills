@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: "Grade any public page for findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Returns A-F grades with evidence and fixes. Use before any public launch, GitHub Pages promotion, or paid campaign, or when asked to grade a page, judge promotion readiness, or give a blunt verdict on a public surface. NOT FOR: a full nine-lane SEO/schema/keyword audit (use suede-seo-audit) or hands-on conversion rewrites (use suede-site-alchemy)."
+description: "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness."
 ---
 
 # Suede Visibility Grader

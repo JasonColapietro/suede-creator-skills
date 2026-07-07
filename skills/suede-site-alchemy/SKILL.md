@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: "Transmute any page into a conversion engine. Funnel analysis, friction audit, conversion math, A/B hypothesis generation, social proof architecture, pricing psychology, mobile CRO rules, and a quick wins list ranked by lift. Use when asked to make a page convert better, fix a landing or campaign page that is not converting, sharpen a hero or CTA, run a CRO or friction pass, or build a conversion-focused microsite. NOT FOR: an A-F promotion-readiness grade (use suede-visibility-grader), a nine-lane SEO/schema audit (use suede-seo-audit), or standalone copywriting (use suede-copy)."
+description: "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO."
 ---
 
 # Suede Site Alchemy

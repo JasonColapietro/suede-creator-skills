@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: "Deep-dive any diff with TypeScript, React, Next.js, OWASP, Accessibility, SEO, and database query checklists. Three depth levels from 2-minute pattern scan to 25-minute cross-file analysis. Returns severity-ranked findings, fix briefs, a deploy-safety gate, and a ship verdict — no letter grade. Use when asked for a findings-only review, or when Accessibility and SEO lanes matter alongside code findings. NOT FOR: full findings+grade in one pass (use suede-code); grade-only with no findings (use suede-code-grader)."
+description: "Find the bugs a diff can actually ship: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, and deploy-risk review."
 ---
 
 # Suede Code Review

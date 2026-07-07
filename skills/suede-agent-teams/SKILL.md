@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: "Wire complex changes into coordinated agent lanes with quality gates and a signed handoff. WIP collision detection, RFC mode, feature flag strategy, rollback trees, 5 scenario templates, and a handoff checklist that won't close without evidence. Use when work needs parallel agents or multiple coordinated lanes, such as an auth rewrite, payment integration, data migration, performance audit, public launch review, or parallel edits that could collide with dirty WIP. NOT FOR: single-lane code review or grading (use suede-code); wiring CI and branch protection (use suede-ship-gate); Jason's private branch/worktree lifecycle and finish/cleanup discipline (private Suede Labs companion, not in this pack: suede-git-hygiene)."
+description: "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped."
 ---
 
 # Agent Team Orchestrator

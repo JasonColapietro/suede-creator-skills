@@ -1,6 +1,6 @@
 ---
 name: suede-seo-audit
-description: "Nine-lane SEO, AEO, and AI EO audit for any public page — technical access, search and answer intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters — with exact rewrites, lane grades, and a ship gate. Use when asked to audit SEO, find out why a page is not ranking or not cited by AI answers, validate schema or metadata, run keyword or competitor gap research, or check discoverability before a launch. NOT FOR: a fast A-F promotion-readiness verdict (use suede-visibility-grader), conversion and CRO rewrites (use suede-site-alchemy), or writing fresh copy (use suede-copy)."
+description: "Run a nine-lane SEO, AEO, and AI-citation audit: access, intent, metadata, structure, schema, E-E-A-T, clusters, and rewrite fixes."
 ---
 
 # Suede SEO Audit

@@ -1,6 +1,6 @@
 ---
 name: suede-launch-packaging
-description: "Ship Suede work as a launch, not a loose drop, and make sure people can actually install it — GitHub Pages updates, README and docs launches, skill-pack releases, social and email copy, proof links, install commands, QA, handoff notes, plus public-first install support that fixes failing Codex and Claude installs, GitHub repo-and-path and raw-URL commands, MCP setup, local plugin notes, and marketplace confusion while keeping the local @personal path out of public docs. NOT FOR: MCP-specific tool/resource/prompt validation depth (use suede-mcp-qa); SEO/schema depth beyond install proof links (use suede-seo-audit). Use when a skill, repo, site, MCP server, feature, or docs update is ready to share, when an install fails, when a public user cannot add a skill, when @personal leaks into public copy, or when a README, docs, or public explainer step needs a simpler path."
+description: "Package finished work so people can use it: README, docs, install commands, proof links, QA, release copy, and handoff notes."
 ---
 
 # Suede Launch Packaging

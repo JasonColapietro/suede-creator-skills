@@ -1,6 +1,6 @@
 ---
 name: suede-ship-gate
-description: "Wire any repo so CI actually gates the merge: path-aware builds, one required check that can't deadlock, and branch protection that holds. Runs in any folder. Detects the stack, package managers, lockfiles, existing workflows, and deploy platform, then writes GitHub Actions that build only what changed. Use when adding CI, protecting main, fixing a duplicate or hanging pipeline, or auditing why a required check never passes. NOT FOR: reviewing or grading the code the pipeline runs on (use suede-code); designing AI eval cases (use suede-ai-eval, then wire them in here); Jason's private branch/worktree lifecycle, stale-mirror base selection, or finish/cleanup discipline (private Suede Labs companion, not in this pack: suede-git-hygiene)."
+description: "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock."
 ---
 
 # Suede Ship Gate

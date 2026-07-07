@@ -1,6 +1,6 @@
 ---
 name: suede-design
-description: "Evolve any Suede interface from generic to intentional. Design laws, component-specific rules, dark mode tokens, fluid typography, animation sequencing, and visual QA for every surface from landing page to app shell. Use when picking color strategy or tokens, building or auditing a design system, polishing components, or comparing a mock against the rendered implementation. NOT FOR: full-stack copy+design builds or copy+design launches (use johnny-suede-design); general-purpose UI/UX pattern lookup, framework examples, or broad accessibility heuristic searches (private Suede Labs companion, not in this pack: ui-ux-pro-max); deck-only or HTML presentation generation (private Suede Labs companion, not in this pack: power-design); UX critique, accessibility audits, design handoff docs, or script-harness visual iteration (private Suede Labs companions not in this pack). Use suede-design for design system, token, and component-level decisions."
+description: "Make Suede interfaces feel intentional: tokens, color, components, type, motion, dark mode, and visual QA for shipped screens."
 ---
 
 # Suede Design

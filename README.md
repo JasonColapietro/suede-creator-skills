@@ -8,7 +8,7 @@ A 23-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams and 
 
 ## What it is
 
-A free, MIT-licensed pack of **23 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed, broadly reusable pack of **23 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).

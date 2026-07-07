@@ -62,14 +62,12 @@ suede-rights-passport, suede-rights-audit).
 
 ### Page title
 
-Suede Creator Skills | Portable Agent Context, Design, SEO, Suedify
+Suede Creator Skills | 23 Open-Source Agent Skills
 
 ### Meta description
 
-Install free Codex and Claude Code skills for portable agent context, Suedify
-website restyling, mobile and product surfaces, GitHub Pages polish, design QA,
-copywriting, Suede SEO/AEO/AI EO audits, visibility grading, A-F code review,
-coordinated agent teams, iOS/product checks, and creator workflows.
+Install 23 free open-source Claude Code and Codex skills for code review, CI
+ship-gates, AI evals, design, copy, SEO, MCP, and creator workflows.
 
 ### Hero
 

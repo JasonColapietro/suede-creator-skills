@@ -1,6 +1,6 @@
 ---
 name: suede-codex-fleet
-description: "The Suede Fable Fleet — orchestrate OpenAI Codex CLI workers from Claude: a high-end Claude orchestrator decomposes the job, writes self-contained briefs and an AGENTS.md voice/context contract, spawns parallel codex exec runs billed to your ChatGPT subscription, then reviews every output against acceptance criteria before anything ships. Use when a task is high-volume with a clear spec (bulk content variants, social reply banks, first drafts, mechanical refactors, test generation) and Claude tokens should be spent on judgment, not generation. NOT FOR: coordinated Claude-side agent lanes with quality gates on one codebase change (use suede-agent-teams); writing one scoped copy surface directly (use suede-copy); tasks needing live conversation context that cannot be written into a brief."
+description: "Send scoped work to a Codex worker fleet: briefs, parallel runs, acceptance checks, and reviewed outputs without burning judgment on bulk drafting."
 ---
 
 # Suede Fable Fleet

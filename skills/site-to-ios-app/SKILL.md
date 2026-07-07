@@ -1,6 +1,6 @@
 ---
 name: site-to-ios-app
-description: "Use when converting any website, web app, PWA, SaaS dashboard, content site, or marketplace into an iOS app using the public Suede-originated site-to-iOS workflow. Covers URL audit, App Store 4.2 wrapper-risk checks, Capacitor or native-shell strategy, native value requirements, iOS build scaffolding, screenshots, metadata, privacy, and release gating."
+description: "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates."
 ---
 
 # Site to iOS App

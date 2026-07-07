@@ -1,6 +1,6 @@
 ---
 name: suede-rights-passport
-description: "Prepare music, audio, visual media, or creative project folders for rights packaging, provenance review, registry preparation, royalty split cleanup, licensing review, media optimization, and agent-commerce readiness. Use when a creator, label, manager, developer, or agent asks to organize files, metadata, rights details, credits, splits, licenses, stems, lyrics, artwork, or release notes into a local transfer package. A Suede review can be one downstream use, but the workflow is broadly reusable. Packages and flags only — it never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: finding and organizing the rights gaps themselves (use suede-rights-audit); linting a release folder for readiness (use suede-release-linter)."
+description: "Package creative project folders into rights-ready handoffs: files, metadata, credits, splits, licenses, stems, lyrics, artwork, and notes."
 ---
 
 # Creator Rights Package Builder

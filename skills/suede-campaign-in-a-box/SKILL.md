@@ -1,6 +1,6 @@
 ---
 name: suede-campaign-in-a-box
-description: "Turn a song, release, era, catalog moment, show, or drop into a complete artist campaign — sharpen the artist identity spine, build eras with visual codes and rituals, expand one track into a universe, hunt the 5-15s hooks that travel, design release stunts, fan missions, puzzles and timed drops, write repeatable fan rituals, direct visualizers and lyric videos, invent merch and collector objects, stage live setlists, resurrect dormant catalog, match collaborators, and package the full announce, teaser, release-week and post-drop rollout with copy, calendar, email, site sections, press angles, and fan actions. Use when a musician, artist, manager, label, creative director, or agent wants the whole rollout packaged into usable moves. Organizes and prepares only — it does not clear rights, confirm ownership, approve payouts, write to a registry, secure placements or cosigns, or guarantee outcomes. NOT FOR: sync pitching a track (use suede-sync-packaging); organizing rights gaps (use suede-rights-audit)."
+description: "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions."
 ---
 
 # Suede Campaign In A Box (Whole Enchilada)

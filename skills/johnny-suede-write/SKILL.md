@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-write
-description: "Write anything Suede ships and earn the click. One skill for every writing surface: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice retuning, and public explainer talk-tracks, with persuasion frameworks, headline and CTA formula banks, A/B variants, an anti-slop gate, and a copy score before delivery. Use when you need to write, rewrite, or edit copy, align copy to the house voice, generate headlines, CTAs, or subject lines, draft social, email, README, or product listing copy, or hand a public user hype-free words to explain Suede. NOT FOR: a single standalone conversion surface with no SEO pass (use suede-copy); copy that ships inside a design or layout build (use johnny-suede-design). Organizes and prepares copy only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes."
+description: "Write sharper Suede copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers."
 ---
 
 # Johnny Suede Write

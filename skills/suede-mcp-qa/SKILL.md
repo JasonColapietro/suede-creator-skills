@@ -1,6 +1,6 @@
 ---
 name: suede-mcp-qa
-description: "Catch a broken Suede Skills MCP before it ships — one that lists missing skills or returns malformed output. Checks source, catalog, every skill folder, tools, resources, prompts, install options, SEO/AEO/AI EO audit scaffolds, QA checklists, JSON-RPC errors, public-safe content, and docs alignment. Use when building, changing, testing, or explaining the Suede Skills MCP, when the catalog may have drifted from the skill folders, or before shipping any MCP server or catalog change. NOT FOR: fixing a broken skill install command outside the MCP (use suede-launch-packaging)."
+description: "Catch MCP drift before release: skill catalogs, tool and resource schemas, prompts, install paths, JSON-RPC behavior, and docs alignment."
 ---
 
 # Suede MCP QA

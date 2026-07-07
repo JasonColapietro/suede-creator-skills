@@ -1,6 +1,6 @@
 ---
 name: suede-release-linter
-description: "Audit music, audio, video, artwork, and creative release folders for missing metadata, release-readiness gaps, file organization issues, rights and split blockers, artwork/lyrics/stems omissions, platform-delivery problems, and downstream handoff readiness. Use when a creator, label, manager, developer, or agent asks to lint, check, audit, validate, prepare, or clean a song, album, catalog, stem pack, or media project before release, licensing, registry, royalty routing, agent commerce, or transfer package handoff. Reports findings only — it never clears rights, confirms ownership, or treats a clean report as approval. NOT FOR: organizing the rights evidence trail itself (use suede-rights-audit); building the transfer package (use suede-rights-passport)."
+description: "Audit creative release folders before handoff: metadata, file structure, artwork, lyrics, stems, rights blockers, and platform readiness."
 ---
 
 # Release Metadata Linter

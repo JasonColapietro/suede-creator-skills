@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Review and grade code in one pass — deep findings plus a blunt A-F ship verdict by default. TypeScript, React, Next.js, OWASP, and database checklists; three depth levels; 10+ instant-F triggers; grade caps for auth and payment surfaces; a deploy-safety gate; and fix briefs. Use when explicitly asked to review, grade, audit, security-check, or ship-gate a diff, PR, file, or release. NOT FOR: findings-only review with Accessibility/SEO lanes (use suede-code-review); grade-only with no findings (use suede-code-grader); wiring CI or branch protection (use suede-ship-gate)."
+description: "Review and grade code in one pass: real findings, A-F ship verdict, auth/payment risk, OWASP checks, deploy safety, and fix briefs."
 ---
 
 # Suede Code

@@ -1,6 +1,6 @@
 ---
 name: suede-ai-eval
-description: "Design AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and retrieval test cases, acceptance gates, and retroactive eval coverage audits for AI-powered product surfaces. Use when a feature uses an LLM, classifier, recommender, agent workflow, RAG/search, media generation, or other AI behavior that needs measurable quality, safety, and regression checks — or when someone asks how we know the AI is good enough to ship. NOT FOR: reviewing the surrounding code (use suede-code); wiring the finished eval suite into CI (use suede-ship-gate)."
+description: "Design AI evals that catch regressions before users do: rubrics, test cases, failure modes, acceptance gates, and AI-SPEC artifacts."
 ---
 
 # Suede AI Eval

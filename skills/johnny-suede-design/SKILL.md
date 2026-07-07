@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-design
-description: "Design and write high-polish creative surfaces for Suede or a supplied company: landing pages, brand pages, product UI, dashboards, components, campaigns, and creative projects, with design laws, tokens, fluid type, motion rules, Suedify reference-site restyling, full copywriting, visual QA, and optional multi-agent build coordination. Use when you design, redesign, restyle, suedify, adapt a site's look, build UI, create product screenshots, write or rewrite the copy for a surface being built, build a design system, run visual QA, or coordinate a multi-lane creative build. NOT FOR: copy-only jobs (use johnny-suede-write); a single design-token or component-level decision with no copy or build (use suede-design); deck-only or HTML presentation generation (private Suede Labs companion, not in this pack: power-design); general-purpose UI/UX pattern lookup or framework examples (private Suede Labs companion, not in this pack: ui-ux-pro-max). Organizes and prepares creative work only; does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes."
+description: "Design and write polished product surfaces people understand fast: landing pages, dashboards, campaigns, restyles, UI copy, and visual QA."
 ---
 
 # Johnny Suede Design — The Any-Creatives Enchilada
