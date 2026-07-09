@@ -237,10 +237,14 @@ def nested(data: dict[str, Any], key: str, default: Any = None) -> Any:
     return value if value not in (None, "") else default
 
 
-def classify_file(path: Path) -> tuple[str, str]:
+def classify_file(path: Path, source: Path) -> tuple[str, str]:
     ext = path.suffix.lower()
     name = path.name.lower()
-    context = "/".join(part.lower() for part in path.parts)
+    try:
+        context_parts = path.relative_to(source).parts
+    except ValueError:
+        context_parts = (path.name,)
+    context = "/".join(part.lower() for part in context_parts)
 
     if ext in AUDIO_EXTS:
         if any(keyword in context for keyword in STEM_KEYWORDS) and "master" not in context and "final" not in context:
@@ -341,7 +345,7 @@ def inventory_files(source: Path, output: Path, include_hidden: bool, include_ot
             continue
         if not include_hidden and is_hidden_path(path, source):
             continue
-        category, role = classify_file(path)
+        category, role = classify_file(path, source)
         if category == "other" and not include_other:
             continue
         assets.append(

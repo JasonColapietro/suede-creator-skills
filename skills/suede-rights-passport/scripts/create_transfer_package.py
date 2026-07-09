@@ -372,9 +372,13 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def classify_file(path: Path) -> tuple[str, str]:
+def classify_file(path: Path, source: Path) -> tuple[str, str]:
     name = path.name.lower()
-    context = "/".join(part.lower() for part in path.parts)
+    try:
+        context_parts = path.relative_to(source).parts
+    except ValueError:
+        context_parts = (path.name,)
+    context = "/".join(part.lower() for part in context_parts)
     ext = path.suffix.lower()
 
     if ext in AUDIO_EXTS:
@@ -459,7 +463,7 @@ def discover_assets(
         if not include_hidden and is_hidden_path(path, source):
             continue
 
-        category, role = classify_file(path)
+        category, role = classify_file(path, source)
         if category == "other" and not include_other:
             continue
         rel_source = path.relative_to(source).as_posix()
