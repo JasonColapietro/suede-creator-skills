@@ -31,7 +31,7 @@ function boundedString(value, fallback = "") {
 
 function profileCatalog() {
   if (profile === "workflow" || profile === "artist" || profile === "creator") {
-    const areaSet = profile === "creator" ? new Set(["artist", "creator"]) : new Set([profile]);
+    const areaSet = profile === "creator" || profile === "artist" ? new Set(["artist", "creator"]) : new Set([profile]);
     return {
       ...catalog,
       plugins: catalog.plugins.filter((plugin) =>
@@ -492,7 +492,9 @@ function callTool(name, args = {}) {
   const data = profileCatalog();
   if (name === "list_suede_skills") {
     const area = args.area || (profile === "creator" ? "all" : profile);
-    const scoped = area === "all" ? data.skills : data.skills.filter((skill) => skill.area === area);
+    const scoped = area === "all"
+      ? data.skills
+      : data.skills.filter((skill) => (area === "artist" ? skill.area === "artist" || skill.area === "creator" : skill.area === area));
     return {
       content: [text(asMarkdownSkillList({ skills: scoped }))],
       structuredContent: { skills: scoped }
