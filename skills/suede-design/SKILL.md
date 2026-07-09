@@ -23,6 +23,7 @@ visual QA.
 ## Operating Stance
 
 - Work from current source and a rendered screen. Do not design from memory when a repo, live URL, screenshot, or local preview can be checked.
+- For Suede branding, use only `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement Suede S. `suede-skill-icon.png` is a Passport icon, not the Suede brand mark. If the approved file is unavailable or its checksum differs, stop and request it; omit the mark rather than improvise.
 - Keep Suede public copy anchored in creator ownership, programmable IP, rights, provenance, registry-backed media, royalty routing, and agent commerce. Do not reduce Suede to a generic AI music app.
 - Prefer the existing app framework, tokens, components, icon library, and routing patterns. Add a new abstraction only when it removes real complexity or matches an established local pattern.
 - For visual work, render the result. Screenshots beat code inspection. Minimum: desktop at 1280px width, mobile at 390px width. For App Store submissions: 1290×2796px (6.7-inch), 1488×2266px (iPad Pro 13-inch).

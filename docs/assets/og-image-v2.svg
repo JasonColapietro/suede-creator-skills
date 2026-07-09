@@ -6,9 +6,16 @@
   <path d="M32 168H1168" stroke="#28251f" stroke-width="2"/>
   <path d="M424 168V598" stroke="#28251f" stroke-width="2"/>
 
+  <defs>
+    <clipPath id="suede-mark-clip">
+      <rect width="64" height="64" rx="10"/>
+    </clipPath>
+  </defs>
+
   <g transform="translate(76 70)">
-    <circle cx="32" cy="32" r="30" fill="none" stroke="#c8a96e" stroke-width="3"/>
-    <path d="M18 22C23 13 42 13 48 21C53 29 44 34 32 36C23 38 18 42 20 49C22 56 40 58 48 47" fill="none" stroke="#f0ece4" stroke-width="5" stroke-linecap="round"/>
+    <g id="suede-mark" clip-path="url(#suede-mark-clip)">
+      <image data-approved-suede-mark="true" href="suede-ai-logo-transparent.png" width="64" height="64" preserveAspectRatio="xMidYMid slice"/>
+    </g>
     <text x="86" y="28" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="4">SUEDE</text>
     <text x="86" y="56" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">CREATOR SKILLS</text>
   </g>

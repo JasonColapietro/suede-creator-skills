@@ -5,6 +5,10 @@ description: "Umbrella workflow for 23 public skills: copy, design, code review,
 
 # Suede Workflow Skills
 
+## Approved Brand Asset
+
+Any lane that creates or edits a Suede visual must use only `docs/assets/suede-ai-logo-transparent.png` from this repository as the Suede S mark (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement Suede S. `suede-skill-icon.png` is not the brand mark. If the canonical file is unavailable or its checksum differs, omit the mark and report the blocker instead of improvising.
+
 Use this public umbrella skill when a user wants the full Suede workflow loaded
 from one installable GitHub skill path.
 

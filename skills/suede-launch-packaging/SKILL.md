@@ -5,6 +5,10 @@ description: "Package finished work so people can use it: README, docs, install 
 
 # Suede Launch Packaging
 
+## Approved Suede S Mark
+
+Launch art, social cards, docs headers, app assets, and release visuals may use only `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` as the Suede S mark (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement. If the canonical asset is missing or its checksum differs, block the branded visual and request the approved file.
+
 Ship Suede work as a launch, not a loose drop. This skill turns finished work into a clean public package AND makes sure a stranger can actually install and run it. Packaging a public release and proving the install both live here.
 
 **Core principle:** a release nobody can install is not a launch. Nothing is "live" until you fetched it yourself, and no install path ships until the exact command ran from a clean temporary directory.

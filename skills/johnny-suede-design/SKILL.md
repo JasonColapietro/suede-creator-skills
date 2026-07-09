@@ -17,6 +17,10 @@ Preserve the existing app framework, tokens, components, routing, and WIP unless
 
 For Suede work, anchor design and copy in creator ownership, programmable IP, provenance, registry-backed media, royalty routing, licensing readiness, and agent commerce. Do not reduce Suede to a generic AI music app. For a supplied company, replace Suede nouns, proof, voice, and claim boundaries with that company's brief. Do not use em dashes in public copy.
 
+### Approved Suede S mark (hard gate)
+
+For every Suede surface, deck, social card, icon, app asset, or branded output, use the exact approved mark at `docs/assets/suede-ai-logo-transparent.png` in `JasonColapietro/suede-creator-skills` (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout, use the same file from `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`. Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement Suede S. `suede-skill-icon.png` is a Passport icon, not the Suede brand mark. If the approved file is unavailable or its checksum differs, stop and request the asset; omit the mark rather than improvise.
+
 ## Pick The Lane (Router)
 
 This skill is the entry point. Name which lanes are active and why before starting. Never run all lanes by default.
