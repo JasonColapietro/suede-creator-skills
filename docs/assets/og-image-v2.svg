@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Suede Creator Skills</title>
+  <desc id="desc">23 open-source agent skills for Claude Code and Codex.</desc>
+  <rect width="1200" height="630" fill="#080808"/>
+  <rect x="32" y="32" width="1136" height="566" rx="16" fill="#111111" stroke="#28251f" stroke-width="2"/>
+  <path d="M32 168H1168" stroke="#28251f" stroke-width="2"/>
+  <path d="M424 168V598" stroke="#28251f" stroke-width="2"/>
+
+  <g transform="translate(76 70)">
+    <circle cx="32" cy="32" r="30" fill="none" stroke="#c8a96e" stroke-width="3"/>
+    <path d="M18 22C23 13 42 13 48 21C53 29 44 34 32 36C23 38 18 42 20 49C22 56 40 58 48 47" fill="none" stroke="#f0ece4" stroke-width="5" stroke-linecap="round"/>
+    <text x="86" y="28" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="4">SUEDE</text>
+    <text x="86" y="56" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">CREATOR SKILLS</text>
+  </g>
+
+  <g transform="translate(76 208)">
+    <text x="0" y="225" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="250" font-weight="900" letter-spacing="-18">23</text>
+    <text x="6" y="280" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">INSTALLABLE SKILLS</text>
+  </g>
+
+  <g transform="translate(476 214)">
+    <text x="0" y="58" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900" letter-spacing="-1">OPEN-SOURCE</text>
+    <text x="0" y="119" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="900" letter-spacing="-1">AGENT SKILLS</text>
+    <text x="2" y="169" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Claude Code + OpenAI Codex</text>
+
+    <g fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600">
+      <text x="2" y="225">CODE REVIEW  ·  SHIP GATES  ·  AI EVALS</text>
+      <text x="2" y="260">DESIGN  ·  SEO  ·  iOS  ·  CREATOR WORKFLOWS</text>
+    </g>
+
+    <rect x="0" y="309" width="362" height="62" rx="6" fill="#c8a96e"/>
+    <text x="28" y="350" fill="#080808" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" letter-spacing="2">STAR THE REPO  →</text>
+    <text x="388" y="348" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">MIT LICENSED</text>
+  </g>
+</svg>
