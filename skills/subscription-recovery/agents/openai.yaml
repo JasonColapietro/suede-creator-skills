@@ -1,0 +1,6 @@
+interface:
+  display_name: "Subscription Recovery — Cancel & Negotiate Any Subscription"
+  short_description: "Find and cancel or dispute any subscription"
+  default_prompt: "Use $subscription-recovery to audit my recurring subscriptions across App Store, Google Play, PayPal, and anything else I'm paying for, report what you find, and after I confirm which ones to pursue, cancel them directly or negotiate a refund through that service's support."
+policy:
+  allow_implicit_invocation: true

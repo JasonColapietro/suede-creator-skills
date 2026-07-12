@@ -63,7 +63,8 @@
         "suede-rights-passport",
         "suede-rights-audit",
         "site-to-ios-app",
-        "amazon-returns-recovery"
+        "amazon-returns-recovery",
+        "subscription-recovery"
       ]
     },
     {
@@ -105,6 +106,12 @@
       "area": "workflow",
       "description": "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates.",
       "useWhen": "Convert a website or web app into an iOS app plan or shell that can survive App Store review."
+    },
+    {
+      "name": "subscription-recovery",
+      "area": "consumer",
+      "description": "The pack's contract negotiator, generalized beyond Amazon: audits recurring charges across App Store, Google Play, PayPal, and direct-bill services (Netflix, Spotify, gyms, SaaS tools), then cancels unused subscriptions or negotiates a refund through that service's own support. Complements amazon-returns-recovery, which stays scoped to Amazon.",
+      "useWhen": "The user wants to audit recurring charges generally, asks what subscriptions they're paying for, mentions a non-Amazon subscription by name, or wants to find and cancel unused subscriptions."
     },
     {
       "name": "suede-agent-teams",
@@ -223,7 +230,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 24 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows.",
+      "description": "Umbrella workflow for 25 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

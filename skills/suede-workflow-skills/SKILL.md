@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 24 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows."
+description: "Umbrella workflow for 25 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows."
 ---
 
 # Suede Workflow Skills
@@ -82,6 +82,7 @@ their names match the task:
 - `suede-rights-passport`
 - `suede-rights-audit`
 - `amazon-returns-recovery`
+- `subscription-recovery`
 
 If only this umbrella skill is installed, follow the condensed workflow below.
 
@@ -452,9 +453,12 @@ Creator lane:
 
 Consumer recovery lane:
 
-- Amazon restocking-fee and short-refund recovery via Amazon live chat:
-  `amazon-returns-recovery` — requires the Claude in Chrome extension logged
-  into the target Amazon account.
+- Amazon restocking-fee, short-refund, and Amazon-billed subscription recovery
+  via Amazon live chat: `amazon-returns-recovery` — requires the Claude in
+  Chrome extension logged into the target Amazon account.
+- Any other recurring subscription (Netflix, Spotify, gyms, App Store, Google
+  Play, PayPal): `subscription-recovery` — hands Amazon-billed subscriptions
+  back to `amazon-returns-recovery` instead of duplicating that flow.
 
 Use the umbrella workflow when the user wants the whole Suede stack or when the
 task crosses several lanes.
@@ -481,7 +485,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 24 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 24 skills into `~/.claude/skills/`:
+`suede-skills` installs all 25 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 25 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

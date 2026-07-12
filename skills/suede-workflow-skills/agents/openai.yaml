@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Workflow Skills"
-  short_description: "Umbrella workflow across 24 public skills"
+  short_description: "Umbrella workflow across 25 public skills"
   default_prompt: "Use $suede-workflow-skills for Johnny Suede writing/design modes, mobile and product surfaces, Suedify reference-site restyling, copywriting, Suede SEO/AEO/AI EO, docs, code review, max-agent team loops, QA, artist campaigns, rights utilities, or launch surfaces. Preserve existing Suede features and apply the no-missed quality gates. Use MCP only if it helps."
 policy:
   allow_implicit_invocation: true
