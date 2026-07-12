@@ -15,7 +15,7 @@ A free, MIT-licensed, broadly reusable pack of **24 public skill folders** for C
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
 - **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
 - **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
-- **Consumer recovery**: scan an Amazon account for restocking fees and short refunds, then drive Amazon's live chat to get them waived — $448.31 recovered in real cases, including a refund Amazon had already denied once (`amazon-returns-recovery`).
+- **Consumer recovery**: the pack's contract negotiator, proven outside a repo — scan an Amazon account for restocking fees and short refunds, then drive Amazon's live chat to get them waived. $448.31 recovered in real cases, including a refund Amazon had already denied once (`amazon-returns-recovery`).
 - **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
 
 ## Install in one command
@@ -121,11 +121,11 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
 | [`site-to-ios-app`](skills/site-to-ios-app) | Convert any website into an App Store-ready iOS app: audit, 4.2 wrapper-risk gate, shell strategy, release gate |
 
-### Consumer automation
+### Consumer automation — the negotiation lane, proven outside a repo
 
 | Skill | What it does |
 |---|---|
-| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | Scan Amazon order/return history for restocking fees and short refunds, then drive Amazon live chat to waive them — includes a validated click-path and popup workaround. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
+| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history for restocking fees and short refunds, then drive Amazon live chat to waive them — includes a validated click-path and popup workaround. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
 
 Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 

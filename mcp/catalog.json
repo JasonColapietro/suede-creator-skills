@@ -85,7 +85,7 @@
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
-      "description": "Scans Amazon order/return history for restocking fees and short refunds you never noticed, then drives Amazon's live chat to get them waived and refunded. Recovered $448.31 in real cases, including overturning a previously denied refund after the return window closed. Requires the Claude in Chrome extension.",
+      "description": "The pack's contract/customer-service negotiator, proven outside a repo: scans Amazon order/return history for restocking fees and short refunds you never noticed, then drives Amazon's live chat to get them waived and refunded. Recovered $448.31 in real cases, including overturning a previously denied refund after the return window closed. Requires the Claude in Chrome extension.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {
