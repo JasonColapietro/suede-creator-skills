@@ -1,6 +1,6 @@
 ---
 name: suede-codex-fleet
-description: "Send scoped work to a Codex worker fleet: briefs, parallel runs, acceptance checks, and reviewed outputs without burning judgment on bulk drafting."
+description: "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk generation. Use when a job is high-volume, well-specified, and splits into independent worker-sized tasks (content batches, test generation, bulk refactors) and Codex CLI is installed and logged in. Claude decomposes, briefs, spawns codex exec runs in parallel, and review-gates every output. NOT FOR: multi-lane Claude agents coordinating one complex change (use suede-agent-teams); low-volume, judgment-dense copy Claude should write itself (use suede-copy or johnny-suede-write)."
 ---
 
 # Suede Fable Fleet
@@ -37,8 +37,8 @@ codex exec -C <workspace> --sandbox workspace-write --skip-git-repo-check \
    - `-C` sets the worker's root; `--skip-git-repo-check` is required outside git repos.
    - `--sandbox workspace-write` only. Never `danger-full-access`. Workers write files; they do not push, deploy, or touch secrets.
    - Leave the model default unless explicitly asked to override with `-m`.
-4. **Review gate (Claude, mandatory).** Read every `out/` file. Check against the brief's acceptance criteria and the AGENTS.md hard bans. Worker self-checks are evidence, not verdicts. Fix small defects directly; do not respawn for a comma.
-5. **Delta, don't regenerate.** For real misses, send a one-line correction: `codex exec resume <session-id> "<delta>"` (session id is printed at run start; `resume --last` is ambiguous with parallel runs), or respawn with the delta appended to the brief. Regenerating from scratch wastes the subscription and loses what was right.
+4. **Review gate (Claude, mandatory).** Read every `out/` file. Check against the brief's acceptance criteria and the AGENTS.md hard bans. Worker self-checks are evidence, not verdicts. If the output fails 0 acceptance criteria but has surface defects (typos, formatting, a wrong label), Claude edits the file directly; do not respawn for a comma.
+5. **Delta, don't regenerate.** If the output fails 1-2 acceptance criteria, send a one-line correction: `codex exec resume <session-id> "<delta>"` (session id is printed at run start; `resume --last` is ambiguous with parallel runs). If it fails 3+ criteria or violates an AGENTS.md hard ban, respawn with the delta appended to the brief. Regenerating from scratch wastes the subscription and loses what was right.
 6. **Ship.** Claude assembles the reviewed survivors into the final deliverable. Report what was spawned, what passed, what got fixed.
 
 ## Brief template
@@ -81,3 +81,10 @@ Keep a persistent workspace per recurring fleet job (a social-content fleet, a t
 - Not logged in / usage errors: `codex login status`, then run `codex login` interactively.
 - Worker wrote nothing to `out/`: read the `-o` final-message file and the task output log; usually a sandbox denial or a brief pointing at a wrong path.
 - Parallel runs are independent processes; spawn each with its own background shell call and collect on completion.
+
+## Routing Reference
+
+- Multi-lane Claude agent coordination with gates and handoffs -> suede-agent-teams
+- Low-volume, judgment-dense copy -> suede-copy / johnny-suede-write
+- Proving the assembled deliverable meets spec -> suede-verify
+- Skill authoring/lint questions about this file -> suede-skill-forge
