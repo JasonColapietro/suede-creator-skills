@@ -302,6 +302,87 @@ licensing prep, and Suede intake.
 A clean lint report is not legal clearance, distributor approval, registry
 write, or payout approval. The report flags gaps and points to the next fix.
 
+## Amazon Returns Recovery Copy
+
+### One-line description
+
+Scan an Amazon account for restocking fees, short refunds, and forgotten
+subscriptions, then negotiate them back through Amazon's own live chat.
+
+### Page hero
+
+The pack's contract negotiator, proven outside a repo.
+
+### Page subhead
+
+Amazon Returns Recovery scans order history and Amazon-billed subscriptions
+for money quietly held or billed, reports every find, and drives Amazon's
+live chat to get fees waived, refunds issued, or subscriptions canceled —
+only after the account owner confirms.
+
+### Best for
+
+- Anyone who has ever returned something to Amazon and wondered if the
+  refund was short.
+- Accounts with a long order history where fees and forgotten channel
+  subscriptions accumulate unnoticed.
+- Builders who want proof the pack's negotiation discipline holds up against
+  a real counterparty, not just a code review.
+
+### CTA options
+
+- Scan my Amazon returns
+- View the skill folder
+- Read the dispute chat flow
+- Read the real case writeups
+- Pair with Subscription Recovery
+
+### Safety note
+
+This skill surfaces charges and drafts the case; it does not dispute or
+cancel anything without the account owner confirming first. Real recoveries
+documented, not guaranteed — Amazon associates can and do decline an ask.
+
+## Subscription Recovery Copy
+
+### One-line description
+
+Audit recurring charges across App Store, Google Play, PayPal, and any
+direct-bill service, then cancel or negotiate a refund through that
+service's own support.
+
+### Page hero
+
+The same contract negotiator, generalized beyond Amazon.
+
+### Page subhead
+
+Subscription Recovery checks the highest-leverage subscription hubs first,
+then a shared statement and a direct ask, to find what's still being
+charged — then cancels what's unused or negotiates a refund for a
+genuinely forgotten charge.
+
+### Best for
+
+- Anyone who suspects they're still paying for something they forgot about.
+- Accounts with subscriptions scattered across App Store, Google Play,
+  PayPal, and direct-bill services with no single place to see them all.
+- Pairing with Amazon Returns Recovery for full coverage of recurring
+  charges, Amazon-billed or not.
+
+### CTA options
+
+- Audit my subscriptions
+- View the skill folder
+- Read the service playbook
+- Pair with Amazon Returns Recovery
+
+### Safety note
+
+This skill surfaces subscriptions and drafts the case; it does not cancel
+or dispute anything without the account owner confirming first. Most
+service click-paths are discovered live and are not pre-validated.
+
 ## Install Copy
 
 ### Codex
