@@ -62,7 +62,7 @@ suede-rights-passport, suede-rights-audit).
 
 ### Page title
 
-Suede Creator Skills | 23 Open-Source Agent Skills
+Suede Creator Skills | 24 Open-Source Agent Skills
 
 ### Meta description
 

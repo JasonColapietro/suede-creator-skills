@@ -51,6 +51,10 @@ This skill is the public entry point for:
   material with provenance, credits, splits, license notes, and intake JSON.
 - **Suede Rights Audit:** identify ownership, contributor, split, sample,
   license, and intake gaps.
+- **Amazon Returns Recovery:** scan Amazon order/return history for restocking
+  fees and short refunds, then drive Amazon live chat to get them waived —
+  requires the Claude in Chrome extension logged into the target Amazon
+  account.
 
 If the individual public skills are also installed, use them directly when
 their names match the task:
@@ -77,6 +81,7 @@ their names match the task:
 - `suede-release-linter`
 - `suede-rights-passport`
 - `suede-rights-audit`
+- `amazon-returns-recovery`
 
 If only this umbrella skill is installed, follow the condensed workflow below.
 
@@ -444,6 +449,12 @@ Creator lane:
 - Release folder audit: `suede-release-linter`.
 - Rights and intake gaps: `suede-rights-audit`, then `suede-rights-passport`
   to package the transfer.
+
+Consumer recovery lane:
+
+- Amazon restocking-fee and short-refund recovery via Amazon live chat:
+  `amazon-returns-recovery` — requires the Claude in Chrome extension logged
+  into the target Amazon account.
 
 Use the umbrella workflow when the user wants the whole Suede stack or when the
 task crosses several lanes.

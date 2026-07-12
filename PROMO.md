@@ -458,7 +458,7 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 23 installable public skills.
+I packaged the Suede agent workflow into 24 installable public skills.
 
 Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, Codex CLI worker fleets, visibility grading, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
 

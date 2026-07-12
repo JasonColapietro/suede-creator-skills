@@ -37,8 +37,8 @@ default scope.
 - **Ask**: explained genuine dissatisfaction (skin irritation, gave it a fair
   multi-week trial before concluding it wasn't going to work), requested a one-time
   exception
-- **Negotiation beat**: associate first offered a partial refund ($74.54, 20% of
-  price). Countered that a partial refund on an unusable $350 item wasn't fair, and
+- **Negotiation beat**: associate first offered a partial refund ($74.54, 20% of the
+  $372.69 total). Countered that a partial refund on an unusable $350 item wasn't fair, and
   asked for the full amount with a prepaid return label.
 - **Outcome**: associate agreed to a full **$372.69** refund and waived the return
   entirely — no item needed to go back.
