@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amazon Returns Recovery | Suede Creator Skills</title>
-    <meta name="description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees and short refunds, then drive Amazon live chat to get them waived and refunded.">
+    <meta name="description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees, short refunds, and forgotten subscriptions like Britbox and Starz, then drive Amazon live chat to get them waived, refunded, or canceled.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html">
     <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Amazon Returns Recovery - Suede Creator Skills">
-    <meta property="og:description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees and short refunds, then drive Amazon live chat to get them waived and refunded.">
+    <meta property="og:description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees, short refunds, and forgotten subscriptions like Britbox and Starz, then drive Amazon live chat to get them waived, refunded, or canceled.">
     <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html">
     <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Amazon Returns Recovery - Suede Creator Skills">
-    <meta name="twitter:description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees and short refunds, then drive Amazon live chat to get them waived and refunded.">
+    <meta name="twitter:description" content="Use Amazon Returns Recovery in Claude Code to find Amazon restocking fees, short refunds, and forgotten subscriptions like Britbox and Starz, then drive Amazon live chat to get them waived, refunded, or canceled.">
     <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
     <script type="application/ld+json">
       {
@@ -24,11 +24,11 @@
         "@type": "TechArticle",
         "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html#article",
         "headline": "Amazon Returns Recovery - Suede Creator Skills",
-        "description": "Amazon Returns Recovery scans Amazon order and return history for restocking fees and short refunds, confirms findings with the account owner, then drives Amazon live chat to get the money waived and refunded. $448.31 recovered in documented real cases.",
+        "description": "Amazon Returns Recovery scans Amazon order and return history and digital subscriptions (Britbox, Starz, Audible, and more) for restocking fees, short refunds, and forgotten charges, confirms findings with the account owner, then drives Amazon live chat to get the money waived, refunded, or the subscription canceled. $448.31 recovered in documented real cases.",
         "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html",
         "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
         "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
-        "about": ["Suede Creator Skills", "Claude Code skills", "Amazon restocking fee", "Amazon refund dispute", "Amazon returns", "browser automation", "Claude in Chrome", "consumer recovery"],
+        "about": ["Suede Creator Skills", "Claude Code skills", "Amazon restocking fee", "Amazon refund dispute", "Amazon returns", "Amazon subscriptions", "Britbox", "Starz", "Audible", "browser automation", "Claude in Chrome", "consumer recovery"],
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "amazon-returns-recovery",
@@ -210,7 +210,7 @@
     <main class="shell">
       <div class="eyebrow">Consumer recovery — the negotiation lane, proven outside a repo</div>
       <h1>Amazon Returns Recovery.</h1>
-      <p class="lead">This is the pack's contract negotiator in the wild. Under the hood it is the same general-purpose negotiation discipline the code and copy lanes run on — build the case from real facts, state the ask plainly, hold the line under a counteroffer, get the terms confirmed in writing — pointed at a live Amazon account instead of a PR or a brief. It scans order and return history for restocking fees and short refunds the owner never noticed, reports every find, and — only after the owner confirms — drives Amazon's live chat to get the money waived and refunded. Documented real recoveries: $448.31 across three cases, including a full $372.69 refund on an item Amazon had already denied once, granted after the return window closed, with no return required.</p>
+      <p class="lead">This is the pack's contract negotiator in the wild. Under the hood it is the same general-purpose negotiation discipline the code and copy lanes run on — build the case from real facts, state the ask plainly, hold the line under a counteroffer, get the terms confirmed in writing — pointed at a live Amazon account instead of a PR or a brief. It scans order and return history for restocking fees and short refunds, and digital subscriptions (Britbox, Starz, and other Prime Video Channels, Audible, Kindle Unlimited, Prime itself) for charges the owner forgot about, reports every find, and — only after the owner confirms — drives Amazon's live chat to get fees waived, refunds issued, or unused subscriptions canceled. Documented real recoveries: $448.31 across three cases, including a full $372.69 refund on an item Amazon had already denied once, granted after the return window closed, with no return required.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/amazon-returns-recovery">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <section class="panel">
@@ -232,20 +232,22 @@ cp -R /tmp/suede-creator-skills/skills/amazon-returns-recovery .claude/skills/</
         <article class="card">
           <h2>What it covers</h2>
           <ul>
-            <li>Phase 1 discovery is read-only: sweeps <code>your-orders/search</code> by category keyword (restocking fees concentrate on higher-value electronics), supplements with <code>your-returns</code> for recent activity, and expands each completed return's itemized refund breakdown to spot deducted fees.</li>
-            <li>Phase 2 stops and reports: item, order number, fee amount, ship-to, and first-party vs. marketplace — the account owner picks which to pursue. Some fees are legitimate, and the skill says so when one looks earned.</li>
-            <li>Phase 3 drives Amazon's live chat one order at a time, using a validated click-path through the contact hub, the bot qualifying questions, and escalation to a human associate.</li>
+            <li>Phase 1a discovery is read-only: sweeps <code>your-orders/search</code> by category keyword (restocking fees concentrate on higher-value electronics), supplements with <code>your-returns</code> for recent activity, and expands each completed return's itemized refund breakdown to spot deducted fees.</li>
+            <li>Phase 1b audits recurring digital subscriptions billed through the same account: Prime Video Channels (Britbox, Starz, AMC+, Paramount+, and more all bill this way), Audible membership, Kindle Unlimited, and Prime itself — flagging ones that look forgotten or unused.</li>
+            <li>Phase 2 stops and reports: item/order/fee details for returns, and name/price/billing cadence for subscriptions — the account owner picks which to pursue and what outcome they want. Some fees and subscriptions are legitimate, and the skill says so when one looks earned or intentional.</li>
+            <li>Phase 3 drives Amazon's live chat one item at a time, using a validated click-path through the contact hub, the bot qualifying questions, and escalation to a human associate — for fee waivers, refunds, or a subscription's last-charge refund. Straight cancellations are steered to the subscription's own settings page first, since no negotiation is needed for those.</li>
             <li>Documents the popup-window gotcha: Amazon's chat opens via <code>window.open()</code> in a window Claude in Chrome cannot track — the reference includes the one-line JS patch that keeps the chat in the tracked tab.</li>
-            <li>Ground rules baked in: state only true facts, never invent prior contact or return reasons, confirm the exact refund amount and timeline in writing before ending the chat.</li>
-            <li>Phase 4 reports per dispute: amount recovered, refund method, stated ETA, and a running session total.</li>
+            <li>Ground rules baked in: state only true facts, never invent prior contact or return/cancellation reasons, confirm the exact refund amount and timeline (or cancellation date) in writing before ending the chat.</li>
+            <li>Phase 4 reports per item: amount recovered or subscription canceled, refund method, stated ETA or effective date, and a running session total — one-time dollars kept separate from ongoing monthly savings.</li>
           </ul>
         </article>
         <article class="card">
           <h2>When to use it</h2>
           <ul>
-            <li>The user mentions Amazon returns, restocking fees, or a refund that looked short — even without the word "restocking."</li>
-            <li>Checking whether a past return was fully refunded, or whether Amazon is still holding money across an account's history.</li>
-            <li>Disputing a specific fee or short refund the user already knows about, with the case drafted and driven through live chat.</li>
+            <li>The user mentions Amazon returns, restocking fees, a refund that looked short, or a forgotten subscription (Britbox, Starz, Audible, and the like) — even without the word "restocking" or "subscription."</li>
+            <li>Checking whether a past return was fully refunded, or whether Amazon is still holding or billing money across an account's history.</li>
+            <li>Disputing a specific fee, short refund, or subscription charge the user already knows about, with the case drafted and driven through live chat.</li>
+            <li>Auditing recurring Amazon charges to see what's still being paid for and whether it's still wanted.</li>
             <li>Requires the Claude in Chrome browser extension connected and signed into the target Amazon account.</li>
             <li>Not for: marketplace third-party disputes that need the A-to-z Guarantee process, bank chargebacks, or price-protection claims (an unvalidated stretch goal, off by default).</li>
           </ul>
@@ -254,7 +256,7 @@ cp -R /tmp/suede-creator-skills/skills/amazon-returns-recovery .claude/skills/</
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $amazon-returns-recovery to scan my Amazon order and return history for restocking fees and short refunds, report what you find, and after I confirm which ones to pursue, drive Amazon's live chat to get them waived and refunded.</code></pre>
+        <pre><code>Use $amazon-returns-recovery to scan my Amazon order/return history and digital subscriptions for restocking fees, short refunds, and forgotten charges, report what you find, and after I confirm which ones to pursue, drive Amazon's live chat to get them waived, refunded, or canceled.</code></pre>
       </section>
 
       <section class="panel">
