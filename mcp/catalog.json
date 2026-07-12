@@ -1,7 +1,7 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.4.0",
-  "updated": "2026-07-05",
+  "version": "0.5.0",
+  "updated": "2026-07-12",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to an open-source Suede skill pack: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, Codex CLI worker-fleet orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
@@ -62,7 +62,8 @@
         "suede-release-linter",
         "suede-rights-passport",
         "suede-rights-audit",
-        "site-to-ios-app"
+        "site-to-ios-app",
+        "amazon-returns-recovery"
       ]
     },
     {
@@ -82,10 +83,10 @@
   ],
   "skills": [
     {
-      "name": "suede-workflow-skills",
-      "area": "workflow",
-      "description": "Umbrella workflow for 23 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows.",
-      "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
+      "name": "amazon-returns-recovery",
+      "area": "consumer",
+      "description": "Scans Amazon order/return history for restocking fees and short refunds you never noticed, then drives Amazon's live chat to get them waived and refunded. Recovered $448.31 in real cases, including overturning a previously denied refund after the return window closed. Requires the Claude in Chrome extension.",
+      "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {
       "name": "johnny-suede-design",
@@ -100,10 +101,40 @@
       "useWhen": "Write, rewrite, package, explain, promote, audit, or polish public copy with the full Suede writing stack."
     },
     {
+      "name": "site-to-ios-app",
+      "area": "workflow",
+      "description": "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates.",
+      "useWhen": "Convert a website or web app into an iOS app plan or shell that can survive App Store review."
+    },
+    {
+      "name": "suede-agent-teams",
+      "area": "workflow",
+      "description": "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped.",
+      "useWhen": "Coordinate large changes across safe lanes with collision checks, quality gates, rollback planning, and a verified handoff."
+    },
+    {
+      "name": "suede-ai-eval",
+      "area": "workflow",
+      "description": "Design AI evals that catch regressions before users do: rubrics, test cases, failure modes, acceptance gates, and AI-SPEC artifacts.",
+      "useWhen": "Define measurable quality, safety, and regression checks for LLMs, classifiers, recommenders, agents, RAG, search, and media generation."
+    },
+    {
+      "area": "creator",
+      "name": "suede-campaign-in-a-box",
+      "description": "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions.",
+      "useWhen": "Turn the artist world and rollout into usable campaign moves."
+    },
+    {
       "name": "suede-code",
       "area": "workflow",
       "description": "Review and grade code in one pass: real findings, A-F ship verdict, auth/payment risk, OWASP checks, deploy safety, and fix briefs.",
       "useWhen": "Review, grade, audit, security-check, or ship-gate a diff, PR, file, branch, or release."
+    },
+    {
+      "name": "suede-code-grader",
+      "area": "workflow",
+      "description": "Give a blunt A-F ship verdict for a code change across correctness, security, data, UX, verification, and deploy readiness.",
+      "useWhen": "Get a direct ship/no-ship grade with evidence instead of a full line-by-line review."
     },
     {
       "name": "suede-code-review",
@@ -112,10 +143,10 @@
       "useWhen": "Deep-review or security-check a diff, PR, file, branch, or release when the deliverable is findings, not a grade."
     },
     {
-      "name": "suede-code-grader",
+      "name": "suede-codex-fleet",
       "area": "workflow",
-      "description": "Give a blunt A-F ship verdict for a code change across correctness, security, data, UX, verification, and deploy readiness.",
-      "useWhen": "Get a direct ship/no-ship grade with evidence instead of a full line-by-line review."
+      "description": "Send scoped work to a Codex worker fleet: briefs, parallel runs, acceptance checks, and reviewed outputs without burning judgment on bulk drafting.",
+      "useWhen": "Send high-volume, well-specified work to parallel Codex CLI workers and review every output before it ships."
     },
     {
       "name": "suede-copy",
@@ -130,48 +161,6 @@
       "useWhen": "Polish UI, set tokens, fix hierarchy, and run focused design QA on a single surface."
     },
     {
-      "name": "suede-agent-teams",
-      "area": "workflow",
-      "description": "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped.",
-      "useWhen": "Coordinate large changes across safe lanes with collision checks, quality gates, rollback planning, and a verified handoff."
-    },
-    {
-      "name": "suede-codex-fleet",
-      "area": "workflow",
-      "description": "Send scoped work to a Codex worker fleet: briefs, parallel runs, acceptance checks, and reviewed outputs without burning judgment on bulk drafting.",
-      "useWhen": "Send high-volume, well-specified work to parallel Codex CLI workers and review every output before it ships."
-    },
-    {
-      "name": "suede-ai-eval",
-      "area": "workflow",
-      "description": "Design AI evals that catch regressions before users do: rubrics, test cases, failure modes, acceptance gates, and AI-SPEC artifacts.",
-      "useWhen": "Define measurable quality, safety, and regression checks for LLMs, classifiers, recommenders, agents, RAG, search, and media generation."
-    },
-    {
-      "name": "suede-ship-gate",
-      "area": "workflow",
-      "description": "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock.",
-      "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
-    },
-    {
-      "name": "suede-seo-audit",
-      "area": "workflow",
-      "description": "Run a nine-lane SEO, AEO, and AI-citation audit: access, intent, metadata, structure, schema, E-E-A-T, clusters, and rewrite fixes.",
-      "useWhen": "Audit Suede pages, GitHub Pages, README files, skill docs, launch pages, copy banks, install pages, and AI-result surfaces."
-    },
-    {
-      "name": "suede-visibility-grader",
-      "area": "workflow",
-      "description": "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness.",
-      "useWhen": "Judge whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with confidence."
-    },
-    {
-      "name": "suede-site-alchemy",
-      "area": "workflow",
-      "description": "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO.",
-      "useWhen": "Improve page conversion, package website growth offers, or route conversion work into the full design workflow."
-    },
-    {
       "name": "suede-launch-packaging",
       "area": "workflow",
       "description": "Package finished work so people can use it: README, docs, install commands, proof links, QA, release copy, and handoff notes.",
@@ -184,28 +173,10 @@
       "useWhen": "Validate the Suede Skills MCP, catalog, tool schemas, prompts, resources, install guidance, and docs."
     },
     {
-      "area": "creator",
-      "name": "suede-campaign-in-a-box",
-      "description": "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions.",
-      "useWhen": "Turn the artist world and rollout into usable campaign moves."
-    },
-    {
-      "area": "creator",
-      "name": "suede-sync-packaging",
-      "description": "Prep songs for sync pitches: scene angles, one-sheets, clean and instrumental assets, lyric flags, mood tags, rights questions, and links.",
-      "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions."
-    },
-    {
       "name": "suede-release-linter",
       "area": "creator",
       "description": "Audit creative release folders before handoff: metadata, file structure, artwork, lyrics, stems, rights blockers, and platform readiness.",
       "useWhen": "Check a release folder before release, licensing, registry prep, royalty routing, agent commerce, or transfer-package handoff."
-    },
-    {
-      "name": "suede-rights-passport",
-      "area": "creator",
-      "description": "Package creative project folders into rights-ready handoffs: files, metadata, credits, splits, licenses, stems, lyrics, artwork, and notes.",
-      "useWhen": "Package a creative project into a rights and provenance transfer handoff."
     },
     {
       "name": "suede-rights-audit",
@@ -214,10 +185,46 @@
       "useWhen": "Map rights gaps before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or creator review."
     },
     {
-      "name": "site-to-ios-app",
+      "name": "suede-rights-passport",
+      "area": "creator",
+      "description": "Package creative project folders into rights-ready handoffs: files, metadata, credits, splits, licenses, stems, lyrics, artwork, and notes.",
+      "useWhen": "Package a creative project into a rights and provenance transfer handoff."
+    },
+    {
+      "name": "suede-seo-audit",
       "area": "workflow",
-      "description": "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates.",
-      "useWhen": "Convert a website or web app into an iOS app plan or shell that can survive App Store review."
+      "description": "Run a nine-lane SEO, AEO, and AI-citation audit: access, intent, metadata, structure, schema, E-E-A-T, clusters, and rewrite fixes.",
+      "useWhen": "Audit Suede pages, GitHub Pages, README files, skill docs, launch pages, copy banks, install pages, and AI-result surfaces."
+    },
+    {
+      "name": "suede-ship-gate",
+      "area": "workflow",
+      "description": "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock.",
+      "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
+    },
+    {
+      "name": "suede-site-alchemy",
+      "area": "workflow",
+      "description": "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO.",
+      "useWhen": "Improve page conversion, package website growth offers, or route conversion work into the full design workflow."
+    },
+    {
+      "area": "creator",
+      "name": "suede-sync-packaging",
+      "description": "Prep songs for sync pitches: scene angles, one-sheets, clean and instrumental assets, lyric flags, mood tags, rights questions, and links.",
+      "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions."
+    },
+    {
+      "name": "suede-visibility-grader",
+      "area": "workflow",
+      "description": "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness.",
+      "useWhen": "Judge whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with confidence."
+    },
+    {
+      "name": "suede-workflow-skills",
+      "area": "workflow",
+      "description": "Umbrella workflow for 24 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows.",
+      "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],
   "mcp": {

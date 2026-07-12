@@ -1,20 +1,21 @@
 # Suede Creator Skills
 
-A 23-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
+A 24-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 23](https://img.shields.io/badge/Skills-23-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 23](https://img.shields.io/badge/Skills-24-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
 ## What it is
 
-A free, MIT-licensed, broadly reusable pack of **23 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed, broadly reusable pack of **24 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
 - **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
 - **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
+- **Consumer recovery**: scan an Amazon account for restocking fees and short refunds, then drive Amazon's live chat to get them waived — $448.31 recovered in real cases, including a refund Amazon had already denied once (`amazon-returns-recovery`).
 - **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
 
 ## Install in one command
@@ -26,9 +27,9 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 23 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 24 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
-Prefer a clone? `install.sh` copies all 23 skills into `~/.claude/skills/` and prints the installed count:
+Prefer a clone? `install.sh` copies all 24 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -120,6 +121,12 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
 | [`site-to-ios-app`](skills/site-to-ios-app) | Convert any website into an App Store-ready iOS app: audit, 4.2 wrapper-risk gate, shell strategy, release gate |
 
+### Consumer automation
+
+| Skill | What it does |
+|---|---|
+| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | Scan Amazon order/return history for restocking fees and short refunds, then drive Amazon live chat to waive them — includes a validated click-path and popup workaround. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
+
 Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 
 ## Public pages
@@ -156,7 +163,7 @@ To install several at once, pass extra `skills/<name>` paths after `--path`. Res
 
 ## Install for Claude Code
 
-All 23 skills:
+All 24 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

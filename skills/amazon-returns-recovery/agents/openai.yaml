@@ -1,0 +1,6 @@
+interface:
+  display_name: "Amazon Returns Recovery — Fee & Refund Disputes"
+  short_description: "Find and dispute Amazon restocking fees"
+  default_prompt: "Use $amazon-returns-recovery to scan my Amazon order and return history for restocking fees and short refunds, report what you find, and after I confirm which ones to pursue, drive Amazon's live chat to get them waived and refunded."
+policy:
+  allow_implicit_invocation: true
