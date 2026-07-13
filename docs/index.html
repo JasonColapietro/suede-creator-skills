@@ -2648,6 +2648,102 @@
     /* ---- STAT: money ---- */
     .stat-num--money { font-size: clamp(38px, 5vw, 62px); }
 
+    /* ---- ROUTER ---- */
+    #router { background: #080808; padding: 120px 0; }
+    .router-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 64px;
+      align-items: center;
+    }
+    .router-eyebrow {
+      margin: 0 0 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c8a96e;
+    }
+    .router-headline {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #f0ece4;
+    }
+    .router-sub {
+      margin: 24px 0 0;
+      font-size: 16.5px;
+      line-height: 1.7;
+      color: #888880;
+    }
+    .router-sub code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.88em;
+      color: #c8a96e;
+    }
+    .router-table {
+      border: 1px solid #222;
+      border-radius: 6px;
+      background: #0d0d0c;
+      overflow: hidden;
+    }
+    .router-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, auto);
+      align-items: center;
+      gap: 14px;
+      padding: 16px 22px;
+      border-bottom: 1px solid #1a1a18;
+      transition: background 0.15s ease;
+    }
+    .router-row:last-child { border-bottom: 0; }
+    a.router-row:hover { background: #14130f; }
+    .router-ask {
+      font-size: 14.5px;
+      color: #b5b0a6;
+      font-style: italic;
+    }
+    .router-arrow {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: #6b675f;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    a.router-row:hover .router-arrow { color: #c8a96e; transform: translateX(3px); }
+    .router-skill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #c8a96e;
+      white-space: nowrap;
+    }
+    .router-note {
+      margin: 18px 0 0;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #6b675f;
+    }
+    .router-note code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+      color: #888880;
+    }
+    @media (max-width: 900px) {
+      .router-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 640px) {
+      #router { padding: 88px 0; }
+      .router-inner { padding: 0 24px; }
+      .router-row { grid-template-columns: 1fr; row-gap: 6px; }
+      .router-arrow { display: none; }
+      .router-skill { white-space: normal; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.001ms !important;
@@ -3089,6 +3185,50 @@
         <span class="feature-label">MCP tools</span>
         <p class="feature-copy">An optional dependency-free MCP server adds structured skill discovery, install options, audit scaffolds, and QA checklists</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTER -->
+<section id="router" aria-labelledby="router-headline">
+  <div class="router-inner">
+    <div class="reveal">
+      <p class="router-eyebrow">The router</p>
+      <h2 id="router-headline" class="router-headline">Don't memorize 25 commands.</h2>
+      <p class="router-sub">Ask in plain words. The umbrella skill, <code>/suede-workflow-skills</code>, reads the request and loads the right lane — one install, every skill reachable. Agents that speak MCP get the same routing as structured tools: <code>list_suede_skills</code> finds the skill, <code>get_suede_skill</code> loads it.</p>
+      <p class="router-note">The optional MCP server ships in the repo, runs local with zero dependencies, and adds install options, audit scaffolds, grading, and QA checklists on top of discovery. Wire-up lives on the <a href="plugins.html" style="color:#888880;border-bottom:1px solid rgba(136,136,128,0.35);">install page</a>.</p>
+    </div>
+    <div class="router-table reveal reveal-d1" role="list" aria-label="Example requests and the skill each one routes to">
+      <a class="router-row" role="listitem" href="skills/suede-code.html">
+        <span class="router-ask">"grade this diff before I merge"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-code</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-seo-audit.html">
+        <span class="router-ask">"why isn't this page cited by AI answers"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-seo-audit</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/johnny-suede-design.html">
+        <span class="router-ask">"make this landing page much less boring"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/johnny-suede-design</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/site-to-ios-app.html">
+        <span class="router-ask">"turn this site into an iOS app"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/site-to-ios-app</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-campaign-in-a-box.html">
+        <span class="router-ask">"plan the rollout for this single"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-campaign-in-a-box</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/amazon-returns-recovery.html">
+        <span class="router-ask">"is Amazon still holding money on me"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/amazon-returns-recovery</span>
+      </a>
     </div>
   </div>
 </section>
