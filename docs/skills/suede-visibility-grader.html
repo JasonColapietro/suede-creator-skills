@@ -197,6 +197,34 @@
         main { padding: 56px 0 72px; }
         .link-row { grid-template-columns: 1fr; row-gap: 4px; }
       }
+      .plain-ask {
+        display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px;
+        margin: 4px 0 34px; padding: 14px 18px;
+        border: 1px solid var(--hairline); border-left: 3px solid var(--gold);
+        border-radius: 4px; background: var(--surface);
+      }
+      .plain-ask-quote { font-style: italic; color: #b5b0a6; font-size: 15px; }
+      .plain-ask-arrow { font-family: var(--mono); color: var(--muted); font-size: 13px; }
+      .plain-ask-cmd { font-size: 14px; font-weight: 600; }
+      .plain-ask-note { flex-basis: 100%; font-size: 12.5px; color: var(--muted); }
+      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
+      }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+      .ship-strip-row code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
+        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
+      }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
     </style>
   </head>
   <body>
@@ -220,6 +248,13 @@
       <h1>Grade whether a page can be found, trusted, cited, and clicked.</h1>
       <p class="lead">Suede Visibility Grader gives public pages an A-F report across findability, first-screen clarity, CTA pull, proof and trust, AI readability, rendered design signal, evidence, and grade caps. Use it for websites, GitHub Pages docs, launch pages, campaign pages, creator sites, and Suedify QA.</p>
       <p><a class="button" href="../plugins.html">Install the skill</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-visibility-grader">View skill folder</a></p>
+
+      <div class="plain-ask" aria-label="Example request that routes to this skill">
+        <span class="plain-ask-quote">&quot;grade this page before I promote it&quot;</span>
+        <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
+        <code class="plain-ask-cmd">/suede-visibility-grader</code>
+        <span class="plain-ask-note">Ask in plain words. The <a href="suede-workflow-skills.html">router</a> reads the request and loads this lane; MCP agents find it with <code>list_suede_skills</code>.</span>
+      </div>
 
       <section class="panel">
         <h2>Public install command</h2>
@@ -304,6 +339,15 @@ Overall: A-F</code></pre>
         </article>
       </section>
     </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="shell">
+        <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <div class="ship-strip-row">
+          <code>/plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="shell">
         <p class="footer-note">Suede Visibility Grader: A-F website visibility, CTA, AI readability, proof, and design-signal review for public Suede work.</p>
