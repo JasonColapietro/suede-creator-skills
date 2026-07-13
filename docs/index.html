@@ -2298,7 +2298,7 @@
 
     #hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 0.85fr 1.15fr;
       gap: 64px;
       align-items: center;
       width: 100%;
@@ -2373,6 +2373,10 @@
 
     #hero-term .install-terminal {
       margin-bottom: 0;
+      box-shadow:
+        0 0 0 1px rgba(200, 169, 110, 0.16),
+        0 28px 90px rgba(0, 0, 0, 0.65),
+        0 0 110px rgba(200, 169, 110, 0.08);
     }
 
     #hero-term .install-code-block {
@@ -2509,12 +2513,16 @@
     /* ---- HERO SAMPLE SESSION ---- */
     .term-session {
       border-top: 1px solid #1c1c1c;
-      padding: 14px 18px 16px;
+      padding: 18px 24px 20px;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 12.5px;
-      line-height: 1.8;
+      font-size: 13.5px;
+      line-height: 1.9;
       color: #888880;
       text-align: left;
+    }
+    .term-grade--hold {
+      color: #c0524a;
+      border-color: rgba(192, 82, 74, 0.5);
     }
     .term-line { display: block; white-space: pre-wrap; }
     .term-line .t-cmd { color: #f0ece4; font-weight: 600; }
@@ -2823,9 +2831,9 @@
       <div id="hero-copy">
         <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT &middot; Claude Code + Codex</span>
 
-        <h1 id="hero-headline" class="hero-anim">25 open-source skills that teach your coding agent to ship.</h1>
+        <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and completely unsupervised.</h1>
 
-        <p id="hero-subline" class="hero-anim">Your agent can already write the code. This pack teaches it to review its own work and hand down a blunt <strong>A-F ship grade</strong> before anything merges, then keep going after the code lands: design, copy, SEO, and <strong>Swift/iOS</strong> releases. Two commands to install, MIT licensed, no uploads.</p>
+        <p id="hero-subline" class="hero-anim">This pack is the supervision. 25 open-source skills that read every diff like a senior reviewer, hand down a blunt <strong>A-F ship grade</strong>, and block the merge until it holds. Then they handle the parts of shipping nobody prompts for: design, copy, SEO, and <strong>Swift/iOS</strong>. One of them argued Amazon out of <strong>$448.31</strong> in one sitting. Your pull requests don't stand a chance.</p>
 
         <div id="hero-ctas" class="hero-anim">
           <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
@@ -2861,13 +2869,15 @@
               });
             ">Copy</button>
           </div>
-          <div class="term-session" id="term-session" aria-label="Sample session: a suede-code review ending in a ship grade">
+          <div class="term-session" id="term-session" aria-label="Sample session: a suede-code review that blocks a merge, fixes the findings, and regrades">
             <span class="term-line"><span class="t-dim">$ </span><span class="t-cmd">/suede-code review src/checkout.ts</span></span>
-            <span class="term-line t-dim">lane 2/7 &middot; typescript &hellip; <span class="t-warn">2 findings</span>, fix briefs attached</span>
-            <span class="term-line t-dim">lane 4/7 &middot; owasp &hellip; secret scan clean</span>
-            <span class="term-line t-dim">lane 7/7 &middot; deploy safety &hellip; pass</span>
-            <span class="term-line"><span class="term-grade">SHIP GRADE: B+</span></span>
-            <span class="term-line t-dim">verdict: fix the two P1s, then merge<span class="term-cursor" aria-hidden="true"></span></span>
+            <span class="term-line t-dim">scanning diff &middot; 7 lanes armed</span>
+            <span class="term-line"><span class="t-warn">P1</span><span class="t-dim"> &middot; api key in plain text &middot; checkout.ts:41</span></span>
+            <span class="term-line"><span class="t-warn">P1</span><span class="t-dim"> &middot; webhook retry drops the error path</span></span>
+            <span class="term-line"><span class="term-grade term-grade--hold">SHIP GRADE: C &middot; MERGE BLOCKED</span></span>
+            <span class="term-line t-dim">applying fix briefs &hellip; re-running gates</span>
+            <span class="term-line t-dim">secret moved to env &middot; retry path verified</span>
+            <span class="term-line"><span class="term-grade">SHIP GRADE: A- &middot; MERGE UNBLOCKED</span><span class="term-cursor" aria-hidden="true"></span></span>
           </div>
         </div>
         <p id="hero-term-note">Every skill is a plain-Markdown SKILL.md folder you can read before you enable it. No uploads, no registry writes. <a href="#install">More install paths</a> for Codex, Cursor, and 25+ agents.</p>
@@ -3835,9 +3845,12 @@
       if (i >= lines.length) return;
       lines[i].classList.add('typed');
       i += 1;
-      setTimeout(next, i === 1 ? 950 : 480);
+      var upcoming = lines[i];
+      var pause = i === 1 ? 950 : 460;
+      if (upcoming && upcoming.querySelector('.term-grade')) pause = 850;
+      setTimeout(next, pause);
     }
-    setTimeout(next, 1400);
+    setTimeout(next, 1200);
   })();
 </script>
 
