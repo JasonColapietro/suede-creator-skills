@@ -152,7 +152,7 @@
     {
       "name": "suede-codex-fleet",
       "area": "workflow",
-      "description": "Send scoped work to a Codex worker fleet: briefs, parallel runs, acceptance checks, and reviewed outputs without burning judgment on bulk drafting.",
+      "description": "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk generation. Use when a job is high-volume, well-specified, and splits into independent worker-sized tasks (content batches, test generation, bulk refactors) and Codex CLI is installed and logged in. Claude decomposes, briefs, spawns codex exec runs in parallel, and review-gates every output. NOT FOR: multi-lane Claude agents coordinating one complex change (use suede-agent-teams); low-volume, judgment-dense copy Claude should write itself (use suede-copy or johnny-suede-write).",
       "useWhen": "Send high-volume, well-specified work to parallel Codex CLI workers and review every output before it ships."
     },
     {
