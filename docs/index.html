@@ -987,6 +987,7 @@
     .feature-card:nth-child(6),
     .feature-card:nth-child(7),
     .feature-card:nth-child(9),
+    .feature-card:nth-child(12),
     .feature-card--red {
       --feature-accent: #8b1a1a;
     }
@@ -1027,6 +1028,7 @@
     .feature-card:nth-child(6) .feature-label,
     .feature-card:nth-child(7) .feature-label,
     .feature-card:nth-child(9) .feature-label,
+    .feature-card:nth-child(12) .feature-label,
     .feature-card--red .feature-label {
       color: #c0524a;
     }
@@ -2195,6 +2197,12 @@
     .features-grid.reveal-group.in-view .feature-card:nth-child(6) { animation-delay: 0.34s; }
     .features-grid.reveal-group.in-view .feature-card:nth-child(7) { animation-delay: 0.40s; }
     .features-grid.reveal-group.in-view .feature-card:nth-child(8) { animation-delay: 0.46s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(9) { animation-delay: 0.52s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(10) { animation-delay: 0.58s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(11) { animation-delay: 0.64s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(12) { animation-delay: 0.70s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(13) { animation-delay: 0.76s; }
+    .features-grid.reveal-group.in-view .feature-card:nth-child(14) { animation-delay: 0.82s; }
 
     /* ---- FEATURE CARD glow-up ---- */
     .feature-card {
@@ -2407,12 +2415,16 @@
     }
 
     .bench-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      font-size: clamp(19px, 2.6vw, 27px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: #f0ece4;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .bench-label .bench-highlight {
       color: #c8a96e;
-      margin-bottom: 14px;
     }
 
     .bench-grid {
@@ -2440,7 +2452,7 @@
     }
 
     .bench-grade {
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 800;
       color: #c8a96e;
       letter-spacing: -0.02em;
@@ -2940,7 +2952,7 @@
     </div>
 
     <div id="hero-bench" class="hero-anim">
-      <p class="bench-label">Where it outgrades both GSD and Superpowers</p>
+      <p class="bench-label">The only pack that <span class="bench-highlight">beat both GSD and Superpowers</span> &mdash; on the same rubric, losses published</p>
       <div class="bench-grid">
         <a class="bench-tile" href="#scorecard">
           <span class="bench-grade">A+</span>
@@ -3274,20 +3286,40 @@
       <div class="feature-card">
         <span class="feature-num">07</span>
         <span class="feature-label">Suedify</span>
-        <p class="feature-copy">Give it a reference URL and a target URL. It studies the reference's layout, type, and rhythm, then restyles your site in that direction — your own assets, plus a QA pass</p>
+        <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language — your own copy, your own assets, nothing traced or copied</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">08</span>
-        <span class="feature-label">Copy + SEO/AEO</span>
-        <p class="feature-copy">Distills copy, CTAs, metadata, schema, FAQs, and answer-ready proof for Google, Gemini, and model-readable answer surfaces</p>
+        <span class="feature-label">Conversion copy</span>
+        <p class="feature-copy">Runs the same persuasion frameworks agencies bill five figures to teach — AIDA, PAS, StoryBrand, JTBD — plus 12 headline formulas and a 29-point anti-slop gate before a word ships</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">09</span>
+        <span class="feature-label">SEO, AEO &amp; AI EO</span>
+        <p class="feature-copy">Nine audit lanes in one pass — technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, topic clusters — wider than any single-purpose SEO skill in the wild</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">10</span>
         <span class="feature-label">Visibility grade</span>
         <p class="feature-copy">Scores brand and page visibility A-F across first-screen clarity, CTA pull, proof, AI readability, schema depth, and search result fit</p>
       </div>
       <div class="feature-card">
-        <span class="feature-num">10</span>
+        <span class="feature-num">11</span>
+        <span class="feature-label">Site to iOS app</span>
+        <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and screenshots polished enough for a downtown agency pitch deck, not a template generator</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">12</span>
+        <span class="feature-label">Design, from first principles</span>
+        <p class="feature-copy">Commits to a named aesthetic lane, rejects the first reflex and the second-order trap, and builds color, type, and motion up from that decision — never a template with your logo dropped in</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">13</span>
+        <span class="feature-label">Consumer recovery</span>
+        <p class="feature-copy">The same negotiation discipline pointed at your own accounts: one skill argued Amazon into refunding $448.31, the other audits Netflix, gyms, and every App Store subscription you forgot you had</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">14</span>
         <span class="feature-label">MCP tools</span>
         <p class="feature-copy">An optional dependency-free MCP server adds structured skill discovery, install options, audit scaffolds, and QA checklists</p>
       </div>
