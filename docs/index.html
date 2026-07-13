@@ -1310,15 +1310,17 @@
     .waveform-wrap {
       height: 56px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       gap: 3px;
       margin-bottom: 36px;
+      overflow: hidden;
     }
 
     .waveform-bar {
       flex: 1;
       background: #1a1512;
       border-radius: 1px;
+      transform-origin: bottom;
       animation: wave var(--d, .6s) ease-in-out infinite alternate;
     }
 
@@ -3678,7 +3680,7 @@
       </div>
 
       <div class="proof-col proof-col--right">
-        <p class="col-label">For builders and AI engineers</p>
+        <p class="col-label">For musicians and labels</p>
 
         <div class="waveform-wrap" aria-hidden="true">
           <div class="waveform-bar" style="--d:.55s;--s:5;height:12px;"></div>
@@ -3703,21 +3705,21 @@
           <div class="waveform-bar" style="--d:.57s;--s:7;height:16px;"></div>
         </div>
 
-        <h3 class="musicians-headline">Design, code, and AI work<br>get a full QA spine.</h3>
-        <p class="musicians-sub">Agent orchestration, code review and A-F grading, AI evals, design, copy, visibility, SEO, MCP, and CI ship-gates live in the same pack.</p>
+        <h3 class="musicians-headline">Releasing your single<br>gets the same QA spine.</h3>
+        <p class="musicians-sub">Campaign planning, sync packaging, release linting, and rights evidence live in the same pack as the code review and design lanes.</p>
 
         <ul class="musicians-list">
           <li class="musicians-item">
             <div class="musicians-tick"></div>
-            <span class="musicians-text"><strong>Suedify</strong> turns a reference URL and your target URL into a design, copy, SEO/AEO/GEO/AI EO, and QA pass.</span>
+            <span class="musicians-text"><strong>suede-campaign-in-a-box</strong> turns one release into a full rollout: eras, hooks, stunts, and fan missions.</span>
           </li>
           <li class="musicians-item">
             <div class="musicians-tick"></div>
-            <span class="musicians-text">A small <strong>creator toolkit</strong> also ships for music rights and release prep, kept separate from the core developer workflow.</span>
+            <span class="musicians-text"><strong>suede-rights-passport</strong> and <strong>suede-rights-audit</strong> turn provenance, splits, and ownership gaps into evidence a label or supervisor can actually review.</span>
           </li>
           <li class="musicians-item">
             <div class="musicians-tick"></div>
-            <span class="musicians-text">Agent teams communicate through shared evidence so subagents do not vanish into disconnected silos.</span>
+            <span class="musicians-text"><strong>suede-release-linter</strong> and <strong>suede-sync-packaging</strong> catch broken metadata and build the supervisor-safe one-sheet before the drop goes out.</span>
           </li>
         </ul>
 
