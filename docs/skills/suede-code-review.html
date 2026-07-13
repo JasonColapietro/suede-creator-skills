@@ -217,6 +217,39 @@
         transition: border-color 0.15s;
       }
       .ship-strip-row a:hover { border-color: #171310; }
+      .skill-term {
+        max-width: 760px;
+        margin: 4px 0 44px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: #0d0d0c;
+        overflow: hidden;
+        box-shadow:
+          0 0 0 1px rgba(200, 169, 110, 0.14),
+          0 22px 70px rgba(0, 0, 0, 0.6),
+          0 0 90px rgba(200, 169, 110, 0.07);
+      }
+      .skill-term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--hairline); }
+      .skill-term-bar .tdot2 { width: 10px; height: 10px; border-radius: 50%; background: #242424; }
+      .skill-term-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+      .skill-term-body { padding: 18px 22px 20px; font-family: var(--mono); font-size: 13px; line-height: 1.9; color: var(--muted); }
+      .skill-term .t-line { display: block; white-space: pre-wrap; }
+      .skill-term .t-cmd { color: var(--cream); font-weight: 600; }
+      .skill-term .t-warn { color: var(--red-text); }
+      .skill-term .term-grade {
+        display: inline-flex; align-items: center; gap: 8px;
+        margin-top: 6px; padding: 3px 10px;
+        border: 1px solid rgba(200, 169, 110, 0.45); border-radius: 3px;
+        color: var(--gold); font-weight: 700; letter-spacing: 0.08em;
+      }
+      .skill-term .term-grade--hold { color: var(--red-text); border-color: rgba(192, 82, 74, 0.5); }
+      .skill-term .term-cursor {
+        display: inline-block; width: 7px; height: 13px; margin-left: 6px;
+        background: var(--gold); vertical-align: -2px;
+        animation: st-blink 1.1s steps(1) infinite;
+      }
+      @keyframes st-blink { 50% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .skill-term .term-cursor { animation: none; } }
     </style>
   </head>
   <body>
@@ -236,8 +269,8 @@
       </nav>
     </header>
     <main class="shell">
-      <div class="eyebrow">Findings-only review</div>
-      <h1>Suede Code Review.</h1>
+      <div class="eyebrow">/suede-code-review &middot; Findings-only review</div>
+      <h1>Findings with file, line, and a fix path. No vibes.</h1>
       <p class="lead">Use Suede Code Review when you need a findings-only diff review with TypeScript, React, Next.js, OWASP, accessibility, SEO, and database query lanes. It ranks evidence-backed findings by severity, runs the repo gates the repo already ships, and ends with deploy safety and a ship verdict without a letter grade.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-review">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
@@ -246,6 +279,19 @@
         <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
         <code class="plain-ask-cmd">/suede-code-review</code>
         <span class="plain-ask-note">Ask in plain words. The <a href="suede-workflow-skills.html">router</a> reads the request and loads this lane; MCP agents find it with <code>list_suede_skills</code>.</span>
+      </div>
+
+      <div class="skill-term" aria-label="Sample session for /suede-code-review">
+        <div class="skill-term-bar" aria-hidden="true">
+          <span class="tdot2"></span><span class="tdot2"></span><span class="tdot2"></span>
+          <span class="skill-term-title">claude code &middot; sample session</span>
+        </div>
+        <div class="skill-term-body">
+          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-code-review --standard HEAD..main</span></span>
+          <span class="t-line">typescript &middot; react &middot; owasp &middot; a11y &middot; seo lanes</span>
+          <span class="t-line"><span class="t-warn">P1</span> &middot; unawaited promise drops the error path &middot; api.ts:52</span>
+          <span class="t-line"><span class="term-grade">6 FINDINGS &middot; FIX BRIEFS ATTACHED</span><span class="term-cursor" aria-hidden="true"></span></span>
+        </div>
       </div>
 
       <section class="panel">
