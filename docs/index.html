@@ -2506,6 +2506,148 @@
     }
 
     /* ---- REDUCED MOTION ---- */
+    /* ---- HERO SAMPLE SESSION ---- */
+    .term-session {
+      border-top: 1px solid #1c1c1c;
+      padding: 14px 18px 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      line-height: 1.8;
+      color: #888880;
+      text-align: left;
+    }
+    .term-line { display: block; white-space: pre-wrap; }
+    .term-line .t-cmd { color: #f0ece4; font-weight: 600; }
+    .t-dim { color: #6b675f; }
+    .t-warn { color: #c0524a; }
+    .term-grade {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      padding: 3px 10px;
+      border: 1px solid rgba(200, 169, 110, 0.45);
+      border-radius: 3px;
+      color: #c8a96e;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .term-cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      margin-left: 3px;
+      background: #c8a96e;
+      vertical-align: -2px;
+      animation: blink 1.1s steps(1) infinite;
+    }
+    /* Typed replay is opt-in via JS and never hides content from
+       reduced-motion or no-JS readers; hidden lines keep their space. */
+    .js-type .term-line { visibility: hidden; }
+    .js-type .term-line.typed { visibility: visible; }
+
+    /* ---- GOLD SHIP BAND ---- */
+    #ship-band {
+      background: #c8a96e;
+      color: #171310;
+      padding: 120px 0;
+    }
+    .ship-band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .ship-band-kicker {
+      margin: 0 0 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #171310;
+      opacity: 0.75;
+    }
+    #ship-band-headline {
+      margin: 0;
+      font-size: clamp(52px, 9vw, 118px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      color: #171310;
+    }
+    .ship-band-sub {
+      margin: 28px 0 0;
+      max-width: 560px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #241c10;
+    }
+    .ship-band-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .ship-band-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 12px 26px;
+      background: #171310;
+      color: #c8a96e;
+      border: 0;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ship-band-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(23, 19, 16, 0.35);
+    }
+    .ship-band-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 12px 4px;
+      color: #171310;
+      font-size: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(23, 19, 16, 0.4);
+      transition: border-color 0.2s ease;
+    }
+    .ship-band-link:hover { border-color: #171310; }
+    .ship-band-cmd {
+      display: inline-block;
+      margin-top: 34px;
+      padding: 10px 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      color: #171310;
+      background: rgba(23, 19, 16, 0.08);
+      border: 1px solid rgba(23, 19, 16, 0.25);
+      border-radius: 4px;
+    }
+    @media (max-width: 640px) {
+      #ship-band { padding: 88px 0; }
+      .ship-band-inner { padding: 0 24px; }
+    }
+
+    /* ---- MARQUEE: slash commands ---- */
+    .marquee-item {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-transform: none;
+      letter-spacing: 0.04em;
+      font-size: 13.5px;
+    }
+    .marquee-item:hover { color: #c8a96e; }
+
+    /* ---- STAT: money ---- */
+    .stat-num--money { font-size: clamp(38px, 5vw, 62px); }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.001ms !important;
@@ -2517,6 +2659,8 @@
       .hero-anim { opacity: 1 !important; }
       .features-grid.reveal-group .feature-card { opacity: 1 !important; }
       .marquee-track { animation: none !important; }
+      .term-session .term-line { visibility: visible !important; }
+      .term-cursor { animation: none !important; }
     }
   </style>
 </head>
@@ -2603,7 +2747,7 @@
             <span class="tdot"></span>
             <span class="tdot"></span>
             <span class="tdot"></span>
-            <span class="install-terminal-title">claude code</span>
+            <span class="install-terminal-title">claude code &middot; sample session</span>
           </div>
           <div class="install-code-block">
             <code id="hero-install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
@@ -2620,6 +2764,14 @@
                 b.textContent='Copy';
               });
             ">Copy</button>
+          </div>
+          <div class="term-session" id="term-session" aria-label="Sample session: a suede-code review ending in a ship grade">
+            <span class="term-line"><span class="t-dim">$ </span><span class="t-cmd">/suede-code review src/checkout.ts</span></span>
+            <span class="term-line t-dim">lane 2/7 &middot; typescript &hellip; <span class="t-warn">2 findings</span>, fix briefs attached</span>
+            <span class="term-line t-dim">lane 4/7 &middot; owasp &hellip; secret scan clean</span>
+            <span class="term-line t-dim">lane 7/7 &middot; deploy safety &hellip; pass</span>
+            <span class="term-line"><span class="term-grade">SHIP GRADE: B+</span></span>
+            <span class="term-line t-dim">verdict: fix the two P1s, then merge<span class="term-cursor" aria-hidden="true"></span></span>
           </div>
         </div>
         <p id="hero-term-note">Every skill is a plain-Markdown SKILL.md folder you can read before you enable it. No uploads, no registry writes. <a href="#install">More install paths</a> for Codex, Cursor, and 25+ agents.</p>
@@ -2665,52 +2817,56 @@
 <!-- SKILL MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Workflow Skills</span>
-    <span class="marquee-item">Agent Teams</span>
-    <span class="marquee-item">Codex Fleet</span>
-    <span class="marquee-item">AI Evals</span>
-    <span class="marquee-item">Code + Grade</span>
-    <span class="marquee-item">Code Review</span>
-    <span class="marquee-item">Code Grader</span>
-    <span class="marquee-item">Ship Gate</span>
-    <span class="marquee-item">Site to iOS App</span>
-    <span class="marquee-item">Johnny Suede Write</span>
-    <span class="marquee-item">Johnny Suede Design</span>
-    <span class="marquee-item">Design System</span>
-    <span class="marquee-item">Conversion Copy</span>
-    <span class="marquee-item">SEO / AEO / AI EO</span>
-    <span class="marquee-item">Visibility Grader</span>
-    <span class="marquee-item">Site Alchemy</span>
-    <span class="marquee-item">Launch Packaging</span>
-    <span class="marquee-item">MCP QA</span>
-    <span class="marquee-item">Campaign in a Box</span>
-    <span class="marquee-item">Sync Packaging</span>
-    <span class="marquee-item">Release Linter</span>
-    <span class="marquee-item">Rights Passport</span>
-    <span class="marquee-item">Rights Audit</span>
-    <span class="marquee-item">Workflow Skills</span>
-    <span class="marquee-item">Agent Teams</span>
-    <span class="marquee-item">Codex Fleet</span>
-    <span class="marquee-item">AI Evals</span>
-    <span class="marquee-item">Code + Grade</span>
-    <span class="marquee-item">Code Review</span>
-    <span class="marquee-item">Code Grader</span>
-    <span class="marquee-item">Ship Gate</span>
-    <span class="marquee-item">Site to iOS App</span>
-    <span class="marquee-item">Johnny Suede Write</span>
-    <span class="marquee-item">Johnny Suede Design</span>
-    <span class="marquee-item">Design System</span>
-    <span class="marquee-item">Conversion Copy</span>
-    <span class="marquee-item">SEO / AEO / AI EO</span>
-    <span class="marquee-item">Visibility Grader</span>
-    <span class="marquee-item">Site Alchemy</span>
-    <span class="marquee-item">Launch Packaging</span>
-    <span class="marquee-item">MCP QA</span>
-    <span class="marquee-item">Campaign in a Box</span>
-    <span class="marquee-item">Sync Packaging</span>
-    <span class="marquee-item">Release Linter</span>
-    <span class="marquee-item">Rights Passport</span>
-    <span class="marquee-item">Rights Audit</span>
+    <span class="marquee-item">/suede-workflow-skills</span>
+    <span class="marquee-item">/suede-agent-teams</span>
+    <span class="marquee-item">/suede-codex-fleet</span>
+    <span class="marquee-item">/suede-ai-eval</span>
+    <span class="marquee-item">/suede-code</span>
+    <span class="marquee-item">/suede-code-review</span>
+    <span class="marquee-item">/suede-code-grader</span>
+    <span class="marquee-item">/suede-ship-gate</span>
+    <span class="marquee-item">/site-to-ios-app</span>
+    <span class="marquee-item">/johnny-suede-write</span>
+    <span class="marquee-item">/johnny-suede-design</span>
+    <span class="marquee-item">/suede-design</span>
+    <span class="marquee-item">/suede-copy</span>
+    <span class="marquee-item">/suede-seo-audit</span>
+    <span class="marquee-item">/suede-visibility-grader</span>
+    <span class="marquee-item">/suede-site-alchemy</span>
+    <span class="marquee-item">/suede-launch-packaging</span>
+    <span class="marquee-item">/suede-mcp-qa</span>
+    <span class="marquee-item">/suede-campaign-in-a-box</span>
+    <span class="marquee-item">/suede-sync-packaging</span>
+    <span class="marquee-item">/suede-release-linter</span>
+    <span class="marquee-item">/suede-rights-passport</span>
+    <span class="marquee-item">/suede-rights-audit</span>
+    <span class="marquee-item">/amazon-returns-recovery</span>
+    <span class="marquee-item">/subscription-recovery</span>
+    <span class="marquee-item">/suede-workflow-skills</span>
+    <span class="marquee-item">/suede-agent-teams</span>
+    <span class="marquee-item">/suede-codex-fleet</span>
+    <span class="marquee-item">/suede-ai-eval</span>
+    <span class="marquee-item">/suede-code</span>
+    <span class="marquee-item">/suede-code-review</span>
+    <span class="marquee-item">/suede-code-grader</span>
+    <span class="marquee-item">/suede-ship-gate</span>
+    <span class="marquee-item">/site-to-ios-app</span>
+    <span class="marquee-item">/johnny-suede-write</span>
+    <span class="marquee-item">/johnny-suede-design</span>
+    <span class="marquee-item">/suede-design</span>
+    <span class="marquee-item">/suede-copy</span>
+    <span class="marquee-item">/suede-seo-audit</span>
+    <span class="marquee-item">/suede-visibility-grader</span>
+    <span class="marquee-item">/suede-site-alchemy</span>
+    <span class="marquee-item">/suede-launch-packaging</span>
+    <span class="marquee-item">/suede-mcp-qa</span>
+    <span class="marquee-item">/suede-campaign-in-a-box</span>
+    <span class="marquee-item">/suede-sync-packaging</span>
+    <span class="marquee-item">/suede-release-linter</span>
+    <span class="marquee-item">/suede-rights-passport</span>
+    <span class="marquee-item">/suede-rights-audit</span>
+    <span class="marquee-item">/amazon-returns-recovery</span>
+    <span class="marquee-item">/subscription-recovery</span>
   </div>
 </div>
 
@@ -2879,7 +3035,7 @@
 <!-- FEATURES GRID -->
 <section id="skills" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="features-inner">
-    <h2 class="features-headline reveal">What it does</h2>
+    <h2 class="features-headline reveal">What your agent learns.</h2>
     <div class="features-grid reveal-group">
       <div class="feature-card feature-card--wide">
         <span class="feature-num">01</span>
@@ -2949,8 +3105,8 @@
       <div class="stat-label">runtimes: Claude Code + Codex</div>
     </div>
     <div class="stat">
-      <div class="stat-num">7</div>
-      <div class="stat-label">MCP tools included</div>
+      <div class="stat-num stat-num--money"><span class="unit">$</span>448<span class="unit">.31</span></div>
+      <div class="stat-label">clawed back from Amazon by one skill, one sitting</div>
     </div>
     <div class="stat">
       <div class="stat-num">0</div>
@@ -3300,8 +3456,29 @@
   </div>
 </section>
 
+<!-- GOLD SHIP BAND -->
+<section id="ship-band" aria-labelledby="ship-band-headline">
+  <div class="ship-band-inner reveal">
+    <p class="ship-band-kicker">Two commands from here</p>
+    <h2 id="ship-band-headline">Stop shipping on vibes.</h2>
+    <p class="ship-band-sub">Give your agent review with a spine, CI that holds the door, and copy that earns the click. MIT licensed, plain Markdown, readable before you run it.</p>
+    <div class="ship-band-ctas">
+      <button class="ship-band-btn" id="band-copy-btn" onclick="
+        var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
+        navigator.clipboard.writeText(cmd).then(function(){
+          var b=document.getElementById('band-copy-btn');
+          b.textContent='Copied';
+          setTimeout(function(){b.textContent='Copy the install command';},2000);
+        }).catch(function(){});
+      ">Copy the install command</button>
+      <a class="ship-band-link" href="skills/">Browse all 25 skills</a>
+    </div>
+    <code class="ship-band-cmd">/plugin install suede-skills@suede</code>
+  </div>
+</section>
+
 <!-- FAQ -->
-<section id="faq" style="background:#080808;padding:0 0 120px;font-family:system-ui,-apple-system,sans-serif;">
+<section id="faq" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="faq-inner">
     <h2 class="faq-headline reveal">Questions, answered.</h2>
     <div class="reveal reveal-d1">
@@ -3503,6 +3680,24 @@
         reveal(data.stargazers_count);
       })
       .catch(function() {});
+  })();
+
+  // Sample-session replay: lines are always present in the DOM; this only
+  // stages their appearance. Skipped entirely for reduced motion or no JS.
+  (function() {
+    var sess = document.getElementById('term-session');
+    if (!sess || reduceMotion) return;
+    var lines = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
+    if (!lines.length) return;
+    sess.classList.add('js-type');
+    var i = 0;
+    function next() {
+      if (i >= lines.length) return;
+      lines[i].classList.add('typed');
+      i += 1;
+      setTimeout(next, i === 1 ? 950 : 480);
+    }
+    setTimeout(next, 1400);
   })();
 </script>
 
