@@ -2656,6 +2656,61 @@
     /* ---- STAT: money ---- */
     .stat-num--money { font-size: clamp(38px, 5vw, 62px); }
 
+    /* ---- LANE INDEX ---- */
+    #lanes { background: #080808; padding: 110px 0 96px; }
+    .lanes-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+    .lanes-eyebrow {
+      margin: 0 0 16px;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: #c8a96e;
+    }
+    .lanes-headline {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 5.4vw, 68px);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.0;
+      color: #f0ece4;
+      text-wrap: balance;
+      max-width: 820px;
+    }
+    .lanes-sub {
+      margin: 0 0 52px;
+      max-width: 620px;
+      font-size: 16.5px; line-height: 1.7;
+      color: #888880;
+    }
+    .lanes-list { border-top: 1px solid #1c1c1c; }
+    .lane-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto;
+      gap: 12px 28px;
+      align-items: baseline;
+      padding: 26px 8px;
+      border-bottom: 1px solid #1c1c1c;
+      transition: background 0.15s ease;
+    }
+    .lane-row:hover { background: #0d0c0a; }
+    .lane-name {
+      font-size: clamp(22px, 3.2vw, 36px);
+      font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+      color: #f0ece4;
+      transition: color 0.15s ease;
+    }
+    .lane-row:hover .lane-name { color: #c8a96e; }
+    .lane-desc { font-size: 15px; line-height: 1.55; color: #888880; }
+    .lane-count {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px; color: #c8a96e; white-space: nowrap;
+    }
+    @media (max-width: 780px) {
+      #lanes { padding: 88px 0 72px; }
+      .lanes-inner { padding: 0 24px; }
+      .lane-row { grid-template-columns: 1fr; gap: 6px; padding: 22px 4px; }
+    }
+
+    /* Terminal keeps its footprint while sessions rotate */
+    .term-session { min-height: 214px; }
+
     /* ---- ROUTER ---- */
     #router { background: #080808; padding: 120px 0; }
     .router-inner {
@@ -2975,6 +3030,47 @@
     <span class="marquee-item">/subscription-recovery</span>
   </div>
 </div>
+
+<!-- LANE INDEX -->
+<section id="lanes" aria-labelledby="lanes-headline">
+  <div class="lanes-inner">
+    <p class="lanes-eyebrow reveal">One pack, six disciplines</p>
+    <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">Code review is just the opening act.</h2>
+    <p class="lanes-sub reveal reveal-d1">The same discipline that grades your diffs also designs the page, writes the copy, ships the iOS app, packages the release rights, and argues your money back. Six lanes, 25 skills, one install.</p>
+    <div class="lanes-list reveal reveal-d2">
+      <a class="lane-row" href="#lane-code">
+        <span class="lane-name">Code quality &amp; shipping</span>
+        <span class="lane-desc">Review with receipts, A-F ship grades, CI that blocks the merge</span>
+        <span class="lane-count">4 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-orchestration">
+        <span class="lane-name">Agent orchestration</span>
+        <span class="lane-desc">Coordinated lanes, Codex worker fleets, AI evals you can fail</span>
+        <span class="lane-count">4 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-design">
+        <span class="lane-name">Design, copy &amp; SEO</span>
+        <span class="lane-desc">The full public-surface stack, from design tokens to answer engines</span>
+        <span class="lane-count">9 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-ios">
+        <span class="lane-name">iOS app shipping</span>
+        <span class="lane-desc">From live URL to App Store archive, 4.2 wrapper gate included</span>
+        <span class="lane-count">1 skill</span>
+      </a>
+      <a class="lane-row" href="#lane-creator">
+        <span class="lane-name">Music rights &amp; releases</span>
+        <span class="lane-desc">Campaigns, sync packaging, release linting, rights evidence</span>
+        <span class="lane-count">5 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-recovery">
+        <span class="lane-name">Consumer recovery</span>
+        <span class="lane-desc">The same negotiator, pointed at Amazon and your subscriptions</span>
+        <span class="lane-count">2 skills</span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- SCORECARD -->
 <section id="scorecard" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
@@ -3328,7 +3424,7 @@
     <h2 class="catalog-headline reveal reveal-d1">All 25 skills.</h2>
     <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder you can read before you install it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-orchestration">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">Agent orchestration &amp; workflows</span>
         <span class="catalog-lane-count">4 skills</span>
@@ -3355,7 +3451,7 @@
       </a>
     </div>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-code">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">Code quality &amp; shipping</span>
         <span class="catalog-lane-count">4 skills</span>
@@ -3382,7 +3478,7 @@
       </a>
     </div>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-ios">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">iOS app shipping</span>
         <span class="catalog-lane-count">1 skill</span>
@@ -3394,7 +3490,7 @@
       </a>
     </div>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-design">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">Design, copy &amp; SEO</span>
         <span class="catalog-lane-count">9 skills</span>
@@ -3446,7 +3542,7 @@
       </a>
     </div>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-creator">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">Creator toolkit</span>
         <span class="catalog-lane-count">5 skills</span>
@@ -3478,7 +3574,7 @@
       </a>
     </div>
 
-    <div class="catalog-lane reveal">
+    <div class="catalog-lane reveal" id="lane-recovery">
       <div class="catalog-lane-head">
         <span class="catalog-lane-name">Consumer recovery</span>
         <span class="catalog-lane-count">2 skills</span>
@@ -3832,25 +3928,67 @@
       .catch(function() {});
   })();
 
-  // Sample-session replay: lines are always present in the DOM; this only
-  // stages their appearance. Skipped entirely for reduced motion or no JS.
+  // Sample-session replay + lane rotation: the code-review session lives in
+  // the DOM as static content; with motion allowed, it replays staged, then
+  // the terminal cycles through sessions from the pack's other lanes.
+  // Skipped entirely for reduced motion or no JS.
   (function() {
     var sess = document.getElementById('term-session');
     if (!sess || reduceMotion) return;
-    var lines = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
-    if (!lines.length) return;
+    var initial = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
+    if (!initial.length) return;
+    var cursor = '<span class="term-cursor" aria-hidden="true"></span>';
+    var SESSIONS = [
+      initial.map(function(el) { return el.innerHTML; }),
+      [
+        '<span class="t-dim">$ </span><span class="t-cmd">/johnny-suede-design &quot;make it less boring&quot;</span>',
+        '<span class="t-dim">register: brand &middot; one memorable move locked</span>',
+        '<span class="t-dim">render &rarr; compare &rarr; patch &middot; desktop + mobile</span>',
+        '<span class="t-dim">copy gate &middot; competitor-swap test passed</span>',
+        '<span class="term-grade">VISUAL QA: PASSED &middot; SHIP</span>' + cursor
+      ],
+      [
+        '<span class="t-dim">$ </span><span class="t-cmd">/amazon-returns-recovery audit my account</span>',
+        '<span class="t-dim">order history scanned &middot; subscriptions checked</span>',
+        '<span class="t-warn">restocking fee found: $44.99</span><span class="t-dim"> &middot; never disclosed</span>',
+        '<span class="t-dim">live chat opened &middot; case argued &middot; fee waived</span>',
+        '<span class="term-grade">$448.31 RECOVERED &middot; ONE SITTING</span>' + cursor
+      ],
+      [
+        '<span class="t-dim">$ </span><span class="t-cmd">/site-to-ios-app https://yourapp.com</span>',
+        '<span class="t-dim">URL audit &middot; 4.2 wrapper-risk gate: pass</span>',
+        '<span class="t-dim">native value added: offline cache + share sheet</span>',
+        '<span class="t-dim">screenshots staged &middot; metadata drafted</span>',
+        '<span class="term-grade">ARCHIVE READY &middot; APP STORE LANE OPEN</span>' + cursor
+      ]
+    ];
     sess.classList.add('js-type');
-    var i = 0;
-    function next() {
-      if (i >= lines.length) return;
-      lines[i].classList.add('typed');
-      i += 1;
-      var upcoming = lines[i];
-      var pause = i === 1 ? 950 : 460;
-      if (upcoming && upcoming.querySelector('.term-grade')) pause = 850;
-      setTimeout(next, pause);
+    var idx = 0;
+    function render(lines) {
+      sess.innerHTML = lines.map(function(l) {
+        return '<span class="term-line">' + l + '</span>';
+      }).join('');
     }
-    setTimeout(next, 1200);
+    function play(then) {
+      var els = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
+      var i = 0;
+      function next() {
+        if (i >= els.length) { setTimeout(then, 5600); return; }
+        els[i].classList.add('typed');
+        i += 1;
+        var upcoming = els[i];
+        var pause = i === 1 ? 950 : 460;
+        if (upcoming && upcoming.querySelector('.term-grade')) pause = 850;
+        setTimeout(next, pause);
+      }
+      next();
+    }
+    function cycle() {
+      idx = (idx + 1) % SESSIONS.length;
+      render(SESSIONS[idx]);
+      play(cycle);
+    }
+    setTimeout(function() { play(cycle); }, 1200);
   })();
 </script>
 
