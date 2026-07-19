@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 25 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows."
+description: "Umbrella workflow for 27 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows."
 ---
 
 # Suede Workflow Skills
@@ -69,6 +69,7 @@ their names match the task:
 - `suede-agent-teams`
 - `suede-codex-fleet`
 - `suede-ai-eval`
+- `suede-recommend-next-action`
 - `suede-ship-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
@@ -76,6 +77,7 @@ their names match the task:
 - `suede-launch-packaging`
 - `suede-mcp-qa`
 - `site-to-ios-app`
+- `android-app-factory`
 - `suede-campaign-in-a-box`
 - `suede-sync-packaging`
 - `suede-release-linter`
@@ -432,6 +434,8 @@ Build and quality lane:
 - CI merge gate: `suede-ship-gate` — prompted only.
 - Large, risky, cross-surface, or release-bound coordination:
   `suede-agent-teams` (see Agent Team Workflow above).
+- One scored recommendation for what to do next, packaged as a runnable
+  prompt: `suede-recommend-next-action`.
 
 Launch lane, in pipeline order:
 
@@ -441,6 +445,8 @@ Launch lane, in pipeline order:
 - Page polish and conversion: `suede-site-alchemy`.
 - MCP changes: `suede-mcp-qa`.
 - Site-to-iOS conversion: `site-to-ios-app`.
+- Native Android app build, from keyword to Play Store release:
+  `android-app-factory`.
 
 Creator lane:
 
@@ -485,7 +491,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 25 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 25 skills into `~/.claude/skills/`:
+`suede-skills` installs all 27 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 27 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -514,13 +520,15 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-agent-teams \
   skills/suede-codex-fleet \
   skills/suede-ai-eval \
+  skills/suede-recommend-next-action \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
   skills/suede-mcp-qa \
-  skills/site-to-ios-app
+  skills/site-to-ios-app \
+  skills/android-app-factory
 ```
 
 Install creator skills:

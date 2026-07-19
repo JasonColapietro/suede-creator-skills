@@ -4,8 +4,8 @@
 
 An open-source pack of inspectable Agent Skills for Claude Code, OpenAI Codex,
 and compatible agents. It gives builders reusable workflows for orchestration,
-code review, ship gates, AI evaluation, design, copy, SEO, iOS conversion, and
-creator-rights work.
+code review, ship gates, AI evaluation, design, copy, SEO, iOS conversion,
+native Android app shipping, and creator-rights work.
 
 ## Audience
 
@@ -31,7 +31,7 @@ workflow pack with a clear install path and unusually strong ship discipline.
 
 ## Constraints
 
-- Keep all 25 public skills, install commands, benchmark disclosures, canonical
+- Keep all 27 public skills, install commands, benchmark disclosures, canonical
   URLs, structured data, and GitHub Pages paths accurate.
 - Preserve public claim safety: comparisons remain self-graded and losses stay
   visible.

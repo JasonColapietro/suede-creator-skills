@@ -1,7 +1,7 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.5.0",
-  "updated": "2026-07-12",
+  "version": "0.6.0",
+  "updated": "2026-07-19",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to an open-source Suede skill pack: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, Codex CLI worker-fleet orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
@@ -63,6 +63,8 @@
         "suede-rights-passport",
         "suede-rights-audit",
         "site-to-ios-app",
+        "android-app-factory",
+        "suede-recommend-next-action",
         "amazon-returns-recovery",
         "subscription-recovery"
       ]
@@ -83,6 +85,12 @@
     }
   ],
   "skills": [
+    {
+      "name": "android-app-factory",
+      "area": "workflow",
+      "description": "Plan or build a native Android app end to end: keyword selection, Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety and content-rating disclosure, signing, and Google Play Console release.",
+      "useWhen": "The user wants to plan, build, or ship a native Android app from an idea, keyword, or existing spec, or prepare a Play Store listing and release."
+    },
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
@@ -180,6 +188,12 @@
       "useWhen": "Validate the Suede Skills MCP, catalog, tool schemas, prompts, resources, install guidance, and docs."
     },
     {
+      "name": "suede-recommend-next-action",
+      "area": "workflow",
+      "description": "Reads current repo, terminal, plan, or handoff state, scores 2-4 candidate moves on goal alignment, unblocking, evidence, urgency, and leverage, and returns one recommendation packaged as a short runnable prompt, expanding into a full operator or granular prompt only on request.",
+      "useWhen": "The user asks what's next, what to do next, to recommend the next move, or to give/expand/granularize a prompt after a review, audit, plan, or stalled task."
+    },
+    {
       "name": "suede-release-linter",
       "area": "creator",
       "description": "Audit creative release folders before handoff: metadata, file structure, artwork, lyrics, stems, rights blockers, and platform readiness.",
@@ -230,7 +244,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 25 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS conversion, and creator workflows.",
+      "description": "Umbrella workflow for 27 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

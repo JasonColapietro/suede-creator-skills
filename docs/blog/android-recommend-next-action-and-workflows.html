@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two new lanes: a next-action recommender and a one-prompt Android app factory | Suede Creator Skills</title>
+    <meta name="description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, bringing the pack to 27 public skills. Here's what shipped and how the end-to-end workflow routes to both.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
+    <meta property="og:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, bringing the pack to 27 public skills. Here's what shipped and how the end-to-end workflow routes to both.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
+    <meta name="twitter:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, bringing the pack to 27 public skills. Here's what shipped and how the end-to-end workflow routes to both.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html#article",
+        "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
+        "description": "Suede Creator Skills adds suede-recommend-next-action and android-app-factory, bringing the pack to 27 public skills, and routes both through the existing end-to-end workflow umbrella.",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html",
+        "datePublished": "2026-07-19",
+        "dateModified": "2026-07-19",
+        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
+        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "Android app development", "next action recommendation", "agent workflow"],
+        "mainEntityOfPage": "https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html"
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c0524a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--gold);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-left-color: var(--red); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
+      }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+      .ship-strip-row code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
+        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
+      }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Blog</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <p class="eyebrow">Product update &middot; July 19, 2026</p>
+      <h1>Two new lanes: a next-action recommender and a one-prompt Android app factory</h1>
+      <p class="post-meta">Suede Creator Skills is now <strong>27 public skills</strong>. Here's what shipped and why.</p>
+
+      <p class="lead">Two skills landed in the pack: <code>suede-recommend-next-action</code>, which scores your real options and hands back one runnable prompt instead of a wall of choices, and <code>android-app-factory</code>, a one-prompt pipeline from a keyword to a signed Play Store release. Both route through the same umbrella that already handled the rest of the pack, so nothing about installing or invoking the workflow changed &mdash; the workflow just covers more ground now.</p>
+
+      <h2>Stop asking "what should I do next"</h2>
+      <p><code>suede-recommend-next-action</code> reads whatever state is actually in front of it &mdash; the current repo, terminal output, an open plan, a stale handoff &mdash; and scores 2 to 4 real candidate moves against five criteria: goal alignment, unblocking, evidence, urgency, and leverage. The highest score wins. Ties break toward the required prerequisite, then whichever choice is confirmable by current evidence, then the more reversible option.</p>
+      <p>The output is deliberately small by default: a one-sentence recommendation, one sentence on why it's the move right now, and a 2-4 sentence prompt you can hand to another agent. The full operator brief &mdash; target, objective, verified state, authorized scope, verification steps &mdash; stays hidden until you ask to <code>expand prompt</code>. Ask for <code>make it granular</code> and it breaks the same brief into atomic, numbered steps with exact commands.</p>
+
+      <div class="panel" aria-label="Example session">
+        <p><code>&gt; /suede-recommend-next-action what's next</code></p>
+        <p>Recommended action: fix the failing auth test before touching the new endpoint.<br>
+        Why now: it's the one candidate confirmed broken by the current test run and blocks two downstream tasks.</p>
+        <p>Quick prompt: Use <code>suede-code</code> to fix the failing <code>test_auth_refresh</code> case in <code>auth/tests/test_refresh.py</code>, keeping the token-rotation contract unchanged. Done signal: the suite passes locally.</p>
+        <p>Say "expand prompt" for the full operator version or "make it granular" for exact steps and commands.</p>
+      </div>
+
+      <p>It never executes anything itself &mdash; it recommends, and only mutates once you separately authorize the work. And it doesn't try to replace a repo's existing plan or progress tracker: if one exists, the recommendation treats it as one candidate and verifies it against current source instead of running a second, competing process.</p>
+
+      <h2>One prompt to a Play Store-ready app</h2>
+      <p><code>android-app-factory</code> is the Android counterpart to the pack's existing <a href="../skills/site-to-ios-app.html">site-to-ios-app</a> skill, and it covers more ground: a full native pipeline from a one-line idea or target keyword through a signed release, not just wrapping an existing site.</p>
+      <p>The default pipeline, in order:</p>
+      <ul>
+        <li>Pick a winnable target keyword before writing any code.</li>
+        <li>Scaffold native Kotlin + Jetpack Compose &mdash; never a bare JVM module, which produces a JAR instead of an installable APK/AAB.</li>
+        <li>Build one real core loop (input, processing, structured result, history, saved set) before monetization or polish.</li>
+        <li>Add Play Billing only when it won't block the v1 review flow &mdash; a free v1 is the default when it would.</li>
+        <li>Produce Play Store screenshots, a feature graphic, and listing copy sized to Play's exact character limits (30/80/4000).</li>
+        <li>Fill out the Data Safety form and content-rating questionnaire truthfully, matched to actual SDK and data behavior.</li>
+        <li>Run a ship gate before release: build, listing, screenshots, signing, and secrets all get checked.</li>
+        <li>Release only after explicit confirmation, starting on internal or closed testing before any production rollout.</li>
+      </ul>
+      <p>Public-safe defaults hold throughout: placeholder application IDs, a gitignored service-account key for Play Console API access, and no upload keystore, keystore password, or real package name ever lands in the output.</p>
+
+      <div class="panel panel--red" aria-label="Example session">
+        <p><code>&gt; /android-app-factory build a habit tracker</code></p>
+        <p>Keyword picked &middot; Kotlin + Compose scaffold building<br>
+        Play Billing skipped for v1 &middot; screenshots + listing drafted<br>
+        <strong>BUNDLE SIGNED &middot; INTERNAL TESTING</strong></p>
+      </div>
+
+      <h2>The same end-to-end workflow, now wider</h2>
+      <p>Neither skill needed a new install path. <code>suede-workflow-skills</code>, the umbrella that already routed plain-English requests to the right lane, now also recognizes "what's next" and "build an Android app" and hands off to the right specialist &mdash; the same way it already routes code review, design, SEO, and the consumer-recovery lane. If you've already installed the full pack, both are live.</p>
+      <p>That's the shape of every addition to this pack: a new capability plugs into the existing router instead of becoming a second system to remember. The workflow was already end-to-end from a plain request to a shipped result; it just covers a next-action decision and a second mobile platform now.</p>
+
+      <h2>Install it</h2>
+      <p><strong>Claude Code &mdash; full pack:</strong></p>
+      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code></pre>
+      <p><strong>Claude Code &mdash; just the two new skills:</strong></p>
+      <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
+mkdir -p .claude/skills
+cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/
+cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skills/</code></pre>
+      <p><strong>Codex installer:</strong></p>
+      <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo JasonColapietro/suede-creator-skills \
+  --path skills/android-app-factory skills/suede-recommend-next-action</code></pre>
+
+      <div class="divider"></div>
+
+      <p><a class="button" href="../skills/android-app-factory.html">Read the Android App Factory docs</a> <a class="button secondary" href="../skills/suede-recommend-next-action.html">Read the Recommend Next Action docs</a></p>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <div class="ship-strip-row">
+          <code>/plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 27-skill, MIT-licensed pack for Claude Code and OpenAI Codex: agent orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
