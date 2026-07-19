@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Recommend Next Action"
+  short_description: "Suede next move with a short runnable prompt"
+  default_prompt: "Use $suede-recommend-next-action to give me one next move and a short runnable prompt. Expand it only if I ask."

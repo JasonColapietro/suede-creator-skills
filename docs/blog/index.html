@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Suede Creator Skills</title>
+    <meta name="description" content="Product updates for Suede Creator Skills: new skills, workflow changes, and what shipped in the open-source Claude Code and Codex skill pack.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/blog/">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog - Suede Creator Skills">
+    <meta property="og:description" content="Product updates for Suede Creator Skills: new skills, workflow changes, and what shipped in the open-source Claude Code and Codex skill pack.">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/blog/">
+    <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - Suede Creator Skills">
+    <meta name="twitter:description" content="Product updates for Suede Creator Skills: new skills, workflow changes, and what shipped in the open-source Claude Code and Codex skill pack.">
+    <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/blog/#blog",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/blog/",
+        "name": "Suede Creator Skills Blog",
+        "description": "Product updates for the Suede Creator Skills pack: new skills, workflow changes, and what shipped.",
+        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
+            "url": "https://jasoncolapietro.github.io/suede-creator-skills/blog/android-recommend-next-action-and-workflows.html",
+            "datePublished": "2026-07-19"
+          }
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c0524a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(900px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 24px;
+      }
+      h1 {
+        font-size: clamp(38px, 5.5vw, 64px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 20px;
+      }
+      .lead { font-size: 17px; line-height: 1.7; color: var(--muted); max-width: 640px; margin-bottom: 44px; }
+      .posts { border-top: 1px solid var(--border); }
+      a.post-row {
+        display: block;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--hairline);
+        transition: background 0.15s;
+      }
+      a.post-row:hover { background: var(--surface); }
+      .post-date { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+      .post-title { font-size: clamp(20px, 2.4vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 8px; }
+      .post-dek { font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 680px; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Blog</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell">
+      <p class="eyebrow">Blog</p>
+      <h1>What shipped, and why.</h1>
+      <p class="lead">Product updates for Suede Creator Skills: new skills, workflow changes, and what actually changed in the pack &mdash; not a marketing recap.</p>
+
+      <div class="posts">
+        <a class="post-row" href="android-recommend-next-action-and-workflows.html">
+          <div class="post-date">July 19, 2026</div>
+          <div class="post-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</div>
+          <p class="post-dek">suede-recommend-next-action scores your real options and hands back one runnable prompt. android-app-factory ships a native Android app from a keyword through a signed Play Store release. The pack is now 27 public skills.</p>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-shell footer-inner">
+        <div class="footer-brand">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+          <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+          <span class="footer-divider">|</span>
+          <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+          <span class="footer-divider">|</span>
+          <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
