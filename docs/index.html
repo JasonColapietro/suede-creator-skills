@@ -2040,6 +2040,17 @@
       animation: pulse-dot 2.2s ease-out infinite;
     }
 
+    .eyebrow-ship {
+      color: var(--color-accent-gold);
+      margin-left: 8px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid rgba(200, 169, 110, 0.45);
+      transition: border-color 0.15s ease;
+      white-space: nowrap;
+    }
+    .eyebrow-ship:hover { border-bottom-color: var(--color-accent-gold); }
+    .eyebrow-ship:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 3px; }
+
     @media (max-width: 480px) {
       #hero-eyebrow {
         margin-bottom: 18px;
@@ -2729,6 +2740,130 @@
     /* Terminal keeps its footprint while sessions rotate */
     .term-session { min-height: 214px; }
 
+    /* ---- CHANGELOG (ship log) ---- */
+    #changelog {
+      background: var(--color-bg);
+      padding: 100px 0 108px;
+      border-bottom: 1px solid #141414;
+      scroll-margin-top: calc(var(--nav-height) + 16px);
+    }
+    .clog-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 24px 72px; align-items: start;
+    }
+    .clog-eyebrow {
+      margin: 0 0 16px;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--color-accent-gold);
+    }
+    .clog-headline {
+      margin: 0 0 20px;
+      font-size: clamp(32px, 4.6vw, 56px);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.02;
+      color: var(--color-text-primary);
+      text-wrap: balance;
+    }
+    .clog-sub { margin: 0 0 36px; max-width: 52ch; font-size: 16.5px; line-height: 1.7; color: var(--color-text-secondary); }
+    .clog-sub code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; color: var(--color-accent-gold); }
+    .clog-fresh {
+      display: inline-flex; align-items: center; gap: 9px;
+      margin: 0 0 30px; padding: 8px 14px;
+      border: 1px solid rgba(200, 169, 110, 0.28); border-radius: var(--radius-sm);
+      background: rgba(200, 169, 110, 0.05);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px; letter-spacing: 0.06em;
+      color: var(--color-accent-gold);
+    }
+    .clog-fresh::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--color-accent-gold);
+      animation: pulse-dot 2.2s ease-out infinite;
+    }
+    .clog-spark { display: flex; align-items: flex-end; gap: 4px; height: 52px; max-width: 320px; margin: 0 0 10px; }
+    .clog-spark span { flex: 1; min-height: 3px; border-radius: 1px 1px 0 0; background: rgba(200, 169, 110, 0.30); }
+    .clog-spark span:last-child { background: var(--color-accent-gold); }
+    .clog-spark-caption {
+      margin: 0 0 34px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px; letter-spacing: 0.04em;
+      color: var(--color-text-secondary);
+    }
+    .clog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .clog-filter {
+      appearance: none; cursor: pointer;
+      padding: 7px 14px; min-height: 34px;
+      border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+      background: transparent;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px; letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .clog-filter:hover { color: var(--color-text-primary); border-color: #444440; }
+    .clog-filter[aria-pressed="true"] {
+      color: var(--color-bg);
+      background: var(--color-accent-gold);
+      border-color: var(--color-accent-gold);
+      font-weight: 700;
+    }
+    .clog-filter:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 2px; }
+    .clog-list { list-style: none; margin: 8px 0 0; padding: 0; border-left: 1px solid #1c1c1c; }
+    .clog-item { position: relative; padding: 20px 0 20px 30px; border-bottom: 1px solid #141414; }
+    .clog-item::before {
+      content: '';
+      position: absolute; left: -5px; top: 26px;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--color-bg);
+      border: 2px solid #55503f;
+    }
+    .clog-item[data-type="new"]::before { background: var(--color-accent-gold); border-color: var(--color-accent-gold); }
+    .clog-item[data-type="perf"]::before { border-color: var(--color-accent-gold); }
+    .clog-item[hidden] { display: none; }
+    .clog-meta {
+      display: flex; align-items: baseline; gap: 14px;
+      margin: 0 0 7px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+    }
+    .clog-date { color: var(--color-text-secondary); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; white-space: nowrap; }
+    .clog-tag {
+      padding: 2px 8px;
+      border: 1px solid #2c2c2c; border-radius: var(--radius-sm);
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--color-text-secondary);
+    }
+    .clog-item[data-type="new"] .clog-tag { color: var(--color-accent-gold); border-color: rgba(200, 169, 110, 0.45); }
+    .clog-item[data-type="perf"] .clog-tag { color: var(--color-text-primary); border-color: #3a3a36; }
+    .clog-hash {
+      margin-left: auto;
+      color: var(--color-accent-gold); opacity: 0.75;
+      letter-spacing: 0.03em; white-space: nowrap;
+      transition: opacity 0.15s ease;
+    }
+    .clog-hash:hover, .clog-hash:focus-visible { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+    .clog-hash:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 2px; }
+    .clog-title { margin: 0 0 6px; font-size: 17.5px; font-weight: 700; letter-spacing: -0.01em; color: var(--color-text-primary); }
+    .clog-detail { margin: 0; max-width: 58ch; font-size: 14.5px; line-height: 1.65; color: var(--color-text-secondary); }
+    .clog-detail code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; color: var(--color-accent-gold); }
+    .clog-more {
+      display: inline-block; margin-top: 24px; padding-bottom: 2px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: var(--color-accent-gold);
+      border-bottom: 1px solid rgba(200, 169, 110, 0.3);
+    }
+    .clog-more:hover { border-bottom-color: var(--color-accent-gold); }
+    .clog-more:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 3px; }
+    @media (max-width: 900px) {
+      #changelog { padding: 80px 0 88px; }
+      .clog-inner { grid-template-columns: 1fr; gap: 44px; padding: 0 24px; }
+      .clog-meta { flex-wrap: wrap; row-gap: 6px; }
+    }
+
     /* ---- ROUTER ---- */
     #router { background: #080808; padding: 120px 0; }
     .router-inner {
@@ -2870,6 +3005,7 @@
 
     <div class="nav-right">
       <a href="skills/" class="nav-link">Skills</a>
+      <a href="#changelog" class="nav-link">Changelog</a>
       <a href="#scorecard" class="nav-link">Benchmarks</a>
       <a href="guide.html" class="nav-link">Guide</a>
       <a href="blog/" class="nav-link">Blog</a>
@@ -2884,6 +3020,7 @@
 
   <div id="nav-mobile-menu" role="menu" aria-label="Mobile navigation">
     <a href="skills/" class="nav-mobile-link" role="menuitem">Skills</a>
+    <a href="#changelog" class="nav-mobile-link" role="menuitem">Changelog</a>
     <a href="#scorecard" class="nav-mobile-link" role="menuitem">Benchmarks</a>
     <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
     <a href="blog/" class="nav-mobile-link" role="menuitem">Blog</a>
@@ -2904,7 +3041,7 @@
 
     <div id="hero-grid">
       <div id="hero-copy">
-        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT &middot; Claude Code + Codex</span>
+        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Shipped Jul 19</a></span>
 
         <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and completely unsupervised.</h1>
 
@@ -3050,6 +3187,130 @@
     <span class="marquee-item">/subscription-recovery</span>
   </div>
 </div>
+
+<!-- CHANGELOG / SHIP LOG -->
+<section id="changelog" aria-labelledby="changelog-headline">
+  <div class="clog-inner">
+
+    <div class="clog-rail">
+      <p class="clog-eyebrow reveal">Changelog &middot; straight from main</p>
+      <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
+      <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
+
+      <p class="clog-fresh reveal reveal-d2">Last shipped Jul 19, 2026 <span id="clog-fresh-rel" data-iso="2026-07-19"></span></p>
+
+      <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 2, 3, 1, 1, 48, 37, 28, 17, 22, and 2 commits.">
+        <span style="height:4%"></span>
+        <span style="height:6%"></span>
+        <span style="height:3%"></span>
+        <span style="height:3%"></span>
+        <span style="height:100%"></span>
+        <span style="height:77%"></span>
+        <span style="height:58%"></span>
+        <span style="height:35%"></span>
+        <span style="height:46%"></span>
+        <span style="height:4%"></span>
+      </div>
+      <p class="clog-spark-caption reveal reveal-d2">161 commits &middot; 10 weeks &middot; newest on the right</p>
+
+      <div class="clog-filters reveal reveal-d2" role="group" aria-label="Filter changelog entries by type">
+        <button class="clog-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="clog-filter" type="button" data-filter="new" aria-pressed="false">New skills</button>
+        <button class="clog-filter" type="button" data-filter="fix" aria-pressed="false">Fixes</button>
+        <button class="clog-filter" type="button" data-filter="perf" aria-pressed="false">Perf</button>
+        <button class="clog-filter" type="button" data-filter="site" aria-pressed="false">Site</button>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d1">
+      <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="new">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-19</span>
+            <span class="clog-tag">New skill</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/6acc19f" target="_blank" rel="noopener" aria-label="View commit 6acc19f on GitHub">6acc19f</a>
+          </p>
+          <h3 class="clog-title">Android lane opens: android-app-factory + suede-recommend-next-action</h3>
+          <p class="clog-detail">One prompt to a Play-Store-ready Kotlin/Compose build, plus a skill that reads repo state and names the single next move. The pack goes 25 &rarr; 27.</p>
+        </li>
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-18</span>
+            <span class="clog-tag">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/df4c925" target="_blank" rel="noopener" aria-label="View commit df4c925 on GitHub">df4c925</a>
+          </p>
+          <h3 class="clog-title">MCP server finds its skills from any install path</h3>
+          <p class="clog-detail"><code>suede_creator_mcp</code> now resolves its catalog through <code>CLAUDE_PLUGIN_ROOT</code> instead of assuming a fixed layout, so marketplace-cache installs stop coming up empty.</p>
+        </li>
+
+        <li class="clog-item" data-type="site">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-13</span>
+            <span class="clog-tag">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/7cdb9df" target="_blank" rel="noopener" aria-label="View commit 7cdb9df on GitHub">7cdb9df</a>
+          </p>
+          <h3 class="clog-title">Homepage v2: the hero terminal rotates all six lanes</h3>
+          <p class="clog-detail">Ten commits in one sitting: a live sample session that cycles disciplines, a lane index, and copy with an actual hook.</p>
+        </li>
+
+        <li class="clog-item" data-type="new">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-12</span>
+            <span class="clog-tag">New skill</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/a2db2a8" target="_blank" rel="noopener" aria-label="View commit a2db2a8 on GitHub">a2db2a8</a>
+          </p>
+          <h3 class="clog-title">Consumer-recovery lane: the negotiator points at your bills</h3>
+          <p class="clog-detail">amazon-returns-recovery runs fee discovery and live-chat disputes; subscription-recovery generalizes it to any recurring charge.</p>
+        </li>
+
+        <li class="clog-item" data-type="perf">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-09</span>
+            <span class="clog-tag">Perf</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/778946a" target="_blank" rel="noopener" aria-label="View commit 778946a on GitHub">778946a</a>
+          </p>
+          <h3 class="clog-title">LCP: above-the-fold previews load first</h3>
+          <p class="clog-detail">Skill preview cards above the fold get <code>fetchpriority="high"</code> with async decoding; everything below the fold stays lazy.</p>
+        </li>
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-08</span>
+            <span class="clog-tag">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/5046f9c" target="_blank" rel="noopener" aria-label="View commit 5046f9c on GitHub">5046f9c</a>
+          </p>
+          <h3 class="clog-title">Artist profile no longer returns zero skills</h3>
+          <p class="clog-detail">The MCP artist filter matched a <code>skill.area</code> no catalog entry has; it now maps to the creator-tagged skills. <code>classify_file</code> also stops reading ancestor directory names outside the project.</p>
+        </li>
+
+        <li class="clog-item" data-type="new">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-05</span>
+            <span class="clog-tag">New skill</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/6c38b9c" target="_blank" rel="noopener" aria-label="View commit 6c38b9c on GitHub">6c38b9c</a>
+          </p>
+          <h3 class="clog-title">site-to-ios-app: live URL to App Store archive</h3>
+          <p class="clog-detail">Wrap an existing site into a submittable iOS shell. The mobile lane opens.</p>
+        </li>
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-05</span>
+            <span class="clog-tag">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/e1fc5b5" target="_blank" rel="noopener" aria-label="View commit e1fc5b5 on GitHub">e1fc5b5</a>
+          </p>
+          <h3 class="clog-title">Skill-count drift guard in the validator</h3>
+          <p class="clog-detail">The build now fails whenever public copy disagrees with the number of skills actually in the pack. This page can't quietly lie.</p>
+        </li>
+
+      </ol>
+      <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub &rarr;</a>
+    </div>
+
+  </div>
+</section>
 
 <!-- LANE INDEX -->
 <section id="lanes" aria-labelledby="lanes-headline">
@@ -4049,6 +4310,35 @@
       play(cycle);
     }
     setTimeout(function() { play(cycle); }, 1200);
+  })();
+
+  // Changelog: type filters + relative freshness
+  (function() {
+    var list = document.getElementById('clog-list');
+    if (!list) return;
+
+    var items = Array.prototype.slice.call(list.querySelectorAll('.clog-item'));
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.clog-filter'));
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btns.forEach(function(b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        var t = btn.getAttribute('data-filter');
+        items.forEach(function(it) {
+          it.hidden = t !== 'all' && it.getAttribute('data-type') !== t;
+        });
+      });
+    });
+
+    // "Last shipped" gains a client-computed relative label; the static
+    // date stays as the no-JS truth.
+    var rel = document.getElementById('clog-fresh-rel');
+    if (rel && rel.getAttribute('data-iso')) {
+      var shipped = new Date(rel.getAttribute('data-iso') + 'T12:00:00');
+      var days = Math.floor((Date.now() - shipped.getTime()) / 86400000);
+      if (days >= 0 && days < 120) {
+        rel.textContent = '· ' + (days === 0 ? 'today' : days === 1 ? 'yesterday' : days + ' days ago');
+      }
+    }
   })();
 </script>
 
