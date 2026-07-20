@@ -120,23 +120,25 @@
     code { font-family: var(--mono); font-size: 0.9em; color: var(--gold); }
 
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 32px; }
-    .cell { background: var(--card); padding: 30px 28px; border-left: 3px solid var(--gold); }
-    .cell--red { border-left-color: var(--red); }
+    .cell { background: var(--card); padding: 30px 28px; }
     .cell h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
     .cell > p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
     .cell > p a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); }
 
-    .copy-block { border-top: 1px solid var(--hairline); margin-top: 18px; padding-top: 16px; }
+    .copy-block { border-top: 1px solid var(--hairline); margin-top: 18px; padding-top: 14px; }
+    .copy-block-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
     .copy-block b {
-      display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
     }
     .cell--red .copy-block b { color: var(--red-text); }
-    .copy-block p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+    .copy-block p { font-size: 14.5px; line-height: 1.65; color: #cfcbc2; }
 
     .terminal { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 24px 0 0; }
     .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
-    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #242424; }
+    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+    .tdot:first-child { background: #4a2a28; }
+    .tdot:nth-child(3) { background: #2c3a2a; }
     .terminal-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
     .terminal-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; }
     .terminal-body pre {
@@ -145,16 +147,17 @@
     }
     .copy-btn {
       flex-shrink: 0; background: transparent; border: 1px solid var(--border);
-      color: var(--muted); font-family: inherit; font-size: 12.5px;
-      padding: 7px 15px; border-radius: 4px; cursor: pointer;
+      color: var(--muted); font-family: var(--mono); font-size: 12px;
+      padding: 6px 13px; border-radius: 4px; cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
     .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
+    .copy-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
     .note {
       margin-top: 32px; padding: 24px 28px;
-      border: 1px solid var(--hairline); border-left: 3px solid var(--gold);
-      border-radius: 4px; background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px; background: var(--surface);
       font-size: 14.5px; color: var(--muted); line-height: 1.7;
     }
     .note ul { list-style: none; }
@@ -177,24 +180,30 @@
       .terminal-body { flex-direction: column; }
       .copy-btn { align-self: flex-end; }
     }
-      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
-      .ship-strip-head {
-        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
-        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
-      }
-      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-      .ship-strip-row code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
-        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
-      }
-      .ship-strip-row a {
-        display: inline-flex; align-items: center; min-height: 44px;
-        color: #171310; font-size: 15px; font-weight: 700;
-        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
-        transition: border-color 0.15s;
-      }
-      .ship-strip-row a:hover { border-color: #171310; }
+    .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+    .ship-strip-head {
+      font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+    }
+    .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+    .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+    .ship-strip-row code {
+      font-family: var(--mono); font-size: 16px; font-weight: 600;
+      color: #f0ece4; background: #171310;
+      border-radius: 4px; padding: 13px 20px;
+    }
+    .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
+    .ship-strip-row a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: #171310; font-size: 15px; font-weight: 700;
+      border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .ship-strip-row a:hover { border-color: #171310; }
+    @media (max-width: 720px) {
+      .ship-strip { padding: 48px 0; }
+      .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -229,34 +238,55 @@
       <article class="cell">
         <h3>Repo copy</h3>
         <div class="copy-block">
-          <b>One-line description</b>
+          <div class="copy-block-head">
+            <b>One-line description</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>A 27-skill, MIT-licensed pack for Claude Code and Codex: orchestrate multi-agent build lanes with quality gates, run code review with a blunt A-F ship grade, wire CI ship-gates, design measurable AI evals, Suedify a site from a reference URL, and ship public work with the design, copy, and SEO lanes.</p>
         </div>
         <div class="copy-block">
-          <b>Full description</b>
+          <div class="copy-block-head">
+            <b>Full description</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Suede Creator Skills is a public skill pack for builders, designers, founders, creators, agencies, and AI power users. It ships 27 public SKILL.md folders: one umbrella workflow, 19 workflow skills for coordinated agent teams, Codex CLI worker fleets, code review and A-F grading, CI ship-gates, AI evals, a next-action recommender, Suedify, writing, design, SEO/AEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, and iOS and Android app shipping, 5 creator skills for campaigns, sync packaging, release linting, rights passports, and rights audits, plus 2 consumer-recovery skills that dispute return fees and claw back forgotten subscriptions.</p>
         </div>
         <div class="copy-block">
-          <b>Component stack</b>
+          <div class="copy-block-head">
+            <b>Component stack</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Suede evolves while you use it. It loads capabilities as inspectable SKILL.md folders instead of bloating one memory page, Suedifies a target site from a reference URL, coordinates agent teams through shared evidence, wires CI that gates the merge, audits SEO/AEO/GEO/AI EO, scores visibility at the schema and answer-engine layer, grades code readiness A-F, packages creator campaign and rights evidence, and uses MCP only when structured discovery or QA helps.</p>
         </div>
         <div class="copy-block">
-          <b>GitHub Pages note</b>
+          <div class="copy-block-head">
+            <b>GitHub Pages note</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>This site is the actual GitHub Pages surface generated from the public suede-creator-skills repo, not a separate marketing site. The page itself is proof: polished landing copy, public docs, install commands, sitemap, schema, OG metadata, copy bank, MCP docs, skill pages, mobile QA, and founder attribution live with the source.</p>
         </div>
       </article>
       <article class="cell cell--red">
         <h3>Pages copy</h3>
         <div class="copy-block">
-          <b>Hero</b>
+          <div class="copy-block-head">
+            <b>Hero</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Stop prompting your agent like it has amnesia.</p>
         </div>
         <div class="copy-block">
-          <b>Subhead</b>
+          <div class="copy-block-head">
+            <b>Subhead</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Twenty-seven public skills your agent loads as one portable workflow: linked preferences, Suedify a target page from a reference URL, rewrite the offer, audit SEO/AEO/AI EO, polish GitHub Pages, grade visibility and code, design AI evals, get a scored next-action recommendation, ship an iOS or Android app, run coordinated agent-team QA, or package creator campaign and rights evidence.</p>
         </div>
         <div class="copy-block">
-          <b>Proof line</b>
+          <div class="copy-block-head">
+            <b>Proof line</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Invoke Johnny Suede Write, Johnny Suede Design, or Suede Code and the agent gets the whole workflow: taste, copy, SEO/AEO/GEO/AI EO, schema checks, code review, A-F grades, MCP scaffolds, and the Cue Suede feedback loop.</p>
         </div>
       </article>
@@ -270,11 +300,17 @@
         <h3>Public installs and MCP</h3>
         <p>Install Suede skills from the public GitHub repo. Use the Suede Skills MCP only when the task benefits from structured skill discovery, install guidance, SEO/AEO/AI EO copy audits, visibility or code grading scaffolds, GitHub Pages QA, and repeatable checklists.</p>
         <div class="copy-block">
-          <b>Hero</b>
+          <div class="copy-block-head">
+            <b>Hero</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Install public Suede skills from GitHub. Use MCP when it helps.</p>
         </div>
         <div class="copy-block">
-          <b>CTA options</b>
+          <div class="copy-block-head">
+            <b>CTA options</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Install the workflow skill. Use the MCP. List Suede skills. Run an SEO/AEO/AI EO copy audit. Grade visibility and CTA clarity. Grade code A-F. Build a QA checklist.</p>
         </div>
       </article>
@@ -282,7 +318,10 @@
         <h3>SEO/AEO/AI EO audit copy</h3>
         <p>Use Suede Copy when a page needs stronger offer copy plus title, meta description, H1, heading hierarchy, schema, answer-ready copy, internal links, CTA truth, Google and Gemini result-surface language, and evidence boundary checks.</p>
         <div class="copy-block">
-          <b>Audit promise</b>
+          <div class="copy-block-head">
+            <b>Audit promise</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Find what blocks discovery, trust, and the next click.</p>
         </div>
       </article>
@@ -290,11 +329,17 @@
         <h3>Visibility grader copy</h3>
         <p>Use Suede Visibility Grader when a public page needs a clear A-F read on whether the right person or agent can find it, understand it, trust it, cite it, and take the next action.</p>
         <div class="copy-block">
-          <b>One-line description</b>
+          <div class="copy-block-head">
+            <b>One-line description</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Grade a website for findability, first-screen clarity, CTA pull, proof, AI readability, and design signal.</p>
         </div>
         <div class="copy-block">
-          <b>CTA options</b>
+          <div class="copy-block-head">
+            <b>CTA options</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Grade this page. Fix the first screen. Rewrite the CTA. Improve AI readability. Check Google and Gemini result surfaces.</p>
         </div>
       </article>
@@ -302,7 +347,10 @@
         <h3>Code grade and agent-team copy</h3>
         <p>Use suede-code when a change needs code review and an A-F grade across correctness, security, data/state, iOS/native contracts, deploy readiness, and ship risk. Use suede-ship-gate to block a merge when required CI checks fail. Use johnny-suede-design when a session needs the full design stack including Suedify, UI polish, product surfaces, GitHub Pages polish, and visual QA in one mode.</p>
         <div class="copy-block">
-          <b>Agent-team loop copy</b>
+          <div class="copy-block-head">
+            <b>Agent-team loop copy</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Split major work into loops that actually communicate: scout and constraints, safe parallel build, shared evidence, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, release lock, recovery, and evidence handoff.</p>
         </div>
       </article>
@@ -316,11 +364,17 @@
         <h3>Creator Rights Package Builder</h3>
         <p>Package a creator folder into a local rights and provenance bundle with credits, splits, license notes, structured metadata, and missing-info reports for downstream review.</p>
         <div class="copy-block">
-          <b>Page hero</b>
+          <div class="copy-block-head">
+            <b>Page hero</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Create a local rights package before the work leaves your machine.</p>
         </div>
         <div class="copy-block">
-          <b>CTA options</b>
+          <div class="copy-block-head">
+            <b>CTA options</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Create a rights package. View the skill folder. Run the package script. Pair with the release linter.</p>
         </div>
       </article>
@@ -328,11 +382,17 @@
         <h3>Release Metadata Linter</h3>
         <p>Audit a release folder for missing metadata, artwork, masters, lyrics, stems, credits, splits, sample status, provenance notes, and downstream handoff blockers.</p>
         <div class="copy-block">
-          <b>Page hero</b>
+          <div class="copy-block-head">
+            <b>Page hero</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Find release gaps before they become rights problems.</p>
         </div>
         <div class="copy-block">
-          <b>CTA options</b>
+          <div class="copy-block-head">
+            <b>CTA options</b>
+            <button class="copy-btn" type="button" data-copy-block>Copy</button>
+          </div>
           <p>Audit a release folder. View the lint script. Read the lint rules. Create a rights package.</p>
         </div>
       </article>
@@ -394,8 +454,9 @@ Repo: https://github.com/JasonColapietro/suede-creator-skills</pre>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
         <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
         <div class="ship-strip-row">
-          <code>/plugin install suede-skills@suede</code>
+          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
           <a href="plugins.html">All install paths</a>
         </div>
       </div>
@@ -418,13 +479,24 @@ Repo: https://github.com/JasonColapietro/suede-creator-skills</pre>
 </footer>
 
 <script>
-  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+  // Progressive enhancement only: every block is plain selectable text without JS.
+  function wireCopy(btn, getText) {
     btn.addEventListener('click', function() {
-      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(getText()).then(function() {
         btn.textContent = 'Copied';
         btn.classList.add('copied');
         setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
       });
+    });
+  }
+  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+    wireCopy(btn, function() { return btn.getAttribute('data-copy'); });
+  });
+  document.querySelectorAll('.copy-btn[data-copy-block]').forEach(function(btn) {
+    wireCopy(btn, function() {
+      var p = btn.closest('.copy-block').querySelector('p');
+      return p ? p.textContent.trim() : '';
     });
   });
 </script>
