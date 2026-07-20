@@ -5,7 +5,7 @@ systems, reference-site restyling, page visibility, launch packaging, or
 agent-team delivery. These gates add quality pressure without replacing the
 existing Suede rules for creator ownership, programmable IP, rights,
 provenance, registry-backed media, royalty routing, licensing readiness, agent
-commerce, mobile and product surfaces, SEO/AEO/AI EO, public claim safety, WIP
+commerce, mobile and product surfaces, SEO/AEO/AI EO, evidence discipline, WIP
 protection, and evidence handoff.
 
 ## Preservation Gate

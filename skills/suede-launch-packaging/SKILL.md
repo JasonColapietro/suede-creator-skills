@@ -133,7 +133,7 @@ Corrected copy:
 
 ---
 
-## Claim safety (applies to both lanes)
+## evidence verification (applies to both lanes)
 
 - This skill organizes and prepares a release and its install paths. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes (reach, ranking, results).
 - Never claim a public launch is live until the live URL or public artifact was checked.

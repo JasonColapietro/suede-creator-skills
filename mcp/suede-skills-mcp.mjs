@@ -112,7 +112,7 @@ function seoAuditTemplate(args = {}) {
     "- Meta description around 120-160 characters when practical.",
     "- H2/H3 structure matches actual page sections.",
     "- Durable Suede terms appear naturally, not stuffed.",
-    "- Answer-ready definitions and FAQ copy are visible, sourceable, and claim-safe.",
+    "- Answer-ready definitions and FAQ copy are visible, sourceable, and evidence-grounded.",
     "",
     "## Structured Data And AI EO Check",
     "- Match schema to visible content.",

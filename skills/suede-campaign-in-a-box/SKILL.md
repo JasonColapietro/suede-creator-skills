@@ -492,7 +492,7 @@ actor, preserve the concrete artist/release artifact, cut throat-clearing,
 negative listing, fake intensity, lazy extremes, passive actor-hiding,
 pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
 
-## Claim-safety boundaries (non-negotiable, every lane)
+## evidence-groundedty boundaries (non-negotiable, every lane)
 
 These lanes organize and prepare campaign material. They do NOT:
 
@@ -518,7 +518,7 @@ venue, privacy, payment, and platform-rule constraints visible in the output.
 
 ## Red flags — stop
 
-If any of these appear in your reasoning, stop and re-read the claim-safety
+If any of these appear in your reasoning, stop and re-read the evidence-groundedty
 boundaries:
 
 - "The artist says the sample is cleared." A claim is not clearance. Mark it

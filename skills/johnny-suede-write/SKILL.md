@@ -218,7 +218,7 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 
 ## Public Explainer Talk-Track Lane
 
-Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, claim-safe, outcome-first. Use "explain" language, not "pitch" language.
+Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, evidence-grounded, outcome-first. Use "explain" language, not "pitch" language.
 
 **Explain:**
 1. Start with the outcome: agents ship better public work with less setup.
@@ -289,7 +289,7 @@ One idea per sentence. Vary sentence length without em dashes. Do not stack slog
 ### Pull-Quote Gate
 If a line sounds manufactured for a quote card, rewrite it with a real artifact, action, or proof point. Weak: `The future of creator ownership is here.` Better: `Suede turns a release folder into rights, provenance, split, and licensing evidence an agent can read.` More weak/better pairs live in `references/word-substitution-list.md`.
 
-## Claim Safety
+## evidence verification
 
 This skill organizes and prepares copy. It does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes. No competitor product names anywhere.
 
@@ -309,7 +309,7 @@ When a claim is borderline, rewrite it as a testable behavior ("X happens when y
 6. **Build the proof stack.** Use real files, links, screenshots, commands, docs, installs, live URLs, or product artifacts. No invented proof.
 7. **Run the discoverability pass.** Add SEO/AEO/AI EO title, meta description, H1, subhead, FAQ, answer-ready summary, internal links, schema notes, and app-store wording when relevant. Skip only what the format cannot hold; state what was skipped and why.
 8. **Run the full anti-slop gate.** Word substitution list, readability gate, structure gate, actor gate, rhythm gate, pull-quote gate. No em dashes.
-9. **Run claim safety.** Apply the Claim Safety boundaries inline on every public output.
+9. **Run evidence verification.** Apply the evidence verification boundaries inline on every public output.
 10. **Generate variants.** For any headline, CTA, or subject line, deliver 3 variants per the Variant Protocol. Label each; recommend one.
 11. **Score before handoff.** See Score section. Revise before delivering if below threshold. Then package the output in the right shape and deliver copy that can be used directly.
 

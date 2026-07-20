@@ -383,7 +383,7 @@ Cue Suede:
 ```
 Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`. (Rename to "Cue [Company]" when a company brief is active.)
 
-## Boundaries (claim-safety — preserve verbatim in spirit)
+## Boundaries (evidence-groundedty — preserve verbatim in spirit)
 
 This skill organizes and prepares creative work. It does NOT clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes.
 - Do not expose private paths, credentials, secrets, tokens, unreleased assets, private repos, or private service details.
