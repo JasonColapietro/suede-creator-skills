@@ -33,7 +33,7 @@ workflow pack with a clear install path and unusually strong ship discipline.
 
 - Keep all 27 public skills, install commands, benchmark disclosures, canonical
   URLs, structured data, and GitHub Pages paths accurate.
-- Preserve public claim safety: comparisons remain self-graded and losses stay
+- Preserve evidence integrity: comparisons remain self-graded and losses stay
   visible.
 - Content must remain usable without animation, JavaScript timing, hover, or a
   precise viewport.

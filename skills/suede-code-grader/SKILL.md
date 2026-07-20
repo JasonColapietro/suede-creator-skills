@@ -19,7 +19,7 @@ Inspect:
   tests, and docs that move with the change;
 - build, test, lint, typecheck, browser, simulator, MCP, or live/API evidence
   that directly exercises the changed behavior;
-- public claims, rights/provenance claims, payment/wallet behavior, registry
+- published statements, rights/provenance claims, payment/wallet behavior, registry
   expectations, royalty routing, and agent-commerce contracts when relevant.
 
 If live, test, or runtime checks are not practical, grade the source and mark those lanes as unverified.
@@ -62,7 +62,7 @@ If any Instant-F pattern is present: stop, report it, mark the grade F, list the
 
 ## Grade Lanes
 
-Score each lane A-F, then give one overall grade. When grading non-Suede work, substitute "domain truth" for "Suede truth" — use whatever domain invariants apply (API contract truth, public claim truth, data model truth).
+Score each lane A-F, then give one overall grade. When grading non-Suede work, substitute "domain truth" for "Suede truth" — use whatever domain invariants apply (API contract truth, published-statement accuracy, data model truth).
 
 - **Correctness:** intended behavior, edge cases, error paths, async behavior,
   routing, data flow, and regression risk.
@@ -206,7 +206,7 @@ Silence = accepted.
 ## Boundaries
 
 - Do not block on style preferences unless they create real maintenance, behavior, accessibility, release, or product-risk cost.
-- Do not invent tests, screenshots, live checks, deploy status, or public claim evidence.
+- Do not invent tests, screenshots, live checks, deploy status, or evidence for published statements.
 - Do not ship a C, D, or F without naming the required upgrade that would move the grade.
 - Keep the grade independent. Do not raise a grade because the implementation was hard, because CI passed without exercising the changed behavior, or because the author explains the intent well.
 

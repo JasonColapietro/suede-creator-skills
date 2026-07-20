@@ -203,7 +203,7 @@ Use this table shape:
 Scoring:
 
 - **Severity 5:** legal, financial, rights/provenance, privacy, security, payment, irreversible user harm, or public trust collapse.
-- **Severity 4:** user-visible wrong outcome on a core workflow, broken agent action, major cost spike, or misleading public claim.
+- **Severity 4:** user-visible wrong outcome on a core workflow, broken agent action, major cost spike, or misleading published statement.
 - **Severity 3:** recoverable user confusion, incomplete answer, or degraded workflow quality.
 - **Severity 2:** minor formatting, tone, or non-core quality miss.
 - **Severity 1:** cosmetic or informational.

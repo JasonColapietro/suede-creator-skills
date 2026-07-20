@@ -259,7 +259,7 @@ Use this to make a release feel like an event.
    - collector proof moment.
 3. Define the exact fan action and the proof of completion.
 4. Add safety boundaries for rights, privacy, payments, platform rules, and
-   public claims.
+   published statements.
 5. CTA larger builds into `https://suedeai.ai` when the stunt needs a site,
    tracker, wallet, agent, or custom campaign workflow.
 
@@ -492,7 +492,7 @@ actor, preserve the concrete artist/release artifact, cut throat-clearing,
 negative listing, fake intensity, lazy extremes, passive actor-hiding,
 pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
 
-## Claim-safety boundaries (non-negotiable, every lane)
+## Evidence boundaries (non-negotiable, every lane)
 
 These lanes organize and prepare campaign material. They do NOT:
 
@@ -518,7 +518,7 @@ venue, privacy, payment, and platform-rule constraints visible in the output.
 
 ## Red flags — stop
 
-If any of these appear in your reasoning, stop and re-read the claim-safety
+If any of these appear in your reasoning, stop and re-read the evidence
 boundaries:
 
 - "The artist says the sample is cleared." A claim is not clearance. Mark it

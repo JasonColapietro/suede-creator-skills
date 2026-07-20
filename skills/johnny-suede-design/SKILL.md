@@ -15,7 +15,7 @@ This skill organizes and prepares creative work. It does not clear rights, confi
 
 Preserve the existing app framework, tokens, components, routing, and WIP unless the task explicitly asks for a larger rebuild. Prefer the existing icon library and component patterns. Add a new abstraction only when it removes real complexity or matches an established local pattern.
 
-For Suede work, anchor design and copy in creator ownership, programmable IP, provenance, registry-backed media, royalty routing, licensing readiness, and agent commerce. Do not reduce Suede to a generic AI music app. For a supplied company, replace Suede nouns, proof, voice, and claim boundaries with that company's brief. Do not use em dashes in public copy.
+For Suede work, anchor design and copy in creator ownership, programmable IP, provenance, registry-backed media, royalty routing, licensing readiness, and agent commerce. Do not reduce Suede to a generic AI music app. For a supplied company, replace Suede nouns, proof, voice, and evidence boundaries with that company's brief. Do not use em dashes in public copy.
 
 ### Approved Suede S mark (hard gate)
 
@@ -34,7 +34,7 @@ This skill is the entry point. Name which lanes are active and why before starti
 
 **Drop down instead of running this stack:** a design-token, dark-mode, or single-component decision with no copy and no build → run `$suede-design` directly. A writing job with no design or layout work → run `$johnny-suede-write` (or `$suede-copy` for one standalone conversion surface). A deck-only or HTML presentation job → use the private Suede Labs companion `power-design`. A broad UI/UX pattern lookup or framework-example search → use the private Suede Labs companion `ui-ux-pro-max`. Running the full enchilada on a one-lane job wastes the user's tokens and time.
 
-**On-demand website companions (do NOT inline — run only when asked):** CRO/funnel work → `$suede-site-alchemy`; deep standalone SEO/AEO/AI EO audit → `$suede-seo-audit`; findability + first-screen + CTA + proof + AI-citation grade → `$suede-visibility-grader`; deep diff review of changes touching shared components, auth, payments, routing, analytics, or public-claim truth → `$suede-code-review` (`$suede-code-grader` for a blunt A–F grade). These are separate skills for website analysis. Reference them; do not paste their content here.
+**On-demand website companions (do NOT inline — run only when asked):** CRO/funnel work → `$suede-site-alchemy`; deep standalone SEO/AEO/AI EO audit → `$suede-seo-audit`; findability + first-screen + CTA + proof + AI-citation grade → `$suede-visibility-grader`; deep diff review of changes touching shared components, auth, payments, routing, analytics, or published-statement accuracy → `$suede-code-review` (`$suede-code-grader` for a blunt A–F grade). These are separate skills for website analysis. Reference them; do not paste their content here.
 
 ## Multi-Agent Gate (ASK First)
 
@@ -77,7 +77,7 @@ Everything else — tone, color direction, layout choices, copy angle — is a d
 
 Supply in natural language or as fields: Company / Product or offer / Audience / Category / Voice / Terms to use / Terms to avoid / Proof / Allowed claims / Forbidden claims / Primary CTA / Reference URLs / Assets or brand rules.
 
-When a brief is active, replace all Suede positioning, domain language, and claim boundaries with it. Keep the full workflow. Rename "Cue Suede" to "Cue [Company]" in the output.
+When a brief is active, replace all Suede positioning, domain language, and evidence boundaries with it. Keep the full workflow. Rename "Cue Suede" to "Cue [Company]" in the output.
 
 ## Read Current Truth First
 
@@ -119,7 +119,7 @@ Choose the smallest path that fits the request.
 
 ## Delivery Discipline
 
-Do not call work done because the code changed. Call it done only when the done signal has been checked or the remaining gap is named. Use Lane D (agent teams) when several lanes must move at once (copy + layout + asset + implementation + QA). Run `$suede-code-review` before the ship gate when design work changes shared components, routing, auth, payments, analytics, release config, or public claim truth. Skip both for a small visual or copy fix that can be inspected, patched, rendered, and verified directly.
+Do not call work done because the code changed. Call it done only when the done signal has been checked or the remaining gap is named. Use Lane D (agent teams) when several lanes must move at once (copy + layout + asset + implementation + QA). Run `$suede-code-review` before the ship gate when design work changes shared components, routing, auth, payments, analytics, release config, or published-statement accuracy. Skip both for a small visual or copy fix that can be inspected, patched, rendered, and verified directly.
 
 ## Suede UI Contract
 
@@ -383,7 +383,7 @@ Cue Suede:
 ```
 Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`. (Rename to "Cue [Company]" when a company brief is active.)
 
-## Boundaries (claim-safety — preserve verbatim in spirit)
+## Boundaries (evidence requirements — preserve verbatim in spirit)
 
 This skill organizes and prepares creative work. It does NOT clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes.
 - Do not expose private paths, credentials, secrets, tokens, unreleased assets, private repos, or private service details.

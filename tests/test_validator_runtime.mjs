@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import test from "node:test";
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(testDir, "..");
-const validatorPath = path.join(repoRoot, "scripts", "validate-skill-pack.mjs");
 const hasSourceCheckout = fs.existsSync(path.join(repoRoot, ".git"));
 const shallowProbe = hasSourceCheckout
   ? spawnSync("git", ["-C", repoRoot, "rev-parse", "--is-shallow-repository"], { encoding: "utf8" })
@@ -36,6 +36,21 @@ function runValidator(targetRoot, extraEnv = {}) {
   );
 }
 
+function removePathsMissingFromSource(sourceRoot, targetRoot, relative = "") {
+  const targetDir = path.join(targetRoot, relative);
+  for (const entry of fs.readdirSync(targetDir, { withFileTypes: true })) {
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    const childRelative = path.join(relative, entry.name);
+    const sourcePath = path.join(sourceRoot, childRelative);
+    const targetPath = path.join(targetRoot, childRelative);
+    if (!fs.existsSync(sourcePath)) {
+      fs.rmSync(targetPath, { recursive: true, force: true });
+    } else if (entry.isDirectory()) {
+      removePathsMissingFromSource(sourceRoot, targetRoot, childRelative);
+    }
+  }
+}
+
 function cloneWithCurrentValidator(targetRoot, extraArgs = []) {
   const clone = spawnSync(
     "git",
@@ -43,11 +58,14 @@ function cloneWithCurrentValidator(targetRoot, extraArgs = []) {
     { encoding: "utf8" }
   );
   assert.equal(clone.status, 0, clone.stderr);
-  fs.copyFileSync(validatorPath, path.join(targetRoot, "scripts", "validate-skill-pack.mjs"));
-  fs.copyFileSync(
-    path.join(repoRoot, ".claude-plugin", "plugin.json"),
-    path.join(targetRoot, ".claude-plugin", "plugin.json")
-  );
+  removePathsMissingFromSource(repoRoot, targetRoot);
+  fs.cpSync(repoRoot, targetRoot, {
+    recursive: true,
+    filter(source) {
+      const relative = path.relative(repoRoot, source);
+      return !relative.split(path.sep).some((part) => part === ".git" || part === "node_modules");
+    }
+  });
 }
 
 function createPackagedFixture(t, prefix) {
@@ -69,6 +87,65 @@ function createPackagedFixture(t, prefix) {
   });
   return packagedRoot;
 }
+
+function digestText(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+test("validator rejects a reserved semantic sequence before normal validation", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-reserved-");
+  const encodedPath = [115, 117, 101, 100, 101, 45, 112, 117, 98, 108, 105, 99, 45, 99, 108, 97, 105, 109, 45, 99, 104, 101, 99, 107]
+    .map((codePoint) => String.fromCodePoint(codePoint))
+    .join("");
+  const encodedContent = [99, 108, 97, 105, 109, 32, 115, 97, 102, 101, 116, 121]
+    .map((codePoint) => String.fromCodePoint(codePoint))
+    .join("");
+  const encodedFormatContent = [99, 8203, 108, 97, 105, 109, 32, 115, 97, 102, 101, 8203, 116, 121]
+    .map((codePoint) => String.fromCodePoint(codePoint))
+    .join("");
+  fs.writeFileSync(path.join(packagedRoot, `${encodedPath}.md`), "fixture\n");
+  fs.writeFileSync(path.join(packagedRoot, "reserved-fixture.txt"), `${encodedContent}\n`);
+  fs.writeFileSync(path.join(packagedRoot, "format-fixture.txt"), `${encodedFormatContent}\n`);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /Reserved semantic sequence detected/);
+  assert.equal((validation.stderr.match(/^- source [0-9a-f]{12}$/gm) || []).length, 3);
+  assert.doesNotMatch(validation.stdout, /Validated \d+ skills/);
+});
+
+test("validator rejects exact and lightly edited reserved documents", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-signature-");
+  const tokens = Array.from({ length: 24 }, (_, index) => `unit${index}`);
+  const body = tokens.join(" ");
+  const shingleWindow = 5;
+  const shingleDigests = Array.from(
+    { length: tokens.length - shingleWindow + 1 },
+    (_, index) => digestText(tokens.slice(index, index + shingleWindow).join(" "))
+  );
+  const signaturePath = path.join(packagedRoot, "scripts", "reserved-signatures.json");
+  fs.writeFileSync(signaturePath, `${JSON.stringify({
+    body_digests: [digestText(body)],
+    shingle_digests: shingleDigests,
+    shingle_minimum: 8,
+    shingle_window: shingleWindow,
+    version: 1
+  }, null, 2)}\n`);
+
+  const fixturePath = path.join(packagedRoot, "document-fixture.md");
+  fs.writeFileSync(fixturePath, `---\nname: document-fixture\n---\n${body}\n`);
+  const exactValidation = runValidator(packagedRoot);
+  assert.notEqual(exactValidation.status, 0, `${exactValidation.stdout}\n${exactValidation.stderr}`);
+  assert.match(exactValidation.stderr, /Reserved semantic sequence detected/);
+
+  const editedBody = `${body} unit-extra`;
+  assert.notEqual(digestText(editedBody), digestText(body));
+  fs.writeFileSync(fixturePath, `---\nname: renamed-fixture\n---\n${editedBody}\n`);
+  const editedValidation = runValidator(packagedRoot);
+  assert.notEqual(editedValidation.status, 0, `${editedValidation.stdout}\n${editedValidation.stderr}`);
+  assert.match(editedValidation.stderr, /Reserved semantic sequence detected/);
+});
 
 test("validator ignores an unrelated parent Git repository in a packaged plugin cache", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-runtime-");

@@ -1,6 +1,6 @@
 interface:
   display_name: "Johnny Suede Write"
   short_description: "Full writing stack for public copy"
-  default_prompt: "Use $johnny-suede-write to write or rewrite [surface type and subject]. Pick the lane, identify the mode, persona, and persuasion framework, generate variants, run the anti-slop and claim-safety gates, and deliver a scored output."
+  default_prompt: "Use $johnny-suede-write to write or rewrite [surface type and subject]. Pick the lane, identify the mode, persona, and persuasion framework, generate variants, run the anti-slop and evidence gates, and deliver a scored output."
 policy:
   allow_implicit_invocation: true

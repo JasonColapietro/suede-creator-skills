@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
@@ -51,6 +52,29 @@ const PUBLIC_TEXT_EXTENSIONS = new Set([
   ".yml",
   ".zsh",
 ]);
+const RESERVED_SEQUENCE_DIGESTS = new Map([
+  [2, new Set([
+    "30331762bad45927395243bbdb471a76ba664f3b93529b0f988cead7bdd66db1",
+    "353fb85247026e9f2bd471bb9ab4ad0d8c618992239bd789bd9c2714cc302bb4",
+    "3fb3be3178c44dcd76bed81b7450c5b1623f100290a0df39b079325da1262dab",
+    "91be52acbd03655d58e927da43f79ed6a0c2153c664577e509c26713e2186258",
+    "aa6c771bc69d8037987d060c234fc45dd6044bef30e622347a8b867988829c13",
+    "c848f62d5d40526d5d6d55bd94d9e72566ea353fb43a0976c53a68c411823951",
+    "dbc2157aeea1da74d815d8f86baa449bdd957cb6989c197ae0bb1910e29a618c",
+    "ede3b624bd1af3fcfc9d195289488d1e4392ebefcc933fd406e9837a56922420",
+    "f01cc17c78d94430898d6f45addaf772845d621777ac5dded9100e9e3f8458a5",
+  ])],
+  [3, new Set([
+    "0d192efa9c16773708ee072ee3a1225ccfbfd40669d0652ed14c0665cc8e243d",
+    "6935ccddd8ce0093e3866225b941c2229811e2569bf97daf00c4e6f98f82b7ee",
+  ])],
+  [4, new Set([
+    "e0575bd14845514197b759a88037f3e9428cae85947339611f29e2f8e67c4c5a",
+  ])],
+  [6, new Set([
+    "623a2824ee1885d2255e03e09b1d709ab8093f1673f3475a90fe329ffc939dbb",
+  ])],
+]);
 
 function inspectGitHistory(root) {
   if (!fs.existsSync(path.join(root, ".git"))) {
@@ -94,6 +118,36 @@ function readText(file) {
   return fs.readFileSync(file, "utf8");
 }
 
+function loadReservedSignatures() {
+  const signaturePath = path.join(repoRoot, "scripts", "reserved-signatures.json");
+  let payload;
+  try {
+    payload = JSON.parse(readText(signaturePath));
+  } catch (error) {
+    throw new Error(`Invalid reserved signature data: ${error.message}`);
+  }
+  const digestListIsValid = (value) =>
+    Array.isArray(value) && value.length > 0 && value.every((digest) => /^[0-9a-f]{64}$/.test(digest));
+  if (
+    !digestListIsValid(payload.body_digests) ||
+    !digestListIsValid(payload.shingle_digests) ||
+    !Number.isInteger(payload.shingle_window) ||
+    payload.shingle_window < 2 ||
+    !Number.isInteger(payload.shingle_minimum) ||
+    payload.shingle_minimum < 2 ||
+    payload.shingle_minimum > payload.shingle_digests.length
+  ) {
+    throw new Error("Invalid reserved signature data: malformed policy");
+  }
+  return payload;
+}
+
+const reservedSignatures = loadReservedSignatures();
+const RESERVED_BODY_DIGESTS = new Set(reservedSignatures.body_digests);
+const RESERVED_SHINGLE_DIGESTS = new Set(reservedSignatures.shingle_digests);
+const RESERVED_SHINGLE_WINDOW = reservedSignatures.shingle_window;
+const RESERVED_SHINGLE_MINIMUM = reservedSignatures.shingle_minimum;
+
 function listDirs(dir) {
   return fs
     .readdirSync(dir, { withFileTypes: true })
@@ -112,6 +166,69 @@ function walk(dir, files = []) {
     else files.push(full);
   }
   return files;
+}
+
+function normalizedTokens(value) {
+  const normalized = value
+    .normalize("NFKC")
+    .replace(/\p{Cf}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+  return normalized ? normalized.split(/\s+/) : [];
+}
+
+function digestText(value) {
+  return createHash("sha256").update(value).digest("hex");
+}
+
+function containsReservedSequence(value) {
+  const tokens = normalizedTokens(value);
+  for (const [length, digests] of RESERVED_SEQUENCE_DIGESTS) {
+    for (let index = 0; index <= tokens.length - length; index += 1) {
+      const candidate = tokens.slice(index, index + length).join(" ");
+      const digest = digestText(candidate);
+      if (digests.has(digest)) return true;
+    }
+  }
+  return false;
+}
+
+function containsReservedBodySignature(value) {
+  const body = value.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, "");
+  const tokens = normalizedTokens(body);
+  if (RESERVED_BODY_DIGESTS.has(digestText(tokens.join(" ")))) return true;
+
+  const matches = new Set();
+  for (let index = 0; index <= tokens.length - RESERVED_SHINGLE_WINDOW; index += 1) {
+    const shingle = tokens.slice(index, index + RESERVED_SHINGLE_WINDOW).join(" ");
+    const digest = digestText(shingle);
+    if (!RESERVED_SHINGLE_DIGESTS.has(digest)) continue;
+    matches.add(digest);
+    if (matches.size >= RESERVED_SHINGLE_MINIMUM) return true;
+  }
+  return false;
+}
+
+function runReservedSequencePreflight(files) {
+  const findings = [];
+  for (const file of files) {
+    const relative = path.relative(repoRoot, file);
+    if (containsReservedSequence(relative)) {
+      findings.push(digestText(relative).slice(0, 12));
+      continue;
+    }
+    if (!PUBLIC_TEXT_EXTENSIONS.has(path.extname(file).toLowerCase())) continue;
+    const text = readText(file);
+    if (containsReservedSequence(text) || containsReservedBodySignature(text)) {
+      findings.push(digestText(relative).slice(0, 12));
+    }
+  }
+  if (findings.length === 0) return;
+
+  console.error("Reserved semantic sequence detected:");
+  for (const finding of findings) console.error(`- source ${finding}`);
+  process.exit(1);
 }
 
 function isObject(value) {
@@ -319,7 +436,8 @@ function openaiYamlStructureIssues(text, skillName, skillDir) {
   return issues;
 }
 
-
+const repoFiles = walk(repoRoot);
+runReservedSequencePreflight(repoFiles);
 const skillsDir = path.join(repoRoot, "skills");
 const skillNames = listDirs(skillsDir);
 const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")));
@@ -508,7 +626,7 @@ if (!isObject(catalog.mcp)) {
   }
 }
 
-const publicFiles = walk(repoRoot).filter((file) => {
+const publicFiles = repoFiles.filter((file) => {
   const rel = path.relative(repoRoot, file);
   if (rel.startsWith("audits/")) return false;
   return PUBLIC_TEXT_EXTENSIONS.has(path.extname(file).toLowerCase());
