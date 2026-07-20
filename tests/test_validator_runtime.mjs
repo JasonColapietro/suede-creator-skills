@@ -9,9 +9,17 @@ import test from "node:test";
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(testDir, "..");
 const validatorPath = path.join(repoRoot, "scripts", "validate-skill-pack.mjs");
-const sourceHistoryTest = fs.existsSync(path.join(repoRoot, ".git"))
+const hasSourceCheckout = fs.existsSync(path.join(repoRoot, ".git"));
+const shallowProbe = hasSourceCheckout
+  ? spawnSync("git", ["-C", repoRoot, "rev-parse", "--is-shallow-repository"], { encoding: "utf8" })
+  : null;
+const hasCompleteSourceHistory = shallowProbe?.status === 0 && shallowProbe.stdout.trim() === "false";
+const sourceCheckoutTest = hasSourceCheckout
   ? {}
   : { skip: "requires the source checkout Git history" };
+const completeSourceHistoryTest = hasCompleteSourceHistory
+  ? {}
+  : { skip: "requires a complete source checkout Git history" };
 
 function runValidator(targetRoot, extraEnv = {}) {
   const nodePath = [path.join(repoRoot, "node_modules"), process.env.NODE_PATH]
@@ -42,8 +50,8 @@ function cloneWithCurrentValidator(targetRoot, extraArgs = []) {
   );
 }
 
-test("validator ignores an unrelated parent Git repository in a packaged plugin cache", (t) => {
-  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-runtime-"));
+function createPackagedFixture(t, prefix) {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), prefix));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
   const parentRepo = path.join(tempRoot, "dotfiles");
@@ -59,13 +67,31 @@ test("validator ignores an unrelated parent Git repository in a packaged plugin 
       return !relative.split(path.sep).some((part) => part === ".git" || part === "node_modules");
     }
   });
+  return packagedRoot;
+}
+
+test("validator ignores an unrelated parent Git repository in a packaged plugin cache", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-runtime-");
   const validation = runValidator(packagedRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.equal(validation.status, 0, diagnostics);
   assert.match(validation.stdout, /packaged skill-pack checkout/);
 });
 
-test("validator rejects a nonexistent changelog hash in a full-history checkout", sourceHistoryTest, (t) => {
+test("packaged validation rejects plugin and catalog version drift", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-version-");
+  const pluginPath = path.join(packagedRoot, ".claude-plugin", "plugin.json");
+  const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
+  plugin.version = "9.9.9";
+  fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /plugin\.json version \(9\.9\.9\) does not match catalog\.json version \(0\.6\.0\)/);
+});
+
+test("validator rejects a nonexistent changelog hash in a full-history checkout", completeSourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-full-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
@@ -86,7 +112,7 @@ test("validator rejects a nonexistent changelog hash in a full-history checkout"
   assert.match(validation.stderr, /does not resolve to a commit in this repo/);
 });
 
-test("strict source validation fails when Git history cannot be interrogated", sourceHistoryTest, (t) => {
+test("strict source validation fails when Git history cannot be interrogated", sourceCheckoutTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-git-error-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
@@ -98,7 +124,7 @@ test("strict source validation fails when Git history cannot be interrogated", s
   assert.match(validation.stderr, /Changelog hash check unavailable/);
 });
 
-test("shallow checkouts skip history resolution but retain structural guards", sourceHistoryTest, (t) => {
+test("shallow checkouts skip history resolution but retain structural guards", sourceCheckoutTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-shallow-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
