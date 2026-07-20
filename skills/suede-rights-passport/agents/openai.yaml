@@ -1,8 +1,8 @@
 interface:
   display_name: "Creator Rights Package Builder"
-  short_description: "Build offline creator rights packages."
+  short_description: "Build validated, evidence-scoped rights packages."
   brand_color: "#D71920"
-  default_prompt: "Use $suede-rights-passport to organize this creator project into a rights and provenance transfer package — flagging unknown or unconfirmed rights facts without clearing them."
+  default_prompt: "Use $suede-rights-passport to organize this creator project into a validated rights package with separate works, recordings, releases, parties, claims, licenses, consent, provenance, and privacy — preserving unknown or disputed facts without clearing them."
 
 policy:
   allow_implicit_invocation: true

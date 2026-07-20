@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede SEO Audit"
-  short_description: "9-lane SEO and AI visibility audit"
-  default_prompt: "Use $suede-seo-audit to audit [URL or source file]. Run all nine lanes: technical access, search and answer intent, metadata, structure, schema markup, AI EO, copy and conversion quality, E-E-A-T, and topic clusters. Add Lane 0 keyword research with a content brief and competitor gap analysis when keyword discovery is requested. Return ranked findings with exact rewrites, lane grades, and a ship gate."
+  short_description: "Evidence-led SEO and AI visibility audit"
+  default_prompt: "Use $suede-seo-audit to audit [URL or source file]. Read the current Google guidance reference, inspect live behavior, and run all nine lanes: technical access, search and answer intent, metadata, structure, eligible structured data, generative-search visibility, copy and conversion quality, E-E-A-T, and topic clusters. Add Lane 0 query research when discovery is requested, but label demand and competitive difficulty unknown unless a dated source supports them. Return ranked findings with evidence, exact rewrites, lane grades, and a ship gate."
 policy:
   allow_implicit_invocation: true

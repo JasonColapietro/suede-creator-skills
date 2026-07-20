@@ -1,4 +1,6 @@
 interface:
   display_name: "Android App Factory"
-  short_description: "One-prompt Android app pipeline to Play Store"
-  default_prompt: "Use $android-app-factory to plan or build a native Android app from keyword through Play Store ship gate."
+  short_description: "Production Android build and Play release gate"
+  default_prompt: "Use $android-app-factory to plan or build [app]. Identify the exact repo/package/Play app, live-check official Play policy, and use API 36 as the dated general phone/tablet factory baseline while preserving the real enforcement date. Deliver maintainable Compose architecture, tests, accessibility, performance and Baseline Profile evidence, privacy/Data Safety/account-deletion reconciliation, safe Billing/Integrity behavior when relevant, truthful store assets, and a completed release-gate artifact. Require explicit confirmation before any Play Console mutation or rollout."
+policy:
+  allow_implicit_invocation: true

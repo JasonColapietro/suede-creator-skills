@@ -78,7 +78,7 @@ what exists, and never fabricate a result you did not run.
 | Stack | Type check | Lint | Test | Other |
 |---|---|---|---|---|
 | Web / Node (TS/JS) | `npx tsc --noEmit` | `npm run lint` | `npm run test` | `npm audit` for dependency CVEs |
-| MCP server (Node) | `node --check <server>.mjs` | repo's configured linter, if any | — | JSON-RPC smoke test: pipe a minimal request over stdio, e.g. `echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' \| node <server>.mjs` and confirm a well-formed response |
+| MCP server (Node) | `node --check <server>.mjs` | repo's configured linter, if any | `npm run test:mcp` when provided | Run a complete session in one process: valid `initialize`, `notifications/initialized`, then list/call/read/get requests; use $suede-mcp-qa when available |
 | iOS / Swift (Xcode) | — (compiler check is the build) | SwiftLint, if configured | XCTest target, if present | `xcodebuild -project X.xcodeproj -scheme X -destination 'platform=iOS Simulator,name=iPhone 16' build` |
 | API / backend (generic) | language's own type/compile step, if any | repo's configured linter | contract or schema test — e.g. OpenAPI/schema validation against the live route, or the repo's own contract-test suite | — |
 
@@ -366,36 +366,62 @@ When the user asks to apply fixes (`--fix` flag or equivalent instruction):
 4. Cap the iteration loop at 3 cycles. If the same finding persists after 3 fix
    attempts, escalate as a design issue requiring human decision.
 
-## OWASP Top 10 Security Checklist (2021)
+## Current OWASP Security Baselines
 
-OWASP check runs automatically on any file in: `auth/`, `api/`, `middleware/`, `routes/`, `pages/api/`, or any file importing a crypto, session, or payment module. Cite the OWASP category in the finding.
+Run the web baseline automatically on `auth/`, `api/`, `middleware/`, `routes/`,
+`pages/api/`, or code importing crypto, session, or payment modules. Cite the
+exact standard and category in each finding. Use the current official lists;
+do not remap a finding to an older category number.
 
-- **A01 Broken Access Control**: Are authorization checks present at every data
-  access? Are admin routes protected? Does the code prevent horizontal privilege
-  escalation (user A accessing user B's data)?
-- **A02 Cryptographic Failures**: Is sensitive data encrypted at rest and in
-  transit? Are deprecated algorithms (MD5, SHA-1, DES) used? Are secrets in
-  environment variables, not source?
-- **A03 Injection**: Is all user input parameterized before reaching SQL, shell
-  commands, LDAP, XML, or template engines? Is output escaped before rendering
-  in HTML?
-- **A04 Insecure Design**: Does the architecture assume the attacker is
-  unauthenticated? Are rate limits designed in, not bolted on?
-- **A05 Security Misconfiguration**: Are defaults changed? Is directory listing
-  disabled? Are error messages safe (no stack traces to users)? Is debug mode
-  off in production?
-- **A06 Vulnerable Components**: Are dependencies current? Are known CVEs
-  present? Are unused packages removed?
-- **A07 Identification and Authentication Failures**: Is MFA available for
-  sensitive actions? Are brute-force protections present? Are sessions
-  invalidated on logout?
-- **A08 Software and Data Integrity Failures**: Are CI/CD pipelines protected?
-  Are package checksums verified? Are deserialized inputs validated?
-- **A09 Security Logging and Monitoring Failures**: Are auth failures, access
-  control failures, and input validation failures logged? Are logs protected
-  from tampering?
-- **A10 SSRF**: Are URL inputs validated against an allowlist? Can the server be
-  tricked into fetching internal network resources?
+### OWASP Top 10 (2025)
+
+- **A01 Broken Access Control:** enforce object, function, tenant, and admin
+  authorization server-side; default deny and prevent horizontal escalation.
+- **A02 Security Misconfiguration:** safe production defaults, least-exposed
+  services, hardened headers, no debug output, and reviewed cloud/runtime config.
+- **A03 Software Supply Chain Failures:** lock and verify dependencies and build
+  inputs; protect CI/CD, registries, provenance, and update paths.
+- **A04 Cryptographic Failures:** approved algorithms and key management; protect
+  sensitive data in transit and at rest; never place secrets in source.
+- **A05 Injection:** parameterize commands and queries, validate untrusted input,
+  and contextually encode output.
+- **A06 Insecure Design:** threat-model trust boundaries, abuse cases, rate
+  limits, and fail-closed behavior before implementation.
+- **A07 Authentication Failures:** resist enumeration and brute force; use secure
+  recovery, MFA where warranted, rotation, expiry, and session invalidation.
+- **A08 Software or Data Integrity Failures:** verify signatures and provenance,
+  validate deserialized data, and prevent untrusted update or plugin execution.
+- **A09 Security Logging and Alerting Failures:** record and protect meaningful
+  security events, detect abuse, alert operators, and avoid sensitive log data.
+- **A10 Mishandling of Exceptional Conditions:** handle errors, timeouts,
+  resource exhaustion, partial failure, and cleanup without failing open.
+
+Official list: https://owasp.org/Top10/
+
+### OWASP API Security Top 10 (2023)
+
+For APIs, explicitly check **API1 Broken Object Level Authorization**, **API2
+Broken Authentication**, **API3 Broken Object Property Level Authorization**,
+**API4 Unrestricted Resource Consumption**, **API5 Broken Function Level
+Authorization**, **API6 Unrestricted Access to Sensitive Business Flows**,
+**API7 Server Side Request Forgery**, **API8 Security Misconfiguration**, **API9
+Improper Inventory Management**, and **API10 Unsafe Consumption of APIs**.
+Trace each request through object/property/function authorization, quotas and
+cost bounds, business-flow abuse controls, outbound URL policy, versioned API
+inventory, and validation of third-party responses.
+
+Official list: https://owasp.org/API-Security/editions/2023/en/0x10-api-security-risks/
+
+### OWASP MASVS v2.1+ Mobile Baseline
+
+For native or hybrid mobile changes, map findings to **MASVS-STORAGE**,
+**MASVS-CRYPTO**, **MASVS-AUTH**, **MASVS-NETWORK**, **MASVS-PLATFORM**,
+**MASVS-CODE**, **MASVS-RESILIENCE**, or **MASVS-PRIVACY**. Check local data and
+backup exposure, key handling, authentication/session flows, TLS and endpoint
+trust, IPC/deep links/web views, update/runtime safety, tamper resistance where
+the threat model requires it, and privacy-minimized collection/disclosure.
+
+Official standard: https://mas.owasp.org/MASVS/
 
 ## Suede-Specific Checks
 

@@ -5,8 +5,9 @@ description: "Turn a page into a conversion path: hero, friction, proof, CTA, pr
 
 # Suede Site Alchemy
 
-**Core principle:** friction before aesthetics, math before opinion. No change
-ships on intuition when a friction audit and conversion math can rank it.
+**Core principle:** evidence before certainty. Diagnose friction, verify the
+measurement, and turn design ideas into falsifiable hypotheses. Do not present
+a heuristic, benchmark, or scenario as observed impact.
 
 ## Operating Stance
 
@@ -130,36 +131,52 @@ Count every source of friction on the page before fixing anything. A friction au
 - [ ] Is the proof visible before the ask?
 - [ ] Is the risk reversal (guarantee, cancel anytime, free trial) near the CTA?
 
-**Friction score**: 0–3 sources = low friction. 4–6 = medium. 7+ = high — address before visual polish.
+Treat the friction list as an inventory, not a validated score. For each item,
+record the affected population, evidence (analytics, replay, usability test,
+support signal, or direct observation), severity, and the event that would show
+improvement. A raw count does not prove impact.
 
-Friction comes before aesthetics. A beautiful page with high friction converts worse than an ugly page with zero friction.
+**Mobile and accessibility checks (required for every public page)**
 
-**Mobile Friction Rules (required check for any page with >50% mobile traffic)**
+- Target size: meet WCAG 2.2 target-size requirements. Use at least 24×24 CSS
+  pixels or compliant spacing for the minimum criterion; treat 44×44 as an
+  enhanced house target, not a universal pass/fail rule.
+- Text and zoom: test browser zoom, text scaling, reflow, and form focus on real
+  mobile browsers. Do not disable pinch zoom to preserve a layout.
+- CTA visibility: capture the first viewport and task path at representative
+  device sizes. Test placement instead of assuming a fixed fold percentage or
+  one universal thumb zone.
+- Forms: request only data needed for the stated task, explain why sensitive
+  data is needed, and measure field-level abandonment before attributing a
+  numeric cost to any field.
+- Overflow: test at narrow widths and large text. Fix the element causing
+  horizontal overflow; do not conceal the defect with blanket
+  `overflow-x: hidden`.
 
-- Tap targets: minimum 44×44px for every interactive element. Buttons below 44px fail on mobile — users mis-tap or skip them.
-- Font size: 16px body minimum. iOS auto-zooms any input below 16px, breaking layout.
-- CTA placement: primary CTA must be visible in the top 60% of the initial mobile viewport — visitors make scroll decisions in the first 3 seconds.
-- Thumb zone: right-handed users reach the bottom-center of the screen naturally. Place primary CTAs there. Avoid top-left corners for primary actions on mobile.
-- Form field count: every field beyond email address costs approximately 11% of completions. Two fields is the mobile default unless the extra data has a specific day-one use.
-- Horizontal scroll: zero tolerance. Run `overflow-x: hidden` check and scroll test on physical device or DevTools mobile view before shipping.
+## Measurement and Decision Math
 
-## Conversion Math
+Before ranking hypotheses, define the decision and verify the event chain. Use
+observed values from a named date range, population, and source. Leave a field
+`unknown` when it is not measured; do not silently fill it with a generic
+industry benchmark.
 
-Before ranking hypotheses or recommending changes, run the numbers. A change that feels big may be irrelevant. A change that feels minor may be the highest-leverage move on the page.
+**Descriptive model:**
+`observed_revenue = eligible_visitors × observed_CTA_rate × observed_close_rate × observed_order_value`
 
-**Model:**
-`monthly_revenue = monthly_visitors × CTR × conversion_rate × order_value`
+Use the model to locate leverage and instrumentation gaps. It is not a causal
+forecast. If stakeholders need a planning range, show a sensitivity table with
+each assumption labeled; call it a scenario, never an expected lift.
 
-**Usage:** Fill in any values you have. Estimate the rest from industry benchmarks if the client doesn't track them (SaaS landing page CTR benchmark: 3–5%; e-commerce: 1–3%; lead gen: 5–10%).
+Before an A/B test, read `references/experiment-design.md` and create or copy
+`assets/cro-hypothesis-ledger.csv`. Define the randomization unit, exposure,
+primary metric, guardrails, data-quality checks, minimum detectable effect
+(MDE), power, sample requirement, and stopping rule before launch. Treat MDE
+as the smallest effect worth detecting, not the uplift the treatment is
+expected to produce.
 
-**Example:**
-- Current: 2,000 visitors × 4% CTR × 15% close × $300 = $3,600/mo
-- Proposed (CTA rewrite + friction reduction): 2,000 × 7% × 18% × $300 = $7,560/mo
-- Lift: +$3,960/mo from two changes. That's the pitch for the fix.
-
-Run this math for any hypothesis before ranking it. "Impact" is a revenue number, not a feeling.
-
-When visitor data isn't available: ask for Google Analytics / Vercel Analytics / Plausible exports before estimating. Even 30 days of data produces a meaningful model.
+When reliable data is unavailable, request analytics exports or instrument the
+funnel first. Validate event definitions, denominators, duplicate events,
+consent effects, and bot/internal traffic before using the numbers.
 
 ## Slash Tools
 
@@ -180,29 +197,42 @@ Default stack for a fast polish pass:
    collapsed.
 7. `/ship-polish` - verify links, responsiveness, copy fit, and live behavior.
 
-## Quick Wins (Highest-ROI Changes, Ranked)
+## Candidate Hypotheses
 
-For any page pass where the brief is "make it convert better" without a specific hypothesis, start here. These changes produce the highest median lift with the least implementation effort, ranked by typical impact:
+When the brief is only "make it convert better," inspect these common surfaces.
+They are prompts for diagnosis, not a ranked list of guaranteed quick wins:
 
-1. **CTA specificity**: "Start free trial" → "Start my free 14-day trial" (names time commitment and ownership). Expect +10–25% CTR.
-2. **Hero headline clarity**: replace benefit-cluster headlines with a single, falsifiable promise. One claim the reader can immediately test.
-3. **Social proof at the CTA**: move the nearest testimonial to within 200px of the primary CTA button. Doubt spikes at the decision moment.
-4. **Remove secondary nav from hero**: every link that isn't the primary CTA is a conversion exit. Hero sections with navigation links convert lower than those without.
-5. **Form field reduction**: cut any field you don't use in the first 7 days of the customer relationship.
-6. **Price anchoring**: show the higher-value option first on any pricing section. First price seen becomes the anchor.
-7. **Guarantee visibility**: guarantee text adjacent to the CTA converts more than guarantee text in the footer. Move it.
-8. **Mobile CTA above fold**: if the mobile view requires scrolling to reach the first CTA, add a fixed sticky CTA bar.
-9. **Image–copy alignment**: the image the visitor sees first must match the copy's promise. Mismatch between visual and headline is a silent trust killer.
-10. **Page speed**: every 1-second delay in mobile load time reduces conversions by ~7% (Google/Deloitte 2019). Run Lighthouse before shipping any page as "done."
+1. **Broken paths and measurement**: repair dead CTAs, validation traps, lost
+   state, and missing or duplicate conversion events first.
+2. **Hero clarity**: test a concrete buyer, outcome, and next action against the
+   current version without introducing an unsupported promise.
+3. **CTA specificity**: test an action-and-outcome label against a generic label.
+4. **Proof relevance**: place verified proof near the claim or objection it
+   supports; do not assume one fixed pixel distance or section.
+5. **Form necessity**: remove or defer a field only when downstream operations,
+   security, legal, and qualification needs still hold.
+6. **Navigation focus**: test hierarchy and visual weight. Do not remove routes
+   required for trust, accessibility, consent, or task completion.
+7. **Pricing presentation**: test comprehension, total-cost clarity, plan fit,
+   and cancellation terms; do not presume a pricing order or decoy wins.
+8. **Mobile task path**: make the primary action discoverable without a sticky
+   control obscuring content, consent, or platform UI.
+9. **Image-copy alignment**: verify the visual demonstrates the same product,
+   audience, and outcome as the copy.
+10. **Performance**: measure field Core Web Vitals and key task latency; fix a
+    confirmed bottleneck and monitor conversion and experience guardrails.
 
-These are starting points, not a guaranteed sequence. A page with zero testimonials needs #3 before #1. Use the Friction Audit to confirm which items apply.
+Prioritize by evidence strength, affected traffic, decision value, effort, and
+risk. If impact is unknown, say so and design the measurement that will resolve
+it.
 
 ## Workflow
 
 1. Identify the surface: live URL, source folder, route, deploy target, current
    git branch, dirty files, and relevant handoff/spec docs.
 2. Run **Funnel Analysis** — name the page's funnel stage (TOFU/MOFU/BOFU). Optimize for that stage throughout.
-3. Run **Friction Audit** — score cognitive, physical, and trust friction. Address any 7+ (high) friction issues before visual work.
+3. Run **Friction Audit** — inventory cognitive, physical, and trust friction,
+   then attach evidence and severity. Fix launch blockers before visual work.
 4. Read the page like a buyer. Capture the current offer, primary CTA, trust
    evidence, visual system, remaining friction points, and dead links.
 5. Run the aesthetic slash tools. Keep the notes short and actionable.
@@ -215,8 +245,11 @@ These are starting points, not a guaranteed sequence. A page with zero testimoni
    - **Hero**: one dominant type weight, one color for the CTA, nothing competing at the same visual size.
    - **Social proof sections**: real photos over stock, real numbers over vague claims, name + title + company over anonymous quotes.
    - **Pricing/offer sections**: generous whitespace, price isolated in visual hierarchy, guarantee text printed adjacent to CTA not buried in footer.
-   - **Mobile**: 16px body minimum, 44×44px tap targets, CTA in thumb zone (bottom 40% of viewport), zero horizontal scroll.
-   - **Motion**: entrance animations max 300ms, no looping animations on text. If removing an animation would break the page, it was too heavy.
+   - **Mobile**: readable type, WCAG-compliant target size/spacing, tested CTA
+     discovery, text scaling, and no unintended horizontal scroll.
+   - **Motion**: motion clarifies state, respects reduced-motion settings, and
+     does not block reading or interaction. Choose duration from context and
+     test it rather than enforcing one universal threshold.
    Operate inside the existing color and type system. Introduce a new visual choice only when the current system has a direct conversion penalty.
 8. Build the CTA ladder. Every page needs three exits:
    - **Primary action**: the one thing this page was built to earn. One button. Obvious placement. No competing CTA at the same visual weight.
@@ -231,102 +264,61 @@ These are starting points, not a guaranteed sequence. A page with zero testimoni
      part of the ask.
    - `git diff --check`.
    - Live URL/API verification before claiming a production fix.
-10. Ship gate:
+10. For any experiment, pre-register the ledger row, validate assignment and
+    exposure, check sample-ratio mismatch (SRM) before interpreting outcomes,
+    and report the effect estimate with uncertainty and guardrail results.
+11. Ship gate:
     - `ship`: page passes the done signal and no launch-critical gaps remain.
     - `ship-with-caveats`: only non-critical caveats remain and they are named.
     - `hold`: core CTA, visible layout, false claim, accessibility, build, or
       live verification is blocked.
-11. Leave a concise handoff with target, files changed, commands, verification,
+12. Leave a concise handoff with target, files changed, commands, verification,
     caveats, and the exact next step.
 
 ## Worked Example
 
-A compact end-to-end pass, applying the rules above to one fictional page:
-**Ledgerly** (B2B SaaS, expense reconciliation for finance teams, 40-person
-company, MOFU landing page for a paid search campaign).
-
-**Before**
-
-```text
-Hero headline: "Smarter Financial Operations for Modern Teams"
-Hero subhead: "Ledgerly helps businesses streamline their financial workflows
-with powerful, intuitive tools."
-Primary CTA: "Learn More"
-Proof stack: "Trusted by thousands of companies worldwide." (no logos, no
-names, no numbers)
-```
-
-Friction Audit read: cognitive friction is high — the headline is a
-benefit-cluster ("smarter," "modern," "powerful," "intuitive") with no single
-falsifiable claim, so the reader can't tell what the product does or who it's
-for. The CTA doesn't name an action or outcome. The proof line fails the Proof
-Check — "thousands of companies" has no number, no name, no logo, so it's
-unverifiable and reads as filler.
-
-**After**
-
-```text
-Hero headline: "Close your books 5 days faster."
-Hero subhead: "Ledgerly auto-matches transactions across your bank, cards, and
-ERP so your finance team stops reconciling by hand."
-Primary CTA: "Start my free 14-day trial"
-Secondary CTA: "See a 2-minute product walkthrough"
-Escape valve: "Not ready? Compare Ledgerly to spreadsheets" (routes to a
-comparison page, not a dead link)
-Proof stack (adjacent to primary CTA): "Used by 240 finance teams, including
-Northwind Logistics and Aster Health — 4.8★ from 61 G2 reviews."
-```
-
-**What changed and why**
-
-- Headline: replaced the benefit-cluster with a single, falsifiable promise
-  (Quick Wins #2) — "5 days faster" is a claim the reader can test, not a mood.
-- CTA: "Learn More" became "Start my free 14-day trial," naming the time
-  commitment and ownership (Quick Wins #1), and the page now carries the full
-  CTA ladder — primary action, secondary proof action, and a named escape
-  valve (Workflow step 8) — instead of one dead-end link.
-- Proof: the unverifiable "thousands of companies" line was replaced with a
-  social number plus named peer companies placed next to the primary CTA
-  (Quick Wins #3; Social Proof Framework — social numbers read best in the
-  hero, peer proof reads best at the CTA), and every figure in the new line
-  is something the Proof Check would let ship: a count, two names, a rating
-  with a review count.
+Read `references/claim-safe-worked-example.md` for a compact before/after pass.
+Its "after" block is a set of hypotheses and proof slots, not publishable copy.
 
 ## A/B Test Hypothesis Generator
 
-For any CTA, headline, or section that needs improvement, generate a testable hypothesis before rewriting.
+For any CTA, headline, or section that needs improvement, generate a testable
+hypothesis before rewriting. Read `references/experiment-design.md` and copy a
+row into `assets/cro-hypothesis-ledger.csv` before launch.
 
 Format:
 ```
-If we change [specific element] from [current state] to [proposed change],
-we expect [metric] to improve because [reasoning based on visitor psychology].
-Success condition: [measurement threshold that would confirm the hypothesis].
+For [eligible population], if we change [specific element] from [control] to
+[treatment], we hypothesize [primary metric] will change because [mechanism].
+Randomization unit: [visitor, account, session, or other justified unit].
+Guardrails: [harm metrics]. Data quality: [SRM, exposure, event health].
+MDE: [smallest business-useful effect, not expected uplift].
+Decision rule: [pre-registered rule using estimate, uncertainty, guardrails,
+and operational constraints].
 ```
 
 Examples:
 
 ```
-If we change the hero CTA from "Learn more" to "Grade my brand in 60 seconds",
-we expect click-through to improve because the new CTA names the time commitment 
-and the specific outcome, reducing ambiguity.
-Success condition: CTA clicks increase by ≥15% over 2 weeks of equal traffic.
+For eligible new visitors, if we change the hero CTA from "Learn more" to the
+verified action-and-outcome label, we hypothesize qualified CTA starts will
+change because the treatment reduces ambiguity.
+Randomization unit: visitor ID. Guardrails: completion rate, error rate, and
+support contacts. Data quality: allocation, SRM, exposure, and event parity.
+MDE/sample/duration: calculate from the observed baseline, business threshold,
+alpha, power, traffic, and the chosen analysis plan before launch.
 ```
 
-```
-If we move the first testimonial above the fold on mobile,
-we expect form completion to improve because social proof before the ask 
-reduces doubt at the highest-friction moment.
-Success condition: mobile form completions increase by ≥10%.
-```
-
-After the Friction Audit, generate 3 hypotheses. For each, run the Conversion
-Math model above (current vs. projected revenue) before ranking.
-
-Rank by projected revenue lift, not intuition. Address the highest-friction item first — it almost always produces the largest lift.
+After the Friction Audit, generate at most three hypotheses. Rank them by the
+quality of the underlying evidence, size of the affected population, decision
+value, effort, and risk. Do not rank by invented projected lift. A directional
+result is inconclusive until assignment, exposure, SRM, metric health,
+uncertainty, and guardrails have been checked.
 
 ## Social Proof Framework
 
-Match the type of social proof to the visitor's objection. Generic testimonials placed randomly rarely convert. Specific proof placed at the right objection point converts.
+Match proof to the claim or objection it can actually support. Placement is a
+testable design choice, not a universal conversion rule.
 
 **Types and when to use:**
 
@@ -338,28 +330,36 @@ Match the type of social proof to the visitor's objection. Generic testimonials 
 | Expert endorsements | Authority objections ("who says this is legit?") | Industry name, publication, or credential |
 | Certifications / trust marks | Trust objections ("is this safe/legit?") | SOC 2, GDPR, security badges, app store ratings |
 
-**Placement rules:**
-- Peer testimonials: next to or below the primary CTA
-- Case study metrics: in a dedicated proof section before pricing or final CTA
-- Social numbers: in the hero or navigation (highest-impact position)
-- Expert endorsements: in the hero subhead or trust bar
-- Certifications: footer or near the form
+**Placement hypotheses:**
+- Put peer testimony near the relevant audience or objection.
+- Put case-study metrics where the methodology and source can be inspected.
+- Put scale evidence near a scale claim, if scale matters to the decision.
+- Put endorsements beside the claim they endorse and disclose material ties.
+- Put certification or security evidence where a visitor assesses that risk.
+
+Choose placement from user research and page context, then verify it with
+usability evidence or a pre-registered experiment when the decision matters.
 
 **Proof check**: every proof claim must be verifiable. Remove or rewrite vague claims like "used by thousands" without a number, "industry-leading" without a comparison, or "fast" without a metric.
 
 ## Pricing Psychology
 
-For pages with pricing, offers, or value propositions involving cost:
+For pages with pricing, optimize comprehension and informed choice before
+persuasion. Verify currency, billing interval, taxes/fees, renewal, usage limits,
+cancellation, refund terms, eligibility, and feature truth.
 
-**Anchor pricing**: show the higher-value option first. Readers anchor to the first price they see.
-
-**Decoy option**: three-tier pricing where the middle tier feels like the "obvious" choice. Middle-tier should share features with the top tier but at a meaningful price gap.
-
-**Guarantee framing**: "30-day money-back guarantee" reduces perceived risk more than "risk-free." Add the guarantee near the buy CTA, not in the footer.
-
-**Loss aversion**: Loss framing ("Don't miss the launch price") outperforms gain framing ("Save 20%") for the same offer — because losses feel twice as large as equivalent gains. Apply only when the deadline or scarcity is provably real. See Scarcity and Urgency Framework below for rules on when urgency is ethical vs. a dark pattern.
-
-**Free trial vs freemium**: free trial creates deadline urgency (upgrade before it expires); freemium creates habit lock-in (invested users upgrade). Pick based on your product's habit loop, not what competitors do.
+- **Order and emphasis**: anchoring can affect judgments, but it does not prove
+  a particular plan order will improve qualified conversion or retention. Test
+  order with revenue quality and cancellation/refund guardrails.
+- **Plan architecture**: do not add a decoy or manufacture an "obvious" tier.
+  Each plan must serve a real segment and remain understandable on its own.
+- **Guarantee framing**: display only an approved guarantee and its material
+  terms. Test placement; do not imply it is universally superior.
+- **Gain/loss framing**: treat framing as a hypothesis. Never manufacture loss,
+  scarcity, or a deadline, and monitor trust and post-purchase outcomes.
+- **Trial/freemium**: choose from activation path, marginal cost, abuse risk,
+  support load, retention evidence, and billing constraints. Measure downstream
+  activation and retention, not signup rate alone.
 
 ## Scarcity and Urgency Framework
 
@@ -408,9 +408,13 @@ For deeper copy work (formulas, frameworks, variants), route to `suede-copy`.
 
 If you catch yourself thinking any of these, stop and run the required step:
 
-- "The page just needs visual polish." — Run the Friction Audit first; friction beats aesthetics.
-- "This change feels high-impact." — Run the conversion math; impact is a revenue number, not a feeling.
-- "Urgency will lift conversions." — Only when the deadline is real; run the 30-day test before adding it.
+- "The page just needs visual polish." — Run the Friction Audit and render the
+  current experience before deciding what kind of change is warranted.
+- "This change feels high-impact." — Identify the evidence, affected
+  population, primary metric, guardrails, and decision the evidence would
+  change.
+- "Urgency will lift conversions." — Only use truthful urgency, and treat any
+  effect as a hypothesis with trust and post-purchase guardrails.
 - "Source inspection is enough for visual work." — Render the page; check desktop and mobile.
 - "I'll estimate their traffic to fill in the model." — Ask for analytics exports; never invent numbers.
 
@@ -421,9 +425,11 @@ Close every meaningful conversion pass with this block:
 ```text
 Surface: [URL or route + repo/branch]
 Funnel stage: TOFU | MOFU | BOFU
-Friction score: [N sources — low | medium | high]
+Friction inventory: [items with evidence, affected population, and severity]
 Changed: [files or sections touched]
-Hypotheses (ranked by projected lift): [1–3, each with conversion math]
+Measurement readiness: [events/denominators/assignment/exposure verified or gaps]
+Hypotheses: [1–3, prioritized by evidence, population, decision value, effort, risk]
+Experiment plan: [primary metric, guardrails, MDE, sample/duration, SRM check, or not applicable]
 Verification: [exact status words — inspected, changed locally, verified locally, deployed, verified live, blocked]
 Caveats: [or "none"]
 Ship gate: ship | ship-with-caveats | hold
@@ -446,4 +452,8 @@ Skip the extra gates for pure copy or layout polish after live/source inspection
 - Do not blur `community`, `suede_studio`, and `brand_direct` fulfillment.
 - Do not add pricing, guarantees, traffic claims, or visitor-ID percentages
   unless they already exist in the current approved source.
+- Do not claim a CRO benchmark, prior, uplift, or revenue projection without a
+  dated source, comparable population, metric definition, and clear label.
+- Do not interpret an experiment before assignment, exposure, event health,
+  sample-ratio mismatch, uncertainty, and guardrail checks pass.
 - Do not stop at source inspection for visual work. Render the page.

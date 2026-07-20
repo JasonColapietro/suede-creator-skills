@@ -17,7 +17,7 @@ A free, MIT-licensed, broadly reusable pack of **27 public skill folders** for C
 - **Next-action recommendation**: score 2-4 candidate moves on goal alignment, unblocking, evidence, urgency, and leverage, then return one recommendation packaged as a short runnable prompt (`suede-recommend-next-action`).
 - **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
 - **iOS and Android app shipping**: turn a website into an App Store-ready iOS app, or build and ship a native Android app end to end from a keyword through the Play Store (`site-to-ios-app`, `android-app-factory`).
-- **Consumer recovery**: the pack's contract negotiator, proven outside a repo — scan an Amazon account for restocking fees, short refunds, and forgotten digital subscriptions (Britbox, Starz, Audible, and more), then drive Amazon's live chat to get them waived or canceled. $448.31 recovered in real cases, including a refund Amazon had already denied once (`amazon-returns-recovery`).
+- **Consumer recovery**: audit Amazon returns and Amazon-billed subscriptions with a validated recovery path, or inspect recurring charges across App Store, Google Play, PayPal, and direct-bill services before any user-confirmed cancellation or refund request (`amazon-returns-recovery`, `subscription-recovery`).
 - **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
 
 ## Install in one command
@@ -130,6 +130,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | Skill | What it does |
 |---|---|
 | [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
+| [`subscription-recovery`](skills/subscription-recovery) | Audit recurring charges outside Amazon across App Store, Google Play, PayPal, bank/card evidence, and direct-bill services; report findings first and require confirmation before cancellation or refund contact |
 
 Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 

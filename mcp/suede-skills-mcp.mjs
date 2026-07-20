@@ -4,6 +4,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const PROTOCOL_VERSION = "2025-06-18";
+const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
+const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator"]);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -13,16 +15,38 @@ function parseArgs(argv) {
     if (argv[i] === "--profile" && argv[i + 1]) {
       args.profile = argv[i + 1];
       i += 1;
+    } else {
+      throw new Error(`Unknown or incomplete argument: ${argv[i]}`);
     }
+  }
+  if (!VALID_PROFILES.has(args.profile)) {
+    throw new Error(`Unknown profile: ${args.profile}. Expected one of: ${[...VALID_PROFILES].join(", ")}`);
   }
   return args;
 }
 
-const { profile } = parseArgs(process.argv);
+let profile;
+try {
+  ({ profile } = parseArgs(process.argv));
+} catch (error) {
+  process.stderr.write(`${error.message}\n`);
+  process.exit(2);
+}
 const catalogPath = path.join(__dirname, "catalog.json");
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
-const MAX_INPUT_BUFFER_CHARS = 1024 * 1024;
+const MAX_INPUT_BUFFER_BYTES = 1024 * 1024;
 const MAX_TEXT_CHARS = 2000;
+
+function isObject(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function rpcError(message, code = -32602, data) {
+  const error = new Error(message);
+  error.code = code;
+  if (data !== undefined) error.data = data;
+  return error;
+}
 
 function boundedString(value, fallback = "") {
   const raw = value === undefined || value === null ? fallback : String(value);
@@ -107,9 +131,9 @@ function seoAuditTemplate(args = {}) {
     "- Flag redirects, duplicate URLs, missing titles, and missing descriptions.",
     "",
     "## On-Page Copy And Answer Check",
-    "- One H1 that names the outcome.",
-    "- Search-ready title under 60 characters when practical.",
-    "- Meta description around 120-160 characters when practical.",
+    "- Confirm one clear page-level heading or equivalent semantic main heading; judge hierarchy and accessibility, not H1 count alone.",
+    "- Record title length as a preview diagnostic. Google publishes no fixed title character limit or ranking threshold.",
+    "- Record meta-description length as a preview diagnostic. Google publishes no fixed character limit and may select page content instead.",
     "- H2/H3 structure matches actual page sections.",
     "- Durable Suede terms appear naturally, not stuffed.",
     "- Answer-ready definitions and FAQ copy are visible, sourceable, and claim-safe.",
@@ -396,6 +420,81 @@ const tools = [
   }
 ];
 
+const skillOutputSchema = {
+  type: "object",
+  properties: {
+    name: { type: "string" },
+    area: { type: "string" },
+    description: { type: "string" },
+    useWhen: { type: "string" }
+  },
+  required: ["name", "area", "description", "useWhen"],
+  additionalProperties: false
+};
+
+const nullableString = { type: ["string", "null"] };
+const toolOutputSchemas = {
+  list_suede_skills: {
+    type: "object",
+    properties: { skills: { type: "array", items: skillOutputSchema } },
+    required: ["skills"],
+    additionalProperties: false
+  },
+  get_suede_skill: {
+    type: "object",
+    properties: { found: { type: "boolean" }, skill: skillOutputSchema },
+    required: ["found"],
+    additionalProperties: false
+  },
+  suede_install_options: {
+    type: "object",
+    properties: {
+      plugins: { type: "array", items: { type: "object" } },
+      surface: { type: "string", enum: ["all", "codex", "plugin", "mcp", "claude"] }
+    },
+    required: ["plugins", "surface"],
+    additionalProperties: false
+  },
+  suede_copy_seo_audit: {
+    type: "object",
+    properties: { target: nullableString, primaryIntent: nullableString },
+    required: ["target", "primaryIntent"],
+    additionalProperties: false
+  },
+  suede_visibility_grade: {
+    type: "object",
+    properties: { target: nullableString, primaryAction: nullableString },
+    required: ["target", "primaryAction"],
+    additionalProperties: false
+  },
+  suede_code_grade: {
+    type: "object",
+    properties: { target: nullableString, intent: nullableString },
+    required: ["target", "intent"],
+    additionalProperties: false
+  },
+  suede_qa_checklist: {
+    type: "object",
+    properties: { target: nullableString, scope: { type: "string" } },
+    required: ["target", "scope"],
+    additionalProperties: false
+  }
+};
+
+for (const tool of tools) {
+  tool.inputSchema.additionalProperties = false;
+  for (const property of Object.values(tool.inputSchema.properties || {})) {
+    if (property.type === "string" && !property.maxLength) property.maxLength = MAX_TEXT_CHARS;
+  }
+  tool.outputSchema = toolOutputSchemas[tool.name];
+  tool.annotations = {
+    readOnlyHint: true,
+    destructiveHint: false,
+    idempotentHint: true,
+    openWorldHint: false
+  };
+}
+
 const resources = [
   {
     uri: "suede://catalog",
@@ -488,72 +587,88 @@ const prompts = [
   }
 ];
 
+function validateToolArguments(tool, args) {
+  if (!isObject(args)) throw rpcError(`Arguments for ${tool.name} must be an object`);
+  const schema = tool.inputSchema;
+  const allowed = new Set(Object.keys(schema.properties || {}));
+  const extras = Object.keys(args).filter((key) => !allowed.has(key));
+  if (extras.length) throw rpcError(`Unknown argument(s) for ${tool.name}: ${extras.sort().join(", ")}`);
+  for (const required of schema.required || []) {
+    if (!(required in args)) throw rpcError(`Missing required argument for ${tool.name}: ${required}`);
+  }
+  for (const [key, value] of Object.entries(args)) {
+    const property = schema.properties[key];
+    if (property.type === "string" && typeof value !== "string") {
+      throw rpcError(`Argument ${key} for ${tool.name} must be a string`);
+    }
+    if (typeof value === "string" && property.maxLength && value.length > property.maxLength) {
+      throw rpcError(`Argument ${key} for ${tool.name} exceeds ${property.maxLength} characters`);
+    }
+    if (property.enum && !property.enum.includes(value)) {
+      throw rpcError(`Argument ${key} for ${tool.name} must be one of: ${property.enum.join(", ")}`);
+    }
+  }
+}
+
+function toolResult(humanText, structuredContent, extra = {}) {
+  return {
+    content: [text(humanText), text(JSON.stringify(structuredContent))],
+    structuredContent,
+    ...extra
+  };
+}
+
 function callTool(name, args = {}) {
   const data = profileCatalog();
+  const tool = tools.find((item) => item.name === name);
+  if (!tool) throw rpcError(`Unknown tool: ${name}`);
+  validateToolArguments(tool, args);
   if (name === "list_suede_skills") {
     const area = args.area || (profile === "creator" ? "all" : profile);
     const scoped = area === "all"
       ? data.skills
       : data.skills.filter((skill) => (area === "artist" ? skill.area === "artist" || skill.area === "creator" : skill.area === area));
-    return {
-      content: [text(asMarkdownSkillList({ skills: scoped }))],
-      structuredContent: { skills: scoped }
-    };
+    return toolResult(asMarkdownSkillList({ skills: scoped }), { skills: scoped });
   }
   if (name === "get_suede_skill") {
     const requested = boundedString(args.name).replace(/^\$/, "");
     const skill = data.skills.find((item) => item.name === requested);
     if (!skill) {
-      return { content: [text(`Unknown Suede skill: ${requested}`)], structuredContent: { found: false }, isError: true };
+      return toolResult(`Unknown Suede skill: ${requested}`, { found: false }, { isError: true });
     }
-    return {
-      content: [text(`$${skill.name}: ${skill.description}\n\nUse when: ${skill.useWhen}`)],
-      structuredContent: { found: true, skill }
-    };
+    return toolResult(`$${skill.name}: ${skill.description}\n\nUse when: ${skill.useWhen}`, { found: true, skill });
   }
   if (name === "suede_install_options") {
-    return {
-      content: [text(installMarkdown(data, args.surface || "all"))],
-      structuredContent: { plugins: data.plugins, surface: args.surface || "all" }
-    };
+    return toolResult(
+      installMarkdown(data, args.surface || "all"),
+      { plugins: data.plugins, surface: args.surface || "all" }
+    );
   }
   if (name === "suede_copy_seo_audit") {
-    return {
-      content: [text(seoAuditTemplate(args))],
-      structuredContent: {
+    return toolResult(seoAuditTemplate(args), {
         target: args.url || args.pageType ? boundedString(args.url || args.pageType) : null,
         primaryIntent: args.primaryIntent ? boundedString(args.primaryIntent) : null
-      }
-    };
+    });
   }
   if (name === "suede_visibility_grade") {
-    return {
-      content: [text(visibilityGradeTemplate(args))],
-      structuredContent: {
+    return toolResult(visibilityGradeTemplate(args), {
         target: args.url || args.pageType ? boundedString(args.url || args.pageType) : null,
         primaryAction: args.primaryAction ? boundedString(args.primaryAction) : null
-      }
-    };
+    });
   }
   if (name === "suede_code_grade") {
-    return {
-      content: [text(codeGradeTemplate(args))],
-      structuredContent: {
+    return toolResult(codeGradeTemplate(args), {
         target: args.target || args.repo || args.diff ? boundedString(args.target || args.repo || args.diff) : null,
         intent: args.intent ? boundedString(args.intent) : null
-      }
-    };
+    });
   }
   if (name === "suede_qa_checklist") {
-    return {
-      content: [text(qaChecklist(args))],
-      structuredContent: {
+    return toolResult(qaChecklist(args), {
         target: args.target ? boundedString(args.target) : null,
         scope: boundedString(args.scope, "full")
-      }
-    };
+    });
   }
-  throw Object.assign(new Error(`Unknown tool: ${name}`), { code: -32602 });
+  throw rpcError(`Unknown tool: ${name}`);
 }
 
 function readResource(uri) {
@@ -579,7 +694,26 @@ function readResource(uri) {
   throw Object.assign(new Error(`Unknown resource URI: ${uri}`), { code: -32602 });
 }
 
+function validatePromptArguments(name, args) {
+  const prompt = prompts.find((item) => item.name === name);
+  if (!prompt) throw rpcError(`Unknown prompt: ${name}`);
+  if (!isObject(args)) throw rpcError(`Arguments for prompt ${name} must be an object`);
+  const allowed = new Set(prompt.arguments.map((argument) => argument.name));
+  const extras = Object.keys(args).filter((key) => !allowed.has(key));
+  if (extras.length) throw rpcError(`Unknown argument(s) for prompt ${name}: ${extras.sort().join(", ")}`);
+  for (const argument of prompt.arguments) {
+    if (argument.required && (!(argument.name in args) || typeof args[argument.name] !== "string" || !args[argument.name].trim())) {
+      throw rpcError(`Missing required argument for prompt ${name}: ${argument.name}`);
+    }
+  }
+  for (const [key, value] of Object.entries(args)) {
+    if (typeof value !== "string") throw rpcError(`Argument ${key} for prompt ${name} must be a string`);
+    if (value.length > MAX_TEXT_CHARS) throw rpcError(`Argument ${key} for prompt ${name} exceeds ${MAX_TEXT_CHARS} characters`);
+  }
+}
+
 function getPrompt(name, args = {}) {
+  validatePromptArguments(name, args);
   if (name === "suede-copy-seo-audit") {
     const skillRef = isSkillAvailable("suede-copy") ? "$suede-copy" : "the Suede SEO/AEO/AI EO copy audit MCP template";
     return {
@@ -644,27 +778,100 @@ function getPrompt(name, args = {}) {
   throw Object.assign(new Error(`Unknown prompt: ${name}`), { code: -32602 });
 }
 
+let lifecyclePhase = "new";
+
+function assertParamsObject(params, method) {
+  if (!isObject(params)) throw rpcError(`${method} params must be an object`);
+  return params;
+}
+
+function assertOnlyKeys(params, keys, method) {
+  const allowed = new Set(keys);
+  const extras = Object.keys(params).filter((key) => !allowed.has(key));
+  if (extras.length) throw rpcError(`${method} received unknown param(s): ${extras.sort().join(", ")}`);
+}
+
+function initialize(params) {
+  if (lifecyclePhase !== "new") throw rpcError("MCP session is already initialized", -32600);
+  assertParamsObject(params, "initialize");
+  assertOnlyKeys(params, ["protocolVersion", "capabilities", "clientInfo"], "initialize");
+  if (typeof params.protocolVersion !== "string" || !params.protocolVersion.trim()) {
+    throw rpcError("initialize.params.protocolVersion must be a non-empty string");
+  }
+  if (!isObject(params.capabilities)) throw rpcError("initialize.params.capabilities must be an object");
+  if (!isObject(params.clientInfo)) throw rpcError("initialize.params.clientInfo must be an object");
+  if (typeof params.clientInfo.name !== "string" || !params.clientInfo.name.trim()) {
+    throw rpcError("initialize.params.clientInfo.name must be a non-empty string");
+  }
+  if (typeof params.clientInfo.version !== "string" || !params.clientInfo.version.trim()) {
+    throw rpcError("initialize.params.clientInfo.version must be a non-empty string");
+  }
+
+  lifecyclePhase = "awaiting_initialized";
+  const negotiatedVersion = SUPPORTED_PROTOCOL_VERSIONS.has(params.protocolVersion)
+    ? params.protocolVersion
+    : PROTOCOL_VERSION;
+  return {
+    protocolVersion: negotiatedVersion,
+    capabilities: {
+      tools: { listChanged: false },
+      resources: { subscribe: false, listChanged: false },
+      prompts: { listChanged: false }
+    },
+    serverInfo: { name: "suede-skills-mcp", title: "Suede Skills MCP", version: catalog.version },
+    instructions: "Use this read-only MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
+  };
+}
+
+function handleNotification(message) {
+  if (message.method === "notifications/initialized") {
+    if (lifecyclePhase === "awaiting_initialized") lifecyclePhase = "ready";
+  }
+}
+
 function handleRequest(message) {
-  const { id, method, params = {} } = message;
+  const { method } = message;
+  const params = message.params === undefined ? {} : message.params;
   if (!method || typeof method !== "string") {
-    throw Object.assign(new Error("Invalid JSON-RPC request: method must be a string"), { code: -32600 });
+    throw rpcError("Invalid JSON-RPC request: method must be a string", -32600);
   }
-  if (method === "initialize") {
-    return {
-      protocolVersion: PROTOCOL_VERSION,
-      capabilities: { tools: {}, resources: {}, prompts: {} },
-      serverInfo: { name: "suede-skills-mcp", version: catalog.version },
-      instructions: "Use this MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
-    };
-  }
+  if (method === "initialize") return initialize(params);
   if (method === "ping") return {};
-  if (method === "tools/list") return { tools };
-  if (method === "tools/call") return callTool(params.name, params.arguments || {});
-  if (method === "resources/list") return { resources };
-  if (method === "resources/read") return { contents: [readResource(params.uri)] };
-  if (method === "prompts/list") return { prompts };
-  if (method === "prompts/get") return getPrompt(params.name, params.arguments || {});
-  throw Object.assign(new Error(`Unsupported MCP method: ${method}`), { code: -32601 });
+  if (lifecyclePhase !== "ready") throw rpcError("MCP server is not initialized", -32000);
+  assertParamsObject(params, method);
+  if (method === "tools/list") {
+    assertOnlyKeys(params, ["cursor"], method);
+    if ("cursor" in params && typeof params.cursor !== "string") throw rpcError("tools/list cursor must be a string");
+    return { tools };
+  }
+  if (method === "tools/call") {
+    assertOnlyKeys(params, ["name", "arguments"], method);
+    if (typeof params.name !== "string" || !params.name.trim()) throw rpcError("tools/call name must be a non-empty string");
+    if ("arguments" in params && !isObject(params.arguments)) throw rpcError("tools/call arguments must be an object");
+    return callTool(params.name, params.arguments || {});
+  }
+  if (method === "resources/list") {
+    assertOnlyKeys(params, ["cursor"], method);
+    if ("cursor" in params && typeof params.cursor !== "string") throw rpcError("resources/list cursor must be a string");
+    return { resources };
+  }
+  if (method === "resources/read") {
+    assertOnlyKeys(params, ["uri"], method);
+    if (typeof params.uri !== "string" || !params.uri.trim()) throw rpcError("resources/read uri must be a non-empty string");
+    return { contents: [readResource(params.uri)] };
+  }
+  if (method === "prompts/list") {
+    assertOnlyKeys(params, ["cursor"], method);
+    if ("cursor" in params && typeof params.cursor !== "string") throw rpcError("prompts/list cursor must be a string");
+    return { prompts };
+  }
+  if (method === "prompts/get") {
+    assertOnlyKeys(params, ["name", "arguments"], method);
+    if (typeof params.name !== "string" || !params.name.trim()) throw rpcError("prompts/get name must be a non-empty string");
+    if ("arguments" in params && !isObject(params.arguments)) throw rpcError("prompts/get arguments must be an object");
+    return getPrompt(params.name, params.arguments || {});
+  }
+  throw rpcError(`Unsupported MCP method: ${method}`, -32601);
 }
 
 function send(payload) {
@@ -676,13 +883,15 @@ function sendResult(id, result) {
 }
 
 function sendError(id, error) {
+  const details = {
+    code: Number.isInteger(error && error.code) ? error.code : -32603,
+    message: error instanceof Error ? error.message : String(error)
+  };
+  if (error && error.data !== undefined) details.data = error.data;
   send({
     jsonrpc: "2.0",
     id,
-    error: {
-      code: Number.isInteger(error && error.code) ? error.code : -32603,
-      message: error instanceof Error ? error.message : String(error)
-    }
+    error: details
   });
 }
 
@@ -690,7 +899,7 @@ let buffer = "";
 process.stdin.setEncoding("utf8");
 process.stdin.on("data", (chunk) => {
   buffer += chunk;
-  if (buffer.length > MAX_INPUT_BUFFER_CHARS) {
+  if (Buffer.byteLength(buffer, "utf8") > MAX_INPUT_BUFFER_BYTES) {
     buffer = "";
     sendError(null, Object.assign(new Error("MCP input buffer exceeded 1 MiB"), { code: -32600 }));
     return;
@@ -709,9 +918,10 @@ process.stdin.on("data", (chunk) => {
     }
     try {
       if (!message || typeof message !== "object" || message.jsonrpc !== "2.0") {
-        throw Object.assign(new Error("Invalid JSON-RPC request"), { code: -32600 });
+        throw rpcError("Invalid JSON-RPC request", -32600);
       }
       if (message.id === undefined) {
+        handleNotification(message);
         continue;
       }
       sendResult(message.id, handleRequest(message));
