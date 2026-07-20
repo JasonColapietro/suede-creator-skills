@@ -52,6 +52,35 @@ const PUBLIC_TEXT_EXTENSIONS = new Set([
   ".zsh",
 ]);
 
+function inspectGitHistory(root) {
+  if (!fs.existsSync(path.join(root, ".git"))) {
+    return { state: "packaged" };
+  }
+
+  const topLevelProbe = spawnSync("git", ["-C", root, "rev-parse", "--show-toplevel"], {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "ignore"]
+  });
+  if (topLevelProbe.error || topLevelProbe.status !== 0) {
+    return { state: "error", detail: topLevelProbe.error?.code || `git rev-parse exited ${topLevelProbe.status}` };
+  }
+  if (path.resolve(topLevelProbe.stdout.trim()) !== path.resolve(root)) {
+    return { state: "error", detail: "Git top-level does not match the skill-pack root" };
+  }
+
+  const shallowProbe = spawnSync("git", ["-C", root, "rev-parse", "--is-shallow-repository"], {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "ignore"]
+  });
+  if (shallowProbe.error || shallowProbe.status !== 0) {
+    return { state: "error", detail: shallowProbe.error?.code || `shallow-history probe exited ${shallowProbe.status}` };
+  }
+  const shallowValue = shallowProbe.stdout.trim();
+  if (shallowValue === "true") return { state: "shallow" };
+  if (shallowValue === "false") return { state: "complete" };
+  return { state: "error", detail: `unexpected shallow-history response: ${JSON.stringify(shallowValue)}` };
+}
+
 const internalPhrases = [
   "suede internal",
   "not for public",
@@ -668,16 +697,23 @@ if (clogItems.length === 0) {
     return { date: date ? date[1] : null, hash: hash ? hash[1] : null };
   });
 
-  for (const entry of clogEntries) {
-    if (!entry.hash) continue;
-    const probe = spawnSync("git", ["-C", repoRoot, "cat-file", "-e", `${entry.hash}^{commit}`], { stdio: "ignore" });
-    if (probe.error) {
-      warn.push(`Changelog hash check skipped — could not run git (${probe.error.code || probe.error.message})`);
-      break;
+  const gitHistory = inspectGitHistory(repoRoot);
+  if (gitHistory.state === "complete") {
+    for (const entry of clogEntries) {
+      if (!entry.hash) continue;
+      const probe = spawnSync("git", ["-C", repoRoot, "cat-file", "-e", `${entry.hash}^{commit}`], { stdio: "ignore" });
+      if (probe.error) {
+        warn.push(`Changelog hash check skipped — could not run git (${probe.error.code || probe.error.message})`);
+        break;
+      }
+      if (probe.status !== 0) {
+        fail.push(`docs/index.html changelog cites commit ${entry.hash} which does not resolve to a commit in this repo`);
+      }
     }
-    if (probe.status !== 0) {
-      fail.push(`docs/index.html changelog cites commit ${entry.hash} which does not resolve to a commit in this repo`);
-    }
+  } else if (gitHistory.state === "packaged" || gitHistory.state === "shallow") {
+    console.log(`Changelog commit resolution skipped: ${gitHistory.state} skill-pack checkout.`);
+  } else {
+    warn.push(`Changelog hash check unavailable — ${gitHistory.detail}`);
   }
 
   for (let i = 1; i < clogEntries.length; i++) {
