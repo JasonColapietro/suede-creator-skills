@@ -53,6 +53,10 @@ evidence-led, and easy to scan.
 
 - Global navigation and mobile menu.
 - Proof-led hero with terminal install panel.
+- Changelog ship log: timeline ledger of real commits with type-coded spine
+  nodes, commit-activity sparkline, last-shipped freshness pill, and type
+  filter chips. Entries carry real dates and short hashes linking to GitHub;
+  filters and relative time are progressive enhancement.
 - Benchmark tiles and disclosed scorecard.
 - Skill catalog lanes and rows.
 - Install terminals and alternative install paths.
