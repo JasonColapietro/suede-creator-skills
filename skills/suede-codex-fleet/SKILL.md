@@ -73,7 +73,7 @@ Keep a persistent workspace per recurring fleet job (a social-content fleet, a t
 - Never ship worker output without the Claude review gate.
 - Workers never run git push, deploys, or credentialed commands; content and code-edit tasks only, inside the sandbox.
 - Secrets never go into briefs or AGENTS.md; workers get file paths, not tokens.
-- If a worker's output violates claim boundaries or hard bans, the fix is Claude's edit or a delta run, never "close enough".
+- If a worker's output violates evidence boundaries or hard bans, the fix is Claude's edit or a delta run, never "close enough".
 
 ## Troubleshooting
 

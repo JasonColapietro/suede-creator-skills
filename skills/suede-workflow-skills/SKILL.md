@@ -233,7 +233,7 @@ notes, and a scored quality audit when the scope is broad enough.
 For public copy, docs, README, landing pages, skill pages, plugin listings, and
 SEO passes, including AEO and AI EO:
 
-1. Identify reader, page type, primary action, proof, and claim boundaries.
+1. Identify reader, page type, primary action, proof, and evidence boundaries.
 2. Write the clearest outcome first.
 3. Use concrete artifacts, commands, links, screenshots, files, or examples as
    proof.
@@ -264,7 +264,7 @@ Primary CTA:
 Internal links:
 Schema changes:
 Answer-ready summary:
-Claim boundaries:
+Evidence boundaries:
 Ship gate: ship | ship-with-caveats | hold
 ```
 
@@ -321,7 +321,7 @@ For code, docs, plugin, MCP, or public-site changes:
 
 1. Build a context graph: changed files, callers, routes, data flow, configs,
    docs, tests, generated files, and runtime surfaces.
-2. Review for production behavior, security, public claim truth, regression
+2. Review for production behavior, security, published-statement accuracy, regression
    risk, missing tests, broken install paths, stale docs, and deploy gaps.
 3. Lead with findings ordered by severity.
 
@@ -392,7 +392,7 @@ Useful grouping loops:
 - Scout and constraints loop: map docs, WIP, risky files, live routes, owners,
   and no-touch boundaries before edits.
 - Adversarial review loop: one lane tries to break the work from production,
-  user, release, public-claim, and abuse angles before release.
+  user, release, published-statement, and abuse angles before release.
 - Consensus review loop: two review lenses merge blockers, caveats, and fixes.
 - Design and visibility loop: rendered QA plus A-F page visibility grading.
 - Code grade loop: A-F code grade plus fix briefs for weak lanes.
@@ -479,7 +479,7 @@ Useful lanes:
   readability, and design signal.
 - Code grader: A-F ship-risk grade with lane scores and required upgrades.
 - Code reviewer: correctness, security, regression, tests, install paths.
-- Release verifier: build, deploy, live/API behavior, public claims.
+- Release verifier: build, deploy, live/API behavior, published statements.
 - Handoff writer: files changed, commands, verification, caveats, next step.
 
 ## Public Install Guidance

@@ -15,7 +15,7 @@ It is useful when an agent needs structured access to:
   max-agent loops, and rights evidence checks.
 
 For public positioning, launch copy, public explainer language, Suedify
-messaging, MCP explanation, social posts, emails, FAQ answers, and claim
+messaging, MCP explanation, social posts, emails, FAQ answers, and evidence
 boundaries, use [`PROMO.md`](../PROMO.md).
 
 Run it directly:

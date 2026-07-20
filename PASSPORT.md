@@ -10,7 +10,7 @@ by the creator, recognized by Suede, and legible to agents.
 This repository is its first set of working instruments.
 
 For public positioning, launch copy, public explainer language, MCP language,
-Suedify copy, social posts, emails, FAQ answers, and claim boundaries, use
+Suedify copy, social posts, emails, FAQ answers, and evidence boundaries, use
 [`PROMO.md`](PROMO.md).
 
 ---

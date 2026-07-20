@@ -53,6 +53,6 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 
 - Suede Skills MCP — Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 7 tools, 6 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
 
-## Claim boundary
+## Evidence boundary
 
 Suede skills organize work, generate reports, improve public docs, and prepare review material. They do not clear legal rights, publish releases, write to registries, approve payouts, or upload private files unless a separate workflow explicitly does that and the operator approves it.

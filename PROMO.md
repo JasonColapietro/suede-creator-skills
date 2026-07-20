@@ -3,7 +3,7 @@
 Use this file when builders, creators, or operators need to
 explain Suede Creator Skills and the Suede workflow in public. It is written
 for sharing, posting, documenting, onboarding, and answering questions with
-clear, search-friendly, specific language and careful claim boundaries.
+clear, search-friendly, specific language and careful evidence boundaries.
 
 ## Core Positioning
 
@@ -69,7 +69,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Use progressive feedback: tell it what worked, tell it what missed, or say `Cue Suede` to bring up choices.
 - Use MCP only when the workflow benefits from a catalog, audit, or checklist.
 - A public skill pack for people who want AI agents to ship better work with fewer resets.
-- Agent workflows for people who care about public pages, repo quality, and claim boundaries.
+- Agent workflows for people who care about public pages, repo quality, and evidence boundaries.
 - Twenty-six public Suede skills, led by one design-forward umbrella workflow.
 - Even the GitHub Pages site sells: polished docs, live catalog, install paths, copy bank, schema, sitemap, OG metadata, and mobile QA.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
@@ -336,7 +336,7 @@ Say `Cue Suede` when something needs to change or when something worked so well 
 When the agent does something you like, say what worked. When it misses, say exactly what to change. You can also say `Cue Suede` mid-workflow or at the end to bring up choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing. Final handoffs should explain the result twice: first in plain non-coder language, then in the usual detailed breakdown.
 ```
 
-### Section: Claim Boundary
+### Section: Evidence Boundary
 
 ```text
 Suede skills organize work, generate reports, improve public docs, and prepare review material. They do not clear legal rights, publish releases, write to registries, approve payouts, or upload private files unless a separate workflow explicitly does that and the operator approves it.
@@ -632,7 +632,7 @@ Suede packages the judgment, checklists, language, and review habits that make a
 ```text
 Suede copy is written for real public surfaces: GitHub repos, install pages, skill docs, launch pages, SEO/AEO/AI EO snippets, FAQs, and social posts.
 
-It keeps the claim boundary visible so the work can be shared without pretending the agent copied protected assets, invented proof, cleared rights, published releases, or approved payouts.
+It keeps the evidence boundary visible so the work can be shared without pretending the agent copied protected assets, invented proof, cleared rights, published releases, or approved payouts.
 ```
 
 ## Objection Handling
@@ -783,7 +783,7 @@ preserve this for later mimicry, or keep as-is by saying nothing. At the end,
 it should also give a very simple explanation for non-coders followed by the
 usual breakdown.
 
-### What is the safest public claim?
+### What is the safest published statement?
 
 Suede skills help agents restyle sites, write better public copy, run SEO/AEO/AI EO
 audits, coordinate QA, package artist campaigns, and prepare optional creator
@@ -800,7 +800,7 @@ decisions on their own.
 - Link to the MCP source.
 - Include a simple "Use MCP only when it helps" rule.
 - Keep local-only install aliases out of public copy.
-- Include claim boundaries.
+- Include evidence boundaries.
 - Include Suedify as the marketable design workflow.
 - Include Suedify, design, copywriting, SEO/AEO/AI EO, QA, and artist campaign keywords.
 - Include SEO/AEO/AI EO audit and QA language.

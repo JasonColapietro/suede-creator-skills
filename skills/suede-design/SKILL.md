@@ -97,7 +97,7 @@ Do not call work done because the code changed. Call it done only when the done 
 Use `suede-agent-teams` for major design work when several lanes must move at
 once, such as copy plus layout plus asset plus implementation plus QA. Use
 `suede-code-review` before the ship gate when design work changes shared
-components, routing, auth, payments, analytics, release config, or public claim
+components, routing, auth, payments, analytics, release config, or published-statement
 truth. Skip both for a small visual or copy fix that can be inspected, patched,
 rendered, and verified directly.
 

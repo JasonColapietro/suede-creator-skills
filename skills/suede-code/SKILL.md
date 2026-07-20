@@ -37,7 +37,7 @@ Build a lightweight graph before judging the diff:
 2. Imports, callers, routes, API handlers, jobs, hooks, models, schemas, and config/env dependencies touched by the change.
 3. Tests, fixtures, migrations, release scripts, docs, and screenshots that should move with the behavior.
 4. Runtime surfaces: local route, live URL, API endpoint, simulator flow, dashboard, App Store metadata, or deployment target.
-5. Domain contracts: creator ownership, rights/provenance, registry-backed media, royalty routing, agent commerce, wallet/payment flows, and public claim truth.
+5. Domain contracts: creator ownership, rights/provenance, registry-backed media, royalty routing, agent commerce, wallet/payment flows, and published-statement accuracy.
 
 Flag beyond-the-diff risks when related files, defaults, docs, env, or deploy requirements no longer agree.
 
@@ -136,7 +136,7 @@ Verify: set JWT_SECRET="" and curl /api/me — expect 401, currently 200.
 OWASP: A02 Cryptographic Failures
 Confidence: high
 ```
-P2/P3 get one line each. **Severity:** P0 data loss/security/payment/broken release/unsafe public behavior · P1 likely prod regression, auth bug, broken primary path, false public claim, missing deploy requirement · P2 meaningful edge-case failure, incomplete state, test gap on changed behavior · P3 low-risk improvement, clarity, cleanup. If it can't be tied to a file/route/command/state/behavior, mark it an open question.
+P2/P3 get one line each. **Severity:** P0 data loss/security/payment/broken release/unsafe public behavior · P1 likely prod regression, auth bug, broken primary path, false published statement, missing deploy requirement · P2 meaningful edge-case failure, incomplete state, test gap on changed behavior · P3 low-risk improvement, clarity, cleanup. If it can't be tied to a file/route/command/state/behavior, mark it an open question.
 
 ## Fix Mode (only on `--fix` or explicit request)
 
