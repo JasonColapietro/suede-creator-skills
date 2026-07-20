@@ -325,12 +325,16 @@ const skillNames = listDirs(skillsDir);
 const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")));
 const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
+const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
 
 if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
   fail.push(`catalog.json version is not valid semantic versioning: ${catalog.version}`);
 }
 if (packageJson.version !== catalog.version) {
   fail.push(`package.json version (${packageJson.version}) does not match catalog.json version (${catalog.version})`);
+}
+if (pluginJson.version !== catalog.version) {
+  fail.push(`plugin.json version (${pluginJson.version}) does not match catalog.json version (${catalog.version})`);
 }
 if (new Set(catalogSkillNames).size !== catalogSkillNames.length) {
   fail.push("mcp/catalog.json contains duplicate skill names");
