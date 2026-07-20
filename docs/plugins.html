@@ -145,28 +145,32 @@
       display: flex; align-items: center; gap: 7px;
       padding: 12px 16px; border-bottom: 1px solid var(--border);
     }
-    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #242424; }
+    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+    .tdot:first-child { background: #4a2a28; }
+    .tdot:nth-child(3) { background: #2c3a2a; }
     .terminal-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
     .terminal-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; }
     .terminal-body pre { flex: 1; overflow-x: auto; }
     .terminal-body code, .terminal-body pre {
-      font-family: var(--mono); font-size: 13.5px; line-height: 1.7;
+      font-family: var(--mono); font-size: 15px; line-height: 1.9;
       color: var(--gold); background: none; padding: 0; white-space: pre;
     }
     .copy-btn {
-      flex-shrink: 0; background: transparent; border: 1px solid var(--border);
-      color: var(--muted); font-family: inherit; font-size: 12.5px;
-      padding: 7px 15px; border-radius: 4px; cursor: pointer;
+      flex-shrink: 0; background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-family: var(--mono); font-size: 12px;
+      padding: 7px 14px; min-height: 36px; border-radius: 4px; cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
     .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
+    .copy-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
     /* CARD GRID */
     .grid-2, .grid-3 { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 36px; }
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .cell { background: var(--card); padding: 30px 28px; border-left: 3px solid var(--gold); }
-    .cell--red { border-left-color: var(--red); }
+    .cell { background: var(--card); padding: 30px 28px; display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+    .cell pre { align-self: stretch; min-width: 0; max-width: 100%; }
+    .cell .copy-btn { margin-top: 2px; }
     .cell .cell-label {
       display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
@@ -174,7 +178,7 @@
     .cell--red .cell-label { color: var(--red-text); }
     .cell p { font-size: 14.5px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
     .cell pre {
-      font-family: var(--mono); font-size: 12px; line-height: 1.7; color: var(--gold);
+      font-family: var(--mono); font-size: 13px; line-height: 1.8; color: var(--gold);
       background: var(--bg); border: 1px solid var(--hairline); border-radius: 4px;
       padding: 14px 16px; overflow-x: auto; white-space: pre; margin: 12px 0;
     }
@@ -205,8 +209,8 @@
     /* SAFETY + FOOTER */
     .safety {
       margin-top: 72px; padding: 24px 28px;
-      border: 1px solid var(--hairline); border-left: 3px solid var(--red);
-      border-radius: 4px; background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px; background: var(--surface);
       font-size: 14px; color: var(--muted); line-height: 1.65;
     }
     footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
@@ -226,27 +230,35 @@
       .page-head { padding: 64px 0 48px; }
       .grid-2 { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; row-gap: 6px; padding: 18px 0; }
-      .terminal-body { flex-direction: column; }
+      .terminal-body { flex-direction: column; align-items: stretch; }
+      .terminal-body pre { min-width: 0; max-width: 100%; }
       .copy-btn { align-self: flex-end; }
     }
-      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
-      .ship-strip-head {
-        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
-        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
-      }
-      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-      .ship-strip-row code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
-        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
-      }
-      .ship-strip-row a {
-        display: inline-flex; align-items: center; min-height: 44px;
-        color: #171310; font-size: 15px; font-weight: 700;
-        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
-        transition: border-color 0.15s;
-      }
-      .ship-strip-row a:hover { border-color: #171310; }
+    .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+    .ship-strip-head {
+      font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+    }
+    .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+    .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+    .ship-strip-row code {
+      font-family: var(--mono); font-size: 16px; font-weight: 600;
+      color: #f0ece4; background: #171310;
+      border-radius: 4px; padding: 13px 20px;
+    }
+    .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
+    .ship-strip-row a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: #171310; font-size: 15px; font-weight: 700;
+      border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .ship-strip-row a:hover { border-color: #171310; }
+    @media (max-width: 720px) {
+      .terminal-body code, .terminal-body pre { font-size: 13.5px; }
+      .ship-strip { padding: 48px 0; }
+      .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -338,6 +350,7 @@
         <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-workflow-skills</pre>
+        <button class="copy-btn" type="button" data-copy-prev>Copy</button>
       </article>
       <article class="cell cell--red">
         <span class="cell-label">Direct workflow skills</span>
@@ -355,6 +368,7 @@
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/android-app-factory</pre>
+        <button class="copy-btn" type="button" data-copy-prev>Copy</button>
       </article>
       <article class="cell">
         <span class="cell-label">Creator toolkit</span>
@@ -366,6 +380,7 @@
   skills/suede-release-linter \
   skills/suede-rights-passport \
   skills/suede-rights-audit</pre>
+        <button class="copy-btn" type="button" data-copy-prev>Copy</button>
       </article>
     </div>
 
@@ -431,9 +446,10 @@
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
         <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
         <div class="ship-strip-row">
-          <code>/plugin install suede-skills@suede</code>
-          <a href="plugins.html">All install paths</a>
+          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+          <a href="./skills/">Browse all 27 skills</a>
         </div>
       </div>
     </section>
@@ -455,13 +471,24 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+  // Progressive enhancement only: every command is plain selectable text without JS.
+  function wireCopy(btn, getText) {
     btn.addEventListener('click', function() {
-      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(getText()).then(function() {
         btn.textContent = 'Copied';
         btn.classList.add('copied');
         setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
       });
+    });
+  }
+  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+    wireCopy(btn, function() { return btn.getAttribute('data-copy'); });
+  });
+  document.querySelectorAll('.copy-btn[data-copy-prev]').forEach(function(btn) {
+    wireCopy(btn, function() {
+      var pre = btn.previousElementSibling;
+      return pre ? pre.textContent.trim() : '';
     });
   });
 </script>
