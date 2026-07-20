@@ -277,7 +277,7 @@ it.
 
 ## Worked Example
 
-Read `references/claim-safe-worked-example.md` for a compact before/after pass.
+Read `references/evidence-boundary-worked-example.md` for a compact before/after pass.
 Its "after" block is a set of hypotheses and proof slots, not publishable copy.
 
 ## A/B Test Hypothesis Generator

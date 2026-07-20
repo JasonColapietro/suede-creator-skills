@@ -137,7 +137,7 @@ QA checklists without turning MCP into a checkbox.
 
 The MCP returns catalog, install, audit, and QA context. It does not upload
 files, clear rights, write to a registry, distribute music, approve payouts, or
-make public claims on its own.
+publish unsupported statements on its own.
 
 ## Public Explainer Copy
 
@@ -494,7 +494,7 @@ worked or missed.
 - suede-ai
 - x402
 
-## Claim Boundaries
+## Evidence Boundaries
 
 Use these lines when the copy needs a safety guard:
 

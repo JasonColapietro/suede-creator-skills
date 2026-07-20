@@ -136,7 +136,7 @@ function seoAuditTemplate(args = {}) {
     "- Record meta-description length as a preview diagnostic. Google publishes no fixed character limit and may select page content instead.",
     "- H2/H3 structure matches actual page sections.",
     "- Durable Suede terms appear naturally, not stuffed.",
-    "- Answer-ready definitions and FAQ copy are visible, sourceable, and claim-safe.",
+    "- Answer-ready definitions and FAQ copy are visible, sourceable, and backed by evidence.",
     "",
     "## Structured Data And AI EO Check",
     "- Match schema to visible content.",
@@ -146,7 +146,7 @@ function seoAuditTemplate(args = {}) {
     "",
     "## Conversion And Trust Check",
     "- One primary CTA.",
-    "- Claim boundaries are visible.",
+    "- Evidence boundaries are visible.",
     "- Proof links point to real docs, scripts, manifests, pages, or repos.",
     "",
     "## Anti-Slop Line Edit Check",
@@ -195,7 +195,7 @@ function visibilityGradeTemplate(args = {}) {
     "",
     "## Grade Caps",
     "- No live page or rendered source inspected caps Overall at C.",
-    "- Broken primary CTA or false public claim caps promotion readiness at D/F.",
+    "- Broken primary CTA or false published statement caps promotion readiness at D/F.",
     "- Design signal D/F blocks promotion as polished even if metadata is decent.",
     "- Missing mobile/tablet/state checks prevents an A.",
     "",
@@ -234,7 +234,7 @@ function codeGradeTemplate(args = {}) {
     "- Diff, changed files, generated files, touched routes, APIs, scripts, MCP tools, or app surfaces.",
     "- Imports, callers, schemas, configs, env requirements, jobs, webhooks, tests, docs, and release paths.",
     "- Build, test, lint, typecheck, browser, simulator, MCP, or live/API evidence that exercises the changed behavior.",
-    "- Suede public claims, rights/provenance, payment/wallet, registry, royalty, and agent-commerce contracts when relevant.",
+    "- Suede published statements, rights/provenance, payment/wallet, registry, royalty, and agent-commerce contracts when relevant.",
     "",
     "## Grade Lanes",
     "- Correctness: A-F.",
@@ -257,7 +257,7 @@ function codeGradeTemplate(args = {}) {
     "## Boundaries",
     "- Do not grade from memory when source or diff can be inspected.",
     "- Do not treat the grade as a certification or audited security result.",
-    "- Do not invent tests, screenshots, live checks, deploy status, or public claim evidence.",
+    "- Do not invent tests, screenshots, live checks, deploy status, or evidence for published statements.",
     "- Do not ship a C, D, or F without naming the required upgrade."
   ];
   if (notes) {
@@ -283,7 +283,7 @@ function qaChecklist(args = {}) {
     "- Exercise `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.",
     "",
     "## SEO/AEO/AI EO And Copy Lane",
-    "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, answer-ready copy, CTA copy, and claim boundaries.",
+    "- Check title, description, H1, headings, canonical, sitemap, schema, internal links, answer-ready copy, CTA copy, and evidence boundaries.",
     "- Run the anti-slop line edit for actor clarity, proof artifacts, fake intensity, false agency, pull-quote slogans, generic phrasing, unsupported claims, and copy score.",
     "",
     "## Visibility And CTA Grade Lane",
@@ -305,7 +305,7 @@ function qaChecklist(args = {}) {
     "- For visual work, compare source visual truth and rendered implementation together with matched viewport, state, theme, auth/content conditions, full-view evidence, focused-region evidence, and pass/block status.",
     "",
     "## Skill Pack Integrity Lane",
-    "- Validate frontmatter, folder/name match, OpenAI manifests, catalog/filesystem match, docs links, install paths, private-path leaks, secret-like text, unsupported public claims, and generated docs drift.",
+    "- Validate frontmatter, folder/name match, OpenAI manifests, catalog/filesystem match, docs links, install paths, private-path leaks, secret-like text, unsupported statements, and generated docs drift.",
     "",
     "## Release Lane",
     "- Run validation commands, commit only scoped files, push, wait for Pages build, and verify live URLs before claiming public completion.",
@@ -721,7 +721,7 @@ function getPrompt(name, args = {}) {
       messages: [
         {
           role: "user",
-          content: text(`Use ${skillRef} to run a full SEO/AEO/AI EO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent, answer intent, and reader action")}. Include technical SEO, answer-ready copy, schema, internal links, CTA truth, claim boundaries, exact rewrites, anti-slop line edits, and the full copy score.`)
+          content: text(`Use ${skillRef} to run a full SEO/AEO/AI EO copy audit for ${boundedString(args.target, "this surface")}. Primary intent: ${boundedString(args.intent, "identify the strongest search intent, answer intent, and reader action")}. Include technical SEO, answer-ready copy, schema, internal links, CTA truth, evidence boundaries, exact rewrites, anti-slop line edits, and the full copy score.`)
         }
       ]
     };

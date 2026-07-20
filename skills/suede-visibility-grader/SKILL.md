@@ -48,7 +48,7 @@ Score each lane A-F, then give one overall grade:
 - **CTA pull:** primary action, secondary proof action, button text, link
   targets, and whether the visitor has a reason to click now.
 - **Proof and trust:** screenshots, commands, docs, manifests, live routes,
-  source files, receipts, authorship, and claim boundaries.
+  source files, receipts, authorship, and evidence boundaries.
 - **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Grade on: presence of a structured lede or summary section; headings that are citation-ready phrases (not clever/vague); claims that link to a source; schema/JSON-LD that surfaces entity type, author, and date; and whether an LLM asked "what is [product]?" would return a correct, attributable answer from this page.
 
   AI readability sub-rubric (each item is worth one grade step):
@@ -73,13 +73,13 @@ Grade meaning — assign on evidence, not impression:
 - **B:** one or two lanes at C; none below C. Fix those; everything else is solid.
 - **C:** three or more lanes at C, or any lane at D. The page works but bleeds attention or trust somewhere in the first scroll. Not ready for paid promotion.
 - **D:** two or more lanes at D, or any lane at F short of the overall-F conditions. Visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
-- **F:** assign when any of these are true: primary CTA is broken, a public claim is false, the page doesn't render, or robots/canonical actively blocks it.
+- **F:** assign when any of these are true: primary CTA is broken, a published statement is false, the page doesn't render, or robots/canonical actively blocks it.
 
 Grade caps — non-negotiable:
 
 - No live inspection → Overall cap: `C`.
 - Broken primary CTA → Overall cap: `D`.
-- False or unsupported public claim → Overall cap: `D`. (If the claim is central to the product promise, `F`.)
+- False or unsupported published statement → Overall cap: `D`. (If the statement is central to the product promise, `F`.)
 - Design signal `D` or `F` → Ship gate is **hold**, regardless of other lanes.
 - Mobile not inspected → `A` is blocked. State the caveat explicitly in Verification.
 
@@ -87,7 +87,7 @@ Ship gate — mechanical:
 
 - **ship:** Overall B or better, no grade cap triggered, no lane below C.
 - **ship-with-caveats:** Overall C, or a higher grade blocked only by uninspected surfaces (mobile, live URL). Name every caveat in Verification.
-- **hold:** Overall D or F, broken primary CTA, false public claim, or Design signal at D or F.
+- **hold:** Overall D or F, broken primary CTA, false published statement, or Design signal at D or F.
 
 ## Surface-Type Standards
 
@@ -134,7 +134,7 @@ If you catch yourself thinking any of these, stop and inspect:
 
 - "The repo description tells me enough to grade." — Inspect the live page or source. No inspection caps Overall at C.
 - "Desktop looks fine; mobile will match." — Mobile not inspected blocks A. Check it or state the caveat.
-- "That claim is probably true." — Unverified public claims cap the grade. Verify or flag it.
+- "That statement is probably true." — Unverified published statements cap the grade. Verify or flag them.
 - "Every other lane is strong; I'll round up." — Grades come from lane evidence and caps, not generosity.
 - "A quick look is enough for a deep grade." — Quick mode exists for that, and it caps at B.
 

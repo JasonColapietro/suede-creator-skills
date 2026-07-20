@@ -205,7 +205,7 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 2. Replace broad claims with proof.
 3. Make the primary action obvious.
 4. Keep local-only details out of public headline copy.
-5. Add a claim boundary when rights, money, registry, or release language appears.
+5. Add an evidence boundary when rights, money, registry, or release language appears.
 
 **Line-edit rules:**
 - Name the actor. Use the creator, operator, buyer, agent, page, repo, command, workflow, route, or proof artifact instead of vague market or page agency.
@@ -218,7 +218,7 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 
 ## Public Explainer Talk-Track Lane
 
-Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, claim-safe, outcome-first. Use "explain" language, not "pitch" language.
+Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, evidence-backed, outcome-first. Use "explain" language, not "pitch" language.
 
 **Explain:**
 1. Start with the outcome: agents ship better public work with less setup.
@@ -235,7 +235,7 @@ Post:
 Email:
 FAQ answer:
 Install explanation:
-Claim boundary:
+Evidence boundary:
 ```
 
 ## SEO And GitHub Copy
@@ -250,7 +250,7 @@ For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella 
 - a first paragraph that repeats the durable entity names naturally
 - answer-ready definitions, FAQ copy, and proof links that AI summaries can cite without inventing facts
 - links to install docs, skill manifests, scripts, references, examples, live Pages, and source
-- a safe public claim boundary
+- a safe evidence boundary
 
 <!-- Suede defaults. Replace with the equivalent for non-Suede work. -->
 Suede durable keywords: Suede Creator Skills, Suede Rights Passport, Suede Release Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
@@ -264,7 +264,7 @@ For a deep, standalone SEO audit (technical access, keyword research, schema mar
 When the copy workflow includes an SEO pass (metadata, structure, or copy quality only):
 - **Metadata:** title, meta description, Open Graph, Twitter card, image alt, author/publisher, durable entity names.
 - **Structure:** one H1, useful H2/H3 hierarchy, FAQ fit, internal links, descriptive anchor text.
-- **Copy quality:** directness, proof, claim boundaries, CTA clarity, trust language, filler, vocabulary fit.
+- **Copy quality:** directness, proof, evidence boundaries, CTA clarity, trust language, filler, vocabulary fit.
 
 ## Anti-Slop Pass
 
@@ -289,7 +289,7 @@ One idea per sentence. Vary sentence length without em dashes. Do not stack slog
 ### Pull-Quote Gate
 If a line sounds manufactured for a quote card, rewrite it with a real artifact, action, or proof point. Weak: `The future of creator ownership is here.` Better: `Suede turns a release folder into rights, provenance, split, and licensing evidence an agent can read.` More weak/better pairs live in `references/word-substitution-list.md`.
 
-## Claim Safety
+## Evidence Boundaries
 
 This skill organizes and prepares copy. It does not clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes. No competitor product names anywhere.
 
@@ -297,19 +297,19 @@ Allowed: founder-supplied facts, verifiable product behavior, documented integra
 
 Remove: payout amounts not in a live contract, registry write times not benchmarked, rankings without a dated source, partner logos without a live integration, feature availability not yet shipped, any implication of legal clearance, payout approval, distribution, private service access, or guaranteed results.
 
-When a claim is borderline, rewrite it as a testable behavior ("X happens when you do Y") rather than a superlative ("the fastest / the only / the first"). Add a claim boundary whenever rights, money, registry, or release language appears.
+When a claim is borderline, rewrite it as a testable behavior ("X happens when you do Y") rather than a superlative ("the fastest / the only / the first"). Add an evidence boundary whenever rights, money, registry, or release language appears.
 
 ## Workflow
 
 1. **Pick the lane.** Use the router. Most jobs are one lane.
-2. **Scout the surface.** Identify reader, page type, channel, primary action, proof, live/source URL, product or mobile context when relevant, and claim boundaries.
+2. **Scout the surface.** Identify reader, page type, channel, primary action, proof, live/source URL, product or mobile context when relevant, and evidence boundaries.
 3. **Identify register and persona.** Who is speaking (founder, product, docs, public explainer, technical operator) and the reader's relationship to the company (discovering, evaluating, already using). State the chosen register and persona mode in the output header.
 4. **Set write mode.** Long-form, short-form, GitHub/Docs, social, or email. State it before writing.
 5. **Write the outcome first.** Lead with what the reader can do, not a list of features. Apply the persuasion framework that fits the surface (AIDA, PAS, Before-After-Bridge, JTBD, or StoryBrand 7-Part). State which framework was applied.
 6. **Build the proof stack.** Use real files, links, screenshots, commands, docs, installs, live URLs, or product artifacts. No invented proof.
 7. **Run the discoverability pass.** Add SEO/AEO/AI EO title, meta description, H1, subhead, FAQ, answer-ready summary, internal links, schema notes, and app-store wording when relevant. Skip only what the format cannot hold; state what was skipped and why.
 8. **Run the full anti-slop gate.** Word substitution list, readability gate, structure gate, actor gate, rhythm gate, pull-quote gate. No em dashes.
-9. **Run claim safety.** Apply the Claim Safety boundaries inline on every public output.
+9. **Validate every statement.** Apply the Evidence Boundaries inline on every public output.
 10. **Generate variants.** For any headline, CTA, or subject line, deliver 3 variants per the Variant Protocol. Label each; recommend one.
 11. **Score before handoff.** See Score section. Revise before delivering if below threshold. Then package the output in the right shape and deliver copy that can be used directly.
 
@@ -331,10 +331,10 @@ Sections:
 FAQ:
 Answer-ready summary:
 Final CTA:
-Claim boundaries:
+Evidence boundaries:
 ```
 
-For social, email, or public explainer copy: Register / Persona mode / Main copy / Short version / CTA / Proof links / Subject variants (email: 3 options) / Claim boundaries.
+For social, email, or public explainer copy: Register / Persona mode / Main copy / Short version / CTA / Proof links / Subject variants (email: 3 options) / Evidence boundaries.
 
 For GitHub skill copy: Skill / One-line description / Reader / Primary action / Repo-Docs copy / Install CTA / SEO title / Meta description / Keywords / Safety boundary.
 

@@ -42,8 +42,8 @@ Build a lightweight graph before judging the diff:
 4. Runtime surfaces: local route, live URL, API endpoint, simulator flow,
    dashboard, App Store metadata, or deployment target.
 5. Suede domain contracts: creator ownership, rights/provenance, registry-backed
-   media, royalty routing, agent commerce, wallet/payment flows, and public
-   claim truth.
+   media, royalty routing, agent commerce, wallet/payment flows, and
+   published-statement accuracy.
 
 Flag beyond-the-diff risks when related files, defaults, docs, env, or deploy
 requirements no longer agree.
@@ -333,7 +333,7 @@ Confidence: high
 Severity:
 
 - **P0:** data loss, security exposure, payment loss, broken release, or public behavior that must not ship.
-- **P1:** likely production regression, auth/permission bug, broken primary path, false public claim, or missing critical deploy requirement.
+- **P1:** likely production regression, auth/permission bug, broken primary path, false published statement, or missing critical deploy requirement.
 - **P2:** meaningful edge-case failure, incomplete state handling, test gap on changed behavior, or maintainability issue with real cost.
 - **P3:** low-risk improvement, clarity issue, local cleanup, or follow-up.
 

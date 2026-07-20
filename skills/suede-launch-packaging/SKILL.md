@@ -60,7 +60,7 @@ Use this lane when Suede work is ready to leave the local machine and needs a cl
 3. Write the public explanation around the outcome, not the implementation.
 4. Add proof links: source files, docs pages, scripts, MCP tools, screenshots, build output, live route, or raw GitHub URL.
 5. Check install commands from a temporary destination, not only the local repo. (This is the handoff into Lane B — see Install support.)
-6. Run copy, SEO, link, and claim-boundary checks before publishing.
+6. Run copy, SEO, link, and evidence-boundary checks before publishing.
 7. Write a short handoff when another agent or computer may need the result.
 8. End meaningful launches with a simple non-coder explanation (the simple explanation below), the usual breakdown, and `Cue Suede` so the operator can request a change, preserve what worked, or say nothing to keep it as-is.
 
@@ -133,7 +133,7 @@ Corrected copy:
 
 ---
 
-## Claim safety (applies to both lanes)
+## Evidence boundaries (applies to both lanes)
 
 - This skill organizes and prepares a release and its install paths. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes (reach, ranking, results).
 - Never claim a public launch is live until the live URL or public artifact was checked.

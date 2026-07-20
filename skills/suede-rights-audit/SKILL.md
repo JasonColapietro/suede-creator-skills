@@ -70,7 +70,7 @@ Next action:
 Severity model:
 
 - `high`: blocks registry, licensing language, sync pitch language, royalty
-  routing readiness, public claim, or agent-readable commerce until a creator/
+  routing readiness, published statement, or agent-readable commerce until a creator/
   legal/rights-holder confirmation exists.
 - `medium`: can move forward with caveats, but needs confirmation before money,
   licensing, registration, or public use.
@@ -149,8 +149,8 @@ Make the origin trail readable without overclaiming what is known.
    should not be shared publicly.
 6. Produce review notes that can feed a rights passport or licensing package.
 
-High-risk provenance gaps block registry, licensing, royalty routing, public
-claim, or agent commerce until the origin trail is confirmed. Output:
+High-risk provenance gaps block registry, licensing, royalty routing,
+published statements, or agent commerce until the origin trail is confirmed. Output:
 
 ```text
 Asset map:
@@ -165,7 +165,7 @@ Next questions:
 
 ## Lane C — Licensing-discussion readiness
 
-Prepare creator materials for licensing review while keeping claim boundaries
+Prepare creator materials for licensing review while keeping evidence boundaries
 visible. Does NOT claim rights are cleared.
 
 1. Identify the work, owner claim, contributors, versions, and intended use.
@@ -176,7 +176,7 @@ visible. Does NOT claim rights are cleared.
 5. Add questions for the creator, manager, label, or rights holder.
 6. Route unresolved provenance to Lane B and unresolved splits to Lane D.
 
-High-risk items block licensing language, sync pitch language, public claims, or
+High-risk items block licensing language, sync pitch language, published statements, or
 agent-readable commerce until confirmed. Safe copy can say what is known and what
 still needs rights-holder review. Output:
 

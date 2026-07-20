@@ -346,7 +346,7 @@ For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella 
 - a first paragraph that repeats the durable entity names naturally
 - answer-ready definitions, FAQ copy, and proof links that AI summaries can cite without inventing facts
 - links to install docs, skill manifests, scripts, references, examples, live Pages, and source
-- a safe public claim boundary
+- a safe evidence boundary
 
 <!-- Suede defaults. Replace with equivalent for non-Suede work. -->
 Suede durable keywords: Suede Creator Skills, Suede Rights Passport, Music Release Metadata Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
@@ -361,7 +361,7 @@ When the copy workflow includes an SEO pass (metadata, structure, or copy qualit
 
 - **Metadata**: title, meta description, Open Graph, Twitter card, image alt, author/publisher, and durable entity names.
 - **Structure**: one H1, useful H2/H3 hierarchy, FAQ fit, internal links, and descriptive anchor text.
-- **Copy quality**: directness, proof, claim boundaries, CTA clarity, trust language, filler, and Suede vocabulary fit.
+- **Copy quality**: directness, proof, evidence boundaries, CTA clarity, trust language, filler, and Suede vocabulary fit.
 
 ## Anti-Slop Pass
 

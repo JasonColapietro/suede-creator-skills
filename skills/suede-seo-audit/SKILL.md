@@ -169,7 +169,7 @@ primary CTA or proves the claim that does. Run the Lane 7 checklist in
 filler removal.
 
 Lane 7 grade drops to C or below if: the intended action is absent or
-undiscoverable in the rendered task path, any public claim is unverifiable, or
+undiscoverable in the rendered task path, any published statement is unverifiable, or
 the copy could belong to any competing product without changing a word.
 
 ### Lane 8: E-E-A-T Signals
@@ -213,7 +213,7 @@ Verification: <how to confirm the fix worked>
 ```
 
 Severity guide:
-- HIGH: blocks indexing, breaks CTA, contains false public claim, schema invalid
+- HIGH: blocks indexing, breaks CTA, contains a false published statement, schema invalid
 - MEDIUM: may reduce result clarity, sourceability, or reader task success;
   missing a relevant recommended signal
 - LOW: copy quality, filler, minor structural improvement
@@ -236,7 +236,7 @@ impression:
 Hard caps:
 - Cannot earn A overall without verifying a live URL
 - Cannot earn A if primary CTA is broken or absent
-- Cannot earn A if any public claim is false, unverifiable, or invented
+- Cannot earn A if any published statement is false, unverifiable, or invented
 - Cannot earn A in Lane 5 if present or warranted schema does not validate
 - Cannot earn A in Lane 6 if primary content was unavailable to the tested
   intended clients and the audit cannot evaluate it
@@ -352,7 +352,7 @@ Lane grades:
 
 Overall grade:
 
---- CLAIM BOUNDARIES ---
+--- EVIDENCE BOUNDARIES ---
 Safe to publish:
 Do not publish until verified:
 Remove entirely:

@@ -25,7 +25,7 @@ Pause for confirmation before any external mutation at least at:
 
 1. application ID and Play app creation;
 2. product scope, target devices, and data/permission posture;
-3. icon/brand direction and public claims;
+3. icon/brand direction and published statements;
 4. Billing product/base-plan/offer creation or pricing change;
 5. privacy policy, Data Safety, account deletion, target audience, content
    rating, ads, and restricted-permission declarations;

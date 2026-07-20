@@ -5,7 +5,7 @@ systems, reference-site restyling, page visibility, launch packaging, or
 agent-team delivery. These gates add quality pressure without replacing the
 existing Suede rules for creator ownership, programmable IP, rights,
 provenance, registry-backed media, royalty routing, licensing readiness, agent
-commerce, mobile and product surfaces, SEO/AEO/AI EO, public claim safety, WIP
+commerce, mobile and product surfaces, SEO/AEO/AI EO, public evidence integrity, WIP
 protection, and evidence handoff.
 
 ## Preservation Gate
@@ -25,7 +25,7 @@ must survive the edit:
 - design-system quality of life artifacts, state coverage, accessibility, and
   responsive QA;
 - agent-team lanes, WIP protection, release lock, recovery, and handoff loops;
-- public claim boundaries and the ban on invented metrics, partners, payouts,
+- evidence boundaries and the ban on invented metrics, partners, payouts,
   registry writes, clearance, rankings, pricing, testimonials, or release
   promises.
 

@@ -55,7 +55,7 @@ Start with Scout + Builder + Handoff Writer. Add roles only when a gate is neede
   launch surfaces for findability, first-screen clarity, CTA pull, proof, AI
   readability, and design signal.
 - **Release verifier:** checks build, deploy, live/API behavior, App Store/iOS
-  truth, secrets, and public claims.
+  truth, secrets, and published statements.
 - **Handoff writer:** produces a signed delivery record. If the handoff omits any required field (see Handoff Quality Checklist), the work is not done; it is held.
 
 For high-risk work, keep builder and reviewer separate.
@@ -244,10 +244,10 @@ Wrap the roster with these gates:
 6. **Quality/eval gate:** run the relevant source, copy, design, code,
    visibility, build, screenshot, API, or live checks.
 7. **Adversarial review:** ask how the result fails in production, release,
-   public claims, abuse, accessibility, mobile, or handoff.
+   published statements, abuse, accessibility, mobile, or handoff.
 8. **Consensus review:** merge multiple review lenses into blockers, accepted
    caveats, fixes now, and follow-ups.
-9. **Release lock:** build/deploy/live/API/App Store/iOS/public-claim truth is
+9. **Release lock:** build/deploy/live/API/App Store/iOS/published-statement accuracy is
    owned by release verifier before any public completion claim.
 10. **Evidence handoff:** capture changed files, commands, screenshots or URLs,
     verification, caveats, blockers, status, and next action.
@@ -361,8 +361,8 @@ Lane map:
 - Design Reviewer: check above-fold load, mobile rendering, accessibility, and state coverage
 - Visibility Grader: score first-screen clarity, CTA pull, proof, AI readability, and structured data
 - Code Reviewer: check for console errors, broken links, unresolved env vars, and exposed secrets
-- Release Verifier: confirm live URL, DNS, SSL, and all public claims match approved copy
-- Handoff Writer: include Lighthouse score, screenshot evidence, and any unresolved public claim
+- Release Verifier: confirm live URL, DNS, SSL, and all published statements match approved copy
+- Handoff Writer: include Lighthouse score, screenshot evidence, and any unresolved published statement
 
 Done signal: all public URLs verified live, no console errors, Lighthouse performance ≥ 80
 

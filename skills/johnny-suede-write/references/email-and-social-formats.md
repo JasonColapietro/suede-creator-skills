@@ -1,6 +1,6 @@
 # Email And Social Format Bank
 
-Used by johnny-suede-write. Read before drafting any email, DM, or social post. Platform mechanics live here; voice, scoring, and claim safety stay in SKILL.md.
+Used by johnny-suede-write. Read before drafting any email, DM, or social post. Platform mechanics live here; voice, scoring, and evidence boundaries stay in SKILL.md.
 
 ## Email Copy
 

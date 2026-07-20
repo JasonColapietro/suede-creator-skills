@@ -1,4 +1,4 @@
-# Claim-Safe Worked Example
+# Evidence-Boundary Worked Example
 
 This is a fictional B2B SaaS page. Everything in the "after" block is a
 hypothesis or proof slot, not publishable copy. Replace each bracketed item with
