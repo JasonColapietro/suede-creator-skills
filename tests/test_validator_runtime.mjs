@@ -9,6 +9,9 @@ import test from "node:test";
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(testDir, "..");
 const validatorPath = path.join(repoRoot, "scripts", "validate-skill-pack.mjs");
+const sourceHistoryTest = fs.existsSync(path.join(repoRoot, ".git"))
+  ? {}
+  : { skip: "requires the source checkout Git history" };
 
 function runValidator(targetRoot, extraEnv = {}) {
   const nodePath = [path.join(repoRoot, "node_modules"), process.env.NODE_PATH]
@@ -33,6 +36,10 @@ function cloneWithCurrentValidator(targetRoot, extraArgs = []) {
   );
   assert.equal(clone.status, 0, clone.stderr);
   fs.copyFileSync(validatorPath, path.join(targetRoot, "scripts", "validate-skill-pack.mjs"));
+  fs.copyFileSync(
+    path.join(repoRoot, ".claude-plugin", "plugin.json"),
+    path.join(targetRoot, ".claude-plugin", "plugin.json")
+  );
 }
 
 test("validator ignores an unrelated parent Git repository in a packaged plugin cache", (t) => {
@@ -58,7 +65,7 @@ test("validator ignores an unrelated parent Git repository in a packaged plugin 
   assert.match(validation.stdout, /packaged skill-pack checkout/);
 });
 
-test("validator rejects a nonexistent changelog hash in a full-history checkout", (t) => {
+test("validator rejects a nonexistent changelog hash in a full-history checkout", sourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-full-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
@@ -79,7 +86,7 @@ test("validator rejects a nonexistent changelog hash in a full-history checkout"
   assert.match(validation.stderr, /does not resolve to a commit in this repo/);
 });
 
-test("strict source validation fails when Git history cannot be interrogated", (t) => {
+test("strict source validation fails when Git history cannot be interrogated", sourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-git-error-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
@@ -91,7 +98,7 @@ test("strict source validation fails when Git history cannot be interrogated", (
   assert.match(validation.stderr, /Changelog hash check unavailable/);
 });
 
-test("shallow checkouts skip history resolution but retain structural guards", (t) => {
+test("shallow checkouts skip history resolution but retain structural guards", sourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-shallow-"));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
