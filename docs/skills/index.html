@@ -81,7 +81,8 @@
       --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
       background: var(--bg);
       color: var(--cream);
@@ -91,7 +92,7 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
-    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
     img { display: block; max-width: 100%; }
     .shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
 
@@ -122,7 +123,7 @@
     }
     .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
 
-    .page-head { padding: 88px 0 64px; border-bottom: 1px solid var(--hairline); }
+    .page-head { padding: 88px 0 0; }
     .eyebrow {
       font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--red-text); margin-bottom: 24px;
@@ -130,23 +131,52 @@
     h1 {
       font-size: clamp(44px, 6.5vw, 84px); font-weight: 800;
       letter-spacing: -0.04em; line-height: 1.0; max-width: 900px;
-      margin-bottom: 24px;
+      margin-bottom: 24px; text-wrap: balance;
     }
-    .lead { font-size: 18px; line-height: 1.7; color: var(--muted); max-width: 760px; }
+    .lead { font-size: 18px; line-height: 1.7; color: var(--muted); max-width: 720px; text-wrap: pretty; }
+    .lead strong { color: var(--cream); font-weight: 600; }
     .lead code { font-family: var(--mono); font-size: 0.9em; color: var(--gold); }
 
-    section { padding: 72px 0 0; }
-    section:last-of-type { padding-bottom: 96px; }
+    /* Install terminal, above the fold */
+    .term {
+      margin: 44px 0 0; max-width: 780px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      overflow: hidden;
+    }
+    .term-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 18px; border-bottom: 1px solid var(--border);
+    }
+    .term-dots { display: flex; gap: 6px; }
+    .term-dots span { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+    .term-dots span:first-child { background: #4a2a28; }
+    .term-dots span:last-child { background: #2c3a2a; }
+    .term-bar b { font-family: var(--mono); font-size: 12.5px; font-weight: 400; color: var(--muted); letter-spacing: 0.04em; }
+    .term-body { padding: 20px 22px 22px; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    .term-code { font-family: var(--mono); font-size: 15.5px; line-height: 2; color: var(--gold); overflow-x: auto; }
+    .term-code .prompt { color: var(--red-text); user-select: none; }
+    .term-copy {
+      flex-shrink: 0; font-family: var(--mono); font-size: 12.5px;
+      color: var(--muted); background: var(--card); border: 1px solid var(--border);
+      border-radius: 4px; padding: 8px 14px; min-height: 38px; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .term-copy:hover { color: var(--gold); border-color: var(--gold); }
+    .term-note { font-size: 13.5px; color: var(--muted); margin-top: 12px; max-width: 720px; }
+    .term-note a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.35); }
+    .term-note a:hover { border-color: var(--gold); }
+
+    section { padding: 80px 0 0; }
+    .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
     h2 {
       font-size: clamp(28px, 3.6vw, 44px); font-weight: 800;
-      letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 12px;
+      letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 12px; text-wrap: balance;
     }
-    .section-sub { font-size: 15.5px; color: var(--muted); max-width: 680px; margin-bottom: 24px; }
+    .section-sub { font-size: 15.5px; color: var(--muted); max-width: 680px; margin-bottom: 8px; }
 
     /* Featured cells */
     .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 32px; }
-    .cell { background: var(--card); padding: 32px 30px; border-left: 3px solid var(--gold); }
-    .cell--red { border-left-color: var(--red); }
+    .cell { background: var(--card); padding: 32px 30px; }
     .cell .cell-label {
       display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
@@ -168,11 +198,17 @@
     .btn--red { border-color: var(--red); color: var(--cream); background: rgba(139, 26, 26, 0.1); }
     .btn--red:hover { background: rgba(139, 26, 26, 0.22); color: var(--cream); }
 
-    /* Catalog rows */
-    .rows { border-top: 1px solid var(--border); margin-top: 24px; }
+    /* Catalog lanes */
+    .lane { margin-top: 44px; }
+    .lane-head {
+      display: flex; align-items: baseline; gap: 12px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    .lane-head h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+    .lane-head .lane-count { font-family: var(--mono); font-size: 13px; color: var(--gold); }
     a.row {
       display: grid; grid-template-columns: 280px 1fr auto; gap: 24px;
-      align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--hairline);
+      align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--hairline);
       transition: background 0.15s;
     }
     a.row:hover { background: var(--surface); }
@@ -180,6 +216,56 @@
     .row span { font-size: 14.5px; line-height: 1.55; color: var(--muted); overflow-wrap: anywhere; }
     .row .arrow { font-family: var(--mono); font-size: 13px; color: #44423c; transition: color 0.15s, transform 0.15s; }
     a.row:hover .arrow { color: var(--gold); transform: translateX(3px); }
+
+    /* Changelog ledger */
+    .clog-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; margin-top: 8px; align-items: start; }
+    .clog-rail { position: sticky; top: 96px; }
+    .clog-rail .section-sub { margin-bottom: 20px; }
+    .clog-fresh {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 12.5px; color: var(--gold);
+      border: 1px solid var(--border); border-radius: 999px; padding: 7px 14px;
+    }
+    .clog-fresh::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .clog-more { display: inline-block; margin-top: 20px; font-size: 14px; color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.35); }
+    .clog-more:hover { border-color: var(--gold); }
+    ol.clog { list-style: none; border-top: 1px solid var(--border); }
+    .clog li { padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+    .clog-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 8px; }
+    .clog-date { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+    .clog-tag {
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(200, 169, 110, 0.4); border-radius: 3px; padding: 2px 8px;
+    }
+    .clog-tag--fix { color: var(--red-text); border-color: rgba(192, 82, 74, 0.45); }
+    .clog-tag--guard { color: var(--cream); border-color: var(--border); }
+    .clog-hash { font-family: var(--mono); font-size: 12.5px; color: var(--muted); border-bottom: 1px dotted var(--muted); }
+    .clog-hash:hover { color: var(--gold); border-color: var(--gold); }
+    .clog h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .clog p.clog-detail { font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+    .clog p.clog-detail code { font-family: var(--mono); font-size: 0.9em; color: var(--gold); }
+
+    /* Gold install strip */
+    .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; margin-top: 96px; }
+    .ship-strip-head {
+      font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+    }
+    .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+    .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+    .ship-strip-row code {
+      font-family: var(--mono); font-size: 16px; font-weight: 600;
+      color: #f0ece4; background: #171310;
+      border-radius: 4px; padding: 13px 20px;
+    }
+    .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
+    .ship-strip-row a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: #171310; font-size: 15px; font-weight: 700;
+      border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .ship-strip-row a:hover { border-color: #171310; }
 
     footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -190,33 +276,24 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-divider { color: var(--border); }
 
+    @media (max-width: 900px) {
+      .clog-grid { grid-template-columns: 1fr; gap: 32px; }
+      .clog-rail { position: static; }
+    }
     @media (max-width: 820px) {
       a.row { grid-template-columns: 220px 1fr auto; }
     }
     @media (max-width: 720px) {
       .shell { padding: 0 24px; }
-      .page-head { padding: 64px 0 48px; }
+      .page-head { padding-top: 64px; }
+      section { padding-top: 64px; }
       .grid-2 { grid-template-columns: 1fr; }
       a.row { grid-template-columns: 1fr; row-gap: 6px; padding: 18px 0; }
+      .term-body { flex-direction: column; align-items: stretch; }
+      .term-code { font-size: 14px; max-width: 100%; }
+      .ship-strip { padding: 48px 0; }
+      .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
     }
-      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
-      .ship-strip-head {
-        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
-        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
-      }
-      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
-      .ship-strip-row code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
-        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
-      }
-      .ship-strip-row a {
-        display: inline-flex; align-items: center; min-height: 44px;
-        color: #171310; font-size: 15px; font-weight: 700;
-        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
-        transition: border-color 0.15s;
-      }
-      .ship-strip-row a:hover { border-color: #171310; }
   </style>
 </head>
 <body>
@@ -230,6 +307,7 @@
     <div class="nav-links">
       <a href="../">Home</a>
       <a href="./" aria-current="page">Skills</a>
+      <a href="#changelog">Changelog</a>
       <a href="../guide.html">Guide</a>
       <a href="../copy.html">Copy Bank</a>
       <a href="../plugins.html" class="nav-cta">Install</a>
@@ -241,12 +319,25 @@
   <div class="shell page-head">
     <p class="eyebrow">Skill catalog</p>
     <h1>27 skills. One honest line each.</h1>
-    <p class="lead">The public repo ships 27 installable <code>SKILL.md</code> folders: coordinated agent teams, Codex CLI worker fleets, code review with A-F grading, CI ship-gates, AI evals, a next-action recommender, Suedify, design, conversion copy, SEO/AEO/GEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, a site-to-iOS app conversion workflow, and a one-prompt Android app factory, plus a creator toolkit for campaigns, sync packaging, release linting, and rights evidence, and two consumer-recovery skills that dispute return fees and claw back forgotten subscriptions. This catalog is generated from the public repo so builders can inspect every workflow before an agent runs it.</p>
+    <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Six lanes:</strong> orchestration, code review and CI, design and copy, SEO and visibility, iOS and Android shipping, and creator rights. This catalog links each skill to its deep docs and its source folder on GitHub.</p>
+
+    <div class="term">
+      <div class="term-bar">
+        <span class="term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <b>claude code &middot; install the pack</b>
+      </div>
+      <div class="term-body">
+        <pre class="term-code" id="install-code"><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills
+<span class="prompt">$</span> /plugin install suede-skills@suede</pre>
+        <button class="term-copy" type="button" data-copy aria-label="Copy install commands">Copy</button>
+      </div>
+    </div>
+    <p class="term-note">Works in Claude Code today; Codex and other agents install from the <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>. All paths on the <a href="../plugins.html">install page</a>.</p>
   </div>
 
-  <section class="shell">
-    <h2>Start here</h2>
-    <p class="section-sub">Four entry points cover most sessions. Everything else is one row down.</p>
+  <section class="shell" aria-labelledby="start-here">
+    <h2 id="start-here">Start here</h2>
+    <p class="section-sub">Four entry points cover most sessions. Everything else is one lane down.</p>
     <div class="grid-2">
       <article class="cell">
         <span class="cell-label">The umbrella</span>
@@ -255,7 +346,6 @@
         <div class="btn-row">
           <a class="btn btn--gold" href="suede-workflow-skills.html">Read the docs</a>
           <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-workflow-skills" target="_blank" rel="noopener">View skill folder</a>
-          <a class="btn" href="../plugins.html">Install</a>
         </div>
       </article>
       <article class="cell cell--red">
@@ -290,32 +380,58 @@
     </div>
   </section>
 
-  <section class="shell">
-    <h2>All 27 skill folders</h2>
-    <p class="section-sub">Every skill is plain Markdown you can read before you install it. Rows link to the deep docs page when one exists, otherwise straight to the folder on GitHub.</p>
-    <div class="rows">
+  <section class="shell" aria-labelledby="catalog">
+    <h2 id="catalog">All 27 skill folders</h2>
+    <p class="section-sub">Grouped by lane. Rows link to the deep docs page; every folder is inspectable on GitHub before you install it.</p>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Orchestration &amp; routing</h3><span class="lane-count">4</span></div>
       <a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-codex-fleet.html"><b>suede-codex-fleet</b><span>Suede Fable Fleet: Claude decomposes, briefs, and reviews; parallel OpenAI Codex CLI workers generate the volume.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Code review &amp; CI</h3><span class="lane-count">5</span></div>
+      <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-ship-gate.html"><b>suede-ship-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Design &amp; copy</h3><span class="lane-count">4</span></div>
       <a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-design.html"><b>suede-design</b><span>Design laws, component rules, dark-mode tokens, fluid type, motion sequencing, and visual QA for any Suede surface.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-copy.html"><b>suede-copy</b><span>Conversion copy with headline formulas, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-codex-fleet.html"><b>suede-codex-fleet</b><span>Suede Fable Fleet: Claude decomposes, briefs, and reviews; parallel OpenAI Codex CLI workers generate the volume.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-ship-gate.html"><b>suede-ship-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>SEO, visibility &amp; launch</h3><span class="lane-count">5</span></div>
       <a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-site-alchemy.html"><b>suede-site-alchemy</b><span>Landing page, CTA routing, conversion, and site polish workflow.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-launch-packaging.html"><b>suede-launch-packaging</b><span>Public launch copy, proof links, install paths, QA, and handoff.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Apps: iOS &amp; Android</h3><span class="lane-count">2</span></div>
       <a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Consumer recovery</h3><span class="lane-count">2</span></div>
+      <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow">-&gt;</span></a>
+    </div>
+
+    <div class="lane">
+      <div class="lane-head"><h3>Creator toolkit</h3><span class="lane-count">5</span></div>
       <a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-sync-packaging.html"><b>suede-sync-packaging</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="suede-release-linter.html"><b>suede-release-linter</b><span>Release metadata, files, credits, splits, samples, provenance, and readiness audit.</span><span class="arrow">-&gt;</span></a>
@@ -324,31 +440,103 @@
     </div>
   </section>
 
-  <section class="shell">
-    <h2>All public links</h2>
-    <div class="rows">
-      <a class="row" href="../"><b>GitHub Pages home</b><span>The public proof surface for the skill pack: landing page, install prompts, Suedify, copy bank, schema, sitemap, visibility grading, code grading, MCP tools, and creator workflow links.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener"><b>GitHub repository</b><span>Source repo for skills, Python scripts, reference docs, templates, assets, Pages source, license, and docs source.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/README.md" target="_blank" rel="noopener"><b>README</b><span>Install guide, quick start, public links, SEO/AEO/AI EO copy, and high-level workflow explanation.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="../plugins.html"><b>Public installs + MCP</b><span>GitHub skill install commands, Suede Skills MCP tools, SEO/AEO/AI EO copy audit scaffolds, and QA checklists.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="../copy.html"><b>Copy bank</b><span>GitHub, docs, CTA, SEO/AEO/GEO/AI EO, FAQ, social, and safety copy for Suede Creator Skills.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="../guide.html"><b>Full guide</b><span>The long-form guide to the pack: install paths, categories, grading frameworks, creator toolkit, and MCP docs.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md" target="_blank" rel="noopener"><b>Public explainer</b><span>Long-form guide for explaining Suedify, public skills, MCP, SEO/AEO/AI EO audits, QA, social posts, email, FAQ, and evidence boundaries.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-rights-passport.html"><b>Creator rights package docs</b><span>Full docs for local rights packaging, output artifacts, resource links, commands, safety defaults, and completion checks.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-release-linter.html"><b>Release Linter docs</b><span>Full docs for release-readiness linting, metadata fields, script output, resource links, and next-step mapping.</span><span class="arrow">-&gt;</span></a>
+  <section class="shell" id="changelog" aria-labelledby="changelog-headline">
+    <div class="clog-grid">
+      <div class="clog-rail">
+        <h2 id="changelog-headline">Changelog. Straight from main.</h2>
+        <p class="section-sub">Every entry is a real commit: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
+        <p class="clog-fresh">Last shipped 2026-07-20</p>
+        <br>
+        <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub -&gt;</a>
+      </div>
+      <ol class="clog">
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-20</span>
+            <span class="clog-tag clog-tag--guard">Guard</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/aeaa416" target="_blank" rel="noopener" aria-label="View commit aeaa416 on GitHub">aeaa416</a>
+          </p>
+          <h3>The validator now polices what the public copy is allowed to say</h3>
+          <p class="clog-detail">Reserved internal names can never appear in a public file again: every public text file is scanned against hashed sequences, so a slip fails the build instead of shipping.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-19</span>
+            <span class="clog-tag clog-tag--guard">Guard</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/7be1d7c" target="_blank" rel="noopener" aria-label="View commit 7be1d7c on GitHub">7be1d7c</a>
+          </p>
+          <h3>Plugin packaging gets a semver contract</h3>
+          <p class="clog-detail">The packaged plugin must version like it means it. Tests cover shallow and versioned installs, and <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/e1adeff" target="_blank" rel="noopener">e1adeff</a> makes packaged-plugin history validate safely on the same day.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-19</span>
+            <span class="clog-tag">Quality</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/678f796" target="_blank" rel="noopener" aria-label="View commit 678f796 on GitHub">678f796</a>
+          </p>
+          <h3>The creator lane gets industry-benchmark upgrades</h3>
+          <p class="clog-detail">Rights Passport, MCP lifecycle, deterministic routing, and immutable CI, validated against current main and passed through an independent adversarial review.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-19</span>
+            <span class="clog-tag clog-tag--guard">Guard</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/406a1d5" target="_blank" rel="noopener" aria-label="View commit 406a1d5 on GitHub">406a1d5</a>
+          </p>
+          <h3>The changelog audits itself</h3>
+          <p class="clog-detail">The build fails if a cited hash doesn't resolve to a real commit, if entries fall out of date order, or if the "Last shipped" pill disagrees with the newest entry. This page can't quietly lie.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-19</span>
+            <span class="clog-tag">New skills</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/6acc19f" target="_blank" rel="noopener" aria-label="View commit 6acc19f on GitHub">6acc19f</a>
+          </p>
+          <h3>Android lane opens: android-app-factory + suede-recommend-next-action</h3>
+          <p class="clog-detail">One prompt to a Play-Store-ready Kotlin/Compose build, plus a skill that reads repo state and names the single next move. The pack goes 25 -&gt; 27.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-18</span>
+            <span class="clog-tag clog-tag--fix">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/df4c925" target="_blank" rel="noopener" aria-label="View commit df4c925 on GitHub">df4c925</a>
+          </p>
+          <h3>MCP server finds its skills from any install path</h3>
+          <p class="clog-detail"><code>suede_creator_mcp</code> now resolves its catalog through <code>CLAUDE_PLUGIN_ROOT</code> instead of assuming a fixed layout, so marketplace-cache installs stop coming up empty.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-13</span>
+            <span class="clog-tag">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/7cdb9df" target="_blank" rel="noopener" aria-label="View commit 7cdb9df on GitHub">7cdb9df</a>
+          </p>
+          <h3>Homepage v2: the hero terminal rotates all six lanes</h3>
+          <p class="clog-detail">Ten commits in one sitting: a live sample session that cycles disciplines, a lane index, and copy with an actual hook.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-12</span>
+            <span class="clog-tag">New skills</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/a2db2a8" target="_blank" rel="noopener" aria-label="View commit a2db2a8 on GitHub">a2db2a8</a>
+          </p>
+          <h3>Consumer-recovery lane: the negotiator points at your bills</h3>
+          <p class="clog-detail">amazon-returns-recovery runs fee discovery and live-chat disputes; subscription-recovery generalizes it to any recurring charge.</p>
+        </li>
+      </ol>
     </div>
   </section>
 </main>
 
-    <section class="ship-strip" aria-label="Install the pack">
-      <div class="shell">
-        <p class="ship-strip-head">Stop shipping on vibes.</p>
-        <div class="ship-strip-row">
-          <code>/plugin install suede-skills@suede</code>
-          <a href="../plugins.html">All install paths</a>
-        </div>
-      </div>
-    </section>
+<section class="ship-strip" aria-label="Install the pack">
+  <div class="shell">
+    <p class="ship-strip-head">Stop shipping on vibes.</p>
+    <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
+    <div class="ship-strip-row">
+      <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+      <a href="../plugins.html">All install paths</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="shell footer-inner">
@@ -365,6 +553,20 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Progressive enhancement only: the commands are plain selectable text without JS.
+  document.querySelectorAll("[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var code = document.getElementById("install-code");
+      if (!code || !navigator.clipboard) return;
+      navigator.clipboard.writeText(code.textContent.replace(/^\$ /gm, "")).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
