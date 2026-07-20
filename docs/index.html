@@ -2794,15 +2794,17 @@
     .clog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
     .clog-filter {
       appearance: none; cursor: pointer;
-      padding: 7px 14px; min-height: 34px;
-      border: 1px solid var(--color-border); border-radius: var(--radius-sm);
-      background: transparent;
+      padding: 9px 18px; min-height: 40px;
+      border: 1px solid #35352f; border-radius: var(--radius-sm);
+      background: #161616;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(240, 236, 228, 0.05);
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 12px; letter-spacing: 0.05em;
-      color: var(--color-text-secondary);
-      transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em;
+      color: var(--color-text-primary);
+      transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
     }
-    .clog-filter:hover { color: var(--color-text-primary); border-color: #444440; }
+    .clog-filter:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+    .clog-filter:active { transform: translateY(1px); }
     .clog-filter[aria-pressed="true"] {
       color: var(--color-bg);
       background: var(--color-accent-gold);
