@@ -5,6 +5,27 @@ description: "Catch MCP drift before release: skill catalogs, tool and resource 
 
 # Suede MCP QA
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 Use this skill when a Suede MCP server or MCP docs surface changes.
 
 **Core principle:** a check that did not run against the live server did not
@@ -133,7 +154,7 @@ uses `id: null`. A raw stack trace or any non-JSON stdout is a High failure.
 | Docs/catalog language mismatch | Medium | List each mismatch. Flag as hold-with-caveat. |
 | Tool implemented but not in catalog | Low | Flag as undocumented. Not a blocker. |
 
-Ship gate rules:
+Recommended ship gate rules (advice to the user, not a lock on any action):
 - Any Critical or High failure → **hold**
 - Medium failures only → **ship-with-caveats** (list each caveat)
 - No failures → **ship**

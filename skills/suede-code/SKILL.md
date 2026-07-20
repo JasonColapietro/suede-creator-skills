@@ -5,6 +5,27 @@ description: "Review and grade code in one pass: real findings, A-F ship verdict
 
 # Suede Code
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 One pass for code: a deep, evidence-based review **and** a blunt A-F ship grade, together by default. Findings tell you what is wrong; the grade tells you whether it ships. Every finding has a file, evidence, and a fix path. No findings without evidence. No volume without signal.
 
 **Runs only when asked.** This skill never auto-fires on a diff, a save, or a commit. Invoke it explicitly (review this, grade this, security-check this, is this safe to ship). Do not run it as a side effect of other work.
@@ -108,9 +129,9 @@ Score each lane A-F, then one overall. For non-Suede work, substitute "domain tr
 - **Tests and verification** — changed behavior has meaningful tests, builds, screenshots, simulator runs, live/API readbacks, or named caveats.
 - **Deploy readiness** — env vars, flags, configs, migrations, rollback notes, install paths, docs, release sequencing are clear.
 
-**Grade meaning:** **A** all lanes pass, runtime-verified, no follow-ups. **B** no blockers, named bounded follow-ups. **C** a real defect or unverified risk that could surface in production — hold until fixed. **D** a serious defect likely to cause data loss, auth bypass, broken payments, or user-visible failure — do not ship. **F** breaks core behavior, hits an Instant-F, or critical-surface evidence is absent.
+**Grade meaning:** **A** all lanes pass, runtime-verified, no follow-ups. **B** no blockers, named bounded follow-ups. **C** a real defect or unverified risk that could surface in production — recommend hold until fixed. **D** a serious defect likely to cause data loss, auth bypass, broken payments, or user-visible failure — recommend against shipping and, because these are extreme-risk categories, pause and put the ship choice to the user. **F** breaks core behavior, hits an Instant-F, or critical-surface evidence is absent.
 
-**Gate follows the grade, mechanically:** A → `ship`; B → `ship-with-caveats`; C, D, F → `hold`. A Deploy Safety block (Step 5) also forces `hold` regardless of grade.
+**Recommended gate follows the grade, mechanically:** A → `ship`; B → `ship-with-caveats`; C, D, F → `hold`. A Deploy Safety finding (Step 5) also moves the recommended gate to `hold` regardless of grade. The gate is a recommendation the user acts on, not a lock on the agent.
 
 **Grade caps by surface** (state explicitly when they apply):
 - **Auth** (login, session, token, middleware, roles) — A needs the bypass/escalation path tested, not just happy path; B needs happy-path + named caveats; else cap **C**.
@@ -401,7 +422,7 @@ Verify that threat mitigations declared in a threat model (ADR threat table, PLA
 | --- | --- | --- | --- | --- | --- |
 ```
 
-**Blockers:** OPEN and UNREGISTERED are BLOCKERS. Do not ship until closed.
+**Blockers:** OPEN and UNREGISTERED items are reported as blockers — the recommendation is to close them before shipping; the user makes the final call.
 
 **What this is NOT:** This mode does not scan for new vulnerabilities (that is what the OWASP lane does). It only verifies previously declared mitigations exist.
 

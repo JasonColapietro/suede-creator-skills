@@ -5,6 +5,27 @@ description: "Run a nine-lane evidence-based SEO and generative-search audit: ac
 
 # Suede SEO Audit
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 This skill goes deeper than an inline copy audit. It inspects live page source,
 validates schema, traces crawl access, checks whether content can be understood
 and sourced accurately, and produces exact rewrites with a lane-by-lane grade.
@@ -354,7 +375,7 @@ Overall grade:
 
 --- EVIDENCE BOUNDARIES ---
 Safe to publish:
-Do not publish until verified:
+Recommend holding until verified (user's call):
 Remove entirely:
 
 --- VERIFICATION CHECKLIST ---
@@ -409,7 +430,7 @@ through 3.
 
 8. **Score each lane** A-F using the rules from Section 4. Apply hard caps.
 
-9. **Set the ship gate.** `ship` only if no HIGH findings remain and all hard
+9. **Set the recommended ship gate.** Recommend `ship` only if no HIGH findings remain and all hard
    caps are met. `ship-with-caveats` if only MEDIUM or LOW findings remain and
    no claim is false. `hold` if any HIGH finding is unresolved, any claim is
    false, or the CTA destination is broken. Name any lane items that could not

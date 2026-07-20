@@ -5,14 +5,35 @@ description: "Design AI evals that catch regressions before users do: rubrics, t
 
 # Suede AI Eval
 
-Make AI behavior testable before it becomes a vague product promise. **No eval plan, no ship verdict: an AI feature without one cannot be graded `ship`.**
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
+Make AI behavior testable before it becomes a vague product promise. **No eval plan, no `ship` recommendation: for an AI feature without one, the recommended verdict stays below `ship` — report that gap and let the user decide.**
 
 The deliverable is an eval plan or coverage audit, not a model benchmark leaderboard. Keep it grounded in the actual product surface, user promise, data sources, prompts, tools, logs, tests, and failure modes available now.
 
 ## Hard Gates
 
 - No AI-SPEC → no eval plan. Write the one-paragraph spec first; cases written without a spec test nothing.
-- No eval plan → no ship verdict. Never emit `ship` or `ship-with-caveats` for an AI feature that lacks a failure-mode map and eval cases.
+- No eval plan → no `ship` recommendation. Do not recommend `ship` or `ship-with-caveats` for an AI feature that lacks a failure-mode map and eval cases; name the gap and leave the ship decision with the user.
 - A failure mode without an eval case, an owner, and a gate is uncovered — regardless of how unlikely it feels.
 - A live surface that was never sampled gets the output stamped `source-only`; do not present source-only review as runtime evidence.
 - A model grading its own output is not evidence. LLM-as-judge scores count only after spot-checked agreement with a human-reviewed sample.

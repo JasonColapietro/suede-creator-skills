@@ -5,6 +5,27 @@ description: "Design and write polished product surfaces people understand fast:
 
 # Johnny Suede Design — The Any-Creatives Enchilada
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 This is the full design-plus-copy stack for building any creative surface, not just websites. Landing pages, brand surfaces, product UI, dashboards, campaigns, components, and creative projects all route through here. It classifies the surface, locks a visual direction, writes the words that carry it, renders and QAs the result, and can run the whole thing as a coordinated agent team when the build is big. Writing mode is ON by default: a surface is not finished until the copy pulls its weight.
 
 This skill organizes and prepares creative work. It does not clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes. It produces drafts, designs, tokens, plans, and QA evidence for a human to verify and ship.
@@ -326,7 +347,7 @@ Revise below 58/70. For public launch, homepage, GitHub, product listing, invest
 
 ## Copy Ship Gate
 
-Do not ship copy when: the primary action is unclear; the page promises a feature the product does not implement; proof is fake or unverified; the copy hides a legal, payment, privacy, or release caveat; the score is below threshold; or the copy fails the competitor-swap test. End copy-only requests with the exact copy, not a long explanation of the copy.
+Recommend against shipping copy — and say why, leaving the call to the user — when: the primary action is unclear; the page promises a feature the product does not implement; proof is fake or unverified; the copy hides a legal, payment, privacy, or release caveat; the score is below threshold; or the copy fails the competitor-swap test. End copy-only requests with the exact copy, not a long explanation of the copy.
 
 ---
 
@@ -436,7 +457,7 @@ If any of these thoughts appear, stop and run the check you were about to skip:
 
 `hold` when: a core user path is broken; rendered output contradicts the implementation; text overflows or truncates on any breakpoint; mobile layout is unintentionally stacked; any accessibility issue blocks the primary action; copy makes unsupported claims; the live surface cannot be verified; screenshots do not match implementation; or the live route cannot be verified.
 
-`ship-with-caveats` is only valid when all P0 issues are resolved and remaining issues have a documented owner and timeline, and the caveat is explicit, non-critical, and acceptable for the launch stage. Public surfaces cannot ship if the design gate passes while visual or accessibility blockers are open. Findings lead, rationale follows. Name the file and line. For builds, state what changed and show the render evidence.
+`ship-with-caveats` is only valid when all P0 issues are resolved and remaining issues have a documented owner and timeline, and the caveat is explicit, non-critical, and acceptable for the launch stage. For public surfaces, recommend `hold` when the design gate passes while visual or accessibility blockers are open, and name those blockers so the user can decide. Findings lead, rationale follows. Name the file and line. For builds, state what changed and show the render evidence.
 
 ## Routing
 

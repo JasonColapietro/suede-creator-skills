@@ -5,6 +5,27 @@ description: "Give a blunt A-F ship verdict for a code change across correctness
 
 # Suede Code Grader
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 Blunt A-F read on whether code is ready to ship. The output is a grade with evidence, not a lint score or a pile of style notes.
 
 ## Source Truth
@@ -85,8 +106,8 @@ Score each lane A-F, then give one overall grade. When grading non-Suede work, s
 - **A:** All lanes pass. Behavior is verified at runtime. No known follow-ups. Example: new feature with unit + integration tests, live readback confirmed, env vars documented, rollback is trivial.
 - **B:** No blockers. One or more lanes have named, bounded follow-ups that do not affect correctness or safety in the current release. Example: happy-path tested but edge-case coverage is thin; or migration is forward-only but rollback risk is low and documented.
 - **C:** At least one lane has a real defect or unverified risk that could surface in production but is not immediately catastrophic. Hold until that lane is fixed and rechecked. Example: auth path not fully tested; or a data migration with no rollback plan on a low-traffic table; or a God object in a payment module that obscures correctness.
-- **D:** A serious defect exists that is likely to cause data loss, auth bypass, broken payments, or a user-visible production failure. Do not ship until the defect is fixed and verified. Example: missing auth check on a state-changing endpoint; migration with no tested rollback on a high-traffic table; payment flow that silently swallows errors.
-- **F:** Do not ship. The change breaks core behavior, introduces an Instant-F pattern, or verification evidence is absent for a critical surface. Example: hardcoded API key in source, SQL injection via string concatenation, auth middleware that can be bypassed, or a payment handler with zero test coverage and no live readback.
+- **D:** A serious defect exists that is likely to cause data loss, auth bypass, broken payments, or a user-visible production failure. Recommend not shipping until the defect is fixed and verified, and because these are extreme-risk categories, pause and put the choice to the user before any ship step. Example: missing auth check on a state-changing endpoint; migration with no tested rollback on a high-traffic table; payment flow that silently swallows errors.
+- **F:** Strongly recommend against shipping. The change breaks core behavior, introduces an Instant-F pattern, or verification evidence is absent for a critical surface. Example: hardcoded API key in source, SQL injection via string concatenation, auth middleware that can be bypassed, or a payment handler with zero test coverage and no live readback.
 
 ## Grade Caps by Surface Type
 
@@ -207,7 +228,7 @@ Silence = accepted.
 
 - Do not block on style preferences unless they create real maintenance, behavior, accessibility, release, or product-risk cost.
 - Do not invent tests, screenshots, live checks, deploy status, or evidence for published statements.
-- Do not ship a C, D, or F without naming the required upgrade that would move the grade.
+- Never report a C, D, or F without naming the required upgrade that would move the grade.
 - Keep the grade independent. Do not raise a grade because the implementation was hard, because CI passed without exercising the changed behavior, or because the author explains the intent well.
 
 ## Worked Example

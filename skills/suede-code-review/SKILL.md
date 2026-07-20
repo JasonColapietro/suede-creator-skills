@@ -5,6 +5,27 @@ description: "Find the bugs a diff can actually ship: TypeScript, React, Next.js
 
 # Suede Code Review
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 Review code with full context: changed files, callers, contracts, deploy surface. Find real breakage. Rank by production impact. Every finding has a file, evidence, and a fix path. No findings without evidence. No volume without signal.
 
 ## Model Routing
@@ -248,14 +269,14 @@ Run this automatically at the end of every review. No exceptions. It answers one
 
 Grade each dimension. Each is pass / conditional / block:
 
-- **Breaking changes**: Does this change any public API signature, database schema, config key, or interface contract without a versioned migration or backward-compatible fallback? Block if yes without migration path.
-- **Rollback safety**: Can a `git revert` fully undo this? Red flags: schema migrations, irreversible external API calls (email sent, payment charged, data permanently deleted), S3/storage mutations, message queue publishes. Block if rollback requires manual data repair.
+- **Breaking changes**: Does this change any public API signature, database schema, config key, or interface contract without a versioned migration or backward-compatible fallback? Recommend blocking if yes without migration path.
+- **Rollback safety**: Can a `git revert` fully undo this? Red flags: schema migrations, irreversible external API calls (email sent, payment charged, data permanently deleted), S3/storage mutations, message queue publishes. Recommend blocking if rollback requires manual data repair.
 - **Blast radius**: What fraction of users or requests does this code path serve? State it: `~0%` (new feature, flagged), `~partial` (specific flow), `~100%` (shared middleware, auth, DB query in hot path). Higher blast radius requires more evidence before deploy.
-- **Environment readiness**: Are all required env vars, secrets, feature flags, and config values already deployed to production? Block if a required env var doesn't exist in production yet.
-- **Dependency changes**: Are new or updated packages pinned to an exact version, from a trusted source, and CVE-free? Block if a new dependency has a known CVE or is unpinned in a production context.
-- **Data mutations**: Does this write, update, or delete production data in a way that can't be undone by revert alone? Block if yes without a tested restore path.
-- **Security delta**: Does this change improve, hold neutral, or worsen the security posture? Block if it introduces new attack surface without mitigation.
-- **Automation coverage**: Does `.github/workflows/` (or equivalent CI) exist and cover the changed surface (build, types, tests)? Are required status checks enforced on `main`? Block if the changed surface has no automated gate and the repo is production-connected.
+- **Environment readiness**: Are all required env vars, secrets, feature flags, and config values already deployed to production? Recommend blocking if a required env var doesn't exist in production yet.
+- **Dependency changes**: Are new or updated packages pinned to an exact version, from a trusted source, and CVE-free? Recommend blocking if a new dependency has a known CVE or is unpinned in a production context.
+- **Data mutations**: Does this write, update, or delete production data in a way that can't be undone by revert alone? Recommend blocking if yes without a tested restore path.
+- **Security delta**: Does this change improve, hold neutral, or worsen the security posture? Recommend blocking if it introduces new attack surface without mitigation.
+- **Automation coverage**: Does `.github/workflows/` (or equivalent CI) exist and cover the changed surface (build, types, tests)? Are required status checks enforced on `main`? Recommend blocking if the changed surface has no automated gate and the repo is production-connected.
 
 Output block — required at the end of every review:
 
@@ -332,7 +353,7 @@ Confidence: high
 
 Severity:
 
-- **P0:** data loss, security exposure, payment loss, broken release, or public behavior that must not ship.
+- **P0:** data loss, security exposure, payment loss, broken release, or public behavior that should not ship — extreme-risk findings that also warrant a pause-and-ask to the user before any ship step.
 - **P1:** likely production regression, auth/permission bug, broken primary path, false published statement, or missing critical deploy requirement.
 - **P2:** meaningful edge-case failure, incomplete state handling, test gap on changed behavior, or maintainability issue with real cost.
 - **P3:** low-risk improvement, clarity issue, local cleanup, or follow-up.

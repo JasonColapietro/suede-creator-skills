@@ -5,6 +5,27 @@ description: "Package finished work so people can use it: README, docs, install 
 
 # Suede Launch Packaging
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 ## Approved Suede S Mark
 
 Launch art, social cards, docs headers, app assets, and release visuals may use only `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` as the Suede S mark (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement. If the canonical asset is missing or its checksum differs, block the branded visual and request the approved file.
@@ -29,13 +50,16 @@ Before picking a lane, name exactly what is being launched. Do not assume from t
 | App feature | Feature is live behind the public route, not just merged | Live route readback |
 | Social or email copy | Every link resolves; every claim matches the live product | Link sweep results |
 
-## Hard gates
+## Hard gates (advisory)
 
-Do not rationalize past these. Each one blocks the step after it.
+Do not rationalize past these silently. Each one is a strong recommendation
+about ordering: run the check before the step it guards. If the user directs
+you past one, proceed as directed and label the output with exactly which
+verification is missing.
 
 1. **No launch copy until the live surface is verified.** Fetch the live URL or public artifact and confirm the expected status or render first. Copy drafted against "it should be live" is a violation.
 2. **No install doc until the install command was run from a clean temporary directory after pushing.** Success from inside the local repo does not count — the local checkout masks missing pushes and private paths.
-3. **No announcement until the ship gate is set.** `hold` means nothing goes out, including "soft" posts.
+3. **Set the ship gate before recommending any announcement.** A `hold` verdict is your recommendation that nothing goes out yet, including "soft" posts — state it plainly with the reasons, then let the user decide.
 4. **`@personal` and local plugin aliases never appear in public docs, READMEs, MCP catalog output, or explainer copy.** They are local operator notes only.
 
 ## Pick the lane
