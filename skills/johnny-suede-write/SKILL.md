@@ -5,6 +5,27 @@ description: "Write sharper Suede copy for docs, pages, email, social, headlines
 
 # Johnny Suede Write
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 The writing enchilada. Route any writing request through one skill: long-form, short-form, GitHub and docs, social, email, product listing copy, brand-voice alignment, and public explainer talk-tracks. Default voice is the Suede house voice. A supplied company brief overrides everything.
 
 **Core principle:** copy earns its place on the page with concrete nouns, buyer-visible outcomes, real proof, and one primary action. Nothing decorative, nothing invented.
@@ -379,7 +400,7 @@ If any of these thoughts appear, stop and run the gate you were about to skip:
 
 ## Ship Gate
 
-Do not ship copy when:
+Recommend against shipping copy — and say why, leaving the call to the user — when:
 - the primary action is unclear
 - the page promises a feature the product does not implement
 - proof is fake or unverified

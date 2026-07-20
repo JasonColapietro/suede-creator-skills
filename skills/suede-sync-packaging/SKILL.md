@@ -5,6 +5,27 @@ description: "Prep songs for sync pitches: scene angles, one-sheets, clean and i
 
 # Suede Sync Package
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 **Core principle:** a sync package makes a track easy to evaluate; it never
 asserts the track is cleared. Confirmed facts and open clearance questions
 travel in separate, labeled piles, every time.
@@ -39,8 +60,11 @@ Do not rationalize past these:
    version marked exists / missing / unknown, with at minimum a confirmed
    master file path. Missing instrumental or clean versions are flagged in the
    one-sheet, not glossed.
-4. **Unresolved sample = no pitch copy.** Mark sample status "OPEN — do not
-   pitch until cleared" and stop at the checklist and clearance questions.
+4. **Unresolved sample = pause and put it to the user.** Uncleared samples are
+   a legal-risk finding: mark sample status "OPEN — recommend not pitching
+   until cleared," tell the user exactly what is unresolved, and let them
+   decide whether pitch copy is still drafted. If they proceed, the OPEN flag
+   stays embedded in the one-sheet and pitch materials.
 5. **Lyric flags are mandatory.** Screen the lyrics and flag profanity, brand
    and product names, artist name-drops, violence, drugs and alcohol, sexual
    content, religious and political content, and date-stamped references. If

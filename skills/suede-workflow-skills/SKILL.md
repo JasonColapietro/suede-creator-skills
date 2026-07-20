@@ -5,6 +5,27 @@ description: "Umbrella workflow for 27 public skills: copy, design, code review,
 
 # Suede Workflow Skills
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 ## Approved Brand Asset
 
 Any lane that creates or edits a Suede visual must use only `docs/assets/suede-ai-logo-transparent.png` from this repository as the Suede S mark (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement Suede S. `suede-skill-icon.png` is not the brand mark. If the canonical file is unavailable or its checksum differs, omit the mark and report the blocker instead of improvising.

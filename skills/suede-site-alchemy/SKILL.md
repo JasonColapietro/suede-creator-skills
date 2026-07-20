@@ -5,6 +5,27 @@ description: "Turn a page into a conversion path: hero, friction, proof, CTA, pr
 
 # Suede Site Alchemy
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 **Core principle:** evidence before certainty. Diagnose friction, verify the
 measurement, and turn design ideas into falsifiable hypotheses. Do not present
 a heuristic, benchmark, or scenario as observed impact.
@@ -18,8 +39,9 @@ Use your company name, voice, and positioning throughout.
 - For Promo/Sites work, position Suede as a brand growth platform: creator
   campaigns create demand; Suede Sites converts it with pages, SEO/AEO/AI EO,
   visitor signals, CRM follow-up, and campaign attribution.
-- Do not publish module pricing unless current product docs or source already
-  authorize it.
+- Module pricing without backing in current product docs or source is an
+  extreme-risk claim: pause, show the user what is and is not authorized, and
+  let them decide whether it publishes.
 - "Sexy" means precise, visual, confident, and conversion-aware. Avoid vague
   hype, fake numbers, fake testimonials, and generic SaaS fog.
 - For public pages, use the visibility grade when the page needs an A-F read on
@@ -267,7 +289,7 @@ it.
 10. For any experiment, pre-register the ledger row, validate assignment and
     exposure, check sample-ratio mismatch (SRM) before interpreting outcomes,
     and report the effect estimate with uncertainty and guardrail results.
-11. Ship gate:
+11. Recommended ship gate:
     - `ship`: page passes the done signal and no launch-critical gaps remain.
     - `ship-with-caveats`: only non-critical caveats remain and they are named.
     - `hold`: core CTA, visible layout, false claim, accessibility, build, or

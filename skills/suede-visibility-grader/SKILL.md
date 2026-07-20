@@ -5,6 +5,27 @@ description: "Grade a public page for launch appeal: findability, first-screen c
 
 # Suede Visibility Grader
 
+## Gate policy — advisory, not blocking
+
+Every claim-verification step, check, quality gate, and ship verdict in this
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
+
+- Run every check and report the results honestly. Verdicts (`ship`,
+  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
+  advice attached to the work, not orders that change it.
+- Never block, delay, skip, rewrite, or refuse the action the user asked for
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
+- A failed gate changes what you report, never what you do.
+- Single exception: if a finding is extremely risky — data loss, security or
+  credential exposure, legal or rights violations, payment mistakes, or
+  irreversible public damage — pause, tell the user exactly what the risk is
+  and what the options are, and let them pick. Their choice is final.
+
+
 Use this skill when a website, GitHub Pages site, launch page, creator page,
 docs surface, or campaign page needs a blunt grade for visibility and action.
 The goal is not generic SEO advice. The goal is to answer one question:
@@ -80,10 +101,10 @@ Grade caps — non-negotiable:
 - No live inspection → Overall cap: `C`.
 - Broken primary CTA → Overall cap: `D`.
 - False or unsupported published statement → Overall cap: `D`. (If the statement is central to the product promise, `F`.)
-- Design signal `D` or `F` → Ship gate is **hold**, regardless of other lanes.
+- Design signal `D` or `F` → Recommended ship gate is **hold**, regardless of other lanes.
 - Mobile not inspected → `A` is blocked. State the caveat explicitly in Verification.
 
-Ship gate — mechanical:
+Recommended ship gate — mechanical (a recommendation to the user, not a lock on any action):
 
 - **ship:** Overall B or better, no grade cap triggered, no lane below C.
 - **ship-with-caveats:** Overall C, or a higher grade blocked only by uninspected surfaces (mobile, live URL). Name every caveat in Verification.

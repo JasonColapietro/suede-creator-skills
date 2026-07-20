@@ -2,8 +2,8 @@
 
 ## Severity Levels
 
-- `error`: Blocks release, Suede intake, registry, licensing, royalty routing, or agent commerce.
-- `warning`: Does not always block work, but should be fixed before public release or monetization.
+- `error`: Recommends blocking release, Suede intake, registry, licensing, royalty routing, or agent commerce. The status is a report to the creator, not an action lock; the creator decides what proceeds.
+- `warning`: Does not usually warrant a blocked recommendation, but should be fixed before public release or monetization.
 - `info`: Useful improvement or optional cleanup.
 
 ## Score
