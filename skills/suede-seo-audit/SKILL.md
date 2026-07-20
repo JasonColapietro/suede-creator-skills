@@ -1,14 +1,15 @@
 ---
 name: suede-seo-audit
-description: "Run a nine-lane SEO, AEO, and AI-citation audit: access, intent, metadata, structure, schema, E-E-A-T, clusters, and rewrite fixes."
+description: "Run a nine-lane evidence-based SEO and generative-search audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes."
 ---
 
 # Suede SEO Audit
 
 This skill goes deeper than an inline copy audit. It inspects live page source,
-validates schema, traces crawl access, checks AI EO signals, and produces exact
-rewrites with a lane-by-lane grade. Use suede-copy for writing new copy. Use
-this skill when the audit itself is the deliverable.
+validates schema, traces crawl access, checks whether content can be understood
+and sourced accurately, and produces exact rewrites with a lane-by-lane grade.
+Use suede-copy for writing new copy. Use this skill when the audit itself is the
+deliverable.
 
 **Core principle:** never audit from memory. Every finding cites what was
 actually fetched, and every fix is written out literally, not described.
@@ -27,7 +28,8 @@ surface.
 - `robots.txt`: is the path allowed? Is `Disallow: /` blocking indexers?
 - `<meta name="robots">` or `<meta name="googlebot">`: noindex? nofollow?
 - `<link rel="canonical">`: does it match the intended URL exactly?
-- Sitemap entry: is the URL present in any listed sitemap?
+- Sitemap evidence: if the site publishes sitemaps, is the URL present and is
+  any `<lastmod>` value accurate? Absence is not an automatic indexing failure.
 - `<title>` tag: exact text, character count
 - `<meta name="description">`: exact text, character count
 - Open Graph tags: og:title, og:description, og:image, og:url, og:type
@@ -54,20 +56,27 @@ skipped and why. The detailed per-lane checklists live in this skill's
 | Lanes 1–4, 6–9 | `references/lane-checklists.md` |
 | Lane 5 (schema) | `references/schema-templates.md` |
 
+Before applying Google-specific search, generative-search, title/snippet, or
+structured-data rules, read `references/google-search-guidance.md`. It contains
+the primary-source baseline verified on 2026-07-19 and tells you which volatile
+rules to re-check before a ship decision.
+
 ### Lane 0: Keyword Research (optional mode)
 
 Activate when keyword discovery is requested; skip for technical-only or
 copy-only audits. When active, read `references/keyword-research.md` for the
-full protocol: primary/secondary/LSI keyword classification, competitor
-content gap, SERP feature targets, and the content brief.
+full protocol: evidence-backed query themes, related topics and entities,
+competitor content gaps, supported search-feature eligibility, and the content
+brief. Numeric demand stays `unknown` unless a dated source provides it.
 
 Lane 0 is informational only. It produces a keyword brief and content brief,
 not a grade. Incorporate the brief into Lanes 2–7 findings where relevant.
 
 ### Lane 1: Technical Access
 
-**Goal:** confirm that crawlers, indexers, and AI scrapers can reach, parse,
-and attribute the page. Run the Lane 1 checklist in
+**Goal:** confirm that search crawlers and other explicitly tested clients can
+reach and parse the page. Do not assume that one crawler's access policy or
+behavior represents another's. Run the Lane 1 checklist in
 `references/lane-checklists.md`: status, redirects, canonical, robots, sitemap,
 JS-free rendering, and the Core Web Vitals measurement protocol. Measure CWV
 when tooling allows (PageSpeed Insights at pagespeed.web.dev; `curl` time is a
@@ -75,8 +84,9 @@ server-response proxy only); otherwise report each vital as "not measurable"
 with the reason plus observed risk factors. Do not invent scores; do report
 observable risks. CWV never enters the A-F grade.
 
-Lane 1 grade drops to C or below if: any indexability block is present, if the
-canonical is wrong, or if the page is JavaScript-only with no SSR/SSG fallback.
+Lane 1 grade drops to C or below if: an actual indexability block is present,
+the canonical is wrong, redirects fail, or primary content is absent from the
+tested rendered result. JavaScript use alone is not a failure.
 
 ### Lane 2: Search and Answer Intent
 
@@ -84,42 +94,46 @@ canonical is wrong, or if the page is JavaScript-only with no SSR/SSG fallback.
 queries and can earn a featured snippet or AI citation. Run the Lane 2
 checklist in `references/lane-checklists.md`: primary reader, primary query
 theme, the AI-answer-ready definition, one earned action, and cannibalization.
-If the AI-answer-ready definition cannot be constructed from the first 200
-words of the page, that is a HIGH finding.
+Treat the opening-section definition as a Suede editorial clarity diagnostic,
+not a Google ranking requirement. If a concise answer cannot be constructed
+from the opening section, report the ambiguity and its reader impact.
 
-Lane 2 grade drops to C or below if: the page has no clear primary reader, if
-the intent conflicts with the title, or if the first screen answers a different
+Lane 2 grade drops to C or below if: the page has no clear primary reader, the
+intent conflicts with the title, or the opening section answers a different
 question than the URL implies.
 
 ### Lane 3: Metadata
 
-**Goal:** every metadata field is populated, within safe limits, and tuned for
-click-through from search results and social previews. Run the Lane 3 checklist
-in `references/lane-checklists.md`: title tag, meta description, Open Graph,
+**Goal:** metadata is accurate, descriptive, and useful in search results and
+social previews. Character counts are preview diagnostics because Google has
+no fixed title or meta-description character limit and may generate different
+title links or snippets. Run the Lane 3 checklist in
+`references/lane-checklists.md`: title tag, meta description, Open Graph,
 Twitter/X card, alt text, author entity, and durable entity names.
 
-Lane 3 grade drops to D or below if: title is over 70 characters and truncates
-the entity name, meta description is missing, og:image is missing, or any entity
-name is absent from all three (title + description + H1).
+Lane 3 grade drops to D or below if: the title is missing or misleading, the
+meta description is missing on a priority landing page, required social preview
+assets are broken, or the page's entity cannot be identified from the title,
+description, and H1 together. Length alone never causes a grade drop.
 
 ### Lane 4: Structure
 
-**Goal:** the page's heading hierarchy, section order, internal link network,
-and FAQ placement serve both human readers and AI citation engines. Run the
-Lane 4 checklist in `references/lane-checklists.md`: headings, section order
-(hero → proof → how → FAQ → CTA), links, FAQ quality, and keyword density
-(including the density check output format).
+**Goal:** the page's hierarchy, section order, internal links, and terminology
+serve the reader's intent. Run the Lane 4 checklist in
+`references/lane-checklists.md`: headings, reader-driven section coverage,
+links, optional FAQ quality, and natural topic/entity coverage. Do not apply a
+universal page template, word count, or keyword-density quota.
 
-Lane 4 grade drops to C or below if: H1 is missing, section order puts the FAQ
-or proof below the fold without any in-page anchor, or internal links use
-non-descriptive anchor text throughout. Lane 4 drops an additional letter grade
-if primary keyword density is 0 in the body or any secondary keyword is
-completely absent from the page.
+Lane 4 grade drops to C or below if: H1 is missing, the page omits information
+required to satisfy its primary reader intent, or internal links use
+non-descriptive anchor text throughout. Missing an exact-match phrase is not a
+failure when the page clearly covers the subject with natural language.
 
 ### Lane 5: Schema Markup
 
-**Goal:** every JSON-LD block is valid, typed correctly for the page, and
-matches visible content. Run the Lane 5 checklist in
+**Goal:** decide whether structured data is warranted, then ensure every JSON-LD
+block is valid, eligible for its stated search feature, and matches visible
+content. Run the Lane 5 checklist in
 `references/schema-templates.md`, which also holds the page-type → `@type`
 mapping and minimum JSON-LD templates (Organization, SoftwareApplication,
 FAQPage, Article).
@@ -127,21 +141,25 @@ FAQPage, Article).
 When schema is missing or broken, provide the exact corrected JSON-LD block
 inline in the findings. Do not describe it in prose.
 
-Lane 5 grade drops to D or below if: no schema is present on a page making
-factual product claims, or if FAQ schema items do not match visible text.
+Lane 5 grade drops to D or below if: markup is misleading, invalid, hidden from
+users, or uses a type/property combination that is ineligible for the claimed
+Google feature. A page does not fail merely because no schema is warranted.
+FAQ markup never earns a visibility promise; Google generally limits FAQ rich
+results to authoritative government and health sites.
 
 ### Lane 6: AI EO (Answer Engine Optimization)
 
-**Goal:** the page is structured so that LLMs, answer engines, and AI overviews
-can extract, quote, and cite it accurately without inventing facts. Run the
-Lane 6 checklist in `references/lane-checklists.md`: citable first-200-words
-answer, plain definitions, prose FAQ answers with explicit subjects, entity
-signals (`sameAs`, name placement), `llms.txt` consideration, AI-accessible
-content, and hallucination-risk claims.
+**Goal:** help people and automated systems understand and source the page
+accurately without inventing facts. Run the Lane 6 checklist in
+`references/lane-checklists.md`: clear opening answer, plain definitions,
+explicit subjects, verified entity signals, accessible primary content, source
+links, and hallucination-risk claims. Google Search ignores `llms.txt`; record
+one only when another named consumer documents support, and never grade its
+presence as a search signal.
 
-Lane 6 grade drops to C or below if: the primary answer is not in the first 200
-words, FAQ answers use "it" as the subject, or primary content is
-JavaScript-only.
+Lane 6 grade drops to C or below if: the opening section cannot state the
+page's subject and answer clearly, material claims lack sources, or primary
+content is inaccessible without JavaScript and has no crawlable fallback.
 
 ### Lane 7: Copy and Conversion Quality
 
@@ -150,16 +168,16 @@ primary CTA or proves the claim that does. Run the Lane 7 checklist in
 `references/lane-checklists.md`: directness, proof, claims, CTA, trust, and
 filler removal.
 
-Lane 7 grade drops to C or below if: the primary CTA is absent above the fold,
-any public claim is unverifiable, or the copy could belong to any competing
-product without changing a word.
+Lane 7 grade drops to C or below if: the intended action is absent or
+undiscoverable in the rendered task path, any public claim is unverifiable, or
+the copy could belong to any competing product without changing a word.
 
 ### Lane 8: E-E-A-T Signals
 
-**Goal:** confirm that Experience, Expertise, Authoritativeness, and
-Trustworthiness signals are present and verifiable on the page. Run the Lane 8
-checklist in `references/lane-checklists.md` for what counts as evidence for
-each of the four signals.
+**Goal:** use Experience, Expertise, Authoritativeness, and Trustworthiness as a
+human quality/trust lens and verify the available evidence. E-E-A-T is not a
+standalone ranking score exposed by Google. Run the Lane 8 checklist in
+`references/lane-checklists.md` for what counts as evidence for each concept.
 
 Grade: A (all four strong), B (3 strong), C (2 strong), D/F (1 or 0).
 
@@ -169,14 +187,15 @@ are present.
 
 ### Lane 9: Topic Cluster Architecture
 
-**Goal:** for sites with multiple pages, confirm the content is organized into
-pillar and cluster pages with complete internal linking. Skip for single-page
-audits and note the skip. Run the Lane 9 audit questions and cluster-map
-output format in `references/lane-checklists.md`.
+**Goal:** when a multi-page site benefits from a pillar/cluster strategy,
+confirm that the selected topic ownership and internal paths are coherent.
+Skip for single-page audits; mark N/A when that architecture does not serve the
+site's user journeys. Run the Lane 9 audit questions and cluster-map output
+format in `references/lane-checklists.md`.
 
-Lane 9 grade drops to C or below if: no pillar page exists, cluster pages do
-not link back to the pillar, or two or more pages compete for the same primary
-keyword.
+When a cluster strategy is in scope, Lane 9 grade drops to C or below if: its
+declared pillar is missing, important cluster pages are orphaned, or multiple
+pages appear to compete for the same query intent without a clear owner.
 
 ---
 
@@ -195,7 +214,8 @@ Verification: <how to confirm the fix worked>
 
 Severity guide:
 - HIGH: blocks indexing, breaks CTA, contains false public claim, schema invalid
-- MEDIUM: hurts CTR, weakens AI citation, missing recommended signal
+- MEDIUM: may reduce result clarity, sourceability, or reader task success;
+  missing a relevant recommended signal
 - LOW: copy quality, filler, minor structural improvement
 
 ---
@@ -217,10 +237,12 @@ Hard caps:
 - Cannot earn A overall without verifying a live URL
 - Cannot earn A if primary CTA is broken or absent
 - Cannot earn A if any public claim is false, unverifiable, or invented
-- Cannot earn A in Lane 5 if schema does not validate
-- Cannot earn A in Lane 6 if primary content is paywalled or JavaScript-only
+- Cannot earn A in Lane 5 if present or warranted schema does not validate
+- Cannot earn A in Lane 6 if primary content was unavailable to the tested
+  intended clients and the audit cannot evaluate it
 - Cannot earn A in Lane 8 if contact, privacy policy, or HTTPS is absent
-- Cannot earn A in Lane 9 if two or more pages compete for the same primary keyword
+- Cannot earn A in an in-scope Lane 9 if material query-intent ownership
+  conflicts remain unresolved
 
 Overall grade: convert letter grades to points (A=4, B=3, C=2, D=1, F=0).
 Lanes 1, 3, and 6 count 1.5x. Lanes 2, 4, 5, 7, 8, 9 count 1x. Lane 0
@@ -242,12 +264,13 @@ Audit date:
 Source checked: [live URL | source file | both]
 
 --- KEYWORD BRIEF (Lane 0 — omit if not requested) ---
-Primary: [keyword] — [intent: info/nav/commercial/transactional] — [volume: low <1K/mo | medium 1K–10K | high >10K/mo] — [difficulty: low | medium | high]
-Secondary: [k1 — intent — volume], [k2 — intent — volume], [k3 — intent — volume]
-LSI terms: [list — grouped by subtopic]
-Competitor gap queries: [query — competitor URL that ranks — content angle missing from target page]
-SERP feature targets: [feature — eligibility reason]
-Content brief: primary keyword appears in H1 + first 100 words + [N] times per 1,000 words; secondary keywords appear [1–2] times each
+Primary query theme: [query family] — [intent] — [evidence source/date]
+Demand: [sourced value/range | unknown]
+Supporting query themes: [query — observed/inferred — evidence]
+Related topics and entities: [list grouped by reader need]
+Content gaps: [subject — checked URL/source — reader value — priority]
+Search-feature eligibility: [feature — eligible/validated/observed/not verified]
+Content brief: [reader-first section, entity, link, and source plan]
 
 --- METADATA ---
 SEO title (suggested):
@@ -261,14 +284,14 @@ Secondary CTA (text and destination):
 
 --- CONTENT ADDITIONS ---
 Content brief (from Lane 0 — omit if not requested):
-  Target word count: [N] words (based on [intent] + SERP competition)
-  Required H2 sections: [list — derived from PAA and competitor H2 structure]
-  NLP term density check:
-    Primary "[keyword]": appears in H1 [yes/no], first 100 words [yes/no], [N] times per 1,000 words (target: 2–4)
-    Secondary "[keyword]": [N] times per 1,000 words (target: 1–2 each)
+  Length: [reader-driven scope; no universal word-count target]
+  Required subjects: [list derived from intent and verified source gaps]
+  Topic/entity coverage:
+    Primary subject: [clear/unclear] — evidence: [locations]
+    Supporting subjects: [covered/missing] — evidence: [locations]
 FAQ additions:
-  Q: [real searcher question — match PAA wording]
-  A: [≤100 words, subject named explicitly, no pronouns as subject]
+  Q: [real reader/searcher question — cite observed wording when available]
+  A: [complete answer in the length the reader needs; subject explicit]
 Internal links to add (anchor text → destination URL):
 External links to add (anchor text → destination URL):
 Competitor content gap:
@@ -280,8 +303,9 @@ Schema changes:
   [Paste corrected or new JSON-LD block here]
 
 --- AI EO NOTES ---
-AI-ready summary (first 200 words target):
-llms.txt warranted: [yes | no | already present]
+Clear opening summary:
+Machine-readable AI file: [named consumer and documented use | none warranted]
+Google Search effect of llms.txt: none
 Hallucination risk flags:
 
 --- E-E-A-T NOTES ---
@@ -337,7 +361,8 @@ Remove entirely:
 [ ] Status code confirmed 200
 [ ] Canonical URL confirmed
 [ ] robots.txt allows path
-[ ] Schema validates at schema.org/validator
+[ ] Schema vocabulary/shape validates at schema.org/validator
+[ ] Google feature eligibility validates in Rich Results Test when applicable
 [ ] All internal links return 200
 [ ] Primary CTA destination loads correctly
 [ ] og:image loads at full resolution
@@ -367,8 +392,9 @@ through 3.
    listed sitemap. Confirm the target URL is not blocked and is listed.
 
 4. **Scan all active lanes.** Lane 0 activates only when keyword discovery is
-   requested. Lanes 1–9 run on every audit (Lane 9 is N/A for single-page
-   audits; note the skip). Read the lane's checklist file from `references/`
+   requested. Lanes 1–8 run on every audit. Lane 9 is N/A for single-page
+   audits and sites where a cluster model is not warranted; note the reason.
+   Read the lane's checklist file from `references/`
    and work through each item. Mark each item pass, fail, or N/A. Note the
    location of each failure.
 
@@ -399,7 +425,9 @@ If you catch yourself thinking any of these, stop and run the check for real:
 - "I know this page; I can grade it from memory." — Fetch it. Source Truth first.
 - "curl was fast, that covers Core Web Vitals." — curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
 - "I'll describe the schema fix; they can write the JSON." — Write the literal JSON-LD block.
-- "The meta description is close enough to the limit." — Count the characters. Report the exact number.
+- "The title or description crossed a magic character limit." — Count it for
+  preview diagnostics, then judge accuracy and likely truncation in context.
+  Google publishes no fixed character limit.
 - "A traffic estimate will make this finding land harder." — Never invent traffic, rankings, or ROI.
 - "The lane mostly passes; I'll skip the rest of the checklist." — Every item gets pass, fail, or N/A.
 
@@ -408,8 +436,10 @@ If you catch yourself thinking any of these, stop and run the check for real:
 ## 7. Boundaries
 
 Do not invent traffic estimates, ranking positions, citation frequency, or ROI
-from SEO changes. Name what was checked, what was skipped, and what requires
-additional tooling.
+from SEO changes. Do not present `llms.txt`, content chunking, exact-match term
+density, word count, or unsupported schema as Google ranking requirements. Name
+what was checked, which primary guidance was used, what was skipped, and what
+requires additional tooling.
 
 ---
 

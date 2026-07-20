@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "package_type": "suede-transfer-package",
   "generated_at": null,
   "project": {
@@ -17,6 +17,20 @@
     "organization": "",
     "confirmation_status": "unknown"
   },
+  "parties": [],
+  "works": [
+    {
+      "id": "work-001",
+      "title": "unknown",
+      "identifiers": [],
+      "writer_party_ids": [],
+      "publisher_party_ids": [],
+      "status": "unknown",
+      "evidence_refs": []
+    }
+  ],
+  "recordings": [],
+  "releases": [],
   "assets": [],
   "rights": {
     "owner_claim": "unknown",
@@ -28,11 +42,34 @@
     "cover_or_interpolation": "unknown",
     "license_restrictions": []
   },
+  "rights_claims": [],
+  "licenses": [],
+  "third_party_material": [],
+  "consents": [],
   "provenance": {
     "source_root": "",
     "creation_notes": "",
     "chain_of_custody": [],
-    "registry_status": "unknown"
+    "registry_status": "unknown",
+    "content_credentials": []
+  },
+  "privacy": {
+    "default_classification": "private-draft",
+    "field_rules": [
+      {
+        "json_pointer": "/creator/email",
+        "classification": "restricted",
+        "redaction_action": "review",
+        "reason": "Contact data should be shared only with the intended recipient."
+      },
+      {
+        "json_pointer": "/creator/wallet_address",
+        "classification": "restricted",
+        "redaction_action": "review",
+        "reason": "Payment-routing data requires recipient and purpose review."
+      }
+    ],
+    "redaction_required_before_external_share": true
   },
   "optimization": {
     "requested_services": [],

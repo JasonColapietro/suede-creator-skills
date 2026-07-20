@@ -1,6 +1,6 @@
 ---
 name: suede-rights-passport
-description: "Package creative project folders into rights-ready handoffs: files, metadata, credits, splits, licenses, stems, lyrics, artwork, and notes."
+description: "Package creative projects into evidence-scoped rights handoffs with normalized works, recordings, releases, parties, identifiers, claims, licenses, consent, provenance, privacy, and validation."
 ---
 
 # Creator Rights Package Builder
@@ -11,7 +11,7 @@ Create a local rights and provenance transfer package from messy creator materia
 
 **Core principle:** the package carries questions, not answers. Every rights fact ships as confirmed (with user-supplied evidence) or as unknown with a question in `missing-info-report.md`. The package never resolves a rights question, and building it clears nothing.
 
-Public v1 is offline-first: prepare files and metadata, do not upload files, write to a registry, request private keys, or claim legal clearance.
+Public v1 is offline-first: prepare files and metadata, do not upload files, write to a registry, request private keys, or claim legal clearance. The 0.2 manifest separates musical works, recordings, releases, parties, rights claims, licenses, third-party material, consent, provenance, and privacy so a downstream operator can map facts without collapsing unlike rights objects.
 
 Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill packages the folder. If the gaps themselves need investigation or evidence work, hand off to the audit first.
 
@@ -31,8 +31,9 @@ Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill
    - `optimization-brief.md`
    - `missing-info-report.md`
 7. Flag uncertainty clearly. Use `unknown`, `unconfirmed`, or `needs creator confirmation` instead of inventing rights facts. Never resolve a rights question while packaging: ownership, split, sample, and license statuses move to confirmed only on user-supplied evidence, and every open gap ships as a question in `missing-info-report.md`.
-8. Run `scripts/validate_transfer_package.py` against the output folder to confirm the package is structurally complete before handoff. A pass confirms shape and completeness only — it does not mean rights are confirmed.
-9. End with a concise transfer summary: package path, files found, missing info, risk flags, and recommended next step.
+8. For an external exchange, read `references/ddex-c2pa-crosswalk.md`, identify the receiver's exact profile/version, and keep the mapping labeled as a crosswalk until receiver conformance tooling passes.
+9. Run `scripts/validate_transfer_package.py` with `--strict-current` against new output folders. A pass confirms schema, evidence-state, reference, and share-bound structure only — it does not mean rights are confirmed.
+10. End with a concise transfer summary: package path, schema version, files found, missing info, risk flags, privacy/redaction posture, and recommended next step.
 
 ## Quick Start
 
@@ -59,6 +60,8 @@ python3 /path/to/suede-rights-passport/scripts/create_transfer_package.py \
 Safety defaults:
 
 - Hidden files, dependency folders, build outputs, caches, and secret-like files are skipped by default.
+- Symlinked sources, metadata, files, and directories are rejected; the builder
+  hashes or copies only regular files that resolve inside the declared source tree.
 - Unrecognized file types are skipped unless `--include-other` is passed.
 - Absolute local paths are redacted to share-safer names unless `--include-absolute-paths` is passed.
 - Existing generated package files are not overwritten unless `--force` is passed.
@@ -75,23 +78,45 @@ with `scripts/validate_transfer_package.py`:
 
 ```bash
 python3 /path/to/suede-rights-passport/scripts/validate_transfer_package.py \
-  /path/to/transfer-package
+  --strict-current /path/to/transfer-package
 ```
 
-It is a thin, dependency-free (stdlib-only) check that confirms:
+It is a dependency-free (stdlib-only) check that executes the bundled Draft
+2020-12 JSON Schema and confirms:
 
 - All 7 required report files are present (`RIGHTS_PASSPORT.md`,
   `suede-intake.json`, `provenance.md`, `credits-and-splits.md`,
   `license-notes.md`, `optimization-brief.md`, `missing-info-report.md`).
-- `suede-intake.json` is valid JSON and matches the top-level and nested
-  shape documented in `references/intake-schema.md`.
+- `suede-intake.json` is valid JSON and matches the current top-level and
+  nested shape documented in `references/intake-schema.md`.
 - Every entry in `assets[]` has a `sha256` field that looks like a real
   64-character hex digest.
+- Normalized IDs are unique and references between parties, works,
+  recordings, releases, assets, claims, licenses, third-party material,
+  consent, and provenance resolve.
+- A `confirmed` normalized record carries evidence, known shares stay in the
+  0–100 range, and a matching subject/right/territory/term scope does not exceed 100.
+- Privacy classification and external-redaction posture are explicit.
 
 It exits non-zero with a specific error list on failure (missing file,
-invalid JSON, missing schema field, missing/malformed hash) and prints a
+invalid JSON, missing schema field, broken reference, unsupported evidence
+state, oversubscribed shares, missing confirmed evidence, missing/malformed hash) and prints a
 short pass summary — including a risk-flag count — on success. Run
-`--help` for usage, or `--quiet` to suppress the success summary.
+`--help` for usage, or `--quiet` to suppress the success summary. Legacy 0.1
+packages remain inspectable without `--strict-current`; new exchanges require
+0.2.0.
+
+To migrate an existing 0.1 manifest without modifying it:
+
+```bash
+python3 /path/to/suede-rights-passport/scripts/migrate_intake_v1_to_v2.py \
+  /path/to/transfer-package/suede-intake.json
+```
+
+The migration writes `suede-intake.v0.2.json`, records the source manifest
+digest and custody history, preserves open questions and risk flags, maps only
+roles stated in source data, and never upgrades evidence state or fills missing
+shares. Review it before replacing any current manifest.
 
 **Structural validity is not a rights clearance.** This validator checks
 that a package is *shaped correctly and complete*, not that the rights
@@ -127,6 +152,7 @@ Read each bundled reference at the moment it is needed, not up front:
 
 - `references/package-standard.md`: before creating or repairing any package — required output files, folder structure, risk labels, and quality bar.
 - `references/intake-schema.md`: when filling or validating `suede-intake.json`.
+- `references/ddex-c2pa-crosswalk.md`: before external standards mapping or any DDEX/C2PA claim.
 - `references/optimization-checklist.md`: when writing `optimization-brief.md`.
 - `references/creator-questions.md`: when information is missing — ask only the questions that block package quality.
 - `references/passport-context.md`: when the user asks how the package relates to Suede review or the Suede Creator Passport.
@@ -135,6 +161,7 @@ Use the bundled assets as templates when creating or repairing a package:
 
 - `assets/rights-passport.template.md`
 - `assets/suede-intake.template.json`
+- `assets/suede-intake.schema.json`
 - `assets/provenance.template.md`
 - `assets/credits-and-splits.template.md`
 - `assets/license-notes.template.md`
@@ -150,6 +177,12 @@ Use the bundled assets as templates when creating or repairing a package:
 - Do not upload files or call live services unless the user explicitly asks and provides the relevant authenticated workflow.
 - Treat generated reports and transfer packages as private drafts until a
   creator or operator reviews and redacts them for the intended audience.
+- Do not call a field crosswalk DDEX conformance, and do not call a hash a C2PA
+  Content Credential. Validate the receiver's exact profile separately.
+- Keep composition, recording/master, and release identifiers on their proper
+  objects. ISWC and ISRC are not interchangeable, and neither proves ownership.
+- Unknown voice, likeness, or synthetic-media consent stays unknown; silence is
+  not consent.
 - Keep public positioning focused on broadly reusable creator workflows: rights packaging, provenance, registry readiness, royalty routing, licensing, and agent commerce.
 
 ## Completion Checklist
@@ -158,11 +191,18 @@ Before reporting that a package is ready:
 
 - Confirm every media/document file is either inventoried or intentionally excluded.
 - Confirm every asset in `suede-intake.json` has a stable relative path and SHA-256 hash when available.
+- Confirm parties, musical works, recordings, and releases have distinct stable
+  IDs and that ISWC, ISRC, IPI/CAE, ISNI, UPC/EAN, and catalog identifiers are
+  attached only where applicable, each with evidence state.
+- Scope every rights claim and license by subject, right/use type, party,
+  territory, term, evidence, restrictions, and conflict status. Never force
+  unknown shares to total 100.
+- Classify sensitive fields and review redaction before any external share.
 - Mark contributors, splits, licenses, samples, and ownership facts as confirmed or unknown. Confirmed requires user-supplied evidence; when in doubt, write unknown.
 - Include a `missing-info-report.md` section even when nothing is missing.
 - Include an `optimization-brief.md` with concrete next actions for downstream review.
 - State that final rights clearance requires creator/legal confirmation when any rights fact is uncertain.
-- Run `scripts/validate_transfer_package.py` against the output folder and report the result. If it fails, fix the structural gap it names before calling the package ready — a validator failure means a required file is missing or `suede-intake.json` is malformed, not that a rights fact is unresolved.
+- Run `scripts/validate_transfer_package.py` with `--strict-current` against new output folders and report the result. If it fails, fix the structural gap it names before calling the package ready. A validator pass still does not resolve a rights fact.
 
 ## Red flags — stop
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Creator Rights Package Builder | Music Rights Docs</title>
-    <meta name="description" content="Docs for the Creator Rights Package Builder: create local music rights transfer packages with provenance, credits, splits, licenses, intake JSON, and briefs.">
+    <meta name="description" content="Create validated music-rights packages with separate works, recordings, releases, parties, identifiers, scoped claims, licenses, consent, provenance, and privacy controls.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html">
@@ -24,7 +24,7 @@
         "@type": "TechArticle",
         "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html#article",
         "headline": "Creator Rights Package Builder",
-        "description": "Create local music rights transfer packages with provenance, credits, splits, license notes, intake JSON, optimization briefs, and missing-info reports.",
+        "description": "Create validated local music-rights packages with normalized works, recordings, releases, parties, identifiers, claims, licenses, consent, provenance, and privacy controls.",
         "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html",
         "author": {
           "@type": "Person",
@@ -282,7 +282,7 @@
         <div>
           <div class="eyebrow">/suede-rights-passport &middot; Skill documentation</div>
           <h1>Rights evidence, packed like it matters.</h1>
-          <p class="lead">Turn a messy creator folder into a local rights and provenance transfer package for review, splits, license notes, optimization, registry readiness, royalty routing, and agent commerce prep. Public v1 is offline-first: it inventories and organizes files, but it does not upload files, write to a registry, ask for private keys, or claim legal clearance.</p>
+          <p class="lead">Turn a messy creator folder into a validated local rights and provenance package. Schema 0.2 keeps musical works, recordings, releases, parties, identifiers, scoped claims, licenses, third-party material, consent, provenance, and privacy separate. Public v1 is offline-first: it does not upload files, write to a registry, ask for private keys, or claim legal clearance or standards conformance.</p>
           <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport">View skill folder</a> <a class="button secondary" href="suede-release-linter.html">Pair with release linter</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
@@ -299,7 +299,8 @@
         </div>
         <div class="skill-term-body">
           <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-rights-passport package ./project</span></span>
-          <span class="t-line">provenance mapped &middot; splits documented</span>
+          <span class="t-line">works / recordings / releases separated &middot; claims scoped</span>
+          <span class="t-line">identifiers evidence-labelled &middot; privacy review required</span>
           <span class="t-line">secrets excluded &middot; hidden files skipped</span>
           <span class="t-line"><span class="term-grade">RIGHTS PACKAGE BUILT &middot; REVIEW-READY</span><span class="term-cursor" aria-hidden="true"></span></span>
         </div>
@@ -313,7 +314,8 @@
           <h2>What it produces</h2>
           <ul>
             <li><code>RIGHTS_PASSPORT.md</code> - project summary, ownership status, contributor facts, and review flags.</li>
-            <li><code>suede-intake.json</code> - machine-readable intake data with relative paths and SHA-256 hashes where available.</li>
+            <li><code>suede-intake.json</code> - versioned data for works, recordings, releases, parties, identifiers, rights claims, licenses, consent, provenance, privacy, paths, and hashes.</li>
+            <li><code>suede-intake.schema.json</code> - JSON Schema 2020-12 contract for structural validation and downstream mapping.</li>
             <li><code>provenance.md</code> - origin notes, source materials, asset trail, and evidence gaps.</li>
             <li><code>credits-and-splits.md</code> - contributors, roles, split status, and unresolved confirmations.</li>
             <li><code>license-notes.md</code> - sample, sync, distribution, public URL, and clearance notes.</li>
@@ -344,6 +346,9 @@
   --artist "Artist Name" \
   --copy-assets</code></pre>
         <p>Safety defaults skip hidden files, dependency folders, build outputs, caches, secret-like files, and unrecognized file types. The output folder cannot be the source folder or live inside it. Existing generated files require <code>--force</code> before replacement.</p>
+        <pre><code>python3 skills/suede-rights-passport/scripts/validate_transfer_package.py \
+  --strict-current /path/to/transfer-package</code></pre>
+        <p>The validator checks structure, references, evidence-state rules, known-share bounds, hashes, and privacy posture. A pass does not prove ownership, clearance, registration, identifier validity, DDEX conformance, C2PA authenticity, or authority to transact.</p>
       </section>
 
       <section class="panel">
@@ -352,8 +357,9 @@
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/SKILL.md"><b>Skill manifest</b><span>Agent-facing workflow, trigger description, safety rules, package standards, and completion checklist.</span></a>
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/agents/openai.yaml"><b>OpenAI metadata</b><span>Display name, short description, and default prompt for skill-list surfaces.</span></a>
           <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/scripts/create_transfer_package.py"><b>Transfer package script</b><span>Inventories files, hashes assets, applies safety skips, writes the transfer package, and can copy selected assets.</span></a>
-          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/references"><b>References</b><span>Package standard, intake schema, optimization checklist, creator questions, and downstream review context.</span></a>
-          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/assets"><b>Templates</b><span>Markdown and JSON templates for the generated package, intake, provenance, splits, license, optimization, and missing-info artifacts.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-passport/scripts/migrate_intake_v1_to_v2.py"><b>0.1 to 0.2 migration</b><span>Writes a separate evidence-preserving 0.2 manifest, retains the source digest, and never upgrades claims or fills shares.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/references"><b>References</b><span>Package standard, 0.2 field guide, DDEX/C2PA crosswalk boundaries, optimization checklist, creator questions, and review context.</span></a>
+          <a class="link-row" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport/assets"><b>Templates and schema</b><span>JSON Schema 2020-12 plus Markdown and JSON templates for the generated package and reports.</span></a>
         </div>
       </section>
 

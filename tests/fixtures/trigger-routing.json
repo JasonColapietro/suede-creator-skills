@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "code-review-grader",
+      "skills": ["suede-code", "suede-code-review", "suede-code-grader"],
+      "fallback": "suede-code",
+      "routes": [
+        {
+          "skill": "suede-code-review",
+          "positive": ["deep review", "line by line", "concrete bugs", "findings only", "no grade"],
+          "negative": ["a f", "grade only", "ship verdict", "review and grade"],
+          "metadataMustContain": ["findings", "not a grade"]
+        },
+        {
+          "skill": "suede-code-grader",
+          "positive": ["a f", "grade only", "ship verdict", "verdict only", "no line by line"],
+          "negative": ["findings only", "no grade", "review and grade"],
+          "metadataMustContain": ["a f", "grade"]
+        },
+        {
+          "skill": "suede-code",
+          "positive": ["review and grade", "findings and grade", "one pass"],
+          "negative": ["findings only", "grade only"],
+          "metadataMustContain": ["review", "grade"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "code-review-positive",
+          "mode": "positive",
+          "prompt": "Deep review this PR for concrete bugs and findings only; no grade.",
+          "expected": "suede-code-review"
+        },
+        {
+          "id": "code-grader-negative-review",
+          "mode": "negative",
+          "prompt": "Give this PR an A-F ship verdict only; no line-by-line review.",
+          "expected": "suede-code-grader",
+          "forbidden": ["suede-code-review"]
+        },
+        {
+          "id": "code-combined-positive",
+          "mode": "positive",
+          "prompt": "Review and grade this PR in one pass with findings and an A-F verdict.",
+          "expected": "suede-code"
+        },
+        {
+          "id": "code-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Check this PR and tell me if it ships.",
+          "expected": "suede-code"
+        }
+      ]
+    },
+    {
+      "id": "teams-fleet-workflow",
+      "skills": ["suede-agent-teams", "suede-codex-fleet", "suede-workflow-skills"],
+      "fallback": "suede-agent-teams",
+      "routes": [
+        {
+          "skill": "suede-agent-teams",
+          "positive": ["coordinated agent lanes", "agent lanes", "shared change", "collision checks", "wip checks", "quality gates"],
+          "negative": ["codex cli", "independent batches", "full public skill pack"],
+          "metadataMustContain": ["coordinated", "lanes"]
+        },
+        {
+          "skill": "suede-codex-fleet",
+          "positive": ["codex cli", "high volume", "independent batches", "parallel workers", "bulk generation"],
+          "negative": ["shared change", "full public skill pack"],
+          "metadataMustContain": ["codex cli", "high volume"]
+        },
+        {
+          "skill": "suede-workflow-skills",
+          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills"],
+          "negative": ["shared change", "independent batches"],
+          "metadataMustContain": ["full public", "skill"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "teams-positive",
+          "mode": "positive",
+          "prompt": "Coordinate agent lanes for one shared change with collision checks, quality gates, and WIP checks.",
+          "expected": "suede-agent-teams"
+        },
+        {
+          "id": "fleet-negative-teams",
+          "mode": "negative",
+          "prompt": "Use Codex CLI for high-volume independent batches with parallel workers.",
+          "expected": "suede-codex-fleet",
+          "forbidden": ["suede-agent-teams"]
+        },
+        {
+          "id": "workflow-pack-positive",
+          "mode": "positive",
+          "prompt": "Load the full public skill pack as an umbrella workflow.",
+          "expected": "suede-workflow-skills"
+        },
+        {
+          "id": "teams-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Use multiple agents to handle this complex change safely.",
+          "expected": "suede-agent-teams"
+        }
+      ]
+    },
+    {
+      "id": "design-visibility",
+      "skills": ["suede-design", "suede-visibility-grader"],
+      "fallback": "suede-design",
+      "routes": [
+        {
+          "skill": "suede-design",
+          "positive": ["design tokens", "color system", "typography", "component hierarchy", "visual hierarchy", "dark mode"],
+          "negative": ["grade this public page", "findability", "a f visibility"],
+          "metadataMustContain": ["tokens", "hierarchy"]
+        },
+        {
+          "skill": "suede-visibility-grader",
+          "positive": ["grade this public page", "first screen", "findability", "cta", "citation readiness", "a f visibility"],
+          "negative": ["design tokens", "color system"],
+          "metadataMustContain": ["public page", "findability"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "design-positive",
+          "mode": "positive",
+          "prompt": "Set the design tokens, typography, component hierarchy, and dark mode for this screen.",
+          "expected": "suede-design"
+        },
+        {
+          "id": "visibility-negative-design",
+          "mode": "negative",
+          "prompt": "Grade this public page for findability, first-screen clarity, CTA strength, and A-F visibility.",
+          "expected": "suede-visibility-grader",
+          "forbidden": ["suede-design"]
+        },
+        {
+          "id": "design-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Make this landing page more compelling.",
+          "expected": "suede-design"
+        }
+      ]
+    },
+    {
+      "id": "rights-audit-passport",
+      "skills": ["suede-rights-audit", "suede-rights-passport"],
+      "fallback": "suede-rights-audit",
+      "routes": [
+        {
+          "skill": "suede-rights-audit",
+          "positive": ["audit", "find rights gaps", "ownership gaps", "split readiness", "samples", "before licensing"],
+          "negative": ["package the project", "transfer handoff", "rights passport"],
+          "metadataMustContain": ["rights gaps"]
+        },
+        {
+          "skill": "suede-rights-passport",
+          "positive": ["package the project", "transfer handoff", "rights passport", "bundle the files"],
+          "negative": ["find rights gaps", "ownership gaps"],
+          "metadataMustContain": ["package", "handoff"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "rights-audit-positive",
+          "mode": "positive",
+          "prompt": "Audit ownership gaps, samples, and split readiness before licensing.",
+          "expected": "suede-rights-audit"
+        },
+        {
+          "id": "rights-passport-negative-audit",
+          "mode": "negative",
+          "prompt": "Package the project into a rights passport transfer handoff with all files and metadata.",
+          "expected": "suede-rights-passport",
+          "forbidden": ["suede-rights-audit"]
+        },
+        {
+          "id": "rights-ambiguous-audit-first",
+          "mode": "ambiguous",
+          "prompt": "Get this catalog rights-ready.",
+          "expected": "suede-rights-audit"
+        }
+      ]
+    },
+    {
+      "id": "android-ios",
+      "skills": ["android-app-factory", "site-to-ios-app"],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "android-app-factory",
+          "positive": ["android", "kotlin", "jetpack compose", "play store", "google play"],
+          "negative": ["ios", "app store", "iphone", "ipad"],
+          "metadataMustContain": ["android", "kotlin"]
+        },
+        {
+          "skill": "site-to-ios-app",
+          "positive": ["ios", "app store", "iphone", "ipad", "website into an ios app"],
+          "negative": ["android", "kotlin", "play store", "google play"],
+          "metadataMustContain": ["website", "ios"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "android-positive",
+          "mode": "positive",
+          "prompt": "Build a native Android app in Kotlin with Jetpack Compose and prepare its Play Store release.",
+          "expected": "android-app-factory"
+        },
+        {
+          "id": "ios-negative-android",
+          "mode": "negative",
+          "prompt": "Convert this existing website into an iOS app and prepare it for App Store review.",
+          "expected": "site-to-ios-app",
+          "forbidden": ["android-app-factory"]
+        },
+        {
+          "id": "mobile-platform-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Turn this product into a native mobile app.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "amazon-subscription",
+      "skills": ["amazon-returns-recovery", "subscription-recovery"],
+      "fallback": "subscription-recovery",
+      "routes": [
+        {
+          "skill": "amazon-returns-recovery",
+          "positive": ["amazon", "restocking fee", "prime video", "audible", "kindle unlimited"],
+          "negative": ["outside amazon", "netflix", "paypal", "google play", "app store"],
+          "metadataMustContain": ["amazon", "restocking fee"]
+        },
+        {
+          "skill": "subscription-recovery",
+          "positive": ["outside amazon", "netflix", "paypal", "google play", "app store", "recurring subscriptions"],
+          "negative": ["amazon", "restocking fee", "prime video", "audible"],
+          "metadataMustContain": ["outside amazon", "recurring charges"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "amazon-positive",
+          "mode": "positive",
+          "prompt": "Audit my Amazon return for a restocking fee and check an Audible charge.",
+          "expected": "amazon-returns-recovery"
+        },
+        {
+          "id": "subscription-negative-amazon",
+          "mode": "negative",
+          "prompt": "Audit and cancel a Netflix charge billed directly through PayPal.",
+          "expected": "subscription-recovery",
+          "forbidden": ["amazon-returns-recovery"]
+        },
+        {
+          "id": "subscription-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Find all recurring subscriptions I am paying for.",
+          "expected": "subscription-recovery"
+        }
+      ]
+    }
+  ]
+}

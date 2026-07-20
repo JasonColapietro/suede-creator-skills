@@ -1,5 +1,21 @@
 {
+  "name": "suede-creator-skills",
+  "version": "0.6.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs",
+    "test:mcp": "node --test tests/test_mcp_protocol.mjs",
+    "test:triggers": "node --test tests/test_trigger_routing.mjs",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "test": "npm run validate && npm run test:mcp && npm run test:triggers && npm run test:python",
+    "audit:dependencies": "npm audit --omit=dev --audit-level=high",
+    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test"
+  },
   "dependencies": {
-    "js-yaml": "^5.0.0"
+    "js-yaml": "5.0.0"
   }
 }

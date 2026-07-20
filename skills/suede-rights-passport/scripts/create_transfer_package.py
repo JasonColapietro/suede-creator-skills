@@ -216,7 +216,10 @@ def load_metadata(path: Path | None) -> dict[str, Any]:
 
 def discover_metadata(source: Path, explicit: str) -> Path | None:
     if explicit:
-        path = Path(explicit).expanduser().resolve()
+        raw_path = Path(explicit).expanduser()
+        if raw_path.is_symlink():
+            raise SystemExit("Refusing symlinked metadata input. Pass the real public-safe file path.")
+        path = raw_path.resolve()
         if not path.exists():
             raise SystemExit(f"Metadata file not found: {path}")
         if is_denied_path(path, source):
@@ -224,6 +227,8 @@ def discover_metadata(source: Path, explicit: str) -> Path | None:
         return path
     for name in METADATA_CANDIDATES:
         candidate = source / name
+        if candidate.is_symlink():
+            raise SystemExit(f"Refusing symlinked metadata input: {candidate}")
         if candidate.exists() and candidate.is_file():
             return candidate
     return None
@@ -290,6 +295,289 @@ def list_value(value: Any) -> list[Any]:
 
 def string_list(value: Any) -> list[str]:
     return [str(item) for item in list_value(value)]
+
+
+def nested_value(
+    metadata: dict[str, Any], scope_names: list[str], keys: str | list[str], default: Any = None
+) -> Any:
+    """Read the first non-empty value from one of several metadata scopes."""
+    aliases = [keys] if isinstance(keys, str) else keys
+    for scope_name in scope_names:
+        scoped = metadata.get(scope_name)
+        if not isinstance(scoped, dict):
+            continue
+        for key in aliases:
+            if key in scoped and scoped[key] not in (None, ""):
+                return scoped[key]
+    for key in aliases:
+        if key in metadata and metadata[key] not in (None, ""):
+            return metadata[key]
+    return default
+
+
+def evidence_status(value: Any, evidence: list[str]) -> str:
+    """Normalize evidence state without upgrading an unsupported claim."""
+    normalized = str(value or "unknown").strip().lower().replace("_", "-")
+    if normalized in {"disputed", "conflicted"}:
+        return "disputed"
+    if normalized in {"unconfirmed", "needs-confirmation", "pending"}:
+        return "unconfirmed"
+    if normalized in {"claimed", "asserted"}:
+        return "claimed"
+    if normalized in {"confirmed", "verified", "registered", "true", "yes", "1"}:
+        return "confirmed" if evidence else "claimed"
+    return "unknown"
+
+
+def make_identifier_records(
+    metadata: dict[str, Any], scope_names: list[str], definitions: list[tuple[str, list[str]]]
+) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for scheme, aliases in definitions:
+        raw = nested_value(metadata, scope_names, aliases, None)
+        for value in list_value(raw):
+            if isinstance(value, dict):
+                identifier_value = str(value.get("value", "")).strip()
+                evidence = string_list(value.get("evidence_refs", value.get("evidence", [])))
+                status = evidence_status(value.get("status", "claimed"), evidence)
+            else:
+                identifier_value = str(value).strip()
+                evidence = string_list(
+                    nested_value(
+                        metadata,
+                        scope_names,
+                        [f"{aliases[0]}_evidence_refs", f"{aliases[0]}_evidence"],
+                        [],
+                    )
+                )
+                status = evidence_status(
+                    nested_value(metadata, scope_names, [f"{aliases[0]}_status"], "claimed"),
+                    evidence,
+                )
+            if identifier_value:
+                records.append(
+                    {
+                        "scheme": scheme,
+                        "value": identifier_value,
+                        "status": status,
+                        "evidence_refs": evidence,
+                    }
+                )
+    return records
+
+
+def normalize_parties(contributors: list[Any]) -> tuple[list[dict[str, Any]], dict[int, str]]:
+    parties: list[dict[str, Any]] = []
+    party_ids: dict[int, str] = {}
+    for index, contributor in enumerate(contributors):
+        party_id = f"party-{index + 1:03d}"
+        party_ids[index] = party_id
+        if isinstance(contributor, dict):
+            evidence = string_list(
+                contributor.get("evidence_refs", contributor.get("confirmation_evidence", []))
+            )
+            raw_status = contributor.get(
+                "confirmation_status", "confirmed" if contributor.get("confirmed") else "unconfirmed"
+            )
+            roles = string_list(contributor.get("roles", contributor.get("role", [])))
+            identifiers = []
+            for scheme, keys in (
+                ("IPI_CAE", ("ipi_cae", "ipi", "cae")),
+                ("ISNI", ("isni",)),
+            ):
+                value = next((contributor.get(key) for key in keys if contributor.get(key)), None)
+                if value:
+                    identifiers.append(
+                        {
+                            "scheme": scheme,
+                            "value": str(value),
+                            "status": evidence_status(contributor.get("identifier_status", "claimed"), evidence),
+                            "evidence_refs": evidence,
+                        }
+                    )
+            parties.append(
+                {
+                    "id": party_id,
+                    "name": str(contributor.get("name", "unknown")),
+                    "roles": roles or ["unknown"],
+                    "identifiers": identifiers,
+                    "organization": str(contributor.get("organization", "")),
+                    "status": evidence_status(raw_status, evidence),
+                    "evidence_refs": evidence,
+                    "privacy_classification": str(
+                        contributor.get("privacy_classification", "private-draft")
+                    ),
+                }
+            )
+        else:
+            parties.append(
+                {
+                    "id": party_id,
+                    "name": str(contributor),
+                    "roles": ["unknown"],
+                    "identifiers": [],
+                    "organization": "",
+                    "status": "unconfirmed",
+                    "evidence_refs": [],
+                    "privacy_classification": "private-draft",
+                }
+            )
+    return parties, party_ids
+
+
+def party_ids_for_roles(
+    contributors: list[Any], party_ids: dict[int, str], role_markers: tuple[str, ...]
+) -> list[str]:
+    """Select only relationships supported by contributor role text.
+
+    A contributor entry proves that a party participated somehow; it does not
+    make that party a writer, performer, publisher, or master owner by default.
+    """
+    selected: list[str] = []
+    for index, contributor in enumerate(contributors):
+        if not isinstance(contributor, dict):
+            continue
+        roles = " ".join(
+            value.lower().replace("_", "-")
+            for value in string_list(contributor.get("roles", contributor.get("role", [])))
+        )
+        if any(marker in roles for marker in role_markers):
+            selected.append(party_ids[index])
+    return selected
+
+
+def normalize_licenses(metadata: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_licenses = list_value(nested_value(metadata, ["rights"], ["licenses"], []))
+    licenses: list[dict[str, Any]] = []
+    for index, raw in enumerate(raw_licenses):
+        item = raw if isinstance(raw, dict) else {"restrictions": [str(raw)]}
+        evidence = string_list(item.get("evidence_refs", item.get("evidence", [])))
+        licenses.append(
+            {
+                "id": str(item.get("id", f"license-{index + 1:03d}")),
+                "subject_ids": string_list(item.get("subject_ids", [])),
+                "licensor_party_ids": string_list(item.get("licensor_party_ids", [])),
+                "licensee_party_ids": string_list(item.get("licensee_party_ids", [])),
+                "use_types": string_list(item.get("use_types", item.get("uses", []))),
+                "media": string_list(item.get("media", [])),
+                "territories": string_list(item.get("territories", [])),
+                "start_date": item.get("start_date"),
+                "end_date": item.get("end_date"),
+                "exclusive": item.get("exclusive"),
+                "sublicensing": str(item.get("sublicensing", "unknown")),
+                "revocable": item.get("revocable"),
+                "status": evidence_status(item.get("status", "unknown"), evidence),
+                "restrictions": string_list(item.get("restrictions", [])),
+                "evidence_refs": evidence,
+            }
+        )
+    return licenses
+
+
+def normalize_consents(metadata: dict[str, Any]) -> list[dict[str, Any]]:
+    raw_consents = list_value(nested_value(metadata, ["rights"], ["consents"], []))
+    consents: list[dict[str, Any]] = []
+    for index, raw in enumerate(raw_consents):
+        if not isinstance(raw, dict):
+            continue
+        evidence = string_list(raw.get("evidence_refs", raw.get("evidence", [])))
+        consents.append(
+            {
+                "id": str(raw.get("id", f"consent-{index + 1:03d}")),
+                "party_id": str(raw.get("party_id", "")),
+                "scope": str(raw.get("scope", "unknown")),
+                "media": string_list(raw.get("media", [])),
+                "ai_use": str(raw.get("ai_use", "unknown")),
+                "voice_likeness": str(raw.get("voice_likeness", "unknown")),
+                "status": evidence_status(raw.get("status", "unknown"), evidence),
+                "evidence_refs": evidence,
+            }
+        )
+    return consents
+
+
+def normalize_third_party_material(
+    metadata: dict[str, Any], rights: dict[str, Any], default_subject_ids: list[str]
+) -> list[dict[str, Any]]:
+    raw_items = list_value(
+        nested_value(metadata, ["rights"], ["third_party_material", "samples_and_interpolations"], [])
+    )
+    items: list[dict[str, Any]] = []
+    for index, raw in enumerate(raw_items):
+        item = raw if isinstance(raw, dict) else {"source": str(raw)}
+        evidence = string_list(item.get("evidence_refs", item.get("evidence", [])))
+        items.append(
+            {
+                "id": str(item.get("id", f"third-party-{index + 1:03d}")),
+                "type": str(item.get("type", "sample")),
+                "source": str(item.get("source", "unknown")),
+                "subject_ids": string_list(item.get("subject_ids", default_subject_ids)),
+                "license_id": item.get("license_id"),
+                "status": evidence_status(item.get("status", "unknown"), evidence),
+                "evidence_refs": evidence,
+            }
+        )
+    if not items and positive_status(rights.get("contains_samples", "unknown")):
+        items.append(
+            {
+                "id": "third-party-001",
+                "type": "sample",
+                "source": "unknown",
+                "subject_ids": default_subject_ids,
+                "license_id": None,
+                "status": "unconfirmed",
+                "evidence_refs": [],
+            }
+        )
+    return items
+
+
+def build_rights_claims(
+    contributors: list[Any], party_ids: dict[int, str], splits_confirmed: bool
+) -> list[dict[str, Any]]:
+    claims: list[dict[str, Any]] = []
+    for index, contributor in enumerate(contributors):
+        if not isinstance(contributor, dict):
+            continue
+        evidence = string_list(
+            contributor.get("split_evidence_refs", contributor.get("evidence_refs", []))
+        )
+        contributor_status = contributor.get(
+            "confirmation_status", "confirmed" if contributor.get("confirmed") else "unconfirmed"
+        )
+        claim_status = evidence_status(
+            "confirmed" if splits_confirmed and confirmed_status(contributor_status) else contributor_status,
+            evidence,
+        )
+        territories = string_list(contributor.get("territories", []))
+        for subject_type, subject_id, right_type, keys in (
+            ("recording", "recording-001", "master", ("master_percent", "master_share")),
+            ("work", "work-001", "publishing", ("publishing_percent", "publishing_share")),
+        ):
+            raw_share = next((contributor.get(key) for key in keys if key in contributor), None)
+            if raw_share in (None, ""):
+                continue
+            try:
+                share: float | None = float(raw_share)
+            except (TypeError, ValueError):
+                share = None
+            claims.append(
+                {
+                    "id": f"claim-{len(claims) + 1:03d}",
+                    "subject_type": subject_type,
+                    "subject_id": subject_id,
+                    "right_type": right_type,
+                    "party_id": party_ids[index],
+                    "share_percent": share,
+                    "territories": territories,
+                    "start_date": contributor.get("start_date"),
+                    "end_date": contributor.get("end_date"),
+                    "status": claim_status,
+                    "evidence_refs": evidence,
+                    "conflict_notes": str(contributor.get("conflict_notes", "")),
+                }
+            )
+    return claims
 
 
 def contributor_confirmed(contributor: Any) -> bool:
@@ -452,8 +740,19 @@ def discover_assets(
 ) -> list[dict]:
     assets = []
     for path in sorted(source.rglob("*")):
+        if path.is_symlink():
+            raise SystemExit(
+                f"Refusing symlink inside source tree: {path.relative_to(source)}. "
+                "Replace it with an explicit in-tree file before packaging."
+            )
         if not path.is_file():
             continue
+        try:
+            resolved_path = path.resolve(strict=True)
+        except OSError as exc:
+            raise SystemExit(f"Could not resolve source file safely: {path}: {exc}") from exc
+        if not is_under(resolved_path, source):
+            raise SystemExit(f"Refusing source file that resolves outside the source tree: {path}")
         if path.name.lower() in SKIP_NAMES:
             continue
         if is_under(path, output):
@@ -703,6 +1002,97 @@ def build_manifest(
             rights_value(metadata, ["license_restrictions", "restrictions", "usage_restrictions"], [])
         ),
     }
+    parties, party_ids = normalize_parties(contributors)
+    work_identifiers = make_identifier_records(
+        metadata,
+        ["work", "composition", "project"],
+        [("ISWC", ["iswc"]), ("PROPRIETARY", ["work_id", "composition_id"])],
+    )
+    recording_identifiers = make_identifier_records(
+        metadata,
+        ["recording", "master", "project"],
+        [("ISRC", ["isrc"]), ("PROPRIETARY", ["recording_id", "master_id"])],
+    )
+    release_identifiers = make_identifier_records(
+        metadata,
+        ["release", "project"],
+        [
+            ("UPC_EAN", ["upc_ean", "upc", "ean"]),
+            ("CATALOG_NUMBER", ["catalog_number", "catalog_no"]),
+        ],
+    )
+    writer_party_ids = party_ids_for_roles(
+        contributors, party_ids, ("writer", "composer", "lyricist", "songwriter", "author")
+    )
+    publisher_party_ids = party_ids_for_roles(
+        contributors, party_ids, ("publisher", "publishing administrator", "publishing admin")
+    )
+    performer_party_ids = party_ids_for_roles(
+        contributors,
+        party_ids,
+        ("performer", "vocal", "singer", "rapper", "musician", "instrumentalist", "featured artist"),
+    )
+    master_owner_party_ids = party_ids_for_roles(
+        contributors, party_ids, ("master owner", "master rights owner", "record label", "label owner")
+    )
+    works = [
+        {
+            "id": "work-001",
+            "title": title,
+            "identifiers": work_identifiers,
+            "writer_party_ids": writer_party_ids,
+            "publisher_party_ids": publisher_party_ids,
+            "status": "claimed" if title != "unknown" else "unknown",
+            "evidence_refs": [],
+        }
+    ]
+    primary_asset_ids = [
+        asset["id"] for asset in assets if asset.get("category") in {"audio", "stem"}
+    ]
+    has_master_claim = any(
+        isinstance(contributor, dict)
+        and any(key in contributor for key in ("master_percent", "master_share"))
+        for contributor in contributors
+    )
+    recordings = []
+    if primary_asset_ids or recording_identifiers or has_master_claim:
+        recordings.append(
+            {
+                "id": "recording-001",
+                "title": title,
+                "asset_ids": primary_asset_ids,
+                "identifiers": recording_identifiers,
+                "performer_party_ids": performer_party_ids,
+                "master_owner_party_ids": master_owner_party_ids,
+                "status": "claimed" if title != "unknown" else "unknown",
+                "evidence_refs": [],
+            }
+        )
+    release_date = nested_value(metadata, ["release", "project"], ["release_date", "date"], None)
+    releases = []
+    if release_identifiers or release_date or project["release_status"] not in {"unknown", "unreleased"}:
+        releases.append(
+            {
+                "id": "release-001",
+                "title": str(nested_value(metadata, ["release", "project"], ["release_title", "title"], title)),
+                "recording_ids": ["recording-001"] if recordings else [],
+                "identifiers": release_identifiers,
+                "label_party_id": None,
+                "distributor_party_id": None,
+                "release_date": release_date,
+                "territories": string_list(
+                    nested_value(metadata, ["release", "project"], ["territories"], [])
+                ),
+                "status": "claimed",
+                "evidence_refs": [],
+            }
+        )
+    rights_claims = build_rights_claims(contributors, party_ids, rights["splits_confirmed"])
+    licenses = normalize_licenses(metadata)
+    third_party_material = normalize_third_party_material(
+        metadata, rights, ["recording-001"] if recordings else []
+    )
+    consents = normalize_consents(metadata)
     provenance_notes = str(
         scoped_value(
             metadata,
@@ -711,10 +1101,11 @@ def build_manifest(
             suede_value(metadata, ["provenance_notes", "creation_notes", "chain_of_custody", "source_notes"], ""),
         )
     )
+    generated_at = datetime.now(timezone.utc).isoformat()
     manifest = {
-        "schema_version": "0.1.0",
+        "schema_version": "0.2.0",
         "package_type": "suede-transfer-package",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": generated_at,
         "metadata_source": metadata_source,
         "project": project,
         "creator": {
@@ -730,8 +1121,16 @@ def build_manifest(
             "organization": str(creator_value(metadata, ["organization", "company", "label"], "")),
             "confirmation_status": str(creator_value(metadata, ["confirmation_status", "status"], "needs-confirmation")),
         },
+        "parties": parties,
+        "works": works,
+        "recordings": recordings,
+        "releases": releases,
         "assets": assets,
         "rights": rights,
+        "rights_claims": rights_claims,
+        "licenses": licenses,
+        "third_party_material": third_party_material,
+        "consents": consents,
         "provenance": {
             "source_root": display_source_root(source, include_absolute_paths),
             "metadata_source": metadata_source,
@@ -745,6 +1144,35 @@ def build_manifest(
                 }
             ],
             "registry_status": "ready-for-review" if assets else "unknown",
+            "content_credentials": [
+                {
+                    "asset_id": asset["id"],
+                    "kind": "sha256",
+                    "manifest_reference": None,
+                    "verification_status": "verified",
+                    "verified_at": generated_at,
+                    "evidence_refs": [f"sha256:{asset['sha256']}"],
+                }
+                for asset in assets
+            ],
+        },
+        "privacy": {
+            "default_classification": "private-draft",
+            "field_rules": [
+                {
+                    "json_pointer": "/creator/email",
+                    "classification": "restricted",
+                    "redaction_action": "review",
+                    "reason": "Contact data should be shared only with the intended recipient.",
+                },
+                {
+                    "json_pointer": "/creator/wallet_address",
+                    "classification": "restricted",
+                    "redaction_action": "review",
+                    "reason": "Payment-routing data requires recipient and purpose review.",
+                },
+            ],
+            "redaction_required_before_external_share": True,
         },
         "optimization": {
             "requested_services": string_list(suede_value(metadata, ["requested_services", "services"], [])),
@@ -899,6 +1327,7 @@ outside the intended Suede intake workflow.
 - Artist / creator: {project['artist_name']}
 - Work type: {project['work_type']}
 - Release status: {project['release_status']}
+- Manifest schema: {manifest['schema_version']}
 - Package status: draft for Suede intake
 
 ## Intake Readiness
@@ -918,6 +1347,22 @@ outside the intended Suede intake workflow.
 - Samples / interpolations / covers: {rights['contains_samples']} / {rights['cover_or_interpolation']}
 - Sample clearance status: {rights['sample_clearance_status']}
 - Existing licenses or restrictions: {', '.join(restrictions) if restrictions else 'unknown'}
+
+## Normalized Records
+
+- Parties: {len(manifest['parties'])}
+- Musical works: {len(manifest['works'])}
+- Recordings: {len(manifest['recordings'])}
+- Releases: {len(manifest['releases'])}
+- Scoped rights claims: {len(manifest['rights_claims'])}
+- Licenses: {len(manifest['licenses'])}
+- Third-party material records: {len(manifest['third_party_material'])}
+- Consent records: {len(manifest['consents'])}
+- Privacy default: {manifest['privacy']['default_classification']}
+- External sharing: redaction review required
+
+These records are evidence-scoped intake facts, not DDEX/C2PA conformance or
+legal clearance.
 
 ## Asset Snapshot
 
@@ -1138,7 +1583,10 @@ def create_directories(output: Path) -> None:
 
 def main() -> int:
     args = parse_args()
-    source = Path(args.source).expanduser().resolve()
+    source_input = Path(args.source).expanduser()
+    if source_input.is_symlink():
+        raise SystemExit("Refusing a symlinked source folder. Pass the real source directory path.")
+    source = source_input.resolve()
     output = Path(args.output).expanduser().resolve()
 
     if not source.exists() or not source.is_dir():

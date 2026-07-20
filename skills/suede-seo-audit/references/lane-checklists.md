@@ -9,16 +9,23 @@ references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
 ## Lane 1: Technical Access
 
 - [ ] HTTP status is 200 on the canonical URL
-- [ ] No redirect chain longer than one hop (double redirects dilute equity)
+- [ ] Redirects reach the intended canonical without loops or avoidable chains;
+      record every hop and its status rather than claiming a fixed equity loss
 - [ ] Canonical URL is self-referencing and matches the intended URL
 - [ ] Trailing slash is consistent across all internal links to this page
 - [ ] www and non-www resolve to the same canonical (no duplicate indexing)
 - [ ] http redirects to https (no mixed-content split)
-- [ ] `robots.txt` allows the path for `*`, `Googlebot`, and `GPTBot`
+- [ ] `robots.txt` permits the intended Google crawler. Record `*` and
+      `Googlebot` rules separately. Check other named crawlers only when the
+      audit asks for them; one crawler's rule does not represent another's.
 - [ ] `<meta name="robots">` is absent or set to `index, follow`
-- [ ] Sitemap lists the canonical URL with a valid `<lastmod>` date
-- [ ] Page loads meaningful content without JavaScript execution (check
-      `curl -A "Googlebot"` output or view-source)
+- [ ] If the site publishes a sitemap, the canonical URL is represented where
+      appropriate; `<lastmod>` is present only when it accurately reflects a
+      significant page update. A sitemap is a discovery aid, not a guarantee.
+- [ ] Compare raw HTML with the rendered DOM. If primary content depends on
+      JavaScript, verify the rendered result with an appropriate browser and,
+      when available, Google URL Inspection rather than failing it merely for
+      using JavaScript.
 - [ ] Core Web Vitals measurement protocol (see below — never enters the A-F
       grade)
 
@@ -35,14 +42,12 @@ Measurement protocol:
       CLS ≤ 0.1 = Good, 0.1–0.25 = Needs Improvement, >0.25 = Poor.
       INP ≤ 200ms = Good, 200–500ms = Needs Improvement, >500ms = Poor.
 - [ ] If tooling is unavailable, report each vital as "not measurable" with the
-      reason, and check these risk factors instead (report overall CWV risk as
-      low/medium/high):
-      - Render-blocking scripts above the fold (→ high LCP risk)
-      - Unoptimized images: no `loading="lazy"`, no `width`/`height`
-        attributes, no next-gen formats (→ high CLS/LCP risk)
-      - Missing `font-display:swap` on web fonts (→ medium LCP risk)
-      - Large JS bundles without code-splitting (→ high INP risk)
-      - No preconnect for third-party origins (→ medium LCP risk)
+      reason, and record implementation signals to investigate without turning
+      them into invented CWV scores: render-blocking work, hero-resource
+      priority, image dimensions/compression, font loading, main-thread work,
+      long tasks, third-party code, and layout shifts. Do not lazy-load the LCP
+      image by rote or prescribe `preconnect`, a format, or code splitting
+      without a trace showing the bottleneck.
 
 Do not invent scores; do report observable risks. CWV never enters the lane's
 A-F grade.
@@ -54,41 +59,46 @@ A-F grade.
 - [ ] Name the primary reader in one phrase (e.g., "a creator who wants to
       register a music release")
 - [ ] Name the primary query theme (what someone types or asks to land here)
-- [ ] Write the AI-answer-ready definition: the sentence(s) an LLM would quote
-      if asked about this page's subject. Format: "[Entity] is [what it does]
-      for [who] by [how]. It [primary differentiator]." If this definition
-      cannot be constructed from the first 200 words of the page, that is a
-      HIGH finding.
+- [ ] Write a standalone definition from the opening section: "[Entity] is
+      [what it does] for [who] by [how]." If the page cannot support one,
+      report the ambiguity and reader impact. This is a Suede clarity
+      diagnostic, not a Google ranking requirement.
 - [ ] Name one action the page should earn (install, sign up, read docs, fork
       repo, contact)
 - [ ] Check for keyword cannibalization: are there three or more other pages on
       the same site targeting the same primary term? If yes, flag which URL
       should be the canonical topic owner
 - [ ] Does the page answer a question a person would plausibly ask aloud?
-- [ ] Is the primary intent clear within the first 200 words?
+- [ ] Is the primary intent clear in the opening section without relying on a
+      universal word-count cutoff?
 
 ---
 
 ## Lane 3: Metadata
 
 **Title tag**
-- [ ] Under 60 characters (Google truncates above ~580px width)
-- [ ] Primary keyword or entity name in first three words
-- [ ] Brand suffix separated by ` | ` or ` — ` (not an em dash in tag value)
-- [ ] Does not duplicate the H1 word-for-word (slight variation improves CTR)
+- [ ] Present, concise, descriptive, and specific to this page
+- [ ] Primary subject or entity is identifiable without forced front-loading
+- [ ] Brand naming and separators are accurate and consistent; no separator is
+      treated as a ranking requirement
+- [ ] Accurately matches the page and visible main heading
 - [ ] Does not start with "Welcome to" or the domain name
+- [ ] Character count recorded as a preview diagnostic only. Google has no
+      fixed title character limit and truncates to fit the result context.
 
 **Meta description**
-- [ ] Under 160 characters
+- [ ] Present and accurately summarizes this page
 - [ ] Contains the primary outcome or action, not a feature list
-- [ ] Ends with a reason to click (question, imperative, or benefit)
 - [ ] Does not duplicate the title
 - [ ] Does not contain structured data markup or JSON
+- [ ] Character count recorded as a preview diagnostic only. Google has no
+      fixed meta-description character limit and may use page content instead.
 
 **Open Graph**
-- [ ] og:title: set, under 88 characters
-- [ ] og:description: set, under 200 characters
-- [ ] og:image: set, image is 1200x630px minimum, no text near edges
+- [ ] og:title and og:description are accurate and preview-tested on the target
+      social surfaces; no unsupported universal character cutoff is applied
+- [ ] og:image: set and preview-tested at the target platform's current
+      recommended dimensions/crop; meaningful content survives cropping
 - [ ] og:url: matches canonical URL
 - [ ] og:type: set to `website`, `article`, or appropriate type
 
@@ -99,62 +109,63 @@ A-F grade.
 - [ ] twitter:image: set and accessible without authentication
 
 **Other**
-- [ ] Image alt text on all visible images (not empty, not "image", not
-      filename)
+- [ ] Informative images have contextual alt text; decorative images use empty
+      alt text or equivalent semantics instead of redundant descriptions
 - [ ] Author or publisher entity name appears in metadata or schema (not just
       visible copy)
-- [ ] Durable entity names (product name, company name, skill name) appear in
-      title, description, and H1; at least one each
+- [ ] Durable entity names are consistent across relevant metadata and visible
+      content without requiring repetition in every field
 
 ---
 
 ## Lane 4: Structure
 
 **Headings**
-- [ ] Exactly one H1, matching the title intent (not necessarily identical text)
+- [ ] One clear page-level heading or equivalent semantic main heading matches
+      the title intent. Multiple H1 elements are not failed solely by count;
+      judge hierarchy and accessibility in the actual document.
 - [ ] H2s cover the primary sub-topics a searcher would expect
 - [ ] H3s are optional but used consistently if present
-- [ ] No heading is a sentence longer than 12 words
-- [ ] No heading is a generic label like "Introduction" or "Overview"
+- [ ] Headings are concise enough to scan and specific enough to identify their
+      section; no universal word cutoff is applied
 
-**Section order**
-- [ ] Hero: what it is and who it is for
-- [ ] Proof: links, artifacts, commands, or evidence
-- [ ] How: numbered or bulleted steps with verbs and results
-- [ ] FAQ: direct answers for the most common objections and queries
-- [ ] CTA: the action, with no competing secondary action in the same viewport
+**Section coverage and order**
+- [ ] Opening: what the page is and who it serves
+- [ ] Evidence appears near the claims it supports
+- [ ] Instructions or explanation follow the reader's natural task order
+- [ ] Objections or common questions are addressed when they materially help
+- [ ] CTA placement matches the page's funnel stage and does not hide the answer
 
 **Links**
 - [ ] Internal links use descriptive anchor text (not "click here" or "read more")
-- [ ] Internal links connect this page to at least two related pages on the same
-      site
+- [ ] Internal links connect to relevant destinations where they help the user
+      or discovery; no arbitrary link quota is applied
 - [ ] No internal links are broken (verify with fetch or curl)
 - [ ] External links go to authoritative sources when making factual claims
-- [ ] No external links open in the same tab when the page has a primary CTA
-      that would compete
+- [ ] Link behavior is accessible and predictable. Opening a new tab is a UX
+      decision, not an SEO requirement; warn users when a new context opens.
 
-**FAQ**
-- [ ] FAQ section present if the page makes a product or service claim
+**FAQ (only when useful to the reader)**
+- [ ] FAQ section is present only when distinct recurring questions warrant it
 - [ ] Each FAQ item is a real question a user or searcher would ask
 - [ ] Each FAQ answer is self-contained (the answer makes sense without reading
       the question)
-- [ ] FAQ answers are under 100 words each (AI citation sweet spot)
+- [ ] Each answer is as short as clarity permits and as long as accuracy needs;
+      no unsupported universal word limit is applied
 
-**Keyword density**
-- [ ] Primary keyword appears in: H1 (required), first 100 words (required),
-      title tag (required), meta description (recommended), and 2–4 additional
-      times per 1,000 words of body content
-- [ ] Each secondary keyword appears 1–2 times per 1,000 words; not zero
-      (invisible to search), not more than 3 (triggers keyword stuffing signals)
-- [ ] Primary keyword is not crammed into headings unnaturally. Every H2
-      containing the keyword must make grammatical and editorial sense without it
-- [ ] LSI/supporting terms are distributed across the body, not clustered in
-      one section
+**Topic and entity coverage**
+- [ ] The title, H1, and opening make the primary subject unambiguous using
+      natural language; exact-match repetition is not required
+- [ ] Supporting subjects and entities needed for a complete answer are covered
+      where they help the reader
+- [ ] No term is repeated unnaturally or inserted solely to manipulate ranking
+- [ ] Synonyms and related language are used for clarity, not to satisfy a quota
 
-Density check output format:
+Coverage check output format:
 ```
-Primary "[keyword]": H1 ✓/✗ | first 100 words ✓/✗ | body density [N per 1,000 words] (target: 2–4) | status: OK | THIN | OVER
-Secondary "[keyword]": [N per 1,000 words] (target: 1–2) | status: OK | MISSING | OVER
+Primary subject "[subject]": title [clear/unclear] | H1 [clear/unclear] | opening [clear/unclear]
+Supporting subject/entity "[name]": [covered/missing/not needed] | evidence: [section or selector]
+Natural-language check: [clear | repetitive | stuffed] | evidence: [quoted text]
 ```
 
 ---
@@ -162,7 +173,7 @@ Secondary "[keyword]": [N per 1,000 words] (target: 1–2) | status: OK | MISSIN
 ## Lane 6: AI EO (Answer Engine Optimization)
 
 **Summary and definitions**
-- [ ] First 200 words contain a clear, citable answer to the page's primary
+- [ ] The opening section contains a clear answer to the page's primary
       question. The answer can stand alone without surrounding context.
 - [ ] The product, skill, or service is defined plainly in the first section,
       not assumed
@@ -170,27 +181,30 @@ Secondary "[keyword]": [N per 1,000 words] (target: 1–2) | status: OK | MISSIN
 - [ ] Definitions are written as `[Term] is [concise definition].` not buried in
       nested clauses
 
-**FAQ and citation targets**
-- [ ] FAQ answers are in plain prose, not bullet trees (AI cites prose better)
-- [ ] Each FAQ answer names the subject explicitly (not "it" or "this")
-- [ ] At least one FAQ directly addresses the primary query from Lane 2
+**Answer and source quality**
+- [ ] Answers use the format that best serves the content: prose, steps, table,
+      or list. Do not claim one format receives automatic citation preference.
+- [ ] Ambiguous pronouns do not obscure the subject
+- [ ] Material factual claims link to a current primary or authoritative source
 
 **Entity signals**
-- [ ] Company/product name appears in: H1, first paragraph, at least one H2,
-      and schema `name` field
-- [ ] `sameAs` links in schema point to at least one external authoritative
-      profile (GitHub, LinkedIn, App Store, Wikipedia if applicable)
-- [ ] URL structure reflects the entity and topic (not `/p/1234` or `/post`)
+- [ ] Company/product identity is explicit and consistent in the places where
+      readers and parsers need it; schema is included only when warranted
+- [ ] Any `sameAs` links identify the same entity and point only to verified
+      external profiles. Omit the property when no verified profile exists.
+- [ ] URL is stable and descriptive where practical; an opaque legacy URL is
+      not treated as a ranking failure by itself
 
-**AI-accessible content**
-- [ ] `llms.txt` or `ai.txt` consideration: if site has 10+ pages, note whether
-      an `llms.txt` is present or warranted (not required, but increases AI
-      crawl signal)
-- [ ] Primary content is not behind JavaScript hydration with no SSR fallback
-- [ ] Primary content is not paywalled or auth-gated (AI cannot cite what it
-      cannot read)
-- [ ] Citation-friendly headings use noun phrases, not questions alone (e.g.,
-      "How Suede Routes Royalties" is more citable than "How does it work?")
+**Accessible content and optional machine-readable files**
+- [ ] Record `llms.txt` or another AI-specific file only when a named consumer
+      documents support. State explicitly that Google Search ignores
+      `llms.txt`, so it neither helps nor harms Google visibility.
+- [ ] Primary content is present in the tested rendered output. Record raw-HTML
+      dependence as a cross-client/latency risk, not an automatic Google block.
+- [ ] Any paywall or auth gate is documented so the audit does not claim that
+      inaccessible content was evaluated
+- [ ] Headings identify their subject clearly for readers and assistive
+      technology; no unverified citation advantage is claimed
 
 **Hallucination risk**
 - [ ] Page does not make vague claims an LLM could cite incorrectly (e.g.,
@@ -224,10 +238,11 @@ Secondary "[keyword]": [N per 1,000 words] (target: 1–2) | status: OK | MISSIN
 - [ ] Product capabilities described match what is currently shipped and live
 
 **CTA**
-- [ ] One primary CTA is visible above the fold
+- [ ] The primary action is discoverable at the point the target reader is
+      ready for it; no fixed fold placement is assumed
 - [ ] CTA text is an action + object ("Install the skill", not "Get started")
-- [ ] No two competing CTAs in the same viewport
-- [ ] Secondary CTA is visually subordinate to primary
+- [ ] CTA hierarchy is understandable in rendered desktop/mobile tests; do not
+      impose a universal count without observing task confusion
 
 **Trust**
 - [ ] If testimonials are present, they are real and attributable
@@ -248,6 +263,10 @@ Flag and remove:
 ---
 
 ## Lane 8: E-E-A-T Signals
+
+Use E-E-A-T as a human quality and trust lens. Google describes E-E-A-T as a
+concept used by search quality raters, not a standalone score exposed by its
+ranking systems. Do not translate this checklist into a ranking promise.
 
 **Experience**: Does the page show first-hand, real-world use of the product or
 topic? Look for: demos, screenshots of real output, case studies with specific
@@ -278,15 +297,18 @@ Checklist:
 
 ## Lane 9: Topic Cluster Architecture
 
-Skip for single-page audits and note the skip.
+Skip for single-page audits. Also mark N/A when the site's user journeys do not
+benefit from a pillar/cluster model; a site is not required to adopt this
+content architecture.
 
-**Pillar page**: one comprehensive, authoritative page on the core topic. Should
-rank for broad head terms.
+**Pillar page**: one comprehensive page that owns the site's core topic and
+routes readers to deeper supporting material. Do not promise that it will rank
+for a broad query.
 
 **Cluster pages**: specific, narrow pages that support the pillar by covering
 sub-topics in depth. Each links back to the pillar.
 
-Audit questions:
+When a cluster strategy is warranted, ask:
 
 1. Does a clear pillar page exist for the site's primary topic?
 2. Do cluster pages exist for each major sub-topic?

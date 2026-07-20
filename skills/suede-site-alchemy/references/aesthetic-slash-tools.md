@@ -61,8 +61,10 @@ or live workflow card.
 ## Growth Engine
 
 `/aeo-shine`
-: Check title, meta description, structured data, llms.txt references, heading
-clarity, plain-language answers, and crawler-friendly page structure.
+: Check title and snippet inputs, eligible structured data, heading clarity,
+plain-language answers, internal links, and crawler-friendly page structure.
+Treat `llms.txt` as an optional consumer-specific artifact; Google Search says
+it does not use the file.
 
 `/visitor-intent`
 : Surface what the buyer is doing next: grade the site, post a campaign, build

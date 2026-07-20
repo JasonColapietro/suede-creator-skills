@@ -94,7 +94,7 @@
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
-      "description": "The pack's contract/customer-service negotiator, proven outside a repo: scans an Amazon account for restocking fees, short refunds, and forgotten or overpriced digital subscriptions (Britbox, Starz, and other Prime Video Channels, Audible, Kindle Unlimited, Prime itself), then drives Amazon's live chat to get fees waived, refunds issued, or unused subscriptions canceled and the last charge refunded. Recovered $448.31 in real cases, including overturning a previously denied refund after the return window closed. Requires the Claude in Chrome extension.",
+      "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {
@@ -118,7 +118,7 @@
     {
       "name": "subscription-recovery",
       "area": "consumer",
-      "description": "The pack's contract negotiator, generalized beyond Amazon: audits recurring charges across App Store, Google Play, PayPal, and direct-bill services (Netflix, Spotify, gyms, SaaS tools), then cancels unused subscriptions or negotiates a refund through that service's own support. Complements amazon-returns-recovery, which stays scoped to Amazon.",
+      "description": "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime — use amazon-returns-recovery for those.",
       "useWhen": "The user wants to audit recurring charges generally, asks what subscriptions they're paying for, mentions a non-Amazon subscription by name, or wants to find and cancel unused subscriptions."
     },
     {

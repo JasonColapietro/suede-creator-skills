@@ -29,7 +29,9 @@ suede-transfer-package/
 
 `RIGHTS_PASSPORT.md`: Human-readable summary of the work, creator, rights posture, ownership confidence, known contributors, known releases, and Suede intake readiness.
 
-`suede-intake.json`: Agent-readable manifest. Use `references/intake-schema.md` for fields.
+`suede-intake.json`: Agent-readable manifest. New packages use schema 0.2.0,
+the machine contract in `assets/suede-intake.schema.json`, and the field guide
+in `references/intake-schema.md`.
 
 `provenance.md`: Chain-of-custody notes, creation history, source folder, file hashes, upload/export history, and registry/readiness notes.
 
@@ -68,3 +70,14 @@ A strong package answers:
 - What release history exists?
 - What should Suede optimize first?
 - What facts must be confirmed before registry, licensing, royalty routing, or agent commerce?
+
+It also keeps unlike industry objects separate:
+
+- musical work/composition and its ISWC, writers, publishers, and composition shares;
+- sound recording/master and its ISRC, performers, master controllers, and master shares;
+- release/product and its UPC/EAN or catalog number, recordings, label, distributor, date, and territories;
+- parties and their roles, IPI/CAE or ISNI identifiers, evidence, and privacy state;
+- licenses, third-party material, voice/likeness or AI-use consent, and chain-of-title evidence.
+
+Before an external exchange, run the current validator in strict mode and read
+`references/ddex-c2pa-crosswalk.md`. A crosswalk is not receiver conformance.

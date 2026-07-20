@@ -21,16 +21,27 @@ happen.
 
 ## Checks
 
-1. Run syntax checks for the MCP source.
+1. Run syntax checks and the repo's hermetic MCP protocol tests.
 2. Parse catalog JSON and confirm every listed skill folder exists.
-3. Exercise `initialize`, `ping`, `tools/list`, `tools/call`,
-   `resources/list`, `resources/read`, `prompts/list`, and `prompts/get` when
-   supported.
-4. Confirm install output leads with public GitHub skill installs.
-5. Confirm local plugin commands are labeled as local-only.
-6. Check bounded text handling, invalid tool names, invalid resources, and
-   malformed JSON-RPC messages.
-7. Compare MCP output against README, docs pages, and public catalog language.
+3. Exercise the full lifecycle in one process: `initialize`, the
+   `notifications/initialized` notification, then `ping`, `tools/list`,
+   `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and
+   `prompts/get`.
+4. Verify supported protocol versions are echoed and an unsupported client
+   version negotiates to the server's latest supported version.
+5. Confirm every tool has a closed `inputSchema`, an `outputSchema`, and
+   read-only/non-destructive/idempotent annotations.
+6. Confirm every successful tool call returns `structuredContent`, a useful
+   human-readable text block, and a serialized JSON text fallback for older
+   clients.
+7. Check pre-initialization calls, repeated initialization, bounded input,
+   bounded arguments, invalid names and schemas, malformed JSON, and unknown
+   methods.
+8. Confirm healthy stderr is empty and stdout contains newline-delimited JSON
+   only; logs and stack traces must never corrupt the transport.
+9. Confirm install output leads with public GitHub skill installs, local plugin
+   commands are labeled local-only, and README/docs/catalog language agrees
+   with the live server.
 
 ## This Server's Real Surface
 
@@ -56,103 +67,56 @@ If any count drifts, the source (`resources`/`tools`/`prompts` arrays in
 
 ## Stdio Test Blocks
 
-Run each from the repo root. The server speaks newline-delimited JSON-RPC over
-stdio — one line in, one line out. `--profile all` exposes the full catalog;
-swap in `workflow`, `artist`, or `creator` to test profile scoping.
-
-**`initialize`**
+Run from the repo root. The canonical gate starts real child processes and
+tests complete sessions rather than isolated requests:
 
 ```bash
-echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
+npm run test:mcp
 ```
 
-```json
-{"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2025-06-18","capabilities":{"tools":{},"resources":{},"prompts":{}},"serverInfo":{"name":"suede-skills-mcp","version":"0.2.0"},"instructions":"Use this MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."}}
-```
+It must pass lifecycle enforcement and version negotiation; list/call/read/get
+coverage; closed input and output schemas; read-only annotations;
+`structuredContent` plus both text forms; profile filtering; malformed input;
+the 1 MiB transport bound; invalid profile handling; stdout JSON purity; and
+clean healthy stderr.
 
-**`tools/list`**
+For a manual readback, keep initialization and later requests in the same
+server process. A new process is a new MCP session:
 
 ```bash
-echo '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
+printf '%s\n' \
+  '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"suede-mcp-qa","version":"1.0.0"}}}' \
+  '{"jsonrpc":"2.0","method":"notifications/initialized","params":{}}' \
+  '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
+  '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"suede_install_options","arguments":{"surface":"mcp"}}}' \
+  | node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Returns a `tools` array of exactly the 7 tools named above, each with
-`name`, `title`, `description`, and `inputSchema`. Confirm the count and every
-name — a missing or renamed tool here is a High failure per Checks item 3.
+The initialization result must report protocol `2025-06-18`, server version
+`0.6.0`, and explicit tools/resources/prompts capabilities. `tools/list` must
+return exactly the 7 tools above. Each tool must expose `inputSchema`,
+`outputSchema`, and annotations with `readOnlyHint: true`,
+`destructiveHint: false`, `idempotentHint: true`, and `openWorldHint: false`.
+The successful call must return `structuredContent`; `content[0]` must be useful
+human text and `content[1]` must be the same structured payload serialized as
+JSON for backwards-compatible clients.
 
-**`tools/call` — successful call**
+To prove the lifecycle guard independently:
 
 ```bash
-echo '{"jsonrpc":"2.0","id":9,"method":"tools/call","params":{"name":"suede_install_options","arguments":{"surface":"mcp"}}}' | node mcp/suede-skills-mcp.mjs --profile all
+printf '%s\n' '{"jsonrpc":"2.0","id":4,"method":"tools/list","params":{}}' \
+  | node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-```json
-{"jsonrpc":"2.0","id":9,"result":{"content":[{"type":"text","text":"\n## MCP option\nUse the MCP when structured skill discovery, install options, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.\n- Suede Workflow Skills MCP server: `suede_workflow_mcp`\n- Suede Creator Skills MCP server: `suede_creator_mcp`"}],"structuredContent":{"plugins":[{"...":"truncated — full plugin objects from catalog.json"}],"surface":"mcp"}}}
-```
+This must return error `-32000` because `notifications/initialized` has not
+completed. Use the automated suite for post-initialization negative paths; a
+standalone `tools/call` example is invalid because it starts a fresh session.
 
-Every successful `tools/call` returns both `content` (text for a model to
-read) and `structuredContent` (the same data as structured JSON). Check both
-are present, not just one.
-
-**`resources/read` — successful read**
-
-```bash
-echo '{"jsonrpc":"2.0","id":4,"method":"resources/read","params":{"uri":"suede://plugins"}}' | node mcp/suede-skills-mcp.mjs --profile all
-```
-
-```json
-{"jsonrpc":"2.0","id":4,"result":{"contents":[{"uri":"suede://plugins","mimeType":"text/markdown","text":"## Public Codex skill install\n- Suede Workflow Skills: `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`\n- Suede Creator Skills: `python3 ...` (truncated — full text continues with local plugin and Claude Code install sections)"}]}}
-```
-
-**Negative path — unknown tool name**
-
-```bash
-echo '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"not_a_real_tool","arguments":{}}}' | node mcp/suede-skills-mcp.mjs --profile all
-```
-
-```json
-{"jsonrpc":"2.0","id":5,"error":{"code":-32602,"message":"Unknown tool: not_a_real_tool"}}
-```
-
-**Negative path — unknown resource URI**
-
-```bash
-echo '{"jsonrpc":"2.0","id":8,"method":"resources/read","params":{"uri":"suede://not-a-real-resource"}}' | node mcp/suede-skills-mcp.mjs --profile all
-```
-
-```json
-{"jsonrpc":"2.0","id":8,"error":{"code":-32602,"message":"Unknown resource URI: suede://not-a-real-resource"}}
-```
-
-**Negative path — unsupported method**
-
-```bash
-echo '{"jsonrpc":"2.0","id":10,"method":"totally/bogus","params":{}}' | node mcp/suede-skills-mcp.mjs --profile all
-```
-
-```json
-{"jsonrpc":"2.0","id":10,"error":{"code":-32601,"message":"Unsupported MCP method: totally/bogus"}}
-```
-
-**Negative path — malformed JSON**
-
-```bash
-printf '{"jsonrpc":"2.0","id":6,"method":"tools/list", not valid json here}\n' | node mcp/suede-skills-mcp.mjs --profile all
-```
-
-```json
-{"jsonrpc":"2.0","id":null,"error":{"code":-32700,"message":"Parse error"}}
-```
-
-`id` comes back `null` on a parse error — the server never got far enough to
-read the request's `id`. Do not flag a `null` id here as broken; flag it if
-any other error response returns `null` when the request had a real id.
-
-Full JSON-RPC error code map observed from this server: `-32700` parse error,
-`-32600` invalid request (missing/bad `method`, or top-level `jsonrpc` isn't
-`"2.0"`), `-32601` unsupported method, `-32602` unknown tool name / unknown
-resource URI / unknown prompt name. Any other code, or a raw stack trace
-instead of a JSON-RPC error object, is a High failure.
+Error codes: `-32700` parse error; `-32600` invalid request, duplicate
+initialization, or transport overflow; `-32601` unsupported method; `-32602`
+invalid params, arguments, tool, resource, or prompt; `-32000` request before
+session readiness; `-32603` unexpected internal error. A parse error correctly
+uses `id: null`. A raw stack trace or any non-JSON stdout is a High failure.
 
 ## Failure Handling
 
@@ -160,6 +124,9 @@ instead of a JSON-RPC error object, is a High failure.
 |---|---|---|
 | Server fails to start | Critical | Stop. Report startup error verbatim. |
 | `tools/list` returns empty | Critical | Stop. The MCP is non-functional. |
+| Lifecycle or protocol negotiation fails | High | Hold. Capture the request/response transaction. |
+| Tool schema, output schema, or read-only annotation missing | High | Hold. Repair the published contract and rerun the suite. |
+| Structured result lacks either text fallback | High | Hold. Preserve structured and legacy-client output together. |
 | Listed skill folder missing | High | Flag each missing folder. Continue checking others. |
 | Malformed JSON-RPC response | High | Report the raw response. Flag as broken. |
 | Install command leads with local-only path | High | Flag. Install output must lead with public GitHub route. |
