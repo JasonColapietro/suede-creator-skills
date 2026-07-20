@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { spawnSync } from "node:child_process";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
 
@@ -463,6 +464,61 @@ for (const check of countChecks) {
 const indexJsonLdItemMatches = docsRootText.match(/"@type":\s*"ListItem"/g) || [];
 if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);
+}
+
+// Ship-log changelog guard: the homepage #changelog section cites real commits
+// by short hash and stamps a "Last shipped" freshness pill. A fabricated hash,
+// a stale pill, or an out-of-order entry would ship a page that quietly lies
+// about the repo's own history — fail the build instead.
+const clogItems = [...docsRootText.matchAll(/<li class="clog-item"[^>]*>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
+if (clogItems.length === 0) {
+  fail.push("docs/index.html: no .clog-item entries found — the #changelog ship-log is missing or its markup changed");
+} else {
+  const clogEntries = clogItems.map((item, i) => {
+    const date = item.match(/class="clog-date">(\d{4}-\d{2}-\d{2})</);
+    const hash = item.match(/class="clog-hash"[^>]*>([0-9a-f]{7,40})</);
+    if (!date) fail.push(`docs/index.html changelog entry ${i + 1}: missing or malformed .clog-date (expected YYYY-MM-DD)`);
+    if (!hash) fail.push(`docs/index.html changelog entry ${i + 1}: missing .clog-hash short commit hash`);
+    return { date: date ? date[1] : null, hash: hash ? hash[1] : null };
+  });
+
+  for (const entry of clogEntries) {
+    if (!entry.hash) continue;
+    const probe = spawnSync("git", ["-C", repoRoot, "cat-file", "-e", `${entry.hash}^{commit}`], { stdio: "ignore" });
+    if (probe.error) {
+      warn.push(`Changelog hash check skipped — could not run git (${probe.error.code || probe.error.message})`);
+      break;
+    }
+    if (probe.status !== 0) {
+      fail.push(`docs/index.html changelog cites commit ${entry.hash} which does not resolve to a commit in this repo`);
+    }
+  }
+
+  for (let i = 1; i < clogEntries.length; i++) {
+    const prev = clogEntries[i - 1].date;
+    const curr = clogEntries[i].date;
+    if (prev && curr && curr > prev) {
+      fail.push(`docs/index.html changelog entries out of date order: entry ${i + 1} (${curr}) is newer than entry ${i} (${prev}) — newest must come first`);
+    }
+  }
+
+  const freshMatch = docsRootText.match(/Last shipped ([^<]+?)\s*<span id="clog-fresh-rel"[^>]*data-iso="(\d{4}-\d{2}-\d{2})"/);
+  if (!freshMatch) {
+    fail.push('docs/index.html: could not find the "Last shipped" pill (id="clog-fresh-rel" with a data-iso date)');
+  } else {
+    const pillText = freshMatch[1].trim();
+    const pillIso = freshMatch[2];
+    const newestDate = clogEntries.map((e) => e.date).filter(Boolean).sort().at(-1);
+    if (newestDate && pillIso !== newestDate) {
+      fail.push(`docs/index.html "Last shipped" pill data-iso (${pillIso}) does not match the newest changelog entry date (${newestDate})`);
+    }
+    const monthAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const [y, m, d] = pillIso.split("-").map(Number);
+    const expectedPillText = `${monthAbbr[m - 1]} ${d}, ${y}`;
+    if (pillText !== expectedPillText) {
+      fail.push(`docs/index.html "Last shipped" pill text ("${pillText}") does not match its data-iso ${pillIso} (expected "${expectedPillText}")`);
+    }
+  }
 }
 
 if (fail.length || warn.length) {
