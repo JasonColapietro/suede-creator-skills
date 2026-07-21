@@ -162,10 +162,16 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
   plugin.version = "9.9.9";
   fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
 
+  const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
+  const catalogVersion = JSON.parse(fs.readFileSync(catalogPath, "utf8")).version;
+
   const validation = runValidator(packagedRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
-  assert.match(validation.stderr, /plugin\.json version \(9\.9\.9\) does not match catalog\.json version \(0\.6\.0\)/);
+  assert.match(
+    validation.stderr,
+    new RegExp(`plugin\\.json version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
+  );
 });
 
 test("validator rejects a nonexistent changelog hash in a full-history checkout", completeSourceHistoryTest, (t) => {
