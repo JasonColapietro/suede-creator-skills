@@ -7,6 +7,14 @@ and compatible agents. It gives builders reusable workflows for orchestration,
 code review, ship gates, AI evaluation, design, copy, SEO, iOS conversion,
 native Android app shipping, and creator-rights work.
 
+## Founder
+
+Built by Jason Colapietro (Suede Labs AI), a solo founder who spent years
+watching hired marketing firms skip basic fundamentals on his own products.
+This pack turns those misses into reusable, inspectable agent workflows
+instead of one-off fixes. The public site and repo carry his name and
+attribution deliberately — this is founder-led work, not a faceless tool.
+
 ## Audience
 
 Builders, AI engineers, product teams, and creators who want a capable agent
