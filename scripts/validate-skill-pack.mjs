@@ -954,6 +954,19 @@ for (const check of correctionPolicyChecks) {
   }
 }
 
+// Sitemap freshness guard: docs/sitemap.xml is generated (scripts/generate-
+// sitemap.mjs) from real git history, not hand-edited. If a page's <lastmod>
+// (or the URL set itself) has drifted from what the generator would produce
+// right now, the site is quietly telling search engines a stale story.
+const sitemapCheck = spawnSync("node", [path.join(repoRoot, "scripts", "generate-sitemap.mjs"), "--check"], {
+  encoding: "utf8",
+});
+if (sitemapCheck.error) {
+  warn.push(`Sitemap freshness check skipped — could not run generate-sitemap.mjs (${sitemapCheck.error.code || sitemapCheck.error.message})`);
+} else if (sitemapCheck.status !== 0) {
+  fail.push("docs/sitemap.xml is out of date — run `node scripts/generate-sitemap.mjs` and commit the result");
+}
+
 if (fail.length || warn.length) {
   if (warn.length) {
     console.error("Warnings:");
