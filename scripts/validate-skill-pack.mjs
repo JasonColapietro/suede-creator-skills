@@ -863,6 +863,95 @@ if (clogItems.length === 0) {
       fail.push(`docs/index.html "Last shipped" pill text ("${pillText}") does not match its data-iso ${pillIso} (expected "${expectedPillText}")`);
     }
   }
+
+  // Tiny ship-log box guard: the #hero-shiplog cards on the homepage, skills
+  // catalog, and guide repeat the newest changelog entry by hand. If any card
+  // drifts from the newest #changelog entry (date, hash, or title) or the
+  // cards disagree with each other on the commit count, the site advertises a
+  // ship that never happened — fail the build instead.
+  const newestClogItem = clogItems[0] || "";
+  const newestClogTitle = (newestClogItem.match(/class="clog-title">([^<]+)</) || [])[1]?.trim() ?? null;
+  const newestClogDate = clogEntries[0]?.date ?? null;
+  const newestClogHash = clogEntries[0]?.hash ?? null;
+  const monthAbbrBox = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let expectedBoxDate = null;
+  if (newestClogDate) {
+    const [by, bm, bd] = newestClogDate.split("-").map(Number);
+    expectedBoxDate = `${monthAbbrBox[bm - 1]} ${bd}`;
+  }
+  const shiplogPages = [
+    { file: "docs/index.html", text: docsRootText },
+    { file: "docs/skills/index.html", text: docsIndexText },
+    { file: "docs/guide.html", text: readText(path.join(repoRoot, "docs", "guide.html")) },
+  ];
+  const boxCounts = [];
+  for (const page of shiplogPages) {
+    const box = page.text.match(/id="hero-shiplog"[\s\S]*?<\/a>/);
+    if (!box) {
+      fail.push(`${page.file}: tiny ship-log box (id="hero-shiplog") is missing`);
+      continue;
+    }
+    const top = box[0].match(/class="hero-shiplog-top">Shipped ([A-Z][a-z]{2} \d{1,2}) <b>&middot; ([0-9a-f]{7,40})<\/b>/);
+    const title = (box[0].match(/class="hero-shiplog-title">([^<]+)</) || [])[1]?.trim() ?? null;
+    const commits = (box[0].match(/class="hero-shiplog-more">(\d+) commits/) || [])[1] ?? null;
+    if (!top) {
+      fail.push(`${page.file}: tiny ship-log box header is malformed (expected 'Shipped Mon D <b>&middot; hash</b>')`);
+    } else {
+      if (expectedBoxDate && top[1] !== expectedBoxDate) {
+        fail.push(`${page.file}: tiny ship-log box says "Shipped ${top[1]}" but the newest changelog entry is ${newestClogDate} (expected "Shipped ${expectedBoxDate}")`);
+      }
+      if (newestClogHash && top[2] !== newestClogHash) {
+        fail.push(`${page.file}: tiny ship-log box cites ${top[2]} but the newest changelog entry is ${newestClogHash}`);
+      }
+    }
+    if (!title) {
+      fail.push(`${page.file}: tiny ship-log box is missing its .hero-shiplog-title line`);
+    } else if (newestClogTitle && title !== newestClogTitle) {
+      fail.push(`${page.file}: tiny ship-log box title ("${title}") does not match the newest changelog entry title ("${newestClogTitle}")`);
+    }
+    if (!commits) {
+      fail.push(`${page.file}: tiny ship-log box is missing its "N commits" line`);
+    } else {
+      boxCounts.push({ file: page.file, commits });
+    }
+  }
+  if (boxCounts.length > 1 && new Set(boxCounts.map((b) => b.commits)).size > 1) {
+    fail.push(`Tiny ship-log boxes disagree on the commit count: ${boxCounts.map((b) => `${b.file}=${b.commits}`).join(", ")}`);
+  }
+  const sparkCaption = (docsRootText.match(/class="clog-spark-caption[^"]*">(\d+) commits/) || [])[1] ?? null;
+  if (sparkCaption && boxCounts[0] && sparkCaption !== boxCounts[0].commits) {
+    fail.push(`docs/index.html sparkline caption says ${sparkCaption} commits but the tiny ship-log boxes say ${boxCounts[0].commits}`);
+  }
+}
+
+// Correction-policy drift guard: the two orchestration specs, their picker
+// prompts, public examples, and umbrella workflow must agree that the budget is
+// failure-reason-aware. Three is a ceiling for distinct fixes, not permission to
+// repeat the same failed strategy three times.
+const correctionPolicyChecks = [
+  { file: "skills/suede-codex-fleet/SKILL.md", label: "Fable Fleet spec" },
+  { file: "skills/suede-codex-fleet/agents/openai.yaml", label: "Fable Fleet picker prompt" },
+  { file: "docs/skills/suede-codex-fleet.html", label: "Fable Fleet public docs and example" },
+  { file: "skills/suede-agent-teams/SKILL.md", label: "Agent Teams spec" },
+  { file: "skills/suede-agent-teams/agents/openai.yaml", label: "Agent Teams picker prompt" },
+  { file: "docs/skills/suede-agent-teams.html", label: "Agent Teams public docs and example" },
+  { file: "skills/suede-workflow-skills/SKILL.md", label: "umbrella agent-team workflow" },
+  { file: "skills/suede-workflow-skills/references/no-missed-quality-gates.md", label: "agent-team quality gate" },
+  { file: "docs/skills/suede-workflow-skills.html", label: "umbrella public docs and example" },
+];
+
+for (const check of correctionPolicyChecks) {
+  const filePath = path.join(repoRoot, check.file);
+  if (!fs.existsSync(filePath)) {
+    fail.push(`Correction policy missing surface: ${check.file} (${check.label})`);
+    continue;
+  }
+  const text = readText(filePath).toLowerCase().replace(/\s+/g, " ");
+  const allowsThreeDistinctFixes = text.includes("up to three genuinely different fixes");
+  const stopsOnRepeatedRootCause = text.includes("same root cause repeats");
+  if (!allowsThreeDistinctFixes || !stopsOnRepeatedRootCause) {
+    fail.push(`${check.label} must allow up to three genuinely different fixes and stop early when the same root cause repeats (${check.file})`);
+  }
 }
 
 if (fail.length || warn.length) {
