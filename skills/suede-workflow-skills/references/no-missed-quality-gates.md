@@ -189,6 +189,8 @@ Use the smallest useful loop, but make quality measurable:
 5. Verify the done signal with commands, screenshots, live/API readback, or
    saved QA artifacts.
 6. If the same failure repeats, freeze broad work, isolate the failing unit,
-   reduce scope, patch only that gap, and rerun the failed check.
+   reduce scope, patch only that gap, and rerun the failed check. Allow up to
+   three genuinely different fixes per failing check; stop early when the
+   same root cause repeats and hand the call to the user.
 7. End with evidence: changed files, commands, screenshots or URLs, caveats,
    status, and exact next action.

@@ -424,7 +424,9 @@ Useful grouping loops:
   action for the next agent.
 - Freeze/replay recovery: if a loop churns or repeats the same failure, stop
   broad work, isolate the failing unit, replay with explicit acceptance
-  criteria, and rerun only the failed check.
+  criteria, and rerun only the failed check. Budget recovery at up to three
+  genuinely different fixes — each must change the diagnosis or strategy —
+  and stop early when the same root cause repeats, surfacing it to the user.
 
 ## Specialized Lane Router
 

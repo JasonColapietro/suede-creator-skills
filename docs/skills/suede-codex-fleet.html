@@ -319,6 +319,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-codex-fleet .claude/skills/</code><
             <li>Uses a workspace `AGENTS.md` to carry voice, context, hard bans, and output conventions so briefs stay short.</li>
             <li>Spawns parallel `codex exec` runs in a workspace-write sandbox, with `--skip-git-repo-check` outside repos.</li>
             <li>Requires Claude to review every output against the brief and hard bans before anything ships.</li>
+            <li>Corrects with delta patches, not full regenerations: up to three genuinely different fixes per output, stopping early when the same root cause repeats.</li>
           </ul>
         </article>
         <article class="card">

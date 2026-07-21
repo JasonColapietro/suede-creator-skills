@@ -358,7 +358,7 @@
         </article>
         <article class="card">
           <h2>Agent grouping loops</h2>
-          <p>For major work, split lanes by ownership: scout and constraints, safe parallel build, shared evidence, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, quality/eval gates, release lock, recovery replay, and evidence handoff. Use parallel lanes only when write surfaces do not collide.</p>
+          <p>For major work, split lanes by ownership: scout and constraints, safe parallel build, shared evidence, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, quality/eval gates, release lock, recovery replay, and evidence handoff. Use parallel lanes only when write surfaces do not collide. Recovery replay allows up to three genuinely different fixes per failing check and stops early when the same root cause repeats, surfacing it to the user instead of retrying blind.</p>
         </article>
       </section>
 
