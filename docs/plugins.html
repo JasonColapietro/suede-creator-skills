@@ -150,7 +150,11 @@
     .tdot:nth-child(3) { background: #2c3a2a; }
     .terminal-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
     .terminal-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; }
-    .terminal-body pre { flex: 1; overflow-x: auto; }
+    .terminal-body pre {
+      flex: 1; overflow-x: auto;
+      mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+    }
     .terminal-body code, .terminal-body pre {
       font-family: var(--mono); font-size: 15px; line-height: 1.9;
       color: var(--gold); background: none; padding: 0; white-space: pre;
@@ -181,6 +185,8 @@
       font-family: var(--mono); font-size: 13px; line-height: 1.8; color: var(--gold);
       background: var(--bg); border: 1px solid var(--hairline); border-radius: 4px;
       padding: 14px 16px; overflow-x: auto; white-space: pre; margin: 12px 0;
+      mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
     }
 
     /* LINK ROWS */

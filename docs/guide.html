@@ -477,7 +477,11 @@
       .term-dots span:last-child { background: #2c3a2a; }
       .term-bar b { font-family: var(--mono); font-size: 12.5px; font-weight: 400; color: var(--muted); letter-spacing: 0.04em; }
       .term-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 20px 22px 22px; }
-      .term-code { font-family: var(--mono); font-size: 15.5px; line-height: 2; color: var(--gold); overflow-x: auto; }
+      .term-code {
+        font-family: var(--mono); font-size: 15.5px; line-height: 2; color: var(--gold); overflow-x: auto;
+        mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+      }
       .term-code .prompt { color: var(--red-text); user-select: none; }
       .term-copy {
         flex-shrink: 0; font-family: var(--mono); font-size: 12.5px;
@@ -547,6 +551,8 @@
         border: 1px solid var(--border); border-radius: 4px;
         background: var(--bg); padding: 16px;
         font: 13.5px/1.8 var(--mono); color: var(--gold);
+        mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
       }
       .install .btn-row { margin-top: 16px; }
       .install .btn { min-height: 38px; padding: 0 14px; font-size: 13px; }
