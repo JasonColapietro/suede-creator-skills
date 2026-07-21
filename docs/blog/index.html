@@ -123,9 +123,32 @@
       .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
       .footer-links a:hover { color: var(--gold); }
       .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
       @media (max-width: 720px) {
-        .shell, .footer-shell, .nav-inner { padding: 0 24px; }
+        .shell, .footer-shell, .nav-inner, .ship-strip-shell { padding: 0 24px; }
         main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
     </style>
   </head>
@@ -141,6 +164,7 @@
           <a href="../skills/">Skills</a>
           <a href="../guide.html">Guide</a>
           <a href="./" aria-current="page">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
           <a href="../plugins.html" class="nav-cta">Install</a>
         </div>
       </nav>
@@ -158,6 +182,16 @@
         </a>
       </div>
     </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="footer-shell footer-inner">
         <div class="footer-brand">

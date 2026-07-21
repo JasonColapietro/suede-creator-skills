@@ -118,13 +118,13 @@
       li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
       .panel {
         border: 1px solid var(--border);
-        border-left: 3px solid var(--gold);
+        border: 1px solid var(--border);
         border-radius: 6px;
         background: var(--card);
         padding: 24px 26px;
         margin: 20px 0;
       }
-      .panel--red { border-left-color: var(--red); }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
       pre {
         overflow: auto;
         border: 1px solid var(--hairline);
@@ -160,18 +160,20 @@
       .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
       .footer-links a:hover { color: var(--gold); }
       .footer-divider { color: var(--border); }
-      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
       .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
       .ship-strip-head {
         font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
-        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
       }
-      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
       .ship-strip-row code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
-        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
       }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
       .ship-strip-row a {
         display: inline-flex; align-items: center; min-height: 44px;
         color: #171310; font-size: 15px; font-weight: 700;
@@ -182,6 +184,8 @@
       @media (max-width: 720px) {
         .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
         main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
     </style>
   </head>
@@ -197,6 +201,7 @@
           <a href="../skills/">Skills</a>
           <a href="../guide.html">Guide</a>
           <a href="./" aria-current="page">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
           <a href="../plugins.html" class="nav-cta">Install</a>
         </div>
       </nav>
@@ -270,7 +275,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skill
       <div class="ship-strip-shell">
         <p class="ship-strip-head">Stop shipping on vibes.</p>
         <div class="ship-strip-row">
-          <code>/plugin install suede-skills@suede</code>
+          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
           <a href="../plugins.html">All install paths</a>
         </div>
       </div>
