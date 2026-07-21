@@ -122,15 +122,14 @@
       .hero-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.6fr); gap: 40px; align-items: center; }
       .hero-grid img { width: 100%; border: 1px solid var(--border); border-radius: 6px; background: var(--card); }
       .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 28px; }
-      .grid .card { border: none; border-left: 3px solid var(--gold); border-radius: 0; margin: 0; }
-      .grid .card:nth-child(2n) { border-left-color: var(--red); }
+      .grid .card { border: none; border-radius: 0; margin: 0; border-top: 1px solid var(--hairline); }
+      .grid .card:first-child { border-top: none; }
       .card, .panel {
         border: 1px solid var(--border);
         border-radius: 6px;
         background: var(--card);
         padding: 28px;
       }
-      .panel { border-left: 3px solid var(--gold); }
       .button {
         display: inline-flex; min-height: 44px; align-items: center;
         margin: 0 8px 8px 0; padding: 0 20px;
@@ -182,34 +181,37 @@
       @media (max-width: 820px) {
         .hero-grid { grid-template-columns: 1fr; }
         .grid { grid-template-columns: 1fr; }
-        .grid .card:nth-child(2n) { border-left-color: var(--gold); }
-      }
+        }
       @media (max-width: 720px) {
         .shell { padding: 0 24px; }
         main { padding: 56px 0 72px; }
         .link-row { grid-template-columns: 1fr; row-gap: 4px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
       .plain-ask {
         display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px;
         margin: 4px 0 34px; padding: 14px 18px;
-        border: 1px solid var(--hairline); border-left: 3px solid var(--gold);
+        border: 1px solid var(--hairline);
         border-radius: 4px; background: var(--surface);
       }
       .plain-ask-quote { font-style: italic; color: #b5b0a6; font-size: 15px; }
       .plain-ask-arrow { font-family: var(--mono); color: var(--muted); font-size: 13px; }
       .plain-ask-cmd { font-size: 14px; font-weight: 600; }
       .plain-ask-note { flex-basis: 100%; font-size: 12.5px; color: var(--muted); }
-      .ship-strip { background: #c8a96e; color: #171310; padding: 56px 0; }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
       .ship-strip-head {
         font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
-        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 16px;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
       }
-      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
       .ship-strip-row code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px; color: #171310; background: rgba(23, 19, 16, 0.08);
-        border: 1px solid rgba(23, 19, 16, 0.25); border-radius: 4px; padding: 9px 14px;
+        font-family: var(--mono); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
       }
+      .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
       .ship-strip-row a {
         display: inline-flex; align-items: center; min-height: 44px;
         color: #171310; font-size: 15px; font-weight: 700;
@@ -230,7 +232,9 @@
           0 0 90px rgba(200, 169, 110, 0.07);
       }
       .skill-term-bar { display: flex; align-items: center; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--hairline); }
-      .skill-term-bar .tdot2 { width: 10px; height: 10px; border-radius: 50%; background: #242424; }
+      .skill-term-bar .tdot2 { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+      .skill-term-bar .tdot2:first-child { background: #4a2a28; }
+      .skill-term-bar .tdot2:nth-child(3) { background: #2c3a2a; }
       .skill-term-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
       .skill-term-body { padding: 18px 22px 20px; font-family: var(--mono); font-size: 13px; line-height: 1.9; color: var(--muted); }
       .skill-term .t-line { display: block; white-space: pre-wrap; }
@@ -353,8 +357,9 @@ cp -R /tmp/suede-creator-skills/skills/suede-campaign-in-a-box .claude/skills/</
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
         <p class="ship-strip-head">Stop shipping on vibes.</p>
+        <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
         <div class="ship-strip-row">
-          <code>/plugin install suede-skills@suede</code>
+          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
           <a href="../plugins.html">All install paths</a>
         </div>
       </div>
