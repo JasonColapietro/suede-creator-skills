@@ -418,6 +418,33 @@
         width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: cover;
       }
 
+      /* Tiny ship log */
+      #hero-shiplog {
+        display: flex; align-items: center; gap: 16px;
+        margin: 28px 0 0; padding: 13px 18px; max-width: 560px;
+        background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+        transition: border-color 0.15s ease, background 0.15s ease;
+      }
+      #hero-shiplog:hover { border-color: var(--gold); background: #141414; }
+      .hero-spark { display: flex; align-items: flex-end; gap: 3px; height: 34px; flex-shrink: 0; }
+      .hero-spark span { width: 5px; min-height: 2px; border-radius: 1px; background: var(--gold); opacity: 0.45; }
+      .hero-spark span:last-child { opacity: 1; }
+      .hero-shiplog-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+      .hero-shiplog-top {
+        font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em;
+        text-transform: uppercase; color: var(--gold);
+      }
+      .hero-shiplog-top b { font-weight: 400; color: var(--muted); text-transform: none; letter-spacing: 0; }
+      .hero-shiplog-title {
+        font-size: 14px; font-weight: 600; color: var(--cream); line-height: 1.35;
+        overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      }
+      .hero-shiplog-more { font-size: 12.5px; color: var(--muted); }
+      #hero-shiplog:hover .hero-shiplog-more { color: var(--gold); }
+      @media (max-width: 720px) {
+        .hero-shiplog-title { white-space: normal; }
+      }
+
       .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
       .btn {
         display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
@@ -631,6 +658,26 @@
               <p class="eyebrow">The full guide</p>
               <h1 id="hero-headline">Stop rebuilding the prompt stack every time your agent forgets you.</h1>
               <p class="lead">Suede gives Claude Code or Codex a reusable engineering workflow instead of one giant bloated prompt. <strong>Every capability is an inspectable <code>SKILL.md</code> folder</strong> the agent loads on demand: orchestration, A-F code review, CI ship-gates, AI evals, design, copy, SEO, app shipping, and creator rights. 27 skills, MIT licensed.</p>
+              <a id="hero-shiplog" href="./#changelog" aria-label="Ship log: 175 commits in 10 weeks, last shipped July 20, 2026. Latest: every public surface moves onto one design language. Read the full changelog on the homepage.">
+                <span class="hero-spark" aria-hidden="true">
+                  <span style="height:2%"></span>
+                  <span style="height:8%"></span>
+                  <span style="height:2%"></span>
+                  <span style="height:3%"></span>
+                  <span style="height:4%"></span>
+                  <span style="height:100%"></span>
+                  <span style="height:37%"></span>
+                  <span style="height:51%"></span>
+                  <span style="height:43%"></span>
+                  <span style="height:14%"></span>
+                </span>
+                <span class="hero-shiplog-text">
+                  <span class="hero-shiplog-top">Shipped Jul 20 <b>&middot; cf0e5a0</b></span>
+                  <span class="hero-shiplog-title">Every public surface moves onto one design language</span>
+                  <span class="hero-shiplog-more">175 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+                </span>
+              </a>
+
               <div class="btn-row">
                 <a class="btn btn--gold" href="./skills/">Browse all 27 skills</a>
                 <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">View GitHub repo</a>
