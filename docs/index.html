@@ -2586,7 +2586,7 @@
     #ship-band {
       background: #c8a96e;
       color: #171310;
-      padding: 120px 0;
+      padding: 88px 0;
     }
     .ship-band-inner {
       max-width: 1100px;
@@ -2686,7 +2686,7 @@
     .stat-num--money { font-size: clamp(38px, 5vw, 62px); }
 
     /* ---- LANE INDEX ---- */
-    #lanes { background: #080808; padding: 110px 0 96px; }
+    #lanes { background: #080808; padding: 84px 0 72px; }
     .lanes-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
     .lanes-eyebrow {
       margin: 0 0 16px;
@@ -2740,10 +2740,38 @@
     /* Terminal keeps its footprint while sessions rotate */
     .term-session { min-height: 214px; }
 
+    /* ---- HERO TINY SHIP LOG ---- */
+    #hero-shiplog {
+      display: flex; align-items: center; gap: 16px;
+      margin-top: 26px; padding: 13px 18px; max-width: 560px;
+      background: #111111; border: 1px solid #222222; border-radius: 6px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    #hero-shiplog:hover { border-color: #c8a96e; background: #141414; }
+    .hero-spark { display: flex; align-items: flex-end; gap: 3px; height: 34px; flex-shrink: 0; }
+    .hero-spark span { width: 5px; min-height: 2px; border-radius: 1px; background: #c8a96e; opacity: 0.45; }
+    .hero-spark span:last-child { opacity: 1; }
+    .hero-shiplog-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .hero-shiplog-top {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #c8a96e;
+    }
+    .hero-shiplog-top b { font-weight: 400; color: #888880; text-transform: none; letter-spacing: 0; }
+    .hero-shiplog-title {
+      font-size: 14px; font-weight: 600; color: #f0ece4; line-height: 1.35;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .hero-shiplog-more { font-size: 12.5px; color: #888880; }
+    #hero-shiplog:hover .hero-shiplog-more { color: #c8a96e; }
+    @media (max-width: 720px) {
+      .hero-shiplog-title { white-space: normal; }
+    }
+
     /* ---- CHANGELOG (ship log) ---- */
     #changelog {
       background: var(--color-bg);
-      padding: 100px 0 108px;
+      padding: 80px 0 88px;
       border-bottom: 1px solid #141414;
       scroll-margin-top: calc(var(--nav-height) + 16px);
     }
@@ -2867,7 +2895,7 @@
     }
 
     /* ---- ROUTER ---- */
-    #router { background: #080808; padding: 120px 0; }
+    #router { background: #080808; padding: 84px 0; }
     .router-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -3033,7 +3061,7 @@
 <main id="main" tabindex="-1">
 
 <!-- HERO -->
-<section id="hero" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;background:#080808;padding:72px 0 96px;">
+<section id="hero" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;background:#080808;padding:64px 0 72px;">
 
   <div id="hero-bg-ring"></div>
   <div id="hero-bg-glow"></div>
@@ -3043,7 +3071,7 @@
 
     <div id="hero-grid">
       <div id="hero-copy">
-        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Shipped Jul 19</a></span>
+        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Shipped Jul 20</a></span>
 
         <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and completely unsupervised.</h1>
 
@@ -3057,6 +3085,26 @@
           </a>
           <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
         </div>
+
+        <a id="hero-shiplog" class="hero-anim" href="#changelog" aria-label="Ship log: 175 commits in 10 weeks, last shipped July 20, 2026. Latest: every public surface moves onto one design language. Jump to the full changelog.">
+          <span class="hero-spark" aria-hidden="true">
+            <span style="height:2%"></span>
+            <span style="height:8%"></span>
+            <span style="height:2%"></span>
+            <span style="height:3%"></span>
+            <span style="height:4%"></span>
+            <span style="height:100%"></span>
+            <span style="height:37%"></span>
+            <span style="height:51%"></span>
+            <span style="height:43%"></span>
+            <span style="height:14%"></span>
+          </span>
+          <span class="hero-shiplog-text">
+            <span class="hero-shiplog-top">Shipped Jul 20 <b>&middot; cf0e5a0</b></span>
+            <span class="hero-shiplog-title">Every public surface moves onto one design language</span>
+            <span class="hero-shiplog-more">175 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+          </span>
+        </a>
       </div>
 
       <div id="hero-term" class="hero-anim">
@@ -3199,21 +3247,21 @@
       <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
       <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
 
-      <p class="clog-fresh reveal reveal-d2">Last shipped Jul 19, 2026 <span id="clog-fresh-rel" data-iso="2026-07-19"></span></p>
+      <p class="clog-fresh reveal reveal-d2">Last shipped Jul 20, 2026 <span id="clog-fresh-rel" data-iso="2026-07-20"></span></p>
 
-      <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 2, 3, 1, 1, 48, 37, 28, 17, 22, and 2 commits.">
+      <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 0, 5, 0, 1, 2, 65, 24, 33, 28, and 9 commits.">
+        <span style="height:2%"></span>
+        <span style="height:8%"></span>
+        <span style="height:2%"></span>
+        <span style="height:3%"></span>
         <span style="height:4%"></span>
-        <span style="height:6%"></span>
-        <span style="height:3%"></span>
-        <span style="height:3%"></span>
         <span style="height:100%"></span>
-        <span style="height:77%"></span>
-        <span style="height:58%"></span>
-        <span style="height:35%"></span>
-        <span style="height:46%"></span>
-        <span style="height:4%"></span>
+        <span style="height:37%"></span>
+        <span style="height:51%"></span>
+        <span style="height:43%"></span>
+        <span style="height:14%"></span>
       </div>
-      <p class="clog-spark-caption reveal reveal-d2">161 commits &middot; 10 weeks &middot; newest on the right</p>
+      <p class="clog-spark-caption reveal reveal-d2">175 commits &middot; 10 weeks &middot; newest on the right</p>
 
       <div class="clog-filters reveal reveal-d2" role="group" aria-label="Filter changelog entries by type">
         <button class="clog-filter" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -3226,6 +3274,26 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="site">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-20</span>
+            <span class="clog-tag">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/cf0e5a0" target="_blank" rel="noopener" aria-label="View commit cf0e5a0 on GitHub">cf0e5a0</a>
+          </p>
+          <h3 class="clog-title">Every public surface moves onto one design language</h3>
+          <p class="clog-detail">Skills catalog v2 with its own written-out ship log, guide v2 (1,013 lines of old design system deleted), copy bank with a Copy button on all 17 blocks, and an install page where every command is one click. Same tokens everywhere.</p>
+        </li>
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-20</span>
+            <span class="clog-tag">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/aeaa416" target="_blank" rel="noopener" aria-label="View commit aeaa416 on GitHub">aeaa416</a>
+          </p>
+          <h3 class="clog-title">Reserved internal names can never reach public copy</h3>
+          <p class="clog-detail">The validator now scans every public text file against hashed sequences, so a slip fails the build instead of shipping.</p>
+        </li>
 
         <li class="clog-item" data-type="new">
           <p class="clog-meta">
@@ -3356,7 +3424,7 @@
 </section>
 
 <!-- SCORECARD -->
-<section id="scorecard" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="scorecard" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="scorecard-wrap">
 
     <p class="scorecard-eyebrow reveal">Benchmarks: self-graded, losses shown</p>
@@ -3518,7 +3586,7 @@
 </section>
 
 <!-- FEATURES GRID -->
-<section id="skills" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="skills" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="features-inner">
     <h2 class="features-headline reveal">What your agent learns.</h2>
     <div class="features-grid reveal-group">
@@ -3675,7 +3743,7 @@
 </section>
 
 <!-- INSTALL -->
-<section id="install" style="background:#080808;padding:120px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
+<section id="install" style="background:#080808;padding:84px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
 
   <div class="install-inner">
     <h2 class="install-headline reveal">Install the open-source pack.</h2>
@@ -3731,7 +3799,7 @@
 </section>
 
 <!-- CATALOG -->
-<section id="catalog" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="catalog" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="catalog-inner">
     <p class="catalog-eyebrow reveal">The full pack</p>
     <h2 class="catalog-headline reveal reveal-d1">All 27 skills.</h2>
@@ -3918,7 +3986,7 @@
 </section>
 
 <!-- PROOF + SESSION + MUSICIANS -->
-<section id="proof" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="proof" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="proof-wrap">
 
     <p class="proof-eyebrow reveal">Workflow evidence</p>
@@ -4047,7 +4115,7 @@
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:#080808;padding:120px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="faq" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="faq-inner">
     <h2 class="faq-headline reveal">Questions, answered.</h2>
     <div class="reveal reveal-d1">
