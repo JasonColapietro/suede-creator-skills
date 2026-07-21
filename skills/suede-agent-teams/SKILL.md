@@ -263,7 +263,10 @@ Wrap the roster with these gates:
    collision is sequenced.
 5. **Execute wave:** parallel lanes only when outputs do not collide.
 6. **Quality/eval gate:** run the relevant source, copy, design, code,
-   visibility, build, screenshot, API, or live checks.
+   visibility, build, screenshot, API, or live checks. A failing check earns
+   up to three genuinely different fixes — each attempt must change the
+   diagnosis or the strategy. Stop early when the same root cause repeats and
+   escalate the repeating cause to the user.
 7. **Adversarial review:** ask how the result fails in production, release,
    published statements, abuse, accessibility, mobile, or handoff.
 8. **Consensus review:** merge multiple review lenses into blockers, accepted
