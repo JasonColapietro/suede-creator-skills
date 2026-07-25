@@ -352,23 +352,23 @@
     <h1>28 skills. One honest line each.</h1>
     <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Six lanes:</strong> orchestration, code review and CI, design and copy, SEO and visibility, iOS and Android shipping, and creator rights. This catalog links each skill to its deep docs and its source folder on GitHub.</p>
 
-    <a id="hero-shiplog" href="#changelog" aria-label="Ship log: 175 commits in 10 weeks, last shipped July 20, 2026. Latest: every public surface moves onto one design language. Jump to the changelog.">
+    <a id="hero-shiplog" href="#changelog" aria-label="Release log: 194 commits in 10 weeks. Version 0.7.0 released July 25, 2026: Full Send joins the public pack. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
-        <span style="height:2%"></span>
         <span style="height:8%"></span>
         <span style="height:2%"></span>
+        <span style="height:2%"></span>
         <span style="height:3%"></span>
-        <span style="height:4%"></span>
         <span style="height:100%"></span>
-        <span style="height:37%"></span>
-        <span style="height:51%"></span>
-        <span style="height:43%"></span>
-        <span style="height:14%"></span>
+        <span style="height:39%"></span>
+        <span style="height:52%"></span>
+        <span style="height:28%"></span>
+        <span style="height:30%"></span>
+        <span style="height:42%"></span>
       </span>
       <span class="hero-shiplog-text">
-        <span class="hero-shiplog-top">Shipped Jul 20 <b>&middot; cf0e5a0</b></span>
-        <span class="hero-shiplog-title">Every public surface moves onto one design language</span>
-        <span class="hero-shiplog-more">175 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+        <span class="hero-shiplog-top">Released Jul 25 <b>&middot; 7cc263a</b></span>
+        <span class="hero-shiplog-title">Full Send joins the public pack</span>
+        <span class="hero-shiplog-more">194 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
       </span>
     </a>
 
@@ -506,11 +506,20 @@
       <div class="clog-rail">
         <h2 id="changelog-headline">Changelog. Straight from main.</h2>
         <p class="section-sub">Every entry is a real commit: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
-        <p class="clog-fresh">Last shipped 2026-07-20</p>
+        <p class="clog-fresh">Version 0.7.0 released 2026-07-25</p>
         <br>
         <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub -&gt;</a>
       </div>
       <ol class="clog">
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-07-25</span>
+            <span class="clog-tag">New skill</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/7cc263a" target="_blank" rel="noopener" aria-label="View commit 7cc263a on GitHub">7cc263a</a>
+          </p>
+          <h3>Full Send joins the public pack</h3>
+          <p class="clog-detail">Version 0.7.0 adds the outcome router, one honest Codex marketplace entry, Codex-native plugin metadata, workflow MCP discovery, deterministic triggers, and synchronized 28-skill docs.</p>
+        </li>
         <li>
           <p class="clog-meta">
             <span class="clog-date">2026-07-20</span>
@@ -545,7 +554,7 @@
             <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/406a1d5" target="_blank" rel="noopener" aria-label="View commit 406a1d5 on GitHub">406a1d5</a>
           </p>
           <h3>The changelog audits itself</h3>
-          <p class="clog-detail">The build fails if a cited hash doesn't resolve to a real commit, if entries fall out of date order, or if the "Last shipped" pill disagrees with the newest entry. This page can't quietly lie.</p>
+          <p class="clog-detail">The build fails if a cited hash doesn't resolve to a real commit, entries fall out of date order, or the versioned release pill disagrees with the release entry. This page can't quietly lie.</p>
         </li>
         <li>
           <p class="clog-meta">
@@ -590,10 +599,10 @@
 
 <section class="ship-strip" aria-label="Install the pack">
   <div class="shell">
-    <p class="ship-strip-head">Stop shipping on vibes.</p>
-    <p class="ship-strip-sub">One command installs all 28 skills. Read any of them first; they're plain Markdown.</p>
+    <p class="ship-strip-head">Proof is part of the release.</p>
+    <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
     <div class="ship-strip-row">
-      <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+      <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
       <a href="../plugins.html">All install paths</a>
     </div>
   </div>

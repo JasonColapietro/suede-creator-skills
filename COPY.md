@@ -94,10 +94,11 @@ iOS/Android app shipping, artist campaigns, and music/IP workflows.
 
 ### Hero proof line
 
-Invoke Johnny Suede Write, Design/Create, or Code and the agent gets the whole
+Invoke `suede-workflow-skills` when the agent should route across the whole
 workflow: taste, copy, SEO/AEO/GEO/AI EO, schema checks, code review, project
 grades, MCP scaffolds, iOS packaging, music/IP prep, and the Cue Suede feedback
-loop.
+loop. Invoke Johnny Suede Write, Design/Create, or Suede Code when you want one
+exact lane.
 
 ### Primary CTA
 
@@ -518,12 +519,3 @@ Use these lines when the copy needs a safety guard:
 - The scripts skip hidden files, dependency folders, build outputs, caches, and
   secret-like files by default.
 - Unknown rights facts stay marked as unknown.
-
-## Copy Score
-
-Directness: 9/10  
-Rhythm: 9/10  
-Trust: 10/10  
-Specificity: 9/10  
-Density: 9/10  
-Total: 46/50

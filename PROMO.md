@@ -46,8 +46,8 @@ The big components deserve the spotlight:
   and intake reports.
 - It includes optional MCP tools for structured skill discovery, install
   choices, SEO/AEO/GEO/AI EO audit scaffolds, QA checklists, and tool validation.
-- It gives you one-command modes: Johnny Suede Write, Johnny Suede Design/Create,
-  and Suede Code load the whole workflow instead of another cold start.
+- It gives you an umbrella for the whole workflow and exact skills for focused
+  writing, design, or code-review work instead of another cold start.
 
 ## Short Explanation
 
@@ -79,7 +79,9 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
 - Wire CI that gates the merge: one required check, branch protection, no deadlocks.
 - Score your brand at the schema, answer-engine, trust, and visibility layers.
-- Invoke Johnny Suede Write, Design/Create, or Code when you want the whole workflow loaded at once.
+- Invoke `suede-workflow-skills` when you want the whole workflow routed from
+  one umbrella. Use Johnny Suede Write, Design/Create, or Suede Code for one
+  exact lane.
 
 ## The Main Story
 
@@ -481,7 +483,7 @@ MCP source path:
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git
 cd suede-creator-skills
-node mcp/suede-skills-mcp.mjs --profile creator
+node mcp/suede-skills-mcp.mjs --profile all
 ```
 
 ## Social Posts
@@ -843,12 +845,3 @@ Suede is the workflow layer for AI agents that need to ship better public produc
 
 It packages Suedify, design direction, copywriting, SEO/AEO/AI EO, code review, QA, launch packaging, install support, artist campaign tools, creator utilities, public skill installs, and optional MCP support into one reusable Suede system.
 ```
-
-## Copy Score
-
-Directness: 10/10
-Rhythm: 9/10
-Trust: 10/10
-Specificity: 10/10
-Density: 9/10
-Total: 48/50

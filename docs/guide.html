@@ -664,23 +664,23 @@
               <p class="eyebrow">The full guide</p>
               <h1 id="hero-headline">Stop rebuilding the prompt stack every time your agent forgets you.</h1>
               <p class="lead">Suede gives Claude Code or Codex a reusable engineering workflow instead of one giant bloated prompt. <strong>Every capability is an inspectable <code>SKILL.md</code> folder</strong> the agent loads on demand: Full Send outcome routing, orchestration, A-F code review, CI ship-gates, AI evals, design, copy, SEO, app shipping, and creator rights. 28 skills, MIT licensed.</p>
-              <a id="hero-shiplog" href="./#changelog" aria-label="Ship log: 175 commits in 10 weeks, last shipped July 20, 2026. Latest: every public surface moves onto one design language. Read the full changelog on the homepage.">
+              <a id="hero-shiplog" href="./#changelog" aria-label="Release log: 194 commits in 10 weeks. Version 0.7.0 released July 25, 2026: Full Send joins the public pack. Read the full changelog on the homepage.">
                 <span class="hero-spark" aria-hidden="true">
-                  <span style="height:2%"></span>
                   <span style="height:8%"></span>
                   <span style="height:2%"></span>
+                  <span style="height:2%"></span>
                   <span style="height:3%"></span>
-                  <span style="height:4%"></span>
                   <span style="height:100%"></span>
-                  <span style="height:37%"></span>
-                  <span style="height:51%"></span>
-                  <span style="height:43%"></span>
-                  <span style="height:14%"></span>
+                  <span style="height:39%"></span>
+                  <span style="height:52%"></span>
+                  <span style="height:28%"></span>
+                  <span style="height:30%"></span>
+                  <span style="height:42%"></span>
                 </span>
                 <span class="hero-shiplog-text">
-                  <span class="hero-shiplog-top">Shipped Jul 20 <b>&middot; cf0e5a0</b></span>
-                  <span class="hero-shiplog-title">Every public surface moves onto one design language</span>
-                  <span class="hero-shiplog-more">175 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+                  <span class="hero-shiplog-top">Released Jul 25 <b>&middot; 7cc263a</b></span>
+                  <span class="hero-shiplog-title">Full Send joins the public pack</span>
+                  <span class="hero-shiplog-more">194 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
                 </span>
               </a>
 
@@ -885,8 +885,8 @@
           </p>
           <div class="install-grid">
             <article class="install" aria-labelledby="install-workflow-title">
-              <h3 id="install-workflow-title">Claude Code &mdash; one command</h3>
-              <p>Add the marketplace and install the full pack. Use the MCP only when structured skill discovery, SEO/AEO/AI EO copy audits, install options, or QA checklists would help.</p>
+              <h3 id="install-workflow-title">Claude Code &mdash; first install</h3>
+              <p>First install takes two commands: add the marketplace, then install the full pack. After the marketplace is present, install or update is one command. Use MCP only when structured discovery, audit scaffolds, install options, or QA checklists would help.</p>
               <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
 /plugin install suede-skills@suede</code></pre>
               <div class="btn-row">
@@ -895,12 +895,10 @@
               </div>
             </article>
             <article class="install" aria-labelledby="install-codex-title">
-              <h3 id="install-codex-title">Codex</h3>
-              <p>Install into <code>$CODEX_HOME/skills</code>, or <code>~/.codex/skills</code> when <code>CODEX_HOME</code> is not set.</p>
-              <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git
-cd suede-creator-skills
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R skills/suede-workflow-skills "${CODEX_HOME:-$HOME/.codex}/skills/"</code></pre>
+              <h3 id="install-codex-title">Codex &mdash; full pack</h3>
+              <p>Add the Codex-native marketplace, then install all 28 skills and both read-only MCP profiles. Use the direct skill installer only when you want one selected skill.</p>
+              <pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex</code></pre>
             </article>
             <article class="install" aria-labelledby="install-claude-title">
               <h3 id="install-claude-title">Claude Code &mdash; manual</h3>
@@ -986,10 +984,10 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
 
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
-        <p class="ship-strip-head">Stop shipping on vibes.</p>
-        <p class="ship-strip-sub">One command installs all 28 skills. Read any of them first; they're plain Markdown.</p>
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
         <div class="ship-strip-row">
-          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
           <a href="plugins.html">All install paths</a>
         </div>
       </div>

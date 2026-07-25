@@ -430,13 +430,14 @@
       <div class="shell">
         <h2 id="install-title">Install the 28-skill pack.</h2>
         <p>Claude Code and Codex can each install the complete public pack through their native marketplace. The direct Codex installer remains available when you want only Full Send.</p>
+        <p><strong>Claude Code full pack</strong></p>
         <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede
-
-codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
-codex plugin add suede-skills@suede-codex
-
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+/plugin install suede-skills@suede</code></pre>
+        <p><strong>Codex full pack</strong></p>
+        <pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex</code></pre>
+        <p><strong>Codex &mdash; Full Send only</strong></p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-full-send</code></pre>
       </div>

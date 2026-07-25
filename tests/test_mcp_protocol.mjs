@@ -12,6 +12,9 @@ const VALIDATOR = path.join(ROOT, "scripts", "validate-skill-pack.mjs");
 const CI_WORKFLOW = path.join(ROOT, ".github", "workflows", "skill-pack-ci.yml");
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, "mcp", "catalog.json"), "utf8"));
 const MCP_CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, ".mcp.json"), "utf8"));
+const CODEX_PLUGIN = JSON.parse(
+  fs.readFileSync(path.join(ROOT, ".codex-plugin", "plugin.json"), "utf8")
+);
 const REQUEST_TIMEOUT_MS = 3000;
 
 class McpSession {
@@ -314,7 +317,7 @@ test("catalog, resources, prompts, and profile filters match the live server", a
   }, "workflow");
 });
 
-test("plugin MCP registration retains creator and adds workflow profiles", () => {
+test("Claude and Codex MCP registrations retain both portable profiles", () => {
   const creator = MCP_CONFIG.mcpServers.suede_creator_mcp;
   const workflow = MCP_CONFIG.mcpServers.suede_workflow_mcp;
   assert.ok(creator);
@@ -325,6 +328,43 @@ test("plugin MCP registration retains creator and adds workflow profiles", () =>
   assert.equal(workflow.command, "node");
   assert.equal(creator.cwd, "${CLAUDE_PLUGIN_ROOT}");
   assert.equal(workflow.cwd, "${CLAUDE_PLUGIN_ROOT}");
+
+  const codexCreator = CODEX_PLUGIN.mcpServers.suede_creator_mcp;
+  const codexWorkflow = CODEX_PLUGIN.mcpServers.suede_workflow_mcp;
+  assert.deepEqual(codexCreator.args, [
+    "./mcp/suede-skills-mcp.mjs",
+    "--profile",
+    "creator"
+  ]);
+  assert.deepEqual(codexWorkflow.args, [
+    "./mcp/suede-skills-mcp.mjs",
+    "--profile",
+    "workflow"
+  ]);
+  assert.equal(codexCreator.cwd, ".");
+  assert.equal(codexWorkflow.cwd, ".");
+  assert.doesNotMatch(JSON.stringify(CODEX_PLUGIN.mcpServers), /CLAUDE_PLUGIN_ROOT/);
+
+  for (const [serverName, server] of Object.entries(CODEX_PLUGIN.mcpServers)) {
+    const initialization = {
+      jsonrpc: "2.0",
+      id: 1,
+      method: "initialize",
+      params: {
+        protocolVersion: "2025-06-18",
+        capabilities: {},
+        clientInfo: { name: "codex-plugin-smoke", version: "1.0.0" }
+      }
+    };
+    const launched = spawnSync(server.command, server.args, {
+      cwd: path.resolve(ROOT, server.cwd),
+      encoding: "utf8",
+      input: `${JSON.stringify(initialization)}\n`
+    });
+    assert.equal(launched.status, 0, `${serverName}\n${launched.stderr}`);
+    const response = JSON.parse(launched.stdout.trim());
+    assert.equal(response.result.serverInfo.version, CATALOG.version);
+  }
 });
 
 test("recovers from malformed input and rejects unsupported methods", async () => {

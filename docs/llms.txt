@@ -6,7 +6,7 @@ Maintained by Jason Colapietro (Suede Labs AI; alternate name Suede AI, https://
 
 Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Focused subsets: `suede-agent-workflows@suede` (orchestration, workflows, evals) and `suede-code@suede` (review, grade, ship-gate).
 
-Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills`
+Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
 ## Start here
 

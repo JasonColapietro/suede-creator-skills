@@ -10,7 +10,7 @@ A 28-skill toolkit for Claude Code and Codex: take broad outcomes full send, orc
 
 A free, MIT-licensed, broadly reusable pack of **28 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
-- **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."**
+- **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
@@ -175,7 +175,17 @@ node mcp/suede-skills-mcp.mjs --profile all
 
 ## Install for Codex
 
-Codex skills live in `$CODEX_HOME/skills`, falling back to `~/.codex/skills` when `CODEX_HOME` is unset. Install one or more skills from GitHub:
+Install the complete Codex-native plugin:
+
+```bash
+codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex
+```
+
+This installs all 28 skills and registers both read-only MCP discovery
+profiles. Restart Codex after installing or updating.
+
+For one selected skill, use the built-in skill installer:
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
@@ -183,7 +193,8 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-workflow-skills
 ```
 
-To install several at once, pass extra `skills/<name>` paths after `--path`. Restart Codex after installing.
+Pass extra `skills/<name>` paths after `--path` when you want a small custom
+set instead of the full plugin.
 
 ## Install for Claude Code
 

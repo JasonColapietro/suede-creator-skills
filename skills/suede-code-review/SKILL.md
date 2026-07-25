@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: "Find the bugs a diff can actually ship: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, and deploy-risk review."
+description: "Find the bugs a diff can actually ship: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, and deploy-risk review. Return findings, not a grade."
 ---
 
 # Suede Code Review

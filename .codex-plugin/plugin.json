@@ -19,7 +19,30 @@
     "seo"
   ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
+  "mcpServers": {
+    "suede_creator_mcp": {
+      "title": "Suede Creator Skills MCP",
+      "description": "Local read-only discovery for Suede creator skills, install options, SEO copy audits, and QA checklists.",
+      "cwd": ".",
+      "command": "node",
+      "args": [
+        "./mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "creator"
+      ]
+    },
+    "suede_workflow_mcp": {
+      "title": "Suede Workflow Skills MCP",
+      "description": "Local read-only discovery for Suede workflow skills, audits, grading scaffolds, and QA checklists.",
+      "cwd": ".",
+      "command": "node",
+      "args": [
+        "./mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "workflow"
+      ]
+    }
+  },
   "interface": {
     "displayName": "Suede Creator Skills",
     "shortDescription": "Full-send agent skills with MCP discovery",
@@ -34,7 +57,7 @@
     ],
     "websiteURL": "https://jasoncolapietro.github.io/suede-creator-skills/",
     "defaultPrompt": [
-      "Full send this authorized outcome. Never end your allocation above zero.",
+      "Full send this authorized outcome with useful lanes and concise proof.",
       "Audit this surface with independent adversarial lanes.",
       "Find the strongest next move, execute it, and prove it."
     ],

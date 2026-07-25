@@ -235,11 +235,12 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
   );
 });
 
-test("packaged validation rejects Codex plugin and catalog version drift", (t) => {
+test("packaged validation rejects Codex plugin version and MCP portability drift", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-codex-version-");
   const pluginPath = path.join(packagedRoot, ".codex-plugin", "plugin.json");
   const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
   plugin.version = "9.9.9";
+  plugin.mcpServers.suede_creator_mcp.cwd = "${CLAUDE_PLUGIN_ROOT}";
   fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
 
   const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
@@ -252,6 +253,46 @@ test("packaged validation rejects Codex plugin and catalog version drift", (t) =
     validation.stderr,
     new RegExp(`Codex plugin version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
   );
+  assert.match(
+    validation.stderr,
+    /Codex plugin MCP config must not contain Claude-only path variables/
+  );
+});
+
+test("packaged validation rejects MCP QA and release metadata drift", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-release-drift-");
+  const mcpQaPath = path.join(packagedRoot, "skills", "suede-mcp-qa", "SKILL.md");
+  const mcpQa = fs.readFileSync(mcpQaPath, "utf8").replace(
+    /server version\s*\n`[^`]+`/,
+    "server version\n`9.9.9`"
+  );
+  fs.writeFileSync(mcpQaPath, mcpQa);
+
+  const citationPath = path.join(packagedRoot, "CITATION.cff");
+  const citation = fs.readFileSync(citationPath, "utf8").replace(
+    /^date-released:\s*\d{4}-\d{2}-\d{2}$/m,
+    "date-released: 2099-01-01"
+  );
+  fs.writeFileSync(citationPath, citation);
+
+  const docsPath = path.join(packagedRoot, "docs", "index.html");
+  const docs = fs.readFileSync(docsPath, "utf8");
+  const catalog = JSON.parse(
+    fs.readFileSync(path.join(packagedRoot, "mcp", "catalog.json"), "utf8")
+  );
+  const poisonedDocs = docs.replace(
+    `<p class="clog-detail">Version ${catalog.version}`,
+    `<p class="clog-detail">Release ${catalog.version}`
+  );
+  assert.notEqual(poisonedDocs, docs, "test fixture must remove the release-version marker");
+  fs.writeFileSync(docsPath, poisonedDocs);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /suede-mcp-qa manual readback version \(9\.9\.9\)/);
+  assert.match(validation.stderr, /CITATION\.cff date-released \(2099-01-01\)/);
+  assert.match(validation.stderr, /changelog has no release entry for catalog version/);
 });
 
 test("packaged validation rejects additional Codex marketplace entries", (t) => {
