@@ -1,15 +1,16 @@
 # Suede Creator Skills
 
-A 27-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
+A 28-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 27](https://img.shields.io/badge/Skills-27-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 28](https://img.shields.io/badge/Skills-28-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
 ## What it is
 
-A free, MIT-licensed, broadly reusable pack of **27 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed, broadly reusable pack of **28 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
+- **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."**
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
@@ -20,7 +21,7 @@ A free, MIT-licensed, broadly reusable pack of **27 public skill folders** for C
 - **Consumer recovery**: audit Amazon returns and Amazon-billed subscriptions with a validated recovery path, or inspect recurring charges across App Store, Google Play, PayPal, and direct-bill services before any user-confirmed cancellation or refund request (`amazon-returns-recovery`, `subscription-recovery`).
 - **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
 
-## Install in one command
+## Install the full pack
 
 In Claude Code, add the marketplace and install the pack:
 
@@ -29,15 +30,26 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 27 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 28 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
-Prefer a clone? `install.sh` copies all 27 skills into `~/.claude/skills/` and prints the installed count:
+In Codex, add the repo's Codex-native marketplace and install the complete
+plugin:
+
+```bash
+codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex
+```
+
+The Codex plugin loads all 28 skills and registers both read-only MCP discovery
+profiles. Restart Codex after installing or updating it.
+
+Prefer a clone? `install.sh` copies all 28 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
 ```
 
-Using Cursor, Copilot, Windsurf, or another agent? The [skills CLI](https://github.com/vercel-labs/skills) installs the pack into 25+ agents, Claude Code and Codex included:
+Using Cursor, Copilot, Windsurf, or another agent? The [skills CLI](https://github.com/vercel-labs/skills) installs the pack into its supported agents, Claude Code and Codex included:
 
 ```bash
 npx skills add JasonColapietro/suede-creator-skills
@@ -84,7 +96,13 @@ Install the pack, then ask for a code review with a ship grade on your current c
 Use suede-code to review my staged diff and give it an A-F ship grade.
 ```
 
-The skill runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it.
+For a broad authorized outcome, invoke Full Send directly:
+
+```text
+Use suede-full-send to finish this release across code, docs, CI, and live verification. Preserve unrelated WIP and return proof.
+```
+
+`suede-code` runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it.
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
 
@@ -94,6 +112,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 | Skill | What it does |
 |---|---|
+| [`suede-full-send`](skills/suede-full-send) | Full Send broad authorized outcomes through one controller, useful non-colliding lanes, adversarial reconciliation, and proof |
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes with WIP collision detection, RFC mode, rollback trees, and a signed handoff |
 | [`suede-codex-fleet`](skills/suede-codex-fleet) | Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces |
@@ -168,7 +187,7 @@ To install several at once, pass extra `skills/<name>` paths after `--path`. Res
 
 ## Install for Claude Code
 
-All 27 skills:
+All 28 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -186,7 +205,12 @@ For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and o
 
 ## Safety
 
-These skills inspect current files, pages, repos, and local folders. They do not upload files, write to a registry, call private services, request secrets, or claim legal clearance.
+Core local workflows inspect current files, pages, repos, and local folders
+without uploading by default or granting new authority. Explicit browser,
+deployment, marketplace, publishing, or support workflows may use the
+operator's existing authenticated access only when that action is authorized.
+The skills do not request secrets, write to a registry, or claim legal
+clearance.
 
 The creator skills generate private drafts by default — reports and packages can contain names, payment notes, file names, hashes, rights claims, and provenance notes. Review and redact before publishing or sending outside the intended workflow. A clean report is not a legal opinion, registry write, rights clearance, or payment guarantee.
 

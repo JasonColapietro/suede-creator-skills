@@ -1,0 +1,43 @@
+{
+  "name": "suede-skills",
+  "version": "0.7.0",
+  "description": "Twenty-eight public Suede skills and a read-only MCP for decisive agent workflows, code review, design, copy, SEO, app shipping, and creator work.",
+  "author": {
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
+  "repository": "https://github.com/JasonColapietro/suede-creator-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "full-send",
+    "multi-agent",
+    "mcp",
+    "code-review",
+    "seo"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Suede Creator Skills",
+    "shortDescription": "Full-send agent skills with MCP discovery",
+    "longDescription": "Twenty-eight public Suede skills for Full Send execution, coordinated agent teams, reviewed Codex worker fleets, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
+    "developerName": "Suede Labs AI",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Agent Skills",
+      "MCP",
+      "Multi-Agent Workflows",
+      "Code Review"
+    ],
+    "websiteURL": "https://jasoncolapietro.github.io/suede-creator-skills/",
+    "defaultPrompt": [
+      "Full send this authorized outcome. Never end your allocation above zero.",
+      "Audit this surface with independent adversarial lanes.",
+      "Find the strongest next move, execute it, and prove it."
+    ],
+    "brandColor": "#C8A96E"
+  }
+}

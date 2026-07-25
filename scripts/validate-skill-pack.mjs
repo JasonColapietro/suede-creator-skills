@@ -360,6 +360,14 @@ function openaiYamlStructureIssues(text, skillName, skillDir) {
     }
     if (
       typeof parsed.interface.default_prompt === "string" &&
+      parsed.interface.default_prompt.length > 1024
+    ) {
+      issues.push(
+        `interface.default_prompt is ${parsed.interface.default_prompt.length} characters; maximum is 1024`
+      );
+    }
+    if (
+      typeof parsed.interface.default_prompt === "string" &&
       !parsed.interface.default_prompt.includes(`$${skillName}`)
     ) {
       issues.push(`interface.default_prompt must explicitly reference $${skillName}`);
@@ -444,6 +452,14 @@ const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")))
 const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
 const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
+const codexPluginPath = path.join(repoRoot, ".codex-plugin", "plugin.json");
+const codexPluginJson = fs.existsSync(codexPluginPath)
+  ? JSON.parse(readText(codexPluginPath))
+  : null;
+const codexMarketplacePath = path.join(repoRoot, ".agents", "plugins", "marketplace.json");
+const codexMarketplaceJson = fs.existsSync(codexMarketplacePath)
+  ? JSON.parse(readText(codexMarketplacePath))
+  : null;
 
 if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
   fail.push(`catalog.json version is not valid semantic versioning: ${catalog.version}`);
@@ -453,6 +469,65 @@ if (packageJson.version !== catalog.version) {
 }
 if (pluginJson.version !== catalog.version) {
   fail.push(`plugin.json version (${pluginJson.version}) does not match catalog.json version (${catalog.version})`);
+}
+if (!codexPluginJson) {
+  fail.push(".codex-plugin/plugin.json is missing");
+} else {
+  if (codexPluginJson.name !== pluginJson.name) {
+    fail.push(`Codex plugin name (${codexPluginJson.name}) does not match Claude plugin name (${pluginJson.name})`);
+  }
+  if (codexPluginJson.version !== catalog.version) {
+    fail.push(`Codex plugin version (${codexPluginJson.version}) does not match catalog.json version (${catalog.version})`);
+  }
+  if (codexPluginJson.skills !== "./skills/") {
+    fail.push('Codex plugin skills path must be "./skills/"');
+  }
+  if (codexPluginJson.mcpServers !== "./.mcp.json") {
+    fail.push('Codex plugin mcpServers path must be "./.mcp.json"');
+  }
+  const codexInterface = codexPluginJson.interface;
+  for (const field of ["displayName", "shortDescription", "longDescription", "developerName", "category"]) {
+    if (!isObject(codexInterface) || typeof codexInterface[field] !== "string" || !codexInterface[field].trim()) {
+      fail.push(`Codex plugin interface.${field} must be a non-empty string`);
+    }
+  }
+  const defaultPrompts = codexInterface?.defaultPrompt;
+  if (
+    !Array.isArray(defaultPrompts) ||
+    defaultPrompts.length < 1 ||
+    defaultPrompts.length > 3 ||
+    defaultPrompts.some((prompt) => typeof prompt !== "string" || !prompt.trim() || prompt.length > 128)
+  ) {
+    fail.push("Codex plugin interface.defaultPrompt must contain 1-3 non-empty strings of at most 128 characters");
+  }
+}
+if (!codexMarketplaceJson) {
+  fail.push(".agents/plugins/marketplace.json is missing");
+} else {
+  if (codexMarketplaceJson.name !== "suede-codex") {
+    fail.push('Codex marketplace name must be "suede-codex"');
+  }
+  if (
+    !Array.isArray(codexMarketplaceJson.plugins) ||
+    codexMarketplaceJson.plugins.length !== 1
+  ) {
+    fail.push("Codex marketplace must expose exactly one plugin");
+  } else {
+    const [codexMarketplacePlugin] = codexMarketplaceJson.plugins;
+    if (!isObject(codexMarketplacePlugin)) {
+      fail.push("Codex marketplace plugin must be a mapping");
+    } else {
+      if (codexMarketplacePlugin.name !== codexPluginJson?.name) {
+        fail.push("Codex marketplace plugin must match .codex-plugin/plugin.json");
+      }
+      if (codexMarketplacePlugin.source !== "./") {
+        fail.push('Codex marketplace plugin source must be "./"');
+      }
+      if ("skills" in codexMarketplacePlugin || "mcpServers" in codexMarketplacePlugin) {
+        fail.push("Codex marketplace must defer component discovery to the root plugin manifest");
+      }
+    }
+  }
 }
 if (new Set(catalogSkillNames).size !== catalogSkillNames.length) {
   fail.push("mcp/catalog.json contains duplicate skill names");
@@ -768,11 +843,12 @@ const countChecks = [
   { file: "docs/skills/suede-workflow-skills.html", label: "lead paragraph", re: /route the agent across all (\d+) Suede skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "folders heading", re: /<h2>All (\d+) public skill folders<\/h2>/, expected: totalSkillCount },
   { file: ".claude-plugin/plugin.json", label: "description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
+  { file: ".codex-plugin/plugin.json", label: "description", re: /Twenty-(\w+) public Suede skills/, expected: totalSkillCount, wordNumber: true },
   { file: "mcp/catalog.json", label: "umbrella description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/SKILL.md", label: "frontmatter description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
   { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
-  { file: "PROMO.md", label: "companion skill count", re: /Twenty-(\w+) public Suede skills, led by one/, expected: companionSkillCount, wordNumber: true },
+  { file: "PROMO.md", label: "companion skill count", re: /with twenty-(\w+) companion skills/, expected: companionSkillCount, wordNumber: true },
   { file: "PROMO.md", label: "README intro pack size", re: /public (\d+)-skill agent workflow pack/, expected: totalSkillCount },
 ];
 
