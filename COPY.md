@@ -2,31 +2,32 @@
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
 Skills. Lead with the real mechanism: portable agent context, linked
-preferences, Suedify reference-site restyling, coordinated agent teams,
-anti-slop copywriting, SEO/AEO/AI EO, visibility grading, A-F code grading,
-GitHub Pages polish, AI evals, launch packaging, optional MCP, iOS/product
-checks, artist campaigns, music/IP metadata, and creator rights utilities. Keep
-claims public-safe. The skills do not upload files by default, clear rights,
-write to a registry, distribute music, approve payouts, or promise outcomes.
+preferences, Full Send execution, Suedify reference-site restyling,
+coordinated agent teams, anti-slop copywriting, SEO/AEO/AI EO, visibility
+grading, A-F code grading, GitHub Pages polish, AI evals, launch packaging,
+optional MCP, iOS/product checks, artist campaigns, music/IP metadata, and
+creator rights utilities. Keep claims public-safe. The skills do not upload
+files by default, clear rights, write to a registry, distribute music, approve
+payouts, or promise outcomes.
 
 ## Repo Copy
 
 ### One-line description
 
-Free Codex and Claude Code skills for portable agent context, Suedify website
-restyling, design, anti-slop copywriting, SEO/AEO/AI EO, GitHub Pages polish,
-visibility grading, A-F code grading, coordinated agent teams, AI evals, QA,
-iOS/product checks, artist campaigns, music/IP metadata, and creator utility
-workflows.
+Free Codex and Claude Code skills for decisive Full Send execution, portable
+agent context, Suedify website restyling, design, anti-slop copywriting,
+SEO/AEO/AI EO, GitHub Pages polish, visibility grading, A-F code grading,
+coordinated agent teams, AI evals, QA, iOS/product checks, artist campaigns,
+music/IP metadata, and creator utility workflows.
 
 ### Short description
 
-Suede Creator Skills help agents carry preferences across sessions, improve
-websites, rewrite copy, audit SEO/AEO/AI EO, polish GitHub Pages, grade
-visibility and CTA strength, adapt reference-site style safely, review code
-A-F, coordinate agent teams with shared context, design AI evals, package
-public docs, run evidence-backed rights utilities, and support creator
-workflows.
+Suede Creator Skills help agents carry preferences across sessions, take broad
+outcomes full send, improve websites, rewrite copy, audit SEO/AEO/AI EO, polish
+GitHub Pages, grade visibility and CTA strength, adapt reference-site style
+safely, review code A-F, coordinate agent teams with shared context, design AI
+evals, package public docs, run evidence-backed rights utilities, and support
+creator workflows.
 
 ### Component stack copy
 
@@ -38,6 +39,13 @@ EO, scores visibility at the schema and answer-engine layer, grades code and
 project readiness, packages music/IP material, and uses MCP only when structured
 discovery or QA actually helps.
 
+### Full Send explanation
+
+Suede Full Send turns max-effort language into one authorized outcome: one
+controller, every useful non-colliding lane, adversarial reconciliation, and
+direct proof. **"Never end your allocation above zero."** is the dry house
+line, not a literal token-meter promise or permission to pad the work.
+
 ### Short component line
 
 Linked preferences, Suedify, iOS packaging, communicating agent teams,
@@ -48,28 +56,29 @@ portable skill pack.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 27 public `SKILL.md` folders:
-one umbrella workflow (suede-workflow-skills), 18 workflow skills
-(johnny-suede-write, johnny-suede-design, suede-code, suede-code-grader,
-suede-code-review, suede-copy, suede-design, suede-agent-teams,
-suede-codex-fleet, suede-ship-gate,
-suede-seo-audit, suede-visibility-grader, suede-site-alchemy,
-suede-ai-eval, suede-recommend-next-action, suede-launch-packaging,
-suede-mcp-qa, android-app-factory), and 5 creator skills
-(suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter,
-suede-rights-passport, suede-rights-audit).
+creators, agencies, and AI power users. It ships 28 public `SKILL.md` folders:
+one umbrella workflow (`suede-workflow-skills`), 20 workflow skills
+(`johnny-suede-write`, `johnny-suede-design`, `suede-full-send`, `suede-code`,
+`suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`,
+`suede-agent-teams`, `suede-codex-fleet`, `suede-ship-gate`,
+`suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
+`suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
+`suede-mcp-qa`, `site-to-ios-app`, `android-app-factory`), 5 creator skills
+(`suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`,
+`suede-rights-passport`, `suede-rights-audit`), and 2 consumer-recovery skills
+(`amazon-returns-recovery`, `subscription-recovery`).
 
 ## GitHub Pages Copy
 
 ### Page title
 
-Suede Creator Skills | 27 Open-Source Agent Skills
+Suede Creator Skills | 28 Open-Source Agent Skills
 
 ### Meta description
 
-Install 27 free open-source Claude Code and Codex skills for code review, CI
-ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and creator
-workflows.
+Install 28 free open-source Claude Code and Codex skills for Full Send, code
+review, CI ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and
+creator workflows.
 
 ### Hero
 
@@ -77,18 +86,19 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 27-skill Suede pack that gives agents portable context: linked
-preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
+Install the 28-skill Suede pack that gives agents portable context: Full Send,
+linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
 CTA grades, A-F code review, coordinated agent teams, install-path checks,
 iOS/Android app shipping, artist campaigns, and music/IP workflows.
 
 ### Hero proof line
 
-Invoke Johnny Suede Write, Design/Create, or Code and the agent gets the whole
+Invoke `suede-workflow-skills` when the agent should route across the whole
 workflow: taste, copy, SEO/AEO/GEO/AI EO, schema checks, code review, project
 grades, MCP scaffolds, iOS packaging, music/IP prep, and the Cue Suede feedback
-loop.
+loop. Invoke Johnny Suede Write, Design/Create, or Suede Code when you want one
+exact lane.
 
 ### Primary CTA
 
@@ -431,6 +441,9 @@ mobile and product surfaces, product screenshots, visual QA, company voice, and
 copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
 `suede-code` when a change needs code review and A-F grading. Prompted only.
+Run `suede-full-send` when the user explicitly wants maximum useful effort,
+max agents, adversarial review, or a broad authorized outcome finished
+end-to-end.
 Run `suede-ship-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
@@ -438,10 +451,10 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### Short post
 
-Suede Creator Skills are live: 27 public agent skills for design, copywriting,
-AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility grading, code
-review, CI gating, iOS/Android app shipping, launch packaging, artist
-campaigns, and creator rights workflows.
+Suede Creator Skills are live: 28 public agent skills for Full Send, design,
+copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
+grading, code review, CI gating, iOS/Android app shipping, launch packaging,
+artist campaigns, and creator rights workflows.
 
 Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
 
@@ -506,12 +519,3 @@ Use these lines when the copy needs a safety guard:
 - The scripts skip hidden files, dependency folders, build outputs, caches, and
   secret-like files by default.
 - Unknown rights facts stay marked as unknown.
-
-## Copy Score
-
-Directness: 9/10  
-Rhythm: 9/10  
-Trust: 10/10  
-Specificity: 9/10  
-Density: 9/10  
-Total: 46/50

@@ -219,7 +219,13 @@ function runReservedSequencePreflight(files) {
       continue;
     }
     if (!PUBLIC_TEXT_EXTENSIONS.has(path.extname(file).toLowerCase())) continue;
-    const text = readText(file);
+    let text;
+    try {
+      text = readText(file);
+    } catch (error) {
+      if (error?.code === "ENOENT") continue;
+      throw error;
+    }
     if (containsReservedSequence(text) || containsReservedBodySignature(text)) {
       findings.push(digestText(relative).slice(0, 12));
     }
@@ -360,6 +366,14 @@ function openaiYamlStructureIssues(text, skillName, skillDir) {
     }
     if (
       typeof parsed.interface.default_prompt === "string" &&
+      parsed.interface.default_prompt.length > 1024
+    ) {
+      issues.push(
+        `interface.default_prompt is ${parsed.interface.default_prompt.length} characters; maximum is 1024`
+      );
+    }
+    if (
+      typeof parsed.interface.default_prompt === "string" &&
       !parsed.interface.default_prompt.includes(`$${skillName}`)
     ) {
       issues.push(`interface.default_prompt must explicitly reference $${skillName}`);
@@ -444,6 +458,17 @@ const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")))
 const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
 const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
+const codexPluginPath = path.join(repoRoot, ".codex-plugin", "plugin.json");
+const codexPluginJson = fs.existsSync(codexPluginPath)
+  ? JSON.parse(readText(codexPluginPath))
+  : null;
+const codexMarketplacePath = path.join(repoRoot, ".agents", "plugins", "marketplace.json");
+const codexMarketplaceJson = fs.existsSync(codexMarketplacePath)
+  ? JSON.parse(readText(codexMarketplacePath))
+  : null;
+const citationText = readText(path.join(repoRoot, "CITATION.cff"));
+const citationVersion = citationText.match(/^version:\s*["']?([^"'#\s]+)["']?\s*$/m)?.[1] ?? null;
+const citationReleaseDate = citationText.match(/^date-released:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m)?.[1] ?? null;
 
 if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
   fail.push(`catalog.json version is not valid semantic versioning: ${catalog.version}`);
@@ -453,6 +478,96 @@ if (packageJson.version !== catalog.version) {
 }
 if (pluginJson.version !== catalog.version) {
   fail.push(`plugin.json version (${pluginJson.version}) does not match catalog.json version (${catalog.version})`);
+}
+if (citationVersion !== catalog.version) {
+  fail.push(`CITATION.cff version (${citationVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
+}
+if (citationReleaseDate !== catalog.updated) {
+  fail.push(`CITATION.cff date-released (${citationReleaseDate || "missing"}) does not match catalog.json updated (${catalog.updated})`);
+}
+if (!codexPluginJson) {
+  fail.push(".codex-plugin/plugin.json is missing");
+} else {
+  if (codexPluginJson.name !== pluginJson.name) {
+    fail.push(`Codex plugin name (${codexPluginJson.name}) does not match Claude plugin name (${pluginJson.name})`);
+  }
+  if (codexPluginJson.version !== catalog.version) {
+    fail.push(`Codex plugin version (${codexPluginJson.version}) does not match catalog.json version (${catalog.version})`);
+  }
+  if (codexPluginJson.skills !== "./skills/") {
+    fail.push('Codex plugin skills path must be "./skills/"');
+  }
+  const codexMcpServers = codexPluginJson.mcpServers;
+  const expectedCodexMcpProfiles = {
+    suede_creator_mcp: "creator",
+    suede_workflow_mcp: "workflow",
+  };
+  if (!isObject(codexMcpServers)) {
+    fail.push("Codex plugin mcpServers must be an inline object with root-relative paths");
+  } else {
+    const actualServerNames = Object.keys(codexMcpServers).sort();
+    const expectedServerNames = Object.keys(expectedCodexMcpProfiles).sort();
+    if (JSON.stringify(actualServerNames) !== JSON.stringify(expectedServerNames)) {
+      fail.push(`Codex plugin MCP servers must be exactly: ${expectedServerNames.join(", ")}`);
+    }
+    if (JSON.stringify(codexMcpServers).includes("CLAUDE_PLUGIN_ROOT")) {
+      fail.push("Codex plugin MCP config must not contain Claude-only path variables");
+    }
+    for (const [serverName, profile] of Object.entries(expectedCodexMcpProfiles)) {
+      const server = codexMcpServers[serverName];
+      if (!isObject(server)) continue;
+      if (server.cwd !== "." || server.command !== "node") {
+        fail.push(`Codex plugin MCP server ${serverName} must use cwd "." and command "node"`);
+      }
+      const expectedArgs = ["./mcp/suede-skills-mcp.mjs", "--profile", profile];
+      if (JSON.stringify(server.args) !== JSON.stringify(expectedArgs)) {
+        fail.push(`Codex plugin MCP server ${serverName} has non-portable args`);
+      }
+    }
+  }
+  const codexInterface = codexPluginJson.interface;
+  for (const field of ["displayName", "shortDescription", "longDescription", "developerName", "category"]) {
+    if (!isObject(codexInterface) || typeof codexInterface[field] !== "string" || !codexInterface[field].trim()) {
+      fail.push(`Codex plugin interface.${field} must be a non-empty string`);
+    }
+  }
+  const defaultPrompts = codexInterface?.defaultPrompt;
+  if (
+    !Array.isArray(defaultPrompts) ||
+    defaultPrompts.length < 1 ||
+    defaultPrompts.length > 3 ||
+    defaultPrompts.some((prompt) => typeof prompt !== "string" || !prompt.trim() || prompt.length > 128)
+  ) {
+    fail.push("Codex plugin interface.defaultPrompt must contain 1-3 non-empty strings of at most 128 characters");
+  }
+}
+if (!codexMarketplaceJson) {
+  fail.push(".agents/plugins/marketplace.json is missing");
+} else {
+  if (codexMarketplaceJson.name !== "suede-codex") {
+    fail.push('Codex marketplace name must be "suede-codex"');
+  }
+  if (
+    !Array.isArray(codexMarketplaceJson.plugins) ||
+    codexMarketplaceJson.plugins.length !== 1
+  ) {
+    fail.push("Codex marketplace must expose exactly one plugin");
+  } else {
+    const [codexMarketplacePlugin] = codexMarketplaceJson.plugins;
+    if (!isObject(codexMarketplacePlugin)) {
+      fail.push("Codex marketplace plugin must be a mapping");
+    } else {
+      if (codexMarketplacePlugin.name !== codexPluginJson?.name) {
+        fail.push("Codex marketplace plugin must match .codex-plugin/plugin.json");
+      }
+      if (codexMarketplacePlugin.source !== "./") {
+        fail.push('Codex marketplace plugin source must be "./"');
+      }
+      if ("skills" in codexMarketplacePlugin || "mcpServers" in codexMarketplacePlugin) {
+        fail.push("Codex marketplace must defer component discovery to the root plugin manifest");
+      }
+    }
+  }
 }
 if (new Set(catalogSkillNames).size !== catalogSkillNames.length) {
   fail.push("mcp/catalog.json contains duplicate skill names");
@@ -489,6 +604,11 @@ if (!fs.existsSync(versionFile)) {
 }
 
 const docsIndexText = readText(path.join(repoRoot, "docs", "skills", "index.html"));
+const mcpQaText = readText(path.join(repoRoot, "skills", "suede-mcp-qa", "SKILL.md"));
+const mcpQaExpectedVersion = mcpQaText.match(/server version\s*\n`([^`]+)`/)?.[1] ?? null;
+if (mcpQaExpectedVersion !== catalog.version) {
+  fail.push(`suede-mcp-qa manual readback version (${mcpQaExpectedVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
+}
 const requiredDocsPages = new Set([
   "johnny-suede-design",
   "johnny-suede-write",
@@ -768,11 +888,12 @@ const countChecks = [
   { file: "docs/skills/suede-workflow-skills.html", label: "lead paragraph", re: /route the agent across all (\d+) Suede skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "folders heading", re: /<h2>All (\d+) public skill folders<\/h2>/, expected: totalSkillCount },
   { file: ".claude-plugin/plugin.json", label: "description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
+  { file: ".codex-plugin/plugin.json", label: "description", re: /Twenty-(\w+) public Suede skills/, expected: totalSkillCount, wordNumber: true },
   { file: "mcp/catalog.json", label: "umbrella description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/SKILL.md", label: "frontmatter description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
   { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
-  { file: "PROMO.md", label: "companion skill count", re: /Twenty-(\w+) public Suede skills, led by one/, expected: companionSkillCount, wordNumber: true },
+  { file: "PROMO.md", label: "companion skill count", re: /with twenty-(\w+) companion skills/, expected: companionSkillCount, wordNumber: true },
   { file: "PROMO.md", label: "README intro pack size", re: /public (\d+)-skill agent workflow pack/, expected: totalSkillCount },
 ];
 
@@ -803,9 +924,9 @@ if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);
 }
 
-// Ship-log changelog guard: the homepage #changelog section cites real commits
-// by short hash and stamps a "Last shipped" freshness pill. A fabricated hash,
-// a stale pill, or an out-of-order entry would ship a page that quietly lies
+// Release-log guard: the homepage #changelog section cites real commits by
+// short hash and stamps the current version's release date. A fabricated hash,
+// stale release pill, or out-of-order entry would ship a page that quietly lies
 // about the repo's own history — fail the build instead.
 const clogItems = [...docsRootText.matchAll(/<li class="clog-item"[^>]*>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
 if (clogItems.length === 0) {
@@ -846,21 +967,25 @@ if (clogItems.length === 0) {
     }
   }
 
-  const freshMatch = docsRootText.match(/Last shipped ([^<]+?)\s*<span id="clog-fresh-rel"[^>]*data-iso="(\d{4}-\d{2}-\d{2})"/);
+  const freshMatch = docsRootText.match(/Version ([^\s]+) released ([^<]+?)\s*<span id="clog-fresh-rel"[^>]*data-iso="(\d{4}-\d{2}-\d{2})"/);
   if (!freshMatch) {
-    fail.push('docs/index.html: could not find the "Last shipped" pill (id="clog-fresh-rel" with a data-iso date)');
+    fail.push('docs/index.html: could not find the versioned release pill (id="clog-fresh-rel" with a data-iso date)');
   } else {
-    const pillText = freshMatch[1].trim();
-    const pillIso = freshMatch[2];
+    const pillVersion = freshMatch[1].trim();
+    const pillText = freshMatch[2].trim();
+    const pillIso = freshMatch[3];
     const newestDate = clogEntries.map((e) => e.date).filter(Boolean).sort().at(-1);
+    if (pillVersion !== catalog.version) {
+      fail.push(`docs/index.html release pill version (${pillVersion}) does not match catalog version (${catalog.version})`);
+    }
     if (newestDate && pillIso !== newestDate) {
-      fail.push(`docs/index.html "Last shipped" pill data-iso (${pillIso}) does not match the newest changelog entry date (${newestDate})`);
+      fail.push(`docs/index.html release pill data-iso (${pillIso}) does not match the newest changelog entry date (${newestDate})`);
     }
     const monthAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const [y, m, d] = pillIso.split("-").map(Number);
     const expectedPillText = `${monthAbbr[m - 1]} ${d}, ${y}`;
     if (pillText !== expectedPillText) {
-      fail.push(`docs/index.html "Last shipped" pill text ("${pillText}") does not match its data-iso ${pillIso} (expected "${expectedPillText}")`);
+      fail.push(`docs/index.html release pill text ("${pillText}") does not match its data-iso ${pillIso} (expected "${expectedPillText}")`);
     }
   }
 
@@ -891,14 +1016,14 @@ if (clogItems.length === 0) {
       fail.push(`${page.file}: tiny ship-log box (id="hero-shiplog") is missing`);
       continue;
     }
-    const top = box[0].match(/class="hero-shiplog-top">Shipped ([A-Z][a-z]{2} \d{1,2}) <b>&middot; ([0-9a-f]{7,40})<\/b>/);
+    const top = box[0].match(/class="hero-shiplog-top">Released ([A-Z][a-z]{2} \d{1,2}) <b>&middot; ([0-9a-f]{7,40})<\/b>/);
     const title = (box[0].match(/class="hero-shiplog-title">([^<]+)</) || [])[1]?.trim() ?? null;
     const commits = (box[0].match(/class="hero-shiplog-more">(\d+) commits/) || [])[1] ?? null;
     if (!top) {
-      fail.push(`${page.file}: tiny ship-log box header is malformed (expected 'Shipped Mon D <b>&middot; hash</b>')`);
+      fail.push(`${page.file}: tiny release-log box header is malformed (expected 'Released Mon D <b>&middot; hash</b>')`);
     } else {
       if (expectedBoxDate && top[1] !== expectedBoxDate) {
-        fail.push(`${page.file}: tiny ship-log box says "Shipped ${top[1]}" but the newest changelog entry is ${newestClogDate} (expected "Shipped ${expectedBoxDate}")`);
+        fail.push(`${page.file}: tiny release-log box says "Released ${top[1]}" but the newest changelog entry is ${newestClogDate} (expected "Released ${expectedBoxDate}")`);
       }
       if (newestClogHash && top[2] !== newestClogHash) {
         fail.push(`${page.file}: tiny ship-log box cites ${top[2]} but the newest changelog entry is ${newestClogHash}`);
@@ -921,6 +1046,16 @@ if (clogItems.length === 0) {
   const sparkCaption = (docsRootText.match(/class="clog-spark-caption[^"]*">(\d+) commits/) || [])[1] ?? null;
   if (sparkCaption && boxCounts[0] && sparkCaption !== boxCounts[0].commits) {
     fail.push(`docs/index.html sparkline caption says ${sparkCaption} commits but the tiny ship-log boxes say ${boxCounts[0].commits}`);
+  }
+
+  const releaseClogItem = clogItems.find((item) => item.includes(`Version ${catalog.version}`));
+  if (!releaseClogItem) {
+    fail.push(`docs/index.html changelog has no release entry for catalog version ${catalog.version}`);
+  } else {
+    const releaseDate = releaseClogItem.match(/class="clog-date">(\d{4}-\d{2}-\d{2})</)?.[1] ?? null;
+    if (releaseDate !== catalog.updated) {
+      fail.push(`docs/index.html release entry for ${catalog.version} is dated ${releaseDate || "missing"}, expected catalog updated date ${catalog.updated}`);
+    }
   }
 }
 

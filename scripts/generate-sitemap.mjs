@@ -21,6 +21,30 @@ const checkOnly = process.argv.includes("--check");
 
 const BASE_URL = "https://jasoncolapietro.github.io/suede-creator-skills";
 
+function ownsGitHistory() {
+  const result = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "--show-toplevel"],
+    { encoding: "utf8" }
+  );
+  if (result.status !== 0) return false;
+  return path.resolve(result.stdout.trim()) === repoRoot;
+}
+
+const hasOwnGitHistory = ownsGitHistory();
+
+function hasCompleteHistory() {
+  if (!hasOwnGitHistory) return false;
+  const result = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "--is-shallow-repository"],
+    { encoding: "utf8" }
+  );
+  return result.status === 0 && result.stdout.trim() === "false";
+}
+
+const canVerifyGitDates = hasCompleteHistory();
+
 // Priority is an editorial signal, not something derivable from disk, so it
 // stays a deliberate list. Anything not named here (including every new
 // skill page dropped into docs/skills/) defaults to the tier below rather
@@ -69,6 +93,17 @@ function isNoindex(absPath) {
 }
 
 function lastCommitDate(relPath) {
+  if (!hasOwnGitHistory) {
+    return new Date().toISOString().slice(0, 10);
+  }
+  const status = spawnSync(
+    "git",
+    ["-C", repoRoot, "status", "--porcelain", "--", relPath],
+    { encoding: "utf8" }
+  );
+  if (status.status === 0 && status.stdout.trim()) {
+    return new Date().toISOString().slice(0, 10);
+  }
   const result = spawnSync(
     "git",
     ["-C", repoRoot, "log", "-1", "--format=%ad", "--date=short", "--", relPath],
@@ -166,6 +201,13 @@ const generated = renderXml(entries);
 const current = fs.existsSync(sitemapPath) ? readText(sitemapPath) : "";
 
 if (checkOnly) {
+  if (!canVerifyGitDates) {
+    const reason = hasOwnGitHistory
+      ? "shallow checkout has incomplete Git history"
+      : "packaged checkout has no repository-local Git history";
+    console.log(`Sitemap freshness check skipped: ${reason}.`);
+    process.exit(0);
+  }
   if (generated !== current) {
     console.error(
       `docs/sitemap.xml is out of date (${entries.length} URLs expected). Run: node scripts/generate-sitemap.mjs`

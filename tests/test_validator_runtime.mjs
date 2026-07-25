@@ -3,7 +3,8 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
+import readline from "node:readline";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import test from "node:test";
 
@@ -14,6 +15,7 @@ const shallowProbe = hasSourceCheckout
   ? spawnSync("git", ["-C", repoRoot, "rev-parse", "--is-shallow-repository"], { encoding: "utf8" })
   : null;
 const hasCompleteSourceHistory = shallowProbe?.status === 0 && shallowProbe.stdout.trim() === "false";
+const codexAvailable = spawnSync("codex", ["--version"], { encoding: "utf8" }).status === 0;
 const sourceCheckoutTest = hasSourceCheckout
   ? {}
   : { skip: "requires the source checkout Git history" };
@@ -34,6 +36,65 @@ function runValidator(targetRoot, extraEnv = {}) {
       env: { ...process.env, NODE_PATH: nodePath, ...extraEnv }
     }
   );
+}
+
+function startCodexAppServer(t) {
+  const child = spawn("codex", ["app-server", "--stdio"], {
+    cwd: repoRoot,
+    stdio: ["pipe", "pipe", "pipe"]
+  });
+  const lines = readline.createInterface({ input: child.stdout });
+  const pending = new Map();
+  let nextId = 1;
+  let stderr = "";
+
+  child.stderr.on("data", (chunk) => {
+    stderr = `${stderr}${chunk}`.slice(-20000);
+  });
+  lines.on("line", (line) => {
+    let message;
+    try {
+      message = JSON.parse(line);
+    } catch {
+      return;
+    }
+    const entry = pending.get(message.id);
+    if (!entry) return;
+    pending.delete(message.id);
+    clearTimeout(entry.timeout);
+    if (message.error) entry.reject(new Error(JSON.stringify(message.error)));
+    else entry.resolve(message.result);
+  });
+  child.on("exit", (code, signal) => {
+    for (const entry of pending.values()) {
+      clearTimeout(entry.timeout);
+      entry.reject(
+        new Error(
+          `codex app-server exited (${code ?? signal ?? "unknown"})\n${stderr}`
+        )
+      );
+    }
+    pending.clear();
+  });
+
+  t.after(() => {
+    lines.close();
+    if (child.exitCode === null) child.kill("SIGTERM");
+  });
+
+  function request(method, params) {
+    const id = nextId++;
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        pending.delete(id);
+        reject(new Error(`${method} timed out\n${stderr}`));
+      }, 20000);
+      pending.set(id, { reject, resolve, timeout });
+      child.stdin.write(`${JSON.stringify({ id, method, params })}\n`);
+    });
+  }
+
+  return { request };
 }
 
 function removePathsMissingFromSource(sourceRoot, targetRoot, relative = "") {
@@ -173,6 +234,173 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
     new RegExp(`plugin\\.json version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
   );
 });
+
+test("packaged validation rejects Codex plugin version and MCP portability drift", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-codex-version-");
+  const pluginPath = path.join(packagedRoot, ".codex-plugin", "plugin.json");
+  const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
+  plugin.version = "9.9.9";
+  plugin.mcpServers.suede_creator_mcp.cwd = "${CLAUDE_PLUGIN_ROOT}";
+  fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
+
+  const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
+  const catalogVersion = JSON.parse(fs.readFileSync(catalogPath, "utf8")).version;
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(
+    validation.stderr,
+    new RegExp(`Codex plugin version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
+  );
+  assert.match(
+    validation.stderr,
+    /Codex plugin MCP config must not contain Claude-only path variables/
+  );
+});
+
+test("packaged validation rejects MCP QA and release metadata drift", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-release-drift-");
+  const mcpQaPath = path.join(packagedRoot, "skills", "suede-mcp-qa", "SKILL.md");
+  const mcpQa = fs.readFileSync(mcpQaPath, "utf8").replace(
+    /server version\s*\n`[^`]+`/,
+    "server version\n`9.9.9`"
+  );
+  fs.writeFileSync(mcpQaPath, mcpQa);
+
+  const citationPath = path.join(packagedRoot, "CITATION.cff");
+  const citation = fs.readFileSync(citationPath, "utf8").replace(
+    /^date-released:\s*\d{4}-\d{2}-\d{2}$/m,
+    "date-released: 2099-01-01"
+  );
+  fs.writeFileSync(citationPath, citation);
+
+  const docsPath = path.join(packagedRoot, "docs", "index.html");
+  const docs = fs.readFileSync(docsPath, "utf8");
+  const catalog = JSON.parse(
+    fs.readFileSync(path.join(packagedRoot, "mcp", "catalog.json"), "utf8")
+  );
+  const poisonedDocs = docs.replace(
+    `<p class="clog-detail">Version ${catalog.version}`,
+    `<p class="clog-detail">Release ${catalog.version}`
+  );
+  assert.notEqual(poisonedDocs, docs, "test fixture must remove the release-version marker");
+  fs.writeFileSync(docsPath, poisonedDocs);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /suede-mcp-qa manual readback version \(9\.9\.9\)/);
+  assert.match(validation.stderr, /CITATION\.cff date-released \(2099-01-01\)/);
+  assert.match(validation.stderr, /changelog has no release entry for catalog version/);
+});
+
+test("packaged validation rejects additional Codex marketplace entries", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-codex-marketplace-");
+  const marketplacePath = path.join(packagedRoot, ".agents", "plugins", "marketplace.json");
+  const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
+  marketplace.plugins.push({
+    name: "suede-code",
+    source: "./",
+    skills: ["./skills/suede-code"]
+  });
+  fs.writeFileSync(marketplacePath, `${JSON.stringify(marketplace, null, 2)}\n`);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /Codex marketplace must expose exactly one plugin/);
+});
+
+test("packaged validation rejects an OpenAI skill default prompt over 1024 characters", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-default-prompt-");
+  const manifestPath = path.join(
+    packagedRoot,
+    "skills",
+    "suede-launch-packaging",
+    "agents",
+    "openai.yaml"
+  );
+  const manifest = fs.readFileSync(manifestPath, "utf8");
+  const oversizedPrompt = `Use $suede-launch-packaging ${"x".repeat(1024)}`;
+  const poisoned = manifest.replace(
+    /  default_prompt: \|[\s\S]*?(?=^policy:)/m,
+    `  default_prompt: ${JSON.stringify(oversizedPrompt)}\n`
+  );
+  assert.notEqual(poisoned, manifest, "test fixture must replace the default prompt");
+  fs.writeFileSync(manifestPath, poisoned);
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(
+    validation.stderr,
+    /interface\.default_prompt is \d+ characters; maximum is 1024/
+  );
+});
+
+test(
+  "Codex discovers only the full public entry and reads its complete runtime inventory",
+  { skip: codexAvailable ? false : "codex CLI is unavailable" },
+  async (t) => {
+    const marketplacePath = path.join(repoRoot, ".agents", "plugins", "marketplace.json");
+    const { request } = startCodexAppServer(t);
+    await request("initialize", {
+      clientInfo: {
+        name: "suede-plugin-runtime-test",
+        title: "Suede plugin runtime test",
+        version: "0.1.0"
+      }
+    });
+
+    const listed = await request("plugin/list", {
+      cwds: [repoRoot],
+      marketplaceKinds: ["local"]
+    });
+    const repoMarketplaces = listed.marketplaces.filter(
+      ({ path: discoveredPath }) =>
+        discoveredPath && path.resolve(discoveredPath).startsWith(`${repoRoot}${path.sep}`)
+    );
+    assert.deepEqual(
+      repoMarketplaces.map(({ path: discoveredPath }) => path.resolve(discoveredPath)),
+      [marketplacePath],
+      JSON.stringify(
+        listed.marketplaces.map(({ name, path: discoveredPath, plugins }) => ({
+          name,
+          path: discoveredPath,
+          plugins: plugins.map(({ name: pluginName }) => pluginName)
+        }))
+      )
+    );
+    assert.deepEqual(
+      repoMarketplaces[0].plugins.map(({ name }) => name),
+      ["suede-skills"]
+    );
+
+    const { plugin } = await request("plugin/read", {
+      marketplacePath,
+      pluginName: "suede-skills"
+    });
+    const expectedSkills = fs
+      .readdirSync(path.join(repoRoot, "skills"), { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => `suede-skills:${entry.name}`)
+      .sort();
+    assert.deepEqual(
+      plugin.skills.map(({ name }) => name).sort(),
+      expectedSkills
+    );
+    assert.deepEqual(
+      [...plugin.mcpServers].sort(),
+      ["suede_creator_mcp", "suede_workflow_mcp"]
+    );
+    const launchPackaging = plugin.skills.find(
+      ({ name }) => name === "suede-skills:suede-launch-packaging"
+    );
+    assert.equal(typeof launchPackaging?.interface?.defaultPrompt, "string");
+    assert.ok(launchPackaging.interface.defaultPrompt.length <= 1024);
+  }
+);
 
 test("validator rejects a nonexistent changelog hash in a full-history checkout", completeSourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-full-"));

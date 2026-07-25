@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Install Suede Creator Skills | Claude Code, Codex, and MCP</title>
-  <meta name="description" content="Install all 27 Suede Creator Skills for Claude Code, Codex, and 25+ agents. Add the optional MCP for discovery, audits, grading, and QA.">
+  <meta name="description" content="Install all 28 Suede Creator Skills for Claude Code, Codex, and other supported agents. Add the optional MCP for discovery, audits, grading, and QA.">
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
@@ -13,11 +13,11 @@
   <meta property="og:title" content="Install Suede Creator Skills | Claude Code, Codex, and MCP">
   <meta property="og:description" content="Public GitHub skill installs for Claude Code and Codex, plus MCP options for skill discovery, Suedify, design, anti-slop copywriting, visibility grading, Suede SEO/AEO/AI EO audits, and QA checklists.">
   <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/plugins.html">
-  <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+  <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image-v2.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Install Suede Creator Skills | Claude Code, Codex, and MCP">
   <meta name="twitter:description" content="Install public Suede skills for Claude Code and Codex from GitHub and use the bundled MCP for discovery, visibility grading, code grading, SEO/AEO/AI EO copy audits, and QA.">
-  <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image.png">
+  <meta name="twitter:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image-v2.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -290,12 +290,12 @@
   <div class="shell page-head">
     <p class="eyebrow">Public installs and MCP</p>
     <h1>Install Suede once. Stop rebuilding the agent brief.</h1>
-    <p class="lead">Twenty-seven public skills your agent can load as one workflow. Install the umbrella to Suedify a target page from a reference URL, rewrite copy, grade visibility, review code A-F, design AI evals, get a scored next-action recommendation, ship an iOS or Android app, coordinate agent teams, or package creator campaign and rights evidence. Use MCP when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
+    <p class="lead">Twenty-eight public skills your agent can load as one workflow. Use <a href="./skills/suede-full-send.html">Suede Full Send</a> for broad, authorized outcomes that need one controller, useful non-colliding lanes, adversarial review, and proof. Install the umbrella to Suedify a target page from a reference URL, rewrite copy, grade visibility, review code A-F, design AI evals, ship an iOS or Android app, coordinate agent teams, or package creator campaign and rights evidence. Use MCP when the agent needs structured discovery, install options, audit scaffolds, or QA checklists.</p>
   </div>
 
   <section class="shell" id="claude-code">
     <h2>Claude Code — two lines</h2>
-    <p class="section-sub">Add the marketplace, install the pack. <code>suede-skills</code> installs all 27 skills.</p>
+    <p class="section-sub">Add the marketplace, install the pack. <code>suede-skills</code> installs all 28 skills.</p>
 
     <div class="terminal">
       <div class="terminal-bar" aria-hidden="true">
@@ -311,7 +311,7 @@
 
     <div class="prose">
       <p>Want less than the full pack? Two focused subsets install the same way: <code>/plugin install suede-agent-workflows@suede</code> (orchestration, workflows, evals) or <code>/plugin install suede-code@suede</code> (review, grade, ship-gate).</p>
-      <p>Prefer a clone? <code>install.sh</code> copies all 27 skills into <code>~/.claude/skills/</code> and never touches skills that are not part of the pack:</p>
+      <p>Prefer a clone? <code>install.sh</code> copies all 28 skills into <code>~/.claude/skills/</code> and never touches skills that are not part of the pack:</p>
     </div>
 
     <div class="terminal">
@@ -326,7 +326,7 @@
     </div>
 
     <div class="prose">
-      <p>Using Cursor, Copilot, Windsurf, or another agent? The open <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> installs the pack into 25+ agents, Claude Code and Codex included:</p>
+      <p>Using Cursor, Copilot, Windsurf, or another agent? The open <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> installs the pack into its supported agents, Claude Code and Codex included:</p>
     </div>
 
     <div class="terminal">
@@ -346,8 +346,24 @@
   </section>
 
   <section class="shell" id="codex">
-    <h2>Codex — pick your set</h2>
-    <p class="section-sub">Codex installs any skill folder from GitHub with its built-in skill installer. Skills land in <code>~/.codex/skills</code> (or <code>$CODEX_HOME/skills</code>). Restart Codex after installing.</p>
+    <h2>Codex — install the pack or pick your set</h2>
+    <p class="section-sub">The Codex-native plugin installs all 28 skills and registers both read-only MCP discovery profiles. Add the repo marketplace, install the pack, then restart Codex.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">codex plugin</span>
+      </div>
+      <div class="terminal-body">
+        <pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
+codex plugin add suede-skills@suede-codex</code></pre>
+        <button class="copy-btn" data-copy="codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main&#10;codex plugin add suede-skills@suede-codex">Copy</button>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Want only selected skills? Codex can also install any public skill folder from GitHub. Direct skill installs land in <code>~/.codex/skills</code> (or <code>$CODEX_HOME/skills</code>).</p>
+    </div>
 
     <div class="grid-3">
       <article class="cell">
@@ -365,6 +381,7 @@
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design \
   skills/johnny-suede-write \
+  skills/suede-full-send \
   skills/suede-code \
   skills/suede-agent-teams \
   skills/suede-codex-fleet \
@@ -391,7 +408,8 @@
     </div>
 
     <div class="btn-row">
-      <a class="btn btn--gold" href="./skills/">Browse all 27 skills</a>
+      <a class="btn btn--gold" href="./skills/">Browse all 28 skills</a>
+      <a class="btn" href="./skills/suede-full-send.html">Full Send docs</a>
       <a class="btn" href="./skills/suede-code-grader.html">Code grader docs</a>
       <a class="btn" href="./skills/suede-visibility-grader.html">Visibility grader docs</a>
     </div>
@@ -451,11 +469,11 @@
 
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
-        <p class="ship-strip-head">Stop shipping on vibes.</p>
-        <p class="ship-strip-sub">One command installs all 27 skills. Read any of them first; they're plain Markdown.</p>
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
         <div class="ship-strip-row">
-          <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
-          <a href="./skills/">Browse all 27 skills</a>
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="./skills/">Browse all 28 skills</a>
         </div>
       </div>
     </section>

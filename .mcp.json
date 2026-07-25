@@ -10,6 +10,17 @@
         "--profile",
         "creator"
       ]
+    },
+    "suede_workflow_mcp": {
+      "title": "Suede Workflow Skills MCP",
+      "description": "Local MCP access to Suede workflow skills, install options, audits, grading scaffolds, and QA checklists.",
+      "cwd": "${CLAUDE_PLUGIN_ROOT}",
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "workflow"
+      ]
     }
   }
 }

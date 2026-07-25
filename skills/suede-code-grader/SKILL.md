@@ -1,6 +1,6 @@
 ---
 name: suede-code-grader
-description: "Give a blunt A-F ship verdict for a code change across correctness, security, data, UX, verification, and deploy readiness."
+description: "Give a blunt A-F ship grade for a code change across correctness, security, data, UX, verification, and deploy readiness. Use for a grade, not a findings review."
 ---
 
 # Suede Code Grader

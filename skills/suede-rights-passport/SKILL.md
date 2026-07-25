@@ -1,6 +1,6 @@
 ---
 name: suede-rights-passport
-description: "Package creative projects into evidence-scoped rights handoffs with normalized works, recordings, releases, parties, identifiers, claims, licenses, consent, provenance, privacy, and validation."
+description: "Package creative projects into an evidence-scoped rights handoff with normalized works, recordings, releases, parties, identifiers, claims, licenses, consent, provenance, privacy, and validation."
 ---
 
 # Creator Rights Package Builder

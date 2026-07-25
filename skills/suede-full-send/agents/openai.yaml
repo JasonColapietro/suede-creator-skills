@@ -1,0 +1,4 @@
+interface:
+  display_name: "Suede Full Send"
+  short_description: "Outcome-bound orchestration with concise proof"
+  default_prompt: "Use $suede-full-send to drive this authorized outcome end to end with one controller, every useful non-colliding lane, strong reasoning on consequential calls, and concise proof."

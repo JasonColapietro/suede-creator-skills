@@ -11,6 +11,10 @@ const SERVER = path.join(ROOT, "mcp", "suede-skills-mcp.mjs");
 const VALIDATOR = path.join(ROOT, "scripts", "validate-skill-pack.mjs");
 const CI_WORKFLOW = path.join(ROOT, ".github", "workflows", "skill-pack-ci.yml");
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, "mcp", "catalog.json"), "utf8"));
+const MCP_CONFIG = JSON.parse(fs.readFileSync(path.join(ROOT, ".mcp.json"), "utf8"));
+const CODEX_PLUGIN = JSON.parse(
+  fs.readFileSync(path.join(ROOT, ".codex-plugin", "plugin.json"), "utf8")
+);
 const REQUEST_TIMEOUT_MS = 3000;
 
 class McpSession {
@@ -253,6 +257,10 @@ test("CI whitespace gate compares the event commit range", () => {
 });
 
 test("catalog, resources, prompts, and profile filters match the live server", async () => {
+  assert.equal(CATALOG.mcp.tools.length, 7);
+  assert.equal(CATALOG.mcp.resources.length, 6);
+  assert.equal(CATALOG.mcp.prompts.length, 5);
+
   await withSession(async (session) => {
     await session.initialize();
     const resources = await session.request("resources/list", {});
@@ -285,7 +293,78 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     });
     assert.ok(response.result.structuredContent.skills.length > 0);
     assert.ok(response.result.structuredContent.skills.every((skill) => ["artist", "creator"].includes(skill.area)));
+    assert.ok(!response.result.structuredContent.skills.some((skill) => skill.name === "suede-full-send"));
   }, "creator");
+
+  await withSession(async (session) => {
+    await session.initialize();
+    const response = await session.request("tools/call", {
+      name: "list_suede_skills",
+      arguments: { area: "all" }
+    });
+    assert.ok(response.result.structuredContent.skills.every((skill) => skill.area === "workflow"));
+    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-full-send"));
+
+    const fullSend = await session.request("tools/call", {
+      name: "get_suede_skill",
+      arguments: { name: "suede-full-send" }
+    });
+    assert.equal(fullSend.result.structuredContent.found, true);
+    assert.match(
+      fullSend.result.structuredContent.skill.useWhen,
+      /never end your allocation above zero/
+    );
+  }, "workflow");
+});
+
+test("Claude and Codex MCP registrations retain both portable profiles", () => {
+  const creator = MCP_CONFIG.mcpServers.suede_creator_mcp;
+  const workflow = MCP_CONFIG.mcpServers.suede_workflow_mcp;
+  assert.ok(creator);
+  assert.ok(workflow);
+  assert.deepEqual(creator.args.slice(-2), ["--profile", "creator"]);
+  assert.deepEqual(workflow.args.slice(-2), ["--profile", "workflow"]);
+  assert.equal(creator.command, "node");
+  assert.equal(workflow.command, "node");
+  assert.equal(creator.cwd, "${CLAUDE_PLUGIN_ROOT}");
+  assert.equal(workflow.cwd, "${CLAUDE_PLUGIN_ROOT}");
+
+  const codexCreator = CODEX_PLUGIN.mcpServers.suede_creator_mcp;
+  const codexWorkflow = CODEX_PLUGIN.mcpServers.suede_workflow_mcp;
+  assert.deepEqual(codexCreator.args, [
+    "./mcp/suede-skills-mcp.mjs",
+    "--profile",
+    "creator"
+  ]);
+  assert.deepEqual(codexWorkflow.args, [
+    "./mcp/suede-skills-mcp.mjs",
+    "--profile",
+    "workflow"
+  ]);
+  assert.equal(codexCreator.cwd, ".");
+  assert.equal(codexWorkflow.cwd, ".");
+  assert.doesNotMatch(JSON.stringify(CODEX_PLUGIN.mcpServers), /CLAUDE_PLUGIN_ROOT/);
+
+  for (const [serverName, server] of Object.entries(CODEX_PLUGIN.mcpServers)) {
+    const initialization = {
+      jsonrpc: "2.0",
+      id: 1,
+      method: "initialize",
+      params: {
+        protocolVersion: "2025-06-18",
+        capabilities: {},
+        clientInfo: { name: "codex-plugin-smoke", version: "1.0.0" }
+      }
+    };
+    const launched = spawnSync(server.command, server.args, {
+      cwd: path.resolve(ROOT, server.cwd),
+      encoding: "utf8",
+      input: `${JSON.stringify(initialization)}\n`
+    });
+    assert.equal(launched.status, 0, `${serverName}\n${launched.stderr}`);
+    const response = JSON.parse(launched.stdout.trim());
+    assert.equal(response.result.serverInfo.version, CATALOG.version);
+  }
 });
 
 test("recovers from malformed input and rejects unsupported methods", async () => {

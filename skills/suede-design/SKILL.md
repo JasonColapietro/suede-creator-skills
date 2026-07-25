@@ -1,6 +1,6 @@
 ---
 name: suede-design
-description: "Make Suede interfaces feel intentional: tokens, color, components, type, motion, dark mode, and visual QA for shipped screens."
+description: "Make Suede interfaces feel intentional: tokens, color, components, type, visual hierarchy, motion, dark mode, and visual QA for shipped screens."
 ---
 
 # Suede Design

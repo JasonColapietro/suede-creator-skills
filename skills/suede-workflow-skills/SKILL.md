@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 27 public skills: copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows."
+description: "Umbrella workflow for 28 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -47,6 +47,9 @@ This skill is the public entry point for:
 - **Suede Fable Fleet:** offload high-volume, well-specified generation to
   parallel OpenAI Codex CLI workers — Claude decomposes, briefs, spawns
   `codex exec` runs, and reviews every output before anything ships.
+- **Suede Full Send:** translate max-effort, max-agent, spare-no-compute, and
+  fix-everything intent into one authorized controller, every useful
+  non-colliding lane, adversarial reconciliation, and concise proof.
 - **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
   retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
 - **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
@@ -89,6 +92,7 @@ their names match the task:
 - `suede-design`
 - `suede-agent-teams`
 - `suede-codex-fleet`
+- `suede-full-send`
 - `suede-ai-eval`
 - `suede-recommend-next-action`
 - `suede-ship-gate`
@@ -388,6 +392,13 @@ release-bound work. Use the max-agent loop when the user asks for it or the
 task needs continuous quality gates, evals, recovery controls, and release
 truth.
 
+When the user explicitly asks for full send, max effort, max agents, max agent
+teams, spare no compute, to throw or burn tokens, to fix everything, not to
+stop, or says "never end your allocation above zero," route through
+`suede-full-send`. It freezes authority and selects one controller; it does
+not create a competing team protocol or promise access to a hidden token
+counter.
+
 Define:
 
 ```text
@@ -448,6 +459,8 @@ Design lane:
 
 Build and quality lane:
 
+- Explicit Full Send, maximum-effort, max-agent, spare-no-compute, or
+  fix-everything intent: `suede-full-send`.
 - Code review and A-F grade in one pass: `suede-code` — prompted only, never
   auto-fires.
 - Findings-only deep review: `suede-code-review`. Grade-only verdict:
@@ -514,7 +527,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 27 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 27 skills into `~/.claude/skills/`:
+`suede-skills` installs all 28 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 28 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -542,6 +555,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-design \
   skills/suede-agent-teams \
   skills/suede-codex-fleet \
+  skills/suede-full-send \
   skills/suede-ai-eval \
   skills/suede-recommend-next-action \
   skills/suede-ship-gate \

@@ -23,6 +23,8 @@ tables, and optional MCP tools when a catalog, checklist, or audit would help.
 
 The big components deserve the spotlight:
 
+- It can take a broad authorized outcome full send: one controller, every
+  useful non-colliding lane, adversarial reconciliation, and direct proof.
 - It evolves with feedback. Say what worked or what missed, and Cue Suede turns
   that into the next pass instead of letting it rot in vague chat memory.
 - It saves context by linking out to preferences, project rules, and proof
@@ -44,8 +46,8 @@ The big components deserve the spotlight:
   and intake reports.
 - It includes optional MCP tools for structured skill discovery, install
   choices, SEO/AEO/GEO/AI EO audit scaffolds, QA checklists, and tool validation.
-- It gives you one-command modes: Johnny Suede Write, Johnny Suede Design/Create,
-  and Suede Code load the whole workflow instead of another cold start.
+- It gives you an umbrella for the whole workflow and exact skills for focused
+  writing, design, or code-review work instead of another cold start.
 
 ## Short Explanation
 
@@ -70,13 +72,16 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Use MCP only when the workflow benefits from a catalog, audit, or checklist.
 - A public skill pack for people who want AI agents to ship better work with fewer resets.
 - Agent workflows for people who care about public pages, repo quality, and evidence boundaries.
-- Twenty-six public Suede skills, led by one design-forward umbrella workflow.
+- Full Send means maximum useful effort, not maximum output.
+- One public umbrella workflow with twenty-seven companion skills.
 - Even the GitHub Pages site sells: polished docs, live catalog, install paths, copy bank, schema, sitemap, OG metadata, and mobile QA.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
 - Wire CI that gates the merge: one required check, branch protection, no deadlocks.
 - Score your brand at the schema, answer-engine, trust, and visibility layers.
-- Invoke Johnny Suede Write, Design/Create, or Code when you want the whole workflow loaded at once.
+- Invoke `suede-workflow-skills` when you want the whole workflow routed from
+  one umbrella. Use Johnny Suede Write, Design/Create, or Suede Code for one
+  exact lane.
 
 ## The Main Story
 
@@ -84,6 +89,8 @@ Most agent workflows break down because every task starts from a blank prompt
 and a short memory. Suede fixes that by packaging the working system:
 
 - how the agent should carry preferences without one bloated context page;
+- how full-send intent becomes one authorized controller instead of a pile of
+  duplicate agents;
 - how the agent should write;
 - how it should design;
 - how it should review code;
@@ -110,6 +117,9 @@ that need to build, package, explain, audit, and ship.
 Use this for product and website work:
 
 - Suede Workflow Skills: the umbrella skill that carries the whole stack from agent to agent, computer to computer, and harness to harness.
+- Suede Full Send: route max-effort, max-agent, spare-no-compute, and
+  fix-everything intent through one controller with useful parallel lanes,
+  adversarial reconciliation, and concise proof.
 - Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/GEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
 - Johnny Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, GitHub Pages polish, design-system QA, visual QA, visibility grading, and the writing stack.
 - Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk. Prompted only, never auto-fires.
@@ -225,10 +235,10 @@ Suede Creator Skills
 
 Give your agent a product team in one install.
 
-Install 27 public Suede skills for Suedify, design, copywriting, SEO/AEO/AI EO,
-visibility grading, A-F code grading, agent teams, Codex worker fleets, AI
-evals, a next-action recommender, iOS and Android app shipping, MCP, launch
-packaging, creator campaigns, and rights utilities.
+Install 28 public Suede skills for Full Send, Suedify, design, copywriting,
+SEO/AEO/AI EO, visibility grading, A-F code grading, agent teams, Codex worker
+fleets, AI evals, a next-action recommender, iOS and Android app shipping, MCP,
+launch packaging, creator campaigns, and rights utilities.
 ```
 
 Primary CTA:
@@ -256,7 +266,16 @@ Rewrite the page
 ### Suede Workflow Skills
 
 ```text
-Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, public explainer support, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+Full Send, product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, public explainer support, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+```
+
+### Suede Full Send
+
+```text
+Maximum useful effort for broad authorized outcomes: one controller, every
+useful non-colliding lane, adversarial reconciliation, and concise proof.
+"Never end your allocation above zero." is the house line, not a literal
+token-counter promise.
 ```
 
 ### Suede Creator Skills
@@ -280,7 +299,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 27-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, AI eval design, a scored next-action recommender, visibility and CTA grading, A-F code grading, agent teams, Codex CLI worker fleets, iOS and Android app shipping, launch packaging, MCP QA, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public 28-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suede Full Send, Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, AI eval design, a scored next-action recommender, visibility and CTA grading, A-F code grading, agent teams, Codex CLI worker fleets, iOS and Android app shipping, launch packaging, MCP QA, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```
@@ -317,6 +336,16 @@ Suede Visibility Grader checks whether a page can be found, understood, trusted,
 Major work needs lanes.
 
 Suede Agent Teams can run scout and constraints loops, safe parallel build loops, adversarial review, consensus review, design visibility review, A-F code grading, WIP protection, quality/eval gates, release lock, recovery replay, and evidence handoff without having every agent touch the same files at once.
+```
+
+### Section: Full Send
+
+```text
+Maximum effort still needs one controller.
+
+Suede Full Send freezes the outcome and authority, selects one controller,
+fills every useful non-colliding lane, reconciles adversarial findings, and
+closes with proof. It spends compute on uncertainty, not page count.
 ```
 
 ### Section: What The MCP Adds
@@ -414,6 +443,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-write \
   skills/johnny-suede-design \
+  skills/suede-full-send \
   skills/suede-code \
   skills/suede-ship-gate \
   skills/suede-seo-audit \
@@ -453,7 +483,7 @@ MCP source path:
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git
 cd suede-creator-skills
-node mcp/suede-skills-mcp.mjs --profile creator
+node mcp/suede-skills-mcp.mjs --profile all
 ```
 
 ## Social Posts
@@ -461,9 +491,9 @@ node mcp/suede-skills-mcp.mjs --profile creator
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 27 installable public skills.
+I packaged the Suede agent workflow into 28 installable public skills.
 
-Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, Codex CLI worker fleets, visibility grading, a scored next-action recommender, iOS and Android app shipping, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
+Suede Full Send, Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, Codex CLI worker fleets, visibility grading, a scored next-action recommender, iOS and Android app shipping, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```
@@ -474,6 +504,7 @@ Stop rebuilding the same prompt stack every time.
 Most agent workflows fail because they have no house style.
 
 Suede adds one:
+- Full Send for broad authorized outcomes
 - design direction
 - copy discipline
 - SEO/AEO/AI EO checks
@@ -814,12 +845,3 @@ Suede is the workflow layer for AI agents that need to ship better public produc
 
 It packages Suedify, design direction, copywriting, SEO/AEO/AI EO, code review, QA, launch packaging, install support, artist campaign tools, creator utilities, public skill installs, and optional MCP support into one reusable Suede system.
 ```
-
-## Copy Score
-
-Directness: 10/10
-Rhythm: 9/10
-Trust: 10/10
-Specificity: 10/10
-Density: 9/10
-Total: 48/50

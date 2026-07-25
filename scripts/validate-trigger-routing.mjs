@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { load as loadYaml } from "js-yaml";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export const contractPath = path.join(repoRoot, "tests", "fixtures", "trigger-routing.json");
@@ -22,6 +23,15 @@ export function loadContract() {
 
 export function loadCatalog() {
   return JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+}
+
+export function loadSkillDescription(skillName) {
+  const skillFile = path.join(repoRoot, "skills", skillName, "SKILL.md");
+  const text = fs.readFileSync(skillFile, "utf8");
+  const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  if (!frontmatter) return "";
+  const parsed = loadYaml(frontmatter[1]);
+  return typeof parsed?.description === "string" ? parsed.description : "";
 }
 
 function includesSignal(prompt, signal) {
@@ -89,9 +99,13 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
       }
       const catalogSkill = catalogByName.get(route.skill);
       const metadata = normalize(`${catalogSkill?.description ?? ""} ${catalogSkill?.useWhen ?? ""}`);
+      const skillMetadata = normalize(loadSkillDescription(route.skill));
       for (const signal of route.metadataMustContain ?? []) {
         if (!includesSignal(metadata, signal)) {
           errors.push(`${group.id}/${route.skill}: catalog metadata is missing routing signal '${signal}'`);
+        }
+        if (!includesSignal(skillMetadata, signal)) {
+          errors.push(`${group.id}/${route.skill}: SKILL.md frontmatter is missing routing signal '${signal}'`);
         }
       }
     }
