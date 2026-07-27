@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 28 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
+description: "Umbrella workflow for 29 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -90,6 +90,7 @@ their names match the task:
 - `suede-code-grader`
 - `suede-copy`
 - `suede-design`
+- `suede-deslop`
 - `suede-agent-teams`
 - `suede-codex-fleet`
 - `suede-full-send`
@@ -450,6 +451,7 @@ Copy lane:
 - Whole writing stack from one mode (including Suede SEO discoverability and
   product or mobile copy): `johnny-suede-write`.
 - Standalone conversion copy, email, microcopy, or button labels: `suede-copy`.
+- Strip AI writing patterns from finished prose before it ships: `suede-deslop`.
 
 Design lane:
 
@@ -527,7 +529,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 28 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 28 skills into `~/.claude/skills/`:
+`suede-skills` installs all 29 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 29 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -552,6 +554,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-code-review \
   skills/suede-code-grader \
   skills/suede-copy \
+  skills/suede-deslop \
   skills/suede-design \
   skills/suede-agent-teams \
   skills/suede-codex-fleet \

@@ -20,19 +20,19 @@
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/copy.html</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/plugins.html</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -151,8 +151,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-deslop.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-full-send.html</loc>
-    <lastmod>2026-07-25</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -5,7 +5,7 @@
     {
       "name": "suede-skills",
       "source": "./",
-      "description": "All 28 public Suede skills and both read-only MCP discovery servers."
+      "description": "All 29 public Suede skills and both read-only MCP discovery servers."
     }
   ]
 }

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Deslop — AI Pattern Removal"
+  short_description: "Strip AI writing tells before prose ships"
+  default_prompt: "Use $suede-deslop to clean [text]. Run the merged kill list, break formulaic structures, enforce active voice and varied rhythm, then score directness, rhythm, trust, authenticity, and density 1-10 each and return the cleaned prose with the deslop report."
+policy:
+  allow_implicit_invocation: true

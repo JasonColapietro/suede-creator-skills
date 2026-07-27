@@ -48,6 +48,7 @@
         "suede-code-grader",
         "suede-copy",
         "suede-design",
+        "suede-deslop",
         "suede-full-send",
         "suede-agent-teams",
         "suede-codex-fleet",
@@ -171,6 +172,12 @@
       "useWhen": "Write or rewrite headlines, CTAs, landing copy, email, social, and microcopy with conversion and anti-slop checks."
     },
     {
+      "name": "suede-deslop",
+      "area": "workflow",
+      "description": "Strip AI writing patterns from prose before it ships: throat-clearing, false agency, formulaic contrasts, passive voice, and metronomic rhythm, all scored against a merged kill list with a 50-point gate.",
+      "useWhen": "Copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated."
+    },
+    {
       "name": "suede-design",
       "area": "workflow",
       "description": "Make Suede interfaces feel intentional: tokens, color, components, type, visual hierarchy, motion, dark mode, and visual QA for shipped screens.",
@@ -251,7 +258,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 28 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 29 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

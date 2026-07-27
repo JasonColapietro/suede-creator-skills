@@ -56,10 +56,10 @@ portable skill pack.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 28 public `SKILL.md` folders:
-one umbrella workflow (`suede-workflow-skills`), 20 workflow skills
+creators, agencies, and AI power users. It ships 29 public `SKILL.md` folders:
+one umbrella workflow (`suede-workflow-skills`), 21 workflow skills
 (`johnny-suede-write`, `johnny-suede-design`, `suede-full-send`, `suede-code`,
-`suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`,
+`suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`, `suede-deslop`,
 `suede-agent-teams`, `suede-codex-fleet`, `suede-ship-gate`,
 `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
 `suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
@@ -72,11 +72,11 @@ one umbrella workflow (`suede-workflow-skills`), 20 workflow skills
 
 ### Page title
 
-Suede Creator Skills | 28 Open-Source Agent Skills
+Suede Creator Skills | 29 Open-Source Agent Skills
 
 ### Meta description
 
-Install 28 free open-source Claude Code and Codex skills for Full Send, code
+Install 29 free open-source Claude Code and Codex skills for Full Send, code
 review, CI ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and
 creator workflows.
 
@@ -86,7 +86,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 28-skill Suede pack that gives agents portable context: Full Send,
+Install the 29-skill Suede pack that gives agents portable context: Full Send,
 linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
 CTA grades, A-F code review, coordinated agent teams, install-path checks,
@@ -451,7 +451,7 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### Short post
 
-Suede Creator Skills are live: 28 public agent skills for Full Send, design,
+Suede Creator Skills are live: 29 public agent skills for Full Send, design,
 copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
 grading, code review, CI gating, iOS/Android app shipping, launch packaging,
 artist campaigns, and creator rights workflows.
