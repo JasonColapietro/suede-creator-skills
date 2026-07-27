@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Social"
+  short_description: "Run social as a channel rather than a chore"
+  default_prompt: "Use $suede-social on [target]. The user is planning social media strategy, content, or cadence for a brand or founder account. Work through platform strategy, content formats that travel, posting cadence, engagement, and listening, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Marketing Psychology"
+  short_description: "Apply behavioural science honestly"
+  default_prompt: "Use $suede-marketing-psychology on [target]. The user wants persuasion principles, cognitive biases, or behavioural science applied to a marketing decision. Work through anchoring, social proof, loss aversion, framing, and the mental models behind why people actually buy, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+policy:
+  allow_implicit_invocation: true
