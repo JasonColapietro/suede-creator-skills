@@ -29,12 +29,13 @@ The Suede Fable Fleet: a high-end Claude model is the admiral — it decomposes,
 3. **Spawn.** One `codex exec` per brief, in parallel, in the background:
 
 ```bash
-codex exec -C <workspace> --sandbox workspace-write --skip-git-repo-check \
+caffeinate -i codex exec -C <workspace> --sandbox workspace-write --skip-git-repo-check \
   -o <workspace>/out/<run-name>-final-message.txt \
   "Read AGENTS.md at the workspace root, then execute the brief at briefs/<brief>.md exactly. Write the deliverable to the output file the brief names, run the brief's acceptance-criteria self-check, and state pass/fail per criterion in your final message."
 ```
 
    - `-C` sets the worker's root; `--skip-git-repo-check` is required outside git repos.
+   - `caffeinate -i` (macOS) is standard on every spawn: it blocks idle sleep for exactly the worker's lifetime and releases on exit, so the machine stays awake while any worker is alive and sleeps normally once the fleet drains. A slept Mac kills every in-flight worker silently. Lid stays open — closed-lid sleep overrides caffeinate unless the Mac is in clamshell mode (external display + power). On non-macOS hosts, drop the prefix.
    - `--sandbox workspace-write` only. Never `danger-full-access`. Workers write files; they do not push, deploy, or touch secrets.
    - Leave the model default unless explicitly asked to override with `-m`.
 4. **Review gate (Claude, mandatory).** Read every `out/` file. Check against the brief's acceptance criteria and the AGENTS.md hard bans. Worker self-checks are evidence, not verdicts. If the output fails 0 acceptance criteria but has surface defects (typos, formatting, a wrong label), Claude edits the file directly; do not respawn for a comma.
@@ -78,6 +79,7 @@ Keep a persistent workspace per recurring fleet job (a social-content fleet, a t
 ## Troubleshooting
 
 - `codex exec` refuses to start outside a repo: add `--skip-git-repo-check`.
+- Every worker died mid-run with truncated or missing output and no error: the machine slept. Spawn with the `caffeinate -i` prefix and keep the lid open (or use clamshell mode).
 - Not logged in / usage errors: `codex login status`, then run `codex login` interactively.
 - Worker wrote nothing to `out/`: read the `-o` final-message file and the task output log; usually a sandbox denial or a brief pointing at a wrong path.
 - Parallel runs are independent processes; spawn each with its own background shell call and collect on completion.
