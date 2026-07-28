@@ -1,8 +1,8 @@
 # Suede Creator Skills
 
-A 29-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
+A 67-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 29](https://img.shields.io/badge/Skills-29-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 67](https://img.shields.io/badge/Skills-29-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
@@ -31,7 +31,7 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 29 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 67 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 In Codex, add the repo's Codex-native marketplace and install the complete
 plugin:
@@ -41,10 +41,10 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads all 29 skills and registers both read-only MCP discovery
+The Codex plugin loads all 67 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating it.
 
-Prefer a clone? `install.sh` copies all 29 skills into `~/.claude/skills/` and prints the installed count:
+Prefer a clone? `install.sh` copies all 67 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -201,7 +201,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-This installs all 29 skills and registers both read-only MCP discovery
+This installs all 67 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating.
 
 For one selected skill, use the built-in skill installer:
@@ -217,7 +217,7 @@ set instead of the full plugin.
 
 ## Install for Claude Code
 
-All 29 skills:
+All 67 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

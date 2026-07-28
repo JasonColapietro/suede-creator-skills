@@ -235,7 +235,7 @@ Suede Creator Skills
 
 Give your agent a product team in one install.
 
-Install 29 public Suede skills for Full Send, Suedify, design, copywriting,
+Install 67 public Suede skills for Full Send, Suedify, design, copywriting,
 SEO/AEO/AI EO, visibility grading, A-F code grading, agent teams, Codex worker
 fleets, AI evals, a next-action recommender, iOS and Android app shipping, MCP,
 launch packaging, creator campaigns, and rights utilities.
@@ -492,7 +492,7 @@ node mcp/suede-skills-mcp.mjs --profile all
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 29 installable public skills.
+I packaged the Suede agent workflow into 67 installable public skills.
 
 Suede Full Send, Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, Codex CLI worker fleets, visibility grading, a scored next-action recommender, iOS and Android app shipping, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
 
