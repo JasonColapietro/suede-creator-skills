@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/guide.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,13 +20,13 @@
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/copy.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/plugins.html</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -133,14 +133,92 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ab-testing.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ad-creative.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ads.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-analytics.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-aso.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-campaign-in-a-box.html</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-churn-prevention.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-co-marketing.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-cold-email.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-community-marketing.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitor-profiling.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitors.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-content-strategy.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-copy.html</loc>
     <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-customer-research.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -157,8 +235,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-directory-submissions.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-emails.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-free-tools.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-full-send.html</loc>
     <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-image.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -169,8 +271,92 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-lead-magnets.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-council.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-ideas.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-loops.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-plan.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-psychology.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-mcp-qa.html</loc>
     <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-offers.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-onboarding.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-paywalls.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-pricing.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-product-marketing.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-programmatic-seo.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-prospecting.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-public-relations.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -181,8 +367,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-referrals.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-revops.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-audit.html</loc>
     <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sales-enablement.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -193,14 +397,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-signup.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-site-alchemy.html</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sms.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-social.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sync-packaging.html</loc>
     <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-video.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
