@@ -1,6 +1,6 @@
 ---
 name: suede-onboarding
-description: When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activation," "first-run experience," "empty states," "onboarding checklist," "aha moment," "new user experience," "users aren't activating," "nobody completes setup," "low activation rate," "users sign up but don't use the product," "time to value," or "first session experience." Use this whenever users are signing up but not sticking around. For signup/registration optimization, see suede-signup. For ongoing email sequences, see suede-emails.
+description: "Get a new user to first value fast: activation milestones, first-run sequencing, empty states, setup checklists, and the aha moment worth instrumenting. Use when the user has people signing up but not activating, or wants to design the first session in a product. Also use when the user mentions 'onboarding flow,' 'activation rate,' 'user activation,' 'first-run experience,' 'empty states,' 'onboarding checklist,' 'aha moment,' 'new user experience,' 'users aren't activating,' 'nobody completes setup,' 'low activation rate,' 'users sign up but don't use the product,' 'time to value,' or 'first session experience.' Use this whenever users are signing up but not sticking around. For signup/registration optimization, see suede-signup. For ongoing email sequences, see suede-emails."
 metadata:
   version: 2.0.0
 ---

@@ -1,6 +1,6 @@
 ---
 name: suede-analytics
-description: When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions "set up tracking," "GA4," "Google Analytics," "conversion tracking," "event tracking," "UTM parameters," "tag manager," "GTM," "analytics implementation," "tracking plan," "how do I measure this," "track conversions," "attribution," "Mixpanel," "Segment," "are my events firing," or "analytics isn't working." Use this whenever someone asks how to know if something is working or wants to measure marketing results. For A/B test measurement, see suede-ab-testing.
+description: "Know whether any of it worked: tracking plans, event and conversion instrumentation, UTM discipline, attribution, and auditing what is actually firing. Use when the user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything. Also use when the user mentions 'set up tracking,' 'GA4,' 'Google Analytics,' 'conversion tracking,' 'event tracking,' 'UTM parameters,' 'tag manager,' 'GTM,' 'analytics implementation,' 'tracking plan,' 'how do I measure this,' 'track conversions,' 'attribution,' 'Mixpanel,' 'Segment,' 'are my events firing,' or 'analytics isn't working.' Use this whenever someone asks how to know if something is working or wants to measure marketing results. For A/B test measurement, see suede-ab-testing."
 metadata:
   version: 2.0.0
 ---

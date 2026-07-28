@@ -1,6 +1,6 @@
 ---
 name: suede-churn-prevention
-description: "When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or implement retention strategies. Also use when the user mentions 'churn,' 'cancel flow,' 'offboarding,' 'save offer,' 'dunning,' 'failed payment recovery,' 'win-back,' 'retention,' 'exit survey,' 'pause subscription,' 'involuntary churn,' 'people keep canceling,' 'churn rate is too high,' 'how do I keep users,' or 'customers are leaving.' Use this whenever someone is losing subscribers or wants to build systems to prevent it. For post-cancel win-back email sequences, see suede-emails. For in-app upgrade paywalls, see suede-paywalls."
+description: "Keep subscribers who are leaving and recover the ones you lose to billing: cancel flows, save offers, pause options, dunning for failed payments, and win-back sequences. Use when the user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments. Also use when the user mentions 'churn,' 'cancel flow,' 'offboarding,' 'save offer,' 'dunning,' 'failed payment recovery,' 'win-back,' 'retention,' 'exit survey,' 'pause subscription,' 'involuntary churn,' 'people keep canceling,' 'churn rate is too high,' 'how do I keep users,' or 'customers are leaving.' Use this whenever someone is losing subscribers or wants to build systems to prevent it. For post-cancel win-back email sequences, see suede-emails. For in-app upgrade paywalls, see suede-paywalls."
 metadata:
   version: 2.0.0
 ---

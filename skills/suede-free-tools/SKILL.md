@@ -1,6 +1,6 @@
 ---
 name: suede-free-tools
-description: When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "free tool," "marketing tool," "calculator," "generator," "interactive tool," "lead gen tool," "build a tool for leads," "free resource," "ROI calculator," "grader tool," "audit tool," "should I build a free tool," or "tools for lead gen." Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see suede-lead-magnets.
+description: "Engineering as marketing: pick a free tool worth building, scope it honestly, and design it so the output pulls people toward the paid product. Use when the user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links. Also use when the user mentions 'engineering as marketing,' 'free tool,' 'marketing tool,' 'calculator,' 'generator,' 'interactive tool,' 'lead gen tool,' 'build a tool for leads,' 'free resource,' 'ROI calculator,' 'grader tool,' 'audit tool,' 'should I build a free tool,' or 'tools for lead gen.' Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see suede-lead-magnets."
 metadata:
   version: 2.0.0
 ---

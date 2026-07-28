@@ -1,6 +1,6 @@
 ---
 name: suede-marketing-psychology
-description: "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' 'consumer behavior,' 'anchoring,' 'social proof,' 'scarcity,' 'loss aversion,' 'framing,' or 'nudge.' Use this whenever someone wants to understand or leverage how people think and make decisions in a marketing context. For applying psychology to specific pages, see suede-site-alchemy; for pricing tactics, see suede-pricing; for copy framing, see suede-copy."
+description: "Apply behavioural science honestly: anchoring, social proof, loss aversion, framing, and the mental models behind why people actually buy. Use when the user wants persuasion principles, cognitive biases, or behavioural science applied to a marketing decision. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' 'consumer behavior,' 'anchoring,' 'social proof,' 'scarcity,' 'loss aversion,' 'framing,' or 'nudge.' Use this whenever someone wants to understand or leverage how people think and make decisions in a marketing context. For applying psychology to specific pages, see suede-site-alchemy; for pricing tactics, see suede-pricing; for copy framing, see suede-copy."
 metadata:
   version: 2.0.0
 ---

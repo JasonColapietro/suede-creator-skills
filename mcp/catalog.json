@@ -1,6 +1,6 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "updated": "2026-07-27",
   "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
@@ -84,6 +84,50 @@
         "suede-rights-passport",
         "suede-rights-audit"
       ]
+    },
+    {
+      "name": "suede-marketing",
+      "description": "Marketing and growth subset: paid acquisition and outbound, monetisation, lifecycle and retention, and the measurement and operations layer.",
+      "skills": [
+        "suede-ab-testing",
+        "suede-ad-creative",
+        "suede-ads",
+        "suede-analytics",
+        "suede-aso",
+        "suede-churn-prevention",
+        "suede-co-marketing",
+        "suede-cold-email",
+        "suede-community-marketing",
+        "suede-competitor-profiling",
+        "suede-competitors",
+        "suede-content-strategy",
+        "suede-customer-research",
+        "suede-directory-submissions",
+        "suede-emails",
+        "suede-free-tools",
+        "suede-image",
+        "suede-lead-magnets",
+        "suede-marketing-council",
+        "suede-marketing-ideas",
+        "suede-marketing-loops",
+        "suede-marketing-plan",
+        "suede-marketing-psychology",
+        "suede-offers",
+        "suede-onboarding",
+        "suede-paywalls",
+        "suede-pricing",
+        "suede-product-marketing",
+        "suede-programmatic-seo",
+        "suede-prospecting",
+        "suede-public-relations",
+        "suede-referrals",
+        "suede-revops",
+        "suede-sales-enablement",
+        "suede-signup",
+        "suede-sms",
+        "suede-social",
+        "suede-video"
+      ]
     }
   ],
   "skills": [
@@ -160,6 +204,12 @@
       "useWhen": "The user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything."
     },
     {
+      "name": "suede-aso",
+      "area": "marketing",
+      "description": "Optimise an App Store or Play listing: keyword field strategy, title and subtitle, screenshots that convert, and competitor listing teardowns.",
+      "useWhen": "The user wants to improve app store visibility, downloads, or listing conversion, or has shared an App Store or Play URL."
+    },
+    {
       "area": "creator",
       "name": "suede-campaign-in-a-box",
       "description": "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions.",
@@ -214,6 +264,18 @@
       "useWhen": "The user wants to start or grow a Discord, Slack, forum, or subreddit community around their product."
     },
     {
+      "name": "suede-competitor-profiling",
+      "area": "marketing",
+      "description": "Research competitors from their public surfaces and turn the findings into structured profiles: positioning, pricing, messaging, and where they are weak.",
+      "useWhen": "The user wants competitor research, a competitive landscape, or structured profiles built from competitor URLs."
+    },
+    {
+      "name": "suede-competitors",
+      "area": "marketing",
+      "description": "Write comparison and alternative pages that rank and convert without misrepresenting anyone: page formats, claim discipline, and honest framing.",
+      "useWhen": "The user wants a versus page, alternative page, or competitor comparison for search and sales."
+    },
+    {
       "name": "suede-content-strategy",
       "area": "marketing",
       "description": "Decide what to publish and why: topic clusters, content pillars, editorial cadence, distribution planning, and what to stop writing.",
@@ -224,6 +286,12 @@
       "area": "workflow",
       "description": "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits.",
       "useWhen": "Write or rewrite headlines, CTAs, landing copy, email, social, and microcopy with conversion and anti-slop checks."
+    },
+    {
+      "name": "suede-customer-research",
+      "area": "marketing",
+      "description": "Find out what customers actually think: interview design, transcript and ticket synthesis, review mining, and turning raw input into personas and jobs.",
+      "useWhen": "The user wants to run or analyse customer research, mine reviews and forums, or build evidence-backed personas."
     },
     {
       "name": "suede-design",
@@ -262,6 +330,12 @@
       "useWhen": "The user asks for full send, max effort, max agents, max agent teams, spare no compute, throw tokens at it, burn tokens, burn max tokens, \"never end your allocation above zero,\" strongest useful reasoning, adversarial review, fix everything, do not stop, or end-to-end completion across phases or surfaces. Treat token and allocation language as a dry Full Send trigger for already-authorized host compute, never a literal counter, external spend, or permission to pad output."
     },
     {
+      "name": "suede-image",
+      "area": "marketing",
+      "description": "Create and optimise marketing imagery: prompt craft for AI generation, hero and social graphics, product mockups, and export and compression discipline.",
+      "useWhen": "The user needs marketing images, graphics, mockups, or help getting better output from an image model."
+    },
+    {
       "name": "suede-launch-packaging",
       "area": "workflow",
       "description": "Package finished work so people can use it: README, docs, install commands, proof links, QA, release copy, and handoff notes.",
@@ -278,6 +352,12 @@
       "area": "marketing",
       "description": "Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.",
       "useWhen": "The user wants multiple expert perspectives, a simulated advisory board, or how a specific famous marketer would approach their problem."
+    },
+    {
+      "name": "suede-marketing-ideas",
+      "area": "marketing",
+      "description": "Get unstuck with a structured idea library rather than a blank page: channel-by-channel tactics scored for effort, cost, and fit.",
+      "useWhen": "The user is out of marketing ideas, does not know where to start, or wants tactics to consider for their stage."
     },
     {
       "name": "suede-marketing-loops",
@@ -326,6 +406,12 @@
       "area": "marketing",
       "description": "Decide what to charge and how to package it: tiers, freemium versus free trial, value metric, willingness-to-pay research, and price increases without churning the base.",
       "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices."
+    },
+    {
+      "name": "suede-product-marketing",
+      "area": "marketing",
+      "description": "Establish the product context every other marketing lane reads from: what it is, who it is for, the positioning, and the proof.",
+      "useWhen": "The user is starting marketing work and no shared product, audience, or positioning context exists yet."
     },
     {
       "name": "suede-programmatic-seo",
@@ -430,6 +516,12 @@
       "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions."
     },
     {
+      "name": "suede-video",
+      "area": "marketing",
+      "description": "Plan and produce marketing video: format selection, hook structure, short-form pacing, scripting, and repurposing one shoot into many cuts.",
+      "useWhen": "The user is planning, scripting, or repurposing video content for marketing or social."
+    },
+    {
       "name": "suede-visibility-grader",
       "area": "workflow",
       "description": "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness.",
@@ -438,7 +530,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 29 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 67 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

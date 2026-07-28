@@ -1,6 +1,6 @@
 ---
 name: suede-referrals
-description: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' 'partner program,' 'referral incentive,' 'how to get referrals,' 'customers referring customers,' or 'affiliate payout.' Use this whenever someone wants existing users or partners to bring in new customers. For launch-specific virality, see suede-launch-packaging."
+description: "Turn customers into a channel: referral mechanics, incentive design that does not attract fraud, affiliate structure, and viral loop math. Use when the user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' 'partner program,' 'referral incentive,' 'how to get referrals,' 'customers referring customers,' or 'affiliate payout.' Use this whenever someone wants existing users or partners to bring in new customers. For launch-specific virality, see suede-launch-packaging."
 metadata:
   version: 2.0.0
 ---

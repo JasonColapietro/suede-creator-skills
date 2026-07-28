@@ -86,7 +86,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 29-skill Suede pack that gives agents portable context: Full Send,
+Install the 67-skill Suede pack that gives agents portable context: Full Send,
 linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
 CTA grades, A-F code review, coordinated agent teams, install-path checks,

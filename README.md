@@ -8,7 +8,7 @@ A 29-skill toolkit for Claude Code and Codex: take broad outcomes full send, orc
 
 ## What it is
 
-A free, MIT-licensed, broadly reusable pack of **29 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed, broadly reusable pack of **67 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
@@ -155,6 +155,23 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 
+### Marketing & growth
+
+Thirty-eight skills covering paid acquisition and outbound, monetisation, lifecycle and
+retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
+`suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
+`suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`, `suede-onboarding`,
+`suede-churn-prevention`, `suede-emails`, `suede-referrals`, `suede-co-marketing`,
+`suede-community-marketing`, `suede-lead-magnets`, `suede-free-tools`, `suede-sms`,
+`suede-marketing-loops`, `suede-analytics`, `suede-ab-testing`, `suede-revops`,
+`suede-sales-enablement`, `suede-programmatic-seo`, `suede-content-strategy`,
+`suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-social`,
+`suede-aso`, `suede-video`, `suede-image`, `suede-product-marketing`, `suede-competitors`,
+`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`.
+
+Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
+under the MIT License — see [NOTICE.md](NOTICE.md).
+
 ## Public pages
 
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
@@ -248,3 +265,11 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 Released under the [MIT License](LICENSE).
 
 Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
+
+### Third-party credit
+
+Thirty-eight of the marketing and growth skills are adapted from
+**[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines**, used under
+the MIT License. That project is the origin of the material — if these skills are useful, the credit
+belongs there. Full notice and licence: [NOTICE.md](NOTICE.md),
+[licenses/marketingskills-MIT.txt](licenses/marketingskills-MIT.txt).
