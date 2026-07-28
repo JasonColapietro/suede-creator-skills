@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Marketing Ideas"
+  short_description: "Get unstuck with a structured idea library rather than a"
+  default_prompt: "Use $suede-marketing-ideas on [target]. The user is out of marketing ideas, does not know where to start, or wants tactics to consider for their stage. Work through channel-by-channel tactics scored for effort, cost, and fit, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+policy:
+  allow_implicit_invocation: true

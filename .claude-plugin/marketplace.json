@@ -32,6 +32,51 @@
         "./skills/suede-ship-gate"
       ],
       "description": "Code quality subset: one-pass review plus an A-F ship verdict (suede-code), deep findings with TypeScript, React, Next.js, OWASP, and database checklists (suede-code-review), a grade-only verdict with instant-F triggers and grade caps (suede-code-grader), and CI branch protection that gates the merge (suede-ship-gate)."
+    },
+    {
+      "name": "suede-marketing",
+      "source": "./",
+      "skills": [
+        "./skills/suede-ab-testing",
+        "./skills/suede-ad-creative",
+        "./skills/suede-ads",
+        "./skills/suede-analytics",
+        "./skills/suede-aso",
+        "./skills/suede-churn-prevention",
+        "./skills/suede-co-marketing",
+        "./skills/suede-cold-email",
+        "./skills/suede-community-marketing",
+        "./skills/suede-competitor-profiling",
+        "./skills/suede-competitors",
+        "./skills/suede-content-strategy",
+        "./skills/suede-customer-research",
+        "./skills/suede-directory-submissions",
+        "./skills/suede-emails",
+        "./skills/suede-free-tools",
+        "./skills/suede-image",
+        "./skills/suede-lead-magnets",
+        "./skills/suede-marketing-council",
+        "./skills/suede-marketing-ideas",
+        "./skills/suede-marketing-loops",
+        "./skills/suede-marketing-plan",
+        "./skills/suede-marketing-psychology",
+        "./skills/suede-offers",
+        "./skills/suede-onboarding",
+        "./skills/suede-paywalls",
+        "./skills/suede-pricing",
+        "./skills/suede-product-marketing",
+        "./skills/suede-programmatic-seo",
+        "./skills/suede-prospecting",
+        "./skills/suede-public-relations",
+        "./skills/suede-referrals",
+        "./skills/suede-revops",
+        "./skills/suede-sales-enablement",
+        "./skills/suede-signup",
+        "./skills/suede-sms",
+        "./skills/suede-social",
+        "./skills/suede-video"
+      ],
+      "description": "Marketing and growth subset: paid acquisition and outbound, monetisation (pricing, offers, paywalls), lifecycle and retention, and the measurement and operations layer. Adapted from marketingskills by Corey Haines (MIT)."
     }
   ]
 }

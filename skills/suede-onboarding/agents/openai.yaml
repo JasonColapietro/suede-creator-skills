@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Onboarding"
+  short_description: "Get a new user to first value fast"
+  default_prompt: "Use $suede-onboarding on [target]. The user has people signing up but not activating, or wants to design the first session in a product. Work through activation milestones, first-run sequencing, empty states, setup checklists, and the aha moment worth instrumenting, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+policy:
+  allow_implicit_invocation: true

@@ -1,7 +1,7 @@
 {
   "name": "suede-skills",
-  "version": "0.8.0",
-  "description": "Complete Suede workflow for Claude Code and Codex: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs all 29 skills.",
+  "version": "0.9.0",
+  "description": "Complete Suede workflow for Claude Code and Codex: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs all 67 skills.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"

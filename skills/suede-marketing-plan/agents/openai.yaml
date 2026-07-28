@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Marketing Plan"
+  short_description: "Produce a full marketing plan sized to budget and stage"
+  default_prompt: "Use $suede-marketing-plan on [target]. The user needs a comprehensive marketing or go-to-market plan for a company, client, or their own product. Work through Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+policy:
+  allow_implicit_invocation: true
