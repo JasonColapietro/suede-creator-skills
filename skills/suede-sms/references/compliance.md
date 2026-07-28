@@ -36,7 +36,7 @@ By signing up via text, you agree to receive recurring automated promotional and
 personalized marketing text messages (e.g., cart reminders) from [Brand] at the
 cell number used when signing up. Consent is not a condition of any purchase.
 Reply HELP for help and STOP to cancel. Msg frequency varies. Msg & data rates
-may apply. View [Terms](link) and [Privacy](link).
+may apply. Terms: <TERMS_URL>. Privacy: <PRIVACY_URL>.
 ```
 
 Place this **directly adjacent** to the phone number field and submit button. Do not bury it in a footer.

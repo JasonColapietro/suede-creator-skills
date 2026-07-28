@@ -1,13 +1,13 @@
 ---
 name: suede-ads
-description: "Run paid acquisition that pays back: campaign structure, audience targeting, bidding, budget pacing, negative keywords, and knowing when to kill an ad. Use when the user is planning, running, or fixing paid campaigns on Google, Meta, LinkedIn, or X, or weighing whether to run ads at all. Also use when the user mentions 'PPC,' 'paid media,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' 'audience targeting,' 'Google Ads,' 'Facebook ads,' 'LinkedIn ads,' 'ad budget,' 'cost per click,' 'ad spend,' 'should I run ads,' 'ABM,' 'account-based marketing,' 'B2B ads,' 'lead quality,' 'negative keywords,' 'Performance Max,' 'thought leader ads,' or 'when should I kill an ad.' Use this for campaign strategy, audience targeting, bidding, and optimization. For bulk ad creative generation and iteration, see suede-ad-creative. For landing page optimization, see suede-site-alchemy."
+description: "Suede-owned paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, and kill-or-scale decisions. Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, or comparable platforms. NOT FOR: producing creative variants (use suede-ad-creative), implementing measurement (use suede-analytics), or optimizing the landing page (use suede-site-alchemy)."
 metadata:
   version: 2.2.0
 ---
 
-# Paid Ads
+# Suede Paid Ads
 
-You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition.
+Use this Suede paid-acquisition playbook to create, optimize, and scale campaigns against explicit acquisition economics. Never assume account access.
 
 ## Before Starting
 
@@ -463,25 +463,34 @@ When the user requests Google Ads RSAs, load [references/rsa-output-spec.md](ref
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key advertising platforms:
+This pack does not include ad-network integrations. Work through an authorized
+platform UI, current export, API, or installed connector; verify current
+official documentation and the selected account before any mutation.
 
-| Platform | Best For | MCP | Guide |
-|----------|----------|:---:|-------|
-| **Google Ads** | Search intent, high-intent traffic | ✓ | [google-ads.md](../../tools/integrations/google-ads.md) |
-| **Meta Ads** | Demand gen, visual products, B2C | - | [meta-ads.md](../../tools/integrations/meta-ads.md) |
-| **LinkedIn Ads** | B2B, job title targeting | - | [linkedin-ads.md](../../tools/integrations/linkedin-ads.md) |
-| **TikTok Ads** | Younger demographics, video | - | [tiktok-ads.md](../../tools/integrations/tiktok-ads.md) |
+| Platform family | Typical use | Verify before execution |
+|-----------------|-------------|-------------------------|
+| Search ads | Capture declared intent | Query scope, match behavior, negatives, location, conversion action |
+| Social feed ads | Create or harvest demand | Audience controls, placement, creative specs, attribution window |
+| Professional-network ads | Reach role or account segments | Targeting availability, minimum audience, lead form and CRM mapping |
+| Short-video ads | Visual discovery and creator-style demand | Placement specs, audio rights, age and regional policy |
 
-For tracking setup, see [references/conversion-tracking.md](references/conversion-tracking.md), [ga4.md](../../tools/integrations/ga4.md), [segment.md](../../tools/integrations/segment.md)
+For the measurement contract, use
+[references/conversion-tracking.md](references/conversion-tracking.md) and
+route implementation and firing checks to `suede-analytics`.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **ad-creative**: For generating and iterating ad headlines, descriptions, and creative at scale
-- **revops**: For the CRM side of ABM — lead scoring, routing, and the offline conversion loop
-- **customer-research**: For the voice-of-customer inputs that feed ad copy and creative angles
-- **copywriting**: For landing page copy that converts ad traffic
-- **analytics**: For proper conversion tracking setup
-- **ab-testing**: For landing page testing to improve ROAS
-- **cro**: For optimizing post-click conversion rates
+- Do not create, launch, pause, delete, or change campaigns, bids, audiences, or budgets without explicit authorization.
+- Do not claim ROAS, attribution, or incrementality when conversion tracking and revenue inputs have not been verified.
+- Do not recommend spend above the stated cap; if no cap exists, provide a bounded test budget and wait for approval.
+- Do not target sensitive traits, evade platform policy, or present inferred audience attributes as verified facts.
+
+## Routing
+
+- Need ad copy or visual variants -> use `suede-ad-creative`.
+- Need conversion tracking and attribution -> use `suede-analytics`.
+- Need post-click conversion work -> use `suede-site-alchemy`.
+- Need CRM handoff or offline conversion design -> use `suede-revops`.
+- From those skills, route paid channel, budget, bid, and campaign decisions back to `suede-ads`.

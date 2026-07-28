@@ -1,5 +1,5 @@
 {
-  "skill_name": "lead-magnets",
+  "skill_name": "suede-lead-magnets",
   "evals": [
     {
       "id": 1,
@@ -18,41 +18,41 @@
     {
       "id": 2,
       "prompt": "We have a 50-page ebook we spent 3 months writing. Conversion on the landing page is only 4%. Should we keep iterating?",
-      "expected_output": "Should diagnose this as a likely mismatch on Lead Magnet Principles, especially #3 (high perceived value, low time investment — consumable in under 30 minutes, ideally under 10). Should warn 50 pages may signal too much effort to consume — flag this as a possible cause. Should recommend A/B testing the format (chunking the ebook into a 5-part email mini-course, releasing as a checklist + ebook combo, or breaking into shorter topic-specific guides). Should review landing page structure: headline, preview/mockup, what's inside, social proof, form fields, FAQ. Should suggest testing partial gate (preview first 5 pages) vs full gate. Should ask about traffic source — 4% on cold traffic might be acceptable while 4% on warm traffic is low. Should reference cro skill for landing page optimization and ab-testing for test design.",
+      "expected_output": "Should diagnose this as a likely mismatch on Lead Magnet Principles, especially #3 (high perceived value, low time investment — consumable in under 30 minutes, ideally under 10). Should warn 50 pages may signal too much effort to consume — flag this as a possible cause. Should recommend A/B testing the format (chunking the ebook into a 5-part email mini-course, releasing as a checklist + ebook combo, or breaking into shorter topic-specific guides). Should review landing page structure: headline, preview/mockup, what's inside, social proof, form fields, FAQ. Should suggest testing partial gate (preview first 5 pages) vs full gate. Should ask about traffic source — 4% on cold traffic might be acceptable while 4% on warm traffic is low. Should route landing-page optimization to suede-site-alchemy and test design to suede-ab-testing.",
       "assertions": [
         "Diagnoses likely cause as length/effort mismatch",
         "Recommends format A/B test",
         "Suggests breaking into shorter formats",
         "Reviews landing page structure",
         "Asks about traffic source (cold vs warm)",
-        "Cross-references cro or ab-testing skill"
+        "Cross-references suede-site-alchemy or suede-ab-testing"
       ],
       "files": []
     },
     {
       "id": 3,
       "prompt": "Our lead form asks for name, email, company, role, company size, and phone. We're not getting enough signups. Could the form be the problem?",
-      "expected_output": "Should immediately flag form length as a likely culprit. Should cite the rule of thumb: every extra field reduces conversion 5-10%. Should recommend reducing to the minimum needed: ideally email only (highest conversion), or email + name if personalization matters. Should explain when multi-field is justified (only for high-value offers like webinars or demos). Should ask what information is actually used in follow-up — fields that aren't used should be removed. Should suggest progressive profiling: capture email now, ask for more fields later via enrichment or follow-up forms. Should reference cro skill for form optimization specifically.",
+      "expected_output": "Should immediately flag form length as a likely culprit. Should cite the rule of thumb: every extra field reduces conversion 5-10%. Should recommend reducing to the minimum needed: ideally email only (highest conversion), or email + name if personalization matters. Should explain when multi-field is justified (only for high-value offers like webinars or demos). Should ask what information is actually used in follow-up — fields that aren't used should be removed. Should suggest progressive profiling: capture email now, ask for more fields later via enrichment or follow-up forms. Should route form optimization to suede-site-alchemy.",
       "assertions": [
         "Flags form length as likely culprit",
         "Cites 5-10% per field rule",
         "Recommends reducing to email or email + name",
         "Asks what fields are actually used",
         "Suggests progressive profiling",
-        "Cross-references cro skill"
+        "Cross-references suede-site-alchemy"
       ],
       "files": []
     },
     {
       "id": 4,
       "prompt": "What's the difference between a lead magnet and a free tool? Should I build one or the other?",
-      "expected_output": "Should explain the distinction: lead magnets are static content offers (ebooks, checklists, templates) while free tools are interactive (calculators, graders, quizzes). Should explain when to build which. Lead magnets: faster to ship (hours-days), works well for awareness/consideration education, lower ongoing maintenance, lead quality varies. Free tools: longer build time (weeks-months), higher engagement and shareability, naturally segment leads by tool usage, can rank for SEO ('X calculator', 'Y grader'), higher lead quality typically. Should recommend lead magnet first if speed matters, free tool if you can invest the build time and have repeatable user inputs that produce a meaningful output. Should defer to free-tools skill for tool strategy specifically.",
+      "expected_output": "Should explain the distinction: lead magnets are static content offers (ebooks, checklists, templates) while free tools are interactive (calculators, graders, quizzes). Should explain when to build which. Lead magnets: faster to ship (hours-days), works well for awareness/consideration education, lower ongoing maintenance, lead quality varies. Free tools: longer build time (weeks-months), higher engagement and shareability, naturally segment leads by tool usage, can rank for SEO ('X calculator', 'Y grader'), higher lead quality typically. Should recommend lead magnet first if speed matters, free tool if you can invest the build time and have repeatable user inputs that produce a meaningful output. Should defer tool strategy to suede-free-tools.",
       "assertions": [
         "Distinguishes static content from interactive tool",
         "Compares effort to build",
         "Compares SEO and shareability characteristics",
         "Recommends based on speed vs investment trade-off",
-        "Defers to free-tools skill"
+        "Defers to suede-free-tools"
       ],
       "files": []
     },

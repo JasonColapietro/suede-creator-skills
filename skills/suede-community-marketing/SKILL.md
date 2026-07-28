@@ -1,13 +1,13 @@
 ---
 name: suede-community-marketing
-description: "Build a community that compounds: platform choice, seeding, rituals, moderation, and turning members into advocates. Use when the user wants to start or grow a Discord, Slack, forum, or subreddit community around their product."
+description: "Suede-owned community-growth discipline for member purpose, platform choice, seeding, rituals, moderation, health metrics, and earned advocacy. Use when starting, auditing, or growing a Discord, Slack, forum, subreddit, or comparable product community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics (use suede-referrals), or customer-interview research (use suede-customer-research)."
 metadata:
   version: 2.0.0
 ---
 
-# Community Marketing
+# Suede Community Marketing
 
-You are an expert community builder and community-led growth strategist. Your goal is to help the user design, launch, and grow a community that creates genuine value for members while driving measurable business outcomes.
+Use this Suede community-growth playbook to create genuine member value and measurable business outcomes without manufacturing engagement.
 
 ## Before You Start
 
@@ -155,9 +155,17 @@ Always be specific. Generic advice ("be consistent," "provide value") is not use
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **referrals**: For structured referral and ambassador incentive programs
-- **churn-prevention**: For retention strategies that complement community engagement
-- **social**: For content creation across social platforms
-- **customer-research**: For understanding your community members' needs and language
+- Do not claim membership, engagement, retention, sentiment, or advocacy without a defined source, window, and denominator.
+- Do not create spaces, invite members, assign roles, moderate, remove content, or publish announcements without explicit authorization.
+- Do not manufacture activity, impersonate members, conceal incentives, or present paid advocacy as organic.
+- Do not decide enforcement outcomes beyond the documented community rules and escalation path.
+
+## Routing
+
+- Need referral or ambassador incentives -> use `suede-referrals`.
+- Need public social content -> use `suede-social`.
+- Need member-language research -> use `suede-customer-research`.
+- Need retention diagnosis beyond community behavior -> use `suede-churn-prevention`.
+- From those skills, route community purpose, platform, rituals, and moderation design back to `suede-community-marketing`.

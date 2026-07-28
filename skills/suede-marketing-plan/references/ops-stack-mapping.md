@@ -2,17 +2,20 @@
 
 This doc maps every marketing-skill and every relevant MCP/API integration to the AARRR stage(s) it primarily serves. It's the source for Section 11 of every plan.
 
-> **Note on scope.** Skills below live in this `marketingskills` repo. A few references point to optional tools from adjacent Claude Code marketplaces (e.g., `vercel:agent-browser`, `compound-engineering:diagram-maker`) — substitute equivalents if not installed. When a plan references a skill or tool that isn't available, fall back to the underlying tactic and call it out in Section 13's open decisions.
+> **Note on scope.** Skills below live in the public Suede skill pack. External
+> tools are optional. Discover current callable, authorized capabilities first;
+> otherwise use a manual workflow and record the limitation in Section 13.
 
 ## The thesis
 
-A small team + fCMO + agentic tooling = output of a 15–20-person traditional marketing org. The skills + MCPs encode workflows that previously required dedicated headcount per channel.
+The public Suede skill pack and verified integrations can make approved workflows more repeatable for a small team. They do not replace channel ownership, human review, or missing expertise, and they do not imply a headcount-equivalence or guaranteed output.
 
 The plan's Section 11 makes this thesis explicit by:
 1. Mapping skills to stages so the founder sees which skills execute which work
 2. Mapping MCPs/APIs to stages so the founder sees the tooling layer
-3. Naming a concrete operational example that proves the stack works
-4. Showing capability unlocks by funding stage (pre-seed → seed → Series A)
+3. Naming a concrete, evidence-backed operational example that shows how the stack was used
+4. Showing capability unlocks by verified evidence, owner capacity,
+   authorization, maximum exposure, review date, and stop conditions
 
 ## Marketing skills mapped to AARRR
 
@@ -20,100 +23,93 @@ The plan's Section 11 makes this thesis explicit by:
 
 | Skill | What it does | Primary use in Acquisition |
 |---|---|---|
-| `seo-audit` | Audit site for technical and on-page SEO | Quarterly site health checks |
-| `ai-seo` | Optimize content for AI search engines / LLM citation | Future-proof content strategy |
-| `programmatic-seo` | Build template-driven SEO pages at scale | Location, comparison, integration page systems |
-| `schema` | Add structured data markup | Rich snippets, eligibility for AI citation |
-| `content-strategy` | Plan content topics, pillars, cadence | Setting the editorial calendar |
-| `competitors` | Build vs-pages and alternative-to-pages | Capture high-intent SERPs against competitors |
-| `ads` | Plan and structure paid campaigns | Apple Search Ads, Meta, Google, LinkedIn |
-| `ad-creative` | Generate ad variations and creative | Iterate ad creative across platforms |
-| `social` | Plan and write social media content | LinkedIn, Twitter/X, Instagram, TikTok |
-| `typefully` | Schedule/post tweets, threads, LinkedIn content | Cadence operations for founder-led channels |
-| `cold-email` | Write B2B cold outreach + sequences | Outbound for B2B SaaS / hybrid businesses |
-| `analytics` | Set up tracking, GA4, conversion events | Funnel instrumentation |
-| `free-tools` | Plan engineering-as-marketing free tools | Build tools that generate links + leads |
-| `marketing-website-design` | Design marketing sites with intention | Pillar/landing page design |
-| `launch` | Plan and execute launches (Product Hunt, GA, feature launches) | GTM moments — strategy + tactical execution |
+| `suede-seo-audit` | Audit technical and on-page SEO, AI-search readiness, and structured data | Quarterly site health and search-readiness checks |
+| `suede-programmatic-seo` | Build template-driven SEO pages at scale | Location, comparison, integration page systems |
+| `suede-content-strategy` | Plan content topics, pillars, cadence | Setting the editorial calendar |
+| `suede-competitors` | Build vs-pages and alternative-to-pages | Capture high-intent SERPs against competitors |
+| `suede-ads` | Plan and structure paid campaigns | Apple Search Ads, Meta, Google, LinkedIn |
+| `suede-ad-creative` | Generate ad variations and creative | Iterate ad creative across platforms |
+| `suede-social` | Plan and write social media content | LinkedIn, Twitter/X, Instagram, TikTok |
+| Typefully (external integration) | Schedule/post tweets, threads, LinkedIn content | Cadence operations for founder-led channels |
+| `suede-cold-email` | Write B2B cold outreach + sequences | Outbound for B2B SaaS / hybrid businesses |
+| `suede-analytics` | Set up tracking, GA4, conversion events | Funnel instrumentation |
+| `suede-free-tools` | Plan engineering-as-marketing free tools | Build tools that generate links + leads |
+| `suede-site-alchemy` | Design marketing sites with intention | Pillar/landing page design |
+| `suede-launch-packaging` | Plan and execute launches (Product Hunt, GA, feature launches) | GTM moments — strategy + tactical execution |
 
 ### Activation skills
 
 | Skill | What it does | Primary use in Activation |
 |---|---|---|
-| `onboarding` | Optimize user onboarding flows | Onboarding rebuild, activation rate tests |
-| `signup` | Optimize signup/registration | Reduce friction at top of activation |
-| `cro` | Optimize any marketing page or form | Conversion testing across pages, forms, landing pages |
-| `paywalls` | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
-| `popups` | Optimize popups, modals, slide-ins | Lead capture + activation prompts |
-| `copywriting` | Write marketing copy | Onboarding screens, paywall copy, CTAs |
-| `copy-editing` | Edit and improve existing copy | Voice / clarity pass before ship |
-| `copycraft` | Real-time copy variation overlay | Live copy iteration during reviews |
-| `website-copy` | Write full website copy (stage-8 from CF process) | Comprehensive site copy production |
-| `ab-testing` | Plan A/B tests | Structure for onboarding variant tests |
-| `marketing-psychology` | Apply behavioral science to copy and CRO | Persuasion principles in activation moments |
+| `suede-onboarding` | Optimize user onboarding flows | Onboarding rebuild, activation rate tests |
+| `suede-signup` | Optimize signup/registration | Reduce friction at top of activation |
+| `suede-site-alchemy` | Optimize marketing pages, forms, popups, and landing pages | Conversion testing across activation surfaces |
+| `suede-paywalls` | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
+| `suede-copy` | Write, edit, and iterate marketing copy | Onboarding screens, paywall copy, CTAs, and voice review |
+| `suede-ab-testing` | Plan A/B tests | Structure for onboarding variant tests |
+| `suede-marketing-psychology` | Apply behavioral science to copy and CRO | Persuasion principles in activation moments |
 
 ### Retention skills
 
 | Skill | What it does | Primary use in Retention |
 |---|---|---|
-| `emails` | Design email sequences | Customer.io / Mailchimp / Resend flow building |
-| `churn-prevention` | Build cancellation flows, save offers, win-back | Reduce churn, recover failed payments |
-| `copywriting` / `copy-editing` | Email copy production | Lifecycle email content |
-| `paywalls` | (cross-cuts) — upgrade prompts in retention emails | Upsell within lifecycle |
-| `ab-testing` | Test email variants | Subject line, CTA, timing tests |
+| `suede-emails` | Design email sequences | Customer.io / Mailchimp / Resend flow building |
+| `suede-churn-prevention` | Build cancellation flows, save offers, win-back | Reduce churn, recover failed payments |
+| `suede-copy` | Email copy production | Lifecycle email content |
+| `suede-paywalls` | (cross-cuts) — upgrade prompts in retention emails | Upsell within lifecycle |
+| `suede-ab-testing` | Test email variants | Subject line, CTA, timing tests |
 
 ### Referral skills
 
 | Skill | What it does | Primary use in Referral |
 |---|---|---|
-| `referrals` | Plan and launch referral / affiliate / ambassador programs | Core skill for Section 7 |
-| `social` | Create ambassador-shareable content | Talking points, post templates |
-| `copywriting` | Ambassador / affiliate email copy | Recruitment, onboarding, communication |
-| `marketing-website-design` | Per-ambassador landing pages | Attribution surface |
-| `emails` | Ambassador lifecycle emails | Onboarding, monthly digest, payout notifications |
+| `suede-referrals` | Plan and launch referral / affiliate / ambassador programs | Core skill for Section 7 |
+| `suede-social` | Create ambassador-shareable content | Talking points, post templates |
+| `suede-copy` | Ambassador / affiliate email copy | Recruitment, onboarding, communication |
+| `suede-site-alchemy` | Per-ambassador landing pages | Attribution surface |
+| `suede-emails` | Ambassador lifecycle emails | Onboarding, monthly digest, payout notifications |
 
 ### Revenue skills
 
 | Skill | What it does | Primary use in Revenue |
 |---|---|---|
-| `pricing` | Audit and optimize pricing | Plan tier structure, annual defaults, value metrics |
-| `paywalls` | Paywall optimization | Trial → paid, free → paid conversion |
-| `sales-enablement` | Build sales decks, one-pagers, demos | B2B sales support material |
-| `revops` | Revenue operations, lead lifecycle | Marketing → sales handoff |
-| `ab-testing` | Pricing experiments | Test annual default, intro pricing, tier consolidation |
+| `suede-pricing` | Audit and optimize pricing | Plan tier structure, annual defaults, value metrics |
+| `suede-paywalls` | Paywall optimization | Trial → paid, free → paid conversion |
+| `suede-sales-enablement` | Build sales decks, one-pagers, demos | B2B sales support material |
+| `suede-revops` | Revenue operations, lead lifecycle | Marketing → sales handoff |
+| `suede-ab-testing` | Pricing experiments | Test annual default, intro pricing, tier consolidation |
 
 ### Cross-cutting / brand foundation skills
 
 | Skill | What it does | Primary use |
 |---|---|---|
-| `product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational — run first; every section of the plan references this |
-| `customer-research` | Conduct customer interviews + surveys | Section 2 + Section 3 (Current state) |
-| `marketing-psychology` | Apply behavioral science | Cross-cuts copy, CRO, paywalls |
-| `marketing-ideas` | The 139-idea library | Section 12 of plan (Idea bank) |
+| `suede-product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational — run first; every section of the plan references this |
+| `suede-customer-research` | Conduct customer interviews + surveys | Section 2 + Section 3 (Current state) |
+| `suede-marketing-psychology` | Apply behavioral science | Cross-cuts copy, CRO, paywalls |
+| `suede-marketing-ideas` | The 139-idea library | Section 12 of plan (Idea bank) |
 
 ## MCPs and APIs mapped to AARRR
 
 ### Acquisition tooling
 
-| Tool | What it provides | Wired-at-client check |
+| Optional tool | What it can provide | Availability and authority check |
 |---|---|---|
-| **Ahrefs API** | SEO data: keyword research, backlinks, competitor analysis | Required `AHREFS_API_KEY` in `.env` |
-| **DataForSEO API** | SERP data, keyword volume, competitor SERP analysis | Required API key |
-| **GA4 MCP** | Traffic by channel, conversion events, retention curves | Wired via gcp project + service account |
-| **GitHub MCP** | Repo work: marketing site (`site-name-promo` patterns), content authoring | Standard `gh` CLI auth + MCP server |
-| **Typefully MCP** | Social posting (LinkedIn, X, Threads, Bluesky) | Typefully account + API key |
-| **Google Ads MCP** | Ad account management, campaign creation, performance pulls | Wired post-budget-unlock |
-| **agent-browser** | Browser automation (form fills, screenshots, scraping) | CLI install: `npm install -g agent-browser` |
-| **dev-browser** | General-purpose browser automation | MCP server install |
-| **defuddle** | Clean markdown extraction from web pages | CLI install |
-| **Notion** | Internal knowledge directory access | Notion API key |
-| **Stripe MCP** | LTV math, paid-CAC reconciliation (cross-cuts to Revenue) | Stripe account + restricted key |
+| **Ahrefs API** | SEO data: keyword research, backlinks, competitor analysis | Confirm an already authorized connection; never request or expose a secret |
+| **DataForSEO API** | SERP data, keyword volume, competitor SERP analysis | Confirm authorized account, cost ceiling, and data terms |
+| **GA4 MCP** | Traffic by channel, conversion events, retention curves | Confirm callable property, identity, scope, and read-only boundary |
+| **GitHub MCP** | Repo work: marketing site, content authoring | Confirm exact repo, branch, permissions, and mutation approval |
+| **Typefully MCP** | Social drafting or posting where supported | Confirm account identity; posting requires explicit publication approval |
+| **Google Ads MCP** | Campaign analysis or approved account changes | Confirm account identity and read-only/change scope; spend changes need explicit approval |
+| **Browser automation** | Form checks, screenshots, and authorized workflows | Use only if already available and permitted; installation and submission are separate approvals |
+| **Page extraction** | Clean text extraction from permitted web pages | Use an available reader; do not install software or bypass access controls |
+| **Notion** | Authorized internal knowledge access | Confirm workspace, page scope, and read/write boundary |
+| **Stripe MCP** | LTV inputs and paid-CAC reconciliation | Confirm account identity, restricted scope, and read-only boundary |
 
 ### Activation tooling
 
 | Tool | What it provides |
 |---|---|
-| **App Store Connect** | Conversion rate by listing variant, install funnel | Usually manual + `dev-browser` for screenshots |
+| **App Store Connect** | Conversion rate by listing variant, install funnel | Confirm authorized property and available read method; do not assume browser tooling |
 | **GitHub MCP** | Mobile app repo for onboarding code edits |
 | **Figma / Pencil MCP** | Onboarding screen design + iteration |
 | **Customer.io MCP** | In-app messaging + lifecycle email coordination |
@@ -161,37 +157,46 @@ The plan's Section 11 makes this thesis explicit by:
 | **Pencil MCP** | Design files |
 | **Figma MCP** | Design files (if Figma) |
 
-## Capability unlocks by funding stage
+## Capability unlocks by verified resource state
 
-The plan's Section 11 must include this table (or equivalent), specific to the client's current and projected funding stages.
+Section 11 must include this table (or equivalent). Funding stage may be context,
+but it does not supply the answer.
 
-| Stage | Headcount | Tooling | Channels live |
-|---|---|---|---|
-| **Pre-seed / bootstrapped** | fCMO + founder team | All current tooling + marketing-skills library + MCP layer | Organic only (SEO, content, App Store, founder-led social, events, WOM, ambassador) |
-| **Seed close** | + first marketing hire (lifecycle/content owner) | + paid ad accounts (Apple Search Ads, Meta, LinkedIn) + `suede-ads` skill activated | + paid acquisition pilot ($5–15K/mo — see `funding-stage-unlocks.md` for canonical tiers) |
-| **Seed deployment** | + designer (potentially fractional) | + analytics expansion (Mixpanel / Amplitude if needed) | + paid scaling ($20–50K/mo) + first launches (PH, GA) |
-| **Series A** | + performance marketing lead + content lead | + dedicated tooling spend ($2–5K/mo software) + sponsored event budget | + paid scaling ($50–150K/mo) + international consideration + B2B vertical expansion |
-| **Series B+** | Full-stack marketing org (10+ people) | + agency partnerships + PR firm | + brand campaigns + acquisitions + sponsorships at category level |
+| Capability | Current evidence and owner | Constraint | Unlock condition | Approval / maximum exposure | Review |
+|---|---|---|---|---|---|
+| Acquisition test | | | | | |
+| Lifecycle | | | | | |
+| Content / creative | | | | | |
+| Analytics | | | | | |
+| Community / PR | | | | | |
+
+Mark each capability `current`, `approved test`, `conditional unlock`, or
+`deferred` using `funding-stage-unlocks.md`. Never infer headcount, tool spend,
+or channel scale from a round label.
 
 ## The concrete-example test
 
-Section 11 of the plan must include at least one concrete operational example that proves the stack thesis. The example should be:
+Section 11 of the plan must include at least one concrete operational example that grounds the stack thesis in evidence. The example should be:
 - A specific event (not abstract claim)
-- From this client's actual history if possible (most credible)
-- Tied to a non-technical person executing via the stack (proves it works without dedicated engineering)
+- From this client's actual history when a source artifact is available
+- Tied to a named owner, workflow, review step, and observable result
+- Careful not to attribute an outcome to a skill or integration unless the evidence supports that causal claim
 
-Examples from real engagements:
-- *"On the kickoff call, Alex drafted a working Customer.io abandoned-cart flow live, using Customer.io's Claude MCP. Validated that a non-technical founder can ship lifecycle work using the skill pattern independently."*
-- *"In two weeks, the team scaled from 0 to 14 ranking keywords using `programmatic-seo` against the Ahrefs API + GitHub MCP — no dedicated SEO hire required."*
-- *"The first email campaign generated a 24% reply rate after `suede-cold-email` skill + GA4 MCP + Stripe MCP gave the team a verified target list of users with high LTV but no recent activity."*
+Use this evidence format:
+- *"On [date], [owner] used [verified skill/tool] to complete [specific workflow]. [Reviewer] approved [artifact or deployment]. The recorded result was [measured observation], according to [source]."*
+- If the result is only an illustrative planning scenario, label every number as an assumption and state that it is not an expected outcome.
 
-If the client has no such moment in their history yet, frame the example as the *first move* — "Here's the demonstration the team will run in week one to validate the stack:"
+If the client has no verified example yet, frame it as the *first test* — "Here is the workflow the team will run in week one, the artifact it will produce, and the metric it will observe." Do not present the test as proof or forecast its result.
 
 ## When the stack doesn't apply (yet)
 
-For clients without MCP connections set up, frame Section 11 differently:
-- List the skills that DO apply with current tooling
-- Name which MCPs would unlock which sections of the plan
-- Treat MCP setup as a Q1 priority alongside the bedrock fixes
+For clients without callable authorized connections, frame Section 11
+differently:
+- List the manual workflows and public Suede skills that apply now.
+- Name the specific evidence or efficiency question an optional connection
+  could address, plus owner, data boundary, cost, fallback, and review.
+- Keep setup or installation as an unapproved option until the user explicitly
+  authorizes the exact tool, account, scope, cost, and mutation boundary. Do not
+  assign it to Q1 by default.
 
 A plan can't claim the agentic-stack thesis if the stack isn't wired. Be honest about state.

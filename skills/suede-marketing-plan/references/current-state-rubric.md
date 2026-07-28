@@ -4,11 +4,35 @@ This 17-section rubric is the source of truth for Section 3 ("Current State") of
 
 ## How to score
 
-**From rich materials.** When the team has shared decks, prior content audits, a brand voice doc, kickoff transcript, app store and analytics snapshots — score each section from those artifacts. Mark "scored from materials" in the section heading so the team can push back where they have better data.
+**From rich materials.** When the team has shared decks, prior content audits,
+a brand voice doc, kickoff transcript, app store and analytics snapshots, score
+only what those artifacts currently support. Mark the source, capture date,
+client or cohort scope, and metric definition beside every score.
 
-**From a separately scored audit.** If the team has already run a scored current-state assessment (in any format), ingest those scores directly. Don't redo the work — note the date the rubric was scored and flag any sections where material has shifted since.
+**From a separately scored audit.** Treat a prior assessment as an evidence
+input, not automatic ground truth. Record its date and scope, verify that its
+underlying sources and definitions still match the current client state, and
+rescore or mark unknown where they do not.
 
-Either way, the output is the same: a 17-row scored table, a total out of 85, and a shape paragraph.
+**Evidence gate for every score.** A score of 0, 2, 4, 5, or any intermediate
+value requires a current, client-specific source or a clearly identified cohort
+source that matches the client context. Record:
+
+- source and capture date;
+- client, surface, segment, and cohort/window;
+- metric or judgment definition;
+- observed evidence and counterevidence;
+- confidence and unresolved data-quality limits.
+
+Use `Unknown — evidence required` rather than converting missing access,
+intentional inactivity, company stage, or an external benchmark into a numeric
+score. Do not include unknown sections in the denominator. The score-guide
+language below describes evidence states; it never substitutes for cited
+client or cohort evidence.
+
+The output is a 17-row table with evidence citations, a denominator that
+reflects scored sections, and a shape paragraph that distinguishes facts from
+hypotheses.
 
 ## The 17 sections (scored 0–5 each)
 
@@ -96,7 +120,8 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 - 0 = No onboarding flow
 - 2 = Onboarding exists but is broken, off-voice, or underperforming
 - 4 = Solid onboarding; clear bottlenecks identified
-- 5 = Tested, optimized, on-brand; activation rate at category top quartile
+- 5 = Instrumented and tested against a dated client baseline; the
+  pre-registered decision rule is met; brand review is recorded
 
 **Maps to AARRR:** Activation.
 
@@ -107,7 +132,8 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 - 0 = No lifecycle email
 - 2 = Some flows exist but drafted not live, or live but stale
 - 4 = Core flows live and performing; gaps on secondary flows
-- 5 = Full lifecycle live, segmented, performing above category benchmarks
+- 5 = Required lifecycle coverage is live and segmented; performance is traced
+  to dated cohort baselines or a cited, cohort-matched external comparator
 
 **Maps to AARRR:** Retention (+ Activation for onboarding emails).
 
@@ -118,7 +144,8 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 - 0 = No sales material
 - 2 = Founder uses a deck but other material is thin
 - 4 = Solid sales kit; reps can self-serve content
-- 5 = Comprehensive material; updated quarterly; objection-handling library exists
+- 5 = Required material is complete, versioned to the current offer, accessible
+  to its owners, and includes evidence-backed objection handling
 
 **Maps to AARRR:** Acquisition + Revenue (B2B).
 
@@ -137,10 +164,14 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 **What's scored:** Pricing structure clarity, packaging logic, recent pressure-testing, listed vs. effective price reconciliation.
 
 **Score guide:**
-- 0 = Pricing not pressure-tested in over a year; unclear structure
-- 2 = Listed pricing exists but plan mix / discounting muddles the read
-- 4 = Clear pricing; recent tests; LTV math known
-- 5 = Pricing tested quarterly; packaging optimized; expansion levers known
+- 0 = Current client sources show no reconciled pricing or packaging decision
+  record and no usable realized-price evidence
+- 2 = Dated listed and realized prices exist, but plan mix, discounting,
+  margin, retention, or cohort definitions remain unreconciled
+- 4 = Current client and cohort evidence supports the pricing logic, unit
+  economics, and latest approved test or review decision
+- 5 = Pricing/packaging decisions have current evidence, an approved testing or
+  review cadence, reconciled effective prices, and documented expansion options
 
 **Maps to AARRR:** Revenue.
 
@@ -162,7 +193,8 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 - 0 = No structured launches; "soft launches" only
 - 2 = Some launches but uneven execution
 - 4 = Solid recent launches; playbook exists
-- 5 = Repeatable launch motion; Product Hunt #1s; press coverage on demand
+- 5 = Repeatable launch workflow with owners, evidence, readbacks, and
+  post-launch decisions documented across multiple launches
 
 **Maps to AARRR:** Acquisition + Activation.
 
@@ -172,12 +204,17 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 **Score guide:**
 - 0 = No paid acquisition
 - 2 = Some paid but unstructured / wasteful
-- 4 = Paid is firing across 2–3 channels with positive unit economics
-- 5 = Sophisticated paid stack; CAC/LTV understood; creative iterated weekly
+- 4 = At least one measured paid workflow meets the company's approved
+  economics and guardrails; remaining constraints are documented
+- 5 = Paid decisions reconcile CAC, margin, retention, attribution, creative,
+  owner capacity, and stop conditions from dated sources
 
 **Maps to AARRR:** Acquisition.
 
-**Note:** For pre-seed clients with no paid budget, score this 0 *without* treating it as a weakness — it reflects the funding stage, not a marketing failure.
+**Note:** When paid acquisition is intentionally out of scope, mark this `N/A`
+or `0 — intentionally inactive` and explain the verified budget, evidence,
+capacity, or strategy constraint. Do not infer the interpretation from funding
+stage.
 
 ### 16. SEO
 **What's scored:** Organic search performance. Domain rating, ranking keywords, organic traffic, content cluster strategy.
@@ -185,8 +222,10 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 **Score guide:**
 - 0 = No SEO; new domain or zero-authority
 - 2 = Some content but no strategy; ranks for brand only
-- 4 = Established content clusters; growing organic traffic; DR 25+
-- 5 = SEO is a moat; DR 40+; thousand+ ranking keywords; consistent content production
+- 4 = Tracked content clusters show source-backed organic progress against the
+  client's dated baseline; known gaps have owners
+- 5 = Search contributes durable, measured value across priority queries and
+  conversion paths, with current technical/content operations and review rules
 
 **Maps to AARRR:** Acquisition.
 
@@ -201,42 +240,58 @@ Either way, the output is the same: a 17-row scored table, a total out of 85, an
 
 **Maps to AARRR:** Acquisition.
 
-**Note:** For most early-stage companies, internationalization scores 0–1 and that's appropriate. Don't penalize early-stage companies for not having international playbooks yet.
+**Note:** If internationalization is outside the verified market strategy, mark
+it `N/A` or score the current evidence without penalty. Company age, ARR, or
+funding stage does not determine the score.
 
-## How to compute the total + read the shape
+## How to compute the scored result + read the shape
 
-**Total = sum of all 17 scores. Out of 85.**
+**Scored result = sum of known scores / (5 × number of known sections).**
+Report unknown sections separately; use `/85` only when all 17 evidence gates
+pass.
 
 The total matters less than the *shape*. After the scoring table, write a 2–4 sentence "shape interpretation":
 
 > *"High in {strong sections}, low in {weak sections}. That shape is the gap the rest of the plan closes — Sections X (AARRR stage) is the longest because that's where the gap is widest."*
 
-## Common shapes
+## Candidate shapes to investigate
 
 ### "Strong voice / messaging, weak distribution"
 - High: Positioning (#1), Customer research (#2), Messaging (#11)
 - Low: SEO (#16), Ads (#15), GTM launches (#14)
-- Translation: The founder is a strong storyteller but distribution hasn't caught up. Plan emphasizes Acquisition + paid layer prep.
+- Hypothesis to test: messaging evidence is stronger than measured qualified
+  distribution. Reconcile source quality, demand, downstream conversion,
+  economics, capacity, and intentionally inactive channels before prioritizing
+  an acquisition test. Low paid activity is not evidence that paid should start.
 
 ### "Strong acquisition, weak conversion"
 - High: SEO (#16), Resources (#7), Ads (#15)
 - Low: Homepage (#3), Onboarding (#8), Conversion pages (#5), Pricing (#12)
-- Translation: Traffic comes in but doesn't convert. Plan emphasizes Activation + Revenue.
+- Hypothesis to test: qualified traffic reaches the funnel but a defined cohort
+  loses value before activation or purchase. Reconcile traffic quality, event
+  definitions, cohort windows, research, and pricing before selecting a test.
 
 ### "Strong conversion, weak retention"
 - High: Onboarding (#8), Homepage (#3), Pricing (#12)
 - Low: Email lifecycle (#9), CRO (#13)
-- Translation: Users sign up and pay but churn. Plan emphasizes Retention.
+- Hypothesis to test: a comparable activated or paying cohort does not retain.
+  Reconcile cohort definitions, product changes, expected behavior, support
+  evidence, and margin before prioritizing retention work.
 
 ### "Strong product, weak everything-else"
 - High: only Positioning (#1) and Customer research (#2) — the founder knows the customer
 - Low: everything operational
-- Translation: Pre-marketing stage. Plan is foundation-heavy. First quarter is bedrock fixes.
+- Hypothesis to test: current sources support customer understanding but not the
+  operating surfaces needed for an approved test. Identify the smallest
+  evidence or infrastructure gap; do not infer a quarter, channel, or spend.
 
 ### "Strong recent revenue, weak compounding"
 - High: Ads (#15), Sales material (#10), Pricing (#12)
 - Low: SEO (#16), Resources (#7), Referral mechanics
-- Translation: Performance marketing carries the business. Plan emphasizes building compounding channels before paid scales further.
+- Hypothesis to test: current revenue is concentrated in a measured paid or
+  sales workflow while compounding candidates remain unproven. Verify
+  incrementality, margin, retention, attribution, owner capacity, and approved
+  exposure before expanding, holding, or reallocating.
 
 ## When scores are subjective
 
@@ -250,6 +305,7 @@ For subjective sections, write the rationale into the "Note" column so the team 
 
 ## When a prior scored audit exists
 
-If the team already has scored output from any current-state assessment, ingest those scores directly — don't redo the work. Treat that prior scoring as the ground truth for sections it covers.
-
-If the prior scoring was done weeks ago and material has shifted since (new shipped flows, new content live, repositioning, etc.), note "scored on YYYY-MM-DD; material has shifted since" and update any specific scores you have current evidence for.
+If the team already has scored output from a current-state assessment, preserve
+it as dated evidence. Reuse a score only when its source, scope, cohort/window,
+and definition still match the current client state. Otherwise mark the row
+unknown or rescore from current evidence, and document what changed.

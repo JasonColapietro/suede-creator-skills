@@ -1,13 +1,13 @@
 ---
 name: suede-ad-creative
-description: "Produce ad creative at volume: headline and primary-text variants, platform specs, static and motion concepts, and a creative testing cadence. Use when the user needs ad copy variations, creative concepts, or a testing plan for a paid campaign. Also use when the user mentions 'ad copy variations,' 'ad creative,' 'generate headlines,' 'RSA headlines,' 'bulk ad copy,' 'ad iterations,' 'creative testing,' 'ad performance optimization,' 'write me some ads,' 'Facebook ad copy,' 'Google ad headlines,' 'LinkedIn ad text,' 'static ads,' 'static ad concepts,' 'ad templates,' 'iMessage ad,' 'chat reveal ad,' 'fake DM ad,' 'ChatGPT ad,' 'Apple Notes ad,' 'AirDrop ad,' 'creative strategy,' 'creative roadmap,' 'creative retro,' 'hook writing,' 'creative review page,' 'present ad creative for approval,' 'motion video ad,' 'faceless video ad,' 'animated explainer ad,' 'motion collage ad,' or 'I need more ad variations.' Use this whenever someone needs to produce ad copy at scale or iterate on existing ads."
+description: "Suede-owned paid-media creative system for hooks, headlines, primary text, static and motion concepts, platform specs, review pages, and test-ready variant batches. Use when producing or iterating ad creative from grounded product and audience inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), or landing-page copy (use suede-copy)."
 metadata:
   version: 2.8.0
 ---
 
-# Ad Creative
+# Suede Ad Creative
 
-You are an expert performance creative strategist. Your goal is to generate high-performing ad creative at scale — headlines, descriptions, and primary text that drive clicks and conversions — and iterate based on real performance data.
+Use this Suede performance-creative system to generate testable headlines, descriptions, primary text, and visual concepts, then iterate from real performance data.
 
 ## Before Starting
 
@@ -61,7 +61,7 @@ Pull performance data → Identify winning patterns → Generate new variations 
 ```
 
 ### Mode 3: Scaled Static Batches (Grounded)
-For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material — see "Grounded Inputs" below. To run this on a daily or weekly cadence, see the daily-creative-drop loop in **marketing-loops**. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
+For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material — see "Grounded Inputs" below. To run this on a daily or weekly cadence, route the production loop to `suede-marketing-loops`. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
 
 ### Mode 4: Creative Strategy Loop
 For deciding **which ads are worth making before making them**: synthesize three signal sources (account performance, customer language, external organic) into evidence-ranked concepts, branch the creative mix on account state (exploration vs. scaling), maintain a capacity-checked roadmap with production tiers, and run a monthly retro that feeds the next slate. The full system lives in [references/creative-roadmap.md](references/creative-roadmap.md); for hook generation and funnel-stage diagnosis inside any mode, load [references/hook-system.md](references/hook-system.md).
@@ -387,35 +387,33 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 
 ## Tool Integrations
 
-For pulling performance data and managing campaigns, see the [tools registry](../../tools/REGISTRY.md).
+This pack does not ship ad-platform connectors or CLI wrappers. Use only the
+user's authorized platform UI, export, API, or installed connector, and verify
+the current official platform documentation before constructing a call.
 
-| Platform | Pull Performance Data | Manage Campaigns | Guide |
-|----------|:---------------------:|:----------------:|-------|
-| **Google Ads** | `google-ads campaigns list`, `google-ads reports get` | `google-ads campaigns create` | [google-ads.md](../../tools/integrations/google-ads.md) |
-| **Meta Ads** | `meta-ads insights get` | `meta-ads campaigns list` | [meta-ads.md](../../tools/integrations/meta-ads.md) |
-| **LinkedIn Ads** | `linkedin-ads analytics get` | `linkedin-ads campaigns list` | [linkedin-ads.md](../../tools/integrations/linkedin-ads.md) |
-| **TikTok Ads** | `tiktok-ads reports get` | `tiktok-ads campaigns list` | [tiktok-ads.md](../../tools/integrations/tiktok-ads.md) |
+For a performance-led batch:
 
-### Workflow: Pull Data, Analyze, Generate
-
-```bash
-# 1. Pull recent ad performance
-node tools/clis/google-ads.js reports get --type ad_performance --date-range last_30_days
-
-# 2. Analyze output (identify top/bottom performers)
-# 3. Feed winning patterns into this skill
-# 4. Generate new variations
-# 5. Upload to platform
-```
+1. Read or export current ad-level performance at a declared date range and
+   account scope.
+2. Record the platform, account, currency, attribution window, and metric
+   definitions with the data.
+3. Analyze patterns, then generate traceable variants in this skill.
+4. Route campaign, budget, audience, or upload decisions to `suede-ads`.
+5. Treat activation as a separate authorized action after rendered review.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **ads**: For campaign strategy, targeting, budgets, and optimization
-- **marketing-loops**: For running static batch generation on a recurring cadence (the daily-creative-drop loop)
-- **customer-research**: For mining reviews and comments when building the grounded inputs corpus
-- **copywriting**: For landing page copy (where ad traffic lands)
-- **ab-testing**: For structuring creative tests with statistical rigor
-- **marketing-psychology**: For psychological principles behind high-performing creative
-- **copy-editing**: For polishing ad copy before launch
+- Do not invent product capabilities, testimonials, performance numbers, urgency, or platform-native proof.
+- Do not upload, publish, activate, or spend against creative without explicit authorization and a final rendered review.
+- Do not generate a replacement Suede S; use only the approved canonical mark when a Suede brand mark is required.
+- Do not decide a creative winner from taste alone; use the declared metric, audience, spend, and test window.
+
+## Routing
+
+- Need campaign structure, targeting, budgets, or optimization -> use `suede-ads`.
+- Need a statistically valid creative test -> use `suede-ab-testing`.
+- Need source language from customers -> use `suede-customer-research`.
+- Need landing-page copy or recurring production -> use `suede-copy` or `suede-marketing-loops`.
+- From those skills, route paid-media creative production back to `suede-ad-creative`.

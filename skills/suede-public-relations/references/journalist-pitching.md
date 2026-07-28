@@ -1,6 +1,8 @@
 # Journalist Pitching — Proactive PR Workflow
 
-Building a media list, scoring journalist fit, and crafting pitches that actually get opened. This is a 4–8 week practice, not a one-shot.
+Building a media list, scoring journalist fit, and crafting draft pitches for
+review. Set the test duration from current story flow, team capacity, and
+measured response rather than a universal campaign window.
 
 ## Contents
 - Building the media list
@@ -16,13 +18,16 @@ Building a media list, scoring journalist fit, and crafting pitches that actuall
 
 ## Building the Media List
 
-The goal: a list of 20–40 journalists who actually cover your beat. Not 500 names from a database.
+Build the smallest source-backed list that covers the relevant beat and current
+story. Set its size from recent coverage volume and review capacity, not a fixed
+quota or a database export.
 
 ### Discovery checklist
 
 For each candidate journalist:
 
-- [ ] Read their **last 5 articles** — are they covering your beat right now?
+- [ ] Review a bounded recent sample from the author page; stop when the sample
+      is enough to establish or reject current beat fit
 - [ ] Note their **publication** — does it reach your ICP?
 - [ ] Check their **bio** on the outlet site — what topics do they own?
 - [ ] Check **X/LinkedIn** for what they're posting about this week
@@ -33,12 +38,12 @@ For each candidate journalist:
 
 | Method | How |
 |--------|-----|
-| **Reverse lookup from coverage you want** | Find 5 articles about competitors / your category, note bylines |
+| **Reverse lookup from coverage you want** | Review a bounded recent article sample and note relevant bylines |
 | **Topic search on Muck Rack** | Free tier shows journalists by topic |
 | **X / Twitter lists** | "[your niche] reporters" lists already exist |
 | **LinkedIn search** | "Journalist" + "[your category]" — filter by recent activity |
 | **Newsletter author pages** | Beehiiv, Substack, ConvertKit creators are pitchable |
-| **Podcast host research** | Listen to 1 episode before pitching — non-negotiable |
+| **Podcast host research** | Review a recent episode or transcript when it is needed to verify topic and format fit |
 
 ### Don't waste time on
 
@@ -51,7 +56,8 @@ For each candidate journalist:
 
 ## Scoring Journalist Fit
 
-Score each journalist 1–10 across four dimensions. Sum and rank. Focus on top 20.
+Score each journalist 1–10 across four dimensions, sum, and rank. Retain only
+the candidates supported by current evidence and the approved review capacity.
 
 | Dimension | What it measures | Weight |
 |-----------|------------------|--------|
@@ -69,7 +75,8 @@ Score each journalist 1–10 across four dimensions. Sum and rank. Focus on top 
 
 ## Pitch Templates by Angle
 
-Six structures that work. Pick the one that matches your story.
+Six starting structures to test. Adapt one to the verified story, recipient
+preferences, and outlet format.
 
 ### 1. Data story
 
@@ -213,16 +220,18 @@ If useful for a follow-up, I'm around all day at this number: [phone].
 
 ## Subject Lines That Get Opened
 
-Journalists open pitches based on the subject line alone. Rules:
+The subject line affects comprehension and may affect opens. Treat these as
+drafting hypotheses and verify outlet preferences where published:
 
-- **Under 50 characters** — mobile preview cuts off
+- **Concise enough for the current inbox preview** — verify the relevant client
+  or test multiple readable lengths
 - **Lead with the specific** — "73% of devs deploy to prod on Fridays" beats "New data on developer workflows"
 - **Promise a story, not a product** — "Why [trend]" beats "[Company] launches [thing]"
 - **Use prefixes that signal value** — "Exclusive:", "Data:", "Op-ed pitch:", "Re: [their article]"
 
 **Test against this question:** would *you* open this in a 200-email inbox?
 
-**Patterns that work:**
+**Patterns to test:**
 - "[Specific stat] — [implication]" — "73% of agents fail this test"
 - "Exclusive: [milestone]" — "Exclusive: Anthropic launches AgentOS"
 - "Re: [their headline]" — direct response to recent coverage
@@ -241,7 +250,8 @@ Journalists open pitches based on the subject line alone. Rules:
 
 ### Length
 
-**150 words max for the pitch.** If you can't say it in 150 words, you don't know what your story is yet.
+Start with a concise draft, then fit the verified outlet preference and story
+complexity. Do not treat 150 words as a universal maximum.
 
 ### Structure
 
@@ -271,7 +281,8 @@ Revolutionary, disruptive, game-changing, paradigm shift, leverage, synergy, rob
 
 An embargo is "you can write this story, but don't publish until [time]."
 
-- **Only offer embargoes to journalists you've worked with** or have strong reputations for honoring them
+- Offer an embargo only after current outlet practice, relationship, disclosure,
+  and approval checks support it
 - State the embargo time clearly: day, time, timezone
 - If they break embargo, your relationship with them is over
 
@@ -279,16 +290,22 @@ An embargo is "you can write this story, but don't publish until [time]."
 
 "Only you get this story" — powerful tool, use sparingly.
 
-- **First-tier outlet only** — exclusives to tier 2/3 outlets waste the lever
+- Evaluate exclusivity from audience fit, story value, terms, and opportunity
+  cost rather than outlet tier alone
 - **Be honest about scope** — "exclusive to [outlet] in the US" is fine
 - **Have a parallel plan** — what you publish/pitch the next day after the exclusive runs
 
-### Follow-up cadence
+### Follow-up cadence hypothesis
 
-- **Day 0** — initial pitch
-- **Day 3** — one follow-up if you have new information ("Just talked to [customer] who can join us")
-- **Day 7** — final check-in with a fresh hook ("This came out today, still relevant?")
-- **After day 7** — let it go. Re-pitch when you have something genuinely new.
+- Start from any preference or deadline published by the journalist or outlet.
+- If no preference exists, propose at most one follow-up only when it adds
+  material new information; choose timing from story velocity and prior
+  response data.
+- Stop when the deadline, relevance, or consent context closes. Re-pitch only
+  with a genuinely new, verified story.
+
+Every initial pitch and follow-up remains a separate draft until the user
+explicitly approves the exact recipient, identity, channel, and content.
 
 **Never:**
 - "Bumping this up" / "Did you see my email?"
@@ -316,27 +333,34 @@ Things that instantly disqualify your pitch:
 
 ### Finding journalist contact info
 
-```bash
-# Most journalists' emails follow patterns:
-# firstname@outlet.com
-# firstname.lastname@outlet.com
-# flastname@outlet.com
-# Use Hunter.io, RocketReach, or just guess and bounce-check
-```
+Use only a publicly listed professional email, the outlet's official contact
+path, or a contact database the user is licensed and authorized to use. Discover
+whether a current callable verifier exists before relying on one; otherwise ask
+the user to verify manually. Do not guess addresses, send bounce probes, or
+present an inferred address as confirmed.
 
-### Researching their recent work (browser-driven)
+### Researching their recent work
 
-Use `dev-browser` (persistent session, no rate limits) to:
-- Open the journalist's outlet author page → scrape last 5 article headlines + dates
-- Open their X/Twitter profile → note recent topics
-- Open their LinkedIn → confirm current role
+First discover whether an authorized browser or source reader is currently
+callable and confirm the visible account identity and source terms. If
+available:
+
+- Review a bounded recent sample from the journalist's outlet author page and
+  record article headlines, dates, and links.
+- Review public professional posts only when the platform permits access.
+- Confirm the current role from the outlet profile or another first-party
+  professional source.
+
+If no browser is available, ask the user for the author-page URL, article links,
+or an export and provide a manual research checklist. Never claim the research
+was performed when only the checklist was produced.
 
 Output what you find as:
 
 ```
 JOURNALIST PROFILE — [name]
 Outlet: [name]
-Beat: [topics from last 5 articles]
+Beat: [topics from bounded recent sample]
 Recent angle: [pattern you noticed]
 Recent X activity: [what they're posting]
 Score: [X/40 from rubric]
@@ -346,10 +370,12 @@ Email: [confirmed]
 
 ### Maintaining the media list
 
-Store in `.agents/media-list.md` (or `.csv` if you prefer). Update monthly — journalists move jobs constantly.
+Store in `.agents/media-list.md` or a user-approved CSV. Recheck the role,
+outlet, contact path, and source date immediately before each pitch; use a
+calendar-based refresh only if the user's send cadence supports it.
 
 ```markdown
-## Tier 1 (top 20)
+## Highest-evidence current tier
 | Name | Outlet | Beat | Last contact | Last coverage | Email | Score |
 |------|--------|------|--------------|---------------|-------|-------|
 | ...  | ...    | ...  | 2026-05-15   | none yet      | ...   | 9/10  |
@@ -365,4 +391,6 @@ Track in a simple spreadsheet:
 - Response (open / reply / pass / coverage)
 - What they said
 
-After 30 pitches, you'll see which subject patterns and which angles work for you specifically.
+Review results after a predeclared, capacity-bounded cohort. Do not claim a
+minimum sample is sufficient; report uncertainty and expand only when another
+cohort is justified.

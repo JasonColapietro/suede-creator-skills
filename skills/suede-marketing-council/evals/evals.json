@@ -1,10 +1,10 @@
 {
-  "skill_name": "marketing-council",
+  "skill_name": "suede-marketing-council",
   "evals": [
     {
       "id": 1,
       "prompt": "We're a B2B SaaS about to cut our price 40% to compete with a cheaper rival. Have the council review this.",
-      "expected_output": "Should check for product-marketing.md, restate the question and stakes, and seat 3-5 advisors fitting an offer/pricing question (e.g., Hormozi, Halbert) plus at least one designated dissenter (e.g., Sutherland on price-as-signal or Godin on race-to-the-bottom). Should open with the simulation disclaimer. Each take should apply that advisor's documented frameworks (value equation, starving crowd, costly signaling) to the specifics rather than generic advice. Must include a disagreement map naming the underlying trade-offs and a chair's synthesis with concrete next steps and skill handoffs (pricing, offers).",
+      "expected_output": "Should check for the canonical product-marketing context, restate the question and stakes, and seat 3-5 advisors fitting an offer/pricing question plus at least one designated dissenter. Should open with the simulation disclaimer. Each take should apply that advisor's documented frameworks to the specifics rather than generic advice. Must include a disagreement map naming the underlying trade-offs and a chair's synthesis with concrete next steps and handoffs to suede-pricing and suede-offers.",
       "assertions": [
         "Includes the simulation disclaimer",
         "Seats 3-5 advisors appropriate to a pricing question",
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "prompt": "What would David Ogilvy say about this headline: 'Revolutionize your workflow with AI-powered synergy'?",
-      "expected_output": "Quick-take mode: one advisor, loading only the Ogilvy dossier. Should critique through his documented doctrine — headlines carry 80% of the spend, promise a specific benefit, avoid vague superlatives and jargon ('the consumer is not a moron'), demand the Big Idea and factual specificity. Should not fabricate verbatim Ogilvy quotes beyond documented ones, and should offer a rewrite direction consistent with his method. May hand off to copywriting for execution.",
+      "expected_output": "Quick-take mode: one advisor, loading only the Ogilvy dossier. Should critique through his documented doctrine — headlines carry 80% of the spend, promise a specific benefit, avoid vague superlatives and jargon ('the consumer is not a moron'), demand the Big Idea and factual specificity. Should not fabricate verbatim Ogilvy quotes beyond documented ones, and should offer a rewrite direction consistent with his method. May hand off execution to suede-copy.",
       "assertions": [
         "Runs quick-take mode with one advisor, not a full council",
         "Applies Ogilvy's documented headline doctrine specifically",

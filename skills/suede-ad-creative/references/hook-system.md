@@ -71,7 +71,7 @@ Each metric in the delivery funnel isolates a different component. When an ad un
 | Stop | Thumbstop / 3-sec view rate | **Visual action** (and caption) | New visual opening; same everything else |
 | Stay | Hold rate (3s → 15s / 50% view) | **The on-ramp** — what follows the hook | Rework seconds 3–15, not the hook |
 | Click | CTR | Desire/offer clarity mid-ad | Sharpen the promise, CTA, or proof |
-| Convert | CVR post-click | Congruence — the page doesn't continue the ad | Fix the landing page or the claim, per **cro** |
+| Convert | CVR post-click | Congruence — the page doesn't continue the ad | Route landing-page diagnosis to `suede-site-alchemy` |
 
 Two rules this table enforces:
 
@@ -101,7 +101,7 @@ Testing a hunch with an expensive shoot and testing a proven angle with a throwa
 
 ## Grounding Rules (inherited, non-negotiable)
 
-Hooks inherit every grounding rule from SKILL.md: every hook cites the corpus source its motivation came from; no invented claims, stats, or testimonials; verbatim customer language over paraphrase. Additionally, mine **organic content in the niche** (top-performing TikToks/Reels/posts, via the **scraping** skill or the social listening tooling in **social**) for the audience's actual vocabulary — the words the niche uses ("GLP-1" vs. the clinical term, the slang for the pain) belong in the caption and spoken line. Organic mining is language research, not copying: take the vocabulary and the visual conventions, never a creator's specific creative.
+Hooks inherit every grounding rule from SKILL.md: every hook cites the corpus source its motivation came from; no invented claims, stats, or testimonials; verbatim customer language over paraphrase. Additionally, mine **organic content in the niche** (top-performing TikToks/Reels/posts) through authorized public-source research or the listening workflow in `suede-social` for the audience's actual vocabulary — the words the niche uses ("GLP-1" vs. the clinical term, the slang for the pain) belong in the caption and spoken line. Organic mining is language research, not copying: take the vocabulary and the visual conventions, never a creator's specific creative.
 
 ---
 

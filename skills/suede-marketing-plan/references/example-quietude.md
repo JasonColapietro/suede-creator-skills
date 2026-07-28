@@ -1,19 +1,30 @@
 # Example — Quietude Marketing Plan v1
 
-**This is the canonical reference example for the `/marketing-plan` skill.** It's based on a real fCMO engagement for a hybrid hardware-and-software wellness platform. **Names, domains, and identifying details have been changed** — the client is called "Quietude" here, and the team members have been renamed (Alex / Sam / Casey / Devon). The funnel numbers, budget, and structural lessons preserve the shape of the original engagement so the example retains its teaching value.
+**This is an illustrative structure example for the `/suede-marketing-plan`
+skill.** Names, domains, identifying details, numbers, budgets, and outcomes are
+teaching assumptions. They are not verified current client facts, benchmarks,
+forecasts, or reusable recommendations.
 
-Use this as the "what good looks like" reference when drafting a new plan. The structure, tone, depth, and operational specificity are the bar to clear.
+Use it to inspect document structure and evidence-label placement only. A real
+plan must replace every client fact, threshold, channel, tool, owner, amount,
+date, and decision rule with current sourced evidence and explicit authority.
 
 **Quietude's archetype:** Hybrid hardware + software with deep-tech / clinical credibility layer. See `references/client-types.md` for archetype patterns.
 
-**Funding-stage context:** Pre-seed-close (mid-raise on $3M seed). Tier 1 per `references/funding-stage-unlocks.md`. $0 paid budget; organic + lifecycle + ambassador only.
+**Resource context in this illustrative scenario:** no paid budget is approved;
+organic, lifecycle, and ambassador work is limited to the named owners'
+capacity. All amounts and outcomes below are teaching assumptions, not
+benchmarks or recommendations. A real plan must replace them with dated client
+evidence and approval.
 
 **What was strong about this plan:**
 - Strategic frame (Section 2) leaned on the founder's own meditation-vs-regulation framing as the content pillar
 - Current state (Section 3) included the 17-section audit rubric scored against existing materials (no formal audit run)
 - 90-day roadmap (Section 9) had owner-assigned moves, not just actions
-- Ops stack (Section 11) included a concrete operational proof-point (Customer.io MCP used live by non-technical founder on the kickoff call)
-- Tactical idea bank (Section 12) cross-referenced all 139 marketing-ideas to AARRR + Quietude-specific status, including 23 explicit skips with rationale
+- Ops stack (Section 11) included a concrete operational example recorded in the client materials (a Customer.io workflow drafted during kickoff and held for human review)
+- Tactical idea bank (Section 12) illustrates client-specific status notes. It
+  is a dated subset, not the canonical inventory or count; use
+  `idea-cross-reference.md` for current mapping.
 
 ---
 
@@ -26,13 +37,17 @@ Use this as the "what good looks like" reference when drafting a new plan. The s
 
 ## 1. Executive summary
 
-Quietude has built something rare: a clinically validated, brand-coherent, founder-led product in a category that doesn't yet have a name. The opportunity in the next twelve months is not to invent a marketing engine from scratch — it's to **convert the existing organic gravity into a measurable, repeatable funnel**, then layer paid acquisition on top of that funnel once the seed round closes.
+This scenario hypothesizes that Quietude can convert existing organic demand
+into a measurable funnel. Paid acquisition remains a conditional option: a
+financing event alone does not unlock it. Current audience, economics, tracking,
+creative capacity, accountable approval, maximum exposure, review date, and
+stop conditions must all be verified.
 
 **Three big bets, ranked by leverage:**
 
 1. **Fix the leak before pouring water in.** The Day 1 → Day 35 funnel shape (1.34% → 5.46%) tells us the product converts given time and contact. What it's missing is a working first-session moment (the headphone gate is killing conversion) and a lifecycle layer to deliver the contact. These two pieces — onboarding rebuild and Customer.io flows shipped — are the unlock for everything else.
 2. **Compound the moats Quietude already has.** Peer-reviewed clinical study, longevity-influencer PR, 15K live event participants, Alex's founder voice — these are link generators, content pillars, and credibility anchors that most wellness brands would kill for. They're under-leveraged. SEO, content, and App Store optimization translate them into search and discovery surface area.
-3. **Build the founder-and-fCMO operating system that lets a 4-person team market like a 20-person one.** This is what makes the plan actually executable at Quietude's team size and burn rate — agentic tooling on top of Customer.io, Shopify, App Store, Stripe, GitHub, and the marketing skill library means we ship without hiring.
+3. **Build the founder-and-fCMO operating system that gives a 4-person team repeatable execution.** The public Suede skill pack coordinates verified workflows across Customer.io, Shopify, App Store, Stripe, and GitHub when those integrations are available, while named human owners retain approval for publishing, spend, and production changes.
 
 **What twelve months looks like, plausibly:**
 
@@ -41,7 +56,8 @@ Quietude has built something rare: a clinically validated, brand-coherent, found
 - Full lifecycle live in Customer.io: onboarding, lapsed re-engagement, hardware post-purchase, subscription-center opt-ins.
 - Ambassador program live with 15–25 active hosts. First Quietude Guides cert pilot run.
 - Eye mask wedge selling at scale via Shopify with a clean hardware → app activation path. Blended CAC measured and tracked.
-- Paid acquisition firing post-seed-close at $5–10K/mo initial test budget, scaling to $20–50K/mo if unit economics validate.
+- A paid test appears only if the accountable owner approves a source-backed
+  channel, maximum exposure, tracking gate, review date, and stop rule.
 - Series A narrative writes itself: clinical evidence + activation lift + lifecycle compounding + first B2B install reference cases.
 
 **The 90-day priorities** (which the rest of this doc operationalizes):
@@ -119,7 +135,11 @@ This is what we're starting from — team, budget, what's already in motion, wha
 | **Matt Mikkelsen** | Field Recording | Audio library, not marketing |
 | **Casey Reed** | fCMO | Strategy, lifecycle, SEO, onboarding tests, content, ambassador program, ops stack |
 
-**No dedicated marketing hire yet.** First hire likely post-seed close (Q3 2026 candidate): a lifecycle + content marketing manager who owns Customer.io, SEO content production, and ambassador operations day-to-day.
+**No dedicated marketing hire in this scenario.** Treat lifecycle, content,
+and ambassador ownership as capability gaps to evidence. Compare reassignment,
+deferral, automation, contractor, agency, and employee options by workload,
+capacity, access, risk, total cost, duration, and handoff. A financing event
+does not choose a hire or title.
 
 ### Marketing budget (current)
 
@@ -128,7 +148,10 @@ This is what we're starting from — team, budget, what's already in motion, wha
 - **fCMO retainer:** Casey Reed engagement.
 - **PR:** No paid PR. Organic longevity-influencer tailwind, consumer-tech angels + foundation-model lab network.
 
-**Implication:** The 90-day plan must produce gains without any paid lever pulled. Everything in the next 12 weeks is organic, lifecycle, or product-level. Paid is a Q2–Q3 unlock.
+**Implication:** The 90-day plan may include only work with a verified owner,
+capacity, dependencies, and approval. The zero approved paid budget excludes
+paid execution; it does not automatically prioritize organic, lifecycle, or
+product work without separate evidence.
 
 ### What's already done (acknowledge, then build on)
 
@@ -141,7 +164,7 @@ This is what we're starting from — team, budget, what's already in motion, wha
 | Quietude eye mask (5K in stock) | Selling | The wedge product. Hardware → app activation path. |
 | 38% 12-month retention (vs. category avg 20%) | Real | Headline metric. Belongs everywhere. |
 | Customer.io + Shopify integration | Wired | The lifecycle infrastructure exists. Flows just need to ship. |
-| 4 GitHub repos for context + product | Set up | `quietude-context` (shared brain), `quietude-promo`, `quietude-app` (app), `mira` (AI), `quietude-api` |
+| 4 GitHub repos for context + product | Historical note; re-verify | `quietude-context`, `quietude-promo`, `quietude-app`, `quietude-api`; no tool availability implied |
 | Alex's Sound Philosophy doc | Working doc | Linkable position paper once polished and published. |
 | ~5 inbound ambassadors waiting | Inbound | Referral program ready to launch — no demand-gen needed for v1. |
 | Aurora B2B install (~€250K, July deadline) | In-flight | First flagship venue. Reference case once installed. |
@@ -190,7 +213,7 @@ Scored 0–5 from materials, using the embedded rubric in `references/current-st
 | 12 | Pricing | **3** | $30/mo app, $45 eye mask, $7,500 speakers, $50–200K B2B. Hasn't been pressure-tested for D2C conversion lift. |
 | 13 | CRO | **2** | App Store conversion rate trackable but no A/B history. Headphones gate is the obvious first test removal. |
 | 14 | GTM / launches | **2** | App in throttled beta. Major launches (eye mask, Mira public) haven't had structured GTM. |
-| 15 | Ads | **0** | No paid layer. Reflects the current organic strategy — not a weakness, but the budget unlock means this will move. |
+| 15 | Ads | **0** | No approved paid test in this scenario; future status depends on evidence, capacity, and authority. |
 | 16 | SEO | **1** | Current state: 7 organic visits/mo. Plan exists; execution not yet started. |
 | 17 | Internationalization | **1** | Finland HQ + global ICP, but EN-only and US-centric copy. Defer until Q4+. |
 
@@ -231,8 +254,12 @@ Live events are the highest-converting ICP exposure Quietude has (15K+ participa
 **Channel 7 — B2B venue installs (kept lean per kickoff).**
 Alex owns this. Marketing supports with: case studies after each install, `/partner` page rewrite in voice (already exists on quietude.app), Pillar 4 content ("The Missing Sound Feature in WELL"), reciprocal links from partner venues baked into contracts.
 
-**Channel 8 — Paid layer (unlocked post-seed close).**
-Held until seed funding lands. Initial test budget: $5–10K/mo split across Apple Search Ads (highest-intent for App Store), Meta (Instagram + Facebook for eye mask), LinkedIn (B2B venue buyers). Don't fire until: (a) onboarding bedrock fix is shipped, (b) Flow 6 is live, (c) at least one Pillar landing page is in voice. Paid amplifies what already works — premature paid amplifies what's broken.
+**Channel 8 — Conditional paid test.**
+Do not select a channel or amount from the round label. This scenario requires
+dated audience and funnel evidence, reconciled CAC/margin/retention ranges,
+tracking readback, creative and follow-up capacity, explicit approval of the
+channel and maximum exposure, a review date, and pause/stop conditions. Until
+all gates pass, paid remains deferred.
 
 ### 90-day acquisition moves
 
@@ -244,14 +271,16 @@ Held until seed funding lands. Initial test budget: $5–10K/mo split across App
 ### 12-month acquisition outlook
 
 - Q1 (Months 1–3): Foundation. SEO pillars staked. App Store rewrite shipped. LinkedIn cadence stable. PR push launched.
-- Q2 (Months 4–6, post-seed close): Paid acquisition pilot at $5–10K/mo. SEO compounding — Pillar 1 ranking. First B2B install reference case live.
-- Q3 (Months 7–9): Paid scales to $20–30K/mo if unit economics hold. All four pillars producing. App GA — new GTM moment.
+- Q2 (Months 4–6): Re-read the paid-test evidence and approval gates; run only
+  if all pass. Review sourced SEO and reference-case observations.
+- Q3 (Months 7–9): Re-evaluate exposure from measured results and operational
+  capacity; no automatic scale. Review content and GA evidence.
 - Q4 (Months 10–12): Compound channels live. 50+ pieces of pillar content. First Quietude Guides program pilot creating local SEO + earned media.
 
 ### Skills + tools
 
-- **Skills:** `seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `content-strategy`, `competitors`, `launch`, `ads`, `ad-creative`, `social`, `typefully`, `analytics`, `copywriting`, `marketing-website-design`, `free-tools`
-- **MCPs / APIs:** Ahrefs API, DataForSEO API, Typefully MCP (LinkedIn scheduling), GA4 MCP (when wired), GitHub MCP (`quietude-promo` repo work), Notion (knowledge directory), Stripe MCP (LTV / paid-CAC math), `agent-browser` (LinkedIn drafting + testing), `defuddle` (research)
+- **Skills:** `suede-seo-audit`, `suede-programmatic-seo`, `suede-content-strategy`, `suede-competitors`, `suede-launch-packaging`, `suede-ads`, `suede-ad-creative`, `suede-social`, `suede-analytics`, `suede-copy`, `suede-site-alchemy`, `suede-free-tools`
+- **Optional capabilities to verify:** SEO data, social drafting/scheduling, analytics, exact-repo access, knowledge access, billing readback, browser review, and page extraction. Publishing, installation, spend, and repo mutation require separate explicit approval.
 
 ---
 
@@ -306,8 +335,10 @@ What's the current trial structure? Length, paywall trigger, intro pricing? When
 
 ### Skills + tools
 
-- **Skills:** `onboarding`, `signup`, `cro`, `cro`, `paywalls`, `popups`, `copywriting`, `copy-editing`, `copycraft`, `marketing-website-design`, `ab-testing`, `marketing-psychology`
-- **MCPs / APIs:** App Store Connect (manual + `dev-browser` for screenshot automation), GitHub MCP (`quietude-app` app repo for onboarding code), Figma / Pencil MCP (for onboarding screen design), Customer.io MCP (for any in-app/email coordination), GA4 MCP (activation events)
+- **Skills:** `suede-onboarding`, `suede-signup`, `suede-paywalls`, `suede-site-alchemy`, `suede-copy`, `suede-ab-testing`, `suede-marketing-psychology`
+- **Optional capabilities to verify:** App Store readback, exact app-repo scope,
+  approved design surface, lifecycle read access, and activation analytics. Do
+  not assume any browser, design, connector, or mutation capability.
 
 ---
 
@@ -344,8 +375,11 @@ The eye-mask-buyer-becomes-Premium-subscriber path is hinted in the seed deck (b
 **Move 7 — Reconcile the retention metric.**
 What's the actual definition of "38% 12-month retention"? Cohort? Plan type (monthly vs. annual)? Survives this even if the answer is uncomfortable — the team and investors need to be talking about the same metric.
 
-**Move 8 — Annual plan as default (cross-cuts to Revenue).**
-Industry pattern: defaulting to annual reduces churn anxiety and improves LTV. To test in Q2.
+**Move 8 — Annual-plan default hypothesis (cross-cuts to Revenue).**
+Test only if current pricing research, cohort economics, customer impact, legal
+review, owner capacity, and explicit approval support it. Pre-register
+conversion, retention, refund, complaint, and revenue-recognition guardrails;
+the quarter does not supply readiness.
 
 ### 90-day retention moves
 
@@ -365,7 +399,7 @@ Industry pattern: defaulting to annual reduces churn anxiety and improves LTV. T
 
 ### Skills + tools
 
-- **Skills:** `emails`, `churn-prevention`, `copywriting`, `copy-editing`, `paywalls`, `ab-testing`
+- **Skills:** `suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-paywalls`, `suede-ab-testing`
 - **MCPs / APIs:** **Customer.io MCP** (validated on kickoff — non-technical team can ship flows), Shopify (eye mask buyers as event source), Stripe MCP (subscription state, churn cohort pulls), GA4 MCP (session events, retention curves)
 
 ---
@@ -391,8 +425,11 @@ The Mira post-session reflection (see Retention) is the natural moment to surfac
 **Move 3 — Founder amplification (Alex + Sam as ambassador-zero).**
 Alex mentioning the fCMO engagement in fundraise pitches (permission granted). Reciprocal mentions in fCMO-side content. Sam's clinical network → practitioner ambassador pool.
 
-**Move 4 — Quietude Guides cert pilot (long-term, Q3+).**
-The Guides program is the Phase-2 referral compound (per seed deck). 500–1,000 Guides across 50+ cities by Y3–5. First cert pilot: 3–5 hosts who run live sessions, get a rev-share + co-marketing. Builds local SEO + earned media + ambassador-of-ambassadors flywheel. Hold until paid + lifecycle are firing — Guides is a multi-quarter build.
+**Move 4 — Conditional Quietude Guides pilot.**
+Treat the deck's scale figures as unverified assumptions. A bounded pilot
+requires participant fit, program ownership, training/support capacity, rights,
+claims, rev-share economics, maximum exposure, approval, measurement, review
+date, and stop conditions. Paid or lifecycle status alone does not unlock it.
 
 **Move 5 — Eye mask gifting flow.**
 Hardware referral is rare and powerful. *"Send a friend an Quietude eye mask. They get the mask + a free 3-month Premium. You get a credit toward your next thing."* Holiday/gifting peak windows are the test.
@@ -412,7 +449,7 @@ Hardware referral is rare and powerful. *"Send a friend an Quietude eye mask. Th
 
 ### Skills + tools
 
-- **Skills:** `referrals`, `social`, `copywriting`, `marketing-website-design` (per-ambassador landing pages)
+- **Skills:** `suede-referrals`, `suede-social`, `suede-copy`, `suede-site-alchemy` (per-ambassador landing pages)
 - **MCPs / APIs:** Dub.co (attribution — already in stack), Stripe MCP (commission accounting + payouts), GitHub MCP (landing page deployment in `quietude-promo` or new `quietude-ambassadors` repo), Customer.io MCP (ambassador lifecycle: onboarding, monthly performance digest, payout notification)
 
 ---
@@ -475,7 +512,7 @@ Per seed deck Y10–15 value pool: $100–160M/yr. Not immediate revenue. Belong
 
 ### Skills + tools
 
-- **Skills:** `pricing`, `paywalls`, `sales-enablement`, `revops`, `ab-testing`, `copywriting`
+- **Skills:** `suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, `suede-copy`
 - **MCPs / APIs:** Stripe MCP (pricing tests, subscription analytics, churn cohort, blended CAC math), Customer.io MCP (paywall-related lifecycle), Shopify (eye mask transactions), GA4 MCP (revenue events), Notion (commercial knowledge directory)
 
 ---
@@ -541,11 +578,14 @@ Tactical execution layer. Each item is AARRR-tagged so priority is visible.
 
 ## 10. 12-month outlook
 
-Quarterly milestones with funding-stage capability unlocks named explicitly.
+Quarterly checkpoints with source-backed scenarios and conditional capability
+gates. Financing labels remain context only.
 
 ### Q1 — Months 1–3 (Jun–Aug 2026)
 
-**Funding state:** Pre-seed-close. Paid budget = $0. fCMO + founder-led + tool costs only.
+**Verified resource state (illustrative):** paid budget recorded as $0 on the
+scenario date. Every other workflow still requires evidence, owner capacity,
+access, and approval.
 
 **Focus:** Foundation. Plug the leaks. Stake the SEO ground. Get lifecycle firing.
 
@@ -558,16 +598,19 @@ Quarterly milestones with funding-stage capability unlocks named explicitly.
 - Pricing audit closed
 - Domain consolidated
 
-**KPI targets:** Onboarding Day 1 → paid lift of 25–50%. Organic traffic 500–1,500/mo. App Store conversion rate +20%.
+**KPI decision rules:** Replace with dated baselines and approved low/base/high
+ranges. This example does not supply reusable lift or traffic targets.
 
 ### Q2 — Months 4–6 (Sep–Nov 2026)
 
-**Funding state:** Seed close (~Q3 2026 target). First paid budget unlock: $5–10K/mo test.
+**Conditional resource checkpoint:** A possible financing event does not set a
+paid budget. Re-verify cash/runway, economics, capacity, tracking, approval,
+maximum exposure, review date, and stop conditions.
 
 **Focus:** Validate paid. Scale winning onboarding. Add Flow 2.
 
 **Outcomes by end of Q2:**
-- Paid acquisition firing on Apple Search Ads + Meta
+- A bounded paid test only if current evidence selects a channel and every gate passes
 - Onboarding winner permanently shipped
 - Flow 2 (onboarding emails) shipped
 - Mira post-session reflection in production
@@ -575,11 +618,14 @@ Quarterly milestones with funding-stage capability unlocks named explicitly.
 - First B2B install reference case (Aurora) published
 - Annual plan default tested
 
-**KPI targets:** Paid CAC < $50 blended. Organic traffic 1,500–3,500/mo. Retention curves visibly improving.
+**KPI decision rules:** Use sourced CAC, traffic, and retention baselines with
+matched cohorts and pre-approved hit/miss actions; no values here are defaults.
 
 ### Q3 — Months 7–9 (Dec 2026–Feb 2027)
 
-**Funding state:** Seed deployment. Paid scales to $20–50K/mo if unit economics hold. First marketing hire (lifecycle + content manager).
+**Conditional resource checkpoint:** Re-evaluate measured test results, cash,
+capacity, and current constraints. Neither spend growth nor a hire/title follows
+from financing. Run the ownership decision process separately.
 
 **Focus:** Scale + diversify. App GA. B2B reference cases compound.
 
@@ -588,104 +634,112 @@ Quarterly milestones with funding-stage capability unlocks named explicitly.
 - First Quietude Guides cert pilot (3–5 hosts)
 - All four pillars producing weekly content
 - Eye mask gifting flow live for holiday peak
-- New marketing hire onboarded
+- Ownership gap resolved through an approved option, if evidence required a change
 
-**KPI targets:** Paid + organic blended CAC stabilizing. App GA conversion +50% from beta baseline. Guides pilot validates rev-share + co-marketing model.
+**KPI decision rules:** Compare reconciled channel cohorts, GA conversion, and
+pilot evidence with their dated baselines and pre-registered rules.
 
 ### Q4 — Months 10–12 (Mar–May 2027)
 
-**Funding state:** Pre–Series A. Paid scaling continues. Series A pitch in motion.
+**Conditional resource checkpoint:** Financing work is context. Exposure,
+channels, staffing, and tooling remain separate evidence-and-approval decisions.
 
 **Focus:** Compound. Position for Series A.
 
 **Outcomes by end of Q4:**
-- Compound channels (organic + ambassador + Guides + lifecycle) producing 50%+ of new subs
-- 50+ ambassadors, 5–10 Guides
-- 4 SEO pillars + 30+ pieces of content live
-- Paid scaling to $50–150K/mo if validated
+- Channel contribution measured without an unsourced share target
+- Program size bounded by verified demand, capacity, economics, and approval
+- Content scope set by sourced demand and owner capacity
+- Paid exposure remains within the latest explicitly approved ceiling
 - Series A narrative: clinical evidence + activation lift + lifecycle compounding + B2B reference case pipeline
 
-**KPI targets:** D2C ARR run-rate trajectory clear. Blended LTV/CAC > 3. Founder narrative + data + reference cases ready for Series A.
+**KPI decision rules:** Use the finance-approved LTV/CAC definition and hurdle,
+sourced D2C scenarios, and verified reference-case readiness. No universal ratio
+or financing-readiness threshold applies.
 
 ---
 
 ## 11. Marketing operations stack
 
-This is what makes the plan executable at Quietude's team size. A 4-person founder team + fCMO + agentic tooling can ship the output of a 15–20-person traditional marketing org — because the marketing skill library and MCP integrations do the orchestration.
+This stack makes the plan executable at Quietude's team size. The public Suede skill pack supplies repeatable operating methods, while connected MCPs and APIs are used only when discovered, authorized, and verified in the current environment.
 
 ### The thesis
 
-Every move in the AARRR breakdown above maps to (a) one or more marketing skills that operationalize the work, and (b) one or more MCP/API integrations that let it execute without a dedicated headcount per channel.
+Every move in the AARRR breakdown above maps to one or more public Suede skills and, where available, named MCP/API integrations with explicit owners and approval points.
 
 The fCMO's job is to:
 1. Define the strategy and sequencing (this doc)
-2. Run the skills against the right context at the right time
+2. Route each approved move through the right public Suede skill and current context
 3. Maintain the shared context (`quietude-context`) and tooling so Alex + Sam + future hires can plug in
-4. Hand off operational work to humans (or future hires) only where the cost of agentic execution > human execution
+4. Assign work from evidence about duration, capacity, access, risk, review,
+   total cost, and fallback; tooling never substitutes for accountable ownership
 
 ### Skills mapped to AARRR stages
 
 | Stage | Primary skills | Supporting skills |
 |---|---|---|
-| **Acquisition** | `seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `content-strategy`, `competitors`, `ads`, `ad-creative`, `social`, `typefully` | `launch`, `free-tools`, `analytics`, `cold-email`, `copywriting`, `marketing-website-design` |
-| **Activation** | `onboarding`, `signup`, `paywalls`, `cro`, `copywriting`, `copy-editing`, `copycraft` | `marketing-website-design`, `ab-testing`, `marketing-psychology`, `cro`, `popups` |
-| **Retention** | `emails`, `churn-prevention` | `copywriting`, `copy-editing`, `ab-testing`, `paywalls` |
-| **Referral** | `referrals`, `social` | `copywriting`, `marketing-website-design`, `emails` |
-| **Revenue** | `pricing`, `paywalls`, `sales-enablement`, `revops` | `ab-testing`, `copywriting` |
-| **Cross-cutting** (brand, intelligence) | `product-marketing`, `customer-research`, `marketing-psychology` | `marketing-ideas`, `diagram-maker` |
+| **Acquisition** | `suede-seo-audit`, `suede-programmatic-seo`, `suede-content-strategy`, `suede-competitors`, `suede-ads`, `suede-ad-creative`, `suede-social` | `suede-launch-packaging`, `suede-free-tools`, `suede-analytics`, `suede-cold-email`, `suede-copy`, `suede-site-alchemy` |
+| **Activation** | `suede-onboarding`, `suede-signup`, `suede-paywalls`, `suede-site-alchemy`, `suede-copy` | `suede-ab-testing`, `suede-marketing-psychology` |
+| **Retention** | `suede-emails`, `suede-churn-prevention` | `suede-copy`, `suede-ab-testing`, `suede-paywalls` |
+| **Referral** | `suede-referrals`, `suede-social` | `suede-copy`, `suede-site-alchemy`, `suede-emails` |
+| **Revenue** | `suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops` | `suede-ab-testing`, `suede-copy` |
+| **Cross-cutting** (brand, intelligence) | `suede-product-marketing`, `suede-customer-research`, `suede-marketing-psychology` | `suede-marketing-ideas`; optional tools only after availability and authority checks |
 
 ### MCPs / APIs mapped to stages
 
-| Stage | Existing connections at Quietude | Tooling layer (Casey's fCMO stack) |
+| Stage | Scenario evidence to verify | Optional capability and authority check |
 |---|---|---|
-| **Acquisition** | App Store Connect (manual), Shopify, GA4 (in progress), Notion | Ahrefs API, DataForSEO API, Typefully MCP, GitHub MCP (`quietude-promo`), `agent-browser`, `defuddle` |
-| **Activation** | App Store Connect, Customer.io, Shopify | App Store Connect (via `dev-browser` for screenshot automation), Figma / Pencil MCP, GitHub MCP (`quietude-app` app repo), Stripe MCP |
-| **Retention** | **Customer.io (with Claude MCP — validated on kickoff)**, Stripe, Shopify | Customer.io MCP, Stripe MCP, GA4 MCP |
-| **Referral** | Dub.co, Stripe | Dub.co, Stripe MCP, GitHub MCP (per-ambassador landing pages), Customer.io MCP |
-| **Revenue** | Stripe, Shopify, Customer.io | Stripe MCP, Shopify, GA4 MCP, Notion |
-| **Cross-cutting** | Notion, GitHub (`quietude-context`) | Notion, GitHub MCP, `defuddle`, `obsidian-cli` (for Casey's working notes) |
+| **Acquisition** | Re-verify each dated account/source | Discover callable read scopes; scheduling, publishing, installs, and spend changes require separate explicit approval |
+| **Activation** | Re-verify product, commerce, and lifecycle sources | Confirm exact property/repo/account, access, mutation boundary, reviewer, and fallback |
+| **Retention** | Treat kickoff notes as historical until current readback | Confirm data definitions and read-only scope before analysis; sending or flow changes require explicit approval |
+| **Referral** | Re-verify attribution and payment systems | Confirm rights, payout authority, repo/account scope, and reviewer |
+| **Revenue** | Re-verify billing and commerce identities | Keep billing read-only unless the user explicitly approves the exact change and maximum cost |
+| **Cross-cutting** | Re-verify knowledge and repo access | Use manual workflows when no authorized connection exists; do not install tools by default |
 
 ### The Customer.io MCP unlock (concrete example)
 
-Per kickoff call: *"Built live on call — abandoned-cart flow drafted using Customer.io's Claude MCP. Validated that non-technical team can use the skill pattern independently."*
+Per kickoff record: *"A non-technical founder drafted an abandoned-cart flow through the available Customer.io connector and reviewed it before activation."*
 
-This is the operational proof that the stack works. Alex, who is not a developer, drafted a working lifecycle flow with Claude + Customer.io MCP in real time on a kickoff call. The same pattern applies to: Flow 4 ship (lapsed user re-engagement), subscription center build, win-back campaign, eye mask gifting flow, ambassador lifecycle. The fCMO's role becomes orchestration + brand-voice QA, not hand-cranking each email.
+This recorded event shows that the workflow was drafted with the available connector and a human review gate; it is not evidence of a performance outcome or headcount replacement. The same Suede lifecycle method can be considered for lapsed-user re-engagement, subscription-center work, win-back, eye-mask gifting, and ambassador lifecycle when each integration and permission is verified. The fCMO's role is sequencing, approval, and brand-voice QA.
 
-### Capability unlocks by funding stage
+### Capability unlocks by verified resource state
 
-| Stage | Headcount | Tooling | Channels live |
-|---|---|---|---|
-| **Pre-seed-close (now)** | fCMO + founder team | All current tooling + Casey's marketing skill library + MCP layer | Organic only (SEO, content, App Store, LinkedIn, events, WOM, ambassador) |
-| **Seed close (~Q3 2026)** | + first marketing hire (lifecycle/content) by end of Q3 | + paid ad accounts (Apple Search Ads, Meta, LinkedIn) | + paid acquisition pilot $5–10K/mo |
-| **Seed deployment (Q3–Q4 2026)** | + designer (potentially fractional) | + analytics expansion (Mixpanel or Amplitude if needed) | + paid scaling $20–50K/mo, + Guides cert pilot |
-| **Series A (2027)** | + performance marketing lead + content lead | + dedicated tooling spend (~$2–5K/mo software) | + paid scaling $50–150K/mo, + international, + B2B vertical expansion |
+| Capability | Current evidence/owner | Constraint | Unlock condition | Approval / maximum exposure | Review / stop |
+|---|---|---|---|---|---|
+| Acquisition test | | | | | |
+| Lifecycle | | | | | |
+| Content / creative | | | | | |
+| Analytics | | | | | |
+| Community / PR | | | | | |
 
-The marketing skill library scales these stages. Every channel added doesn't require a 1:1 headcount increase because each skill encodes the workflow.
+The public Suede skill pack makes approved workflows repeatable across stages. Capacity still depends on data quality, available integrations, human review, and named owners; adding a channel is not a claim that headcount becomes unnecessary.
 
 ---
 
-## 12. Tactical idea bank — 139-idea cross-reference
+## 12. Tactical idea bank — curated illustrative set
 
-The `marketing-ideas` skill catalogs 139 proven marketing tactics. Sections 4–8 (AARRR) prescribe what we're *doing*. This section maps the full universe of what's *possible* — every idea cross-referenced to the AARRR stage it primarily serves, with Quietude applicability and timing.
+The `suede-marketing-ideas` skill provides a broader tactical inventory.
+Sections 4–8 describe the example plan; this section shows how selected ideas
+could be annotated for one illustrative scenario.
 
-This is the exhaustive menu. The plan above is the curated path. When we move to Q2 / Q3 / Series A and unlock new capacity, this is the inventory we pull from.
+This is a dated illustrative set, not the canonical inventory, an exhaustive
+mapping, or a stage-allocation policy. Use `idea-cross-reference.md` for current
+coverage. Every stage, status, timing label, and figure below is a teaching
+assumption. Reclassify each idea from current evidence, capacity, dependencies,
+authority, review criteria, and stop conditions before use.
 
-**Status legend:**
+Timing shorthand such as **Now**, **Q2**, **Q3+**, and **Q4+** is retained only
+to demonstrate annotation format. It does not establish readiness, sequence, or
+approval.
 
-- **Now (Q1)** — already in the 90-day plan OR can run alongside it without new capacity
-- **Q2** — post-bedrock-fix, post-foundation; second-quarter layer-ins
-- **Q3+** — post-seed-close, post-GA; expansion moves
-- **Q4+** — long-game / large-investment moves
-- **Skip / off-brand** — incompatible with Quietude's brand voice, business model, or product category
-
-### 12.1 Acquisition ideas (88 mapped)
+### 12.1 Acquisition examples
 
 **Now (Q1):**
 
 | # | Idea | Quietude note |
 |---|---|---|
 | 1 | Easy Keyword Ranking | SEO plan Tier-1 cluster (nervous system, sleep mask, B2B) targets this directly |
-| 2 | SEO Audit | Run `/seo-audit quietude.app` quarterly; publish findings as content |
+| 2 | SEO Audit | Run `/suede-seo-audit quietude.app` quarterly; publish findings as content |
 | 5 | Content Repurposing | Sound Philosophy → essays → LinkedIn posts → newsletter → podcast loop |
 | 6 | Proprietary Data Content | peer-reviewed psychophysiology study now; anonymized Quietude HRV / sleep dataset later |
 | 7 | Internal Linking | Built into the pillar/spoke structure of the SEO plan |
@@ -698,7 +752,6 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 70 | Conference Speaking | Alex: WELL Conference, biophilic design events, Mindful Leadership Summit |
 | 74 | Press Coverage | Pitch peer-reviewed study + longevity-influencer hook to 5 outlets in Q1 |
 | 109 | Public Demos | Live Quietude events ARE this; instrument the in-person → app conversion |
-| 114 | Moneyball Marketing | Already practicing — asymmetric SEO keywords, undervalued channels |
 | 133 | Investor Marketing | Alex's raise — leverage angel backchannel for PR + intros |
 
 **Q2:**
@@ -726,7 +779,6 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 102 | Social Screenshots | Mira reflection responses (anonymized, consented) — social proof gold |
 | 108 | Changelogs | Public changelog at `quietude.app/changes` — product momentum signal |
 | 115 | Curation as Marketing | Curated "field recordings of the year" feature; Quietude Spaces directory |
-| 135 | Support as Marketing | Surface customer support / Mira reflection moments as content |
 | 138 | Podcast Tours | Alex on Huberman, the partner-event-business, Tim Ferriss, Rich Roll, Rangan Chatterjee |
 
 **Q3+:**
@@ -755,10 +807,9 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 66 | Virtual Summits | Quietude participates or hosts |
 | 68 | Local Meetups | Cities with high ICP density (SF, NYC, LA, Austin) |
 | 69 | Meetup Sponsorship | Sponsor wellness / biohacking meetups |
-| 72 | Conference Sponsorship | Industry conferences once budget unlocks |
+| 72 | Conference Sponsorship | Conditional on audience fit, total cost, approval, attribution, and follow-up capacity |
 | 75 | Fundraising PR | "Quietude raises $3M" moment when seed closes |
 | 78 | Product Hunt Launch | Mira public launch moment |
-| 79 | Early-Access Referrals | App GA early-access list (cross-references to Referral) |
 | 81 | Early Access Pricing | App GA — early-access tier locked in for first cohort |
 | 82 | Product Hunt Alternatives | BetaList, Launching Next, AlternativeTo at GA |
 | 97 | Playlists as Marketing | Quietude curates Spotify playlists for somatic listening |
@@ -792,40 +843,12 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 106 | End of Year Wraps | "Your nervous system year" — Spotify Wrapped equivalent |
 | 110 | Awards as Marketing | Quietude founds an award for innovative biophilic acoustic design |
 | 116 | Grants as Marketing | Free Quietude subscriptions for therapists, social workers, first responders |
-| 119 | OOH Advertising | SF / NYC billboards if Series A budget unlocks |
+| 119 | OOH Advertising | Conditional on audience evidence, total exposure, measurement, brand review, and explicit approval |
 | 120 | Marketing Stunts | Public sound installation could work — brand-fitting |
 | 121 | Guerrilla Marketing | Sound installation in subway / airport — interesting but requires care |
 | 131 | International Expansion | Finland HQ + global ICP — Q4 or post-Series A |
 
-**Skip / off-brand for Quietude:**
-
-| # | Idea | Why skip |
-|---|---|---|
-| 16 | Importers as Marketing | No competitor data to import (consumer wellness, not SaaS) |
-| 19 | Chrome Extensions | Off-platform (mobile-first product) |
-| 21 | Scanners | No obvious product fit |
-| 22 | Public APIs | Not core business |
-| 27 | Twitter Ads | Lower priority unless Alex's X presence grows |
-| 34 | Click-to-Messenger Ads | Off-brand (no DM-driven sales pattern) |
-| 41 | X Audience | Depends on Alex's bandwidth — defer unless he wants to |
-| 43 | Engagement Pods | Off-brand |
-| 73 | Media Acquisitions | Too capital-intensive at this stage |
-| 83 | Twitter Giveaways | Off-brand voice |
-| 86 | Lifetime Deals | Brand-conflict — pressures the "no pressure" voice and damages LTV math |
-| 88 | Free Migrations | No competitor data to migrate |
-| 89 | Contract Buyouts | Not relevant for D2C subs |
-| 99 | Graphic Novel Marketing | Off-brand |
-| 112 | Reality TV Marketing | Off-brand |
-| 117 | Product Competitions | Not a developer product |
-| 118 | Cameo Marketing | Off-brand |
-| 122 | Humor Marketing | Brand voice is serious; humor would feel off |
-| 123 | Open Source as Marketing | Proprietary audio library |
-| 125 | App Marketplaces | Not relevant for native consumer app (no app-of-app pattern) |
-| 128 | Source Platforms | G2 / Capterra are B2B-focused; D2C uses App Store reviews |
-| 132 | Price Localization | Q4+ — tied to international expansion |
-| 136 | Developer Relations | Not a dev product |
-
-### 12.2 Activation ideas (7 mapped)
+### 12.2 Activation examples
 
 | # | Idea | Status | Quietude note |
 |---|---|---|---|
@@ -837,7 +860,7 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 48 | Dynamic Email Capture | Q2 | Smart capture on `quietude.app` — exit intent + scroll depth |
 | 95 | Concierge Setup | Q3+ | High-touch onboarding for B2B venue clients + high-value subscribers |
 
-### 12.3 Retention ideas (8 mapped)
+### 12.3 Retention examples
 
 | # | Idea | Status | Quietude note |
 |---|---|---|---|
@@ -846,11 +869,10 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 53 | Trial Reactivation | Q2 | Expired-trial recovery campaign once paywall is firing |
 | 45 | Mistake Email Marketing | Q2 | When something genuinely goes wrong, send "oops" — drives engagement |
 | 50 | Inbox Placement | Q1 | Subdomain silo strategy (`mail.quietude.app` / `commerce.quietude.app`) addresses this |
-| 91 | In-App Upsells | Q2 | Premium upsell points within app (also Revenue) |
 | 94 | Offboarding Flows | Q2 | Optimize cancellation flow to retain or learn — feeds churn intel |
 | 135 | Support as Marketing | Q2 | Customer support stories surface as content (also Acquisition) |
 
-### 12.4 Referral ideas (5 mapped)
+### 12.4 Referral examples
 
 | # | Idea | Status | Quietude note |
 |---|---|---|---|
@@ -860,13 +882,12 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 | 93 | Viral Loops | Q3 | Built-in share mechanics post-Mira reflection |
 | 79 | Early-Access Referrals | Q3 | App GA early-access list referrals (cross-references to Acquisition) |
 
-### 12.5 Revenue ideas (3 mapped — most ideas serve top-of-funnel)
+### 12.5 Revenue examples
 
 | # | Idea | Status | Quietude note |
 |---|---|---|---|
 | 91 | In-App Upsells | Q2 | Premium upgrade prompts; eye mask cross-sell from app (also Retention) |
 | 132 | Price Localization | Q4+ | Adjust pricing for local purchasing power once international |
-| 86 | Lifetime Deals | Skip | Brand-conflict — see Acquisition skip list |
 
 ### 12.6 Cross-cutting / brand foundation ideas
 
@@ -877,14 +898,13 @@ This is the exhaustive menu. The plan above is the curated path. When we move to
 
 ### Idea-bank summary
 
-- **88 ideas applicable to Acquisition** (the dominant stage at Quietude's current stage — makes sense, Quietude's product converts well; the bottleneck is the top of funnel)
-- **7 ideas to Activation, 8 to Retention** (smaller because these stages are about depth, not breadth — execute the right few well rather than running a wide tactic menu)
-- **5 ideas to Referral** (program-driven, not tactic-driven)
-- **3 ideas to Revenue** (most revenue work is pricing strategy, not tactical tricks)
-- **2 cross-cutting**
-- **23 ideas skipped for brand / business-model fit** — Quietude's category positioning constrains what's available
+- This dated example's row counts are intentionally not treated as canonical.
+- Use `idea-cross-reference.md` to regenerate current Acquisition, Activation,
+  Retention, Referral, Revenue, cross-cutting, and skipped counts.
 
-**What this proves:** the plan is roughly 30% of the available tactical surface area, not 100%. That's appropriate at this stage and budget. As capacity unlocks across Q2 → Q3 → Series A, the cross-reference becomes the inventory we pull from to scale activity without losing strategic coherence.
+**What this shows:** a plan selects a subset of the tactical inventory. Coverage
+does not prove a bottleneck, quality, or stage fit. Each conditional idea still
+needs evidence, owner capacity, dependencies, approval, review, and stop rules.
 
 ---
 
@@ -914,7 +934,7 @@ If a single metric is preferred for team-level focus, fall back to: **monthly ne
 **Review cadence:**
 - **Weekly:** fCMO ↔ Alex 30-min sync. AARRR scoreboard + this week's ships.
 - **Monthly:** Full metrics review (extended sync, Sam included). Compare against quarterly KPI targets.
-- **Quarterly:** Plan recalibration. What's working, what's not, what funding-stage moves we're triggering.
+- **Planning interval:** Recalibrate from sourced results and resource/approval changes; do not trigger moves from a funding label.
 
 ### RACI
 
@@ -932,8 +952,8 @@ If a single metric is preferred for team-level focus, fall back to: **monthly ne
 | B2B sales | Alex | Alex | Casey (case studies) | Team |
 | Pricing | Alex | Alex | Casey | Sam |
 | Investor narrative | Alex | Alex | Casey, Sam | Team |
-| Quietude Guides program (Q3+) | TBD (likely future hire) | Alex + Sam | Casey | Team |
-| Future marketing hire (Q3) | Casey | Alex | Sam | Team |
+| Conditional Guides decision | TBD pending evidence | Alex + Sam | Casey | Team |
+| Ownership-capacity decision | Casey | Alex | Sam | Team |
 
 ### Open decisions blocking the plan
 
@@ -945,7 +965,9 @@ Most blocking, ranked by impact:
 4. **App UI stability timeline.** When does the headphone-gate-removal + onboarding-rebuild allow Flow 2 to ship without rework risk? *Blocks: Flow 2, full lifecycle, paid acquisition timing.*
 5. **GA launch timeline.** When does the throttled beta become GA? *Blocks: paid acquisition scale, Q3 GTM planning.*
 6. **Pricing structure ground truth.** What's actually charged today? *Blocks: pricing audit conclusions, annual-plan default test, blended LTV math.*
-7. **First marketing hire scope.** Lifecycle + content owner, or something else? When does the JD get written? *Blocks: Q3 capacity plan, succession of fCMO operational work.*
+7. **Ownership-capacity gap.** What durable workload, capacity, access, risk,
+   cost, and duration evidence supports reassignment, deferral, automation,
+   contractor, agency, or employee? *Blocks: an approved ownership decision.*
 8. **Ambassador commission structure.** $/sub, rev-share, hybrid? *Blocks: ambassador program launch, attribution dashboards.*
 
 ### Appendix — deep-dive links

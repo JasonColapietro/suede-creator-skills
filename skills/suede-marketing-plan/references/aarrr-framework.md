@@ -20,7 +20,9 @@ Three reasons.
 
 **1. Funnel-stage tagging forces prioritization.** Without AARRR, marketing plans become channel-organized ("here's the SEO plan, here's the social plan, here's the paid plan"). Channels can address multiple stages; tagging by stage instead asks the more useful question: *what stage of the funnel is the binding constraint right now?*
 
-**2. Fix the leak before pouring water in.** The Activation/Retention question ("does the funnel convert at acceptable rates given exposure?") is usually higher leverage than the Acquisition question ("how do we get more exposure?"). AARRR sequencing surfaces this naturally.
+**2. Compare constraints before adding volume.** Reconcile qualified exposure,
+activation, retention, economics, and capacity before deciding whether the next
+test should repair a downstream loss or add acquisition.
 
 **3. The Revenue / Referral conversation is honest.** Most marketing plans bury monetization under "growth" and treat referral as wishful thinking. AARRR forces explicit treatment of both.
 
@@ -35,39 +37,32 @@ In the plan, brand/content shows up as the strategic frame (Section 2) and cross
 
 ## Diagnosing the binding constraint — which AARRR stage is highest leverage?
 
-For every client, one or two AARRR stages will be the binding constraint. The plan sequences moves there first.
+Treat every proposed binding constraint as a hypothesis. Never select a stage
+from company age, business model, traffic volume, or a single benchmark.
 
-**Decision rules:**
+For each stage, record:
 
-### If you don't have any users → start with Acquisition
-- Pre-launch / day-0 / waitlist stage
-- No funnel data exists
-- Leverage = building the first 100 users
+1. The dated source, cohort, metric definition, and comparison window.
+2. The observed loss or opportunity and its plausible alternative explanations.
+3. Unit economics, delivery capacity, dependencies, and data-quality limits.
+4. The smallest test that can distinguish the leading explanations.
+5. The owner, approval state, maximum exposure, review date, and stop condition.
 
-### If you have users but they bounce → start with Activation
-- Signups happen but activation rate is low
-- App Store conversion is poor
-- Onboarding completion is broken
-- Day 1 → paid rate is much lower than Day 30 → paid (means product converts given time but onboarding doesn't bridge to it)
-- Leverage = bridging signup to first felt value
+Use these diagnostic questions:
 
-### If activation works but users churn → start with Retention
-- Month 1 retention is below category norms
-- Activated users stop using within 7–14 days
-- LTV is short
-- Leverage = lifecycle, deepening engagement, churn prevention
+- **Acquisition:** Is qualified exposure the constraint after downstream
+  conversion, retention, attribution, and capacity are reconciled?
+- **Activation:** Does a defined cohort fail to reach a verified value event,
+  and does behavioral or research evidence identify the friction?
+- **Retention:** Do comparable activated cohorts leave earlier or deepen less
+  than the approved target, with product and measurement changes reconciled?
+- **Referral:** Is there observed advocacy or sharing intent that a bounded,
+  rights-compliant mechanism could capture?
+- **Revenue:** Do realized price, margin, retention, packaging research, and
+  willingness-to-pay evidence support a specific pricing hypothesis?
 
-### If retention is strong but growth is slow → start with Referral / Revenue
-- Retained users love the product but don't share
-- Inbound referrals come in unstructured
-- Pricing hasn't been pressure-tested
-- ARPU is low for the value delivered
-- Leverage = WOM mechanics + pricing optimization (these often cluster)
-
-### If everything works at small scale → start with Acquisition (scaling)
-- Funnel is healthy
-- Question is just "more"
-- This is the "post-fit" scaling problem
+When evidence is insufficient, preserve competing hypotheses and prioritize
+instrumentation or research rather than declaring a stage broken.
 
 ## Stage-by-stage strategic patterns
 
@@ -78,7 +73,8 @@ For every client, one or two AARRR stages will be the binding constraint. The pl
 **Common Acquisition moves:**
 - SEO content strategy (organic compounding)
 - Founder-led channels (LinkedIn, X, Substack for B2B; Instagram/TikTok for D2C)
-- Paid acquisition (when budget unlocks)
+- Paid acquisition only after audience, economics, tracking, creative capacity,
+  maximum exposure, approval, review, and stop gates pass
 - App Store / Play Store / marketplace listing optimization
 - PR and credibility-anchor amplification
 - Events (live, webinar, conference speaking)
@@ -86,21 +82,30 @@ For every client, one or two AARRR stages will be the binding constraint. The pl
 - Hardware / commerce surface (Shopify SEO + Amazon for hybrid businesses)
 - B2B sales support (case studies, partner pages, vertical content)
 
-**Sequencing principle:** Build the organic compound first (SEO + founder-led + content + PR amplification + ambassadors). Only layer paid on top of a working organic baseline. Premature paid amplifies what's broken.
+**Sequencing principle:** Compare organic, paid, partner, product-led, and sales
+candidates against current audience evidence, economics, tracking, creative and
+owner capacity, time-to-learning, approval, maximum exposure, and stop
+conditions. Organic work is not a prerequisite for paid work, and paid work is
+not evidence of readiness. Choose the smallest approved test that resolves the
+most important uncertainty.
 
 ### Activation
 
-**The diagnostic question:** Where in the user's first session do they decide "this works for me" or "this doesn't"? What stops them from reaching that moment?
+**The diagnostic question:** Which current event and research evidence define
+first value for this cohort, where is the measured loss, and what competing
+explanations remain?
 
 **Common Activation moves:**
 - Bedrock fixes (broken gates, broken signup steps, broken paywall)
-- Onboarding tests / rebuild (often the most leveraged single move)
+- Onboarding test or rebuild when behavioral and research evidence isolate it
 - App Store listing rewrite (the threshold to the trial)
 - Lifecycle Flow ship order (when to ship onboarding emails)
 - Paywall structure + trial length
 - Free → paid bridge (in-app upsells, soft paywalls)
 
-**Sequencing principle:** Get to first felt value as fast as possible. Everything that adds friction between "user opens app" and "user has the experience that converts them" is a candidate to cut.
+**Sequencing principle:** Reduce verified friction between entry and the
+cohort's defined value event. Preserve steps required for consent, safety,
+eligibility, comprehension, trust, or legal compliance.
 
 ### Retention
 
@@ -111,11 +116,15 @@ For every client, one or two AARRR stages will be the binding constraint. The pl
 - Subscription / preference centers
 - Churn reconciliation (often metric definitions don't match across surfaces)
 - Hardware → software activation paths (for hybrid businesses)
-- Annual plan defaults / pricing structure (cross-cuts Revenue)
+- Term-length or pricing-structure hypotheses (cross-cuts Revenue)
 - Support as marketing (high-touch moments that drive stories)
 - Community + practitioner networks
 
-**Sequencing principle:** Ship lifecycle flows in the order their content is most stable. Hardware post-purchase flows ship first (they don't reference in-app screens that might change). Onboarding emails ship last (they reference UI that might change). Win-back is a quarterly campaign, not a one-time flow.
+**Sequencing principle:** Rank lifecycle work from dated cohort loss, event
+coverage, consent, content dependencies, owner capacity, and expected learning
+value. A post-purchase, onboarding, lapsed-user, or win-back flow may come first;
+its cadence follows observed behavior and an approved review rule, not a
+universal ship order or quarterly calendar.
 
 ### Referral
 
@@ -129,7 +138,10 @@ For every client, one or two AARRR stages will be the binding constraint. The pl
 - Gifting flows (consumer / hardware)
 - Two-sided referrals (reward both referrer and referred)
 
-**Sequencing principle:** Lead with whoever is already raising their hand. If there are 5 inbound ambassadors, launch with those 5 — don't wait for a "complete program." Iterate based on what they tell you.
+**Sequencing question:** Inbound interest is evidence to investigate, not
+authorization to launch. Verify participant fit, rights/disclosures, economics,
+owner capacity, tracking, maximum exposure, approval, and stop conditions before
+running a bounded pilot.
 
 ### Revenue
 
@@ -137,13 +149,16 @@ For every client, one or two AARRR stages will be the binding constraint. The pl
 
 **Common Revenue moves:**
 - Pricing audit (what's actually charged today vs. listed?)
-- Annual plan defaults
+- Term-length and renewal-presentation tests
 - Hardware → software bundling formalization
 - Storefront / commerce page optimization
 - B2B case studies + sales material
 - Long-term value pool flags (data, expansion, enterprise) — flagged not executed
 
-**Sequencing principle:** Run the pricing audit before testing changes. Surprisingly often, the "implied" pricing on the dashboard doesn't match the listed price — discounts, trials, or plan mix distorts the read. Surface the ground truth first.
+**Sequencing principle:** Reconcile listed and realized pricing, discounts,
+trials, plan mix, margin, retention, and cohort definitions before approving a
+pricing test. If those sources already reconcile, use the current evidence
+rather than repeating an audit by default.
 
 ## How to assign a move to a stage
 
@@ -161,20 +176,28 @@ When in doubt: where would removing this move hurt the most? Assign there.
 
 ## When the AARRR breakdown isn't equal
 
-For most clients, the plan won't have equal volume across stages. That's fine — and worth surfacing as a diagnostic.
+Section volume is not proof of product-market fit, company stage, or a binding
+constraint. Treat it as a drafting signal to verify:
 
-- **Heavy Acquisition section** = client has product-market fit but top-of-funnel is the bottleneck. Common for early-stage with strong retention metrics.
-- **Heavy Activation section** = client has traffic but conversion is broken. Often beta-stage products.
-- **Heavy Retention section** = client has churn problem. Often mid-stage products that scaled past PMF without lifecycle infrastructure.
-- **Heavy Referral section** = client has loyalty but no WOM mechanics. Often consumer products with passionate users.
-- **Heavy Revenue section** = client is underpricing or missing monetization layers. Common for tools transitioning from free to paid.
+- **Acquisition-heavy:** check qualified demand, source mix, downstream
+  conversion, and capacity before calling top-of-funnel the constraint.
+- **Activation-heavy:** check event definitions, cohorts, traffic quality, and
+  user research before calling conversion broken.
+- **Retention-heavy:** reconcile churn/retention definitions, cohort windows,
+  product changes, and support evidence.
+- **Referral-heavy:** verify loyalty, share behavior, attribution, economics,
+  rights, and program capacity.
+- **Revenue-heavy:** reconcile listed/effective pricing, margin, retention,
+  packaging research, and buyer evidence before diagnosing underpricing.
 
-If a plan ends up evenly distributed across all five stages, the diagnostic was probably weak — re-examine the funnel state intake to find where the binding constraint is.
+An even or uneven plan can both be valid. Name the binding constraint only when
+dated evidence supports it; otherwise list competing hypotheses and the
+smallest approved test that distinguishes them.
 
 ## A note on the order of presentation
 
-Always present AARRR in order (Acquisition → Activation → Retention → Referral → Revenue) regardless of priority order.
-
-This is for the reader's mental model. Founders expect the funnel to flow top-to-bottom. If Retention is the most-leveraged stage but you lead with Retention, the reader has to context-switch.
-
-To signal priority, use the executive summary (Section 1) — name the biggest bets there. The AARRR breakdown then walks the funnel in order, with the most leverage-positive section being the longest and most-detailed.
+Choose the presentation order that makes the approved decision easiest to
+review. Funnel order (Acquisition → Activation → Retention → Referral → Revenue)
+is useful when explaining the system end to end. Priority order is useful when
+the audience must decide the next commitment. State the ordering rule, keep
+stage labels explicit, and distinguish presentation order from execution order.

@@ -1,11 +1,13 @@
 ---
 name: suede-co-marketing
-description: "Find and run partner campaigns: partner selection, joint offer design, audience overlap, and splitting the work and the credit. Use when the user is looking for co-marketing partners or planning a joint campaign or cross-promotion."
+description: "Suede-owned co-marketing discipline for partner fit, audience overlap, joint offers, shared distribution, operating roles, measurement, and fair credit. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement)."
 metadata:
   version: 2.0.0
 ---
 
-You are a co-marketing strategist who helps SaaS companies identify ideal partners and brainstorm high-impact joint campaigns.
+# Suede Co-Marketing
+
+Use this Suede co-marketing playbook to identify credible partners and design measurable joint campaigns with explicit roles and value exchange.
 
 ## Before Starting
 
@@ -272,19 +274,31 @@ Would you be open to a quick call to explore?
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key tools for co-marketing:
+This pack does not ship partner-platform connectors. Use an authorized product
+UI, current export, API, or installed connector and verify the provider's
+current official documentation before reading or changing partner data.
 
-| Tool | Best For | Guide |
-|------|----------|-------|
-| **Crossbeam** | Account overlap with partners | [crossbeam.md](../../tools/integrations/crossbeam.md) |
-| **Introw** | Partner program management, deal registration | [introw.md](../../tools/integrations/introw.md) |
-| **PartnerStack** | Partner and affiliate program management | [partnerstack.md](../../tools/integrations/partnerstack.md) |
+Select capabilities against the campaign:
+
+- Privacy-safe aggregate account overlap, with minimum cohort thresholds
+- Partner records, owners, approvals, commitments, and deal registration
+- Shared asset review, version history, deadlines, and publication approval
+- Source-specific links or codes and agreed lead/revenue attribution
+- Export, deletion, access control, and audit-history requirements
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **referrals** — For customer referral and affiliate programs (customers referring customers)
-- **launch** — For product launches with partners; covers co-marketing as a "borrowed channel"
-- **content-strategy** — For content planning including co-created content
-- **sales-enablement** — For partner-facing collateral and enablement materials
+- Do not claim a partnership, audience overlap, endorsement, reach, or committed deliverable without evidence from both sides.
+- Do not contact partners, share customer lists, sign terms, spend budget, or publish joint work without explicit authorization.
+- Do not decide ownership, licensing, attribution, lead-sharing, or revenue-sharing terms for the parties.
+- Do not expose private customer or partner data to prove overlap; use approved aggregate or privacy-safe methods.
+
+## Routing
+
+- Need referral or affiliate mechanics -> use `suede-referrals`.
+- Need launch sequencing and release assets -> use `suede-launch-packaging`.
+- Need co-created editorial planning -> use `suede-content-strategy`.
+- Need partner-facing collateral -> use `suede-sales-enablement`.
+- From those skills, route partner selection and joint-campaign design back to `suede-co-marketing`.

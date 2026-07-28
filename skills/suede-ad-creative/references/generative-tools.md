@@ -2,6 +2,21 @@
 
 Reference for using AI image generators, video generators, and code-based video tools to produce ad visuals at scale.
 
+## Availability and Execution Gate
+
+Provider names, prices, model labels, API shapes, and commands in this reference
+are examples, not proof that a tool is installed, connected, authorized,
+licensed for the asset, or still current. Before using any route:
+
+1. Inspect the tools and runtimes actually available in the current session.
+2. Verify the provider's current official documentation, pricing, output
+   rights, consent requirements, and exact model or package version.
+3. Confirm credentials and the intended account without exposing secrets.
+4. Treat installs, paid generation, uploads, voice cloning, and publication as
+   separately authorized actions.
+5. If the named provider or runtime is unavailable, return the provider-neutral
+   prompt, storyboard, or render specification instead of inventing a call.
+
 ---
 
 ## When to Use Generative Tools
@@ -471,7 +486,7 @@ Need voiceover for ads?
 ### Workflow: Voice + Video
 
 ```
-1. Write ad script (use ad-creative skill for copy)
+1. Write the ad script with `suede-ad-creative`
 2. Generate voiceover with ElevenLabs/OpenAI TTS
 3. Generate or render video:
    a. Silent video from Runway/Remotion → layer voice track
@@ -556,7 +571,12 @@ Render the same content across different aspect ratios:
 5. Upload to ad platform
 ```
 
-### Getting Started
+### Conditional Local Examples
+
+Run these examples only when Node.js and Remotion are already available or the
+user has authorized the exact install, current official documentation confirms
+the commands, and the project path and output are understood. Otherwise return
+the React composition plan and render specification without executing.
 
 ```bash
 # Create a new Remotion project

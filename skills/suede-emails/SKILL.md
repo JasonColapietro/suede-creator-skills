@@ -1,13 +1,13 @@
 ---
 name: suede-emails
-description: "Design lifecycle email that runs itself: welcome and onboarding sequences, nurture, re-engagement, trigger design, and cadence that does not burn the list. Use when the user is building an automated email sequence, drip campaign, or lifecycle flow. Also use when the user mentions 'email sequence,' 'drip campaign,' 'nurture sequence,' 'onboarding emails,' 'welcome sequence,' 're-engagement emails,' 'email automation,' 'lifecycle emails,' 'trigger-based emails,' 'email funnel,' 'email workflow,' 'what emails should I send,' 'welcome series,' or 'email cadence.' Use this for any multi-email automated flow. For cold outreach emails, see suede-cold-email. For in-app onboarding, see suede-onboarding."
+description: "Suede-affiliated lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow, entry criteria, cadence, message roles, and measurement plan. NOT FOR: cold prospecting (use suede-cold-email), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
 metadata:
   version: 2.0.0
 ---
 
-# Email Sequence Design
+# Suede Lifecycle Email Systems
 
-You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward conversion.
+Suede designs lifecycle email as a consent-aware system of triggers, message roles, pacing, and measurable next actions. Create sequences that move a known audience toward value without inventing intent, exhausting the list, or confusing lifecycle messaging with cold outreach.
 
 ## Initial Assessment
 
@@ -285,27 +285,29 @@ What to measure and benchmarks
 
 ---
 
-## Tool Integrations
+## Implementation Hand-off
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key email tools:
+Choose the provider only after reading the user's installed tools and live account state. Customer.io, Mailchimp, Resend, SendGrid, Kit, and similar services may support parts of the workflow, but this public Suede skill does not assume that any provider, connector, account, or permission is available.
 
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **Customer.io** | Behavior-based automation | - | [customer-io.md](../../tools/integrations/customer-io.md) |
-| **Mailchimp** | SMB email marketing | ✓ | [mailchimp.md](../../tools/integrations/mailchimp.md) |
-| **Nitrosend** | AI-native email (sequences via prompts) | ✓ | [nitrosend.md](../../tools/integrations/nitrosend.md) |
-| **Resend** | Developer-friendly transactional | ✓ | [resend.md](../../tools/integrations/resend.md) |
-| **SendGrid** | Transactional email at scale | - | [sendgrid.md](../../tools/integrations/sendgrid.md) |
-| **Kit** | Creator/newsletter focused | - | [kit.md](../../tools/integrations/kit.md) |
+Before implementation, return:
+
+1. The required trigger, audience, fields, suppression rules, and exit criteria
+2. The provider-neutral sequence and event contract
+3. The exact account or integration that must be inspected
+4. A preview-and-approval checkpoint before any live change or send
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **lead-magnets**: For planning lead magnets that feed into nurture sequences
-- **churn-prevention**: For cancel flows, save offers, and dunning strategy (email supports this)
-- **onboarding**: For in-app onboarding (email supports this)
-- **copywriting**: For landing pages emails link to
-- **ab-testing**: For testing email elements
-- **popups**: For email capture popups
-- **revops**: For lifecycle stages that trigger email sequences
+- Do not send, schedule, import contacts, alter automations, or change suppression lists without explicit authorization.
+- Do not invent consent, deliverability, attribution, audience, or performance data.
+- Do not promise inbox placement or revenue; separate observed results from projections.
+- Do not decide legal compliance, transactional classification, or contact eligibility on the user's behalf.
+
+## Routing
+
+- Use `suede-lead-magnets` for the asset that feeds a nurture sequence.
+- Use `suede-churn-prevention` for cancellation, save, and dunning strategy.
+- Use `suede-onboarding` for in-product activation and `suede-copy` for destination-page copy.
+- Use `suede-ab-testing` for sequence experiments and `suede-revops` for lifecycle-stage orchestration.

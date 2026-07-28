@@ -1,6 +1,9 @@
 # Reverse-Engineering an Edit (The Beat Sheet)
 
-A viral short-form video usually isn't winning on the footage — it's winning on the *edit*: the cut rhythm, the caption style, the punch-ins, the on-screen text landing on the exact word, the b-roll cutaways, the sound design. This reference turns a reference edit you admire into a **reusable edit spec** — a beat sheet you (or an editing tool) can execute against your own footage — without copying a single frame of theirs.
+A reference video's outcome may reflect its edit, footage, audience,
+distribution, topic, or account history. This reference isolates the editing
+choices into a **reusable edit spec** so they can be tested on original footage
+without claiming the edit caused the observed performance.
 
 This is the tool-agnostic half of "copy any viral edit": the *decomposition*. The generation is whatever you edit with afterward — CapCut, Premiere, Remotion/Hyperframes, or an AI restyle tool. The spec is the deliverable.
 
@@ -14,11 +17,16 @@ Don't use it to copy someone's actual creative — this extracts the *editing gr
 
 ## Step 1 — Pull the reference so you can actually read the edit
 
-You cannot decompose an edit from a description of it. Get the frames and the timing:
+You cannot decompose an edit from a description alone. First discover whether a
+currently callable, authorized media viewer, local-file inspector, or browser
+can expose the frames and timing.
 
-- **watch-video** (visual or multimodal mode) — extracts the transcript *and* samples frames at the cut points, so you can read on-screen text, caption style, and shot changes. This is the primary tool.
-- **social-fetch** — pull the post for the caption, engagement, and the media URL when the reference is a specific tweet/Reel/TikTok.
-- Screenshots of key frames also work if the user supplies them — you need the visual, not just the words.
+- If available, inspect the actual media and sample frames at cut points.
+- If only a public post is available, use an authorized browser or source reader
+  within the platform's terms.
+- If no tool is available, ask the user for the media file, screenshots, or a
+  timecoded export and give them a manual frame-sampling checklist.
+- Never claim to have seen frames that were not actually rendered or supplied.
 
 Note the total duration and roughly how many cuts there are before you start — cuts-per-second is the single most telling number about an edit's energy.
 
@@ -77,7 +85,8 @@ You are copying the *edit*, not the content. The beat sheet describes technique 
 
 ## Common mistakes
 
-- **Describing instead of reading** — you can't extract caption style or cut timing from the transcript alone; pull the frames (watch-video).
+- **Describing instead of reading** — you cannot extract caption style or cut
+  timing from a transcript alone; inspect supplied or actually rendered frames.
 - **Logging instances, not patterns** — 40 cut timestamps isn't a spec; "hard cut + punch-in per sentence" is.
 - **Copying the reference's timing onto different footage** — beats land on *your* words and *your* cuts; the reference gives you the grammar, not the calendar.
 - **Skipping the hook** — the first 2 seconds carry most of the retention; decode them in the most detail.

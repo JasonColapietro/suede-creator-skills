@@ -1,13 +1,13 @@
 ---
 name: suede-competitor-profiling
-description: "Research competitors from their public surfaces and turn the findings into structured profiles: positioning, pricing, messaging, and where they are weak. Use when the user wants competitor research, a competitive landscape, or structured profiles built from competitor URLs. Also use when the user mentions 'competitor profile,' 'competitor research,' 'competitor analysis,' 'profile this competitor,' 'analyze competitor,' 'competitive intelligence,' 'competitor deep dive,' 'who are my competitors,' 'competitor landscape,' 'competitor dossier,' 'competitive audit,' or 'research these competitors.' Input is a list of competitor URLs. Output is structured competitor profile markdown files. For creating comparison/alternative pages from profiles, see suede-competitors. For sales-specific battle cards, see suede-sales-enablement."
+description: "Suede-owned competitive-intelligence discipline for evidence-backed profiles of positioning, pricing, messaging, product, proof, and public-market signals. Use when researching named competitors from current public URLs or refreshing a structured landscape. NOT FOR: publishing comparison pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing)."
 metadata:
   version: 2.0.0
 ---
 
-# Competitor Profiling
+# Suede Competitor Profiling
 
-You are an expert competitive intelligence analyst. Your goal is to take a list of competitor URLs and produce comprehensive, structured competitor profile documents by combining live site scraping with SEO and market data.
+Use this Suede competitive-intelligence playbook to turn current public evidence into structured profiles with fact, inference, and unknowns kept separate.
 
 ## Initial Assessment
 
@@ -28,7 +28,9 @@ If the user provides URLs and context is available, proceed without asking.
 ## Core Principles
 
 ### 1. Facts Over Opinions
-Every claim in a profile should be traceable to a source — scraped page content, review data, or SEO metrics. Label inferences clearly.
+Every claim in a profile should be traceable to a source — captured public-page
+content, review data, or clearly labeled provider metrics. Label inferences
+clearly.
 
 ### 2. Structured and Comparable
 All profiles follow the same template so they can be compared side by side. Consistency matters more than completeness on any single profile.
@@ -43,7 +45,9 @@ Don't exaggerate competitor weaknesses or downplay their strengths. Accurate pro
 
 ## Saving Raw Data
 
-Before synthesizing the profile, persist all raw scrape, SEO, and review data to disk so it can be re-read, audited, or re-used later without re-running expensive API calls.
+Before synthesizing the profile, persist all raw page captures, SEO inputs, and
+review evidence to disk so they can be re-read, audited, or reused without
+repeating provider requests or manual collection.
 
 **Directory layout** (relative to project root):
 
@@ -52,8 +56,8 @@ competitor-profiles/
 ├── raw/
 │   └── <competitor-slug>/
 │       └── <YYYY-MM-DD>/
-│           ├── scrapes/    # one .md file per scraped page (homepage.md, pricing.md, ...)
-│           ├── seo/        # one .json file per DataForSEO call (backlinks-summary.json, ranked-keywords.json, ...)
+│           ├── scrapes/    # one .md file per captured page (homepage.md, pricing.md, ...)
+│           ├── seo/        # one .json or .csv file per authorized metric source
 │           └── reviews/    # one .md or .json file per review source (g2.md, capterra.md, ...)
 ├── <competitor-slug>.md    # final synthesized profile
 └── _summary.md             # cross-competitor summary
@@ -63,8 +67,10 @@ Rules:
 
 - `<competitor-slug>` is lowercase, hyphenated (e.g. `responsehub`, `safe-base`)
 - `<YYYY-MM-DD>` is the date the data was pulled — supports re-running and diffing snapshots over time
-- Save each Firecrawl scrape as raw markdown to `scrapes/<page-name>.md`
-- Save each DataForSEO response as raw JSON to `seo/<endpoint-name>.json`
+- Save each browser, manual, or authorized-fetch page capture as raw markdown
+  to `scrapes/<page-name>.md`
+- Save each authorized SEO response or user-supplied export to
+  `seo/<source-name>.<json|csv>`
 - Save each review source to `reviews/<source>.md` (cleaned text) or `.json` (raw)
 - Always create the date folder fresh on a new run; never overwrite a prior date's data
 
@@ -74,16 +80,32 @@ The synthesized profile (`<competitor-slug>.md`) should reference the raw data f
 
 ## Research Process
 
-### Phase 1: Site Scraping (Firecrawl)
+### Phase 1: Public-Site Evidence
 
-For each competitor URL, scrape key pages to extract positioning, features, pricing, and messaging.
+For each competitor URL, capture key public pages to extract positioning,
+features, pricing, and messaging.
+
+**Availability gate:** Inspect the tools currently exposed in the session
+before selecting an acquisition method. A named connector is usable only when
+it is actually available, connected to the intended account when applicable,
+authorized for this task, and its current schema has been read. Do not invent a
+tool call from the examples below.
+
+If no mapping or page-fetch tool is available, use a browser-neutral/manual
+fallback: open the public site, follow its primary navigation, inspect its
+public sitemap or search results when accessible, record the exact URLs and
+access date, and capture only evidence visible to the user. Respect access
+controls, site terms, robots directives where applicable, and rate limits.
 
 #### Step 1: Map the site
 
-Use **Firecrawl Map** to discover the competitor's site structure and identify key pages:
+If a current authorized connector exposes a site-map or crawl capability, use
+its documented schema to discover the site structure. For example, some
+Firecrawl connections expose a `firecrawl_map` operation, but that name is not
+guaranteed. Otherwise build the URL list through the manual fallback.
 
 ```
-firecrawl_map → competitor URL
+available map capability or manual navigation → verified competitor URLs
 ```
 
 From the map, identify and prioritize these page types:
@@ -96,12 +118,15 @@ From the map, identify and prioritize these page types:
 - Integrations page
 - Changelog / what's new (if exists)
 
-#### Step 2: Scrape key pages
+#### Step 2: Capture key pages
 
-Use **Firecrawl Scrape** on each identified page:
+If a current authorized connector exposes single-page fetch or extraction, use
+its documented schema on each identified URL. For example, some Firecrawl
+connections expose `firecrawl_scrape`. Otherwise open each public page and
+capture the relevant visible text manually.
 
 ```
-firecrawl_scrape → each key page URL
+available page-fetch capability or browser/manual capture → page evidence
 ```
 
 Save each result to `competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/scrapes/<page-name>.md` before extracting fields.
@@ -118,9 +143,12 @@ Extract from each page:
 | **Integrations** | Integration count, key integrations, categories |
 | **Changelog** | Release velocity, recent focus areas, product direction signals |
 
-#### Step 3: Scrape competitor reviews (optional but high-value)
+#### Step 3: Capture competitor reviews (optional but high-value)
 
-Use **Firecrawl Scrape** or **Firecrawl Search** to find:
+If a connected search/fetch tool is available and authorized, use its current
+schema to find the sources below. Otherwise search or browse them manually.
+Platform-specific or account-only content may be accessed only when that
+platform is actually connected and the user has authorized it.
 - G2 reviews page for the competitor
 - Capterra reviews page
 - Product Hunt launch page
@@ -130,45 +158,58 @@ Save each scraped review page to `competitor-profiles/raw/<competitor-slug>/<YYY
 
 ---
 
-### Phase 2: SEO & Market Data (DataForSEO)
+### Phase 2: Optional SEO and Market Data
 
-Use DataForSEO MCP tools to gather quantitative competitive intelligence. Save each raw response as JSON to `competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/seo/<endpoint-name>.json` before parsing it into the profile. For the full list of MCP tools used in this skill (Firecrawl + DataForSEO) and example calls, see [references/tool-reference.md](references/tool-reference.md).
+First inspect current available tools and user-provided files. If an authorized
+SEO-data connector is exposed, read its current schemas and gather the same
+metrics for every competitor. Some DataForSEO connections use the capability
+names below, but their presence and exact schemas are not guaranteed. If no
+provider is available, analyze a current user-supplied export or mark these
+fields `not collected`; never substitute guessed values.
+
+Save each raw response or export to
+`competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/seo/` before parsing.
+Record provider, access date, market, device, database, and that traffic,
+authority, and value metrics are provider estimates. See
+[references/tool-reference.md](references/tool-reference.md) for conditional
+capability mapping and manual fallbacks.
 
 #### Domain Authority & Backlinks
 
-Use **backlinks_summary** to get:
+When the connected provider exposes an equivalent of `backlinks_summary`,
+collect:
 - Domain rank / authority score
 - Total backlinks
 - Referring domains count
 - Spam score
 
-Use **backlinks_referring_domains** for:
+When it exposes an equivalent of `backlinks_referring_domains`, collect:
 - Top referring domains (quality signals)
 - Link acquisition patterns
 
 #### Keyword & Traffic Intelligence
 
-Use **dataforseo_labs_google_ranked_keywords** to get:
+When it exposes ranked-keyword data, collect:
 - Total organic keywords ranking
 - Keywords in top 3, top 10, top 100
 - Estimated organic traffic
 
-Use **dataforseo_labs_google_domain_rank_overview** for:
+When it exposes a domain organic overview, collect:
 - Domain-level organic metrics
 - Estimated traffic value
 - Top keywords by traffic
 
-Use **dataforseo_labs_google_keywords_for_site** to discover:
+When it exposes site-keyword discovery, collect:
 - What keywords they target
 - Content gaps vs. your site
 
 #### Competitive Positioning Data
 
-Use **dataforseo_labs_google_competitors_domain** to find:
+When it exposes organic-competitor overlap, collect:
 - Their closest organic competitors (may reveal competitors you haven't considered)
 - Market overlap data
 
-Use **dataforseo_labs_google_relevant_pages** to find:
+When it exposes relevant-page estimates, collect:
 - Their highest-traffic pages
 - Content that drives the most organic value
 
@@ -210,7 +251,7 @@ Each profile follows this structure:
 | Headquarters | [location] |
 | Team size | [estimate] |
 | Funding | [if known] |
-| Domain rank | [from DataForSEO] |
+| Provider domain metric | [value, provider, market, and access date; or not collected] |
 | Est. organic traffic | [monthly] |
 | Referring domains | [count] |
 | Organic keywords | [count] |
@@ -351,13 +392,14 @@ After profiling all competitors, generate a `competitor-profiles/_summary.md` th
 ## Quick Scan vs. Deep Profile
 
 ### Quick Scan (faster, lower cost)
-- Scrape: homepage + pricing page only
-- SEO: domain rank overview + ranked keywords summary
+- Public-site evidence: homepage + pricing page only
+- SEO: one consistent provider overview and ranked-keyword summary when an
+  authorized source or user export is available; otherwise `not collected`
 - Skip: reviews, technology stack, backlink details
 - Output: abbreviated profile (At a Glance + Positioning + Pricing + SEO summary)
 
 ### Deep Profile (comprehensive)
-- Scrape: all key pages + review sites
+- Public-site evidence: all key pages + available review sources
 - SEO: full backlink analysis + keyword intelligence + competitor discovery
 - Include: technology stack, content strategy analysis, review mining
 - Output: full profile template
@@ -370,8 +412,12 @@ Default to **quick scan** unless the user requests deep profiling or specifies a
 
 When profiling more than one competitor:
 
-1. **Parallelize scraping** — scrape all competitors' homepages simultaneously, then pricing pages, etc.
-2. **Use consistent metrics** — pull the same DataForSEO metrics for every competitor so profiles are comparable
+1. **Parallelize only when supported** — capture independent homepages or
+   pricing pages concurrently only when the available tool supports it and its
+   quota allows it; otherwise work sequentially
+2. **Use consistent metrics** — use the same available provider, market,
+   device, database, date window, and metric definitions for every competitor;
+   otherwise mark the comparison unavailable
 3. **Build the summary last** — after all individual profiles are complete
 4. **Prioritize by relevance** — if the user has 10+ competitors, suggest profiling the top 5 first based on domain overlap or market similarity
 
@@ -382,7 +428,8 @@ When profiling more than one competitor:
 Profiles are snapshots. When updating:
 
 - Check pricing pages first (most volatile)
-- Re-pull SEO metrics (traffic and rankings shift monthly)
+- Refresh SEO metrics only through the same available provider and matching
+  market/device/database parameters, or mark them unavailable
 - Scan changelog for product changes
 - Update the "Generated" date
 - Note what changed since last profile in a `## Change Log` section at the bottom
@@ -400,13 +447,17 @@ Only ask if not answered by context or input:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **competitors**: For creating comparison/alternative pages from these profiles
-- **prospecting**: For broader list-building qualification (this skill does deep research on specific accounts; prospecting builds the initial list)
-- **customer-research**: For mining reviews and community sentiment in depth
-- **content-strategy**: For using competitor content gaps to plan your own content
-- **seo-audit**: For auditing your own site relative to competitors
-- **sales-enablement**: For turning profiles into battle cards and sales collateral
-- **ads**: For analyzing competitor ad strategies
-- **pricing**: For deeper pricing analysis informed by competitor profiles
+- Do not present inference, stale pricing, traffic estimates, review summaries, or feature availability as verified current fact.
+- Do not access private accounts, bypass controls, scrape prohibited sources, contact competitors, or publish a dossier without authorization.
+- Do not label a competitor weak, deceptive, or noncompliant without a stated comparison criterion and evidence.
+- Do not decide product, pricing, legal, or sales strategy; surface supported implications and unresolved questions.
+
+## Routing
+
+- Need a public comparison or alternative page -> use `suede-competitors`.
+- Need a sales battle card -> use `suede-sales-enablement`.
+- Need review and forum synthesis -> use `suede-customer-research`.
+- Need pricing, ad, or content implications -> use `suede-pricing`, `suede-ads`, or `suede-content-strategy`.
+- From those skills, route current-source competitor research back to `suede-competitor-profiling`.

@@ -1,13 +1,13 @@
 ---
 name: suede-offers
-description: "Construct the thing you actually sell: value framing, bonus stacking, guarantee and risk-reversal design, honest scarcity, naming, and payment structure. Use when the user is building or fixing an offer for a service, agency, course, coaching, info product, or high-ticket B2B sale. Also use when the user mentions 'offer,' 'offer design,' 'build an offer,' 'grand slam offer,' 'irresistible offer,' 'value stack,' 'bonus stack,' 'guarantee,' 'risk reversal,' 'money-back guarantee,' 'scarcity,' 'urgency,' 'high-ticket offer,' 'productize a service,' 'naming an offer,' 'payment plan,' 'down-sell,' 'upsell offer,' or 'why isn't my offer converting.' Best for services, agencies, courses, coaching, info products, high-ticket B2B, and direct-response. If you run pure self-serve SaaS, read pricing first — tiers and packaging do more work there. For price level itself (tiers, freemium, value metric), see suede-pricing. For the page that presents the offer, see suede-copy."
+description: "Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure. Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls)."
 metadata:
   version: 1.0.0
 ---
 
-# Offer Design
+# Suede Offer Architecture
 
-You are an expert in offer construction. Your goal is to help the user build offers that move — not by writing better copy on a worse offer, but by improving the offer itself.
+Suede separates the offer underneath the page from the copy used to present it. Improve the real value exchange—outcome, proof, effort, time, scope, bonuses, guarantee, price structure, and honest constraints—before polishing language around a weak proposition.
 
 ## Before Starting
 
@@ -20,7 +20,7 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 **The offer is the thing, not the page.** Better copy on a weak offer compounds slowly. A stronger offer with average copy converts immediately. Most "we need better copy" requests are actually "we need a better offer" requests in disguise.
 
-This skill exists because the rest of the repo handles the *expression* of an offer — `copywriting` writes the sales page, `cro` optimizes the conversion path, `pricing` sets the tier structure, `launch` orchestrates the moment, `paywalls` shapes the upgrade prompt. None of them ask the deeper question: **is the offer underneath any of that actually good?**
+This skill owns the offer underneath the expression. Route sales-page language to `suede-copy`, conversion-path work to `suede-site-alchemy`, tier structure to `suede-pricing`, launch orchestration to `suede-launch-packaging`, and upgrade prompts to `suede-paywalls`.
 
 ### When this skill matters
 
@@ -32,19 +32,19 @@ You sell:
 - **High-ticket B2B** — $5K+ ACV with a sales conversation
 - **Direct-response** — e-com promo offers, infomercial-style, paid-traffic-to-VSL
 
-### When `pricing` does more of the work
+### When `suede-pricing` does more of the work
 
 You sell:
 - **Self-serve SaaS** with tiered subscriptions — the levers are mostly tier structure, value metric, and packaging; offer construction (bonuses, guarantees) is secondary
 - **Marketplaces** — the offer is structural, not constructed
 
-Skim this skill in those cases for the value equation framing, then go to `pricing`.
+Skim this skill in those cases for the value equation framing, then route to `suede-pricing`.
 
 ---
 
 ## The Value Equation
 
-The single most useful frame for offer design. Originally from Alex Hormozi's *$100M Offers* — internalized broadly across direct-response and creator-economy training since.
+Suede uses a four-lever value equation to diagnose whether the outcome, perceived likelihood, time delay, or required effort is constraining the offer.
 
 ```
               Dream Outcome  ×  Perceived Likelihood of Achievement
@@ -123,7 +123,7 @@ Some offer patterns work but cost more than they're worth:
 - **Bonus inflation** — stacking $50K of "bonuses" on a $497 product so it "feels like a steal." Sophisticated buyers see this. Treat bonuses as additive, not exaggerated.
 - **Course-bro aesthetic on a serious product** — Gold logos, "secret method," fake urgency. Pattern-matches to scam. Wrong room.
 
-The repo voice: opinionated, but honest. Building offers well doesn't mean building offers loud.
+The Suede voice is direct, specific, and honest. Building offers well does not mean building offers loud.
 
 ---
 
@@ -141,13 +141,16 @@ Use specific numbers, named customers, concrete outcomes, real timelines. Specif
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **pricing** — for price levels, tier structure, value metric, packaging, freemium
-- **copywriting** — for the page that presents the offer
-- **cro** — for optimizing the conversion path the offer travels through
-- **launch** — for the moment you ship the offer
-- **paywalls** — for in-app upgrade-prompt versions of an offer
-- **sales-enablement** — for the deck and one-pager that carry the offer into a sales conversation
-- **emails** — for the email sequence that warms up the offer
-- **marketing-psychology** — for the cognitive biases that make offers land or bounce
+- Do not invent outcome evidence, comparable value, scarcity, deadlines, testimonials, guarantee economics, or refund terms.
+- Do not create payment objects, publish an offer, change pricing, or make legal promises without explicit authorization.
+- Do not recommend coercive urgency, inaccessible cancellation, or conditions hidden from the buyer.
+- Do not decide margin, liability, compliance, or brand-risk acceptance for the user.
+
+## Routing
+
+- Use `suede-pricing` for tiers, packaging, and value metrics.
+- Use `suede-copy` for the sales page and `suede-site-alchemy` for the conversion path.
+- Use `suede-launch-packaging` to launch and `suede-paywalls` for in-product upgrade prompts.
+- Use `suede-sales-enablement`, `suede-emails`, or `suede-marketing-psychology` for approved execution.

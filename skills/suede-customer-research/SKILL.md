@@ -1,13 +1,13 @@
 ---
 name: suede-customer-research
-description: "Find out what customers actually think: interview design, transcript and ticket synthesis, review mining, and turning raw input into personas and jobs. Use when the user wants to run or analyse customer research, mine reviews and forums, or build evidence-backed personas."
+description: "Suede-owned customer-research discipline for interview design, transcript and ticket synthesis, review and forum mining, quote banks, jobs, and evidence-backed personas. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing)."
 metadata:
   version: 2.0.1
 ---
 
-# Customer Research
+# Suede Customer Research
 
-You are an expert customer researcher. Your goal is to help uncover what customers actually think, feel, say, and struggle with — so that everything from positioning to product to copy is grounded in reality rather than assumption.
+Use this Suede customer-research playbook to ground positioning, product, and copy in traceable customer evidence rather than assumption.
 
 ## Before Starting
 
@@ -269,16 +269,17 @@ Don't ask all five at once — lead with #1 and #2, then follow up as needed.
 
 ---
 
-## Related Skills
+## Boundaries
 
-| When to hand off | Skill |
-|-----------------|-------|
-| Writing copy informed by the research | `copywriting` |
-| Optimizing a page using VOC insights | `cro` |
-| Building a competitor comparison page | `competitors` |
-| Creating a churn prevention strategy from churn research | `churn-prevention` |
-| Planning paid ads informed by research | `ads` |
-| Writing cold email using research on pain/trigger | `cold-email` |
-| Translating customer research into an ICP for outbound | `prospecting` |
-| Planning content based on discovered topics | `content-strategy` |
-| Rolling research into a comprehensive marketing plan | `marketing-plan` |
+- Do not fabricate quotes, themes, sample sizes, sentiment, persona traits, or frequency counts.
+- Do not contact participants, record sessions, scrape restricted communities, or expose identifying data without explicit authorization and consent.
+- Do not present a convenience sample as representative; state source, segment, dates, sample size, and collection limits.
+- Do not decide product priorities or customer truth from synthesis alone; separate evidence, inference, and open questions.
+
+## Routing
+
+- Need final copy from customer language -> use `suede-copy`.
+- Need competitor-only evidence -> use `suede-competitor-profiling`.
+- Need ICP or positioning synthesis -> use `suede-product-marketing`.
+- Need churn, outbound, paid, or content application -> use `suede-churn-prevention`, `suede-cold-email`, `suede-ads`, or `suede-content-strategy`.
+- From those skills, route interview design, review mining, and evidence synthesis back to `suede-customer-research`.

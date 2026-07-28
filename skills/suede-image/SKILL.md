@@ -1,13 +1,13 @@
 ---
 name: suede-image
-description: "Create and optimise marketing imagery: prompt craft for AI generation, hero and social graphics, product mockups, and export and compression discipline. Use when the user needs marketing images, graphics, mockups, or help getting better output from an image model. Also use when the user mentions 'AI image generation,' 'generate an image,' 'create a graphic,' 'product mockup,' 'hero image,' 'social media graphic,' 'banner image,' 'cover photo,' 'profile banner,' 'listing screenshot,' 'Flux,' 'Flux Kontext,' 'Midjourney,' 'DALL-E,' 'GPT Image,' 'ChatGPT Images,' 'Ideogram,' 'Gemini image,' 'Nano Banana,' 'Recraft,' 'Stable Diffusion,' 'Canva,' 'Figma,' 'image optimization,' 'compress images,' 'WebP,' or 'OG image.' Use this for general-purpose marketing image creation and optimization. For paid ad image creative and platform-specific ad specs, see suede-ad-creative. For video production, see suede-video."
+description: "Suede-affiliated marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso)."
 metadata:
   version: 2.0.1
 ---
 
-# Image
+# Suede Marketing Image Production
 
-You are an expert visual content producer who helps create marketing images using AI generation models, design tools, and optimization best practices. Your goal is to help users produce professional visual assets efficiently — from blog heroes and social graphics to product mockups and profile banners.
+Suede produces marketing imagery as a rights-aware, placement-specific system: choose the right production method, protect canonical brand assets, preserve real product truth, and verify the exported result. Use generation models and design tools to create efficient hero, social, mockup, banner, and preview workflows without fabricating interfaces or provenance.
 
 ## Before Starting
 
@@ -27,77 +27,77 @@ Gather this context (ask if not provided):
 - Is this a one-off or a template for repeated use?
 
 ### 3. Technical Context
-- Do you have API keys for any image tools? (Gemini, Replicate/Flux, Ideogram)
-- Budget constraints? (Some tools charge per image)
+- Which image, browser, design, or local conversion tools are currently callable?
+- What is the approved maximum cost and data-handling boundary?
 - Do you need the image optimized for web performance?
+
+Do not ask the user to paste API keys or secrets into the conversation.
 
 ---
 
 ## Choosing Your Approach
 
-Pick the right tool for the job:
+First discover the current production surface. Inspect callable tools and connected
+accounts; do not assume a named model, provider, API, plugin, or design app is
+available. Then choose among these methods:
 
-| Approach | Best For | Tools | When to Use |
-|----------|----------|-------|-------------|
-| **AI Generation** | Original images from text prompts | Gemini/Nano Banana, Flux, Ideogram | Blog heroes, social graphics, lifestyle scenes |
-| **AI Editing** | Modify existing images | Gemini, Flux Flex | Background removal, style changes, variations |
-| **Design Tools** | Templated, brand-consistent assets | Canva, Figma | Profile banners, social templates, presentations |
-| **Screenshot + Overlay** | Product UI showcases | Browser screenshot + code overlay | Product mockups, feature announcements |
-| **Stock Photography** | Generic business/lifestyle scenes | Unsplash, Pexels | When speed matters more than uniqueness |
+| Approach | Best For | Candidate surface |
+|----------|----------|-------------------|
+| **Generation** | Original concepts and scenes | A callable image-generation tool |
+| **Editing** | Authorized changes to supplied images | A callable editor with image-input support |
+| **Template design** | Brand-consistent recurring assets | An authorized design app or local template |
+| **Screenshot + overlay** | Truthful product showcases | Callable browser capture plus local layout |
+| **Licensed media** | Existing photography or illustration | User-owned library or verified license source |
 
 ---
 
 ## AI Image Generation
 
-Generate original images from text prompts. The fastest way to create unique marketing visuals.
+Use generation only after the current tool and authority gates pass.
 
-### Model Comparison
+### Capability and authority gate
 
-| Model | Best For | Text in Images | API | Cost |
-|-------|----------|:-:|-----|------|
-| **Gemini Image** (Google, "Nano Banana" / Nano Banana Pro) | All-around, editing, multi-image reference, text rendering | Good | [Gemini API](https://ai.google.dev/gemini-api/docs/image-generation) | Check [pricing](https://ai.google.dev/gemini-api/docs/pricing) |
-| **Flux** (Black Forest Labs — Pro 1.1, Kontext, Dev, Schnell) | Photorealism, brand consistency, batch; Kontext for in-image editing | Limited | [BFL API](https://docs.bfl.ai/), Replicate, fal.ai | Check [pricing](https://docs.bfl.ai/quick_start/pricing) |
-| **Ideogram 3.0** | Typography, branded graphics, accurate text rendering | Best | [Ideogram API](https://developer.ideogram.ai/) | Check [pricing](https://about.ideogram.ai/api-pricing) |
-| **ChatGPT Images 2.0 / GPT Image** (OpenAI) | General purpose, ChatGPT integration, native editing | Good | [OpenAI API](https://platform.openai.com/docs/guides/image-generation) | Check [pricing](https://platform.openai.com/docs/pricing) |
-| **Midjourney v7** | Artistic, high-aesthetic, art-directed visuals | Improved | No official API; Discord + Web | Subscription-based |
-| **Recraft V3** | Vector + brand-consistent illustrations, design assets | Strong | [Recraft API](https://www.recraft.ai/docs) | Per-credit |
-| **Stable Diffusion 3.5 / SDXL** | Self-hosted, customizable, fine-tunable | Varies | Open source | Free (GPU costs) |
+1. Confirm a generation or editing tool is callable in the current session.
+2. Check its current official documentation for model availability, accepted
+   inputs, output sizes, editing/reference support, safety restrictions, retention,
+   commercial-use terms, and pricing. Record the source and check date.
+3. Confirm rights to every uploaded logo, screenshot, photo, font, and reference
+   image. Do not upload confidential or personal material outside its approved
+   boundary.
+4. Calculate the maximum cost for the requested attempts and get explicit approval
+   before using a paid account or exceeding an already approved budget.
+5. Confirm whether the user's request authorizes generation only, editing of
+   supplied files, overwriting a source, or publication. These are separate gates.
 
-**Note:** DALL-E 3 is fully deprecated. OpenAI's current image models are the GPT Image / ChatGPT Images family (`gpt-image-1` and later).
+Provider names and model versions are volatile. Examples such as OpenAI, Google,
+Black Forest Labs, Ideogram, Midjourney, Recraft, and self-hosted diffusion are
+research candidates, not routing instructions or capability claims.
 
-### When to Use Which
+### Selection criteria
 
-```
-Need text/headlines in the image?
-├── Yes → Ideogram 3.0 (best), Gemini (good), GPT Image / ChatGPT Images (decent)
-└── No ↓
+- For text-heavy assets, prefer a deterministic overlay or design template; test
+  any verified in-image text capability before committing to it.
+- For repeated brand work, prefer locked templates and approved assets over a
+  claimed consistency feature.
+- For edits, use a tool whose current documentation and callable schema confirm
+  image input and the required edit mode.
+- For vectors, require a real vector export and inspect its paths; a raster image
+  labeled as vector is not sufficient.
+- For product UI, capture the live authorized interface rather than generating it.
+- For volume, compare verified cost, rate limits, review time, and output quality
+  on a small test batch.
 
-Need product/brand consistency across many images?
-├── Yes → Flux (multi-image reference), Gemini Nano Banana Pro, Recraft V3
-└── No ↓
-
-Need to edit an existing image (in-place)?
-├── Yes → Gemini (native editing), Flux Kontext, ChatGPT Images
-└── No ↓
-
-Need vector / illustrative brand assets?
-├── Yes → Recraft V3 (best for vector + brand consistency), Midjourney (artistic)
-└── No ↓
-
-Need highest visual quality / art direction?
-├── Yes → Flux Pro 1.1, Midjourney v7
-└── No ↓
-
-Need volume at low cost?
-└── Flux Schnell, Gemini Flash, Stable Diffusion (self-hosted)
-```
+If no suitable renderer or editor is callable, deliver a production-ready prompt,
+layout spec, asset manifest, rights checklist, and export checklist. State clearly
+that no image was generated; do not route the user to an unavailable tool as
+though execution occurred.
 
 ### Prompting Basics
 
 A strong image prompt follows: **Subject + Setting + Style + Lighting + Composition + Technical**
 
 ```
-A laptop on a minimal white desk showing a dashboard UI,
+A laptop on a minimal white desk with an abstract analytics motif,
 soft directional lighting from the left, shallow depth of field,
 clean commercial photography style, 16:9 aspect ratio, 4K
 ```
@@ -118,28 +118,24 @@ For templated, brand-consistent work where AI generation is overkill or too unpr
 
 ### Canva
 
-Best for non-designers who need polished output fast.
-
-- **Strengths:** Massive template library, brand kit, Magic Resize (one design → all sizes), team collaboration
-- **Best for:** Social graphics, presentations, email headers, simple banners
-- **Limitations:** Less control than Figma, templates can look generic
-- **Agent-friendliness:** Has an API but limited — better as a human-in-the-loop tool
+Can be a candidate for template-driven social graphics, presentations, email
+headers, and banners. Verify the connected account, current features, export
+rights, plan limits, API availability, and callable integration before routing
+work to it. Keep a human review gate for brand output.
 
 ### Figma
 
-Best for teams with design systems or pixel-perfect needs.
-
-- **Strengths:** Design system components, auto layout, developer handoff, plugins
-- **Best for:** OG images via templates, design system assets, complex layouts
-- **Limitations:** Steeper learning curve, requires design skill
-- **Agent-friendliness:** Has an API and MCP server for reading designs
+Can be a candidate when an authorized design file or component system exists.
+Verify current account access and whether the available integration can read,
+edit, export, or only inspect. Do not claim write access or create files merely
+because a connector exists.
 
 ### When to Use Design Tools vs. AI Generation
 
 | Scenario | Design Tool | AI Generation |
 |----------|:-:|:-:|
 | Exact brand guidelines must be followed | Yes | Maybe (with strong ref images) |
-| Need 20 size variants of one design | Yes (Canva Magic Resize) | No |
+| Need many size variants of one design | Yes, if current resize/export capability is verified | Usually no |
 | Unique hero image for a blog post | No | Yes |
 | Recurring social media template | Yes | No |
 | Product mockup with real UI | No (use screenshots) | No (hallucinated UI) |
@@ -154,22 +150,28 @@ Best for teams with design systems or pixel-perfect needs.
 The image at the top of every post. Sets tone, improves shareability, required for OG/social previews.
 
 1. **Define the concept** — what visual metaphor represents the topic?
-2. **Generate with AI** — use Flux or Gemini for photorealistic, Ideogram if text needed
-3. **Specify 1200x630** (works for both hero and OG image) or **1920x1080** for full-width
-4. **Optimize** — compress to <200KB, serve as WebP with JPEG fallback
+2. **Choose the verified method** — callable generator, approved media, or a
+   deterministic local/design template
+3. **Confirm dimensions** from the actual site component and current social
+   preview requirements
+4. **Optimize to a measured quality and performance budget**
 
 **Prompt pattern:**
 ```
 [Visual metaphor for topic], clean modern style,
 bright natural lighting, shallow depth of field,
-professional blog header aesthetic, 1200x630
+professional blog header aesthetic, [verified width]x[verified height]
 ```
 
 ### Social Media Graphics
 
 Platform-specific images for organic posts.
 
-| Platform | Primary Size | Aspect Ratio | Notes |
+The values below are planning defaults, not current platform guarantees. Check the
+platform's official specification on the work date and use its current safe zones,
+file limits, and format rules.
+
+| Platform | Planning size | Aspect ratio | Notes |
 |----------|-------------|:---:|-------|
 | Twitter/X | 1200x675 | 16:9 | Large image card |
 | LinkedIn | 1200x627 | 1.91:1 | Feed image |
@@ -179,8 +181,8 @@ Platform-specific images for organic posts.
 
 **Workflow:**
 1. Create the hero concept at highest resolution needed
-2. Use Canva Magic Resize or manual crop for platform variants
-3. Add text overlays programmatically (Ideogram or post-processing) if needed
+2. Use a verified resize/export feature or manual crop for platform variants
+3. Add text overlays deterministically when accurate text is required
 4. Export at platform-specific dimensions
 
 ### Product Mockups & Screenshots
@@ -189,16 +191,22 @@ Showcase your product UI in context. AI models hallucinate UI — don't use them
 
 1. **Capture real screenshots** of your product at 2x resolution
 2. **Frame in device mockups** — use browser frame, laptop, or phone templates
-3. **Add context** — callout arrows, feature labels, before/after comparisons
-4. **Annotate with code** — Hyperframes or HTML/CSS for programmatic overlays
+3. **Add context** — callout arrows, verified feature labels, before/after comparisons
+4. **Annotate deterministically** — use a callable local layout workflow or an
+   authorized design tool
 
-**Tools:** Browser DevTools (screenshot), Shottr (Mac), CleanShot X, or `screencapture` CLI.
+Possible capture surfaces include browser tooling or an installed OS capture
+utility. Discover what is currently callable, confirm authorization for the live
+surface, and omit tools that are not available.
 
 ### Profile & Listing Banners
 
 Banners for profiles, directory listings, and marketplace pages. Often the first visual impression.
 
-| Platform | Size | Notes |
+These are planning references and can drift. Verify current official dimensions,
+cropping behavior, safe zones, file limits, and format rules before production.
+
+| Platform | Planning size | Notes |
 |----------|------|-------|
 | LinkedIn personal cover | 1584x396 | 4:1, safe zone center |
 | LinkedIn company cover | 1128x191 | 5.9:1; LinkedIn recommends up to 4200x700 |
@@ -212,15 +220,16 @@ Banners for profiles, directory listings, and marketplace pages. Often the first
 **Best practices:**
 - **Keep text minimal** — banners are seen at small sizes on mobile
 - **Center critical content** — edges get cropped differently per device
-- **Show the product** — real UI screenshots outperform abstract graphics on directory listings
+- **Show the product truthfully** — use real UI screenshots when the listing is
+  meant to demonstrate the interface
 - **Match your brand** — use consistent colors, fonts, logo placement
-- **Update seasonally** — stale banners signal an inactive product
+- **Update deliberately** — refresh when the product, campaign, or positioning changes
 
 **Workflow:**
 1. Pick the platform(s) and note exact dimensions
 2. For directories (Product Hunt, G2): use real product screenshots with light annotation
 3. For profiles (LinkedIn, Twitter): use brand colors + tagline + optional product shot
-4. Generate with Canva/Figma templates or Ideogram (if text-heavy)
+4. Produce with a verified callable template workflow; add text deterministically
 5. Test at actual display size — zoom out to check readability
 
 ### Brand Assets
@@ -229,8 +238,8 @@ Logos, icons, and illustrations. AI generation has limits here.
 
 | Asset | AI Generation | Design Tool | Notes |
 |-------|:-:|:-:|-------|
-| Logo | Poor — inconsistent, not vector | Yes (Figma) | Always design or commission logos |
-| App icon | Decent starting point | Yes (Figma) | Generate concepts, refine manually |
+| Logo | Poor — inconsistent, not vector | Yes | Always design or commission logos |
+| App icon | Concept exploration only | Yes | Refine manually and verify store rules |
 | Illustrations | Good for style exploration | Depends | AI for concepts, finalize in design tool |
 | Favicons | No | Yes | Derive from logo |
 | Social icons | No | Yes | Use platform-provided assets |
@@ -239,31 +248,33 @@ Logos, icons, and illustrations. AI generation has limits here.
 
 ## Image Optimization
 
-Every image on your site affects page speed, which affects SEO and conversions.
+Image bytes and dimensions can affect page performance. Measure the actual page
+before attributing search or conversion results to image changes.
 
 ### Format Guide
 
-| Format | Best For | Compression | Browser Support |
-|--------|----------|-------------|:---:|
-| **WebP** | Photos, graphics — default choice | Lossy + lossless | ~96% |
-| **AVIF** | Highest compression, newest | Better than WebP | ~94% |
-| **JPEG** | Fallback for older browsers | Lossy only | Universal |
-| **PNG** | Transparency, screenshots | Lossless | Universal |
-| **SVG** | Logos, icons, illustrations | Vector (scales) | Universal |
+| Format | Best For | Compression |
+|--------|----------|-------------|
+| **WebP** | Photos and graphics when target browsers support it | Lossy + lossless |
+| **AVIF** | High-compression delivery when target browsers support it | Lossy + lossless |
+| **JPEG** | Broad photo compatibility | Lossy |
+| **PNG** | Transparency and lossless screenshots | Lossless |
+| **SVG** | Trusted vector logos, icons, and illustrations | Vector |
 
 ### Optimization Checklist
 
-- [ ] **Serve WebP** with JPEG/PNG fallback (`<picture>` element or CDN auto-format)
+- [ ] **Use a supported delivery format** and fallback strategy for the target browser matrix
 - [ ] **Resize to display size** — don't serve 4000px images in 800px containers
-- [ ] **Compress** — target quality 75-85% for photos, near-lossless for screenshots
+- [ ] **Compress** — choose quality from visual review and the page's measured byte budget
 - [ ] **Lazy load** below-the-fold images (`loading="lazy"`)
 - [ ] **Set explicit dimensions** — `width` and `height` attributes prevent layout shift (CLS)
-- [ ] **Use a CDN** with auto-optimization (Cloudflare, Vercel, Imgix, Cloudinary)
+- [ ] **Use verified CDN optimization** when the current stack supports it
 - [ ] **Add alt text** — descriptive, keyword-relevant, not stuffed
 
 ### Quick Optimization Commands
 
 ```bash
+# Run only after confirming the named local utility is installed.
 # Convert to WebP (using cwebp)
 cwebp -q 80 input.png -o output.webp
 
@@ -274,7 +285,7 @@ mogrify -format webp -quality 80 *.png
 jpegoptim --max=80 --strip-all *.jpg
 
 # Check image sizes on a page
-curl -s https://yoursite.com | grep -oP 'src="[^"]+\.(jpg|png|webp)"' | head -20
+curl -s https://yoursite.com | rg -o 'src="[^"]+\\.(jpg|png|webp)"' | head -20
 ```
 
 ---
@@ -283,7 +294,10 @@ curl -s https://yoursite.com | grep -oP 'src="[^"]+\.(jpg|png|webp)"' | head -20
 
 The image that appears when your URL is shared on social media, Slack, Discord, etc.
 
-### Required Meta Tags
+### Common Meta Tags
+
+Verify the current crawler/platform specification and use absolute public URLs.
+The values below are a starting template, not proof of platform compliance.
 
 ```html
 <meta property="og:image" content="https://yoursite.com/og/page-name.jpg" />
@@ -295,25 +309,27 @@ The image that appears when your URL is shared on social media, Slack, Discord, 
 
 ### Dynamic OG Images
 
-Generate OG images programmatically for pages with dynamic content (blog posts, user profiles):
+Generate OG images programmatically for dynamic pages only after verifying the
+project's current framework, installed packages, and supported runtime:
 
-- **Vercel OG** (`@vercel/og`) — generates images at the edge using JSX
-- **Satori** — converts HTML/CSS to SVG (powers Vercel OG)
-- **Cloudinary** — URL-based text overlay on template images
+- An installed framework-native image route
+- A local HTML/SVG-to-image renderer
+- An authorized media service with verified template and export capabilities
 
-**Best for programmatic SEO:** Generate unique OG images per page using templates + dynamic data.
+For repeated page types, a deterministic template can reduce manual work. Measure
+preview correctness and production time; do not promise a search outcome.
 
 ---
 
 ## Common Mistakes
 
 1. **Using AI for product UI screenshots** — models hallucinate interfaces; capture real screenshots
-2. **Skipping image optimization** — unoptimized images are the #1 page speed killer
-3. **No OG image** — shared links look broken without a preview image
-4. **Wrong aspect ratio** — always check platform specs before generating
-5. **Text-heavy images without Ideogram** — most AI models butcher text; use Ideogram or add text in post
+2. **Skipping image optimization** — oversized images can materially hurt page performance
+3. **No preview image** — platforms may fall back to a less useful preview
+4. **Wrong aspect ratio** — check current platform specs before generating
+5. **Unverified generated text** — use deterministic overlays for exact copy
 6. **Generating without style direction** — "photorealistic," "flat illustration," "3D render" drastically changes output
-7. **Inconsistent brand visuals** — use Flux multi-reference or design templates for consistency
+7. **Inconsistent brand visuals** — use locked, approved templates for consistency
 8. **Huge images on landing pages** — compress, resize, lazy load
 
 ---
@@ -324,17 +340,24 @@ Generate OG images programmatically for pages with dynamic content (blog posts, 
 2. What platform or placement? (This determines dimensions)
 3. Do you have brand assets to match? (Colors, fonts, logo, style guide)
 4. Is this a one-off or a repeatable template?
-5. Do you have API keys for any image generation tools?
+5. Which image or design tools are currently callable and authorized?
 6. Does this need to be optimized for web performance?
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **ad-creative**: For paid ad image creative, platform-specific ad specs, and scaled ad production
-- **video**: For AI video production and programmatic video
-- **social**: For what to post and content strategy
-- **cro**: For image placement and conversion optimization on landing pages
-- **seo-audit**: For image SEO (alt text, file names, lazy loading)
-- **aso**: For app store screenshot specs and optimization
-- **directory-submissions**: For Product Hunt gallery images and directory listing visuals
+- For Suede visuals, use only `docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`.
+- Do not redraw, trace, approximate, recolor, distort, typeset, or generate a replacement for the approved Suede S mark. If the canonical file is missing or its checksum differs, omit the mark, name the blocker, and request the approved file.
+- Do not claim an image is licensed, rights-cleared, authentic, accessible, optimized, or platform-compliant without verifying the relevant source or output.
+- Do not use a paid provider, upload protected material, or cross an approved
+  account or data boundary without explicit authority and a verified maximum cost.
+- Do not publish, overwrite source assets, or replace real product screenshots without explicit authorization.
+- Do not invent people, endorsements, product interfaces, performance results, or provenance, and do not decide rights or brand exceptions for the user.
+
+## Routing
+
+- Use `suede-ad-creative` for paid-ad production and `suede-video` for motion.
+- Use `suede-social` for channel strategy and `suede-site-alchemy` for conversion placement.
+- Use `suede-seo-audit` for image-search checks and `suede-aso` for app-store screenshots.
+- Use `suede-directory-submissions` for directory gallery planning.

@@ -1,13 +1,13 @@
 ---
 name: suede-marketing-ideas
-description: "Get unstuck with a structured idea library rather than a blank page: channel-by-channel tactics scored for effort, cost, and fit. Use when the user is out of marketing ideas, does not know where to start, or wants tactics to consider for their stage. Also use when the user asks for 'marketing ideas,' 'growth ideas,' 'how to market,' 'marketing strategies,' 'marketing tactics,' 'ways to promote,' 'ideas to grow,' 'what else can I try,' 'I don't know how to market this,' 'brainstorm marketing,' or 'what marketing should I do.' Use this as a starting point whenever someone is stuck or looking for inspiration on how to grow. For specific channel execution, see the relevant skill (ads, social, emails, etc.)."
+description: "Suede-affiliated marketing ideation using a structured tactic library scored for stage, audience fit, effort, cost, evidence, and risk. Use when the user is stuck, wants options, or needs a shortlist of growth tactics before committing to a plan. NOT FOR: a comprehensive roadmap (use suede-marketing-plan), channel execution (use the relevant public Suede skill), or unattended recurring workflows (use suede-marketing-loops)."
 metadata:
   version: 2.0.0
 ---
 
-# Marketing Ideas for SaaS
+# Suede Marketing Idea Prioritizer
 
-You are a marketing strategist with a library of 139 proven marketing ideas. Your goal is to help users find the right marketing strategies for their specific situation, stage, and resources.
+Suede turns a broad tactic library into a bounded shortlist scored against the user's audience, stage, evidence, capacity, cost, and risk. The goal is not to label 139 ideas "proven"; it is to identify which few deserve validation in this specific situation and which should be deferred or rejected.
 
 ## How to Use This Skill
 
@@ -158,11 +158,16 @@ When recommending ideas, provide for each:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **marketing-plan**: When the user wants a comprehensive plan instead of standalone ideas. Section 12 of the plan cross-references all 139 ideas here against AARRR stages and client-specific status.
-- **programmatic-seo**: For scaling SEO content (#4)
-- **competitors**: For comparison pages (#11)
-- **emails**: For email marketing tactics
-- **free-tools**: For engineering as marketing (#15)
-- **referrals**: For viral growth (#93)
+- Do not claim a tactic fits, is proven, or will grow revenue without current evidence and explicit scoring.
+- Do not launch campaigns, publish content, spend money, contact prospects, or create accounts without authorization.
+- Do not treat brainstormed ideas as a plan, forecast, commitment, or completed experiment.
+- Do not decide budget, risk tolerance, brand claims, or channel priority when required context is missing.
+
+## Routing
+
+- Use `suede-marketing-plan` to turn selected ideas into a sequenced roadmap.
+- Use `suede-marketing-loops` for approved recurring workflows.
+- Use `suede-programmatic-seo`, `suede-competitors`, or `suede-emails` for channel execution.
+- Use `suede-free-tools` for engineering-as-marketing and `suede-referrals` for referral mechanics.

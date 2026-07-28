@@ -1,6 +1,7 @@
-# AI Video Prompting Guide
+# Suede AI Video Prompting Guide
 
-How to write effective prompts for AI video generation models (Veo, Runway, Kling, Pika).
+How Suede writes testable prompts for any currently callable and authorized AI
+video model.
 
 ---
 
@@ -93,39 +94,22 @@ Use these terms — video models understand them:
 
 ---
 
-## Model-Specific Tips
+## Model-Specific Verification
 
-### Veo (Google)
+Do not carry model capability, quality, duration, price, or prompt-length claims
+from memory. For each currently callable candidate:
 
-- Excels at photorealism and complex scenes
-- Supports audio generation synced to video
-- Best with detailed, descriptive prompts
-- Specify "high resolution" or "1080p" for best quality
-- Can handle multiple subjects and scene transitions
+1. Read its current official documentation and the authenticated account limits.
+2. Record the controls actually exposed: text-to-video, image reference, camera,
+   duration, audio, seed, edit, and export.
+3. Run the same bounded prompt and reference frame where terms allow.
+4. Compare visual fit, continuity, instruction adherence, render time, failure
+   rate, rights, and total cost.
+5. Keep model-specific advice only when the current docs or test output supports
+   it, and attach the source date.
 
-### Runway Gen-4
-
-- Strong motion control — specify camera movements precisely
-- Best temporal consistency (subjects stay consistent across frames)
-- Use motion brush for specific area animation
-- Image-to-video works well — provide a reference frame
-- Keep prompts under 100 words for best results
-
-### Kling
-
-- Can generate up to 2 minutes (much longer than others)
-- Good for longer narrative sequences
-- More affordable for bulk generation
-- Quality drops slightly at longer durations
-- Best with simpler scenes and fewer subjects
-
-### Pika
-
-- Fastest generation time (under 2 minutes)
-- Good for quick iterations and experimentation
-- Effects mode adds motion to still images
-- Best for short clips (5-15 seconds)
-- Less control over camera movement
+If no model is callable and authorized, deliver prompts, reference-frame briefs,
+and a manual test matrix. Do not claim that generation occurred.
 
 ---
 
@@ -134,10 +118,10 @@ Use these terms — video models understand them:
 | Mistake | Why It Fails | Fix |
 |---------|-------------|-----|
 | "A person using our app" | Too vague, no visual detail | Describe the person, setting, lighting, camera |
-| Including text/logos | AI can't render readable text | Add text in post via Hyperframes/CapCut |
+| Including text/logos | Generated typography may not meet accuracy requirements | Add reviewed text in a verified editor |
 | "Make it viral" | Not a visual instruction | Describe the visual style you want |
-| Extremely long prompts (200+ words) | Models lose focus | Keep to 50-100 words, be specific |
-| No camera direction | Random/static camera | Always specify movement or "static" |
+| Unbounded prompt detail | Important constraints can become hard to diagnose | Start concise, then add one tested constraint at a time |
+| No camera direction | Uncontrolled camera behavior | Specify or test movement when the current model supports that control |
 | "Realistic" alone | Not specific enough | "Photorealistic, natural lighting, shot on RED camera" |
 
 ---
@@ -146,30 +130,36 @@ Use these terms — video models understand them:
 
 1. **Reference first** — find a real video that looks like what you want
 2. **Describe it** — break down: subject, action, camera, style, mood
-3. **Generate 3-4 variations** — same concept, different angles or styles
-4. **Iterate on the best** — refine the prompt based on results
+3. **Generate a bounded comparison set** — same concept, one controlled variable
+4. **Iterate on the selected result** — refine from recorded evidence
 5. **Composite** — combine AI footage with programmatic text/overlays
 
 ---
 
-## Aspect Ratios
+## Aspect-Ratio Verification
 
-Always specify in your prompt or generation settings:
+Read current destination documentation and preview the authenticated composer
+before choosing a ratio. The rows below are starting test candidates, not
+current platform requirements:
 
-| Platform | Ratio | Resolution |
-|----------|-------|-----------|
-| YouTube | 16:9 | 1920x1080 or 3840x2160 |
-| TikTok/Reels/Shorts | 9:16 | 1080x1920 |
-| Instagram Feed | 1:1 or 4:5 | 1080x1080 or 1080x1350 |
-| Website hero | 16:9 | 1920x1080 |
-| LinkedIn | 16:9 or 1:1 | 1920x1080 |
+| Placement hypothesis | Starting ratio candidate | Starting resolution candidate |
+|----------------------|--------------------------|-------------------------------|
+| Long-form video | 16:9 | 1920x1080 |
+| Short-form full-screen | 9:16 | 1080x1920 |
+| Feed placement | 1:1 or 4:5 | 1080x1080 or 1080x1350 |
+| Website hero | Match the approved component | Match rendered display and performance budget |
+| Professional feed | 16:9, 1:1, or another supported ratio | Verify in current composer |
 
 ---
 
-## Cost Optimization
+## Cost Control
 
-- **Iterate at low resolution** — upscale only the final version
-- **Use Kling for drafts** — cheapest per second, switch to Veo/Runway for finals
-- **Image-to-video** — providing a reference frame saves generation credits and gives better results
-- **Batch similar prompts** — models often offer volume discounts
-- **Cache and reuse** — B-roll clips can be reused across multiple videos
+- Verify current pricing, included credits, failed-generation treatment, and
+  commercial rights before generating.
+- Set a run-level budget cap and maximum comparison count.
+- Test lower-cost preview settings only when current docs say they preserve the
+  decision-relevant characteristics.
+- Test image-to-video against text-to-video; do not assume it is cheaper or
+  better on the current model.
+- Batch only when the account terms, cost model, and review capacity support it.
+- Reuse footage only when source and derivative rights permit it.

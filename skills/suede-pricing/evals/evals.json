@@ -1,5 +1,5 @@
 {
-  "skill_name": "pricing",
+  "skill_name": "suede-pricing",
   "evals": [
     {
       "id": 1,
@@ -63,24 +63,24 @@
     {
       "id": 5,
       "prompt": "What pricing psychology tactics should we use on our pricing page? We want the $79 plan to be the most popular.",
-      "expected_output": "Should apply the pricing psychology section: anchoring (show the $79 plan next to a higher-priced plan), decoy effect (make the lower plan look less valuable), visual emphasis (highlight or 'recommend' the $79 plan), charm pricing ($79 vs $80), Rule of 100 (percentage discounts below $100, dollar discounts above), loss framing (show what lower plans miss). Should provide specific pricing page design recommendations. Should cross-reference cro for broader pricing page optimization.",
+      "expected_output": "Should apply the pricing psychology section: anchoring, decoy design, visual emphasis, charm pricing, the Rule of 100, and loss framing as hypotheses rather than guaranteed effects. Should provide specific pricing-page recommendations and cross-reference `suede-site-alchemy` for broader conversion analysis.",
       "assertions": [
         "Applies pricing psychology tactics",
         "Applies anchoring effect",
         "Applies decoy effect or visual emphasis",
         "Applies charm pricing or Rule of 100",
         "Provides specific pricing page recommendations",
-        "Cross-references cro or marketing-psychology"
+        "Cross-references suede-site-alchemy or suede-marketing-psychology"
       ],
       "files": []
     },
     {
       "id": 6,
       "prompt": "Our pricing page conversion rate is only 1.5%. Can you review the page and suggest improvements?",
-      "expected_output": "Should recognize this is a pricing page conversion optimization task, not a pricing strategy task. Should defer to or cross-reference the cro skill, which handles pricing page conversion rate optimization including plan comparison clarity, CTA optimization, and trust signals. Pricing-strategy focuses on the actual pricing decisions (what to charge, how to package), not the page design.",
+      "expected_output": "Should recognize this is a pricing-page conversion task, not a pricing strategy task. Should defer to or cross-reference `suede-site-alchemy`, which handles conversion analysis including plan-comparison clarity, CTA optimization, and trust signals. `suede-pricing` focuses on the actual pricing decisions (what to charge and how to package), not page design.",
       "assertions": [
         "Recognizes this as pricing page CRO, not pricing strategy",
-        "References or defers to cro skill",
+        "References or defers to suede-site-alchemy",
         "Explains that pricing is about pricing decisions",
         "Does not attempt full page CRO audit"
       ],

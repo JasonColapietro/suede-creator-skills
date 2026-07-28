@@ -14,9 +14,9 @@ Creative direction comes from synthesis across three independent signal sources.
 
 | Signal | What to pull | How |
 |---|---|---|
-| **Account performance** | Winners/losers by angle, hook, format; funnel metrics per concept (see [hook-system.md](hook-system.md) diagnostic funnel); fatigue state | `google-ads` / `meta-ads` / `linkedin-ads` / `tiktok-ads` CLIs (see Tool Integrations in SKILL.md) |
-| **Customer/brand** | Verbatim pain/desire/objection language; unexpected use cases; who's *actually* buying vs. who's targeted | The Grounded Inputs corpus (`inputs/reviews/`, `inputs/comments/`), sales-call notes, support themes — per **customer-research** |
-| **External organic** | What the niche watches unpaid: top organic content, its hooks, formats, vocabulary; competitor ads running long enough to be presumed working | **scraping**, the social listening tooling in **social**, ad libraries, **competitor-profiling** |
+| **Account performance** | Winners/losers by angle, hook, format; funnel metrics per concept (see [hook-system.md](hook-system.md) diagnostic funnel); fatigue state | Authorized platform exports, APIs, UIs, or installed connectors, with account scope and attribution window recorded |
+| **Customer/brand** | Verbatim pain/desire/objection language; unexpected use cases; who's *actually* buying vs. who's targeted | The Grounded Inputs corpus (`inputs/reviews/`, `inputs/comments/`), sales-call notes, support themes — route synthesis to `suede-customer-research` |
+| **External organic** | What the niche watches unpaid: top organic content, its hooks, formats, vocabulary; competitor ads running long enough to be presumed working | Authorized public-source research, the listening workflow in `suede-social`, ad libraries, and `suede-competitor-profiling` |
 
 **Cadence:** a monthly deep dive (60–90 min, all three sources, feeds the monthly roadmap) plus a weekly ~20-minute refresh (what changed: new winners/losers, new review themes, anything spiking organically). Research beyond what the next decision needs is busywork — every synthesis session should end in concepts, not notes.
 
@@ -101,10 +101,10 @@ Retro rules:
 
 - **Judge concepts, not ads.** Three executions of one concept failing says the concept is wrong; one failing says the execution was.
 - **Read the funnel, not the ROAS column.** The diagnostic funnel says *what* to fix; ROAS alone says only *that* something is broken.
-- **Enough data before verdicts** — respect the impression/spend thresholds in Common Mistakes and the **ads** skill's decision systems; a two-day read is a coin flip.
+- **Enough data before verdicts** — respect the impression/spend thresholds in Common Mistakes and the decision systems in `suede-ads`; a two-day read is a coin flip.
 - **Every learning lands somewhere**: icebox update, evidence re-rank, or kill. A retro that changes nothing in the roadmap was a meeting, not a retro.
 
-To run this loop on a schedule (retro on the 1st, weekly refresh Mondays, daily batches via Mode 3), see the creative loops in **marketing-loops**.
+To run this loop on a schedule (retro on the 1st, weekly refresh Mondays, daily batches via Mode 3), route the cadence to `suede-marketing-loops`.
 
 ---
 

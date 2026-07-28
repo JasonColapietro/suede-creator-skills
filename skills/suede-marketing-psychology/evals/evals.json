@@ -1,5 +1,5 @@
 {
-  "skill_name": "marketing-psychology",
+  "skill_name": "suede-marketing-psychology",
   "evals": [
     {
       "id": 1,
@@ -75,10 +75,10 @@
     {
       "id": 6,
       "prompt": "Help me run an A/B test on which psychological principle works better for our CTA — scarcity vs social proof.",
-      "expected_output": "Should recognize this is an A/B test setup task, not a psychology task. Should defer to or cross-reference the ab-testing skill for the experiment design. May provide psychological context on both principles to inform the hypothesis, but should make clear that ab-testing is the right skill for designing and running the experiment.",
+      "expected_output": "Should recognize this is an A/B test setup task, not a psychology task. Should defer to or cross-reference suede-ab-testing for the experiment design. May provide psychological context on both principles to inform the hypothesis, but should make clear that suede-ab-testing owns test design and analysis.",
       "assertions": [
         "Recognizes this as an A/B test setup task",
-        "References or defers to ab-testing skill",
+        "References or defers to suede-ab-testing",
         "May provide psychological context for hypothesis",
         "Does not attempt full test design using psychology patterns"
       ],

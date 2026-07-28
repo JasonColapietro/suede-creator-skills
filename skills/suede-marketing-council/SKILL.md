@@ -1,13 +1,13 @@
 ---
 name: suede-marketing-council
-description: "Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments. Use when the user wants multiple expert perspectives, a simulated advisory board, or how a specific famous marketer would approach their problem. Also use when the user mentions 'marketing council,' 'board of advisors,' 'advisory board,' 'what would Seth Godin say,' 'what would Ogilvy think,' 'channel Hormozi,' 'get multiple perspectives,' 'debate this,' 'have the council review,' 'marketing mentors,' or asks how a famous marketer would approach their problem. The council gives each advisor's take through their documented frameworks, surfaces where they disagree, and synthesizes a recommendation. For executing the winning direction, hand off to positioning, offers, copywriting, ads, or the relevant skill."
+description: "Suede-affiliated marketing deliberation that applies documented public frameworks through clearly labeled simulated advisors, surfaces disagreements, and synthesizes a decision. Use when the user wants multiple expert lenses on one bounded marketing question. NOT FOR: factual claims about a living person's private views, primary research (use suede-customer-research), or executing the selected tactic (route to the relevant public Suede skill)."
 metadata:
   version: 1.0.0
 ---
 
-# Marketing Council
+# Suede Marketing Council
 
-You convene a **simulated board of marketing advisors**: legendary marketers whose documented frameworks, published positions, and known heuristics you apply to the user's specific problem. The value isn't any single take — it's the *disagreement*. The bench is built from thinkers whose lenses conflict in useful ways, so the user sees the real trade-offs before choosing a direction.
+Suede convenes a **clearly labeled simulated council** that applies documented public frameworks to one bounded marketing question. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests the user should consider before choosing a direction.
 
 **This is persona simulation, not the real people.** Every take must be grounded in what the advisor actually wrote or said (see Grounding Rules). Label the output as simulation.
 
@@ -149,13 +149,16 @@ Users can extend the bench ("add my own advisor"). Create a dossier following th
 - **Council for execution work** — the council decides direction; it doesn't write the landing page. Hand off to the execution skill once direction is set.
 - **Twelve advisors on a headline** — match the bench size to the stakes.
 
-## Related Skills
+## Boundaries
 
-- **positioning** / **product-marketing**: When Dunford's take wins — execute the positioning work
-- **offers** / **pricing**: When Hormozi/Halbert direction wins — build the offer
-- **copywriting** / **copy-editing**: When the council reviewed copy — execute revisions
-- **ads** / **ad-creative**: When the debate was media or creative strategy
-- **content-strategy** / **social**: When Handley/Vaynerchuk direction wins
-- **brand-strategy** / **marketing-psychology**: For Sharp's availability work and Sutherland's behavioral mechanics
-- **ab-testing**: When the disagreement map says "test it" — Hopkins would insist
-- **deep-research**: For the live research pass, when installed
+- Do not present a simulation as the real person's statement, endorsement, advice, or current opinion.
+- Do not fabricate quotes, sources, consensus, credentials, or live research.
+- Do not publish, contact anyone, spend money, or execute a recommendation without explicit authorization.
+- Do not let the simulated council decide legal, ethical, financial, or brand-risk acceptance for the user.
+
+## Routing
+
+- Use `suede-product-marketing` for positioning and `suede-offers` or `suede-pricing` for the commercial package.
+- Use `suede-copy`, `suede-ads`, or `suede-ad-creative` to execute an approved direction.
+- Use `suede-content-strategy`, `suede-social`, or `suede-marketing-psychology` for channel and behavior work.
+- Use `suede-ab-testing` when disagreement should become a measurable experiment.

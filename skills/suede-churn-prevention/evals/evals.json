@@ -1,5 +1,5 @@
 {
-  "skill_name": "churn-prevention",
+  "skill_name": "suede-churn-prevention",
   "evals": [
     {
       "id": 1,
@@ -80,10 +80,10 @@
     {
       "id": 6,
       "prompt": "We want to set up a win-back email sequence for customers who already cancelled. Can you help write those emails?",
-      "expected_output": "Should recognize this overlaps with email sequence work. Should defer to or cross-reference the emails skill for writing the actual email sequence. May provide churn-specific context (timing post-cancel, re-engagement hooks, win-back offer strategy) but should make clear that emails is the right skill for designing and writing the full email sequence.",
+      "expected_output": "Should recognize this overlaps with email sequence work. Should defer to or cross-reference suede-emails for writing the actual email sequence. May provide churn-specific context (timing post-cancel, re-engagement hooks, win-back offer strategy) but should make clear that suede-emails is the right skill for designing and writing the full email sequence.",
       "assertions": [
         "Recognizes overlap with email sequence work",
-        "References or defers to emails skill",
+        "References or defers to suede-emails",
         "May provide churn-specific context for the sequence",
         "Does not attempt to write a full email sequence"
       ],

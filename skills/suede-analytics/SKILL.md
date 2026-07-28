@@ -1,13 +1,13 @@
 ---
 name: suede-analytics
-description: "Know whether any of it worked: tracking plans, event and conversion instrumentation, UTM discipline, attribution, and auditing what is actually firing. Use when the user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything. Also use when the user mentions 'set up tracking,' 'GA4,' 'Google Analytics,' 'conversion tracking,' 'event tracking,' 'UTM parameters,' 'tag manager,' 'GTM,' 'analytics implementation,' 'tracking plan,' 'how do I measure this,' 'track conversions,' 'attribution,' 'Mixpanel,' 'Segment,' 'are my events firing,' or 'analytics isn't working.' Use this whenever someone asks how to know if something is working or wants to measure marketing results. For A/B test measurement, see suede-ab-testing."
+description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops)."
 metadata:
   version: 2.0.0
 ---
 
-# Analytics Tracking
+# Suede Analytics Tracking
 
-You are an expert in analytics implementation and measurement. Your goal is to help set up tracking that provides actionable insights for marketing and product decisions.
+Use this Suede measurement playbook to build tracking that supports auditable marketing and product decisions.
 
 ## Initial Assessment
 
@@ -230,17 +230,22 @@ dataLayer.push({
 
 ## Privacy and Compliance
 
-### Considerations
-- Cookie consent required in EU/UK/CA
-- No PII in analytics properties
-- Data retention settings
-- User deletion capabilities
+Privacy, consent, retention, deletion, and identifier rules vary by
+jurisdiction, audience, data type, contract, and platform configuration. Do not
+treat this skill as legal advice or declare a universal consent rule.
 
-### Implementation
-- Use consent mode (wait for consent)
-- IP anonymization
-- Only collect what you need
-- Integrate with consent management platform
+Before implementation:
+
+1. Identify the actual markets, audience age, data categories, vendors,
+   purposes, and data flows in scope.
+2. Review current official regulator and platform requirements for those
+   jurisdictions and configurations; obtain qualified privacy or legal review
+   when the requirement is unclear or material.
+3. Document the approved lawful basis or consent state, retention and deletion
+   behavior, access controls, and prohibited properties.
+4. Collect only approved data, avoid direct personal identifiers unless the
+   reviewed design expressly allows them, and test both allowed and denied
+   consent paths.
 
 ---
 
@@ -289,21 +294,31 @@ dataLayer.push({
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key analytics tools:
+This pack does not ship analytics connectors. Use the user's authorized
+property UI, debugger, export, API, or installed connector and verify current
+official documentation before constructing a call.
 
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **GA4** | Web analytics, Google ecosystem | ✓ | [ga4.md](../../tools/integrations/ga4.md) |
-| **Mixpanel** | Product analytics, event tracking | - | [mixpanel.md](../../tools/integrations/mixpanel.md) |
-| **Amplitude** | Product analytics, cohort analysis | - | [amplitude.md](../../tools/integrations/amplitude.md) |
-| **PostHog** | Open-source analytics, session replay | - | [posthog.md](../../tools/integrations/posthog.md) |
-| **Segment** | Customer data platform, routing | - | [segment.md](../../tools/integrations/segment.md) |
+| Tool category | Typical use | Required current proof |
+|---------------|-------------|------------------------|
+| Web analytics | Sessions, acquisition, web conversions | Debug event plus property readback |
+| Product analytics | Event funnels, cohorts, retention | Schema check plus sampled event readback |
+| Tag manager | Controlled client-side deployment | Preview trace plus published-version ID |
+| Customer data router | Send approved events to destinations | Source receipt plus destination receipt |
+| Session replay | Diagnose interaction friction | Consent, masking, sampling, and replay verification |
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **ab-testing**: For experiment tracking
-- **seo-audit**: For organic traffic analysis
-- **cro**: For conversion optimization (uses this data)
-- **revops**: For pipeline metrics, CRM tracking, and revenue attribution
+- Do not claim an event, conversion, consent state, or attribution path works until a current debug or readback proves it.
+- Do not mutate production tags, properties, destinations, or consent settings without explicit authorization and a rollback plan.
+- Do not collect secrets, direct personal identifiers, or sensitive traits merely because a tool permits them.
+- Do not decide business success from a single dashboard number; state the metric definition, window, denominator, and exclusions.
+
+## Routing
+
+- Need experiment design or result interpretation -> use `suede-ab-testing`.
+- Need paid-campaign decisions -> use `suede-ads`.
+- Need pipeline and CRM attribution -> use `suede-revops`.
+- Need organic visibility diagnosis -> use `suede-seo-audit`.
+- From those skills, route instrumentation plans and firing verification back to `suede-analytics`.

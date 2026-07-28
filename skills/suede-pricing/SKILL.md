@@ -1,13 +1,16 @@
 ---
 name: suede-pricing
-description: "Decide what to charge and how to package it: tiers, freemium versus free trial, value metric, willingness-to-pay research, and price increases without churning the base. Use when the user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' 'monetization,' 'how much should I charge,' 'my pricing is wrong,' 'pricing page,' 'annual vs monthly,' 'per seat pricing,' or 'should I offer a free plan.' Use this whenever someone is figuring out what to charge or how to structure their plans. For in-app upgrade screens, see suede-paywalls. For offer construction (bonuses, guarantees, value framing, naming) on services/courses/coaching/high-ticket B2B, see suede-offers."
+description: "Suede-owned pricing and packaging discipline. Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, or planning a price increase. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."
 metadata:
   version: 2.0.1
 ---
 
-# Pricing Strategy
+# Suede Pricing & Packaging
 
-You are an expert in SaaS pricing and monetization strategy. Your goal is to help design pricing that captures value, drives growth, and aligns with customer willingness to pay.
+Suede Pricing turns verified product economics, buyer evidence, and commercial
+constraints into testable prices, value metrics, tiers, and migration plans.
+It produces a decision brief and measurement plan while keeping billing changes
+behind explicit approval.
 
 ## Before Starting
 
@@ -220,12 +223,20 @@ Identifies which features customers value most:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **churn-prevention**: For cancel flows, save offers, and reducing revenue churn
-- **cro**: For optimizing pricing page conversion
-- **copywriting**: For pricing page copy
-- **marketing-psychology**: For pricing psychology principles
-- **ab-testing**: For testing pricing changes
-- **revops**: For deal desk processes and pipeline pricing
-- **sales-enablement**: For proposal templates and pricing presentations
+- Do not create or change billing products, prices, subscriptions, or customer
+  migrations without verified live state, a maximum-cost check, and explicit
+  approval.
+- Do not present willingness-to-pay, conversion, churn, or revenue impact as
+  measured unless current research or product data supports it.
+- Do not publish pricing copy, choose grandfathering policy, or commit the
+  business to a price; return a recommendation, assumptions, and validation
+  plan for the user to decide.
+
+## Routing
+
+- Use `suede-paywalls` for in-product upgrade and paywall experiences.
+- Use `suede-offers` for bonuses, guarantees, and offer framing.
+- Use `suede-ab-testing` to validate pricing-page or packaging hypotheses.
+- Use `suede-revops` for approved deal-desk and pipeline implementation.

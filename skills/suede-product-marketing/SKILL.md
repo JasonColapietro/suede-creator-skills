@@ -1,13 +1,16 @@
 ---
 name: suede-product-marketing
-description: "Establish the product context every other marketing lane reads from: what it is, who it is for, the positioning, and the proof. Use when the user is starting marketing work and no shared product, audience, or positioning context exists yet. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills — it creates `.agents/product-marketing.md` that all other skills reference for product, audience, and positioning context."
+description: "Suede-owned product-marketing context discipline. Use when a project needs a shared record of product, audience, ICP, positioning, objections, customer language, proof, and goals, or when that record needs updating. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), or publishing brand claims."
 metadata:
   version: 2.0.0
 ---
 
-# Product Marketing Context
+# Suede Product Marketing Context
 
-You help users create and maintain a product marketing context document. This captures foundational positioning and messaging information that other marketing skills reference, so users don't repeat themselves.
+Suede Product Marketing maintains the shared evidence layer for audience,
+positioning, objections, customer language, and proof. The Suede growth suite
+reads this context so each downstream skill starts from the same verified
+product story.
 
 The document is stored at `.agents/product-marketing.md`.
 
@@ -228,7 +231,8 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - Show the completed document
 - Ask if anything needs adjustment
 - Save to `.agents/product-marketing.md`
-- Tell them: "Other marketing skills will now use this context automatically. Run `/product-marketing` anytime to update it."
+- Tell them: "The Suede growth suite will now use this context automatically.
+  Run `/suede-product-marketing` anytime to update it."
 
 ---
 
@@ -239,3 +243,19 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - **Ask for examples**: "Can you give me an example?" unlocks better answers
 - **Validate as you go**: Summarize each section and confirm before moving on
 - **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+
+## Boundaries
+
+- Do not overwrite an existing context file without reading it, preserving
+  supported facts, and showing the user the material changes.
+- Do not invent customer language, differentiation, proof points, market
+  position, or durable brand rules; label hypotheses and missing evidence.
+- Do not publish external copy or mutate product, CRM, analytics, or campaign
+  systems. This skill owns the shared context document only.
+
+## Routing
+
+- Use `suede-customer-research` to gather new customer evidence.
+- Use `suede-competitor-profiling` for evidence on named competitors.
+- Use `suede-marketing-plan` to turn approved context into a channel plan.
+- Use `suede-campaign-in-a-box` to package an approved campaign.

@@ -1,5 +1,5 @@
 {
-  "skill_name": "product-marketing",
+  "skill_name": "suede-product-marketing",
   "evals": [
     {
       "id": 1,
@@ -58,25 +58,25 @@
     },
     {
       "id": 5,
-      "prompt": "Do we have a product marketing context set up? I want to make sure the other marketing skills have context about our product.",
-      "expected_output": "Should check for .agents/product-marketing.md (and the older .claude/product-marketing.md location). Should report whether it exists and summarize its contents if found. If it doesn't exist, should offer to create one and explain why it's valuable (other skills like copywriting, cro, seo-audit check for it first). Should explain how other skills use this context document.",
+      "prompt": "Do we have a product marketing context set up? I want to make sure the Suede growth suite has context about our product.",
+      "expected_output": "Should check for .agents/product-marketing.md and the older .claude/product-marketing.md location. Should report whether it exists and summarize its contents if found. If it does not exist, should offer to create one and explain why it is valuable to Suede skills such as `suede-copy`, `suede-site-alchemy`, and `suede-seo-audit`. Should explain how the Suede growth suite uses this context document.",
       "assertions": [
         "Checks both file locations",
         "Reports whether context doc exists",
         "Summarizes contents if found",
         "Offers to create if missing",
-        "Explains how other skills use it"
+        "Explains how the Suede growth suite uses it"
       ],
       "files": []
     },
     {
       "id": 6,
       "prompt": "Write homepage copy for our SaaS product.",
-      "expected_output": "Should recognize this is a copywriting task, not a product marketing context task. Should check for product-marketing.md (as other skills do), and if it doesn't exist, may suggest creating one first. But should defer to the copywriting skill for actually writing the homepage copy.",
+      "expected_output": "Should recognize this is a copy task, not a product-marketing context task. Should check for product-marketing.md, and if it does not exist, may suggest creating one first. But should defer to `suede-copy` for actually writing the homepage copy.",
       "assertions": [
         "Recognizes this as a copywriting task",
         "May check for or suggest creating product-marketing.md",
-        "References or defers to copywriting skill for the actual copy",
+        "References or defers to suede-copy for the actual copy",
         "Does not attempt to write homepage copy using context creation patterns"
       ],
       "files": []

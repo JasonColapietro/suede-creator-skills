@@ -1,110 +1,91 @@
-# Platform Limits Reference
+# Suede Platform Limits Verification
 
-Quick reference for hashtag limits, character counts, and visible text thresholds on each major social platform.
+Platform limits, composer previews, account entitlements, and recommendation
+systems change. Do not treat remembered character, hashtag, attachment, or
+truncation values as current. In every run:
+
+1. Check current official platform documentation or the authenticated composer.
+2. Record the account tier, surface, locale, and verification date.
+3. Keep copy below the verified hard limit with room for links and disclosure.
+4. Preview the actual truncation and attachment behavior before approval.
+5. Treat hashtag count and placement as test variables, not algorithm facts.
+
+If official documentation and an authorized composer are unavailable, return
+the draft plus a manual preflight checklist. Do not invent a limit.
 
 ---
 
 ## Instagram
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | 5 (official limit) |
-| Recommended hashtags | 3 – 5 |
-| Max caption chars | 2,200 |
-| Visible before "more" | ~125 chars |
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Caption and hashtag limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against the account baseline | 0–3 relevant tags |
+| Truncation | Preview on target surface | Put the core message first |
 
 ## Facebook
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | No official limit |
-| Recommended hashtags | 1 – 2 |
-| Max post chars | 63,206 |
-| Ideal for engagement | 40 – 80 chars |
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Post and attachment limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against the page baseline | 0–2 relevant tags |
+| Link preview | Preview on target surface | Add native context before the link |
 
 ## TikTok
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | 5 (since August 2025) |
-| Recommended hashtags | 3 – 5 |
-| Max caption chars | 4,000 |
-| Visible before "more" | ~150 chars |
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Caption, hashtag, and upload limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against the account baseline | 0–3 relevant tags |
+| Truncation | Preview on target surface | Put the premise before metadata |
 
 ## LinkedIn
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | No official limit |
-| Recommended hashtags | 3 – 5 |
-| Max post chars | 3,000 |
-| Visible before "more" | ~210 chars |
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Post, document, and attachment limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against the account baseline | 0–3 relevant tags |
+| Truncation | Preview on target surface | Make the opening stand alone |
 
 ## Twitter/X
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | No official limit |
-| Recommended hashtags | 1 – 2 |
-| Max tweet chars | 280 (standard) / 25,000 (Premium+) |
-| Visible before "more" | Full tweet (280 standard) |
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Post, thread, and account-tier limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against the account baseline | 0–2 relevant tags |
+| Truncation and cards | Preview on target surface | Keep the first post self-contained |
 
 ## YouTube
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | 15 (exceeding this causes YouTube to ignore ALL hashtags) |
-| Recommended hashtags | 3 – 5 |
-| Max title chars | 100 (visible before truncation: ~70) |
-| Max description chars | 5,000 |
-| Visible before "Show more" | ~100 chars |
-
-> The first 3 hashtags in the description automatically appear above the title as clickable links. For Shorts, use 1 – 5 hashtags.
-
----
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Title, description, hashtag, and upload limits | Verify official help or Studio | None until verified |
+| Hashtag count | Test against channel search and discovery data | 0–3 relevant tags |
+| Truncation | Preview watch and search surfaces | Put the title promise first |
 
 ## Pinterest
 
-| Element | Limit |
-|---------|-------|
-| Max hashtags | 20 per pin |
-| Recommended hashtags | 2 – 5 |
-| Max pin title chars | 100 |
-| Max description chars | 500 |
-| Visible before "More" | ~50 chars (desktop) |
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Pin, title, description, and hashtag limits | Verify official help or composer | None until verified |
+| Hashtag count | Test against account search data | 0–3 only when relevant |
+| Truncation | Preview on target surface | Use natural descriptive language |
 
-> Pinterest has deprioritized hashtags. Focus on keywords as natural sentences within the description for better SEO instead of relying on hashtags.
+## Threads
 
----
-
-## Threads (Meta)
-
-| Element | Limit |
-|---------|-------|
-| Max hashtags | 1 per post (topic tag) |
-| Recommended hashtags | 1 |
-| Max post chars | 500 |
-| Max with text attachment | 10,500 (500 + 10,000 expandable) |
-| Visible without expanding | First ~1 – 2 lines |
-
-> Threads limits topic tags to one per post. The platform is not hashtag-driven — the algorithm prioritizes content from followed accounts mixed with recommendations.
+| Check | Current-Run Action | Starting Hypothesis |
+|-------|--------------------|---------------------|
+| Post, topic-tag, and attachment limits | Verify official help or composer | None until verified |
+| Topic tags | Test only within verified limits | 0–1 relevant topic tag |
+| Truncation | Preview on target surface | Put the premise in the opening lines |
 
 ---
 
-## Usage Tips
+## Evidence Rules
 
-- **Hashtags count against character limits** on all platforms
-- **Front-load your message** before the "more" truncation point
-- On Instagram and TikTok, fewer hashtags now outperform hashtag-stuffing
-- On LinkedIn, hashtags at the end of the post perform better than inline
-- On Facebook, hashtags have minimal impact on reach — use sparingly
+- A hard limit needs a current official source or authenticated composer
+  readback.
+- A recommendation needs current account or campaign evidence.
+- A starting range must be labeled a hypothesis and compared with a baseline.
+- Never claim fewer hashtags, a placement choice, or a platform feature
+  improves reach without a controlled current-account comparison.

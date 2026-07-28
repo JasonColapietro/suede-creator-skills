@@ -134,7 +134,7 @@
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
-      "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon \u2014 use subscription-recovery for those.",
+      "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {
@@ -164,25 +164,25 @@
     {
       "name": "subscription-recovery",
       "area": "consumer",
-      "description": "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime \u2014 use amazon-returns-recovery for those.",
+      "description": "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime — use amazon-returns-recovery for those.",
       "useWhen": "The user wants to audit recurring charges generally, asks what subscriptions they're paying for, mentions a non-Amazon subscription by name, or wants to find and cancel unused subscriptions."
     },
     {
       "name": "suede-ab-testing",
       "area": "marketing",
-      "description": "Test so the result means something: hypothesis framing, sample size and significance, test duration, and running an experiment programme rather than one-off guesses.",
+      "description": "Suede-owned experimentation discipline for hypotheses, sample sizing, test duration, significance, and repeatable experiment programs. Use when comparing variants, deciding whether a result is reliable, or building an experiment backlog and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), or writing the variant copy itself (use suede-copy).",
       "useWhen": "The user wants to A/B test a change, judge whether a result is real, or build an experimentation practice."
     },
     {
       "name": "suede-ad-creative",
       "area": "marketing",
-      "description": "Produce ad creative at volume: headline and primary-text variants, platform specs, static and motion concepts, and a creative testing cadence.",
+      "description": "Suede-owned paid-media creative system for hooks, headlines, primary text, static and motion concepts, platform specs, review pages, and test-ready variant batches. Use when producing or iterating ad creative from grounded product and audience inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), or landing-page copy (use suede-copy).",
       "useWhen": "The user needs ad copy variations, creative concepts, or a testing plan for a paid campaign."
     },
     {
       "name": "suede-ads",
       "area": "marketing",
-      "description": "Run paid acquisition that pays back: campaign structure, audience targeting, bidding, budget pacing, negative keywords, and knowing when to kill an ad.",
+      "description": "Suede-owned paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, and kill-or-scale decisions. Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, or comparable platforms. NOT FOR: producing creative variants (use suede-ad-creative), implementing measurement (use suede-analytics), or optimizing the landing page (use suede-site-alchemy).",
       "useWhen": "The user is planning, running, or fixing paid campaigns on Google, Meta, LinkedIn, or X, or weighing whether to run ads at all."
     },
     {
@@ -200,13 +200,13 @@
     {
       "name": "suede-analytics",
       "area": "marketing",
-      "description": "Know whether any of it worked: tracking plans, event and conversion instrumentation, UTM discipline, attribution, and auditing what is actually firing.",
+      "description": "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops).",
       "useWhen": "The user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything."
     },
     {
       "name": "suede-aso",
       "area": "marketing",
-      "description": "Optimise an App Store or Play listing: keyword field strategy, title and subtitle, screenshots that convert, and competitor listing teardowns.",
+      "description": "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use site-to-ios-app or android-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).",
       "useWhen": "The user wants to improve app store visibility, downloads, or listing conversion, or has shared an App Store or Play URL."
     },
     {
@@ -218,13 +218,13 @@
     {
       "name": "suede-churn-prevention",
       "area": "marketing",
-      "description": "Keep subscribers who are leaving and recover the ones you lose to billing: cancel flows, save offers, pause options, dunning for failed payments, and win-back sequences.",
+      "description": "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics).",
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments."
     },
     {
       "name": "suede-co-marketing",
       "area": "marketing",
-      "description": "Find and run partner campaigns: partner selection, joint offer design, audience overlap, and splitting the work and the credit.",
+      "description": "Suede-owned co-marketing discipline for partner fit, audience overlap, joint offers, shared distribution, operating roles, measurement, and fair credit. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement).",
       "useWhen": "The user is looking for co-marketing partners or planning a joint campaign or cross-promotion."
     },
     {
@@ -254,31 +254,31 @@
     {
       "name": "suede-cold-email",
       "area": "marketing",
-      "description": "Write B2B cold outreach that gets replies: subject lines, opening lines, body, CTA, personalisation depth, and multi-touch follow-up.",
+      "description": "Suede-owned B2B cold-email discipline for evidence-based personalization, subject lines, opening lines, concise bodies, one clear CTA, and bounded follow-up sequences. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email (use suede-emails), or broader sales collateral (use suede-sales-enablement).",
       "useWhen": "The user is writing cold outbound email or a prospecting sequence, or nobody is replying to the ones they sent."
     },
     {
       "name": "suede-community-marketing",
       "area": "marketing",
-      "description": "Build a community that compounds: platform choice, seeding, rituals, moderation, and turning members into advocates.",
+      "description": "Suede-owned community-growth discipline for member purpose, platform choice, seeding, rituals, moderation, health metrics, and earned advocacy. Use when starting, auditing, or growing a Discord, Slack, forum, subreddit, or comparable product community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics (use suede-referrals), or customer-interview research (use suede-customer-research).",
       "useWhen": "The user wants to start or grow a Discord, Slack, forum, or subreddit community around their product."
     },
     {
       "name": "suede-competitor-profiling",
       "area": "marketing",
-      "description": "Research competitors from their public surfaces and turn the findings into structured profiles: positioning, pricing, messaging, and where they are weak.",
+      "description": "Suede-owned competitive-intelligence discipline for evidence-backed profiles of positioning, pricing, messaging, product, proof, and public-market signals. Use when researching named competitors from current public URLs or refreshing a structured landscape. NOT FOR: publishing comparison pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing).",
       "useWhen": "The user wants competitor research, a competitive landscape, or structured profiles built from competitor URLs."
     },
     {
       "name": "suede-competitors",
       "area": "marketing",
-      "description": "Write comparison and alternative pages that rank and convert without misrepresenting anyone: page formats, claim discipline, and honest framing.",
+      "description": "Suede-owned comparison-page discipline for honest alternative, versus, and competitor-comparison content that serves evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo).",
       "useWhen": "The user wants a versus page, alternative page, or competitor comparison for search and sales."
     },
     {
       "name": "suede-content-strategy",
       "area": "marketing",
-      "description": "Decide what to publish and why: topic clusters, content pillars, editorial cadence, distribution planning, and what to stop writing.",
+      "description": "Suede-owned content-strategy discipline for audience questions, content pillars, topic clusters, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds. NOT FOR: writing an individual asset (use suede-copy), technical or on-page SEO audits (use suede-seo-audit), or social-channel production (use suede-social).",
       "useWhen": "The user does not know what to write about, or needs a content plan, editorial calendar, or topic strategy."
     },
     {
@@ -290,7 +290,7 @@
     {
       "name": "suede-customer-research",
       "area": "marketing",
-      "description": "Find out what customers actually think: interview design, transcript and ticket synthesis, review mining, and turning raw input into personas and jobs.",
+      "description": "Suede-owned customer-research discipline for interview design, transcript and ticket synthesis, review and forum mining, quote banks, jobs, and evidence-backed personas. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing).",
       "useWhen": "The user wants to run or analyse customer research, mine reviews and forums, or build evidence-backed personas."
     },
     {
@@ -308,19 +308,19 @@
     {
       "name": "suede-directory-submissions",
       "area": "marketing",
-      "description": "Work the directory layer deliberately: which listings carry dofollow weight, submission order, launch-day sequencing, and verifying the backlink landed.",
+      "description": "Suede-affiliated directory distribution strategy for selecting listings, sequencing submissions, tailoring positioning, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions and a measurable tracker. NOT FOR: broader launch orchestration (use suede-launch-packaging), scalable destination-page production (use suede-programmatic-seo), or citation and search auditing (use suede-seo-audit).",
       "useWhen": "The user is submitting a product to startup, SaaS, AI, or MCP directories, or wants backlinks from listings."
     },
     {
       "name": "suede-emails",
       "area": "marketing",
-      "description": "Design lifecycle email that runs itself: welcome and onboarding sequences, nurture, re-engagement, trigger design, and cadence that does not burn the list.",
+      "description": "Suede-affiliated lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow, entry criteria, cadence, message roles, and measurement plan. NOT FOR: cold prospecting (use suede-cold-email), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops).",
       "useWhen": "The user is building an automated email sequence, drip campaign, or lifecycle flow."
     },
     {
       "name": "suede-free-tools",
       "area": "marketing",
-      "description": "Engineering as marketing: pick a free tool worth building, scope it honestly, and design it so the output pulls people toward the paid product.",
+      "description": "Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit).",
       "useWhen": "The user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links."
     },
     {
@@ -332,7 +332,7 @@
     {
       "name": "suede-image",
       "area": "marketing",
-      "description": "Create and optimise marketing imagery: prompt craft for AI generation, hero and social graphics, product mockups, and export and compression discipline.",
+      "description": "Suede-affiliated marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso).",
       "useWhen": "The user needs marketing images, graphics, mockups, or help getting better output from an image model."
     },
     {
@@ -344,37 +344,37 @@
     {
       "name": "suede-lead-magnets",
       "area": "marketing",
-      "description": "Decide what to give away for an email: format selection, depth, gating rules, delivery, and the sequence that follows the download.",
+      "description": "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy).",
       "useWhen": "The user is planning gated content, a content upgrade, a template, or any downloadable in exchange for contact details."
     },
     {
       "name": "suede-marketing-council",
       "area": "marketing",
-      "description": "Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.",
+      "description": "Suede-affiliated marketing deliberation that applies documented public frameworks through clearly labeled simulated advisors, surfaces disagreements, and synthesizes a decision. Use when the user wants multiple expert lenses on one bounded marketing question. NOT FOR: factual claims about a living person's private views, primary research (use suede-customer-research), or executing the selected tactic (route to the relevant public Suede skill).",
       "useWhen": "The user wants multiple expert perspectives, a simulated advisory board, or how a specific famous marketer would approach their problem."
     },
     {
       "name": "suede-marketing-ideas",
       "area": "marketing",
-      "description": "Get unstuck with a structured idea library rather than a blank page: channel-by-channel tactics scored for effort, cost, and fit.",
+      "description": "Suede-affiliated marketing ideation using a structured tactic library scored for stage, audience fit, effort, cost, evidence, and risk. Use when the user is stuck, wants options, or needs a shortlist of growth tactics before committing to a plan. NOT FOR: a comprehensive roadmap (use suede-marketing-plan), channel execution (use the relevant public Suede skill), or unattended recurring workflows (use suede-marketing-loops).",
       "useWhen": "The user is out of marketing ideas, does not know where to start, or wants tactics to consider for their stage."
     },
     {
       "name": "suede-marketing-loops",
       "area": "marketing",
-      "description": "Turn marketing into a recurring loop an agent runs on a cadence: ad-fatigue checks, content refresh, churn watch, ranking-drop alerts, and weekly reviews.",
+      "description": "Suede-affiliated recurring marketing workflow design for cadence, inputs, decision rules, checkpoints, failure states, and measurable outputs. Use when the user wants repeatable ad-fatigue, content-refresh, churn-watch, ranking-drop, or weekly-review loops. NOT FOR: one-off tactic ideation (use suede-marketing-ideas), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority.",
       "useWhen": "The user wants a repeatable, self-running marketing workflow rather than a one-off task."
     },
     {
       "name": "suede-marketing-plan",
       "area": "marketing",
-      "description": "Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.",
+      "description": "Suede-affiliated comprehensive marketing planning across acquisition, activation, retention, referral, and revenue, sized to the actual team, budget, evidence, and stage. Use when the user needs a 90-day plan, 12-month roadmap, growth plan, or go-to-market operating document. NOT FOR: isolated channel execution (use the relevant public Suede skill), uncommitted tactic brainstorming (use suede-marketing-ideas), or positioning discovery alone (use suede-product-marketing).",
       "useWhen": "The user needs a comprehensive marketing or go-to-market plan for a company, client, or their own product."
     },
     {
       "name": "suede-marketing-psychology",
       "area": "marketing",
-      "description": "Apply behavioural science honestly: anchoring, social proof, loss aversion, framing, and the mental models behind why people actually buy.",
+      "description": "Suede-affiliated ethical application of behavioral science to marketing decisions, including framing, anchoring, social proof, loss aversion, choice architecture, and friction. Use when the user needs a named psychological model, an evidence-aware application, and a testable hypothesis. NOT FOR: clinical or mental-health advice, deceptive dark patterns, page implementation (use suede-site-alchemy), or pricing design (use suede-pricing).",
       "useWhen": "The user wants persuasion principles, cognitive biases, or behavioural science applied to a marketing decision."
     },
     {
@@ -386,49 +386,49 @@
     {
       "name": "suede-offers",
       "area": "marketing",
-      "description": "Construct the thing you actually sell: value framing, bonus stacking, guarantee and risk-reversal design, honest scarcity, naming, and payment structure.",
+      "description": "Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure. Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls).",
       "useWhen": "The user is building or fixing an offer for a service, agency, course, coaching, info product, or high-ticket B2B sale."
     },
     {
       "name": "suede-onboarding",
       "area": "marketing",
-      "description": "Get a new user to first value fast: activation milestones, first-run sequencing, empty states, setup checklists, and the aha moment worth instrumenting.",
+      "description": "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls).",
       "useWhen": "The user has people signing up but not activating, or wants to design the first session in a product."
     },
     {
       "name": "suede-paywalls",
       "area": "marketing",
-      "description": "Design in-app upgrade moments that convert without resentment: paywall screens, feature gates, trial-expiry states, and free-to-paid prompts.",
+      "description": "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).",
       "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt."
     },
     {
       "name": "suede-pricing",
       "area": "marketing",
-      "description": "Decide what to charge and how to package it: tiers, freemium versus free trial, value metric, willingness-to-pay research, and price increases without churning the base.",
+      "description": "Suede-owned pricing and packaging discipline. Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, or planning a price increase. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes.",
       "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices."
     },
     {
       "name": "suede-product-marketing",
       "area": "marketing",
-      "description": "Establish the product context every other marketing lane reads from: what it is, who it is for, the positioning, and the proof.",
+      "description": "Suede-owned product-marketing context discipline. Use when a project needs a shared record of product, audience, ICP, positioning, objections, customer language, proof, and goals, or when that record needs updating. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), or publishing brand claims.",
       "useWhen": "The user is starting marketing work and no shared product, audience, or positioning context exists yet."
     },
     {
       "name": "suede-programmatic-seo",
       "area": "marketing",
-      "description": "Build search pages at scale without building junk: template design, data sourcing, index-worthiness thresholds, and internal linking that holds up.",
+      "description": "Suede-owned programmatic SEO discipline. Use when designing data-backed keyword, location, directory, integration, or comparison pages at scale, including templates, index-worthiness gates, internal links, and rollout checks. NOT FOR: auditing an existing site (use suede-seo-audit), planning editorial content (use suede-content-strategy), or publishing bulk pages without approval.",
       "useWhen": "The user wants many templated pages targeting keyword, location, integration, or comparison patterns."
     },
     {
       "name": "suede-prospecting",
       "area": "marketing",
-      "description": "Build and qualify a target list before you write a word: ICP fit, sourcing, enrichment, disqualification, and where the first customers actually are.",
+      "description": "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).",
       "useWhen": "The user needs a prospect or lead list, or is deciding which accounts to go after."
     },
     {
       "name": "suede-public-relations",
       "area": "marketing",
-      "description": "Earn coverage without a retainer: media lists, journalist pitching, newsjacking a live story, press kits, and responding to reporter requests.",
+      "description": "Suede-owned earned-media discipline. Use when building a media list, validating a story angle, drafting a journalist pitch, preparing a press kit, evaluating newsjacking, or answering a reporter request. NOT FOR: directory submissions (use suede-directory-submissions), launch packaging (use suede-launch-packaging), social publishing (use suede-social), or contacting anyone without approval.",
       "useWhen": "The user wants press coverage, is pitching journalists, or is deciding how to announce something publicly."
     },
     {
@@ -440,7 +440,7 @@
     {
       "name": "suede-referrals",
       "area": "marketing",
-      "description": "Turn customers into a channel: referral mechanics, incentive design that does not attract fraud, affiliate structure, and viral loop math.",
+      "description": "Suede-owned referral and affiliate program discipline. Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.",
       "useWhen": "The user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program."
     },
     {
@@ -452,7 +452,7 @@
     {
       "name": "suede-revops",
       "area": "marketing",
-      "description": "Wire marketing to revenue: lead scoring and routing, MQL and SQL definitions, pipeline stages, CRM hygiene, and the marketing-to-sales handoff.",
+      "description": "Suede-owned revenue-operations discipline. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.",
       "useWhen": "The user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue."
     },
     {
@@ -470,7 +470,7 @@
     {
       "name": "suede-sales-enablement",
       "area": "marketing",
-      "description": "Arm the people doing the selling: pitch decks, one-pagers, objection handling, demo scripts, battle cards, and deal-level ROI framing.",
+      "description": "Suede-owned sales-enablement discipline. Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof.",
       "useWhen": "The user needs sales collateral, a demo script, objection handling, or materials for a sales conversation."
     },
     {
@@ -488,7 +488,7 @@
     {
       "name": "suede-signup",
       "area": "marketing",
-      "description": "Cut friction out of registration: field-by-field audit, social versus email tradeoffs, progressive profiling, and recovering abandoned signups.",
+      "description": "Suede-owned signup conversion discipline. Use when auditing or redesigning account creation, registration, or trial-start flows, including field friction, progressive profiling, identity options, mobile behavior, abandonment, and measurement. NOT FOR: post-signup activation (use suede-onboarding), lead-capture forms (use suede-site-alchemy), or deploying auth and compliance changes without review.",
       "useWhen": "The user has a signup, registration, or trial-start flow that loses people partway through."
     },
     {
@@ -500,13 +500,13 @@
     {
       "name": "suede-sms",
       "area": "marketing",
-      "description": "Run SMS without getting blocked or resented: consent and compliance, message design, timing, cadence limits, and when SMS beats email.",
+      "description": "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, and defining measurement. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything without approval.",
       "useWhen": "The user is adding SMS or text-message marketing, or writing messages for an existing SMS list."
     },
     {
       "name": "suede-social",
       "area": "marketing",
-      "description": "Run social as a channel rather than a chore: platform strategy, content formats that travel, posting cadence, engagement, and listening.",
+      "description": "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, carousels, short-form scripts, calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval.",
       "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account."
     },
     {
@@ -518,7 +518,7 @@
     {
       "name": "suede-video",
       "area": "marketing",
-      "description": "Plan and produce marketing video: format selection, hook structure, short-form pacing, scripting, and repurposing one shoot into many cuts.",
+      "description": "Suede-owned marketing video planning and production discipline. Use when choosing a format, scripting, storyboarding, generating, editing, reverse-engineering pacing, building a repeatable video pipeline, or repurposing one source into multiple cuts. NOT FOR: deciding the social calendar (use suede-social), paid ad concepts (use suede-ad-creative), image-only assets (use suede-image), or publishing unapproved media.",
       "useWhen": "The user is planning, scripting, or repurposing video content for marketing or social."
     },
     {

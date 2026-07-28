@@ -1,39 +1,49 @@
-# Reverse Engineering Viral Content
+# Suede Content Pattern Analysis
 
-Instead of guessing what works, systematically analyze top-performing content in your niche and extract proven patterns.
+Instead of guessing, analyze a lawful, recent sample of comparable content and
+extract hypotheses to test on the user's account. A pattern in another account
+is evidence for a test, not proof that it will transfer.
 
 ## Contents
-- The 6-Step Framework (Niche ID, Scrape, Analyze, Playbook, Layer Voice, Convert)
+- The 6-Step Framework (Comparable Set, Collect, Analyze, Playbook, Layer Voice, Convert)
 - The Formula
 - Reverse Engineering Checklist
 
 ## The 6-Step Framework
 
-### 1. NICHE ID — Find Top Creators
+### 1. COMPARABLE SET — Find Relevant Accounts
 
-Identify 10-20 creators in your space who consistently get high engagement:
+Build a bounded set of accounts with similar audience, offer, maturity, and
+format access. Start with enough accounts to represent more than one style, then
+add another batch only while it changes the leading patterns.
 
 **Selection criteria:**
-- Posting consistently (3+ times/week)
-- High engagement rate relative to follower count
+- Enough recent posts for a within-account comparison
+- Reach or engagement measures visible at a comparable grain
 - Audience overlap with your target market
 - Mix of established and rising creators
 
 **Where to find them:**
 - LinkedIn: Search by industry keywords, check "People also viewed"
 - Twitter/X: Check who your target audience follows and engages with
-- Use tools like SparkToro, Followerwonk, or manual research
+- Use a currently callable authorized research tool, or manual search and
+  user-supplied URLs
 - Look at who gets featured in industry newsletters
 
-### 2. SCRAPE — Collect Posts at Scale
+### 2. COLLECT — Build a Lawful Bounded Sample
 
-Gather 500-1000+ posts from your identified creators for analysis:
+Before collection, discover the currently callable tools, verify authorization
+and platform terms, and record which metrics are actually visible. Collect only
+what the analysis needs. Stop when another bounded batch no longer changes the
+leading patterns.
 
-**Tools:**
-- **Apify** — LinkedIn scraper, Twitter scraper actors
-- **Phantom Buster** — Multi-platform automation
-- **Export tools** — Platform-specific export features
-- **Manual collection** — For smaller datasets, copy/paste into spreadsheet
+**Collection paths:**
+- Platform-native export or analytics the user is authorized to access
+- Authorized browser or source reader within platform terms
+- Manual collection into a spreadsheet from user-supplied URLs
+- No available access: provide the worksheet and ask the user for an export
+
+Do not bypass access controls or bulk-scrape a platform that prohibits it.
 
 **Data to collect:**
 - Post text/content
@@ -49,10 +59,10 @@ Gather 500-1000+ posts from your identified creators for analysis:
 Sort and analyze the data to find patterns:
 
 **Quantitative analysis:**
-- Rank posts by engagement rate
-- Identify top 10% performers
-- Look for format patterns (do carousels outperform?)
-- Check timing patterns (best days/times)
+- Compare posts within the same account and metric availability
+- Define higher- and lower-performing cohorts from the observed distribution
+- Look for format patterns while controlling for reach and account size
+- Treat day and time as hypotheses, not universal best windows
 - Compare topic performance
 
 **Qualitative analysis:**
@@ -64,7 +74,7 @@ Sort and analyze the data to find patterns:
 
 **Questions to answer:**
 - What's the average length of top posts?
-- Which hook types appear most in top 10%?
+- Which hook types recur in the observed higher-performing cohort?
 - What CTAs drive most comments?
 - What topics get saved/shared most?
 
@@ -100,7 +110,8 @@ Why it works: Pattern interrupt + invites debate
 
 ### 5. LAYER VOICE — Apply Direct Response Principles
 
-Take proven patterns and make them yours with these voice principles:
+Turn the strongest observed hypotheses into original tests with these voice
+principles:
 
 **"Smart friend who figured something out"**
 - Write like you're texting advice to a friend
@@ -166,7 +177,8 @@ Bridge from engagement to business results:
 - Profile visits → optimized profile with clear CTA
 
 **Direct conversions:**
-- Link in comments (not post body on LinkedIn)
+- Link placement tested against current platform guidance and comparable account
+  results
 - Contextual product mentions within valuable content
 - Case study posts that naturally showcase your work
 - "If you want help with this, DM me" (sparingly)
@@ -184,10 +196,10 @@ Bridge from engagement to business results:
 
 ## Reverse Engineering Checklist
 
-- [ ] Identified 10-20 top creators in niche
-- [ ] Collected 500+ posts for analysis
+- [ ] Defined a bounded comparable-account set with inclusion reasons
+- [ ] Collected only authorized fields and stopped at pattern saturation
 - [ ] Ranked by engagement rate
-- [ ] Documented top 10 hook patterns
+- [ ] Documented a bounded set of recurring hook patterns, with sample size
 - [ ] Documented top 5 format patterns
 - [ ] Documented top 5 CTA patterns
 - [ ] Created voice guidelines (specificity, brevity, emotion)

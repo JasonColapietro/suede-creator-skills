@@ -1,6 +1,8 @@
 # Social Listening & Engagement Triage
 
-How to surface the right posts to engage with each day — instead of randomly scrolling. The goal is a short, scorable list ("here are your top 10 posts to comment on") rather than an open feed.
+How to surface posts that may merit an engagement draft. The goal is a short,
+scorable list bounded by the user's review capacity, not a mandatory daily
+count or an instruction to engage.
 
 ## Contents
 - When to use this
@@ -16,31 +18,37 @@ How to surface the right posts to engage with each day — instead of randomly s
 ## When to Use This
 
 Use listening when the goal is **commenting and relationships**, not posting. Typical asks:
-- "Give me the top 10 posts I should comment on today"
+- "Give me a ranked set of posts that may merit comment drafts"
 - "Who's complaining about [competitor] right now?"
 - "Find people asking for a tool like mine"
-- "Surface posts from my 20 target accounts in the last 24h"
+- "Surface recent posts from my approved target-account set"
 - "What's the conversation around [topic] this week?"
 
-If the user wants to **create** content, use the rest of the social skill. Listening feeds creation (it surfaces angles, language, objections), but the output is different.
+If the user wants to **create** content, return to `suede-social`. Listening
+feeds creation by surfacing angles, language, and objections, but the output is
+different.
 
 ---
 
 ## The Daily Triage Loop
 
-A repeatable 20-minute loop the user (or you, on their behalf) can run each morning.
+A repeatable triage loop sized to the user's selected lookback, source volume,
+and review capacity.
 
 1. **Pull** — fetch new posts from defined sources (target accounts, keywords, subreddits, hashtags). See [tooling](#sources--light-tooling-curl-recipes).
-2. **Filter** — drop anything older than 24h, low signal, or off-topic.
-3. **Score** — apply the [rubric](#scoring-rubric). Keep top 10.
+2. **Filter** — remove off-topic or stale items using a lookback justified by
+   current platform velocity and the campaign goal.
+3. **Score** — apply the [rubric](#scoring-rubric) and retain only the bounded
+   review set the user can assess.
 4. **Draft** — for each, draft a comment matched to the post's tier.
-5. **Post** — user reviews, edits, posts. Mark which actually went live.
+5. **Approval gate** — return drafts for review. Each comment is a separate
+   external action and requires exact-content and identity approval before post.
 6. **Log** — track what you commented on and what got replies. This is your engagement loop dataset.
 
-Output format Claude should produce:
+Output format Suede should produce:
 
 ```
-TOP 10 POSTS — 2026-06-05
+RANKED ENGAGEMENT DRAFTS — 2026-06-05
 
 1. [Score 9/10] @author — LinkedIn — 2h ago
    "We just rolled out X and the team is loving it…"
@@ -61,7 +69,7 @@ Score each post 1–10 across five dimensions, then sum and rank.
 | **Intent signal** | Are they expressing a problem, asking, or shopping? | 2x |
 | **Reach potential** | Is the post getting traction (likes/comments rising)? | 1x |
 | **Comment opportunity** | Can you say something genuinely useful, not generic? | 2x |
-| **Recency** | Posted in last 1–4h (early comments win, especially on LinkedIn) | 1x |
+| **Recency** | Source falls inside the user-selected lookback and is still actionable | 1x |
 
 **Intent signal examples (high-value):**
 - "Looking for a tool that does X"
@@ -72,9 +80,11 @@ Score each post 1–10 across five dimensions, then sum and rank.
 
 **Drop if any of these are true:**
 - Author isn't ICP and isn't an influencer
-- Post is >24h old and already has 50+ comments (your comment buries)
+- The post is outside the justified lookback or current conversation volume
+  makes a useful contribution unlikely; record the evidence rather than using a
+  fixed age or comment-count cutoff
 - Generic motivational/AI-slop post
-- Self-promotion thread where comments don't get reach
+- Self-promotion thread where a comment would not add relevant value
 - You can't add anything beyond "Great post!"
 
 ---
@@ -89,7 +99,7 @@ Match the comment to the post. Don't waste a tier-1 draft on a tier-3 opportunit
 - Ask a thoughtful follow-up that invites a reply
 - Length: 2–4 sentences, no link
 
-**Tier 2 — Visibility play (high-reach post, adjacent topic)**
+**Tier 2 — Visibility test (observed reach when visible, adjacent topic)**
 - Add one sharp insight in one sentence
 - Pattern: "Agreed — and the part most miss is [X]"
 - Length: 1–2 sentences
@@ -105,9 +115,14 @@ Match the comment to the post. Don't waste a tier-1 draft on a tier-3 opportunit
 
 ## Sources & Light Tooling (curl recipes)
 
-These are public JSON endpoints — no auth needed. Run them from bash, pipe to `jq`, and Claude can parse the output to score and draft comments.
+These example endpoints may change and can still impose terms or rate limits.
+Verify current access and source terms before use. Prefer already callable
+readers; otherwise give the user a manual source checklist.
 
-**Requires:** `jq` (most recipes) and `xmllint` (RSS only). Install once:
+The shell examples use `jq` and, for RSS, `xmllint`. First check whether they are
+already installed. If not, use a manual/RSS-reader fallback or request explicit
+installation approval after confirming the current platform and package source.
+Do not run these installation examples without that approval:
 ```bash
 # macOS
 brew install jq
@@ -166,85 +181,103 @@ curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID"
 curl -s "https://example.com/feed/" | xmllint --xpath "//item[position()<6]" - 2>/dev/null
 ```
 
-### LinkedIn & X — use the browser
+### LinkedIn & X — discover access, then review
 
-LinkedIn and X don't expose useful public APIs, but you can drive a real browser session. **dev-browser** (MCP, already in the global setup) and **Playwright** both maintain persistent state — log in once, the session stays alive, Claude can navigate the authenticated feed.
+First discover whether an authorized browser or source-reading connector is
+currently callable. Confirm the signed-in identity, user authorization, and
+platform terms before opening an authenticated surface.
 
-**dev-browser workflow (preferred — already wired up):**
-1. User logs into LinkedIn / X once in the dev-browser session
-2. Claude navigates to a target URL (feed, profile, saved search, hashtag)
-3. Claude reads the accessibility tree / page text, extracts posts
-4. Claude scores using the [rubric](#scoring-rubric) and drafts comments
-5. User reviews and posts manually (don't auto-post — high-stakes, bot detection risk)
+**Authorized-tool workflow:**
+1. Confirm the visible account identity and exact research scope.
+2. Open a bounded set of target URLs.
+3. Read only the public or user-authorized content needed for the rubric.
+4. Record source URL, timestamp, and any missing metrics.
+5. Draft comments for review; never post or engage automatically.
 
-**Useful URLs to feed dev-browser:**
+**Manual fallback:** if no authorized browser is available, give the user the
+URL checklist below and a worksheet, then work from links, screenshots, copied
+post text, or exports they provide. Do not claim the feed was reviewed.
+
+**Useful URL patterns to verify before use:**
 
 | URL pattern | What it shows |
 |-------------|---------------|
 | `linkedin.com/in/HANDLE/recent-activity/all/` | A target account's recent posts |
 | `linkedin.com/feed/hashtag/TOPIC/` | Hashtag feed |
-| `linkedin.com/feed/` | Your main feed (algorithmic — less useful for triage) |
+| `linkedin.com/feed/` | Signed-in feed when the user authorizes access |
 | `x.com/HANDLE` | A target account's profile |
 | `x.com/search?q=QUERY&f=live` | Real-time search (use `f=live` for chronological) |
-| `x.com/i/lists/LIST_ID` | A curated list — best for target accounts |
+| `x.com/i/lists/LIST_ID` | A user-curated target-account list |
 
-**Tips:**
-- On X, build a private list of target accounts and use the list URL. Far cleaner than the algorithmic feed.
-- LinkedIn's `/recent-activity/all/` URL is the cleanest way to see one person's posts without the algorithm.
-- For both platforms, scroll programmatically (dev-browser supports it) to load more posts before extracting.
+**Starting hypotheses:**
+- A user-curated list may reduce irrelevant posts; compare it with keyword
+  search and record which produces more rubric-qualified candidates.
+- A target account's recent-activity surface may be easier to audit than a
+  mixed feed; verify the URL still works and record gaps.
+- Load only enough posts to cover the chosen lookback and sample. Stop at the
+  authorization or platform limit; do not automate infinite scrolling.
 
-**Paid alternatives if you don't want to drive a browser:**
+**Possible account-owned alternatives, only if the user already has access:**
 
 | Platform | Tools |
 |----------|-------|
 | LinkedIn | Sales Navigator (saved searches), Taplio (engagement) |
 | X | TweetDeck/X Pro (saved columns), Typefully, Taplio, Tweet Hunter |
 
-**Still closed (no good path):**
-- Instagram & TikTok — closed APIs, browser automation is detectable and risky. Use native saved searches / hashtag follows.
+If a platform does not expose an authorized research path, use its native saved
+searches manually or ask for a user export. Do not route around access controls.
 
 ---
 
 ## Per-Platform Notes
 
 ### LinkedIn
-- **Browser-driven** (dev-browser with persistent session) — see [LinkedIn & X — use the browser](#linkedin--x--use-the-browser)
-- **First-hour comments matter most** — algorithm weights early engagement heavily. Prioritize posts <2h old from target accounts.
-- Comments with 5+ words get more reach than reactions
-- Replying to other commenters can put you in front of their network
+- Use the authorized-tool workflow or manual fallback above.
+- Compare recent and older posts in the same account before assigning a recency
+  score; do not assume a first-hour advantage.
+- Judge draft comments on relevance, specificity, and conversation value, not a
+  word-count or reach claim.
+- Treat replies to other commenters as a relationship tactic to test, not a
+  distribution guarantee.
 - Tag the author in your reply only if it adds context
 
 ### Twitter/X
-- **Browser-driven** (dev-browser) — build a private list of target accounts and point dev-browser at the list URL
-- Reply within first 30 min for max reach on big accounts
-- Quote-tweet > reply when adding substantial value
-- Threading your reply (multi-tweet) signals effort
+- Use the authorized-tool workflow or manual fallback above.
+- Compare response windows using current account results; do not claim a
+  universal first-30-minute advantage.
+- Test quote posts, replies, and original commentary against the intended
+  outcome rather than ranking them universally.
+- Use a multi-post reply only when the content needs the space.
 - Don't pile on dunks — relationships > clout
 
 ### Reddit
 - Read the subreddit rules before commenting (some ban self-promotion outright)
 - Earn karma in the sub before linking to anything you own
-- Long, specific answers win. AMAs and "help me decide" threads are gold
+- Prefer specific answers that resolve the question; compare response quality
+  rather than assuming length earns distribution.
 - Never lead with your product — answer the question first
 
 ### Hacker News
 - Comment quality bar is high; low-effort gets downvoted fast
 - Founders commenting on threads about their product is welcomed if you're transparent
-- Search for past discussions of your category — they're often dormant gold mines
+- Search past category discussions and verify that they are still current
+  enough to answer.
 
 ### Bluesky
-- Smaller volume but high engagement-to-follower ratio
+- Record volume and engagement-to-follower ratio where both are visible; do not
+  assume either predicts fit.
 - Tech and indie-hacker communities are active
-- Custom feeds (like Bluesky's "Following" + topic feeds) replace algorithmic search
+- Compare custom feeds with topic search when both are available.
 
 ---
 
 ## Common Workflows
 
-### "Give me my top 10 posts to comment on today"
-1. Pull from: target account RSS/saved searches + Reddit (relevant subs) + HN (last 24h)
+### "Give me a ranked set of posts that may merit comments"
+1. Pull from the approved source set using a lookback justified by current
+   platform velocity
 2. Score with the [rubric](#scoring-rubric)
-3. Output top 10 with suggested comments
+3. Output a review-capacity-bounded set with suggested comment drafts
 
 ### "Find people complaining about [competitor]"
 1. Reddit search: `"competitor name" -site:competitor.com` sorted by new
@@ -261,23 +294,25 @@ LinkedIn and X don't expose useful public APIs, but you can drive a real browser
 ### "Find target-account posts I missed"
 1. Maintain a list of target accounts with their RSS / Reddit usernames / Bluesky handles
 2. Fetch each source's recent posts
-3. Filter to last 24h, output sorted by score
+3. Apply the justified lookback and output the bounded set sorted by score
 
 ---
 
 ## Setting Up the Source List
 
-The user should maintain a list of sources somewhere persistent at `.agents/listening-sources.md` (or `.claude/listening-sources.md`). Claude reads it when running the daily loop.
+The user may maintain an approved source list at
+`.agents/listening-sources.md` (or `.claude/listening-sources.md`). Suede reads
+it when running the triage loop.
 
 **A ready-to-fill template lives at [listening-sources-template.md](listening-sources-template.md).** Copy it into the project and edit. The source path depends on how the skill was installed:
 
 ```bash
 # Plugin / marketplace install (most common):
-cp .agents/skills/social/references/listening-sources-template.md .agents/listening-sources.md
+cp .agents/skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
 # .claude/ install:
-cp .claude/skills/social/references/listening-sources-template.md .agents/listening-sources.md
-# Working inside the marketingskills repo:
-cp skills/social/references/listening-sources-template.md .agents/listening-sources.md
+cp .claude/skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
+# Working inside the Suede creator skills repo:
+cp skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
 ```
 
 The template covers: brand/category, ICP (for scoring), target accounts per platform, intent keywords, subreddits, saved-search URLs, and a do-not-engage list.

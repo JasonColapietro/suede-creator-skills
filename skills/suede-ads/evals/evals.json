@@ -1,5 +1,5 @@
 {
-  "skill_name": "ads",
+  "skill_name": "suede-ads",
   "evals": [
     {
       "id": 1,
@@ -78,10 +78,10 @@
     {
       "id": 6,
       "prompt": "Can you write some ad copy for our Facebook ads? We need headlines and descriptions for 5 different angles.",
-      "expected_output": "Should recognize this is an ad creative generation task, not campaign strategy. Should defer to or cross-reference the ad-creative skill, which handles platform-specific ad copy generation with character limits, angle-based variation, and batch generation. May provide brief ad copy framework guidance but should make clear that ad-creative is the right skill for generating ad copy at scale.",
+      "expected_output": "Should recognize this is an ad creative generation task, not campaign strategy. Should defer to or cross-reference suede-ad-creative, which handles platform-specific ad copy generation with character limits, angle-based variation, and batch generation. May provide brief ad copy framework guidance but should make clear that suede-ad-creative is the right skill for generating ad copy at scale.",
       "assertions": [
         "Recognizes this as ad creative generation",
-        "References or defers to ad-creative skill",
+        "References or defers to suede-ad-creative",
         "Does not attempt bulk ad copy generation using campaign strategy patterns"
       ],
       "files": []

@@ -1,5 +1,5 @@
 {
-  "skill_name": "cold-email",
+  "skill_name": "suede-cold-email",
   "evals": [
     {
       "id": 1,
@@ -81,10 +81,10 @@
     {
       "id": 6,
       "prompt": "Can you help me set up an automated email drip campaign for leads who download our whitepaper?",
-      "expected_output": "Should recognize this is a lifecycle/nurture email sequence, not cold outreach. Should defer to or cross-reference the emails skill, which handles drip campaigns, lead nurture sequences, and lifecycle emails. Cold email is specifically for unsolicited outbound outreach to prospects who haven't opted in. Should make this distinction clear.",
+      "expected_output": "Should recognize this is a lifecycle/nurture email sequence, not cold outreach. Should defer to or cross-reference suede-emails, which handles drip campaigns, lead nurture sequences, and lifecycle emails. Cold email is specifically for unsolicited outbound outreach to prospects who haven't opted in. Should make this distinction clear.",
       "assertions": [
         "Recognizes this as lifecycle/nurture email, not cold outreach",
-        "References or defers to emails skill",
+        "References or defers to suede-emails",
         "Explains the distinction between cold email and lifecycle email",
         "Does not attempt to design a nurture sequence using cold email patterns"
       ],

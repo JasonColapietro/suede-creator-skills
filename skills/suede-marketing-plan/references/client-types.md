@@ -1,373 +1,254 @@
-# Client Types — Variations by Business Model
+# Client Types — Evidence Questions by Business Model
 
-The 13-section plan structure stays consistent across client types. What changes is the **content emphasis** within each section. This doc names the dominant patterns by client archetype.
+The 13-section plan structure stays consistent across client types. Use the
+closest archetype to generate questions and risks, never to assume channels,
+spend, cadence, staffing, conversion behavior, or performance.
+
+Before adopting any candidate, record:
+
+- the dated client source, cohort/window, and metric definition;
+- the observed constraint and plausible alternative explanations;
+- unit economics, delivery capacity, dependencies, and data-quality limits;
+- the owner, authorization state, maximum exposure, review date, and stop rule;
+- applicable privacy, consent, claims, rights, platform, and legal gates.
+
+If these inputs are missing, keep the candidate `Conditional` or `Deferred`.
 
 ## Archetype 1 — B2B SaaS
 
-### Core characteristics
-- Subscription revenue
-- Often higher ACV ($1K–$100K+ per year)
-- Sales-assisted or self-serve depending on tier
-- Buyer often different from user (champion vs. end-user)
+### Model questions
 
-### AARRR emphasis
+- Which offers and cohorts are subscription, usage-based, transactional, or
+  services-assisted?
+- What current contract-value distribution, margin, retention, and sales-cycle
+  evidence exists by offer and segment?
+- When are buyer, champion, administrator, and user different people?
+- Which tiers are self-serve, sales-assisted, partner-assisted, or mixed?
 
-**Acquisition heavy:**
-- SEO is the dominant top-of-funnel motion (people search for solutions)
-- Content marketing (blog, knowledge base, comparison pages) drives MQLs
-- LinkedIn for both organic founder presence and paid
-- Outbound (cold email + LinkedIn) often complements inbound
-- Events (conferences, webinars) for high-ACV products
+### AARRR candidates to test
 
-**Activation:**
-- Signup → trial → first key action (PLG products)
-- Trial → demo → POC (sales-led products)
-- Empty states matter — guide users to first value action
+- **Acquisition:** Does search, content, professional social, outbound, events,
+  partners, or paid media have verified buyer intent and a measurable path to a
+  qualified opportunity?
+- **Activation:** What current event represents value for each offer: signup,
+  trial action, demo, proof of concept, implementation, or another milestone?
+- **Retention:** Which cohort evidence supports product-adoption, customer
+  success, education, or lifecycle hypotheses?
+- **Referral:** Is advocacy, review, integration, partner, or champion behavior
+  already observed and attributable?
+- **Revenue:** Do expansion, seats, usage, packaging, or service changes fit
+  current willingness-to-pay, margin, retention, and delivery evidence?
 
-**Retention:**
-- Product engagement metrics (DAU, feature adoption)
-- Customer success motion (CSM team for higher ACV)
-- Lifecycle emails focused on feature discovery, value moments
+### Suede routes to consider
 
-**Referral:**
-- Customer advocacy programs
-- Partner / integration co-marketing
-- G2 / Capterra reviews
-- Champion-to-buyer expansion
+`suede-customer-research`, `suede-product-marketing`,
+`suede-sales-enablement`, `suede-cold-email`, `suede-content-strategy`,
+`suede-programmatic-seo`, `suede-emails`, `suede-pricing`,
+`suede-referrals`, and `suede-ads`.
 
-**Revenue:**
-- Expansion / NRR is often the biggest growth lever
-- Tier upgrades, seat expansion, usage-based add-ons
+Route only after the candidate's evidence and authority gates pass.
 
-### Skills emphasis
-- `cold-email`, `programmatic-seo`, `competitors`, `seo-audit`, `ai-seo`
-- `ads` weighted toward LinkedIn + Google
-- `emails` for trial nurture + lifecycle
-- `pricing` for tier optimization
+## Archetype 2 — Consumer App
 
-### Tier-1 budget priority
-- SEO + content > everything else
-- Founder-led LinkedIn channel
-- Customer.io / Mailchimp for nurture
-- HARO + investor backchannel for PR
+### Model questions
 
----
+- What are realized price, margin, platform fees, refund rate, retention, and
+  lifetime value by current cohort?
+- Which store, web, referral, partner, creator, or paid sources contribute
+  qualified installs or purchases under the agreed attribution window?
+- Which consented events define discovery, install, first value, purchase,
+  renewal, cancellation, and return?
+- Which user research defines an acceptable time-to-value range?
 
-## Archetype 2 — D2C Consumer App (Subscription)
+### AARRR candidates to test
 
-### Core characteristics
-- Lower ACV ($5–$30/mo typically)
-- High volume, lower margin per user
-- App Store / Play Store as the primary acquisition surface
-- Lifecycle email + push for retention
-- Often paid-acquisition-driven once budget unlocks
+- **Acquisition:** Does store-search, organic social, creator, PR, partner,
+  referral, or paid evidence justify a bounded test?
+- **Activation:** Which measured friction supports an onboarding, store-page,
+  trial, paywall, or first-session hypothesis?
+- **Retention:** Which behavior and consent evidence supports email, push,
+  in-app, preference-center, or win-back work?
+- **Referral:** Is there a natural, observed share-after-value moment with
+  workable rights, incentives, and attribution?
+- **Revenue:** Does cohort evidence support testing term length, tiers,
+  packaging, or an upsell without assuming an annual-plan default?
 
-### AARRR emphasis
+### Suede routes to consider
 
-**Acquisition:**
-- App Store Optimization (ASO) is the highest-leverage non-site asset
-- Paid social (Meta, TikTok) often dominant once budget exists
-- Apple Search Ads for high-intent App Store traffic
-- Influencer + content creators
-- PR + endorsements
+`suede-aso`, `suede-onboarding`, `suede-signup`, `suede-paywalls`,
+`suede-emails`, `suede-referrals`, `suede-pricing`, `suede-ad-creative`, and
+`suede-ads`.
 
-**Activation:**
-- Onboarding is the dominant activation surface
-- Time-to-value must be minutes, not hours
-- Paywall structure + trial length critical
+## Archetype 3 — Hybrid Hardware and Software
 
-**Retention:**
-- Lifecycle email + push
-- In-app reminders (carefully — overuse = churn)
-- Subscription preference center
-- Win-back campaigns
+### Model questions
 
-**Referral:**
-- Built-in sharing (share-a-month flow)
-- Two-sided referrals
-- Influencer / creator ambassadors
+- What are current contribution margin, return rate, attach rate, software
+  retention, support load, and blended acquisition cost by cohort?
+- Is hardware functioning as discovery, initial revenue, activation, retention,
+  or none of those for the measured cohort?
+- Can the team trace commerce purchase, setup, account creation, software value,
+  renewal, and support events without unsafe identity joins?
+- Which retail, marketplace, direct, partner, or owned surfaces are authorized
+  and measurable?
 
-**Revenue:**
-- Annual plan default is the biggest single move (compresses MRR but improves LTV)
-- Tier optimization (Free → Premium → Premium+)
-- In-app upsells
+### AARRR candidates to test
 
-### Skills emphasis
-- `onboarding`, `paywalls`, `emails`
-- `ads`, `ad-creative` (heavy creative iteration)
-- `referrals`
-- `pricing` for annual default + tier consolidation
+- **Acquisition:** Which commerce or audience surface has a sourced discovery
+  or conversion constraint?
+- **Activation:** Is the measured loss in unboxing, setup, account linking,
+  software onboarding, or first value?
+- **Retention:** Which post-purchase, support, companion-product, or community
+  hypothesis follows from cohort and research evidence?
+- **Referral:** Are gifting, reviews, or sharing already observed, and are
+  consent, rights, incentives, and attribution workable?
+- **Revenue:** Does sourced margin and retention evidence support a bundle,
+  accessory, service, or subscription test?
 
-### Tier-1 budget priority
-- ASO first (highest organic leverage)
-- Onboarding rebuild
-- Lifecycle email shipping
-- Founder-led social if founder is on-camera
+### Suede routes to consider
 
----
-
-## Archetype 3 — Hybrid Hardware + Software
-
-### Core characteristics
-- Physical product + software companion (e.g., Quietude's eye mask + app)
-- Hardware as a distribution wedge (lower price, easier first purchase)
-- Software as the LTV (recurring revenue)
-- Blended CAC across both surfaces
-
-### AARRR emphasis
-
-**Acquisition:**
-- Shopify storefront SEO (hardware product pages target consumer search)
-- Amazon listing (high-discovery, takes margin)
-- PR amplification (hardware is photogenic — high-profile influencer endorsements move volume)
-- Paid social for hardware (Meta + Instagram, eye-catching creative)
-
-**Activation:**
-- Two activations to track: hardware unboxing experience + software signup
-- Hardware → software activation flow is the bridge
-- Concierge setup for high-value hardware buyers
-
-**Retention:**
-- Hardware post-purchase lifecycle (different from app onboarding)
-- Software companion drives stickiness
-- Community / practitioner network around hardware
-
-**Referral:**
-- Hardware gifting flows (high WOM for physical products)
-- Eye-catching hardware drives organic social sharing
-- Reviews on Shopify + Amazon
-
-**Revenue:**
-- Blended LTV math is critical (hardware margin + software recurring)
-- Bundle strategy (hardware buy → free Premium for X months)
-- Annual plan default for software
-
-### Skills emphasis
-- `seo-audit` for Shopify product pages
-- `emails` for both hardware post-purchase and software lifecycle
-- `referrals` with gifting layer
-- `pricing` for blended-bundle math
-- `ads` with creative-heavy Meta presence
-
-### Tier-1 budget priority
-- Shopify product page optimization
-- Hardware post-purchase lifecycle ship
-- Bundle strategy formalization
-- Hardware → app activation audit
-
----
+`suede-customer-research`, `suede-onboarding`, `suede-emails`,
+`suede-referrals`, `suede-pricing`, `suede-seo-audit`, `suede-ads`, and
+`suede-ad-creative`.
 
 ## Archetype 4 — Marketplace
 
-### Core characteristics
-- Two-sided product (supply + demand)
-- Network effects matter
-- Liquidity is the critical early metric
-- Take-rate × GMV is the revenue model
+### Model questions
 
-### AARRR emphasis
+- Which distinct supply and demand cohorts exist, and what defines a qualified
+  participant on each side?
+- What current evidence describes liquidity, time-to-match, fulfillment,
+  repeat behavior, take rate, margin, and concentration by market?
+- Which side, segment, geography, or category is the measured constraint?
+- What trust, safety, legal, identity, support, and fraud controls constrain a
+  test?
 
-**Acquisition:**
-- Two funnels — supply and demand
-- Supply often acquired through outbound / partnership / cold email
-- Demand often acquired through SEO / paid / content
-- City-by-city programmatic SEO common
+### AARRR candidates to test
 
-**Activation:**
-- Supply activation: first listing posted, first response sent
-- Demand activation: first purchase / first match / first transaction
-- Both sides need their own onboarding
+- **Acquisition:** For each side, which search, content, outreach, partner,
+  referral, or paid hypothesis has audience evidence and follow-up capacity?
+- **Activation:** What first listing, response, match, booking, purchase, or
+  completion event predicts value for each side?
+- **Retention:** Which cohort evidence supports frequency, utilization,
+  reactivation, or quality hypotheses?
+- **Referral:** Is same-side or cross-side referral behavior observed and
+  economically safe to encourage?
+- **Revenue:** Do take-rate, fee, subscription, lead, or premium-service
+  hypotheses fit current margin, elasticity, and liquidity evidence?
 
-**Retention:**
-- Repeat transaction frequency
-- Supply utilization (% of listings active)
-- Demand habit (DAU / MAU)
+### Suede routes to consider
 
-**Referral:**
-- Supply → supply (refer other providers)
-- Demand → demand (refer other buyers)
-- Cross-side referrals are weaker
+`suede-customer-research`, `suede-cold-email`, `suede-programmatic-seo`,
+`suede-onboarding`, `suede-emails`, `suede-referrals`, and `suede-pricing`.
 
-**Revenue:**
-- Take-rate optimization
-- Premium tier (better matching, lower fees)
-- Lead-gen vs. transaction-fee monetization
+## Archetype 5 — Developer Tool or Open Source
 
-### Skills emphasis
-- `programmatic-seo` for city pages, vertical pages
-- `cold-email` for supply-side recruitment
-- `referrals` for both sides
-- `pricing` for take-rate decisions
+### Model questions
 
-### Tier-1 budget priority
-- Programmatic SEO build for one side
-- Cold outbound to seed supply (or demand, whichever is bottleneck)
-- Lifecycle email for both sides
+- Who is the current user, technical evaluator, economic buyer, security
+  reviewer, administrator, and procurement owner?
+- Which repository, package, documentation, community, support, product, and
+  billing events can be measured with appropriate permissions?
+- What current research and telemetry define first technical value rather than
+  assuming a universal time-to-value threshold?
+- Which project, team, organization, and account grains can be reconciled
+  without double counting?
 
----
+### AARRR candidates to test
 
-## Archetype 5 — Developer Tool / Open Source
+- **Acquisition:** Does documentation search, package discovery, community,
+  technical content, events, partners, or outbound evidence reveal qualified
+  demand?
+- **Activation:** Which build, integration, deployment, collaboration, or
+  production event predicts value for a defined cohort?
+- **Retention:** Does depth, frequency, project continuity, team adoption, or
+  support evidence identify the constraint?
+- **Referral:** Are repository, forum, community, team-invite, or talk
+  behaviors meaningful and attributable for the target cohort?
+- **Revenue:** Do usage, team, enterprise, support, or service hypotheses fit
+  current willingness-to-pay, delivery, security, and procurement evidence?
 
-### Core characteristics
-- Technical buyer (developer or eng leader)
-- High bar for content quality (developers are skeptical)
-- DevRel matters more than traditional marketing
-- Open source layer often funnel into commercial product
+### Suede routes to consider
 
-### AARRR emphasis
+`suede-customer-research`, `suede-product-marketing`,
+`suede-content-strategy`, `suede-programmatic-seo`,
+`suede-sales-enablement`, `suede-cold-email`, `suede-onboarding`, and
+`suede-pricing`.
 
-**Acquisition:**
-- Technical content + docs SEO
-- DevRel (conferences, talks, community)
-- GitHub presence + npm/pip/etc. discovery
-- Hacker News + Reddit + dev Twitter
+## Archetype 6 — Scientific, Clinical, or Regulated
 
-**Activation:**
-- First build / first integration is the activation event
-- Time-to-Hello-World matters
-- Documentation = onboarding for dev tools
+### Model questions
 
-**Retention:**
-- Depth of integration (using more of the product)
-- Team adoption (one user → entire org)
-- Active project count
+- Which claims, evidence grades, qualified reviewers, regulatory regimes,
+  ethics rules, and approval paths govern each audience and geography?
+- Who is the user, beneficiary, buyer, approver, practitioner, and institutional
+  stakeholder?
+- What current procurement, pilot, implementation, outcome, renewal, and
+  publication evidence exists by cohort?
+- Which data, consent, privacy, safety, adverse-event, and records controls
+  constrain research and marketing?
 
-**Referral:**
-- Star count on GitHub (semi-organic)
-- Recommendation in technical forums
-- Conference talks mentioning the tool
+### AARRR candidates to test
 
-**Revenue:**
-- Free → paid conversion when usage exceeds limits
-- Team plans, enterprise tiers
-- Support / SLA upsells
+- **Acquisition:** Does peer-reviewed publication, education, conference,
+  referral, partner, PR, or direct outreach fit the evidence and claims gate?
+- **Activation:** Is an approved pilot, proof of concept, training, or
+  implementation step the current value event?
+- **Retention:** Which outcome, workflow, support, education, or community
+  evidence supports continued adoption?
+- **Referral:** Are references, panels, case studies, or publications
+  consented, representative, and approved?
+- **Revenue:** Do pilot expansion, institutional terms, services, support, or
+  certification hypotheses fit procurement, margin, and delivery evidence?
 
-### Skills emphasis
-- `programmatic-seo` for docs
-- Less emphasis on traditional `ads`
-- Heavy `content-strategy` + technical content
-- `cold-email` to engineering leads at target companies
+### Suede routes to consider
 
-### Tier-1 budget priority
-- Docs + technical content production
-- DevRel (founder doing talks)
-- GitHub presence
-- HN / Reddit / dev community
+`suede-customer-research`, `suede-product-marketing`,
+`suede-sales-enablement`, `suede-public-relations`, `suede-cold-email`,
+`suede-pricing`, and `suede-emails`.
 
----
+## Archetype 7 — Transactional Commerce
 
-## Archetype 6 — Deep-Tech / Scientific / Clinical
+### Model questions
 
-### Core characteristics
-- Long sales cycles
-- Heavy credibility burden (must prove the science)
-- Highly informed buyers (academics, clinicians, researchers)
-- Often regulatory considerations
+- What are realized order value, contribution margin, repeat rate, return rate,
+  fulfillment capacity, inventory risk, and lifetime value by cohort?
+- Which storefront, marketplace, retail, search, social, creator, referral, or
+  paid sources produce incremental qualified purchases?
+- Which consented events cover view, cart, checkout, purchase, fulfillment,
+  return, repeat purchase, and support?
+- What rights, disclosure, claims, inventory, shipping, and support constraints
+  bound each test?
 
-### AARRR emphasis
+### AARRR candidates to test
 
-**Acquisition:**
-- Academic publishing + peer-reviewed studies
-- Conference speaking (academic + industry)
-- Investor / advisor introductions
-- PR via credibility hooks
+- **Acquisition:** Which channel has current audience, intent, margin,
+  incrementality, creative, tracking, and capacity evidence?
+- **Activation:** Does a defined cohort show friction in product evaluation,
+  cart, checkout, trust, shipping, or payment?
+- **Retention:** Which post-purchase, replenishment, loyalty, email, SMS, or
+  support hypothesis follows from observed repeat behavior and consent?
+- **Referral:** Are reviews, user content, gifting, or refer-a-friend behaviors
+  observed and rights-compliant?
+- **Revenue:** Do bundles, upsells, pricing, or subscription candidates fit
+  current margin, return, repeat, inventory, and fulfillment evidence?
 
-**Activation:**
-- Pilot programs / proof-of-concepts
-- Concierge setup with high-touch onboarding
-- Educational webinars / training
+### Suede routes to consider
 
-**Retention:**
-- Customer success heavily
-- Co-publication with customers
-- Community of practice
+`suede-customer-research`, `suede-emails`, `suede-sms`, `suede-referrals`,
+`suede-pricing`, `suede-seo-audit`, `suede-ad-creative`, and `suede-ads`.
 
-**Referral:**
-- Academic / clinical references
-- Conference panel features
-- Case studies with named institutions
+## How to use this reference
 
-**Revenue:**
-- Pilot → paid expansion
-- Institutional contracts (multi-seat / multi-year)
-- Compliance / certification upsells
+1. Select one or more candidate archetypes from the verified revenue and
+   operating model.
+2. Copy only the questions that help diagnose the current client.
+3. Cite current client or cohort evidence for every conclusion.
+4. Convert a candidate into `Approved test` only when its owner, authority,
+   maximum exposure, review date, and stop condition are explicit.
+5. Record deviations for hybrids; evaluate each revenue path and constraint
+   separately.
 
-### Skills emphasis
-- Light traditional marketing
-- Heavy `product-marketing`, `sales-enablement`, `pricing`
-- `cold-email` to specific researchers / practitioners
-- PR + investor marketing
-
-### Tier-1 budget priority
-- Academic outreach + conference speaking
-- Investor backchannel for institutional warm intros
-- Pilot deployment with key customers
-- Case study + scientific publication
-
----
-
-## Archetype 7 — Commerce / DTC (non-subscription)
-
-### Core characteristics
-- Physical or digital products sold transactionally
-- Average Order Value matters
-- Repeat purchase rate is the key retention metric
-
-### AARRR emphasis
-
-**Acquisition:**
-- Paid social (Meta, TikTok) often dominant
-- Shopify SEO for product pages
-- Amazon listings
-- Influencer + creator partnerships
-
-**Activation:**
-- First purchase is the activation event
-- Cart abandonment recovery
-- Trust signals on checkout (reviews, returns, shipping)
-
-**Retention:**
-- Post-purchase lifecycle
-- Loyalty programs
-- Email + SMS for repeat purchase
-
-**Referral:**
-- Gifting flows
-- Refer-a-friend programs
-- Reviews + UGC
-
-**Revenue:**
-- AOV optimization (bundles, upsells)
-- Customer LTV optimization (repeat purchase frequency)
-- Subscription option for repeat purchases
-
-### Skills emphasis
-- `ads` + `ad-creative` (heavy weight)
-- `emails` for post-purchase + abandoned cart
-- `referrals` with gifting
-- `pricing` for bundles + subscription option
-
-### Tier-1 budget priority
-- Shopify storefront optimization
-- Email lifecycle ship
-- Influencer / UGC seeding
-- Paid social testing (if minimal budget exists)
-
----
-
-## How to use this doc when drafting a plan
-
-When you start drafting Sections 4–8 (AARRR), identify the client's archetype (or hybrid if applicable) and lean into the patterns above.
-
-**Hybrid cases are common.** Quietude is "Hybrid hardware + software" with significant overlap to "Deep-tech / scientific / clinical" (because of the peer-reviewed study + clinical positioning). The plan blends emphases from both archetypes.
-
-When in doubt, lead with the archetype that best fits the *primary monetization model*. Quietude's primary monetization is software subscription (with hardware as the wedge), so the D2C consumer app + hardware-hybrid patterns dominate, with deep-tech credibility moves layered in.
-
-## When the client doesn't fit cleanly
-
-Some clients defy archetype:
-- **Content / media businesses** — neither SaaS nor commerce; ad revenue or subscription model
-- **Social networks** — own category, network effects dominate
-- **Real estate / events** — physical + service model
-
-For these, identify the closest archetype and adjust. Don't force-fit — name the deviation in the plan's Strategic Frame.
+For a business not represented here, start with the model, actors, value event,
+economics, funnel evidence, constraints, and authority. Do not force-fit an
+archetype or borrow its channel assumptions.

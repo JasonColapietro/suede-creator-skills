@@ -103,7 +103,7 @@ Beyond mixing and matching data point permutations, these are the proven playboo
 
 **URL structure**: `/compare/[x]-vs-[y]/` or `/[x]-vs-[y]/`
 
-*See also: competitors skill for detailed frameworks*
+*See also: `suede-competitors` for detailed frameworks.*
 
 ---
 

@@ -153,23 +153,23 @@ Exact permission models vary by platform. Sanity uses role-based access. Content
 
 ---
 
-## Integration with Marketing Skills
+## Integration with Suede Skills
 
 ### Programmatic SEO
 
-Use CMS as the data source for programmatic pages. Store structured data (FAQs, comparisons, city pages) as content types and generate pages from queries. See **programmatic-seo** skill.
+Use CMS as the data source for programmatic pages. Store structured data (FAQs, comparisons, city pages) as content types and generate pages from queries. Route the template and data system to `suede-programmatic-seo`.
 
 ### Copywriting
 
-CMS content models enforce consistent structure. Define fields that match your copy frameworks (headline, subheadline, social proof, CTA). See **copywriting** skill.
+CMS content models enforce consistent structure. Define fields that match your copy frameworks (headline, subheadline, social proof, CTA). Route asset writing to `suede-copy`.
 
 ### Site Architecture
 
-URL structure, navigation hierarchy, and internal linking all depend on how content is organized in the CMS. Plan your content model and site architecture together. See **site-architecture** skill.
+URL structure, navigation hierarchy, and internal linking all depend on how content is organized in the CMS. Plan the content model and the owning site's architecture together; this pack does not provide a separate architecture workflow.
 
 ### Email Sequences
 
-Pull CMS content into email templates for consistent messaging across web and email. Case studies, testimonials, and blog posts can feed email nurture sequences. See **emails** skill.
+Pull CMS content into email templates for consistent messaging across web and email. Case studies, testimonials, and blog posts can feed email nurture sequences. Route sequence design to `suede-emails`.
 
 ---
 
@@ -187,8 +187,10 @@ Pull CMS content into email templates for consistent messaging across web and em
 
 ---
 
-## Relevant Integration Guides
+## Provider Implementation
 
-- [Sanity](../../../tools/integrations/sanity.md) — GROQ queries, mutations, CLI
-- [Contentful](../../../tools/integrations/contentful.md) — Delivery/Management APIs, publishing
-- [Strapi](../../../tools/integrations/strapi.md) — REST CRUD, filters, document API
+This pack does not include CMS adapters or provider integration guides. For
+Sanity, Contentful, Strapi, or another provider, verify the current official
+documentation for the installed SDK/API version, authenticate to the intended
+space or project, test reads before mutations, and require an explicit
+publication action after preview.

@@ -1,13 +1,13 @@
 ---
 name: suede-free-tools
-description: "Engineering as marketing: pick a free tool worth building, scope it honestly, and design it so the output pulls people toward the paid product. Use when the user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links. Also use when the user mentions 'engineering as marketing,' 'free tool,' 'marketing tool,' 'calculator,' 'generator,' 'interactive tool,' 'lead gen tool,' 'build a tool for leads,' 'free resource,' 'ROI calculator,' 'grader tool,' 'audit tool,' 'should I build a free tool,' or 'tools for lead gen.' Use this whenever someone wants to build something useful and give it away to attract leads or earn links. For downloadable content lead magnets (ebooks, checklists, templates), see suede-lead-magnets."
+description: "Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit)."
 metadata:
   version: 2.0.0
 ---
 
-# Free Tool Strategy (Engineering as Marketing)
+# Suede Free-Tool Growth Strategy
 
-You are an expert in engineering-as-marketing strategy. Your goal is to help plan and evaluate free tools that generate leads, attract organic traffic, and build brand awareness.
+Suede uses engineering as marketing when a genuinely useful tool can create qualified discovery and a natural bridge to the paid product. Select, score, and scope the smallest maintainable calculator, grader, generator, or utility whose output earns attention rather than merely capturing it.
 
 ## Initial Assessment
 
@@ -170,10 +170,15 @@ Rate each factor 1-5:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **lead-magnets**: For downloadable content lead magnets (ebooks, checklists, templates)
-- **cro**: For optimizing the tool's landing page
-- **seo-audit**: For SEO-optimizing the tool
-- **analytics**: For measuring tool usage
-- **emails**: For nurturing leads from the tool
+- Do not claim search demand, lead volume, link potential, or build feasibility without evidence and dated assumptions.
+- Do not build, deploy, publish, collect leads, or connect production data unless the user authorizes implementation.
+- Do not invent tool outputs or use a calculator as disguised professional, legal, medical, or financial advice.
+- Do not decide pricing, data-retention, or consent policy for the user.
+
+## Routing
+
+- Use `suede-lead-magnets` for downloadable assets and `suede-site-alchemy` for the public conversion surface.
+- Use `suede-seo-audit` for search validation and `suede-analytics` for usage measurement.
+- Use `suede-emails` for the post-capture lifecycle sequence.

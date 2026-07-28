@@ -1,15 +1,15 @@
 ---
 name: suede-marketing-loops
-description: "Turn marketing into a recurring loop an agent runs on a cadence: ad-fatigue checks, content refresh, churn watch, ranking-drop alerts, and weekly reviews. Use when the user wants a repeatable, self-running marketing workflow rather than a one-off task. Also use when the user mentions 'marketing loop,' 'recurring marketing workflow,' 'automate my marketing,' 'marketing on autopilot,' 'weekly marketing review,' 'ad fatigue check,' 'content refresh loop,' 'churn watch,' 'ranking drop alert,' 'always-on marketing,' 'marketing automation workflow,' or 'run this every week.' Use this to pick, adapt, and schedule an ongoing marketing loop that orchestrates the other marketing skills. For one-off marketing ideas, see marketing-ideas. For the experimentation loop specifically, see suede-ab-testing."
+description: "Suede-affiliated recurring marketing workflow design for cadence, inputs, decision rules, checkpoints, failure states, and measurable outputs. Use when the user wants repeatable ad-fatigue, content-refresh, churn-watch, ranking-drop, or weekly-review loops. NOT FOR: one-off tactic ideation (use suede-marketing-ideas), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority."
 metadata:
   version: 1.2.0
 ---
 
-# Marketing Loops
+# Suede Marketing Loops
 
-You help set up **marketing loops** — repeatable marketing workflows an AI agent runs on a cadence, each with a defined trigger, a bounded set of steps, a self-check, and an explicit stopping condition. A loop turns a marketing task you'd otherwise do manually (and forget) into an always-on system: the weekly SEO opportunity scan, the ad-fatigue refresh, the churn-signal watch.
+Suede turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
 
-This is the operational cousin of `marketing-ideas`. Ideas tell you *what to try once*. Loops tell you *what to keep doing on a schedule* — and wire the other marketing skills together to do it.
+This is the operational counterpart to `suede-marketing-ideas`: ideas identify what may be worth trying once; Suede loops define what approved work should repeat and how public Suede skills coordinate it.
 
 ## How to Use This Skill
 
@@ -22,7 +22,7 @@ Then:
 4. **Confirm the human checkpoint.** Decide what the loop does autonomously vs. what it stages for human approval before publishing or spending — see `references/loop-guardrails.md`.
 5. **Schedule it** (see "Scheduling a loop" below).
 
-Building more than one loop, or a whole marketing operating system? See `references/loop-orchestration.md` for how loops compose and the order to adopt them (start with tracking + a weekly review; don't build 43 at once).
+Building more than one loop, or a whole marketing operating system? See `references/loop-orchestration.md` for how loops compose and the order to adopt them (start with tracking + a weekly review; don't build 45 at once).
 
 ## Anatomy of a Marketing Loop
 
@@ -73,15 +73,17 @@ For any loop that sends, spends, publishes, or touches personal data, apply `ref
 
 These loops are agent-agnostic — the *body* works in any agent. The *scheduling* depends on your environment:
 
-- **Claude Code** — native options: `/loop` (self-paced, until a condition), `ScheduleWakeup` (dynamic pacing that reacts to state), and `CronCreate` (fixed cron schedule). If you have a loop-mechanics skill such as `loopify` installed, use it to choose between them and tune delays; otherwise the guidance below is enough.
-- **Any agent + cron** — wrap the loop body as a scheduled prompt/script (`0 9 * * 1` for Mondays 9am, etc.).
+- **Scheduling-capable environment** — discover the installed scheduler, automation connector, or native scheduling primitives first and read their current instructions. Use them only when they are actually available and the user authorizes scheduling.
+- **Cron-capable host** — when cron is available, wrap the loop body as a scheduled prompt or script (`0 9 * * 1` for Mondays at 9am, for example).
 - **Manual cadence** — for high-judgment loops, "run this skill every Monday" is a perfectly good loop. The value is the repeatable *body*, not the automation.
+
+If no scheduling mechanism is available, return the complete loop body plus a copyable cadence instruction and mark scheduling as not created.
 
 Default to time-of-day cron for review-style loops (weekly review, ranking watch) and dynamic pacing for monitor-until-threshold loops (churn watch, launch-day tracking).
 
 ## The Catalog
 
-`references/loop-catalog.md` holds the full library — 43 marketing loops with thorough funnel coverage: SEO & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
+`references/loop-catalog.md` holds the full library — 45 marketing loops with thorough funnel coverage: SEO & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
 
 ## Authoring a new loop
 
@@ -99,9 +101,15 @@ When nothing in the catalog fits, author a new loop from `references/loop-templa
 
 Avoid: "set it and forget it," "fully autonomous marketing," "AI does everything," "10x on autopilot," "growth hacking machine." Loops are disciplined systems with checkpoints, not magic. Describe them honestly.
 
-## Related Skills
+## Boundaries
 
-- **marketing-ideas** — one-off tactics and inspiration (what to try). Loops operationalize the ones worth repeating.
-- **ab-testing** — the experimentation loop specifically (hypothesis → test → promote winner → repeat).
-- **analytics** — most loops read from analytics to decide whether to act.
-- Individual channel skills (`ads`, `seo-audit`, `emails`, `social`, `churn-prevention`, `pricing`, `referrals`) — the loop bodies orchestrate these.
+- Do not create, enable, schedule, or modify a recurring automation without explicit authorization.
+- Do not let a loop publish, spend, message, delete, or change production state without a named human checkpoint.
+- Do not claim a loop ran, detected a condition, or improved a metric without a current execution record.
+- Do not hide missing data, permissions, thresholds, owners, or stop conditions behind "autonomous" language, and do not decide those controls for the user.
+
+## Routing
+
+- Use `suede-marketing-ideas` for one-off tactics and `suede-ab-testing` for experimentation.
+- Use `suede-analytics` for measurement inputs.
+- Route channel actions to `suede-ads`, `suede-seo-audit`, `suede-emails`, `suede-social`, `suede-churn-prevention`, `suede-pricing`, or `suede-referrals`.

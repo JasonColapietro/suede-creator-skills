@@ -1,5 +1,5 @@
 {
-  "skill_name": "ab-testing",
+  "skill_name": "suede-ab-testing",
   "evals": [
     {
       "id": 1,
@@ -78,10 +78,10 @@
     {
       "id": 6,
       "prompt": "Can you help me write copy for our new landing page? We want to test it against the current version.",
-      "expected_output": "Should recognize this is primarily a copywriting task, not a test setup task. Should defer to or cross-reference the copywriting skill for writing the actual copy. May help frame the test hypothesis and setup, but should make clear that copywriting is the right skill for creating the page copy itself.",
+      "expected_output": "Should recognize this is primarily a copywriting task, not a test setup task. Should defer to or cross-reference suede-copy for writing the actual copy. May help frame the test hypothesis and setup, but should make clear that suede-copy is the right skill for creating the page copy itself.",
       "assertions": [
         "Recognizes this as primarily a copywriting task",
-        "References or defers to copywriting skill",
+        "References or defers to suede-copy",
         "Does not attempt to write full page copy using test setup patterns",
         "May offer to help with test hypothesis and setup"
       ],

@@ -97,9 +97,17 @@ Stricter than CAN-SPAM. Cold B2B outreach requires:
 
 ## Anti-Patterns (Don't Do These)
 
-1. **Bulk-scraping LinkedIn / Google Maps / Yelp**. Browser-assisted research is OK; automated scrapers pointed at these platforms are not. **Firecrawl and Browserbase are fine for an individual prospect's own website** (the URL you found through manual discovery) — not for the platforms hosting prospects.
+1. **Bulk extraction from restricted platforms.** Verify each platform's current
+   terms and the user's authorization before collection. Browser-assisted
+   research does not itself make retention or automation permitted. Tools for
+   an individual prospect's public website are candidates only after current
+   access, site terms, robots guidance, privacy rules, and collection purpose
+   are checked.
 2. **Buying lists from random vendors** without source provenance. You inherit their legal exposure.
-3. **Guessing emails and sending unverified**. Bounce rates over 2% destroy sender reputation; legally, you can't claim a "legitimate interest" basis for an email you fabricated.
+3. **Guessing emails and sending unverified.** Define the sending provider's
+   current bounce threshold, validate addresses, and document the applicable
+   lawful basis with qualified counsel where required. Do not fabricate legal
+   justification.
 4. **Harvesting personal email addresses** (Gmail, personal Outlook, etc.) from public profiles. Personal addresses raise GDPR risk significantly.
 5. **Storing data you don't need**. Minimize retention. Don't keep prospect lists forever — GDPR right to deletion applies.
 6. **Skipping the lawful basis documentation**. If challenged, you need to show your work. Capture source URL + collection date for every contact.
@@ -120,4 +128,5 @@ Before shipping a list to the user (or downstream to cold-email):
 - [ ] Personal addresses (Gmail, etc.) flagged or excluded
 - [ ] Source provider contracts permit the intended use case
 - [ ] Retention plan documented (when to delete)
-- [ ] First outreach will include unsubscribe + privacy notice (downstream concern for cold-email skill, but mention it now)
+- [ ] First outreach will include unsubscribe + privacy notice (downstream
+      concern for `suede-cold-email`, but mention it now)

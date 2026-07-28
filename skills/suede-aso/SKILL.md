@@ -1,14 +1,14 @@
 ---
 name: suede-aso
-description: "Optimise an App Store or Play listing: keyword field strategy, title and subtitle, screenshots that convert, and competitor listing teardowns. Use when the user wants to improve app store visibility, downloads, or listing conversion, or has shared an App Store or Play URL. Also use when the user mentions 'ASO audit,' 'app store optimization,' 'optimize my app listing,' 'improve app visibility,' 'app store ranking,' 'audit my listing,' 'why aren't people downloading my app,' 'improve my app conversion,' 'keyword optimization for app,' or 'compare my app to competitors.' Use when the user shares an App Store or Google Play URL and wants to improve it."
+description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use site-to-ios-app or android-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
 metadata:
   version: 2.0.0
 ---
 
-# ASO Audit
+# Suede ASO Audit
 
-Analyze App Store and Google Play listings against ASO best practices. Fetches
-live listing data, scores metadata, visuals, and ratings, then produces a
+Analyze App Store and Google Play listings with the Suede ASO scoring system. Fetch
+live listing data, score metadata, visuals, and ratings, then produce a
 prioritized action plan.
 
 ## When to Use
@@ -304,9 +304,17 @@ the app's brand maturity tier — they may be deliberate choices for Dominant ap
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **cro**: For optimizing the conversion of web-based landing pages that drive app installs
-- **ad-creative**: For creating App Store and Google Play ad creatives
-- **analytics**: For setting up install attribution and in-app event tracking
-- **customer-research**: For understanding user needs and language to inform listing copy
+- Do not claim keyword rank, conversion lift, review status, or store approval without a current source or console readback.
+- Do not edit or submit store metadata, screenshots, builds, prices, or releases without explicit authorization.
+- Do not invent competitor performance, customer sentiment, or platform benchmarks; label estimates and their source dates.
+- Do not reuse copyrighted competitor assets or generate an alternate Suede S in screenshot recommendations.
+
+## Routing
+
+- Need paid app-install creative -> use `suede-ad-creative`.
+- Need install attribution or in-app events -> use `suede-analytics`.
+- Need customer language for listing copy -> use `suede-customer-research`.
+- Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`.
+- From those skills, route listing audits, metadata strategy, and screenshot sequencing back to `suede-aso`.

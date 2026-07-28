@@ -1,5 +1,5 @@
 {
-  "skill_name": "co-marketing",
+  "skill_name": "suede-co-marketing",
   "evals": [
     {
       "id": 1,
@@ -71,10 +71,10 @@
     {
       "id": 6,
       "prompt": "Our customer success team wants us to launch a referral program. Can you help us design one?",
-      "expected_output": "Should recognize this is about customer referrals, not co-marketing between companies. Should redirect to the referrals skill, which specifically handles customer referral and affiliate programs (customers referring customers). Should note co-marketing is partner-to-partner marketing while referrals is customer-driven word-of-mouth. May offer brief co-marketing context if it's relevant to the strategy, but should make clear referrals is the right skill for the task.",
+      "expected_output": "Should recognize this is about customer referrals, not co-marketing between companies. Should redirect to suede-referrals, which specifically handles customer referral and affiliate programs (customers referring customers). Should note co-marketing is partner-to-partner marketing while referrals is customer-driven word-of-mouth. May offer brief co-marketing context if it's relevant to the strategy, but should make clear suede-referrals is the right skill for the task.",
       "assertions": [
         "Recognizes this is customer referral, not co-marketing",
-        "Defers to referrals skill",
+        "Defers to suede-referrals",
         "Distinguishes co-marketing from referral programs",
         "Does not attempt full co-marketing strategy"
       ],

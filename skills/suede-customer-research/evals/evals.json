@@ -1,5 +1,5 @@
 {
-  "skill_name": "customer-research",
+  "skill_name": "suede-customer-research",
   "evals": [
     {
       "id": 1,
@@ -123,12 +123,12 @@
     {
       "id": 10,
       "prompt": "Turn my customer research into messaging I can use on my homepage.",
-      "expected_output": "Should check for product-marketing.md first. Should extract VOC language and top themes before moving to copy. Should identify the highest-signal quotes and language patterns. Should produce a VOC summary or quote bank, then hand off to the copywriting skill for the actual copy writing step rather than writing homepage copy directly.",
+      "expected_output": "Should check for product-marketing.md first. Should extract VOC language and top themes before moving to copy. Should identify the highest-signal quotes and language patterns. Should produce a VOC summary or quote bank, then hand off to suede-copy for the actual copy writing step rather than writing homepage copy directly.",
       "assertions": [
         "Checks for product-marketing.md",
         "Extracts the VOC language and themes first before jumping to copy",
         "Identifies the highest-signal quotes for messaging",
-        "References the copywriting skill for the actual copy writing step"
+        "References suede-copy for the actual copy writing step"
       ],
       "files": []
     },

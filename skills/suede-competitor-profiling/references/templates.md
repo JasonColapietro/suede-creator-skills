@@ -29,7 +29,7 @@ Abbreviated profile for when speed matters more than depth.
 | Target audience | [inferred from copy] |
 | Pricing starts at | [lowest paid tier] |
 | Free tier/trial | [yes/no + details] |
-| Domain rank | [from DataForSEO] |
+| Provider domain metric | [value, provider, market, and access date; or not collected] |
 | Est. organic traffic | [monthly] |
 | Organic keywords (top 10) | [count] |
 | Referring domains | [count] |
@@ -160,8 +160,8 @@ Append to the bottom of any profile when updating it.
 
 | Date | What Changed | Source |
 |------|-------------|--------|
-| [date] | Pricing increased from $X to $Y | Pricing page re-scrape |
-| [date] | Launched [feature] | Changelog scrape |
-| [date] | Domain rank changed from X to Y | DataForSEO re-pull |
-| [date] | Added [integration] | Integrations page re-scrape |
+| [date] | Pricing increased from $X to $Y | Pricing page recapture |
+| [date] | Launched [feature] | Changelog recapture |
+| [date] | Provider domain metric changed from X to Y | Same-provider refresh with matching market and device |
+| [date] | Added [integration] | Integrations page recapture |
 ```

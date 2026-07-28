@@ -1,5 +1,5 @@
 {
-  "skill_name": "community-marketing",
+  "skill_name": "suede-community-marketing",
   "evals": [
     {
       "id": 1,
@@ -46,14 +46,14 @@
     {
       "id": 4,
       "prompt": "Design an ambassador program for our community. We have about 5,000 members and a few that always help others. Want to give them more recognition.",
-      "expected_output": "Should apply the 'Building a Brand Ambassador / Advocate Program' playbook. Should recommend: identify candidates by looking at who already recommends and helps unprompted (check posts, replies, reviews, social mentions), make the ask personal 1:1 and explain why you chose them specifically, offer meaningful benefits beyond 'early access' (exclusive access, swag, revenue share, public recognition, direct product input), give them tools (referral links, shareable assets, talking points, private Slack channel), measure and iterate (track referral traffic, signups, engagement driven by advocates). Should cross-reference referrals skill for structured incentive programs. Should warn against generic forms and impersonal asks.",
+      "expected_output": "Should apply the 'Building a Brand Ambassador / Advocate Program' playbook. Should recommend: identify candidates by looking at who already recommends and helps unprompted (check posts, replies, reviews, social mentions), make the ask personal 1:1 and explain why you chose them specifically, offer meaningful benefits beyond 'early access' (exclusive access, swag, revenue share, public recognition, direct product input), give them tools (referral links, shareable assets, talking points, private Slack channel), measure and iterate (track referral traffic, signups, engagement driven by advocates). Should cross-reference suede-referrals for structured incentive programs. Should warn against generic forms and impersonal asks.",
       "assertions": [
         "Identifies candidates from existing helpful behavior",
         "Recommends personal 1:1 ask",
         "Suggests meaningful benefits beyond early access",
         "Mentions tools/assets to enable advocates",
         "Includes measurement plan",
-        "May cross-reference referrals skill"
+        "May cross-reference suede-referrals"
       ],
       "files": []
     },

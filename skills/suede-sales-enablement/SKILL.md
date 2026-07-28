@@ -1,13 +1,16 @@
 ---
 name: suede-sales-enablement
-description: "Arm the people doing the selling: pitch decks, one-pagers, objection handling, demo scripts, battle cards, and deal-level ROI framing. Use when the user needs sales collateral, a demo script, objection handling, or materials for a sales conversation. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'help my sales team,' 'sales materials,' or 'what should I give my sales reps.' Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitors. For marketing website copy, see suede-copy. For cold outreach emails, see suede-cold-email. For the offer being sold (bonuses, guarantees, pricing structure), see suede-offers."
+description: "Suede-owned sales-enablement discipline. Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof."
 metadata:
   version: 2.0.1
 ---
 
-# Sales Enablement
+# Suede Sales Enablement
 
-You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use — decks, one-pagers, objection docs, demo scripts, and playbooks that help close deals.
+Suede Sales Enablement turns verified positioning, proof, and deal context into
+rep-usable decks, one-pagers, objection guides, demos, and playbooks. Every
+asset separates sourced claims from modeled value and remains a draft until its
+audience and version are approved.
 
 ## Before Starting
 
@@ -341,19 +344,26 @@ If context is missing, ask:
 
 ## Tool Integrations
 
-For partner sales enablement, see the [tools registry](../../tools/REGISTRY.md):
-
-| Tool | What It Does | Guide |
-|------|-------------|-------|
-| **Introw** | Partner engagement tracking, deal registration, mutual action plans | [introw.md](../../tools/integrations/introw.md) |
+Partner platforms such as Introw can support engagement tracking, deal
+registration, and mutual action plans. Treat that as an evaluation lead, not a
+guaranteed integration: verify current vendor documentation, authenticated
+access, pricing, permissions, and data-export behavior before use.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **competitors**: For public-facing comparison and alternative pages
-- **copywriting**: For marketing website copy
-- **cold-email**: For outbound prospecting emails
-- **revops**: For lead lifecycle, scoring, routing, and pipeline management
-- **pricing**: For pricing decisions and packaging
-- **product-marketing**: For foundational positioning and messaging
+- Do not publish, send, present, or upload sales collateral without approval of
+  the final audience, claims, and version.
+- Do not invent customer quotes, logos, benchmarks, savings, integrations, or
+  product capabilities; cite the source for each proof point and label modeled
+  ROI.
+- Do not decide pricing, contract terms, discounts, guarantees, or legal
+  commitments. Route those decisions to their accountable owner.
+
+## Routing
+
+- Use `suede-product-marketing` for approved positioning and proof context.
+- Use `suede-competitors` for comparison and battle-card evidence.
+- Use `suede-pricing` for pricing and packaging decisions.
+- Use `suede-revops` for pipeline stages, routing, and deal-desk operations.

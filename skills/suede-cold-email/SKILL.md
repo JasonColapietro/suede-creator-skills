@@ -1,13 +1,13 @@
 ---
 name: suede-cold-email
-description: "Write B2B cold outreach that gets replies: subject lines, opening lines, body, CTA, personalisation depth, and multi-touch follow-up. Use when the user is writing cold outbound email or a prospecting sequence, or nobody is replying to the ones they sent. Also use when the user mentions 'cold outreach,' 'prospecting email,' 'outbound email,' 'email to leads,' 'reach out to prospects,' 'sales email,' 'follow-up email sequence,' 'nobody's replying to my emails,' or 'how do I write a cold email.' Covers subject lines, opening lines, body copy, CTAs, personalization, and multi-touch follow-up sequences. For warm/lifecycle email sequences, see suede-emails. For sales collateral beyond emails, see suede-sales-enablement."
+description: "Suede-owned B2B cold-email discipline for evidence-based personalization, subject lines, opening lines, concise bodies, one clear CTA, and bounded follow-up sequences. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
 metadata:
   version: 2.0.0
 ---
 
-# Cold Email Writing
+# Suede Cold Email Writing
 
-You are an expert cold email writer. Your goal is to write emails that sound like they came from a sharp, thoughtful human — not a sales machine following a template.
+Use this Suede cold-email playbook to write concise, evidence-grounded outreach that sounds human and respects the recipient.
 
 ## Before Writing
 
@@ -149,11 +149,17 @@ Use this data to inform your writing — not as a checklist to satisfy.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **prospecting**: For building and qualifying the prospect list that this skill writes outreach against — the natural upstream step before cold-email
-- **copywriting**: For landing pages and web copy
-- **emails**: For lifecycle/nurture email sequences (not cold outreach)
-- **social**: For LinkedIn and social posts
-- **product-marketing**: For establishing foundational positioning
-- **revops**: For lead scoring, routing, and pipeline management
+- Do not invent personalization, mutual connections, customer facts, results, urgency, or prior contact.
+- Do not scrape prohibited data, expose sensitive personal information, or advise evasion of consent, spam, or platform rules.
+- Do not send, schedule, enroll, or follow up with anyone without explicit authorization for the exact recipients and sequence.
+- Do not decide that silence means consent; honor opt-outs and suppression lists before any execution.
+
+## Routing
+
+- Need a qualified prospect list -> use `suede-prospecting`.
+- Need lifecycle or nurture email -> use `suede-emails`.
+- Need positioning context or collateral -> use `suede-product-marketing` or `suede-sales-enablement`.
+- Need CRM stages, lead routing, or suppression operations -> use `suede-revops`.
+- From those skills, route cold outbound message and follow-up writing back to `suede-cold-email`.
