@@ -902,6 +902,10 @@ const countChecks = [
   { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
   { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
   { file: "PROMO.md", label: "companion skill count", re: /with ([A-Za-z]+-[A-Za-z]+) companion skills/, expected: companionSkillCount, wordNumber: true },
+  { file: "PRODUCT.md", label: "public skills count", re: /(\d+) public skills/, expected: totalSkillCount },
+  { file: ".agents/plugins/marketplace.json", label: "Codex catalog skill count", re: /(\d+) public Suede skills/, expected: totalSkillCount },
+  { file: ".claude-plugin/marketplace.json", label: "marketplace description", re: /(\d+) MIT-licensed skills/, expected: totalSkillCount },
+  { file: ".claude-plugin/marketplace.json", label: "umbrella plugin description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
   { file: "PROMO.md", label: "README intro pack size", re: /public (\d+)-skill agent workflow pack/, expected: totalSkillCount },
 ];
 
