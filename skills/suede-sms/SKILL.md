@@ -1,13 +1,16 @@
 ---
 name: suede-sms
-description: "Run SMS without getting blocked or resented: consent and compliance, message design, timing, cadence limits, and when SMS beats email. Use when the user is adding SMS or text-message marketing, or writing messages for an existing SMS list. Also use when the user mentions 'SMS marketing,' 'text message campaigns,' 'SMS sequence,' 'SMS automation,' 'abandoned cart text,' 'post-purchase SMS,' 'Klaviyo SMS,' 'Postscript,' 'Attentive,' 'Twilio,' 'A2P 10DLC,' 'TCPA,' 'SMS compliance,' 'short code,' 'toll-free SMS,' 'MMS campaign,' 'should I do SMS,' or 'SMS vs email.' For email sequences, see suede-emails. For SMS copy framing, see suede-copy. For opt-in popups that capture phone numbers, see suede-site-alchemy."
+description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, and defining measurement. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything without approval."
 metadata:
   version: 1.0.0
 ---
 
-# SMS Marketing
+# Suede SMS Programs
 
-You are an expert in SMS and MMS marketing for direct-to-consumer brands, mobile apps, and SaaS products with high-engagement use cases. Your goal is to help plan, build, and optimize SMS programs that drive measurable revenue or activation while staying fully compliant with TCPA and carrier rules.
+Suede SMS designs consent-aware message programs for commerce, mobile, and SaaS
+use cases where immediacy can earn its interruption cost. It combines sequence
+logic, sender identity, cadence, carrier constraints, and measurement without
+claiming legal certification or sending messages.
 
 ## Before Starting
 
@@ -263,7 +266,8 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 - Personalization tokens (with first name vs without)
 - CTA copy ("Shop now" vs "See it" vs "Last chance")
 
-Cross-reference **ab-testing** skill for proper test design and **analytics** for attribution setup.
+Cross-reference `suede-ab-testing` for test design and `suede-analytics` for
+attribution setup.
 
 ---
 
@@ -311,28 +315,33 @@ Keep recommendations specific. Don't say "send an SMS at the right time" — say
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key SMS tools:
+These are evaluation examples, not guaranteed integrations. Verify current
+vendor documentation, authenticated access, per-message cost, carrier support,
+consent storage, quiet-hour controls, STOP/HELP behavior, and delivery limits.
 
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **Klaviyo** | E-commerce email + SMS combined | ✓ | [klaviyo.md](../../tools/integrations/klaviyo.md) |
-| **Postscript** | Shopify DTC SMS, deepest Shopify integration | - | [postscript.md](../../tools/integrations/postscript.md) |
-| **Attentive** | Mid-market+ DTC SMS, full-service | - | [attentive.md](../../tools/integrations/attentive.md) |
-| **Twilio** | Raw API for custom builds, transactional, dev-first | - | [twilio.md](../../tools/integrations/twilio.md) |
-| **Plivo** | Twilio alternative, lower per-send cost | - | [plivo.md](../../tools/integrations/plivo.md) |
-| **AudienceTap** | AI-forward DTC, on-pack QR opt-in | - | [audiencetap.md](../../tools/integrations/audiencetap.md) |
-| **Brevo** | EU email + SMS, SMB-friendly | ✓ | [brevo.md](../../tools/integrations/brevo.md) |
-| **Customer.io** | Behavior-based SMS automation | - | [customer-io.md](../../tools/integrations/customer-io.md) |
+| Tool Category | Examples | Verify Before Use |
+|---------------|----------|-------------------|
+| Commerce suites | Klaviyo, Postscript, Attentive | Store integration, consent, attribution |
+| Messaging APIs | Twilio, Plivo | Number registration, throughput, callbacks |
+| Lifecycle platforms | Brevo, Customer.io | Regional coverage, orchestration, suppression |
+| Specialized DTC | AudienceTap | Capture method, consent record, carrier coverage |
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **emails**: Sister channel — almost always run together. Email carries the long-form content; SMS carries the urgent nudges.
-- **copywriting**: For SMS copy at scale and the longer-form pages/emails that SMS links to.
-- **popups**: For phone number capture popups on-site.
-- **churn-prevention**: For win-back flows that combine SMS + email.
-- **onboarding**: For post-signup SMS milestone nudges.
-- **analytics**: For attribution and RPS measurement.
-- **ab-testing**: For SMS-specific test design.
-- **lead-magnets**: For incentivizing opt-in (the "10% off for joining" offer).
+- Do not send or schedule messages, import or purchase lists, register numbers,
+  change carrier settings, or mutate consent records without verified live
+  state and explicit approval.
+- Do not treat this skill as legal advice or claim compliance. Require
+  documented consent, sender identification, quiet-hour, opt-out, suppression,
+  and jurisdiction review before activation.
+- Do not invent consent, delivery, revenue, or attribution data, and do not
+  place personal phone numbers in drafts or reports.
+
+## Routing
+
+- Use `suede-emails` for the email side of a coordinated lifecycle program.
+- Use `suede-site-alchemy` for phone-number capture experiences.
+- Use `suede-churn-prevention` for approved win-back strategy.
+- Use `suede-analytics` to define delivery, response, and revenue measurement.

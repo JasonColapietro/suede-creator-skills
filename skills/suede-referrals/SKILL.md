@@ -1,13 +1,16 @@
 ---
 name: suede-referrals
-description: "Turn customers into a channel: referral mechanics, incentive design that does not attract fraud, affiliate structure, and viral loop math. Use when the user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' 'partner program,' 'referral incentive,' 'how to get referrals,' 'customers referring customers,' or 'affiliate payout.' Use this whenever someone wants existing users or partners to bring in new customers. For launch-specific virality, see suede-launch-packaging."
+description: "Suede-owned referral and affiliate program discipline. Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift."
 metadata:
   version: 2.0.0
 ---
 
-# Referral & Affiliate Programs
+# Suede Referral & Affiliate Programs
 
-You are an expert in viral growth and referral marketing. Your goal is to help design and optimize programs that turn customers into growth engines.
+Suede Referrals designs measurable customer, affiliate, and partner loops from
+incentive economics through attribution and fraud controls. It separates
+modeled loop performance from observed results and keeps activation and payouts
+behind approval.
 
 ## Before Starting
 
@@ -235,23 +238,34 @@ They get [their reward] too.
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key tools for referral programs:
+These are evaluation examples, not guaranteed integrations. Verify current
+vendor documentation, pricing, account access, attribution behavior, payout
+controls, tax support, and data-export terms before recommending a platform.
 
-| Tool | Best For | Guide |
-|------|----------|-------|
-| **Rewardful** | Stripe-native affiliate programs | [rewardful.md](../../tools/integrations/rewardful.md) |
-| **Tolt** | SaaS affiliate programs | [tolt.md](../../tools/integrations/tolt.md) |
-| **Mention Me** | Enterprise referral programs | [mention-me.md](../../tools/integrations/mention-me.md) |
-| **Dub.co** | Link tracking and attribution | [dub-co.md](../../tools/integrations/dub-co.md) |
-| **Stripe** | Payment processing (for commission tracking) | [stripe.md](../../tools/integrations/stripe.md) |
-| **Introw** | Channel partner programs with tiers, deal registration, QBRs | [introw.md](../../tools/integrations/introw.md) |
-| **PartnerStack** | Enterprise partner and affiliate programs | [partnerstack.md](../../tools/integrations/partnerstack.md) |
+| Tool | Best For | Verify Before Use |
+|------|----------|-------------------|
+| **Rewardful / Tolt** | SaaS affiliate programs | Billing integration, attribution, payouts |
+| **Mention Me** | Enterprise referral programs | Identity, fraud, and reporting controls |
+| **Dub.co** | Link tracking and attribution | Attribution window and privacy settings |
+| **Stripe** | Commission-related payment records | Live objects, fees, approvals, tax workflow |
+| **Introw** | Tiered channel partner operations | Deal registration and payout governance |
+| **PartnerStack** | Enterprise partner ecosystems | Fees, attribution, approval, data export |
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **launch**: For launching referral program effectively
-- **emails**: For referral nurture campaigns
-- **marketing-psychology**: For understanding referral motivation
-- **analytics**: For tracking referral attribution
+- Do not enable a program, create affiliate accounts, issue links, execute
+  payouts, or change billing and commission objects without verified live state
+  and explicit approval.
+- Do not invent attribution, conversion, fraud, or viral-coefficient results;
+  distinguish modeled economics from observed data.
+- Do not decide tax, labor, privacy, contest, endorsement, or incentive
+  compliance. Surface the jurisdiction-specific review needed before launch.
+
+## Routing
+
+- Use `suede-launch-packaging` to coordinate the approved program launch.
+- Use `suede-emails` for referral invitation and nurture sequences.
+- Use `suede-marketing-psychology` to test incentive framing.
+- Use `suede-analytics` to define and read referral attribution.

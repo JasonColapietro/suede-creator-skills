@@ -2,6 +2,13 @@
 
 Tool selection guide for prospecting across all three branches.
 
+Named products are candidates, not assumed integrations or endorsements.
+Before use, discover what is currently callable, authenticated, authorized, and
+permitted; read current official documentation and account terms. Treat vendor
+coverage, accuracy, limits, pricing, and feature claims as unverified until a
+dated source or current sample supports them. If no tool is available, use a
+manual, source-linked research worksheet or a user-supplied export.
+
 ---
 
 ## Tool selection by goal
@@ -9,11 +16,11 @@ Tool selection guide for prospecting across all three branches.
 | Goal | Primary tools | Notes |
 |------|--------------|-------|
 | **Build initial firmographic list (B2B / SaaS)** | Apollo, ZoomInfo, Clay | Apollo for breadth, ZoomInfo for enterprise + intent, Clay for custom workflows |
-| **Decision-maker mapping** | LinkedIn Sales Navigator (manual), Apollo, ZoomInfo | Sales Nav is the gold standard. Never bulk scrape it. |
+| **Decision-maker mapping** | LinkedIn Sales Navigator (manual), Apollo, ZoomInfo | Compare current coverage on a representative sample. Never bulk scrape restricted sources. |
 | **Tech stack qualification (SaaS)** | BuiltWith, Wappalyzer | BuiltWith has wider coverage + paid plans for bulk; Wappalyzer is lighter + free for small use |
 | **Funding signals (SaaS)** | Crunchbase, Pitchbook | Crunchbase free tier sufficient for early signals; Pitchbook for deeper investor data |
 | **Email pattern discovery** | Hunter, Snov, Apollo | Pattern guessing — followed by verification |
-| **Email deliverability verification** | Truelist, Hunter, NeverBounce, ZeroBounce | Always verify before adding to outreach lists |
+| **Email deliverability verification** | Any currently authorized validator | Read current result semantics; otherwise label addresses unverified and use a manual handoff |
 | **Visitor identification (warm intent)** | RB2B, Clearbit Reveal | Anonymous traffic → company identification |
 | **Intent data** | ZoomInfo Intent, 6sense, Bombora | Pre-warmed signals; mid-market+ pricing |
 | **Trigger event monitoring** | Google Alerts, Feedly, LinkedIn Sales Nav alerts | Free options are sufficient for most |
@@ -23,20 +30,22 @@ Tool selection guide for prospecting across all three branches.
 
 ## Apollo
 
-**Use for**: General B2B / SaaS firmographic + contact data. Best starting point if you don't already have a list.
+**Candidate use**: General B2B / SaaS firmographic and contact discovery when a
+current sample supports coverage for the target market.
 
 **Strengths**:
-- Large database (>200M contacts, >60M companies)
-- Strong filtering UI (industry, size, technologies, signals)
-- Integrated email + LinkedIn finder
-- Pay-as-you-go and tiered plans
+- Coverage breadth to verify on the target geography and segment
+- Firmographic and signal filters to verify on the current account
+- Contact-discovery fields with explicit provenance
+- Current export, quota, and pricing terms
 
 **Watch out for**:
 - Data freshness varies — re-verify before scoring as "Hot"
-- Email accuracy ~60–80% — always validate
+- Email accuracy varies by segment and date — validate on a current sample
 - Bulk export limits apply
 
-**Integration**: see [apollo.md](../../../tools/integrations/apollo.md)
+**Verification**: confirm Apollo's current documentation, account access,
+freshness, export limits, and terms before use.
 
 ---
 
@@ -46,16 +55,18 @@ Tool selection guide for prospecting across all three branches.
 
 **Strengths**:
 - Waterfall logic: try Apollo first → fallback to ZoomInfo → fallback to Clearbit
-- 100+ data provider integrations
-- AI-powered enrichment (LLM-driven extraction from URLs)
+- Current provider set and field-level provenance
+- Any automated extraction behavior, source traceability, and review controls
 - Custom columns + scoring formulas
-- Native MCP server
+- Connector availability varies; discover the current session and verify
+  authorization before use
 
 **Watch out for**:
 - Per-credit pricing can spike on large lists
 - Complexity overhead — easy to over-engineer workflows
 
-**Integration**: see [clay.md](../../../tools/integrations/clay.md)
+**Verification**: confirm Clay's current providers, credit model, field
+provenance, account access, and terms before use.
 
 ---
 
@@ -66,15 +77,17 @@ Tool selection guide for prospecting across all three branches.
 **Strengths**:
 - Enterprise-grade firmographic depth
 - Intent signals (companies searching topics relevant to your offer)
-- Best-in-class for >$50K ACV B2B sales
-- Native MCP server
+- Fit for the target segment and deal size must be tested
+- Connector availability varies; discover the current session and verify
+  authorization before use
 
 **Watch out for**:
-- Expensive ($15K+/yr starter)
+- Pricing and contract structure require current written verification
 - Overkill for SMB prospecting
 - Locked into multi-year contracts typically
 
-**Integration**: see [zoominfo.md](../../../tools/integrations/zoominfo.md)
+**Verification**: confirm ZoomInfo licensing, export rights, signal freshness,
+account access, and terms before use.
 
 ---
 
@@ -89,10 +102,11 @@ Tool selection guide for prospecting across all three branches.
 - API-first
 
 **Watch out for**:
-- HubSpot acquisition (2023) — bundled into HubSpot Breeze Intelligence now
-- Standalone API still available but pricing/access depends on tier
+- Product ownership, packaging, API availability, and tier access can change;
+  verify them in current official documentation
 
-**Integration**: see [clearbit.md](../../../tools/integrations/clearbit.md)
+**Verification**: confirm the current Clearbit product surface, account access,
+coverage, and terms before use.
 
 ---
 
@@ -103,18 +117,21 @@ Tool selection guide for prospecting across all three branches.
 **Hunter strengths**:
 - Domain-based email discovery
 - Built-in deliverability verification
-- Free tier reasonable for occasional use
+- Current free or paid quota may support occasional use; verify first
 
 **Snov strengths**:
 - Email finder + drip campaigns (overlap with outreach tooling)
 - Bulk verification
-- Cheaper than Hunter at scale
+- Compare current total cost at the intended volume
 
 **Watch out for**:
 - Both are pattern-guessing tools — accuracy depends on the target company's email pattern being inferable
-- Always run results through a dedicated validator (Truelist or similar) before outreach
+- Use a currently callable, authorized validator when available and read its
+  result semantics. Otherwise label results `unverified` and keep them out of
+  send-ready exports.
 
-**Integrations**: see [hunter.md](../../../tools/integrations/hunter.md), [snov.md](../../../tools/integrations/snov.md)
+**Verification**: confirm Hunter or Snov access, current result semantics,
+verification quality, quotas, and terms before use.
 
 ---
 
@@ -126,24 +143,28 @@ Tool selection guide for prospecting across all three branches.
 - Single-email sync verification (`/api/v1/verify_inline`) + bulk async (`/api/v1/verify`)
 - Returns `email_state` (ok / email_invalid / risky / unknown / accept_all) + `email_sub_state` (email_ok / is_disposable / is_role / unknown_error / failed_smtp_check) + did-you-mean typo suggestions
 - Catches catch-all domains, role accounts, spam traps, disposable providers
-- Official MCP server for agent-driven workflows (Claude, Cursor, VS Code)
-- Official SDKs in 7 languages + framework integrations (Django, Laravel, Next.js, Rails, React, Svelte, Vue, WordPress)
-- Native integrations with Mailchimp, Klaviyo, HubSpot, Zapier, Make, n8n, Clay, Salesforce, more
-- Pay-per-email pricing
+- API or connector availability must be confirmed from current vendor
+  documentation and the current session
+- SDKs, integrations, and pricing must be verified from current documentation
 
-**Why this matters**: Cold email reputation craters when bounce rates exceed 2%. Validating before sending is non-negotiable. Apollo/ZoomInfo/Hunter data is often 60–80% accurate — Truelist catches the rest.
+**Why this matters**: Unverified addresses can damage sender reputation and
+create compliance risk. Define an approved bounce threshold with the sending
+provider, validate current samples, and quarantine unknown or risky results.
+Do not assume one verifier catches every invalid address.
 
-**Integration**: see [truelist.md](../../../tools/integrations/truelist.md)
+**Verification**: confirm Truelist's current result semantics, account access,
+API limits, and vendor documentation before use.
 
 ---
 
 ## LinkedIn Sales Navigator
 
-**Use for**: Manual decision-maker discovery. The gold standard for B2B / SaaS prospecting but only when used as a research tool.
+**Candidate use**: Manual decision-maker discovery when current account access,
+terms, and a representative sample support it.
 
 **Strengths**:
-- Most accurate decision-maker data in the industry
-- Real-time job changes, posts, signals
+- Decision-maker coverage and freshness to test on the target segment
+- Job-change, post, and signal fields to verify before use
 - Lead lists, alerts, saved searches
 - Inmail credits (separate channel from cold email)
 
@@ -152,7 +173,8 @@ Tool selection guide for prospecting across all three branches.
 - Use Sales Nav as a research interface — open profiles, read, take notes, capture key data manually.
 - Apollo and other tools claim LinkedIn data via partnerships / public mirroring — verify the source legitimacy before assuming compliance.
 
-**Integration**: no MCP or API access at consumer level. Manual research only.
+**Access rule**: default to manual research unless a currently callable,
+authorized connector is discovered and its terms permit this use.
 
 ---
 
@@ -194,18 +216,23 @@ Cross-reference both for high-confidence tech stack signals.
 **Use for**: Developer-intent prospecting. Especially powerful for dev-tool SaaS — stargazers of competitor or category-defining repos are in-market signal.
 
 **Strengths**:
-- Public API, no scraping concerns
+- Public API may be available; confirm current authentication, rate limits,
+  fields, privacy constraints, and terms
 - High signal quality (a starred repo = explicit interest)
 - Forks are an even stronger signal (intent to modify, not just bookmark)
-- Bundled `github-prospects.js` CLI handles pagination + enrichment + CSV output
-- Free with 5,000 req/hr authenticated rate limit
+- No GitHub extraction CLI ships with this skill. Use a currently callable,
+  authorized connector/API or a user-supplied export; otherwise provide a
+  manual collection worksheet.
 
 **Watch out for**:
-- Only ~5–20% of users publish email — pair with Apollo/Clay/Hunter for enrichment
-- Very-popular repos (100K+ stars) are mostly noise; smaller targeted repos (5K–25K) give better signal density
+- Public contact coverage varies by cohort and must be measured rather than
+  assumed; never infer or fabricate private addresses
+- Define repository relevance from product fit and a sampled signal-quality
+  review, not a universal star-count band
 - Most prospects are individuals, not company contacts directly — need to figure out their company from `company` field or LinkedIn
 
-**Integration**: see [github.md](../../../tools/integrations/github.md)
+**Verification**: confirm GitHub's current API documentation, authentication,
+rate limits, and applicable terms before use.
 
 ---
 
@@ -216,14 +243,17 @@ Cross-reference both for high-confidence tech stack signals.
 ### Firecrawl
 
 - **Best for**: "Just give me the page as markdown" — Local SMB website status checks, B2B company about/team page extraction, structured field extraction
-- **Strengths**: Low overhead, returns clean LLM-ready markdown, handles most JS-rendered sites, has an MCP server
-- **API + MCP + SDKs**: Node, Python, Go, Rust
+- **Strengths to verify**: source extraction and structured output for
+  individual public sites
+- **Access**: discover whether an authorized API, connector, or manual browser
+  is currently available
 
 ### Browserbase
 
 - **Best for**: When you need real Chromium — JS-heavy pages, cookie consent dialogs, form submission to reach a contact page, session state
 - **Strengths**: Full browser control via Playwright/Puppeteer; Stagehand provides AI-friendly natural-language extraction; session recordings for debugging
-- **API + MCP (Stagehand) + SDKs**: Node, Python
+- **Access**: discover whether an authorized browser, API, or connector is
+  currently available
 
 ### Critical compliance line
 
@@ -234,7 +264,8 @@ Both tools can technically point at any URL. The hard rule:
 
 Discovery happens on platforms (manual browser-assisted research). Extraction happens on individual public business sites.
 
-**Integrations**: see [firecrawl.md](../../../tools/integrations/firecrawl.md), [browserbase.md](../../../tools/integrations/browserbase.md)
+**Verification**: confirm current Firecrawl or Browserbase documentation,
+session access, pricing, and target-site terms before use.
 
 ---
 
@@ -251,19 +282,22 @@ Discovery happens on platforms (manual browser-assisted research). Extraction ha
 - Privacy/GDPR considerations — verify your privacy policy disclosures
 - Person-level identification raises higher concerns than company-level
 
-**Integration**: see [rb2b.md](../../../tools/integrations/rb2b.md)
+**Verification**: confirm RB2B's current identification grain, account access,
+privacy requirements, and terms before use.
 
 ---
 
 ## Free / browser-only fallbacks
 
-When the user has no paid tools, lean on:
+When the user has no callable or paid tools, give them a manual checklist using:
 
 - **Google Search** — exact business name + city + role searches
 - **LinkedIn** (manual, no scraping) — company pages, employee lookups
-- **Crunchbase free tier** — funding events
+- **Crunchbase or another current source** — funding events, when access and
+  terms are verified
 - **Wappalyzer browser extension** — tech stack at a glance
-- **Hunter.io free tier** — 25 lookups/month
+- **Authorized contact-data source** — verify current allowance, terms, and
+  permitted use before each run
 - **Google Maps** — for Local SMB discovery
 - **Business websites + About pages** — primary source for any claim
 - **News sites + press releases** — trigger event monitoring via Google Alerts
@@ -281,7 +315,8 @@ A typical full-stack prospecting workflow:
 3. **Enrich** with Clay (waterfall: tech stack, funding, trigger events)
 4. **Decision-maker mapping** in LinkedIn Sales Nav (manual)
 5. **Email pattern discovery** with Hunter or Apollo's built-in
-6. **Email validation** with Truelist before final list
-7. **Hand off** to cold-email skill for outreach copy
+6. **Email status** from an authorized validator, or an explicit `unverified`
+   label plus a user-operated validation handoff
+7. **Hand off** to `suede-cold-email` for outreach copy
 
 Adapt this sequence based on which tools the user actually has.

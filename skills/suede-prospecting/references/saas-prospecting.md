@@ -18,7 +18,8 @@ Beyond standard firmographics (industry, size, geography), SaaS prospects are qu
 ### Growth signals
 
 - **Funding round** — Series A / B / C in last 6 months = budget + new hires + tool needs
-- **Headcount growth** — 10%+ growth in last quarter signals scaling pressure
+- **Headcount growth** — a material, recently verified change can indicate
+  scaling pressure; compare it with the company's baseline
 - **Hiring signals** — specific role openings (e.g., "Head of RevOps" → ICP for revops tooling)
 - **Product velocity** — frequent shipping, new features, blog posts = healthy growth motion
 - **Open positions for your buyer's role** — if you sell to Marketing Ops and they're hiring one, that's a signal
@@ -39,7 +40,8 @@ Combine 2+ sources for cross-verification.
 ### Tier 1 — primary discovery
 
 - **Apollo**: firmographic + technographic + contact data. Good for building large initial lists.
-- **Clay**: waterfall enrichment, custom scoring, multi-source merges. Best for high-quality smaller lists.
+- **Clay**: candidate for waterfall enrichment, custom scoring, and
+  multi-source merges; test quality and cost on the intended list
 - **ZoomInfo**: enterprise-grade firmographic + intent signals. Expensive; mid-market+.
 - **LinkedIn Sales Navigator**: decision-maker mapping. Use manually, never bulk scrape.
 
@@ -56,21 +58,31 @@ Combine 2+ sources for cross-verification.
 
 - **Job boards** (LinkedIn Jobs, Indeed, AngelList): role openings as signals
 - **RB2B / Clearbit Reveal**: visitor identification (warm anonymous traffic)
-- **GitHub stars/forks of competitor or adjacent repos**: developer-level intent signal (see `tools/integrations/github.md` and the `github-prospects.js` CLI). Especially strong for dev-tool SaaS — a developer who starred `vercel/next.js` last week is in-market for adjacent Next.js infrastructure.
+- **GitHub stars/forks of competitor or adjacent repos**: a possible
+  developer-level intent signal when the current GitHub API and account access
+  lawfully expose it. Confirm rate limits, source date, company mapping, and
+  terms; a star alone indicates attention, not purchase intent.
 - **Recent blog posts / changelog**: product direction signals
 - **G2 reviews mentioning competitor switches**: explicit dissatisfaction signal
 
 #### GitHub prospecting pattern (when audience is developers)
 
-For dev-tool SaaS, GitHub is one of the highest-quality discovery channels:
+For dev-tool SaaS, GitHub can supply an attention signal when current API or
+manual access is authorized:
 
-1. Identify 3–5 "anchor" repos: your direct competitors, your category leader, complementary tools your buyer uses
-2. Pull stargazers (or forks for stronger intent) via `node tools/clis/github-prospects.js stargazers <owner/repo> --enrich --with-company --format csv`
-3. Filter to users with `company` set — these are the easiest to enrich downstream
-4. Pair with Apollo/Clay/Hunter to lookup email by name + company
-5. Validate with Truelist before adding to outreach list
+1. Identify 3–5 anchor repositories: direct competitors, category leaders, and
+   complementary tools.
+2. Discover whether an authenticated GitHub API, approved export, or manual
+   repository view is currently available; confirm rate limits and terms.
+3. Review only the public fields needed for the stated business purpose.
+4. Map company affiliation only when a current public source supports it.
+5. Treat a star or fork as attention, not purchase intent; require another
+   recent work-context signal before qualification.
+6. Validate any approved contact channel with a currently available validator,
+   or provide a manual validation checklist.
 
-Tradeoffs: GitHub yields email for only ~5–20% of users directly. The strength is the signal quality — a stargazer of a niche dev tool is genuinely in-market in a way Apollo firmographics alone can't tell you.
+If no authorized API or browser is available, ask for repository URLs or an
+export and use a manual review worksheet.
 
 ---
 
@@ -103,12 +115,16 @@ For chat table, condense to: Score | Company | Industry | Size | Signal | Contac
 
 ## Top Outreach Targets Selection (SaaS)
 
-Prioritize for the top 3–5 hot leads:
+Prioritize a bounded review set when the evidence supports it:
 
-1. **Strongest signal recency** — funding 30 days ago beats funding 9 months ago
-2. **Tech stack match strength** — known integration partner beats inferred fit
-3. **Decision-maker named with verified email** — beats role-pattern-guessed email
-4. **Multi-source confidence** — both Apollo + Crunchbase agree beats one source
+1. **Signal recency** — compare current and older signals without assuming a
+   universal expiry window
+2. **Tech stack match strength** — prefer cited current compatibility over
+   inferred fit
+3. **Decision-maker evidence** — distinguish confirmed professional contacts
+   from role-pattern guesses
+4. **Source confidence** — prefer independent current corroboration over a
+   single vendor record
 
 Each top target gets a one-sentence outreach rationale that names the specific signal: "Raised Series B 30 days ago; hiring Head of RevOps; verified VP of Ops email."
 
@@ -120,4 +136,5 @@ Each top target gets a one-sentence outreach rationale that names the specific s
 2. **Treating tech stack data as 100% accurate**. BuiltWith and Wappalyzer miss things; Clay's waterfalls miss things. Cross-check.
 3. **Targeting Series C+ for early-stage SaaS sellers**. The buyer profile is wrong — too many procurement hoops, too much red tape.
 4. **Targeting Series Pre-Seed seed** for products requiring meaningful budget. They have neither budget nor evaluator bandwidth.
-5. **Ignoring intent data when it exists** (ZoomInfo Intent, 6sense, etc.) — pre-warm signals beat cold every time.
+5. **Treating intent data as proof** — verify freshness, provenance, grain, and
+   predictive value on the target segment before changing priority.

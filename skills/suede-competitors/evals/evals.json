@@ -1,5 +1,5 @@
 {
-  "skill_name": "competitors",
+  "skill_name": "suede-competitors",
   "evals": [
     {
       "id": 1,
@@ -81,10 +81,10 @@
     {
       "id": 6,
       "prompt": "I need to create a battle card for our sales team comparing us to Zendesk. It should help reps handle competitive objections during sales calls.",
-      "expected_output": "Should recognize this as internal sales enablement material, not a public comparison page. Should defer to or cross-reference the sales-enablement skill, which handles battle cards, objection handling docs, and internal competitive collateral. May provide some competitive positioning advice but should make clear that sales-enablement is the right skill for internal sales materials.",
+      "expected_output": "Should recognize this as internal sales enablement material, not a public comparison page. Should defer to or cross-reference suede-sales-enablement, which handles battle cards, objection handling docs, and internal competitive collateral. May provide some competitive positioning advice but should make clear that suede-sales-enablement is the right skill for internal sales materials.",
       "assertions": [
         "Recognizes this as internal sales enablement material",
-        "References or defers to sales-enablement skill",
+        "References or defers to suede-sales-enablement",
         "Does not attempt to create internal battle card using public comparison page patterns"
       ],
       "files": []

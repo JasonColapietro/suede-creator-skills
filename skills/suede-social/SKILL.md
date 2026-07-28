@@ -1,13 +1,16 @@
 ---
 name: suede-social
-description: "Run social as a channel rather than a chore: platform strategy, content formats that travel, posting cadence, engagement, and listening. Use when the user is planning social media strategy, content, or cadence for a brand or founder account. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' 'viral content,' 'what should I post,' 'repurpose this content,' 'tweet ideas,' 'LinkedIn carousel,' 'social media strategy,' 'grow my following,' 'TikTok video,' 'Reels,' 'Shorts,' 'video script,' 'video hook,' 'short-form video,' 'create a reel,' 'social listening,' 'brand mentions,' 'competitor monitoring,' 'top posts to comment on,' 'find people asking for,' 'carousel,' 'slide-by-slide,' or 'document post.' Use this for social media content creation, repurposing, scheduling, short-form video scripting, and social listening. For broader content strategy, see suede-content-strategy. For paid ads, see suede-ad-creative."
+description: "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, carousels, short-form scripts, calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval."
 metadata:
   version: 2.2.0
 ---
 
-# Social Content
+# Suede Organic Social
 
-You are an expert social media strategist. Your goal is to help create engaging content that builds audience, drives engagement, and supports business goals.
+Suede Social turns verified product context and live platform evidence into
+organic posts, threads, carousels, short-form scripts, listening briefs, and
+content calendars. It distinguishes creation from account action and keeps every
+publish or engagement step behind exact-content approval.
 
 ## Before Creating Content
 
@@ -40,13 +43,19 @@ Gather this context (ask if not provided):
 
 ## Platform Quick Reference
 
-| Platform | Best For | Frequency | Key Format |
-|----------|----------|-----------|------------|
-| LinkedIn | B2B, thought leadership | 3-5x/week | Carousels, stories |
-| Twitter/X | Tech, real-time, community | 3-10x/day | Threads, hot takes |
-| Instagram | Visual brands, lifestyle | 1-2 posts + Stories daily | Reels, carousels |
-| TikTok | Brand awareness, younger audiences | 1-4x/day | Short-form video |
-| Facebook | Communities, local businesses | 1-2x/day | Groups, native video |
+Treat these as format hypotheses, not universal reach or frequency rules.
+Before setting cadence, read current official platform guidance plus the
+account's last 30–90 days of impressions, retention, saves, replies, follows,
+and production capacity. Start with the lowest cadence that can sustain quality,
+then change one variable at a time.
+
+| Platform | Common Fit Hypothesis | Formats to Test |
+|----------|-----------------------|-----------------|
+| LinkedIn | B2B, professional expertise | Text posts, documents, stories |
+| Twitter/X | Real-time expertise and community | Short posts, threads, replies |
+| Instagram | Visual brands and creator narratives | Reels, carousels, Stories |
+| TikTok | Native short-form storytelling | Vertical video, series, replies |
+| Facebook | Communities and local audiences | Groups, posts, native video |
 
 **For detailed platform strategies**: See [references/platforms.md](references/platforms.md)
 
@@ -56,17 +65,22 @@ Gather this context (ask if not provided):
 
 ## Content Pillars Framework
 
-Build your content around 3-5 pillars that align with your expertise and audience interests.
+Start with 3–5 pillars only when that range fits the account's expertise,
+audience coverage, and production capacity. Merge or expand after the first
+review cycle based on current results.
 
 ### Example for a SaaS Founder
 
-| Pillar | % of Content | Topics |
-|--------|--------------|--------|
-| Industry insights | 30% | Trends, data, predictions |
-| Behind-the-scenes | 25% | Building the company, lessons learned |
-| Educational | 25% | How-tos, frameworks, tips |
-| Personal | 15% | Stories, values, hot takes |
-| Promotional | 5% | Product updates, offers |
+| Pillar | Starting Share Hypothesis | Topics |
+|--------|---------------------------|--------|
+| Industry insights | 20–30% | Trends, data, predictions |
+| Behind-the-scenes | 20–30% | Building the company, lessons learned |
+| Educational | 20–30% | How-tos, frameworks, tips |
+| Personal | 10–20% | Stories, values, informed opinions |
+| Promotional | 0–10% | Product updates, offers |
+
+These ranges are a first content-mix test, not a universal formula. Reallocate
+from qualified audience response and business outcomes.
 
 ### Pillar Development Questions
 
@@ -111,13 +125,14 @@ The first line determines whether anyone reads the rest.
 
 ## Content Repurposing System
 
-Turn one piece of content into many. The best social content isn't created from scratch — it's extracted from longer-form pillar content and adapted to each platform.
+Test whether one approved source can yield several useful, distinct assets
+without stretching the evidence or repeating the same point.
 
 ### Blog Post → Social Content
 
 | Platform | Format |
 |----------|--------|
-| LinkedIn | Key insight + link in comments |
+| LinkedIn | Key insight with link placement tested against current guidance and account results |
 | LinkedIn | Carousel of main points |
 | Twitter/X | Thread of key takeaways |
 | Instagram | Carousel with visuals |
@@ -127,8 +142,8 @@ Turn one piece of content into many. The best social content isn't created from 
 
 Extract "content atoms" — self-contained moments from any long-form content that work on their own:
 
-| Atom Type | What to Look For | Best Platform |
-|-----------|-----------------|---------------|
+| Atom Type | What to Look For | Candidate Formats to Test |
+|-----------|-----------------|---------------------------|
 | Quotable moment | A bold claim, hot take, or memorable line (15-60 sec) | Twitter/X, LinkedIn, TikTok |
 | Story arc | A complete mini-story with setup, conflict, resolution (60-90 sec) | Instagram Reels, TikTok, YouTube Shorts |
 | Tactical tip | A specific how-to or framework explained clearly (30-60 sec) | LinkedIn, YouTube Shorts |
@@ -141,10 +156,13 @@ Extract "content atoms" — self-contained moments from any long-form content th
 2. **Mark timestamps** — flag the 5-10 best moments while listening or scanning transcript
 3. **Extract clips** — pull video/audio clips for each moment (Descript, Opus Clip, or manual)
 4. **Write standalone captions** — each clip needs context; don't assume the viewer heard the rest
-5. **Add subtitles** — most social video is watched without sound
-6. **Schedule across 1-2 weeks** — spread a single episode across multiple posts
+5. **Add subtitles** — make the clip accessible without assuming a universal
+   sound-off rate
+6. **Plan a distribution test** — choose timing from current cadence, source
+   volume, approval capacity, and account evidence
 
-**Per episode, aim for:**
+**Starting extraction hypothesis, only when the source supports enough distinct
+moments and the team can review them:**
 - 3-5 short video clips or audiograms (15-60 sec) for Reels/TikTok/Shorts
 - 1-2 LinkedIn text posts from key insights
 - 1 Twitter/X thread of takeaways
@@ -176,44 +194,52 @@ Extract "content atoms" — self-contained moments from any long-form content th
 2. **Extract content atoms** (5-10 per piece — quotes, stories, tips, data)
 3. **Adapt to each platform** (format, length, and tone)
 4. **Write standalone captions** (each post must work without context)
-5. **Schedule across the week** (spread distribution, don't dump all at once)
-6. **Update and reshare** (evergreen content can repeat every 3-6 months)
+5. **Plan distribution** from current cadence and approval capacity
+6. **Test updates or reshares** only when current relevance and account evidence
+   support them
 
 ---
 
 ## Content Calendar Structure
 
-### Weekly Planning Template
+### Illustrative Planning Grid
 
-| Day | LinkedIn | Twitter/X | Instagram |
+Use this only as a worksheet shape. Fill cells from the approved platform
+hypotheses and production capacity; blank cells are valid.
+
+| Slot | LinkedIn | Twitter/X | Instagram |
 |-----|----------|-----------|-----------|
-| Mon | Industry insight | Thread | Carousel |
-| Tue | Behind-scenes | Engagement | Story |
-| Wed | Educational | Tips tweet | Reel |
-| Thu | Story post | Thread | Educational |
-| Fri | Hot take | Engagement | Story |
+| 1 | Industry insight | Thread | Carousel |
+| 2 | Behind-scenes | Reply draft | Story test |
+| 3 | Educational | Short post | Reel test |
 
-### Batching Strategy (2-3 hours weekly)
+### Batching Pilot
 
-1. Review content pillar topics
-2. Write 5 LinkedIn posts
-3. Write 3 Twitter threads + daily tweets
-4. Create Instagram carousel + Reel ideas
-5. Schedule everything
-6. Leave room for real-time engagement
+Set the timebox and output count from current capacity. A possible first pilot:
+
+1. Review content pillar topics.
+2. Draft one or two variants for each selected platform.
+3. Prepare only the approved asset concepts.
+4. Return the batch for exact-content review before scheduling or publishing.
 
 ---
 
 ## Engagement Strategy
 
-### Daily Engagement Routine (30 min)
+### Participation test (15–30 minute starting estimate)
 
-1. Respond to all comments on your posts (5 min)
-2. Comment on 5-10 posts from target accounts (15 min)
-3. Share/repost with added insight (5 min)
-4. Send 2-3 DMs to new connections (5 min)
+1. Triage relevant comments on owned posts.
+2. Draft 2–5 substantive replies to approved target-account posts.
+3. Draft at most one share or quote post when it adds sourced context.
+4. Draft a direct message only when the relationship and platform norms support
+   it; never send without exact-content and identity approval.
 
-**For surfacing *which* posts to comment on** (top-10 daily lists, brand/competitor monitoring, intent-signal triage), see [references/listening.md](references/listening.md). Includes a scoring rubric and curl recipes for Reddit, Hacker News, and Bluesky.
+Run this on 3–5 active days for two weeks only as a starting hypothesis. Compare
+qualified replies, profile visits, follows, and time cost with the prior period.
+
+**For surfacing *which* posts may merit a comment draft** (bounded ranked lists,
+brand/competitor monitoring, intent-signal triage), see
+[references/listening.md](references/listening.md).
 
 ### Quality Comments
 
@@ -224,8 +250,9 @@ Extract "content atoms" — self-contained moments from any long-form content th
 
 ### Building Relationships
 
-- Identify 20-50 accounts in your space
-- Consistently engage with their content
+- Build a bounded account set with explicit audience-fit reasons
+- Participate only when the post is relevant and the visible identity is
+  approved
 - Share their content with credit
 - Eventually collaborate (podcasts, co-created content)
 
@@ -237,17 +264,19 @@ Extract "content atoms" — self-contained moments from any long-form content th
 
 **Awareness:** Impressions, Reach, Follower growth rate
 
-**Engagement:** Engagement rate, Comments (higher value than likes), Shares/reposts, Saves
+**Engagement:** Engagement rate, comments, shares/reposts, saves; weight them
+according to the campaign objective rather than a universal hierarchy
 
 **Conversion:** Link clicks, Profile visits, DMs received, Leads attributed
 
-### Weekly Review
+### Review Interval
 
-- Top 3 performing posts (why did they work?)
-- Bottom 3 posts (what can you learn?)
+- Choose an interval that contains enough comparable posts; weekly is only a
+  starting estimate for active accounts.
+- Compare a higher- and lower-performing cohort and test why they differed.
 - Follower growth trend
 - Engagement rate trend
-- Best posting times (from data)
+- Timing patterns from current account data, with sample size and timezone
 
 ### Optimization Actions
 
@@ -255,13 +284,13 @@ Extract "content atoms" — self-contained moments from any long-form content th
 - Test new hooks
 - Post at different times
 - Try different formats
-- Increase engagement with others
+- Test a bounded participation routine
 
 **If reach is declining:**
-- Avoid external links in post body
-- Increase posting frequency
-- Engage more in comments
-- Test video/visual content
+- Compare link and no-link posts at similar account conditions
+- Test one cadence change within production capacity
+- Compare comments, text, document, image, and video formats against the account
+  baseline
 
 ---
 
@@ -271,7 +300,7 @@ Extract "content atoms" — self-contained moments from any long-form content th
 - Document your journey
 - Share what you're learning
 - Curate and comment on industry content
-- Engage heavily with established accounts
+- Test a capacity-bounded participation routine with relevant accounts
 
 ### When You're Stuck
 - Repurpose old high-performing content
@@ -291,20 +320,25 @@ Extract "content atoms" — self-contained moments from any long-form content th
 
 ### Queue Management
 
-- Maintain 1-2 weeks of scheduled content
-- Review queue weekly for relevance
+- Set queue depth from current news sensitivity, approval capacity, and account
+  cadence
+- Review the queue before publication and whenever material context changes
 - Leave gaps for spontaneous posts
 - Adjust timing based on performance data
 
 ---
 
-## Reverse Engineering Viral Content
+## Evidence-Based Content Pattern Analysis
 
-Instead of guessing, analyze what's working for top creators in your niche:
+Instead of guessing, analyze a lawful, recent sample from comparable accounts:
 
-1. **Find creators** — 10-20 accounts with high engagement
-2. **Collect data** — 500+ posts for analysis
-3. **Analyze patterns** — Hooks, formats, CTAs that work
+1. **Define comparables** — Similar audience, offer, account maturity, and
+   platform; record why each account belongs in the sample.
+2. **Collect a bounded sample** — Use only data the current platform and account
+   access lawfully expose. Set the count from available volume and stop when
+   another batch no longer changes the leading patterns.
+3. **Analyze patterns** — Compare hooks, formats, CTAs, reach, retention, saves,
+   and replies only where the platform exposes those measures.
 4. **Codify playbook** — Document repeatable patterns
 5. **Layer your voice** — Apply patterns with authenticity
 6. **Convert** — Bridge attention to business results
@@ -315,25 +349,35 @@ Instead of guessing, analyze what's working for top creators in your niche:
 
 ## Short-Form Video (TikTok, Reels, Shorts)
 
-Short-form video is the highest-reach format on every major platform. These frameworks apply whether you're creating for TikTok, Instagram Reels, or YouTube Shorts.
+Short-form video may be a useful discovery format when current platform
+guidance and account-level results support it. Verify that premise for the
+specific account before prioritizing it; the frameworks below organize a test,
+not a guaranteed reach outcome.
 
-### Platform Specs
+### Platform test specs
 
-| Platform | Optimal Length | Aspect Ratio | Key Difference |
-|----------|---------------|--------------|----------------|
-| TikTok | 15-60 sec | 9:16 | Trending sounds, raw/authentic feel |
-| Reels | 15-30 sec | 9:16 | Polished content, rewards saves/shares |
-| Shorts | 30-60 sec | 9:16 | YouTube SEO applies, searchable titles |
+Verify current official upload requirements and the authenticated composer
+before production. If account evidence is unavailable, use these as first-test
+ranges, not optimal lengths:
 
-### The 3-Second Rule
+| Platform | Starting Length Test | Starting Canvas | Evidence to Read |
+|----------|----------------------|-----------------|------------------|
+| TikTok | 15–60 seconds | 9:16 | Retention, completion, qualified actions |
+| Reels | 15–45 seconds | 9:16 | Retention, saves, shares, qualified actions |
+| Shorts | 20–60 seconds | 9:16 | Retention, rewatches, search and channel actions |
 
-You have 3 seconds to stop the scroll. Every video needs three simultaneous hooks:
+### Opening-hook hypothesis
+
+Test whether the first 1–3 seconds establish enough visual, verbal, or text
+context to retain the intended viewer. Use one or more hook modes as the concept
+requires; do not require all three without account evidence:
 
 ```
 [VISUAL HOOK] + [VERBAL HOOK] + [TEXT OVERLAY]
 ```
 
-All three should hit in the first second.
+Compare opening variants against the account's comparable-format retention
+baseline before standardizing the pattern.
 
 ### Video Structures
 
@@ -362,7 +406,9 @@ All three should hit in the first second.
 
 ### Caption & Subtitle Best Practices
 
-Captions increase watch time by 25-40%. Most social video is watched without sound.
+Use captions as an accessibility and comprehension default. Treat any watch-time
+lift or sound-off viewing rate as account-specific: verify it with current
+retention and audio metrics where the platform exposes them.
 
 - **MAX 2 lines** on screen at once
 - **3-5 words per line**
@@ -383,12 +429,15 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 
 ### Common Mistakes
 
-1. **Slow hooks** — don't build up to the point
-2. **No text overlay** — many watch without sound
-3. **Poor audio** — bad audio kills retention instantly
-4. **Too long** — if it can be shorter, make it shorter
-5. **No CTA** — tell viewers what to do
-6. **Ignoring comments** — engagement in first hour matters
+1. **Unclear opening** — test whether the premise is understood in the first
+   1–3 seconds
+2. **No accessible captions** — provide captions independent of sound-off-rate
+   assumptions
+3. **Unusable audio** — verify speech intelligibility on target devices
+4. **Unsupported length** — compare length bands against retention and the idea
+5. **Missing next step** — include a CTA only when the objective needs one
+6. **Unreviewed comments** — choose response priority from relevance and account
+   evidence, not a universal first-hour rule
 
 **For video hook formulas and scripting templates**: See [references/short-form-video.md](references/short-form-video.md)
 
@@ -405,9 +454,19 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **copywriting**: For longer-form content that feeds social
-- **launch**: For coordinating social with launches
-- **emails**: For nurturing social audience via email
-- **marketing-psychology**: For understanding what drives engagement
+- Do not publish, schedule, reply, follow, message, like, repost, or otherwise
+  act as an account without explicit approval of the exact content and visible
+  identity.
+- Do not invent performance, trends, quotes, audience sentiment, or account
+  access; distinguish observed platform evidence from hypotheses.
+- Do not impersonate people, scrape private spaces, evade platform rules, or
+  turn sensitive personal data into engagement material.
+
+## Routing
+
+- Use `suede-content-strategy` for the broader editorial system.
+- Use `suede-video` for full video generation and production.
+- Use `suede-ad-creative` for paid social concepts and variants.
+- Use `suede-analytics` for channel measurement and performance readback.

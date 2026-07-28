@@ -1,13 +1,13 @@
 ---
 name: suede-churn-prevention
-description: "Keep subscribers who are leaving and recover the ones you lose to billing: cancel flows, save offers, pause options, dunning for failed payments, and win-back sequences. Use when the user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments. Also use when the user mentions 'churn,' 'cancel flow,' 'offboarding,' 'save offer,' 'dunning,' 'failed payment recovery,' 'win-back,' 'retention,' 'exit survey,' 'pause subscription,' 'involuntary churn,' 'people keep canceling,' 'churn rate is too high,' 'how do I keep users,' or 'customers are leaving.' Use this whenever someone is losing subscribers or wants to build systems to prevent it. For post-cancel win-back email sequences, see suede-emails. For in-app upgrade paywalls, see suede-paywalls."
+description: "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics)."
 metadata:
   version: 2.0.0
 ---
 
-# Churn Prevention
+# Suede Churn Prevention
 
-You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention, and dunning strategies.
+Use this Suede retention playbook to reduce voluntary and involuntary churn through transparent cancel flows, bounded save offers, proactive signals, and payment recovery.
 
 ## Before Starting
 
@@ -360,7 +360,11 @@ Test one variable at a time:
 | Offer presentation (modal vs full page) | Full page gets more attention | Save rate |
 | Copy tone (empathetic vs direct) | Empathetic reduces friction | Save rate |
 
-**How to run cancel flow experiments:** Use the **ab-testing** skill to design statistically rigorous tests. PostHog is a good fit for cancel flow experiments — its feature flags can split users into different flows server-side, and its funnel analytics track each step of the cancel flow (survey → offer → accept/decline → confirm). See the [PostHog integration guide](../../tools/integrations/posthog.md) for setup.
+**How to run cancel flow experiments:** Route the hypothesis, sample, duration,
+and stopping rule to `suede-ab-testing`. Use an authorized experimentation
+system that can assign users consistently and read each funnel step (survey →
+offer → accept/decline → confirm). Verify the system's current official
+implementation guidance, assignment behavior, and event readback before launch.
 
 ---
 
@@ -381,44 +385,39 @@ Test one variable at a time:
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md).
+This pack does not ship retention, billing, or analytics connectors. Select an
+authorized system from the user's actual stack and verify its current official
+documentation, account plan, test mode, and rollback path before configuration.
 
-### Retention Platforms
+### Capability Checklist
 
-| Tool | Best For | Key Feature |
-|------|----------|-------------|
-| **Churnkey** | Full cancel flow + dunning | AI-powered adaptive offers, 34% avg save rate |
-| **ProsperStack** | Cancel flows with analytics | Advanced rules engine, Stripe/Chargebee integration |
-| **Raaft** | Simple cancel flow builder | Easy setup, good for early-stage |
-| **Chargebee Retention** | Chargebee customers | Native integration, was Brightback |
+- Cancel-flow routing, survey capture, and an unobstructed final cancel action
+- Stable experiment assignment and step-level event readback
+- Pause, downgrade, and save-offer rules with explicit eligibility
+- Payment-retry state, card-updater state, and customer-notification controls
+- Audit history, test mode, role controls, and rollback or disable behavior
 
-### Billing Providers (Dunning)
+### Implementation Routing
 
-| Provider | Smart Retries | Dunning Emails | Card Updater |
-|----------|:------------:|:--------------:|:------------:|
-| **Stripe** | Built-in (Smart Retries) | Built-in | Automatic |
-| **Chargebee** | Built-in | Built-in | Via gateway |
-| **Paddle** | Built-in | Built-in | Managed |
-| **Recurly** | Built-in | Built-in | Built-in |
-| **Braintree** | Manual config | Manual | Via gateway |
-
-### Related CLI Tools
-
-| Tool | Use For |
-|------|---------|
-| `stripe` | Subscription management, dunning config, payment retries |
-| `customer-io` | Dunning email sequences, retention campaigns |
-| `posthog` | Cancel flow A/B tests via feature flags, funnel analytics |
-| `mixpanel` / `ga4` | Usage tracking, churn signal analysis |
-| `segment` | Event routing for health scoring |
+- Route message writing to `suede-emails`.
+- Route event schemas and readback to `suede-analytics`.
+- Route test design to `suede-ab-testing`.
+- Treat billing retries, discounts, subscription changes, and activation as
+  separately authorized mutations.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **emails**: For win-back email sequences after cancellation
-- **paywalls**: For in-app upgrade moments and trial expiration
-- **pricing**: For plan structure and annual discount strategy
-- **onboarding**: For activation to prevent early churn
-- **analytics**: For setting up churn signal events
-- **ab-testing**: For testing cancel flow variations with statistical rigor
+- Do not obstruct cancellation, hide downgrade paths, manufacture urgency, or use deceptive retention friction.
+- Do not change subscriptions, retry rules, discounts, billing objects, or customer messaging without explicit authorization.
+- Do not claim saved revenue or churn reduction without a defined cohort, window, denominator, and verified payment state.
+- Do not decide which individual customer should receive a sensitive offer from protected traits or unsupported inference.
+
+## Routing
+
+- Need retention, dunning, or win-back messages -> use `suede-emails`.
+- Need plan structure or offer economics -> use `suede-pricing` or `suede-offers`.
+- Need paywall or trial-expiry UX -> use `suede-paywalls`.
+- Need churn events or a controlled retention test -> use `suede-analytics` or `suede-ab-testing`.
+- From those skills, route cancellation and payment-recovery strategy back to `suede-churn-prevention`.

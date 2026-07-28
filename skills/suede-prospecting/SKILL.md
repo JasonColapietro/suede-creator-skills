@@ -1,13 +1,16 @@
 ---
 name: suede-prospecting
-description: "Build and qualify a target list before you write a word: ICP fit, sourcing, enrichment, disqualification, and where the first customers actually are. Use when the user needs a prospect or lead list, or is deciding which accounts to go after. Also use when the user mentions 'prospecting,' 'build a prospect list,' 'find prospects,' 'find leads,' 'lead gen list,' 'find SaaS companies that,' 'find B2B companies,' 'find local businesses,' 'ICP-fit accounts,' 'who should we go after,' 'outbound list,' 'target account list,' 'find clients near me,' 'businesses without websites,' 'prospect research,' 'qualified leads,' 'find my first customers,' 'early adopters,' 'design partners,' 'beta users,' or 'who has this problem.' Use this for the list-building and qualification phase. For writing the outbound copy after the list is built, see suede-cold-email. For deep competitive research on specific accounts, see competitor-profiling."
+description: "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
 metadata:
   version: 1.1.0
 ---
 
-# Prospecting
+# Suede Prospecting
 
-You are an expert at building qualified prospect lists across four motions: B2B SaaS, general B2B, local small businesses, and early-stage demand-signal discovery (finding your first customers from public pain signals). Your goal is to turn an ICP definition into a verified, scored, ready-to-outreach lead sheet — using the right data sources, qualification signals, and compliance posture for each motion.
+Suede Prospecting turns an approved ICP into a source-backed, scored lead sheet
+across B2B SaaS, general B2B, local business, and early demand-signal motions.
+Every candidate carries qualification evidence, disqualification logic, and a
+compliance-aware handoff before outreach begins.
 
 ## Before Starting
 
@@ -18,12 +21,17 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 Prospecting motions differ enough that the workflow forks at intake. Pick **one** branch based on who the user is selling to:
 
-| Branch | Sell to | What "qualified" looks like | Primary sources |
-|--------|---------|----------------------------|----------------|
-| **SaaS** | Other SaaS companies / digital businesses | ICP fit + tech stack match + growth signals (funding, hiring, product velocity) | LinkedIn, BuiltWith, Crunchbase, Apollo, Clay, Clearbit, ProductHunt |
-| **B2B** | Non-SaaS B2B (services, manufacturers, enterprises, mid-market) | Industry + size + geographic fit + buying signals (trigger events, vendor changes) | Apollo, ZoomInfo, Clay, Clearbit, LinkedIn Sales Nav, industry directories |
-| **Local SMB** | Local small businesses (shops, gyms, restaurants, clinics, salons, services) | Active business + website status + proximity + decision-maker access | Google Maps, Yelp, local directories, Facebook, business websites |
-| **Demand-signal** | Early-stage: your first customers, design partners, or beta users | Evidence of the exact pain/demand/timing signal — a cited public source, not just firmographic fit | Forums, communities, reviews, GitHub issues, job posts, launch announcements (via last30days, social-fetch, scraping) |
+| Branch | Sell to | What "qualified" looks like | Possible sources after access and terms checks |
+|--------|---------|----------------------------|-----------------------------------------------|
+| **SaaS** | Other SaaS companies / digital businesses | ICP fit + tech stack match + growth signals (funding, hiring, product velocity) | Public company sites, directories, developer sources, or licensed data available to the user |
+| **B2B** | Non-SaaS B2B (services, manufacturers, enterprises, mid-market) | Industry + size + geographic fit + buying signals (trigger events, vendor changes) | Public company records, industry directories, or licensed business data available to the user |
+| **Local SMB** | Local small businesses (shops, gyms, restaurants, clinics, salons, services) | Active business + website status + proximity + decision-maker access | Public business sites and manually reviewed listings allowed by their terms |
+| **Demand-signal** | Early-stage: first customers, design partners, or beta users | A cited public pain, demand, or timing signal, not just firmographic fit | Public forums, reviews, issues, posts, jobs, and launch records reachable with current authorized tools or manual review |
+
+Before using any named platform or vendor, discover what is currently callable,
+authenticated, authorized, and permitted by its terms. If no research connector
+or browser is available, give the user a manual source checklist and work from
+URLs, exports, screenshots, or source text they provide.
 
 If the user describes a hybrid motion (e.g., "SMBs that are also SaaS"), pick the dominant branch and pull in qualification signals from the other. If the user is early-stage and needs their *first* customers or design partners — evidence of demand over list coverage — use the **Demand-signal** branch.
 
@@ -53,12 +61,19 @@ Output the ICP as a one-paragraph statement plus a checklist of pass/fail criter
 
 ### Phase 2 — Build the candidate list (discovery)
 
-Source 2–3× more candidates than the user wants in the final list — qualification will cull aggressively.
+Start with a bounded candidate sample sized to the requested output, source
+access, and review capacity. Expand only when observed disqualification rates
+show that another batch is needed.
 
-- **SaaS / B2B**: combine 2–3 sources for cross-verification. Apollo or ZoomInfo for firmographics; Clearbit or Clay for enrichment; LinkedIn Sales Nav for decision-maker mapping.
-- **Local SMB**: browser-assisted research starting with Google Maps for the target category in the target area; cross-check with Yelp, the business website, social pages, and public directories.
+- **SaaS / B2B**: cross-check material claims across available first-party,
+  public, or licensed sources. Named vendors are candidates only after access,
+  freshness, terms, and cost checks.
+- **Local SMB**: use an authorized research connector or manual public-source
+  review, then cross-check listing claims against the business's own site or
+  another current source.
 
-If the user's list quality bar is high, smaller is better. 25 verified leads beats 250 mostly-junk ones.
+A smaller evidence-complete list is preferable to padding the output with
+unverified candidates.
 
 ### Phase 3 — Qualify each candidate
 
@@ -69,7 +84,11 @@ Score every candidate against the ICP checklist. Add **evidence** (a source URL 
 - **Medium**: one credible source plus consistent search evidence
 - **Low**: incomplete or ambiguous evidence — flag what remains uncertain
 
-For email contacts (B2B / SaaS branches), **always verify deliverability before adding to the final list** — see Truelist integration in [references/data-sources.md](references/data-sources.md). Don't ship leads with invalid or risky emails.
+For email contacts, discover whether an authorized validator is callable and
+read its current result semantics before use. If none is available, label the
+address `unverified`, keep it out of send-ready exports, and provide a
+user-operated validation checklist. Never claim that validation guarantees
+delivery.
 
 ### Phase 4 — Score and prioritize
 
@@ -82,7 +101,8 @@ Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-si
 | **Cold** | Loose ICP fit OR no clear signal OR contact unverified |
 | **Skip** | Disqualifier hit (out of ICP, closed business, duplicate, irrelevant, low confidence) |
 
-Branch-specific signals refine the scoring — see each reference file. Default ratio target: ~20% Hot, ~30% Warm, rest Cold/Skip.
+Branch-specific signals refine the scoring — see each reference file. Let the
+evidence determine the number in each label; never force a Hot/Warm/Cold quota.
 
 ### Phase 5 — Output the lead sheet
 
@@ -90,7 +110,9 @@ Branch-specific signals refine the scoring — see each reference file. Default 
 
 Default to a markdown table in chat. Switch to CSV when the list is >25 rows or the user explicitly asks for a file.
 
-After the table, always add **"Top outreach targets"** — the top 3–5 hot leads with one sentence each on why this lead should be reached out to first.
+After the table, add **"Priority review candidates"** when the evidence supports
+one or more: a bounded set ranked by current signal strength, with one sentence
+on what was verified and what still needs review.
 
 Columns vary by branch (see reference files), but every lead sheet includes:
 - score, business/company name, contact (where applicable), why-it's-a-prospect, source(s), confidence, last verified date
@@ -120,9 +142,11 @@ If missing, ask once, then infer reasonable defaults and continue:
 
 - **Branch** (SaaS / B2B / Local SMB / Demand-signal) — usually inferable from context; pick Demand-signal for early-stage first-customer discovery
 - **ICP description** — pull from `product-marketing.md` if present
-- **Target count** — default 25 for SaaS / B2B, 15 for Local SMB
+- **Target count** — use the requested count or propose a bounded pilot justified
+  by source coverage and review capacity
 - **Geography** (essential for Local SMB; useful for B2B; less critical for SaaS)
-- **Tools the user has access to** — Apollo? Clay? ZoomInfo? Hunter? Truelist? Defaults to what's free + browser
+- **Tools the user has access to** — discover current callable tools and
+  authenticated accounts; never assume a vendor connector or browser exists
 - **Output format** — chat table (default) or CSV
 - **Buying signal preference** — what triggers should they prioritize? (funding rounds, hiring, recent move, etc.)
 
@@ -131,6 +155,10 @@ If missing, ask once, then infer reasonable defaults and continue:
 ## Tool Selection Quick Picks
 
 Full breakdown in [references/data-sources.md](references/data-sources.md). Quick picks:
+
+Treat every named product below as a candidate, not an available capability.
+Discover currently callable tools and verify the user's authenticated access,
+license, source terms, and cost first.
 
 | If the user has access to... | Use it for |
 |------------------------------|------------|
@@ -147,7 +175,9 @@ Full breakdown in [references/data-sources.md](references/data-sources.md). Quic
 | **Google Maps + browser** | Local SMB discovery |
 | **Firecrawl / Browserbase** | Programmatic extraction from individual prospect websites — never from platforms |
 
-**If the user has no enrichment tools**: lean on browser-assisted research with public sources — company website, About page, LinkedIn company page, news mentions. Slower but works.
+**If the user has no enrichment or browser tools**: provide exact public-source
+queries and a qualification worksheet, then work from URLs, exports, or
+screenshots the user supplies.
 
 ---
 
@@ -183,9 +213,10 @@ Local SMB columns:
 score,business,category,area,distance_km,website_status,website_url,social_urls,phone,email,source_urls,why_prospect,confidence,verified_date,notes
 ```
 
-### Always include after the table
+### Include after the table
 
-- **Top outreach targets**: top 3–5 hot leads with one-sentence outreach rationale each
+- **Priority review candidates**: a bounded evidence-ranked set with
+  one-sentence rationale each
 - **Search parameters**: branch, ICP, location/radius, target count, date generated
 - **Open questions**: anything you couldn't verify and the user should look at
 
@@ -195,7 +226,9 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 
 - [ ] Remove duplicates (by domain for SaaS/B2B, by business + address for Local SMB)
 - [ ] Every "Hot" lead has a verified contact + at least one source URL
-- [ ] No lead has an email that failed Truelist (or your validator) verification — move to a separate "invalid" bucket and flag for the user
+- [ ] Email status comes from a currently authorized validator with documented
+      result semantics, or is explicitly `unverified`; failed results stay in a
+      separate invalid bucket
 - [ ] No lead labeled "Hot" lacks a clear buying signal
 - [ ] Confidence levels honest — "High" requires 2 independent sources, not just two of your own searches
 - [ ] No leads sourced from prohibited scraping (LinkedIn at scale, Google Maps bulk extract, etc.)
@@ -208,12 +241,15 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 
 1. **Starting discovery without an ICP**. Build candidates against vague criteria and you'll qualify the wrong things.
 2. **Treating data sources as authoritative without cross-checks**. Apollo and ZoomInfo are out of date often; verify before scoring as "Hot."
-3. **Adding contacts without email verification**. Cold email reputation tanks fast with bounces — always validate.
+3. **Presenting unverified contacts as send-ready**. Use an available authorized
+   validator or keep the address labeled `unverified` with a manual validation
+   handoff.
 4. **Bulk scraping LinkedIn or Google Maps**. Real risk: account suspension + ToS violation. Browser as an assisted tool only.
 5. **Mixing branches**. Don't apply Local SMB scoring (website status) to a B2B SaaS prospect, or vice versa.
 6. **"Hot" labels without buying signals**. ICP fit alone is not enough — the signal is what makes the timing right.
 7. **No source URLs**. Every claim should be traceable to a public source. Future outreach depends on this lineage.
-8. **Ignoring quiet hours / time zone** when scheduling the downstream outreach (handoff to cold-email).
+8. **Ignoring quiet hours / time zone** when scheduling the downstream outreach
+   (handoff to `suede-cold-email`).
 9. **Forgetting to retain consent / lineage records**. Required for GDPR DSARs and CAN-SPAM audits.
 
 ---
@@ -223,7 +259,8 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 1. Which branch — SaaS, B2B, Local SMB, or Demand-signal (early-stage, finding your first customers)?
 2. What's your ICP? (Or: should I pull from your product-marketing context?)
 3. How many qualified leads do you want?
-4. What tools do you have access to (Apollo / Clay / ZoomInfo / Hunter / Truelist / browser only)?
+4. Which research or validation tools are currently callable and authorized?
+   If none, can you provide URLs, exports, or screenshots for manual review?
 5. What's the triggering buying signal you care most about?
 6. Geography or radius (Local SMB / B2B)?
 7. Chat table or CSV?
@@ -232,31 +269,39 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key prospecting tools:
+These are selection examples, not guaranteed integrations. Before using one,
+verify current vendor documentation, account access, pricing, data freshness,
+export rights, platform terms, and whether a callable connector is actually
+available in the current session.
 
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery | - | [apollo.md](../../tools/integrations/apollo.md) |
-| **Clay** | Multi-source enrichment + waterfall | ✓ | [clay.md](../../tools/integrations/clay.md) |
-| **Clearbit** | Email-to-company enrichment | - | [clearbit.md](../../tools/integrations/clearbit.md) |
-| **ZoomInfo** | Enterprise B2B contact + intent | ✓ | [zoominfo.md](../../tools/integrations/zoominfo.md) |
-| **Hunter** | Email pattern + verification | - | [hunter.md](../../tools/integrations/hunter.md) |
-| **Snov** | Email finder + verifier | - | [snov.md](../../tools/integrations/snov.md) |
-| **Truelist** | Email deliverability validation | - | [truelist.md](../../tools/integrations/truelist.md) |
-| **Outreach** | Sales engagement (post-list) | ✓ | [outreach.md](../../tools/integrations/outreach.md) |
-| **RB2B** | Visitor identification (warm intent) | - | [rb2b.md](../../tools/integrations/rb2b.md) |
-| **GitHub** | Stargazers/forks/watchers as developer-intent signal | - | [github.md](../../tools/integrations/github.md) |
-| **Firecrawl** | Single-target site extraction (prospect's own website) | ✓ | [firecrawl.md](../../tools/integrations/firecrawl.md) |
-| **Browserbase** | Real-browser site research when rendering or interaction needed | ✓ | [browserbase.md](../../tools/integrations/browserbase.md) |
+| Tool | Best For | Verify Before Use |
+|------|----------|-------------------|
+| **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
+| **Clay** | Multi-source enrichment + waterfall | Credit cost, providers, field provenance |
+| **Clearbit** | Email-to-company enrichment | Current product access and coverage |
+| **ZoomInfo** | Enterprise B2B contact + intent | License, export rights, signal freshness |
+| **Hunter / Snov** | Email pattern discovery | Verification status and lawful basis |
+| **Truelist** | Email deliverability validation | Result meanings and current API limits |
+| **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
+| **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
+| **GitHub** | Public developer-intent signals | API terms, rate limits, company mapping |
+| **Firecrawl / Browserbase** | Single-target public-site research | Target terms, scope, and session access |
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **cold-email**: For writing outbound sequences against the qualified list (the natural next step after prospecting)
-- **customer-research**: For understanding why current customers buy — informs the ICP definition
-- **competitor-profiling**: For deeper research on individual accounts (different from list-building qualification)
-- **revops**: For lead routing, lifecycle, and CRM handoff after prospecting
-- **sales-enablement**: For battle cards and one-pagers used in the outreach
-- **directory-submissions**: For inbound discovery surfaces (the prospects might find you back)
-- **product-marketing**: For the ICP definition that anchors every prospecting engagement
+- Do not send outreach, import contacts, buy data, mutate a CRM, or enroll a
+  person in a sequence.
+- Do not invent contact details or qualification evidence, evade source terms,
+  collect unnecessary personal data, or label a lead verified without a cited
+  current source.
+- Do not decide legal compliance or claim deliverability. Apply the applicable
+  consent, privacy, and suppression rules before any downstream contact.
+
+## Routing
+
+- Use `suede-product-marketing` to define the ICP and positioning context.
+- Use `suede-cold-email` after a qualified list is approved for outreach copy.
+- Use `suede-revops` for approved CRM routing and lifecycle handoff.
+- Use `suede-sales-enablement` for collateral used in active sales work.

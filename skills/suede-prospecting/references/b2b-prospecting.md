@@ -35,9 +35,11 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
 
 ### Tier 1 — primary discovery
 
-- **Apollo**: best general B2B firmographic + contact discovery
+- **Apollo**: candidate for general B2B firmographic and contact discovery;
+  verify current coverage on the target segment
 - **ZoomInfo**: enterprise B2B + intent signals (mid-market+)
-- **LinkedIn Sales Navigator**: industry + role + signal search; the gold standard for decision-maker mapping (manual)
+- **LinkedIn Sales Navigator**: candidate for manual industry, role, and signal
+  research; verify current coverage and terms
 - **Clay**: when you need custom waterfall lookups (e.g., enrich Apollo records with Hunter + Clearbit)
 
 ### Tier 2 — industry-specific directories
@@ -85,12 +87,16 @@ For chat table, condense to: Score | Company | Industry | Size | Trigger | Conta
 
 ## Top Outreach Targets Selection (B2B)
 
-Prioritize for the top 3–5 hot leads:
+Prioritize a bounded review set when the evidence supports it:
 
-1. **Trigger event recency** — 30 days beats 6 months
-2. **Trigger event specificity** — new CMO hire in your buyer's role beats "company in the news"
-3. **Decision-maker access** — named contact with verified email + LinkedIn beats role-only
-4. **Vertical fit precision** — exact NAICS match beats "adjacent industry"
+1. **Trigger event recency** — compare current and older events without imposing
+   a universal expiry window
+2. **Trigger specificity** — prefer a cited event tied to the buyer's problem
+   over general company news
+3. **Decision-maker evidence** — distinguish a confirmed professional contact
+   from a role-only inference
+4. **Vertical fit precision** — use the taxonomy the current ICP and source data
+   can support
 
 Each top target rationale names the trigger and decision-maker: "Hired new VP of Marketing 14 days ago; verified email; mid-market manufacturer matching ICP."
 
@@ -103,4 +109,6 @@ Each top target rationale names the trigger and decision-maker: "Hired new VP of
 3. **Ignoring procurement complexity** at enterprise scale — your prospect contact list may not include the actual approver.
 4. **Cold-emailing executive assistants** — they're not the buyer and they will flag your outreach as spam.
 5. **Source URL hygiene** — without source lineage, you can't defend a contact under GDPR DSAR or CAN-SPAM challenge.
-6. **Stopping at one source** — Apollo can be 60% accurate on small businesses. Cross-verify with LinkedIn or the business website.
+6. **Stopping at one source** — provider accuracy varies by segment and date.
+   Cross-verify important claims with a current first-party or independent
+   source.

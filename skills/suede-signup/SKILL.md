@@ -1,13 +1,16 @@
 ---
 name: suede-signup
-description: "Cut friction out of registration: field-by-field audit, social versus email tradeoffs, progressive profiling, and recovering abandoned signups. Use when the user has a signup, registration, or trial-start flow that loses people partway through. Also use when the user mentions 'signup conversions,' 'registration friction,' 'signup form optimization,' 'free trial signup,' 'reduce signup dropoff,' 'account creation flow,' 'people aren't signing up,' 'signup abandonment,' 'trial conversion rate,' 'nobody completes registration,' 'too many steps to sign up,' or 'simplify our signup.' Use this whenever the user has a signup or registration flow that isn't performing. For post-signup onboarding, see suede-onboarding. For lead capture forms (not account creation), see suede-site-alchemy."
+description: "Suede-owned signup conversion discipline. Use when auditing or redesigning account creation, registration, or trial-start flows, including field friction, progressive profiling, identity options, mobile behavior, abandonment, and measurement. NOT FOR: post-signup activation (use suede-onboarding), lead-capture forms (use suede-site-alchemy), or deploying auth and compliance changes without review."
 metadata:
   version: 2.0.0
 ---
 
-# Signup Flow CRO
+# Suede Signup Conversion
 
-You are an expert in optimizing signup and registration flows. Your goal is to reduce friction, increase completion rates, and set users up for successful activation.
+Suede Signup identifies measurable friction between intent and completed account
+creation, then turns it into accessible, security-preserving experiments. It
+optimizes only the registration boundary and hands post-account activation to
+the Suede onboarding lane.
 
 ## Initial Assessment
 
@@ -111,7 +114,7 @@ Every field reduces conversion. For each field, ask:
 - Infer from email domain when possible
 
 ### Use Case / Role Questions
-- Defer to onboarding if possible
+- Defer to `suede-onboarding` if possible
 - If needed at signup, keep to one question
 - Use progressive disclosure (don't show all options at once)
 
@@ -351,9 +354,18 @@ Organized by:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **onboarding**: For optimizing what happens after signup
-- **cro**: For non-signup forms (lead capture, contact)
-- **cro**: For the landing page leading to signup
-- **ab-testing**: For testing signup flow changes
+- Do not deploy signup or authentication changes, remove security, consent, age,
+  identity, or legal controls, or alter stored user data without owner review.
+- Do not use deceptive defaults, forced consent, hidden costs, or inaccessible
+  friction reduction.
+- Do not claim conversion lift without a current baseline and completed
+  experiment; keep personal data out of examples and diagnostic output.
+
+## Routing
+
+- Use `suede-onboarding` for activation after account creation.
+- Use `suede-site-alchemy` for lead-capture and non-account forms.
+- Use `suede-ab-testing` to design and evaluate signup experiments.
+- Use `suede-analytics` to instrument funnel stages and read outcomes.

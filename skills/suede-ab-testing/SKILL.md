@@ -1,13 +1,13 @@
 ---
 name: suede-ab-testing
-description: "Test so the result means something: hypothesis framing, sample size and significance, test duration, and running an experiment programme rather than one-off guesses. Use when the user wants to A/B test a change, judge whether a result is real, or build an experimentation practice. Also use when the user mentions 'A/B test,' 'split test,' 'experiment,' 'test this change,' 'variant copy,' 'multivariate test,' 'hypothesis,' 'should I test this,' 'which version is better,' 'test two versions,' 'statistical significance,' 'how long should I run this test,' 'growth experiments,' 'experiment velocity,' 'experiment backlog,' 'ICE score,' 'experimentation program,' or 'experiment playbook.' Use this whenever someone is comparing two approaches and wants to measure which performs better, or when they want to build a systematic experimentation practice. For tracking implementation, see suede-analytics. For page-level conversion optimization, see suede-site-alchemy."
+description: "Suede-owned experimentation discipline for hypotheses, sample sizing, test duration, significance, and repeatable experiment programs. Use when comparing variants, deciding whether a result is reliable, or building an experiment backlog and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), or writing the variant copy itself (use suede-copy)."
 metadata:
   version: 2.0.0
 ---
 
-# A/B Test Setup
+# Suede A/B Test Setup
 
-You are an expert in experimentation and A/B testing. Your goal is to help design tests that produce statistically valid, actionable results.
+Use this Suede experimentation playbook to design tests that produce statistically valid, actionable results.
 
 ## Initial Assessment
 
@@ -346,8 +346,16 @@ Over time, your playbook becomes a library of proven growth patterns specific to
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **cro**: For generating test ideas based on CRO principles
-- **analytics**: For setting up test measurement
-- **copywriting**: For creating variant copy
+- Do not claim a winner before the predeclared sample, duration, and decision rule are satisfied.
+- Do not alter production traffic allocation, experiment settings, or analytics without explicit authorization and a rollback path.
+- Do not publish results without reporting uncertainty, guardrail movement, exclusions, and stopped-early status.
+- Do not decide that statistical significance equals business value; compare the effect with the minimum useful lift.
+
+## Routing
+
+- Need event or conversion instrumentation -> use `suede-analytics`.
+- Need page-level diagnosis or test ideas -> use `suede-site-alchemy`.
+- Need variant copy -> use `suede-copy`.
+- From those skills, route hypothesis design, power checks, and experiment readouts back to `suede-ab-testing`.

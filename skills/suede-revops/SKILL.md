@@ -1,13 +1,16 @@
 ---
 name: suede-revops
-description: "Wire marketing to revenue: lead scoring and routing, MQL and SQL definitions, pipeline stages, CRM hygiene, and the marketing-to-sales handoff. Use when the user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue. Also use when the user mentions 'RevOps,' 'revenue operations,' 'lead scoring,' 'lead routing,' 'MQL,' 'SQL,' 'pipeline stages,' 'deal desk,' 'CRM automation,' 'marketing-to-sales handoff,' 'data hygiene,' 'leads aren't getting to sales,' 'pipeline management,' 'lead qualification,' or 'when should marketing hand off to sales.' Use this for anything involving the systems and processes that connect marketing to revenue. For cold outreach emails, see suede-cold-email. For email drip campaigns, see suede-emails. For pricing decisions, see suede-pricing."
+description: "Suede-owned revenue-operations discipline. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval."
 metadata:
   version: 2.0.0
 ---
 
-# RevOps
+# Suede Revenue Operations
 
-You are an expert in revenue operations. Your goal is to help design and optimize the systems that connect marketing, sales, and customer success into a unified revenue engine.
+Suede RevOps maps the lifecycle rules, data contracts, scoring, routing, and
+handoffs that connect acquisition, sales, and customer success. It produces
+implementation-ready operating logic while keeping production CRM mutation
+behind live-schema review and approval.
 
 ## Before Starting
 
@@ -318,28 +321,34 @@ Format each as a standalone document the user can implement directly. Include pl
 
 ## Tool Integrations
 
-For implementation, see the [tools registry](../../tools/REGISTRY.md). Key RevOps tools:
+These are evaluation examples, not guaranteed integrations. Verify the live
+schema, authenticated account, permissions, API limits, pricing, and vendor
+documentation before proposing implementation.
 
-| Tool | What It Does | Guide |
-|------|-------------|-------|
-| **HubSpot** | CRM, marketing automation, lead scoring, workflows | [hubspot.md](../../tools/integrations/hubspot.md) |
-| **Salesforce** | Enterprise CRM, pipeline management, reporting | [salesforce.md](../../tools/integrations/salesforce.md) |
-| **Calendly** | Meeting scheduling, round-robin routing | [calendly.md](../../tools/integrations/calendly.md) |
-| **SavvyCal** | Scheduling with priority-based availability | [savvycal.md](../../tools/integrations/savvycal.md) |
-| **Clearbit** | Real-time lead enrichment and scoring | [clearbit.md](../../tools/integrations/clearbit.md) |
-| **Apollo** | Contact data, enrichment, and outbound sequences | [apollo.md](../../tools/integrations/apollo.md) |
-| **ActiveCampaign** | Marketing automation for SMBs, lead scoring | [activecampaign.md](../../tools/integrations/activecampaign.md) |
-| **Zapier** | Cross-tool automation and workflow glue | [zapier.md](../../tools/integrations/zapier.md) |
-| **Introw** | Partner-sourced pipeline, commissions, deal registration, QBRs | [introw.md](../../tools/integrations/introw.md) |
-| **Crossbeam** | Partner account overlaps and co-sell identification | [crossbeam.md](../../tools/integrations/crossbeam.md) |
+| Tool Category | Examples | Verify Before Use |
+|---------------|----------|-------------------|
+| CRM | HubSpot, Salesforce | Objects, fields, ownership, automation, permissions |
+| Scheduling | Calendly, SavvyCal | Routing logic, availability, privacy |
+| Enrichment | Clearbit, Apollo | Provenance, freshness, lawful basis, credit cost |
+| Automation | ActiveCampaign, Zapier | Trigger scope, retries, rollback, secrets |
+| Partner operations | Introw, Crossbeam | Account matching, deal rules, commissions |
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **cold-email**: For outbound prospecting emails
-- **emails**: For lifecycle and nurture email flows
-- **pricing**: For pricing decisions and packaging
-- **analytics**: For tracking pipeline metrics and attribution
-- **launch**: For go-to-market launch planning
-- **sales-enablement**: For sales collateral, decks, and objection handling
+- Do not change production CRM fields, routing, automations, permissions, SLAs,
+  ownership, or records without reading the live schema, previewing the exact
+  effect, and receiving explicit approval.
+- Do not delete, merge, deduplicate, enrich, or reassign records as a planning
+  step, and do not expose personal data in reports.
+- Do not redefine lifecycle stages or claim pipeline impact from modeled data;
+  document assumptions and the stakeholders who must approve the operating
+  rule.
+
+## Routing
+
+- Use `suede-prospecting` to build and qualify the source list.
+- Use `suede-cold-email` for approved outbound sequence copy.
+- Use `suede-sales-enablement` for collateral and rep-facing materials.
+- Use `suede-analytics` for pipeline measurement and attribution.

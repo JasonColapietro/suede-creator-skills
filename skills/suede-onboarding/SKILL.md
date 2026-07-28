@@ -1,13 +1,13 @@
 ---
 name: suede-onboarding
-description: "Get a new user to first value fast: activation milestones, first-run sequencing, empty states, setup checklists, and the aha moment worth instrumenting. Use when the user has people signing up but not activating, or wants to design the first session in a product. Also use when the user mentions 'onboarding flow,' 'activation rate,' 'user activation,' 'first-run experience,' 'empty states,' 'onboarding checklist,' 'aha moment,' 'new user experience,' 'users aren't activating,' 'nobody completes setup,' 'low activation rate,' 'users sign up but don't use the product,' 'time to value,' or 'first session experience.' Use this whenever users are signing up but not sticking around. For signup/registration optimization, see suede-signup. For ongoing email sequences, see suede-emails."
+description: "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls)."
 metadata:
   version: 2.0.0
 ---
 
-# Onboarding CRO
+# Suede Onboarding and Activation
 
-You are an expert in user onboarding and activation. Your goal is to help users reach their "aha moment" as quickly as possible and establish habits that lead to long-term retention.
+Suede designs onboarding around verified first value and retention-linked activation, not decorative checklists or forced engagement. Define the activation evidence, remove unnecessary friction, sequence the first session, and instrument the path before claiming an "aha moment."
 
 ## Initial Assessment
 
@@ -212,9 +212,15 @@ When recommending experiments, consider tests for:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **signup**: For optimizing the signup before onboarding
-- **emails**: For onboarding email series
-- **paywalls**: For converting to paid during/after onboarding
-- **ab-testing**: For testing onboarding changes
+- Do not invent an activation event, retention correlation, cohort result, or benchmark when product data is unavailable.
+- Do not change product flows, permissions, notifications, experiments, or analytics without explicit authorization.
+- Do not add friction, forced invitations, premature paywalls, or manipulative progress mechanics merely to improve a local metric.
+- Do not decide sensitive-data collection, consent, accessibility, or product-risk policy for the user.
+
+## Routing
+
+- Use `suede-signup` for registration before first-run onboarding.
+- Use `suede-emails` for onboarding email sequences and `suede-paywalls` for upgrade moments.
+- Use `suede-ab-testing` to validate onboarding changes and `suede-analytics` to measure activation.

@@ -1,6 +1,9 @@
 # Press Request Platforms — Inbound PR
 
-Journalists posting "I need a source for X" — you respond, sometimes you get quoted, sometimes you don't. The cheapest PR play available, but only if you treat it seriously.
+Journalists post source requests and may select a useful response. This reference
+produces research-backed drafts only. Each platform submission, recipient,
+visible identity, and exact response requires explicit approval before any
+external action.
 
 ## Contents
 - The major platforms
@@ -31,7 +34,9 @@ Journalists posting "I need a source for X" — you respond, sometimes you get q
 
 ## Daily Triage Workflow
 
-These platforms generate volume. Treat it like email triage — fast pass, deep response on the rare matches.
+Treat platform volume, deadline pressure, and match rate as current-account
+variables. Review only the authorized feed and size the triage pass to the
+user's capacity.
 
 ### Step 1 — Filter (5 min)
 
@@ -41,15 +46,16 @@ For each digest / request feed:
 - Drop everything with a deadline you can't meet
 - Keep only requests where you can give a **complete, named, on-the-record answer**
 
-Realistic conversion: 50 daily requests → 2–4 worth answering.
+Record the current feed volume and match rate; do not import a universal
+conversion assumption.
 
-### Step 2 — Deep response (15 min per request)
+### Step 2 — Draft a response
 
 For each keeper:
 - Read the request 3 times — what's the *actual* angle?
 - Look up the journalist if possible — recent coverage, beat
 - Write a custom response (see [template](#response-template))
-- Send within their stated deadline (early > late)
+- Record the stated deadline and return the exact response draft for approval
 
 ### Step 3 — Log
 
@@ -61,13 +67,15 @@ Track in a spreadsheet:
 - Response sent (yes/no)
 - Outcome (no response / passed / quoted / linked)
 
-After 30 responses, you'll see which topics/platforms convert.
+Review a predeclared, capacity-bounded cohort and report uncertainty; expand
+only when another cohort is justified.
 
 ---
 
 ## Response Template
 
-Keep responses under 200 words. Journalists are scanning 50+ replies for one quote.
+Follow the current request or outlet limit. If none is published, start concise
+and preserve the evidence needed to answer the question completely.
 
 ```
 Hi [name],
@@ -104,7 +112,8 @@ Contact for follow-up: [email + phone]
 
 ## What Makes a Response Get Selected
 
-After analyzing hundreds of quoted responses, the patterns:
+Use these as drafting hypotheses, then compare them with current outlet
+instructions and the user's observed results:
 
 ### Quotable specificity
 **Bad:** "Companies should focus on customer experience."
@@ -131,7 +140,9 @@ Stories make articles. Advice makes filler.
 - One-line company description
 
 ### Time match
-**Most quotes come from responses sent in the first 6 hours.** After 24 hours, your chances drop sharply. Treat deadlines as if they're 24h earlier than stated.
+Use the actual stated deadline, request timestamp, story velocity, and
+current-account results to prioritize drafts. Never invent an earlier deadline
+or send without exact-recipient and exact-content approval.
 
 ---
 
@@ -153,10 +164,10 @@ Stories make articles. Advice makes filler.
 
 Most teams overinvest in these platforms because they're cheap. Be honest:
 
-| Effort | Realistic outcome (90 days) |
+| Test effort | Outcome to measure |
 |--------|----------------------------|
-| 5 hr/week, custom responses | 3–10 quoted placements |
-| 1 hr/week, template responses | 0–2 placements |
+| Capacity-approved custom drafts | Qualified responses, quotes, links, and time cost |
+| Lower-capacity draft cohort | Same measures, reported with sample size |
 | Outsourced to PR firm | Lots of submissions, few quotes |
 
 **A quote in a tier-1 outlet is worth:**
@@ -169,7 +180,9 @@ Most teams overinvest in these platforms because they're cheap. Be honest:
 - A backlink, often nofollow
 - Maybe an Instagram screenshot
 
-**Decision rule:** if you can sustain 5 hr/week of quality responses for 90 days, this is worth it. If you can only do 1 hr/week, skip it and invest in [proactive pitching](journalist-pitching.md) instead.
+**Decision rule:** define an approved effort cap and evaluation window, then
+compare qualified outcomes and opportunity cost with proactive pitching. Do not
+use a fixed weekly-hour or 90-day threshold as a universal rule.
 
 ---
 
@@ -180,9 +193,11 @@ Before you start responding:
 - [ ] Press page exists and is current (see main SKILL.md)
 - [ ] One-line credential is written and rehearsed
 - [ ] Headshot is high-res and at a public URL
-- [ ] You have 3–5 specific stories / data points ready to deploy
-- [ ] You've decided which 2–3 platforms to use (don't try all 7)
-- [ ] You've blocked a daily 20-min window for triage
+- [ ] You have a bounded set of verified stories or data points appropriate to
+      the selected requests
+- [ ] You've selected only the currently authorized platforms that fit the
+      audience and review capacity
+- [ ] You've approved a triage timebox derived from current feed volume
 - [ ] You're logging responses in a tracker
 
 Without these, you're spamming and wasting their time and yours.

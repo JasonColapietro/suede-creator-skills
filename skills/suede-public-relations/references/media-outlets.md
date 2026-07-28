@@ -1,12 +1,16 @@
 # Media Outlets — Where to Pitch
 
-A curated, opinionated list of *where* to pitch for software/SaaS PR. This is the media-outlet slice of resources like submit.co — the journalist-driven half. For startup/SaaS/AI directories (Product Hunt, BetaList, Futurepedia, etc.), use the separate `suede-directory-submissions` skill — different intent, different audience.
+A starting discovery list for software/SaaS PR, not a current media database.
+Verify every outlet, byline, role, contact preference, and submission path from a
+current first-party source before drafting. For startup/SaaS/AI directories, use
+`suede-directory-submissions`.
 
 ## How to use this list
 
 - **Don't pitch a publication. Pitch a journalist at that publication.** See [journalist-pitching.md](journalist-pitching.md) for the discovery workflow.
 - **Tier signals quality, not effort** — a small tier-3 outlet might be perfect for your niche
-- **Submission/tip URLs are listed where they exist** — but a journalist's email beats a tip form every time
+- **Submission/tip URLs may be stale** — use the route the current outlet or
+  journalist explicitly requests
 - **This list ages fast** — verify the outlet still exists and the journalist is still there before pitching
 
 ---
@@ -198,10 +202,11 @@ If your company has a regional angle (HQ location, customer concentration, gover
 
 ## Maintaining This List
 
-This list will go stale. Recommended cadence:
+This list will go stale. Refresh from current first-party sources:
 
-- **Quarterly:** verify your tier-1 contacts are still at the outlet
-- **Monthly:** add new outlets/newsletters relevant to your category
+- **Periodic review:** choose the interval from campaign activity and source
+  volatility
+- **Campaign planning:** add relevant outlets only after current verification
 - **Per pitch:** confirm the journalist is still there before sending (check X / LinkedIn for "joined [new place]")
 
 Store your live, working version in `.agents/media-list.md` (per [journalist-pitching.md](journalist-pitching.md)).

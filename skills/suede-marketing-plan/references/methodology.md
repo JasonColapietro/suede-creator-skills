@@ -11,7 +11,7 @@ The three-phase workflow that produces a comprehensive marketing plan. SKILL.md 
 Canonical file layout for every plan:
 
 ```
-~/marketing-plans/{client-slug}/
+.agents/suede-marketing-plans/{client-slug}/
 ├── materials/         # Client-provided files (decks, audit output, brand-voice doc, etc.)
 ├── research.md        # Written in Phase 1 (INIT)
 ├── progress.md        # State machine — see Step 1.1.1 for schema
@@ -30,9 +30,35 @@ Every plan tracks a single `progress.md` file at the plan root. It's the source 
 ```markdown
 # {Client} — Marketing Plan Progress
 
-phase: init | review | finalize | finalized
-current_section: <number, only meaningful during review phase>
+phase: init
+# Replace the value above with exactly one of: init, review, finalize, finalized.
+init_step: materials
+# During init, replace with exactly one of: materials, live_data, intake, complete.
+current_section: none
+# Exactly one of: none, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 01.
+# Use none outside review. The review order is 02→03→...→13→01.
 plan_version: v1
+source_plan: none
+source_plan_version: none
+# The two source fields are none for a new plan and identify the finalized
+# parent only for an explicitly requested revision.
+finalize_step: not_started
+# Replace during finalize with exactly one of: not_started, compile, verify,
+# publish_offer, publish_authorized, published, complete.
+section_write_section: none
+section_write_sha256: none
+# These two fields are a recoverable write intent. Set both before promoting an
+# approved section artifact and clear both only after progress metadata agrees.
+final_plan_sha256: none
+reopen_section: none
+reopen_from_version: none
+reopen_to_version: none
+reopen_archive_path: none
+reopen_final_sha256: none
+reopen_section_sha256: none
+reopen_section01_sha256: none
+# The reopen fields are either all none or populated as applicable until
+# recovery completes. Record them before archiving or changing review state.
 last_updated: YYYY-MM-DD HH:MM
 
 ## Sections completed
@@ -51,7 +77,23 @@ last_updated: YYYY-MM-DD HH:MM
 - [ ] 1. Executive summary (synthesized last)
 
 ## Approved artifacts
-sections/02.md, sections/03.md, ... (list as they're written)
+<!-- Zero or more unique lines. Each line must contain exactly one canonical
+path in this form, with no commas or annotations:
+- sections/02.md
+-->
+The only valid entry grammar is
+`^- sections/(0[1-9]|1[0-3])\.md$`, and entries stay in review order.
+
+## Publication receipt
+status: not_requested
+# Exactly one of: not_requested, declined, authorized, published.
+target: none
+# Replace none with the canonical repo, branch/PR route, and repo-relative path
+# only after the user supplies and authorizes it.
+content_sha256: none
+idempotency_key: none
+remote_commit: none
+commit_url: none
 
 ## Notes
 <any open decisions, blockers, or out-of-band context that aren't in research.md>
@@ -61,14 +103,65 @@ sections/02.md, sections/03.md, ... (list as they're written)
 
 On every invocation, check state in this order:
 
-1. **No `{client-slug}/` folder** → fresh plan. Create folder + `materials/` + empty `sections/`. Start INIT (Step 1.2).
-2. **Folder exists, no `research.md`** → INIT was interrupted. Resume from Step 1.2.
-3. **`research.md` exists, no `progress.md`** → INIT done, REVIEW not started. Create `progress.md`, start REVIEW from Section 2.
-4. **`progress.md` exists, `phase: review`** → REVIEW in progress. Resume from `current_section` (or first unchecked box).
-5. **`progress.md` exists, `phase: finalize`** → FINALIZE was interrupted. Re-run Phase 3.
+1. **No `{client-slug}/` folder** → fresh plan. Create the folder,
+   `materials/`, empty `sections/`, and `progress.md` with `phase: init` and
+   `init_step: materials` before writing `research.md`.
+2. **Folder exists, no `progress.md`** → legacy or interrupted INIT. If the
+   folder is empty, create the complete schema above with `phase: init`,
+   `init_step: materials`, `current_section: none`,
+   `finalize_step: not_started`, and the new-plan default `plan_version: v1`.
+   If it contains artifacts, preserve them, inventory them as unverified
+   recovery candidates, create the same conservative INIT state, and do not
+   infer approval. Treat any `research.md` as partial evidence, not proof that
+   INIT finished.
+3. **`progress.md` has `phase: init`** → resume from `init_step`:
+   `materials` → Step 1.2, `live_data` → Step 1.3, `intake` → Step 1.4.
+   `complete` transitions to `phase: review`, `current_section: 02`.
+4. **`progress.md` exists, `phase: review`** → REVIEW in progress. Run the
+   section-artifact reconciliation below before drafting. Resume only from the
+   reconciled `current_section`; never silently substitute an unchecked box.
+5. **`progress.md` exists, `phase: finalize`** → FINALIZE was interrupted.
+   Reconcile `final_plan.md` against `final_plan_sha256`, then resume from
+   `finalize_step`. At `publish_offer`, a `declined` receipt moves directly to
+   completion without asking again. At `publish_authorized`, reconcile the
+   remote target by idempotency key and content hash before any retry. A
+   verified `published` receipt means do not push or publish again.
 6. **`progress.md` exists, `phase: finalized`** → plan is done. **Do not silently overwrite.** Ask the user: *"This plan is finalized (v{N}). Want to (a) revise it as v{N+1}, (b) start a fresh plan in a new folder, or (c) re-open a specific section?"*
 
-Update `phase` and `last_updated` whenever state changes.
+Before applying this tree, recover any populated reopen intent as described
+under **Re-open recovery**. A transition with a populated reopen intent is not
+a normal finalized or review state.
+
+#### Section-artifact reconciliation
+
+Treat a section as complete only when all three records agree: its checkbox is
+checked, its exact `- sections/NN.md` line appears once under Approved
+artifacts, and that readable file exists.
+
+1. If `section_write_section` and `section_write_sha256` are populated, check
+   `sections/.NN.md.tmp` and `sections/NN.md` against the recorded SHA-256.
+   Promote a matching temp file when needed, then finish the checkbox,
+   one-path-per-line Approved-artifact entry, and next-section update. Clear
+   the intent only after readback confirms all records. This recovery is
+   idempotent.
+2. If neither candidate matches the intent, preserve both, report the
+   mismatch, and request a decision. Do not clear the intent, infer approval,
+   or redraft.
+3. With no write intent, a checked/approved section whose file is absent or
+   unreadable is an incomplete record. Uncheck it, remove its Approved-artifact
+   line, set `current_section` to the earliest incomplete token in review
+   order, and report the repair.
+4. With no write intent, an artifact that is not both checked and approved is
+   an orphan. Preserve it as recovery evidence and ask whether to restore its
+   approval or archive it. Do not overwrite or redraft it first.
+5. Reject duplicate, comma-separated, annotated, noncanonical, or out-of-range
+   Approved-artifact entries. Normalize only after the underlying file and
+   checkbox are reconciled.
+
+Update all affected state fields and `last_updated` together whenever state
+changes. Write the new state before beginning the next step so interruption
+always resumes safely. Never advance a phase while its required artifacts or
+receipts are absent.
 
 ### Step 1.2 — Read existing materials
 
@@ -84,25 +177,33 @@ If `materials/` has files, read all of them. Common drops:
 - Founder Slack / async notes
 
 Read everything. Capture key facts to `research.md` as you go.
+After all available materials are reviewed, set `init_step: live_data`.
 
 ### Step 1.3 — Pull live data where wired
 
 If MCPs/APIs are wired for this client, pull:
 
-- **Ahrefs** → domain rating, organic keywords, backlinks, top pages, ref domains (per `/seo-audit` skill)
+- **Ahrefs** → domain rating, organic keywords, backlinks, top pages, ref domains (per `/suede-seo-audit` skill)
 - **GA4 MCP** → traffic by channel, conversion events, retention curves
 - **Stripe MCP** → MRR, ARR, churn, plan mix, blended LTV by cohort
-- **App Store Connect** (manual or `dev-browser`) → install → trial → paid funnel; cohort retention
+- **App Store Connect** (through a currently authorized read method) → install → trial → paid funnel; cohort retention
 - **Customer.io MCP** → flow inventory, send / open / click / unsubscribe rates
 - **Shopify** → product page conversion, AOV, repeat rate
 - **GitHub MCP** → repos inventory, last commit dates, what's stale
 - **Notion** → internal knowledge directory if exposed
 
 Don't ask the user to copy/paste data that can be pulled directly.
+After the available authorized data sources are exhausted or explicitly
+deferred, set `init_step: intake`.
 
 ### Step 1.4 — Conduct structured intake
 
 For every gap in the materials, ask the user. The minimum intake covers ten topics:
+
+After each intake answer or scoring batch, append the sourced fact, as-of date,
+and unresolved fields to `research.md`, then update `last_updated` while keeping
+`phase: init` and `init_step: intake`. Read this record before the next question
+so an interruption never causes repeated intake or lost answers.
 
 #### Intake 1 — Client overview
 - What does the company do, in one sentence (founder's words)?
@@ -124,7 +225,7 @@ For every gap in the materials, ask the user. The minimum intake covers ten topi
 - What's the biggest leak?
 
 #### Intake 4 — Funding state
-- Current round (pre-seed / seed / Series A / etc.)?
+- Current round label, if relevant context (never a budget, channel, or hiring rule)?
 - Total raised to date?
 - Current burn / runway?
 - Active raise? Closing when?
@@ -137,12 +238,15 @@ For every gap in the materials, ask the user. The minimum intake covers ten topi
 - Advisors who touch marketing?
 - Agencies / contractors / fractionals?
 - Where are the obvious gaps?
-- For the team's current marketing owner (if there is one): is the shape π-shaped (two deep skill sets), T-shaped (one deep, broad), or tactical-only? See `team-and-agency-model.md` for the framework that informs Section 11 RACI and the first-hire recommendation in Section 9.
+- For each current marketing owner: what outcome, capacity, skills, access, and
+  approval boundary do they have? See `team-and-agency-model.md` for the
+  evidence-driven ownership map used in Sections 9 and 11.
 
 #### Intake 6 — Budget
 - Current monthly marketing spend, broken down: paid acquisition, tools, retainers, headcount?
-- Budget tier this maps to (see `funding-stage-unlocks.md`)?
-- What budget unlocks when the next round closes?
+- Current approved exposure, runway floor, review date, and stop conditions?
+- Which capabilities are current, approved tests, conditional unlocks, or
+  deferred (see `funding-stage-unlocks.md`)?
 - Blended CAC if known (including salaries, content costs, tools, retainers — not just paid ad spend). If unknown, flag as the top Section 13 open decision — every revenue projection depends on it.
 - ARPC, annual retention rate (or churn rate), so the budget math in `budget-planning.md` can be applied to Section 8 (Revenue) and Section 10 (12-month outlook).
 
@@ -222,7 +326,7 @@ Compile everything into `research.md` with this structure:
 ## Current marketing budget
 - $/mo total
 - Breakdown
-- Tier mapping
+- Approved exposure, runway floor, review date, and stop conditions
 
 ## Channels currently active
 [By AARRR stage]
@@ -246,7 +350,10 @@ Compile everything into `research.md` with this structure:
 [List of files in materials/ + when read]
 ```
 
-Save. Move to Phase 2.
+Save and verify `research.md`, then update the existing `progress.md` in one
+state transition: `init_step: complete`, `phase: review`,
+`current_section: 02`, preserve the existing `plan_version`, and stamp
+`last_updated`. Move to Phase 2 only after the readback matches.
 
 ---
 
@@ -254,9 +361,12 @@ Save. Move to Phase 2.
 
 **Goal:** Walk through all 13 sections of the plan template (`references/plan-template.md`), drafting each, getting user confirmation, saving as you go.
 
-### Step 2.1 — Initialize progress.md
+### Step 2.1 — Transition progress.md
 
-Use the suede-seo-audit defined in Step 1.1.1 above. Set `phase: review`, `current_section: 2`, `plan_version: v1`, and stamp `last_updated`.
+Use the existing `progress.md` created at fresh-start initialization. Confirm
+`init_step: complete`, set `phase: review` and `current_section: 02`, preserve
+the existing `plan_version` (initialize `v1` only for a new plan), and stamp
+`last_updated`. Never replace the file or discard its notes.
 
 ### Step 2.2 — Walk each section in this order: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, then 1
 
@@ -267,9 +377,25 @@ For each section, use the template at `references/plan-template.md` to draft. Th
 1. Present the draft (or key bullets — short sections inline, long sections as bullet outline first)
 2. Ask: *"Approve, adjust, or expand?"*
 3. Iterate until user confirms
-4. Save the confirmed text to `sections/01.md` ... `sections/13.md` (one file per section, zero-padded for sort order). This is the canonical persisted artifact — recovery depends on it.
-5. Check the box in `progress.md`
-6. Move to next section
+4. Stage the confirmed text as `sections/.NN.md.tmp`, validate that it is the
+   approved section, and calculate its SHA-256.
+5. Before promoting the file, persist `section_write_section: NN` and
+   `section_write_sha256: {hash}` with `last_updated`. Then atomically rename
+   the matching temp file to `sections/NN.md`.
+6. Check only Section NN's checkbox and add exactly one
+   `- sections/NN.md` line to Approved artifacts. For NN 02–13, set
+   `current_section` to the first incomplete token after NN (normally the
+   immediate next token and `01` after `13`; when recovering a re-open, skip
+   sections already complete). Clear both write-intent fields and stamp
+   `last_updated`.
+7. For NN 01, first require all 13 checkboxes and all 13 readable approved
+   artifacts, then make its metadata completion and the transition to
+   `phase: finalize`, `finalize_step: compile`, `current_section: none`,
+   cleared write intent, and `last_updated` one verified progress-file write.
+   If the completeness guard fails, keep the write intent and reconcile the
+   first mismatch. Read back the artifact hash and all state changes before
+   compiling. This leaves no legal all-complete REVIEW state to replay after an
+   interruption.
 
 ### Step 2.3 — Section-specific guidance
 
@@ -281,7 +407,10 @@ For each section, use the template at `references/plan-template.md` to draft. Th
 
 **Section 11 (Marketing operations stack)** is auto-generatable from `references/ops-stack-mapping.md` plus the specific moves named in Sections 4–8.
 
-**Section 12 (Idea bank)** is auto-generatable from `references/idea-cross-reference.md` plus client-specific filters (skip ideas that conflict with brand voice; status moves based on funding-stage timing).
+**Section 12 (Idea bank)** is auto-generatable from
+`references/idea-cross-reference.md` plus client-specific filters. Timing comes
+from fit, evidence, owner capacity, dependencies, approval, and stop conditions,
+never a funding label.
 
 **Section 13** lives at the end. Open decisions should be ranked by impact. Appendix should reference only files the team can access (warn about machine-local paths).
 
@@ -303,46 +432,95 @@ If a section's draft violates the brand voice, redo it before showing it to the 
 
 ### Step 3.1 — Compile
 
-Set `phase: finalize` in `progress.md` before starting. Concatenate `sections/01.md` through `sections/13.md` into `final_plan.md` (canonical order 1 → 13, regardless of drafting order). Add:
-- Title header with date and "v1" version marker
+Before compilation, verify all 13 checkboxes, all 13 matching Approved artifacts,
+and readable `sections/01.md` through `sections/13.md`. Halt with the first
+mismatch; do not compile or claim completion.
+
+Set `phase: finalize`, `finalize_step: compile`, and `last_updated` together
+before starting. Concatenate `sections/01.md` through `sections/13.md` into
+`final_plan.md` (canonical order 1 → 13, regardless of drafting order). Add:
+- Title header with date and the existing `plan_version` marker
 - "Prepared by / For / Date / Status" frontmatter
 - Section anchors that work in Notion paste
+
+Compilation must be deterministic for identical inputs. Write to
+`.final_plan.md.tmp`, read it back, calculate SHA-256, atomically promote it,
+then record that hash in `final_plan_sha256`. On resume, a matching
+`final_plan.md` satisfies compile without rewriting it. If the file and
+recorded hash disagree, regenerate from the 13 approved section files and
+promote only after the deterministic output verifies; never advance a
+mismatched artifact.
 
 ### Step 3.2 — Verification pass
 
 Before printing:
 
-- **Cross-reference check** — every marketing-ideas number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the `marketingskills` repo or is documented as an external dependency (see ops-stack-mapping note on cross-marketplace skills).
+- **Cross-reference check** — every `suede-marketing-ideas` number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
 - **MCP/API check** — every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
 - **Path check** — no machine-specific paths (`/Users/...`, `/home/...`) in the output. Replace with descriptive references.
 - **Voice check** — final read against brand voice rules. Flag and fix violations.
 - **Open-decisions check** — every "TBD" or unanswered question from intake is listed in Section 13's open decisions, not hidden in the body.
 - **Acknowledge check** — every item from "already done" in research.md is acknowledged somewhere in the plan.
 
+After compilation readback and `final_plan_sha256` verification succeed, set
+`finalize_step: verify`. The verification pass is also idempotent: rerun every
+check after interruption and advance only when all still pass. Then set
+`finalize_step: publish_offer`. Preserve
+`plan_version`; do not reset it to `v1`.
+
 ### Step 3.3 — Print
 
 Output `final_plan.md` to the plan folder. Print a summary to chat:
 
-> *"Marketing Plan v1 saved to `~/marketing-plans/{client-slug}/final_plan.md`. ~X,XXX words across 13 sections. Ready to paste into Notion or share with the team."*
+> *"Marketing Plan {plan_version} saved to `.agents/suede-marketing-plans/{client-slug}/final_plan.md`. ~X,XXX words across 13 sections. Ready to paste into Notion or share with the team."*
 
 ### Step 3.4 — Publish (optional)
 
-Ask the user:
+If the publication receipt is `status: published` with a target, matching
+content hash, remote commit, and verified commit URL, do not publish again. If
+it is `status: declined`, do not ask again; continue to Step 3.5. Only a
+`not_requested` receipt may trigger this question:
 > *"Want me to publish this to a shared GitHub repo so the team can access it? If yes, what's the target repo and path (e.g., `{client-org}/{client-context}/marketing/plan.md`)?"*
 
-If yes:
+If yes, resolve the repo and branch/PR protection route read-only first. Hash
+the verified `final_plan.md`, derive a deterministic idempotency key from that
+canonical target plus the content hash, and record the exact target, hash, key,
+and `status: authorized`. Then set
+`finalize_step: publish_authorized` before any external mutation:
 - Clone (or assume cloned) target repo
-- Check out a feature branch or push direct to main per user's preference
+- Confirm the resolved branch/PR path remains authorized; direct-to-main
+  requires separate explicit approval
+- Before every initial attempt or retry, inspect the authorized remote
+  branch/PR history for the idempotency key and verify the target blob hash. If
+  both match, record that remote commit and URL as published without pushing.
+  If the key exists with a different blob, or the blob exists under ambiguous
+  provenance, stop for reconciliation.
 - Copy `final_plan.md` to the target path
-- Adjust the appendix to use repo-relative paths (not machine paths)
-- Commit + push
-- Confirm with commit URL
+- Do not mutate the content after hashing. If a target-specific appendix change
+  is needed, return to verification, update and recompile the local plan, then
+  calculate a new content hash and idempotency key before authorization.
+- Commit with the idempotency key in a machine-readable trailer, then push only
+  within that authorization
+- After push, read the commit and target blob back from the remote. Only when
+  the key and content hash both match may progress record `remote_commit`,
+  `commit_url`, `status: published`, and `finalize_step: published`.
 
-If no: leave it local. Done.
+This remote-first reconciliation closes the crash window after a successful
+push but before the local receipt write: resumption discovers the existing
+remote result and records it instead of creating another commit.
+
+If no: record `status: declined`, clear any target/hash/key/commit fields, and
+leave it local. Declined is terminal for this plan version and must not
+re-prompt.
 
 ### Step 3.5 — Mark finalized
 
-Set `phase: finalized` in `progress.md` and stamp `last_updated`. This is the terminal state and prevents future `/marketing-plan` invocations from silently overwriting the plan (see Step 1.1.2 case 6).
+Only after `final_plan.md` passes readback and publication is either declined,
+has a verified receipt, or remains `not_requested` because publication was
+outside the current scope and no offer was made, set `phase: finalized`,
+`finalize_step: complete`, and `last_updated` together. Do not use
+`not_requested` to bypass an unanswered publication offer. This terminal state
+prevents silent overwrite.
 
 ---
 
@@ -350,8 +528,64 @@ Set `phase: finalized` in `progress.md` and stamp `last_updated`. This is the te
 
 Resumption is governed entirely by the decision tree in Step 1.1.2 above — always check state in that order on every invocation.
 
-If the user says *"start over"* → ask whether they want to delete the existing folder or move it to `archive/` first; don't silently overwrite.
-If the user says *"redo Section X"* → uncheck that box in `progress.md`, delete `sections/0X.md`, and re-draft.
+If the user chooses **revise as v{N+1}**, start a clean review cycle rather
+than copying approved sections. Scan `{client-slug}-v{N+1}` and numbered
+suffixes in order. Reuse the first folder whose progress file identifies the
+same `source_plan`, `source_plan_version`, and new `plan_version`; otherwise
+use the first absent path. An empty candidate may be adopted, but never
+overwrite a nonempty candidate with missing or contradictory provenance.
+
+Initialize the selected folder's complete schema first with the incremented
+version, `source_plan` and `source_plan_version`, `phase: init`,
+`init_step: intake`, `current_section: none`, every section unchecked, no
+Approved-artifact lines, `finalize_step: not_started`,
+`final_plan_sha256: none`, and a fresh `not_requested` publication receipt.
+Then copy only `research.md` through an atomic temp-file promotion; do not copy
+sections, `final_plan.md`, review checkboxes, or prior publication state. On
+retry, matching provenance resumes this partial folder and reconciles the
+research copy instead of creating another version folder. The finalized parent
+remains untouched.
+
+If the user chooses **fresh**, select `{client-slug}-fresh-YYYYMMDD` and create
+its new `v1` schema before any research write. On retry, inspect that folder
+before choosing a suffix: when it contains a readable new-plan schema
+(`source_plan: none`, `plan_version: v1`) in an unfinished state and no
+`final_plan.md`, adopt and resume it. Append `-02`, `-03`, and so on only when
+the existing candidate is finalized or incompatible; apply the same
+adopt-before-suffix rule to each candidate. Never delete, archive, or overwrite
+the prior plan without separate approval.
+
+If the user explicitly chooses **re-open Section NN** in the existing finalized
+plan, normalize NN to one of the two-digit section tokens, compute the next
+version, one deterministic timestamped archive path, and SHA-256 for the final
+plan, Section NN, and (when NN is 02–13) Section 01. Before any archive
+mutation, persist the applicable reopen fields, their hashes, and
+`last_updated`. Copy and hash-verify `progress.md`, `final_plan.md`, Section NN,
+and, when NN is 02–13, Section 01 into that archive path. After each archive
+copy verifies, remove its matching live deliverable or section artifact. On
+retry, an already matching archive copy is success, not a second copy or
+overwrite.
+
+After archive verification, increment `plan_version`, set `phase: review`,
+`current_section: NN`, `finalize_step: not_started`,
+`final_plan_sha256: none`, uncheck Section NN, and remove exactly its
+Approved-artifact line. Reopening any of Sections 02–13 also invalidates
+Section 01: uncheck it and remove `- sections/01.md` because its synthesis is
+now stale. Reset the publication receipt to a fresh `not_requested` state,
+stamp `last_updated`, verify the resulting review state, and only then clear
+all reopen-intent fields.
+
+### Re-open recovery
+
+When any reopen-intent field is populated, recover before the normal resumption
+tree. Reuse the recorded archive path; never generate another timestamp.
+Copy or move only missing artifacts, verify each available hash against the
+hashes recorded in the reopen intent, then finish the exact invalidation and
+version transition above. If a source or archive copy disagrees with its
+recorded hash, preserve both and stop for a decision. Clearing every reopen
+field, including the recorded hashes, is the final operation, so retries are
+idempotent whether interruption happened before archive, during moves, or
+after the review-state transition.
 
 ## Failure modes to watch for
 
@@ -360,4 +594,6 @@ If the user says *"redo Section X"* → uncheck that box in `progress.md`, delet
 - **Ignoring the brand voice.** If the client has a strong voice (most do), every section must respect it. Read the voice rules before drafting any copy-adjacent text.
 - **Padding the idea bank.** Section 12 is comprehensive only if it includes the skip list with reasons. Don't pad with ideas that clearly don't fit just to hit the 139.
 - **Glossing over uncomfortable metrics.** If churn is high or activation is low, name it in Current State. Founders read past sugar-coating.
-- **Forgetting funding-stage logic.** If the client is mid-raise, the plan must explain what changes when the round closes. Skipping this turns a plan into a wish-list.
+- **Treating financing as capability.** A round may be a conditional input, but
+  every unlock still requires verified resources, evidence, an owner, approval,
+  review date, and stop conditions.

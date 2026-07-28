@@ -1,5 +1,5 @@
 {
-  "skill_name": "referrals",
+  "skill_name": "suede-referrals",
   "evals": [
     {
       "id": 1,
@@ -76,7 +76,7 @@
     {
       "id": 6,
       "prompt": "Can you write the referral invitation emails? I need the email that goes out when someone shares their referral link.",
-      "expected_output": "Should recognize this overlaps with email writing. Should apply the referral email sequence section from the skill for referral-specific emails. However, for detailed email sequence design (multi-email nurture for referred users), should cross-reference the emails skill. Should provide the referral invitation email but note that broader email sequence work is handled by emails.",
+      "expected_output": "Should recognize this overlaps with email writing. Should apply the referral email sequence section for referral-specific emails. However, for detailed multi-email nurture design, should cross-reference `suede-emails`. Should provide the referral invitation email but note that broader email sequence work is handled by `suede-emails`.",
       "assertions": [
         "Applies referral email section from the skill",
         "Provides referral invitation email guidance",

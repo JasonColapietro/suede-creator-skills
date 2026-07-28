@@ -1,5 +1,5 @@
 {
-  "skill_name": "revops",
+  "skill_name": "suede-revops",
   "evals": [
     {
       "id": 1,
@@ -79,10 +79,10 @@
     {
       "id": 6,
       "prompt": "Can you help me write cold outreach emails to prospects in our pipeline?",
-      "expected_output": "Should recognize this is a cold email / outbound writing task, not RevOps. Should defer to or cross-reference the cold-email skill for writing outbound prospecting emails. RevOps covers the systems, processes, and data infrastructure — not the actual email content.",
+      "expected_output": "Should recognize this is a cold-email or outbound-writing task, not RevOps. Should defer to or cross-reference `suede-cold-email` for writing outbound prospecting emails. `suede-revops` covers systems, processes, and data infrastructure, not the actual email content.",
       "assertions": [
         "Recognizes this as cold email writing, not RevOps",
-        "References or defers to cold-email skill",
+        "References or defers to suede-cold-email",
         "Explains RevOps covers systems and processes, not email content"
       ],
       "files": []

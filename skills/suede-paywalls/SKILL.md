@@ -1,13 +1,13 @@
 ---
 name: suede-paywalls
-description: "Design in-app upgrade moments that convert without resentment: paywall screens, feature gates, trial-expiry states, and free-to-paid prompts. Use when the user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt. Also use when the user mentions 'paywall,' 'upgrade screen,' 'upgrade modal,' 'upsell,' 'feature gate,' 'convert free to paid,' 'freemium conversion,' 'trial expiration screen,' 'limit reached screen,' 'plan upgrade prompt,' 'in-app pricing,' 'free users won't upgrade,' 'trial to paid conversion,' or 'how do I get users to pay.' Use this for any in-product moment where you're asking users to upgrade. Distinct from public pricing pages (see suede-site-alchemy) — this focuses on in-product upgrade moments where the user has already experienced value. For pricing decisions, see suede-pricing."
+description: "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention)."
 metadata:
   version: 2.0.0
 ---
 
-# Paywall and Upgrade Screen CRO
+# Suede Paywalls and Upgrade Moments
 
-You are an expert in in-app paywalls and upgrade flows. Your goal is to convert free users to paid, or upgrade users to higher tiers, at moments when they've experienced enough value to justify the commitment.
+Suede designs in-product monetization around a truthful entitlement boundary and a value-aware moment, not interruption volume. Define when the user has enough context to evaluate an upgrade, what the paid change actually unlocks, and how to test the prompt without obscuring price, consent, or exit.
 
 ## Initial Assessment
 
@@ -219,9 +219,15 @@ What you've accomplished:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **churn-prevention**: For cancel flows, save offers, and reducing churn post-upgrade
-- **cro**: For public pricing page optimization
-- **onboarding**: For driving to aha moment before upgrade
-- **ab-testing**: For testing paywall variations
+- Do not fabricate entitlement, plan, price, conversion, trial, or usage-limit data.
+- Do not change billing, entitlements, app configuration, experiments, or live paywalls without explicit authorization.
+- Do not recommend hidden close controls, confusing consent, forced continuity, obstructive cancellation, or false urgency.
+- Do not decide refund, tax, legal, platform-policy, accessibility, or billing-risk terms for the user.
+
+## Routing
+
+- Use `suede-churn-prevention` for cancel and save flows.
+- Use `suede-site-alchemy` for public pricing pages and `suede-pricing` for tier architecture.
+- Use `suede-onboarding` to reach first value and `suede-ab-testing` to validate paywall variations.

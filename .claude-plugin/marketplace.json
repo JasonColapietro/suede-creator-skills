@@ -76,7 +76,7 @@
         "./skills/suede-social",
         "./skills/suede-video"
       ],
-      "description": "Marketing and growth subset: paid acquisition and outbound, monetisation (pricing, offers, paywalls), lifecycle and retention, and the measurement and operations layer. Adapted from marketingskills by Corey Haines (MIT)."
+      "description": "Suede marketing and growth subset: paid acquisition and outbound, monetisation (pricing, offers, paywalls), lifecycle and retention, and the measurement and operations layer. Licensed source acknowledgements remain at repository level."
     }
   ]
 }

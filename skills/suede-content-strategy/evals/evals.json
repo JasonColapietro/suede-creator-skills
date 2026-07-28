@@ -1,10 +1,10 @@
 {
-  "skill_name": "content-strategy",
+  "skill_name": "suede-content-strategy",
   "evals": [
     {
       "id": 1,
       "prompt": "Help me build a content strategy for our B2B SaaS product. We sell expense management software to finance teams at companies with 50-500 employees. We currently have no blog and want to start from scratch.",
-      "expected_output": "Should check for product-marketing.md first. Should establish content pillars (3-5 core topic areas). Should map content types by buyer stage (awareness → consideration → decision → implementation). Should identify keyword research opportunities by buyer stage. Should recommend a mix of searchable (SEO-driven) and shareable (thought leadership, data) content. Should use the prioritization scoring framework (customer impact 40%, content-market fit 30%, search potential 20%, resources 10%). Should provide an initial content calendar or publishing cadence. Should recommend content types appropriate for starting from scratch.",
+      "expected_output": "Should check for product-marketing.md first. Should establish content pillars (3-5 core topic areas). Should map content types by buyer stage (awareness → consideration → decision → implementation). Should discover currently callable and authorized research sources before claiming keyword or competitor findings. Should recommend a mix of searchable and shareable content, adapt the prioritization weights to the user's business goal, and provide an initial content calendar or publishing cadence.",
       "assertions": [
         "Checks for product-marketing.md",
         "Establishes 3-5 content pillars",
@@ -50,7 +50,7 @@
     {
       "id": 4,
       "prompt": "How should we prioritize which content to create first? We have a list of 50 blog post ideas but limited resources — one content marketer writing 2 posts per week.",
-      "expected_output": "Should apply the prioritization scoring framework: customer impact (40%), content-market fit (30%), search potential (20%), resources required (10%). Should help score or rank the content ideas using this framework. Should recommend focusing on high-impact, lower-effort content first. Should consider the buyer stage distribution (don't write only top-of-funnel). Should provide a practical workflow for the single content marketer to use going forward.",
+      "expected_output": "Should use customer impact, content-market fit, search potential, and resource requirements as decision factors; explain that the default weights are illustrative; adapt and record the weights for the user's goal; score the supplied ideas from evidence; consider buyer-stage distribution; and provide a practical workflow for the single content marketer.",
       "assertions": [
         "Applies prioritization scoring framework with weights",
         "Explains each scoring dimension",
@@ -77,10 +77,10 @@
     {
       "id": 6,
       "prompt": "Can you write a blog post about remote work best practices for our HR software blog?",
-      "expected_output": "Should recognize this is a copywriting/content creation task, not a content strategy task. Should defer to or cross-reference the copywriting skill for writing individual pieces of content. May provide strategic context (where this fits in the content strategy, keyword targeting, audience) but should make clear that copywriting is the right skill for writing the actual content.",
+      "expected_output": "Should recognize this is a copywriting/content creation task, not a content strategy task. Should defer to or cross-reference suede-copy for writing individual pieces of content. May provide strategic context (where this fits in the content strategy, keyword targeting, audience) but should make clear that suede-copy is the right skill for writing the actual content.",
       "assertions": [
         "Recognizes this as content creation, not strategy",
-        "References or defers to copywriting skill",
+        "References or defers to suede-copy",
         "Does not attempt to write the full blog post",
         "May provide strategic context for the piece"
       ],

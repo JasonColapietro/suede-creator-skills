@@ -1,25 +1,26 @@
 {
-  "skill_name": "competitor-profiling",
+  "skill_name": "suede-competitor-profiling",
   "evals": [
     {
       "id": 1,
       "prompt": "Profile these three competitors for us: https://competitor1.com, https://competitor2.com, https://competitor3.com. We need this for sales enablement and to find positioning gaps.",
-      "expected_output": "Should check for product-marketing.md first. Should run the full research process: Phase 1 site scraping (Firecrawl map + scrape of homepage, pricing, features, about, customers, integrations, changelog), Phase 2 SEO and market data (DataForSEO for backlinks, ranked keywords, traffic, competitors), Phase 3 synthesis. Should save raw data to competitor-profiles/raw/<slug>/<YYYY-MM-DD>/ with scrapes/, seo/, reviews/ subfolders before synthesizing. Should produce one markdown file per competitor following the profile template (At a Glance, Positioning & Messaging, Product & Features, Pricing, Customers & Social Proof, SEO & Content Strategy, Strengths & Weaknesses, Competitive Implications). Should produce a _summary.md after individual profiles with comparison table, positioning map, key takeaways, gaps and opportunities. Should parallelize scraping when handling multiple competitors and use consistent metrics across all three for comparability.",
+      "expected_output": "Should check for product-marketing.md first, then inspect the tools actually available in the current session rather than assuming Firecrawl or DataForSEO exists. Should run the full research process: Phase 1 public-site evidence through an available authorized fetch/map capability or browser/manual fallback, optional Phase 2 SEO and market data through an available authorized provider or user export, and Phase 3 synthesis. Should save raw data to competitor-profiles/raw/<slug>/<YYYY-MM-DD>/ with scrapes/, seo/, reviews/ subfolders before synthesizing. Should produce one markdown file per competitor following the profile template (At a Glance, Positioning & Messaging, Product & Features, Pricing, Customers & Social Proof, SEO & Content Strategy, Strengths & Weaknesses, Competitive Implications). Should produce a _summary.md after individual profiles with comparison table, positioning map, key takeaways, gaps and opportunities. Should parallelize independent reads only when supported and use consistent provider metrics across all three for comparability.",
       "assertions": [
         "Checks for product-marketing.md",
-        "Runs all three phases (scraping, SEO data, synthesis)",
+        "Checks current tool availability and uses manual fallback when needed",
+        "Runs public evidence, optional quantitative data, and synthesis phases",
         "Saves raw data to competitor-profiles/raw/ with date subfolder",
         "Produces individual profile per competitor",
         "Produces _summary.md after individual profiles",
         "Uses consistent metrics across competitors",
-        "Parallelizes scraping when possible"
+        "Parallelizes independent reads only when supported"
       ],
       "files": []
     },
     {
       "id": 2,
       "prompt": "We have 12 competitors. Profile all of them.",
-      "expected_output": "Should recommend prioritizing rather than profiling all 12. Should suggest profiling the top 5 first based on domain overlap or market similarity (handling-multiple-competitors guidance). Should default to quick scan mode for a list this size, not deep profile. Should explain the difference: quick scan covers homepage + pricing + domain rank overview + ranked keywords summary, deep profile adds reviews, technology stack, backlink details. Should offer deep profile only if user requests or for 3 or fewer competitors. Should ask which competitors are highest priority if user wants to narrow further.",
+      "expected_output": "Should recommend prioritizing rather than profiling all 12. Should suggest profiling the top 5 first based on domain overlap or market similarity (handling-multiple-competitors guidance). Should default to quick scan mode for a list this size, not deep profile. Should explain the difference: quick scan covers homepage + pricing plus one consistent provider overview and ranked-keyword summary when an authorized source or user export is available; deep profile adds reviews, technology signals, and backlink detail when available. Should offer deep profile only if user requests or for 3 or fewer competitors. Should ask which competitors are highest priority if the list should be narrowed.",
       "assertions": [
         "Recommends prioritization over profiling all 12",
         "Suggests top 5 based on relevance",
@@ -32,10 +33,10 @@
     {
       "id": 3,
       "prompt": "I have an existing profile of Notion from 4 months ago. Should I update it or start fresh?",
-      "expected_output": "Should explain profile updating process from the Updating Profiles section. Should recommend updating rather than starting fresh — preserves history and enables diffing. Should explain what to re-pull: pricing page first (most volatile), SEO metrics (traffic and rankings shift monthly), changelog scan for product changes. Should update the Generated date. Should add a Change Log section at the bottom noting what changed since last profile. Should also save the new raw data to a new <YYYY-MM-DD> folder rather than overwriting prior data — supports diffing over time.",
+      "expected_output": "Should explain profile updating process from the Updating Profiles section. Should recommend updating rather than starting fresh — preserves history and enables diffing. Should explain what to refresh: pricing page first (most volatile), SEO metrics only through the same currently available provider and matching parameters, and changelog evidence for product changes. Should update the Generated date. Should add a Change Log section at the bottom noting what changed since last profile. Should save new raw data to a new <YYYY-MM-DD> folder rather than overwriting prior data.",
       "assertions": [
         "Recommends updating over starting fresh",
-        "Lists what to re-pull (pricing, SEO, changelog)",
+        "Lists what to refresh and keeps SEO provider parameters consistent",
         "Mentions adding Change Log section",
         "Says to save raw data to new date folder",
         "Says never overwrite prior date's data"
@@ -51,16 +52,16 @@
         "Specifies what to extract from each page type",
         "Includes changelog as product direction signal",
         "Mentions optional review scraping",
-        "References Firecrawl Map then Scrape workflow"
+        "Uses an available map/fetch capability or browser/manual fallback"
       ],
       "files": []
     },
     {
       "id": 5,
       "prompt": "I want a profile but I don't care about SEO data — just pricing, positioning, and customer logos. Can you skip the DataForSEO calls?",
-      "expected_output": "Should accept the scoped request and skip Phase 2. Should run Phase 1 (Firecrawl scraping of homepage, pricing, customers pages) and Phase 3 synthesis only. Should explain that without SEO data, the profile won't include Domain Rank, organic traffic estimates, ranked keywords, referring domains, or top organic pages — but the positioning, pricing, and customer sections will be complete. Should produce an abbreviated profile flagging the SEO section as 'not collected per user request' rather than leaving placeholders. Should still save raw scrapes to disk for reuse.",
+      "expected_output": "Should accept the scoped request and skip Phase 2. Should run Phase 1 through an available authorized page-fetch capability or browser/manual capture of homepage, pricing, and customer pages, then Phase 3 synthesis. Should explain that without SEO data, the profile won't include provider domain metrics, organic traffic estimates, ranked keywords, referring domains, or top organic pages — but the positioning, pricing, and customer sections will be complete. Should produce an abbreviated profile flagging the SEO section as 'not collected per user request' rather than leaving placeholders. Should still save raw page evidence to disk for reuse.",
       "assertions": [
-        "Skips Phase 2 (DataForSEO) as requested",
+        "Skips optional quantitative SEO data as requested",
         "Runs Phase 1 and Phase 3",
         "Explains what's missing without SEO data",
         "Flags SEO section as skipped, not blank",

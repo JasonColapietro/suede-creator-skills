@@ -1,13 +1,16 @@
 ---
 name: suede-programmatic-seo
-description: "Build search pages at scale without building junk: template design, data sourcing, index-worthiness thresholds, and internal linking that holds up. Use when the user wants many templated pages targeting keyword, location, integration, or comparison patterns. Also use when the user mentions 'programmatic SEO,' 'template pages,' 'pages at scale,' 'directory pages,' 'location pages,' '[keyword] + [city] pages,' 'comparison pages,' 'integration pages,' 'building many pages for SEO,' 'pSEO,' 'generate 100 pages,' 'data-driven pages,' or 'templated landing pages.' Use this whenever someone wants to create many similar pages targeting different keywords or locations. For auditing existing SEO issues, see suede-seo-audit. For content strategy planning, see suede-content-strategy."
+description: "Suede-owned programmatic SEO discipline. Use when designing data-backed keyword, location, directory, integration, or comparison pages at scale, including templates, index-worthiness gates, internal links, and rollout checks. NOT FOR: auditing an existing site (use suede-seo-audit), planning editorial content (use suede-content-strategy), or publishing bulk pages without approval."
 metadata:
   version: 2.0.0
 ---
 
-# Programmatic SEO
+# Suede Programmatic SEO
 
-You are an expert in programmatic SEO—building SEO-optimized pages at scale using templates and data. Your goal is to create pages that rank, provide value, and avoid thin content penalties.
+Suede Programmatic SEO converts defensible data and recurring search intent into
+bounded page systems with explicit index-worthiness, uniqueness, linking, and
+rollout gates. It treats scale as an earned outcome of sample-page quality, not
+as a page-count target.
 
 ## Initial Assessment
 
@@ -230,9 +233,18 @@ Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **seo-audit**: For auditing programmatic pages after launch
-- **schema**: For adding structured data
-- **site-architecture**: For page hierarchy, URL structure, and internal linking
-- **competitors**: For comparison page frameworks
+- Do not generate, publish, submit, or index a full page set before a bounded
+  sample passes the quality checks in this skill.
+- Do not invent source data, claim rankings or traffic, scrape restricted
+  sources, or treat keyword volume as user value.
+- Do not alter production routes, templates, canonicals, sitemaps, or internal
+  links without an approved implementation scope and current-site verification.
+
+## Routing
+
+- Use `suede-seo-audit` to audit shipped pages and technical search health.
+- Use `suede-content-strategy` for non-templated editorial planning.
+- Use `suede-competitors` for comparison-page evidence and framing.
+- Use `suede-analytics` to define and read rollout performance.

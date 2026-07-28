@@ -1,5 +1,5 @@
 {
-  "skill_name": "onboarding",
+  "skill_name": "suede-onboarding",
   "evals": [
     {
       "id": 1,
@@ -79,10 +79,10 @@
     {
       "id": 6,
       "prompt": "Our signup form has 8 fields and people keep dropping off. Can you help us fix the signup flow?",
-      "expected_output": "Should recognize this is a signup flow optimization task, not post-signup onboarding. Should defer to or cross-reference the signup skill, which handles signup form optimization, field reduction, and registration flow design. Onboarding-cro covers what happens after signup. Should make this distinction clear.",
+      "expected_output": "Should recognize this is a signup-flow optimization task, not post-signup onboarding. Should defer to or cross-reference suede-signup, which handles signup-form optimization, field reduction, and registration-flow design. Suede-onboarding covers what happens after signup. Should make this distinction clear.",
       "assertions": [
         "Recognizes this as signup flow optimization, not onboarding",
-        "References or defers to signup skill",
+        "References or defers to suede-signup",
         "Explains that onboarding covers post-signup",
         "Does not attempt signup form redesign using onboarding patterns"
       ],

@@ -9,12 +9,12 @@ The Quietude plan (see `references/example-quietude.md`) is the canonical refere
 ## Title block
 
 ```markdown
-# {Client} — Marketing Plan v1
+# {Client} — Marketing Plan {plan_version}
 
 **Prepared by:** {Author / fCMO name}
 **For:** {Founders / leadership team}
 **Date:** YYYY-MM-DD
-**Status:** Draft v1 — for team review
+**Status:** Draft {plan_version} — for team review
 ```
 
 ---
@@ -82,7 +82,11 @@ Table of every person with marketing surface area:
 | Person | Role | Marketing surface area |
 |---|---|---|
 
-Be honest about gaps. If there's no dedicated marketing hire yet, name when one becomes necessary and what role (see `references/team-and-agency-model.md` — first hire should be π-shaped strategist titled Manager or Lead, not VP/CMO).
+Be honest about gaps. For each uncovered capability, record the outcome, present
+owner and capacity, evidence of durable workload, access and risk, options
+(reassign, defer, automate, contractor, agency, or employee), decision owner,
+maximum exposure, and review date. Do not infer a hire, title, or vendor from
+company size, funding, or hire order; use `references/team-and-agency-model.md`.
 
 ### Marketing budget (current)
 - Paid acquisition: $X/mo
@@ -90,12 +94,18 @@ Be honest about gaps. If there's no dedicated marketing hire yet, name when one 
 - Retainers / fCMO: list
 - Headcount: list
 - Blended CAC: $X (must include salaries, content costs, tools, retainers — not just paid spend; see `references/budget-planning.md` for the calculation)
-- Current spend as % of ARR: X% (compare against 5–40% range)
+- Current spend as % of ARR: X% (record for context; do not compare with an
+  unsourced universal range)
 
-State the funding-stage tier this maps to (see `references/funding-stage-unlocks.md`). Implication: what 90-day plan must produce *without* lever pulls that require future budget.
+State which capabilities are current, approved tests, conditional unlocks, or
+deferred (see `references/funding-stage-unlocks.md`). The 90-day plan includes
+only current work and explicitly approved tests.
 
 ### Phase of SaaS growth
-Name the current phase: $0–10K ARR / $10K–100K / $100K–1M / $1M–$10M / $10M+. Each phase has its own binding constraint and dominant growth pattern (see `references/growth-patterns.md`). Section 10 sequences the move into the next phase.
+Name the observed pattern and current constraint from dated acquisition,
+activation, retention, capacity, cash, and market evidence (see
+`references/growth-patterns.md`). Section 10 presents conditional low/base/high
+scenarios and review checkpoints.
 
 ### What's already done (acknowledge, then build on)
 Table:
@@ -152,16 +162,18 @@ If a prior scored audit exists, paste those scores in. Otherwise score from avai
 Brief. What's working today, what's not, what the data shows about channel mix.
 
 ### The plan
-Numbered "Moves." Each move is a paragraph (3–6 sentences) describing the channel, the thesis, and the specific work. Common moves:
+Numbered "Moves." Each move is a paragraph describing the evidence, hypothesis,
+owner, specific work, exposure, review date, and stop conditions. Build the
+move set from client evidence rather than an archetype menu. Candidate questions:
 
-- **Move 1 — SEO (and content)** — Reference the SEO plan if one exists (`seo/plan.md`). Otherwise: keyword research, pillar/spoke structure, content cadence.
-- **Move 2 — App Store / Play Store optimization** (for consumer apps) — Listing rewrite, screenshot tests, ASO keyword targeting.
-- **Move 3 — Founder-led channels** — LinkedIn for B2B/SaaS, Twitter/X for tech, Instagram for consumer. Cadence, topics, owners.
-- **Move 4 — PR amplification** — What's the credibility anchor? How to amplify it.
-- **Move 5 — Events (if applicable)** — Live events, conferences, webinars. Acquisition vs. activation role.
-- **Move 6 — Hardware / commerce surface (if applicable)** — Shopify storefront, Amazon, retail.
-- **Move 7 — B2B sales support** — Case studies, partner pages, vertical-specific content.
-- **Move 8 — Paid layer (when budget unlocks)** — Apple Search Ads, Meta, LinkedIn, Google. Held until specified funding stage.
+- Is there measured search demand and an accessible site surface?
+- Does a verified marketplace or store listing matter to the current funnel?
+- Which audience channels show comparable reach and qualified action?
+- Is there a source-backed credibility event worth amplifying?
+- Do events, partnerships, commerce, or sales enablement address the measured
+  constraint?
+- Is a paid test justified by audience, economics, tracking, creative capacity,
+  explicit approval, and an affordable downside?
 
 ### 90-day acquisition moves
 Week-by-week breakdown of the ships in the first quarter.
@@ -170,7 +182,7 @@ Week-by-week breakdown of the ships in the first quarter.
 Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 
 ### Skills + tools
-- **Skills:** list relevant marketing-skills repo skills (`seo-audit`, `ai-seo`, `ads`, `social`, `competitors`, etc.)
+- **Skills:** list relevant public Suede skills (`suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, `suede-social`, `suede-competitors`, etc.)
 - **MCPs / APIs:** list connections (Ahrefs API, GA4 MCP, Typefully MCP, Stripe MCP for LTV math, etc.)
 
 ---
@@ -191,7 +203,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Paywall + pricing review (often Activation × Revenue)
 
 ### Skills + tools
-`onboarding`, `signup`, `paywalls`, `copywriting`, `marketing-website-design`, `ab-testing`, etc.
+`suede-onboarding`, `suede-signup`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
 
 ---
 
@@ -211,7 +223,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Annual plan default tests (cross-references to Revenue)
 
 ### Skills + tools
-`emails`, `churn-prevention`, `copywriting`, `paywalls`, etc.
+`suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-paywalls`, etc.
 
 ---
 
@@ -224,14 +236,16 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 **Structure:** Same as above.
 
 **Common moves:**
-- Ambassador / affiliate program launch (if inbound interest exists, lead with it)
+- Ambassador / affiliate pilot only after inbound fit, rights/disclosures,
+  economics, owner capacity, tracking, maximum exposure, approval, review, and
+  stop conditions are verified
 - Share-after-value moments built into product
 - Founder amplification (founder as referrer-zero)
 - Long-game expert / Guides / certified-host network
 - Gifting flows (for consumer / hardware)
 
 ### Skills + tools
-`referrals`, `social`, `emails` (for ambassador lifecycle), `copywriting`, etc.
+`suede-referrals`, `suede-social`, `suede-emails` (for ambassador lifecycle), `suede-copy`, etc.
 
 ---
 
@@ -258,14 +272,17 @@ Required table:
 |---|---|---|
 | ARPC (avg monthly revenue per customer) | $X | Pulled from Stripe / billing |
 | Blended CAC | $X | Includes all marketing costs, not just paid |
-| Annual retention rate | X% | 1 − annual churn |
-| LTV (rough) | $X | ARPC × 12 / annual churn |
-| LTV / CAC | X | Health benchmark: > 3 |
+| Retention / churn input | X% | Definition, cohort, window, source, as-of date |
+| LTV range | $X–$Y | Finance-approved model, margin treatment, horizon, source assumptions |
+| LTV / CAC range | X–Y | Compared with the company's approved hurdle and payback constraint; no universal threshold |
 
-These feed the budget math in Section 10. If any of these are unknown, flag in Section 13 as top open decision.
+These feed the sensitivity model in Section 10. If any input is unknown, label
+the output `unverified assumption`, show low/base/high cases, and list the
+missing decision in Section 13. Do not use a reciprocal-churn shortcut when
+cohort retention, gross margin, or a finance-approved LTV definition is absent.
 
 ### Skills + tools
-`pricing`, `paywalls`, `sales-enablement`, `revops`, `ab-testing`, etc.
+`suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, etc.
 
 ---
 
@@ -296,30 +313,42 @@ Second-order moves. Layered tactics. 90-day review prep.
 
 ## Section 10 — 12-month outlook
 
-**Purpose:** Quarterly milestones with explicit funding-stage capability unlocks named, anchored against a defensible growth pattern.
+**Purpose:** Quarterly decision checkpoints with conditional capability
+unlocks anchored in dated evidence, resource capacity, approval, and an
+explicitly testable growth-pattern hypothesis.
 
 **Length:** Four sub-sections, one per quarter. ~250–400 words each. Plus a short framing paragraph at the top naming the budget method and growth pattern.
 
 ### Framing (top of Section 10)
 
 State explicitly:
-- **Budget method used.** Method 1 (Revenue-Based 5–40% of ARR) or Method 2 (Goal-Based formula). See `references/budget-planning.md`. Show the math.
-- **Annual budget total** + the experimental buffer (+10–20%).
-- **Resulting end-of-year ARR goal.** Honest forecast, not a guarantee — see the forecasting reality check in `references/measurement-framework.md`.
-- **Growth pattern expected.** Linear (predictable $X MRR added per month), step-function (plateau between deliberate jumps), or layered S-curves. For VC-backed Series A+, anchor against 3-3-2-2-2 and show whether the plan matches it or explicitly chooses a different trajectory. See `references/growth-patterns.md`.
+- **Scenario method used.** Capacity-based or goal-based sensitivity model.
+  See `references/budget-planning.md`; show source dates, low/base/high
+  assumptions, approval state, and limitations.
+- **Maximum approved exposure**, downside stop, owner, and review date.
+- **Resulting outcome range.** A decision scenario, not a guarantee.
+- **Growth pattern hypothesis.** Linear, step-function, or layered S-curves,
+  chosen from current evidence and revisited at the review date.
 
 ### Structure (per quarter)
 
 #### Q{N} — Months {X}–{Y}
 
-**Funding state:** {tier} per `funding-stage-unlocks.md`
+**Verified resource state:** {current evidence, capacity, cash/runway boundary,
+owner, and approval as of date}
+
+**Conditional unlocks:** {condition → capability}, including decision owner,
+maximum exposure, review date, and pause/stop conditions. A financing event may
+be one condition but never supplies the spend, hire, vendor, channel, or target.
 
 **Focus:** One-sentence focus theme for the quarter.
 
 **Outcomes by end of Q{N}:**
 - Bulleted outcome list (5–8 items)
 
-**KPI targets:** 3–5 specific numerical targets.
+**KPI decision rules:** 3–5 source-backed ranges or thresholds. For each, name
+baseline/cohort/date, low/base/high assumption, owner, review date, and action
+on hit/miss. Do not invent a number to fill the template.
 
 **Channel/Product/Market S-curve position:** Which curves are growing, which are plateauing, which is the next one being staged for this quarter (see `growth-patterns.md` — layering principle).
 
@@ -327,14 +356,16 @@ State explicitly:
 
 ## Section 11 — Marketing operations stack
 
-**Purpose:** The fCMO differentiator. Show how a small team + agentic tooling executes the plan without hiring at every channel.
+**Purpose:** Show how approved work runs through accountable owners, present
+capacity, authorized manual or tool-assisted workflows, review gates, and
+fallbacks. Do not imply that tooling replaces staffing or expertise.
 
 **Length:** Tables + brief explanation.
 
 **Structure:**
 
 ### The thesis
-1–2 paragraphs explaining the principle: small team + marketing-skills library + MCP integrations = output of a larger team.
+1–2 paragraphs explaining how the public Suede skill pack and verified integrations make approved workflows more repeatable. Do not claim headcount equivalence, guaranteed throughput, or replacement of channel ownership and human review.
 
 ### Skills mapped to AARRR stages
 
@@ -353,19 +384,19 @@ State explicitly:
 |---|---|---|
 
 ### A concrete example
-Pick one operational moment that proves the stack works (e.g., "Customer.io MCP let the non-technical founder draft a flow live on the kickoff call"). Anchor the abstract claim in a specific event.
+Pick one verified operational moment that shows how the stack was used. Name the source artifact, owner, review gate, and observed result; do not infer causality or broader performance from the event.
 
-### Capability unlocks by funding stage
+### Capability unlocks by verified resource state
 
-| Stage | Headcount | Tooling | Channels live |
-|---|---|---|---|
-| (current) | (list) | (list) | (list) |
-| (next round) | (delta) | (delta) | (delta) |
-| ... | ... | ... | ... |
+| Capability | Current evidence/owner | Constraint | Unlock condition | Approval / maximum exposure | Review / stop |
+|---|---|---|---|---|---|
+| (workflow) | (source, date, owner, capacity) | (specific gap) | (verified condition) | (decision owner and ceiling) | (date and rule) |
 
 ### Team and agency model (RACI)
 
-Apply the principle from `references/team-and-agency-model.md`: strategy in-house, execution often outsourced.
+Use `references/team-and-agency-model.md` to compare current ownership,
+reassignment, deferral, automation, contractor, agency, and employee options
+against actual duration, capacity, access, risk, cost, and handoff needs.
 
 | Function | Owned by (internal strategic role) | Executed by (IC / contractor / agency) |
 |---|---|---|
@@ -373,17 +404,17 @@ Apply the principle from `references/team-and-agency-model.md`: strategy in-hous
 | Product marketing (story engine) | | |
 | Content marketing (trust engine) | | |
 
-If the team is missing a strategic owner for one of these functions, the first 90-day move (Section 9) should be the hire — Manager or Lead title, π-shaped if possible, not VP/CMO.
-
-If execution capacity is the gap, name the contractor or small niche agency in the right cell rather than the team's existing IC.
-
-Pull from `references/funding-stage-unlocks.md`.
+If a function lacks an accountable owner, add a bounded ownership decision to
+Section 9. Do not assume the answer is a hire or vendor. Record evidence
+required, options, decision owner, maximum exposure, approval, review date, and
+the interim safe state. Pull conditions from
+`references/funding-stage-unlocks.md`.
 
 ---
 
 ## Section 12 — Tactical idea bank
 
-**Purpose:** Cross-reference all 139 ideas from the `marketing-ideas` skill against AARRR stages, with client-specific status.
+**Purpose:** Cross-reference all 139 ideas from the `suede-marketing-ideas` skill against AARRR stages, with client-specific status.
 
 **Length:** Long — tables can easily total 150+ rows.
 
@@ -394,15 +425,16 @@ Explain the cross-reference: Sections 4–8 prescribe what's *being done*. This 
 
 ### Status legend
 
-- **Now (Q1)** — already in 90-day plan
-- **Q2** — post-foundation layer-in
-- **Q3+** — post-seed-close or post-GA expansion
-- **Q4+** — long-game
+- **Current** — already active with a verified owner and evidence
+- **Approved test** — bounded test with exact approval, exposure, and stop rules
+- **Conditional** — only after named evidence, capacity, approval, and review gates
+- **Deferred** — intentionally held pending a named decision or resource
 - **Skip / off-brand** — incompatible with brand voice or business model
 
 ### 12.1 Acquisition ideas
 
-By status (Now / Q2 / Q3+ / Q4+ / Skip), tables of relevant marketing-ideas by number.
+By status (Current / Approved test / Conditional / Deferred / Skip), tables of
+relevant `suede-marketing-ideas` entries by number.
 
 | # | Idea | Client note |
 |---|---|---|
@@ -419,7 +451,9 @@ By status (Now / Q2 / Q3+ / Q4+ / Skip), tables of relevant marketing-ideas by n
 - What the plan covers as a % of the available tactical surface area
 - What this proves about the client's stage
 
-Use `references/idea-cross-reference.md` as the source-of-truth mapping. Apply client-specific filters during draft (brand voice rules out some; funding stage shifts timing of others).
+Use `references/idea-cross-reference.md` as the source-of-truth mapping. Apply
+client-specific filters during draft. Timing comes from fit, evidence, owner
+capacity, dependencies, authorization, and stop conditions—not a round label.
 
 ---
 
@@ -476,7 +510,7 @@ Ranked by impact. Each is: name + impact + what's blocked.
 ## Closing line
 
 ```markdown
-*{Client} Marketing Plan v1. Prepared by {Author}, {Date}. For team review and discussion.*
+*{Client} Marketing Plan {plan_version}. Prepared by {Author}, {Date}. For team review and discussion.*
 ```
 
 ---
@@ -486,9 +520,12 @@ Ranked by impact. Each is: name + impact + what's blocked.
 - **Section 1** — A non-Quietude reader could understand the company's growth thesis from this alone.
 - **Section 2** — Brand voice rules are explicit enough that any new copywriter could follow them.
 - **Section 3** — All "in-flight" items have an owner and a blocker named.
-- **Sections 4–8** — Each move names a skill (`some-skill`) and a tool (Customer.io MCP / Stripe MCP / Ahrefs / etc.).
+- **Sections 4–8** — Each move names an owner, evidence source, execution method,
+  review gate, and fallback. Name a public Suede skill or authorized tool only
+  when actually available; a manual workflow is valid.
 - **Section 9** — Every row has an owner.
-- **Section 10** — Each quarter names the funding stage explicitly.
-- **Section 11** — At least one concrete operational example proves the stack thesis.
+- **Section 10** — Each quarter names source-backed scenarios, resource
+  conditions, accountable approval, review date, and pause/stop rules.
+- **Section 11** — At least one evidence-backed operational example shows how the stack was used without overstating causality.
 - **Section 12** — Skip list has rationale, not just absence.
 - **Section 13** — North-star is specific to this company (not generic "ARR growth").

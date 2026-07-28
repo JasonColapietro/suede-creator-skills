@@ -1,13 +1,13 @@
 ---
 name: suede-competitors
-description: "Write comparison and alternative pages that rank and convert without misrepresenting anyone: page formats, claim discipline, and honest framing. Use when the user wants a versus page, alternative page, or competitor comparison for search and sales. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'battle card,' or 'competitor teardown.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. For sales-specific competitor docs, see suede-sales-enablement."
+description: "Suede-owned comparison-page discipline for honest alternative, versus, and competitor-comparison content that serves evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
 metadata:
   version: 2.0.1
 ---
 
-# Competitor & Alternative Pages
+# Suede Competitor and Alternative Pages
 
-You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuine value to evaluators, and position your product effectively.
+Use this Suede comparison-page playbook to serve competitive search intent while keeping every product claim current, sourced, and fair.
 
 ## Initial Assessment
 
@@ -104,7 +104,7 @@ Before creating competitor pages, understand:
 
 **Important**: Include 4-7 real alternatives. Being genuinely helpful builds trust and ranks better.
 
-**AI-answer expectations by stage**: these pages often earn *citations* in AI answers, but whether AI *recommends* your brand from them depends on offsite consensus (reviews, forums, analysts) — for emerging brands, a self-ranked list can surface the competitors in the AI answer while you get only the citation. Still publish for search intent and category framing, but set expectations accordingly — see ai-seo's citations-vs-recommendations reference for the data.
+**AI-answer expectations by stage**: these pages can earn *citations* in AI answers, but whether AI *recommends* your brand from them also depends on offsite consensus (reviews, forums, analysts). For emerging brands, a self-ranked list may surface competitors while the brand receives only a citation. Treat that as a hypothesis and route current visibility evidence and claim validation to `suede-seo-audit`.
 
 ---
 
@@ -249,10 +249,17 @@ Recommended pages to create with priority order based on search volume.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **programmatic-seo**: For building competitor pages at scale
-- **copywriting**: For writing compelling comparison copy
-- **seo-audit**: For optimizing competitor pages
-- **schema**: For FAQ and comparison schema
-- **sales-enablement**: For internal sales collateral, decks, and objection docs
+- Do not invent, cherry-pick, or present stale competitor claims, prices, features, testimonials, or rankings as current fact.
+- Do not publish, deploy, index, or update comparison pages without explicit authorization and a final claim review.
+- Do not use competitor trademarks in a way that implies affiliation or reuse protected creative assets without rights.
+- Do not decide that an option is universally best; state audience, criteria, tradeoffs, sources, and checked dates.
+
+## Routing
+
+- Need current competitor evidence -> use `suede-competitor-profiling`.
+- Need scaled comparison-page architecture -> use `suede-programmatic-seo`.
+- Need final page copy or organic QA -> use `suede-copy` or `suede-seo-audit`.
+- Need internal battle cards -> use `suede-sales-enablement`.
+- From those skills, route honest public alternative and versus-page composition back to `suede-competitors`.

@@ -1,13 +1,13 @@
 ---
 name: suede-lead-magnets
-description: "Decide what to give away for an email: format selection, depth, gating rules, delivery, and the sequence that follows the download. Use when the user is planning gated content, a content upgrade, a template, or any downloadable in exchange for contact details. Also use when the user mentions 'lead magnet,' 'gated content,' 'content upgrade,' 'downloadable,' 'ebook,' 'cheat sheet,' 'checklist,' 'template download,' 'opt-in,' 'freebie,' 'PDF download,' 'resource library,' 'content offer,' 'email capture content,' 'Notion template,' 'spreadsheet template,' or 'what should I give away for emails.' Use this for planning what to create and how to distribute it. For interactive tools as lead magnets, see suede-free-tools. For writing the actual content, see suede-copy. For the email sequence after capture, see suede-emails."
+description: "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy)."
 metadata:
   version: 2.0.0
 ---
 
-# Lead Magnets
+# Suede Lead-Magnet Systems
 
-You are an expert in lead magnet strategy. Your goal is to help plan lead magnets that capture emails, generate qualified leads, and naturally lead to product adoption.
+Suede designs lead magnets as useful, rights-clear assets with an honest value exchange and a measurable path to product value. Choose the format, depth, gating, delivery, and follow-up based on audience need and qualification—not on maximizing raw email capture.
 
 ## Before Planning
 
@@ -116,7 +116,7 @@ Goal: Help implement. Remove friction to purchase.
 | Template | "Ready-to-Use Sales Email Templates" |
 | Free trial | "14-Day Free Trial" |
 | Implementation guide | "Migration Checklist: Switch in 30 Minutes" |
-| ROI calculator | "Calculate Your Savings" (→ see **free-tools**) |
+| ROI calculator | "Calculate Your Savings" (route to `suede-free-tools`) |
 
 ---
 
@@ -147,8 +147,8 @@ Rule of thumb: Ask for the minimum needed. Every extra field reduces conversion 
 - Add social proof: "Downloaded by 5,000+ marketers"
 - Reduce risk: "No spam. Unsubscribe anytime."
 
-**For form optimization**: See **cro** skill
-**For popup implementation**: See **popups** skill
+**For form optimization**: route to `suede-site-alchemy`.
+**For popup implementation**: route to `suede-site-alchemy`.
 
 ---
 
@@ -163,7 +163,7 @@ Rule of thumb: Ask for the minimum needed. Every extra field reduces conversion 
 5. **Form** — Minimal fields, clear CTA button
 6. **FAQ** — Address hesitations (Is it really free? What format?)
 
-**For landing page optimization**: See **cro** skill
+**For landing page optimization**: route to `suede-site-alchemy`.
 
 ### Delivery Methods
 
@@ -196,14 +196,14 @@ Don't waste the thank you page. After they've converted:
 
 - Trigger on exit intent or scroll depth
 - Match the popup offer to the page content
-- **See popups** for implementation
+- Route popup implementation to `suede-site-alchemy`.
 
 ### Social Media
 
 - Share snippets and teasers from the lead magnet
 - Create carousel posts from key points
 - Use the lead magnet as the CTA in your bio/profile
-- **See social** for social strategy
+- Route social strategy to `suede-social`.
 
 ### Paid Promotion
 
@@ -296,15 +296,16 @@ When creating a lead magnet strategy, provide:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **free-tools**: For interactive tools as lead magnets (calculators, graders, quizzes)
-- **copywriting**: For writing the lead magnet content itself
-- **emails**: For nurture sequences after lead capture
-- **cro**: For optimizing lead magnet landing pages
-- **popups**: For popup-based lead capture
-- **cro**: For optimizing capture forms
-- **content-strategy**: For content planning and topic selection
-- **analytics**: For measuring lead magnet performance
-- **ads**: For paid promotion of lead magnets
-- **social**: For social media promotion
+- Do not claim conversion, demand, originality, or audience fit without evidence.
+- Do not publish assets, create forms, collect contacts, start campaigns, or change consent settings without explicit authorization.
+- Do not gate material the user must provide freely for legal, safety, account, or support reasons.
+- Do not decide privacy, licensing, compliance, or retention policy for captured data.
+
+## Routing
+
+- Use `suede-free-tools` for calculators, graders, quizzes, and generators.
+- Use `suede-copy` for asset and landing-page copy and `suede-emails` for post-capture nurture.
+- Use `suede-content-strategy` for topic selection and `suede-analytics` for measurement.
+- Use `suede-ads` or `suede-social` for distribution.

@@ -333,7 +333,9 @@ SparkToro data is aggregated and anonymized — it shows patterns, not individua
 - Skews English-language, US-centric
 - Shows what audiences do, not why — pair with qualitative sources
 
-See [tools/integrations/sparktoro.md](../../../tools/integrations/sparktoro.md) for full tool details and pricing.
+This pack does not include a SparkToro integration guide. Verify current
+capabilities, limits, and pricing in SparkToro's official product documentation
+before relying on them, and record the access date in the research notes.
 
 ---
 

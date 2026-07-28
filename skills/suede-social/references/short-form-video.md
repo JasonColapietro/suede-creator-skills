@@ -6,7 +6,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 
 ## Video Hook Library
 
-### Curiosity Hooks (Best for engagement)
+### Curiosity Hooks (engagement hypothesis)
 
 **The "Secret" Formula:**
 - "The secret to [outcome] that nobody talks about"
@@ -23,7 +23,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 - "Am I the only one who didn't know this?"
 - "The reason [common thing] doesn't work is..."
 
-### Value Hooks (Best for saves)
+### Value Hooks (save-intent hypothesis)
 
 **The Promise:**
 - "How to [achieve outcome] in [specific timeframe]"
@@ -40,7 +40,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 - "[Number] mistakes that are killing your [results]"
 - "Why [thing you think is good] is actually hurting you"
 
-### Story Hooks (Best for watch time)
+### Story Hooks (retention hypothesis)
 
 **The Transformation:**
 - "3 months ago, I [bad state]. Today, I [good state]."
@@ -57,7 +57,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 - "This changed everything for me"
 - "Let me tell you about the time I [interesting situation]"
 
-### Controversial Hooks (Best for comments)
+### Contrarian Hooks (response hypothesis)
 
 - "Unpopular opinion: [bold statement]"
 - "[Common advice] is actually wrong"
@@ -110,7 +110,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 [55-60s] Lesson/CTA
 ```
 
-Best for: Personal stories, case studies, testimonials
+Starting fit hypothesis: personal stories, case studies, testimonials
 
 ### The POV/Skit (15-30 sec)
 
@@ -120,7 +120,7 @@ Best for: Personal stories, case studies, testimonials
 [25-30s] Punchline or twist
 ```
 
-Best for: Relatable content, humor, niche communities
+Starting fit hypothesis: relatable content, humor, niche communities
 
 ---
 
@@ -133,7 +133,7 @@ Best for: Relatable content, humor, niche communities
 - Interesting background (bookshelf, plants, studio setup)
 
 ### Slideshow/Carousel Video
-- Strong visual on each slide (2-4 seconds per slide)
+- Test 2–4 seconds per slide as a starting range, then adjust from retention
 - Text overlays with key points
 - Consistent style/branding
 - Voiceover or trending sound
@@ -146,7 +146,8 @@ Best for: Relatable content, humor, niche communities
 
 ### B-Roll Heavy
 - Show don't tell
-- Quick cuts (1-3 seconds per shot)
+- Test 1–3 seconds per shot as a starting range, then adjust from retention and
+  comprehension
 - Match cuts to voiceover beats
 - Mix wide, medium, and close-up shots
 
@@ -182,21 +183,23 @@ Best for: Relatable content, humor, niche communities
 
 ## Posting Strategy
 
-### Optimal Posting Times (test your audience)
+### Timing hypotheses
 
-| Platform | Best Times (local) |
-|----------|-------------------|
-| TikTok | 7-9 AM, 12-3 PM, 7-11 PM |
-| Reels | 9 AM, 12 PM, 7-9 PM |
-| Shorts | 12-3 PM, 7-9 PM |
+Use current follower-activity data and official platform guidance when
+available. If they are unavailable, rotate comparable posts through three
+audience-local starting windows—morning (7–10), midday (11–14), and evening
+(18–21)—for a bounded four-week test. These are test bins, not best times.
 
-### Frequency Recommendations
+### Cadence hypotheses
 
-| Goal | Minimum | Optimal |
-|------|---------|---------|
-| Growing | 1/day | 2-4/day |
-| Maintaining | 3/week | 1/day |
-| Testing | 2/week | 5/week |
+| Goal | Starting Test | Decision Rule |
+|------|---------------|---------------|
+| Build a baseline | 3–5 posts per week for four weeks | Keep only if quality and production capacity hold |
+| Maintain presence | 2–3 posts per week for four weeks | Compare reach and downstream actions with prior period |
+| Test a format | 4–6 comparable posts across two weeks | Change one format variable and compare with account baseline |
+
+Adjust the range to the account's current cadence, source volume, and review
+capacity. More posts are not automatically better.
 
 ### Batch Creation Workflow
 
@@ -204,7 +207,8 @@ Best for: Relatable content, humor, niche communities
 2. **Script** (1 hour): Write scripts for 5-10 videos
 3. **Batch film** (2 hours): Record all talking head content
 4. **Edit** (2-3 hours): Edit and add captions
-5. **Schedule** (30 min): Queue for optimal times
+5. **Schedule** (planning estimate: 15–45 min): queue the approved timing-test
+   cells and record the hypothesis
 
 ---
 
@@ -231,7 +235,11 @@ Best for: Relatable content, humor, niche communities
 
 ### When to Pivot
 
-- 5+ videos with <1% completion rate → change hooks
-- High views but low follows → check CTA and content-audience fit
-- High saves but low shares → content is valuable but not social
-- Lots of comments but negative → lean into controversy or adjust tone
+- After a bounded cohort, if completion or retention is materially below the
+  account's trailing comparable-format baseline, test a different opening.
+- If reach is high but qualified follows or downstream actions are low, inspect
+  CTA and audience fit.
+- If saves and shares diverge, treat that as a format clue to investigate, not
+  a universal content diagnosis.
+- If comments are negative, classify the objections and safety risk; do not
+  manufacture controversy for distribution.

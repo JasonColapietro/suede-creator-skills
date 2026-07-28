@@ -1,6 +1,8 @@
 # AI Image Prompting Guide
 
-How to write effective prompts for AI image generation models (Gemini/Nano Banana, Flux, Ideogram, DALL-E, Midjourney).
+How to write effective prompts after a current callable image tool, rights
+boundary, and cost ceiling have been verified. Provider and model names change;
+do not treat this guide as evidence that a model or capability is available.
 
 ---
 
@@ -35,7 +37,7 @@ modern tech aesthetic, clean and minimal,
 **Product lifestyle shot:**
 ```
 A person in a modern office smiling while looking at a tablet,
-showing a project management interface on screen,
+screen content intentionally out of focus for later compositing,
 warm candid photography, natural lighting,
 medium shot, shallow depth of field, editorial style
 ```
@@ -50,7 +52,7 @@ clean corporate aesthetic, muted lighting,
 
 **Directory listing — Product Hunt:**
 ```
-Product screenshot on a clean gradient background,
+A supplied real product screenshot on a clean gradient background,
 soft shadow underneath, slight 3D perspective tilt,
 modern SaaS product presentation style,
 1270x760, bright and professional
@@ -126,53 +128,23 @@ modern SaaS product presentation style,
 
 ---
 
-## Model-Specific Tips
+## Tool-Specific Research
 
-### Gemini Image (Google)
+Before adapting a prompt to a provider:
 
-- Best all-around for marketing images — good quality, reasonable cost
-- Supports **image editing** — upload an existing image and describe changes
-- Decent text rendering — can handle short headlines
-- Specify "high resolution" for best output
-- Works well with detailed, descriptive prompts
-- Same API as text generation — easy to integrate
+1. Discover whether an image generator or editor is actually callable in the
+   current session.
+2. Read its current official documentation for prompt syntax, model availability,
+   input types, editing/reference support, output sizes, retention, commercial
+   terms, safety restrictions, rate limits, and price.
+3. Record the documentation URL and check date.
+4. Confirm rights to every uploaded asset and explicit authority for paid use.
+5. Run a low-cost test and inspect exact text, brand fidelity, people, hands,
+   product UI, cropping, artifacts, and metadata.
 
-### Flux (Black Forest Labs)
-
-- **Multi-image reference** is the killer feature — upload product screenshots, brand assets, or style references
-- Best for **brand consistency** across a set of images
-- Use Flux Pro for final assets, Flux Dev for rapid iteration
-- Flux Klein for high-volume batch generation (cheapest)
-- Style transfer via reference images > style keywords in prompt
-- Prompts can be shorter than other models — the references do heavy lifting
-
-### Ideogram
-
-- **Best text rendering** of any model (industry-leading accuracy)
-- Use when you need headlines, taglines, or brand names in the image
-- Style reference system (up to 3 images) for brand consistency
-- Supports "Magic Prompt" auto-enhancement
-- Keep text requests simple — 3-5 words max for reliability
-- Best for social graphics and banners that need text baked in
-
-### GPT Image (OpenAI)
-
-- Current models: `gpt-image-1` and variants (DALL-E 3 is deprecated)
-- Integrated with ChatGPT — conversational image generation
-- Good at following detailed prompts
-- Decent text rendering (behind Ideogram, comparable to Gemini)
-- Automatic prompt rewriting — may deviate from exact request
-- Best for quick one-offs through ChatGPT interface
-- API gives more control than ChatGPT interface
-
-### Midjourney
-
-- Highest aesthetic quality for artistic/editorial images
-- No official API — Discord-based or web interface
-- **Not agent-friendly** — use for manual creative exploration only
-- Style flags: `--style raw` for less stylized, `--ar 16:9` for aspect ratio
-- Best for hero images where pure visual quality matters most
-- V6+ has improved text rendering but still unreliable
+OpenAI, Google, Black Forest Labs, Ideogram, Midjourney, Recraft, and self-hosted
+diffusion are possible research candidates. Their presence here is not a routing
+instruction, recommendation, current model list, or capability claim.
 
 ---
 
@@ -181,10 +153,10 @@ modern SaaS product presentation style,
 | Mistake | Why It Fails | Fix |
 |---------|-------------|-----|
 | "A professional image" | No visual detail | Describe subject, setting, style, lighting |
-| Long paragraph of text in image | Models can't render paragraphs | 3-5 words max; add text in post |
+| Long paragraph of text in image | Generated text may be inaccurate | Add exact text deterministically after generation |
 | "Make it look good" | Not actionable | Specify style: "commercial photography, bright" |
-| 200+ word prompts | Models lose focus | 40-80 words, specific over comprehensive |
-| No aspect ratio | Random output size | Always specify dimensions or ratio |
+| Overlong prompts | Important constraints can conflict | Start concise, then add only tested constraints |
+| No aspect ratio | Output may not fit placement | Specify the verified placement ratio |
 | "Logo in bottom right" | Unreliable placement | Add logos in post-processing |
 | "Make it viral" | Not a visual instruction | Describe the aesthetic you want |
 | Requesting UI screenshots | AI hallucinates interfaces | Capture real screenshots instead |
@@ -195,16 +167,19 @@ modern SaaS product presentation style,
 
 When you need multiple images with consistent style (e.g., a blog series or social campaign):
 
-1. **Generate 3-4 test images** with different style prompts
+1. **Generate a small approved test batch** with different style prompts
 2. **Pick the winning style** based on brand fit
 3. **Save the exact prompt** as your template
-4. **Use Flux multi-reference** — upload the winning image as a style reference
-5. **Batch generate** variations with the same style, different subjects
+4. **Use a verified reference-input capability** when available and rights-safe
+5. **Batch generate** variations only within the approved cost ceiling
 6. **Post-process** — add text overlays, logos, crop to platform sizes
 
 ---
 
 ## Aspect Ratios Quick Reference
+
+These are planning references. Verify current platform specifications, safe zones,
+format limits, and the actual site component before production.
 
 | Use Case | Ratio | Pixels | Notes |
 |----------|-------|--------|-------|
@@ -220,10 +195,13 @@ When you need multiple images with consistent style (e.g., a blog series or soci
 
 ---
 
-## Cost Optimization
+## Cost Control
 
-- **Iterate at low quality first** — use Flux Dev or Gemini Flash for drafts, upgrade for finals
-- **Use references over long prompts** — Flux multi-reference produces more consistent results with fewer retries
-- **Batch similar requests** — generate all blog headers in one session with the same style
-- **Cache and reuse** — abstract backgrounds, patterns, and textures can be reused across multiple images
-- **Post-process instead of re-generate** — crop, overlay text, and adjust color in code rather than generating new images
+- Verify current pricing and calculate the maximum cost before generation.
+- Start with the smallest approved test batch and a lower-cost verified mode when
+  it still satisfies the evaluation need.
+- Use rights-cleared references only when the callable tool supports them.
+- Batch similar requests within rate, review, and budget limits.
+- Cache reusable approved backgrounds, patterns, and textures.
+- Crop, overlay exact text, and adjust color locally when that is cheaper and
+  preserves source truth.

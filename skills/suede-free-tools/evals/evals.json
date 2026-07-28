@@ -1,5 +1,5 @@
 {
-  "skill_name": "free-tools",
+  "skill_name": "suede-free-tools",
   "evals": [
     {
       "id": 1,
@@ -77,10 +77,10 @@
     {
       "id": 6,
       "prompt": "How do I optimize the landing page for our free tool to get more signups? The tool itself is great but nobody finds it.",
-      "expected_output": "Should recognize this is a landing page conversion optimization task, not a free tool strategy task. Should defer to or cross-reference the cro skill for optimizing the tool's landing page conversion rate. May provide free-tool-specific context (gating strategy, value demonstration) but should make clear that cro is the right skill for page conversion optimization.",
+      "expected_output": "Should recognize this is a landing page conversion optimization task, not a free tool strategy task. Should defer to or cross-reference suede-site-alchemy for optimizing the tool's landing-page conversion rate. May provide free-tool-specific context (gating strategy, value demonstration) but should make clear that suede-site-alchemy owns page conversion optimization.",
       "assertions": [
         "Recognizes this as page CRO, not free tool strategy",
-        "References or defers to cro skill",
+        "References or defers to suede-site-alchemy",
         "May provide free-tool-specific context",
         "Does not attempt full page CRO using free tool strategy patterns"
       ],

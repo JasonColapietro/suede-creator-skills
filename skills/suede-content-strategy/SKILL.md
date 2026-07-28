@@ -1,13 +1,13 @@
 ---
 name: suede-content-strategy
-description: "Decide what to publish and why: topic clusters, content pillars, editorial cadence, distribution planning, and what to stop writing. Use when the user does not know what to write about, or needs a content plan, editorial calendar, or topic strategy. Also use when the user mentions 'content strategy,' 'what should I write about,' 'content ideas,' 'blog strategy,' 'topic clusters,' 'content planning,' 'editorial calendar,' 'content marketing,' 'content roadmap,' 'what content should I create,' 'blog topics,' 'content pillars,' or 'I don't know what to write.' Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see suede-copy. For SEO-specific audits, see suede-seo-audit. For social media content specifically, see suede-social."
+description: "Suede-owned content-strategy discipline for audience questions, content pillars, topic clusters, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds. NOT FOR: writing an individual asset (use suede-copy), technical or on-page SEO audits (use suede-seo-audit), or social-channel production (use suede-social)."
 metadata:
   version: 2.0.0
 ---
 
-# Content Strategy
+# Suede Content Strategy
 
-You are a content strategist. Your goal is to help plan content that drives traffic, builds authority, and generates leads by being either searchable, shareable, or both.
+Use this Suede content-strategy playbook to plan evidence-backed content that earns search, sharing, trust, or qualified demand.
 
 ## Before Planning
 
@@ -110,7 +110,8 @@ High-intent keywords + product adoption.
 - Original research (run experiments, share results)
 
 **Expert Roundups**
-15-30 experts answering one specific question. Built-in distribution.
+A selected set of relevant, verified experts answering one specific question.
+Distribution depends on contributor permission and actual promotion.
 
 **Case Studies**
 Structure: Challenge → Solution → Results → Key learnings
@@ -118,7 +119,8 @@ Structure: Challenge → Solution → Results → Key learnings
 **Meta Content**
 Behind-the-scenes transparency. "How We Got Our First $5k MRR," "Why We Chose Debt Over VC."
 
-For programmatic content at scale, see **programmatic-seo** skill.
+For programmatic content at scale, route the data and template system to
+`suede-programmatic-seo`.
 
 ---
 
@@ -203,6 +205,19 @@ Example: If support tickets show implementation struggles:
 
 ## Content Ideation Sources
 
+### Research Surface Check
+
+Before external research, inspect the tools and connected sources that are
+currently callable and authorized in this session. Use product analytics, Search
+Console or keyword exports, customer material, support data, approved Drive
+sources, or a callable browser/search surface only when access actually exists.
+Record each source URL or file, owner, retrieval date, and relevant scope.
+
+If no external research surface is available, continue with user-supplied URLs,
+exports, transcripts, and known first-party evidence. Otherwise return a compact
+manual-research list with exact queries and fields to capture. Label hypotheses
+and unverified competitor observations; never imply that a search was run.
+
 ### 1. Keyword Data
 
 If user provides keyword exports (Ahrefs, SEMrush, GSC), analyze for:
@@ -230,13 +245,15 @@ Output content ideas with supporting quotes.
 
 If user provides survey data, mine for:
 - Open-ended responses (topics and language)
-- Common themes (30%+ mention = high priority)
+- Common themes, with sample count and observed proportion recorded
 - Resource requests (what they wish existed)
 - Content preferences (formats they want)
 
 ### 4. Forum Research
 
-Use web search to find content ideas:
+If an authorized browser or search surface is currently callable, use it to find
+recent first-party community evidence. Otherwise ask for relevant URLs or provide
+the queries below for manual collection.
 
 **Reddit:** `site:reddit.com [topic]`
 - Top posts in relevant subreddits
@@ -249,25 +266,29 @@ Use web search to find content ideas:
 
 **Other:** Indie Hackers, Hacker News, Product Hunt, industry Slack/Discord
 
-Extract: FAQs, misconceptions, debates, problems being solved, terminology used.
+For each item, capture the source URL, publication date, retrieval date, community
+context, and a short evidence excerpt. Distinguish engagement signals from proof
+of customer demand.
 
 ### 5. Competitor Analysis
 
-Use web search to analyze competitor content:
+Use a currently callable, authorized browser/search surface or user-supplied
+competitor URLs. If neither is available, produce a manual research checklist and
+do not invent page inventories, rankings, engagement, or gaps.
 
 **Find their content:** `site:competitor.com/blog`
 
 **Analyze:**
-- Top-performing posts (comments, shares)
+- Observable posts and dated engagement signals
 - Topics covered repeatedly
 - Gaps they haven't covered
 - Case studies (customer problems, use cases, results)
 - Content structure (pillars, categories, formats)
 
-**Identify opportunities:**
+**Identify hypotheses to validate:**
 - Topics you can cover better
 - Angles they're missing
-- Outdated content to improve on
+- Outdated content to improve on, based on a visible date or stale claim
 
 ### 6. Sales and Support Input
 
@@ -282,7 +303,9 @@ Extract from customer-facing teams:
 
 ## Prioritizing Content Ideas
 
-Score each idea on four factors:
+Score each idea on four factors. The weights below are an illustrative starting
+point, not a universal truth; change them to match the user's business goal and
+record the chosen decision rule.
 
 ### 1. Customer Impact (40%)
 - How frequently did this topic come up in research?
@@ -354,12 +377,17 @@ Visual or structured representation of how content interconnects.
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **copywriting**: For writing individual content pieces
-- **seo-audit**: For technical SEO and on-page optimization
-- **ai-seo**: For optimizing content for AI search engines and getting cited by LLMs
-- **programmatic-seo**: For scaled content generation
-- **site-architecture**: For page hierarchy, navigation design, and URL structure
-- **emails**: For email-based content
-- **social**: For social media content
+- Do not claim demand, authority, rank potential, or audience fit without naming the current evidence and decision criterion.
+- Do not publish, delete, redirect, deindex, or change an editorial calendar or CMS without explicit authorization.
+- Do not invent expertise, customer proof, keyword data, or citations to fill a content gap.
+- Do not decide legal, rights, or brand-claim questions; flag them for the accountable owner before publication.
+
+## Routing
+
+- Need an individual asset written -> use `suede-copy`.
+- Need technical or on-page organic diagnosis -> use `suede-seo-audit`.
+- Need scaled page systems -> use `suede-programmatic-seo`.
+- Need email or social production -> use `suede-emails` or `suede-social`.
+- From those skills, route portfolio priorities, pillars, clusters, and cadence back to `suede-content-strategy`.

@@ -1,179 +1,129 @@
-# MCP Tool Reference for Competitor Profiling
+# Conditional Research Access for Competitor Profiling
 
-Quick reference for the Firecrawl and DataForSEO MCP tools used in competitor profiling.
+This reference maps research needs to capabilities. It does not declare that
+Firecrawl, DataForSEO, a browser, a search provider, or any other connector is
+installed, connected, authorized, or callable.
 
-## Contents
-- Firecrawl Tools (site scraping)
-- DataForSEO Tools (SEO & market data)
-- Recommended Execution Order
-- Error Handling
+## Availability and Authorization Gate
 
----
+Before selecting a tool:
 
-## Firecrawl Tools
+1. Inspect the tools actually exposed in the current session.
+2. For a relevant connector, confirm the intended account or workspace,
+   authorization, current schema, pricing or quota impact, and read-only scope.
+3. Use the exact callable name and arguments returned by current tool
+   discovery. Do not construct calls from the example names in this file.
+4. If no appropriate tool is available, use the browser-neutral/manual
+   fallback below or analyze a user-supplied export.
+5. Never bypass login, paywalls, bot controls, site terms, privacy controls, or
+   rate limits. Platform-specific access requires a connected platform and the
+   user's authorization.
 
-### firecrawl_map
-**Purpose**: Discover all URLs on a competitor's site to identify key pages.
-**When to use**: First step for every competitor — before scraping individual pages.
-**Key output**: List of URLs with their page types/paths.
-**Tip**: Look for paths containing `/pricing`, `/features`, `/about`, `/customers`, `/integrations`, `/blog`, `/changelog`.
+## Public-Site Evidence
 
-### firecrawl_scrape
-**Purpose**: Extract content from a single page as clean markdown.
-**When to use**: After mapping, scrape each key page individually.
-**Key output**: Page content in markdown format — headlines, body text, structured data.
-**Tip**: Scrape homepage first — it reveals positioning, audience, and social proof in one shot.
+### Map or discover URLs
 
-### firecrawl_search
-**Purpose**: Search the web for specific content about a competitor.
-**When to use**: Finding review pages, press coverage, or competitor mentions not on their own site.
-**Example queries**:
-- `"[Competitor Name]" site:g2.com`
-- `"[Competitor Name]" review`
-- `"[Competitor Name]" funding OR raised`
+**Need:** Find homepage, pricing, product, about, customer, integration, blog,
+and changelog URLs.
 
-### firecrawl_crawl
-**Purpose**: Crawl multiple pages from a site in one operation.
-**When to use**: Deep profiles where you want to analyze many pages (e.g., all feature pages, all blog posts). More expensive — use selectively.
-**Tip**: Set page limits to avoid crawling entire sites. Target specific URL patterns.
+**Connected-tool route:** Use a currently exposed site-map or crawl capability
+after reading its schema. Some Firecrawl connections expose names such as
+`firecrawl_map`; treat that as a discovery hint, not a guaranteed command.
 
-### firecrawl_extract
-**Purpose**: Extract structured data from a page using a schema.
-**When to use**: When you need specific data points in a consistent format (e.g., pricing tier details, feature lists).
-**Tip**: Define a clear schema for what you want extracted — more reliable than parsing raw markdown.
+**Manual fallback:** Open the public homepage, follow primary navigation,
+inspect a public sitemap when accessible, or use ordinary public search. Record
+the exact URL and access date for every page selected.
 
----
+### Capture one page
 
-## DataForSEO MCP Tools
+**Need:** Preserve visible positioning, pricing, proof, and product text.
 
-### Domain-Level Intelligence
+**Connected-tool route:** Use a currently exposed single-page fetch, scrape, or
+extract capability. Some Firecrawl connections expose names such as
+`firecrawl_scrape` or `firecrawl_extract`; first confirm that exact tool and its
+schema are available.
 
-#### backlinks_summary
-**Purpose**: Get domain authority, total backlinks, referring domains, spam score.
-**Input**: Target domain (e.g., `competitor.com`)
-**Key metrics**: `domain_rank`, `total_backlinks`, `referring_domains`, `backlinks_spam_score`
+**Manual fallback:** Open the public page and save the relevant visible text or
+notes as markdown. Record omitted dynamic sections and access limitations.
 
-#### backlinks_referring_domains
-**Purpose**: List top referring domains — shows where their link equity comes from.
-**Input**: Target domain + limit
-**Key metrics**: Per-domain: `rank`, `backlinks`, `domain` name
+### Find reviews or offsite mentions
 
-#### dataforseo_labs_google_domain_rank_overview
-**Purpose**: Organic search overview — traffic, keywords, traffic value.
-**Input**: Target domain
-**Key metrics**: `organic_count` (keywords), `organic_traffic` (estimated monthly), `organic_cost` (traffic value in $)
+**Need:** Locate current review pages, launch discussions, press, and other
+public corroboration.
 
-#### dataforseo_labs_google_ranked_keywords
-**Purpose**: What keywords a domain ranks for, with positions.
-**Input**: Target domain
-**Key metrics**: Per-keyword: `keyword`, `position`, `search_volume`, `url` (ranking page)
-**Tip**: Sort by traffic to find their highest-value keywords.
+**Connected-tool route:** Use a current authorized search capability if one is
+exposed. A name such as `firecrawl_search` may exist in some installations but
+must be discovered before use.
 
-#### dataforseo_labs_google_keywords_for_site
-**Purpose**: Keywords relevant to a domain — broader than ranked keywords, includes opportunities.
-**Input**: Target domain
-**Key metrics**: `keyword`, `search_volume`, `competition`, `cpc`
+**Manual fallback:** Use ordinary public search and open the result directly.
+Do not scrape account-only review content without connected, authorized access.
 
-### Competitive Analysis
+## Optional SEO and Market Metrics
 
-#### dataforseo_labs_google_competitors_domain
-**Purpose**: Find a domain's closest organic competitors by keyword overlap.
-**Input**: Target domain
-**Key metrics**: `domain`, `avg_position`, `intersections` (shared keywords), `full_domain_rank`
-**Tip**: May reveal competitors the user hasn't considered.
+Quantitative SEO data is optional. Provider metrics are estimates, not first-
+party traffic truth. Record provider, market, device, database, access date,
+date window, and metric definition so competitors remain comparable.
 
-#### dataforseo_labs_google_domain_intersection
-**Purpose**: Find keywords where two domains both rank — shows direct competition.
-**Input**: Two target domains
-**Key metrics**: `keyword`, position for each domain, `search_volume`
-**Tip**: Use this to compare the user's domain vs. each competitor.
+If a DataForSEO or similar connector is currently available and authorized,
+discover its exact callable names and schemas at runtime. Common capability
+labels in some deployments include:
 
-#### dataforseo_labs_google_relevant_pages
-**Purpose**: Find a domain's most important pages by organic traffic.
-**Input**: Target domain
-**Key metrics**: `page`, `metrics` (traffic, keywords per page)
-**Tip**: Reveals their content strategy — which pages drive the most value.
+| Research need | Possible capability label | Capture |
+|---------------|---------------------------|---------|
+| Domain/backlink overview | `backlinks_summary` | Provider rank, backlinks, referring domains, spam indicator |
+| Referring-domain detail | `backlinks_referring_domains` | Referring domain, provider rank, link count |
+| Organic domain overview | `dataforseo_labs_google_domain_rank_overview` | Ranked-keyword count, estimated traffic, estimated value |
+| Ranked keywords | `dataforseo_labs_google_ranked_keywords` | Keyword, position, volume, ranking URL |
+| Site keyword ideas | `dataforseo_labs_google_keywords_for_site` | Keyword, volume, competition, CPC estimate |
+| Organic competitors | `dataforseo_labs_google_competitors_domain` | Domain, overlap, position metrics |
+| Domain intersection | `dataforseo_labs_google_domain_intersection` | Shared keyword and each domain's position |
+| Relevant pages | `dataforseo_labs_google_relevant_pages` | Page and provider-estimated traffic/keywords |
+| Technology detection | `domain_analytics_technologies_domain_technologies` | Observed technologies by category |
+| Individual backlinks | `backlinks_backlinks` | Source, target, anchor, provider rank |
+| Bulk rank comparison | `backlinks_bulk_ranks` | Same provider rank across the submitted domains |
 
-### Technology Detection
+These labels are not an API contract. If the available provider uses different
+names or fields, use the current discovered schema. If no provider is
+available, accept a current CSV/JSON export from the user or mark the relevant
+section `not collected`.
 
-#### domain_analytics_technologies_domain_technologies
-**Purpose**: Detect the technology stack a domain uses.
-**Input**: Target domain
-**Key metrics**: Technologies grouped by category (CMS, analytics, marketing, payments, etc.)
+## Execution Order
 
-### Backlink Deep Dive
+### Quick scan
 
-#### backlinks_backlinks
-**Purpose**: List individual backlinks to a domain.
-**Input**: Target domain + limit
-**Key metrics**: `url_from`, `url_to`, `anchor`, `domain_from_rank`, `is_new`
+1. Discover URLs with an available mapping capability or manual navigation.
+2. Capture homepage and pricing evidence with an authorized fetch or manually.
+3. If a quantitative provider or user export is available, collect one
+   consistent domain overview and backlink summary.
+4. Save raw evidence, then synthesize an abbreviated profile.
 
-#### backlinks_bulk_ranks
-**Purpose**: Compare domain ranks across multiple domains at once.
-**Input**: Array of target domains
-**Key metrics**: `domain_rank` per domain
-**Tip**: Use this for the summary comparison table.
+### Deep profile
 
----
+1. Capture homepage, pricing, feature, about, customer, integration, and
+   changelog evidence.
+2. Collect the same available SEO metrics for each competitor; skip the entire
+   comparison dimension when consistent inputs are unavailable.
+3. Add public reviews and offsite corroboration through an authorized search
+   capability or manual browsing.
+4. Save every raw response, export, or manual capture with source and date.
+5. Synthesize only after separating verified facts, provider estimates,
+   inferences, and unknowns.
 
-## Recommended Execution Order
+### Multiple competitors
 
-### Quick Scan (per competitor)
+Parallelize independent reads only when the current tool supports concurrency
+and its quota allows it. Use identical sources and parameters across
+competitors. Build individual profiles before the cross-competitor summary.
 
-```
-1. firecrawl_map → get site URLs
-2. In parallel:
-   a. firecrawl_scrape → homepage
-   b. firecrawl_scrape → pricing page
-   c. dataforseo_labs_google_domain_rank_overview → organic metrics
-   d. backlinks_summary → domain authority
-3. Synthesize into abbreviated profile
-```
-
-### Deep Profile (per competitor)
-
-```
-1. firecrawl_map → get site URLs
-2. In parallel (batch 1 — scraping):
-   a. firecrawl_scrape → homepage
-   b. firecrawl_scrape → pricing page
-   c. firecrawl_scrape → features page(s)
-   d. firecrawl_scrape → about page
-   e. firecrawl_scrape → customers/case studies page
-   f. firecrawl_scrape → integrations page
-3. In parallel (batch 2 — SEO data):
-   a. dataforseo_labs_google_domain_rank_overview
-   b. dataforseo_labs_google_ranked_keywords
-   c. backlinks_summary
-   d. backlinks_referring_domains
-   e. dataforseo_labs_google_relevant_pages
-   f. dataforseo_labs_google_competitors_domain
-4. In parallel (batch 3 — optional extras):
-   a. domain_analytics_technologies_domain_technologies
-   b. firecrawl_search → G2/Capterra reviews
-   c. dataforseo_labs_google_domain_intersection (vs. user's domain)
-5. Synthesize into full profile
-```
-
-### Multi-Competitor (3+ competitors)
-
-```
-1. Map all competitor sites in parallel
-2. Scrape all homepages in parallel, then pricing pages in parallel
-3. Pull domain_rank_overview for all in parallel
-4. Pull backlinks_bulk_ranks for all at once
-5. Build profiles in sequence (synthesis requires focus)
-6. Build summary comparison last
-```
-
----
-
-## Error Handling
+## Failure and Fallback Rules
 
 | Issue | Action |
 |-------|--------|
-| Firecrawl scrape returns empty/blocked | Try with `firecrawl_browser_create` for JS-heavy sites |
-| Pricing page not found in map | Search for `/pricing`, `/plans`, `/packages` — some sites use different paths |
-| DataForSEO returns no data for domain | Domain may be too new or too small — note "insufficient data" in profile |
-| Rate limits hit | Space out requests; prioritize highest-value data first |
-| Review page scraping blocked | Use `firecrawl_search` to find cached or alternative review sources |
+| Named example tool is absent | Do not call it; use another exposed capability or the manual fallback |
+| Page is blocked or requires login | Record the limitation; do not bypass access controls |
+| JavaScript page does not render in a fetch | Use an available browser when authorized, or capture only verifiable public evidence manually |
+| Pricing URL is not obvious | Inspect navigation, public sitemap, and likely public paths; report if still unverified |
+| SEO provider returns no data | Record `insufficient provider data`; do not convert absence into zero |
+| Providers use incompatible metrics | Do not compare the values directly; choose one consistent provider or mark unavailable |
+| Rate or quota limit is reached | Stop additional calls, name the limit, prioritize the smallest useful evidence set |
+| Review access is restricted | Use another public source or omit the review dimension with a limitation note |

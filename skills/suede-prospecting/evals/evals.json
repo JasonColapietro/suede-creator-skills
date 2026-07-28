@@ -1,20 +1,20 @@
 {
-  "skill_name": "prospecting",
+  "skill_name": "suede-prospecting",
   "evals": [
     {
       "id": 1,
       "prompt": "We're a B2B SaaS selling RevOps tooling at $30K ACV. Build me a list of 25 prospects.",
-      "expected_output": "Should check for product-marketing.md first. Should identify this as the SaaS branch. Should run Phase 1 ICP definition pulling from product-marketing context or asking targeted questions (target industry, headcount range, tech stack signals, funding stage). Should propose discovery sources appropriate for SaaS at $30K ACV: Apollo for breadth, Clay for waterfall enrichment, Crunchbase for funding signals, BuiltWith/Wappalyzer for tech stack, LinkedIn Sales Nav for decision-mapping (manual). Should ask about user's tool access before assuming. Should source 50-75 candidates (2-3x target) before qualifying. Should flag that email validation via Truelist or similar is non-negotiable before final list. Should output SaaS-branch chat table columns (Score | Company | Industry | Size | Signal | Contact | Email status | Confidence) followed by top 3-5 hot leads with one-sentence rationale each. Should reference references/saas-prospecting.md.",
+      "expected_output": "Should check for product-marketing.md first and identify the SaaS branch. It should define the ICP, then discover which research sources are currently callable, authenticated, authorized, and permitted before selecting vendors or a manual public-source workflow. Candidate-pool size should be justified by requested output, observed disqualification, source access, and review capacity rather than a hard multiplier. It should discover an authorized email validator and read its current result semantics, or label addresses unverified and provide a user-operated validation handoff. It should output the SaaS evidence table followed by a bounded priority-review set only where current signals support it. Should reference references/saas-prospecting.md.",
       "assertions": [
         "Checks for product-marketing.md",
         "Identifies SaaS branch",
         "Runs Phase 1 ICP definition",
         "Recommends multi-source discovery (Apollo, Clay, Crunchbase, BuiltWith)",
         "Asks about user's tool access",
-        "Sources 2-3x candidates before qualifying",
+        "Justifies a bounded candidate sample from evidence and review capacity",
         "Requires email validation before final list",
         "Outputs SaaS-branch chat table columns",
-        "Includes top 3-5 outreach targets with rationale",
+        "Includes an evidence-ranked priority-review set when warranted",
         "References saas-prospecting.md"
       ],
       "files": []
@@ -72,16 +72,16 @@
     {
       "id": 5,
       "prompt": "I build websites for local businesses. Find me 15 prospects near Austin, TX who don't have a website.",
-      "expected_output": "Should identify as Local SMB branch. Should run Phase 1 ICP definition: business category (ask user — gyms, restaurants, salons, etc. matter), radius (default 20 km from Austin), target count (15). Should run the browser research workflow: search Google Maps for category + Austin, build candidate list from visible results, cross-check via business name + city web search to verify website status. Should apply the 4-tier website status classification (No site found / Social only / Weak site / Has site) — prioritize No site + Social only as Hot. Should score: Hot (no site + active + phone + within radius), Warm (weak site), Cold (has site), Skip (closed/duplicate/out of scope). Should output Local SMB chat table (Score | Business | Category | Area | Distance | Website status | Website/Social | Phone | Why prospect | Confidence). Should add 'Best first outreach targets' top 3 with reasoning. Should reference references/local-prospecting.md. Should warn against bulk-scraping Google Maps (ToS violation) — browser-assisted research only.",
+      "expected_output": "Should identify the Local SMB branch and define the business category, geography, requested count, and service-gap criteria. It should discover whether an authorized research connector or browser is currently callable and permitted; otherwise it should provide exact public-source queries and work from user-supplied URLs, exports, screenshots, or copied text. It should cross-check listing claims against the business's own site or another current source and treat website status as one signal, not an automatic Hot/Warm quota. It should output the Local SMB evidence table and a bounded priority-review set only when cited evidence supports it. It should reference references/local-prospecting.md and prohibit bulk extraction.",
       "assertions": [
         "Identifies Local SMB branch",
         "Asks about business category if not specified",
-        "Defaults radius to 20km",
-        "Runs browser research workflow",
+        "Uses a user-approved geography or a justified pilot radius",
+        "Discovers authorized research tooling or uses a manual fallback",
         "Applies 4-tier website status classification",
         "Uses Hot/Warm/Cold/Skip scoring",
         "Outputs Local SMB chat table columns",
-        "Adds top 3 outreach targets",
+        "Adds an evidence-ranked priority-review set when warranted",
         "References local-prospecting.md",
         "Warns against bulk-scraping Google Maps"
       ],
@@ -90,27 +90,27 @@
     {
       "id": 6,
       "prompt": "I have a list of 200 prospect emails from Apollo. How do I know which ones are deliverable before I start outreach?",
-      "expected_output": "Should explain the deliverability validation step in Phase 3. Should recommend Truelist (the integration in this pack) for bulk validation. Should explain the email_state classification output: ok (deliverable), email_invalid (bounces, exclude), risky (deliverable with risk like role or disposable, include cautiously), unknown (couldn't determine, skip or re-verify), accept_all (catch-all domain, include cautiously). Should warn that Apollo data accuracy is typically 60-80% — sending without validation will tank sender reputation (bounce rate >2% triggers ISP throttling and reputation damage). Should recommend the workflow: bulk POST to /api/v1/verify or CSV upload → keep ok, include risky/accept_all cautiously, exclude email_invalid, re-verify unknown → hand off to outreach. Should note Truelist also has an official MCP server for agent-driven validation. Should note cold email reputation is hard to recover once damaged — validation is non-negotiable, not optional. Should mention Hunter and Snov as alternatives with built-in verification. Should reference truelist.md integration guide.",
+      "expected_output": "Should explain the deliverability validation step in Phase 3. Should first verify which validator is available in the current session and read its current official result semantics, account limits, and terms. Should map deliverable, invalid, risky, unknown, and catch-all results without inventing vendor-specific fields; exclude invalid results, treat risky and catch-all cautiously, and re-verify unknown results. Should calculate risk from current list data and sender-platform guidance instead of asserting universal source-accuracy or bounce thresholds. Should hand the approved list to `suede-cold-email` only after validation and suppression checks.",
       "assertions": [
-        "Recommends Truelist for bulk validation",
+        "Uses an authorized validator or explicit unverified/manual fallback",
         "Explains email_state values (ok, email_invalid, risky, unknown, accept_all)",
-        "Warns Apollo accuracy is 60-80%",
-        "Cites 2% bounce rate threshold for reputation damage",
-        "Recommends workflow: validate, keep ok, exclude email_invalid",
-        "Mentions Truelist MCP server for agent workflows",
-        "Mentions cold email reputation is hard to recover",
-        "References truelist.md or data-sources.md"
+        "Treats provider accuracy as unverified until checked on a current sample",
+        "Uses current sender-platform evidence instead of a universal bounce threshold",
+        "Recommends a result-aware validation and suppression workflow",
+        "Discovers an available authorized validator or gives a manual fallback",
+        "Mentions that sender reputation is difficult to recover",
+        "References data-sources.md"
       ],
       "files": []
     },
     {
       "id": 7,
       "prompt": "I just built a tool that automates failed-payment follow-up for gym owners. I have no customers yet. Help me find my first ten — the people who are actually dealing with this problem right now.",
-      "expected_output": "Should select the Demand-signal branch (early-stage, first customers, evidence-of-demand) and load references/demand-signals.md — NOT the SMB/B2B list-building branches. Should start with a product brief, then mine the five signal buckets (explicit demand / pain / workaround / switching / timing) across public discourse (forums, communities, reviews, GitHub issues, job posts) — using last30days for recency, social-fetch/scraping to read original pages, not qualifying from snippets. Should score prospects on demand-fit (pain 25 / product fit 25 / timing 20 / reachability 15 / evidence quality 15, 0-100 with bands) rather than ICP-fit Hot/Warm/Cold, and require a cited public signal for every primary-shortlist prospect. Should draft source-based openers but never auto-send. Should produce an evidence report (verdict → ICP → top prospect → shortlist with sources+scores → repeated patterns → 7-day manual outreach plan → limits) and label prospects as 'potential customers based on public signals,' not confirmed buyers. Should honor the compliance guardrails including no data brokers/leaked data and no sensitive-trait targeting.",
+      "expected_output": "Should select the Demand-signal branch and load references/demand-signals.md, not the SMB, B2B, or SaaS list-building branches. Should start with a product brief, then mine the five signal buckets across public professional discourse. Before research, it should discover currently callable search, browser, and source-reading tools; verify authorization and source terms; and use a manual query plus user-supplied URL or export fallback when those tools are unavailable. It must read original public sources rather than qualify from snippets. Should score prospects on the demand-fit rubric rather than ICP-fit Hot/Warm/Cold and require a cited public signal for every primary-shortlist prospect. Should draft source-based openers but never auto-send. Should produce the evidence report and label prospects as potential customers based on public signals, not confirmed buyers. Should honor the compliance guardrails including no data brokers, leaked data, or sensitive-trait targeting.",
       "assertions": [
         "Selects the Demand-signal branch, not the SMB/B2B/SaaS list-building branches",
         "Mines the five signal buckets from public discourse rather than contact databases",
-        "Uses recency/original-source tooling (last30days, social-fetch, scraping) and does not qualify from snippets",
+        "Discovers authorized current tools, includes a manual fallback, and reads original sources rather than snippets",
         "Scores on the demand-fit rubric (0-100 weighted), not ICP-fit Hot/Warm/Cold",
         "Requires a cited public signal for every primary-shortlist prospect",
         "Drafts openers but never auto-sends; labels prospects as potential-based-on-public-signals",

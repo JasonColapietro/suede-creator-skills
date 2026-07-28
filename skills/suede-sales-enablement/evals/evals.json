@@ -1,5 +1,5 @@
 {
-  "skill_name": "sales-enablement",
+  "skill_name": "suede-sales-enablement",
   "evals": [
     {
       "id": 1,
@@ -78,10 +78,10 @@
     {
       "id": 6,
       "prompt": "We need a public comparison page showing how we stack up against Zendesk and Intercom.",
-      "expected_output": "Should recognize this is a public-facing competitor comparison page, not internal sales collateral. Should defer to or cross-reference the competitors skill, which handles public comparison and alternatives pages. Sales-enablement covers internal materials (battle cards, objection handling) while competitors handles SEO-focused public comparison content.",
+      "expected_output": "Should recognize this is a public-facing competitor comparison page, not internal sales collateral. Should defer to or cross-reference `suede-competitors`, which handles public comparison and alternatives pages. `suede-sales-enablement` covers internal materials such as battle cards and objection handling, while `suede-competitors` handles search-focused public comparison content.",
       "assertions": [
         "Recognizes this as a public comparison page",
-        "References or defers to competitors skill",
+        "References or defers to suede-competitors",
         "Explains the distinction between internal and public collateral",
         "Does not attempt public SEO comparison page using sales enablement patterns"
       ],

@@ -1,6 +1,8 @@
 # Listening Sources — Template
 
-Copy this file to `.agents/listening-sources.md` in your project (or `.claude/listening-sources.md`) and fill in the brackets. Claude reads it when running the [listening workflow](listening.md).
+Copy this file to `.agents/listening-sources.md` in your project (or
+`.claude/listening-sources.md`) and fill in the brackets. Suede reads it when
+running the [listening workflow](listening.md).
 
 Delete sections you don't use. Keep this short and current — stale sources are worse than no sources.
 
@@ -25,9 +27,11 @@ Used by the [scoring rubric](listening.md#scoring-rubric) to judge ICP fit.
 
 ## Target Accounts
 
-Engage with **every** post from these accounts when relevant. Keep this list to 20-50 max.
+Use these accounts as a review pool. Bound each run by current source volume,
+relevance, risk, and human review capacity. Draft only the highest-priority
+responses; never engage automatically or treat the whole list as a quota.
 
-### LinkedIn (browser-driven — use dev-browser to view feed)
+### LinkedIn (authorized browser or manual review)
 - [Name] — `linkedin.com/in/handle`
 - [Name] — `linkedin.com/in/handle`
 
@@ -53,7 +57,9 @@ Engage with **every** post from these accounts when relevant. Keep this list to 
 
 ## Keywords (intent signals)
 
-Search across all platforms. Claude runs these through Reddit, HN, Bluesky on the [daily loop](listening.md#the-daily-triage-loop).
+Search only the platforms currently authorized and reachable. When no connector
+or browser is available, use the [daily-loop](listening.md#the-daily-triage-loop)
+manual query and user-supplied URL workflow.
 
 ### High-intent (someone shopping or switching)
 - `"alternative to [competitor]"`
@@ -80,7 +86,7 @@ Search across all platforms. Claude runs these through Reddit, HN, Bluesky on th
 
 ## Subreddits
 
-Pulled via Reddit JSON API on the daily loop.
+Review through a currently authorized API, browser, or manual user export.
 
 - r/SaaS
 - r/Entrepreneur
@@ -91,7 +97,7 @@ Pulled via Reddit JSON API on the daily loop.
 
 ## Saved Searches (manual / browser-driven)
 
-URLs Claude opens via dev-browser to scan.
+URLs for an authorized browser or manual user review.
 
 ### LinkedIn Sales Navigator
 - [Search name] — `https://linkedin.com/sales/search/people?...`
@@ -114,10 +120,15 @@ Save yourself the regret.
 
 ---
 
-## Notes for Claude
+## Notes for the Suede agent
 
-- When asked for "today's top 10," output in the format defined in [listening.md](listening.md#the-daily-triage-loop)
-- For LinkedIn and X, use dev-browser with the persistent session (user is logged in)
-- For everything else, use the curl recipes in [listening.md](listening.md#sources--light-tooling-curl-recipes)
-- Default lookback: 24h. User can override.
+- When asked for a ranked set, bound the output to current source volume and
+  review capacity using the format in
+  [listening.md](listening.md#the-daily-triage-loop)
+- For LinkedIn and X, first discover a callable authorized browser and confirm
+  visible identity; otherwise use the manual URL, screenshot, or export fallback.
+- For other sources, use a currently callable authorized reader or the manual
+  recipes in [listening.md](listening.md#sources--light-tooling-curl-recipes).
+- Ask for a lookback that matches source volume and decision urgency; if the
+  user delegates, start with 24 hours and label it a starting hypothesis.
 - Always ask before posting — output drafts, user approves and posts manually

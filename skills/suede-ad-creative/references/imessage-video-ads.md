@@ -79,9 +79,23 @@ Most iMessage ads fit one of six angles. Pick the angle before writing any copy 
 
 Three ways to produce it, in order of control:
 
-### Route 1: Off-the-shelf skill (fastest)
+None of these runtimes or third-party packages is implied to be installed.
+Inspect the tools available in the current session, verify current official
+documentation and asset rights, and obtain authorization before installs,
+generation spend, or uploads. When a route is unavailable, return its
+storyboard, timeline, asset manifest, and render specification without
+executing it.
 
-Gooseworks distributes their pipeline as an installable agent skill — `npx gooseworks install --all`, then invoke the goose-ads skill from your agent. It handles rendering, recording, SFX, and stitching end to end. Use this to validate the format before building anything custom. (Their ads-skills source repo is public but carries no open-source license — treat it as reference reading, not code to vendor.)
+### Route 1: Third-party pipeline (conditional)
+
+A third-party pipeline may package rendering, recording, SFX, and stitching.
+Do not assume it is installed or licensed for reuse. Use it only when the user
+chooses that route, the current runtime and package registry are available, the
+exact package and version have been verified from current official
+documentation, and the install is explicitly authorized. Its public source has
+no confirmed open-source license in this reference, so treat the implementation
+as reference reading rather than code to vendor. If those gates fail, use the
+provider-neutral code-based route below.
 
 ### Route 2: Code-based pipeline (full control)
 

@@ -58,27 +58,37 @@ The reference local-client-prospector skill uses **website status** as the prima
 
 ---
 
-## Browser Research Workflow
+## Authorized or Manual Research Workflow
 
-1. Open a browser and search Google Maps for the category near `base_location`
-2. Build a candidate list from visible local results, search results, and public directories
-3. For each candidate, inspect public sources to fill required fields
-4. Search the exact business name plus city/town to check whether a standalone website exists
-5. Classify website status per the table above
-6. Mark confidence: High (2+ sources), Medium (1 source + consistent evidence), Low (incomplete/ambiguous)
+1. Discover whether a research connector or browser is currently callable,
+   authenticated where needed, authorized, and permitted by source terms.
+2. If available, review a bounded visible result set without bulk extraction.
+3. If unavailable, give the user exact public-source queries and work from the
+   URLs, exports, screenshots, or copied source text they provide.
+4. Cross-check the exact business name plus city/town against the business's own
+   site or another current source.
+5. Classify website status per the table above and state what remains uncertain.
+6. Mark confidence from cited evidence, not from repeated searches of the same
+   source.
 
 When the user explicitly asks for subagents AND subagents are available, split candidates into non-overlapping batches and ask each subagent to verify only website/social/contact status. Don't use subagents for the primary search if it slows progress.
 
-### Optional: programmatic verification with Firecrawl or Browserbase
+### Optional: authorized site verification
 
-Once you have a candidate's website URL (found via manual Maps/Yelp discovery), you can speed up website-status classification by hitting the URL programmatically:
+After manual discovery, first check whether an authorized browser or
+single-site reader is currently callable and permitted for the candidate's own
+public website. Possible tools, only when discovered and authorized:
 
-- **Firecrawl** for simple "is this site live, modern, mobile-friendly, conversion-flow-equipped" reads — returns clean markdown you can inspect
-- **Browserbase** when the candidate site requires JS rendering, has a cookie consent dialog, or you need session state
+- **Firecrawl** for a bounded text or structured read.
+- **Browserbase** or another authorized browser for JavaScript rendering,
+  consent dialogs, or session state.
+
+If neither is available, open the public site manually or ask the user for the
+URL, screenshots, and visible business contact details.
 
 **Strict line**: use these on the individual business's URL. **Don't** point them at Google Maps, Yelp, or any platform whose ToS prohibits bulk extraction — discovery stays manual.
 
-See [data-sources.md](data-sources.md) for setup details.
+See [data-sources.md](data-sources.md) for selection and verification details.
 
 ---
 
@@ -101,9 +111,9 @@ Use this simple rubric (matches local-client-prospector pattern):
 
 | Score | Criteria |
 |-------|----------|
-| **Hot** | No site found OR social-only + phone present + active business + within target radius |
-| **Warm** | Weak site, poor online presentation, or marketplace/booking-page only |
-| **Cold** | Good website already present OR low confidence |
+| **Hot** | Verified service gap + active business + approved contact path + location fit |
+| **Warm** | Plausible service gap or timing signal, with a material item still to verify |
+| **Cold** | ICP fit but no current service-gap or timing evidence |
 | **Skip** | Closed, duplicate, outside radius, irrelevant category, or not a business prospect |
 
 ---
@@ -126,19 +136,21 @@ Rules:
 - Keep "Why it's a prospect" short and actionable
 - Use `Not found` instead of leaving blank fields
 - Include source links sparingly, not all of them
-- After the table, add **Best first outreach targets** with the top 3 leads and one practical reason each
+- After the table, add a bounded **Priority review candidates** section only
+  when current evidence supports it
 - If confidence is low, state exactly what remains uncertain
 
 ---
 
-## Top Outreach Targets Selection (Local SMB)
+## Priority Review Selection (Local SMB)
 
-Prioritize for the top 3 hot leads:
+Prioritize a bounded review set when the evidence supports it:
 
 1. **No site / social only + phone present** = clearest service opportunity
 2. **High review count** = active, established business with real customers
 3. **Owner-responded reviews** = engaged owner = more likely to evaluate a vendor
-4. **Industry alignment with your service specialty** beats generic category match
+4. **Industry alignment with your service specialty** is stronger evidence than
+   a generic category match when both are current and cited
 
 Each top target rationale should be one sentence naming the gap and the signal: "No standalone website (cross-checked); 80+ Google reviews with owner replies; 2 km from target area."
 
@@ -160,6 +172,8 @@ The local branch is the most scraping-sensitive of the three motions. Specifical
 1. **Bulk-scraping Google Maps** — fastest way to violate ToS and lose the research channel.
 2. **Treating Google Maps data as truth** — listings go stale. Cross-check hours, status, and reviews.
 3. **Skipping the website status cross-check** — finding "no site" on Maps doesn't mean no site exists; do an exact-name web search before classifying.
-4. **Targeting only the largest businesses** — they're already covered by other providers. The 2–5 employee SMBs are the under-served opportunity.
-5. **Generic outreach to all hot leads** — local SMBs respond better to outreach that names their specific gap ("I noticed your menu isn't visible on mobile") than generic pitches.
+4. **Assuming size predicts need** — verify the current service gap and buying
+   context instead of treating any employee band as universally underserved.
+5. **Generic outreach drafts** — cite the verified gap and keep every send as a
+   separate approved action.
 6. **Ignoring chains and franchises** as Skip — sometimes the franchisee is the buyer and they have local marketing authority. Verify before skipping.

@@ -1,8 +1,16 @@
 # Positioning Variations Library
 
-Directory audiences respond to different framings. Never copy-paste the same description everywhere — AI engines penalize duplicate content, and each directory type rewards a different opener.
+Directory fields and audiences can call for different emphasis. Keep approved
+facts consistent while adapting the copy to current form limits and verified
+audience context. Do not claim that duplication creates an AI or search penalty
+without current evidence.
 
 Use this library to generate per-tier variants. Swap `[product]`, `[category]`, `[competitors]`, `[use-case]`, and `[audience]` with the real values.
+
+Candidate lists are research cues, not current submission recommendations. Verify
+each platform and form before using a template. Delete any bracketed sentence that
+cannot be supported by current first-party product evidence; never invent users,
+features, integrations, time savings, prices, or outcomes to complete the copy.
 
 ---
 

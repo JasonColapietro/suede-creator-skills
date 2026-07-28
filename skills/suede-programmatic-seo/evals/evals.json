@@ -1,5 +1,5 @@
 {
-  "skill_name": "programmatic-seo",
+  "skill_name": "suede-programmatic-seo",
   "evals": [
     {
       "id": 1,
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "prompt": "Create a comparison page strategy. We want pages like 'Notion vs Asana', 'Notion vs Monday', etc. for all our competitors. We have 15 competitors.",
-      "expected_output": "Should identify this as the Comparisons playbook. Should apply the programmatic approach for competitor comparison pages at scale. Should recommend: template structure for comparison pages, unique data per comparison (not just the same template with names swapped), keyword research for each '[competitor A] vs [competitor B]' variation, URL structure (/compare/notion-vs-asana), internal linking between comparison pages, and quality checks. Should cross-reference the competitors skill for page content structure.",
+      "expected_output": "Should identify this as the Comparisons playbook. Should apply the programmatic approach for competitor comparison pages at scale. Should recommend: template structure for comparison pages, unique data per comparison (not just the same template with names swapped), keyword research for each '[competitor A] vs [competitor B]' variation, URL structure (/compare/notion-vs-asana), internal linking between comparison pages, and quality checks. Should cross-reference `suede-competitors` for page content structure.",
       "assertions": [
         "Identifies as Comparisons playbook",
         "Recommends template structure for scale",
@@ -28,7 +28,7 @@
         "Includes keyword research for variations",
         "Provides URL structure recommendation",
         "Includes internal linking strategy",
-        "Cross-references competitors skill",
+        "Cross-references suede-competitors",
         "Applies quality checks"
       ],
       "files": []
@@ -81,11 +81,11 @@
     {
       "id": 6,
       "prompt": "Can you audit our existing programmatic SEO pages for technical issues? We have crawl errors and some pages return 404s.",
-      "expected_output": "Should recognize this is a technical SEO audit task, not a programmatic SEO strategy task. Should defer to or cross-reference the seo-audit skill, which handles crawlability, indexation, and technical SEO issues. Programmatic-seo focuses on strategy, template design, and content planning for scaled pages.",
+      "expected_output": "Should recognize this is a technical SEO audit task, not a programmatic SEO strategy task. Should defer to or cross-reference `suede-seo-audit`, which handles crawlability, indexation, and technical SEO issues. `suede-programmatic-seo` focuses on strategy, template design, and content planning for scaled pages.",
       "assertions": [
         "Recognizes this as technical SEO audit task",
-        "References or defers to seo-audit skill",
-        "Explains that programmatic-seo is for strategy and template design",
+        "References or defers to suede-seo-audit",
+        "Explains that suede-programmatic-seo is for strategy and template design",
         "Does not attempt full technical SEO audit"
       ],
       "files": []

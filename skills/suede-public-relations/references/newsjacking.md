@@ -32,16 +32,23 @@ Injecting your POV into a story that's already trending. Done well: free distrib
 
 ## The Loop
 
-A repeatable workflow Claude can run on demand or daily.
+A repeatable draft-and-review workflow Suede can run on demand.
 
 1. **Detect** — surface trending stories in your category (see [Sources & Tooling](#sources--tooling))
 2. **Score** — apply the [newsworthiness rubric](#newsworthiness-scoring-rubric); drop anything below threshold
 3. **Angle** — generate 2–3 angles per story using the [angle library](#story-angle-library)
 4. **Validate** — sanity-check: do you actually have the expertise/data to back this angle?
-5. **Pitch** — draft a tight pitch to 3–5 journalists who cover this beat (see [journalist-pitching.md](journalist-pitching.md))
-6. **Post** — also publish on your blog, LinkedIn, X — it builds the trail journalists check before quoting you
+5. **Pitch draft** — prepare a bounded, source-matched recipient set and a
+   separate draft for each (see
+   [journalist-pitching.md](journalist-pitching.md))
+6. **Owned-channel draft** — when current evidence supports a public trail,
+   prepare a blog or social draft; do not publish it
 
-Output format Claude should produce:
+Every recipient, channel, visible identity, exact message, and publication is a
+separate external action requiring explicit approval. Approval to research or
+draft is not approval to send or publish.
+
+Output format Suede should produce:
 
 ```
 NEWSJACK CANDIDATE — 2026-06-10
@@ -68,7 +75,7 @@ Score each candidate 1–10 on five dimensions, multiply by the weight, then sum
 
 | Dimension | What it measures | Weight |
 |-----------|------------------|--------|
-| **Timeliness** | Story <24h old? Window still open? | 2x |
+| **Timeliness** | Is the story inside the justified current-coverage window? | 2x |
 | **Relevance** | Genuinely in your expertise area? | 2x |
 | **Angle uniqueness** | Can you say something no one else is saying? | 2x |
 | **Authority** | Do you have data, customers, or experience to back it? | 1x |
@@ -124,9 +131,10 @@ Best for opinion pieces / op-eds. Weak as a soundbite pitch.
 
 ---
 
-## Speed: The Only Thing That Matters
+## Timing as a Current-Story Variable
 
-Newsjacking decays fast. Approximate windows:
+Coverage curves vary by story and outlet. Use these only as starting research
+windows when current source timestamps and outlet deadlines are unavailable:
 
 | Story type | Effective window |
 |-----------|------------------|
@@ -136,13 +144,19 @@ Newsjacking decays fast. Approximate windows:
 | Conference announcement | Same day |
 | Acquisition / funding news | 12–24 hours |
 
-**Implication:** if you can't draft and send within the window, don't bother. Set up the loop so detection → pitch takes <2 hours.
+Use observed coverage velocity, the journalist's current deadline, source
+confidence, and review capacity to decide whether the angle remains timely.
+Never send without the explicit per-recipient approval gate.
 
 ---
 
 ## Sources & Tooling
 
-Reuses tooling from the `suede-social` skill's listening workflow. Same install: `brew install jq`.
+Reuses the `suede-social` listening model. First inspect which source readers and
+parsers are already installed and callable. If a dependency is missing, use a
+manual/RSS-reader fallback or request explicit installation approval after
+confirming the current platform and package source. Do not run package-manager
+commands from this reference without that approval.
 
 ### Google News RSS (no auth)
 
@@ -171,8 +185,14 @@ curl -s -A "newsjack/1.0" \
 ### Journalist research (browser-driven)
 
 For finding *which* journalists are covering the story right now:
-- **dev-browser** → Google News search for the story → click through to articles → note the bylines
-- Then go to those journalists' X / LinkedIn / Muck Rack profile to confirm beat and recent coverage
+- First discover whether an authorized browser or research connector is
+  currently callable, authenticated, and permitted for the intended sources.
+- If available, search current news results, open the underlying articles, and
+  record bylines, dates, URLs, and the evidence supporting beat fit.
+- If unavailable, ask for article URLs or an export and provide a manual
+  worksheet. Do not claim current coverage was reviewed from snippets alone.
+- Confirm beat and recent coverage from public professional profiles or
+  first-party outlet pages; never bypass a login or access control.
 
 See also [journalist-pitching.md](journalist-pitching.md) for the full discovery workflow.
 
@@ -202,17 +222,21 @@ Things that have ended careers and brands.
 - **The forced fit** — "Here's our take on [trending story] — it's actually about [our product]." Journalists see through this instantly.
 - **The empty take** — pitching "we have an opinion" without specifics. Journalists need a quote-worthy line, not "we're closely watching this."
 - **Speed without judgment** — being first with a bad take is worse than being late with a good one. The 30-minute "is this brand-appropriate?" gut check exists for a reason.
-- **Pitching the same angle to 50 journalists** — they talk. Get caught once, lose the relationships.
-- **No follow-through** — pitch goes out, journalist responds in 20 minutes, founder takes 6 hours to reply. Story moves on.
+- **Undifferentiated bulk pitching** — duplicate outreach ignores recipient fit
+  and can damage relationships.
+- **No response plan** — if a journalist replies, use the stated deadline and
+  approved team service level; do not assume a universal reaction window.
 
 ---
 
 ## Companion Practice: The Public Trail
 
-Every newsjack pitch is stronger if the journalist can find evidence you've been thinking about this publicly. Before pitching:
+An existing public trail can help a journalist verify the position. Before
+proposing a pitch:
 
-1. Publish a short post (blog, LinkedIn, X thread) with your take
-2. Reference it in the pitch ("more thinking here: [link]")
-3. This signals you're not opportunistic — you're an actual voice in the space
+1. Check whether a current owned source already documents the verified position.
+2. If not, draft an owned-channel post only when it would add useful evidence.
+3. Reference a live owned source only after it has been separately approved and
+   published by the user.
 
-If you don't have time to publish, you're probably not ready to pitch.
+A public post is optional. Do not manufacture one merely to imply authority.

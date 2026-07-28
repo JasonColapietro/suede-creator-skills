@@ -65,7 +65,7 @@ The template renders entirely from a JSON block near the top of the file — `<s
 
 ### The frame storyboard = a carousel narrative arc
 
-A concept's `frames` are its storyboard. Label each frame by the *job it does*, not its content — `Hook`, `The problem`, `The results`, `The ask`. This is the same narrative-arc thinking as the carousel frameworks: a proof-led concept is literally Hook → Problem → Mechanism → Results → Context → Ask. For the five reusable carousel arcs (Value-Stack, Problem-Proof, Hack List, Rant Callout, Demo Walkthrough), see `carousel-frameworks.md` in the **social** skill and pick the arc that fits the angle before writing frames.
+A concept's `frames` are its storyboard. Label each frame by the *job it does*, not its content — `Hook`, `The problem`, `The results`, `The ask`. This is the same narrative-arc thinking as the carousel frameworks: a proof-led concept is literally Hook → Problem → Mechanism → Results → Context → Ask. For social-channel arc selection, route the approved concept to `suede-social`; do not assume a local carousel reference exists in that skill.
 
 ### Images vs. placeholders
 

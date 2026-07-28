@@ -1,10 +1,11 @@
-# Demand-Signal Discovery (Find Your First Customers)
+# Suede Demand-Signal Discovery
 
-The other three branches build a list from who *fits* (firmographics, technographics, proximity). This branch builds a list from who is *already showing the pain* — the early-stage motion where you have a product and a hunch but no customer base yet, and you need your first ten real conversations. You are not filtering a database; you are mining recent public discourse for people describing the exact problem you solve, then linking every prospect to the evidence.
+Suede Demand-Signal Discovery starts from current public evidence of a work
+problem rather than a database fit score. It builds an early-customer shortlist
+for real conversations, with each candidate linked to the source and date that
+justify inclusion.
 
 Use this branch when the user is pre-product-market-fit, launching something new, or looking for **design partners, beta users, or first customers** rather than a scaled outbound list. It reuses the shared five phases and every compliance guardrail in SKILL.md; what changes is where you look, how you score, and what you ship.
-
-Pattern credit: the framework here is re-expressed from the open-source `first-customer-finder` Codex skill (Kappaemme, MIT), extended with our live-recency tooling.
 
 ## What makes this branch different
 
@@ -34,7 +35,9 @@ Don't start broad collection until the brief is sharp. Pull from `.agents/produc
 
 ## Step 2 — Mine the five signal buckets
 
-Search several angles, not one query repeated. Adapt wording to how the audience actually talks (mine their vocabulary from organic content first — see the suede-ad-creative hook-system's organic-language note for the same idea).
+Search several angles, not one query repeated. Adapt wording to how the audience
+actually talks; use the organic-language method in `suede-ad-creative` and
+[hook-system.md](../../suede-ad-creative/references/hook-system.md).
 
 1. **Explicit demand** — "looking for," "recommend a tool for," "alternative to [X]," "does anything exist that," "how do you all handle."
 2. **Pain** — "takes hours," "so manual," "hate that," "keeps breaking," "biggest frustration with," "why is there no."
@@ -42,12 +45,22 @@ Search several angles, not one query repeated. Adapt wording to how the audience
 4. **Switching** — cancellation, migration, "moving off [competitor]," a missing feature, a pricing complaint, competitor frustration.
 5. **Timing** — a public launch, a new hire for the relevant function, expansion, a new workflow or regulation, an integration announcement — a *current* event that makes the product relevant now.
 
-**Use our live-recency edge.** A generic skill relies on whatever a web search surfaces; you have better:
-- **last30days** — Reddit, Hacker News, X, YouTube, and web signals from the last 30 days. This is the single highest-value tool for this branch: recency *is* the timing signal.
-- **social-fetch** — pull the full content of a specific post/thread you find, normalized.
-- **scraping** / **Firecrawl** / **Browserbase** — read the original public page (a forum thread, a GitHub issue, a review), never qualify from a search snippet alone.
-- **deep-research** — for a multi-source sweep with adversarial verification when the wedge is broad.
-- **competitor-profiling** / **customer-research** — competitor switching signals and review-mining for the pain language.
+**Discover the current research surface before searching.**
+
+1. List the research, browser, search, and source-reading tools that are
+   currently callable.
+2. Confirm the required account, visible identity, authorization, source terms,
+   and recency controls before using any of them.
+3. Use an available search or recency tool to discover candidate URLs, then an
+   authorized browser or source reader to inspect the original public page.
+4. If those tools are unavailable, run a browser-neutral manual workflow: give
+   the user exact queries and source categories, accept URLs or exports back,
+   and qualify only from the supplied original material.
+5. Route competitor switching evidence to `suede-competitor-profiling` and
+   review-mining or interview design to `suede-customer-research`.
+
+Never qualify from a search snippet alone, and never describe an unavailable
+tool as installed, connected, or authoritative.
 
 ## Step 3 — Source mix (public only)
 
@@ -118,7 +131,10 @@ Lead with the most actionable evidence, in this order:
 6. **Seven-day manual outreach plan** — a low-volume validation sequence (e.g., contact the top 3 with one source-based question; share a mockup only after they confirm the pain; target three conversations and one design-partner commitment).
 7. **Limits** — what evidence is missing and what must be confirmed through real conversations.
 
-For a shareable standalone HTML version of this report, the JSON→HTML generator pattern in ad-creative's [creative-review-page.md](../../ad-creative/references/creative-review-page.md) is the model (escape every value; keep it self-contained).
+For a shareable standalone HTML version of this report, use the JSON-to-HTML
+generator pattern in `suede-ad-creative`:
+[creative-review-page.md](../../suede-ad-creative/references/creative-review-page.md).
+Escape every value and keep the output self-contained.
 
 ## The honesty rules (non-negotiable)
 

@@ -49,7 +49,7 @@ Say you sell a freemium API tool and want to stop losing signups who never make 
 - **Check cadence**: Daily
 - **Acts when**: A user who signed up 48h ago still hasn't made a successful API call and isn't already in this nudge sequence.
 - **Purpose**: Increase the share of new signups that reach first value (first successful API call).
-- **Skills used**: `onboarding`, `emails`, `analytics`
+- **Skills used**: `suede-onboarding`, `suede-emails`, `suede-analytics`
 - **Loop body**:
   1. Pull signups from ~48h ago and their first-call status.
   2. Filter to those with zero successful calls and no active nudge.

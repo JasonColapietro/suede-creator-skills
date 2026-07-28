@@ -1,6 +1,10 @@
 # Platform-Specific Strategy Guide
 
-Detailed strategies for each major social platform.
+Use these as starting hypotheses, never platform truths. Before recommending a
+cadence, time, format, or algorithm tactic, check current official guidance and
+the account's last 30–90 days of reach, retention, saves, replies, follows, and
+production capacity. Preserve the ranges below only as first-test bounds when
+account evidence is unavailable.
 
 ## Contents
 - LinkedIn
@@ -11,12 +15,13 @@ Detailed strategies for each major social platform.
 
 ## LinkedIn
 
-**Best for:** B2B, thought leadership, professional networking, recruiting
-**Audience:** Professionals, decision-makers, job seekers
-**Posting frequency:** 3-5x per week
-**Best times:** Tuesday-Thursday, 7-8am, 12pm, 5-6pm
+**Fit hypothesis:** B2B, professional expertise, networking, recruiting
+**Audience hypothesis:** professionals and work-context communities
+**Starting cadence hypothesis:** 2–4 posts per week for a four-week test
+**Timing test:** compare two audience-local windows drawn from current follower
+activity; if unavailable, rotate morning, midday, and evening slots
 
-**What works:**
+**Formats to test:**
 - Personal stories with business lessons
 - Contrarian takes on industry topics
 - Behind-the-scenes of building a company
@@ -24,37 +29,40 @@ Detailed strategies for each major social platform.
 - Carousel posts (document format)
 - Polls that spark discussion
 
-**What doesn't:**
+**Risks to inspect:**
 - Overly promotional content
 - Generic motivational quotes
-- Links in the main post (kills reach)
+- Uncontextualized links that move readers away before delivering value
 - Corporate speak without personality
 
 **Format tips:**
-- First line is everything (hook before "see more")
+- Test whether the opening line establishes useful context before any current
+  truncation point; compare against the account baseline
 - Use line breaks for readability
-- 1,200-1,500 characters performs well
-- Put links in comments, not post body
+- Test a short and a long treatment of the same idea; use account-level dwell,
+  completion, and response data to choose
+- Test native context with body links, comment links, or no link where current
+  platform guidance permits; compare qualified outcomes
 - Tag people sparingly and genuinely
 
-**Algorithm tips:**
-- First hour engagement matters most
-- Comments > reactions > clicks
-- Dwell time (people reading) signals quality
-- No external links in post body
-- Document posts (carousels) get strong reach
-- Polls drive engagement but don't build authority
+**Evidence to check:**
+- Compare early and later response curves before setting reply windows.
+- Compare comments, reactions, clicks, dwell, and follows at equal reach.
+- Test text, document, link, and poll formats against the account baseline.
+- Do not infer authority or algorithm preference from one high-reach post.
 
 ---
 
 ## Twitter/X
 
-**Best for:** Tech, media, real-time commentary, community building
-**Audience:** Tech-savvy, news-oriented, niche communities
-**Posting frequency:** 3-10x per day (including replies)
-**Best times:** Varies by audience; test and measure
+**Fit hypothesis:** real-time expertise, media, tech, and niche communities
+**Audience hypothesis:** topic-led communities and professional peers
+**Starting cadence hypothesis:** 3–5 original posts per week plus 3–5
+substantive replies on each of 3–5 active days
+**Timing test:** use current follower activity when available; otherwise rotate
+three audience-local windows across comparable posts
 
-**What works:**
+**Formats to test:**
 - Hot takes and opinions
 - Threads that teach something
 - Behind-the-scenes moments
@@ -62,35 +70,38 @@ Detailed strategies for each major social platform.
 - Memes and humor (if on-brand)
 - Real-time commentary on events
 
-**What doesn't:**
+**Risks to inspect:**
 - Pure self-promotion
 - Threads without a strong hook
 - Ignoring replies and mentions
 - Scheduling everything (no real-time presence)
 
 **Format tips:**
-- Tweets under 100 characters get more engagement
+- Test concise and expanded versions against equal-reach engagement and follow
+  outcomes
 - Threads: Hook in tweet 1, promise value, deliver
-- Quote tweets with added insight beat plain retweets
+- Compare original commentary, quote posts, and replies using current results
 - Use visuals to stop the scroll
 
-**Algorithm tips:**
-- Replies and quote tweets build authority
-- Threads keep people on platform (rewarded)
-- Images and video get more reach
-- Engagement in first 30 min matters
-- Twitter Blue/Premium may boost reach
+**Evidence to check:**
+- Compare replies, quote posts, threads, text, images, and video at equal reach.
+- Measure profile visits, qualified replies, follows, and downstream actions.
+- Test response timing rather than assuming a first-30-minute advantage.
+- Do not infer paid-account distribution benefits without a controlled
+  account-level comparison and current platform documentation.
 
 ---
 
 ## Instagram
 
-**Best for:** Visual brands, lifestyle, e-commerce, younger demographics
-**Audience:** 18-44, visual-first consumers
-**Posting frequency:** 1-2 feed posts per day, 3-10 Stories per day
-**Best times:** 11am-1pm, 7-9pm
+**Fit hypothesis:** visual brands, creator narratives, commerce, lifestyle
+**Audience hypothesis:** visual-first communities; verify account demographics
+**Starting cadence hypothesis:** 2–4 feed posts per week plus Stories on 3–5
+days per week
+**Timing test:** compare two follower-active windows from current insights; if
+unavailable, rotate midday and evening windows
 
-**What works:**
+**Formats to test:**
 - High-quality visuals
 - Behind-the-scenes Stories
 - Reels (short-form video)
@@ -98,35 +109,37 @@ Detailed strategies for each major social platform.
 - User-generated content
 - Interactive Stories (polls, questions)
 
-**What doesn't:**
+**Risks to inspect:**
 - Low-quality images
 - Too much text in images
 - Ignoring Stories and Reels
 - Only promotional content
 
 **Format tips:**
-- Reels get 2x reach of static posts
-- First frame of Reels must hook
-- Carousels: 10 slides with educational content
-- Use all Story features (polls, links, etc.)
+- Compare Reels, static posts, and carousels at equal account conditions.
+- Test first-frame treatments against retention.
+- Set carousel length from the idea and slide-level completion, not a fixed
+  count.
+- Test only the Story features that serve the current goal and are available on
+  the authenticated account
 
-**Algorithm tips:**
-- Reels heavily prioritized over static posts
-- Saves and shares > likes
-- Stories keep you top of feed
-- Consistency matters more than perfection
-- Use all features (polls, questions, etc.)
+**Evidence to check:**
+- Compare format reach, retention, saves, shares, replies, and follows.
+- Use Stories and interactive features only when they serve the audience goal.
+- Treat consistency and format preference as account-level hypotheses.
 
 ---
 
 ## TikTok
 
-**Best for:** Brand awareness, younger audiences, viral potential
-**Audience:** 16-34, entertainment-focused
-**Posting frequency:** 1-4x per day
-**Best times:** 7-9am, 12-3pm, 7-11pm
+**Fit hypothesis:** native short-form storytelling and discovery
+**Audience hypothesis:** entertainment- and interest-led communities; verify
+current account demographics
+**Starting cadence hypothesis:** 3–5 posts per week for a four-week test
+**Timing test:** compare follower-active windows when available; otherwise
+rotate morning, midday, and evening slots
 
-**What works:**
+**Formats to test:**
 - Native, unpolished content
 - Trending sounds and formats
 - Educational content in entertaining wrapper
@@ -134,37 +147,43 @@ Detailed strategies for each major social platform.
 - Responding to comments with videos
 - Duets and stitches
 
-**What doesn't:**
+**Risks to inspect:**
 - Overly produced content
 - Ignoring trends
 - Hard selling
 - Repurposed horizontal video
 
 **Format tips:**
-- Hook in first 1-2 seconds
-- Keep it under 30 seconds to start
-- Vertical only (9:16)
-- Use trending sounds
-- Post consistently to train algorithm
+- Test opening treatments in the first 1–3 seconds against retention.
+- Start with two length bands that fit the idea, then use completion and
+  downstream action to choose.
+- Verify current upload requirements and composer previews; test 9:16 when it
+  fits the placement, but do not reject another supported ratio without evidence
+- Test native audio, original audio, and no-audio versions when rights and
+  account context permit.
+- Keep the test cadence stable enough to compare cohorts; do not claim it
+  trains the algorithm.
 
 ---
 
 ## Facebook
 
-**Best for:** Communities, local businesses, older demographics, groups
-**Audience:** 25-55+, community-oriented
-**Posting frequency:** 1-2x per day
-**Best times:** 1-4pm weekdays
+**Fit hypothesis:** communities, local businesses, events, and groups
+**Audience hypothesis:** community-oriented users; verify page or group insights
+**Starting cadence hypothesis:** 2–4 posts per week plus community replies as
+needed
+**Timing test:** compare two audience-local windows from current insights; if
+unavailable, rotate midday and early-evening slots
 
-**What works:**
+**Formats to test:**
 - Facebook Groups (community)
 - Native video
 - Live video
 - Local content and events
 - Discussion-prompting questions
 
-**What doesn't:**
-- Links to external sites (reach killer)
+**Risks to inspect:**
+- Link-only posts that provide no native context or discussion value
 - Pure promotional content
 - Ignoring comments
 - Cross-posting from other platforms without adaptation

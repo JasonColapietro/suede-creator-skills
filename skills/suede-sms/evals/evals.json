@@ -1,5 +1,5 @@
 {
-  "skill_name": "sms",
+  "skill_name": "suede-sms",
   "evals": [
     {
       "id": 1,
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "prompt": "Write me an abandoned cart SMS sequence. We sell custom apparel, average order $80.",
-      "expected_output": "Should output a 3-message sequence following references/sequence-templates.md pattern. Should specify timing: Send 1 at 30 min after abandon (no discount, gentle reminder), Send 2 at 4 hours (soft urgency, no discount), Send 3 at 24 hours (discount allowed). Should include actual SMS copy with character counts (target 160 GSM-7 for 1 segment). Each message must start with sender ID 'From [Brand]:', have a single CTA + short link, and the first message should include 'Reply STOP to opt out' compliance footer. Should warn against discount on first send (trains customers to abandon). Should mention exclusion rules: stop sequence on purchase, opt-out, or 48 hours elapsed. Should recommend UTM tagging for attribution and cross-reference analytics skill for measurement.",
+      "expected_output": "Should output a 3-message sequence following references/sequence-templates.md pattern. Should specify timing: Send 1 at 30 min after abandon (no discount, gentle reminder), Send 2 at 4 hours (soft urgency, no discount), Send 3 at 24 hours (discount allowed). Should include actual SMS copy with character counts (target 160 GSM-7 for 1 segment). Each message must start with sender ID 'From [Brand]:', have a single CTA + short link, and the first message should include 'Reply STOP to opt out' compliance footer. Should warn against discount on first send (trains customers to abandon). Should mention exclusion rules: stop sequence on purchase, opt-out, or 48 hours elapsed. Should recommend UTM tagging for attribution and cross-reference `suede-analytics` for measurement.",
       "assertions": [
         "Outputs 3-message sequence with timing",
         "Send 1 at 30 min, Send 2 at 4 hours, Send 3 at 24 hours",
@@ -53,7 +53,7 @@
     {
       "id": 4,
       "prompt": "Our SMS list is 50K subscribers. We send 3 promotional messages per week. Opt-out rate has crept up to 4% per send. What's wrong?",
-      "expected_output": "Should diagnose this as audience fatigue from over-sending. Should reference healthy benchmarks: opt-out rate should be <2% per send and <0.5% for promotional sends — 4% is significantly elevated. Should review send frequency: 3 promotional sends/week is on the high side; recommend reducing to 1-2/week, especially for newer subscribers. Should audit relevance: are sends segmented or going to entire list? Generic blasts to a 50K list will burn out the inactive 30K. Should recommend segmenting by engagement (recently engaged vs cold), purchase recency, and opt-in source. Should suggest reactivating cold subscribers with a re-engagement flow before sending more promos. Should warn that 4% opt-out per send means the list is being destroyed at the rate of ~2K/week. Should cross-reference analytics for proper measurement and the principle 'every send must justify itself.'",
+      "expected_output": "Should diagnose likely audience fatigue while checking current account history, consent source, send mix, and applicable carrier or vendor benchmarks before naming a threshold. Should review frequency and relevance, compare segments by engagement, purchase recency, and opt-in source, and calculate the actual subscriber loss implied by the provided opt-out rate. Should recommend a bounded re-engagement test before more broad promotions, cross-reference `suede-analytics`, and keep the principle that every send must justify itself.",
       "assertions": [
         "Diagnoses as over-sending / audience fatigue",
         "Cites healthy benchmark (<2% opt-out per send, <0.5% promotional)",

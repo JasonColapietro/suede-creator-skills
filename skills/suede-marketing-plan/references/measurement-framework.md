@@ -3,8 +3,8 @@
 Every plan needs a measurement section that tells the team how to know if the plan is working. This doc is the source for Section 13's measurement subsection.
 
 **Related docs:**
-- `growth-patterns.md` — the 3-3-2-2-2 VC growth path (3× in years 1–2, 2× in years 3–7 from $1M ARR) and which phase of SaaS growth the company is in ($0–10K / $10K–100K / $100K–1M+)
-- `budget-planning.md` — CAC calculation (blended, not paid-only) and the forecasting reality check (forecasts under $100M ARR are educated guesses, not precise predictions)
+- `growth-patterns.md` — linear, step-function, and layered-curve scenarios
+- `budget-planning.md` — blended-CAC evidence and low/base/high scenario limits
 
 ## The north-star principle
 
@@ -92,64 +92,73 @@ After the north star, every plan needs leading indicators per AARRR stage. These
 
 ## Review cadence
 
-The plan should specify three rhythms:
+The plan should specify decision rhythms that match data latency, operational
+capacity, and the accountable owner's needs. Weekly, monthly, and quarterly are
+labels for consideration, not mandatory frequencies.
 
-### Weekly (operational sync)
-- **Who:** fCMO ↔ founder (CEO usually)
-- **Duration:** 30 min
-- **Format:** AARRR scoreboard (current vs. last week numbers across the leading indicators) + this week's ships + blockers
-- **Output:** Action items, decisions made
+### Operational sync
+- **Who:** named workflow owners and decision maker
+- **When:** chosen from execution cadence and signal latency
+- **Format:** source-backed AARRR changes, shipped artifacts, blockers, and
+  decisions due
+- **Output:** owner-assigned actions and recorded decisions
 
-### Monthly (metrics review)
-- **Who:** fCMO + founder + extended team (CXO, product lead, designer if applicable)
-- **Duration:** 60–90 min
-- **Format:** Full metrics review + comparison against quarterly KPI targets + qualitative learnings + idea bank reprioritization
-- **Output:** Possible plan adjustments, hire decisions
+### Metrics review
+- **Who:** accountable business owner plus only the required operators/reviewers
+- **When:** chosen from cohort maturity and reporting latency
+- **Format:** full metric definitions, source/as-of dates, scenario comparison,
+  qualitative evidence, and option reprioritization
+- **Output:** documented continue/adjust/pause decisions, including unresolved
+  capacity questions rather than assumed hiring
 
-### Quarterly (plan recalibration)
-- **Who:** fCMO + founders + key advisors
-- **Duration:** 2–3 hours
-- **Format:** Full plan review against 90-day and 12-month outcomes, channel-level analysis, funding-stage transition check, recalibration of next 90 days
-- **Output:** Updated plan (could be v2 / v3 document iteration)
+### Plan recalibration
+- **Who:** named plan owner, executive decision maker, and required reviewers
+- **When:** the chosen planning interval or an explicit trigger fires
+- **Format:** plan review against evidence ranges and decision rules,
+  channel-level analysis, resource/approval changes, and next-interval scenarios
+- **Output:** versioned plan decision with owners and review dates
 
 ## KPI target setting
 
-For each quarter in Section 10, the plan must include 3–5 specific KPI targets. These should be:
-- **Specific** — not "improve retention," but "Day 30 retention from 22% → 30%"
+For each planning interval in Section 10, include 3–5 source-backed KPI decision
+rules only when a baseline exists. These should be:
+- **Specific** — name metric definition, cohort, baseline, source, and as-of date
 - **Measurable** — pull from a wired data source
-- **Stretch but plausible** — based on funnel state + historical patterns
-- **Decision-triggering** — if missed, what does that mean? (Adjust strategy, kill a channel, etc.)
+- **Scenario-bounded** — show low/base/high cases from historical patterns or
+  label assumptions unverified
+- **Decision-triggering** — name owner, review date, and hit/miss action
 
-### KPI target patterns by quarter
+### KPI target patterns by decision state
 
-**Q1 (foundation quarter):**
-- Mostly *bedrock* metrics — fixing leaks. "Headphones-gate conversion drop reverses." "Day 1 → paid +25–50%."
-- Some *foundation* metrics — laying tracks. "4 SEO pillars staked." "App Store rewrite shipped."
-- Avoid bold growth targets — the foundations aren't in yet
+- **Repair:** verify a known defect is removed using a dated baseline, acceptance
+  readback, owner, and regression guard.
+- **Instrument:** ship the measurement path and prove event/count reconciliation
+  before setting a performance target.
+- **Validate:** compare a new cohort or bounded test with its pre-registered
+  baseline and decision rule.
+- **Expand:** increase exposure only within an approved ceiling while the
+  measured guardrails hold.
+- **Compound:** test whether multiple channels or loops add incremental value;
+  do not infer attribution from correlated movement.
 
-**Q2 (validation quarter):**
-- Mostly *validation* metrics — does what we built work? "Paid CAC < $X blended." "Organic traffic 1,500–3,500/mo."
-- Some *cohort* metrics — do new cohorts behave better? "Day 7 retention for Q2 cohort vs. Q1."
+Any of these states may occur in any quarter. Calendar position, company stage,
+or a financing event does not choose the state or target.
 
-**Q3 (scaling quarter):**
-- Mostly *scaling* metrics — how far does it go? "Paid scaling to $20–30K/mo with CAC steady." "First B2B install reference case live."
-- Some *capability* metrics — what new things are live? "First Guides pilot launched."
+## Selecting a Growth Scenario
 
-**Q4 (compound quarter):**
-- Mostly *compound* metrics — is the flywheel turning? "50%+ of new subs from non-paid channels." "Ambassador-driven 15–25% of new subs."
-- Some *narrative* metrics — does the Series A story write itself? "Blended LTV/CAC > 3."
-
-## Anchoring against the VC growth path
-
-For VC-backed clients past $1M ARR, anchor 12-month and multi-year targets against the **3-3-2-2-2 rule** (3× in years 1 and 2, then 2× in years 3 through 7). Hitting it is rare; most companies don't. Anchoring against it forces the plan to either match it and show how, or explicitly defend choosing a slower trajectory. Full table and context in `growth-patterns.md`.
-
-For non-VC-backed companies (bootstrapped, founder-funded, profit-focused), the 3-3-2-2-2 doesn't apply. Use linear-pattern targets ("$X MRR added per month") or step-function targets ("$Y revenue jump after the enterprise tier launches") instead.
+Do not impose a stage-based growth multiple. Build low/base/high scenarios from
+the client's dated retention, margin, capacity, pipeline, and cash evidence.
+External benchmarks may be shown only with a current source, cohort definition,
+and explicit note that they are context rather than a target.
 
 ## Forecasting reality check
 
 A plan derives a budget and an annual goal. It does not produce a 12-month month-by-month forecast that's reliably accurate to the dollar.
 
-**Unless the company is publicly traded, all forecasts are educated guesses.** No startup under $100M ARR consistently hits month-by-month forecasts. Quarterly review is when the plan adjusts — not when variance is treated as failure.
+Forecast confidence depends on the model, data history, input stability, and
+operating process—not listing status or ARR. Label every projection with its
+source dates, assumptions, range, limitations, owner, and recalibration rule.
+Treat unsupported point estimates as illustrative scenarios.
 
 What the plan commits to honestly:
 - The annual goal is a defensible direction-of-travel
@@ -165,19 +174,29 @@ Full context in `budget-planning.md`.
 
 For every channel or initiative, the plan should specify when to stop. Often missing from plans, kill criteria force discipline.
 
-Examples:
-- "If a paid channel has CAC > 2× target after 30 days at meaningful spend, pause."
-- "If onboarding Variant 3 doesn't show statistically meaningful lift (or directional lift + congruent qualitative signal) after 4 weeks, move to Variant 1."
-- "If lifecycle Flow 4 has open rate < 12% after 6 weeks, redo subject lines + audience segmentation."
+Template:
+
+> If `{metric, definition, cohort}` crosses `{threshold approved by owner}` after
+> `{minimum evidence window/sample/exposure}`, `{named owner}` pauses or changes
+> `{scope}` on `{review date}`. Source: `{artifact and as-of date}`.
+
+Thresholds must come from the client's baseline, economics, safety boundary, or
+a current cited comparator with a matched cohort. If evidence is insufficient,
+the rule is an instrumentation or evidence-collection checkpoint, not a
+fabricated performance cutoff.
 
 ## Guardrail metrics
 
 Some metrics get a hard guardrail (cannot drop below threshold). Useful for protecting brand or unit economics during aggressive growth.
 
-Examples:
-- "Brand voice complaint rate > 1% of customer feedback triggers content review."
-- "Paid CAC > $X for two consecutive months pauses paid scaling pending audit."
-- "App Store rating drops below 4.5 triggers product review."
+Record guardrails in this auditable form:
+
+| Metric definition | Threshold/range | Source and as-of | Owner | Minimum evidence | Triggered action | Review |
+|---|---|---|---|---|---|---|
+
+The accountable owner approves every threshold and action before launch.
+Platform ratings, complaint rates, CAC, and similar metrics have no universal
+cutoff in this skill.
 
 ## Data sources mapping
 
@@ -206,8 +225,8 @@ A plan with un-measurable goals is a plan that can't be validated. Surface the i
 
 ## Reporting cadence + automation
 
-Where possible, auto-generate the metrics review rather than building it manually each time. Stripe MCP + GA4 MCP + Customer.io MCP can pull most of what's needed.
-
-For Tier 1 clients, a simple weekly metrics email to the team (Markdown table, generated via skills + MCPs) costs nothing and creates discipline.
-
-For Tier 2+ clients, consider a real dashboard (Hex, Metabase, Looker, or internal tool).
+Where possible, discover currently callable, authorized data sources and
+automate a review only after confirming schemas, owners, and data boundaries.
+Otherwise produce a manual Markdown review from user-supplied exports. Choose an
+email, sheet, or dashboard from audience, decision cadence, maintenance
+capacity, and approved tooling—not from funding stage.

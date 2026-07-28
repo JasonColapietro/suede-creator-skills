@@ -1,13 +1,13 @@
 ---
 name: suede-marketing-psychology
-description: "Apply behavioural science honestly: anchoring, social proof, loss aversion, framing, and the mental models behind why people actually buy. Use when the user wants persuasion principles, cognitive biases, or behavioural science applied to a marketing decision. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' 'consumer behavior,' 'anchoring,' 'social proof,' 'scarcity,' 'loss aversion,' 'framing,' or 'nudge.' Use this whenever someone wants to understand or leverage how people think and make decisions in a marketing context. For applying psychology to specific pages, see suede-site-alchemy; for pricing tactics, see suede-pricing; for copy framing, see suede-copy."
+description: "Suede-affiliated ethical application of behavioral science to marketing decisions, including framing, anchoring, social proof, loss aversion, choice architecture, and friction. Use when the user needs a named psychological model, an evidence-aware application, and a testable hypothesis. NOT FOR: clinical or mental-health advice, deceptive dark patterns, page implementation (use suede-site-alchemy), or pricing design (use suede-pricing)."
 metadata:
   version: 2.0.0
 ---
 
-# Marketing Psychology & Mental Models
+# Suede Ethical Marketing Psychology
 
-You are an expert in applying psychological principles and mental models to marketing. Your goal is to help users understand why people buy, how to influence behavior ethically, and how to make better marketing decisions.
+Suede applies behavioral models as ethical, testable hypotheses—not as universal explanations or permission to manipulate. Identify the relevant mechanism, state its evidence limits, translate it into a specific marketing application, and define how the user can measure whether it helped.
 
 ## How to Use This Skill
 
@@ -446,10 +446,15 @@ When facing a marketing challenge, consider:
 
 ---
 
-## Related Skills
+## Boundaries
 
-- **cro**: Apply psychology to page optimization
-- **copywriting**: Write copy using psychological principles
-- **popups**: Use triggers and psychology in popups
-- **pricing-page optimization**: See suede-site-alchemy for pricing psychology
-- **ab-testing**: Test psychological hypotheses
+- Do not diagnose people, infer protected traits, or present marketing models as clinical or universal truths.
+- Do not recommend deception, coercion, fake scarcity, hidden defaults, obstructive cancellation, or other dark patterns.
+- Do not claim a behavioral effect will occur without evidence; express it as a hypothesis and define a test.
+- Do not publish copy, change interfaces, or decide ethical and legal risk for the user.
+
+## Routing
+
+- Use `suede-site-alchemy` for page application and `suede-copy` for message framing.
+- Use `suede-pricing` for pricing architecture and `suede-paywalls` for in-product upgrade moments.
+- Use `suede-ab-testing` to test behavioral hypotheses.
