@@ -2,7 +2,7 @@
 
 A 67-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 67](https://img.shields.io/badge/Skills-29-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 67](https://img.shields.io/badge/Skills-67-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use Suede Creator Skills, please cite it as below."
 title: "Suede Creator Skills"
 abstract: >-
-  A public, open-source (MIT) pack of 29 installable Agent Skills for Claude Code
+  A public, open-source (MIT) pack of 67 installable Agent Skills for Claude Code
   and OpenAI Codex, plus an optional Model Context Protocol (MCP) server. Covers
   outcome-bound orchestration through Suede Full Send, design, anti-slop
   copywriting, SEO/AEO/AI EO audits, reference-site restyling (Suedify), website

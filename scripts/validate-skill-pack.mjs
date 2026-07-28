@@ -907,6 +907,17 @@ const countChecks = [
   { file: ".claude-plugin/marketplace.json", label: "marketplace description", re: /(\d+) MIT-licensed skills/, expected: totalSkillCount },
   { file: ".claude-plugin/marketplace.json", label: "umbrella plugin description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
   { file: "PROMO.md", label: "README intro pack size", re: /public (\d+)-skill agent workflow pack/, expected: totalSkillCount },
+  // The shields.io badge is the first thing a visitor sees on the GitHub
+  // landing page, and its URL value drifted to 29 while the alt text, the
+  // README prose, and every other surface said 67. Guard both halves — the
+  // rendered number lives in the URL, so alt text alone proves nothing.
+  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
+  { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
+  { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  { file: "CITATION.cff", label: "abstract skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
+  { file: "docs/llms.txt", label: "summary skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
+  { file: "docs/llms.txt", label: "skill index line", re: /Browse all (\d+) skills\./, expected: totalSkillCount },
+  { file: "docs/skills/suede-full-send.html", label: "footer skill count", re: /is one of (\d+) public, MIT-licensed Agent Skills/, expected: totalSkillCount },
 ];
 
 for (const check of countChecks) {
