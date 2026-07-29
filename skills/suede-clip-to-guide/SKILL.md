@@ -1,6 +1,6 @@
 ---
 name: suede-clip-to-guide
-description: "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, and measured success loop. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval."
+description: "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, measured success loop, and a dual-evidence certainty gate when Full Send or Codex Fleet controls the run. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval."
 ---
 
 # Suede Clip to Guide
@@ -26,6 +26,10 @@ Clip hook + source credit + subtitles
 Post explains why the moment matters
         ↓
 One explicit bridge to the guide
+        ↓
+Full Send/Fleet: dual certainty gate
+        ↓
+Exact-content approval
         ↓
 Public readback + clip-to-guide measurement
         ↓
@@ -60,7 +64,8 @@ revise one variable at a time when it does not.
 
 ## Non-Negotiable Gates
 
-Run these before writing copy:
+Apply these throughout the run. Resolve rights, source, and claims before
+writing copy; resolve platform, certainty, and approval before a live action:
 
 1. **Rights gate** — classify the video as owned, licensed, permission-recorded,
    native-repost-only, fair-use-review, or blocked. Public availability is not
@@ -75,6 +80,9 @@ Run these before writing copy:
 5. **Approval gate** — do not publish, schedule, repost, upload, reply, or edit
    a live article until the user approves the exact media, copy, guide, account,
    and sequence.
+6. **Certainty gate** — when `suede-full-send` or `suede-codex-fleet` controls
+   the run, require two distinct evidence checks before marking a package
+   approved or published. A worker conclusion is not the second check.
 
 When a blocking gate fails, stop the affected action and return:
 
@@ -177,7 +185,9 @@ produce:
    - give one specific next action.
 6. **Publish sequence** — one of the verified patterns below.
 7. **Measurement plan** — baseline, observation window, and decision rule.
-8. **Approval bundle** — exact media, post copy, guide, identity, and sequence.
+8. **Certainty record** — execution mode, two check owners or processes,
+   direct evidence, contradictions, and final verdict.
+9. **Approval bundle** — exact media, post copy, guide, identity, and sequence.
 
 Do not pad the post with generic setup, unsupported performance language, or
 multiple competing calls to action.
@@ -197,7 +207,53 @@ Do not assume a quote-post can also carry new media. Verify the current composer
 and choose the smallest sequence that preserves the clip, guide, and source
 credit.
 
-### 7. Require exact-content approval
+### 7. Run the dual certainty gate when required
+
+Record `execution_mode` as `standard`, `full-send`, or `codex-fleet`. Standard
+mode may record `certainty_status: not-required`. Full Send and Codex Fleet
+must run both checks and may not mark a package `approved` or `published` until
+`certainty_status: proved`. Record one package version, timestamp, or content
+hash so both checks evaluate the same unchanged artifact.
+
+**Check 1 — production proof**
+
+- Reopen the video or transcript at the selected timestamps.
+- Match the quotation, claim framing, rights evidence, moment score, guide
+  promise, bridge, exact copy, identity, sequence, and one CTA to the package.
+- Run the package validator for a saved artifact.
+- In Fleet mode, the Codex worker's acceptance-criteria self-check may satisfy
+  this check, but remains provisional.
+
+**Check 2 — independent proof**
+
+- Inspect the source evidence and assembled package directly; do not review
+  only Check 1's summary.
+- Use a different failure lens, evidence source, or acceptance criterion and
+  try to disprove the rights route, factual framing, guide fit, platform
+  sequence, and approval readiness.
+- In Full Send with useful parallel work, keep the producer and adversarial
+  reviewer separate. For one atomic Full Send job, perform a fresh second pass
+  after reloading the source evidence.
+- In Fleet mode, the controller must perform this check and mark the worker
+  output `accepted`, `rejected`, or `fix brief`. A second worker or repeated
+  self-check does not replace controller review.
+
+Use only:
+
+- `PROVED` — both checks pass with direct evidence and every contradiction is
+  resolved;
+- `UNPROVED` — a check is incomplete, indirect, or disagrees with the other;
+- `BLOCKED` — access, authority, rights, or platform state prevents a required
+  check.
+
+If either check is not `PROVED`, keep publication unapproved, use the halt
+format, and name the smallest fix or evidence needed. The dual check raises
+confidence; it does not guarantee truth, create legal clearance, or replace
+the live readback. A material change to the media, timestamps, rights evidence,
+guide, copy, identity, sequence, or CTA resets `certainty_status` to `pending`
+and requires both checks again.
+
+### 8. Require exact-content approval
 
 Before a live action, show:
 
@@ -216,7 +272,7 @@ or sequence changes materially, show the changed bundle and obtain approval
 again. Verify the visible identity immediately before acting and fail closed on
 an account mismatch, login challenge, or ambiguous composer.
 
-### 8. Verify completion
+### 9. Verify completion
 
 For a saved package, run:
 
@@ -272,6 +328,8 @@ Do not report causal lift from an unpaired or tiny sample.
 - Do not alter a source quote to make the hook stronger.
 - Do not describe the campaign as successful until current analytics support
   the named decision rule.
+- Do not call a Full Send or Fleet package certain, approved, or publishable
+  when either required check is `UNPROVED` or `BLOCKED`.
 
 ## Routing
 
@@ -282,5 +340,8 @@ Do not report causal lift from an unpaired or tiny sample.
 - Need the long-form guide written -> use `suede-copy`; use
   `suede-content-strategy` for pillars and portfolio priority.
 - Need paid variants -> use `suede-ad-creative`.
+- Need maximum-effort orchestration -> use `suede-full-send`; need a
+  high-volume Codex CLI batch -> use `suede-codex-fleet`. In either mode,
+  return here for the dual certainty record.
 - From those skills, route a video-to-long-form bridge, moment score, rights
   route, exact approval bundle, and readback back to `suede-clip-to-guide`.

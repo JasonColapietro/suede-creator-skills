@@ -113,6 +113,41 @@
         "Fails closed on ambiguity"
       ],
       "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Full send this one clip-to-guide package and double-check it so we can be certain before it goes live.",
+      "expected_output": "Should record full-send execution mode, keep this atomic job with the smallest relevant specialist, and run two distinct evidence passes: production proof and a fresh source-truth review using a different failure lens. It may mark certainty proved only when both checks directly verify the rights route, source claims, guide bridge, exact package, identity, sequence, and validator result and all contradictions are resolved. Otherwise it must return unproved or blocked and keep publication unapproved.",
+      "assertions": [
+        "Records execution_mode as full-send",
+        "Does not create parallel production lanes for one atomic package",
+        "Runs production proof against direct evidence",
+        "Runs a distinct fresh-context second pass",
+        "Requires both checks and the final verdict to be PROVED",
+        "Resets certainty to pending when the checked bundle changes",
+        "Keeps publication unapproved on disagreement or missing evidence",
+        "Does not claim absolute certainty or legal clearance"
+      ],
+      "files": [
+        "references/package-template.md"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Use a Codex Fleet to make 20 clip-to-guide packages, but double-check every one for certainty before anything ships.",
+      "expected_output": "Should route the well-specified high-volume batch through suede-codex-fleet, record codex-fleet execution mode, treat each worker self-check as provisional Check 1, and require the controller to inspect source evidence and each assembled package as independent Check 2. A second worker or repeated self-check cannot replace controller review. Only packages with two PROVED checks, resolved contradictions, exact-content approval, and live readback may ship.",
+      "assertions": [
+        "Routes the high-volume batch to suede-codex-fleet",
+        "Records execution_mode as codex-fleet",
+        "Treats worker self-checks as provisional",
+        "Requires controller inspection as the independent second check",
+        "Does not substitute another worker for controller review",
+        "Requires two PROVED checks and resolved contradictions",
+        "Does not ship unproved or blocked packages"
+      ],
+      "files": [
+        "references/package-template.md"
+      ]
     }
   ]
 }

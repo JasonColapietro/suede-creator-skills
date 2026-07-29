@@ -15,6 +15,8 @@ REQUIRED_FIELDS = {
     "rights_status",
     "guide_status",
     "publication_status",
+    "execution_mode",
+    "certainty_status",
 }
 
 ALLOWED_VALUES = {
@@ -28,6 +30,14 @@ ALLOWED_VALUES = {
     },
     "guide_status": {"existing", "drafted", "needs-long-form", "blocked"},
     "publication_status": {"draft", "approved", "published", "blocked"},
+    "execution_mode": {"standard", "full-send", "codex-fleet"},
+    "certainty_status": {
+        "not-required",
+        "pending",
+        "proved",
+        "unproved",
+        "blocked",
+    },
 }
 
 REQUIRED_HEADINGS = [
@@ -41,9 +51,20 @@ REQUIRED_HEADINGS = [
     "### Exact post text",
     "## Publish Sequence",
     "## Measurement",
+    "## Certainty Gate",
     "## Approval Gate",
     "## Verification",
 ]
+
+UNRESOLVED_VALUES = {
+    "",
+    "pending",
+    "not available",
+    "not required",
+    "blocked",
+    "none",
+    "n/a",
+}
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], list[str]]:
@@ -67,6 +88,11 @@ def parse_frontmatter(text: str) -> tuple[dict[str, str], list[str]]:
         fields[key] = value
 
     return fields, errors
+
+
+def bullet_value(text: str, label: str) -> str | None:
+    match = re.search(rf"(?mi)^-\s*{re.escape(label)}:\s*(.+)$", text)
+    return match.group(1).strip() if match else None
 
 
 def validate(path: Path) -> list[str]:
@@ -100,6 +126,8 @@ def validate(path: Path) -> list[str]:
     rights_status = fields.get("rights_status")
     publication_status = fields.get("publication_status")
     guide_status = fields.get("guide_status")
+    execution_mode = fields.get("execution_mode")
+    certainty_status = fields.get("certainty_status")
 
     if publication_status in {"approved", "published"}:
         if rights_status == "blocked" or guide_status == "blocked":
@@ -126,6 +154,76 @@ def validate(path: Path) -> list[str]:
             errors.append(
                 "approved fair-use-review package needs an accountable decision owner"
             )
+
+    certainty_required = execution_mode in {"full-send", "codex-fleet"}
+    if certainty_required and certainty_status == "not-required":
+        errors.append(f"{execution_mode} package requires the dual certainty gate")
+
+    if certainty_required and publication_status in {"approved", "published"}:
+        if certainty_status != "proved":
+            errors.append(
+                f"{publication_status} {execution_mode} package needs "
+                "certainty_status: proved"
+            )
+
+    if certainty_required and certainty_status == "proved":
+        check_labels = [
+            "Checked artifact version/hash",
+            "Check 1 owner/process",
+            "Check 1 evidence",
+            "Check 1 verdict",
+            "Check 2 owner/process",
+            "Check 2 evidence",
+            "Check 2 verdict",
+            "Contradictions resolved",
+            "Final certainty verdict",
+        ]
+        values = {label: bullet_value(text, label) for label in check_labels}
+
+        for label, value in values.items():
+            if value is None or value.rstrip(".").strip().lower() in UNRESOLVED_VALUES:
+                errors.append(f"proved certainty gate needs resolved {label}")
+
+        for label in ("Check 1 verdict", "Check 2 verdict", "Final certainty verdict"):
+            value = values[label]
+            if value is not None and value.rstrip(".").strip().upper() != "PROVED":
+                errors.append(f"{label} must be PROVED when certainty_status is proved")
+
+        check_1 = values["Check 1 owner/process"]
+        check_2 = values["Check 2 owner/process"]
+        if (
+            check_1 is not None
+            and check_2 is not None
+            and check_1.rstrip(".").strip().casefold()
+            == check_2.rstrip(".").strip().casefold()
+        ):
+            errors.append(
+                "proved certainty gate needs two distinct check owners or processes"
+            )
+
+        evidence_1 = values["Check 1 evidence"]
+        evidence_2 = values["Check 2 evidence"]
+        if (
+            evidence_1 is not None
+            and evidence_2 is not None
+            and evidence_1.rstrip(".").strip().casefold()
+            == evidence_2.rstrip(".").strip().casefold()
+        ):
+            errors.append(
+                "proved certainty gate needs two distinct evidence records"
+            )
+
+        if execution_mode == "codex-fleet":
+            normalized_check_1 = (check_1 or "").casefold()
+            normalized_check_2 = (check_2 or "").casefold()
+            if "worker" not in normalized_check_1 or "self-check" not in normalized_check_1:
+                errors.append(
+                    "proved codex-fleet gate needs a worker self-check as Check 1"
+                )
+            if "controller" not in normalized_check_2:
+                errors.append(
+                    "proved codex-fleet gate needs controller review as Check 2"
+                )
 
     if publication_status == "published":
         if not re.search(r"(?mi)^-\s*Live permalink:\s*https?://\S+", text):

@@ -5,6 +5,8 @@ identity: "@ExampleCreator"
 rights_status: "original"
 guide_status: "existing"
 publication_status: "draft"
+execution_mode: "standard"
+certainty_status: "not-required"
 ---
 
 # Clip-to-Guide Package
@@ -97,6 +99,19 @@ Read and bookmark: https://example.com/creator-provenance
 - Guide metric: Tracked guide opens.
 - Campaign action: Guide bookmarks.
 - Decision rule: Test a second package only if the guide-open rate meets or exceeds the comparable median without a drop in qualified replies.
+
+## Certainty Gate
+
+- Required: No; standard execution mode.
+- Checked artifact version/hash: not required.
+- Check 1 owner/process: not required.
+- Check 1 evidence: not required.
+- Check 1 verdict: NOT-REQUIRED.
+- Check 2 owner/process: not required.
+- Check 2 evidence: not required.
+- Check 2 verdict: NOT-REQUIRED.
+- Contradictions resolved: not required.
+- Final certainty verdict: NOT-REQUIRED.
 
 ## Approval Gate
 

@@ -462,8 +462,8 @@ Design lane:
 Marketing and distribution lane:
 
 - Video-plus-guide posts, short-to-long funnels, clip scoring, third-party
-  video rights routing, exact approval bundles, and clip-to-guide measurement:
-  `suede-clip-to-guide`.
+  video rights routing, exact approval bundles, clip-to-guide measurement, and
+  Full Send/Fleet dual certainty records: `suede-clip-to-guide`.
 - General social strategy, calendars, listening, or engagement:
   `suede-social`.
 - Full video editing or production: `suede-video`.

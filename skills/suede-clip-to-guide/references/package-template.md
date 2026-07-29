@@ -2,6 +2,8 @@
 
 Use this structure for every durable package. Keep URLs and timestamps exact.
 Use `not available` instead of inventing a value.
+Full Send and Codex Fleet packages need two distinct evidence records and a
+final `PROVED` verdict before approval or publication.
 
 ```markdown
 ---
@@ -11,6 +13,8 @@ identity: "<visible account identity>"
 rights_status: "<original|licensed|permission-recorded|native-repost-only|fair-use-review|blocked>"
 guide_status: "<existing|drafted|needs-long-form|blocked>"
 publication_status: "<draft|approved|published|blocked>"
+execution_mode: "<standard|full-send|codex-fleet>"
+certainty_status: "<not-required|pending|proved|unproved|blocked>"
 ---
 
 # Clip-to-Guide Package
@@ -97,6 +101,19 @@ publication_status: "<draft|approved|published|blocked>"
 - Guide metric:
 - Campaign action:
 - Decision rule:
+
+## Certainty Gate
+
+- Required: <yes|no>
+- Checked artifact version/hash:
+- Check 1 owner/process:
+- Check 1 evidence:
+- Check 1 verdict: <PROVED|UNPROVED|BLOCKED|NOT-REQUIRED>
+- Check 2 owner/process:
+- Check 2 evidence:
+- Check 2 verdict: <PROVED|UNPROVED|BLOCKED|NOT-REQUIRED>
+- Contradictions resolved:
+- Final certainty verdict: <PROVED|UNPROVED|BLOCKED|NOT-REQUIRED>
 
 ## Approval Gate
 
