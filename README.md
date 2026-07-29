@@ -1,14 +1,14 @@
 # Suede Creator Skills
 
-A 67-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
+A 68-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 67](https://img.shields.io/badge/Skills-67-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 68](https://img.shields.io/badge/Skills-68-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
 ## What it is
 
-A free, MIT-licensed, broadly reusable pack of **67 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed, broadly reusable pack of **68 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
@@ -31,7 +31,7 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 67 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 68 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 In Codex, add the repo's Codex-native marketplace and install the complete
 plugin:
@@ -41,10 +41,10 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads all 67 skills and registers both read-only MCP discovery
+The Codex plugin loads all 68 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating it.
 
-Prefer a clone? `install.sh` copies all 67 skills into `~/.claude/skills/` and prints the installed count:
+Prefer a clone? `install.sh` copies all 68 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -157,7 +157,7 @@ Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapi
 
 ### Marketing & growth
 
-Thirty-eight skills covering paid acquisition and outbound, monetisation, lifecycle and
+Thirty-nine skills covering paid acquisition and outbound, monetisation, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
 `suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
 `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`, `suede-onboarding`,
@@ -165,7 +165,7 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 `suede-community-marketing`, `suede-lead-magnets`, `suede-free-tools`, `suede-sms`,
 `suede-marketing-loops`, `suede-analytics`, `suede-ab-testing`, `suede-revops`,
 `suede-sales-enablement`, `suede-programmatic-seo`, `suede-content-strategy`,
-`suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-social`,
+`suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-social`, `suede-clip-to-guide`,
 `suede-aso`, `suede-video`, `suede-image`, `suede-product-marketing`, `suede-competitors`,
 `suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`.
 
@@ -201,7 +201,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-This installs all 67 skills and registers both read-only MCP discovery
+This installs all 68 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating.
 
 For one selected skill, use the built-in skill installer:
@@ -217,7 +217,7 @@ set instead of the full plugin.
 
 ## Install for Claude Code
 
-All 67 skills:
+All 68 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

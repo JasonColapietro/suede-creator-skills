@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 67 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
+description: "Umbrella workflow for 68 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -459,6 +459,15 @@ Design lane:
   visual QA): `johnny-suede-design`.
 - Design-system, token, and component-level decisions: `suede-design`.
 
+Marketing and distribution lane:
+
+- Video-plus-guide posts, short-to-long funnels, clip scoring, third-party
+  video rights routing, exact approval bundles, and clip-to-guide measurement:
+  `suede-clip-to-guide`.
+- General social strategy, calendars, listening, or engagement:
+  `suede-social`.
+- Full video editing or production: `suede-video`.
+
 Build and quality lane:
 
 - Explicit Full Send, maximum-effort, max-agent, spare-no-compute, or
@@ -529,7 +538,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 67 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 67 skills into `~/.claude/skills/`:
+`suede-skills` installs all 68 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 68 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

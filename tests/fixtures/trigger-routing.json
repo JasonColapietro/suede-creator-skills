@@ -250,6 +250,59 @@
       ]
     },
     {
+      "id": "clip-social-video",
+      "skills": ["suede-clip-to-guide", "suede-social", "suede-video"],
+      "fallback": "suede-social",
+      "routes": [
+        {
+          "skill": "suede-clip-to-guide",
+          "positive": ["clip to guide", "video plus guide", "short to long", "x article", "article bridge"],
+          "negative": ["social calendar", "content calendar", "edit footage", "color grade", "export video"],
+          "metadataMustContain": ["short to long", "guide"]
+        },
+        {
+          "skill": "suede-social",
+          "positive": ["social calendar", "content calendar", "platform mix", "social strategy", "listening"],
+          "negative": ["clip to guide", "video plus guide", "edit footage"],
+          "metadataMustContain": ["social", "calendars"]
+        },
+        {
+          "skill": "suede-video",
+          "positive": ["edit footage", "color grade", "animated captions", "export video", "full video production"],
+          "negative": ["social calendar", "clip to guide", "video plus guide"],
+          "metadataMustContain": ["video", "production"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "clip-to-guide-positive",
+          "mode": "positive",
+          "prompt": "Turn this 37-second clip and my X Article into a video-plus-guide short-to-long funnel.",
+          "expected": "suede-clip-to-guide"
+        },
+        {
+          "id": "social-calendar-negative-clip",
+          "mode": "negative",
+          "prompt": "Plan a 30-day social calendar and platform mix for our founder account.",
+          "expected": "suede-social",
+          "forbidden": ["suede-clip-to-guide"]
+        },
+        {
+          "id": "video-production-negative-clip",
+          "mode": "negative",
+          "prompt": "Edit footage, color grade it, add animated captions, and export video for Reels.",
+          "expected": "suede-video",
+          "forbidden": ["suede-clip-to-guide", "suede-social"]
+        },
+        {
+          "id": "social-video-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Repurpose this video for social.",
+          "expected": "suede-social"
+        }
+      ]
+    },
+    {
       "id": "amazon-subscription",
       "skills": ["amazon-returns-recovery", "subscription-recovery"],
       "fallback": "subscription-recovery",

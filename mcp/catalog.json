@@ -95,6 +95,7 @@
         "suede-analytics",
         "suede-aso",
         "suede-churn-prevention",
+        "suede-clip-to-guide",
         "suede-co-marketing",
         "suede-cold-email",
         "suede-community-marketing",
@@ -220,6 +221,12 @@
       "area": "marketing",
       "description": "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics).",
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments."
+    },
+    {
+      "name": "suede-clip-to-guide",
+      "area": "marketing",
+      "description": "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, and measured success loop. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval.",
+      "useWhen": "The user wants a video-plus-guide post, short-to-long content funnel, clip-to-article blueprint, or a rights-aware way to turn a video moment into deeper long-form engagement."
     },
     {
       "name": "suede-co-marketing",
@@ -530,7 +537,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 67 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 68 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],
