@@ -322,6 +322,8 @@ cp -R /tmp/suede-creator-skills/skills/suede-codex-fleet .claude/skills/</code><
             <li>Writes one self-contained markdown brief per task with job, inputs, deliverable, acceptance criteria, and output path.</li>
             <li>Uses a workspace `AGENTS.md` to carry voice, context, hard bans, and output conventions so briefs stay short.</li>
             <li>Spawns parallel `codex exec` runs in a workspace-write sandbox, with `--skip-git-repo-check` outside repos.</li>
+            <li>Workers are always `codex exec` processes billed to your OpenAI subscription — never Claude subagent fan-out on any model. "Fable" is the brand name, not the model `claude-fable-5`.</li>
+            <li>Halts and reports if Codex CLI is missing or logged out, instead of silently falling back to Claude workers and spending the budget you routed away.</li>
             <li>Requires Claude to review every output against the brief and hard bans before anything ships.</li>
             <li>Corrects with delta patches, not full regenerations: up to three genuinely different fixes per output, stopping early when the same root cause repeats.</li>
           </ul>
@@ -335,6 +337,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-codex-fleet .claude/skills/</code><
             <li>Not for: coordinated Claude-side agent lanes with quality gates on one codebase change (use Suede Agent Teams).</li>
             <li>Not for: writing one scoped copy surface directly (use Suede Copy).</li>
             <li>Not for: tasks needing live conversation context that cannot be written into a brief.</li>
+            <li>Not for: any run where Codex CLI is unavailable — the skill halts rather than substituting Claude models.</li>
           </ul>
         </article>
       </section>
