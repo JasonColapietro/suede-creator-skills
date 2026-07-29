@@ -1,11 +1,23 @@
 ---
 name: suede-codex-fleet
-description: "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk generation. Use when a job is high-volume, well-specified, and splits into independent worker-sized tasks (content batches, test generation, bulk refactors) and Codex CLI is installed and logged in. Claude decomposes, briefs, spawns codex exec runs in parallel, and review-gates every output. NOT FOR: multi-lane Claude agents coordinating one complex change (use suede-agent-teams); low-volume, judgment-dense copy Claude should write itself (use suede-copy or johnny-suede-write)."
+description: "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk generation. Use when a job is high-volume, well-specified, and splits into independent worker-sized tasks (content batches, test generation, bulk refactors) and Codex CLI is installed and logged in. Claude decomposes, briefs, spawns codex exec runs in parallel, and review-gates every output. Workers are always codex exec processes billed to the user's OpenAI subscription — never substitute Claude subagent fan-out on any model, and halt rather than fall back if Codex CLI is unavailable. NOT FOR: multi-lane Claude agents coordinating one complex change (use suede-agent-teams); low-volume, judgment-dense copy Claude should write itself (use suede-copy or johnny-suede-write)."
 ---
 
 # Suede Fable Fleet
 
 The Suede Fable Fleet: a high-end Claude model is the admiral — it decomposes, briefs, and reviews — and parallel OpenAI Codex CLI workers are the fleet. The skill id and command stay `suede-codex-fleet` on purpose: GitHub search, skill marketplaces, and MCP catalogs match the terms people actually type — Codex CLI orchestration, codex exec, multi-agent worker fleet — not the brand name. Do not rename the folder or frontmatter `name` to match the brand.
+
+> **"Fable" in the brand name is not the model `claude-fable-5`.** The workers in this fleet are always OpenAI Codex CLI processes. Never read "Fable Fleet" as license to spawn Claude models.
+
+## The workers are Codex processes — never Claude models
+
+**This is the economic point of the skill.** Codex workers bill to the user's OpenAI/ChatGPT subscription. Claude subagents bill to their Anthropic limit. Someone asking for a codex fleet is deliberately routing volume *off* the Anthropic meter — satisfying that request with Claude models inverts the cost model and spends the exact budget they were protecting.
+
+`codex exec` is therefore the only way a worker runs here. Never substitute `Agent`, `Task`, `Workflow`, subagent fan-out, or any other in-house orchestration for a worker — not with `fable`, not with `opus`, not with any model, not "just for this one batch". Claude's role is admiral only: decompose, brief, review, assemble. If you are about to spawn something that is not a `codex exec` process, you have left this skill — stop and re-read the routing table below.
+
+**Preflight failure is a halt, not a fallback.** If Codex CLI is missing, not logged in, or not on `PATH`, say which check failed and ask whether to proceed on Claude models, with a rough estimate of what that fan-out will consume. Never fall back silently.
+
+**What getting this wrong costs** (measured, 2026-07-27): a Claude-model fleet ran in place of an explicitly requested codex fleet — 3,258 turns, ~1.29 billion tokens, 97% of them cache reads from workers each hauling ~500k tokens of context per turn. About $1,843 of API-equivalent spend, 23% of one weekly allocation, for work that should have cost nothing on that account.
 
 ## When to use this skill instead of related skills
 
@@ -19,6 +31,8 @@ The Suede Fable Fleet: a high-end Claude model is the admiral — it decomposes,
 
 1. `which codex && codex --version` — CLI present (validated against codex-cli 0.138.0).
 2. `codex login status` — must show logged in (your ChatGPT subscription pays for the run).
+
+   Checks 1 and 2 are the cost boundary. If either fails, **stop and report which one** — do not substitute Claude workers to keep the job moving.
 3. Workspace has an `AGENTS.md` at its root. Codex auto-loads it; it carries voice, context, hard bans, and output conventions so briefs stay short. If missing, write it first — that is the highest-leverage file in the system.
 4. Workspace has `briefs/` and `out/` directories (create as needed).
 
@@ -71,6 +85,7 @@ Keep a persistent workspace per recurring fleet job (a social-content fleet, a t
 
 ## Hard boundaries
 
+- Workers are `codex exec` processes, always. Never substitute Claude-model fan-out (`Agent`, `Task`, `Workflow`, subagents) for a worker, on any model — the brand name "Fable Fleet" is not a reference to `claude-fable-5`.
 - Never ship worker output without the Claude review gate.
 - Workers never run git push, deploys, or credentialed commands; content and code-edit tasks only, inside the sandbox.
 - Secrets never go into briefs or AGENTS.md; workers get file paths, not tokens.
