@@ -198,6 +198,26 @@ moments and the team can review them:**
 6. **Test updates or reshares** only when current relevance and account evidence
    support them
 
+### X: Third-Party Video + Owned Article
+
+When promoting an owned X Article with a relevant third-party video:
+
+1. Use only the video as native media, and only with a lawful basis to reuse it.
+   Preserve source attribution.
+2. Do not quote, repost, or inherit the third party's whole post, caption,
+   replies, or engagement context.
+3. Create a fresh post from the approved account with the exact approved copy,
+   then place the owned Article status URL at the end so X renders the owned
+   Article as the quoted card.
+4. Before publishing, verify the identity, native video, owned Article card,
+   exact text, audience, and reply settings.
+5. After publishing, verify the live post still contains both the native video
+   and owned Article card, then capture the permalink.
+
+If X's Quote composer accepts the video but leaves publishing disabled, use the
+fresh-post construction above or report the blocker. Never substitute a quote
+of the third party's post.
+
 ---
 
 ## Content Calendar Structure
