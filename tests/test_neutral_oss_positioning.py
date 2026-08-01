@@ -106,8 +106,14 @@ class NeutralOssPositioningTests(unittest.TestCase):
         self.assertIn(f"{count}-skill", read("docs/index.html"))
         stale_counts = [f"{n} skills" for n in range(20, 40) if n != count]
         stale_counts += [f"{n}-skill" for n in range(20, 40) if n != count]
+        # A focused subset plugin advertises how many skills *it* bundles, which
+        # is legitimately smaller than the pack total. Only counts tied to a
+        # named "<plugin>@suede" install are exempt; a bare number in prose is
+        # still a stale pack-size claim. The bundle sizes themselves are checked
+        # against the marketplace manifest by scripts/validate-skill-pack.mjs.
+        subset_claim = re.compile(r"suede-[a-z-]+@suede</code>\s*\((?:\d+)[^)]*\bskills\b[^)]*\)")
         for surface in ["README.md", "docs/index.html", "docs/guide.html", "docs/plugins.html", "docs/copy.html", "docs/skills/index.html", "docs/llms.txt"]:
-            text = read(surface)
+            text = subset_claim.sub("", read(surface))
             for stale in stale_counts:
                 with self.subTest(surface=surface, stale=stale):
                     self.assertNotIn(stale, text)
