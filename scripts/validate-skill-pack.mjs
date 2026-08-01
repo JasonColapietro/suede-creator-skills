@@ -1127,6 +1127,36 @@ for (const check of countChecks) {
   for (const problem of a11y) fail.push(problem);
 }
 
+// Contrast-token guard (WCAG 1.4.3). The palette has a deep red for fills and
+// borders and a lighter red for text; the homepage used the fill red as text
+// on four section labels, landing at ~2.1:1 against the near-black background.
+// The lighter values below are the measured AA-passing ones -- they clear 4.5:1
+// on every surface these labels sit on, from the page base to the lightest
+// panel. Raw literals are what drifted, so text colours must go through tokens.
+{
+  const FILL_ONLY_RED = "#8b1a1a";
+  const TEXT_TOKENS = {
+    "--red-text": "#c6625a",
+    "--color-accent-red-text": "#c6625a",
+    "--color-text-dim": "#7f7a70"
+  };
+  for (const pagePath of walk(path.join(repoRoot, "docs")).filter((f) => f.endsWith(".html"))) {
+    const text = readText(pagePath);
+    const relative = path.relative(repoRoot, pagePath);
+    // "border-color:" must not count as a text colour
+    const asText = text.match(new RegExp(String.raw`(?<![-\w])color:\s*${FILL_ONLY_RED}`, "gi")) || [];
+    if (asText.length) {
+      fail.push(`${relative} uses the fill-only red ${FILL_ONLY_RED} as a text colour ${asText.length}x — it fails contrast; use a text token`);
+    }
+    for (const [token, expected] of Object.entries(TEXT_TOKENS)) {
+      const declared = text.match(new RegExp(String.raw`${token}:\s*(#[0-9a-f]{6})`, "i"));
+      if (declared && declared[1].toLowerCase() !== expected) {
+        fail.push(`${relative} sets ${token} to ${declared[1]}; the AA-passing value is ${expected}`);
+      }
+    }
+  }
+}
+
 const indexJsonLdItemMatches = docsRootText.match(/"@type":\s*"ListItem"/g) || [];
 if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);

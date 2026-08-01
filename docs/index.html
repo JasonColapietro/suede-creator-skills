@@ -190,6 +190,8 @@
       --color-border:        #222222;
       --color-accent-gold:   #c8a96e;
       --color-accent-red:    #8b1a1a;
+      --color-accent-red-text: #c6625a; /* readable on dark; --color-accent-red is for fills and borders only */
+      --color-text-dim: #7f7a70; /* AA-passing muted text on the dark surfaces */
       --color-text-primary:  #f0ece4;
       --color-text-secondary:#888880;
       --color-text-accent:   #c8a96e;
@@ -1073,7 +1075,7 @@
     .feature-card:nth-child(9) .feature-label,
     .feature-card:nth-child(12) .feature-label,
     .feature-card--red .feature-label {
-      color: #c0524a;
+      color: var(--color-accent-red-text);
     }
 
     .feature-copy {
@@ -1097,7 +1099,7 @@
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: #8b1a1a;
+      color: var(--color-accent-red-text);
       font-weight: 600;
       margin: 0 0 28px;
     }
@@ -1207,7 +1209,7 @@
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: #8b1a1a;
+      color: var(--color-accent-red-text);
       font-weight: 600;
       margin-bottom: 28px;
     }
@@ -1329,7 +1331,7 @@
       font-size: 11px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: #8b1a1a;
+      color: var(--color-accent-red-text);
       font-weight: 600;
       margin-bottom: 24px;
     }
@@ -1453,7 +1455,7 @@
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: #8b1a1a;
+      color: var(--color-accent-red-text);
       font-weight: 600;
       margin-bottom: 28px;
     }
@@ -1543,7 +1545,7 @@
       color: #f0ece4;
     }
     .grade-pill.g-b { color: #888880; }
-    .grade-pill.g-c { color: #8b1a1a; border-color: rgba(139,26,26,0.35); }
+    .grade-pill.g-c { color: var(--color-accent-red-text); border-color: rgba(139,26,26,0.35); }
     .grade-pill.is-win {
       color: #c8a96e;
       background: rgba(200,169,110,0.08);
@@ -2162,7 +2164,7 @@
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #6b675f;
+      color: var(--color-text-dim);
       white-space: nowrap;
       transition: color 0.2s;
     }
@@ -2302,7 +2304,7 @@
     .feature-card:hover .feature-num { color: #c8a96e; }
     .feature-card:nth-child(3n):hover .feature-num,
     .feature-card:nth-child(5):hover .feature-num,
-    .feature-card:nth-child(7):hover .feature-num { color: #c0524a; }
+    .feature-card:nth-child(7):hover .feature-num { color: var(--color-accent-red-text); }
 
     /* ---- INSTALL terminal frame ---- */
     .install-terminal {
@@ -2344,7 +2346,7 @@
     }
     .install-code-block code::before {
       content: '$ ';
-      color: #8b1a1a;
+      color: var(--color-accent-red-text);
       font-weight: 700;
     }
 
@@ -2593,13 +2595,13 @@
       text-align: left;
     }
     .term-grade--hold {
-      color: #c0524a;
+      color: var(--color-accent-red-text);
       border-color: rgba(192, 82, 74, 0.5);
     }
     .term-line { display: block; white-space: pre-wrap; }
     .term-line .t-cmd { color: #f0ece4; font-weight: 600; }
-    .t-dim { color: #6b675f; }
-    .t-warn { color: #c0524a; }
+    .t-dim { color: var(--color-text-dim); }
+    .t-warn { color: var(--color-accent-red-text); }
     .term-grade {
       display: inline-flex;
       align-items: center;
@@ -3000,7 +3002,7 @@
     .router-arrow {
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       font-size: 13px;
-      color: #6b675f;
+      color: var(--color-text-dim);
       transition: color 0.15s ease, transform 0.15s ease;
     }
     a.router-row:hover .router-arrow { color: #c8a96e; transform: translateX(3px); }
@@ -3015,7 +3017,7 @@
       margin: 18px 0 0;
       font-size: 13.5px;
       line-height: 1.65;
-      color: #6b675f;
+      color: var(--color-text-dim);
     }
     .router-note code {
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -4252,7 +4254,7 @@
     </div>
     <div class="footer-links">
       <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
-      <span class="footer-divider">|</span>
+      <span class="footer-divider" aria-hidden="true">|</span>
       <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
     </div>
   </div>
