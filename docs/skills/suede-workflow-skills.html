@@ -48,6 +48,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -265,6 +276,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -281,7 +294,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-workflow-skills &middot; Public umbrella skill</div>
       <h1>One install. The whole discipline.</h1>
       <p class="lead">Install one public GitHub skill to route the agent across all 67 Suede skills: Suede Full Send for broad authorized outcomes, Johnny Suede Write, Johnny Suede Design, Suedify, coordinated agent teams, Codex CLI worker fleets, full code review, A-F code grading, CI ship-gates, AI evals, a scored next-action recommender, anti-slop copywriting, visual QA, visibility and CTA grading, schema-level Suede SEO/AEO/GEO/AI EO, site polish, launch packaging, MCP QA, a site-to-iOS app conversion workflow, a one-prompt Android app factory, plus music/IP tools, artist campaign tools, and creator utilities.</p>

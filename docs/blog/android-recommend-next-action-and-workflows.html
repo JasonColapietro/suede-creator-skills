@@ -35,6 +35,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -190,6 +201,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -206,7 +219,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <p class="eyebrow">Product update &middot; July 19, 2026</p>
       <h1>Two new lanes: a next-action recommender and a one-prompt Android app factory</h1>
       <p class="post-meta">Suede Creator Skills is now <strong>27 public skills</strong>. Here's what shipped and why.</p>

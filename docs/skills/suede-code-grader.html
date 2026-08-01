@@ -48,6 +48,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -265,6 +276,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -281,7 +294,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-code-grader &middot; A-F code grading</div>
       <h1>One letter. No negotiation.</h1>
       <p class="lead">Suede Code Grader gives any diff, PR, file, or release a direct A-F grade across seven evidence-backed lanes. The output is a grade with evidence and a required upgrade, not a lint score and not a pile of style notes. Use it when you need the ship decision, not the full line-by-line review.</p>

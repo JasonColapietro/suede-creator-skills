@@ -1083,6 +1083,34 @@ for (const check of countChecks) {
   }
 }
 
+// Bypass-blocks guard (WCAG 2.4.1, Level A). Every page carries the same nav,
+// so without a skip link a keyboard or screen-reader user tabs through it on
+// every one. Two pages had the pattern and the other 72 never got it. A skip
+// link also has to actually work: the target needs tabindex="-1" or focus stays
+// on the nav after activation and the link is decorative.
+{
+  const a11y = [];
+  for (const pagePath of walk(path.join(repoRoot, "docs")).filter((f) => f.endsWith(".html"))) {
+    const text = readText(pagePath);
+    const relative = path.relative(repoRoot, pagePath);
+    if (text.includes('content="noindex') || !text.includes("<main")) continue;
+    if (!/href="#main"/.test(text)) {
+      a11y.push(`${relative} has no skip link (add <a class="skip-link" href="#main">)`);
+      continue;
+    }
+    const mainTag = text.match(/<main[^>]*>/)?.[0] ?? "";
+    if (!/id="main"/.test(mainTag)) {
+      a11y.push(`${relative} has a skip link but no element with id="main" to land on`);
+    } else if (!/tabindex="-1"/.test(mainTag)) {
+      a11y.push(`${relative} skip-link target is not focusable — add tabindex="-1" to <main id="main">`);
+    }
+    if (!text.includes(".skip-link")) {
+      a11y.push(`${relative} has a skip link with no .skip-link styles, so it cannot be revealed on focus`);
+    }
+  }
+  for (const problem of a11y) fail.push(problem);
+}
+
 const indexJsonLdItemMatches = docsRootText.match(/"@type":\s*"ListItem"/g) || [];
 if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);

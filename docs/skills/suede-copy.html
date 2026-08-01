@@ -40,6 +40,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -257,6 +268,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -273,7 +286,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-copy &middot; Conversion copy</div>
       <h1>Headlines that survive the competitor-swap test.</h1>
       <p class="lead">Suede Copy writes standalone conversion email, landing page copy, CTAs, microcopy, and button labels that stay specific, proof-backed, and free of AI boilerplate. Use it when a surface needs conversion copy, variants, channel templates, an anti-slop gate, and a copy score before anything ships.</p>
