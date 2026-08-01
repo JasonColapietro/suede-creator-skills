@@ -990,6 +990,55 @@ for (const check of countChecks) {
   }
 }
 
+// Competitive-claim guard. The hero benchmark strip summarizes the scorecard
+// table further down the same page. The two drifted once: the strip asserted
+// an outright win over both comparison packs while the table's own summary
+// row did not support it. Any published assertion about a named third-party
+// project must be recomputed from that table, never hand-written beside it.
+{
+  const gradeRank = { "A+": 6, A: 5, "A-": 4, "B+": 3, B: 2, "B-": 1, "C+": 0.5, C: 0 };
+  const detailBlock = docsRootText.split("See the full 15-category scorecard")[1]?.split("</details>")[0];
+  if (!detailBlock) {
+    warn.push("docs/index.html scorecard detail table not found — competitive-claim guard skipped");
+  } else {
+    const scored = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
+      .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
+      .filter((cells) => cells.length === 4 && !["Category", "Overall"].includes(cells[0]));
+    const unknown = scored.filter(([, ...g]) => g.some((grade) => !(grade in gradeRank)));
+    if (unknown.length) {
+      fail.push(`docs/index.html scorecard has unrecognized grades in: ${unknown.map((r) => r[0]).join(", ")}`);
+    }
+    const beatsBoth = scored.filter(([, s, g, p]) => gradeRank[s] > gradeRank[g] && gradeRank[s] > gradeRank[p]);
+    const losesBoth = scored.filter(([, s, g, p]) => gradeRank[s] < gradeRank[g] && gradeRank[s] < gradeRank[p]);
+    const claim = docsRootText.match(
+      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) of (\d+) categories<\/span> &mdash; and publishes the (\d+) it loses/
+    );
+    if (!claim) {
+      fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table");
+    } else {
+      const [, wins, total, losses] = claim.map(Number);
+      if (wins !== beatsBoth.length) {
+        fail.push(`docs/index.html hero claims it beats both in ${wins} categories; the scorecard shows ${beatsBoth.length} (${beatsBoth.map((r) => r[0]).join(", ")})`);
+      }
+      if (total !== scored.length) {
+        fail.push(`docs/index.html hero claims ${total} scored categories; the scorecard has ${scored.length}`);
+      }
+      if (losses !== losesBoth.length) {
+        fail.push(`docs/index.html hero claims it loses ${losses}; the scorecard shows ${losesBoth.length} (${losesBoth.map((r) => r[0]).join(", ")})`);
+      }
+    }
+    // The four hero tiles must be exactly the beat-both categories, or the
+    // strip cherry-picks wins while claiming to be the whole picture.
+    const heroStrip = docsRootText.split('id="hero-bench"')[1]?.split("</div>\n\n  </div>")[0] ?? "";
+    for (const [category] of beatsBoth) {
+      const tileLabel = category.split(" / ")[0];
+      if (!heroStrip.includes(tileLabel) && !heroStrip.toLowerCase().includes(tileLabel.toLowerCase())) {
+        warn.push(`docs/index.html hero strip omits beat-both category "${category}"`);
+      }
+    }
+  }
+}
+
 const indexJsonLdItemMatches = docsRootText.match(/"@type":\s*"ListItem"/g) || [];
 if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);
