@@ -4,7 +4,7 @@
 
 Maintained by Jason Colapietro (Suede Labs AI; alternate name Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is generated from the same repo: landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, and founder attribution live beside the source.
 
-Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Focused subsets: `suede-agent-workflows@suede` (orchestration, workflows, evals) and `suede-code@suede` (review, grade, ship-gate).
+Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Focused subsets: `suede-marketing@suede` (38 skills for paid acquisition, outbound, pricing, offers, lifecycle, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
 
 Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
@@ -42,6 +42,47 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 - [Android App Factory](https://jasoncolapietro.github.io/suede-creator-skills/skills/android-app-factory.html): Plan or build a native Android app end to end from a keyword: Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety disclosure, signing, and Google Play Console release.
 - [Amazon Returns Recovery](https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html): Scan Amazon order and return history for restocking fees and short refunds, then drive Amazon live chat to get the money waived and refunded (requires the Claude in Chrome extension).
 - [Subscription Recovery](https://jasoncolapietro.github.io/suede-creator-skills/skills/subscription-recovery.html): Audit any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancel or negotiate a refund through that service's own support.
+
+## Marketing and growth skills
+
+- [Suede A/B Testing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ab-testing.html): Test so the result means something.
+- [Suede Ad Creative](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ad-creative.html): Produce ad creative at volume.
+- [Suede Ads](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ads.html): Run paid acquisition that pays back.
+- [Suede Analytics](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-analytics.html): Know whether any of it worked.
+- [Suede ASO](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-aso.html): Optimise an App Store or Play listing.
+- [Suede Churn Prevention](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-churn-prevention.html): Keep subscribers who are leaving and recover the ones you lose to billing.
+- [Suede Co Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-co-marketing.html): Find and run partner campaigns.
+- [Suede Cold Email](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-cold-email.html): Write B2B cold outreach that gets replies.
+- [Suede Community Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-community-marketing.html): Build a community that compounds.
+- [Suede Competitor Profiling](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitor-profiling.html): Research competitors from their public surfaces and turn the findings into structured profiles.
+- [Suede Competitors](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitors.html): Write comparison and alternative pages that rank and convert without misrepresenting anyone.
+- [Suede Content Strategy](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-content-strategy.html): Decide what to publish and why.
+- [Suede Customer Research](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-customer-research.html): Find out what customers actually think.
+- [Suede Directory Submissions](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-directory-submissions.html): Work the directory layer deliberately.
+- [Suede Emails](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-emails.html): Design lifecycle email that runs itself.
+- [Suede Free Tools](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-free-tools.html): Engineering as marketing.
+- [Suede Image](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-image.html): Create and optimise marketing imagery.
+- [Suede Lead Magnets](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-lead-magnets.html): Decide what to give away for an email.
+- [Suede Marketing Council](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-council.html): Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.
+- [Suede Marketing Ideas](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-ideas.html): Get unstuck with a structured idea library rather than a blank page.
+- [Suede Marketing Loops](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-loops.html): Turn marketing into a recurring loop an agent runs on a cadence.
+- [Suede Marketing Plan](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.
+- [Suede Marketing Psychology](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-psychology.html): Apply behavioural science honestly.
+- [Suede Offers](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-offers.html): Construct the thing you actually sell.
+- [Suede Onboarding](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-onboarding.html): Get a new user to first value fast.
+- [Suede Paywalls](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-paywalls.html): Design in-app upgrade moments that convert without resentment.
+- [Suede Pricing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-pricing.html): Decide what to charge and how to package it.
+- [Suede Product Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-product-marketing.html): Establish the product context every other marketing lane reads from.
+- [Suede Programmatic SEO](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-programmatic-seo.html): Build search pages at scale without building junk.
+- [Suede Prospecting](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-prospecting.html): Build and qualify a target list before you write a word.
+- [Suede Public Relations](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-public-relations.html): Earn coverage without a retainer.
+- [Suede Referrals](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-referrals.html): Turn customers into a channel.
+- [Suede RevOps](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-revops.html): Wire marketing to revenue.
+- [Suede Sales Enablement](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sales-enablement.html): Arm the people doing the selling.
+- [Suede Signup](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-signup.html): Cut friction out of registration.
+- [Suede SMS](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sms.html): Run SMS without getting blocked or resented.
+- [Suede Social](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-social.html): Run social as a channel rather than a chore.
+- [Suede Video](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-video.html): Plan and produce marketing video.
 
 ## Creator skills (music, rights, campaigns)
 
