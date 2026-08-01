@@ -48,6 +48,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -265,6 +276,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -281,7 +294,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-visibility-grader &middot; Website visibility and CTA grading</div>
       <h1>Would an answer engine even mention you?</h1>
       <p class="lead">Suede Visibility Grader gives public pages an A-F report across findability, first-screen clarity, CTA pull, proof and trust, AI readability, rendered design signal, evidence, and grade caps. Use it for websites, GitHub Pages docs, launch pages, campaign pages, creator sites, and Suedify QA.</p>

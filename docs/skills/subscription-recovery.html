@@ -40,6 +40,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -257,6 +268,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -273,7 +286,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/subscription-recovery &middot; Consumer recovery — the negotiation lane, generalized beyond Amazon</div>
       <h1>You're still paying for something. Find it.</h1>
       <p class="lead">This is the same contract negotiator as amazon-returns-recovery, pointed at everything Amazon doesn't touch. It builds an inventory of recurring charges from the highest-leverage sources first — the App Store, Google Play, and PayPal subscription hubs, each a single page listing every merchant with standing billing authorization — then a bank/card statement scan and a direct ask, for anything those hubs miss. It reports every find, and — only after the owner confirms — cancels unused subscriptions directly (no negotiation needed) or negotiates a refund for a genuinely forgotten charge through that service's own support.</p>

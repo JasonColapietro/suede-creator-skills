@@ -40,6 +40,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -239,6 +250,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -255,7 +268,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/android-app-factory &middot; iOS &amp; Android app shipping — the public Play Store counterpart to site-to-ios-app</div>
       <h1>One prompt. A Play Store-ready app.</h1>
       <p class="lead">Android App Factory runs the whole native pipeline from a one-line idea or target keyword: Kotlin + Jetpack Compose scaffolding, a real core loop before any polish, Play Billing only when it won't block v1 review, Play Store screenshots and ASO listing copy sized to Play's character limits, a truthful Data Safety and content-rating pass, and a signed release through Play App Signing. Nothing ships without an explicit confirmation, and every rollout starts on internal or closed testing before production.</p>

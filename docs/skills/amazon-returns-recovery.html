@@ -40,6 +40,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -257,6 +268,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -273,7 +286,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/amazon-returns-recovery &middot; <b>Bezos's worst nightmare</b></div>
       <h1>Amazon is holding money it hopes you forgot.</h1>
       <p class="lead">This is the pack's contract negotiator in the wild. Under the hood it is the same general-purpose negotiation discipline the code and copy lanes run on — build the case from real facts, state the ask plainly, hold the line under a counteroffer, get the terms confirmed in writing — pointed at a live Amazon account instead of a PR or a brief. It scans order and return history for restocking fees and short refunds, and digital subscriptions (Britbox, Starz, and other Prime Video Channels, Audible, Kindle Unlimited, Prime itself) for charges the owner forgot about, reports every find, and — only after the owner confirms — drives Amazon's live chat to get fees waived, refunds issued, or unused subscriptions canceled. Documented real recoveries: $448.31 across three cases, including a full $372.69 refund on an item Amazon had already denied once, granted after the return window closed, with no return required.</p>

@@ -40,6 +40,17 @@
     }
   </script>
   <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
     :root {
       color-scheme: dark;
       --bg: #080808;
@@ -207,6 +218,8 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
 
 <nav class="nav" aria-label="Main navigation">
   <div class="shell nav-inner">
@@ -225,7 +238,7 @@
   </div>
 </nav>
 
-<main>
+<main id="main" tabindex="-1">
   <div class="shell page-head">
     <p class="eyebrow">Public copy bank</p>
     <h1>Copy that makes Suede sound like the agent upgrade it is.</h1>

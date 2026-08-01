@@ -40,6 +40,17 @@
       }
     </script>
     <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
       :root {
         color-scheme: dark;
         --bg: #080808;
@@ -244,6 +255,8 @@
     </style>
   </head>
   <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
@@ -260,7 +273,7 @@
         </div>
       </nav>
     </header>
-    <main class="shell">
+    <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-deslop &middot; Copy &amp; writing &mdash; the pack's anti-slop pass</div>
       <h1>Cut the slop before it ships.</h1>
       <p class="lead">AI prose has tells: throat-clearing before the point, inanimate things doing human work, contrasts that announce the insight instead of delivering it, rhythm that never varies. This skill runs your text against a merged kill list, unwinds the formulaic structures, forces active voice, then scores what remains 1-10 on directness, rhythm, trust, authenticity, and density. Below 35 of 50 it says revise. It edits style only: facts, numbers, names, and claims stay exactly as you wrote them.</p>
