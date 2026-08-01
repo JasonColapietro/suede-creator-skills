@@ -967,7 +967,23 @@ for (const check of countChecks) {
 {
   const catalogPath = path.join(repoRoot, "docs/skills/index.html");
   if (fs.existsSync(catalogPath)) {
-    const catalogText = readText(catalogPath);
+    const fullText = readText(catalogPath);
+    // Scope every row check to the catalog <section> itself. Counting rows
+    // file-wide passes even when a whole lane has escaped into another
+    // section: 38 rows once sat inside the gold install band, rendering gold
+    // text on a gold background, and a file-wide count saw all 67 and passed.
+    const catalogStart = fullText.indexOf('aria-labelledby="catalog"');
+    const catalogText = catalogStart === -1
+      ? ""
+      : fullText.slice(catalogStart, fullText.indexOf("</section>", catalogStart));
+    if (!catalogText) {
+      fail.push('docs/skills/index.html has no <section aria-labelledby="catalog"> to validate');
+    }
+    const strayRows = (fullText.match(/class="row" href=/g) || []).length
+      - (catalogText.match(/class="row" href=/g) || []).length;
+    if (strayRows > 0) {
+      fail.push(`docs/skills/index.html has ${strayRows} catalog row(s) outside the catalog section — a lane has escaped its container`);
+    }
     const rowNames = [...catalogText.matchAll(/class="row" href="\.?\/?([a-z0-9-]+)\.html"/g)]
       .map((m) => m[1]);
     const missingRows = skillNames.filter((name) => !rowNames.includes(name));
