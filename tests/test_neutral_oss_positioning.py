@@ -111,7 +111,12 @@ class NeutralOssPositioningTests(unittest.TestCase):
         # named "<plugin>@suede" install are exempt; a bare number in prose is
         # still a stale pack-size claim. The bundle sizes themselves are checked
         # against the marketplace manifest by scripts/validate-skill-pack.mjs.
-        subset_claim = re.compile(r"suede-[a-z-]+@suede</code>\s*\((?:\d+)[^)]*\bskills\b[^)]*\)")
+        # The surfaces span HTML and Markdown, so the plugin name may be closed
+        # by </code> or by a backtick. Matching only the HTML form silently
+        # stopped exempting llms.txt the moment a subset was documented there.
+        subset_claim = re.compile(
+            r"suede-[a-z-]+@suede(?:</code>|`)\s*\((?:\d+)[^)]*\bskills\b[^)]*\)"
+        )
         for surface in ["README.md", "docs/index.html", "docs/guide.html", "docs/plugins.html", "docs/copy.html", "docs/skills/index.html", "docs/llms.txt"]:
             text = subset_claim.sub("", read(surface))
             for stale in stale_counts:
