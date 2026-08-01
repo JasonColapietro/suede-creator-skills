@@ -1070,8 +1070,17 @@ for (const check of countChecks) {
     const manifest = JSON.parse(readText(marketplacePath));
     const installText = readText(installPagePath);
     const umbrella = "suede-skills";
+    // llms.txt is the file agents read to learn what the pack contains, so a
+    // plugin missing there is as undiscoverable as one missing from the install
+    // page. Guarding only plugins.html let llms.txt keep advertising two
+    // subsets after a third shipped.
+    const llmsPath = path.join(repoRoot, "docs/llms.txt");
+    const llmsText = fs.existsSync(llmsPath) ? readText(llmsPath) : "";
     for (const plugin of manifest.plugins ?? []) {
       if (plugin.name === umbrella) continue;
+      if (llmsText && !llmsText.includes(`${plugin.name}@suede`)) {
+        fail.push(`docs/llms.txt never mentions the ${plugin.name} plugin — agents reading it cannot discover the subset`);
+      }
       if (!installText.includes(`${plugin.name}@suede`)) {
         fail.push(`docs/plugins.html never advertises the ${plugin.name} plugin, so nobody can discover it`);
         continue;
@@ -1152,6 +1161,40 @@ for (const check of countChecks) {
       const declared = text.match(new RegExp(String.raw`${token}:\s*(#[0-9a-f]{6})`, "i"));
       if (declared && declared[1].toLowerCase() !== expected) {
         fail.push(`${relative} sets ${token} to ${declared[1]}; the AA-passing value is ${expected}`);
+      }
+    }
+  }
+}
+
+// llms.txt coverage. This file exists so an agent can learn what the pack
+// contains without crawling; a skill absent from it is invisible to exactly
+// the audience the pack is built for. It listed 29 of 67 -- the whole
+// marketing lane was missing -- while the count line above it said 67, so no
+// count check could have caught the gap. Every link must also resolve, since a
+// 404 in this file teaches an agent a URL that does not exist.
+{
+  const llmsPath = path.join(repoRoot, "docs/llms.txt");
+  if (!fs.existsSync(llmsPath)) {
+    fail.push("docs/llms.txt is missing");
+  } else {
+    const llmsText = readText(llmsPath);
+    const uncovered = skillNames.filter((name) => !llmsText.includes(name));
+    if (uncovered.length) {
+      fail.push(`docs/llms.txt does not reference ${uncovered.length} of ${skillNames.length} skills: ${uncovered.join(", ")}`);
+    }
+    const siteBase = "https://jasoncolapietro.github.io/suede-creator-skills/";
+    const blobBase = "https://github.com/JasonColapietro/suede-creator-skills/blob/main/";
+    for (const rawUrl of llmsText.match(/https:\/\/[^\s)\]]+/g) || []) {
+      const url = rawUrl.replace(/[.,)]+$/, "");
+      let target = null;
+      if (url.startsWith(siteBase)) {
+        const rel = url.slice(siteBase.length) || "index.html";
+        target = path.join(repoRoot, "docs", rel.endsWith("/") ? `${rel}index.html` : rel);
+      } else if (url.startsWith(blobBase)) {
+        target = path.join(repoRoot, url.slice(blobBase.length));
+      }
+      if (target && !fs.existsSync(target)) {
+        fail.push(`docs/llms.txt links to a path that does not exist: ${url}`);
       }
     }
   }
