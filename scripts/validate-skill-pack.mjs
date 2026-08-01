@@ -918,6 +918,21 @@ const countChecks = [
   { file: "docs/llms.txt", label: "summary skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
   { file: "docs/llms.txt", label: "skill index line", re: /Browse all (\d+) skills\./, expected: totalSkillCount },
   { file: "docs/skills/suede-full-send.html", label: "footer skill count", re: /is one of (\d+) public, MIT-licensed Agent Skills/, expected: totalSkillCount },
+  // docs/skills/index.html is the catalog page — the one surface a visitor
+  // browses to decide what the pack contains — and it had no count check at
+  // all. Its title, twitter:description, and catalog heading sat at 28 while
+  // the meta description on the same page said 67. Guard every count on it.
+  { file: "docs/skills/index.html", label: "title tag", re: /<title>Suede Creator Skills Docs \| (\d+) Agent Skills/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "meta description", re: /Browse all (\d+) Suede Creator Skills/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "twitter:description", re: /Public docs for (\d+) Claude Code and Codex skills/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "catalog heading", re: /<h2 id="catalog">All (\d+) skill folders<\/h2>/, expected: totalSkillCount },
+  // The social card is the image attached to every share of every page, so a
+  // stale number there is the most-viewed lie the repo can tell. Guard the SVG
+  // source; the PNG is rendered from it by scripts/render-social-card.py.
+  { file: "docs/assets/og-image-v2.svg", label: "social card headline number", re: /letter-spacing="-18">(\d+)<\/text>/, expected: totalSkillCount },
+  { file: "docs/assets/og-image-v2.svg", label: "social card accessible desc", re: /<desc id="desc">(\d+) open-source agent skills/, expected: totalSkillCount },
+  { file: "docs/skills/suede-full-send.html", label: "og:image:alt", re: /og:image:alt" content="Suede Creator Skills: (\d+) open-source Agent Skills/, expected: totalSkillCount },
+  { file: "docs/skills/suede-full-send.html", label: "twitter:image:alt", re: /twitter:image:alt" content="Suede Creator Skills: (\d+) open-source Agent Skills/, expected: totalSkillCount },
 ];
 
 for (const check of countChecks) {
@@ -939,6 +954,88 @@ for (const check of countChecks) {
   }
   if (found !== check.expected) {
     fail.push(`Stale skill count in ${check.file} (${check.label}): says ${found}, expected ${check.expected}`);
+  }
+}
+
+// Structural guard for the docs catalog page. String checks above prove the
+// stated numbers are 67; this proves the page actually *lists* 67 skills and
+// that each lane badge matches the rows under it. The "Design & copy" badge
+// read 4 above 5 rows, which no count-string check would ever have caught.
+{
+  const catalogPath = path.join(repoRoot, "docs/skills/index.html");
+  if (fs.existsSync(catalogPath)) {
+    const catalogText = readText(catalogPath);
+    const rowNames = [...catalogText.matchAll(/class="row" href="\.?\/?([a-z0-9-]+)\.html"/g)]
+      .map((m) => m[1]);
+    const missingRows = skillNames.filter((name) => !rowNames.includes(name));
+    const orphanRows = rowNames.filter((name) => !skillNames.includes(name));
+    if (missingRows.length) {
+      fail.push(`docs/skills/index.html catalog is missing rows for: ${missingRows.join(", ")}`);
+    }
+    if (orphanRows.length) {
+      fail.push(`docs/skills/index.html catalog links skills that do not exist: ${orphanRows.join(", ")}`);
+    }
+    for (const lane of catalogText.split('<div class="lane">').slice(1)) {
+      const heading = lane.match(/<h3>(.*?)<\/h3>/)?.[1] ?? "(unnamed lane)";
+      const claimed = Number(lane.match(/lane-count">(\d+)/)?.[1]);
+      const actual = (lane.match(/class="row" href=/g) || []).length;
+      if (Number.isNaN(claimed)) {
+        warn.push(`docs/skills/index.html lane "${heading}" has no lane-count badge`);
+      } else if (claimed !== actual) {
+        fail.push(`docs/skills/index.html lane "${heading}" badge says ${claimed} but has ${actual} rows`);
+      }
+    }
+  } else {
+    fail.push("docs/skills/index.html is missing — the docs catalog page cannot be validated");
+  }
+}
+
+// Competitive-claim guard. The hero benchmark strip summarizes the scorecard
+// table further down the same page. The two drifted once: the strip asserted
+// an outright win over both comparison packs while the table's own summary
+// row did not support it. Any published assertion about a named third-party
+// project must be recomputed from that table, never hand-written beside it.
+{
+  const gradeRank = { "A+": 6, A: 5, "A-": 4, "B+": 3, B: 2, "B-": 1, "C+": 0.5, C: 0 };
+  const detailBlock = docsRootText.split("See the full 15-category scorecard")[1]?.split("</details>")[0];
+  if (!detailBlock) {
+    warn.push("docs/index.html scorecard detail table not found — competitive-claim guard skipped");
+  } else {
+    const scored = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
+      .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
+      .filter((cells) => cells.length === 4 && !["Category", "Overall"].includes(cells[0]));
+    const unknown = scored.filter(([, ...g]) => g.some((grade) => !(grade in gradeRank)));
+    if (unknown.length) {
+      fail.push(`docs/index.html scorecard has unrecognized grades in: ${unknown.map((r) => r[0]).join(", ")}`);
+    }
+    const beatsBoth = scored.filter(([, s, g, p]) => gradeRank[s] > gradeRank[g] && gradeRank[s] > gradeRank[p]);
+    const losesBoth = scored.filter(([, s, g, p]) => gradeRank[s] < gradeRank[g] && gradeRank[s] < gradeRank[p]);
+    const claim = docsRootText.match(
+      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) of (\d+) categories<\/span> &mdash; and publishes the (\d+) it loses/
+    );
+    if (!claim) {
+      fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table");
+    } else {
+      const [, wins, total, losses] = claim.map(Number);
+      if (wins !== beatsBoth.length) {
+        fail.push(`docs/index.html hero claims it beats both in ${wins} categories; the scorecard shows ${beatsBoth.length} (${beatsBoth.map((r) => r[0]).join(", ")})`);
+      }
+      if (total !== scored.length) {
+        fail.push(`docs/index.html hero claims ${total} scored categories; the scorecard has ${scored.length}`);
+      }
+      if (losses !== losesBoth.length) {
+        fail.push(`docs/index.html hero claims it loses ${losses}; the scorecard shows ${losesBoth.length} (${losesBoth.map((r) => r[0]).join(", ")})`);
+      }
+    }
+    // The four hero tiles must be exactly the beat-both categories, or the
+    // strip cherry-picks wins while claiming to be the whole picture.
+    const heroStrip = docsRootText.split('id="hero-bench"')[1]?.split("</div>\n\n  </div>")[0] ?? "";
+    for (const [category] of beatsBoth) {
+      const tileLabel = category.split(" / ")[0];
+      if (!heroStrip.includes(tileLabel) && !heroStrip.toLowerCase().includes(tileLabel.toLowerCase())) {
+        warn.push(`docs/index.html hero strip omits beat-both category "${category}"`);
+      }
+    }
   }
 }
 
