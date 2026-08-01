@@ -865,6 +865,9 @@ const tensWords = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, sev
 // which silently capped the pack at twenty-nine skills.
 function wordNumber(word) {
   const parts = String(word).toLowerCase().split("-");
+  // Bare single digits ("three") for small counts such as the number of
+  // focused subset plugins. Tens callers are unaffected.
+  if (parts.length === 1 && numberWords[parts[0]] !== undefined) return numberWords[parts[0]];
   const tens = tensWords[parts[0]];
   if (tens === undefined) return null;
   if (parts.length === 1) return tens;
@@ -1035,6 +1038,47 @@ for (const check of countChecks) {
       if (!heroStrip.includes(tileLabel) && !heroStrip.toLowerCase().includes(tileLabel.toLowerCase())) {
         warn.push(`docs/index.html hero strip omits beat-both category "${category}"`);
       }
+    }
+  }
+}
+
+// Discoverability guard. Every plugin the marketplace ships is installable by
+// name, so a plugin that appears in no install copy is a product nobody can
+// find. suede-marketing bundles 38 of the skills and went unmentioned on every
+// page while both 4-skill subsets were advertised. Each subset's advertised
+// skill count must match the manifest too, or the copy oversells the bundle.
+{
+  const marketplacePath = path.join(repoRoot, ".claude-plugin/marketplace.json");
+  const installPagePath = path.join(repoRoot, "docs/plugins.html");
+  if (fs.existsSync(marketplacePath) && fs.existsSync(installPagePath)) {
+    const manifest = JSON.parse(readText(marketplacePath));
+    const installText = readText(installPagePath);
+    const umbrella = "suede-skills";
+    for (const plugin of manifest.plugins ?? []) {
+      if (plugin.name === umbrella) continue;
+      if (!installText.includes(`${plugin.name}@suede`)) {
+        fail.push(`docs/plugins.html never advertises the ${plugin.name} plugin, so nobody can discover it`);
+        continue;
+      }
+      const bundled = Array.isArray(plugin.skills) ? plugin.skills.length : null;
+      if (bundled === null) continue;
+      const advertised = installText.match(
+        new RegExp(`${plugin.name}@suede</code>\\s*\\((\\d+)\\s+skills`)
+      );
+      if (advertised && Number(advertised[1]) !== bundled) {
+        fail.push(`docs/plugins.html says ${plugin.name} bundles ${advertised[1]} skills; the manifest lists ${bundled}`);
+      }
+      for (const entry of plugin.skills) {
+        const dir = path.join(repoRoot, entry.replace(/^\.\//, ""));
+        if (!fs.existsSync(dir)) {
+          fail.push(`${plugin.name} bundles a skill that does not exist: ${entry}`);
+        }
+      }
+    }
+    const subsetCount = (manifest.plugins ?? []).filter((p) => p.name !== umbrella).length;
+    const wordClaim = installText.match(/([A-Za-z]+) focused subsets install the same way/);
+    if (wordClaim && wordNumber(wordClaim[1]) !== subsetCount) {
+      fail.push(`docs/plugins.html claims "${wordClaim[1]}" focused subsets; the manifest ships ${subsetCount}`);
     }
   }
 }
