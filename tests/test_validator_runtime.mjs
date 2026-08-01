@@ -39,9 +39,18 @@ function runValidator(targetRoot, extraEnv = {}) {
 }
 
 function startCodexAppServer(t) {
+  // Isolate CODEX_HOME. Codex discovers marketplaces from the cwd *and* from
+  // the ones registered in the developer's own config, and when a name appears
+  // in both the registered copy wins and the local one is hidden. A maintainer
+  // who has installed this pack in their own Codex -- the expected thing to do
+  // -- therefore shadows the repo checkout and this test fails on a working
+  // tree. The isolated home keeps discovery limited to what the repo ships.
+  const codexHome = fs.mkdtempSync(path.join(os.tmpdir(), "suede-codex-home-"));
+  t.after(() => fs.rmSync(codexHome, { recursive: true, force: true }));
   const child = spawn("codex", ["app-server", "--stdio"], {
     cwd: repoRoot,
-    stdio: ["pipe", "pipe", "pipe"]
+    stdio: ["pipe", "pipe", "pipe"],
+    env: { ...process.env, CODEX_HOME: codexHome }
   });
   const lines = readline.createInterface({ input: child.stdout });
   const pending = new Map();
