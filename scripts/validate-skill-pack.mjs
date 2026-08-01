@@ -1182,6 +1182,25 @@ for (const check of countChecks) {
     if (uncovered.length) {
       fail.push(`docs/llms.txt does not reference ${uncovered.length} of ${skillNames.length} skills: ${uncovered.join(", ")}`);
     }
+    // Completeness claims must be true of the page they describe. llms.txt
+    // called guide.html "Complete documentation of every skill" while that page
+    // covers the core workflow skills only, so an agent following the link to
+    // enumerate the pack would come away with a fraction of it. A claim like
+    // this is only allowed when the linked page actually references every skill.
+    const COMPLETENESS = /\b(complete documentation of every skill|documentation of every skill|every skill|all \d+ skills)\b/i;
+    for (const entry of llmsText.split("\n").filter((line) => line.trim().startsWith("- ["))) {
+      if (!COMPLETENESS.test(entry)) continue;
+      const linked = entry.match(/\]\((https:\/\/jasoncolapietro\.github\.io\/suede-creator-skills\/[^)]*)\)/)?.[1];
+      if (!linked) continue;
+      const rel = linked.slice("https://jasoncolapietro.github.io/suede-creator-skills/".length) || "index.html";
+      const target = path.join(repoRoot, "docs", rel.endsWith("/") ? `${rel}index.html` : rel);
+      if (!fs.existsSync(target)) continue;
+      const pageText = readText(target);
+      const absent = skillNames.filter((name) => !pageText.includes(name));
+      if (absent.length) {
+        fail.push(`docs/llms.txt claims completeness for ${rel} but that page omits ${absent.length} of ${skillNames.length} skills`);
+      }
+    }
     const siteBase = "https://jasoncolapietro.github.io/suede-creator-skills/";
     const blobBase = "https://github.com/JasonColapietro/suede-creator-skills/blob/main/";
     for (const rawUrl of llmsText.match(/https:\/\/[^\s)\]]+/g) || []) {
@@ -1195,6 +1214,40 @@ for (const check of countChecks) {
       }
       if (target && !fs.existsSync(target)) {
         fail.push(`docs/llms.txt links to a path that does not exist: ${url}`);
+      }
+    }
+  }
+}
+
+// The MCP surface counts are published as prose in two docs. The test suite
+// already pins mcp/catalog.json against the live server, so the numbers are
+// true at the source; what was unguarded is the sentence quoting them. Adding
+// a tool would update the server, the catalog, and the test while leaving both
+// pages advertising the old figure -- the same drift that stranded the skill
+// count on unguarded surfaces.
+{
+  const mcpCatalogPath = path.join(repoRoot, "mcp/catalog.json");
+  if (fs.existsSync(mcpCatalogPath)) {
+    const mcp = JSON.parse(readText(mcpCatalogPath)).mcp ?? {};
+    const expected = {
+      tools: mcp.tools?.length,
+      resources: mcp.resources?.length,
+      prompts: mcp.prompts?.length
+    };
+    for (const surface of ["docs/llms.txt", "docs/plugins.html"]) {
+      const surfacePath = path.join(repoRoot, surface);
+      if (!fs.existsSync(surfacePath)) continue;
+      const claim = readText(surfacePath).match(/(\d+) tools?, (\d+) resources?, (\d+) prompts?/);
+      if (!claim) {
+        warn.push(`${surface} no longer states the MCP tool/resource/prompt counts — guard may need updating`);
+        continue;
+      }
+      const [, tools, resources, prompts] = claim.map(Number);
+      const actual = { tools, resources, prompts };
+      for (const key of ["tools", "resources", "prompts"]) {
+        if (expected[key] !== undefined && actual[key] !== expected[key]) {
+          fail.push(`${surface} advertises ${actual[key]} MCP ${key}; mcp/catalog.json declares ${expected[key]}`);
+        }
       }
     }
   }

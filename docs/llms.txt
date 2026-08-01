@@ -11,7 +11,7 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 ## Start here
 
 - [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
-- [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
+- [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): How the pack fits together as one workflow, plus the MCP server, install paths, and the FAQ. Covers the core orchestration, code, design, and creator skills in depth; the complete list of all 67 is on the skill index above.
 - [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 67 skills.
 - [Installs and MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
