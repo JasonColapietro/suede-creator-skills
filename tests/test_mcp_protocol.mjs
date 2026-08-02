@@ -183,6 +183,28 @@ test("publishes closed input schemas, output schemas, and read-only annotations"
   });
 });
 
+test("accepts reserved MCP request metadata without opening arbitrary params", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+
+    const withMetadata = await session.request("tools/list", {
+      _meta: { progressToken: "codex-startup" }
+    });
+    assert.deepEqual(withMetadata.result.tools.map((tool) => tool.name), CATALOG.mcp.tools);
+
+    const unknown = await session.request("tools/list", {
+      _meta: { progressToken: "codex-startup" },
+      unexpected: true
+    });
+    assert.equal(unknown.error.code, -32602);
+    assert.match(unknown.error.message, /unexpected/);
+
+    const invalidMetadata = await session.request("tools/list", { _meta: "not-an-object" });
+    assert.equal(invalidMetadata.error.code, -32602);
+    assert.match(invalidMetadata.error.message, /_meta must be an object/);
+  });
+});
+
 test("returns structured content with a backwards-compatible text fallback", async () => {
   await withSession(async (session) => {
     await session.initialize();
