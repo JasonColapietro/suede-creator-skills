@@ -786,9 +786,12 @@ function assertParamsObject(params, method) {
 }
 
 function assertOnlyKeys(params, keys, method) {
-  const allowed = new Set(keys);
+  const allowed = new Set([...keys, "_meta"]);
   const extras = Object.keys(params).filter((key) => !allowed.has(key));
   if (extras.length) throw rpcError(`${method} received unknown param(s): ${extras.sort().join(", ")}`);
+  if ("_meta" in params && !isObject(params._meta)) {
+    throw rpcError(`${method} _meta must be an object`);
+  }
 }
 
 function initialize(params) {

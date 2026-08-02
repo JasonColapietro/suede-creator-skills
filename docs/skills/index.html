@@ -365,7 +365,7 @@
     <h1>67 skills. One honest line each.</h1>
     <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Six lanes:</strong> orchestration, code review and CI, design and copy, SEO and visibility, iOS and Android shipping, and creator rights. This catalog links each skill to its deep docs and its source folder on GitHub.</p>
 
-    <a id="hero-shiplog" href="#changelog" aria-label="Ship log: 201 commits in 10 weeks. Latest entry July 28, 2026: The marketing stack becomes Suede-native. Jump to the changelog.">
+    <a id="hero-shiplog" href="#changelog" aria-label="Ship log: 222 commits in 10 weeks. Latest entry August 1, 2026: Reserved MCP metadata no longer breaks startup. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
         <span style="height:8%"></span>
         <span style="height:2%"></span>
@@ -376,12 +376,12 @@
         <span style="height:52%"></span>
         <span style="height:28%"></span>
         <span style="height:30%"></span>
-        <span style="height:53%"></span>
+        <span style="height:86%"></span>
       </span>
       <span class="hero-shiplog-text">
-        <span class="hero-shiplog-top">Released Jul 28 <b>&middot; 189ae51</b></span>
-        <span class="hero-shiplog-title">The marketing stack becomes Suede-native</span>
-        <span class="hero-shiplog-more">201 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+        <span class="hero-shiplog-top">Released Aug 1 <b>&middot; 67a2b51</b></span>
+        <span class="hero-shiplog-title">Reserved MCP metadata no longer breaks startup</span>
+        <span class="hero-shiplog-more">222 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
       </span>
     </a>
 
@@ -561,11 +561,20 @@
       <div class="clog-rail">
         <h2 id="changelog-headline">Changelog. Straight from main.</h2>
         <p class="section-sub">Every entry is a real commit: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
-        <p class="clog-fresh">Version 0.9.1 released 2026-07-28</p>
+        <p class="clog-fresh">Version 0.9.2 released 2026-08-01</p>
         <br>
         <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub -&gt;</a>
       </div>
       <ol class="clog">
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-01</span>
+            <span class="clog-tag clog-tag--fix">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/67a2b51" target="_blank" rel="noopener" aria-label="View commit 67a2b51 on GitHub">67a2b51</a>
+          </p>
+          <h3>Reserved MCP metadata no longer breaks startup</h3>
+          <p class="clog-detail">Version 0.9.2 accepts the protocol-reserved <code>_meta</code> object sent by current Codex clients while continuing to reject unrelated parameters. Both Suede MCP profiles now complete discovery.</p>
+        </li>
         <li>
           <p class="clog-meta">
             <span class="clog-date">2026-07-28</span>
