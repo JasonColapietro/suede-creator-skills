@@ -1,0 +1,720 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { spawn, spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import test from "node:test";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const SCRIPT = path.join(ROOT, "skills", "suede-agent-teams", "scripts", "contribution-ledger.mjs");
+
+function workspace(t) {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "suede-contributions-"));
+  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  return { directory, ledger: path.join(directory, "ledger.json") };
+}
+
+function cli(args, options = {}) {
+  return spawnSync(process.execPath, [SCRIPT, ...args], {
+    encoding: "utf8",
+    input: options.input,
+  });
+}
+
+function success(args, options) {
+  const result = cli(args, options);
+  assert.equal(result.status, 0, result.stderr);
+  return JSON.parse(result.stdout);
+}
+
+function runAsync(args) {
+  return new Promise((resolve) => {
+    const child = spawn(process.execPath, [SCRIPT, ...args], { stdio: ["ignore", "pipe", "pipe"] });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (chunk) => { stdout += chunk; });
+    child.stderr.on("data", (chunk) => { stderr += chunk; });
+    child.on("close", (status) => resolve({ status, stdout, stderr }));
+  });
+}
+
+function add(ledger, overrides = {}) {
+  const disclosure = overrides.disclosure ?? "not-required";
+  return success([
+    "add",
+    "--ledger", ledger,
+    "--repo", overrides.repo ?? "example/project",
+    "--ref", overrides.ref ?? "123",
+    "--title", overrides.title ?? "Handle empty metadata",
+    "--scope", overrides.scope ?? "owned",
+    "--disclosure", disclosure,
+    "--impact", String(overrides.impact ?? 3),
+    "--confidence", String(overrides.confidence ?? 3),
+    "--effort", String(overrides.effort ?? 3),
+    "--risk", String(overrides.risk ?? 3),
+    ...(overrides.scope === "external" ? [] : [
+      "--ownership-evidence", overrides.ownershipEvidence ?? "Repository owner supplied the target",
+    ]),
+    ...(disclosure === "unknown" ? [] : [
+      "--disclosure-source", overrides.disclosureSource ?? "Checked repository contribution instructions",
+    ]),
+    ...(disclosure === "required" ? [
+      "--disclosure-statement", overrides.disclosureStatement ?? "Assistance disclosure: tooling was used.",
+    ] : []),
+  ]).task;
+}
+
+function transition(ledger, task, worker, to, options = []) {
+  return success([
+    "transition",
+    "--ledger", ledger,
+    "--id", task.id,
+    "--worker", worker,
+    "--to", to,
+    ...options,
+  ]).task;
+}
+
+function advanceToReviewed(ledger, task, worker = "builder") {
+  let current = success(["claim", "--ledger", ledger, "--id", task.id, "--worker", worker]).task;
+  for (const status of ["changed_locally", "verified_locally", "reviewed"]) {
+    current = transition(ledger, current, worker, status);
+  }
+  return current;
+}
+
+function recordArtifacts(directory, ledger, task, worker = "builder", overrides = {}) {
+  const artifacts = {
+    branch: overrides.branch ?? "feature/empty-metadata\n",
+    commit: overrides.commit ?? "fix(parser): handle empty metadata\n",
+    pr: overrides.pr ?? [
+      "## Summary", "Handle empty metadata.", "",
+      "## Why", "Avoid a parser crash.", "",
+      "## Testing", "npm test", "",
+      "## Scope", "Parser validation only.", "",
+      "## Risks", "Low; malformed input now returns an error.", "",
+    ].join("\n"),
+  };
+  const results = {};
+  for (const [kind, text] of Object.entries(artifacts)) {
+    const inputPath = path.join(directory, `${kind}.txt`);
+    fs.writeFileSync(inputPath, text);
+    const result = cli([
+      "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", worker,
+      "--kind", kind, "--input", inputPath,
+    ]);
+    assert.ok([0, 3].includes(result.status), result.stderr);
+    results[kind] = JSON.parse(result.stdout).artifact;
+  }
+  return results;
+}
+
+test("scores owned work, returns the highest priority task, and rejects duplicates", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const external = add(ledger, { repo: "other/project", ref: "9", scope: "external" });
+  const owned = add(ledger, { ref: "10", scope: "owned" });
+
+  assert.ok(owned.score > external.score);
+  assert.equal(success(["next", "--ledger", ledger]).task.id, owned.id);
+
+  const duplicate = cli([
+    "add", "--ledger", ledger, "--repo", "https://github.com/example/project.git",
+    "--ref", "10", "--title", "Duplicate",
+  ]);
+  assert.equal(duplicate.status, 1);
+  assert.match(duplicate.stderr, /Duplicate repo\/ref task/);
+
+  const safeDefault = success([
+    "add", "--ledger", ledger, "--repo", "another/project",
+    "--ref", "11", "--title", "Check safe defaults",
+  ]).task;
+  assert.equal(safeDefault.scope, "external");
+  assert.equal(safeDefault.disclosure, "unknown");
+
+  const zero = cli([
+    "add", "--ledger", ledger, "--repo", "another/project",
+    "--ref", "#0", "--title", "Invalid issue",
+  ]);
+  assert.equal(zero.status, 1);
+  assert.match(zero.stderr, /positive integers/);
+});
+
+test("an atomic lease allows only one worker to claim a task", async (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+
+  const base = ["claim", "--ledger", ledger, "--id", task.id, "--lease-minutes", "30", "--worker"];
+  const results = await Promise.all([
+    runAsync([...base, "worker-a"]),
+    runAsync([...base, "worker-b"]),
+  ]);
+
+  assert.equal(results.filter(({ status }) => status === 0).length, 1);
+  assert.equal(results.filter(({ status }) => status !== 0).length, 1);
+  const state = success(["list", "--ledger", ledger]);
+  assert.equal(state.items[0].status, "claimed");
+  assert.ok(["worker-a", "worker-b"].includes(state.items[0].lease.worker));
+});
+
+test("symlink aliases share one canonical ledger lock", async (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+  const alias = path.join(directory, "ledger-alias.json");
+  fs.symlinkSync(ledger, alias);
+  const results = await Promise.all([
+    runAsync(["claim", "--ledger", ledger, "--id", task.id, "--worker", "worker-a"]),
+    runAsync(["claim", "--ledger", alias, "--id", task.id, "--worker", "worker-b"]),
+  ]);
+  assert.equal(results.filter(({ status }) => status === 0).length, 1);
+  assert.equal(fs.lstatSync(alias).isSymbolicLink(), true);
+  assert.equal(success(["list", "--ledger", ledger]).items[0].status, "claimed");
+});
+
+test("hard-linked ledger aliases fail closed before claims", async (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+  const alias = path.join(directory, "ledger-hardlink.json");
+  fs.linkSync(ledger, alias);
+  const results = await Promise.all([
+    runAsync(["claim", "--ledger", ledger, "--id", task.id, "--worker", "worker-a"]),
+    runAsync(["claim", "--ledger", alias, "--id", task.id, "--worker", "worker-b"]),
+  ]);
+  assert.equal(results.filter(({ status }) => status === 0).length, 0);
+  assert.ok(results.every(({ stderr }) => /Hard-linked ledgers are unsupported/.test(stderr)));
+  fs.unlinkSync(alias);
+  assert.equal(success(["list", "--ledger", ledger]).items[0].status, "queued");
+});
+
+test("concurrent equivalent issue references create only one task", async (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const base = ["add", "--ledger", ledger, "--repo", "example/project", "--title", "Same issue"];
+  const results = await Promise.all([
+    runAsync([...base, "--ref", "123"]),
+    runAsync([...base, "--ref", "#123"]),
+  ]);
+  assert.equal(results.filter(({ status }) => status === 0).length, 1);
+
+  const retry = cli([...base, "--ref", "Issue #123"]);
+  assert.equal(retry.status, 1);
+  assert.match(retry.stderr, /Duplicate repo\/ref task/);
+  const urlRetry = cli([...base, "--ref", "https://github.com/example/project/issues/123"]);
+  assert.equal(urlRetry.status, 1);
+  assert.match(urlRetry.stderr, /Duplicate repo\/ref task/);
+  const state = success(["list", "--ledger", ledger]);
+  assert.equal(state.count, 1);
+  assert.equal(state.items[0].ref, "issue:123");
+});
+
+test("expired leases requeue cleanly and can be reclaimed", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+  success(["claim", "--ledger", ledger, "--id", task.id, "--worker", "worker-a"]);
+
+  const state = JSON.parse(fs.readFileSync(ledger, "utf8"));
+  state.items[0].lease.expiresAt = "2000-01-01T00:00:00.000Z";
+  fs.writeFileSync(ledger, `${JSON.stringify(state, null, 2)}\n`);
+
+  const next = success(["next", "--ledger", ledger]);
+  assert.equal(next.task.id, task.id);
+  assert.equal(next.task.status, "queued");
+  const reclaimed = success(["claim", "--ledger", ledger, "--id", task.id, "--worker", "worker-b"]);
+  assert.equal(reclaimed.task.lease.worker, "worker-b");
+});
+
+test("publication requires task-specific one-shot grants for every remote action", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger, { scope: "owned" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+
+  const publicationArgs = [
+    "--action", "push",
+    "--authority-target", "refs/heads/feature/empty-metadata",
+    "--remote-url", "https://github.com/example/project/tree/feature/empty-metadata",
+    "--performed-by", "publisher",
+  ];
+  const disabled = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published", ...publicationArgs,
+  ]);
+  assert.equal(disabled.status, 1);
+  assert.match(disabled.stderr, /Publishing is disabled/);
+
+  const noAuthority = cli(["configure", "--ledger", ledger, "--publish-mode", "owned"]);
+  assert.equal(noAuthority.status, 1);
+  assert.match(noAuthority.stderr, /Missing --authority-note|Missing --actor/);
+
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner",
+    "--authority-note", "Owner approved this branch for the current run",
+  ]);
+  const noTaskGrant = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published", ...publicationArgs,
+  ]);
+  assert.equal(noTaskGrant.status, 1);
+  assert.match(noTaskGrant.stderr, /unused push grant/);
+
+  const pushGrant = success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Push this named branch only",
+    "--target", "refs/heads/feature/empty-metadata",
+  ]).grant;
+  assert.equal(pushGrant.packetSha256, task.packet.sha256);
+  const alteredState = JSON.parse(fs.readFileSync(ledger, "utf8"));
+  alteredState.items.find(({ id }) => id === task.id).packet.sha256 = "f".repeat(64);
+  fs.writeFileSync(ledger, `${JSON.stringify(alteredState, null, 2)}\n`);
+  const staleGrant = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published", ...publicationArgs,
+  ]);
+  assert.equal(staleGrant.status, 1);
+  assert.match(staleGrant.stderr, /does not match the current reviewed packet/);
+  alteredState.items.find(({ id }) => id === task.id).packet.sha256 = task.packet.sha256;
+  fs.writeFileSync(ledger, `${JSON.stringify(alteredState, null, 2)}\n`);
+
+  const wrongRepo = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push", "--authority-target", "refs/heads/feature/empty-metadata",
+    "--remote-url", "https://github.com/another/project/tree/feature/empty-metadata",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(wrongRepo.status, 1);
+  assert.match(wrongRepo.stderr, /task repository example\/project/);
+
+  const wrongBranch = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push", "--authority-target", "refs/heads/feature/empty-metadata",
+    "--remote-url", "https://github.com/example/project/tree/feature/different-branch",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(wrongBranch.status, 1);
+  assert.match(wrongBranch.stderr, /does not match the authorized refs\/heads target/);
+
+  task = transition(ledger, task, worker, "published", publicationArgs);
+  assert.equal(task.publications[0].action, "push");
+  assert.ok(task.grants.push.usedAt);
+
+  const directReady = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "ready_pr",
+    "--authority-target", "https://github.com/example/project/pull/50",
+    "--remote-url", "https://github.com/example/project/pull/50",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(directReady.status, 1);
+  assert.match(directReady.stderr, /requires a separately authorized draft_pr action/);
+
+  for (const [capability, target, remoteUrl] of [
+    ["draft_pr", "pull request for feature/empty-metadata", "https://github.com/example/project/pull/50"],
+    ["ready_pr", "https://github.com/example/project/pull/50", "https://github.com/example/project/pull/50"],
+    ["merge", "https://github.com/example/project/pull/50", "https://github.com/example/project/pull/50"],
+  ]) {
+    success([
+      "grant", "--ledger", ledger, "--id", task.id, "--capability", capability,
+      "--actor", "owner", "--authority-note", `Approve ${capability}`,
+      "--target", target,
+    ]);
+    task = transition(ledger, task, worker, capability === "merge" ? "merged" : "published", [
+      "--action", capability,
+      "--authority-target", target,
+      "--remote-url", remoteUrl,
+      "--performed-by", "publisher",
+    ]);
+  }
+  assert.equal(task.status, "merged");
+  assert.deepEqual(task.publications.map(({ action }) => action), ["push", "draft_pr", "ready_pr", "merge"]);
+});
+
+test("a grant for one owned task cannot authorize another task", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner", "--authority-note", "Enable the owned-repository kill switch",
+  ]);
+  let first = add(ledger, { ref: "201" });
+  let second = add(ledger, { ref: "202" });
+  first = advanceToReviewed(ledger, first, "first-builder");
+  recordArtifacts(directory, ledger, first, "first-builder");
+  first = transition(ledger, first, "first-builder", "packet_ready");
+  second = advanceToReviewed(ledger, second, "second-builder");
+  recordArtifacts(directory, ledger, second, "second-builder");
+  second = transition(ledger, second, "second-builder", "packet_ready");
+
+  const target = "refs/heads/fix/first-task";
+  success([
+    "grant", "--ledger", ledger, "--id", first.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Approve only the first task", "--target", target,
+  ]);
+  const result = cli([
+    "transition", "--ledger", ledger, "--id", second.id, "--to", "published",
+    "--action", "push", "--authority-target", target,
+    "--remote-url", "https://github.com/example/project/tree/fix/first-task",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /requires an unused push grant/);
+});
+
+test("disabling the publication kill switch revokes unused grants from the prior run", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner-a", "--authority-note", "First publication run",
+  ]);
+  let task = add(ledger, { ref: "301" });
+  task = advanceToReviewed(ledger, task);
+  recordArtifacts(directory, ledger, task);
+  task = transition(ledger, task, "builder", "packet_ready");
+  const target = "refs/heads/fix/run-boundary";
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner-a", "--authority-note", "First-run approval", "--target", target,
+  ]);
+
+  success(["configure", "--ledger", ledger, "--publish-mode", "disabled"]);
+  const disabledState = success(["list", "--ledger", ledger]).items[0];
+  assert.equal(disabledState.grants.push, undefined);
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner-b", "--authority-note", "Second publication run",
+  ]);
+  const stale = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push", "--authority-target", target,
+    "--remote-url", "https://github.com/example/project/tree/fix/run-boundary",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(stale.status, 1);
+  assert.match(stale.stderr, /requires an unused push grant/);
+});
+
+test("state transitions cannot bypass a claim lease", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+
+  const bypass = cli([
+    "transition", "--ledger", ledger, "--id", task.id,
+    "--worker", "worker-a", "--to", "claimed",
+  ]);
+  assert.equal(bypass.status, 1);
+  assert.match(bypass.stderr, /Invalid transition/);
+});
+
+test("packet_ready is blocked until all task-bound artifact dispositions exist", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger);
+  task = advanceToReviewed(ledger, task);
+
+  const missing = cli([
+    "transition", "--ledger", ledger, "--id", task.id,
+    "--worker", "builder", "--to", "packet_ready",
+  ]);
+  assert.equal(missing.status, 1);
+  assert.match(missing.stderr, /branch, commit, pr/);
+
+  const checks = recordArtifacts(directory, ledger, task);
+  task = transition(ledger, task, "builder", "packet_ready");
+  assert.equal(task.packet.disposition, "ready");
+  assert.equal(task.packet.artifacts.commit.sha256, checks.commit.sha256);
+});
+
+test("owned scoring requires explicit ownership evidence", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const result = cli([
+    "add", "--ledger", ledger, "--repo", "example/project", "--ref", "owned-without-evidence",
+    "--title", "Unsafe ownership assumption", "--scope", "owned",
+  ]);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /require --ownership-evidence/);
+});
+
+test("initialization cannot enable publication without a recorded actor", (t) => {
+  const { ledger } = workspace(t);
+  const result = cli(["init", "--ledger", ledger, "--publish-mode", "owned"]);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /must be one of: disabled/);
+  assert.equal(fs.existsSync(ledger), false);
+});
+
+test("external work cannot enter the published state", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner",
+    "--authority-note", "Owner approved owned targets for this run",
+  ]);
+  let task = add(ledger, { scope: "external" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+
+  const result = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push", "--authority-target", "refs/heads/feature/contribution-workflow",
+    "--remote-url", "https://github.com/example/project/tree/feature/contribution-workflow",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /External tasks cannot enter published state/);
+});
+
+test("task-bound artifact checks accept conventional copy and flag tool-origin markers", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger);
+  task = advanceToReviewed(ledger, task);
+  const cleanPath = path.join(directory, "clean.txt");
+  const markedPath = path.join(directory, "marked.txt");
+  const branchPath = path.join(directory, "branch.txt");
+  fs.writeFileSync(cleanPath, [
+    "fix(parser): handle empty metadata", "", "Testing: npm test", "",
+    "Co-authored-by: Gail Example <gail@example.com>",
+    "Co-authored-by: Devin Smith <devin@example.com>",
+    "Co-authored-by: Claude Martin <claude@example.com>",
+    "Co-authored-by: Ai Tanaka <ai@example.com>", "",
+  ].join("\n"));
+  fs.writeFileSync(markedPath, "Generated by Codex\n\nCo-authored-by: Cursor <bot@example.com>\n");
+  fs.writeFileSync(branchPath, "codex/parser-empty-metadata\n");
+
+  const clean = success([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "commit", "--input", cleanPath,
+  ]);
+  assert.equal(clean.ok, true);
+  assert.match(clean.artifact.sha256, /^[a-f0-9]{64}$/);
+
+  const marked = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "pr", "--input", markedPath,
+  ]);
+  assert.equal(marked.status, 4);
+  assert.match(marked.stderr, /generated-by-footer/);
+  assert.match(marked.stderr, /coauthor-tool-trailer/);
+
+  const branch = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "branch", "--input", branchPath,
+  ]);
+  assert.equal(branch.status, 4);
+  assert.match(branch.stderr, /automation-branch-prefix/);
+
+  fs.writeFileSync(branchPath, "feature/valid\nsecond-line\n");
+  const invalidBranch = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "branch", "--input", branchPath,
+  ]);
+  assert.equal(invalidBranch.status, 4);
+  assert.match(invalidBranch.stderr, /invalid-branch-ref/);
+
+  fs.writeFileSync(cleanPath, "x\n");
+  const invalidCommit = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "commit", "--input", cleanPath,
+  ]);
+  assert.equal(invalidCommit.status, 4);
+  assert.match(invalidCommit.stderr, /invalid-conventional-commit-subject/);
+
+  const validPr = [
+    "## Summary", "Handle empty metadata.", "",
+    "## Why", "Avoid a parser crash.", "",
+    "## Testing", "npm test", "",
+    "## Scope", "Parser validation only.", "",
+    "## Risks", "Low risk.", "",
+  ].join("\n");
+  for (const footer of [
+    "Built with Cursor",
+    "Assisted by Aider",
+    "AI-assisted contribution",
+    "Implemented using Claude",
+  ]) {
+    fs.writeFileSync(markedPath, `${validPr}${footer}\n`);
+    const footerResult = cli([
+      "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+      "--kind", "pr", "--input", markedPath,
+    ]);
+    assert.equal(footerResult.status, 4);
+    assert.match(footerResult.stderr, /tool-origin-footer/);
+  }
+
+  fs.writeFileSync(cleanPath, `${validPr}Built with Jason Colapietro.\nThe cursor pagination feature was implemented using offset tokens.\nAI-assisted composition is a product setting.\nImages generated by OpenAI now preserve metadata.\nThe Codex agent integration now retries timeouts.\n`);
+  const humanAndProductCopy = success([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "pr", "--input", cleanPath,
+  ]);
+  assert.equal(humanAndProductCopy.artifact.outcome, "pass");
+
+  const unknownTask = add(ledger, { ref: "unknown", disclosure: "unknown" });
+  advanceToReviewed(ledger, unknownTask, "unknown-worker");
+  const unknown = cli([
+    "artifact-check", "--ledger", ledger, "--id", unknownTask.id, "--worker", "unknown-worker",
+    "--kind", "commit", "--input", cleanPath,
+  ]);
+  assert.equal(unknown.status, 2);
+  assert.match(unknown.stderr, /inspect upstream instructions/);
+});
+
+test("required disclosure is preserved exactly and returns owner review disposition", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const statement = "Generated with AI assistance as required by this repository.";
+  let task = add(ledger, {
+    ref: "required-disclosure",
+    disclosure: "required",
+    disclosureStatement: statement,
+  });
+  task = advanceToReviewed(ledger, task);
+  const missingPath = path.join(directory, "missing.txt");
+  const requiredPath = path.join(directory, "required.txt");
+  fs.writeFileSync(missingPath, "Summary without the required statement.\n");
+  const requiredPr = [
+    "## Summary", "Preserve the required disclosure.", "",
+    "## Why", "Follow repository policy.", "",
+    "## Testing", "npm test", "",
+    "## Scope", "PR copy only.", "",
+    "## Risks", "Owner review is required.", "",
+    statement, "",
+  ].join("\n");
+  fs.writeFileSync(requiredPath, requiredPr);
+
+  const missing = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "pr", "--input", missingPath,
+  ]);
+  assert.equal(missing.status, 3);
+  assert.match(missing.stderr, /exact required disclosure statement/);
+
+  fs.writeFileSync(missingPath, `${statement}\n${statement}\n`);
+  const duplicated = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "pr", "--input", missingPath,
+  ]);
+  assert.equal(duplicated.status, 3);
+  assert.match(duplicated.stderr, /exact required disclosure statement once/);
+
+  const preservedResult = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+    "--kind", "pr", "--input", requiredPath,
+  ]);
+  assert.equal(preservedResult.status, 3);
+  const preserved = JSON.parse(preservedResult.stdout);
+  assert.equal(preserved.ok, false);
+  assert.equal(preserved.artifact.outcome, "owner_review_required");
+
+  const checks = recordArtifacts(directory, ledger, task, "builder", {
+    pr: requiredPr,
+  });
+  const beforeReview = cli([
+    "transition", "--ledger", ledger, "--id", task.id,
+    "--worker", "builder", "--to", "packet_ready",
+  ]);
+  assert.equal(beforeReview.status, 1);
+  assert.match(beforeReview.stderr, /unresolved artifact checks: pr/);
+
+  const wrongHash = cli([
+    "review-artifact", "--ledger", ledger, "--id", task.id, "--kind", "pr",
+    "--sha256", "0".repeat(64), "--decision", "approve", "--actor", "owner",
+    "--review-note", "Reviewed the required statement",
+  ]);
+  assert.equal(wrongHash.status, 1);
+  assert.match(wrongHash.stderr, /does not match the current artifact/);
+
+  success([
+    "review-artifact", "--ledger", ledger, "--id", task.id, "--kind", "pr",
+    "--sha256", checks.pr.sha256, "--decision", "approve", "--actor", "owner",
+    "--review-note", "Required disclosure is present exactly once",
+  ]);
+  task = transition(ledger, task, "builder", "packet_ready");
+  assert.equal(task.packet.disposition, "owner_review_approved");
+});
+
+test("writes refuse an oversized ledger without replacing the readable file", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const state = JSON.parse(fs.readFileSync(ledger, "utf8"));
+  state.padding = Array(800_000).fill(0);
+  const original = JSON.stringify(state);
+  assert.ok(Buffer.byteLength(original) < 5_000_000);
+  fs.writeFileSync(ledger, original);
+
+  const result = cli(["configure", "--ledger", ledger, "--lease-minutes", "46"]);
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /Refusing to write ledger larger than 5000000 bytes/);
+  assert.equal(fs.readFileSync(ledger, "utf8"), original);
+  assert.equal(success(["list", "--ledger", ledger]).count, 0);
+});
+
+test("task history is capped while preserving a trimmed-event count", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger);
+  success(["claim", "--ledger", ledger, "--id", task.id, "--worker", "builder"]);
+  const state = JSON.parse(fs.readFileSync(ledger, "utf8"));
+  state.items[0].history = Array.from({ length: 100 }, (_, index) => ({
+    at: "2026-08-01T00:00:00.000Z",
+    type: `test_${index}`,
+  }));
+  fs.writeFileSync(ledger, `${JSON.stringify(state, null, 2)}\n`);
+
+  const heartbeat = success([
+    "heartbeat", "--ledger", ledger, "--id", task.id, "--worker", "builder",
+  ]).task;
+  assert.equal(heartbeat.history.length, 100);
+  assert.equal(heartbeat.historyTrimmedCount, 1);
+  assert.equal(heartbeat.history.at(-1).type, "heartbeat");
+});
+
+test("explicit lock recovery removes only a verifiably stale local process lock", (t) => {
+  const { ledger } = workspace(t);
+  const lockPath = `${ledger}.lock`;
+  const processStartedAt = spawnSync("ps", ["-p", String(process.pid), "-o", "lstart="], {
+    encoding: "utf8",
+  }).stdout.trim();
+  fs.writeFileSync(lockPath, `${JSON.stringify({
+    pid: process.pid,
+    host: os.hostname(),
+    token: "live-token",
+    processStartedAt,
+    createdAt: "2001-01-01T00:00:00.000Z",
+  })}\n`);
+
+  const wrongToken = cli([
+    "recover-lock", "--ledger", ledger, "--expected-token", "wrong-token",
+  ]);
+  assert.equal(wrongToken.status, 1);
+  assert.match(wrongToken.stderr, /does not match --expected-token/);
+  assert.equal(fs.existsSync(lockPath), true);
+
+  const live = cli(["recover-lock", "--ledger", ledger, "--expected-token", "live-token"]);
+  assert.equal(live.status, 1);
+  assert.match(live.stderr, /still running/);
+  assert.equal(fs.existsSync(lockPath), true);
+
+  fs.writeFileSync(lockPath, `${JSON.stringify({
+    pid: 999_999_999,
+    host: os.hostname(),
+    token: "stale-token",
+    processStartedAt: "Mon Jan  1 00:00:00 2001",
+    createdAt: "2001-01-01T00:00:00.000Z",
+  })}\n`);
+  const recovered = success([
+    "recover-lock", "--ledger", ledger, "--expected-token", "stale-token",
+  ]);
+  assert.equal(recovered.recovered, true);
+  assert.equal(fs.existsSync(lockPath), false);
+});

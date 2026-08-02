@@ -188,8 +188,8 @@
     {
       "name": "suede-agent-teams",
       "area": "workflow",
-      "description": "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped.",
-      "useWhen": "Coordinate large changes across safe lanes with collision checks, quality gates, rollback planning, and a verified handoff."
+      "description": "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, independent review, neutral outward artifacts, and explicit publication authority.",
+      "useWhen": "Coordinate large changes across safe lanes, or run a public-repository contribution program with collision checks, issue leases, quality gates, explicit publication authority, and a verified handoff."
     },
     {
       "name": "suede-ai-eval",

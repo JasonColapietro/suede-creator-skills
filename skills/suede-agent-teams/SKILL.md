@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped."
+description: "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, independent review, neutral outward artifacts, and explicit publication authority."
 ---
 
 # Agent Team Orchestrator
@@ -206,6 +206,22 @@ Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P
 The Phase Loop is the Continuous Team Loop run at minimal scale. Use it when a full 10-gate roster is overkill but you still need scout, plan, build, verify, and ship stages.
 
 For high-risk changes, consult the Rollback Decision Tree before shipping. For gradual rollouts, use the Feature Flag Strategy. For shared interface changes, require RFC Mode before the plan stage opens.
+
+## Public Contribution Program
+
+When the objective is recurring work across owned or external public
+repositories, read
+[`references/public-contribution-program.md`](references/public-contribution-program.md)
+completely before opening lanes. Use its deterministic ledger to score tasks,
+lease each repo/issue pair to one worker, and prevent duplicate work. Start in
+`local_only` authority with publication disabled. Keep external targets at a
+reviewed contribution packet unless the user separately approves a draft PR.
+
+The outward artifact gate applies to branch names, commit messages, and PR
+copy. Use conventional project language and omit voluntary tool-origin
+branding or trailers. Never forge authorship or deny tool use; an upstream
+disclosure requirement overrides neutral packaging and moves the lane to owner
+review.
 
 ## Model Tiering
 
@@ -515,6 +531,9 @@ Cue Suede:
 
 ## Routing
 
+- A recurring owned/public-repository contribution program needs issue leases,
+  isolated worktrees, review, and an authority-gated packet → read
+  `references/public-contribution-program.md` and keep this skill as controller
 - A code lane needs review or a ship grade → **suede-code** (combined), **suede-code-review** (findings only), or **suede-code-grader** (grade only)
 - The repo's merge gate is weak or missing → **suede-ship-gate**
 - The work needs branch ownership, stale-mirror worktree setup, finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)

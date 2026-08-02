@@ -323,10 +323,10 @@
 
       <section class="panel">
         <h2>Public install command</h2>
-        <p><strong>Claude Code</strong> — add the marketplace and install the orchestration subset:</p>
+        <p><strong>Claude Code:</strong> add the marketplace and install the orchestration subset:</p>
         <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
 /plugin install suede-agent-workflows@suede</code></pre>
-        <p><strong>Codex</strong> — this is the public route. It installs from GitHub as a standard Codex skill folder.</p>
+        <p><strong>Codex:</strong> this is the public route. It installs from GitHub as a standard Codex skill folder.</p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-agent-teams</code></pre>
@@ -362,9 +362,36 @@
           <div class="link-row"><b>Rollback tree</b><span>Pre-agreed decisions: roll back immediately on data loss or security exposure; hold and investigate on degraded performance.</span></div>
           <div class="link-row"><b>Adversarial review</b><span>One lens asks whether it works; another asks how it fails in production, release, abuse, accessibility, and handoff.</span></div>
           <div class="link-row"><b>Escalation protocol</b><span>Repeated fix cycles, unknown-severity security findings, and cost spikes stop the loop and surface for sign-off.</span></div>
-          <div class="link-row"><b>Correction budget</b><span>Up to three genuinely different fixes per failing check — each must change the diagnosis or strategy. Stop early when the same root cause repeats.</span></div>
+          <div class="link-row"><b>Correction budget</b><span>Up to three genuinely different fixes per failing check. Each must change the diagnosis or strategy. Stop early when the same root cause repeats.</span></div>
           <div class="link-row"><b>Status vocabulary</b><span>"Changed locally" is not "verified locally"; "deployed" is not "verified live." States do not skip.</span></div>
         </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Public contribution program</h2>
+          <p>Run a repeatable owned-repository contribution lane without assigning the same issue twice. Candidates are scored by impact, confidence, effort, risk, and ownership; the included ledger grants one atomic lease per repository and issue pair.</p>
+          <ul>
+            <li>Unknown ownership is treated as external.</li>
+            <li>Every task starts local-only with publication disabled.</li>
+            <li>Each builder uses an isolated branch or worktree and exact file ownership.</li>
+            <li>Branch, commit, and PR checks are stored with content hashes before a packet becomes ready.</li>
+            <li>Push, draft PR, ready PR, and merge each require a one-shot grant bound to that task and packet hash.</li>
+            <li>Disabling publication revokes unused grants so authority does not cross runs.</li>
+            <li>External work stops at a reviewed contribution packet unless the owner separately approves a draft PR.</li>
+          </ul>
+          <pre><code>node skills/suede-agent-teams/scripts/contribution-ledger.mjs init \
+  --ledger &lt;control-dir&gt;/contributions.json \
+  --publish-mode disabled</code></pre>
+        </article>
+        <article class="card">
+          <h2>Conventional outward artifacts</h2>
+          <p>Branches, commits, and PR copy describe the project change: problem, approach, tests, scope, and risks. The packaging check requires a valid branch ref, a conventional commit subject, and nonempty Summary, Why, Testing, Scope, and Risks sections. It rejects voluntary tool-origin footers, model badges, robot markers, and model/tool co-author trailers.</p>
+          <p>It never rewrites provenance or suppresses a required disclosure. Unknown disclosure blocks packaging. Required disclosure must appear exactly once in the PR draft and needs an explicit owner decision on the checked content hash. Git identity, signatures, approvals, and timestamps are never forged.</p>
+          <pre><code>node skills/suede-agent-teams/scripts/contribution-ledger.mjs artifact-check \
+  --ledger &lt;control-dir&gt;/contributions.json --id &lt;task-id&gt; \
+  --worker &lt;lane-id&gt; --kind commit --input &lt;artifact.txt&gt;</code></pre>
+        </article>
       </section>
 
       <section class="grid">
@@ -372,9 +399,9 @@
           <h2>Model tiering</h2>
           <p>Assign the least capable model that can still do the role correctly. Cost and latency compound across a roster.</p>
           <ul>
-            <li>Mechanical tasks — an isolated function, a single file, a complete spec with no judgment call — get the cheapest capable model.</li>
-            <li>Integration and judgment tasks — multi-file coordination, pattern-matching against the existing codebase, non-trivial debugging — get a standard model.</li>
-            <li>Architecture, design, and review roles — RFC authoring, code grading, security-sensitive review, release verification — get the most capable model available.</li>
+            <li>Mechanical tasks (an isolated function, a single file, or a complete spec with no judgment call) get the cheapest capable model.</li>
+            <li>Integration and judgment tasks (multi-file coordination, pattern-matching against the existing codebase, or non-trivial debugging) get a standard model.</li>
+            <li>Architecture, design, and review roles (RFC authoring, code grading, security-sensitive review, or release verification) get the most capable model available.</li>
           </ul>
           <p>When a lane's complexity is ambiguous, default up a tier. A cheap model returning a wrong answer costs more in re-dispatch than starting at the right tier.</p>
         </article>
@@ -385,7 +412,7 @@
             <li>Done means the builder finished cleanly; proceed to the next roster stage.</li>
             <li>Done with concerns means the builder flagged a doubt; resolve it first if it touches correctness or scope, otherwise note it in the handoff and proceed.</li>
             <li>Needs context means the builder is missing information the lane map should have supplied; provide it and re-dispatch the same builder rather than guessing on its behalf.</li>
-            <li>Blocked means the builder cannot proceed; diagnose why before re-dispatching — a context gap gets more context, a reasoning gap gets a more capable model, an oversized task splits into smaller lanes, and a wrong plan escalates to the human.</li>
+            <li>Blocked means the builder cannot proceed. Diagnose why before re-dispatching: a context gap gets more context, a reasoning gap gets a more capable model, an oversized task splits into smaller lanes, and a wrong plan escalates to the human.</li>
           </ul>
         </article>
       </section>
@@ -419,6 +446,7 @@ Next:</code></pre>
         <pre><code>Use $suede-agent-teams to plan lanes for this multi-file change. Run WIP collision detection first and give me the lane map.</code></pre>
         <pre><code>Use $suede-agent-teams with the auth-rewrite template. Require an RFC and a feature flag before any builder opens.</code></pre>
         <pre><code>Use $suede-agent-teams to coordinate this public launch review and hold the handoff until every field has evidence.</code></pre>
+        <pre><code>Use $suede-agent-teams to run an owned public-repository contribution program. Score candidate issues, lease each task before opening a worktree, keep publication disabled, and return a reviewed contribution packet with conventional branch, commit, and PR drafts.</code></pre>
         <pre><code>Use $suede-agent-teams to recover this failing check. Allow up to three genuinely different fixes, stop early when the same root cause repeats, and include the correction ledger in the handoff.</code></pre>
       </section>
 
@@ -446,7 +474,7 @@ Next:</code></pre>
     </section>
     <footer>
       <div class="shell">
-        <p class="footer-note">Suede Agent Teams: coordinated agent lanes with collision detection, RFC mode, rollback trees, scenario templates, and a signed evidence handoff.</p>
+        <p class="footer-note">Suede Agent Teams: coordinated delivery and contribution lanes with collision detection, atomic issue leases, review gates, rollback trees, and a signed evidence handoff.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
