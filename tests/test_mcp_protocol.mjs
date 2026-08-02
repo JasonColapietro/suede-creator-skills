@@ -184,14 +184,19 @@ test("publishes closed input schemas, output schemas, and read-only annotations"
 });
 
 test("accepts reserved MCP request metadata without opening arbitrary params", async () => {
+  for (const profile of ["creator", "workflow"]) {
+    await withSession(async (session) => {
+      await session.initialize();
+
+      const withMetadata = await session.request("tools/list", {
+        _meta: { progressToken: "codex-startup" }
+      });
+      assert.deepEqual(withMetadata.result.tools.map((tool) => tool.name), CATALOG.mcp.tools);
+    }, profile);
+  }
+
   await withSession(async (session) => {
     await session.initialize();
-
-    const withMetadata = await session.request("tools/list", {
-      _meta: { progressToken: "codex-startup" }
-    });
-    assert.deepEqual(withMetadata.result.tools.map((tool) => tool.name), CATALOG.mcp.tools);
-
     const unknown = await session.request("tools/list", {
       _meta: { progressToken: "codex-startup" },
       unexpected: true

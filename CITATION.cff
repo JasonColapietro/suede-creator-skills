@@ -9,8 +9,8 @@ abstract: >-
   visibility and CTA grading, A-F code grading, agent QA, launch packaging,
   artist-campaign tools, and creator rights utilities.
 type: software
-version: 0.9.1
-date-released: 2026-07-28
+version: 0.9.2
+date-released: 2026-08-01
 authors:
   - family-names: Colapietro
     given-names: Jason
