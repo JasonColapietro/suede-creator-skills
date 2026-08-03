@@ -32,7 +32,9 @@ Collect these fields before opening a builder lane:
 
 Ownership is never inferred from a local clone, login, organization
 membership, or write-capable token. Use an explicit user statement or a
-maintained allowlist.
+maintained allowlist. External publication through ready review requires
+`reviewed` mode plus a separate, one-shot grant for every remote action. The
+ledger never merges external work.
 
 ## State machine
 
@@ -43,6 +45,7 @@ discover -> classify -> contract -> prepare -> claim -> build -> verify
 owned + authorized -> publish -> checks -> merge or fix
 owned + local_only -> packet_ready
 external or uncertain -> packet_ready -> owner review
+external + reviewed-mode grants -> push -> draft PR -> ready PR -> checks
 ```
 
 Use the team orchestrator's status vocabulary for the implementation lane.
@@ -155,13 +158,15 @@ node skills/suede-agent-teams/scripts/contribution-ledger.mjs review-artifact \
   --review-note "Required statement is present exactly once"
 ```
 
-The ledger-wide `owned` setting is only a kill switch. Enabling it requires a
-named actor and note. Every push, draft PR, ready PR, and merge then requires a
-separate one-shot grant on the exact task and reviewed packet. Grants record
-actor, time, exact target, and packet hash; one task or action cannot borrow
-another's grant. Recording an action also requires its resulting GitHub URL
-and performer. Disabling the kill switch revokes unused grants, so authority
-cannot cross publication runs. External tasks can never enter `published`.
+The ledger-wide publish mode is only a kill switch. `owned` permits separately
+granted publication for owned repositories. `reviewed` also permits an
+external task to advance through push, draft PR, and ready PR after each action
+receives its own one-shot grant. Enabling either mode requires a named actor and
+note. Grants record actor, time, exact target, and packet hash; one task or
+action cannot borrow another's grant. Recording an action also requires its
+resulting GitHub URL and performer. Disabling the kill switch revokes unused
+grants, so authority cannot cross publication runs. External merge grants and
+merge transitions are always rejected.
 
 ```bash
 node skills/suede-agent-teams/scripts/contribution-ledger.mjs configure \
@@ -189,6 +194,16 @@ does not exist yet. Ready and merge targets are the canonical same-repository
 stay on that PR. Names in `--actor` and `--performed-by` are audit attestations;
 authentication and authorization of the caller remain the controller's
 responsibility.
+
+For an explicitly approved external run, enable reviewed publication before
+granting the exact external task:
+
+```bash
+node skills/suede-agent-teams/scripts/contribution-ledger.mjs configure \
+  --ledger <control-dir>/contributions.json --publish-mode reviewed \
+  --actor <owner> \
+  --authority-note "Allow separately granted external PRs through ready review"
+```
 
 ## Repository preparation
 
@@ -265,11 +280,13 @@ checked without applying a broad word filter to legitimate product copy.
 | Any target, `local_only` | Local branch, tests, review, contribution packet |
 | Owned, explicit push approval | Push named branch only |
 | Owned, explicit PR approval | Open named PR; ready/merge remain separate |
-| External or uncertain | Packet ready for owner review; no automatic publish |
-| External after explicit approval | User-controlled fork and draft PR only |
+| External or uncertain, no reviewed-mode grant | Packet ready for owner review; no publication |
+| External after explicit reviewed-mode grants | User-controlled fork, draft PR, then ready PR; never merge |
 
-Never force-push, rewrite shared history, change branch protection, merge,
-deploy, or delete a worktree unless separately authorized.
+Never force-push, rewrite shared history, change branch protection, merge an
+external PR, deploy, or delete a worktree unless the governing workflow and
+target ownership allow it. External merge remains outside this ledger even
+when a user separately authorizes other publication actions.
 
 ## Contribution packet
 

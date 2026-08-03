@@ -450,7 +450,7 @@ test("initialization cannot enable publication without a recorded actor", (t) =>
   assert.equal(fs.existsSync(ledger), false);
 });
 
-test("external work cannot enter the published state", (t) => {
+test("owned-only publication mode cannot grant external work", (t) => {
   const { directory, ledger } = workspace(t);
   success(["init", "--ledger", ledger]);
   success([
@@ -465,13 +465,65 @@ test("external work cannot enter the published state", (t) => {
   task = transition(ledger, task, worker, "packet_ready");
 
   const result = cli([
-    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
-    "--action", "push", "--authority-target", "refs/heads/feature/contribution-workflow",
-    "--remote-url", "https://github.com/example/project/tree/feature/contribution-workflow",
-    "--performed-by", "publisher",
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Approve this external branch",
+    "--target", "refs/heads/feature/contribution-workflow",
   ]);
   assert.equal(result.status, 1);
-  assert.match(result.stderr, /External tasks cannot enter published state/);
+  assert.match(result.stderr, /reviewed publication mode/);
+});
+
+test("reviewed publication mode lets granted external work reach ready review but never merge", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "reviewed",
+    "--actor", "owner",
+    "--authority-note", "Approve separately granted external publication through ready review",
+  ]);
+  let task = add(ledger, { scope: "external" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+
+  const branch = "refs/heads/fix/empty-metadata";
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Push this reviewed branch", "--target", branch,
+  ]);
+  task = transition(ledger, task, worker, "published", [
+    "--action", "push", "--authority-target", branch,
+    "--remote-url", "https://github.com/example/project/tree/fix/empty-metadata",
+    "--performed-by", "publisher",
+  ]);
+
+  const prUrl = "https://github.com/example/project/pull/50";
+  const draftTarget = "pull request for fix/empty-metadata";
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "draft_pr",
+    "--actor", "owner", "--authority-note", "Open this reviewed draft", "--target", draftTarget,
+  ]);
+  task = transition(ledger, task, worker, "published", [
+    "--action", "draft_pr", "--authority-target", draftTarget,
+    "--remote-url", prUrl, "--performed-by", "publisher",
+  ]);
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "ready_pr",
+    "--actor", "owner", "--authority-note", "Move this reviewed PR to ready", "--target", prUrl,
+  ]);
+  task = transition(ledger, task, worker, "published", [
+    "--action", "ready_pr", "--authority-target", prUrl,
+    "--remote-url", prUrl, "--performed-by", "publisher",
+  ]);
+
+  assert.deepEqual(task.publications.map(({ action }) => action), ["push", "draft_pr", "ready_pr"]);
+  const mergeGrant = cli([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "merge",
+    "--actor", "owner", "--authority-note", "Attempt external merge", "--target", prUrl,
+  ]);
+  assert.equal(mergeGrant.status, 1);
+  assert.match(mergeGrant.stderr, /External tasks cannot receive merge grants/);
 });
 
 test("task-bound artifact checks accept conventional copy and flag tool-origin markers", (t) => {

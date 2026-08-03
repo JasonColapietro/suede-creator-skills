@@ -196,13 +196,13 @@ function validateLedger(ledger) {
   if (ledger.schemaVersion !== SCHEMA_VERSION) {
     throw new UsageError(`Unsupported ledger schema: ${ledger.schemaVersion ?? "missing"}`);
   }
-  if (!ledger.settings || !["disabled", "owned"].includes(ledger.settings.publishMode)) {
-    throw new UsageError("Ledger publishMode must be disabled or owned");
+  if (!ledger.settings || !["disabled", "owned", "reviewed"].includes(ledger.settings.publishMode)) {
+    throw new UsageError("Ledger publishMode must be disabled, owned, or reviewed");
   }
-  if (ledger.settings.publishMode === "owned" && (
+  if (ledger.settings.publishMode !== "disabled" && (
     !ledger.settings.publishAuthority?.note || !ledger.settings.publishAuthority?.actor
   )) {
-    throw new UsageError("Owned publish mode requires recorded kill-switch authority");
+    throw new UsageError("Active publish mode requires recorded kill-switch authority");
   }
   if (!Number.isInteger(ledger.settings.defaultLeaseMinutes)) {
     throw new UsageError("Ledger defaultLeaseMinutes must be an integer");
@@ -487,8 +487,13 @@ function initLedger(options) {
 function configureLedger(options) {
   return withLedgerLock(required(options, "ledger"), (ledgerPath) => {
     const ledger = readLedger(ledgerPath);
-    const publishMode = enumValue(options, "publish-mode", ["disabled", "owned"], ledger.settings.publishMode);
-    if (publishMode === "owned" && ledger.settings.publishMode !== "owned") {
+    const publishMode = enumValue(
+      options,
+      "publish-mode",
+      ["disabled", "owned", "reviewed"],
+      ledger.settings.publishMode,
+    );
+    if (publishMode !== "disabled" && ledger.settings.publishMode !== publishMode) {
       ledger.settings.publishGeneration += 1;
       ledger.settings.publishAuthority = {
         note: required(options, "authority-note"),
@@ -682,11 +687,16 @@ function grantTask(options) {
   return withLedgerLock(required(options, "ledger"), (ledgerPath) => {
     const ledger = readLedger(ledgerPath);
     const task = findTask(ledger, required(options, "id"));
-    if (task.scope !== "owned") throw new UsageError("External tasks cannot receive publication grants");
-    if (ledger.settings.publishMode !== "owned") {
-      throw new UsageError("Publication kill switch is disabled; enable owned mode before recording a task grant");
-    }
     const capability = enumValue(options, "capability", PUBLICATION_ACTIONS, null);
+    if (task.scope === "external" && ledger.settings.publishMode !== "reviewed") {
+      throw new UsageError("External tasks require reviewed publication mode before recording a task grant");
+    }
+    if (task.scope === "external" && capability === "merge") {
+      throw new UsageError("External tasks cannot receive merge grants");
+    }
+    if (task.scope === "owned" && !["owned", "reviewed"].includes(ledger.settings.publishMode)) {
+      throw new UsageError("Publication kill switch is disabled; enable a publish mode before recording a task grant");
+    }
     const expectedStatus = capability === "push" ? "packet_ready" : "published";
     if (task.status !== expectedStatus) {
       throw new UsageError(`${capability} authority can only be recorded while task is ${expectedStatus}`);
@@ -780,15 +790,18 @@ function requirePublicationPrerequisite(task, action) {
 }
 
 function applyPublicationAction(ledger, task, options, targetStatus) {
-  if (task.scope !== "owned") {
-    throw new UsageError("External tasks cannot enter published state; keep the packet approval-gated");
+  const action = enumValue(options, "action", PUBLICATION_ACTIONS, null);
+  if (task.scope === "external" && action === "merge") {
+    throw new UsageError("External tasks cannot be merged by the contribution ledger");
   }
-  if (ledger.settings.publishMode !== "owned") {
-    throw new UsageError("Publishing is disabled; configure publishMode=owned only after explicit authority");
+  if (task.scope === "external" && ledger.settings.publishMode !== "reviewed") {
+    throw new UsageError("External publication requires reviewed mode and a separate grant for every action");
+  }
+  if (task.scope === "owned" && !["owned", "reviewed"].includes(ledger.settings.publishMode)) {
+    throw new UsageError("Publishing is disabled; configure a publish mode only after explicit authority");
   }
   if (!task.packet) throw new UsageError("Task has no artifact-bound contribution packet");
 
-  const action = enumValue(options, "action", PUBLICATION_ACTIONS, null);
   if (targetStatus === "merged" && action !== "merge") {
     throw new UsageError("Only --action merge can enter merged state");
   }
@@ -1106,7 +1119,7 @@ function help() {
     ok: true,
     usage: [
       "contribution-ledger.mjs init --ledger <path> [--publish-mode disabled]",
-      "contribution-ledger.mjs configure --ledger <path> [--publish-mode disabled|owned] [--actor <name> --authority-note <text>]",
+      "contribution-ledger.mjs configure --ledger <path> [--publish-mode disabled|owned|reviewed] [--actor <name> --authority-note <text>]",
       "contribution-ledger.mjs add --ledger <path> --repo <owner/repo> --ref <issue> --title <text> [--scope external|owned --ownership-evidence <text>] [--disclosure unknown|not-required|required --disclosure-source <source> --disclosure-statement <exact text>]",
       "contribution-ledger.mjs next --ledger <path> [--scope owned|external]",
       "contribution-ledger.mjs claim --ledger <path> --id <id> --worker <name>",
