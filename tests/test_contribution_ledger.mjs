@@ -288,7 +288,7 @@ test("publication requires task-specific one-shot grants for every remote action
     "--performed-by", "publisher",
   ]);
   assert.equal(wrongRepo.status, 1);
-  assert.match(wrongRepo.stderr, /task repository example\/project/);
+  assert.match(wrongRepo.stderr, /authorized repository and branch target/);
 
   const wrongBranch = cli([
     "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
@@ -297,7 +297,7 @@ test("publication requires task-specific one-shot grants for every remote action
     "--performed-by", "publisher",
   ]);
   assert.equal(wrongBranch.status, 1);
-  assert.match(wrongBranch.stderr, /does not match the authorized refs\/heads target/);
+  assert.match(wrongBranch.stderr, /authorized repository and branch target/);
 
   task = transition(ledger, task, worker, "published", publicationArgs);
   assert.equal(task.publications[0].action, "push");
@@ -487,14 +487,14 @@ test("reviewed publication mode lets granted external work reach ready review bu
   recordArtifacts(directory, ledger, task, worker);
   task = transition(ledger, task, worker, "packet_ready");
 
-  const branch = "refs/heads/fix/empty-metadata";
+  const branch = "publisher/project@refs/heads/fix/empty-metadata";
   success([
     "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
     "--actor", "owner", "--authority-note", "Push this reviewed branch", "--target", branch,
   ]);
   task = transition(ledger, task, worker, "published", [
     "--action", "push", "--authority-target", branch,
-    "--remote-url", "https://github.com/example/project/tree/fix/empty-metadata",
+    "--remote-url", "https://github.com/publisher/project/tree/fix/empty-metadata",
     "--performed-by", "publisher",
   ]);
 

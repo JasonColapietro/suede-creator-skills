@@ -683,6 +683,21 @@ function releaseTask(options) {
   });
 }
 
+function parsePushAuthorityTarget(task, value) {
+  const qualified = value.match(/^([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)@(refs\/heads\/[A-Za-z0-9._/-]+)$/);
+  const ref = qualified?.[2] ?? value;
+  if (!/^refs\/heads\/[A-Za-z0-9._/-]+$/.test(ref)) {
+    throw new UsageError(
+      "Push grant --target must be refs/heads/<branch> or owner/repo@refs/heads/<branch>",
+    );
+  }
+  const repo = (qualified?.[1] ?? task.repo).toLowerCase();
+  if (task.scope === "owned" && repo !== task.repo) {
+    throw new UsageError("Owned push grants must target the task repository");
+  }
+  return { repo, branch: ref.slice("refs/heads/".length) };
+}
+
 function grantTask(options) {
   return withLedgerLock(required(options, "ledger"), (ledgerPath) => {
     const ledger = readLedger(ledgerPath);
@@ -718,8 +733,8 @@ function grantTask(options) {
       usedAt: null,
       evidenceUrl: null,
     };
-    if (capability === "push" && !/^refs\/heads\/[A-Za-z0-9._/-]+$/.test(grant.target)) {
-      throw new UsageError("Push grant --target must be an exact refs/heads/<branch> ref");
+    if (capability === "push") {
+      parsePushAuthorityTarget(task, grant.target);
     }
     if (["ready_pr", "merge"].includes(capability)) {
       const evidence = validateGitHubEvidenceUrl(task, grant.target, capability);
@@ -757,14 +772,19 @@ function validateGitHubEvidenceUrl(task, value, action) {
   ) {
     throw new UsageError("--remote-url must be a valid https://github.com/ URL");
   }
-  if (`${parts[0]}/${parts[1]}`.toLowerCase() !== task.repo) {
+  const evidenceRepo = `${parts[0]}/${parts[1]}`.toLowerCase();
+  if (action !== "push" && evidenceRepo !== task.repo) {
     throw new UsageError(`--remote-url must point to task repository ${task.repo}`);
   }
   if (action === "push") {
     if (parts[2] !== "tree" || parts.length < 4) {
-      throw new UsageError("Push evidence must be the task repository's /tree/<branch> URL");
+      throw new UsageError("Push evidence must be the authorized repository's /tree/<branch> URL");
     }
-    return { url: parsed.toString(), branch: decodeURIComponent(parts.slice(3).join("/")) };
+    return {
+      url: parsed.toString(),
+      repo: evidenceRepo,
+      branch: decodeURIComponent(parts.slice(3).join("/")),
+    };
   }
   if (!parts[3] || parts[2] !== "pull" || parts.length !== 4 || !/^\d+$/.test(parts[3])) {
     throw new UsageError(`${action} evidence must be the task repository's canonical /pull/<number> URL`);
@@ -830,8 +850,11 @@ function applyPublicationAction(ledger, task, options, targetStatus) {
   }
   const evidence = validateGitHubEvidenceUrl(task, required(options, "remote-url"), action);
   const remoteUrl = evidence.url;
-  if (action === "push" && authorityTarget.slice("refs/heads/".length) !== evidence.branch) {
-    throw new UsageError("Push evidence branch does not match the authorized refs/heads target");
+  if (action === "push") {
+    const pushTarget = parsePushAuthorityTarget(task, authorityTarget);
+    if (pushTarget.repo !== evidence.repo || pushTarget.branch !== evidence.branch) {
+      throw new UsageError("Push evidence does not match the authorized repository and branch target");
+    }
   }
   if (["ready_pr", "merge"].includes(action) && authorityTarget !== remoteUrl) {
     throw new UsageError(`${action} authority target must equal the canonical PR URL`);

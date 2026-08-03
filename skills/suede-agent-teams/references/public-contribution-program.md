@@ -168,6 +168,10 @@ resulting GitHub URL and performer. Disabling the kill switch revokes unused
 grants, so authority cannot cross publication runs. External merge grants and
 merge transitions are always rejected.
 
+For a fork push, bind the grant to both repository and branch with
+`owner/repo@refs/heads/<branch>`. An unqualified `refs/heads/<branch>` target
+means the task repository itself.
+
 ```bash
 node skills/suede-agent-teams/scripts/contribution-ledger.mjs configure \
   --ledger <control-dir>/contributions.json --publish-mode owned \
