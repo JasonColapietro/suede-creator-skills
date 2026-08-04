@@ -445,7 +445,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/johnny-suede-design \
   skills/suede-full-send \
   skills/suede-code \
-  skills/suede-ship-gate \
+  skills/suede-ci-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-recommend-next-action \

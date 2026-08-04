@@ -301,6 +301,6 @@ Ship gate is mechanical: **hold** = any severity-5 failure mode uncovered, or no
 ## Routing
 
 - The AI surface's implementation needs review or a ship grade → **suede-code**
-- Eval cases written and passing → **suede-ship-gate** to wire them into CI as a required check
+- Eval cases written and passing → **suede-ci-gate** to wire them into CI as a required check
 - Built feature needs UAT beyond the eval suite → (private Suede Labs companion, not in this pack: suede-verify)
 - The eval work is one lane of a bigger coordinated build → **suede-agent-teams**

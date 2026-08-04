@@ -96,7 +96,7 @@ their names match the task:
 - `suede-full-send`
 - `suede-ai-eval`
 - `suede-recommend-next-action`
-- `suede-ship-gate`
+- `suede-ci-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
 - `suede-site-alchemy`
@@ -469,7 +469,7 @@ Build and quality lane:
   `suede-code-grader`.
 - AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
   retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
-- CI merge gate: `suede-ship-gate` — prompted only.
+- CI merge gate: `suede-ci-gate` — prompted only.
 - Large, risky, cross-surface, or release-bound coordination:
   `suede-agent-teams` (see Agent Team Workflow above).
 - One scored recommendation for what to do next, packaged as a runnable
@@ -561,7 +561,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-full-send \
   skills/suede-ai-eval \
   skills/suede-recommend-next-action \
-  skills/suede-ship-gate \
+  skills/suede-ci-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \

@@ -54,7 +54,7 @@
         "suede-codex-fleet",
         "suede-ai-eval",
         "suede-ship",
-        "suede-ship-gate",
+        "suede-ci-gate",
         "suede-seo-audit",
         "suede-visibility-grader",
         "suede-site-alchemy",
@@ -483,11 +483,11 @@
     {
       "name": "suede-ship",
       "area": "workflow",
-      "description": "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface. Halts on a blocking hazard (a real secret in a tracked file, a live process holding a target worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ship-gate).",
+      "description": "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface. Halts on a blocking hazard (a real secret in a tracked file, a live process holding a target worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate).",
       "useWhen": "Take a nontrivial multi-file change through a research-heavy agent graph that halts on hazards and gates on real tests."
     },
     {
-      "name": "suede-ship-gate",
+      "name": "suede-ci-gate",
       "area": "workflow",
       "description": "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock.",
       "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."

@@ -239,7 +239,7 @@ Issue: extractNotForRedirects() uses the regex
   suede-ai-eval, suede-campaign-in-a-box, suede-code (3 targets),
   suede-code-grader, suede-code-review, suede-release-linter,
   suede-rights-audit (3), suede-rights-passport, suede-seo-audit (3),
-  suede-ship-gate, suede-site-alchemy (3), suede-sync-packaging (3),
+  suede-ci-gate, suede-site-alchemy (3), suede-sync-packaging (3),
   suede-visibility-grader — and for every one of them, the existence check
   at line 258 ("named skill X does not exist in skill pack") only runs
   against the first target, never the second or third. Today this hasn't
@@ -430,7 +430,7 @@ Verify that threat mitigations declared in a threat model (ADR threat table, PLA
 
 - Findings-only, with Accessibility and SEO lanes → **suede-code-review**
 - The letter grade alone, no findings → **suede-code-grader**
-- Verdict delivered; make CI enforce it on every merge → **suede-ship-gate**
+- Verdict delivered; make CI enforce it on every merge → **suede-ci-gate**
 - The diff ships AI behavior with no eval coverage → **suede-ai-eval**
 - Fixes span multiple coordinated lanes → **suede-agent-teams**
 - Completion-claim law for saying a fix is done, live, merged, or ready →

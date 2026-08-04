@@ -27,7 +27,8 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 - Suede Code — Review and grade code in one pass: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md
 - Suede Code Review — Deep diff review with TS/React/Next.js/Swift-iOS/OWASP/DB checklists, iOS traps, and native contract drift checks: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md
 - [Suede Code Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
-- Suede Ship Gate — Wire any repo so CI actually gates the merge: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship-gate/SKILL.md
+- Suede Ship — Canonical shipping DAG: scout, research, lane plan, disjoint parallel build, adversarial review, release verification: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship/SKILL.md
+- Suede CI Gate — Wire any repo so CI actually gates the merge: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ci-gate/SKILL.md
 - [Johnny Suede Write](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-write.html): One loadable writing mode for copy, brand voice, SEO/AEO/GEO/AI EO, CTAs, and anti-slop editing.
 - [Johnny Suede Design](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, Suedify restyling, and visual QA.
 - Suede Design — Evolve any interface from generic to intentional with design laws and tokens: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-design/SKILL.md

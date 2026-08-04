@@ -30,9 +30,9 @@
         "./skills/suede-code",
         "./skills/suede-code-review",
         "./skills/suede-code-grader",
-        "./skills/suede-ship-gate"
+        "./skills/suede-ci-gate"
       ],
-      "description": "Code quality subset: one-pass review plus an A-F ship verdict (suede-code), deep findings with TypeScript, React, Next.js, OWASP, and database checklists (suede-code-review), a grade-only verdict with instant-F triggers and grade caps (suede-code-grader), and CI branch protection that gates the merge (suede-ship-gate)."
+      "description": "Code quality subset: one-pass review plus an A-F ship verdict (suede-code), deep findings with TypeScript, React, Next.js, OWASP, and database checklists (suede-code-review), a grade-only verdict with instant-F triggers and grade caps (suede-code-grader), and CI branch protection that gates the merge (suede-ci-gate)."
     },
     {
       "name": "suede-marketing",

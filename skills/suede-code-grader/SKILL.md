@@ -373,5 +373,5 @@ not an invented test result or a guessed line number.
 ## Routing
 
 - Findings and fix briefs behind the grade → **suede-code** (combined) or **suede-code-review** (findings only, plus Accessibility/SEO lanes)
-- Grade is C or below and the repo has no merge gate → **suede-ship-gate**
+- Grade is C or below and the repo has no merge gate → **suede-ci-gate**
 - The change ships AI behavior with no eval coverage → **suede-ai-eval**
