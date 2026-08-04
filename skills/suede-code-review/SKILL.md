@@ -568,6 +568,6 @@ Reason: [one sentence, naming the blocking finding ID or named caveat]
 
 - Findings plus a letter grade in one pass → **suede-code**
 - The grade alone, no findings → **suede-code-grader**
-- Findings fixed; make CI block regressions on merge → **suede-ship-gate**
+- Findings fixed; make CI block regressions on merge → **suede-ci-gate**
 - The diff touches an LLM, RAG, or agent surface → **suede-ai-eval**
 - Fixes need coordinated parallel lanes → **suede-agent-teams**

@@ -69,7 +69,7 @@ const FLAGSHIP_SKILLS = [
   "suede-release-linter",
   "suede-code",
   "suede-code-review",
-  "suede-ship-gate",
+  "suede-ci-gate",
   "suede-codex-fleet",
 ];
 const FLAGSHIP_PRIORITY = "0.85";

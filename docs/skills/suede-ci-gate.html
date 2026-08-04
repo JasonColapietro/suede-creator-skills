@@ -7,12 +7,12 @@
     <meta name="description" content="Use Suede Ship Gate in Claude Code and Codex to wire path-aware CI, ci-success aggregation, lockfile hygiene, and branch protection settings.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ship-gate.html">
+    <link rel="canonical" href="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ci-gate.html">
     <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Ship Gate - Suede Creator Skills">
     <meta property="og:description" content="Use Suede Ship Gate in Claude Code and Codex to wire path-aware CI, ci-success aggregation, lockfile hygiene, and branch protection settings.">
-    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ship-gate.html">
+    <meta property="og:url" content="https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ci-gate.html">
     <meta property="og:image" content="https://jasoncolapietro.github.io/suede-creator-skills/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Suede Ship Gate - Suede Creator Skills">
@@ -22,17 +22,17 @@
       {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ship-gate.html#article",
+        "@id": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ci-gate.html#article",
         "headline": "Suede Ship Gate - Suede Creator Skills",
         "description": "Suede Ship Gate detects repo apps, lockfiles, workflows, runtimes, deploy platform, and scripts before generating CI. It uses path-aware jobs, a ci-success aggregator, and exact branch-protection settings.",
-        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ship-gate.html",
+        "url": "https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ci-gate.html",
         "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
         "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
         "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "GitHub Actions", "branch protection", "path-aware CI", "ci-success aggregator", "lockfile hygiene", "runtime detection"],
         "mainEntity": {
           "@type": "SoftwareSourceCode",
-          "name": "suede-ship-gate",
-          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ship-gate",
+          "name": "suede-ci-gate",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ci-gate",
           "programmingLanguage": "Markdown",
           "applicationCategory": "DeveloperTool",
           "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
@@ -287,25 +287,25 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <div class="eyebrow">/suede-ship-gate &middot; CI merge gate</div>
+      <div class="eyebrow">/suede-ci-gate &middot; CI merge gate</div>
       <h1>CI that actually says no.</h1>
       <p class="lead">Suede Ship Gate wires CI and branch protection so one required check blocks bad merges without deadlocking path-filtered jobs. It detects apps, package managers, lockfiles, existing workflows, runtimes, deploy platform, and real scripts before writing workflows. It generates workflow files and exact protection settings, but it does not push, flip branch protection, or change repo access on its own.</p>
-      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ship-gate">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
+      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ci-gate">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
         <span class="plain-ask-quote">&quot;make CI actually block bad merges&quot;</span>
         <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
-        <code class="plain-ask-cmd">/suede-ship-gate</code>
+        <code class="plain-ask-cmd">/suede-ci-gate</code>
         <span class="plain-ask-note">Ask in plain words. The <a href="suede-workflow-skills.html">router</a> reads the request and loads this lane; MCP agents find it with <code>list_suede_skills</code>.</span>
       </div>
 
-      <div class="skill-term" aria-label="Sample session for /suede-ship-gate">
+      <div class="skill-term" aria-label="Sample session for /suede-ci-gate">
         <div class="skill-term-bar" aria-hidden="true">
           <span class="tdot2"></span><span class="tdot2"></span><span class="tdot2"></span>
           <span class="skill-term-title">claude code &middot; sample session</span>
         </div>
         <div class="skill-term-body">
-          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-ship-gate wire ci</span></span>
+          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-ci-gate wire ci</span></span>
           <span class="t-line">stack detected: next.js + pnpm &middot; lockfile pinned</span>
           <span class="t-line">one required check &middot; no deadlock path</span>
           <span class="t-line"><span class="term-grade">BRANCH PROTECTION: ON</span></span>
@@ -321,11 +321,11 @@
         <p><strong>Claude Code project-level copy</strong></p>
         <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
 mkdir -p .claude/skills
-cp -R /tmp/suede-creator-skills/skills/suede-ship-gate .claude/skills/</code></pre>
+cp -R /tmp/suede-creator-skills/skills/suede-ci-gate .claude/skills/</code></pre>
         <p><strong>Codex installer</strong></p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-ship-gate</code></pre>
+  --path skills/suede-ci-gate</code></pre>
       </section>
 
       <section class="grid">
@@ -356,7 +356,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-ship-gate .claude/skills/</code></p
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $suede-ship-gate to audit this repo's existing GitHub Actions, detect apps and lockfiles, add path-aware CI with a ci-success aggregator, and give me the exact branch protection settings for main.</code></pre>
+        <pre><code>Use $suede-ci-gate to audit this repo's existing GitHub Actions, detect apps and lockfiles, add path-aware CI with a ci-success aggregator, and give me the exact branch protection settings for main.</code></pre>
       </section>
 
       <section class="panel">

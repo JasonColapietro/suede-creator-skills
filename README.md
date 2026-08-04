@@ -13,7 +13,7 @@ A free, MIT-licensed, broadly reusable pack of **68 public skill folders** for C
 - **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
-- **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
+- **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ci-gate`).
 - **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
 - **Next-action recommendation**: score 2-4 candidate moves on goal alignment, unblocking, evidence, urgency, and leverage, then return one recommendation packaged as a short runnable prompt (`suede-recommend-next-action`).
 - **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
@@ -127,7 +127,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-code`](skills/suede-code) | Review + A-F grade in one pass |
 | [`suede-code-review`](skills/suede-code-review) | Deep findings with Accessibility and SEO lanes, no letter grade |
 | [`suede-code-grader`](skills/suede-code-grader) | A-F ship verdict only, 7 lanes, instant-F triggers |
-| [`suede-ship-gate`](skills/suede-ship-gate) | Write CI that gates the merge — stack/lockfile detection, one required check, branch protection |
+| [`suede-ci-gate`](skills/suede-ci-gate) | Write CI that gates the merge — stack/lockfile detection, one required check, branch protection |
 
 ### Design, copy & SEO
 

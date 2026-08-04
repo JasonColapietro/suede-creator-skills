@@ -60,7 +60,7 @@ creators, agencies, and AI power users. It ships 68 public `SKILL.md` folders:
 one umbrella workflow (`suede-workflow-skills`), 21 workflow skills
 (`johnny-suede-write`, `johnny-suede-design`, `suede-full-send`, `suede-code`,
 `suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`, `suede-deslop`,
-`suede-agent-teams`, `suede-codex-fleet`, `suede-ship-gate`,
+`suede-agent-teams`, `suede-codex-fleet`, `suede-ci-gate`,
 `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
 `suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
 `suede-mcp-qa`, `site-to-ios-app`, `android-app-factory`), 5 creator skills
@@ -444,7 +444,7 @@ copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 Run `suede-full-send` when the user explicitly wants maximum useful effort,
 max agents, adversarial review, or a broad authorized outcome finished
 end-to-end.
-Run `suede-ship-gate` when you need a CI gate that blocks merges on failing
+Run `suede-ci-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ## Social Copy
