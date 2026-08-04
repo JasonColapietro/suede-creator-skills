@@ -250,6 +250,46 @@
       ]
     },
     {
+      "id": "social-instagram",
+      "skills": ["suede-social", "suede-instagram-growth"],
+      "fallback": "suede-social",
+      "routes": [
+        {
+          "skill": "suede-instagram-growth",
+          "positive": ["instagram", "ig", "reels", "stories", "last 30 posts", "views to sales", "daily instagram"],
+          "negative": ["multi platform", "cross platform", "linkedin", "twitter"],
+          "metadataMustContain": ["instagram", "reels", "views"]
+        },
+        {
+          "skill": "suede-social",
+          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social"],
+          "negative": ["last 30 posts", "daily instagram", "views to sales"],
+          "metadataMustContain": ["platform", "social"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "instagram-audit-positive",
+          "mode": "positive",
+          "prompt": "Analyze the last 30 posts and Reels on our Instagram account, then map views to sales.",
+          "expected": "suede-instagram-growth"
+        },
+        {
+          "id": "social-negative-instagram",
+          "mode": "negative",
+          "prompt": "Plan one cross-platform calendar for LinkedIn, Twitter, and Instagram.",
+          "expected": "suede-social",
+          "forbidden": ["suede-instagram-growth"]
+        },
+        {
+          "id": "social-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help with our social media strategy.",
+          "expected": "suede-social"
+        }
+      ]
+    },
+    {
       "id": "amazon-subscription",
       "skills": ["amazon-returns-recovery", "subscription-recovery"],
       "fallback": "subscription-recovery",

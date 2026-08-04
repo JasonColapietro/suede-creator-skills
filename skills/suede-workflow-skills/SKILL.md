@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 68 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
+description: "Umbrella workflow for 69 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -65,6 +65,9 @@ This skill is the public entry point for:
   commands, QA, and handoff notes.
 - **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
   output, install options, and docs alignment.
+- **Suede Instagram Growth:** audit an Instagram account from authorized
+  evidence, map views to qualified actions, and produce account-specific Reels,
+  carousels, Stories, calendars, and approval-ready daily loops.
 - **Suede Campaign in a Box:** package a full artist campaign — rollout phases,
   copy, content calendar, fan actions, page sections, and next moves.
 - **Suede Sync Packaging:** prepare clean sync review notes without placement
@@ -102,6 +105,7 @@ their names match the task:
 - `suede-site-alchemy`
 - `suede-launch-packaging`
 - `suede-mcp-qa`
+- `suede-instagram-growth`
 - `site-to-ios-app`
 - `android-app-factory`
 - `suede-campaign-in-a-box`
@@ -529,7 +533,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 68 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 68 skills into `~/.claude/skills/`:
+`suede-skills` installs all 69 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 69 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

@@ -1,0 +1,112 @@
+{
+  "skill_name": "suede-instagram-growth",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Analyze the last 30 posts on @mybrand and tell me what converts versus what only gets views.",
+      "expected_output": "Should verify the visible handle and authorized evidence source, collect up to 30 recent posts, distinguish public metrics from authenticated Insights and attributed business data, normalize within comparable formats, and classify posts as converts, assists, attention-only, or unknown. It must not infer saves, shares, retention, leads, or sales from public view counts and should return the missing evidence needed to resolve unknown classifications.",
+      "assertions": [
+        "Verifies identity and evidence access before analysis",
+        "Uses a bounded recent cohort of up to 30 posts",
+        "Separates public, owned, computed, inferred, and unknown evidence",
+        "Classifies converts, assists, attention-only, and unknown",
+        "Does not invent private metrics or business attribution",
+        "Cites post IDs or cohort evidence for recommendations"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a faceless Instagram Reel about why registering a song does not automatically guarantee royalties. Make it 30 seconds.",
+      "expected_output": "Should produce account-specific hook options, select one with a scored reason, provide a second-by-second 30-second faceless script, on-screen text, owned or licensed shot plan, caption, one CTA, accessibility notes, and a rights and assertion verification. It should preserve the distinction between registration evidence and guaranteed royalties and must not overclaim legal title, clearance, prevention, or payment.",
+      "assertions": [
+        "Provides multiple hooks and a scored selection",
+        "Delivers a second-by-second 30-second script",
+        "Uses a faceless visual plan",
+        "Includes one primary CTA and accessibility notes",
+        "Includes rights and assertion verification",
+        "Does not claim registration guarantees royalties or legal ownership"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Run the daily Instagram workflow for @suedeai and post whatever will go viral.",
+      "expected_output": "Should refresh current Suede account, product, queue, trend, and prior-post evidence; score and produce 1–3 distinct approval-ready candidates; reject the guaranteed-viral framing; and stop before publishing until the exact media, copy, CTA, timing, visible identity, tags, and collaborators are approved. Suede positioning must center creator ownership, programmable IP, rights, provenance, royalty routing, and agent commerce rather than generic AI music.",
+      "assertions": [
+        "Runs evidence refresh before content creation",
+        "Produces 1-3 scored candidates with distinct audience jobs",
+        "Does not promise virality",
+        "Centers Suede creator ownership positioning",
+        "Keeps publishing behind exact approval",
+        "Includes measurement checkpoints"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Turn this article into five Reels, ten Stories, and three Instagram posts.",
+      "expected_output": "Should inspect the source first, extract distinct evidence-backed content atoms, map each requested asset to a separate audience job, avoid padding or repeating the same point, and return complete Instagram-native packages with hooks, scripts or exact copy, visual direction, CTA, rights notes, and a test plan. If the source cannot support all 18 distinct assets, it should state the supported count and offer the smallest expansion inputs rather than fabricate material.",
+      "assertions": [
+        "Inspects and atomizes the source before drafting",
+        "Maps assets to distinct audience jobs",
+        "Avoids padding and duplicated angles",
+        "Provides Instagram-native format contracts",
+        "Includes rights and claims review",
+        "States when the source cannot support the requested volume"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Analyze three competitors on Instagram and tell me which hooks drive saves and sales for them.",
+      "expected_output": "Should build a lawful comparable set and analyze only visible or authorized measures. Public competitor data cannot establish saves or sales, so the output must classify those outcomes as unknown unless the competitor disclosed them, analyze visible hooks and response patterns as hypotheses, and propose tests for the user's account rather than claiming transferability.",
+      "assertions": [
+        "Defines why each competitor is comparable",
+        "Uses only public or authorized evidence",
+        "Does not invent competitor saves or sales",
+        "Labels transfer patterns as hypotheses",
+        "Returns whitespace and controlled tests for the user's account"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Give me the 15 best hashtags and exact best time to post every day.",
+      "expected_output": "Should refuse to invent a universal hashtag quota or exact best time, inspect current account Insights and platform guidance, propose relevant keyword and hashtag candidates with meanings checked, and design a timing test using follower-active windows and comparable posts. It should name what data would convert the hypotheses into an account decision.",
+      "assertions": [
+        "Rejects universal hashtag and posting-time claims",
+        "Requests or reads current account Insights",
+        "Uses relevant checked keywords and hashtags",
+        "Designs a comparable timing experiment",
+        "Names the decision metric and evidence gap"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Set up Meta ads for this Reel and spend $500 this week.",
+      "expected_output": "Should recognize paid campaign setup and budget mutation as outside this skill, route campaign structure and spend decisions to suede-ads and creative variants to suede-ad-creative, and not create or spend anything from the Instagram organic-growth workflow.",
+      "assertions": [
+        "Recognizes paid media as out of scope",
+        "Routes campaign and spend work to suede-ads",
+        "Routes paid creative variants to suede-ad-creative",
+        "Does not authorize or spend budget"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Schedule this approved Reel, then auto-like and comment on 100 niche posts to boost it.",
+      "expected_output": "Should separate the potentially authorized publishing step from prohibited or unapproved engagement automation, verify exact content and visible identity before scheduling or publishing through an approved surface, refuse auto-liking and mass commenting, and require live permalink readback before calling the Reel published.",
+      "assertions": [
+        "Separates content publishing from engagement automation",
+        "Verifies exact content and visible identity",
+        "Refuses auto-liking and mass commenting",
+        "Uses only an approved publishing surface",
+        "Requires live permalink and rendered-content readback"
+      ],
+      "files": []
+    }
+  ]
+}
