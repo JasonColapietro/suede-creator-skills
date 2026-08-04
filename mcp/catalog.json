@@ -107,6 +107,7 @@
         "suede-emails",
         "suede-free-tools",
         "suede-image",
+        "suede-instagram-growth",
         "suede-lead-magnets",
         "suede-marketing-council",
         "suede-marketing-ideas",
@@ -343,6 +344,12 @@
       "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
     },
     {
+      "name": "suede-instagram-growth",
+      "area": "marketing",
+      "description": "Suede-owned Instagram growth operating system for account-specific audits, Reels, carousels, Stories, conversion mapping, calendars, and daily candidate-production loops. Use when the user names Instagram, IG, Reels, Stories, asks to analyze recent posts, grow a handle, run a daily workflow, create or repurpose Instagram content, or distinguish views from follows, leads, and sales. NOT FOR: multi-platform organic strategy (use suede-social), full video rendering or editing (use suede-video), paid Meta campaigns (use suede-ads or suede-ad-creative), analytics instrumentation (use suede-analytics), or any publish, comment, follow, like, or DM action without exact approval.",
+      "useWhen": "The user wants an Instagram account audit, growth plan, Reels, carousels, Stories, content calendar, daily workflow, or a map from views to qualified actions and sales."
+    },
+    {
       "name": "suede-lead-magnets",
       "area": "marketing",
       "description": "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy).",
@@ -513,7 +520,7 @@
     {
       "name": "suede-social",
       "area": "marketing",
-      "description": "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, carousels, short-form scripts, calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval.",
+      "description": "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, cross-platform calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: Instagram-specific account audits, Reels, carousels, Stories, or daily Instagram loops (use suede-instagram-growth), paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval.",
       "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account."
     },
     {
@@ -537,7 +544,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 68 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 69 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

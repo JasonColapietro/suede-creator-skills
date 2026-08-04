@@ -1,6 +1,6 @@
 ---
 name: suede-social
-description: "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, carousels, short-form scripts, calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval."
+description: "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, cross-platform calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: Instagram-specific account audits, Reels, carousels, Stories, or daily Instagram loops (use suede-instagram-growth), paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval."
 metadata:
   version: 2.2.0
 ---
@@ -58,6 +58,10 @@ then change one variable at a time.
 | Facebook | Communities and local audiences | Groups, posts, native video |
 
 **For detailed platform strategies**: See [references/platforms.md](references/platforms.md)
+
+For an Instagram-specific account audit, conversion map, Reel or carousel
+package, Story system, or daily Instagram loop, route to
+`suede-instagram-growth` instead of applying the cross-platform defaults here.
 
 **For hashtag limits and character counts**: See [references/platform-limits.md](references/platform-limits.md)
 
@@ -486,6 +490,8 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 
 ## Routing
 
+- Use `suede-instagram-growth` for Instagram-specific account audits,
+  conversion mapping, Reels, carousels, Stories, calendars, and daily loops.
 - Use `suede-content-strategy` for the broader editorial system.
 - Use `suede-video` for full video generation and production.
 - Use `suede-ad-creative` for paid social concepts and variants.
