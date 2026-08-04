@@ -7,10 +7,10 @@ abstract: >-
   outcome-bound orchestration through Suede Full Send, design, anti-slop
   copywriting, SEO/AEO/AI EO audits, reference-site restyling (Suedify), website
   visibility and CTA grading, A-F code grading, agent QA, launch packaging,
-  artist-campaign tools, and creator rights utilities.
+  Instagram growth, artist-campaign tools, and creator rights utilities.
 type: software
-version: 0.9.2
-date-released: 2026-08-01
+version: 0.10.0
+date-released: 2026-08-04
 authors:
   - family-names: Colapietro
     given-names: Jason
