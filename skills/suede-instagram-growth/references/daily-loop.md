@@ -64,4 +64,3 @@ Approval status: draft | exact-content approved | published and read back
 - **Rights or disclosure unclear:** use the halt contract and omit the asset.
 - **Comments or DMs contain threats, medical/legal/financial claims, private
   data, or account-security issues:** escalate for human review; do not reply.
-

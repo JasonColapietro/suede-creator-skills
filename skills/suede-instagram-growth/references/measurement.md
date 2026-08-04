@@ -72,4 +72,3 @@ Always separate:
 4. experiment result;
 5. inference and confidence;
 6. the next smallest test.
-
