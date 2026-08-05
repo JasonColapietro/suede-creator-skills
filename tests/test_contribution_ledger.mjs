@@ -770,3 +770,203 @@ test("explicit lock recovery removes only a verifiably stale local process lock"
   assert.equal(recovered.recovered, true);
   assert.equal(fs.existsSync(lockPath), false);
 });
+
+// The guards below were all deletable with the suite still green (mutation
+// testing, 2026-08-05). Each test targets one of them directly.
+
+test("a spent publication grant cannot be replayed or re-issued", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger, { scope: "owned" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner", "--authority-note", "Owner approved this run",
+  ]);
+  const target = "refs/heads/feature/empty-metadata";
+  const publicationArgs = [
+    "--action", "push",
+    "--authority-target", target,
+    "--remote-url", "https://github.com/example/project/tree/feature/empty-metadata",
+    "--performed-by", "publisher",
+  ];
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Push this named branch only",
+    "--target", target,
+  ]);
+  success(["transition", "--ledger", ledger, "--id", task.id, "--to", "published", ...publicationArgs]);
+
+  // Replaying the spent grant must fail rather than record a second push.
+  const replay = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published", ...publicationArgs,
+  ]);
+  assert.equal(replay.status, 1);
+  assert.match(replay.stderr, /Push was already recorded/);
+
+  // A fresh push grant must not be obtainable once the task has published.
+  const regrant = cli([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Try again", "--target", target,
+  ]);
+  assert.equal(regrant.status, 1);
+  assert.match(regrant.stderr, /can only be recorded while task is packet_ready/);
+
+  const state = JSON.parse(fs.readFileSync(ledger, "utf8"));
+  const stored = state.items.find(({ id }) => id === task.id);
+  assert.equal(stored.publications.filter((entry) => entry.action === "push").length, 1);
+  assert.ok(stored.grants.push.usedAt);
+});
+
+test("a publication grant is bound to its exact authority target", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger, { scope: "owned" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner", "--authority-note", "Owner approved this run",
+  ]);
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Push this named branch only",
+    "--target", "refs/heads/feature/empty-metadata",
+  ]);
+
+  const wrongTarget = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push",
+    "--authority-target", "refs/heads/feature/something-else",
+    "--remote-url", "https://github.com/example/project/tree/feature/something-else",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(wrongTarget.status, 1);
+  assert.match(wrongTarget.stderr, /--authority-target does not match the recorded push grant/);
+
+  // Evidence must also match the granted branch, not merely be well-formed.
+  const wrongEvidence = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push",
+    "--authority-target", "refs/heads/feature/empty-metadata",
+    "--remote-url", "https://github.com/example/project/tree/feature/something-else",
+    "--performed-by", "publisher",
+  ]);
+  assert.equal(wrongEvidence.status, 1);
+  assert.match(wrongEvidence.stderr, /Push evidence does not match the authorized repository and branch target/);
+});
+
+test("a lease can only be operated by the worker holding it", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const task = add(ledger, { scope: "owned" });
+  success(["claim", "--ledger", ledger, "--id", task.id, "--worker", "holder"]);
+
+  for (const args of [
+    ["heartbeat", "--ledger", ledger, "--id", task.id, "--worker", "intruder"],
+    ["release", "--ledger", ledger, "--id", task.id, "--worker", "intruder"],
+    ["transition", "--ledger", ledger, "--id", task.id, "--worker", "intruder", "--to", "changed_locally"],
+  ]) {
+    const result = cli(args);
+    assert.equal(result.status, 1, `${args[0]} should reject a non-owner`);
+    assert.match(result.stderr, /is leased to holder/);
+  }
+
+  // The rightful holder is unaffected.
+  success(["heartbeat", "--ledger", ledger, "--id", task.id, "--worker", "holder"]);
+});
+
+test("an owner rejection blocks the packet and cannot be overwritten by an approval", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const statement = "Generated with AI assistance as required by this repository.";
+  let task = add(ledger, {
+    ref: "reject-is-durable",
+    disclosure: "required",
+    disclosureStatement: statement,
+  });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  // Record the branch and commit artifacts so packet_ready is gated on the
+  // rejected pr artifact alone, not on missing checks.
+  for (const [kind, text] of [
+    ["branch", "feature/empty-metadata\n"],
+    ["commit", "fix(parser): handle empty metadata\n"],
+  ]) {
+    const inputPath = path.join(directory, `${kind}.txt`);
+    fs.writeFileSync(inputPath, text);
+    const recorded = cli([
+      "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", worker,
+      "--kind", kind, "--input", inputPath,
+    ]);
+    assert.ok([0, 3].includes(recorded.status), recorded.stderr);
+  }
+  const prPath = path.join(directory, "pr.txt");
+  fs.writeFileSync(prPath, [
+    "## Summary", "Preserve the required disclosure.", "",
+    "## Why", "Follow repository policy.", "",
+    "## Testing", "npm test", "",
+    "## Scope", "PR copy only.", "",
+    "## Risks", "Owner review is required.", "",
+    statement, "",
+  ].join("\n"));
+  const checked = cli([
+    "artifact-check", "--ledger", ledger, "--id", task.id, "--worker", worker,
+    "--kind", "pr", "--input", prPath,
+  ]);
+  assert.equal(checked.status, 3);
+  const artifact = JSON.parse(checked.stdout).artifact;
+  assert.equal(artifact.outcome, "owner_review_required");
+
+  success([
+    "review-artifact", "--ledger", ledger, "--id", task.id, "--kind", "pr",
+    "--sha256", artifact.sha256, "--decision", "reject",
+    "--actor", "owner", "--review-note", "Do not ship this copy",
+  ]);
+
+  // The party under review must not be able to overturn the veto on identical
+  // content by simply re-running the command with --decision approve.
+  const overwrite = cli([
+    "review-artifact", "--ledger", ledger, "--id", task.id, "--kind", "pr",
+    "--sha256", artifact.sha256, "--decision", "approve",
+    "--actor", worker, "--review-note", "Actually fine",
+  ]);
+  assert.equal(overwrite.status, 1);
+  assert.match(overwrite.stderr, /already rejected by owner/);
+
+  const stored = JSON.parse(fs.readFileSync(ledger, "utf8"))
+    .items.find(({ id }) => id === task.id);
+  assert.equal(stored.artifacts.pr.ownerReview.decision, "reject");
+
+  // A rejected artifact must also keep the packet closed.
+  const blocked = cli([
+    "transition", "--ledger", ledger, "--id", task.id, "--worker", worker, "--to", "packet_ready",
+  ]);
+  assert.equal(blocked.status, 1);
+  assert.match(blocked.stderr, /unresolved artifact checks: pr/);
+});
+
+test("the CLI runs when invoked through a symlinked path", (t) => {
+  const { directory, ledger } = workspace(t);
+  const linkPath = path.join(directory, "ledger-cli.mjs");
+  fs.symlinkSync(SCRIPT, linkPath);
+
+  // path.resolve() does not follow symlinks, so an entrypoint guard comparing
+  // it against import.meta.url exits 0 without running main() — a silent no-op
+  // that reads as success to any caller checking the exit code.
+  const result = spawnSync(process.execPath, [linkPath, "init", "--ledger", ledger], {
+    encoding: "utf8",
+  });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(JSON.parse(result.stdout).ok, true);
+  assert.ok(fs.existsSync(ledger), "init through a symlink must actually write the ledger");
+
+  const bogus = spawnSync(process.execPath, [linkPath, "not-a-command"], { encoding: "utf8" });
+  assert.equal(bogus.status, 1);
+  assert.match(bogus.stderr, /Unknown command/);
+});

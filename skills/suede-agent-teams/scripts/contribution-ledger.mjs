@@ -1121,6 +1121,18 @@ function reviewArtifact(options) {
     if (sha256 !== artifact.sha256) {
       throw new UsageError("--sha256 does not match the current artifact content");
     }
+    // A recorded rejection is the only human veto in this pipeline, and it must
+    // survive the party under review. Without this guard the same content could
+    // be re-reviewed with --decision approve — same sha256, opposite verdict,
+    // no lease, worker, or actor separation required — and the packet would
+    // proceed to publication. Remediation is to change the artifact, which
+    // re-runs artifact-check and clears ownerReview.
+    const priorReview = artifact.ownerReview;
+    if (priorReview?.decision === "reject" && priorReview.sha256 === sha256) {
+      throw new UsageError(
+        `${kind} artifact was already rejected by ${priorReview.actor} at ${priorReview.recordedAt}; change the artifact and re-run artifact-check to request a new review`,
+      );
+    }
     const decision = enumValue(options, "decision", ["approve", "reject"], null);
     const ownerReview = {
       decision,
@@ -1197,5 +1209,20 @@ async function main() {
   }
 }
 
-const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : null;
+// `import.meta.url` is already realpath-resolved, so the invoked path must be
+// too. path.resolve() does not follow symlinks: invoking through any symlinked
+// path (on macOS, anything under /tmp) made these disagree, main() never ran,
+// and the process exited 0 having done nothing — an authority gate that reads
+// as success to any caller checking $?.
+function realInvokedPath(argvPath) {
+  if (!argvPath) return null;
+  const resolved = path.resolve(argvPath);
+  try {
+    return fs.realpathSync(resolved);
+  } catch {
+    return resolved;
+  }
+}
+
+const invokedPath = realInvokedPath(process.argv[1]);
 if (invokedPath === fileURLToPath(import.meta.url)) await main();
