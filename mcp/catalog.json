@@ -54,6 +54,7 @@
         "suede-codex-fleet",
         "suede-ai-eval",
         "suede-ship",
+        "suede-ship-copy",
         "suede-ci-gate",
         "suede-seo-audit",
         "suede-visibility-grader",
@@ -494,6 +495,12 @@
       "useWhen": "Take a nontrivial multi-file change through a research-heavy agent graph that halts on hazards and gates on real tests."
     },
     {
+      "name": "suede-ship-copy",
+      "area": "workflow",
+      "description": "Suede Labs copy-only orchestration DAG: intake with a verbatim capture of the published text, five blind research lenses, an audit of agent-generated facts that closes the set of assertable claims, three angles, a section map with one message per section, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet).",
+      "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied."
+    },
+    {
       "name": "suede-ci-gate",
       "area": "workflow",
       "description": "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock.",
@@ -544,7 +551,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 69 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 70 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],
