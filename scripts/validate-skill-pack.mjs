@@ -796,7 +796,9 @@ for (const file of publicSkillFiles) {
 const knownPrivateSkills = ["suede-map", "suede-deslop", "suede-debug", "suede-docs",
   "suede-think", "suede-plan", "suede-spec", "suede-arch", "suede-ui",
   "suede-product", "suede-growth", "suede-verify", "suede-progress",
-  "suede-roadmap", "suede-slides", "suede-visual-qa"].filter((n) => !skillNames.includes(n));
+  "suede-roadmap", "suede-slides", "suede-visual-qa", "suede-git-hygiene",
+  "suede-skill-forge", "suede-verification-law", "suede-execute",
+  "suede-install-support"].filter((n) => !skillNames.includes(n));
 
 for (const file of publicSkillFiles) {
   const rel = path.relative(repoRoot, file);
@@ -810,6 +812,21 @@ for (const file of publicSkillFiles) {
       fail.push(`Private skill name '${privateName}' appears in frontmatter of ${rel}`);
     }
   }
+  // The body may cite a private companion, but only as a disclosed dead end.
+  // An undisclosed "-> suede-x" in a Routing Reference sends a public installer
+  // after a skill they do not have and cannot get, with nothing marking it as
+  // unavailable. Every other citation in the pack already carries the phrase;
+  // two in suede-codex-fleet did not, because the guard only read frontmatter.
+  const body = text.slice(fm[0].length);
+  body.split("\n").forEach((line, index) => {
+    const disclosed = /not in this pack/i.test(line) || /private suede/i.test(line);
+    if (disclosed) return;
+    for (const privateName of knownPrivateSkills) {
+      if (new RegExp(`(?<![a-z0-9-])${privateName}(?![a-z0-9-])`).test(line)) {
+        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede Labs companion, not in this pack: ${privateName})"`);
+      }
+    }
+  });
 }
 
 const installShPath = path.join(repoRoot, "install.sh");
@@ -882,16 +899,16 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
-  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+-[A-Za-z]+) skills, one portable/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+(?:-[A-Za-z]+)?) skills, one portable/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
-  { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+-[A-Za-z]+) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
-  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+-[A-Za-z]+) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/dav/index.html", label: "meta description", re: /Install (\d+) public Codex and Claude skills/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "og:description", re: /property="og:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "twitter:description", re: /name="twitter:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "JSON-LD description", re: /"description":\s*"A (\d+)-skill public workflow/, expected: totalSkillCount },
-  { file: "docs/dav/index.html", label: "hero-subline", re: /([A-Za-z]+-[A-Za-z]+) public skills for Suedify/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/dav/index.html", label: "hero-subline", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills for Suedify/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/skills/suede-workflow-skills.html", label: "meta description", re: /routes the agent across all (\d+) skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "og:description", re: /Public Suede umbrella skill for (\d+) installable skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "twitter:description", re: /umbrella workflow skill for (\d+) public Johnny Suede/, expected: totalSkillCount },
@@ -899,12 +916,12 @@ const countChecks = [
   { file: "docs/skills/suede-workflow-skills.html", label: "lead paragraph", re: /route the agent across all (\d+) Suede skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "folders heading", re: /<h2>All (\d+) public skill folders<\/h2>/, expected: totalSkillCount },
   { file: ".claude-plugin/plugin.json", label: "description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
-  { file: ".codex-plugin/plugin.json", label: "description", re: /([A-Za-z]+-[A-Za-z]+) public Suede skills/, expected: totalSkillCount, wordNumber: true },
+  { file: ".codex-plugin/plugin.json", label: "description", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public Suede skills/, expected: totalSkillCount, wordNumber: true },
   { file: "mcp/catalog.json", label: "umbrella description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/SKILL.md", label: "frontmatter description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
   { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
-  { file: "PROMO.md", label: "companion skill count", re: /with ([A-Za-z]+-[A-Za-z]+) companion skills/, expected: companionSkillCount, wordNumber: true },
+  { file: "PROMO.md", label: "companion skill count", re: /with ([A-Za-z]+(?:-[A-Za-z]+)?) companion skills/, expected: companionSkillCount, wordNumber: true },
   { file: "PRODUCT.md", label: "public skills count", re: /(\d+) public skills/, expected: totalSkillCount },
   { file: ".agents/plugins/marketplace.json", label: "Codex catalog skill count", re: /(\d+) public Suede skills/, expected: totalSkillCount },
   { file: ".claude-plugin/marketplace.json", label: "marketplace description", re: /(\d+) MIT-licensed skills/, expected: totalSkillCount },

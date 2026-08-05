@@ -103,5 +103,7 @@ Keep a persistent workspace per recurring fleet job (a social-content fleet, a t
 
 - Multi-lane Claude agent coordination with gates and handoffs -> suede-agent-teams
 - Low-volume, judgment-dense copy -> suede-copy / johnny-suede-write
-- Proving the assembled deliverable meets spec -> suede-verify
-- Skill authoring/lint questions about this file -> suede-skill-forge
+- Proving the assembled deliverable meets spec -> private Suede Labs companion,
+  not in this pack: `suede-verify`
+- Skill authoring or estate-lint questions about this file -> private Suede
+  Labs companion, not in this pack: `suede-skill-forge`

@@ -1,5 +1,5 @@
 ---
-name: suede-ship-gate
+name: suede-ci-gate
 description: "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock."
 ---
 

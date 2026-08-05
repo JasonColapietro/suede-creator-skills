@@ -535,7 +535,7 @@ Cue Suede:
   isolated worktrees, review, and an authority-gated packet → read
   `references/public-contribution-program.md` and keep this skill as controller
 - A code lane needs review or a ship grade → **suede-code** (combined), **suede-code-review** (findings only), or **suede-code-grader** (grade only)
-- The repo's merge gate is weak or missing → **suede-ship-gate**
+- The repo's merge gate is weak or missing → **suede-ci-gate**
 - The work needs branch ownership, stale-mirror worktree setup, finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)
 - A lane ships AI behavior → **suede-ai-eval** before that lane's quality gate closes
 - The public launch lane needs a page verdict → **suede-visibility-grader**, then **suede-launch-packaging**

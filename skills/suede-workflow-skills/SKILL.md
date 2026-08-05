@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 67 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, and creator workflows. Loads the full public skill pack."
+description: "Umbrella workflow for 71 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -65,6 +65,9 @@ This skill is the public entry point for:
   commands, QA, and handoff notes.
 - **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
   output, install options, and docs alignment.
+- **Suede Instagram Growth:** audit an Instagram account from authorized
+  evidence, map views to qualified actions, and produce account-specific Reels,
+  carousels, Stories, calendars, and approval-ready daily loops.
 - **Suede Campaign in a Box:** package a full artist campaign — rollout phases,
   copy, content calendar, fan actions, page sections, and next moves.
 - **Suede Sync Packaging:** prepare clean sync review notes without placement
@@ -96,12 +99,13 @@ their names match the task:
 - `suede-full-send`
 - `suede-ai-eval`
 - `suede-recommend-next-action`
-- `suede-ship-gate`
+- `suede-ci-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
 - `suede-site-alchemy`
 - `suede-launch-packaging`
 - `suede-mcp-qa`
+- `suede-instagram-growth`
 - `site-to-ios-app`
 - `android-app-factory`
 - `suede-campaign-in-a-box`
@@ -469,7 +473,7 @@ Build and quality lane:
   `suede-code-grader`.
 - AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
   retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
-- CI merge gate: `suede-ship-gate` — prompted only.
+- CI merge gate: `suede-ci-gate` — prompted only.
 - Large, risky, cross-surface, or release-bound coordination:
   `suede-agent-teams` (see Agent Team Workflow above).
 - One scored recommendation for what to do next, packaged as a runnable
@@ -529,7 +533,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 67 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 67 skills into `~/.claude/skills/`:
+`suede-skills` installs all 70 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 70 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -561,7 +565,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-full-send \
   skills/suede-ai-eval \
   skills/suede-recommend-next-action \
-  skills/suede-ship-gate \
+  skills/suede-ci-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \

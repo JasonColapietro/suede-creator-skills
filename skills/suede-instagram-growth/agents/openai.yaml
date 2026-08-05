@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede Instagram Growth"
+  short_description: "Account-specific Instagram growth, content, and conversion"
+  default_prompt: "Use $suede-instagram-growth on [handle or account evidence]. Audit the recent post cohort from authorized evidence, separate public metrics from private Insights, map attention to follows, leads, and sales, then create account-specific Reels, carousels, Stories, calendars, or a daily approval-ready workflow. Treat timing, cadence, hooks, formats, and hashtags as tests; never scrape, invent private metrics, or publish or engage without exact-content and visible-identity approval."
+policy:
+  allow_implicit_invocation: true
