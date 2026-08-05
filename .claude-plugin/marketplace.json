@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Agent skills for Claude Code and Codex: decisive full-send routing, multi-agent orchestration, Codex CLI worker fleets, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. 70 MIT-licensed skills.",
+  "description": "Agent skills for Claude Code and Codex: decisive full-send routing, multi-agent orchestration, Codex CLI worker fleets, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. 71 MIT-licensed skills.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -9,7 +9,7 @@
     {
       "name": "suede-skills",
       "source": "./",
-      "description": "Complete Suede workflow: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs all 70 skills."
+      "description": "Complete Suede workflow: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs all 71 skills."
     },
     {
       "name": "suede-agent-workflows",
@@ -50,6 +50,7 @@
         "./skills/suede-community-marketing",
         "./skills/suede-competitor-profiling",
         "./skills/suede-competitors",
+        "./skills/suede-clip-to-guide",
         "./skills/suede-content-strategy",
         "./skills/suede-customer-research",
         "./skills/suede-directory-submissions",

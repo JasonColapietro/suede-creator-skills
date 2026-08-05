@@ -102,6 +102,7 @@
         "suede-community-marketing",
         "suede-competitor-profiling",
         "suede-competitors",
+        "suede-clip-to-guide",
         "suede-content-strategy",
         "suede-customer-research",
         "suede-directory-submissions",
@@ -507,6 +508,12 @@
       "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
     },
     {
+      "name": "suede-clip-to-guide",
+      "area": "workflow",
+      "description": "Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package that bridges short-form attention to a long-form asset.",
+      "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate."
+    },
+    {
       "name": "suede-signup",
       "area": "marketing",
       "description": "Suede-owned signup conversion discipline. Use when auditing or redesigning account creation, registration, or trial-start flows, including field friction, progressive profiling, identity options, mobile behavior, abandonment, and measurement. NOT FOR: post-signup activation (use suede-onboarding), lead-capture forms (use suede-site-alchemy), or deploying auth and compliance changes without review.",
@@ -551,7 +558,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 70 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 71 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],
