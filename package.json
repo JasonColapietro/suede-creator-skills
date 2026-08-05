@@ -14,6 +14,7 @@
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
     "test": "npm run validate && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:python",
     "audit:dependencies": "npm audit --omit=dev --audit-level=high",
+    "check:description": "node scripts/check-repo-description.mjs",
     "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test"
   },
   "dependencies": {
