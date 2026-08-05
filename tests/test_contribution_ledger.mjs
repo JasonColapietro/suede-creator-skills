@@ -970,3 +970,47 @@ test("the CLI runs when invoked through a symlinked path", (t) => {
   assert.equal(bogus.status, 1);
   assert.match(bogus.stderr, /Unknown command/);
 });
+
+test("the required disclosure statement cannot be used as a lint kill switch", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  const base = [
+    "add", "--ledger", ledger, "--repo", "up/project", "--title", "Add the listing",
+    "--scope", "external", "--disclosure", "required",
+    "--disclosure-source", "Checked repository contribution instructions",
+    "--impact", "3", "--confidence", "3", "--effort", "3", "--risk", "3",
+  ];
+
+  // The statement is masked out of the PR artifact before linting, so an
+  // unbounded one exempts whatever it covers. Declaring the whole PR body as
+  // the statement would disable every outward-copy rule.
+  const wholeBody = [
+    "## Summary", "Add the listing.", "", "## Why", "Useful.", "",
+    "## Testing", "npm test", "", "## Scope", "Docs only.", "",
+    "## Risks", "Low.", "", "\u{1F916} Generated with Claude Code", "",
+    "Co-Authored-By: Claude <noreply@anthropic.com>", "",
+  ].join("\n");
+  const swallowed = cli([...base, "--ref", "42", "--disclosure-statement", wholeBody]);
+  assert.equal(swallowed.status, 1);
+  assert.match(swallowed.stderr, /at most 4 lines/);
+
+  const tooLong = cli([...base, "--ref", "43", "--disclosure-statement", "d".repeat(401)]);
+  assert.equal(tooLong.status, 1);
+  assert.match(tooLong.stderr, /at most 400 characters/);
+
+  // A short statement must not smuggle the exact markers masking would delete.
+  const smuggled = cli([...base, "--ref", "44", "--disclosure-statement", [
+    "Disclosure: assisted.",
+    "\u{1F916} Generated with Claude Code",
+    "Co-Authored-By: Claude <noreply@anthropic.com>",
+  ].join("\n")]);
+  assert.equal(smuggled.status, 1);
+  assert.match(smuggled.stderr, /coauthor-tool-trailer|robot-marker/);
+
+  // A genuine upstream-mandated disclosure is still accepted.
+  const accepted = success([
+    ...base, "--ref", "45",
+    "--disclosure-statement", "Generated with AI assistance as required by this repository.",
+  ]);
+  assert.equal(accepted.task.disclosure, "required");
+});

@@ -553,6 +553,7 @@ function addTask(options) {
     if (disclosure === "required" && !disclosureStatement?.trim()) {
       throw new UsageError("Required disclosure requires --disclosure-statement with the exact upstream text");
     }
+    if (disclosure === "required") requireBoundedDisclosureStatement(disclosureStatement);
     const factors = {
       impact: boundedInteger(options, "impact", 3, 1, 5),
       confidence: boundedInteger(options, "confidence", 3, 1, 5),
@@ -974,6 +975,37 @@ function lintArtifact(text) {
   return findings;
 }
 
+const MAX_DISCLOSURE_STATEMENT_CHARS = 400;
+const MAX_DISCLOSURE_STATEMENT_LINES = 4;
+
+// The required disclosure statement is masked out of the PR artifact before
+// linting, so every byte it covers is exempt from the outward-copy rules. An
+// unbounded statement is therefore a lint kill switch, two ways: declare the
+// entire PR body as the "statement" and no rule can fire, or hide the exact
+// banned trailers inside a short statement so masking deletes them. An
+// upstream-mandated disclosure is an attribution line, not a document — bound
+// it, and refuse one that smuggles the very markers masking would exempt.
+function requireBoundedDisclosureStatement(statement) {
+  const text = String(statement ?? "");
+  if (text.length > MAX_DISCLOSURE_STATEMENT_CHARS) {
+    throw new UsageError(
+      `--disclosure-statement must be at most ${MAX_DISCLOSURE_STATEMENT_CHARS} characters; got ${text.length}`,
+    );
+  }
+  const lines = text.replace(/\n+$/, "").split("\n").length;
+  if (lines > MAX_DISCLOSURE_STATEMENT_LINES) {
+    throw new UsageError(
+      `--disclosure-statement must be at most ${MAX_DISCLOSURE_STATEMENT_LINES} lines; got ${lines}`,
+    );
+  }
+  const smuggled = [...new Set(lintArtifact(text).map((finding) => finding.rule))];
+  if (smuggled.length > 0) {
+    throw new UsageError(
+      `--disclosure-statement contains outward-copy violations that masking would exempt: ${smuggled.join(", ")}`,
+    );
+  }
+}
+
 function validateArtifactShape(kind, text) {
   const findings = [];
   if (kind === "branch") {
@@ -1057,6 +1089,7 @@ async function checkArtifact(options) {
     if (task.disclosure === "required" && kind === "pr") {
       outcome = "owner_review_required";
       const statement = task.disclosureStatement;
+      requireBoundedDisclosureStatement(statement);
       const occurrences = statement ? text.split(statement).length - 1 : 0;
       if (occurrences !== 1) {
         throw new UsageError("PR artifact must contain the exact required disclosure statement once", 3);
