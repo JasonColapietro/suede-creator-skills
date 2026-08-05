@@ -796,7 +796,9 @@ for (const file of publicSkillFiles) {
 const knownPrivateSkills = ["suede-map", "suede-deslop", "suede-debug", "suede-docs",
   "suede-think", "suede-plan", "suede-spec", "suede-arch", "suede-ui",
   "suede-product", "suede-growth", "suede-verify", "suede-progress",
-  "suede-roadmap", "suede-slides", "suede-visual-qa"].filter((n) => !skillNames.includes(n));
+  "suede-roadmap", "suede-slides", "suede-visual-qa", "suede-git-hygiene",
+  "suede-skill-forge", "suede-verification-law", "suede-execute",
+  "suede-install-support"].filter((n) => !skillNames.includes(n));
 
 for (const file of publicSkillFiles) {
   const rel = path.relative(repoRoot, file);
@@ -810,6 +812,21 @@ for (const file of publicSkillFiles) {
       fail.push(`Private skill name '${privateName}' appears in frontmatter of ${rel}`);
     }
   }
+  // The body may cite a private companion, but only as a disclosed dead end.
+  // An undisclosed "-> suede-x" in a Routing Reference sends a public installer
+  // after a skill they do not have and cannot get, with nothing marking it as
+  // unavailable. Every other citation in the pack already carries the phrase;
+  // two in suede-codex-fleet did not, because the guard only read frontmatter.
+  const body = text.slice(fm[0].length);
+  body.split("\n").forEach((line, index) => {
+    const disclosed = /not in this pack/i.test(line) || /private suede/i.test(line);
+    if (disclosed) return;
+    for (const privateName of knownPrivateSkills) {
+      if (new RegExp(`(?<![a-z0-9-])${privateName}(?![a-z0-9-])`).test(line)) {
+        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede Labs companion, not in this pack: ${privateName})"`);
+      }
+    }
+  });
 }
 
 const installShPath = path.join(repoRoot, "install.sh");
