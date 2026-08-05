@@ -40,7 +40,7 @@ workflow pack with a clear install path and unusually strong ship discipline.
 
 ## Constraints
 
-- Keep all 69 public skills, install commands, benchmark disclosures, canonical
+- Keep all 70 public skills, install commands, benchmark disclosures, canonical
   URLs, structured data, and GitHub Pages paths accurate.
 - Preserve evidence integrity: comparisons remain self-graded and losses stay
   visible.

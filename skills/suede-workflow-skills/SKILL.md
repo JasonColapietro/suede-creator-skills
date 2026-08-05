@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 69 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack."
+description: "Umbrella workflow for 70 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack."
 ---
 
 # Suede Workflow Skills
@@ -533,7 +533,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 69 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 69 skills into `~/.claude/skills/`:
+`suede-skills` installs all 70 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 70 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
