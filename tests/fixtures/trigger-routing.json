@@ -66,7 +66,7 @@
         },
         {
           "skill": "suede-agent-teams",
-          "positive": ["coordinated agent lanes", "agent lanes", "shared change", "collision checks", "wip checks", "quality gates"],
+          "positive": ["coordinated agent lanes", "agent lanes", "shared change", "collision checks", "wip checks", "quality gates", "public repo contributions", "public repository contribution program", "issue leases", "contribution packet"],
           "negative": ["codex cli", "independent batches", "full public skill pack", "full send", "max effort", "max agents", "never end your allocation above zero"],
           "metadataMustContain": ["coordinated", "lanes"]
         },
@@ -106,6 +106,12 @@
           "id": "teams-positive",
           "mode": "positive",
           "prompt": "Coordinate agent lanes for one shared change with collision checks, quality gates, and WIP checks.",
+          "expected": "suede-agent-teams"
+        },
+        {
+          "id": "teams-contribution-program-positive",
+          "mode": "positive",
+          "prompt": "Run a public repository contribution program with issue leases and a contribution packet.",
           "expected": "suede-agent-teams"
         },
         {
@@ -246,6 +252,46 @@
           "mode": "ambiguous",
           "prompt": "Turn this product into a native mobile app.",
           "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "social-instagram",
+      "skills": ["suede-social", "suede-instagram-growth"],
+      "fallback": "suede-social",
+      "routes": [
+        {
+          "skill": "suede-instagram-growth",
+          "positive": ["instagram", "ig", "reels", "stories", "last 30 posts", "views to sales", "daily instagram"],
+          "negative": ["multi platform", "cross platform", "linkedin", "twitter"],
+          "metadataMustContain": ["instagram", "reels", "views"]
+        },
+        {
+          "skill": "suede-social",
+          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social"],
+          "negative": ["last 30 posts", "daily instagram", "views to sales"],
+          "metadataMustContain": ["platform", "social"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "instagram-audit-positive",
+          "mode": "positive",
+          "prompt": "Analyze the last 30 posts and Reels on our Instagram account, then map views to sales.",
+          "expected": "suede-instagram-growth"
+        },
+        {
+          "id": "social-negative-instagram",
+          "mode": "negative",
+          "prompt": "Plan one cross-platform calendar for LinkedIn, Twitter, and Instagram.",
+          "expected": "suede-social",
+          "forbidden": ["suede-instagram-growth"]
+        },
+        {
+          "id": "social-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help with our social media strategy.",
+          "expected": "suede-social"
         }
       ]
     },

@@ -2,22 +2,22 @@ cff-version: 1.2.0
 message: "If you use Suede Creator Skills, please cite it as below."
 title: "Suede Creator Skills"
 abstract: >-
-  A public, open-source (MIT) pack of 67 installable Agent Skills for Claude Code
+  A public, open-source (MIT) pack of 71 installable Agent Skills for Claude Code
   and OpenAI Codex, plus an optional Model Context Protocol (MCP) server. Covers
   outcome-bound orchestration through Suede Full Send, design, anti-slop
   copywriting, SEO/AEO/AI EO audits, reference-site restyling (Suedify), website
   visibility and CTA grading, A-F code grading, agent QA, launch packaging,
-  artist-campaign tools, and creator rights utilities.
+  Instagram growth, artist-campaign tools, and creator rights utilities.
 type: software
-version: 0.9.2
-date-released: 2026-08-01
+version: 0.10.0
+date-released: 2026-08-04
 authors:
   - family-names: Colapietro
     given-names: Jason
     affiliation: "Suede Labs AI"
     website: "https://suedeai.ai/founder"
 repository-code: "https://github.com/JasonColapietro/suede-creator-skills"
-url: "https://jasoncolapietro.github.io/suede-creator-skills/"
+url: "https://skills.suedeai.ai/"
 license: MIT
 keywords:
   - Claude Code

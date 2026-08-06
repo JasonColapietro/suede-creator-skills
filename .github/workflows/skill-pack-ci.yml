@@ -45,6 +45,15 @@ jobs:
       - name: Audit production dependencies
         run: npm run audit:dependencies
 
+      # The repository description is the only skill-count surface that is not
+      # a tracked file, so `npm run ci` cannot reach it. Kept as its own step
+      # because it needs the network; it skips rather than fails when the API
+      # is unreachable or rate-limited.
+      - name: Check repository description skill count
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run check:description
+
       - name: Reject whitespace errors
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -59,3 +68,46 @@ jobs:
           else
             git show --check --format= --no-renames "$GITHUB_SHA"
           fi
+
+  # `build` is a required status check on main. It existed in branch protection
+  # but no job produced it, so every pull request was permanently blocked and
+  # merges only landed via admin bypass. Rather than drop the requirement, this
+  # job makes it real: it exercises install.sh — the documented user-facing
+  # install path — which nothing else in CI covered.
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install the pack into a sandboxed HOME
+        run: |
+          set -euo pipefail
+          SANDBOX="$(mktemp -d)"
+          HOME="$SANDBOX" bash install.sh
+          installed="$(find "$SANDBOX/.claude/skills" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+          expected="$(find skills -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+          manifests="$(find "$SANDBOX/.claude/skills" -name SKILL.md | wc -l | tr -d ' ')"
+          echo "installed=$installed expected=$expected SKILL.md=$manifests"
+          if [ "$installed" != "$expected" ]; then
+            echo "::error::install.sh installed $installed skills, repository has $expected"
+            exit 1
+          fi
+          if [ "$manifests" != "$expected" ]; then
+            echo "::error::install.sh landed $manifests SKILL.md files, expected $expected"
+            exit 1
+          fi
+
+      - name: Verify plugin manifests parse
+        run: |
+          set -euo pipefail
+          for manifest in .claude-plugin/marketplace.json .claude-plugin/plugin.json \
+                          .codex-plugin/plugin.json .agents/plugins/marketplace.json \
+                          mcp/catalog.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$manifest','utf8'))" \
+              || { echo "::error::$manifest is not valid JSON"; exit 1; }
+          done
+          echo "all plugin manifests parse"

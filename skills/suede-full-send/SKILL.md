@@ -158,7 +158,7 @@ review lanes:
 - `suede-code-review` for concrete findings;
 - `suede-code-grader` for an A-F readiness verdict;
 - `suede-code` when both are useful;
-- `suede-ship-gate` for CI and merge protection;
+- `suede-ci-gate` for CI and merge protection;
 - `suede-mcp-qa` for MCP catalogs, schemas, prompts, resources, and protocol;
 - `suede-visibility-grader` for public findability, clarity, proof, and AI
   readability;

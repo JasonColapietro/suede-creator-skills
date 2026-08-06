@@ -56,11 +56,11 @@ portable skill pack.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 67 public `SKILL.md` folders:
+creators, agencies, and AI power users. It ships 70 public `SKILL.md` folders:
 one umbrella workflow (`suede-workflow-skills`), 21 workflow skills
 (`johnny-suede-write`, `johnny-suede-design`, `suede-full-send`, `suede-code`,
 `suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`, `suede-deslop`,
-`suede-agent-teams`, `suede-codex-fleet`, `suede-ship-gate`,
+`suede-agent-teams`, `suede-codex-fleet`, `suede-ci-gate`,
 `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
 `suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
 `suede-mcp-qa`, `site-to-ios-app`, `android-app-factory`), 5 creator skills
@@ -72,11 +72,11 @@ one umbrella workflow (`suede-workflow-skills`), 21 workflow skills
 
 ### Page title
 
-Suede Creator Skills | 67 Open-Source Agent Skills
+Suede Creator Skills | 70 Open-Source Agent Skills
 
 ### Meta description
 
-Install 67 free open-source Claude Code and Codex skills for Full Send, code
+Install 70 free open-source Claude Code and Codex skills for Full Send, code
 review, CI ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and
 creator workflows.
 
@@ -86,7 +86,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the 67-skill Suede pack that gives agents portable context: Full Send,
+Install the 71-skill Suede pack that gives agents portable context: Full Send,
 linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
 CTA grades, A-F code review, coordinated agent teams, install-path checks,
@@ -444,19 +444,19 @@ copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 Run `suede-full-send` when the user explicitly wants maximum useful effort,
 max agents, adversarial review, or a broad authorized outcome finished
 end-to-end.
-Run `suede-ship-gate` when you need a CI gate that blocks merges on failing
+Run `suede-ci-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 67 public agent skills for Full Send, design,
+Suede Creator Skills are live: 70 public agent skills for Full Send, design,
 copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
 grading, code review, CI gating, iOS/Android app shipping, launch packaging,
 artist campaigns, and creator rights workflows.
 
-Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
+Docs: https://skills.suedeai.ai/skills/
 
 ### Builder post
 

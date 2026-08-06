@@ -66,6 +66,7 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
     "rights-audit-passport",
     "android-ios",
     "amazon-subscription",
+    "social-instagram",
   ]);
   const catalogByName = new Map(catalog.skills.map((skill) => [skill.name, skill]));
   const seenGroups = new Set();

@@ -159,7 +159,7 @@ core-task blockers cannot be downgraded to cosmetic caveats.
 ## Routing
 
 - Existing-app findings-only review → `suede-code-review`.
-- CI implementation around the release evidence → `suede-ship-gate`.
+- CI implementation around the release evidence → `suede-ci-gate`.
 - Coordinated architecture, product, policy, store, and QA lanes →
   `suede-agent-teams` with exclusive file ownership and a serialized release
   lane.

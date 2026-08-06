@@ -796,7 +796,9 @@ for (const file of publicSkillFiles) {
 const knownPrivateSkills = ["suede-map", "suede-deslop", "suede-debug", "suede-docs",
   "suede-think", "suede-plan", "suede-spec", "suede-arch", "suede-ui",
   "suede-product", "suede-growth", "suede-verify", "suede-progress",
-  "suede-roadmap", "suede-slides", "suede-visual-qa"].filter((n) => !skillNames.includes(n));
+  "suede-roadmap", "suede-slides", "suede-visual-qa", "suede-git-hygiene",
+  "suede-skill-forge", "suede-verification-law", "suede-execute",
+  "suede-install-support"].filter((n) => !skillNames.includes(n));
 
 for (const file of publicSkillFiles) {
   const rel = path.relative(repoRoot, file);
@@ -810,6 +812,21 @@ for (const file of publicSkillFiles) {
       fail.push(`Private skill name '${privateName}' appears in frontmatter of ${rel}`);
     }
   }
+  // The body may cite a private companion, but only as a disclosed dead end.
+  // An undisclosed "-> suede-x" in a Routing Reference sends a public installer
+  // after a skill they do not have and cannot get, with nothing marking it as
+  // unavailable. Every other citation in the pack already carries the phrase;
+  // two in suede-codex-fleet did not, because the guard only read frontmatter.
+  const body = text.slice(fm[0].length);
+  body.split("\n").forEach((line, index) => {
+    const disclosed = /not in this pack/i.test(line) || /private suede/i.test(line);
+    if (disclosed) return;
+    for (const privateName of knownPrivateSkills) {
+      if (new RegExp(`(?<![a-z0-9-])${privateName}(?![a-z0-9-])`).test(line)) {
+        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede Labs companion, not in this pack: ${privateName})"`);
+      }
+    }
+  });
 }
 
 const installShPath = path.join(repoRoot, "install.sh");
@@ -882,16 +899,16 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
-  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+-[A-Za-z]+) skills, one portable/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+(?:-[A-Za-z]+)?) skills, one portable/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
-  { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+-[A-Za-z]+) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
-  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+-[A-Za-z]+) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/dav/index.html", label: "meta description", re: /Install (\d+) public Codex and Claude skills/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "og:description", re: /property="og:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "twitter:description", re: /name="twitter:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "JSON-LD description", re: /"description":\s*"A (\d+)-skill public workflow/, expected: totalSkillCount },
-  { file: "docs/dav/index.html", label: "hero-subline", re: /([A-Za-z]+-[A-Za-z]+) public skills for Suedify/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/dav/index.html", label: "hero-subline", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills for Suedify/, expected: totalSkillCount, wordNumber: true },
   { file: "docs/skills/suede-workflow-skills.html", label: "meta description", re: /routes the agent across all (\d+) skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "og:description", re: /Public Suede umbrella skill for (\d+) installable skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "twitter:description", re: /umbrella workflow skill for (\d+) public Johnny Suede/, expected: totalSkillCount },
@@ -899,12 +916,12 @@ const countChecks = [
   { file: "docs/skills/suede-workflow-skills.html", label: "lead paragraph", re: /route the agent across all (\d+) Suede skills/, expected: totalSkillCount },
   { file: "docs/skills/suede-workflow-skills.html", label: "folders heading", re: /<h2>All (\d+) public skill folders<\/h2>/, expected: totalSkillCount },
   { file: ".claude-plugin/plugin.json", label: "description", re: /Installs all (\d+) skills/, expected: totalSkillCount },
-  { file: ".codex-plugin/plugin.json", label: "description", re: /([A-Za-z]+-[A-Za-z]+) public Suede skills/, expected: totalSkillCount, wordNumber: true },
+  { file: ".codex-plugin/plugin.json", label: "description", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public Suede skills/, expected: totalSkillCount, wordNumber: true },
   { file: "mcp/catalog.json", label: "umbrella description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/SKILL.md", label: "frontmatter description", re: /Umbrella workflow for (\d+) public skills/, expected: totalSkillCount },
   { file: "skills/suede-workflow-skills/agents/openai.yaml", label: "short_description", re: /Umbrella workflow across (\d+) public skills/, expected: totalSkillCount },
   { file: "COPY.md", label: "subhead", re: /Install the (\d+)-skill Suede pack/, expected: totalSkillCount },
-  { file: "PROMO.md", label: "companion skill count", re: /with ([A-Za-z]+-[A-Za-z]+) companion skills/, expected: companionSkillCount, wordNumber: true },
+  { file: "PROMO.md", label: "companion skill count", re: /with ([A-Za-z]+(?:-[A-Za-z]+)?) companion skills/, expected: companionSkillCount, wordNumber: true },
   { file: "PRODUCT.md", label: "public skills count", re: /(\d+) public skills/, expected: totalSkillCount },
   { file: ".agents/plugins/marketplace.json", label: "Codex catalog skill count", re: /(\d+) public Suede skills/, expected: totalSkillCount },
   { file: ".claude-plugin/marketplace.json", label: "marketplace description", re: /(\d+) MIT-licensed skills/, expected: totalSkillCount },
@@ -917,6 +934,12 @@ const countChecks = [
   { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
   { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
   { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  // The install sections repeat "all N skills" five times — plugin, Codex
+  // plugin, install.sh, Codex clone, and the Claude Code heading. All five sat
+  // at 70 while the badge and intro said 71, because nothing guarded them and
+  // a first-match check would have cleared the file on occurrence one.
+  { file: "README.md", label: "install-section pack size", re: /[Aa]ll (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "README.md", label: "public skill folders", re: /\*\*(\d+) public skill folders\*\*/, expected: totalSkillCount },
   { file: "CITATION.cff", label: "abstract skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
   { file: "docs/llms.txt", label: "summary skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
   { file: "docs/llms.txt", label: "skill index line", re: /Browse all (\d+) skills\./, expected: totalSkillCount },
@@ -945,19 +968,29 @@ for (const check of countChecks) {
     continue;
   }
   const text = readText(filePath);
-  const match = text.match(check.re);
-  if (!match) {
+  // Most checks guard a phrase that appears once. `every: true` guards a phrase
+  // that repeats — every occurrence is validated, not just the first. Without
+  // it, a repeated sentence drifts silently past the first hit: README said
+  // "71" in three places and "all 70 skills" in five others, and a first-match
+  // check on either phrasing would have reported the file clean.
+  const matches = check.every
+    ? [...text.matchAll(new RegExp(check.re.source, `${check.re.flags.replace(/g/g, "")}g`))]
+    : [text.match(check.re)].filter(Boolean);
+  if (matches.length === 0) {
     warn.push(`Count check pattern not found in ${check.file} (${check.label}) — copy may have moved; update scripts/validate-skill-pack.mjs`);
     continue;
   }
-  const found = check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
-  if (found === null || Number.isNaN(found)) {
-    warn.push(`Count check could not parse a number in ${check.file} (${check.label}): "${match[1]}"`);
-    continue;
-  }
-  if (found !== check.expected) {
-    fail.push(`Stale skill count in ${check.file} (${check.label}): says ${found}, expected ${check.expected}`);
-  }
+  matches.forEach((match, i) => {
+    const where = check.every ? ` [occurrence ${i + 1} of ${matches.length}]` : "";
+    const found = check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
+    if (found === null || Number.isNaN(found)) {
+      warn.push(`Count check could not parse a number in ${check.file} (${check.label})${where}: "${match[1]}"`);
+      return;
+    }
+    if (found !== check.expected) {
+      fail.push(`Stale skill count in ${check.file} (${check.label})${where}: says ${found}, expected ${check.expected}`);
+    }
+  });
 }
 
 // Structural guard for the docs catalog page. String checks above prove the
@@ -1190,9 +1223,9 @@ for (const check of countChecks) {
     const COMPLETENESS = /\b(complete documentation of every skill|documentation of every skill|every skill|all \d+ skills)\b/i;
     for (const entry of llmsText.split("\n").filter((line) => line.trim().startsWith("- ["))) {
       if (!COMPLETENESS.test(entry)) continue;
-      const linked = entry.match(/\]\((https:\/\/jasoncolapietro\.github\.io\/suede-creator-skills\/[^)]*)\)/)?.[1];
+      const linked = entry.match(/\]\((https:\/\/skills\.suedeai\.ai\/[^)]*)\)/)?.[1];
       if (!linked) continue;
-      const rel = linked.slice("https://jasoncolapietro.github.io/suede-creator-skills/".length) || "index.html";
+      const rel = linked.slice("https://skills.suedeai.ai/".length) || "index.html";
       const target = path.join(repoRoot, "docs", rel.endsWith("/") ? `${rel}index.html` : rel);
       if (!fs.existsSync(target)) continue;
       const pageText = readText(target);
@@ -1201,7 +1234,7 @@ for (const check of countChecks) {
         fail.push(`docs/llms.txt claims completeness for ${rel} but that page omits ${absent.length} of ${skillNames.length} skills`);
       }
     }
-    const siteBase = "https://jasoncolapietro.github.io/suede-creator-skills/";
+    const siteBase = "https://skills.suedeai.ai/";
     const blobBase = "https://github.com/JasonColapietro/suede-creator-skills/blob/main/";
     for (const rawUrl of llmsText.match(/https:\/\/[^\s)\]]+/g) || []) {
       const url = rawUrl.replace(/[.,)]+$/, "");
