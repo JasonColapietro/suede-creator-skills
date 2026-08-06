@@ -934,6 +934,12 @@ const countChecks = [
   { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
   { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
   { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  // The install sections repeat "all N skills" five times — plugin, Codex
+  // plugin, install.sh, Codex clone, and the Claude Code heading. All five sat
+  // at 70 while the badge and intro said 71, because nothing guarded them and
+  // a first-match check would have cleared the file on occurrence one.
+  { file: "README.md", label: "install-section pack size", re: /[Aa]ll (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "README.md", label: "public skill folders", re: /\*\*(\d+) public skill folders\*\*/, expected: totalSkillCount },
   { file: "CITATION.cff", label: "abstract skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
   { file: "docs/llms.txt", label: "summary skill count", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
   { file: "docs/llms.txt", label: "skill index line", re: /Browse all (\d+) skills\./, expected: totalSkillCount },
@@ -962,19 +968,29 @@ for (const check of countChecks) {
     continue;
   }
   const text = readText(filePath);
-  const match = text.match(check.re);
-  if (!match) {
+  // Most checks guard a phrase that appears once. `every: true` guards a phrase
+  // that repeats — every occurrence is validated, not just the first. Without
+  // it, a repeated sentence drifts silently past the first hit: README said
+  // "71" in three places and "all 70 skills" in five others, and a first-match
+  // check on either phrasing would have reported the file clean.
+  const matches = check.every
+    ? [...text.matchAll(new RegExp(check.re.source, `${check.re.flags.replace(/g/g, "")}g`))]
+    : [text.match(check.re)].filter(Boolean);
+  if (matches.length === 0) {
     warn.push(`Count check pattern not found in ${check.file} (${check.label}) — copy may have moved; update scripts/validate-skill-pack.mjs`);
     continue;
   }
-  const found = check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
-  if (found === null || Number.isNaN(found)) {
-    warn.push(`Count check could not parse a number in ${check.file} (${check.label}): "${match[1]}"`);
-    continue;
-  }
-  if (found !== check.expected) {
-    fail.push(`Stale skill count in ${check.file} (${check.label}): says ${found}, expected ${check.expected}`);
-  }
+  matches.forEach((match, i) => {
+    const where = check.every ? ` [occurrence ${i + 1} of ${matches.length}]` : "";
+    const found = check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
+    if (found === null || Number.isNaN(found)) {
+      warn.push(`Count check could not parse a number in ${check.file} (${check.label})${where}: "${match[1]}"`);
+      return;
+    }
+    if (found !== check.expected) {
+      fail.push(`Stale skill count in ${check.file} (${check.label})${where}: says ${found}, expected ${check.expected}`);
+    }
+  });
 }
 
 // Structural guard for the docs catalog page. String checks above prove the

@@ -31,7 +31,7 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 70 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 71 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 In Codex, add the repo's Codex-native marketplace and install the complete
 plugin:
@@ -41,10 +41,10 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads all 70 skills and registers both read-only MCP discovery
+The Codex plugin loads all 71 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating it.
 
-Prefer a clone? `install.sh` copies all 70 skills into `~/.claude/skills/` and prints the installed count:
+Prefer a clone? `install.sh` copies all 71 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -202,7 +202,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-This installs all 70 skills and registers both read-only MCP discovery
+This installs all 71 skills and registers both read-only MCP discovery
 profiles. Restart Codex after installing or updating.
 
 For one selected skill, use the built-in skill installer:
@@ -218,7 +218,7 @@ set instead of the full plugin.
 
 ## Install for Claude Code
 
-All 70 skills:
+All 71 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
