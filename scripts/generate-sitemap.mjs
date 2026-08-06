@@ -19,7 +19,7 @@ const docsRoot = path.join(repoRoot, "docs");
 const sitemapPath = path.join(docsRoot, "sitemap.xml");
 const checkOnly = process.argv.includes("--check");
 
-const BASE_URL = "https://jasoncolapietro.github.io/suede-creator-skills";
+const BASE_URL = "https://skills.suedeai.ai";
 
 function ownsGitHistory() {
   const result = spawnSync(

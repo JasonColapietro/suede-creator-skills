@@ -154,7 +154,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
 | [`subscription-recovery`](skills/subscription-recovery) | Audit recurring charges outside Amazon across App Store, Google Play, PayPal, bank/card evidence, and direct-bill services; report findings first and require confirmation before cancellation or refund contact |
 
-Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
+Plus a creator toolkit (rights, release prep) — see [docs](https://skills.suedeai.ai/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 
 ### Marketing & growth
 
@@ -176,10 +176,10 @@ under the MIT License — see [NOTICE.md](NOTICE.md).
 ## Public pages
 
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
-- [GitHub Pages site](https://jasoncolapietro.github.io/suede-creator-skills/) — public documentation generated from this repo
-- [Skill docs catalog](https://jasoncolapietro.github.io/suede-creator-skills/skills/) — every skill with install and resource links
-- [Installs and MCP page](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html) — install commands plus the Suede Skills MCP
-- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
+- [GitHub Pages site](https://skills.suedeai.ai/) — public documentation generated from this repo
+- [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
+- [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
+- [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
 
 ## MCP server
 

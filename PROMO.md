@@ -638,7 +638,7 @@ Repo:
 https://github.com/JasonColapietro/suede-creator-skills
 
 Docs:
-https://jasoncolapietro.github.io/suede-creator-skills/
+https://skills.suedeai.ai/
 ```
 
 ## Landing Page Blocks

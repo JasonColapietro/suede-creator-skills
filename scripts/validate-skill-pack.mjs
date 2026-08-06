@@ -1223,9 +1223,9 @@ for (const check of countChecks) {
     const COMPLETENESS = /\b(complete documentation of every skill|documentation of every skill|every skill|all \d+ skills)\b/i;
     for (const entry of llmsText.split("\n").filter((line) => line.trim().startsWith("- ["))) {
       if (!COMPLETENESS.test(entry)) continue;
-      const linked = entry.match(/\]\((https:\/\/jasoncolapietro\.github\.io\/suede-creator-skills\/[^)]*)\)/)?.[1];
+      const linked = entry.match(/\]\((https:\/\/skills\.suedeai\.ai\/[^)]*)\)/)?.[1];
       if (!linked) continue;
-      const rel = linked.slice("https://jasoncolapietro.github.io/suede-creator-skills/".length) || "index.html";
+      const rel = linked.slice("https://skills.suedeai.ai/".length) || "index.html";
       const target = path.join(repoRoot, "docs", rel.endsWith("/") ? `${rel}index.html` : rel);
       if (!fs.existsSync(target)) continue;
       const pageText = readText(target);
@@ -1234,7 +1234,7 @@ for (const check of countChecks) {
         fail.push(`docs/llms.txt claims completeness for ${rel} but that page omits ${absent.length} of ${skillNames.length} skills`);
       }
     }
-    const siteBase = "https://jasoncolapietro.github.io/suede-creator-skills/";
+    const siteBase = "https://skills.suedeai.ai/";
     const blobBase = "https://github.com/JasonColapietro/suede-creator-skills/blob/main/";
     for (const rawUrl of llmsText.match(/https:\/\/[^\s)\]]+/g) || []) {
       const url = rawUrl.replace(/[.,)]+$/, "");
