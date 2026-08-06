@@ -186,6 +186,67 @@ function buildEntries() {
   return entries;
 }
 
+// A sitemap regenerated after a squash merge differs only in <lastmod>, so the
+// check separates structural drift (a URL, priority, or changefreq that no
+// longer matches the site — always a failure) from date lag (tolerated briefly,
+// failed once it rots). Grace is deliberately short: long enough to absorb a
+// merge, far too short to let recrawl signal go stale unnoticed.
+const LASTMOD_GRACE_DAYS = 30;
+
+function parseSitemapEntries(xml) {
+  const parsed = new Map();
+  const blockPattern = /<url>([\s\S]*?)<\/url>/g;
+  let block;
+  while ((block = blockPattern.exec(xml)) !== null) {
+    const field = (name) => (block[1].match(new RegExp(`<${name}>([^<]*)</${name}>`)) || [])[1];
+    const loc = field("loc");
+    if (loc) parsed.set(loc, { lastmod: field("lastmod"), changefreq: field("changefreq"), priority: field("priority") });
+  }
+  return parsed;
+}
+
+function daysBetween(earlier, later) {
+  const from = Date.parse(`${earlier}T00:00:00Z`);
+  const to = Date.parse(`${later}T00:00:00Z`);
+  if (Number.isNaN(from) || Number.isNaN(to)) return Number.POSITIVE_INFINITY;
+  return Math.round((to - from) / 86_400_000);
+}
+
+function compareSitemaps(currentXml, expectedEntries) {
+  const committed = parseSitemapEntries(currentXml);
+  const structural = [];
+  const staleWithinGrace = [];
+  const staleBeyondGrace = [];
+  const expectedLocs = new Set();
+
+  for (const entry of expectedEntries) {
+    expectedLocs.add(entry.loc);
+    const found = committed.get(entry.loc);
+    if (!found) {
+      structural.push(`missing URL: ${entry.loc}`);
+      continue;
+    }
+    if (found.changefreq !== entry.changefreq || found.priority !== entry.priority) {
+      structural.push(`changefreq/priority drift: ${entry.loc}`);
+      continue;
+    }
+    if (found.lastmod === entry.lastmod) continue;
+    const lag = daysBetween(found.lastmod, entry.lastmod);
+    if (lag < 0 || !Number.isFinite(lag)) {
+      // Committed date is newer than Git, or unparseable — a hand edit, not lag.
+      structural.push(`lastmod is not derived from Git history: ${entry.loc}`);
+    } else if (lag > LASTMOD_GRACE_DAYS) {
+      staleBeyondGrace.push(`${entry.loc} (${lag} days behind)`);
+    } else {
+      staleWithinGrace.push(entry.loc);
+    }
+  }
+  for (const loc of committed.keys()) {
+    if (!expectedLocs.has(loc)) structural.push(`stale URL no longer on the site: ${loc}`);
+  }
+  return { structural, staleWithinGrace, staleBeyondGrace };
+}
+
 function renderXml(entries) {
   const urls = entries
     .map(
@@ -208,11 +269,31 @@ if (checkOnly) {
     console.log(`Sitemap freshness check skipped: ${reason}.`);
     process.exit(0);
   }
-  if (generated !== current) {
+  const drift = compareSitemaps(current, entries);
+  if (drift.structural.length > 0) {
     console.error(
       `docs/sitemap.xml is out of date (${entries.length} URLs expected). Run: node scripts/generate-sitemap.mjs`
     );
+    for (const problem of drift.structural) console.error(`  ${problem}`);
     process.exit(1);
+  }
+  if (drift.staleBeyondGrace.length > 0) {
+    console.error(
+      `docs/sitemap.xml has <lastmod> values more than ${LASTMOD_GRACE_DAYS} days behind Git. Run: node scripts/generate-sitemap.mjs`
+    );
+    for (const problem of drift.staleBeyondGrace) console.error(`  ${problem}`);
+    process.exit(1);
+  }
+  if (drift.staleWithinGrace.length > 0) {
+    // A squash merge gives every file it touched a new commit date, so the
+    // committed sitemap goes stale the instant the merge lands — and no
+    // pre-merge check can catch it, because the commit that changes the date
+    // is created by the merge itself. Failing here would red main on every
+    // docs-touching PR. Structure is still enforced exactly; only a short
+    // date lag is tolerated, and it is reported rather than hidden.
+    console.log(
+      `docs/sitemap.xml <lastmod> lags Git by up to ${LASTMOD_GRACE_DAYS} days on ${drift.staleWithinGrace.length} URL(s) — within grace. Run: node scripts/generate-sitemap.mjs to refresh.`
+    );
   }
   console.log(`docs/sitemap.xml is up to date (${entries.length} URLs).`);
   process.exit(0);
