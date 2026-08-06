@@ -1014,3 +1014,63 @@ test("the required disclosure statement cannot be used as a lint kill switch", (
   ]);
   assert.equal(accepted.task.disclosure, "required");
 });
+
+test("one repository cannot be tracked under two scopes", (t) => {
+  const { ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  add(ledger, { repo: "upstream/project", ref: "42", scope: "external" });
+
+  // Scope is a property of the repository. An "owned" twin for a repository
+  // already classified as external could take a merge grant, defeating the
+  // external-merge prohibition in substance while honouring it per task.
+  const laundered = cli([
+    "add", "--ledger", ledger, "--repo", "upstream/project", "--ref", "43",
+    "--title", "Owned twin", "--scope", "owned",
+    "--ownership-evidence", "trust me",
+    "--disclosure", "not-required",
+    "--disclosure-source", "Checked repository contribution instructions",
+  ]);
+  assert.equal(laundered.status, 1);
+  assert.match(laundered.stderr, /already tracked as external/);
+
+  // A second task on the same repo with the same scope is still fine.
+  const sameScope = add(ledger, { repo: "upstream/project", ref: "44", scope: "external" });
+  assert.equal(sameScope.scope, "external");
+});
+
+test("requeuing a published task preserves what was actually published", (t) => {
+  const { directory, ledger } = workspace(t);
+  success(["init", "--ledger", ledger]);
+  let task = add(ledger, { scope: "owned" });
+  const worker = "builder";
+  task = advanceToReviewed(ledger, task, worker);
+  recordArtifacts(directory, ledger, task, worker);
+  task = transition(ledger, task, worker, "packet_ready");
+  success([
+    "configure", "--ledger", ledger, "--publish-mode", "owned",
+    "--actor", "owner", "--authority-note", "Owner approved this run",
+  ]);
+  success([
+    "grant", "--ledger", ledger, "--id", task.id, "--capability", "push",
+    "--actor", "owner", "--authority-note", "Push this named branch only",
+    "--target", "refs/heads/feature/empty-metadata",
+  ]);
+  const remoteUrl = "https://github.com/example/project/tree/feature/empty-metadata";
+  success([
+    "transition", "--ledger", ledger, "--id", task.id, "--to", "published",
+    "--action", "push", "--authority-target", "refs/heads/feature/empty-metadata",
+    "--remote-url", remoteUrl, "--performed-by", "publisher",
+  ]);
+
+  // published -> queued needs no authority at all, and `history` is FIFO-capped,
+  // so this path used to erase the last trace of a real upstream push.
+  success(["transition", "--ledger", ledger, "--id", task.id, "--to", "queued"]);
+
+  const stored = JSON.parse(fs.readFileSync(ledger, "utf8"))
+    .items.find(({ id }) => id === task.id);
+  assert.equal(stored.publications.length, 0, "working state is reset");
+  assert.equal(stored.publicationLog.length, 1, "the published action survives");
+  assert.equal(stored.publicationLog[0].action, "push");
+  assert.equal(stored.publicationLog[0].remoteUrl, remoteUrl);
+  assert.ok(stored.publicationLog[0].clearedAt);
+});

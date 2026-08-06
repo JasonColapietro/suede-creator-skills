@@ -564,6 +564,19 @@ function addTask(options) {
     if (ledger.items.some((entry) => entry.repo === repo && entry.ref === ref)) {
       throw new UsageError(`Duplicate repo/ref task: ${repo} ${ref}`);
     }
+    const conflictingScope = ledger.items.find(
+      (entry) => entry.repo === repo && entry.scope !== scope,
+    );
+    if (conflictingScope) {
+      // Scope is a property of the repository, not of one task. Allowing both
+      // scopes for the same repo let an "owned" twin obtain a merge grant for
+      // a repository the ledger had already classified as external — the
+      // external-merge prohibition held per task while being defeated in
+      // substance.
+      throw new UsageError(
+        `Repository ${repo} is already tracked as ${conflictingScope.scope} by task ${conflictingScope.id}; one repository cannot hold both scopes`,
+      );
+    }
     const createdAt = nowIso();
     const task = {
       id,
@@ -920,6 +933,18 @@ function requireArtifactPacket(task) {
 }
 
 function clearPackagingEvidence(task) {
+  // Publications record real, already-performed pushes and pull requests
+  // upstream. Requeuing a task must reset its working state, but it must not
+  // be able to erase evidence of what was actually published: `published ->
+  // queued` requires no authority at all, and `history` is FIFO-capped, so a
+  // handful of heartbeats used to remove the last trace. The log is
+  // append-only and exempt from that cap.
+  if (task.publications?.length) {
+    task.publicationLog ??= [];
+    for (const entry of task.publications) {
+      task.publicationLog.push({ ...entry, clearedAt: nowIso() });
+    }
+  }
   task.artifacts = {};
   task.packet = null;
   task.grants = {};
