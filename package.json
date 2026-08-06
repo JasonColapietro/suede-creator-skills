@@ -9,10 +9,11 @@
   "scripts": {
     "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
+    "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
     "test:triggers": "node --test tests/test_trigger_routing.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
-    "test": "npm run validate && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:python",
+    "test": "npm run validate && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:contributions && npm run test:python",
     "audit:dependencies": "npm audit --omit=dev --audit-level=high",
     "check:description": "node scripts/check-repo-description.mjs",
     "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test"

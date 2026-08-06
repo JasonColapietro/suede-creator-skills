@@ -11,7 +11,7 @@ A 71-skill toolkit for Claude Code and Codex: take broad outcomes full send, orc
 A free, MIT-licensed, broadly reusable pack of **71 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
-- **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
+- **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, independent review, and authority-gated contribution packets (`suede-agent-teams`).
 - **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ci-gate`).
 - **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
@@ -114,7 +114,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | Skill | What it does |
 |---|---|
 | [`suede-full-send`](skills/suede-full-send) | Full Send broad authorized outcomes through one controller, useful non-colliding lanes, adversarial reconciliation, and proof |
-| [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes with WIP collision detection, RFC mode, rollback trees, and a signed handoff |
+| [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
 | [`suede-codex-fleet`](skills/suede-codex-fleet) | Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces |
 | [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |
