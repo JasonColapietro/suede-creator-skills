@@ -6,7 +6,7 @@
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
   },
-  "homepage": "https://jasoncolapietro.github.io/suede-creator-skills/",
+  "homepage": "https://skills.suedeai.ai/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "license": "MIT",
   "keywords": [
@@ -55,7 +55,7 @@
       "Multi-Agent Workflows",
       "Code Review"
     ],
-    "websiteURL": "https://jasoncolapietro.github.io/suede-creator-skills/",
+    "websiteURL": "https://skills.suedeai.ai/",
     "defaultPrompt": [
       "Full send this authorized outcome with useful lanes and concise proof.",
       "Audit this surface with independent adversarial lanes.",

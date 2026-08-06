@@ -456,7 +456,7 @@ copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
 grading, code review, CI gating, iOS/Android app shipping, launch packaging,
 artist campaigns, and creator rights workflows.
 
-Docs: https://jasoncolapietro.github.io/suede-creator-skills/skills/
+Docs: https://skills.suedeai.ai/skills/
 
 ### Builder post
 

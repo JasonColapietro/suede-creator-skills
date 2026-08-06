@@ -10,88 +10,88 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 
 ## Start here
 
-- [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
-- [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): How the pack fits together as one workflow, plus the MCP server, install paths, and the FAQ. Covers the core orchestration, code, design, and creator skills in depth; the complete list of all 70 is on the skill index above.
-- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 71 skills.
-- [Installs and MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
-- [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
+- [Overview](https://skills.suedeai.ai/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
+- [Full guide](https://skills.suedeai.ai/guide.html): How the pack fits together as one workflow, plus the MCP server, install paths, and the FAQ. Covers the core orchestration, code, design, and creator skills in depth; the complete list of all 70 is on the skill index above.
+- [Skill index](https://skills.suedeai.ai/skills/): Browse all 71 skills.
+- [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
+- [Copy bank](https://skills.suedeai.ai/copy.html): Public-safe explainer copy and reusable launch language.
 
 ## Workflow skills (orchestration, code, evals, design, copy, SEO, QA, launch)
 
-- [Suede Workflow Skills](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
-- [Suede Full Send](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-full-send.html): Routes broad, authorized outcome-bound work to one controller, the maximum useful set of non-colliding lanes, adversarial review, and an evidence-backed final handoff.
-- [Suede Agent Teams](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
+- [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
+- [Suede Full Send](https://skills.suedeai.ai/skills/suede-full-send.html): Routes broad, authorized outcome-bound work to one controller, the maximum useful set of non-colliding lanes, adversarial review, and an evidence-backed final handoff.
+- [Suede Agent Teams](https://skills.suedeai.ai/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
 - Suede Fable Fleet (suede-codex-fleet) — Orchestrate parallel OpenAI Codex CLI workers from Claude with self-contained briefs, an AGENTS.md contract, and a mandatory review gate: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-codex-fleet/SKILL.md
-- [Suede AI Eval](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
-- [Suede Recommend Next Action](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-recommend-next-action.html): Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.
+- [Suede AI Eval](https://skills.suedeai.ai/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
+- [Suede Recommend Next Action](https://skills.suedeai.ai/skills/suede-recommend-next-action.html): Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.
 - Suede Code — Review and grade code in one pass: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code/SKILL.md
 - Suede Code Review — Deep diff review with TS/React/Next.js/Swift-iOS/OWASP/DB checklists, iOS traps, and native contract drift checks: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-code-review/SKILL.md
-- [Suede Code Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
+- [Suede Code Grader](https://skills.suedeai.ai/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
 - Suede Ship — Canonical shipping DAG: scout, research, lane plan, disjoint parallel build, adversarial review, release verification: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship/SKILL.md
 - Suede Ship Copy — The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, deslop pass, and a publish-readiness gate. Never audits what the requester supplied: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ship-copy/SKILL.md
 - Suede CI Gate — Wire any repo so CI actually gates the merge: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-ci-gate/SKILL.md
 - Suede Clip to Guide — Turn a clip or transcript into a clip-to-guide funnel package with rights routing: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-clip-to-guide/SKILL.md
-- [Johnny Suede Write](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-write.html): One loadable writing mode for copy, brand voice, SEO/AEO/GEO/AI EO, CTAs, and anti-slop editing.
-- [Johnny Suede Design](https://jasoncolapietro.github.io/suede-creator-skills/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, Suedify restyling, and visual QA.
+- [Johnny Suede Write](https://skills.suedeai.ai/skills/johnny-suede-write.html): One loadable writing mode for copy, brand voice, SEO/AEO/GEO/AI EO, CTAs, and anti-slop editing.
+- [Johnny Suede Design](https://skills.suedeai.ai/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, Suedify restyling, and visual QA.
 - Suede Design — Evolve any interface from generic to intentional with design laws and tokens: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-design/SKILL.md
 - Suede Copy — Click-earning copy with headline formulas and persuasion frameworks: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-copy/SKILL.md
-- [Suede Deslop](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-deslop.html): Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.
+- [Suede Deslop](https://skills.suedeai.ai/skills/suede-deslop.html): Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.
 - Suede SEO Audit — SEO, AEO, GEO, AI EO, metadata, schema, link, and crawlability audit: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-audit/SKILL.md
-- [Suede Visibility Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
+- [Suede Visibility Grader](https://skills.suedeai.ai/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
 - Suede Site Alchemy — Turn a page into a conversion engine with funnel and friction analysis: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md
 - Suede Launch Packaging — Ship work as a launch people can actually install: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md
 - Suede MCP QA — Catch a broken Suede Skills MCP before it ships: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md
-- [Site to iOS App](https://jasoncolapietro.github.io/suede-creator-skills/skills/site-to-ios-app.html): Convert any website or web app into an App Store-ready iOS app plan or shell: URL audit, App Store 4.2 wrapper-risk gate, Capacitor or native-shell strategy, native value requirements, QA matrix, and an explicit release gate.
-- [Android App Factory](https://jasoncolapietro.github.io/suede-creator-skills/skills/android-app-factory.html): Plan or build a native Android app end to end from a keyword: Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety disclosure, signing, and Google Play Console release.
-- [Amazon Returns Recovery](https://jasoncolapietro.github.io/suede-creator-skills/skills/amazon-returns-recovery.html): Scan Amazon order and return history for restocking fees and short refunds, then drive Amazon live chat to get the money waived and refunded (requires the Claude in Chrome extension).
-- [Subscription Recovery](https://jasoncolapietro.github.io/suede-creator-skills/skills/subscription-recovery.html): Audit any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancel or negotiate a refund through that service's own support.
+- [Site to iOS App](https://skills.suedeai.ai/skills/site-to-ios-app.html): Convert any website or web app into an App Store-ready iOS app plan or shell: URL audit, App Store 4.2 wrapper-risk gate, Capacitor or native-shell strategy, native value requirements, QA matrix, and an explicit release gate.
+- [Android App Factory](https://skills.suedeai.ai/skills/android-app-factory.html): Plan or build a native Android app end to end from a keyword: Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety disclosure, signing, and Google Play Console release.
+- [Amazon Returns Recovery](https://skills.suedeai.ai/skills/amazon-returns-recovery.html): Scan Amazon order and return history for restocking fees and short refunds, then drive Amazon live chat to get the money waived and refunded (requires the Claude in Chrome extension).
+- [Subscription Recovery](https://skills.suedeai.ai/skills/subscription-recovery.html): Audit any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancel or negotiate a refund through that service's own support.
 
 ## Marketing and growth skills
 
-- [Suede A/B Testing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ab-testing.html): Test so the result means something.
-- [Suede Ad Creative](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ad-creative.html): Produce ad creative at volume.
-- [Suede Ads](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-ads.html): Run paid acquisition that pays back.
-- [Suede Analytics](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-analytics.html): Know whether any of it worked.
-- [Suede ASO](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-aso.html): Optimise an App Store or Play listing.
-- [Suede Churn Prevention](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-churn-prevention.html): Keep subscribers who are leaving and recover the ones you lose to billing.
-- [Suede Co Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-co-marketing.html): Find and run partner campaigns.
-- [Suede Cold Email](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-cold-email.html): Write B2B cold outreach that gets replies.
-- [Suede Community Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-community-marketing.html): Build a community that compounds.
-- [Suede Competitor Profiling](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitor-profiling.html): Research competitors from their public surfaces and turn the findings into structured profiles.
-- [Suede Competitors](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-competitors.html): Write comparison and alternative pages that rank and convert without misrepresenting anyone.
-- [Suede Content Strategy](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-content-strategy.html): Decide what to publish and why.
-- [Suede Customer Research](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-customer-research.html): Find out what customers actually think.
-- [Suede Directory Submissions](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-directory-submissions.html): Work the directory layer deliberately.
-- [Suede Emails](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-emails.html): Design lifecycle email that runs itself.
-- [Suede Free Tools](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-free-tools.html): Engineering as marketing.
-- [Suede Image](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-image.html): Create and optimise marketing imagery.
-- [Suede Instagram Growth](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-instagram-growth.html): Audit an Instagram account from authorized evidence, map views to qualified actions, and create account-specific Reels, carousels, Stories, calendars, and daily approval-ready workflows.
-- [Suede Lead Magnets](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-lead-magnets.html): Decide what to give away for an email.
-- [Suede Marketing Council](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-council.html): Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.
-- [Suede Marketing Ideas](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-ideas.html): Get unstuck with a structured idea library rather than a blank page.
-- [Suede Marketing Loops](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-loops.html): Turn marketing into a recurring loop an agent runs on a cadence.
-- [Suede Marketing Plan](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.
-- [Suede Marketing Psychology](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-marketing-psychology.html): Apply behavioural science honestly.
-- [Suede Offers](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-offers.html): Construct the thing you actually sell.
-- [Suede Onboarding](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-onboarding.html): Get a new user to first value fast.
-- [Suede Paywalls](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-paywalls.html): Design in-app upgrade moments that convert without resentment.
-- [Suede Pricing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-pricing.html): Decide what to charge and how to package it.
-- [Suede Product Marketing](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-product-marketing.html): Establish the product context every other marketing lane reads from.
-- [Suede Programmatic SEO](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-programmatic-seo.html): Build search pages at scale without building junk.
-- [Suede Prospecting](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-prospecting.html): Build and qualify a target list before you write a word.
-- [Suede Public Relations](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-public-relations.html): Earn coverage without a retainer.
-- [Suede Referrals](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-referrals.html): Turn customers into a channel.
-- [Suede RevOps](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-revops.html): Wire marketing to revenue.
-- [Suede Sales Enablement](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sales-enablement.html): Arm the people doing the selling.
-- [Suede Signup](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-signup.html): Cut friction out of registration.
-- [Suede SMS](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-sms.html): Run SMS without getting blocked or resented.
-- [Suede Social](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-social.html): Run social as a channel rather than a chore.
-- [Suede Video](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-video.html): Plan and produce marketing video.
+- [Suede A/B Testing](https://skills.suedeai.ai/skills/suede-ab-testing.html): Test so the result means something.
+- [Suede Ad Creative](https://skills.suedeai.ai/skills/suede-ad-creative.html): Produce ad creative at volume.
+- [Suede Ads](https://skills.suedeai.ai/skills/suede-ads.html): Run paid acquisition that pays back.
+- [Suede Analytics](https://skills.suedeai.ai/skills/suede-analytics.html): Know whether any of it worked.
+- [Suede ASO](https://skills.suedeai.ai/skills/suede-aso.html): Optimise an App Store or Play listing.
+- [Suede Churn Prevention](https://skills.suedeai.ai/skills/suede-churn-prevention.html): Keep subscribers who are leaving and recover the ones you lose to billing.
+- [Suede Co Marketing](https://skills.suedeai.ai/skills/suede-co-marketing.html): Find and run partner campaigns.
+- [Suede Cold Email](https://skills.suedeai.ai/skills/suede-cold-email.html): Write B2B cold outreach that gets replies.
+- [Suede Community Marketing](https://skills.suedeai.ai/skills/suede-community-marketing.html): Build a community that compounds.
+- [Suede Competitor Profiling](https://skills.suedeai.ai/skills/suede-competitor-profiling.html): Research competitors from their public surfaces and turn the findings into structured profiles.
+- [Suede Competitors](https://skills.suedeai.ai/skills/suede-competitors.html): Write comparison and alternative pages that rank and convert without misrepresenting anyone.
+- [Suede Content Strategy](https://skills.suedeai.ai/skills/suede-content-strategy.html): Decide what to publish and why.
+- [Suede Customer Research](https://skills.suedeai.ai/skills/suede-customer-research.html): Find out what customers actually think.
+- [Suede Directory Submissions](https://skills.suedeai.ai/skills/suede-directory-submissions.html): Work the directory layer deliberately.
+- [Suede Emails](https://skills.suedeai.ai/skills/suede-emails.html): Design lifecycle email that runs itself.
+- [Suede Free Tools](https://skills.suedeai.ai/skills/suede-free-tools.html): Engineering as marketing.
+- [Suede Image](https://skills.suedeai.ai/skills/suede-image.html): Create and optimise marketing imagery.
+- [Suede Instagram Growth](https://skills.suedeai.ai/skills/suede-instagram-growth.html): Audit an Instagram account from authorized evidence, map views to qualified actions, and create account-specific Reels, carousels, Stories, calendars, and daily approval-ready workflows.
+- [Suede Lead Magnets](https://skills.suedeai.ai/skills/suede-lead-magnets.html): Decide what to give away for an email.
+- [Suede Marketing Council](https://skills.suedeai.ai/skills/suede-marketing-council.html): Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.
+- [Suede Marketing Ideas](https://skills.suedeai.ai/skills/suede-marketing-ideas.html): Get unstuck with a structured idea library rather than a blank page.
+- [Suede Marketing Loops](https://skills.suedeai.ai/skills/suede-marketing-loops.html): Turn marketing into a recurring loop an agent runs on a cadence.
+- [Suede Marketing Plan](https://skills.suedeai.ai/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.
+- [Suede Marketing Psychology](https://skills.suedeai.ai/skills/suede-marketing-psychology.html): Apply behavioural science honestly.
+- [Suede Offers](https://skills.suedeai.ai/skills/suede-offers.html): Construct the thing you actually sell.
+- [Suede Onboarding](https://skills.suedeai.ai/skills/suede-onboarding.html): Get a new user to first value fast.
+- [Suede Paywalls](https://skills.suedeai.ai/skills/suede-paywalls.html): Design in-app upgrade moments that convert without resentment.
+- [Suede Pricing](https://skills.suedeai.ai/skills/suede-pricing.html): Decide what to charge and how to package it.
+- [Suede Product Marketing](https://skills.suedeai.ai/skills/suede-product-marketing.html): Establish the product context every other marketing lane reads from.
+- [Suede Programmatic SEO](https://skills.suedeai.ai/skills/suede-programmatic-seo.html): Build search pages at scale without building junk.
+- [Suede Prospecting](https://skills.suedeai.ai/skills/suede-prospecting.html): Build and qualify a target list before you write a word.
+- [Suede Public Relations](https://skills.suedeai.ai/skills/suede-public-relations.html): Earn coverage without a retainer.
+- [Suede Referrals](https://skills.suedeai.ai/skills/suede-referrals.html): Turn customers into a channel.
+- [Suede RevOps](https://skills.suedeai.ai/skills/suede-revops.html): Wire marketing to revenue.
+- [Suede Sales Enablement](https://skills.suedeai.ai/skills/suede-sales-enablement.html): Arm the people doing the selling.
+- [Suede Signup](https://skills.suedeai.ai/skills/suede-signup.html): Cut friction out of registration.
+- [Suede SMS](https://skills.suedeai.ai/skills/suede-sms.html): Run SMS without getting blocked or resented.
+- [Suede Social](https://skills.suedeai.ai/skills/suede-social.html): Run social as a channel rather than a chore.
+- [Suede Video](https://skills.suedeai.ai/skills/suede-video.html): Plan and produce marketing video.
 
 ## Creator skills (music, rights, campaigns)
 
-- [Suede Rights Passport](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-rights-passport.html): Package creative folders into structured transfer material with provenance, credits, and splits.
-- [Suede Release Linter](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-release-linter.html): Audit release folders for missing metadata, artwork, masters, stems, credits, splits, and provenance gaps.
+- [Suede Rights Passport](https://skills.suedeai.ai/skills/suede-rights-passport.html): Package creative folders into structured transfer material with provenance, credits, and splits.
+- [Suede Release Linter](https://skills.suedeai.ai/skills/suede-release-linter.html): Audit release folders for missing metadata, artwork, masters, stems, credits, splits, and provenance gaps.
 - Suede Campaign in a Box — Turn a song, release, or era into a complete artist campaign: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md
 - Suede Rights Audit — Find ownership, split, sample, and provenance gaps before packaging: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md
 - Suede Sync Packaging — Package songs for sync pitching with scene-fit angles and clean asset checklists: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md
