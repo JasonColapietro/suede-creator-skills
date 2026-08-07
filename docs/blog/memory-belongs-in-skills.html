@@ -3,36 +3,52 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>71 skills installed. Your agent reads almost none of them. | Suede Creator Skills</title>
-    <meta name="description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
+    <title>Your memory file is a tax you pay on every prompt | Suede Creator Skills</title>
+    <meta name="description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html">
+    <link rel="canonical" href="https://skills.suedeai.ai/blog/memory-belongs-in-skills.html">
     <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="71 skills installed. Your agent reads almost none of them.">
-    <meta property="og:description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
-    <meta property="og:url" content="https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html">
+    <meta property="og:title" content="Your memory file is a tax you pay on every prompt">
+    <meta property="og:description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
+    <meta property="og:url" content="https://skills.suedeai.ai/blog/memory-belongs-in-skills.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="71 skills installed. Your agent reads almost none of them.">
-    <meta name="twitter:description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
+    <meta name="twitter:title" content="Your memory file is a tax you pay on every prompt">
+    <meta name="twitter:description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html#article",
-        "headline": "71 skills installed. Your agent reads almost none of them.",
-        "description": "Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.",
-        "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
-        "datePublished": "2026-08-07",
-        "dateModified": "2026-08-07",
-        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
-        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
-        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "progressive disclosure", "Agent Skills", "MCP server", "CI ship gate", "agent orchestration"],
-        "mainEntityOfPage": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html#article",
+  "headline": "Your memory file is a tax you pay on every prompt",
+  "description": "Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.",
+  "url": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "about": [
+    "agent memory",
+    "progressive disclosure",
+    "Agent Skills",
+    "context window",
+    "Claude Code",
+    "CLAUDE.md",
+    "prompt engineering"
+  ],
+  "mainEntityOfPage": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html"
+}
     </script>
     <style>
     .skip-link {
@@ -220,58 +236,48 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <p class="eyebrow">Product update &middot; August 7, 2026</p>
-      <h1>71 skills installed. Your agent reads almost none of them.</h1>
-      <p class="post-meta">Suede Creator Skills is now <strong>71 public skills</strong>. Here's what shipped and why the count doesn't cost you context.</p>
+      <p class="eyebrow">Essay &middot; August 7, 2026</p>
+      <h1>Your memory file is a tax you pay on every prompt</h1>
+      <p class="post-meta">On moving durable knowledge out of the memory layer and into skills that only load when they apply.</p>
 
-      <p class="lead">The most common objection to a pack this size is that it must bloat the context window. It doesn't, and the reason is the whole design: every skill stays installed and silent until a request actually matches it. Four new skills landed since the last update, an optional MCP server adds seven read-only tools, and the pack now runs from a design pass to a shipped release to getting a denied Amazon refund back.</p>
+      <p class="lead">Every agent accumulates knowledge that ought to outlive the session: how this repo wants to be branched, which build command is the real one, the correction you made three weeks ago that you never want to make again. The default home for all of it is a memory file, and a memory file has one property that quietly ruins it. It loads on every turn.</p>
 
-      <h2>Always installed, almost never loaded</h2>
-      <p>A skill is a plain <code>SKILL.md</code> file. The agent keeps only the frontmatter in context: the skill's name and its description. That's a couple of lines each. The body, the references, the scripts, the templates, none of it enters the window until the description matches what you actually asked for.</p>
-      <p>So the install count and the context cost are separate numbers. Installing 71 skills costs you the 71 descriptions. Running one costs you that one skill.</p>
-      <p>The second half is suitability, and it's the part most packs skip. Every Suede description carries an explicit <code>NOT FOR</code> line that routes the request somewhere else when the fit is wrong:</p>
+      <h2>The tax</h2>
+      <p>A memory file is unconditional. It costs the same whether you asked the agent to ship a release or fix a typo. Write 5,000 tokens of hard-won operating knowledge and you have signed up to pay 5,000 tokens on every prompt for the rest of the project, including the ones where none of it applies.</p>
+      <p>That's the visible cost, and it's the smaller one.</p>
+      <p>The real damage is attentional. Instructions in a long file compete with each other. Add the twentieth rule and the first nineteen get slightly harder to follow, because the model is now allocating attention across twenty things that all claimed to matter equally. A memory file that grows monotonically doesn't just get expensive. It gets less obeyed, rule by rule, and the failure is invisible: nothing errors, the agent just quietly stops honoring something you wrote down two months ago.</p>
+      <p>So memory has a perverse shape. The more diligently you maintain it, the worse it performs. Most people notice this as "the agent ignores my CLAUDE.md" and respond by adding emphasis, capital letters, and IMPORTANT tags, which is treating a capacity problem as a compliance problem.</p>
 
-      <div class="panel" aria-label="Routing example">
-        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
+      <h2>The question that sorts it</h2>
+      <p>There's one test for any durable fact you're about to write down:</p>
+      <div class="panel" aria-label="The sorting question">
+        <p>Does this apply to <strong>every</strong> turn, or only <strong>some</strong> turns?</p>
       </div>
+      <p>Every-turn facts genuinely belong in memory. Who you are. What you're standing-authorized to do without asking. Global constraints that hold no matter what the task is. These are cheap, few, and correctly unconditional.</p>
+      <p>Some-turn facts are almost everything else, and they are miscategorized by default. How to cut a release. What this project's CI conventions are. How to handle a return, a rights audit, an App Store submission. Each one is critical on the day it applies and pure overhead on every other day. Put it in memory and you pay for it constantly to use it occasionally.</p>
+      <p>A skill is the same information with a condition attached. The agent holds the name and the description. The body stays on disk until a request matches. You pay a line to have it available and the full price only when you use it.</p>
 
-      <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a fifty-agent shipping DAG at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request. More on why that gets <em>better</em> as the pack grows: <a href="not-for-the-line-that-makes-a-pack-work.html">NOT FOR: the two words that make a big skill pack work</a>.</p>
-      <p>You can read every one of those rules before you run them. That's the point of shipping Markdown instead of a binary.</p>
+      <h2>The part that surprised me</h2>
+      <p>I expected this to be a cost optimization. It turned out to be a quality one, for a reason I didn't anticipate.</p>
+      <p>Memory forces compression. Because every line is billed on every turn, you write the shortest thing that might work. "Always use worktrees." That's what fits. What you actually know is longer: why worktrees, which directory convention, the two places worktrees hide, why the session registry lies about which ones are live, what a squash-merged branch looks like when you're deciding whether to delete it. All of that gets cut, because you cannot afford six paragraphs in a file that loads unconditionally.</p>
+      <p>A skill has no such pressure. Its body is read only when relevant, so length is nearly free. You can write the failure modes, the exact commands, the counterexample that cost you an afternoon, the check that looks redundant and isn't. The knowledge doesn't just move. It gets to be complete for the first time.</p>
+      <p>That inverts the usual tradeoff. Normally more detail means more cost. Here, moving detail behind a trigger means you can afford more of it, and the agent gets a better version of the rule at the exact moment it needs it, instead of a compressed version at all times.</p>
 
-      <h2>Where your memory file should have been all along</h2>
-      <p>The same mechanism solves a problem most agent setups have and don't name. Durable knowledge, the operating rules you've accumulated over months, usually lives in a memory file, and a memory file loads unconditionally. Every rule costs tokens on every turn, including the turns where none of it applies. Worse, the rules start competing for attention: add the twentieth and the first nineteen get slightly less obeyed, silently.</p>
-      <p>Most of what ends up in memory is conditional. It starts with an implicit "when." When I'm deploying, when it's this repo, when the task touches the App Store. Every one of those is a trigger description, and everything after it is a skill body sitting in the wrong layer, compressed to fit a budget it shouldn't be paying.</p>
-      <p>Moving it into a skill saves the context. The part I didn't expect is that it also improves the knowledge. Memory forces you to write "always use worktrees" because that's what fits. A skill can carry the six paragraphs you actually know: the two places worktrees hide, why the session registry lies about which ones are live, what a squash-merged branch looks like when you're deciding whether to delete it. Behind a trigger, length is nearly free, so the rule finally gets to be complete.</p>
-      <p>Longer version of that argument: <a href="memory-belongs-in-skills.html">Your memory file is a tax you pay on every prompt</a>.</p>
+      <h2>What else you get</h2>
+      <p>Once knowledge lives in a file with a name and a boundary rather than in an undifferentiated memory blob, ordinary software practice starts applying to it:</p>
+      <ul>
+        <li><strong>It diffs.</strong> You can see what changed about how the agent works, and when.</li>
+        <li><strong>It reviews.</strong> A rule in a skill can be argued with before it ships. A line appended to memory at 1am cannot.</li>
+        <li><strong>It travels.</strong> A skill installs on another machine, or for another person. Memory is per-machine sediment.</li>
+        <li><strong>It can be deleted.</strong> Removing one skill removes one behavior. Removing one line from a 200-line memory file is a guess about what else depended on it.</li>
+      </ul>
 
-      <h2>What shipped since the last update</h2>
-      <p><code>suede-ship</code> is the canonical shipping DAG: scout, multi-lens research, a gap critic, a lane plan with explicit file ownership, disjoint parallel build lanes, dual-lens review, adversarial refutation, an integration gate, and release verification. Roughly fifty agents arranged as a graph instead of a chain. It halts on a blocking hazard, a real secret in a tracked file or a live process holding a target worktree, rather than plowing through. It reads production and never deploys.</p>
-      <p><code>suede-ship-copy</code> is the same idea for writing, decomposed differently. <code>suede-ship</code> splits work by file ownership, so two lanes never write the same file. <code>suede-ship-copy</code> splits by message ownership, so two sections never make the same argument. It runs five blind research lenses, an audit that closes the set of assertable claims, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. It reads the live surface and never publishes.</p>
-      <p><code>suede-ci-gate</code> makes CI actually hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that don't deadlock.</p>
-      <p><code>suede-clip-to-guide</code> turns a video moment into a long-form asset, with rights routing, moment scoring, a clip brief, exact post copy, and a publishing sequence that requires visible-identity approval before anything goes out.</p>
-
-      <h2>Seven read-only MCP tools, optional</h2>
-      <p>The pack ships an optional MCP server. It's read-only by design and it exists for the moments when structure beats prose: <code>list_suede_skills</code> and <code>get_suede_skill</code> for discovery, <code>suede_install_options</code> for install paths, then <code>suede_code_grade</code>, <code>suede_visibility_grade</code>, <code>suede_copy_seo_audit</code>, and <code>suede_qa_checklist</code> for scaffolded audits.</p>
-      <p>You don't need it. The skills work on their own, with no accounts, API keys, or configuration. Add the MCP when you want a catalog, a checklist, or an audit scaffold returned as data instead of paragraphs.</p>
-
-      <h2>Design, code, and a refund Amazon already denied</h2>
-      <p>The breadth is deliberate, and it's easiest to see at the edges. The same install that runs an A-F code review with OWASP and deploy-risk checks also runs a design and visual-QA pass on the screen you just built, an SEO and answer-engine audit on the page describing it, and a rights-and-royalty prep pass on a music release.</p>
-      <p>Then there's the far end. <code>amazon-returns-recovery</code> audited a real account and recovered <strong>$448.31</strong> across three documented cases, including a <strong>$372.69</strong> refund that had already been denied. Mechanically it's unglamorous: evidence gathering, policy research, and patient support work, which is exactly the kind of task a person abandons and an agent doesn't.</p>
-      <p>None of that costs the code reviewer anything. The returns skill sits in the same install, one description long, until the day you need it. On why that changes which tasks are worth automating at all: <a href="why-breadth-is-free.html">Why breadth is free now</a>.</p>
-
-      <h2>Install it</h2>
-      <p><strong>Claude Code &mdash; full pack:</strong></p>
-      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede</code></pre>
-      <p><strong>Focused subsets, if 71 is more than you want:</strong></p>
-      <pre><code>/plugin install suede-agent-workflows@suede
-/plugin install suede-code@suede</code></pre>
-      <p><strong>Any other agent (Cursor, Copilot, Windsurf):</strong></p>
-      <pre><code>npx skills add JasonColapietro/suede-creator-skills</code></pre>
+      <h2>The practical move</h2>
+      <p>Open your memory file and read it as a list of conditions rather than a list of facts. Most entries will start with an implicit "when." When I'm deploying. When it's this repo. When the task involves the App Store. Each of those whens is a trigger description, and everything after it is a skill body that has been living in the wrong place, compressed, and taxed on every prompt since you wrote it.</p>
+      <p>What's left when you're done is short, unconditional, and actually followed. Which is what a memory file was supposed to be.</p>
 
       <div class="divider"></div>
-
-      <p><a class="button" href="../skills/">Browse all 71 skills</a> <a class="button secondary" href="../plugins.html">All install paths and the MCP server</a></p>
+      <p><a class="button" href="progressive-disclosure-ship-dag-and-mcp.html">How this works in the pack</a> <a class="button secondary" href="../skills/">Browse all 71 skills</a></p>
     </main>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="ship-strip-shell">
