@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>71 skills installed. Your agent reads almost none of them. | Suede Creator Skills</title>
+    <meta name="description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="71 skills installed. Your agent reads almost none of them.">
+    <meta property="og:description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
+    <meta property="og:url" content="https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="71 skills installed. Your agent reads almost none of them.">
+    <meta name="twitter:description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html#article",
+        "headline": "71 skills installed. Your agent reads almost none of them.",
+        "description": "Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.",
+        "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
+        "datePublished": "2026-08-07",
+        "dateModified": "2026-08-07",
+        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
+        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "progressive disclosure", "Agent Skills", "MCP server", "CI ship gate", "agent orchestration"],
+        "mainEntityOfPage": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html"
+      }
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Product update &middot; August 7, 2026</p>
+      <h1>71 skills installed. Your agent reads almost none of them.</h1>
+      <p class="post-meta">Suede Creator Skills is now <strong>71 public skills</strong>. Here's what shipped and why the count doesn't cost you context.</p>
+
+      <p class="lead">The most common objection to a pack this size is that it must bloat the context window. It doesn't, and the reason is the whole design: every skill stays installed and silent until a request actually matches it. Four new skills landed since the last update, an optional MCP server adds seven read-only tools, and the pack now runs from a design pass to a shipped release to getting a denied Amazon refund back.</p>
+
+      <h2>Always installed, almost never loaded</h2>
+      <p>A skill is a plain <code>SKILL.md</code> file. The agent keeps only the frontmatter in context: the skill's name and its description. That's a couple of lines each. The body, the references, the scripts, the templates, none of it enters the window until the description matches what you actually asked for.</p>
+      <p>So the install count and the context cost are separate numbers. Installing 71 skills costs you the 71 descriptions. Running one costs you that one skill.</p>
+      <p>The second half is suitability, and it's the part most packs skip. Every Suede description carries an explicit <code>NOT FOR</code> line that routes the request somewhere else when the fit is wrong:</p>
+
+      <div class="panel" aria-label="Routing example">
+        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
+      </div>
+
+      <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a fifty-agent shipping DAG at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request.</p>
+      <p>You can read every one of those rules before you run them. That's the point of shipping Markdown instead of a binary.</p>
+
+      <h2>What shipped since the last update</h2>
+      <p><code>suede-ship</code> is the canonical shipping DAG: scout, multi-lens research, a gap critic, a lane plan with explicit file ownership, disjoint parallel build lanes, dual-lens review, adversarial refutation, an integration gate, and release verification. Roughly fifty agents arranged as a graph instead of a chain. It halts on a blocking hazard, a real secret in a tracked file or a live process holding a target worktree, rather than plowing through. It reads production and never deploys.</p>
+      <p><code>suede-ship-copy</code> is the same idea for writing, decomposed differently. <code>suede-ship</code> splits work by file ownership, so two lanes never write the same file. <code>suede-ship-copy</code> splits by message ownership, so two sections never make the same argument. It runs five blind research lenses, an audit that closes the set of assertable claims, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. It reads the live surface and never publishes.</p>
+      <p><code>suede-ci-gate</code> makes CI actually hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that don't deadlock.</p>
+      <p><code>suede-clip-to-guide</code> turns a video moment into a long-form asset, with rights routing, moment scoring, a clip brief, exact post copy, and a publishing sequence that requires visible-identity approval before anything goes out.</p>
+
+      <h2>Seven read-only MCP tools, optional</h2>
+      <p>The pack ships an optional MCP server. It's read-only by design and it exists for the moments when structure beats prose: <code>list_suede_skills</code> and <code>get_suede_skill</code> for discovery, <code>suede_install_options</code> for install paths, then <code>suede_code_grade</code>, <code>suede_visibility_grade</code>, <code>suede_copy_seo_audit</code>, and <code>suede_qa_checklist</code> for scaffolded audits.</p>
+      <p>You don't need it. The skills work on their own, with no accounts, API keys, or configuration. Add the MCP when you want a catalog, a checklist, or an audit scaffold returned as data instead of paragraphs.</p>
+
+      <h2>Design, code, and a refund Amazon already denied</h2>
+      <p>The breadth is deliberate, and it's easiest to see at the edges. The same install that runs an A-F code review with OWASP and deploy-risk checks also runs a design and visual-QA pass on the screen you just built, an SEO and answer-engine audit on the page describing it, and a rights-and-royalty prep pass on a music release.</p>
+      <p>Then there's the far end. <code>amazon-returns-recovery</code> audited a real account and recovered <strong>$448.31</strong> across three documented cases, including a <strong>$372.69</strong> refund that had already been denied. Mechanically it's unglamorous: evidence gathering, policy research, and patient support work, which is exactly the kind of task a person abandons and an agent doesn't.</p>
+      <p>None of that costs the code reviewer anything. The returns skill sits in the same install, one description long, until the day you need it.</p>
+
+      <h2>Install it</h2>
+      <p><strong>Claude Code &mdash; full pack:</strong></p>
+      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code></pre>
+      <p><strong>Focused subsets, if 71 is more than you want:</strong></p>
+      <pre><code>/plugin install suede-agent-workflows@suede
+/plugin install suede-code@suede</code></pre>
+      <p><strong>Any other agent (Cursor, Copilot, Windsurf):</strong></p>
+      <pre><code>npx skills add JasonColapietro/suede-creator-skills</code></pre>
+
+      <div class="divider"></div>
+
+      <p><a class="button" href="../skills/">Browse all 71 skills</a> <a class="button secondary" href="../plugins.html">All install paths and the MCP server</a></p>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
