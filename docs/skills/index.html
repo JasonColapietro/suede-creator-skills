@@ -11,7 +11,7 @@
   <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Suede Creator Skills Docs">
-  <meta property="og:description" content="Read the public docs for all 70 Suede skills: Full Send orchestration, agent teams, code review and A-F grading, CI ship-gates, AI evals, Suedify, Instagram growth, design, copy, SEO/AEO/GEO/AI EO, music/IP, and creator rights.">
+  <meta property="og:description" content="Read the public docs for all 71 Suede skills: Full Send orchestration, agent teams, code review and A-F grading, CI ship-gates, AI evals, Suedify, Instagram growth, design, copy, SEO/AEO/GEO/AI EO, music/IP, and creator rights.">
   <meta property="og:url" content="https://skills.suedeai.ai/skills/">
   <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -134,7 +134,9 @@
     }
     .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
 
-    .page-head { padding: 88px 0 0; }
+    /* padding-top only: the shorthand here used to reset .shell's 40px side
+       padding, leaving the whole hero block 40px left of every section below. */
+    .page-head { padding-top: 88px; }
     .eyebrow {
       font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
       text-transform: uppercase; color: var(--red-text); margin-bottom: 24px;
@@ -240,8 +242,67 @@
     .btn--red { border-color: var(--red); color: var(--cream); background: rgba(139, 26, 26, 0.1); }
     .btn--red:hover { background: rgba(139, 26, 26, 0.22); color: var(--cream); }
 
+    /* Lane map + jump nav */
+    .lanemap {
+      margin: 44px 0 0; max-width: 900px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      padding: 24px 26px 20px;
+    }
+    .lanemap-head {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 6px 18px; padding-bottom: 16px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lanemap-title {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .lanemap-hint { font-size: 12.5px; color: var(--muted); }
+    .lanemap-svg { display: block; width: 100%; height: auto; }
+    .lanemap-jump {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border);
+    }
+    .lanemap-jump a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      padding: 8px 15px; border: 1px solid var(--border); border-radius: 999px;
+      font-family: var(--mono); font-size: 12.5px; color: var(--cream);
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .lanemap-jump a:hover { color: var(--gold); border-color: var(--gold); background: #141414; }
+    @media (max-width: 720px) {
+      .lanemap { padding: 20px 16px 16px; }
+      .lanemap-svg { min-width: 520px; }
+      .lanemap-scroll { overflow-x: auto; }
+    }
+
+    /* Field notes */
+    .notes {
+      margin-top: 32px; border: 1px solid var(--border);
+      border-radius: 6px; background: var(--card); overflow: hidden;
+    }
+    .note-row {
+      display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center; gap: 20px;
+      padding: 18px 22px; border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+    .note-row:last-child { border-bottom: 0; }
+    .note-row:hover { background: #141414; }
+    .note-date { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .note-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .note-title { font-size: 15.5px; font-weight: 600; color: var(--cream); line-height: 1.4; }
+    .note-row:hover .note-title { color: var(--gold); }
+    .note-hook { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .note-arrow { font-family: var(--mono); font-size: 13px; color: var(--muted); transition: color 0.15s, transform 0.15s; }
+    .note-row:hover .note-arrow { color: var(--gold); transform: translateX(3px); }
+    @media (max-width: 720px) {
+      .note-row { grid-template-columns: 1fr; row-gap: 6px; }
+      .note-arrow { display: none; }
+    }
+
     /* Catalog lanes */
-    .lane { margin-top: 44px; }
+    .lane { margin-top: 44px; scroll-margin-top: 84px; }
     .lane-head {
       display: flex; align-items: baseline; gap: 12px;
       padding-bottom: 12px; border-bottom: 1px solid var(--border);
@@ -362,8 +423,8 @@
 <main id="main" tabindex="-1">
   <div class="shell page-head">
     <p class="eyebrow">Skill catalog</p>
-    <h1>70 skills. One honest line each.</h1>
-    <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Six lanes:</strong> orchestration, code review and CI, design and copy, SEO and visibility, iOS and Android shipping, and creator rights. This catalog links each skill to its deep docs and its source folder on GitHub.</p>
+    <h1>71 skills. One honest line each.</h1>
+    <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Eight lanes:</strong> orchestration and routing, code review and CI, design and copy, SEO and launch, iOS and Android shipping, consumer recovery, the creator toolkit, and 39 marketing and growth skills. This catalog links each skill to its deep docs and its source folder on GitHub. No sign-up, no telemetry, nothing to uninstall but a folder.</p>
 
     <a id="hero-shiplog" href="#changelog" aria-label="Ship log: 223 commits in 10 weeks. Latest entry August 4, 2026: Instagram growth gets an evidence system. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
@@ -396,12 +457,66 @@
         <button class="term-copy" type="button" data-copy aria-label="Copy install commands">Copy</button>
       </div>
     </div>
-    <p class="term-note">Works in Claude Code today; Codex and other agents install from the <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>. All paths on the <a href="../plugins.html">install page</a>.</p>
+    <p class="term-note">Codex installs the same pack natively with <code>codex plugin add suede-skills@suede-codex</code>; Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+
+    <div class="lanemap">
+      <div class="lanemap-head">
+        <span class="lanemap-title">Where the 71 live</span>
+        <span class="lanemap-hint">Jump to a lane</span>
+      </div>
+      <svg class="lanemap-svg" viewBox="0 0 1000 300" role="img" aria-labelledby="lanemap-t lanemap-d" xmlns="http://www.w3.org/2000/svg">
+        <title id="lanemap-t">Skills per lane</title>
+        <desc id="lanemap-d">Marketing and growth 39, orchestration and routing 7, creator toolkit 6, code review and CI 5, design and copy 5, SEO visibility and launch 5, apps iOS and Android 2, consumer recovery 2.</desc>
+        <g font-family="system-ui, -apple-system, sans-serif">
+          <text x="250" y="30" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Marketing &amp; growth</text>
+          <rect x="264" y="17" width="620" height="18" rx="4" fill="#c8a96e"/>
+          <text x="898" y="31" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">39</text>
+
+          <text x="250" y="66" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Orchestration &amp; routing</text>
+          <rect x="264" y="53" width="111" height="18" rx="4" fill="#c8a96e"/>
+          <text x="389" y="67" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">7</text>
+
+          <text x="250" y="102" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Creator toolkit</text>
+          <rect x="264" y="89" width="95" height="18" rx="4" fill="#c8a96e"/>
+          <text x="373" y="103" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">6</text>
+
+          <text x="250" y="138" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Code review &amp; CI</text>
+          <rect x="264" y="125" width="79" height="18" rx="4" fill="#c8a96e"/>
+          <text x="357" y="139" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">5</text>
+
+          <text x="250" y="174" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Design &amp; copy</text>
+          <rect x="264" y="161" width="79" height="18" rx="4" fill="#c8a96e"/>
+          <text x="357" y="175" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">5</text>
+
+          <text x="250" y="210" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">SEO, visibility &amp; launch</text>
+          <rect x="264" y="197" width="79" height="18" rx="4" fill="#c8a96e"/>
+          <text x="357" y="211" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">5</text>
+
+          <text x="250" y="246" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Apps: iOS &amp; Android</text>
+          <rect x="264" y="233" width="32" height="18" rx="4" fill="#c8a96e"/>
+          <text x="310" y="247" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">2</text>
+
+          <text x="250" y="282" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Consumer recovery</text>
+          <rect x="264" y="269" width="32" height="18" rx="4" fill="#c8a96e"/>
+          <text x="310" y="283" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">2</text>
+        </g>
+      </svg>
+      <nav class="lanemap-jump" aria-label="Jump to a catalog lane">
+        <a href="#lane-orchestration">Orchestration</a>
+        <a href="#lane-code">Code review &amp; CI</a>
+        <a href="#lane-design">Design &amp; copy</a>
+        <a href="#lane-seo">SEO &amp; launch</a>
+        <a href="#lane-apps">Apps</a>
+        <a href="#lane-recovery">Recovery</a>
+        <a href="#lane-creator">Creator toolkit</a>
+        <a href="#lane-marketing">Marketing &amp; growth</a>
+      </nav>
+    </div>
   </div>
 
   <section class="shell" aria-labelledby="start-here">
     <h2 id="start-here">Start here</h2>
-    <p class="section-sub">Five entry points cover most sessions. Everything else is one lane down.</p>
+    <p class="section-sub">Six entry points cover most sessions. Everything else is one lane down.</p>
     <div class="grid-2">
       <article class="cell cell--red">
         <span class="cell-label">The intent router</span>
@@ -450,6 +565,16 @@
           <a class="btn" href="suede-visibility-grader.html">Visibility grader</a>
         </div>
       </article>
+      <article class="cell">
+        <span class="cell-label">The growth org</span>
+        <h3>39 marketing &amp; growth skills</h3>
+        <p>The largest lane in the pack: paid acquisition and outbound, pricing and offers, lifecycle and retention, and the measurement layer that keeps the rest honest. Start with the plan, then work the channel you actually need.</p>
+        <div class="btn-row">
+          <a class="btn btn--gold" href="suede-marketing-plan.html">Marketing plan</a>
+          <a class="btn" href="suede-pricing.html">Pricing</a>
+          <a class="btn" href="#lane-marketing">All 39 -&gt;</a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -457,7 +582,7 @@
     <h2 id="catalog">All 71 skill folders</h2>
     <p class="section-sub">Grouped by lane. Rows link to the deep docs page; every folder is inspectable on GitHub before you install it.</p>
 
-    <div class="lane">
+    <div class="lane" id="lane-orchestration">
       <div class="lane-head"><h3>Orchestration &amp; routing</h3><span class="lane-count">7</span></div>
       <a class="row" href="suede-ship.html"><b>suede-ship</b><span>Canonical shipping DAG: scout, multi-lens research, lane plan with file ownership, parallel build, adversarial refute, and an integration gate. Halts on hazards and collisions.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow">-&gt;</span></a>
@@ -468,7 +593,7 @@
       <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-code">
       <div class="lane-head"><h3>Code review &amp; CI</h3><span class="lane-count">5</span></div>
       <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow">-&gt;</span></a>
@@ -477,7 +602,7 @@
       <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-design">
       <div class="lane-head"><h3>Design &amp; copy</h3><span class="lane-count">5</span></div>
       <a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow">-&gt;</span></a>
@@ -486,7 +611,7 @@
       <a class="row" href="./suede-deslop.html"><b>suede-deslop</b><span>Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-seo">
       <div class="lane-head"><h3>SEO, visibility &amp; launch</h3><span class="lane-count">5</span></div>
       <a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow">-&gt;</span></a>
@@ -495,19 +620,19 @@
       <a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-apps">
       <div class="lane-head"><h3>Apps: iOS &amp; Android</h3><span class="lane-count">2</span></div>
       <a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-recovery">
       <div class="lane-head"><h3>Consumer recovery</h3><span class="lane-count">2</span></div>
       <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow">-&gt;</span></a>
     </div>
 
-    <div class="lane">
+    <div class="lane" id="lane-creator">
       <div class="lane-head"><h3>Creator toolkit</h3><span class="lane-count">6</span></div>
       <a class="row" href="./suede-clip-to-guide.html"><b>suede-clip-to-guide</b><span>Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package with rights routing and an evidence gate.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow">-&gt;</span></a>
@@ -516,7 +641,7 @@
       <a class="row" href="suede-rights-passport.html"><b>suede-rights-passport</b><span>Local creator rights package with provenance, credits, split notes, license notes, and structured metadata.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-rights-audit.html"><b>suede-rights-audit</b><span>Ownership, contributor, sample, license, split, and intake gap audit.</span><span class="arrow">-&gt;</span></a>
     </div>
-    <div class="lane">
+    <div class="lane" id="lane-marketing">
       <div class="lane-head"><h3>Marketing &amp; growth</h3><span class="lane-count">39</span></div>
       <a class="row" href="./suede-ab-testing.html"><b>suede-ab-testing</b><span>Test so the result means something.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-ad-creative.html"><b>suede-ad-creative</b><span>Produce ad creative at volume.</span><span class="arrow">-&gt;</span></a>
@@ -557,6 +682,53 @@
       <a class="row" href="./suede-sms.html"><b>suede-sms</b><span>Run SMS without getting blocked or resented.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-social.html"><b>suede-social</b><span>Run social as a channel rather than a chore.</span><span class="arrow">-&gt;</span></a>
       <a class="row" href="./suede-video.html"><b>suede-video</b><span>Plan and produce marketing video.</span><span class="arrow">-&gt;</span></a>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="field-notes">
+    <h2 id="field-notes">Field notes</h2>
+    <p class="section-sub">Why the pack is shaped this way: how 71 skills stay cheap to carry, how they route without colliding, and what the ship DAG is actually doing.</p>
+    <div class="notes">
+      <a class="note-row" href="../blog/progressive-disclosure-ship-dag-and-mcp.html">
+        <span class="note-date">Aug 2026</span>
+        <span class="note-copy">
+          <span class="note-title">71 skills installed. Your agent reads almost none of them.</span>
+          <span class="note-hook">Progressive disclosure, the ship DAG, and the MCP layer</span>
+        </span>
+        <span class="note-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="note-row" href="../blog/why-breadth-is-free.html">
+        <span class="note-date">Aug 2026</span>
+        <span class="note-copy">
+          <span class="note-title">Why breadth is free now, and what that changes</span>
+          <span class="note-hook">The economics of a 71-skill pack</span>
+        </span>
+        <span class="note-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="note-row" href="../blog/not-for-the-line-that-makes-a-pack-work.html">
+        <span class="note-date">Aug 2026</span>
+        <span class="note-copy">
+          <span class="note-title">NOT FOR: the two words that make a big skill pack work</span>
+          <span class="note-hook">How every row in this catalog stays out of the others' way</span>
+        </span>
+        <span class="note-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="note-row" href="../blog/memory-belongs-in-skills.html">
+        <span class="note-date">Aug 2026</span>
+        <span class="note-copy">
+          <span class="note-title">Your memory file is a tax you pay on every prompt</span>
+          <span class="note-hook">Why memory belongs in skills</span>
+        </span>
+        <span class="note-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="note-row" href="../blog/">
+        <span class="note-date">Archive</span>
+        <span class="note-copy">
+          <span class="note-title">All essays</span>
+          <span class="note-hook">The full writing archive</span>
+        </span>
+        <span class="note-arrow" aria-hidden="true">-&gt;</span>
+      </a>
     </div>
   </section>
 
