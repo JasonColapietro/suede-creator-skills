@@ -899,11 +899,14 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
-  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+(?:-[A-Za-z]+)?) skills, one portable/, expected: totalSkillCount, wordNumber: true },
+  // Numerals, not wordNumber: both headings used to spell the count out
+  // ("Seventy-one skills"), which reads as marketing prose on a technical
+  // page and drifts independently of every numeral elsewhere on the site.
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2>(\d+) skills, one portable/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
-  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/plugins.html", label: "lead paragraph", re: /(\d+) public skills your agent can load/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "meta description", re: /Install (\d+) public Codex and Claude skills/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "og:description", re: /property="og:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "twitter:description", re: /name="twitter:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
@@ -968,6 +971,15 @@ const countChecks = [
   { file: "docs/plugins.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
   { file: "docs/guide.html", label: "guide title skill count", re: /Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount, every: true },
   { file: "docs/plugins.html", label: "umbrella install count", re: /installs all (\d+) skills\./, expected: totalSkillCount },
+  // New guide and install-page surfaces. The h2 heading and plugins lead are
+  // already guarded above; these cover the copy and graphics added alongside.
+  { file: "docs/guide.html", label: "guide hero pack size", re: /(\d+) skills, MIT licensed/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure headline", re: /Installing (\d+) skills does not cost you/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure description count", re: /(\d+) one-line descriptions/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "path-map graphic count", re: /Every path lands the same (\d+) skills/, expected: totalSkillCount },
+  // Derived count: the diagram loads one skill, so the rest stay unread.
+  // Guarded against total-1 so it tracks the pack instead of going stale.
+  { file: "docs/guide.html", label: "disclosure unread count", re: /(\d+) stay unread/, expected: totalSkillCount - 1 },
   // The README hero and pack-map are SVGs with the count baked into the
   // artwork — the rendered number lives in the SVG text node, so README
   // prose alone proves nothing. Guard both graphics.
