@@ -959,6 +959,15 @@ const countChecks = [
   { file: "docs/guide.html", label: "guide skill-docs link count", re: /Browse all (\d+) installable skill folders/, expected: totalSkillCount },
   { file: "docs/plugins.html", label: "install page meta count", re: /Install all (\d+) Suede Creator Skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "copy bank folder count", re: /It ships (\d+) public SKILL\.md folders/, expected: totalSkillCount },
+  // Link labels. "Browse all N skills" is a button on three pages (five
+  // instances) that pointed at a catalog page reading a different number —
+  // the one count a visitor sees immediately before clicking through to be
+  // contradicted. `every` because the phrase repeats within a page.
+  { file: "docs/index.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/plugins.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "guide title skill count", re: /Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount, every: true },
+  { file: "docs/plugins.html", label: "umbrella install count", re: /installs all (\d+) skills\./, expected: totalSkillCount },
   // The README hero and pack-map are SVGs with the count baked into the
   // artwork — the rendered number lives in the SVG text node, so README
   // prose alone proves nothing. Guard both graphics.
