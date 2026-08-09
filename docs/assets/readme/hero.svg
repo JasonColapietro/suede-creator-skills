@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="t d">
+  <title id="t">Suede Creator Skills</title>
+  <desc id="d">71 open-source agent skills for Claude Code and Codex. One install command.</desc>
+  <rect width="1200" height="400" rx="16" fill="#080808"/>
+  <rect x="1" y="1" width="1198" height="398" rx="15" fill="none" stroke="#222222" stroke-width="2"/>
+
+  <!-- top bar -->
+  <text x="56" y="62" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" letter-spacing="4">SUEDE</text>
+  <text x="148" y="62" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="3">CREATOR SKILLS</text>
+  <text x="1144" y="62" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">CLAUDE CODE &#183; CODEX &#183; MCP</text>
+  <path d="M56 84H1144" stroke="#222222" stroke-width="1"/>
+
+  <!-- headline -->
+  <text x="56" y="164" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.5">The ship discipline</text>
+  <text x="56" y="216" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" letter-spacing="-0.5">your agent is missing.</text>
+
+  <!-- subhead -->
+  <text x="56" y="256" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="17">Orchestration, adversarial code review, A&#8211;F ship grades, AI evals, design,</text>
+  <text x="56" y="280" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="17">copy, SEO, growth, and creator rights. One install, fully inspectable.</text>
+
+  <!-- install chip -->
+  <rect x="56" y="300" width="422" height="44" rx="8" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+  <text x="76" y="328" fill="#c8a96e" font-family="'Courier New', Courier, monospace" font-size="16" font-weight="700">$</text>
+  <text x="94" y="328" fill="#f0ece4" font-family="'Courier New', Courier, monospace" font-size="16">/plugin install suede-skills@suede</text>
+
+  <!-- big 71 -->
+  <text x="1144" y="290" text-anchor="end" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="200" font-weight="900" letter-spacing="-12">71</text>
+  <text x="1138" y="330" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">SKILLS &#183; MIT &#183; OPEN SOURCE</text>
+
+  <!-- footer ticks -->
+  <path d="M56 364H1144" stroke="#222222" stroke-width="1"/>
+  <text x="600" y="386" text-anchor="middle" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.5">FULL SEND <tspan fill="#c8a96e">&#183;</tspan> AGENT TEAMS <tspan fill="#c8a96e">&#183;</tspan> CODEX FLEET <tspan fill="#c8a96e">&#183;</tspan> A&#8211;F SHIP GRADE <tspan fill="#c8a96e">&#183;</tspan> AI EVALS <tspan fill="#c8a96e">&#183;</tspan> SEO <tspan fill="#c8a96e">&#183;</tspan> iOS + ANDROID <tspan fill="#c8a96e">&#183;</tspan> CREATOR RIGHTS</text>
+</svg>

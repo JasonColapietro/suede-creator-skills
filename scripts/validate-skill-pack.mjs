@@ -931,9 +931,14 @@ const countChecks = [
   // landing page, and its URL value drifted to 29 while the alt text, the
   // README prose, and every other surface said 67. Guard both halves — the
   // rendered number lives in the URL, so alt text alone proves nothing.
-  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
+  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/skills-(\d+)-c8a96e/, expected: totalSkillCount },
   { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
-  { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  { file: "README.md", label: "hero alt skill count", re: /(\d+) open-source skills for Claude Code and Codex/, expected: totalSkillCount },
+  // The README hero and pack-map are SVGs with the count baked into the
+  // artwork — the rendered number lives in the SVG text node, so README
+  // prose alone proves nothing. Guard both graphics.
+  { file: "docs/assets/readme/hero.svg", label: "hero graphic skill count", re: /letter-spacing="-12">(\d+)</, expected: totalSkillCount },
+  { file: "docs/assets/readme/pack-map.svg", label: "pack-map title skill count", re: /(\d+) skills, seven lanes/, expected: totalSkillCount },
   // The install sections repeat "all N skills" five times — plugin, Codex
   // plugin, install.sh, Codex clone, and the Claude Code heading. All five sat
   // at 70 while the badge and intro said 71, because nothing guarded them and

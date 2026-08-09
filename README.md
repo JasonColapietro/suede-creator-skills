@@ -1,65 +1,68 @@
-# Suede Creator Skills
+<div align="center">
 
-A 71-skill toolkit for Claude Code and Codex: take broad outcomes full send, orchestrate multi-agent teams and OpenAI Codex CLI worker fleets, run code review with an A-F ship grade, and design AI evals.
+<img src="docs/assets/readme/hero.svg" alt="Suede Creator Skills — the ship discipline your agent is missing. 71 open-source skills for Claude Code and Codex." width="100%">
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 71](https://img.shields.io/badge/Skills-71-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+<br><br>
 
-> **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
+[![Skills: 71](https://img.shields.io/badge/skills-71-c8a96e?labelColor=080808)](#the-skills)
+[![License: MIT](https://img.shields.io/badge/license-MIT-c8a96e?labelColor=080808)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
+[![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
+[![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
+[![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
-## What it is
+**[Install](#install-in-30-seconds)** · **[The skills](#the-skills)** · **[Docs site](https://skills.suedeai.ai/)** · **[Skill catalog](https://skills.suedeai.ai/skills/)** · **[Blog](https://skills.suedeai.ai/blog/)** · **[MCP](#mcp-server)** · **[@johnnysuede](https://x.com/johnnysuede)**
 
-A free, MIT-licensed, broadly reusable pack of **71 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+<sub>By <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede Labs AI</a></sub>
 
-- **Full Send**: turn max-effort, max-agent, spare-no-compute, and fix-everything intent into one authorized controller, every useful non-colliding lane, adversarial reconciliation, and concise proof (`suede-full-send`). House line: **"Never end your allocation above zero."** Dry joke, not a literal token promise.
-- **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, independent review, and authority-gated contribution packets (`suede-agent-teams`).
-- **Codex worker fleets**: the Suede Fable Fleet — a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships (`suede-codex-fleet`).
-- **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ci-gate`).
-- **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
-- **Next-action recommendation**: score 2-4 candidate moves on goal alignment, unblocking, evidence, urgency, and leverage, then return one recommendation packaged as a short runnable prompt (`suede-recommend-next-action`).
-- **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
-- **Anti-slop pass**: strip AI writing tells from finished prose before it ships: filler phrases, false agency, formulaic contrasts, passive voice, and metronomic rhythm, all against a merged kill list with a 50-point score gate (`suede-deslop`).
-- **iOS and Android app shipping**: turn a website into an App Store-ready iOS app, or build and ship a native Android app end to end from a keyword through the Play Store (`site-to-ios-app`, `android-app-factory`).
-- **Consumer recovery**: audit Amazon returns and Amazon-billed subscriptions with a validated recovery path, or inspect recurring charges across App Store, Google Play, PayPal, and direct-bill services before any user-confirmed cancellation or refund request (`amazon-returns-recovery`, `subscription-recovery`).
-- **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
+</div>
 
-## Install the full pack
+---
 
-In Claude Code, add the marketplace and install the pack:
+Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
+
+This pack is the supervision: **71 public skill folders**, MIT-licensed, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 39 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+
+<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 39 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
+
+## Install in 30 seconds
+
+**Claude Code** — add the marketplace, install the pack:
 
 ```text
 /plugin marketplace add JasonColapietro/suede-creator-skills
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 71 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 71 skills. Want less? Two focused subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
-In Codex, add the repo's Codex-native marketplace and install the complete
-plugin:
+**Codex** — add the Codex-native marketplace, install the complete plugin:
 
 ```bash
 codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads all 71 skills and registers both read-only MCP discovery
-profiles. Restart Codex after installing or updating it.
+The Codex plugin loads all 71 skills and registers both read-only MCP discovery profiles. Restart Codex after installing or updating.
 
-Prefer a clone? `install.sh` copies all 71 skills into `~/.claude/skills/` and prints the installed count:
-
-```bash
-git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
-```
-
-Using Cursor, Copilot, Windsurf, or another agent? The [skills CLI](https://github.com/vercel-labs/skills) installs the pack into its supported agents, Claude Code and Codex included:
+**Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
 npx skills add JasonColapietro/suede-creator-skills
 ```
 
+**Prefer a clone?** `install.sh` copies all 71 skills into `~/.claude/skills/` and prints the installed count:
+
+```bash
+git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
+```
+
 You can also copy individual skill folders into `.claude/skills/` (project) or `~/.claude/skills/` (user).
 
 <details>
-<summary>Other install routes (Codex installer, project-level copy, MCP)</summary>
+<summary><b>More install routes</b> (single-skill Codex installer, project-level copy, MCP)</summary>
+
+<br>
 
 **Codex — install one skill from GitHub:**
 
@@ -79,6 +82,8 @@ mkdir -p .claude/skills
 cp -R /tmp/suede-creator-skills/skills/suede-agent-teams .claude/skills/
 ```
 
+For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and organization-managed Claude Skills may use upload or admin-managed flows instead of filesystem copy. Review skill contents before enabling code execution.
+
 **MCP — dependency-free stdio server:**
 
 ```bash
@@ -89,7 +94,7 @@ Exposes 7 tools (`list_suede_skills`, `get_suede_skill`, `suede_install_options`
 
 </details>
 
-## Try it in 30 seconds
+## Try it right now
 
 Install the pack, then ask for a code review with a ship grade on your current changes:
 
@@ -103,11 +108,32 @@ For a broad authorized outcome, invoke Full Send directly:
 Use suede-full-send to finish this release across code, docs, CI, and live verification. Preserve unrelated WIP and return proof.
 ```
 
-`suede-code` runs its findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring Correctness, Security and permissions, Data and state, domain truth, UX and release behavior, Tests and verification, and Deploy readiness, plus an overall A-F grade. If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it.
-
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
 
+## Full Send: broad outcomes, one authority
+
+Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. [`suede-full-send`](skills/suede-full-send) turns that intent into a structure: one authorized controller, every useful non-colliding lane running in parallel, adversarial reconciliation where lanes attack each other's claims, and a close that is either concise proof or one named blocker.
+
+<img src="docs/assets/readme/full-send-flow.svg" alt="Full Send pipeline: a broad authorized outcome flows through one controller into parallel code, docs, CI, and live-verification lanes, then adversarial reconciliation, then proof." width="100%">
+
+The rest of the orchestration lane backs it up:
+
+- [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
+- [`suede-ship`](skills/suede-ship) runs the canonical orchestration DAG on a repo: scout, multi-lens research, a red-teamed lane plan, disjoint build lanes, dual-lens review, adversarial refutation, an integration gate, and a release verifier with an evidence handoff.
+- [`suede-ship-copy`](skills/suede-ship-copy) is the same DAG rebuilt for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
+- [`suede-codex-fleet`](skills/suede-codex-fleet) is the Suede Fable Fleet: a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships. Claude judges, Codex generates.
+
+## The A–F ship grade
+
+[`suede-code`](skills/suede-code) runs a findings pass (TypeScript, React, Next.js, OWASP, and database checklists), then returns a grade card scoring seven lanes: Correctness, Security and permissions, Data and state, Domain truth, UX and release behavior, Tests and verification, and Deploy readiness. The weakest lane caps the grade, and auth and payment surfaces carry grade caps of their own.
+
+<img src="docs/assets/readme/ship-grade.svg" alt="The ship grade: seven graded lanes and one verdict. Instant-F triggers such as a hardcoded secret lock the grade to F with the exact file and line." width="100%">
+
+If it hits an instant-F trigger — a hardcoded secret, a permission check bypassable via a request param — the grade locks to F with the exact file and line, and no other lane can raise it. A polite review tells you what could be better. A grade tells you whether to ship.
+
 ## The skills
+
+Every link below goes to the skill's folder in this repo; the [skill catalog](https://skills.suedeai.ai/skills/) has the same list with install commands per skill.
 
 ### Agent orchestration & workflows
 
@@ -115,8 +141,10 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 |---|---|
 | [`suede-full-send`](skills/suede-full-send) | Full Send broad authorized outcomes through one controller, useful non-colliding lanes, adversarial reconciliation, and proof |
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
+| [`suede-ship`](skills/suede-ship) | The canonical orchestration DAG for repo changes: research, red-teamed planning, disjoint lanes, adversarial review, release verification |
+| [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-codex-fleet`](skills/suede-codex-fleet) | Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates |
-| [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces |
+| [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
 | [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |
 | [`suede-workflow-skills`](skills/suede-workflow-skills) | Umbrella skill that loads the full pack |
 
@@ -124,9 +152,9 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 | Skill | What it does |
 |---|---|
-| [`suede-code`](skills/suede-code) | Review + A-F grade in one pass |
+| [`suede-code`](skills/suede-code) | Review + A–F grade in one pass |
 | [`suede-code-review`](skills/suede-code-review) | Deep findings with Accessibility and SEO lanes, no letter grade |
-| [`suede-code-grader`](skills/suede-code-grader) | A-F ship verdict only, 7 lanes, instant-F triggers |
+| [`suede-code-grader`](skills/suede-code-grader) | A–F ship verdict only, 7 lanes, instant-F triggers |
 | [`suede-ci-gate`](skills/suede-ci-gate) | Write CI that gates the merge — stack/lockfile detection, one required check, branch protection |
 | [`suede-clip-to-guide`](skills/suede-clip-to-guide) | Turn a clip, talk moment, or transcript into a clip-to-guide funnel package with rights routing and an evidence gate |
 
@@ -140,21 +168,28 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-copy`](skills/suede-copy) | Conversion copy: headline formulas, A/B variants, anti-slop gate |
 | [`suede-deslop`](skills/suede-deslop) | Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate |
 | [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/AI-EO, metadata, schema, internal-link, and intent audit |
-| [`suede-visibility-grader`](skills/suede-visibility-grader) | A-F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |
+| [`suede-visibility-grader`](skills/suede-visibility-grader) | A–F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |
 | [`suede-site-alchemy`](skills/suede-site-alchemy) | Funnel analysis, friction audit, conversion math, ranked quick-wins |
 | [`suede-launch-packaging`](skills/suede-launch-packaging) | Package work as a launch: docs, install commands, proof links, QA |
 | [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
+
+### Mobile app factories
+
+| Skill | What it does |
+|---|---|
 | [`site-to-ios-app`](skills/site-to-ios-app) | Convert any website into an App Store-ready iOS app: audit, 4.2 wrapper-risk gate, shell strategy, release gate |
 | [`android-app-factory`](skills/android-app-factory) | One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release |
 
-### Consumer automation — the negotiation lane, proven outside a repo
+### Consumer recovery — the negotiation lane, proven outside a repo
 
 | Skill | What it does |
 |---|---|
 | [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
 | [`subscription-recovery`](skills/subscription-recovery) | Audit recurring charges outside Amazon across App Store, Google Play, PayPal, bank/card evidence, and direct-bill services; report findings first and require confirmation before cancellation or refund contact |
 
-Plus a creator toolkit (rights, release prep) — see [docs](https://skills.suedeai.ai/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
+### Creator rights & release
+
+Rights and release-prep tooling for working musicians and creators — see the [skill catalog](https://skills.suedeai.ai/skills/) for each one: [`suede-campaign-in-a-box`](skills/suede-campaign-in-a-box), [`suede-sync-packaging`](skills/suede-sync-packaging), [`suede-release-linter`](skills/suede-release-linter), [`suede-rights-passport`](skills/suede-rights-passport), [`suede-rights-audit`](skills/suede-rights-audit).
 
 ### Marketing & growth
 
@@ -172,6 +207,16 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 
 Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
 under the MIT License — see [NOTICE.md](NOTICE.md).
+
+## From the blog
+
+Essays on why the pack is built the way it is:
+
+- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, the ship DAG, and the MCP layer
+- [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 71-skill pack
+- [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
+- [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills
+- [**Two new lanes: a next-action recommender and a one-prompt Android app factory**](https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html)
 
 ## Public pages
 
@@ -192,47 +237,6 @@ node mcp/suede-skills-mcp.mjs --profile all
 | Tools (7) | Resources (6) | Prompts (5) |
 |---|---|---|
 | `list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist` | catalog, plugins, copy-seo-audit, visibility-grade, code-grade, qa-checklist | discovery and audit prompts |
-
-## Install for Codex
-
-Install the complete Codex-native plugin:
-
-```bash
-codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
-codex plugin add suede-skills@suede-codex
-```
-
-This installs all 71 skills and registers both read-only MCP discovery
-profiles. Restart Codex after installing or updating.
-
-For one selected skill, use the built-in skill installer:
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-workflow-skills
-```
-
-Pass extra `skills/<name>` paths after `--path` when you want a small custom
-set instead of the full plugin.
-
-## Install for Claude Code
-
-All 71 skills:
-
-```bash
-git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
-```
-
-Claude Code skills use `SKILL.md` files in `.claude/skills/`. For a project-level install, copy individual folders:
-
-```bash
-git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
-mkdir -p .claude/skills
-cp -R /tmp/suede-creator-skills/skills/suede-agent-teams .claude/skills/
-```
-
-For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and organization-managed Claude Skills may use upload or admin-managed flows instead of filesystem copy. Review skill contents before enabling code execution.
 
 ## Safety
 
@@ -257,7 +261,7 @@ python3 -m pip install PyYAML
 
 ## About the creator
 
-**Jason Colapietro** is the founder and CEO of [Suede Labs AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media.
+**Jason Colapietro** is the founder and CEO of [Suede Labs AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes.
 
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
 
