@@ -21,7 +21,7 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **71 public skill folders**, MIT-licensed, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 39 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+This pack is the supervision: **71 public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 39 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 39 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
