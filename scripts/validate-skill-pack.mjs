@@ -931,9 +931,14 @@ const countChecks = [
   // landing page, and its URL value drifted to 29 while the alt text, the
   // README prose, and every other surface said 67. Guard both halves — the
   // rendered number lives in the URL, so alt text alone proves nothing.
-  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
+  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/skills-(\d+)-c8a96e/, expected: totalSkillCount },
   { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
-  { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  { file: "README.md", label: "hero alt skill count", re: /(\d+) open-source skills for Claude Code and Codex/, expected: totalSkillCount },
+  // The README hero and pack-map are SVGs with the count baked into the
+  // artwork — the rendered number lives in the SVG text node, so README
+  // prose alone proves nothing. Guard both graphics.
+  { file: "docs/assets/readme/hero.svg", label: "hero graphic skill count", re: /letter-spacing="-12">(\d+)</, expected: totalSkillCount },
+  { file: "docs/assets/readme/pack-map.svg", label: "pack-map title skill count", re: /(\d+) skills, seven lanes/, expected: totalSkillCount },
   // The install sections repeat "all N skills" five times — plugin, Codex
   // plugin, install.sh, Codex clone, and the Claude Code heading. All five sat
   // at 70 while the badge and intro said 71, because nothing guarded them and
@@ -1049,7 +1054,10 @@ for (const check of countChecks) {
 // project must be recomputed from that table, never hand-written beside it.
 {
   const gradeRank = { "A+": 6, A: 5, "A-": 4, "B+": 3, B: 2, "B-": 1, "C+": 0.5, C: 0 };
-  const detailBlock = docsRootText.split("See the full 15-category scorecard")[1]?.split("</details>")[0];
+  // Anchor on the details element's class, not the summary copy — the copy
+  // ("See the full 15-category scorecard") drifted once and silently skipped
+  // this guard while the scorecard table was still on the page.
+  const detailBlock = docsRootText.split('class="scorecard-details')[1]?.split("</details>")[0];
   if (!detailBlock) {
     warn.push("docs/index.html scorecard detail table not found — competitive-claim guard skipped");
   } else {
@@ -1062,21 +1070,23 @@ for (const check of countChecks) {
     }
     const beatsBoth = scored.filter(([, s, g, p]) => gradeRank[s] > gradeRank[g] && gradeRank[s] > gradeRank[p]);
     const losesBoth = scored.filter(([, s, g, p]) => gradeRank[s] < gradeRank[g] && gradeRank[s] < gradeRank[p]);
+    // Current strip copy: "Beats GSD and Superpowers in <N categories>, and
+    // publishes the ones it loses" — the win count is still a published
+    // assertion and must equal the table's beat-both row count. The strip no
+    // longer states the total or the loss count; losses stay visible through
+    // the table itself and the hero-tile completeness check below.
     const claim = docsRootText.match(
-      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) of (\d+) categories<\/span> &mdash; and publishes the (\d+) it loses/
+      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) categories<\/span>, and publishes the ones it loses/
     );
     if (!claim) {
       fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table");
     } else {
-      const [, wins, total, losses] = claim.map(Number);
+      const wins = Number(claim[1]);
       if (wins !== beatsBoth.length) {
         fail.push(`docs/index.html hero claims it beats both in ${wins} categories; the scorecard shows ${beatsBoth.length} (${beatsBoth.map((r) => r[0]).join(", ")})`);
       }
-      if (total !== scored.length) {
-        fail.push(`docs/index.html hero claims ${total} scored categories; the scorecard has ${scored.length}`);
-      }
-      if (losses !== losesBoth.length) {
-        fail.push(`docs/index.html hero claims it loses ${losses}; the scorecard shows ${losesBoth.length} (${losesBoth.map((r) => r[0]).join(", ")})`);
+      if (losesBoth.length === 0) {
+        fail.push('docs/index.html hero says it "publishes the ones it loses" but the scorecard shows no lose-both categories — reword the strip or fix the table');
       }
     }
     // The four hero tiles must be exactly the beat-both categories, or the
