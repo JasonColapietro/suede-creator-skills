@@ -3341,7 +3341,7 @@
 
     <div id="hero-grid">
       <div id="hero-copy">
-        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 9</a></span>
+        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 10</a></span>
 
         <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and completely unsupervised.</h1>
 
@@ -3361,8 +3361,8 @@
             <span style="height:88%"></span>
           </span>
           <span class="hero-shiplog-text">
-            <span class="hero-shiplog-top">Released Aug 9 <b>&middot; 15de94d</b></span>
-            <span class="hero-shiplog-title">41 skills come out from behind the MCP</span>
+            <span class="hero-shiplog-top">Released Aug 10 <b>&middot; a49a998</b></span>
+            <span class="hero-shiplog-title">Skill search stops needing your exact wording</span>
             <span class="hero-shiplog-more">223 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
         </a>
@@ -3519,7 +3519,7 @@
       <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
       <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
 
-      <p class="clog-fresh reveal reveal-d2">Version 0.11.0 released Aug 9, 2026 <span id="clog-fresh-rel" data-iso="2026-08-09"></span></p>
+      <p class="clog-fresh reveal reveal-d2">Version 0.11.1 released Aug 10, 2026 <span id="clog-fresh-rel" data-iso="2026-08-10"></span></p>
 
       <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 5, 0, 1, 2, 64, 25, 33, 18, 19, and 56 commits.">
         <span style="height:8%"></span>
@@ -3546,6 +3546,16 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-10</span>
+            <span class="clog-tag clog-tag--fix">MCP</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/a49a998" target="_blank" rel="noopener" aria-label="View commit a49a998 on GitHub">a49a998</a>
+          </p>
+          <h3 class="clog-title">Skill search stops needing your exact wording</h3>
+          <p class="clog-detail">Version 0.11.1 fixes <code>search_suede_skills</code> matching tokens exactly, so "my landing page is not converting" never reached <code>suede-site-alchemy</code> &mdash; the catalog says "conversion". A shared four-character stem now counts for half an exact match, and a stopword list replaces the three-character floor that was dropping <code>ai</code>, <code>qa</code>, <code>ux</code>, and <code>cro</code>. A 15-case routing eval now runs in CI: top-3 accuracy went 13/15 to 15/15.</p>
+        </li>
 
         <li class="clog-item" data-type="fix">
           <p class="clog-meta">
