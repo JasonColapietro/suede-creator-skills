@@ -319,6 +319,29 @@
       .ship-strip { padding: 48px 0; }
       .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
     }
+
+    /* Persistent GitHub star button in the sticky nav. Deliberately outlined
+       rather than filled: Install stays the primary CTA, this is secondary. */
+    a.nav-star {
+      display: inline-flex; align-items: center; gap: 7px;
+      min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--muted); text-transform: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    a.nav-star:hover { color: var(--gold); border-color: var(--gold); background: rgba(200, 169, 110, 0.08); }
+    .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav-star-count {
+      font-family: var(--mono); font-size: 12px; color: var(--cream);
+      padding-left: 7px; border-left: 1px solid var(--border);
+    }
+    a.nav-star:hover .nav-star-count { border-left-color: rgba(200, 169, 110, 0.4); }
+    @media (max-width: 620px) {
+      .nav-star-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      a.nav-star { padding: 8px 12px; gap: 6px; }
+      .nav-star-count { padding-left: 6px; }
+    }
   </style>
 </head>
 <body>
@@ -337,6 +360,7 @@
       <a href="./guide.html">Guide</a>
       <a href="./copy.html">Copy Bank</a>
       <a href="./blog/">Blog</a>
+      <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="./plugins.html" aria-current="page" class="nav-cta">Install</a>
     </div>
   </div>
@@ -721,5 +745,45 @@ codex plugin add suede-skills@suede-codex</code></pre>
   });
 </script>
 
+<script>
+  // Live star count, cached in localStorage for an hour so a browsing session
+  // costs one API call rather than one per page. Silent on failure: the button
+  // is a working link regardless, and no count beats a wrong one.
+  (function() {
+    var pills = document.querySelectorAll('[data-star-count]');
+    var key = 'suede-stars-v1';
+    var ttl = 60 * 60 * 1000;
+    if (!pills.length || !window.fetch) return;
+    function fmt(n) {
+      if (n < 1000) return String(n);
+      return String(Math.round(n / 100) / 10).replace(/\.0$/, '') + 'k';
+    }
+    function reveal(n) {
+      if (typeof n !== 'number' || n < 10) return;
+      var text = fmt(n);
+      Array.prototype.forEach.call(pills, function(el) {
+        el.textContent = text;
+        el.removeAttribute('hidden');
+      });
+    }
+    var cached = null;
+    try {
+      var raw = window.localStorage.getItem(key);
+      if (raw) {
+        var c = JSON.parse(raw);
+        if (c && typeof c.n === 'number' && typeof c.t === 'number' && Date.now() - c.t <= ttl) cached = c.n;
+      }
+    } catch (e) {}
+    if (cached !== null) { reveal(cached); return; }
+    window.fetch('https://api.github.com/repos/JasonColapietro/suede-creator-skills')
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        try { window.localStorage.setItem(key, JSON.stringify({ n: data.stargazers_count, t: Date.now() })); } catch (e) {}
+        reveal(data.stargazers_count);
+      })
+      .catch(function() {});
+  })();
+</script>
 </body>
 </html>
