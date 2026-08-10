@@ -1117,23 +1117,43 @@ for (const check of countChecks) {
     }
     const beatsBoth = scored.filter(([, s, g, p]) => gradeRank[s] > gradeRank[g] && gradeRank[s] > gradeRank[p]);
     const losesBoth = scored.filter(([, s, g, p]) => gradeRank[s] < gradeRank[g] && gradeRank[s] < gradeRank[p]);
-    // Current strip copy: "Beats GSD and Superpowers in <N categories>, and
-    // publishes the ones it loses" — the win count is still a published
-    // assertion and must equal the table's beat-both row count. The strip no
-    // longer states the total or the loss count; losses stay visible through
-    // the table itself and the hero-tile completeness check below.
+    const overallRow = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
+      .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
+      .find((cells) => cells.length === 4 && cells[0] === "Overall");
+    // Current strip copy: "Self-graded on the Suede ship-gate rubric: Suede
+    // takes <N of M categories> outright, and loses Overall to Superpowers,
+    // <their grade> to <our grade>." Every number in it is a published
+    // assertion about named third-party packs, so all four are re-derived
+    // from the table: the win count, the category total, and both Overall
+    // grades. The self-graded basis and the Overall loss must stay in the
+    // strip itself — that is the only benchmark copy above the fold.
     const claim = docsRootText.match(
-      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) categories<\/span>, and publishes the ones it loses/
+      /Self-graded on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">(\d+) of (\d+) categories<\/span> outright, and loses Overall to <a href="#scorecard">Superpowers, (\S+) to (\S+)<\/a>/
     );
     if (!claim) {
-      fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table");
+      fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table and must keep the self-graded disclosure");
     } else {
       const wins = Number(claim[1]);
+      const total = Number(claim[2]);
       if (wins !== beatsBoth.length) {
         fail.push(`docs/index.html hero claims it beats both in ${wins} categories; the scorecard shows ${beatsBoth.length} (${beatsBoth.map((r) => r[0]).join(", ")})`);
       }
+      if (total !== scored.length) {
+        fail.push(`docs/index.html hero claims ${total} graded categories; the scorecard table has ${scored.length}`);
+      }
       if (losesBoth.length === 0) {
-        fail.push('docs/index.html hero says it "publishes the ones it loses" but the scorecard shows no lose-both categories — reword the strip or fix the table');
+        warn.push("docs/index.html scorecard shows no lose-both categories — confirm the table still publishes losses");
+      }
+      if (!overallRow) {
+        fail.push("docs/index.html scorecard has no Overall row — the hero's Overall-loss claim cannot be re-derived");
+      } else {
+        const [, suedeOverall, , powersOverall] = overallRow;
+        if (claim[3] !== powersOverall || claim[4] !== suedeOverall) {
+          fail.push(`docs/index.html hero states Overall "Superpowers, ${claim[3]} to ${claim[4]}"; the scorecard Overall row reads Superpowers ${powersOverall}, Suede ${suedeOverall}`);
+        }
+        if (gradeRank[suedeOverall] >= gradeRank[powersOverall]) {
+          fail.push(`docs/index.html hero says Suede loses Overall to Superpowers, but the scorecard Overall row reads Suede ${suedeOverall} vs Superpowers ${powersOverall} — reword the strip`);
+        }
       }
     }
     // The four hero tiles must be exactly the beat-both categories, or the
