@@ -8,7 +8,7 @@
   },
   "scripts": {
     "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check",
-    "build:book": "node scripts/build-book.mjs && node scripts/build-book-site.mjs",
+    "build:book": "node scripts/build-book.mjs && node scripts/build-book-pdf.mjs && node scripts/build-book-site.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
     "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
@@ -17,7 +17,8 @@
     "test": "npm run validate && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:contributions && npm run test:python",
     "audit:dependencies": "npm audit --omit=dev --audit-level=high",
     "check:description": "node scripts/check-repo-description.mjs",
-    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test"
+    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test",
+    "build:pdf": "node scripts/build-book-pdf.mjs"
   },
   "dependencies": {
     "js-yaml": "5.2.2"

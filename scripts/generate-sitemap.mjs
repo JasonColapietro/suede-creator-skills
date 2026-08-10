@@ -217,6 +217,18 @@ function buildEntries() {
         priority: BOOK_CHAPTER_PRIORITY,
       });
     }
+
+    // Search engines index PDFs, and the print edition is a real destination
+    // rather than a byproduct, so list it beside the chapters it duplicates.
+    const printEdition = path.join(docsRoot, "book", "s-tier.pdf");
+    if (fs.existsSync(printEdition)) {
+      entries.push({
+        loc: `${BASE_URL}/book/s-tier.pdf`,
+        lastmod: lastCommitDate(path.join("docs", "book", "s-tier.pdf")),
+        changefreq: BOOK_CHAPTER_CHANGEFREQ,
+        priority: BOOK_CHAPTER_PRIORITY,
+      });
+    }
   }
 
   return entries;

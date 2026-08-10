@@ -225,7 +225,7 @@ Essays on why the pack is built the way it is:
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
-- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/)) — a free 29,000-word book on how Agent Skills work and how to get genuinely good with them
+- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free 29,000-word book on how Agent Skills work and how to get genuinely good with them
 
 ## MCP server
 

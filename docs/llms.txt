@@ -15,7 +15,7 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 - [Skill index](https://skills.suedeai.ai/skills/): Browse all 71 skills.
 - [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Copy bank](https://skills.suedeai.ai/copy.html): Public-safe explainer copy and reusable launch language.
-- [S-Tier, the book](https://skills.suedeai.ai/book/): A free 29,000-word book in 14 chapters on how Agent Skills work and how a builder becomes exceptional with them: progressive disclosure and description routing, outcome-bound orchestration, agent lanes and worker fleets, verification discipline, code grading, design and copy as systems, distribution, shipping, a five-tier builder ladder, authoring your own skills, and a ninety-day practice plan. Source Markdown: https://github.com/JasonColapietro/suede-creator-skills/tree/main/book
+- [S-Tier, the book](https://skills.suedeai.ai/book/): A free 29,000-word book in 14 chapters on how Agent Skills work and how a builder becomes exceptional with them: progressive disclosure and description routing, outcome-bound orchestration, agent lanes and worker fleets, verification discipline, code grading, design and copy as systems, distribution, shipping, a five-tier builder ladder, authoring your own skills, and a ninety-day practice plan. Source Markdown: https://github.com/JasonColapietro/suede-creator-skills/tree/main/book. Print edition (PDF, 89 pages): https://skills.suedeai.ai/book/s-tier.pdf
 
 ## Workflow skills (orchestration, code, evals, design, copy, SEO, QA, launch)
 
