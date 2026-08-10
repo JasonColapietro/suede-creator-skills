@@ -1013,6 +1013,30 @@ const countChecks = [
   { file: "docs/skills/suede-full-send.html", label: "twitter:image:alt", re: /twitter:image:alt" content="Suede Creator Skills: (\d+) open-source Agent Skills/, expected: totalSkillCount },
 ];
 
+// book/ is prose, so its counts are written inline rather than in a fixed
+// template. Enumerate the files at validation time and guard every numeric
+// skill-count phrase in each one, so a chapter that says "71 of them" fails
+// the same way a stale meta tag does. Word-number spellings ("Seventy-one")
+// are guarded separately below.
+const bookDir = path.join(repoRoot, "book");
+if (fs.existsSync(bookDir)) {
+  // Deliberately narrow. The book quotes historical drift verbatim ("said
+  // 'all 70 skills'") and counts unrelated things ("Thirty-eight of them add a
+  // metadata block"), so a loose number-next-to-"skills" pattern fails on
+  // correct prose. Guard only the canonical pack-size phrasings.
+  const bookDigitCount = /\b(\d{2,})(?:[ -](?:public |installable |MIT-licensed )skills?\b|-skill\b| skill folders\b)/;
+  const bookWordCount = /\b([A-Z][a-z]+-[a-z]+) public skills?\b/;
+  for (const name of fs.readdirSync(bookDir).filter((f) => f.endsWith(".md") && f !== "STYLE.md")) {
+    const text = readText(path.join(bookDir, name));
+    if (bookDigitCount.test(text)) {
+      countChecks.push({ file: `book/${name}`, label: "skill count in prose", re: bookDigitCount, expected: totalSkillCount, every: true });
+    }
+    if (bookWordCount.test(text)) {
+      countChecks.push({ file: `book/${name}`, label: "spelled skill count in prose", re: bookWordCount, expected: totalSkillCount, every: true, wordNumber: true });
+    }
+  }
+}
+
 for (const check of countChecks) {
   const filePath = path.join(repoRoot, check.file);
   if (!fs.existsSync(filePath)) {

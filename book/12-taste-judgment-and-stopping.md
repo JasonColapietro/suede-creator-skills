@@ -1,0 +1,273 @@
+# Chapter 12. Taste, Judgment, and Knowing When to Stop
+
+An agent will keep going forever. Not metaphorically. Give it a repo and an
+open-ended instruction and it will find work in that repo until you interrupt
+it, and every piece of that work will look defensible in isolation. This is the
+single most important operational fact about working with agents, and almost
+nothing in the tooling protects you from it. Stopping is the operator's job.
+There is no procedure that supplies it.
+
+Everything in this book up to now has been a system: a skill, a gate, a rubric,
+a proof standard. This chapter is about the layer above all of that, the part
+that decides which system to run, how far to let it go, and when the thing in
+front of you is finished. That layer cannot be written into a SKILL.md, because
+writing it down is exactly the move that fails. A rule that says "stop when it
+is good enough" is not a rule.
+
+What can be transmitted is a set of decision boundaries, a few tests, and a
+practice for accumulating judgment on purpose instead of by accident.
+
+## Which decisions are yours
+
+The first judgment is about judgment itself: which calls belong to the agent and
+which come back to you.
+
+Getting this wrong in one direction produces an agent that asks permission to
+rename a variable. Getting it wrong in the other direction produces an agent
+that force-pushed to main because it seemed cleaner. Both failures come from the
+same missing rule, and `suede-full-send` states it in four clauses. Bring the
+user a decision, not a workshop. Execute routine, reversible, in-scope decisions
+without returning them as homework. Ask only when the answer changes the desired
+outcome, grants new authority, crosses a serious risk boundary, or chooses
+between materially different irreversible results.
+
+Those four conditions are worth taking apart, because each one is doing distinct
+work.
+
+*Changes the outcome* means the answer alters what gets delivered, not how it
+gets delivered. Which of two column names to use does not change the outcome.
+Whether the export includes deleted records does.
+
+*Grants new authority* means the agent is about to reach a surface it was not
+given. Reading a file it was pointed at is in scope. Reading a different repo to
+get context is a new surface, and it does not become authorized because it would
+be helpful.
+
+*Crosses a serious risk boundary* is the short list that never gets relaxed:
+data loss, credential or privacy exposure, legal or rights claims, payment,
+irreversible public action. The house line of that skill, "never end your
+allocation above zero," is a dry joke about using already-authorized compute
+hard. It has never meant spending money or touching production because
+persistence was requested. Full send increases persistence and coverage. It does
+not create authority.
+
+*Materially different irreversible results* is the subtle one. Two options, both
+defensible, both permanent. Postgres or SQLite for a project that will run for
+years. A public API shape that other people will build against. Neither is
+wrong, and the wrongness only appears in eighteen months, and by then the choice
+is not revisitable at reasonable cost. That is your decision, always, and an
+agent proposing one confidently is not evidence that it is right.
+
+The corollary is stricter than most people apply it: everything outside those
+four clauses, the agent decides. If you find yourself approving choices that
+fail all four tests, you have not been careful, you have been a bottleneck with
+a nice explanation.
+
+## Scope discipline, or how a bug fix eats a Thursday
+
+A bug fix turns into a refactor roughly like this. The agent opens the file with
+the bug. The file is bad, and the agent notices, correctly. The fix would be
+cleaner with the function split. Splitting the function means updating four
+callers. Two of the callers have their own problems. Ninety minutes later the
+pull request is eleven files, the original two-line fix is in there somewhere,
+and the reviewer cannot separate the fix from the churn.
+
+Every step of that was locally reasonable. That is what makes it dangerous.
+
+Treat it as a judgment failure, not a productivity win, and be specific about
+why. The reviewer can no longer verify the fix, because verifying it now means
+verifying eleven files. The blast radius went from one function to four call
+sites, so the risk of the change no longer matches the risk of the bug. Rollback
+got worse: reverting the fix now reverts the refactor. And the refactor never
+got the design attention it would have gotten as its own piece of work, because
+it arrived as a side effect.
+
+The clean version is unglamorous. Fix the bug in the smallest diff that fixes
+it. Write down the refactor you did not do, in an issue or a TODO with enough
+context to act on. Ship the fix. Decide about the refactor separately, when you
+are deciding about refactors rather than when you are fixing a bug.
+
+There is a hidden benefit. Most refactors written down that way are never done,
+and a meaningful fraction of those should never have been done. The urge to
+clean up a file is strongest while you are inside it and weakest when you are
+looking at your priorities. The second view is the more accurate one.
+
+`suede-agent-teams` builds this into its lane map: every lane declares the files
+it owns, and no builder opens a file outside its assignment. That is scope
+discipline made structural, so it stops depending on anyone's restraint in the
+moment. When a lane genuinely needs a file it does not own, that surfaces as a
+collision the orchestrator resolves, which is exactly right. Scope expansion
+should be a decision someone makes, not something that happens.
+
+## Second-best now versus best later
+
+There is a class of decision where the options are close and the deliberation is
+expensive. Which HTTP client. Which of two acceptable schemas. Whether to use
+the framework's router or a small custom one for six routes.
+
+For these, the second-best option chosen in ten minutes beats the best option
+chosen in three days, and the margin is usually not close. The best-option
+analysis costs three days of not shipping, and it produces a decision that is
+maybe five percent better on a dimension you have not measured, based on a usage
+pattern you are guessing at because the product does not exist yet.
+
+The reason this is safe is reversibility. If you can change the HTTP client in
+an afternoon, the cost of being wrong is an afternoon, which means the
+deliberation should never cost more than an afternoon. Time spent deciding is
+bounded by the cost of being wrong, not by how interesting the decision is.
+
+Then there is the other class, where this advice is actively harmful. Public API
+shapes. Data models that will accumulate years of rows. Auth architecture.
+Anything other people will build against. Here the second-best option chosen
+fast becomes a permanent tax, and the deliberation is cheap by comparison, and
+you should take the three days.
+
+The question is not "which option is better." It is "what does being wrong cost,
+and when do I find out." Cheap and soon: decide in ten minutes. Expensive and
+late: this is one of the four clauses from earlier, it is your call, and it
+deserves the strongest reasoning you have.
+
+Agents make the first class faster and the second class more dangerous. Faster
+because they will just implement the reversible thing and you can look at it
+running. More dangerous because an agent will produce a confident, complete,
+internally consistent design for an irreversible decision in ninety seconds, and
+confident and complete is exactly what a bad architectural decision looks like
+before it is deployed.
+
+## Deciding what not to build
+
+The strongest judgment move available is declining, and it produces nothing you
+can point at, which is why it is undersupplied.
+
+Three questions do most of the work.
+
+Who asked, and what did they actually want? A feature request is usually a
+proposed solution wearing the clothes of a problem. Someone asks for CSV export
+because they need one number in a spreadsheet once a month. The export is a
+week. The number is an endpoint and an afternoon. Answer the underlying need,
+not the proposed shape of it.
+
+What does it cost after it ships? The build is the small number. The support
+burden, the migrations it constrains, the tests it adds to every future change,
+the fact that it must keep working forever: that is the real price. Anything you
+ship, you own. A feature used by two percent of users still blocks a schema
+change three years later.
+
+What does it prevent? Not just the time. The next thing you would have built,
+and the fact that the product now means something slightly different than it
+did, and every future decision has to accommodate the new surface.
+
+The default should be no. Not out of scarcity, out of arithmetic: the number of
+things worth building is much smaller than the number of things worth
+considering, and shipping is the expensive part.
+
+## The done test
+
+Here is the honest test for whether something is finished: are you still
+improving the artifact, or are you now only changing it?
+
+Improving means a specific defect closes. A bug goes away, an untested path gets
+a test, a confusing name gets clear, a missing error state appears. You can name
+what was wrong before.
+
+Changing means the fourth revision of a paragraph that was fine in revision two,
+the button moved four pixels and then back, the abstraction reshuffled because a
+different arrangement is also nice. Nothing was wrong. Something is now
+different.
+
+The tell is that you can no longer state the defect you are fixing. If the
+honest description of your next edit is "I want to see how it looks the other
+way," you finished a while ago and have been redecorating since. Ask what defect
+this edit closes, and if there is not one, stop.
+
+The second test is harder and better: what evidence would change your mind about
+it being done? If you cannot name a check that would come back negative, you are
+not verifying, you are admiring. `suede-full-send` gives three verdicts for
+exactly this reason. `PROVED` means direct evidence matches the done signal.
+`UNPROVED` means the signal is unchecked or supported only indirectly. `BLOCKED`
+means something outside your control prevents the check. Notice that `UNPROVED`
+is a legitimate way to finish. You are allowed to ship with a named, honest gap.
+What you are not allowed to do is call an unproved thing proved, and you are not
+allowed to keep working past done because you are avoiding the discomfort of
+shipping something with a named gap.
+
+## The agent will never stop
+
+None of this used to be urgent, because effort was self-limiting. You got tired.
+The scope of your ambition was governed by the length of your afternoon.
+
+That governor is gone. An agent given "improve this codebase" will improve it
+for as long as you let it, and will produce a plausible summary at every
+checkpoint, and will never once volunteer that the remaining work is not worth
+doing. It has no concept of diminishing returns because it has no stake in the
+return.
+
+This changes what your role is. In the old arrangement you supplied the effort
+and the environment supplied the limits. Now the agent supplies the effort and
+you supply the limits, and if you do not supply them nobody does.
+`suede-full-send` puts a hard clause on its reconciliation loop for this: repeat
+only while a named authorized action targets a specific unresolved signal and
+has a plausible material effect. Read it as a stopping condition, because that
+is what it is. Once you cannot name the signal, the loop is theater.
+
+Practically: name the done signal before you start, not after. If it is not
+written down at the beginning, you will discover it at the end, and what you
+discover will be shaped by what the agent happened to produce.
+
+## Taste is written down or it does not exist
+
+Taste sounds innate. It is not. It is a set of preferences you have named, with
+reasons attached, accumulated over enough decisions that they arrive fast enough
+to feel like instinct.
+
+The accumulation only happens if you write down what you rejected and why.
+Rejection is where the information is. Everyone keeps a record of what they
+built. Almost nobody keeps a record of the four approaches they considered and
+killed, which is a shame, because the reasons those died are the actual content
+of judgment. "We do not use that pattern here" is a rule you cannot apply to a
+new situation. "We stopped using that pattern because it hides the error path
+and we shipped two silent failures" is a rule that generalizes to things that
+are not that pattern.
+
+Two habits make this concrete. The RFC format in `suede-agent-teams` requires an
+Alternatives Considered section: two or three options with the reason each was
+not chosen. That requirement exists because the alternatives are the durable
+part of the document. Six months later nobody rereads the proposed solution, it
+is in the code. They reread why the other thing was rejected, usually because
+someone is proposing it again.
+
+The second habit is per-session and takes a minute. When you reject something an
+agent produced, say why in one line before moving on. Not "no, try again." Say
+"no, this swallows the error, I want it to surface." That line is worth writing
+even when the agent does not need it, because you are the one accumulating.
+Rejections stated as reasons become preferences. Rejections stated as vetoes
+evaporate.
+
+Over a year of this you have a document nobody assigned you: a list of the
+things you will not do and the specific damage each one caused. That is taste,
+and it is portable, and it is the one thing in this book that an agent cannot
+generate for you because it is made entirely out of your own consequences.
+
+## Stopping
+
+Every skill in this pack has a stopping condition. Grades cap. Loops require a
+named unresolved signal. Handoffs will not close without evidence. The pack is
+built that way because the alternative is a machine that runs until you notice,
+and by the time you notice it has eleven files open and a very reasonable
+explanation.
+
+The discipline is simple to state and hard to hold: decide what done looks like
+before you start, and then honor it when you get there, including on the days
+when the work is going well and continuing feels better than shipping.
+Especially those days. Momentum is the most expensive reason to keep going,
+because it is the one that never announces itself as a reason.
+
+An agent will produce work forever. Deciding that a thing is finished is the
+last judgment nobody can delegate, and it is the one that separates a shipped
+product from an impressive amount of activity.
+
+### The move
+
+Before you start the next task, write the done signal in one sentence and put it
+where you will see it, then stop when you hit it even if the session is going
+well.
