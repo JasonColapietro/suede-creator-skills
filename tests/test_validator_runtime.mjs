@@ -401,7 +401,7 @@ test(
     );
     assert.deepEqual(
       [...plugin.mcpServers].sort(),
-      ["suede_creator_mcp", "suede_workflow_mcp"]
+      ["suede_creator_mcp", "suede_marketing_mcp", "suede_workflow_mcp"]
     );
     const launchPackaging = plugin.skills.find(
       ({ name }) => name === "suede-skills:suede-launch-packaging"
