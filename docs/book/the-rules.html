@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Appendix B. The Rules, on One Page | S-Tier, the builder's book</title>
+    <meta name="description" content="Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/the-rules.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Appendix B. The Rules, on One Page | S-Tier, the builder's book">
+    <meta property="og:description" content="Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/the-rules.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Appendix B. The Rules, on One Page | S-Tier, the builder's book">
+    <meta name="twitter:description" content="Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/the-rules.html#chapter",
+  "name": "Appendix B. The Rules, on One Page",
+  "headline": "The Rules, on One Page",
+  "description": "Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.",
+  "url": "https://skills.suedeai.ai/book/the-rules.html",
+  "position": 17,
+  "wordCount": 583,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/the-rules.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Appendix B</p>
+      <h1>The Rules, on One Page</h1>
+      <p class="post-meta">Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.</p>
+      <div class="book-meta"><span>583 words</span><span>3 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>Everything the book argues for, compressed. Print it, or do not, but be able to recite the first six.</p>
+      <h2 id="evidence">Evidence</h2>
+      <ol><li>A claim without command output, an HTTP status, a diff, or a rendered screenshot is a guess in a confident tone.</li><li>Read test output to the end. A pipe into <code>head</code> has hidden a <code>FAILED</code> line before and will again.</li><li>Verify the rendered result, not the markup. A file-wide count can pass while the page is unreadable.</li><li>Verify against production, not the file tree. What deploys is not always what you think you wrote.</li><li>If a step was skipped, say it was skipped. Partial work reported as complete costs more than partial work reported as partial.</li></ol>
+      <h2 id="decisions">Decisions</h2>
+      <ol><li>Bring a decision, not a workshop. Your operator's attention is the scarce resource, not compute.</li><li>Ask only when the answer changes the outcome, grants new authority, crosses a serious risk boundary, or picks between materially different irreversible results. Otherwise decide and report.</li><li>Routine, reversible, in-scope calls are yours to make. Handing them back is not caution, it is delegation upward.</li><li>A concern raised once and overruled is settled. Say your piece, then build the thing.</li></ol>
+      <h2 id="scope">Scope</h2>
+      <ol><li>Freeze the mission before you mutate anything: objective, targets, authorized actions, protected work in progress, source of truth.</li><li>The requested scope is the deliverable. Do not quietly narrow it, widen it, or transform it into the work you would rather do.</li><li>A bug fix that becomes a refactor is a judgment failure with good intentions.</li><li>Finish the parts that are not blocked, then state plainly what you left out and why. Scaling the work down is the requester's call.</li></ol>
+      <h2 id="parallelism">Parallelism</h2>
+      <ol><li>Lanes must be disjoint. Two agents editing one file is not parallelism, it is a merge conflict with extra steps.</li><li>Fan out for volume, never for judgment. One complex coupled change is one agent's job.</li><li>Every worker needs an acceptance criterion before it starts. Without one you are generating, not building.</li><li>Isolate with worktrees. Check for live processes before deleting one, and do not trust a session list to tell you what is running.</li></ol>
+      <h2 id="skills">Skills</h2>
+      <ol><li>The description is the router. Write it in the words a user would actually type.</li><li>Every skill needs a NOT FOR route to its nearest neighbor, or the two will fight over the same request and one will win at random.</li><li>A skill is good when a competent stranger runs it and produces the same artifact.</li><li>Write one when you have explained the same procedure three times.</li><li>Gates advise, they do not block. A failed check changes what you report, never what you do. The single exception is extreme risk: data loss, credential exposure, rights violations, payment mistakes, irreversible public damage. There, stop and let the human choose.</li></ol>
+      <h2 id="craft">Craft</h2>
+      <ol><li>Taste you cannot write down is a preference. Taste you can write down is a system.</li><li>Thresholds beat opinions. Measured contrast, 44px targets, 65 to 75 characters per line.</li><li>Proof outranks adjectives, for humans and for models.</li><li>A page that cannot be quoted will not be cited.</li></ol>
+      <h2 id="stopping">Stopping</h2>
+      <ol><li>Done is when further work changes the artifact rather than improves it.</li><li>An agent will happily continue forever. Stopping is your job.</li><li>Never end your allocation above zero. Dryly, once, then back to business.</li></ol>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="skill-index.html"><span class="dir">Previous</span><span class="to">Appendix A. The Skill Index, by Intent</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

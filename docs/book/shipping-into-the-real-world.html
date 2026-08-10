@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 10. Shipping Into the Real World | S-Tier, the builder's book</title>
+    <meta name="description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/shipping-into-the-real-world.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 10. Shipping Into the Real World | S-Tier, the builder's book">
+    <meta property="og:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/shipping-into-the-real-world.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 10. Shipping Into the Real World | S-Tier, the builder's book">
+    <meta name="twitter:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html#chapter",
+  "name": "Chapter 10. Shipping Into the Real World",
+  "headline": "Shipping Into the Real World",
+  "description": "The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.",
+  "url": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html",
+  "position": 11,
+  "wordCount": 1834,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part III &middot; Chapter 10</p>
+      <h1>Shipping Into the Real World</h1>
+      <p class="post-meta">The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.</p>
+      <div class="book-meta"><span>1,834 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>The last mile is where builders stall, and it is almost never for lack of skill. It stalls because the last mile is the first place your assumptions meet an institution that does not care about them. A compiler tells you immediately. App Review tells you in four days. Google Play tells you after the staged rollout has already reached 5% of users. The feedback loop stretches from seconds to days, and every unverified assumption you carried through the build gets billed at the new exchange rate.</p>
+      <p>You can feel this the first time you wrap a website in a shell and submit it. The build works. The app runs. Rejection arrives citing guideline 4.2, minimum functionality, and now you are two weeks out from a launch date because the thing you shipped was a bookmark with an icon.</p>
+      <h2 id="the-wrapper-gate">The wrapper gate</h2>
+      <p><code>site-to-ios-app</code> puts that failure at the front instead of the end. Its principle is stated before any command: turn a site into an iOS app only when the app has native value, stable iOS behavior, and a release surface that is truthful. A raw web page in a frame is not enough for an App Store-quality product.</p>
+      <p>The workflow begins with an artifact, not a scaffold. You write <code>SITE_TO_IOS_AUDIT.md</code> capturing the site URL, target user, primary routes, login requirements, iPhone responsive behavior, PWA signals, legal/support/account-deletion links, payments and sensitive flows, session behavior, mobile performance risks, native value opportunities, and the 4.2 wrapper risk. Only then <code>SITE_TO_IOS_PLAN.md</code>, with the chosen strategy, the native value to add before release, scaffold and build commands, bundle ID and signing notes, QA matrix, screenshots and metadata and privacy work, blockers, and the explicit release gate.</p>
+      <p>The strategy decision is four options and a requirement to write down why. Capacitor remote shell keeps the live site as the product surface, so web deploys update most behavior. Capacitor bundled shell packages static assets into the binary, which means updates need an App Store release unless paired with live APIs. A native SwiftUI shell wraps a web view in real navigation, settings, auth, push, share, and error surfaces. Full native rebuild is for sites that are mostly content, have weak mobile UX, or carry high wrapper rejection risk.</p>
+      <p>The 4.2 gate itself is the honest part. Block or redesign the app when it is only a bookmark, content mirror, or unmodified website. The remedies are specific: iOS-native onboarding, empty states, errors, offline, and retry. Native settings with support, privacy, terms, account deletion, restore, and notification controls. Universal links. Share sheet, widgets, push, media pickers, StoreKit, but only when they serve the app. Safe-area, keyboard, navigation, dark and light mode, and dynamic type handling.</p>
+      <p>Then a completion bar that does not let you round up. The project builds on a named simulator, device, or CI target. Every plugin and entitlement is justified by actual behavior. The 4.2 risk has a mitigation. Screenshots and metadata match implemented features. Privacy answers match the actual SDKs, cookies, analytics, and account flows. No secrets or signing material are committed. Submission itself requires the user to explicitly delegate public release and confirm the exact app, bundle ID, version, build, and account.</p>
+      <h2 id="the-android-version-of-the-same-lesson">The Android version of the same lesson</h2>
+      <p><code>android-app-factory</code> runs the same discipline against a platform with more moving policy. Its principle: build the product, policy evidence, and Play listing together, because a successful release is an installable app whose claims, disclosures, entitlements, privacy behavior, and store configuration agree with each other.</p>
+      <p>It refuses to answer policy from memory. Every release-oriented run identifies the repo, application ID, branch, Play app, target track, and whether the checkout is dirty, reads a dated policy baseline, then re-opens the linked official Google sources for anything submission-sensitive and records the URL, observed requirement, and check time. The baseline is treated as a baseline, not as permanent law. The skill even states its own dates carefully: as of 2026-07-19 the default is <code>compileSdk</code> and <code>targetSdk</code> 36, with Play's announced enforcement for new apps and updates moving to API 36 on 2026-08-31 and API 35 enforced until then, plus an instruction not to misstate an announced deadline as an enforced one.</p>
+      <p>The pipeline is ten phases. Validate the product. Verify policy. Design architecture and risk with the smallest maintainable shape that preserves unidirectional state, lifecycle safety, offline and error and loading states, and test seams. Scaffold native Kotlin and Jetpack Compose by default, resolving current stable versions from official sources into a version catalog, and prove a debug build before feature work. Build one complete core loop. Prove quality across unit, repository, ViewModel, Compose UI, accessibility, and end-to-end tests, plus static analysis, release build, device and API matrix, baseline profile, and Macrobenchmark. Add Play Billing for covered digital goods, processing pending purchases, verifying and acknowledging after entitlement handling, restoring ownership, and keeping server verification off the device. Complete trust surfaces: privacy policy, Data Safety, permission rationale, in-app and web account deletion when accounts exist, content rating, ads declarations, app access instructions. Build store artifacts. Release through evidence gates.</p>
+      <p>The release gate is a template you copy into the app repo and complete with links or command output. It blocks on a list that reads like a catalog of things people assume: policy not checked live, a build targeting the wrong API, an Android 15+ release not verified for 16 KB page-size compatibility including transitive native SDKs, failing tests or lint or <code>bundleRelease</code>, a core loop that fails on the declared matrix or offline path, launch-critical accessibility failures under TalkBack or large text, missing performance evidence, disagreement between Data Safety and actual behavior, unproven billing restore or acknowledgement, committed secrets, listing screenshots showing behavior the release build does not have, or a rollout without explicit user confirmation.</p>
+      <p>One line in there is the whole chapter compressed: a caveat must have an owner, a risk, and a next action, and policy, security, privacy, billing, crash, and core-task blockers cannot be downgraded to cosmetic caveats. That is the sentence that stops a release checklist from becoming a formality.</p>
+      <h2 id="packaging-is-an-artifact">Packaging is an artifact</h2>
+      <p><code>suede-launch-packaging</code> handles the surface between finished work and a stranger. Its core principle: a release nobody can install is not a launch. Nothing is live until you fetched it yourself, and no install path ships until the exact command ran from a clean temporary directory.</p>
+      <p>That second clause is the one that catches people. Your install command works because your local checkout has files you never pushed. The skill's failure table names it directly: "works locally, fails for a public user" usually means the command references a local plugin alias, and "install command 404s" usually means the skill folder was never pushed to <code>main</code>. The fix is not to read the command more carefully. It is to run it somewhere that has none of your context.</p>
+      <p>The skill starts with an inventory, because one launch is usually several surfaces. A skill launch is a repo plus a README plus an install command plus social copy, and each row needs its own proof artifact: repo URL and commit hash, live URL and screenshot, install command transcript, MCP <code>tools/list</code> output, live route readback, link sweep results. Its hard gates are ordering rules. No launch copy until the live surface is verified. No install doc until the command ran from a clean temp dir after pushing. Ship gate set before any announcement, including a soft one.</p>
+      <h2 id="the-lane-that-proves-the-point">The lane that proves the point</h2>
+      <p>The sharpest example in the pack does not touch a repo at all.</p>
+      <p><code>amazon-returns-recovery</code> started as a test of a general-purpose contract-negotiation procedure. The question was whether the discipline held up in a dispute. Pointed at a live Amazon account, it surfaced two restocking fees of $44.99 and $28.50 on returns processed weeks earlier, charges the account owner did not know existed. Both were waived in one sitting. The first refunded exactly $44.99, the second came back at $30.63 because the associate rounded up past the fee. Then a third case outside the skill's default scope: a $372.69 electric shaver on which a refund had already been denied once, while still inside the return window. Re-disputed two days after the window closed, it ended in a full $372.69 refund with no return required. Total across the documented cases: $448.31.</p>
+      <p>Notice what carried over. Not domain knowledge about Amazon. The procedure knew nothing about restocking fees before it went looking. What carried over was the shape: read the evidence first, itemize before arguing, build the case from facts you can point at, ask for one specific outcome, confirm the result in writing. That is the same shape as a code review, a release gate, and an SEO audit. A procedure that works outside its home domain is evidence that the procedure, not the domain knowledge, was doing the work.</p>
+      <p><code>subscription-recovery</code> is the generalization, pointed at App Store, Google Play, PayPal, bank statements, and direct-bill services. It exists because somebody noticed the discipline had nothing to do with Amazon.</p>
+      <h2 id="safety-stated-plainly">Safety, stated plainly</h2>
+      <p>Both recovery skills draw the same line, and it is worth reading as written rather than paraphrased. Read-only discovery first. Report the findings as a plain list. Stop. Do not open the dispute chat yet. Confirmation before any cancellation or refund contact, one item at a time. The skill describes itself as a metal detector, not an autopilot.</p>
+      <p>Truthfulness is a hard constraint, not a preference. State only true facts: order number, item, price, fee amount. Do not invent a prior contact attempt or a return reason that did not happen, because the ask is reasonable on its own and does not need embellishment to land. Accept one polite counteroffer round at most, then report back rather than escalating with anything untrue. Some fees are legitimate, some subscriptions are still wanted, and the skill instructs you to say so when a finding looks earned rather than mistaken.</p>
+      <p>Credentials are never handled. The stretch goal for automated statement parsing is explicitly deferred because no validated path exists that avoids touching credentials, which conflicts with the skill's own rules. A capability was left unbuilt rather than built unsafely, and that decision is written down in the skill where the next person will read it.</p>
+      <h2 id="the-reframe">The reframe</h2>
+      <p>Shipping is not the phase after building. It is a separate skill with its own gates, its own evidence requirements, and its own failure modes, and you get better at it the same way you got better at everything else: by doing it enough times that the checklist stops surprising you. The builders who stall at the last mile are not worse engineers. They have just practiced the first mile a thousand times and the last mile twice.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Take the thing you shipped most recently and run its install command from a fresh temporary directory on a machine that has never seen the project. Whatever breaks is what your users have been hitting.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="getting-found.html"><span class="dir">Previous</span><span class="to">Chapter 9. Getting Found</span></a>
+        <a class="next" href="the-s-tier-ladder.html"><span class="dir">Next</span><span class="to">Chapter 11. The S-Tier Ladder</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

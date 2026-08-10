@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>S-Tier: The Builder's Book Behind the Suede Skills</title>
+    <meta name="description" content="A free book on how agent skills actually work and how a builder gets genuinely good with them. Fourteen chapters, grounded in a public 71-skill repo you can check line by line.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="S-Tier: The Builder's Book Behind the Suede Skills">
+    <meta property="og:description" content="A free book on how agent skills actually work and how a builder gets genuinely good with them. Fourteen chapters, grounded in a public 71-skill repo you can check line by line.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="S-Tier: The Builder's Book Behind the Suede Skills">
+    <meta name="twitter:description" content="A free book on how agent skills actually work and how a builder gets genuinely good with them. Fourteen chapters, grounded in a public 71-skill repo you can check line by line.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "@id": "https://skills.suedeai.ai/book/#book",
+  "name": "S-Tier: The Builder's Book Behind the Suede Skills",
+  "description": "A free book on how agent skills actually work and how a builder gets genuinely good with them. Fourteen chapters, grounded in a public 71-skill repo you can check line by line.",
+  "url": "https://skills.suedeai.ai/book/",
+  "inLanguage": "en",
+  "bookFormat": "https://schema.org/EBook",
+  "isAccessibleForFree": true,
+  "license": "https://opensource.org/licenses/MIT",
+  "numberOfPages": 17,
+  "datePublished": "2026-08-10",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "hasPart": [
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/front-matter.html#chapter",
+      "name": "Front matter. Front matter",
+      "url": "https://skills.suedeai.ai/book/front-matter.html",
+      "position": 1
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/the-competence-gap.html#chapter",
+      "name": "Chapter 1. The Competence Gap",
+      "url": "https://skills.suedeai.ai/book/the-competence-gap.html",
+      "position": 2
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html#chapter",
+      "name": "Chapter 2. Anatomy of a Skill",
+      "url": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html",
+      "position": 3
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/the-description-contract.html#chapter",
+      "name": "Chapter 3. The Description Contract",
+      "url": "https://skills.suedeai.ai/book/the-description-contract.html",
+      "position": 4
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/full-send.html#chapter",
+      "name": "Chapter 4. Full Send",
+      "url": "https://skills.suedeai.ai/book/full-send.html",
+      "position": 5
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html#chapter",
+      "name": "Chapter 5. Lanes, Fleets, and Collisions",
+      "url": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html",
+      "position": 6
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html#chapter",
+      "name": "Chapter 6. Evidence or It Did Not Ship",
+      "url": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html",
+      "position": 7
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/grading-your-own-work.html#chapter",
+      "name": "Chapter 7. Grading Your Own Work",
+      "url": "https://skills.suedeai.ai/book/grading-your-own-work.html",
+      "position": 8
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/design-and-copy-are-engineering.html#chapter",
+      "name": "Chapter 8. Design and Copy Are Engineering",
+      "url": "https://skills.suedeai.ai/book/design-and-copy-are-engineering.html",
+      "position": 9
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/getting-found.html#chapter",
+      "name": "Chapter 9. Getting Found",
+      "url": "https://skills.suedeai.ai/book/getting-found.html",
+      "position": 10
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html#chapter",
+      "name": "Chapter 10. Shipping Into the Real World",
+      "url": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html",
+      "position": 11
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/the-s-tier-ladder.html#chapter",
+      "name": "Chapter 11. The S-Tier Ladder",
+      "url": "https://skills.suedeai.ai/book/the-s-tier-ladder.html",
+      "position": 12
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html#chapter",
+      "name": "Chapter 12. Taste, Judgment, and Knowing When to Stop",
+      "url": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html",
+      "position": 13
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/write-your-own.html#chapter",
+      "name": "Chapter 13. Write Your Own",
+      "url": "https://skills.suedeai.ai/book/write-your-own.html",
+      "position": 14
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/the-first-ninety-days.html#chapter",
+      "name": "Chapter 14. The First Ninety Days",
+      "url": "https://skills.suedeai.ai/book/the-first-ninety-days.html",
+      "position": 15
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/skill-index.html#chapter",
+      "name": "Appendix A. The Skill Index, by Intent",
+      "url": "https://skills.suedeai.ai/book/skill-index.html",
+      "position": 16
+    },
+    {
+      "@type": "Chapter",
+      "@id": "https://skills.suedeai.ai/book/the-rules.html#chapter",
+      "name": "Appendix B. The Rules, on One Page",
+      "url": "https://skills.suedeai.ai/book/the-rules.html",
+      "position": 17
+    }
+  ]
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Book &middot; August 10, 2026</p>
+      <h1>S-Tier</h1>
+      <p class="post-meta">The builder's book behind the Suede Skills. Free, MIT-licensed, and written against the same anti-slop rules the pack enforces.</p>
+
+      <p class="lead">Most advice about building with agents stops at prompting. This goes past it: what a skill is mechanically, how an agent decides to load one, how to run several without them colliding, what counts as evidence, and what separates a builder who produces output from one who builds systems that keep producing verified output without them.</p>
+
+      <div class="stat-row">
+        <div class="stat"><b>29,102</b><span>words</span></div>
+        <div class="stat"><b>14</b><span>chapters</span></div>
+        <div class="stat"><b>71</b><span>skills referenced</span></div>
+        <div class="stat"><b>MIT</b><span>licensed</span></div>
+      </div>
+
+      <p>Every claim in it points at a file in the public repo, so you can check the ones you doubt. Checking claims is most of what the book argues for, so please do. You do not need the pack installed to read it.</p>
+
+      <p><a class="button" href="the-competence-gap.html">Start reading: Chapter 1</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/book/BOOK.md" target="_blank" rel="noopener">Read it as one Markdown file</a></p>
+
+      <div class="divider"></div>
+
+      <h2 id="contents">Contents</h2>
+      <div class="toc">
+        <a class="toc-row" href="front-matter.html">
+          <span class="toc-num">Front matter &middot; 3 min</span>
+          <p class="toc-title">Why this book exists</p>
+          <p class="toc-dek">Why the book exists, who it is for, how to read it, and the four ideas every chapter leans on.</p>
+        </a>
+      </div>
+
+      <div class="part-head"><p class="part-name">Part I</p><h2 id="part-1">The Machinery</h2></div>
+      <p class="part-blurb">What a skill is, how it is built, and how an agent decides to load it.</p>
+      <div class="toc">
+        <a class="toc-row" href="the-competence-gap.html">
+          <span class="toc-num">Chapter 1 &middot; 7 min</span>
+          <p class="toc-title">The Competence Gap</p>
+          <p class="toc-dek">A capable model plus a vague prompt produces confident mediocrity. The gap is not intelligence, it is procedure, and procedure is now a file you own.</p>
+        </a>
+        <a class="toc-row" href="anatomy-of-a-skill.html">
+          <span class="toc-num">Chapter 2 &middot; 9 min</span>
+          <p class="toc-title">Anatomy of a Skill</p>
+          <p class="toc-dek">A real SKILL.md taken apart: frontmatter, routing description, body, bundled references and scripts, and the advisory-gate policy that keeps a grader from blocking you.</p>
+        </a>
+        <a class="toc-row" href="the-description-contract.html">
+          <span class="toc-num">Chapter 3 &middot; 7 min</span>
+          <p class="toc-title">The Description Contract</p>
+          <p class="toc-dek">The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.</p>
+        </a>
+      </div>
+
+      <div class="part-head"><p class="part-name">Part II</p><h2 id="part-2">The Operating System</h2></div>
+      <p class="part-blurb">Outcome-bound work, agent lanes and worker fleets, and the verification discipline underneath both.</p>
+      <div class="toc">
+        <a class="toc-row" href="full-send.html">
+          <span class="toc-num">Chapter 4 &middot; 7 min</span>
+          <p class="toc-title">Full Send</p>
+          <p class="toc-dek">Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.</p>
+        </a>
+        <a class="toc-row" href="lanes-fleets-and-collisions.html">
+          <span class="toc-num">Chapter 5 &middot; 8 min</span>
+          <p class="toc-title">Lanes, Fleets, and Collisions</p>
+          <p class="toc-dek">Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.</p>
+        </a>
+        <a class="toc-row" href="evidence-or-it-did-not-ship.html">
+          <span class="toc-num">Chapter 6 &middot; 7 min</span>
+          <p class="toc-title">Evidence or It Did Not Ship</p>
+          <p class="toc-dek">The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.</p>
+        </a>
+      </div>
+
+      <div class="part-head"><p class="part-name">Part III</p><h2 id="part-3">The Craft Lanes</h2></div>
+      <p class="part-blurb">Grading code, treating design and copy as systems, distribution, and the last mile.</p>
+      <div class="toc">
+        <a class="toc-row" href="grading-your-own-work.html">
+          <span class="toc-num">Chapter 7 &middot; 7 min</span>
+          <p class="toc-title">Grading Your Own Work</p>
+          <p class="toc-dek">Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.</p>
+        </a>
+        <a class="toc-row" href="design-and-copy-are-engineering.html">
+          <span class="toc-num">Chapter 8 &middot; 7 min</span>
+          <p class="toc-title">Design and Copy Are Engineering</p>
+          <p class="toc-dek">Tokens instead of hex codes chosen in the moment, numeric thresholds instead of opinions, and an anti-slop gate for prose that reads fine sentence by sentence and hollow paragraph by paragraph.</p>
+        </a>
+        <a class="toc-row" href="getting-found.html">
+          <span class="toc-num">Chapter 9 &middot; 8 min</span>
+          <p class="toc-title">Getting Found</p>
+          <p class="toc-dek">Distribution as an engineering surface: the shift from ranking to being cited, nine audit lanes, an A-F visibility grade, and why a page that cannot be quoted will not be cited.</p>
+        </a>
+        <a class="toc-row" href="shipping-into-the-real-world.html">
+          <span class="toc-num">Chapter 10 &middot; 8 min</span>
+          <p class="toc-title">Shipping Into the Real World</p>
+          <p class="toc-dek">The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.</p>
+        </a>
+      </div>
+
+      <div class="part-head"><p class="part-name">Part IV</p><h2 id="part-4">Becoming S-Tier</h2></div>
+      <p class="part-blurb">The ladder, the judgment layer, authoring your own skills, and ninety days of practice.</p>
+      <div class="toc">
+        <a class="toc-row" href="the-s-tier-ladder.html">
+          <span class="toc-num">Chapter 11 &middot; 11 min</span>
+          <p class="toc-title">The S-Tier Ladder</p>
+          <p class="toc-dek">Five tiers defined by observable behavior, with the week, the transcript fingerprint, the failure that holds you there, and the move that promotes you. Most readers place themselves one rung high.</p>
+        </a>
+        <a class="toc-row" href="taste-judgment-and-stopping.html">
+          <span class="toc-num">Chapter 12 &middot; 11 min</span>
+          <p class="toc-title">Taste, Judgment, and Knowing When to Stop</p>
+          <p class="toc-dek">The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.</p>
+        </a>
+        <a class="toc-row" href="write-your-own.html">
+          <span class="toc-num">Chapter 13 &middot; 8 min</span>
+          <p class="toc-title">Write Your Own</p>
+          <p class="toc-dek">Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.</p>
+        </a>
+        <a class="toc-row" href="the-first-ninety-days.html">
+          <span class="toc-num">Chapter 14 &middot; 9 min</span>
+          <p class="toc-title">The First Ninety Days</p>
+          <p class="toc-dek">A real practice plan in three phases, a list of anti-goals, two honest measurements, and the close: never end your allocation above zero.</p>
+        </a>
+      </div>
+
+      <div class="part-head"><p class="part-name">Appendices</p><h2 id="appendices">Reference</h2></div>
+      <p class="part-blurb">The pack indexed by intent, and every rule the book argues for on one page.</p>
+      <div class="toc">
+        <a class="toc-row" href="skill-index.html">
+          <span class="toc-num">Appendix A &middot; 4 min</span>
+          <p class="toc-title">The Skill Index, by Intent</p>
+          <p class="toc-dek">Every public skill in the pack, grouped by what you are trying to do rather than by what it is called.</p>
+        </a>
+        <a class="toc-row" href="the-rules.html">
+          <span class="toc-num">Appendix B &middot; 3 min</span>
+          <p class="toc-title">The Rules, on One Page</p>
+          <p class="toc-dek">Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.</p>
+        </a>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 id="about">About the prose</h2>
+      <p>The pack ships <code>suede-deslop</code>, a skill that strips AI writing patterns out of text before it goes public: filler openers, manufactured enthusiasm, false agency, formulaic contrast, metronomic rhythm, and em dashes. Publishing a book that tripped every rule in it would have been a poor advertisement.</p>
+      <p>So the book was written against those constraints, and the prose carries no em dashes. Quoted repo material keeps its own punctuation, because editing a quotation to fit a style rule is the kind of small dishonesty this pack exists to catch.</p>
+      <p>Source lives in <a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/book" target="_blank" rel="noopener">book/</a>. Skill counts written into the prose are guarded by the repo's validator, so a chapter that goes stale fails the same way a stale meta tag does.</p>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

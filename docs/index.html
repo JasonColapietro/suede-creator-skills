@@ -639,6 +639,26 @@
       display: flex;
       align-items: center;
       gap: var(--space-6);
+      /* Guarantees clearance from the wordmark. Without it the row can sit
+         flush against "Suede Creator Skills" on a narrow desktop and read as
+         one run-on word. */
+      margin-left: var(--space-6);
+    }
+
+    /* Desktop widths between the hamburger breakpoint and roomy: tighten the
+       link gap rather than letting the row crowd the wordmark. Measured at
+       1280px, where the default gap left exactly zero clearance. */
+    @media (max-width: 1400px) {
+      .nav-right { gap: var(--space-4); }
+    }
+
+    @media (max-width: 1120px) {
+      .nav-right { gap: var(--space-3); }
+      .nav-link { font-size: var(--size-xs); }
+      /* The two in-page anchors are the ones worth dropping first: both jump
+         to sections the visitor scrolls past anyway, and both stay in the
+         mobile menu. Keeping them here pushed the row into overflow at 1024. */
+      .nav-link[href="#changelog"], .nav-link[href="#scorecard"] { display: none; }
     }
 
     .nav-link {
@@ -3306,6 +3326,7 @@
       <a href="#changelog" class="nav-link">Changelog</a>
       <a href="#scorecard" class="nav-link">Benchmarks</a>
       <a href="guide.html" class="nav-link">Guide</a>
+      <a href="book/" class="nav-link">Book</a>
       <a href="blog/" class="nav-link">Blog</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="plugins.html" class="nav-cta">Install</a>
@@ -3322,6 +3343,7 @@
     <a href="#changelog" class="nav-mobile-link" role="menuitem">Changelog</a>
     <a href="#scorecard" class="nav-mobile-link" role="menuitem">Benchmarks</a>
     <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
+    <a href="book/" class="nav-mobile-link" role="menuitem">Book</a>
     <a href="blog/" class="nav-mobile-link" role="menuitem">Blog</a>
     <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" class="nav-mobile-link" role="menuitem">Star on GitHub</a>
     <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
@@ -4750,6 +4772,8 @@
     </div>
     <div class="footer-links">
       <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="book/">Book</a>
       <span class="footer-divider" aria-hidden="true">|</span>
       <a href="blog/">Blog</a>
       <span class="footer-divider" aria-hidden="true">|</span>

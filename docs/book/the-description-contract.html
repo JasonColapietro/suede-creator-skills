@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 3. The Description Contract | S-Tier, the builder's book</title>
+    <meta name="description" content="The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/the-description-contract.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 3. The Description Contract | S-Tier, the builder's book">
+    <meta property="og:description" content="The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/the-description-contract.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 3. The Description Contract | S-Tier, the builder's book">
+    <meta name="twitter:description" content="The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/the-description-contract.html#chapter",
+  "name": "Chapter 3. The Description Contract",
+  "headline": "The Description Contract",
+  "description": "The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.",
+  "url": "https://skills.suedeai.ai/book/the-description-contract.html",
+  "position": 4,
+  "wordCount": 1659,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/the-description-contract.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part I &middot; Chapter 3</p>
+      <h1>The Description Contract</h1>
+      <p class="post-meta">The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.</p>
+      <div class="book-meta"><span>1,659 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>Five skills in this pack mention code in their first sentence. A review skill, a grader, a combined pass, a CI gate, and a fifty-agent shipping DAG. You type "can you look at this PR," and exactly one of them is correct. Nothing in the system errors if the wrong one runs. You get output either way, and the output looks fine.</p>
+      <p>That is the whole problem with descriptions. They read like marketing copy and they behave like routing tables. The body of a skill can be a thousand lines of careful procedure, and none of it matters if the router never selects it. Progressive disclosure means the description is the only thing the agent reliably sees for every installed skill, every time. It is the contract. The body is the payload.</p>
+      <p>So write it as a contract.</p>
+      <h2 id="write-the-words-a-user-would-actually-type">Write the words a user would actually type</h2>
+      <p>Open <code>skills/suede-full-send/SKILL.md</code> and read the description before the body. It does not describe a philosophy of maximum effort. It lists literal strings: <code>full send</code>, <code>max effort</code>, <code>max agents</code>, <code>spare no compute</code>, <code>throw tokens at it</code>, <code>burn tokens</code>, <code>burn max tokens</code>, <code>never end your allocation above zero</code>. Those are not synonyms chosen for elegance. They are the phrases a tired founder types at 1am, transcribed into the frontmatter so the router has something to match against.</p>
+      <p>This is the part most people get backwards. You know what your skill does, so you describe it in your vocabulary. The user does not have your vocabulary. They have a problem and a keyboard. If your grading skill's description says "holistic readiness assessment" and the user types "just give me an A-F, no line-by-line," the match is weaker than it should be, and a neighboring skill with sloppier prose but better word overlap takes the request.</p>
+      <p>The pack enforces this mechanically. <code>tests/fixtures/trigger-routing.json</code> defines groups of competing skills, and each route carries <code>positive</code> signals, <code>negative</code> signals, and a <code>metadataMustContain</code> list that has to appear in the skill's actual description. For <code>suede-code-grader</code>, <code>metadataMustContain</code> is <code>["a f", "grade"]</code>. If someone rewrites that description into something more dignified and drops the literal "A-F," <code>node scripts/validate-trigger-routing.mjs</code> fails. The vocabulary is a tested interface, not a style choice.</p>
+      <p>There is also an ambiguous case in that fixture, and it is the honest one:</p>
+      <pre><code>{ "id": "code-ambiguous-fallback",
+  "mode": "ambiguous",
+  "prompt": "Check this PR and tell me if it ships.",
+  "expected": "suede-code" }</code></pre>
+      <p>Some requests genuinely do not disambiguate. When that happens you want a declared fallback rather than a coin flip. The group names one: <code>suede-code</code>, the combined pass, because doing both findings and a grade is the least regrettable answer to an unclear question.</p>
+      <h2 id="not-for-is-the-other-half-of-the-contract">NOT FOR is the other half of the contract</h2>
+      <p>Forty-eight of the 71 public skills carry a <code>NOT FOR:</code> clause in their description. It always has the same shape: the condition under which a sibling wins, then the sibling's exact name in parentheses.</p>
+      <p><code>suede-ship</code> refuses three specific neighbors: high-volume work that splits into independent worker tasks goes to <code>suede-codex-fleet</code>, findings-only review with no code change goes to <code>suede-code-review</code>, and CI and branch-protection wiring goes to <code>suede-ci-gate</code>. Read that as a routing table written from the point of view of whichever skill is most likely to steal the request.</p>
+      <p>The generic version is worthless. "NOT FOR: other tasks" tells the router nothing, because the router's question is never "is this skill relevant." Every description in a coherent pack is relevant to something. The question is "is this skill more relevant than that one," and only a named comparison answers it.</p>
+      <p>Two rules make the clause work. Name the sibling, not the category: <code>use suede-code-review</code> routes, "use a review tool" does not. Name the condition, not the vibe: "findings-only review with no code change" is testable against a request string, "smaller jobs" is not. And write it from the near-miss. Nobody confuses a shipping pipeline with a rights audit. The dangerous neighbor is always the one that does almost the same thing.</p>
+      <p>The cleanest example in the repo is a mutual pair. <code>amazon-returns-recovery</code> declines bank chargebacks, marketplace seller claims, and subscriptions billed outside Amazon, and hands them to <code>subscription-recovery</code>. <code>subscription-recovery</code> declines Amazon returns, restocking fees, and Amazon-billed Prime Video Channels, Audible, and Kindle Unlimited, and hands them back. Two skills that would otherwise fight over every refund request instead partition the space by billing relationship. Neither description needs to be cleverer than the other, because the boundary is written down on both sides.</p>
+      <h2 id="what-overlap-actually-costs-you">What overlap actually costs you</h2>
+      <p>When two descriptions overlap and neither carries a boundary, the agent still picks. It picks by vibes: whichever description sounds more enthusiastic about the request. The tiebreaker is prose style. That is not a metaphor for how the selection works, it is a fair description of what you are left with once semantic relevance is a tie.</p>
+      <p>Two costs follow, and they are asymmetric.</p>
+      <p>A description that oversells gets the skill loaded for work it cannot do. The skill fires, the body loads, the agent starts executing a procedure built for a different shape of problem, and it produces something. <code>suede-ship</code> running against a one-line typo fix will happily scout, research across multiple lenses, plan lanes, and gate the release. You burn real time and real context, and at the end you have a correct one-line fix wrapped in ceremony. The failure is expensive and invisible, because the output is fine.</p>
+      <p>A description that undersells never fires at all. This one is cheaper per incident and worse in aggregate, because you never learn about it. The skill sits in the pack, correct and unreachable, and you go on solving the problem by hand while believing you have tooling for it. If you have ever written a skill and then noticed six weeks later that it has never once been selected, the description undersold. Nothing will tell you. There is no error for a skill that did not run.</p>
+      <p><code>suede-codex-fleet</code> is the case where oversell would be more than wasteful. Its description says the workers are always <code>codex exec</code> processes billed to the user's OpenAI subscription, that Claude subagent fan-out is never a substitute on any model, and that the correct behavior when the Codex CLI is missing is to halt rather than fall back. The body repeats it in a callout: the word "Fable" in the brand name is not the model <code>claude-fable-5</code>. That redundancy exists because the substitution is semantically reasonable and financially wrong. Both routes spawn parallel workers. Only one of them costs nothing against your Anthropic allocation. A description that said "parallel worker fleet for bulk generation" and stopped there would be accurate and would still let the expensive interpretation through.</p>
+      <h2 id="estate-lint-routes-that-point-at-nothing">Estate lint: routes that point at nothing</h2>
+      <p>A <code>NOT FOR</code> clause names a skill. If that skill does not exist, you have written a dead link inside your agent's routing logic, and the agent will try to follow it.</p>
+      <p>This is not hypothetical in a pack that has both public and private halves. My personal <code>~/.claude/skills/</code> directory contains <code>suede-debug</code>, <code>suede-verify</code>, <code>suede-plan</code>, <code>suede-spec</code>, and about fifteen more that are not in the public repo. Their boundaries are real to me: <code>suede-debug</code> declines proving a finished feature works and sends it to <code>suede-verify</code>, and declines reviewing a diff for quality and sends it to <code>suede-code-review</code>. Two of those three exist for me. One of them exists for you.</p>
+      <p>So <code>scripts/validate-skill-pack.mjs</code> lints the estate. It parses every <code>NOT FOR</code> clause, collects each <code>(use X)</code> target, and fails the build when <code>X</code> is not a folder in the pack:</p>
+      <pre><code>NOT FOR redirect in &lt;skill&gt;: named skill &lt;name&gt; does not exist in skill pack</code></pre>
+      <p>It also keeps a <code>knownPrivateSkills</code> list, filtered down to the ones that are not public, and refuses to let any of those names appear in a public skill's frontmatter at all. Bodies may mention them, but only as a disclosed dead end, tagged with a phrase marking them unavailable. The comment in the source says why plainly: an undisclosed pointer "sends a public installer after a skill they do not have and cannot get, with nothing marking it as unavailable." Two lines in <code>suede-codex-fleet</code> were exactly that, because an earlier version of the guard read only frontmatter.</p>
+      <p>The lint itself had a hole worth knowing about. The original regex anchored every match on the literal string <code>NOT FOR:</code>, so in a clause naming three targets, only the first was ever checked. Sixteen of the twenty-one skills in the pack at that time had two or more targets on one line. Nothing broken shipped through it, but two of every three redirect targets in a three-target clause were validated by nobody. The current version finds the clause span first, then collects every <code>(use X)</code> inside it. That fix is preserved verbatim as the worked example in <code>skills/suede-code/SKILL.md</code>, which is a nice property: the pack's review skill demonstrates itself by finding a real bug in the pack's release gate.</p>
+      <h2 id="a-pack-is-a-namespace">A pack is a namespace</h2>
+      <p>Ten skills have forty-five possible pairwise collisions. Seventy-one have more than two thousand. You cannot write your way out of that with better positive descriptions, because none of the descriptions are inaccurate. They are all true. Truth about what a skill does says nothing about whether it should beat its neighbor.</p>
+      <p>Which is why a set of skills is a namespace, and namespaces need the same discipline as any other: unique names, declared boundaries, no dangling references, and a checker that fails the build when someone breaks one. The alternative is not chaos. The alternative is a system that quietly does the second-best thing forever and never tells you.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Take a request that should go to a neighboring skill, hand it to this one, and see whether the description alone sends it away. If it does not, the boundary is not written yet, and it is not the router's fault.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="anatomy-of-a-skill.html"><span class="dir">Previous</span><span class="to">Chapter 2. Anatomy of a Skill</span></a>
+        <a class="next" href="full-send.html"><span class="dir">Next</span><span class="to">Chapter 4. Full Send</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

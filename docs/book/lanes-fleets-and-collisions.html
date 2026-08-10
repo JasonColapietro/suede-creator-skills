@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 5. Lanes, Fleets, and Collisions | S-Tier, the builder's book</title>
+    <meta name="description" content="Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 5. Lanes, Fleets, and Collisions | S-Tier, the builder's book">
+    <meta property="og:description" content="Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 5. Lanes, Fleets, and Collisions | S-Tier, the builder's book">
+    <meta name="twitter:description" content="Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html#chapter",
+  "name": "Chapter 5. Lanes, Fleets, and Collisions",
+  "headline": "Lanes, Fleets, and Collisions",
+  "description": "Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.",
+  "url": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html",
+  "position": 6,
+  "wordCount": 1837,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part II &middot; Chapter 5</p>
+      <h1>Lanes, Fleets, and Collisions</h1>
+      <p class="post-meta">Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.</p>
+      <div class="book-meta"><span>1,837 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>Three agents, one repo, one afternoon. Agent A refactors the auth middleware. Agent B is told to "clean up the route handlers," which happens to include the file A is holding. Agent C runs a formatter across the tree. You come back to a branch that compiles, passes nothing, and contains two half-applied versions of the same idea. Nobody lied to you. Every agent did the work it was given.</p>
+      <p>That is the failure mode of parallel agent work, and it is not exotic. It is the default outcome when the only coordination mechanism is that the tasks sounded different when you wrote them.</p>
+      <h2 id="what-actually-breaks">What actually breaks</h2>
+      <p>Four things, and they are boring, which is why they keep happening.</p>
+      <p><strong>Two agents editing the same file.</strong> The second write wins, or the merge produces a file that satisfies neither intent. The tell in a plan is the phrase "the lanes probably won't touch the same files." <code>suede-agent-teams</code> lists that sentence in its Red Flags section, with the correct response: probably is not a lane map.</p>
+      <p><strong>A stale mirror.</strong> Your local <code>main</code> is four days behind <code>origin/main</code>. An agent cuts a branch from it, builds cleanly against a version of the codebase that no longer exists, and opens a PR full of conflicts against code it never read. Nothing in the agent's transcript will reveal this. It fetched nothing, so it saw nothing wrong.</p>
+      <p><strong>Someone's uncommitted WIP, destroyed.</strong> A shared checkout usually has dirty files in it. An agent that runs a checkout, a stash, a reset, or a formatter across a dirty tree can remove work that exists nowhere else. This is the one irreversible item on the list. <code>suede-agent-teams</code> puts collision detection before any lane opens: run <code>git -C &lt;repo&gt; diff --name-only HEAD</code> for dirty files, <code>git -C &lt;repo&gt; status --short</code> for untracked ones, then flag a collision if any path appears in two lane scopes, or in the dirty list plus any lane scope.</p>
+      <p><strong>Merged-looking branches that read as unmerged.</strong> Squash merges rewrite history. After a squash, <code>git log origin/main..HEAD</code> still shows your commits ahead and <code>git diff</code> still shows changed files, because the content landed under a different hash and <code>main</code> moved on. An agent doing cleanup by ancestry will conclude the branch is unmerged and either keep a dead worktree forever or, worse, "restore" work that is already live. <code>git cherry origin/main</code> answers the real question: a leading <code>-</code> means an equivalent patch is upstream.</p>
+      <h2 id="the-fix-is-ownership-not-politeness">The fix is ownership, not politeness</h2>
+      <p>Coordination between agents does not work by asking them to be careful. It works by making the collision impossible to express.</p>
+      <p>File ownership is the primitive. Every lane gets an explicit list of files it may touch, written before any builder starts, and no builder opens a file outside its list. When two lanes want the same file, <code>suede-agent-teams</code> gives you three resolutions and no fourth: independent changes get sequenced, with the second lane rebasing on the first lane's commit; overlapping changes get merged into one lane with one owner; a dirty file in a lane scope goes to the orchestrator, who either stashes and restores or makes that lane the only one allowed near it.</p>
+      <p>Notice what is missing. There is no "both lanes edit carefully" option. Splitting responsibility for a single file across two concurrent builders is not a coordination problem to solve, it is a thing you do not do.</p>
+      <p>Isolated worktrees make ownership physical rather than advisory. A worktree per lane, cut from <code>origin/main</code> rather than from your local mirror, means an agent cannot reach another lane's files even by accident, and cannot touch your dirty main checkout at all. <code>suede-ship</code> treats a violation of this as a halt condition: it stops on a lane collision or on a file held by a live sibling worktree, and its own documentation says the fix is a re-plan, not a retry. An orchestrator that retries a collision is just rolling the dice again.</p>
+      <p>The third mechanism matters when the work is a queue rather than a plan. In the public contribution program that ships with <code>suede-agent-teams</code>, tasks come from repository issues, and the duplicate-work gate is an atomic lease taken before any worktree exists:</p>
+      <pre><code>node skills/suede-agent-teams/scripts/contribution-ledger.mjs claim \
+  --ledger &lt;control-dir&gt;/contributions.json \
+  --id &lt;task-id&gt; --worker &lt;lane-id&gt; --lease-minutes 45</code></pre>
+      <p>Leases expire and return to the queue, long work heartbeats, abandoned work gets released. The ledger's lock has no force option. If a writer crashed, recovery requires the exact recorded token, a locally verifiable dead process, and a minimum stale age, because the alternative is two workers convinced they both own issue 123. Hard-linked ledgers fail closed, for the same reason: two names for one file can split an atomic rename into two divergent queues.</p>
+      <p>Then there is the part that decides whether any of this produced value. The handoff will not close without evidence. The Handoff Quality Checklist requires the exact repo and branch (not "the main app"), every file path changed (not "various files"), every command run with its actual output or exit code, observable verification such as a test output or curl response (not "it works"), a status from the defined vocabulary, the single most important unresolved step, and every caveat, none omitted to make the handoff look cleaner. A handoff missing a field is not done. Its status is <code>held</code>.</p>
+      <p>That checklist is what converts a fan-out from a burst of activity into something you can act on the next morning.</p>
+      <h2 id="the-economics-of-a-fleet">The economics of a fleet</h2>
+      <p>Lanes are about safety. Fleets are about money.</p>
+      <p><code>suede-codex-fleet</code> splits a bulk job into independent worker-sized tasks, writes one self-contained brief per task in <code>briefs/</code>, and spawns one <code>codex exec</code> process per brief. Claude decomposes, briefs, reviews, and assembles. The workers are OpenAI Codex CLI processes, billed to the user's ChatGPT subscription. Claude's role is admiral only.</p>
+      <p>The skill is unusually blunt about the one substitution you must not make: workers are <code>codex exec</code> processes, always, and you never swap in <code>Agent</code>, <code>Task</code>, <code>Workflow</code>, or subagent fan-out on any model, not "just for this one batch." The reasoning is arithmetic, not preference. Someone asking for a codex fleet is deliberately routing volume off the Anthropic meter. Satisfying that request with Claude models spends the exact budget the request existed to protect. If the Codex CLI is missing, not logged in, or not on <code>PATH</code>, the skill halts and asks, with an estimate of what a Claude fan-out would consume. It never falls back silently, because a silent fallback is a spending decision made on your behalf without telling you.</p>
+      <p>There is a measured number attached. On 2026-07-27 a Claude-model fleet ran in place of an explicitly requested codex fleet: 3,258 turns, roughly 1.29 billion tokens, about $1,843 of API-equivalent spend, 23% of one weekly allocation, for work that should have cost nothing on that account.</p>
+      <p>The interesting detail is where the tokens went. Ninety-seven percent of that 1.29 billion were cache reads, from workers each hauling around 500k tokens of context per turn. That is the shape of long fan-out cost. It is not the tokens the workers write. It is the same context, dragged through every turn, multiplied by workers, multiplied by turns. A worker with a fat context is not slightly more expensive than a lean one. It is a multiplier applied to the entire run.</p>
+      <p>Which gives you the operating rule: keep per-worker context small. A Codex worker never sees the Claude conversation anyway, so each brief is self-contained by construction, and self-contained turns out to mean minimal. Job, input file paths, exact deliverable, acceptance criteria the worker can mechanically self-check, and the exact output path in <code>out/</code>. The shared voice, hard bans, and output conventions live once in the workspace <code>AGENTS.md</code>, which Codex auto-loads, so briefs stay short. That file is described in the skill as the highest-leverage file in the system, and the reason is that it is the one piece of context you pay for once instead of per worker.</p>
+      <h2 id="when-not-to-fan-out">When not to fan out</h2>
+      <p>Fan-out has a fixed cost you pay before any work happens: decomposition, briefs, lane maps, collision detection, and a review pass over every output. That overhead is worth it only under specific conditions.</p>
+      <p>Do not fan out judgment-dense work. The core principle in <code>suede-codex-fleet</code> is that Claude tokens buy judgment and Codex tokens buy volume. Clear spec plus high volume goes to the fleet. Fuzzy spec, or expensive-if-wrong, stays with the model doing the thinking. Ten landing page headlines where the whole difficulty is taste is not a fleet job, it is one writer with context.</p>
+      <p>Do not fan out one complex change across coupled files. If the files move together, they cannot be disjoint lanes, and forcing a split produces exactly the collision the lane map was supposed to prevent. That is the boundary between the two skills: <code>suede-agent-teams</code> coordinates multiple lanes on one complex change with gates and handoffs; the fleet exists for genuinely independent units. Anything with a shared manifest, a generated index, or a lockfile keeps one owner regardless of how many workers are running.</p>
+      <p>Do not fan out under a handful of items. Three briefs, three spawns, and three review passes cost more of your attention than doing three things in sequence. The overhead is real and it is front-loaded.</p>
+      <p>And do not fan out to feel productive. Twelve workers running is not twelve units of progress, it is twelve outputs you now have to read.</p>
+      <h2 id="the-actual-test">The actual test</h2>
+      <p>Here is the question that separates a fleet from a token bonfire. For each worker's output, can the reviewer state, in advance, the criterion that decides whether it passes?</p>
+      <p>If yes, review is mechanical and the fan-out scales. The brief template forces this: acceptance criteria are numbered and mechanically checkable, limits, bans, required elements. The worker self-checks and reports pass or fail per criterion, and the skill is explicit that worker self-checks are evidence, not verdicts. A Claude review gate reads every file in <code>out/</code> regardless. Failing one or two criteria earns a one-line delta via <code>codex exec resume &lt;session-id&gt;</code>, not a regeneration, because regenerating throws away everything that was already right. Failing three or more, or violating an <code>AGENTS.md</code> hard ban, earns a respawn with the delta appended.</p>
+      <p>If no, if you cannot say what "good" looks like before the output arrives, you have not decomposed a job. You have distributed a vague feeling to twelve processes and committed yourself to reading whatever comes back. The volume will be impressive. The reviewer will be you, at midnight, deciding whether things look about right.</p>
+      <p>Acceptance criteria are not paperwork. They are the only thing standing between a fleet and a very expensive way to generate material nobody will check.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Before spawning any parallel work, write the lane map and the per-lane acceptance criterion first, and if you cannot write the criterion for a lane, do that lane yourself instead of dispatching it.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="full-send.html"><span class="dir">Previous</span><span class="to">Chapter 4. Full Send</span></a>
+        <a class="next" href="evidence-or-it-did-not-ship.html"><span class="dir">Next</span><span class="to">Chapter 6. Evidence or It Did Not Ship</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

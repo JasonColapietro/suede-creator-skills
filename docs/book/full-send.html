@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 4. Full Send | S-Tier, the builder's book</title>
+    <meta name="description" content="Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/full-send.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 4. Full Send | S-Tier, the builder's book">
+    <meta property="og:description" content="Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/full-send.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 4. Full Send | S-Tier, the builder's book">
+    <meta name="twitter:description" content="Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/full-send.html#chapter",
+  "name": "Chapter 4. Full Send",
+  "headline": "Full Send",
+  "description": "Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.",
+  "url": "https://skills.suedeai.ai/book/full-send.html",
+  "position": 5,
+  "wordCount": 1700,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/full-send.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part II &middot; Chapter 4</p>
+      <h1>Full Send</h1>
+      <p class="post-meta">Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.</p>
+      <div class="book-meta"><span>1,700 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>Type "full send, fix everything" into a capable agent with no policy behind it and watch what happens. It spawns twelve subagents. Eight of them read the same four files. Three write overlapping summaries of the same finding. One produces a document titled "Comprehensive Analysis" that restates your request in headings. Forty minutes later you get a wall of process narration, a list of things that were considered, and no change on disk.</p>
+      <p>That is process theater, and it is the predictable response to maximum-effort language, because "max effort" reads as an instruction about volume. The agent has no way to distinguish between doing more work and looking like it did more work, so it does the thing that is easier to demonstrate.</p>
+      <p><code>suede-full-send</code> exists to convert that phrase into an outcome. It is worth being precise about what it is: a policy router. Its own body says so directly. It does not change model limits, expose hidden reasoning, create external spending authority, or replace the selected controller's workflow. It never does the work. It decides who does, under what constraints, and what counts as done.</p>
+      <h2 id="the-house-line-and-what-it-does-not-mean">The house line, and what it does not mean</h2>
+      <p><strong>"Never end your allocation above zero."</strong></p>
+      <p>The skill's instruction about its own catchphrase is to use it once, dryly, then return to business. It is a joke about already-authorized host compute: you are paying for the seat, the included capacity is there, so use it when using it buys something.</p>
+      <p>It is not a token counter. An agent cannot see a hidden host meter and cannot control one, and the description says so in the frontmatter so the router carries the disclaimer even when the body never loads. It is not permission to pad output. And "authorized host compute" specifically means the included in-session model and agent capacity under the host's existing controls. It does not cover separately billed APIs, credit purchases, quota increases, or cloud jobs. The mission record sets <code>incremental_external_spend_cap=0</code> and keeps it at zero until you name both a category and a maximum amount.</p>
+      <p>So the line means: do not leave useful parallel capacity idle out of politeness. It does not mean: spend more.</p>
+      <h2 id="bring-the-user-a-decision-not-a-workshop">Bring the user a decision, not a workshop</h2>
+      <p>The standard section opens with that sentence, and everything else in the skill is downstream of it. Your attention is the scarce resource. Compute is not.</p>
+      <p>Which means the default is to decide. Routine, reversible, in-scope decisions get executed, not returned to you as homework. The skill names four conditions that justify interrupting you, and the discipline is that a question must meet one of them:</p>
+      <ol><li>the answer changes the desired outcome;</li><li>it grants new authority;</li><li>it crosses a serious risk boundary;</li><li>it chooses between materially different irreversible results.</li></ol>
+      <p>"Should I name the variable <code>userId</code> or <code>accountId</code>" meets none of them. "Should this migration drop the old column or leave it" meets the fourth. The test is mechanical enough to apply while working, which is the point. Most agents ask too much, not because they are cautious, but because asking is cheaper than deciding and it looks like diligence.</p>
+      <p>The reporting rule follows the same logic. Report technical detail as consequence, proof, and next move. Keep progress updates brief. Do not narrate token use, lane chatter, or methodology unless asked. Nobody wants the diary.</p>
+      <h2 id="freeze-the-mission-before-you-mutate-anything">Freeze the mission before you mutate anything</h2>
+      <p>This is the single highest-leverage habit in the book, and it takes about ninety seconds.</p>
+      <p>Before any mutation, the controller writes a <code>FULL_SEND_MISSION</code> record. The full schema is in <code>skills/suede-full-send/SKILL.md</code>; the fields that earn their place are these:</p>
+      <ul><li><code>objective</code>: one user-visible outcome. Not a task list.</li><li><code>targets</code>: exact repos, folders, routes, URLs, or accounts.</li><li><code>authorized_actions</code>: actions tied to those exact targets.</li><li><code>protected_wip</code>: dirty files, branches, and people not to disturb.</li><li><code>source_truth</code>: current files, live surfaces, or platform records.</li><li><code>done_signals</code>: commands, readbacks, URLs, or platform states.</li><li><code>risk_halts</code>: data loss, security, privacy, legal, payment, irreversible impact.</li></ul>
+      <p>Every one of those is a failure you have already had. <code>protected_wip</code> is the answer to an agent cutting a branch on top of another session's uncommitted work on a shared machine. <code>source_truth</code> is the answer to an agent confidently editing a local mirror that is forty commits behind origin. <code>done_signals</code> is the answer to "I've completed the implementation" with no command output behind it. <code>authorized_actions</code> is the answer to scope creep, which in an agent does not look like ambition, it looks like helpfulness.</p>
+      <p>The word "everything" gets an explicit definition: every required surface for the stated objective. Safe read-only discovery can add candidate surfaces to look at. It does not silently expand mutation authority. And the escalation phrases are bounded in the same way. "Full send," "fix everything," and "do not stop" increase persistence and coverage. They do not authorize purchases, deletion, publishing, third-party messages, credential handling, access changes, or irreversible external actions that were not already in scope.</p>
+      <p>Freezing the mission costs a minute and converts a vague instruction into something you can hold the run accountable to afterward. Skip it and you have no basis for saying whether the run succeeded, because you never wrote down what success was.</p>
+      <h2 id="one-controller-and-lanes-that-actually-differ">One controller, and lanes that actually differ</h2>
+      <p>The skill selects exactly one controller. Broad work with multiple judgment, implementation, or verification lanes goes to <code>suede-agent-teams</code>. High-volume independent units that need worker briefs and review go to <code>suede-codex-fleet</code>. One contained outcome with no useful split goes to the smallest relevant specialist. If a batch is one lane inside a bigger release job, agent-teams stays the controller and the fleet is subordinate. Never assign the same units to both.</p>
+      <p>The prohibition is blunt: do not run two controllers, two plans, or two progress stores for one mission. Two plans is not redundancy. It is two sources of truth about what is done, which is worse than one wrong one.</p>
+      <p>Within the chosen controller, the instruction is to fill every useful non-colliding lane, then refill capacity while independent work remains. The qualifier is doing the work. Each lane needs a bounded artifact that can change a done signal, a decision, a risk, a surface map, or the critical path. If a lane cannot change any of those, it is not a lane, it is a witness.</p>
+      <p>So the skill rejects duplicate prose, ceremonial votes, filler agents, and semantically identical lanes, and states the principle in five words: negative evidence is useful, more words are not. A lane that reports "checked the auth flow against the OWASP list, found nothing" changed your risk picture. A second lane summarizing the first one changed nothing and cost the same.</p>
+      <p>There is one more constraint that people trip over immediately after they discover parallelism, and it is stated in the frontmatter so the router carries it: explicit Full Send intent on atomic work selects one specialist and no parallel lanes. Saying "full send" over a single-file fix does not buy you a fleet. It buys you the right specialist and stronger reasoning on the calls that matter. Parallelism is a property of the work, not of your enthusiasm. Work that does not split does not split faster with more agents watching.</p>
+      <h2 id="provisional-until-proved">Provisional until proved</h2>
+      <p>Every worker result is provisional. The controller inspects the actual artifact, diff, command output, or live behavior and marks it <code>accepted</code>, <code>rejected</code>, or <code>fix brief</code>. A worker's final message never closes the mission, which is the correct default given that a subagent reporting success is a claim, not evidence.</p>
+      <p>The proof standard is specific by surface. Changed code means inspecting the diff and running the relevant build, test, lint, or focused behavior check. A skill or plugin means validating manifests, discovery metadata, install paths, and a fresh invocation. MCP means exercising JSON-RPC initialization plus the current tools, resources, and prompts. A public page means the built or live URL at the relevant desktop and mobile states. A deployment means the exact production domain and route.</p>
+      <p>Then three verdicts, and they are allowed to be uncomfortable. <code>PROVED</code> means direct evidence matches the done signal. <code>UNPROVED</code> means the signal is unchecked or supported only indirectly. <code>BLOCKED</code> means access, authority, data, or external state prevented the check. Missing proof narrows the final claim; it does not erase separately completed work. That last clause matters, because without it the incentive is to quietly claim the unproved thing rather than publish a mixed result.</p>
+      <p>The run closes with a compact brief: outcome, decision, executed, proof, adversarial reconciliation, unproved or blocked, source state, handoff, next move, status. For one atomic job, at most three sentences. For broad work, at most eight bullets. Explicitly no lane chatter, no token counts, no padded logs, no diary of the process. If the run is blocked, you get only the blocker schema plus whatever independent work actually finished, which is the version of bad news you can act on.</p>
+      <h2 id="effort-is-not-the-deliverable">Effort is not the deliverable</h2>
+      <p>Be honest about the failure mode this skill is fighting. Max-effort language is an invitation to theater, and a substantial part of the skill's body is suppression: no duplicate lanes, no ceremonial votes, no filler agents, no narration, no hype, no costumed role-play. A router that only added capacity would make the problem worse, because the thing that goes wrong at scale is not insufficient work, it is work that is indistinguishable from work.</p>
+      <p>Effort is an input. You cannot spend it and you cannot ship it. What you can ship is a changed surface with a command output behind it, or a named blocker with the smallest external action that would clear it. Everything between those two outcomes is cost.</p>
+      <p>C-tier answers "full send" with volume. S-tier answers it with a frozen mission, one controller, lanes that could each change the verdict, and a three-sentence brief that tells you what is true now.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Before any broad run, write the seven mission fields (objective, targets, authorized actions, protected WIP, source truth, done signals, risk halts) in plain text and paste them into the prompt. If you cannot fill in <code>done_signals</code>, you are not ready to start.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="the-description-contract.html"><span class="dir">Previous</span><span class="to">Chapter 3. The Description Contract</span></a>
+        <a class="next" href="lanes-fleets-and-collisions.html"><span class="dir">Next</span><span class="to">Chapter 5. Lanes, Fleets, and Collisions</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

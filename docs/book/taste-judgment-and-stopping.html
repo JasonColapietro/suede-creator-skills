@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 12. Taste, Judgment, and Knowing When to Stop | S-Tier, the builder's book</title>
+    <meta name="description" content="The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/taste-judgment-and-stopping.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 12. Taste, Judgment, and Knowing When to Stop | S-Tier, the builder's book">
+    <meta property="og:description" content="The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/taste-judgment-and-stopping.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 12. Taste, Judgment, and Knowing When to Stop | S-Tier, the builder's book">
+    <meta name="twitter:description" content="The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html#chapter",
+  "name": "Chapter 12. Taste, Judgment, and Knowing When to Stop",
+  "headline": "Taste, Judgment, and Knowing When to Stop",
+  "description": "The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.",
+  "url": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html",
+  "position": 13,
+  "wordCount": 2577,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part IV &middot; Chapter 12</p>
+      <h1>Taste, Judgment, and Knowing When to Stop</h1>
+      <p class="post-meta">The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.</p>
+      <div class="book-meta"><span>2,577 words</span><span>11 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>An agent will keep going forever. Not metaphorically. Give it a repo and an open-ended instruction and it will find work in that repo until you interrupt it, and every piece of that work will look defensible in isolation. This is the single most important operational fact about working with agents, and almost nothing in the tooling protects you from it. Stopping is the operator's job. There is no procedure that supplies it.</p>
+      <p>Everything in this book up to now has been a system: a skill, a gate, a rubric, a proof standard. This chapter is about the layer above all of that, the part that decides which system to run, how far to let it go, and when the thing in front of you is finished. That layer cannot be written into a SKILL.md, because writing it down is exactly the move that fails. A rule that says "stop when it is good enough" is not a rule.</p>
+      <p>What can be transmitted is a set of decision boundaries, a few tests, and a practice for accumulating judgment on purpose instead of by accident.</p>
+      <h2 id="which-decisions-are-yours">Which decisions are yours</h2>
+      <p>The first judgment is about judgment itself: which calls belong to the agent and which come back to you.</p>
+      <p>Getting this wrong in one direction produces an agent that asks permission to rename a variable. Getting it wrong in the other direction produces an agent that force-pushed to main because it seemed cleaner. Both failures come from the same missing rule, and <code>suede-full-send</code> states it in four clauses. Bring the user a decision, not a workshop. Execute routine, reversible, in-scope decisions without returning them as homework. Ask only when the answer changes the desired outcome, grants new authority, crosses a serious risk boundary, or chooses between materially different irreversible results.</p>
+      <p>Those four conditions are worth taking apart, because each one is doing distinct work.</p>
+      <p>*Changes the outcome* means the answer alters what gets delivered, not how it gets delivered. Which of two column names to use does not change the outcome. Whether the export includes deleted records does.</p>
+      <p>*Grants new authority* means the agent is about to reach a surface it was not given. Reading a file it was pointed at is in scope. Reading a different repo to get context is a new surface, and it does not become authorized because it would be helpful.</p>
+      <p>*Crosses a serious risk boundary* is the short list that never gets relaxed: data loss, credential or privacy exposure, legal or rights claims, payment, irreversible public action. The house line of that skill, "never end your allocation above zero," is a dry joke about using already-authorized compute hard. It has never meant spending money or touching production because persistence was requested. Full send increases persistence and coverage. It does not create authority.</p>
+      <p>*Materially different irreversible results* is the subtle one. Two options, both defensible, both permanent. Postgres or SQLite for a project that will run for years. A public API shape that other people will build against. Neither is wrong, and the wrongness only appears in eighteen months, and by then the choice is not revisitable at reasonable cost. That is your decision, always, and an agent proposing one confidently is not evidence that it is right.</p>
+      <p>The corollary is stricter than most people apply it: everything outside those four clauses, the agent decides. If you find yourself approving choices that fail all four tests, you have not been careful, you have been a bottleneck with a nice explanation.</p>
+      <h2 id="scope-discipline-or-how-a-bug-fix-eats-a-thursday">Scope discipline, or how a bug fix eats a Thursday</h2>
+      <p>A bug fix turns into a refactor roughly like this. The agent opens the file with the bug. The file is bad, and the agent notices, correctly. The fix would be cleaner with the function split. Splitting the function means updating four callers. Two of the callers have their own problems. Ninety minutes later the pull request is eleven files, the original two-line fix is in there somewhere, and the reviewer cannot separate the fix from the churn.</p>
+      <p>Every step of that was locally reasonable. That is what makes it dangerous.</p>
+      <p>Treat it as a judgment failure, not a productivity win, and be specific about why. The reviewer can no longer verify the fix, because verifying it now means verifying eleven files. The blast radius went from one function to four call sites, so the risk of the change no longer matches the risk of the bug. Rollback got worse: reverting the fix now reverts the refactor. And the refactor never got the design attention it would have gotten as its own piece of work, because it arrived as a side effect.</p>
+      <p>The clean version is unglamorous. Fix the bug in the smallest diff that fixes it. Write down the refactor you did not do, in an issue or a TODO with enough context to act on. Ship the fix. Decide about the refactor separately, when you are deciding about refactors rather than when you are fixing a bug.</p>
+      <p>There is a hidden benefit. Most refactors written down that way are never done, and a meaningful fraction of those should never have been done. The urge to clean up a file is strongest while you are inside it and weakest when you are looking at your priorities. The second view is the more accurate one.</p>
+      <p><code>suede-agent-teams</code> builds this into its lane map: every lane declares the files it owns, and no builder opens a file outside its assignment. That is scope discipline made structural, so it stops depending on anyone's restraint in the moment. When a lane genuinely needs a file it does not own, that surfaces as a collision the orchestrator resolves, which is exactly right. Scope expansion should be a decision someone makes, not something that happens.</p>
+      <h2 id="second-best-now-versus-best-later">Second-best now versus best later</h2>
+      <p>There is a class of decision where the options are close and the deliberation is expensive. Which HTTP client. Which of two acceptable schemas. Whether to use the framework's router or a small custom one for six routes.</p>
+      <p>For these, the second-best option chosen in ten minutes beats the best option chosen in three days, and the margin is usually not close. The best-option analysis costs three days of not shipping, and it produces a decision that is maybe five percent better on a dimension you have not measured, based on a usage pattern you are guessing at because the product does not exist yet.</p>
+      <p>The reason this is safe is reversibility. If you can change the HTTP client in an afternoon, the cost of being wrong is an afternoon, which means the deliberation should never cost more than an afternoon. Time spent deciding is bounded by the cost of being wrong, not by how interesting the decision is.</p>
+      <p>Then there is the other class, where this advice is actively harmful. Public API shapes. Data models that will accumulate years of rows. Auth architecture. Anything other people will build against. Here the second-best option chosen fast becomes a permanent tax, and the deliberation is cheap by comparison, and you should take the three days.</p>
+      <p>The question is not "which option is better." It is "what does being wrong cost, and when do I find out." Cheap and soon: decide in ten minutes. Expensive and late: this is one of the four clauses from earlier, it is your call, and it deserves the strongest reasoning you have.</p>
+      <p>Agents make the first class faster and the second class more dangerous. Faster because they will just implement the reversible thing and you can look at it running. More dangerous because an agent will produce a confident, complete, internally consistent design for an irreversible decision in ninety seconds, and confident and complete is exactly what a bad architectural decision looks like before it is deployed.</p>
+      <h2 id="deciding-what-not-to-build">Deciding what not to build</h2>
+      <p>The strongest judgment move available is declining, and it produces nothing you can point at, which is why it is undersupplied.</p>
+      <p>Three questions do most of the work.</p>
+      <p>Who asked, and what did they actually want? A feature request is usually a proposed solution wearing the clothes of a problem. Someone asks for CSV export because they need one number in a spreadsheet once a month. The export is a week. The number is an endpoint and an afternoon. Answer the underlying need, not the proposed shape of it.</p>
+      <p>What does it cost after it ships? The build is the small number. The support burden, the migrations it constrains, the tests it adds to every future change, the fact that it must keep working forever: that is the real price. Anything you ship, you own. A feature used by two percent of users still blocks a schema change three years later.</p>
+      <p>What does it prevent? Not just the time. The next thing you would have built, and the fact that the product now means something slightly different than it did, and every future decision has to accommodate the new surface.</p>
+      <p>The default should be no. Not out of scarcity, out of arithmetic: the number of things worth building is much smaller than the number of things worth considering, and shipping is the expensive part.</p>
+      <h2 id="the-done-test">The done test</h2>
+      <p>Here is the honest test for whether something is finished: are you still improving the artifact, or are you now only changing it?</p>
+      <p>Improving means a specific defect closes. A bug goes away, an untested path gets a test, a confusing name gets clear, a missing error state appears. You can name what was wrong before.</p>
+      <p>Changing means the fourth revision of a paragraph that was fine in revision two, the button moved four pixels and then back, the abstraction reshuffled because a different arrangement is also nice. Nothing was wrong. Something is now different.</p>
+      <p>The tell is that you can no longer state the defect you are fixing. If the honest description of your next edit is "I want to see how it looks the other way," you finished a while ago and have been redecorating since. Ask what defect this edit closes, and if there is not one, stop.</p>
+      <p>The second test is harder and better: what evidence would change your mind about it being done? If you cannot name a check that would come back negative, you are not verifying, you are admiring. <code>suede-full-send</code> gives three verdicts for exactly this reason. <code>PROVED</code> means direct evidence matches the done signal. <code>UNPROVED</code> means the signal is unchecked or supported only indirectly. <code>BLOCKED</code> means something outside your control prevents the check. Notice that <code>UNPROVED</code> is a legitimate way to finish. You are allowed to ship with a named, honest gap. What you are not allowed to do is call an unproved thing proved, and you are not allowed to keep working past done because you are avoiding the discomfort of shipping something with a named gap.</p>
+      <h2 id="the-agent-will-never-stop">The agent will never stop</h2>
+      <p>None of this used to be urgent, because effort was self-limiting. You got tired. The scope of your ambition was governed by the length of your afternoon.</p>
+      <p>That governor is gone. An agent given "improve this codebase" will improve it for as long as you let it, and will produce a plausible summary at every checkpoint, and will never once volunteer that the remaining work is not worth doing. It has no concept of diminishing returns because it has no stake in the return.</p>
+      <p>This changes what your role is. In the old arrangement you supplied the effort and the environment supplied the limits. Now the agent supplies the effort and you supply the limits, and if you do not supply them nobody does. <code>suede-full-send</code> puts a hard clause on its reconciliation loop for this: repeat only while a named authorized action targets a specific unresolved signal and has a plausible material effect. Read it as a stopping condition, because that is what it is. Once you cannot name the signal, the loop is theater.</p>
+      <p>Practically: name the done signal before you start, not after. If it is not written down at the beginning, you will discover it at the end, and what you discover will be shaped by what the agent happened to produce.</p>
+      <h2 id="taste-is-written-down-or-it-does-not-exist">Taste is written down or it does not exist</h2>
+      <p>Taste sounds innate. It is not. It is a set of preferences you have named, with reasons attached, accumulated over enough decisions that they arrive fast enough to feel like instinct.</p>
+      <p>The accumulation only happens if you write down what you rejected and why. Rejection is where the information is. Everyone keeps a record of what they built. Almost nobody keeps a record of the four approaches they considered and killed, which is a shame, because the reasons those died are the actual content of judgment. "We do not use that pattern here" is a rule you cannot apply to a new situation. "We stopped using that pattern because it hides the error path and we shipped two silent failures" is a rule that generalizes to things that are not that pattern.</p>
+      <p>Two habits make this concrete. The RFC format in <code>suede-agent-teams</code> requires an Alternatives Considered section: two or three options with the reason each was not chosen. That requirement exists because the alternatives are the durable part of the document. Six months later nobody rereads the proposed solution, it is in the code. They reread why the other thing was rejected, usually because someone is proposing it again.</p>
+      <p>The second habit is per-session and takes a minute. When you reject something an agent produced, say why in one line before moving on. Not "no, try again." Say "no, this swallows the error, I want it to surface." That line is worth writing even when the agent does not need it, because you are the one accumulating. Rejections stated as reasons become preferences. Rejections stated as vetoes evaporate.</p>
+      <p>Over a year of this you have a document nobody assigned you: a list of the things you will not do and the specific damage each one caused. That is taste, and it is portable, and it is the one thing in this book that an agent cannot generate for you because it is made entirely out of your own consequences.</p>
+      <h2 id="stopping">Stopping</h2>
+      <p>Every skill in this pack has a stopping condition. Grades cap. Loops require a named unresolved signal. Handoffs will not close without evidence. The pack is built that way because the alternative is a machine that runs until you notice, and by the time you notice it has eleven files open and a very reasonable explanation.</p>
+      <p>The discipline is simple to state and hard to hold: decide what done looks like before you start, and then honor it when you get there, including on the days when the work is going well and continuing feels better than shipping. Especially those days. Momentum is the most expensive reason to keep going, because it is the one that never announces itself as a reason.</p>
+      <p>An agent will produce work forever. Deciding that a thing is finished is the last judgment nobody can delegate, and it is the one that separates a shipped product from an impressive amount of activity.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Before you start the next task, write the done signal in one sentence and put it where you will see it, then stop when you hit it even if the session is going well.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="the-s-tier-ladder.html"><span class="dir">Previous</span><span class="to">Chapter 11. The S-Tier Ladder</span></a>
+        <a class="next" href="write-your-own.html"><span class="dir">Next</span><span class="to">Chapter 13. Write Your Own</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

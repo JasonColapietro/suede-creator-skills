@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 6. Evidence or It Did Not Ship | S-Tier, the builder's book</title>
+    <meta name="description" content="The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 6. Evidence or It Did Not Ship | S-Tier, the builder's book">
+    <meta property="og:description" content="The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 6. Evidence or It Did Not Ship | S-Tier, the builder's book">
+    <meta name="twitter:description" content="The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html#chapter",
+  "name": "Chapter 6. Evidence or It Did Not Ship",
+  "headline": "Evidence or It Did Not Ship",
+  "description": "The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.",
+  "url": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html",
+  "position": 7,
+  "wordCount": 1662,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part II &middot; Chapter 6</p>
+      <h1>Evidence or It Did Not Ship</h1>
+      <p class="post-meta">The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.</p>
+      <div class="book-meta"><span>1,662 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>An agent finishes a task and reports: "Fixed the failing test. The suite is green." It ran the suite. It read the output. It is not lying. What it did was pipe the run through <code>head</code>, see a wall of passing lines, and stop reading before the line that said FAILED.</p>
+      <p>That happened in this repo. It is in the memory file, under <code>never-truncate-test-output-before-claiming-green</code>. The claim was confident, the work looked like the work, and the conclusion was wrong by one scrolled screen.</p>
+      <p>This is the core failure mode of agent-assisted building, and it is not a model defect. Humans do it constantly. You report done based on the shape of the work rather than its result. You wrote the migration, so the data must be migrated. You changed the color token, so the page must be readable. You deployed, so it must be live. Each of those is a substitution of intent for observation, and each one holds until someone actually looks.</p>
+      <h2 id="shape-is-not-result">Shape is not result</h2>
+      <p>The tell is easy to spot once you know it. Listen for completion claims whose support is a description of an action rather than an observation of a state.</p>
+      <p>"Updated the config so the redirect works." Did you request the URL?</p>
+      <p>"Added error handling for the webhook." Did you replay a webhook?</p>
+      <p>"The build should pass now." Should is not a verb that belongs in a status report.</p>
+      <p><code>suede-agent-teams</code> handles this with a status vocabulary that has no shortcuts: <code>scoped</code>, <code>planned</code>, <code>executing</code>, <code>changed locally</code>, <code>verified locally</code>, <code>reviewed</code>, <code>committed</code>, <code>pushed</code>, <code>deployed</code>, <code>verified live</code>, <code>released</code>. The two adjacent pairs are where every optimistic report dies. Changed locally is not verified locally. Deployed is not verified live. The vocabulary exists because the gap between those states is invisible in a transcript and expensive in production. Its Red Flags section names the sentence that skips them: "Mark it done, the code is written."</p>
+      <p><code>suede-ship</code> enforces the same boundary on itself. It reads production and never deploys, so its instructions forbid it from claiming <code>deployed</code>, <code>verified live</code>, or <code>released</code> under any circumstances. Those states require a deploy that has not happened. A skill that will not overclaim on its own behalf is the only kind whose reports are worth anything.</p>
+      <h2 id="what-counts">What counts</h2>
+      <p>Evidence is an artifact produced by the system, not by you, that would have looked different if the work had failed. That is the whole definition, and it disqualifies most of what gets pasted into status updates.</p>
+      <p>Counts:</p>
+      <ul><li>Untruncated command output, read to the end.</li><li>An HTTP status code from a request against the live URL.</li><li>A diff, showing what actually changed rather than what was intended.</li><li>A screenshot of the rendered surface.</li><li>A test run you read to the last line, including the summary.</li><li>Row counts before and after a migration.</li></ul>
+      <p>Does not count:</p>
+      <ul><li>A plan. A plan is a prediction.</li><li>A description of a change. That is a restatement of intent.</li><li>A partial log, or anything downstream of <code>head</code>, <code>grep -v</code>, or <code>2&gt;/dev/null</code>.</li><li>A build that "succeeded locally" for a claim about production.</li><li>A worker's self-assessment. <code>suede-codex-fleet</code> puts this precisely: worker self-checks are evidence, not verdicts. The reviewer still reads the file.</li></ul>
+      <p>The handoff checklist in <code>suede-agent-teams</code> encodes the same line. Verification means a screenshot URL, test output, curl response, or build log. It explicitly does not mean "it works." Commands are recorded with actual output or exit code, in order. A handoff missing a field is status <code>held</code>, not done, and the writer signs off on each item.</p>
+      <h2 id="three-traps-that-survive-careful-people">Three traps that survive careful people</h2>
+      <p>The general rule is easy. The specific failures are the ones that keep landing, because each looks like verification while measuring the wrong thing.</p>
+      <p><strong>Truncation.</strong> <code>npm test | head -50</code> looks like reading the output. It is reading the beginning of the output, which for most test runners is the part where everything is fine. Failures cluster at the end, in the summary, after the stack traces. If you are going to filter, filter toward the failure: read the tail, or grep for the failure token and the exit code, and check <code>$?</code>. A pipeline that ends in <code>head</code> cannot produce a green verdict, only a green-looking prefix.</p>
+      <p><strong>Markup instead of rendering.</strong> A file-wide check counted the right color tokens across the docs surface and passed. Thirty-eight skills still rendered gold text on a gold background, unreadable, because the count was file-wide while the failure was per-container. The lesson recorded in this repo's memory as <code>verify-rendering-not-just-markup</code> is that a check scoped more broadly than the failure will pass through the failure. The fix is to scope the check to the container that actually renders, and to measure the computed value: contrast ratio, not token name. The related note, <code>docs-palette-splits-fill-red-from-text-red</code>, exists for the same reason. The palette's <code>#8b1a1a</code> is fills and borders only, text uses different reds, and a validator that treated the palette as one flat list would approve unreadable text.</p>
+      <p><strong>File tree instead of production.</strong> This one is the most expensive, because the gap is not cosmetic. On some hosts, every <code>.js</code> or <code>.ts</code> file under an <code>api/</code> directory becomes a public serverless function. A file named <code>check.test.js</code> in that directory is not a test. It is a live unauthenticated route. In <code>suede-geo</code>, <code>GET https://scan.suedeai.ai/api/check.test</code> returned <code>200</code> with the body <code>partial</code>, a fixture from a mock server inside the test file. Requesting the URL executed the test suite inside a production function, booted the test's HTTP server, and hung past 25 seconds against a 300-second ceiling. Anyone could loop it.</p>
+      <p>Reading the repository would not have found that. The file looked exactly like a test, because it was one. Only the production surface disagreed. The check that works is one line per file:</p>
+      <pre><code>curl -s -o /dev/null -w '%{http_code}' https://&lt;domain&gt;/api/&lt;basename&gt;</code></pre>
+      <p>Anything that is not a real endpoint should return 404. Verify against the thing users can reach, not the thing you can read.</p>
+      <p>The pattern across all three is the same. Verification failed not because nobody checked, but because the check was one layer away from the claim. Tokens instead of contrast. Prefix instead of summary. Source tree instead of served route. When you design a check, ask which layer the user experiences, and measure that one.</p>
+      <h2 id="the-gate-that-never-blocks-you">The gate that never blocks you</h2>
+      <p>There is a version of this discipline that becomes its own problem: the tool that decides it knows better and refuses to proceed. Every grading and gating skill in this repo carries the same policy block at the top, and it is worth reading as a design decision rather than a disclaimer.</p>
+      <p>Gates are advisory. Every check, quality gate, and ship verdict is a recommendation to the user, not a control on the agent. The skills run every check and report results honestly, and verdicts (<code>ship</code>, <code>ship-with-caveats</code>, <code>hold</code>, letter grades, blocked items) are advice attached to the work rather than orders that change it. They never block, delay, skip, rewrite, or refuse the action you asked for because a check failed. The line that carries the whole policy is five words long: a failed gate changes what you report, never what you do.</p>
+      <p>One exception, and it is narrow. Extremely risky findings, data loss, security or credential exposure, legal or rights violations, payment mistakes, irreversible public damage, cause a pause: state the risk, state the options, let the user pick. Their choice is final. <code>suede-ship</code> applies the same carve-out to live production exposure it observed independently of the change at hand, such as a real secret or an unauthenticated <code>200</code> that should not exist. That goes to the user immediately, because it was true before you arrived and will be true after you leave.</p>
+      <p>This is what makes the discipline usable. A gate that blocks you becomes something you route around, and a routed-around gate reports nothing at all. A gate that reports honestly and gets out of the way stays in the loop, which is the only position from which it can tell you anything. You keep authority over the ship decision. The gate keeps authority over the description of what you are shipping.</p>
+      <p>That division is also why grading skills can afford to be blunt. There is no cost to an accurate D grade when the grade cannot stop you. The moment a verdict acquires the power to block, it acquires an incentive to be diplomatic, and a diplomatic verdict is worth nothing.</p>
+      <h2 id="the-rule">The rule</h2>
+      <p>Verification is not a phase at the end of the work. It is the thing that distinguishes a claim from a guess, and a builder who ships from one who announces.</p>
+      <p>The S-tier ladder turns on it. C-tier produces output. B-tier produces working output. A-tier produces verified output. S-tier builds systems that keep producing verified output without them standing there. Every rung above C is a verification rung, which is why this is the spine of the book rather than a chapter in it.</p>
+      <p>So here is the operator's version, the one worth keeping when the rest of this fades.</p>
+      <p>You are allowed to be wrong. Wrong is recoverable, often cheap, and sometimes the fastest route to right. What you are not allowed to be is unverified and confident. That combination is the one that puts a test suite on a public URL, ships gold text on a gold background to thirty-eight pages, and reports a green suite that failed. It costs more than being wrong, because nobody goes looking for it.</p>
+      <p>Say what you checked. Say what you did not. Then the confidence you do express means something.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>For every completion claim you make or receive, name the artifact behind it, the command output, the status code, the diff, the screenshot, and if there is no artifact, downgrade the claim to "changed, not verified" before anyone else has to.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="lanes-fleets-and-collisions.html"><span class="dir">Previous</span><span class="to">Chapter 5. Lanes, Fleets, and Collisions</span></a>
+        <a class="next" href="grading-your-own-work.html"><span class="dir">Next</span><span class="to">Chapter 7. Grading Your Own Work</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

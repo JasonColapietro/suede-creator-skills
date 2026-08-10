@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chapter 7. Grading Your Own Work | S-Tier, the builder's book</title>
+    <meta name="description" content="Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/book/grading-your-own-work.html">
+    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chapter 7. Grading Your Own Work | S-Tier, the builder's book">
+    <meta property="og:description" content="Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.">
+    <meta property="og:url" content="https://skills.suedeai.ai/book/grading-your-own-work.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chapter 7. Grading Your Own Work | S-Tier, the builder's book">
+    <meta name="twitter:description" content="Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "@id": "https://skills.suedeai.ai/book/grading-your-own-work.html#chapter",
+  "name": "Chapter 7. Grading Your Own Work",
+  "headline": "Grading Your Own Work",
+  "description": "Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.",
+  "url": "https://skills.suedeai.ai/book/grading-your-own-work.html",
+  "position": 8,
+  "wordCount": 1664,
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Book",
+    "@id": "https://skills.suedeai.ai/book/#book",
+    "name": "S-Tier: The Builder's Book Behind the Suede Skills"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "mainEntityOfPage": "https://skills.suedeai.ai/book/grading-your-own-work.html"
+}
+    </script>
+    <style>
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --hairline: #1a1a18;
+        --gold: #c8a96e;
+        --red: #8b1a1a;
+        --red-text: #c6625a;
+        --cream: #f0ece4;
+        --muted: #888880;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+      img { display: block; max-width: 100%; }
+      .shell { width: min(760px, 100%); margin: 0 auto; padding: 0 40px; }
+      .nav {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(8, 8, 8, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px; }
+      .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+      .nav-logo img { width: 28px; height: 28px; }
+      .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+      .nav-logo-wordmark span { color: var(--gold); }
+      .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+      .nav-links a {
+        font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+        text-transform: uppercase; color: var(--muted);
+        padding: 6px 0; transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--cream); }
+      .nav-links a[aria-current="page"] { color: var(--gold); }
+      .nav-cta {
+        border: 1px solid var(--gold); border-radius: 4px;
+        padding: 8px 16px !important; color: var(--cream) !important;
+        background: rgba(200, 169, 110, 0.08);
+      }
+      .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+      main { padding: 72px 0 96px; }
+      .eyebrow {
+        font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+      }
+      .post-meta { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+      h1 {
+        font-size: clamp(34px, 5.5vw, 56px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      h2 {
+        font-size: clamp(22px, 2.8vw, 28px); font-weight: 800;
+        letter-spacing: -0.02em; line-height: 1.15; margin: 44px 0 14px;
+      }
+      h3 { font-size: 17px; font-weight: 700; margin: 24px 0 10px; }
+      p, li { color: var(--cream); }
+      p { margin-bottom: 16px; font-size: 16.5px; line-height: 1.75; }
+      p:last-child { margin-bottom: 0; }
+      strong, b { color: var(--cream); }
+      .lead { font-size: 19px; line-height: 1.7; margin-bottom: 8px; color: var(--cream); }
+      main a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+      main a:hover { border-bottom-color: var(--gold); }
+      code { font-family: var(--mono); font-size: 0.88em; color: var(--gold); }
+      ul { list-style: none; margin: 0 0 16px; }
+      li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16px; line-height: 1.65; }
+      li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
+      .panel {
+        border: 1px solid var(--border);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--card);
+        padding: 24px 26px;
+        margin: 20px 0;
+      }
+      .panel--red { border-color: rgba(139, 26, 26, 0.55); background: rgba(139, 26, 26, 0.07); }
+      pre {
+        overflow: auto;
+        border: 1px solid var(--hairline);
+        border-radius: 4px;
+        background: var(--bg);
+        padding: 16px 18px;
+        color: var(--gold);
+        font: 13px/1.7 var(--mono);
+        white-space: pre-wrap;
+        margin: 12px 0;
+      }
+      pre code { color: inherit; background: none; padding: 0; }
+      .button {
+        display: inline-flex; min-height: 44px; align-items: center;
+        margin: 0 8px 8px 0; padding: 0 20px;
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
+        color: var(--cream) !important;
+        font-size: 14px; font-weight: 600;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
+      .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+      .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+      .divider { border-top: 1px solid var(--hairline); margin: 40px 0; }
+      footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+      .footer-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+      .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+      .footer-brand img { width: 24px; height: 24px; }
+      .footer-brand strong { color: var(--cream); font-weight: 600; }
+      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links a:hover { color: var(--gold); }
+      .footer-divider { color: var(--border); }
+      .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+      .ship-strip-shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+      .ship-strip-head {
+        font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+        letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+      }
+      .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+      .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+      .ship-strip-row code {
+        font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace); font-size: 16px; font-weight: 600;
+        color: #f0ece4; background: #171310;
+        border-radius: 4px; padding: 13px 20px;
+      }
+      .ship-strip-row code .prompt { color: #c8a96e; user-select: none; }
+      .ship-strip-row a {
+        display: inline-flex; align-items: center; min-height: 44px;
+        color: #171310; font-size: 15px; font-weight: 700;
+        border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+        transition: border-color 0.15s;
+      }
+      .ship-strip-row a:hover { border-color: #171310; }
+      @media (max-width: 720px) {
+        .shell, .footer-shell, .ship-strip-shell, .nav-inner { padding: 0 24px; }
+        main { padding: 56px 0 72px; }
+        .ship-strip { padding: 48px 0; }
+        .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+      }
+    
+      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
+      ol li { counter-increment: item; }
+      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
+      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
+      table { border-collapse: collapse; width: 100%; font-size: 15px; }
+      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
+      td:first-child code { white-space: nowrap; }
+      tbody tr:last-child td { border-bottom: none; }
+      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
+      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      .pager a:hover { border-color: var(--gold); }
+      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
+      .pager .next { text-align: right; margin-left: auto; }
+      .part-head { margin: 52px 0 6px; }
+      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
+      .part-head h2 { margin: 6px 0 4px; }
+      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
+      .toc { display: grid; gap: 10px; }
+      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
+      .toc-row:hover { border-color: var(--gold); }
+      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
+      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
+      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="./" aria-current="page">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Part III &middot; Chapter 7</p>
+      <h1>Grading Your Own Work</h1>
+      <p class="post-meta">Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.</p>
+      <div class="book-meta"><span>1,664 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+
+      <p>A findings list is easy to ignore. You ask an agent to review a diff, it comes back with fourteen items ranked P0 through P3, you read the P0, decide it is really more of a P2, and merge. Nothing in the output stopped you, because nothing in the output was a decision. It was a menu.</p>
+      <p>A letter grade is harder to ignore. <code>suede-code-grader</code> ends with one character and a gate that follows it mechanically: A maps to <code>ship</code>, B maps to <code>ship-with-caveats</code>, and C, D, and F all map to <code>hold</code>. There is no arithmetic left to do at the end and no room to negotiate with yourself about severity. You either accept a C and hold, or you say out loud that you are shipping a C.</p>
+      <p>That is the whole trick. The grade does not add information the findings lacked. It removes the option of reading the findings and doing nothing.</p>
+      <h2 id="seven-lanes-scored-separately">Seven lanes, scored separately</h2>
+      <p>The grader scores each of these A through F, then gives one overall:</p>
+      <ol><li><strong>Correctness.</strong> Intended behavior, edge cases, error paths, async behavior, routing, data flow, regression risk.</li><li><strong>Security and permissions.</strong> Auth, secrets, payment, wallet, injection, path traversal, SSRF, permission and data exposure risks fail closed.</li><li><strong>Data and state.</strong> Schemas, migrations, caches, jobs, queues, webhooks, retries, idempotency, state transitions.</li><li><strong>Suede truth.</strong> Public copy, rights, provenance, royalty routing, licensing, product claims match the implementation. Grading work outside Suede, you substitute domain truth: API contract truth, published-statement accuracy, data model truth.</li><li><strong>UX and release behavior.</strong> Loading, empty, error, and success states, mobile and native surfaces, metadata, routes.</li><li><strong>Tests and verification.</strong> Changed behavior has meaningful tests, builds, screenshots, simulator runs, live readbacks, or named caveats.</li><li><strong>Deploy readiness.</strong> Env vars, feature flags, configs, migrations, rollback notes, install paths, docs, release sequencing.</li></ol>
+      <p>Separate lanes matter because a single number hides the shape of the risk. A change can be flawless on correctness and blind on deploy readiness, and those two failures need different responses from you. One needs a rewrite. The other needs a paragraph in the PR body and an env var pushed to production before the merge.</p>
+      <p>Notice what lane 6 does. "Tests and verification" is a graded lane, not a footnote, which means an agent that wrote perfect code and verified none of it cannot reach an A. Evidence or it did not ship, expressed as a score.</p>
+      <h2 id="the-f-you-cannot-argue-with">The F you cannot argue with</h2>
+      <p>Before any lane is scored, the grader runs a fixed list of instant-F triggers. Six categories: secrets and credentials, injection, auth bypass, payment and wallet, data destruction, plaintext sensitive data. Two concrete examples the repo uses, because concrete is the point:</p>
+      <p>A hardcoded API key, secret, token, or password in committed source. Not in <code>.env</code>, not in a config the deploy pipeline injects, but in the actual file that went into git history. That is an F.</p>
+      <p>A role or permission check that can be bypassed by manipulating a request parameter. Someone sends <code>?role=admin</code> and the middleware believes them. That is an F.</p>
+      <p>The rule attached to those triggers is the part builders resist: <strong>no other lane can raise a locked F.</strong> Not a beautiful migration plan, not full test coverage everywhere else, not the fact that the key is for a staging account. The instruction to the agent is explicit: stop, report the file and line, mark the grade F, and do not grade the remaining lanes. Scoring the rest would imply those scores could matter. They cannot.</p>
+      <p>This list lives in two places, <code>suede-code</code> Step 1 and <code>suede-code-grader</code>, and both copies carry the same note: change both together. Duplicated rules drift. Saying so in the file is cheaper than discovering the drift during a review that mattered.</p>
+      <h2 id="caps-so-a-happy-path-cannot-buy-an-a">Caps, so a happy path cannot buy an A</h2>
+      <p>Some surfaces cannot earn a top grade on passing CI alone, because CI on those surfaces usually exercises the path that was never in danger.</p>
+      <p><strong>Auth changes</strong> (login, session, token validation, middleware, role assignment). An A requires explicit coverage of the bypass or escalation path, named: "tested with expired token returns 401", "role escalation attempt returns 403." A B requires the happy path tested plus named caveats about what is not. Meet neither and the change caps at C no matter how the other six lanes scored.</p>
+      <p><strong>Payment and wallet flows</strong> (checkout, subscription, refund, payout, transfer, webhook). An A requires error paths tested (failed charge, declined card, webhook replay), amount and recipient validated server-side, and no silent error swallowing. Otherwise, cap at C.</p>
+      <p><strong>Data migrations</strong> carry the harshest cap. A documented rollback plan with an untested restore gets you a B. No rollback plan at all caps the change at D, which routes to <code>hold</code> and, because data loss is one of the extreme-risk categories, puts the ship choice explicitly to you rather than letting anything proceed quietly.</p>
+      <p><strong>Public API changes</strong> that break a contract with no migration path cap at C.</p>
+      <p>The caps exist for one reason, stated bluntly in the skill's red-flag list: "Happy path works, call it an A" is wrong because happy paths are never where the risk lives.</p>
+      <h2 id="grade-the-diff-not-the-story-about-the-diff">Grade the diff, not the story about the diff</h2>
+      <p>The Source Truth section reads like a list of places to look, and it is, but the operative sentence is the first one: do not grade from the PR description or commit message alone. A PR description is a claim about a diff, written by the person or agent least able to see what the diff missed.</p>
+      <p>So the grader reads the repo, branch, remote, and dirty state; the diff, changed files, generated files, and touched routes; the imports, callers, schemas, configs, env requirements, jobs, webhooks, scripts, tests, and docs that move with the change; and whatever build, test, lint, typecheck, browser, simulator, or live evidence directly exercises the changed behavior. When live or runtime checks are not practical, it grades the source and marks those lanes unverified. Unverified is a real result. Assumed-passing is not.</p>
+      <p>The red flags that precede a fake grade are worth memorizing, because you will think all of them at some point:</p>
+      <ul><li>"CI passed, round up." CI that never exercised the changed behavior raises nothing.</li><li>"The work was clearly hard." Effort never moves a grade. Evidence does.</li><li>"It's just a refactor." Instant-F triggers run on every grade, every time.</li><li>"The PR description is clear enough." Grade the diff and its evidence, or mark the lane unverified.</li></ul>
+      <h2 id="the-gate-is-advice-and-that-is-deliberate">The gate is advice, and that is deliberate</h2>
+      <p>Every one of these skills opens with the same policy block: the checks, the verdicts, the letter grades are recommendations to the user, not controls on the agent. A failed gate changes what the agent reports, never what it does. If you ask for a merge and the grade comes back C, you get the merge and the C, clearly labeled, side by side.</p>
+      <p>This looks like a weakness until you have used a tool that had it the other way. An agent that refuses your instruction because its own quality check disagreed has quietly promoted itself from advisor to gatekeeper, and the first thing you learn is how to phrase requests that dodge it. Then the gate is worth nothing, because it only ever fires on the honest path.</p>
+      <p>There is one exception, and it is narrow: extreme risk. Data loss, credential exposure, legal or rights violations, payment mistakes, irreversible public damage. On those the agent pauses, names the risk and the options, and hands the choice back. Your choice is final. The pause exists so that the decision is conscious, not so that it is blocked.</p>
+      <p>If you want a gate that actually blocks, that is a different skill and a different layer. <code>suede-ci-gate</code> writes the workflow and hands you the branch protection settings, and it makes the same distinction explicitly: it generates, it does not enforce. Real blocking belongs to CI and to GitHub, not to an agent in your terminal. The grader tells you the truth. Branch protection makes the truth binding.</p>
+      <h2 id="predict-the-grade-before-you-run-it">Predict the grade before you run it</h2>
+      <p>Here is the part that turns a tool into a skill.</p>
+      <p>Run the grader on your own work before anyone else does. That is the beginner version, and it is already better than most practice, because the cheapest review is the one that happens before a human's attention is spent. Ship a C knowingly if you want, but ship it knowing.</p>
+      <p>The advanced version: before you run it, write down the grade you expect. All seven lanes, plus the overall, plus which cap you think applies. Then run it and compare.</p>
+      <p>The gap between your prediction and the output is the only real measurement of your judgment. When you guess A and the grader returns C because tests and verification was thin, you learned something durable about your own blind spot. When you guess C and it returns C for exactly the reason you named, you did not need the grader for that change, which is its own useful result.</p>
+      <p>Track this for a month and the prediction converges. That convergence is the skill. The grader stops being an oracle you consult and starts being a check on a judgment you already have, which is the difference between an A-tier builder who produces verified output and an S-tier builder whose verification runs mostly in their own head, with the tool confirming rather than discovering.</p>
+      <p>A builder who cannot predict their own grade is outsourcing taste. A builder who predicts it correctly, and runs the grader anyway because prediction is not evidence, has the thing worth having.</p>
+      <div class="panel move"><p class="move-label">The move</p>
+      <p>Before you run the grader on your next change, write your predicted overall grade and the one lane you think will be weakest in a scratch file. Run it, and keep a running log of where your prediction missed.</p>
+      </div>
+
+      <nav class="pager" aria-label="Chapter navigation">
+        <a class="prev" href="evidence-or-it-did-not-ship.html"><span class="dir">Previous</span><span class="to">Chapter 6. Evidence or It Did Not Ship</span></a>
+        <a class="next" href="design-and-copy-are-engineering.html"><span class="dir">Next</span><span class="to">Chapter 8. Design and Copy Are Engineering</span></a>
+      </nav>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

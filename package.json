@@ -7,7 +7,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs",
+    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check",
+    "build:book": "node scripts/build-book.mjs && node scripts/build-book-site.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
     "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
