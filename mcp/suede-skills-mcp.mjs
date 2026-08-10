@@ -130,11 +130,43 @@ function tokenize(value) {
   return String(value).toLowerCase().match(/[a-z0-9]+/g) || [];
 }
 
+// People describe a task with a different inflection than the catalog uses.
+// "my landing page is not converting" has to reach a skill whose text says
+// "conversion", or the search returns incidental matches on "page" instead.
+// Exact tokens still win; a shared stem counts for half.
+// A bare length cut-off drops the short terms that carry the most routing
+// signal in this pack — ai, qa, ux, seo, cro. Filter meaning, not length.
+const STOPWORDS = new Set([
+  "a", "an", "and", "are", "as", "at", "be", "but", "by", "can", "did", "do", "does",
+  "for", "from", "get", "had", "has", "have", "how", "i", "if", "in", "is", "it", "its",
+  "me", "my", "need", "not", "of", "on", "or", "our", "out", "should", "so", "that", "the",
+  "their", "them", "then", "there", "these", "they", "this", "to", "up", "us", "want",
+  "was", "we", "were", "what", "when", "which", "who", "why", "will", "with", "you", "your"
+]);
+const STEM_MIN_PREFIX = 4;
+function related(a, b) {
+  if (a === b) return 1;
+  const shorter = Math.min(a.length, b.length);
+  if (shorter < STEM_MIN_PREFIX) return 0;
+  let shared = 0;
+  while (shared < shorter && a[shared] === b[shared]) shared += 1;
+  return shared >= STEM_MIN_PREFIX && shared / shorter >= 0.6 ? 0.5 : 0;
+}
+
+function fieldMatch(term, tokens) {
+  let best = 0;
+  for (const token of tokens) {
+    best = Math.max(best, related(term, token));
+    if (best === 1) break;
+  }
+  return best;
+}
+
 // Rank skills against a free-text task description. The pack ships 71 skills,
 // so listing them all is not routing; this scores name, useWhen, and
 // description in that order of authority and drops anything that scores zero.
 function searchSkills(skills, query, limit) {
-  const terms = [...new Set(tokenize(query))].filter((term) => term.length > 2);
+  const terms = [...new Set(tokenize(query))].filter((term) => term.length > 1 && !STOPWORDS.has(term));
   if (!terms.length) return [];
   return skills
     .map((skill) => {
@@ -143,12 +175,11 @@ function searchSkills(skills, query, limit) {
       const description = tokenize(skill.description);
       let score = 0;
       for (const term of terms) {
-        if (name.includes(term)) score += 6;
-        else if (name.some((part) => part.startsWith(term))) score += 3;
-        if (useWhen.includes(term)) score += 3;
-        if (description.includes(term)) score += 1;
+        score += 6 * fieldMatch(term, name);
+        score += 3 * fieldMatch(term, useWhen);
+        score += 1 * fieldMatch(term, description);
       }
-      return { skill, score };
+      return { skill, score: Math.round(score * 10) / 10 };
     })
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score || a.skill.name.localeCompare(b.skill.name))

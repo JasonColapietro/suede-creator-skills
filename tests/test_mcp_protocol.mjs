@@ -341,6 +341,48 @@ test("search ranks skills by task intent and refuses to guess", async () => {
   });
 });
 
+// Routing eval. A lexical scorer regresses silently: the pack shipped one that
+// missed "my landing page is not converting" entirely, because the catalog says
+// "conversion" and incidental "page" matches outranked it. These are real
+// phrasings, scored as a set — a single reshuffle is tolerable, a broad
+// collapse is not.
+const ROUTING_EVAL = [
+  ["my landing page is not converting", "suede-site-alchemy"],
+  ["reduce churn when subscribers cancel", "suede-churn-prevention"],
+  ["review a pull request diff for security bugs", "suede-code-review"],
+  ["write a cold outbound email sequence", "suede-cold-email"],
+  ["my app store listing needs better keywords", "suede-aso"],
+  ["set up branch protection and required checks", "suede-ci-gate"],
+  ["price my subscription tiers", "suede-pricing"],
+  ["strip the AI tells out of this blog post", "suede-deslop"],
+  ["plan an A/B test on the signup flow", "suede-ab-testing"],
+  ["audit my site for search visibility", "suede-seo-audit"],
+  ["package a song for sync licensing pitches", "suede-sync-packaging"],
+  ["build an iOS app from my website", "site-to-ios-app"],
+  ["find the rights gaps before I hand off a release", "suede-rights-audit"],
+  ["design evals that catch model regressions", "suede-ai-eval"],
+  ["grow my instagram account", "suede-instagram-growth"]
+];
+
+test("search routes real task phrasings to the owning skill", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const misses = [];
+    for (const [query, expected] of ROUTING_EVAL) {
+      const response = await session.request("tools/call", {
+        name: "search_suede_skills",
+        arguments: { query, limit: 3 }
+      });
+      const ranked = response.result.structuredContent.matches.map((match) => match.name);
+      if (!ranked.includes(expected)) misses.push(`"${query}" wanted ${expected}, got ${ranked.join(", ") || "nothing"}`);
+    }
+    assert.ok(
+      misses.length <= 2,
+      `${misses.length}/${ROUTING_EVAL.length} routing cases fell out of the top 3:\n${misses.join("\n")}`
+    );
+  });
+});
+
 test("skill bodies are served from the pack and cannot escape skills/", async () => {
   await withSession(async (session) => {
     await session.initialize();
