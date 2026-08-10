@@ -112,29 +112,9 @@ Recommended ship gate — mechanical (a recommendation to the user, not a lock o
 
 ## Surface-Type Standards
 
-Grade each page against its surface type. Caps and expectations differ:
-
-**Landing page (marketing, campaign, product launch)**
-- First-screen clarity and CTA pull are the primary gates. A page that can't convert in the first viewport fails at its job.
-- Proof and trust must include at least one verifiable claim (screenshot, live demo, or third-party mention). Testimonials without attribution cap Proof at C.
-- A is only available if the CTA pull lane is A or B.
-
-**GitHub Pages / repo README**
-- Findability matters less (GitHub handles most of it). First-screen clarity and AI readability are the primary gates.
-- The H1 must match or closely shadow the repo name and primary use case. A generic "Welcome to [repo]" caps First-screen clarity at C.
-- Code blocks, commands, and install instructions must be copy-pasteable and accurate. One broken command caps Proof at D.
-- AI readability grade is elevated: LLMs frequently cite GitHub READMEs. A missing structured summary or absent "What is this?" section caps AI readability at C.
-
-**Product page (within an existing product, not top-of-funnel)**
-- Proof and trust is the primary gate. The visitor already has intent; the page must close.
-- Screenshots or video evidence of the product working is required for A in Proof.
-- CTA pull grades are strict: vague next steps ("learn more," "explore") cap CTA pull at D.
-
-**Documentation page**
-- AI readability is the primary gate. Docs are the most-cited content by AI systems.
-- Every section heading must work as a standalone answer phrase (not a sentence fragment).
-- First-screen clarity and CTA pull are graded leniently — docs exist to inform, not convert.
-- Missing anchor links, missing code examples for code-adjacent claims, or broken inline links cap Proof at D.
+Per-surface standards — landing page, docs, repo page, launch page, campaign page —
+are in `references/surface-type-standards.md`. Read the section for the surface you
+are grading; the lanes above apply to every surface.
 
 ## Grade Modes
 
@@ -198,38 +178,6 @@ Ship gate: ship | ship-with-caveats | hold
 
 ## Sample Report
 
-```text
-Simple explanation:
-The page is findable, but the first screen does not make the action obvious.
-Fix the hero CTA and mobile proof block before promotion.
+A completed grade in the required shape is in `references/sample-report.md`. Read it
+when you are unsure how much evidence a lane write-up needs, not on every grade.
 
-Usual breakdown:
-URL or source: https://example.com
-Surface type: landing page
-Primary reader: creator preparing a release package
-Primary action: start the release-readiness audit
-Live/source status: live page inspected, source not available
-Screenshot evidence: screenshots/home-desktop.png, screenshots/home-mobile.png
-Viewport sizes: 1440x900, 390x844
-Visual states checked: default desktop, default mobile, primary CTA hover
-Visual states not checked: dark mode, logged-in state
-
-Grades:
-Findability: B
-First-screen clarity: C
-CTA pull: D
-Proof and trust: B
-AI readability: B
-Design signal: C
-Overall: C
-
-Top fixes (max 5, ranked by impact on ship gate):
-1. [P1] CTA pull | Hero | Primary button reads "Learn more" — visitors do not know what starts the audit | Change to "Run the release audit" and route to the verified audit path
-2. [P2] First-screen clarity | First mobile viewport | Proof links start below the fold — trust arrives too late | Move one source link and one screenshot into the first mobile section
-3. [P3] Design signal | Hero media | Artwork does not show a release artifact — weak product signal | Replace with a rights/provenance preview or an approved product screenshot
-
-Verification:
-What was checked: live URL, desktop viewport, mobile viewport, primary CTA hover state, Open Graph tags
-What was not checked: dark mode, logged-in state, source files
-Ship gate: ship-with-caveats
-```

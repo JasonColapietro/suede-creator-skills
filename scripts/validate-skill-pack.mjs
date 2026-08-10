@@ -605,7 +605,21 @@ if (!fs.existsSync(versionFile)) {
 }
 
 const docsIndexText = readText(path.join(repoRoot, "docs", "skills", "index.html"));
-const mcpQaText = readText(path.join(repoRoot, "skills", "suede-mcp-qa", "SKILL.md"));
+// Read the whole skill, not just its entrypoint. The readback moved into
+// references/ when suede-mcp-qa was split for progressive disclosure, and a
+// guard anchored to SKILL.md alone would have reported it missing rather than
+// stale — a gate that fails open the moment a skill is reorganized.
+const mcpQaDir = path.join(repoRoot, "skills", "suede-mcp-qa");
+const mcpQaText = [
+  path.join(mcpQaDir, "SKILL.md"),
+  ...(fs.existsSync(path.join(mcpQaDir, "references"))
+    ? fs
+        .readdirSync(path.join(mcpQaDir, "references"))
+        .filter((entry) => entry.endsWith(".md"))
+        .sort()
+        .map((entry) => path.join(mcpQaDir, "references", entry))
+    : [])
+].map((file) => readText(file)).join("\n");
 const mcpQaExpectedVersion = mcpQaText.match(/server version\s*\n`([^`]+)`/)?.[1] ?? null;
 if (mcpQaExpectedVersion !== catalog.version) {
   fail.push(`suede-mcp-qa manual readback version (${mcpQaExpectedVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
