@@ -270,11 +270,27 @@ test("packaged validation rejects Codex plugin version and MCP portability drift
 
 test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-release-drift-");
-  const mcpQaPath = path.join(packagedRoot, "skills", "suede-mcp-qa", "SKILL.md");
-  const mcpQa = fs.readFileSync(mcpQaPath, "utf8").replace(
-    /server version\s*\n`[^`]+`/,
-    "server version\n`9.9.9`"
+  // The readback lives wherever suede-mcp-qa currently keeps it. Pinning this
+  // to SKILL.md meant that splitting the skill turned the mutation into a
+  // silent no-op and the assertion below started passing vacuously.
+  const mcpQaDir = path.join(packagedRoot, "skills", "suede-mcp-qa");
+  const mcpQaCandidates = [
+    path.join(mcpQaDir, "SKILL.md"),
+    ...(fs.existsSync(path.join(mcpQaDir, "references"))
+      ? fs
+          .readdirSync(path.join(mcpQaDir, "references"))
+          .filter((entry) => entry.endsWith(".md"))
+          .sort()
+          .map((entry) => path.join(mcpQaDir, "references", entry))
+      : [])
+  ];
+  const mcpQaPath = mcpQaCandidates.find((candidate) =>
+    /server version\s*\n`[^`]+`/.test(fs.readFileSync(candidate, "utf8"))
   );
+  assert.ok(mcpQaPath, "test fixture must contain the suede-mcp-qa version readback");
+  const mcpQaOriginal = fs.readFileSync(mcpQaPath, "utf8");
+  const mcpQa = mcpQaOriginal.replace(/server version\s*\n`[^`]+`/, "server version\n`9.9.9`");
+  assert.notEqual(mcpQa, mcpQaOriginal, "test fixture must rewrite the version readback");
   fs.writeFileSync(mcpQaPath, mcpQa);
 
   const citationPath = path.join(packagedRoot, "CITATION.cff");
