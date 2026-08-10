@@ -1991,6 +1991,8 @@
 
       .nav-link { display: none; }
       .nav-cta { display: none; }
+      /* Collapses with the rest of the nav; the mobile menu carries it instead. */
+      a.nav-star { display: none; }
       .nav-hamburger { display: flex; }
       .nav-logo img { height: 56px; }
 
@@ -3242,6 +3244,29 @@
       .term-session .term-line { visibility: visible !important; }
       .term-cursor { animation: none !important; }
     }
+
+    /* Persistent GitHub star button in the sticky nav. Deliberately outlined
+       rather than filled: Install stays the primary CTA, this is secondary. */
+    a.nav-star {
+      display: inline-flex; align-items: center; gap: 7px;
+      min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--color-border); border-radius: 4px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--color-text-secondary); text-transform: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    a.nav-star:hover { color: var(--color-accent-gold); border-color: var(--color-accent-gold); background: rgba(200, 169, 110, 0.08); }
+    .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav-star-count {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--color-text-primary);
+      padding-left: 7px; border-left: 1px solid var(--color-border);
+    }
+    a.nav-star:hover .nav-star-count { border-left-color: rgba(200, 169, 110, 0.4); }
+    @media (max-width: 620px) {
+      .nav-star-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      a.nav-star { padding: 8px 12px; gap: 6px; }
+      .nav-star-count { padding-left: 6px; }
+    }
   </style>
 </head>
 <body>
@@ -3277,6 +3302,7 @@
       <a href="#scorecard" class="nav-link">Benchmarks</a>
       <a href="guide.html" class="nav-link">Guide</a>
       <a href="blog/" class="nav-link">Blog</a>
+      <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu">
         <span></span>
@@ -3292,6 +3318,7 @@
     <a href="#scorecard" class="nav-mobile-link" role="menuitem">Benchmarks</a>
     <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
     <a href="blog/" class="nav-mobile-link" role="menuitem">Blog</a>
+    <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" class="nav-mobile-link" role="menuitem">Star on GitHub</a>
     <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
   </div>
 </nav>
@@ -3339,7 +3366,7 @@
           <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
             <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
             Star on GitHub
-            <span id="hero-star-count" hidden></span>
+            <span id="hero-star-count" data-star-count hidden></span>
           </a>
           <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
         </div>
@@ -4801,12 +4828,12 @@
 
   // Live GitHub star count (pill hidden below 10 stars and on any failure)
   (function() {
-    var pill = document.getElementById('hero-star-count');
+    var pills = document.querySelectorAll('[data-star-count]');
     var key = 'suede-stars-v1';
     var ttl = 60 * 60 * 1000;
     var api = 'https://api.github.com/repos/JasonColapietro/suede-creator-skills';
 
-    if (!pill || !window.fetch) return;
+    if (!pills.length || !window.fetch) return;
 
     function formatCount(n) {
       var rounded;
@@ -4817,8 +4844,11 @@
 
     function reveal(n) {
       if (typeof n !== 'number' || n < 10) return;
-      pill.textContent = formatCount(n);
-      pill.removeAttribute('hidden');
+      var text = formatCount(n);
+      Array.prototype.forEach.call(pills, function(el) {
+        el.textContent = text;
+        el.removeAttribute('hidden');
+      });
     }
 
     function readCache() {
