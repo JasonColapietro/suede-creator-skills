@@ -21,6 +21,17 @@
         "--profile",
         "workflow"
       ]
+    },
+    "suede_marketing_mcp": {
+      "title": "Suede Marketing Skills MCP",
+      "description": "Local MCP access to Suede marketing and growth skills, install options, SEO copy audits, and QA checklists.",
+      "cwd": "${CLAUDE_PLUGIN_ROOT}",
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "marketing"
+      ]
     }
   }
 }

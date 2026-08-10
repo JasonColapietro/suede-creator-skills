@@ -1,6 +1,6 @@
 {
   "name": "suede-skills",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Seventy-one public Suede skills and a read-only MCP for decisive agent workflows, code review, design, copy, SEO, app shipping, and creator work.",
   "author": {
     "name": "Jason Colapietro",
@@ -40,6 +40,17 @@
         "./mcp/suede-skills-mcp.mjs",
         "--profile",
         "workflow"
+      ]
+    },
+    "suede_marketing_mcp": {
+      "title": "Suede Marketing Skills MCP",
+      "description": "Local read-only discovery for Suede marketing and growth skills, audits, grading scaffolds, and QA checklists.",
+      "cwd": ".",
+      "command": "node",
+      "args": [
+        "./mcp/suede-skills-mcp.mjs",
+        "--profile",
+        "marketing"
       ]
     }
   },

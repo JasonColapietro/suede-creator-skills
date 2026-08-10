@@ -283,8 +283,99 @@ test("CI whitespace gate compares the event commit range", () => {
   assert.match(workflow, /git diff --check "\$PUSH_BEFORE_SHA" "\$GITHUB_SHA"/);
 });
 
+test("every catalog area is reachable through a shipped profile", async () => {
+  // Marketing and consumer skills existed in the catalog with no profile that
+  // could reach them, so 41 of 71 skills were dead weight behind the MCP.
+  const areas = new Set(CATALOG.skills.map((skill) => skill.area));
+  const reached = new Set();
+  for (const profile of ["workflow", "creator", "marketing", "consumer"]) {
+    await withSession(async (session) => {
+      await session.initialize();
+      const response = await session.request("tools/call", {
+        name: "list_suede_skills",
+        arguments: {}
+      });
+      const skills = response.result.structuredContent.skills;
+      assert.ok(skills.length > 0, `${profile} profile exposes no skills`);
+      for (const skill of skills) reached.add(skill.area);
+    }, profile);
+  }
+  assert.deepEqual([...areas].sort(), [...reached].sort());
+
+  const registered = Object.values(MCP_CONFIG.mcpServers).map((server) => server.args.at(-1)).sort();
+  assert.deepEqual(registered, ["creator", "marketing", "workflow"]);
+});
+
+test("search ranks skills by task intent and refuses to guess", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const churn = await session.request("tools/call", {
+      name: "search_suede_skills",
+      arguments: { query: "reduce churn when subscribers cancel", limit: 3 }
+    });
+    const matches = churn.result.structuredContent.matches;
+    assert.ok(matches.length <= 3);
+    assert.ok(
+      matches.some((match) => match.name === "suede-churn-prevention"),
+      `churn query routed to ${matches.map((match) => match.name).join(", ")}`
+    );
+    assert.ok(matches.every((match) => typeof match.score === "number" && match.score > 0));
+
+    const nothing = await session.request("tools/call", {
+      name: "search_suede_skills",
+      arguments: { query: "zzzqqq" }
+    });
+    assert.deepEqual(nothing.result.structuredContent.matches, []);
+
+    const overLimit = await session.request("tools/call", {
+      name: "search_suede_skills",
+      arguments: { query: "seo", limit: 999 }
+    });
+    assert.equal(overLimit.error.code, -32602);
+
+    const scoped = await session.request("tools/call", {
+      name: "search_suede_skills",
+      arguments: { query: "review a diff for security bugs", area: "marketing" }
+    });
+    assert.ok(scoped.result.structuredContent.matches.every((match) => match.area === "marketing"));
+  });
+});
+
+test("skill bodies are served from the pack and cannot escape skills/", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const withBody = await session.request("tools/call", {
+      name: "get_suede_skill",
+      arguments: { name: "$suede-ship", includeBody: true }
+    });
+    const structured = withBody.result.structuredContent;
+    assert.equal(structured.found, true);
+    assert.match(structured.body, /^---\nname: suede-ship/);
+    assert.equal(structured.bodyTruncated, false);
+
+    const withoutBody = await session.request("tools/call", {
+      name: "get_suede_skill",
+      arguments: { name: "suede-ship" }
+    });
+    assert.equal(withoutBody.result.structuredContent.body, undefined);
+
+    const traversal = await session.request("tools/call", {
+      name: "get_suede_skill",
+      arguments: { name: "../../etc/passwd", includeBody: true }
+    });
+    assert.equal(traversal.result.structuredContent.found, false);
+    assert.equal(traversal.result.isError, true);
+
+    const badType = await session.request("tools/call", {
+      name: "get_suede_skill",
+      arguments: { name: "suede-ship", includeBody: "yes" }
+    });
+    assert.equal(badType.error.code, -32602);
+  }, "workflow");
+});
+
 test("catalog, resources, prompts, and profile filters match the live server", async () => {
-  assert.equal(CATALOG.mcp.tools.length, 7);
+  assert.equal(CATALOG.mcp.tools.length, 8);
   assert.equal(CATALOG.mcp.resources.length, 6);
   assert.equal(CATALOG.mcp.prompts.length, 5);
 
@@ -356,8 +447,19 @@ test("Claude and Codex MCP registrations retain both portable profiles", () => {
   assert.equal(creator.cwd, "${CLAUDE_PLUGIN_ROOT}");
   assert.equal(workflow.cwd, "${CLAUDE_PLUGIN_ROOT}");
 
+  const marketing = MCP_CONFIG.mcpServers.suede_marketing_mcp;
+  assert.ok(marketing);
+  assert.deepEqual(marketing.args.slice(-2), ["--profile", "marketing"]);
+  assert.equal(marketing.command, "node");
+  assert.equal(marketing.cwd, "${CLAUDE_PLUGIN_ROOT}");
+
   const codexCreator = CODEX_PLUGIN.mcpServers.suede_creator_mcp;
   const codexWorkflow = CODEX_PLUGIN.mcpServers.suede_workflow_mcp;
+  assert.deepEqual(CODEX_PLUGIN.mcpServers.suede_marketing_mcp.args, [
+    "./mcp/suede-skills-mcp.mjs",
+    "--profile",
+    "marketing"
+  ]);
   assert.deepEqual(codexCreator.args, [
     "./mcp/suede-skills-mcp.mjs",
     "--profile",

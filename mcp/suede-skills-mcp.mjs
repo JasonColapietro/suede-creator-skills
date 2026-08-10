@@ -5,7 +5,26 @@ import { fileURLToPath } from "node:url";
 
 const PROTOCOL_VERSION = "2025-06-18";
 const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
-const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator"]);
+const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator", "marketing", "consumer"]);
+const PROFILE_AREAS = {
+  workflow: ["workflow"],
+  artist: ["artist", "creator"],
+  creator: ["artist", "creator"],
+  marketing: ["marketing"],
+  consumer: ["consumer"]
+};
+// Which plugin bundle installs a profile's skills. Kept explicit rather than
+// inferred from plugin.skills: several bundles list the same skill, and a
+// profile should point at the one bundle a reader is meant to install.
+const PROFILE_PLUGINS = {
+  workflow: ["suede-workflow-skills"],
+  artist: ["suede-creator-skills"],
+  creator: ["suede-creator-skills"],
+  marketing: ["suede-marketing"],
+  consumer: ["suede-workflow-skills"]
+};
+const AREA_ALIASES = { artist: ["artist", "creator"], creator: ["artist", "creator"] };
+const AREA_ENUM = ["all", "workflow", "artist", "creator", "marketing", "consumer"];
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -34,8 +53,12 @@ try {
 }
 const catalogPath = path.join(__dirname, "catalog.json");
 const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const skillsDirPath = path.join(__dirname, "..", "skills");
+const SKILLS_DIR = fs.existsSync(skillsDirPath) ? fs.realpathSync(skillsDirPath) : skillsDirPath;
 const MAX_INPUT_BUFFER_BYTES = 1024 * 1024;
 const MAX_TEXT_CHARS = 2000;
+const MAX_BODY_CHARS = 24000;
+const MAX_SEARCH_RESULTS = 25;
 
 function isObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value);
@@ -54,17 +77,15 @@ function boundedString(value, fallback = "") {
 }
 
 function profileCatalog() {
-  if (profile === "workflow" || profile === "artist" || profile === "creator") {
-    const areaSet = profile === "creator" || profile === "artist" ? new Set(["artist", "creator"]) : new Set([profile]);
-    return {
-      ...catalog,
-      plugins: catalog.plugins.filter((plugin) =>
-        plugin.name.includes(profile) || (profile === "artist" && plugin.name === "suede-creator-skills")
-      ),
-      skills: catalog.skills.filter((skill) => areaSet.has(skill.area))
-    };
-  }
-  return catalog;
+  const areas = PROFILE_AREAS[profile];
+  if (!areas) return catalog;
+  const pluginNames = new Set(PROFILE_PLUGINS[profile] || []);
+  const areaSet = new Set(areas);
+  return {
+    ...catalog,
+    plugins: catalog.plugins.filter((plugin) => pluginNames.has(plugin.name)),
+    skills: catalog.skills.filter((skill) => areaSet.has(skill.area))
+  };
 }
 
 function text(content) {
@@ -79,6 +100,60 @@ function asMarkdownSkillList(data) {
 
 function isSkillAvailable(name) {
   return profileCatalog().skills.some((skill) => skill.name === name);
+}
+
+// Read a skill's own instructions off disk. The name is only ever a value that
+// already matched a catalog entry, so the join can never leave skills/.
+function readSkillBody(name) {
+  const bodyPath = path.join(SKILLS_DIR, name, "SKILL.md");
+  if (!bodyPath.startsWith(`${SKILLS_DIR}${path.sep}`)) return null;
+  let raw;
+  try {
+    raw = fs.readFileSync(bodyPath, "utf8");
+  } catch {
+    return null;
+  }
+  if (raw.length <= MAX_BODY_CHARS) return { text: raw, truncated: false };
+  return {
+    text: `${raw.slice(0, MAX_BODY_CHARS)}\n\n[truncated at ${MAX_BODY_CHARS} characters — read skills/${name}/SKILL.md for the rest]`,
+    truncated: true
+  };
+}
+
+function scopeByArea(skills, area) {
+  if (!area || area === "all") return skills;
+  const wanted = new Set(AREA_ALIASES[area] || [area]);
+  return skills.filter((skill) => wanted.has(skill.area));
+}
+
+function tokenize(value) {
+  return String(value).toLowerCase().match(/[a-z0-9]+/g) || [];
+}
+
+// Rank skills against a free-text task description. The pack ships 71 skills,
+// so listing them all is not routing; this scores name, useWhen, and
+// description in that order of authority and drops anything that scores zero.
+function searchSkills(skills, query, limit) {
+  const terms = [...new Set(tokenize(query))].filter((term) => term.length > 2);
+  if (!terms.length) return [];
+  return skills
+    .map((skill) => {
+      const name = tokenize(skill.name);
+      const useWhen = tokenize(skill.useWhen);
+      const description = tokenize(skill.description);
+      let score = 0;
+      for (const term of terms) {
+        if (name.includes(term)) score += 6;
+        else if (name.some((part) => part.startsWith(term))) score += 3;
+        if (useWhen.includes(term)) score += 3;
+        if (description.includes(term)) score += 1;
+      }
+      return { skill, score };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score || a.skill.name.localeCompare(b.skill.name))
+    .slice(0, limit)
+    .map(({ skill, score }) => ({ ...skill, score }));
 }
 
 function installMarkdown(data, surface = "all") {
@@ -328,20 +403,43 @@ const tools = [
       properties: {
         area: {
           type: "string",
-          enum: ["all", "workflow", "artist", "creator"],
+          enum: AREA_ENUM,
           description: "Optional area filter."
         }
       }
     }
   },
   {
-    name: "get_suede_skill",
-    title: "Get Suede Skill",
-    description: "Return details for one Suede skill.",
+    name: "search_suede_skills",
+    title: "Search Suede Skills",
+    description: "Rank Suede skills against a task description and return the best-matching routes.",
     inputSchema: {
       type: "object",
       properties: {
-        name: { type: "string", description: "Skill name, with or without a leading dollar sign." }
+        query: { type: "string", description: "Task, problem, or intent to route." },
+        area: { type: "string", enum: AREA_ENUM, description: "Optional area filter." },
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: MAX_SEARCH_RESULTS,
+          description: `Maximum matches to return, up to ${MAX_SEARCH_RESULTS}.`
+        }
+      },
+      required: ["query"]
+    }
+  },
+  {
+    name: "get_suede_skill",
+    title: "Get Suede Skill",
+    description: "Return details for one Suede skill, optionally including its full SKILL.md instructions.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        name: { type: "string", description: "Skill name, with or without a leading dollar sign." },
+        includeBody: {
+          type: "boolean",
+          description: "Include the skill's SKILL.md instructions instead of catalog metadata only."
+        }
       },
       required: ["name"]
     }
@@ -432,6 +530,12 @@ const skillOutputSchema = {
   additionalProperties: false
 };
 
+const scoredSkillOutputSchema = {
+  ...skillOutputSchema,
+  properties: { ...skillOutputSchema.properties, score: { type: "number" } },
+  required: [...skillOutputSchema.required, "score"]
+};
+
 const nullableString = { type: ["string", "null"] };
 const toolOutputSchemas = {
   list_suede_skills: {
@@ -440,9 +544,23 @@ const toolOutputSchemas = {
     required: ["skills"],
     additionalProperties: false
   },
+  search_suede_skills: {
+    type: "object",
+    properties: {
+      query: { type: "string" },
+      matches: { type: "array", items: scoredSkillOutputSchema }
+    },
+    required: ["query", "matches"],
+    additionalProperties: false
+  },
   get_suede_skill: {
     type: "object",
-    properties: { found: { type: "boolean" }, skill: skillOutputSchema },
+    properties: {
+      found: { type: "boolean" },
+      skill: skillOutputSchema,
+      body: { type: ["string", "null"] },
+      bodyTruncated: { type: "boolean" }
+    },
     required: ["found"],
     additionalProperties: false
   },
@@ -601,6 +719,18 @@ function validateToolArguments(tool, args) {
     if (property.type === "string" && typeof value !== "string") {
       throw rpcError(`Argument ${key} for ${tool.name} must be a string`);
     }
+    if (property.type === "boolean" && typeof value !== "boolean") {
+      throw rpcError(`Argument ${key} for ${tool.name} must be a boolean`);
+    }
+    if (property.type === "integer") {
+      if (!Number.isInteger(value)) throw rpcError(`Argument ${key} for ${tool.name} must be an integer`);
+      if (property.minimum !== undefined && value < property.minimum) {
+        throw rpcError(`Argument ${key} for ${tool.name} must be at least ${property.minimum}`);
+      }
+      if (property.maximum !== undefined && value > property.maximum) {
+        throw rpcError(`Argument ${key} for ${tool.name} must be at most ${property.maximum}`);
+      }
+    }
     if (typeof value === "string" && property.maxLength && value.length > property.maxLength) {
       throw rpcError(`Argument ${key} for ${tool.name} exceeds ${property.maxLength} characters`);
     }
@@ -624,11 +754,18 @@ function callTool(name, args = {}) {
   if (!tool) throw rpcError(`Unknown tool: ${name}`);
   validateToolArguments(tool, args);
   if (name === "list_suede_skills") {
-    const area = args.area || (profile === "creator" ? "all" : profile);
-    const scoped = area === "all"
-      ? data.skills
-      : data.skills.filter((skill) => (area === "artist" ? skill.area === "artist" || skill.area === "creator" : skill.area === area));
-    return toolResult(asMarkdownSkillList({ skills: scoped }), { skills: scoped });
+    return toolResult(asMarkdownSkillList({ skills: scopeByArea(data.skills, args.area) }), {
+      skills: scopeByArea(data.skills, args.area)
+    });
+  }
+  if (name === "search_suede_skills") {
+    const query = boundedString(args.query);
+    const limit = args.limit === undefined ? 10 : args.limit;
+    const matches = searchSkills(scopeByArea(data.skills, args.area), query, limit);
+    const humanText = matches.length
+      ? asMarkdownSkillList({ skills: matches })
+      : `No Suede skill in this profile matches: ${query}`;
+    return toolResult(humanText, { query, matches });
   }
   if (name === "get_suede_skill") {
     const requested = boundedString(args.name).replace(/^\$/, "");
@@ -636,7 +773,21 @@ function callTool(name, args = {}) {
     if (!skill) {
       return toolResult(`Unknown Suede skill: ${requested}`, { found: false }, { isError: true });
     }
-    return toolResult(`$${skill.name}: ${skill.description}\n\nUse when: ${skill.useWhen}`, { found: true, skill });
+    const summary = `$${skill.name}: ${skill.description}\n\nUse when: ${skill.useWhen}`;
+    if (!args.includeBody) return toolResult(summary, { found: true, skill });
+    const body = readSkillBody(skill.name);
+    if (!body) {
+      return toolResult(
+        `${summary}\n\nSKILL.md is not readable from this install.`,
+        { found: true, skill, body: null, bodyTruncated: false }
+      );
+    }
+    return toolResult(`${summary}\n\n---\n\n${body.text}`, {
+      found: true,
+      skill,
+      body: body.text,
+      bodyTruncated: body.truncated
+    });
   }
   if (name === "suede_install_options") {
     return toolResult(

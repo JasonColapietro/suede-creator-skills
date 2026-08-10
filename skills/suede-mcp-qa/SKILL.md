@@ -71,8 +71,8 @@ against a generic MCP checklist — check it against this exact surface. Read
 `mcp/catalog.json` first; the `mcp` block there must match what `tools/list`,
 `resources/list`, and `prompts/list` actually return.
 
-7 tools: `list_suede_skills`, `get_suede_skill`, `suede_install_options`,
-`suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`,
+8 tools: `list_suede_skills`, `search_suede_skills`, `get_suede_skill`,
+`suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`,
 `suede_qa_checklist`.
 
 6 resources: `suede://catalog`, `suede://plugins`, `suede://copy-seo-audit`,
@@ -114,8 +114,8 @@ printf '%s\n' \
 ```
 
 The initialization result must report protocol `2025-06-18`, server version
-`0.10.0`, and explicit tools/resources/prompts capabilities. `tools/list` must
-return exactly the 7 tools above. Each tool must expose `inputSchema`,
+`0.11.0`, and explicit tools/resources/prompts capabilities. `tools/list` must
+return exactly the 8 tools above. Each tool must expose `inputSchema`,
 `outputSchema`, and annotations with `readOnlyHint: true`,
 `destructiveHint: false`, `idempotentHint: true`, and `openWorldHint: false`.
 The successful call must return `structuredContent`; `content[0]` must be useful

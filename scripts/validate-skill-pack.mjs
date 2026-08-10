@@ -501,6 +501,7 @@ if (!codexPluginJson) {
   const expectedCodexMcpProfiles = {
     suede_creator_mcp: "creator",
     suede_workflow_mcp: "workflow",
+    suede_marketing_mcp: "marketing",
   };
   if (!isObject(codexMcpServers)) {
     fail.push("Codex plugin mcpServers must be an inline object with root-relative paths");
@@ -1105,7 +1106,7 @@ for (const check of countChecks) {
   // this guard while the scorecard table was still on the page.
   const detailBlock = docsRootText.split('class="scorecard-details')[1]?.split("</details>")[0];
   if (!detailBlock) {
-    warn.push("docs/index.html scorecard detail table not found — competitive-claim guard skipped");
+    fail.push("docs/index.html scorecard detail table not found — the competitive-claim guard cannot run");
   } else {
     const scored = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
       .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
