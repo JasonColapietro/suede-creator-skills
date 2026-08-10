@@ -3,36 +3,52 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Two new lanes: a next-action recommender and a one-prompt Android app factory | Suede Creator Skills</title>
-    <meta name="description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
+    <title>Your memory file is a tax you pay on every prompt | Suede Creator Skills</title>
+    <meta name="description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html">
+    <link rel="canonical" href="https://skills.suedeai.ai/blog/memory-belongs-in-skills.html">
     <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
-    <meta property="og:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
-    <meta property="og:url" content="https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html">
+    <meta property="og:title" content="Your memory file is a tax you pay on every prompt">
+    <meta property="og:description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
+    <meta property="og:url" content="https://skills.suedeai.ai/blog/memory-belongs-in-skills.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
-    <meta name="twitter:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
+    <meta name="twitter:title" content="Your memory file is a tax you pay on every prompt">
+    <meta name="twitter:description" content="Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html#article",
-        "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
-        "description": "Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time, and routes both through the existing end-to-end workflow umbrella.",
-        "url": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
-        "datePublished": "2026-07-19",
-        "dateModified": "2026-07-19",
-        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
-        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
-        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "Android app development", "next action recommendation", "agent workflow"],
-        "mainEntityOfPage": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html#article",
+  "headline": "Your memory file is a tax you pay on every prompt",
+  "description": "Memory files load unconditionally, so every durable fact costs tokens and attention on every turn. Moving conditional knowledge into skills makes it cheaper and, unexpectedly, better.",
+  "url": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "about": [
+    "agent memory",
+    "progressive disclosure",
+    "Agent Skills",
+    "context window",
+    "Claude Code",
+    "CLAUDE.md",
+    "prompt engineering"
+  ],
+  "mainEntityOfPage": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html"
+}
     </script>
     <style>
     .skip-link {
@@ -220,69 +236,48 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <p class="eyebrow">Product update &middot; July 19, 2026</p>
-      <h1>Two new lanes: a next-action recommender and a one-prompt Android app factory</h1>
-      <p class="post-meta">This release brought Suede Creator Skills to <strong>27 public skills</strong>. Here's what shipped and why.</p>
+      <p class="eyebrow">Essay &middot; August 7, 2026</p>
+      <h1>Your memory file is a tax you pay on every prompt</h1>
+      <p class="post-meta">On moving durable knowledge out of the memory layer and into skills that only load when they apply.</p>
 
-      <p class="lead">Two skills landed in the pack: <code>suede-recommend-next-action</code>, which scores your real options and hands back one runnable prompt instead of a wall of choices, and <code>android-app-factory</code>, a one-prompt pipeline from a keyword to a signed Play Store release. Both route through the same umbrella that already handled the rest of the pack, so nothing about installing or invoking the workflow changed &mdash; the workflow just covers more ground now.</p>
+      <p class="lead">Every agent accumulates knowledge that ought to outlive the session: how this repo wants to be branched, which build command is the real one, the correction you made three weeks ago that you never want to make again. The default home for all of it is a memory file, and a memory file has one property that quietly ruins it. It loads on every turn.</p>
 
-      <h2>Stop asking "what should I do next"</h2>
-      <p><code>suede-recommend-next-action</code> reads whatever state is actually in front of it &mdash; the current repo, terminal output, an open plan, a stale handoff &mdash; and scores 2 to 4 real candidate moves against five criteria: goal alignment, unblocking, evidence, urgency, and leverage. The highest score wins. Ties break toward the required prerequisite, then whichever choice is confirmable by current evidence, then the more reversible option.</p>
-      <p>The output is deliberately small by default: a one-sentence recommendation, one sentence on why it's the move right now, and a 2-4 sentence prompt you can hand to another agent. The full operator brief &mdash; target, objective, verified state, authorized scope, verification steps &mdash; stays hidden until you ask to <code>expand prompt</code>. Ask for <code>make it granular</code> and it breaks the same brief into atomic, numbered steps with exact commands.</p>
+      <h2>The tax</h2>
+      <p>A memory file is unconditional. It costs the same whether you asked the agent to ship a release or fix a typo. Write 5,000 tokens of hard-won operating knowledge and you have signed up to pay 5,000 tokens on every prompt for the rest of the project, including the ones where none of it applies.</p>
+      <p>That's the visible cost, and it's the smaller one.</p>
+      <p>The real damage is attentional. Instructions in a long file compete with each other. Add the twentieth rule and the first nineteen get slightly harder to follow, because the model is now allocating attention across twenty things that all claimed to matter equally. A memory file that grows monotonically doesn't just get expensive. It gets less obeyed, rule by rule, and the failure is invisible: nothing errors, the agent just quietly stops honoring something you wrote down two months ago.</p>
+      <p>So memory has a perverse shape. The more diligently you maintain it, the worse it performs. Most people notice this as "the agent ignores my CLAUDE.md" and respond by adding emphasis, capital letters, and IMPORTANT tags, which is treating a capacity problem as a compliance problem.</p>
 
-      <div class="panel" aria-label="Example session">
-        <p><code>&gt; /suede-recommend-next-action what's next</code></p>
-        <p>Recommended action: fix the failing auth test before touching the new endpoint.<br>
-        Why now: it's the one candidate confirmed broken by the current test run and blocks two downstream tasks.</p>
-        <p>Quick prompt: Use <code>suede-code</code> to fix the failing <code>test_auth_refresh</code> case in <code>auth/tests/test_refresh.py</code>, keeping the token-rotation contract unchanged. Done signal: the suite passes locally.</p>
-        <p>Say "expand prompt" for the full operator version or "make it granular" for exact steps and commands.</p>
+      <h2>The question that sorts it</h2>
+      <p>There's one test for any durable fact you're about to write down:</p>
+      <div class="panel" aria-label="The sorting question">
+        <p>Does this apply to <strong>every</strong> turn, or only <strong>some</strong> turns?</p>
       </div>
+      <p>Every-turn facts genuinely belong in memory. Who you are. What you're standing-authorized to do without asking. Global constraints that hold no matter what the task is. These are cheap, few, and correctly unconditional.</p>
+      <p>Some-turn facts are almost everything else, and they are miscategorized by default. How to cut a release. What this project's CI conventions are. How to handle a return, a rights audit, an App Store submission. Each one is critical on the day it applies and pure overhead on every other day. Put it in memory and you pay for it constantly to use it occasionally.</p>
+      <p>A skill is the same information with a condition attached. The agent holds the name and the description. The body stays on disk until a request matches. You pay a line to have it available and the full price only when you use it.</p>
 
-      <p>It never executes anything itself &mdash; it recommends, and only mutates once you separately authorize the work. And it doesn't try to replace a repo's existing plan or progress tracker: if one exists, the recommendation treats it as one candidate and verifies it against current source instead of running a second, competing process.</p>
+      <h2>The part that surprised me</h2>
+      <p>I expected this to be a cost optimization. It turned out to be a quality one, for a reason I didn't anticipate.</p>
+      <p>Memory forces compression. Because every line is billed on every turn, you write the shortest thing that might work. "Always use worktrees." That's what fits. What you actually know is longer: why worktrees, which directory convention, the two places worktrees hide, why the session registry lies about which ones are live, what a squash-merged branch looks like when you're deciding whether to delete it. All of that gets cut, because you cannot afford six paragraphs in a file that loads unconditionally.</p>
+      <p>A skill has no such pressure. Its body is read only when relevant, so length is nearly free. You can write the failure modes, the exact commands, the counterexample that cost you an afternoon, the check that looks redundant and isn't. The knowledge doesn't just move. It gets to be complete for the first time.</p>
+      <p>That inverts the usual tradeoff. Normally more detail means more cost. Here, moving detail behind a trigger means you can afford more of it, and the agent gets a better version of the rule at the exact moment it needs it, instead of a compressed version at all times.</p>
 
-      <h2>One prompt to a Play Store-ready app</h2>
-      <p><code>android-app-factory</code> is the Android counterpart to the pack's existing <a href="../skills/site-to-ios-app.html">site-to-ios-app</a> skill, and it covers more ground: a full native pipeline from a one-line idea or target keyword through a signed release, not just wrapping an existing site.</p>
-      <p>The default pipeline, in order:</p>
+      <h2>What else you get</h2>
+      <p>Once knowledge lives in a file with a name and a boundary rather than in an undifferentiated memory blob, ordinary software practice starts applying to it:</p>
       <ul>
-        <li>Pick a winnable target keyword before writing any code.</li>
-        <li>Scaffold native Kotlin + Jetpack Compose &mdash; never a bare JVM module, which produces a JAR instead of an installable APK/AAB.</li>
-        <li>Build one real core loop (input, processing, structured result, history, saved set) before monetization or polish.</li>
-        <li>Add Play Billing only when it won't block the v1 review flow &mdash; a free v1 is the default when it would.</li>
-        <li>Produce Play Store screenshots, a feature graphic, and listing copy sized to Play's exact character limits (30/80/4000).</li>
-        <li>Fill out the Data Safety form and content-rating questionnaire truthfully, matched to actual SDK and data behavior.</li>
-        <li>Run a ship gate before release: build, listing, screenshots, signing, and secrets all get checked.</li>
-        <li>Release only after explicit confirmation, starting on internal or closed testing before any production rollout.</li>
+        <li><strong>It diffs.</strong> You can see what changed about how the agent works, and when.</li>
+        <li><strong>It reviews.</strong> A rule in a skill can be argued with before it ships. A line appended to memory at 1am cannot.</li>
+        <li><strong>It travels.</strong> A skill installs on another machine, or for another person. Memory is per-machine sediment.</li>
+        <li><strong>It can be deleted.</strong> Removing one skill removes one behavior. Removing one line from a 200-line memory file is a guess about what else depended on it.</li>
       </ul>
-      <p>Public-safe defaults hold throughout: placeholder application IDs, a gitignored service-account key for Play Console API access, and no upload keystore, keystore password, or real package name ever lands in the output.</p>
 
-      <div class="panel panel--red" aria-label="Example session">
-        <p><code>&gt; /android-app-factory build a habit tracker</code></p>
-        <p>Keyword picked &middot; Kotlin + Compose scaffold building<br>
-        Play Billing skipped for v1 &middot; screenshots + listing drafted<br>
-        <strong>BUNDLE SIGNED &middot; INTERNAL TESTING</strong></p>
-      </div>
-
-      <h2>The same end-to-end workflow, now wider</h2>
-      <p>Neither skill needed a new install path. <code>suede-workflow-skills</code>, the umbrella that already routed plain-English requests to the right lane, now also recognizes "what's next" and "build an Android app" and hands off to the right specialist &mdash; the same way it already routes code review, design, SEO, and the consumer-recovery lane. If you've already installed the full pack, both are live.</p>
-      <p>That's the shape of every addition to this pack: a new capability plugs into the existing router instead of becoming a second system to remember. The workflow was already end-to-end from a plain request to a shipped result; it just covers a next-action decision and a second mobile platform now.</p>
-
-      <h2>Install it</h2>
-      <p><strong>Claude Code &mdash; full pack:</strong></p>
-      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede</code></pre>
-      <p><strong>Claude Code &mdash; just the two new skills:</strong></p>
-      <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
-mkdir -p .claude/skills
-cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/
-cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skills/</code></pre>
-      <p><strong>Codex installer:</strong></p>
-      <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/android-app-factory skills/suede-recommend-next-action</code></pre>
+      <h2>The practical move</h2>
+      <p>Open your memory file and read it as a list of conditions rather than a list of facts. Most entries will start with an implicit "when." When I'm deploying. When it's this repo. When the task involves the App Store. Each of those whens is a trigger description, and everything after it is a skill body that has been living in the wrong place, compressed, and taxed on every prompt since you wrote it.</p>
+      <p>What's left when you're done is short, unconditional, and actually followed. Which is what a memory file was supposed to be.</p>
 
       <div class="divider"></div>
-
-      <p><a class="button" href="../skills/android-app-factory.html">Read the Android App Factory docs</a> <a class="button secondary" href="../skills/suede-recommend-next-action.html">Read the Recommend Next Action docs</a></p>
+      <p><a class="button" href="progressive-disclosure-ship-dag-and-mcp.html">How this works in the pack</a> <a class="button secondary" href="../skills/">Browse all 71 skills</a></p>
     </main>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="ship-strip-shell">

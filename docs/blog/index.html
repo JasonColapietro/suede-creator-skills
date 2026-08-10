@@ -30,6 +30,30 @@
         "blogPost": [
           {
             "@type": "BlogPosting",
+            "headline": "Your memory file is a tax you pay on every prompt",
+            "url": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
+            "datePublished": "2026-08-07"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "NOT FOR: the two words that make a big skill pack work",
+            "url": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html",
+            "datePublished": "2026-08-07"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Why breadth is free now, and what that changes",
+            "url": "https://skills.suedeai.ai/blog/why-breadth-is-free.html",
+            "datePublished": "2026-08-07"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "71 skills installed. Your agent reads almost none of them.",
+            "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
+            "datePublished": "2026-08-07"
+          },
+          {
+            "@type": "BlogPosting",
             "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
             "url": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
             "datePublished": "2026-07-19"
@@ -161,7 +185,30 @@
         .ship-strip { padding: 48px 0; }
         .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
-    </style>
+
+    /* Persistent GitHub star button in the sticky nav. Deliberately outlined
+       rather than filled: Install stays the primary CTA, this is secondary. */
+    a.nav-star {
+      display: inline-flex; align-items: center; gap: 7px;
+      min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--muted); text-transform: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    a.nav-star:hover { color: var(--gold); border-color: var(--gold); background: rgba(200, 169, 110, 0.08); }
+    .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav-star-count {
+      font-family: var(--mono); font-size: 12px; color: var(--cream);
+      padding-left: 7px; border-left: 1px solid var(--border);
+    }
+    a.nav-star:hover .nav-star-count { border-left-color: rgba(200, 169, 110, 0.4); }
+    @media (max-width: 620px) {
+      .nav-star-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      a.nav-star { padding: 8px 12px; gap: 6px; }
+      .nav-star-count { padding-left: 6px; }
+    }
+  </style>
   </head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -178,7 +225,8 @@
           <a href="../guide.html">Guide</a>
           <a href="./" aria-current="page">Blog</a>
           <a href="../copy.html">Copy Bank</a>
-          <a href="../plugins.html" class="nav-cta">Install</a>
+          <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
+      <a href="../plugins.html" class="nav-cta">Install</a>
         </div>
       </nav>
     </header>
@@ -188,15 +236,35 @@
       <p class="lead">Product updates for Suede Creator Skills: new skills, workflow changes, and what actually changed in the pack &mdash; not a marketing recap.</p>
 
       <div class="posts">
+        <a class="post-row" href="memory-belongs-in-skills.html">
+          <div class="post-date">August 7, 2026 &middot; Essay</div>
+          <div class="post-title">Your memory file is a tax you pay on every prompt</div>
+          <p class="post-dek">A memory file loads unconditionally, so every durable fact costs tokens and attention on every turn, including the turns where none of it applies. Moving conditional knowledge into skills makes it cheaper, and unexpectedly makes it better.</p>
+        </a>
+        <a class="post-row" href="not-for-the-line-that-makes-a-pack-work.html">
+          <div class="post-date">August 7, 2026 &middot; Essay</div>
+          <div class="post-title">NOT FOR: the two words that make a big skill pack work</div>
+          <p class="post-dek">A description is the router's only input. Without an explicit boundary naming the sibling that should win, the most eager description takes every request, and adding skills makes it worse on a curve.</p>
+        </a>
+        <a class="post-row" href="why-breadth-is-free.html">
+          <div class="post-date">August 7, 2026 &middot; Essay</div>
+          <div class="post-title">Why breadth is free now, and what that changes</div>
+          <p class="post-dek">"Do one thing well" was advice about tools you pay for whether or not you use them. When an unused capability costs one line, the scope question changes, and tasks people simply abandon become worth automating.</p>
+        </a>
+        <a class="post-row" href="progressive-disclosure-ship-dag-and-mcp.html">
+          <div class="post-date">August 7, 2026</div>
+          <div class="post-title">71 skills installed. Your agent reads almost none of them.</div>
+          <p class="post-dek">Progressive disclosure keeps every skill installed and silent until one fits, and a NOT FOR line on each description routes the misfits elsewhere. Plus four new skills, seven read-only MCP tools, and a pack that spans design, shipped code, and a denied Amazon refund. Now 71 skills.</p>
+        </a>
         <a class="post-row" href="../skills/suede-instagram-growth.html">
           <div class="post-date">August 4, 2026</div>
           <div class="post-title">Instagram growth gets an evidence system, not another prompt</div>
-          <p class="post-dek">suede-instagram-growth audits authorized account evidence, separates attention from conversion, and produces Reels, carousels, Stories, and approval-gated daily tests. The public pack is now 69 skills.</p>
+          <p class="post-dek">suede-instagram-growth audits authorized account evidence, separates attention from conversion, and produces Reels, carousels, Stories, and approval-gated daily tests.</p>
         </a>
         <a class="post-row" href="android-recommend-next-action-and-workflows.html">
           <div class="post-date">July 19, 2026</div>
           <div class="post-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</div>
-          <p class="post-dek">suede-recommend-next-action scores your real options and hands back one runnable prompt. android-app-factory ships a native Android app from a keyword through a signed Play Store release. The pack is now 27 public skills.</p>
+          <p class="post-dek">suede-recommend-next-action scores your real options and hands back one runnable prompt. android-app-factory ships a native Android app from a keyword through a signed Play Store release.</p>
         </a>
       </div>
     </main>
@@ -225,5 +293,45 @@
         </div>
       </div>
     </footer>
-  </body>
+  <script>
+  // Live star count, cached in localStorage for an hour so a browsing session
+  // costs one API call rather than one per page. Silent on failure: the button
+  // is a working link regardless, and no count beats a wrong one.
+  (function() {
+    var pills = document.querySelectorAll('[data-star-count]');
+    var key = 'suede-stars-v1';
+    var ttl = 60 * 60 * 1000;
+    if (!pills.length || !window.fetch) return;
+    function fmt(n) {
+      if (n < 1000) return String(n);
+      return String(Math.round(n / 100) / 10).replace(/\.0$/, '') + 'k';
+    }
+    function reveal(n) {
+      if (typeof n !== 'number' || n < 10) return;
+      var text = fmt(n);
+      Array.prototype.forEach.call(pills, function(el) {
+        el.textContent = text;
+        el.removeAttribute('hidden');
+      });
+    }
+    var cached = null;
+    try {
+      var raw = window.localStorage.getItem(key);
+      if (raw) {
+        var c = JSON.parse(raw);
+        if (c && typeof c.n === 'number' && typeof c.t === 'number' && Date.now() - c.t <= ttl) cached = c.n;
+      }
+    } catch (e) {}
+    if (cached !== null) { reveal(cached); return; }
+    window.fetch('https://api.github.com/repos/JasonColapietro/suede-creator-skills')
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        try { window.localStorage.setItem(key, JSON.stringify({ n: data.stargazers_count, t: Date.now() })); } catch (e) {}
+        reveal(data.stargazers_count);
+      })
+      .catch(function() {});
+  })();
+</script>
+</body>
 </html>

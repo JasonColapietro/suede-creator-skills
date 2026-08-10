@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="t d">
+  <title id="t">The A to F ship grade</title>
+  <desc id="d">Seven graded lanes produce one ship verdict. Instant-F triggers lock the grade to F with the exact file and line.</desc>
+  <rect width="1200" height="470" rx="16" fill="#080808"/>
+  <rect x="1" y="1" width="1198" height="468" rx="15" fill="none" stroke="#222222" stroke-width="2"/>
+
+  <text x="56" y="58" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="3">SUEDE-CODE &#183; SHIP GRADE</text>
+  <text x="1144" y="58" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">7 LANES &#183; ILLUSTRATIVE RUN</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- lanes -->
+    <g font-size="16.5">
+      <text x="56" y="118" fill="#f0ece4" font-weight="700">Correctness</text>
+      <rect x="656" y="98" width="44" height="30" rx="7" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
+      <text x="678" y="119" text-anchor="middle" fill="#c8a96e" font-weight="800">A</text>
+
+      <text x="56" y="160" fill="#f0ece4" font-weight="700">Security &amp; permissions</text>
+      <rect x="656" y="140" width="44" height="30" rx="7" fill="#161616" stroke="#222222" stroke-width="1.5"/>
+      <text x="678" y="161" text-anchor="middle" fill="#f0ece4" font-weight="800">B</text>
+
+      <text x="56" y="202" fill="#f0ece4" font-weight="700">Data &amp; state</text>
+      <rect x="656" y="182" width="44" height="30" rx="7" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
+      <text x="678" y="203" text-anchor="middle" fill="#c8a96e" font-weight="800">A&#8722;</text>
+
+      <text x="56" y="244" fill="#f0ece4" font-weight="700">Domain truth</text>
+      <rect x="656" y="224" width="44" height="30" rx="7" fill="#161616" stroke="#222222" stroke-width="1.5"/>
+      <text x="678" y="245" text-anchor="middle" fill="#f0ece4" font-weight="800">B+</text>
+
+      <text x="56" y="286" fill="#f0ece4" font-weight="700">UX &amp; release behavior</text>
+      <rect x="656" y="266" width="44" height="30" rx="7" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
+      <text x="678" y="287" text-anchor="middle" fill="#c8a96e" font-weight="800">A&#8722;</text>
+
+      <text x="56" y="328" fill="#f0ece4" font-weight="700">Tests &amp; verification</text>
+      <rect x="656" y="308" width="44" height="30" rx="7" fill="#161616" stroke="#222222" stroke-width="1.5"/>
+      <text x="678" y="329" text-anchor="middle" fill="#f0ece4" font-weight="800">B</text>
+
+      <text x="56" y="370" fill="#f0ece4" font-weight="700">Deploy readiness</text>
+      <rect x="656" y="350" width="44" height="30" rx="7" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
+      <text x="678" y="371" text-anchor="middle" fill="#c8a96e" font-weight="800">A</text>
+    </g>
+
+    <!-- leader lines -->
+    <g stroke="#222222" stroke-width="1" stroke-dasharray="2 5">
+      <path d="M262 113H648"/>
+      <path d="M258 155H648"/>
+      <path d="M172 197H648"/>
+      <path d="M182 239H648"/>
+      <path d="M256 281H648"/>
+      <path d="M232 323H648"/>
+      <path d="M212 365H648"/>
+    </g>
+
+    <!-- verdict tile -->
+    <rect x="800" y="96" width="344" height="286" rx="12" fill="#111111" stroke="#c8a96e" stroke-width="2"/>
+    <text x="972" y="158" text-anchor="middle" fill="#888880" font-size="14" font-weight="700" letter-spacing="3">SHIP VERDICT</text>
+    <text x="972" y="300" text-anchor="middle" fill="#c8a96e" font-size="130" font-weight="900">B+</text>
+    <text x="972" y="352" text-anchor="middle" fill="#888880" font-size="13.5">the weakest lane caps the grade</text>
+  </g>
+
+  <!-- instant-F strip -->
+  <rect x="56" y="404" width="1088" height="42" rx="9" fill="#140a0a" stroke="#8b1a1a" stroke-width="1.5"/>
+  <text x="80" y="431" fill="#c0392b" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="800" letter-spacing="1">INSTANT-F</text>
+  <text x="192" y="431" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="14.5">hardcoded secret, or a permission check bypassable via request param &#8594; grade locks to F with the exact file and line</text>
+</svg>

@@ -6,7 +6,7 @@
     <title>Suede Creator Skills Guide | 71 Agent Skills</title>
     <meta
       name="description"
-      content="Read the guide to 70 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools."
+      content="Read the guide to 71 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools."
     >
     <meta name="author" content="Jason Colapietro">
     <meta name="publisher" content="Suede Labs AI">
@@ -19,8 +19,8 @@
     <link rel="preload" as="image" href="./assets/passport-hero.webp" type="image/webp">
     <link rel="image_src" href="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Suede Creator Skills Guide | 70 Agent Skills">
-    <meta property="og:description" content="Read the guide to 70 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools.">
+    <meta property="og:title" content="Suede Creator Skills Guide | 71 Agent Skills">
+    <meta property="og:description" content="Read the guide to 71 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools.">
     <meta property="og:url" content="https://skills.suedeai.ai/guide.html">
     <meta property="og:site_name" content="Suede Creator Skills">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
@@ -33,7 +33,7 @@
     <meta name="twitter:site" content="@johnnysuede">
     <meta name="twitter:creator" content="@johnnysuede">
     <meta name="twitter:title" content="Suede Creator Skills">
-    <meta name="twitter:description" content="70 MIT-licensed agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, and creator tools.">
+    <meta name="twitter:description" content="71 MIT-licensed agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, and creator tools.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:image:alt" content="Suede Creator Skills - Codex and Claude skills for Suedify, design, copywriting, SEO/AEO/AI EO, and QA.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -57,7 +57,7 @@
             "@id": "https://skills.suedeai.ai/#website",
             "url": "https://skills.suedeai.ai/",
             "name": "Suede Creator Skills",
-            "description": "Public, open-source pack of 70 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server: Full Send outcome routing, multi-agent orchestration, Codex CLI worker fleets, code review with A-F ship grades, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, and a creator toolkit.",
+            "description": "Public, open-source pack of 71 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server: Full Send outcome routing, multi-agent orchestration, Codex CLI worker fleets, code review with A-F ship grades, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, and a creator toolkit.",
             "publisher": {
               "@id": "https://suedeai.ai/#org"
             },
@@ -67,8 +67,8 @@
             "@type": "WebPage",
             "@id": "https://skills.suedeai.ai/guide.html#webpage",
             "url": "https://skills.suedeai.ai/guide.html",
-            "name": "Suede Creator Skills Guide | 70 Agent Skills",
-            "description": "Read the guide to 70 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools.",
+            "name": "Suede Creator Skills Guide | 71 Agent Skills",
+            "description": "Read the guide to 71 open-source agent skills for Claude Code and Codex: Full Send orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools.",
             "isPartOf": {
               "@id": "https://skills.suedeai.ai/#website"
             },
@@ -104,7 +104,7 @@
             "@type": "SoftwareSourceCode",
             "@id": "https://skills.suedeai.ai/#skills",
             "name": "Suede Creator Skills",
-            "description": "70 public, MIT-licensed agent skills for Claude Code and Codex: Full Send outcome routing, multi-agent orchestration, code review and A-F grading, CI ship-gates, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/GEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, iOS and Android app shipping, and a creator toolkit for campaigns, release prep, and rights evidence.",
+            "description": "71 public, MIT-licensed agent skills for Claude Code and Codex: Full Send outcome routing, multi-agent orchestration, code review and A-F grading, CI ship-gates, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/GEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, iOS and Android app shipping, and a creator toolkit for campaigns, release prep, and rights evidence.",
             "url": "https://skills.suedeai.ai/",
             "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills",
             "programmingLanguage": ["Markdown", "JavaScript", "Python", "HTML"],
@@ -532,6 +532,34 @@
       a.rowl:hover .arrow { color: var(--gold); transform: translateX(3px); }
 
       /* Creator flow: a real sequence */
+      /* Progressive-disclosure diagram */
+      .diagram {
+        margin-top: 32px; border: 1px solid var(--border); border-radius: 6px;
+        background: var(--surface); padding: 26px 24px;
+      }
+      .diagram-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .diagram-svg { display: block; width: 100%; min-width: 660px; height: auto; }
+      .diagram-note { margin-top: 18px; font-size: 14px; line-height: 1.65; color: var(--muted); max-width: 720px; }
+      .diagram-note a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.35); }
+      .diagram-note a:hover { border-bottom-color: var(--gold); }
+
+      /* Field notes */
+      .notes { margin-top: 32px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); overflow: hidden; }
+      .note-row {
+        display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center; gap: 20px; padding: 18px 22px;
+        border-bottom: 1px solid var(--border); transition: background 0.15s ease;
+      }
+      .note-row:last-child { border-bottom: 0; }
+      .note-row:hover { background: #141414; }
+      .note-date { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+      .note-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+      .note-title { font-size: 15.5px; font-weight: 600; color: var(--cream); line-height: 1.4; }
+      .note-row:hover .note-title { color: var(--gold); }
+      .note-hook { font-size: 13px; color: var(--muted); line-height: 1.5; }
+      .note-arrow { font-family: var(--mono); font-size: 13px; color: var(--muted); transition: color 0.15s, transform 0.15s; }
+      .note-row:hover .note-arrow { color: var(--gold); transform: translateX(3px); }
+
       .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 32px; }
       .flow-step { min-width: 0; background: var(--card); padding: 22px; }
       .flow-step b { display: block; margin-bottom: 8px; color: var(--gold); font-family: var(--mono); font-size: 14px; font-weight: 500; }
@@ -622,6 +650,9 @@
         section { padding-top: 64px; }
         .rowd, a.rowl { grid-template-columns: 1fr; row-gap: 6px; padding: 17px 0; }
         .flow { grid-template-columns: 1fr; }
+        .diagram { padding: 20px 16px; }
+        .note-row { grid-template-columns: 1fr; row-gap: 6px; }
+        .note-arrow { display: none; }
         .term-body { flex-direction: column; align-items: stretch; }
         .term-code { font-size: 14px; max-width: 100%; }
         .ship-strip { padding: 48px 0; }
@@ -634,7 +665,30 @@
           transition-duration: 0.01ms !important;
         }
       }
-    </style>
+
+    /* Persistent GitHub star button in the sticky nav. Deliberately outlined
+       rather than filled: Install stays the primary CTA, this is secondary. */
+    a.nav-star {
+      display: inline-flex; align-items: center; gap: 7px;
+      min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--muted); text-transform: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    a.nav-star:hover { color: var(--gold); border-color: var(--gold); background: rgba(200, 169, 110, 0.08); }
+    .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav-star-count {
+      font-family: var(--mono); font-size: 12px; color: var(--cream);
+      padding-left: 7px; border-left: 1px solid var(--border);
+    }
+    a.nav-star:hover .nav-star-count { border-left-color: rgba(200, 169, 110, 0.4); }
+    @media (max-width: 620px) {
+      .nav-star-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      a.nav-star { padding: 8px 12px; gap: 6px; }
+      .nav-star-count { padding-left: 6px; }
+    }
+  </style>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -651,7 +705,8 @@
           <a href="./guide.html" aria-current="page">Guide</a>
           <a href="./blog/">Blog</a>
           <a href="./copy.html">Copy Bank</a>
-          <a href="./plugins.html" class="nav-cta">Install</a>
+          <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
+      <a href="./plugins.html" class="nav-cta">Install</a>
         </div>
       </div>
     </nav>
@@ -663,7 +718,7 @@
             <div class="hero-copy">
               <p class="eyebrow">The full guide</p>
               <h1 id="hero-headline">Stop rebuilding the prompt stack every time your agent forgets you.</h1>
-              <p class="lead">Suede gives Claude Code or Codex a reusable engineering workflow instead of one giant bloated prompt. <strong>Every capability is an inspectable <code>SKILL.md</code> folder</strong> the agent loads on demand: Full Send outcome routing, orchestration, A-F code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, app shipping, and creator rights. 70 skills, MIT licensed.</p>
+              <p class="lead">Suede gives Claude Code or Codex a reusable engineering workflow instead of one giant bloated prompt. <strong>Every capability is an inspectable <code>SKILL.md</code> folder</strong> the agent loads on demand: Full Send outcome routing, orchestration, A-F code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, app shipping, and creator rights. 71 skills, MIT licensed.</p>
               <a id="hero-shiplog" href="./#changelog" aria-label="Ship log: 223 commits in 10 weeks. Latest entry August 4, 2026: Instagram growth gets an evidence system. Read the full changelog on the homepage.">
                 <span class="hero-spark" aria-hidden="true">
                   <span style="height:8%"></span>
@@ -685,7 +740,7 @@
               </a>
 
               <div class="btn-row">
-                <a class="btn btn--gold" href="./skills/">Browse all 70 skills</a>
+                <a class="btn btn--gold" href="./skills/">Browse all 71 skills</a>
                 <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">View GitHub repo</a>
                 <a class="btn" href="#install">Install paths</a>
               </div>
@@ -735,9 +790,74 @@
         </div>
       </section>
 
+      <section id="disclosure" aria-labelledby="disclosure-headline">
+        <div class="shell">
+          <h2 id="disclosure-headline">Installing 71 skills does not cost you 71 skills.</h2>
+          <p class="section-sub">The objection to a big pack is always context. It does not apply here: the agent reads a one-line description per skill and loads the body of exactly the one it picks. Everything else stays on disk.</p>
+          <div class="diagram">
+            <div class="diagram-scroll">
+              <svg class="diagram-svg" viewBox="0 0 960 240" role="img" aria-labelledby="disc-t disc-d" xmlns="http://www.w3.org/2000/svg">
+                <title id="disc-t">Progressive disclosure</title>
+                <desc id="disc-d">All 71 skills sit on disk. The agent reads one short description each, matches the request to a single skill, and loads only that skill's full instructions into the context window.</desc>
+                <g font-family="system-ui, -apple-system, sans-serif">
+                  <rect x="2" y="52" width="212" height="136" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+                  <text x="108" y="82" text-anchor="middle" fill="#f0ece4" font-size="14.5" font-weight="800">71 folders on disk</text>
+                  <text x="108" y="102" text-anchor="middle" fill="#888880" font-size="12">costs nothing to have</text>
+                  <g fill="#222222">
+                    <rect x="26" y="118" width="26" height="7" rx="3"/><rect x="58" y="118" width="26" height="7" rx="3"/>
+                    <rect x="90" y="118" width="26" height="7" rx="3"/><rect x="122" y="118" width="26" height="7" rx="3"/>
+                    <rect x="154" y="118" width="26" height="7" rx="3"/>
+                    <rect x="26" y="133" width="26" height="7" rx="3"/><rect x="58" y="133" width="26" height="7" rx="3"/>
+                    <rect x="90" y="133" width="26" height="7" rx="3"/><rect x="122" y="133" width="26" height="7" rx="3"/>
+                    <rect x="154" y="133" width="26" height="7" rx="3"/>
+                    <rect x="26" y="148" width="26" height="7" rx="3"/><rect x="58" y="148" width="26" height="7" rx="3"/>
+                    <rect x="90" y="148" width="26" height="7" rx="3"/><rect x="122" y="148" width="26" height="7" rx="3"/>
+                    <rect x="154" y="148" width="26" height="7" rx="3"/>
+                    <rect x="26" y="163" width="26" height="7" rx="3"/><rect x="58" y="163" width="26" height="7" rx="3"/>
+                    <rect x="90" y="163" width="26" height="7" rx="3"/>
+                  </g>
+                  <rect x="122" y="163" width="26" height="7" rx="3" fill="#c8a96e"/>
+
+                  <path d="M214 120H252" stroke="#c8a96e" stroke-width="1.75"/>
+                  <path d="M252 120l-9 -5v10z" fill="#c8a96e"/>
+
+                  <rect x="256" y="52" width="228" height="136" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+                  <text x="370" y="82" text-anchor="middle" fill="#f0ece4" font-size="14.5" font-weight="800">71 one-line descriptions</text>
+                  <text x="370" y="102" text-anchor="middle" fill="#888880" font-size="12">the only thing always in context</text>
+                  <rect x="278" y="118" width="184" height="9" rx="4" fill="#222222"/>
+                  <rect x="278" y="133" width="184" height="9" rx="4" fill="#222222"/>
+                  <rect x="278" y="148" width="184" height="9" rx="4" fill="#c8a96e"/>
+                  <rect x="278" y="163" width="184" height="9" rx="4" fill="#222222"/>
+
+                  <path d="M484 120H522" stroke="#c8a96e" stroke-width="1.75"/>
+                  <path d="M522 120l-9 -5v10z" fill="#c8a96e"/>
+                  <text x="503" y="110" text-anchor="middle" fill="#888880" font-size="11">match</text>
+
+                  <rect x="526" y="52" width="196" height="136" rx="9" fill="#161616" stroke="#c8a96e" stroke-width="2"/>
+                  <text x="624" y="86" text-anchor="middle" fill="#c8a96e" font-size="15" font-weight="800">1 skill loaded</text>
+                  <text x="624" y="108" text-anchor="middle" fill="#888880" font-size="12">full instructions, on demand</text>
+                  <rect x="548" y="124" width="152" height="9" rx="4" fill="#c8a96e"/>
+                  <rect x="548" y="139" width="152" height="9" rx="4" fill="#c8a96e" opacity="0.75"/>
+                  <rect x="548" y="154" width="120" height="9" rx="4" fill="#c8a96e" opacity="0.5"/>
+
+                  <path d="M722 120H760" stroke="#c8a96e" stroke-width="1.75"/>
+                  <path d="M760 120l-9 -5v10z" fill="#c8a96e"/>
+
+                  <rect x="764" y="52" width="194" height="136" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+                  <text x="861" y="94" text-anchor="middle" fill="#f0ece4" font-size="14.5" font-weight="800">70 stay unread</text>
+                  <text x="861" y="122" text-anchor="middle" fill="#888880" font-size="12">no tokens, no interference,</text>
+                  <text x="861" y="140" text-anchor="middle" fill="#888880" font-size="12">still one prompt away</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <p class="diagram-note">This is why breadth is worth having: the marginal cost of the 71st skill is one line of description. <a href="./blog/why-breadth-is-free.html">Why breadth is free now -&gt;</a></p>
+        </div>
+      </section>
+
       <section id="skills">
         <div class="shell">
-          <h2>Seventy-one skills, one portable operating system for agent work.</h2>
+          <h2>71 skills, one portable operating system for agent work.</h2>
           <p class="section-sub">
             The pack leads with coordinated agent teams, code review and A-F grading, CI ship-gates, AI evals, Suedify, design,
             conversion copy, SEO/AEO/GEO/AI EO, visibility grading, site alchemy, launch packaging, and MCP QA,
@@ -840,7 +960,7 @@
           </p>
           <div class="rows" aria-label="Public project evidence links">
             <a class="rowl" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener"><b>GitHub</b><span>Inspect the source, license, skills, scripts, docs, tests, and MCP catalog.</span><span class="arrow">-&gt;</span></a>
-            <a class="rowl" href="./skills/"><b>Skill Docs</b><span>Browse all 70 installable skill folders and their public descriptions.</span><span class="arrow">-&gt;</span></a>
+            <a class="rowl" href="./skills/"><b>Skill Docs</b><span>Browse all 71 installable skill folders and their public descriptions.</span><span class="arrow">-&gt;</span></a>
             <a class="rowl" href="./skills/suede-full-send.html"><b>Full Send</b><span>Read the intent router for broad, authorized, outcome-bound work.</span><span class="arrow">-&gt;</span></a>
             <a class="rowl" href="./plugins.html"><b>Installs + MCP</b><span>Use public install commands and optional structured MCP discovery.</span><span class="arrow">-&gt;</span></a>
             <a class="rowl" href="./copy.html"><b>Copy Bank</b><span>Reuse public-safe wording for docs, launches, FAQs, and evidence boundaries.</span><span class="arrow">-&gt;</span></a>
@@ -896,7 +1016,7 @@
             </article>
             <article class="install" aria-labelledby="install-codex-title">
               <h3 id="install-codex-title">Codex &mdash; full pack</h3>
-              <p>Add the Codex-native marketplace, then install all 70 skills and both read-only MCP profiles. Use the direct skill installer only when you want one selected skill.</p>
+              <p>Add the Codex-native marketplace, then install all 71 skills and both read-only MCP profiles. Use the direct skill installer only when you want one selected skill.</p>
               <pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex</code></pre>
             </article>
@@ -925,6 +1045,55 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
             <a class="rowl" href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener"><b>Suede Labs: The Human Authenticity Layer</b><span>Ownership, origin, and AI in the creative map.</span><span class="arrow">-&gt;</span></a>
             <a class="rowl" href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener"><b>Proof as Infrastructure</b><span>Durable systems built around proof instead of trust assumptions.</span><span class="arrow">-&gt;</span></a>
             <a class="rowl" href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener"><b>Stake Your Claim</b><span>Creator ownership, authorship, provenance, agents, and durable rights.</span><span class="arrow">-&gt;</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="notes" aria-labelledby="notes-headline">
+        <div class="shell">
+          <h2 id="notes-headline">Field notes.</h2>
+          <p class="section-sub">The design decisions behind the pack, written up in full: what a skill costs, how routing avoids collisions, and where memory actually belongs.</p>
+          <div class="notes">
+            <a class="note-row" href="./blog/progressive-disclosure-ship-dag-and-mcp.html">
+              <span class="note-date">Aug 2026</span>
+              <span class="note-copy">
+                <span class="note-title">71 skills installed. Your agent reads almost none of them.</span>
+                <span class="note-hook">Progressive disclosure, the ship DAG, and the MCP layer</span>
+              </span>
+              <span class="note-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="note-row" href="./blog/why-breadth-is-free.html">
+              <span class="note-date">Aug 2026</span>
+              <span class="note-copy">
+                <span class="note-title">Why breadth is free now, and what that changes</span>
+                <span class="note-hook">The economics of a 71-skill pack</span>
+              </span>
+              <span class="note-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="note-row" href="./blog/not-for-the-line-that-makes-a-pack-work.html">
+              <span class="note-date">Aug 2026</span>
+              <span class="note-copy">
+                <span class="note-title">NOT FOR: the two words that make a big skill pack work</span>
+                <span class="note-hook">How skills route without colliding</span>
+              </span>
+              <span class="note-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="note-row" href="./blog/memory-belongs-in-skills.html">
+              <span class="note-date">Aug 2026</span>
+              <span class="note-copy">
+                <span class="note-title">Your memory file is a tax you pay on every prompt</span>
+                <span class="note-hook">Why memory belongs in skills</span>
+              </span>
+              <span class="note-arrow" aria-hidden="true">-&gt;</span>
+            </a>
+            <a class="note-row" href="./blog/">
+              <span class="note-date">Archive</span>
+              <span class="note-copy">
+                <span class="note-title">All essays</span>
+                <span class="note-hook">The full writing archive</span>
+              </span>
+              <span class="note-arrow" aria-hidden="true">-&gt;</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1022,5 +1191,45 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
         });
       });
     </script>
-  </body>
+  <script>
+  // Live star count, cached in localStorage for an hour so a browsing session
+  // costs one API call rather than one per page. Silent on failure: the button
+  // is a working link regardless, and no count beats a wrong one.
+  (function() {
+    var pills = document.querySelectorAll('[data-star-count]');
+    var key = 'suede-stars-v1';
+    var ttl = 60 * 60 * 1000;
+    if (!pills.length || !window.fetch) return;
+    function fmt(n) {
+      if (n < 1000) return String(n);
+      return String(Math.round(n / 100) / 10).replace(/\.0$/, '') + 'k';
+    }
+    function reveal(n) {
+      if (typeof n !== 'number' || n < 10) return;
+      var text = fmt(n);
+      Array.prototype.forEach.call(pills, function(el) {
+        el.textContent = text;
+        el.removeAttribute('hidden');
+      });
+    }
+    var cached = null;
+    try {
+      var raw = window.localStorage.getItem(key);
+      if (raw) {
+        var c = JSON.parse(raw);
+        if (c && typeof c.n === 'number' && typeof c.t === 'number' && Date.now() - c.t <= ttl) cached = c.n;
+      }
+    } catch (e) {}
+    if (cached !== null) { reveal(cached); return; }
+    window.fetch('https://api.github.com/repos/JasonColapietro/suede-creator-skills')
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        try { window.localStorage.setItem(key, JSON.stringify({ n: data.stargazers_count, t: Date.now() })); } catch (e) {}
+        reveal(data.stargazers_count);
+      })
+      .catch(function() {});
+  })();
+</script>
+</body>
 </html>

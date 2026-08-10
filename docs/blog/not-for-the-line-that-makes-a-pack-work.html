@@ -3,36 +3,51 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Two new lanes: a next-action recommender and a one-prompt Android app factory | Suede Creator Skills</title>
-    <meta name="description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
+    <title>NOT FOR: the two words that make a big skill pack work | Suede Creator Skills</title>
+    <meta name="description" content="A skill description is the router's only input. Without an explicit NOT FOR boundary naming the sibling that should win, the most eager description takes every request.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <link rel="canonical" href="https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html">
+    <link rel="canonical" href="https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html">
     <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
-    <meta property="og:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
-    <meta property="og:url" content="https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html">
+    <meta property="og:title" content="NOT FOR: the two words that make a big skill pack work">
+    <meta property="og:description" content="A skill description is the router's only input. Without an explicit NOT FOR boundary naming the sibling that should win, the most eager description takes every request.">
+    <meta property="og:url" content="https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Two new lanes: a next-action recommender and a one-prompt Android app factory">
-    <meta name="twitter:description" content="Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time. Here's what shipped and how the end-to-end workflow routes to both.">
+    <meta name="twitter:title" content="NOT FOR: the two words that make a big skill pack work">
+    <meta name="twitter:description" content="A skill description is the router's only input. Without an explicit NOT FOR boundary naming the sibling that should win, the most eager description takes every request.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html#article",
-        "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
-        "description": "Suede Creator Skills adds suede-recommend-next-action and android-app-factory, which brought the pack to 27 public skills at the time, and routes both through the existing end-to-end workflow umbrella.",
-        "url": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
-        "datePublished": "2026-07-19",
-        "dateModified": "2026-07-19",
-        "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
-        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
-        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "Android app development", "next action recommendation", "agent workflow"],
-        "mainEntityOfPage": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html#article",
+  "headline": "NOT FOR: the two words that make a big skill pack work",
+  "description": "A skill description is the router's only input. Without an explicit NOT FOR boundary naming the sibling that should win, the most eager description takes every request.",
+  "url": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Colapietro",
+    "url": "https://github.com/JasonColapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Suede Labs AI",
+    "url": "https://suedeai.ai"
+  },
+  "about": [
+    "Agent Skills",
+    "skill routing",
+    "agent orchestration",
+    "Claude Code",
+    "skill authoring",
+    "progressive disclosure"
+  ],
+  "mainEntityOfPage": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html"
+}
     </script>
     <style>
     .skip-link {
@@ -220,69 +235,42 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <p class="eyebrow">Product update &middot; July 19, 2026</p>
-      <h1>Two new lanes: a next-action recommender and a one-prompt Android app factory</h1>
-      <p class="post-meta">This release brought Suede Creator Skills to <strong>27 public skills</strong>. Here's what shipped and why.</p>
+      <p class="eyebrow">Essay &middot; August 7, 2026</p>
+      <h1>NOT FOR: the two words that make a big skill pack work</h1>
+      <p class="post-meta">With enough skills installed, the failure mode stops being "the skill didn't work" and becomes "the wrong one ran."</p>
 
-      <p class="lead">Two skills landed in the pack: <code>suede-recommend-next-action</code>, which scores your real options and hands back one runnable prompt instead of a wall of choices, and <code>android-app-factory</code>, a one-prompt pipeline from a keyword to a signed Play Store release. Both route through the same umbrella that already handled the rest of the pack, so nothing about installing or invoking the workflow changed &mdash; the workflow just covers more ground now.</p>
+      <p class="lead">A skill's description is the only thing the router sees. It is not documentation, it is the entire basis for a decision the agent makes before reading anything else. Once a pack passes roughly a dozen skills, most descriptions are wrong in the same way: they say what the skill does and stay silent about what it isn't for. That silence is where broad packs go bad.</p>
 
-      <h2>Stop asking "what should I do next"</h2>
-      <p><code>suede-recommend-next-action</code> reads whatever state is actually in front of it &mdash; the current repo, terminal output, an open plan, a stale handoff &mdash; and scores 2 to 4 real candidate moves against five criteria: goal alignment, unblocking, evidence, urgency, and leverage. The highest score wins. Ties break toward the required prerequisite, then whichever choice is confirmable by current evidence, then the more reversible option.</p>
-      <p>The output is deliberately small by default: a one-sentence recommendation, one sentence on why it's the move right now, and a 2-4 sentence prompt you can hand to another agent. The full operator brief &mdash; target, objective, verified state, authorized scope, verification steps &mdash; stays hidden until you ask to <code>expand prompt</code>. Ask for <code>make it granular</code> and it breaks the same brief into atomic, numbered steps with exact commands.</p>
+      <h2>The most eager description wins</h2>
+      <p>Picture five skills whose descriptions all truthfully mention "code." A review skill, a grading skill, a CI skill, a debugging skill, and a full shipping pipeline. Every one of them is a plausible match for "can you look at this code." Nothing is broken. Nothing errors. The agent picks whichever description sounds most enthusiastic about the request, and the tiebreaker is essentially prose style.</p>
+      <p>That's the actual failure mode of a large pack, and it doesn't look like failure. It looks like a fifty-agent shipping pipeline running against a one-line typo fix, or a quick review skill being handed a change that needed the full gate. Both produce output. Both feel like the system worked. Only one of them was the right call, and you have no signal telling you which.</p>
+      <p>Adding skills makes this worse on a curve, not a line. Ten skills have forty-five possible pairwise collisions. Seventy have well over two thousand. You cannot fix that by writing better positive descriptions, because the problem isn't that any description is inaccurate. They're all accurate. The problem is that accuracy about what a skill does says nothing about whether it should beat its neighbor.</p>
 
-      <div class="panel" aria-label="Example session">
-        <p><code>&gt; /suede-recommend-next-action what's next</code></p>
-        <p>Recommended action: fix the failing auth test before touching the new endpoint.<br>
-        Why now: it's the one candidate confirmed broken by the current test run and blocks two downstream tasks.</p>
-        <p>Quick prompt: Use <code>suede-code</code> to fix the failing <code>test_auth_refresh</code> case in <code>auth/tests/test_refresh.py</code>, keeping the token-rotation contract unchanged. Done signal: the suite passes locally.</p>
-        <p>Say "expand prompt" for the full operator version or "make it granular" for exact steps and commands.</p>
+      <h2>Negative space is routing information</h2>
+      <p>The fix is to make every description carry its own boundary, and to make that boundary point somewhere specific:</p>
+      <div class="panel" aria-label="A NOT FOR line">
+        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
       </div>
+      <p>Read what that line is doing. It isn't a disclaimer and it isn't hedging. It's a routing table, written from the perspective of the skill most likely to steal the request. Three near-misses, each one named, each one handed to the sibling that should have it.</p>
+      <p>The generic version of this is worthless. "NOT FOR: other tasks" tells the router nothing. The line only works when it names the specific neighbor and the specific condition under which that neighbor wins, because the router's actual question is never "is this skill relevant." It's "is this skill more relevant than that one," and only a named comparison answers it.</p>
 
-      <p>It never executes anything itself &mdash; it recommends, and only mutates once you separately authorize the work. And it doesn't try to replace a repo's existing plan or progress tracker: if one exists, the recommendation treats it as one candidate and verifies it against current source instead of running a second, competing process.</p>
+      <h2>The counterintuitive part</h2>
+      <p>Here's the property that makes a broad pack viable at all.</p>
+      <p>Under positive-only descriptions, every skill you add dilutes the pack. One more competitor for every request, one more way to pick wrong. Growth is a liability, and the honest advice for a pack that size is to split it up.</p>
+      <p>Under boundaried descriptions, adding a skill does the opposite. Writing a new skill forces you to name which existing skills it must not steal from, and to go add the reciprocal line to each of them. Every addition sharpens a set of boundaries that were previously fuzzy. The pack gets more precise as it grows, because growth is what surfaces the ambiguity that was already there.</p>
+      <p>That's the whole reason a seventy-one skill pack can behave better than a twelve-skill one. Not despite the size. The size is what forced every boundary to get written down.</p>
 
-      <h2>One prompt to a Play Store-ready app</h2>
-      <p><code>android-app-factory</code> is the Android counterpart to the pack's existing <a href="../skills/site-to-ios-app.html">site-to-ios-app</a> skill, and it covers more ground: a full native pipeline from a one-line idea or target keyword through a signed release, not just wrapping an existing site.</p>
-      <p>The default pipeline, in order:</p>
+      <h2>Writing one that works</h2>
+      <p>Three rules, learned by getting them wrong:</p>
       <ul>
-        <li>Pick a winnable target keyword before writing any code.</li>
-        <li>Scaffold native Kotlin + Jetpack Compose &mdash; never a bare JVM module, which produces a JAR instead of an installable APK/AAB.</li>
-        <li>Build one real core loop (input, processing, structured result, history, saved set) before monetization or polish.</li>
-        <li>Add Play Billing only when it won't block the v1 review flow &mdash; a free v1 is the default when it would.</li>
-        <li>Produce Play Store screenshots, a feature graphic, and listing copy sized to Play's exact character limits (30/80/4000).</li>
-        <li>Fill out the Data Safety form and content-rating questionnaire truthfully, matched to actual SDK and data behavior.</li>
-        <li>Run a ship gate before release: build, listing, screenshots, signing, and secrets all get checked.</li>
-        <li>Release only after explicit confirmation, starting on internal or closed testing before any production rollout.</li>
+        <li><strong>Name the sibling, not the category.</strong> "Use <code>suede-code-review</code>" routes. "Use a review tool" does not.</li>
+        <li><strong>Name the condition, not the vibe.</strong> "Findings-only review with no code change" is testable against a request. "Smaller jobs" is not.</li>
+        <li><strong>Write it from the near-miss, not the far-miss.</strong> Nobody confuses a shipping pipeline with a rights audit. The dangerous neighbor is always the one that does almost the same thing, and that's the only one worth a line.</li>
       </ul>
-      <p>Public-safe defaults hold throughout: placeholder application IDs, a gitignored service-account key for Play Console API access, and no upload keystore, keystore password, or real package name ever lands in the output.</p>
-
-      <div class="panel panel--red" aria-label="Example session">
-        <p><code>&gt; /android-app-factory build a habit tracker</code></p>
-        <p>Keyword picked &middot; Kotlin + Compose scaffold building<br>
-        Play Billing skipped for v1 &middot; screenshots + listing drafted<br>
-        <strong>BUNDLE SIGNED &middot; INTERNAL TESTING</strong></p>
-      </div>
-
-      <h2>The same end-to-end workflow, now wider</h2>
-      <p>Neither skill needed a new install path. <code>suede-workflow-skills</code>, the umbrella that already routed plain-English requests to the right lane, now also recognizes "what's next" and "build an Android app" and hands off to the right specialist &mdash; the same way it already routes code review, design, SEO, and the consumer-recovery lane. If you've already installed the full pack, both are live.</p>
-      <p>That's the shape of every addition to this pack: a new capability plugs into the existing router instead of becoming a second system to remember. The workflow was already end-to-end from a plain request to a shipped result; it just covers a next-action decision and a second mobile platform now.</p>
-
-      <h2>Install it</h2>
-      <p><strong>Claude Code &mdash; full pack:</strong></p>
-      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede</code></pre>
-      <p><strong>Claude Code &mdash; just the two new skills:</strong></p>
-      <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
-mkdir -p .claude/skills
-cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/
-cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skills/</code></pre>
-      <p><strong>Codex installer:</strong></p>
-      <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/android-app-factory skills/suede-recommend-next-action</code></pre>
+      <p>The test is mechanical. Take a request that should go to a neighboring skill, hand it to this one, and see whether the description alone sends it away. If it doesn't, the boundary isn't written yet, and it isn't the router's fault.</p>
 
       <div class="divider"></div>
-
-      <p><a class="button" href="../skills/android-app-factory.html">Read the Android App Factory docs</a> <a class="button secondary" href="../skills/suede-recommend-next-action.html">Read the Recommend Next Action docs</a></p>
+      <p><a class="button" href="progressive-disclosure-ship-dag-and-mcp.html">How routing works in the pack</a> <a class="button secondary" href="../skills/">Browse all 71 skills</a></p>
     </main>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="ship-strip-shell">

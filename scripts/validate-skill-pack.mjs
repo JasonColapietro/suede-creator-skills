@@ -899,11 +899,14 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
-  { file: "docs/guide.html", label: "h2 heading", re: /<h2>([A-Za-z]+(?:-[A-Za-z]+)?) skills, one portable/, expected: totalSkillCount, wordNumber: true },
+  // Numerals, not wordNumber: both headings used to spell the count out
+  // ("Seventy-one skills"), which reads as marketing prose on a technical
+  // page and drifts independently of every numeral elsewhere on the site.
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2>(\d+) skills, one portable/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
-  { file: "docs/plugins.html", label: "lead paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent can load/, expected: totalSkillCount, wordNumber: true },
+  { file: "docs/plugins.html", label: "lead paragraph", re: /(\d+) public skills your agent can load/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "meta description", re: /Install (\d+) public Codex and Claude skills/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "og:description", re: /property="og:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
   { file: "docs/dav/index.html", label: "twitter:description", re: /name="twitter:description" content="(\d+) public skills for Suedify/, expected: totalSkillCount },
@@ -931,9 +934,57 @@ const countChecks = [
   // landing page, and its URL value drifted to 29 while the alt text, the
   // README prose, and every other surface said 67. Guard both halves — the
   // rendered number lives in the URL, so alt text alone proves nothing.
-  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/Skills-(\d+)-black/, expected: totalSkillCount },
+  { file: "README.md", label: "skills badge URL value", re: /img\.shields\.io\/badge\/skills-(\d+)-c8a96e/, expected: totalSkillCount },
   { file: "README.md", label: "skills badge alt text", re: /!\[Skills: (\d+)\]/, expected: totalSkillCount },
-  { file: "README.md", label: "intro toolkit size", re: /A (\d+)-skill toolkit for Claude Code/, expected: totalSkillCount },
+  { file: "README.md", label: "hero alt skill count", re: /(\d+) open-source skills for Claude Code and Codex/, expected: totalSkillCount },
+  // Homepage prose counts. All five of these sat at stale values (70, 28,
+  // "six disciplines"-era lane math) while the guarded phrases said 71 —
+  // every count a visitor can read must be pinned, not just the meta tags.
+  { file: "docs/index.html", label: "hero subline skill count", re: /(\d+) open-source skills that read every diff/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "lanes sub skill count", re: /Seven lanes, (\d+) skills, one install/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "catalog headline skill count", re: /All (\d+) skills\./, expected: totalSkillCount },
+  { file: "docs/index.html", label: "stats band public skills count", re: /data-count="(\d+)"/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "router headline command count", re: /memorize (\d+) commands/, expected: totalSkillCount },
+  // Catalog page. Its h1 and og:description sat at 70 while the <title> and
+  // meta description said 71 — the number a browsing visitor actually reads
+  // was the stale one.
+  { file: "docs/skills/index.html", label: "catalog h1 skill count", re: /<h1>(\d+) skills\. One honest line each\./, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "catalog og:description count", re: /public docs for all (\d+) Suede skills/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "catalog section heading count", re: /All (\d+) skill folders/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "catalog lane-map graphic count", re: /Where the (\d+) live/, expected: totalSkillCount },
+  // Prose and structured-data counts that sat at 70 across four pages while
+  // the guarded surfaces said 71. Every count a visitor or a crawler reads
+  // gets a guard; historical changelog entries ("the pack moves 68 -> 70")
+  // are deliberately not matched, since those record what was true then.
+  { file: "docs/index.html", label: "pack-ships prose count", re: /This pack ships (\d+) of them under the MIT license/, expected: totalSkillCount, every: true },
+  { file: "docs/index.html", label: "structured-data pack size", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "guide pack size", re: /pack of (\d+) installable Agent Skills/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "guide skill-docs link count", re: /Browse all (\d+) installable skill folders/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "install page meta count", re: /Install all (\d+) Suede Creator Skills/, expected: totalSkillCount },
+  { file: "docs/copy.html", label: "copy bank folder count", re: /It ships (\d+) public SKILL\.md folders/, expected: totalSkillCount },
+  // Link labels. "Browse all N skills" is a button on three pages (five
+  // instances) that pointed at a catalog page reading a different number —
+  // the one count a visitor sees immediately before clicking through to be
+  // contradicted. `every` because the phrase repeats within a page.
+  { file: "docs/index.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/plugins.html", label: "browse-all link label", re: /Browse all (\d+) skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "guide title skill count", re: /Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount, every: true },
+  { file: "docs/plugins.html", label: "umbrella install count", re: /installs all (\d+) skills\./, expected: totalSkillCount },
+  // New guide and install-page surfaces. The h2 heading and plugins lead are
+  // already guarded above; these cover the copy and graphics added alongside.
+  { file: "docs/guide.html", label: "guide hero pack size", re: /(\d+) skills, MIT licensed/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure headline", re: /Installing (\d+) skills does not cost you/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure description count", re: /(\d+) one-line descriptions/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "path-map graphic count", re: /Every path lands the same (\d+) skills/, expected: totalSkillCount },
+  // Derived count: the diagram loads one skill, so the rest stay unread.
+  // Guarded against total-1 so it tracks the pack instead of going stale.
+  { file: "docs/guide.html", label: "disclosure unread count", re: /(\d+) stay unread/, expected: totalSkillCount - 1 },
+  // The README hero and pack-map are SVGs with the count baked into the
+  // artwork — the rendered number lives in the SVG text node, so README
+  // prose alone proves nothing. Guard both graphics.
+  { file: "docs/assets/readme/hero.svg", label: "hero graphic skill count", re: /letter-spacing="-12">(\d+)</, expected: totalSkillCount },
+  { file: "docs/assets/readme/pack-map.svg", label: "pack-map title skill count", re: /(\d+) skills, seven lanes/, expected: totalSkillCount },
   // The install sections repeat "all N skills" five times — plugin, Codex
   // plugin, install.sh, Codex clone, and the Claude Code heading. All five sat
   // at 70 while the badge and intro said 71, because nothing guarded them and
@@ -1049,7 +1100,10 @@ for (const check of countChecks) {
 // project must be recomputed from that table, never hand-written beside it.
 {
   const gradeRank = { "A+": 6, A: 5, "A-": 4, "B+": 3, B: 2, "B-": 1, "C+": 0.5, C: 0 };
-  const detailBlock = docsRootText.split("See the full 15-category scorecard")[1]?.split("</details>")[0];
+  // Anchor on the details element's class, not the summary copy — the copy
+  // ("See the full 15-category scorecard") drifted once and silently skipped
+  // this guard while the scorecard table was still on the page.
+  const detailBlock = docsRootText.split('class="scorecard-details')[1]?.split("</details>")[0];
   if (!detailBlock) {
     warn.push("docs/index.html scorecard detail table not found — competitive-claim guard skipped");
   } else {
@@ -1062,21 +1116,23 @@ for (const check of countChecks) {
     }
     const beatsBoth = scored.filter(([, s, g, p]) => gradeRank[s] > gradeRank[g] && gradeRank[s] > gradeRank[p]);
     const losesBoth = scored.filter(([, s, g, p]) => gradeRank[s] < gradeRank[g] && gradeRank[s] < gradeRank[p]);
+    // Current strip copy: "Beats GSD and Superpowers in <N categories>, and
+    // publishes the ones it loses" — the win count is still a published
+    // assertion and must equal the table's beat-both row count. The strip no
+    // longer states the total or the loss count; losses stay visible through
+    // the table itself and the hero-tile completeness check below.
     const claim = docsRootText.match(
-      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) of (\d+) categories<\/span> &mdash; and publishes the (\d+) it loses/
+      /Beats GSD and Superpowers in <span class="bench-highlight">(\d+) categories<\/span>, and publishes the ones it loses/
     );
     if (!claim) {
       fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table");
     } else {
-      const [, wins, total, losses] = claim.map(Number);
+      const wins = Number(claim[1]);
       if (wins !== beatsBoth.length) {
         fail.push(`docs/index.html hero claims it beats both in ${wins} categories; the scorecard shows ${beatsBoth.length} (${beatsBoth.map((r) => r[0]).join(", ")})`);
       }
-      if (total !== scored.length) {
-        fail.push(`docs/index.html hero claims ${total} scored categories; the scorecard has ${scored.length}`);
-      }
-      if (losses !== losesBoth.length) {
-        fail.push(`docs/index.html hero claims it loses ${losses}; the scorecard shows ${losesBoth.length} (${losesBoth.map((r) => r[0]).join(", ")})`);
+      if (losesBoth.length === 0) {
+        fail.push('docs/index.html hero says it "publishes the ones it loses" but the scorecard shows no lose-both categories — reword the strip or fix the table');
       }
     }
     // The four hero tiles must be exactly the beat-both categories, or the
@@ -1087,6 +1143,33 @@ for (const check of countChecks) {
       if (!heroStrip.includes(tileLabel) && !heroStrip.toLowerCase().includes(tileLabel.toLowerCase())) {
         warn.push(`docs/index.html hero strip omits beat-both category "${category}"`);
       }
+    }
+  }
+}
+
+// Lane-math guard. Three surfaces publish a per-lane breakdown of the pack —
+// the homepage lanes overview, the homepage catalog lane heads, and the skill
+// catalog page's own lane badges. The first two drifted to 27 and 28 while
+// every other number on the page said 71. Each set must sum to the pack size,
+// which also catches a lane added to the prose but not to the breakdown.
+{
+  const catalogPagePath = path.join(repoRoot, "docs/skills/index.html");
+  const catalogPageText = fs.existsSync(catalogPagePath) ? readText(catalogPagePath) : "";
+  const laneSets = [
+    { file: "docs/index.html", label: "lanes overview", re: /class="lane-count">(\d+) skills/g, text: docsRootText },
+    { file: "docs/index.html", label: "catalog lane heads", re: /class="catalog-lane-count">(\d+) skills/g, text: docsRootText },
+    // The catalog page's lane badges are bare numbers, not "N skills".
+    { file: "docs/skills/index.html", label: "lane heads", re: /<span class="lane-count">(\d+)<\/span>/g, text: catalogPageText },
+  ];
+  for (const { file, label, re, text } of laneSets) {
+    const counts = [...text.matchAll(re)].map((m) => Number(m[1]));
+    if (counts.length === 0) {
+      warn.push(`${file} ${label} counts not found — lane-math guard skipped`);
+      continue;
+    }
+    const sum = counts.reduce((a, b) => a + b, 0);
+    if (sum !== totalSkillCount) {
+      fail.push(`${file} ${label} counts sum to ${sum} (${counts.join("+")}), not ${totalSkillCount}`);
     }
   }
 }

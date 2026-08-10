@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="t d">
+  <title id="t">Full Send pipeline</title>
+  <desc id="d">A broad authorized outcome flows through one controller into parallel lanes, then adversarial reconciliation, then proof.</desc>
+  <rect width="1200" height="440" rx="16" fill="#080808"/>
+  <rect x="1" y="1" width="1198" height="438" rx="15" fill="none" stroke="#222222" stroke-width="2"/>
+
+  <text x="56" y="58" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="3">SUEDE-FULL-SEND</text>
+  <text x="1144" y="58" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">MAX EFFORT &#183; SPARE NO COMPUTE</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- Stage 1: outcome -->
+    <rect x="56" y="180" width="172" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <text x="142" y="218" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Broad authorized</text>
+    <text x="142" y="238" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">outcome</text>
+
+    <path d="M228 224H262" stroke="#c8a96e" stroke-width="2"/>
+    <path d="M262 224l-9 -5v10z" fill="#c8a96e"/>
+
+    <!-- Stage 2: controller -->
+    <rect x="266" y="180" width="172" height="88" rx="10" fill="#111111" stroke="#c8a96e" stroke-width="1.5"/>
+    <text x="352" y="218" text-anchor="middle" fill="#c8a96e" font-size="16" font-weight="800">One controller</text>
+    <text x="352" y="240" text-anchor="middle" fill="#888880" font-size="13">single authority</text>
+
+    <!-- fan out -->
+    <path d="M438 224C470 224 470 118 502 118" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M438 224C470 224 470 188 502 188" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M438 224C470 224 470 258 502 258" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M438 224C470 224 470 328 502 328" stroke="#c8a96e" stroke-width="2" fill="none"/>
+
+    <!-- Lanes -->
+    <rect x="506" y="92" width="216" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <circle cx="530" cy="118" r="4" fill="#c8a96e"/>
+    <text x="546" y="124" fill="#f0ece4" font-size="15.5" font-weight="700">Code lane</text>
+
+    <rect x="506" y="162" width="216" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <circle cx="530" cy="188" r="4" fill="#c8a96e"/>
+    <text x="546" y="194" fill="#f0ece4" font-size="15.5" font-weight="700">Docs lane</text>
+
+    <rect x="506" y="232" width="216" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <circle cx="530" cy="258" r="4" fill="#c8a96e"/>
+    <text x="546" y="264" fill="#f0ece4" font-size="15.5" font-weight="700">CI &amp; merge-gate lane</text>
+
+    <rect x="506" y="302" width="216" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <circle cx="530" cy="328" r="4" fill="#c8a96e"/>
+    <text x="546" y="334" fill="#f0ece4" font-size="15.5" font-weight="700">Live verification lane</text>
+
+    <!-- fan in -->
+    <path d="M722 118C754 118 754 224 786 224" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M722 188C754 188 754 224 786 224" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M722 258C754 258 754 224 786 224" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M722 328C754 328 754 224 786 224" stroke="#c8a96e" stroke-width="2" fill="none"/>
+    <path d="M786 224l-9 -5v10z" fill="#c8a96e"/>
+
+    <!-- Stage 4: reconciliation -->
+    <rect x="790" y="180" width="204" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+    <text x="892" y="212" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Adversarial</text>
+    <text x="892" y="232" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">reconciliation</text>
+    <text x="892" y="253" text-anchor="middle" fill="#888880" font-size="12.5">lanes attack each other&#8217;s claims</text>
+
+    <path d="M994 224H1028" stroke="#c8a96e" stroke-width="2"/>
+    <path d="M1028 224l-9 -5v10z" fill="#c8a96e"/>
+
+    <!-- Stage 5: proof -->
+    <rect x="1032" y="180" width="112" height="88" rx="10" fill="#161616" stroke="#c8a96e" stroke-width="2"/>
+    <text x="1088" y="231" text-anchor="middle" fill="#c8a96e" font-size="19" font-weight="900">Proof</text>
+  </g>
+
+  <path d="M56 386H1144" stroke="#222222" stroke-width="1"/>
+  <text x="600" y="412" text-anchor="middle" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="13.5">House line: <tspan fill="#c8a96e" font-weight="700">&#8220;Never end your allocation above zero.&#8221;</tspan> Dry joke, not a literal token promise.</text>
+</svg>

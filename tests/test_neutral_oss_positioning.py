@@ -117,8 +117,15 @@ class NeutralOssPositioningTests(unittest.TestCase):
         subset_claim = re.compile(
             r"suede-[a-z-]+@suede(?:</code>|`)\s*\((?:\d+)[^)]*\bskills\b[^)]*\)"
         )
+        # Homepage lane counts are per-lane sizes, not pack-size claims: the
+        # marketing lane legitimately holds 39 skills. They are exempt only in
+        # their structured form (class="lane-count" / "catalog-lane-count"),
+        # because scripts/validate-skill-pack.mjs independently requires each
+        # set of lane counts to sum to the actual pack total. A bare number in
+        # prose is still treated as a stale pack-size claim.
+        lane_count_claim = re.compile(r'class="(?:catalog-)?lane-count">\d+ skills<')
         for surface in ["README.md", "docs/index.html", "docs/guide.html", "docs/plugins.html", "docs/copy.html", "docs/skills/index.html", "docs/llms.txt"]:
-            text = subset_claim.sub("", read(surface))
+            text = lane_count_claim.sub("", subset_claim.sub("", read(surface)))
             for stale in stale_counts:
                 with self.subTest(surface=surface, stale=stale):
                     self.assertNotIn(stale, text)
