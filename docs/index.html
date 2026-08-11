@@ -2917,6 +2917,20 @@
       font-weight: 700;
     }
     .clog-filter:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 2px; }
+    /* Collapse toggle. Ships hidden and is revealed by JS: with no JS every
+       entry is already visible, so an inert button would just be a dead end. */
+    .clog-toggle {
+      margin: 22px 0 0; padding: 9px 18px;
+      font-family: inherit; font-size: 13px; letter-spacing: 0.02em;
+      color: var(--color-text-secondary);
+      background: transparent; border: 1px solid #222222; border-radius: 999px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .clog-toggle:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+    .clog-toggle:active { transform: translateY(1px); }
+    .clog-toggle:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 2px; }
+    .clog-toggle[hidden] { display: none; }
     .clog-list { list-style: none; margin: 8px 0 0; padding: 0; border-left: 1px solid #1c1c1c; }
     .clog-item { position: relative; padding: 20px 0 20px 30px; border-bottom: 1px solid #141414; }
     .clog-item::before {
@@ -3383,8 +3397,8 @@
             <span style="height:88%"></span>
           </span>
           <span class="hero-shiplog-text">
-            <span class="hero-shiplog-top">Released Aug 10 <b>&middot; a49a998</b></span>
-            <span class="hero-shiplog-title">Skill search stops needing your exact wording</span>
+            <span class="hero-shiplog-top">Released Aug 10 <b>&middot; 672740e</b></span>
+            <span class="hero-shiplog-title">suede-clip-to-guide gets its boundaries back</span>
             <span class="hero-shiplog-more">223 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
         </a>
@@ -3568,6 +3582,16 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-10</span>
+            <span class="clog-tag clog-tag--fix">Routing</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/672740e" target="_blank" rel="noopener" aria-label="View commit 672740e on GitHub">672740e</a>
+          </p>
+          <h3 class="clog-title">suede-clip-to-guide gets its boundaries back</h3>
+          <p class="clog-detail"><code>suede-clip-to-guide</code> turns a clip, talk moment, or transcript into a package that carries short-form attention to a long-form asset &mdash; moment scoring, rights routing, exact post copy, and an approval bundle. It shipped with a catalog description condensed to a single sentence, and the condensing dropped the <code>NOT FOR:</code> block that keeps it clear of <code>suede-video</code> and <code>suede-social</code> requests. The catalog entry is now copied verbatim from the skill's own frontmatter, so the two cannot disagree again, and a <code>clip-social-video</code> routing group proves the separation holds in both directions.</p>
+        </li>
 
         <li class="clog-item" data-type="fix">
           <p class="clog-meta">
@@ -3801,6 +3825,7 @@
         </li>
 
       </ol>
+      <button class="clog-toggle" id="clog-toggle" type="button" aria-expanded="true" aria-controls="clog-list" hidden>Show fewer</button>
       <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub &rarr;</a>
     </div>
 
@@ -5020,15 +5045,56 @@
 
     var items = Array.prototype.slice.call(list.querySelectorAll('.clog-item'));
     var btns = Array.prototype.slice.call(document.querySelectorAll('.clog-filter'));
+    var toggle = document.getElementById('clog-toggle');
+    var LIMIT = 4;
+    var filter = 'all';
+    // Collapsed is the JS-only default. The no-JS page renders every entry,
+    // which is the honest fallback for a log whose whole point is being
+    // checkable.
+    var collapsed = true;
+
+    // One place decides visibility, so the filter and the toggle can never
+    // disagree about which entries are on screen. Filtering re-counts against
+    // the matching set, not the full list.
+    function apply() {
+      var matching = 0;
+      var shown = 0;
+      items.forEach(function(it) {
+        var passes = filter === 'all' || it.getAttribute('data-type') === filter;
+        if (passes) matching++;
+        var visible = passes && (!collapsed || shown < LIMIT);
+        if (visible) shown++;
+        it.hidden = !visible;
+      });
+      if (!toggle) return;
+      var collapsible = matching > LIMIT;
+      toggle.hidden = !collapsible;
+      toggle.setAttribute('aria-expanded', String(!collapsed));
+      toggle.textContent = collapsed ? 'Show all ' + matching + ' entries' : 'Show fewer';
+    }
+
     btns.forEach(function(btn) {
       btn.addEventListener('click', function() {
         btns.forEach(function(b) { b.setAttribute('aria-pressed', String(b === btn)); });
-        var t = btn.getAttribute('data-filter');
-        items.forEach(function(it) {
-          it.hidden = t !== 'all' && it.getAttribute('data-type') !== t;
-        });
+        filter = btn.getAttribute('data-filter');
+        apply();
       });
     });
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        collapsed = !collapsed;
+        apply();
+        // Collapsing can strand the reader below the list; pull the section
+        // header back into view instead of leaving them mid-page.
+        if (collapsed) {
+          var head = document.getElementById('changelog-headline');
+          if (head && head.scrollIntoView) head.scrollIntoView({ block: 'start' });
+        }
+      });
+    }
+
+    apply();
 
     // The release pill gains a client-computed relative label; the static
     // date stays as the no-JS truth.
