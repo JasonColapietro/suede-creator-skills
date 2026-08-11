@@ -913,7 +913,11 @@ const countChecks = [
   { file: "docs/index.html", label: "twitter:title", re: /name="twitter:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
-  { file: "docs/guide.html", label: "public skills metric", re: /<div class="metric"><b>(\d+)<\/b><span>public skills<\/span><\/div>/, expected: totalSkillCount },
+  // The guide's hero no longer carries the homepage's four-metric strip: the
+  // page opens on its own table of contents so a reader can tell the guide
+  // apart from the homepage at a glance. The pack size is still guarded on
+  // this page by the title tag, the h2 heading, the hero "N skills, MIT
+  // licensed" line, the disclosure headline, and the browse-all link label.
   // Numerals, not wordNumber: both headings used to spell the count out
   // ("Seventy-one skills"), which reads as marketing prose on a technical
   // page and drifts independently of every numeral elsewhere on the site.
