@@ -65,6 +65,7 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
     "design-visibility",
     "rights-audit-passport",
     "android-ios",
+    "clip-social-video",
     "amazon-subscription",
     "social-instagram",
   ]);
