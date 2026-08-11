@@ -244,6 +244,54 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
   );
 });
 
+test("packaged validation rejects package-lock version drift", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-lockfile-");
+  const lockPath = path.join(packagedRoot, "package-lock.json");
+  const lock = JSON.parse(fs.readFileSync(lockPath, "utf8"));
+  lock.version = "9.9.9";
+  lock.packages[""].version = "9.9.9";
+  fs.writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
+
+  const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
+  const catalogVersion = JSON.parse(fs.readFileSync(catalogPath, "utf8")).version;
+  const escaped = catalogVersion.replace(/\./g, "\\.");
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(
+    validation.stderr,
+    new RegExp(`package-lock\\.json version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${escaped}\\)`)
+  );
+  assert.match(
+    validation.stderr,
+    new RegExp(`package-lock\\.json packages\\[""\\] version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${escaped}\\)`)
+  );
+});
+
+test("packaged validation rejects a package-lock whose two version fields disagree", (t) => {
+  // The real 0.11.x drift left one field stale. A fix that touches only the
+  // root object still leaves the next npm install rewriting the lockfile, so
+  // each field has to fail on its own.
+  const packagedRoot = createPackagedFixture(t, "suede-validator-lockfile-partial-");
+  const lockPath = path.join(packagedRoot, "package-lock.json");
+  const lock = JSON.parse(fs.readFileSync(lockPath, "utf8"));
+  lock.packages[""].version = "9.9.9";
+  fs.writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
+
+  const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
+  const catalogVersion = JSON.parse(fs.readFileSync(catalogPath, "utf8")).version;
+  const escaped = catalogVersion.replace(/\./g, "\\.");
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(
+    validation.stderr,
+    new RegExp(`package-lock\\.json packages\\[""\\] version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${escaped}\\)`)
+  );
+});
+
 test("packaged validation rejects Codex plugin version and MCP portability drift", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-codex-version-");
   const pluginPath = path.join(packagedRoot, ".codex-plugin", "plugin.json");
