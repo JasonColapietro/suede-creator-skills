@@ -512,7 +512,7 @@
     {
       "name": "suede-clip-to-guide",
       "area": "workflow",
-      "description": "Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package that bridges short-form attention to a long-form asset.",
+      "description": "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, measured success loop, and a dual-evidence certainty gate when Full Send or Codex Fleet controls the run. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval.",
       "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate."
     },
     {
