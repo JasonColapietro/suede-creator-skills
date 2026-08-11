@@ -387,6 +387,979 @@
           "expected": "subscription-recovery"
         }
       ]
+    },
+    {
+      "id": "competitor-intel",
+      "skills": [
+        "suede-competitors",
+        "suede-competitor-profiling"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-competitors",
+          "positive": [
+            "versus page",
+            "alternative page",
+            "comparison page",
+            "comparison content"
+          ],
+          "negative": [
+            "competitive landscape",
+            "public urls",
+            "competitor profiles",
+            "competitive intelligence"
+          ],
+          "metadataMustContain": [
+            "comparison page"
+          ]
+        },
+        {
+          "skill": "suede-competitor-profiling",
+          "positive": [
+            "competitive landscape",
+            "public urls",
+            "competitor profiles",
+            "competitive intelligence"
+          ],
+          "negative": [
+            "versus page",
+            "alternative page",
+            "comparison page"
+          ],
+          "metadataMustContain": [
+            "competitive intelligence"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "competitors-versus-page-positive",
+          "mode": "positive",
+          "prompt": "Write a versus page and an alternative page against named competitors.",
+          "expected": "suede-competitors"
+        },
+        {
+          "id": "competitor-profiling-negative",
+          "mode": "negative",
+          "prompt": "Build competitor profiles and a competitive landscape from their public URLs.",
+          "expected": "suede-competitor-profiling",
+          "forbidden": [
+            "suede-competitors"
+          ]
+        },
+        {
+          "id": "competitor-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help me with competitors.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "paid-ads",
+      "skills": [
+        "suede-ads",
+        "suede-ad-creative"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-ads",
+          "positive": [
+            "campaign structure",
+            "budget pacing",
+            "negative keywords",
+            "paid campaigns",
+            "bidding"
+          ],
+          "negative": [
+            "ad copy",
+            "hooks",
+            "creative concepts",
+            "variant batches"
+          ],
+          "metadataMustContain": [
+            "paid acquisition"
+          ]
+        },
+        {
+          "skill": "suede-ad-creative",
+          "positive": [
+            "ad copy",
+            "hooks",
+            "creative concepts",
+            "variant batches",
+            "ad creative"
+          ],
+          "negative": [
+            "campaign structure",
+            "budget pacing",
+            "negative keywords",
+            "bidding"
+          ],
+          "metadataMustContain": [
+            "ad creative"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "ads-campaign-structure-positive",
+          "mode": "positive",
+          "prompt": "Fix our campaign structure, bidding, and budget pacing across Google and Meta.",
+          "expected": "suede-ads"
+        },
+        {
+          "id": "ad-creative-negative",
+          "mode": "negative",
+          "prompt": "Produce ad copy variations, hooks, and creative concepts to test.",
+          "expected": "suede-ad-creative",
+          "forbidden": [
+            "suede-ads"
+          ]
+        },
+        {
+          "id": "paid-ads-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help with our advertising.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "messaging-channels",
+      "skills": [
+        "suede-emails",
+        "suede-cold-email",
+        "suede-sms"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-emails",
+          "positive": [
+            "lifecycle email",
+            "drip campaign",
+            "welcome sequence",
+            "nurture",
+            "post purchase"
+          ],
+          "negative": [
+            "cold email",
+            "outbound email",
+            "prospecting sequence",
+            "sms",
+            "text message"
+          ],
+          "metadataMustContain": [
+            "lifecycle email"
+          ]
+        },
+        {
+          "skill": "suede-cold-email",
+          "positive": [
+            "cold email",
+            "outbound email",
+            "prospecting sequence",
+            "subject lines"
+          ],
+          "negative": [
+            "lifecycle email",
+            "drip campaign",
+            "welcome sequence",
+            "sms",
+            "text message"
+          ],
+          "metadataMustContain": [
+            "cold email"
+          ]
+        },
+        {
+          "skill": "suede-sms",
+          "positive": [
+            "sms",
+            "text message",
+            "mms"
+          ],
+          "negative": [
+            "lifecycle email",
+            "drip campaign",
+            "cold email",
+            "outbound email"
+          ],
+          "metadataMustContain": [
+            "sms"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "emails-lifecycle-positive",
+          "mode": "positive",
+          "prompt": "Design a lifecycle email drip campaign with a welcome sequence.",
+          "expected": "suede-emails"
+        },
+        {
+          "id": "cold-email-negative",
+          "mode": "negative",
+          "prompt": "Write cold email subject lines for an outbound email prospecting sequence.",
+          "expected": "suede-cold-email",
+          "forbidden": [
+            "suede-emails"
+          ]
+        },
+        {
+          "id": "sms-channel-negative",
+          "mode": "negative",
+          "prompt": "Add SMS and MMS marketing with a consent aware text message cadence.",
+          "expected": "suede-sms",
+          "forbidden": [
+            "suede-emails",
+            "suede-cold-email"
+          ]
+        },
+        {
+          "id": "messaging-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Improve the messages we send.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "pricing-offers",
+      "skills": [
+        "suede-pricing",
+        "suede-offers",
+        "suede-paywalls"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-pricing",
+          "positive": [
+            "value metric",
+            "price increase",
+            "willingness to pay",
+            "freemium",
+            "tiers"
+          ],
+          "negative": [
+            "risk reversal",
+            "guarantees",
+            "paywall",
+            "feature gate",
+            "trial expiry"
+          ],
+          "metadataMustContain": [
+            "value metric"
+          ]
+        },
+        {
+          "skill": "suede-offers",
+          "positive": [
+            "risk reversal",
+            "guarantees",
+            "bonuses",
+            "high ticket"
+          ],
+          "negative": [
+            "value metric",
+            "willingness to pay",
+            "paywall",
+            "feature gate"
+          ],
+          "metadataMustContain": [
+            "risk reversal"
+          ]
+        },
+        {
+          "skill": "suede-paywalls",
+          "positive": [
+            "paywall",
+            "feature gate",
+            "trial expiry",
+            "usage limit",
+            "upgrade moments"
+          ],
+          "negative": [
+            "value metric",
+            "willingness to pay",
+            "risk reversal",
+            "guarantees"
+          ],
+          "metadataMustContain": [
+            "paywall"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "pricing-value-metric-positive",
+          "mode": "positive",
+          "prompt": "Choose a value metric, restructure tiers, and research willingness to pay.",
+          "expected": "suede-pricing"
+        },
+        {
+          "id": "paywalls-negative",
+          "mode": "negative",
+          "prompt": "Design the paywall screen, feature gate, and trial expiry upgrade moments.",
+          "expected": "suede-paywalls",
+          "forbidden": [
+            "suede-pricing"
+          ]
+        },
+        {
+          "id": "offers-negative",
+          "mode": "negative",
+          "prompt": "Build the guarantees, bonuses, and risk reversal for a high ticket offer.",
+          "expected": "suede-offers",
+          "forbidden": [
+            "suede-pricing",
+            "suede-paywalls"
+          ]
+        },
+        {
+          "id": "monetization-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help us make more money.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "marketing-planning",
+      "skills": [
+        "suede-marketing-plan",
+        "suede-marketing-ideas",
+        "suede-marketing-council",
+        "suede-marketing-loops"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-marketing-plan",
+          "positive": [
+            "90 day plan",
+            "12 month roadmap",
+            "growth plan",
+            "go to market"
+          ],
+          "negative": [
+            "shortlist",
+            "tactic library",
+            "simulated advisors",
+            "recurring workflow",
+            "weekly review"
+          ],
+          "metadataMustContain": [
+            "marketing planning"
+          ]
+        },
+        {
+          "skill": "suede-marketing-ideas",
+          "positive": [
+            "shortlist",
+            "tactic library",
+            "growth tactics",
+            "stuck"
+          ],
+          "negative": [
+            "90 day plan",
+            "12 month roadmap",
+            "simulated advisors",
+            "recurring workflow"
+          ],
+          "metadataMustContain": [
+            "marketing ideation"
+          ]
+        },
+        {
+          "skill": "suede-marketing-council",
+          "positive": [
+            "simulated advisors",
+            "expert lenses",
+            "disagreements"
+          ],
+          "negative": [
+            "90 day plan",
+            "shortlist",
+            "tactic library",
+            "recurring workflow"
+          ],
+          "metadataMustContain": [
+            "simulated advisors"
+          ]
+        },
+        {
+          "skill": "suede-marketing-loops",
+          "positive": [
+            "recurring workflow",
+            "weekly review",
+            "content refresh",
+            "ad fatigue",
+            "churn watch"
+          ],
+          "negative": [
+            "90 day plan",
+            "12 month roadmap",
+            "shortlist",
+            "simulated advisors"
+          ],
+          "metadataMustContain": [
+            "recurring marketing workflow"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "marketing-plan-positive",
+          "mode": "positive",
+          "prompt": "Build a 90 day plan and 12 month roadmap as our go to market document.",
+          "expected": "suede-marketing-plan"
+        },
+        {
+          "id": "marketing-ideas-negative",
+          "mode": "negative",
+          "prompt": "I am stuck — give me a shortlist of growth tactics from the tactic library.",
+          "expected": "suede-marketing-ideas",
+          "forbidden": [
+            "suede-marketing-plan"
+          ]
+        },
+        {
+          "id": "marketing-loops-negative",
+          "mode": "negative",
+          "prompt": "Design a recurring workflow for ad fatigue, content refresh, and weekly review.",
+          "expected": "suede-marketing-loops",
+          "forbidden": [
+            "suede-marketing-plan",
+            "suede-marketing-ideas"
+          ]
+        },
+        {
+          "id": "marketing-council-negative",
+          "mode": "negative",
+          "prompt": "Give me simulated advisors and expert lenses that surface disagreements.",
+          "expected": "suede-marketing-council",
+          "forbidden": [
+            "suede-marketing-plan",
+            "suede-marketing-loops"
+          ]
+        },
+        {
+          "id": "marketing-planning-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help with marketing.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "seo-surfaces",
+      "skills": [
+        "suede-seo-audit",
+        "suede-programmatic-seo"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-seo-audit",
+          "positive": [
+            "seo audit",
+            "generative search",
+            "rewrite fixes",
+            "nine lane"
+          ],
+          "negative": [
+            "programmatic seo",
+            "at scale",
+            "index worthiness",
+            "location pages"
+          ],
+          "metadataMustContain": [
+            "generative search"
+          ]
+        },
+        {
+          "skill": "suede-programmatic-seo",
+          "positive": [
+            "programmatic seo",
+            "at scale",
+            "index worthiness",
+            "location pages",
+            "directory"
+          ],
+          "negative": [
+            "seo audit",
+            "generative search",
+            "rewrite fixes"
+          ],
+          "metadataMustContain": [
+            "programmatic seo"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "seo-audit-positive",
+          "mode": "positive",
+          "prompt": "Run an SEO audit with generative search lanes and exact rewrite fixes.",
+          "expected": "suede-seo-audit"
+        },
+        {
+          "id": "programmatic-seo-negative",
+          "mode": "negative",
+          "prompt": "Design programmatic SEO location pages at scale with index worthiness gates.",
+          "expected": "suede-programmatic-seo",
+          "forbidden": [
+            "suede-seo-audit"
+          ]
+        },
+        {
+          "id": "seo-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help with search.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "writing-surfaces",
+      "skills": [
+        "suede-copy",
+        "johnny-suede-write",
+        "suede-ship-copy"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-copy",
+          "positive": [
+            "conversion copy",
+            "landing sections",
+            "microcopy",
+            "anti slop"
+          ],
+          "negative": [
+            "public explainers",
+            "product listings",
+            "publish readiness",
+            "adversarial refutation",
+            "research lenses"
+          ],
+          "metadataMustContain": [
+            "conversion copy"
+          ]
+        },
+        {
+          "skill": "johnny-suede-write",
+          "positive": [
+            "public explainers",
+            "product listings",
+            "sharper"
+          ],
+          "negative": [
+            "conversion copy",
+            "landing sections",
+            "publish readiness",
+            "adversarial refutation"
+          ],
+          "metadataMustContain": [
+            "public explainers"
+          ]
+        },
+        {
+          "skill": "suede-ship-copy",
+          "positive": [
+            "publish readiness",
+            "adversarial refutation",
+            "research lenses",
+            "high stakes"
+          ],
+          "negative": [
+            "conversion copy",
+            "microcopy",
+            "public explainers",
+            "product listings"
+          ],
+          "metadataMustContain": [
+            "publish readiness"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "copy-conversion-positive",
+          "mode": "positive",
+          "prompt": "Write conversion copy for the landing sections and the microcopy.",
+          "expected": "suede-copy"
+        },
+        {
+          "id": "ship-copy-negative",
+          "mode": "negative",
+          "prompt": "Run the research lenses and adversarial refutation to a publish readiness gate for this high stakes page.",
+          "expected": "suede-ship-copy",
+          "forbidden": [
+            "suede-copy"
+          ]
+        },
+        {
+          "id": "johnny-write-negative",
+          "mode": "negative",
+          "prompt": "Write sharper product listings and public explainers.",
+          "expected": "johnny-suede-write",
+          "forbidden": [
+            "suede-copy",
+            "suede-ship-copy"
+          ]
+        },
+        {
+          "id": "writing-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Write something for us.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "activation",
+      "skills": [
+        "suede-signup",
+        "suede-onboarding",
+        "suede-churn-prevention"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-signup",
+          "positive": [
+            "account creation",
+            "registration",
+            "field friction",
+            "progressive profiling",
+            "trial start"
+          ],
+          "negative": [
+            "first value",
+            "empty states",
+            "setup checklists",
+            "cancel flows",
+            "win back"
+          ],
+          "metadataMustContain": [
+            "signup conversion"
+          ]
+        },
+        {
+          "skill": "suede-onboarding",
+          "positive": [
+            "first value",
+            "empty states",
+            "setup checklists",
+            "activation milestones",
+            "time to value"
+          ],
+          "negative": [
+            "account creation",
+            "registration",
+            "field friction",
+            "cancel flows",
+            "win back"
+          ],
+          "metadataMustContain": [
+            "time to value"
+          ]
+        },
+        {
+          "skill": "suede-churn-prevention",
+          "positive": [
+            "cancel flows",
+            "win back",
+            "save offers",
+            "failed payment",
+            "pause paths"
+          ],
+          "negative": [
+            "account creation",
+            "registration",
+            "first value",
+            "empty states"
+          ],
+          "metadataMustContain": [
+            "failed payment recovery"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "signup-positive",
+          "mode": "positive",
+          "prompt": "Audit account creation and registration for field friction and progressive profiling.",
+          "expected": "suede-signup"
+        },
+        {
+          "id": "onboarding-negative",
+          "mode": "negative",
+          "prompt": "Users never reach first value — design empty states, setup checklists, and time to value.",
+          "expected": "suede-onboarding",
+          "forbidden": [
+            "suede-signup"
+          ]
+        },
+        {
+          "id": "churn-negative",
+          "mode": "negative",
+          "prompt": "Design cancel flows, pause paths, save offers, and failed payment recovery.",
+          "expected": "suede-churn-prevention",
+          "forbidden": [
+            "suede-signup",
+            "suede-onboarding"
+          ]
+        },
+        {
+          "id": "activation-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Improve activation.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "ship-release",
+      "skills": [
+        "suede-ship",
+        "suede-ci-gate",
+        "suede-launch-packaging",
+        "suede-release-linter"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-ship",
+          "positive": [
+            "shipping dag",
+            "lane plan",
+            "integration gate",
+            "release verification",
+            "disjoint parallel build"
+          ],
+          "negative": [
+            "branch protection",
+            "required checks",
+            "install commands",
+            "release folders",
+            "stems"
+          ],
+          "metadataMustContain": [
+            "shipping dag"
+          ]
+        },
+        {
+          "skill": "suede-ci-gate",
+          "positive": [
+            "branch protection",
+            "required checks",
+            "merge gates",
+            "duplicate pipeline"
+          ],
+          "negative": [
+            "shipping dag",
+            "lane plan",
+            "install commands",
+            "release folders",
+            "stems"
+          ],
+          "metadataMustContain": [
+            "branch protection"
+          ]
+        },
+        {
+          "skill": "suede-launch-packaging",
+          "positive": [
+            "install commands",
+            "handoff notes",
+            "proof links",
+            "release copy"
+          ],
+          "negative": [
+            "shipping dag",
+            "branch protection",
+            "release folders",
+            "stems",
+            "lyrics"
+          ],
+          "metadataMustContain": [
+            "handoff notes"
+          ]
+        },
+        {
+          "skill": "suede-release-linter",
+          "positive": [
+            "release folders",
+            "stems",
+            "artwork",
+            "lyrics",
+            "rights blockers"
+          ],
+          "negative": [
+            "shipping dag",
+            "branch protection",
+            "install commands",
+            "handoff notes"
+          ],
+          "metadataMustContain": [
+            "release folders"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "ci-gate-positive",
+          "mode": "positive",
+          "prompt": "Set up branch protection, required checks, and merge gates that do not deadlock.",
+          "expected": "suede-ci-gate"
+        },
+        {
+          "id": "release-linter-negative",
+          "mode": "negative",
+          "prompt": "Audit the release folders: stems, artwork, lyrics, and rights blockers.",
+          "expected": "suede-release-linter",
+          "forbidden": [
+            "suede-launch-packaging",
+            "suede-ship"
+          ]
+        },
+        {
+          "id": "launch-packaging-negative",
+          "mode": "negative",
+          "prompt": "Write install commands, proof links, release copy, and handoff notes.",
+          "expected": "suede-launch-packaging",
+          "forbidden": [
+            "suede-release-linter",
+            "suede-ci-gate"
+          ]
+        },
+        {
+          "id": "suede-ship-dag-negative",
+          "mode": "negative",
+          "prompt": "Run the shipping dag with a lane plan, integration gate, and release verification.",
+          "expected": "suede-ship",
+          "forbidden": [
+            "suede-ci-gate",
+            "suede-launch-packaging"
+          ]
+        },
+        {
+          "id": "ship-release-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help me ship this.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "growth-loops",
+      "skills": [
+        "suede-referrals",
+        "suede-co-marketing",
+        "suede-community-marketing"
+      ],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-referrals",
+          "positive": [
+            "refer a friend",
+            "affiliate",
+            "ambassador",
+            "payout logic",
+            "viral loop"
+          ],
+          "negative": [
+            "audience overlap",
+            "joint offers",
+            "cross promotion",
+            "moderation",
+            "subreddit"
+          ],
+          "metadataMustContain": [
+            "referral and affiliate program"
+          ]
+        },
+        {
+          "skill": "suede-co-marketing",
+          "positive": [
+            "audience overlap",
+            "joint offers",
+            "cross promotion",
+            "partner fit"
+          ],
+          "negative": [
+            "refer a friend",
+            "affiliate",
+            "payout logic",
+            "moderation",
+            "subreddit"
+          ],
+          "metadataMustContain": [
+            "co marketing"
+          ]
+        },
+        {
+          "skill": "suede-community-marketing",
+          "positive": [
+            "subreddit",
+            "moderation",
+            "member purpose",
+            "seeding",
+            "health metrics"
+          ],
+          "negative": [
+            "refer a friend",
+            "affiliate",
+            "audience overlap",
+            "joint offers"
+          ],
+          "metadataMustContain": [
+            "community growth"
+          ]
+        }
+      ],
+      "cases": [
+        {
+          "id": "referrals-positive",
+          "mode": "positive",
+          "prompt": "Design refer a friend and ambassador mechanics with payout logic and viral loop measurement.",
+          "expected": "suede-referrals"
+        },
+        {
+          "id": "co-marketing-negative",
+          "mode": "negative",
+          "prompt": "Find partner fit with audience overlap and plan joint offers and cross promotion.",
+          "expected": "suede-co-marketing",
+          "forbidden": [
+            "suede-referrals"
+          ]
+        },
+        {
+          "id": "community-negative",
+          "mode": "negative",
+          "prompt": "Grow a subreddit with member purpose, seeding, moderation, and health metrics.",
+          "expected": "suede-community-marketing",
+          "forbidden": [
+            "suede-referrals",
+            "suede-co-marketing"
+          ]
+        },
+        {
+          "id": "growth-loops-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help us grow.",
+          "expected": "clarify"
+        }
+      ]
     }
   ]
 }
