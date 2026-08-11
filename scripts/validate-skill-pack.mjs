@@ -476,6 +476,26 @@ if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
 if (packageJson.version !== catalog.version) {
   fail.push(`package.json version (${packageJson.version}) does not match catalog.json version (${catalog.version})`);
 }
+// npm stamps the version in two places, and `npm ci` validates only the
+// dependency tree -- a stale root version sails through CI and is then
+// silently rewritten by the next `npm install`, dropping an unrelated
+// lockfile diff into whichever branch happened to install. Releases 0.11.0
+// and 0.11.1 both drifted this way. Check both fields: a hand-edit that
+// fixes one and misses the other leaves the same trap.
+const packageLockPath = path.join(repoRoot, "package-lock.json");
+if (!fs.existsSync(packageLockPath)) {
+  fail.push("package-lock.json missing — run npm install --package-lock-only to generate it");
+} else {
+  const packageLockJson = JSON.parse(readText(packageLockPath));
+  const lockRootVersion = packageLockJson.version;
+  const lockPackageVersion = packageLockJson.packages?.[""]?.version;
+  if (lockRootVersion !== catalog.version) {
+    fail.push(`package-lock.json version (${lockRootVersion ?? "missing"}) does not match catalog.json version (${catalog.version}) — run npm install --package-lock-only`);
+  }
+  if (lockPackageVersion !== catalog.version) {
+    fail.push(`package-lock.json packages[""] version (${lockPackageVersion ?? "missing"}) does not match catalog.json version (${catalog.version}) — run npm install --package-lock-only`);
+  }
+}
 if (pluginJson.version !== catalog.version) {
   fail.push(`plugin.json version (${pluginJson.version}) does not match catalog.json version (${catalog.version})`);
 }
