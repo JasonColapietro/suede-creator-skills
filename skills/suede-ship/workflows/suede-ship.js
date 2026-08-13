@@ -648,6 +648,15 @@ log(`${plan.lanes.length} disjoint lanes over ${owner.size} files: ${plan.lanes.
 // slowest-per-stage.
 const EFFORT = { mechanical: 'low', integration: 'medium', judgment: 'high' }
 
+// The refute stage is the only place in this DAG whose agent count is decided by what
+// the reviewers happened to say rather than by the shape of the graph, so it is the only
+// place that can silently multiply the run's cost. Two review lenses at maxItems 10 is up
+// to 20 findings for ONE lane; at three verifiers each that was 60 agents for that lane
+// alone, against a run that advertises about fifty in total. These two ceilings make the
+// worst case finite and knowable. Both are logged when they bite — never a silent cap.
+const REFUTE_CAP_PER_LANE = 4
+const FIX_CAP = 8
+
 const laneResults = await pipeline(
   plan.lanes,
 
@@ -690,16 +699,43 @@ no "consider extracting". If the code is clean, return an empty findings array.`
     return { lane, built, findings }
   },
 
-  // adversarial refute — default to refuted, majority kills
+  // adversarial refute — default to refuted, unanimity kills
+  // Three deterministic filters run BEFORE any verifier is spawned, because a finding
+  // that cannot change what this run does is not worth a single agent, let alone three:
+  //   dedupe    — the two lenses reliably report the same defect from different angles
+  //   minors    — nothing downstream acts on one; only blockers reach the fix stage, and
+  //               majors and minors both ride to the handoff as caveats either way
+  //   the cap   — a hard per-lane ceiling, blockers ahead of majors in the queue
+  // Everything filtered out is carried as `unverified` and reported, not discarded.
   async (reviewed) => {
-    if (!reviewed.findings.length) return { ...reviewed, confirmed: [] }
-    const judged = await parallel(reviewed.findings.map(f => () =>
-      parallel([0, 1, 2].map(i => () => agent(
+    if (!reviewed.findings.length) return { ...reviewed, confirmed: [], unverified: [] }
+
+    const key = f => `${rel(f.file)}:${f.line || ''}:${String(f.claim).slice(0, 60).toLowerCase()}`
+    const seen = new Set()
+    const deduped = reviewed.findings.filter(f => seen.has(key(f)) ? false : seen.add(key(f)))
+
+    const minors = deduped.filter(f => f.severity === 'minor')
+    const ranked = deduped
+      .filter(f => f.severity !== 'minor')
+      .sort((a, b) => (a.severity === 'blocker' ? 0 : 1) - (b.severity === 'blocker' ? 0 : 1))
+    const refuting = ranked.slice(0, REFUTE_CAP_PER_LANE)
+    const overflow = ranked.slice(REFUTE_CAP_PER_LANE)
+
+    const dupes = reviewed.findings.length - deduped.length
+    if (dupes || minors.length || overflow.length) {
+      log(`${reviewed.lane.name}: ${reviewed.findings.length} findings -> ${refuting.length} sent to verifiers`
+        + `${dupes ? ` · ${dupes} duplicate` : ''}`
+        + `${minors.length ? ` · ${minors.length} minor carried unverified` : ''}`
+        + `${overflow.length ? ` · ${overflow.length} past the ${REFUTE_CAP_PER_LANE}-per-lane cap, carried unverified` : ''}`)
+    }
+
+    const judged = await parallel(refuting.map(f => () =>
+      parallel([0, 1].map(i => () => agent(
         `Worktree: ${scout.worktreePath}
 Claim: "${f.claim}" in ${f.file}${f.line ? `:${f.line}` : ''}
 Alleged failure: ${f.failureScenario}
 
-You are verifier #${i + 1}. Your job is to REFUTE this. Open the file and the code
+You are verifier #${i + 1} of 2. Your job is to REFUTE this. Open the file and the code
 around it. Construct the concrete input or state that triggers the failure. If you
 cannot construct one, or the guard already exists upstream, it is refuted.
 Default to refuted:true when uncertain. A plausible-sounding finding that cannot be
@@ -707,26 +743,39 @@ reproduced is worse than no finding.`,
         { label: `refute:${f.file}`, phase: 'Refute', schema: VERDICT, effort: 'medium' }
       ))).then(vs => {
         const votes = vs.filter(Boolean)
-        const survives = votes.filter(v => !v.refuted).length >= 2
-        return survives ? { ...f, evidence: votes.find(v => !v.refuted).why } : null
+        // Unanimity of two, not majority of three: both verifiers must fail to refute.
+        // Strictly harder to survive than the old 2-of-3 and a third cheaper, which is
+        // the direction this stage already leans — an unreproducible finding buys a
+        // wasted fix agent and a rewrite of a line that was fine.
+        const survives = votes.length === 2 && votes.every(v => !v.refuted)
+        return survives ? { ...f, evidence: votes[0].why } : null
       })
     ))
-    return { ...reviewed, confirmed: judged.filter(Boolean) }
+    return { ...reviewed, confirmed: judged.filter(Boolean), unverified: [...minors, ...overflow] }
   }
 )
 
 const lanes = laneResults.filter(Boolean)
 const stalled = lanes.filter(l => l.built && l.built.state !== 'done' && l.built.state !== 'done-with-concerns')
 const confirmed = lanes.flatMap(l => l.confirmed || [])
+const unverified = lanes.flatMap(l => l.unverified || [])
 const blockers = confirmed.filter(f => f.severity === 'blocker')
-log(`${lanes.length} lanes · ${stalled.length} stalled · ${confirmed.length} confirmed findings (${blockers.length} blockers)`)
+log(`${lanes.length} lanes · ${stalled.length} stalled · ${confirmed.length} confirmed findings (${blockers.length} blockers) · ${unverified.length} carried unverified`)
 
 // ---------------------------------------------------------------- 4. fix
 // Only blockers. Majors and minors ride out as documented caveats — a review
 // that fixes everything it finds never converges.
 if (blockers.length) {
   phase('Fix')
-  await parallel(blockers.map(f => () => agent(
+  // One agent per blocker, but bounded. Blockers past the cap ride to the handoff as
+  // named, unfixed caveats — the same treatment majors already get. A fix stage that
+  // scales with however many blockers a review found is the second way this run can
+  // outrun its advertised cost.
+  const fixing = blockers.slice(0, FIX_CAP)
+  if (blockers.length > FIX_CAP) {
+    log(`${blockers.length} confirmed blockers, fixing the first ${FIX_CAP}; the remaining ${blockers.length - FIX_CAP} go to the handoff unfixed: ${blockers.slice(FIX_CAP).map(f => `${f.file} — ${f.claim}`).join(' | ')}`)
+  }
+  await parallel(fixing.map(f => () => agent(
     `Worktree: ${scout.worktreePath}
 Confirmed blocker in ${f.file}${f.line ? `:${f.line}` : ''}: ${f.claim}
 Reproduction: ${f.failureScenario}
@@ -861,6 +910,11 @@ Scope: ${SCOPE}
 Lanes: ${JSON.stringify(plan.lanes.map(l => ({ name: l.name, tier: l.tier, files: l.files })))}
 Stalled lanes: ${JSON.stringify(stalled.map(l => ({ lane: l.lane.name, state: l.built && l.built.state, notes: l.built && l.built.notes })))}
 Confirmed findings: ${JSON.stringify(confirmed)}
+Findings that were NEVER VERIFIED — minors, and anything past the per-lane refutation cap.
+No verifier was spent on these, so each is a reviewer's unchallenged assertion rather than
+a confirmed defect. Say exactly that under Caveats; do not present them as findings and do
+not quietly drop them either: ${JSON.stringify(unverified)}
+Blockers confirmed but left unfixed (past the fix cap): ${JSON.stringify(blockers.slice(FIX_CAP))}
 Gate: ${JSON.stringify(gate)}
 Release verification (${shipVerdict}): ${JSON.stringify(release)}
 Plan objections raised by red team: ${JSON.stringify(objections)}
@@ -902,6 +956,8 @@ return {
   planObjections: objections,
   unread: stillUnread,
   confirmedFindings: confirmed,
+  unverifiedFindings: unverified,
+  unfixedBlockers: blockers.slice(FIX_CAP),
   gatePassed: gate && gate.passed,
   shipVerdict,
   release,

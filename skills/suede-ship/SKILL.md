@@ -17,6 +17,21 @@ you keep a personal copy, `~/.claude/workflows/suede-ship.js` works the same way
 fifty agents (about fifty-four when `deploys` is true), research-heavy and
 front-loaded, billed to the Claude limit.
 
+That fifty is a typical run, not a ceiling. About twenty-two of it is fixed by the
+graph — scout, five research lenses, gaps, skeptic, plan, red team, gate, release,
+handoff. The rest scales with the lane count and, above all, with how many defects
+the reviewers report: every finding that reaches refutation costs two more agents.
+Two bounds keep that finite, and both announce themselves in the run log when they
+bite: at most four findings per lane reach a verifier (blockers first; minors never
+do, since only blockers are fixed and everything else rides to the handoff either
+way), and at most eight blockers get a fix agent. Worst case is therefore about a
+hundred and twelve agents rather than the six hundred and eighty an uncapped
+refutation stage reaches on a change that reviews badly. Anything skipped is reported as an unverified
+caveat, never silently dropped.
+
+Every one of those agents inherits the session model. If the session is on the
+model whose allocation you are protecting, that is where the whole run lands.
+
 If the job is actually high-volume, well-specified, and splits into independent
 worker-sized tasks (content batches, test generation, bulk refactors), say so
 and offer [`suede-codex-fleet`](../suede-codex-fleet/SKILL.md) instead. That runs
@@ -72,7 +87,9 @@ Nine phases, parallel wherever the edges are not real:
 3. **Gaps** — a completeness critic names what went unread, then one bounded fill round.
 4. **Plan** — the lane map, with explicit file ownership. High effort by design.
 5. **Build** — disjoint lanes, each pipelined straight into its own review.
-6. **Refute** — adversarial verifiers, refute-by-default, majority kills the finding.
+6. **Refute** — two adversarial verifiers per finding, refute-by-default, and both
+   must fail to refute for it to survive. Deduped and capped at four findings per
+   lane, blockers first; minors skip this stage and ride out as caveats.
 7. **Gate** — a real barrier: typecheck, build, and tests on the integrated worktree.
 8. **Release** — adversarial release verification: config drift, public surface,
    irreversibility, live baseline.
