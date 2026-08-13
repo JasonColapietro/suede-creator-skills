@@ -13,6 +13,20 @@ same file. This decomposes by **message ownership**: two sections may never make
 the same point, and no section may assert a fact an agent invented. Same graph,
 different collision rule.
 
+## Model selection — never Fable by default
+
+Subagents inherit the session model unless the spawning call names one. Nothing in
+this skill picks a model, so every agent it fans out lands on whatever the session
+happens to be set to. That is how a run sized against one allocation gets billed to
+another without anyone choosing it.
+
+**Fable must be specified to be used. This skill's subagents never run on Fable
+unless the user named Fable for this run.** An inherited session model is not a
+specification — "the session was already on it" is not the user asking. Absent an
+explicit Fable instruction, do one of two things before launching: name a different
+model on the agent calls, or state plainly that the run will bill to the Fable
+allocation and get an answer. Silence is not consent to spend it.
+
 ## Whose claims get audited
 
 **The audit exists to catch agents inventing things. It never runs on the
@@ -140,25 +154,43 @@ The argument is free-form. Extract:
 - **mustSay** — strings that must survive byte-exact: legal product name,
   trademark forms, price strings, disclaimer sentences.
 - **wordBudget** — total words. Optional; the surface law supplies limits per field.
+- **agentBudget** — `light`, `standard`, or `deep`. Required, and you must ask the
+  user rather than pick it (see below). Omitting it defaults to `standard`.
 
 If **piece** or **surface** is missing, ask. Do not invent a brief for something
 a public audience will read.
 
-## State the cost before launching
+## Ask for the agent budget before launching
 
-This is Claude-model fan-out against the weekly limit. Say so in one line before
-the call, so the spend is a decision rather than a surprise. One line, this shape:
+This is Claude-model fan-out against the user's limit, so the size of the run is
+the user's call, not yours. **Ask which of these three ranges they want and wait
+for an answer before the `Workflow` call.** Do not pick one for them.
 
-> Running suede-ship-copy on the Agent Studio landing page: about 30 agents
-> (26-42 depending on section count and findings), billed to the Claude weekly
-> limit. Starting now.
+| Range | Total agents | What it buys |
+|---|---|---|
+| `light` | **30–36** | 2 angles, 1 gap fill, 2 findings verified. A short piece, or copy you mostly trust. |
+| `standard` | **38–45** | The documented default. 3 angles, 2 gap fills, 4 findings verified. |
+| `deep` | **40–50** | 3 gap fills, 6 findings verified. A launch page, pricing page, or anything a stranger will judge the company by. |
+
+Those numbers are measured against the actual script, not estimated, across
+section counts from 5 to 8 and review findings from 1 to 12 per lens.
+
+Sections are never cut to fit a range — they are the deliverable. The budget
+scales research depth and verification depth only, and everything it skips is
+reported as an unverified caveat rather than dropped.
+
+Then state the choice in one line when you launch, this shape:
+
+> Running suede-ship-copy on the Agent Studio landing page at `standard`: about
+> 40 agents (38-45 depending on section count and findings), on Opus, billed to
+> the Claude weekly limit. Starting now.
 
 ## Launch
 
 ```
 Workflow({
   scriptPath: "skills/suede-ship-copy/workflows/suede-ship-copy.js",
-  args: { piece, surface, sources, given, audience, liveUrl, outDir, mustSay, wordBudget }
+  args: { piece, surface, sources, given, audience, liveUrl, outDir, mustSay, wordBudget, agentBudget }
 })
 ```
 

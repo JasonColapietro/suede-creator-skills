@@ -36,6 +36,16 @@ const LIVE = (A && A.liveUrl) || null
 const OUT = (A && A.outDir) || null
 const MUST_SAY = (A && A.mustSay) || []
 const BUDGET = (A && A.wordBudget) || null
+// Total AGENT budget — distinct from the word budget above. The caller is required to
+// ask the user which range they want before launching (see SKILL.md); this default
+// exists so a caller that forgets gets the middle range rather than the widest.
+const AGENT_BUDGETS = {
+  light:    { angles: 2, gapFills: 1, refuteCap: 2 },
+  standard: { angles: 3, gapFills: 2, refuteCap: 4 },
+  deep:     { angles: 3, gapFills: 3, refuteCap: 6 },
+}
+const AGENT_BUDGET_NAME = AGENT_BUDGETS[(A && A.agentBudget) || ''] ? A.agentBudget : 'standard'
+const AGENT_BUDGET = AGENT_BUDGETS[AGENT_BUDGET_NAME]
 // Facts the requester states themselves. These are GIVEN. They are never
 // audited, never narrowed, never dropped, and never become a review finding.
 // The audit exists to catch agents inventing things, not to second-guess the
@@ -696,7 +706,7 @@ If coverage is genuinely sufficient, return an empty array — padding costs a r
 )
 
 const gapFills = critic && critic.gaps.length
-  ? (await parallel(critic.gaps.slice(0, 2).map(g => () => agent(
+  ? (await parallel(critic.gaps.slice(0, AGENT_BUDGET.gapFills).map(g => () => agent(
       `${BASE}\n\nLens: GAP FILL. Close exactly this gap and nothing else.
 Missing: ${g.missing}
 Why it matters: ${g.whyItMatters}
@@ -704,7 +714,7 @@ How to close it: ${g.howToClose}`,
       { label: `gap:${g.missing.slice(0, 30)}`, phase: 'Gaps', schema: RESEARCH, effort: 'medium' }
     )))).filter(Boolean)
   : []
-if (critic && critic.gaps.length > 2) log(`gap critic raised ${critic.gaps.length}; filling the first 2, carrying the rest to the handoff as unread`)
+if (critic && critic.gaps.length > AGENT_BUDGET.gapFills) log(`gap critic raised ${critic.gaps.length}; filling the first ${AGENT_BUDGET.gapFills}, carrying the rest to the handoff as unread`)
 
 const research = [...sweep, ...gapFills]
 // Only AGENT-GENERATED facts reach the audit. A lens that echoed one of the
@@ -725,7 +735,7 @@ if (restated.length) log(`${restated.length} research fact(s) restated a given a
 const constraints = research.flatMap(r => r.constraints)
 const stillUnread = [...new Set([
   ...research.flatMap(r => r.unread),
-  ...(critic ? critic.gaps.slice(2).map(g => g.missing) : []),
+  ...(critic ? critic.gaps.slice(AGENT_BUDGET.gapFills).map(g => g.missing) : []),
 ])]
 
 // THE CLAIM AUDIT. The load-bearing skeptic of this DAG, and it has exactly one
@@ -830,7 +840,7 @@ crowded and every rival page reads the same. It fails when the wedge is real but
 so name who specifically cares, and what they were doing instead.`,
 ]
 
-const angles = (await parallel(ANGLE_POSTURES.map((p, i) => () => agent(
+const angles = (await parallel(ANGLE_POSTURES.slice(0, AGENT_BUDGET.angles).map((p, i) => () => agent(
   `${ANGLE_BASE}\n\n${p}`,
   { label: `angle:${i + 1}`, phase: 'Angles', schema: ANGLE, effort: 'high' }
 )))).filter(Boolean)
@@ -1161,7 +1171,7 @@ if (outOfScopeFindings.length) log(`${outOfScopeFindings.length} finding(s) targ
 
 const minor = findings.filter(f => f.severity === 'minor')
 const toRefute = findings.filter(f => f.severity !== 'minor')
-const REFUTE_CAP = 4
+const REFUTE_CAP = AGENT_BUDGET.refuteCap
 const refuting = toRefute.slice(0, REFUTE_CAP)
 if (toRefute.length > REFUTE_CAP) {
   log(`${toRefute.length} blocker/major findings, refuting the first ${REFUTE_CAP}; the remaining ${toRefute.length - REFUTE_CAP} ride to the handoff as unverified caveats`)
@@ -1386,6 +1396,7 @@ const mechanical = {
   emDashes,
   words: finalWords,
   budget: BUDGET,
+  agentBudget: AGENT_BUDGET_NAME,
   overBudget,
   fieldsOverLimit: failedFields.map(f => `${f.field} ${f.chars}/${f.limit}`),
   stalledSections: stalled.map(x => x.section.name),

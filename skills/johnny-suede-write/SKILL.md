@@ -5,6 +5,20 @@ description: "Write sharper Suede copy for docs, pages, email, social, headlines
 
 # Johnny Suede Write
 
+## Model selection — never Fable by default
+
+Subagents inherit the session model unless the spawning call names one. Nothing in
+this skill picks a model, so every agent it fans out lands on whatever the session
+happens to be set to. That is how a run sized against one allocation gets billed to
+another without anyone choosing it.
+
+**Fable must be specified to be used. This skill's subagents never run on Fable
+unless the user named Fable for this run.** An inherited session model is not a
+specification — "the session was already on it" is not the user asking. Absent an
+explicit Fable instruction, do one of two things before launching: name a different
+model on the agent calls, or state plainly that the run will bill to the Fable
+allocation and get an answer. Silence is not consent to spend it.
+
 ## Gate policy — advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
