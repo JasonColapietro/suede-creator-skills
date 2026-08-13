@@ -28,6 +28,16 @@ if (typeof A === 'string') {
 const REPO = (A && A.repo) || null
 const SCOPE = (A && A.scope) || null
 const DEPLOYS = !!(A && A.deploys)
+// Total agent budget. The caller is required to ask the user which range they want
+// before launching (see SKILL.md) — this default exists so a caller that forgets gets
+// the middle range rather than the widest one.
+const BUDGETS = {
+  light:    { maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
+  standard: { maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
+  deep:     { maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
+}
+const BUDGET_NAME = BUDGETS[(A && A.agentBudget) || ''] ? A.agentBudget : 'standard'
+const BUDGET = BUDGETS[BUDGET_NAME]
 const LIVE = (A && A.liveUrl) || null
 if (!REPO || !SCOPE) throw new Error(`Pass args: { repo: "~/code/<repo>", scope: "<what to change>" } — got ${JSON.stringify(A)}`)
 
@@ -440,7 +450,7 @@ sufficient, return an empty array — padding this list costs a round of agents.
 )
 
 const gapFills = critic && critic.gaps.length
-  ? (await parallel(critic.gaps.map(g => () => agent(
+  ? (await parallel(critic.gaps.slice(0, BUDGET.gapFills).map(g => () => agent(
       `${BASE}\n\nLens: GAP FILL. Close exactly this gap and nothing else.
 Missing: ${g.missing}
 Why it matters: ${g.whyItMatters}
@@ -523,7 +533,7 @@ Hard rules:
 - No lane may list a protected dirty file.
 - Each lane gets an observable acceptance criterion (a command, a route, a rendered state) — never "looks right".
 - Tier each lane honestly: mechanical (complete spec, no judgment), integration (multi-file, pattern-match the codebase), judgment (design/security/data-shape calls).
-- Prefer 2-5 lanes. Eight is the ceiling and it is rarely right.
+- This run's agent budget allows at most ${BUDGET.maxLanes} lanes. Fewer is better; that number is a ceiling, not a target.
 
 Read the candidate files before deciding ownership.`,
   { schema: PLAN, phase: 'Plan', effort: 'high' }
@@ -641,6 +651,13 @@ if (crossWorktree.length) {
   log(`WARN: ${crossWorktree.length} lane file(s) also in flight on idle sibling branches — merge cost, carried to handoff: ${crossWorktree.map(x => `${x.file} (${x.claims.map(c => c.branch).join('/')})`).join(', ')}`)
 }
 log(`${plan.lanes.length} disjoint lanes over ${owner.size} files: ${plan.lanes.map(l => `${l.name}[${l.tier}]`).join(', ')}`)
+// Lanes are not truncated to fit the budget — dropping a lane drops scope the user asked
+// for, silently, which is a worse failure than costing more than planned. Verification
+// depth IS capped, because everything it skips is reported rather than lost. So an
+// over-budget plan says so out loud and keeps going.
+if (plan.lanes.length > BUDGET.maxLanes) {
+  log(`OVER BUDGET: the ${BUDGET_NAME} range allows ${BUDGET.maxLanes} lanes and the plan needs ${plan.lanes.length}. Lanes are not dropped — scope survives, cost rises. Projected ceiling is now about ${22 + plan.lanes.length * (3 + BUDGET.refutePerLane * 2) + BUDGET.fixCap} agents.`)
+}
 
 // ------------------------------------------------- 2-3. build -> review -> refute
 // Pipelined, NOT barriered. Lane A's findings are being refuted while lane B is
@@ -654,8 +671,8 @@ const EFFORT = { mechanical: 'low', integration: 'medium', judgment: 'high' }
 // to 20 findings for ONE lane; at three verifiers each that was 60 agents for that lane
 // alone, against a run that advertises about fifty in total. These two ceilings make the
 // worst case finite and knowable. Both are logged when they bite — never a silent cap.
-const REFUTE_CAP_PER_LANE = 4
-const FIX_CAP = 8
+const REFUTE_CAP_PER_LANE = BUDGET.refutePerLane
+const FIX_CAP = BUDGET.fixCap
 
 const laneResults = await pipeline(
   plan.lanes,
@@ -945,6 +962,7 @@ handoff look clean is the failure mode this section exists to prevent.`,
 )
 
 return {
+  agentBudget: BUDGET_NAME,
   worktree: scout.worktreePath,
   baseSha: scout.baseSha,
   lanes: plan.lanes.map(l => l.name),

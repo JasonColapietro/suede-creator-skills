@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip () {
+function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -46,7 +46,7 @@ function runShip () {
       case 'Plan':
         if (label === 'redteam:plan') return { objections: [] }
         return {
-          lanes: Array.from({ length: LANES }, (_, i) => ({
+          lanes: Array.from({ length: lanes }, (_, i) => ({
             name: `lane${i}`,
             task: 'do the thing',
             files: [`src/lane${i}.ts`],
@@ -58,7 +58,7 @@ function runShip () {
         return { state: 'done', changed: ['src/x.ts'], notes: '' }
       case 'Review':
         return {
-          findings: Array.from({ length: FINDINGS_PER_LENS }, () => {
+          findings: Array.from({ length: findingsPerLens }, () => {
             const n = findingSeq++
             return {
               file: `src/finding${n}.ts`,
@@ -104,7 +104,7 @@ function runShip () {
     pipeline,
     () => {},
     (m) => logs.push(m),
-    { repo: '/tmp/repo', scope: 'change the thing', deploys: true },
+    { repo: '/tmp/repo', scope: 'change the thing', deploys: true, agentBudget },
     { total: null, spent: () => 0, remaining: () => Infinity },
     async () => {},
   ).then((result) => ({ result, calls, logs }))
@@ -137,6 +137,40 @@ test('a worst-case run stays within the cost the skill advertises', async () => 
   assert.ok(
     calls.length <= 120,
     `the DAG spawned ${calls.length} agents on worst-case input; the documented ceiling is ~115.`)
+})
+
+test('each agent-budget range holds its documented ceiling', async () => {
+  // The user picks one of these three before launch, so each has to mean something.
+  // Worst-case input: 8 lanes, both review lenses at maxItems, every finding a blocker.
+  // Each range caps the lane count it asks the planner for, so the ceiling is measured
+  // against a plan that respects it — worst-case findings, blockers throughout.
+  const ranges = [
+    { range: 'light', lanes: 3, ceiling: 45 },
+    { range: 'standard', lanes: 5, ceiling: 80 },
+    { range: 'deep', lanes: 8, ceiling: 150 },
+  ]
+  const counts = {}
+  for (const { range, lanes, ceiling } of ranges) {
+    const { calls } = await runShip({ agentBudget: range, lanes })
+    counts[range] = calls.length
+    assert.ok(
+      calls.length <= ceiling,
+      `${range} spawned ${calls.length} agents; its documented ceiling is ${ceiling}.`)
+  }
+  // The ranges must actually separate — three names for one cost is a lie.
+  assert.ok(
+    counts.deep > counts.standard && counts.standard > counts.light,
+    `ranges must be distinct, got ${JSON.stringify(counts)}`)
+})
+
+test('a plan that exceeds its range says so out loud instead of dropping a lane', async () => {
+  // Lanes are deliberately not truncated to fit the budget: dropping one drops scope the
+  // user asked for. The guarantee is that going over is announced with a new projection.
+  const { logs, result } = await runShip({ agentBudget: 'light', lanes: 8 })
+  assert.ok(
+    logs.some((l) => l.startsWith('OVER BUDGET')),
+    'an over-budget plan must log OVER BUDGET with a revised projection')
+  assert.equal(result.lanes.length, 8, 'every planned lane must still be built')
 })
 
 test('everything dropped before refutation is reported, never silently discarded', async () => {
