@@ -11,6 +11,7 @@
     "build:cards": "node scripts/build-skill-cards.mjs",
     "build:book": "node scripts/build-book.mjs && node scripts/build-book-pdf.mjs && node scripts/build-book-site.mjs",
     "build:shiplog": "node scripts/build-shiplog.mjs",
+    "build:mcp-package": "node scripts/build-mcp-package.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
     "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
@@ -19,7 +20,7 @@
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
     "test": "npm run validate && npm run test:number-words && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:ship-cost && npm run test:contributions && npm run test:python",
     "audit:dependencies": "npm audit --package-lock-only --omit=dev --audit-level=high",
-    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test",
+    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test && node scripts/build-mcp-package.mjs --check",
     "build:pdf": "node scripts/build-book-pdf.mjs",
     "fix:counts": "node scripts/validate-skill-pack.mjs --fix",
     "test:number-words": "node --test tests/test_number_words.mjs"
