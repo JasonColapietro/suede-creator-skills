@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.JasonColapietro/suede-skills-mcp",
+  "title": "Suede Skills MCP",
+  "description": "Read-only access to 71 Suede skills: discovery, install options, SEO audits, A-F grading.",
+  "version": "0.11.1",
+  "websiteUrl": "https://jasoncolapietro.github.io/suede-creator-skills/",
+  "repository": {
+    "url": "https://github.com/JasonColapietro/suede-creator-skills",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "suede-skills-mcp",
+      "version": "0.11.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "named",
+          "name": "--profile",
+          "description": "Which skill surface to expose: all, workflow, artist, or creator.",
+          "isRequired": false,
+          "default": "all",
+          "choices": ["all", "workflow", "artist", "creator"]
+        }
+      ]
+    }
+  ]
+}
