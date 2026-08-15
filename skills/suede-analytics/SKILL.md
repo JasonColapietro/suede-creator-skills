@@ -1,6 +1,6 @@
 ---
 name: suede-analytics
-description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), attribution modeling and reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
+description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTM and campaign-parameter hygiene, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
 metadata:
   version: 2.0.1
 ---
@@ -11,38 +11,31 @@ Use this Suede measurement playbook to build tracking that supports auditable ma
 
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — the key conversions, the decisions the data has to serve, and the tools already in place drive every recommendation here.
 
-Before implementing tracking, understand:
-
-1. **Business Context** - What decisions will this data inform? What are key conversions?
-2. **Current State** - What tracking exists? What tools are in use?
-3. **Technical Context** - What's the tech stack? Any privacy/compliance requirements?
+Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 
 ---
 
-## Core Principles
+## Production Changes: Halt Before Mutating
 
-### 1. Track for Decisions, Not Data
-- Every event should inform a decision
-- Avoid vanity metrics
-- Quality > quantity of events
+Editing live tags, properties, destinations, or consent settings is the
+highest-consequence action in this skill, and Boundaries below forbids doing it
+without explicit authorization and a rollback plan. When a task requires one and
+you do not have both, halt in four parts:
 
-### 2. Start with the Questions
-- What do you need to know?
-- What actions will you take based on this data?
-- Work backwards to what you need to track
+1. Stop. Do not publish the container, edit the property, or change the consent
+   configuration.
+2. Name the blocker in one line ("publishing this GTM container version changes
+   what fires for all live traffic; I have no rollback version identified").
+3. Offer 2-4 options (stage it in Preview and hand over the trace; write the
+   change as a diff for the owner to publish; publish after the user names the
+   rollback version; scope the change to a test environment).
+4. Wait for the answer. Do not pick one and continue.
 
-### 3. Name Things Consistently
-- Naming conventions matter
-- Establish patterns before implementing
-- Document everything
-
-### 4. Maintain Data Quality
-- Validate implementation
-- Monitor for issues
-- Clean data > more data
+The same halt applies to anything the Privacy and Compliance section below sends
+to legal or privacy review: an unresolved lawful-basis question blocks
+implementation, it does not get an assumption.
 
 ---
 
@@ -85,7 +78,6 @@ checkout_payment_completed
 - Be specific: `cta_hero_clicked` vs. `button_clicked`
 - Include context in properties, not event name
 - Avoid spaces and special characters
-- Document decisions
 
 ---
 
@@ -125,10 +117,8 @@ checkout_payment_completed
 | Product | product_id, product_name, category, price |
 
 ### Best Practices
-- Use consistent property names
-- Include relevant context
-- Don't duplicate automatic properties
 - Avoid PII in properties
+- Reuse the Standard Properties names above rather than inventing per-event variants
 
 ---
 
@@ -211,12 +201,20 @@ dataLayer.push({
 
 ### Validation Checklist
 
-- [ ] Events firing on correct triggers
-- [ ] Property values populating correctly
-- [ ] No duplicate events
-- [ ] Works across browsers and mobile
-- [ ] Conversions recorded correctly
-- [ ] No PII leaking
+Each box closes on an artifact from the tools above, matched to the tool
+category's "Required current proof" in Tool Integrations below. An unchecked box
+does not mean "probably fine" — it means the tracking is reported as
+**unverified**, never as done. Inspecting the tag config is not proof; a readback is.
+
+- [ ] **Events firing on correct triggers** — a DebugView/live-events capture showing each event on the intended action
+- [ ] **Property values populating correctly** — a property readback per event, values matched against the tracking plan
+- [ ] **No duplicate events** — the same capture inspected for repeat fires (multiple containers, trigger firing twice)
+- [ ] **Works across browsers and mobile** — the readback repeated on at least one non-primary browser and one mobile session
+- [ ] **Conversions recorded correctly** — a source receipt plus a destination receipt for the conversion, not the source alone
+- [ ] **No PII leaking** — the payload of a real captured event read field by field, plus masking/sampling settings for session replay
+
+Report what was proven and what was not. "Instrumented" and "verified" are
+different claims; only the second one may cite this checklist.
 
 ### Common Issues
 

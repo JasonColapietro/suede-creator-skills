@@ -9,23 +9,15 @@ metadata:
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
+proceed" line below — is a **recommendation to the user, not a control on the
+agent**. Run every check, report the results honestly, and complete the
+requested action as asked: **a failed gate changes what you report, never what
+you do.** Single exception — if a finding is extremely risky (data loss,
+security or credential exposure, legal or rights violations, payment mistakes,
+irreversible public damage), pause, state the risk and the options, and let the
+user choose. Their choice is final.
 
 ## Boundaries
 
@@ -64,6 +56,7 @@ Gather this context (ask if not provided):
 ### 4. Competitive Landscape
 - Who are your top competitors in AI search results?
 - Are they being cited where you're not?
+- Do you have a Wikipedia entry or presence on review sites / Reddit for your category?
 
 ---
 
@@ -88,12 +81,7 @@ Traditional SEO gets you ranked. AI SEO gets you **cited**.
 
 In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3 — AI systems select sources based on content quality, structure, and relevance, not just rank position.
 
-**Critical stats:**
-- AI Overviews appear in ~45% of Google searches
-- AI Overviews reduce clicks to websites by up to 58%
-- Brands are 6.5x more likely to be cited via third-party sources than their own domains
-- Optimized content gets cited 3x more often than non-optimized
-- Statistics and citations boost visibility by 40%+ across queries
+The widely-circulated market statistics (AI Overview prevalence, click loss, third-party citation multiples) are undated and unsourced; they live in [references/platform-ranking-factors.md](references/platform-ranking-factors.md) under "Market statistics" with that caveat attached. Read them for orientation, never quote them as evidence in a deliverable.
 
 ### Google's Official Stance vs. Multi-Platform Reality
 
@@ -192,7 +180,15 @@ Verify your robots.txt allows AI crawlers. Each AI platform has its own bot, and
 - **Google-Extended** — Google Gemini and AI Overviews
 - **Bingbot** — Microsoft Copilot (via Bing)
 
-Check your robots.txt for `Disallow` rules targeting any of these. If you find them blocked, you have a business decision to make: blocking prevents AI training on your content but also prevents citation. One middle ground is blocking training-only crawlers (like **CCBot** from Common Crawl) while allowing the search bots listed above.
+Fetch the file and read the rules — do not assume:
+
+```bash
+curl -sS -w '\nHTTP %{http_code}\n' https://<domain>/robots.txt | grep -inE 'GPTBot|ChatGPT-User|PerplexityBot|ClaudeBot|anthropic-ai|Google-Extended|Bingbot|CCBot|^User-agent|^Disallow|^HTTP'
+```
+
+Read the grep output as blocks: a `Disallow:` line belongs to the `User-agent:` above it, and a `User-agent: *` block applies to every bot with no block of its own. If robots.txt returns anything other than 200, or the fetch fails, report AI bot access as **unverified with the reason** — never as open. Report per bot: allowed, blocked, or unverified.
+
+If bots are blocked, that is a business decision: blocking prevents AI training on your content but also prevents citation. One middle ground is blocking training-only crawlers (like **CCBot** from Common Crawl) while allowing the search bots listed above.
 
 See [references/platform-ranking-factors.md](references/platform-ranking-factors.md) for the full robots.txt configuration.
 
@@ -427,14 +423,7 @@ Not all content is equally citable. Prioritize these formats:
 | Recommendation rate | Whether you're on the shortlist, not just cited (see [citations-vs-recommendations.md](references/citations-vs-recommendations.md)) | Prompt tracking + mention framing |
 | Source attribution | Which of your pages get cited | Track referral traffic from AI sources |
 
-### AI Visibility Monitoring Tools
-
-| Tool | Coverage | Best For |
-|------|----------|----------|
-| **Otterly AI** | ChatGPT, Perplexity, Google AI Overviews | Share of AI voice tracking |
-| **Peec AI** | ChatGPT, Gemini, Perplexity, Claude, Copilot+ | Multi-platform monitoring at scale |
-| **ZipTie** | Google AI Overviews, ChatGPT, Perplexity | Brand mention + sentiment tracking |
-| **LLMrefs** | ChatGPT, Perplexity, AI Overviews, Gemini | SEO keyword → AI visibility mapping |
+Vendor tools (Otterly, Peec, ZipTie, LLMrefs) and their current platform coverage are in [references/platform-ranking-factors.md](references/platform-ranking-factors.md) — read that table only when the query set is too large to check by hand, and verify coverage on the vendor's own site before recommending one.
 
 ### DIY Monitoring (No Tools)
 
@@ -446,21 +435,7 @@ Monthly manual check:
 
 ### Search Console expectations
 
-Google's guide is explicit: **there is no AI-specific Search Console reporting**. AI Overviews and AI Mode use core Search ranking, so the standard Search Console reports (Performance, Coverage, Core Web Vitals) are still what you measure with for Google. The third-party tools above are the only way to see cross-platform AI citation behavior.
-
----
-
-## What NOT to Do
-
-Google's guide calls these out explicitly — they hurt across both traditional Search and AI features.
-
-1. **Write separate content "for AI"**. Same content should serve people and AI. Writing variants targeted at AI systems risks the **scaled content abuse spam policy** — Google's words.
-2. **Chunk pages into AI-bait fragments**. Google's guide is direct: *"Don't break your content into tiny pieces for AI to better understand it."* Use normal paragraph + heading structure.
-3. **Generate at scale for ranking manipulation**. AI-generated content is fine *if* it meets Search Essentials and spam policies. Mass-producing thin variations does not.
-4. **Pursue inauthentic mentions**. Don't fabricate citations or bulk-spam Reddit/Wikipedia for AI visibility. Real participation only.
-5. **Block AI crawlers if you want citation**. Blocking GPTBot, PerplexityBot, ClaudeBot, Google-Extended means those engines literally cannot cite you. Block training-only crawlers (CCBot) if you must, not the search-and-cite ones.
-6. **Hide your main content behind JS that doesn't render**. Both core Search and AI agents need to see your content; JS-only rendering loses both audiences.
-7. **Skip E-E-A-T fundamentals**. Author identity, first-hand experience, expertise signals, transparent sourcing — Google's guide leans heavily on these for AI features.
+Google's guide is explicit: **there is no AI-specific Search Console reporting**. AI Overviews and AI Mode use core Search ranking, so the standard Search Console reports (Performance, Coverage, Core Web Vitals) are still what you measure with for Google. The third-party tools in [references/platform-ranking-factors.md](references/platform-ranking-factors.md) are the only way to see cross-platform AI citation behavior.
 
 ---
 
@@ -470,31 +445,47 @@ For tactical guidance on SaaS product pages, blog content, comparison/alternativ
 
 ---
 
-## Common Mistakes
+## Common Mistakes and What NOT to Do
 
-- **Ignoring AI search entirely** — ~45% of Google searches now show AI Overviews, and ChatGPT/Perplexity are growing fast
+The first seven are called out explicitly in Google's guide — they hurt across both traditional Search and AI features.
+
+1. **Write separate content "for AI"**. Same content should serve people and AI. Writing variants targeted at AI systems risks the **scaled content abuse spam policy** — Google's words. If content reads like it was written to game an algorithm, it won't get cited or convert.
+2. **Chunk pages into AI-bait fragments**. Google's guide is direct: *"Don't break your content into tiny pieces for AI to better understand it."* Use normal paragraph + heading structure.
+3. **Generate at scale for ranking manipulation**. AI-generated content is fine *if* it meets Search Essentials and spam policies. Mass-producing thin variations does not.
+4. **Pursue inauthentic mentions**. Don't fabricate citations or bulk-spam Reddit/Wikipedia for AI visibility. Real participation only.
+5. **Block AI crawlers if you want citation**. Blocking GPTBot, PerplexityBot, ClaudeBot, Google-Extended means those engines literally cannot cite you. Block training-only crawlers (CCBot) if you must, not the search-and-cite ones.
+6. **Hide your main content behind JS that doesn't render**. Both core Search and AI agents need to see your content; JS-only rendering loses both audiences.
+7. **Skip E-E-A-T fundamentals**. Author identity, first-hand experience, expertise signals, transparent sourcing — Google's guide leans heavily on these for AI features.
+
+The rest are field mistakes, not policy violations:
+- **Ignoring AI search entirely** — AI Overviews now appear on a large share of Google searches, and ChatGPT/Perplexity are growing fast
 - **Treating AI SEO as separate from SEO** — Good traditional SEO is the foundation; AI SEO adds structure and authority on top
-- **Writing for AI, not humans** — If content reads like it was written to game an algorithm, it won't get cited or convert
 - **No freshness signals** — Undated content loses to dated content because AI systems weight recency heavily. Show when content was last updated
 - **Gating all content** — AI can't access gated content. Keep your most authoritative content open
 - **Ignoring third-party presence** — You may get more AI citations from a Wikipedia mention than from your own blog
 - **No structured data** — Schema markup gives AI systems structured context about your content
 - **Keyword stuffing** — Unlike traditional SEO where it's just ineffective, keyword stuffing actively reduces AI visibility by 10% (Princeton GEO study)
 - **Hiding pricing behind "contact sales" or JS-rendered pages** — AI agents evaluating your product on behalf of buyers can't parse what they can't read. Add a `/pricing.md` file
-- **Blocking AI bots** — If GPTBot, PerplexityBot, or ClaudeBot are blocked in robots.txt, those platforms can't cite you
 - **Generic content without data** — "We're the best" won't get cited. "Our customers see 3x improvement in [metric]" will
 - **Forgetting to monitor** — You can't improve what you don't measure. Check AI visibility monthly at minimum
 
 ---
 
-## Task-Specific Questions
+## Output Contract
 
-1. What are your top 10-20 most important queries?
-2. Have you checked if AI answers exist for those queries today?
-3. Do you have structured data (schema markup) on your site?
-4. What content types do you publish? (Blog, docs, comparisons, etc.)
-5. Are competitors being cited by AI where you're not?
-6. Do you have a Wikipedia page or presence on review sites?
+Close every AI visibility pass with this block. Fill every field; write "not checked" rather than leaving one blank. Only rows for queries and pages actually run belong in it.
+
+```text
+=== AI SEARCH VISIBILITY REPORT ===   Site / pages:        Date:
+QUERIES RUN (Step 1) — one row per query actually executed, "not queried" for any platform skipped:
+  Query | AI Overview | ChatGPT | Perplexity | You cited | Competitors cited
+BOT ACCESS (Step 4) — robots.txt fetch: 200 | other code | failed (reason)
+  Per bot (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, Bingbot): allowed | blocked | unverified
+EXTRACTABILITY (Step 3) — [page]: N of 10 checks pass | failing checks: [names]
+PRIORITIZED FIXES — 1. [P1] Page | What is wrong | The exact change to make
+COVERAGE — Queried and observed: [...] | Not checked, and why: [...]
+SHIP GATE — ship | ship-with-caveats | hold — reason
+```
 
 ---
 

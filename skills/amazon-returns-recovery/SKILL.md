@@ -1,35 +1,25 @@
 ---
 name: amazon-returns-recovery
-description: "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those."
+description: "Suede-affiliated Amazon money-recovery audit for restocking fees, short or denied refunds, and Amazon-billed subscriptions. Use when the user mentions a restocking fee, a short or denied Amazon refund, or a forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read-only discovery; no chat, cancellation, or dispute without the account owner's per-item confirmation, and never a promise of recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon (use subscription-recovery)."
+metadata:
+  version: 1.0.0
 ---
 
 # Amazon Returns Recovery
 
+**Iron Law:**
+
+```
+Nothing is disputed, canceled, or sent without the account owner's per-item
+confirmation. Discovery is read-only; every action phase is gated.
+```
+
 ## Why this exists
 
-This started as a test of a general-purpose contract/customer-service negotiation
-tool — the goal was just to see if it could hold its own in a dispute. Pointed at a
-live Amazon account, it surfaced two restocking fees ($44.99 and $28.50) the account
-owner had no idea existed, on returns processed weeks earlier. Both got waived in the
-same sitting — the first refunded exactly the $44.99 fee, the second came back at
-$30.63 (the associate rounded up past the $28.50 fee as a goodwill gesture). Total
-recovered from fees alone: **$75.62**, on charges the account owner never would have
-gone looking for. The lesson: money like this doesn't announce itself — restocking
-fees, partial refunds, and price-protection differences sit quietly in order history
-unless something goes and checks. That's what this skill automates.
+1. **Money like this doesn't announce itself.** Restocking fees, short refunds, and forgotten subscription charges sit unannounced in order history unless something checks.
+2. **Overturning an already-denied refund after the return window closed is the realistic ceiling of a well-reasoned exception ask** — so ask for more than a waiver when the facts support it.
 
-Treat this as a metal detector, not an autopilot: it surfaces what's buried and drafts
-the case, but every dispute goes through the account owner before anything gets sent.
-
-The same account also had a third case worth knowing about, even though it's outside
-this skill's default restocking-fee scope: a $372.69 electric shaver the account
-owner had already been **denied a refund on once — while still inside the return
-window**. Re-disputed two days after the window closed, hands-off, the case ended in
-a full **$372.69** refund with no return required — the associate just let the account
-owner keep it. Overturning an existing denial after the window shut is the ceiling of
-what a well-reasoned exception ask can get, not just fee waivers. See
-[references/example-cases.md](references/example-cases.md) for the full writeup of
-all three real cases, including exactly what was said and what worked.
+Read [references/example-cases.md](references/example-cases.md) before drafting a dispute: three real resolved cases with the exact wording that worked.
 
 ## Prerequisites
 
@@ -73,7 +63,7 @@ touching anything.
    history — report what's found so far and note that more may be scattered across
    older years if the user wants a deeper sweep.
 
-**Stop here.** Do not open the dispute chat yet.
+**Stop here** — Iron Law. Discovery ends; nothing is opened or disputed yet.
 
 ## Phase 1b — Digital subscription audit (read-only, no side effects)
 
@@ -110,7 +100,7 @@ ask reserved for genuinely forgotten charges.
    date, and — if the page shows it — last-used or last-watched date. If usage data
    isn't visible on the billing page, ask the user directly whether they still use
    it rather than guessing.
-6. Don't cancel or touch anything in this phase. Just build the list.
+6. Build the list only — Iron Law.
 
 ## Phase 2 — Confirm with the user
 
@@ -141,16 +131,10 @@ For subscription cancellations, note the two distinct asks are not equally stron
   subscription's own settings page (the URLs in Phase 1b) without needing chat at
   all — try that first, it's faster than a chat dispute.
 - **"Refund the last charge because I forgot to cancel / wasn't using it"** is a
-  goodwill ask, same as a restocking-fee waiver — reasonable to make once, but don't
-  push past a single polite counter if declined, and don't claim you tried to cancel
-  earlier if that isn't true.
+  goodwill ask, same as a restocking-fee waiver — reasonable to make once, under
+  the truthfulness and single-counter rules in Boundaries.
 
-Ground rules while chatting with the associate:
-- State only true facts: order number or subscription name, item, price, fee amount
-  (or subscription charge amount), and that it was sold/billed by Amazon.com (when
-  true). Don't invent a prior contact attempt or a return/cancellation reason that
-  didn't happen — the ask itself is reasonable on its own and doesn't need
-  embellishment to land.
+Two chat mechanics, beyond those Boundaries rules:
 - When offered a refund method, default to original payment method unless the user
   said otherwise.
 - Confirm the exact refund amount and stated timeline, or the exact cancellation
@@ -159,17 +143,29 @@ Ground rules while chatting with the associate:
 ## Phase 4 — Report
 
 After each dispute or cancellation resolves (or if the associate declines), tell the
-user: amount recovered or subscription canceled, refund method, stated ETA or
-effective date, and associate name if given. If several items were pursued in one
-session, summarize as a running total across fees, refunds, and subscriptions
-canceled (report subscription savings as "$X/month going forward" separately from
-one-time dollars recovered — they're not the same kind of money).
+user: amount, refund method, stated ETA or effective date, and associate name if
+given. If several items were pursued in one session, summarize as a running total
+across fees, refunds, and subscriptions canceled (report subscription savings as
+"$X/month going forward" separately from one-time dollars recovered — they're not
+the same kind of money).
 
-## Stretch goal — not yet built
+**Evidence rules — a promise is not money:**
 
-**Price-protection refunds**: some categories/sellers refund the difference if a
-listing's price drops within the return window after purchase. This would mean
-comparing paid price vs. current listing price on recent (still-returnable) orders
-and flagging drops worth claiming. Worth building once the restocking-fee and
-subscription flows are both solid, but out of scope for now — don't attempt it
-without discussing it with the user first, since it's unvalidated.
+- Quote the associate's confirmation **verbatim from the transcript**, not paraphrased. No captured confirmation line means no amount is reported.
+- Label every unverified amount **promised**, never "recovered." Only a posted line item counts toward a recovered total.
+- Set the readback as a follow-up: the stated ETA is typically 3-5 business days, so it cannot resolve in-session. After that date, reopen the order detail page, expand the **Refund Total** chevron per Phase 1a step 3, and compare the breakdown against the promised amount. Tell the user the date to check and the number to look for.
+- If the readback shows the waiver never posted, reopen it as a new case with the transcript quote as evidence.
+
+## Boundaries
+
+- Nothing is disputed, canceled, or sent without the account owner's per-item confirmation; approval for one item never transfers to another. Phases 1a and 1b are read-only.
+- On a shared login, flag orders belonging to other people instead of folding them into the batch.
+- State only true facts to an associate: order number or subscription name, item, price, fee amount. Never invent a prior contact attempt, a return reason, or a cancellation reason.
+- Make a goodwill ask once. Do not push past a single polite counter if declined.
+- Never promise recovery, and never report a promised amount as recovered money.
+- Price-protection refunds are out of scope and unvalidated — do not attempt one without discussing it with the user first.
+
+## Routing
+
+- Subscriptions billed outside Amazon (by the provider, Apple, or Google rather than the Amazon account) -> use `subscription-recovery`.
+- Bank chargebacks, marketplace A-to-z seller claims, and price-protection claims are out of scope for this skill entirely.

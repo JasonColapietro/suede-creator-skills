@@ -295,6 +295,54 @@ The most effective cancel flows use segmentation to show different offers to dif
 
 ---
 
+## Screen Mockups
+
+Reference rendering of the survey screen and the "Too expensive" offer screen the
+SKILL.md tables specify. Illustration only — the reason list is the exit-survey
+table and the offer is the offer-to-reason mapping, so where this drawing and
+those tables disagree, the tables win.
+
+```
+┌─────────────────────────────────────┐
+│  We're sorry to see you go          │
+│                                     │
+│  What's the main reason you're      │
+│  cancelling?                        │
+│                                     │
+│  ○ Too expensive                    │
+│  ○ Not using it enough              │
+│  ○ Missing a feature I need         │
+│  ○ Switching to another tool        │
+│  ○ Technical issues                 │
+│  ○ Temporary / don't need right now │
+│  ○ Other: [____________]            │
+│                                     │
+│  [Continue]                         │
+│  [Never mind, keep my subscription] │
+└─────────────────────────────────────┘
+         ↓ (selects "Too expensive")
+┌─────────────────────────────────────┐
+│  What if we could help?             │
+│                                     │
+│  We'd love to keep you. Here's a    │
+│  special offer:                     │
+│                                     │
+│  ┌───────────────────────────────┐  │
+│  │  25% off for the next 3 months│  │
+│  │  Save $XX/month               │  │
+│  │                               │  │
+│  │  [Accept Offer]               │  │
+│  └───────────────────────────────┘  │
+│                                     │
+│  Or switch to [Basic Plan] at       │
+│  $X/month →                         │
+│                                     │
+│  [No thanks, continue cancelling]   │
+└─────────────────────────────────────┘
+```
+
+---
+
 ## Compliance Notes
 
 ### FTC Click-to-Cancel Rule (US)

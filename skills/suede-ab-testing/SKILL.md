@@ -9,39 +9,29 @@ metadata:
 
 Use this Suede experimentation playbook to design tests that produce statistically valid, actionable results.
 
+## The Iron Law
+
+```
+Predeclare three things before a test launches — sample per variant,
+minimum duration, and the decision rule — and read the result only once
+all three are satisfied. A result read before then is preliminary.
+Never a winner.
+```
+
+- **Sample per variant**: the Sample Size table below, or a calculator run on your actual baseline.
+- **Minimum duration**: 1 full week (day-of-week variation), 2 business cycles (B2B), through paydays (e-commerce) — see the "Minimum Duration Rules" section of [references/sample-size-guide.md](references/sample-size-guide.md).
+- **Decision rule**: which metric, at which threshold, decides the call — written down before launch, not after.
+
+Two carve-outs, and only these two:
+
+- A **predeclared sequential or always-valid design** may look early under its own stopping rule (see "Sequential Testing" in the sample-size guide). Declaring it sequential after the peek does not count.
+- A **guardrail-triggered stop for harm** is a stop, not a winner call. Kill the variant, report no result.
+
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — baseline conversion rate, traffic volume, and available tooling decide whether a test is even powerable, and they are usually already written down there.
 
-Before designing a test, understand:
-
-1. **Test Context** - What are you trying to improve? What change are you considering?
-2. **Current State** - Baseline conversion rate? Current traffic volume?
-3. **Constraints** - Technical complexity? Timeline? Tools available?
-
----
-
-## Core Principles
-
-### 1. Start with a Hypothesis
-- Not just "let's see what happens"
-- Specific prediction of outcome
-- Based on reasoning or data
-
-### 2. Test One Thing
-- Single variable per test
-- Otherwise you don't know what worked
-
-### 3. Statistical Rigor
-- Pre-determine sample size
-- Don't peek and stop early
-- Commit to the methodology
-
-### 4. Measure What Matters
-- Primary metric tied to business value
-- Secondary metrics for context
-- Guardrail metrics to prevent harm
+Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 
 ---
 
@@ -166,12 +156,17 @@ We'll know this is true when [metrics].
 ## Running the Test
 
 ### Pre-Launch Checklist
-- [ ] Hypothesis documented
-- [ ] Primary metric defined
-- [ ] Sample size calculated
-- [ ] Variants implemented correctly
-- [ ] Tracking verified
-- [ ] QA completed on all variants
+
+Each box names the artifact that closes it. An unchecked box means the test is
+running unvalidated: any result it produces is reportable only as unverified,
+and a silently broken variant invalidates the entire run's traffic.
+
+- [ ] **Hypothesis documented** — written in the framework structure above, saved with the test record
+- [ ] **Primary metric defined** — the metric name plus the predeclared decision rule
+- [ ] **Sample size calculated** — n per variant and the projected end date, from the table or a calculator
+- [ ] **Variants implemented correctly** — a screenshot or recording of each variant exactly as served
+- [ ] **Tracking verified** — a fired-event readback showing the exposure and conversion events with correct properties (use `suede-analytics` for the instrumentation and the readback)
+- [ ] **QA completed on all variants** — a pass on every browser and device class the test will serve
 
 ### During the Test
 
@@ -252,8 +247,8 @@ Feed your experiment backlog from multiple sources:
 | Source | What to Look For |
 |--------|-----------------|
 | Analytics | Drop-off points, low-converting pages, underperforming segments |
-| Customer research | Pain points, confusion, unmet expectations |
-| Competitor analysis | Features, messaging, or UX patterns they use that you don't |
+| Customer research | Pain points, confusion, unmet expectations — use `suede-customer-research` to produce these |
+| Competitor analysis | Features, messaging, or UX patterns they use that you don't — use `suede-competitor-profiling` to produce these |
 | Support tickets | Recurring questions or complaints about conversion flows |
 | Heatmaps/recordings | Where users hesitate, rage-click, or abandon |
 | Past experiments | "Significant loser" tests often reveal new angles to try |
@@ -316,22 +311,23 @@ Over time, your playbook becomes a library of proven growth patterns specific to
 
 ---
 
-## Common Mistakes
+## Rationalizations
 
-### Test Design
-- Testing too small a change (undetectable)
-- Testing too many things (can't isolate)
-- No clear hypothesis
+The failure this skill exists to prevent is calling a result early under
+pressure. When one of these lines shows up — from a stakeholder or from you —
+the answer is already in this file.
 
-### Execution
-- Stopping early
-- Changing things mid-test
-- Not checking implementation
-
-### Analysis
-- Ignoring confidence intervals
-- Cherry-picking segments
-- Over-interpreting inconclusive results
+| Excuse | Reality |
+|--------|---------|
+| "It's already significant at 95%" | 95% is a threshold, not a guarantee. Significance checked before the predeclared sample is a peek, and peeking inflates false positives. Analysis Checklist item 1 still stands: preliminary. |
+| "We've been running it two weeks" | Duration is one of three conditions, not the condition. Check n per variant against the sample-size table before reading anything. |
+| "The trend is obvious" | Early trends reverse routinely — that is exactly what The Peeking Problem describes. An obvious trend at 30% of sample is a reason to wait, not to stop. |
+| "Leadership needs an answer Friday" | Then report it as preliminary, with the sample reached and the stopped-early status disclosed (Boundaries). A stopped-early result sold as a winner is what costs credibility two quarters from now. |
+| "The losing variant is clearly bad, why keep serving it" | Stopping for a significantly negative guardrail is legitimate (Experiment Cadence). But a stop for harm is a stop, not a winner call for the control. |
+| "The mobile segment won" | A segment that was not predeclared is a hypothesis for the next test, not a result. Post-hoc segment selection manufactures significance out of noise. |
+| "The numbers look fine, no need to re-check the build" | A variant can break silently mid-flight: a script fails, a flag flips, an event stops firing. Re-verify firing and variant rendering before reading the result, not only before launch. |
+| "It didn't win, but the secondary metrics did" | Inconclusive is a result. Over-interpreting a null test is how a playbook fills with patterns that never replicate. |
+| "Let's fold a few more changes into this one" | Multiple simultaneous changes cannot be isolated, and splitting traffic further pushes every arm below its required sample (see Designing Variants). |
 
 ---
 
@@ -358,4 +354,5 @@ Over time, your playbook becomes a library of proven growth patterns specific to
 - Need event or conversion instrumentation -> use `suede-analytics`.
 - Need page-level diagnosis or test ideas -> use `suede-site-alchemy`.
 - Need variant copy -> use `suede-copy`.
+- Result inconclusive and the question is whether the change moved anything at all -> use `suede-attribution` for incrementality and geo-holdout designs.
 - From those skills, route hypothesis design, power checks, and experiment readouts back to `suede-ab-testing`.

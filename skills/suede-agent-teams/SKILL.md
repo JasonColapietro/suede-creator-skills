@@ -1,19 +1,21 @@
 ---
 name: suede-agent-teams
-description: "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, independent review, neutral outward artifacts, and explicit publication authority."
+description: "Suede Labs agent-team orchestrator: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-ship); findings-only review of a diff (use suede-code-review) or an A-F ship grade (use suede-code-grader); CI, branch protection, or merge-gate wiring (use suede-ci-gate); branch and worktree setup on a stale mirror (a private Suede Labs companion, not in this pack)."
 ---
 
 # Agent Team Orchestrator
 
-## Model selection — never Fable by default
+## Model selection — Fable capped at 4 without asking
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
 happens to be set to. That is how a run sized against one allocation gets billed to
 another without anyone choosing it.
 
-**Fable must be specified to be used. This skill's subagents never run on Fable
-unless the user named Fable for this run.** An inherited session model is not a
+**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
+instruction. Beyond that, Fable must be specified** — any roster past a scout, a
+builder, and a handoff writer passes 4, so this skill's fan-out does not run on Fable
+unless the user named Fable for this run. An inherited session model is not a
 specification — "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
@@ -56,6 +58,17 @@ Before spawning or simulating lanes, define:
 - lane map: each lane, owner role, input, allowed files, output artifact, and
   dependency order.
 
+## Team Ledger
+
+The contract above, every lane status, and every gate result otherwise live only in
+the orchestrator's context, and a multi-lane run routinely outlives a context window.
+Put them on disk. Default path: `.suede-team/<slug>/ledger.md` in the target repo,
+holding the resolved lane map, each lane's current state from the Status Vocabulary,
+and the evidence as it accumulates. Write it before the first builder opens a file and
+update it at every gate; the evidence handoff reads from it rather than from memory.
+If the user keeps durable repo-local state somewhere else, use their path and say
+which one you used.
+
 ## WIP Collision Detection
 
 Before opening any parallel lanes:
@@ -70,7 +83,7 @@ Collision resolution rules:
 - Same file, overlapping changes: merge the two lanes into one lane with one owner. Do not split responsibility for a single file across two concurrent builders.
 - Dirty file in a lane scope: the orchestrator decides. Either stash and restore, or make that lane the only lane allowed to touch the file.
 
-The orchestrator writes the resolved lane map before any builder starts. No builder opens a file not in its assigned lane map.
+The orchestrator writes the resolved lane map to the team ledger (`.suede-team/<slug>/ledger.md`, see Team Ledger) before any builder starts. No builder opens a file not in its assigned lane map.
 
 ## Default Roster
 
@@ -101,32 +114,12 @@ For major architectural decisions, new feature designs, or changes with broad bl
 
 An RFC forces alignment on WHAT and WHY before committing to HOW.
 
-RFC structure:
+RFC status vocabulary: `draft | accepted | superseded | withdrawn`.
 
-```
-RFC: [Title]
-Date: [date]
-Status: draft | accepted | superseded | withdrawn
-Deciders: [who has final say]
-
-## Problem Statement
-One paragraph: what is broken, missing, or suboptimal? Include the user or system impact.
-
-## Proposed Solution
-What we will build or change. Be specific about interfaces, data shapes, and behavioral contracts.
-
-## Alternatives Considered
-2–3 alternatives with the reason each was not chosen.
-
-## Risks
-What could go wrong with the proposed solution? How is each risk mitigated?
-
-## Success Criteria
-How will we know this worked? Observable, measurable signals.
-
-## Decision Record
-[filled in after consensus] Accept / Modify / Reject + reason.
-```
+Before authoring one, read
+[`references/incident-and-rfc-templates.md`](references/incident-and-rfc-templates.md)
+and fill every section it lists — problem statement, proposed solution, alternatives
+considered, risks, success criteria, decision record.
 
 Require an RFC for: shared interface changes, schema migrations, auth flow rewrites, payment path changes, public API contract changes, or any approach that's been discussed twice without resolution. No builder lane opens until RFC status is `accepted`.
 
@@ -136,26 +129,17 @@ When to skip: clear, contained changes where the approach is obvious and the bla
 
 Not every change should ship as a hard deploy. Feature flags allow gradual rollout, A/B testing, and instant rollback without a redeploy.
 
-**Flag lifecycle:**
-1. **Introduce**: create the flag, default off in production. Ship the code behind the flag.
-2. **Ramp**: enable for internal users, then 1%, 10%, 50%, 100% of production traffic. Monitor at each ramp.
-3. **Remove**: once 100% and stable for ≥2 weeks, delete the flag and all conditional branches. Flag removal is a P3 code review finding if overdue. Set the removal date at creation, not after ramp.
-
 **When to flag:**
 - New user-facing features in production traffic paths
 - Changes to auth, payment, or data migration paths
 - Any change that cannot be instantly rolled back by revert (e.g., a schema migration)
 - A/B tests
 
-**When NOT to flag:**
-- Bug fixes with no behavioral change (ship directly)
-- Internal tooling with no external API contract
-- Refactors that don't change behavior (ship with a focused review)
-
-**Flag hygiene rules:**
-- Every flag gets a removal date at creation. Stale flags are a debt item (P3 code review finding).
-- Flag names describe the feature, not the state: `new_billing_flow` not `enable_billing`.
-- Never nest flags inside flags without a design review.
+Once a lane is flagged, read the lifecycle, the when-NOT-to-flag list, and the hygiene
+rules in
+the Feature Flag Strategy section of [`references/scenario-templates.md`](references/scenario-templates.md)
+before the ramp starts. Every flag gets a removal date at creation; a stale flag is a
+P3 code review finding.
 
 ## Rollback Decision Tree
 
@@ -174,46 +158,17 @@ After rollback:
 2. Leave rollback notes in the PR and open a follow-up issue.
 3. Run a lightweight post-mortem (see below) before re-shipping.
 
-## Post-Mortem Template
+## Post-Mortem
 
 For any production incident, failed release, or significant rollback, run a post-mortem. Keep it blameless: focus on systems, not individuals.
 
-```
-Post-Mortem: [Brief title]
-Date of incident:
-Duration:
-Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cosmetic)
-Author(s):
-
-## Timeline
-[time]: [event]
-[time]: [detection]
-[time]: [first response]
-[time]: [resolution]
-
-## Impact
-Users affected:
-Revenue impact (if known):
-Data integrity: affected / not affected
-
-## Root Cause
-One sentence: the direct technical cause.
-
-## Contributing Factors
-The systemic conditions that made this possible. (What allowed the root cause to reach production?)
-
-## What Went Well
-Things that helped detect or contain the incident faster.
-
-## Action Items
-| Action | Owner | Due |
-|---|---|---|
-| ... | ... | ... |
-
-Status: open / closed
-```
+Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cosmetic).
 
 Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P2. Skip for P3.
+When one is required, write it from
+[`references/incident-and-rfc-templates.md`](references/incident-and-rfc-templates.md)
+and fill every section: timeline, impact, root cause, contributing factors, what went
+well, and action items with owners and due dates.
 
 ## Phase Loop
 
@@ -370,102 +325,12 @@ Do not skip. `changed locally` is not `verified locally`. `deployed` is not `ver
 
 ## Scenario Templates
 
-Use these pre-built configurations for common high-risk deployments. Adjust only the named target.
-
-### (a) Auth Rewrite
-
-Roster: Scout, Planner, Builder (auth lane only), Code Grader, Code Reviewer, Release Verifier, Handoff Writer
-RFC required: yes. Shared session/token contract must be accepted before Builder opens.
-Flag required: yes. Default off in production; ramp by internal → 1% → full.
-
-Lane map:
-- Scout: map current auth flow, session storage, token shape, and all routes that read session
-- Planner: list every file that must change and every route that must be regression-tested
-- Builder: auth files only. No touching unrelated routes.
-- Code Grader: grade security lane with zero tolerance for C or below on the security dimension
-- Code Reviewer: focus on token lifecycle, expiry, rotation, and session fixation
-- Release Verifier: confirm auth works in production before any other lane ships
-- Handoff Writer: include session contract diff and regression test evidence
-
-Done signal: login, logout, token refresh, and session expiry all pass in production
-
-### (b) Payment Integration
-
-Roster: Scout, Planner, Builder (payment lane only), Code Grader, Code Reviewer, Release Verifier, Handoff Writer
-RFC required: yes. Payment data shape and provider contract must be accepted.
-Flag required: yes. Never ramp payment paths without a staged rollout.
-
-Lane map:
-- Scout: map current billing models, Stripe/provider SDK version, webhook endpoints, and idempotency handling
-- Builder: payment files and webhook handlers only
-- Code Grader: flag any missing idempotency key, error retry, or PCI-sensitive data log as a blocker
-- Code Reviewer: confirm error handling covers card decline, webhook replay, partial capture, refund edge cases
-- Release Verifier: test with Stripe test mode, then confirm webhook signature validation in production
-- Handoff Writer: include provider dashboard link and webhook log evidence
-
-Done signal: charge, refund, and webhook replay all pass in production with idempotency confirmed
-
-### (c) Public Launch Review
-
-Roster: Scout, Design Reviewer, Visibility Grader, Code Reviewer, Release Verifier, Handoff Writer
-RFC required: no (review-only, no builder lane)
-
-Lane map:
-- Scout: enumerate every public-facing URL, meta tag, og:image, CTA, and claims sentence
-- Design Reviewer: check above-fold load, mobile rendering, accessibility, and state coverage
-- Visibility Grader: score first-screen clarity, CTA pull, proof, AI readability, and structured data
-- Code Reviewer: check for console errors, broken links, unresolved env vars, and exposed secrets
-- Release Verifier: confirm live URL, DNS, SSL, and all published statements match approved copy
-- Handoff Writer: include Lighthouse score, screenshot evidence, and any unresolved published statement
-
-Done signal: all public URLs verified live, no console errors, Lighthouse performance ≥ 80
-
-### (d) Data Migration
-
-Roster: Scout, Planner, Builder (migration lane only), Code Grader, Release Verifier, Handoff Writer
-RFC required: yes. Data shape before/after and rollback strategy must be accepted.
-Flag required: migration itself cannot be flagged; gate behind a manual trigger or migration script run
-
-Lane map:
-- Scout: map current schema, row counts, FK constraints, indexes, and any running jobs that read the affected tables
-- Planner: write migration script, define rollback script (reverse migration or restore point), and identify zero-downtime vs. maintenance-window requirement
-- Builder: migration files only. Schema changes separated from data backfill into two sequential sub-lanes.
-- Code Grader: grade data/state dimension with zero tolerance for D or below; flag missing rollback script as a blocker
-- Release Verifier: run migration against a staging DB clone, confirm row counts before/after, confirm app boots with new schema, then promote to production
-- Handoff Writer: include before/after row counts, migration command with timing, and rollback script location
-
-Done signal: production DB row counts match expected delta, app health check passes, rollback script tested in staging
-
-### (e) Performance Audit
-
-Roster: Scout, Planner, Builder (perf lane only), Code Grader, Release Verifier, Handoff Writer
-RFC required: no, unless audit reveals a structural change (e.g. query rewrite, CDN switch).
-
-Lane map:
-- Scout: run Lighthouse, measure Core Web Vitals (LCP, INP, CLS), identify top 3 bundle contributors, map slow DB queries (EXPLAIN ANALYZE), and list current caching headers
-- Planner: rank findings by impact × effort, list the three highest-ROI fixes
-- Builder: implement only ranked fixes. No opportunistic refactors.
-- Code Grader: confirm each fix does not regress correctness or introduce a race condition
-- Release Verifier: compare Lighthouse before/after with screenshots; confirm no regression on primary user paths
-- Handoff Writer: include before/after Lighthouse scores, Core Web Vitals deltas, and any deferred findings
-
-Done signal: LCP < 2.5s or measurable improvement documented; no regression on primary paths
-
-### (f) Recovery / Incident Response
-
-Roster: Scout, Builder (fix lane only), Release Verifier, Handoff Writer
-RFC required: no (incident is already in progress; run the Rollback Decision Tree, not an RFC)
-Flag required: n/a — this scenario reacts to an existing deploy, it does not introduce one
-
-Lane map:
-- Scout: identify what shipped, when, and what changed; walk the Rollback Decision Tree (data loss/corruption, security exposure, primary path broken, degraded-but-functional, or cosmetic) and name which branch applies
-- Scout: if the branch is "ROLLBACK IMMEDIATELY" (data loss/corruption or security exposure), say so and stop — do not investigate further before rollback, per the Rollback Decision Tree
-- Builder: executes the rollback, or the <15-minute fix, or the hot-fix-forward, per the branch Scout named. No opportunistic changes outside the incident scope.
-- Builder: after rollback, write the immediate summary — what rolled back, what was affected, who was notified — and open a follow-up issue, per the Rollback Decision Tree's post-rollback steps
-- Release Verifier: confirm the primary path is restored in production before any other lane closes
-- Handoff Writer: run the Post-Mortem Template for any P0 or P1 incident (required) or P2 (optional but encouraged); skip for P3. Populate Timeline, Impact, Root Cause, Contributing Factors, What Went Well, and Action Items with owners and due dates.
-
-Done signal: primary path verified restored in production; for P0/P1, a completed post-mortem with status `open` and every action item assigned an owner
+Six pre-built configurations exist for common high-risk deployments: (a) Auth Rewrite,
+(b) Payment Integration, (c) Public Launch Review, (d) Data Migration, (e) Performance
+Audit, (f) Recovery / Incident Response. When the objective matches one, read
+[`references/scenario-templates.md`](references/scenario-templates.md) completely
+before opening lanes and adjust only the named target — each template carries its own
+roster, lane map, RFC and flag requirements, grader tolerances, and done signal.
 
 ## Escalation Protocol
 
@@ -545,6 +410,12 @@ Cue Suede:
 
 ## Routing
 
+- The work is one repo's change and a bundled DAG can run it end to end →
+  **suede-ship**. Precedence: one repo, one change, research-through-release in a
+  single scripted run goes there; orchestration that is manual, ongoing, cross-repo,
+  or a public-contribution program stays here. A single lane inside a program here
+  that needs the full research-and-refute treatment can be handed to **suede-ship**
+  for that lane alone.
 - A recurring owned/public-repository contribution program needs issue leases,
   isolated worktrees, review, and an authority-gated packet → read
   `references/public-contribution-program.md` and keep this skill as controller

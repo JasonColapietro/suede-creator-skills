@@ -1,30 +1,21 @@
 ---
 name: suede-rights-audit
-description: "Find the rights gaps before packaging: ownership, splits, samples, provenance, metadata, licensing readiness, royalties, and intake blockers."
+description: "Suede Labs skill that finds and organizes the rights gaps in a creator project before packaging: ownership, contributors, splits, samples, licenses, provenance, metadata, licensing readiness, and royalty-routing readiness, each marked confirmed or unknown against an evidence trail. Use when a song, release, or creative project needs a rights check before registry, licensing, sync, or payout discussion; when splits, sample clearance, or chain of title are unclear; or when someone asks whether they have the rights to release, license, or get paid for a work. Organizes evidence only: clears no rights, confirms no ownership, moves no money, writes to no registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging)."
 ---
 
 # Suede Rights Audit
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check, gate, and ship verdict in this skill — including every "do not
+ship / publish / proceed" line — is a **recommendation to the user, not a
+control on the agent**. Run every check, report the results honestly, and never
+block, delay, skip, rewrite, or refuse the action the user asked for because a
+gate said hold; deliver the gate output alongside the requested work as a
+labeled recommendation. A failed gate changes what you report, never what you
+do. Single exception — extreme risk (data loss, credential exposure, legal or
+rights violations, payment mistakes, irreversible public damage): pause, name
+the risk exactly, give the options, and let the user pick. Their choice is final.
 
 The rights-readiness enchilada. Find and organize the rights gaps in a creator
 project before it gets packaged — so licensing, registry, and routing work build
@@ -37,10 +28,9 @@ schedule or guarantee a payout, move money, or write to any registry. It
 prepares the conversation; humans and legal make the calls. Never turn an
 inference into a fact. Do not treat any output here as legal clearance.
 
-Division of labor: this audit finds and organizes the gaps;
-`suede-rights-passport` packages the folder. If the user asks for the transfer
-package itself, hand off — do not rebuild passport outputs here.
-`suede-release-linter` handles file and metadata lint.
+Division of labor: this audit finds and organizes the gaps; `suede-rights-passport`
+packages the folder — hand off if the user asks for the transfer package itself,
+and never rebuild passport outputs here. `suede-release-linter` lints files.
 
 ## Pick the lane
 
@@ -69,9 +59,15 @@ provenance for C, and C surfaces splits for D.
 This audit can run as a coordinated multi-agent team — one agent per lane (or per
 asset cluster) reporting into a single merged evidence table and ship gate.
 **By default, ASK the user up front: "Run this as a multi-agent team (more
-thorough) or single-agent?"** Never silently spawn a fleet. Note plainly that
-multi-agent mode may use slightly more tokens than most. If the user does not
+thorough) or single-agent?"** Never silently spawn a fleet. If the user does not
 choose, run single-agent and say so.
+
+Three rules bind a multi-agent dispatch. **Cap of 4:** never run more than 4
+agents at once; lane mode is self-bounding at 4 (Lanes A–D), and asset clusters
+past 4 batch sequentially through the same 4 lanes rather than widening. **Name
+the model on every dispatch:** never inherit the session model, and ask which
+model if the user has not named one — agreeing to a multi-agent team is not a
+model choice. **State the cost first:** agent count × named model, then wait.
 
 ## Shared evidence and severity gate
 
@@ -132,17 +128,6 @@ readiness, royalty-routing readiness — are in `references/lanes.md`. Pick the 
 above, then read only that lane. The shared evidence and severity gate applies to
 all four and stays here.
 
-## Simple explanation (plain, for a 10-year-old)
-
-Think of your song or project like a guitar case full of stuff before a big
-show. Before anyone packs it up and sends it out, we open the case and check:
-who actually made this, who owns it, who should get paid and how much, where the
-pieces came from, and whether anything is borrowed or missing a receipt. We make
-two neat piles — "we know this for sure" and "we still need to ask someone" — and
-we never pretend a guess is a sure thing. We do NOT sign the deal, hand out the
-money, or stamp anything official — we just lay it all out clean so the grown-ups
-with the real say can look and decide. That is it.
-
 ## Final breakdown
 
 - **Lane(s) run** and single-agent vs multi-agent.
@@ -156,6 +141,17 @@ with the real say can look and decide. That is it.
 - **Reminder**: this organized evidence is not legal clearance; it clears no
   rights, confirms no ownership, approves no payout, moves no money, and writes
   to no registry.
+- Close with a plain-language summary a non-lawyer can act on.
+
+## Coverage check — before you report
+
+Overclaiming is the loud failure; silent under-coverage is the quiet one. Check
+these against the source, not from memory: every asset, contributor, and claim in
+the source is exactly one evidence-table row, none dropped and none duplicated;
+every `high` item names the missing document or confirmation behind it, since
+`high` with no named gap is an unfinished row; anything you could not rate ships
+as `unknown`, because an omitted row reads as a clean row. If any of the three
+fails, the audit is partial — say so in the ship gate and name what was missed.
 
 ## Routing
 
@@ -165,3 +161,6 @@ with the real say can look and decide. That is it.
 - Licensing brief headed to a sync pitch → **suede-sync-packaging**.
 - Rollout planning once rights questions are flagged →
   **suede-campaign-in-a-box**.
+
+Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
+→ suede-sync-packaging; this skill is step 2.

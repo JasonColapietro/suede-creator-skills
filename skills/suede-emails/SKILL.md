@@ -1,6 +1,6 @@
 ---
 name: suede-emails
-description: "Suede-affiliated lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow, entry criteria, cadence, message roles, and measurement plan. NOT FOR: cold prospecting (use suede-cold-email), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
+description: "Suede-owned lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan — drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS as part of the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
 metadata:
   version: 2.0.0
 ---
@@ -30,6 +30,8 @@ Before creating a sequence, understand:
    - What triggered them into this sequence?
    - What do they already know/believe?
    - What's their current relationship with you?
+   - What other emails are they already receiving?
+   - What's the current email performance to beat?
 
 3. **Goals**
    - Primary conversion goal
@@ -39,42 +41,15 @@ Before creating a sequence, understand:
 
 ---
 
-## Core Principles
+## Core Principle
 
-### 1. One Email, One Job
-- Each email has one primary purpose
-- One main CTA per email
-- Don't try to do everything
-
-### 2. Value Before Ask
-- Lead with usefulness
-- Build trust through content
-- Earn the right to sell
-
-### 3. Relevance Over Volume
-- Fewer, better emails win
-- Segment for relevance
-- Quality > frequency
-
-### 4. Clear Path Forward
-- Every email moves them somewhere
-- Links should do something useful
-- Make next steps obvious
+One email, one job: a single purpose and a single primary CTA per email. Everything downstream — sequence length, roles, copy — follows from that.
 
 ---
 
 ## Email Sequence Strategy
 
-### Sequence Length
-- Welcome: 3-7 emails
-- Lead nurture: 5-10 emails
-- Onboarding: 5-10 emails
-- Re-engagement: 3-5 emails
-
-Depends on:
-- Sales cycle length
-- Product complexity
-- Relationship stage
+Sequence lengths are set per type in Sequence Types Overview below; use those numbers, not a generic range. Adjust for sales-cycle length, product complexity, and relationship stage.
 
 ### Timing/Delays
 - Welcome email: Immediately
@@ -169,44 +144,9 @@ Key emails:
 
 ## Email Types by Category
 
-### Onboarding Emails
-- New users series
-- New customers series
-- Key onboarding step reminders
-- New user invites
+Six categories: Onboarding · Retention · Billing · Usage · Win-Back · Campaigns.
 
-### Retention Emails
-- Upgrade to paid
-- Upgrade to higher plan
-- Ask for review
-- Proactive support offers
-- Product usage reports
-- NPS survey
-- Referral program
-
-### Billing Emails
-- Switch to annual
-- Failed payment recovery
-- Cancellation survey
-- Upcoming renewal reminders
-
-### Usage Emails
-- Daily/weekly/monthly summaries
-- Key event notifications
-- Milestone celebrations
-
-### Win-Back Emails
-- Expired trials
-- Cancelled customers
-
-### Campaign Emails
-- Monthly roundup / newsletter
-- Seasonal promotions
-- Product updates
-- Industry news roundup
-- Pricing updates
-
-**For detailed email type reference**: See [references/email-types.md](references/email-types.md)
+Read [references/email-types.md](references/email-types.md) when you need to pick or design an individual email type — it carries the trigger, timing, role, and copy pattern for each one, plus an email audit checklist.
 
 ---
 
@@ -231,6 +171,20 @@ Key emails:
 - First-person (I/we) and second-person (you)
 - Active voice
 - Read it out loud—does it sound human?
+
+**Never ship these strings.** They are the lifecycle-email defaults a model reaches for unprompted, and every one of them is a slot where a specific sentence should be:
+
+- "We're thrilled to have you aboard!" / "We're excited to have you!"
+- "Welcome to the family!" / "You're in good company"
+- "Here's what you can do next" / "Let's get you started"
+- "Don't miss out" / "Act now" / "Limited time only"
+- "Quick question" / "Just checking in" / "Just following up"
+- "We noticed you haven't..." / "We miss you!"
+- "Ready to take your [X] to the next level?"
+- "Unlock the full power of..." / "Supercharge your..."
+- "As a valued customer" / "We value your feedback"
+
+The replacement is always the same shape: name the specific thing this reader did, or the specific thing they get next. If a sentence would be true for any recipient of any product, it is one of these in disguise.
 
 ### Length
 - 50-125 words for transactional
@@ -271,17 +225,28 @@ Segment/Conditions: [If applicable]
 ```
 
 ### Metrics Plan
-What to measure and benchmarks
+```
+Per email: open rate, click rate, unsubscribe rate
+Per sequence: completion rate, primary-conversion rate, revenue or signups attributed
+Baseline: [the user's current numbers for this audience, or "none supplied"]
+Review point: [when to read results and what number would trigger a rewrite]
+```
 
 ---
 
-## Task-Specific Questions
+## Pre-delivery self-check
 
-1. What triggers entry to this sequence?
-2. What's the primary goal/conversion action?
-3. What do they already know about you?
-4. What other emails are they receiving?
-5. What's your current email performance?
+Run this on the drafted sequence before presenting it. Each box checks a rule this skill already states, against the copy you just wrote.
+
+- [ ] Every email has exactly one primary CTA
+- [ ] Every subject line is 40-60 characters — count them, do not estimate
+- [ ] No preview text repeats its subject line
+- [ ] Every body is inside the word band for its type (50-125 transactional / 150-300 educational / 300-500 story-driven)
+- [ ] Exit conditions are specified for the sequence
+- [ ] No string from the Tone blocklist appears anywhere in the copy
+- [ ] The consent and suppression assumption is stated explicitly rather than assumed — say which list, which opt-in, and what excludes a contact
+
+Any box that fails means fix it before presenting. Do not deliver the sequence with the failure noted as a caveat.
 
 ---
 
@@ -311,3 +276,6 @@ Before implementation, return:
 - Use `suede-churn-prevention` for cancellation, save, and dunning strategy.
 - Use `suede-onboarding` for in-product activation and `suede-copy` for destination-page copy.
 - Use `suede-ab-testing` for sequence experiments and `suede-revops` for lifecycle-stage orchestration.
+- Use `suede-sms` when the same lifecycle program should also reach people by text — SMS layers on top of email, it does not replace it.
+- Use `suede-deslop` before any email in the sequence goes to a real recipient.
+- From those skills, route lifecycle sequence design, cadence, and message roles back to `suede-emails`.

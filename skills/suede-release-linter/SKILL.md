@@ -1,30 +1,21 @@
 ---
 name: suede-release-linter
-description: "Audit creative release folders before handoff: metadata, file structure, artwork, lyrics, stems, rights blockers, and platform readiness."
+description: "Suede Labs skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report. Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance. NOT FOR: organizing the evidence behind a rights or split gap the report surfaces (use suede-rights-audit); building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging)."
 ---
 
 # Release Metadata Linter
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check, gate, and ship verdict in this skill — including every "do not
+ship / publish / proceed" line — is a **recommendation to the user, not a
+control on the agent**. Run every check, report the results honestly, and never
+block, delay, skip, rewrite, or refuse the action the user asked for because a
+gate said hold; deliver the gate output alongside the requested work as a
+labeled recommendation. A failed gate changes what you report, never what you
+do. Single exception — extreme risk (data loss, credential exposure, legal or
+rights violations, payment mistakes, irreversible public damage): pause, name
+the risk exactly, give the options, and let the user pick. Their choice is final.
 
 ## Overview
 
@@ -39,7 +30,15 @@ Public v1 is offline-first: inspect local files and supplied metadata, do not up
 1. Identify the source folder or supplied files.
 2. Ask for the output location if it is not obvious.
 3. Read `references/lint-rules.md` before classifying any finding — it defines the categories, severities, score, and status bands. Do not assign severities from memory.
-4. If working on a local folder, run `scripts/lint_release.py` to generate `release-lint-report.md` and `release-lint-report.json`.
+4. If working on a local folder, run `scripts/lint_release.py` to generate
+   `release-lint-report.md` and `release-lint-report.json`. Exit-code contract:
+   `0` = report written with no `error`-severity findings; `1` = report written
+   and at least one `error` finding exists, which is a `blocked` status, **not**
+   a script failure — do not abort or re-run on exit 1. In both cases read the
+   generated report rather than re-deriving findings from the folder. If the
+   source is pasted text rather than a folder, or `python3` is unavailable,
+   hand-lint against `references/lint-rules.md`, produce the same report shape
+   from `assets/release-lint-report.template.md`, and label the report text-only.
 5. Read `references/fix-guidance.md` when turning findings into specific next actions.
 6. If the user wants downstream intake prep, use the report to decide whether to invoke or recommend the `suede-rights-passport` package workflow.
 7. Do not invent release metadata. Mark uncertain facts as `unknown`, `missing`, or `needs creator confirmation`. Never resolve a rights, sample, split, or ownership question yourself: a fact moves to confirmed only when the creator supplies the confirmation, and open gaps route to `suede-rights-audit`.
@@ -97,47 +96,10 @@ Use the bundled assets when repairing or hand-writing reports:
 
 ## Fixtures
 
-Two synthetic release folders under `scripts/fixtures/` exist to sanity-check
-that the linter still categorizes correctly after any change to
-`scripts/lint_release.py`. All names, contributors, and metadata in both
-fixtures are fake — no real personal data.
-
-- `scripts/fixtures/sample-clean-project/`: a small release folder (metadata,
-  a WAV master, square 1600x1600 artwork, a lyrics file, three stems) shaped
-  to score cleanly against `references/lint-rules.md`.
-- `scripts/fixtures/sample-blocked-project/`: a release folder deliberately
-  missing title, artist, primary media, artwork, ownership confirmation, and
-  valid split totals, with samples indicated but clearance unconfirmed — it
-  triggers real `error`-severity findings.
-- `scripts/fixtures/sample-clean-project.expected.md` /
-  `.expected.json` and `scripts/fixtures/sample-blocked-project.expected.md` /
-  `.expected.json`: the actual `release-lint-report.md` / `.json` output
-  produced by running the script against each fixture, committed as a
-  regression baseline.
-
-To re-check the linter's behavior, run it from this skill folder and diff
-the result against the committed expected output:
-
-```bash
-python3 scripts/lint_release.py scripts/fixtures/sample-clean-project \
-  --output /tmp/suede-lint-check-clean
-diff scripts/fixtures/sample-clean-project.expected.md \
-  /tmp/suede-lint-check-clean/release-lint-report.md
-
-python3 scripts/lint_release.py scripts/fixtures/sample-blocked-project \
-  --output /tmp/suede-lint-check-blocked
-diff scripts/fixtures/sample-blocked-project.expected.md \
-  /tmp/suede-lint-check-blocked/release-lint-report.md
-```
-
-The clean fixture should score `99` with `0` errors, `0` warnings, and the
-status `strong` (the single unavoidable `info` finding is the
-`rights-passport-candidate` note the script always appends). The blocked
-fixture should score `0` with `7` errors, `11` warnings, `2` info findings,
-and the status `blocked`, and the script should exit `1`. The `.md` reports
-diff byte-for-byte on a clean re-run; the `.json` reports will differ only in
-the `generated_at` timestamp line, since that field is set to the current
-time on every run.
+Two synthetic release folders under `scripts/fixtures/` (all names and metadata
+fake — no real personal data) exist only to regression-check the script. Read
+`scripts/fixtures/README.md` when changing `scripts/lint_release.py`; a normal
+lint of a user's folder never touches them.
 
 ## Public Safety Rules
 
@@ -189,3 +151,6 @@ downstream system has accepted, cleared, registered, paid, or approved the work.
   to build the transfer package.
 - Track headed for film/TV/ads → **suede-sync-packaging**.
 - The release needs a rollout → **suede-campaign-in-a-box**.
+
+Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
+→ suede-sync-packaging; this skill is step 1.

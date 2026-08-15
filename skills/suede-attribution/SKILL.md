@@ -1,6 +1,6 @@
 ---
 name: suede-attribution
-description: "Suede-affiliated marketing attribution discipline. Use when the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions 'attribution,' 'attribution model,' 'first-touch vs last-touch,' 'multi-touch,' 'which channel drives revenue,' 'what's my real CAC,' 'my dashboards disagree,' 'Google/Meta says X but GA says Y,' 'MMM,' 'incrementality,' 'geo lift,' 'holdout test,' 'how did you hear about us,' 'self-reported attribution,' 'dark social,' or wants to instrument attribution themselves — 'stitch my bookings to their source,' 'SavvyCal/Calendly attribution,' 'close the identify gap,' 'track conversions on a third-party domain,' 'first-party attribution.' NOT FOR general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops)."
+description: "Suede-owned marketing attribution discipline. Use when the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools. Also use when the user mentions 'attribution,' 'attribution model,' 'first-touch vs last-touch,' 'multi-touch,' 'which channel drives revenue,' 'what's my real CAC,' 'my dashboards disagree,' 'Google/Meta says X but GA says Y,' 'MMM,' 'incrementality,' 'geo lift,' 'holdout test,' 'how did you hear about us,' 'self-reported attribution,' 'dark social,' or wants to instrument attribution themselves — 'stitch my bookings to their source,' 'SavvyCal/Calendly attribution,' 'close the identify gap,' 'track conversions on a third-party domain,' 'first-party attribution.' NOT FOR general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops)."
 metadata:
   version: 1.1.0
 ---
@@ -38,14 +38,8 @@ Most requests start with (A). Reach for (B) only when they control the surface a
 
 Product context: check for `.agents/product-marketing.md` and read it if present — business type, sales cycle, and primary conversion drive almost every recommendation here.
 
-## Boundaries — what this skill does NOT own
+## Boundaries
 
-State these up front so you don't rebuild neighboring skills:
-
-- **General event tracking, tracking plans, UTM setup, GA4/GTM** → `suede-analytics`. Attribution *assumes tracking exists*. The line: suede-analytics = "what events and how to fire them"; attribution = "how touches join to conversions and survive to revenue."
-- **Ad-platform pixels, CAPI, server-side conversion tracking** → `suede-ads` (see the conversion-tracking reference bundled with suede-ads). Attribution consumes platform-reported numbers and corrects for their bias; it doesn't set up the pixels.
-- **Pipeline stages, lead lifecycle, CRM revenue dashboards** → `suede-revops`. Attribution feeds pipeline data; it doesn't define stages.
-- **Showing up in / measuring AI search** → `suede-ai-seo`. Attribution names AI traffic as a blind spot only.
 - Do not present a single attribution model, reconciled number, or channel
   allocation as objective truth — always report it as a defensible read with
   stated assumptions, confidence, and gaps.
@@ -226,7 +220,7 @@ Deliver an **attribution readout**, not a data dump:
 
 ## Routing
 
-- Use `suede-analytics` for event tracking, tracking plans, UTMs, GA4/GTM setup. Do this *before* attribution.
+- Use `suede-analytics` for event tracking, tracking plans, UTMs, GA4/GTM setup. Do this *before* attribution — the line between the two is: suede-analytics owns "what events and how to fire them"; attribution owns "how touches join to conversions and survive to revenue."
 - Use `suede-ads` for ad-platform pixels, CAPI, server-side conversion tracking (see the conversion-tracking reference bundled with suede-ads).
 - Use `suede-revops` for pipeline stages, lead lifecycle, CRM revenue reporting. Attribution feeds it.
 - Use `suede-ai-seo` for the AI-search attribution blind spot in depth.

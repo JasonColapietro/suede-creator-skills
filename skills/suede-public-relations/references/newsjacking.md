@@ -44,9 +44,9 @@ A repeatable draft-and-review workflow Suede can run on demand.
 6. **Owned-channel draft** — when current evidence supports a public trail,
    prepare a blog or social draft; do not publish it
 
-Every recipient, channel, visible identity, exact message, and publication is a
-separate external action requiring explicit approval. Approval to research or
-draft is not approval to send or publish.
+Sending or publishing anything produced here runs the send-approval handover in
+SKILL.md ("Quick Reference: Pitch Quality Bar"), which is the canonical
+statement of this gate.
 
 Output format Suede should produce:
 
@@ -146,7 +146,7 @@ windows when current source timestamps and outlet deadlines are unavailable:
 
 Use observed coverage velocity, the journalist's current deadline, source
 confidence, and review capacity to decide whether the angle remains timely.
-Never send without the explicit per-recipient approval gate.
+Timeliness never bypasses the send-approval handover in SKILL.md.
 
 ---
 

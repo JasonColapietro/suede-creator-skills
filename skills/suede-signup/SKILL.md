@@ -31,6 +31,7 @@ Before providing recommendations, understand:
    - What fields are required?
    - What's the current completion rate?
    - Where do users drop off?
+   - Is there field-level analytics on drop-off, or only funnel totals?
 
 3. **Business Constraints**
    - What data is genuinely needed at signup?
@@ -220,10 +221,21 @@ Every field reduces conversion. For each field, ask:
 
 ## Output Format
 
+Do not open with what the flow does well. If no finding clears the bar, say so in
+one sentence and name the single measurement that is missing and would change the
+verdict.
+
+Rank every finding by its effect on completion rate and return the top 8. If more
+survive, list the remainder by name in one line so nothing is dropped silently.
+Cap test hypotheses at 3.
+
 ### Audit Findings
 For each issue found:
 - **Issue**: What's wrong
-- **Impact**: Why it matters (with estimated impact if possible)
+- **Impact**: The mechanism and the funnel step it affects (form start, field
+  completion, submit, verification). Give a number only when it is labeled
+  modeled and carries the assumption and the measured baseline it was applied to;
+  otherwise omit the number.
 - **Fix**: Specific recommendation
 - **Priority**: High/Medium/Low
 
@@ -231,7 +243,7 @@ For each issue found:
 Organized by:
 1. Quick wins (same-day fixes)
 2. High-impact changes (week-level effort)
-3. Test hypotheses (things to A/B test)
+3. Test hypotheses (things to A/B test, at most 3)
 
 ### Form Redesign (if requested)
 - Recommended field set with rationale
@@ -267,90 +279,15 @@ Organized by:
 
 ## Experiment Ideas
 
-### Form Design Experiments
+When producing test hypotheses, draw them from four families:
+- Form design (step count, field set, layout, auth options)
+- Copy and messaging (headline, CTA text, microcopy, trust elements)
+- Trial and commitment (card requirement, trial length, verification friction)
+- Post-submit (next-step messaging, instant access, auto-login)
 
-**Layout & Structure**
-- Single-step vs. multi-step signup flow
-- Multi-step with progress bar vs. without
-- 1-column vs. 2-column field layout
-- Form embedded on page vs. separate signup page
-- Horizontal vs. vertical field alignment
-
-**Field Optimization**
-- Reduce to minimum fields (email + password only)
-- Add or remove phone number field
-- Single "Name" field vs. "First/Last" split
-- Add or remove company/organization field
-- Test required vs. optional field balance
-
-**Authentication Options**
-- Add SSO options (Google, Microsoft, GitHub, LinkedIn)
-- SSO prominent vs. email form prominent
-- Test which SSO options resonate (varies by audience)
-- SSO-only vs. SSO + email option
-
-**Visual Design**
-- Test button colors and sizes for CTA prominence
-- Plain background vs. product-related visuals
-- Test form container styling (card vs. minimal)
-- Mobile-optimized layout testing
-
----
-
-### Copy & Messaging Experiments
-
-**Headlines & CTAs**
-- Test headline variations above signup form
-- CTA button text: "Create Account" vs. "Start Free Trial" vs. "Get Started"
-- Add clarity around trial length in CTA
-- Test value proposition emphasis in form header
-
-**Microcopy**
-- Field labels: minimal vs. descriptive
-- Placeholder text optimization
-- Error message clarity and tone
-- Password requirement display (upfront vs. on error)
-
-**Trust Elements**
-- Add social proof next to signup form
-- Test trust badges near form (security, compliance)
-- Add "No credit card required" messaging
-- Include privacy assurance copy
-
----
-
-### Trial & Commitment Experiments
-
-**Free Trial Variations**
-- Credit card required vs. not required for trial
-- Test trial length impact (7 vs. 14 vs. 30 days)
-- Freemium vs. free trial model
-- Trial with limited features vs. full access
-
-**Friction Points**
-- Email verification required vs. delayed vs. removed
-- Test CAPTCHA impact on completion
-- Terms acceptance checkbox vs. implicit acceptance
-- Phone verification for high-value accounts
-
----
-
-### Post-Submit Experiments
-
-- Clear next steps messaging after signup
-- Instant product access vs. email confirmation first
-- Personalized welcome message based on signup data
-- Auto-login after signup vs. require login
-
----
-
-## Task-Specific Questions
-
-1. What's your current signup completion rate?
-2. Do you have field-level analytics on drop-off?
-3. What data is absolutely required before they can use the product?
-4. Are there compliance or verification requirements?
-5. What happens immediately after signup?
+**For the full candidate menu inside each family**, read
+[references/experiments.md](references/experiments.md) before writing the test
+hypotheses in Output Format.
 
 ---
 

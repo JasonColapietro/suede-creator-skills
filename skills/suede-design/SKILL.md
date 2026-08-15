@@ -1,17 +1,9 @@
 ---
 name: suede-design
-description: "Make Suede interfaces feel intentional: tokens, color, components, type, visual hierarchy, motion, dark mode, and visual QA for shipped screens."
+description: "Suede Labs AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA. Use when asked to design, restyle, polish, or audit a screen; pick colors or fonts; define, fix, or document design tokens; build or repair a dark mode; review a component or a whole design system; or compare a mock, Figma frame, or reference screenshot against a rendered implementation. NOT FOR: a full design-plus-copy build, launch surface, or reference-to-target restyle (use johnny-suede-design); conversion and funnel architecture (use suede-site-alchemy); writing the words themselves (use suede-copy)."
 ---
 
 # Suede Design
-
-## When to use this skill instead of related skills
-- **suede-design** (this skill): design system tokens, color ramps, type scale, component-level polish, brand identity decisions
-- Visual iteration with the local script harness (craft, shape, audit sub-commands): (private Suede Labs companion, not in this pack: suede-visual-qa)
-- UX critique, accessibility audit, information architecture, design handoff docs: (private Suede Labs companion, not in this pack: suede-ui)
-- Broad UI/UX pattern lookup, framework examples, palette/font/chart searches, or non-Suede implementation heuristics: (private Suede Labs companion, not in this pack: ui-ux-pro-max)
-- Deck-only or HTML presentation generation: (private Suede Labs companion, not in this pack: power-design)
-- **johnny-suede-design**: full-stack build combining design + copy + visual QA for a launch or redesign
 
 Use this skill to make Suede interfaces feel intentional, premium, legible, and
 alive without drifting into generic AI output. It covers product UI, brand
@@ -39,25 +31,12 @@ If PRODUCT.md or DESIGN.md is missing on a major surface, note it and proceed wi
 Then state this preflight in the working update:
 
 ```text
-SUEDE_DESIGN_PREFLIGHT: target=<repo-or-folder> surface=<route-or-url> register=<brand|product> context=<pass|partial|none> design_system=<loaded|not_found> git=<pass|skipped:reason> render=<pass|pending|skipped:reason> mutation=open
+SUEDE_DESIGN_PREFLIGHT: target=<repo-or-folder> surface=<route-or-url> register=<brand|product> context=<pass|partial|none> design_system=<loaded|not_found> git=<pass|skipped:reason> render=<pass|pending|skipped:reason>
 ```
 
-For major design work, reusable systems, reference visual matching, App Store
-assets, or public launch surfaces, keep `mutation=open` only after these are
-known:
-
-- `PRODUCT.md` or product context status;
-- `DESIGN.md` or design-system context status;
-- shape brief status for net-new or large redesigns;
-- source visual target status when a mock, screenshot, Figma frame, or
-  reference URL exists;
-- rendered implementation status;
-- ship blocker status.
-
-Also apply the shared no-missed gate at
-`~/.claude/skills/suede-workflow-skills/references/no-missed-quality-gates.md`
-when the work touches copy, design-system, visual QA, Suedify, visibility, or
-public launch quality.
+Also apply the shared no-missed quality gates owned by suede-workflow-skills
+(its no-missed-quality-gates reference) when the work touches copy,
+design-system, visual QA, Suedify, visibility, or public launch quality.
 (Requires suede-workflow-skills installed from this pack. If not installed, run the Copy Gate, Visual QA Gate, SEO/AEO/AI EO Gate, Design System Gate, and Launch Gate checklists using the criteria in the Implementation Workflow, Ship Gate, and Visual QA Report sections of this skill.)
 
 ## Task Router
@@ -174,9 +153,23 @@ Below 70/100 the system is failing: fix the two lowest dimensions before styling
 
 ## Scoped Bans And Exceptions
 
-What is banned, the scope each ban applies to, and the narrow allowed exceptions are
-in `references/scoped-bans.md`. Read it when a design choice looks like it needs an
+The heads below are the non-negotiables, and this list is the authoritative one.
+Cite this section rather than restating a ban somewhere else. The full
+gallery (every banned pattern, the scope each ban applies to, the BEFORE/AFTER
+replacement, and the narrow allowed exceptions) is in
+`references/scoped-bans.md`. Read it when a design choice looks like it needs an
 exception, or when reviewing whether one was legitimately taken.
+
+- **Decorative orbs, bokeh blobs, generic gradient-mesh backgrounds.** Three radial gradients at 30% opacity behind the hero is the absence of art direction. Replace with a concrete choice: noise texture, a geometric system, a real product screenshot, an illustrated scene, or a typographic lock-up that IS the background. Gradient meshes, grain, and layered transparency stay legitimate when they serve a named aesthetic; a CSS-only approximation standing in for art direction does not.
+- **Gradient text.** `-webkit-background-clip: text` rainbow or metallic headlines. Replace with one high-contrast headline at full weight and an accent word in a solid color.
+- **Decorative glass panels.** `backdrop-filter: blur()` cards floating over a gradient. Replace with an opaque surface at the correct elevation token plus a 1px border for definition.
+- **Icon-card grids as the page structure.** A 3x2 grid of icon plus title plus one-liner is a product-category dump, not a layout. Replace with rows or sections that map to what the user actually does.
+- **First-order category palettes.** "Music tool, so dark purple." "Observability, so dark blue." A palette guessable from the product category alone is the training-data reflex the Color law exists to reject, and muted teal on dark is the second-order version of the same failure.
+- **Fake metrics, fake testimonials, fake partner claims. No exception path.** Replace with (a) a real stat plus a source note, (b) a placeholder carrying a `[NEEDS REAL DATA]` flag, or (c) a structural element that does not depend on a number.
+
+The first five allow scoped exceptions for source fidelity, platform convention,
+accessibility, a confirmed brand system, or a direct user request. Name why the
+exception is earned. The last one allows none.
 
 ## Copy Rules
 
@@ -211,7 +204,7 @@ Bold maximalism and refined minimalism both work. The failure mode is neither: a
 
 **Theme sentence**: name the physical scene concretely enough that it forces the design answer. "A studio engineer reviewing a rights dispute at 2am on a secondary monitor" forces different choices than "a user looking at data." If the sentence doesn't force the answer, it's not concrete enough. Add detail until it does. Dark vs. light is never a default. Not dark because tools look cool dark, not light to be safe.
 
-**Background and atmosphere**: gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, and decorative borders are all legitimate tools when they serve the aesthetic. Do not substitute generic gradient blobs, bokeh orbs, or CSS-only approximations for real art direction.
+**Background and atmosphere**: gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, and decorative borders are all legitimate tools when they serve the aesthetic. The line between one of these as a tool and one of these as a substitute for art direction is drawn in Scoped Bans And Exceptions.
 
 ## Implementation Workflow
 
@@ -240,8 +233,8 @@ If any of these thoughts appear, stop and run the check you were about to skip:
 
 - "The code reads right, so it will render right." Render it. Screenshots beat code inspection.
 - "This change is too small for visual QA." One-line CSS changes break mobile nav. Check desktop and mobile.
-- "Music tool, so dark purple." That is the first-order reflex the Color law exists to reject.
-- "A placeholder metric is fine for now." Fake numbers ship unless they carry a `[NEEDS REAL DATA]` flag.
+- "Music tool, so dark purple." That is a first-order category reflex. Scoped Bans And Exceptions is where it is ruled out.
+- "A placeholder metric is fine for now." Fake numbers ship. Scoped Bans And Exceptions carries the three allowed replacements and no exception path.
 - "I remember what the reference looks like." Compare source and implementation in the same pass, never from memory.
 - "I'll write the tokens down later." Unlogged tokens are how drift starts. Note the gap now.
 
@@ -264,6 +257,22 @@ Use `hold` when a core path is broken, claims are false, screenshots do not
 match implementation, accessibility blocks a primary action, or the live route
 cannot be verified. Use `ship-with-caveats` only when the caveat is explicit,
 non-critical, and acceptable for the launch stage.
+
+`hold` halts the work. Do not route around it, do not downgrade it to
+`ship-with-caveats`, and do not keep patching. Emit this and wait:
+
+```text
+HALT: <the single blocker, named with file, route, or missing evidence>
+Options:
+1. <option>
+2. <option>
+3. <option, if a third is real>
+Awaiting: which option to take
+```
+
+Give 2-4 real options, not every option. The same applies to a frozen polish
+loop: when the same failure repeats a third time, halt in this format rather
+than opening a fourth attempt.
 
 ## Visual QA Report
 
@@ -295,11 +304,19 @@ issues remain. Use `passed` only when no actionable P0/P1/P2 findings remain.
 
 ## Output Style
 
-Findings lead, rationale follows. Name the file and line. For builds, state what changed and show the render evidence. Never name internal process steps (preflight, task router, mutation) in user-visible output.
+Findings lead, rationale follows. Name the file and line. For builds, state what changed and show the render evidence. Never name internal process steps (preflight, task router) in user-visible output.
+
+Do not validate the existing design, and do not summarize back what is already
+there. Report the lowest-scoring dimensions and the specific failing element, or
+state that no actionable finding exists. A score does not soften because the
+user made the thing, and "it already looks good" is not a finding.
 
 ## Routing
 
 - Full copy + design + QA build or launch → johnny-suede-design
+- Reference-to-target restyle, or "make this site look like that one" → johnny-suede-design (Lane B)
+- Visual iteration with the local script harness (craft, shape, audit sub-commands) → (private Suede Labs companion, not in this pack: suede-visual-qa)
+- UX critique, accessibility audit, information architecture, or design handoff docs → (private Suede Labs companion, not in this pack: suede-ui)
 - Broad UI/UX pattern lookup or framework examples → (private Suede Labs companion, not in this pack: ui-ux-pro-max)
 - Deck-only or HTML presentation generation → (private Suede Labs companion, not in this pack: power-design)
 - Words that carry the surface → suede-copy (johnny-suede-write for the full writing stack)

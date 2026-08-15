@@ -1,6 +1,6 @@
 ---
 name: suede-code-review
-description: "Find the bugs a diff can actually ship: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, and deploy-risk review. Return findings, not a grade."
+description: "Suede Labs AI findings-only code review with full context: changed files, callers, contracts, and deploy surface. Covers TypeScript, React, Next.js, database, Swift/iOS, OWASP, accessibility, SEO, observability, commit hygiene, and deploy risk, ranked P0-P3 with file:line evidence and a fix path. Use when asked to review a diff, PR, branch, or commit range, find the bugs before merge, check a change for security or accessibility problems, or judge whether a change is safe to deploy. Emits findings and a ship gate, not a grade. NOT FOR: the A-F letter grade alone (use suede-code-grader); findings plus grade in one pass (use suede-code); making CI enforce the result on every merge (use suede-ci-gate); root-causing a live bug or failing test (a private Suede Labs companion, not in this pack)."
 ---
 
 # Suede Code Review
@@ -36,8 +36,6 @@ Default: Sonnet. Recommend Opus for auth, payments, and public API surface revie
 - Review current source, current diff, local docs, and relevant runtime behavior.
 - Keep code generation and review separate by default. If you authored the code,
   switch into review mode and look for what your implementation would miss.
-- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated
-  files.
 - Prefer high-signal findings over volume. Do not leave style nits when formatters
   or local conventions already handle them.
 - Every blocking finding needs evidence, impact, and a concrete fix path.
@@ -122,9 +120,6 @@ already encodes.
   deliberate house pattern, capture it in one line — pattern, why it is allowed, path
   scope — and do not re-raise that pattern this review or in later ones. Repeat nitpicks
   erode trust faster than a missed P3.
-- **No rule from silence:** the absence of a convention is not license to impose a
-  personal preference. A style choice not governed by a rule, a formatter, or a real
-  cost is not a finding.
 
 ## Review Modes
 
@@ -230,15 +225,7 @@ This skill emits no letter grade. When the caller wants lane grades too, run $su
 
 Run automatically on every review. Scan the raw diff for content that should never reach git history. No exception for "it's just a branch" — dirty commits propagate.
 
-**Check every line added (`+`) in the diff for:**
-
-- **Secrets and credentials**: API keys, tokens, passwords, private keys, connection strings, JWTs, `.env` variable values hardcoded in source. Patterns: `sk_`, `pk_`, `Bearer `, `-----BEGIN`, `password=`, `secret=`, `token=`, `AKIA`, `ghp_`, `xoxb-`, long hex/base64 strings adjacent to key-like identifiers.
-- **Debug artifacts**: `console.log`, `console.error`, `debugger`, `print(`, `pprint(`, `binding.pry`, `byebug`, `dd(`, `dump(`, `var_dump(`, hardcoded test user IDs, `TODO: remove`, `FIXME: before merge`, `HACK:`, commented-out blocks of real logic.
-- **Conflict markers**: `<<<<<<<`, `=======`, `>>>>>>>`, `|||||||`. A conflict marker in a `+` line means the file was not fully resolved.
-- **Accidentally staged files**: `node_modules/`, `.next/`, `dist/`, `build/`, `*.pyc`, `__pycache__/`, `.DS_Store`, `*.log`, `*.sqlite`, `*.db`, migration snapshot files that weren't meant to commit, generated lock-file noise from the wrong package manager.
-- **WIP breadcrumbs**: `[WIP]`, `DO NOT MERGE`, `TEMP:`, `SKIP CI` in non-CI files, `stash this`, placeholder copy like `lorem ipsum`, `foo`, `bar`, `asdf` in production-facing strings.
-- **Oversized or binary blobs**: files >500 KB added to the diff, font files, compiled binaries, video/audio, uncompressed images outside a designated `public/` or `assets/` directory.
-- **Exposed internal references**: internal IP addresses, internal hostnames, staging/dev URLs hardcoded in non-config files, personal email addresses in source.
+**Execute it, do not eyeball it.** This skill's `scripts/commit-dirt-scan.sh` carries the literal pattern set: run it with the target repo as the working directory (`bash <skill-dir>/scripts/commit-dirt-scan.sh main...HEAD`, or pipe a diff to it with `-`). It and prints a verdict per category. It is read-only and always exits 0 — confirm each hit against the diff before reporting it. When the script cannot run, check every added (`+`) line by hand for the same seven categories: secrets and credentials · debug artifacts · conflict markers · accidentally staged build output · WIP breadcrumbs · oversized or binary blobs · exposed internal references.
 
 **Score:**
 
@@ -262,7 +249,7 @@ A `DIRTY` overall rating automatically sets the Ship Gate to `hold`.
 
 ## Finding Format
 
-Lead with findings, ordered by severity. Group repeated patterns once: "This pattern appears in 4 files: [list]. Fix described once below."
+Lead with findings, ordered by severity. Group repeated patterns once: "This pattern appears in 4 files: [list]. Fix described once below." **The structural problem is the review:** when a design or structural defect is present, report it first and alone — hold the line-level findings inside the code that defect governs, name them as deferred until the structure is settled, and do not enumerate them. A broken design buried under twelve P2 nits reads as twelve small problems.
 
 **P0 / P1**: use the full block:
 
@@ -376,7 +363,8 @@ False positives are why reviewers get muted. Self-check the draft findings befor
 
 - **Evidence test:** every finding ties to a file:line, a reproduction or trace, and a concrete fix. Drop what cannot.
 - **Already-handled test:** drop what a formatter, the type checker, a configured linter, or a documented project rule already covers — do not re-report a gate's job as a manual finding.
-- **Confidence gate:** mark each finding high / medium / low. Collapse low-confidence style observations into a single "nitpicks" line; never let them outrank a real P-level finding.
+- **Confidence gate:** mark each finding high / medium / low. **high** = reproduced, traced across the call graph, or tied to a named failing input or command; **medium** = read from the code, not executed; **low** = the pattern looks wrong but no input, call path, or runtime state proves it.
+  Confidence is a separate axis from severity — a low-confidence security suspicion still carries its P-level with the label attached. Collapse low-confidence style observations into a single "nitpicks" line; never let them outrank a real P-level finding.
 - **Net-signal test:** if a finding would not change the ship decision and would not be worth a human reviewer's comment, cut it. Volume is not the product.
 
 ## Red Flags — Stop
@@ -422,6 +410,13 @@ Reason: [one sentence, naming the blocking finding ID or named caveat]
 - `hold`: a blocker or high-risk unknown remains.
 - `ship-with-caveats`: no blocker remains, but named non-critical caveats exist.
 - `ship`: no known blocker remains and required verification passed.
+
+## Boundaries
+
+- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files; apply fixes only on `--fix` or an explicit instruction.
+- Never introduce a tool the repo does not use, and never report a gate, test, screenshot, or live readback you did not actually run — say so in Verification instead.
+- No rule from silence: a style choice not governed by a project rule, a formatter, or a real cost is not a finding.
+- Emit findings and a ship-gate recommendation only. This skill assigns no letter grade and no lane scores — that is suede-code and suede-code-grader.
 
 ## Routing
 

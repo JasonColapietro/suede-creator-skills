@@ -85,6 +85,10 @@ Trigger Moment → Share Action → Convert Referred → Reward → (Loop)
 - After exceptional support
 - After renewing or upgrading
 
+**Prompt cadence for customers who have not referred:** day 7, day 30, day 60,
+and after any milestone. The timing is this skill's call; the message copy is
+not — hand that to `suede-emails`.
+
 ### Step 2: Design Share Mechanism
 
 **Ranked by effectiveness:**
@@ -136,8 +140,25 @@ Trigger Moment → Share Action → Convert Referred → Reward → (Loop)
 | Low awareness | Add prominent in-app prompts |
 | Low share rate | Simplify to one click |
 | Low conversion | Optimize referred user experience |
-| Fraud/abuse | Add verification, limits |
+| Fraud/abuse | Apply the fraud controls below |
 | One-time referrers | Add tiered/gamified rewards |
+
+### Fraud Controls
+
+Read [references/affiliate-programs.md](references/affiliate-programs.md)
+§Fraud Prevention before designing rewards or writing program terms — it carries
+the technical, policy, and structural control set (delayed payout after
+activation, device and IP signals, clawback on refunds, per-period caps,
+manual review of suspicious patterns). Every program in this skill uses it,
+customer referral programs included, not only affiliate programs.
+
+Set these thresholds explicitly, because the reference leaves them open:
+- Name the qualifying downstream event that releases a reward (a paid conversion
+  or day-N retention, N stated), never signup alone.
+- Hold payouts until the refund/chargeback window has closed, and state that
+  window in days.
+- State the dollar amount above which a payout goes to manual review before it
+  is released.
 
 ---
 
@@ -157,6 +178,10 @@ Trigger Moment → Share Action → Convert Referred → Reward → (Loop)
 - Referral program ROI
 
 ### Typical Findings
+
+Industry-reported ranges, published by referral-platform vendors and not measured
+on this product. Use them to calibrate a recommendation; never assert them as a
+result this program will produce or has produced.
 
 - Referred customers have 16-25% higher LTV
 - Referred customers have 18-37% lower churn
@@ -191,48 +216,10 @@ Trigger Moment → Share Action → Convert Referred → Reward → (Loop)
 
 ---
 
-## Email Sequences
-
-### Referral Program Launch
-
-```
-Subject: You can now earn [reward] for sharing [Product]
-
-We just launched our referral program!
-
-Share [Product] with friends and earn [reward] for each signup.
-They get [their reward] too.
-
-[Unique referral link]
-
-1. Share your link
-2. Friend signs up
-3. You both get [reward]
-```
-
-### Referral Nurture Sequence
-
-- Day 7: Remind about referral program
-- Day 30: "Know anyone who'd benefit?"
-- Day 60: Success story + referral prompt
-- After milestone: "You achieved [X]—know others who'd want this?"
-
----
-
 ## Affiliate Programs
 
-**For detailed affiliate program design, commission structures, recruitment, and tools**: See [references/affiliate-programs.md](references/affiliate-programs.md)
-
----
-
-## Task-Specific Questions
-
-1. What type of program (referral, affiliate, or both)?
-2. What's your customer LTV and current CAC?
-3. Existing program or starting from scratch?
-4. What tools/platforms are you considering?
-5. What's your budget for rewards/commissions?
-6. Is your product naturally shareable?
+**For affiliate program design, commission structures, recruitment, fraud
+prevention, and tools**: See [references/affiliate-programs.md](references/affiliate-programs.md)
 
 ---
 
@@ -268,4 +255,5 @@ controls, tax support, and data-export terms before recommending a platform.
 - Use `suede-launch-packaging` to coordinate the approved program launch.
 - Use `suede-emails` for referral invitation and nurture sequences.
 - Use `suede-marketing-psychology` to test incentive framing.
+- Use `suede-ab-testing` to design and evaluate the incentive, messaging, and placement tests above.
 - Use `suede-analytics` to define and read referral attribution.

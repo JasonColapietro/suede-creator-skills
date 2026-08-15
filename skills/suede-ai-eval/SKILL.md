@@ -1,6 +1,6 @@
 ---
 name: suede-ai-eval
-description: "Design AI evals that catch regressions before users do: rubrics, test cases, failure modes, acceptance gates, and AI-SPEC artifacts."
+description: "Suede Labs AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); UAT of the built feature beyond the eval suite (a private Suede Labs companion, not in this pack)."
 ---
 
 # Suede AI Eval
@@ -60,7 +60,7 @@ When the surface is already live, sample real behavior with safe inputs and reco
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
 5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
 6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Score coverage and infrastructure using the method under Tooling and Infrastructure below. Name every uncovered high-risk behavior regardless of the numeric score.
-7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step.
+7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status — the repo's own eval script if one exists, otherwise the tool's invocation (e.g. `npx promptfoo eval -c <config>`) — and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string.
 
 ## Eval Dimensions By System Type
 

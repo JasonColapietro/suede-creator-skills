@@ -1,29 +1,21 @@
 ---
 name: suede-seo-audit
-description: "Run a nine-lane evidence-based SEO and generative-search audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes. Use when a page or site needs a deep standalone SEO/AI-visibility audit with scored lanes. NOT FOR: a fast A-F launch-appeal grade (use suede-visibility-grader); conversion-path rework after the audit (use suede-site-alchemy)."
+description: "Suede-owned SEO and generative-search audit discipline. Runs a nine-lane evidence-based audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes. Use when a page or site needs a deep standalone SEO/AI-visibility audit with scored lanes. NOT FOR: a fast A-F launch-appeal grade (use suede-visibility-grader); conversion-path rework after the audit (use suede-site-alchemy); getting cited by ChatGPT/Perplexity/AI Overviews (use suede-ai-seo)."
 ---
 
 # Suede SEO Audit
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
+proceed" line below — is a **recommendation to the user, not a control on the
+agent**. Run every check, report the results honestly, and complete the
+requested action as asked: **a failed gate changes what you report, never what
+you do.** Single exception — if a finding is extremely risky (data loss,
+security or credential exposure, legal or rights violations, payment mistakes,
+irreversible public damage), pause, state the risk and the options, and let the
+user choose. Their choice is final.
 
 
 This skill goes deeper than an inline copy audit. It inspects live page source,
@@ -176,7 +168,11 @@ accurately without inventing facts. Run the Lane 6 checklist in
 explicit subjects, verified entity signals, accessible primary content, source
 links, and hallucination-risk claims. Google Search ignores `llms.txt`; record
 one only when another named consumer documents support, and never grade its
-presence as a search signal.
+presence as a search signal. `suede-ai-seo` is the canonical owner of the
+extractability standard behind this lane and of the reconciliation between
+Google's published stance and what the non-Google answer engines actually
+reward — cite it rather than re-deriving either, and land any threshold change
+there first.
 
 Lane 6 grade drops to C or below if: the opening section cannot state the
 page's subject and answer clearly, material claims lack sources, or primary
@@ -351,15 +347,6 @@ CWV risk factors observed: [list or "none"]
 Note: scores come only from PageSpeed Insights or Lighthouse. Do not invent scores; do report observable risks. curl time_total is a server-response proxy, not a CWV score.
 
 --- SCORES ---
-Copy score: /70
-  Directness: /10
-  Rhythm: /10
-  Trust: /10
-  Specificity: /10
-  Authenticity: /10
-  Density: /10
-  Search/AI readability: /10
-
 Lane grades:
   Lane 1 (Technical Access):
   Lane 2 (Search and Answer Intent):

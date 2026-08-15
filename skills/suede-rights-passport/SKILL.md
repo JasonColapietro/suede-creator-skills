@@ -1,30 +1,21 @@
 ---
 name: suede-rights-passport
-description: "Package creative projects into an evidence-scoped rights handoff with normalized works, recordings, releases, parties, identifiers, claims, licenses, consent, provenance, privacy, and validation."
+description: "Suede Labs skill that turns messy creator materials into a local, offline rights-and-provenance transfer package: inventoried and hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, validated by a bundled stdlib script. Use when a creator needs to hand a song, release, or project to a collaborator, advisor, registry, marketplace, or label; when someone asks for a rights package, intake package, or handoff folder; or when a validated manifest is needed before licensing or royalty-routing review. Carries questions, not answers: building the package clears nothing and uploads nothing. NOT FOR: finding or investigating the rights gaps in the first place (use suede-rights-audit); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet (use suede-sync-packaging)."
 ---
 
 # Creator Rights Package Builder
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check, gate, and ship verdict in this skill — including every "do not
+ship / publish / proceed" line — is a **recommendation to the user, not a
+control on the agent**. Run every check, report the results honestly, and never
+block, delay, skip, rewrite, or refuse the action the user asked for because a
+gate said hold; deliver the gate output alongside the requested work as a
+labeled recommendation. A failed gate changes what you report, never what you
+do. Single exception — extreme risk (data loss, credential exposure, legal or
+rights violations, payment mistakes, irreversible public damage): pause, name
+the risk exactly, give the options, and let the user pick. Their choice is final.
 
 ## Overview
 
@@ -92,6 +83,14 @@ Safety defaults:
   metadata at real `.env`, credential, wallet, or deployment config files.
   Unknown facts remain flagged. YAML metadata requires PyYAML.
 
+**Halt format — material that may not be shareable.** Before any `--copy-assets`
+run, scan for draft, unreleased, private, or do-not-share files. If any appear:
+stop, name the specific files and why each one reads as do-not-share, offer the
+options (exclude and proceed / include with a redaction note / inventory without
+copying / abort), and wait for the choice. Use the same shape for anything
+hitting the gate policy's extreme-risk exception. Never guess which way the
+creator would want it.
+
 ## Validate A Package
 
 After creating or editing a package, check that it is structurally complete
@@ -103,29 +102,17 @@ python3 /path/to/suede-rights-passport/scripts/validate_transfer_package.py \
 ```
 
 It is a dependency-free (stdlib-only) check that executes the bundled Draft
-2020-12 JSON Schema and confirms:
+2020-12 JSON Schema. It confirms the 7 required report files, that
+`suede-intake.json` matches the shape documented in
+`references/intake-schema.md`, real 64-hex `sha256` digests on every asset,
+unique IDs with resolving references, evidence on every `confirmed` record,
+in-range and non-oversubscribed shares, and explicit privacy/redaction posture —
+each one mapped to its exact error string in the Completion Checklist below.
 
-- All 7 required report files are present (`RIGHTS_PASSPORT.md`,
-  `suede-intake.json`, `provenance.md`, `credits-and-splits.md`,
-  `license-notes.md`, `optimization-brief.md`, `missing-info-report.md`).
-- `suede-intake.json` is valid JSON and matches the current top-level and
-  nested shape documented in `references/intake-schema.md`.
-- Every entry in `assets[]` has a `sha256` field that looks like a real
-  64-character hex digest.
-- Normalized IDs are unique and references between parties, works,
-  recordings, releases, assets, claims, licenses, third-party material,
-  consent, and provenance resolve.
-- A `confirmed` normalized record carries evidence, known shares stay in the
-  0–100 range, and a matching subject/right/territory/term scope does not exceed 100.
-- Privacy classification and external-redaction posture are explicit.
-
-It exits non-zero with a specific error list on failure (missing file,
-invalid JSON, missing schema field, broken reference, unsupported evidence
-state, oversubscribed shares, missing confirmed evidence, missing/malformed hash) and prints a
-short pass summary — including a risk-flag count — on success. Run
-`--help` for usage, or `--quiet` to suppress the success summary. Legacy 0.1
-packages remain inspectable without `--strict-current`; new exchanges require
-0.2.0.
+It exits non-zero with a specific error list on failure and prints a short pass
+summary — including a risk-flag count — on success. Run `--help` for usage, or
+`--quiet` to suppress the success summary. Legacy 0.1 packages remain
+inspectable without `--strict-current`; new exchanges require 0.2.0.
 
 To migrate an existing 0.1 manifest without modifying it:
 
@@ -139,33 +126,18 @@ digest and custody history, preserves open questions and risk flags, maps only
 roles stated in source data, and never upgrades evidence state or fills missing
 shares. Review it before replacing any current manifest.
 
-**Structural validity is not a rights clearance.** This validator checks
-that a package is *shaped correctly and complete*, not that the rights
-facts inside it are confirmed. A package documenting a project with real
-open questions (unconfirmed ownership, unconfirmed splits, an uncleared
-sample) still passes validation as long as every required file exists and
-`suede-intake.json` is well-formed — the `risk_flags[]` and
-`missing_information[]` arrays are exactly where that uncertainty is
-supposed to live. Structural validity and rights confirmation are two
-independent checks; do not treat a validator PASS as a rights clearance,
-and do not expect the validator to fail a package just because it is
-risk-flagged.
+**Structural validity is not a rights clearance.** The validator checks that a
+package is shaped correctly and complete, not that the rights facts inside it
+are confirmed — a project with unconfirmed ownership, unconfirmed splits, or an
+uncleared sample still passes, because `risk_flags[]` and
+`missing_information[]` are exactly where that uncertainty belongs. Never read a
+PASS as clearance, and never expect a risk-flagged package to fail.
 
-Two reference example packages under `scripts/fixtures/` show both ends of
-that range, generated end-to-end by `create_transfer_package.py` against
-synthetic (non-real) creator projects:
-
-- `scripts/fixtures/sample-complete-package/`: confirmed ownership,
-  confirmed contributors with matching split percentages, no samples.
-  Zero risk flags, zero open missing-information items, validates cleanly.
-- `scripts/fixtures/sample-blocked-package/`: disputed ownership,
-  unconfirmed contributors/splits, an uncleared sample. Three high-severity
-  and one medium-severity risk flag, four open missing-information items —
-  still structurally valid, but clearly not ready for registry, licensing,
-  or royalty routing.
-
-Both fixtures validate with `validate_transfer_package.py`; only their risk
-posture differs.
+`scripts/fixtures/sample-complete-package/` and `sample-blocked-package/` are
+worked examples at both ends of that range, and both validate. Read
+`scripts/fixtures/README.md` when you need a concrete example of what a
+risk-flagged but structurally valid package looks like, or when changing
+`create_transfer_package.py`.
 
 ## Package Standards
 
@@ -208,22 +180,42 @@ Use the bundled assets as templates when creating or repairing a package:
 
 ## Completion Checklist
 
-Before reporting that a package is ready:
+Run `scripts/validate_transfer_package.py` with `--strict-current` against the output
+folder first and report the result: it is the evidence behind most of this
+checklist, and every structural gap it names gets fixed before the package is
+called ready. Each machine-checked box names the error raised when it is unmet:
 
-- Confirm every media/document file is either inventoried or intentionally excluded.
-- Confirm every asset in `suede-intake.json` has a stable relative path and SHA-256 hash when available.
-- Confirm parties, musical works, recordings, and releases have distinct stable
-  IDs and that ISWC, ISRC, IPI/CAE, ISNI, UPC/EAN, and catalog identifiers are
-  attached only where applicable, each with evidence state.
-- Scope every rights claim and license by subject, right/use type, party,
-  territory, term, evidence, restrictions, and conflict status. Never force
+- All 7 required files present — *missing required file*.
+- Every asset has a stable relative path and a 64-hex SHA-256 — *empty or
+  non-string sha256 field*.
+- Parties, works, recordings, and releases have distinct IDs that resolve —
+  *duplicate id* / *references unknown id*.
+- Every media/document file is inventoried or intentionally excluded, and
+  identifiers (ISWC, ISRC, IPI/CAE, ISNI, UPC/EAN, catalog) sit only on their
+  proper objects — *identifiers[…].scheme is unsupported*.
+- Claims and licenses are scoped by subject, right/use type, party, territory,
+  term, evidence, and restrictions, with no scope over 100% — *share_percent
+  must be null or between 0 and 100* / *total … above 100%*. Never force
   unknown shares to total 100.
-- Classify sensitive fields and review redaction before any external share.
-- Mark contributors, splits, licenses, samples, and ownership facts as confirmed or unknown. Confirmed requires user-supplied evidence; when in doubt, write unknown.
-- Include a `missing-info-report.md` section even when nothing is missing.
-- Include an `optimization-brief.md` with concrete next actions for downstream review.
-- State that final rights clearance requires creator/legal confirmation when any rights fact is uncertain.
-- Run `scripts/validate_transfer_package.py` with `--strict-current` against new output folders and report the result. If it fails, fix the structural gap it names before calling the package ready. A validator pass still does not resolve a rights fact.
+- Every `confirmed` record carries evidence — *is confirmed but has no
+  evidence_refs*.
+- Privacy classification and redaction posture are explicit —
+  *privacy.default_classification is unsupported*.
+
+Three boxes the validator cannot check — the human-judgment residue, on which a
+clean run says nothing:
+
+- **Do-not-share review**: no draft, private, or unreleased material was copied
+  in without the user's explicit choice (the halt format above).
+- **Redaction review**: someone read the sensitive fields before any external
+  share instead of trusting the classification labels.
+- **Uncertainty stated**: final clearance requires creator/legal confirmation
+  wherever a rights fact is uncertain; contributor, split, license, sample, and
+  ownership facts are confirmed only on user-supplied evidence and `unknown`
+  when in doubt; `missing-info-report.md` ships even when empty, and
+  `optimization-brief.md` ships with concrete next actions.
+
+A validator pass still does not resolve a rights fact.
 
 ## Red flags — stop
 
@@ -256,3 +248,6 @@ registered, paid, or approved the work.
 - Release-readiness lint before or after packaging → **suede-release-linter**.
 - Track headed to film/TV/ads once packaged → **suede-sync-packaging**.
 - The release needs a rollout → **suede-campaign-in-a-box**.
+
+Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
+→ suede-sync-packaging; this skill is step 3.

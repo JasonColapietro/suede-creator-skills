@@ -11,8 +11,7 @@ Use this Suede customer-research playbook to ground positioning, product, and co
 
 ## Before Starting
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context to skip questions already answered.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — the ICP, segment definitions, and what research already exists decide where to look and what counts as a representative sample. Ask only what it does not already answer.
 
 ---
 
@@ -107,7 +106,7 @@ Label every insight with a confidence level before presenting it:
 - Reddit skews technical and skeptical vs. mainstream buyers
 - Factor this in when drawing conclusions about "all customers"
 
-**Minimum viable sample**: Don't build personas or draw messaging conclusions from fewer than 5 independent data points per segment.
+**Minimum viable sample**: 5 independent data points per segment — interviews, reviews, tickets, or community posts — before building a persona or drawing a messaging conclusion for that segment. Below 5, present the material as raw signal, not as a finding.
 
 ---
 
@@ -147,6 +146,20 @@ For every piece of content you find:
 | Theme tag | Pain / trigger / outcome / alternative / language |
 | Customer profile signals | Role, company size, industry hints from the post |
 
+### Persist Captures Before Synthesizing
+
+Save what you gathered before extracting themes from it — otherwise the
+provenance gate below is unenforceable and a re-run repeats the entire
+collection. Mirror the raw-evidence convention `suede-competitor-profiling`
+uses: one dated folder per run at `customer-research/raw/<YYYY-MM-DD>/`, one
+file per source inside it (`reddit.md`, `g2-<competitor>.md`, `app-store.md`),
+plus a `captures.csv` whose columns are the capture table above. Create the date
+folder fresh each run and never overwrite a prior date's — that is how you diff
+what moved in the market. Mode 1 assets (transcripts, tickets, win/loss notes,
+NPS verbatims) usually already live somewhere: don't copy them, record each in
+`captures.csv` by file path or system identifier plus date and segment, so every
+quote resolves to a named record either way.
+
 ### Research Synthesis Template
 
 After gathering from multiple sources, synthesize into:
@@ -179,57 +192,11 @@ Early-stage products (or new categories) lack first-party review data. Don't inv
 3. **Comparable products on marketplaces** — Amazon/app-store reviews for adjacent solutions to the same job
 4. **Adjacent brands sharing the audience** — what else this buyer buys; their reviews reveal the buyer's broader language and values
 
-Personas built this way are provisional: tag each with its proxy source, and replace proxy evidence with first-party evidence as real reviews arrive.
-
-
-Personas should be built from research, not invented. Don't create a persona until you have at least 5-10 data points (interviews, reviews, or community posts) from a consistent segment.
+Personas built this way are provisional: tag each with its proxy source, and replace proxy evidence with first-party evidence as real reviews arrive. The minimum viable sample above applies to proxy evidence too.
 
 ### Persona Structure
 
-```
-## [Persona Name] — [Role/Title]
-
-**Profile**
-- Title range: [e.g., "Marketing Manager to VP of Marketing"]
-- Company size: [e.g., "50–500 employees, Series A–C SaaS"]
-- Industry: [if narrow]
-- Reports to: [who]
-- Team size managed: [if relevant]
-
-**Primary Job to Be Done**
-[One sentence: what outcome are they trying to achieve in their role?]
-
-**Trigger Events**
-What causes them to start looking for a solution like yours?
-- [trigger 1]
-- [trigger 2]
-
-**Top Pains**
-1. [Pain — in their words if possible]
-2. [Pain]
-3. [Pain]
-
-**Desired Outcomes**
-- [What success looks like to them]
-- [How they measure it]
-- [How it makes them look to their boss/team]
-
-**Objections and Fears**
-- [What makes them hesitate to buy or switch]
-
-**Alternatives They Consider**
-- [Competitor, DIY, do nothing, hire someone]
-
-**Key Vocabulary**
-Words and phrases they actually use (sourced from research):
-- "[phrase]"
-- "[phrase]"
-
-**How to Reach Them**
-- Channels: [where they spend time]
-- Content they consume: [formats, topics]
-- Influencers/communities they trust: [specific names if known]
-```
+**Read [references/persona-templates.md](references/persona-templates.md) before writing the first persona of a run** — it holds the full fill-in structure (profile, primary job, triggers, pains, desired outcomes, objections, alternatives, vocabulary, how to reach them). Personas written from memory drift field by field and stop being comparable.
 
 ### Persona Anti-Patterns
 
@@ -240,18 +207,29 @@ Words and phrases they actually use (sourced from research):
 
 ---
 
+## Provenance Gate
+
+Run this over the finished deliverable, before it goes out. Boundaries below
+forbids fabricated quotes, themes, sample sizes and frequency counts; this is
+what makes that checkable rather than aspirational.
+
+- **Every verbatim resolves to a named capture record.** Mode 2: platform, thread URL, and date, per the capture table above. Mode 1: the asset identifier or file, plus date and segment. A quote that cannot be attributed to a capture record is **cut** — never paraphrased into a theme, never rolled into a frequency count.
+- **Recount the numbers at the same pass.** "Appeared in X of Y sources" and every High/Medium/Low confidence label are recomputed from the capture records right now, not carried over from a draft. A confidence label that no longer matches the count gets downgraded, not defended.
+- **Name the sample.** Source mix, segment, date range, and total captures appear in the deliverable itself, so the reader can judge the base the conclusions sit on.
+
+---
+
 ## Deliverable Formats
 
-Depending on what the user needs, offer:
+Default deliverable: a **research synthesis report** (themes, quotes, patterns,
+implications) plus a **VOC quote bank** organized by theme. Produce those unless
+the user asked for something else.
 
-1. **Research synthesis report** — themes, quotes, patterns, and implications
-2. **VOC quote bank** — organized verbatim quotes by theme, for use in copy
-3. **Persona document** — 1-3 personas built from the research
-4. **Jobs-to-be-done map** — functional, emotional, and social jobs by segment
-5. **Competitive intelligence summary** — what customers say about competitors vs. you
-6. **Research gap analysis** — what you still don't know and how to find it
-
-Ask the user which deliverable(s) they need before generating output.
+Offer these instead or in addition when the goal calls for it: a **persona
+document** (1-3 personas), a **jobs-to-be-done map** (functional, emotional,
+social jobs by segment), a **competitive intelligence summary** (what customers
+say about competitors vs. you), or a **research gap analysis** (what you still
+don't know and how to find it).
 
 ---
 
@@ -263,9 +241,8 @@ If context is unclear:
 2. **What do you already have?** (transcripts, surveys, tickets, G2 reviews, nothing)
 3. **Who is the target segment?** (all customers, a specific tier, churned users, prospects who didn't buy)
 4. **What's your product?** (if not in the product marketing context file)
-5. **What do you want delivered?** (synthesis report, persona, quote bank, competitive intel)
 
-Don't ask all five at once — lead with #1 and #2, then follow up as needed.
+Don't ask all four at once — lead with #1 and #2, then follow up as needed.
 
 ---
 

@@ -113,7 +113,9 @@ For annual plans or high-value subscriptions:
 - Typically 4-8 retry attempts over 3-4 weeks
 - Recovers ~15% more than fixed-schedule retries
 
-**Manual retry schedule (if no smart retries):**
+**Manual retry schedule (if no smart retries) — canonical.** This table is the
+single retry schedule for the churn-prevention skill; every other retry
+configuration, including the provider blocks below, follows it.
 
 | Retry | Timing | Best Day/Time |
 |-------|--------|--------------|
@@ -285,11 +287,14 @@ will be paused automatically.
 2. Enable "Smart Retries" under retry rules
 3. Set failed payment emails in Dashboard → Settings → Emails
 
-**Custom retry rules (if not using Smart Retries):**
+**Custom retry rules (if not using Smart Retries)** — the canonical schedule
+above, entered as Stripe retry rules:
 ```
-Retry 1: 3 days after failure
-Retry 2: 5 days after failure
-Retry 3: 7 days after failure
+Retry 1: 1 day after failure
+Retry 2: 3 days after failure
+Retry 3: 5 days after failure
+Retry 4: 7 days after failure
+Retry 5: 10 days after failure
 Final:   Mark subscription as unpaid after last retry
 ```
 

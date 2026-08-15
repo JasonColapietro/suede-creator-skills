@@ -1,6 +1,6 @@
 ---
 name: suede-code-grader
-description: "Give a blunt A-F ship grade for a code change across correctness, security, data, UX, verification, and deploy readiness. Use for a grade, not a findings review."
+description: "Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 
 # Suede Code Grader
@@ -45,39 +45,18 @@ Inspect:
 
 If live, test, or runtime checks are not practical, grade the source and mark those lanes as unverified.
 
+**Gate evidence is a command, not an impression.** Run what the repo already ships and cite the command and its exit status: the typecheck, the configured linter on changed files, the test suite, and — for a release grade — the production build. For per-stack syntax (web/Node, MCP server, iOS/Swift, generic API), use the Gate Commands by Stack table in **suede-code-review** rather than inventing a command. Detect what exists and run only that; never introduce a tool the repo does not use, and never report a gate result you did not execute.
+
 ## Instant-F Triggers
 
 Check these before scoring any lane. Any single match is an automatic F — no other lanes matter until it is fixed. This list mirrors suede-code's canonical Step 1 list — change both together.
 
-**Secrets and credentials**
-- Hardcoded API key, secret, token, or password in source (not .env, not config — in the actual committed file)
-- Private key or certificate committed to repo
-- OAuth client secret or signing secret in any non-secret-manager location
-
-**Injection**
-- SQL query built by string concatenation with user-controlled input (no parameterization, no ORM escaping)
-- Shell command assembled from user input via exec/spawn/eval
-- Template rendered with unescaped user input where XSS is reachable
-
-**Auth bypass**
-- Middleware that checks auth but has a code path that skips it (early return, exception swallowed, condition that always resolves to "authenticated")
-- Role or permission check that can be bypassed by manipulating a request parameter
-- JWT verified with `alg: none` accepted or with the secret hardcoded in source
-
-**Payment and wallet**
-- Payment handler that swallows errors silently (try/catch with empty catch, unhandled promise rejection)
-- Webhook handler with no signature verification
-- Amount or recipient derived from untrusted user input without server-side validation
-
-**Data destruction**
-- Migration with a DROP or destructive ALTER with no rollback and no tested restore
-- Bulk delete or update with no WHERE clause or with user-controlled WHERE
-- Cache invalidation that clears production data stores without a restore path
-
-**Plaintext sensitive data**
-- Password stored or logged in plaintext
-- PII written to an unencrypted log or analytics pipeline
-- SSN, payment card, or health data in a non-encrypted column or field
+**Secrets and credentials** — hardcoded API key/secret/token/password in committed source; private key or certificate committed; OAuth/signing secret outside a secret manager.
+**Injection** — SQL built by string concatenation with user input; shell command from user input via exec/spawn/eval; template rendered with unescaped user input where XSS is reachable.
+**Auth bypass** — auth middleware with a path that skips it (early return, swallowed exception, always-true condition); permission check bypassable via request param; JWT accepting `alg: none` or a hardcoded secret.
+**Payment and wallet** — payment handler swallowing errors silently; webhook with no signature verification; amount or recipient from untrusted input without server-side validation.
+**Data destruction** — migration with DROP/destructive ALTER, no rollback, no tested restore; bulk delete/update with no WHERE or user-controlled WHERE; cache invalidation that clears production stores with no restore path.
+**Plaintext sensitive data** — password stored or logged in plaintext; PII to an unencrypted log/analytics pipeline; SSN/payment card/health data in a non-encrypted field.
 
 If any Instant-F pattern is present: stop, report it, mark the grade F, list the specific file and line, and do not grade remaining lanes. The grade cannot be raised by other lane performance.
 
@@ -146,19 +125,7 @@ Flag these patterns as part of the grade assessment:
 - **Implicit state**: program behavior depends on hidden global or module-level state.
 - **Dead code**: functions, branches, or imports that can never be reached.
 
-Grade impact depends on where the debt lives, not just what it is:
-
-- Debt in **auth, payment, or data migration paths**: one level stricter. A God object in a payment module is D (not C); a missing abstraction in a payment flow with 3+ duplicated branches is C (not B).
-- Debt in **core business logic or high-traffic routes**: standard scale below.
-- Debt in **utility helpers, scripts, or low-traffic internals**: flag it, record it as a Required Upgrade, but do not lower the overall grade unless it bleeds into a critical path.
-
-Apply grade impact:
-
-- Debt that actively impairs correctness or masks a real bug: D in that lane.
-- Debt that creates meaningful maintenance risk in the changed area: C in that lane.
-- Debt present but bounded with a named, tracked follow-up: B in that lane.
-
-**Debt severity by location — concrete examples:**
+**Grade impact depends on where the debt lives, not just what it is:**
 
 | Pattern | Location | Grade Impact |
 |---|---|---|
@@ -242,3 +209,4 @@ need to see the lane arithmetic on a real case.
 - Findings and fix briefs behind the grade → **suede-code** (combined) or **suede-code-review** (findings only, plus Accessibility/SEO lanes)
 - Grade is C or below and the repo has no merge gate → **suede-ci-gate**
 - The change ships AI behavior with no eval coverage → **suede-ai-eval**
+- The change touches an MCP server, its catalog, or its tool/resource/prompt definitions → **suede-mcp-qa** for the live protocol suite before the grade counts as verified

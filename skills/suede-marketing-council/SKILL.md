@@ -13,8 +13,7 @@ Suede convenes a **clearly labeled simulated council** that applies documented p
 
 ## Before Starting
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`), read it before asking questions.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
 
 Then clarify (ask only for what's missing):
 1. **The question** — What decision or work product is the council reviewing? (a strategy, a landing page, a pricing change, a launch plan, a rebrand, an ad account)
@@ -27,7 +26,7 @@ Then clarify (ask only for what's missing):
 |------|-------|------|
 | **Quick take** | 1 advisor | "What would Ogilvy say about this headline?" — a single named advisor |
 | **Council session** (default) | 3–5 advisors | A real decision that benefits from conflicting lenses |
-| **Full council** | All 12 | Major strategic decisions — expect a long output; offer this only when stakes justify it |
+| **Full council** | All 12 | Expect a long output. Offer this only when the decision is irreversible, commits spend or headcount the user has named as material, or the user says they cannot revisit it for at least a quarter |
 
 ## The Bench
 
@@ -83,12 +82,7 @@ For a council session, seat 3–5 advisors:
 
 ## Live Research Pass
 
-When the topic is specific (a niche, a channel shift, a current platform change) or the user wants sources, go beyond the dossiers:
-
-- **If a deep-research skill is installed** (e.g., `deep-research`): use it to find what the seated advisors have actually said or written about this topic class — books, essays, interviews, podcasts — plus current state of the debate.
-- **If a video-analysis skill is installed** (e.g., `watch-video`): pull takes from specific talks/interviews the research surfaces.
-- **If a recency skill is installed** (e.g., `last30days`): check for recent takes when the topic is fast-moving.
-- **Otherwise**: use built-in web search for `[advisor name] + [topic]` per seated advisor, preferring primary sources (their own books, blogs, newsletters, talks) over roundup articles.
+When the topic is specific (a niche, a channel shift, a current platform change) or the user wants sources, go beyond the dossiers: research what each seated advisor has actually said or written about this topic class, using whatever research surface is callable — an installed research or video-analysis skill, otherwise built-in web search for `[advisor name] + [topic]`. Prefer primary sources (their own books, blogs, newsletters, talks) over roundup articles.
 
 Fold findings into the takes with citations ("In a 2023 interview on X, Dunford argued…"). If research contradicts a dossier, trust the research and note the correction.
 
@@ -99,7 +93,8 @@ Fold findings into the takes with citations ("In a 2023 interview on X, Dunford 
 - **No invented endorsements or condemnations.** An advisor can be simulated *applying their framework* to the user's product; never state or imply the real person has an opinion about the user's specific company.
 - **Living advisors get extra care.** Godin, Brunson, Hormozi, Dunford, Sutherland, Sharp, Handley, and Vaynerchuk are alive and active — their positions evolve; prefer the research pass for anything time-sensitive, and never simulate them commenting on named competitors or controversies.
 - **Disagree in substance, not caricature.** Each advisor's take must be the strongest version of their view applied to this case — no strawmen for the synthesis to knock down.
-- **If the dossier and the user's question don't overlap** (e.g., asking Hopkins about TikTok), say so in the take and reason by explicit analogy: "Hopkins never saw social feeds, but his sampling principle maps like this…"
+- **If the dossier and the user's question don't overlap** (e.g., asking Hopkins about TikTok), say so in the take and reason by explicit analogy: "Hopkins never saw social feeds, but his sampling principle maps like this…" That path is for a channel or era gap where the underlying mechanism still transfers.
+- **"Outside my documented record on this" is a first-class verdict.** When the dossier holds no documented position on the *mechanism* at issue — not merely an unfamiliar channel or era — the take says exactly that as its Bottom line rather than extrapolating. The chair then either runs the Live Research Pass for that advisor or re-seats the chair (the same re-seat move as the agreeing-council anti-pattern). Never fill the gap by inference and never let a re-seat go unmentioned in the "Seated" line.
 
 ## Output Format
 

@@ -181,9 +181,9 @@ For each objection, document:
 
 ### Implementation Options
 
-- **Spreadsheet** — Fastest to build, easy to customize per deal. Works for inside sales.
-- **Web tool** — More polished, captures leads, scales better. Worth building if deal volume is high.
-- **Slide-based** — ROI story embedded in the deck. Good for executive presentations.
+Default to **slide-based** — the ROI story lives in the deck the rep already
+presents. Escape to a **spreadsheet** when the prospect supplies and wants to
+change their own inputs; build a **web tool** only when deal volume justifies it.
 
 ---
 
@@ -285,7 +285,7 @@ Organize case studies so reps can find the right one instantly:
 
 ### Keeping It Living
 
-Playbooks die when they're not updated. Review quarterly, get input from top reps, and remove anything outdated. Assign an owner — if nobody owns it, it rots.
+Review quarterly, get input from top reps, remove anything outdated, and assign a named owner.
 
 ---
 
@@ -328,17 +328,16 @@ Deliver the right format for each asset type:
 | Persona card | One-page card format per persona |
 | Proposal | Section-by-section copy with customization notes |
 
----
+Every proof point and every ROI figure in a delivered asset carries an inline tag: `[source: named customer / study / internal report + date]` or `[modeled — assumptions: the inputs used]`. An untagged number is a delivery blocker — tag it or cut it before the asset goes out. The sales deck deliverable uses this unit, repeated for each of the 11 slides above:
 
-## Task-Specific Questions
-
-If context is missing, ask:
-
-1. What collateral do you need? (deck, one-pager, objection doc, etc.)
-2. Who will use it? (AE, SDR, champion, prospect)
-3. What sales stage is it for? (prospecting, discovery, demo, negotiation, close)
-4. Who is the target persona? (title, seniority, department)
-5. What are the top 3 objections you hear most?
+```markdown
+### Slide N — [slide name]
+**Headline:** [the single idea, written as a sentence]
+**Body copy:** [on-slide text, minimal]
+**Speaker notes:** [what the rep says out loud, not a re-read of the slide]
+**Visual:** [chart / screenshot / logo wall / none]
+**Proof:** [source: …] or [modeled — assumptions: …] for every number above
+```
 
 ---
 

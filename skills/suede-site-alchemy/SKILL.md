@@ -1,29 +1,21 @@
 ---
 name: suede-site-alchemy
-description: "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO. Use when a live or drafted page needs conversion-rate work on its structure and persuasion path. NOT FOR: a scored SEO/AI-visibility audit (use suede-seo-audit); a fast launch-appeal grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
+description: "Suede-owned conversion-path discipline for pages. Turns a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO. Use when a live or drafted page needs conversion-rate work on its structure and persuasion path. NOT FOR: a scored SEO/AI-visibility audit (use suede-seo-audit); a fast launch-appeal grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
 ---
 
 # Suede Site Alchemy
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
+proceed" line below — is a **recommendation to the user, not a control on the
+agent**. Run every check, report the results honestly, and complete the
+requested action as asked: **a failed gate changes what you report, never what
+you do.** Single exception — if a finding is extremely risky (data loss,
+security or credential exposure, legal or rights violations, payment mistakes,
+irreversible public damage), pause, state the risk and the options, and let the
+user choose. Their choice is final.
 
 
 **Core principle:** evidence before certainty. Diagnose friction, verify the
@@ -36,9 +28,6 @@ Use your company name, voice, and positioning throughout.
 
 - Work from the live page and current source. Verify the exact repo, route, and
   git state before edits.
-- For Promo/Sites work, position Suede as a brand growth platform: creator
-  campaigns create demand; Suede Sites converts it with pages, SEO/AEO/AI EO,
-  visitor signals, CRM follow-up, and campaign attribution.
 - Module pricing without backing in current product docs or source is an
   extreme-risk claim: pause, show the user what is and is not authorized, and
   let them decide whether it publishes.
@@ -94,7 +83,8 @@ Handle as Suede Site Alchemy:
 - Conversion fixes tied to an active campaign.
 - Suede Sites positioning, cross-sells, CTAs, and module menus.
 
-Route to Suede's proprietary app-builder workflow:
+Route out of this skill to the Suede app-builder workflow — a private Suede Labs
+companion, not in this pack: Suede app-builder. Do not attempt these here:
 
 - Open-ended custom apps.
 - Backend systems.
@@ -342,15 +332,9 @@ uncertainty, and guardrails have been checked.
 Match proof to the claim or objection it can actually support. Placement is a
 testable design choice, not a universal conversion rule.
 
-**Types and when to use:**
-
-| Type | Best for | Example |
-|---|---|---|
-| Peer testimonials | Emotional objections ("will this work for me?") | Quote from someone with the same job title or problem |
-| Case studies with metrics | ROI objections ("is this worth it?") | "Company X increased Y by Z% in N weeks" |
-| Social numbers | Scale objections ("do enough people use this?") | "10,000+ creators", "4.9★ from 2,300 reviews" |
-| Expert endorsements | Authority objections ("who says this is legit?") | Industry name, publication, or credential |
-| Certifications / trust marks | Trust objections ("is this safe/legit?") | SOC 2, GDPR, security badges, app store ratings |
+Read `references/cro-frameworks.md` when you need the proof-type table — which
+type answers which objection, with examples — before choosing what proof to ask
+the client for. Skip it when the page's proof is already chosen.
 
 **Placement hypotheses:**
 - Put peer testimony near the relevant audience or objection.
@@ -404,28 +388,6 @@ Urgency works when it is true. It backfires when the visitor realizes it's manuf
 
 When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1" — it explains why the scarcity is real.
 
-## Copy Bank
-
-Starter fragments for when the page needs raw material fast. Every fragment is
-raw input — run the anti-slop gate (no throat-clearing, fake intensity,
-unsupported claims, passive actor-hiding, generic SaaS fog, or em dashes)
-before any line ships.
-
-Headline shapes:
-- Name the buyer and the outcome: "Campaign pages that close the fans your drops create."
-- One falsifiable promise: "Grade your brand page in 60 seconds."
-- Kill the category label, state the change: "Your release, registered, routed, and ready to license."
-
-Subhead starters:
-- "Built for [specific buyer] who need [specific outcome] without [named cost]."
-- "[Proof artifact] included — see exactly what you get before you commit."
-
-CTA fragments (action + object, never "Learn more"):
-- "Run the release audit" / "Grade my brand" / "Build the campaign page" /
-  "Start the free trial" / "See the live demo"
-
-For deeper copy work (formulas, frameworks, variants), route to `suede-copy`.
-
 ## Red Flags — Stop
 
 If you catch yourself thinking any of these, stop and run the required step:
@@ -460,7 +422,9 @@ Ship gate: ship | ship-with-caveats | hold
 ## Routing
 
 - Page needs an A-F promotion-readiness verdict → `suede-visibility-grader` before any paid or public promotion.
-- Search, schema, crawl, or AI-citation depth → `suede-seo-audit`.
+- Search, schema, crawl, or index access → `suede-seo-audit`.
+- Getting the page cited by ChatGPT, Perplexity, or AI Overviews — extractability, AI-bot access, `llms.txt` → `suede-ai-seo`.
+- Page needs fresh headlines, subheads, CTA labels, or copy variants → `suede-copy`.
 - Page converts and the release is ready to announce → `suede-launch-packaging`.
 - Suede projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
 - Suede projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code-review`.
@@ -469,9 +433,6 @@ Skip the extra gates for pure copy or layout polish after live/source inspection
 
 ## Boundaries
 
-- Do not reduce Suede to a generic AI music app.
-- Do not hide creator/community services behind agency language.
-- Do not blur `community`, `suede_studio`, and `brand_direct` fulfillment.
 - Do not add pricing, guarantees, traffic claims, or visitor-ID percentages
   unless they already exist in the current approved source.
 - Do not claim a CRO benchmark, prior, uplift, or revenue projection without a

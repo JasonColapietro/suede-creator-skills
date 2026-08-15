@@ -25,6 +25,8 @@ Gather this context (ask if not provided):
 - How do you currently capture leads?
 - What lead magnets or offers do you have?
 - What's your current conversion rate on email capture?
+- Where does the audience spend time online?
+- What's the most common question prospects ask before buying?
 
 ### 3. Content Assets
 - What existing content could be repurposed? (blog posts, guides, data)
@@ -63,6 +65,13 @@ Gather this context (ask if not provided):
 - One clear format (don't mix ebook + video + spreadsheet)
 - Works on mobile
 - No special software required
+
+### Defaults to Refuse
+Named cliches this skill does not produce, whatever the brief says:
+- The 40-page "Ultimate Guide to [Category]" nobody finishes.
+- The "10 Tips" PDF that restates the blog post it gates.
+- The checklist whose items are all "consider X" rather than a decidable action.
+- The template that is a blank document with headings.
 
 ---
 
@@ -188,7 +197,6 @@ Don't waste the thank you page. After they've converted:
 
 ### Blog CTAs & Content Upgrades
 
-- Add relevant CTAs within blog posts (inline, end-of-post)
 - Create post-specific content upgrades (bonus checklist for a how-to post)
 - Content upgrades convert 2-5x better than generic sidebar CTAs
 
@@ -200,10 +208,7 @@ Don't waste the thank you page. After they've converted:
 
 ### Social Media
 
-- Share snippets and teasers from the lead magnet
-- Create carousel posts from key points
-- Use the lead magnet as the CTA in your bio/profile
-- Route social strategy to `suede-social`.
+- Route social strategy and post production to `suede-social`.
 
 ### Paid Promotion
 
@@ -215,10 +220,7 @@ Don't waste the thank you page. After they've converted:
 
 ### Partner Co-Promotion
 
-- Cross-promote with complementary brands
-- Guest webinars with partner audiences
-- Include in partner newsletters
-- Bundle in resource collections
+- Route partner cross-promotion, guest webinars, and bundled resource collections to `suede-co-marketing`.
 
 ---
 
@@ -233,6 +235,8 @@ Don't waste the thank you page. After they've converted:
 | **Lead-to-customer rate** | Lead quality | 1-5% (B2B), varies widely |
 | **Email engagement** | Content relevance | 30-50% open, 2-5% click |
 | **Time to conversion** | Nurture effectiveness | Track by lead magnet source |
+
+Benchmarks are industry ranges for calibration only — never assert them as this asset's expected or achieved result.
 
 **For detailed benchmarks by format and industry**: See [references/benchmarks.md](references/benchmarks.md)
 
@@ -269,6 +273,9 @@ When creating a lead magnet strategy, provide:
 - Key sections/components
 - Length and scope
 - What makes it unique or valuable
+- Every third-party asset the magnet embeds (stock imagery, quoted data or charts,
+  borrowed templates, screenshots of other products), named individually with its
+  license or the gap stated. An unresolved gap blocks production of that asset.
 
 ### 3. Gating & Capture Plan
 - What to gate and how
@@ -286,16 +293,6 @@ When creating a lead magnet strategy, provide:
 
 ---
 
-## Task-Specific Questions
-
-1. What existing content or expertise could you turn into a lead magnet?
-2. Where does your audience spend time online?
-3. What's the most common question prospects ask before buying?
-4. Do you have an email nurture sequence set up for new leads?
-5. What's your budget for design and promotion?
-
----
-
 ## Boundaries
 
 - Do not claim conversion, demand, originality, or audience fit without evidence.
@@ -308,4 +305,6 @@ When creating a lead magnet strategy, provide:
 - Use `suede-free-tools` for calculators, graders, quizzes, and generators.
 - Use `suede-copy` for asset and landing-page copy and `suede-emails` for post-capture nurture.
 - Use `suede-content-strategy` for topic selection and `suede-analytics` for measurement.
-- Use `suede-ads` or `suede-social` for distribution.
+- Use `suede-ads` or `suede-social` for distribution and `suede-co-marketing` for partner promotion.
+- Use `suede-site-alchemy` for landing pages, forms, and popup implementation.
+- Use `suede-ab-testing` to design and evaluate the tests in A/B Testing Ideas.

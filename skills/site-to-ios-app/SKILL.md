@@ -1,6 +1,6 @@
 ---
 name: site-to-ios-app
-description: "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates."
+description: "Suede Labs workflow for turning a website, PWA, dashboard, or marketplace into an iOS app. Use when the user has a live site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native — covers URL audit, shell-vs-native strategy, App Store 4.2 wrapper risk, native value requirements, screenshots, metadata, privacy answers, and the release gate. NOT FOR: building a native iOS app with no existing site (private Suede Labs companion, not in this pack: ios-swiftui-product); repairing or releasing an existing Capacitor shell (private Suede Labs companion, not in this pack: ios-capacitor-shell); Android conversions (use android-app-factory); live listing and keyword audits on a shipped app (use suede-aso)."
 ---
 
 # Site to iOS App
@@ -32,10 +32,6 @@ Turn a site into an iOS app only when the app has native value, stable iOS
 behavior, and a release surface that is truthful. A raw web page in a frame is
 not enough for an App Store-quality product.
 
-This is the public Suede site-to-iOS workflow: audit first, choose the least
-risky shell or native strategy, add iOS-specific value, and run an "impeccable"
-ship gate before release.
-
 ## Start Here
 
 Read `references/site-to-ios-runbook.md` before scaffolding or changing an
@@ -65,16 +61,16 @@ Choose one route and write down why:
 - Full native rebuild: use when the site is mostly content, has weak mobile UX,
   or carries high wrapper rejection risk.
 
-This skill stands alone: the runbook covers audit, strategy, scaffold,
-configuration, QA, and the release gate end to end. Private Suede companions
-(ios-capacitor-shell, ios-swiftui-product, ios-aso-launch,
-ios-app-store-release) go deeper on shell internals, native architecture, ASO,
-and App Store submission; none are required.
+Deeper shell internals, native architecture, ASO, and App Store submission live
+in private Suede Labs companions, not in this pack: ios-capacitor-shell,
+ios-swiftui-product, ios-aso-launch, ios-app-store-release. None are required.
 
 ## App Store 4.2 Gate
 
-Block or redesign the app when it is only a bookmark, content mirror, or
-unmodified website. Add native value before release:
+Halt when the app is only a bookmark, content mirror, or unmodified website:
+name the exact 4.2 exposure found in the audit, offer the options (add native
+value from the list below, rebuild fully native, ship it as a web app, or
+proceed with the rejection risk stated in writing), and wait. Native value:
 
 - iOS-native onboarding, empty states, errors, offline, and retry.
 - Native settings with support, privacy, terms, account deletion, restore, and
@@ -105,10 +101,13 @@ unmodified website. Add native value before release:
 
 Do not call the app release-ready until:
 
-- the iOS project builds on a named simulator, device, or CI target,
+- the iOS project builds on a named simulator, device, or CI target (`xcodebuild
+  -scheme <App> -destination 'platform=iOS Simulator,name=iPhone 16' build`
+  exits 0),
 - every native plugin and entitlement is justified by actual behavior,
 - the web route or bundle strategy is documented,
 - the App Store 4.2 risk has a mitigation,
 - screenshots and metadata match implemented features,
 - privacy answers match the actual SDKs, cookies, analytics, and account flows,
-- no secrets, signing material, or private account identifiers are committed.
+- no secrets, signing material, or private account identifiers are committed
+  (`git status --short` clean; `git grep -nE 'PRIVATE KEY|AuthKey_'` empty).

@@ -259,6 +259,11 @@ Pick the narrative before writing: `problem-proof`, `mistake-fix`,
 count from the number of necessary beats; 8–10 is a starting range only when the
 idea genuinely has that many beats.
 
+The canonical slide-by-slide framework library — per-slide copy slots and a
+production checklist — is owned by `suede-social`, in its carousel-frameworks
+reference. Read it whenever slide-level copy slots are needed rather than
+inventing a competing structure here.
+
 Return exact text and visual direction for each slide. Slide 1 must identify
 the audience tension or payoff. Every middle slide does one job. The last slide
 summarizes the earned payoff and gives one next action.
@@ -367,6 +372,8 @@ Suede product:
   visual system.
 - Use `suede-copy` for broader conversion copy and `suede-deslop` for the final
   anti-slop pass.
+- Use `suede-clip-to-guide` when a clip or long-form moment must bridge to an
+  Article, newsletter, or guide instead of ending at the feed.
 - Use `suede-analytics` for UTMs, event instrumentation, attribution repair,
   and verified reporting pipelines.
 - Use `suede-ads` and `suede-ad-creative` for paid Meta campaigns.

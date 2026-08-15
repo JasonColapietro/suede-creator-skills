@@ -152,3 +152,38 @@ If you're optimizing for AI search for the first time, focus your effort where y
 5. Use clear heading structure (H1 > H2 > H3)
 6. Keep page load time under 2 seconds
 7. Add author bios with credentials
+
+---
+
+## Market statistics — undated, treat as orientation only
+
+These figures circulate widely in AI-search coverage and are useful for sizing
+the opportunity. None of them carries a named study, venue, and year in the form
+the Princeton GEO table does, so **do not quote them to a client as evidence and
+do not build a projection on them.** Re-source or drop any figure you need to
+put in a deliverable.
+
+- AI Overviews appear in roughly 45% of Google searches
+- AI Overviews reduce clicks to websites by up to 58%
+- Brands are ~6.5x more likely to be cited via third-party sources than their
+  own domains
+- Optimized content is reported as cited ~3x more often than non-optimized
+- Statistics and citations are reported to boost visibility by 40%+ across
+  queries
+
+---
+
+## AI Visibility Monitoring Tools
+
+Vendor coverage changes constantly — verify current platform support on the
+tool's own site before recommending one.
+
+| Tool | Coverage | Best For |
+|------|----------|----------|
+| **Otterly AI** | ChatGPT, Perplexity, Google AI Overviews | Share of AI voice tracking |
+| **Peec AI** | ChatGPT, Gemini, Perplexity, Claude, Copilot+ | Multi-platform monitoring at scale |
+| **ZipTie** | Google AI Overviews, ChatGPT, Perplexity | Brand mention + sentiment tracking |
+| **LLMrefs** | ChatGPT, Perplexity, AI Overviews, Gemini | SEO keyword → AI visibility mapping |
+
+The DIY monthly check in SKILL.md produces the same signal with no vendor
+dependency; reach for a tool only when the query set is too large to run by hand.

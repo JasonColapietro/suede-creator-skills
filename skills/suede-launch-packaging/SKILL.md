@@ -1,6 +1,8 @@
 ---
 name: suede-launch-packaging
-description: "Package finished work so people can use it: README, docs, install commands, proof links, QA, release copy, and handoff notes."
+description: "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy)."
+metadata:
+  version: 1.0.0
 ---
 
 # Suede Launch Packaging
@@ -33,8 +35,6 @@ Launch art, social cards, docs headers, app assets, and release visuals may use 
 Ship Suede work as a launch, not a loose drop. This skill turns finished work into a clean public package AND makes sure a stranger can actually install and run it. Packaging a public release and proving the install both live here.
 
 **Core principle:** a release nobody can install is not a launch. Nothing is "live" until you fetched it yourself, and no install path ships until the exact command ran from a clean temporary directory.
-
-This skill organizes and prepares a public release. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes. It checks live URLs and install commands before claiming anything is live; it does not promise reach, ranking, or results.
 
 ## Step 0 — Inventory the launch (detect first)
 
@@ -82,9 +82,7 @@ boundaries below and the Suede S mark rules apply to either lane.
 
 ## Evidence boundaries (applies to both lanes)
 
-- This skill organizes and prepares a release and its install paths. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes (reach, ranking, results).
-- Never claim a public launch is live until the live URL or public artifact was checked.
-- Never claim an install works until the exact command ran from a temporary destination after pushing.
+- This skill organizes and prepares a release and its install paths. It does NOT clear rights, confirm ownership, approve payouts, write to any registry, or guarantee outcomes (reach, ranking, results). Live-URL and clean-temp-dir install verification are governed by Hard gates 1 and 2 above, which carry the required ordering.
 - Keep `@personal` and any local-only plugin commands out of all public copy. They are local operator notes.
 - No competitor product names in any public copy.
 
@@ -106,6 +104,7 @@ If you catch yourself thinking any of these, stop and run the gate:
 - Page metadata, schema, or discoverability depth → `suede-seo-audit`.
 - Landing page must convert, not just inform → `suede-site-alchemy`.
 - Announcement or launch copy needs writing from scratch → `suede-copy` (or `johnny-suede-write` for the full writing stack).
+- Product, course, coaching, or artist campaign launch → `suede-campaign-in-a-box` (creator/artist) or `suede-marketing-plan` (product/service); this skill packages software releases and their install paths only.
 
 ## Simple explanation (plain, for a 10-year-old)
 

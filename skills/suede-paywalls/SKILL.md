@@ -24,29 +24,6 @@ Before providing recommendations, understand:
 
 ---
 
-## Core Principles
-
-### 1. Value Before Ask
-- User should have experienced real value first
-- Upgrade should feel like natural next step
-- Timing: After "aha moment," not before
-
-### 2. Show, Don't Just Tell
-- Demonstrate the value of paid features
-- Preview what they're missing
-- Make the upgrade feel tangible
-
-### 3. Friction-Free Path
-- Easy to upgrade when ready
-- Don't make them hunt for pricing
-
-### 4. Respect the No
-- Don't trap or pressure
-- Make it easy to continue free
-- Maintain trust for future conversion
-
----
-
 ## Paywall Trigger Points
 
 ### Feature Gates
@@ -139,6 +116,22 @@ What you've accomplished:
 
 ---
 
+## Self-Critique Gate (run before delivering any screen copy)
+
+Do not hand over a drafted paywall until you have re-read it against
+Anti-Patterns to Avoid and Boundaries below, and answered these out loud:
+
+1. Where is the close/dismiss control, and is it visible without scrolling or hovering?
+2. Is the price — including what renews, when, and at what amount — stated on the screen?
+3. Does any urgency claim ("ends today", a countdown) correspond to a real deadline?
+4. Can the user reach the free path in one tap from this screen?
+5. Does any copy assign blame, shame, or loss the user did not actually incur?
+
+Name every hit before delivering. A hit on 1, 3, or 4 is a blocker: fix the
+draft, don't ship it with a caveat.
+
+---
+
 ## Timing and Frequency
 
 ### When to Show
@@ -152,44 +145,31 @@ What you've accomplished:
 - Repeatedly after dismissal
 
 ### Frequency Rules
-- Limit per session
-- Cool-down after dismiss (days, not hours)
-- Track annoyance signals
+
+Defaults unless a running experiment says otherwise — ship these numbers, and
+say so when a test moves them:
+
+- Max **1** paywall impression per session.
+- Cooldown **>= 7 days** after a dismiss; **>= 14 days** after a second dismiss.
+- Suppress a given gate entirely after **3 lifetime dismissals**.
+
+Instead of "annoyance signals," instrument the ones a reviewer can read: dismiss
+rate per gate, post-paywall session-abandon rate, plus the impression,
+click-through, completion, revenue-per-user, and post-upgrade churn metrics the
+experiment reference tracks.
 
 ---
 
-## Upgrade Flow Optimization
+## Upgrade Flow and Testing
 
-### From Paywall to Payment
-- Minimize steps
-- Keep in-context if possible
-- Pre-fill known information
+Keep the path from paywall to payment in-context and pre-filled, and grant
+access the moment payment clears — the checkout and post-upgrade activation flow
+itself belongs to `suede-onboarding`.
 
-### Post-Upgrade
-- Immediate access to features
-- Confirmation and receipt
-- Guide to new features
-
----
-
-## A/B Testing
-
-### What to Test
-- Trigger timing
-- Headline/copy variations
-- Price presentation
-- Trial length
-- Feature emphasis
-- Design/layout
-
-### Metrics to Track
-- Paywall impression rate
-- Click-through to upgrade
-- Completion rate
-- Revenue per user
-- Churn rate post-upgrade
-
-**For comprehensive experiment ideas**: See [references/experiments.md](references/experiments.md)
+**For frequency, trigger-timing, copy, and price-presentation experiments** —
+including which of the above defaults are worth testing first: See
+[references/experiments.md](references/experiments.md). Use `suede-ab-testing`
+to design and read out the test.
 
 ---
 
@@ -205,17 +185,6 @@ What you've accomplished:
 - Too frequent prompts
 - Blocking critical flows
 - Complicated upgrade process
-
----
-
-## Task-Specific Questions
-
-1. What's your current free → paid conversion rate?
-2. What triggers upgrade prompts today?
-3. What features are behind the paywall?
-4. What's your "aha moment" for users?
-5. What pricing model? (per seat, usage, flat)
-6. Mobile app, web app, or both?
 
 ---
 

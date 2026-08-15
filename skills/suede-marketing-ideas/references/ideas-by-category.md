@@ -1,6 +1,6 @@
 # The 139 Marketing Ideas
 
-Complete list of proven marketing approaches organized by category.
+Complete list of candidate marketing approaches organized by category. Nothing here is claimed to be proven — each entry is a candidate to score against the rubric in SKILL.md before it is recommended. The numbering is a cross-skill contract (`suede-marketing-plan` Section 12 cites these numbers); do not renumber.
 
 ## Contents
 - Content & SEO (1-10)

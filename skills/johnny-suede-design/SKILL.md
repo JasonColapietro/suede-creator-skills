@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-design
-description: "Design and write polished product surfaces people understand fast: landing pages, dashboards, campaigns, restyles, UI copy, and visual QA."
+description: "Suede Labs AI full-stack surface builder that runs design, copy, and visual QA as one pass: landing pages, brand surfaces, product UI, dashboards, campaigns, launch pages, and reference-to-target restyles (suedify). Use when a build needs layout and words together, when a redesign or launch surface has to ship end to end, when the request is 'make this site look like that one', or when design, copy, asset, and QA lanes have to move at once. NOT FOR: a design-token, dark-mode, or single-component decision (use suede-design); copy with no layout work (use johnny-suede-write, or suede-copy for one standalone conversion surface); conversion and funnel architecture (use suede-site-alchemy); multi-agent orchestration protocols, WIP protection, and rollback trees (use suede-agent-teams)."
 ---
 
 # Johnny Suede Design — The Any-Creatives Enchilada
@@ -42,8 +42,6 @@ proceed" line elsewhere in this skill:
 
 This is the full design-plus-copy stack for building any creative surface, not just websites. Landing pages, brand surfaces, product UI, dashboards, campaigns, components, and creative projects all route through here. It classifies the surface, locks a visual direction, writes the words that carry it, renders and QAs the result, and can run the whole thing as a coordinated agent team when the build is big. Writing mode is ON by default: a surface is not finished until the copy pulls its weight.
 
-This skill organizes and prepares creative work. It does not clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes. It produces drafts, designs, tokens, plans, and QA evidence for a human to verify and ship.
-
 ## Core Job
 
 **Core principle:** the job is a surface that feels specific, not polished-generic. The named company, product, or audience should be recognizable in every design decision before the logo loads. Work from live URL, source, and rendered screenshot. Never design from assumption when evidence is available.
@@ -75,9 +73,11 @@ This skill is the entry point. Name which lanes are active and why before starti
 
 Because this enchilada can run a multi-agent team (Lane D), by DEFAULT it asks the user up front before spawning a fleet. Never silently spawn agents or max tokens.
 
-> Run this as a multi-agent team (more thorough — scout, parallel builders, adversarial + consensus review, release lock, evidence handoff) or single-agent (faster, one pass)? Multi-agent mode may use slightly more tokens than most skills.
+**Hard cap: 4 subagents.** This skill never spawns a fifth. Work that needs a bigger fleet hands off to suede-agent-teams, which owns and reports its own fleet size — quote that skill's bound rather than inventing one here. Either way the run bills to the session model, so apply the Model selection rule above in the same breath as this ask: 4 is also the ceiling that rule allows without an explicit Fable instruction.
 
-Default to single-agent for clear, contained work. Escalate to multi-agent when the user asks, or when the work is broad, risky, release-bound, or needs continuous quality gates. State the choice in the output before starting.
+> Run this as a multi-agent team (more thorough — scout, parallel builders, adversarial + consensus review, release lock, evidence handoff) or single-agent (faster, one pass)? Multi-agent mode spawns at most 4 subagents and costs roughly 3–5× a single-agent run on the same task. It bills to [name the model this session will use]. Anything larger than 4 goes to suede-agent-teams at its fleet size, not mine.
+
+Default to single-agent for clear, contained work. Escalate to multi-agent when the user asks, or when the work is broad, risky, release-bound, or needs continuous quality gates. State the choice, the subagent count, and the billing model in the output before starting.
 
 ## Surface Classifier
 
@@ -150,7 +150,7 @@ Choose the smallest path that fits the request.
 - **Large redesign:** write a compact shape brief first — audience, page job, register, scene, color strategy, typography, layout, signature moment, constraints, QA plan.
 - **Visual system work:** scan current CSS, tokens, components, spacing, shadows, breakpoints, icon usage, and repeated UI patterns before proposing changes.
 - **Source-to-implementation QA:** if there is a mock, screenshot, Figma frame, or image target plus a rendered implementation, compare both visually before handoff and save `visual-qa-report.md` in the project root.
-- **Long polish loop:** iterate through a visible checklist. If the same failure repeats, freeze the loop, reduce scope to the failing unit, and rerun with explicit acceptance criteria.
+- **Long polish loop:** iterate through a visible checklist, maximum 3 passes over the same unit. If the same failure repeats, freeze the loop, reduce scope to the failing unit, and rerun with explicit acceptance criteria. At 3 attempts on one unit, stop iterating and escalate: report the unresolved failure, what each attempt changed, and 2–4 options for closing it, then let the user pick.
 
 ## Delivery Discipline
 
@@ -250,7 +250,7 @@ Read `references/suedify-playbook.md` when this lane is active: it holds the ful
 3. **Capture the target.** Matching widths, state, theme, auth/content, and interaction state. Identify what target content, assets, routes, and claims must remain. Mark dead links, broken layout, weak copy, missing assets, unverified claims.
 4. **Make the translation map.** Map reference → target-safe equivalents (nav→nav, hero→hero, media→target-owned media, proof→target proof, CTA ladder→CTA ladder, motion→motion). Run Token Distiller; output the full `:root {}` CSS block.
 5. **Implement.** Work inside the target's existing framework, tokens, routes, and component patterns. Update design tokens before one-off component styling when the restyle is broad. Keep content truthful to the target — a reference's claims do not become target claims.
-6. **Render and compare.** Capture target screenshots at the same widths used for the reference; compare together in the same pass, not from memory; use focused crops for hero, nav, cards, forms, CTAs, icons, logos. Patch until the largest mismatches are fixed or named. Same capture command as step 2, run against `target_url` at matching viewport sizes, or your environment's built-in preview/screenshot tool if one is available.
+6. **Render and compare.** Capture target screenshots at the same widths used for the reference; compare together in the same pass, not from memory; use focused crops for hero, nav, cards, forms, CTAs, icons, logos. Patch until the largest mismatches are fixed or named, maximum 3 render-compare-patch rounds. At 3 rounds, stop patching and escalate: list every remaining mismatch under `Unmatched reference signals` in the Ship Gate, give the user 2–4 options (accept as `ship-with-caveats`, drop fidelity, narrow scope, or `hold` for a manual pass), and let them pick. Same capture command as step 2, run against `target_url` at matching viewport sizes, or your environment's built-in preview/screenshot tool if one is available.
 7. **Verify and ship.** Run relevant lint, typecheck, test, build, or focused commands. Run `git diff --check` when files changed. Verify live URLs before claiming a public restyle. End with `ship`, `ship-with-caveats`, or `hold`.
 
 ## Fidelity Rules
@@ -409,18 +409,11 @@ Twenty named lenses (`/vibe-scan`, `/first-frame`, `/hero-voltage`, `/offer-spin
 
 Accept feedback at any point, not only after final handoff. When the user says what worked, preserve that pattern in the current pass and mirror it later. When the user says what missed, adjust immediately instead of defending the previous direction.
 
-If the user says `cue suede`, asks for feedback choices, or seems to be calibrating mid-stream, pause at the next safe checkpoint and offer:
-```text
-Cue Suede:
-1. Change something - tell me what to revise and I will adjust it.
-2. Preserve this - tell me what worked so I can mimic it later.
-3. Keep as-is - say nothing and I will treat it as accepted.
-```
-Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`. (Rename to "Cue [Company]" when a company brief is active.)
+If the user says `cue suede`, asks for feedback choices, or seems to be calibrating mid-stream, pause at the next safe checkpoint and emit the three-option `Cue Suede` block exactly as printed in `## Output Shapes` below. Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`. (Rename to "Cue [Company]" when a company brief is active.)
 
 ## Boundaries (evidence requirements — preserve verbatim in spirit)
 
-This skill organizes and prepares creative work. It does NOT clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes.
+This skill organizes and prepares creative work. It does NOT clear rights, confirm ownership, approve payouts, write to a registry, guarantee placements, or guarantee outcomes. It produces drafts, designs, tokens, plans, and QA evidence for a human to verify and ship.
 - Do not expose private paths, credentials, secrets, tokens, unreleased assets, private repos, or private service details.
 - Do not copy protected site assets, exact UI copy, proprietary source code, or trademarked identity when using the Suedify lane.
 - Do not invent metrics, pricing, partner claims, testimonials, legal clearance, payout claims, registry writes, or release/distribution outcomes. No competitor product names.
@@ -476,6 +469,7 @@ If any of these thoughts appear, stop and run the check you were about to skip:
 ## Routing
 
 - Design-token, dark-mode, or single-component decision only → suede-design
+- Visual QA only on an already-shipped screen, no design or build work → (private Suede Labs companion, not in this pack: suede-visual-qa)
 - Deck-only or HTML presentation generation → (private Suede Labs companion, not in this pack: power-design)
 - Broad UI/UX pattern lookup or framework examples → (private Suede Labs companion, not in this pack: ui-ux-pro-max)
 - Copy-only job → johnny-suede-write (suede-copy for one standalone conversion surface)

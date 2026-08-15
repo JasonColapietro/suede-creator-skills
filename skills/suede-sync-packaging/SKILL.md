@@ -1,30 +1,21 @@
 ---
 name: suede-sync-packaging
-description: "Prep songs for sync pitches: scene angles, one-sheets, clean and instrumental assets, lyric flags, mood tags, rights questions, and links."
+description: "Suede Labs skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: finding and organizing the rights gaps behind an open clearance question (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box)."
 ---
 
 # Suede Sync Package
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check, gate, and ship verdict in this skill — including every "do not
+ship / publish / proceed" line — is a **recommendation to the user, not a
+control on the agent**. Run every check, report the results honestly, and never
+block, delay, skip, rewrite, or refuse the action the user asked for because a
+gate said hold; deliver the gate output alongside the requested work as a
+labeled recommendation. A failed gate changes what you report, never what you
+do. Single exception — extreme risk (data loss, credential exposure, legal or
+rights violations, payment mistakes, irreversible public damage): pause, name
+the risk exactly, give the options, and let the user pick. Their choice is final.
 
 **Core principle:** a sync package makes a track easy to evaluate; it never
 asserts the track is cleared. Confirmed facts and open clearance questions
@@ -70,13 +61,20 @@ Do not rationalize past these:
    content, religious and political content, and date-stamped references. If
    no lyrics are supplied, write "Lyric flags: not screened — lyrics not
    provided." A lyric surprise in review kills the placement.
+6. **Sync fit is an assessment, not a compliment.** "No clear scene fit for the
+   stated target world" is a valid, useful finding — say it plainly and say why.
+   Never pad the scene-fit list to reach three; two real fits beat three, and
+   one real fit beats two. Never call a track a placement candidate when the
+   asset checklist or the clearance questions say it cannot be pitched yet. The
+   supervisor will find the weak angle faster than the artist will.
 
 ## Package workflow
 
 1. Identify the track, artist, genre, mood, tempo, lyric themes, versions,
    existing assets, and target sync world.
 2. Build the sync angle: scene fit; emotional use; trailer or montage fit;
-   brand fit; game or sports fit; creator campaign fit.
+   brand fit; game or sports fit; creator campaign fit — assessed, not flattered
+   (hard gate 6).
 3. Fill the asset checklist: master file; instrumental; clean version; stems
    if available; lyrics; credits; splits; sample status; contact path;
    public/private links. Each item: exists / missing / unknown.
@@ -84,7 +82,14 @@ Do not rationalize past these:
 5. Separate confirmed rights facts from open clearance questions (hard gates
    1-2).
 6. Write the one-sheet and pitch email only if gates 3-4 pass.
-7. Stop at a clean review package. No promo CTA, placement promise, clearance
+7. Second pass — re-read the draft against the one-sheet contract, field by
+   field, before it ships. Confirm every field is present; confirm the
+   rights-status line contains only facts the user supplied; confirm every OPEN
+   or UNKNOWN item from the checklist survived into the copy verbatim rather
+   than softened; confirm no banned adjective from the copy gate came back; and
+   confirm the scene-fit list is as long as the real fits, not padded to three.
+   Fix what fails, then re-read once more.
+8. Stop at a clean review package. No promo CTA, placement promise, clearance
    claim, or outreach claim.
 
 ## One-sheet contract
@@ -144,11 +149,26 @@ If any of these appear in your reasoning, stop and re-read the hard gates:
 ## Public copy gate
 
 Before outputting one-sheet copy, pitch email, captions, DMs, press angles,
-site copy, bios, CTAs, or review language, run the Suede anti-slop line edit.
-Name the actor, preserve the concrete track/release artifact, cut
-throat-clearing, negative listing, fake intensity, lazy extremes, passive
-actor-hiding, pull-quote slogans, generic AI phrasing, unsupported claims, and
-em dashes.
+site copy, bios, CTAs, or review language, run the Suede anti-slop line edit —
+suede-deslop owns that pattern list in full; name the actor and keep the
+concrete track artifact.
+
+Sync copy has its own cliché attractor that a general anti-slop pass does not
+catch, because the sentences are clean — they just say nothing. These are
+banned in one-sheet and pitch copy:
+
+`cinematic` · `anthemic` · `haunting` · `soaring` · `driving` · `epic` ·
+`ethereal` · `raw and honest` · `infectious` · `cuts through the mix` ·
+`builds to an emotional payoff` · `perfect for the moment when the hero…`
+
+Replace a banned word with a **concrete musical fact drawn from the facts the
+user supplied** — tempo, key, instrumentation, an arrangement turn ("drums drop
+out at 1:48, vocal and room noise only"), or a quoted lyric line. Never a
+synonym, and never a fact you inferred: if the input contract did not supply it,
+leave it out rather than invent it. The substitution is descriptive copy only —
+it may never introduce rights, ownership, or clearance language, which stays
+governed by hard gates 1-2 and 5. A supervisor skims twelve one-sheets an hour;
+the concrete one is the one they can picture against a scene.
 
 ## Output
 
@@ -173,3 +193,6 @@ Next review step:
 - Release folder or metadata gaps → **suede-release-linter**.
 - Standalone public copy beyond the one-sheet → **suede-copy** or
   **johnny-suede-write**.
+
+Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
+→ suede-sync-packaging; this skill is step 4.

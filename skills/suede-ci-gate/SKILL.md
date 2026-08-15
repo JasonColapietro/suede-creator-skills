@@ -1,9 +1,9 @@
 ---
 name: suede-ci-gate
-description: "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock."
+description: "Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack)."
 ---
 
-# Suede Ship Gate
+# Suede CI Gate
 
 ## Gate policy — advisory, not blocking
 
@@ -98,6 +98,7 @@ The excuses that precede a broken gate:
 1. The workflow file(s) under `.github/workflows/`.
 2. The exact branch-protection settings to apply (and the `gh api` calls, if asked).
 3. A short report: apps detected, package manager per app, what each job runs, what is required, and anything to fix first (dual lockfiles, duplicate workflows, runtime mismatches).
+4. **Readback, once the settings have been applied** (the user applies them — this skill does not): verify rather than assume. `gh api repos/:owner/:repo/branches/main/protection --jq '.required_status_checks.contexts'` must return exactly `["ci-success"]` — any path-filtered job in that list is the deadlock above — and `gh run list --branch <pr-branch>` must show `ci-success` actually ran, not skipped. If the settings are not applied yet or the token lacks admin scope, report the gate as **unverified**; never claim protection is live from the settings you emitted.
 
 End with a **Simple explanation (plain, for a 10-year-old)**: one short paragraph, no jargon, saying what the gate now does and what it blocks — e.g. "Before anyone's changes join the main project, a robot builds and tests them. If the robot fails, the merge button locks."
 
@@ -107,23 +108,18 @@ A full pass on one repository — from a pipeline that looks green but gates not
 to a merge that cannot land broken — is in `references/worked-example.md`. Read it
 when wiring a repo whose existing CI shape you do not recognize.
 
-## Post-Deploy Verification (required for production deploys)
+## Post-Deploy Verification
 
-After a deploy lands:
-1. **Live URL check**: fetch the production URL and confirm the expected route/page responds with 200. Do not rely on the deploy pipeline's success status alone.
-2. **Critical path smoke test**: verify the primary user action works end-to-end on production (sign in, core action, result visible). If the deploy is backend-only, verify the API endpoint returns the expected shape.
-3. **Regression check**: confirm the three most-used routes still respond. If analytics or error monitoring is connected, check for a spike in the 5 minutes after deploy.
-4. **Rollback ready**: confirm the previous deploy is still accessible and rollback takes < 5 minutes. Document the rollback command before merging, not after.
+The after-deploy checks — live URL, critical-path smoke test, regression sweep, rollback readiness, and the verified/watch/rollback verdict — are in `references/post-deploy-verification.md`. Read it only when a production deploy has already landed; this skill's own job ends at the merge gate.
 
-Ship verdict after post-deploy: **verified** (all checks pass) | **watch** (minor anomalies, monitoring) | **rollback** (critical failure, initiate rollback immediately).
-
-## Safety
+## Boundaries
 
 Generate; don't enforce. This skill writes workflow files and tells you the protection settings — it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede or any specific project.
 
 ## Routing
 
-- The gate is failing on real defects → **suede-code** to review and grade the change
+- The gate is failing on real defects → **suede-code** to review and grade the change, or **suede-code-review** when the caller wants findings without a letter grade
+- The repo ships an MCP server → **suede-mcp-qa** for the protocol suite, then wire it into the aggregator as a required job
 - AI features need eval jobs in the pipeline → **suede-ai-eval** to design the cases, then wire them in here
 - Rollout needs flags, staged lanes, or a rollback tree → **suede-agent-teams**
 - Branch/worktree setup, stale local state, PR finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)

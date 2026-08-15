@@ -43,30 +43,11 @@ Gather this context (ask if not provided):
 
 ## Pricing Fundamentals
 
-### The Three Pricing Axes
+Three axes, decided in this order: **packaging** (what's included per tier),
+**pricing metric** (what you charge for), **price point** (how much).
 
-**1. Packaging** — What's included at each tier?
-- Features, limits, support level
-- How tiers differ from each other
-
-**2. Pricing Metric** — What do you charge for?
-- Per user, per usage, flat fee
-- How price scales with value
-
-**3. Price Point** — How much do you charge?
-- The actual dollar amounts
-- Perceived value vs. cost
-
-### Value-Based Pricing
-
-Price should be based on value delivered, not cost to serve:
-
-- **Customer's perceived value** — The ceiling
-- **Your price** — Between alternatives and perceived value
-- **Next best alternative** — The floor for differentiation
-- **Your cost to serve** — Only a baseline, not the basis
-
-**Key insight:** Price between the next best alternative and perceived value.
+Price sits between the next best alternative (the floor) and the customer's
+perceived value (the ceiling). Cost to serve is a baseline, never the basis.
 
 ---
 
@@ -98,6 +79,17 @@ The value metric is what you charge for—it should scale with the value custome
 Ask: "As a customer uses more of [metric], do they get more value?"
 - If yes → good value metric
 - If no → price doesn't align with value
+
+### Defaults to Beat
+
+These are the answers a model reaches for unprompted. Each is allowed, but only
+once you state why it beats the alternative for this product — never by default:
+**$9/$29/$99** (or any flat 3x ladder); **Starter/Pro/Enterprise** names that
+carry no product meaning; **exactly three tiers** when the buyer set is two or
+four; **20% off annual** as the reflex discount; **"Contact us"** on the top
+tier, which hides price from buyers and from the agents that now shortlist tools
+(see Pricing Page Teardown); **per-seat** when usage, records, or transactions
+track value better.
 
 ---
 
@@ -179,12 +171,9 @@ Identifies which features customers value most:
 - Primary CTA for each tier
 
 ### Common Elements
-- Feature comparison table
-- Who each tier is for
 - FAQ section
 - Annual discount callout (17-20%)
 - Money-back guarantee
-- Customer logos/trust signals
 
 ### Pricing Psychology
 - **Anchoring:** Show higher-priced option first
@@ -209,32 +198,37 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 
 ---
 
-## Pricing Checklist
+## Output: Pricing Decision Brief
 
-### Before Setting Prices
-- [ ] Defined target customer personas
-- [ ] Researched competitor pricing
-- [ ] Identified your value metric
-- [ ] Conducted willingness-to-pay research
-- [ ] Mapped features to tiers
+Every pricing or packaging engagement that is not a teardown returns this exact
+structure. Use these headings verbatim; leave a heading in with "not decided —
+[what's missing]" rather than dropping it.
 
-### Pricing Structure
-- [ ] Chosen number of tiers
-- [ ] Differentiated tiers clearly
-- [ ] Set price points based on research
-- [ ] Created annual discount strategy
-- [ ] Planned enterprise/custom tier
+```markdown
+# Pricing Decision Brief — [product]
 
----
+## Value metric
+[What you charge for, and the one sentence proving usage of it tracks value.]
 
-## Task-Specific Questions
+## Tier map
+| Tier | Who it's for | Included | Limits | Price |
+|------|--------------|----------|--------|-------|
 
-1. What pricing research have you done?
-2. What's your current ARPU and conversion rate?
-3. What's your primary value metric?
-4. Who are your main pricing personas?
-5. Are you self-serve, sales-led, or hybrid?
-6. What pricing changes are you considering?
+## Price points + rationale
+[Each number, and what it is anchored to: alternative, perceived value, or research.]
+
+## Assumptions
+[Every number taken on faith, flagged as assumption not measurement.]
+
+## Validation plan
+[What test or research confirms each assumption, and the metric that reads out.]
+
+## Migration + grandfathering
+[Existing customers: who moves, when, on what notice, and who is held.]
+
+## What I did NOT decide
+[Anything left to the user: committed price, published copy, billing changes.]
+```
 
 ---
 

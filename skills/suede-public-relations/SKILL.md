@@ -96,13 +96,30 @@ Before presenting any draft for send approval, resolve these checks:
 - [ ] Is there a clear news hook — something that just happened or is about to?
 - [ ] Could this journalist write a complete story from this email alone? (Data, quotes, customer name, contact.)
 - [ ] Is the subject line specific enough to predict the article's headline?
-- [ ] Is the pitch as concise as the verified outlet preference and story
-      complexity allow?
+- [ ] Is the pitch within the outlet's published word or character limit — or,
+      if the outlet publishes none, within the limit the user stated?
 - [ ] Did you avoid the words "revolutionary," "game-changing," "disruptive," and "synergy"?
 - [ ] Is the ask clear? (Interview? Embargo? Exclusive? Quote?)
 
-Keep the output draft-only. Each recipient, channel, identity, and exact message
-requires explicit approval before any external action.
+**Pass rule:** any unchecked box blocks the draft from being presented for send
+approval. Fix it or, if it cannot be resolved (the outlet publishes no limit and
+the user has not stated one), name the box as unresolved in the handover below
+rather than checking it.
+
+### Send-approval handover (the one gate in this skill)
+
+Every workflow in this skill and its references ends here. Contacting a
+journalist is unrecallable, so nothing leaves as a draft-plus-send. At the
+handover:
+
+1. **Stop.** The work is complete; the output is a draft and nothing has been sent.
+2. **Name the four variables, one line each:** recipient (person and outlet),
+   channel (email, platform form, DM), visible sending identity, and the exact
+   message to be sent.
+3. **State cost and timing** if either applies (platform fee, embargo time).
+4. **Offer three options:** approve as written / revise (name what changes) / drop.
+5. **Wait for the user's explicit pick.** Approval for one recipient never
+   transfers to another, and any edit to the message re-opens this gate.
 
 ---
 
@@ -163,3 +180,4 @@ Use the checklist above. Most companies do this in an afternoon and forget about
 - Use `suede-directory-submissions` for directory and catalog listings.
 - Use `suede-social` for approved social distribution and engagement.
 - Use `suede-copy` to polish a verified press-page or announcement draft.
+- Use `suede-co-marketing` when the announcement is a joint launch with a partner.

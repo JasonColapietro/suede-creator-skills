@@ -1,6 +1,8 @@
 ---
 name: suede-clip-to-guide
-description: "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, measured success loop, and a dual-evidence certainty gate when Full Send or Codex Fleet controls the run. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval."
+description: "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable package that bridges attention to an X Article, LinkedIn article, newsletter, blog guide, or playbook, or when third-party footage needs a rights route before reuse. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval."
+metadata:
+  version: 1.0.0
 ---
 
 # Suede Clip to Guide
@@ -96,6 +98,22 @@ Waiting on: <specific evidence or approval>
 ```
 
 Continue only on independent draft work that does not bypass the blocker.
+
+### Rationalizations that precede a violation
+
+Each excuse below shows up immediately before a gate gets skipped. When one
+appears in your own reasoning or in the request, treat it as the signal to run
+the gate, not to waive it.
+
+| Excuse | Reality |
+|---|---|
+| "It's only 12 seconds." | Duration is not a rights basis. The clip still needs an owned, licensed, permission-recorded, native-repost, or accountable fair-use route. |
+| "I credited the source." | Credit is attribution, not clearance. A blocked or unreviewed source stays blocked with a credit line attached. |
+| "It's public, so it's reusable." | Public availability is not reuse permission. Classify the video before writing copy. |
+| "The composer accepted it, so it published." | A prepared composer, scheduled item, or click is not a publication. Only the public permalink readback proves it. |
+| "The worker already checked it." | Under Full Send or Codex Fleet a worker conclusion is one check. The certainty gate needs a second, independent one. |
+| "The guide is basically finished." | An unpublished guide with no stable draft or specific promise fails the fit test. Build the bridge to something that exists. |
+| "The moment is getting traction, so ship it." | Popularity is not the score. A moment below 8/10, or below 2 on claim support or guide bridge, does not qualify. |
 
 ## Workflow
 
@@ -277,7 +295,7 @@ an account mismatch, login challenge, or ambiguous composer.
 For a saved package, run:
 
 ```bash
-python3 scripts/validate_package.py path/to/clip-to-guide-package.md
+python3 /path/to/suede-clip-to-guide/scripts/validate_package.py path/to/clip-to-guide-package.md
 ```
 
 For a live run, also read back:

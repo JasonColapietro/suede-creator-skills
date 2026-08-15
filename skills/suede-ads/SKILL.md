@@ -17,6 +17,7 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 Gather this context (ask if not provided):
 
 ### 1. Campaign Goals
+- Which platform(s) are running now, or which do you want to start with?
 - What's the primary objective? (Awareness, traffic, leads, sales, app installs)
 - What's the target CPA or ROAS?
 - What's the monthly/weekly budget?
@@ -37,6 +38,7 @@ Gather this context (ask if not provided):
 - Have you run ads before? What worked/didn't?
 - Do you have existing pixel/conversion data?
 - What's your current funnel conversion rate?
+- Do you have creative assets already, or do they need to be produced?
 
 ---
 
@@ -89,9 +91,9 @@ Account
 [Platform]_[Objective]_[Audience]_[Offer]_[Date]
 
 Examples:
-META_Conv_Lookalike-Customers_FreeTrial_2024Q1
+META_Conv_Lookalike-Customers_FreeTrial_[YYYYQ#]
 GOOG_Search_Brand_Demo_Ongoing
-LI_LeadGen_CMOs-SaaS_Whitepaper_Mar24
+LI_LeadGen_CMOs-SaaS_Whitepaper_[MMMYY]
 ```
 
 ### Budget Allocation
@@ -128,7 +130,7 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_Mar24
 
 Knowing your audience deeply is still the highest-leverage work in paid ads — demographics, job titles, pain points, fears, hopes, the exact language they use, who they follow, what they've tried, why they failed, what they buy. **Gather every identifier you can.**
 
-What's changed in 2026 is **where you apply that knowledge.** As ad-platform algorithms have gotten dramatically better at finding the right person, jamming all your audience identifiers into the platform's *targeting filters* underperforms feeding those same identifiers into the *creative* (headlines, copy, visuals, hooks, examples).
+What has changed is **where you apply that knowledge.** As ad-platform algorithms have gotten dramatically better at finding the right person, jamming all your audience identifiers into the platform's *targeting filters* underperforms feeding those same identifiers into the *creative* (headlines, copy, visuals, hooks, examples).
 
 The discipline now: **audience knowledge → creative first, targeting filters second.** How much that ratio tips toward "creative" varies meaningfully by platform.
 
@@ -145,27 +147,13 @@ The discipline now: **audience knowledge → creative first, targeting filters s
 
 These ratios are directional, not precise. Test in your actual account.
 
-### Applying audience knowledge to creative
-
-Once you've gathered audience identifiers, here's how to put each kind into the creative:
-
-- **Demographic identifiers** (age, location, occupation) → embed as identity-trigger keywords in headlines (see [[#The one-keyword hack (identity-trigger keywords)]])
-- **Pain points + fears** → headline + first line of body copy (Sabri Suby's framing: "the verbatim words your customers use about the problem")
-- **Hopes / desired outcomes** → transformation copy + CTAs
-- **Objections + "why they didn't buy last time"** → objection-handling retargeting ads (see [[#The 4-component retargeting framework]])
-- **Their language / vocabulary** → the entire copy voice — never use industry jargon they don't
-- **Existing customer base** → still feed it for lookalike audiences (see Key Concepts below)
-- **Niche / segment they identify with** → identity-trigger keywords in headline ("for dentists" / "for B2B founders" / "for parents of toddlers")
+For how each identifier becomes a headline, hook, or angle, use `suede-ad-creative` — it owns the angle-to-copy mapping.
 
 ### Key Concepts (still apply)
 
 - **Lookalikes**: Base on best customers (by LTV), not all customers. Still high-value across platforms.
 - **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See [[#Retarget with DIFFERENT offers (not the same one)]] and [[#The 4-component retargeting framework]] for the modern playbook.
 - **Exclusions**: Exclude existing customers and recent converters — showing ads to people who already bought wastes spend.
-
-### Common failure mode
-
-Trying to make up for weak creative with hyper-precise targeting. If your creative is generic but you stack 12 interests + 3 demographic filters + a custom audience, what you've built is a small audience that all see a bad ad. Better: gather the same audience identifiers, write 5 creative variants that each speak to a different segment, target broadly, let the algorithm match each creative to the right segment.
 
 **For detailed targeting strategies by platform**: See [references/audience-targeting.md](references/audience-targeting.md)
 
@@ -260,6 +248,8 @@ For hard kill/keep/scale thresholds, use the platform playbooks (see Reference R
 
 ### Optimization Levers
 
+"Too high" and "low" below are not opinions. **Too high** means above the break-even CPA / ROAS ceiling computed in Scaling discipline, and **low** means below the funnel benchmark in the platform playbook for that channel. Compute the ceiling before you pull any lever — and for hard kill/scale thresholds, use the playbooks routed at the top of Campaign Optimization.
+
 **If CPA is too high:**
 1. Check landing page (is the problem post-click?)
 2. Tighten audience targeting
@@ -335,26 +325,18 @@ These four together, retargeting the same audience that didn't convert from the 
 
 ## Landing Page Alignment (the headline-mirror trick)
 
-Ad-to-landing-page congruence is the single most underrated lever in paid ads. Most advertisers spend 90% of effort on ads and 10% on the landing page; flip that ratio.
-
-### Headline mirroring
-
-Meta is the best split-testing tool that exists — your ad headlines are exposed to ~1000x the audience that actually clicks through to your landing page. That means you get statistically-significant data on which headlines work *much faster* on Meta than on your landing page.
-
-The play:
+The ad platform tests headlines against far more people than ever reach the landing page, so it resolves a winning headline much faster than on-page testing does. Use it that way:
 
 1. Run **20-40 different headlines** as ad variations
-2. Identify the best-performing headline (by CTR + downstream conversion)
-3. **Mirror that winning headline on your landing page** — exact wording in the H1, sub-headline, and lead-in copy of the body
-4. Expect a **15-20% minimum lift** in landing-page conversion rate from this single change
+2. Pick the winner by CTR **and** downstream conversion, not CTR alone
+3. **Mirror the winning headline verbatim** in the landing page H1, sub-headline, and lead-in copy
+4. Expect a **15-20% minimum lift** in landing-page conversion rate from that change alone
 
-This works because the viewer who clicked is expecting *that specific promise*. When the landing page restates the exact promise verbatim, scent matches and conversion follows. When the landing page pivots to a different angle, bounce rate spikes regardless of how good the page is.
+Keep at least 3 split tests running somewhere in the funnel — creative, page, offer, or post-conversion flow — at any given time.
 
-### Three split tests minimum at all times
+Post-click page work itself belongs to `suede-site-alchemy`.
 
-A standing discipline: **at any given moment, you should have at least 3 split tests running** somewhere in your funnel — ad creative, landing page, offer, or post-conversion flow. If you don't, you've capped your improvement curve.
-
-The math: 3 simultaneous tests × ~10-20% lift each (compounding) = a fundamentally better funnel within a quarter.
+---
 
 ## Reporting & Analysis
 
@@ -410,12 +392,17 @@ Before launching campaigns, ensure proper tracking and account setup.
 **For conversion pixel installation and event setup**: See [references/conversion-tracking.md](references/conversion-tracking.md)
 
 ### Universal Pre-Launch Checklist
-- [ ] Conversion tracking tested with real conversion
-- [ ] Landing page loads fast (<3 sec)
-- [ ] Landing page mobile-friendly
-- [ ] UTM parameters working
-- [ ] Budget set correctly
-- [ ] Targeting matches intended audience
+
+Each box names the artifact that proves it. A box is checked when the artifact exists, not when it sounds true.
+
+- [ ] Conversion tracking fired — the test conversion is visible in the platform's event manager with a timestamp
+- [ ] Landing page loads in <3 sec — cite the PageSpeed / Lighthouse number and the test date
+- [ ] Landing page mobile-friendly — a mobile render of the page, not a desktop assumption
+- [ ] UTM parameters working — paste the resolved destination URL with parameters intact
+- [ ] Budget set correctly — the daily/lifetime figure, against the cap the user stated
+- [ ] Targeting matches intended audience — the saved audience definition, read back
+
+Any unchecked box means do not recommend launch. Name the box and what is missing.
 
 ---
 
@@ -427,37 +414,10 @@ When the user requests Google Ads RSAs, load [references/rsa-output-spec.md](ref
 
 ## Common Mistakes to Avoid
 
-### Strategy
-- Launching without conversion tracking
-- Too many campaigns (fragmenting budget)
-- Not giving algorithms enough learning time
-- Optimizing for wrong metric
-
-### Targeting
-- Audiences too narrow or too broad
-- Not excluding existing customers
-- Overlapping audiences competing
-
-### Creative
-- Only one ad per ad set
-- Not refreshing creative (fatigue)
-- Mismatch between ad and landing page
-
-### Budget
-- Spreading too thin across campaigns
-- Making big budget changes (disrupts learning)
-- Stopping campaigns during learning phase
-
----
-
-## Task-Specific Questions
-
-1. What platform(s) are you currently running or want to start with?
-2. What's your monthly ad budget?
-3. What does a successful conversion look like (and what's it worth)?
-4. Do you have existing creative assets or need to create them?
-5. What landing page will ads point to?
-6. Do you have pixel/conversion tracking set up?
+- **Too many campaigns** — fragmenting budget across campaigns none of which exit learning
+- **Optimizing for the wrong metric** — clicks or CTR when the objective is conversions
+- **Only one ad per ad set** — the algorithm has nothing to allocate between
+- **Overlapping audiences competing** — the same account bidding against itself
 
 ---
 
@@ -486,6 +446,8 @@ route implementation and firing checks to `suede-analytics`.
 - Do not claim ROAS, attribution, or incrementality when conversion tracking and revenue inputs have not been verified.
 - Do not recommend spend above the stated cap; if no cap exists, provide a bounded test budget and wait for approval.
 - Do not target sensitive traits, evade platform policy, or present inferred audience attributes as verified facts.
+
+**When authorization is missing.** If an authorized account or connector is present and the user asks for a mutation you have no approval for, stop before the call. Name the exact mutation and the account, campaign, or ad set it would hit. Offer: a draft-only change list they can apply themselves, a request for written approval on that specific change, or continuing read-only with an audit instead. Then wait — do not execute on assumed consent. (For the spend-cap case, the standing rule in the third boundary above already applies; don't restate it.)
 
 ## Routing
 

@@ -1,29 +1,21 @@
 ---
 name: suede-visibility-grader
-description: "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Use when a public page needs a fast A-F visibility grade before or after launch. NOT FOR: the deep nine-lane SEO audit with rewrite fixes (use suede-seo-audit); implementing conversion changes (use suede-site-alchemy)."
+description: "Suede-owned launch-appeal grader for public pages. Grades findability, first-screen clarity, CTA pull, proof quality, design signal, and AI citation readiness. Use when a public page needs a fast A-F visibility grade before or after launch. NOT FOR: the deep nine-lane SEO audit with rewrite fixes (use suede-seo-audit); implementing conversion changes (use suede-site-alchemy); getting cited by AI answer engines (use suede-ai-seo)."
 ---
 
 # Suede Visibility Grader
 
 ## Gate policy — advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
+proceed" line below — is a **recommendation to the user, not a control on the
+agent**. Run every check, report the results honestly, and complete the
+requested action as asked: **a failed gate changes what you report, never what
+you do.** Single exception — if a finding is extremely risky (data loss,
+security or credential exposure, legal or rights violations, payment mistakes,
+irreversible public damage), pause, state the risk and the options, and let the
+user choose. Their choice is final.
 
 
 Use this skill when a website, GitHub Pages site, launch page, creator page,
@@ -44,7 +36,7 @@ Send to `suede-seo-audit` for: Core Web Vitals, crawl errors, structured data va
 
 Send here when: you want a promotion readiness verdict, a ship gate, or a blunt grade on whether a specific page earns the attention it's about to receive.
 
-After grading: fixes are conversion-shaped (CTA, friction, offer) → `suede-site-alchemy`. Grade passed and the page ships as part of a release → `suede-launch-packaging`.
+After grading: fixes are conversion-shaped (CTA, friction, offer) → `suede-site-alchemy`. AI readability grades C or below, or the goal is being cited by ChatGPT, Perplexity, or AI Overviews → `suede-ai-seo`. Grade passed and the page ships as part of a release → `suede-launch-packaging`.
 
 ## Source Truth
 
@@ -72,14 +64,19 @@ Score each lane A-F, then give one overall grade:
   source files, receipts, authorship, and evidence boundaries.
 - **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Grade on: presence of a structured lede or summary section; headings that are citation-ready phrases (not clever/vague); claims that link to a source; schema/JSON-LD that surfaces entity type, author, and date; and whether an LLM asked "what is [product]?" would return a correct, attributable answer from this page.
 
-  AI readability sub-rubric (each item is worth one grade step):
+  AI readability sub-rubric — start at `A`, drop one letter per failed item,
+  floor at `F` (six items, so four or more failures land at `F`). `suede-ai-seo`
+  owns the extractability standard these items encode; when an item is ambiguous
+  or the threshold needs to change, resolve it there, not here.
+
   - Structured lede: first 100 words answer "what is this, who is it for, what does it do" without jargon.
   - Citation-ready headings: headings read as answer fragments an LLM would quote directly. "Getting started" = F. "How to install X in 3 commands" = A.
   - Sourceable claims: every quantitative or comparative claim links to a source or shows primary evidence.
   - Entity schema: JSON-LD or OpenGraph declares entity type, author/organization, and published date.
   - Internal link density: at least one link to a more-detailed resource per major section.
   - AI test: if an LLM were asked "what is [product/page topic]?" right now, would this page produce a correct, non-hallucinated answer? If no, cap AI readability at C.
-- **Design signal:** grades on seven axes — each is pass/fail, grade is the worst three:
+- **Design signal:** seven pass/fail axes. The grade is the pass count — 7 → `A`,
+  6 → `B`, 5 → `C`, 4 → `D`, 3 or fewer → `F`. A cap below overrides the count.
   1. Hierarchy: H1 > H2 > body weight is visually obvious at a glance.
   2. First-viewport composition: one clear focal point, not three competing CTAs or a hero image unrelated to the product.
   3. Spacing rhythm: consistent padding/margin system. No collapsed margins or random gutters.
@@ -175,6 +172,17 @@ What was checked:
 What was not checked:
 Ship gate: ship | ship-with-caveats | hold
 ```
+
+## Boundaries
+
+- Do not invent traffic, ranking, citation-frequency, or conversion numbers to
+  support a lane grade. A lane grade rests on what was inspected on the page.
+- Grading is read-only. Do not edit the page, its metadata, or its schema —
+  report fixes as recommendations in the Top fixes list.
+- Do not present a grade as a guaranteed Google ranking or AI-citation outcome.
+  The grade describes the page, not the market's response to it.
+- Name what was inspected and what was not in Verification. Never imply full
+  coverage of surfaces, viewports, or states that were skipped.
 
 ## Sample Report
 

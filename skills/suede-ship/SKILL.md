@@ -1,28 +1,13 @@
 ---
 name: suede-ship
-description: "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but a full run far exceeds 4, so never run the fan-out on Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
+description: "Canonical Suede Labs shipping DAG for repo changes. Use for any nontrivial change to a Suede repo that touches more than one file or surface and deserves researched, adversarially reviewed, release-checked fan-out in one pass. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. BUILT FOR TOKENMAXING AND BURNS HARD: 35 to 150 agents, all billed to the user's model allocation. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but every range here far exceeds 4, so never run the fan-out on Fable unless the user said Fable. NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
 ---
 
 # Suede Ship
 
-> **This skill is designed for tokenmaxing and will burn hard.**
->
-> It is the most expensive thing in the pack by a wide margin. It spawns dozens of
-> agents — 35 at the narrowest range, about 150 at the widest — and every one of them
-> bills to the user's model allocation, not to a separate budget. A single run can
-> visibly move a weekly limit. That is the intended trade: depth and adversarial
-> verification bought with compute, on a change worth buying it for.
->
-> Two things are therefore not optional. **Ask which of the three agent ranges the
-> user wants before launching**, and **never run the fan-out on Fable unless the user
-> explicitly specified Fable** — up to 4 concurrent Fable subagents are permitted
-> without asking, but every range this skill offers exceeds that, and a session that
-> merely happens to be on Fable is not a decision to spend that allocation. Both are
-> covered below.
->
-> If the work is high-volume and shallow rather than deep, it does not belong here —
-> route it to [`suede-codex-fleet`](../suede-codex-fleet/SKILL.md), which bills to the
-> OpenAI subscription and costs nothing against the Claude limit.
+> **Designed for tokenmaxing; it burns hard.** The most expensive skill in the pack: 35
+> agents at the narrowest range, about 150 at the widest, every one billed to the user's
+> model allocation. "Ask for the agent budget" and "Model selection" below are not optional.
 
 The canonical Suede DAG. One prompt in, one shipped change out, with about fifty
 agents in between arranged as a graph rather than a chain.
@@ -38,26 +23,17 @@ front-loaded, all of it billed to their model allocation.
 
 The middle range — `standard`, around fifty to eighty — is what the rest of this
 document means by a typical run, and the user chooses it before launch (see "Ask
-for the agent budget" below). About twenty-two of any run is fixed
-by the graph — scout, five research lenses, gaps, skeptic, plan, red team, gate, release,
-handoff. The rest scales with the lane count and, above all, with how many defects
-the reviewers report: every finding that reaches refutation costs two more agents.
-Two bounds keep that finite, and both announce themselves in the run log when they
-bite: two to six findings per lane reach a verifier depending on the range (blockers
-first; minors never do, since only blockers are fixed and everything else rides to
-the handoff either way), and the fix stage is capped too. Worst case at the widest range is therefore
-about a hundred and fifty agents rather than the six hundred and eighty an uncapped
-refutation stage reaches on a change that reviews badly. Anything skipped is reported as an unverified
-caveat, never silently dropped.
+for the agent budget" below). Verification and fix caps are per-range, they
+announce themselves in the run log when they bite, and anything they skip rides
+to the handoff as a named unverified caveat rather than being silently dropped.
 
-Every one of those agents inherits the session model. If the session is on the
-model whose allocation you are protecting, that is where the whole run lands.
+Every one of those agents inherits the session model (see "Model selection" below).
 
 If the job is actually high-volume, well-specified, and splits into independent
-worker-sized tasks (content batches, test generation, bulk refactors), say so
-and offer [`suede-codex-fleet`](../suede-codex-fleet/SKILL.md) instead. That runs
-on the OpenAI subscription and costs nothing against the Claude limit. Brute
-force beats surgery when the work is genuinely parallel and shallow.
+worker-sized tasks (content batches, test generation, bulk refactors), say so and
+offer **suede-codex-fleet** instead — it runs on the OpenAI subscription and costs
+nothing against the Claude limit. Brute force beats surgery when the work is
+genuinely parallel and shallow.
 
 ## Parse the invocation
 
@@ -153,6 +129,7 @@ Nine phases, parallel wherever the edges are not real:
 8. **Release** — adversarial release verification: config drift, public surface,
    irreversibility, live baseline.
 9. **Handoff** — the evidence record: changed files, commands run, verification, caveats.
+   The workflow returns it; you write it to disk (see "When it returns").
 
 ## While it runs
 
@@ -161,13 +138,23 @@ notification when it completes; `/workflows` shows live progress.
 
 ## When it returns
 
+First, write the returned `handoff` markdown to `.suede-ship/<runId>/handoff.md` at the
+repo root — never inside a path a lane owns, which collides on the next run. A run this
+size outlives context windows, and a record that lives only in a message is one
+compaction from gone. Then report the path and the verdict fields, not the contents.
+
 Report faithfully, including the failure shapes:
 
 - `halted: true, reason: "blocking hazard at scout"` — a real secret in a tracked
-  file, or a live process holding a worktree this run would touch. Name the hazard.
+  file, or a live process holding a worktree this run would touch. Name the hazard,
+  then stop and offer: rotate or remove the tracked secret and re-run, exclude the held
+  path from scope, or wait out the live worktree's process. Wait for the user's pick.
 - `halted: true, reason: "lane collision"` — the lane map claimed a protected dirty
   file, gave one file two owners, or hit a file held by a **live** sibling worktree.
-  Report the collisions. The fix is a re-plan, not a retry.
+  Report the collisions. The fix is a re-plan, not a retry: stop and offer to merge the
+  double-owned lanes, stash or exempt the protected WIP, or narrow the scope, then
+  re-launch with `resumeFromRunId` so completed phases replay from cache. Wait for the
+  choice; never relaunch cold, which pays for every completed phase twice.
 - Completed — lead with `shipVerdict` and `gatePassed`, then confirmed findings, then
   `crossWorktree` overlap (files this work will need rebasing against other branches),
   then `droppedConstraints` (what the skeptic rejected) and `unread`.
@@ -189,3 +176,15 @@ production. Those states require a deploy that has not happened.
 Edit the script and re-invoke with the same `scriptPath`. Add
 `resumeFromRunId: "<run id>"` to replay unchanged agents from cache. Changing an
 agent's prompt or schema re-runs that agent and everything downstream of it.
+
+## Routing
+
+- High-volume, well-specified work that splits into independent worker-sized tasks →
+  **suede-codex-fleet**, which bills to the OpenAI subscription, not the Claude limit.
+- Manual, ongoing, cross-repo, or public-repository-contribution orchestration →
+  **suede-agent-teams**. Precedence: one repo, one change, a bundled DAG that runs it
+  end to end stays here; a single lane inside an agent-teams program that needs the
+  full research-and-refute treatment comes back here for that lane.
+- Findings on a diff with no code change → **suede-code-review**; an A-F ship verdict →
+  **suede-code-grader**. Merge gate or branch protection → **suede-ci-gate**.
+- Copy rather than code → **suede-ship-copy**, the same graph with message ownership as its collision rule.

@@ -1,9 +1,9 @@
 # Press Request Platforms — Inbound PR
 
 Journalists post source requests and may select a useful response. This reference
-produces research-backed drafts only. Each platform submission, recipient,
-visible identity, and exact response requires explicit approval before any
-external action.
+produces research-backed drafts only. Every platform submission runs the
+send-approval handover in SKILL.md ("Quick Reference: Pitch Quality Bar") before
+any external action.
 
 ## Contents
 - The major platforms
@@ -141,8 +141,8 @@ Stories make articles. Advice makes filler.
 
 ### Time match
 Use the actual stated deadline, request timestamp, story velocity, and
-current-account results to prioritize drafts. Never invent an earlier deadline
-or send without exact-recipient and exact-content approval.
+current-account results to prioritize drafts. Never invent an earlier deadline,
+and let no deadline shortcut the send-approval handover in SKILL.md.
 
 ---
 

@@ -155,45 +155,6 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 
 ### Cancel Flow UI Patterns
 
-```
-┌─────────────────────────────────────┐
-│  We're sorry to see you go          │
-│                                     │
-│  What's the main reason you're      │
-│  cancelling?                        │
-│                                     │
-│  ○ Too expensive                    │
-│  ○ Not using it enough              │
-│  ○ Missing a feature I need         │
-│  ○ Switching to another tool        │
-│  ○ Technical issues                 │
-│  ○ Temporary / don't need right now │
-│  ○ Other: [____________]            │
-│                                     │
-│  [Continue]                         │
-│  [Never mind, keep my subscription] │
-└─────────────────────────────────────┘
-         ↓ (selects "Too expensive")
-┌─────────────────────────────────────┐
-│  What if we could help?             │
-│                                     │
-│  We'd love to keep you. Here's a    │
-│  special offer:                     │
-│                                     │
-│  ┌───────────────────────────────┐  │
-│  │  25% off for the next 3 months│  │
-│  │  Save $XX/month               │  │
-│  │                               │  │
-│  │  [Accept Offer]               │  │
-│  └───────────────────────────────┘  │
-│                                     │
-│  Or switch to [Basic Plan] at       │
-│  $X/month →                         │
-│                                     │
-│  [No thanks, continue cancelling]   │
-└─────────────────────────────────────┘
-```
-
 **UI principles:**
 - Keep the "continue cancelling" option visible (no dark patterns)
 - One primary offer + one fallback, not a wall of options
@@ -201,7 +162,10 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 - Use the customer's name and account data when possible
 - Mobile-friendly (many cancellations happen on mobile)
 
-For detailed cancel flow patterns by industry and billing provider, see [references/cancel-flow-patterns.md](references/cancel-flow-patterns.md).
+Read [references/cancel-flow-patterns.md](references/cancel-flow-patterns.md)
+before designing a flow: it carries the patterns by industry and billing
+provider, the segment-specific variants, the post-cancel sequence, and screen
+mockups of the survey and offer steps.
 
 ---
 
@@ -283,27 +247,21 @@ Not all failures are the same. Retry strategy by decline type:
 
 | Decline Type | Examples | Retry Strategy |
 |-------------|----------|----------------|
-| Soft decline (temporary) | Insufficient funds, processor timeout | Retry 3-5 times over 7-10 days |
+| Soft decline (temporary) | Insufficient funds, processor timeout | Retry on the canonical schedule below |
 | Hard decline (permanent) | Card stolen, account closed | Don't retry — ask for new card |
 | Authentication required | 3D Secure, SCA | Send customer to update payment |
 
-**Retry timing best practices:**
-- Retry 1: 24 hours after failure
-- Retry 2: 3 days after failure
-- Retry 3: 5 days after failure
-- Retry 4: 7 days after failure (with dunning email escalation)
-- After 4 retries: Hard cancel with reactivation path
-
-**Smart retry tip:** Retry on the day of the month the payment originally succeeded (if Day 1 worked before, retry on Day 1). Stripe Smart Retries handles this automatically.
+**Canonical retry schedule:** one schedule governs this skill — the manual retry
+table in [references/dunning-playbook.md](references/dunning-playbook.md)
+§Retry Schedule by Provider (Day 1 / 3 / 5 / 7 / 10, fifth attempt last before
+the grace period ends). Read it before configuring retries and do not restate a
+different schedule anywhere.
 
 ### Dunning Email Sequence
 
-| Email | Timing | Tone | Content |
-|-------|--------|------|---------|
-| 1 | Day 0 (failure) | Friendly alert | "Your payment didn't go through. Update your card." |
-| 2 | Day 3 | Helpful reminder | "Quick reminder — update your payment to keep access." |
-| 3 | Day 7 | Urgency | "Your account will be paused in 3 days. Update now." |
-| 4 | Day 10 | Final warning | "Last chance to keep your account active." |
+Four emails on Day 0 / 3 / 7 / 10. The timing, tone, and full copy for each live
+in [references/dunning-playbook.md](references/dunning-playbook.md) §Dunning
+Email Sequence — read it before writing or configuring the sequence.
 
 **Dunning email best practices:**
 - Direct link to payment update page (no login required if possible)
@@ -320,6 +278,9 @@ Not all failures are the same. Retry strategy by decline type:
 | Hard decline recovery | <10% | 20-30% | 40%+ |
 | Overall payment recovery | <30% | 40-50% | 60%+ |
 | Pre-dunning prevention | None | 10-15% | 20-30% |
+
+These bands are industry ranges for calibrating a recommendation. Never assert
+them as this product's result.
 
 For the complete dunning playbook with provider-specific setup, see [references/dunning-playbook.md](references/dunning-playbook.md).
 
@@ -371,14 +332,7 @@ implementation guidance, assignment behavior, and event readback before launch.
 ## Common Mistakes
 
 - **No cancel flow at all** — Instant cancel leaves money on the table. Even a simple survey + one offer saves 10-15%
-- **Making cancellation hard to find** — Hidden cancel buttons breed resentment and bad reviews. Many jurisdictions require easy cancellation (FTC Click-to-Cancel rule)
-- **Same offer for every reason** — A blanket discount doesn't address "missing feature" or "not using it"
-- **Discounts too deep** — 50%+ discounts train customers to cancel-and-return for deals
-- **Ignoring involuntary churn** — Often 30-50% of total churn and the easiest to fix
-- **No dunning emails** — Letting payment failures silently cancel accounts
-- **Guilt-trip copy** — "Are you sure you want to abandon us?" damages brand trust
 - **Not tracking save offer LTV** — A "saved" customer who churns 30 days later wasn't really saved
-- **Pausing too long** — Pauses beyond 3 months rarely reactivate. Set limits.
 - **No post-cancel path** — Make reactivation easy and trigger win-back emails, because some churned users will want to come back
 
 ---
@@ -405,6 +359,30 @@ documentation, account plan, test mode, and rollback path before configuration.
 - Treat billing retries, discounts, subscription changes, and activation as
   separately authorized mutations.
 
+### Halt Format for Billing Mutations
+
+Before any change to a live billing object — retry rules, discounts, plan
+changes, pauses, cancellations, subscription state, or customer-facing billing
+messages — stop and emit this block, then wait. Inferred consent is not
+authorization, and "the user asked for a cancel flow" is not authorization to
+configure one.
+
+```
+HALT — billing mutation requires authorization
+
+Mutation: <the exact change, e.g. "enable 5-attempt retry rule">
+Objects touched: <provider, environment, subscriptions/customers/coupons affected, count>
+Reversible by: <the exact rollback, or "not reversible">
+
+Options:
+1. Proceed in test mode only
+2. Proceed on live objects as specified
+3. Narrow the scope to <smaller set> and proceed
+4. Abandon this mutation
+
+Waiting for your choice.
+```
+
 ---
 
 ## Boundaries
@@ -420,4 +398,5 @@ documentation, account plan, test mode, and rollback path before configuration.
 - Need plan structure or offer economics -> use `suede-pricing` or `suede-offers`.
 - Need paywall or trial-expiry UX -> use `suede-paywalls`.
 - Need churn events or a controlled retention test -> use `suede-analytics` or `suede-ab-testing`.
+- Acting as the subscriber to find, cancel, or dispute your own recurring charges -> use `subscription-recovery`. This skill is the merchant side only.
 - From those skills, route cancellation and payment-recovery strategy back to `suede-churn-prevention`.

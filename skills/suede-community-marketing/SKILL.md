@@ -32,10 +32,8 @@ Work with whatever context is available. If key details are missing, make reason
 
 The strongest communities are built around who members *are* or aspire to be — not around your product. Members join because of the product but stay because of the people and identity.
 
-Examples:
-- Indie hackers (identity: bootstrapped founders)
-- r/homelab (identity: tinkerers who self-host)
-- Figma community (identity: designers who care about craft)
+Example: r/homelab — the identity is tinkerers who self-host, and every ritual,
+channel, and recognition mechanic in it reinforces that self-image.
 
 Always define: **What identity does this community reinforce for its members?**
 
@@ -48,18 +46,6 @@ Every community touchpoint should answer: *What does the member get from this?*
 - Recognition and status within a group they respect
 - Direct influence on the product roadmap
 - Career opportunities, visibility, or credibility
-
-### The Community Flywheel
-
-Healthy communities compound over time:
-
-```
-Members join → get value → engage → create content/help others
-    ↑                                          ↓
-    ←←←←← new members discover the community ←←
-```
-
-Design for the flywheel from day one. Every decision should ask: *Does this accelerate the loop or slow it down?*
 
 ---
 
@@ -79,7 +65,10 @@ Design for the flywheel from day one. Every decision should ask: *Does this acce
 2. **Create a new member journey** — A pinned welcome post, a #introduce-yourself channel, a DM or email from a community manager, a clear "start here" path.
 3. **Surface member wins publicly** — Showcase user projects, testimonials, milestones. This reinforces identity and signals that participation has rewards.
 4. **Run recurring community rituals** — Weekly threads (e.g., "What are you working on?"), monthly AMAs, seasonal challenges. Rituals create habit.
-5. **Identify and invest in power users** — 1% of members generate 90% of value. Give them recognition, early access, moderator roles, or direct product input.
+5. **Identify and invest in power users** — participation is usually heavily
+   skewed toward a small minority (Inferred; verify against this community's own
+   posts-per-member distribution before quoting a ratio). Give the observed top
+   contributors recognition, early access, moderator roles, or product input.
 
 ### Building a Brand Ambassador / Advocate Program
 
@@ -113,9 +102,24 @@ Design for the flywheel from day one. Every decision should ask: *Does this acce
 
 ## Community Health Metrics
 
-Track these signals weekly:
+Track these signals weekly. Label every number by evidence class — Boundaries
+below forbids stating any of them without a source, window, and denominator:
 
-- **DAU/MAU ratio** — Stickiness. Above 20% is healthy for most communities.
+- **Observed** — read directly from the platform's admin view or export. Name
+  the view and the date pulled.
+- **Computed** — derived from observed values. Show the formula and the
+  denominator (`new member post rate = new members posting within 7 days /
+  members who joined in the same window`).
+- **Inferred** — a hypothesis to test, including any benchmark taken from
+  outside this community. Never word it as this community's fact.
+- **Unknown** — the platform does not expose the measure. State what would
+  resolve it.
+
+Metrics:
+
+- **DAU/MAU ratio** — Stickiness (Computed: daily actives / monthly actives).
+  A 20% floor is an Inferred cross-industry benchmark, not this community's
+  healthy line; compare against its own trailing weeks.
 - **New member post rate** — % of new members who post within 7 days of joining
 - **Thread reply rate** — % of posts that receive at least one reply
 - **Churn / lurker ratio** — Members who joined but haven't posted in 30+ days
@@ -124,7 +128,8 @@ Track these signals weekly:
 **Warning signs:**
 - Most posts are from the company team, not members
 - Questions go unanswered for >24 hours
-- The same 5 people account for 80%+ of engagement
+- Engagement concentrates in a handful of accounts — compute the share of posts
+  from the top 5 posters over a stated window before calling it a warning
 - New members stop posting after their intro message
 
 ---
@@ -142,16 +147,71 @@ Depending on what the user needs, produce one of:
 
 Always be specific. Generic advice ("be consistent," "provide value") is not useful. Give the user something they can act on today.
 
+### Community Strategy Doc — exact headings
+
+```markdown
+# <Community name> — Strategy
+
+## Identity
+Member identity reinforced: <who members are or aspire to be>
+Who is explicitly not the member: <exclusion>
+
+## Platform Choice
+Chosen: <platform> | Rejected: <platform> because <watch-out from the table>
+Evidence class for any cited benchmark: Observed | Computed | Inferred | Unknown
+
+## Core Loop
+Weekly member action: <one action>
+What makes it easy: <mechanic>
+How it is rewarded publicly: <mechanic>
+Where new value re-enters: <mechanic>
+
+## Seeding Plan
+Founding members (20–50, manually recruited): <source list>
+Pre-launch seed posts: <5–10 topics that model the behavior>
+Culture statement: <what great participation looks like here>
+
+## 90-Day Plan
+Days 0–30 | Days 31–60 | Days 61–90 — for each: goal, rituals live,
+owner, primary metric with its denominator
+
+## Measurement
+Primary metric: <metric> = <formula> / <denominator>, window <n> days
+Diagnostics (2–4): <metric + evidence class each>
+
+## Open Gates
+<authorization or evidence still missing; use the halt contract below>
+```
+
+The other five deliverables use these headings:
+
+- **Channel Architecture** — Channel | Purpose | Who posts | Posting rules | Success signal
+- **New Member Journey** — Pinned post / DM template / Day 1–7 prompts / First-win definition / Drop-off checkpoint
+- **Community Ritual Calendar** — Ritual | Cadence | Owner | Member job | Kill condition
+- **Ambassador Program Brief** — Criteria / Benefits / Outreach template / Disclosure requirement / Tracking plan
+- **Health Audit Report** — Metrics with evidence class and denominator / Diagnosis / Top 3 priorities / What would disprove the diagnosis
+
 ---
 
-## Task-Specific Questions
+## Halt Contract
 
-1. What platform are you building on (or considering)?
-2. What stage is the community at? (Pre-launch, early, growing, established)
-3. What's the primary business goal? (Retention, activation, word-of-mouth, support deflection)
-4. Who is the ideal community member and what motivates them?
-5. Do you have existing users or customers to seed from?
-6. How much time can you dedicate to community management weekly?
+Use this exact format when authorization, evidence, or an enforcement decision
+blocks the requested result — including the space-creation, invite, role,
+moderation, removal, and announcement gate and the enforcement-outcome gate in
+Boundaries:
+
+```text
+HALT — <one-line blocker>
+Why it blocks: <specific missing authority or evidence>
+Resolve with:
+1. <option>
+2. <option>
+3. <option, when useful>
+Waiting for: <the exact item or approval>
+```
+
+Continue with safe drafts, plans, or worksheets only when they remain useful
+and do not imply the blocker was resolved.
 
 ---
 
@@ -168,4 +228,6 @@ Always be specific. Generic advice ("be consistent," "provide value") is not use
 - Need public social content -> use `suede-social`.
 - Need member-language research -> use `suede-customer-research`.
 - Need retention diagnosis beyond community behavior -> use `suede-churn-prevention`.
+- Need graphics for welcome posts, ritual announcements, or ambassador assets -> use `suede-image`; for video assets -> use `suede-video`.
+- Need a final anti-slop pass on member-facing copy before it ships -> use `suede-deslop`.
 - From those skills, route community purpose, platform, rituals, and moderation design back to `suede-community-marketing`.
