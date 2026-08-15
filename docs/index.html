@@ -3557,7 +3557,7 @@
       <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
       <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
 
-      <p class="clog-fresh reveal reveal-d2">Version 0.11.1 released Aug 10, 2026 <span id="clog-fresh-rel" data-iso="2026-08-10"></span></p>
+      <p class="clog-fresh reveal reveal-d2">Version 0.12.0 released Aug 15, 2026 <span id="clog-fresh-rel" data-iso="2026-08-15"></span></p>
 
       <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 5, 0, 1, 2, 64, 25, 33, 18, 19, and 56 commits.">
         <span style="height:8%"></span>
@@ -3584,6 +3584,16 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="fix">
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-15</span>
+            <span class="clog-tag clog-tag--fix">Skills</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/1163506" target="_blank" rel="noopener" aria-label="View commit 1163506 on GitHub">1163506</a>
+          </p>
+          <h3 class="clog-title">Every skill measured against the packs people actually rate</h3>
+          <p class="clog-detail">Version 0.12.0 audits all 73 skills against Anthropic&rsquo;s Agent Skills guidance, the agentskills.io spec, and the top community packs, with every major cut or addition adversarially re-verified against the file before landing. Around 40 descriptions now lead with a literal &ldquo;Use when&rdquo; trigger and NOT FOR routes. Every orchestrator names its model per dispatch, caps its roster and fix loops numerically, and writes a durable ledger. <code>suede-workflow-skills</code> drops from 601 to 347 lines and finally routes the whole pack &mdash; 44 skills previously had no path from the entry point. Two new tested scripts ship: a commit-dirt scanner for reviews and an MCP surface-drift snapshot.</p>
+        </li>
 
         <li class="clog-item" data-type="fix">
           <p class="clog-meta">
