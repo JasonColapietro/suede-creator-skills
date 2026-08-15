@@ -21,9 +21,9 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **73 public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 39 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+This pack is the supervision: **73 public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 41 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
 
-<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 39 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
+<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
 ## Install in 30 seconds
 
@@ -193,7 +193,7 @@ Rights and release-prep tooling for working musicians and creators — see the [
 
 ### Marketing & growth
 
-Thirty-nine skills covering paid acquisition and outbound, monetisation, lifecycle and
+Forty-one skills covering paid acquisition and outbound, monetisation, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
 `suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
 `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`, `suede-onboarding`,
@@ -203,7 +203,8 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 `suede-sales-enablement`, `suede-programmatic-seo`, `suede-content-strategy`,
 `suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-instagram-growth`, `suede-social`,
 `suede-aso`, `suede-video`, `suede-image`, `suede-product-marketing`, `suede-competitors`,
-`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`.
+`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`,
+`suede-ai-seo`, `suede-attribution`.
 
 Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
 under the MIT License — see [NOTICE.md](NOTICE.md).
@@ -213,7 +214,7 @@ under the MIT License — see [NOTICE.md](NOTICE.md).
 Essays on why the pack is built the way it is:
 
 - [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, the ship DAG, and the MCP layer
-- [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 71-skill pack
+- [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 73-skill pack
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
 - [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills
 - [**Two new lanes: a next-action recommender and a one-prompt Android app factory**](https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html)
@@ -274,7 +275,7 @@ Contributions are welcome for docs fixes, install-path corrections, lint rules, 
 
 ### Third-party credit
 
-Thirty-eight of the marketing and growth skills are adapted from
+Forty of the marketing and growth skills are adapted from
 **[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines**, used under
 the MIT License. That project is the origin of the material — if these skills are useful, the credit
 belongs there. Full notice and licence: [NOTICE.md](NOTICE.md),

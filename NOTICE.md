@@ -2,7 +2,7 @@
 
 ## marketingskills — Corey Haines
 
-Thirty-eight skills in this pack cover paid acquisition, outbound, monetization, lifecycle, and
+Forty skills in this pack cover paid acquisition, outbound, monetization, lifecycle, and
 marketing operations. They are **adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines**, used and redistributed under the MIT License.
 
