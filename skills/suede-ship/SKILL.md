@@ -1,6 +1,6 @@
 ---
 name: suede-ship
-description: "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; never Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
+description: "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but a full run far exceeds 4, so never run the fan-out on Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
 ---
 
 # Suede Ship
@@ -14,9 +14,11 @@ description: "Canonical Suede shipping DAG: scout, multi-lens research, gap crit
 > verification bought with compute, on a change worth buying it for.
 >
 > Two things are therefore not optional. **Ask which of the three agent ranges the
-> user wants before launching**, and **never run the agents on Fable unless the user
-> explicitly specified Fable** — a session that merely happens to be on Fable is not
-> a decision to spend that allocation. Both are covered below.
+> user wants before launching**, and **never run the fan-out on Fable unless the user
+> explicitly specified Fable** — up to 4 concurrent Fable subagents are permitted
+> without asking, but every range this skill offers exceeds that, and a session that
+> merely happens to be on Fable is not a decision to spend that allocation. Both are
+> covered below.
 >
 > If the work is high-volume and shallow rather than deep, it does not belong here —
 > route it to [`suede-codex-fleet`](../suede-codex-fleet/SKILL.md), which bills to the
@@ -105,15 +107,17 @@ lane anyway, because silently shipping less than the user asked for is worse tha
 costing more than planned. And it never hides what it skipped — capped
 verification rides to the handoff as named unverified caveats.
 
-## Model selection — never Fable by default
+## Model selection — Fable capped at 4 without asking
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
 happens to be set to. That is how a run sized against one allocation gets billed to
 another without anyone choosing it.
 
-**Fable must be specified to be used. This skill's subagents never run on Fable
-unless the user named Fable for this run.** An inherited session model is not a
+**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
+instruction. Beyond that, Fable must be specified** — and every range this skill
+offers (35 at the narrowest) is far beyond 4, so its fan-out never runs on Fable
+unless the user named Fable for this run. An inherited session model is not a
 specification — "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
