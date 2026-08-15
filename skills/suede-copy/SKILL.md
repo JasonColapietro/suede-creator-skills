@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits."
+description: "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop)."
 ---
 
 # Suede Copy
@@ -30,7 +30,7 @@ proceed" line elsewhere in this skill:
 - **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
 - **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization)
 - Multi-email campaign sequences and campaign performance reporting: (private Suede Labs companion, not in this pack: suede-growth)
-- Post-production pass to strip AI writing patterns from already-written copy: (private Suede Labs companion, not in this pack: suede-deslop)
+- Post-production pass to strip AI writing patterns from already-written copy: use suede-deslop (in this pack)
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 
@@ -166,7 +166,7 @@ Use keywords because they help the right reader find the page. Do not cram a key
 
 ## SEO Audit Mode
 
-For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use `$suede-seo-audit` instead.
+For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use `suede-seo-audit` instead.
 
 When the copy workflow includes an SEO pass (metadata, structure, or copy quality only):
 

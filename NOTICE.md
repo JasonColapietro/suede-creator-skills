@@ -2,7 +2,7 @@
 
 ## marketingskills — Corey Haines
 
-Thirty-eight skills in this pack cover paid acquisition, outbound, monetization, lifecycle, and
+Forty skills in this pack cover paid acquisition, outbound, monetization, lifecycle, and
 marketing operations. They are **adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines**, used and redistributed under the MIT License.
 
@@ -29,8 +29,9 @@ preserving useful domain substance. The adaptation includes:
 
 ### Skills adapted from this source
 
-`suede-ab-testing`, `suede-ad-creative`, `suede-ads`, `suede-analytics`, `suede-aso`,
-`suede-churn-prevention`, `suede-co-marketing`, `suede-cold-email`, `suede-community-marketing`,
+`suede-ab-testing`, `suede-ad-creative`, `suede-ads`, `suede-ai-seo`, `suede-analytics`,
+`suede-aso`, `suede-attribution`, `suede-churn-prevention`, `suede-co-marketing`,
+`suede-cold-email`, `suede-community-marketing`,
 `suede-competitor-profiling`, `suede-competitors`, `suede-content-strategy`,
 `suede-customer-research`, `suede-directory-submissions`, `suede-emails`, `suede-free-tools`,
 `suede-image`, `suede-lead-magnets`, `suede-marketing-council`, `suede-marketing-ideas`,

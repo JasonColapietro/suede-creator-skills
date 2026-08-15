@@ -1,6 +1,6 @@
 ---
 name: suede-seo-audit
-description: "Run a nine-lane evidence-based SEO and generative-search audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes."
+description: "Run a nine-lane evidence-based SEO and generative-search audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes. Use when a page or site needs a deep standalone SEO/AI-visibility audit with scored lanes. NOT FOR: a fast A-F launch-appeal grade (use suede-visibility-grader); conversion-path rework after the audit (use suede-site-alchemy)."
 ---
 
 # Suede SEO Audit
@@ -470,3 +470,4 @@ requires additional tooling.
 - Findings point at conversion problems (CTA, friction, offer) → `suede-site-alchemy` for the rewrite pass.
 - Findings require fresh copy, not fixes → `suede-copy`.
 - Audit passed and the page is part of a release → `suede-launch-packaging` to package the launch.
+- Findings concern AI answer engines (getting cited by ChatGPT/Perplexity/AI Overviews, `llms.txt`, AI-bot access) → `suede-ai-seo` for the generative-visibility pass.

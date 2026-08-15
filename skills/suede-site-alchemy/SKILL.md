@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO."
+description: "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO. Use when a live or drafted page needs conversion-rate work on its structure and persuasion path. NOT FOR: a scored SEO/AI-visibility audit (use suede-seo-audit); a fast launch-appeal grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
 ---
 
 # Suede Site Alchemy

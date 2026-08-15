@@ -82,8 +82,12 @@ Assess the selected directory against current requirements:
 9. Who has authority to create the account, accept terms, and submit?
 
 A missing current platform requirement, truthful destination, or submission
-authority is a hard block for that directory. Other gaps are prioritization inputs,
-not universal launch blockers.
+authority is a hard block for that directory. At the block: stop work on that
+directory, name the blocker in one line ("<directory>: missing <requirement>"),
+list the resolution options (obtain the requirement, substitute a truthful
+destination, get explicit submission authority, or drop the directory from the
+tier), and wait for the user's pick before submitting there. Other gaps are
+prioritization inputs, not universal launch blockers.
 
 ### Step 2: Choose the tiers
 

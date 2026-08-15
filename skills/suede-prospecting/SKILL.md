@@ -96,7 +96,7 @@ Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-si
 
 | Score | Definition |
 |-------|------------|
-| **Hot** | Strong ICP fit + clear buying signal + decision-maker accessible + verified contact |
+| **Hot** | ICP fit (passes the full Phase 1 ICP checklist) + clear buying signal + decision-maker accessible + verified contact |
 | **Warm** | ICP fit + softer or older signal + contact verifiable |
 | **Cold** | Loose ICP fit OR no clear signal OR contact unverified |
 | **Skip** | Disqualifier hit (out of ICP, closed business, duplicate, irrelevant, low confidence) |

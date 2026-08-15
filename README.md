@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/assets/readme/hero.svg" alt="Suede Creator Skills — the ship discipline your agent is missing. 71 open-source skills for Claude Code and Codex." width="100%">
+<img src="docs/assets/readme/hero.svg" alt="Suede Creator Skills — the ship discipline your agent is missing. 73 open-source skills for Claude Code and Codex." width="100%">
 
 <br><br>
 
-[![Skills: 71](https://img.shields.io/badge/skills-71-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 73](https://img.shields.io/badge/skills-73-c8a96e?labelColor=080808)](#the-skills)
 [![License: MIT](https://img.shields.io/badge/license-MIT-c8a96e?labelColor=080808)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -21,9 +21,9 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **71 public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 39 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+This pack is the supervision: **73 public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, 41 marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
 
-<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 39 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
+<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
 ## Install in 30 seconds
 
@@ -34,7 +34,7 @@ This pack is the supervision: **71 public skill folders**, MIT-licensed and broa
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 71 skills. Want less? Two focused subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 73 skills. Want less? Two focused subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -43,7 +43,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads all 71 skills and registers both read-only MCP discovery profiles. Restart Codex after installing or updating.
+The Codex plugin loads all 73 skills and registers both read-only MCP discovery profiles. Restart Codex after installing or updating.
 
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
@@ -51,7 +51,7 @@ The Codex plugin loads all 71 skills and registers both read-only MCP discovery 
 npx skills add JasonColapietro/suede-creator-skills
 ```
 
-**Prefer a clone?** `install.sh` copies all 71 skills into `~/.claude/skills/` and prints the installed count:
+**Prefer a clone?** `install.sh` copies all 73 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -193,7 +193,7 @@ Rights and release-prep tooling for working musicians and creators — see the [
 
 ### Marketing & growth
 
-Thirty-nine skills covering paid acquisition and outbound, monetisation, lifecycle and
+Forty-one skills covering paid acquisition and outbound, monetisation, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
 `suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
 `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`, `suede-onboarding`,
@@ -203,7 +203,8 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 `suede-sales-enablement`, `suede-programmatic-seo`, `suede-content-strategy`,
 `suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-instagram-growth`, `suede-social`,
 `suede-aso`, `suede-video`, `suede-image`, `suede-product-marketing`, `suede-competitors`,
-`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`.
+`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`,
+`suede-ai-seo`, `suede-attribution`.
 
 Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
 under the MIT License — see [NOTICE.md](NOTICE.md).
@@ -213,7 +214,7 @@ under the MIT License — see [NOTICE.md](NOTICE.md).
 Essays on why the pack is built the way it is:
 
 - [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, the ship DAG, and the MCP layer
-- [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 71-skill pack
+- [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 73-skill pack
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
 - [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills
 - [**Two new lanes: a next-action recommender and a one-prompt Android app factory**](https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html)
@@ -274,7 +275,7 @@ Contributions are welcome for docs fixes, install-path corrections, lint rules, 
 
 ### Third-party credit
 
-Thirty-eight of the marketing and growth skills are adapted from
+Forty of the marketing and growth skills are adapted from
 **[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines**, used under
 the MIT License. That project is the origin of the material — if these skills are useful, the credit
 belongs there. Full notice and licence: [NOTICE.md](NOTICE.md),

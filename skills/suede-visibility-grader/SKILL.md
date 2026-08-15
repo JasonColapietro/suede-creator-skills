@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness."
+description: "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness. Use when a public page needs a fast A-F visibility grade before or after launch. NOT FOR: the deep nine-lane SEO audit with rewrite fixes (use suede-seo-audit); implementing conversion changes (use suede-site-alchemy)."
 ---
 
 # Suede Visibility Grader

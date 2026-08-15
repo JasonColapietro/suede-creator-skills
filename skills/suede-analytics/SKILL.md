@@ -1,8 +1,8 @@
 ---
 name: suede-analytics
-description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops)."
+description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), attribution modeling and reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
 metadata:
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede Analytics Tracking
@@ -319,6 +319,7 @@ official documentation before constructing a call.
 
 - Need experiment design or result interpretation -> use `suede-ab-testing`.
 - Need paid-campaign decisions -> use `suede-ads`.
+- Need attribution modeling, model comparison, or cross-tool reconciliation -> use `suede-attribution`.
 - Need pipeline and CRM attribution -> use `suede-revops`.
 - Need organic visibility diagnosis -> use `suede-seo-audit`.
 - From those skills, route instrumentation plans and firing verification back to `suede-analytics`.
