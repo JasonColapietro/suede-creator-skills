@@ -1,6 +1,6 @@
 ---
 name: suede-sms
-description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, and defining measurement. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything without approval."
+description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement — TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification — this skill does not give legal advice and never sends, schedules, imports, or registers."
 metadata:
   version: 1.0.0
 ---
@@ -28,6 +28,7 @@ Gather this context (ask if not provided):
 - Existing SMS program (platform, list size, opt-in rate, opt-out rate, revenue/send)
 - Email program (SMS works best as a layer on top, not a replacement)
 - Phone number type: short code, toll-free, long code (10DLC)
+- Sequences already running (so a new flow does not double-tap the same contact)
 
 ### 3. Compliance Posture
 - US: A2P 10DLC registration complete? (Required since 2022 — without it, your messages get filtered)
@@ -205,28 +206,36 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 - Emojis are fine in moderation (one per message, situationally).
 - ALL CAPS reads as shouting. Avoid except for explicit codes (e.g., "Use ACME10").
 
+**Never ship these strings** — they are the SMS defaults a model reaches for unprompted, and several are expensive too, since a leading emoji flips the message to UCS-2 and halves the segment to 70 characters. Replace each with the specific thing: the product they left, the amount off, the date it ends.
+
+- "Don't miss out!" / "Hurry, ends soon!" / "LAST CHANCE" / "Time is running out"
+- "Hey [Name]! 👋" / "Hey friend!" / "Psst..." / "We miss you 😢" / "It's been a while!"
+- "Exclusive offer just for you" / "You've been selected" / "Tap here" with no statement of what is on the other side
+- Flame, siren, alarm-clock, or party-popper emoji as the opener
+
 ### Personalization
 
 - First name token if available (boosts CTR ~20%)
 - Recent product/category browse-based
 - Location-based offers (where applicable)
-- Don't fake intimacy ("Hey friend!") — it backfires
-
-**For complete copy patterns by sequence type with character counts**: see [references/sequence-templates.md](references/sequence-templates.md).
 
 ---
 
 ## Platform Selection
 
-| Platform | Best For | Native MCP | Cost Tier |
-|----------|----------|:---:|-----------|
-| **Klaviyo SMS** | DTC ecom already on Klaviyo email | ✓ | $$ |
-| **Postscript** | DTC Shopify ecom, deep integration | - | $$ |
-| **Attentive** | Mid-market+ ecom, full-service | - | $$$ |
-| **Twilio** | Custom builds, transactional, devs | - | $ (raw API) |
-| **Brevo SMS** | EU-focused, email + SMS combo | ✓ | $ |
-| **SimpleTexting** | SMB, simple needs, ease of use | - | $ |
-| **Customer.io** | Behavior-based automation + SMS | - | $$ |
+Evaluation examples, not guaranteed integrations — this pack ships no SMS connectors. Before recommending one, verify vendor
+documentation, authenticated access, per-message cost, carrier support, consent storage, quiet hours, STOP/HELP behavior, and send limits.
+
+| Platform | Best For | Cost Tier | Verify Before Use |
+|----------|----------|-----------|-------------------|
+| **Klaviyo SMS** | DTC ecom already on Klaviyo email | $$ | Store integration, consent, attribution |
+| **Postscript** | DTC Shopify ecom, deep integration | $$ | Store integration, consent, attribution |
+| **Attentive** | Mid-market+ ecom, full-service | $$$ | Store integration, consent, attribution |
+| **Twilio / Plivo** | Custom builds, transactional, devs | $ (raw API) | Number registration, throughput, callbacks |
+| **Brevo SMS** | EU-focused, email + SMS combo | $ | Regional coverage, orchestration, suppression |
+| **SimpleTexting** | SMB, simple needs, ease of use | $ | Regional coverage, consent record |
+| **Customer.io** | Behavior-based automation + SMS | $$ | Regional coverage, orchestration, suppression |
+| **AudienceTap** | Specialized DTC capture | $ | Capture method, consent record, carrier coverage |
 
 **Quick picks**:
 - Already on Klaviyo for email + DTC/ecom → **Klaviyo SMS** (no second platform to learn)
@@ -266,18 +275,26 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 - Personalization tokens (with first name vs without)
 - CTA copy ("Shop now" vs "See it" vs "Last chance")
 
-Cross-reference `suede-ab-testing` for test design and `suede-analytics` for
-attribution setup.
-
 ---
 
 ## Output Format
 
-When the user asks for an SMS plan, return:
+When the user asks for an SMS plan, return these six sections, in this order, with these headings:
 
 1. **Compliance check**: Are they registered for A2P 10DLC (if US)? Is the opt-in mechanism compliant? Flag blockers first.
 2. **Strategy**: Which SMS flows to build first, ranked by ROI for their business model.
-3. **Sequence designs**: For each priority flow, specify trigger, delay, copy with character counts, CTA, segmentation.
+3. **Sequence designs**: For each priority flow, one block per message, in this exact shape:
+
+```
+Trigger: [event that fires this message]
+Delay: [time after the trigger]
+Copy: (NN chars, N segments, GSM-7|UCS-2)
+[the message exactly as it would send, sender ID and compliance footer included]
+CTA link: [short link + UTM params]
+Segment: [who receives this, who is excluded]
+Compliance footer: [STOP language present / not required here, and why]
+```
+
 4. **Platform recommendation**: Based on stack, list size, and complexity.
 5. **Measurement plan**: KPIs, benchmarks, A/B test queue.
 6. **Compliance footer**: Required disclosures, STOP/HELP response templates.
@@ -286,45 +303,24 @@ Keep recommendations specific. Don't say "send an SMS at the right time" — say
 
 ---
 
-## Task-Specific Questions
+## Pre-delivery self-check
 
-1. Are you US, EU, or both? (Changes compliance approach entirely.)
-2. Is A2P 10DLC registration complete (US)?
-3. What platform are you on or considering?
-4. Email list size and SMS opt-in rate (if any)?
-5. What sequences do you already have running?
-6. Are you DTC ecom, mobile app, B2B SaaS, services?
-7. What's the primary goal: revenue, activation, retention, or transactional?
+Run this on the messages you just drafted, not on the user's program — section 1 above audits the program, and nothing else checks the copy. Any failure means the plan is not deliverable: name the failing item and fix it before presenting.
+
+- [ ] Every message carries the sender ID inline
+- [ ] Every message shows its character and segment count, and stays inside the segment budget you declared
+- [ ] Opt-in confirmation and at least one message per quarter carry STOP language
+- [ ] Every send time falls inside 9am–8pm recipient-local
+- [ ] No personal phone number appears in any draft
+- [ ] The drafted copy is consistent with the sample text declared at A2P registration
 
 ---
 
 ## Common Mistakes
 
-1. **Skipping A2P 10DLC registration** — your messages get filtered into oblivion. Register first, send second.
-2. **Treating SMS like email** — sending daily promotional blasts. Opt-out rates spike, list dies.
-3. **Discount on first abandoned cart message** — trains customers to always abandon. Reserve for second or third send.
-4. **Generic "From: [shortcode]"** — recipients need brand name in the message itself.
-5. **Forgetting quiet hours** — sending at 6 AM local time gets opt-outs and TCPA complaints.
-6. **No STOP/HELP handling** — non-negotiable. Every platform handles this; verify yours does.
-7. **Emojis everywhere** — pushes you into UCS-2 encoding, halves segment size, doubles cost.
-8. **Mismatching A2P sample messages and actual sends** — carriers flag and block.
-9. **Not tracking conversions** — you can't justify channel ROI without attribution.
-10. **No throttling on bulk sends** — burst sends trigger carrier filtering. Use platform throttling.
-
----
-
-## Tool Integrations
-
-These are evaluation examples, not guaranteed integrations. Verify current
-vendor documentation, authenticated access, per-message cost, carrier support,
-consent storage, quiet-hour controls, STOP/HELP behavior, and delivery limits.
-
-| Tool Category | Examples | Verify Before Use |
-|---------------|----------|-------------------|
-| Commerce suites | Klaviyo, Postscript, Attentive | Store integration, consent, attribution |
-| Messaging APIs | Twilio, Plivo | Number registration, throughput, callbacks |
-| Lifecycle platforms | Brevo, Customer.io | Regional coverage, orchestration, suppression |
-| Specialized DTC | AudienceTap | Capture method, consent record, carrier coverage |
+1. **Treating SMS like email** — sending daily promotional blasts. Opt-out rates spike, list dies.
+2. **Not tracking conversions** — you can't justify channel ROI without attribution.
+3. **No throttling on bulk sends** — burst sends trigger carrier filtering. Use platform throttling.
 
 ---
 
@@ -345,3 +341,6 @@ consent storage, quiet-hour controls, STOP/HELP behavior, and delivery limits.
 - Use `suede-site-alchemy` for phone-number capture experiences.
 - Use `suede-churn-prevention` for approved win-back strategy.
 - Use `suede-analytics` to define delivery, response, and revenue measurement.
+- Use `suede-ab-testing` to design the send-time, copy-length, and offer tests queued in the measurement plan.
+- Use `suede-deslop` before any message goes to a real recipient.
+- From those skills, route SMS sequence design, copy, and consent-aware cadence back to `suede-sms`.

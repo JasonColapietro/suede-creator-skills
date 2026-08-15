@@ -9,6 +9,15 @@ metadata:
 
 Suede treats directory distribution as a verifiable discovery layer, not a submission-count contest. Build the user's backlink and buyer-discovery foundation by selecting the right directories, sequencing them around real launch moments, adapting truthful positioning, and checking that each listing and backlink actually landed.
 
+**Iron Law — approval is per destination:**
+
+```
+No external submission, account creation, paid placement, or review request
+happens without explicit approval for that exact destination, copy, assets,
+timing, and maximum cost. Approval for research or for another destination
+never transfers. Any delta is re-approved before it ships.
+```
+
 ## Before Starting
 
 **Check for product marketing context first:**
@@ -125,24 +134,29 @@ form without inventing features, customers, outcomes, or platform support.
 ### Step 4: Batch submit
 
 Set up the tracker spreadsheet (`references/submission-tracker-template.csv`).
-Prioritize a small evidence-backed batch. Before any external submission, show
-the exact public copy, assets, account, destination, timing, and maximum cost,
-then get explicit approval for that submission. Approval for research or
-another directory does not transfer.
+Work in evidence-backed approval batches of **3–5 directories**. At the cap,
+submit, verify, and report that batch's results before opening the next one.
+Every submission is gated by the Iron Law: show the exact public copy, assets,
+account, destination, timing, and maximum cost first.
 
 Per submission:
 1. Verify the current form, rules, price, and account identity.
 2. Prepare the exact field values and assets as a reviewable draft.
-3. Obtain explicit approval for that destination, copy, assets, timing, and
-   maximum cost.
+3. Obtain explicit approval for that destination (Iron Law).
 4. Fill and upload only the approved values.
 5. Pause before any changed price, upsell, or materially different rendered
    preview; re-approve the delta.
 6. Submit once, then capture confirmation.
 7. Log: date, URL, status, moderator notes.
-8. Once live, record the canonical listing URL and inspect the rendered link or
-   page HTML for `rel`, redirect, and destination behavior. Absence of `rel` in
-   response headers does not prove link attributes. Log the method and check date.
+8. Once live, fetch the canonical listing URL, locate the anchor pointing at the
+   destination in the rendered HTML, and record its `rel` value, redirect
+   behavior, resolved destination, and the check date in the tracker. Absence of
+   `rel` in response headers does not prove link attributes — inspect the
+   rendered page, and log the method used.
+
+**Reporting rule:** a listing is reported **live** only when the tracker's Live
+URL, Rendered Link Attributes, and Destination Verified cells are all filled
+with a check date. Anything else is reported as **submitted, unverified**.
 
 ---
 
@@ -203,49 +217,21 @@ Match each listing to the most useful truthful page available. A homepage can be
 appropriate when it satisfies the audience and promise; a specialized page may be
 better when evidence supports it.
 
-### 1. Alternative pages
+| Page type | Build it when |
+|---|---|
+| Alternatives page (`/alternatives/[competitor]`) | Current customer or search evidence shows comparison intent |
+| Use-case / ICP page (`/for/[audience]`, `/use-cases/[use-case]`) | Demand and product evidence justify a dedicated page |
+| Template or asset gallery (`/templates/[slug]`) | Templates carry standalone value and activation is measurable |
+| Self-authored category roundup | The team can research the category and disclose its methodology |
+| Integration page | The integration is live and the page explains setup, capabilities, and limits |
 
-Use when current customer or search evidence shows comparison intent:
+On any comparison or roundup page: verify material competitor claims, state
+clearly when each option fits, date the comparison, and correct it when the facts
+change. Set output volume from quality capacity and measured demand, not a
+borrowed traffic or revenue story, and do not promise ranking or AI citation.
 
-- `/alternatives/[competitor-1]`
-- `/alternatives/[competitor-2]`
-- `/alternatives/[competitor-3]`
-- `/alternatives/[competitor-4]`
-
-Use verified features and prices, clearly state when each option fits, and add
-FAQs or structured data only when appropriate and valid.
-
-**Critical:** Be honest. Verify material competitor claims, date the comparison,
-and correct it when facts change.
-
-### 2. Use-case / ICP pages
-
-Create a dedicated ICP or use-case page when current demand and product evidence
-justify one:
-- `/for/[audience]` — coaches, agencies, ecommerce, SaaS, consultants, etc.
-- `/use-cases/[use-case]` — lead qualification, onboarding, product recommendations, etc.
-
-### 3. Template / asset gallery (if applicable)
-
-Use when templates provide standalone value and product activation can be
-measured:
-- One indexable page per template at `/templates/[slug]`.
-- Use a descriptive title, useful instructions, real screenshot, and clear CTA.
-- Link genuinely related templates.
-- Set output volume from quality capacity and measured demand, not a borrowed
-  traffic or revenue story.
-
-### 4. "Best of" listicles you wrote yourself
-
-Write honest, current roundups only when the team can research the category and
-disclose its methodology. Include a useful set of alternatives rather than a
-fixed count, and do not promise ranking or AI citation.
-
-### 5. Integration pages (when integrations ship)
-
-Create an integration page when the integration is live and the page helps users
-understand setup, capabilities, and limits. Measure its results rather than
-projecting another company's traffic.
+Page production at scale belongs to `suede-programmatic-seo`; comparison-page
+strategy belongs to `suede-competitors`.
 
 ---
 
@@ -255,17 +241,11 @@ Directories and destination pages may appear in search and answer engines. Treat
 visibility as an observable outcome, not a guaranteed effect of authority scores
 or markup.
 
-### Tactics that get pages cited
-
-1. Use a clear title and logical heading hierarchy for readers.
-2. Publish accurate facts with primary sources, dates, definitions, and caveats.
-3. Add only schema that matches visible page content and current specifications.
-4. Use comparison tables when they improve comprehension and can be maintained.
-5. Explain what the product is and who it serves early on the page.
-6. Earn genuine third-party discussion; do not seed or fabricate citations.
-7. Publish original research only with a reproducible method and rights-safe data.
-8. Maintain authorized company profiles with consistent verified entity facts.
-9. If applicable, maintain accurate registry entries for live integrations.
+On-page citation tactics (headings, schema, source-dated facts, comparison
+tables) are owned by `suede-seo-audit`. Two rules stay this skill's own: earn
+genuine third-party discussion rather than seeding or fabricating citations, and
+keep authorized company profiles and live-integration registry entries
+consistent with verified entity facts.
 
 ### Measurement
 
@@ -281,41 +261,13 @@ recommending it.
 Most directory submissions are episodic; community participation is ongoing.
 Measure each as a separate source before combining funnel conclusions.
 
-### Reddit and forums
+Cross-posts and community links are still backlinks: publish only where the
+community's current rules permit it, use a canonical URL where the platform
+supports one, and verify the rendered link with the same Step 4.8 check applied
+to directory listings.
 
-Read the current rules of each community before recommending or publishing a
-link. Participate with relevant firsthand value, disclose affiliation, and use
-promotion threads only when the current rules allow it. Membership counts and
-recurring-thread availability are volatile; verify them if they affect selection.
-
-Candidate formats include approved firsthand numbers, real screenshots, lessons,
-and mini case studies. Test them under the community's current rules rather than
-claiming a universal winning format.
-
-### LinkedIn
-
-Use the channel when the actual audience and account analytics support it.
-Experiment with approved firsthand stories, original research, useful analysis,
-and document formats. Set cadence from production capacity and observed response;
-do not promise a lead share or engagement multiplier.
-
-### Twitter/X (indie hacker + dev channel)
-
-Share authorized technical lessons, decisions, and outcomes where they serve the
-audience. Measure referral and search results; do not claim indexing or answer
-engine effects in advance.
-
-### Indie Hackers
-
-- If current rules permit it, share an authorized build-in-public update around a
-  relevant launch milestone.
-- Test a sustainable cadence for approved revenue, shipping, or lesson updates.
-- Build authentic participation before sharing promotional links.
-
-### Dev.to + Hashnode
-
-Cross-post only where current terms permit it and use a canonical URL when the
-platform supports one. Verify the rendered link and referral results.
+Channel selection, cadence, and post formats belong to
+`suede-community-marketing`, `suede-social`, and `suede-content-strategy`.
 
 ---
 
@@ -340,17 +292,10 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 
 1. **Don't buy a mass-submission package without diligence and explicit approval.** Verify exact destinations, editorial standards, data handling, rights, maximum cost, and refund terms.
 2. **Don't submit to low-quality or deceptive directories.** Evaluate audience fit, moderation, live traffic evidence, existing listings, outbound-link behavior, and reputation rather than relying on one authority score.
-3. **Don't submit with the wrong positioning.** Re-read the positioning table per tier. Generic descriptions waste the listing.
-4. **Don't treat directories as your entire GTM.** Compare them with content, community, reviews, partnerships, and other measured channels.
-5. **Don't run a review campaign from remembered rules.** Verify current eligibility, disclosure, and incentive policies first.
-6. **Don't manipulate votes or reviews.** Follow the platform's current solicitation rules.
-7. **Don't churn listings without evidence.** Set a review cadence from product
+3. **Don't treat directories as your entire GTM.** Compare them with content, community, reviews, partnerships, and other measured channels.
+4. **Don't churn listings without evidence.** Set a review cadence from product
    changes, platform notices, and observed listing issues.
-8. **Don't submit before the destination page exists.** Link equity needs a destination.
-9. **Don't force identical copy into mismatched fields.** Keep facts consistent while adapting emphasis and length.
-10. **Don't lie on comparison pages.** Verify material claims and date the comparison.
-11. **Don't over-index on launch-day spike.** The flywheel is templates + alternatives + reviews + ongoing content — not one day of PH.
-12. **Don't create or change company profiles without authority.** When authorized, keep verified entity facts consistent.
+5. **Don't over-index on launch-day spike.** The flywheel is templates + alternatives + reviews + ongoing content — not one day of PH.
 
 ---
 
@@ -398,4 +343,6 @@ Keep the plan actionable. Every item should be something the user can do today.
 - Use `suede-launch-packaging` for the broader launch sequence.
 - Use `suede-programmatic-seo` for destination pages and `suede-seo-audit` for search or citation checks.
 - Use `suede-competitors` for comparison-page strategy and `suede-content-strategy` for editorial support.
-- Use `suede-free-tools` for interactive destination assets and `suede-community-marketing` for community distribution.
+- Use `suede-free-tools` for interactive destination assets, and `suede-community-marketing`, `suede-social`, or `suede-content-strategy` for community and social distribution.
+- Use `suede-public-relations` when a flagship launch also warrants earned media.
+- From those skills, route directory selection, listing positioning, and backlink verification back to `suede-directory-submissions`.

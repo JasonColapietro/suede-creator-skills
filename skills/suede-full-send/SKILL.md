@@ -1,6 +1,6 @@
 ---
 name: suede-full-send
-description: "Outcome-bound router for broad, authorized work. Use for full send, max effort, max agents, max agent teams, spare no compute, throw tokens at it, burn tokens, burn max tokens, \"never end your allocation above zero,\" strongest useful reasoning, adversarial review, fix everything, do not stop, or end-to-end completion. Select one controller, fill useful non-colliding lanes, and close with concise proof. Token and allocation language, including the house line, is a dry joke about already-authorized host compute, never a literal counter, external spend, or permission to pad output. Explicit Full Send intent on atomic work selects one specialist and no parallel lanes."
+description: "Suede Labs AI full-send router for outcome-bound work. Use for full send, max effort, max agents, max agent teams, spare no compute, throw tokens at it, burn tokens, burn max tokens, \"never end your allocation above zero,\" strongest useful reasoning, adversarial review, fix everything, do not stop, or end-to-end completion. Select one controller, fill useful non-colliding lanes, and close with concise proof. Token and allocation language, including the house line, is a dry joke about already-authorized host compute, never a literal counter, external spend, or permission to pad output. Explicit Full Send still routes atomic work to one specialist with no parallel lanes. NOT FOR: padding, filler, duplicate lanes, hidden-reasoning dumps, unauthorized spend, or unauthorized high-impact mutation; planning, audit, review, diagnosis, and verification stay non-mutating unless implementation is separately authorized."
 ---
 
 # Suede Full Send
@@ -54,11 +54,13 @@ candidate_surfaces=<safe read-only surfaces that may matter>
 excluded_surfaces=<adjacent work outside the request>
 authorized_read_surfaces=<relevant public-private-or authenticated sources already in scope>
 authorized_actions=<actions tied to exact targets>
+unauthorized_actions=<external mutations not granted; infer none>
 working_premises=<user facts accepted for this run>
 source_truth=<current files-live surfaces-platform records-or source docs>
 protected_wip=<dirty files-branches-and people not to disturb>
 sensitive_source_rules=<redaction-and minimum-necessary handling for secrets-personal data-and private content>
 controller=<one workflow owner>
+controller_state_ref=<team contract-brief set-lane plan-or specialist state>
 incremental_external_spend_cap=<0 unless category and maximum are explicit>
 done_signals=<commands-readbacks-screenshots-urls-or platform states>
 risk_halts=<data loss-security-privacy-legal-payment-or irreversible impact>
@@ -101,6 +103,7 @@ Choose exactly one:
 | Work shape | Controller |
 | --- | --- |
 | Broad work with multiple judgment, implementation, or verification lanes | `suede-agent-teams` |
+| A multi-file or multi-surface change to one repo, built and reviewed as one DAG | `suede-ship` |
 | High-volume independent units that need worker briefs and review | `suede-codex-fleet` |
 | One contained outcome with no useful split | the smallest relevant public Suede specialist |
 
@@ -119,15 +122,22 @@ Pass these operating instructions to the controller:
 1. Front-load safe read-only exploration when ambiguity could cause rework.
 2. Fill every useful non-colliding lane, then refill capacity while
    independent work remains.
-3. Give each lane a bounded artifact that can change a done signal, decision,
+3. Name the model on every dispatch. A lane that is not given a model inherits
+   the session model, which is how an unpriced fan-out happens. Before the
+   first dispatch, state a numeric roster cap — at most 4 concurrent agents
+   unless the user names both a larger cap and the model to run it on — and
+   state the rough consumption the run will incur. At the cap, escalate to the
+   user or decompose the remaining work into a later wave; never grind more
+   lanes against the same signal.
+4. Give each lane a bounded artifact that can change a done signal, decision,
    risk, required-surface map, or critical-path duration.
-4. Use the strongest reasoning on irreversible, security-sensitive,
+5. Use the strongest reasoning on irreversible, security-sensitive,
    architectural, published-statement, and release decisions.
-5. Independently reproduce consequential proof with a different method,
+6. Independently reproduce consequential proof with a different method,
    evidence source, failure lens, or acceptance criterion.
-6. For public, production, security, payment, migration, or release work, keep
+7. For public, production, security, payment, migration, or release work, keep
    the builder and adversarial reviewer separate.
-7. Reject duplicate prose, ceremonial votes, filler agents, and semantically
+8. Reject duplicate prose, ceremonial votes, filler agents, and semantically
    identical lanes.
 
 Negative evidence is useful. More words are not.
@@ -145,25 +155,21 @@ artifact, diff, command output, or live behavior and mark it `accepted`,
 3. Collect bounded artifacts and direct evidence.
 4. Merge duplicate findings and resolve contradictions against current source
    truth.
-5. Return each supported failure as a precise fix brief to the same
-   controller.
+5. Collect the round's supported failures into one fix brief per controller.
+   One brief per round, not one dispatch per finding.
 6. Re-run the smallest check that can prove the fix, then the relevant
    regression or release gate.
 7. Repeat only while a named authorized action targets a specific unresolved
-   signal and has a plausible material effect.
+   signal and has a plausible material effect. Cap it at three genuinely
+   different fixes per unresolved signal: each attempt must change the
+   diagnosis or the strategy, never rerun the last one. Stop early when the
+   same root cause repeats across attempts. At the cap, report the repeating
+   cause and either escalate with `FULL_SEND_BLOCKER` or decompose the signal
+   into smaller checks; never grind a fourth attempt at the same diagnosis.
 
-For code, plugin, MCP, docs, or public-site work, use the appropriate public
-review lanes:
-
-- `suede-code-review` for concrete findings;
-- `suede-code-grader` for an A-F readiness verdict;
-- `suede-code` when both are useful;
-- `suede-ci-gate` for CI and merge protection;
-- `suede-mcp-qa` for MCP catalogs, schemas, prompts, resources, and protocol;
-- `suede-visibility-grader` for public findability, clarity, proof, and AI
-  readability;
-- `suede-launch-packaging` for installs, public docs, release evidence, and
-  handoff.
+For code, plugin, MCP, docs, or public-site work, dispatch the review lanes
+named in Routing below, and keep the builder and the adversarial reviewer
+separate.
 
 Checks are evidence and recommendations. They do not silently cancel an
 authorized action. Pause before a specific step only when it presents serious
@@ -194,6 +200,17 @@ Use these verdicts:
 
 Missing proof narrows the final claim; it does not erase separately completed
 work.
+
+Use the four terminal statuses precisely:
+
+- `verified complete`: every required done signal is `PROVED` and no required
+  in-scope work remains.
+- `complete with named caveats`: every required done signal is `PROVED` and
+  only optional non-critical gaps remain.
+- `action complete, verification incomplete`: authorized actions are complete,
+  but at least one required signal remains `UNPROVED`.
+- `blocked`: a required signal remains `BLOCKED` after authorized alternatives
+  outside the risk halts are exhausted.
 
 If one required signal remains blocked after safe in-scope alternatives are
 exhausted, return:
@@ -227,6 +244,15 @@ approval, or handoff boundaries, record:
 Use the project's prescribed handoff location. If none exists and packaging is
 material, route the handoff through `suede-launch-packaging`.
 
+When the host supports a user-authorized task handoff, transfer only after
+reading the record back. The successor must reread it and rerun status,
+remote, log, and affected live or platform readbacks before any mutation.
+Current source truth overrides the handoff.
+
+When transfer happens before a terminal state, label the handoff `in progress,
+checkpointed`. Never substitute that label for one of the four terminal
+statuses.
+
 ## Final Brief
 
 ```text
@@ -248,21 +274,44 @@ For one atomic job, use at most three sentences. For broad work, omit empty
 fields and use at most eight bullets unless the user asks for a deeper report.
 When blocked, use only the blocker schema plus independently completed work.
 
+## Boundaries
+
+1. Spend tokens and agents aggressively when they buy speed, coverage,
+   independent confidence, or less user attention. Never spend them on padded
+   prose, duplicate work, filler agents, ceremonial reviews, or
+   hidden-reasoning dumps.
+2. Do not bypass permissions, approvals, spend limits, safety rules, legal
+   boundaries, privacy, or third-party impact controls.
+3. Do not expose, print, store, or hand credentials to worker lanes.
+4. Do not run two controllers or two progress stores for the same work.
+5. Do not convert a user premise, agent report, summary, or old handoff into
+   completion proof.
+6. Do not mutate on audit-only, review-only, diagnosis-only, planning-only, or
+   verification-only requests unless implementation is separately authorized.
+7. Do not invoke a paid reviewer or remote beta planner merely to appear
+   exhaustive.
+8. Do not declare done because the budget is low or the conversation is long.
+   Persist state and hand off cleanly instead.
+9. Do not treat aggressive internal compute as authority for external spend,
+   deployment, publication, messaging, account changes, or irreversible
+   action.
+
 ## Routing
 
 - Broad multi-lane work -> `suede-agent-teams`.
+- Multi-file or multi-surface repo change as one DAG -> `suede-ship`.
 - Independent high-volume batches -> `suede-codex-fleet`.
 - End-to-end public workflow -> `suede-workflow-skills` may be a subordinate
   lane; it never owns the plan or progress store when `suede-agent-teams` is
   the selected controller.
-- Code review and readiness -> `suede-code`.
+- Code review and readiness -> `suede-code`, or `suede-code-review` for
+  findings only and `suede-code-grader` for an A-F verdict.
+- CI and merge protection -> `suede-ci-gate`.
 - MCP verification -> `suede-mcp-qa`.
 - Public visibility and AI readability -> `suede-visibility-grader`.
 - SEO, AEO, GEO, and AI citation audit -> `suede-seo-audit`.
 - Public install, docs, launch, and handoff -> `suede-launch-packaging`.
 - One narrow job -> the smallest matching public specialist.
 
-Route equivalent intent here, including `full send`, `max effort`,
-`max agents`, `max agent teams`, `spare no compute`, `throw tokens at it`,
-`burn tokens`, `burn max tokens`, `never end your allocation above zero`,
-`fix everything`, and `do not stop`.
+Umbrella routers send equivalent maximum-effort intent here; the trigger list
+in this skill's description is the one canonical copy of those phrasings.

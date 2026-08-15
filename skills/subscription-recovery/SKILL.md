@@ -1,32 +1,17 @@
 ---
 name: subscription-recovery
-description: "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime — use amazon-returns-recovery for those."
+description: "Suede-owned recovery discipline for recurring charges billed outside Amazon: App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Use when the user wants to find, audit, cancel, or dispute a subscription they may have forgotten, is being charged for twice, or no longer uses. Every cancellation and dispute requires the user to name the service first. Never enters payment credentials and never promises a refund. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime (use amazon-returns-recovery); merchant-side dunning and cancel-flow design (use suede-churn-prevention)."
+metadata:
+  version: 1.0.0
 ---
 
 # Subscription Recovery
 
-## Why this exists
-
-The [amazon-returns-recovery](../amazon-returns-recovery/SKILL.md) skill proved the
-underlying idea on Amazon: money doesn't announce itself when it's still being
-charged, only when someone goes and checks. Restocking fees and Amazon-billed
-subscriptions (Prime Video Channels routes Britbox, Starz, AMC+, and friends through
-one Amazon bill) are one slice of that. Most people's actual subscription sprawl is
-bigger and more scattered — a streaming service billed directly by its own app, a gym
-membership, a SaaS tool from a free trial that converted, a magazine, an App
-Store subscription bought once and forgotten. None of that goes through Amazon at
-all. This skill is the same negotiation discipline — build the case from real facts,
-confirm before acting, hold the line under a counteroffer, get the outcome confirmed
-in writing — pointed at *anything* recurring, not just an Amazon account.
-
-Treat this as a metal detector, not an autopilot: it surfaces what's being charged
-and drafts the case, but every cancellation and every dispute goes through the
-account owner before anything gets sent or clicked.
-
-**Scope split with amazon-returns-recovery**: if a subscription is billed through
-Amazon (Prime Video Channels, Audible, Kindle Unlimited, Prime itself), hand off to
-that skill instead of duplicating its Phase 1b — it already documents the Amazon-
-specific pages and chat flow. This skill covers everything billed *outside* Amazon.
+```
+IRON LAW: Never cancel, dispute, or contact a merchant about a service until the
+user has named that specific service and the specific outcome they want for it.
+A subscription appearing in a discovery list is not authorization to act on it.
+```
 
 ## Prerequisites
 
@@ -84,12 +69,13 @@ pass, and worth doing even after one.
 
 If a subscription turns out to be Amazon-billed (Prime Video Channels, Audible,
 Kindle Unlimited, Prime itself), don't handle it here — hand off to
-[amazon-returns-recovery](../amazon-returns-recovery/SKILL.md)'s Phase 1b, which
-already documents those pages.
-
-**Stop here.** Do not cancel or contact anything yet.
+`amazon-returns-recovery`'s Phase 1b, which already documents those pages.
 
 ## Phase 2 — Confirm with the user
+
+**HALT.** Discovery is over and nothing has been canceled, disputed, or contacted.
+Present the findings, then wait for the user. No service is acted on unless the
+user names it — silence, "sounds good," or a general go-ahead is not a naming.
 
 Report every subscription found as a plain list: service, price, billing cadence,
 next charge date, and usage signal if known (last opened, last watched, last
@@ -133,18 +119,30 @@ this is what turns "unvalidated" into "validated" over time.
 
 ## Phase 4 — Report
 
-After each cancellation or dispute resolves, tell the user: what happened (canceled,
-refunded, disputed and declined), effective date or refund amount, and method. If
-several services were pursued in one session, summarize as a running total — keep
-one-time dollars recovered separate from ongoing monthly/annual savings from
+After each cancellation or dispute resolves, report per service: what happened
+(canceled, refunded, disputed and declined), the confirmation identifier or
+confirmation email, the effective end date, and the refund amount and method. An
+outcome with no confirmation identifier or email is reported as **unconfirmed**,
+never as done. For anything unresolved, name the exact next contact and date.
+
+If several services were pursued in one session, summarize as a running total —
+keep one-time dollars recovered separate from ongoing monthly/annual savings from
 cancellations, since they're not the same kind of money.
 
-## Stretch goal — not yet built
+## Boundaries
 
-**Automated statement parsing**: right now Phase 1b relies on the user sharing a
-statement and a manual scan. A more systematic pass (categorizing every recurring
-merchant automatically, flagging amount changes over time as a sign of stealth price
-increases) would need either a bank-connection integration or a more structured
-statement format than "share a screenshot" — out of scope until there's a validated
-way to do it without touching credentials directly, which conflicts with this
-skill's own safety rules.
+- Never enter, store, or transcribe payment credentials, card numbers, or bank logins, and never connect a financial account.
+- Never promise a refund amount, a refund timeline, or that a dispute will succeed.
+- Never act on a service the user has not named, and never batch several services
+  under one approval.
+- Never dispute or cancel a charge the user recognizes as intentional.
+- Never escalate with a fact the user did not supply — no invented prior contact,
+  cancellation date, or usage claim.
+
+## Routing
+
+- Amazon-billed subscriptions, returns, and restocking fees -> use
+  `amazon-returns-recovery`.
+- Designing the cancel flow, dunning, retention offers, or save offers for a
+  product the user sells -> use `suede-churn-prevention`. That skill is the
+  merchant side; this one is the subscriber side.

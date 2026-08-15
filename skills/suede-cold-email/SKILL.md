@@ -112,13 +112,45 @@ See [follow-up-sequences.md](references/follow-up-sequences.md) for cadence, ang
 
 ## Quality Check
 
-Before presenting, gut-check:
+Run this pass on the draft before presenting it. Every item resolves to something you can observe in the text, not a feeling about it.
 
-- Does it sound like a human wrote it? (Read it aloud)
-- Would YOU reply to this if you received it?
-- Does every sentence serve the reader, not the sender?
-- Is the personalization connected to the problem?
-- Is there one clear, low-friction ask?
+- [ ] "You/your" outnumbers "I/we" in the body
+- [ ] Deleting the personalization sentence breaks the sentence that follows it
+- [ ] Exactly one ask, answerable with a one-line reply
+- [ ] Body is under 75 words
+- [ ] Zero strings from What to Avoid appear in the draft — check that list term by term, not by impression
+- [ ] Read aloud it uses contractions, and no sentence reads as marketing copy
+
+Any item that fails means rewrite before presenting. Do not hand over a draft with a caveat attached to it.
+
+---
+
+## Output Format
+
+Deliver every email in this shape, with these field labels verbatim.
+
+```
+Subject: [2-4 words, lowercase]
+
+Body: (NN words — target under 75)
+[the email exactly as it would be pasted into the send tool]
+
+CTA: [the single ask, quoted from the body]
+
+Personalization source: [the specific signal this email traces to — the post, the filing,
+the job ad, the release — with enough detail that the user can confirm it is real]
+```
+
+`Personalization source:` is required on every email. It is what makes the "do not invent personalization" boundary auditable. If you cannot name a real source, you do not have personalization, and the opening line has to change.
+
+Emit the follow-up table only when the user asked for a sequence rather than a single message:
+
+| # | Send day | New angle it carries | Subject |
+|---|---|---|---|
+| 1 | 0 | ... | ... |
+| 2 | +3 | ... | ... |
+
+3-5 emails total — see [follow-up-sequences.md](references/follow-up-sequences.md) for cadence and angle rotation. Omit the table entirely for a single-message request.
 
 ---
 
@@ -162,4 +194,5 @@ Use this data to inform your writing — not as a checklist to satisfy.
 - Need lifecycle or nurture email -> use `suede-emails`.
 - Need positioning context or collateral -> use `suede-product-marketing` or `suede-sales-enablement`.
 - Need CRM stages, lead routing, or suppression operations -> use `suede-revops`.
+- Before anything goes to a real recipient -> use `suede-deslop`.
 - From those skills, route cold outbound message and follow-up writing back to `suede-cold-email`.

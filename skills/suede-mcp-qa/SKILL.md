@@ -1,6 +1,6 @@
 ---
 name: suede-mcp-qa
-description: "Catch MCP drift before release: skill catalogs, tool and resource schemas, prompts, install paths, JSON-RPC behavior, and docs alignment."
+description: "Suede Labs AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server — initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get — plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging)."
 ---
 
 # Suede MCP QA
@@ -43,7 +43,9 @@ happen.
 ## Checks
 
 1. Run syntax checks and the repo's hermetic MCP protocol tests.
-2. Parse catalog JSON and confirm every listed skill folder exists.
+2. Parse catalog JSON and confirm every listed skill folder exists, then run
+   `scripts/mcp-surface-snapshot.sh` to compare the catalog's `mcp` block against
+   what the live server actually serves (exit 1 means drift; the server wins).
 3. Exercise the full lifecycle in one process: `initialize`, the
    `notifications/initialized` notification, then `ping`, `tools/list`,
    `tools/call`, `resources/list`, `resources/read`, `prompts/list`, and
@@ -71,20 +73,11 @@ against a generic MCP checklist — check it against this exact surface. Read
 `mcp/catalog.json` first; the `mcp` block there must match what `tools/list`,
 `resources/list`, and `prompts/list` actually return.
 
-8 tools: `list_suede_skills`, `search_suede_skills`, `get_suede_skill`,
-`suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`,
-`suede_qa_checklist`.
-
-6 resources: `suede://catalog`, `suede://plugins`, `suede://copy-seo-audit`,
-`suede://visibility-grade`, `suede://code-grade`, `suede://qa-checklist`.
-
-5 prompts: `suede-copy-seo-audit`, `suede-plugin-install`,
-`suede-visibility-grade`, `suede-code-grade`, `suede-full-qa`.
-
-If any count drifts, the source (`resources`/`tools`/`prompts` arrays in
-`suede-skills-mcp.mjs`) is ground truth, not this list — re-run `tools/list`,
-`resources/list`, and `prompts/list` and update both this section and
-`mcp/catalog.json`'s `mcp` block to match.
+Derive that surface, never recite it: `scripts/mcp-surface-snapshot.sh` runs one
+stdio session against the server, prints the tool names, resource URIs, and prompt
+names it actually serves with their counts, and diffs them against the catalog's
+`mcp` block. Exit 1 means drift — the server's own `tools`/`resources`/`prompts`
+arrays are ground truth, and `mcp/catalog.json` is what gets corrected.
 
 ## Stdio Test Blocks
 
@@ -134,10 +127,18 @@ Ship gate: ship | ship-with-caveats | hold
 - "That check can't run, I'll mark it skipped." — A check that cannot run is a FAIL.
 - "The output looked right, close enough." — Record the exact command and exact output, verbatim.
 
+## Boundaries
+
+- Check and report only. Do not edit the server source, `mcp/catalog.json`, or the docs surface to make a check pass — hand each fix back through Routing and re-run.
+- Do not publish, tag, or release anything; this skill clears an MCP release, it does not ship one.
+- Never record a check as passed from a spec, a README, or a previous run. Only output captured from the live server in this session counts.
+- Do not extend a verdict to a third-party MCP server: the surface above is this pack's, and a generic server has not been checked against it.
+
 ## Routing
 
 After QA:
 - MCP source needs fixes → return to the MCP source file and fix, then re-run this skill
+- MCP source changed to fix a QA failure → **suede-code-review** on that diff before re-running this skill, so the repair itself is not shipped unreviewed
 - Catalog JSON needs updates → edit `mcp/catalog.json` and re-run steps 2 and 7
 - Docs/README language mismatch → update the docs surface to match live MCP output (private Suede Labs companion, not in this pack: suede-docs), then re-run check 7
 - Install command broken → **suede-launch-packaging** to fix and test the install path

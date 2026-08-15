@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Review and grade code in one pass: real findings, A-F ship verdict, auth/payment risk, OWASP checks, deploy safety, and fix briefs."
+description: "Suede Labs AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs. Use when asked to review this, grade this, security-check this, is this safe to ship, or check this PR before merge — whenever the caller wants both what is wrong and whether it ships. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: findings only with accessibility and SEO lanes (use suede-code-review); the letter grade alone (use suede-code-grader); making CI enforce the verdict on merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval)."
 ---
 
 # Suede Code
@@ -143,7 +143,13 @@ Score each lane A-F, then one overall. For non-Suede work, substitute "domain tr
 
 ## Step 5 — Deploy Safety Gate (runs at the end, every time)
 
-Grade each pass/conditional/block: **breaking changes** (block if a contract changes with no migration), **rollback safety** (block if `git revert` can't undo it — migrations, charges, sent email, deletes), **blast radius** (state ~0% / ~partial / ~100%), **environment readiness** (block if a required env var isn't in prod yet), **dependency changes** (block on CVE or unpinned prod dep), **data mutations** (block on irreversible writes with no tested restore), **security delta** (block if new attack surface without mitigation).
+Grade each pass/conditional/block: **breaking changes** (block if a contract changes with no migration), **rollback safety** (block if `git revert` can't undo it — migrations, charges, sent email, deletes), **blast radius** (state ~0% / ~partial / ~100%), **environment readiness** (block if a required env var isn't in prod yet), **dependency changes** (block on CVE or unpinned prod dep), **data mutations** (block on irreversible writes with no tested restore), **security delta** (block if new attack surface without mitigation), **automation coverage** (block if `.github/workflows/` or equivalent CI does not cover the changed surface, or required checks are not enforced on `main`, in a production-connected repo).
+
+## Step 6 — Commit Dirt Score (runs at the end, every time)
+
+Scan every added (`+`) line of the raw diff for content that must never reach git history, across seven dimensions: **secrets and credentials** (`sk_`, `pk_`, `ghp_`, `xoxb-`, `AKIA`, `-----BEGIN`, `password=`, `secret=`, `token=`, long hex/base64 next to a key-like name) · **debug artifacts** (`console.log`, `debugger`, `binding.pry`, `byebug`, `var_dump(`, `TODO: remove`, `FIXME: before merge`, commented-out real logic) · **conflict markers** (`<<<<<<<`, `=======`, `>>>>>>>`, `|||||||` in a `+` line means the file was never fully resolved) · **accidentally staged files** (`node_modules/`, `.next/`, `dist/`, `build/`, `__pycache__/`, `.DS_Store`, `*.log`, stray lockfiles) · **WIP breadcrumbs** (`[WIP]`, `DO NOT MERGE`, `TEMP:`, `lorem ipsum`/`asdf` in production-facing strings) · **oversized or binary blobs** (files >500 KB, fonts, compiled binaries, media outside a designated assets dir) · **exposed internal references** (internal IPs or hostnames, staging URLs in non-config files, personal email addresses in source).
+
+Rate each dimension `clean | suspicious | dirty` and emit an overall rating: **CLEAN** = no hits; **SUSPICIOUS** = a low-confidence hit that could be a fixture or a doc sample — name it and let the reviewer confirm; **DIRTY** = a high-confidence hit that must be removed before merge, reported as a P0 finding. A `DIRTY` overall rating moves the recommended gate to `hold`, exactly as a Deploy Safety block does.
 
 ## Finding Format
 
@@ -171,6 +177,8 @@ Auth/session behavior across app, API, native shells, and server · creator righ
 
 Confirm the diff delivers what it claims — map each acceptance criterion to code or a test; unbacked claims are a P1 truth gap — and flag scope creep (unrelated refactors, bundled dep bumps, formatting sweeps that bury the change); recommend splitting an over-large PR. Before emitting, self-check: every finding has a file:line + fix, nothing duplicates a gate's job, low-confidence style notes collapse into one "nitpicks" line, and anything that would not move the ship decision is cut.
 
+**Confidence labels are observable, not vibes:** `high` = reproduced, traced across the call graph, or tied to a named failing input or command; `medium` = read from the code, not executed; `low` = the pattern looks wrong but no input, call path, or runtime state proves it. State the label on every P0/P1 finding; a low-confidence security suspicion is still reportable with its label attached, but a low-confidence *style* observation belongs in the nitpicks line.
+
 ## Red Flags — Stop
 
 Catch yourself thinking any of these and re-run the gate you were about to skip:
@@ -189,7 +197,8 @@ Lead with a **Simple explanation (plain, for a 10-year-old)** — one plain-Engl
 ```text
 Findings           (by severity, with evidence + fix)
 Code Grade         (7 lanes A-F + overall, grade cap if any, why, required upgrades)
-Deploy Safety      (the 7 dimensions + verdict)
+Deploy Safety      (the 8 dimensions + verdict)
+Commit Dirt        (7 dimensions + CLEAN | SUSPICIOUS | DIRTY)
 Open Questions
 Verification       (checked / not checked)
 SHIP GATE: hold | ship-with-caveats | ship — [one sentence naming the blocker or caveat]
@@ -205,29 +214,14 @@ to see how the lanes resolve on a real diff, not on every run.
 
 ## --threat-verify Mode
 
-Verify that threat mitigations declared in a threat model (ADR threat table, PLAN.md risk section, or an architecture review's threat table) are actually implemented in the codebase.
+Checks that mitigations declared in a threat model (an ADR threat table, a PLAN.md risk section, or free-form "Threat: X / Mitigation: Y" pairs) are actually implemented, classifying each as CLOSED / OPEN / UNREGISTERED into a THREAT-REVIEW.md table. It does not hunt new vulnerabilities — that is the OWASP lane's job. The full procedure and output shape are in `references/threat-verify.md`: read it when the caller passes `--threat-verify` or asks you to verify threat mitigations or check threat-model compliance, and not on an ordinary review.
 
-**Trigger:** pass `--threat-verify` or say "verify threat mitigations" / "check threat model compliance"
+## Boundaries
 
-**Input:** threat model source — file path or pasted content. Accepted formats: ADR threat table (private Suede Labs companion, not in this pack: suede-arch), PLAN.md risk section, free-form "Threat: X / Mitigation: Y" pairs.
-
-**Process:**
-1. Parse the threat model into: { threat_id, description, declared_mitigation, expected_location }
-2. For each threat: grep the codebase for the declared mitigation at ALL relevant entry points (routes, handlers, middleware, auth layers)
-3. Classify each threat:
-   - **CLOSED** — mitigation confirmed at all relevant entry points
-   - **OPEN** — mitigation partially implemented (found in some but not all entry points)
-   - **UNREGISTERED** — no evidence of declared mitigation in codebase
-4. Output THREAT-REVIEW.md:
-
-```
-| Threat ID | Description | Declared Mitigation | Status | Evidence | Gaps |
-| --- | --- | --- | --- | --- | --- |
-```
-
-**Blockers:** OPEN and UNREGISTERED items are reported as blockers — the recommendation is to close them before shipping; the user makes the final call.
-
-**What this is NOT:** This mode does not scan for new vulnerabilities (that is what the OWASP lane does). It only verifies previously declared mitigations exist.
+- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files.
+- Do not invent tests, screenshots, live checks, deploy status, or gate results you did not run.
+- Never auto-apply a fix to auth, payment, or data-migration code without explicit user confirmation; P0/P1 fixes are presented as briefs first.
+- Do not block on style preferences that a formatter, the type checker, or a documented project rule already governs, and do not raise a grade for effort or for CI that never exercised the changed behavior.
 
 ## Routing
 

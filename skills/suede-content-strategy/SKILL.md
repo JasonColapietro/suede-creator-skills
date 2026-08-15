@@ -11,8 +11,7 @@ Use this Suede content-strategy playbook to plan evidence-backed content that ea
 
 ## Before Planning
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
 
 Gather this context (ask if not provided):
 
@@ -41,7 +40,7 @@ Gather this context (ask if not provided):
 
 ## Searchable vs Shareable
 
-Every piece of content must be searchable, shareable, or both. Prioritize in that order—search traffic is the foundation.
+Every piece of content must be searchable, shareable, or both. Searchable is the default first priority because search demand is measurable; treat that as a starting rule, not a universal truth, and reverse it when the user's goal or evidence says otherwise (a category with no search volume, a brand-led launch). Record which order you chose and why — it feeds the weights in "Prioritizing Content Ideas."
 
 **Searchable content** captures existing demand. Optimized for people actively looking for answers.
 
@@ -80,16 +79,7 @@ Formula: [persona] + [use-case]. Targets long-tail keywords.
 - "Client collaboration for freelancers"
 
 **Hub and Spoke**
-Hub = comprehensive overview. Spokes = related subtopics.
-```
-/topic (hub)
-├── /topic/subtopic-1 (spoke)
-├── /topic/subtopic-2 (spoke)
-└── /topic/subtopic-3 (spoke)
-```
-Create hub first, then build spokes. Interlink strategically.
-
-**Note:** Most content works fine under `/blog`. Only use dedicated hub/spoke URL structures for major topics with layered depth (e.g., Atlassian's `/agile` guide). For typical blog posts, `/blog/post-title` is sufficient.
+Hub = comprehensive overview. Spokes = related subtopics. Create the hub first, then build spokes, and interlink them. See "Content Pillars and Topic Clusters" below for the structure and the URL guidance.
 
 **Template Libraries**
 High-intent keywords + product adoption.
@@ -126,9 +116,7 @@ For programmatic content at scale, route the data and template system to
 
 ## Content Pillars and Topic Clusters
 
-Content pillars are the 3-5 core topics your brand will own. Each pillar spawns a cluster of related content.
-
-Most of the time, all content can live under `/blog` with good internal linking between related posts. Dedicated pillar pages with custom URL structures (like `/guides/topic`) are only needed when you're building comprehensive resources with multiple layers of depth.
+Content pillars are the 3-5 core topics your brand will own; each pillar spawns a cluster of related content. Most of the time all of it can live under `/blog` with good internal linking. Dedicated pillar pages with custom URL structures (like `/guides/topic`) are only needed for comprehensive resources with multiple layers of depth.
 
 ### How to Identify Pillars
 
@@ -137,23 +125,7 @@ Most of the time, all content can live under `/blog` with good internal linking 
 3. **Search-led**: What topics have volume in your space?
 4. **Competitor-led**: What are competitors ranking for?
 
-### Pillar Structure
-
-```
-Pillar Topic (Hub)
-├── Subtopic Cluster 1
-│   ├── Article A
-│   ├── Article B
-│   └── Article C
-├── Subtopic Cluster 2
-│   ├── Article D
-│   ├── Article E
-│   └── Article F
-└── Subtopic Cluster 3
-    ├── Article G
-    ├── Article H
-    └── Article I
-```
+Structure is pillar (hub) → subtopic clusters → articles, each article linking to its siblings and up to the hub. The Topic cluster map in Output Format is the shape to emit.
 
 ### Pillar Criteria
 
@@ -167,39 +139,16 @@ Good pillars should:
 
 ## Keyword Research by Buyer Stage
 
-Map topics to the buyer's journey using proven keyword modifiers:
+Map topics to the buyer's journey using the modifier set for each stage:
 
-### Awareness Stage
-Modifiers: "what is," "how to," "guide to," "introduction to"
+| Stage | Modifiers | Triggered by |
+|---|---|---|
+| **Awareness** | "what is," "how to," "guide to," "introduction to" | Customers asking basics |
+| **Consideration** | "best," "top," "vs," "alternatives," "comparison" | Customers evaluating multiple tools |
+| **Decision** | "pricing," "reviews," "demo," "trial," "buy" | Pricing coming up in sales calls |
+| **Implementation** | "templates," "examples," "tutorial," "how to use," "setup" | Support tickets showing setup struggles |
 
-Example: If customers ask about project management basics:
-- "What is Agile Project Management"
-- "Guide to Sprint Planning"
-- "How to Run a Standup Meeting"
-
-### Consideration Stage
-Modifiers: "best," "top," "vs," "alternatives," "comparison"
-
-Example: If customers evaluate multiple tools:
-- "Best Project Management Tools for Remote Teams"
-- "Asana vs Trello vs Monday"
-- "Basecamp Alternatives"
-
-### Decision Stage
-Modifiers: "pricing," "reviews," "demo," "trial," "buy"
-
-Example: If pricing comes up in sales calls:
-- "Project Management Tool Pricing Comparison"
-- "How to Choose the Right Plan"
-- "[Product] Reviews"
-
-### Implementation Stage
-Modifiers: "templates," "examples," "tutorial," "how to use," "setup"
-
-Example: If support tickets show implementation struggles:
-- "Project Template Library"
-- "Step-by-Step Setup Tutorial"
-- "How to Use [Feature]"
+Worked example, Consideration stage for a project-management tool: "Best Project Management Tools for Remote Teams," "Asana vs Trello vs Monday," "Basecamp Alternatives." Apply the same pattern per stage using the user's own category nouns, never these ones.
 
 ---
 
@@ -339,25 +288,72 @@ record the chosen decision rule.
 
 ---
 
+## Refreshes and Stop-Doing Decisions
+
+A portfolio compounds only if something leaves it. Every strategy must name what stops, not just what starts. Audit existing assets against dated evidence — traffic, conversions, rankings, and last-updated date — and assign each one of four outcomes:
+
+| Outcome | When | What it means |
+|---|---|---|
+| **Keep** | Still ranking or converting against its goal, and the claims are current | No action; next audit at the normal cadence |
+| **Refresh** | The topic still matters and the URL still has authority, but the piece has decayed — stale data, dated claims, or a slipping position | Rewrite in place, keep the URL, record the new last-updated date |
+| **Consolidate** | Two or more pieces target the same intent and split their own signal | Merge into the strongest URL, redirect the others, fold the unique sections in |
+| **Kill** | The topic no longer serves a pillar, or two consecutive review windows show no traffic, no conversions, and no strategic use | Propose removal or de-indexing — and stop there, because Boundaries forbids executing it |
+
+Decision rule, in order: duplicated intent → Consolidate; else topic still maps to a live pillar → Refresh; else → Kill. Never refresh a piece whose pillar was retired — that is sunk cost wearing an editorial hat. Every row names the evidence that triggered it (metric, window, source) and the accountable owner; recommending is the whole job, since publishing, deleting, redirecting, and de-indexing all need explicit authorization.
+
+Hand the recurring cadence that keeps this audit running — decay watch, ranking-drop watch, refresh queue — to `suede-marketing-loops`. This skill decides what gets refreshed or killed; that one decides how often the check runs.
+
+---
+
+## Reject these defaults
+
+The generic content strategy writes itself, which is exactly the problem. Do not ship:
+
+- **Pillars that are category nouns** — "Productivity," "Marketing," "Growth." A pillar is a claim the brand can own, in the customer's words.
+- **A cluster map that is the pillar list re-indented.** If every spoke is the pillar name plus a modifier, no clustering happened.
+- **"The Ultimate Guide to X," "Everything You Need to Know About X," "X 101"** — titles that could sit on any competitor's blog.
+- **"10 Best Tools for Y" with the user's product at #1.** That is not a comparison.
+- **A cadence with no owner.** "Publish 2x/week" with nobody named is a wish.
+- **Topics sourced from the model's general knowledge** rather than the research surfaces above. If none was callable, say so and label the ideas hypotheses.
+
+---
+
 ## Output Format
 
-When creating a content strategy, provide:
+Emit the strategy in exactly this shape:
 
-### 1. Content Pillars
-- 3-5 pillars with rationale
-- Subtopic clusters for each pillar
-- How pillars connect to product
+```
+## Content pillars
+| Pillar | The claim it owns | Evidence it matters to the ICP | Product connection |
+|---|---|---|---|
+| [pillar] | [one sentence] | [source + date] | [what it sells] |
 
-### 2. Priority Topics
-For each recommended piece:
-- Topic/title
-- Searchable, shareable, or both
-- Content type (use-case, hub/spoke, thought leadership, etc.)
-- Target keyword and buyer stage
-- Why this topic (customer research backing)
+## Priority topics
+### [Topic title]
+- **Type:** searchable / shareable / both — [use-case, hub-and-spoke, thought
+  leadership, data-driven, case study, meta]
+- **Target query + buyer stage:** [query] — [awareness / consideration /
+  decision / implementation]
+- **Why this topic:** [the customer-research evidence, with its source and date]
+- **Score and owner:** [Impact / Fit / Search / Resources] = [total]; [owner,
+  rough effort]
 
-### 3. Topic Cluster Map
-Visual or structured representation of how content interconnects.
+## Topic cluster map
+[Pillar]
+├── [Cluster]
+│   ├── [Article] → links to [Article]
+│   └── [Article]
+└── [Cluster]
+    └── [Article]
+
+## Stop-doing
+| Existing asset | Outcome | Evidence | Owner |
+|---|---|---|---|
+| [URL] | Keep / Refresh / Consolidate / Kill | [metric, window, source] | [who] |
+
+## Open questions
+[What could not be evidenced, and what would settle it]
+```
 
 ---
 
@@ -390,4 +386,6 @@ Visual or structured representation of how content interconnects.
 - Need technical or on-page organic diagnosis -> use `suede-seo-audit`.
 - Need scaled page systems -> use `suede-programmatic-seo`.
 - Need email or social production -> use `suede-emails` or `suede-social`.
+- Need the refresh, decay, or ranking-drop audit to run on a cadence -> use `suede-marketing-loops`.
+- Need the behavioral mechanism behind a title, hook, or CTA, stated as a testable hypothesis -> use `suede-marketing-psychology`.
 - From those skills, route portfolio priorities, pillars, clusters, and cadence back to `suede-content-strategy`.

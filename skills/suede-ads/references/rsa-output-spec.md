@@ -4,9 +4,13 @@ When the user requests Google Ads RSAs (Responsive Search Ads), output MUST comp
 
 ## Hard limits per RSA (enforce before responding)
 
-- **Headlines:** exactly **15** per RSA, each **≤ 30 characters** (count characters, including spaces). Render as `1. ... (NN chars)` so the reader can verify.
-- **Descriptions:** exactly **4** per RSA, each **≤ 90 characters**.
-- **Paths:** up to 2 path fields, each **≤ 15 characters**.
+Per-field **character** limits are owned by `suede-ad-creative` — use the numbers it states,
+so the two skills cannot drift. This spec adds the stricter **quantity** mandate on top:
+Google permits "up to" 15 headlines and 4 descriptions; a Suede RSA ships all of them.
+
+- **Headlines:** exactly **15** per RSA, each within the headline character limit `suede-ad-creative` states (count characters, including spaces). Render as `1. ... (NN chars)` so the reader can verify.
+- **Descriptions:** exactly **4** per RSA, each within the stated description character limit.
+- **Paths:** up to 2 path fields, each within the stated path character limit.
 - **Final URL:** present, https.
 - **Pinning:** state any pinned positions explicitly. Default = unpinned unless user asks.
 - **Per-account guardrail:** Google enforces **3 RSAs max per ad group**. When the user asks for >3, group them by ad group.

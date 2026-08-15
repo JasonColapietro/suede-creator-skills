@@ -18,9 +18,11 @@ Before designing a tool strategy, understand:
 
 1. **Business Context** - What's the core product? Who is the target audience? What problems do they have?
 
-2. **Goals** - Lead generation? SEO/traffic? Brand awareness? Product education?
+2. **Goals** - Lead generation? SEO/traffic? Brand awareness? Product education? What is one lead worth (LTV and close rate from this source)?
 
-3. **Resources** - Technical capacity to build? Ongoing maintenance bandwidth? Budget for promotion?
+3. **Resources** - Technical capacity to build? Ongoing maintenance bandwidth? Budget for promotion? Timeline?
+
+4. **Existing Behavior** - What tools or manual workarounds does the audience use today? How are leads generated now?
 
 ---
 
@@ -43,6 +45,15 @@ Before designing a tool strategy, understand:
 
 ### 4. Worth the Investment
 - Lead value × expected leads > build cost + maintenance
+
+Populate all four terms before calling the go/no-go, and show the arithmetic:
+- **Lead value** = customer LTV × close rate for this lead source, from the intake numbers.
+- **Expected leads** = monthly search volume for the SEO target keyword × a stated visit-to-use rate × a stated use-to-capture rate.
+- **Build cost** = the MVP scope below, in engineer-days.
+- **Maintenance** = engineer-days per quarter to keep data, dependencies, and the hosting current.
+
+State every rate you assumed and where it came from. If a term cannot be sourced,
+say which one and mark the go/no-go unresolved rather than filling it in.
 
 ---
 
@@ -98,6 +109,10 @@ Before designing a tool strategy, understand:
 - Minimal friction: Email only
 - Show preview of what they'll get
 - Optional: Segment by asking one qualifying question
+
+The gating trade-off itself — per-field conversion cost and how to frame the
+exchange — is owned by `suede-lead-magnets`. Use its gating tables when deciding
+what to ask for; the table above only covers where the gate sits in a tool.
 
 ---
 
@@ -159,14 +174,42 @@ Rate each factor 1-5:
 
 **25+**: Strong candidate | **15-24**: Promising | **<15**: Reconsider
 
+Anchors for the three decisive factors — score these against the anchor, not on
+impression, and cite the evidence used:
+
+| Factor | 1 | 3 | 5 |
+|--------|---|---|---|
+| Search demand exists | No query with measurable volume | A query family in the hundreds of searches/month | A head term in the thousands/month |
+| Build feasibility | Needs a data pipeline, licensed data, or an ongoing integration | Two to four engineer-weeks with known components | One engineer-week, one screen, no backend state |
+| Maintenance burden (inverse) | Depends on data refreshed on a schedule or a third-party API | Occasional content or dependency updates | Static computation, nothing to refresh |
+
 ---
 
-## Task-Specific Questions
+## Output Format
 
-1. What existing tools does your audience use for workarounds?
-2. How do you currently generate leads?
-3. What technical resources are available?
-4. What's the timeline and budget?
+Return exactly these sections:
+
+### 1. Recommended Tool
+Name and the one-sentence job it does for the user.
+
+### 2. Scorecard
+The filled table with a score per factor, the total, and the verdict band. For the
+three anchored factors, name the evidence behind the score.
+
+### 3. MVP Scope
+Two explicit lists: **In** (what v1 does) and **Out** (what is deliberately
+deferred). No item appears in both.
+
+### 4. Gating Decision
+Which option from Gating Options, and the trade-off accepted in one line.
+
+### 5. SEO Target
+The single target query for the tool page, plus the supporting-content query.
+
+### 6. Instrumentation Handoff
+The two or three usage events the tool must emit (use, complete, capture) so
+`suede-analytics` can read the funnel. This skill does not define the metrics
+plan itself.
 
 ---
 
@@ -182,3 +225,6 @@ Rate each factor 1-5:
 - Use `suede-lead-magnets` for downloadable assets and `suede-site-alchemy` for the public conversion surface.
 - Use `suede-seo-audit` for search validation and `suede-analytics` for usage measurement.
 - Use `suede-emails` for the post-capture lifecycle sequence.
+- Use `suede-content-strategy` for the supporting content around the tool page.
+- Use `suede-ads` and `suede-social` for tool distribution and launch promotion.
+- Use `suede-ab-testing` to design and evaluate tests on the tool page or its gate.

@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop)."
+description: "Suede Labs conversion-copy writer: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass — a hero, a button set, an email subject, a README section, a product blurb — or when copy on a single surface needs sharpening before it ships. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy)."
 ---
 
 # Suede Copy
@@ -24,13 +24,6 @@ proceed" line elsewhere in this skill:
   credential exposure, legal or rights violations, payment mistakes, or
   irreversible public damage — pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
-
-
-## When to use this skill instead of related skills
-- **suede-copy** (this skill): standalone conversion email, landing page copy, CTAs, microcopy, button labels
-- **johnny-suede-write**: full writing stack (copy + SEO + AI Engine Optimization)
-- Multi-email campaign sequences and campaign performance reporting: (private Suede Labs companion, not in this pack: suede-growth)
-- Post-production pass to strip AI writing patterns from already-written copy: use suede-deslop (in this pack)
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
 
@@ -148,37 +141,26 @@ Good Suede copy names what the reader controls: register a work, verify rights, 
 
 ## SEO And GitHub Copy
 
-For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella for search, AEO, and AI EO. Include:
-
-- a search-ready title under 60 characters when practical
-- a meta description under 160 characters when practical
-- repo description under GitHub's practical limit
-- 8-20 topic keywords if the repo surface supports them
-- a first paragraph that repeats the durable entity names naturally
-- answer-ready definitions, FAQ copy, and proof links that AI summaries can cite without inventing facts
-- links to install docs, skill manifests, scripts, references, examples, live Pages, and source
-- a safe evidence boundary
-
-<!-- Suede defaults. Replace with equivalent for non-Suede work. -->
-Suede durable keywords: Suede Creator Skills, Suede Rights Passport, Music Release Metadata Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
+For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella for search, AEO, and AI EO. Include a search-ready title under 60 characters when practical, a meta description under 160, a repo description inside GitHub's practical limit, 8-20 topic keywords when the surface supports them, a first paragraph that repeats the durable entity names naturally, answer-ready definitions and FAQ copy and proof links that AI summaries can cite without inventing facts, links to install docs and skill manifests and scripts and references and examples and live Pages and source, and a safe evidence boundary. johnny-suede-write owns the SEO stack and the canonical Suede durable-keyword vocabulary; read that skill when the job needs the deeper pass or the keyword list, and use the company brief's equivalent vocabulary for non-Suede work.
 
 Use keywords because they help the right reader find the page. Do not cram a keyword where a human would notice.
 
 ## SEO Audit Mode
 
-For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use `suede-seo-audit` instead.
-
-When the copy workflow includes an SEO pass (metadata, structure, or copy quality only):
-
-- **Metadata**: title, meta description, Open Graph, Twitter card, image alt, author/publisher, and durable entity names.
-- **Structure**: one H1, useful H2/H3 hierarchy, FAQ fit, internal links, and descriptive anchor text.
-- **Copy quality**: directness, proof, evidence boundaries, CTA clarity, trust language, filler, and Suede vocabulary fit.
+For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use suede-seo-audit instead.
 
 ## Anti-Slop Pass
 
 The line-edit pass — patterns to cut and the scored dimensions — is in
 `references/anti-slop-pass.md`. Run it against every draft before handing it over.
-For a standalone pass over text this skill did not write, route to `suede-deslop`.
+For a standalone pass over text this skill did not write, route to suede-deslop.
+
+## Boundaries
+
+This skill writes copy and hands it back. It must not:
+- Publish, post, send, commit, or overwrite the file, page, repo, or message it writes for. Return the copy in the response; the human decides where it lands.
+- Clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
+- Ship competitor product names in delivered copy. The competitor-swap test in the Ship Gate is a diagnostic you run on the draft, never a line you hand over.
 
 ## Output Shapes
 
@@ -217,7 +199,7 @@ Safety boundary:
 Findings:
 Rewrites:
 Claims to verify:
-Score:
+Score (each dimension named below, then the total): /70
 Ready: yes | with caveats | no
 ```
 
@@ -232,6 +214,19 @@ If any of these thoughts appear, stop and run the gate you were about to skip:
 - "The client wants more energy." Energy fails the gate; specificity converts and still reads confident.
 
 ## Ship Gate
+
+Score every dimension in writing before applying the thresholds below. A total with no dimensions behind it is invented.
+
+```text
+Directness: /10
+Rhythm: /10
+Trust: /10
+Specificity: /10
+Authenticity: /10
+Density: /10
+Search/AI readability: /10
+Total: /70
+```
 
 Recommend against shipping copy — and say why, leaving the call to the user — when:
 
@@ -263,3 +258,6 @@ Do not block completion waiting for a `Cue Suede` answer. If the interface suppo
 - Copy ships inside a design build → johnny-suede-design (suede-design for token or component decisions)
 - Words are done but the page still underperforms → suede-site-alchemy
 - Public launch surface → suede-visibility-grader for the A-F grade before it goes live
+- High-stakes public piece that needs research, angles, and an adversarial pass before publication → suede-ship-copy
+- Post-production pass to strip AI writing patterns from copy this skill did not write → suede-deslop
+- Multi-email campaign sequences and campaign performance reporting → private Suede Labs companion, not in this pack: suede-growth

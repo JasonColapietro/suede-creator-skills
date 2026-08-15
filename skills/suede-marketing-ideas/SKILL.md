@@ -7,18 +7,17 @@ metadata:
 
 # Suede Marketing Idea Prioritizer
 
-Suede turns a broad tactic library into a bounded shortlist scored against the user's audience, stage, evidence, capacity, cost, and risk. The goal is not to label 139 ideas "proven"; it is to identify which few deserve validation in this specific situation and which should be deferred or rejected.
+Suede turns a broad tactic library into a bounded shortlist scored against the user's audience, stage, evidence, capacity, cost, and risk. The goal is not to label the library's tactics "proven"; it is to identify which few deserve validation in this specific situation and which should be deferred or rejected.
 
 ## How to Use This Skill
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
 
 When asked for marketing ideas:
-1. Ask about their product, audience, and current stage if not clear
-2. Suggest 3-5 most relevant ideas based on their context
-3. Provide details on implementation for chosen ideas
-4. Consider their resources (time, budget, team size)
+1. Ask the Task-Specific Questions below until product, audience, stage, budget, owner capacity, and what has already been tried are on the record. Do not score against assumptions.
+2. Pull candidates from the category index below (full descriptions in `references/ideas-by-category.md`). Score no more than 8 candidates.
+3. Score every candidate with the rubric below and apply its decision rule.
+4. Return the shortlist in the Output Format, including the required rejection.
 
 ---
 
@@ -48,92 +47,32 @@ When asked for marketing ideas:
 
 ---
 
-## Implementation Tips
+## Scoring Rubric
 
-### By Stage
+Score every candidate 0–3 on all six dimensions. 0 means "no evidence either way," not "probably fine."
 
-**Pre-launch:**
-- Waitlist referrals (#79)
-- Early access pricing (#81)
-- Product Hunt prep (#78)
+| Dimension | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| **Audience** | No evidence the ICP is reachable here | Plausible by category, unverified | ICP observed on this surface | Named communities/queries/accounts the user can point at |
+| **Stage** | Preconditions absent | One precondition missing | Preconditions met, untested | Preconditions met and a comparable move already worked |
+| **Evidence** | Support is "it's popular" | Third-party case studies only | Dated first-party signal from an adjacent channel | Dated first-party result for this audience |
+| **Capacity** | No owner | Owner named, no hours | Owner + hours, displaces something | Owner + hours with no displaced commitment |
+| **Cost** | Unknown total cost | Over the approved bounded amount | Within it, but consumes most of it | Within it with headroom |
+| **Risk** | No stop condition definable | Reversible only at cost, gates unchecked | Reversible, gates identified | Reversible, cheap to stop, no legal/platform/brand exposure |
 
-**Early stage:**
-- Content & SEO (#1-10)
-- Community (#35)
-- Founder-led sales (#47)
+**Decision rule** — apply in order, first match wins:
 
-**Growth stage:**
-- Paid acquisition (#23-34)
-- Partnerships (#54-64)
-- Events (#65-72)
+1. Any dimension scored 0 → **Skip** or **Conditional**, never a test this cycle. Name the zeroed dimension.
+2. Total ≥ 14/18 **and** Evidence ≥ 2 **and** Capacity ≥ 2 → **Approved test**. State the test, the success metric, the review date, and the stop condition.
+3. Total ≥ 10 with a single named blocker → **Conditional**. State the exact unlock condition and who can clear it.
+4. Total ≥ 10 with no capacity in this window → **Deferred**. State the review date.
+5. Total < 10, or Risk ≤ 1 → **Skip**. State the disqualifying dimension.
 
-**Scale:**
-- Brand campaigns
-- International (#131-132)
-- Media acquisitions (#73)
+A tactic the user is already running is **Current** — score it, but do not present it as a new idea. These five statuses are the same set `suede-marketing-plan` Section 12 uses, so a shortlist drops into a plan without relabeling.
 
-### By Budget
+**Caps.** Score at most 8 candidates; surface at most 5; at most 3 carry Approved test at once. If more than 3 clear rule 2, rank by Capacity then Cost and move the rest to Deferred — capacity, not enthusiasm, is the binding constraint.
 
-**Free:**
-- Content & SEO
-- Community building
-- Social media
-- Comment marketing
-
-**Low budget:**
-- Targeted ads
-- Sponsorships
-- Free tools
-
-**Medium budget:**
-- Events
-- Partnerships
-- PR
-
-**High budget:**
-- Acquisitions
-- Conferences
-- Brand campaigns
-
-### By Timeline
-
-**Quick wins:**
-- Ads, email, social posts
-
-**Medium-term:**
-- Content, SEO, community
-
-**Long-term:**
-- Brand, thought leadership, platform effects
-
----
-
-## Top Ideas by Use Case
-
-### Need Leads Fast
-- Google Ads (#31) - High-intent search
-- LinkedIn Ads (#28) - B2B targeting
-- Engineering as Marketing (#15) - Free tool lead gen
-
-### Building Authority
-- Conference Speaking (#70)
-- Book Marketing (#104)
-- Podcasts (#107)
-
-### Low Budget Growth
-- Easy Keyword Ranking (#1)
-- Reddit Marketing (#38)
-- Comment Marketing (#44)
-
-### Product-Led Growth
-- Viral Loops (#93)
-- Powered By Marketing (#87)
-- In-App Upsells (#91)
-
-### Enterprise Sales
-- Investor Marketing (#133)
-- Expert Networks (#57)
-- Conference Sponsorship (#72)
+**Required rejection.** Every shortlist must name at least one tactic that is *not* recommended, drawn from the record rather than invented: something the user named under Task-Specific Questions 3 or 4 (already tried, or a competitor tactic they admire), or the highest-scoring candidate that still fails a dimension. Do not construct a strawman the user never raised. If the user named nothing and every scored candidate clears, say that explicitly instead of manufacturing a rejection.
 
 ---
 
@@ -142,10 +81,15 @@ When asked for marketing ideas:
 When recommending ideas, provide for each:
 
 - **Idea name**: One-line description
-- **Why it fits**: Connection to their situation
+- **Status**: Approved test / Conditional / Deferred / Skip, with the six dimension scores and the total
+- **Why it fits**: Connection to their situation, citing the evidence that scored the Evidence dimension
 - **How to start**: First 2-3 implementation steps
-- **Expected outcome**: What success looks like
+- **Expected outcome**: The success metric, its review date, and the stop condition
 - **Resources needed**: Time, budget, skills required
+
+Close every shortlist with the required rejection, in this form:
+
+**Not recommended:** [tactic] — fails [dimension] because [current evidence, or the absence of it].
 
 ---
 
@@ -171,3 +115,5 @@ When recommending ideas, provide for each:
 - Use `suede-marketing-loops` for approved recurring workflows.
 - Use `suede-programmatic-seo`, `suede-competitors`, or `suede-emails` for channel execution.
 - Use `suede-free-tools` for engineering-as-marketing and `suede-referrals` for referral mechanics.
+- Use `suede-marketing-council` when the shortlist is a coin-flip between two defensible directions and scoring does not separate them.
+- Use `suede-marketing-psychology` for the behavioral mechanism behind a conversion tactic, stated as a testable hypothesis.

@@ -12,6 +12,14 @@ across B2B SaaS, general B2B, local business, and early demand-signal motions.
 Every candidate carries qualification evidence, disqualification logic, and a
 compliance-aware handoff before outreach begins.
 
+```
+IRON LAW: every row carries a source URL and the date it was captured,
+or it does not ship. No exceptions, no "verify later," no placeholder rows.
+```
+
+That single rule is what makes the downstream GDPR / CAN-SPAM lineage real. A row
+without it is not a low-confidence lead — it is not a lead.
+
 ## Before Starting
 
 **Check for product marketing context first:**
@@ -61,9 +69,11 @@ Output the ICP as a one-paragraph statement plus a checklist of pass/fail criter
 
 ### Phase 2 — Build the candidate list (discovery)
 
-Start with a bounded candidate sample sized to the requested output, source
-access, and review capacity. Expand only when observed disqualification rates
-show that another batch is needed.
+Start at 2-3x the requested output count, adjusted down for thin source access or
+review capacity. Expand only when the observed disqualification rate shows another
+batch is needed, and cap expansion at 3 rounds. At the cap, stop sourcing: report
+the disqualification rate you observed and hand back a narrower ICP proposal
+rather than grinding through more sources.
 
 - **SaaS / B2B**: cross-check material claims across available first-party,
   public, or licensed sources. Named vendors are candidates only after access,
@@ -73,7 +83,8 @@ show that another batch is needed.
   another current source.
 
 A smaller evidence-complete list is preferable to padding the output with
-unverified candidates.
+unverified candidates. Don't start qualification until every candidate has its
+source URL captured.
 
 ### Phase 3 — Qualify each candidate
 
@@ -88,7 +99,7 @@ For email contacts, discover whether an authorized validator is callable and
 read its current result semantics before use. If none is available, label the
 address `unverified`, keep it out of send-ready exports, and provide a
 user-operated validation checklist. Never claim that validation guarantees
-delivery.
+delivery. Don't move to scoring until every candidate carries a confidence level.
 
 ### Phase 4 — Score and prioritize
 
@@ -103,6 +114,8 @@ Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-si
 
 Branch-specific signals refine the scoring — see each reference file. Let the
 evidence determine the number in each label; never force a Hot/Warm/Cold quota.
+No row leaves this phase labeled Hot without both a buying signal and a verified
+contact — downgrade it to Warm instead.
 
 ### Phase 5 — Output the lead sheet
 
@@ -116,6 +129,8 @@ on what was verified and what still needs review.
 
 Columns vary by branch (see reference files), but every lead sheet includes:
 - score, business/company name, contact (where applicable), why-it's-a-prospect, source(s), confidence, last verified date
+
+The sheet is not deliverable until it also carries the search parameters used and the open questions left unresolved.
 
 ---
 
@@ -152,28 +167,30 @@ If missing, ask once, then infer reasonable defaults and continue:
 
 ---
 
-## Tool Selection Quick Picks
+## Tool Selection
 
-Full breakdown in [references/data-sources.md](references/data-sources.md). Quick picks:
+Treat every named product below as a candidate, not an available capability. These
+are selection examples, not guaranteed integrations — discover what is currently
+callable and verify the user's authenticated access, license, source terms, data
+freshness, export rights, and cost before using one. Full breakdown in
+[references/data-sources.md](references/data-sources.md).
 
-Treat every named product below as a candidate, not an available capability.
-Discover currently callable tools and verify the user's authenticated access,
-license, source terms, and cost first.
-
-| If the user has access to... | Use it for |
-|------------------------------|------------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery |
-| **Clay** | Multi-source enrichment, waterfall lookups, custom scoring |
-| **Clearbit** | Email-to-company and company enrichment |
-| **ZoomInfo** | Enterprise B2B contact + intent data |
-| **Hunter or Snov** | Email pattern guessing and verification |
-| **Truelist** | Email deliverability validation (before adding to outreach list) |
-| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping) |
-| **BuiltWith / Wappalyzer** | Tech stack qualification (SaaS branch) |
-| **Crunchbase** | Funding signals (SaaS branch) |
-| **GitHub** | Stargazers / forks of competitor or adjacent repos (dev-tool SaaS branch) |
-| **Google Maps + browser** | Local SMB discovery |
-| **Firecrawl / Browserbase** | Programmatic extraction from individual prospect websites — never from platforms |
+| If the user has access to... | Use it for | Verify Before Use |
+|------------------------------|------------|-------------------|
+| **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
+| **Clay** | Multi-source enrichment, waterfall lookups, custom scoring | Credit cost, providers, field provenance |
+| **Clearbit** | Email-to-company and company enrichment | Current product access and coverage |
+| **ZoomInfo** | Enterprise B2B contact + intent data | License, export rights, signal freshness |
+| **Hunter or Snov** | Email pattern discovery and verification | Verification status and lawful basis |
+| **Truelist** | Email deliverability validation before outreach | Result meanings and current API limits |
+| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping) | Platform terms; no bulk extraction |
+| **BuiltWith / Wappalyzer** | Tech stack qualification (SaaS branch) | Detection accuracy and staleness |
+| **Crunchbase** | Funding signals (SaaS branch) | Record recency and license tier |
+| **GitHub** | Stargazers / forks, public developer-intent signals | API terms, rate limits, company mapping |
+| **Google Maps + browser** | Local SMB discovery | Terms; assisted review only, no bulk extract |
+| **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
+| **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
+| **Firecrawl / Browserbase** | Single prospect websites — never platforms | Target terms, scope, and session access |
 
 **If the user has no enrichment or browser tools**: provide exact public-source
 queries and a qualification worksheet, then work from URLs, exports, or
@@ -235,57 +252,18 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 - [ ] Source URL + date captured for every contact (GDPR / CAN-SPAM lineage)
 - [ ] Final count matches user's request, or you've explained why it's smaller (quality bar)
 
+Any unchecked box means the sheet is not deliverable. Name the failing box and what
+is missing, rather than shipping the sheet with a caveat attached.
+
 ---
 
 ## Common Mistakes
 
-1. **Starting discovery without an ICP**. Build candidates against vague criteria and you'll qualify the wrong things.
-2. **Treating data sources as authoritative without cross-checks**. Apollo and ZoomInfo are out of date often; verify before scoring as "Hot."
-3. **Presenting unverified contacts as send-ready**. Use an available authorized
-   validator or keep the address labeled `unverified` with a manual validation
-   handoff.
-4. **Bulk scraping LinkedIn or Google Maps**. Real risk: account suspension + ToS violation. Browser as an assisted tool only.
-5. **Mixing branches**. Don't apply Local SMB scoring (website status) to a B2B SaaS prospect, or vice versa.
-6. **"Hot" labels without buying signals**. ICP fit alone is not enough — the signal is what makes the timing right.
-7. **No source URLs**. Every claim should be traceable to a public source. Future outreach depends on this lineage.
-8. **Ignoring quiet hours / time zone** when scheduling the downstream outreach
+1. **Treating data sources as authoritative without cross-checks**. Apollo and ZoomInfo are out of date often; verify before scoring as "Hot."
+2. **Mixing branches**. Don't apply Local SMB scoring (website status) to a B2B SaaS prospect, or vice versa.
+3. **Ignoring quiet hours / time zone** when scheduling the downstream outreach
    (handoff to `suede-cold-email`).
-9. **Forgetting to retain consent / lineage records**. Required for GDPR DSARs and CAN-SPAM audits.
-
----
-
-## Task-Specific Questions
-
-1. Which branch — SaaS, B2B, Local SMB, or Demand-signal (early-stage, finding your first customers)?
-2. What's your ICP? (Or: should I pull from your product-marketing context?)
-3. How many qualified leads do you want?
-4. Which research or validation tools are currently callable and authorized?
-   If none, can you provide URLs, exports, or screenshots for manual review?
-5. What's the triggering buying signal you care most about?
-6. Geography or radius (Local SMB / B2B)?
-7. Chat table or CSV?
-
----
-
-## Tool Integrations
-
-These are selection examples, not guaranteed integrations. Before using one,
-verify current vendor documentation, account access, pricing, data freshness,
-export rights, platform terms, and whether a callable connector is actually
-available in the current session.
-
-| Tool | Best For | Verify Before Use |
-|------|----------|-------------------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
-| **Clay** | Multi-source enrichment + waterfall | Credit cost, providers, field provenance |
-| **Clearbit** | Email-to-company enrichment | Current product access and coverage |
-| **ZoomInfo** | Enterprise B2B contact + intent | License, export rights, signal freshness |
-| **Hunter / Snov** | Email pattern discovery | Verification status and lawful basis |
-| **Truelist** | Email deliverability validation | Result meanings and current API limits |
-| **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
-| **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
-| **GitHub** | Public developer-intent signals | API terms, rate limits, company mapping |
-| **Firecrawl / Browserbase** | Single-target public-site research | Target terms, scope, and session access |
+4. **Forgetting to retain consent / lineage records**. Required for GDPR DSARs and CAN-SPAM audits.
 
 ---
 

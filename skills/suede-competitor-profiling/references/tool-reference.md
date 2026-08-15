@@ -4,6 +4,13 @@ This reference maps research needs to capabilities. It does not declare that
 Firecrawl, DataForSEO, a browser, a search provider, or any other connector is
 installed, connected, authorized, or callable.
 
+## Contents
+- Availability and Authorization Gate
+- Public-Site Evidence
+- Optional SEO and Market Metrics
+- Execution Order
+- Failure and Fallback Rules
+
 ## Availability and Authorization Gate
 
 Before selecting a tool:

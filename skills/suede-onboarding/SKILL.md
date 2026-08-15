@@ -18,7 +18,7 @@ Before providing recommendations, understand:
 
 1. **Product Context** - What type of product? B2B or B2C? Core value proposition?
 2. **Activation Definition** - What's the "aha moment"? What action indicates a user "gets it"?
-3. **Current State** - What happens after signup? Where do users drop off?
+3. **Current State** - What happens after signup? Where do users drop off? What activation rate are you targeting, and is there cohort analysis separating retained from churned users?
 
 ---
 
@@ -35,6 +35,12 @@ Interactive > Tutorial. Doing the thing > Learning about the thing.
 
 ### 4. Progress Creates Motivation
 Show advancement. Celebrate completions. Make the path visible.
+
+### Defaults to Refuse
+Named cliches this skill does not produce, however well they demo:
+- The modal product tour that runs before the user has done anything in the product.
+- The "Welcome! Let's get started" interstitial that sits between the user and the first action.
+- The checklist item that is a settings toggle rather than a value action.
 
 ---
 
@@ -86,8 +92,8 @@ The action that correlates most strongly with retention:
 - 3-7 items (not overwhelming)
 - Order by value (most impactful first)
 - Start with quick wins
-- Progress bar/completion %
-- Celebration on completion
+- Progress bar/completion % — only where the remaining steps are the activation path
+- Celebration on completion — on the activation event, not on a two-step setup
 - Dismiss option (don't trap users)
 
 ### Empty States
@@ -170,12 +176,14 @@ Identify biggest drops and focus there.
 For each issue: Finding → Impact → Recommendation → Priority
 
 ### Onboarding Flow Design
-- Activation goal
-- Step-by-step flow
-- Checklist items (if applicable)
-- Empty state copy
-- Email sequence triggers
-- Metrics plan
+Emit these headings verbatim, in this order:
+
+**Activation Goal** — the event, plus the retention evidence behind it or "unverified"
+**Flow** — one entry per step, each carrying: trigger, user action, success signal, drop-off measurement
+**Checklist Items** — 3-7 value actions (omit the heading if no checklist)
+**Empty State Copy** — per surface
+**Email Triggers** — event and delay for each
+**Metrics Plan** — activation rate, time to activation, per-step drop-off
 
 ---
 
@@ -199,16 +207,6 @@ When recommending experiments, consider tests for:
 - Support and help availability
 
 **For comprehensive experiment ideas**: See [references/experiments.md](references/experiments.md)
-
----
-
-## Task-Specific Questions
-
-1. What action most correlates with retention?
-2. What happens immediately after signup?
-3. Where do users currently drop off?
-4. What's your activation rate target?
-5. Do you have cohort analysis on successful vs. churned users?
 
 ---
 

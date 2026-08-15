@@ -121,6 +121,22 @@ The first line determines whether anyone reads the rest.
 - "[Common advice] is wrong. Here's why:"
 - "I stopped [common practice] and [positive result]."
 
+### Named defaults to avoid
+
+A hook formula invites the exact copy these produce by default. Reject a draft
+that contains any of them and rewrite from the claim's actual evidence:
+
+- Engagement-bait questions with no stake ("Thoughts?", "Agree?", "Who else?").
+- Manufactured awe ("Let that sink in", "This changes everything").
+- Contrarianism with no evidence — an "unpopular opinion" the account cannot
+  defend with an observed result or a named source.
+- A hook wrapped around an unproven claim. If the payoff has no owned metric,
+  named source, or demonstrable artifact behind it, fix the claim, not the hook.
+- Fake specificity — invented percentages, round-number results, or timelines
+  the account did not measure.
+
+Run final copy through `suede-deslop` before it goes out for approval.
+
 **For post templates and more hooks**: See [references/post-templates.md](references/post-templates.md)
 
 **For carousels** (Instagram carousels, LinkedIn document posts): See [references/carousel-frameworks.md](references/carousel-frameworks.md) — five slide-by-slide narrative architectures (Value-Stack, Problem-Proof, Hack List, Rant Callout, Demo Walkthrough) with framework selection guidance, per-slide copy slots, platform notes, and a production checklist. Pick the framework before writing slides.
@@ -237,6 +253,22 @@ hypotheses and production capacity; blank cells are valid.
 | 2 | Behind-scenes | Reply draft | Story test |
 | 3 | Educational | Short post | Reel test |
 
+### Calendar row schema
+
+Every calendar row returned to the user carries these exact fields. A row
+missing evidence source, test variable, or approval status is not ready to
+return:
+
+```text
+Slot/date + timezone | platform | pillar | hook | payoff | CTA
+Evidence source | one variable under test | primary metric
+Asset owner | production status | approval status
+```
+
+For the post draft itself, do not restate a template here — write it from
+[references/post-templates.md](references/post-templates.md), which owns the
+exact LinkedIn, X thread, carousel, and Reel skeletons.
+
 ### Batching Pilot
 
 Set the timebox and output count from current capacity. A possible first pilot:
@@ -245,6 +277,7 @@ Set the timebox and output count from current capacity. A possible first pilot:
 2. Draft one or two variants for each selected platform.
 3. Prepare only the approved asset concepts.
 4. Return the batch for exact-content review before scheduling or publishing.
+   Each batch item is one calendar row in the schema above, plus its draft.
 
 ---
 
@@ -320,22 +353,6 @@ according to the campaign objective rather than a universal hierarchy
 
 ---
 
-## Content Ideas by Situation
-
-### When You're Starting Out
-- Document your journey
-- Share what you're learning
-- Curate and comment on industry content
-- Test a capacity-bounded participation routine with relevant accounts
-
-### When You're Stuck
-- Repurpose old high-performing content
-- Ask your audience what they want
-- Comment on industry news
-- Share a failure or lesson learned
-
----
-
 ## Scheduling Best Practices
 
 ### When to Schedule vs. Post Live
@@ -407,51 +424,17 @@ baseline before standardizing the pattern.
 
 ### Video Structures
 
-**Problem-Solution (15-30 sec):**
-```
-[0-3s]  Hook: State the problem
-[3-10s] Agitate: Why it matters
-[10-25s] Solution: Your method/product/tip
-[25-30s] CTA: What to do next
-```
-
-**List Format (30-60 sec):**
-```
-[0-3s]  Hook: "X things that [outcome]"
-[3-50s] Items: One every 5-8 seconds
-[50-60s] CTA
-```
-
-**Tutorial (30-60 sec):**
-```
-[0-3s]  Hook: Show the end result first
-[3-8s]  Overview: "Here's how..."
-[8-50s] Steps: Quick, clear instructions
-[50-60s] Result + CTA
-```
+Pick the beat sheet before scripting. All five structures — Problem-Solution,
+List Format, Tutorial, Story Arc, POV/Skit — with timings and fit hypotheses,
+plus the caption spec below, live in
+[references/short-form-video.md](references/short-form-video.md); read it
+whenever a short-form script or its on-screen text is actually being written.
 
 ### Caption & Subtitle Best Practices
 
-Use captions as an accessibility and comprehension default. Treat any watch-time
-lift or sound-off viewing rate as account-specific: verify it with current
-retention and audio metrics where the platform exposes them.
-
-- **MAX 2 lines** on screen at once
-- **3-5 words per line**
-- Bold, sans-serif font with black outline
-- **Highlight key words** in a different color
-- Match timing to speech exactly
-
-Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
-
-### Content Ideas by Type
-
-| Business Type | Video Ideas |
-|---------------|-------------|
-| SaaS | Feature demos (show outcome first), before/after, "Watch me do X in Y seconds" |
-| E-commerce | Unboxing, comparisons, how it's made, customer reviews |
-| Services | Process reveals, client transformations, myth-busting |
-| Personal brand | Lessons learned, controversial takes, day-in-the-life |
+Captions are an accessibility default, not a watch-time claim. Hard caps: **max
+2 lines on screen, 3-5 words per line, timing matched to speech.** Caption
+tooling, export specs, and edit execution belong to `suede-video`.
 
 ### Common Mistakes
 
@@ -469,14 +452,24 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 
 ---
 
-## Task-Specific Questions
+## Halt Contract
 
-1. What platform(s) are you focusing on?
-2. What's your current posting frequency?
-3. Do you have existing content to repurpose?
-4. What content has performed well in the past?
-5. How much time can you dedicate weekly?
-6. Are you building personal brand, company brand, or both?
+Use this exact format when account access, asset rights, visible identity, or
+exact-content approval blocks the requested result — including when the
+publish/engagement gate in Boundaries fires:
+
+```text
+HALT — <one-line blocker>
+Why it blocks: <specific missing authority or evidence>
+Resolve with:
+1. <option>
+2. <option>
+3. <option, when useful>
+Waiting for: <the exact item or approval>
+```
+
+Continue with safe drafts, calendars, or worksheets only when they remain
+useful and do not imply the blocker was resolved.
 
 ---
 
@@ -495,6 +488,11 @@ Tools: CapCut (free), Descript, Captions.ai, Premiere Pro
 - Use `suede-instagram-growth` for Instagram-specific account audits,
   conversion mapping, Reels, carousels, Stories, calendars, and daily loops.
 - Use `suede-content-strategy` for the broader editorial system.
-- Use `suede-video` for full video generation and production.
+- Use `suede-video` for full video generation and production, including caption
+  tooling, export specs, and edit execution.
+- Use `suede-clip-to-guide` to turn a clip, interview moment, or talk excerpt
+  into a short-to-long package that bridges to an Article, newsletter, or guide.
 - Use `suede-ad-creative` for paid social concepts and variants.
 - Use `suede-analytics` for channel measurement and performance readback.
+- Use `suede-deslop` for the final anti-slop pass on any copy that will be
+  published.

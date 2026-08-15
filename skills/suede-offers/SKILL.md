@@ -20,7 +20,7 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 **The offer is the thing, not the page.** Better copy on a weak offer compounds slowly. A stronger offer with average copy converts immediately. Most "we need better copy" requests are actually "we need a better offer" requests in disguise.
 
-This skill owns the offer underneath the expression. Route sales-page language to `suede-copy`, conversion-path work to `suede-site-alchemy`, tier structure to `suede-pricing`, launch orchestration to `suede-launch-packaging`, and upgrade prompts to `suede-paywalls`.
+This skill owns the offer underneath the expression. Route sales-page language to `suede-copy`, conversion-path work to `suede-site-alchemy`, tier structure to `suede-pricing`, launch orchestration to `suede-campaign-in-a-box` (creator and artist launches) or `suede-marketing-plan` (product and service launches), and upgrade prompts to `suede-paywalls`.
 
 ### When this skill matters
 
@@ -106,11 +106,34 @@ When the user says "my offer isn't converting" or "I want to improve my offer":
 
 1. **Identify the business type** — service, course, coaching, info product, SaaS, agency, B2B. The right playbook is type-specific.
 2. **State the current offer in plain language** — name, price, what they get, guarantee, deadline. Write it down even if it lives in scattered places now.
-3. **Run the value equation** — score each of the four levers 1–10. The lowest is the binding constraint.
+3. **Run the value equation** — score each of the four levers 1–10. The lowest is the binding constraint. Say the lowest lever out loud, with the specific evidence gap behind its score ("perceived likelihood: 4 — no named customer, no before/after number"). Do not score all four above 6; if the offer genuinely looks that strong, the score is not the finding — name what would have to be true for the current conversion rate to make sense, and go get that instead. A flattering scorecard produces no binding constraint, which means step 5 has nothing to work on.
 4. **Audit the anatomy** — which of the six components is missing or weak?
 5. **Pick one lever to fix this iteration** — don't rebuild everything. The biggest lever is usually the one currently scoring lowest.
 6. **Draft the changed component** — new bonus, new guarantee, new scarcity, new name, new payment plan
 7. **Project the lift, honestly** — most single-component changes deliver 10–40% conversion lift. Anyone promising 5x is selling something. Two consecutive iterations on different levers can stack to 2–3x.
+
+### Output: Offer Brief
+
+Return the result of the loop in this exact structure — the same headings whether
+the offer is new or being repaired:
+
+```markdown
+# Offer Brief — [offer name]
+
+## Name
+## Core deliverable
+## Bonus stack
+[Each bonus, and the objection it removes. No invented "$ value" figures.]
+## Guarantee + conditions
+[Type, the exact conditions, and who eats the cost when it's claimed.]
+## Real constraint behind the deadline
+[The actual reason now beats later — capacity, cohort start, price change.
+ If there is no real constraint, write "none" and drop the deadline.]
+## Price + payment structure
+## Lever changed this iteration
+[Which of the four, its score before, and what evidence moves it.]
+## What I did not change and why
+```
 
 ---
 
@@ -152,5 +175,5 @@ Use specific numbers, named customers, concrete outcomes, real timelines. Specif
 
 - Use `suede-pricing` for tiers, packaging, and value metrics.
 - Use `suede-copy` for the sales page and `suede-site-alchemy` for the conversion path.
-- Use `suede-launch-packaging` to launch and `suede-paywalls` for in-product upgrade prompts.
+- Use `suede-campaign-in-a-box` (creator/artist) or `suede-marketing-plan` (product/service) to launch the offer; `suede-launch-packaging` only when the thing shipping is software and its install path. Use `suede-paywalls` for in-product upgrade prompts.
 - Use `suede-sales-enablement`, `suede-emails`, or `suede-marketing-psychology` for approved execution.

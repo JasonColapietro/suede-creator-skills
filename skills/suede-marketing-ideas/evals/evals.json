@@ -20,9 +20,9 @@
     {
       "id": 2,
       "prompt": "What's the fastest way to get more leads? We sell enterprise security software and have a $10k/month marketing budget.",
-      "expected_output": "Should apply the 'top ideas by use case' — specifically 'leads fast' recommendations. Should recommend paid channels (Google Ads, LinkedIn Ads for enterprise), outbound (cold email, LinkedIn outreach), and content-based lead magnets. Should filter for enterprise-appropriate tactics. Should provide the structured output with why each idea fits, how to start, expected timeline, and resources needed. Should note that 'fast leads' typically means paid or outbound channels.",
+      "expected_output": "Should score candidates against the six-dimension rubric rather than pulling a pre-baked list. Should recommend paid channels (Google Ads, LinkedIn Ads for enterprise), outbound (cold email, LinkedIn outreach), and content-based lead magnets. Should filter for enterprise-appropriate tactics. Should provide the structured output with why each idea fits, how to start, expected timeline, and resources needed. Should note that 'fast leads' typically means paid or outbound channels.",
       "assertions": [
-        "Applies 'leads fast' use case filter",
+        "Scores candidates on the six rubric dimensions",
         "Recommends paid channels appropriate for enterprise",
         "Recommends outbound tactics",
         "Filters for enterprise-appropriate tactics",
@@ -35,10 +35,10 @@
     {
       "id": 3,
       "prompt": "how do we grow without spending money on ads? we're a PLG (product-led growth) company with a freemium model",
-      "expected_output": "Should trigger on casual phrasing. Should apply the 'PLG' use case filter from top ideas. Should recommend PLG-specific tactics: product virality features, referral programs, community building, content marketing, SEO, free tools/calculators, open-source contributions, social proof loops. Should avoid ad-dependent ideas given the constraint. Should provide structured output with implementation guidance.",
+      "expected_output": "Should trigger on casual phrasing. Should score PLG-appropriate candidates against the rubric. Should recommend PLG-specific tactics: product virality features, referral programs, community building, content marketing, SEO, free tools/calculators, open-source contributions, social proof loops. Should avoid ad-dependent ideas given the constraint. Should provide structured output with implementation guidance.",
       "assertions": [
         "Triggers on casual phrasing",
-        "Applies PLG use case filter",
+        "Scores candidates on the six rubric dimensions",
         "Recommends PLG-specific tactics",
         "Avoids ad-dependent ideas",
         "Includes virality and referral tactics",

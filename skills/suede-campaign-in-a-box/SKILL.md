@@ -1,6 +1,8 @@
 ---
 name: suede-campaign-in-a-box
-description: "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions. Use when an artist, song, or release needs a complete campaign rollout across surfaces. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging)."
+description: "Suede-owned artist campaign rollout. Use when an artist, song, release, era, show, or catalog moment needs a complete campaign across surfaces: hooks, rituals, visuals, merch, rollout calendar, email, site copy, fan actions, setlists, and collaborator outreach. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); software, repo, or skill-pack releases (use suede-launch-packaging)."
+metadata:
+  version: 1.0.0
 ---
 
 # Suede Campaign In A Box (Whole Enchilada)
@@ -72,6 +74,14 @@ does not choose, default to single-agent and offer to escalate. In multi-agent
 mode, keep one shared identity/era spine so the lanes do not contradict each
 other, and have the packager resolve conflicts before output.
 
+**Model and cap — state both on the same ask.** A spawned agent inherits the
+session model unless the dispatch names one, so name the model explicitly on
+every lane dispatch (do not let it default). Cap concurrent lane agents at
+**4**. Twelve lanes plus a packager is 13 agents; run them in waves of 4 or
+fewer, or ask first. Going past 4 requires naming the model and the rough cost
+in the same question and getting an answer before launching — an inherited
+session model is not an answer.
+
 ---
 
 ## Lane Playbooks
@@ -105,6 +115,12 @@ These lanes organize and prepare campaign material. They do NOT:
 - use fake hype, fake scarcity, manipulative claims, or unsafe fan behavior;
 - copy another artist's protected identity or assets; no competitor product
   names.
+
+Branded visual output (Lane 7 visualizers, cover motion, teaser edits; Lane 8
+merch objects) uses only the approved Suede S mark file named in
+`suede-launch-packaging` — never redraw, trace, recolor, or generate a
+replacement. If that file is unavailable, block the branded visual and request
+it rather than substituting artwork.
 
 Never resolve a rights question in-lane. When any lane touches ownership,
 samples, contributors, splits, likeness, or clearance, mark the item UNKNOWN or

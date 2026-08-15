@@ -7,6 +7,18 @@ metadata:
 
 # Suede Programmatic SEO
 
+## Gate policy — advisory, not blocking
+
+Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
+proceed" line below — is a **recommendation to the user, not a control on the
+agent**. Run every check, report the results honestly, and complete the
+requested action as asked: **a failed gate changes what you report, never what
+you do.** Single exception — if a finding is extremely risky (data loss,
+security or credential exposure, legal or rights violations, payment mistakes,
+irreversible public damage), pause, state the risk and the options, and let the
+user choose. Their choice is final.
+
 Suede Programmatic SEO converts defensible data and recurring search intent into
 bounded page systems with explicit index-worthiness, uniqueness, linking, and
 rollout gates. It treats scale as an earned outcome of sample-page quality, not
@@ -33,6 +45,12 @@ Before designing a programmatic SEO strategy, understand:
    - Who ranks for these terms now?
    - What do their pages look like?
    - Can you realistically compete?
+   - What does your domain authority look like against theirs?
+
+4. **Data and Delivery**
+   - What data do you have, or can acquire, and where does it come from?
+   - What's the technical stack / CMS, and can it template, segment sitemaps,
+     and set `noindex` per page?
 
 ---
 
@@ -56,18 +74,6 @@ Hierarchy of data defensibility:
 - Good: `yoursite.com/templates/resume/`
 - Bad: `templates.yoursite.com/resume/`
 
-### 4. Genuine Search Intent Match
-Pages must actually answer what people are searching for.
-
-### 5. Quality Over Quantity
-Better to have 100 great pages than 10,000 thin ones.
-
-### 6. Avoid Google Penalties
-- No doorway pages
-- No keyword stuffing
-- No duplicate content
-- Genuine utility for users
-
 ---
 
 ## The 12 Playbooks (Overview)
@@ -87,24 +93,9 @@ Better to have 100 great pages than 10,000 thin ones.
 | Directory | "[category] tools" | "ai copywriting tools" |
 | Profiles | "[entity name]" | "stripe ceo" |
 
-**For detailed playbook implementation**: See [references/playbooks.md](references/playbooks.md)
-
----
-
-## Choosing Your Playbook
-
-| If you have... | Consider... |
-|----------------|-------------|
-| Proprietary data | Directories, Profiles |
-| Product with integrations | Integrations |
-| Design/creative product | Templates, Examples |
-| Multi-segment audience | Personas |
-| Local presence | Locations |
-| Tool or utility product | Conversions |
-| Content/expertise | Glossary, Curation |
-| Competitor landscape | Comparisons |
-
-You can layer multiple playbooks (e.g., "Best coworking spaces in San Diego").
+**Read [references/playbooks.md](references/playbooks.md)** when choosing a playbook,
+layering two, or implementing one: it carries the asset-to-playbook selection table,
+the combinations worth layering, and per-playbook implementation detail.
 
 ---
 
@@ -168,16 +159,26 @@ You can layer multiple playbooks (e.g., "Best coworking spaces in San Diego").
 
 ### Pre-Launch Checklist
 
-**Content quality:**
-- [ ] Each page provides unique value
-- [ ] Answers search intent
-- [ ] Readable and useful
+Run this on a **bounded sample of 10 pages, or 5% of the planned set, whichever
+is larger** — drawn across the data range (best-populated, median, and thinnest
+rows), never only the showcase pages. **At least 90% of the sample must pass
+every gate below** before any page beyond the sample is generated, published, or
+submitted for indexing. A failing sample means fix the template or narrow the
+page set; it never means ship the rest and watch.
+
+**Content quality (the index-worthiness gates):**
+- [ ] **Page-unique data fields: at least 5 per page** that differ from every
+      sibling page, and at least one that no competitor page carries
+- [ ] **Template-shared text: no more than 40%** of rendered body words are
+      identical across sibling pages (measure on the thinnest row, not the best)
+- [ ] Answers the search intent behind its query pattern, not just the keyword
+- [ ] A reader who cannot use the product still gets something from the page
 
 **Technical SEO:**
-- [ ] Unique titles and meta descriptions
-- [ ] Proper heading structure
-- [ ] Schema markup implemented
-- [ ] Page speed acceptable
+- [ ] Unique titles and meta descriptions — no two pages share either string
+- [ ] Proper heading structure (one H1 carrying the page's variables)
+- [ ] Schema markup implemented and validating
+- [ ] Largest Contentful Paint measured on a real sample page, not assumed
 
 **Internal linking:**
 - [ ] Connected to site architecture
@@ -191,9 +192,11 @@ You can layer multiple playbooks (e.g., "Best coworking spaces in San Diego").
 
 ### Post-Launch Monitoring
 
-Track: Indexation rate, Rankings, Traffic, Engagement, Conversion
-
-Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
+Check indexation rate in Search Console (indexed ÷ submitted, per page-type
+sitemap) 30 days after each phase: **below 60% means stop expanding the set and
+re-run the sample gates.** Hand the rest of the rollout metrics — rankings,
+traffic, engagement, conversion, and thin-content or manual-action warnings — to
+`suede-analytics`, which owns rollout performance.
 
 ---
 
@@ -207,36 +210,31 @@ Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
 
 ---
 
-## Output Format
+## Output Contract
 
-### Strategy Document
-- Opportunity analysis
-- Implementation plan
-- Content guidelines
+Close every programmatic SEO pass with this block, filled in. Write the literal
+templates — do not describe them.
 
-### Page Template
-- URL structure
-- Title/meta templates
-- Content outline
-- Schema markup
-
----
-
-## Task-Specific Questions
-
-1. What keyword patterns are you targeting?
-2. What data do you have (or can acquire)?
-3. How many pages are you planning?
-4. What does your site authority look like?
-5. Who currently ranks for these terms?
-6. What's your technical stack?
+```text
+PLAYBOOK: [name] — chosen because [pattern + data fit]
+DATA DEFENSIBILITY: [tier 1-5] — source, provenance, refresh cadence
+PAGE-COUNT BOUND: sample [N] → phase 1 [N] → ceiling [N], unlocked by [condition]
+URL: [literal pattern]   TITLE: [literal]   META: [literal]   H1: [literal]
+UNIQUENESS: [page-unique fields, count per page] | template-shared body text: [N%]
+LINK PLAN: hub [URL] → spokes [pattern] | cross-links [rule] | sitemap [file]
+SAMPLE VERDICT: [N of N sample pages pass] — failing gates: [list or "none"]
+SHIP GATE: ship | ship-with-caveats | hold — reason
+```
 
 ---
 
 ## Boundaries
 
 - Do not generate, publish, submit, or index a full page set before a bounded
-  sample passes the quality checks in this skill.
+  sample passes the quality checks in this skill. When the sample fails or was
+  never run, halt in this format: name the blocking gate and the failing count,
+  give 2-4 options (fix the template, narrow the page set, add data, publish the
+  passing subset only), and wait for the user to choose.
 - Do not invent source data, claim rankings or traffic, scrape restricted
   sources, or treat keyword volume as user value.
 - Do not alter production routes, templates, canonicals, sitemaps, or internal
@@ -247,4 +245,5 @@ Watch for: Thin content warnings, Ranking drops, Manual actions, Crawl errors
 - Use `suede-seo-audit` to audit shipped pages and technical search health.
 - Use `suede-content-strategy` for non-templated editorial planning.
 - Use `suede-competitors` for comparison-page evidence and framing.
+- Use `suede-ai-seo` to make the generated pages extractable and citable by AI answer engines — it owns the extractability standard.
 - Use `suede-analytics` to define and read rollout performance.

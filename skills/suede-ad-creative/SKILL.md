@@ -112,6 +112,7 @@ Platforms reject or truncate creative that exceeds these limits, so verify every
 - Include at least one keyword-focused headline
 - Include at least one benefit-focused headline
 - Include at least one CTA headline
+- The quantities above are Google's ceiling. When the request came through `suede-ads`, its RSA output spec mandates the full 15 headlines and 4 descriptions — ship all of them.
 
 ### Meta Ads (Facebook/Instagram)
 
@@ -153,18 +154,11 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 **For static ad structure**, use the 15-template library in [references/static-ad-templates.md](references/static-ad-templates.md) — layout frameworks (Us vs. Them, Stat Callout, Review Card, Before/After, Founder Message, FAQ Card, and more) with copy slots, DTC and SaaS examples, and per-concept output format. Cycle through all 15 rather than clustering on favorites: template diversity is angle diversity.
 
-**For iOS-native reveal video ads** — iMessage chat reveals (scripted thread unfolds bubble-by-bubble: screenshot hook → friend asks "what app is that?" → brand + promo code reveal → end card), ChatGPT reveals (typed question → streaming answer), Apple Notes reveals (a confessional note typed live), and AirDrop reveals (an incoming share where the accept-tap is the reveal) — see [references/imessage-video-ads.md](references/imessage-video-ads.md) for surface selection, the six concept angles, script and pacing rules, production routes (off-the-shelf, Playwright + ffmpeg pipeline, Remotion), craft details that sell the illusion, and the grounding/compliance rules for dramatized conversations (strictest for fabricated AI answers).
+**When the concept is an iOS-native reveal video** — an iMessage thread, a ChatGPT answer, an Apple Notes confessional, or an AirDrop share, where the screen surface itself is the ad — read [references/imessage-video-ads.md](references/imessage-video-ads.md) before scripting. It carries surface selection, concept angles, pacing rules, production routes, and the compliance rules for dramatized conversations.
 
-**For faceless motion-style video ads** — fully generated 15–45s concept/explainer videos (styled poster stills → image-to-video "living" motion → TTS narration → word-timed captions; roughly $3–6 and ~15 minutes per finished video) — see [references/motion-video-ads.md](references/motion-video-ads.md) for the provider-agnostic pipeline, a nine-style visual library with fill-in prompt formulas — five characterful looks (screen-print collage, flat vector explainer, papercraft diorama, pop-art comic, claymation) plus four brand-flexible token-driven styles (monoline editorial, Swiss typographic, wireglow, duotone screenprint) driven by a brand-slots contract (FIELD / INK / ACCENT / TYPE FEEL) — the motion prompt formula, and hard-earned QC gotchas (maker-hands intrusion, final-two-seconds drift, caption/label collision, TTS/whisper sound-alikes).
+**When the concept is a faceless motion/explainer video** (15–45s, generated stills → image-to-video motion → TTS → captions), read [references/motion-video-ads.md](references/motion-video-ads.md) before writing prompts. It carries the pipeline, the visual-style library with fill-in prompt formulas, the brand-slots contract, and the QC gotchas.
 
-For image and video generation tools, see [references/generative-tools.md](references/generative-tools.md) for the complete guide covering:
-
-- **Image generation** — Nano Banana Pro (Gemini), Flux, Ideogram for static ad images
-- **Video generation** — Veo, Kling, Runway, Sora, Seedance, Higgsfield for video ads
-- **Voice & audio** — ElevenLabs, OpenAI TTS, Cartesia for voiceovers, cloning, multilingual
-- **Code-based video** — Remotion for templated, data-driven video at scale
-- **Platform image specs** — Correct dimensions for every ad placement
-- **Cost comparison** — Pricing for 100+ ad variations across tools
+**When you need to pick an image, video, voice, or code-based generation tool** — or price a batch — read [references/generative-tools.md](references/generative-tools.md). It owns the vendor roster, per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
 
 **Recommended workflow for scaled production:**
 1. Generate hero creative with AI tools (exploratory, high-quality)
@@ -201,6 +195,8 @@ For each angle, generate multiple variations. Vary:
 - **Tone** — direct vs. question vs. command
 - **Structure** — short punch vs. full benefit statement
 
+At volume (10+ variations), close with a wild-card pass: 3-5 concepts on angles nobody asked for — contrarian, emotional, uncomfortably specific. These are where the outliers come from, and they cost one extra pass.
+
 ### Step 3: Validate Against Specs
 
 Before delivering, check every piece of creative against the platform's character limits. Flag anything that's over and provide a trimmed alternative.
@@ -230,6 +226,8 @@ Look at the worst performers and identify:
 
 - **Themes that fall flat** — What angles aren't resonating?
 - **Common patterns in low performers** — Too generic? Too long? Wrong tone?
+
+Name the underperformers explicitly and say why the angle failed. Do not open by praising the existing set, and do not soften a losing angle into "needs more testing" when the declared metric has already resolved it at sufficient volume — say it lost, and retire it.
 
 ### Step 3: Generate New Variations
 
@@ -271,6 +269,16 @@ Track what was learned and what's being tested:
 - Claims without specificity ("Best," "Leading," "Top")
 - All caps or excessive punctuation
 - Clickbait that the landing page can't deliver on
+
+**Never ship these strings.** They are the ad-copy defaults a model produces unprompted, and each is generic across every product in every category — the definition of a wasted slot. The fix is always the same: substitute the specific number, the specific verb, or the specific customer sentence from the grounding inputs. If a headline would be true of a competitor's product too, it is one of these in disguise.
+
+- "Unlock your potential" / "Unlock the power of..." / "Unleash..." / "Revolutionize your..." / "Transform the way you [work/build/sell]"
+- "Say goodbye to [problem]" / "Tired of [problem]?"
+- "Level up your [thing]" / "Take your [thing] to the next level"
+- "game-changer" / "revolutionary" / "cutting-edge" / "seamless" / "effortlessly"
+- "in just minutes" / "in seconds" (unless it is a measured, true number)
+- "The future of [category] is here" / "Join the thousands who..." (without the real count)
+- "Learn more about our solution" / "Discover how we can help"
 
 ### Descriptions That Convert
 
@@ -348,38 +356,28 @@ When iterating, include a summary:
 
 ---
 
-## Batch Generation Workflow
+## Pre-delivery self-check
 
-For large-scale creative production (Anthropic's growth team generates 100+ variations per cycle):
+Every mode clears this gate before anything is handed over. It is not mode-specific and it is not optional.
 
-### 1. Break into sub-tasks
-- **Headline generation** — Focused on click-through
-- **Description generation** — Focused on conversion
-- **Primary text generation** — Focused on engagement (Meta/LinkedIn)
+- [ ] Every headline and description renders its character count inline
+- [ ] No variant exceeds its platform's limit — anything over is trimmed, with the trimmed version shown
+- [ ] At least 2-3 CTA headlines are present in every RSA
+- [ ] No two variants share an angle; near-duplicates are removed
+- [ ] Every Mode 3 concept cites its grounding source (which review, winning ad, or comment)
+- [ ] No string from the Never-ship list above appears in any variant
+- [ ] Nothing plausibly violates platform policy for the target placement
 
-### 2. Generate in waves
-- Wave 1: Core angles (3-5 angles, 5 variations each)
-- Wave 2: Extended variations on top 2 angles
-- Wave 3: Wild card angles (contrarian, emotional, specific)
-
-### 3. Quality filter
-- Remove anything over character limit
-- Remove duplicates or near-duplicates
-- Flag anything that might violate platform policies
-- Ensure headline/description combinations make sense together
+Any failure means fix it before delivering. Do not ship a batch with the failure noted as a caveat.
 
 ---
 
 ## Common Mistakes
 
 - **Writing headlines that only work together** — RSA headlines get combined randomly
-- **Ignoring character limits** — Platforms truncate without warning
 - **All variations sound the same** — Vary angles, not just word choice
 - **No CTA headlines** — RSAs need action-oriented headlines to drive clicks; include at least 2-3
 - **Generic descriptions** — "Learn more about our solution" wastes the slot
-- **Iterating without data** — Gut feelings are less reliable than metrics
-- **Generating without grounding** — Ungrounded concepts read like every other ad in the feed; feed the skill winning ads, reviews, and comments first
-- **Skipping the comments input** — Ad comments hold the objections and angles customers raise themselves; those usually convert best
 - **Testing too many things at once** — Change one variable per test cycle
 - **Retiring creative too early** — Allow 1,000+ impressions before judging
 
@@ -416,4 +414,5 @@ For a performance-led batch:
 - Need a statistically valid creative test -> use `suede-ab-testing`.
 - Need source language from customers -> use `suede-customer-research`.
 - Need landing-page copy or recurring production -> use `suede-copy` or `suede-marketing-loops`.
+- Before any variant goes live in front of real people -> use `suede-deslop`.
 - From those skills, route paid-media creative production back to `suede-ad-creative`.

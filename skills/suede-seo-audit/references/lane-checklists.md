@@ -4,6 +4,17 @@ Detailed checklists for suede-seo-audit Lanes 1–4 and 6–9. Read the checklis
 for each lane as you run it. Lane 5 (Schema Markup) lives in
 references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
 
+## Contents
+
+- [Lane 1: Technical Access](#lane-1-technical-access)
+- [Lane 2: Search and Answer Intent](#lane-2-search-and-answer-intent)
+- [Lane 3: Metadata](#lane-3-metadata)
+- [Lane 4: Structure](#lane-4-structure)
+- [Lane 6: AI EO (Answer Engine Optimization)](#lane-6-ai-eo-answer-engine-optimization)
+- [Lane 7: Copy and Conversion Quality](#lane-7-copy-and-conversion-quality)
+- [Lane 8: E-E-A-T Signals](#lane-8-e-e-a-t-signals)
+- [Lane 9: Topic Cluster Architecture](#lane-9-topic-cluster-architecture)
+
 ---
 
 ## Lane 1: Technical Access

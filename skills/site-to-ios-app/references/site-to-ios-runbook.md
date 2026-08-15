@@ -33,16 +33,8 @@ and App Store 4.2 wrapper-risk notes.
 
 ## 3. Native Value Requirements
 
-Add enough iOS-specific product surface that the binary is more than a browser:
-
-- native launch, onboarding, empty state, loading, error, offline, and retry;
-- native tab/navigation shell when the site has multiple primary sections;
-- native account/settings with support, privacy, terms, delete account, restore
-  purchases, and notification settings when relevant;
-- universal links or deep links for important routes;
-- share sheet, push, media picker, camera, files, contacts, calendar, widgets,
-  StoreKit, or Sign in with Apple only when the product needs them;
-- polished safe-area, keyboard, dark mode, and dynamic type behavior.
+The required native value is the blocking gate and lives in one place: see
+"App Store 4.2 Gate" in `SKILL.md`. Build against that list, not a copy.
 
 ## 4. Capacitor Scaffold
 

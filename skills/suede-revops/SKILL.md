@@ -142,9 +142,12 @@ Define response times and document them:
 
 ### Speed-to-Lead
 
-Response time is the single biggest factor in lead conversion:
-- Contact within **5 minutes** = 21x more likely to qualify (Lead Connect)
-- After **30 minutes**, conversion drops by 10x
+Response time is one of the largest controllable factors in lead conversion.
+Widely cited vendor studies (Lead Connect, InsideSales) report order-of-magnitude
+differences; treat the ordering as reliable and the multipliers as unverified
+until measured on your own data:
+- Contact within **5 minutes** — the target; qualification rates fall steeply after it
+- After **30 minutes**, conversion drops sharply
 - After **24 hours**, the lead is effectively cold
 
 Build routing rules that prioritize speed. Alert reps immediately. Escalate if SLA is missed.
@@ -188,28 +191,23 @@ Build routing rules that prioritize speed. Alert reps immediately. Escalate if S
 
 ## CRM Automation Workflows
 
-### Essential Automations
+Platform-agnostic build list — the set to design before the stack is decided,
+in build order:
 
-- **Lifecycle stage updates** — Auto-advance stages when criteria are met
-- **Task creation on handoff** — Create follow-up task when MQL assigned to rep
-- **SLA alerts** — Notify manager if rep misses response time SLA
-- **Deal stage triggers** — Auto-send proposals, update forecasts, notify CS on close
+1. **MQL alert + assignment** — instant rep notification with lead context
+2. **SLA escalation** — notify the manager when response time is missed
+3. **Score-driven stage promotion** — advance lifecycle stage when criteria are met
+4. **Meeting booked / no-show** — notify the AE; auto-follow-up on a miss
+5. **Closed-won handoff** — create the CS task and update the forecast
+6. **Stale deal alert** — flag a deal past 2x average days in stage
+7. **Recycled-lead nurture** — return disqualified leads to marketing with a reason code
+8. **Activity digest + re-engagement** — daily high-intent summary; alert on a dormant lead's return
 
-### Marketing-to-Sales Automations
-
-- **MQL alert** — Instant notification to assigned rep with lead context
-- **Meeting booked** — Notify AE when prospect books via scheduling tool
-- **Lead activity digest** — Daily summary of high-intent actions by active leads
-- **Re-engagement trigger** — Alert sales when a dormant lead returns to site
-
-### Calendar Scheduling Integration
-
-- **Round-robin scheduling** — Distribute meetings evenly across team
-- **Routing by criteria** — Send enterprise leads to senior AEs, SMB to junior reps
-- **Pre-meeting enrichment** — Auto-populate CRM record before the call
-- **No-show workflows** — Auto-follow-up if prospect misses meeting
-
-**For platform-specific workflow recipes**: See [references/automation-playbooks.md](references/automation-playbooks.md)
+**For the trigger and action definitions per platform** — HubSpot workflows,
+Salesforce Flow equivalents, Calendly/SavvyCal, and Zapier patterns, including
+round-robin, routing by criteria, and pre-meeting enrichment: See
+[references/automation-playbooks.md](references/automation-playbooks.md). Read
+it once the CRM is known; build from the list above when it is not.
 
 ---
 
@@ -253,13 +251,9 @@ Document every exception. Track which non-standard terms get requested most — 
 - Block stage advancement if fields are empty
 - Use progressive profiling — don't require everything upfront
 
-### Enrichment Tools
-
-| Tool | Strength |
-|------|----------|
-| Clearbit | Real-time enrichment, good for tech companies |
-| Apollo | Contact data + sequences, strong for prospecting |
-| ZoomInfo | Enterprise-grade, largest B2B database |
+Enrichment vendors are listed under Tool Integrations below, with the
+provenance, freshness, lawful-basis, and credit-cost checks that apply before
+proposing any of them.
 
 ### Quarterly Audit Checklist
 
@@ -299,23 +293,16 @@ Build three views:
 
 When delivering RevOps recommendations, provide:
 
-1. **Lifecycle stage document** — Stage definitions with entry/exit criteria, owners, and SLAs
+1. **Lifecycle stage document** — Use the stage template shape in
+   [references/lifecycle-definitions.md](references/lifecycle-definitions.md)
+   for each stage: Entry criteria / Exit criteria / Owner / Actions on entry /
+   SLA / Required fields / Recycle path. Do not invent a different shape.
 2. **Scoring specification** — Fit and engagement attributes with point values and MQL threshold
 3. **Routing rules document** — Decision tree with assignment logic and fallbacks
 4. **Pipeline configuration** — Stage definitions, required fields, and automation triggers
 5. **Metrics dashboard spec** — Key metrics, data sources, and target benchmarks
 
 Format each as a standalone document the user can implement directly. Include platform-specific guidance when the CRM is known.
-
----
-
-## Task-Specific Questions
-
-1. What CRM platform are you using (or planning to use)?
-2. How many leads per month do you generate?
-3. What's your current MQL definition?
-4. Where do leads get stuck in your funnel?
-5. Do you have SLAs between marketing and sales today?
 
 ---
 
@@ -352,3 +339,6 @@ documentation before proposing implementation.
 - Use `suede-cold-email` for approved outbound sequence copy.
 - Use `suede-sales-enablement` for collateral and rep-facing materials.
 - Use `suede-analytics` for pipeline measurement and attribution.
+- Use `suede-pricing` when deal-desk work turns into a pricing decision —
+  discount tiers that keep getting overridden, a non-standard term everyone
+  requests, or list-price and packaging changes.

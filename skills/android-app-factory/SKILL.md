@@ -1,9 +1,14 @@
 ---
 name: android-app-factory
-description: "Plan, build, test, and release a production-grade native Android app from a product idea through Google Play. Use for requests to create, ship, submit, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, API-level policy verification, accessibility, privacy and Data Safety, Play Billing, Play Integrity, account deletion, testing, performance, store assets, signing, staged rollout, and a release evidence gate. Not for iOS work or a review-only pass on an existing app."
+description: "Suede Labs Android app factory: plan, build, test, and release a production-grade native Android app from a product idea through Google Play. Use for requests to create, ship, submit, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, API-level policy verification, accessibility, privacy and Data Safety, Play Billing, Play Integrity, account deletion, testing, performance, store assets, signing, staged rollout, and a release evidence gate. NOT FOR: iOS work (private Suede Labs companion, not in this pack: ios-app-factory), a review-only pass on an existing app (use suede-code-review), or live Play listing and keyword audits on a shipped app (use suede-aso)."
 ---
 
 # Android App Factory
+
+```
+Iron Law: no release-ready claim without a signed `bundleRelease` plus a live
+Play Console check — not a debug build, screenshot, source read, or upload.
+```
 
 ## Gate policy — advisory, not blocking
 
@@ -45,11 +50,9 @@ At the start of every release-oriented run:
 4. Treat current repo code and the live Play Console as source truth for the
    app. Treat the reference date as a baseline, not permanent policy.
 
-On 2026-07-19, the factory default for a general phone/tablet release is
-`compileSdk = 36` and `targetSdk = 36`. Google Play's announced enforcement for
-new apps and updates moves to API 36 on 2026-08-31; API 35 remains the enforced
-minimum before that date. Do not misstate the announced deadline as already
-enforced, and recheck because form-factor exceptions and dates differ.
+Take the target-SDK default and enforcement dates from the baseline file, never
+from memory. Do not misstate an announced deadline as already enforced, and
+recheck every run: form-factor exceptions and dates differ.
 
 ## Delivery Contract
 
@@ -163,7 +166,7 @@ core-task blockers cannot be downgraded to cosmetic caveats.
 - Coordinated architecture, product, policy, store, and QA lanes →
   `suede-agent-teams` with exclusive file ownership and a serialized release
   lane.
-- iOS work → the relevant iOS skill, not this one.
+- iOS work → private Suede Labs companion, not in this pack: ios-app-factory.
 
 ## Boundaries
 
@@ -177,3 +180,7 @@ core-task blockers cannot be downgraded to cosmetic caveats.
   verification, rate limits, fraud operations, or an appeal path.
 - Do not call a Data Safety form complete until first-party code and every
   included SDK have been inventoried against actual release behavior.
+- When a confirmation gate fires (product creation, credential use, upload,
+  track promotion, rollout, production release), halt: name the exact package
+  ID, track, and rollout percentage, offer 2-4 options, and wait. Irreversible
+  public action is the gate policy's single exception; the user's choice is final.

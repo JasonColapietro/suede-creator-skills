@@ -105,36 +105,11 @@ npx create-video@latest
 drive content. Confirm whether rendering is local or uses an authorized hosted
 renderer.
 
-```tsx
-export const ProductDemo: React.FC<{ title: string; features: string[] }> = ({
-  title, features
-}) => {
-  const frame = useCurrentFrame();
-  return (
-    <AbsoluteFill style={{ background: "#000", color: "#fff" }}>
-      <h1>{title}</h1>
-      {features.map((f, i) => (
-        <Sequence from={i * 30} key={i}>
-          <p>{f}</p>
-        </Sequence>
-      ))}
-    </AbsoluteFill>
-  );
-};
-```
-
-**Candidate fit:** Complex animation, interactive previews, or batch rendering
-when the verified runtime supports them.
-
-### When to Pick Which
-
-| Factor | HTML/CSS renderer | React renderer |
-|--------|-------------------|----------------|
-| Existing stack | Browser and CSS capability | React and renderer capability |
-| Animation needs | Test required transitions | Test required timeline primitives |
-| Batch rendering | Verify local or hosted path | Verify local or hosted path |
-| Team fit | Inspect maintainability in this repo | Inspect maintainability in this repo |
-| Rights and cost | Verify current license and runtime cost | Verify current license and runtime cost |
+Read
+[references/programmatic-renderers.md](references/programmatic-renderers.md)
+when the repo already uses React, or when the choice between the HTML/CSS and
+React paths has to be justified — it carries the React component sample and the
+renderer selection table.
 
 ---
 
@@ -199,8 +174,9 @@ Create talking-head videos without filming. An AI avatar delivers your script wi
 HeyGen is one possible avatar platform, not a guaranteed or preferred
 integration. Before naming it or another vendor, verify current official
 documentation, authenticated access, callable API or connector availability,
-plan limits, price, output rights, and the consent requirements for every voice
-or likeness involved.
+plan limits, price, output rights, body-motion and script-ingestion controls,
+localization and export requirements, and the consent requirements for every
+voice or likeness involved.
 
 If no avatar tool is currently callable and authorized, provide a manual
 vendor-neutral workflow: approved script, consent record, user-operated upload,
@@ -208,13 +184,6 @@ export checklist, and a real-camera or voiceover fallback.
 
 **Possible fit to test:** product explainers, feature announcements,
 multilingual versions, and approved personalized outreach.
-
-### Another avatar candidate
-
-An alternative avatar platform may fit training or presentation work. Confirm
-its current features from official documentation and test consent, body-motion,
-script-ingestion, localization, and export requirements on the authorized
-account before recommending it.
 
 ### Avatar vs. Other-Approach Test
 
@@ -325,7 +294,40 @@ Output: Approved export candidate, not automatically published
 
 When no production tool is available, return the script, shot list, asset
 manifest, beat sheet, captions, edit decision list, and export settings so the
-user can execute the cut manually.
+user can execute the cut manually, in these exact headings:
+
+```markdown
+## Script
+<scene or beat> | on-camera or VO line | duration target
+
+## Shot List
+Shot # | source (screen capture / owned footage / licensed / generated) | framing | notes
+
+## Asset Manifest
+Asset | origin | rights basis and holder | expiry or attribution required | file path
+
+## Beat Sheet
+Use the row schema in references/edit-anatomy.md (Beat | Time | Shot |
+On-screen text | Caption style | Transition/motion | Audio) plus its style
+summary. Do not invent a second beat-sheet format.
+
+## Captions
+Full caption text with timecodes; state the accuracy check performed.
+
+## Edit Decision List
+Clip # | source file | in TC | out TC | placement | transition | audio bed
+
+## Export Settings
+Destination | ratio | resolution | frame rate | codec | max duration | verified
+against (current spec source + date)
+
+## Open Gates
+<missing rights, consent, cost approval, or brand asset; use the halt contract>
+```
+
+For the beat sheet and its style summary, read
+[references/edit-anatomy.md](references/edit-anatomy.md) before writing the
+handoff — it owns that row schema.
 
 ---
 
@@ -344,30 +346,24 @@ user can execute the cut manually.
 
 ---
 
-## Task-Specific Questions
+## Halt Contract
 
-1. What type of video do you need? (Demo, explainer, social clip, ad, tutorial)
-2. Do you need a human presenter or can it be voiceover/text?
-3. Is this a one-off or a repeatable template?
-4. What platform and placement is it for? (We will verify its current ratio,
-   duration, and composer requirements.)
-5. Do you have existing assets to work with? (Screenshots, footage, scripts)
-6. What's your budget for video tools?
+Use this exact format when tool authorization, cost approval, rights, consent,
+or an approved brand asset blocks the requested result — including the install
+and scaffold gates above and the brand-mark gate in Boundaries:
 
----
+```text
+HALT — <one-line blocker>
+Why it blocks: <specific missing authority or evidence>
+Resolve with:
+1. <option>
+2. <option>
+3. <option, when useful>
+Waiting for: <the exact item or approval>
+```
 
-## Tool Integrations
-
-These are evaluation examples, not guaranteed integrations. Verify current
-official documentation, authenticated access, licensing, model availability,
-render cost, output rights, and callable tools in the current session.
-
-| Tool | Type | Verify Before Use |
-|------|------|-------------------|
-| **HeyGen** | AI avatars | Likeness consent, plan rights, API access, cost |
-| **Hyperframes** | Programmatic video | Installed runtime, renderer, asset licenses |
-| **Remotion** | Programmatic video | Current license, runtime, renderer, hosting cost |
-| **Runway** | AI generation | Model access, generation rights, price, limits |
+Continue with the manual-handoff artifacts above only when they remain useful
+and do not imply the blocker was resolved or that a render occurred.
 
 ---
 

@@ -457,10 +457,19 @@ Before printing:
 
 - **Cross-reference check** — every `suede-marketing-ideas` number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
 - **MCP/API check** — every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
-- **Path check** — no machine-specific paths (`/Users/...`, `/home/...`) in the output. Replace with descriptive references.
+- **Path check** — no machine-specific paths in the output. Prove it by running `grep -nE '/Users/|/home/|/private/tmp' final_plan.md` and requiring zero matches; replace any hit with a descriptive reference.
 - **Voice check** — final read against brand voice rules. Flag and fix violations.
 - **Open-decisions check** — every "TBD" or unanswered question from intake is listed in Section 13's open decisions, not hidden in the body.
 - **Acknowledge check** — every item from "already done" in research.md is acknowledged somewhere in the plan.
+
+**Halt format for a failed check.** On any check that does not pass: stop
+finalize, name the failed check and the specific artifact that failed it (the
+idea number, the tool, the grep hit, the voice rule, the missing open decision),
+then offer these options and wait for the user's choice — (1) fix the source
+section and re-run the full verification pass, (2) accept as-is with the
+mismatch recorded in Section 13's open decisions, (3) re-open that section in
+REVIEW, or (4) abort finalize and keep the current `phase`. Never advance
+`finalize_step` past a failed check.
 
 After compilation readback and `final_plan_sha256` verification succeed, set
 `finalize_step: verify`. The verification pass is also idempotent: rerun every

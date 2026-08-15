@@ -9,28 +9,13 @@ Suede produces a comprehensive marketing operating plan across Acquisition, Acti
 
 The deliverable is a single Notion-paste-ready markdown document — the kind of strategy artifact a fractional CMO would present to founders. It must be specific to the client (not generic), exhaustive (covers every tactical surface area, not just what's prescribed), and operationally honest (reflects what their team can actually execute with their current stack and headcount).
 
-## When to use
-
-Invoke this skill when:
-
-- A user is starting a new client engagement as a fractional CMO or marketing consultant
-- A founder needs a 12-month marketing roadmap they can share with their team or investors
-- A team wants to consolidate scattered marketing work (SEO research, brand voice docs, audit findings, onboarding analyses) into a single coherent plan
-- The user explicitly asks for a "marketing plan," "growth plan," "GTM plan," "fCMO plan," "AARRR plan," or "90-day + 12-month marketing roadmap"
-- An existing scored audit (from any prior current-state assessment) needs to be sequenced into an action plan
-
-**Do not use** when the user wants a tactical execution document for a single channel (use the channel-specific skill instead — `suede-emails`, `suede-ads`, `suede-seo-audit`, `suede-onboarding`, etc.), or when the user just wants marketing ideas without commitment to a plan (use `suede-marketing-ideas`).
-
 ## How this skill is invoked
 
-```
-/suede-marketing-plan {client-name-or-domain}
-```
+`/suede-marketing-plan {client-name-or-domain}` — the argument is the client name
+or domain; with no argument, prompt for it.
 
-Examples:
-- `/suede-marketing-plan quietude.app`
-- `/suede-marketing-plan acme-saas`
-- `/suede-marketing-plan` (will prompt for client name)
+Read `.agents/product-marketing.md` first if it exists and ask only for what it
+does not cover; see `suede-product-marketing` for path fallbacks.
 
 On invocation, the skill reads `.agents/suede-marketing-plans/{client-slug}/progress.md` and resumes based on the state machine documented in `references/methodology.md` Step 1.1.2 (fresh → INIT → REVIEW → FINALIZE → finalized). Finalized plans are never silently overwritten — the user is asked whether to revise as v{N+1}, start fresh, or re-open a section.
 
@@ -79,8 +64,8 @@ Full template lives in `references/plan-template.md`. The structure:
 9. **90-day roadmap** — Weeks 1–2 (Unblock), 3–4 (Foundation), 5–8 (Velocity), 9–12 (Compound). AARRR-tagged, owner-assigned.
 10. **12-month outlook** — Quarterly decision checkpoints tied to verified resource, evidence, owner, and approval conditions.
 11. **Marketing operations stack** — Available marketing skills and authorized integrations mapped to each AARRR stage, owner, review gate, and fallback.
-12. **Tactical idea bank** — All 139 ideas from `suede-marketing-ideas` cross-referenced to AARRR + an evidence-based status: Current / Approved test / Conditional / Deferred / Skip.
-13. **Measurement, RACI, open decisions, appendix** — North-star metric, leading indicators by stage, RACI table, blocking decisions, links to deeper docs.
+12. **Tactical idea bank** — Every idea in the tactic library owned by `suede-marketing-ideas`, cross-referenced to AARRR + an evidence-based status: Current / Approved test / Conditional / Deferred / Skip.
+13. **Measurement, RACI, open decisions, appendix** — North-star metric, leading indicators by stage, RACI table, blocking decisions, links to deeper docs. Read `references/measurement-framework.md` before writing this section — it holds the north-star selection patterns, leading indicators by AARRR stage, review cadence, KPI target setting, kill criteria, and guardrail metrics this section compiles from.
 
 ## The AARRR framing
 
@@ -107,7 +92,7 @@ materials using the rubric's evidence gate; mark unsupported rows `Unknown`.
 
 ## Cross-references — skills this plan integrates with
 
-1. **`suede-marketing-ideas`** — 139 proven marketing tactics. Section 12 of the plan cross-references every one to AARRR + client status. Detail in `references/idea-cross-reference.md`.
+1. **`suede-marketing-ideas`** — owns the tactic library and its numbering. Section 12 of the plan cross-references every tactic to AARRR + client status; that skill's reference owns the count and the evidence stance. Detail in `references/idea-cross-reference.md`.
 2. **`suede-product-marketing`** — Sets up the foundational `.agents/product-marketing.md` context file (positioning, ICP, voice). Read this first; Section 2 (Strategic frame) builds on it.
 3. **AARRR-stage-specific skills** — `suede-onboarding`, `suede-signup`, `suede-emails`, `suede-referrals`, `suede-pricing`, etc. The "Marketing operations stack" (Section 11) maps these to AARRR stages.
 
@@ -240,19 +225,6 @@ Length expectation: ~8,000–12,000 words for a comprehensive plan. Shorter is f
 
 The full schema for `progress.md` and the resumption decision tree live in `references/methodology.md` Steps 1.1.1 and 1.1.2.
 
-## Related skills
-
-- **`suede-product-marketing`** — Run first. Captures positioning, ICP, voice in `.agents/product-marketing.md` so every section of the plan references the same foundation.
-- **`suede-marketing-ideas`** — Source of the 139 tactics in Section 12.
-- **`suede-customer-research`** — Deepens the ICP and voice-of-customer inputs that feed Section 2 (Strategic frame).
-- **`suede-onboarding`** — Deep work on Section 5 (Activation).
-- **`suede-emails`** — Deep work on Section 6 (Retention) + onboarding emails in Section 5.
-- **`suede-referrals`** — Deep work on Section 7 (Referral).
-- **`suede-pricing`** — Deep work on Section 8 (Revenue).
-- **`suede-seo-audit`** / **`suede-programmatic-seo`** — Deep work on the SEO portion of Section 4 (Acquisition).
-- **`suede-ads`** / **`suede-ad-creative`** — Deep work on an approved paid test after evidence, tracking, creative capacity, exposure, review, and stop gates pass.
-- **`suede-launch-packaging`** — Deep work on launch moments inside Section 4 / Section 9.
-
 ## Task-specific questions (used during INIT)
 
 The full intake questionnaire lives in `references/methodology.md`. The most important questions:
@@ -296,6 +268,8 @@ The exec summary should be short enough to read in 60 seconds. The rest should r
 
 - Use `suede-product-marketing` for positioning and `suede-customer-research` for voice-of-customer evidence.
 - Use `suede-marketing-ideas` for a wider option set and `suede-marketing-loops` for approved recurring operations.
+- Use `suede-marketing-council` when a strategic bet is contested — two defensible directions, an irreversible commitment, or a bet the user cannot revisit for months.
+- Use `suede-marketing-psychology` for the behavioral mechanism behind an Activation or Revenue move, stated as a testable hypothesis.
 - Use `suede-onboarding`, `suede-emails`, `suede-referrals`, or `suede-pricing` for lifecycle execution.
 - Use `suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, or `suede-ad-creative` for acquisition execution.
 - Use `suede-launch-packaging` for the launch moment.

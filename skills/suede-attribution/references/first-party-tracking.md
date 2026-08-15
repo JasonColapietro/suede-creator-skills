@@ -4,6 +4,17 @@ How to instrument and stitch attribution yourself when you control the site/app.
 
 The core method — closing the `identify()` gap so conversions join to anonymous browsing history — is **adapted from Tessa Kriesel's PostHog attribution approach**. Several of the production refinements that make this operate at scale are also hers, credited inline: the full-touch-path capture that feeds the model track (Step 4), the CRM last-mile with source/confidence/basis and a Paid-vs-Organic read (Step 5), the account rollup, and the "expect ~zero until the stitch is verified, with a campaign-window fallback + backfill" window (Cross-subdomain stitching). Credit where due.
 
+## Contents
+- The one idea
+- Step 0 — Audit before you build
+- Step 1 — Identify at each real conversion
+- Step 2 — Stitch conversions on a domain you don't own
+- Step 3 — The guardrails (do not skip)
+- Step 4 — Report
+- Step 5 — The last mile: get attribution into the CRM
+- Verification checklist
+- Adapting to other stacks
+
 ## The one idea
 
 First-party attribution joins **anonymous browsing** to the **eventual conversion**:

@@ -38,9 +38,10 @@ Most users prefer option 1. After presenting the draft, ask: "What needs correct
 
 **If auto-drafting:**
 1. Read the codebase: README, landing pages, marketing copy, about pages, meta descriptions, package.json, any existing docs
-2. Draft all sections based on what you find
-3. Present the draft and ask what needs correcting or is missing
-4. Iterate until the user is satisfied
+2. Draft only what the sources actually say. **Every auto-drafted field carries its source** in the form `[src: path/to/file.md]` — the file the claim came from. A field with no source is not drafted: leave it empty and mark it `[unverified]`.
+3. Never source a field from inference. If the README implies a differentiator without stating it, if a competitor is guessed from the category, or if a testimonial-shaped sentence in marketing copy has no attributed customer, that field is `[unverified]` — not a draft with a hedge. Differentiation, Competitive Landscape, Proof Points, and Customer Language are where this rule earns its keep; a fabricated entry there propagates to every skill that reads this doc.
+4. Present the draft and say plainly how many fields are sourced versus `[unverified]`, then ask what needs correcting or is missing
+5. Iterate until the user is satisfied. A field the user confirms in conversation is sourced as `[src: user]`
 
 **If starting from scratch:**
 Walk through each section below conversationally, one at a time. Don't dump all questions at once.
@@ -139,6 +140,12 @@ After gathering information, create `.agents/product-marketing.md` with this str
 
 **Document version:** v1
 **Last updated:** [date]
+**Status:** complete | partial — missing: [required sections still empty]
+
+*Every field ends with its source — `[src: README.md]`, `[src: interview
+2026-05-04]`, `[src: user]` — or the marker `[unverified]` if nothing on record
+supports it. An unsourced field is empty by definition; do not fill it to make
+the document look finished.*
 
 ## Product Overview
 **One-liner:**
@@ -213,8 +220,8 @@ After gathering information, create `.agents/product-marketing.md` with this str
 ## Proof Points
 **Metrics:**
 **Customers:**
-**Testimonials:**
-> "[quote]" — [who]
+**Testimonials:** *(verbatim only — a quote with no attributable source is `[unverified]`, never paraphrased into existence)*
+> "[quote]" — [who] [src: where this quote was published or collected]
 **Value themes:**
 | Theme | Proof |
 |-------|-------|
@@ -236,6 +243,8 @@ After gathering information, create `.agents/product-marketing.md` with this str
 
 - Show the completed document
 - Ask if anything needs adjustment
+- **Check the v1 floor before saving.** Six sections must be non-empty and sourced for the document to be trustworthy as shared context: Product Overview, Target Audience, Problems & Pain Points, Differentiation, Customer Language, and Goals. Everything else is optional by product type. If any of the six is empty or entirely `[unverified]`, set `Status: partial` and list exactly which ones on that line. Never save a partial document as `complete`.
+- **What a partial document means downstream.** A consuming skill that reads `.agents/product-marketing.md` and finds `Status: partial` must ask the user for the named missing sections before generating anything that depends on them, and must not infer them from the rest of the doc. Say this in the save message so the user knows why they will be asked again.
 - **Set the version and changelog** — this is the paper trail for a doc every other skill reads:
   - **New document:** set `Document version: v1` and a single Changelog entry — `- v1 ([today]) — Initial context.`
   - **Updating an existing document:** increment the version (v2 → v3 …), update `Last updated` to today, and **prepend a new Changelog entry** at the top of the list (newest first) summarizing *what changed and why* in one line. Never rewrite or reorder past entries.
@@ -253,11 +262,7 @@ After gathering information, create `.agents/product-marketing.md` with this str
 
 ## Tips
 
-- **Be specific**: Ask "What's the #1 frustration that brings them to you?" not "What problem do they solve?"
-- **Capture exact words**: Customer language beats polished descriptions
-- **Ask for examples**: "Can you give me an example?" unlocks better answers
-- **Validate as you go**: Summarize each section and confirm before moving on
-- **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+- **Skip what doesn't apply**, outside the six-section v1 floor in Step 4: not every product needs Personas (B2C), Switching Dynamics, or a Glossary. Skipping one of the six is not a skip — it is a `partial` document.
 
 ## Boundaries
 

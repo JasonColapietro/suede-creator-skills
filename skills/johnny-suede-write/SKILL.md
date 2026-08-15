@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-write
-description: "Write sharper Suede copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers."
+description: "Suede Labs full writing stack: sharper copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers, with an SEO/AEO/AI EO pass, persona and framework selection, brand-voice alignment, and a scored ship gate. Use when a writing job spans more than one surface, needs a voice retune as well as a draft, needs discoverability metadata alongside the copy, or when the user asks for 'the full writing stack', a launch package, or a public explainer talk-track. NOT FOR: one standalone conversion surface in one pass (use suede-copy); stripping AI patterns from text you did not write (use suede-deslop); a researched multi-phase piece for a high-stakes public surface (use suede-ship-copy); a deep standalone SEO audit (use suede-seo-audit); copy that ships inside a design or layout build (use johnny-suede-design)."
 ---
 
 # Johnny Suede Write
@@ -57,11 +57,11 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 | Audit/review existing copy and return findings + score | **Copy Audit** output shape |
 | Do a metadata/structure/copy-quality SEO pass alongside copy | **SEO And GitHub Copy** + **SEO Audit Mode** |
 
-**Drop down instead of running this stack:** for a single standalone conversion surface (one email, one hero, one button set) with no SEO pass and no voice retune, run `$suede-copy` directly. When the copy ships inside a design or layout build, run `$johnny-suede-design`; its Copy lane applies these rules.
+**Drop down instead of running this stack:** for a single standalone conversion surface (one email, one hero, one button set) with no SEO pass and no voice retune, run suede-copy directly. When the copy ships inside a design or layout build, run johnny-suede-design; its Copy lane applies these rules. For a researched, multi-phase piece on a high-stakes public surface, escalate to suede-ship-copy.
 
 Cross-lane jobs (e.g. "rewrite the homepage, retune it to our voice, and give me social variants") run sequentially with shared context: write the surface, run Brand-Voice Alignment on it, then spin variants. State the chain you ran.
 
-If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a code grade/review, or a reference-URL restyle, those live in dedicated skills outside this writing enchilada (`$suede-seo-audit`, `$suede-site-alchemy`, `$suede-visibility-grader`, `$suede-code-grader`, `$suede-code-review`, `$suede-agent-teams`, `$suede-design`, or `$johnny-suede-design` and its Suedify lane for restyles). Route there and pass full context; do not reimplement them here. This skill owns the writing.
+If the request is a full standalone SEO/AEO audit with a scored report, a landing-page-to-conversion-engine transform, an A-F page grade, a code grade/review, or a reference-URL restyle, those live in dedicated skills outside this writing enchilada (suede-seo-audit, suede-site-alchemy, suede-visibility-grader, suede-code-grader, suede-code-review, suede-agent-teams, suede-design, or johnny-suede-design and its Suedify lane for restyles). Route there and pass full context; do not reimplement them here. This skill owns the writing.
 
 ## Multi-Agent Default
 
@@ -242,12 +242,9 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 4. Keep local-only details out of public headline copy.
 5. Add an evidence boundary when rights, money, registry, or release language appears.
 
-**Line-edit rules:**
-- Name the actor. Use the creator, operator, buyer, agent, page, repo, command, workflow, route, or proof artifact instead of vague market or page agency.
+**Line-edit rules** (the full gate set runs at Workflow step 8; these two are the lane's own vocabulary):
 - Put the reader in the room with a concrete artifact: rights passport, provenance note, split check, install command, QA checklist, screenshot, source link, release folder.
-- Cut pull-quote slogans unless backed by a specific action or proof.
 - Replace jargon with the thing the reader can inspect, click, ship, verify, or reuse.
-- Avoid formulaic pivots, negative listing, Wh-starter crutches, fake intensity, lazy extremes, passive actor-hiding, and em dashes.
 
 **Output of this lane:** the revised copy only, plus any claims that need verification. Do not append the full workflow scaffolding unless asked.
 
@@ -294,7 +291,7 @@ Use keywords because they help the right reader find the page. Do not cram a key
 
 ## SEO Audit Mode
 
-For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), route to `$suede-seo-audit`.
+For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), route to suede-seo-audit.
 
 When the copy workflow includes an SEO pass (metadata, structure, or copy quality only):
 - **Metadata:** title, meta description, Open Graph, Twitter card, image alt, author/publisher, durable entity names.
@@ -411,6 +408,7 @@ If any of these thoughts appear, stop and run the gate you were about to skip:
 - "It's one button label, skip the score." Microcopy ships to more readers than the blog post.
 - "That claim is close enough." Close enough is invented proof. Cut it or flag it.
 - "The user is in a hurry, deliver without variants." Variants are the deliverable for headlines, CTAs, and subjects.
+- "The user wrote this copy, soften the finding." Report the defects and the score you measured. Do not open with praise, do not restate the copy's strengths in place of findings, and do not round a below-threshold score up because the author is in the room.
 
 ## Ship Gate
 
@@ -425,6 +423,7 @@ Recommend against shipping copy — and say why, leaving the call to the user �
 ## Routing
 
 - One standalone conversion surface, no SEO pass → suede-copy
+- High-stakes public piece that needs research, angles, and an adversarial pass before publication → suede-ship-copy
 - The surface needs design or layout work too → johnny-suede-design
 - Full standalone SEO/AEO audit → suede-seo-audit; A-F page grade before launch → suede-visibility-grader
 - Copy approved and ready to publish as a release → suede-launch-packaging

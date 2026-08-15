@@ -1,6 +1,6 @@
 ---
 name: suede-recommend-next-action
-description: "Next-action selector for this pack: reads current repo, terminal, plan, or handoff state, scores 2-4 candidate moves against goal alignment, unblocking, evidence, urgency, and leverage, and returns one recommended action plus a short, self-contained copy/paste prompt — expanding into a full operator prompt or granular steps only on request. Use when the user asks 'what's next', 'what should I do next', 'recommend the next move', 'give me the prompt', 'expand prompt', or 'make it granular', especially after a review, audit, plan, or stalled task. NOT FOR: executing the recommended action without the user's separate authorization, or coordinating a multi-lane build across specialists (use suede-agent-teams)."
+description: "Next-action selector for the Suede pack: inspects current repo, terminal, plan, or handoff state read-only and returns one recommended next move plus a short, self-contained copy/paste prompt for it. Use when the user asks 'what's next', 'what should I do next', 'recommend the next move', 'give me the prompt', 'expand prompt', or 'make it granular', especially after a review, audit, plan, or stalled task. NOT FOR: executing the recommended action without the user's separate authorization, or coordinating a multi-lane build across specialists (use suede-agent-teams)."
 ---
 
 # Suede Recommend Next Action
@@ -16,7 +16,13 @@ until the user asks to expand it.
    request, conversation, handoff, plan, repo, or live surface.
 2. Check only the evidence needed to distinguish the next move. Prefer, in
    order: current terminal/repo/live state, current source documents, current
-   plans or handoffs, then older memory.
+   plans or handoffs, then older memory. Run the reads, don't assume them:
+   `git -C <target-repo> status --short --branch` for dirty files and
+   ahead/behind, `git -C <target-repo> log --oneline -5` for what actually
+   landed, a direct read of the named plan/STATE/handoff file at its exact
+   path, and — when a live surface is in scope — a fetch of the URL itself
+   (`curl -sS -o /dev/null -w '%{http_code}' <url>`) instead of trusting the
+   last recorded deploy. Skip any read that cannot change which candidate wins.
 3. Generate 2-4 candidate actions internally. Exclude work already verified as
    complete, adjacent cleanup, and actions outside the user's authorized scope.
 4. Score each candidate from 0-2 on every criterion below. Recommend the

@@ -1,6 +1,6 @@
 ---
 name: suede-deslop
-description: "Strip AI writing patterns from prose before anything goes public. Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice, formulaic structures, all of it. Use when copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated. NOT FOR: writing new copy (use suede-copy); changing or certifying facts, which must be checked against primary evidence before publication."
+description: "Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public. Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice, formulaic structures, all of it. Use when copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated. NOT FOR: writing new copy (use suede-copy); changing or certifying facts, which must be checked against primary evidence before publication."
 ---
 
 # Suede Deslop

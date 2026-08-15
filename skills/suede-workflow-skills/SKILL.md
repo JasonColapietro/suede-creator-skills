@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 73 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack."
+description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the whole Suede stack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; explicit max-effort or max-agent language (use suede-full-send, which owns controller selection); a multi-file repo change that should be built and reviewed as one DAG (use suede-ship)."
 ---
 
 # Suede Workflow Skills
@@ -116,7 +116,12 @@ their names match the task:
 - `amazon-returns-recovery`
 - `subscription-recovery`
 
-If only this umbrella skill is installed, follow the condensed workflow below.
+Read `references/condensed-workflows.md` in this skill's `references/` folder
+when the individual skills named above are not installed — the Codex path that
+installs `suede-workflow-skills` alone is the common case. It carries a frozen
+fallback version of the Suedify, design, copy/SEO, visibility, site-alchemy,
+code-review, and agent-team workflows. Skip it entirely when the pack is
+installed: route to the specialist, which owns the current method.
 
 ## Core Rule
 
@@ -134,6 +139,14 @@ packaging, or agent-team delivery, also read
 It is additive: preserve all existing Suede workflow features, then apply its
 copy, design, design-system, visual QA, and continuous team-loop gates.
 
+Fix-loop cap (applies to every lane, in this skill or any it routes to): if a
+loop churns or repeats the same failure, stop broad work, isolate the failing
+unit, and replay it with explicit acceptance criteria, rerunning only the
+failed check. Budget recovery at up to three genuinely different fixes — each
+must change the diagnosis or the strategy, never rerun the last attempt. Stop
+early when the same root cause repeats, surface that cause to the user, and
+let them pick the next move instead of grinding.
+
 Red flags — stop:
 
 - "I'll summarize the request for the sub-skill." — Pass the original request verbatim; paraphrase loses the trigger.
@@ -146,16 +159,6 @@ Accept feedback at any point in the workflow, not only after final handoff.
 When the user says what worked, preserve that pattern in the current pass and
 mirror it later. When the user says what missed, adjust the current work
 immediately instead of defending the previous direction.
-
-If the user says `cue suede`, asks for feedback choices, or seems to be
-calibrating the work mid-stream, pause at the next safe checkpoint and offer:
-
-```text
-Cue Suede:
-1. Change something - tell me what to revise and I will adjust it.
-2. Preserve this - tell me what worked so I can mimic it later.
-3. Keep as-is - say nothing and I will treat it as accepted.
-```
 
 At the end of meaningful Suede work, after verification, close in this order:
 
@@ -176,9 +179,11 @@ Cue Suede:
 3. Keep as-is - say nothing and I will treat it as accepted.
 ```
 
-Do not block completion waiting for a `Cue Suede` answer. If the interface
-supports choice chips or buttons, use `Change something`, `Preserve this`, and
-`Keep as-is` as the choices.
+If the user says `cue suede`, asks for feedback choices, or is calibrating the
+work mid-stream, offer the `Cue Suede` block on its own at the next safe
+checkpoint. Do not block completion waiting for an answer to it. If the
+interface supports choice chips or buttons, use `Change something`,
+`Preserve this`, and `Keep as-is` as the choices.
 
 ## When To Use MCP
 
@@ -193,260 +198,15 @@ Use the Suede MCP only when it adds structure:
 Skip MCP for small edits, normal implementation, quick copy fixes, or anything
 where direct skill execution is faster.
 
-## Suedify Workflow
-
-Use this when the user provides or implies:
-
-```text
-reference_url -> target_url
-```
-
-1. Capture the reference site's layout, hierarchy, spacing, typography, color
-   roles, imagery, navigation, motion, proof structure, and mobile behavior.
-2. Capture the target site's current content, brand assets, claims, routes,
-   dead links, weak copy, and mobile behavior.
-3. Map reference signals to target-safe equivalents. Do not copy proprietary
-   code, logos, exact copy, private assets, fake proof, or unsupported claims.
-4. Implement inside the target's existing framework, components, tokens, and
-   routing patterns when possible.
-5. Verify desktop and mobile render, text fit, links, accessibility basics,
-   build/test commands, and live route before calling the restyle done.
-
-Output:
-
-```text
-Reference URL:
-Target URL:
-Fidelity level:
-Changed:
-Verification:
-Unmatched reference signals:
-Legal/brand caveats:
-Status: ship | ship-with-caveats | hold
-```
-
-## Design Workflow
-
-For design or frontend work:
-
-1. Identify the exact surface: repo/folder, route, live URL, branch, dirty
-   files, and relevant local docs.
-2. Decide the register: brand page, product UI, dashboard, campaign page,
-   docs surface, or app workflow.
-3. Name the user-visible job and primary action.
-4. Check layout, typography, color, spacing, imagery, state coverage,
-   responsiveness, accessibility basics, and copy fit.
-5. Render before and after when practical.
-6. For major visual work, compare source visual truth and rendered
-   implementation together, with matched viewport, state, theme, content, and
-   auth conditions.
-
-Major design work needs a compact contract:
-
-```text
-Objective:
-Surface:
-Done signal:
-Constraints:
-Lanes:
-```
-
-Do not call visual work done from source inspection alone when a rendered page
-can be checked.
-
-For design-system work, capture at least the token map, component inventory,
-state matrix, screenshot contract or preview board, asset register, migration
-notes, and a scored quality audit when the scope is broad enough.
-
-## Copy And SEO Workflow
-
-For public copy, docs, README, landing pages, skill pages, plugin listings, and
-SEO passes, including AEO and AI EO:
-
-1. Identify reader, page type, primary action, proof, and evidence boundaries.
-2. Write the clearest outcome first.
-3. Use concrete artifacts, commands, links, screenshots, files, or examples as
-   proof.
-4. Keep titles under 60 characters when practical and meta descriptions under
-   160 characters when practical.
-5. Check H1, headings, internal links, schema/JSON-LD, CTA clarity, FAQ fit,
-   search intent, answer intent, and sourceable proof.
-6. Remove generic AI phrasing, filler, vague claims, and unsupported promises.
-7. Run the no-missed copy gate: cut formulaic structure, fake intensity,
-   rhetorical setup, inanimate false agency, quote-bait lines, and detached
-   business jargon while preserving true Suede specificity.
-
-Full audit output:
-
-```text
-[HIGH|MEDIUM|LOW] Finding
-Location:
-Issue:
-Fix:
-Suggested copy:
-Verification:
-
-SEO title:
-Meta description:
-H1:
-Subhead:
-Primary CTA:
-Internal links:
-Schema changes:
-Answer-ready summary:
-Evidence boundaries:
-Ship gate: ship | ship-with-caveats | hold
-```
-
-## Visibility Grading Workflow
-
-For public pages, GitHub Pages sites, docs, campaign pages, launch pages, and
-creator pages, use `suede-visibility-grader` when the question is whether the
-right person or agent can find the page, understand it, trust it, cite it, and
-take the next action.
-
-Grade:
-
-```text
-Findability: A-F
-First-screen clarity: A-F
-CTA pull: A-F
-Proof and trust: A-F
-AI readability: A-F
-Design signal: A-F
-Overall: A-F
-```
-
-Treat the grade as an execution guide, not an audited traffic metric. Inspect
-the live URL or source before grading and name anything that was not checked.
-For public surfaces, visual evidence matters. Missing live/render inspection
-caps promotion readiness, and broken CTA, false claim, inaccessible primary
-action, or unresolved major design-signal failure can hold the page even when
-metadata looks acceptable.
-
-## Site Alchemy Workflow
-
-For landing pages, campaign pages, product microsites, public repo pages, or
-conversion surfaces:
-
-1. Name one buyer, one offer, one proof stack, and one action.
-2. Rewrite the hero before touching decorative details.
-3. Build a CTA ladder: primary action, proof/docs action, and next-step action.
-4. Improve section rhythm, mobile composition, text fit, and link clarity.
-5. Run a link sweep and verify the live or local rendered page before shipping.
-
-Use these named moves as notes, not shell commands:
-
-- `/vibe-scan`
-- `/hero-voltage`
-- `/offer-spine`
-- `/proof-stack`
-- `/cta-magnet`
-- `/mobile-seduction`
-- `/ship-polish`
-
-## Code Review Workflow
-
-For code, docs, plugin, MCP, or public-site changes:
-
-1. Build a context graph: changed files, callers, routes, data flow, configs,
-   docs, tests, generated files, and runtime surfaces.
-2. Review for production behavior, security, published-statement accuracy, regression
-   risk, missing tests, broken install paths, stale docs, and deploy gaps.
-3. Lead with findings ordered by severity.
-
-Finding format:
-
-```text
-P0/P1/P2/P3 - Title
-File/route:
-Evidence:
-Impact:
-Fix:
-Verification:
-Confidence:
-```
-
-Ship gate:
-
-- `ship`: required verification passed and no known blocker remains.
-- `ship-with-caveats`: no blocker remains, but caveats are named.
-- `hold`: blocker or high-risk unknown remains.
-
-For important work, include a Suede A-F code grade:
-
-```text
-Code grade:
-Correctness: A-F
-Security and permissions: A-F
-Data and state: A-F
-Suede truth: A-F
-UX and release behavior: A-F
-Tests and verification: A-F
-Deploy readiness: A-F
-Overall: A-F
-```
-
-When the user asks for a grade more than a full findings report, route to
-`suede-code-grader` and include the explanation for why the grade landed there.
-
-## Agent Team Workflow
-
-Use team lanes for large, risky, cross-surface, public, design-heavy, or
-release-bound work. Use the max-agent loop when the user asks for it or the
-task needs continuous quality gates, evals, recovery controls, and release
-truth.
-
-When the user explicitly asks for full send, max effort, max agents, max agent
-teams, spare no compute, to throw or burn tokens, to fix everything, not to
-stop, or says "never end your allocation above zero," route through
-`suede-full-send`. It freezes authority and selects one controller; it does
-not create a competing team protocol or promise access to a hidden token
-counter.
-
-Define:
-
-```text
-Objective:
-Target:
-Constraints:
-Lane Map:
-Dependency Order:
-Done Signal:
-Ship Gate:
-```
-
-Useful grouping loops:
-
-- Linear delivery loop: scout, plan, build, verify, review, ship.
-- Continuous PR loop: branch/PR/CI/review/release control for public or risky
-  work.
-- RFC/DAG loop: decompose broad work into ordered decisions and atomic tasks
-  before implementation.
-- Exploratory parallel loop: run independent approaches or audits in parallel
-  only when file ownership does not collide.
-- Parallel surface loop: split lanes only when file ownership does not collide.
-- Scout and constraints loop: map docs, WIP, risky files, live routes, owners,
-  and no-touch boundaries before edits.
-- Adversarial review loop: one lane tries to break the work from production,
-  user, release, published-statement, and abuse angles before release.
-- Consensus review loop: two review lenses merge blockers, caveats, and fixes.
-- Design and visibility loop: rendered QA plus A-F page visibility grading.
-- Code grade loop: A-F code grade plus fix briefs for weak lanes.
-- WIP protection loop: claim allowed files and sequence lanes that collide.
-- Release lock loop: build, deploy, live/API readback, claim truth, handoff.
-- Recovery loop: isolate a failed check, patch the gap, rerun the failed check.
-- Evidence handoff loop: gather screenshots, commands, URLs, caveats, and next
-  action for the next agent.
-- Freeze/replay recovery: if a loop churns or repeats the same failure, stop
-  broad work, isolate the failing unit, replay with explicit acceptance
-  criteria, and rerun only the failed check. Budget recovery at up to three
-  genuinely different fixes — each must change the diagnosis or strategy —
-  and stop early when the same root cause repeats, surfacing it to the user.
-
 ## Specialized Lane Router
 
 Context handoff (required): When delegating to an individual skill, pass the original user request verbatim as the first input to that skill. Do not paraphrase or summarize. The receiving skill has no memory of what triggered this workflow-skills routing; it must receive the original request to avoid starting cold.
+
+Dispatch (required for multi-lane work): send each lane to its own subagent
+carrying that verbatim request, rather than loading every specialist body into
+this context on top of this router and its references. Name the model on each
+dispatch, state a numeric lane cap before launching, and stop at the cap
+instead of refilling.
 
 When the task names a narrower Suede lane, route directly.
 
@@ -475,9 +235,20 @@ Build and quality lane:
   retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
 - CI merge gate: `suede-ci-gate` — prompted only.
 - Large, risky, cross-surface, or release-bound coordination:
-  `suede-agent-teams` (see Agent Team Workflow above).
+  `suede-agent-teams`. If it is not installed, use the Agent Team Workflow in
+  `references/condensed-workflows.md`.
 - One scored recommendation for what to do next, packaged as a runnable
   prompt: `suede-recommend-next-action`.
+
+Ship lane:
+
+- A change to one repo touching more than one file or surface, run as a single
+  researched, decomposed, adversarially reviewed, release-checked DAG:
+  `suede-ship`. This is the default for nontrivial repo work and outranks the
+  copy or design lane when the request also names one.
+- One high-stakes public text surface that strangers will read and that has to
+  be true — landing page, launch post, docs page, README, store listing:
+  `suede-ship-copy`.
 
 Launch lane, in pipeline order:
 
@@ -489,6 +260,38 @@ Launch lane, in pipeline order:
 - Site-to-iOS conversion: `site-to-ios-app`.
 - Native Android app build, from keyword to Play Store release:
   `android-app-factory`.
+
+Growth and marketing lane — route to the narrowest skill that matches, not to
+the whole group:
+
+- Plan, strategy, and idea generation: `suede-marketing-plan`,
+  `suede-marketing-ideas`, `suede-marketing-loops`, `suede-marketing-council`
+  (multi-perspective critique), `suede-marketing-psychology` (persuasion
+  mechanics behind a message).
+- Market and buyer research: `suede-competitors`, `suede-competitor-profiling`
+  (one named rival in depth), `suede-customer-research`.
+- Positioning and product-side messaging: `suede-product-marketing`; app-store
+  listing and keywords: `suede-aso`.
+- Paid and creative: `suede-ads` (strategy, channels, budget),
+  `suede-ad-creative` (the ad units themselves).
+- Organic and social: `suede-social`, `suede-instagram-growth` (account-specific
+  Instagram audit and daily loops), `suede-video`, `suede-image`,
+  `suede-clip-to-guide` (turn a clip into a written guide),
+  `suede-content-strategy`.
+- Search and programmatic reach: `suede-programmatic-seo`, `suede-ai-seo`,
+  `suede-directory-submissions`.
+- Outbound and pipeline: `suede-cold-email`, `suede-prospecting`,
+  `suede-sales-enablement`, `suede-revops`.
+- Earned and partner distribution: `suede-public-relations`,
+  `suede-co-marketing`, `suede-community-marketing`, `suede-referrals`.
+- Lifecycle messaging: `suede-emails`, `suede-sms`.
+- Top-of-funnel assets: `suede-lead-magnets`, `suede-free-tools`.
+- Offer, pricing, and monetization: `suede-offers`, `suede-pricing`,
+  `suede-paywalls`.
+- Activation and retention: `suede-signup`, `suede-onboarding`,
+  `suede-churn-prevention`.
+- Measurement and experiments: `suede-analytics`, `suede-attribution`,
+  `suede-ab-testing`.
 
 Creator lane:
 
@@ -508,86 +311,29 @@ Consumer recovery lane:
   Play, PayPal): `subscription-recovery` — hands Amazon-billed subscriptions
   back to `amazon-returns-recovery` instead of duplicating that flow.
 
-Use the umbrella workflow when the user wants the whole Suede stack or when the
-task crosses several lanes.
+Precedence when several routers match at once:
 
-Useful lanes:
-
-- Scout: repo, docs, live state, dirty files, and blast radius.
-- Planner: tasks, dependencies, and acceptance criteria.
-- Builder: narrow code/content changes.
-- Design reviewer: responsive visual QA, accessibility basics, copy, states.
-- Visibility grader: findability, first-screen clarity, CTA pull, proof, AI
-  readability, and design signal.
-- Code grader: A-F ship-risk grade with lane scores and required upgrades.
-- Code reviewer: correctness, security, regression, tests, install paths.
-- Release verifier: build, deploy, live/API behavior, published statements.
-- Handoff writer: files changed, commands, verification, caveats, next step.
+- Explicit max-effort language — full send, max agents, spare no compute, burn
+  tokens, fix everything, and the rest of the trigger list that
+  `suede-full-send` carries in its own description — routes to
+  `suede-full-send`, which owns controller selection. This umbrella becomes a
+  subordinate lane under the controller it picks; it never owns the plan or the
+  progress store in that case.
+- A multi-file or multi-surface change to one repo that should be built and
+  reviewed as one DAG routes to `suede-ship`, even when the request also names
+  a copy or design lane.
+- Otherwise, use this umbrella workflow when the user wants the whole Suede
+  stack or when the task crosses several lanes, and route straight to the
+  specialist when the request names one lane.
 
 ## Public Install Guidance
 
-**Claude Code** — add the marketplace and install the pack:
-
-```bash
-/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede
-```
-
-`suede-skills` installs all 71 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 71 skills into `~/.claude/skills/`:
-
-```bash
-git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
-```
-
-**Codex** — install this skill from GitHub:
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-workflow-skills
-```
-
-Install workflow skills when direct triggering matters:
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/johnny-suede-write \
-  skills/johnny-suede-design \
-  skills/suede-code \
-  skills/suede-code-review \
-  skills/suede-code-grader \
-  skills/suede-copy \
-  skills/suede-deslop \
-  skills/suede-design \
-  skills/suede-agent-teams \
-  skills/suede-codex-fleet \
-  skills/suede-full-send \
-  skills/suede-ai-eval \
-  skills/suede-recommend-next-action \
-  skills/suede-ci-gate \
-  skills/suede-seo-audit \
-  skills/suede-visibility-grader \
-  skills/suede-site-alchemy \
-  skills/suede-launch-packaging \
-  skills/suede-mcp-qa \
-  skills/site-to-ios-app \
-  skills/android-app-factory
-```
-
-Install creator skills:
-
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo JasonColapietro/suede-creator-skills \
-  --path skills/suede-campaign-in-a-box \
-  skills/suede-sync-packaging \
-  skills/suede-release-linter \
-  skills/suede-rights-passport \
-  skills/suede-rights-audit
-```
-
-Restart Codex after installing new skills.
+The pack ships 73 skills. Install commands for Claude Code (marketplace,
+plugin subsets, `install.sh` clone) and for Codex (umbrella-only or per-skill)
+are in `references/install.md` in this skill's `references/` folder — read it
+only when the user asks how to install, update, or subset the pack. The Suede
+MCP's `suede_install_options` tool answers the same question live and is the
+better source when it is available.
 
 ## Boundaries
 

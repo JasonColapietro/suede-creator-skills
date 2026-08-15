@@ -10,6 +10,18 @@ Two rules that apply to every entry:
 
 Loops are grouped by function. Naming follows the "The X loop" convention.
 
+## Contents
+
+- **SEO & Content** — keyword-gap, ranking-drop watch, content-decay, internal-linking, programmatic-SEO quality, content-repurposing, content-calendar refill
+- **Paid** — ad-fatigue, daily-creative-drop, monthly-creative-retro, paid-search query-mining, retargeting-hygiene, landing-page regression
+- **Earned, Social & Partnerships** — newsjacking, social-listening, community-engagement, competitor-watch, backlink-prospecting, directory-submission, partner-pipeline
+- **Activation** — onboarding drop-off, signup-funnel-leak, lead-capture-asset, feature-adoption
+- **Retention** — churn-signal, lifecycle-email-refresh, re-engagement, email-deliverability, voice-of-customer
+- **Revenue** — trial-conversion, PQL / upgrade-intent, pricing-page-experiment, paywall-optimization, expansion / upsell, failed-payment / dunning
+- **Referral & Advocacy** — referral-nudge, review-and-UGC-harvest, review-site-management, case-study-sourcing
+- **Ongoing Ops / Meta** — weekly-marketing-review, experiment-backlog, analytics-anomaly, brand-mention / reputation, tracking-QA, campaign-postmortem
+- **Adapting and authoring loops** — how to tune an entry or write a new one
+
 ---
 
 ## SEO & Content

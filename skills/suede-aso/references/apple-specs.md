@@ -35,6 +35,9 @@ keyword count significantly.
 
 - Formats: JPEG, PNG
 - Apple auto-scales from required base sizes to smaller devices
+- **First 3 screenshots** are the ones visible in search results
+- **Caption text on screenshots is indexed since June 2025**, extracted by Apple's
+  AI from the image itself — on-image copy is searchable text, not decoration
 
 ## App Preview Video Specs
 
@@ -86,6 +89,13 @@ keyword count significantly.
 - Do not use custom buttons to request reviews
 - Developers can respond to all reviews in App Store Connect
 - Summary rating is territory-specific
+
+## Editorial Curation
+
+Apple runs human editorial curation (Today tab, category features, collections)
+alongside algorithmic ranking. Design quality, screenshot craft, and a coherent
+product story therefore carry weight beyond keyword indexing — Google Play has
+no equivalent human-curated surface at the same scale.
 
 ## Metadata Rejection Triggers (App Review Guidelines)
 

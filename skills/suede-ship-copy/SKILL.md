@@ -1,6 +1,6 @@
 ---
 name: suede-ship-copy
-description: "Suede Labs copy-only orchestration DAG: intake with a verbatim capture of the published text, five blind research lenses, an audit of agent-generated facts that closes the set of assertable claims, three angles, a section map with one message per section, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet)."
+description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet)."
 ---
 
 # Suede Ship Copy
@@ -13,15 +13,17 @@ same file. This decomposes by **message ownership**: two sections may never make
 the same point, and no section may assert a fact an agent invented. Same graph,
 different collision rule.
 
-## Model selection — never Fable by default
+## Model selection — Fable capped at 4 without asking
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
 happens to be set to. That is how a run sized against one allocation gets billed to
 another without anyone choosing it.
 
-**Fable must be specified to be used. This skill's subagents never run on Fable
-unless the user named Fable for this run.** An inherited session model is not a
+**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
+instruction. Beyond that, Fable must be specified** — every range this skill offers
+(30 at the narrowest) is far beyond 4, so its fan-out never runs on Fable unless the
+user named Fable for this run. An inherited session model is not a
 specification — "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
@@ -110,19 +112,12 @@ exactly the behavior the next section forbids. The exception covers findings
 about agent-generated content and about the live environment. A given is not a
 finding.
 
-## Choose this, the single pass, or the fleet
-
-| The job | The tool |
-|---|---|
-| One piece, read by strangers, where a wrong number is a real cost | `suede-ship-copy` |
-| One surface, written in one pass, facts already known | `suede-copy` |
-| Text that exists and needs the AI patterns stripped | `suede-deslop` |
-| Forty product descriptions from a spec | `suede-codex-fleet` (bills to OpenAI) |
-| The change is code, not copy | `suede-ship` |
+## What it costs
 
 This is the expensive instrument: about thirty agents (26 floor, ~31 typical,
-42 ceiling), research-heavy and front-loaded, billed to the Claude limit. Brute
-force beats surgery when the work is genuinely parallel and shallow.
+42 ceiling), research-heavy and front-loaded, billed to the Claude limit. When the
+work is genuinely parallel and shallow instead, brute force beats surgery — the
+Routing section at the end says where each of those jobs goes.
 
 ## Parse the invocation
 

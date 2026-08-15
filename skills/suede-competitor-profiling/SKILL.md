@@ -11,35 +11,9 @@ Use this Suede competitive-intelligence playbook to turn current public evidence
 
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — your own positioning and ICP decide which competitors are actually comparable and which dimensions are worth profiling, and they are usually already written down there.
 
-Before profiling, confirm:
-
-1. **Competitor URLs** — the list of competitor website URLs to profile
-2. **Your product** — what you do (if not in product marketing context)
-3. **Depth level** — quick scan (key facts only) or deep profile (full research)
-4. **Focus areas** — any specific dimensions to prioritize (e.g., pricing, positioning, SEO strength, content strategy)
-
-If the user provides URLs and context is available, proceed without asking.
-
----
-
-## Core Principles
-
-### 1. Facts Over Opinions
-Every claim in a profile should be traceable to a source — captured public-page
-content, review data, or clearly labeled provider metrics. Label inferences
-clearly.
-
-### 2. Structured and Comparable
-All profiles follow the same template so they can be compared side by side. Consistency matters more than completeness on any single profile.
-
-### 3. Current Data
-Profiles are snapshots. Always include the date generated. Flag anything that looks stale (e.g., "pricing page last updated 2023").
-
-### 4. Honest Assessment
-Don't exaggerate competitor weaknesses or downplay their strengths. Accurate profiles are useful profiles.
+Then work the intake list under Task-Specific Questions below. If the user gave URLs and the context file covers the rest, proceed without asking.
 
 ---
 
@@ -96,6 +70,19 @@ fallback: open the public site, follow its primary navigation, inspect its
 public sitemap or search results when accessible, record the exact URLs and
 access date, and capture only evidence visible to the user. Respect access
 controls, site terms, robots directives where applicable, and rate limits.
+
+**When the gate blocks you** — a source needs an account you were not given, a
+platform is not connected, a site's terms or robots directives put a page out of
+bounds, or the user wants a dossier published or sent onward without having
+authorized it — halt in four parts:
+
+1. Stop. Do not collect the blocked source or publish the dossier.
+2. Name the blocker in one line ("G2 reviews for <competitor> require a signed-in
+   account; this session has no authorized G2 connection").
+3. Offer 2-4 options (proceed without that source and mark the fields
+   `not collected`; the user supplies an export; the user authorizes the
+   connection; substitute a permitted source).
+4. Wait for the answer. Do not pick one and continue.
 
 #### Step 1: Map the site
 
@@ -219,6 +206,25 @@ When it exposes relevant-page estimates, collect:
 
 Combine scraped content with SEO data to build the profile. Cross-reference claims (e.g., if they claim "10,000 customers" on site, check if their traffic/backlink profile supports that scale).
 
+### Phase 4: Prove it before you hand it over
+
+Run this before the profile leaves your hands. It is one `ls` against a
+structure Phase 1 and Phase 2 already produced:
+
+```
+ls -R competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/
+```
+
+- Every field not marked `[unknown]` and not marked `not collected` traces to a
+  saved file in that folder. A `[fact: ...]` field traces to the `scrapes/`,
+  `reviews/` or `seo/` file it was read from; an `[inference]` field traces to
+  the scrape file it was inferred from, not to a separate artifact.
+- Any field that traces to nothing gets re-collected or re-marked `[unknown]`.
+  It is never softened into confident prose — that is exactly what Boundaries
+  forbids below.
+- The `## Raw Data Sources` block names the date folder the profile was built
+  from, so the same check is repeatable by someone else later.
+
 ---
 
 ## Output Format
@@ -229,151 +235,15 @@ Generate one markdown file per competitor, saved to a `competitor-profiles/` dir
 
 **Filename**: `competitor-profiles/[competitor-name].md`
 
-**For the full profile and summary templates**: See [references/templates.md](references/templates.md)
+**Read [references/templates.md](references/templates.md) before writing the first
+profile of a run**: it holds the evidence-marker legend that every field uses, the
+full Deep Profile Template, the Quick Scan Template, and the summary, positioning-map,
+SWOT and changelog templates. Do not reconstruct a profile structure from memory —
+consistency across profiles is what makes them comparable.
 
-Each profile follows this structure:
-
-```markdown
-# [Competitor Name] — Competitor Profile
-
-**URL**: [website]
-**Generated**: [date]
-**Depth**: [quick scan / deep profile]
-
----
-
-## At a Glance
-
-| Metric | Value |
-|--------|-------|
-| Tagline | [from homepage] |
-| Founded | [year] |
-| Headquarters | [location] |
-| Team size | [estimate] |
-| Funding | [if known] |
-| Provider domain metric | [value, provider, market, and access date; or not collected] |
-| Est. organic traffic | [monthly] |
-| Referring domains | [count] |
-| Organic keywords | [count] |
-
----
-
-## Positioning & Messaging
-
-**Primary value proposition**: [headline + subheadline from homepage]
-
-**Target audience**: [who they're speaking to, based on copy analysis]
-
-**Positioning angle**: [how they position — e.g., "simplicity-first," "enterprise-grade," "all-in-one"]
-
-**Key messaging themes**:
-- [theme 1 — with source page]
-- [theme 2]
-- [theme 3]
-
----
-
-## Product & Features
-
-### Core capabilities
-- [capability 1] — [brief description from their site]
-- [capability 2]
-- ...
-
-### Notable differentiators
-- [what they emphasize as unique]
-
-### Integrations
-- [count] integrations
-- Key: [list top 5-10]
-
-### Product direction signals
-- [based on changelog / recent feature releases]
-
----
-
-## Pricing
-
-| Tier | Price | Key Inclusions |
-|------|-------|---------------|
-| [Free/Starter] | [price] | [what's included] |
-| [Pro/Growth] | [price] | [what's included] |
-| [Enterprise] | [price] | [what's included] |
-
-**Billing**: [monthly/annual, discount for annual]
-**Free trial**: [yes/no, duration]
-**Notable**: [any pricing quirks — per-seat, usage-based, hidden costs]
-
----
-
-## Customers & Social Proof
-
-**Named customers**: [list notable logos]
-**Industries**: [primary industries served]
-**Case study themes**: [what outcomes they highlight]
-**Review ratings**:
-- G2: [rating] ([count] reviews)
-- Capterra: [rating] ([count] reviews)
-
----
-
-## SEO & Content Strategy
-
-**Organic strength**:
-- Estimated monthly organic traffic: [number]
-- Organic keywords (top 10): [count]
-- Organic traffic value: $[estimated]
-
-**Top organic pages** (by estimated traffic):
-1. [page URL] — [keyword] — [est. traffic]
-2. [page URL] — [keyword] — [est. traffic]
-3. [page URL] — [keyword] — [est. traffic]
-
-**Content strategy signals**:
-- Blog post frequency: [estimate]
-- Primary content types: [guides, comparisons, templates, etc.]
-- Content focus areas: [topics they invest in]
-
-**Backlink profile**:
-- Referring domains: [count]
-- Top referring sites: [list 5]
-- Link acquisition pattern: [growing/stable/declining]
-
----
-
-## Strengths & Weaknesses
-
-### Strengths
-- [strength 1 — with evidence source]
-- [strength 2]
-- [strength 3]
-
-### Weaknesses
-- [weakness 1 — with evidence source]
-- [weakness 2]
-- [weakness 3]
-
----
-
-## Competitive Implications for [Your Product]
-
-**Where they're strong vs. us**: [areas where this competitor has an advantage]
-
-**Where we're strong vs. them**: [areas where you have an advantage]
-
-**Opportunities**: [gaps in their offering or positioning we can exploit]
-
-**Threats**: [areas where they're improving or gaining ground]
-
----
-
-## Raw Data Sources
-
-- Homepage scraped: [date]
-- Pricing page scraped: [date]
-- SEO data pulled: [date]
-- Review data pulled: [date, sources]
-```
+The deep profile runs these sections in order: At a Glance, Positioning & Messaging,
+Product & Features, Pricing, Customers & Social Proof, SEO & Content Strategy,
+Strengths & Weaknesses, Competitive Implications, Raw Data Sources.
 
 ---
 

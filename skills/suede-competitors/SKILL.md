@@ -11,56 +11,9 @@ Use this Suede comparison-page playbook to serve competitive search intent while
 
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — your value proposition, ICP, pricing model, and honest weaknesses decide which comparisons are even defensible, and they are usually already written down there.
 
-Before creating competitor pages, understand:
-
-1. **Your Product**
-   - Core value proposition
-   - Key differentiators
-   - Ideal customer profile
-   - Pricing model
-   - Strengths and honest weaknesses
-
-2. **Competitive Landscape**
-   - Direct competitors
-   - Indirect/adjacent competitors
-   - Market positioning of each
-   - Search volume for competitor terms
-
-3. **Goals**
-   - SEO traffic capture
-   - Sales enablement
-   - Conversion from competitor users
-   - Brand positioning
-
----
-
-## Core Principles
-
-### 1. Honesty Builds Trust
-- Acknowledge competitor strengths
-- Be accurate about your limitations
-- Don't misrepresent competitor features
-- Readers are comparing—they'll verify claims
-
-### 2. Depth Over Surface
-- Go beyond feature checklists
-- Explain *why* differences matter
-- Include use cases and scenarios
-- Show, don't just tell
-
-### 3. Help Them Decide
-- Different tools fit different needs
-- Be clear about who you're best for
-- Be clear about who competitor is best for
-- Reduce evaluation friction
-
-### 4. Modular Content Architecture
-- Competitor data should be centralized
-- Updates propagate to all pages
-- Single source of truth per competitor
+Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer. Current competitor evidence — pricing, features, ratings — comes from `suede-competitor-profiling`, not from memory.
 
 ---
 
@@ -146,6 +99,20 @@ Before creating competitor pages, understand:
 
 ---
 
+## Cliches to Refuse
+
+A comparison page written on autopilot arrives with these already in it. Each one
+tells an evaluator the page is marketing, not research — refuse them by name:
+
+- **The strawman competitor.** A weakness stated as caricature ("clunky", "built for 2015") rather than a specific, sourced limitation a user would actually hit.
+- **A "Winner" row.** No verdict row, no trophy, no score-out-of-10 that resolves to you. The reader decides; the page supplies evidence.
+- **Fake balance.** "They're great for enterprise, we're great for everyone else" concedes nothing. A real concession names a case where the competitor is the better buy for a reader you want.
+- **A table where every row favors you.** If the dimensions were chosen honestly, some rows go the other way. If none do, the dimensions were chosen to win, not to inform.
+
+For the two remaining defaults — the ✓/✗ feature table and a migration section with no real friction — use the concrete before/after in [references/templates.md](references/templates.md): "Comparison Table Best Practices" and "Migration Section".
+
+---
+
 ## Essential Sections
 
 ### TL;DR Summary
@@ -162,6 +129,12 @@ Include tier-by-tier comparison, what's included, hidden costs, and total cost c
 
 ### Who It's For
 Be explicit about ideal customer for each option. Honest recommendations build trust.
+
+Every page names at least one dimension where the competitor genuinely wins and
+the reader should not switch — sourced like any other claim, with a URL and a
+checked date. Not a hedge ("some teams prefer..."), a concession: the specific
+reader, the specific reason. A page with no such dimension is not finished; it
+means the comparison was scoped to guarantee the answer.
 
 ### Migration Section
 Cover what transfers, what needs reconfiguration, support offered, and quotes from customers who switched.
@@ -227,16 +200,33 @@ Consider FAQ schema for common questions like "What is the best alternative to [
 
 ---
 
+## Before You Hand It Over
+
+Boundaries below requires a final claim review before any comparison page ships.
+This is that review — run it as a second pass over the finished draft, not while
+drafting:
+
+1. Re-read every claim about a competitor: pricing, tier contents, feature
+   availability, ratings, review counts, testimonials, headcount, funding.
+2. Each one carries a source URL and the date you checked it. A claim without
+   both is **cut, or explicitly marked unverified in the page** — never softened
+   into hedged prose ("reportedly", "many users find", "known for"). Hedging an
+   unsourced claim keeps the claim and loses the accountability.
+3. Anything sourced more than a quarter ago gets re-checked before publication,
+   not carried forward. Pricing pages move.
+4. Claims about your own live visibility or how AI answers cite the page are not
+   verifiable from here — route those to `suede-seo-audit`.
+
+---
+
 ## Output Format
 
-### Competitor Data File
-Complete competitor profile in YAML format for use across all comparison pages.
+Three deliverables, all with their schemas in the references — do not invent a
+shape for them:
 
-### Page Content
-For each page: URL, meta tags, full page copy organized by section, comparison tables, CTAs.
-
-### Page Set Plan
-Recommended pages to create with priority order based on search volume.
+- **Competitor data file** — the centralized per-competitor record; structure in [references/content-architecture.md](references/content-architecture.md).
+- **Page content** — URL, meta tags, full copy by section, tables, CTAs; section templates in [references/templates.md](references/templates.md).
+- **Page set plan** — which pages to create, in priority order by search volume and evidence readiness.
 
 ---
 
@@ -259,6 +249,7 @@ Recommended pages to create with priority order based on search volume.
 ## Routing
 
 - Need current competitor evidence -> use `suede-competitor-profiling`.
+- Need review-mining or forum synthesis for the "common complaints" and switching-reason sections -> use `suede-customer-research`.
 - Need scaled comparison-page architecture -> use `suede-programmatic-seo`.
 - Need final page copy or organic QA -> use `suede-copy` or `suede-seo-audit`.
 - Need internal battle cards -> use `suede-sales-enablement`.

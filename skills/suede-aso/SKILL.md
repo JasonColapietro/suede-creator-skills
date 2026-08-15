@@ -1,6 +1,6 @@
 ---
 name: suede-aso
-description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use site-to-ios-app or android-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
+description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), writing store metadata fields for an app that has not shipped yet (private Suede Labs companion, not in this pack: ios-aso-launch), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
 metadata:
   version: 2.0.0
 ---
@@ -10,13 +10,6 @@ metadata:
 Analyze App Store and Google Play listings with the Suede ASO scoring system. Fetch
 live listing data, score metadata, visuals, and ratings, then produce a
 prioritized action plan.
-
-## When to Use
-
-- User shares an App Store or Google Play URL
-- User asks to audit or optimize an app listing
-- User wants to compare their app against competitors
-- User asks about app store ranking, visibility, or download conversion
 
 ## Before Auditing
 
@@ -113,24 +106,10 @@ household name is not the same as a missed opportunity by an unknown app.
 | **Established** | Well-known in their category, 100K+ ratings, strong organic installs, recognized brand but not universally known.                    | Strava, Notion, Duolingo, Cash App, Calm    |
 | **Challenger**  | Building awareness, <100K ratings, needs discovery through keywords and ASO tactics. Most apps fall here.                            | Your app, most indie/startup apps           |
 
-### How tier affects scoring
-
-**Dominant apps** get adjusted scoring in these areas:
-
-- **Title:** Brand-only or brand-first titles are valid (score 8+ if brand is the keyword). These apps don't need generic keyword discovery.
-- **Description:** Score purely on conversion quality, not keyword presence. If the app is a household name, a well-crafted brand description beats a keyword-stuffed one.
-- **Visual Assets:** Lifestyle/brand photography instead of UI demos is a legitimate conversion strategy. No video is acceptable if the product is hard to demo in 30s or brand awareness is near-universal.
-- **What's New:** Generic release notes at weekly+ cadence are acceptable (score 8+). At scale, detailed changelogs have minimal ROI and risk backlash.
-- **In-app events:** Missing events for utility apps with massive install bases (Uber, WhatsApp) is not a penalty. These apps don't need discovery help.
-- **Localization:** Score relative to actual market, not absolute count. A US-only fintech with 2 languages (English + Spanish) is appropriately localized.
-
-**Established apps** get partial adjustment:
-
-- Brand-first titles are fine but should still include 1-2 keywords
-- Strategic description choices get benefit of the doubt
-- Other dimensions scored normally
-
-**Challenger apps** are scored strictly against textbook ASO best practices — every character, screenshot, and keyword matters.
+Classification happens here, before any scoring. The per-dimension adjustments
+each tier earns live under "Brand Maturity Adjustments" in
+`references/scoring-criteria.md`, which Phase 2 loads before scoring — do not
+restate or re-derive them here.
 
 **Key principle:** Before docking points, ask: "Is this a mistake or a deliberate
 choice by a team that has data I don't?" If the app has 1M+ ratings and a
@@ -160,7 +139,28 @@ Reference files for platform specs and benchmarks:
 | 5   | Metadata & Freshness | 10%    | Category choice, update recency, localization count, data safety          |
 | 6   | Conversion Signals   | 10%    | Price positioning, IAP transparency, social proof, download range         |
 
-**Final score** = weighted sum, out of 100.
+**Final score** = weighted sum of the dimensions that were actually observed.
+
+### Unassessable dimensions (read before computing any score)
+
+`references/scoring-criteria.md` defines score 0 as "cannot assess (data
+unavailable)". Missing data is the normal case here, not the exception —
+WebFetch cannot extract screenshots or caption text, and promotional text is
+indistinguishable in scraped HTML. A 0 for unfetched data is not a bad listing;
+scoring it as one fabricates a failing grade (an unobserved Visual Assets
+dimension at 25% weight silently drops an A listing to D).
+
+House rule:
+
+1. A dimension you could not observe is **excluded from the weighted
+   denominator**, not scored 0. Rescale the remaining weights and state the
+   denominator used ("74/100 across 4 dimensions carrying 75% weight").
+2. List every excluded dimension as **not assessed**, with the reason and what
+   the user would need to supply to close it (a screenshot of the listing page,
+   App Store Connect access).
+3. If **more than 25% of total weight** is unassessed, **withhold the letter
+   grade entirely.** Report the partial scores and the blocked dimensions
+   instead; do not present a grade the evidence cannot support.
 
 ### Score interpretation
 
@@ -194,7 +194,9 @@ Use the template in `references/report-template.md` to structure the output.
 
 The report must include:
 
-1. **Score card** — table with all 6 dimensions, scores, and grade
+1. **Score card** — table with all 6 dimensions, scores, the weighted denominator
+   actually used, and the grade (withheld per the unassessable-dimension rule
+   when more than 25% of weight went unassessed)
 2. **Top 3 quick wins** — changes that take <1 hour and have highest impact
 3. **Detailed findings** — per-dimension breakdown with specific issues and fixes
 4. **Keyword suggestions** — based on title/description analysis and competitor gaps
@@ -213,38 +215,13 @@ The report must include:
 
 ## Platform-Specific Rules
 
-### Apple App Store — Key Facts
+Character limits, screenshot and video specs, CPP and experiment rules, policy
+prohibitions, Android Vitals thresholds, editorial curation, and rejection
+triggers are versioned in the three reference files listed in Phase 2. Read the
+one for the store being audited before scoring any dimension against a spec —
+they are the source of truth, and dated platform facts are not repeated here.
 
-- Title (30 chars) + Subtitle (30 chars) + Keyword field (100 **bytes**, hidden) = indexed text
-- Keywords field is bytes not chars — Arabic/CJK use 2-3 bytes per char
-- Long description is NOT indexed for search — optimize for conversion only
-- Promotional text (170 chars) does NOT affect search (Apple confirmed)
-- Never repeat words across title/subtitle/keyword field (Apple indexes each word once)
-- Keyword field: commas, no spaces ("photo,editor,filter" not "photo, editor, filter")
-- Screenshots: up to 10 per device. First 3 visible in search — 90% never scroll past 3rd
-- Screenshot captions indexed since June 2025 (AI extraction)
-- In-app events: max 10 published at once, max 31 days each. Indexed and appear in search
-- Custom Product Pages (up to 70) in organic search since July 2025. +5.9% avg conversion lift
-- App preview video: up to 3, 15-30s each. Autoplays muted — +20-40% conversion lift
-- SKStoreReviewController: max 3 prompts per 365 days
-- Apple has human editorial curation — quality and design matter more
-- See `references/apple-specs.md` for full specs, dimensions, and rejection triggers
-
-### Google Play — Key Facts
-
-- Title (30 chars) + Short description (80 chars) + Full description (4,000 chars) = indexed text
-- Full description IS indexed — target 2-3% keyword density naturally
-- No hidden keyword field — all keywords must be in visible text
-- Google NLP/semantic understanding — keyword stuffing detected and penalized
-- Prohibited in title: emojis, ALL CAPS, "best"/"#1"/"free", CTAs (enforced since 2021)
-- Screenshots: min 2, **max 8** per device (not 10 like Apple)
-- Feature graphic (1024x500, exact) required for featured placements
-- Video does NOT autoplay — only ~6% of users tap play (low ROI vs iOS)
-- Android Vitals directly affect ranking: crash >1.09% or ANR >0.47% = reduced visibility
-- Promotional Content: submit 14 days early for featuring. Apps see 2x explore acquisitions
-- Custom Store Listings: up to 50 (can target churned users, specific countries, ad campaigns)
-- Store Listing Experiments: test up to 3 variants, run 7+ days, 1 experiment at a time
-- See `references/google-play-specs.md` for full specs and policy details
+The one comparison that drives scoring on every audit stays inline:
 
 ### What Apple Indexes vs What Google Indexes
 
@@ -266,30 +243,41 @@ The report must include:
 Flag these if found. Items marked _(tier-dependent)_ should be evaluated against
 the app's brand maturity tier — they may be deliberate choices for Dominant apps.
 
+Every flag carries an **author action**, so the reader knows what to do with it:
+
+| Action | Meaning |
+|---|---|
+| **Blocks the listing** | Risks rejection, removal, or ranking suppression. Fix before the next submission. |
+| **Required** | Costs measurable installs or conversion. Fix in the next release cycle. |
+| **Optional** | Upside, not a defect. Ship if capacity allows. |
+
 **Always flag (all tiers):**
 
-- [ ] Rating below 4.0
-- [ ] Last update > 3 months ago
-- [ ] Google Play description has no keyword strategy (under 1% density)
-- [ ] Google Play missing feature graphic
-- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle)
-- [ ] Category mismatch — app would face less competition in a different category
-- [ ] Fewer than 5 screenshots
+- [ ] Rating below 4.0 — **required**
+- [ ] Last update > 3 months ago — **required**
+- [ ] Google Play description has no keyword strategy (under 1% density) — **required**
+- [ ] Google Play missing feature graphic — **blocks the listing** (no featured placement without it)
+- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle) — **required**
+- [ ] Category mismatch — app would face less competition in a different category — **required**
+- [ ] Fewer than 5 screenshots — **required**
 
 **Flag for Challenger/Established only** _(not mistakes for Dominant apps):_
 
-- [ ] Title wastes characters on brand name only (no keywords) _(Dominant: brand IS the keyword)_
-- [ ] Subtitle/short description duplicates title keywords
-- [ ] Description first 3 lines are generic _(Dominant: may be brand-voice choice)_
-- [ ] No preview video _(Dominant: may be rational if product is hard to demo)_
-- [ ] Screenshots are just UI dumps with no messaging/captions _(Dominant: lifestyle/brand shots may convert better)_
-- [ ] Only 1-2 localizations _(score relative to actual market, not absolute count)_
-- [ ] No in-app events or promotional content _(Dominant utility apps may not need discovery help)_
+- [ ] Title wastes characters on brand name only (no keywords) — **required** _(Dominant: brand IS the keyword)_
+- [ ] Subtitle/short description duplicates title keywords — **required**
+- [ ] Description first 3 lines are generic — **required** _(Dominant: may be brand-voice choice)_
+- [ ] No preview video — **optional** _(Dominant: may be rational if product is hard to demo)_
+- [ ] Screenshots are just UI dumps with no messaging/captions — **required** _(Dominant: lifestyle/brand shots may convert better)_
+- [ ] Only 1-2 localizations — **optional** _(score relative to actual market, not absolute count)_
+- [ ] No in-app events or promotional content — **optional** _(Dominant utility apps may not need discovery help)_
 
 **Flag for all tiers but note context:**
 
-- [ ] No developer responses to negative reviews _(note volume — responding at 10M+ reviews is a different challenge than at 1K)_
-- [ ] Generic "What's New" text _(acceptable at weekly+ release cadence for Established/Dominant)_
+- [ ] No developer responses to negative reviews — **required** _(note volume — responding at 10M+ reviews is a different challenge than at 1K)_
+- [ ] Generic "What's New" text — **optional** _(Apple 2.3.12 makes it **blocks the listing** when the release carries significant changes)_
+
+Prohibited title metadata (emojis, ALL CAPS, "best"/"#1"/"free", CTAs on Google
+Play) is always **blocks the listing** — see `references/google-play-specs.md`.
 
 ---
 
@@ -316,5 +304,6 @@ the app's brand maturity tier — they may be deliberate choices for Dominant ap
 - Need paid app-install creative -> use `suede-ad-creative`.
 - Need install attribution or in-app events -> use `suede-analytics`.
 - Need customer language for listing copy -> use `suede-customer-research`.
-- Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`.
+- Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`; native iOS from scratch is a private Suede Labs companion, not in this pack: ios-app-factory.
+- Need App Store metadata authored for an app being shipped through the iOS factory pipeline -> private Suede Labs companion, not in this pack: ios-aso-launch. Precedence: `suede-aso` audits and scores a live listing from its URL; `ios-aso-launch` authors the metadata fields for a release in flight. Only one of the two owns a given field at a time.
 - From those skills, route listing audits, metadata strategy, and screenshot sequencing back to `suede-aso`.

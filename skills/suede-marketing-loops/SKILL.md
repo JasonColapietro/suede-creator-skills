@@ -13,7 +13,7 @@ This is the operational counterpart to `suede-marketing-ideas`: ideas identify w
 
 ## How to Use This Skill
 
-**Check for product marketing context first:** if `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`), read it before asking questions. Use that context and only ask for what's missing.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
 
 Then:
 1. **Clarify the job.** What outcome should this loop protect or grow? (rankings, ad efficiency, activation, retention, revenue, referrals)
@@ -73,11 +73,11 @@ For any loop that sends, spends, publishes, or touches personal data, apply `ref
 
 These loops are agent-agnostic — the *body* works in any agent. The *scheduling* depends on your environment:
 
-- **Scheduling-capable environment** — discover the installed scheduler, automation connector, or native scheduling primitives first and read their current instructions. Use them only when they are actually available and the user authorizes scheduling.
-- **Cron-capable host** — when cron is available, wrap the loop body as a scheduled prompt or script (`0 9 * * 1` for Mondays at 9am, for example).
-- **Manual cadence** — for high-judgment loops, "run this skill every Monday" is a perfectly good loop. The value is the repeatable *body*, not the automation.
+- **Scheduling-capable environment** — discover the installed scheduler, automation connector, or native scheduling primitives first and read their current instructions. Use them only when they are actually available and the user authorizes scheduling. Proof of a created schedule is the connector's own confirmation record — the created job's id or name and its next run time, quoted back.
+- **Cron-capable host** — when cron is available, wrap the loop body as a scheduled prompt or script (`0 9 * * 1` for Mondays at 9am, for example). Proof is `crontab -l` output showing the new line.
+- **Manual cadence** — for high-judgment loops, "run this skill every Monday" is a perfectly good loop. The value is the repeatable *body*, not the automation. Proof is the copyable cadence instruction itself, plus an explicit statement that nothing was scheduled.
 
-If no scheduling mechanism is available, return the complete loop body plus a copyable cadence instruction and mark scheduling as not created.
+Never report a loop as scheduled without showing that proof. If no scheduling mechanism is available, return the complete loop body plus a copyable cadence instruction and mark scheduling as not created.
 
 Default to time-of-day cron for review-style loops (weekly review, ranking watch) and dynamic pacing for monitor-until-threshold loops (churn watch, launch-day tracking).
 
@@ -88,6 +88,8 @@ Default to time-of-day cron for review-style loops (weekly review, ranking watch
 ## Authoring a new loop
 
 When nothing in the catalog fits, author a new loop from `references/loop-template.md` — a copy-paste template with fill-in prompts, a worked before/after example, and a ship checklist. Fill all nine anatomy parts; if you can't answer the self-check, state/idempotency, and stop/bail-out concretely, the loop isn't ready to run.
+
+**Halt format when a part can't be filled.** Stop. Name which of the nine anatomy parts is unfilled and what is missing to fill it. Offer these options and wait for the user's choice — (1) supply the missing part now, (2) downgrade to a manual cadence and ship the body without scheduling, (3) narrow the loop's scope until the missing part is no longer needed, or (4) abandon this loop. Do not schedule, and do not present a partial loop as ready. The same halt applies to the human-checkpoint decision in step 4 above: if what runs autonomously versus what stages for approval is undecided, stop there rather than picking a default.
 
 ## Anti-patterns
 
@@ -112,4 +114,5 @@ Avoid: "set it and forget it," "fully autonomous marketing," "AI does everything
 
 - Use `suede-marketing-ideas` for one-off tactics and `suede-ab-testing` for experimentation.
 - Use `suede-analytics` for measurement inputs.
+- Use `suede-content-strategy` for the portfolio decision behind a content loop — which pillars exist, and what should be refreshed, consolidated, or killed. This skill owns the recurring cadence; that skill owns what the cadence operates on.
 - Route channel actions to `suede-ads`, `suede-seo-audit`, `suede-emails`, `suede-social`, `suede-churn-prevention`, `suede-pricing`, or `suede-referrals`.

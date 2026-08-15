@@ -5,9 +5,7 @@ description: "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk ge
 
 # Suede Fable Fleet
 
-The Suede Fable Fleet: a high-end Claude model is the admiral — it decomposes, briefs, and reviews — and parallel OpenAI Codex CLI workers are the fleet. The skill id and command stay `suede-codex-fleet` on purpose: GitHub search, skill marketplaces, and MCP catalogs match the terms people actually type — Codex CLI orchestration, codex exec, multi-agent worker fleet — not the brand name. Do not rename the folder or frontmatter `name` to match the brand.
-
-> **"Fable" in the brand name is not the model `claude-fable-5`.** The workers in this fleet are always OpenAI Codex CLI processes. Never read "Fable Fleet" as license to spawn Claude models.
+The Suede Fable Fleet: a high-end Claude model is the admiral — it decomposes, briefs, and reviews — and parallel OpenAI Codex CLI workers are the fleet. Do not rename the folder or frontmatter `name` to match the brand.
 
 ## The workers are Codex processes — never Claude models
 
@@ -52,9 +50,10 @@ caffeinate -i codex exec -C <workspace> --sandbox workspace-write --skip-git-rep
    - `caffeinate -i` (macOS) is standard on every spawn: it blocks idle sleep for exactly the worker's lifetime and releases on exit, so the machine stays awake while any worker is alive and sleeps normally once the fleet drains. A slept Mac kills every in-flight worker silently. Lid stays open — closed-lid sleep overrides caffeinate unless the Mac is in clamshell mode (external display + power). On non-macOS hosts, drop the prefix.
    - `--sandbox workspace-write` only. Never `danger-full-access`. Workers write files; they do not push, deploy, or touch secrets.
    - Leave the model default unless explicitly asked to override with `-m`.
-4. **Review gate (Claude, mandatory).** Read every `out/` file. Check against the brief's acceptance criteria and the AGENTS.md hard bans. Worker self-checks are evidence, not verdicts. If the output fails 0 acceptance criteria but has surface defects (typos, formatting, a wrong label), Claude edits the file directly; do not respawn for a comma.
+   - **Append one row per spawn to `out/fleet-ledger.md` as each worker starts:** brief path, session id (printed at run start), output path, spawn time, and an empty disposition column. This file is the only durable record of the brief-to-session mapping — the transcript does not survive compaction, and without the session id step 5 degrades from a one-line delta into a full respawn of every in-flight worker.
+4. **Review gate (Claude, mandatory).** Read every `out/` file. Check against the brief's acceptance criteria and the AGENTS.md hard bans. Worker self-checks are evidence, not verdicts. If the output fails 0 acceptance criteria but has surface defects (typos, formatting, a wrong label), Claude edits the file directly; do not respawn for a comma. Write the verdict into that brief's ledger row — `accepted`, `rejected`, or `fix brief` — along with the running correction count.
 5. **Delta, don't regenerate.** If the output fails 1-2 acceptance criteria, send a one-line correction: `codex exec resume <session-id> "<delta>"` (session id is printed at run start; `resume --last` is ambiguous with parallel runs). If it fails 3+ criteria or violates an AGENTS.md hard ban, respawn with the delta appended to the brief. Regenerating from scratch wastes the subscription and loses what was right. Correction budget per output: up to three genuinely different fixes — each attempt must change the diagnosis or the strategy, never rerun the last one. Stop early when the same root cause repeats across attempts; report the repeating cause and let the user pick the next move.
-6. **Ship.** Claude assembles the reviewed survivors into the final deliverable. Report what was spawned, what passed, what got fixed.
+6. **Ship.** Claude assembles the reviewed survivors into the final deliverable. Prove the fleet is done rather than asserting it: read back a per-output acceptance-criteria pass/fail table from the files in `out/`, and reconcile `out/fleet-ledger.md` against the briefs spawned — every brief has a row, and every row carries a terminal disposition. Report spawned count, passed, fixed, and any brief with no accepted output.
 
 ## Brief template
 
@@ -81,7 +80,7 @@ Write to `out/<file>.md`. <structure spec>
 
 ## Fleet workspaces
 
-Keep a persistent workspace per recurring fleet job (a social-content fleet, a test-generation fleet, a refactor fleet) instead of rebuilding context every run. The workspace root holds the `AGENTS.md` contract, `briefs/`, and `out/`. When a brief produces output that passes review cleanly, keep it — proven briefs are the templates for the next run of the same shape.
+Keep a persistent workspace per recurring fleet job (a social-content fleet, a test-generation fleet, a refactor fleet) instead of rebuilding context every run. The workspace root holds the `AGENTS.md` contract, `briefs/`, and `out/` (including `out/fleet-ledger.md`, which persists across runs). When a brief produces output that passes review cleanly, keep it — proven briefs are the templates for the next run of the same shape.
 
 ## Hard boundaries
 

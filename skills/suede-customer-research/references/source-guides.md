@@ -2,6 +2,20 @@
 
 Detailed, source-by-source playbooks for gathering customer intelligence from online watering holes.
 
+## Contents
+- Reddit Research
+- G2 and Review Site Mining
+- Indie Hackers and Product Hunt
+- Hacker News
+- LinkedIn Research
+- YouTube Comments
+- Twitter / X Research
+- Blog Post and Forum Research
+- B2C and Consumer App Research
+- SparkToro (Audience Intelligence)
+- Organizing Your Research
+- Source Reliability and Confidence Scoring
+
 ---
 
 ## Reddit Research

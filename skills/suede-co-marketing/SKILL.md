@@ -14,14 +14,6 @@ Use this Suede co-marketing playbook to identify credible partners and design me
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
-## When to Use This Skill
-
-- Finding potential co-marketing partners
-- Brainstorming campaign ideas with a specific partner
-- Planning joint launches or promotions
-- Evaluating partnership fit
-- Structuring co-marketing agreements
-
 ---
 
 ## Partner Identification Framework
@@ -44,16 +36,25 @@ The best partners share your audience but don't compete for the same budget.
 
 ### 2. Partner Scoring Criteria
 
-Rate potential partners (1-5) on:
+Rate each candidate 1-5 on all six criteria, using these anchors. Score from
+evidence the user or a public source supplies; a criterion with no evidence is
+scored `?` and named as an open question, never guessed.
 
-| Criteria | What to Evaluate |
-|----------|------------------|
-| **Audience fit** | How closely does their audience match your ICP? |
-| **Audience size** | Do they have reach worth partnering for? |
-| **Brand alignment** | Would you be proud to be associated? |
-| **Engagement quality** | Do they have an active, engaged audience? |
-| **Reciprocity potential** | Can you offer them equal value? |
-| **Ease of execution** | Do they have a partnerships team? History of co-marketing? |
+| Criteria | 1 | 3 | 5 |
+|----------|---|---|---|
+| **Audience fit** | Different buyer, different problem | Same buyer, partial overlap | Same ICP, adjacent workflow step |
+| **Audience size** | Reach materially below yours | Same order of magnitude | At or above your reach on the shared channel |
+| **Brand alignment** | You would hedge before associating | Neutral; no known conflict | You would name them in your own marketing unprompted |
+| **Engagement quality** | Reach with no observable response | Some engagement, unverified | Documented engagement on the channel the campaign will use |
+| **Reciprocity potential** | Nothing of comparable value to offer | One-sided but tolerable | Both sides trade equivalent audience or asset value |
+| **Ease of execution** | No partnerships contact, no prior co-marketing | Contact exists, no track record | Partnerships team plus a shipped co-marketing history |
+
+**Pursue/drop rule:** pursue only partners scoring **4+ on both Audience fit and
+Reciprocity potential**. Anything below is reported as scored-and-dropped with
+the failing criterion named — it is not silently omitted.
+
+**Shortlist cap: 5.** At the cap, rank the five and report; do not expand the
+list. Additional candidates go in a named "not pursued this round" line.
 
 ### 3. Where to Find Partners
 
@@ -83,44 +84,15 @@ Rate potential partners (1-5) on:
 
 ## Co-Marketing Campaign Types
 
-### Content Partnerships
+Four families, with per-format effort, lead sharing, and best-fit in
+[references/campaign-formats.md](references/campaign-formats.md). Open that file
+whenever a campaign format is being chosen — the campaign plan must name its
+format from it.
 
-| Format | Effort | Lead Sharing | Best For |
-|--------|--------|--------------|----------|
-| **Co-authored blog post** | Low | Shared byline, link exchange | Thought leadership, SEO |
-| **Joint ebook/guide** | Medium | Gated, split leads | Lead gen, deeper topic |
-| **Research report** | High | Gated, split leads | Authority, PR |
-| **Guest newsletter swap** | Low | Each keeps own leads | Audience exposure |
-| **Podcast guest exchange** | Low | Each keeps own leads | Relationship building |
-
-### Webinars & Events
-
-| Format | Effort | Best For |
-|--------|--------|----------|
-| **Joint webinar** | Medium | Lead gen, product education |
-| **Virtual summit panel** | Medium | Multi-partner exposure |
-| **Co-hosted workshop** | High | Hands-on education, deeper engagement |
-| **Conference booth sharing** | Medium | Cost splitting, audience overlap |
-| **Joint happy hour/dinner** | Low | Relationship building at events |
-
-### Product & Integration Marketing
-
-| Format | Effort | Best For |
-|--------|--------|----------|
-| **Integration launch** | Medium | Existing integration partners |
-| **Joint case study** | Medium | Shared customers |
-| **"Better together" landing page** | Low | Integration discovery |
-| **Bundle or discount** | Medium | Conversion boost, cross-sell |
-| **In-app cross-promotion** | Medium | User activation |
-
-### Community & Social
-
-| Format | Effort | Best For |
-|--------|--------|----------|
-| **Social media takeover** | Low | Audience exposure |
-| **Joint giveaway/contest** | Low | List building, engagement |
-| **Slack/Discord community collab** | Low | Community building |
-| **Joint AMA or Twitter Space** | Low | Thought leadership |
+- **Content partnerships** — when both sides can produce and both audiences read.
+- **Webinars & events** — when the goal is gated lead generation or education.
+- **Product & integration marketing** — when a live integration or shared customer exists.
+- **Community & social** — when the goal is exposure or list growth, not pipeline.
 
 ---
 
@@ -142,26 +114,21 @@ When brainstorming with a specific partner, consider:
 
 ### 3. Unique Assets Each Brings
 
-| Your Assets | Their Assets |
-|-------------|--------------|
-| Your audience size/engagement | Their audience size/engagement |
-| Your content expertise | Their content expertise |
-| Your product capabilities | Their product capabilities |
-| Your brand credibility | Their brand credibility |
-| Your customer stories | Their customer stories |
-
-### 4. Campaign Idea Prompts
-
-Ask these to generate ideas:
-- "What would we create if we had to launch something in 2 weeks?"
-- "What content do both our audiences desperately need?"
-- "What would make customers say 'finally, someone did this'?"
-- "What exclusive thing could we offer together?"
-- "What data do we both have that would make a compelling story?"
+Inventory what each side brings across audience, content expertise, product
+capabilities, brand credibility, and customer stories, and name which asset the
+campaign actually depends on.
 
 ---
 
 ## Approaching Potential Partners
+
+### Outreach gate (draft-only, hard stop)
+
+Outreach drafts are produced; outreach is never sent. At the handover: stop, name
+the four variables in one line each — recipient, channel, visible sending
+identity, exact message — state that the outcome is a draft and nothing has been
+sent, offer **approve / revise / drop**, and wait for the user's pick. The same
+gate covers sharing any customer or overlap data with the partner.
 
 ### Cold Outreach Template
 
@@ -195,7 +162,10 @@ Would you be open to a quick call to explore?
 
 ### Key Questions to Align On
 
-- **Lead ownership**: How are leads split or shared?
+- **Lead ownership**: gated/split (one shared form, agreed split, written data
+  and consent terms) or each-keeps-own (no shared list — the default until data
+  terms are agreed). The format chosen from `references/campaign-formats.md`
+  names which arrangement it assumes.
 - **Promotion commitments**: What will each party do to promote?
 - **Asset creation**: Who creates what? Who approves?
 - **Timeline**: When does each phase happen?
@@ -217,21 +187,14 @@ Would you be open to a quick call to explore?
 
 ## Measuring Co-Marketing Success
 
-### Quantitative Metrics
-
 - Leads generated (total and per partner)
 - Lead quality (MQL/SQL conversion rate)
 - Revenue attributed
 - Audience growth (new subscribers, followers)
 - Content engagement (views, downloads, shares)
 
-### Qualitative Metrics
-
-- Ease of collaboration
-- Partner responsiveness
-- Audience reception
-- Brand lift
-- Relationship strengthened for future campaigns
+Baselines and targets come from the user's current analytics, not from a generic
+benchmark. Report only metrics both sides agreed to share.
 
 ---
 
@@ -240,7 +203,7 @@ Would you be open to a quick call to explore?
 ### Partner Identification
 - [ ] List tools your customers already use
 - [ ] Check Crossbeam/Reveal for account overlap
-- [ ] Score top 5 potential partners
+- [ ] Score candidates on all six criteria and apply the pursue/drop rule (cap 5)
 - [ ] Research their past co-marketing activities
 
 ### Campaign Planning
@@ -258,6 +221,32 @@ Would you be open to a quick call to explore?
 - [ ] Share metrics with partner
 - [ ] Debrief on what worked/didn't
 - [ ] Discuss future collaboration opportunities
+
+---
+
+## Output Format
+
+This skill returns one of two deliverables. Copy the matching skeleton verbatim
+from [references/output-templates.md](references/output-templates.md) — open that
+file before writing either one.
+
+**Scored partner shortlist** must contain:
+
+1. The ranked shortlist (max 5) with all six criterion scores per partner
+2. A scored-and-dropped list naming the failing criterion for each
+3. Open questions for any criterion scored `?`
+4. Candidates not pursued this round
+5. A recommended first move with a format named from `references/campaign-formats.md`
+
+**Joint campaign plan** must contain:
+
+1. Campaign format (named from the formats reference), goal, and its one proving metric
+2. Value exchange on both sides
+3. Responsibilities and timeline with an owner and approver per phase
+4. Lead handling — gated/split or each-keeps-own, with the capture path
+5. Promotion commitments, branding approvals, and maximum approved cost
+6. Measurement plan with agreed shared metrics and a debrief date
+7. An approval-status line stating nothing has been sent, published, or committed
 
 ---
 
@@ -301,4 +290,5 @@ Select capabilities against the campaign:
 - Need launch sequencing and release assets -> use `suede-launch-packaging`.
 - Need co-created editorial planning -> use `suede-content-strategy`.
 - Need partner-facing collateral -> use `suede-sales-enablement`.
+- Need earned media for a joint launch announcement -> use `suede-public-relations`.
 - From those skills, route partner selection and joint-campaign design back to `suede-co-marketing`.

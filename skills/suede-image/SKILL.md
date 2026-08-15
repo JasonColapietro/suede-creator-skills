@@ -1,6 +1,6 @@
 ---
 name: suede-image
-description: "Suede-affiliated marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso)."
+description: "Suede-owned marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso)."
 metadata:
   version: 2.0.1
 ---
@@ -90,7 +90,34 @@ research candidates, not routing instructions or capability claims.
 If no suitable renderer or editor is callable, deliver a production-ready prompt,
 layout spec, asset manifest, rights checklist, and export checklist. State clearly
 that no image was generated; do not route the user to an unavailable tool as
-though execution occurred.
+though execution occurred. Use these exact headings:
+
+```markdown
+## Prompt
+<Subject + Setting + Style + Lighting + Composition + Technical, one block,
+ready to paste; note any text that must be a deterministic overlay instead>
+
+## Layout Spec
+Canvas WxH + ratio | safe margins | focal point | text zones with max character
+counts | logo placement and clear space | color values
+
+## Asset Manifest
+Asset | origin (owned / licensed / captured / to be generated) | rights basis
+and holder | attribution or expiry | file path or "to source"
+
+## Rights Checklist
+- [ ] Every uploaded or referenced asset has a confirmed rights basis
+- [ ] No real person, endorsement, or product interface is fabricated
+- [ ] Brand mark is the approved file, unmodified, or omitted
+- [ ] Paid-tool cost approved, or no paid tool used
+
+## Export Checklist
+Destination | dimensions | format | quality target | file-size budget | alt text
+Then apply the Optimization Checklist in "Image Optimization" before delivery.
+
+## Not Done
+No image was generated. What would unblock production: <tool, authority, asset>
+```
 
 ### Prompting Basics
 
@@ -323,25 +350,29 @@ preview correctness and production time; do not promise a search outcome.
 
 ## Common Mistakes
 
-1. **Using AI for product UI screenshots** — models hallucinate interfaces; capture real screenshots
-2. **Skipping image optimization** — oversized images can materially hurt page performance
-3. **No preview image** — platforms may fall back to a less useful preview
-4. **Wrong aspect ratio** — check current platform specs before generating
-5. **Unverified generated text** — use deterministic overlays for exact copy
-6. **Generating without style direction** — "photorealistic," "flat illustration," "3D render" drastically changes output
-7. **Inconsistent brand visuals** — use locked, approved templates for consistency
-8. **Huge images on landing pages** — compress, resize, lazy load
+1. **Skipping image optimization** — oversized images can materially hurt page performance
+2. **No preview image** — platforms may fall back to a less useful preview
+3. **Inconsistent brand visuals** — use locked, approved templates for consistency
 
 ---
 
-## Task-Specific Questions
+## Halt Contract
 
-1. What type of image do you need? (Blog hero, social graphic, mockup, banner, brand asset)
-2. What platform or placement? (This determines dimensions)
-3. Do you have brand assets to match? (Colors, fonts, logo, style guide)
-4. Is this a one-off or a repeatable template?
-5. Which image or design tools are currently callable and authorized?
-6. Does this need to be optimized for web performance?
+Use this exact format when a callable tool, cost approval, rights confirmation,
+or the approved brand asset blocks the requested result:
+
+```text
+HALT — <one-line blocker>
+Why it blocks: <specific missing authority or evidence>
+Resolve with:
+1. <option>
+2. <option>
+3. <option, when useful>
+Waiting for: <the exact item or approval>
+```
+
+Continue with the no-tool handoff artifacts above only when they remain useful
+and do not imply an image was produced.
 
 ---
 
@@ -359,5 +390,6 @@ preview correctness and production time; do not promise a search outcome.
 
 - Use `suede-ad-creative` for paid-ad production and `suede-video` for motion.
 - Use `suede-social` for channel strategy and `suede-site-alchemy` for conversion placement.
+- Use `suede-instagram-growth` for Instagram format contracts — Reel covers, carousel slide counts, Story dimensions — before producing those assets here.
 - Use `suede-seo-audit` for image-search checks and `suede-aso` for app-store screenshots.
 - Use `suede-directory-submissions` for directory gallery planning.

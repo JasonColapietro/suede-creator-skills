@@ -98,7 +98,42 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 
 ---
 
-## Additional Video Structures
+## Video Structures
+
+These five beat sheets are the full set. Pick one before scripting, then test
+the opening against the account's comparable-format retention baseline.
+
+### Problem-Solution (15-30 sec)
+
+```
+[0-3s]  Hook: State the problem
+[3-10s] Agitate: Why it matters
+[10-25s] Solution: Your method/product/tip
+[25-30s] CTA: What to do next
+```
+
+Starting fit hypothesis: a single objection, a demo, a fix with visible proof
+
+### List Format (30-60 sec)
+
+```
+[0-3s]  Hook: "X things that [outcome]"
+[3-50s] Items: One every 5-8 seconds
+[50-60s] CTA
+```
+
+Starting fit hypothesis: save-intent content, checklists, roundups
+
+### Tutorial (30-60 sec)
+
+```
+[0-3s]  Hook: Show the end result first
+[3-8s]  Overview: "Here's how..."
+[8-50s] Steps: Quick, clear instructions
+[50-60s] Result + CTA
+```
+
+Starting fit hypothesis: process reveals, software walkthroughs, how-tos
 
 ### The Story Arc (45-60 sec)
 
@@ -121,6 +156,22 @@ Starting fit hypothesis: personal stories, case studies, testimonials
 ```
 
 Starting fit hypothesis: relatable content, humor, niche communities
+
+---
+
+## Caption & Subtitle Spec
+
+Use captions as an accessibility and comprehension default. Treat any watch-time
+lift or sound-off viewing rate as account-specific: verify it with current
+retention and audio metrics where the platform exposes them.
+
+- **MAX 2 lines** on screen at once
+- **3-5 words per line**
+- Bold, sans-serif font with black outline
+- **Highlight key words** in a different color
+- Match timing to speech exactly
+
+Caption tooling, export specs, and edit execution belong to `suede-video`.
 
 ---
 
