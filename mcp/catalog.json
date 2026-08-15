@@ -202,7 +202,7 @@
     {
       "name": "suede-ai-eval",
       "area": "workflow",
-      "description": "Design AI evals that catch regressions before users do: rubrics, test cases, failure modes, acceptance gates, and AI-SPEC artifacts.",
+      "description": "Suede Labs AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); UAT of the built feature beyond the eval suite (a private Suede Labs companion, not in this pack).",
       "useWhen": "Define measurable quality, safety, and regression checks for LLMs, classifiers, recommenders, agents, RAG, search, and media generation."
     },
     {
@@ -262,7 +262,7 @@
     {
       "name": "suede-code-review",
       "area": "workflow",
-      "description": "Find the bugs a diff can actually ship: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, and deploy-risk review. Return findings, not a grade.",
+      "description": "Suede Labs AI findings-only code review with full context: changed files, callers, contracts, and deploy surface. Covers TypeScript, React, Next.js, database, Swift/iOS, OWASP, accessibility, SEO, observability, commit hygiene, and deploy risk, ranked P0-P3 with file:line evidence and a fix path. Use when asked to review a diff, PR, branch, or commit range, find the bugs before merge, check a change for security or accessibility problems, or judge whether a change is safe to deploy. Emits findings and a ship gate, not a grade. NOT FOR: the A-F letter grade alone (use suede-code-grader); findings plus grade in one pass (use suede-code); making CI enforce the result on every merge (use suede-ci-gate); root-causing a live bug or failing test (a private Suede Labs companion, not in this pack).",
       "useWhen": "Deep-review or security-check a diff, PR, file, branch, or release when the deliverable is findings, not a grade."
     },
     {
@@ -316,7 +316,7 @@
     {
       "name": "suede-design",
       "area": "workflow",
-      "description": "Make Suede interfaces feel intentional: tokens, color, components, type, visual hierarchy, motion, dark mode, and visual QA for shipped screens.",
+      "description": "Suede Labs AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA. Use when asked to design, restyle, polish, or audit a screen; pick colors or fonts; define, fix, or document design tokens; build or repair a dark mode; review a component or a whole design system; or compare a mock, Figma frame, or reference screenshot against a rendered implementation. NOT FOR: a full design-plus-copy build, launch surface, or reference-to-target restyle (use johnny-suede-design); conversion and funnel architecture (use suede-site-alchemy); writing the words themselves (use suede-copy).",
       "useWhen": "Polish UI, set tokens, fix hierarchy, and run focused design QA on a single surface."
     },
     {
@@ -358,7 +358,7 @@
     {
       "name": "suede-launch-packaging",
       "area": "workflow",
-      "description": "Package finished work so people can use it: README, docs, install commands, proof links, QA, release copy, and handoff notes.",
+      "description": "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).",
       "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
     },
     {
@@ -406,7 +406,7 @@
     {
       "name": "suede-mcp-qa",
       "area": "workflow",
-      "description": "Catch MCP drift before release: skill catalogs, tool and resource schemas, prompts, install paths, JSON-RPC behavior, and docs alignment.",
+      "description": "Suede Labs AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server — initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get — plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging).",
       "useWhen": "Validate the Suede Skills MCP, catalog, tool schemas, prompts, resources, install guidance, and docs."
     },
     {
@@ -472,7 +472,7 @@
     {
       "name": "suede-release-linter",
       "area": "creator",
-      "description": "Audit creative release folders before handoff: metadata, file structure, artwork, lyrics, stems, rights blockers, and platform readiness.",
+      "description": "Suede Labs skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report. Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance. NOT FOR: organizing the evidence behind a rights or split gap the report surfaces (use suede-rights-audit); building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging).",
       "useWhen": "Check a release folder before release, licensing, registry prep, royalty routing, agent commerce, or transfer-package handoff."
     },
     {
@@ -484,13 +484,13 @@
     {
       "name": "suede-rights-audit",
       "area": "creator",
-      "description": "Find the rights gaps before packaging: ownership, splits, samples, provenance, metadata, licensing readiness, royalties, and intake blockers.",
+      "description": "Suede Labs skill that finds and organizes the rights gaps in a creator project before packaging: ownership, contributors, splits, samples, licenses, provenance, metadata, licensing readiness, and royalty-routing readiness, each marked confirmed or unknown against an evidence trail. Use when a song, release, or creative project needs a rights check before registry, licensing, sync, or payout discussion; when splits, sample clearance, or chain of title are unclear; or when someone asks whether they have the rights to release, license, or get paid for a work. Organizes evidence only: clears no rights, confirms no ownership, moves no money, writes to no registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging).",
       "useWhen": "Map rights gaps before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or creator review."
     },
     {
       "name": "suede-rights-passport",
       "area": "creator",
-      "description": "Package creative project folders into rights-ready handoffs: files, metadata, credits, splits, licenses, stems, lyrics, artwork, and notes.",
+      "description": "Suede Labs skill that turns messy creator materials into a local, offline rights-and-provenance transfer package: inventoried and hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, validated by a bundled stdlib script. Use when a creator needs to hand a song, release, or project to a collaborator, advisor, registry, marketplace, or label; when someone asks for a rights package, intake package, or handoff folder; or when a validated manifest is needed before licensing or royalty-routing review. Carries questions, not answers: building the package clears nothing and uploads nothing. NOT FOR: finding or investigating the rights gaps in the first place (use suede-rights-audit); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet (use suede-sync-packaging).",
       "useWhen": "Package a creative project into a rights and provenance transfer handoff."
     },
     {
@@ -514,13 +514,13 @@
     {
       "name": "suede-ship-copy",
       "area": "workflow",
-      "description": "Suede Labs copy-only orchestration DAG: intake with a verbatim capture of the published text, five blind research lenses, an audit of agent-generated facts that closes the set of assertable claims, three angles, a section map with one message per section, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet).",
+      "description": "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet).",
       "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied."
     },
     {
       "name": "suede-ci-gate",
       "area": "workflow",
-      "description": "Make CI hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that do not deadlock.",
+      "description": "Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack).",
       "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
     },
     {
@@ -556,7 +556,7 @@
     {
       "area": "creator",
       "name": "suede-sync-packaging",
-      "description": "Prep songs for sync pitches: scene angles, one-sheets, clean and instrumental assets, lyric flags, mood tags, rights questions, and links.",
+      "description": "Suede Labs skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: finding and organizing the rights gaps behind an open clearance question (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box).",
       "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions."
     },
     {
@@ -574,7 +574,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 73 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
+      "description": "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; explicit max-effort or max-agent language (use suede-full-send, which owns controller selection); a multi-file repo change that should be built and reviewed as one DAG (use suede-ship).",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],
