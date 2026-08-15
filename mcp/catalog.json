@@ -94,8 +94,10 @@
         "suede-ab-testing",
         "suede-ad-creative",
         "suede-ads",
+        "suede-ai-seo",
         "suede-analytics",
         "suede-aso",
+        "suede-attribution",
         "suede-churn-prevention",
         "suede-co-marketing",
         "suede-cold-email",
@@ -204,6 +206,12 @@
       "useWhen": "Define measurable quality, safety, and regression checks for LLMs, classifiers, recommenders, agents, RAG, search, and media generation."
     },
     {
+      "name": "suede-ai-seo",
+      "area": "marketing",
+      "description": "Suede-affiliated AI search optimization discipline for making content structurally extractable, citable, and agent-readable so ChatGPT, Perplexity, Google AI Overviews, and Claude surface and cite it. Use when the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. NOT FOR: traditional technical SEO audit (use suede-seo-audit) or launch-appeal grading (use suede-visibility-grader).",
+      "useWhen": "The user wants to get content cited by LLMs, appear in AI-generated answers, or make a site agent-readable."
+    },
+    {
       "name": "suede-analytics",
       "area": "marketing",
       "description": "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops).",
@@ -214,6 +222,12 @@
       "area": "marketing",
       "description": "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use site-to-ios-app or android-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).",
       "useWhen": "The user wants to improve app store visibility, downloads, or listing conversion, or has shared an App Store or Play URL."
+    },
+    {
+      "name": "suede-attribution",
+      "area": "marketing",
+      "description": "Suede-affiliated marketing attribution discipline for choosing or interpreting an attribution model and reconciling conflicting cross-tool numbers into a defensible read on what drove revenue. Use when the user wants to know which marketing drove conversions, pick or interpret an attribution model, or instrument attribution themselves. NOT FOR: general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops).",
+      "useWhen": "The user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools."
     },
     {
       "area": "creator",
@@ -560,7 +574,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 71 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
+      "description": "Umbrella workflow for 73 public skills: Full Send, copy, design, code review, SEO, launch packaging, MCP QA, iOS and Android app shipping, Instagram growth, and creator workflows. Loads the full public skill pack.",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

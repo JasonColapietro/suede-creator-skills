@@ -5,7 +5,7 @@
 By Jason Colapietro, Suede Labs AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 71-skill MIT-licensed pack for Claude Code and OpenAI Codex.
+a 73-skill MIT-licensed pack for Claude Code and OpenAI Codex.
 
 ---
 
@@ -19,7 +19,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Seventy-one public skills, readable before you install them and editable
+output. Seventy-three public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:

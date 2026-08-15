@@ -1,6 +1,6 @@
 ---
 name: suede-marketing-ideas
-description: "Suede-affiliated marketing ideation using a structured tactic library scored for stage, audience fit, effort, cost, evidence, and risk. Use when the user is stuck, wants options, or needs a shortlist of growth tactics before committing to a plan. NOT FOR: a comprehensive roadmap (use suede-marketing-plan), channel execution (use the relevant public Suede skill), or unattended recurring workflows (use suede-marketing-loops)."
+description: "Suede-affiliated marketing ideation using a structured tactic library organized by stage, budget, and timeline. Use when the user is stuck, wants options, or needs a shortlist of growth tactics before committing to a plan. NOT FOR: a comprehensive roadmap (use suede-marketing-plan), channel execution (use the relevant public Suede skill), or unattended recurring workflows (use suede-marketing-loops)."
 metadata:
   version: 2.0.0
 ---

@@ -211,7 +211,7 @@ Don't waste the thank you page. After they've converted:
 - Google Ads for high-intent lead magnets (templates, tools)
 - LinkedIn for B2B lead magnets
 - Retarget blog visitors with lead magnet ads
-- **See ads** for campaign strategy
+- Use `suede-ads` for campaign strategy
 
 ### Partner Co-Promotion
 
@@ -247,7 +247,7 @@ Don't waste the thank you page. After they've converted:
 
 ### Lead Quality Signals
 
-Good lead magnet attracted quality leads if:
+The lead magnet passes the quality check when at least 3 of these 4 hold:
 - Higher-than-average email engagement
 - Leads progress to trial/demo at expected rates
 - Low unsubscribe rate after delivery

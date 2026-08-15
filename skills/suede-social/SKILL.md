@@ -263,7 +263,9 @@ qualified replies, profile visits, follows, and time cost with the prior period.
 
 **For surfacing *which* posts may merit a comment draft** (bounded ranked lists,
 brand/competitor monitoring, intent-signal triage), see
-[references/listening.md](references/listening.md).
+[references/listening.md](references/listening.md). To set up the source list
+that feeds it, use
+[references/listening-sources-template.md](references/listening-sources-template.md).
 
 ### Quality Comments
 

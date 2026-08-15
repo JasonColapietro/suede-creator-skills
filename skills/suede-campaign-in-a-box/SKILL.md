@@ -1,6 +1,6 @@
 ---
 name: suede-campaign-in-a-box
-description: "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions."
+description: "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions. Use when an artist, song, or release needs a complete campaign rollout across surfaces. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging)."
 ---
 
 # Suede Campaign In A Box (Whole Enchilada)

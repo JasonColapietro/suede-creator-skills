@@ -5,7 +5,7 @@
 By Jason Colapietro, Suede Labs AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 71-skill MIT-licensed pack for Claude Code and OpenAI Codex.
+a 73-skill MIT-licensed pack for Claude Code and OpenAI Codex.
 
 ---
 
@@ -19,7 +19,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Seventy-one public skills, readable before you install them and editable
+output. Seventy-three public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -618,7 +618,7 @@ regrettable answer to an unclear question.
 
 ## NOT FOR is the other half of the contract
 
-Forty-eight of the 71 public skills carry a `NOT FOR:` clause in their
+Forty-eight of the 73 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
@@ -1758,7 +1758,7 @@ Four things change in the artifact when you optimize for the second one.
 
 Claims carry sources. A page that says "faster than the alternatives" gives a
 model nothing to quote, because quoting it would be quoting an opinion with a
-confident font. A page that says "the pack ships 71 skill folders, MIT
+confident font. A page that says "the pack ships 73 skill folders, MIT
 licensed" and links the repo gives the model a fact with a provenance trail
 attached.
 
