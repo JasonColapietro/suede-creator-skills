@@ -47,3 +47,17 @@ The above is about not asking permission. It is not license to skip proof.
 - Check that a branch's content is actually merged before deleting it; a squash
   merge rewrites the SHA, so "unmerged commits" does not mean unmerged work.
 - If something couldn't be verified, say so plainly rather than implying it was.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in this repository's GitHub Issues using the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` labels. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a single-context repository using root `CONTEXT.md` and `docs/adr/`. See `docs/agents/domain.md`.
