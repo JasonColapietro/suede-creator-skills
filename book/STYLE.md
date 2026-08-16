@@ -40,16 +40,16 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 71 public skill folders, each a `skills/<name>/SKILL.md`, MIT licensed.
+- 73 public skill folders, each a `skills/<name>/SKILL.md`, MIT licensed.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
   and a Codex-native plugin.
-- The MCP server at `mcp/` exposes 7 tools, 6 resources, 5 prompts.
+- The MCP server at `mcp/` exposes 8 tools, 6 resources, 5 prompts.
 - Author: Jason Colapietro, founder of Suede Labs AI. Solo founder. The pack came
   out of watching hired marketing firms skip fundamentals on his own products.
 - House line of `suede-full-send`: "Never end your allocation above zero." It is
   a dry joke about already-authorized compute, not a literal token counter.
-- 38 of the marketing skills are adapted from `marketingskills` by Corey Haines
+- 40 of the marketing skills are adapted from `marketingskills` by Corey Haines
   under MIT. Credit belongs there. Say so if marketing skills come up.
 - `amazon-returns-recovery` has recovered $448.31 against a real account.
 - Design palette: background `#080808`, gold `#c8a96e`, risk red `#8b1a1a`.

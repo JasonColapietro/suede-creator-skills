@@ -60,9 +60,9 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to seventy-one skills without
-drowning the context window, and why a badly written description is a broken
-feature rather than a cosmetic one.
+loaded only on a match. This is why a pack can grow to seventy-three skills
+without drowning the context window, and why a badly written description is a
+broken feature rather than a cosmetic one.
 
 **Evidence or it did not ship.** A claim without command output, an HTTP status,
 a diff, or a rendered screenshot is a guess wearing a confident tone. Agents are
@@ -91,7 +91,7 @@ catch. If you find a violation anywhere else, the file to check is
 
 ## License and credit
 
-The pack is MIT licensed. Thirty-eight of the marketing and growth skills are
+The pack is MIT licensed. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
 and the credit belongs there. Full notice: `NOTICE.md`.

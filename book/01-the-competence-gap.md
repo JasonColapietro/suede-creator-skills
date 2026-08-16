@@ -73,14 +73,14 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 71 of them, MIT licensed. The file opens with YAML
+`skills/<name>/SKILL.md`, 73 of them, MIT licensed. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
 ```yaml
 ---
 name: suede-deslop
-description: "Strip AI writing patterns from prose before anything goes public. ..."
+description: "Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public. ..."
 ---
 ```
 
@@ -89,7 +89,7 @@ skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
 The body is where the specialist lives. `skills/suede-code-grader/SKILL.md` is
-378 lines. It contains a list of instant-F triggers checked before any lane is
+212 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
 without named bypass-path evidence, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
@@ -98,22 +98,22 @@ phrases with replacements, ten formulaic structures with their fixes, and a
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 71 skills fit
+## Progressive disclosure, or why 73 skills fit
 
-Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,079,688 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
+repo total 1,054,432 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 28,469 bytes. That is roughly a
-thirty-eighth of the corpus. The agent holds a catalog of what exists and reads
+all 73 descriptions together come to 43,912 bytes. That is roughly a
+twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 48 of the 71 descriptions in this repo use to push work toward a better
+that 71 of the 73 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs

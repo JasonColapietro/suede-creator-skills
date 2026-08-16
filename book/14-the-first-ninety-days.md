@@ -125,7 +125,7 @@ before this is rehearsal with a friendly judge.
 Things not to do in ninety days, each of which will eat the whole quarter if you
 let it.
 
-1. **Do not read all 71 skills.** You will use eight. Find those eight by
+1. **Do not read all 73 skills.** You will use eight. Find those eight by
    working, not by studying the catalog.
 2. **Do not build a personal framework in month one.** You have not earned the
    opinions yet. Frameworks written before the practice encode your current

@@ -168,11 +168,11 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Seventy-one have more
-than two thousand. You cannot write your way out of that with better positive
-descriptions, because none of the descriptions are inaccurate. They are all
-true. Truth about what a skill does says nothing about whether it should beat its
-neighbor.
+Ten skills have forty-five possible pairwise collisions. Seventy-three have more
+than two thousand six hundred. You cannot write your way out of that with better
+positive descriptions, because none of the descriptions are inaccurate. They are
+all true. Truth about what a skill does says nothing about whether it should
+beat its neighbor.
 
 Which is why a set of skills is a namespace, and namespaces need the same
 discipline as any other: unique names, declared boundaries, no dangling

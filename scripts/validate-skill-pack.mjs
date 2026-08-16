@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
+import { measureBookFacts, measureSkillFile } from "./lib/book-facts.mjs";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
 
@@ -1114,6 +1115,68 @@ if (fs.existsSync(bookDir)) {
   }
 }
 
+// The book states more about the pack than its size: byte totals, how many
+// descriptions close with a NOT FOR: clause, how many carry a metadata block,
+// how long one named skill is. The patterns above match none of those, so all
+// of them sat at their 71-skill values through two releases while every
+// guarded surface moved to 73. Each number below is recomputed from disk by
+// scripts/lib/book-facts.mjs, whose definitions reproduce the figures the book
+// shipped with. Run `node scripts/measure-book-facts.mjs` to see them.
+const bookFacts = measureBookFacts();
+const grader = measureSkillFile("suede-code-grader");
+const deslop = measureSkillFile("suede-deslop");
+const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
+// "twenty-fourth" -> 24. The corpus-to-description ratio is written as an
+// ordinal, which wordNumber() cannot read.
+const ORDINAL_ONES = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9 };
+function wordOrdinal(word) {
+  const parts = String(word).toLowerCase().split("-");
+  const last = parts.pop();
+  const ones = ORDINAL_ONES[last];
+  const tens = tensWords[last.replace(/ieth$/, "y")];
+  const base = parts.length ? wordNumber(parts.join("-")) : 0;
+  if (ones !== undefined) return base === null ? null : base + ones;
+  return tens === undefined ? null : tens;
+}
+
+countChecks.push(
+  { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, MIT licensed/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "progressive-disclosure heading", re: /why (\d+) skills fit/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "corpus file count", re: /The (\d+) `SKILL\.md` files in this/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "corpus byte total", re: /repo total ([\d,]+) bytes/, expected: bookFacts.totalBytes, parse: commaNumber },
+  { file: "book/01-the-competence-gap.md", label: "resident description count", re: /all (\d+) descriptions together come to/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "resident description bytes", re: /descriptions together come to ([\d,]+) bytes/, expected: bookFacts.descriptionBytes, parse: commaNumber },
+  { file: "book/01-the-competence-gap.md", label: "corpus-to-description ratio", re: /roughly a\s+([a-z]+(?:-[a-z]+)?) of the corpus/, expected: bookFacts.corpusToDescriptionRatio, parse: wordOrdinal },
+  { file: "book/01-the-competence-gap.md", label: "NOT FOR: description count", re: /that (\d+) of the \d+ descriptions in this repo use/, expected: bookFacts.notForColonCount },
+  { file: "book/01-the-competence-gap.md", label: "NOT FOR: denominator", re: /that \d+ of the (\d+) descriptions in this repo use/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "suede-code-grader line count", re: /`skills\/suede-code-grader\/SKILL\.md` is\s+(\d+) lines/, expected: grader.lines },
+  { file: "book/02-anatomy-of-a-skill.md", label: "frontmatter survey skill count", re: /Across all (\d+) skills, the frontmatter carries/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "name key count", re: /carries `name` (\d+) times/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "description key count", re: /and `description`\s+(\d+) times/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "metadata block count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of them add a `metadata` block/, expected: bookFacts.metadataBlocks, wordNumber: true },
+  { file: "book/02-anatomy-of-a-skill.md", label: "corpus file count", re: /In this repo the (\d+) files total/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "corpus byte total", re: /files total ([\d,]+) bytes;/, expected: bookFacts.totalBytes, parse: commaNumber },
+  { file: "book/02-anatomy-of-a-skill.md", label: "resident description count", re: /the (\d+) descriptions together are/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "resident description bytes", re: /descriptions together are ([\d,]+)\./, expected: bookFacts.descriptionBytes, parse: commaNumber },
+  { file: "book/02-anatomy-of-a-skill.md", label: "suede-code-grader description length", re: /does with ([\d,]+) characters/, expected: grader.descriptionCharacters, parse: commaNumber },
+  { file: "book/02-anatomy-of-a-skill.md", label: "suede-deslop description length", re: /same job in ([\d,]+) characters/, expected: deslop.descriptionCharacters, parse: commaNumber },
+  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: description count", re: /([A-Z][a-z]+-[a-z]+) of the \d+ descriptions in this repo end with/, expected: bookFacts.notForColonCount, wordNumber: true },
+  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: denominator", re: /[A-Z][a-z]+-[a-z]+ of the (\d+) descriptions in this repo end with/, expected: totalSkillCount },
+  // The pairwise figure the sentence quotes is a floor ("more than two thousand
+  // six hundred"), which only breaks if the pack shrinks. Guard the count.
+  { file: "book/03-the-description-contract.md", label: "namespace collision skill count", re: /([A-Z][a-z]+-[a-z]+) have more\s+than two thousand/, expected: totalSkillCount, wordNumber: true },
+  { file: "book/14-the-first-ninety-days.md", label: "anti-goal skill count", re: /Do not read all (\d+) skills/, expected: totalSkillCount },
+  { file: "book/README.md", label: "skill index appendix count", re: /all (\d+) skills, grouped by/, expected: totalSkillCount },
+  { file: "book/00-front-matter.md", label: "progressive-disclosure pack size", re: /grow to ([a-z]+-[a-z]+) skills/, expected: totalSkillCount, wordNumber: true },
+  { file: "book/00-front-matter.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the marketing and growth skills are/, expected: bookFacts.marketingAdapted, wordNumber: true },
+  { file: "book/A1-skill-index.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of these are adapted from/, expected: bookFacts.marketingAdapted, wordNumber: true },
+  // STYLE.md is the brief the book is written against, so a stale fact there
+  // seeds stale prose in the next chapter someone writes. It is excluded from
+  // the loop above because it quotes counts as bare facts, not prose.
+  { file: "book/STYLE.md", label: "skill folder count", re: /(\d+) public skill folders/, expected: totalSkillCount },
+  { file: "book/STYLE.md", label: "marketingskills attribution count", re: /(\d+) of the marketing skills are adapted/, expected: bookFacts.marketingAdapted },
+);
+
 for (const check of countChecks) {
   const filePath = path.join(repoRoot, check.file);
   if (!fs.existsSync(filePath)) {
@@ -1135,7 +1198,7 @@ for (const check of countChecks) {
   }
   matches.forEach((match, i) => {
     const where = check.every ? ` [occurrence ${i + 1} of ${matches.length}]` : "";
-    const found = check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
+    const found = check.parse ? check.parse(match[1]) : check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
     if (found === null || Number.isNaN(found)) {
       warn.push(`Count check could not parse a number in ${check.file} (${check.label})${where}: "${match[1]}"`);
       return;
@@ -1144,6 +1207,21 @@ for (const check of countChecks) {
       fail.push(`Stale skill count in ${check.file} (${check.label})${where}: says ${found}, expected ${check.expected}`);
     }
   });
+}
+
+// Structural guard for the book's skill index. book/README.md calls the
+// appendix "all N skills", and the count check above only proves N matches the
+// directory — not that the appendix lists them. It listed 71 of 73 for two
+// releases: suede-ai-seo and suede-attribution shipped and nothing noticed.
+{
+  const indexPath = path.join(repoRoot, "book/A1-skill-index.md");
+  if (fs.existsSync(indexPath)) {
+    const listed = new Set((readText(indexPath).match(/`[a-z0-9][a-z0-9-]*`/g) || []).map((s) => s.replace(/`/g, "")));
+    const missing = skillNames.filter((name) => !listed.has(name));
+    if (missing.length > 0) {
+      fail.push(`book/A1-skill-index.md is missing ${missing.length} skill(s) it claims to index: ${missing.join(", ")}`);
+    }
+  }
 }
 
 // Structural guard for the docs catalog page. String checks above prove the

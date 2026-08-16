@@ -60,9 +60,9 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to seventy-one skills without
-drowning the context window, and why a badly written description is a broken
-feature rather than a cosmetic one.
+loaded only on a match. This is why a pack can grow to seventy-three skills
+without drowning the context window, and why a badly written description is a
+broken feature rather than a cosmetic one.
 
 **Evidence or it did not ship.** A claim without command output, an HTTP status,
 a diff, or a rendered screenshot is a guess wearing a confident tone. Agents are
@@ -91,7 +91,7 @@ catch. If you find a violation anywhere else, the file to check is
 
 ## License and credit
 
-The pack is MIT licensed. Thirty-eight of the marketing and growth skills are
+The pack is MIT licensed. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
 and the credit belongs there. Full notice: `NOTICE.md`.
@@ -173,14 +173,14 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 71 of them, MIT licensed. The file opens with YAML
+`skills/<name>/SKILL.md`, 73 of them, MIT licensed. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
 ```yaml
 ---
 name: suede-deslop
-description: "Strip AI writing patterns from prose before anything goes public. ..."
+description: "Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public. ..."
 ---
 ```
 
@@ -189,7 +189,7 @@ skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
 The body is where the specialist lives. `skills/suede-code-grader/SKILL.md` is
-378 lines. It contains a list of instant-F triggers checked before any lane is
+212 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
 without named bypass-path evidence, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
@@ -198,22 +198,22 @@ phrases with replacements, ten formulaic structures with their fixes, and a
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 71 skills fit
+## Progressive disclosure, or why 73 skills fit
 
-Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,079,688 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
+repo total 1,054,432 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 28,469 bytes. That is roughly a
-thirty-eighth of the corpus. The agent holds a catalog of what exists and reads
+all 73 descriptions together come to 43,912 bytes. That is roughly a
+twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 48 of the 71 descriptions in this repo use to push work toward a better
+that 71 of the 73 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs
@@ -318,12 +318,12 @@ Every `SKILL.md` in this repo opens the same way:
 ```yaml
 ---
 name: suede-code-grader
-description: "Give a blunt A-F ship grade for a code change across correctness, security, data, UX, verification, and deploy readiness. Use for a grade, not a findings review."
+description: "Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 ```
 
-Across all 71 skills, the frontmatter carries `name` 71 times and `description`
-71 times. Thirty-eight of them add a `metadata` block with a version string, a
+Across all 73 skills, the frontmatter carries `name` 73 times and `description`
+73 times. Forty-five of them add a `metadata` block with a version string, a
 convention inherited from the marketing skills adapted from Corey Haines's
 `marketingskills` under MIT. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
@@ -338,31 +338,34 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 bodies total 1,079,688 bytes;
-the 71 descriptions together are 28,469. The agent holds the small number and
+when the skill is not running. In this repo the 73 files total 1,054,432 bytes;
+the 73 descriptions together are 43,912. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 187 characters. "Give a blunt A-F
-ship grade for a code change" states the artifact. The lane list names the
-surfaces it covers. Then the last sentence does the real work: "Use for a grade,
-not a findings review." That sentence exists because `suede-code-review` lives
-next door and produces something different, and without it an agent would pick
-between them by coin flip.
+Look at what `suede-code-grader` does with 686 characters. "Suede Labs AI blunt
+A-F ship grade for a code change" states the artifact. The lane list names the
+surfaces it covers. The trigger list catches the request in the words a caller
+actually types: "give it a letter", "is this an A", "should this merge". Then
+the last sentence does the real work: "NOT FOR: findings, evidence, and fix
+briefs (use suede-code-review, or suede-code for findings plus grade)." That
+sentence exists because `suede-code-review` lives next door and produces
+something different, and without it an agent would pick between them by coin
+flip.
 
-`suede-deslop` handles the same problem at more length:
+`suede-deslop` does the same job in 512 characters:
 
 ```text
-description: "Strip AI writing patterns from prose before anything goes public.
-Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice,
-formulaic structures, all of it. Use when copy, a README, an email, a social
-post, or a doc is about to ship, after a long AI-assisted writing session, or
-when text sounds fine but feels generated. NOT FOR: writing new copy (use
-suede-copy); changing or certifying facts, which must be checked against primary
-evidence before publication."
+description: "Suede Labs anti-slop pass: strip AI writing patterns from prose
+before anything goes public. Em dashes, filler openers, manufactured enthusiasm,
+false agency, passive voice, formulaic structures, all of it. Use when copy, a
+README, an email, a social post, or a doc is about to ship, after a long
+AI-assisted writing session, or when text sounds fine but feels generated. NOT
+FOR: writing new copy (use suede-copy); changing or certifying facts, which must
+be checked against primary evidence before publication."
 ```
 
 Three parts. What it does, the trigger conditions in the vocabulary a user
@@ -370,8 +373,9 @@ actually types ("sounds fine but feels generated"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Forty-eight of the 71 descriptions in this repo end with a `NOT FOR:` clause,
-and it is the highest-leverage sentence in the file.
+Seventy-one of the 73 descriptions in this repo end with a `NOT FOR:` clause,
+and it is the highest-leverage sentence in the file. The remaining two close the
+same way without the colon, which is drift rather than a second convention.
 
 A description that only says what a skill does will fire on adjacent work,
 because the agent has no signal that a better match exists. `NOT FOR:` supplies
@@ -402,13 +406,17 @@ design decision in the pack:
 ## Gate policy — advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**.
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
 
 - Run every check and report the results honestly. Verdicts (`ship`,
   `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
   advice attached to the work, not orders that change it.
 - Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold.
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
 - A failed gate changes what you report, never what you do.
 - Single exception: if a finding is extremely risky — data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
@@ -730,11 +738,11 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Seventy-one have more
-than two thousand. You cannot write your way out of that with better positive
-descriptions, because none of the descriptions are inaccurate. They are all
-true. Truth about what a skill does says nothing about whether it should beat its
-neighbor.
+Ten skills have forty-five possible pairwise collisions. Seventy-three have more
+than two thousand six hundred. You cannot write your way out of that with better
+positive descriptions, because none of the descriptions are inaccurate. They are
+all true. Truth about what a skill does says nothing about whether it should
+beat its neighbor.
 
 Which is why a set of skills is a namespace, and namespaces need the same
 discipline as any other: unique names, declared boundaries, no dangling
@@ -2823,7 +2831,7 @@ target surface or a declared external root, and on any relative path under
 `examples/`, or `data/` that does not exist.
 
 The third rot is worse because it is invisible and it is not about skills at
-all. It is duplicated numbers. This repo says "71 skills" in the README badge
+all. It is duplicated numbers. This repo says "73 skills" in the README badge
 URL, the README badge alt text, the README intro, five separate install
 sections, `PRODUCT.md`, `CITATION.cff`, `docs/llms.txt`, four different `docs/`
 pages' title tags and og:descriptions and JSON-LD blocks, both plugin manifests,
@@ -3018,7 +3026,7 @@ before this is rehearsal with a friendly judge.
 Things not to do in ninety days, each of which will eat the whole quarter if you
 let it.
 
-1. **Do not read all 71 skills.** You will use eight. Find those eight by
+1. **Do not read all 73 skills.** You will use eight. Find those eight by
    working, not by studying the catalog.
 2. **Do not build a personal framework in month one.** You have not earned the
    opinions yet. Frameworks written before the practice encode your current
@@ -3152,6 +3160,7 @@ describing the work in the words its description was written to catch.
 | Skill | Use it when |
 |---|---|
 | `suede-seo-audit` | You want a nine-lane evidence-based SEO and generative-search audit with exact rewrite fixes |
+| `suede-ai-seo` | You want to be cited inside AI answers: extractable structure, citable claims, `llms.txt`, agent-readable pages |
 | `suede-visibility-grader` | You want an A-F grade on a live page for findability, clarity, CTA pull, proof, and AI citation readiness |
 | `suede-site-alchemy` | You want the page turned into a conversion path: friction, proof, CTA, pricing, quick wins |
 | `suede-programmatic-seo` | You are building data-backed keyword, location, directory, integration, or comparison pages at scale |
@@ -3182,12 +3191,13 @@ Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
 Monetization: `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`,
 `suede-onboarding`, `suede-churn-prevention`, `suede-emails`.
 
-Measurement and operations: `suede-analytics`, `suede-ab-testing`, `suede-revops`,
-`suede-sales-enablement`, `suede-marketing-plan`, `suede-marketing-loops`,
-`suede-marketing-ideas`, `suede-marketing-council`, `suede-marketing-psychology`,
+Measurement and operations: `suede-analytics`, `suede-attribution`,
+`suede-ab-testing`, `suede-revops`, `suede-sales-enablement`,
+`suede-marketing-plan`, `suede-marketing-loops`, `suede-marketing-ideas`,
+`suede-marketing-council`, `suede-marketing-psychology`,
 `suede-product-marketing`, `suede-customer-research`, `suede-competitor-profiling`.
 
-Thirty-eight of these are adapted from
+Forty of these are adapted from
 [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey
 Haines under the MIT License. See `NOTICE.md`.
 

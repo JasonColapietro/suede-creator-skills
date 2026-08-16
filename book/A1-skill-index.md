@@ -47,6 +47,7 @@ describing the work in the words its description was written to catch.
 | Skill | Use it when |
 |---|---|
 | `suede-seo-audit` | You want a nine-lane evidence-based SEO and generative-search audit with exact rewrite fixes |
+| `suede-ai-seo` | You want to be cited inside AI answers: extractable structure, citable claims, `llms.txt`, agent-readable pages |
 | `suede-visibility-grader` | You want an A-F grade on a live page for findability, clarity, CTA pull, proof, and AI citation readiness |
 | `suede-site-alchemy` | You want the page turned into a conversion path: friction, proof, CTA, pricing, quick wins |
 | `suede-programmatic-seo` | You are building data-backed keyword, location, directory, integration, or comparison pages at scale |
@@ -77,12 +78,13 @@ Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
 Monetization: `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`,
 `suede-onboarding`, `suede-churn-prevention`, `suede-emails`.
 
-Measurement and operations: `suede-analytics`, `suede-ab-testing`, `suede-revops`,
-`suede-sales-enablement`, `suede-marketing-plan`, `suede-marketing-loops`,
-`suede-marketing-ideas`, `suede-marketing-council`, `suede-marketing-psychology`,
+Measurement and operations: `suede-analytics`, `suede-attribution`,
+`suede-ab-testing`, `suede-revops`, `suede-sales-enablement`,
+`suede-marketing-plan`, `suede-marketing-loops`, `suede-marketing-ideas`,
+`suede-marketing-council`, `suede-marketing-psychology`,
 `suede-product-marketing`, `suede-customer-research`, `suede-competitor-profiling`.
 
-Thirty-eight of these are adapted from
+Forty of these are adapted from
 [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey
 Haines under the MIT License. See `NOTICE.md`.
 
