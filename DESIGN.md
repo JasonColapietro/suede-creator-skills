@@ -73,6 +73,17 @@ evidence-led, and easy to scan.
 - Catalog live filter on the skills index: hidden until JS reveals it, mono
   input, gold focus ring, `/` focuses, lanes collapse while filtering, and
   the result count announces via `aria-live`.
+- Mobile navigation is one `<details class="nav-disclosure">` pattern on every
+  page, including the generated book. The markup ships `open`, so a visit with
+  JavaScript disabled still reaches every link; JS collapses it at 768px and
+  under, and keeps the summary's `aria-label` swapping between "Open
+  navigation menu" and "Close navigation menu". The summary carries
+  `.nav-hamburger` at a 44px square with the three bars crossing into an X
+  when open. Desktop keeps the inline row: the disclosure is
+  `display: contents` and the summary is hidden, so layout is unchanged.
+  This replaced a homepage menu that could not open without JS and an interior
+  nav that simply wrapped its links, giving three different nav heights and
+  eating roughly a fifth of a phone viewport on the catalog.
 - Changelog ship log: timeline ledger of real commits with type-coded spine
   nodes, commit-activity sparkline, last-shipped freshness pill, and type
   filter chips. Entries carry real dates and short hashes linking to GitHub;
