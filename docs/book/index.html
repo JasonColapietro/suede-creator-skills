@@ -8,7 +8,8 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/book/">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <meta property="og:type" content="article">
     <meta property="og:title" content="S-Tier: The Builder's Book Behind the Suede Skills">
     <meta property="og:description" content="A free book on how agent skills actually work and how a builder gets genuinely good with them. Fourteen chapters, grounded in a public 73-skill repo you can check line by line.">
@@ -166,6 +167,16 @@
 }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -329,7 +340,23 @@
         .ship-strip { padding: 48px 0; }
         .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
-    
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+
       .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
       ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
       ol li { counter-increment: item; }
@@ -369,7 +396,7 @@
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -407,7 +434,7 @@
       <div class="toc">
         <a class="toc-row" href="front-matter.html">
           <span class="toc-num">Front matter &middot; 3 min</span>
-          <p class="toc-title">Why this book exists</p>
+          <h3 class="toc-title">Why this book exists</h3>
           <p class="toc-dek">Why the book exists, who it is for, how to read it, and the four ideas every chapter leans on.</p>
         </a>
       </div>
@@ -417,17 +444,17 @@
       <div class="toc">
         <a class="toc-row" href="the-competence-gap.html">
           <span class="toc-num">Chapter 1 &middot; 7 min</span>
-          <p class="toc-title">The Competence Gap</p>
+          <h3 class="toc-title">The Competence Gap</h3>
           <p class="toc-dek">A capable model plus a vague prompt produces confident mediocrity. The gap is not intelligence, it is procedure, and procedure is now a file you own.</p>
         </a>
         <a class="toc-row" href="anatomy-of-a-skill.html">
           <span class="toc-num">Chapter 2 &middot; 9 min</span>
-          <p class="toc-title">Anatomy of a Skill</p>
+          <h3 class="toc-title">Anatomy of a Skill</h3>
           <p class="toc-dek">A real SKILL.md taken apart: frontmatter, routing description, body, bundled references and scripts, and the advisory-gate policy that keeps a grader from blocking you.</p>
         </a>
         <a class="toc-row" href="the-description-contract.html">
           <span class="toc-num">Chapter 3 &middot; 7 min</span>
-          <p class="toc-title">The Description Contract</p>
+          <h3 class="toc-title">The Description Contract</h3>
           <p class="toc-dek">The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.</p>
         </a>
       </div>
@@ -437,17 +464,17 @@
       <div class="toc">
         <a class="toc-row" href="full-send.html">
           <span class="toc-num">Chapter 4 &middot; 7 min</span>
-          <p class="toc-title">Full Send</p>
+          <h3 class="toc-title">Full Send</h3>
           <p class="toc-dek">Outcome-bound work: freeze the mission before you mutate anything, fill useful non-colliding lanes, and bring back a decision instead of a workshop.</p>
         </a>
         <a class="toc-row" href="lanes-fleets-and-collisions.html">
           <span class="toc-num">Chapter 5 &middot; 8 min</span>
-          <p class="toc-title">Lanes, Fleets, and Collisions</p>
+          <h3 class="toc-title">Lanes, Fleets, and Collisions</h3>
           <p class="toc-dek">Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.</p>
         </a>
         <a class="toc-row" href="evidence-or-it-did-not-ship.html">
           <span class="toc-num">Chapter 6 &middot; 7 min</span>
-          <p class="toc-title">Evidence or It Did Not Ship</p>
+          <h3 class="toc-title">Evidence or It Did Not Ship</h3>
           <p class="toc-dek">The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.</p>
         </a>
       </div>
@@ -457,22 +484,22 @@
       <div class="toc">
         <a class="toc-row" href="grading-your-own-work.html">
           <span class="toc-num">Chapter 7 &middot; 7 min</span>
-          <p class="toc-title">Grading Your Own Work</p>
+          <h3 class="toc-title">Grading Your Own Work</h3>
           <p class="toc-dek">Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.</p>
         </a>
         <a class="toc-row" href="design-and-copy-are-engineering.html">
           <span class="toc-num">Chapter 8 &middot; 7 min</span>
-          <p class="toc-title">Design and Copy Are Engineering</p>
+          <h3 class="toc-title">Design and Copy Are Engineering</h3>
           <p class="toc-dek">Tokens instead of hex codes chosen in the moment, numeric thresholds instead of opinions, and an anti-slop gate for prose that reads fine sentence by sentence and hollow paragraph by paragraph.</p>
         </a>
         <a class="toc-row" href="getting-found.html">
           <span class="toc-num">Chapter 9 &middot; 8 min</span>
-          <p class="toc-title">Getting Found</p>
+          <h3 class="toc-title">Getting Found</h3>
           <p class="toc-dek">Distribution as an engineering surface: the shift from ranking to being cited, nine audit lanes, an A-F visibility grade, and why a page that cannot be quoted will not be cited.</p>
         </a>
         <a class="toc-row" href="shipping-into-the-real-world.html">
           <span class="toc-num">Chapter 10 &middot; 8 min</span>
-          <p class="toc-title">Shipping Into the Real World</p>
+          <h3 class="toc-title">Shipping Into the Real World</h3>
           <p class="toc-dek">The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.</p>
         </a>
       </div>
@@ -482,22 +509,22 @@
       <div class="toc">
         <a class="toc-row" href="the-s-tier-ladder.html">
           <span class="toc-num">Chapter 11 &middot; 11 min</span>
-          <p class="toc-title">The S-Tier Ladder</p>
+          <h3 class="toc-title">The S-Tier Ladder</h3>
           <p class="toc-dek">Five tiers defined by observable behavior, with the week, the transcript fingerprint, the failure that holds you there, and the move that promotes you. Most readers place themselves one rung high.</p>
         </a>
         <a class="toc-row" href="taste-judgment-and-stopping.html">
           <span class="toc-num">Chapter 12 &middot; 11 min</span>
-          <p class="toc-title">Taste, Judgment, and Knowing When to Stop</p>
+          <h3 class="toc-title">Taste, Judgment, and Knowing When to Stop</h3>
           <p class="toc-dek">The layer no procedure supplies: which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell finished from merely different.</p>
         </a>
         <a class="toc-row" href="write-your-own.html">
           <span class="toc-num">Chapter 13 &middot; 8 min</span>
-          <p class="toc-title">Write Your Own</p>
+          <h3 class="toc-title">Write Your Own</h3>
           <p class="toc-dek">Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.</p>
         </a>
         <a class="toc-row" href="the-first-ninety-days.html">
           <span class="toc-num">Chapter 14 &middot; 9 min</span>
-          <p class="toc-title">The First Ninety Days</p>
+          <h3 class="toc-title">The First Ninety Days</h3>
           <p class="toc-dek">A real practice plan in three phases, a list of anti-goals, two honest measurements, and the close: never end your allocation above zero.</p>
         </a>
       </div>
@@ -507,12 +534,12 @@
       <div class="toc">
         <a class="toc-row" href="skill-index.html">
           <span class="toc-num">Appendix A &middot; 4 min</span>
-          <p class="toc-title">The Skill Index, by Intent</p>
+          <h3 class="toc-title">The Skill Index, by Intent</h3>
           <p class="toc-dek">Every public skill in the pack, grouped by what you are trying to do rather than by what it is called.</p>
         </a>
         <a class="toc-row" href="the-rules.html">
           <span class="toc-num">Appendix B &middot; 3 min</span>
-          <p class="toc-title">The Rules, on One Page</p>
+          <h3 class="toc-title">The Rules, on One Page</h3>
           <p class="toc-dek">Everything the book argues for, compressed to 29 rules across evidence, decisions, scope, parallelism, skills, craft, and stopping.</p>
         </a>
       </div>
@@ -539,7 +566,7 @@
         <p class="footer-note">Suede Creator Skills is a 73-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">

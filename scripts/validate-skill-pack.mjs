@@ -910,6 +910,13 @@ if (docsCountMatch) {
 // plugin manifest, the umbrella skill's own docs, and the copy bank.
 const totalSkillCount = skillNames.length;
 const companionSkillCount = totalSkillCount - 1; // total minus suede-workflow-skills itself
+// Marketing-lane size, read from the catalog's lane badge. The badge itself
+// is structurally verified against the rows beneath it further down, so
+// chart values and prose that quote the lane hang off a checked number.
+const marketingLaneBadge = fs.existsSync(path.join(repoRoot, "docs/skills/index.html"))
+  ? readText(path.join(repoRoot, "docs/skills/index.html")).match(/<h3>Marketing &amp; growth<\/h3><span class="lane-count">(\d+)<\/span>/)
+  : null;
+const marketingSkillCount = marketingLaneBadge ? parseInt(marketingLaneBadge[1], 10) : NaN;
 const numberWords = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
 const tensWords = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
 
@@ -932,6 +939,39 @@ const countChecks = [
   { file: "docs/index.html", label: "og:title", re: /property="og:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
   { file: "docs/index.html", label: "twitter:title", re: /name="twitter:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
+  // The 71->73 growth left these index.html surfaces stale while the guarded
+  // ones above stayed correct — every count-bearing phrase needs its own entry
+  // here, or it drifts silently on the next pack-size change.
+  { file: "docs/index.html", label: "og:image:alt", re: /property="og:image:alt" content="Suede Creator Skills: (\d+) open-source agent skills/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "twitter:image:alt", re: /name="twitter:image:alt" content="Suede Creator Skills: (\d+) open-source agent skills/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "JSON-LD ItemList description", re: /"The (\d+) public skills in the Suede Creator Skills pack\."/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "stat counter data-count", re: /<span class="count" data-count="(\d+)">/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "stat counter no-JS text", re: /<span class="count" data-count="\d+">(\d+)<\/span>/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "clone-route label", re: /copies all (\d+) into ~\/\.claude\/skills\//, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "guide description phrase", re: /Read the guide to (\d+) open-source agent skills/, expected: totalSkillCount, every: true },
+  { file: "docs/guide.html", label: "twitter:description", re: /(\d+) MIT-licensed agent skills for Claude Code and Codex/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "JSON-LD WebPage description", re: /"(\d+) public, MIT-licensed agent skills for Claude Code and Codex/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "TOC disclosure entry", re: /Why (\d+) skills cost you almost nothing/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure headline first number", re: /Installing (\d+) skills does not cost you \d+ skills/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure headline second number", re: /does not cost you (\d+) skills\./, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "disclosure diagram desc", re: /All (\d+) skills sit on disk\./, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "marginal-cost note", re: /marginal cost of the (\d+)(?:st|nd|rd|th) skill/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "Codex install-all line", re: /install all (\d+) skills and both read-only MCP profiles/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "pathmap diagram desc", re: /land the same (\d+) skills/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "clone-route paragraph", re: /copies all (\d+) skills into/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "Codex plugin section-sub", re: /installs all (\d+) skills and registers/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "MCP search row", re: /instead of all (\d+)\./, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "context-cost section-sub", re: /What (\d+) skills actually cost you in context/, expected: totalSkillCount },
+  { file: "docs/copy.html", label: "announcement copy block", re: /live: (\d+) open-source agent skills/, expected: totalSkillCount, every: true },
+  { file: "docs/llms.txt", label: "guide link description", re: /complete list of all (\d+)/, expected: totalSkillCount },
+  // Rendered data visualizations count too: the catalog's lane chart shipped
+  // a marketing bar of 39 under a "Where the 73 live" headline.
+  { file: "docs/skills/index.html", label: "lanemap marketing value", re: /monospace">(\d+)<\/text>\n\n          <text x="250" y="66"/, expected: marketingSkillCount },
+  { file: "docs/skills/index.html", label: "lanemap desc marketing", re: /Marketing and growth (\d+), orchestration/, expected: marketingSkillCount },
+  { file: "docs/skills/index.html", label: "lead marketing count", re: /and (\d+) marketing and growth skills/, expected: marketingSkillCount },
+  { file: "docs/copy.html", label: "full-description marketing count", re: /(\d+) marketing and growth skills including account-specific/, expected: marketingSkillCount },
+  { file: "docs/blog/memory-belongs-in-skills.html", label: "blog post footer pack size", re: /is a (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
+  { file: "docs/skills/suede-full-send.html", label: "install headline", re: /Install the (\d+)-skill pack\./, expected: totalSkillCount },
   { file: "docs/guide.html", label: "title tag", re: /<title>Suede Creator Skills Guide \| (\d+) Agent Skills/, expected: totalSkillCount },
   // The guide's hero no longer carries the homepage's four-metric strip: the
   // page opens on its own table of contents so a reader can tell the guide
@@ -941,7 +981,7 @@ const countChecks = [
   // Numerals, not wordNumber: both headings used to spell the count out
   // ("Seventy-one skills"), which reads as marketing prose on a technical
   // page and drifts independently of every numeral elsewhere on the site.
-  { file: "docs/guide.html", label: "h2 heading", re: /<h2>(\d+) skills, one portable/, expected: totalSkillCount },
+  { file: "docs/guide.html", label: "h2 heading", re: /<h2[^>]*>(\d+) skills, one portable/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "og:description agent skills count", re: /og:description" content="Use this copy when explaining Suede Creator Skills: (\d+) agent skills/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "N-skill pack copy block", re: /A (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
   { file: "docs/copy.html", label: "Twenty-N public skills paragraph", re: /([A-Za-z]+(?:-[A-Za-z]+)?) public skills your agent loads/, expected: totalSkillCount, wordNumber: true },
@@ -979,7 +1019,7 @@ const countChecks = [
   // "six disciplines"-era lane math) while the guarded phrases said 71 —
   // every count a visitor can read must be pinned, not just the meta tags.
   { file: "docs/index.html", label: "hero subline skill count", re: /(\d+) open-source skills that read every diff/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "lanes sub skill count", re: /Seven lanes, (\d+) skills, one install/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "lanes sub skill count", re: /Seven disciplines, (\d+) skills, one install/, expected: totalSkillCount },
   { file: "docs/index.html", label: "catalog headline skill count", re: /All (\d+) skills\./, expected: totalSkillCount },
   { file: "docs/index.html", label: "stats band public skills count", re: /data-count="(\d+)"/, expected: totalSkillCount },
   { file: "docs/index.html", label: "router headline command count", re: /memorize (\d+) commands/, expected: totalSkillCount },

@@ -8,7 +8,7 @@
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://skills.suedeai.ai/copy.html">
-  <link rel="icon" href="./assets/suede-ai-logo-transparent.png" type="image/png">
+  <link rel="icon" href="./assets/favicon-64.png" type="image/png">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Suede Creator Skills Copy Bank">
   <meta property="og:description" content="Use this copy when explaining Suede Creator Skills: 73 agent skills for Claude Code and Codex covering Full Send, Suedify, Instagram growth, agent teams, code review, AEO/GEO/AI EO, and creator workflows.">
@@ -40,6 +40,16 @@
     }
   </script>
   <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -159,7 +169,7 @@
     .copy-btn {
       flex-shrink: 0; background: transparent; border: 1px solid var(--border);
       color: var(--muted); font-family: var(--mono); font-size: 12px;
-      padding: 6px 13px; border-radius: 4px; cursor: pointer;
+      padding: 6px 13px; min-height: 44px; min-width: 64px; border-radius: 4px; cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
     .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
@@ -238,7 +248,24 @@
       a.nav-star { padding: 8px 12px; gap: 6px; }
       .nav-star-count { padding-left: 6px; }
     }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
   </style>
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -247,7 +274,7 @@
 <nav class="nav" aria-label="Main navigation">
   <div class="shell nav-inner">
     <a href="./" class="nav-logo" aria-label="Suede Creator Skills home">
-      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
       <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
     </a>
     <div class="nav-links">
@@ -287,7 +314,7 @@
             <b>Full description</b>
             <button class="copy-btn" type="button" data-copy-block>Copy</button>
           </div>
-          <p>Suede Creator Skills is a public skill pack for builders, designers, founders, creators, agencies, and AI power users. It ships 73 public SKILL.md folders: one umbrella workflow, 21 workflow skills including Suede Full Send, coordinated agent teams, Codex CLI worker fleets, code review and A-F grading, CI ship-gates, AI evals, a next-action recommender, an anti-slop pass, Suedify, writing, design, SEO/AEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, and iOS and Android app shipping, 39 marketing and growth skills including account-specific Instagram growth, 5 creator skills for campaigns, sync packaging, release linting, rights passports, and rights audits, plus 2 consumer-recovery skills that dispute return fees and claw back forgotten subscriptions.</p>
+          <p>Suede Creator Skills is a public skill pack for builders, designers, founders, creators, agencies, and AI power users. It ships 73 public SKILL.md folders: one umbrella workflow, 23 workflow skills including Suede Full Send, coordinated agent teams, Codex CLI worker fleets, code review and A-F grading, CI ship-gates, AI evals, a next-action recommender, an anti-slop pass, Suedify, writing, design, SEO/AEO/AI EO, visibility grading, site alchemy, launch packaging, MCP QA, and iOS and Android app shipping, 41 marketing and growth skills including account-specific Instagram growth, 6 creator skills for campaigns, clip-to-guide packaging, sync packaging, release linting, rights passports, and rights audits, plus 2 consumer-recovery skills that dispute return fees and claw back forgotten subscriptions.</p>
         </div>
         <div class="copy-block">
           <div class="copy-block-head">
@@ -461,10 +488,10 @@
         <span class="terminal-title">short post</span>
       </div>
       <div class="terminal-body">
-        <pre>Suede Creator Skills are live: 71 open-source agent skills for Claude Code and Codex. Full Send outcome routing, multi-agent orchestration, code review with A-F ship grades, CI gating, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/AI EO, plus iOS/Android app shipping and artist campaign and rights tools.
+        <pre>Suede Creator Skills are live: 73 open-source agent skills for Claude Code and Codex. Full Send outcome routing, multi-agent orchestration, code review with A-F ship grades, CI gating, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/AI EO, plus iOS/Android app shipping and artist campaign and rights tools.
 
 Docs: https://skills.suedeai.ai/skills/</pre>
-        <button class="copy-btn" data-copy="Suede Creator Skills are live: 71 open-source agent skills for Claude Code and Codex. Full Send outcome routing, multi-agent orchestration, code review with A-F ship grades, CI gating, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/AI EO, plus iOS/Android app shipping and artist campaign and rights tools.&#10;&#10;Docs: https://skills.suedeai.ai/skills/">Copy</button>
+        <button class="copy-btn" data-copy="Suede Creator Skills are live: 73 open-source agent skills for Claude Code and Codex. Full Send outcome routing, multi-agent orchestration, code review with A-F ship grades, CI gating, AI evals, Suedify, Instagram growth, design, copywriting, SEO/AEO/AI EO, plus iOS/Android app shipping and artist campaign and rights tools.&#10;&#10;Docs: https://skills.suedeai.ai/skills/">Copy</button>
       </div>
     </div>
 
@@ -510,7 +537,7 @@ Repo: https://github.com/JasonColapietro/suede-creator-skills</pre>
 <footer>
   <div class="shell footer-inner">
     <div class="footer-brand">
-      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
       <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
     </div>
     <div class="footer-links">

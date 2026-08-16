@@ -8,7 +8,7 @@
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://skills.suedeai.ai/skills/">
-  <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+  <link rel="icon" href="../assets/favicon-64.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Suede Creator Skills Docs">
   <meta property="og:description" content="Read the public docs for all 73 Suede skills: Full Send orchestration, agent teams, code review and A-F grading, CI ship-gates, AI evals, Suedify, Instagram growth, design, copy, SEO/AEO/GEO/AI EO, music/IP, and creator rights.">
@@ -66,6 +66,16 @@
     }
   </script>
   <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -202,7 +212,7 @@
     .term-copy {
       flex-shrink: 0; font-family: var(--mono); font-size: 12.5px;
       color: var(--muted); background: var(--card); border: 1px solid var(--border);
-      border-radius: 4px; padding: 8px 14px; min-height: 38px; cursor: pointer;
+      border-radius: 4px; padding: 8px 14px; min-height: 44px; cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
     .term-copy:hover { color: var(--gold); border-color: var(--gold); }
@@ -317,7 +327,7 @@
     a.row:hover { background: var(--surface); }
     .row b { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--gold); word-break: break-word; }
     .row span { font-size: 14.5px; line-height: 1.55; color: var(--muted); overflow-wrap: anywhere; }
-    .row .arrow { font-family: var(--mono); font-size: 13px; color: #44423c; transition: color 0.15s, transform 0.15s; }
+    .row .arrow { font-family: var(--mono); font-size: 13px; color: #6b675f; flex-shrink: 0; transition: color 0.15s, transform 0.15s; }
     a.row:hover .arrow { color: var(--gold); transform: translateX(3px); }
 
     /* Changelog ledger */
@@ -420,7 +430,45 @@
       a.nav-star { padding: 8px 12px; gap: 6px; }
       .nav-star-count { padding-left: 6px; }
     }
+
+    /* Catalog filter: hidden until JS reveals it; the no-JS page is the
+       full plain list. Terminal register: mono input, gold focus. */
+    .catalog-filter { display: flex; align-items: center; gap: 14px; margin: 22px 0 4px; }
+    .filter-label {
+      font-family: var(--mono); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
+    }
+    .filter-input {
+      flex: 1; min-height: 44px; padding: 10px 16px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+      color: var(--cream); font-family: var(--mono); font-size: 14px;
+      transition: border-color 0.15s;
+    }
+    .filter-input::placeholder { color: var(--muted); }
+    .filter-input:focus { outline: 2px solid var(--gold); outline-offset: 2px; border-color: var(--gold); }
+    .filter-count {
+      font-family: var(--mono); font-size: 12.5px; color: var(--muted);
+      letter-spacing: 0.08em; white-space: nowrap; min-width: 96px; text-align: right;
+    }
+    @media (max-width: 560px) {
+      .catalog-filter { flex-wrap: wrap; }
+      .filter-input { flex-basis: 100%; }
+      .filter-count { min-width: 0; }
+    }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
   </style>
+  <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -429,7 +477,7 @@
 <nav class="nav" aria-label="Main navigation">
   <div class="shell nav-inner">
     <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-      <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+      <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
       <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
     </a>
     <div class="nav-links">
@@ -438,6 +486,7 @@
       <a href="#changelog">Changelog</a>
       <a href="../guide.html">Guide</a>
       <a href="../book/">Book</a>
+      <a href="../blog/">Blog</a>
       <a href="../copy.html">Copy Bank</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="../plugins.html" class="nav-cta">Install</a>
@@ -449,7 +498,7 @@
   <div class="shell page-head">
     <p class="eyebrow">Skill catalog</p>
     <h1>73 skills. One honest line each.</h1>
-    <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Eight lanes:</strong> orchestration and routing, code review and CI, design and copy, SEO and launch, iOS and Android shipping, consumer recovery, the creator toolkit, and 39 marketing and growth skills. This catalog links each skill to its deep docs and its source folder on GitHub. No sign-up, no telemetry, nothing to uninstall but a folder.</p>
+    <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Eight lanes:</strong> orchestration and routing, code review and CI, design and copy, SEO and launch, iOS and Android shipping, consumer recovery, the creator toolkit, and 41 marketing and growth skills. This catalog links each skill to its deep docs and its source folder on GitHub. No sign-up, no telemetry, nothing to uninstall but a folder.</p>
 
     <a id="hero-shiplog" href="#changelog" aria-label="Ship log. Latest entry August 15, 2026: the entire skill pack gets its first major redesign. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
@@ -489,13 +538,13 @@
         <span class="lanemap-title">Where the 73 live</span>
         <span class="lanemap-hint">Jump to a lane</span>
       </div>
-      <svg class="lanemap-svg" viewBox="0 0 1000 300" role="img" aria-labelledby="lanemap-t lanemap-d" xmlns="http://www.w3.org/2000/svg">
+      <div class="lanemap-scroll"><svg class="lanemap-svg" viewBox="0 0 1000 300" role="img" aria-labelledby="lanemap-t lanemap-d" xmlns="http://www.w3.org/2000/svg">
         <title id="lanemap-t">Skills per lane</title>
-        <desc id="lanemap-d">Marketing and growth 39, orchestration and routing 7, creator toolkit 6, code review and CI 5, design and copy 5, SEO visibility and launch 5, apps iOS and Android 2, consumer recovery 2.</desc>
+        <desc id="lanemap-d">Marketing and growth 41, orchestration and routing 7, creator toolkit 6, code review and CI 5, design and copy 5, SEO visibility and launch 5, apps iOS and Android 2, consumer recovery 2.</desc>
         <g font-family="system-ui, -apple-system, sans-serif">
           <text x="250" y="30" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Marketing &amp; growth</text>
-          <rect x="264" y="17" width="620" height="18" rx="4" fill="#c8a96e"/>
-          <text x="898" y="31" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">39</text>
+          <rect x="264" y="17" width="651" height="18" rx="4" fill="#c8a96e"/>
+          <text x="929" y="31" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">41</text>
 
           <text x="250" y="66" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Orchestration &amp; routing</text>
           <rect x="264" y="53" width="111" height="18" rx="4" fill="#c8a96e"/>
@@ -525,7 +574,7 @@
           <rect x="264" y="269" width="32" height="18" rx="4" fill="#c8a96e"/>
           <text x="310" y="283" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">2</text>
         </g>
-      </svg>
+      </svg></div>
       <nav class="lanemap-jump" aria-label="Jump to a catalog lane">
         <a href="#lane-orchestration">Orchestration</a>
         <a href="#lane-code">Code review &amp; CI</a>
@@ -607,108 +656,114 @@
     <h2 id="catalog">All 73 skill folders</h2>
     <p class="section-sub">Grouped by lane. Rows link to the deep docs page; every folder is inspectable on GitHub before you install it.</p>
 
+    <div class="catalog-filter" hidden>
+      <label class="filter-label" for="catalog-search">Filter</label>
+      <input id="catalog-search" class="filter-input" type="search" placeholder="Type to filter the pack: review, seo, instagram, rights&hellip;" autocomplete="off" spellcheck="false" aria-describedby="filter-count">
+      <span class="filter-count" id="filter-count" aria-live="polite">73 skills</span>
+    </div>
+
     <div class="lane" id="lane-orchestration">
       <div class="lane-head"><h3>Orchestration &amp; routing</h3><span class="lane-count">7</span></div>
-      <a class="row" href="suede-ship.html"><b>suede-ship</b><span>Canonical shipping DAG: scout, multi-lens research, lane plan with file ownership, parallel build, adversarial refute, and an integration gate. Halts on hazards and collisions.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-full-send.html"><b>suede-full-send</b><span>Routes broad, authorized outcome-bound work to one controller, useful non-colliding lanes, adversarial review, and proof.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-codex-fleet.html"><b>suede-codex-fleet</b><span>Suede Fable Fleet: Claude decomposes, briefs, and reviews; parallel OpenAI Codex CLI workers generate the volume.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="suede-ship.html"><b>suede-ship</b><span>Canonical shipping DAG: scout, multi-lens research, lane plan with file ownership, parallel build, adversarial refute, and an integration gate. Halts on hazards and collisions.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-full-send.html"><b>suede-full-send</b><span>Routes broad, authorized outcome-bound work to one controller, useful non-colliding lanes, adversarial review, and proof.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-codex-fleet.html"><b>suede-codex-fleet</b><span>Suede Fable Fleet: Claude decomposes, briefs, and reviews; parallel OpenAI Codex CLI workers generate the volume.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-code">
       <div class="lane-head"><h3>Code review &amp; CI</h3><span class="lane-count">5</span></div>
-      <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-ci-gate.html"><b>suede-ci-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-ci-gate.html"><b>suede-ci-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-design">
       <div class="lane-head"><h3>Design &amp; copy</h3><span class="lane-count">5</span></div>
-      <a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-design.html"><b>suede-design</b><span>Design laws, component rules, dark-mode tokens, fluid type, motion sequencing, and visual QA for any Suede surface.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-copy.html"><b>suede-copy</b><span>Conversion copy with headline formulas, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-deslop.html"><b>suede-deslop</b><span>Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-design.html"><b>suede-design</b><span>Design laws, component rules, dark-mode tokens, fluid type, motion sequencing, and visual QA for any Suede surface.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-copy.html"><b>suede-copy</b><span>Conversion copy with headline formulas, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-deslop.html"><b>suede-deslop</b><span>Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-seo">
       <div class="lane-head"><h3>SEO, visibility &amp; launch</h3><span class="lane-count">5</span></div>
-      <a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-site-alchemy.html"><b>suede-site-alchemy</b><span>Landing page, CTA routing, conversion, and site polish workflow.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-launch-packaging.html"><b>suede-launch-packaging</b><span>Public launch copy, proof links, install paths, QA, and handoff.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-site-alchemy.html"><b>suede-site-alchemy</b><span>Landing page, CTA routing, conversion, and site polish workflow.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-launch-packaging.html"><b>suede-launch-packaging</b><span>Public launch copy, proof links, install paths, QA, and handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-apps">
       <div class="lane-head"><h3>Apps: iOS &amp; Android</h3><span class="lane-count">2</span></div>
-      <a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-recovery">
       <div class="lane-head"><h3>Consumer recovery</h3><span class="lane-count">2</span></div>
-      <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
 
     <div class="lane" id="lane-creator">
       <div class="lane-head"><h3>Creator toolkit</h3><span class="lane-count">6</span></div>
-      <a class="row" href="./suede-clip-to-guide.html"><b>suede-clip-to-guide</b><span>Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package with rights routing and an evidence gate.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-sync-packaging.html"><b>suede-sync-packaging</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-release-linter.html"><b>suede-release-linter</b><span>Release metadata, files, credits, splits, samples, provenance, and readiness audit.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="suede-rights-passport.html"><b>suede-rights-passport</b><span>Local creator rights package with provenance, credits, split notes, license notes, and structured metadata.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-rights-audit.html"><b>suede-rights-audit</b><span>Ownership, contributor, sample, license, split, and intake gap audit.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-clip-to-guide.html"><b>suede-clip-to-guide</b><span>Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package with rights routing and an evidence gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-sync-packaging.html"><b>suede-sync-packaging</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-release-linter.html"><b>suede-release-linter</b><span>Release metadata, files, credits, splits, samples, provenance, and readiness audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="suede-rights-passport.html"><b>suede-rights-passport</b><span>Local creator rights package with provenance, credits, split notes, license notes, and structured metadata.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-rights-audit.html"><b>suede-rights-audit</b><span>Ownership, contributor, sample, license, split, and intake gap audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
     <div class="lane" id="lane-marketing">
       <div class="lane-head"><h3>Marketing &amp; growth</h3><span class="lane-count">41</span></div>
-      <a class="row" href="./suede-ab-testing.html"><b>suede-ab-testing</b><span>Test so the result means something.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-ad-creative.html"><b>suede-ad-creative</b><span>Produce ad creative at volume.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-ads.html"><b>suede-ads</b><span>Run paid acquisition that pays back.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-ai-seo.html"><b>suede-ai-seo</b><span>Get cited in AI-generated answers.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-analytics.html"><b>suede-analytics</b><span>Know whether any of it worked.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-aso.html"><b>suede-aso</b><span>Optimise an App Store or Play listing.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-attribution.html"><b>suede-attribution</b><span>Know which marketing actually drove revenue.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-churn-prevention.html"><b>suede-churn-prevention</b><span>Keep subscribers who are leaving and recover the ones you lose to billing.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-co-marketing.html"><b>suede-co-marketing</b><span>Find and run partner campaigns.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-cold-email.html"><b>suede-cold-email</b><span>Write B2B cold outreach that gets replies.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-community-marketing.html"><b>suede-community-marketing</b><span>Build a community that compounds.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-competitor-profiling.html"><b>suede-competitor-profiling</b><span>Research competitors from their public surfaces and turn the findings into structured profiles.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-competitors.html"><b>suede-competitors</b><span>Write comparison and alternative pages that rank and convert without misrepresenting anyone.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-content-strategy.html"><b>suede-content-strategy</b><span>Decide what to publish and why.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-customer-research.html"><b>suede-customer-research</b><span>Find out what customers actually think.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-directory-submissions.html"><b>suede-directory-submissions</b><span>Work the directory layer deliberately.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-emails.html"><b>suede-emails</b><span>Design lifecycle email that runs itself.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-free-tools.html"><b>suede-free-tools</b><span>Engineering as marketing.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-image.html"><b>suede-image</b><span>Create and optimise marketing imagery.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-instagram-growth.html"><b>suede-instagram-growth</b><span>Audit an Instagram account, map views to qualified action, and create account-specific Reels, carousels, Stories, and daily approval-ready content.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-lead-magnets.html"><b>suede-lead-magnets</b><span>Decide what to give away for an email.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-marketing-council.html"><b>suede-marketing-council</b><span>Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-marketing-ideas.html"><b>suede-marketing-ideas</b><span>Get unstuck with a structured idea library rather than a blank page.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-marketing-loops.html"><b>suede-marketing-loops</b><span>Turn marketing into a recurring loop an agent runs on a cadence.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-marketing-plan.html"><b>suede-marketing-plan</b><span>Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-marketing-psychology.html"><b>suede-marketing-psychology</b><span>Apply behavioural science honestly.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-offers.html"><b>suede-offers</b><span>Construct the thing you actually sell.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-onboarding.html"><b>suede-onboarding</b><span>Get a new user to first value fast.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-paywalls.html"><b>suede-paywalls</b><span>Design in-app upgrade moments that convert without resentment.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-pricing.html"><b>suede-pricing</b><span>Decide what to charge and how to package it.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-product-marketing.html"><b>suede-product-marketing</b><span>Establish the product context every other marketing lane reads from.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-programmatic-seo.html"><b>suede-programmatic-seo</b><span>Build search pages at scale without building junk.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-prospecting.html"><b>suede-prospecting</b><span>Build and qualify a target list before you write a word.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-public-relations.html"><b>suede-public-relations</b><span>Earn coverage without a retainer.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-referrals.html"><b>suede-referrals</b><span>Turn customers into a channel.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-revops.html"><b>suede-revops</b><span>Wire marketing to revenue.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-sales-enablement.html"><b>suede-sales-enablement</b><span>Arm the people doing the selling.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-signup.html"><b>suede-signup</b><span>Cut friction out of registration.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-sms.html"><b>suede-sms</b><span>Run SMS without getting blocked or resented.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-social.html"><b>suede-social</b><span>Run social as a channel rather than a chore.</span><span class="arrow">-&gt;</span></a>
-      <a class="row" href="./suede-video.html"><b>suede-video</b><span>Plan and produce marketing video.</span><span class="arrow">-&gt;</span></a>
+      <a class="row" href="./suede-ab-testing.html"><b>suede-ab-testing</b><span>Test so the result means something.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-ad-creative.html"><b>suede-ad-creative</b><span>Produce ad creative at volume.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-ads.html"><b>suede-ads</b><span>Run paid acquisition that pays back.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-ai-seo.html"><b>suede-ai-seo</b><span>Get cited in AI-generated answers.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-analytics.html"><b>suede-analytics</b><span>Know whether any of it worked.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-aso.html"><b>suede-aso</b><span>Optimise an App Store or Play listing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-attribution.html"><b>suede-attribution</b><span>Know which marketing actually drove revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-churn-prevention.html"><b>suede-churn-prevention</b><span>Keep subscribers who are leaving and recover the ones you lose to billing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-co-marketing.html"><b>suede-co-marketing</b><span>Find and run partner campaigns.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-cold-email.html"><b>suede-cold-email</b><span>Write B2B cold outreach that gets replies.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-community-marketing.html"><b>suede-community-marketing</b><span>Build a community that compounds.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-competitor-profiling.html"><b>suede-competitor-profiling</b><span>Research competitors from their public surfaces and turn the findings into structured profiles.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-competitors.html"><b>suede-competitors</b><span>Write comparison and alternative pages that rank and convert without misrepresenting anyone.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-content-strategy.html"><b>suede-content-strategy</b><span>Decide what to publish and why.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-customer-research.html"><b>suede-customer-research</b><span>Find out what customers actually think.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-directory-submissions.html"><b>suede-directory-submissions</b><span>Work the directory layer deliberately.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-emails.html"><b>suede-emails</b><span>Design lifecycle email that runs itself.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-free-tools.html"><b>suede-free-tools</b><span>Engineering as marketing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-image.html"><b>suede-image</b><span>Create and optimise marketing imagery.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-instagram-growth.html"><b>suede-instagram-growth</b><span>Audit an Instagram account, map views to qualified action, and create account-specific Reels, carousels, Stories, and daily approval-ready content.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-lead-magnets.html"><b>suede-lead-magnets</b><span>Decide what to give away for an email.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-marketing-council.html"><b>suede-marketing-council</b><span>Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-marketing-ideas.html"><b>suede-marketing-ideas</b><span>Get unstuck with a structured idea library rather than a blank page.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-marketing-loops.html"><b>suede-marketing-loops</b><span>Turn marketing into a recurring loop an agent runs on a cadence.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-marketing-plan.html"><b>suede-marketing-plan</b><span>Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-marketing-psychology.html"><b>suede-marketing-psychology</b><span>Apply behavioural science honestly.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-offers.html"><b>suede-offers</b><span>Construct the thing you actually sell.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-onboarding.html"><b>suede-onboarding</b><span>Get a new user to first value fast.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-paywalls.html"><b>suede-paywalls</b><span>Design in-app upgrade moments that convert without resentment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-pricing.html"><b>suede-pricing</b><span>Decide what to charge and how to package it.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-product-marketing.html"><b>suede-product-marketing</b><span>Establish the product context every other marketing lane reads from.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-programmatic-seo.html"><b>suede-programmatic-seo</b><span>Build search pages at scale without building junk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-prospecting.html"><b>suede-prospecting</b><span>Build and qualify a target list before you write a word.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-public-relations.html"><b>suede-public-relations</b><span>Earn coverage without a retainer.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-referrals.html"><b>suede-referrals</b><span>Turn customers into a channel.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-revops.html"><b>suede-revops</b><span>Wire marketing to revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-sales-enablement.html"><b>suede-sales-enablement</b><span>Arm the people doing the selling.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-signup.html"><b>suede-signup</b><span>Cut friction out of registration.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-sms.html"><b>suede-sms</b><span>Run SMS without getting blocked or resented.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-social.html"><b>suede-social</b><span>Run social as a channel rather than a chore.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+      <a class="row" href="./suede-video.html"><b>suede-video</b><span>Plan and produce marketing video.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
     </div>
   </section>
 
@@ -985,7 +1040,7 @@
 <footer>
   <div class="shell footer-inner">
     <div class="footer-brand">
-      <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+      <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
       <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
     </div>
     <div class="footer-links">
@@ -1006,7 +1061,8 @@
       if (!code || !navigator.clipboard) return;
       navigator.clipboard.writeText(code.textContent.replace(/^\$ /gm, "")).then(function () {
         btn.textContent = "Copied";
-        setTimeout(function () { btn.textContent = "Copy"; }, 1600);
+        btn.setAttribute("aria-label", "Copied install commands");
+        setTimeout(function () { btn.textContent = "Copy"; btn.setAttribute("aria-label", "Copy install commands"); }, 1600);
       });
     });
   });
@@ -1050,6 +1106,45 @@
         reveal(data.stargazers_count);
       })
       .catch(function() {});
+  })();
+</script>
+<script>
+  // Progressive enhancement: without JS the filter stays hidden and the
+  // catalog renders as the full plain list. With JS, rows filter live on
+  // name + description text, empty lanes collapse, and "/" focuses the box.
+  (function () {
+    var box = document.querySelector(".catalog-filter");
+    var input = document.getElementById("catalog-search");
+    var count = document.getElementById("filter-count");
+    if (!box || !input || !count) return;
+    var lanes = [].slice.call(document.querySelectorAll(".lane"));
+    var rows = [].slice.call(document.querySelectorAll(".lane .row"));
+    if (!rows.length) return;
+    rows.forEach(function (r) { r.setAttribute("data-text", r.textContent.toLowerCase()); });
+    box.hidden = false;
+    function apply() {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      lanes.forEach(function (lane) {
+        var any = false;
+        [].slice.call(lane.querySelectorAll(".row")).forEach(function (r) {
+          var hit = !q || r.getAttribute("data-text").indexOf(q) !== -1;
+          r.style.display = hit ? "" : "none";
+          if (hit) { any = true; shown++; }
+        });
+        lane.style.display = any ? "" : "none";
+      });
+      count.textContent = q ? shown + " of " + rows.length + " skills" : rows.length + " skills";
+    }
+    input.addEventListener("input", apply);
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+      var el = document.activeElement;
+      if (el === input || (el && /^(input|textarea|select)$/i.test(el.tagName))) return;
+      e.preventDefault();
+      input.focus();
+    });
+    apply();
   })();
 </script>
 </body>

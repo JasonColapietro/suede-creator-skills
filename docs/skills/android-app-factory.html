@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/android-app-factory.html">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Android App Factory - Suede Creator Skills">
     <meta property="og:description" content="Use Android App Factory in Claude Code or Codex to plan and build a native Android app end to end: keyword, Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, Data Safety, signing, and Play Console release.">
@@ -40,6 +40,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -247,15 +257,32 @@
       }
       @keyframes st-blink { 50% { opacity: 0; } }
       @media (prefers-reduced-motion: reduce) { .skill-term .term-cursor { animation: none; } }
-    </style>
-  </head>
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+  </style>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -270,7 +297,7 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <div class="eyebrow">/android-app-factory &middot; iOS &amp; Android app shipping — the public Play Store counterpart to site-to-ios-app</div>
+      <div class="eyebrow">/android-app-factory &middot; iOS &amp; Android app shipping; the public Play Store counterpart to site-to-ios-app</div>
       <h1>One prompt. A Play Store-ready app.</h1>
       <p class="lead">Android App Factory runs the whole native pipeline from a one-line idea or target keyword: Kotlin + Jetpack Compose scaffolding, a real core loop before any polish, Play Billing only when it won't block v1 review, Play Store screenshots and ASO listing copy sized to Play's character limits, a truthful Data Safety and content-rating pass, and a signed release through Play App Signing. Nothing ships without an explicit confirmation, and every rollout starts on internal or closed testing before production.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/android-app-factory">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
@@ -315,7 +342,7 @@ cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/</code
           <h2>What it covers</h2>
           <ul>
             <li>Keyword-first product selection before any scaffolding, so the app is buildable to a term worth ranking for.</li>
-            <li>Native Kotlin + Jetpack Compose scaffolding by default — never a bare JVM module that can't produce an installable APK/AAB.</li>
+            <li>Native Kotlin + Jetpack Compose scaffolding by default; never a bare JVM module that can't produce an installable APK/AAB.</li>
             <li>A working core loop (input, processing, structured result, history, saved set) before monetization or visual polish.</li>
             <li>Play Billing added only when it won't block the v1 review flow; a free v1 is the default when it would.</li>
             <li>Play Store screenshots, feature graphic, and listing copy authored to Play's exact character limits, not generic marketing copy.</li>
@@ -330,8 +357,8 @@ cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/</code
             <li>The user wants to plan, build, or ship a native Android app from an idea, keyword, or existing spec.</li>
             <li>The user asks something like "build an Android app for X" or "get this ready for the Play Store."</li>
             <li>Preparing a Play Store listing, screenshots, Data Safety disclosure, or a signed release build.</li>
-            <li>NOT for iOS work — use <a href="site-to-ios-app.html">site-to-ios-app</a> for converting an existing site into an iOS app.</li>
-            <li>NOT for reviewing or grading an existing app's code — use <a href="suede-code-review.html">suede-code-review</a> instead of building something new.</li>
+            <li>NOT for iOS work; use <a href="site-to-ios-app.html">site-to-ios-app</a> for converting an existing site into an iOS app.</li>
+            <li>NOT for reviewing or grading an existing app's code; use <a href="suede-code-review.html">suede-code-review</a> instead of building something new.</li>
           </ul>
         </article>
       </section>
@@ -361,7 +388,7 @@ cp -R /tmp/suede-creator-skills/skills/android-app-factory .claude/skills/</code
         <p class="footer-note">Android App Factory is part of Suede Creator Skills: a one-prompt pipeline from idea or keyword to a signed, Play Store-ready Android release, with the owner confirming every public rollout.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">

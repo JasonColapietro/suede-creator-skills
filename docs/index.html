@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Suede Creator Skills: 71 open-source agent skills for Claude Code and OpenAI Codex">
+  <meta property="og:image:alt" content="Suede Creator Skills: 73 open-source agent skills for Claude Code and OpenAI Codex">
   <meta property="og:url" content="https://skills.suedeai.ai/">
   <meta property="og:site_name" content="Suede Creator Skills">
 
@@ -22,16 +22,18 @@
   <meta name="twitter:title" content="Suede Creator Skills | 73 Open-Source Agent Skills">
   <meta name="twitter:description" content="Install 73 free open-source Claude Code and Codex skills for outcome-bound orchestration, code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, MCP, and creator workflows.">
   <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
-  <meta name="twitter:image:alt" content="Suede Creator Skills: 71 open-source agent skills for Claude Code and OpenAI Codex">
+  <meta name="twitter:image:alt" content="Suede Creator Skills: 73 open-source agent skills for Claude Code and OpenAI Codex">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://skills.suedeai.ai/">
 
   <!-- Favicon -->
-  <link rel="icon" href="./assets/suede-ai-logo-transparent.png" type="image/png">
+  <link rel="icon" href="./assets/favicon-64.png" type="image/png">
 
   <!-- Preload -->
-  <link rel="preload" href="./assets/suede-ai-logo-transparent.png" as="image">
+  <link rel="preload" href="./assets/suede-ai-logo-transparent.webp" as="image">
+  <link rel="preload" href="./assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/fraunces-var-italic.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -77,7 +79,7 @@
       {
         "@type": "ItemList",
         "name": "Suede Creator Skills catalog",
-        "description": "The 71 public skills in the Suede Creator Skills pack.",
+        "description": "The 73 public skills in the Suede Creator Skills pack.",
         "numberOfItems": 73,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Suede Workflow Skills", "url": "https://skills.suedeai.ai/skills/suede-workflow-skills.html" },
@@ -149,10 +151,10 @@
           { "@type": "ListItem", "position": 67, "name": "Suede Sms", "url": "https://skills.suedeai.ai/skills/suede-sms.html" },
           { "@type": "ListItem", "position": 68, "name": "Suede Social", "url": "https://skills.suedeai.ai/skills/suede-social.html" },
           { "@type": "ListItem", "position": 69, "name": "Suede Video", "url": "https://skills.suedeai.ai/skills/suede-video.html" },
-          { "@type": "ListItem", "position": 71, "name": "Suede Instagram Growth", "url": "https://skills.suedeai.ai/skills/suede-instagram-growth.html" },
-          { "@type": "ListItem", "position": 72, "name": "Suede Clip to Guide", "url": "https://skills.suedeai.ai/skills/suede-clip-to-guide.html" },
-          { "@type": "ListItem", "position": 73, "name": "Suede AI SEO", "url": "https://skills.suedeai.ai/skills/suede-ai-seo.html" },
-          { "@type": "ListItem", "position": 74, "name": "Suede Attribution", "url": "https://skills.suedeai.ai/skills/suede-attribution.html" }
+          { "@type": "ListItem", "position": 70, "name": "Suede Instagram Growth", "url": "https://skills.suedeai.ai/skills/suede-instagram-growth.html" },
+          { "@type": "ListItem", "position": 71, "name": "Suede Clip to Guide", "url": "https://skills.suedeai.ai/skills/suede-clip-to-guide.html" },
+          { "@type": "ListItem", "position": 72, "name": "Suede AI SEO", "url": "https://skills.suedeai.ai/skills/suede-ai-seo.html" },
+          { "@type": "ListItem", "position": 73, "name": "Suede Attribution", "url": "https://skills.suedeai.ai/skills/suede-attribution.html" }
 
         ]
       },
@@ -188,6 +190,28 @@
 
   <style>
     /* ============================================================
+       DISPLAY FACE — Fraunces variable (self-hosted, OFL)
+       Display roles only; body stays on the system stack.
+    ============================================================ */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces-var-italic.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: italic;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* ============================================================
        DESIGN TOKENS
     ============================================================ */
     :root {
@@ -204,6 +228,7 @@
       --color-text-accent:   #c8a96e;
 
       --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Fraunces", Georgia, "Times New Roman", serif;
 
       --size-xs:   0.75rem;
       --size-sm:   0.875rem;
@@ -732,13 +757,26 @@
 
     #hero-bg-glow {
       position: absolute;
-      top: 50%; left: 50%;
-      width: 600px; height: 600px;
-      margin-top: -300px; margin-left: -300px;
+      top: 50%; left: 62%;
+      width: 940px; height: 940px;
+      margin-top: -470px; margin-left: -470px;
       border-radius: 50%;
-      background: radial-gradient(ellipse at center, #8b1a1a1a 0%, #c8a96e08 40%, transparent 70%);
+      background: radial-gradient(ellipse at center, #c8a96e1c 0%, #8b1a1a10 45%, transparent 72%);
       animation: hero-pulse 6s ease-in-out infinite;
       pointer-events: none;
+    }
+
+    /* Film grain over the hero canvas so the near-black reads as material,
+       not a flat fill. Pure texture: no meaning, no motion, no pointer cost. */
+    #hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .5;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.06'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
     }
 
     #hero-inner {
@@ -767,7 +805,7 @@
       letter-spacing: -0.03em;
       line-height: 1.07;
       color: #f0ece4;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     #hero-subline {
@@ -1041,25 +1079,24 @@
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: #222222;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      background: transparent;
+      border-top: 1px solid #222222;
+      border-left: 1px solid #222222;
     }
 
     .feature-card {
       --feature-accent: #c8a96e;
       background: #161616;
       padding: 36px 28px;
+      border-right: 1px solid #222222;
+      border-bottom: 1px solid #222222;
       box-shadow: inset 0 3px 0 var(--feature-accent);
       position: relative;
       transition: background 0.2s;
     }
 
-    .feature-card:nth-child(4),
-    .feature-card:nth-child(6),
-    .feature-card:nth-child(7),
-    .feature-card:nth-child(9),
-    .feature-card:nth-child(12),
     .feature-card--red {
       --feature-accent: #8b1a1a;
     }
@@ -1096,11 +1133,6 @@
       display: block;
     }
 
-    .feature-card:nth-child(4) .feature-label,
-    .feature-card:nth-child(6) .feature-label,
-    .feature-card:nth-child(7) .feature-label,
-    .feature-card:nth-child(9) .feature-label,
-    .feature-card:nth-child(12) .feature-label,
     .feature-card--red .feature-label {
       color: var(--color-accent-red-text);
     }
@@ -1114,7 +1146,7 @@
     }
 
     /* ============================================================
-       CATALOG — all 71 skills
+       CATALOG — all 73 skills
     ============================================================ */
     .catalog-inner {
       max-width: 1100px;
@@ -1652,6 +1684,7 @@
       color: #888880;
       margin-bottom: 48px;
       font-weight: 400;
+      max-width: 68ch;
     }
 
     .install-code-block {
@@ -1812,7 +1845,8 @@
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      flex-wrap: wrap;
+      gap: 14px 24px;
       align-items: center;
     }
 
@@ -1960,7 +1994,7 @@
       top: var(--nav-height);
       left: 0;
       right: 0;
-      background: rgba(8, 8, 8, 0.97);
+      background: rgba(8, 8, 8, 0.99);
       border-bottom: 1px solid var(--color-border);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -2092,7 +2126,7 @@
       align-items: center;
       gap: 9px;
       padding: 7px 16px 7px 13px;
-      margin-bottom: 34px;
+      margin-bottom: 22px;
       border: 1px solid rgba(200, 169, 110, 0.28);
       border-radius: 999px;
       background: rgba(200, 169, 110, 0.05);
@@ -2410,7 +2444,21 @@
     }
 
     #hero-headline {
-      font-size: clamp(2.2rem, 4.3vw, 3.4rem);
+      font-size: clamp(2.5rem, 4.9vw, 4.15rem);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    /* The one risk in the sentence, set in the risk register: italic stress
+       with a red rule under it. Red stays a border color; the text is cream. */
+    #hero-headline .hh-risk {
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-color: var(--color-accent-red);
+      text-decoration-thickness: 0.05em;
+      text-underline-offset: 0.09em;
+      text-decoration-skip-ink: none;
     }
 
     #hero-subline {
@@ -2418,7 +2466,7 @@
       font-size: clamp(1rem, 1.6vw, 1.15rem);
       line-height: 1.65;
       max-width: 34em;
-      margin-bottom: 36px;
+      margin-bottom: 26px;
     }
 
     #hero-subline strong {
@@ -2901,7 +2949,7 @@
     .clog-filters { display: flex; flex-wrap: wrap; gap: 8px; }
     .clog-filter {
       appearance: none; cursor: pointer;
-      padding: 9px 18px; min-height: 40px;
+      padding: 10px 20px; min-height: 44px;
       border: 1px solid #35352f; border-radius: var(--radius-sm);
       background: #161616;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(240, 236, 228, 0.05);
@@ -2961,6 +3009,8 @@
     }
     .clog-item[data-type="new"] .clog-tag { color: var(--color-accent-gold); border-color: rgba(200, 169, 110, 0.45); }
     .clog-item[data-type="perf"] .clog-tag { color: var(--color-text-primary); border-color: #3a3a36; }
+    .clog-item[data-type="fix"] .clog-tag { color: var(--color-accent-red-text); border-color: rgba(198, 98, 90, 0.4); }
+    .clog-item[data-type="site"] .clog-tag { color: #a89f8f; border-color: #3a3a36; }
     .clog-hash {
       margin-left: auto;
       color: var(--color-accent-gold); opacity: 0.75;
@@ -3308,6 +3358,163 @@
       a.nav-star { padding: 8px 12px; gap: 6px; }
       .nav-star-count { padding-left: 6px; }
     }
+    /* ============================================================
+       DISPLAY ROLE OVERRIDES — editorial serif for headlines only.
+       Grouped last so the face, weight, and tracking retune wins the
+       cascade over each section's own display rule above.
+    ============================================================ */
+    #hero-headline,
+    #ship-band-headline,
+    .features-headline,
+    .catalog-headline,
+    .clog-headline,
+    .essays-headline,
+    .faq-headline,
+    .flow-headline,
+    .install-headline,
+    .lanes-headline,
+    .musicians-headline,
+    .proof-headline,
+    .router-headline,
+    .scorecard-headline {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+
+    #philosophy .phil-watermark,
+    #philosophy .phil-pull-quote {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-weight: 560;
+      letter-spacing: -0.01em;
+    }
+
+    .lane-name {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+      font-weight: 560;
+      letter-spacing: -0.01em;
+      font-variant-numeric: lining-nums;
+    }
+
+    /* Display ramp — four steps on ~1.28, hero at the top. Kills the old
+       six-size sprawl where a mid-page section shouted at 2.1x the hero. */
+    .install-headline,
+    #ship-band-headline {
+      font-size: clamp(2.6rem, 5.2vw, 4.3rem);
+      text-wrap: balance;
+    }
+    .features-headline,
+    .catalog-headline,
+    .lanes-headline {
+      font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    }
+    .proof-headline,
+    .scorecard-headline,
+    .musicians-headline,
+    .clog-headline,
+    .router-headline,
+    .flow-headline,
+    .essays-headline,
+    .faq-headline {
+      font-size: clamp(2rem, 3.6vw, 2.9rem);
+    }
+    .lane-name {
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+    }
+
+    /* Eyebrow atom — one spec for the nine section eyebrows (colors stay). */
+    .catalog-eyebrow, .clog-eyebrow, .essays-eyebrow, .flow-eyebrow,
+    .lanes-eyebrow, .proof-eyebrow, .router-eyebrow, .scorecard-eyebrow {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    /* Gold band: the gold focus ring vanishes on its own color. */
+    #ship-band a:focus-visible,
+    #ship-band button:focus-visible {
+      outline-color: #080808;
+    }
+
+    /* Terminal: hold the first-session height through rotations, and lift
+       the dim lines from 4.6:1 toward 6.5:1 on the card surface. */
+    #hero .term-session { min-height: 272px; }
+    #hero .term-session, #hero .term-session .t-dim { color: #9b958c; }
+
+    ::selection { background: var(--color-accent-gold); color: var(--color-bg); }
+    html { scrollbar-color: #2e2c28 #0a0a0a; overflow-x: clip; }
+
+    /* Cascade guard: the unscoped a.nav-star base rule sits later in the
+       sheet than the <=768px hide, silently re-enabling the badge and
+       shoving the hamburger off-canvas. Re-assert the hide last. */
+    @media (max-width: 768px) {
+      a.nav-star { display: none; }
+    }
+
+    /* ============================================================
+       PROOF TAPE — full-width telemetry strip between nav and hero.
+       Pure CSS marquee: duplicated track, translateX(-50%) loop.
+       Reduced motion or no JS: it is CSS-only, so the reduced-motion
+       variant freezes into a centered wrapping row.
+    ============================================================ */
+    #proof-tape {
+      border-bottom: 1px solid #1a1915;
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+    .tape-inner {
+      display: flex;
+      width: max-content;
+      animation: tape-scroll 52s linear infinite;
+    }
+    #proof-tape:hover .tape-inner { animation-play-state: paused; }
+    .tape-track {
+      display: flex;
+      align-items: center;
+    }
+    .tape-track li {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      padding: 10px 0 10px 30px;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-text-dim);
+      white-space: nowrap;
+    }
+    .tape-track li::after {
+      content: "\00B7";
+      color: var(--color-accent-gold);
+      padding-left: 30px;
+      opacity: .6;
+    }
+    .tape-track b {
+      color: var(--color-accent-gold);
+      font-weight: 600;
+    }
+    @keyframes tape-scroll {
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tape-inner { animation: none; width: 100%; }
+      .tape-track { flex-wrap: wrap; justify-content: center; width: 100%; }
+      .tape-track[aria-hidden="true"] { display: none; }
+      .tape-track li { padding: 8px 12px; }
+      .tape-track li::after { content: none; }
+    }
   </style>
 </head>
 <body>
@@ -3328,7 +3535,7 @@
   <div class="container nav-inner">
     <a href="#hero" class="nav-logo" aria-label="Suede AI home">
       <img
-        src="./assets/suede-ai-logo-transparent.png"
+        src="./assets/suede-ai-logo-transparent.webp"
         alt="Suede AI"
         width="28"
         height="28"
@@ -3368,11 +3575,38 @@
 
 <main id="main" tabindex="-1">
 
+<!-- PROOF TAPE — every number on this strip appears, sourced, further down the page -->
+<div id="proof-tape" aria-label="Pack proof at a glance">
+  <div class="tape-inner">
+    <ul class="tape-track">
+      <li><b>73</b> skills, MIT licensed</li>
+      <li><b>270</b> commits in 10 weeks</li>
+      <li><b>$448.31</b> argued back from Amazon</li>
+      <li><b>0</b> uploads by default</li>
+      <li><b>2</b> runtimes: Claude Code + Codex</li>
+      <li><b>26</b> changelog entries, each a real commit</li>
+      <li><b>18</b>-chapter builder&rsquo;s book, free</li>
+      <li><b>29,102</b> words of documentation</li>
+    </ul>
+    <ul class="tape-track" aria-hidden="true">
+      <li><b>73</b> skills, MIT licensed</li>
+      <li><b>270</b> commits in 10 weeks</li>
+      <li><b>$448.31</b> argued back from Amazon</li>
+      <li><b>0</b> uploads by default</li>
+      <li><b>2</b> runtimes: Claude Code + Codex</li>
+      <li><b>26</b> changelog entries, each a real commit</li>
+      <li><b>18</b>-chapter builder&rsquo;s book, free</li>
+      <li><b>29,102</b> words of documentation</li>
+    </ul>
+  </div>
+</div>
+
 <!-- HERO -->
-<section id="hero" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;background:#080808;padding:64px 0 72px;">
+<section id="hero" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;background:#080808;padding:38px 0 56px;">
 
   <div id="hero-bg-ring"></div>
   <div id="hero-bg-glow"></div>
+  <div id="hero-grain" aria-hidden="true"></div>
   <div id="hero-vignette" aria-hidden="true"></div>
 
   <div id="hero-inner">
@@ -3381,9 +3615,18 @@
       <div id="hero-copy">
         <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 15</a></span>
 
-        <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and completely unsupervised.</h1>
+        <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and <em class="hh-risk">completely unsupervised</em>.</h1>
 
-        <p id="hero-subline" class="hero-anim">This pack is the supervision. 73 open-source skills that read every diff like a senior engineer with a reputation to protect, then finish the parts of shipping nobody prompts for: design that looks intentional, copy that sells, SEO that gets found, account-specific Instagram growth, and <strong>native iOS and Android shipping workflows</strong>. Full Send routes broad, authorized work to the useful lanes and holds the result to proof. One recovery skill argued Amazon out of <strong>$448.31</strong> in one sitting. Your agent just got taste.</p>
+        <p id="hero-subline" class="hero-anim">This pack is the supervision. 73 open-source skills that read every diff like a senior engineer with a reputation to protect, then finish the parts nobody prompts for: design, copy, SEO, Instagram growth, and <strong>native iOS and Android shipping</strong>. One recovery skill argued Amazon out of <strong>$448.31</strong> in one sitting. Your agent just got taste.</p>
+
+        <div id="hero-ctas" class="hero-anim">
+          <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+            Star on GitHub
+            <span id="hero-star-count" data-star-count hidden></span>
+          </a>
+          <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
+        </div>
 
         <a id="hero-shiplog" class="hero-anim" href="#changelog" aria-label="Ship log. Latest entry August 15, 2026: the entire skill pack gets its first major redesign. Jump to the full changelog.">
           <span class="hero-spark" aria-hidden="true">
@@ -3404,15 +3647,6 @@
             <span class="hero-shiplog-more">270 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
         </a>
-
-        <div id="hero-ctas" class="hero-anim">
-          <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
-            Star on GitHub
-            <span id="hero-star-count" data-star-count hidden></span>
-          </a>
-          <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
-        </div>
       </div>
 
       <div id="hero-term" class="hero-anim">
@@ -3602,7 +3836,7 @@
             <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/672740e" target="_blank" rel="noopener" aria-label="View commit 672740e on GitHub">672740e</a>
           </p>
           <h3 class="clog-title">suede-clip-to-guide gets its boundaries back</h3>
-          <p class="clog-detail"><code>suede-clip-to-guide</code> turns a clip, talk moment, or transcript into a package that carries short-form attention to a long-form asset &mdash; moment scoring, rights routing, exact post copy, and an approval bundle. It shipped with a catalog description condensed to a single sentence, and the condensing dropped the <code>NOT FOR:</code> block that keeps it clear of <code>suede-video</code> and <code>suede-social</code> requests. The catalog entry is now copied verbatim from the skill's own frontmatter, so the two cannot disagree again, and a <code>clip-social-video</code> routing group proves the separation holds in both directions.</p>
+          <p class="clog-detail"><code>suede-clip-to-guide</code> turns a clip, talk moment, or transcript into a package that carries short-form attention to a long-form asset: moment scoring, rights routing, exact post copy, and an approval bundle. It shipped with a catalog description condensed to a single sentence, and the condensing dropped the <code>NOT FOR:</code> block that keeps it clear of <code>suede-video</code> and <code>suede-social</code> requests. The catalog entry is now copied verbatim from the skill's own frontmatter, so the two cannot disagree again, and a <code>clip-social-video</code> routing group proves the separation holds in both directions.</p>
         </li>
 
         <li class="clog-item" data-type="fix">
@@ -3612,7 +3846,7 @@
             <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/a49a998" target="_blank" rel="noopener" aria-label="View commit a49a998 on GitHub">a49a998</a>
           </p>
           <h3 class="clog-title">Skill search stops needing your exact wording</h3>
-          <p class="clog-detail">Version 0.11.1 fixes <code>search_suede_skills</code> matching tokens exactly, so "my landing page is not converting" never reached <code>suede-site-alchemy</code> &mdash; the catalog says "conversion". A shared four-character stem now counts for half an exact match, and a stopword list replaces the three-character floor that was dropping <code>ai</code>, <code>qa</code>, <code>ux</code>, and <code>cro</code>. A 15-case routing eval now runs in CI: top-3 accuracy went 13/15 to 15/15.</p>
+          <p class="clog-detail">Version 0.11.1 fixes <code>search_suede_skills</code> matching tokens exactly, so "my landing page is not converting" never reached <code>suede-site-alchemy</code>. The catalog says "conversion". A shared four-character stem now counts for half an exact match, and a stopword list replaces the three-character floor that was dropping <code>ai</code>, <code>qa</code>, <code>ux</code>, and <code>cro</code>. A 15-case routing eval now runs in CI: top-3 accuracy went 13/15 to 15/15.</p>
         </li>
 
         <li class="clog-item" data-type="fix">
@@ -3622,7 +3856,7 @@
           <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/15de94d" target="_blank" rel="noopener" aria-label="View commit 15de94d on GitHub">15de94d</a>
           </p>
           <h3 class="clog-title">41 skills come out from behind the MCP</h3>
-          <p class="clog-detail">Version 0.11.0 gives the marketing and consumer lanes a profile that can reach them &mdash; before this, 41 of 71 skills were in the catalog but behind no server anyone shipped. Adds a <code>suede_marketing_mcp</code> registration, a <code>search_suede_skills</code> tool that ranks skills against a task description, and <code>includeBody</code> on <code>get_suede_skill</code> so a client can read the instructions, not just the summary. The competitive-claim guard, which two copy edits had quietly downgraded to a skipped warning, fails hard again.</p>
+          <p class="clog-detail">Version 0.11.0 gives the marketing and consumer lanes a profile that can reach them. Before this, 41 of 71 skills were in the catalog but behind no server anyone shipped. Adds a <code>suede_marketing_mcp</code> registration, a <code>search_suede_skills</code> tool that ranks skills against a task description, and <code>includeBody</code> on <code>get_suede_skill</code> so a client can read the instructions, not just the summary. The competitive-claim guard, which two copy edits had quietly downgraded to a skipped warning, fails hard again.</p>
         </li>
 
         <li class="clog-item" data-type="new">
@@ -3849,7 +4083,7 @@
   <div class="lanes-inner">
     <p class="lanes-eyebrow reveal">One pack, seven disciplines</p>
     <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">Code review is just the opening act.</h2>
-    <p class="lanes-sub reveal reveal-d1">The same discipline that grades your diffs also designs the page, writes the copy, runs the whole marketing engine, ships the iOS and Android app, packages the release rights, and argues your money back. Seven lanes, 73 skills, one install.</p>
+    <p class="lanes-sub reveal reveal-d1">The same discipline that grades your diffs also designs the page, writes the copy, runs the whole marketing engine, ships the iOS and Android app, packages the release rights, and argues your money back. Seven disciplines, 73 skills, one install.</p>
     <div class="lanes-list reveal reveal-d2">
       <a class="lane-row" href="#lane-code">
         <span class="lane-name">Code quality &amp; shipping</span>
@@ -4149,7 +4383,7 @@
         <span class="feature-label">AI evals</span>
         <p class="feature-copy">Turns LLM, RAG, classifier, and agent surfaces into measurable AI-SPECs with failure-mode rubrics, eval cases, and acceptance gates you can fail a release on</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card feature-card--red">
         <span class="feature-num">06</span>
         <span class="feature-label">CI ship gate</span>
         <p class="feature-copy">Writes CI that actually gates the merge: stack and lockfile detection, one required check that can't deadlock, and branch protection that holds</p>
@@ -4184,7 +4418,7 @@
         <span class="feature-label">Design, from first principles</span>
         <p class="feature-copy">Commits to a named aesthetic lane, rejects the first reflex and the second-order trap, and builds color, type, and motion up from that decision — never a template with your logo dropped in</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card feature-card--red">
         <span class="feature-num">13</span>
         <span class="feature-label">Consumer recovery</span>
         <p class="feature-copy">The same negotiation discipline pointed at your own accounts: one skill argued Amazon into refunding $448.31, the other audits Netflix, gyms, and every App Store subscription you forgot you had</p>
@@ -4256,7 +4490,7 @@
 <section class="stats-band" aria-label="By the numbers">
   <div class="stats-inner reveal">
     <div class="stat">
-      <div class="stat-num"><span class="count" data-count="73">71</span></div>
+      <div class="stat-num"><span class="count" data-count="73">73</span></div>
       <div class="stat-label">Public skills</div>
     </div>
     <div class="stat">
@@ -4312,7 +4546,7 @@
         <code>npx skills add JasonColapietro/suede-creator-skills</code>
       </div>
       <div class="install-alt">
-        <span class="install-alt-label">Prefer a clone — copies all 71 into ~/.claude/skills/</span>
+        <span class="install-alt-label">Prefer a clone — copies all 73 into ~/.claude/skills/</span>
         <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
       </div>
     </div>
@@ -4806,7 +5040,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img class="footer-logo" src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+      <img class="footer-logo" src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
       <span class="footer-name">Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
     </div>
     <div class="footer-links">
@@ -5023,7 +5257,6 @@
         '<span class="term-grade">ARCHIVE READY &middot; APP STORE LANE OPEN</span>' + cursor
       ]
     ];
-    sess.classList.add('js-type');
     var idx = 0;
     function render(lines) {
       sess.innerHTML = lines.map(function(l) {
@@ -5049,7 +5282,12 @@
       render(SESSIONS[idx]);
       play(cycle);
     }
-    setTimeout(function() { play(cycle); }, 1200);
+    // First paint keeps the static session fully visible; the typed replay
+    // only begins when the terminal rotates to its second session.
+    setTimeout(function() {
+      sess.classList.add('js-type');
+      cycle();
+    }, 9000);
   })();
 
   // Changelog: type filters + relative freshness
