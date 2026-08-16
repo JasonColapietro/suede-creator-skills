@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/blog/">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blog - Suede Creator Skills">
     <meta property="og:description" content="Product updates for Suede Creator Skills: new skills, workflow changes, and what shipped in the open-source Claude Code and Codex skill pack.">
@@ -62,6 +62,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -208,15 +218,32 @@
       a.nav-star { padding: 8px 12px; gap: 6px; }
       .nav-star-count { padding-left: 6px; }
     }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
   </style>
-  </head>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -239,37 +266,37 @@
       <div class="posts">
         <a class="post-row" href="../book/">
           <div class="post-date">August 10, 2026 &middot; Book</div>
-          <div class="post-title">S-Tier: the builder's book behind the skills</div>
+          <h2 class="post-title">S-Tier: the builder's book behind the skills</h2>
           <p class="post-dek">Fourteen chapters on how Agent Skills actually work and how a builder gets genuinely good with them: description routing, outcome-bound orchestration, verification discipline, a five-tier ladder, and a ninety-day practice plan. Free, and every claim points at a file in this repo.</p>
         </a>
         <a class="post-row" href="memory-belongs-in-skills.html">
           <div class="post-date">August 7, 2026 &middot; Essay</div>
-          <div class="post-title">Your memory file is a tax you pay on every prompt</div>
+          <h2 class="post-title">Your memory file is a tax you pay on every prompt</h2>
           <p class="post-dek">A memory file loads unconditionally, so every durable fact costs tokens and attention on every turn, including the turns where none of it applies. Moving conditional knowledge into skills makes it cheaper, and unexpectedly makes it better.</p>
         </a>
         <a class="post-row" href="not-for-the-line-that-makes-a-pack-work.html">
           <div class="post-date">August 7, 2026 &middot; Essay</div>
-          <div class="post-title">NOT FOR: the two words that make a big skill pack work</div>
+          <h2 class="post-title">NOT FOR: the two words that make a big skill pack work</h2>
           <p class="post-dek">A description is the router's only input. Without an explicit boundary naming the sibling that should win, the most eager description takes every request, and adding skills makes it worse on a curve.</p>
         </a>
         <a class="post-row" href="why-breadth-is-free.html">
           <div class="post-date">August 7, 2026 &middot; Essay</div>
-          <div class="post-title">Why breadth is free now, and what that changes</div>
+          <h2 class="post-title">Why breadth is free now, and what that changes</h2>
           <p class="post-dek">"Do one thing well" was advice about tools you pay for whether or not you use them. When an unused capability costs one line, the scope question changes, and tasks people simply abandon become worth automating.</p>
         </a>
         <a class="post-row" href="progressive-disclosure-ship-dag-and-mcp.html">
           <div class="post-date">August 7, 2026</div>
-          <div class="post-title">71 skills installed. Your agent reads almost none of them.</div>
+          <h2 class="post-title">71 skills installed. Your agent reads almost none of them.</h2>
           <p class="post-dek">Progressive disclosure keeps every skill installed and silent until one fits, and a NOT FOR line on each description routes the misfits elsewhere. Plus four new skills, seven read-only MCP tools, and a pack that spans design, shipped code, and a denied Amazon refund. Now 71 skills.</p>
         </a>
         <a class="post-row" href="../skills/suede-instagram-growth.html">
           <div class="post-date">August 4, 2026</div>
-          <div class="post-title">Instagram growth gets an evidence system, not another prompt</div>
+          <h2 class="post-title">Instagram growth gets an evidence system, not another prompt</h2>
           <p class="post-dek">suede-instagram-growth audits authorized account evidence, separates attention from conversion, and produces Reels, carousels, Stories, and approval-gated daily tests.</p>
         </a>
         <a class="post-row" href="android-recommend-next-action-and-workflows.html">
           <div class="post-date">July 19, 2026</div>
-          <div class="post-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</div>
+          <h2 class="post-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</h2>
           <p class="post-dek">suede-recommend-next-action scores your real options and hands back one runnable prompt. android-app-factory ships a native Android app from a keyword through a signed Play Store release.</p>
         </a>
       </div>
@@ -287,7 +314,7 @@
     <footer>
       <div class="footer-shell footer-inner">
         <div class="footer-brand">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
           <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
         </div>
         <div class="footer-links">

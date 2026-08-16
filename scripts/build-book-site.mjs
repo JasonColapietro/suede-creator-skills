@@ -30,7 +30,9 @@ const checkOnly = process.argv.includes("--check");
 // ------------------------------------------------------------------ shell
 
 const css = fs.readFileSync(path.join(repoRoot, "docs", "blog", "why-breadth-is-free.html"), "utf8")
-  .match(/<style>([\s\S]*?)<\/style>/)[1];
+  .match(/<style>([\s\S]*?)<\/style>/)[1]
+  .replace(/[ \t]+\n/g, "\n")
+  .replace(/[ \t]+$/, "");
 
 const BOOK_CSS = `
       .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
@@ -78,7 +80,8 @@ function shell({ title, description, canonical, jsonLd, body, depth }) {
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="${canonical}">
-    <link rel="icon" href="${up}assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="${up}assets/favicon-64.png" type="image/png">
+    <link rel="preload" href="${up}assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <meta property="og:type" content="article">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
@@ -99,7 +102,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="${up}" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="${up}assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -131,7 +134,7 @@ ${body}
         <p class="footer-note">Suede Creator Skills is a ${SKILL_COUNT}-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="${up}assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">
@@ -255,7 +258,7 @@ ${group.pages
   .map(
     (p) => `        <a class="toc-row" href="${p.slug}.html">
           <span class="toc-num">${p.label} &middot; ${p.minutes} min</span>
-          <p class="toc-title">${p.title}</p>
+          <h3 class="toc-title">${p.title}</h3>
           <p class="toc-dek">${p.dek}</p>
         </a>`
   )
@@ -290,7 +293,7 @@ const indexBody = `      <p class="eyebrow">Book &middot; August 10, 2026</p>
       <div class="toc">
         <a class="toc-row" href="front-matter.html">
           <span class="toc-num">Front matter &middot; ${sources[0].minutes} min</span>
-          <p class="toc-title">Why this book exists</p>
+          <h3 class="toc-title">Why this book exists</h3>
           <p class="toc-dek">${sources[0].dek}</p>
         </a>
       </div>

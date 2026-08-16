@@ -8,7 +8,7 @@
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://skills.suedeai.ai/plugins.html">
-  <link rel="icon" href="./assets/suede-ai-logo-transparent.png" type="image/png">
+  <link rel="icon" href="./assets/favicon-64.png" type="image/png">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Install Suede Creator Skills | Claude Code, Codex, and MCP">
   <meta property="og:description" content="Public GitHub skill installs for Claude Code and Codex, plus MCP options for skill discovery, Suedify, design, anti-slop copywriting, visibility grading, Suede SEO/AEO/AI EO audits, and QA checklists.">
@@ -48,6 +48,16 @@
     }
   </script>
   <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -216,7 +226,7 @@
     .copy-btn {
       flex-shrink: 0; background: var(--card); border: 1px solid var(--border);
       color: var(--muted); font-family: var(--mono); font-size: 12px;
-      padding: 7px 14px; min-height: 36px; border-radius: 4px; cursor: pointer;
+      padding: 9px 16px; min-height: 44px; border-radius: 4px; cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
     .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
@@ -342,7 +352,24 @@
       a.nav-star { padding: 8px 12px; gap: 6px; }
       .nav-star-count { padding-left: 6px; }
     }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
   </style>
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -351,7 +378,7 @@
 <nav class="nav" aria-label="Main navigation">
   <div class="shell nav-inner">
     <a href="./" class="nav-logo" aria-label="Suede Creator Skills home">
-      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
       <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
     </a>
     <div class="nav-links">
@@ -381,7 +408,7 @@
       <div class="pathmap-scroll">
         <svg class="pathmap-svg" viewBox="0 0 980 300" role="img" aria-labelledby="pathmap-t pathmap-d" xmlns="http://www.w3.org/2000/svg">
           <title id="pathmap-t">Install paths</title>
-          <desc id="pathmap-d">Claude Code installs the plugin in two lines. Codex installs the Codex-native plugin. Cursor, Copilot, and Windsurf install through the skills CLI. A git clone runs install.sh. All four land the same 71 skills; MCP is an optional layer on top.</desc>
+          <desc id="pathmap-d">Claude Code installs the plugin in two lines. Codex installs the Codex-native plugin. Cursor, Copilot, and Windsurf install through the skills CLI. A git clone runs install.sh. All four land the same 73 skills; MCP is an optional layer on top.</desc>
           <g font-family="system-ui, -apple-system, sans-serif">
             <rect x="2" y="118" width="150" height="66" rx="9" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
             <text x="77" y="147" text-anchor="middle" fill="#c8a96e" font-size="15" font-weight="800">Your agent</text>
@@ -432,7 +459,7 @@
   </div>
 
   <section class="shell" id="claude-code">
-    <h2>Claude Code — two lines</h2>
+    <h2>Claude Code: two lines</h2>
     <p class="section-sub">Add the marketplace, install the pack. <code>suede-skills</code> installs all 73 skills.</p>
 
     <div class="terminal">
@@ -449,7 +476,7 @@
 
     <div class="prose">
       <p>Want less than the full pack? Three focused subsets install the same way: <code>/plugin install suede-marketing@suede</code> (42 skills: paid acquisition, outbound, pricing, offers, lifecycle, Instagram growth, AI search optimization, attribution, and analytics), <code>/plugin install suede-agent-workflows@suede</code> (orchestration, workflows, evals), or <code>/plugin install suede-code@suede</code> (review, grade, ship-gate).</p>
-      <p>Prefer a clone? <code>install.sh</code> copies all 71 skills into <code>~/.claude/skills/</code> and never touches skills that are not part of the pack:</p>
+      <p>Prefer a clone? <code>install.sh</code> copies all 73 skills into <code>~/.claude/skills/</code> and never touches skills that are not part of the pack:</p>
     </div>
 
     <div class="terminal">
@@ -484,8 +511,8 @@
   </section>
 
   <section class="shell" id="codex">
-    <h2>Codex — install the pack or pick your set</h2>
-    <p class="section-sub">The Codex-native plugin installs all 71 skills and registers both read-only MCP discovery profiles. Add the repo marketplace, install the pack, then restart Codex.</p>
+    <h2>Codex: install the pack or pick your set</h2>
+    <p class="section-sub">The Codex-native plugin installs all 73 skills and registers both read-only MCP discovery profiles. Add the repo marketplace, install the pack, then restart Codex.</p>
 
     <div class="terminal">
       <div class="terminal-bar" aria-hidden="true">
@@ -505,7 +532,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
 
     <div class="grid-3">
       <article class="cell">
-        <span class="cell-label">The umbrella — start here</span>
+        <span class="cell-label">The umbrella: start here</span>
         <p>One skill that routes the whole public workflow: Suedify restyling, design, code grading, copy, visibility, SEO/AEO/AI EO, and QA lanes.</p>
         <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
@@ -514,7 +541,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
       </article>
       <article class="cell cell--red">
         <span class="cell-label">Direct workflow skills</span>
-        <p>Install individual skills for direct triggers — write, design, review, grade, orchestrate, gate. Pass extra <code>skills/&lt;name&gt;</code> paths to install several at once:</p>
+        <p>Install individual skills for direct triggers: write, design, review, grade, orchestrate, gate. Pass extra <code>skills/&lt;name&gt;</code> paths to install several at once:</p>
         <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-design \
@@ -570,7 +597,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
     </div>
 
     <div class="prose">
-      <p>Profiles: <code>all</code>, <code>workflow</code>, <code>marketing</code>, <code>creator</code>, or <code>consumer</code>. It implements <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>resources/list</code>, <code>resources/read</code>, <code>prompts/list</code>, and <code>prompts/get</code> — 8 tools, 6 resources, 5 prompts. No dependencies, no network calls, no install step beyond running the file.</p>
+      <p>Profiles: <code>all</code>, <code>workflow</code>, <code>marketing</code>, <code>creator</code>, or <code>consumer</code>. It implements <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>resources/list</code>, <code>resources/read</code>, <code>prompts/list</code>, and <code>prompts/get</code>: 8 tools, 6 resources, 5 prompts. No dependencies, no network calls, no install step beyond running the file.</p>
     </div>
 
     <div class="pathmap">
@@ -631,7 +658,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
     <h3 style="margin-top:40px;">The 8 tools</h3>
     <div class="rows">
       <div class="row"><b>list_suede_skills</b><span>Lists Suede skills by workflow, marketing, creator, consumer, or all areas.</span></div>
-      <div class="row"><b>search_suede_skills</b><span>Ranks the pack against a task description and returns the best-matching skills instead of all 71.</span></div>
+      <div class="row"><b>search_suede_skills</b><span>Ranks the pack against a task description and returns the best-matching skills instead of all 73.</span></div>
       <div class="row"><b>get_suede_skill</b><span>Returns one skill description and when to use it, or the full SKILL.md with <code>includeBody</code>.</span></div>
       <div class="row"><b>suede_install_options</b><span>Returns public skill, MCP, local plugin, and skill-copy install options.</span></div>
       <div class="row"><b>suede_copy_seo_audit</b><span>Builds an SEO/AEO/AI EO copy audit scaffold with metadata, schema, CTA, proof, and verification checks.</span></div>
@@ -651,7 +678,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
 
   <section class="shell" id="notes">
     <h2>Before you install</h2>
-    <p class="section-sub">What 71 skills actually cost you in context, and how the routing keeps them out of each other's way.</p>
+    <p class="section-sub">What 73 skills actually cost you in context, and how the routing keeps them out of each other's way.</p>
     <div class="notes">
       <a class="note-row" href="./blog/progressive-disclosure-ship-dag-and-mcp.html">
         <span class="note-date">Aug 2026</span>
@@ -715,7 +742,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
 <footer>
   <div class="shell footer-inner">
     <div class="footer-brand">
-      <img src="./assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
       <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
     </div>
     <div class="footer-links">

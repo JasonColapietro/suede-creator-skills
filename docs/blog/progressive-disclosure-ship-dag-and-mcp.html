@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="71 skills installed. Your agent reads almost none of them.">
     <meta property="og:description" content="Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.">
@@ -35,6 +35,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -198,15 +208,32 @@
         .ship-strip { padding: 48px 0; }
         .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
       }
-    </style>
-  </head>
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+  </style>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -280,7 +307,7 @@
 
       <div class="divider"></div>
 
-      <p><a class="button" href="../skills/">Browse all 71 skills</a> <a class="button secondary" href="../plugins.html">All install paths and the MCP server</a></p>
+      <p><a class="button" href="../skills/">Browse all 73 skills</a> <a class="button secondary" href="../plugins.html">All install paths and the MCP server</a></p>
     </main>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="ship-strip-shell">
@@ -294,10 +321,10 @@
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <p class="footer-note">Suede Creator Skills is a 73-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">

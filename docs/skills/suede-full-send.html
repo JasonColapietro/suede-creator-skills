@@ -8,7 +8,7 @@
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-full-send.html">
-  <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+  <link rel="icon" href="../assets/favicon-64.png" type="image/png">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Suede Full Send | Outcome-Bound Agent Orchestration">
   <meta property="og:description" content="One controller. Maximum useful non-colliding lanes. Adversarial review and proof for broad, authorized outcomes.">
@@ -51,6 +51,16 @@
   }
   </script>
   <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -285,7 +295,24 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; }
     }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
   </style>
+  <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -293,7 +320,7 @@
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="shell nav-inner">
       <a class="brand" href="../">
-        <img src="../assets/suede-ai-logo-transparent.png" alt="" onerror="this.style.display='none'">
+        <img src="../assets/suede-ai-logo-transparent.webp" alt="" onerror="this.style.display='none'">
         <span>Suede Creator Skills</span>
       </a>
       <div class="nav-links">
@@ -442,7 +469,7 @@
 
     <section class="ship-strip" id="install" aria-labelledby="install-title">
       <div class="shell">
-        <h2 id="install-title">Install the 71-skill pack.</h2>
+        <h2 id="install-title">Install the 73-skill pack.</h2>
         <p>Claude Code and Codex can each install the complete public pack through their native marketplace. The direct Codex installer remains available when you want only Full Send.</p>
         <p><strong>Claude Code full pack</strong></p>
         <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills
@@ -450,7 +477,7 @@
         <p><strong>Codex full pack</strong></p>
         <pre><code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex</code></pre>
-        <p><strong>Codex &mdash; Full Send only</strong></p>
+        <p><strong>Codex: Full Send only</strong></p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-full-send</code></pre>

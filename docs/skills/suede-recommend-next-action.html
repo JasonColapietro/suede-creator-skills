@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-recommend-next-action.html">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Recommend Next Action - Suede Creator Skills">
     <meta property="og:description" content="Use Suede Recommend Next Action in Claude Code or Codex to score candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then get one recommendation packaged as a short runnable prompt.">
@@ -40,6 +40,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -252,15 +262,32 @@
       }
       @keyframes st-blink { 50% { opacity: 0; } }
       @media (prefers-reduced-motion: reduce) { .skill-term .term-cursor { animation: none; } }
-    </style>
-  </head>
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+  </style>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -275,9 +302,9 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <div class="eyebrow">/suede-recommend-next-action &middot; Agent orchestration &amp; workflows — the pack's decision layer</div>
+      <div class="eyebrow">/suede-recommend-next-action &middot; Agent orchestration &amp; workflows; the pack's decision layer</div>
       <h1>Stop asking "what should I do next."</h1>
-      <p class="lead">This skill reads current repo, terminal, plan, or handoff state, scores 2-4 candidate moves against goal alignment, unblocking, evidence, urgency, and leverage, and hands back exactly one recommendation — packaged as a short, self-contained prompt you can paste and run. The full operator brief and a granular, command-level breakdown stay hidden until you ask for them.</p>
+      <p class="lead">This skill reads current repo, terminal, plan, or handoff state, scores 2-4 candidate moves against goal alignment, unblocking, evidence, urgency, and leverage, and hands back exactly one recommendation; packaged as a short, self-contained prompt you can paste and run. The full operator brief and a granular, command-level breakdown stay hidden until you ask for them.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-recommend-next-action">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
@@ -338,11 +365,11 @@ cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skill
         <article class="card">
           <h2>What it covers</h2>
           <ul>
-            <li>Read-only inspection of current terminal, repo, plan, or handoff state — never mutates files, deployments, or accounts while recommending.</li>
+            <li>Read-only inspection of current terminal, repo, plan, or handoff state; never mutates files, deployments, or accounts while recommending.</li>
             <li>A default quick prompt: 2-4 runnable sentences naming the skill, target, outcome, one decisive fact, and a done signal.</li>
             <li>An expanded prompt on request ("expand prompt"): full operator contract with target, objective, verified state, authorized scope, and verification steps.</li>
             <li>A granular prompt on request ("make it granular"): the expanded prompt decomposed into atomic numbered steps with exact commands.</li>
-            <li>Refuses vague recommendations like "keep working" or "improve the app" — names a command, artifact, decision, edit, or verification result.</li>
+            <li>Refuses vague recommendations like "keep working" or "improve the app"; names a command, artifact, decision, edit, or verification result.</li>
             <li>Defers to a repo's existing plan, progress doc, or issue tracker instead of creating a second one.</li>
           </ul>
         </article>
@@ -353,7 +380,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skill
             <li>The user asks to "give me the prompt," "expand prompt," or "make it granular."</li>
             <li>Choosing between two or more plausible next steps with limited context to spare.</li>
             <li>NOT for executing the recommended action without separate authorization.</li>
-            <li>NOT for coordinating a multi-lane build across specialists — use <a href="suede-agent-teams.html">suede-agent-teams</a> instead.</li>
+            <li>NOT for coordinating a multi-lane build across specialists; use <a href="suede-agent-teams.html">suede-agent-teams</a> instead.</li>
           </ul>
         </article>
       </section>
@@ -383,7 +410,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-recommend-next-action .claude/skill
         <p class="footer-note">Suede Recommend Next Action is part of Suede Creator Skills: it scores the real options in front of you and hands back exactly one move, packaged as a prompt you can paste and run.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">

@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-ai-seo.html">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede AI SEO - Suede Creator Skills">
     <meta property="og:description" content="Get cited in AI-generated answers: structural extractability, authority signals, machine-readable files, schema markup, and AI bot access for ChatGPT, Perplexity, Google AI Overviews, and Claude.">
@@ -33,6 +33,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -245,15 +255,32 @@
       }
       @keyframes st-blink { 50% { opacity: 0; } }
       @media (prefers-reduced-motion: reduce) { .skill-term .term-cursor { animation: none; } }
-    </style>
-  </head>
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+  </style>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -270,16 +297,16 @@
     <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-ai-seo &middot; Marketing &amp; growth</div>
       <h1>Get cited in AI-generated answers.</h1>
-      <p class="lead">Make content structurally extractable, citable, and agent-readable so Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot surface and cite it — structure, authority, machine-readable files, schema markup, and AI bot access.</p>
+      <p class="lead">Make content structurally extractable, citable, and agent-readable so Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot surface and cite it; structure, authority, machine-readable files, schema markup, and AI bot access.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ai-seo">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
       <section>
         <h2>When to reach for it</h2>
-        <p>The user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers — including requests that mention AI SEO, AEO, GEO, LLMO, answer engine optimization, AI Overviews, AI citations, AI visibility, zero-click search, llms.txt, OKF, or agent-readable sites.</p>
+        <p>The user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers, including requests that mention AI SEO, AEO, GEO, LLMO, answer engine optimization, AI Overviews, AI citations, AI visibility, zero-click search, llms.txt, OKF, or agent-readable sites.</p>
       </section>
       <section>
         <h2>What's inside</h2>
         <ul>
-          <li>Gate Policy — Advisory, Not Blocking</li>
+          <li>Gate Policy: Advisory, Not Blocking</li>
           <li>Boundaries</li>
           <li>Before Starting</li>
           <li>How AI Search Works</li>
@@ -330,10 +357,10 @@
     </section>
     <footer>
       <div class="shell">
-        <p class="footer-note">Suede Deslop is part of Suede Creator Skills: it strips the AI tells from finished prose, counts every cut, and scores the result before anything goes public. Facts stay yours; only the style changes.</p>
+        <p class="footer-note">Suede AI SEO is part of Suede Creator Skills. Get cited in AI-generated answers.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">

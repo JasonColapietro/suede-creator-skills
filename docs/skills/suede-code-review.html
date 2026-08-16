@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-code-review.html">
-    <link rel="icon" href="../assets/suede-ai-logo-transparent.png" type="image/png">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Code Review - Suede Creator Skills">
     <meta property="og:description" content="Use Suede Code Review for findings-only diff review in Claude Code and Codex, with repo gates, severity-ranked evidence, deploy safety, and ship verdicts.">
@@ -40,6 +40,16 @@
       }
     </script>
     <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
       transform: translateY(-160%);
@@ -144,13 +154,13 @@
       .button {
         display: inline-flex; min-height: 44px; align-items: center;
         margin: 0 8px 8px 0; padding: 0 20px;
-        border: 1px solid var(--red) !important; border-radius: 4px;
-        background: rgba(139, 26, 26, 0.12);
+        border: 1px solid var(--gold) !important; border-radius: 4px;
+        background: rgba(200, 169, 110, 0.08);
         color: var(--cream) !important;
         font-size: 14px; font-weight: 600;
         transition: background 0.15s, border-color 0.15s;
       }
-      .button:hover { background: rgba(139, 26, 26, 0.28); }
+      .button:hover { background: rgba(200, 169, 110, 0.18); }
       .button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
       .button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
       .button.star { border-color: var(--gold) !important; background: rgba(200, 169, 110, 0.08); }
@@ -265,15 +275,32 @@
       }
       @keyframes st-blink { 50% { opacity: 0; } }
       @media (prefers-reduced-motion: reduce) { .skill-term .term-cursor { animation: none; } }
-    </style>
-  </head>
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+    @media (max-width: 700px) {
+      .nav-links a { padding: 10px 8px; }
+    }
+  </style>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="nav">
       <nav class="shell nav-inner" aria-label="Main navigation">
         <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
-          <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
         <div class="nav-links">
@@ -377,7 +404,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-code-review .claude/skills/</code><
         <p class="footer-note">Suede Code Review is part of Suede Creator Skills: it runs findings-only code reviews with evidence-ranked findings, repo gates, deploy safety, and a ship gate.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.png" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
           </div>
           <div class="footer-links">
