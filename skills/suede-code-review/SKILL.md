@@ -49,6 +49,13 @@ Before review, identify:
 - risk lanes: frontend, backend, data, auth, payments, contracts, iOS, release,
   public copy, analytics, secrets, deployment, and docs.
 
+**Pre-flight, before any analysis or agent lanes spawn:** pin the comparison
+point and prove it is reviewable. `git rev-parse <fixed-point>` must resolve;
+diff with three dots (`git diff <fixed-point>...HEAD`) so the comparison runs
+against the merge-base, not a moving branch tip; and confirm the diff is
+non-empty. A bad ref or empty diff fails here, in one line — not inside a
+half-finished deep review.
+
 ## Context Graph
 
 Build a lightweight graph before judging the diff:
@@ -340,10 +347,28 @@ an API contract an iOS client consumes.
 
 Flag tech debt patterns as P3, group by file, don't block ship. Do not block a ship on P3 tech debt unless it directly obscures a P0/P1 bug. File as follow-up.
 
+### Design Smell Baseline (--standard and --deep)
+
+Beyond what the repo documents, the review carries a fixed twelve-smell
+maintainability baseline (Fowler, _Refactoring_ ch. 3) in
+`references/smell-baseline.md`. Load it on `--standard` and `--deep` reviews and
+match it against the diff only. Its binding rules travel with it: a documented
+repo rule overrides the baseline, every smell finding is a labeled judgment
+call ("possible Feature Envy", P3 by default, confidence `medium` at best), and
+anything tooling already enforces is skipped. Smell findings feed this
+Technical Debt lane — they never outrank correctness findings and never move
+the Ship Gate on their own.
+
 ## Intent Compliance and Scope
 
 Code that works but does not do what it claimed is still a defect.
 
+- **Find the spec first.** Look for the originating spec in this order: issue
+  or ticket references in the commit messages and PR body (`#123`,
+  `Closes #45`); a path the caller passed; a spec file under `docs/`, `specs/`,
+  or a scratch directory matching the branch or feature name. If none exists,
+  say "no spec available" in the output and review intent from the PR
+  description alone — never invent requirements to review against.
 - **Claim vs diff:** restate what the change says it does — PR title, description, linked issue, commit subject — and confirm the diff delivers it. Map every acceptance criterion to a code path or a test. Claimed behavior with no corresponding change is a P1 truth gap.
 - **Scope creep:** flag changes that do more than they claim — an unrelated refactor riding inside a bugfix, a dependency bump bundled with a feature, a formatting sweep that buries the real diff. Name the unrelated clusters and recommend splitting.
 - **Review-effort signal:** state diff size (files / net lines) and an effort read — trivial / moderate / heavy / too-large-to-review-safely. A single PR mixing auth, payments, and a migration should be split before it is safe to judge.

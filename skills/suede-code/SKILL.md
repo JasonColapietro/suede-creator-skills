@@ -139,7 +139,7 @@ Score each lane A-F, then one overall. For non-Suede work, substitute "domain tr
 - **Data migrations** — A needs a documented rollback + restore tested against prod-like data (or justified waiver); B needs a rollback plan, restore untested; no rollback plan caps at **D**.
 - **Public API changes** — A needs verified backward-compat or a versioned migration path; breaking with no path caps at **C**.
 
-**Tech debt** — grade impact depends on location, not just pattern. Debt in auth/payment/migration paths is one level stricter (a God object in a payment module is D, not C). Debt in core/high-traffic is standard. Debt in utilities/scripts is flagged as a Required Upgrade but does not lower the overall grade unless it bleeds into a critical path. Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug.
+**Tech debt** — grade impact depends on location, not just pattern. Debt in auth/payment/migration paths is one level stricter (a God object in a payment module is D, not C). Debt in core/high-traffic is standard. Debt in utilities/scripts is flagged as a Required Upgrade but does not lower the overall grade unless it bleeds into a critical path. Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug. For a named maintainability catalog, load the twelve-smell Design Smell Baseline reference bundled with suede-code-review — same binding rules: repo overrides, judgment-call severity, skip what tooling enforces.
 
 ## Step 5 — Deploy Safety Gate (runs at the end, every time)
 
