@@ -307,6 +307,77 @@
     [id] { scroll-margin-top: 84px; }
   </style>
     <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* Uniform install block. Tokens are page-local and two bespoke pages
+       (suede-full-send, suede-instagram-growth) never declare --card/--border,
+       so every token here carries the estate literal as a fallback. */
+    .install-block { margin: 56px 0 0; }
+    .install-block > h2 { margin-bottom: 8px; }
+    .install-lede { font-size: 14.5px; line-height: 1.65; color: var(--muted, #888880); max-width: 660px; margin-bottom: 20px; }
+    .install-term {
+      max-width: 780px; background: var(--card, #161616);
+      border: 1px solid var(--border, #222222); border-radius: 6px; overflow: hidden;
+    }
+    .install-term-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 18px; border-bottom: 1px solid var(--border, #222222);
+    }
+    .install-term-dots { display: flex; gap: 6px; }
+    .install-term-dots span { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+    .install-term-dots span:first-child { background: #4a2a28; }
+    .install-term-dots span:last-child { background: #2c3a2a; }
+    .install-term-bar b {
+      font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+      font-size: 12.5px; font-weight: 400; letter-spacing: 0.04em; color: var(--muted, #888880);
+    }
+    .install-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 18px 22px; }
+    .install-row + .install-row { border-top: 1px solid var(--border, #222222); }
+    /* min-width:0 is what lets the <pre> scroll inside the row instead of
+       stretching it; without it a long command blows out the page on mobile. */
+    .install-cmd { flex: 1; min-width: 0; }
+    .install-label {
+      display: block; margin-bottom: 8px;
+      font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #888880);
+    }
+    .install-code {
+      margin: 0; overflow-x: auto; white-space: pre;
+      /* Pinned, not inherited: every page carries its own generic `pre` rule
+         and they disagree on background, padding, and radius, so an unpinned
+         block is uniform in the markup and three different things on screen. */
+      padding: 16px 18px; background: #080808;
+      border: 1px solid #1a1a18; border-radius: 4px;
+      font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+      font-size: 14.5px; line-height: 1.95; color: var(--gold, #c8a96e);
+    }
+    .install-code .install-prompt { color: var(--red-text, #c6625a); user-select: none; }
+    .install-copy {
+      flex-shrink: 0; min-height: 44px; min-width: 92px; padding: 10px 16px; cursor: pointer;
+      font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+      font-size: 12.5px; white-space: nowrap; color: var(--muted, #888880);
+      background: transparent; border: 1px solid var(--border, #222222); border-radius: 4px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .install-copy:hover, .install-copy.copied { color: var(--gold, #c8a96e); border-color: var(--gold, #c8a96e); }
+    /* These pages only ever styled a:focus-visible; this is their first button. */
+    .install-copy:focus-visible { outline: 2px solid var(--gold, #c8a96e); outline-offset: 3px; }
+    .install-note { font-size: 13.5px; line-height: 1.65; color: var(--muted, #888880); max-width: 720px; margin-top: 14px; }
+    .install-note a { color: var(--gold, #c8a96e); }
+    .install-status {
+      position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    @media (max-width: 640px) {
+      /* align-items above is flex-start, which content-sizes children in the
+         cross axis. In column mode that axis is the width, so the command box
+         must be stretched back or a long command escapes the viewport instead
+         of scrolling inside its own box. */
+      .install-row { flex-direction: column; align-items: stretch; gap: 12px; padding: 16px 16px 18px; }
+      .install-cmd { width: 100%; }
+      .install-copy { width: 100%; }
+      .install-code { font-size: 13px; }
+    }
+  </style>
 </head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -383,6 +454,33 @@
         <h2>Credit</h2>
         <p>This Suede skill includes licensed source material. Attribution and licence terms remain in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md">NOTICE.md</a>.</p>
       </section>
+      <section class="install-block" aria-labelledby="install-block-title">
+        <h2 id="install-block-title">Install this skill</h2>
+        <p class="install-lede">It ships inside the Suede Creator Skills pack, so one install brings the whole pack and this skill with it. Claude Code takes two commands the first time and one after that; Codex installs the same pack natively.</p>
+        <div class="install-term">
+          <div class="install-term-bar">
+            <span class="install-term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <b>terminal &middot; install the pack</b>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Claude Code</span>
+              <pre class="install-code"><span class="install-prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills
+<span class="install-prompt">$</span> /plugin install suede-skills@suede</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Claude Code install commands">Copy</button>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Codex</span>
+              <pre class="install-code"><span class="install-prompt">$</span> codex plugin add suede-skills@suede-codex</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Codex install command">Copy</button>
+          </div>
+        </div>
+        <p class="install-status" role="status" aria-live="polite" data-install-status></p>
+        <p class="install-note">Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+      </section>
     </main>
     <section class="ship-strip" aria-label="Install the pack">
       <div class="shell">
@@ -434,6 +532,33 @@
       link.addEventListener('click', function () { if (mq.matches) box.open = false; });
     });
   })();
+</script>
+<script>
+  // Progressive enhancement only: the commands are plain selectable text
+  // without JS. The button reports state twice -- its own accessible name for
+  // anyone focused on it, and the block's live region for anyone who is not.
+  document.querySelectorAll("[data-install-copy]").forEach(function (btn) {
+    var idleLabel = btn.getAttribute("aria-label");
+    btn.addEventListener("click", function () {
+      var row = btn.closest(".install-row");
+      var code = row && row.querySelector(".install-code");
+      var block = btn.closest(".install-block");
+      var status = block && block.querySelector("[data-install-status]");
+      if (!code || !navigator.clipboard) return;
+      navigator.clipboard.writeText(code.textContent.replace(/^\$ /gm, "").trim()).then(function () {
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        btn.setAttribute("aria-label", idleLabel.replace(/^Copy /, "Copied ") + " to clipboard");
+        if (status) status.textContent = idleLabel.replace(/^Copy the /, "") + " copied to clipboard";
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+          btn.setAttribute("aria-label", idleLabel);
+          if (status) status.textContent = "";
+        }, 2000);
+      });
+    });
+  });
 </script>
 </body>
 </html>
