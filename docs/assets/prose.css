@@ -31,7 +31,6 @@ li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 16p
 li::before { content: ""; position: absolute; left: 0; top: 11px; width: 9px; height: 1px; background: var(--gold); }
 .panel {
   border: 1px solid var(--border);
-  border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--card);
   padding: 24px 26px;
