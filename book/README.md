@@ -59,7 +59,7 @@ four ideas it repeats.
 
 ### Appendices
 
-- [A. The Skill Index, by Intent](A1-skill-index.md) — all 71 skills, grouped by
+- [A. The Skill Index, by Intent](A1-skill-index.md) — all 73 skills, grouped by
   what you are trying to do.
 - [B. The Rules, on One Page](A2-the-rules.md) — 29 rules, compressed.
 

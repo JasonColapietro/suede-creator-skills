@@ -29,7 +29,7 @@
   "description": "The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.",
   "url": "https://skills.suedeai.ai/book/the-description-contract.html",
   "position": 4,
-  "wordCount": 1659,
+  "wordCount": 1661,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -340,7 +340,7 @@
       <p class="eyebrow">Part I &middot; Chapter 3</p>
       <h1>The Description Contract</h1>
       <p class="post-meta">The description field is the router. Trigger words, NOT FOR boundaries, overlapping descriptions, and what a dead route costs inside your agent.</p>
-      <div class="book-meta"><span>1,659 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,661 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>Five skills in this pack mention code in their first sentence. A review skill, a grader, a combined pass, a CI gate, and a fifty-agent shipping DAG. You type "can you look at this PR," and exactly one of them is correct. Nothing in the system errors if the wrong one runs. You get output either way, and the output looks fine.</p>
       <p>That is the whole problem with descriptions. They read like marketing copy and they behave like routing tables. The body of a skill can be a thousand lines of careful procedure, and none of it matters if the router never selects it. Progressive disclosure means the description is the only thing the agent reliably sees for every installed skill, every time. It is the contract. The body is the payload.</p>
@@ -375,7 +375,7 @@
       <p>It also keeps a <code>knownPrivateSkills</code> list, filtered down to the ones that are not public, and refuses to let any of those names appear in a public skill's frontmatter at all. Bodies may mention them, but only as a disclosed dead end, tagged with a phrase marking them unavailable. The comment in the source says why plainly: an undisclosed pointer "sends a public installer after a skill they do not have and cannot get, with nothing marking it as unavailable." Two lines in <code>suede-codex-fleet</code> were exactly that, because an earlier version of the guard read only frontmatter.</p>
       <p>The lint itself had a hole worth knowing about. The original regex anchored every match on the literal string <code>NOT FOR:</code>, so in a clause naming three targets, only the first was ever checked. Sixteen of the twenty-one skills in the pack at that time had two or more targets on one line. Nothing broken shipped through it, but two of every three redirect targets in a three-target clause were validated by nobody. The current version finds the clause span first, then collects every <code>(use X)</code> inside it. That fix is preserved verbatim as the worked example in <code>skills/suede-code/SKILL.md</code>, which is a nice property: the pack's review skill demonstrates itself by finding a real bug in the pack's release gate.</p>
       <h2 id="a-pack-is-a-namespace">A pack is a namespace</h2>
-      <p>Ten skills have forty-five possible pairwise collisions. Seventy-one have more than two thousand. You cannot write your way out of that with better positive descriptions, because none of the descriptions are inaccurate. They are all true. Truth about what a skill does says nothing about whether it should beat its neighbor.</p>
+      <p>Ten skills have forty-five possible pairwise collisions. Seventy-three have more than two thousand six hundred. You cannot write your way out of that with better positive descriptions, because none of the descriptions are inaccurate. They are all true. Truth about what a skill does says nothing about whether it should beat its neighbor.</p>
       <p>Which is why a set of skills is a namespace, and namespaces need the same discipline as any other: unique names, declared boundaries, no dangling references, and a checker that fails the build when someone breaks one. The alternative is not chaos. The alternative is a system that quietly does the second-best thing forever and never tells you.</p>
       <div class="panel move"><p class="move-label">The move</p>
       <p>Take a request that should go to a neighboring skill, hand it to this one, and see whether the description alone sends it away. If it does not, the boundary is not written yet, and it is not the router's fault.</p>

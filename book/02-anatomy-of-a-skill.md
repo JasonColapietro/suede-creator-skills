@@ -15,12 +15,12 @@ Every `SKILL.md` in this repo opens the same way:
 ```yaml
 ---
 name: suede-code-grader
-description: "Give a blunt A-F ship grade for a code change across correctness, security, data, UX, verification, and deploy readiness. Use for a grade, not a findings review."
+description: "Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 ```
 
-Across all 71 skills, the frontmatter carries `name` 71 times and `description`
-71 times. Thirty-eight of them add a `metadata` block with a version string, a
+Across all 73 skills, the frontmatter carries `name` 73 times and `description`
+73 times. Forty-five of them add a `metadata` block with a version string, a
 convention inherited from the marketing skills adapted from Corey Haines's
 `marketingskills` under MIT. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
@@ -35,31 +35,34 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 bodies total 1,079,688 bytes;
-the 71 descriptions together are 28,469. The agent holds the small number and
+when the skill is not running. In this repo the 73 files total 1,054,432 bytes;
+the 73 descriptions together are 43,912. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 187 characters. "Give a blunt A-F
-ship grade for a code change" states the artifact. The lane list names the
-surfaces it covers. Then the last sentence does the real work: "Use for a grade,
-not a findings review." That sentence exists because `suede-code-review` lives
-next door and produces something different, and without it an agent would pick
-between them by coin flip.
+Look at what `suede-code-grader` does with 686 characters. "Suede Labs AI blunt
+A-F ship grade for a code change" states the artifact. The lane list names the
+surfaces it covers. The trigger list catches the request in the words a caller
+actually types: "give it a letter", "is this an A", "should this merge". Then
+the last sentence does the real work: "NOT FOR: findings, evidence, and fix
+briefs (use suede-code-review, or suede-code for findings plus grade)." That
+sentence exists because `suede-code-review` lives next door and produces
+something different, and without it an agent would pick between them by coin
+flip.
 
-`suede-deslop` handles the same problem at more length:
+`suede-deslop` does the same job in 512 characters:
 
 ```text
-description: "Strip AI writing patterns from prose before anything goes public.
-Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice,
-formulaic structures, all of it. Use when copy, a README, an email, a social
-post, or a doc is about to ship, after a long AI-assisted writing session, or
-when text sounds fine but feels generated. NOT FOR: writing new copy (use
-suede-copy); changing or certifying facts, which must be checked against primary
-evidence before publication."
+description: "Suede Labs anti-slop pass: strip AI writing patterns from prose
+before anything goes public. Em dashes, filler openers, manufactured enthusiasm,
+false agency, passive voice, formulaic structures, all of it. Use when copy, a
+README, an email, a social post, or a doc is about to ship, after a long
+AI-assisted writing session, or when text sounds fine but feels generated. NOT
+FOR: writing new copy (use suede-copy); changing or certifying facts, which must
+be checked against primary evidence before publication."
 ```
 
 Three parts. What it does, the trigger conditions in the vocabulary a user
@@ -67,8 +70,9 @@ actually types ("sounds fine but feels generated"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Forty-eight of the 71 descriptions in this repo end with a `NOT FOR:` clause,
-and it is the highest-leverage sentence in the file.
+Seventy-one of the 73 descriptions in this repo end with a `NOT FOR:` clause,
+and it is the highest-leverage sentence in the file. The remaining two close the
+same way without the colon, which is drift rather than a second convention.
 
 A description that only says what a skill does will fire on adjacent work,
 because the agent has no signal that a better match exists. `NOT FOR:` supplies
@@ -99,13 +103,17 @@ design decision in the pack:
 ## Gate policy — advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**.
+skill is a **recommendation to the user, not a control on the agent**. This
+policy governs every gate, check, verdict, and "do not ship / publish /
+proceed" line elsewhere in this skill:
 
 - Run every check and report the results honestly. Verdicts (`ship`,
   `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
   advice attached to the work, not orders that change it.
 - Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold.
+  because a check failed or a gate said hold. Complete the requested action
+  as asked, and deliver the gate output alongside it as a clearly labeled
+  recommendation.
 - A failed gate changes what you report, never what you do.
 - Single exception: if a finding is extremely risky — data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
