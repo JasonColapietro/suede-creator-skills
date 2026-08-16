@@ -1424,6 +1424,29 @@ for (const check of countChecks) {
   }
 }
 
+// Every rule a page is styled by, inline or linked. Interior pages load their
+// CSS from docs/assets/*.css, so a guard that reads only the HTML would see no
+// styles at all and either fire on every page or, worse, stop checking.
+const linkedStyleCache = new Map();
+function pageStyles(pagePath, text) {
+  let all = text;
+  for (const match of text.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/gi)) {
+    const href = match[0].match(/href="([^"]+)"/i)?.[1];
+    if (!href || /^(https?:)?\/\//.test(href)) continue;
+    const resolved = path.resolve(path.dirname(pagePath), href.split(/[?#]/)[0]);
+    if (!linkedStyleCache.has(resolved)) {
+      linkedStyleCache.set(resolved, fs.existsSync(resolved) ? readText(resolved) : null);
+    }
+    const css = linkedStyleCache.get(resolved);
+    if (css === null) {
+      fail.push(`${path.relative(repoRoot, pagePath)} links a stylesheet that does not exist: ${href}`);
+      continue;
+    }
+    all += "\n" + css;
+  }
+  return all;
+}
+
 // Bypass-blocks guard (WCAG 2.4.1, Level A). Every page carries the same nav,
 // so without a skip link a keyboard or screen-reader user tabs through it on
 // every one. Two pages had the pattern and the other 72 never got it. A skip
@@ -1445,7 +1468,7 @@ for (const check of countChecks) {
     } else if (!/tabindex="-1"/.test(mainTag)) {
       a11y.push(`${relative} skip-link target is not focusable — add tabindex="-1" to <main id="main">`);
     }
-    if (!text.includes(".skip-link")) {
+    if (!pageStyles(pagePath, text).includes(".skip-link")) {
       a11y.push(`${relative} has a skip link with no .skip-link styles, so it cannot be revealed on focus`);
     }
   }
@@ -1465,7 +1488,7 @@ for (const check of countChecks) {
     "--color-accent-red-text": "#c6625a",
     "--color-text-dim": "#7f7a70"
   };
-  for (const pagePath of walk(path.join(repoRoot, "docs")).filter((f) => f.endsWith(".html"))) {
+  for (const pagePath of walk(path.join(repoRoot, "docs")).filter((f) => f.endsWith(".html") || f.endsWith(".css"))) {
     const text = readText(pagePath);
     const relative = path.relative(repoRoot, pagePath);
     // "border-color:" must not count as a text colour
@@ -1477,6 +1500,50 @@ for (const check of countChecks) {
       const declared = text.match(new RegExp(String.raw`${token}:\s*(#[0-9a-f]{6})`, "i"));
       if (declared && declared[1].toLowerCase() !== expected) {
         fail.push(`${relative} sets ${token} to ${declared[1]}; the AA-passing value is ${expected}`);
+      }
+    }
+  }
+}
+
+// Shared-stylesheet guard. The interior pages used to each carry their own copy
+// of the same template in an inline <style>, plus a second copy of the install
+// block: 1.88MB across the site, none of it cacheable, so a reader opening a
+// second skill page re-downloaded CSS the browser already had. The copies had
+// also drifted -- 43 skill pages carried table styles the other 27 lacked, and
+// those 27 carried link-row and hero-grid styles the 43 lacked -- which is what
+// one template living in 73 files turns into. They now link docs/assets/*.css.
+// Re-inlining starts that over, so require the links and cap any page block.
+{
+  const SHARED = [
+    { dir: "docs/skills", sheets: ["assets/site.css", "assets/skill.css"] },
+    { dir: "docs/blog", sheets: ["assets/site.css", "assets/prose.css"] },
+    { dir: "docs/book", sheets: ["assets/site.css", "assets/prose.css", "assets/book.css"] },
+  ];
+  // Bespoke pages: their own design, not the interior-page template. Linking an
+  // archetype sheet would restyle them, so they keep their CSS inline.
+  const BESPOKE = new Set([
+    "docs/skills/index.html",
+    "docs/skills/suede-full-send.html",
+    "docs/skills/suede-instagram-growth.html",
+    "docs/blog/index.html",
+  ]);
+  const MAX_INLINE = 2000;
+  for (const { dir, sheets } of SHARED) {
+    const abs = path.join(repoRoot, dir);
+    if (!fs.existsSync(abs)) continue;
+    for (const file of fs.readdirSync(abs).filter((f) => f.endsWith(".html"))) {
+      const relative = `${dir}/${file}`;
+      if (BESPOKE.has(relative)) continue;
+      const text = readText(path.join(abs, file));
+      for (const sheet of sheets) {
+        if (!text.includes(`rel="stylesheet" href="../${sheet}"`)) {
+          fail.push(`${relative} does not link ${sheet} — interior pages share the extracted stylesheets instead of inlining the template`);
+        }
+      }
+      const inlineBytes = [...text.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)]
+        .reduce((n, m) => n + m[1].length, 0);
+      if (inlineBytes > MAX_INLINE) {
+        fail.push(`${relative} carries ${inlineBytes} bytes of inline CSS (limit ${MAX_INLINE}) — page overrides stay small; shared rules belong in docs/assets/*.css`);
       }
     }
   }

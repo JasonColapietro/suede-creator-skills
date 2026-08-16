@@ -29,44 +29,13 @@ const checkOnly = process.argv.includes("--check");
 
 // ------------------------------------------------------------------ shell
 
-const css = fs.readFileSync(path.join(repoRoot, "docs", "blog", "why-breadth-is-free.html"), "utf8")
-  .match(/<style>([\s\S]*?)<\/style>/)[1]
-  .replace(/[ \t]+\n/g, "\n")
-  .replace(/[ \t]+$/, "");
-
-const BOOK_CSS = `
-      .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
-      ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
-      ol li { counter-increment: item; }
-      ol li::before { content: counter(item); top: 0; width: auto; height: auto; background: none; color: var(--gold); font-size: 13px; font-weight: 700; font-family: var(--mono); }
-      .table-wrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--border); border-radius: 6px; }
-      table { border-collapse: collapse; width: 100%; font-size: 15px; }
-      th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
-      th { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--surface); }
-      td:first-child code { white-space: nowrap; }
-      tbody tr:last-child td { border-bottom: none; }
-      .panel.move { border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.06); margin-top: 36px; }
-      .move-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-      .pager { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 48px; border-top: 1px solid var(--hairline); padding-top: 24px; }
-      .pager a { display: block; max-width: 47%; min-width: 220px; flex: 1 1 220px; border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
-      .pager a:hover { border-color: var(--gold); }
-      .pager .dir { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
-      .pager .to { font-size: 15.5px; font-weight: 700; color: var(--cream); }
-      .pager .next { text-align: right; margin-left: auto; }
-      .part-head { margin: 52px 0 6px; }
-      .part-head .part-name { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-text); }
-      .part-head h2 { margin: 6px 0 4px; }
-      .part-blurb { font-size: 15px; color: var(--muted); margin-bottom: 18px; }
-      .toc { display: grid; gap: 10px; }
-      .toc-row { display: block; border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; background: var(--card); border-bottom: 1px solid var(--border); }
-      .toc-row:hover { border-color: var(--gold); }
-      .toc-num { font-size: 11px; font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
-      .toc-title { font-size: 18px; font-weight: 700; color: var(--cream); margin: 4px 0 6px; letter-spacing: -0.01em; }
-      .toc-dek { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
-      .stat-row { display: flex; flex-wrap: wrap; gap: 10px 36px; margin: 26px 0 8px; padding: 18px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-      .stat b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: var(--cream); }
-      .stat span { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-`;
+// Styles are linked, not inlined. The book shares docs/assets/site.css and
+// prose.css with the blog, and adds its own chapter chrome in book.css, so a
+// reader moving between chapters downloads the CSS once instead of once per
+// page. This used to copy the <style> block out of a blog post at build time,
+// which meant every chapter carried its own 12KB duplicate and the generator
+// broke if that one post was ever restyled.
+const STYLESHEETS = ["assets/site.css", "assets/prose.css", "assets/book.css"];
 
 function shell({ title, description, canonical, jsonLd, body, depth }) {
   const up = depth === 0 ? "../" : "../";
@@ -82,6 +51,7 @@ function shell({ title, description, canonical, jsonLd, body, depth }) {
     <link rel="canonical" href="${canonical}">
     <link rel="icon" href="${up}assets/favicon-64.png" type="image/png">
     <link rel="preload" href="${up}assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+${STYLESHEETS.map((href) => `    <link rel="stylesheet" href="${up}${href}">`).join("\n")}
     <meta property="og:type" content="article">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
@@ -94,7 +64,6 @@ function shell({ title, description, canonical, jsonLd, body, depth }) {
     <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
     </script>
-    <style>${css}${BOOK_CSS}    </style>
   </head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
