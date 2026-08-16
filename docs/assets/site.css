@@ -126,7 +126,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
   font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
   letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
 }
-.ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+.ship-strip-sub { font-size: 15.5px; line-height: 1.6; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
 .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
 .ship-strip-row a {
   display: inline-flex; align-items: center; min-height: 44px;
