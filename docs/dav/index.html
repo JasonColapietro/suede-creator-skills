@@ -1362,14 +1362,20 @@
     /* ============================================================
        MOBILE NAV HAMBURGER
     ============================================================ */
+    /* Mobile nav is a <details> disclosure: it ships open in the markup, so
+       with JS off every link stays reachable. JS collapses it at mobile
+       widths and keeps the summary's label in sync with the state. */
+    .nav-disclosure { display: contents; }
+
     .nav-hamburger {
       display: none;
+      list-style: none;
       flex-direction: column;
       justify-content: center;
       gap: 5px;
-      width: 36px;
-      height: 36px;
-      padding: 4px;
+      width: 44px;
+      height: 44px;
+      padding: 9px;
       background: transparent;
       border: 1px solid var(--color-border);
       border-radius: var(--radius-sm);
@@ -1377,6 +1383,8 @@
       transition: border-color var(--transition-fast);
     }
 
+    .nav-hamburger::-webkit-details-marker { display: none; }
+    .nav-hamburger::marker { content: ""; }
     .nav-hamburger:hover { border-color: var(--color-accent-gold); }
 
     .nav-hamburger span {
@@ -1387,9 +1395,9 @@
       transition: background var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
     }
 
-    .nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .nav-disclosure[open] .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-disclosure[open] .nav-hamburger span:nth-child(2) { opacity: 0; }
+    .nav-disclosure[open] .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     #nav-mobile-menu {
       display: none;
@@ -1407,7 +1415,9 @@
       gap: var(--space-1);
     }
 
-    #nav-mobile-menu.open { display: flex; }
+    @media (max-width: 768px) {
+      .nav-disclosure[open] #nav-mobile-menu { display: flex; }
+    }
 
     .nav-mobile-link {
       display: block;
@@ -1491,18 +1501,19 @@
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#proof" class="nav-link">Proof</a>
       <a href="#install" class="nav-cta">Install</a>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <details class="nav-disclosure" id="nav-disclosure" open>
+        <summary class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </summary>
+        <div id="nav-mobile-menu" role="menu" aria-label="Mobile navigation">
+        <a href="#skills" class="nav-mobile-link" role="menuitem">Skills</a>
+        <a href="#proof" class="nav-mobile-link" role="menuitem">Proof</a>
+        <a href="#install" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
+        </div>
+      </details>
     </div>
-  </div>
-
-  <div id="nav-mobile-menu" role="menu" aria-label="Mobile navigation">
-    <a href="#skills" class="nav-mobile-link" role="menuitem">Skills</a>
-    <a href="#proof" class="nav-mobile-link" role="menuitem">Proof</a>
-    <a href="#install" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
   </div>
 </nav>
 
@@ -1804,23 +1815,29 @@
     }, { passive: true });
   })();
 
-  // Mobile nav hamburger
+  // Mobile nav disclosure
   (function() {
+    var box = document.getElementById('nav-disclosure');
     var hamburger = document.getElementById('nav-hamburger');
     var menu = document.getElementById('nav-mobile-menu');
-    if (!hamburger || !menu) return;
+    if (!box || !hamburger || !menu) return;
+    var mq = window.matchMedia('(max-width: 768px)');
 
-    hamburger.addEventListener('click', function() {
-      var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!expanded));
-      menu.classList.toggle('open', !expanded);
-    });
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      hamburger.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
 
-    // Close menu when a link is clicked
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+
+    // Close after picking a destination (same-page anchors do not reload).
     menu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        hamburger.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('open');
+        if (mq.matches) box.open = false;
       });
     });
   })();
