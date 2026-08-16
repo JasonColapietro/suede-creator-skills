@@ -1,0 +1,145 @@
+/* site.css - shared chrome for every interior page
+ *
+ * Design tokens, reset, nav, footer, ship strip, buttons and panels: every rule
+ * that is identical across the skill pages and the prose pages. Loaded first,
+ * then exactly one archetype sheet on top of it:
+ *
+ *   skill.css   the 73 skill pages      wide 1100px shell, dense type
+ *   prose.css   blog and book pages     760px reading measure
+ *   book.css    book pages only         chapter chrome, loaded after prose.css
+ *
+ * Page-specific overrides stay in an inline <style> on the page. Inline styles
+ * come after these links in the head, so an override reusing the same selector
+ * wins on order and does not need extra specificity.
+ */
+
+/* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("fonts/fraunces-var.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+.skip-link {
+  position: fixed; top: 12px; left: 12px; z-index: 1000;
+  transform: translateY(-160%);
+  padding: 10px 14px; border-radius: 8px;
+  background: var(--gold, #c8a96e); color: var(--bg, #080808);
+  font-weight: 700; text-decoration: none;
+  transition: transform 160ms ease;
+}
+.skip-link:focus { transform: translateY(0); }
+#main:focus { outline: none; }
+:root {
+  color-scheme: dark;
+  --bg: #080808;
+  --surface: #111111;
+  --card: #161616;
+  --border: #222222;
+  --hairline: #1a1a18;
+  --gold: #c8a96e;
+  --red: #8b1a1a;
+  --red-text: #c6625a;
+  --cream: #f0ece4;
+  --muted: #888880;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+img { display: block; max-width: 100%; }
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+.nav-logo img { width: 28px; height: 28px; }
+.nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.nav-logo-wordmark span { color: var(--gold); }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+  padding: 6px 0; transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-cta {
+  border: 1px solid var(--gold); border-radius: 4px;
+  padding: 8px 16px !important; color: var(--cream) !important;
+  background: rgba(200, 169, 110, 0.08);
+}
+.nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+main { padding: 72px 0 96px; }
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--red-text); margin-bottom: 20px;
+}
+p:last-child { margin-bottom: 0; }
+strong, b { color: var(--cream); }
+.button {
+  display: inline-flex; min-height: 44px; align-items: center;
+  margin: 0 8px 8px 0; padding: 0 20px;
+  border: 1px solid var(--gold) !important; border-radius: 4px;
+  background: rgba(200, 169, 110, 0.08);
+  color: var(--cream) !important;
+  font-size: 14px; font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.button:hover { background: rgba(200, 169, 110, 0.18); }
+.button.secondary { border-color: var(--border) !important; background: transparent; color: var(--muted) !important; }
+.button.secondary:hover { border-color: var(--gold) !important; color: var(--gold) !important; }
+pre {
+  overflow: auto;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: var(--bg);
+  padding: 16px 18px;
+  color: var(--gold);
+  font: 13px/1.7 var(--mono);
+  white-space: pre-wrap;
+  margin: 12px 0;
+}
+pre code { color: inherit; background: none; padding: 0; }
+footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+.footer-note { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 720px; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+.footer-brand img { width: 24px; height: 24px; }
+.footer-brand strong { color: var(--cream); font-weight: 600; }
+.footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+.footer-links a:hover { color: var(--gold); }
+.footer-divider { color: var(--border); }
+.ship-strip-head {
+  font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+}
+.ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+.ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.ship-strip-row a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: #171310; font-size: 15px; font-weight: 700;
+  border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+  transition: border-color 0.15s;
+}
+.ship-strip-row a:hover { border-color: #171310; }
+/* Mobile nav: a <details> disclosure. The markup ships open, so with JS
+   off every link stays reachable; JS collapses it at mobile widths and
+   keeps the summary's label in sync. Replaces the wrapped link row that
+   used to eat a fifth of a phone viewport. */
+.nav-disclosure { display: contents; }
+.nav-disclosure > summary.nav-hamburger { display: none; }
+::selection { background: #c8a96e; color: #080808; }
+[id] { scroll-margin-top: 84px; }
