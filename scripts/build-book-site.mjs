@@ -105,7 +105,13 @@ ${JSON.stringify(jsonLd, null, 2)}
           <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
-        <div class="nav-links">
+        <details class="nav-disclosure" open>
+          <summary class="nav-hamburger" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <div class="nav-links">
           <a href="${up}">Home</a>
           <a href="${up}skills/">Skills</a>
           <a href="${up}guide.html">Guide</a>
@@ -113,7 +119,8 @@ ${JSON.stringify(jsonLd, null, 2)}
           <a href="${up}blog/">Blog</a>
           <a href="${up}copy.html">Copy Bank</a>
           <a href="${up}plugins.html" class="nav-cta">Install</a>
-        </div>
+          </div>
+        </details>
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
@@ -147,6 +154,29 @@ ${body}
         </div>
       </div>
     </footer>
+    <script>
+      // Mobile nav disclosure. The markup ships <details open> so a no-JS
+      // visit still reaches every link; this collapses it at mobile widths
+      // only and keeps the summary label in sync with the state.
+      (function () {
+        var box = document.querySelector('.nav-disclosure');
+        if (!box) return;
+        var summary = box.querySelector('summary');
+        var mq = window.matchMedia('(max-width: 768px)');
+        function collapseForViewport() { box.open = !mq.matches; }
+        function syncLabel() {
+          if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+        }
+        collapseForViewport();
+        syncLabel();
+        box.addEventListener('toggle', syncLabel);
+        if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+        else if (mq.addListener) mq.addListener(collapseForViewport);
+        box.querySelectorAll('.nav-links a').forEach(function (link) {
+          link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+        });
+      })();
+    </script>
   </body>
 </html>
 `;

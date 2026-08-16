@@ -235,12 +235,46 @@
       letter-spacing: -0.015em;
     }
     h1 { line-height: 1.06; }
+    /* Mobile nav: a <details> disclosure. The markup ships open, so with JS
+       off every link stays reachable; JS collapses it at mobile widths and
+       keeps the summary's label in sync. Replaces the wrapped link row that
+       used to eat a fifth of a phone viewport. */
+    .nav-disclosure { display: contents; }
+    .nav-disclosure > summary.nav-hamburger { display: none; }
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap: nowrap; }
+      .nav-disclosure { display: block; }
+      .nav-disclosure > summary.nav-hamburger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 44px; height: 44px; padding: 9px;
+        border: 1px solid var(--border); border-radius: 4px;
+        background: transparent; cursor: pointer; list-style: none;
+      }
+      .nav-disclosure > summary.nav-hamburger::-webkit-details-marker { display: none; }
+      .nav-disclosure > summary.nav-hamburger::marker { content: ""; }
+      .nav-disclosure > summary.nav-hamburger span {
+        display: block; width: 100%; height: 1px; background: var(--cream);
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+      .nav-disclosure > summary.nav-hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(2) { opacity: 0; }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+      .nav-disclosure[open] > .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        padding: 6px 20px 14px;
+        background: #0a0a0a;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-disclosure[open] > .nav-links > * {
+        display: flex; align-items: center; min-height: 44px;
+      }
+      .nav-disclosure[open] > .nav-links > * + * { border-top: 1px solid var(--hairline); }
+    }
     ::selection { background: #c8a96e; color: #080808; }
     html { scrollbar-color: #2e2c28 #0a0a0a; }
     [id] { scroll-margin-top: 84px; }
-    @media (max-width: 700px) {
-      .nav-links a { padding: 10px 8px; }
-    }
 
       .book-meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
       ol { list-style: none; counter-reset: item; margin: 0 0 16px; }
@@ -284,7 +318,13 @@
           <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
-        <div class="nav-links">
+        <details class="nav-disclosure" open>
+          <summary class="nav-hamburger" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <div class="nav-links">
           <a href="../">Home</a>
           <a href="../skills/">Skills</a>
           <a href="../guide.html">Guide</a>
@@ -292,7 +332,8 @@
           <a href="../blog/">Blog</a>
           <a href="../copy.html">Copy Bank</a>
           <a href="../plugins.html" class="nav-cta">Install</a>
-        </div>
+          </div>
+        </details>
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
@@ -373,5 +414,28 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Mobile nav disclosure. The markup ships <details open> so a no-JS
+      // visit still reaches every link; this collapses it at mobile widths
+      // only and keeps the summary label in sync with the state.
+      (function () {
+        var box = document.querySelector('.nav-disclosure');
+        if (!box) return;
+        var summary = box.querySelector('summary');
+        var mq = window.matchMedia('(max-width: 768px)');
+        function collapseForViewport() { box.open = !mq.matches; }
+        function syncLabel() {
+          if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+        }
+        collapseForViewport();
+        syncLabel();
+        box.addEventListener('toggle', syncLabel);
+        if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+        else if (mq.addListener) mq.addListener(collapseForViewport);
+        box.querySelectorAll('.nav-links a').forEach(function (link) {
+          link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+        });
+      })();
+    </script>
   </body>
 </html>
