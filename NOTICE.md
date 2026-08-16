@@ -43,4 +43,26 @@ preserving useful domain substance. The adaptation includes:
 
 ---
 
+## skills — Matt Pocock
+
+The Design Smell Baseline in `suede-code-review` (`references/smell-baseline.md`,
+routed from `suede-code`) — a twelve-smell maintainability catalog with
+repo-overrides / judgment-call / skip-tooling binding rules — is **adapted from
+[skills](https://github.com/mattpocock/skills) by Matt Pocock** (itself drawing
+on Martin Fowler's _Refactoring_, ch. 3), used and redistributed under the MIT
+License. The spec-source discovery order and reviewability pre-flight in
+`suede-code-review` are adapted from the same source.
+
+**Upstream:** https://github.com/mattpocock/skills
+**Upstream license:** MIT, Copyright (c) 2026 Matt Pocock — full text in
+[`licenses/mattpocock-skills-MIT.txt`](licenses/mattpocock-skills-MIT.txt)
+
+The adaptation rescopes the material to this pack's review contract: findings
+carry P-levels and confidence labels, smells are diff-scoped and feed the
+Technical Debt lane rather than the Ship Gate, and the two-axis
+standards/spec separation is folded into the existing Intent Compliance
+section instead of shipping as a separate skill.
+
+---
+
 Everything else in this repository is © 2026 Suede Labs AI, MIT licensed — see [`LICENSE`](LICENSE).
