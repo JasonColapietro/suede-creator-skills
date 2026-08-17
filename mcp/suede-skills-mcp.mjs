@@ -25,6 +25,10 @@ const PROFILE_PLUGINS = {
 };
 const AREA_ALIASES = { artist: ["artist", "creator"], creator: ["artist", "creator"] };
 const AREA_ENUM = ["all", "workflow", "artist", "creator", "marketing", "consumer"];
+// `area` decides which plugin bundle and MCP profile ships a skill; `specialty`
+// decides how a human browses the pack. They are deliberately separate axes:
+// re-cutting the browse structure must never move a skill between bundles.
+const SPECIALTY_ENUM = ["all", "ship", "craft", "found", "earn", "position"];
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -93,9 +97,34 @@ function text(content) {
 }
 
 function asMarkdownSkillList(data) {
-  return data.skills
-    .map((skill) => `- $${skill.name}: ${skill.description} Use when: ${skill.useWhen}`)
-    .join("\n");
+  const line = (skill) => `- $${skill.name}: ${skill.description} Use when: ${skill.useWhen}`;
+  // One flat list stops being readable somewhere under a hundred entries, so
+  // group by specialty and sub-lane in catalog order. A skill with no
+  // specialty still renders, ungrouped, rather than disappearing.
+  const order = (profileCatalog().specialties || []).map((s) => s.key);
+  const groups = new Map(order.map((key) => [key, []]));
+  const ungrouped = [];
+  for (const skill of data.skills) {
+    if (groups.has(skill.specialty)) groups.get(skill.specialty).push(skill);
+    else ungrouped.push(skill);
+  }
+  const labels = new Map((profileCatalog().specialties || []).map((s) => [s.key, s.label]));
+  const blocks = [];
+  for (const [key, skills] of groups) {
+    if (!skills.length) continue;
+    const lanes = [];
+    for (const skill of skills) {
+      const lane = skill.lane || "Other";
+      if (!lanes.length || lanes.at(-1).lane !== lane) lanes.push({ lane, skills: [] });
+      lanes.at(-1).skills.push(skill);
+    }
+    const body = lanes
+      .map(({ lane, skills: laneSkills }) => `### ${lane}\n${laneSkills.map(line).join("\n")}`)
+      .join("\n\n");
+    blocks.push(`## ${labels.get(key) || key} (${skills.length})\n${body}`);
+  }
+  if (ungrouped.length) blocks.push(ungrouped.map(line).join("\n"));
+  return blocks.join("\n\n");
 }
 
 function isSkillAvailable(name) {
@@ -124,6 +153,11 @@ function scopeByArea(skills, area) {
   if (!area || area === "all") return skills;
   const wanted = new Set(AREA_ALIASES[area] || [area]);
   return skills.filter((skill) => wanted.has(skill.area));
+}
+
+function scopeBySpecialty(skills, specialty) {
+  if (!specialty || specialty === "all") return skills;
+  return skills.filter((skill) => skill.specialty === specialty);
 }
 
 function tokenize(value) {
@@ -435,7 +469,12 @@ const tools = [
         area: {
           type: "string",
           enum: AREA_ENUM,
-          description: "Optional area filter."
+          description: "Optional area filter (which plugin bundle ships the skill)."
+        },
+        specialty: {
+          type: "string",
+          enum: SPECIALTY_ENUM,
+          description: "Optional specialty filter (how the pack is browsed): ship, craft, found, earn, position."
         }
       }
     }
@@ -449,6 +488,7 @@ const tools = [
       properties: {
         query: { type: "string", description: "Task, problem, or intent to route." },
         area: { type: "string", enum: AREA_ENUM, description: "Optional area filter." },
+        specialty: { type: "string", enum: SPECIALTY_ENUM, description: "Optional specialty filter: ship, craft, found, earn, position." },
         limit: {
           type: "integer",
           minimum: 1,
@@ -554,10 +594,12 @@ const skillOutputSchema = {
   properties: {
     name: { type: "string" },
     area: { type: "string" },
+    specialty: { type: "string" },
+    lane: { type: "string" },
     description: { type: "string" },
     useWhen: { type: "string" }
   },
-  required: ["name", "area", "description", "useWhen"],
+  required: ["name", "area", "specialty", "lane", "description", "useWhen"],
   additionalProperties: false
 };
 
@@ -785,14 +827,15 @@ function callTool(name, args = {}) {
   if (!tool) throw rpcError(`Unknown tool: ${name}`);
   validateToolArguments(tool, args);
   if (name === "list_suede_skills") {
-    return toolResult(asMarkdownSkillList({ skills: scopeByArea(data.skills, args.area) }), {
-      skills: scopeByArea(data.skills, args.area)
+    const scoped = scopeBySpecialty(scopeByArea(data.skills, args.area), args.specialty);
+    return toolResult(asMarkdownSkillList({ skills: scoped }), {
+      skills: scoped
     });
   }
   if (name === "search_suede_skills") {
     const query = boundedString(args.query);
     const limit = args.limit === undefined ? 10 : args.limit;
-    const matches = searchSkills(scopeByArea(data.skills, args.area), query, limit);
+    const matches = searchSkills(scopeBySpecialty(scopeByArea(data.skills, args.area), args.specialty), query, limit);
     const humanText = matches.length
       ? asMarkdownSkillList({ skills: matches })
       : `No Suede skill in this profile matches: ${query}`;

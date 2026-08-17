@@ -911,13 +911,59 @@ if (docsCountMatch) {
 // plugin manifest, the umbrella skill's own docs, and the copy bank.
 const totalSkillCount = skillNames.length;
 const companionSkillCount = totalSkillCount - 1; // total minus suede-workflow-skills itself
-// Marketing-lane size, read from the catalog's lane badge. The badge itself
-// is structurally verified against the rows beneath it further down, so
-// chart values and prose that quote the lane hang off a checked number.
-const marketingLaneBadge = fs.existsSync(path.join(repoRoot, "docs/skills/index.html"))
-  ? readText(path.join(repoRoot, "docs/skills/index.html")).match(/<h3>Marketing &amp; growth<\/h3><span class="lane-count">(\d+)<\/span>/)
-  : null;
-const marketingSkillCount = marketingLaneBadge ? parseInt(marketingLaneBadge[1], 10) : NaN;
+// Marketing-area size, read from the catalog itself. It used to be scraped
+// from a "Marketing & growth" lane badge on the skills page; the five-specialty
+// re-cut split those skills across three browse specialities, so the badge is
+// gone while `area` -- which still decides plugin and MCP-profile membership --
+// is unchanged. Prose that quotes the marketing lane hangs off the same number
+// the bundles do.
+const marketingSkillCount = catalog.skills.filter((skill) => skill.area === "marketing").length;
+
+// The five browse specialities and their sub-lanes, read from the catalog's own
+// index. Every count-bearing surface below is checked against these, so a skill
+// moved between specialities cannot leave a stale chart, badge, or lead behind.
+const specialtyIndex = Array.isArray(catalog.specialties) ? catalog.specialties : [];
+if (specialtyIndex.length === 0) {
+  fail.push("catalog.json has no `specialties` index — the browse structure is unguarded");
+}
+const specialtyCounts = new Map(specialtyIndex.map((s) => [s.key, s.count]));
+for (const spec of specialtyIndex) {
+  const members = catalog.skills.filter((skill) => skill.specialty === spec.key);
+  if (members.length !== spec.count) {
+    fail.push(`catalog.json specialty "${spec.key}" claims ${spec.count} skills but ${members.length} carry that specialty`);
+  }
+  const laneCounts = new Map(spec.lanes.map((lane) => [lane.label, lane.count]));
+  const actualLanes = new Map();
+  for (const member of members) {
+    actualLanes.set(member.lane, (actualLanes.get(member.lane) || 0) + 1);
+  }
+  for (const [label, count] of laneCounts) {
+    if ((actualLanes.get(label) || 0) !== count) {
+      fail.push(`catalog.json specialty "${spec.key}" lane "${label}" claims ${count} skills but ${actualLanes.get(label) || 0} carry it`);
+    }
+  }
+  for (const label of actualLanes.keys()) {
+    if (!laneCounts.has(label)) {
+      fail.push(`catalog.json specialty "${spec.key}" has skills in unindexed lane "${label}"`);
+    }
+  }
+}
+for (const skill of catalog.skills) {
+  if (!specialtyCounts.has(skill.specialty)) {
+    fail.push(`catalog.json skill ${skill.name} has unknown specialty "${skill.specialty ?? "(missing)"}"`);
+  }
+  if (typeof skill.lane !== "string" || skill.lane.length === 0) {
+    fail.push(`catalog.json skill ${skill.name} is missing a lane label`);
+  }
+}
+const specialtyTotal = [...specialtyCounts.values()].reduce((sum, n) => sum + n, 0);
+if (specialtyIndex.length > 0 && specialtyTotal !== catalog.skills.length) {
+  fail.push(`catalog.json specialties cover ${specialtyTotal} skills but the catalog holds ${catalog.skills.length}`);
+}
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 const numberWords = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
 const tensWords = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
 
@@ -967,9 +1013,10 @@ const countChecks = [
   { file: "docs/llms.txt", label: "guide link description", re: /complete list of all (\d+)/, expected: totalSkillCount },
   // Rendered data visualizations count too: the catalog's lane chart shipped
   // a marketing bar of 39 under a "Where the 73 live" headline.
-  { file: "docs/skills/index.html", label: "lanemap marketing value", re: /monospace">(\d+)<\/text>\n\n          <text x="250" y="66"/, expected: marketingSkillCount },
-  { file: "docs/skills/index.html", label: "lanemap desc marketing", re: /Marketing and growth (\d+), orchestration/, expected: marketingSkillCount },
-  { file: "docs/skills/index.html", label: "lead marketing count", re: /and (\d+) marketing and growth skills/, expected: marketingSkillCount },
+  // The catalog page's specialty chart, its lead, and the homepage's lane index
+  // all publish the same five numbers. Each gets its own guard below (built from
+  // the catalog's specialty index), so a re-cut cannot leave one surface stale.
+  { file: "docs/skills/index.html", label: "start-here marketing count", re: /<h3>(\d+) marketing &amp; growth skills<\/h3>/, expected: marketingSkillCount },
   { file: "docs/copy.html", label: "full-description marketing count", re: /(\d+) marketing and growth skills including account-specific/, expected: marketingSkillCount },
   { file: "docs/blog/memory-belongs-in-skills.html", label: "blog post footer pack size", re: /is a (\d+)-skill, MIT-licensed pack/, expected: totalSkillCount },
   { file: "docs/skills/suede-full-send.html", label: "install headline", re: /Install the (\d+)-skill pack\./, expected: totalSkillCount },
@@ -1020,7 +1067,7 @@ const countChecks = [
   // "six disciplines"-era lane math) while the guarded phrases said 71 —
   // every count a visitor can read must be pinned, not just the meta tags.
   { file: "docs/index.html", label: "hero subline skill count", re: /(\d+) open-source skills that read every diff/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "lanes sub skill count", re: /Seven disciplines, (\d+) skills, one install/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "lanes sub skill count", re: /Five specialities, (\d+) skills, one install/, expected: totalSkillCount },
   { file: "docs/index.html", label: "catalog headline skill count", re: /All (\d+) skills\./, expected: totalSkillCount },
   { file: "docs/index.html", label: "stats band public skills count", re: /data-count="(\d+)"/, expected: totalSkillCount },
   { file: "docs/index.html", label: "router headline command count", re: /memorize (\d+) commands/, expected: totalSkillCount },
@@ -1177,6 +1224,52 @@ countChecks.push(
   { file: "book/STYLE.md", label: "marketingskills attribution count", re: /(\d+) of the marketing skills are adapted/, expected: bookFacts.marketingAdapted },
 );
 
+// Every specialty's number, on every surface that prints it. Built from the
+// catalog rather than hand-listed, so adding a sixth specialty extends the
+// guard automatically instead of shipping an unguarded chart.
+for (const spec of specialtyIndex) {
+  const label = spec.label.replace(/&/g, "&amp;");
+  const descLabel = spec.label.replace(/&/g, "and");
+  countChecks.push(
+    {
+      file: "docs/skills/index.html",
+      label: `lanemap bar value: ${spec.key}`,
+      re: new RegExp(`>${escapeRegExp(label)}</text>\\s*<rect[^>]*/>\\s*<text[^>]*>(\\d+)</text>`),
+      expected: spec.count
+    },
+    {
+      file: "docs/skills/index.html",
+      label: `lanemap desc: ${spec.key}`,
+      re: new RegExp(`${escapeRegExp(descLabel)} (\\d+)[,.]`),
+      expected: spec.count
+    },
+    {
+      file: "docs/skills/index.html",
+      label: `catalog specialty badge: ${spec.key}`,
+      re: new RegExp(`id="spec-${spec.key}-h">[^<]*</h3><span class="spec-count">(\\d+)</span>`),
+      expected: spec.count
+    },
+    {
+      file: "docs/skills/index.html",
+      label: `catalog lead: ${spec.key}`,
+      re: new RegExp(`${escapeRegExp(spec.label.toLowerCase().replace(/&/g, "&amp;"))} \\((\\d+)\\)`),
+      expected: spec.count
+    },
+    {
+      file: "docs/index.html",
+      label: `homepage lane index: ${spec.key}`,
+      re: new RegExp(`<span class="lane-name">${escapeRegExp(label)}</span>\\s*<span class="lane-desc">[^<]*</span>\\s*<span class="lane-count">(\\d+) skills</span>`),
+      expected: spec.count
+    },
+    {
+      file: "docs/index.html",
+      label: `homepage catalog badge: ${spec.key}`,
+      re: new RegExp(`<span class="catalog-lane-name">${escapeRegExp(label)}</span>\\s*<span class="catalog-lane-count">(\\d+) skills</span>`),
+      expected: spec.count
+    }
+  );
+}
+
 for (const check of countChecks) {
   const filePath = path.join(repoRoot, check.file);
   if (!fs.existsSync(filePath)) {
@@ -1236,10 +1329,22 @@ for (const check of countChecks) {
     // file-wide passes even when a whole lane has escaped into another
     // section: 38 rows once sat inside the gold install band, rendering gold
     // text on a gold background, and a file-wide count saw all 67 and passed.
+    // The catalog now nests a <section class="spec"> per specialty, so slicing
+    // to the first </section> would stop at the end of "Ship" and report the
+    // other four specialities as escaped rows. Walk the tags and close on the
+    // matching one instead.
     const catalogStart = fullText.indexOf('aria-labelledby="catalog"');
-    const catalogText = catalogStart === -1
-      ? ""
-      : fullText.slice(catalogStart, fullText.indexOf("</section>", catalogStart));
+    const catalogText = catalogStart === -1 ? "" : (() => {
+      let depth = 1;
+      const tagRe = /<\/?section\b/g;
+      tagRe.lastIndex = catalogStart;
+      let m;
+      while ((m = tagRe.exec(fullText))) {
+        depth += m[0] === "<section" ? 1 : -1;
+        if (depth === 0) return fullText.slice(catalogStart, m.index);
+      }
+      return fullText.slice(catalogStart);
+    })();
     if (!catalogText) {
       fail.push('docs/skills/index.html has no <section aria-labelledby="catalog"> to validate');
     }
@@ -1258,14 +1363,43 @@ for (const check of countChecks) {
     if (orphanRows.length) {
       fail.push(`docs/skills/index.html catalog links skills that do not exist: ${orphanRows.join(", ")}`);
     }
-    for (const lane of catalogText.split('<div class="lane">').slice(1)) {
-      const heading = lane.match(/<h3>(.*?)<\/h3>/)?.[1] ?? "(unnamed lane)";
+    // Split on the opening tag without its closing bracket: every lane carries
+    // an id attribute, so `<div class="lane">` matched nothing and this loop sat
+    // inert for as long as the ids have existed.
+    for (const lane of catalogText.split('<div class="lane" ').slice(1)) {
+      const heading = lane.match(/<h4>(.*?)<\/h4>/)?.[1] ?? "(unnamed lane)";
       const claimed = Number(lane.match(/lane-count">(\d+)/)?.[1]);
       const actual = (lane.match(/class="row" href=/g) || []).length;
       if (Number.isNaN(claimed)) {
         warn.push(`docs/skills/index.html lane "${heading}" has no lane-count badge`);
       } else if (claimed !== actual) {
         fail.push(`docs/skills/index.html lane "${heading}" badge says ${claimed} but has ${actual} rows`);
+      }
+    }
+    // Same check one level up: a specialty badge must match the rows nested
+    // under all of its lanes, and the page must carry exactly the specialities
+    // the catalog indexes.
+    const specBlocks = catalogText.split('<section class="spec" ').slice(1);
+    const seenSpecs = new Set();
+    for (const block of specBlocks) {
+      const key = block.match(/id="spec-([a-z-]+)"/)?.[1] ?? "(unnamed)";
+      seenSpecs.add(key);
+      const claimed = Number(block.match(/spec-count">(\d+)</)?.[1]);
+      const actual = (block.match(/class="row" href=/g) || []).length;
+      if (Number.isNaN(claimed)) {
+        fail.push(`docs/skills/index.html specialty "${key}" has no spec-count badge`);
+      } else if (claimed !== actual) {
+        fail.push(`docs/skills/index.html specialty "${key}" badge says ${claimed} but has ${actual} rows`);
+      }
+    }
+    for (const spec of specialtyIndex) {
+      if (!seenSpecs.has(spec.key)) {
+        fail.push(`docs/skills/index.html has no section for catalog specialty "${spec.key}"`);
+      }
+    }
+    for (const key of seenSpecs) {
+      if (!specialtyIndex.some((spec) => spec.key === key)) {
+        fail.push(`docs/skills/index.html publishes specialty "${key}" that the catalog does not index`);
       }
     }
   } else {
