@@ -101,7 +101,7 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 
 ## MCP server
 
-- Suede Skills MCP: Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 8 tools, 6 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
+- Suede Skills MCP: Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 9 tools, 7 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
 
 ## Evidence boundary
 

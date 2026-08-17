@@ -31,7 +31,7 @@ printf '%s\n' \
 
 The initialization result must report protocol `2025-06-18`, server version
 `0.13.0`, and explicit tools/resources/prompts capabilities. `tools/list` must
-return exactly the 8 tools above. Each tool must expose `inputSchema`,
+return exactly the 9 tools above. Each tool must expose `inputSchema`,
 `outputSchema`, and annotations with `readOnlyHint: true`,
 `destructiveHint: false`, `idempotentHint: true`, and `openWorldHint: false`.
 The successful call must return `structuredContent`; `content[0]` must be useful
