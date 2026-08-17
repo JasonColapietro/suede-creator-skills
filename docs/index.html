@@ -3600,7 +3600,7 @@
       <li><b>$448.31</b> argued back from Amazon</li>
       <li><b>0</b> uploads by default</li>
       <li><b>2</b> runtimes: Claude Code + Codex</li>
-      <li><b>32</b> changelog entries, each a real commit</li>
+      <li><b>33</b> changelog entries, each a real commit</li>
       <li><b>18</b>-chapter builder&rsquo;s book, free</li>
       <li><b>29,102</b> words of documentation</li>
     </ul>
@@ -3610,7 +3610,7 @@
       <li><b>$448.31</b> argued back from Amazon</li>
       <li><b>0</b> uploads by default</li>
       <li><b>2</b> runtimes: Claude Code + Codex</li>
-      <li><b>32</b> changelog entries, each a real commit</li>
+      <li><b>33</b> changelog entries, each a real commit</li>
       <li><b>18</b>-chapter builder&rsquo;s book, free</li>
       <li><b>29,102</b> words of documentation</li>
     </ul>
@@ -3658,8 +3658,8 @@
             <span style="height:67%"></span>
           </span>
           <span class="hero-shiplog-text">
-            <span class="hero-shiplog-top">Released Aug 16 <b>&middot; 67c4c7f</b></span>
-            <span class="hero-shiplog-title">The pack gets five specialities</span>
+            <span class="hero-shiplog-top">Released Aug 16 <b>&middot; 1e2d70e</b></span>
+            <span class="hero-shiplog-title">Six specialities, and an MCP that navigates them</span>
             <span class="hero-shiplog-more">282 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
         </a>
@@ -3807,7 +3807,7 @@
       <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
       <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
 
-      <p class="clog-fresh reveal reveal-d2">Version 0.13.0 released Aug 16, 2026 <span id="clog-fresh-rel" data-iso="2026-08-16"></span></p>
+      <p class="clog-fresh reveal reveal-d2">Version 0.14.0 released Aug 16, 2026 <span id="clog-fresh-rel" data-iso="2026-08-16"></span></p>
 
       <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 2, 64, 25, 33, 18, 19, 29, 27, 32, and 33 commits.">
         <span style="height:3%"></span>
@@ -3834,6 +3834,16 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="new">
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag">MCP</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/1e2d70e" target="_blank" rel="noopener" aria-label="View commit 1e2d70e on GitHub">1e2d70e</a>
+          </p>
+          <h3 class="clog-title">Six specialities, and an MCP that navigates them</h3>
+          <p class="clog-detail">Version 0.14.0 splits the lopsided specialty and gives the MCP a way through the whole pack. The five-way cut shipped hours earlier left <em>Convert &amp; earn</em> at 23 while every other bucket sat between 9 and 15, so it splits on its real seam: Demand channels 8 and Revenue &amp; retention 15, alongside Ship 15, Craft 9, Get found 12, and Strategy &amp; rights 14. Largest bucket 23 to 15. The MCP could previously only be pointed at the three bundle areas; it now ships <code>list_suede_specialties</code> and a <code>suede://specialties</code> resource so a client picks a group before asking for skills, accepts <code>--profile</code> for any one specialty, and advertises only the specialities a given profile can serve. Closes a real hole on the way: <code>amazon-returns-recovery</code> and <code>subscription-recovery</code> sat in the catalog and on the site behind no registered server, unreachable by any MCP client, because <code>consumer</code> was a valid profile that <code>.mcp.json</code> never registered.</p>
+        </li>
 
         <li class="clog-item" data-type="fix">
           <p class="clog-meta">
