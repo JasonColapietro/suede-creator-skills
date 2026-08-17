@@ -416,9 +416,39 @@ test("skill bodies are served from the pack and cannot escape skills/", async ()
   }, "workflow");
 });
 
+test("specialty profiles narrow the server and the specialties tool describes them", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const skills = await session.request("tools/call", { name: "list_suede_skills", arguments: {} });
+    const names = skills.result.structuredContent.skills.map((skill) => skill.name);
+    assert.ok(names.length > 0 && names.length < CATALOG.skills.length);
+    assert.ok(skills.result.structuredContent.skills.every((skill) => skill.specialty === "revenue"));
+
+    const specialties = await session.request("tools/call", { name: "list_suede_specialties", arguments: {} });
+    const listed = specialties.result.structuredContent.specialties;
+    assert.equal(listed.length, 1);
+    assert.equal(listed[0].key, "revenue");
+    assert.equal(listed[0].count, names.length);
+  }, "revenue");
+
+  await withSession(async (session) => {
+    await session.initialize();
+    const specialties = await session.request("tools/call", { name: "list_suede_specialties", arguments: {} });
+    const listed = specialties.result.structuredContent.specialties;
+    assert.equal(listed.length, CATALOG.specialties.length);
+    assert.equal(
+      listed.reduce((sum, spec) => sum + spec.count, 0),
+      CATALOG.skills.length
+    );
+    for (const spec of listed) {
+      assert.equal(spec.lanes.reduce((sum, lane) => sum + lane.count, 0), spec.count);
+    }
+  }, "all");
+});
+
 test("catalog, resources, prompts, and profile filters match the live server", async () => {
-  assert.equal(CATALOG.mcp.tools.length, 8);
-  assert.equal(CATALOG.mcp.resources.length, 6);
+  assert.equal(CATALOG.mcp.tools.length, 9);
+  assert.equal(CATALOG.mcp.resources.length, 7);
   assert.equal(CATALOG.mcp.prompts.length, 5);
 
   await withSession(async (session) => {
@@ -462,8 +492,15 @@ test("catalog, resources, prompts, and profile filters match the live server", a
       name: "list_suede_skills",
       arguments: { area: "all" }
     });
-    assert.ok(response.result.structuredContent.skills.every((skill) => skill.area === "workflow"));
+    // The workflow profile deliberately carries `consumer` too. Those two skills
+    // shipped in the catalog and on the site behind no registered server, so no
+    // MCP client could reach them; folding them in here beat running a fourth
+    // server for two skills.
+    assert.ok(
+      response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
+    );
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-full-send"));
+    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "amazon-returns-recovery"));
 
     const fullSend = await session.request("tools/call", {
       name: "get_suede_skill",

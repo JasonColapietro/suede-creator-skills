@@ -491,7 +491,7 @@
 
             <rect x="772" y="112" width="206" height="78" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5" stroke-dasharray="5 4"/>
             <text x="875" y="140" text-anchor="middle" fill="#f0ece4" font-size="14" font-weight="700">MCP (optional)</text>
-            <text x="875" y="160" text-anchor="middle" fill="#888880" font-size="12">7 tools &#183; 6 resources</text>
+            <text x="875" y="160" text-anchor="middle" fill="#888880" font-size="12">9 tools &#183; 7 resources</text>
             <text x="875" y="177" text-anchor="middle" fill="#888880" font-size="12">5 prompts &#183; stdio</text>
           </g>
         </svg>
@@ -638,7 +638,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
     </div>
 
     <div class="prose">
-      <p>Profiles: <code>all</code>, <code>workflow</code>, <code>marketing</code>, <code>creator</code>, or <code>consumer</code>. It implements <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>resources/list</code>, <code>resources/read</code>, <code>prompts/list</code>, and <code>prompts/get</code>: 8 tools, 6 resources, 5 prompts. No dependencies, no network calls, no install step beyond running the file.</p>
+      <p>Profiles: <code>all</code>, the bundle areas <code>workflow</code>, <code>marketing</code>, <code>creator</code>, <code>consumer</code>, or any one specialty &mdash; <code>ship</code>, <code>craft</code>, <code>found</code>, <code>demand</code>, <code>revenue</code>, <code>position</code>. It implements <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>, <code>resources/list</code>, <code>resources/read</code>, <code>prompts/list</code>, and <code>prompts/get</code>: 9 tools, 7 resources, 5 prompts. No dependencies, no network calls, no install step beyond running the file.</p>
     </div>
 
     <div class="pathmap">
@@ -649,7 +649,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
       <div class="pathmap-scroll">
         <svg class="pathmap-svg" viewBox="0 0 940 250" role="img" aria-labelledby="mcp-t mcp-d" xmlns="http://www.w3.org/2000/svg">
           <title id="mcp-t">The Suede Skills MCP surface</title>
-          <desc id="mcp-d">An agent speaks JSON-RPC over stdio to the server, which selects one of five profiles and exposes 8 tools, 6 resources, and 5 prompts.</desc>
+          <desc id="mcp-d">An agent speaks JSON-RPC over stdio to the server, which selects one of eleven profiles and exposes 9 tools, 7 resources, and 5 prompts.</desc>
           <g font-family="system-ui, -apple-system, sans-serif">
             <rect x="2" y="90" width="146" height="70" rx="9" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
             <text x="75" y="121" text-anchor="middle" fill="#c8a96e" font-size="15" font-weight="800">Your agent</text>
@@ -696,9 +696,10 @@ codex plugin add suede-skills@suede-codex</code></pre>
       </div>
     </div>
 
-    <h3 style="margin-top:40px;">The 8 tools</h3>
+    <h3 style="margin-top:40px;">The 9 tools</h3>
     <div class="rows">
-      <div class="row"><b>list_suede_skills</b><span>Lists Suede skills by workflow, marketing, creator, consumer, or all areas.</span></div>
+      <div class="row"><b>list_suede_specialties</b><span>Lists the six specialities, their sub-lanes, and skill counts. Call it first to pick a specialty, then filter with it.</span></div>
+      <div class="row"><b>list_suede_skills</b><span>Lists Suede skills, optionally narrowed to one bundle area or one specialty.</span></div>
       <div class="row"><b>search_suede_skills</b><span>Ranks the pack against a task description and returns the best-matching skills instead of all 73.</span></div>
       <div class="row"><b>get_suede_skill</b><span>Returns one skill description and when to use it, or the full SKILL.md with <code>includeBody</code>.</span></div>
       <div class="row"><b>suede_install_options</b><span>Returns public skill, MCP, local plugin, and skill-copy install options.</span></div>

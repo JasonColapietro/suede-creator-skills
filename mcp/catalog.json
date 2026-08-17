@@ -192,15 +192,31 @@
       ]
     },
     {
-      "key": "earn",
-      "label": "Convert & earn",
-      "summary": "Turn attention into signups, revenue, and retention.",
-      "count": 23,
+      "key": "demand",
+      "label": "Demand channels",
+      "summary": "Reach people who have not heard of you yet.",
+      "count": 8,
       "lanes": [
         {
-          "label": "Demand channels",
-          "count": 8
+          "label": "Paid & outbound",
+          "count": 3
         },
+        {
+          "label": "Lifecycle messaging",
+          "count": 2
+        },
+        {
+          "label": "Acquisition assets",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "key": "revenue",
+      "label": "Revenue & retention",
+      "summary": "Convert the attention, then keep what it earned.",
+      "count": 15,
+      "lanes": [
         {
           "label": "Money & funnel",
           "count": 8
@@ -236,7 +252,7 @@
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Consumer recovery",
       "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
@@ -276,7 +292,7 @@
     {
       "name": "subscription-recovery",
       "area": "consumer",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Consumer recovery",
       "description": "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime — use amazon-returns-recovery for those.",
       "useWhen": "The user wants to audit recurring charges generally, asks what subscriptions they're paying for, mentions a non-Amazon subscription by name, or wants to find and cancel unused subscriptions."
@@ -284,7 +300,7 @@
     {
       "name": "suede-ab-testing",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Measure & operate",
       "description": "Suede-owned experimentation discipline for hypotheses, sample sizing, test duration, significance, and repeatable experiment programs. Use when comparing variants, deciding whether a result is reliable, or building an experiment backlog and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), or writing the variant copy itself (use suede-copy).",
       "useWhen": "The user wants to A/B test a change, judge whether a result is real, or build an experimentation practice."
@@ -300,8 +316,8 @@
     {
       "name": "suede-ads",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Paid & outbound",
       "description": "Suede-owned paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, and kill-or-scale decisions. Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, or comparable platforms. NOT FOR: producing creative variants (use suede-ad-creative), implementing measurement (use suede-analytics), or optimizing the landing page (use suede-site-alchemy).",
       "useWhen": "The user is planning, running, or fixing paid campaigns on Google, Meta, LinkedIn, or X, or weighing whether to run ads at all."
     },
@@ -332,7 +348,7 @@
     {
       "name": "suede-analytics",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Measure & operate",
       "description": "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops).",
       "useWhen": "The user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything."
@@ -348,7 +364,7 @@
     {
       "name": "suede-attribution",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Measure & operate",
       "description": "Suede-affiliated marketing attribution discipline for choosing or interpreting an attribution model and reconciling conflicting cross-tool numbers into a defensible read on what drove revenue. Use when the user wants to know which marketing drove conversions, pick or interpret an attribution model, or instrument attribution themselves. NOT FOR: general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops).",
       "useWhen": "The user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools."
@@ -364,7 +380,7 @@
     {
       "name": "suede-churn-prevention",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics).",
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments."
@@ -412,8 +428,8 @@
     {
       "name": "suede-cold-email",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Paid & outbound",
       "description": "Suede-owned B2B cold-email discipline for evidence-based personalization, subject lines, opening lines, concise bodies, one clear CTA, and bounded follow-up sequences. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email (use suede-emails), or broader sales collateral (use suede-sales-enablement).",
       "useWhen": "The user is writing cold outbound email or a prospecting sequence, or nobody is replying to the ones they sent."
     },
@@ -492,16 +508,16 @@
     {
       "name": "suede-emails",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Lifecycle messaging",
       "description": "Suede-affiliated lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow, entry criteria, cadence, message roles, and measurement plan. NOT FOR: cold prospecting (use suede-cold-email), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops).",
       "useWhen": "The user is building an automated email sequence, drip campaign, or lifecycle flow."
     },
     {
       "name": "suede-free-tools",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Acquisition assets",
       "description": "Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit).",
       "useWhen": "The user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links."
     },
@@ -524,7 +540,7 @@
     {
       "name": "suede-launch-packaging",
       "area": "workflow",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).",
       "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
@@ -540,8 +556,8 @@
     {
       "name": "suede-lead-magnets",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Acquisition assets",
       "description": "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy).",
       "useWhen": "The user is planning gated content, a content upgrade, a template, or any downloadable in exchange for contact details."
     },
@@ -596,7 +612,7 @@
     {
       "name": "suede-offers",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure. Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls).",
       "useWhen": "The user is building or fixing an offer for a service, agency, course, coaching, info product, or high-ticket B2B sale."
@@ -604,7 +620,7 @@
     {
       "name": "suede-onboarding",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls).",
       "useWhen": "The user has people signing up but not activating, or wants to design the first session in a product."
@@ -612,7 +628,7 @@
     {
       "name": "suede-paywalls",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).",
       "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt."
@@ -620,7 +636,7 @@
     {
       "name": "suede-pricing",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-owned pricing and packaging discipline. Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, or planning a price increase. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes.",
       "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices."
@@ -644,8 +660,8 @@
     {
       "name": "suede-prospecting",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Paid & outbound",
       "description": "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).",
       "useWhen": "The user needs a prospect or lead list, or is deciding which accounts to go after."
     },
@@ -668,8 +684,8 @@
     {
       "name": "suede-referrals",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Acquisition assets",
       "description": "Suede-owned referral and affiliate program discipline. Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.",
       "useWhen": "The user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program."
     },
@@ -684,7 +700,7 @@
     {
       "name": "suede-revops",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Measure & operate",
       "description": "Suede-owned revenue-operations discipline. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.",
       "useWhen": "The user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue."
@@ -708,7 +724,7 @@
     {
       "name": "suede-sales-enablement",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Measure & operate",
       "description": "Suede-owned sales-enablement discipline. Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof.",
       "useWhen": "The user needs sales collateral, a demo script, objection handling, or materials for a sales conversation."
@@ -756,7 +772,7 @@
     {
       "name": "suede-signup",
       "area": "marketing",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-owned signup conversion discipline. Use when auditing or redesigning account creation, registration, or trial-start flows, including field friction, progressive profiling, identity options, mobile behavior, abandonment, and measurement. NOT FOR: post-signup activation (use suede-onboarding), lead-capture forms (use suede-site-alchemy), or deploying auth and compliance changes without review.",
       "useWhen": "The user has a signup, registration, or trial-start flow that loses people partway through."
@@ -764,7 +780,7 @@
     {
       "name": "suede-site-alchemy",
       "area": "workflow",
-      "specialty": "earn",
+      "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO.",
       "useWhen": "Improve page conversion, package website growth offers, or route conversion work into the full design workflow."
@@ -772,8 +788,8 @@
     {
       "name": "suede-sms",
       "area": "marketing",
-      "specialty": "earn",
-      "lane": "Demand channels",
+      "specialty": "demand",
+      "lane": "Lifecycle messaging",
       "description": "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, and defining measurement. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything without approval.",
       "useWhen": "The user is adding SMS or text-message marketing, or writing messages for an existing SMS list."
     },
@@ -821,6 +837,7 @@
   "mcp": {
     "tools": [
       "list_suede_skills",
+      "list_suede_specialties",
       "search_suede_skills",
       "get_suede_skill",
       "suede_install_options",
@@ -831,6 +848,7 @@
     ],
     "resources": [
       "suede://catalog",
+      "suede://specialties",
       "suede://plugins",
       "suede://copy-seo-audit",
       "suede://visibility-grade",

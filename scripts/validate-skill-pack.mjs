@@ -1067,7 +1067,11 @@ const countChecks = [
   // "six disciplines"-era lane math) while the guarded phrases said 71 —
   // every count a visitor can read must be pinned, not just the meta tags.
   { file: "docs/index.html", label: "hero subline skill count", re: /(\d+) open-source skills that read every diff/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "lanes sub skill count", re: /Five specialities, (\d+) skills, one install/, expected: totalSkillCount },
+  // Keyed to the stable half of the sentence. Anchoring on the leading word
+  // ("Seven disciplines" -> "Five specialities" -> "Six specialities") made an
+  // ordinary copy edit break the guard three times; the count is what this
+  // check is actually about.
+  { file: "docs/index.html", label: "lanes sub skill count", re: /specialities, (\d+) skills, one install/, expected: totalSkillCount },
   { file: "docs/index.html", label: "catalog headline skill count", re: /All (\d+) skills\./, expected: totalSkillCount },
   { file: "docs/index.html", label: "stats band public skills count", re: /data-count="(\d+)"/, expected: totalSkillCount },
   { file: "docs/index.html", label: "router headline command count", re: /memorize (\d+) commands/, expected: totalSkillCount },
@@ -1404,6 +1408,27 @@ for (const check of countChecks) {
     }
   } else {
     fail.push("docs/skills/index.html is missing — the docs catalog page cannot be validated");
+  }
+}
+
+// Dangling in-page anchor guard. Re-cutting the catalog twice left a button
+// pointing at #lane-marketing and then at #spec-earn after both ids were gone:
+// the link renders fine and silently does nothing. Every same-page href="#..."
+// must resolve to an id on that page.
+{
+  const anchorPages = ["docs/index.html", "docs/skills/index.html", "docs/guide.html", "docs/plugins.html"];
+  for (const page of anchorPages) {
+    const pagePath = path.join(repoRoot, page);
+    if (!fs.existsSync(pagePath)) continue;
+    const pageText = readText(pagePath);
+    const ids = new Set([...pageText.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
+    const targets = new Set(
+      [...pageText.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]).filter((target) => target && target !== "main")
+    );
+    const dangling = [...targets].filter((target) => !ids.has(target));
+    if (dangling.length) {
+      fail.push(`${page} has in-page link(s) pointing at ids that do not exist: ${dangling.join(", ")}`);
+    }
   }
 }
 

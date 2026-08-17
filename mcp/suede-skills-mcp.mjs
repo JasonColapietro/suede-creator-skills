@@ -5,9 +5,16 @@ import { fileURLToPath } from "node:url";
 
 const PROTOCOL_VERSION = "2025-06-18";
 const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
-const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator", "marketing", "consumer"]);
+const SPECIALTY_KEYS = ["ship", "craft", "found", "demand", "revenue", "position"];
+// Profiles come in two flavours now. The area profiles (workflow/creator/
+// marketing/consumer) mirror the plugin bundles and are what .mcp.json
+// registers. The specialty profiles mirror how the pack is browsed, so a client
+// that wants only the revenue surface can register one server against it
+// without the pack shipping six of them by default.
+const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator", "marketing", "consumer", ...SPECIALTY_KEYS]);
+const PROFILE_SPECIALTIES = Object.fromEntries(SPECIALTY_KEYS.map((key) => [key, [key]]));
 const PROFILE_AREAS = {
-  workflow: ["workflow"],
+  workflow: ["workflow", "consumer"],
   artist: ["artist", "creator"],
   creator: ["artist", "creator"],
   marketing: ["marketing"],
@@ -28,7 +35,7 @@ const AREA_ENUM = ["all", "workflow", "artist", "creator", "marketing", "consume
 // `area` decides which plugin bundle and MCP profile ships a skill; `specialty`
 // decides how a human browses the pack. They are deliberately separate axes:
 // re-cutting the browse structure must never move a skill between bundles.
-const SPECIALTY_ENUM = ["all", "ship", "craft", "found", "earn", "position"];
+const SPECIALTY_ENUM = ["all", "ship", "craft", "found", "demand", "revenue", "position"];
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -81,14 +88,36 @@ function boundedString(value, fallback = "") {
 }
 
 function profileCatalog() {
+  const specialties = profileSpecialties(profile);
+  if (specialties) {
+    const wanted = new Set(specialties);
+    const skills = catalog.skills.filter((skill) => wanted.has(skill.specialty));
+    // A specialty cuts across bundles, so keep whichever plugins actually ship
+    // its skills rather than pinning one bundle per profile.
+    const shipping = new Set(
+      catalog.plugins.filter((plugin) => plugin.skills.some((name) => skills.some((s) => s.name === name)))
+        .map((plugin) => plugin.name)
+    );
+    return {
+      ...catalog,
+      specialties: catalog.specialties.filter((entry) => wanted.has(entry.key)),
+      plugins: catalog.plugins.filter((plugin) => shipping.has(plugin.name)),
+      skills
+    };
+  }
   const areas = PROFILE_AREAS[profile];
   if (!areas) return catalog;
   const pluginNames = new Set(PROFILE_PLUGINS[profile] || []);
   const areaSet = new Set(areas);
+  const skills = catalog.skills.filter((skill) => areaSet.has(skill.area));
+  const present = new Set(skills.map((skill) => skill.specialty));
   return {
     ...catalog,
+    // Only advertise specialities this profile can actually serve, so a client
+    // does not see a group it can never list.
+    specialties: (catalog.specialties || []).filter((entry) => present.has(entry.key)),
     plugins: catalog.plugins.filter((plugin) => pluginNames.has(plugin.name)),
-    skills: catalog.skills.filter((skill) => areaSet.has(skill.area))
+    skills
   };
 }
 
@@ -153,6 +182,13 @@ function scopeByArea(skills, area) {
   if (!area || area === "all") return skills;
   const wanted = new Set(AREA_ALIASES[area] || [area]);
   return skills.filter((skill) => wanted.has(skill.area));
+}
+
+// A specialty profile narrows the whole server, the same way an area profile
+// does — so `--profile revenue` and `list_suede_skills` with no arguments
+// return the revenue surface rather than all 73.
+function profileSpecialties(profile) {
+  return PROFILE_SPECIALTIES[profile] ?? null;
 }
 
 function scopeBySpecialty(skills, specialty) {
@@ -480,6 +516,12 @@ const tools = [
     }
   },
   {
+    name: "list_suede_specialties",
+    title: "List Suede Specialties",
+    description: "List the pack's specialities, their sub-lanes, and how many skills each holds. Call this first to pick a specialty, then pass it to list_suede_skills or search_suede_skills.",
+    inputSchema: { type: "object", properties: {} }
+  },
+  {
     name: "search_suede_skills",
     title: "Search Suede Skills",
     description: "Rank Suede skills against a task description and return the best-matching routes.",
@@ -609,8 +651,35 @@ const scoredSkillOutputSchema = {
   required: [...skillOutputSchema.required, "score"]
 };
 
+const specialtyOutputSchema = {
+  type: "object",
+  properties: {
+    key: { type: "string" },
+    label: { type: "string" },
+    summary: { type: "string" },
+    count: { type: "number" },
+    lanes: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: { label: { type: "string" }, count: { type: "number" } },
+        required: ["label", "count"],
+        additionalProperties: false
+      }
+    }
+  },
+  required: ["key", "label", "summary", "count", "lanes"],
+  additionalProperties: false
+};
+
 const nullableString = { type: ["string", "null"] };
 const toolOutputSchemas = {
+  list_suede_specialties: {
+    type: "object",
+    properties: { specialties: { type: "array", items: specialtyOutputSchema } },
+    required: ["specialties"],
+    additionalProperties: false
+  },
   list_suede_skills: {
     type: "object",
     properties: { skills: { type: "array", items: skillOutputSchema } },
@@ -692,6 +761,13 @@ const resources = [
     name: "catalog",
     title: "Suede Skill And Install Catalog",
     description: "Structured Suede skill, install, MCP, and public link catalog.",
+    mimeType: "application/json"
+  },
+  {
+    uri: "suede://specialties",
+    name: "specialties",
+    title: "Suede Skill Specialties",
+    description: "The pack's specialities, their sub-lanes, and skill counts.",
     mimeType: "application/json"
   },
   {
@@ -826,6 +902,16 @@ function callTool(name, args = {}) {
   const tool = tools.find((item) => item.name === name);
   if (!tool) throw rpcError(`Unknown tool: ${name}`);
   validateToolArguments(tool, args);
+  if (name === "list_suede_specialties") {
+    const specialties = data.specialties || [];
+    const human = specialties
+      .map((spec) => {
+        const lanes = spec.lanes.map((lane) => `  - ${lane.label} (${lane.count})`).join("\n");
+        return `## ${spec.label} — ${spec.count} skills\n${spec.summary}\n${lanes}`;
+      })
+      .join("\n\n");
+    return toolResult(human || "No specialities available in this profile.", { specialties });
+  }
   if (name === "list_suede_skills") {
     const scoped = scopeBySpecialty(scopeByArea(data.skills, args.area), args.specialty);
     return toolResult(asMarkdownSkillList({ skills: scoped }), {
@@ -898,6 +984,9 @@ function callTool(name, args = {}) {
 
 function readResource(uri) {
   const data = profileCatalog();
+  if (uri === "suede://specialties") {
+    return { contents: [{ uri, mimeType: "application/json", text: JSON.stringify(profileCatalog().specialties || [], null, 2) }] };
+  }
   if (uri === "suede://catalog") {
     return { uri, mimeType: "application/json", text: JSON.stringify(data, null, 2) };
   }
