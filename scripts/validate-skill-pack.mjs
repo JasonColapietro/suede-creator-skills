@@ -1792,6 +1792,11 @@ if (clogItems.length === 0) {
   });
 
   const gitHistory = inspectGitHistory(repoRoot);
+  // Prefer the remote-tracking ref: in a worktree cut from origin/main, local
+  // `main` can sit behind and would flag freshly landed entries as unreachable.
+  const defaultBranchRef = ["origin/main", "main", "HEAD"].find((ref) =>
+    spawnSync("git", ["-C", repoRoot, "rev-parse", "--verify", "--quiet", `${ref}^{commit}`], { stdio: "ignore" }).status === 0
+  ) ?? "HEAD";
   if (gitHistory.state === "complete") {
     for (const entry of clogEntries) {
       if (!entry.hash) continue;
@@ -1802,6 +1807,20 @@ if (clogItems.length === 0) {
       }
       if (probe.status !== 0) {
         fail.push(`docs/index.html changelog cites commit ${entry.hash} which does not resolve to a commit in this repo`);
+        continue;
+      }
+      // Object existence is not enough. Every PR here lands squashed, so a
+      // pre-squash branch commit still resolves in the maintainer's clone
+      // (the branch object is right there) while being unreachable from the
+      // published history — a reader following the link gets nothing. 0.13.0
+      // shipped exactly that. Require reachability from the default branch.
+      const reachable = spawnSync(
+        "git",
+        ["-C", repoRoot, "merge-base", "--is-ancestor", entry.hash, defaultBranchRef],
+        { stdio: "ignore" }
+      );
+      if (reachable.status !== 0) {
+        fail.push(`docs/index.html changelog cites commit ${entry.hash}, which exists but is not reachable from ${defaultBranchRef} — a squash merge rewrites branch commits, so cite the commit that landed`);
       }
     }
   } else if (gitHistory.state === "packaged" || gitHistory.state === "shallow") {
