@@ -1067,7 +1067,7 @@ const countChecks = [
   // "six disciplines"-era lane math) while the guarded phrases said 71 —
   // every count a visitor can read must be pinned, not just the meta tags.
   { file: "docs/index.html", label: "hero subline skill count", re: /(\d+) open-source skills that read every diff/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "lanes sub skill count", re: /Seven disciplines, (\d+) skills, one install/, expected: totalSkillCount },
+  { file: "docs/index.html", label: "lanes sub skill count", re: /Five specialities, (\d+) skills, one install/, expected: totalSkillCount },
   { file: "docs/index.html", label: "catalog headline skill count", re: /All (\d+) skills\./, expected: totalSkillCount },
   { file: "docs/index.html", label: "stats band public skills count", re: /data-count="(\d+)"/, expected: totalSkillCount },
   { file: "docs/index.html", label: "router headline command count", re: /memorize (\d+) commands/, expected: totalSkillCount },
