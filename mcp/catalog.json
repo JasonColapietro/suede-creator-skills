@@ -138,99 +138,225 @@
       "localPluginInstall": "/plugin install suede-marketing@suede"
     }
   ],
+  "specialties": [
+    {
+      "key": "ship",
+      "label": "Ship",
+      "summary": "Get the change built, reviewed, and merged.",
+      "count": 15,
+      "lanes": [
+        {
+          "label": "Orchestration & routing",
+          "count": 7
+        },
+        {
+          "label": "Code review & CI",
+          "count": 6
+        },
+        {
+          "label": "Apps: iOS & Android",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "key": "craft",
+      "label": "Craft",
+      "summary": "Make the thing look and read like someone built it on purpose.",
+      "count": 9,
+      "lanes": [
+        {
+          "label": "Design & copy",
+          "count": 5
+        },
+        {
+          "label": "Creative assets",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "key": "found",
+      "label": "Get found",
+      "summary": "Be discoverable by search, by AI answers, and by an audience.",
+      "count": 12,
+      "lanes": [
+        {
+          "label": "Search & AI visibility",
+          "count": 6
+        },
+        {
+          "label": "Content & audience",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "key": "earn",
+      "label": "Convert & earn",
+      "summary": "Turn attention into signups, revenue, and retention.",
+      "count": 23,
+      "lanes": [
+        {
+          "label": "Demand channels",
+          "count": 8
+        },
+        {
+          "label": "Money & funnel",
+          "count": 8
+        },
+        {
+          "label": "Measure & operate",
+          "count": 5
+        },
+        {
+          "label": "Consumer recovery",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "key": "position",
+      "label": "Strategy & rights",
+      "summary": "Know the market you are in and own what you make.",
+      "count": 14,
+      "lanes": [
+        {
+          "label": "Strategy & research",
+          "count": 9
+        },
+        {
+          "label": "Creator toolkit",
+          "count": 5
+        }
+      ]
+    }
+  ],
   "skills": [
     {
       "name": "amazon-returns-recovery",
       "area": "consumer",
+      "specialty": "earn",
+      "lane": "Consumer recovery",
       "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {
       "name": "android-app-factory",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Apps: iOS & Android",
       "description": "Plan or build a native Android app end to end: keyword selection, Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety and content-rating disclosure, signing, and Google Play Console release.",
       "useWhen": "The user wants to plan, build, or ship a native Android app from an idea, keyword, or existing spec, or prepare a Play Store listing and release."
     },
     {
       "name": "johnny-suede-design",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
       "description": "Design and write polished product surfaces people understand fast: landing pages, dashboards, campaigns, restyles, UI copy, and visual QA.",
       "useWhen": "Design, restyle, or build a polished surface with copy, UI, product screenshots, visual QA, and multi-lane coordination when needed."
     },
     {
       "name": "johnny-suede-write",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
       "description": "Write sharper Suede copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers.",
       "useWhen": "Write, rewrite, package, explain, promote, audit, or polish public copy with the full Suede writing stack."
     },
     {
       "name": "site-to-ios-app",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Apps: iOS & Android",
       "description": "Turn a website, PWA, dashboard, or marketplace into an iOS app with App Store strategy, screenshots, metadata, and release gates.",
       "useWhen": "Convert a website or web app into an iOS app plan or shell that can survive App Store review."
     },
     {
       "name": "subscription-recovery",
       "area": "consumer",
+      "specialty": "earn",
+      "lane": "Consumer recovery",
       "description": "Use when the user wants to find, audit, cancel, or dispute recurring charges billed outside Amazon, including App Store, Google Play, PayPal, direct-bill streaming, gyms, news, and SaaS. Discover charges from evidence the user directly provides or authenticated service pages, report findings first, and require confirmation before cancellation or refund contact. Never enter payment credentials or promise recovery. Requires Claude in Chrome for browser actions. NOT FOR: Amazon returns, restocking fees, or Amazon-billed Prime Video Channels, Audible, Kindle Unlimited, or Prime — use amazon-returns-recovery for those.",
       "useWhen": "The user wants to audit recurring charges generally, asks what subscriptions they're paying for, mentions a non-Amazon subscription by name, or wants to find and cancel unused subscriptions."
     },
     {
       "name": "suede-ab-testing",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Measure & operate",
       "description": "Suede-owned experimentation discipline for hypotheses, sample sizing, test duration, significance, and repeatable experiment programs. Use when comparing variants, deciding whether a result is reliable, or building an experiment backlog and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), or writing the variant copy itself (use suede-copy).",
       "useWhen": "The user wants to A/B test a change, judge whether a result is real, or build an experimentation practice."
     },
     {
       "name": "suede-ad-creative",
       "area": "marketing",
+      "specialty": "craft",
+      "lane": "Creative assets",
       "description": "Suede-owned paid-media creative system for hooks, headlines, primary text, static and motion concepts, platform specs, review pages, and test-ready variant batches. Use when producing or iterating ad creative from grounded product and audience inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), or landing-page copy (use suede-copy).",
       "useWhen": "The user needs ad copy variations, creative concepts, or a testing plan for a paid campaign."
     },
     {
       "name": "suede-ads",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-owned paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, and kill-or-scale decisions. Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, or comparable platforms. NOT FOR: producing creative variants (use suede-ad-creative), implementing measurement (use suede-analytics), or optimizing the landing page (use suede-site-alchemy).",
       "useWhen": "The user is planning, running, or fixing paid campaigns on Google, Meta, LinkedIn, or X, or weighing whether to run ads at all."
     },
     {
       "name": "suede-agent-teams",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Split complex work into coordinated agent lanes with WIP checks, quality gates, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, independent review, neutral outward artifacts, and explicit publication authority.",
       "useWhen": "Coordinate large changes across safe lanes, or run a public-repository contribution program with collision checks, issue leases, quality gates, explicit publication authority, and a verified handoff."
     },
     {
       "name": "suede-ai-eval",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Suede Labs AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); UAT of the built feature beyond the eval suite (a private Suede Labs companion, not in this pack).",
       "useWhen": "Define measurable quality, safety, and regression checks for LLMs, classifiers, recommenders, agents, RAG, search, and media generation."
     },
     {
       "name": "suede-ai-seo",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Suede-affiliated AI search optimization discipline for making content structurally extractable, citable, and agent-readable so ChatGPT, Perplexity, Google AI Overviews, and Claude surface and cite it. Use when the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. NOT FOR: traditional technical SEO audit (use suede-seo-audit) or launch-appeal grading (use suede-visibility-grader).",
       "useWhen": "The user wants to get content cited by LLMs, appear in AI-generated answers, or make a site agent-readable."
     },
     {
       "name": "suede-analytics",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Measure & operate",
       "description": "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTMs, attribution, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), or revenue-process architecture (use suede-revops).",
       "useWhen": "The user is setting up or fixing analytics, conversion tracking, or attribution, or cannot tell whether a change moved anything."
     },
     {
       "name": "suede-aso",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use site-to-ios-app or android-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).",
       "useWhen": "The user wants to improve app store visibility, downloads, or listing conversion, or has shared an App Store or Play URL."
     },
     {
       "name": "suede-attribution",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Measure & operate",
       "description": "Suede-affiliated marketing attribution discipline for choosing or interpreting an attribution model and reconciling conflicting cross-tool numbers into a defensible read on what drove revenue. Use when the user wants to know which marketing drove conversions, pick or interpret an attribution model, or instrument attribution themselves. NOT FOR: general analytics instrumentation and reporting (use suede-analytics) or revenue-ops pipeline work (use suede-revops).",
       "useWhen": "The user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an attribution model, or reconcile conflicting numbers across tools."
     },
     {
       "area": "creator",
+      "specialty": "position",
+      "lane": "Creator toolkit",
       "name": "suede-campaign-in-a-box",
       "description": "Turn a song or release into a full artist campaign: hooks, rituals, visuals, merch, rollout calendar, email, site copy, and fan actions.",
       "useWhen": "Turn the artist world and rollout into usable campaign moves."
@@ -238,323 +364,431 @@
     {
       "name": "suede-churn-prevention",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics).",
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments."
     },
     {
       "name": "suede-co-marketing",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned co-marketing discipline for partner fit, audience overlap, joint offers, shared distribution, operating roles, measurement, and fair credit. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement).",
       "useWhen": "The user is looking for co-marketing partners or planning a joint campaign or cross-promotion."
     },
     {
       "name": "suede-code",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Review and grade code in one pass: real findings, A-F ship verdict, auth/payment risk, OWASP checks, deploy safety, and fix briefs.",
       "useWhen": "Review, grade, audit, security-check, or ship-gate a diff, PR, file, branch, or release."
     },
     {
       "name": "suede-code-grader",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Give a blunt A-F ship grade for a code change across correctness, security, data, UX, verification, and deploy readiness. Use for a grade, not a findings review.",
       "useWhen": "Get a direct ship/no-ship grade with evidence instead of a full line-by-line review."
     },
     {
       "name": "suede-code-review",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Suede Labs AI findings-only code review with full context: changed files, callers, contracts, and deploy surface. Covers TypeScript, React, Next.js, database, Swift/iOS, OWASP, accessibility, SEO, observability, commit hygiene, and deploy risk, ranked P0-P3 with file:line evidence and a fix path. Use when asked to review a diff, PR, branch, or commit range, find the bugs before merge, check a change for security or accessibility problems, or judge whether a change is safe to deploy. Emits findings and a ship gate, not a grade. NOT FOR: the A-F letter grade alone (use suede-code-grader); findings plus grade in one pass (use suede-code); making CI enforce the result on every merge (use suede-ci-gate); root-causing a live bug or failing test (a private Suede Labs companion, not in this pack).",
       "useWhen": "Deep-review or security-check a diff, PR, file, branch, or release when the deliverable is findings, not a grade."
     },
     {
       "name": "suede-codex-fleet",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Claude-directed parallel OpenAI Codex CLI worker fleet for bulk generation. Use when a job is high-volume, well-specified, and splits into independent worker-sized tasks (content batches, test generation, bulk refactors) and Codex CLI is installed and logged in. Claude decomposes, briefs, spawns codex exec runs in parallel, and review-gates every output. NOT FOR: multi-lane Claude agents coordinating one complex change (use suede-agent-teams); low-volume, judgment-dense copy Claude should write itself (use suede-copy or johnny-suede-write).",
       "useWhen": "Send high-volume, well-specified work to parallel Codex CLI workers and review every output before it ships."
     },
     {
       "name": "suede-cold-email",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-owned B2B cold-email discipline for evidence-based personalization, subject lines, opening lines, concise bodies, one clear CTA, and bounded follow-up sequences. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email (use suede-emails), or broader sales collateral (use suede-sales-enablement).",
       "useWhen": "The user is writing cold outbound email or a prospecting sequence, or nobody is replying to the ones they sent."
     },
     {
       "name": "suede-community-marketing",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned community-growth discipline for member purpose, platform choice, seeding, rituals, moderation, health metrics, and earned advocacy. Use when starting, auditing, or growing a Discord, Slack, forum, subreddit, or comparable product community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics (use suede-referrals), or customer-interview research (use suede-customer-research).",
       "useWhen": "The user wants to start or grow a Discord, Slack, forum, or subreddit community around their product."
     },
     {
       "name": "suede-competitor-profiling",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-owned competitive-intelligence discipline for evidence-backed profiles of positioning, pricing, messaging, product, proof, and public-market signals. Use when researching named competitors from current public URLs or refreshing a structured landscape. NOT FOR: publishing comparison pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing).",
       "useWhen": "The user wants competitor research, a competitive landscape, or structured profiles built from competitor URLs."
     },
     {
       "name": "suede-competitors",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-owned comparison-page discipline for honest alternative, versus, and competitor-comparison content that serves evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo).",
       "useWhen": "The user wants a versus page, alternative page, or competitor comparison for search and sales."
     },
     {
       "name": "suede-content-strategy",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned content-strategy discipline for audience questions, content pillars, topic clusters, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds. NOT FOR: writing an individual asset (use suede-copy), technical or on-page SEO audits (use suede-seo-audit), or social-channel production (use suede-social).",
       "useWhen": "The user does not know what to write about, or needs a content plan, editorial calendar, or topic strategy."
     },
     {
       "name": "suede-copy",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
       "description": "Write conversion copy that earns the click: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits.",
       "useWhen": "Write or rewrite headlines, CTAs, landing copy, email, social, and microcopy with conversion and anti-slop checks."
     },
     {
       "name": "suede-customer-research",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-owned customer-research discipline for interview design, transcript and ticket synthesis, review and forum mining, quote banks, jobs, and evidence-backed personas. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing).",
       "useWhen": "The user wants to run or analyse customer research, mine reviews and forums, or build evidence-backed personas."
     },
     {
       "name": "suede-design",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
       "description": "Suede Labs AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA. Use when asked to design, restyle, polish, or audit a screen; pick colors or fonts; define, fix, or document design tokens; build or repair a dark mode; review a component or a whole design system; or compare a mock, Figma frame, or reference screenshot against a rendered implementation. NOT FOR: a full design-plus-copy build, launch surface, or reference-to-target restyle (use johnny-suede-design); conversion and funnel architecture (use suede-site-alchemy); writing the words themselves (use suede-copy).",
       "useWhen": "Polish UI, set tokens, fix hierarchy, and run focused design QA on a single surface."
     },
     {
       "name": "suede-deslop",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
       "description": "Strip AI writing patterns from prose before it ships: throat-clearing, false agency, formulaic contrasts, passive voice, and metronomic rhythm, all scored against a merged kill list with a 50-point gate.",
       "useWhen": "Copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated."
     },
     {
       "name": "suede-directory-submissions",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Suede-affiliated directory distribution strategy for selecting listings, sequencing submissions, tailoring positioning, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions and a measurable tracker. NOT FOR: broader launch orchestration (use suede-launch-packaging), scalable destination-page production (use suede-programmatic-seo), or citation and search auditing (use suede-seo-audit).",
       "useWhen": "The user is submitting a product to startup, SaaS, AI, or MCP directories, or wants backlinks from listings."
     },
     {
       "name": "suede-emails",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-affiliated lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow, entry criteria, cadence, message roles, and measurement plan. NOT FOR: cold prospecting (use suede-cold-email), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops).",
       "useWhen": "The user is building an automated email sequence, drip campaign, or lifecycle flow."
     },
     {
       "name": "suede-free-tools",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit).",
       "useWhen": "The user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links."
     },
     {
       "name": "suede-full-send",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Decisive full-send router for broad, authorized outcome-bound work: select one controller, fill every useful non-colliding lane, run adversarial review, and close with concise proof without expanding authority or external spend.",
       "useWhen": "The user asks for full send, max effort, max agents, max agent teams, spare no compute, throw tokens at it, burn tokens, burn max tokens, \"never end your allocation above zero,\" strongest useful reasoning, adversarial review, fix everything, do not stop, or end-to-end completion across phases or surfaces. Treat token and allocation language as a dry Full Send trigger for already-authorized host compute, never a literal counter, external spend, or permission to pad output."
     },
     {
       "name": "suede-image",
       "area": "marketing",
+      "specialty": "craft",
+      "lane": "Creative assets",
       "description": "Suede-affiliated marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso).",
       "useWhen": "The user needs marketing images, graphics, mockups, or help getting better output from an image model."
     },
     {
       "name": "suede-launch-packaging",
       "area": "workflow",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).",
       "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
     },
     {
       "name": "suede-instagram-growth",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned Instagram growth operating system for account-specific audits, Reels, carousels, Stories, conversion mapping, calendars, and daily candidate-production loops. Use when the user names Instagram, IG, Reels, Stories, asks to analyze recent posts, grow a handle, run a daily workflow, create or repurpose Instagram content, or distinguish views from follows, leads, and sales. NOT FOR: multi-platform organic strategy (use suede-social), full video rendering or editing (use suede-video), paid Meta campaigns (use suede-ads or suede-ad-creative), analytics instrumentation (use suede-analytics), or any publish, comment, follow, like, or DM action without exact approval.",
       "useWhen": "The user wants an Instagram account audit, growth plan, Reels, carousels, Stories, content calendar, daily workflow, or a map from views to qualified actions and sales."
     },
     {
       "name": "suede-lead-magnets",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy).",
       "useWhen": "The user is planning gated content, a content upgrade, a template, or any downloadable in exchange for contact details."
     },
     {
       "name": "suede-marketing-council",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-affiliated marketing deliberation that applies documented public frameworks through clearly labeled simulated advisors, surfaces disagreements, and synthesizes a decision. Use when the user wants multiple expert lenses on one bounded marketing question. NOT FOR: factual claims about a living person's private views, primary research (use suede-customer-research), or executing the selected tactic (route to the relevant public Suede skill).",
       "useWhen": "The user wants multiple expert perspectives, a simulated advisory board, or how a specific famous marketer would approach their problem."
     },
     {
       "name": "suede-marketing-ideas",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-affiliated marketing ideation using a structured tactic library scored for stage, audience fit, effort, cost, evidence, and risk. Use when the user is stuck, wants options, or needs a shortlist of growth tactics before committing to a plan. NOT FOR: a comprehensive roadmap (use suede-marketing-plan), channel execution (use the relevant public Suede skill), or unattended recurring workflows (use suede-marketing-loops).",
       "useWhen": "The user is out of marketing ideas, does not know where to start, or wants tactics to consider for their stage."
     },
     {
       "name": "suede-marketing-loops",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-affiliated recurring marketing workflow design for cadence, inputs, decision rules, checkpoints, failure states, and measurable outputs. Use when the user wants repeatable ad-fatigue, content-refresh, churn-watch, ranking-drop, or weekly-review loops. NOT FOR: one-off tactic ideation (use suede-marketing-ideas), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority.",
       "useWhen": "The user wants a repeatable, self-running marketing workflow rather than a one-off task."
     },
     {
       "name": "suede-marketing-plan",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-affiliated comprehensive marketing planning across acquisition, activation, retention, referral, and revenue, sized to the actual team, budget, evidence, and stage. Use when the user needs a 90-day plan, 12-month roadmap, growth plan, or go-to-market operating document. NOT FOR: isolated channel execution (use the relevant public Suede skill), uncommitted tactic brainstorming (use suede-marketing-ideas), or positioning discovery alone (use suede-product-marketing).",
       "useWhen": "The user needs a comprehensive marketing or go-to-market plan for a company, client, or their own product."
     },
     {
       "name": "suede-marketing-psychology",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-affiliated ethical application of behavioral science to marketing decisions, including framing, anchoring, social proof, loss aversion, choice architecture, and friction. Use when the user needs a named psychological model, an evidence-aware application, and a testable hypothesis. NOT FOR: clinical or mental-health advice, deceptive dark patterns, page implementation (use suede-site-alchemy), or pricing design (use suede-pricing).",
       "useWhen": "The user wants persuasion principles, cognitive biases, or behavioural science applied to a marketing decision."
     },
     {
       "name": "suede-mcp-qa",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Suede Labs AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server — initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get — plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging).",
       "useWhen": "Validate the Suede Skills MCP, catalog, tool schemas, prompts, resources, install guidance, and docs."
     },
     {
       "name": "suede-offers",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure. Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls).",
       "useWhen": "The user is building or fixing an offer for a service, agency, course, coaching, info product, or high-ticket B2B sale."
     },
     {
       "name": "suede-onboarding",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls).",
       "useWhen": "The user has people signing up but not activating, or wants to design the first session in a product."
     },
     {
       "name": "suede-paywalls",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).",
       "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt."
     },
     {
       "name": "suede-pricing",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-owned pricing and packaging discipline. Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, or planning a price increase. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes.",
       "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices."
     },
     {
       "name": "suede-product-marketing",
       "area": "marketing",
+      "specialty": "position",
+      "lane": "Strategy & research",
       "description": "Suede-owned product-marketing context discipline. Use when a project needs a shared record of product, audience, ICP, positioning, objections, customer language, proof, and goals, or when that record needs updating. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), or publishing brand claims.",
       "useWhen": "The user is starting marketing work and no shared product, audience, or positioning context exists yet."
     },
     {
       "name": "suede-programmatic-seo",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Suede-owned programmatic SEO discipline. Use when designing data-backed keyword, location, directory, integration, or comparison pages at scale, including templates, index-worthiness gates, internal links, and rollout checks. NOT FOR: auditing an existing site (use suede-seo-audit), planning editorial content (use suede-content-strategy), or publishing bulk pages without approval.",
       "useWhen": "The user wants many templated pages targeting keyword, location, integration, or comparison patterns."
     },
     {
       "name": "suede-prospecting",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).",
       "useWhen": "The user needs a prospect or lead list, or is deciding which accounts to go after."
     },
     {
       "name": "suede-public-relations",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned earned-media discipline. Use when building a media list, validating a story angle, drafting a journalist pitch, preparing a press kit, evaluating newsjacking, or answering a reporter request. NOT FOR: directory submissions (use suede-directory-submissions), launch packaging (use suede-launch-packaging), social publishing (use suede-social), or contacting anyone without approval.",
       "useWhen": "The user wants press coverage, is pitching journalists, or is deciding how to announce something publicly."
     },
     {
       "name": "suede-recommend-next-action",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Reads current repo, terminal, plan, or handoff state, scores 2-4 candidate moves on goal alignment, unblocking, evidence, urgency, and leverage, and returns one recommendation packaged as a short runnable prompt, expanding into a full operator or granular prompt only on request.",
       "useWhen": "The user asks what's next, what to do next, to recommend the next move, or to give/expand/granularize a prompt after a review, audit, plan, or stalled task."
     },
     {
       "name": "suede-referrals",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-owned referral and affiliate program discipline. Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.",
       "useWhen": "The user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program."
     },
     {
       "name": "suede-release-linter",
       "area": "creator",
+      "specialty": "position",
+      "lane": "Creator toolkit",
       "description": "Suede Labs skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report. Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance. NOT FOR: organizing the evidence behind a rights or split gap the report surfaces (use suede-rights-audit); building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging).",
       "useWhen": "Check a release folder before release, licensing, registry prep, royalty routing, agent commerce, or transfer-package handoff."
     },
     {
       "name": "suede-revops",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Measure & operate",
       "description": "Suede-owned revenue-operations discipline. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.",
       "useWhen": "The user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue."
     },
     {
       "name": "suede-rights-audit",
       "area": "creator",
+      "specialty": "position",
+      "lane": "Creator toolkit",
       "description": "Suede Labs skill that finds and organizes the rights gaps in a creator project before packaging: ownership, contributors, splits, samples, licenses, provenance, metadata, licensing readiness, and royalty-routing readiness, each marked confirmed or unknown against an evidence trail. Use when a song, release, or creative project needs a rights check before registry, licensing, sync, or payout discussion; when splits, sample clearance, or chain of title are unclear; or when someone asks whether they have the rights to release, license, or get paid for a work. Organizes evidence only: clears no rights, confirms no ownership, moves no money, writes to no registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging).",
       "useWhen": "Map rights gaps before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or creator review."
     },
     {
       "name": "suede-rights-passport",
       "area": "creator",
+      "specialty": "position",
+      "lane": "Creator toolkit",
       "description": "Suede Labs skill that turns messy creator materials into a local, offline rights-and-provenance transfer package: inventoried and hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, validated by a bundled stdlib script. Use when a creator needs to hand a song, release, or project to a collaborator, advisor, registry, marketplace, or label; when someone asks for a rights package, intake package, or handoff folder; or when a validated manifest is needed before licensing or royalty-routing review. Carries questions, not answers: building the package clears nothing and uploads nothing. NOT FOR: finding or investigating the rights gaps in the first place (use suede-rights-audit); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet (use suede-sync-packaging).",
       "useWhen": "Package a creative project into a rights and provenance transfer handoff."
     },
     {
       "name": "suede-sales-enablement",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Measure & operate",
       "description": "Suede-owned sales-enablement discipline. Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof.",
       "useWhen": "The user needs sales collateral, a demo script, objection handling, or materials for a sales conversation."
     },
     {
       "name": "suede-seo-audit",
       "area": "workflow",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Run a nine-lane evidence-based SEO and generative-search audit: access, intent, metadata, structure, supported schema, E-E-A-T, clusters, and exact rewrite fixes.",
       "useWhen": "Audit Suede pages, GitHub Pages, README files, skill docs, launch pages, copy banks, install pages, and AI-result surfaces."
     },
     {
       "name": "suede-ship",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; never Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate).",
       "useWhen": "Take a nontrivial multi-file change through a research-heavy agent graph that halts on hazards and gates on real tests."
     },
     {
       "name": "suede-ship-copy",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet).",
       "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied."
     },
     {
       "name": "suede-ci-gate",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
       "description": "Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack).",
       "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
     },
     {
       "name": "suede-clip-to-guide",
       "area": "workflow",
+      "specialty": "craft",
+      "lane": "Creative assets",
       "description": "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable clip-to-guide package that bridges attention to an X Article, LinkedIn article or newsletter, blog guide, playbook, or other long-form asset; includes fit criteria, rights routing, moment scoring, a clip brief, exact post copy, publishing sequence, approval bundle, measured success loop, and a dual-evidence certainty gate when Full Send or Codex Fleet controls the run. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval.",
       "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate."
     },
     {
       "name": "suede-signup",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Suede-owned signup conversion discipline. Use when auditing or redesigning account creation, registration, or trial-start flows, including field friction, progressive profiling, identity options, mobile behavior, abandonment, and measurement. NOT FOR: post-signup activation (use suede-onboarding), lead-capture forms (use suede-site-alchemy), or deploying auth and compliance changes without review.",
       "useWhen": "The user has a signup, registration, or trial-start flow that loses people partway through."
     },
     {
       "name": "suede-site-alchemy",
       "area": "workflow",
+      "specialty": "earn",
+      "lane": "Money & funnel",
       "description": "Turn a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO.",
       "useWhen": "Improve page conversion, package website growth offers, or route conversion work into the full design workflow."
     },
     {
       "name": "suede-sms",
       "area": "marketing",
+      "specialty": "earn",
+      "lane": "Demand channels",
       "description": "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, and defining measurement. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything without approval.",
       "useWhen": "The user is adding SMS or text-message marketing, or writing messages for an existing SMS list."
     },
     {
       "name": "suede-social",
       "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
       "description": "Suede-owned organic social strategy and content discipline. Use when planning platform mix, posts, threads, cross-platform calendars, repurposing, listening, engagement, or cadence for a founder or brand account. NOT FOR: Instagram-specific account audits, Reels, carousels, Stories, or daily Instagram loops (use suede-instagram-growth), paid ad creative (use suede-ad-creative), broader editorial strategy (use suede-content-strategy), full video production (use suede-video), or publishing and engagement without approval.",
       "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account."
     },
     {
       "area": "creator",
+      "specialty": "position",
+      "lane": "Creator toolkit",
       "name": "suede-sync-packaging",
       "description": "Suede Labs skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: finding and organizing the rights gaps behind an open clearance question (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box).",
       "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions."
@@ -562,18 +796,24 @@
     {
       "name": "suede-video",
       "area": "marketing",
+      "specialty": "craft",
+      "lane": "Creative assets",
       "description": "Suede-owned marketing video planning and production discipline. Use when choosing a format, scripting, storyboarding, generating, editing, reverse-engineering pacing, building a repeatable video pipeline, or repurposing one source into multiple cuts. NOT FOR: deciding the social calendar (use suede-social), paid ad concepts (use suede-ad-creative), image-only assets (use suede-image), or publishing unapproved media.",
       "useWhen": "The user is planning, scripting, or repurposing video content for marketing or social."
     },
     {
       "name": "suede-visibility-grader",
       "area": "workflow",
+      "specialty": "found",
+      "lane": "Search & AI visibility",
       "description": "Grade a public page for launch appeal: findability, first-screen clarity, CTA pull, proof quality, and AI citation readiness.",
       "useWhen": "Judge whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with confidence."
     },
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
       "description": "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; explicit max-effort or max-agent language (use suede-full-send, which owns controller selection); a multi-file repo change that should be built and reviewed as one DAG (use suede-ship).",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
