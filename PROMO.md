@@ -73,7 +73,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - A public skill pack for people who want AI agents to ship better work with fewer resets.
 - Agent workflows for people who care about public pages, repo quality, and evidence boundaries.
 - Full Send means maximum useful effort, not maximum output.
-- One public umbrella workflow with seventy-two companion skills.
+- One public umbrella workflow with a companion skill for every lane.
 - Even the GitHub Pages site sells: polished docs, live catalog, install paths, copy bank, schema, sitemap, OG metadata, and mobile QA.
 - Grade a website's visibility, CTA, trust, AI readability, and design signal before calling it done.
 - Get A-F Suede code grades for correctness, security, state, tests, deployment risk, and docs.
@@ -299,7 +299,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public 73-skill agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suede Full Send, Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, Instagram growth, AI eval design, a scored next-action recommender, visibility and CTA grading, A-F code grading, agent teams, Codex CLI worker fleets, iOS and Android app shipping, launch packaging, MCP QA, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes Suede Full Send, Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, Instagram growth, AI eval design, a scored next-action recommender, visibility and CTA grading, A-F code grading, agent teams, Codex CLI worker fleets, iOS and Android app shipping, launch packaging, MCP QA, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```

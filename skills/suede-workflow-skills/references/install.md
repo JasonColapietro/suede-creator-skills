@@ -12,12 +12,12 @@ Add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 73 skills. Smaller subsets:
+`suede-skills` installs every skill. Smaller subsets:
 `/plugin install suede-agent-workflows@suede` (Full Send, orchestration,
 workflows, evals) or `/plugin install suede-code@suede` (review, grade,
 ship-gate).
 
-Prefer a clone? `install.sh` copies all 73 skills into `~/.claude/skills/`:
+Prefer a clone? `install.sh` copies every skill into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -66,10 +66,9 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/android-app-factory
 ```
 
-The pack holds 73 skills as of this writing. Growth, marketing, and creator
+Growth, marketing, and creator
 skills install the same way — substitute their directory names from
 [the repository skill index](https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills),
-which is the current source of truth for the full list. Read that listing
-rather than trusting the count here if it matters.
+which is the current source of truth for the full list.
 
 Restart Codex after installing new skills.

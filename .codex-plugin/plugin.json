@@ -1,7 +1,7 @@
 {
   "name": "suede-skills",
   "version": "0.14.0",
-  "description": "Seventy-three public Suede skills and a read-only MCP for decisive agent workflows, code review, design, copy, SEO, app shipping, and creator work.",
+  "description": "Public Suede skills and a read-only MCP for decisive agent workflows, code review, design, copy, SEO, app shipping, and creator work.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -57,7 +57,7 @@
   "interface": {
     "displayName": "Suede Creator Skills",
     "shortDescription": "Full-send agent skills with MCP discovery",
-    "longDescription": "Seventy public Suede skills for Full Send execution, coordinated agent teams, reviewed Codex worker fleets, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
+    "longDescription": "Public Suede skills for Full Send execution, coordinated agent teams, reviewed Codex worker fleets, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
     "developerName": "Suede Labs AI",
     "category": "Developer Tools",
     "capabilities": [

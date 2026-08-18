@@ -45,15 +45,6 @@ jobs:
       - name: Audit production dependencies
         run: npm run audit:dependencies
 
-      # The repository description is the only skill-count surface that is not
-      # a tracked file, so `npm run ci` cannot reach it. Kept as its own step
-      # because it needs the network; it skips rather than fails when the API
-      # is unreachable or rate-limited.
-      - name: Check repository description skill count
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: npm run check:description
-
       - name: Reject whitespace errors
         env:
           EVENT_NAME: ${{ github.event_name }}

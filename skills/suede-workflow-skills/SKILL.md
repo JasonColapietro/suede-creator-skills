@@ -328,7 +328,7 @@ Precedence when several routers match at once:
 
 ## Public Install Guidance
 
-The pack ships 73 skills. Install commands for Claude Code (marketplace,
+The pack ships every skill listed below. Install commands for Claude Code (marketplace,
 plugin subsets, `install.sh` clone) and for Codex (umbrella-only or per-skill)
 are in `references/install.md` in this skill's `references/` folder — read it
 only when the user asks how to install, update, or subset the pack. The Suede
