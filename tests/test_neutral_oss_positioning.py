@@ -102,8 +102,14 @@ class NeutralOssPositioningTests(unittest.TestCase):
         skill_dirs = sorted(path for path in (ROOT / "skills").iterdir() if path.is_dir())
         count = len(skill_dirs)
         self.assertEqual(count, len(catalog["skills"]))
-        self.assertIn(f"{count}-skill", read("README.md"))
-        self.assertIn(f"{count}-skill", read("docs/index.html"))
+        # The pack size is no longer restated in prose. It survives only on the
+        # surfaces where the number is the point, and those are what this test
+        # pins: the README badge (URL value and alt text, because the rendered
+        # number lives in the URL) and the homepage title a searcher reads.
+        readme = read("README.md")
+        self.assertIn(f"skills-{count}-c8a96e", readme)
+        self.assertIn(f"![Skills: {count}]", readme)
+        self.assertIn(f"| {count} Open-Source Agent Skills", read("docs/index.html"))
         stale_counts = [f"{n} skills" for n in range(20, 40) if n != count]
         stale_counts += [f"{n}-skill" for n in range(20, 40) if n != count]
         # A focused subset plugin advertises how many skills *it* bundles, which
