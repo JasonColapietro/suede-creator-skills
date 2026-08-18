@@ -938,6 +938,62 @@ const specialtyTotal = [...specialtyCounts.values()].reduce((sum, n) => sum + n,
 if (specialtyIndex.length > 0 && specialtyTotal !== catalog.skills.length) {
   fail.push(`catalog.json specialties cover ${specialtyTotal} skills but the catalog holds ${catalog.skills.length}`);
 }
+
+// Stack-drift guard. Stacks are curated cross-cutting groups layered over the
+// specialty partition (the Agentic Adderall Stack on /cracked.html is the
+// first). Unlike specialties they never have to cover the pack, but every
+// member must be a real catalog skill, the claimed count must match the
+// membership, and the page that sells the stack must list exactly its members
+// — the same drift that made count surfaces go stale before countChecks.
+const stackIndex = Array.isArray(catalog.stacks) ? catalog.stacks : [];
+const stackMemberPool = new Set(catalog.skills.map((skill) => skill.name));
+for (const stack of stackIndex) {
+  const members = Array.isArray(stack.skills) ? stack.skills : [];
+  if (members.length === 0) {
+    fail.push(`catalog.json stack "${stack.key}" has no members`);
+  }
+  if (new Set(members).size !== members.length) {
+    fail.push(`catalog.json stack "${stack.key}" lists a member more than once`);
+  }
+  if (stack.count !== members.length) {
+    fail.push(`catalog.json stack "${stack.key}" claims ${stack.count} skills but lists ${members.length}`);
+  }
+  for (const name of members) {
+    if (!stackMemberPool.has(name)) {
+      fail.push(`catalog.json stack "${stack.key}" member "${name}" is not a catalog skill`);
+    }
+  }
+}
+{
+  const adderall = stackIndex.find((stack) => stack.key === "adderall");
+  if (!adderall) {
+    fail.push('catalog.json has no "adderall" stack — the Cracked Devs page membership is unguarded');
+  } else {
+    const crackedText = readText(path.join(repoRoot, "docs", "cracked.html"));
+    if (!crackedText) {
+      fail.push("docs/cracked.html is missing but catalog.json advertises the adderall stack");
+    } else {
+      const listed = [...crackedText.matchAll(/data-stack-skill="([a-z0-9-]+)"/g)].map((m) => m[1]);
+      const want = new Set(adderall.skills);
+      const got = new Set(listed);
+      if (listed.length !== got.size) {
+        fail.push("docs/cracked.html lists a stack skill more than once");
+      }
+      for (const name of want) {
+        if (!got.has(name)) fail.push(`docs/cracked.html is missing stack skill "${name}"`);
+      }
+      for (const name of got) {
+        if (!want.has(name)) fail.push(`docs/cracked.html lists "${name}" which is not in the adderall stack`);
+      }
+      const badge = crackedText.match(/class="stack-count">(\d+)</);
+      if (!badge) {
+        fail.push("docs/cracked.html has no stack-count badge");
+      } else if (Number(badge[1]) !== adderall.count) {
+        fail.push(`docs/cracked.html stack-count badge says ${badge[1]} but the adderall stack holds ${adderall.count}`);
+      }
+    }
+  }
+}
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
