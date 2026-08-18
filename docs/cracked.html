@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cracked Devs Only | The Agentic Adderall Stack</title>
+  <meta name="description" content="The Agentic Adderall Stack: the top Suede skills for supercharging your agent. Instant-release subagent runs with no downtime, orchestration DAGs, agent teams, worker fleets, and the momentum loop.">
+  <meta name="author" content="Jason Colapietro">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://skills.suedeai.ai/cracked.html">
+  <link rel="icon" href="./assets/favicon-64.png" type="image/png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cracked Devs Only | The Agentic Adderall Stack">
+  <meta property="og:description" content="Six Suede skills that turn one polite assistant into a shipping organism: instant-release subagent runs, orchestration DAGs, agent teams, Codex worker fleets, and the momentum loop.">
+  <meta property="og:url" content="https://skills.suedeai.ai/cracked.html">
+  <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cracked Devs Only | The Agentic Adderall Stack">
+  <meta name="twitter:description" content="The top Suede skills for supercharging your agent: one intense subagent-driven pass, no downtime, no intervals — plus the loop that keeps the session moving.">
+  <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://skills.suedeai.ai/cracked.html#page",
+      "name": "The Agentic Adderall Stack",
+      "description": "A curated stack of the top Suede skills for supercharging an AI coding agent: max-effort routing, a shipping DAG, agent-team orchestration, Codex worker fleets, an umbrella workflow, and a next-move loop.",
+      "url": "https://skills.suedeai.ai/cracked.html",
+      "author": { "@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro" },
+      "publisher": { "@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "The Agentic Adderall Stack",
+        "numberOfItems": 6,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "suede-full-send", "url": "https://skills.suedeai.ai/skills/suede-full-send.html" },
+          { "@type": "ListItem", "position": 2, "name": "suede-ship", "url": "https://skills.suedeai.ai/skills/suede-ship.html" },
+          { "@type": "ListItem", "position": 3, "name": "suede-agent-teams", "url": "https://skills.suedeai.ai/skills/suede-agent-teams.html" },
+          { "@type": "ListItem", "position": 4, "name": "suede-codex-fleet", "url": "https://skills.suedeai.ai/skills/suede-codex-fleet.html" },
+          { "@type": "ListItem", "position": 5, "name": "suede-workflow-skills", "url": "https://skills.suedeai.ai/skills/suede-workflow-skills.html" },
+          { "@type": "ListItem", "position": 6, "name": "suede-recommend-next-action", "url": "https://skills.suedeai.ai/skills/suede-recommend-next-action.html" }
+        ]
+      }
+    }
+  </script>
+  <style>
+    /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces-var.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px; border-radius: 8px;
+      background: var(--gold, #c8a96e); color: var(--bg, #080808);
+      font-weight: 700; text-decoration: none;
+      transition: transform 160ms ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    #main:focus { outline: none; }
+
+    :root {
+      color-scheme: dark;
+      --bg: #080808;
+      --surface: #111111;
+      --card: #161616;
+      --border: #222222;
+      --hairline: #1a1a18;
+      --gold: #c8a96e;
+      --red: #8b1a1a;
+      --red-text: #c6625a;
+      --cream: #f0ece4;
+      --muted: #888880;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 40px; }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 4px 18px; min-height: 64px; padding-top: 8px; padding-bottom: 8px;
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 28px; height: 28px; }
+    .nav-logo-wordmark { font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+    .nav-logo-wordmark span { color: var(--gold); }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      padding: 6px 0; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-links a[aria-current="page"] { color: var(--gold); }
+    .nav-cta {
+      border: 1px solid var(--gold); border-radius: 4px;
+      padding: 8px 16px !important; color: var(--cream) !important;
+      background: rgba(200, 169, 110, 0.08);
+    }
+    .nav-cta:hover { background: rgba(200, 169, 110, 0.16); }
+
+    /* PAGE HEAD */
+    /* Vertical padding only: the shorthand used to reset .shell's 40px side
+       padding, leaving this block 40px left of every section below it. */
+    .page-head { padding-top: 88px; padding-bottom: 64px; border-bottom: 1px solid var(--hairline); }
+
+    /* Install path map */
+    .pathmap {
+      margin: 40px 0 0; max-width: 900px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 24px 26px 22px;
+    }
+    .pathmap-head {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 6px 18px; padding-bottom: 16px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pathmap-title {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .pathmap-hint { font-size: 12.5px; color: var(--muted); }
+    .pathmap-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pathmap-svg { display: block; width: 100%; min-width: 620px; height: auto; }
+
+    /* Field notes */
+    .notes { margin-top: 32px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); overflow: hidden; }
+    .note-row {
+      display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center; gap: 20px; padding: 18px 22px;
+      border-bottom: 1px solid var(--border); transition: background 0.15s ease;
+    }
+    .note-row:last-child { border-bottom: 0; }
+    .note-row:hover { background: #141414; }
+    .note-date { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+    .note-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .note-title { font-size: 15.5px; font-weight: 600; color: var(--cream); line-height: 1.4; }
+    .note-row:hover .note-title { color: var(--gold); }
+    .note-hook { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .note-arrow { font-family: var(--mono); font-size: 13px; color: var(--muted); transition: color 0.15s, transform 0.15s; }
+    .note-row:hover .note-arrow { color: var(--gold); transform: translateX(3px); }
+    @media (max-width: 720px) {
+      .pathmap { padding: 20px 16px 16px; }
+      .note-row { grid-template-columns: 1fr; row-gap: 6px; }
+      .note-arrow { display: none; }
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--red-text); margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(44px, 6.5vw, 84px); font-weight: 800;
+      letter-spacing: -0.04em; line-height: 1.0; max-width: 900px;
+      margin-bottom: 24px;
+    }
+    .lead { font-size: 18px; line-height: 1.7; color: var(--muted); max-width: 720px; }
+    .lead a, .prose a { color: var(--gold); border-bottom: 1px solid rgba(200, 169, 110, 0.3); transition: border-color 0.15s; }
+    .lead a:hover, .prose a:hover { border-bottom-color: var(--gold); }
+
+    /* SECTIONS */
+    section { padding: 72px 0 0; }
+    section:last-of-type { padding-bottom: 96px; }
+    h2 {
+      font-size: clamp(28px, 3.6vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 14px;
+    }
+    h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .section-sub { font-size: 16px; color: var(--muted); max-width: 680px; margin-bottom: 36px; }
+    .prose p { color: var(--muted); margin-bottom: 14px; }
+    .prose strong { color: var(--cream); }
+    code {
+      font-family: var(--mono); font-size: 0.9em; color: var(--gold);
+      background: rgba(200, 169, 110, 0.07); border-radius: 3px; padding: 1px 6px;
+    }
+
+    /* TERMINAL BLOCK */
+    .terminal { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 24px 0; }
+    .terminal-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+    }
+    .tdot { width: 10px; height: 10px; border-radius: 50%; background: #2a2a28; }
+    .tdot:first-child { background: #4a2a28; }
+    .tdot:nth-child(3) { background: #2c3a2a; }
+    .terminal-title { margin-left: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+    .terminal-body { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 20px 22px; }
+    .terminal-body pre {
+      flex: 1; overflow-x: auto;
+      mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+    }
+    .terminal-body code, .terminal-body pre {
+      font-family: var(--mono); font-size: 15px; line-height: 1.9;
+      color: var(--gold); background: none; padding: 0; white-space: pre;
+    }
+    .copy-btn {
+      flex-shrink: 0; background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-family: var(--mono); font-size: 12px;
+      padding: 9px 16px; min-height: 44px; border-radius: 4px; cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .copy-btn:hover, .copy-btn.copied { color: var(--gold); border-color: var(--gold); }
+    .copy-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* CARD GRID */
+    .grid-2, .grid-3 { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-top: 36px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cell { background: var(--card); padding: 30px 28px; display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+    .cell pre { align-self: stretch; min-width: 0; max-width: 100%; }
+    .cell .copy-btn { margin-top: 2px; }
+    .cell .cell-label {
+      display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+    .cell--red .cell-label { color: var(--red-text); }
+    .cell p { font-size: 14.5px; line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+    .cell pre {
+      font-family: var(--mono); font-size: 13px; line-height: 1.8; color: var(--gold);
+      background: var(--bg); border: 1px solid var(--hairline); border-radius: 4px;
+      padding: 14px 16px; overflow-x: auto; white-space: pre; margin: 12px 0;
+      mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent 100%);
+    }
+
+    /* LINK ROWS */
+    .rows { border-top: 1px solid var(--border); margin-top: 32px; }
+    .row {
+      display: grid; grid-template-columns: 280px 1fr; gap: 24px;
+      align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--hairline);
+    }
+    .row b { font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--gold); word-break: break-word; }
+    .row span { font-size: 14.5px; line-height: 1.55; color: var(--muted); overflow-wrap: anywhere; }
+
+    /* BUTTON ROW */
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; padding: 12px 24px;
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--muted); font-size: 14px; font-weight: 500;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .btn:hover { color: var(--gold); border-color: var(--gold); }
+    .btn--gold { border-color: var(--gold); color: var(--cream); background: rgba(200, 169, 110, 0.08); }
+    .btn--gold:hover { background: rgba(200, 169, 110, 0.16); color: var(--cream); }
+    .btn--red { border-color: var(--red); color: var(--cream); background: rgba(139, 26, 26, 0.08); }
+    .btn--red:hover { background: rgba(139, 26, 26, 0.2); color: var(--cream); }
+
+    /* SAFETY + FOOTER */
+    .safety {
+      margin-top: 72px; padding: 24px 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px; background: var(--surface);
+      font-size: 14px; color: var(--muted); line-height: 1.65;
+    }
+    footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
+    .footer-brand img { width: 24px; height: 24px; }
+    .footer-brand strong { color: var(--cream); font-weight: 600; }
+    .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-divider { color: var(--border); }
+
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { padding: 0 24px; }
+      .page-head { padding-top: 64px; padding-bottom: 48px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; row-gap: 6px; padding: 18px 0; }
+      .terminal-body { flex-direction: column; align-items: stretch; }
+      .terminal-body pre { min-width: 0; max-width: 100%; }
+      .copy-btn { align-self: flex-end; }
+    }
+    .ship-strip { background: var(--gold); color: #171310; padding: 64px 0; }
+    .ship-strip-head {
+      font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05; color: #171310; margin: 0 0 8px;
+    }
+    .ship-strip-sub { font-size: 15.5px; color: rgba(23, 19, 16, 0.75); max-width: 620px; margin-bottom: 24px; }
+    .ship-strip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+    .ship-strip-row code {
+      font-family: var(--mono); font-size: 16px; font-weight: 600;
+      color: #f0ece4; background: #171310;
+      border-radius: 4px; padding: 13px 20px;
+    }
+    .ship-strip-row code .prompt { color: var(--gold); user-select: none; }
+    .ship-strip-row a {
+      display: inline-flex; align-items: center; min-height: 44px;
+      color: #171310; font-size: 15px; font-weight: 700;
+      border-bottom: 2px solid rgba(23, 19, 16, 0.4); text-decoration: none;
+      transition: border-color 0.15s;
+    }
+    .ship-strip-row a:hover { border-color: #171310; }
+    @media (max-width: 720px) {
+      .terminal-body code, .terminal-body pre { font-size: 13.5px; }
+      .ship-strip { padding: 48px 0; }
+      .ship-strip-row code { font-size: 14px; width: 100%; overflow-x: auto; }
+    }
+
+    /* Persistent GitHub star button in the sticky nav. Deliberately outlined
+       rather than filled: Install stays the primary CTA, this is secondary. */
+    a.nav-star {
+      display: inline-flex; align-items: center; gap: 7px;
+      min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 4px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--muted); text-transform: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    a.nav-star:hover { color: var(--gold); border-color: var(--gold); background: rgba(200, 169, 110, 0.08); }
+    .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
+    .nav-star-count {
+      font-family: var(--mono); font-size: 12px; color: var(--cream);
+      padding-left: 7px; border-left: 1px solid var(--border);
+    }
+    a.nav-star:hover .nav-star-count { border-left-color: rgba(200, 169, 110, 0.4); }
+    @media (max-width: 620px) {
+      .nav-star-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      a.nav-star { padding: 8px 12px; gap: 6px; }
+      .nav-star-count { padding-left: 6px; }
+    }
+
+    /* Display-role retune: editorial serif for page headlines only.
+       Grouped last so it wins the cascade over the rules above. */
+    h1, h2 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-weight: 620;
+      letter-spacing: -0.015em;
+    }
+    h1 { line-height: 1.06; }
+    /* Mobile nav: a <details> disclosure. The markup ships open, so with JS
+       off every link stays reachable; JS collapses it at mobile widths and
+       keeps the summary's label in sync. Replaces the wrapped link row that
+       used to eat a fifth of a phone viewport. */
+    .nav-disclosure { display: contents; }
+    .nav-disclosure > summary.nav-hamburger { display: none; }
+    @media (max-width: 768px) {
+      .nav-inner { flex-wrap: nowrap; }
+      .nav-disclosure { display: block; }
+      .nav-disclosure > summary.nav-hamburger {
+        display: flex; flex-direction: column; justify-content: center; gap: 5px;
+        width: 44px; height: 44px; padding: 9px;
+        border: 1px solid var(--border); border-radius: 4px;
+        background: transparent; cursor: pointer; list-style: none;
+      }
+      .nav-disclosure > summary.nav-hamburger::-webkit-details-marker { display: none; }
+      .nav-disclosure > summary.nav-hamburger::marker { content: ""; }
+      .nav-disclosure > summary.nav-hamburger span {
+        display: block; width: 100%; height: 1px; background: var(--cream);
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+      .nav-disclosure > summary.nav-hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(2) { opacity: 0; }
+      .nav-disclosure[open] > summary.nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+      .nav-disclosure[open] > .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        padding: 6px 20px 14px;
+        background: #0a0a0a;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-disclosure[open] > .nav-links > * {
+        display: flex; align-items: center; min-height: 44px;
+      }
+      .nav-disclosure[open] > .nav-links > * + * { border-top: 1px solid var(--hairline); }
+    }
+    ::selection { background: #c8a96e; color: #080808; }
+    html { scrollbar-color: #2e2c28 #0a0a0a; }
+    [id] { scroll-margin-top: 84px; }
+  </style>
+  <style>
+    /* CRACKED-PAGE EXTRAS. Same tokens as every other page; fills use --red,
+       text reds use --red-text, per the docs palette rule. */
+    .rx {
+      margin-top: 44px; max-width: 760px;
+      border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface); overflow: hidden;
+    }
+    .rx-head {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px;
+      padding: 14px 22px; border-bottom: 1px dashed var(--border);
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--red-text);
+    }
+    .rx-body { padding: 20px 22px 22px; display: grid; gap: 12px; }
+    .rx-row { display: grid; grid-template-columns: 140px 1fr; gap: 18px; font-size: 14.5px; }
+    .rx-key {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); padding-top: 3px;
+    }
+    .rx-val { color: var(--cream); line-height: 1.65; }
+    .rx-val em { color: var(--gold); font-style: normal; font-weight: 600; }
+    @media (max-width: 720px) { .rx-row { grid-template-columns: 1fr; gap: 3px; } }
+    .stack-count {
+      display: inline-block; font-family: var(--mono); font-size: 14px;
+      color: var(--gold); border: 1px solid var(--border); border-radius: 999px;
+      padding: 3px 14px; margin-left: 14px; vertical-align: middle;
+    }
+    .row span strong { color: var(--cream); font-weight: 600; }
+    .formulation { border-left: 2px solid var(--red); padding-left: 18px; }
+    .formulation + .formulation { margin-top: 18px; }
+    .formulation h3 span { color: var(--red-text); font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: 10px; }
+  </style>
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="shell nav-inner">
+    <a href="./" class="nav-logo" aria-label="Suede Creator Skills home">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+      <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+    </a>
+    <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+      <a href="./">Home</a>
+      <a href="./skills/">Skills</a>
+      <a href="./guide.html">Guide</a>
+      <a href="./copy.html">Copy Bank</a>
+      <a href="./cracked.html" aria-current="page">Cracked Devs</a>
+      <a href="./book/">Book</a>
+      <a href="./blog/">Blog</a>
+      <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
+      <a href="./plugins.html" class="nav-cta">Install</a>
+    </div>
+    </details>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+  <div class="shell page-head">
+    <p class="eyebrow">Cracked devs only &middot; the unmarked door</p>
+    <h1>The Agentic Adderall Stack.</h1>
+    <p class="lead">Six skills for supercharging your agent until it ships like it's late for something. Maximum useful effort, parallel lanes, adversarial review of its own work, and the next move scored before you finish asking. This is the corner of the pack we reach for when the deadline is real.</p>
+
+    <div class="rx" role="img" aria-label="Prescription-style label for the Agentic Adderall Stack">
+      <div class="rx-head">
+        <span>Rx &#8470; SUEDE-ADD-06</span>
+        <span>skills.suedeai.ai dispensary</span>
+      </div>
+      <div class="rx-body">
+        <div class="rx-row"><span class="rx-key">Patient</span><span class="rx-val">Your agent. Any harness that reads a SKILL.md.</span></div>
+        <div class="rx-row"><span class="rx-key">Sig</span><span class="rx-val">Install once. Fan out as directed. Do not stop at &ldquo;want me to continue?&rdquo;</span></div>
+        <div class="rx-row"><span class="rx-key">Formulations</span><span class="rx-val"><em>IR</em> &mdash; one intense subagent-driven pass, no downtime, no intervals. <em>XR</em> &mdash; the momentum loop; refills itself.</span></div>
+        <div class="rx-row"><span class="rx-key">Warnings</span><span class="rx-val">Burns tokens like it's got something to prove. May cause shipped software.</span></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn--red" href="#instant-release">Take the instant release -&gt;</a>
+      <a class="btn" href="#the-build">See the build</a>
+      <a class="btn btn--gold" href="./plugins.html">Install the pack</a>
+    </div>
+  </div>
+
+  <section class="shell" aria-labelledby="instant-release">
+    <h2 id="instant-release">Instant release. No downtime, no intervals.</h2>
+    <p class="section-sub">The IR formulation runs the whole stack as one continuous subagent-driven pass: a single controller fans out every useful non-colliding lane at once, keeps every worker hot until the finish line, turns adversarial review on its own output mid-run, and lands with evidence. You paste one prompt. It comes back shipped.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">adderall-ir &middot; one dose</span>
+      </div>
+      <div class="terminal-body">
+        <pre>/suede-full-send &lt;your outcome&gt; &mdash; instant release: run this as one
+continuous subagent-driven pass. Fan out every useful non-colliding
+lane at once and keep every worker busy until the finish. No pauses,
+no check-ins, no intervals. Adversarial review inside the run.
+Evidence at the end.</pre>
+        <button class="copy-btn" type="button" data-copy-prev aria-label="Copy the instant release prompt">Copy</button>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <article class="cell cell--red">
+        <span class="cell-label">What fans out</span>
+        <p>The controller reads the outcome, cuts it into non-colliding lanes, and hands each lane to a subagent with its own brief. Research, build, review, and verification all run in parallel instead of taking turns.</p>
+      </article>
+      <article class="cell cell--red">
+        <span class="cell-label">What never happens</span>
+        <p>Idle time between phases. A status update instead of progress. The run pausing to ask whether it should keep going. The plan and the work happening in separate sessions.</p>
+      </article>
+      <article class="cell cell--red">
+        <span class="cell-label">What comes back</span>
+        <p>A finished change with an adversarial review trail and evidence a gate can check &mdash; not a summary of what an agent would do if you asked again nicely.</p>
+      </article>
+    </div>
+
+    <p class="section-sub" style="margin-top:36px; max-width:760px;">IR is the expensive formulation on purpose. <a href="./skills/suede-ship.html">suede-ship</a> says it on its own label &mdash; built for tokenmaxing, 35 to 150 agents, billed to your model allocation. When the bulk of the work is well-specified volume, <a href="./skills/suede-codex-fleet.html">suede-codex-fleet</a> pushes it onto parallel OpenAI Codex CLI workers on your ChatGPT plan instead, and your Claude allocation stays for the judgment calls.</p>
+
+    <div class="formulation" style="margin-top:44px;">
+      <h3>Extended release <span>XR &middot; for the long session</span></h3>
+      <p class="section-sub" style="margin-bottom:0; max-width:760px;">When the run lands, <a href="./skills/suede-recommend-next-action.html">suede-recommend-next-action</a> has already scored the next move on goal fit, unblocking, evidence, urgency, and leverage &mdash; and hands it back as a short runnable prompt. The session never idles between doses of work.</p>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="the-build">
+    <h2 id="the-build">The Agentic Adderall build<span class="stack-count">6</span></h2>
+    <p class="section-sub">The whole formulary. Each one is a plain-Markdown folder you can read on GitHub before you enable it; together they turn one polite assistant into a shipping organism.</p>
+
+    <div class="rows">
+      <a class="row" data-stack-skill="suede-full-send" href="./skills/suede-full-send.html"><b>suede-full-send</b><span><strong>The intent router.</strong> Broad, authorized outcomes get one controller, useful non-colliding lanes, consequential reasoning, adversarial review, and an evidence-backed finish.</span></a>
+      <a class="row" data-stack-skill="suede-ship" href="./skills/suede-ship.html"><b>suede-ship</b><span><strong>The shipping DAG.</strong> Scout, multi-lens research, lane plan with file ownership, parallel build, adversarial refute, integration gate. Halts on hazards instead of plowing through them.</span></a>
+      <a class="row" data-stack-skill="suede-agent-teams" href="./skills/suede-agent-teams.html"><b>suede-agent-teams</b><span><strong>The org chart.</strong> Coordinates complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span></a>
+      <a class="row" data-stack-skill="suede-codex-fleet" href="./skills/suede-codex-fleet.html"><b>suede-codex-fleet</b><span><strong>The worker fleet.</strong> Claude decomposes, briefs, and reviews; parallel OpenAI Codex CLI workers generate the volume on your ChatGPT plan.</span></a>
+      <a class="row" data-stack-skill="suede-workflow-skills" href="./skills/suede-workflow-skills.html"><b>suede-workflow-skills</b><span><strong>The umbrella.</strong> One install that routes an agent across every lane in the pack, so the right specialist loads without you naming it.</span></a>
+      <a class="row" data-stack-skill="suede-recommend-next-action" href="./skills/suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span><strong>The momentum loop.</strong> Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one move as a short runnable prompt.</span></a>
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="fill-it">
+    <h2 id="fill-it">Fill the prescription</h2>
+    <p class="section-sub">One marketplace add, one install. The stack rides in with the rest of the pack &mdash; all of it readable first on GitHub.</p>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">claude code &middot; install</span>
+      </div>
+      <div class="terminal-body">
+        <pre>/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</pre>
+        <button class="copy-btn" type="button" data-copy-prev aria-label="Copy install commands">Copy</button>
+      </div>
+    </div>
+    <p class="section-sub" style="margin-top:8px;">Codex, Cursor, Copilot, and Windsurf paths are on the <a href="./plugins.html">install page</a>, next to the optional MCP that lets an agent browse this stack by name.</p>
+
+    <div class="safety">
+      Obviously not medical advice, not an actual stimulant, and no pharmacy is involved &mdash; it's six Markdown folders. The only thing this stack doses is your token bill, and the skills say so on their own labels. Every folder is inspectable on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a> before you enable it; core local workflows do not upload by default or grant new authority.
+    </div>
+  </section>
+
+  <section class="ship-strip" aria-labelledby="ship-strip-h" style="margin-top:96px;">
+    <div class="shell">
+      <h2 class="ship-strip-head" id="ship-strip-h">Your agent is under-caffeinated.</h2>
+      <p class="ship-strip-sub">Install the pack, paste the IR prompt, and find out what a session with no downtime feels like.</p>
+      <div class="ship-strip-row">
+        <code><span class="prompt">$</span> /plugin install suede-skills@suede</code>
+        <a href="./plugins.html">Every install path -&gt;</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+      <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Progressive enhancement only: every command is plain selectable text without JS.
+  function wireCopy(btn, getText) {
+    btn.addEventListener('click', function() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(getText()).then(function() {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn) {
+    wireCopy(btn, function() { return btn.getAttribute('data-copy'); });
+  });
+  document.querySelectorAll('.copy-btn[data-copy-prev]').forEach(function(btn) {
+    wireCopy(btn, function() {
+      var pre = btn.previousElementSibling;
+      return pre ? pre.textContent.trim() : '';
+    });
+  });
+</script>
+
+<script>
+  // Live star count, cached in localStorage for an hour so a browsing session
+  // costs one API call rather than one per page. Silent on failure: the button
+  // is a working link regardless, and no count beats a wrong one.
+  (function() {
+    var pills = document.querySelectorAll('[data-star-count]');
+    var key = 'suede-stars-v1';
+    var ttl = 60 * 60 * 1000;
+    if (!pills.length || !window.fetch) return;
+    function fmt(n) {
+      if (n < 1000) return String(n);
+      return String(Math.round(n / 100) / 10).replace(/\.0$/, '') + 'k';
+    }
+    function reveal(n) {
+      if (typeof n !== 'number' || n < 10) return;
+      var text = fmt(n);
+      Array.prototype.forEach.call(pills, function(el) {
+        el.textContent = text;
+        el.removeAttribute('hidden');
+      });
+    }
+    var cached = null;
+    try {
+      var raw = window.localStorage.getItem(key);
+      if (raw) {
+        var c = JSON.parse(raw);
+        if (c && typeof c.n === 'number' && typeof c.t === 'number' && Date.now() - c.t <= ttl) cached = c.n;
+      }
+    } catch (e) {}
+    if (cached !== null) { reveal(cached); return; }
+    window.fetch('https://api.github.com/repos/JasonColapietro/suede-creator-skills')
+      .then(function(res) { return res.ok ? res.json() : null; })
+      .then(function(data) {
+        if (!data || typeof data.stargazers_count !== 'number') return;
+        try { window.localStorage.setItem(key, JSON.stringify({ n: data.stargazers_count, t: Date.now() })); } catch (e) {}
+        reveal(data.stargazers_count);
+      })
+      .catch(function() {});
+  })();
+</script>
+<script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+</body>
+</html>

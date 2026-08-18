@@ -87,6 +87,18 @@ function boundedString(value, fallback = "") {
   return raw.length > MAX_TEXT_CHARS ? `${raw.slice(0, MAX_TEXT_CHARS)}...` : raw;
 }
 
+// A stack is a curated cross-cutting group; a narrowed profile only advertises
+// the members it can actually serve, and drops a stack it empties entirely.
+function scopedStacks(skills) {
+  const present = new Set(skills.map((skill) => skill.name));
+  return (catalog.stacks || [])
+    .map((stack) => {
+      const members = (stack.skills || []).filter((name) => present.has(name));
+      return { ...stack, skills: members, count: members.length };
+    })
+    .filter((stack) => stack.count > 0);
+}
+
 function profileCatalog() {
   const specialties = profileSpecialties(profile);
   if (specialties) {
@@ -101,6 +113,7 @@ function profileCatalog() {
     return {
       ...catalog,
       specialties: catalog.specialties.filter((entry) => wanted.has(entry.key)),
+      stacks: scopedStacks(skills),
       plugins: catalog.plugins.filter((plugin) => shipping.has(plugin.name)),
       skills
     };
@@ -116,6 +129,7 @@ function profileCatalog() {
     // Only advertise specialities this profile can actually serve, so a client
     // does not see a group it can never list.
     specialties: (catalog.specialties || []).filter((entry) => present.has(entry.key)),
+    stacks: scopedStacks(skills),
     plugins: catalog.plugins.filter((plugin) => pluginNames.has(plugin.name)),
     skills
   };

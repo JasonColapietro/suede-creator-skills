@@ -87,6 +87,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           <a href="./" aria-current="page">Book</a>
           <a href="${up}blog/">Blog</a>
           <a href="${up}copy.html">Copy Bank</a>
+          <a href="${up}cracked.html">Cracked Devs</a>
           <a href="${up}plugins.html" class="nav-cta">Install</a>
           </div>
         </details>
