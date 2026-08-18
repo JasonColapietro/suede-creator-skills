@@ -1,6 +1,6 @@
 ---
 name: johnny-suede-write
-description: "Suede Labs full writing stack: sharper copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers, with an SEO/AEO/AI EO pass, persona and framework selection, brand-voice alignment, and a scored ship gate. Use when a writing job spans more than one surface, needs a voice retune as well as a draft, needs discoverability metadata alongside the copy, or when the user asks for 'the full writing stack', a launch package, or a public explainer talk-track. NOT FOR: one standalone conversion surface in one pass (use suede-copy); stripping AI patterns from text you did not write (use suede-deslop); a researched multi-phase piece for a high-stakes public surface (use suede-ship-copy); a deep standalone SEO audit (use suede-seo-audit); copy that ships inside a design or layout build (use johnny-suede-design)."
+description: "Suede Labs full writing stack: sharper copy for docs, pages, email, social, headlines, CTAs, product listings, and public explainers, with an SEO/AEO/AI EO pass, persona and framework selection, brand-voice alignment, and a scored ship gate. Use when a writing job spans more than one surface, needs a voice retune as well as a draft, needs discoverability metadata alongside the copy, when the document is one an agent reads such as a SKILL.md, CLAUDE.md, or AGENTS.md, or when the user asks for 'the full writing stack', a launch package, or a public explainer talk-track. NOT FOR: one standalone conversion surface in one pass (use suede-copy); stripping AI patterns from text you did not write (use suede-deslop); a researched multi-phase piece for a high-stakes public surface (use suede-ship-copy); a deep standalone SEO audit (use suede-seo-audit); copy that ships inside a design or layout build (use johnny-suede-design)."
 ---
 
 # Johnny Suede Write
@@ -56,6 +56,7 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 | Hand a public user words to explain Suede to someone else | **Public Explainer Talk-Track** lane |
 | Audit/review existing copy and return findings + score | **Copy Audit** output shape |
 | Do a metadata/structure/copy-quality SEO pass alongside copy | **SEO And GitHub Copy** + **SEO Audit Mode** |
+| Write or tighten a document an agent reads (SKILL.md, CLAUDE.md, AGENTS.md) | **Agent-Facing Docs** lane |
 
 **Drop down instead of running this stack:** for a single standalone conversion surface (one email, one hero, one button set) with no SEO pass and no voice retune, run suede-copy directly. When the copy ships inside a design or layout build, run johnny-suede-design; its Copy lane applies these rules. For a researched, multi-phase piece on a high-stakes public surface, escalate to suede-ship-copy.
 
@@ -87,6 +88,12 @@ Identify the mode before writing. Each mode has a different structure, length, a
 - Structure: one-line description → install → quickstart → reference.
 - No marketing language in technical docs. Proof is code examples and working commands.
 - Score target: 60/70 (authenticity and specificity weighted higher).
+
+**Agent-facing docs** (SKILL.md, CLAUDE.md, AGENTS.md, a reference file a pointer reaches)
+- The reader is a model, so the target is a predictable process, not a better sentence: same route through the document every run.
+- Write the pointer (the `description`, the `AGENTS.md` line) before the body. Its wording, not its target, decides when the agent reaches the material.
+- Every step ends on a criterion the agent can check. Every sentence beats the model's default or it goes.
+- Score target: 60/70. Full lever set: run the **Agent-Facing Docs** lane below.
 
 **Social** (Twitter/X, LinkedIn, Instagram, Discord, launch post)
 - Open with the most specific claim or result, not the setup.
@@ -269,6 +276,46 @@ FAQ answer:
 Install explanation:
 Evidence boundary:
 ```
+
+## Agent-Facing Docs Lane
+
+Run this lane when the document is read by an agent rather than a person: a
+`SKILL.md`, a `CLAUDE.md`, an `AGENTS.md`, or a reference a pointer reaches.
+Human copy earns attention; agent docs spend it, and every always-loaded line
+costs tokens on every turn whether or not it fires.
+
+Six levers, in the order they pay off. Full method, with the tests and
+bad/good pairs for each: read `references/writing-for-agents.md`.
+
+1. **Sharpen the pointer.** A context pointer names material outside the agent's
+   context and encodes the condition for reaching it. Front-load its leading
+   word, give each branch exactly one trigger, and cut identity the body already
+   carries. Must-reach material behind a vague pointer is a variance defect, not
+   a style problem — sharpen the wording before inlining the material.
+2. **Name the budget.** Always-loaded material spends *context load*; material
+   the human has to remember spends *cognitive load*. Say which one an addition
+   spends before making it.
+3. **Place it on the hierarchy.** In-file step, in-file reference, or disclosed
+   reference behind a pointer. The branching test decides: inline what every
+   branch needs, disclose what only some branches reach. Over ~100 lines of
+   reference moves to `references/`; `SKILL.md` stays under 500 lines.
+4. **End steps on checkable criteria.** "Every exported function has a one-line
+   note saying who calls it" beats "until you understand the module". A vague
+   bound invites the agent to finish early; a demanding one drives the legwork.
+5. **Collapse restatements into leading words.** One compact concept the model
+   already holds (*tight*, *red*, *tracer bullet*), repeated as a token and never
+   restated as a sentence, anchors a whole region of behavior in few tokens.
+6. **Prune to what beats the default.** One meaning in one place. Leave
+   `package.json`, config, and `--help` to the environment. Delete whole
+   sentences the model already obeys without them.
+
+Rewrite every prohibition as a positive target: "write one-line comments", never
+"don't write long comments". Steering by prohibition raises the forbidden
+behavior instead of suppressing it.
+
+Deliver the revised document, then the lever counts (pointers sharpened,
+branches consolidated, criteria sharpened, restatements collapsed, no-op
+sentences cut) and the score.
 
 ## SEO And GitHub Copy
 
