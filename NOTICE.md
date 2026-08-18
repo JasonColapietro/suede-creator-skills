@@ -63,6 +63,23 @@ Technical Debt lane rather than the Ship Gate, and the two-axis
 standards/spec separation is folded into the existing Intent Compliance
 section instead of shipping as a separate skill.
 
+The **Agent-Facing Docs lane** in `johnny-suede-write`
+(`references/writing-for-agents.md`) is adapted from the same upstream project's
+`writing-for-agents` skill (`SKILL.md` and `SKILL-MECHANICS.md`). The borrowed
+material is the lever set: context pointers with their branch and trigger rules,
+the context-load versus cognitive-load split, the information hierarchy with
+progressive disclosure and co-location, completion criteria (clarity, demand,
+premature completion, legwork), the sequence and invocation cuts of splitting,
+leading words, prompt-the-positive, the pruning tests (single source of truth,
+environment-as-cache, relevance, sediment, no-ops), and the model-invoked versus
+user-invoked trade-off with router skills.
+
+The adaptation folds the levers into this pack's existing writing stack as one
+lane rather than a standalone skill: a six-lever ordered summary in `SKILL.md`
+with the full method disclosed to `references/`, bound to Suede's placement
+thresholds (the ~100-line reference split and the 500-line `SKILL.md` ceiling)
+and scored by the stack's existing 70-point ship gate.
+
 ---
 
 Everything else in this repository is © 2026 Suede Labs AI, MIT licensed — see [`LICENSE`](LICENSE).
