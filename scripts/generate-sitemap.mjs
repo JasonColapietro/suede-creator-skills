@@ -100,9 +100,21 @@ function isNoindex(absPath) {
   return !!match && /noindex/i.test(match[1]);
 }
 
+// Fallback date for files git can't date yet (dirty, untracked, or no repo).
+// This must be the LOCAL date, not toISOString()'s UTC date: `git log
+// --date=short` prints each commit's date in its recorded local offset, so
+// between 00:00 UTC and local midnight the two disagree by a day. A sitemap
+// regenerated pre-commit would stamp "tomorrow", the commit would record
+// "today", and CI's clean-tree --check would fail on the mismatch.
+function localToday() {
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
 function lastCommitDate(relPath) {
   if (!hasOwnGitHistory) {
-    return new Date().toISOString().slice(0, 10);
+    return localToday();
   }
   const status = spawnSync(
     "git",
@@ -110,7 +122,7 @@ function lastCommitDate(relPath) {
     { encoding: "utf8" }
   );
   if (status.status === 0 && status.stdout.trim()) {
-    return new Date().toISOString().slice(0, 10);
+    return localToday();
   }
   const result = spawnSync(
     "git",
@@ -121,7 +133,7 @@ function lastCommitDate(relPath) {
   if (date) return date;
   // Uncommitted or untracked (new page not yet committed): fall back to
   // today so the generated sitemap is still a well-formed date, not blank.
-  return new Date().toISOString().slice(0, 10);
+  return localToday();
 }
 
 function listSkillFiles() {
