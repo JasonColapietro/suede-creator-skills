@@ -1148,6 +1148,41 @@ look about right.
 Acceptance criteria are not paperwork. They are the only thing standing between a
 fleet and a very expensive way to generate material nobody will check.
 
+## The stack, formally
+
+The six skills this chapter and the last keep circling — `suede-full-send`,
+`suede-ship`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
+`suede-recommend-next-action` — ship as a named group: the Agentic Adderall
+Stack, sold with a straight face at `/cracked.html` on the docs site. The label
+is a joke. The contract underneath is not, and it is worth stating precisely
+because it demonstrates the pack's own discipline applied to itself.
+
+In the catalog, a stack is a cross-cutting overlay, not a seventh specialty.
+The six specialties remain a strict partition — every skill carries exactly one,
+and the validator fails the build if the per-specialty counts stop summing to
+the pack size. A `stacks` entry references members by name across that
+partition, and it is held to the same drift rules as every count surface: each
+member must resolve to a real catalog skill, the claimed count must equal the
+membership, and the page selling the stack must list exactly its members, row
+for row, or CI goes red. The MCP server scopes the stack per profile, so a
+narrowed profile only advertises the members it can actually serve. Nothing
+about the branding is load-bearing; everything about the membership is checked.
+
+The two "formulations" are execution modes with different scheduling semantics.
+Instant release is one continuous pass: a single controller decomposes the
+outcome, fans every disjoint lane out at once, and the run has no intervals
+because nothing ever waits on a timer — work is event-driven off lane
+completion, adversarial refutation runs inside the pass rather than as a
+follow-up session, and the close is an evidence gate, not a summary. Its cost
+model is the one this chapter already priced: subagents inherit the session
+model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
+on the label, and the fleet skill exists precisely so volume can leave the
+Anthropic meter. Extended release is the other scheduling regime: between
+passes, `suede-recommend-next-action` scores candidate moves on goal fit,
+unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
+prompt, so the idle state between runs is a queued next action instead of a
+blank prompt box.
+
 ### The move
 
 Before spawning any parallel work, write the lane map and the per-lane acceptance
@@ -3130,6 +3165,12 @@ describing the work in the words its description was written to catch.
 | `suede-codex-fleet` | The job is high-volume and splits cleanly into worker-sized tasks, and you want OpenAI Codex CLI workers generating while Claude reviews |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |
+
+These six are also indexed together in the catalog as the Agentic Adderall
+Stack (`stacks[0]`, key `adderall`) and sold at `/cracked.html`. The grouping is
+a cross-cutting overlay on the specialty partition, and the validator pins its
+membership: every member must be a real catalog skill, the claimed count must
+match, and the page must list exactly these six.
 
 ## I want to know if this code is safe to ship
 

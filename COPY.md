@@ -447,11 +447,36 @@ end-to-end.
 Run `suede-ci-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
+## Cracked Devs Page Copy
+
+### One-line description
+
+The Agentic Adderall Stack: six orchestration skills — full-send, ship,
+agent-teams, codex-fleet, workflow-skills, recommend-next-action — indexed as a
+validator-pinned `stacks` entry in the catalog and served per-profile over MCP.
+
+### Page subhead
+
+One controller, disjoint file-ownership lanes, adversarial review inside the
+pass, an evidence gate at the close. Instant release runs the whole stack as one
+continuous subagent-driven pass with no timer-driven waits; extended release
+scores the next move on goal fit, unblocking, evidence, urgency, and leverage
+and hands it back as a runnable prompt.
+
+### Technical note
+
+Stacks are a cross-cutting overlay on the specialty partition, not a seventh
+specialty. The partition stays total, the validator fails CI when the stack's
+catalog membership and its page drift, and the MCP server scopes membership per
+profile. Cost stays on the label: suede-ship states its own 35-to-150-agent
+range, and suede-codex-fleet routes bulk volume to OpenAI Codex CLI workers
+billed outside the Anthropic meter.
+
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 70 public agent skills for Full Send, design,
+Suede Creator Skills are live: 73 public agent skills for Full Send, design,
 copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
 grading, code review, CI gating, iOS/Android app shipping, launch packaging,
 artist campaigns, and creator rights workflows.
@@ -475,6 +500,17 @@ Give the agent a reference site, a target site, and the Suede workflow. It can
 study the design language, rewrite the offer, audit SEO/AEO/AI EO, grade
 visibility and CTA clarity, check QA, and keep improving when you tell it what
 worked or missed.
+
+### Cracked stack post
+
+New in Suede Creator Skills: the Agentic Adderall Stack — the pack's six
+orchestration skills (full-send, ship, agent-teams, codex-fleet,
+workflow-skills, recommend-next-action) indexed as a validator-pinned `stacks`
+entry in the catalog. The label is a joke; the mechanism is a DAG: one
+controller, disjoint lanes, adversarial refute inside the pass, an evidence
+gate at the close.
+
+Page: https://skills.suedeai.ai/cracked.html
 
 ## Repo Topics
 

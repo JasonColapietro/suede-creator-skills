@@ -18,6 +18,12 @@ describing the work in the words its description was written to catch.
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |
 
+These six are also indexed together in the catalog as the Agentic Adderall
+Stack (`stacks[0]`, key `adderall`) and sold at `/cracked.html`. The grouping is
+a cross-cutting overlay on the specialty partition, and the validator pins its
+membership: every member must be a real catalog skill, the claimed count must
+match, and the page must list exactly these six.
+
 ## I want to know if this code is safe to ship
 
 | Skill | Use it when |

@@ -32,7 +32,7 @@
   "description": "Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.",
   "url": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html",
   "position": 6,
-  "wordCount": 1837,
+  "wordCount": 2193,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -87,7 +87,7 @@
       <p class="eyebrow">Part II &middot; Chapter 5</p>
       <h1>Lanes, Fleets, and Collisions</h1>
       <p class="post-meta">Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.</p>
-      <div class="book-meta"><span>1,837 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>2,193 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>Three agents, one repo, one afternoon. Agent A refactors the auth middleware. Agent B is told to "clean up the route handlers," which happens to include the file A is holding. Agent C runs a formatter across the tree. You come back to a branch that compiles, passes nothing, and contains two half-applied versions of the same idea. Nobody lied to you. Every agent did the work it was given.</p>
       <p>That is the failure mode of parallel agent work, and it is not exotic. It is the default outcome when the only coordination mechanism is that the tasks sounded different when you wrote them.</p>
@@ -127,6 +127,10 @@
       <p>If yes, review is mechanical and the fan-out scales. The brief template forces this: acceptance criteria are numbered and mechanically checkable, limits, bans, required elements. The worker self-checks and reports pass or fail per criterion, and the skill is explicit that worker self-checks are evidence, not verdicts. A Claude review gate reads every file in <code>out/</code> regardless. Failing one or two criteria earns a one-line delta via <code>codex exec resume &lt;session-id&gt;</code>, not a regeneration, because regenerating throws away everything that was already right. Failing three or more, or violating an <code>AGENTS.md</code> hard ban, earns a respawn with the delta appended.</p>
       <p>If no, if you cannot say what "good" looks like before the output arrives, you have not decomposed a job. You have distributed a vague feeling to twelve processes and committed yourself to reading whatever comes back. The volume will be impressive. The reviewer will be you, at midnight, deciding whether things look about right.</p>
       <p>Acceptance criteria are not paperwork. They are the only thing standing between a fleet and a very expensive way to generate material nobody will check.</p>
+      <h2 id="the-stack-formally">The stack, formally</h2>
+      <p>The six skills this chapter and the last keep circling — <code>suede-full-send</code>, <code>suede-ship</code>, <code>suede-agent-teams</code>, <code>suede-codex-fleet</code>, <code>suede-workflow-skills</code>, <code>suede-recommend-next-action</code> — ship as a named group: the Agentic Adderall Stack, sold with a straight face at <code>/cracked.html</code> on the docs site. The label is a joke. The contract underneath is not, and it is worth stating precisely because it demonstrates the pack's own discipline applied to itself.</p>
+      <p>In the catalog, a stack is a cross-cutting overlay, not a seventh specialty. The six specialties remain a strict partition — every skill carries exactly one, and the validator fails the build if the per-specialty counts stop summing to the pack size. A <code>stacks</code> entry references members by name across that partition, and it is held to the same drift rules as every count surface: each member must resolve to a real catalog skill, the claimed count must equal the membership, and the page selling the stack must list exactly its members, row for row, or CI goes red. The MCP server scopes the stack per profile, so a narrowed profile only advertises the members it can actually serve. Nothing about the branding is load-bearing; everything about the membership is checked.</p>
+      <p>The two "formulations" are execution modes with different scheduling semantics. Instant release is one continuous pass: a single controller decomposes the outcome, fans every disjoint lane out at once, and the run has no intervals because nothing ever waits on a timer — work is event-driven off lane completion, adversarial refutation runs inside the pass rather than as a follow-up session, and the close is an evidence gate, not a summary. Its cost model is the one this chapter already priced: subagents inherit the session model unless told otherwise, <code>suede-ship</code> states its own 35-to-150-agent range on the label, and the fleet skill exists precisely so volume can leave the Anthropic meter. Extended release is the other scheduling regime: between passes, <code>suede-recommend-next-action</code> scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, and emits the winner as a runnable prompt, so the idle state between runs is a queued next action instead of a blank prompt box.</p>
       <div class="panel move"><p class="move-label">The move</p>
       <p>Before spawning any parallel work, write the lane map and the per-lane acceptance criterion first, and if you cannot write the criterion for a lane, do that lane yourself instead of dispatching it.</p>
       </div>
