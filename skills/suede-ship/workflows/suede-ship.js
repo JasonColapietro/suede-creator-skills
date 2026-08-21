@@ -229,9 +229,9 @@ const PLAN_SCORE = {
 const PLAN_REFUTATION = {
   type: 'object', required: ['defects', 'notes'], properties: {
     defects: { type: 'array', maxItems: 6, items: { type: 'object',
-      required: ['kind', 'lane', 'blocking', 'claim', 'evidence'], properties: {
+      required: ['kind', 'lane', 'target', 'blocking', 'claim', 'evidence'], properties: {
         kind: { type: 'string', enum: ['missing-scope', 'constraint-break', 'collision', 'unverifiable', 'rollback', 'security', 'test-gap', 'integration-order', 'other'] },
-        lane: { type: 'string' }, blocking: { type: 'boolean' }, claim: { type: 'string' }, evidence: { type: 'string' },
+        lane: { type: 'string' }, target: { type: 'string' }, blocking: { type: 'boolean' }, claim: { type: 'string' }, evidence: { type: 'string' },
       } } }, notes: { type: 'string' },
   },
 }
@@ -843,10 +843,10 @@ const EXTERNAL_COMMAND_POLICY = Object.freeze({
   deny: Object.freeze([
     { id: 'deploy', pattern: /\b(?:vercel\s+(?:deploy|promote|alias)|deploy)(?:\b|$)/i },
     { id: 'publish', pattern: /\b(?:(?:npm|pnpm|yarn)\s+publish|publish)\b/i },
-    { id: 'push', pattern: /\b(?:git\s+push|push\s+(?:to\s+)?(?:origin|remote|production|prod))\b/i },
-    { id: 'merge', pattern: /\b(?:git\s+merge|gh\s+pr\s+merge|merge\s+(?:pull\s+request|pr|branch|release|\S+\s+into\s+\S+))\b/i },
+    { id: 'push', pattern: /\b(?:git\s+push|push\s+(?:to\s+)?(?:origin|remote|production|prod)|push\b.{0,60}\b(?:github|remote(?:\s+repository)?|origin))\b/i },
+    { id: 'merge', pattern: /\b(?:git\s+merge|gh\s+pr\s+merge|merge\s+(?:the\s+)?(?:pull\s+request|pr|branch|release(?:\s+branch)?|\S+\s+into\s+\S+))\b/i },
     { id: 'credential-rotation', pattern: /\b(?:(?:rotate|rotation|regenerate|revoke|replace)\b.{0,40}\b(?:credential|secret|token|api[- ]?key|password)|(?:credential|secret|token|api[- ]?key|password)\b.{0,40}\b(?:rotate|rotation|regenerate|revoke|replace))\b/i },
-    { id: 'production-write', pattern: /\b(?:production|prod)\s+(?:write|writes|migration|migrate|mutation|update|insert|delete|seed|backfill)\b|\b(?:write|update|insert|delete|migrate|seed|backfill)\b.{0,24}\b(?:production|prod)\b|\bapply\s+(?:database\s+)?migration\s+to\s+(?:production|prod)\b/i },
+    { id: 'production-write', pattern: /\b(?:production|prod)\s+(?:database\s+)?(?:write|writes|migration|migrate|mutation|update|insert|delete|seed|backfill)\b|\b(?:write|update|insert|delete|migrate|seed|backfill)\b.{0,24}\b(?:production|prod)\b|\bapply\s+(?:database\s+)?migration\s+to\s+(?:production|prod)\b/i },
   ]),
 })
 const commandPolicyDecision = value => {
@@ -877,41 +877,26 @@ const planFileCollisions = plan => {
 const normalizeDefectPart = value => String(value).trim().toLowerCase().replace(/\s+/g, ' ')
 const validRefutation = value => value && nonEmptyString(value.notes) && Array.isArray(value.defects) && value.defects.every(defect =>
   defect && PLAN_DEFECT_KINDS.has(defect.kind) && nonEmptyString(defect.lane) && typeof defect.blocking === 'boolean' &&
-  nonEmptyString(defect.claim) && nonEmptyString(defect.evidence))
-const DEFECT_TARGET_PATTERN = /[A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)+|[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g
-const parseDefectTargets = defect => {
-  const raw = (`${defect.claim} ${defect.evidence}`.match(DEFECT_TARGET_PATTERN) || [])
-  const normalized = raw.map(target => rel(target))
-  return { valid: normalized.every(Boolean), targets: [...new Set(normalized.filter(Boolean))] }
-}
+  nonEmptyString(defect.target) && nonEmptyString(defect.claim) && nonEmptyString(defect.evidence))
 const resolveCandidateDefect = (plan, defect) => {
   if (!validPlan(plan) || !defect) return null
   const lane = plan.lanes.find(candidate => normalizeText(candidate.name) === normalizeText(defect.lane))
   if (!lane) return null
-  const parsedTargets = parseDefectTargets(defect)
-  if (!parsedTargets.valid) return null
-  const targets = parsedTargets.targets
-  const candidateFiles = plan.lanes.flatMap(candidate => candidate.files.map(rel).filter(Boolean))
-  if (targets.some(target => !candidateFiles.some(file => overlaps(target, file)))) return null
+  const target = rel(defect.target)
+  if (!target) return null
   const laneFiles = lane.files.map(rel).filter(Boolean)
-  const evidenceText = normalizeText(`${defect.claim} ${defect.evidence}`)
-  const anchoredToLane = evidenceText.includes(normalizeText(lane.name)) ||
-    laneFiles.some(file => evidenceText.includes(normalizeText(file)))
-  if (!anchoredToLane) return null
+  if (!laneFiles.some(file => overlaps(target, file))) return null
   if (defect.kind === 'collision') {
-    const reproducedCollision = targets.find(target => {
-      const owners = plan.lanes.filter(candidate => candidate.files.map(rel).filter(Boolean)
-        .some(file => overlaps(target, file)))
-      return owners.length > 1 && laneFiles.some(file => overlaps(target, file))
-    })
-    if (!reproducedCollision) return null
+    const owners = plan.lanes.filter(candidate => candidate.files.map(rel).filter(Boolean)
+      .some(file => overlaps(target, file)))
+    if (owners.length < 2) return null
   }
-  return { lane: normalizeText(lane.name), targets: [...targets].sort() }
+  return { lane: normalizeText(lane.name), target }
 }
 const normalizedDefectKey = (plan, defect) => {
   const resolved = resolveCandidateDefect(plan, defect)
   if (!resolved) return null
-  return [defect.kind, resolved.lane, resolved.targets.join(','), defect.claim].map(normalizeDefectPart).join(':')
+  return [defect.kind, resolved.lane, resolved.target, defect.claim].map(normalizeDefectPart).join(':')
 }
 const planEligibility = (plan, score) => {
   const reasons = []
@@ -1091,8 +1076,9 @@ Candidate score: ${JSON.stringify(thought.score)}
 
 ${lens}
 
-Return only reproducible defects. A blocking defect must name its normalized kind and lane,
-the concrete claim, and evidence that another reader can verify. Empty defects are valid.`,
+Return only reproducible defects. A blocking defect must name its normalized kind, a lane
+that exists in the candidate, an explicit target path owned by that lane, the concrete claim,
+and evidence that another reader can verify. Empty defects are valid.`,
           { label: `RefutePlan:${thought.id}:${index}`, phase: 'RefutePlan', schema: PLAN_REFUTATION, effort: 'high', authority: 'read-only' }
         )))
         const budgetFailure = settled.find(item => item.status === 'rejected' && item.reason && item.reason.code === 'AGENT_BUDGET_EXHAUSTED')

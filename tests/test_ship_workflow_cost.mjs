@@ -18,7 +18,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, eligibilityMode, eligibilityCommand, includeUnsafePlan = false, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildChangedPath, reviewFindingPath, fixChangedPath, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, eligibilityMode, eligibilityCommand, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildChangedPath, reviewFindingPath, fixChangedPath, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -94,8 +94,8 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
               summary: name,
               coverage: checklist,
               lanes: [
-                { name: 'unsafe-a', task: 'implement unsafe a', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
-                { name: 'unsafe-b', task: 'implement unsafe b', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+                { name: 'unsafe-a', task: 'implement unsafe a', files: [unsafeFile], tier: 'integration', acceptance: 'node --test' },
+                { name: 'unsafe-b', task: 'implement unsafe b', files: [unsafeFile], tier: 'integration', acceptance: 'node --test' },
               ],
             })
           : plan(name, `src/${name}.ts`)
@@ -137,21 +137,24 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
           const lane = candidate.lanes[0]
           const otherLane = candidate.lanes[1] || lane
           const target = lane.files[0]
+          const evidenceTarget = refuteEvidenceTarget || target
           const defect = {
             kind: 'collision',
             lane: lane.name,
+            target: refuteTarget || target,
             blocking: true,
-            claim: `two lanes own ${target}: ${lane.name} and ${otherLane.name}`,
-            evidence: `candidate lanes ${lane.name} and ${otherLane.name} both list ${target}`,
+            claim: `two lanes own ${evidenceTarget}: ${lane.name} and ${otherLane.name}`,
+            evidence: `candidate lanes ${lane.name} and ${otherLane.name} both list ${evidenceTarget}`,
           }
         if (refuteMode === 'malformed') return { defects: [], notes: null }
+        if (refuteMode === 'missing-target') return { defects: [{ ...defect, target: undefined }], notes: 'target omitted' }
         if (refuteMode === 'one-adversary' && label.endsWith(':1')) return { defects: [], notes: 'no matching blocker' }
         if (refuteMode === 'nonblocking') return { defects: [{ ...defect, blocking: false }], notes: 'not blocking' }
         if (refuteMode === 'different-claim') return { defects: [{ ...defect, claim: label.endsWith(':0') ? defect.claim : `${lane.name} owns ${target} twice` }], notes: 'distinct concrete defect' }
         if (refuteMode === 'different-lane') return { defects: [{ ...defect, lane: label.endsWith(':0') ? lane.name : otherLane.name }], notes: 'different target' }
         if (refuteMode === 'nonexistent-lane') return { defects: [{ ...defect, lane: 'nonexistent-lane' }], notes: 'fabricated lane' }
-        if (refuteMode === 'nonexistent-target') return { defects: [{ ...defect, claim: 'two lanes own src/nonexistent.ts', evidence: `candidate lane ${lane.name} lists src/nonexistent.ts` }], notes: 'fabricated target' }
-        if (refuteMode === 'nonexistent-root-target') return { defects: [{ ...defect, kind: 'test-gap', claim: 'README.md has no acceptance coverage', evidence: `candidate lane ${lane.name} cites README.md` }], notes: 'fabricated root target' }
+        if (refuteMode === 'nonexistent-target') return { defects: [{ ...defect, target: 'src/nonexistent.ts' }], notes: 'fabricated target' }
+        if (refuteMode === 'nonexistent-root-target') return { defects: [{ ...defect, kind: 'test-gap', target: 'README.md' }], notes: 'fabricated root target' }
         return rejectEveryPlan || prompt.includes('unsafe-plan')
           ? { defects: [defect], notes: 'same concrete blocker' }
           : { defects: [], notes: 'no reproducible blocker' }
@@ -398,6 +401,11 @@ test('deterministic plan eligibility denies every external mutation command clas
     'credential rotation',
     'production write users active=true',
     'apply database migration to production',
+    'push the branch to GitHub',
+    'push changes to the remote repository',
+    'merge the release branch',
+    'merge the pull request',
+    'run the production database migration',
   ]
   for (const eligibilityCommand of commands) {
     const { result, calls } = await runShip({ eligibilityCommand, findingsPerLens: 0 })
@@ -434,6 +442,62 @@ test('identical Refute defects with a nonexistent candidate lane or target never
     const unsafe = result.graph.thoughts.find(thought => thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
     assert.notEqual(unsafe.status, 'refuted', refuteMode)
     assert.ok(result.graph.dropped.some(item => item.reason === 'unresolvable plan refutation defect'), refuteMode)
+  }
+})
+
+test('Refute requires an explicit candidate-owned canonical target for consensus', async () => {
+  const fabricated = await runShip({
+    includeUnsafePlan: true,
+    unsafeFile: 'src/shared.ts',
+    refuteTarget: 'Dockerfile',
+    refuteEvidenceTarget: 'src/shared.ts',
+    malformedAggregate: true,
+    findingsPerLens: 0,
+  })
+  const fabricatedUnsafe = fabricated.result.graph.thoughts.find(thought =>
+    thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
+  assert.notEqual(fabricatedUnsafe.status, 'refuted')
+  assert.ok(fabricated.result.graph.dropped.some(item => item.reason === 'unresolvable plan refutation defect'))
+
+  const missing = await runShip({ includeUnsafePlan: true, refuteMode: 'missing-target', malformedAggregate: true, findingsPerLens: 0 })
+  assert.ok(missing.result.graph.dropped.some(item => item.reason === 'malformed plan refutation'))
+
+  const refuteCall = fabricated.calls.find(call => call.phase === 'RefutePlan')
+  assert.ok(refuteCall.schema.properties.defects.items.required.includes('target'))
+})
+
+test('Refute canonical target validation handles extensionless roots, nested aliases, and escapes', async () => {
+  const accepted = [
+    { file: 'Dockerfile', target: 'Dockerfile' },
+    { file: 'Makefile', target: './Makefile' },
+    { file: 'LICENSE', target: 'LICENSE' },
+    { file: 'src/nested/file.ts', target: 'src/nested/./file.ts' },
+  ]
+  for (const scenario of accepted) {
+    const { result } = await runShip({
+      includeUnsafePlan: true,
+      unsafeFile: scenario.file,
+      refuteTarget: scenario.target,
+      refuteEvidenceTarget: scenario.file,
+      malformedAggregate: true,
+      findingsPerLens: 0,
+    })
+    const unsafe = result.graph.thoughts.find(thought => thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
+    assert.equal(unsafe.status, 'refuted', `${scenario.file} via ${scenario.target}`)
+  }
+
+  for (const target of ['../Dockerfile', '/outside/LICENSE', 'src/nonexistent.ts']) {
+    const { result } = await runShip({
+      includeUnsafePlan: true,
+      unsafeFile: 'src/shared.ts',
+      refuteTarget: target,
+      refuteEvidenceTarget: 'src/shared.ts',
+      malformedAggregate: true,
+      findingsPerLens: 0,
+    })
+    const unsafe = result.graph.thoughts.find(thought => thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
+    assert.notEqual(unsafe.status, 'refuted', target)
+    assert.ok(result.graph.dropped.some(item => item.reason === 'unresolvable plan refutation defect'), target)
   }
 })
 
