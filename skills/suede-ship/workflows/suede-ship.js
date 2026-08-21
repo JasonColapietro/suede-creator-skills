@@ -1,3 +1,8 @@
+// Operation graph and thought-state model adapted from Graph of Thoughts.
+// Copyright (c) 2023 ETH Zurich. All rights reserved.
+// BSD terms: licenses/graph-of-thoughts-BSD.txt
+// Suede Refute, safety, authority, scoring, and shipping topology are original additions.
+
 export const meta = {
   name: 'suede-ship',
   description: 'Canonical Suede DAG: scout -> lane plan -> collision gate -> build -> dual-lens review -> adversarial refute -> integration gate -> handoff',

@@ -46,6 +46,15 @@ controller, every useful non-colliding lane, adversarial reconciliation, and
 direct proof. **"Never end your allocation above zero."** is the dry house
 line, not a literal token-meter promise or permission to pad the work.
 
+### Suede Ship explanation
+
+Suede Ship searches competing implementation plans for one multi-file repo
+change. It generates, scores, prunes, refutes, improves, aggregates, and
+selects a single evidence-backed winner before that winner alone can change
+files. The user chooses a `light` (55), `standard` (110), or `deep` (200)
+agent ceiling before launch. It reads production for evidence but never deploys
+or claims a live release.
+
 ### Short component line
 
 Linked preferences, Suedify, iOS packaging, communicating agent teams,

@@ -771,8 +771,8 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; never Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate).",
-      "useWhen": "Take a nontrivial multi-file change through a research-heavy agent graph that halts on hazards and gates on real tests."
+      "description": "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Ask for repo, scope, and light|standard|deep; state the exact 55|110|200 ceiling before launch. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use suede-codex-fleet); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
+      "useWhen": "Search competing plans for a multi-file repo change, select one mutating winner, gate it, and preserve its returned handoff."
     },
     {
       "name": "suede-ship-copy",

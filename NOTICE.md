@@ -82,4 +82,26 @@ and scored by the stack's existing 70-point ship gate.
 
 ---
 
-Everything else in this repository is © 2026 Suede Labs AI, MIT licensed — see [`LICENSE`](LICENSE).
+## Graph of Thoughts — ETH Zurich
+
+The operation graph and thought-state model in
+`skills/suede-ship/workflows/suede-ship.js` are adapted from
+[Graph of Thoughts](https://github.com/spcl/graph-of-thoughts) by ETH Zurich,
+pinned at commit `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`.
+
+**Upstream:** https://github.com/spcl/graph-of-thoughts at
+`3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`
+
+**Adapted operation file:** `skills/suede-ship/workflows/suede-ship.js`
+
+**Upstream license:** BSD terms in
+[`licenses/graph-of-thoughts-BSD.txt`](licenses/graph-of-thoughts-BSD.txt)
+
+**Paper:** Maciej Besta et al. (2024), “Graph of Thoughts: Solving Elaborate
+Problems with Large Language Models,” _Proceedings of the AAAI Conference on
+Artificial Intelligence_, 38(16), 17682–17690.
+
+---
+
+Except for the third-party adaptations listed above, everything else in this
+repository is © 2026 Suede Labs AI, MIT licensed — see [`LICENSE`](LICENSE).
