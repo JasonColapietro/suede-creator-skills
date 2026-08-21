@@ -404,6 +404,28 @@ const ceiling = Number.isFinite(budget && budget.total)
 let agentCalls = 0
 const budgetSnapshot = () => ({ name: BUDGET_NAME, ceiling, used: agentCalls, remaining: ceiling - agentCalls })
 graph.budget = budgetSnapshot()
+const evidence = {
+  selectedPlan: null,
+  worktree: null,
+  baseSha: null,
+  lanes: [],
+  stalled: [],
+  constraints: [],
+  crossWorktree: [],
+  siblingBranches: [],
+  droppedConstraints: [],
+  planObjections: [],
+  unread: [],
+  confirmedFindings: [],
+  unverifiedFindings: [],
+  unfixedBlockers: [],
+  gate: null,
+  gatePassed: null,
+  shipVerdict: DEPLOYS ? 'unknown' : 'n/a — not a deploying repo',
+  release: [],
+  hazards: [],
+  handoff: null,
+}
 const callAgent = async (prompt, options = {}) => {
   if (agentCalls >= ceiling) {
     throw Object.assign(new Error('agent budget exhausted'), {
@@ -473,6 +495,9 @@ Return the manifest. Do NOT paste file contents into your answer — builders re
 )
 
 if (!scout) throw new Error('Scout failed — cannot establish a safe base. Stop.')
+evidence.worktree = scout.worktreePath
+evidence.baseSha = scout.baseSha
+evidence.hazards = scout.hazards
 // Halt on the VERDICT, never on the topic label. Keying this on `kind` alone made a
 // clean scout report — "no secrets found", "no live process" — read as a hazard and
 // stop the run. An all-clear filed under a scary-sounding kind is still an all-clear.
@@ -489,6 +514,7 @@ log(`worktree ${scout.worktreePath} @ ${scout.baseSha} · ${scout.dirtyFiles.len
 // told us their patches are upstream, and treating landed work as contested is how a
 // stale worktree gets to veto a lane forever.
 const liveClaims = (scout.siblingClaims || []).filter(s => !s.likelyLanded)
+evidence.siblingBranches = liveClaims.map(s => ({ branch: s.branch, live: s.liveProcess, files: s.files.length }))
 const contested = new Map()
 for (const s of liveClaims) {
   for (const f of s.files) {
@@ -632,6 +658,9 @@ An over-broad constraint invented from a real file is still a misread.`,
 const rejected = audit ? audit.audited.filter(a => a.verdict !== 'holds') : []
 const rejectedRules = new Set(rejected.map(a => a.rule))
 const constraints = claimed.filter(c => !rejectedRules.has(c.rule))
+evidence.constraints = constraints
+evidence.droppedConstraints = rejected
+evidence.unread = stillUnread
 if (rejected.length) log(`skeptic dropped ${rejected.length} constraint(s): ${rejected.map(a => `${a.verdict} — ${a.rule}`).join(' | ')}`)
 log(`research: ${research.length} lenses · ${research.flatMap(r => r.facts).length} sourced facts · ${constraints.length}/${claimed.length} constraints survived audit · ${critic ? critic.gaps.length : 0} gaps filled · ${stillUnread.length} still unread`)
 
@@ -1039,6 +1068,8 @@ if (!selectedThought || !validPlan(selectedThought.state.plan) || !validScore(se
 const plan = selectedThought.state.plan
 const selectedPlan = plan
 const objections = selectedThought.state.objections || []
+evidence.selectedPlan = selectedPlan
+evidence.planObjections = objections
 
 // Collision detection is a PURE FUNCTION. Never spend an agent arbitrating
 // file ownership — a deterministic check cannot hallucinate consensus.
@@ -1078,6 +1109,7 @@ for (const lane of plan.lanes) {
 // whichever of us commits second loses. An idle unlanded branch is a merge cost, not a
 // correctness risk — that rides forward as a caveat rather than stopping the run.
 const liveConflicts = crossWorktree.filter(x => x.claims.some(c => c.live))
+evidence.crossWorktree = crossWorktree
 if (liveConflicts.length) {
   for (const x of liveConflicts) collisions.push(`${x.file}: lane ${x.lane} vs LIVE worktree ${x.claims.filter(c => c.live).map(c => c.branch).join(', ')}`)
 }
@@ -1215,6 +1247,11 @@ const stalled = lanes.filter(l => l.built && l.built.state !== 'done' && l.built
 const confirmed = lanes.flatMap(l => l.confirmed || [])
 const unverified = lanes.flatMap(l => l.unverified || [])
 const blockers = confirmed.filter(f => f.severity === 'blocker')
+evidence.lanes = plan.lanes.map(l => l.name)
+evidence.stalled = stalled.map(l => l.lane.name)
+evidence.confirmedFindings = confirmed
+evidence.unverifiedFindings = unverified
+evidence.unfixedBlockers = blockers.slice(FIX_CAP)
 log(`${lanes.length} lanes · ${stalled.length} stalled · ${confirmed.length} confirmed findings (${blockers.length} blockers) · ${unverified.length} carried unverified`)
 
 // ---------------------------------------------------------------- 4. fix
@@ -1257,6 +1294,8 @@ Report exit codes and the real failure text. Do not claim a check passed that yo
 did not run, and do not describe a failure as "minor" — quote it.`,
   { schema: GATE, phase: 'Gate', effort: 'medium' }
 )
+evidence.gate = gate
+evidence.gatePassed = gate && gate.passed
 
 // -------------------------------------------------------------- 6. release
 // SKEPTIC #4 — adversarial against the SHIPPED state, not the source. The Gate
@@ -1353,9 +1392,19 @@ even when you find zero risks.`,
     log(`ATTENTION — production exposure observed independent of this change: ${liveExposure.map(r => r.risk).join(' | ')}`)
   }
 }
+evidence.shipVerdict = shipVerdict
+evidence.release = release
 
 // ---------------------------------------------------------------- 7. handoff
 phase('Handoff')
+const refutedCandidates = graph.thoughts.filter(thought => thought.status === 'refuted')
+const graphObjections = graph.thoughts.flatMap(thought =>
+  ((thought.state && thought.state.objections) || []).map(objection => ({
+    thoughtId: thought.id,
+    plan: thought.state.plan || null,
+    objection,
+  })))
+const handoffBudget = { name: BUDGET_NAME, ceiling, used: agentCalls + 1, remaining: ceiling - agentCalls - 1 }
 const handoff = await callAgent(
   `Write the delivery record for this run. Facts only — every field below is required,
 and a missing field means status "held", not "done".
@@ -1366,7 +1415,10 @@ Winning thought: ${JSON.stringify(selectedThought)}
 Lineage: ${JSON.stringify(graph.thoughts.map(thought => ({ id: thought.id, parentIds: thought.parentIds, operation: thought.operation, status: thought.status })))}
 Scores: ${JSON.stringify(graph.thoughts.filter(thought => thought.score).map(thought => ({ id: thought.id, score: thought.score })))}
 Pruned candidates: ${JSON.stringify(graph.pruned)}
-Agent budget: ${JSON.stringify(budgetSnapshot())}
+Dropped candidates: ${JSON.stringify(graph.dropped)}
+Refuted candidates: ${JSON.stringify(refutedCandidates)}
+All graph objections: ${JSON.stringify(graphObjections)}
+Agent budget: ${JSON.stringify(handoffBudget)}
 Lanes: ${JSON.stringify(plan.lanes.map(l => ({ name: l.name, tier: l.tier, files: l.files })))}
 Stalled lanes: ${JSON.stringify(stalled.map(l => ({ lane: l.lane.name, state: l.built && l.built.state, notes: l.built && l.built.notes })))}
 Confirmed findings: ${JSON.stringify(confirmed)}
@@ -1403,29 +1455,12 @@ List every unfixed major/minor finding under Caveats. Omitting a caveat to make 
 handoff look clean is the failure mode this section exists to prevent.`,
   { phase: 'Handoff', effort: 'low' }
 )
+evidence.handoff = handoff
 
 return {
   agentBudget: BUDGET_NAME,
   graph,
-  selectedPlan,
-  worktree: scout.worktreePath,
-  baseSha: scout.baseSha,
-  lanes: plan.lanes.map(l => l.name),
-  stalled: stalled.map(l => l.lane.name),
-  constraints,
-  crossWorktree,
-  siblingBranches: liveClaims.map(s => ({ branch: s.branch, live: s.liveProcess, files: s.files.length })),
-  droppedConstraints: rejected,
-  planObjections: objections,
-  unread: stillUnread,
-  confirmedFindings: confirmed,
-  unverifiedFindings: unverified,
-  unfixedBlockers: blockers.slice(FIX_CAP),
-  gatePassed: gate && gate.passed,
-  shipVerdict,
-  release,
-  hazards: scout.hazards,
-  handoff,
+  ...evidence,
 }
 } catch (error) {
   if (!error || error.code !== 'AGENT_BUDGET_EXHAUSTED') throw error
@@ -1440,5 +1475,6 @@ return {
     reason: 'agent budget exhausted',
     agentBudget: BUDGET_NAME,
     graph,
+    ...evidence,
   }
 }

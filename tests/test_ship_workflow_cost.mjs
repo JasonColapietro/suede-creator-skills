@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false, delayedBranch, blockingHazard, selectedPlanCollision = false, forceAgentCeiling, agentErrorPhase } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false, delayedBranch, blockingHazard, selectedPlanCollision = false, forceAgentCeiling, agentErrorPhase } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -70,7 +70,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
           ? 'unsafe-plan'
           : (scoreMode === 'ties' ? tieNames : defaultNames)[index]
         const candidate = plan(name, `src/${name}.ts`)
-        if (malformedPlans) candidate.summary = ''
+        if (malformedPlans || index === malformedPlanIndex) candidate.summary = ''
         if (planMode === 'malformed') {
           const malformed = [
             () => { candidate.summary = '' },
@@ -97,6 +97,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
         if (prompt.includes('aggregate-safe')) return { coverage: 20, evidence: 18, feasibility: 19, safety: 19, efficiency: 18, total: 94, rationale: 'aggregate covers both safe lanes' }
         if (prompt.includes('improved-safe-a') || prompt.includes('improved-safe-b')) return { coverage: 19, evidence: 18, feasibility: 18, safety: 18, efficiency: 17, total: 90, rationale: 'equal improved score' }
         if (prompt.includes('improved-safe')) return { coverage: 19, evidence: 18, feasibility: 18, safety: 18, efficiency: 17, total: 90, rationale: 'improvement addresses objections' }
+        if (scoreMode === 'all-valid') return { coverage: 8, evidence: 8, feasibility: 8, safety: 8, efficiency: 8, total: 40, rationale: 'valid low score' }
         const total = prompt.includes('safe-a') ? 88 : prompt.includes('safe-b') ? 82 : 40
         return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
       }
@@ -411,11 +412,44 @@ test('release verification receives read-only authority and never a deployment a
   assert.equal(calls.some(c => c.authority === 'deploy'), false)
 })
 
-test('handoff receives the winner lineage, scores, pruned candidates, and objections', async () => {
-  const { calls } = await runShip({ findingsPerLens: 0 })
+test('handoff receives complete search evidence and its final budget snapshot', async () => {
+  const { result, calls } = await runShip({
+    agentBudget: 'deep',
+    malformedPlanIndex: 7,
+    includeUnsafePlan: true,
+    scoreMode: 'all-valid',
+    aggregateCollision: true,
+    findingsPerLens: 0,
+  })
   const handoffCall = calls.find(c => c.phase === 'Handoff')
-  for (const marker of ['Winning thought', 'Lineage', 'Scores', 'Pruned candidates', 'Plan refutations', 'Agent budget']) {
+  for (const marker of ['Winning thought', 'Lineage', 'Scores', 'Pruned candidates', 'Dropped candidates', 'Refuted candidates', 'All graph objections', 'Plan refutations', 'Agent budget']) {
     assert.match(handoffCall.prompt, new RegExp(marker))
+  }
+  for (const evidence of ['malformed generated plan', 'aggregate file collision', 'unsafe-plan', 'two lanes own src/shared.ts']) {
+    assert.match(handoffCall.prompt, new RegExp(evidence))
+  }
+  const handoffBudget = JSON.parse(handoffCall.prompt.match(/^Agent budget: (.+)$/m)[1])
+  assert.deepEqual(handoffBudget, result.graph.budget)
+})
+
+test('late budget exhaustion preserves accumulated evidence at Gate, Release, and Handoff', async () => {
+  const cases = [
+    { phase: 'Gate', ceiling: 33, gate: null, releaseCount: 0 },
+    { phase: 'Release', ceiling: 34, gate: { passed: true, commands: ['npm test'], output: 'ok' }, releaseCount: 0 },
+    { phase: 'Handoff', ceiling: 38, gate: { passed: true, commands: ['npm test'], output: 'ok' }, releaseCount: 4 },
+  ]
+  for (const scenario of cases) {
+    const { result, calls } = await runShip({ findingsPerLens: 0, forceAgentCeiling: scenario.ceiling })
+    assert.equal(calls.length, scenario.ceiling)
+    assert.equal(result.halted, true)
+    assert.equal(result.reason, 'agent budget exhausted')
+    assert.equal(result.graph.dropped.at(-1).operation, scenario.phase)
+    assert.equal(result.selectedPlan.summary, 'aggregate-safe')
+    assert.deepEqual(result.lanes, ['a', 'b'])
+    assert.deepEqual(result.confirmedFindings, [])
+    assert.deepEqual(result.unverifiedFindings, [])
+    assert.deepEqual(result.gate, scenario.gate)
+    assert.equal(result.release.length, scenario.releaseCount)
   }
 })
 
