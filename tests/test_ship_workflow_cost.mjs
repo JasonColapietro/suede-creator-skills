@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS, scoreMode } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -65,9 +65,24 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
       case 'Generate': {
         const index = Number(label.split(':').at(-1))
         const name = (scoreMode === 'ties' ? tieNames : defaultNames)[index]
-        return plan(name, `src/${name}.ts`)
+        const candidate = plan(name, `src/${name}.ts`)
+        if (planMode === 'malformed') {
+          const malformed = [
+            () => { candidate.summary = '' },
+            () => { candidate.coverage = [] },
+            () => { candidate.coverage = [42] },
+            () => { candidate.lanes[0].name = '' },
+            () => { candidate.lanes[0].task = '' },
+            () => { candidate.lanes[0].files = [42] },
+            () => { candidate.lanes[0].tier = 'unsafe' },
+            () => { candidate.lanes[0].acceptance = '' },
+          ]
+          malformed[index]()
+        }
+        return candidate
       }
       case 'Score': {
+        if (scoreMode === 'mismatch') return { coverage: 16, evidence: 16, feasibility: 16, safety: 16, efficiency: 16, total: 90, rationale: 'invalid total' }
         if (scoreMode === 'ties') {
           if (prompt.includes('coverage-wins')) return { coverage: 20, evidence: 14, feasibility: 16, safety: 15, efficiency: 15, total: 80, rationale: 'coverage tie break' }
           if (prompt.includes('safety-wins')) return { coverage: 19, evidence: 14, feasibility: 16, safety: 16, efficiency: 15, total: 80, rationale: 'safety tie break' }
@@ -137,7 +152,7 @@ const countPhase = (calls, phase) => calls.filter((c) => c.phase === phase).leng
 async function loadGraphCore () {
   const prefix = SOURCE.split('// ---------------------------------------------------------------- 0. scout')[0]
     .replace('export const meta', 'const meta')
-  const load = new AsyncFunction('args', 'budget', `${prefix}\nreturn { createOperation, validateOperationGraph }`)
+  const load = new AsyncFunction('args', 'budget', `${prefix}\nreturn { createThought, createOperation, executeOperationGraph, rankThoughts, validateOperationGraph }`)
   return load({ repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard' }, { total: null })
 }
 
@@ -158,19 +173,74 @@ test('score ties resolve by coverage then safety then evidence then thought id',
   assert.deepEqual(kept.map(t => t.state.plan.summary), ['coverage-wins', 'safety-wins'])
 })
 
+test('score ranking isolates safety and thought-id tie breaks', async () => {
+  // Catches a later comparator accidentally allowing evidence or insertion order to win.
+  const { createThought, rankThoughts } = await loadGraphCore()
+  const thought = (id, score) => createThought({ id, operationId: 'score', operation: 'Score', depth: 1, state: {}, score })
+  const base = { total: 80, coverage: 18, feasibility: 16, rationale: 'literal' }
+  const ranked = rankThoughts([
+    thought('thought-z', { ...base, safety: 15, evidence: 15, efficiency: 16 }),
+    thought('thought-a', { ...base, safety: 15, evidence: 15, efficiency: 16 }),
+    thought('evidence-cannot-beat-safety', { ...base, safety: 14, evidence: 20, efficiency: 12 }),
+    thought('safety-wins', { ...base, safety: 16, evidence: 0, efficiency: 14 }),
+  ])
+  assert.deepEqual(ranked.map(candidate => candidate.id), ['safety-wins', 'thought-a', 'thought-z', 'evidence-cannot-beat-safety'])
+})
+
+test('malformed plans and mismatched score totals never reach the beam', async () => {
+  // Catches permissive local validation that lets schema-shaped garbage acquire authority.
+  const malformed = await runShip({ agentBudget: 'deep', planMode: 'malformed', findingsPerLens: 0 })
+  assert.equal(countPhase(malformed.calls, 'Score'), 0)
+  assert.equal(malformed.result.graph.thoughts.filter(t => t.operationId === 'keep-generated' && t.status === 'kept').length, 0)
+
+  const mismatched = await runShip({ scoreMode: 'mismatch', findingsPerLens: 0 })
+  assert.equal(countPhase(mismatched.calls, 'Score'), 5)
+  assert.equal(mismatched.result.graph.thoughts.filter(t => t.operationId === 'keep-generated' && t.status === 'kept').length, 0)
+})
+
+test('score agents receive read-only authority at the worktree boundary', async () => {
+  // Catches a Score prompt or runtime option that could silently grant mutation authority.
+  const { calls } = await runShip({ findingsPerLens: 0 })
+  const score = calls.find(call => call.phase === 'Score')
+  assert.equal(score.authority, 'read-only')
+  assert.match(score.prompt, /Worktree: \/tmp\/repo\.worktrees\/ship-test \(read-only — do not edit source\)/)
+})
+
 test('every derived thought keeps immutable parent lineage', async () => {
   // Catches predecessor mutation, which would erase the audit trail before selection.
   const { result } = await runShip({ findingsPerLens: 0 })
+  const { createThought } = await loadGraphCore()
   const generated = result.graph.thoughts.filter(t => t.operation === 'Generate')
   const scored = result.graph.thoughts.filter(t => t.operationId === 'score-generated')
   assert.ok(Object.isFrozen(generated[0]))
+  assert.ok(Object.isFrozen(generated[0].state))
+  assert.ok(Object.isFrozen(generated[0].state.plan))
+  assert.ok(Object.isFrozen(generated[0].state.plan.lanes[0]))
+  assert.ok(Object.isFrozen(generated[0].parentIds))
   assert.deepEqual(scored.map(t => t.parentIds.length), Array(scored.length).fill(1))
   assert.deepEqual(generated.map(t => t.score), Array(generated.length).fill(null))
+  assert.ok(Object.isFrozen(scored[0].score))
+
+  const callerState = { plan: { lanes: [{ files: ['src/original.ts'] }] } }
+  const callerParents = ['parent-original']
+  const callerScore = { coverage: 16, evidence: 16, feasibility: 16, safety: 16, efficiency: 16, total: 80, rationale: 'original' }
+  const copied = createThought({ id: 'copied', parentIds: callerParents, operationId: 'Score', operation: 'Score', depth: 1, state: callerState, score: callerScore })
+  callerState.plan.lanes[0].files[0] = 'src/mutated.ts'
+  callerParents[0] = 'parent-mutated'
+  callerScore.total = 0
+  assert.equal(copied.state.plan.lanes[0].files[0], 'src/original.ts')
+  assert.deepEqual(copied.parentIds, ['parent-original'])
+  assert.equal(copied.score.total, 80)
 })
 
-test('operation graph validation rejects missing predecessors and cycles before execution', async () => {
-  // Catches missing dependency acceptance and cyclic scheduling before either can spawn agents.
+test('operation graph validation rejects duplicate IDs, missing predecessors, and cycles before execution', async () => {
+  // Catches duplicate-ID acceptance, missing dependency acceptance, and cyclic scheduling.
   const { createOperation, validateOperationGraph } = await loadGraphCore()
+  const duplicate = [
+    createOperation({ id: 'a', type: 'Generate', execute: async () => [] }),
+    createOperation({ id: 'a', type: 'Score', execute: async () => [] }),
+  ]
+  assert.throws(() => validateOperationGraph(duplicate), /duplicate operation a/)
   const missing = [createOperation({ id: 'a', type: 'Generate', predecessorIds: ['absent'], execute: async () => [] })]
   assert.throws(() => validateOperationGraph(missing), /unknown predecessor absent/)
   const cycle = [
@@ -178,6 +248,24 @@ test('operation graph validation rejects missing predecessors and cycles before 
     createOperation({ id: 'b', type: 'Score', predecessorIds: ['a'], execute: async () => [] }),
   ]
   assert.throws(() => validateOperationGraph(cycle), /cycle/)
+})
+
+test('operation scheduling is ready-order deterministic and does not mutate caller predecessors', async () => {
+  // Catches nondeterministic sibling execution and aliases into caller-owned predecessor arrays.
+  const { createOperation, executeOperationGraph } = await loadGraphCore()
+  const predecessorIds = ['a']
+  const ran = []
+  const dependent = createOperation({ id: 'm', type: 'Score', predecessorIds, execute: async () => { ran.push('m'); return [] } })
+  predecessorIds.push('unexpected')
+  assert.deepEqual(dependent.predecessorIds, ['a'])
+
+  const operations = [
+    createOperation({ id: 'z', type: 'Generate', execute: async () => { ran.push('z'); return [] } }),
+    createOperation({ id: 'a', type: 'Generate', execute: async () => { ran.push('a'); return [] } }),
+    dependent,
+  ]
+  await executeOperationGraph(operations, { thoughts: [] })
+  assert.deepEqual(ran, ['a', 'm', 'z'])
 })
 
 test('refutation fan-out stays bounded when every review lens returns a full findings array', async () => {

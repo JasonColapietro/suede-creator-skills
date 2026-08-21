@@ -614,12 +614,20 @@ log(`research: ${research.length} lenses · ${research.flatMap(r => r.facts).len
 phase('Plan')
 let thoughtSequence = 0
 const nextThoughtId = () => `thought-${++thoughtSequence}`
-const validPlan = plan => plan && typeof plan.summary === 'string' && Array.isArray(plan.lanes) && plan.lanes.length > 0 &&
-  plan.lanes.every(lane => lane && typeof lane.name === 'string' && typeof lane.task === 'string' &&
-    Array.isArray(lane.files) && lane.files.length > 0 && typeof lane.acceptance === 'string')
-const validScore = score => score && ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency']
+const PLAN_TIERS = new Set(['mechanical', 'integration', 'judgment'])
+const SCORE_DIMENSIONS = ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency']
+const SCORE_TOTAL_TOLERANCE = 1e-9
+const nonEmptyString = value => typeof value === 'string' && value.trim().length > 0
+const nonEmptyStringArray = value => Array.isArray(value) && value.length > 0 && value.every(nonEmptyString)
+const validPlan = plan => plan && nonEmptyString(plan.summary) && nonEmptyStringArray(plan.coverage) &&
+  Array.isArray(plan.lanes) && plan.lanes.length > 0 && plan.lanes.every(lane => lane &&
+    nonEmptyString(lane.name) && nonEmptyString(lane.task) && nonEmptyStringArray(lane.files) &&
+    PLAN_TIERS.has(lane.tier) && nonEmptyString(lane.acceptance))
+const validScore = score => score && SCORE_DIMENSIONS
   .every(key => Number.isFinite(score[key]) && score[key] >= 0 && score[key] <= 20) &&
-  Number.isFinite(score.total) && score.total >= 0 && score.total <= 100 && typeof score.rationale === 'string'
+  Number.isFinite(score.total) && score.total >= 0 && score.total <= 100 &&
+  Math.abs(score.total - SCORE_DIMENSIONS.reduce((sum, key) => sum + score[key], 0)) <= SCORE_TOTAL_TOLERANCE &&
+  nonEmptyString(score.rationale)
 
 addOperation(graph.operations, createOperation({
   id: 'generate-plans',
@@ -656,11 +664,14 @@ addOperation(graph.operations, createOperation({
     return async () => {
       const score = validPlan(thought.state.plan)
         ? await agent(
-            `Score this candidate plan against scope coverage, evidence quality, implementation feasibility,
+            `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+You are a SCORER. Do not edit source, run mutation commands, or make external changes.
+
+Score this candidate plan against scope coverage, evidence quality, implementation feasibility,
 safety and reversibility, and efficiency. Return five 0-20 dimensions, total 0-100, and rationale.
 Scope: ${SCOPE}
 Candidate: ${JSON.stringify(thought.state.plan)}`,
-            { label: `Score:${thought.id}`, phase: 'Score', schema: SCORE, effort: 'medium' }
+            { label: `Score:${thought.id}`, phase: 'Score', schema: SCORE, effort: 'medium', authority: 'read-only' }
           )
         : null
       const scored = validScore(score) ? score : null
@@ -678,7 +689,8 @@ addOperation(graph.operations, createOperation({
   type: OPERATION_TYPES.KeepBestN,
   predecessorIds: ['score-generated'],
   execute: async ({ inputThoughts }) => {
-    const eligible = inputThoughts.filter(thought => thought.status === 'active' && validScore(thought.score))
+    const eligible = inputThoughts.filter(thought =>
+      thought.status === 'active' && validPlan(thought.state.plan) && validScore(thought.score))
     const keptIds = new Set(rankThoughts(eligible).slice(0, BUDGET.beamWidth).map(thought => thought.id))
     const outputs = inputThoughts.map(thought => {
       const kept = keptIds.has(thought.id)
