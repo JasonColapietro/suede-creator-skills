@@ -18,6 +18,11 @@ Before launch, require all three inputs:
   constraints.
 - **Budget** — `light`, `standard`, or `deep`.
 
+Also detect and pass optional context when available: `deploys` (whether the
+repo has a deploy surface), `liveUrl` (the read-only production surface), and
+`vault` (the external decision/handoff context path). Their absence does not
+block a non-deploying repository, but do not silently discard known values.
+
 If repo or scope is missing, halt. Report the missing input in one line, offer
 to provide the repo path, describe the desired change, or route a one-file edit
 to direct implementation, then wait for the user's choice.
@@ -34,7 +39,7 @@ Invoke:
 ```js
 Workflow({
   scriptPath: "skills/suede-ship/workflows/suede-ship.js",
-  args: { repo, scope, agentBudget }
+  args: { repo, scope, agentBudget, deploys, liveUrl, vault }
 })
 ```
 
@@ -56,9 +61,10 @@ unselected thoughts remain evidence only; never build them speculatively.
 
 ## Halt and production boundaries
 
-The workflow halts before mutation for a tracked secret, a live target
-worktree, a protected-WIP collision, a duplicate file owner, an exhausted
-budget, or no selectable plan. On a halt, name the blocker in one line, offer
+The workflow halts before the next agent call or entire mutating batch when its
+budget is exhausted; it does not undo mutations that completed earlier. It
+halts before any mutation for a tracked secret, a live target worktree, a
+protected-WIP collision, a duplicate file owner, or no selectable plan. On a halt, name the blocker in one line, offer
 2–4 applicable resolutions (for example: narrow scope, exempt protected WIP,
 resolve the collision, choose a higher budget, or provide missing context), and
 wait. Do not relaunch or mutate while halted.
