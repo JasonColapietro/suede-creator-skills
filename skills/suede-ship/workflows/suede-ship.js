@@ -634,13 +634,36 @@ const validScore = score => score && SCORE_DIMENSIONS
   Number.isFinite(score.total) && score.total >= 0 && score.total <= 100 &&
   Math.abs(score.total - SCORE_DIMENSIONS.reduce((sum, key) => sum + score[key], 0)) <= SCORE_TOTAL_TOLERANCE &&
   nonEmptyString(score.rationale)
-const rel = p => String(p)
-  .split(scout.worktreePath).join('')
-  .split(REPO).join('')
-  .replace(/^\.\//, '')
-  .replace(/^\/+/, '')
-  .replace(/\/+$/, '')
-const overlaps = (a, b) => a === b || a.startsWith(b + '/') || b.startsWith(a + '/')
+const canonicalRoot = root => String(root).replace(/\/+$/, '').replace(/\/+/g, '/')
+const pathRoots = [canonicalRoot(scout.worktreePath), canonicalRoot(REPO)]
+const rel = raw => {
+  if (typeof raw !== 'string' || !raw.trim()) return null
+  let value = raw.trim().replace(/\/+/g, '/')
+  const wasAbsolute = value.startsWith('/')
+  let rooted = false
+  for (const root of pathRoots) {
+    if (value === root) return null
+    if (value.startsWith(root + '/')) {
+      value = value.slice(root.length + 1)
+      rooted = true
+      break
+    }
+  }
+  if (wasAbsolute && !rooted) return null
+
+  const segments = []
+  for (const segment of value.split('/')) {
+    if (!segment || segment === '.') continue
+    if (segment === '..') {
+      if (!segments.length) return null
+      segments.pop()
+    } else {
+      segments.push(segment)
+    }
+  }
+  return segments.length ? segments.join('/') : null
+}
+const overlaps = (a, b) => Boolean(a && b) && (a === b || a.startsWith(b + '/') || b.startsWith(a + '/'))
 const planFileCollisions = plan => {
   if (!validPlan(plan)) return ['malformed plan']
   const owners = new Map()
@@ -648,6 +671,10 @@ const planFileCollisions = plan => {
   for (const lane of plan.lanes) {
     for (const raw of lane.files) {
       const file = rel(raw)
+      if (!file) {
+        collisions.push(`${String(raw)}: empty, absolute-outside-repo, or repo-escaping path`)
+        continue
+      }
       const prior = [...owners.keys()].find(owned => overlaps(file, owned))
       if (prior) collisions.push(`${file}: owned by both ${owners.get(prior)} and ${lane.name}`)
       else owners.set(file, lane.name)
@@ -753,13 +780,15 @@ addOperation(graph.operations, createOperation({
   predecessorIds: ['keep-generated'],
   execute: async ({ inputThoughts }) => parallel(inputThoughts
     .filter(thought => thought.status === 'kept')
-    .map(thought => async () => {
-      const lenses = [
-        'CONTRACT ADVERSARY: find missing scope, unsupported assumptions, constraint breaks, and unverifiable evidence.',
-        'FAILURE ADVERSARY: find concrete collision, rollback, security, test-gap, and integration-order failures.',
-      ]
-      const refutations = await parallel(lenses.map((lens, index) => () => agent(
-        `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+    .map(thought => {
+      const thoughtId = nextThoughtId()
+      return async () => {
+        const lenses = [
+          'CONTRACT ADVERSARY: find missing scope, unsupported assumptions, constraint breaks, and unverifiable evidence.',
+          'FAILURE ADVERSARY: find concrete collision, rollback, security, test-gap, and integration-order failures.',
+        ]
+        const refutations = await parallel(lenses.map((lens, index) => () => agent(
+          `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Candidate plan: ${JSON.stringify(thought.state.plan)}
 Candidate score: ${JSON.stringify(thought.score)}
@@ -768,18 +797,19 @@ ${lens}
 
 Return only reproducible defects. A blocking defect must name its normalized kind and lane,
 the concrete claim, and evidence that another reader can verify. Empty defects are valid.`,
-        { label: `RefutePlan:${thought.id}:${index}`, phase: 'RefutePlan', schema: PLAN_REFUTATION, effort: 'high', authority: 'read-only' }
-      )))
-      const blocking = refutations.map(result => (result && Array.isArray(result.defects) ? result.defects : [])
-        .filter(defect => defect && defect.blocking))
-      const matchingBlocker = blocking.length === 2 && blocking[0]
-        .find(defect => blocking[1].some(other => normalizedDefectKey(other) === normalizedDefectKey(defect)))
-      return createThought({
-        id: nextThoughtId(), parentIds: [thought.id], operationId: 'refute-plans', operation: OPERATION_TYPES.Refute,
-        depth: thought.depth + 1,
-        state: { ...thought.state, refutations, objections: refutations.flatMap(result => result && Array.isArray(result.defects) ? result.defects : []) },
-        score: thought.score, status: matchingBlocker ? 'refuted' : 'active',
-      })
+          { label: `RefutePlan:${thought.id}:${index}`, phase: 'RefutePlan', schema: PLAN_REFUTATION, effort: 'high', authority: 'read-only' }
+        )))
+        const blocking = refutations.map(result => (result && Array.isArray(result.defects) ? result.defects : [])
+          .filter(defect => defect && defect.blocking))
+        const matchingBlocker = blocking.length === 2 && blocking[0]
+          .find(defect => blocking[1].some(other => normalizedDefectKey(other) === normalizedDefectKey(defect)))
+        return createThought({
+          id: thoughtId, parentIds: [thought.id], operationId: 'refute-plans', operation: OPERATION_TYPES.Refute,
+          depth: thought.depth + 1,
+          state: { ...thought.state, refutations, objections: refutations.flatMap(result => result && Array.isArray(result.defects) ? result.defects : []) },
+          score: thought.score, status: matchingBlocker ? 'refuted' : 'active',
+        })
+      }
     })),
 }))
 
@@ -795,9 +825,11 @@ for (let round = 1; round <= BUDGET.improveRounds; round += 1) {
     predecessorIds: [survivorOperationId],
     execute: async ({ inputThoughts }) => parallel(inputThoughts
       .filter(thought => thought.status === 'active' || thought.status === 'kept')
-      .map(thought => async () => {
-        const improvedPlan = await agent(
-          `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+      .map(thought => {
+        const thoughtId = nextThoughtId()
+        return async () => {
+          const improvedPlan = await agent(
+            `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Improvement round: ${round} of ${BUDGET.improveRounds}
 Current plan: ${JSON.stringify(thought.state.plan)}
@@ -808,13 +840,14 @@ Constraints: ${JSON.stringify(constraints)}
 
 Improve the complete plan without editing source. Preserve supported evidence, address every
 reproducible objection, keep file ownership disjoint, and return observable acceptance commands.`,
-          { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only' }
-        )
-        return createThought({
-          id: nextThoughtId(), parentIds: [thought.id], operationId: improveId, operation: OPERATION_TYPES.Improve,
-          depth: thought.depth + 1, state: { ...thought.state, plan: improvedPlan }, score: null,
-          status: validPlan(improvedPlan) ? 'active' : 'pruned',
-        })
+            { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only' }
+          )
+          return createThought({
+            id: thoughtId, parentIds: [thought.id], operationId: improveId, operation: OPERATION_TYPES.Improve,
+            depth: thought.depth + 1, state: { ...thought.state, plan: improvedPlan }, score: null,
+            status: validPlan(improvedPlan) ? 'active' : 'pruned',
+          })
+        }
       })),
   }))
 
@@ -822,16 +855,19 @@ reproducible objection, keep file ownership disjoint, and return observable acce
     id: scoreId,
     type: OPERATION_TYPES.Score,
     predecessorIds: [improveId],
-    execute: async ({ inputThoughts }) => parallel(inputThoughts.map(thought => async () => {
-      const score = thought.status === 'active' && validPlan(thought.state.plan)
-        ? await scorePlan(thought.state.plan, `Score:${thought.id}`)
-        : null
-      const scored = validScore(score) ? score : null
-      return createThought({
-        id: nextThoughtId(), parentIds: [thought.id], operationId: scoreId, operation: OPERATION_TYPES.Score,
-        depth: thought.depth + 1, state: thought.state, score: scored,
-        status: scored ? 'active' : 'pruned',
-      })
+    execute: async ({ inputThoughts }) => parallel(inputThoughts.map(thought => {
+      const thoughtId = nextThoughtId()
+      return async () => {
+        const score = thought.status === 'active' && validPlan(thought.state.plan)
+          ? await scorePlan(thought.state.plan, `Score:${thought.id}`)
+          : null
+        const scored = validScore(score) ? score : null
+        return createThought({
+          id: thoughtId, parentIds: [thought.id], operationId: scoreId, operation: OPERATION_TYPES.Score,
+          depth: thought.depth + 1, state: thought.state, score: scored,
+          status: scored ? 'active' : 'pruned',
+        })
+      }
     })),
   }))
 
@@ -866,6 +902,7 @@ addOperation(graph.operations, createOperation({
     const survivors = rankThoughts(inputThoughts.filter(thought =>
       thought.status === 'kept' && validPlan(thought.state.plan) && validScore(thought.score)))
     if (survivors.length < 2) return []
+    const thoughtId = nextThoughtId()
     const aggregatePlan = await agent(
       `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
@@ -877,7 +914,7 @@ give every file exactly one owner, and keep every acceptance command observable.
     )
     const collisions = planFileCollisions(aggregatePlan)
     const aggregate = createThought({
-      id: nextThoughtId(), parentIds: survivors.map(thought => thought.id), operationId: 'aggregate-plans', operation: OPERATION_TYPES.Aggregate,
+      id: thoughtId, parentIds: survivors.map(thought => thought.id), operationId: 'aggregate-plans', operation: OPERATION_TYPES.Aggregate,
       depth: Math.max(...survivors.map(thought => thought.depth)) + 1,
       state: {
         plan: aggregatePlan,
@@ -898,14 +935,17 @@ addOperation(graph.operations, createOperation({
   predecessorIds: ['aggregate-plans'],
   execute: async ({ inputThoughts }) => parallel(inputThoughts
     .filter(thought => thought.status === 'active')
-    .map(thought => async () => {
-      const score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
-      const scored = validScore(score) ? score : null
-      return createThought({
-        id: nextThoughtId(), parentIds: [thought.id], operationId: 'score-aggregate', operation: OPERATION_TYPES.Score,
-        depth: thought.depth + 1, state: thought.state, score: scored,
-        status: scored ? 'active' : 'pruned',
-      })
+    .map(thought => {
+      const thoughtId = nextThoughtId()
+      return async () => {
+        const score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
+        const scored = validScore(score) ? score : null
+        return createThought({
+          id: thoughtId, parentIds: [thought.id], operationId: 'score-aggregate', operation: OPERATION_TYPES.Score,
+          depth: thought.depth + 1, state: thought.state, score: scored,
+          status: scored ? 'active' : 'pruned',
+        })
+      }
     })),
 }))
 
@@ -944,8 +984,10 @@ const objections = selectedThought.state.objections || []
 // Normalize before comparing. Agents return a mix of absolute and repo-relative paths,
 // and a raw === between "/Users/…/my-app/.artifacts/" and ".artifacts/audit.md" silently
 // never matches — the check reports clean while the collision is real.
-const dirty = scout.dirtyFiles.map(rel)
-const contestedRel = [...contested.entries()].map(([f, c]) => ({ file: rel(f), claims: c }))
+const dirty = scout.dirtyFiles.map(rel).filter(Boolean)
+const contestedRel = [...contested.entries()]
+  .map(([f, c]) => ({ file: rel(f), claims: c }))
+  .filter(entry => entry.file)
 
 const owner = new Map()
 const collisions = []
@@ -953,6 +995,10 @@ const crossWorktree = []
 for (const lane of plan.lanes) {
   for (const raw of lane.files) {
     const f = rel(raw)
+    if (!f) {
+      collisions.push(`${String(raw)}: empty, absolute-outside-repo, or repo-escaping path claimed by ${lane.name}`)
+      continue
+    }
     const hitDirty = dirty.find(d => overlaps(f, d))
     const hitOwner = [...owner.keys()].find(o => overlaps(f, o))
     if (hitDirty) collisions.push(`${f}: protected WIP (${hitDirty}) claimed by ${lane.name}`)

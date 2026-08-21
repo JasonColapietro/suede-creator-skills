@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, aggregateFiles, malformedAggregate = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false, delayedBranch } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -92,6 +92,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, fin
         }
         if (prompt.includes('unsafe-plan')) return { coverage: 20, evidence: 20, feasibility: 18, safety: 18, efficiency: 20, total: 96, rationale: 'unsafe scores high before adversarial review' }
         if (prompt.includes('aggregate-safe')) return { coverage: 20, evidence: 18, feasibility: 19, safety: 19, efficiency: 18, total: 94, rationale: 'aggregate covers both safe lanes' }
+        if (prompt.includes('improved-safe-a') || prompt.includes('improved-safe-b')) return { coverage: 19, evidence: 18, feasibility: 18, safety: 18, efficiency: 17, total: 90, rationale: 'equal improved score' }
         if (prompt.includes('improved-safe')) return { coverage: 19, evidence: 18, feasibility: 18, safety: 18, efficiency: 17, total: 90, rationale: 'improvement addresses objections' }
         const total = prompt.includes('safe-a') ? 88 : prompt.includes('safe-b') ? 82 : 40
         return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
@@ -101,12 +102,18 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, fin
           ? { defects: [{ kind: 'collision', lane: 'unsafe', blocking: true, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }] }
           : { defects: [], notes: 'no reproducible blocker' }
       case 'Improve':
+        if (delayedBranch) {
+          const branch = prompt.includes('safe-a') ? 'safe-a' : 'safe-b'
+          return plan(`improved-${branch}`, `src/improved-${branch}.ts`)
+        }
         return plan('improved-safe', 'src/improved.ts')
       case 'Aggregate':
         return {
-          summary: 'aggregate-safe', coverage: ['change the thing'],
+          summary: malformedAggregate ? '' : 'aggregate-safe', coverage: ['change the thing'],
           lanes: aggregateLanes
             ? Array.from({ length: aggregateLanes }, (_, i) => ({ name: `aggregate${i}`, task: `implement aggregate${i}`, files: [`src/aggregate${i}.ts`], tier: 'integration', acceptance: 'node --test' }))
+            : aggregateFiles
+              ? aggregateFiles.map((file, i) => ({ name: `aggregate${i}`, task: `implement aggregate${i}`, files: [file], tier: 'integration', acceptance: 'node --test' }))
             : [
                 { name: 'a', task: 'implement a', files: ['src/a.ts'], tier: 'integration', acceptance: 'node --test' },
                 { name: 'b', task: 'implement b', files: ['src/b.ts'], tier: 'integration', acceptance: 'node --test' },
@@ -142,6 +149,10 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, fin
 
   const agent = async (prompt, opts = {}) => {
     calls.push({ prompt, ...opts })
+    if (delayedBranch && ['RefutePlan', 'Improve', 'Score'].includes(opts.phase) &&
+      prompt.includes(delayedBranch)) {
+      await new Promise(resolve => setTimeout(resolve, 15))
+    }
     return fixture(opts, prompt)
   }
   const parallel = (thunks) => Promise.all(thunks.map((t) => t()))
@@ -250,6 +261,39 @@ test('only lanes from the selected thought receive mutation authority', async ()
   assert.ok(calls.filter(c => ['Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate'].includes(c.phase))
     .every(c => c.authority === 'read-only'))
   assert.ok(calls.filter(c => c.phase === 'Build').every(c => c.authority === 'write-selected-plan'))
+})
+
+test('aggregate collision validation canonicalizes aliases and rejects repo escapes before Build', async () => {
+  const cases = [
+    { label: 'relative dot alias', files: ['src/shared.ts', 'src/./shared.ts'] },
+    { label: 'absolute repeated-separator alias', files: ['src/shared.ts', '/tmp/repo.worktrees/ship-test/src//shared.ts'] },
+    { label: 'repo escape', files: ['src/a.ts', '../outside.ts'] },
+  ]
+  for (const scenario of cases) {
+    const { result, calls } = await runShip({ aggregateFiles: scenario.files, findingsPerLens: 0 })
+    const aggregate = result.graph.thoughts.find(thought => thought.operation === 'Aggregate')
+    assert.equal(aggregate.status, 'pruned', `${scenario.label} must invalidate the aggregate`)
+    assert.ok(aggregate.state.aggregationCollisions.length > 0, `${scenario.label} must record why it was rejected`)
+    assert.equal(result.selectedPlan.summary, 'improved-safe', `${scenario.label} must fall back to a safe survivor`)
+    assert.deepEqual(calls.filter(call => call.phase === 'Build').map(call => call.label), ['build:improved-safe'])
+  }
+})
+
+test('delayed equal-score responses preserve thought IDs and select the same branch', async () => {
+  const runDelayed = async (delayedBranch) => {
+    const { result } = await runShip({ delayedBranch, malformedAggregate: true, findingsPerLens: 0 })
+    const trace = result.graph.thoughts
+      .filter(thought => thought.operation === 'Refute' || thought.operation === 'Improve' || thought.operationId === 'score-improved-1')
+      .map(thought => ({ operationId: thought.operationId, summary: thought.state.plan.summary, id: thought.id }))
+      .sort((a, b) => a.operationId.localeCompare(b.operationId) || a.summary.localeCompare(b.summary))
+    return { selected: result.selectedPlan.summary, trace }
+  }
+
+  const safeASlow = await runDelayed('safe-a')
+  const safeBSlow = await runDelayed('safe-b')
+  assert.equal(safeASlow.selected, 'improved-safe-a')
+  assert.equal(safeBSlow.selected, 'improved-safe-a')
+  assert.deepEqual(safeASlow.trace, safeBSlow.trace)
 })
 
 test('every derived thought keeps immutable parent lineage', async () => {
