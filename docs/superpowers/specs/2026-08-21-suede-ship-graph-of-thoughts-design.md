@@ -1,8 +1,11 @@
 # Suede Ship Graph-of-Thoughts Design
 
-**Date:** 2026-08-21  
-**Status:** Approved  
-**Target:** `skills/suede-ship`  
+**Date:** 2026-08-21
+
+**Status:** Approved
+
+**Target:** `skills/suede-ship`
+
 **Upstream:** ETH Zurich `spcl/graph-of-thoughts` at `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`
 
 ## Goal
