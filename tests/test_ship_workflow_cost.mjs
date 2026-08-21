@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -64,7 +64,9 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
         }
       case 'Generate': {
         const index = Number(label.split(':').at(-1))
-        const name = (scoreMode === 'ties' ? tieNames : defaultNames)[index]
+        const name = includeUnsafePlan && index === 0
+          ? 'unsafe-plan'
+          : (scoreMode === 'ties' ? tieNames : defaultNames)[index]
         const candidate = plan(name, `src/${name}.ts`)
         if (planMode === 'malformed') {
           const malformed = [
@@ -88,9 +90,28 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
           if (prompt.includes('safety-wins')) return { coverage: 19, evidence: 14, feasibility: 16, safety: 16, efficiency: 15, total: 80, rationale: 'safety tie break' }
           if (prompt.includes('evidence-third')) return { coverage: 19, evidence: 13, feasibility: 17, safety: 16, efficiency: 15, total: 80, rationale: 'evidence loses tie' }
         }
+        if (prompt.includes('unsafe-plan')) return { coverage: 20, evidence: 20, feasibility: 18, safety: 18, efficiency: 20, total: 96, rationale: 'unsafe scores high before adversarial review' }
+        if (prompt.includes('aggregate-safe')) return { coverage: 20, evidence: 18, feasibility: 19, safety: 19, efficiency: 18, total: 94, rationale: 'aggregate covers both safe lanes' }
+        if (prompt.includes('improved-safe')) return { coverage: 19, evidence: 18, feasibility: 18, safety: 18, efficiency: 17, total: 90, rationale: 'improvement addresses objections' }
         const total = prompt.includes('safe-a') ? 88 : prompt.includes('safe-b') ? 82 : 40
         return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
       }
+      case 'RefutePlan':
+        return prompt.includes('unsafe-plan')
+          ? { defects: [{ kind: 'collision', lane: 'unsafe', blocking: true, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }] }
+          : { defects: [], notes: 'no reproducible blocker' }
+      case 'Improve':
+        return plan('improved-safe', 'src/improved.ts')
+      case 'Aggregate':
+        return {
+          summary: 'aggregate-safe', coverage: ['change the thing'],
+          lanes: aggregateLanes
+            ? Array.from({ length: aggregateLanes }, (_, i) => ({ name: `aggregate${i}`, task: `implement aggregate${i}`, files: [`src/aggregate${i}.ts`], tier: 'integration', acceptance: 'node --test' }))
+            : [
+                { name: 'a', task: 'implement a', files: ['src/a.ts'], tier: 'integration', acceptance: 'node --test' },
+                { name: 'b', task: 'implement b', files: ['src/b.ts'], tier: 'integration', acceptance: 'node --test' },
+              ],
+        }
       case 'Build':
         return { state: 'done', changed: ['src/x.ts'], notes: '' }
       case 'Review':
@@ -204,6 +225,31 @@ test('score agents receive read-only authority at the worktree boundary', async 
   const score = calls.find(call => call.phase === 'Score')
   assert.equal(score.authority, 'read-only')
   assert.match(score.prompt, /Worktree: \/tmp\/repo\.worktrees\/ship-test \(read-only — do not edit source\)/)
+})
+
+test('two matching adversaries hard-refute a candidate so it cannot win', async () => {
+  const { result } = await runShip({ includeUnsafePlan: true, findingsPerLens: 0 })
+  const unsafe = result.graph.thoughts.find(t => t.state.plan?.summary === 'unsafe-plan' && t.status === 'refuted')
+  assert.ok(unsafe)
+  assert.notEqual(result.graph.winnerId, unsafe.id)
+})
+
+test('Improve preserves its predecessor and Aggregate records every contributing parent', async () => {
+  const { result } = await runShip({ findingsPerLens: 0 })
+  const improved = result.graph.thoughts.find(t => t.operation === 'Improve')
+  const aggregate = result.graph.thoughts.find(t => t.operation === 'Aggregate')
+  assert.equal(improved.parentIds.length, 1)
+  assert.equal(aggregate.parentIds.length, 2)
+  assert.ok(aggregate.parentIds.every(id => result.graph.thoughts.some(t => t.id === id)))
+})
+
+test('only lanes from the selected thought receive mutation authority', async () => {
+  const { result, calls } = await runShip({ findingsPerLens: 0 })
+  const built = calls.filter(c => c.phase === 'Build').map(c => c.label)
+  assert.deepEqual(built, result.selectedPlan.lanes.map(lane => `build:${lane.name}`))
+  assert.ok(calls.filter(c => ['Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate'].includes(c.phase))
+    .every(c => c.authority === 'read-only'))
+  assert.ok(calls.filter(c => c.phase === 'Build').every(c => c.authority === 'write-selected-plan'))
 })
 
 test('every derived thought keeps immutable parent lineage', async () => {
@@ -322,7 +368,7 @@ test('each agent-budget range holds its documented ceiling', async () => {
 test('a plan that exceeds its range says so out loud instead of dropping a lane', async () => {
   // Lanes are deliberately not truncated to fit the budget: dropping one drops scope the
   // user asked for. The guarantee is that going over is announced with a new projection.
-  const { logs, result } = await runShip({ agentBudget: 'light', lanes: 8 })
+  const { logs, result } = await runShip({ agentBudget: 'standard', aggregateLanes: 8 })
   assert.ok(
     logs.some((l) => l.startsWith('OVER BUDGET')),
     'an over-budget plan must log OVER BUDGET with a revised projection')

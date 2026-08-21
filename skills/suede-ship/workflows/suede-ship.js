@@ -32,9 +32,9 @@ const DEPLOYS = !!(A && A.deploys)
 // before launching (see SKILL.md) — this default exists so a caller that forgets gets
 // the middle range rather than the widest one.
 const BUDGETS = {
-  light:    { generatedPlans: 3, beamWidth: 1, maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
-  standard: { generatedPlans: 5, beamWidth: 2, maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
-  deep:     { generatedPlans: 8, beamWidth: 3, maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
+  light:    { generatedPlans: 3, beamWidth: 1, improveRounds: 1, maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
+  standard: { generatedPlans: 5, beamWidth: 2, improveRounds: 1, maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
+  deep:     { generatedPlans: 8, beamWidth: 3, improveRounds: 2, maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
 }
 const BUDGET_NAME = BUDGETS[(A && A.agentBudget) || ''] ? A.agentBudget : 'standard'
 const BUDGET = BUDGETS[BUDGET_NAME]
@@ -187,14 +187,16 @@ const REDTEAM = {
 
 const PLAN = {
   type: 'object',
-  required: ['lanes'],
+  required: ['summary', 'coverage', 'lanes'],
   properties: {
+    summary: { type: 'string' },
+    coverage: { type: 'array', items: { type: 'string' } },
     lanes: {
       type: 'array',
       maxItems: 8,
       items: {
         type: 'object',
-        required: ['name', 'task', 'files', 'tier'],
+        required: ['name', 'task', 'files', 'tier', 'acceptance'],
         properties: {
           name: { type: 'string' },
           task: { type: 'string' },
@@ -207,17 +209,21 @@ const PLAN = {
   },
 }
 
-const SCORE = {
-  type: 'object',
-  required: ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency', 'total', 'rationale'],
-  properties: {
-    coverage: { type: 'number' },
-    evidence: { type: 'number' },
-    feasibility: { type: 'number' },
-    safety: { type: 'number' },
-    efficiency: { type: 'number' },
-    total: { type: 'number' },
-    rationale: { type: 'string' },
+const PLAN_SCORE = {
+  type: 'object', required: ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency', 'total', 'rationale'],
+  properties: Object.fromEntries(['coverage', 'evidence', 'feasibility', 'safety', 'efficiency', 'total']
+    .map(key => [key, { type: 'number', minimum: 0, maximum: key === 'total' ? 100 : 20 }]).concat([
+      ['rationale', { type: 'string' }],
+    ])),
+}
+
+const PLAN_REFUTATION = {
+  type: 'object', required: ['defects', 'notes'], properties: {
+    defects: { type: 'array', maxItems: 6, items: { type: 'object',
+      required: ['kind', 'lane', 'blocking', 'claim', 'evidence'], properties: {
+        kind: { type: 'string', enum: ['missing-scope', 'constraint-break', 'collision', 'unverifiable', 'rollback', 'security', 'test-gap', 'integration-order', 'other'] },
+        lane: { type: 'string' }, blocking: { type: 'boolean' }, claim: { type: 'string' }, evidence: { type: 'string' },
+      } } }, notes: { type: 'string' },
   },
 }
 
@@ -628,6 +634,39 @@ const validScore = score => score && SCORE_DIMENSIONS
   Number.isFinite(score.total) && score.total >= 0 && score.total <= 100 &&
   Math.abs(score.total - SCORE_DIMENSIONS.reduce((sum, key) => sum + score[key], 0)) <= SCORE_TOTAL_TOLERANCE &&
   nonEmptyString(score.rationale)
+const rel = p => String(p)
+  .split(scout.worktreePath).join('')
+  .split(REPO).join('')
+  .replace(/^\.\//, '')
+  .replace(/^\/+/, '')
+  .replace(/\/+$/, '')
+const overlaps = (a, b) => a === b || a.startsWith(b + '/') || b.startsWith(a + '/')
+const planFileCollisions = plan => {
+  if (!validPlan(plan)) return ['malformed plan']
+  const owners = new Map()
+  const collisions = []
+  for (const lane of plan.lanes) {
+    for (const raw of lane.files) {
+      const file = rel(raw)
+      const prior = [...owners.keys()].find(owned => overlaps(file, owned))
+      if (prior) collisions.push(`${file}: owned by both ${owners.get(prior)} and ${lane.name}`)
+      else owners.set(file, lane.name)
+    }
+  }
+  return collisions
+}
+const normalizeDefectPart = value => String(value).trim().toLowerCase().replace(/\s+/g, ' ')
+const normalizedDefectKey = defect => `${normalizeDefectPart(defect && defect.kind)}:${normalizeDefectPart(defect && defect.lane)}`
+const scorePlan = (plan, label) => agent(
+  `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+You are a SCORER. Do not edit source, run mutation commands, or make external changes.
+
+Score this candidate plan against scope coverage, evidence quality, implementation feasibility,
+safety and reversibility, and efficiency. Return five 0-20 dimensions, total 0-100, and rationale.
+Scope: ${SCOPE}
+Candidate: ${JSON.stringify(plan)}`,
+  { label, phase: 'Score', schema: PLAN_SCORE, effort: 'medium', authority: 'read-only' }
+)
 
 addOperation(graph.operations, createOperation({
   id: 'generate-plans',
@@ -645,7 +684,7 @@ Constraints: ${JSON.stringify(constraints)}
 Unread sources: ${JSON.stringify(stillUnread)}
 
 Return a plan with a summary, explicit disjoint lane ownership, and observable acceptance commands.`,
-        { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high' }
+        { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high', authority: 'read-only' }
       )
       return createThought({
         id: thoughtId, parentIds: [], operationId: 'generate-plans', operation: OPERATION_TYPES.Generate,
@@ -671,7 +710,7 @@ Score this candidate plan against scope coverage, evidence quality, implementati
 safety and reversibility, and efficiency. Return five 0-20 dimensions, total 0-100, and rationale.
 Scope: ${SCOPE}
 Candidate: ${JSON.stringify(thought.state.plan)}`,
-            { label: `Score:${thought.id}`, phase: 'Score', schema: SCORE, effort: 'medium', authority: 'read-only' }
+            { label: `Score:${thought.id}`, phase: 'Score', schema: PLAN_SCORE, effort: 'medium', authority: 'read-only' }
           )
         : null
       const scored = validScore(score) ? score : null
@@ -708,125 +747,203 @@ addOperation(graph.operations, createOperation({
   },
 }))
 
-await executeOperationGraph(graph.operations, graph)
-
-// The existing planning path remains the mutation input until the later Select operation
-// establishes a winner. Candidate thoughts above are read-only evidence and carry no authority.
-let plan = await agent(
-  `Worktree: ${scout.worktreePath}
+addOperation(graph.operations, createOperation({
+  id: 'refute-plans',
+  type: OPERATION_TYPES.Refute,
+  predecessorIds: ['keep-generated'],
+  execute: async ({ inputThoughts }) => parallel(inputThoughts
+    .filter(thought => thought.status === 'kept')
+    .map(thought => async () => {
+      const lenses = [
+        'CONTRACT ADVERSARY: find missing scope, unsupported assumptions, constraint breaks, and unverifiable evidence.',
+        'FAILURE ADVERSARY: find concrete collision, rollback, security, test-gap, and integration-order failures.',
+      ]
+      const refutations = await parallel(lenses.map((lens, index) => () => agent(
+        `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
-Candidate files: ${scout.candidateFiles.join(', ')}
-PROTECTED (dirty WIP — no lane may own these): ${scout.dirtyFiles.join(', ') || 'none'}
-CONTESTED — already in flight on other unlanded branches of this repo. Touching one of
-these is a merge conflict that surfaces later, at integration. Route around them where the
-scope allows; where it genuinely does not, say so explicitly in that lane's acceptance
-criterion so it is a decision on the record rather than a surprise:
-${contested.size ? [...contested.entries()].map(([f, c]) => `  ${f} <- ${c.map(x => x.branch + (x.live ? ' [LIVE]' : '')).join(', ')}`).join('\n') : '  none'}
-Advisory hazards: ${JSON.stringify(scout.hazards)}
-
-RESEARCH — sourced facts from five independent lenses plus gap fills:
-${JSON.stringify(research)}
-
-CONSTRAINTS the plan must not break (each says what breaking it means):
-${JSON.stringify(constraints)}
-
-Sources still unread — if any is central to a lane you write, that lane is underspecified:
-${JSON.stringify(stillUnread)}
-
-You are the PLANNER. Produce a lane map, not a narrative.
-
-Plan against the research, not against the file list. A lane that violates a listed
-constraint is wrong even if it satisfies the scope — if the scope genuinely requires
-breaking one, say so in that lane's acceptance criterion so it surfaces at review
-instead of at deploy. Where history shows this was already tried and reverted, do not
-repeat the reverted approach without naming why it will work this time.
-
-Hard rules:
-- Every file belongs to exactly ONE lane. Overlap is a planning bug, not a runtime problem.
-- If two lanes genuinely need the same file, MERGE them into one lane. Do not split a file's ownership.
-- No lane may list a protected dirty file.
-- Each lane gets an observable acceptance criterion (a command, a route, a rendered state) — never "looks right".
-- Tier each lane honestly: mechanical (complete spec, no judgment), integration (multi-file, pattern-match the codebase), judgment (design/security/data-shape calls).
-- This run's agent budget allows at most ${BUDGET.maxLanes} lanes. Fewer is better; that number is a ceiling, not a target.
-
-Read the candidate files before deciding ownership.`,
-  { schema: PLAN, phase: 'Plan', effort: 'high' }
-)
-
-// SKEPTIC #2 — red-team the lane map BEFORE any builder opens a file. This is the
-// cheapest adversary in the DAG: two agents here can void thirty downstream. Two
-// distinct hostile lenses, because "this approach is wrong" and "this decomposition
-// is wrong" are different failures and one reviewer reliably finds only one of them.
-const redTeams = (await parallel([
-  `You are attacking the APPROACH. Assume this plan ships and causes an incident — write the
-incident. Does it break a constraint that survived the audit? Does history show this exact
-approach was tried and reverted? Does it touch auth, payment, schema, or a public route
-without saying so? Is there a materially simpler decomposition that makes half these lanes
-unnecessary? "fatal" means: if a builder starts on this, the work is wasted.`,
-  `You are attacking the DECOMPOSITION. Is a lane's acceptance criterion actually observable,
-or does it bottom out in "looks right"? Is a lane tiered too low for the judgment it needs?
-Do two lanes have a hidden ordering dependency that the disjoint-file check cannot see —
-one writes a type, contract, or migration the other reads? Is any lane so large it will
-return "blocked" halfway? A hidden ordering dependency is "fatal", not "noted".`,
-].map(lens => () => agent(
-  `Worktree: ${scout.worktreePath} (read-only)
-Scope: ${SCOPE}
-Proposed lane map: ${JSON.stringify(plan.lanes)}
-Audited constraints the plan is bound by: ${JSON.stringify(constraints)}
-Files in flight on other unlanded branches of this repo: ${contested.size ? [...contested.entries()].map(([f, c]) => `${f} <- ${c.map(x => x.branch + (x.live ? ' [LIVE]' : '')).join(', ')}`).join(' | ') : 'none'}
-Research facts: ${JSON.stringify(research.flatMap(r => r.facts))}
+Candidate plan: ${JSON.stringify(thought.state.plan)}
+Candidate score: ${JSON.stringify(thought.score)}
 
 ${lens}
 
-Open the files before objecting — an objection you cannot ground in the actual code is
-noise, and noise here costs a full replan. If the plan is sound, return an empty array;
-you are not required to find something.`,
-  { label: 'redteam:plan', phase: 'Plan', schema: REDTEAM, effort: 'high' }
-)))).filter(Boolean)
+Return only reproducible defects. A blocking defect must name its normalized kind and lane,
+the concrete claim, and evidence that another reader can verify. Empty defects are valid.`,
+        { label: `RefutePlan:${thought.id}:${index}`, phase: 'RefutePlan', schema: PLAN_REFUTATION, effort: 'high', authority: 'read-only' }
+      )))
+      const blocking = refutations.map(result => (result && Array.isArray(result.defects) ? result.defects : [])
+        .filter(defect => defect && defect.blocking))
+      const matchingBlocker = blocking.length === 2 && blocking[0]
+        .find(defect => blocking[1].some(other => normalizedDefectKey(other) === normalizedDefectKey(defect)))
+      return createThought({
+        id: nextThoughtId(), parentIds: [thought.id], operationId: 'refute-plans', operation: OPERATION_TYPES.Refute,
+        depth: thought.depth + 1,
+        state: { ...thought.state, refutations, objections: refutations.flatMap(result => result && Array.isArray(result.defects) ? result.defects : []) },
+        score: thought.score, status: matchingBlocker ? 'refuted' : 'active',
+      })
+    })),
+}))
 
-let objections = redTeams.flatMap(r => r.objections)
-const fatal = objections.filter(o => o.severity === 'fatal')
-const serious = objections.filter(o => o.severity === 'serious')
+let survivorOperationId = 'refute-plans'
+for (let round = 1; round <= BUDGET.improveRounds; round += 1) {
+  const improveId = `improve-round-${round}`
+  const scoreId = `score-improved-${round}`
+  const keepId = `keep-improved-${round}`
 
-// Exactly one revision round. Past that we proceed and carry the objections into the
-// handoff as caveats — a plan/critique loop with no bound never converges.
-if (fatal.length || serious.length >= 2) {
-  log(`red team: ${fatal.length} fatal, ${serious.length} serious — one revision round`)
-  const revised = await agent(
-    `Your lane map was red-teamed and did not survive. Revise it.
+  addOperation(graph.operations, createOperation({
+    id: improveId,
+    type: OPERATION_TYPES.Improve,
+    predecessorIds: [survivorOperationId],
+    execute: async ({ inputThoughts }) => parallel(inputThoughts
+      .filter(thought => thought.status === 'active' || thought.status === 'kept')
+      .map(thought => async () => {
+        const improvedPlan = await agent(
+          `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+Scope: ${SCOPE}
+Improvement round: ${round} of ${BUDGET.improveRounds}
+Current plan: ${JSON.stringify(thought.state.plan)}
+Current score: ${JSON.stringify(thought.score)}
+Adversarial objections: ${JSON.stringify(thought.state.objections || [])}
+Research: ${JSON.stringify(research)}
+Constraints: ${JSON.stringify(constraints)}
 
-Original lane map: ${JSON.stringify(plan.lanes)}
-Objections: ${JSON.stringify([...fatal, ...serious])}
-Audited constraints: ${JSON.stringify(constraints)}
-PROTECTED dirty WIP (no lane may own): ${scout.dirtyFiles.join(', ') || 'none'}
+Improve the complete plan without editing source. Preserve supported evidence, address every
+reproducible objection, keep file ownership disjoint, and return observable acceptance commands.`,
+          { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only' }
+        )
+        return createThought({
+          id: nextThoughtId(), parentIds: [thought.id], operationId: improveId, operation: OPERATION_TYPES.Improve,
+          depth: thought.depth + 1, state: { ...thought.state, plan: improvedPlan }, score: null,
+          status: validPlan(improvedPlan) ? 'active' : 'pruned',
+        })
+      })),
+  }))
 
-Address every fatal objection. You may merge lanes, re-tier them, re-sequence into fewer
-lanes, or narrow the scope of one — but do not answer an objection by deleting the work it
-applies to. If an objection is simply wrong, keep your approach and say why in that lane's
-acceptance criterion so it surfaces at review. Same hard rules as before: one owner per
-file, no protected file, observable acceptance.`,
-    { schema: PLAN, phase: 'Plan', effort: 'high' }
-  )
-  if (revised) plan = revised
-  objections = objections.map(o => ({ ...o, status: 'sent to revision' }))
-} else if (objections.length) {
-  log(`red team: ${objections.length} noted objection(s), proceeding — carried to handoff`)
+  addOperation(graph.operations, createOperation({
+    id: scoreId,
+    type: OPERATION_TYPES.Score,
+    predecessorIds: [improveId],
+    execute: async ({ inputThoughts }) => parallel(inputThoughts.map(thought => async () => {
+      const score = thought.status === 'active' && validPlan(thought.state.plan)
+        ? await scorePlan(thought.state.plan, `Score:${thought.id}`)
+        : null
+      const scored = validScore(score) ? score : null
+      return createThought({
+        id: nextThoughtId(), parentIds: [thought.id], operationId: scoreId, operation: OPERATION_TYPES.Score,
+        depth: thought.depth + 1, state: thought.state, score: scored,
+        status: scored ? 'active' : 'pruned',
+      })
+    })),
+  }))
+
+  addOperation(graph.operations, createOperation({
+    id: keepId,
+    type: OPERATION_TYPES.KeepBestN,
+    predecessorIds: [scoreId],
+    execute: async ({ inputThoughts }) => {
+      const eligible = inputThoughts.filter(thought => thought.status === 'active' && validPlan(thought.state.plan) && validScore(thought.score))
+      const keptIds = new Set(rankThoughts(eligible).slice(0, BUDGET.beamWidth).map(thought => thought.id))
+      const outputs = inputThoughts.map(thought => {
+        const kept = keptIds.has(thought.id)
+        const output = createThought({
+          id: nextThoughtId(), parentIds: [thought.id], operationId: keepId, operation: OPERATION_TYPES.KeepBestN,
+          depth: thought.depth + 1, state: thought.state, score: thought.score,
+          status: kept ? 'kept' : 'pruned',
+        })
+        if (!kept) graph.pruned.push(output)
+        return output
+      })
+      return outputs
+    },
+  }))
+  survivorOperationId = keepId
 }
+
+addOperation(graph.operations, createOperation({
+  id: 'aggregate-plans',
+  type: OPERATION_TYPES.Aggregate,
+  predecessorIds: [survivorOperationId],
+  execute: async ({ inputThoughts }) => {
+    const survivors = rankThoughts(inputThoughts.filter(thought =>
+      thought.status === 'kept' && validPlan(thought.state.plan) && validScore(thought.score)))
+    if (survivors.length < 2) return []
+    const aggregatePlan = await agent(
+      `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+Scope: ${SCOPE}
+Surviving plans: ${JSON.stringify(survivors.map(thought => ({ id: thought.id, plan: thought.state.plan, score: thought.score })))}
+
+Aggregate the strongest compatible lanes into one complete plan. Preserve full scope coverage,
+give every file exactly one owner, and keep every acceptance command observable. Do not edit source.`,
+      { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only' }
+    )
+    const collisions = planFileCollisions(aggregatePlan)
+    const aggregate = createThought({
+      id: nextThoughtId(), parentIds: survivors.map(thought => thought.id), operationId: 'aggregate-plans', operation: OPERATION_TYPES.Aggregate,
+      depth: Math.max(...survivors.map(thought => thought.depth)) + 1,
+      state: {
+        plan: aggregatePlan,
+        contributingThoughtIds: survivors.map(thought => thought.id),
+        objections: survivors.flatMap(thought => thought.state.objections || []),
+        aggregationCollisions: collisions,
+      },
+      score: null, status: validPlan(aggregatePlan) && collisions.length === 0 ? 'active' : 'pruned',
+    })
+    if (aggregate.status === 'pruned') graph.pruned.push(aggregate)
+    return [aggregate]
+  },
+}))
+
+addOperation(graph.operations, createOperation({
+  id: 'score-aggregate',
+  type: OPERATION_TYPES.Score,
+  predecessorIds: ['aggregate-plans'],
+  execute: async ({ inputThoughts }) => parallel(inputThoughts
+    .filter(thought => thought.status === 'active')
+    .map(thought => async () => {
+      const score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
+      const scored = validScore(score) ? score : null
+      return createThought({
+        id: nextThoughtId(), parentIds: [thought.id], operationId: 'score-aggregate', operation: OPERATION_TYPES.Score,
+        depth: thought.depth + 1, state: thought.state, score: scored,
+        status: scored ? 'active' : 'pruned',
+      })
+    })),
+}))
+
+addOperation(graph.operations, createOperation({
+  id: 'select-plan',
+  type: OPERATION_TYPES.Select,
+  predecessorIds: [survivorOperationId, 'score-aggregate'],
+  execute: async ({ inputThoughts }) => {
+    const aggregates = inputThoughts.filter(thought => thought.operationId === 'score-aggregate' &&
+      thought.status === 'active' && validPlan(thought.state.plan) && validScore(thought.score) && planFileCollisions(thought.state.plan).length === 0)
+    const survivors = inputThoughts.filter(thought => thought.operationId === survivorOperationId &&
+      thought.status === 'kept' && validPlan(thought.state.plan) && validScore(thought.score) && planFileCollisions(thought.state.plan).length === 0)
+    const winner = rankThoughts([...aggregates, ...survivors])[0]
+    if (!winner) return []
+    const selected = createThought({
+      id: nextThoughtId(), parentIds: [winner.id], operationId: 'select-plan', operation: OPERATION_TYPES.Select,
+      depth: winner.depth + 1, state: winner.state, score: winner.score, status: 'selected',
+    })
+    graph.winnerId = selected.id
+    return [selected]
+  },
+}))
+
+await executeOperationGraph(graph.operations, graph)
+
+const selectedThought = graph.thoughts.find(thought => thought.id === graph.winnerId && thought.status === 'selected')
+if (!selectedThought || !validPlan(selectedThought.state.plan) || !validScore(selectedThought.score)) {
+  return { halted: true, reason: 'no safe graph winner', graph }
+}
+const plan = selectedThought.state.plan
+const selectedPlan = plan
+const objections = selectedThought.state.objections || []
 
 // Collision detection is a PURE FUNCTION. Never spend an agent arbitrating
 // file ownership — a deterministic check cannot hallucinate consensus.
 // Normalize before comparing. Agents return a mix of absolute and repo-relative paths,
 // and a raw === between "/Users/…/my-app/.artifacts/" and ".artifacts/audit.md" silently
 // never matches — the check reports clean while the collision is real.
-const rel = p => String(p)
-  .split(scout.worktreePath).join('')
-  .split(REPO).join('')
-  .replace(/^\.\//, '')
-  .replace(/^\/+/, '')
-  .replace(/\/+$/, '')
-// Directory claims cover their contents: ".artifacts/" claims ".artifacts/audit.md".
-const overlaps = (a, b) => a === b || a.startsWith(b + '/') || b.startsWith(a + '/')
-
 const dirty = scout.dirtyFiles.map(rel)
 const contestedRel = [...contested.entries()].map(([f, c]) => ({ file: rel(f), claims: c }))
 
@@ -903,7 +1020,7 @@ Open no file outside your ownership list. If the task cannot be done without tou
 another lane's file, return state "blocked" with that file named — do not reach across.
 If you are missing information the lane map should have given you, return "needs-context"
 rather than guessing. Match surrounding code idiom; no opportunistic refactors.`,
-    { label: `build:${lane.name}`, phase: 'Build', schema: BUILD, effort: EFFORT[lane.tier] }
+    { label: `build:${lane.name}`, phase: 'Build', schema: BUILD, effort: EFFORT[lane.tier], authority: 'write-selected-plan' }
   ),
 
   // dual-lens review — one asks "does it work", one asks "how does it fail in prod"
@@ -1148,7 +1265,7 @@ not quietly drop them either: ${JSON.stringify(unverified)}
 Blockers confirmed but left unfixed (past the fix cap): ${JSON.stringify(blockers.slice(FIX_CAP))}
 Gate: ${JSON.stringify(gate)}
 Release verification (${shipVerdict}): ${JSON.stringify(release)}
-Plan objections raised by red team: ${JSON.stringify(objections)}
+Plan refutations and objections from graph search: ${JSON.stringify(objections)}
 Cross-worktree overlap — these lane files are ALSO in flight on other unlanded branches,
 so this work will need a rebase or a merge resolution against them. Name each one and the
 branch it collides with under Caveats; this is the caveat most likely to be discovered by
@@ -1178,6 +1295,7 @@ handoff look clean is the failure mode this section exists to prevent.`,
 return {
   agentBudget: BUDGET_NAME,
   graph,
+  selectedPlan,
   worktree: scout.worktreePath,
   baseSha: scout.baseSha,
   lanes: plan.lanes.map(l => l.name),
