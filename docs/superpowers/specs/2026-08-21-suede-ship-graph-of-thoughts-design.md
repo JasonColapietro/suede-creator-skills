@@ -214,8 +214,8 @@ The cost choice controls graph breadth rather than merely lane count:
 | Budget | Generated plans | Beam width | Improve rounds | Max lanes | Refute findings/lane | Total agent ceiling |
 |---|---:|---:|---:|---:|---:|---:|
 | `light` | 3 | 1 | 1 | 3 | 2 | 55 |
-| `standard` | 5 | 2 | 1 | 5 | 4 | 95 |
-| `deep` | 8 | 3 | 2 | 8 | 6 | 175 |
+| `standard` | 5 | 2 | 1 | 5 | 4 | 110 |
+| `deep` | 8 | 3 | 2 | 8 | 6 | 200 |
 
 Before launching, the skill reports the selected range and projected calls.
 Every agent spawn goes through one budget ledger. Exhaustion halts before the
