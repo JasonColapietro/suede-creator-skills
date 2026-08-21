@@ -358,7 +358,7 @@ const validateOperationGraph = operations => {
 
   const pending = new Map([...byId].map(([id, operation]) => [id, operation.predecessorIds.length]))
   const roots = [...pending].filter(([, count]) => count === 0).map(([id]) => id).sort()
-  if (roots.length > 1) throw new Error(`operation graph requires exactly one root; got ${roots.length}`)
+  if (operations.length === 0 || roots.length > 1) throw new Error(`operation graph requires exactly one root; got ${roots.length}`)
   const ready = [...roots]
   const ordered = []
   while (ready.length) {
@@ -518,6 +518,11 @@ const settledParallel = async thunks => {
   if (rejected.length) throw rejected.find(item => item.reason && item.reason.code === 'AGENT_BUDGET_EXHAUSTED')?.reason || rejected[0].reason
   return settled.map(item => item.value)
 }
+const settledPipeline = (items, ...stages) => settledParallel(items.map((item, index) => async () => {
+  let value = item
+  for (const stage of stages) value = await stage(value, item, index)
+  return value
+}))
 const makeTopologyBlueprint = () => {
   const blueprint = [
     { id: 'generate-plans', type: OPERATION_TYPES.Generate, predecessorIds: [] },
@@ -830,7 +835,27 @@ const knownPlanSources = new Set(['user scope',
   ...research.flatMap(item => (item.facts || []).map(fact => fact.source)).filter(nonEmptyString),
   ...constraints.map(constraint => constraint.source).filter(nonEmptyString),
 ])
-const prohibitedExternalCommand = /(?:^|[;&|]\s*|\b)(?:git\s+push|gh\s+pr\s+merge|vercel\s+(?:deploy|promote|alias)|npm\s+publish|deploy|publish|rotate\s+(?:a\s+)?credential|production\s+(?:write|migration))/i
+const EXTERNAL_COMMAND_POLICY = Object.freeze({
+  allow: Object.freeze([
+    { id: 'read-only-git', pattern: /\bgit\s+(?:status|diff|log|show|grep|rev-parse|ls-files)\b/i },
+    { id: 'local-validation', pattern: /\b(?:node\s+--test|npm\s+(?:test|run\s+(?:test|lint|build|validate)))\b/i },
+  ]),
+  deny: Object.freeze([
+    { id: 'deploy', pattern: /\b(?:vercel\s+(?:deploy|promote|alias)|deploy)(?:\b|$)/i },
+    { id: 'publish', pattern: /\b(?:(?:npm|pnpm|yarn)\s+publish|publish)\b/i },
+    { id: 'push', pattern: /\b(?:git\s+push|push\s+(?:to\s+)?(?:origin|remote|production|prod))\b/i },
+    { id: 'merge', pattern: /\b(?:git\s+merge|gh\s+pr\s+merge|merge\s+(?:pull\s+request|pr|branch|release|\S+\s+into\s+\S+))\b/i },
+    { id: 'credential-rotation', pattern: /\b(?:(?:rotate|rotation|regenerate|revoke|replace)\b.{0,40}\b(?:credential|secret|token|api[- ]?key|password)|(?:credential|secret|token|api[- ]?key|password)\b.{0,40}\b(?:rotate|rotation|regenerate|revoke|replace))\b/i },
+    { id: 'production-write', pattern: /\b(?:production|prod)\s+(?:write|writes|migration|migrate|mutation|update|insert|delete|seed|backfill)\b|\b(?:write|update|insert|delete|migrate|seed|backfill)\b.{0,24}\b(?:production|prod)\b|\bapply\s+(?:database\s+)?migration\s+to\s+(?:production|prod)\b/i },
+  ]),
+})
+const commandPolicyDecision = value => {
+  const text = String(value || '')
+  const denied = EXTERNAL_COMMAND_POLICY.deny.find(rule => rule.pattern.test(text))
+  if (denied) return { disposition: 'deny', rule: denied.id }
+  const allowed = EXTERNAL_COMMAND_POLICY.allow.find(rule => rule.pattern.test(text))
+  return { disposition: 'allow', rule: allowed ? allowed.id : 'no-external-mutation-match' }
+}
 const planFileCollisions = plan => {
   if (!validPlan(plan)) return ['malformed plan']
   const owners = new Map()
@@ -853,8 +878,41 @@ const normalizeDefectPart = value => String(value).trim().toLowerCase().replace(
 const validRefutation = value => value && nonEmptyString(value.notes) && Array.isArray(value.defects) && value.defects.every(defect =>
   defect && PLAN_DEFECT_KINDS.has(defect.kind) && nonEmptyString(defect.lane) && typeof defect.blocking === 'boolean' &&
   nonEmptyString(defect.claim) && nonEmptyString(defect.evidence))
-const normalizedDefectKey = defect => [defect && defect.kind, rel(defect && defect.lane) || defect && defect.lane, defect && defect.claim]
-  .map(normalizeDefectPart).join(':')
+const DEFECT_TARGET_PATTERN = /[A-Za-z0-9_.-]+(?:\/[A-Za-z0-9_.-]+)+|[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g
+const parseDefectTargets = defect => {
+  const raw = (`${defect.claim} ${defect.evidence}`.match(DEFECT_TARGET_PATTERN) || [])
+  const normalized = raw.map(target => rel(target))
+  return { valid: normalized.every(Boolean), targets: [...new Set(normalized.filter(Boolean))] }
+}
+const resolveCandidateDefect = (plan, defect) => {
+  if (!validPlan(plan) || !defect) return null
+  const lane = plan.lanes.find(candidate => normalizeText(candidate.name) === normalizeText(defect.lane))
+  if (!lane) return null
+  const parsedTargets = parseDefectTargets(defect)
+  if (!parsedTargets.valid) return null
+  const targets = parsedTargets.targets
+  const candidateFiles = plan.lanes.flatMap(candidate => candidate.files.map(rel).filter(Boolean))
+  if (targets.some(target => !candidateFiles.some(file => overlaps(target, file)))) return null
+  const laneFiles = lane.files.map(rel).filter(Boolean)
+  const evidenceText = normalizeText(`${defect.claim} ${defect.evidence}`)
+  const anchoredToLane = evidenceText.includes(normalizeText(lane.name)) ||
+    laneFiles.some(file => evidenceText.includes(normalizeText(file)))
+  if (!anchoredToLane) return null
+  if (defect.kind === 'collision') {
+    const reproducedCollision = targets.find(target => {
+      const owners = plan.lanes.filter(candidate => candidate.files.map(rel).filter(Boolean)
+        .some(file => overlaps(target, file)))
+      return owners.length > 1 && laneFiles.some(file => overlaps(target, file))
+    })
+    if (!reproducedCollision) return null
+  }
+  return { lane: normalizeText(lane.name), targets: [...targets].sort() }
+}
+const normalizedDefectKey = (plan, defect) => {
+  const resolved = resolveCandidateDefect(plan, defect)
+  if (!resolved) return null
+  return [defect.kind, resolved.lane, resolved.targets.join(','), defect.claim].map(normalizeDefectPart).join(':')
+}
 const planEligibility = (plan, score) => {
   const reasons = []
   if (!validPlan(plan)) return ['malformed plan']
@@ -873,7 +931,12 @@ const planEligibility = (plan, score) => {
     if (!knownPlanSources.has(mapping.source)) reasons.push('scope mapping cites an unknown source')
   }
   if (plan.externalActions.length) reasons.push('plan requests external actions')
-  if (plan.lanes.some(lane => prohibitedExternalCommand.test(lane.task) || prohibitedExternalCommand.test(lane.acceptance))) reasons.push('plan contains a prohibited external command')
+  for (const lane of plan.lanes) {
+    for (const [field, value] of [['task', lane.task], ['acceptance', lane.acceptance]]) {
+      const decision = commandPolicyDecision(value)
+      if (decision.disposition === 'deny') reasons.push(`plan contains a prohibited external command (${decision.rule} in ${lane.name}.${field})`)
+    }
+  }
   const protectedFiles = (scout.dirtyFiles || []).map(rel).filter(Boolean)
   const liveSiblingFiles = [...contested.entries()]
     .filter(([, claims]) => claims.some(claim => claim.live))
@@ -1043,12 +1106,20 @@ the concrete claim, and evidence that another reader can verify. Empty defects a
             graph.dropped.push({ operation: 'RefutePlan', thoughtId, inputs: { parentId: thought.id, lens: index }, reason: 'malformed plan refutation' })
             return null
           }
-          return item.value
+          const defects = item.value.defects.filter(defect => {
+            const resolved = resolveCandidateDefect(thought.state.plan, defect)
+            if (!resolved) {
+              graph.dropped.push({ operation: 'RefutePlan', thoughtId, inputs: { parentId: thought.id, lens: index, defect }, reason: 'unresolvable plan refutation defect' })
+              return false
+            }
+            return true
+          })
+          return { ...item.value, defects }
         })
         const blocking = refutations.map(result => (result ? result.defects : [])
           .filter(defect => defect && defect.blocking))
         const matchingBlocker = blocking.length === 2 && blocking[0]
-          .find(defect => blocking[1].some(other => normalizedDefectKey(other) === normalizedDefectKey(defect)))
+          .find(defect => blocking[1].some(other => normalizedDefectKey(thought.state.plan, other) === normalizedDefectKey(thought.state.plan, defect)))
         return createThought({
           id: thoughtId, parentIds: [thought.id], operationId: 'refute-plans', operation: OPERATION_TYPES.Refute,
           depth: thought.depth + 1,
@@ -1164,16 +1235,28 @@ addOperation(operations, createOperation({
       thought.status === 'kept' && validPlan(thought.state.plan) && validScore(thought.score)))
     if (survivors.length < 2) return []
     const thoughtId = nextThoughtId()
-    const aggregatePlan = await callAgent(
-      `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+    let aggregatePlan
+    try {
+      aggregatePlan = await callAgent(
+        `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Surviving plans: ${JSON.stringify(survivors.map(thought => ({ id: thought.id, plan: thought.state.plan, score: thought.score })))}
 
 Aggregate the strongest compatible lanes into one complete plan. Preserve full scope coverage,
 give every file exactly one owner, keep every acceptance command observable, map every checklist
 item ${JSON.stringify(scopeChecklist)} to a lane/acceptance/known source, and return externalActions: []. Do not edit source.`,
-      { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only' }
-    )
+        { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only' }
+      )
+    } catch (error) {
+      if (error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
+      candidateFailure({ operation: 'Aggregate', thoughtId, inputs: { parentIds: survivors.map(thought => thought.id) }, error })
+      return [createThought({
+        id: thoughtId, parentIds: survivors.map(thought => thought.id), operationId: 'aggregate-plans', operation: OPERATION_TYPES.Aggregate,
+        depth: Math.max(...survivors.map(thought => thought.depth)) + 1,
+        state: { failure: error.message, contributingThoughtIds: survivors.map(thought => thought.id) },
+        score: null, status: 'failed',
+      })]
+    }
     const collisions = planFileCollisions(aggregatePlan)
     if (!validPlan(aggregatePlan)) {
       graph.dropped.push({
@@ -1215,7 +1298,15 @@ addOperation(operations, createOperation({
     .map(thought => {
       const thoughtId = nextThoughtId()
       return async () => {
-        const score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
+        let score
+        try {
+          score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
+        } catch (error) {
+          if (error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
+          candidateFailure({ operation: 'Score', thoughtId, inputs: { parentId: thought.id, aggregate: true }, error })
+          return createThought({ id: thoughtId, parentIds: [thought.id], operationId: 'score-aggregate', operation: OPERATION_TYPES.Score,
+            depth: thought.depth + 1, state: { ...thought.state, failure: error.message }, score: null, status: 'failed' })
+        }
         const scored = validScore(score) ? score : null
         if (score && !scored) {
           graph.dropped.push({ operation: OPERATION_TYPES.Score, thoughtId, inputs: { parentId: thought.id }, reason: 'malformed candidate score' })
@@ -1326,12 +1417,9 @@ log(`${plan.lanes.length} disjoint lanes over ${owner.size} files: ${plan.lanes.
 // changed-path boundary before any Review or Fix call can begin.
 const EFFORT = { mechanical: 'low', integration: 'medium', judgment: 'high' }
 
-// The refute stage is the only place in this graph whose agent count is decided by what
-// the reviewers happened to say rather than by the shape of the graph, so it is the only
-// place that can silently multiply the run's cost. Two review lenses at maxItems 10 is up
-// to 20 findings for ONE lane; at three verifiers each that was 60 agents for that lane
-// alone, against a run that advertises about fifty in total. These two ceilings make the
-// worst case finite and knowable. Both are logged when they bite — never a silent cap.
+// Review findings are data-dependent, so the per-lane Refute cap and global exact budget
+// keep the paired-verifier fan-out finite. Anything beyond the cap remains explicit
+// unverified evidence rather than disappearing from the handoff.
 const REFUTE_CAP_PER_LANE = BUDGET.refutePerLane
 const FIX_CAP = BUDGET.fixCap
 
@@ -1363,7 +1451,7 @@ if (buildViolations.length) {
     mutationAudit: 'Agent-reported changed paths were validated; the runner did not expose an independent worktree diff.' }
 }
 
-const laneResults = await pipeline(
+const laneResults = await settledPipeline(
   builtRecords,
 
   // dual-lens review — one asks "does it work", one asks "how does it fail in prod"

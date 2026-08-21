@@ -18,7 +18,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, eligibilityMode, includeUnsafePlan = false, refuteMode, delayedBranch, delayPhase, blockingHazard, selectedPlanCollision = false, buildChangedPath, reviewFindingPath, fixChangedPath, forceAgentCeiling, agentErrorPhase, agentErrorLabel } = {}) {
+function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, eligibilityMode, eligibilityCommand, includeUnsafePlan = false, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildChangedPath, reviewFindingPath, fixChangedPath, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -42,6 +42,7 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
     if (eligibilityMode === 'unknown-source' && candidate.scopeMap[0]) candidate.scopeMap[0].source = 'invented source'
     if (eligibilityMode === 'external-action') candidate.externalActions = ['deploy production']
     if (eligibilityMode === 'prohibited-command') candidate.lanes[0].acceptance = 'git push origin main'
+    if (eligibilityCommand) candidate.lanes[0].task = eligibilityCommand
     return candidate
   }
   const plan = (name, file, acceptance = 'node --test') => completePlan({
@@ -88,7 +89,16 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
         const name = includeUnsafePlan && index === 0
           ? 'unsafe-plan'
           : (scoreMode === 'ties' ? tieNames : defaultNames)[index]
-        const candidate = plan(name, `src/${name}.ts`)
+        const candidate = name === 'unsafe-plan'
+          ? completePlan({
+              summary: name,
+              coverage: checklist,
+              lanes: [
+                { name: 'unsafe-a', task: 'implement unsafe a', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+                { name: 'unsafe-b', task: 'implement unsafe b', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+              ],
+            })
+          : plan(name, `src/${name}.ts`)
         if (malformedPlans || index === malformedPlanIndex) candidate.summary = ''
         if (planMode === 'malformed') {
           const malformed = [
@@ -122,14 +132,30 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
         return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
       }
       case 'RefutePlan':
+        {
+          const candidate = JSON.parse(prompt.match(/^Candidate plan: (.+)$/m)[1])
+          const lane = candidate.lanes[0]
+          const otherLane = candidate.lanes[1] || lane
+          const target = lane.files[0]
+          const defect = {
+            kind: 'collision',
+            lane: lane.name,
+            blocking: true,
+            claim: `two lanes own ${target}: ${lane.name} and ${otherLane.name}`,
+            evidence: `candidate lanes ${lane.name} and ${otherLane.name} both list ${target}`,
+          }
         if (refuteMode === 'malformed') return { defects: [], notes: null }
         if (refuteMode === 'one-adversary' && label.endsWith(':1')) return { defects: [], notes: 'no matching blocker' }
-        if (refuteMode === 'nonblocking') return { defects: [{ kind: 'collision', lane: 'unsafe', blocking: false, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }], notes: 'not blocking' }
-        if (refuteMode === 'different-claim') return { defects: [{ kind: 'collision', lane: 'unsafe', blocking: true, claim: label.endsWith(':0') ? 'lane owns src/a.ts twice' : 'lane owns src/b.ts twice', evidence: 'different plan rows' }], notes: 'distinct concrete defect' }
-        if (refuteMode === 'different-lane') return { defects: [{ kind: 'collision', lane: label.endsWith(':0') ? 'unsafe' : 'other', blocking: true, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }], notes: 'different target' }
+        if (refuteMode === 'nonblocking') return { defects: [{ ...defect, blocking: false }], notes: 'not blocking' }
+        if (refuteMode === 'different-claim') return { defects: [{ ...defect, claim: label.endsWith(':0') ? defect.claim : `${lane.name} owns ${target} twice` }], notes: 'distinct concrete defect' }
+        if (refuteMode === 'different-lane') return { defects: [{ ...defect, lane: label.endsWith(':0') ? lane.name : otherLane.name }], notes: 'different target' }
+        if (refuteMode === 'nonexistent-lane') return { defects: [{ ...defect, lane: 'nonexistent-lane' }], notes: 'fabricated lane' }
+        if (refuteMode === 'nonexistent-target') return { defects: [{ ...defect, claim: 'two lanes own src/nonexistent.ts', evidence: `candidate lane ${lane.name} lists src/nonexistent.ts` }], notes: 'fabricated target' }
+        if (refuteMode === 'nonexistent-root-target') return { defects: [{ ...defect, kind: 'test-gap', claim: 'README.md has no acceptance coverage', evidence: `candidate lane ${lane.name} cites README.md` }], notes: 'fabricated root target' }
         return rejectEveryPlan || prompt.includes('unsafe-plan')
-          ? { defects: [{ kind: 'collision', lane: 'unsafe', blocking: true, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }], notes: 'same concrete blocker' }
+          ? { defects: [defect], notes: 'same concrete blocker' }
           : { defects: [], notes: 'no reproducible blocker' }
+        }
       case 'Improve':
         if (delayedBranch) {
           const branch = prompt.includes('safe-a') ? 'safe-a' : 'safe-b'
@@ -183,11 +209,16 @@ function runShip ({ agentBudget = 'standard', scope = 'change the thing', lanes 
 
   const agent = async (prompt, opts = {}) => {
     calls.push({ prompt, ...opts })
-    if (!agentErrorFired && opts.phase === agentErrorPhase && (!agentErrorLabel || opts.label === agentErrorLabel)) {
+    const pointMatches = agentErrorPoint === 'aggregate'
+      ? opts.phase === 'Aggregate'
+      : agentErrorPoint === 'aggregate-score'
+        ? opts.phase === 'Score' && prompt.includes('aggregate-safe')
+        : false
+    if (!agentErrorFired && (pointMatches || (opts.phase === agentErrorPhase && (!agentErrorLabel || opts.label === agentErrorLabel)))) {
       agentErrorFired = true
-      throw new Error(`programming error at ${agentErrorPhase}`)
+      throw new Error(`programming error at ${agentErrorPoint || agentErrorPhase}`)
     }
-    if (delayPhase === opts.phase) await new Promise(resolve => setTimeout(resolve, 20))
+    if (delayPhase === opts.phase || (delayLabel && opts.label === delayLabel)) await new Promise(resolve => setTimeout(resolve, 20))
     if (delayedBranch && ['RefutePlan', 'Improve', 'Score'].includes(opts.phase) &&
       prompt.includes(delayedBranch)) {
       await new Promise(resolve => setTimeout(resolve, 15))
@@ -355,6 +386,27 @@ test('deterministic plan eligibility rejects unsafe or incomplete winners before
   }
 })
 
+test('deterministic plan eligibility denies every external mutation command class', async () => {
+  // Catches an empty externalActions array laundering a literal mutating lane command.
+  const commands = [
+    'vercel deploy --prod',
+    'npm publish',
+    'git push origin main',
+    'git merge release',
+    'merge main into release',
+    'rotate credential api-key',
+    'credential rotation',
+    'production write users active=true',
+    'apply database migration to production',
+  ]
+  for (const eligibilityCommand of commands) {
+    const { result, calls } = await runShip({ eligibilityCommand, findingsPerLens: 0 })
+    assert.equal(result.reason, 'no safe graph winner', eligibilityCommand)
+    assert.equal(calls.some(call => call.phase === 'Build'), false, eligibilityCommand)
+    assert.ok(result.graph.dropped.some(item => String(item.reason).includes('prohibited external command')), eligibilityCommand)
+  }
+})
+
 test('a valid multi-item scope maps every item to a lane acceptance command and known source', async () => {
   // Catches line/bullet collapse in the deterministic checklist.
   const { result } = await runShip({ scope: '- change api\n2. change docs', findingsPerLens: 0 })
@@ -375,12 +427,33 @@ test('Refute requires two valid responses with the same concrete blocking defect
   assert.notEqual(unsafe.status, 'refuted')
 })
 
+test('identical Refute defects with a nonexistent candidate lane or target never reach consensus', async () => {
+  // Catches paired adversaries agreeing on evidence that the candidate itself cannot reproduce.
+  for (const refuteMode of ['nonexistent-lane', 'nonexistent-target', 'nonexistent-root-target']) {
+    const { result } = await runShip({ includeUnsafePlan: true, refuteMode, malformedAggregate: true, findingsPerLens: 0 })
+    const unsafe = result.graph.thoughts.find(thought => thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
+    assert.notEqual(unsafe.status, 'refuted', refuteMode)
+    assert.ok(result.graph.dropped.some(item => item.reason === 'unresolvable plan refutation defect'), refuteMode)
+  }
+})
+
 test('candidate-local agent failures are dropped while healthy graph siblings still select a winner', async () => {
   // Catches Promise.all aborting the complete search for one bad candidate response.
   for (const agentErrorPhase of ['Generate', 'Score', 'RefutePlan', 'Improve']) {
     const { result } = await runShip({ agentErrorPhase, findingsPerLens: 0 })
     assert.ok(result.selectedPlan, agentErrorPhase)
     assert.ok(result.graph.dropped.some(item => item.reason === 'candidate agent failure' && item.operation === agentErrorPhase), agentErrorPhase)
+  }
+})
+
+test('Aggregate and aggregate-Score agent failures preserve a healthy survivor fallback', async () => {
+  // Catches optional synthesis paths aborting selection after the survivor beam is already healthy.
+  for (const agentErrorPoint of ['aggregate', 'aggregate-score']) {
+    const { result } = await runShip({ agentErrorPoint, findingsPerLens: 0 })
+    assert.equal(result.selectedPlan.summary, 'improved-safe', agentErrorPoint)
+    assert.ok(result.graph.dropped.some(item => item.reason === 'candidate agent failure'), agentErrorPoint)
+    assert.ok(result.graph.thoughts.some(thought => thought.status === 'failed' &&
+      (thought.operation === 'Aggregate' || thought.operationId === 'score-aggregate')), agentErrorPoint)
   }
 })
 
@@ -447,6 +520,7 @@ test('every derived thought keeps immutable parent lineage', async () => {
 test('operation graph validation rejects duplicate IDs, missing predecessors, and cycles before execution', async () => {
   // Catches duplicate-ID acceptance, missing dependency acceptance, and cyclic scheduling.
   const { createOperation, validateOperationGraph } = await loadGraphCore()
+  assert.throws(() => validateOperationGraph([]), /exactly one root; got 0/)
   const duplicate = [
     createOperation({ id: 'a', type: 'Generate', execute: async () => [] }),
     createOperation({ id: 'a', type: 'Score', execute: async () => [] }),
@@ -550,6 +624,29 @@ test('started read-only fan-outs settle before budget exhaustion returns', async
   assert.equal(result.reason, 'agent budget exhausted')
   assert.equal(countPhase(calls, 'Research'), 1)
   assert.equal(countPhase(completedCalls, 'Research'), 1)
+})
+
+test('cross-lane Review and Refute pipelines settle started siblings before budget return', async () => {
+  // Catches an outer Promise.all rejection returning while another lane still has read-only calls in flight.
+  const baseline = await runShip({ findingsPerLens: 1 })
+  const boundaries = [
+    { phase: 'Review', delayedLabel: 'review:a', started: 3 },
+    { phase: 'Refute', delayedLabel: 'refute:src/a.ts', started: 5 },
+  ]
+  for (const boundary of boundaries) {
+    const first = baseline.calls.findIndex(call => call.phase === boundary.phase)
+    assert.ok(first > 0, boundary.phase)
+    const { result, calls, completedCalls } = await runShip({
+      findingsPerLens: 1,
+      forceAgentCeiling: first + boundary.started,
+      delayLabel: boundary.delayedLabel,
+    })
+    assert.equal(result.reason, 'agent budget exhausted', boundary.phase)
+    assert.equal(countPhase(calls, boundary.phase), boundary.started, boundary.phase)
+    assert.equal(countPhase(completedCalls, boundary.phase), boundary.started, boundary.phase)
+    assert.ok(result.graph.callLedger.filter(call => call.phase === boundary.phase)
+      .every(call => call.status !== 'running'), boundary.phase)
+  }
 })
 
 test('a tracked secret halts before Generate and Build', async () => {
