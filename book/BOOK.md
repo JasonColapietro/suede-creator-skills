@@ -201,11 +201,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 73 skills fit
 
 Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
-repo total 1,057,580 bytes. Loading all of them into every conversation would
+repo total 1,050,273 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 73 descriptions together come to 43,997 bytes. That is roughly a
+all 73 descriptions together come to 43,383 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -338,8 +338,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 73 files total 1,057,580 bytes;
-the 73 descriptions together are 43,997. The agent holds the small number and
+when the skill is not running. In this repo the 73 files total 1,050,273 bytes;
+the 73 descriptions together are 43,383. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -571,7 +571,8 @@ not, write the output block first and rebuild the body around it.
 # Chapter 3. The Description Contract
 
 Five skills in this pack mention code in their first sentence. A review skill, a
-grader, a combined pass, a CI gate, and a fifty-agent shipping DAG. You type
+grader, a combined pass, a CI gate, and a Graph-of-Thoughts shipping search
+capped at 55, 110, or 200 calls. You type
 "can you look at this PR," and exactly one of them is correct. Nothing in the
 system errors if the wrong one runs. You get output either way, and the output
 looks fine.
@@ -1175,9 +1176,12 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
-on the label, and the fleet skill exists precisely so volume can leave the
-Anthropic meter. Extended release is the other scheduling regime: between
+model unless told otherwise, and `suede-ship` states its exact light, standard,
+and deep ceilings of 55, 110, and 200 total calls before launch. It generates
+competing plans, scores and prunes them, refutes and improves the survivors,
+aggregates compatible lanes, and lets only the selected plan mutate. The fleet
+skill exists precisely so well-specified volume can leave the Anthropic meter.
+Extended release is the other scheduling regime: between
 passes, `suede-recommend-next-action` scores candidate moves on goal fit,
 unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
 prompt, so the idle state between runs is a queued next action instead of a
@@ -1230,11 +1234,14 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. It reads production and never
-deploys, so its instructions forbid it from claiming `deployed`, `verified live`,
-or `released` under any circumstances. Those states require a deploy that has not
-happened. A skill that will not overclaim on its own behalf is the only kind
-whose reports are worth anything.
+`suede-ship` enforces the same boundary on itself. Its Graph-of-Thoughts search
+generates competing plans, scores and prunes them, refutes and improves the
+survivors, aggregates compatible lanes, and permits only the selected plan to
+mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
+production and never deploys, so its instructions forbid it from claiming
+`deployed`, `verified live`, or `released` under any circumstances. Those states
+require a deploy that has not happened. A skill that will not overclaim on its
+own behalf is the only kind whose reports are worth anything.
 
 ## What counts
 
@@ -3160,7 +3167,7 @@ describing the work in the words its description was written to catch.
 | Skill | Use it when |
 |---|---|
 | `suede-full-send` | You want a broad authorized outcome finished end to end, with one controller and proof at the close |
-| `suede-ship` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
+| `suede-ship` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
 | `suede-codex-fleet` | The job is high-volume and splits cleanly into worker-sized tasks, and you want OpenAI Codex CLI workers generating while Claude reviews |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |

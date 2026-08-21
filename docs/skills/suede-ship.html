@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Suede Ship | Multi-Agent Shipping DAG | Suede Creator Skills</title>
-    <meta name="description" content="Use Suede Ship in Claude Code and Codex to run a nontrivial change through a research-heavy agent graph that halts on hazards and gates on real tests.">
+    <title>Suede Ship | Graph-of-Thoughts Shipping Search | Suede Creator Skills</title>
+    <meta name="description" content="Search competing repo plans, score and prune them, refute and improve survivors, aggregate compatible lanes, then build only the selected plan. 55/110/200-call caps; never deploys.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-ship.html">
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Ship - Suede Creator Skills">
-    <meta property="og:description" content="Use Suede Ship in Claude Code and Codex to run a nontrivial change through a research-heavy agent graph that halts on hazards and gates on real tests.">
+    <meta property="og:description" content="Search competing repo plans, score and prune them, refute and improve survivors, aggregate compatible lanes, then build only the selected plan. 55/110/200-call caps; never deploys.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-ship.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Suede Ship - Suede Creator Skills">
-    <meta name="twitter:description" content="Use Suede Ship in Claude Code and Codex to run a nontrivial change through a research-heavy agent graph that halts on hazards and gates on real tests.">
+    <meta name="twitter:description" content="Search competing repo plans, score and prune them, refute and improve survivors, aggregate compatible lanes, then build only the selected plan. 55/110/200-call caps; never deploys.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -24,11 +24,11 @@
         "@type": "TechArticle",
         "@id": "https://skills.suedeai.ai/skills/suede-ship.html#article",
         "headline": "Suede Ship - Suede Creator Skills",
-        "description": "Suede Ship is the canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. It halts on a blocking hazard or a lane collision, and reads production without ever deploying.",
+        "description": "Suede Ship is a Graph-of-Thoughts shipping search: it generates competing plans, scores and prunes them, adversarially refutes and improves survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep runs are capped at 55, 110, and 200 calls. Production access is read-only; it never deploys.",
         "url": "https://skills.suedeai.ai/skills/suede-ship.html",
         "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
         "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
-        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "multi-agent orchestration", "directed acyclic graph", "agent fan-out", "adversarial verification", "git worktree isolation", "critical path"],
+        "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "Graph-of-Thoughts", "plan search", "multi-agent orchestration", "adversarial verification", "git worktree isolation", "winner-only mutation"],
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "suede-ship",
@@ -72,9 +72,9 @@
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <div class="eyebrow">/suede-ship &middot; multi-agent shipping DAG</div>
-      <h1>Fifty agents. One graph. One shipped change.</h1>
-      <p class="lead">Suede Ship runs a nontrivial change as a graph instead of a chain: scout, multi-lens research, a gap critic that names what went unread, a lane plan with explicit file ownership, disjoint parallel build, adversarial refutation of every finding, and an integration gate on typecheck, build, and tests. It halts on a blocking hazard or a lane collision rather than plowing through, and it reads production without ever deploying.</p>
+      <div class="eyebrow">/suede-ship &middot; Graph-of-Thoughts shipping search</div>
+      <h1>Competing plans. One selected build.</h1>
+      <p class="lead">Suede Ship generates competing implementation plans, scores and prunes them, adversarially refutes and improves the survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep runs are capped at 55, 110, and 200 total agent calls. It halts before mutation on hazards, collisions, budget exhaustion, or no safe winner. Production inspection is read-only; it never deploys.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ship">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
@@ -90,9 +90,10 @@
           <span class="skill-term-title">claude code &middot; sample session</span>
         </div>
         <div class="skill-term-body">
-          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-ship add rate limiting to the api</span></span>
-          <span class="t-line">scout: clean &middot; 4 lanes planned &middot; no collisions</span>
-          <span class="t-line">build 4/4 &middot; refute killed 2 of 9 findings</span>
+          <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-ship repo=~/code/api budget=standard scope="add per-account rate limiting"</span></span>
+          <span class="t-line">generate: 4 plans &middot; score + prune: 2 survive</span>
+          <span class="t-line">refute + improve &middot; aggregate compatible lanes &middot; select: plan-3</span>
+          <span class="t-line">build selected plan only &middot; 83/110 calls</span>
           <span class="t-line"><span class="term-grade">GATE: TYPECHECK + BUILD + TESTS PASS</span></span>
           <span class="t-line">handoff written &middot; not deployed<span class="term-cursor" aria-hidden="true"></span></span>
         </div>
@@ -114,21 +115,21 @@ cp -R /tmp/suede-creator-skills/skills/suede-ship .claude/skills/</code></pre>
         <article class="card">
           <h2>What it covers</h2>
           <ul>
-            <li>Scout the repo first: origin state, dirty files, sibling worktrees, and deploy-time landmines, as a manifest only.</li>
-            <li>Sweep with multi-modal research lenses that each search a different way, where every claim carries a <code>file:line</code>, sha, PR, or doc url.</li>
-            <li>Run a completeness critic that names what went unread, then one bounded round to fill the gaps.</li>
-            <li>Plan lanes with explicit file ownership, so no two parallel workers can claim the same file.</li>
-            <li>Refute every finding adversarially on fresh context, where a majority of skeptics kills it.</li>
-            <li>Gate on a real barrier: typecheck, build, and tests against the integrated worktree, then write an evidence handoff.</li>
+            <li>Scout and research the repository without mutating it, with evidence attached to each claim.</li>
+            <li><strong>Generate</strong> competing implementation plans, then <strong>Score</strong> and <strong>KeepBestN</strong> to prune the beam deterministically.</li>
+            <li><strong>Refute</strong> surviving plans adversarially and <strong>Improve</strong> the ones whose objections are repairable.</li>
+            <li><strong>Aggregate</strong> compatible lanes without merging conflicting file ownership, then <strong>Select</strong> one winner.</li>
+            <li>Allow only the selected plan to mutate; rejected, pruned, and unselected thoughts remain evidence.</li>
+            <li>Gate the integrated winner on typecheck, build, and tests, then write an evidence handoff without deploying.</li>
           </ul>
         </article>
         <article class="card">
           <h2>When to use it</h2>
           <ul>
-            <li>Any nontrivial change that touches more than one file or surface and deserves surgical, research-heavy fan-out.</li>
+            <li>Any multi-file change where competing implementation plans should be compared before the worktree changes.</li>
             <li>Work in a repo where several sessions run at once and a lane collision would otherwise clobber a sibling branch.</li>
             <li>Changes where you want the findings refuted before you read them, not after you ship them.</li>
-            <li>Runs you want resumable, replaying unchanged agents from cache instead of paying for the whole graph again.</li>
+            <li>Choose the budget before launch: light permits 55, standard 110, and deep 200 total agent calls.</li>
             <li>Not for: high-volume, well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription instead).</li>
             <li>Not for: findings-only review with no code change (use suede-code-review).</li>
             <li>Not for: wiring CI and branch protection (use suede-ci-gate).</li>
@@ -138,7 +139,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-ship .claude/skills/</code></pre>
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $suede-ship on ~/code/my-app to add per-account rate limiting to every API route. Keep my scope verbatim so the planner can split it into lanes, and state the cost before launching.</code></pre>
+        <pre><code>Use $suede-ship on ~/code/my-app to add per-account rate limiting to every API route. Scope: preserve the existing auth contract and unrelated WIP. Budget: standard. Search competing plans and mutate only the selected winner. Read production if needed, but do not deploy.</code></pre>
       </section>
 
       <section class="panel">
@@ -185,7 +186,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-ship .claude/skills/</code></pre>
     </section>
     <footer>
       <div class="shell">
-        <p class="footer-note">Suede Ship is part of Suede Creator Skills: the canonical shipping DAG that fans out about fifty agents, refutes its own findings, and gates on real tests.</p>
+        <p class="footer-note">Suede Ship is the pack's Graph-of-Thoughts shipping search: 55/110/200-call ceilings, adversarial plan improvement, winner-only mutation, evidence gates, production reads only, and no deployment authority.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">

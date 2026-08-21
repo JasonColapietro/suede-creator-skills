@@ -3644,7 +3644,7 @@
           <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
         </div>
 
-        <a id="hero-shiplog" class="hero-anim" href="#changelog" aria-label="Ship log. Latest entry August 16, 2026: the pack is re-cut into five browse specialities. Jump to the full changelog.">
+        <a id="hero-shiplog" class="hero-anim" data-status="prepared" href="#changelog" aria-label="Ship log. Prepared entry August 21, 2026: Graph search replaces the fixed shipping DAG. Jump to the full changelog.">
           <span class="hero-spark" aria-hidden="true">
             <span style="height:2%"></span>
             <span style="height:100%"></span>
@@ -3658,8 +3658,8 @@
             <span style="height:67%"></span>
           </span>
           <span class="hero-shiplog-text">
-            <span class="hero-shiplog-top">Released Aug 16 <b>&middot; 1e2d70e</b></span>
-            <span class="hero-shiplog-title">Six specialities, and an MCP that navigates them</span>
+            <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base b4d5970</b></span>
+            <span class="hero-shiplog-title">Graph search replaces the fixed shipping DAG</span>
             <span class="hero-shiplog-more">282 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
         </a>
@@ -3803,11 +3803,11 @@
   <div class="clog-inner">
 
     <div class="clog-rail">
-      <p class="clog-eyebrow reveal">Changelog &middot; straight from main</p>
+      <p class="clog-eyebrow reveal">Changelog &middot; landed + prepared</p>
       <h2 id="changelog-headline" class="clog-headline reveal reveal-d1">A review pack had better survive its own review.</h2>
-      <p class="clog-sub reveal reveal-d1">So the work ships in public. Every entry below is a real commit on <code>main</code>: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
+      <p class="clog-sub reveal reveal-d1">So the work ships in public. Released entries cite the commit that landed on <code>main</code>. A newest prepared entry is explicitly unreleased and cites only the current branch's merge base until review and merge provide a landing hash. No "various improvements."</p>
 
-      <p class="clog-fresh reveal reveal-d2">Version 0.14.0 released Aug 16, 2026 <span id="clog-fresh-rel" data-iso="2026-08-16"></span></p>
+      <p class="clog-fresh reveal reveal-d2">Version 0.15.0 prepared Aug 21, 2026 <span id="clog-fresh-rel" data-iso="2026-08-21"></span></p>
 
       <div class="clog-spark reveal reveal-d2" role="img" aria-label="Commit activity per week over the last ten weeks, oldest to newest: 2, 64, 25, 33, 18, 19, 29, 27, 32, and 33 commits.">
         <span style="height:3%"></span>
@@ -3834,6 +3834,16 @@
 
     <div class="reveal reveal-d1">
       <ol class="clog-list" id="clog-list">
+
+        <li class="clog-item" data-type="new" data-status="prepared">
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-21</span>
+            <span class="clog-tag">Orchestration</span>
+            <a class="clog-hash clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/b4d5970" target="_blank" rel="noopener" aria-label="View base commit b4d5970 on GitHub">base b4d5970</a>
+          </p>
+          <h3 class="clog-title">Graph search replaces the fixed shipping DAG</h3>
+          <p class="clog-detail">Version 0.15.0 replaces <code>suede-ship</code>'s fixed single-plan DAG with a bounded Graph-of-Thoughts search. It generates competing plans, scores and prunes them, adversarially refutes and improves survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep stop at 55, 110, and 200 total agent calls. Production access remains read-only; the skill never deploys.</p>
+        </li>
 
         <li class="clog-item" data-type="new">
           <p class="clog-meta">
@@ -4267,7 +4277,7 @@
         </g>
       </svg>
     </div>
-    <p class="flow-note reveal reveal-d2">House line: <strong>"Never end your allocation above zero."</strong> Dry joke, not a literal token promise. The full DAG behind it ships as <a href="skills/suede-ship.html">/suede-ship</a>, and the copy-only variant as <a href="skills/suede-ship-copy.html">/suede-ship-copy</a>.</p>
+    <p class="flow-note reveal reveal-d2">House line: <strong>"Never end your allocation above zero."</strong> Dry joke, not a literal token promise. The Graph-of-Thoughts repo search ships as <a href="skills/suede-ship.html">/suede-ship</a>, and the separate copy-only DAG as <a href="skills/suede-ship-copy.html">/suede-ship-copy</a>.</p>
   </div>
 </section>
 
@@ -4681,12 +4691,12 @@
       </a>
       <a class="catalog-row" href="skills/suede-ship.html">
         <span class="catalog-skill">suede-ship</span>
-        <span class="catalog-desc">The canonical orchestration DAG for repo changes: research, red-teamed planning, disjoint lanes, adversarial review, release verification</span>
+        <span class="catalog-desc">Graph-of-Thoughts shipping search: competing plans are scored, pruned, refuted, improved, and aggregated before only the selected plan mutates; 55/110/200-call caps; production reads only</span>
         <span class="catalog-arrow">-&gt;</span>
       </a>
       <a class="catalog-row" href="skills/suede-ship-copy.html">
         <span class="catalog-skill">suede-ship-copy</span>
-        <span class="catalog-desc">The same DAG rebuilt for one high-stakes piece of writing: blind research, claim audit, section writers, refutation, publish gate</span>
+        <span class="catalog-desc">A separate copy-only DAG for one high-stakes piece of writing: blind research, claim audit, section writers, refutation, publish gate</span>
         <span class="catalog-arrow">-&gt;</span>
       </a>
       <a class="catalog-row" href="skills/suede-workflow-skills.html">
@@ -4943,7 +4953,7 @@
         <span class="essay-date">Aug 2026</span>
         <span class="essay-copy">
           <span class="essay-title">71 skills installed. Your agent reads almost none of them.</span>
-          <span class="essay-hook">Progressive disclosure, the ship DAG, and the MCP layer</span>
+          <span class="essay-hook">Progressive disclosure, Graph-of-Thoughts shipping search, and the MCP layer</span>
         </span>
         <span class="essay-arrow" aria-hidden="true">-&gt;</span>
       </a>

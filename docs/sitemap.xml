@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://skills.suedeai.ai/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/guide.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/skills/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -422,13 +422,13 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/skills/suede-ship.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/skills/suede-ship-copy.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -494,7 +494,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -506,13 +506,13 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/anatomy-of-a-skill.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -524,7 +524,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -554,7 +554,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -566,7 +566,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/skill-index.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -578,13 +578,13 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/the-competence-gap.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/the-description-contract.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -614,7 +614,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/book/s-tier.pdf</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

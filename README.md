@@ -119,8 +119,8 @@ Tell your agent "max effort, spare no compute, fix everything" and most of the t
 The rest of the orchestration lane backs it up:
 
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
-- [`suede-ship`](skills/suede-ship) runs the canonical orchestration DAG on a repo: scout, multi-lens research, a red-teamed lane plan, disjoint build lanes, dual-lens review, adversarial refutation, an integration gate, and a release verifier with an evidence handoff.
-- [`suede-ship-copy`](skills/suede-ship-copy) is the same DAG rebuilt for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
+- [`suede-ship`](skills/suede-ship) runs a Graph-of-Thoughts shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
+- [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 - [`suede-codex-fleet`](skills/suede-codex-fleet) is the Suede Fable Fleet: a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships. Claude judges, Codex generates.
 
 ## The A–F ship grade
@@ -141,7 +141,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 |---|---|
 | [`suede-full-send`](skills/suede-full-send) | Full Send broad authorized outcomes through one controller, useful non-colliding lanes, adversarial reconciliation, and proof |
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
-| [`suede-ship`](skills/suede-ship) | The canonical orchestration DAG for repo changes: research, red-teamed planning, disjoint lanes, adversarial review, release verification |
+| [`suede-ship`](skills/suede-ship) | Graph-of-Thoughts repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-codex-fleet`](skills/suede-codex-fleet) | Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
@@ -213,7 +213,7 @@ under the MIT License — see [NOTICE.md](NOTICE.md).
 
 Essays on why the pack is built the way it is:
 
-- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, the ship DAG, and the MCP layer
+- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, Graph-of-Thoughts shipping search, and the MCP layer
 - [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 73-skill pack
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
 - [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills

@@ -12,8 +12,8 @@
 
 ## Global Constraints
 
-- Work only in `/Users/jasoncolapietro/code/suede-creator-skills.worktrees/suede-ship-got-20260821` on `codex/suede-ship-got-20260821`, based on `origin/main` at `b4d5970`.
-- Preserve the dirty sibling worktree at `/Users/jasoncolapietro/code/suede-creator-skills.worktrees/setup-matt-pocock-skills-codex-20260815` without reading, resetting, deleting, or reusing it.
+- Work only in the isolated task worktree on `codex/suede-ship-got-20260821`, based on `origin/main` at `b4d5970`.
+- Preserve the dirty sibling worktree for the setup task without reading, resetting, deleting, or reusing it.
 - Keep the workflow runner ABI: injected `args`, `agent`, `parallel`, `pipeline`, `phase`, `log`, `budget`, and `workflow` globals; no Python runtime and no new package dependency.
 - Preserve the invocation arguments `repo`, `scope`, `deploys`, `liveUrl`, `agentBudget`, and `vault`.
 - Search remains read-only; only the selected plan can reach Build or mutate source.
@@ -490,7 +490,7 @@ Add this header at the top of the adapted workflow:
 ```bash
 npm run test:triggers
 node scripts/validate-skill-pack.mjs --strict
-python3 /Users/jasoncolapietro/.agents/skills/suede-skill-forge/scripts/lint_skill_estate.py skills/suede-ship
+python3 ~/.agents/skills/suede-skill-forge/scripts/lint_skill_estate.py skills/suede-ship
 git diff --check
 ```
 
@@ -578,7 +578,7 @@ git commit -m "docs: publish suede ship graph search contract"
 ### Task 6: Full verification and durable handoff
 
 **Files:**
-- Create: `/Users/jasoncolapietro/Library/CloudStorage/GoogleDrive-jasoncola1@gmail.com/My Drive/Codex Claude Memory Vault/05_handoffs/2026-08-21-codex-suede-ship-graph-of-thoughts.md`
+- Create: `<memory-vault>/05_handoffs/2026-08-21-codex-suede-ship-graph-of-thoughts.md`
 
 **Interfaces:**
 - Consumes: the complete branch diff.
@@ -643,8 +643,8 @@ The handoff must record:
 ```markdown
 # Suede Ship Graph-of-Thoughts Rewrite
 
-- Target: /Users/jasoncolapietro/code/suede-creator-skills
-- Worktree: /Users/jasoncolapietro/code/suede-creator-skills.worktrees/suede-ship-got-20260821
+- Target: repository root
+- Worktree: isolated task worktree
 - Branch: codex/suede-ship-got-20260821
 - Remote: https://github.com/JasonColapietro/suede-creator-skills.git
 - Base: origin/main at b4d5970
@@ -661,7 +661,7 @@ The handoff must record:
 Run:
 
 ```bash
-git -C "/Users/jasoncolapietro/Library/CloudStorage/GoogleDrive-jasoncola1@gmail.com/My Drive/Codex Claude Memory Vault" rev-parse --is-inside-work-tree
+git -C "<memory-vault>" rev-parse --is-inside-work-tree
 ```
 
 If true, commit only the new handoff file using the vault's current branch conventions. If false, leave the handoff as a Drive file and report that state.
