@@ -20,12 +20,20 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS, scoreMode } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
 
-  const fixture = (opts) => {
+  const plan = (name, file, acceptance = 'node --test') => ({
+    summary: name,
+    coverage: ['change the thing'],
+    lanes: [{ name, task: `implement ${name}`, files: [file], tier: 'integration', acceptance }],
+  })
+  const defaultNames = ['safe-a', 'safe-b', 'weak-c', 'weak-d', 'weak-e', 'weak-f', 'weak-g', 'weak-h']
+  const tieNames = ['coverage-wins', 'safety-wins', 'evidence-third', 'weak-d', 'weak-e']
+
+  const fixture = (opts, prompt = '') => {
     const label = opts.label || ''
     switch (opts.phase) {
       case 'Scout':
@@ -54,6 +62,20 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
             acceptance: 'npm test',
           })),
         }
+      case 'Generate': {
+        const index = Number(label.split(':').at(-1))
+        const name = (scoreMode === 'ties' ? tieNames : defaultNames)[index]
+        return plan(name, `src/${name}.ts`)
+      }
+      case 'Score': {
+        if (scoreMode === 'ties') {
+          if (prompt.includes('coverage-wins')) return { coverage: 20, evidence: 14, feasibility: 16, safety: 15, efficiency: 15, total: 80, rationale: 'coverage tie break' }
+          if (prompt.includes('safety-wins')) return { coverage: 19, evidence: 14, feasibility: 16, safety: 16, efficiency: 15, total: 80, rationale: 'safety tie break' }
+          if (prompt.includes('evidence-third')) return { coverage: 19, evidence: 13, feasibility: 17, safety: 16, efficiency: 15, total: 80, rationale: 'evidence loses tie' }
+        }
+        const total = prompt.includes('safe-a') ? 88 : prompt.includes('safe-b') ? 82 : 40
+        return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
+      }
       case 'Build':
         return { state: 'done', changed: ['src/x.ts'], notes: '' }
       case 'Review':
@@ -83,8 +105,8 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
   }
 
   const agent = async (prompt, opts = {}) => {
-    calls.push({ phase: opts.phase, label: opts.label })
-    return fixture(opts)
+    calls.push({ prompt, ...opts })
+    return fixture(opts, prompt)
   }
   const parallel = (thunks) => Promise.all(thunks.map((t) => t()))
   const pipeline = async (items, ...stages) =>
@@ -112,6 +134,52 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
 
 const countPhase = (calls, phase) => calls.filter((c) => c.phase === phase).length
 
+async function loadGraphCore () {
+  const prefix = SOURCE.split('// ---------------------------------------------------------------- 0. scout')[0]
+    .replace('export const meta', 'const meta')
+  const load = new AsyncFunction('args', 'budget', `${prefix}\nreturn { createOperation, validateOperationGraph }`)
+  return load({ repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard' }, { total: null })
+}
+
+test('Graph of Thoughts generates independent plans and deterministically prunes to the configured beam', async () => {
+  // Catches collapsed branching: one plan must not stand in for the candidate set.
+  const { result } = await runShip({ agentBudget: 'standard', lanes: 1, findingsPerLens: 0 })
+  assert.equal(result.graph.thoughts.filter(t => t.operation === 'Generate').length, 5)
+  const pruned = result.graph.pruned.filter(t => t.operationId === 'keep-generated')
+  assert.equal(pruned.length, 3)
+  assert.ok(pruned.some(t => t.state.plan.summary === 'weak-c'))
+  assert.equal(result.graph.operations.find(op => op.id === 'keep-generated').type, 'KeepBestN')
+})
+
+test('score ties resolve by coverage then safety then evidence then thought id', async () => {
+  // Catches unstable ranking when equal totals have multiple plausible survivors.
+  const { result } = await runShip({ scoreMode: 'ties', findingsPerLens: 0 })
+  const kept = result.graph.thoughts.filter(t => t.operationId === 'keep-generated' && t.status === 'kept')
+  assert.deepEqual(kept.map(t => t.state.plan.summary), ['coverage-wins', 'safety-wins'])
+})
+
+test('every derived thought keeps immutable parent lineage', async () => {
+  // Catches predecessor mutation, which would erase the audit trail before selection.
+  const { result } = await runShip({ findingsPerLens: 0 })
+  const generated = result.graph.thoughts.filter(t => t.operation === 'Generate')
+  const scored = result.graph.thoughts.filter(t => t.operationId === 'score-generated')
+  assert.ok(Object.isFrozen(generated[0]))
+  assert.deepEqual(scored.map(t => t.parentIds.length), Array(scored.length).fill(1))
+  assert.deepEqual(generated.map(t => t.score), Array(generated.length).fill(null))
+})
+
+test('operation graph validation rejects missing predecessors and cycles before execution', async () => {
+  // Catches missing dependency acceptance and cyclic scheduling before either can spawn agents.
+  const { createOperation, validateOperationGraph } = await loadGraphCore()
+  const missing = [createOperation({ id: 'a', type: 'Generate', predecessorIds: ['absent'], execute: async () => [] })]
+  assert.throws(() => validateOperationGraph(missing), /unknown predecessor absent/)
+  const cycle = [
+    createOperation({ id: 'a', type: 'Generate', predecessorIds: ['b'], execute: async () => [] }),
+    createOperation({ id: 'b', type: 'Score', predecessorIds: ['a'], execute: async () => [] }),
+  ]
+  assert.throws(() => validateOperationGraph(cycle), /cycle/)
+})
+
 test('refutation fan-out stays bounded when every review lens returns a full findings array', async () => {
   const { calls } = await runShip()
   const refute = countPhase(calls, 'Refute')
@@ -132,11 +200,11 @@ test('the fix stage does not scale with however many blockers survived', async (
 
 test('a worst-case run stays within the cost the skill advertises', async () => {
   const { calls } = await runShip()
-  // The doc promises ~50 for a typical run and names ~115 as the ceiling. Worst case is
-  // 8 lanes with both lenses at maxItems — the shape that used to reach several hundred.
+  // This deliberately exceeds the standard lane allocation, so it includes the bounded
+  // read-only candidate search plus the legacy over-budget warning path.
   assert.ok(
-    calls.length <= 120,
-    `the DAG spawned ${calls.length} agents on worst-case input; the documented ceiling is ~115.`)
+    calls.length <= 130,
+    `the DAG spawned ${calls.length} agents on worst-case input; the interim ceiling is 130.`)
 })
 
 test('each agent-budget range holds its documented ceiling', async () => {
@@ -145,9 +213,9 @@ test('each agent-budget range holds its documented ceiling', async () => {
   // Each range caps the lane count it asks the planner for, so the ceiling is measured
   // against a plan that respects it — worst-case findings, blockers throughout.
   const ranges = [
-    { range: 'light', lanes: 3, ceiling: 45 },
-    { range: 'standard', lanes: 5, ceiling: 80 },
-    { range: 'deep', lanes: 8, ceiling: 150 },
+    { range: 'light', lanes: 3, ceiling: 55 },
+    { range: 'standard', lanes: 5, ceiling: 95 },
+    { range: 'deep', lanes: 8, ceiling: 175 },
   ]
   const counts = {}
   for (const { range, lanes, ceiling } of ranges) {

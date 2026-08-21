@@ -32,9 +32,9 @@ const DEPLOYS = !!(A && A.deploys)
 // before launching (see SKILL.md) — this default exists so a caller that forgets gets
 // the middle range rather than the widest one.
 const BUDGETS = {
-  light:    { maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
-  standard: { maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
-  deep:     { maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
+  light:    { generatedPlans: 3, beamWidth: 1, maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
+  standard: { generatedPlans: 5, beamWidth: 2, maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
+  deep:     { generatedPlans: 8, beamWidth: 3, maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
 }
 const BUDGET_NAME = BUDGETS[(A && A.agentBudget) || ''] ? A.agentBudget : 'standard'
 const BUDGET = BUDGETS[BUDGET_NAME]
@@ -207,6 +207,20 @@ const PLAN = {
   },
 }
 
+const SCORE = {
+  type: 'object',
+  required: ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency', 'total', 'rationale'],
+  properties: {
+    coverage: { type: 'number' },
+    evidence: { type: 'number' },
+    feasibility: { type: 'number' },
+    safety: { type: 'number' },
+    efficiency: { type: 'number' },
+    total: { type: 'number' },
+    rationale: { type: 'string' },
+  },
+}
+
 const BUILD = {
   type: 'object',
   required: ['state', 'changed', 'notes'],
@@ -278,6 +292,106 @@ const RELEASE = {
     readback: { type: 'string', description: 'what was actually observed against production right now; "not attempted" if no live surface' },
   },
 }
+
+// ------------------------------------------------------- graph-of-thoughts
+// Adapted from the Graph of Thoughts operation model (ETH Zurich, BSD-3-Clause).
+// The workflow runner evaluates this file with injected globals, so keeping the graph
+// engine here preserves its single-file ABI while still giving the operations pure seams.
+const OPERATION_TYPES = Object.freeze({
+  Generate: 'Generate', Score: 'Score', KeepBestN: 'KeepBestN',
+  Refute: 'Refute', Improve: 'Improve', Aggregate: 'Aggregate', Select: 'Select',
+})
+
+const deepFreeze = value => {
+  if (!value || typeof value !== 'object' || Object.isFrozen(value)) return value
+  for (const child of Object.values(value)) deepFreeze(child)
+  return Object.freeze(value)
+}
+
+const createThought = ({ id, parentIds = [], operationId, operation, depth, state, score = null, status = 'active' }) =>
+  Object.freeze({ id, parentIds: Object.freeze([...parentIds]), operationId, operation, depth,
+    state: deepFreeze(structuredClone(state)), score: score && deepFreeze({ ...score }), status })
+
+const createOperation = ({ id, type, predecessorIds = [], execute }) => ({
+  id, type, predecessorIds: [...predecessorIds], successorIds: [], execute,
+  executed: false, status: 'pending', thoughtIds: [],
+})
+
+const addOperation = (operations, operation) => {
+  if (operations.some(candidate => candidate.id === operation.id)) {
+    throw new Error(`duplicate operation ${operation.id}`)
+  }
+  operations.push(operation)
+  return operation
+}
+
+const validateOperationGraph = operations => {
+  const byId = new Map()
+  for (const operation of operations) {
+    if (!operation || !operation.id) throw new Error('operation requires an id')
+    if (byId.has(operation.id)) throw new Error(`duplicate operation ${operation.id}`)
+    byId.set(operation.id, operation)
+    operation.successorIds = []
+  }
+  for (const operation of operations) {
+    for (const predecessorId of operation.predecessorIds) {
+      const predecessor = byId.get(predecessorId)
+      if (!predecessor) throw new Error(`unknown predecessor ${predecessorId}`)
+      predecessor.successorIds.push(operation.id)
+    }
+  }
+
+  const pending = new Map([...byId].map(([id, operation]) => [id, operation.predecessorIds.length]))
+  const ready = [...pending].filter(([, count]) => count === 0).map(([id]) => id).sort()
+  const ordered = []
+  while (ready.length) {
+    const id = ready.shift()
+    const operation = byId.get(id)
+    ordered.push(operation)
+    for (const successorId of [...operation.successorIds].sort()) {
+      const remaining = pending.get(successorId) - 1
+      pending.set(successorId, remaining)
+      if (remaining === 0) {
+        ready.push(successorId)
+        ready.sort()
+      }
+    }
+  }
+  if (ordered.length !== operations.length) throw new Error('operation graph contains a cycle')
+  return ordered
+}
+
+const executeOperationGraph = async (operations, graph) => {
+  const ordered = validateOperationGraph(operations)
+  const byId = new Map(ordered.map(operation => [operation.id, operation]))
+  for (const operation of ordered) {
+    const inputThoughts = operation.predecessorIds.flatMap(predecessorId =>
+      byId.get(predecessorId).thoughtIds.map(thoughtId => graph.thoughts.find(thought => thought.id === thoughtId)).filter(Boolean))
+    operation.status = 'running'
+    try {
+      const outputThoughts = await operation.execute({ graph, operation, inputThoughts })
+      const thoughts = Array.isArray(outputThoughts) ? outputThoughts : []
+      operation.thoughtIds = thoughts.map(thought => thought.id)
+      graph.thoughts.push(...thoughts)
+      operation.executed = true
+      operation.status = 'complete'
+    } catch (error) {
+      operation.status = 'failed'
+      operation.error = error.message
+      throw error
+    }
+  }
+  return ordered
+}
+
+const rankThoughts = thoughts => [...thoughts].sort((a, b) =>
+  b.score.total - a.score.total || b.score.coverage - a.score.coverage ||
+  b.score.safety - a.score.safety || b.score.evidence - a.score.evidence ||
+  a.id.localeCompare(b.id))
+
+// Selection is deliberately absent from the first graph segment. Task 2 adds the
+// adversarial search and Select operation; until then no candidate receives authority.
+const graph = { operations: [], thoughts: [], pruned: [], winnerId: null }
 
 // ---------------------------------------------------------------- 0. scout
 phase('Scout')
@@ -498,6 +612,94 @@ log(`research: ${research.length} lenses · ${research.flatMap(r => r.facts).len
 
 // ---------------------------------------------------------------- 3. plan
 phase('Plan')
+let thoughtSequence = 0
+const nextThoughtId = () => `thought-${++thoughtSequence}`
+const validPlan = plan => plan && typeof plan.summary === 'string' && Array.isArray(plan.lanes) && plan.lanes.length > 0 &&
+  plan.lanes.every(lane => lane && typeof lane.name === 'string' && typeof lane.task === 'string' &&
+    Array.isArray(lane.files) && lane.files.length > 0 && typeof lane.acceptance === 'string')
+const validScore = score => score && ['coverage', 'evidence', 'feasibility', 'safety', 'efficiency']
+  .every(key => Number.isFinite(score[key]) && score[key] >= 0 && score[key] <= 20) &&
+  Number.isFinite(score.total) && score.total >= 0 && score.total <= 100 && typeof score.rationale === 'string'
+
+addOperation(graph.operations, createOperation({
+  id: 'generate-plans',
+  type: OPERATION_TYPES.Generate,
+  execute: async () => parallel(Array.from({ length: BUDGET.generatedPlans }, (_, index) => {
+    const thoughtId = nextThoughtId()
+    return async () => {
+      const candidate = await agent(
+        `Worktree: ${scout.worktreePath} (read-only — do not edit source)
+Scope: ${SCOPE}
+Candidate ${index + 1} of ${BUDGET.generatedPlans}. Produce an independent complete lane plan.
+Candidate files: ${scout.candidateFiles.join(', ')}
+Research: ${JSON.stringify(research)}
+Constraints: ${JSON.stringify(constraints)}
+Unread sources: ${JSON.stringify(stillUnread)}
+
+Return a plan with a summary, explicit disjoint lane ownership, and observable acceptance commands.`,
+        { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high' }
+      )
+      return createThought({
+        id: thoughtId, parentIds: [], operationId: 'generate-plans', operation: OPERATION_TYPES.Generate,
+        depth: 0, state: { plan: candidate }, status: 'active',
+      })
+    }
+  })),
+}))
+
+addOperation(graph.operations, createOperation({
+  id: 'score-generated',
+  type: OPERATION_TYPES.Score,
+  predecessorIds: ['generate-plans'],
+  execute: async ({ inputThoughts }) => parallel(inputThoughts.map(thought => {
+    const thoughtId = nextThoughtId()
+    return async () => {
+      const score = validPlan(thought.state.plan)
+        ? await agent(
+            `Score this candidate plan against scope coverage, evidence quality, implementation feasibility,
+safety and reversibility, and efficiency. Return five 0-20 dimensions, total 0-100, and rationale.
+Scope: ${SCOPE}
+Candidate: ${JSON.stringify(thought.state.plan)}`,
+            { label: `Score:${thought.id}`, phase: 'Score', schema: SCORE, effort: 'medium' }
+          )
+        : null
+      const scored = validScore(score) ? score : null
+      return createThought({
+        id: thoughtId, parentIds: [thought.id], operationId: 'score-generated', operation: OPERATION_TYPES.Score,
+        depth: thought.depth + 1, state: thought.state, score: scored,
+        status: scored ? 'active' : 'pruned',
+      })
+    }
+  })),
+}))
+
+addOperation(graph.operations, createOperation({
+  id: 'keep-generated',
+  type: OPERATION_TYPES.KeepBestN,
+  predecessorIds: ['score-generated'],
+  execute: async ({ inputThoughts }) => {
+    const eligible = inputThoughts.filter(thought => thought.status === 'active' && validScore(thought.score))
+    const keptIds = new Set(rankThoughts(eligible).slice(0, BUDGET.beamWidth).map(thought => thought.id))
+    const outputs = inputThoughts.map(thought => {
+      const kept = keptIds.has(thought.id)
+      const reason = kept ? 'ranked within configured beam' : validScore(thought.score)
+        ? `ranked outside configured beam of ${BUDGET.beamWidth}`
+        : 'candidate has no valid score'
+      return createThought({
+        id: nextThoughtId(), parentIds: [thought.id], operationId: 'keep-generated', operation: OPERATION_TYPES.KeepBestN,
+        depth: thought.depth + 1, state: { ...thought.state, pruning: reason }, score: thought.score,
+        status: kept ? 'kept' : 'pruned',
+      })
+    })
+    graph.pruned.push(...outputs.filter(thought => thought.status === 'pruned'))
+    return outputs
+  },
+}))
+
+await executeOperationGraph(graph.operations, graph)
+
+// The existing planning path remains the mutation input until the later Select operation
+// establishes a winner. Candidate thoughts above are read-only evidence and carry no authority.
 let plan = await agent(
   `Worktree: ${scout.worktreePath}
 Scope: ${SCOPE}
@@ -963,6 +1165,7 @@ handoff look clean is the failure mode this section exists to prevent.`,
 
 return {
   agentBudget: BUDGET_NAME,
+  graph,
   worktree: scout.worktreePath,
   baseSha: scout.baseSha,
   lanes: plan.lanes.map(l => l.name),
