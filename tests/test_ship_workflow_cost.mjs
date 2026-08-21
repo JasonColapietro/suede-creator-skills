@@ -20,7 +20,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, aggregateFiles, malformedAggregate = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false, delayedBranch } = {}) {
+function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, aggregateFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, scoreMode, planMode, includeUnsafePlan = false, delayedBranch, blockingHazard, selectedPlanCollision = false, forceAgentCeiling, agentErrorPhase } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
@@ -40,10 +40,12 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
         return {
           worktreePath: '/tmp/repo.worktrees/ship-test',
           baseSha: 'deadbeef',
-          dirtyFiles: [],
+          dirtyFiles: selectedPlanCollision ? ['src/a.ts'] : [],
           candidateFiles: ['src/a.ts'],
           siblingClaims: [],
-          hazards: [{ kind: 'secret', blocking: false, detail: 'no secrets found' }],
+          hazards: blockingHazard
+            ? [{ kind: blockingHazard, blocking: true, detail: `tracked ${blockingHazard}` }]
+            : [{ kind: 'secret', blocking: false, detail: 'no secrets found' }],
         }
       case 'Research':
         return { lens: label, facts: [], constraints: [], unread: [] }
@@ -68,6 +70,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
           ? 'unsafe-plan'
           : (scoreMode === 'ties' ? tieNames : defaultNames)[index]
         const candidate = plan(name, `src/${name}.ts`)
+        if (malformedPlans) candidate.summary = ''
         if (planMode === 'malformed') {
           const malformed = [
             () => { candidate.summary = '' },
@@ -98,7 +101,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
         return { coverage: total === 40 ? 4 : 18, evidence: 18, feasibility: 18, safety: 18, efficiency: total === 40 ? 0 : total - 72, total, rationale: `literal score ${total}` }
       }
       case 'RefutePlan':
-        return prompt.includes('unsafe-plan')
+        return rejectEveryPlan || prompt.includes('unsafe-plan')
           ? { defects: [{ kind: 'collision', lane: 'unsafe', blocking: true, claim: 'two lanes own src/shared.ts', evidence: 'plan lanes 0 and 1' }] }
           : { defects: [], notes: 'no reproducible blocker' }
       case 'Improve':
@@ -110,7 +113,12 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
       case 'Aggregate':
         return {
           summary: malformedAggregate ? '' : 'aggregate-safe', coverage: ['change the thing'],
-          lanes: aggregateLanes
+          lanes: aggregateCollision
+            ? [
+                { name: 'aggregate-a', task: 'implement aggregate a', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+                { name: 'aggregate-b', task: 'implement aggregate b', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+              ]
+            : aggregateLanes
             ? Array.from({ length: aggregateLanes }, (_, i) => ({ name: `aggregate${i}`, task: `implement aggregate${i}`, files: [`src/aggregate${i}.ts`], tier: 'integration', acceptance: 'node --test' }))
             : aggregateFiles
               ? aggregateFiles.map((file, i) => ({ name: `aggregate${i}`, task: `implement aggregate${i}`, files: [file], tier: 'integration', acceptance: 'node --test' }))
@@ -149,6 +157,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
 
   const agent = async (prompt, opts = {}) => {
     calls.push({ prompt, ...opts })
+    if (opts.phase === agentErrorPhase) throw new Error(`programming error at ${agentErrorPhase}`)
     if (delayedBranch && ['RefutePlan', 'Improve', 'Score'].includes(opts.phase) &&
       prompt.includes(delayedBranch)) {
       await new Promise(resolve => setTimeout(resolve, 15))
@@ -174,7 +183,7 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, aggregateLanes, agg
     () => {},
     (m) => logs.push(m),
     { repo: '/tmp/repo', scope: 'change the thing', deploys: true, agentBudget },
-    { total: null, spent: () => 0, remaining: () => Infinity },
+    { total: forceAgentCeiling ?? null, spent: () => 0, remaining: () => Infinity },
     async () => {},
   ).then((result) => ({ result, calls, logs }))
 }
@@ -358,6 +367,64 @@ test('operation scheduling is ready-order deterministic and does not mutate call
   assert.deepEqual(ran, ['a', 'm', 'z'])
 })
 
+test('the total-call ledger halts before spawning call ceiling plus one', async () => {
+  const { result, calls } = await runShip({ agentBudget: 'light', forceAgentCeiling: 4 })
+  assert.equal(calls.length, 4)
+  assert.equal(result.halted, true)
+  assert.equal(result.reason, 'agent budget exhausted')
+  assert.deepEqual(result.graph.budget, { name: 'light', ceiling: 4, used: 4, remaining: 0 })
+})
+
+test('a tracked secret halts before Generate and Build', async () => {
+  const { result, calls } = await runShip({ blockingHazard: 'secret' })
+  assert.equal(result.reason, 'blocking hazard at scout')
+  assert.equal(calls.some(c => c.phase === 'Generate' || c.phase === 'Build'), false)
+})
+
+test('a colliding aggregate falls back to a safe survivor and records the rejection', async () => {
+  const { result } = await runShip({ aggregateCollision: true, findingsPerLens: 0 })
+  assert.equal(result.selectedPlan.summary, 'improved-safe')
+  assert.ok(result.graph.dropped.some(item => item.reason === 'aggregate file collision'))
+})
+
+test('malformed candidates stay visible and no safe winner halts before Build', async () => {
+  const { result, calls } = await runShip({ malformedPlans: true, rejectEveryPlan: true })
+  assert.equal(result.halted, true)
+  assert.equal(result.reason, 'no safe graph winner')
+  assert.ok(result.graph.dropped.some(item => item.reason === 'malformed generated plan'))
+  assert.equal(calls.some(c => c.phase === 'Build'), false)
+})
+
+test('a live target worktree and a selected-plan collision both halt before Build', async () => {
+  for (const options of [{ blockingHazard: 'live-worktree' }, { selectedPlanCollision: true }]) {
+    const { result, calls } = await runShip(options)
+    assert.equal(result.halted, true)
+    assert.equal(calls.some(c => c.phase === 'Build'), false)
+  }
+})
+
+test('release verification receives read-only authority and never a deployment authority', async () => {
+  const { calls } = await runShip({ deploys: true, findingsPerLens: 0 })
+  const releaseCalls = calls.filter(c => c.phase === 'Release')
+  assert.equal(releaseCalls.length, 4)
+  assert.ok(releaseCalls.every(c => c.authority === 'read-only-production'))
+  assert.equal(calls.some(c => c.authority === 'deploy'), false)
+})
+
+test('handoff receives the winner lineage, scores, pruned candidates, and objections', async () => {
+  const { calls } = await runShip({ findingsPerLens: 0 })
+  const handoffCall = calls.find(c => c.phase === 'Handoff')
+  for (const marker of ['Winning thought', 'Lineage', 'Scores', 'Pruned candidates', 'Plan refutations', 'Agent budget']) {
+    assert.match(handoffCall.prompt, new RegExp(marker))
+  }
+})
+
+test('the budget boundary rethrows non-budget programming errors', async () => {
+  await assert.rejects(
+    runShip({ agentErrorPhase: 'Research' }),
+    /programming error at Research/)
+})
+
 test('refutation fan-out stays bounded when every review lens returns a full findings array', async () => {
   const { calls } = await runShip()
   const refute = countPhase(calls, 'Refute')
@@ -392,12 +459,12 @@ test('each agent-budget range holds its documented ceiling', async () => {
   // against a plan that respects it — worst-case findings, blockers throughout.
   const ranges = [
     { range: 'light', lanes: 3, ceiling: 55 },
-    { range: 'standard', lanes: 5, ceiling: 95 },
-    { range: 'deep', lanes: 8, ceiling: 175 },
+    { range: 'standard', lanes: 5, ceiling: 110 },
+    { range: 'deep', lanes: 8, ceiling: 200 },
   ]
   const counts = {}
   for (const { range, lanes, ceiling } of ranges) {
-    const { calls } = await runShip({ agentBudget: range, lanes })
+    const { calls } = await runShip({ agentBudget: range, lanes, aggregateLanes: lanes })
     counts[range] = calls.length
     assert.ok(
       calls.length <= ceiling,
@@ -409,14 +476,18 @@ test('each agent-budget range holds its documented ceiling', async () => {
     `ranges must be distinct, got ${JSON.stringify(counts)}`)
 })
 
-test('a plan that exceeds its range says so out loud instead of dropping a lane', async () => {
+test('an over-range plan keeps every lane until the total-call ledger halts', async () => {
   // Lanes are deliberately not truncated to fit the budget: dropping one drops scope the
-  // user asked for. The guarantee is that going over is announced with a new projection.
-  const { logs, result } = await runShip({ agentBudget: 'standard', aggregateLanes: 8 })
+  // user asked for. The run announces the overage, starts every lane, and the shared ledger
+  // still prevents call ceiling plus one.
+  const { logs, result, calls } = await runShip({ agentBudget: 'standard', aggregateLanes: 8 })
   assert.ok(
     logs.some((l) => l.startsWith('OVER BUDGET')),
     'an over-budget plan must log OVER BUDGET with a revised projection')
-  assert.equal(result.lanes.length, 8, 'every planned lane must still be built')
+  assert.equal(countPhase(calls, 'Build'), 8, 'every planned lane must still be started')
+  assert.equal(result.halted, true)
+  assert.equal(result.reason, 'agent budget exhausted')
+  assert.equal(calls.length, 110)
 })
 
 test('everything dropped before refutation is reported, never silently discarded', async () => {

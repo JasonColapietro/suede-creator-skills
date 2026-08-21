@@ -32,9 +32,9 @@ const DEPLOYS = !!(A && A.deploys)
 // before launching (see SKILL.md) — this default exists so a caller that forgets gets
 // the middle range rather than the widest one.
 const BUDGETS = {
-  light:    { generatedPlans: 3, beamWidth: 1, improveRounds: 1, maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2 },
-  standard: { generatedPlans: 5, beamWidth: 2, improveRounds: 1, maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4 },
-  deep:     { generatedPlans: 8, beamWidth: 3, improveRounds: 2, maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4 },
+  light:    { generatedPlans: 3, beamWidth: 1, improveRounds: 1, maxLanes: 3, refutePerLane: 2, fixCap: 4, gapFills: 2, totalAgentCeiling: 55 },
+  standard: { generatedPlans: 5, beamWidth: 2, improveRounds: 1, maxLanes: 5, refutePerLane: 4, fixCap: 8, gapFills: 4, totalAgentCeiling: 110 },
+  deep:     { generatedPlans: 8, beamWidth: 3, improveRounds: 2, maxLanes: 8, refutePerLane: 6, fixCap: 12, gapFills: 4, totalAgentCeiling: 200 },
 }
 const BUDGET_NAME = BUDGETS[(A && A.agentBudget) || ''] ? A.agentBudget : 'standard'
 const BUDGET = BUDGETS[BUDGET_NAME]
@@ -397,11 +397,30 @@ const rankThoughts = thoughts => [...thoughts].sort((a, b) =>
 
 // Selection is deliberately absent from the first graph segment. Task 2 adds the
 // adversarial search and Select operation; until then no candidate receives authority.
-const graph = { operations: [], thoughts: [], pruned: [], winnerId: null }
+const graph = { operations: [], thoughts: [], pruned: [], dropped: [], winnerId: null, budget: null }
+const ceiling = Number.isFinite(budget && budget.total)
+  ? Math.min(BUDGET.totalAgentCeiling, budget.total)
+  : BUDGET.totalAgentCeiling
+let agentCalls = 0
+const budgetSnapshot = () => ({ name: BUDGET_NAME, ceiling, used: agentCalls, remaining: ceiling - agentCalls })
+graph.budget = budgetSnapshot()
+const callAgent = async (prompt, options = {}) => {
+  if (agentCalls >= ceiling) {
+    throw Object.assign(new Error('agent budget exhausted'), {
+      code: 'AGENT_BUDGET_EXHAUSTED',
+      operation: options.phase || 'unknown',
+      inputs: { label: options.label || null, prompt },
+    })
+  }
+  agentCalls += 1
+  graph.budget = budgetSnapshot()
+  return agent(prompt, options)
+}
 
 // ---------------------------------------------------------------- 0. scout
+try {
 phase('Scout')
-const scout = await agent(
+const scout = await callAgent(
   `Repo: ${REPO}. Planned scope: ${SCOPE}
 
 You are the SCOUT. Read-only reconnaissance plus ONE setup action. Do not edit source.
@@ -461,7 +480,7 @@ const blockingHazards = scout.hazards.filter(h =>
   h.blocking === true && (h.kind === 'secret' || h.kind === 'live-worktree'))
 if (blockingHazards.length) {
   log(`HALT: ${blockingHazards.map(h => `${h.kind}: ${h.detail}`).join(' | ')}`)
-  return { halted: true, reason: 'blocking hazard at scout', scout }
+  return { halted: true, reason: 'blocking hazard at scout', scout, graph }
 }
 const advisories = scout.hazards.filter(h => !h.blocking)
 log(`worktree ${scout.worktreePath} @ ${scout.baseSha} · ${scout.dirtyFiles.length} dirty · ${blockingHazards.length} blocking · ${advisories.length} advisory`)
@@ -547,7 +566,7 @@ arrays immediately and stop — do not invent work.`,
   },
 ]
 
-const sweep = (await parallel(LENSES.map(l => () => agent(
+const sweep = (await parallel(LENSES.map(l => () => callAgent(
   `${BASE}\n\n${l.prompt}`,
   { label: `research:${l.key}`, phase: 'Research', schema: RESEARCH, effort: l.effort }
 )))).filter(Boolean)
@@ -555,7 +574,7 @@ const sweep = (await parallel(LENSES.map(l => () => agent(
 // -------------------------------------------------------------- 2. gap fill
 // What a sweep misses is invisible to the sweep. One critic, one bounded round.
 phase('Gaps')
-const critic = await agent(
+const critic = await callAgent(
   `Scope: ${SCOPE}
 Research so far: ${JSON.stringify(sweep)}
 Everything the lenses flagged as unread: ${JSON.stringify([...new Set(sweep.flatMap(r => r.unread))])}
@@ -570,7 +589,7 @@ sufficient, return an empty array — padding this list costs a round of agents.
 )
 
 const gapFills = critic && critic.gaps.length
-  ? (await parallel(critic.gaps.slice(0, BUDGET.gapFills).map(g => () => agent(
+  ? (await parallel(critic.gaps.slice(0, BUDGET.gapFills).map(g => () => callAgent(
       `${BASE}\n\nLens: GAP FILL. Close exactly this gap and nothing else.
 Missing: ${g.missing}
 Why it matters: ${g.whyItMatters}
@@ -588,7 +607,7 @@ const stillUnread = [...new Set(research.flatMap(r => r.unread))]
 // most expensive error in this DAG: it survives every downstream gate, because
 // every downstream gate is checking conformance to it.
 const audit = claimed.length
-  ? await agent(
+  ? await callAgent(
       `Worktree: ${scout.worktreePath} (read-only)
 
 These constraints were asserted by research agents and the planner is about to be bound
@@ -684,7 +703,7 @@ const planFileCollisions = plan => {
 }
 const normalizeDefectPart = value => String(value).trim().toLowerCase().replace(/\s+/g, ' ')
 const normalizedDefectKey = defect => `${normalizeDefectPart(defect && defect.kind)}:${normalizeDefectPart(defect && defect.lane)}`
-const scorePlan = (plan, label) => agent(
+const scorePlan = (plan, label) => callAgent(
   `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 You are a SCORER. Do not edit source, run mutation commands, or make external changes.
 
@@ -701,7 +720,7 @@ addOperation(graph.operations, createOperation({
   execute: async () => parallel(Array.from({ length: BUDGET.generatedPlans }, (_, index) => {
     const thoughtId = nextThoughtId()
     return async () => {
-      const candidate = await agent(
+      const candidate = await callAgent(
         `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Candidate ${index + 1} of ${BUDGET.generatedPlans}. Produce an independent complete lane plan.
@@ -713,9 +732,18 @@ Unread sources: ${JSON.stringify(stillUnread)}
 Return a plan with a summary, explicit disjoint lane ownership, and observable acceptance commands.`,
         { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high', authority: 'read-only' }
       )
+      const candidateIsValid = validPlan(candidate)
+      if (!candidateIsValid) {
+        graph.dropped.push({
+          operation: OPERATION_TYPES.Generate,
+          thoughtId,
+          inputs: { index, label: `Generate:${index}` },
+          reason: 'malformed generated plan',
+        })
+      }
       return createThought({
         id: thoughtId, parentIds: [], operationId: 'generate-plans', operation: OPERATION_TYPES.Generate,
-        depth: 0, state: { plan: candidate }, status: 'active',
+        depth: 0, state: { plan: candidate }, status: candidateIsValid ? 'active' : 'pruned',
       })
     }
   })),
@@ -729,7 +757,7 @@ addOperation(graph.operations, createOperation({
     const thoughtId = nextThoughtId()
     return async () => {
       const score = validPlan(thought.state.plan)
-        ? await agent(
+        ? await callAgent(
             `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 You are a SCORER. Do not edit source, run mutation commands, or make external changes.
 
@@ -741,6 +769,9 @@ Candidate: ${JSON.stringify(thought.state.plan)}`,
           )
         : null
       const scored = validScore(score) ? score : null
+      if (score && !scored) {
+        graph.dropped.push({ operation: OPERATION_TYPES.Score, thoughtId, inputs: { parentId: thought.id }, reason: 'malformed candidate score' })
+      }
       return createThought({
         id: thoughtId, parentIds: [thought.id], operationId: 'score-generated', operation: OPERATION_TYPES.Score,
         depth: thought.depth + 1, state: thought.state, score: scored,
@@ -787,7 +818,7 @@ addOperation(graph.operations, createOperation({
           'CONTRACT ADVERSARY: find missing scope, unsupported assumptions, constraint breaks, and unverifiable evidence.',
           'FAILURE ADVERSARY: find concrete collision, rollback, security, test-gap, and integration-order failures.',
         ]
-        const refutations = await parallel(lenses.map((lens, index) => () => agent(
+        const refutations = await parallel(lenses.map((lens, index) => () => callAgent(
           `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Candidate plan: ${JSON.stringify(thought.state.plan)}
@@ -828,7 +859,7 @@ for (let round = 1; round <= BUDGET.improveRounds; round += 1) {
       .map(thought => {
         const thoughtId = nextThoughtId()
         return async () => {
-          const improvedPlan = await agent(
+          const improvedPlan = await callAgent(
             `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Improvement round: ${round} of ${BUDGET.improveRounds}
@@ -842,10 +873,19 @@ Improve the complete plan without editing source. Preserve supported evidence, a
 reproducible objection, keep file ownership disjoint, and return observable acceptance commands.`,
             { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only' }
           )
+          const improvedIsValid = validPlan(improvedPlan)
+          if (!improvedIsValid) {
+            graph.dropped.push({
+              operation: OPERATION_TYPES.Improve,
+              thoughtId,
+              inputs: { round, parentId: thought.id },
+              reason: 'malformed improved plan',
+            })
+          }
           return createThought({
             id: thoughtId, parentIds: [thought.id], operationId: improveId, operation: OPERATION_TYPES.Improve,
             depth: thought.depth + 1, state: { ...thought.state, plan: improvedPlan }, score: null,
-            status: validPlan(improvedPlan) ? 'active' : 'pruned',
+            status: improvedIsValid ? 'active' : 'pruned',
           })
         }
       })),
@@ -862,6 +902,9 @@ reproducible objection, keep file ownership disjoint, and return observable acce
           ? await scorePlan(thought.state.plan, `Score:${thought.id}`)
           : null
         const scored = validScore(score) ? score : null
+        if (score && !scored) {
+          graph.dropped.push({ operation: OPERATION_TYPES.Score, thoughtId, inputs: { parentId: thought.id }, reason: 'malformed candidate score' })
+        }
         return createThought({
           id: thoughtId, parentIds: [thought.id], operationId: scoreId, operation: OPERATION_TYPES.Score,
           depth: thought.depth + 1, state: thought.state, score: scored,
@@ -903,7 +946,7 @@ addOperation(graph.operations, createOperation({
       thought.status === 'kept' && validPlan(thought.state.plan) && validScore(thought.score)))
     if (survivors.length < 2) return []
     const thoughtId = nextThoughtId()
-    const aggregatePlan = await agent(
+    const aggregatePlan = await callAgent(
       `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Surviving plans: ${JSON.stringify(survivors.map(thought => ({ id: thought.id, plan: thought.state.plan, score: thought.score })))}
@@ -913,6 +956,21 @@ give every file exactly one owner, and keep every acceptance command observable.
       { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only' }
     )
     const collisions = planFileCollisions(aggregatePlan)
+    if (!validPlan(aggregatePlan)) {
+      graph.dropped.push({
+        operation: OPERATION_TYPES.Aggregate,
+        thoughtId,
+        inputs: { parentIds: survivors.map(thought => thought.id) },
+        reason: 'malformed aggregate plan',
+      })
+    } else if (collisions.length) {
+      graph.dropped.push({
+        operation: OPERATION_TYPES.Aggregate,
+        thoughtId,
+        inputs: { parentIds: survivors.map(thought => thought.id), collisions },
+        reason: 'aggregate file collision',
+      })
+    }
     const aggregate = createThought({
       id: thoughtId, parentIds: survivors.map(thought => thought.id), operationId: 'aggregate-plans', operation: OPERATION_TYPES.Aggregate,
       depth: Math.max(...survivors.map(thought => thought.depth)) + 1,
@@ -940,6 +998,9 @@ addOperation(graph.operations, createOperation({
       return async () => {
         const score = await scorePlan(thought.state.plan, `Score:${thought.id}`)
         const scored = validScore(score) ? score : null
+        if (score && !scored) {
+          graph.dropped.push({ operation: OPERATION_TYPES.Score, thoughtId, inputs: { parentId: thought.id }, reason: 'malformed candidate score' })
+        }
         return createThought({
           id: thoughtId, parentIds: [thought.id], operationId: 'score-aggregate', operation: OPERATION_TYPES.Score,
           depth: thought.depth + 1, state: thought.state, score: scored,
@@ -1022,7 +1083,7 @@ if (liveConflicts.length) {
 }
 if (collisions.length) {
   log(`HALT: lane map has ${collisions.length} collision(s) — ${collisions.join(' | ')}`)
-  return { halted: true, reason: 'lane collision', collisions, plan, crossWorktree }
+  return { halted: true, reason: 'lane collision', collisions, plan, selectedPlan, crossWorktree, graph }
 }
 if (crossWorktree.length) {
   log(`WARN: ${crossWorktree.length} lane file(s) also in flight on idle sibling branches — merge cost, carried to handoff: ${crossWorktree.map(x => `${x.file} (${x.claims.map(c => c.branch).join('/')})`).join(', ')}`)
@@ -1055,7 +1116,7 @@ const laneResults = await pipeline(
   plan.lanes,
 
   // build
-  lane => agent(
+  lane => callAgent(
     `Worktree: ${scout.worktreePath} (already created — work here, never in ${REPO})
 Lane: ${lane.name}
 Task: ${lane.task}
@@ -1078,7 +1139,7 @@ rather than guessing. Match surrounding code idiom; no opportunistic refactors.`
       'CORRECTNESS: does this do what the lane task specified? Trace the actual code path. Off-by-one, null path, wrong branch, broken contract with callers.',
       'PRODUCTION: how does this fail once deployed? Auth/session, secrets in logs, unhandled reject, N+1, hydration mismatch, mobile viewport, race on concurrent request, public route that should not be public.',
     ]
-    const reviews = await parallel(lenses.map(lens => () => agent(
+    const reviews = await parallel(lenses.map(lens => () => callAgent(
       `Worktree: ${scout.worktreePath}
 Review ONLY these files: ${(built.changed || lane.files).join(', ')}
 Builder notes: ${built.notes}
@@ -1124,7 +1185,7 @@ no "consider extracting". If the code is clean, return an empty findings array.`
     }
 
     const judged = await parallel(refuting.map(f => () =>
-      parallel([0, 1].map(i => () => agent(
+      parallel([0, 1].map(i => () => callAgent(
         `Worktree: ${scout.worktreePath}
 Claim: "${f.claim}" in ${f.file}${f.line ? `:${f.line}` : ''}
 Alleged failure: ${f.failureScenario}
@@ -1169,7 +1230,7 @@ if (blockers.length) {
   if (blockers.length > FIX_CAP) {
     log(`${blockers.length} confirmed blockers, fixing the first ${FIX_CAP}; the remaining ${blockers.length - FIX_CAP} go to the handoff unfixed: ${blockers.slice(FIX_CAP).map(f => `${f.file} — ${f.claim}`).join(' | ')}`)
   }
-  await parallel(fixing.map(f => () => agent(
+  await parallel(fixing.map(f => () => callAgent(
     `Worktree: ${scout.worktreePath}
 Confirmed blocker in ${f.file}${f.line ? `:${f.line}` : ''}: ${f.claim}
 Reproduction: ${f.failureScenario}
@@ -1184,7 +1245,7 @@ adjacent things you notice. Return the changed file paths.`,
 // ---------------------------------------------------------------- 5. gate
 // A genuine barrier: the integration check needs every lane's edits present.
 phase('Gate')
-const gate = await agent(
+const gate = await callAgent(
   `Worktree: ${scout.worktreePath}
 
 You are the RELEASE VERIFIER. Run the real checks and report actual output.
@@ -1269,9 +1330,9 @@ claimed. Where a claim in the scope is user-visible or public-facing, quote the 
 current published text so a drifted claim is detectable. Readback is the deliverable here
 even when you find zero risks.`,
     },
-  ].map(l => () => agent(
+  ].map(l => () => callAgent(
     `${RELEASE_BASE}\n\n${l.prompt}`,
-    { label: `release:${l.key}`, phase: 'Release', schema: RELEASE, effort: 'high' }
+    { label: `release:${l.key}`, phase: 'Release', schema: RELEASE, effort: 'high', authority: 'read-only-production' }
   )))).filter(Boolean)
 
   // Verdict is computed, not argued. Advisory only — it changes what gets reported,
@@ -1295,12 +1356,17 @@ even when you find zero risks.`,
 
 // ---------------------------------------------------------------- 7. handoff
 phase('Handoff')
-const handoff = await agent(
+const handoff = await callAgent(
   `Write the delivery record for this run. Facts only — every field below is required,
 and a missing field means status "held", not "done".
 
 Target: ${REPO} · worktree ${scout.worktreePath} · base ${scout.baseSha}
 Scope: ${SCOPE}
+Winning thought: ${JSON.stringify(selectedThought)}
+Lineage: ${JSON.stringify(graph.thoughts.map(thought => ({ id: thought.id, parentIds: thought.parentIds, operation: thought.operation, status: thought.status })))}
+Scores: ${JSON.stringify(graph.thoughts.filter(thought => thought.score).map(thought => ({ id: thought.id, score: thought.score })))}
+Pruned candidates: ${JSON.stringify(graph.pruned)}
+Agent budget: ${JSON.stringify(budgetSnapshot())}
 Lanes: ${JSON.stringify(plan.lanes.map(l => ({ name: l.name, tier: l.tier, files: l.files })))}
 Stalled lanes: ${JSON.stringify(stalled.map(l => ({ lane: l.lane.name, state: l.built && l.built.state, notes: l.built && l.built.notes })))}
 Confirmed findings: ${JSON.stringify(confirmed)}
@@ -1360,4 +1426,19 @@ return {
   release,
   hazards: scout.hazards,
   handoff,
+}
+} catch (error) {
+  if (!error || error.code !== 'AGENT_BUDGET_EXHAUSTED') throw error
+  graph.dropped.push({
+    operation: error.operation,
+    inputs: error.inputs,
+    reason: 'agent budget exhausted',
+  })
+  graph.budget = budgetSnapshot()
+  return {
+    halted: true,
+    reason: 'agent budget exhausted',
+    agentBudget: BUDGET_NAME,
+    graph,
+  }
 }
