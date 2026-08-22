@@ -1,6 +1,6 @@
 ---
 name: suede-ship
-description: "Canonical Suede Labs shipping DAG for repo changes. Use for any nontrivial change to a Suede repo that touches more than one file or surface and deserves researched, adversarially reviewed, release-checked fan-out in one pass. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. BUILT FOR TOKENMAXING AND BURNS HARD: 35 to 150 agents, all billed to the user's model allocation. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but every range here far exceeds 4, so never run the fan-out on Fable unless the user said Fable. NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (use suede-codex-fleet, which bills to the OpenAI subscription); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
+description: "Canonical Suede Labs shipping DAG for repo changes. Use for any nontrivial change to a Suede repo that touches more than one file or surface and deserves researched, adversarially reviewed, release-checked fan-out in one pass. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. BUILT FOR TOKENMAXING AND BURNS HARD: 35 to 150 agents, all billed to the user's model allocation. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but every range here far exceeds 4, so never run the fan-out on Fable unless the user said Fable. NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
 ---
 
 # Suede Ship
@@ -15,9 +15,9 @@ agents in between arranged as a graph rather than a chain.
 Invoke the workflow bundled at `skills/suede-ship/workflows/suede-ship.js`. If
 you keep a personal copy, `~/.claude/workflows/suede-ship.js` works the same way.
 
-## Choose this or the fleet first
+## Confirm the job deserves the DAG first
 
-`suede-ship` is the surgical instrument and it is the expensive one:
+`suede-ship` is the surgical instrument and it is an expensive one:
 35 to 150 agents depending on the range the user picks, research-heavy and
 front-loaded, all of it billed to their model allocation.
 
@@ -31,9 +31,9 @@ Every one of those agents inherits the session model (see "Model selection" belo
 
 If the job is actually high-volume, well-specified, and splits into independent
 worker-sized tasks (content batches, test generation, bulk refactors), say so and
-offer **suede-codex-fleet** instead — it runs on the OpenAI subscription and costs
-nothing against the Claude limit. Brute force beats surgery when the work is
-genuinely parallel and shallow.
+run it as a separate worker-fleet pass instead of this DAG (private Suede Labs
+companion, not in this pack: suede-codex-fleet). Brute force beats surgery when
+the work is genuinely parallel and shallow.
 
 ## Parse the invocation
 
@@ -180,7 +180,8 @@ agent's prompt or schema re-runs that agent and everything downstream of it.
 ## Routing
 
 - High-volume, well-specified work that splits into independent worker-sized tasks →
-  **suede-codex-fleet**, which bills to the OpenAI subscription, not the Claude limit.
+  a separate worker-fleet pass (private Suede Labs companion, not in this pack:
+  suede-codex-fleet).
 - Manual, ongoing, cross-repo, or public-repository-contribution orchestration →
   **suede-agent-teams**. Precedence: one repo, one change, a bundled DAG that runs it
   end to end stays here; a single lane inside an agent-teams program that needs the

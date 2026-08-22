@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Agent skills for Claude Code and Codex: decisive full-send routing, multi-agent orchestration, Codex CLI worker fleets, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. MIT-licensed skills.",
+  "description": "Agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. MIT-licensed skills.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -9,7 +9,7 @@
     {
       "name": "suede-skills",
       "source": "./",
-      "description": "Complete Suede workflow: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
+      "description": "Complete Suede workflow: reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
     },
     {
       "name": "suede-agent-workflows",
@@ -18,11 +18,10 @@
         "./skills/suede-ship",
         "./skills/suede-ship-copy",
         "./skills/suede-agent-teams",
-        "./skills/suede-full-send",
         "./skills/suede-workflow-skills",
         "./skills/suede-ai-eval"
       ],
-      "description": "Multi-agent orchestration subset: drive broad authorized outcomes through one controller (suede-full-send), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+      "description": "Multi-agent orchestration subset: run one repo change through the canonical ship DAG (suede-ship), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",

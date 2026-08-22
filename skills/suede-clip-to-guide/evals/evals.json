@@ -116,10 +116,10 @@
     },
     {
       "id": 9,
-      "prompt": "Full send this one clip-to-guide package and double-check it so we can be certain before it goes live.",
-      "expected_output": "Should record full-send execution mode, keep this atomic job with the smallest relevant specialist, and run two distinct evidence passes: production proof and a fresh source-truth review using a different failure lens. It may mark certainty proved only when both checks directly verify the rights route, source claims, guide bridge, exact package, identity, sequence, and validator result and all contradictions are resolved. Otherwise it must return unproved or blocked and keep publication unapproved.",
+      "prompt": "Max effort on this one clip-to-guide package and double-check it so we can be certain before it goes live.",
+      "expected_output": "Should record max-effort execution mode, keep this atomic job with the smallest relevant specialist, and run two distinct evidence passes: production proof and a fresh source-truth review using a different failure lens. It may mark certainty proved only when both checks directly verify the rights route, source claims, guide bridge, exact package, identity, sequence, and validator result and all contradictions are resolved. Otherwise it must return unproved or blocked and keep publication unapproved.",
       "assertions": [
-        "Records execution_mode as full-send",
+        "Records execution_mode as max-effort",
         "Does not create parallel production lanes for one atomic package",
         "Runs production proof against direct evidence",
         "Runs a distinct fresh-context second pass",
@@ -134,11 +134,11 @@
     },
     {
       "id": 10,
-      "prompt": "Use a Codex Fleet to make 20 clip-to-guide packages, but double-check every one for certainty before anything ships.",
-      "expected_output": "Should route the well-specified high-volume batch through suede-codex-fleet, record codex-fleet execution mode, treat each worker self-check as provisional Check 1, and require the controller to inspect source evidence and each assembled package as independent Check 2. A second worker or repeated self-check cannot replace controller review. Only packages with two PROVED checks, resolved contradictions, exact-content approval, and live readback may ship.",
+      "prompt": "Use a worker fleet to make 20 clip-to-guide packages, but double-check every one for certainty before anything ships.",
+      "expected_output": "Should run the well-specified high-volume batch as a worker fleet, record worker-fleet execution mode, treat each worker self-check as provisional Check 1, and require the controller to inspect source evidence and each assembled package as independent Check 2. A second worker or repeated self-check cannot replace controller review. Only packages with two PROVED checks, resolved contradictions, exact-content approval, and live readback may ship.",
       "assertions": [
-        "Routes the high-volume batch to suede-codex-fleet",
-        "Records execution_mode as codex-fleet",
+        "Runs the high-volume batch as a worker fleet",
+        "Records execution_mode as worker-fleet",
         "Treats worker self-checks as provisional",
         "Requires controller inspection as the independent second check",
         "Does not substitute another worker for controller review",

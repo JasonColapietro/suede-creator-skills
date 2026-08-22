@@ -2,7 +2,7 @@
 
 Use this structure for every durable package. Keep URLs and timestamps exact.
 Use `not available` instead of inventing a value.
-Full Send and Codex Fleet packages need two distinct evidence records and a
+Max Effort and Worker Fleet packages need two distinct evidence records and a
 final `PROVED` verdict before approval or publication.
 
 ```markdown
@@ -13,7 +13,7 @@ identity: "<visible account identity>"
 rights_status: "<original|licensed|permission-recorded|native-repost-only|fair-use-review|blocked>"
 guide_status: "<existing|drafted|needs-long-form|blocked>"
 publication_status: "<draft|approved|published|blocked>"
-execution_mode: "<standard|full-send|codex-fleet>"
+execution_mode: "<standard|max-effort|worker-fleet>"
 certainty_status: "<not-required|pending|proved|unproved|blocked>"
 ---
 

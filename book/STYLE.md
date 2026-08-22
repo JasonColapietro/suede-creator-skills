@@ -40,7 +40,7 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 73 public skill folders, each a `skills/<name>/SKILL.md`, MIT licensed.
+- 71 public skill folders, each a `skills/<name>/SKILL.md`, MIT licensed.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
   and a Codex-native plugin.

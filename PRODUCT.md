@@ -4,7 +4,7 @@
 
 An open-source pack of inspectable Agent Skills for Claude Code, OpenAI Codex,
 and compatible agents. It gives builders reusable workflows for outcome-bound
-orchestration through Suede Full Send, code review, ship gates, AI evaluation,
+orchestration through the Suede ship DAG, code review, ship gates, AI evaluation,
 design, copy, SEO, iOS conversion, native Android app shipping, and
 creator-rights work.
 

@@ -30,7 +30,7 @@ ALLOWED_VALUES = {
     },
     "guide_status": {"existing", "drafted", "needs-long-form", "blocked"},
     "publication_status": {"draft", "approved", "published", "blocked"},
-    "execution_mode": {"standard", "full-send", "codex-fleet"},
+    "execution_mode": {"standard", "max-effort", "worker-fleet"},
     "certainty_status": {
         "not-required",
         "pending",
@@ -155,7 +155,7 @@ def validate(path: Path) -> list[str]:
                 "approved fair-use-review package needs an accountable decision owner"
             )
 
-    certainty_required = execution_mode in {"full-send", "codex-fleet"}
+    certainty_required = execution_mode in {"max-effort", "worker-fleet"}
     if certainty_required and certainty_status == "not-required":
         errors.append(f"{execution_mode} package requires the dual certainty gate")
 
@@ -213,16 +213,16 @@ def validate(path: Path) -> list[str]:
                 "proved certainty gate needs two distinct evidence records"
             )
 
-        if execution_mode == "codex-fleet":
+        if execution_mode == "worker-fleet":
             normalized_check_1 = (check_1 or "").casefold()
             normalized_check_2 = (check_2 or "").casefold()
             if "worker" not in normalized_check_1 or "self-check" not in normalized_check_1:
                 errors.append(
-                    "proved codex-fleet gate needs a worker self-check as Check 1"
+                    "proved worker-fleet gate needs a worker self-check as Check 1"
                 )
             if "controller" not in normalized_check_2:
                 errors.append(
-                    "proved codex-fleet gate needs controller review as Check 2"
+                    "proved worker-fleet gate needs controller review as Check 2"
                 )
 
     if publication_status == "published":
