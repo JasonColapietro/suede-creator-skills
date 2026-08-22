@@ -509,7 +509,7 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     assert.equal(ship.result.structuredContent.found, true);
     assert.match(
       ship.result.structuredContent.skill.useWhen,
-      /research-heavy agent graph/
+      /evidence-gated orchestration contract.*Graph-of-Thoughts workflow/
     );
   }, "workflow");
 });
