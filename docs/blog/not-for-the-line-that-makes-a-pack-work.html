@@ -96,9 +96,9 @@
       <h2>Negative space is routing information</h2>
       <p>The fix is to make every description carry its own boundary, and to make that boundary point somewhere specific:</p>
       <div class="panel" aria-label="A NOT FOR line">
-        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
+        <p><code>suede-ship</code> &mdash; NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
       </div>
-      <p>Read what that line is doing. It isn't a disclaimer and it isn't hedging. It's a routing table, written from the perspective of the skill most likely to steal the request. Three near-misses, each one named, each one handed to the sibling that should have it.</p>
+      <p>Read what that line is doing. It isn't a disclaimer and it isn't hedging. It's a routing table, written from the perspective of the skill most likely to steal the request. Four near-misses, each one named, each one pointed at the move that should take it.</p>
       <p>The generic version of this is worthless. "NOT FOR: other tasks" tells the router nothing. The line only works when it names the specific neighbor and the specific condition under which that neighbor wins, because the router's actual question is never "is this skill relevant." It's "is this skill more relevant than that one," and only a named comparison answers it.</p>
 
       <h2>The counterintuitive part</h2>

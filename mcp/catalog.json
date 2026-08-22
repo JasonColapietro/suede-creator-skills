@@ -250,18 +250,18 @@
     {
       "key": "adderall",
       "label": "The Agentic Adderall Stack",
-      "summary": "Cracked devs only: the top Suede skills for supercharging an agent. The shipping DAG, agent-team orchestration, the umbrella workflow, and the next-move loop.",
+      "summary": "Cracked devs only: four Suede skills for supercharging an agent — the shipping DAG, agent-team orchestration, the umbrella router, and the next-move loop.",
       "page": "https://skills.suedeai.ai/cracked.html",
       "formulations": [
         {
           "key": "ir",
           "label": "Instant Release",
-          "tagline": "One intense subagent-driven pass. Every useful non-colliding lane fans out at once and stays hot until the evidence gate — no downtime, no intervals, no check-ins."
+          "tagline": "One continuous subagent-driven pass. Every useful non-colliding lane fans out at once and stays hot to the evidence gate — no downtime, no check-ins."
         },
         {
           "key": "xr",
           "label": "Extended Release",
-          "tagline": "The momentum loop. Every finished move hands back the next one as a runnable prompt, so the session never idles between doses of work."
+          "tagline": "The momentum loop. Every finished move hands back the next one as a runnable prompt, so the session never idles between doses."
         }
       ],
       "count": 4,

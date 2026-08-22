@@ -79,7 +79,7 @@
       <p>The second half is suitability, and it's the part most packs skip. Every Suede description carries an explicit <code>NOT FOR</code> line that routes the request somewhere else when the fit is wrong:</p>
 
       <div class="panel" aria-label="Routing example">
-        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
+        <p><code>suede-ship</code> &mdash; NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
       </div>
 
       <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a fifty-agent shipping DAG at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request. More on why that gets <em>better</em> as the pack grows: <a href="not-for-the-line-that-makes-a-pack-work.html">NOT FOR: the two words that make a big skill pack work</a>.</p>
