@@ -17,6 +17,7 @@ import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { PARTS, PUBLISHED, SKILL_COUNT, loadSources, renderMarkdown, repoRoot } from "./lib/book.mjs";
+import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
 
 const htmlOnly = process.argv.includes("--html-only");
 const outPdf = path.join(repoRoot, "docs", "book", "s-tier.pdf");
@@ -30,6 +31,7 @@ const CHROME_CANDIDATES = [
   "/usr/bin/chromium-browser",
 ];
 
+const inputDigestBefore = bookPdfInputDigest(repoRoot);
 const sources = loadSources();
 const totalWords = sources.reduce((sum, page) => sum + page.words, 0);
 
@@ -259,7 +261,7 @@ const printHtml = `<!doctype html>
       </div>
       <div>
         <div class="cover-rule"></div>
-        <p class="cover-foot"><span><b>Jason Colapietro</b> &middot; Suede Labs AI</span><span>${totalWords.toLocaleString()} words &middot; MIT</span></p>
+        <p class="cover-foot"><span><b>Jason Colapietro</b> &middot; Suede Labs AI</span><span>${totalWords.toLocaleString()} words &middot; book prose MIT</span></p>
       </div>
     </section>
 
@@ -269,13 +271,14 @@ const printHtml = `<!doctype html>
       <div class="colophon-row"><b>Author</b><span>Jason Colapietro, founder of Suede Labs AI</span></div>
       <div class="colophon-row"><b>Edition</b><span>First, ${editionDate}</span></div>
       <div class="colophon-row"><b>Length</b><span>${totalWords.toLocaleString()} words across ${chapters.length} chapters, front matter, and ${appendices.length} appendices</span></div>
-      <div class="colophon-row"><b>Licence</b><span>MIT. Copy it, quote it, print it, hand it to someone.</span></div>
+      <div class="colophon-row"><b>Licence</b><span>Book prose is MIT. The adapted Graph of Thoughts workflow carries its upstream BSD terms.</span></div>
       <div class="colophon-row"><b>Read online</b><span>skills.suedeai.ai/book/</span></div>
       <div class="colophon-row"><b>Source</b><span>github.com/JasonColapietro/suede-creator-skills &rarr; book/</span></div>
       <br>
       <p>Every claim in this book points at a file in a public repository. Checking claims is most of what the book argues for, so the citations are paths rather than footnotes: open the repo and read the skill.</p>
       <p>The prose was written against the same anti-slop rules the pack enforces, which is why it contains no em dashes. Quoted repo material keeps its own punctuation.</p>
       <p>Thirty-eight of the marketing and growth skills referenced here are adapted from <b>marketingskills</b> by Corey Haines under the MIT Licence. That project is the origin of the material and the credit belongs there.</p>
+      <p>The <b>suede-ship</b> operation graph and thought-state model adapt Graph of Thoughts by ETH Zurich: Maciej Besta et al. (2024), <i>Graph of Thoughts: Solving Elaborate Problems with Large Language Models</i>, AAAI 38(16), 17682-17690, doi:10.1609/aaai.v38i16.29720.</p>
     </section>
 
     <section class="contents">
@@ -310,6 +313,8 @@ if (!chrome) {
 }
 
 fs.mkdirSync(path.dirname(outPdf), { recursive: true });
+const tempPdfDir = fs.mkdtempSync(path.join(path.dirname(outPdf), ".s-tier-pdf-"));
+const tempPdf = path.join(tempPdfDir, "s-tier.pdf");
 const result = spawnSync(
   chrome,
   [
@@ -321,16 +326,31 @@ const result = spawnSync(
     // screen readers and gives most viewers a navigable outline.
     "--export-tagged-pdf",
     "--virtual-time-budget=20000",
-    `--print-to-pdf=${outPdf}`,
+    `--print-to-pdf=${tempPdf}`,
     `file://${tmpHtml}`,
   ],
   { encoding: "utf8" }
 );
 
-if (result.status !== 0 || !fs.existsSync(outPdf)) {
+if (result.status !== 0 || !fs.existsSync(tempPdf) || fs.statSync(tempPdf).size === 0) {
+  fs.rmSync(tempPdfDir, { recursive: true, force: true });
   console.error(result.stderr || "Chrome did not write a PDF.");
   process.exit(1);
 }
 
+const inputDigestAfter = bookPdfInputDigest(repoRoot);
+if (inputDigestAfter !== inputDigestBefore) {
+  fs.rmSync(tempPdfDir, { recursive: true, force: true });
+  console.error("Book inputs changed while Chrome rendered the PDF; existing output was left untouched.");
+  process.exit(1);
+}
+fs.renameSync(tempPdf, outPdf);
+fs.rmSync(tempPdfDir, { recursive: true, force: true });
 const bytes = fs.statSync(outPdf).size;
+const provenancePath = path.join(repoRoot, PDF_PROVENANCE_RELATIVE);
+fs.writeFileSync(provenancePath, `${JSON.stringify({
+  schemaVersion: 1,
+  inputSha256: inputDigestBefore,
+  pdfSha256: bookPdfDigest(repoRoot),
+}, null, 2)}\n`);
 console.log(`docs/book/s-tier.pdf written — ${(bytes / 1024).toFixed(0)} KB, ${totalWords.toLocaleString()} words.`);

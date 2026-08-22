@@ -220,9 +220,12 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
-on the label, and the fleet skill exists precisely so volume can leave the
-Anthropic meter. Extended release is the other scheduling regime: between
+model unless told otherwise, and `suede-ship` states its exact light, standard,
+and deep ceilings of 55, 110, and 200 total calls before launch. It generates
+competing plans, scores and prunes them, refutes and improves the survivors,
+aggregates compatible lanes, and lets only the selected plan mutate. The fleet
+skill exists precisely so well-specified volume can leave the Anthropic meter.
+Extended release is the other scheduling regime: between
 passes, `suede-recommend-next-action` scores candidate moves on goal fit,
 unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
 prompt, so the idle state between runs is a queued next action instead of a

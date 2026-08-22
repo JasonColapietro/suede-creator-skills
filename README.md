@@ -5,7 +5,7 @@
 <br><br>
 
 [![Skills: 71](https://img.shields.io/badge/skills-71-c8a96e?labelColor=080808)](#the-skills)
-[![License: MIT](https://img.shields.io/badge/license-MIT-c8a96e?labelColor=080808)](LICENSE)
+[![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
@@ -21,7 +21,7 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
@@ -34,7 +34,7 @@ This pack is the supervision: **public skill folders**, MIT-licensed and broadly
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Two focused subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (42 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Graph-of-Thoughts shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -43,7 +43,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads every skill and registers both read-only MCP discovery profiles. Restart Codex after installing or updating.
+The Codex plugin loads every skill and registers three read-only MCP discovery profiles. Restart Codex after installing or updating.
 
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
@@ -57,7 +57,16 @@ npx skills add JasonColapietro/suede-creator-skills
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
 ```
 
-You can also copy individual skill folders into `.claude/skills/` (project) or `~/.claude/skills/` (user).
+You can also copy individual skill folders into `.claude/skills/` (project) or
+`~/.claude/skills/` (user). One exception: the hardened `suede-ship` JavaScript
+workflow also requires the repository's `agents/suede-ship-*.md` profiles in
+`~/.claude/agents` and macOS `sandbox-exec`. The `suede-skills` and
+`suede-agent-workflows` Claude plugins, plus `install.sh`, install those profiles;
+a skill-folder-only or generic skills-CLI install does
+not. Codex can use the skill's orchestration contract, but does not execute this
+Claude Workflow runner. The caller passes the namespace explicitly on every
+launch: `suede-skills` for the full plugin, `suede-agent-workflows` for the
+focused plugin, and the empty string for clone or manual user-agent installs.
 
 <details>
 <summary><b>More install routes</b> (single-skill Codex installer, project-level copy, MCP)</summary>
@@ -90,7 +99,7 @@ For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and o
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Exposes 7 tools (`list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 6 resources, and 5 prompts over JSON-RPC.
+Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources including `suede://specialties`, and 5 prompts over JSON-RPC.
 
 </details>
 
@@ -114,9 +123,9 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
-- [`suede-ship`](skills/suede-ship) runs the canonical orchestration DAG on a repo: scout, multi-lens research, a red-teamed lane plan, disjoint build lanes, dual-lens review, adversarial refutation, an integration gate, and a release verifier with an evidence handoff.
+- [`suede-ship`](skills/suede-ship) runs a Graph-of-Thoughts shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
-- [`suede-ship-copy`](skills/suede-ship-copy) is the same DAG rebuilt for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
+- [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 
 ## The A–F ship grade
 
@@ -135,7 +144,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | Skill | What it does |
 |---|---|
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
-| [`suede-ship`](skills/suede-ship) | The canonical orchestration DAG for repo changes: research, red-teamed planning, disjoint lanes, adversarial review, release verification |
+| [`suede-ship`](skills/suede-ship) | Graph-of-Thoughts repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
 | [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |
@@ -206,7 +215,7 @@ under the MIT License — see [NOTICE.md](NOTICE.md).
 
 Essays on why the pack is built the way it is:
 
-- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, the ship DAG, and the MCP layer
+- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, Graph-of-Thoughts shipping search, and the MCP layer
 - [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of a 73-skill pack
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
 - [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills
@@ -219,7 +228,7 @@ Essays on why the pack is built the way it is:
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
-- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free 29,700-word book on how Agent Skills work and how to get genuinely good with them
+- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them
 
 ## MCP server
 

@@ -37,15 +37,17 @@ The server is dependency-free and speaks newline-delimited JSON-RPC over stdio.
 It supports `initialize`, `ping`, `tools/list`, `tools/call`,
 `resources/list`, `resources/read`, `prompts/list`, and `prompts/get`.
 
-Current surface: 7 tools (`list_suede_skills`, `get_suede_skill`,
-`suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`,
-`suede_code_grade`, `suede_qa_checklist`), 6 resources (`suede://catalog`,
+Current surface: 9 tools (`list_suede_skills`, `list_suede_specialties`,
+`search_suede_skills`, `get_suede_skill`, `suede_install_options`,
+`suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`,
+`suede_qa_checklist`), 7 resources (`suede://catalog`, `suede://specialties`,
 `suede://plugins`, `suede://copy-seo-audit`, `suede://visibility-grade`,
 `suede://code-grade`, `suede://qa-checklist`), and 5 prompts
 (`suede-copy-seo-audit`, `suede-plugin-install`, `suede-visibility-grade`,
 `suede-code-grade`, `suede-full-qa`).
 
-The plugin manifest registers both `suede_creator_mcp` (`creator` profile) and
-`suede_workflow_mcp` (`workflow` profile). Catalog additions are exposed through
+The plugin manifest registers `suede_creator_mcp` (`creator` profile),
+`suede_workflow_mcp` (`workflow` profile), and `suede_marketing_mcp`
+(`marketing` profile). Catalog additions are exposed through
 the generic discovery tool and `suede://catalog`; adding a skill does not add a
 new tool, resource, or prompt.

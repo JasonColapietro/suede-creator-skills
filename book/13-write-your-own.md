@@ -197,10 +197,10 @@ body. Rewrite the use-when clause in the exact words you just typed.
 None of this required a vendor. `skills/<name>/SKILL.md` is a text file in your
 repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads
 it changes its mind about something, you edit a file instead of filing a support
-request. The skills in this pack are MIT licensed, which means the first thing
-you should do with any of them is fork the parts that fit your work and delete
-the parts that do not. They are a starting shape, not a product surface. Your
-estate is yours.
+request. The original skills in this pack are MIT licensed, and adapted
+components retain their upstream notices. Read the notice that travels with a
+skill before you fork the parts that fit your work and delete the parts that do
+not. They are a starting shape, not a product surface. Your estate is yours.
 
 ### The move
 

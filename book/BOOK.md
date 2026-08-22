@@ -5,7 +5,15 @@
 By Jason Colapietro, Suede Labs AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 71-skill MIT-licensed pack for Claude Code and OpenAI Codex.
+a 71-skill open-source pack for Claude Code and OpenAI Codex.
+
+The `suede-ship` operation graph and thought-state model discussed in this book
+adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
+Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
+Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
+(2024), "Graph of Thoughts: Solving Elaborate Problems with Large Language
+Models," _Proceedings of the AAAI Conference on Artificial Intelligence_,
+38(16), 17682-17690, https://doi.org/10.1609/aaai.v38i16.29720.
 
 ---
 
@@ -91,10 +99,13 @@ catch. If you find a violation anywhere else, the file to check is
 
 ## License and credit
 
-The pack is MIT licensed. Forty of the marketing and growth skills are
+Original work in the pack is MIT licensed. Adapted components retain their
+upstream notices beside the source. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
-and the credit belongs there. Full notice: `NOTICE.md`.
+and the credit belongs there. The adapted Graph of Thoughts workflow carries
+its upstream BSD terms at `skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`.
+Full notice: `NOTICE.md`.
 
 ---
 
@@ -173,7 +184,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 71 of them, MIT licensed. The file opens with YAML
+`skills/<name>/SKILL.md`, 71 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -201,12 +212,12 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 71 skills fit
 
 Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,031,180 bytes. Loading all of them into every conversation would
+repo total 1,030,841 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 42,249 bytes. That is roughly a
-twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
+all 71 descriptions together come to 41,775 bytes. That is roughly a
+twenty-fifth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
@@ -338,8 +349,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 files total 1,031,180 bytes;
-the 71 descriptions together are 42,249. The agent holds the small number and
+when the skill is not running. In this repo the 71 files total 1,030,841 bytes;
+the 71 descriptions together are 41,775. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -571,7 +582,8 @@ not, write the output block first and rebuild the body around it.
 # Chapter 3. The Description Contract
 
 Five skills in this pack mention code in their first sentence. A review skill, a
-grader, a combined pass, a CI gate, and a fifty-agent shipping DAG. You type
+grader, a combined pass, a CI gate, and a Graph-of-Thoughts shipping search
+capped at 55, 110, or 200 calls. You type
 "can you look at this PR," and exactly one of them is correct. Nothing in the
 system errors if the wrong one runs. You get output either way, and the output
 looks fine.
@@ -1175,9 +1187,12 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
-on the label, and the fleet skill exists precisely so volume can leave the
-Anthropic meter. Extended release is the other scheduling regime: between
+model unless told otherwise, and `suede-ship` states its exact light, standard,
+and deep ceilings of 55, 110, and 200 total calls before launch. It generates
+competing plans, scores and prunes them, refutes and improves the survivors,
+aggregates compatible lanes, and lets only the selected plan mutate. The fleet
+skill exists precisely so well-specified volume can leave the Anthropic meter.
+Extended release is the other scheduling regime: between
 passes, `suede-recommend-next-action` scores candidate moves on goal fit,
 unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
 prompt, so the idle state between runs is a queued next action instead of a
@@ -1230,11 +1245,14 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. It reads production and never
-deploys, so its instructions forbid it from claiming `deployed`, `verified live`,
-or `released` under any circumstances. Those states require a deploy that has not
-happened. A skill that will not overclaim on its own behalf is the only kind
-whose reports are worth anything.
+`suede-ship` enforces the same boundary on itself. Its Graph-of-Thoughts search
+generates competing plans, scores and prunes them, refutes and improves the
+survivors, aggregates compatible lanes, and permits only the selected plan to
+mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
+production and never deploys, so its instructions forbid it from claiming
+`deployed`, `verified live`, or `released` under any circumstances. Those states
+require a deploy that has not happened. A skill that will not overclaim on its
+own behalf is the only kind whose reports are worth anything.
 
 ## What counts
 
@@ -2920,10 +2938,10 @@ body. Rewrite the use-when clause in the exact words you just typed.
 None of this required a vendor. `skills/<name>/SKILL.md` is a text file in your
 repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads
 it changes its mind about something, you edit a file instead of filing a support
-request. The skills in this pack are MIT licensed, which means the first thing
-you should do with any of them is fork the parts that fit your work and delete
-the parts that do not. They are a starting shape, not a product surface. Your
-estate is yours.
+request. The original skills in this pack are MIT licensed, and adapted
+components retain their upstream notices. Read the notice that travels with a
+skill before you fork the parts that fit your work and delete the parts that do
+not. They are a starting shape, not a product surface. Your estate is yours.
 
 ### The move
 
@@ -3159,7 +3177,7 @@ describing the work in the words its description was written to catch.
 
 | Skill | Use it when |
 |---|---|
-| `suede-ship` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
+| `suede-ship` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |

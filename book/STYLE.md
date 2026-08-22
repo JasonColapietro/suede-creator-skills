@@ -40,11 +40,12 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 71 public skill folders, each a `skills/<name>/SKILL.md`, MIT licensed.
+- 71 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
+  MIT licensed; adapted components retain their upstream notices.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
   and a Codex-native plugin.
-- The MCP server at `mcp/` exposes 8 tools, 6 resources, 5 prompts.
+- The MCP server at `mcp/` exposes 9 tools, 7 resources, 5 prompts.
 - Author: Jason Colapietro, founder of Suede Labs AI. Solo founder. The pack came
   out of watching hired marketing firms skip fundamentals on his own products.
 - House line of `suede-full-send`: "Never end your allocation above zero." It is

@@ -108,7 +108,7 @@ ${body}
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a ${SKILL_COUNT}-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <p class="footer-note">Suede Creator Skills is a ${SKILL_COUNT}-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
@@ -272,7 +272,7 @@ const indexDek =
 
 const indexBody = `      <p class="eyebrow">Book &middot; August 10, 2026</p>
       <h1>S-Tier</h1>
-      <p class="post-meta">The builder's book behind the Suede Skills. Free, MIT-licensed, and written against the same anti-slop rules the pack enforces.</p>
+      <p class="post-meta">The builder's book behind the Suede Skills. Free, open source, and written against the same anti-slop rules the pack enforces.</p>
 
       <p class="lead">Most advice about building with agents stops at prompting. This goes past it: what a skill is mechanically, how an agent decides to load one, how to run several without them colliding, what counts as evidence, and what separates a builder who produces output from one who builds systems that keep producing verified output without them.</p>
 
