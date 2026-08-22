@@ -690,7 +690,7 @@ const evidenceParallel = async thunks => {
   }
 }
 const parsePorcelainZ = value => {
-  const fields = String(value || '').split('\u0000')
+  const fields = String(value || '').split(String.fromCharCode(0))
   const paths = []
   const records = []
   let malformed = false
