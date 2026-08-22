@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="t d">
   <title id="t">The pack at a glance</title>
-  <desc id="d">73 skills across seven lanes: marketing and growth 41, design copy and SEO 10, orchestration and workflows 8, code quality and shipping 5, creator rights and release 5, mobile app factories 2, consumer recovery 2.</desc>
+  <desc id="d">71 skills across seven lanes: marketing and growth 41, design copy and SEO 10, orchestration and workflows 6, code quality and shipping 5, creator rights and release 5, mobile app factories 2, consumer recovery 2.</desc>
   <rect width="1200" height="540" rx="16" fill="#080808"/>
   <rect x="1" y="1" width="1198" height="538" rx="15" fill="none" stroke="#222222" stroke-width="2"/>
 
@@ -21,8 +21,8 @@
 
     <!-- Orchestration & workflows -->
     <text x="340" y="273" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Orchestration &amp; workflows</text>
-    <rect x="360" y="254" width="125" height="28" rx="6" fill="#c8a96e"/>
-    <text x="499" y="274" fill="#f0ece4" font-size="17" font-weight="800">8</text>
+    <rect x="360" y="254" width="131" height="28" rx="6" fill="#c8a96e"/>
+    <text x="505" y="274" fill="#f0ece4" font-size="17" font-weight="800">6</text>
 
     <!-- Code quality & shipping -->
     <text x="340" y="325" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Code quality &amp; shipping</text>

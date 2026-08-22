@@ -13,9 +13,8 @@ Add the marketplace and install the pack:
 ```
 
 `suede-skills` installs every skill. Smaller subsets:
-`/plugin install suede-agent-workflows@suede` (Full Send, orchestration,
-workflows, evals) or `/plugin install suede-code@suede` (review, grade,
-ship-gate).
+`/plugin install suede-agent-workflows@suede` (orchestration, workflows,
+evals) or `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 Prefer a clone? `install.sh` copies every skill into `~/.claude/skills/`:
 
@@ -50,8 +49,6 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-deslop \
   skills/suede-design \
   skills/suede-agent-teams \
-  skills/suede-codex-fleet \
-  skills/suede-full-send \
   skills/suede-ship \
   skills/suede-ship-copy \
   skills/suede-ai-eval \

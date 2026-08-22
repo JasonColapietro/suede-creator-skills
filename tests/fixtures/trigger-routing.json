@@ -54,27 +54,15 @@
       ]
     },
     {
-      "id": "teams-fleet-workflow",
-      "skills": ["suede-full-send", "suede-agent-teams", "suede-codex-fleet", "suede-workflow-skills"],
+      "id": "teams-workflow",
+      "skills": ["suede-agent-teams", "suede-workflow-skills"],
       "fallback": "suede-agent-teams",
       "routes": [
-        {
-          "skill": "suede-full-send",
-          "positive": ["full send", "max effort", "max agents", "max agent teams", "spare no compute", "throw tokens at it", "burn tokens", "burn max tokens", "never end your allocation above zero", "strongest useful reasoning", "adversarial review", "fix everything", "do not stop", "end to end completion"],
-          "negative": ["full public skill pack", "umbrella workflow", "install workflow skills"],
-          "metadataMustContain": ["full send", "never end your allocation above zero"]
-        },
         {
           "skill": "suede-agent-teams",
           "positive": ["coordinated agent lanes", "agent lanes", "shared change", "collision checks", "wip checks", "quality gates", "public repo contributions", "public repository contribution program", "issue leases", "contribution packet"],
           "negative": ["codex cli", "independent batches", "full public skill pack", "full send", "max effort", "max agents", "never end your allocation above zero"],
           "metadataMustContain": ["coordinated", "lanes"]
-        },
-        {
-          "skill": "suede-codex-fleet",
-          "positive": ["codex cli", "high volume", "independent batches", "parallel workers", "bulk generation"],
-          "negative": ["shared change", "full public skill pack", "full send", "max effort", "max agents", "never end your allocation above zero"],
-          "metadataMustContain": ["codex cli", "high volume"]
         },
         {
           "skill": "suede-workflow-skills",
@@ -84,24 +72,6 @@
         }
       ],
       "cases": [
-        {
-          "id": "full-send-positive",
-          "mode": "positive",
-          "prompt": "Full send this release with max agents, adversarial review, and end-to-end completion.",
-          "expected": "suede-full-send"
-        },
-        {
-          "id": "full-send-house-trigger",
-          "mode": "positive",
-          "prompt": "Never end your allocation above zero. Throw tokens at it, fix everything, and do not stop.",
-          "expected": "suede-full-send"
-        },
-        {
-          "id": "full-send-burn-tokens-trigger",
-          "mode": "positive",
-          "prompt": "Burn tokens.",
-          "expected": "suede-full-send"
-        },
         {
           "id": "teams-positive",
           "mode": "positive",
@@ -115,17 +85,17 @@
           "expected": "suede-agent-teams"
         },
         {
-          "id": "fleet-negative-teams",
-          "mode": "negative",
-          "prompt": "Use Codex CLI for high-volume independent batches with parallel workers.",
-          "expected": "suede-codex-fleet",
-          "forbidden": ["suede-agent-teams"]
-        },
-        {
           "id": "workflow-pack-positive",
           "mode": "positive",
           "prompt": "Load the full public skill pack as an umbrella workflow.",
           "expected": "suede-workflow-skills"
+        },
+        {
+          "id": "workflow-negative-teams",
+          "mode": "negative",
+          "prompt": "Install the umbrella workflow that loads the full public skill pack.",
+          "expected": "suede-workflow-skills",
+          "forbidden": ["suede-agent-teams"]
         },
         {
           "id": "teams-ambiguous-fallback",

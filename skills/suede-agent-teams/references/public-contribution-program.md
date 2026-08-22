@@ -231,9 +231,10 @@ Use the smallest useful roster:
 Scout -> Builder -> Code Reviewer -> Release Verifier -> Handoff Writer
 ```
 
-Add `suede-codex-fleet` only when the task splits into high-volume,
-independent units. Fleet workers remain sandboxed, write only their assigned
-files, and never push. Keep one owner for shared manifests, generated indexes,
+Add a worker fleet (private Suede Labs companion, not in this pack:
+suede-codex-fleet) only when the task splits into high-volume, independent
+units. Fleet workers remain sandboxed, write only their assigned files, and
+never push. Keep one owner for shared manifests, generated indexes,
 lockfiles, or other collision magnets.
 
 Run the repository's existing checks. Test generated artifacts as well as the

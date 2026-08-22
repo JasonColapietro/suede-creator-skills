@@ -4,7 +4,7 @@
 
 It is useful when an agent needs structured access to:
 
-- Suede skill discovery for full-send outcome routing, Johnny Suede
+- Suede skill discovery for outcome routing, Johnny Suede
   writing/design modes, Apple and iOS surfaces, Suedify, design, anti-slop
   copywriting, Suede SEO/AEO/AI EO, visual QA, artist campaigns, and creator
   utilities;
@@ -28,7 +28,7 @@ node mcp/suede-skills-mcp.mjs --profile all
 Profiles:
 
 - `all`: expose workflow, artist, and creator utility skill context.
-- `workflow`: expose Full Send, Suedify, design, anti-slop copywriting,
+- `workflow`: expose the ship DAG, Suedify, design, anti-slop copywriting,
   SEO/AEO/AI EO, QA, and public workflow context.
 - `artist`: expose artist campaign skill context.
 - `creator`: expose public artist and creator utility context.

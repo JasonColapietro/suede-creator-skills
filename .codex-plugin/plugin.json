@@ -12,7 +12,6 @@
   "keywords": [
     "agent-skills",
     "codex",
-    "full-send",
     "multi-agent",
     "mcp",
     "code-review",
@@ -56,8 +55,8 @@
   },
   "interface": {
     "displayName": "Suede Creator Skills",
-    "shortDescription": "Full-send agent skills with MCP discovery",
-    "longDescription": "Public Suede skills for Full Send execution, coordinated agent teams, reviewed Codex worker fleets, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
+    "shortDescription": "Suede agent skills with MCP discovery",
+    "longDescription": "Public Suede skills for coordinated agent teams, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
     "developerName": "Suede Labs AI",
     "category": "Developer Tools",
     "capabilities": [
@@ -68,7 +67,7 @@
     ],
     "websiteURL": "https://skills.suedeai.ai/",
     "defaultPrompt": [
-      "Full send this authorized outcome with useful lanes and concise proof.",
+      "Take this authorized outcome through useful lanes and close with concise proof.",
       "Audit this surface with independent adversarial lanes.",
       "Find the strongest next move, execute it, and prove it."
     ],

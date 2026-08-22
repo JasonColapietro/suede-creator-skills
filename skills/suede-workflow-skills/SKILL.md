@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; explicit max-effort or max-agent language (use suede-full-send, which owns controller selection); a multi-file repo change that should be built and reviewed as one DAG (use suede-ship)."
+description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-ship)."
 ---
 
 # Suede Workflow Skills
@@ -44,12 +44,6 @@ This skill is the public entry point for:
 - **Suede Code:** unified code review and A-F grading for correctness,
   security, data/state, deploy readiness, and ship risk — prompted only, never
   auto-fires.
-- **Suede Fable Fleet:** offload high-volume, well-specified generation to
-  parallel OpenAI Codex CLI workers — Claude decomposes, briefs, spawns
-  `codex exec` runs, and reviews every output before anything ships.
-- **Suede Full Send:** translate max-effort, max-agent, spare-no-compute, and
-  fix-everything intent into one authorized controller, every useful
-  non-colliding lane, adversarial reconciliation, and concise proof.
 - **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
   retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
 - **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
@@ -95,8 +89,6 @@ their names match the task:
 - `suede-design`
 - `suede-deslop`
 - `suede-agent-teams`
-- `suede-codex-fleet`
-- `suede-full-send`
 - `suede-ai-eval`
 - `suede-recommend-next-action`
 - `suede-ci-gate`
@@ -225,8 +217,6 @@ Design lane:
 
 Build and quality lane:
 
-- Explicit Full Send, maximum-effort, max-agent, spare-no-compute, or
-  fix-everything intent: `suede-full-send`.
 - Code review and A-F grade in one pass: `suede-code` — prompted only, never
   auto-fires.
 - Findings-only deep review: `suede-code-review`. Grade-only verdict:
@@ -313,12 +303,6 @@ Consumer recovery lane:
 
 Precedence when several routers match at once:
 
-- Explicit max-effort language — full send, max agents, spare no compute, burn
-  tokens, fix everything, and the rest of the trigger list that
-  `suede-full-send` carries in its own description — routes to
-  `suede-full-send`, which owns controller selection. This umbrella becomes a
-  subordinate lane under the controller it picks; it never owns the plan or the
-  progress store in that case.
 - A multi-file or multi-surface change to one repo that should be built and
   reviewed as one DAG routes to `suede-ship`, even when the request also names
   a copy or design lane.

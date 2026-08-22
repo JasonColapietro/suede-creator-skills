@@ -1,6 +1,6 @@
 ---
 name: suede-ship
-description: "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. NOT FOR: bulk independent work (use suede-codex-fleet); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
+description: "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
 ---
 
 # Suede Ship
@@ -183,10 +183,11 @@ redistribution of the workflow.
 
 ## Routing
 
-- High-volume, well-specified, independent worker tasks → `suede-codex-fleet`.
+- High-volume, well-specified, independent worker tasks → a separate private
+  worker-fleet pass.
 - Findings-only review of an existing diff → `suede-code-review`.
 - CI, required checks, or branch-protection wiring → `suede-ci-gate`.
 - Copy-only search and publication readiness → `suede-ship-copy`.
-- From `suede-codex-fleet`, `suede-code-review`, `suede-ci-gate`, or
-  `suede-ship-copy`: route a multi-file implementation-plan search with one
+- From `suede-code-review`, `suede-ci-gate`, or `suede-ship-copy`: route a
+  multi-file implementation-plan search with one
   selected mutating winner back to `suede-ship`.

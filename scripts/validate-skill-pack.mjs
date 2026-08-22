@@ -1633,7 +1633,6 @@ function pageStyles(pagePath, text) {
   // archetype sheet would restyle them, so they keep their CSS inline.
   const BESPOKE = new Set([
     "docs/skills/index.html",
-    "docs/skills/suede-full-send.html",
     "docs/skills/suede-instagram-growth.html",
     "docs/blog/index.html",
   ]);
@@ -1993,9 +1992,6 @@ if (clogItems.length === 0) {
 // failure-reason-aware. Three is a ceiling for distinct fixes, not permission to
 // repeat the same failed strategy three times.
 const correctionPolicyChecks = [
-  { file: "skills/suede-codex-fleet/SKILL.md", label: "Fable Fleet spec" },
-  { file: "skills/suede-codex-fleet/agents/openai.yaml", label: "Fable Fleet picker prompt" },
-  { file: "docs/skills/suede-codex-fleet.html", label: "Fable Fleet public docs and example" },
   { file: "skills/suede-agent-teams/SKILL.md", label: "Agent Teams spec" },
   { file: "skills/suede-agent-teams/agents/openai.yaml", label: "Agent Teams picker prompt" },
   { file: "docs/skills/suede-agent-teams.html", label: "Agent Teams public docs and example" },

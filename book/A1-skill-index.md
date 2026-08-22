@@ -11,18 +11,16 @@ describing the work in the words its description was written to catch.
 
 | Skill | Use it when |
 |---|---|
-| `suede-full-send` | You want a broad authorized outcome finished end to end, with one controller and proof at the close |
 | `suede-ship` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
-| `suede-codex-fleet` | The job is high-volume and splits cleanly into worker-sized tasks, and you want OpenAI Codex CLI workers generating while Claude reviews |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |
 
-These six are also indexed together in the catalog as the Agentic Adderall
+These four are also indexed together in the catalog as the Agentic Adderall
 Stack (`stacks[0]`, key `adderall`) and sold at `/cracked.html`. The grouping is
 a cross-cutting overlay on the specialty partition, and the validator pins its
 membership: every member must be a real catalog skill, the claimed count must
-match, and the page must list exactly these six.
+match, and the page must list exactly these four.
 
 ## I want to know if this code is safe to ship
 

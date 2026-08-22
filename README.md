@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 73](https://img.shields.io/badge/skills-73-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 71](https://img.shields.io/badge/skills-71-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -21,9 +21,9 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
+This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
-<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
+<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
 ## Install in 30 seconds
 
@@ -34,7 +34,7 @@ This pack is the supervision: **public, broadly reusable, open-source skill fold
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (42 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (42 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Graph-of-Thoughts shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -111,26 +111,21 @@ Install the pack, then ask for a code review with a ship grade on your current c
 Use suede-code to review my staged diff and give it an A-F ship grade.
 ```
 
-For a broad authorized outcome, invoke Full Send directly:
+For a nontrivial multi-file change, run the ship DAG:
 
 ```text
-Use suede-full-send to finish this release across code, docs, CI, and live verification. Preserve unrelated WIP and return proof.
+Use suede-ship to take this change through the canonical Suede DAG: research it, build it in disjoint lanes, refute the review findings, and hand back evidence.
 ```
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
 
-## Full Send: broad outcomes, one authority
+## Orchestration: broad outcomes, adversarial review
 
-Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. [`suede-full-send`](skills/suede-full-send) turns that intent into a structure: one authorized controller, every useful non-colliding lane running in parallel, adversarial reconciliation where lanes attack each other's claims, and a close that is either concise proof or one named blocker.
+Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
-<img src="docs/assets/readme/full-send-flow.svg" alt="Full Send pipeline: a broad authorized outcome flows through one controller into parallel code, docs, CI, and live-verification lanes, then adversarial reconciliation, then proof." width="100%">
-
-The rest of the orchestration lane backs it up:
-
-- [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship`](skills/suede-ship) runs a Graph-of-Thoughts shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
+- [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
-- [`suede-codex-fleet`](skills/suede-codex-fleet) is the Suede Fable Fleet: a Claude orchestrator decomposes a high-volume job, writes self-contained briefs, spawns parallel OpenAI Codex CLI `codex exec` workers, and reviews every output against acceptance criteria before anything ships. Claude judges, Codex generates.
 
 ## The A–F ship grade
 
@@ -148,11 +143,9 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 
 | Skill | What it does |
 |---|---|
-| [`suede-full-send`](skills/suede-full-send) | Full Send broad authorized outcomes through one controller, useful non-colliding lanes, adversarial reconciliation, and proof |
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
 | [`suede-ship`](skills/suede-ship) | Graph-of-Thoughts repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
-| [`suede-codex-fleet`](skills/suede-codex-fleet) | Suede Fable Fleet: brief, spawn, and review parallel OpenAI Codex CLI workers — Claude judges, Codex generates |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
 | [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |
 | [`suede-workflow-skills`](skills/suede-workflow-skills) | Umbrella skill that loads the full pack |

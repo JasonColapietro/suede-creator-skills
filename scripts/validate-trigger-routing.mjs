@@ -61,7 +61,7 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
   const errors = [];
   const expectedGroups = new Set([
     "code-review-grader",
-    "teams-fleet-workflow",
+    "teams-workflow",
     "design-visibility",
     "rights-audit-passport",
     "android-ios",

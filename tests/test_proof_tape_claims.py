@@ -51,15 +51,19 @@ PACK_PAGES = (
     DOCS / "plugins.html",
 )
 
-# The only two contexts in which a literal "71" is honest: a fixed, dated essay
-# headline (a proper noun -- the title of a specific published post), and a
-# past-tense changelog entry describing the pack when it genuinely had 71.
-ESSAY_HEADLINE_71 = "71 skills installed. Your agent reads almost none of them."
-HISTORICAL_71 = re.compile(r"\d+ of 71 skills")
+# Past-tense changelog shapes are honest at any number: they describe the pack
+# as it was on a dated entry, not as it is.
+HISTORICAL_COUNT = re.compile(r"\d+ of \d+ skills")
 
-# The shapes a stale CURRENT-pack "71" takes. Not the specific fixed strings --
-# the defect class: a number-71 used as a live count of skills.
-STALE_71 = re.compile(r"71[\s-]skills?\b|all 71\b")
+# The shapes a stale CURRENT-pack count takes. Not one poisoned literal -- the
+# defect class: a phrase that presents a number as the live pack size while the
+# number disagrees with skills/ on disk. The pack resizes in both directions,
+# so the guard compares against the truth instead of blacklisting one value.
+STALE_COUNT_SHAPES = (
+    re.compile(r"how (\d+) skills stay cheap to carry"),
+    re.compile(r"(\d+)-skill pack"),
+    re.compile(r"installing all (\d+)\b"),
+)
 
 
 def read(path: Path) -> str:
@@ -197,21 +201,25 @@ class ProofTapeNumbersAreSourced(unittest.TestCase):
 
 
 class PackSizeIsCurrent(unittest.TestCase):
-    def test_stale_71_pack_descriptions_are_gone(self):
-        # Fails if "how 71 skills stay cheap to carry" (skills/index.html),
-        # "the economics of a 71-skill pack" (skills, guide), or "installing all
-        # 71" (plugins) comes back. The essay headline and the historical
-        # changelog line are allowed to keep their 71.
+    def test_stale_pack_descriptions_are_gone(self):
+        # Fails if "how N skills stay cheap to carry", "an N-skill pack", or
+        # "installing all N" states any N other than the pack on disk. Dated
+        # changelog lines ("41 of 71 skills") are stripped first -- history is
+        # allowed to keep the number the pack had at the time.
+        count = true_skill_count()
         for page in PACK_PAGES:
-            text = read(page)
-            stripped = text.replace(ESSAY_HEADLINE_71, "")
-            stripped = HISTORICAL_71.sub("", stripped)
-            leftover = STALE_71.findall(stripped)
+            stripped = HISTORICAL_COUNT.sub("", read(page))
+            leftover = [
+                match.group(0)
+                for shape in STALE_COUNT_SHAPES
+                for match in shape.finditer(stripped)
+                if int(match.group(1)) != count
+            ]
             self.assertEqual(
                 leftover,
                 [],
-                f"{page.relative_to(ROOT)}: stale current-pack '71' reference(s) "
-                f"{leftover} -- the pack is {true_skill_count()}",
+                f"{page.relative_to(ROOT)}: stale current-pack count reference(s) "
+                f"{leftover} -- the pack is {count}",
             )
 
     def test_stay_cheap_lines_state_the_true_count(self):

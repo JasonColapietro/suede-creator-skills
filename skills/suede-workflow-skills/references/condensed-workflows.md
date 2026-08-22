@@ -19,7 +19,7 @@ Each section is the minimum viable version of one specialist's workflow.
 | [Visibility Grading Workflow](#visibility-grading-workflow) | `suede-visibility-grader` |
 | [Site Alchemy Workflow](#site-alchemy-workflow) | `suede-site-alchemy` |
 | [Code Review Workflow](#code-review-workflow) | `suede-code-review`, `suede-code-grader`, `suede-code` |
-| [Agent Team Workflow](#agent-team-workflow) | `suede-agent-teams`, `suede-full-send` |
+| [Agent Team Workflow](#agent-team-workflow) | `suede-agent-teams` |
 
 The Gate policy, Core Rule, Boundaries, and the fix-loop cap in SKILL.md govern
 everything here. Nothing in this file overrides them.
@@ -228,12 +228,11 @@ release-bound work. Use the max-agent loop when the user asks for it or the
 task needs continuous quality gates, evals, recovery controls, and release
 truth.
 
-When the user explicitly asks for full send, max effort, max agents, max agent
-teams, spare no compute, to throw or burn tokens, to fix everything, not to
-stop, or says "never end your allocation above zero," route through
-`suede-full-send`. It freezes authority and selects one controller; it does
-not create a competing team protocol or promise access to a hidden token
-counter.
+When the user explicitly asks for max effort, max agents, max agent teams,
+spare no compute, or to fix everything, freeze authority before spawning
+anything: one controller lane owns the plan and the progress store, every
+other lane subordinates to it, and no lane creates a competing team protocol
+or promises access to a hidden token counter.
 
 Define:
 

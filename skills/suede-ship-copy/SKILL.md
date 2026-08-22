@@ -1,6 +1,6 @@
 ---
 name: suede-ship-copy
-description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation (use suede-codex-fleet)."
+description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
 ---
 
 # Suede Ship Copy
@@ -390,7 +390,8 @@ re-run.
 - The graphic spec needs executing -> use `suede-image`.
 - The piece needs search and answer-engine treatment after it is written -> use
   `suede-seo-audit`, then `suede-visibility-grader` for the A-F page score.
-- Many independent pieces from one spec -> use `suede-codex-fleet`.
+- Many independent pieces from one spec ->
+  private Suede Labs companion, not in this pack: suede-codex-fleet.
 - Writing a completion or done-state claim about this run ->
   private Suede Labs companion, not in this pack: suede-verification-law. The rule
   it enforces is stated inline above: this workflow writes a draft and reads the
