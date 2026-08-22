@@ -2115,6 +2115,7 @@ const buildApplyCommand = makePatchApplyCommand(buildPatchBundle.text)
 reserveBatch(2, 'BuildMutationSafety', ['apply:build', 'verify:build'])
 winnerMutationAttempted = true
 evidence.shipVerdict = 'hold'
+let buildApplyFailed = false
 try {
   evidence.buildApply = await callAgent(
     `Apply the already-validated selected-plan patch. Run exactly this command and no other tool or command:\n${buildApplyCommand}\nReturn the real command output and whether it applied.`,
@@ -2128,12 +2129,8 @@ try {
   if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
   const applyFailure = { message: error && error.message ? error.message : String(error), code: (error && error.code) || null }
   evidence.buildApplyFailure = applyFailure
+  buildApplyFailed = true
   graph.dropped.push({ operation: 'ApplyBuild', inputs: { files: buildPatchBundle.files }, reason: 'clamped build patch apply failed', error: applyFailure })
-  return { halted: true, reason: 'build patch apply failed', graph, ...evidence }
-}
-if (!evidence.buildApply || evidence.buildApply.applied !== true) {
-  graph.dropped.push({ operation: 'ApplyBuild', inputs: { files: buildPatchBundle.files }, reason: 'clamped build patch was not applied' })
-  return { halted: true, reason: 'build patch apply failed', graph, ...evidence }
 }
 
 phase('BuildVerify')
@@ -2156,6 +2153,11 @@ if (!buildMutationAudit.valid) {
 }
 mutationAttestation = buildMutationAudit.attestation
 evidence.mutationAttestation = mutationAttestation
+if (buildApplyFailed) return { halted: true, reason: 'build patch apply failed', graph, ...evidence }
+if (!evidence.buildApply || evidence.buildApply.applied !== true) {
+  graph.dropped.push({ operation: 'ApplyBuild', inputs: { files: buildPatchBundle.files }, reason: 'clamped build patch was not applied' })
+  return { halted: true, reason: 'build patch apply failed', graph, ...evidence }
+}
 
 let laneResults
 try {
@@ -2442,6 +2444,7 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
   const fixExpectedMutationFiles = canonicalMutationFiles([...reportedMutationFiles, ...fixPatchBundle.files])
   const fixApplyCommand = makePatchApplyCommand(fixPatchBundle.text)
   reserveBatch(2, 'FixMutationSafety', ['apply:fix', 'verify:fix'])
+  let fixApplyFailed = false
   try {
     evidence.fixApply = await callAgent(
       `Apply the already-validated blocker-fix patch. Run exactly this command and no other tool or command:\n${fixApplyCommand}\nReturn the real command output and whether it applied.`,
@@ -2455,12 +2458,8 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
     if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
     const applyFailure = { message: error && error.message ? error.message : String(error), code: (error && error.code) || null }
     evidence.fixApplyFailure = applyFailure
+    fixApplyFailed = true
     graph.dropped.push({ operation: 'ApplyFix', inputs: { files: fixPatchBundle.files }, reason: 'clamped fix patch apply failed', error: applyFailure })
-    return { halted: true, reason: 'fix patch apply failed', graph, ...evidence }
-  }
-  if (!evidence.fixApply || evidence.fixApply.applied !== true) {
-    graph.dropped.push({ operation: 'ApplyFix', inputs: { files: fixPatchBundle.files }, reason: 'clamped fix patch was not applied' })
-    return { halted: true, reason: 'fix patch apply failed', graph, ...evidence }
   }
   phase('FixVerify')
   const fixMutationAudit = await attestMutation({
@@ -2483,6 +2482,11 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
   reportedMutationFiles = fixExpectedMutationFiles
   mutationAttestation = fixMutationAudit.attestation
   evidence.mutationAttestation = mutationAttestation
+  if (fixApplyFailed) return { halted: true, reason: 'fix patch apply failed', graph, ...evidence }
+  if (!evidence.fixApply || evidence.fixApply.applied !== true) {
+    graph.dropped.push({ operation: 'ApplyFix', inputs: { files: fixPatchBundle.files }, reason: 'clamped fix patch was not applied' })
+    return { halted: true, reason: 'fix patch apply failed', graph, ...evidence }
+  }
   evidence.fixedBlockersPendingVerification = fixing
   evidence.unfixedBlockers = blockers.slice(FIX_CAP)
   if (evidence.unfixedBlockers.length) {

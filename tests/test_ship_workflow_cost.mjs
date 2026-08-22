@@ -20,7 +20,7 @@ const DIFF_DIGEST = 'a'.repeat(64)
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -334,8 +334,9 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
         }
         }
       case 'ApplyBuild':
+        return { applied: buildApplied, output: buildApplied ? 'patch applied' : 'patch apply status unavailable' }
       case 'ApplyFix':
-        return { applied: true, output: 'patch applied' }
+        return { applied: fixApplied, output: fixApplied ? 'patch applied' : 'patch apply status unavailable' }
       case 'BuildVerify':
       case 'FixVerify':
       case 'MutationVerify':
@@ -1648,6 +1649,28 @@ test('Fix Apply is immediately attested before Gate and verifier failure halts t
   assert.ok(failed.result.fixApply)
   assert.match(failed.result.fixMutationAttestationFailure.message, /programming error at FixVerify/)
   assert.equal(failed.calls.some(call => call.phase === 'Gate'), false)
+})
+
+test('lost or negative Apply responses still run their reserved attestation before halting', async () => {
+  for (const options of [{ buildApplied: false }, { agentErrorPhase: 'ApplyBuild' }]) {
+    const run = await runShip({ ...options, findingsPerLens: 0 })
+    const applyIndex = run.calls.findIndex(call => call.phase === 'ApplyBuild')
+    const verifyIndex = run.calls.findIndex(call => call.phase === 'BuildVerify')
+    assert.ok(applyIndex >= 0 && verifyIndex > applyIndex)
+    assert.equal(run.result.reason, 'build patch apply failed')
+    assert.ok(run.result.buildMutationAttestation)
+    assert.equal(run.calls.some(call => call.phase === 'Review'), false)
+  }
+
+  for (const options of [{ fixApplied: false }, { agentErrorPhase: 'ApplyFix' }]) {
+    const run = await runShip({ ...options, findingsPerLens: 1 })
+    const applyIndex = run.calls.findIndex(call => call.phase === 'ApplyFix')
+    const verifyIndex = run.calls.findIndex(call => call.phase === 'FixVerify')
+    assert.ok(applyIndex >= 0 && verifyIndex > applyIndex)
+    assert.equal(run.result.reason, 'fix patch apply failed')
+    assert.ok(run.result.fixMutationAttestation)
+    assert.equal(run.calls.some(call => call.phase === 'Gate'), false)
+  }
 })
 
 test('post-Gate attestation requires the source diff to remain byte-identical', async () => {
