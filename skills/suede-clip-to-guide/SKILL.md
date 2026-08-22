@@ -29,7 +29,7 @@ Post explains why the moment matters
         ↓
 One explicit bridge to the guide
         ↓
-Full Send/Fleet: dual certainty gate
+Max Effort/Fleet: dual certainty gate
         ↓
 Exact-content approval
         ↓
@@ -82,8 +82,8 @@ writing copy; resolve platform, certainty, and approval before a live action:
 5. **Approval gate** — do not publish, schedule, repost, upload, reply, or edit
    a live article until the user approves the exact media, copy, guide, account,
    and sequence.
-6. **Certainty gate** — when `suede-full-send` or `suede-codex-fleet` controls
-   the run, require two distinct evidence checks before marking a package
+6. **Certainty gate** — when a max-effort or worker-fleet controller runs this
+   skill, require two distinct evidence checks before marking a package
    approved or published. A worker conclusion is not the second check.
 
 When a blocking gate fails, stop the affected action and return:
@@ -111,7 +111,7 @@ the gate, not to waive it.
 | "I credited the source." | Credit is attribution, not clearance. A blocked or unreviewed source stays blocked with a credit line attached. |
 | "It's public, so it's reusable." | Public availability is not reuse permission. Classify the video before writing copy. |
 | "The composer accepted it, so it published." | A prepared composer, scheduled item, or click is not a publication. Only the public permalink readback proves it. |
-| "The worker already checked it." | Under Full Send or Codex Fleet a worker conclusion is one check. The certainty gate needs a second, independent one. |
+| "The worker already checked it." | Under Max Effort or Worker Fleet a worker conclusion is one check. The certainty gate needs a second, independent one. |
 | "The guide is basically finished." | An unpublished guide with no stable draft or specific promise fails the fit test. Build the bridge to something that exists. |
 | "The moment is getting traction, so ship it." | Popularity is not the score. A moment below 8/10, or below 2 on claim support or guide bridge, does not qualify. |
 
@@ -227,8 +227,8 @@ credit.
 
 ### 7. Run the dual certainty gate when required
 
-Record `execution_mode` as `standard`, `full-send`, or `codex-fleet`. Standard
-mode may record `certainty_status: not-required`. Full Send and Codex Fleet
+Record `execution_mode` as `standard`, `max-effort`, or `worker-fleet`. Standard
+mode may record `certainty_status: not-required`. Max Effort and Worker Fleet
 must run both checks and may not mark a package `approved` or `published` until
 `certainty_status: proved`. Record one package version, timestamp, or content
 hash so both checks evaluate the same unchanged artifact.
@@ -239,7 +239,7 @@ hash so both checks evaluate the same unchanged artifact.
 - Match the quotation, claim framing, rights evidence, moment score, guide
   promise, bridge, exact copy, identity, sequence, and one CTA to the package.
 - Run the package validator for a saved artifact.
-- In Fleet mode, the Codex worker's acceptance-criteria self-check may satisfy
+- In Fleet mode, the fleet worker's acceptance-criteria self-check may satisfy
   this check, but remains provisional.
 
 **Check 2 — independent proof**
@@ -249,8 +249,8 @@ hash so both checks evaluate the same unchanged artifact.
 - Use a different failure lens, evidence source, or acceptance criterion and
   try to disprove the rights route, factual framing, guide fit, platform
   sequence, and approval readiness.
-- In Full Send with useful parallel work, keep the producer and adversarial
-  reviewer separate. For one atomic Full Send job, perform a fresh second pass
+- In Max Effort with useful parallel work, keep the producer and adversarial
+  reviewer separate. For one atomic Max Effort job, perform a fresh second pass
   after reloading the source evidence.
 - In Fleet mode, the controller must perform this check and mark the worker
   output `accepted`, `rejected`, or `fix brief`. A second worker or repeated
@@ -346,7 +346,7 @@ Do not report causal lift from an unpaired or tiny sample.
 - Do not alter a source quote to make the hook stronger.
 - Do not describe the campaign as successful until current analytics support
   the named decision rule.
-- Do not call a Full Send or Fleet package certain, approved, or publishable
+- Do not call a Max Effort or Fleet package certain, approved, or publishable
   when either required check is `UNPROVED` or `BLOCKED`.
 
 ## Routing
@@ -358,8 +358,8 @@ Do not report causal lift from an unpaired or tiny sample.
 - Need the long-form guide written -> use `suede-copy`; use
   `suede-content-strategy` for pillars and portfolio priority.
 - Need paid variants -> use `suede-ad-creative`.
-- Need maximum-effort orchestration -> use `suede-full-send`; need a
-  high-volume Codex CLI batch -> use `suede-codex-fleet`. In either mode,
-  return here for the dual certainty record.
+- Need maximum-effort orchestration or a high-volume worker-fleet batch ->
+  private Suede Labs companions, not in this pack: suede-full-send and
+  suede-codex-fleet. In either mode, return here for the dual certainty record.
 - From those skills, route a video-to-long-form bridge, moment score, rights
   route, exact approval bundle, and readback back to `suede-clip-to-guide`.

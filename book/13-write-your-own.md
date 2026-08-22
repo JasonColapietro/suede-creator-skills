@@ -143,7 +143,7 @@ target surface or a declared external root, and on any relative path under
 `examples/`, or `data/` that does not exist.
 
 The third rot is worse because it is invisible and it is not about skills at
-all. It is duplicated numbers. This repo says "73 skills" in the README badge
+all. It is duplicated numbers. This repo says "71 skills" in the README badge
 URL, the README badge alt text, the README intro, five separate install
 sections, `PRODUCT.md`, `CITATION.cff`, `docs/llms.txt`, four different `docs/`
 pages' title tags and og:descriptions and JSON-LD blocks, both plugin manifests,

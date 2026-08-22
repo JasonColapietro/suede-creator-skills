@@ -52,7 +52,7 @@ def with_proved_gate(text: str, check_2_process: str) -> str:
 - Final certainty verdict: NOT-REQUIRED."""
     replacement = f"""- Required: Yes.
 - Checked artifact version/hash: package-sha256-7af91d.
-- Check 1 owner/process: Codex worker acceptance-criteria self-check.
+- Check 1 owner/process: fleet worker acceptance-criteria self-check.
 - Check 1 evidence: Verified transcript timestamps, rights record, guide bridge, exact copy, and validator output.
 - Check 1 verdict: PROVED.
 - Check 2 owner/process: {check_2_process}
@@ -71,21 +71,21 @@ class ClipToGuidePackageTests(unittest.TestCase):
     def test_standard_example_passes(self) -> None:
         self.assertEqual(validate_text(self.example), [])
 
-    def test_full_send_approved_requires_proved_status(self) -> None:
-        package = with_mode(self.example, "full-send", "pending").replace(
+    def test_max_effort_approved_requires_proved_status(self) -> None:
+        package = with_mode(self.example, "max-effort", "pending").replace(
             'publication_status: "draft"',
             'publication_status: "approved"',
         )
         errors = validate_text(package)
         self.assertIn(
-            "approved full-send package needs certainty_status: proved",
+            "approved max-effort package needs certainty_status: proved",
             errors,
         )
 
     def test_proved_gate_rejects_same_process_twice(self) -> None:
         package = with_proved_gate(
-            with_mode(self.example, "full-send", "proved"),
-            "Codex worker acceptance-criteria self-check.",
+            with_mode(self.example, "max-effort", "proved"),
+            "fleet worker acceptance-criteria self-check.",
         )
         errors = validate_text(package)
         self.assertIn(
@@ -95,7 +95,7 @@ class ClipToGuidePackageTests(unittest.TestCase):
 
     def test_proved_gate_rejects_duplicate_evidence(self) -> None:
         package = with_proved_gate(
-            with_mode(self.example, "full-send", "proved"),
+            with_mode(self.example, "max-effort", "proved"),
             "Fresh-context adversarial review.",
         ).replace(
             "Reopened the source transcript and guide, then inspected the "
@@ -109,21 +109,21 @@ class ClipToGuidePackageTests(unittest.TestCase):
             errors,
         )
 
-    def test_codex_fleet_proved_gate_accepts_controller_review(self) -> None:
+    def test_worker_fleet_proved_gate_accepts_controller_review(self) -> None:
         package = with_proved_gate(
-            with_mode(self.example, "codex-fleet", "proved"),
+            with_mode(self.example, "worker-fleet", "proved"),
             "Controller independent source-truth review.",
         )
         self.assertEqual(validate_text(package), [])
 
-    def test_codex_fleet_rejects_second_worker_as_review(self) -> None:
+    def test_worker_fleet_rejects_second_worker_as_review(self) -> None:
         package = with_proved_gate(
-            with_mode(self.example, "codex-fleet", "proved"),
-            "Second Codex worker self-check.",
+            with_mode(self.example, "worker-fleet", "proved"),
+            "Second fleet worker self-check.",
         )
         errors = validate_text(package)
         self.assertIn(
-            "proved codex-fleet gate needs controller review as Check 2",
+            "proved worker-fleet gate needs controller review as Check 2",
             errors,
         )
 

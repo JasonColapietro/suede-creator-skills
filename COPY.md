@@ -2,7 +2,7 @@
 
 Use this copy when linking, sharing, explaining, or documenting Suede Creator
 Skills. Lead with the real mechanism: portable agent context, linked
-preferences, Full Send execution, Suedify reference-site restyling,
+preferences, Suedify reference-site restyling,
 coordinated agent teams, anti-slop copywriting, SEO/AEO/AI EO, visibility
 grading, A-F code grading, GitHub Pages polish, AI evals, launch packaging,
 optional MCP, iOS/product checks, artist campaigns, music/IP metadata, and
@@ -14,7 +14,7 @@ payouts, or promise outcomes.
 
 ### One-line description
 
-Free Codex and Claude Code skills for decisive Full Send execution, portable
+Free Codex and Claude Code skills for portable
 agent context, Suedify website restyling, design, anti-slop copywriting,
 SEO/AEO/AI EO, GitHub Pages polish, visibility grading, A-F code grading,
 coordinated agent teams, AI evals, QA, iOS/product checks, artist campaigns,
@@ -23,7 +23,7 @@ music/IP metadata, and creator utility workflows.
 ### Short description
 
 Suede Creator Skills help agents carry preferences across sessions, take broad
-outcomes full send, improve websites, rewrite copy, audit SEO/AEO/AI EO, polish
+outcomes end to end, improve websites, rewrite copy, audit SEO/AEO/AI EO, polish
 GitHub Pages, grade visibility and CTA strength, adapt reference-site style
 safely, review code A-F, coordinate agent teams with shared context, design AI
 evals, package public docs, run evidence-backed rights utilities, and support
@@ -39,13 +39,6 @@ EO, scores visibility at the schema and answer-engine layer, grades code and
 project readiness, packages music/IP material, and uses MCP only when structured
 discovery or QA actually helps.
 
-### Full Send explanation
-
-Suede Full Send turns max-effort language into one authorized outcome: one
-controller, every useful non-colliding lane, adversarial reconciliation, and
-direct proof. **"Never end your allocation above zero."** is the dry house
-line, not a literal token-meter promise or permission to pad the work.
-
 ### Short component line
 
 Linked preferences, Suedify, iOS packaging, communicating agent teams,
@@ -56,11 +49,11 @@ portable skill pack.
 ### Full description
 
 Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships 70 public `SKILL.md` folders:
-one umbrella workflow (`suede-workflow-skills`), 21 workflow skills
-(`johnny-suede-write`, `johnny-suede-design`, `suede-full-send`, `suede-code`,
+creators, agencies, and AI power users. It ships public `SKILL.md` folders:
+one umbrella workflow (`suede-workflow-skills`), the workflow skills
+(`johnny-suede-write`, `johnny-suede-design`, `suede-code`,
 `suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`, `suede-deslop`,
-`suede-agent-teams`, `suede-codex-fleet`, `suede-ci-gate`,
+`suede-agent-teams`, `suede-ci-gate`,
 `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
 `suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
 `suede-mcp-qa`, `site-to-ios-app`, `android-app-factory`), 5 creator skills
@@ -76,7 +69,7 @@ Suede Creator Skills | 70 Open-Source Agent Skills
 
 ### Meta description
 
-Install 70 free open-source Claude Code and Codex skills for Full Send, code
+Install free open-source Claude Code and Codex skills for code
 review, CI ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and
 creator workflows.
 
@@ -86,7 +79,7 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the Suede pack that gives agents portable context: Full Send,
+Install the Suede pack that gives agents portable context:
 linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
 SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
 CTA grades, A-F code review, coordinated agent teams, install-path checks,
@@ -441,9 +434,6 @@ mobile and product surfaces, product screenshots, visual QA, company voice, and
 copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
 `suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
 `suede-code` when a change needs code review and A-F grading. Prompted only.
-Run `suede-full-send` when the user explicitly wants maximum useful effort,
-max agents, adversarial review, or a broad authorized outcome finished
-end-to-end.
 Run `suede-ci-gate` when you need a CI gate that blocks merges on failing
 checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
@@ -451,9 +441,9 @@ checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ### One-line description
 
-The Agentic Adderall Stack: six orchestration skills — full-send, ship,
-agent-teams, codex-fleet, workflow-skills, recommend-next-action — indexed as a
-validator-pinned `stacks` entry in the catalog and served per-profile over MCP.
+The Agentic Adderall Stack: four orchestration skills — ship, agent-teams,
+workflow-skills, recommend-next-action — indexed as a validator-pinned
+`stacks` entry in the catalog and served per-profile over MCP.
 
 ### Page subhead
 
@@ -469,14 +459,13 @@ Stacks are a cross-cutting overlay on the specialty partition, not a seventh
 specialty. The partition stays total, the validator fails CI when the stack's
 catalog membership and its page drift, and the MCP server scopes membership per
 profile. Cost stays on the label: suede-ship states its own 35-to-150-agent
-range, and suede-codex-fleet routes bulk volume to OpenAI Codex CLI workers
-billed outside the Anthropic meter.
+range and asks for the range and model before it launches.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: 73 public agent skills for Full Send, design,
+Suede Creator Skills are live: public agent skills for design,
 copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
 grading, code review, CI gating, iOS/Android app shipping, launch packaging,
 artist campaigns, and creator rights workflows.
@@ -503,9 +492,9 @@ worked or missed.
 
 ### Cracked stack post
 
-New in Suede Creator Skills: the Agentic Adderall Stack — the pack's six
-orchestration skills (full-send, ship, agent-teams, codex-fleet,
-workflow-skills, recommend-next-action) indexed as a validator-pinned `stacks`
+New in Suede Creator Skills: the Agentic Adderall Stack — the pack's four
+orchestration skills (ship, agent-teams, workflow-skills,
+recommend-next-action) indexed as a validator-pinned `stacks`
 entry in the catalog. The label is a joke; the mechanism is a DAG: one
 controller, disjoint lanes, adversarial refute inside the pass, an evidence
 gate at the close.

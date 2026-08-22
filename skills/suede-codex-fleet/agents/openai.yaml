@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suede Fable Fleet"
-  short_description: "Claude-directed parallel Codex CLI worker fleet"
-  default_prompt: "Use $suede-codex-fleet to offload [job] to parallel OpenAI Codex CLI workers. Decompose into independent worker-sized tasks, write self-contained briefs plus an AGENTS.md voice/context contract, spawn one codex exec run per brief in parallel, review every output against the brief's acceptance criteria, send delta corrections instead of regenerating — up to three genuinely different fixes per output, stopping early when the same root cause repeats — then assemble the reviewed survivors into the final deliverable. Every worker is a codex exec process billed to the OpenAI subscription: never substitute Claude subagent fan-out on any model ('Fable' is the brand name, not claude-fable-5), and if Codex CLI is missing or logged out, halt and report rather than falling back."
-policy:
-  allow_implicit_invocation: true

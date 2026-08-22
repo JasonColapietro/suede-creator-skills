@@ -483,7 +483,7 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     });
     assert.ok(response.result.structuredContent.skills.length > 0);
     assert.ok(response.result.structuredContent.skills.every((skill) => ["artist", "creator"].includes(skill.area)));
-    assert.ok(!response.result.structuredContent.skills.some((skill) => skill.name === "suede-full-send"));
+    assert.ok(!response.result.structuredContent.skills.some((skill) => skill.name === "suede-ship"));
   }, "creator");
 
   await withSession(async (session) => {
@@ -499,17 +499,17 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     assert.ok(
       response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
     );
-    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-full-send"));
+    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-ship"));
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "amazon-returns-recovery"));
 
-    const fullSend = await session.request("tools/call", {
+    const ship = await session.request("tools/call", {
       name: "get_suede_skill",
-      arguments: { name: "suede-full-send" }
+      arguments: { name: "suede-ship" }
     });
-    assert.equal(fullSend.result.structuredContent.found, true);
+    assert.equal(ship.result.structuredContent.found, true);
     assert.match(
-      fullSend.result.structuredContent.skill.useWhen,
-      /never end your allocation above zero/
+      ship.result.structuredContent.skill.useWhen,
+      /research-heavy agent graph/
     );
   }, "workflow");
 });

@@ -37,20 +37,27 @@ test("every routed skill remains installed and publicly cataloged", () => {
   }
 });
 
-test("full-send intent stays in the existing orchestration group and focused plugin subset", () => {
+test("retired orchestration skills stay out of the routing contract and plugin subsets", () => {
+  const retired = ["suede-full-send", "suede-codex-fleet"];
   const contract = loadContract();
-  const orchestration = contract.groups.find(({ id }) => id === "teams-fleet-workflow");
+  for (const group of contract.groups) {
+    for (const name of retired) {
+      assert.ok(!group.skills.includes(name), `${group.id} still lists ${name}`);
+      assert.ok(!group.routes.some(({ skill }) => skill === name), `${group.id} still routes ${name}`);
+    }
+  }
+
+  const orchestration = contract.groups.find(({ id }) => id === "teams-workflow");
   assert.ok(orchestration);
-  assert.ok(orchestration.skills.includes("suede-full-send"));
-  const route = orchestration.routes.find(({ skill }) => skill === "suede-full-send");
-  assert.ok(route);
-  assert.ok(route.positive.includes("full send"));
-  assert.ok(route.positive.includes("never end your allocation above zero"));
+  assert.ok(orchestration.skills.includes("suede-agent-teams"));
+  assert.ok(orchestration.skills.includes("suede-workflow-skills"));
 
   const marketplace = JSON.parse(
     fs.readFileSync(path.join(ROOT, ".claude-plugin", "marketplace.json"), "utf8")
   );
-  const subset = marketplace.plugins.find(({ name }) => name === "suede-agent-workflows");
-  assert.ok(subset);
-  assert.ok(subset.skills.includes("./skills/suede-full-send"));
+  for (const plugin of marketplace.plugins) {
+    for (const name of retired) {
+      assert.ok(!(plugin.skills ?? []).includes(`./skills/${name}`), `${plugin.name} still lists ${name}`);
+    }
+  }
 });

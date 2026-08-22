@@ -70,7 +70,6 @@ const FLAGSHIP_SKILLS = [
   "suede-code",
   "suede-code-review",
   "suede-ci-gate",
-  "suede-codex-fleet",
 ];
 const FLAGSHIP_PRIORITY = "0.85";
 const SKILL_DEFAULT_PRIORITY = "0.8";

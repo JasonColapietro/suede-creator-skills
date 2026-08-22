@@ -4,7 +4,7 @@ title: "Suede Creator Skills"
 abstract: >-
   A public, open-source (MIT) pack of installable Agent Skills for Claude Code
   and OpenAI Codex, plus an optional Model Context Protocol (MCP) server. Covers
-  outcome-bound orchestration through Suede Full Send, design, anti-slop
+  outcome-bound orchestration through the Suede ship DAG, design, anti-slop
   copywriting, SEO/AEO/AI EO audits, reference-site restyling (Suedify), website
   visibility and CTA grading, A-F code grading, agent QA, launch packaging,
   Instagram growth, artist-campaign tools, and creator rights utilities.
@@ -24,7 +24,6 @@ keywords:
   - OpenAI Codex
   - Agent Skills
   - agent orchestration
-  - Suede Full Send
   - Model Context Protocol
   - MCP server
   - SEO
