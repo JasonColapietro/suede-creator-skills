@@ -298,6 +298,12 @@
     ::selection { background: #c8a96e; color: #080808; }
     html { scrollbar-color: #2e2c28 #0a0a0a; }
     [id] { scroll-margin-top: 84px; }
+
+    /* Cracked Devs tab: the one hot door in the nav */
+    .nav-cracked { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #c6625a; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(139, 26, 26, 0.1); animation: cracked-breathe 2.8s ease-in-out infinite; }
+    .nav-cracked:hover { color: #ffb3ab; border-color: #c6625a; }
+    @keyframes cracked-breathe { 0%, 100% { box-shadow: 0 0 0 rgba(198, 98, 90, 0); } 50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); } }
+    @media (prefers-reduced-motion: reduce) { .nav-cracked { animation: none; } }
   </style>
   <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
 </head>
@@ -324,7 +330,7 @@
       <a href="./book/">Book</a>
       <a href="./blog/">Blog</a>
       <a href="./copy.html" aria-current="page">Copy Bank</a>
-      <a href="./cracked.html">Cracked Devs</a>
+      <a href="./cracked.html" class="nav-cracked">Cracked Devs</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="./plugins.html" class="nav-cta">Install</a>
     </div>
