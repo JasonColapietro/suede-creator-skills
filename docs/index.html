@@ -3527,6 +3527,12 @@
       .tape-track li { padding: 8px 12px; }
       .tape-track li::after { content: none; }
     }
+
+    /* Cracked Devs tab: the one hot door in the nav */
+    .nav-cracked { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #c6625a; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(139, 26, 26, 0.1); white-space: nowrap; animation: cracked-breathe 2.8s ease-in-out infinite; }
+    .nav-cracked:hover { color: #ffb3ab; border-color: #c6625a; }
+    @keyframes cracked-breathe { 0%, 100% { box-shadow: 0 0 0 rgba(198, 98, 90, 0); } 50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); } }
+    @media (prefers-reduced-motion: reduce) { .nav-cracked { animation: none; } }
   </style>
 </head>
 <body>
@@ -3563,7 +3569,7 @@
       <a href="guide.html" class="nav-link">Guide</a>
       <a href="book/" class="nav-link">Book</a>
       <a href="blog/" class="nav-link">Blog</a>
-        <a href="cracked.html" class="nav-link">Cracked Devs</a>
+        <a href="cracked.html" class="nav-link nav-cracked">Cracked Devs</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <details class="nav-disclosure" id="nav-disclosure" open>
@@ -3579,7 +3585,7 @@
         <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
         <a href="book/" class="nav-mobile-link" role="menuitem">Book</a>
         <a href="blog/" class="nav-mobile-link" role="menuitem">Blog</a>
-        <a href="cracked.html" class="nav-mobile-link" role="menuitem">Cracked Devs</a>
+        <a href="cracked.html" class="nav-mobile-link nav-cracked" role="menuitem">Cracked Devs</a>
         <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" class="nav-mobile-link" role="menuitem">Star on GitHub</a>
         <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
         </div>
@@ -3629,9 +3635,9 @@
       <div id="hero-copy">
         <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT + BSD<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 16</a></span>
 
-        <h1 id="hero-headline" class="hero-anim">Your coding agent is fast, capable, and <em class="hh-risk">completely unsupervised</em>.</h1>
+        <h1 id="hero-headline" class="hero-anim">Your coding agent is one install away from <em class="hh-risk">being a company</em>.</h1>
 
-        <p id="hero-subline" class="hero-anim">This pack is the supervision. Open-source skills that read every diff like a senior engineer with a reputation to protect, then finish the parts nobody prompts for: design, copy, SEO, Instagram growth, and <strong>native iOS and Android shipping</strong>. One recovery skill argued Amazon out of <strong>$448.31</strong> in one sitting. Your agent just got taste.</p>
+        <p id="hero-subline" class="hero-anim">Suede is the operating doctrine for agents that ship. A build DAG that researches your repo, fans out disjoint lanes, and refutes its own review before anything lands. A blunt <strong>A-F ship grade</strong> that blocks the bad merge instead of complimenting it. Then the lanes nobody prompts for: design, copy, SEO, growth, and <strong>native iOS and Android shipping</strong>. One skill argued Amazon out of <strong>$448.31</strong>. It is the pettiest thing in the pack.</p>
 
         <div id="hero-ctas" class="hero-anim">
           <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
@@ -3656,7 +3662,7 @@
             <span style="height:67%"></span>
           </span>
           <span class="hero-shiplog-text">
-            <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base 718ede8</b></span>
+            <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base 0672ebd</b></span>
             <span class="hero-shiplog-title">Graph search replaces the fixed shipping DAG</span>
             <span class="hero-shiplog-more">282 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
           </span>
@@ -3833,7 +3839,7 @@
           <p class="clog-meta">
             <span class="clog-date">2026-08-21</span>
             <span class="clog-tag">Orchestration</span>
-            <a class="clog-hash clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/718ede8" target="_blank" rel="noopener" aria-label="View base commit 718ede8 on GitHub">base 718ede8</a>
+            <a class="clog-hash clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/0672ebd" target="_blank" rel="noopener" aria-label="View base commit 0672ebd on GitHub">base 0672ebd</a>
           </p>
           <h3 class="clog-title">Graph search replaces the fixed shipping DAG</h3>
           <p class="clog-detail">Version 0.15.0 replaces <code>suede-ship</code>'s fixed single-plan DAG with a bounded Graph-of-Thoughts search. It generates competing plans, scores and prunes them, adversarially refutes and improves survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep stop at 55, 110, and 200 total agent calls. Production access remains read-only; the skill never deploys.</p>
