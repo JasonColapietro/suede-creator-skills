@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Installs all skills from this repo into ~/.claude/skills/
+# Installs all skills into ~/.claude/skills/ and Suede Ship's fixed agent
+# profiles into ~/.claude/agents/.
 # Syncs each pack skill folder exactly; skills in the target that are not part
 # of this pack (personal skills, other packs) are never touched or deleted.
 # Also refreshes other install surfaces when they exist on this machine:
@@ -10,8 +11,11 @@
 # Both steps are best-effort: failures never break the file install.
 set -euo pipefail
 SKILLS_DIR="$(cd "$(dirname "$0")/skills" && pwd)"
+AGENTS_DIR="$(cd "$(dirname "$0")/agents" && pwd)"
 TARGET="$HOME/.claude/skills"
+AGENT_TARGET="$HOME/.claude/agents"
 mkdir -p "$TARGET"
+mkdir -p "$AGENT_TARGET"
 
 if [ -e "$TARGET/.git" ]; then
   git -C "$TARGET" pull --ff-only -q 2>/dev/null \
@@ -26,6 +30,13 @@ for dir in "$SKILLS_DIR"/*/; do
   count=$((count + 1))
 done
 echo "Installed $count skills to $TARGET (non-pack skills left untouched)"
+
+agent_count=0
+for agent_file in "$AGENTS_DIR"/suede-ship-*.md; do
+  rsync -a "$agent_file" "$AGENT_TARGET/$(basename "$agent_file")"
+  agent_count=$((agent_count + 1))
+done
+echo "Installed $agent_count Suede Ship agent profiles to $AGENT_TARGET (other agents left untouched)"
 
 MARKETPLACE_CLONE="$HOME/.claude/plugins/marketplaces/suede"
 if [ -e "$MARKETPLACE_CLONE/.git" ]; then

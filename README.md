@@ -5,7 +5,7 @@
 <br><br>
 
 [![Skills: 73](https://img.shields.io/badge/skills-73-c8a96e?labelColor=080808)](#the-skills)
-[![License: MIT](https://img.shields.io/badge/license-MIT-c8a96e?labelColor=080808)](LICENSE)
+[![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
@@ -21,7 +21,7 @@
 
 Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
 
-This pack is the supervision: **public skill folders**, MIT-licensed and broadly reusable, for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. No binaries, no telemetry, no accounts.
+This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, Codex worker fleets, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 8 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
@@ -34,7 +34,7 @@ This pack is the supervision: **public skill folders**, MIT-licensed and broadly
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Two focused subsets: `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (42 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Full Send, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -43,7 +43,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads every skill and registers both read-only MCP discovery profiles. Restart Codex after installing or updating.
+The Codex plugin loads every skill and registers three read-only MCP discovery profiles. Restart Codex after installing or updating.
 
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
@@ -57,7 +57,16 @@ npx skills add JasonColapietro/suede-creator-skills
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
 ```
 
-You can also copy individual skill folders into `.claude/skills/` (project) or `~/.claude/skills/` (user).
+You can also copy individual skill folders into `.claude/skills/` (project) or
+`~/.claude/skills/` (user). One exception: the hardened `suede-ship` JavaScript
+workflow also requires the repository's `agents/suede-ship-*.md` profiles in
+`~/.claude/agents` and macOS `sandbox-exec`. The `suede-skills` and
+`suede-agent-workflows` Claude plugins, plus `install.sh`, install those profiles;
+a skill-folder-only or generic skills-CLI install does
+not. Codex can use the skill's orchestration contract, but does not execute this
+Claude Workflow runner. The caller passes the namespace explicitly on every
+launch: `suede-skills` for the full plugin, `suede-agent-workflows` for the
+focused plugin, and the empty string for clone or manual user-agent installs.
 
 <details>
 <summary><b>More install routes</b> (single-skill Codex installer, project-level copy, MCP)</summary>
@@ -90,7 +99,7 @@ For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and o
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Exposes 7 tools (`list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 6 resources, and 5 prompts over JSON-RPC.
+Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources including `suede://specialties`, and 5 prompts over JSON-RPC.
 
 </details>
 
@@ -226,7 +235,7 @@ Essays on why the pack is built the way it is:
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
-- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free 29,700-word book on how Agent Skills work and how to get genuinely good with them
+- [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them
 
 ## MCP server
 

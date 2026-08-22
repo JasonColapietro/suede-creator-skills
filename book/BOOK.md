@@ -5,7 +5,15 @@
 By Jason Colapietro, Suede Labs AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 73-skill MIT-licensed pack for Claude Code and OpenAI Codex.
+a 73-skill open-source pack for Claude Code and OpenAI Codex.
+
+The `suede-ship` operation graph and thought-state model discussed in this book
+adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
+Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
+Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
+(2024), "Graph of Thoughts: Solving Elaborate Problems with Large Language
+Models," _Proceedings of the AAAI Conference on Artificial Intelligence_,
+38(16), 17682-17690, https://doi.org/10.1609/aaai.v38i16.29720.
 
 ---
 
@@ -91,10 +99,13 @@ catch. If you find a violation anywhere else, the file to check is
 
 ## License and credit
 
-The pack is MIT licensed. Forty of the marketing and growth skills are
+Original work in the pack is MIT licensed. Adapted components retain their
+upstream notices beside the source. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
-and the credit belongs there. Full notice: `NOTICE.md`.
+and the credit belongs there. The adapted Graph of Thoughts workflow carries
+its upstream BSD terms at `skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`.
+Full notice: `NOTICE.md`.
 
 ---
 
@@ -173,7 +184,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 73 of them, MIT licensed. The file opens with YAML
+`skills/<name>/SKILL.md`, 73 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -201,7 +212,7 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 73 skills fit
 
 Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
-repo total 1,050,732 bytes. Loading all of them into every conversation would
+repo total 1,056,606 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
@@ -338,7 +349,7 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 73 files total 1,050,732 bytes;
+when the skill is not running. In this repo the 73 files total 1,056,606 bytes;
 the 73 descriptions together are 43,383. The agent holds the small number and
 reaches for the large one only when a description matches.
 
@@ -2927,10 +2938,10 @@ body. Rewrite the use-when clause in the exact words you just typed.
 None of this required a vendor. `skills/<name>/SKILL.md` is a text file in your
 repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads
 it changes its mind about something, you edit a file instead of filing a support
-request. The skills in this pack are MIT licensed, which means the first thing
-you should do with any of them is fork the parts that fit your work and delete
-the parts that do not. They are a starting shape, not a product surface. Your
-estate is yours.
+request. The original skills in this pack are MIT licensed, and adapted
+components retain their upstream notices. Read the notice that travels with a
+skill before you fork the parts that fit your work and delete the parts that do
+not. They are a starting shape, not a product surface. Your estate is yours.
 
 ### The move
 

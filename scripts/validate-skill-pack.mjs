@@ -6,6 +6,7 @@ import { createRequire } from "node:module";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { measureBookFacts, measureSkillFile } from "./lib/book-facts.mjs";
+import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
 
@@ -459,6 +460,17 @@ const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")))
 const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
 const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
+const graphLicensePath = path.join(repoRoot, "licenses", "graph-of-thoughts-BSD.txt");
+const travelingGraphLicensePath = path.join(repoRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+if (!fs.existsSync(travelingGraphLicensePath)) {
+  fail.push("Suede Ship traveling Graph of Thoughts BSD license is missing");
+} else if (!fs.existsSync(graphLicensePath) || readText(travelingGraphLicensePath) !== readText(graphLicensePath)) {
+  fail.push("Suede Ship traveling Graph of Thoughts BSD license does not match licenses/graph-of-thoughts-BSD.txt");
+}
+const shipWorkflowPath = path.join(repoRoot, "skills", "suede-ship", "workflows", "suede-ship.js");
+if (!fs.existsSync(shipWorkflowPath) || !readText(shipWorkflowPath).includes("../LICENSE.graph-of-thoughts-BSD.txt")) {
+  fail.push("Suede Ship workflow does not point single-skill installs to the traveling Graph of Thoughts BSD license");
+}
 const codexPluginPath = path.join(repoRoot, ".codex-plugin", "plugin.json");
 const codexPluginJson = fs.existsSync(codexPluginPath)
   ? JSON.parse(readText(codexPluginPath))
@@ -470,6 +482,8 @@ const codexMarketplaceJson = fs.existsSync(codexMarketplacePath)
 const citationText = readText(path.join(repoRoot, "CITATION.cff"));
 const citationVersion = citationText.match(/^version:\s*["']?([^"'#\s]+)["']?\s*$/m)?.[1] ?? null;
 const citationReleaseDate = citationText.match(/^date-released:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m)?.[1] ?? null;
+const releaseStateText = readText(path.join(repoRoot, "docs", "index.html"));
+const catalogVersionIsPrepared = releaseStateText.includes(`Version ${catalog.version} prepared`);
 
 if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
   fail.push(`catalog.json version is not valid semantic versioning: ${catalog.version}`);
@@ -503,7 +517,9 @@ if (pluginJson.version !== catalog.version) {
 if (citationVersion !== catalog.version) {
   fail.push(`CITATION.cff version (${citationVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
 }
-if (citationReleaseDate !== catalog.updated) {
+if (catalogVersionIsPrepared && citationReleaseDate !== null) {
+  fail.push(`CITATION.cff must omit date-released while catalog version ${catalog.version} is prepared`);
+} else if (!catalogVersionIsPrepared && citationReleaseDate !== catalog.updated) {
   fail.push(`CITATION.cff date-released (${citationReleaseDate || "missing"}) does not match catalog.json updated (${catalog.updated})`);
 }
 if (!codexPluginJson) {
@@ -1035,6 +1051,7 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/index.html", label: "stat counter data-count", re: /<span class="count" data-count="(\d+)">/, expected: totalSkillCount },
   { file: "docs/index.html", label: "stat counter no-JS text", re: /<span class="count" data-count="\d+">(\d+)<\/span>/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "install path-map skill count", re: /<text x="644" y="146"[^>]*>(\d+)<\/text>/, expected: totalSkillCount },
   // The shields.io badge is the first thing a visitor sees on the GitHub
   // landing page, and its URL value once drifted to 29 while every other
   // surface said 67. Guard both halves — the rendered number lives in the URL,
@@ -1079,6 +1096,35 @@ if (fs.existsSync(bookDir)) {
 // scripts/lib/book-facts.mjs, whose definitions reproduce the figures the book
 // shipped with. Run `node scripts/measure-book-facts.mjs` to see them.
 const bookFacts = measureBookFacts();
+
+// Chrome PDF bytes are not reproducible because the renderer stamps metadata,
+// so freshness is carried by a checked provenance record. It binds the PDF to
+// the exact book sources, PDF template, shared renderer, and skill inventory.
+const bookPdfPath = path.join(repoRoot, "docs", "book", "s-tier.pdf");
+const bookPdfProvenancePath = path.join(repoRoot, PDF_PROVENANCE_RELATIVE);
+if (!fs.existsSync(bookPdfPath) || !fs.existsSync(bookPdfProvenancePath)) {
+  fail.push(`Book PDF or provenance is missing; run \`node scripts/build-book-pdf.mjs\``);
+} else {
+  let provenance;
+  try {
+    provenance = JSON.parse(readText(bookPdfProvenancePath));
+  } catch (error) {
+    fail.push(`Book PDF provenance is invalid JSON: ${error.message}`);
+  }
+  if (provenance) {
+    if (provenance.schemaVersion !== 1 || !/^[0-9a-f]{64}$/.test(provenance.inputSha256 || "") ||
+      !/^[0-9a-f]{64}$/.test(provenance.pdfSha256 || "")) {
+      fail.push(`Book PDF provenance has an invalid schema; run \`node scripts/build-book-pdf.mjs\``);
+    } else {
+      if (provenance.inputSha256 !== bookPdfInputDigest(repoRoot)) {
+        fail.push(`Book PDF input digest is stale; run \`node scripts/build-book-pdf.mjs\``);
+      }
+      if (provenance.pdfSha256 !== bookPdfDigest(repoRoot)) {
+        fail.push(`Book PDF digest does not match its provenance; run \`node scripts/build-book-pdf.mjs\``);
+      }
+    }
+  }
+}
 const grader = measureSkillFile("suede-code-grader");
 const deslop = measureSkillFile("suede-deslop");
 const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
@@ -1096,7 +1142,7 @@ function wordOrdinal(word) {
 }
 
 countChecks.push(
-  { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, MIT licensed/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, under documented open-source licenses/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "progressive-disclosure heading", re: /why (\d+) skills fit/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "corpus file count", re: /The (\d+) `SKILL\.md` files in this/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "corpus byte total", re: /repo total ([\d,]+) bytes/, expected: bookFacts.totalBytes, parse: commaNumber },

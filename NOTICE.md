@@ -96,6 +96,10 @@ pinned at commit `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`.
 
 **Upstream license:** BSD terms in
 [`licenses/graph-of-thoughts-BSD.txt`](licenses/graph-of-thoughts-BSD.txt)
+and the byte-identical traveling copy at
+[`skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`](skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt).
+The traveling copy is included by single-skill installers with the adapted
+workflow source.
 
 **Paper:** Maciej Besta et al. (2024), “Graph of Thoughts: Solving Elaborate
 Problems with Large Language Models,” _Proceedings of the AAAI Conference on

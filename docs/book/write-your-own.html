@@ -32,7 +32,7 @@
   "description": "Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.",
   "url": "https://skills.suedeai.ai/book/write-your-own.html",
   "position": 14,
-  "wordCount": 1903,
+  "wordCount": 1908,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -87,7 +87,7 @@
       <p class="eyebrow">Part IV &middot; Chapter 13</p>
       <h1>Write Your Own</h1>
       <p class="post-meta">Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.</p>
-      <div class="book-meta"><span>1,903 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,908 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>The third time you paste the same release checklist into a chat window, stop typing and open a file instead.</p>
       <p>That is the whole trigger. Not a strategy, not an assessment of whether your process is "mature enough to systematize." You have explained a procedure to an agent three times, or you keep a checklist in your head that you half-remember and half-improvise, and the parts you forget are always the same parts. Those are the two signals. Everything in <code>skills/</code> in this repo started as one of them.</p>
@@ -129,7 +129,7 @@ $EDITOR skills/suede-release-notes/SKILL.md</code></pre>
       <pre><code>mkdir -p .claude/skills
 cp -R skills/suede-release-notes .claude/skills/</code></pre>
       <p>Then verify the route, which is the step everyone skips. Start a fresh session, type one of the prompts you wrote during the pressure test, and confirm the agent loads your skill rather than a neighbor or nothing. Fresh session matters: an agent already holding the procedure in context will look like the routing worked when it did not. If it does not fire, the description is wrong, not the body. Rewrite the use-when clause in the exact words you just typed.</p>
-      <p>None of this required a vendor. <code>skills/&lt;name&gt;/SKILL.md</code> is a text file in your repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads it changes its mind about something, you edit a file instead of filing a support request. The skills in this pack are MIT licensed, which means the first thing you should do with any of them is fork the parts that fit your work and delete the parts that do not. They are a starting shape, not a product surface. Your estate is yours.</p>
+      <p>None of this required a vendor. <code>skills/&lt;name&gt;/SKILL.md</code> is a text file in your repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads it changes its mind about something, you edit a file instead of filing a support request. The original skills in this pack are MIT licensed, and adapted components retain their upstream notices. Read the notice that travels with a skill before you fork the parts that fit your work and delete the parts that do not. They are a starting shape, not a product surface. Your estate is yours.</p>
       <div class="panel move"><p class="move-label">The move</p>
       <p>Take the procedure you have explained to an agent three times this month, write it as <code>skills/&lt;name&gt;/SKILL.md</code> with a description in your own trigger words and one <code>NOT FOR</code> route, then start a fresh session and confirm it loads before you write another line of the body.</p>
       </div>
@@ -151,7 +151,7 @@ cp -R skills/suede-release-notes .claude/skills/</code></pre>
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 73-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <p class="footer-note">Suede Creator Skills is a 73-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">

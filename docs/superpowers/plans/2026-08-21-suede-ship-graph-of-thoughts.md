@@ -15,13 +15,44 @@
 - Work only in the isolated task worktree on `codex/suede-ship-got-20260821`, based on `origin/main` at `b4d5970`.
 - Preserve the dirty sibling worktree for the setup task without reading, resetting, deleting, or reusing it.
 - Keep the workflow runner ABI: injected `args`, `agent`, `parallel`, `pipeline`, `phase`, `log`, `budget`, and `workflow` globals; no Python runtime and no new package dependency.
-- Preserve the invocation arguments `repo`, `scope`, `deploys`, `liveUrl`, `agentBudget`, and `vault`.
+- Preserve the invocation arguments `repo`, `scope`, `deploys`, `liveUrl`, `agentBudget`, and `vault`; add required `agentNamespace` because the Workflow VM exposes no Node `process` global for package discovery.
+- Support the bundled runner only in Claude Code on macOS with `sandbox-exec`
+  and registered Suede Ship agent profiles. Probe `sandbox-exec` as Scout's
+  first subprocess, before fetch or worktree creation; Codex and generic skill
+  installs retain the orchestration contract only.
 - Search remains read-only; only the selected plan can reach Build or mutate source.
 - Tracked secrets, target live-worktree conflicts, selected-plan file collisions, missing safe winner, and exhausted total-call budgets halt before the next mutation.
 - Production access remains read-only; the workflow never deploys and never claims `deployed`, `verified live`, or `released`.
 - Budget ceilings are exactly `light: 55`, `standard: 110`, and `deep: 200` agent calls.
 - Adapted Graph-of-Thoughts code retains the ETH Zurich BSD terms and cites upstream commit `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`.
 - Follow strict red-green-refactor: every new runtime behavior gets a failing test that is observed before implementation.
+
+## Execution-boundary addendum
+
+The completed implementation uses six fixed Claude agent profiles. Local readers
+have no shell, write, or web tools; public web readers have no local-file or
+shell tools; patch authors return diffs without mutation tools; and Bash-only
+appliers/verifiers receive literal `bashCommandClamp` forms. Callers pass
+`suede-skills` for full plugin installs, `suede-agent-workflows` for focused
+installs, and an empty namespace for the same profiles as bare user agents.
+
+Gate commands change into the attested worktree and run under macOS
+`sandbox-exec` with network denied. Reads are limited to runtime/system roots,
+the worktree, its `.git` common directory derived inside the exact Gate clamp,
+and a private per-run temp root; writes are limited to known generated artifacts
+and that temp root. The model-reported common directory is not interpolated into
+sandbox permissions. Scout uses NUL-delimited porcelain and exact `lsof -Fn`
+CWD containment, preserving dirty/live claims and failing closed on manifest overflow.
+Gate and its verifier are budget-reserved together. The verifier compares exact
+changed paths and a SHA-256 digest over the Git diff plus all reported file
+contents before and after Gate.
+
+The Workflow ABI has no required-tool-call receipt. A clamp limits a Bash call
+when made; structured apply and verifier responses remain model attestations.
+The custom `authority`, `allowedRepo`, `allowedFiles`, and `allowedCommands`
+fields are audit metadata rather than host permissions, and local read tools are
+not path-sandboxed. Tests and public docs must preserve that distinction instead
+of calling the run host-certified.
 
 ---
 
@@ -44,7 +75,7 @@ its options into `fixture`, and the agent recorder stores the complete options:
 const plan = (name, file, acceptance = 'node --test') => ({
   summary: name,
   coverage: ['change the thing'],
-  lanes: [{ name, task: `implement ${name}`, files: [file], tier: 'integration', acceptance }],
+  lanes: [{ name, files: [file], tier: 'integration', acceptance }],
 })
 
 const defaultNames = ['safe-a', 'safe-b', 'weak-c', 'weak-d', 'weak-e', 'weak-f', 'weak-g', 'weak-h']
@@ -171,7 +202,7 @@ Run:
 
 ```bash
 node --test tests/test_ship_workflow_cost.mjs
-node --check skills/suede-ship/workflows/suede-ship.js
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 ```
 
 Expected: all Task 1 behavior tests pass and syntax check exits 0.
@@ -210,8 +241,8 @@ case 'Aggregate':
   return {
     summary: 'aggregate-safe', coverage: ['change the thing'],
     lanes: [
-      { name: 'a', task: 'implement a', files: ['src/a.ts'], tier: 'integration', acceptance: 'node --test' },
-      { name: 'b', task: 'implement b', files: ['src/b.ts'], tier: 'integration', acceptance: 'node --test' },
+      { name: 'a', files: ['src/a.ts'], tier: 'integration', acceptance: 'node --test' },
+      { name: 'b', files: ['src/b.ts'], tier: 'integration', acceptance: 'node --test' },
     ],
   }
 ```
@@ -241,7 +272,8 @@ test('only lanes from the selected thought receive mutation authority', async ()
   assert.deepEqual(built, result.selectedPlan.lanes.map(lane => `build:${lane.name}`))
   assert.ok(calls.filter(c => ['Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate'].includes(c.phase))
     .every(c => c.authority === 'read-only'))
-  assert.ok(calls.filter(c => c.phase === 'Build').every(c => c.authority === 'write-selected-plan'))
+  assert.ok(calls.filter(c => c.phase === 'Build').every(c => c.authority === 'read-only-patch'))
+  assert.ok(calls.filter(c => c.phase === 'ApplyBuild').every(c => c.authority === 'clamped-patch-apply'))
 })
 ```
 
@@ -271,21 +303,21 @@ const PLAN_SCORE = {
 const PLAN_REFUTATION = {
   type: 'object', required: ['defects', 'notes'], properties: {
     defects: { type: 'array', maxItems: 6, items: { type: 'object',
-      required: ['kind', 'lane', 'blocking', 'claim', 'evidence'], properties: {
+      required: ['kind', 'lane', 'target', 'blocking', 'claim', 'evidence'], properties: {
         kind: { type: 'string', enum: ['missing-scope', 'constraint-break', 'collision', 'unverifiable', 'rollback', 'security', 'test-gap', 'integration-order', 'other'] },
-        lane: { type: 'string' }, blocking: { type: 'boolean' }, claim: { type: 'string' }, evidence: { type: 'string' },
+        lane: { type: 'string' }, target: { type: 'string' }, blocking: { type: 'boolean' }, claim: { type: 'string' }, evidence: { type: 'string' },
       } } }, notes: { type: 'string' },
   },
 }
 ```
 
-Run two distinct adversary prompts per kept candidate. Pass `authority: 'read-only'` on every Generate, Score, RefutePlan, Improve, and Aggregate call, and `authority: 'write-selected-plan'` only on Build. Hard-refute only when both adversaries return a blocking defect with the same normalized `kind` and `lane`; carry all other objections into `Improve`. For every configured round, improve and rescore each survivor before `KeepBestN`. Aggregate only two or more survivors, validate file ownership deterministically, then select the highest complete valid thought. Fall back to the best complete survivor if aggregation is malformed or colliding. If no valid thought exists, return `halted: true` before Build.
+Run two distinct adversary prompts per kept candidate. Pass `authority: 'read-only'` on every Generate, Score, RefutePlan, Improve, and Aggregate call. Build and Fix authors receive `authority: 'read-only-patch'`; only the dedicated applier receives `authority: 'clamped-patch-apply'` plus an exact file allowlist. Hard-refute only when both adversaries return a blocking defect with the same normalized `kind`, candidate lane, canonical candidate-owned target, and full claim; a missing or malformed adversary response fails that candidate closed. Carry all other verified objections into `Improve`. For every configured round, improve and rescore each survivor before `KeepBestN`. Aggregate only two or more survivors, validate file ownership deterministically, then select the highest complete valid thought. Fall back to the best complete survivor if aggregation is malformed or colliding. If no valid thought exists, return `halted: true` before Build.
 
 - [ ] **Step 5: Run the focused suite to green**
 
 ```bash
 node --test tests/test_ship_workflow_cost.mjs
-node --check skills/suede-ship/workflows/suede-ship.js
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 ```
 
 Expected: all graph and existing workflow behaviors pass.
@@ -467,7 +499,7 @@ Keep frontmatter trigger-only and move operation details into the body. The desc
 - route to `workflows/suede-ship.js`;
 - describe Generate, Score, KeepBestN, Refute, Improve, Aggregate, Select, and winner-only mutation;
 - preserve halt and deployment boundaries;
-- require writing `.suede-ship/${runId}/handoff.md`, where `runId` is the workflow's returned identifier;
+- require writing `.suede-ship/${runKey}/handoff.md`, where `runKey` is the workflow's returned validated `ship-<UUID>` worktree leaf;
 - route bulk work to `suede-codex-fleet`, findings-only review to `suede-code-review`, CI wiring to `suede-ci-gate`, and copy to `suede-ship-copy`.
 
 Update `agents/openai.yaml` and the `mcp/catalog.json` description/default prompt with the same contract and no stale “roughly fifty” claim.
@@ -554,7 +586,9 @@ Revise metadata, JSON-LD description, terminal demo, architecture bullets, promp
 
 - [ ] **Step 3: Bump every pack version to `0.15.0`**
 
-Use literal `0.15.0` in every listed version surface. Update lockfile root/package records together. Set `CITATION.cff`'s version and release date to `2026-08-21`.
+Use literal `0.15.0` in every listed version surface. Update lockfile root/package records together. Because this branch prepares but does not publish the release, omit
+`CITATION.cff`'s optional `date-released` field until the actual release event;
+the public changelog remains explicitly `prepared` in the meantime.
 
 - [ ] **Step 4: Regenerate derived book and sitemap artifacts**
 
@@ -595,7 +629,7 @@ Expected: exit 0 with the lockfile unchanged.
 - [ ] **Step 2: Run focused workflow, routing, MCP, and syntax checks**
 
 ```bash
-node --check skills/suede-ship/workflows/suede-ship.js
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 npm run test:ship-cost
 npm run test:triggers
 npm run test:mcp
@@ -621,9 +655,16 @@ sandbox_root="$(mktemp -d /tmp/suede-skills-install.XXXXXX)"
 env HOME="$sandbox_root" bash install.sh
 test -f "$sandbox_root/.claude/skills/suede-ship/SKILL.md"
 test -f "$sandbox_root/.claude/skills/suede-ship/workflows/suede-ship.js"
+test -f "$sandbox_root/.claude/agents/suede-ship-scout.md"
+test -f "$sandbox_root/.claude/agents/suede-ship-code-reader.md"
+test -f "$sandbox_root/.claude/agents/suede-ship-web-reader.md"
+test -f "$sandbox_root/.claude/agents/suede-ship-patch-author.md"
+test -f "$sandbox_root/.claude/agents/suede-ship-applier.md"
+test -f "$sandbox_root/.claude/agents/suede-ship-verifier.md"
 ```
 
-Expected: installer exits 0 and both files exist in the temporary home.
+Expected: installer exits 0, both skill files exist, and all six bare user-agent
+profiles exist for the clone-install runtime.
 
 - [ ] **Step 5: Audit the final diff and requirements**
 

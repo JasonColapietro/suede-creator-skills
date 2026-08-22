@@ -379,8 +379,8 @@ re-run.
 
 ## Routing
 
-- The change is code rather than copy -> use `suede-ship`, the same graph with
-  file ownership as its collision rule.
+- The change is code rather than copy -> use `suede-ship`, which searches
+  competing implementation plans and mutates only the selected winner.
 - One surface, one pass, facts already established -> use `suede-copy`.
 - Text already written that only needs AI patterns stripped -> use `suede-deslop`.
 - The house voice needs defining rather than extracting from shipped copy ->

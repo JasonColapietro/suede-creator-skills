@@ -246,7 +246,7 @@ function fieldMatch(term, tokens) {
   return best;
 }
 
-// Rank skills against a free-text task description. The pack ships 71 skills,
+// Rank skills against a free-text task description. The pack ships 73 skills,
 // so listing them all is not routing; this scores name, useWhen, and
 // description in that order of authority and drops anything that scores zero.
 function searchSkills(skills, query, limit) {

@@ -73,7 +73,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 73 of them, MIT licensed. The file opens with YAML
+`skills/<name>/SKILL.md`, 73 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -101,7 +101,7 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 73 skills fit
 
 Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
-repo total 1,050,732 bytes. Loading all of them into every conversation would
+repo total 1,056,606 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and

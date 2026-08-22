@@ -162,6 +162,19 @@ function digestText(value) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+test("PDF builder stages output and verifies a stable input snapshot", () => {
+  const builder = fs.readFileSync(path.join(repoRoot, "scripts", "build-book-pdf.mjs"), "utf8");
+  const before = builder.indexOf("const inputDigestBefore = bookPdfInputDigest(repoRoot)");
+  const snapshot = builder.indexOf("const sources = loadSources()")
+  const after = builder.indexOf("const inputDigestAfter = bookPdfInputDigest(repoRoot)");
+  const rename = builder.indexOf("fs.renameSync(tempPdf, outPdf)");
+  assert.ok(before >= 0 && before < snapshot);
+  assert.ok(after > snapshot && rename > after);
+  assert.match(builder, /--print-to-pdf=\$\{tempPdf\}/);
+  assert.match(builder, /inputDigestAfter !== inputDigestBefore/);
+  assert.match(builder, /inputSha256: inputDigestBefore/);
+});
+
 test("validator rejects a reserved semantic sequence before normal validation", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-reserved-");
   const encodedPath = [115, 117, 101, 100, 101, 45, 112, 117, 98, 108, 105, 99, 45, 99, 108, 97, 105, 109, 45, 99, 104, 101, 99, 107]
@@ -242,6 +255,23 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
     validation.stderr,
     new RegExp(`plugin\\.json version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
   );
+});
+
+test("packaged validation requires the exact traveling Graph of Thoughts BSD license", (t) => {
+  const missingRoot = createPackagedFixture(t, "suede-validator-got-license-missing-");
+  const travelingPath = path.join(missingRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  fs.rmSync(travelingPath, { force: true });
+  const missing = runValidator(missingRoot);
+  assert.notEqual(missing.status, 0, `${missing.stdout}\n${missing.stderr}`);
+  assert.match(missing.stderr, /traveling Graph of Thoughts BSD license is missing/);
+
+  const driftRoot = createPackagedFixture(t, "suede-validator-got-license-drift-");
+  const driftPath = path.join(driftRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  fs.mkdirSync(path.dirname(driftPath), { recursive: true });
+  fs.writeFileSync(driftPath, "truncated license fixture\n");
+  const drift = runValidator(driftRoot);
+  assert.notEqual(drift.status, 0, `${drift.stdout}\n${drift.stderr}`);
+  assert.match(drift.stderr, /traveling Graph of Thoughts BSD license does not match/);
 });
 
 test("packaged validation rejects package-lock version drift", (t) => {
@@ -342,10 +372,12 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   fs.writeFileSync(mcpQaPath, mcpQa);
 
   const citationPath = path.join(packagedRoot, "CITATION.cff");
-  const citation = fs.readFileSync(citationPath, "utf8").replace(
-    /^date-released:\s*\d{4}-\d{2}-\d{2}$/m,
-    "date-released: 2099-01-01"
+  const citationOriginal = fs.readFileSync(citationPath, "utf8");
+  const citation = citationOriginal.replace(
+    /^(version:\s*[^\n]+)$/m,
+    "$1\ndate-released: 2099-01-01"
   );
+  assert.notEqual(citation, citationOriginal, "test fixture must add a false prepared-release date");
   fs.writeFileSync(citationPath, citation);
 
   const docsPath = path.join(packagedRoot, "docs", "index.html");
@@ -364,8 +396,21 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
   assert.match(validation.stderr, /suede-mcp-qa manual readback version \(9\.9\.9\)/);
-  assert.match(validation.stderr, /CITATION\.cff date-released \(2099-01-01\)/);
+  assert.match(validation.stderr, /CITATION\.cff must omit date-released while catalog version .* is prepared/);
   assert.match(validation.stderr, /changelog has no entry for catalog version/);
+});
+
+test("packaged validation rejects stale or replaced book PDF bytes", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-book-pdf-");
+  fs.appendFileSync(path.join(packagedRoot, "docs", "book", "s-tier.pdf"), "stale-pdf-fixture");
+  fs.appendFileSync(path.join(packagedRoot, "scripts", "build-book-pdf.mjs"), "\n// stale-input-fixture\n");
+  fs.appendFileSync(path.join(packagedRoot, "skills", "suede-ship", "SKILL.md"), "\nStale corpus fixture.\n");
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /Book PDF input digest is stale/);
+  assert.match(validation.stderr, /Book PDF digest does not match its provenance/);
 });
 
 test("packaged validation rejects additional Codex marketplace entries", (t) => {

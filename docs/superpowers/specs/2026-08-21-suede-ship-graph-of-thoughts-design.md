@@ -33,19 +33,30 @@ authority, evidence requirements, and release-state boundaries.
 
 ## Preserved Public Contract
 
-- Invocation remains `$suede-ship` with `repo`, `scope`, `deploys`, `liveUrl`,
-  `agentBudget`, and `vault` arguments.
+- Invocation remains `$suede-ship` with absolute `repo`, `scope`, `deploys`, `liveUrl`,
+  `agentBudget`, `vault`, and `agentNamespace` arguments.
 - The workflow continues to use injected `agent`, `parallel`, `pipeline`,
   `phase`, `log`, `args`, `budget`, and `workflow` globals.
 - `light`, `standard`, and `deep` remain the user-visible cost choices.
 - A tracked secret, a live process holding the target worktree, or a lane
   ownership collision halts the run.
-- Search and research are read-only. Only the selected aggregate receives
+- Search and research are read-only. Only the selected thought or winner receives
   mutation authority.
 - Production reads remain read-only. The workflow never deploys and cannot
   claim `deployed`, `verified live`, or `released`.
 - The workflow returns a structured result and writes an evidence handoff to
-  `.suede-ship/<runId>/handoff.md` through the calling agent.
+  `.suede-ship/<runKey>/handoff.md` through the calling agent. `runKey` is the
+  validated unique `ship-<UUID>` leaf of the workflow-created worktree; the
+  Workflow VM does not expose the host run ID. If Scout returns an invalid path
+  before that key can be validated, the caller reports the halt without
+  writing a run-keyed handoff.
+- The JavaScript runner is supported in Claude Code on macOS. It requires
+  registered Suede Ship agent profiles and `sandbox-exec`. Scout's exact setup
+  command probes `sandbox-exec` before fetch or worktree creation. If invoked
+  and rejected, it exits before repo mutation. The structured Scout response is
+  a model attestation, not a host receipt. Codex and generic skill-only installs
+  receive the orchestration contract, not a claim that this Claude Workflow
+  runner executed.
 
 ## Runtime Shape
 
@@ -65,6 +76,16 @@ The entry file is organized in this order:
 5. scout and hard safety gates;
 6. read-only thought search;
 7. winner-only build, review, repair, gate, release check, and handoff.
+
+Plugin installs resolve qualified agent names such as
+`suede-skills:suede-ship-verifier`; the focused workflow plugin uses its own
+namespace. Because the Workflow VM does not expose Node `process`, the full
+and focused callers explicitly pass `agentNamespace: "suede-skills"` or
+`agentNamespace: "suede-agent-workflows"`. The clone installer copies the same
+definitions to `~/.claude/agents`, where callers pass an empty namespace string
+to select their bare names. A missing or unknown namespace halts before the
+first agent call. A manual single-skill Claude install must copy those profiles
+too.
 
 ## Core Data Model
 
@@ -226,24 +247,79 @@ next call and returns the trace; it never silently drops scope or findings.
 
 ## Safety and Authority
 
-The Scout phase runs before graph search and remains authoritative. Candidate
-thoughts cannot weaken or reinterpret its hazards. A plan is ineligible when:
+The Scout phase runs before graph search and remains authoritative. Before the
+search, an independent read-only verifier must confirm the reported path is a
+clean registered worktree at `origin/main`, shares the repo's Git common
+directory, resolves inside an allowed worktree family, and contains no symlink,
+directory, or out-of-worktree candidate path. Scout parses NUL-delimited Git
+porcelain, exact `lsof -Fn` CWD fields, and fails closed when a safety manifest
+would truncate. It retains dirty or live sibling claims even when committed
+history is cherry-landed. Candidate thoughts cannot weaken
+or reinterpret those facts or hazards. A plan is ineligible when:
 
 - it owns a dirty user file without an isolated base;
 - it overlaps another lane's files;
 - it overlaps a live sibling worktree claim;
+- it requests a protected, generated, directory-like, or non-Scout candidate
+  path;
 - it changes deploys, credentials, production data, or external state without
   explicit authority;
 - it omits a requested scope item or acceptance command.
 
-Build agents receive only the selected plan and their disjoint lane. Search
-agents receive no mutation instruction.
+Local research, planning, scoring, review, and handoff agents use a fixed profile
+with no Bash, write, web, task, skill, or MCP tools. Public web research and
+release agents have web tools but no local-file or shell tools. Build and Fix
+agents have read tools only and return unified diffs for their selected files.
+One Bash-only applier receives a single exact Node command that validates and
+applies the accepted patch bundle. Bash-only verifiers receive only exact
+read commands.
+
+Gate is macOS-only. Every acceptance command is wrapped in `sandbox-exec` with
+network denied. It changes into the attested worktree and permits reads only
+from that worktree, its `.git` common directory derived inside the exact clamped
+Gate wrapper, runtime/system roots, and a private per-run temp root. The
+model-reported common directory cannot widen the sandbox. Writes are limited to generated-artifact
+roots and that private temp root. The command allowlist covers bounded local
+validation for Node, Python, Go, Rust, Make, Swift Package Manager, Xcode
+simulator builds whose derived data stays under the private temp root, and
+offline Gradle checks. A selected file below a nested module's `src` tree may
+add only that module's `build` directory, after symlink and realpath validation,
+to the write roots. The workflow reserves Gate and its post-Gate
+audit together. A pre-Gate and post-Gate attestation compares the exact
+changed-path set and a SHA-256 digest over the binary Git diff plus every
+reported file's mode, size, and bytes, including untracked additions, so a
+validation script cannot silently rewrite selected source without forcing a
+hold.
+
+Applying a bounded blocker repair does not establish that the original failure
+scenario is gone. Those findings remain in
+`fixedBlockersPendingVerification`; they force an advisory `hold` even when the
+integration Gate passes, until an independent follow-up performs targeted
+semantic verification.
+
+The runner contract is not stronger than the host API. `bashCommandClamp`
+restricts Bash when invoked, but Claude Workflow does not provide a trusted
+required-tool-call receipt. Structured apply and verification results are model
+attestations, not cryptographic proof that the command ran. The `authority`,
+`allowedRepo`, `allowedFiles`, and `allowedCommands` options are evidence labels,
+not filesystem controls, and local read tools are not path-sandboxed. The design
+therefore claims capability separation and fail-closed validation, not
+host-certified execution.
+
+Lane plans do not contain a free-form task or executable command field. Build
+requirements are derived from the exact user-scope items in `scopeMap`; the only
+agent-proposed command is one exact form from the local validation allowlist,
+with no arbitrary path or flag suffix. This prevents
+an otherwise safe candidate from smuggling a new external side effect into Build.
 
 ## Failure Handling
 
 - Malformed agent output is one failed thought or score, not a graph crash.
 - A failed operation is recorded with its inputs and error.
 - Independent ready operations still execute when one sibling fails.
+- A read-only search fan-out reserves its whole call cost before starting; a
+  post-build fan-out that encounters a budget or agent failure returns every
+  fulfilled sibling result before halting.
 - A dependent operation with no valid inputs is skipped and traced.
 - Cycle, duplicate-ID, missing-predecessor, and budget errors halt before
   mutation.
@@ -285,6 +361,11 @@ They must prove:
 - graph budget exhaustion stops before an extra spawn;
 - malformed outputs and empty branches remain visible in the trace;
 - only the selected plan reaches Build;
+- every agent call resolves to a registered fixed tool profile;
+- plugin, focused-plugin, and clone installs resolve the correct qualified or
+  bare agent names;
+- patch application is clamped and pre/post-Gate diff digests match;
+- the Gate plus post-Gate verifier reserve as one safety batch;
 - existing secret, live-worktree, production-read, and no-deploy boundaries
   remain enforced;
 - every budget stays under its advertised ceiling;
@@ -299,5 +380,7 @@ notices, and installer smoke test must also pass.
 - No Python runtime or external Graph-of-Thoughts package dependency.
 - No learned topology optimizer.
 - No production deployment, merge, push, or public release.
+- No portable Linux/Windows Gate sandbox and no claim that Codex executes the
+  Claude Workflow runner.
 - No rewrite of `suede-ship-copy`; only its cross-reference may change.
 - No code mutation across competing candidate branches.

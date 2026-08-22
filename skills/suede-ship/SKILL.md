@@ -13,7 +13,7 @@ any implementation lane mutates the worktree.
 
 Before launch, require all three inputs:
 
-- **Repo** — an absolute repository path or a resolvable repo name.
+- **Repo** — an absolute repository path. Relative paths and `~` fail closed.
 - **Scope** — the requested multi-file change, including any protected paths or
   constraints.
 - **Budget** — `light`, `standard`, or `deep`.
@@ -27,10 +27,39 @@ If repo or scope is missing, halt. Report the missing input in one line, offer
 to provide the repo path, describe the desired change, or route a one-file edit
 to direct implementation, then wait for the user's choice.
 
-State the selected ceiling before launching: `light` permits **55**, `standard`
-permits **110**, and `deep` permits **200** total agent calls. Do not infer a
-budget from scope or silently raise a ceiling. If the user has not chosen one,
-ask and wait.
+State the selected range and projected worst-case calls before launching:
+`light` projects and permits **55**, `standard` projects and permits **110**, and
+`deep` projects and permits **200** total agent calls. Do not infer a budget from
+scope or silently raise a ceiling. If the user has not chosen one, ask and wait.
+
+## Runtime prerequisites
+
+The bundled JavaScript workflow is a Claude Code workflow for macOS. It requires
+`sandbox-exec` and the six registered `suede-ship-*` agent profiles. Install the
+full `suede-skills` plugin, the `suede-agent-workflows` plugin, or use this
+repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
+
+Claude Workflow exposes no Node `process` global, so the workflow cannot infer
+its package namespace. The calling skill must derive it from the invoked skill
+name and pass it on every launch: `suede-skills` for
+`$suede-skills:suede-ship`, `suede-agent-workflows` for
+`$suede-agent-workflows:suede-ship`, or the empty string for a bare
+`$suede-ship` installed by `install.sh` or manual copy. This is runtime context,
+not a user choice. A missing or unknown value fails before the first agent call.
+
+A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
+not by themselves register or execute Claude Workflow agent profiles. In those
+environments, treat this file as the orchestration contract and route the change
+to direct implementation; do not claim the bundled workflow ran. To enable it in
+Claude Code after a manual single-skill copy, also copy this repository's
+`agents/suede-ship-*.md` files into `~/.claude/agents` and restart Claude Code.
+
+The requested Scout setup command probes `/usr/bin/sandbox-exec` as its first
+subprocess, before fetch or worktree creation. If that command is invoked and
+the probe fails, Scout reports failure before its setup mutation. The returned
+Scout evidence is still a model attestation, not a host execution receipt. Gate
+also holds on any later reported sandbox rejection. Never retry an acceptance
+command outside the sandbox to turn that hold into a pass.
 
 ## Run the graph search
 
@@ -39,7 +68,7 @@ Invoke:
 ```js
 Workflow({
   scriptPath: "skills/suede-ship/workflows/suede-ship.js",
-  args: { repo, scope, agentBudget, deploys, liveUrl, vault }
+  args: { repo, scope, agentBudget, agentNamespace, deploys, liveUrl, vault }
 })
 ```
 
@@ -59,26 +88,90 @@ The workflow executes these operations in dependency order:
 Only the plan selected by **Select** may mutate files. Rejected, pruned, and
 unselected thoughts remain evidence only; never build them speculatively.
 
-## Halt and production boundaries
+## Boundaries
 
 The workflow halts before the next agent call or entire mutating batch when its
 budget is exhausted; it does not undo mutations that completed earlier. It
-halts before any mutation for a tracked secret, a live target worktree, a
-protected-WIP collision, a duplicate file owner, or no selectable plan. On a halt, name the blocker in one line, offer
-2–4 applicable resolutions (for example: narrow scope, exempt protected WIP,
-resolve the collision, choose a higher budget, or provide missing context), and
-wait. Do not relaunch or mutate while halted.
+halts before any mutation unless an independent read-only verifier confirms a
+clean, registered origin/main worktree with the same Git common directory and
+non-symlink candidate files whose realpaths remain inside it. It also halts for
+a tracked secret, a live target worktree, a protected-WIP collision, a duplicate
+file owner, an overflowed safety manifest, or no selectable plan. Scout parses
+NUL-delimited Git porcelain so both sides of renames remain protected, parses
+`lsof -Fn` CWD fields with path-component boundaries, and never discards fresh
+dirty or live claims merely because committed history was cherry-landed. A
+selected Build or Fix result that is blocked, missing context, reports concerns,
+fails, or reports no changed path also halts before the next verification stage. On a halt, name the
+blocker in one line and offer 2–4 applicable
+resolutions (for example: narrow scope, exempt protected WIP, resolve the
+collision, choose a higher budget, or provide missing context), and wait. Do
+not relaunch or mutate while halted.
+
+Claude's registered agent profiles enforce tool separation: local readers have
+no shell, write, or web tools; public-web readers have no local-file or shell
+tools; patch authors have no mutation tools; and appliers/verifiers have only
+Bash plus structured output. Patch authors return unified diffs, one clamped
+applier applies them, and a separate clamped verifier compares the exact path
+set and diff digest before Gate. Gate runs only allowlisted local validation
+commands under macOS `sandbox-exec`, with no network, host reads limited to
+runtime/system roots, the worktree, its `.git` common directory derived again
+inside the exact Gate clamp, and the run's private temp root. The model-reported
+common directory is never interpolated into sandbox permissions. Writes are limited to known generated artifacts
+and that private temp root. The allowlist includes bounded project-local checks
+for Node, Python, Go, Rust, Make, Swift Package Manager, Xcode simulator builds
+with derived data under the private temp root, and offline Gradle validation.
+Nested module `build` roots are derived only from selected files under that
+module's `src` tree and are rejected if a symlink or realpath can escape the
+worktree. A second diff attestation runs after Gate and hashes
+the binary Git diff plus every reported file's mode, size, and bytes, including
+untracked additions.
+
+A successfully applied blocker patch is not treated as semantically cleared.
+The original blocker remains in `fixedBlockersPendingVerification`, and the
+advisory ship verdict stays `hold` until an independent follow-up verifies the
+specific failure scenario. The integration Gate can prove its allowlisted checks
+passed, but it cannot silently stand in for that targeted verification.
+
+These controls have a precise trust boundary. `bashCommandClamp` constrains a
+Bash command when an agent invokes it; Claude Workflow does not provide a
+required-tool-call receipt, so a structured verifier response remains a model
+attestation rather than cryptographic proof that Bash ran. Likewise,
+`authority`, `allowedRepo`, `allowedFiles`, and `allowedCommands` are audit
+metadata, not filesystem permissions. Local reader tools are separated from web
+tools but are not path-sandboxed by the Workflow API. Report these facts in any
+security-sensitive handoff and do not describe the result as host-certified.
 
 Production inspection is read-only. This skill never deploys, publishes,
-releases, changes credentials, or claims live verification. Its ship verdict
-is evidence for the user, not authority to perform an external action.
+releases, pushes, merges, changes credentials, deletes or reverts protected
+work, or claims live verification. It does not choose the user's budget or
+decide that missing scope can be skipped. Its ship verdict is evidence for the
+user, not authority to perform an external action.
 
 ## Handoff and completion
 
-Read the workflow's returned `runId` and handoff. Write the handoff markdown to
-`.suede-ship/${runId}/handoff.md` at the target repo root, then report that
-path, the selected plan, gate result, changed files, commands run, and explicit
-caveats. A completed local graph does not prove a deployment.
+Read the workflow's returned `runKey`, the validated unique `ship-<UUID>` leaf
+from its isolated worktree. On a completed run, use the returned handoff
+markdown. On a post-Scout halt, write a factual halt handoff from the structured
+result and graph trace without spending another agent call; include any Build
+or Fix lanes that completed before the halt. If Scout returns an invalid path
+before `runKey` validation, report the halt without writing a run-keyed
+handoff. Otherwise, save it to
+`.suede-ship/${runKey}/handoff.md` at the target repo root, then verify it exists:
+
+```bash
+test -f ".suede-ship/${runKey}/handoff.md"
+```
+
+Report that path, the selected plan if any, gate result, changed files, commands
+run, and explicit caveats. A completed local graph does not prove a deployment.
+
+## Third-party license
+
+The operation graph and thought-state model in `workflows/suede-ship.js` adapt
+Graph of Thoughts by ETH Zurich. The complete upstream BSD notice, conditions,
+disclaimer, and requested citation travel with this skill at
+`LICENSE.graph-of-thoughts-BSD.txt`. Keep that file with every source or binary
+redistribution of the workflow.
 
 ## Routing
 

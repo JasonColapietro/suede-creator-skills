@@ -5,7 +5,7 @@ exceptional builder using them. Companion to the 73-skill
 [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills)
 pack, and readable without installing it.
 
-Roughly 29,700 words. Every claim points at a file in this repo, so you can
+Roughly 29,900 words. Every claim points at a file in this repo, so you can
 check it.
 
 Read it in one file: [`BOOK.md`](BOOK.md). Rebuild that file with

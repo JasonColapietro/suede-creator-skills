@@ -771,8 +771,8 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Ask for repo, scope, and light|standard|deep; state the exact 55|110|200 ceiling before launch. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use suede-codex-fleet); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
-      "useWhen": "Search competing plans for a multi-file repo change, select one mutating winner, gate it, and preserve its returned handoff."
+      "description": "Suede Labs Graph-of-Thoughts shipping search contract for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Its executable workflow requires Claude Code on macOS plus six registered suede-ship agent profiles. Codex and generic skill installs follow the contract through direct implementation and must not claim the bundled Claude Workflow ran. Claude Workflow runs require repo, scope, and light|standard|deep with exact 55|110|200 ceilings. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use suede-codex-fleet); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
+      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Graph-of-Thoughts workflow only in its supported Claude Code/macOS environment."
     },
     {
       "name": "suede-ship-copy",

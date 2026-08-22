@@ -445,12 +445,12 @@
     <div class="pathmap">
       <div class="pathmap-head">
         <span class="pathmap-title">Which install is yours</span>
-        <span class="pathmap-hint">Every path lands the same skills</span>
+        <span class="pathmap-hint">Skill contracts align; runner capabilities differ</span>
       </div>
       <div class="pathmap-scroll">
         <svg class="pathmap-svg" viewBox="0 0 980 300" role="img" aria-labelledby="pathmap-t pathmap-d" xmlns="http://www.w3.org/2000/svg">
           <title id="pathmap-t">Install paths</title>
-          <desc id="pathmap-d">Claude Code installs the plugin in two lines. Codex installs the Codex-native plugin. Cursor, Copilot, and Windsurf install through the skills CLI. A git clone runs install.sh. All four land the same skills; MCP is an optional layer on top.</desc>
+          <desc id="pathmap-d">Claude Code installs the plugin in two lines. Codex installs the Codex-native plugin. Cursor, Copilot, and Windsurf install through the skills CLI. A git clone runs install.sh. All four install the portable skill contracts. The full and workflow Claude Code plugins, plus install.sh, also register the six profiles required by Suede Ship's bundled workflow. MCP is an optional layer on top.</desc>
           <g font-family="system-ui, -apple-system, sans-serif">
             <rect x="2" y="118" width="150" height="66" rx="9" fill="#161616" stroke="#c8a96e" stroke-width="1.5"/>
             <text x="77" y="147" text-anchor="middle" fill="#c8a96e" font-size="15" font-weight="800">Your agent</text>
@@ -484,7 +484,7 @@
             <path d="M550 151l-9 -5v10z" fill="#c8a96e"/>
 
             <rect x="554" y="112" width="180" height="78" rx="9" fill="#161616" stroke="#c8a96e" stroke-width="2"/>
-            <text x="644" y="146" text-anchor="middle" fill="#c8a96e" font-size="30" font-weight="900">71</text>
+            <text x="644" y="146" text-anchor="middle" fill="#c8a96e" font-size="30" font-weight="900">73</text>
             <text x="644" y="171" text-anchor="middle" fill="#888880" font-size="12.5" font-weight="600">skills, loaded on demand</text>
 
             <path d="M734 151H768" stroke="#222222" stroke-width="1.75" stroke-dasharray="4 4"/>
@@ -534,6 +534,7 @@
 
     <div class="prose">
       <p>Using Cursor, Copilot, Windsurf, or another agent? The open <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> installs the pack into its supported agents, Claude Code and Codex included:</p>
+      <p>These routes install the portable skill contracts. Suede Ship's executable Graph-of-Thoughts workflow additionally requires Claude Code on macOS plus its six registered <code>suede-ship-*</code> agent profiles. The full Claude Code plugin, the <code>suede-agent-workflows</code> subset, and <code>install.sh</code> register those profiles. Codex and generic skills-CLI installs can follow the contract through direct implementation, but do not execute the bundled Claude Workflow.</p>
     </div>
 
     <div class="terminal">
@@ -548,13 +549,13 @@
     </div>
 
     <div class="prose">
-      <p>For a project-level copy of a single skill in Claude Code: <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>.</p>
+      <p>For a project-level copy of a single skill in Claude Code: <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>. A single-folder copy of Suede Ship installs its orchestration contract only. To run its bundled workflow, also copy <code>agents/suede-ship-*.md</code> into <code>~/.claude/agents/</code> and restart Claude Code.</p>
     </div>
   </section>
 
   <section class="shell" id="codex">
     <h2>Codex: install the pack or pick your set</h2>
-    <p class="section-sub">The Codex-native plugin installs every skill and registers both read-only MCP discovery profiles. Add the repo marketplace, install the pack, then restart Codex.</p>
+    <p class="section-sub">The Codex-native plugin installs every skill contract and registers three read-only MCP discovery profiles. It does not execute Suede Ship's bundled Claude Workflow. Add the repo marketplace, install the pack, then restart Codex.</p>
 
     <div class="terminal">
       <div class="terminal-bar" aria-hidden="true">

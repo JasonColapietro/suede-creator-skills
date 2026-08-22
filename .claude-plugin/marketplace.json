@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Agent skills for Claude Code and Codex: decisive full-send routing, multi-agent orchestration, Codex CLI worker fleets, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. MIT-licensed skills.",
+  "description": "Open-source agent skills for Claude Code and Codex: decisive full-send routing, multi-agent orchestration, Codex CLI worker fleets, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. Original work is MIT licensed; adapted components retain their upstream notices.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -9,11 +9,22 @@
     {
       "name": "suede-skills",
       "source": "./",
+      "strict": false,
+      "skills": "./skills/",
+      "agents": [
+        "./agents/suede-ship-scout.md",
+        "./agents/suede-ship-code-reader.md",
+        "./agents/suede-ship-web-reader.md",
+        "./agents/suede-ship-patch-author.md",
+        "./agents/suede-ship-applier.md",
+        "./agents/suede-ship-verifier.md"
+      ],
       "description": "Complete Suede workflow: Full Send orchestration, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
     },
     {
       "name": "suede-agent-workflows",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-ship",
         "./skills/suede-ship-copy",
@@ -22,11 +33,20 @@
         "./skills/suede-workflow-skills",
         "./skills/suede-ai-eval"
       ],
+      "agents": [
+        "./agents/suede-ship-scout.md",
+        "./agents/suede-ship-code-reader.md",
+        "./agents/suede-ship-web-reader.md",
+        "./agents/suede-ship-patch-author.md",
+        "./agents/suede-ship-applier.md",
+        "./agents/suede-ship-verifier.md"
+      ],
       "description": "Multi-agent orchestration subset: drive broad authorized outcomes through one controller (suede-full-send), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-code",
         "./skills/suede-code-review",
@@ -38,6 +58,7 @@
     {
       "name": "suede-marketing",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-ab-testing",
         "./skills/suede-ad-creative",
