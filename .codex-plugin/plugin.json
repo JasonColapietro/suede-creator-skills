@@ -8,7 +8,7 @@
   },
   "homepage": "https://skills.suedeai.ai/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
-  "license": "MIT",
+  "license": "MIT AND BSD-3-Clause",
   "keywords": [
     "agent-skills",
     "codex",

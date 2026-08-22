@@ -43,12 +43,16 @@ and a private per-run temp root; writes are limited to known generated artifacts
 and that temp root. The model-reported common directory is not interpolated into
 sandbox permissions. Scout uses NUL-delimited porcelain and exact `lsof -Fn`
 CWD containment, preserving dirty/live claims and failing closed on manifest overflow.
-Gate and its verifier are budget-reserved together. The verifier compares exact
-changed paths and a SHA-256 digest over the Git diff plus all reported file
-contents before and after Gate.
+Every Apply and its immediate verifier are budget-reserved together, before any
+reader receives the mutated worktree. Gate and its verifier are also reserved
+together. The verifier compares exact changed paths and a SHA-256 digest over
+the Git diff plus all reported file contents after each Apply and after Gate.
 
 The Workflow ABI has no required-tool-call receipt. A clamp limits a Bash call
 when made; structured apply and verifier responses remain model attestations.
+Gate reports therefore preserve `claimedPassed` but force `passed:false`,
+`gateVerified:false`, and a held handoff until a trusted outer runner provides
+immutable execution receipts.
 The custom `authority`, `allowedRepo`, `allowedFiles`, and `allowedCommands`
 fields are audit metadata rather than host permissions, and local read tools are
 not path-sandboxed. Tests and public docs must preserve that distinction instead

@@ -20,14 +20,14 @@ const DIFF_DIGEST = 'a'.repeat(64)
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
   let findingSeq = 0
   let agentErrorFired = false
   const effectiveWorktreePath = scoutWorktreePath || `${repo}.worktrees/ship-test`
-  const unifiedPatch = (file, replacement) => `diff --git a/${file} b/${file}\n--- a/${file}\n+++ b/${file}\n@@ -1 +1 @@\n-old\n+${replacement}\n`
+  const unifiedPatch = (file, replacement, modeHeader = '') => `diff --git a/${file} b/${file}\n${modeHeader ? `${modeHeader}\n` : ''}--- a/${file}\n+++ b/${file}\n@@ -1 +1 @@\n-old\n+${replacement}\n`
 
   const checklist = scope.split(/\r?\n/).map(item => item.replace(/^\s*(?:[-*+]\s+|\d+[.)]\s+)/, '').trim()).filter(Boolean)
   const completePlan = (candidate) => {
@@ -42,6 +42,15 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
     if (eligibilityMode === 'duplicate-lane-name') {
       if (candidate.lanes.length === 1) candidate.lanes.push({ ...candidate.lanes[0], files: [`src/duplicate-${candidate.lanes[0].name}.ts`] })
       else candidate.lanes[1].name = candidate.lanes[0].name
+    }
+    if (eligibilityMode === 'duplicate-lane-name-case') {
+      if (candidate.lanes.length === 1) candidate.lanes.push({ ...candidate.lanes[0], name: candidate.lanes[0].name.toUpperCase(), files: [`src/duplicate-${candidate.lanes[0].name}.ts`] })
+      else candidate.lanes[1].name = candidate.lanes[0].name.toUpperCase()
+    }
+    if (eligibilityMode === 'duplicate-lane-name-unicode') {
+      candidate.lanes[0].name = 'café'
+      if (candidate.lanes.length === 1) candidate.lanes.push({ ...candidate.lanes[0], name: 'cafe\u0301', files: ['src/duplicate-cafe.ts'] })
+      else candidate.lanes[1].name = 'cafe\u0301'
     }
     if (eligibilityMode === 'orphan-lane' && candidate.lanes.length === 1) {
       candidate.lanes.push({ ...candidate.lanes[0], name: `${candidate.lanes[0].name}-orphan`, files: [`src/orphan-${candidate.lanes[0].name}.ts`] })
@@ -76,6 +85,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
     ...tieNames.map(name => `src/${name}.ts`),
     'src/improved.ts', 'src/improved-safe-a.ts', 'src/improved-safe-b.ts',
     'src/a.ts', 'src/b.ts', 'src/shared.ts', unsafeFile,
+    ...additionalCandidateFiles,
   ])]
 
   const fixture = (opts, prompt = '') => {
@@ -147,6 +157,27 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
         }
       case 'Generate': {
         const index = Number(label.split(':').at(-1))
+        if (planMode === 'hard-invalid-beam-poison') {
+          if (index === 0) {
+            const candidate = plan('duplicate-lanes', 'src/a.ts')
+            candidate.lanes.push({ ...candidate.lanes[0], files: ['src/b.ts'] })
+            candidate.scopeMap = checklist.flatMap(item => candidate.lanes.map(lane => ({ item, lane: lane.name, acceptance: lane.acceptance, source: 'user scope' })))
+            return candidate
+          }
+          if (index === 1) return plan('protected-path', 'node_modules/escape.ts')
+          if (index === 2) {
+            return completePlan({
+              summary: 'unsafe-plan',
+              coverage: checklist,
+              lanes: [
+                { name: 'unsafe-a', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+                { name: 'unsafe-b', files: ['src/shared.ts'], tier: 'integration', acceptance: 'node --test' },
+              ],
+            })
+          }
+          if (index === 3) return plan('safe-a', 'src/safe-a.ts')
+          return plan('weak-d', 'src/weak-d.ts')
+        }
         const name = includeUnsafePlan && index === 0
           ? 'unsafe-plan'
           : (scoreMode === 'ties' ? tieNames : defaultNames)[index]
@@ -177,6 +208,17 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
         return candidate
       }
       case 'Score': {
+        if (scoreMode === 'hard-invalid-beam-poison') {
+          const total = prompt.includes('duplicate-lanes') ? 100
+            : prompt.includes('protected-path') ? 99
+              : prompt.includes('unsafe-plan') ? 96
+                : prompt.includes('safe-a') || prompt.includes('improved-safe') ? 88 : 40
+          const dimensions = total === 100 ? [20, 20, 20, 20, 20]
+            : total === 99 ? [20, 20, 20, 20, 19]
+              : total === 96 ? [20, 20, 20, 18, 18]
+                : total === 88 ? [18, 18, 18, 18, 16] : [8, 8, 8, 8, 8]
+          return { coverage: dimensions[0], evidence: dimensions[1], feasibility: dimensions[2], safety: dimensions[3], efficiency: dimensions[4], total, rationale: `beam poison score ${total}` }
+        }
         if (scoreMode === 'mismatch') return { coverage: 16, evidence: 16, feasibility: 16, safety: 16, efficiency: 16, total: 90, rationale: 'invalid total' }
         if (scoreMode === 'below-minimum') return { coverage: 8, evidence: 8, feasibility: 8, safety: 8, efficiency: 8, total: 40, rationale: 'valid but deterministically ineligible' }
         if (scoreMode === 'ties') {
@@ -257,7 +299,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
           return {
           state: buildState,
           changed,
-          patches: patchFiles.map(file => ({ file, diff: unifiedPatch(file, 'built') })),
+          patches: patchFiles.map(file => ({ file, diff: unifiedPatch(file, 'built', buildPatchModeHeader) })),
           notes: buildNotes,
         }
         }
@@ -287,13 +329,15 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
           return {
           state: fixState,
           changed,
-          patches: patchFiles.map(file => ({ file, diff: unifiedPatch(file, 'fixed') })),
+          patches: patchFiles.map(file => ({ file, diff: unifiedPatch(file, 'fixed', fixPatchModeHeader) })),
           notes: fixNotes,
         }
         }
       case 'ApplyBuild':
       case 'ApplyFix':
         return { applied: true, output: 'patch applied' }
+      case 'BuildVerify':
+      case 'FixVerify':
       case 'MutationVerify':
         return {
           worktreePath: effectiveWorktreePath,
@@ -323,7 +367,7 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
       case 'Handoff':
         return handoffOutput === undefined
           ? ['Target', 'Changed', 'Commands', 'Verification', 'Release Risk', 'Status', 'Caveats', 'Next']
-              .map(heading => `## ${heading}\nrecorded`)
+              .map(heading => `## ${heading}\n${heading === 'Status' ? 'held' : 'recorded'}`)
               .join('\n\n')
           : handoffOutput
       default:
@@ -479,6 +523,26 @@ test('Graph of Thoughts generates independent plans and deterministically prunes
   assert.equal(result.graph.operations.find(op => op.id === 'keep-generated').type, 'KeepBestN')
 })
 
+test('hard-invalid plans cannot consume the beam while paired Refute still examines correctable plans', async () => {
+  const { result, calls } = await runShip({
+    planMode: 'hard-invalid-beam-poison',
+    scoreMode: 'hard-invalid-beam-poison',
+    malformedAggregate: true,
+    findingsPerLens: 0,
+  })
+  const kept = result.graph.thoughts
+    .filter(thought => thought.operationId === 'keep-generated' && thought.status === 'kept')
+    .map(thought => thought.state.plan.summary)
+  assert.deepEqual(kept.sort(), ['safe-a', 'unsafe-plan'].sort())
+  assert.equal(calls.filter(call => call.phase === 'RefutePlan' && call.prompt.includes('"summary":"unsafe-plan"')).length, 2)
+  const unsafe = result.graph.thoughts.find(thought =>
+    thought.operation === 'Refute' && thought.state.plan?.summary === 'unsafe-plan')
+  assert.equal(unsafe.status, 'refuted')
+  assert.ok(result.selectedPlan)
+  assert.notEqual(result.selectedPlan.summary, 'duplicate-lanes')
+  assert.notEqual(result.selectedPlan.summary, 'protected-path')
+})
+
 test('score ties resolve by coverage then safety then evidence then thought id', async () => {
   // Catches unstable ranking when equal totals have multiple plausible survivors.
   const { result } = await runShip({ scoreMode: 'ties', findingsPerLens: 0 })
@@ -608,6 +672,22 @@ test('patch authors have no mutation tools and appliers receive only an exact cl
   assert.ok(appliers.every(call => !Object.hasOwn(call, 'disallowedTools')))
 })
 
+test('patch validation rejects symlink, gitlink, and file-type transitions before Apply', async () => {
+  for (const buildPatchModeHeader of [
+    'old mode 100644\nnew mode 120000',
+    'old mode 100644\nnew mode 160000',
+    'old mode 100644\nnew mode 040000',
+  ]) {
+    const { result, calls } = await runShip({ findingsPerLens: 0, buildPatchModeHeader })
+    assert.equal(result.reason, 'mutation boundary violation', buildPatchModeHeader)
+    assert.equal(calls.some(call => call.phase === 'ApplyBuild'), false, buildPatchModeHeader)
+    assert.ok(result.graph.dropped.some(item => item.reason === 'Build patch crosses selected lane ownership'), buildPatchModeHeader)
+  }
+
+  const regularPermissionChange = await runShip({ findingsPerLens: 0, buildPatchModeHeader: 'old mode 100644\nnew mode 100755' })
+  assert.ok(regularPermissionChange.calls.some(call => call.phase === 'ApplyBuild'))
+})
+
 test('each Build and Fix patch bundle stays inside its own lane before aggregate apply', async () => {
   const swappedBuild = await runShip({ findingsPerLens: 0, swapBuildPatches: true })
   assert.equal(swappedBuild.result.reason, 'mutation boundary violation')
@@ -692,7 +772,9 @@ test('deterministic plan eligibility rejects unsafe or incomplete winners before
     { scoreMode: 'below-minimum', reason: 'score below deterministic eligibility minimum' },
     { eligibilityMode: 'incomplete-scope', scope: '- change api\n- change docs', reason: 'scope checklist is incomplete' },
     { eligibilityMode: 'unknown-source', reason: 'scope mapping cites an unknown source' },
-    { eligibilityMode: 'duplicate-lane-name', reason: 'lane names are not unique' },
+    { eligibilityMode: 'duplicate-lane-name', reason: 'malformed generated plan' },
+    { eligibilityMode: 'duplicate-lane-name-case', reason: 'malformed generated plan' },
+    { eligibilityMode: 'duplicate-lane-name-unicode', reason: 'malformed generated plan' },
     { eligibilityMode: 'orphan-lane', reason: 'lane has no canonical scope mapping' },
     { eligibilityMode: 'duplicate-scope-mapping', reason: 'scope mapping contains a duplicate item-lane pair' },
     { scopeMapLaneAlias: ' A ', reason: 'scope mapping lane is not canonical' },
@@ -905,7 +987,7 @@ test('post-build Refute requires concrete evidence before confirming a finding',
 
   const major = await runShip({ findingsPerLens: 1, refuteWhy: '', reviewSeverity: 'major' })
   assert.ok(major.result.unverifiedFindings.every(finding => finding.severity === 'major'))
-  assert.equal(major.result.shipVerdict, 'ship-with-caveats')
+  assert.equal(major.result.shipVerdict, 'hold')
 })
 
 test('identical Refute defects with a nonexistent candidate lane or target never reach consensus', async () => {
@@ -1004,10 +1086,12 @@ test('aggregate collision validation canonicalizes aliases and rejects repo esca
   const cases = [
     { label: 'relative dot alias', files: ['src/shared.ts', 'src/./shared.ts'] },
     { label: 'absolute repeated-separator alias', files: ['src/shared.ts', '/tmp/repo.worktrees/ship-test/src//shared.ts'] },
+    { label: 'case alias', files: ['src/Foo.ts', 'src/foo.ts'], additionalCandidateFiles: ['src/Foo.ts'] },
+    { label: 'Unicode normalization alias', files: ['src/café.ts', 'src/cafe\u0301.ts'], additionalCandidateFiles: ['src/café.ts'] },
     { label: 'repo escape', files: ['src/a.ts', '../outside.ts'] },
   ]
   for (const scenario of cases) {
-    const { result, calls } = await runShip({ aggregateFiles: scenario.files, findingsPerLens: 0 })
+    const { result, calls } = await runShip({ aggregateFiles: scenario.files, additionalCandidateFiles: scenario.additionalCandidateFiles, findingsPerLens: 0 })
     const aggregate = result.graph.thoughts.find(thought => thought.operation === 'Aggregate')
     assert.equal(aggregate.status, 'pruned', `${scenario.label} must invalidate the aggregate`)
     assert.ok(aggregate.state.aggregationCollisions.length > 0, `${scenario.label} must record why it was rejected`)
@@ -1439,6 +1523,7 @@ test('a live target worktree and a selected-plan collision both halt before Buil
 test('Scout cannot redirect winner mutation authority outside the target repo worktree families', async () => {
   const cases = [
     { scoutWorktreePath: '/tmp/unowned-victim', expectedReason: 'Scout returned an invalid worktree path or base SHA' },
+    { scoutWorktreePath: '/tmp/repo/.claude/worktrees/ship-test', expectedReason: 'Scout returned an invalid worktree path or base SHA' },
     { scoutWorktreePath: '/tmp/repo.worktrees/ship-not-a-git-worktree', worktreeAttested: false, expectedReason: 'worktree Git attestation failed' },
     { worktreeClean: false, expectedReason: 'worktree Git attestation failed' },
     { headMatchesOriginMain: false, expectedReason: 'worktree Git attestation failed' },
@@ -1451,6 +1536,19 @@ test('Scout cannot redirect winner mutation authority outside the target repo wo
     assert.equal(result.reason, 'invalid scout worktree')
     assert.equal(calls.some(call => call.phase === 'Build'), false)
     assert.ok(result.graph.dropped.some(item => item.reason === scenario.expectedReason))
+  }
+})
+
+test('Scout candidate manifests reject case and Unicode aliases before graph search', async () => {
+  for (const scoutCandidateFiles of [
+    ['src/Foo.ts', 'src/foo.ts'],
+    ['src/café.ts', 'src/cafe\u0301.ts'],
+  ]) {
+    const { result, calls } = await runShip({ scoutCandidateFiles, findingsPerLens: 0 })
+    assert.equal(result.halted, true)
+    assert.equal(result.reason, 'ambiguous scout candidate paths')
+    assert.equal(calls.some(call => call.phase === 'Generate'), false)
+    assert.equal(calls.some(call => call.phase === 'Build'), false)
   }
 })
 
@@ -1504,12 +1602,15 @@ test('ScoutVerify is explicitly instructed to attest the exact origin/main SHA a
   assert.match(prompt, /git -C '\/tmp\/repo\.worktrees\/ship-test' status --porcelain/)
 })
 
-test('an independent post-mutation audit blocks unexpected paths, symlinks, and base drift before Gate', async () => {
+test('an immediate post-Build audit blocks unexpected paths, symlinks, and base drift before any reader', async () => {
   const clean = await runShip({ findingsPerLens: 0 })
-  const auditCall = clean.calls.find(call => call.phase === 'MutationVerify')
+  const applyIndex = clean.calls.findIndex(call => call.phase === 'ApplyBuild')
+  const auditCall = clean.calls.find(call => call.phase === 'BuildVerify')
+  const reviewIndex = clean.calls.findIndex(call => call.phase === 'Review')
   const gateIndex = clean.calls.findIndex(call => call.phase === 'Gate')
   assert.ok(auditCall)
-  assert.ok(clean.calls.indexOf(auditCall) < gateIndex)
+  assert.ok(applyIndex >= 0 && clean.calls.indexOf(auditCall) > applyIndex)
+  assert.ok(reviewIndex > clean.calls.indexOf(auditCall) && gateIndex > reviewIndex)
   assert.equal(auditCall.authority, 'read-only')
   assert.equal(auditCall.agentType, 'suede-skills:suede-ship-verifier')
   assert.ok(auditCall.bashCommandClamp.length >= 5)
@@ -1527,9 +1628,26 @@ test('an independent post-mutation audit blocks unexpected paths, symlinks, and 
   for (const scenario of cases) {
     const { result, calls } = await runShip({ ...scenario, findingsPerLens: 0 })
     assert.equal(result.halted, true)
-    assert.equal(result.reason, 'post-mutation attestation failed')
+    assert.equal(result.reason, 'post-Build attestation failed')
+    assert.equal(calls.some(call => call.phase === 'Review'), false)
     assert.equal(calls.some(call => call.phase === 'Gate'), false)
   }
+})
+
+test('Fix Apply is immediately attested before Gate and verifier failure halts the run', async () => {
+  const clean = await runShip({ findingsPerLens: 1 })
+  const applyIndex = clean.calls.findIndex(call => call.phase === 'ApplyFix')
+  const verifyIndex = clean.calls.findIndex(call => call.phase === 'FixVerify')
+  const gateIndex = clean.calls.findIndex(call => call.phase === 'Gate')
+  assert.ok(applyIndex >= 0 && verifyIndex > applyIndex && gateIndex > verifyIndex)
+  assert.deepEqual(clean.calls[verifyIndex].reportedFiles.sort(), ['src/a.ts', 'src/b.ts'])
+
+  const failed = await runShip({ findingsPerLens: 1, agentErrorPhase: 'FixVerify' })
+  assert.equal(failed.result.halted, true)
+  assert.equal(failed.result.reason, 'post-Fix attestation failed')
+  assert.ok(failed.result.fixApply)
+  assert.match(failed.result.fixMutationAttestationFailure.message, /programming error at FixVerify/)
+  assert.equal(failed.calls.some(call => call.phase === 'Gate'), false)
 })
 
 test('post-Gate attestation requires the source diff to remain byte-identical', async () => {
@@ -1554,7 +1672,7 @@ test('post-Gate attestation requires the source diff to remain byte-identical', 
     gateMutationChangedFiles: ['src/new.ts'],
     gateMutationDiffDigest: 'b'.repeat(64),
   })
-  const addedFileVerify = addedFileDrift.calls.find(call => call.phase === 'MutationVerify')
+  const addedFileVerify = addedFileDrift.calls.find(call => call.phase === 'BuildVerify')
   assert.match(addedFileVerify.prompt, /including untracked additions/)
   assert.ok(addedFileVerify.bashCommandClamp.some(rule =>
     rule.startsWith('Bash(node -e ') && rule.includes(Buffer.from(JSON.stringify(['src/new.ts'])).toString('base64'))))
@@ -1622,7 +1740,7 @@ test('post-build Refute verifiers are read-only and lane-scoped', async () => {
 
 test('every research, search, review, gate, and handoff call has explicit read-only authority', async () => {
   const { calls } = await runShip({ findingsPerLens: 1 })
-  const readOnlyPhases = new Set(['ScoutVerify', 'Research', 'Gaps', 'Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate', 'Review', 'Refute', 'MutationVerify', 'Gate', 'GateVerify', 'Release', 'Handoff'])
+  const readOnlyPhases = new Set(['ScoutVerify', 'Research', 'Gaps', 'Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate', 'Review', 'Refute', 'BuildVerify', 'FixVerify', 'Gate', 'GateVerify', 'Release', 'Handoff'])
   const bounded = calls.filter(call => readOnlyPhases.has(call.phase))
   assert.ok(bounded.length > 0)
   assert.ok(bounded.every(call => call.authority === 'read-only' || call.authority === 'read-only-production'))
@@ -1649,14 +1767,15 @@ test('unfixed blocker overflow halts before Gate and confirmed majors downgrade 
   assert.equal(overflow.result.halted, true)
   assert.equal(overflow.result.reason, 'unfixed blockers remain')
   assert.ok(overflow.result.unfixedBlockers.length > 0)
-  assert.ok(overflow.calls.some(call => call.phase === 'MutationVerify'))
+  assert.ok(overflow.calls.some(call => call.phase === 'BuildVerify'))
+  assert.ok(overflow.calls.some(call => call.phase === 'FixVerify'))
   assert.equal(overflow.calls.some(call => ['Gate', 'Release', 'Handoff'].includes(call.phase)), false)
   assert.notEqual(overflow.result.shipVerdict, 'ship')
 
   const major = await runShip({ findingsPerLens: 1, reviewSeverity: 'major' })
   assert.equal(major.result.halted, undefined)
   assert.ok(major.result.confirmedFindings.some(finding => finding.severity === 'major'))
-  assert.equal(major.result.shipVerdict, 'ship-with-caveats')
+  assert.equal(major.result.shipVerdict, 'hold')
 })
 
 test('applied blocker fixes remain pending semantic verification and force a hold', async () => {
@@ -1668,23 +1787,37 @@ test('applied blocker fixes remain pending semantic verification and force a hol
   assert.match(calls.find(call => call.phase === 'Handoff').prompt, /pending semantic verification/i)
 })
 
-test('a positive Gate report needs the exact command set and nonempty execution output', async () => {
+test('a positive Gate report remains held without trusted runner execution receipts', async () => {
   for (const reportedGateCommands of [[], ['node --test', 'npm test']]) {
     const { result } = await runShip({ findingsPerLens: 0, reportedGateCommands })
-    assert.equal(result.gate.passed, true)
+    assert.equal(result.gate.claimedPassed, true)
+    assert.equal(result.gate.passed, false)
+    assert.equal(result.gate.verification, 'invalid-command-report')
     assert.equal(result.gatePassed, false)
+    assert.equal(result.gateVerified, false)
     assert.equal(result.shipVerdict, 'hold')
     assert.equal(result.gateAudit.complete, false)
     assert.ok(result.gateAudit.missing.length > 0 || result.gateAudit.unexpected.length > 0)
   }
 
   const emptyOutput = await runShip({ findingsPerLens: 0, gateOutput: '' })
-  assert.equal(emptyOutput.result.gate.passed, true)
+  assert.equal(emptyOutput.result.gate.claimedPassed, true)
+  assert.equal(emptyOutput.result.gate.passed, false)
+  assert.equal(emptyOutput.result.gate.verification, 'invalid-command-report')
   assert.equal(emptyOutput.result.gateAudit.commandsComplete, true)
   assert.equal(emptyOutput.result.gateAudit.outputPresent, false)
   assert.equal(emptyOutput.result.gateAudit.complete, false)
   assert.equal(emptyOutput.result.gatePassed, false)
   assert.equal(emptyOutput.result.shipVerdict, 'hold')
+
+  const exact = await runShip({ findingsPerLens: 0 })
+  assert.equal(exact.result.gate.claimedPassed, true)
+  assert.equal(exact.result.gate.passed, false)
+  assert.equal(exact.result.gate.verification, 'unverified-no-runner-execution-receipts')
+  assert.equal(exact.result.gatePassed, false)
+  assert.equal(exact.result.gateVerified, false)
+  assert.equal(exact.result.shipVerdict, 'hold')
+  assert.match(exact.result.gate.output, /^UNVERIFIED:/)
 })
 
 test('a Gate agent failure returns the completed mutation evidence and halts cleanly', async () => {
@@ -1721,7 +1854,7 @@ test('Release and Handoff agent failures return all evidence accumulated before 
   assert.equal(releaseFailure.result.halted, true)
   assert.equal(releaseFailure.result.reason, 'release agent failure')
   assert.equal(releaseFailure.result.shipVerdict, 'hold')
-  assert.equal(releaseFailure.result.gatePassed, true)
+  assert.equal(releaseFailure.result.gatePassed, false)
   assert.match(releaseFailure.result.releaseFailure.message, /programming error at Release/)
   assert.equal(releaseFailure.result.releaseFailures.length, 1)
   assert.equal(releaseFailure.result.release.length, 3)
@@ -1736,7 +1869,7 @@ test('Release and Handoff agent failures return all evidence accumulated before 
   assert.equal(handoffFailure.result.halted, true)
   assert.equal(handoffFailure.result.reason, 'handoff agent failure')
   assert.equal(handoffFailure.result.shipVerdict, 'hold')
-  assert.equal(handoffFailure.result.gatePassed, true)
+  assert.equal(handoffFailure.result.gatePassed, false)
   assert.equal(handoffFailure.result.release.length, 4)
   assert.match(handoffFailure.result.handoffFailure.message, /programming error at Handoff/)
 })
@@ -1750,6 +1883,17 @@ test('malformed or empty Handoff output fails closed with a hold', async () => {
     assert.equal(result.handoff, handoffOutput)
     assert.equal(result.handoffFailure.code, 'INVALID_HANDOFF')
   }
+})
+
+test('Handoff cannot promote an unverified Gate above held status', async () => {
+  const handoffOutput = ['Target', 'Changed', 'Commands', 'Verification', 'Release Risk', 'Status', 'Caveats', 'Next']
+    .map(heading => `## ${heading}\n${heading === 'Status' ? 'verified locally' : 'recorded'}`)
+    .join('\n\n')
+  const { result } = await runShip({ findingsPerLens: 0, handoffOutput })
+  assert.equal(result.halted, true)
+  assert.equal(result.reason, 'invalid handoff')
+  assert.equal(result.shipVerdict, 'hold')
+  assert.equal(result.handoffFailure.code, 'INVALID_HANDOFF')
 })
 
 test('handoff receives complete search evidence and its final budget snapshot', async () => {
@@ -1779,10 +1923,17 @@ test('late budget exhaustion preserves accumulated evidence at Gate, Release, an
   const firstGate = baseline.calls.findIndex(call => call.phase === 'Gate')
   const firstRelease = baseline.calls.findIndex(call => call.phase === 'Release')
   const firstHandoff = baseline.calls.findIndex(call => call.phase === 'Handoff')
+  const unverifiedGate = {
+    passed: false,
+    commands: ['node --test'],
+    output: 'UNVERIFIED: the restricted Gate attempt has no trusted runner execution receipts. Agent report: ok',
+    claimedPassed: true,
+    verification: 'unverified-no-runner-execution-receipts',
+  }
   const cases = [
     { phase: 'GateSafety', ceiling: firstGate, gate: null, releaseCount: 0 },
-    { phase: 'Release', ceiling: firstRelease + 1, gate: { passed: true, commands: ['node --test'], output: 'ok' }, releaseCount: 1 },
-    { phase: 'Handoff', ceiling: firstHandoff, gate: { passed: true, commands: ['node --test'], output: 'ok' }, releaseCount: 4 },
+    { phase: 'Release', ceiling: firstRelease + 1, gate: unverifiedGate, releaseCount: 1 },
+    { phase: 'Handoff', ceiling: firstHandoff, gate: unverifiedGate, releaseCount: 4 },
   ]
   for (const scenario of cases) {
     const { result, calls } = await runShip({ findingsPerLens: 0, forceAgentCeiling: scenario.ceiling })

@@ -250,8 +250,9 @@ next call and returns the trace; it never silently drops scope or findings.
 The Scout phase runs before graph search and remains authoritative. Before the
 search, an independent read-only verifier must confirm the reported path is a
 clean registered worktree at `origin/main`, shares the repo's Git common
-directory, resolves inside an allowed worktree family, and contains no symlink,
-directory, or out-of-worktree candidate path. Scout parses NUL-delimited Git
+directory, is one direct child of `${REPO}.worktrees`, and contains no symlink,
+directory, out-of-worktree candidate path, or case/Unicode-normalized path
+alias. Claude-managed nested worktrees are not accepted. Scout parses NUL-delimited Git
 porcelain, exact `lsof -Fn` CWD fields, and fails closed when a safety manifest
 would truncate. It retains dirty or live sibling claims even when committed
 history is cherry-landed. Candidate thoughts cannot weaken
@@ -271,8 +272,10 @@ with no Bash, write, web, task, skill, or MCP tools. Public web research and
 release agents have web tools but no local-file or shell tools. Build and Fix
 agents have read tools only and return unified diffs for their selected files.
 One Bash-only applier receives a single exact Node command that validates and
-applies the accepted patch bundle. Bash-only verifiers receive only exact
-read commands.
+applies the accepted patch bundle. Patch validation rejects symlinks, gitlinks,
+binary patches, renames, copies, and file-type transitions. Every Apply and its
+independent Bash-only verifier are budget-reserved together; the verifier runs
+immediately after mutation and before any reader receives the worktree.
 
 Gate is macOS-only. Every acceptance command is wrapped in `sandbox-exec` with
 network denied. It changes into the attested worktree and permits reads only
@@ -285,7 +288,7 @@ simulator builds whose derived data stays under the private temp root, and
 offline Gradle checks. A selected file below a nested module's `src` tree may
 add only that module's `build` directory, after symlink and realpath validation,
 to the write roots. The workflow reserves Gate and its post-Gate
-audit together. A pre-Gate and post-Gate attestation compares the exact
+audit together. The latest immediate post-Apply and post-Gate attestations compare the exact
 changed-path set and a SHA-256 digest over the binary Git diff plus every
 reported file's mode, size, and bytes, including untracked additions, so a
 validation script cannot silently rewrite selected source without forcing a
@@ -293,14 +296,17 @@ hold.
 
 Applying a bounded blocker repair does not establish that the original failure
 scenario is gone. Those findings remain in
-`fixedBlockersPendingVerification`; they force an advisory `hold` even when the
-integration Gate passes, until an independent follow-up performs targeted
-semantic verification.
+`fixedBlockersPendingVerification`; they force an advisory `hold` until an
+independent follow-up performs targeted semantic verification.
 
 The runner contract is not stronger than the host API. `bashCommandClamp`
 restricts Bash when invoked, but Claude Workflow does not provide a trusted
 required-tool-call receipt. Structured apply and verification results are model
-attestations, not cryptographic proof that the command ran. The `authority`,
+attestations, not cryptographic proof that the command ran. A Gate agent may
+report that every restricted command passed, but the workflow records that only
+as `claimedPassed`, forces `passed:false` and `gateVerified:false`, and requires
+the handoff status to remain `held` until a trusted outer runner supplies
+immutable execution receipts. The `authority`,
 `allowedRepo`, `allowedFiles`, and `allowedCommands` options are evidence labels,
 not filesystem controls, and local read tools are not path-sandboxed. The design
 therefore claims capability separation and fail-closed validation, not

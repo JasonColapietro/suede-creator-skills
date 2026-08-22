@@ -13,9 +13,9 @@ export const meta = {
     { title: 'Research', detail: 'multi-modal sweep: code path, contracts, history, prior decisions, external docs' },
     { title: 'Gaps', detail: 'completeness critic names what went unread, one bounded fill round' },
     { title: 'Plan', detail: 'competing plans branch, score, prune, refute, improve, aggregate, and select' },
-    { title: 'Build', detail: 'reserve the complete disjoint-lane batch, author patch-only lane diffs, validate and apply the selected bundle, then review' },
+    { title: 'Build', detail: 'reserve disjoint patch authors, validate and apply the selected bundle, attest it immediately, then review' },
     { title: 'Refute', detail: 'paired adversaries require the same concrete blocking defect' },
-    { title: 'Gate', detail: 'barrier: model-attested selected acceptance checks through exact macOS sandbox-exec clamps' },
+    { title: 'Gate', detail: 'restricted acceptance-check attempt; held unverified without trusted execution receipts' },
     { title: 'Release', detail: 'adversarial release verification — config drift, public surface, irreversibility, live baseline' },
     { title: 'Handoff', detail: 'evidence record — changed files, commands, verification, caveats' },
   ],
@@ -628,11 +628,12 @@ const evidence = {
   fixedBlockersPendingVerification: [],
   gate: null,
   gatePassed: null,
+  gateVerified: false,
   shipVerdict: DEPLOYS ? 'unknown' : 'n/a — not a deploying repo',
   release: [],
   hazards: [],
   handoff: null,
-  mutationAudit: 'Patch headers and changed paths are validated against canonical allowlists. Patch apply and worktree verification use exact Bash clamps when invoked; their structured responses are model attestations, not host-certified receipts.',
+  mutationAudit: 'Patch headers, file types, normalized identities, and changed paths are validated against canonical allowlists. Every Apply reserves and runs an immediate diff attestation before any reader. Exact Bash clamps constrain calls when invoked; structured responses remain model attestations, not host-certified receipts.',
 }
 let winnerMutationAttempted = false
 const callAgent = async (prompt, options = {}) => {
@@ -807,13 +808,14 @@ const normalizedBaseSha = typeof scoutResult.baseSha === 'string' && /^[0-9a-f]{
 const normalizedRunKey = normalizedWorktreePath ? normalizedWorktreePath.split('/').at(-1) : null
 const normalizedTempRoot = canonicalAbsolutePath(scoutResult.tempRoot)
 const expectedTempRoot = normalizedRunKey ? `/private/tmp/${normalizedRunKey}` : null
-const allowedWorktreePrefixes = [`${REPO}.worktrees/`, `${REPO}/.claude/worktrees/`]
+const allowedWorktreeRoot = `${REPO}.worktrees`
+const expectedWorktreePath = normalizedRunKey ? `${allowedWorktreeRoot}/${normalizedRunKey}` : null
 if (!normalizedWorktreePath || !normalizedBaseSha || !/^ship-[a-z0-9][a-z0-9-]{0,63}$/.test(normalizedRunKey || '') ||
   normalizedTempRoot !== expectedTempRoot ||
-  !allowedWorktreePrefixes.some(prefix => normalizedWorktreePath.startsWith(prefix))) {
+  normalizedWorktreePath !== expectedWorktreePath) {
   graph.dropped.push({
     operation: 'Scout',
-    inputs: { reportedWorktreePath: scoutResult.worktreePath, reportedBaseSha: scoutResult.baseSha, allowedWorktreePrefixes },
+    inputs: { reportedWorktreePath: scoutResult.worktreePath, reportedBaseSha: scoutResult.baseSha, allowedWorktreeRoot },
     reason: 'Scout returned an invalid worktree path or base SHA',
   })
   return { halted: true, reason: 'invalid scout worktree', graph, scout: scoutResult }
@@ -841,7 +843,7 @@ const worktreeAttestation = await callAgent(
   `Repo path data: ${JSON.stringify(REPO)}
 Reported worktree path data: ${JSON.stringify(scout.worktreePath)}
 Expected HEAD data: ${JSON.stringify(scout.baseSha)}
-Allowed realpath prefixes: ${allowedWorktreePrefixes.join(', ')}
+Allowed direct worktree root: ${allowedWorktreeRoot}
 Candidate paths to verify: ${JSON.stringify(scout.candidateFiles)}
 
 You are the independent WORKTREE VERIFIER. Run every exact command below and no other
@@ -1143,7 +1145,9 @@ const PLAN_DEFECT_KINDS = new Set(['missing-scope', 'constraint-break', 'collisi
 const validPlan = plan => plan && nonEmptyString(plan.summary) && nonEmptyStringArray(plan.coverage) &&
   Array.isArray(plan.lanes) && plan.lanes.length > 0 && plan.lanes.every(lane => lane &&
     Object.keys(lane).every(key => PLAN_LANE_KEYS.has(key)) && safeLaneName(lane.name) && nonEmptyStringArray(lane.files) &&
-    PLAN_TIERS.has(lane.tier) && nonEmptyString(lane.acceptance)) && Array.isArray(plan.scopeMap) &&
+    PLAN_TIERS.has(lane.tier) && nonEmptyString(lane.acceptance)) &&
+  new Set(plan.lanes.map(lane => normalizeText(lane.name))).size === plan.lanes.length &&
+  Array.isArray(plan.scopeMap) &&
   plan.scopeMap.length > 0 && plan.scopeMap.every(mapping => mapping && nonEmptyString(mapping.item) &&
     nonEmptyString(mapping.lane) && nonEmptyString(mapping.acceptance) && nonEmptyString(mapping.source)) &&
   Array.isArray(plan.externalActions)
@@ -1197,23 +1201,24 @@ const safePlanFile = raw => {
   if (!leaf.includes('.') && !SAFE_EXTENSIONLESS_FILES.has(leaf)) return null
   return file
 }
+const pathKey = value => String(value || '').normalize('NFC').toLocaleLowerCase('en-US')
 const validatedPatchBundle = (results, allowedFiles) => {
-  const allowed = new Set(allowedFiles)
+  const allowed = new Map(allowedFiles.map(file => [pathKey(file), file]))
   const patches = results.flatMap(result => Array.isArray(result.patches) ? result.patches : [])
   const changed = results.flatMap(result => Array.isArray(result.changed) ? result.changed : [])
   const reasons = []
   const patchFiles = patches.map(patch => safePlanFile(patch && patch.file))
   if (patchFiles.some(file => !file)) reasons.push('patch names an unsafe file')
-  if (new Set(patchFiles).size !== patchFiles.length) reasons.push('patch file appears more than once')
-  if (new Set(changed).size !== changed.length) reasons.push('changed file appears more than once')
-  if ([...new Set(changed)].sort().join('\u0000') !== [...new Set(patchFiles)].sort().join('\u0000')) {
+  if (new Set(patchFiles.map(pathKey)).size !== patchFiles.length) reasons.push('patch file appears more than once')
+  if (new Set(changed.map(pathKey)).size !== changed.length) reasons.push('changed file appears more than once')
+  if ([...new Set(changed.map(pathKey))].sort().join('\u0000') !== [...new Set(patchFiles.map(pathKey))].sort().join('\u0000')) {
     reasons.push('changed paths do not exactly match patch files')
   }
   for (let index = 0; index < patches.length; index += 1) {
     const patch = patches[index]
     const file = patchFiles[index]
     const diff = patch && patch.diff
-    if (!file || !allowed.has(file)) {
+    if (!file || !allowed.has(pathKey(file)) || allowed.get(pathKey(file)) !== file) {
       reasons.push(`patch outside allowlist: ${String(patch && patch.file)}`)
       continue
     }
@@ -1229,8 +1234,15 @@ const validatedPatchBundle = (results, allowedFiles) => {
     const newHeaders = diff.match(/^\+\+\+ .+$/gm) || []
     if (oldHeaders.length !== 1 || ![`--- a/${file}`, '--- /dev/null'].includes(oldHeaders[0])) reasons.push(`invalid old-file header: ${file}`)
     if (newHeaders.length !== 1 || ![`+++ b/${file}`, '+++ /dev/null'].includes(newHeaders[0])) reasons.push(`invalid new-file header: ${file}`)
-    if (/^(?:new|old) file mode 120000$|^(?:rename|copy) (?:from|to) |^GIT binary patch$/m.test(diff)) {
-      reasons.push(`patch uses a prohibited symlink, rename, copy, or binary form: ${file}`)
+    const declaredModes = [...diff.matchAll(/^(?:(?:old|new) mode|(?:new|deleted) file mode) ([0-7]{6})$/gm)]
+      .map(match => match[1])
+    const oldModes = [...diff.matchAll(/^old mode ([0-7]{6})$/gm)].map(match => match[1])
+    const newModes = [...diff.matchAll(/^new mode ([0-7]{6})$/gm)].map(match => match[1])
+    const fileTypeTransition = oldModes.length !== newModes.length ||
+      oldModes.some((mode, modeIndex) => mode.slice(0, 3) !== newModes[modeIndex].slice(0, 3))
+    if (declaredModes.some(mode => !mode.startsWith('100')) || fileTypeTransition ||
+      /^(?:rename|copy) (?:from|to) |^GIT binary patch$/m.test(diff)) {
+      reasons.push(`patch uses a prohibited file type, mode transition, rename, copy, or binary form: ${file}`)
     }
   }
   const text = patches.map(patch => typeof patch.diff === 'string'
@@ -1249,10 +1261,21 @@ const makePatchApplyCommand = patchText => {
   const script = `const {spawnSync}=require("node:child_process");const root=process.argv[1];const patch=Buffer.from(process.argv[2],"base64");const run=(extra)=>spawnSync("git",["-C",root,"apply",...extra,"--whitespace=nowarn","-"],{input:patch,encoding:"utf8"});const checked=run(["--check"]);if(checked.error||checked.status!==0){process.stderr.write(checked.stderr||String(checked.error||"git apply --check failed"));process.exit(checked.status||1)}const applied=run([]);process.stdout.write(applied.stdout||"");process.stderr.write(applied.stderr||String(applied.error||""));process.exit(applied.error||applied.status!==0?applied.status||1:0)`
   return `node -e ${shellQuote(script)} ${WORKTREE_SHELL} '${payload}'`
 }
-const scoutCandidateFileSet = new Set((scout.candidateFiles || []).map(safePlanFile).filter(Boolean))
-const overlaps = (a, b) => Boolean(a && b) && (a === b || a.startsWith(b + '/') || b.startsWith(a + '/'))
-const withinAllowed = (candidate, allowed) => Boolean(candidate && allowed) && candidate === allowed
-const normalizeText = value => String(value || '').trim().toLowerCase().replace(/\s+/g, ' ')
+const normalizeText = value => String(value || '').normalize('NFC').trim().toLowerCase().replace(/\s+/g, ' ')
+const scoutCandidateFiles = (scout.candidateFiles || []).map(safePlanFile).filter(Boolean)
+const scoutCandidateFileSet = new Set(scoutCandidateFiles.map(pathKey))
+const scoutCandidateAliases = scoutCandidateFiles.filter((file, index) =>
+  scoutCandidateFiles.findIndex(candidate => pathKey(candidate) === pathKey(file)) !== index)
+if (scoutCandidateAliases.length) {
+  graph.dropped.push({ operation: 'ScoutVerify', inputs: { aliases: scoutCandidateAliases }, reason: 'Scout candidate paths contain case or Unicode aliases' })
+  return { halted: true, reason: 'ambiguous scout candidate paths', graph, ...evidence }
+}
+const overlaps = (a, b) => {
+  const aKey = pathKey(a)
+  const bKey = pathKey(b)
+  return Boolean(aKey && bKey) && (aKey === bKey || aKey.startsWith(bKey + '/') || bKey.startsWith(aKey + '/'))
+}
+const withinAllowed = (candidate, allowed) => Boolean(candidate && allowed) && pathKey(candidate) === pathKey(allowed)
 const scopeChecklist = SCOPE.split(/\r?\n/)
   .map(item => item.replace(/^\s*(?:[-*+]\s+|\d+[.)]\s+)/, '').trim())
   .filter(Boolean)
@@ -1326,7 +1349,7 @@ const planFileCollisions = plan => {
         collisions.push(`${String(raw)}: unsafe, directory-like, generated, protected, absolute-outside-repo, or repo-escaping path`)
         continue
       }
-      if (!scoutCandidateFileSet.has(file)) {
+      if (!scoutCandidateFileSet.has(pathKey(file))) {
         collisions.push(`${file}: not present in the Scout candidate-file manifest`)
         continue
       }
@@ -1343,8 +1366,9 @@ const validRefutation = value => value && typeof value.notes === 'string' && Arr
   nonEmptyString(defect.target) && nonEmptyString(defect.claim) && nonEmptyString(defect.evidence))
 const resolveCandidateDefect = (plan, defect) => {
   if (!validPlan(plan) || !defect) return null
-  const lane = plan.lanes.find(candidate => normalizeText(candidate.name) === normalizeText(defect.lane))
-  if (!lane) return null
+  const matchingLanes = plan.lanes.filter(candidate => normalizeText(candidate.name) === normalizeText(defect.lane))
+  if (matchingLanes.length !== 1) return null
+  const lane = matchingLanes[0]
   const target = rel(defect.target)
   if (!target) return null
   const laneFiles = lane.files.map(rel).filter(Boolean)
@@ -1354,7 +1378,7 @@ const resolveCandidateDefect = (plan, defect) => {
       .some(file => withinAllowed(target, file)))
     if (owners.length < 2) return null
   }
-  return { lane: normalizeText(lane.name), target }
+  return { lane: normalizeText(lane.name), target: pathKey(target) }
 }
 const normalizedDefectKey = (plan, defect) => {
   const resolved = resolveCandidateDefect(plan, defect)
@@ -1408,14 +1432,21 @@ const planEligibility = (plan, score) => {
 const candidateFailure = ({ operation, thoughtId, inputs, error }) => {
   graph.dropped.push({ operation, thoughtId, inputs, reason: 'candidate agent failure', error: { message: error.message, code: error.code || null } })
 }
+const hardBeamEligible = plan => {
+  if (!validPlan(plan)) return false
+  return plan.lanes.every(lane => {
+    const files = lane.files.map(safePlanFile)
+    return files.every(Boolean) && new Set(files.map(pathKey)).size === files.length
+  })
+}
 const makeKeepBestN = operationId => async ({ inputThoughts }) => {
-  const eligible = inputThoughts.filter(thought => thought.status === 'active' && validPlan(thought.state.plan) && validScore(thought.score))
+  const eligible = inputThoughts.filter(thought => thought.status === 'active' && hardBeamEligible(thought.state.plan) && validScore(thought.score))
   const keptIds = new Set(rankThoughts(eligible).slice(0, BUDGET.beamWidth).map(thought => thought.id))
   const outputs = inputThoughts.map(thought => {
     const kept = keptIds.has(thought.id)
-    const reason = kept ? 'ranked within configured beam' : validScore(thought.score)
-      ? `ranked outside configured beam of ${BUDGET.beamWidth}`
-      : 'candidate has no valid score'
+    const reason = kept ? 'ranked within configured beam' : !hardBeamEligible(thought.state.plan)
+      ? 'candidate is structurally unsafe for beam ranking'
+      : validScore(thought.score) ? `ranked outside configured beam of ${BUDGET.beamWidth}` : 'candidate has no valid score'
     return createThought({
       id: nextThoughtId(), parentIds: [thought.id], operationId, operation: OPERATION_TYPES.KeepBestN,
       depth: thought.depth + 1, state: { ...thought.state, pruning: reason }, score: thought.score,
@@ -1999,9 +2030,89 @@ if (!buildPatchBundle.valid) {
   graph.dropped.push({ operation: 'Build', inputs: { reasons: buildPatchBundle.reasons }, reason: 'Build returned an unsafe patch bundle' })
   return { halted: true, reason: 'mutation boundary violation', violations: buildPatchBundle.reasons, graph, ...evidence }
 }
+
+// Each clamped Apply is immediately followed by an independent physical-diff
+// attestation before any reader receives the mutated worktree. The complete
+// Apply+Verify pair is reserved before mutation so budget exhaustion cannot strand
+// an applied patch without its safety check.
+const canonicalMutationFiles = files => [...new Map(files
+  .map(rel)
+  .filter(Boolean)
+  .map(file => [pathKey(file), file])).values()].sort()
+const diffDigestScript = `const {spawnSync}=require("node:child_process");const {createHash}=require("node:crypto");const fs=require("node:fs"),path=require("node:path"),root=path.resolve(process.argv[1]),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],"base64").toString("utf8"));if(!Array.isArray(files)){process.stderr.write("reported files must be an array");process.exit(1)}const run=spawnSync("git",["-C",root,"diff","--binary",base],{encoding:null,maxBuffer:16*1024*1024});if(run.error||run.status!==0){process.stderr.write(run.stderr||String(run.error||"git diff failed"));process.exit(run.status||1)}const hash=createHash("sha256").update("git-diff\\0").update(run.stdout);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(full!==root&&!full.startsWith(root+path.sep)){process.stderr.write("reported file escapes worktree");process.exit(1)}hash.update("\\0file\\0"+file+"\\0");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code==="ENOENT"){hash.update("missing");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write("reported file is not a regular file: "+file);process.exit(1)}hash.update("regular\\0"+String(stat.mode&0o777)+"\\0"+String(stat.size)+"\\0").update(fs.readFileSync(full))}process.stdout.write(hash.digest("hex")+"\\n")`
+const makeMutationAuditCommands = reportedFiles => {
+  const diffDigestCommand = `node -e ${shellQuote(diffDigestScript)} ${WORKTREE_SHELL} ${shellQuote(scout.baseSha)} '${encodeBase64(JSON.stringify(reportedFiles))}'`
+  return [
+    `git -C ${WORKTREE_SHELL} rev-parse HEAD`,
+    `git -C ${WORKTREE_SHELL} diff --name-only ${scout.baseSha}`,
+    `git -C ${WORKTREE_SHELL} ls-files --others --exclude-standard`,
+    `git -C ${WORKTREE_SHELL} ls-files -s -- ${reportedFiles.map(shellQuote).join(' ')}`,
+    diffDigestCommand,
+  ]
+}
+const requestMutationAttestation = (label, phaseName, checkpoint, reportedFiles) => {
+  const mutationAuditCommands = makeMutationAuditCommands(reportedFiles)
+  return callAgent(
+    `Worktree path data: ${JSON.stringify(scout.worktreePath)}
+Expected base SHA data: ${JSON.stringify(scout.baseSha)}
+Expected changed paths data: ${JSON.stringify(reportedFiles)}
+Checkpoint data: ${JSON.stringify(checkpoint)}
+
+You are the independent WORKTREE DIFF VERIFIER. Run every exact command below and no
+other command or tool:
+${mutationAuditCommands.map(command => `- ${command}`).join('\n')}
+
+Combine tracked and untracked output into changedFiles. baseShaMatches is true only when
+HEAD still equals the expected base SHA. reportedPathsMatch is true only when the actual
+changed set exactly equals Expected changed paths. Put in unsafeFiles every changed path
+outside the expected set, every entry whose ls-files mode is 120000 or 160000, and every
+non-regular file. The final Node command hashes the binary Git diff plus the path, mode,
+size, and bytes of every reported regular file, including untracked additions; copy that
+digest exactly. Do not edit, stage, reset, clean, or repair anything. Return false on any
+check you did not run.`,
+    {
+      label, phase: phaseName, schema: MUTATION_ATTESTATION, effort: 'low',
+      authority: 'read-only', agentType: VERIFIER_AGENT, allowedFiles: selectedFiles, reportedFiles,
+      bashCommandClamp: mutationAuditCommands.map(command => `Bash(${command})`),
+    }
+  )
+}
+const mutationAttestationIsValid = (attestation, expectedFiles) => {
+  const attestedChanged = attestation && Array.isArray(attestation.changedFiles)
+    ? attestation.changedFiles.map(safePlanFile).filter(Boolean).sort()
+    : []
+  const attestedRawCount = attestation && Array.isArray(attestation.changedFiles)
+    ? attestation.changedFiles.length
+    : -1
+  return canonicalAbsolutePath(attestation && attestation.worktreePath) === scout.worktreePath &&
+    attestation.baseShaMatches === true &&
+    attestation.reportedPathsMatch === true &&
+    Array.isArray(attestation.unsafeFiles) && attestation.unsafeFiles.length === 0 &&
+    attestedRawCount === attestedChanged.length &&
+    new Set(attestedChanged.map(pathKey)).size === attestedChanged.length &&
+    typeof attestation.diffDigest === 'string' && /^[0-9a-f]{64}$/.test(attestation.diffDigest) &&
+    attestedChanged.join('\u0000') === expectedFiles.join('\u0000') &&
+    attestedChanged.every(file => selectedFiles.includes(file))
+}
+const attestMutation = async ({ label, phaseName, checkpoint, expectedFiles }) => {
+  try {
+    const attestation = await requestMutationAttestation(label, phaseName, checkpoint, expectedFiles)
+    return { attestation, valid: mutationAttestationIsValid(attestation, expectedFiles), failure: null }
+  } catch (error) {
+    if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
+    return {
+      attestation: null,
+      valid: false,
+      failure: { message: error && error.message ? error.message : String(error), code: (error && error.code) || null },
+    }
+  }
+}
+let reportedMutationFiles = canonicalMutationFiles(buildPatchBundle.files)
+let mutationAttestation = null
 const buildApplyCommand = makePatchApplyCommand(buildPatchBundle.text)
 // Once winner mutation is attempted, fail closed. Every later successful path replaces
 // this provisional hold with its evidence-backed final verdict.
+reserveBatch(2, 'BuildMutationSafety', ['apply:build', 'verify:build'])
 winnerMutationAttempted = true
 evidence.shipVerdict = 'hold'
 try {
@@ -2024,6 +2135,27 @@ if (!evidence.buildApply || evidence.buildApply.applied !== true) {
   graph.dropped.push({ operation: 'ApplyBuild', inputs: { files: buildPatchBundle.files }, reason: 'clamped build patch was not applied' })
   return { halted: true, reason: 'build patch apply failed', graph, ...evidence }
 }
+
+phase('BuildVerify')
+const buildMutationAudit = await attestMutation({
+  label: 'verify:build',
+  phaseName: 'BuildVerify',
+  checkpoint: 'immediately after Build Apply, before Review',
+  expectedFiles: reportedMutationFiles,
+})
+evidence.buildMutationAttestation = buildMutationAudit.attestation
+if (!buildMutationAudit.valid) {
+  if (buildMutationAudit.failure) evidence.buildMutationAttestationFailure = buildMutationAudit.failure
+  graph.dropped.push({
+    operation: 'BuildVerify',
+    inputs: { expected: reportedMutationFiles, attestation: buildMutationAudit.attestation },
+    reason: 'immediate post-Build worktree attestation failed',
+    ...(buildMutationAudit.failure ? { error: buildMutationAudit.failure } : {}),
+  })
+  return { halted: true, reason: 'post-Build attestation failed', graph, ...evidence }
+}
+mutationAttestation = buildMutationAudit.attestation
+evidence.mutationAttestation = mutationAttestation
 
 let laneResults
 try {
@@ -2307,7 +2439,9 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
     graph.dropped.push({ operation: 'Fix', inputs: { reasons: fixPatchBundle.reasons }, reason: 'Fix returned an unsafe patch bundle' })
     return { halted: true, reason: 'mutation boundary violation', violations: fixPatchBundle.reasons, graph, ...evidence }
   }
+  const fixExpectedMutationFiles = canonicalMutationFiles([...reportedMutationFiles, ...fixPatchBundle.files])
   const fixApplyCommand = makePatchApplyCommand(fixPatchBundle.text)
+  reserveBatch(2, 'FixMutationSafety', ['apply:fix', 'verify:fix'])
   try {
     evidence.fixApply = await callAgent(
       `Apply the already-validated blocker-fix patch. Run exactly this command and no other tool or command:\n${fixApplyCommand}\nReturn the real command output and whether it applied.`,
@@ -2328,6 +2462,27 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
     graph.dropped.push({ operation: 'ApplyFix', inputs: { files: fixPatchBundle.files }, reason: 'clamped fix patch was not applied' })
     return { halted: true, reason: 'fix patch apply failed', graph, ...evidence }
   }
+  phase('FixVerify')
+  const fixMutationAudit = await attestMutation({
+    label: 'verify:fix',
+    phaseName: 'FixVerify',
+    checkpoint: 'immediately after Fix Apply, before Gate',
+    expectedFiles: fixExpectedMutationFiles,
+  })
+  evidence.fixMutationAttestation = fixMutationAudit.attestation
+  if (!fixMutationAudit.valid) {
+    if (fixMutationAudit.failure) evidence.fixMutationAttestationFailure = fixMutationAudit.failure
+    graph.dropped.push({
+      operation: 'FixVerify',
+      inputs: { expected: fixExpectedMutationFiles, attestation: fixMutationAudit.attestation },
+      reason: 'immediate post-Fix worktree attestation failed',
+      ...(fixMutationAudit.failure ? { error: fixMutationAudit.failure } : {}),
+    })
+    return { halted: true, reason: 'post-Fix attestation failed', graph, ...evidence }
+  }
+  reportedMutationFiles = fixExpectedMutationFiles
+  mutationAttestation = fixMutationAudit.attestation
+  evidence.mutationAttestation = mutationAttestation
   evidence.fixedBlockersPendingVerification = fixing
   evidence.unfixedBlockers = blockers.slice(FIX_CAP)
   if (evidence.unfixedBlockers.length) {
@@ -2340,85 +2495,13 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
   }
 }
 
-// Independent post-apply audit. The patch authors never receive mutation tools;
-// the two appliers receive only their exact Node invocation via a Bash clamp.
-// A clamp constrains Bash when invoked but does not provide a trusted required-call
-// receipt, so the structured apply and verifier responses remain model attestations.
-phase('MutationVerify')
-const reportedMutationFiles = [...new Set([
-  ...evidence.builds.flatMap(build => build.changed || []),
-  ...evidence.fixes.flatMap(fix => fix.changed || []),
-].map(rel).filter(Boolean))].sort()
-const diffDigestScript = `const {spawnSync}=require("node:child_process");const {createHash}=require("node:crypto");const fs=require("node:fs"),path=require("node:path"),root=path.resolve(process.argv[1]),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],"base64").toString("utf8"));if(!Array.isArray(files)){process.stderr.write("reported files must be an array");process.exit(1)}const run=spawnSync("git",["-C",root,"diff","--binary",base],{encoding:null,maxBuffer:16*1024*1024});if(run.error||run.status!==0){process.stderr.write(run.stderr||String(run.error||"git diff failed"));process.exit(run.status||1)}const hash=createHash("sha256").update("git-diff\\0").update(run.stdout);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(full!==root&&!full.startsWith(root+path.sep)){process.stderr.write("reported file escapes worktree");process.exit(1)}hash.update("\\0file\\0"+file+"\\0");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code==="ENOENT"){hash.update("missing");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write("reported file is not a regular file: "+file);process.exit(1)}hash.update("regular\\0"+String(stat.mode&0o777)+"\\0"+String(stat.size)+"\\0").update(fs.readFileSync(full))}process.stdout.write(hash.digest("hex")+"\\n")`
-const diffDigestCommand = `node -e ${shellQuote(diffDigestScript)} ${WORKTREE_SHELL} ${shellQuote(scout.baseSha)} '${encodeBase64(JSON.stringify(reportedMutationFiles))}'`
-const mutationAuditCommands = [
-  `git -C ${WORKTREE_SHELL} rev-parse HEAD`,
-  `git -C ${WORKTREE_SHELL} diff --name-only ${scout.baseSha}`,
-  `git -C ${WORKTREE_SHELL} ls-files --others --exclude-standard`,
-  `git -C ${WORKTREE_SHELL} ls-files -s -- ${reportedMutationFiles.map(shellQuote).join(' ')}`,
-  diffDigestCommand,
-]
-const requestMutationAttestation = (label, phaseName, checkpoint) => callAgent(
-  `Worktree path data: ${JSON.stringify(scout.worktreePath)}
-Expected base SHA data: ${JSON.stringify(scout.baseSha)}
-Expected changed paths data: ${JSON.stringify(reportedMutationFiles)}
-Checkpoint data: ${JSON.stringify(checkpoint)}
-
-You are the independent WORKTREE DIFF VERIFIER. Run every exact command below and no
-other command or tool:
-${mutationAuditCommands.map(command => `- ${command}`).join('\n')}
-
-Combine tracked and untracked output into changedFiles. baseShaMatches is true only when
-HEAD still equals the expected base SHA. reportedPathsMatch is true only when the actual
-changed set exactly equals Expected changed paths. Put in unsafeFiles every changed path
-outside the expected set and every entry whose ls-files mode is 120000. The final Node
-command hashes the binary Git diff plus the path, mode, size, and bytes of every reported
-regular file, including untracked additions; copy that digest exactly. Do not edit,
-stage, reset, clean, or repair anything. Return false on any check you did not run.`,
-  {
-    label, phase: phaseName, schema: MUTATION_ATTESTATION, effort: 'low',
-    authority: 'read-only', agentType: VERIFIER_AGENT, allowedFiles: selectedFiles, reportedFiles: reportedMutationFiles,
-    bashCommandClamp: mutationAuditCommands.map(command => `Bash(${command})`),
-  }
-)
-const mutationAttestationIsValid = attestation => {
-  const attestedChanged = attestation && Array.isArray(attestation.changedFiles)
-    ? [...new Set(attestation.changedFiles.map(safePlanFile).filter(Boolean))].sort()
-    : []
-  const attestedRawCount = attestation && Array.isArray(attestation.changedFiles)
-    ? attestation.changedFiles.length
-    : -1
-  return canonicalAbsolutePath(attestation && attestation.worktreePath) === scout.worktreePath &&
-    attestation.baseShaMatches === true &&
-    attestation.reportedPathsMatch === true &&
-    Array.isArray(attestation.unsafeFiles) && attestation.unsafeFiles.length === 0 &&
-    attestedRawCount === attestedChanged.length &&
-    typeof attestation.diffDigest === 'string' && /^[0-9a-f]{64}$/.test(attestation.diffDigest) &&
-    attestedChanged.join('\u0000') === reportedMutationFiles.join('\u0000') &&
-    attestedChanged.every(file => selectedFiles.includes(file))
-}
-let mutationAttestation
-try {
-  mutationAttestation = await requestMutationAttestation('verify:mutation', 'MutationVerify', 'after patch apply, before Gate')
-} catch (error) {
-  if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
-  const auditFailure = { message: error && error.message ? error.message : String(error), code: (error && error.code) || null }
-  evidence.mutationAttestationFailure = auditFailure
-  graph.dropped.push({ operation: 'MutationVerify', inputs: { files: reportedMutationFiles }, reason: 'post-mutation verifier failed', error: auditFailure })
-  return { halted: true, reason: 'post-mutation attestation failed', graph, ...evidence }
-}
-evidence.mutationAttestation = mutationAttestation
-if (!mutationAttestationIsValid(mutationAttestation)) {
-  graph.dropped.push({ operation: 'MutationVerify', inputs: { expected: reportedMutationFiles, attestation: mutationAttestation }, reason: 'post-mutation worktree attestation failed' })
-  evidence.shipVerdict = 'hold'
-  return { halted: true, reason: 'post-mutation attestation failed', graph, ...evidence }
-}
 if (evidence.unfixedBlockers.length) {
   return { halted: true, reason: 'unfixed blockers remain', graph, ...evidence }
 }
 
 // ---------------------------------------------------------------- 5. gate
-// A genuine barrier: the integration check needs every lane's edits present.
+// A restricted diagnostic barrier: the integration attempt needs every lane's edits
+// present, but it remains unverified without trusted runner execution receipts.
 phase('Gate')
 const gateCommands = [...new Set(plan.lanes.flatMap(lane =>
   lane.acceptance.split(/\s*(?:&&|\|\||;)\s*/).map(command => command.trim()).filter(Boolean)))]
@@ -2464,7 +2547,6 @@ did not run, and do not describe a failure as "minor" — quote it.`,
   evidence.gateFailure = gateFailure
   graph.dropped.push({ operation: 'Gate', inputs: { commands: gateCommands }, reason: 'gate agent failure', error: gateFailure })
 }
-evidence.gate = gate
 const reportedGateCommands = [...new Set((gate && Array.isArray(gate.commands) ? gate.commands : [])
   .map(command => String(command).trim()).filter(Boolean))]
 const missingGateCommands = gateCommands.filter(command => !reportedGateCommands.includes(command))
@@ -2480,7 +2562,22 @@ evidence.gateAudit = {
   outputPresent: gateOutputPresent,
   complete: gateCommandsComplete && gateOutputPresent,
 }
-evidence.gatePassed = Boolean(gate && gate.passed && evidence.gateAudit.complete)
+const claimedGatePassed = Boolean(gate && gate.passed)
+const gateVerification = evidence.gateAudit.complete
+  ? 'unverified-no-runner-execution-receipts'
+  : 'invalid-command-report'
+gate = gate && {
+  ...gate,
+  claimedPassed: claimedGatePassed,
+  passed: false,
+  verification: gateVerification,
+  output: evidence.gateAudit.complete
+    ? `UNVERIFIED: the restricted Gate attempt has no trusted runner execution receipts. Agent report: ${gate.output}`
+    : `UNVERIFIED: the Gate command report is incomplete or contains unexpected commands. Agent report: ${gate.output || ''}`,
+}
+evidence.gate = gate
+evidence.gatePassed = false
+evidence.gateVerified = false
 
 // Gate commands may create ignored build artifacts, but they must not alter the source
 // diff or introduce a new untracked source file. Re-run the exact diff attestation after
@@ -2488,7 +2585,7 @@ evidence.gatePassed = Boolean(gate && gate.passed && evidence.gateAudit.complete
 phase('GateVerify')
 let gateMutationAttestation
 try {
-  gateMutationAttestation = await requestMutationAttestation('verify:post-gate', 'GateVerify', 'after Gate, before Release')
+  gateMutationAttestation = await requestMutationAttestation('verify:post-gate', 'GateVerify', 'after Gate, before Release', reportedMutationFiles)
 } catch (error) {
   if (error && error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
   const auditFailure = { message: error && error.message ? error.message : String(error), code: (error && error.code) || null }
@@ -2498,7 +2595,7 @@ try {
   return { halted: true, reason: 'post-Gate attestation failed', graph, ...evidence }
 }
 evidence.gateMutationAttestation = gateMutationAttestation
-if (!mutationAttestationIsValid(gateMutationAttestation) || gateMutationAttestation.diffDigest !== mutationAttestation.diffDigest) {
+if (!mutationAttestationIsValid(gateMutationAttestation, reportedMutationFiles) || gateMutationAttestation.diffDigest !== mutationAttestation.diffDigest) {
   graph.dropped.push({ operation: 'GateVerify', inputs: { expected: reportedMutationFiles, attestation: gateMutationAttestation }, reason: 'post-Gate worktree attestation failed' })
   evidence.shipVerdict = 'hold'
   return { halted: true, reason: 'post-Gate attestation failed', graph, ...evidence }
@@ -2506,25 +2603,19 @@ if (!mutationAttestationIsValid(gateMutationAttestation) || gateMutationAttestat
 if (gateFailure) return { halted: true, reason: 'gate agent failure', graph, ...evidence }
 
 // -------------------------------------------------------------- 6. release
-// SKEPTIC #4 — adversarial against the SHIPPED state, not the source. The Gate
-// proves the code builds; nothing yet proves it survives contact with production.
+// SKEPTIC #4 — adversarial against the candidate release state, not the source.
+// The Gate attempt is diagnostic until a trusted outer runner supplies immutable
+// execution receipts; nothing here proves the code builds or survives production.
 // Runs even when the Gate failed: a red build does not make a migration reversible,
 // and the config/surface/irreversibility analysis is diff-based either way.
 let release = []
-const confirmedMajors = confirmed.filter(finding => finding.severity === 'major')
-const unverifiedBlockers = unverified.filter(finding => finding.severity === 'blocker')
-const unverifiedMajors = unverified.filter(finding => finding.severity === 'major')
-let shipVerdict = evidence.gatePassed
-  ? (evidence.fixedBlockersPendingVerification.length || unverifiedBlockers.length
-      ? 'hold'
-      : (confirmedMajors.length || unverifiedMajors.length ? 'ship-with-caveats' : (DEPLOYS ? 'unknown' : 'n/a — not a deploying repo')))
-  : 'hold'
+let shipVerdict = 'hold'
 
 if (DEPLOYS) {
   phase('Release')
   const RELEASE_BASE = `${LIVE ? `Live surface: ${LIVE}` : 'Live surface: not supplied; public readback is unavailable.'}
 Selected plan summary data: ${JSON.stringify(plan.summary)}
-Local gate status: ${evidence.gatePassed ? 'PASSED' : 'HELD'}; command audit ${JSON.stringify(evidence.gateAudit)}
+Local gate status: HELD and unverified without trusted runner receipts; command audit ${JSON.stringify(evidence.gateAudit)}
 Changed files: ${lanes.flatMap(l => (l.built && l.built.changed) || []).join(', ')}
 
 READ-ONLY AGAINST PUBLIC PRODUCTION. This profile has WebSearch and WebFetch only: no local
@@ -2613,11 +2704,7 @@ even when you find zero risks.`,
   const risks = release.flatMap(r => r.risks)
   const relBlockers = risks.filter(r => r.severity === 'blocker')
   const unrecoverable = risks.filter(r => r.reversible === 'irreversible' && r.severity !== 'minor')
-  shipVerdict = !evidence.gatePassed
-    ? 'hold'
-    : (evidence.fixedBlockersPendingVerification.length || unverifiedBlockers.length || relBlockers.length || unrecoverable.length)
-    ? 'hold'
-    : (confirmedMajors.length || unverifiedMajors.length || risks.some(r => r.severity === 'major')) ? 'ship-with-caveats' : 'ship'
+  shipVerdict = 'hold'
   log(`release: ${risks.length} risks · ${relBlockers.length} blockers · ${unrecoverable.length} irreversible · verdict ${shipVerdict.toUpperCase()} (advisory)`)
 
   // The one case that stops for a human rather than reporting: live exposure that is
@@ -2667,9 +2754,10 @@ a confirmed defect. Say exactly that under Caveats; do not present them as findi
 not quietly drop them either: ${JSON.stringify(unverified)}
 Blockers confirmed but left unfixed (past the fix cap): ${JSON.stringify(blockers.slice(FIX_CAP))}
 Blocker patches applied but pending semantic verification. These force a hold even when
-the integration Gate passes: ${JSON.stringify(evidence.fixedBlockersPendingVerification)}
+the Gate agent claims its restricted checks passed: ${JSON.stringify(evidence.fixedBlockersPendingVerification)}
 Gate: ${JSON.stringify(gate)}
 Gate command audit: ${JSON.stringify(evidence.gateAudit)}
+Gate verification: ${evidence.gateVerified ? 'verified by trusted runner receipts' : 'UNVERIFIED — no trusted runner execution receipts were supplied'}
 Mutation boundary audit: ${evidence.mutationAudit}
 Execution evidence boundary: Bash clamps constrain a Bash call only if the agent invokes
 it. Apply, worktree-verifier, and Gate structured results are model attestations, not
@@ -2700,6 +2788,8 @@ pushed | deployed | verified live | held | blocked. "changed locally" is not
 "verified locally". THIS RUN DOES NOT DEPLOY — never write "deployed", "verified live",
 or "released" on the strength of the release verifier, which only read production. Those
 states require an actual deploy that has not happened here.
+Because this runner exposes no trusted required-tool execution receipts, Status MUST be
+exactly "held" for this run even when the Gate agent claims its restricted commands passed.
 When fixedBlockersPendingVerification is nonempty, Status must be "held" even if Gate passed.
 List every unfixed major/minor finding under Caveats. Omitting a caveat to make the
 handoff look clean is the failure mode this section exists to prevent.`,
@@ -2719,17 +2809,21 @@ const handoffHeadingMatches = typeof handoff === 'string'
   ? [...handoff.matchAll(/^## ([^\r\n]+)\s*$/gm)]
   : []
 const handoffHeadings = handoffHeadingMatches.map(match => match[1].trim())
-const handoffSectionsComplete = handoffHeadingMatches.every((match, index) => {
+const handoffSections = handoffHeadingMatches.map((match, index) => {
   const start = match.index + match[0].length
   const end = index + 1 < handoffHeadingMatches.length ? handoffHeadingMatches[index + 1].index : handoff.length
-  return handoff.slice(start, end).trim().length > 0
+  return handoff.slice(start, end).trim()
 })
+const handoffSectionsComplete = handoffSections.every(section => section.length > 0)
+const reportedHandoffStatus = handoffHeadings.indexOf('Status') >= 0
+  ? handoffSections[handoffHeadings.indexOf('Status')].split(/\r?\n/)[0].trim().toLowerCase()
+  : null
 const handoffValid = nonEmptyString(handoff) &&
   handoffHeadings.join('\u0000') === requiredHandoffHeadings.join('\u0000') &&
-  handoffSectionsComplete
+  handoffSectionsComplete && reportedHandoffStatus === 'held'
 if (!handoffValid) {
   evidence.handoffFailure = {
-    message: 'handoff output is missing the exact required markdown headings or section content',
+    message: 'handoff output is missing the exact required markdown headings, section content, or mandatory held status',
     code: 'INVALID_HANDOFF',
   }
   graph.dropped.push({

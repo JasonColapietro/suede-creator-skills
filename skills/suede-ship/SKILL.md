@@ -93,8 +93,10 @@ unselected thoughts remain evidence only; never build them speculatively.
 The workflow halts before the next agent call or entire mutating batch when its
 budget is exhausted; it does not undo mutations that completed earlier. It
 halts before any mutation unless an independent read-only verifier confirms a
-clean, registered origin/main worktree with the same Git common directory and
-non-symlink candidate files whose realpaths remain inside it. It also halts for
+clean, registered origin/main worktree at one direct `${REPO}.worktrees/ship-*`
+child with the same Git common directory and non-symlink candidate files whose
+realpaths remain inside it. Case-folded or Unicode-normalized path aliases fail
+closed before graph search. It also halts for
 a tracked secret, a live target worktree, a protected-WIP collision, a duplicate
 file owner, an overflowed safety manifest, or no selectable plan. Scout parses
 NUL-delimited Git porcelain so both sides of renames remain protected, parses
@@ -111,8 +113,11 @@ Claude's registered agent profiles enforce tool separation: local readers have
 no shell, write, or web tools; public-web readers have no local-file or shell
 tools; patch authors have no mutation tools; and appliers/verifiers have only
 Bash plus structured output. Patch authors return unified diffs, one clamped
-applier applies them, and a separate clamped verifier compares the exact path
-set and diff digest before Gate. Gate runs only allowlisted local validation
+applier applies them, and a separately budget-reserved clamped verifier compares
+the exact path set and diff digest immediately after every Build or Fix Apply,
+before any reader or Gate call. Patch validation rejects symlinks, gitlinks,
+binary patches, renames, copies, and file-type transitions before Apply. Gate
+runs only allowlisted local validation
 commands under macOS `sandbox-exec`, with no network, host reads limited to
 runtime/system roots, the worktree, its `.git` common directory derived again
 inside the exact Gate clamp, and the run's private temp root. The model-reported
@@ -127,10 +132,13 @@ the binary Git diff plus every reported file's mode, size, and bytes, including
 untracked additions.
 
 A successfully applied blocker patch is not treated as semantically cleared.
-The original blocker remains in `fixedBlockersPendingVerification`, and the
-advisory ship verdict stays `hold` until an independent follow-up verifies the
-specific failure scenario. The integration Gate can prove its allowlisted checks
-passed, but it cannot silently stand in for that targeted verification.
+The original blocker remains in `fixedBlockersPendingVerification`. The Gate
+attempt records its exact command set and reported output, but it cannot prove
+those commands ran because the Workflow API exposes no trusted required-tool
+execution receipt. The workflow therefore sets `claimedPassed` from the agent
+report, forces `passed:false`, sets `gateVerified:false`, and keeps the verdict
+and handoff status at `hold`. Only a trusted outer runner with immutable
+execution receipts can promote that evidence.
 
 These controls have a precise trust boundary. `bashCommandClamp` constrains a
 Bash command when an agent invokes it; Claude Workflow does not provide a
