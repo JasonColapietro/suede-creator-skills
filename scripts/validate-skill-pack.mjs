@@ -1761,6 +1761,23 @@ if (indexJsonLdItemMatches.length !== totalSkillCount) {
 // never trips it, narrow enough that a genuinely abandoned stamp does. Refresh
 // with `npm run build:shiplog`.
 const PREPARED_BASE_MAX_DRIFT = 40;
+// How far the advertised commit count may sit from `git rev-list --count` on
+// the default branch. A tolerance, not equality, on purpose: the count moves
+// on every single merge, so pinning it exactly would turn main red the next
+// time anything landed -- the failure mode PREPARED_BASE_MAX_DRIFT above was
+// introduced to remove. 40 matches that bound for the same reason, roughly two
+// of the longest release cycles seen here.
+//
+// It is deliberately symmetric. The tempting asymmetry -- "may lag, never
+// overstate" -- reads well but assumes the reference count only ever grows
+// relative to the page, and which commit `origin/main` names depends on the
+// shape of the checkout: a pull request builds a merge ref, and a test fixture
+// repoints origin/main at its own HEAD, so a branch that sits while main
+// advances legitimately measures a count BELOW the one the page was generated
+// from. Failing that direction on sight would break honest branches and the
+// fixtures alike, which is the self-breaking shape this file keeps growing out
+// of. A fabricated number is off by far more than a release cycle either way.
+const ADVERTISED_COMMIT_MAX_DRIFT = 40;
 const clogItemMatches = [...docsRootText.matchAll(/<li class="clog-item"([^>]*)>([\s\S]*?)<\/li>/g)];
 const clogItems = clogItemMatches.map((match) => match[2]);
 if (clogItems.length === 0) {
@@ -1975,7 +1992,11 @@ if (clogItems.length === 0) {
     const cardStatus = box[0].match(/\bdata-status="([^"]+)"/)?.[1] ?? "released";
     const top = box[0].match(/class="hero-shiplog-top">(Released|Prepared) ([A-Z][a-z]{2} \d{1,2}) <b>&middot; (?:(base) )?([0-9a-f]{7,40})<\/b>/);
     const title = (box[0].match(/class="hero-shiplog-title">([^<]+)</) || [])[1]?.trim() ?? null;
-    const commits = (box[0].match(/class="hero-shiplog-more">(\d+) commits/) || [])[1] ?? null;
+    const more = box[0].match(/class="hero-shiplog-more">(\d+) commits &middot; (\d+) weeks/);
+    const commits = more ? more[1] : null;
+    const weeks = more ? more[2] : null;
+    const heroBars = (box[0].match(/<span class="hero-spark"[\s\S]*?<\/span>\s*<\/span>/) || [])[0];
+    const heroBarCount = heroBars ? (heroBars.match(/style="height:\d+%"/g) || []).length : null;
     if (!top) {
       fail.push(`${page.file}: tiny ship-log box header is malformed`);
     } else {
@@ -2000,17 +2021,97 @@ if (clogItems.length === 0) {
       fail.push(`${page.file}: tiny ship-log box title ("${title}") does not match the newest changelog entry title ("${newestClogTitle}")`);
     }
     if (!commits) {
-      fail.push(`${page.file}: tiny ship-log box is missing its "N commits" line`);
+      fail.push(`${page.file}: tiny ship-log box is missing its "N commits &middot; N weeks" line`);
     } else {
-      boxCounts.push({ file: page.file, commits });
+      boxCounts.push({ file: page.file, commits, weeks });
+    }
+    // The sparkline draws one bar per week, so a caption claiming more weeks
+    // than there are bars is a chart contradicting its own label. That is
+    // exactly how this drifted: the cards advertised ten weeks over ten bars
+    // while the repo had shipped fourteen, and refreshing only the sentence
+    // would have left the picture arguing with it. Refresh both together with
+    // `npm run build:shiplog`.
+    if (heroBarCount === null) {
+      fail.push(`${page.file}: tiny ship-log box is missing its .hero-spark bar column`);
+    } else if (weeks && heroBarCount !== Number(weeks)) {
+      fail.push(`${page.file}: tiny ship-log sparkline draws ${heroBarCount} bars but the card advertises ${weeks} weeks — run \`npm run build:shiplog\``);
     }
   }
   if (boxCounts.length > 1 && new Set(boxCounts.map((b) => b.commits)).size > 1) {
     fail.push(`Tiny ship-log boxes disagree on the commit count: ${boxCounts.map((b) => `${b.file}=${b.commits}`).join(", ")}`);
   }
-  const sparkCaption = (docsRootText.match(/class="clog-spark-caption[^"]*">(\d+) commits/) || [])[1] ?? null;
+  if (boxCounts.length > 1 && new Set(boxCounts.map((b) => b.weeks)).size > 1) {
+    fail.push(`Tiny ship-log boxes disagree on the week span: ${boxCounts.map((b) => `${b.file}=${b.weeks}`).join(", ")}`);
+  }
+  const caption = docsRootText.match(/class="clog-spark-caption[^"]*">(\d+) commits &middot; (\d+) weeks/);
+  const sparkCaption = caption ? caption[1] : null;
+  const sparkCaptionWeeks = caption ? caption[2] : null;
   if (sparkCaption && boxCounts[0] && sparkCaption !== boxCounts[0].commits) {
     fail.push(`docs/index.html sparkline caption says ${sparkCaption} commits but the tiny ship-log boxes say ${boxCounts[0].commits}`);
+  }
+  if (sparkCaptionWeeks && boxCounts[0] && sparkCaptionWeeks !== boxCounts[0].weeks) {
+    fail.push(`docs/index.html sparkline caption says ${sparkCaptionWeeks} weeks but the tiny ship-log boxes say ${boxCounts[0].weeks}`);
+  }
+
+  // The changelog sparkline states its own series twice: as bars, and as a
+  // spoken list in the aria-label a screen reader gets. Both have to agree
+  // with the caption above them, or sighted and unsighted readers are handed
+  // different histories. The old markup failed this: three opening weeks had
+  // been dropped from the chart and their six commits folded onto the newest
+  // bar so the spoken list would still total the advertised 282.
+  const clogSpark = docsRootText.match(/<div class="clog-spark[^>]*>[\s\S]*?<\/div>/);
+  if (!clogSpark) {
+    fail.push("docs/index.html: the #changelog commit-activity sparkline (.clog-spark) is missing");
+  } else {
+    const clogBars = (clogSpark[0].match(/style="height:\d+%"/g) || []).length;
+    if (sparkCaptionWeeks && clogBars !== Number(sparkCaptionWeeks)) {
+      fail.push(`docs/index.html sparkline draws ${clogBars} bars but its caption says ${sparkCaptionWeeks} weeks — run \`npm run build:shiplog\``);
+    }
+    const spoken = clogSpark[0].match(/\baria-label="[^"]*oldest to newest: ([^"]*?) commits\."/);
+    if (!spoken) {
+      fail.push("docs/index.html sparkline is missing its per-week aria-label series");
+    } else {
+      const weekly = spoken[1].split(/,\s*(?:and\s*)?/).map((n) => Number(n.trim()));
+      if (weekly.some((n) => !Number.isInteger(n) || n < 0)) {
+        fail.push(`docs/index.html sparkline aria-label series is not a list of week counts: ${JSON.stringify(spoken[1])}`);
+      } else {
+        if (weekly.length !== clogBars) {
+          fail.push(`docs/index.html sparkline aria-label lists ${weekly.length} weeks but the chart draws ${clogBars} bars`);
+        }
+        const spokenTotal = weekly.reduce((sum, n) => sum + n, 0);
+        if (sparkCaption && spokenTotal !== Number(sparkCaption)) {
+          fail.push(`docs/index.html sparkline aria-label totals ${spokenTotal} commits but the caption advertises ${sparkCaption} — run \`npm run build:shiplog\``);
+        }
+      }
+    }
+  }
+
+  // Finally, bound the whole advertised claim against the repository it
+  // describes. Everything above only proves the four surfaces agree with each
+  // other; they agreed with each other at 282 while main stood at 308, which
+  // is why this drifted in silence for four weeks.
+  if (gitHistory.state === "complete" && sparkCaption) {
+    const shipped = spawnSync(
+      "git",
+      ["-C", repoRoot, "rev-list", "--count", defaultBranchRef],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+    );
+    if (shipped.status !== 0) {
+      warn.push("Advertised commit-count check skipped — could not count commits on the default branch");
+    } else {
+      const actual = Number.parseInt(shipped.stdout.trim(), 10);
+      const advertised = Number(sparkCaption);
+      const drift = actual - advertised;
+      if (!Number.isInteger(actual)) {
+        warn.push("Advertised commit-count check skipped — the default branch commit count was unreadable");
+      } else if (Math.abs(drift) > ADVERTISED_COMMIT_MAX_DRIFT) {
+        fail.push(
+          drift > 0
+            ? `The ship log advertises ${advertised} commits and ${defaultBranchRef} carries ${actual} — ${drift} behind, past the ${ADVERTISED_COMMIT_MAX_DRIFT} tolerance. Run \`npm run build:shiplog\``
+            : `The ship log advertises ${advertised} commits but ${defaultBranchRef} carries only ${actual} — ${-drift} more than have shipped, past the ${ADVERTISED_COMMIT_MAX_DRIFT} tolerance. Run \`npm run build:shiplog\``
+        );
+      }
+    }
   }
 
   const versionClogItem = clogItems.find((item) => item.includes(`Version ${catalog.version}`));

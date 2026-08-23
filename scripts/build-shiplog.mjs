@@ -17,6 +17,13 @@
 // written on the day it was written, and the validator checks it against the
 // entry. Deriving it from the commit instead looks equivalent and fails.
 //
+// It also writes the commit-activity series -- the advertised commit count, the
+// week span, and the sparkline bars -- everywhere the page repeats it, which is
+// more places than the stamp: the three hero cards, the #changelog chart with
+// its caption and its spoken aria-label, and both marquee copies of the
+// #proof-tape claim. Those were hand-copied numbers with no common source, so
+// they did not merely go stale together, they disagreed. See the block below.
+//
 // Usage:
 //   node scripts/build-shiplog.mjs            rewrite the stamp in place
 //   node scripts/build-shiplog.mjs --check    report drift, exit 1 if stale
@@ -82,16 +89,97 @@ const statusWord = status === "prepared" ? "Prepared" : "Released";
 const spokenTitle = /[.!?]$/.test(title) ? title : `${title}.`;
 const citation = status === "prepared" ? `base ${stamp}` : stamp;
 
+// ---- Commit activity -------------------------------------------------------
+// The advertised commit count, the week span, and the sparkline bars above them
+// are one measurement -- not three numbers that happen to sit near each other.
+// Hand-copied, they did not just go stale, they disagreed: the cards read
+// "282 commits, 10 weeks" against a repo that had shipped 308 over 14, and the
+// ten bars had been fitted to that caption by dropping the three quiet opening
+// weeks and adding their six commits onto the newest bar so the aria-label
+// would still sum to 282. A chart contradicting its own label is the failure
+// this section removes -- bars, count and span now leave one function together
+// or not at all.
+const HISTORY_REF = ["origin/main", "main", "HEAD"].find((ref) =>
+  spawnSync("git", ["-C", repoRoot, "rev-parse", "--verify", "--quiet", `${ref}^{commit}`], { stdio: "ignore" }).status === 0
+);
+if (!HISTORY_REF) die("no origin/main, main or HEAD to measure commit activity from");
+
+const NUMBER_WORDS = [
+  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+  "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+  "eighteen", "nineteen", "twenty"
+];
+
+function measureCommitActivity(ref) {
+  const log = git("log", "--reverse", "--pretty=format:%cI", ref);
+  const stamps = log ? log.split("\n") : [];
+  if (stamps.length === 0) die(`${ref} has no commits to measure`);
+  // Bucket on the commit's own calendar date -- the date `git log --date=short`
+  // prints. Parsing to a timestamp first would re-bin every commit by UTC and
+  // walk evening commits west of Greenwich into the following week.
+  const dayOf = (iso) => {
+    const [y, m, d] = iso.slice(0, 10).split("-").map(Number);
+    return Date.UTC(y, m - 1, d) / 86400000;
+  };
+  const days = stamps.map(dayOf);
+  const newest = days[days.length - 1];
+  const weeks = Math.floor((newest - days[0]) / 7) + 1;
+  const perWeek = new Array(weeks).fill(0);
+  // Seven-day windows counted back from the newest commit, so the last bar is
+  // always the current week and the partial window is the oldest one.
+  for (const day of days) perWeek[weeks - 1 - Math.floor((newest - day) / 7)] += 1;
+  const busiest = Math.max(...perWeek);
+  return {
+    total: stamps.length,
+    weeks,
+    perWeek,
+    // Normalized to the busiest week, so the tallest bar is always full height
+    // and the shape reads the same whatever the absolute volume. A quiet week
+    // can round to 0; CSS min-height still draws it as a stub, which is the
+    // honest mark for "nothing shipped".
+    heights: perWeek.map((n) => Math.round((n / busiest) * 100))
+  };
+}
+
+const activity = measureCommitActivity(HISTORY_REF);
+const activityLine = `${activity.total} commits &middot; ${activity.weeks} weeks`;
+
+function sparkAriaLabel() {
+  const counts = activity.perWeek;
+  const list = counts.length === 1
+    ? `${counts[0]}`
+    : `${counts.slice(0, -1).join(", ")}, and ${counts[counts.length - 1]}`;
+  const span = NUMBER_WORDS[activity.weeks] ?? String(activity.weeks);
+  return `Commit activity per week over the last ${span} weeks, oldest to newest: ${list} commits.`;
+}
+
+// Rewrites a bar column that sits between an opening tag on its own line and a
+// closing tag on its own line, reusing whatever indentation the first existing
+// bar carries -- the three pages nest this markup at three different depths.
+function rewriteBars(page, label, pattern) {
+  rewrite(page, label, pattern, (_, open, body, close) => {
+    const indent = body.match(/^[ \t]*/)?.[0] ?? "";
+    const bars = activity.heights.map((height) => `${indent}<span style="height:${height}%"></span>`);
+    return `${open}${bars.join("\n")}${close}`;
+  });
+}
+
 // Every rewrite is anchored on markup that must already exist. A silently
 // unmatched replace would leave a page stale while the run reported success,
 // so each one asserts it changed exactly the region it aimed at.
 const edits = [];
-function rewrite(file, label, pattern, replacer) {
-  const matches = [...file.text.matchAll(new RegExp(pattern, pattern.flags.includes("g") ? pattern.flags : `${pattern.flags}g`))];
-  if (matches.length !== 1) {
-    die(`${file.relative}: expected exactly one ${label}, found ${matches.length} — the markup changed`);
+// `expected` is the number of copies the markup is known to carry. It is almost
+// always one, but the proof-tape marquee duplicates its whole track so the strip
+// can scroll seamlessly, and both copies state the claim. Asserting the count
+// rather than replacing blindly is what makes a markup change fail loudly here
+// instead of leaving one copy of a number silently behind.
+function rewrite(file, label, pattern, replacer, expected = 1) {
+  const global = new RegExp(pattern, pattern.flags.includes("g") ? pattern.flags : `${pattern.flags}g`);
+  const matches = [...file.text.matchAll(global)];
+  if (matches.length !== expected) {
+    die(`${file.relative}: expected exactly ${expected === 1 ? "one" : expected} ${label}, found ${matches.length} — the markup changed`);
   }
-  file.text = file.text.replace(pattern, replacer);
+  file.text = file.text.replace(global, replacer);
 }
 
 function escapeRegExp(value) {
@@ -116,7 +204,39 @@ if (status === "prepared") {
   );
 }
 
-// 2. The tiny card on all three pages. Its aria-label tail differs per page
+// 2. The commit-activity sparkline and its caption, on the homepage only. The
+//    aria-label restates the same series in words for screen readers, so it is
+//    regenerated from the same numbers instead of being left to hand-editing --
+//    it was the surface that had drifted furthest.
+{
+  const home = pages[0];
+  rewriteBars(home, 'clog-spark bar column', /(<div class="clog-spark[^>]*>\n)([\s\S]*?)(\n[ \t]*<\/div>)/);
+  rewrite(
+    home,
+    'clog-spark aria-label',
+    /(<div class="clog-spark[^"]*"[^>]*\baria-label=")[^"]*(")/,
+    (_, lead, tail) => `${lead}${sparkAriaLabel()}${tail}`
+  );
+  rewrite(
+    home,
+    'clog-spark caption',
+    /(<p class="clog-spark-caption[^"]*">)\d+ commits &middot; \d+ weeks( &middot; [^<]*<\/p>)/,
+    (_, lead, tail) => `${lead}${activityLine}${tail}`
+  );
+  // The #proof-tape strip states the same claim again, in its own wording, and
+  // promises in a comment above itself that every number on it is sourced from
+  // further down the page. It was the surface that gave this away: it still read
+  // "282 commits in 10 weeks" with nothing on the page left to source it.
+  rewrite(
+    home,
+    'proof-tape commit claim',
+    /(<li><b>)\d+(<\/b> commits in )\d+( weeks<\/li>)/,
+    (_, lead, middle, tail) => `${lead}${activity.total}${middle}${activity.weeks}${tail}`,
+    2
+  );
+}
+
+// 3. The tiny card on all three pages. Its aria-label tail differs per page
 //    ("Jump to the full changelog." / "Jump to the changelog." / "Read the full
 //    changelog on the homepage."), so only the sentence carrying the stamp is
 //    rewritten and the tail is preserved.
@@ -152,6 +272,14 @@ for (const page of pages) {
     'hero-shiplog-title line',
     /(<span class="hero-shiplog-title">)[^<]*(<\/span>)/,
     (_, lead, tail) => `${lead}${title}${tail}`
+  );
+  rewriteBars(page, 'hero-spark bar column', /(<span class="hero-spark"[^>]*>\n)([\s\S]*?)(\n[ \t]*<\/span>)/);
+  // The trailing call to action differs per page, so only the two numbers move.
+  rewrite(
+    page,
+    'hero-shiplog-more line',
+    /(<span class="hero-shiplog-more">)\d+ commits &middot; \d+ weeks( &middot; [^<]*<\/span>)/,
+    (_, lead, tail) => `${lead}${activityLine}${tail}`
   );
   if (page.text !== page.original) edits.push(page);
 }
