@@ -128,6 +128,15 @@ if (typeof rawAgentNamespace !== 'string' || !['', 'suede-skills', 'suede-agent-
 // discovery cannot inspect CLAUDE_PLUGIN_ROOT. Every caller must select the full plugin,
 // focused plugin, or bare user-agent namespace explicitly through workflow args.
 const AGENT_NAMESPACE = rawAgentNamespace || null
+// Same reason the namespace has to be passed: the workflow cannot locate its own
+// bundled files. The per-spawn clamp cannot verify a rule that is multi-line or
+// longer than roughly 400 characters, so these payloads travel as `.cjs` files
+// invoked by pinned prefix rather than as inline `node -e` text.
+const HELPER_DIR = canonicalAbsolutePath(ownArg('helperDir'))
+if (!HELPER_DIR || /\s/.test(HELPER_DIR)) {
+  throw new Error('args.helperDir must be an absolute path without whitespace, pointing at the skill workflows/helpers directory')
+}
+const helperCommand = name => `node ${shellQuote(`${HELPER_DIR}/${name}`)}`
 const agentTypeName = name => AGENT_NAMESPACE ? `${AGENT_NAMESPACE}:${name}` : name
 const SCOUT_AGENT = agentTypeName('suede-graph-flo-xr-scout')
 const CODE_READER_AGENT = agentTypeName('suede-graph-flo-xr-code-reader')
@@ -816,8 +825,7 @@ graph.topology = { validatedBeforeCall: agentCalls === 0, operationIds: topology
 try {
 phase('Scout')
 const requestedWorktreePrefix = `${REPO}.worktrees/ship-`
-const scoutSetupScript = `const {spawnSync}=require("node:child_process");const {randomUUID}=require("node:crypto");const {mkdirSync,realpathSync}=require("node:fs");const {dirname,basename}=require("node:path"),parseStatus=${parsePorcelainZ.toString()};const root=process.argv[1],prefix=process.argv[2],target=prefix+randomUUID(),tempRoot="/private/tmp/"+basename(target),canonical=value=>{try{return realpathSync(value)}catch{return value}},within=(cwd,worktreePath)=>cwd===worktreePath||cwd.startsWith(worktreePath+"/"),allLines=value=>value.split("\\n").filter(Boolean),nulPaths=value=>value.split("\\0").filter(Boolean);const run=(file,args,allowed=[0])=>{const result=spawnSync(file,args,{encoding:"utf8",maxBuffer:8*1024*1024});if(result.error||!allowed.includes(result.status)){process.stderr.write(result.stderr||String(result.error||file+" failed"));process.exit(result.status||1)}return result.stdout};run("/usr/bin/sandbox-exec",["-p","(version 1)(allow default)(deny network*)","/usr/bin/true"]);mkdirSync(tempRoot,{mode:0o700});run("git",["-C",root,"fetch","origin"]);const origin=run("git",["-C",root,"rev-parse","origin/main"]).trim();mkdirSync(dirname(target),{recursive:true});run("git",["-C",root,"worktree","add",target,"origin/main"]);const targetHead=run("git",["-C",target,"rev-parse","HEAD"]).trim(),targetStatus=parseStatus(run("git",["-C",target,"status","--porcelain=v1","-z"]));if(targetHead!==origin||targetStatus.paths.length||targetStatus.malformed){process.stderr.write("target worktree is not a clean origin/main checkout");process.exit(1)}const worktreeList=run("git",["-C",root,"worktree","list","--porcelain"]),liveRaw=run("lsof",["-nP","-a","-d","cwd","-Fn"],[0,1]),liveCwdPaths=[...new Set(liveRaw.split("\\n").filter(line=>line.startsWith("n")).map(line=>canonical(line.slice(1))))],rootReal=canonical(root),targetReal=canonical(target),paths=worktreeList.split(/\\n\\n+/).map(block=>block.split("\\n").find(line=>line.startsWith("worktree "))?.slice(9)).filter(Boolean).map(canonical),siblingPaths=paths.filter(worktreePath=>worktreePath!==targetReal&&worktreePath!==rootReal),siblingOverflow=siblingPaths.length>20,siblings=siblingPaths.slice(0,20).map(worktreePath=>{const status=parseStatus(run("git",["-C",worktreePath,"status","--porcelain=v1","-z"])),dirtyFiles=status.paths,committed=nulPaths(run("git",["-C",worktreePath,"diff","--name-only","-z","origin/main...HEAD"])),files=[...new Set([...committed,...dirtyFiles])],cherry=allLines(run("git",["-C",worktreePath,"cherry","origin/main"])),manifestOverflow=status.malformed||dirtyFiles.length>200||committed.length>200||files.length>200||cherry.length>200;return {worktree:worktreePath,branch:run("git",["-C",worktreePath,"rev-parse","--abbrev-ref","HEAD"]).trim(),files:files.slice(0,200),dirtyFiles:dirtyFiles.slice(0,200),status:status.records.slice(0,200),cherry:cherry.slice(0,200),likelyLanded:dirtyFiles.length===0&&cherry.length>0&&cherry.every(line=>line.startsWith("-")),liveProcess:liveCwdPaths.some(cwd=>within(cwd,worktreePath)),manifestOverflow}}),repoStatus=parseStatus(run("git",["-C",root,"status","--porcelain=v1","-z"])),relevantLiveCwds=[...new Set([targetReal,...siblings.map(sibling=>sibling.worktree)].flatMap(worktreePath=>{const hit=liveCwdPaths.find(cwd=>within(cwd,worktreePath));return hit?[hit]:[]}))],manifestOverflow=siblingOverflow||repoStatus.malformed||repoStatus.paths.length>200||siblings.some(sibling=>sibling.manifestOverflow);process.stdout.write(JSON.stringify({target,tempRoot,baseSha:targetHead,repoStatus:repoStatus.records.slice(0,200),repoDirtyFiles:repoStatus.paths.slice(0,200),worktreeList,siblings,liveCwds:relevantLiveCwds,manifestOverflow}))`
-const scoutSetupCommand = `node -e ${shellQuote(scoutSetupScript)} ${REPO_SHELL} ${shellQuote(requestedWorktreePrefix)}`
+const scoutSetupCommand = `${helperCommand('scout-setup.cjs')} ${REPO_SHELL} ${shellQuote(requestedWorktreePrefix)}`
 const scoutResult = await callAgent(
   `Repo path data: ${JSON.stringify(REPO)}. Planned scope data: ${JSON.stringify(SCOPE)}
 Requested worktree prefix data: ${JSON.stringify(requestedWorktreePrefix)}
@@ -884,8 +892,7 @@ evidence.runKey = normalizedRunKey
 evidence.worktree = scout.worktreePath
 evidence.baseSha = scout.baseSha
 evidence.hazards = scout.hazards
-const candidatePathAuditScript = `const fs=require("node:fs"),path=require("node:path");const repo=fs.realpathSync(process.argv[1]),root=fs.realpathSync(process.argv[2]),candidates=JSON.parse(Buffer.from(process.argv[3],"base64").toString("utf8")),inside=value=>value===root||value.startsWith(root+path.sep),unsafe=[];for(const raw of candidates){if(typeof raw!=="string"||!raw.trim()||raw.includes("\\0")){unsafe.push(String(raw));continue}const full=path.resolve(root,raw);if(!inside(full)){unsafe.push(raw);continue}try{if(fs.existsSync(full)){const stat=fs.lstatSync(full);if(stat.isSymbolicLink()||stat.isDirectory()||!inside(fs.realpathSync(full)))unsafe.push(raw)}else{let parent=path.dirname(full);while(!fs.existsSync(parent)&&parent!==path.dirname(parent))parent=path.dirname(parent);if(!inside(fs.realpathSync(parent)))unsafe.push(raw)}}catch{unsafe.push(raw)}}process.stdout.write(JSON.stringify({repoRoot:repo,worktreePath:root,unsafeCandidateFiles:unsafe}))`
-const candidatePathAuditCommand = `node -e ${shellQuote(candidatePathAuditScript)} ${REPO_SHELL} ${WORKTREE_SHELL} '${encodeBase64(JSON.stringify(scout.candidateFiles))}'`
+const candidatePathAuditCommand = `${helperCommand('candidate-audit.cjs')} ${REPO_SHELL} ${WORKTREE_SHELL} '${encodeBase64(JSON.stringify(scout.candidateFiles))}'`
 const worktreeAuditCommands = [
   `/usr/bin/realpath ${REPO_SHELL}`,
   `/usr/bin/realpath ${WORKTREE_SHELL}`,
@@ -1314,11 +1321,39 @@ const validatedPatchBundle = (results, allowedFiles) => {
     text,
   }
 }
-const makePatchApplyCommand = patchText => {
+const patchApplyInvocation = `${helperCommand('apply-patch.cjs')} ${WORKTREE_SHELL}`
+const PATCH_TEMP_SHELL = shellQuote(scout.tempRoot)
+// The clamp verifier cannot parse a command carrying a multi-kilobyte inline
+// payload, so the patch travels as bounded base64 chunks staged into the run's
+// private temp root by the same pinned helper, then applied from that file.
+const PATCH_CHUNK = 700
+// The applier agent hand-transcribes every command, and a dropped character in
+// a high-entropy base64 chunk silently corrupts the staged patch. Each append
+// therefore carries its expected offset and an FNV-1a checksum the helper
+// verifies, and --apply verifies total length and payload checksum before
+// decoding — a mistyped chunk fails fast with a retry instruction instead of
+// producing a corrupt patch.
+const fnv1a = text => { let hash = 0x811c9dc5; for (let index = 0; index < text.length; index += 1) { hash ^= text.charCodeAt(index); hash = Math.imul(hash, 0x01000193) } return (hash >>> 0).toString(16).padStart(8, '0') }
+const makePatchApplyCommands = patchText => {
   const payload = encodeBase64(patchText)
-  const script = `const {spawnSync}=require("node:child_process");const root=process.argv[1];const patch=Buffer.from(process.argv[2],"base64");const run=(extra)=>spawnSync("git",["-C",root,"apply",...extra,"--whitespace=nowarn","-"],{input:patch,encoding:"utf8"});const checked=run(["--check"]);if(checked.error||checked.status!==0){process.stderr.write(checked.stderr||String(checked.error||"git apply --check failed"));process.exit(checked.status||1)}const applied=run([]);process.stdout.write(applied.stdout||"");process.stderr.write(applied.stderr||String(applied.error||""));process.exit(applied.error||applied.status!==0?applied.status||1:0)`
-  return `node -e ${shellQuote(script)} ${WORKTREE_SHELL} '${payload}'`
+  const applyCommand = `${patchApplyInvocation} --apply ${PATCH_TEMP_SHELL} ${payload.length} ${fnv1a(payload)}`
+  // Verified-apply-first: if a byte-perfect payload is already staged (for
+  // example by the orchestrator between halts), the length+checksum-gated
+  // apply lands without the model ever touching the bytes. Chunked
+  // transcription is the fallback, not the primary channel.
+  const commands = [applyCommand, `${patchApplyInvocation} --start ${PATCH_TEMP_SHELL}`]
+  for (let index = 0; index < payload.length; index += PATCH_CHUNK) {
+    const chunk = payload.slice(index, index + PATCH_CHUNK)
+    commands.push(`${patchApplyInvocation} --append ${PATCH_TEMP_SHELL} ${index} ${fnv1a(chunk)} '${chunk}'`)
+  }
+  commands.push(applyCommand)
+  return commands
 }
+const patchApplyClampRules = [
+  `Bash(${patchApplyInvocation} --start ${PATCH_TEMP_SHELL})`,
+  `Bash(${patchApplyInvocation} --append ${PATCH_TEMP_SHELL}:*)`,
+  `Bash(${patchApplyInvocation} --apply ${PATCH_TEMP_SHELL}:*)`,
+]
 const normalizeText = value => String(value || '').normalize('NFC').trim().toLowerCase().replace(/\s+/g, ' ')
 const scoutCandidateFiles = (scout.candidateFiles || []).map(safePlanFile).filter(Boolean)
 const scoutCandidateFileSet = new Set(scoutCandidateFiles.map(pathKey))
@@ -2193,9 +2228,8 @@ const canonicalMutationFiles = files => [...new Map(files
   .map(rel)
   .filter(Boolean)
   .map(file => [pathKey(file), file])).values()].sort()
-const diffDigestScript = `const {spawnSync}=require("node:child_process");const {createHash}=require("node:crypto");const fs=require("node:fs"),path=require("node:path"),root=path.resolve(process.argv[1]),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],"base64").toString("utf8"));if(!Array.isArray(files)){process.stderr.write("reported files must be an array");process.exit(1)}const run=spawnSync("git",["-C",root,"diff","--binary",base],{encoding:null,maxBuffer:16*1024*1024});if(run.error||run.status!==0){process.stderr.write(run.stderr||String(run.error||"git diff failed"));process.exit(run.status||1)}const hash=createHash("sha256").update("git-diff\\0").update(run.stdout);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(full!==root&&!full.startsWith(root+path.sep)){process.stderr.write("reported file escapes worktree");process.exit(1)}hash.update("\\0file\\0"+file+"\\0");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code==="ENOENT"){hash.update("missing");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write("reported file is not a regular file: "+file);process.exit(1)}hash.update("regular\\0"+String(stat.mode&0o777)+"\\0"+String(stat.size)+"\\0").update(fs.readFileSync(full))}process.stdout.write(hash.digest("hex")+"\\n")`
 const makeMutationAuditCommands = reportedFiles => {
-  const diffDigestCommand = `node -e ${shellQuote(diffDigestScript)} ${WORKTREE_SHELL} ${shellQuote(scout.baseSha)} '${encodeBase64(JSON.stringify(reportedFiles))}'`
+  const diffDigestCommand = `${helperCommand('diff-digest.cjs')} ${WORKTREE_SHELL} ${shellQuote(scout.baseSha)} '${encodeBase64(JSON.stringify(reportedFiles))}'`
   return [
     `git -C ${WORKTREE_SHELL} rev-parse HEAD`,
     `git -C ${WORKTREE_SHELL} diff --name-only ${scout.baseSha}`,
@@ -2263,7 +2297,7 @@ const attestMutation = async ({ label, phaseName, checkpoint, expectedFiles }) =
 }
 let reportedMutationFiles = canonicalMutationFiles(buildPatchBundle.files)
 let mutationAttestation = null
-const buildApplyCommand = makePatchApplyCommand(buildPatchBundle.text)
+const buildApplyCommands = makePatchApplyCommands(buildPatchBundle.text)
 // Once winner mutation is attempted, fail closed. Every later successful path replaces
 // this provisional hold with its evidence-backed final verdict.
 reserveBatch(2, 'BuildMutationSafety', ['apply:build', 'verify:build'])
@@ -2272,11 +2306,11 @@ evidence.shipVerdict = 'hold'
 let buildApplyFailed = false
 try {
   evidence.buildApply = await callAgent(
-    `Apply the already-validated selected-plan patch. Run exactly this command and no other tool or command:\n${buildApplyCommand}\nReturn the real command output and whether it applied.`,
+    `Apply the already-validated selected-plan patch. Run the FIRST command below. If it reports the patch applied, stop there. If it fails with no staged patch or a length/checksum mismatch, continue with the remaining commands in order, each once, and no other tool or command; stop only for an error that is not a checksum or offset mismatch:\n${buildApplyCommands.map(command => `- ${command}`).join('\n')}\nIf an append or apply reports a checksum, offset, or length mismatch, the chunk was mistyped: re-run that exact command (copy it precisely from this list) up to three attempts; on an --apply length failure, restart from --start and replay every command. Return the real output of the final command and whether it applied.`,
     {
       label: 'apply:build', phase: 'ApplyBuild', schema: APPLY_RESULT, effort: 'low',
       authority: 'clamped-patch-apply', agentType: PATCH_APPLIER_AGENT, allowedFiles: buildPatchBundle.files,
-      bashCommandClamp: [`Bash(${buildApplyCommand})`],
+      bashCommandClamp: patchApplyClampRules,
     }
   )
 } catch (error) {
@@ -2596,16 +2630,16 @@ those patch file names. Do not refactor around the findings or fix adjacent issu
     return { halted: true, reason: 'mutation boundary violation', violations: fixPatchBundle.reasons, graph, ...evidence }
   }
   const fixExpectedMutationFiles = canonicalMutationFiles([...reportedMutationFiles, ...fixPatchBundle.files])
-  const fixApplyCommand = makePatchApplyCommand(fixPatchBundle.text)
+  const fixApplyCommands = makePatchApplyCommands(fixPatchBundle.text)
   reserveBatch(2, 'FixMutationSafety', ['apply:fix', 'verify:fix'])
   let fixApplyFailed = false
   try {
     evidence.fixApply = await callAgent(
-      `Apply the already-validated blocker-fix patch. Run exactly this command and no other tool or command:\n${fixApplyCommand}\nReturn the real command output and whether it applied.`,
+      `Apply the already-validated blocker-fix patch. Run the FIRST command below. If it reports the patch applied, stop there. If it fails with no staged patch or a length/checksum mismatch, continue with the remaining commands in order, each once, and no other tool or command; stop only for an error that is not a checksum or offset mismatch:\n${fixApplyCommands.map(command => `- ${command}`).join('\n')}\nIf an append or apply reports a checksum, offset, or length mismatch, the chunk was mistyped: re-run that exact command (copy it precisely from this list) up to three attempts; on an --apply length failure, restart from --start and replay every command. Return the real output of the final command and whether it applied.`,
       {
         label: 'apply:fix', phase: 'ApplyFix', schema: APPLY_RESULT, effort: 'low',
         authority: 'clamped-patch-apply', agentType: PATCH_APPLIER_AGENT, allowedFiles: fixPatchBundle.files,
-        bashCommandClamp: [`Bash(${fixApplyCommand})`],
+        bashCommandClamp: patchApplyClampRules,
       }
     )
   } catch (error) {
@@ -2673,9 +2707,8 @@ const gateExtraWritePayload = encodeBase64(JSON.stringify(gateModuleBuildRoots))
 // Derive Git's common directory inside the exact clamped Gate command. The ScoutVerify
 // response remains a model attestation and therefore cannot be allowed to widen the
 // host-enforced sandbox profile, especially when the caller passed a linked worktree.
-const gateSandboxScript = `const {spawnSync}=require("node:child_process");const fs=require("node:fs"),path=require("node:path"),inputRoot=process.argv[1],inputTemp=process.argv[2],payload=process.argv[3],encodedExtraWrites=process.argv[4],fail=message=>{process.stderr.write(String(message)+"\\n");process.exit(1)},root=fs.realpathSync(inputRoot),tempRoot=fs.realpathSync(inputTemp),insideRoot=value=>value===root||value.startsWith(root+path.sep);if(root!==path.resolve(inputRoot)||tempRoot!==path.resolve(inputTemp)||!fs.statSync(root).isDirectory()||!fs.statSync(tempRoot).isDirectory())fail("Gate roots failed realpath validation");let extraWrites;try{extraWrites=JSON.parse(Buffer.from(encodedExtraWrites,"base64").toString("utf8"))}catch{fail("Gate extra-write manifest is invalid")};const safeExtraWrite=value=>{if(typeof value!=="string"||path.resolve(value)!==value||!value.startsWith(root+path.sep)||path.basename(value)!=="build")return false;let parent;try{parent=fs.realpathSync(path.dirname(value))}catch{return false}if(!insideRoot(parent))return false;if(!fs.existsSync(value))return true;const stat=fs.lstatSync(value);return !stat.isSymbolicLink()&&stat.isDirectory()&&insideRoot(fs.realpathSync(value))};if(!Array.isArray(extraWrites)||extraWrites.some(value=>!safeExtraWrite(value)))fail("Gate extra-write roots failed validation");const git=args=>{const result=spawnSync("git",["-C",root,...args],{encoding:"utf8",maxBuffer:8*1024*1024});if(result.error||result.status!==0)fail(result.stderr||result.error||"git metadata lookup failed");return result.stdout.trim()},top=fs.realpathSync(git(["rev-parse","--show-toplevel"])),commonDir=fs.realpathSync(git(["rev-parse","--path-format=absolute","--git-common-dir"]));if(top!==root||path.basename(commonDir)!==".git"||!fs.statSync(commonDir).isDirectory())fail("Gate Git roots failed validation");const reads=[root,commonDir,"/System","/usr","/usr/local","/bin","/sbin","/Library","/opt/homebrew","/var/select","/Applications/Xcode.app/Contents/Developer",tempRoot],writes=["node_modules",".next","dist","build",".build","coverage",".cache",".gradle",".swiftpm",".turbo","target",".pytest_cache",".mypy_cache",".ruff_cache","tmp",".tmp"].map(name=>path.join(root,name)).concat(extraWrites,tempRoot),subpaths=values=>values.map(value=>"  (subpath "+JSON.stringify(value)+")").join("\\n"),profile="(version 1)\\n(deny default)\\n(import \\"system.sb\\")\\n(allow process*)\\n(allow file-read*\\n"+subpaths(reads)+"\\n  (literal \\"/dev/null\\")\\n  (literal \\"/dev/urandom\\"))\\n(allow file-write*\\n"+subpaths(writes)+"\\n)\\n(deny network*)",result=spawnSync("/usr/bin/sandbox-exec",["-p",profile,"/bin/sh","-c",payload],{stdio:"inherit"});if(result.error)fail(result.error);process.exit(result.status===0?0:result.status||1)`
 const gateExecutionCommands = gateCommands.map(command =>
-  `/usr/bin/env TMPDIR=${shellQuote(scout.tempRoot)} TMP=${shellQuote(scout.tempRoot)} TEMP=${shellQuote(scout.tempRoot)} node -e ${shellQuote(gateSandboxScript)} ${WORKTREE_SHELL} ${shellQuote(scout.tempRoot)} ${shellQuote(`cd ${WORKTREE_SHELL} && ${command}`)} '${gateExtraWritePayload}'`)
+  `/usr/bin/env TMPDIR=${shellQuote(scout.tempRoot)} TMP=${shellQuote(scout.tempRoot)} TEMP=${shellQuote(scout.tempRoot)} ${helperCommand('gate-sandbox.cjs')} ${WORKTREE_SHELL} ${shellQuote(scout.tempRoot)} ${shellQuote(`cd ${WORKTREE_SHELL} && ${command}`)} '${gateExtraWritePayload}'`)
 reserveBatch(2, 'GateSafety', ['Gate', 'GateVerify'])
 let gate
 let gateFailure = null

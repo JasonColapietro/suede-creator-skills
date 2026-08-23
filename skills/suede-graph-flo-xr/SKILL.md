@@ -56,6 +56,25 @@ invoked name with no prefix, installed by `install.sh` or copied by hand, takes
 the empty string. This is runtime context, not a user choice. A missing or
 unknown value fails before the first agent call.
 
+The workflow also cannot locate its own bundled helper scripts. Pass `helperDir`:
+the absolute path of the invoked skill's `workflows/helpers` directory (for this
+install, `<skill base directory>/workflows/helpers`). The clamped Bash commands
+run these `.cjs` helpers — the per-spawn clamp cannot verify a rule that is
+multi-line or longer than roughly 400 characters, so inline `node -e` payloads
+are not usable. A missing or whitespace-containing path fails before the first
+agent call; a missing helper file surfaces as the Scout setup failure.
+Payload-carrying helper invocations are admitted by pinned prefixes (helper
+path plus worktree, temp root, or base SHA) rather than exact strings; each
+helper validates its remaining argv, and the diff attestations — not the clamp —
+remain the check that what was applied matches the selected bundle.
+
+The selected patch reaches the applier as bounded base64 chunks staged into the
+run's private temp root, because the clamp verifier cannot parse a command
+carrying a multi-kilobyte inline payload. Each append carries its offset and an
+FNV-1a checksum, and `--apply` verifies total length and payload checksum before
+decoding, so a mistyped chunk fails fast with a retry instruction instead of
+producing a corrupt patch.
+
 A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
 not by themselves register or execute Claude Workflow agent profiles. In those
 environments, treat this file as the orchestration contract and route the change
@@ -77,7 +96,7 @@ Invoke:
 ```js
 Workflow({
   scriptPath: "skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js",
-  args: { repo, scope, agentBudget, agentNamespace, workerModel, deploys, liveUrl, vault }
+  args: { repo, scope, agentBudget, agentNamespace, helperDir, workerModel, deploys, liveUrl, vault }
 })
 ```
 
