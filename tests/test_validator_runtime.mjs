@@ -583,6 +583,40 @@ function commitsBehindOriginMain(checkoutRoot, revision) {
   return Number.parseInt(probe.stdout.trim(), 10);
 }
 
+// `HEAD~N` is N commits behind HEAD only when the history is linear. GitHub
+// builds a pull request from a MERGE ref, so in CI HEAD is a merge commit:
+// HEAD~1 is main's tip, and reaching HEAD from it costs the merge commit plus
+// every commit on the branch. `HEAD~1` measured 2 behind and `HEAD~41` measured
+// 42, and both fixtures below failed on every pull request while passing on a
+// linear local checkout.
+//
+// Nor can a fixture demand a literal distance: no ancestor of a merge commit is
+// exactly 1 behind it, because dropping either parent still leaves the other
+// reachable. So ask for the nearest commit at least this far back, and let the
+// test assert against the distance it actually got.
+function baseBehindOriginMain(checkoutRoot, minimum) {
+  const listing = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-list", "--topo-order", "origin/main"],
+    { encoding: "utf8" }
+  );
+  assert.equal(listing.status, 0, listing.stderr);
+  const commits = listing.stdout.trim().split("\n").filter(Boolean);
+  // Topological order lists a commit before every one of its ancestors, and
+  // distance to origin/main only grows as you walk back, so the first candidate
+  // that clears the minimum is the closest one worth using.
+  for (const candidate of commits) {
+    const distance = commitsBehindOriginMain(checkoutRoot, candidate);
+    if (distance >= minimum) {
+      return { rev: shortRev(checkoutRoot, candidate), distance };
+    }
+  }
+  assert.fail(
+    `no commit sits at least ${minimum} commits behind origin/main ` +
+    `(${commits.length} reachable) — the fixture cannot exercise this distance`
+  );
+}
+
 function shortRev(checkoutRoot, revision) {
   const probe = spawnSync(
     "git",
@@ -611,10 +645,13 @@ test("validator accepts a prepared changelog anchored to the current merge base"
 // moved past is normal, not a defect, and must pass.
 test("validator accepts a prepared changelog base that origin/main has moved past", completeSourceHistoryTest, (t) => {
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-behind-");
-  const overtaken = shortRev(checkoutRoot, "HEAD~1");
-  assert.notEqual(overtaken, shortRev(checkoutRoot, "origin/main"));
-  assert.equal(commitsBehindOriginMain(checkoutRoot, overtaken), 1);
-  restampPreparedBase(checkoutRoot, overtaken);
+  const overtaken = baseBehindOriginMain(checkoutRoot, 1);
+  assert.notEqual(overtaken.rev, shortRev(checkoutRoot, "origin/main"));
+  assert.ok(
+    overtaken.distance >= 1 && overtaken.distance <= 40,
+    `fixture must sit behind origin/main but inside the bound (${overtaken.distance})`
+  );
+  restampPreparedBase(checkoutRoot, overtaken.rev);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -625,20 +662,23 @@ test("validator rejects a prepared changelog base that has fallen far behind ori
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-stale-");
   const depth = spawnSync(
     "git",
-    ["-C", checkoutRoot, "rev-list", "--count", "HEAD"],
+    ["-C", checkoutRoot, "rev-list", "--count", "origin/main"],
     { encoding: "utf8" }
   );
   assert.equal(depth.status, 0, depth.stderr);
   const available = Number.parseInt(depth.stdout.trim(), 10);
   assert.ok(available > 41, `history is too short to exercise the drift bound (${available} commits)`);
-  const stale = shortRev(checkoutRoot, "HEAD~41");
-  assert.equal(commitsBehindOriginMain(checkoutRoot, stale), 41, "fixture must sit exactly one past the limit");
-  restampPreparedBase(checkoutRoot, stale);
+  const stale = baseBehindOriginMain(checkoutRoot, 41);
+  assert.ok(stale.distance > 40, `fixture must sit past the limit (${stale.distance})`);
+  restampPreparedBase(checkoutRoot, stale.rev);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
-  assert.match(validation.stderr, /is 41 commits behind origin\/main \(limit 40\)/);
+  assert.match(
+    validation.stderr,
+    new RegExp(`is ${stale.distance} commits behind origin/main \\(limit 40\\)`)
+  );
 });
 
 test("validator rejects a prepared changelog base unreachable from origin/main", completeSourceHistoryTest, (t) => {
