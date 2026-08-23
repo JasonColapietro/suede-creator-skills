@@ -163,6 +163,55 @@ Blocks over limit: [count] of [total headings]
 Accordion/FAQ items marked up as headings: [yes/no — N items]
 ```
 
+**Heading self-sufficiency**
+- [ ] Every H2-H6 names its own subject. Discovery Engine carries the ancestor
+      headings alongside a chunk OPTIONALLY, so a chunk can arrive holding only
+      its own immediate heading. This is NOT the hierarchy check above: a page
+      can nest H1 > H2 > H3 perfectly and still have an H3 that identifies
+      nothing once detached.
+- [ ] No heading is a bare stock phrase — How it works, Pricing, Features,
+      Overview, Benefits, FAQ, Get started, Why us, Our process. An H3 reading
+      "Pricing" is meaningless away from the H2 that named the subject;
+      "How Suede Scan pricing works" survives alone.
+- [ ] Single-word headings get the hardest look, since they carry a subject only
+      by accident. A heading already holding a proper noun, an acronym, or the
+      page's primary subject passes — do not rewrite it.
+- [ ] Record each finding with its parent heading, so the fix (folding the
+      parent's subject into the child) is visible without opening the page.
+- [ ] Warn, never fail, and never drop a grade on this alone. It is a heuristic
+      about language. Where bare headings run through the whole page, report one
+      finding about the page rather than one per heading.
+
+Heading self-sufficiency output format:
+```
+Detached heading "[heading]" (H[n], under "[parent]") | [stock phrase/single word] | fix: "[rewritten heading]"
+Sub-headings not naming their own subject: [count] of [total]
+```
+
+**Table markup**
+- [ ] Comparison content uses `<table>`, not CSS grid or flex `<div>`s.
+      Discovery Engine parses tables as structured content; a grid-built table
+      reads as an undifferentiated run of text, so the row and column
+      relationships that make a comparison quotable are lost.
+- [ ] Structure carries the finding, never a class name: repeated sibling
+      elements with a consistent child count, holding short cell-sized text.
+      Confirm the content is genuinely tabular by eye before reporting it.
+- [ ] Class names are the weakest signal and prove nothing alone. `flex-row`,
+      `grid-rows-*`, `flex-col` and `grow-0` are layout utilities — measured
+      against live homepages on 2026-08-22, a substring match on grid|row|col
+      fired on four of five.
+- [ ] Report as an informational observation, never as a scored failure. CSS
+      grid is used for every kind of layout, and a false finding in a paid audit
+      costs more than a missing one.
+- [ ] A page that already ships a real `<table>` gets the benefit of the doubt:
+      the author knows the element, so a grid there is more likely deliberate.
+
+Table markup output format:
+```
+Unmarked table: [rows] rows x [columns] columns of <[tag] class="[class]"> | tabular by eye: [yes/no]
+Page uses <table> anywhere: [yes/no]
+```
+
 **Section coverage and order**
 - [ ] Opening: what the page is and who it serves
 - [ ] Evidence appears near the claims it supports
