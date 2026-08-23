@@ -1,16 +1,18 @@
-# Suede Graph Flo XR Graph-of-Thoughts Design
+# Suede Ship Graph-of-Thoughts Design
+
+*Historical record: written 2026-08-21, when this skill was named `suede-ship`. It was renamed to `suede-graph-flo-xr` (Suede Graph Flo XR) on 2026-08-23; the names below are preserved as written.*
 
 **Date:** 2026-08-21
 
 **Status:** Approved
 
-**Target:** `skills/suede-graph-flo-xr`
+**Target:** `skills/suede-ship`
 
 **Upstream:** ETH Zurich `spcl/graph-of-thoughts` at `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`
 
 ## Goal
 
-Replace `suede-graph-flo-xr`'s fixed, single-plan orchestration DAG with a real
+Replace `suede-ship`'s fixed, single-plan orchestration DAG with a real
 Graph-of-Thoughts search that generates competing execution plans, scores and
 prunes them, subjects survivors to adversarial refutation, improves them, and
 aggregates compatible strengths before any source file is changed.
@@ -33,7 +35,7 @@ authority, evidence requirements, and release-state boundaries.
 
 ## Preserved Public Contract
 
-- Invocation remains `$suede-graph-flo-xr` with absolute `repo`, `scope`, `deploys`, `liveUrl`,
+- Invocation remains `$suede-ship` with absolute `repo`, `scope`, `deploys`, `liveUrl`,
   `agentBudget`, `vault`, and `agentNamespace` arguments.
 - The workflow continues to use injected `agent`, `parallel`, `pipeline`,
   `phase`, `log`, `args`, `budget`, and `workflow` globals.
@@ -45,13 +47,13 @@ authority, evidence requirements, and release-state boundaries.
 - Production reads remain read-only. The workflow never deploys and cannot
   claim `deployed`, `verified live`, or `released`.
 - The workflow returns a structured result and writes an evidence handoff to
-  `.suede-graph-flo-xr/<runKey>/handoff.md` through the calling agent. `runKey` is the
+  `.suede-ship/<runKey>/handoff.md` through the calling agent. `runKey` is the
   validated unique `ship-<UUID>` leaf of the workflow-created worktree; the
   Workflow VM does not expose the host run ID. If Scout returns an invalid path
   before that key can be validated, the caller reports the halt without
   writing a run-keyed handoff.
 - The JavaScript runner is supported in Claude Code on macOS. It requires
-  registered Suede Graph Flo XR agent profiles and `sandbox-exec`. Scout's exact setup
+  registered Suede Ship agent profiles and `sandbox-exec`. Scout's exact setup
   command probes `sandbox-exec` before fetch or worktree creation. If invoked
   and rejected, it exits before repo mutation. The structured Scout response is
   a model attestation, not a host receipt. Codex and generic skill-only installs
@@ -78,7 +80,7 @@ The entry file is organized in this order:
 7. winner-only build, review, repair, gate, release check, and handoff.
 
 Plugin installs resolve qualified agent names such as
-`suede-skills:suede-graph-flo-xr-verifier`; the focused workflow plugin uses its own
+`suede-skills:suede-ship-verifier`; the focused workflow plugin uses its own
 namespace. Because the Workflow VM does not expose Node `process`, the full
 and focused callers explicitly pass `agentNamespace: "suede-skills"` or
 `agentNamespace: "suede-agent-workflows"`. The clone installer copies the same
