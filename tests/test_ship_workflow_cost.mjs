@@ -13,6 +13,13 @@ const SOURCE = readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/workflows
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const BASE_SHA = 'd'.repeat(40)
 const DIFF_DIGEST = 'a'.repeat(64)
+// The workflow validates helperDir's shape, never the filesystem, so a fixed
+// path keeps the emitted command strings deterministic across machines.
+const HELPER_DIR = '/tmp/graph-flo-xr-helpers'
+// The scripts the clamp used to carry inline now ship as bundled .cjs helpers, so
+// assertions about what those payloads do read the helper file, while assertions
+// about what the agent may run read the pinned invocation in the clamp.
+const helperSource = name => readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/workflows/helpers', name), 'utf8')
 
 // Worst case the schemas allow: the maximum lane count, both review lenses returning a
 // full findings array, every finding distinct (so dedupe cannot help) and severity
@@ -20,7 +27,7 @@ const DIFF_DIGEST = 'a'.repeat(64)
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, omitHelperDir = false, helperDir = HELPER_DIR, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -408,10 +415,11 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
   const run = new AsyncFunction(
     'agent', 'parallel', 'pipeline', 'phase', 'log', 'args', 'budget', 'workflow', 'TextEncoder', 'URL', body)
 
-  const workflowArgs = { repo, scope, deploys: true, agentBudget }
+  const workflowArgs = { repo, scope, deploys: true, agentBudget, helperDir }
   workflowArgs.agentNamespace = agentNamespace
   if (liveUrl !== undefined) workflowArgs.liveUrl = liveUrl
   if (omitAgentNamespace) delete workflowArgs.agentNamespace
+  if (omitHelperDir) delete workflowArgs.helperDir
   if (omitAgentBudget) delete workflowArgs.agentBudget
   if (inheritedAgentBudget) {
     delete workflowArgs.agentBudget
@@ -460,7 +468,7 @@ async function loadGraphCore () {
     .replace('export const meta', 'const meta')
   const load = new AsyncFunction('args', 'budget', `${prefix}\nreturn { createThought, createOperation, executeOperationGraph, rankThoughts, validateOperationGraph, parsePorcelainZ }`)
   return load(
-    { repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard', agentNamespace: 'suede-skills' },
+    { repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard', agentNamespace: 'suede-skills', helperDir: HELPER_DIR },
     { total: null },
   )
 }
@@ -469,7 +477,7 @@ async function loadAgentProfileNames (agentNamespace) {
   const prefix = SOURCE.split('// ---------------------------------------------------------------- 0. scout')[0]
     .replace('export const meta', 'const meta')
   const load = new AsyncFunction('args', 'budget', `${prefix}\nreturn { SCOUT_AGENT, CODE_READER_AGENT, WEB_READER_AGENT, PATCH_AUTHOR_AGENT, PATCH_APPLIER_AGENT, VERIFIER_AGENT }`)
-  const workflowArgs = { repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard' }
+  const workflowArgs = { repo: '/tmp/repo', scope: 'change the thing', agentBudget: 'standard', helperDir: HELPER_DIR }
   workflowArgs.agentNamespace = agentNamespace
   return load(
     workflowArgs,
@@ -497,22 +505,35 @@ test('workflow source stays deterministic and Scout probes sandbox-exec before r
   assert.doesNotMatch(SOURCE, /new TextEncoder|new URL/)
   const { calls } = await runShip({ findingsPerLens: 0 })
   const scout = calls.find(call => call.phase === 'Scout')
-  const probe = scout.prompt.indexOf('/usr/bin/sandbox-exec')
-  const fetch = scout.prompt.indexOf('fetch","origin')
-  assert.ok(probe >= 0 && fetch > probe)
-  assert.ok(scout.bashCommandClamp[0].indexOf('/usr/bin/sandbox-exec') < scout.bashCommandClamp[0].indexOf('fetch","origin'))
-  assert.match(scout.bashCommandClamp[0], /"lsof",\["-nP","-a","-d","cwd","-Fn"\]/)
-  assert.match(scout.bashCommandClamp[0], /cwd===worktreePath\|\|cwd\.startsWith\(worktreePath\+"\/"\)/)
-  assert.match(scout.bashCommandClamp[0], /parseStatus=/)
-  assert.match(scout.bashCommandClamp[0], /"status","--porcelain=v1","-z"/)
-  assert.match(scout.bashCommandClamp[0], /manifestOverflow/)
-  assert.doesNotMatch(scout.bashCommandClamp[0], /status\.map\(line=>line\.slice\(3\)/)
+  // The prompt now names the pinned helper; the probe-before-mutation ordering it
+  // guarantees is asserted against that helper's source below.
+  assert.match(scout.prompt, /scout-setup\.cjs/)
+  assert.match(scout.bashCommandClamp[0], /^Bash\(node '[^']*\/scout-setup\.cjs'/)
+  const scoutHelper = helperSource('scout-setup.cjs')
+  assert.ok(scoutHelper.indexOf('/usr/bin/sandbox-exec') < scoutHelper.indexOf('fetch","origin'))
+  assert.match(scoutHelper, /"lsof",\["-nP","-a","-d","cwd","-Fn"\]/)
+  assert.match(scoutHelper, /cwd===worktreePath\|\|cwd\.startsWith\(worktreePath\+"\/"\)/)
+  assert.match(scoutHelper, /parseStatus=/)
+  assert.match(scoutHelper, /"status","--porcelain=v1","-z"/)
+  assert.match(scoutHelper, /manifestOverflow/)
+  assert.doesNotMatch(scoutHelper, /status\.map\(line=>line\.slice\(3\)/)
 
   for (const scenario of [{ omitAgentNamespace: true }, { agentNamespace: 'unregistered' }]) await assert.rejects(runShip(scenario), error => {
     assert.match(error.message, /args\.agentNamespace/)
     assert.deepEqual(error.calls, [])
     return true
   })
+
+  // helperDir is load-bearing: the clamped helpers cannot be located without it, so a
+  // missing or whitespace-carrying path must fail before the first agent call rather
+  // than surfacing later as a Scout setup failure.
+  for (const scenario of [{ omitHelperDir: true }, { helperDir: 'relative/helpers' }, { helperDir: '/tmp/has space/helpers' }]) {
+    await assert.rejects(runShip(scenario), error => {
+      assert.match(error.message, /args\.helperDir/)
+      assert.deepEqual(error.calls, [])
+      return true
+    })
+  }
 
   const withLiveUrl = await runShip({ liveUrl: 'HTTPS://example.com/live?mode=read', findingsPerLens: 0 })
   assert.ok(withLiveUrl.calls.some(call => call.phase === 'Release' && call.prompt.includes('https://example.com/live?mode=read')))
@@ -685,9 +706,15 @@ test('patch authors have no mutation tools and appliers receive only an exact cl
   assert.ok(appliers.length > 0)
   assert.ok(appliers.every(call => call.authority === 'clamped-patch-apply'))
   assert.ok(appliers.every(call => call.agentType === 'suede-skills:suede-graph-flo-xr-applier'))
-  assert.ok(appliers.every(call => call.bashCommandClamp.length === 1))
-  assert.ok(appliers.every(call => /^Bash\(node -e /.test(call.bashCommandClamp[0])))
-  assert.ok(appliers.every(call => !/[|&<>]/.test(call.bashCommandClamp[0].replace(/'[^']*'/g, ''))))
+  // The applier is clamped to exactly the three staging modes of one pinned helper:
+  // reset the staging file, append a checksummed chunk, apply the verified payload.
+  // Nothing else is reachable, and the payload argument is what varies, not the binary.
+  assert.ok(appliers.every(call => call.bashCommandClamp.length === 3))
+  assert.ok(appliers.every(call => call.bashCommandClamp.every(rule => /^Bash\(node '[^']*\/apply-patch\.cjs'/.test(rule))))
+  for (const mode of ['--start', '--append', '--apply']) {
+    assert.ok(appliers.every(call => call.bashCommandClamp.some(rule => rule.includes(` ${mode} `))))
+  }
+  assert.ok(appliers.every(call => call.bashCommandClamp.every(rule => !/[|&<>]/.test(rule.replace(/'[^']*'/g, '')))))
   assert.ok(appliers.every(call => !Object.hasOwn(call, 'disallowedTools')))
 })
 
@@ -1590,8 +1617,8 @@ test('Gate derives the Git common directory inside its exact clamp instead of tr
   const gateCall = calls.find(call => call.phase === 'Gate')
   const clamp = gateCall.bashCommandClamp[0]
   assert.doesNotMatch(clamp, /model-selected/)
-  assert.match(clamp, /rev-parse.*--path-format=absolute.*--git-common-dir/)
-  assert.match(clamp, /realpathSync/)
+  assert.match(helperSource('gate-sandbox.cjs'), /rev-parse.*--path-format=absolute.*--git-common-dir/)
+  assert.match(helperSource('gate-sandbox.cjs'), /realpathSync/)
 })
 
 test('repo paths are shell-safe in Scout instructions and hostile path text fails before Scout', async () => {
@@ -1599,7 +1626,7 @@ test('repo paths are shell-safe in Scout instructions and hostile path text fail
   const scoutCall = spaced.calls.find(call => call.phase === 'Scout')
   assert.equal(scoutCall.agentType, 'suede-skills:suede-graph-flo-xr-scout')
   assert.equal(scoutCall.bashCommandClamp.length, 1)
-  assert.match(scoutCall.bashCommandClamp[0], /^Bash\(node -e /)
+  assert.match(scoutCall.bashCommandClamp[0], /^Bash\(node '[^']*\/scout-setup\.cjs'/)
   assert.match(scoutCall.bashCommandClamp[0], /'\/tmp\/repo with space'/)
   assert.match(scoutCall.prompt, /Run this exact setup command once and no other shell command/)
 
@@ -1633,7 +1660,7 @@ test('an immediate post-Build audit blocks unexpected paths, symlinks, and base 
   assert.equal(auditCall.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
   assert.ok(auditCall.bashCommandClamp.length >= 5)
   assert.ok(auditCall.bashCommandClamp.filter(rule => rule.startsWith('Bash(git -C ')).length >= 4)
-  assert.ok(auditCall.bashCommandClamp.some(rule => rule.startsWith('Bash(node -e ')))
+  assert.ok(auditCall.bashCommandClamp.some(rule => /^Bash\(node '[^']*\/(candidate-audit|diff-digest)\.cjs'/.test(rule)))
   assert.ok(auditCall.prompt.includes(`git -C '/tmp/repo.worktrees/ship-test' diff --name-only ${BASE_SHA}`))
   assert.match(auditCall.prompt, /git -C '\/tmp\/repo\.worktrees\/ship-test' ls-files --others --exclude-standard/)
 
@@ -1697,7 +1724,7 @@ test('post-Gate attestation requires the source diff to remain byte-identical', 
   assert.ok(gateIndex >= 0 && verifyIndex > gateIndex)
   const verify = clean.calls[verifyIndex]
   assert.equal(verify.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
-  assert.ok(verify.bashCommandClamp.some(rule => rule.startsWith('Bash(node -e ')))
+  assert.ok(verify.bashCommandClamp.some(rule => /^Bash\(node '[^']*\/diff-digest\.cjs'/.test(rule)))
 
   const drifted = await runShip({ findingsPerLens: 0, gateMutationDiffDigest: 'b'.repeat(64) })
   assert.equal(drifted.result.halted, true)
@@ -1715,7 +1742,7 @@ test('post-Gate attestation requires the source diff to remain byte-identical', 
   const addedFileVerify = addedFileDrift.calls.find(call => call.phase === 'BuildVerify')
   assert.match(addedFileVerify.prompt, /including untracked additions/)
   assert.ok(addedFileVerify.bashCommandClamp.some(rule =>
-    rule.startsWith('Bash(node -e ') && rule.includes(Buffer.from(JSON.stringify(['src/new.ts'])).toString('base64'))))
+    /^Bash\(node '[^']*\/diff-digest\.cjs'/.test(rule) && rule.includes(Buffer.from(JSON.stringify(['src/new.ts'])).toString('base64'))))
   assert.equal(addedFileDrift.result.reason, 'post-Gate attestation failed')
 })
 
@@ -1727,17 +1754,17 @@ test('release verification receives read-only authority and never a deployment a
   assert.deepEqual(gateCall.allowedCommands, ['node --test'])
   assert.equal(gateCall.bashCommandClamp.length, 1)
   assert.match(gateCall.bashCommandClamp[0], /^Bash\(\/usr\/bin\/env TMPDIR='\/private\/tmp\/ship-test'/)
-  assert.match(gateCall.bashCommandClamp[0], /spawnSync\("\/usr\/bin\/sandbox-exec",\["-p",profile/)
-  assert.match(gateCall.bashCommandClamp[0], /deny network\*/)
+  assert.match(helperSource('gate-sandbox.cjs'), /spawnSync\("\/usr\/bin\/sandbox-exec",\["-p",profile/)
+  assert.match(helperSource('gate-sandbox.cjs'), /deny network\*/)
   assert.match(gateCall.bashCommandClamp[0], /\/tmp\/repo\.worktrees\/ship-test/)
   assert.doesNotMatch(gateCall.bashCommandClamp[0], /\/tmp\/repo\/\.git/)
-  assert.match(gateCall.bashCommandClamp[0], /--path-format=absolute.*--git-common-dir/)
+  assert.match(helperSource('gate-sandbox.cjs'), /--path-format=absolute.*--git-common-dir/)
   assert.match(gateCall.bashCommandClamp[0], /\/private\/tmp\/ship-test/)
-  assert.match(gateCall.bashCommandClamp[0], /\/var\/select/)
-  assert.match(gateCall.bashCommandClamp[0], /"\/bin\/sh","-c",payload/)
+  assert.match(helperSource('gate-sandbox.cjs'), /\/var\/select/)
+  assert.match(helperSource('gate-sandbox.cjs'), /"\/bin\/sh","-c",payload/)
   assert.match(gateCall.bashCommandClamp[0], /cd .*\/tmp\/repo\.worktrees\/ship-test.*&& node --test/)
-  assert.doesNotMatch(gateCall.bashCommandClamp[0], /\(subpath "\/private\/tmp"\)/)
-  assert.doesNotMatch(gateCall.bashCommandClamp[0], /\(subpath "\/private\/var\/folders"\)/)
+  assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/tmp"\)/)
+  assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/var\/folders"\)/)
   assert.deepEqual(gateCall.allowedWriteRoots, [])
   assert.equal(Object.hasOwn(gateCall, 'disallowedTools'), false)
   const releaseCalls = calls.filter(c => c.phase === 'Release')
@@ -1755,8 +1782,8 @@ test('Gate derives only selected module build roots and rejects source-tree wide
   })
   const gateCall = calls.find(call => call.phase === 'Gate')
   assert.deepEqual(gateCall.allowedWriteRoots, ['/tmp/repo.worktrees/ship-test/app/build'])
-  assert.match(gateCall.bashCommandClamp[0], /Gate extra-write roots failed validation/)
-  assert.match(gateCall.bashCommandClamp[0], /isSymbolicLink/)
+  assert.match(helperSource('gate-sandbox.cjs'), /Gate extra-write roots failed validation/)
+  assert.match(helperSource('gate-sandbox.cjs'), /isSymbolicLink/)
   assert.doesNotMatch(gateCall.bashCommandClamp[0], /\/src\/build/)
 
   const repeatedSrcFile = 'app/src/main/java/com/example/src/Feature.kt'
