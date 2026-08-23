@@ -23,6 +23,14 @@ repo has a deploy surface), `liveUrl` (the read-only production surface), and
 `vault` (the external decision/handoff context path). Their absence does not
 block a non-deploying repository, but do not silently discard known values.
 
+When the user names a model for the workers (`workerModel`: `sonnet`, `opus`,
+`haiku`, or `fable`), pass it — every worker call then runs on that model while
+orchestration stays on the session model. Omitted, workers inherit the session
+model silently; if the session sits on an expensive model and the user did not
+choose it for workers, say so before launch instead of letting the default
+decide. A run can spend up to 200 worker calls, so an unchosen inherited model
+is a cost decision nobody made.
+
 If repo or scope is missing, halt. Report the missing input in one line, offer
 to provide the repo path, describe the desired change, or route a one-file edit
 to direct implementation, then wait for the user's choice.
@@ -68,7 +76,7 @@ Invoke:
 ```js
 Workflow({
   scriptPath: "skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js",
-  args: { repo, scope, agentBudget, agentNamespace, deploys, liveUrl, vault }
+  args: { repo, scope, agentBudget, agentNamespace, workerModel, deploys, liveUrl, vault }
 })
 ```
 

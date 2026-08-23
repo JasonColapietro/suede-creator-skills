@@ -7,7 +7,7 @@
 export const meta = {
   name: 'suede-graph-flo-xr',
   description: 'Bounded Graph-of-Thoughts shipping search: Generate -> Score -> KeepBestN -> paired Refute -> Improve -> Aggregate -> Select -> winner-only Build -> Gate -> Handoff',
-  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, deploys?, liveUrl?, vault? }',
+  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, workerModel?, deploys?, liveUrl?, vault? }',
   phases: [
     { title: 'Scout', detail: 'fetch origin, dirty files, worktree, Vercel api/ landmines — manifest only' },
     { title: 'Research', detail: 'multi-modal sweep: code path, contracts, history, prior decisions, external docs' },
@@ -21,7 +21,7 @@ export const meta = {
   ],
 }
 
-// Workflow({ name: 'suede-graph-flo-xr', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
+// Workflow({ name: 'suede-graph-flo-xr', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', workerModel: 'sonnet', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
 // Falls back to: Workflow({ scriptPath: '~/.claude/workflows/suede-graph-flo-xr.js', args: {...} })
 
 // args can arrive as an object or as a JSON-encoded string depending on how the
@@ -111,6 +111,15 @@ if (!REPO || typeof SCOPE !== 'string' || !SCOPE.trim()) throw new Error(`Pass a
 if (rawLive !== undefined && rawLive !== null && !LIVE) throw new Error('args.liveUrl must be an http(s) URL without credentials or control characters')
 if (rawVault !== undefined && rawVault !== null && !VAULT) throw new Error('args.vault must be a shell-safe absolute path')
 const REPO_SHELL = shellQuote(REPO)
+// Workers inherit the session model unless the caller names one. A fan-out started while
+// the session sits on an expensive model bills the whole run to that allocation by default,
+// which is an accident rather than a decision. Naming the model here keeps orchestration on
+// the session model and puts every worker call on the chosen one.
+const rawWorkerModel = ownArg('workerModel')
+if (rawWorkerModel !== undefined && rawWorkerModel !== null && !['sonnet', 'opus', 'haiku', 'fable'].includes(rawWorkerModel)) {
+  throw new Error('args.workerModel must be one of sonnet, opus, haiku, fable when provided')
+}
+const WORKER_MODEL = rawWorkerModel || null
 const rawAgentNamespace = ownArg('agentNamespace')
 if (typeof rawAgentNamespace !== 'string' || !['', 'suede-skills', 'suede-agent-workflows'].includes(rawAgentNamespace)) {
   throw new Error('args.agentNamespace must be "", suede-skills, or suede-agent-workflows')
@@ -600,6 +609,7 @@ const budgetSnapshot = () => ({ name: BUDGET_NAME, projected: ceiling, ceiling, 
 graph.budget = budgetSnapshot()
 const evidence = {
   agentBudget: BUDGET_NAME,
+  workerModel: WORKER_MODEL,
   runKey: null,
   selectedPlan: null,
   scoreReliability: null,
@@ -659,7 +669,7 @@ const callAgent = async (prompt, options = {}) => {
   graph.callLedger.push(record)
   let result
   try {
-    result = await agent(prompt, { ...agentOptions, callId })
+    result = await agent(prompt, { ...(WORKER_MODEL ? { model: WORKER_MODEL } : {}), ...agentOptions, callId })
   } catch (error) {
     record.status = 'failed'
     record.error = { message: error.message, code: error.code || null }

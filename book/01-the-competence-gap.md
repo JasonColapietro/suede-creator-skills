@@ -101,7 +101,7 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 71 skills fit
 
 Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,034,705 bytes. Loading all of them into every conversation would
+repo total 1,035,223 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
