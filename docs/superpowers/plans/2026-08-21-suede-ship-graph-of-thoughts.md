@@ -1,23 +1,23 @@
-# Suede Ship Graph-of-Thoughts Implementation Plan
+# Suede Graph Flo XR Graph-of-Thoughts Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace `suede-ship`'s fixed single-plan DAG with a bounded Graph-of-Thoughts search that branches, scores, prunes, adversarially improves, aggregates, and selects a safe plan before any source mutation.
+**Goal:** Replace `suede-graph-flo-xr`'s fixed single-plan DAG with a bounded Graph-of-Thoughts search that branches, scores, prunes, adversarially improves, aggregates, and selects a safe plan before any source mutation.
 
 **Architecture:** Keep the workflow as one self-executing JavaScript file so its injected-global runner ABI remains intact. Adapt ETH Zurich's `Thought`, operation graph, readiness scheduler, `Generate`, `Score`, `KeepBestN`, `Improve`, and `Aggregate` concepts; add Suede `Refute`, deterministic plan validation, a total-call ledger, and winner-only mutation. Exercise the real workflow through its existing `AsyncFunction` harness rather than exposing test-only production APIs.
 
 **Tech Stack:** Node.js 22, JavaScript workflow scripts, `node:test`, JSON schemas, Markdown/HTML skill catalog, repository validation scripts.
 
-**Spec:** `docs/superpowers/specs/2026-08-21-suede-ship-graph-of-thoughts-design.md`
+**Spec:** `docs/superpowers/specs/2026-08-21-suede-graph-flo-xr-graph-of-thoughts-design.md`
 
 ## Global Constraints
 
-- Work only in the isolated task worktree on `codex/suede-ship-got-20260821`, based on `origin/main` at `b4d5970`.
+- Work only in the isolated task worktree on `codex/suede-graph-flo-xr-got-20260821`, based on `origin/main` at `b4d5970`.
 - Preserve the dirty sibling worktree for the setup task without reading, resetting, deleting, or reusing it.
 - Keep the workflow runner ABI: injected `args`, `agent`, `parallel`, `pipeline`, `phase`, `log`, `budget`, and `workflow` globals; no Python runtime and no new package dependency.
 - Preserve the invocation arguments `repo`, `scope`, `deploys`, `liveUrl`, `agentBudget`, and `vault`; add required `agentNamespace` because the Workflow VM exposes no Node `process` global for package discovery.
 - Support the bundled runner only in Claude Code on macOS with `sandbox-exec`
-  and registered Suede Ship agent profiles. Probe `sandbox-exec` as Scout's
+  and registered Suede Graph Flo XR agent profiles. Probe `sandbox-exec` as Scout's
   first subprocess, before fetch or worktree creation; Codex and generic skill
   installs retain the orchestration contract only.
 - Search remains read-only; only the selected plan can reach Build or mutate source.
@@ -64,7 +64,7 @@ of calling the run host-certified.
 
 **Files:**
 - Modify: `tests/test_ship_workflow_cost.mjs`
-- Modify: `skills/suede-ship/workflows/suede-ship.js`
+- Modify: `skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js`
 
 **Interfaces:**
 - Consumes: the current workflow `AsyncFunction` harness and injected agent runtime.
@@ -206,7 +206,7 @@ Run:
 
 ```bash
 node --test tests/test_ship_workflow_cost.mjs
-node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 ```
 
 Expected: all Task 1 behavior tests pass and syntax check exits 0.
@@ -214,7 +214,7 @@ Expected: all Task 1 behavior tests pass and syntax check exits 0.
 - [ ] **Step 6: Commit the independently working search core**
 
 ```bash
-git add tests/test_ship_workflow_cost.mjs skills/suede-ship/workflows/suede-ship.js
+git add tests/test_ship_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js
 git commit -m "feat: add suede ship thought graph core"
 ```
 
@@ -224,7 +224,7 @@ git commit -m "feat: add suede ship thought graph core"
 
 **Files:**
 - Modify: `tests/test_ship_workflow_cost.mjs`
-- Modify: `skills/suede-ship/workflows/suede-ship.js`
+- Modify: `skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js`
 
 **Interfaces:**
 - Consumes: Task 1 operation graph and scored candidate thoughts.
@@ -321,7 +321,7 @@ Run two distinct adversary prompts per kept candidate. Pass `authority: 'read-on
 
 ```bash
 node --test tests/test_ship_workflow_cost.mjs
-node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 ```
 
 Expected: all graph and existing workflow behaviors pass.
@@ -329,7 +329,7 @@ Expected: all graph and existing workflow behaviors pass.
 - [ ] **Step 6: Commit the adversarial convergence path**
 
 ```bash
-git add tests/test_ship_workflow_cost.mjs skills/suede-ship/workflows/suede-ship.js
+git add tests/test_ship_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js
 git commit -m "feat: select plans through adversarial graph search"
 ```
 
@@ -339,7 +339,7 @@ git commit -m "feat: select plans through adversarial graph search"
 
 **Files:**
 - Modify: `tests/test_ship_workflow_cost.mjs`
-- Modify: `skills/suede-ship/workflows/suede-ship.js`
+- Modify: `skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js`
 
 **Interfaces:**
 - Consumes: selected thought and existing Scout/Build/Review/Gate/Release flow.
@@ -451,7 +451,7 @@ Expected: all ship and ship-copy cost tests pass; no stale `~115` comment remain
 - [ ] **Step 5: Commit the bounded safety and evidence contract**
 
 ```bash
-git add tests/test_ship_workflow_cost.mjs skills/suede-ship/workflows/suede-ship.js
+git add tests/test_ship_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js
 git commit -m "test: enforce graph search safety and budgets"
 ```
 
@@ -460,8 +460,8 @@ git commit -m "test: enforce graph search safety and budgets"
 ### Task 4: Skill contract, trigger routing, catalog metadata, and upstream licensing
 
 **Files:**
-- Modify: `skills/suede-ship/SKILL.md`
-- Modify: `skills/suede-ship/agents/openai.yaml`
+- Modify: `skills/suede-graph-flo-xr/SKILL.md`
+- Modify: `skills/suede-graph-flo-xr/agents/openai.yaml`
 - Modify: `mcp/catalog.json`
 - Modify: `tests/fixtures/trigger-routing.json`
 - Modify: `NOTICE.md`
@@ -478,17 +478,17 @@ Add cases that distinguish graph search from nearby skills:
 
 ```json
 {
-  "id": "suede-ship-graph-positive",
+  "id": "suede-graph-flo-xr-graph-positive",
   "mode": "positive",
   "prompt": "Search several implementation plans, score and prune them, have adversarial agents attack the survivors, aggregate the best lanes, then build and gate the winner.",
-  "expected": "suede-ship"
+  "expected": "suede-graph-flo-xr"
 },
 {
-  "id": "suede-ship-findings-negative",
+  "id": "suede-graph-flo-xr-findings-negative",
   "mode": "negative",
   "prompt": "Review this existing diff and report findings, but do not change code.",
   "expected": "suede-code-review",
-  "forbidden": ["suede-ship"]
+  "forbidden": ["suede-graph-flo-xr"]
 }
 ```
 
@@ -500,10 +500,10 @@ Keep frontmatter trigger-only and move operation details into the body. The desc
 
 - ask for missing repo/scope and the `light|standard|deep` budget;
 - state exact ceilings `55|110|200` before launch;
-- route to `workflows/suede-ship.js`;
+- route to `workflows/suede-graph-flo-xr.js`;
 - describe Generate, Score, KeepBestN, Refute, Improve, Aggregate, Select, and winner-only mutation;
 - preserve halt and deployment boundaries;
-- require writing `.suede-ship/${runKey}/handoff.md`, where `runKey` is the workflow's returned validated `ship-<UUID>` worktree leaf;
+- require writing `.suede-graph-flo-xr/${runKey}/handoff.md`, where `runKey` is the workflow's returned validated `ship-<UUID>` worktree leaf;
 - route bulk work to `suede-codex-fleet`, findings-only review to `suede-code-review`, CI wiring to `suede-ci-gate`, and copy to `suede-ship-copy`.
 
 Update `agents/openai.yaml` and the `mcp/catalog.json` description/default prompt with the same contract and no stale “roughly fifty” claim.
@@ -526,7 +526,7 @@ Add this header at the top of the adapted workflow:
 ```bash
 npm run test:triggers
 node scripts/validate-skill-pack.mjs --strict
-python3 ~/.agents/skills/suede-skill-forge/scripts/lint_skill_estate.py skills/suede-ship
+python3 ~/.agents/skills/suede-skill-forge/scripts/lint_skill_estate.py skills/suede-graph-flo-xr
 git diff --check
 ```
 
@@ -535,7 +535,7 @@ Expected: trigger cases route correctly, strict validation exits 0, the skill li
 - [ ] **Step 5: Commit the public skill and license contract**
 
 ```bash
-git add skills/suede-ship mcp/catalog.json tests/fixtures/trigger-routing.json NOTICE.md licenses/graph-of-thoughts-BSD.txt COPY.md
+git add skills/suede-graph-flo-xr mcp/catalog.json tests/fixtures/trigger-routing.json NOTICE.md licenses/graph-of-thoughts-BSD.txt COPY.md
 git commit -m "docs: redefine suede ship as graph search"
 ```
 
@@ -549,7 +549,7 @@ git commit -m "docs: redefine suede ship as graph search"
 - Modify: `book/05-lanes-fleets-and-collisions.md`
 - Modify: `book/06-evidence-or-it-didnt-ship.md`
 - Modify: `book/A1-skill-index.md`
-- Modify: `docs/skills/suede-ship.html`
+- Modify: `docs/skills/suede-graph-flo-xr.html`
 - Modify: `docs/skills/suede-ship-copy.html`
 - Modify: `docs/skills/index.html`
 - Modify: `docs/llms.txt`
@@ -574,7 +574,7 @@ git commit -m "docs: redefine suede ship as graph search"
 
 - [ ] **Step 1: Replace current-architecture claims without rewriting history**
 
-Every current description must say that `suede-ship` searches multiple plans and mutates only the winner. Replace old fixed-DAG and “roughly fifty agents” claims with the exact range:
+Every current description must say that `suede-graph-flo-xr` searches multiple plans and mutates only the winner. Replace old fixed-DAG and “roughly fifty agents” claims with the exact range:
 
 ```text
 Graph-of-Thoughts shipping search: generate competing plans, score and prune them,
@@ -586,7 +586,7 @@ Leave historical changelog entries about the earlier DAG intact. Add a new 2026-
 
 - [ ] **Step 2: Update the public skill page and related cross-references**
 
-Revise metadata, JSON-LD description, terminal demo, architecture bullets, prompt example, cost disclosure, and no-deploy boundary in `docs/skills/suede-ship.html`. In `docs/skills/suede-ship-copy.html`, change only current cross-references that incorrectly call it “the same graph”; do not redesign the copy skill.
+Revise metadata, JSON-LD description, terminal demo, architecture bullets, prompt example, cost disclosure, and no-deploy boundary in `docs/skills/suede-graph-flo-xr.html`. In `docs/skills/suede-ship-copy.html`, change only current cross-references that incorrectly call it “the same graph”; do not redesign the copy skill.
 
 - [ ] **Step 3: Bump every pack version to `0.15.0`**
 
@@ -616,7 +616,7 @@ git commit -m "docs: publish suede ship graph search contract"
 ### Task 6: Full verification and durable handoff
 
 **Files:**
-- Create: `<memory-vault>/05_handoffs/2026-08-21-codex-suede-ship-graph-of-thoughts.md`
+- Create: `<memory-vault>/05_handoffs/2026-08-21-codex-suede-graph-flo-xr-graph-of-thoughts.md`
 
 **Interfaces:**
 - Consumes: the complete branch diff.
@@ -633,7 +633,7 @@ Expected: exit 0 with the lockfile unchanged.
 - [ ] **Step 2: Run focused workflow, routing, MCP, and syntax checks**
 
 ```bash
-node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-ship/workflows/suede-ship.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
+node -e "const fs=require('node:fs'); const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor; const source=fs.readFileSync('skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js','utf8').replace('export const meta','const meta'); new AsyncFunction('agent','parallel','pipeline','phase','log','args','budget','workflow',source); console.log('AsyncFunction parse OK')"
 npm run test:ship-cost
 npm run test:triggers
 npm run test:mcp
@@ -657,14 +657,14 @@ Expected: all commands exit 0. If one fails, record the exact failure and repair
 ```bash
 sandbox_root="$(mktemp -d /tmp/suede-skills-install.XXXXXX)"
 env HOME="$sandbox_root" bash install.sh
-test -f "$sandbox_root/.claude/skills/suede-ship/SKILL.md"
-test -f "$sandbox_root/.claude/skills/suede-ship/workflows/suede-ship.js"
-test -f "$sandbox_root/.claude/agents/suede-ship-scout.md"
-test -f "$sandbox_root/.claude/agents/suede-ship-code-reader.md"
-test -f "$sandbox_root/.claude/agents/suede-ship-web-reader.md"
-test -f "$sandbox_root/.claude/agents/suede-ship-patch-author.md"
-test -f "$sandbox_root/.claude/agents/suede-ship-applier.md"
-test -f "$sandbox_root/.claude/agents/suede-ship-verifier.md"
+test -f "$sandbox_root/.claude/skills/suede-graph-flo-xr/SKILL.md"
+test -f "$sandbox_root/.claude/skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-scout.md"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-code-reader.md"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-web-reader.md"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-patch-author.md"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-applier.md"
+test -f "$sandbox_root/.claude/agents/suede-graph-flo-xr-verifier.md"
 ```
 
 Expected: installer exits 0, both skill files exist, and all six bare user-agent
@@ -686,11 +686,11 @@ Check every design-spec verification bullet against a test result or diff locati
 The handoff must record:
 
 ```markdown
-# Suede Ship Graph-of-Thoughts Rewrite
+# Suede Graph Flo XR Graph-of-Thoughts Rewrite
 
 - Target: repository root
 - Worktree: isolated task worktree
-- Branch: codex/suede-ship-got-20260821
+- Branch: codex/suede-graph-flo-xr-got-20260821
 - Remote: https://github.com/JasonColapietro/suede-creator-skills.git
 - Base: origin/main at b4d5970
 - Files changed: summarize every path printed by `git diff --name-status origin/main...HEAD`, grouped by runtime, tests, skill contract, licensing, and public docs

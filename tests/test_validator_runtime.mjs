@@ -259,14 +259,14 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
 
 test("packaged validation requires the exact traveling Graph of Thoughts BSD license", (t) => {
   const missingRoot = createPackagedFixture(t, "suede-validator-got-license-missing-");
-  const travelingPath = path.join(missingRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  const travelingPath = path.join(missingRoot, "skills", "suede-graph-flo-xr", "LICENSE.graph-of-thoughts-BSD.txt");
   fs.rmSync(travelingPath, { force: true });
   const missing = runValidator(missingRoot);
   assert.notEqual(missing.status, 0, `${missing.stdout}\n${missing.stderr}`);
   assert.match(missing.stderr, /traveling Graph of Thoughts BSD license is missing/);
 
   const driftRoot = createPackagedFixture(t, "suede-validator-got-license-drift-");
-  const driftPath = path.join(driftRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  const driftPath = path.join(driftRoot, "skills", "suede-graph-flo-xr", "LICENSE.graph-of-thoughts-BSD.txt");
   fs.mkdirSync(path.dirname(driftPath), { recursive: true });
   fs.writeFileSync(driftPath, "truncated license fixture\n");
   const drift = runValidator(driftRoot);
@@ -404,7 +404,7 @@ test("packaged validation rejects stale or replaced book PDF bytes", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-book-pdf-");
   fs.appendFileSync(path.join(packagedRoot, "docs", "book", "s-tier.pdf"), "stale-pdf-fixture");
   fs.appendFileSync(path.join(packagedRoot, "scripts", "build-book-pdf.mjs"), "\n// stale-input-fixture\n");
-  fs.appendFileSync(path.join(packagedRoot, "skills", "suede-ship", "SKILL.md"), "\nStale corpus fixture.\n");
+  fs.appendFileSync(path.join(packagedRoot, "skills", "suede-graph-flo-xr", "SKILL.md"), "\nStale corpus fixture.\n");
 
   const validation = runValidator(packagedRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;

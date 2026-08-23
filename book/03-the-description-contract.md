@@ -61,7 +61,7 @@ Forty-eight of the 71 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
-`suede-ship` refuses three specific neighbors: high-volume work that splits into
+`suede-graph-flo-xr` refuses three specific neighbors: high-volume work that splits into
 independent worker tasks goes to `suede-codex-fleet`, findings-only review with
 no code change goes to `suede-code-review`, and CI and branch-protection wiring
 goes to `suede-ci-gate`. Read that as a routing table written from the point of
@@ -100,7 +100,7 @@ Two costs follow, and they are asymmetric.
 
 A description that oversells gets the skill loaded for work it cannot do. The
 skill fires, the body loads, the agent starts executing a procedure built for a
-different shape of problem, and it produces something. `suede-ship` running
+different shape of problem, and it produces something. `suede-graph-flo-xr` running
 against a one-line typo fix will happily scout, research across multiple lenses,
 plan lanes, and gate the release. You burn real time and real context, and at the
 end you have a correct one-line fix wrapped in ceremony. The failure is expensive

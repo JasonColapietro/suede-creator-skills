@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs all skills into ~/.claude/skills/ and Suede Ship's fixed agent
+# Installs all skills into ~/.claude/skills/ and Suede Graph Flo XR's fixed agent
 # profiles into ~/.claude/agents/.
 # Syncs each pack skill folder exactly; skills in the target that are not part
 # of this pack (personal skills, other packs) are never touched or deleted.
@@ -32,11 +32,11 @@ done
 echo "Installed $count skills to $TARGET (non-pack skills left untouched)"
 
 agent_count=0
-for agent_file in "$AGENTS_DIR"/suede-ship-*.md; do
+for agent_file in "$AGENTS_DIR"/suede-graph-flo-xr-*.md; do
   rsync -a "$agent_file" "$AGENT_TARGET/$(basename "$agent_file")"
   agent_count=$((agent_count + 1))
 done
-echo "Installed $agent_count Suede Ship agent profiles to $AGENT_TARGET (other agents left untouched)"
+echo "Installed $agent_count Suede Graph Flo XR agent profiles to $AGENT_TARGET (other agents left untouched)"
 
 MARKETPLACE_CLONE="$HOME/.claude/plugins/marketplaces/suede"
 if [ -e "$MARKETPLACE_CLONE/.git" ]; then

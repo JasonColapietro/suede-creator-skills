@@ -5,9 +5,9 @@
 // Suede Refute, safety, authority, scoring, and shipping topology are original additions.
 
 export const meta = {
-  name: 'suede-ship',
+  name: 'suede-graph-flo-xr',
   description: 'Bounded Graph-of-Thoughts shipping search: Generate -> Score -> KeepBestN -> paired Refute -> Improve -> Aggregate -> Select -> winner-only Build -> Gate -> Handoff',
-  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Ship agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, deploys?, liveUrl?, vault? }',
+  whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, deploys?, liveUrl?, vault? }',
   phases: [
     { title: 'Scout', detail: 'fetch origin, dirty files, worktree, Vercel api/ landmines — manifest only' },
     { title: 'Research', detail: 'multi-modal sweep: code path, contracts, history, prior decisions, external docs' },
@@ -21,8 +21,8 @@ export const meta = {
   ],
 }
 
-// Workflow({ name: 'suede-ship', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
-// Falls back to: Workflow({ scriptPath: '~/.claude/workflows/suede-ship.js', args: {...} })
+// Workflow({ name: 'suede-graph-flo-xr', args: { repo: '/absolute/path/to/my-app', scope: '...', agentBudget: 'standard', agentNamespace: 'suede-skills', deploys: true, liveUrl: 'https://example.com', vault: '/path/to/context' } })
+// Falls back to: Workflow({ scriptPath: '~/.claude/workflows/suede-graph-flo-xr.js', args: {...} })
 
 // args can arrive as an object or as a JSON-encoded string depending on how the
 // caller serialized it. Accept both — a stringified arg blob is otherwise an
@@ -120,12 +120,12 @@ if (typeof rawAgentNamespace !== 'string' || !['', 'suede-skills', 'suede-agent-
 // focused plugin, or bare user-agent namespace explicitly through workflow args.
 const AGENT_NAMESPACE = rawAgentNamespace || null
 const agentTypeName = name => AGENT_NAMESPACE ? `${AGENT_NAMESPACE}:${name}` : name
-const SCOUT_AGENT = agentTypeName('suede-ship-scout')
-const CODE_READER_AGENT = agentTypeName('suede-ship-code-reader')
-const WEB_READER_AGENT = agentTypeName('suede-ship-web-reader')
-const PATCH_AUTHOR_AGENT = agentTypeName('suede-ship-patch-author')
-const PATCH_APPLIER_AGENT = agentTypeName('suede-ship-applier')
-const VERIFIER_AGENT = agentTypeName('suede-ship-verifier')
+const SCOUT_AGENT = agentTypeName('suede-graph-flo-xr-scout')
+const CODE_READER_AGENT = agentTypeName('suede-graph-flo-xr-code-reader')
+const WEB_READER_AGENT = agentTypeName('suede-graph-flo-xr-web-reader')
+const PATCH_AUTHOR_AGENT = agentTypeName('suede-graph-flo-xr-patch-author')
+const PATCH_APPLIER_AGENT = agentTypeName('suede-graph-flo-xr-applier')
+const VERIFIER_AGENT = agentTypeName('suede-graph-flo-xr-verifier')
 
 // ---------------------------------------------------------------- schemas
 // Scout returns a MANIFEST, never file contents. This is the single biggest
@@ -593,7 +593,7 @@ if (hasSuppliedCeiling && (!Number.isFinite(suppliedCeiling) || !Number.isIntege
 const ceiling = hasSuppliedCeiling
   ? Math.min(BUDGET.totalAgentCeiling, suppliedCeiling)
   : BUDGET.totalAgentCeiling
-const graph = { operations: [], thoughts: [], pruned: [], dropped: [], winnerId: null, budget: null, callLedger: [], topology: null }
+const graph = { operations: [], thoughts: [], pruned: [], dropped: [], winnerId: null, budget: null, callLedger: [], topology: null, scoreRetries: { used: 0, cap: null, floor: null, attempts: [] } }
 const operations = []
 let agentCalls = 0
 const budgetSnapshot = () => ({ name: BUDGET_NAME, projected: ceiling, ceiling, used: agentCalls, remaining: ceiling - agentCalls })
@@ -602,6 +602,7 @@ const evidence = {
   agentBudget: BUDGET_NAME,
   runKey: null,
   selectedPlan: null,
+  scoreReliability: null,
   worktree: null,
   baseSha: null,
   lanes: [],
@@ -636,7 +637,13 @@ const evidence = {
   mutationAudit: 'Patch headers, file types, normalized identities, and changed paths are validated against canonical allowlists. Every Apply reserves and runs an immediate diff attestation before any reader. Exact Bash clamps constrain calls when invoked; structured responses remain model attestations, not host-certified receipts.',
 }
 let winnerMutationAttempted = false
+// The harness does not always throw when a subagent dies. On a terminal transport error
+// it resolves agent() with null, and this ledger recorded that as 'complete' — a dead
+// worker was indistinguishable from a healthy one that had nothing to say. Every empty
+// result is now stamped 'empty', and a caller that cannot proceed on nothing passes
+// requireResult so the death arrives as a typed error its own catch can see.
 const callAgent = async (prompt, options = {}) => {
+  const { requireResult = false, ...agentOptions } = options
   if (agentCalls >= ceiling) {
     throw Object.assign(new Error('agent budget exhausted'), {
       code: 'AGENT_BUDGET_EXHAUSTED',
@@ -650,15 +657,56 @@ const callAgent = async (prompt, options = {}) => {
   const callId = `call-${agentCalls}`
   const record = { id: callId, phase: options.phase || 'unknown', label: options.label || null, authority: options.authority || null, before, after: budgetSnapshot(), status: 'running' }
   graph.callLedger.push(record)
+  let result
   try {
-    const result = await agent(prompt, { ...options, callId })
-    record.status = 'complete'
-    return result
+    result = await agent(prompt, { ...agentOptions, callId })
   } catch (error) {
     record.status = 'failed'
     record.error = { message: error.message, code: error.code || null }
     throw error
   }
+  const empty = result === null || result === undefined
+  record.status = empty ? 'empty' : 'complete'
+  if (empty && requireResult) {
+    const error = Object.assign(new Error('agent returned no result (terminal transport failure)'), {
+      code: 'AGENT_EMPTY_RESULT',
+      operation: options.phase || 'unknown',
+      inputs: { label: options.label || null },
+    })
+    record.error = { message: error.message, code: error.code }
+    throw error
+  }
+  return result
+}
+// A Score call is read-only and idempotent, so repeating one is safe; losing one is not.
+// Run wf_c67e116f-f61 lost two of three Improve candidates to "Connection lost
+// mid-response" with 160 of 200 calls unspent. Neither loss was recorded anywhere: the
+// null result scored as no score, KeepBestN pruned the candidate as unscored, Aggregate
+// went under its two-survivor minimum and emitted nothing, and Select was left with one
+// candidate. Retries are bounded three ways so a real outage cannot eat the run —
+// attempts per call, a run-wide cap, and a floor of budget reserved for the phases after
+// the search. Only Score retries: it is the one agent here with no side effects.
+const SCORE_RETRY = Object.freeze({
+  attempts: 2,
+  cap: Math.max(2, Math.ceil(ceiling * 0.05)),
+  floor: Math.max(6, Math.ceil(ceiling * 0.2)),
+})
+// Deliberately liberal. A false positive costs one extra read-only call; a false negative
+// costs a finalist, which is what happened.
+const TRANSIENT_AGENT_ERROR = /connection (lost|reset|closed|refused)|api error|network|socket hang ?up|econnreset|etimedout|timed ?out|stream (error|closed|interrupted)|overloaded|internal server error|bad gateway|service unavailable|gateway timeout|server_error|\b(429|500|502|503|504)\b/i
+const isTransientAgentFailure = error => {
+  if (!error || error.code === 'AGENT_BUDGET_EXHAUSTED') return false
+  if (error.code === 'AGENT_EMPTY_RESULT') return true
+  return TRANSIENT_AGENT_ERROR.test(String(error.message || ''))
+}
+graph.scoreRetries.cap = SCORE_RETRY.cap
+graph.scoreRetries.floor = SCORE_RETRY.floor
+const recordScoreAttempt = (label, attempt, error, outcome) => {
+  graph.scoreRetries.attempts.push({
+    label, attempt, outcome,
+    error: error ? { message: error.message, code: error.code || null } : null,
+    budgetRemaining: ceiling - agentCalls,
+  })
 }
 const reserveBatch = (count, phase, labels = []) => {
   if (agentCalls + count > ceiling) {
@@ -1456,7 +1504,7 @@ const makeKeepBestN = operationId => async ({ inputThoughts }) => {
   graph.pruned.push(...outputs.filter(thought => thought.status === 'pruned'))
   return outputs
 }
-const scorePlan = (plan, label) => callAgent(
+const scorePlanOnce = (plan, label) => callAgent(
   `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 You are a SCORER. Do not edit source, run mutation commands, or make external changes.
 
@@ -1464,8 +1512,31 @@ Score this candidate plan against scope coverage, evidence quality, implementati
 safety and reversibility, and efficiency. Return five 0-20 dimensions, total 0-100, and rationale.
 Scope: ${SCOPE}
 Candidate: ${JSON.stringify(plan)}`,
-  { label, phase: 'Score', schema: PLAN_SCORE, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT }
+  { label, phase: 'Score', schema: PLAN_SCORE, effort: 'medium', authority: 'read-only', agentType: CODE_READER_AGENT, requireResult: true }
 )
+
+// Retries transport deaths only. A malformed score is never retried — the schema is
+// enforced at the tool layer, so a score that comes back invalid is a judgment this run
+// should keep, not a connection to redial. Every attempt, and every reason a retry was
+// refused, lands in graph.scoreRetries whether or not the run goes on to halt.
+const scorePlan = async (plan, label) => {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      const score = await scorePlanOnce(plan, label)
+      if (attempt > 1) recordScoreAttempt(label, attempt, null, 'recovered')
+      return score
+    } catch (error) {
+      if (error.code === 'AGENT_BUDGET_EXHAUSTED') throw error
+      if (!isTransientAgentFailure(error)) { recordScoreAttempt(label, attempt, error, 'not-transient'); throw error }
+      if (attempt > SCORE_RETRY.attempts) { recordScoreAttempt(label, attempt, error, 'attempts-exhausted'); throw error }
+      if (graph.scoreRetries.used >= SCORE_RETRY.cap) { recordScoreAttempt(label, attempt, error, 'run-retry-cap-reached'); throw error }
+      if (ceiling - agentCalls <= SCORE_RETRY.floor) { recordScoreAttempt(label, attempt, error, 'reserved-budget-floor'); throw error }
+      graph.scoreRetries.used += 1
+      recordScoreAttempt(label, attempt, error, 'retried')
+      log(`${label} lost its scorer to a transport failure (${error.message}); retrying — run retries ${graph.scoreRetries.used}/${SCORE_RETRY.cap}, ${ceiling - agentCalls} calls left`)
+    }
+  }
+}
 
 addOperation(operations, createOperation({
   id: 'generate-plans',
@@ -1874,8 +1945,81 @@ if (JSON.stringify(runtimeTopology) !== JSON.stringify(topologyBlueprint)) throw
 await executeOperationGraph(operations, graph)
 
 const selectedThought = graph.thoughts.find(thought => thought.id === graph.winnerId && thought.status === 'selected')
+
+// Score reliability is reported on every run, not only a halted one: a flake that costs
+// two of three finalists still degrades a run that goes on to ship, and the operator
+// should not have to infer it from a thought count.
+const scoreAgentFailures = graph.dropped.filter(entry =>
+  entry.operation === OPERATION_TYPES.Score && entry.reason === 'candidate agent failure')
+evidence.scoreReliability = {
+  degraded: scoreAgentFailures.length > 0,
+  unrecoveredFailures: scoreAgentFailures.length,
+  retriesUsed: graph.scoreRetries.used,
+  retryCap: SCORE_RETRY.cap,
+  reservedFloor: SCORE_RETRY.floor,
+  attempts: graph.scoreRetries.attempts,
+}
+
 if (!selectedThought || !validPlan(selectedThought.state.plan) || !validScore(selectedThought.score)) {
-  return { halted: true, reason: 'no safe graph winner', graph, ...evidence }
+  // "no safe graph winner" used to cover every way the search could come back empty, so a
+  // transport flake and a genuine evidence conflict printed the same line and the operator
+  // had to hand-parse a multi-megabyte graph to tell them apart. These branches only name
+  // what happened. None of them makes Select more willing to pick: a plan that fails
+  // deterministic eligibility still loses, and refusing on a real contradiction is correct.
+  const consideredBySelect = thought =>
+    (thought.operationId === 'score-aggregate' && thought.status === 'active') ||
+    (thought.operationId === survivorOperationId && thought.status === 'kept')
+  const selectOperation = graph.operations.find(operation => operation.id === 'select-plan')
+  const selectInputs = (selectOperation ? selectOperation.inputThoughtIds : [])
+    .map(id => graph.thoughts.find(thought => thought.id === id)).filter(Boolean)
+  const considered = selectInputs.filter(consideredBySelect)
+  const withheld = selectInputs.filter(thought => !consideredBySelect(thought))
+  const lostItsScore = thought => thought.status === 'failed' ||
+    (thought.state && thought.state.pruning === 'candidate has no valid score')
+  const withheldForScore = withheld.filter(lostItsScore)
+  const unscoredFinalists = considered.filter(thought => !validScore(thought.score))
+  const eligibilityRejections = [...new Set(graph.dropped
+    .filter(entry => entry.operation === OPERATION_TYPES.Select)
+    .map(entry => entry.reason))]
+  // Ordered most-specific first. The collapse can happen well upstream of Select — if
+  // every scorer in the run died, Select is starved and "no candidate reached Select" is
+  // true but useless, because it names the symptom two stages downstream of the cause.
+  const everScored = graph.thoughts.some(thought => validScore(thought.score))
+  const reason = scoreAgentFailures.length > 0 && !everScored
+    ? 'every candidate lost its score to an agent failure'
+    : selectInputs.length === 0
+      ? 'no candidate reached Select'
+      : considered.length === 0
+        ? (withheld.length > 0 && withheldForScore.length === withheld.length
+          ? 'every finalist lost its score before Select'
+          : 'every finalist was pruned before Select')
+        : considered.length === unscoredFinalists.length
+          ? 'every finalist carries a degraded or missing score'
+          : eligibilityRejections.length
+            ? 'every finalist failed deterministic plan eligibility'
+            : 'no safe graph winner'
+  return {
+    halted: true,
+    reason,
+    haltDetail: {
+      stage: 'Select',
+      finalistsReachingSelect: selectInputs.length,
+      finalistsConsidered: considered.length,
+      finalistsWithheldBeforeSelect: withheld.length,
+      finalistsWithheldForMissingScore: withheldForScore.length,
+      consideredWithoutValidScore: unscoredFinalists.length,
+      eligibilityRejections,
+      scoreAgentFailures: scoreAgentFailures.length,
+      scoreRetriesUsed: graph.scoreRetries.used,
+      budgetRemaining: ceiling - agentCalls,
+      // Both can be true at once, as they were in wf_c67e116f-f61. Read them together:
+      // the reason above names what stopped Select, and this names what degraded the pool
+      // feeding it.
+      infrastructureDegraded: scoreAgentFailures.length > 0,
+    },
+    graph,
+    ...evidence,
+  }
 }
 const plan = selectedThought.state.plan
 const selectedPlan = plan

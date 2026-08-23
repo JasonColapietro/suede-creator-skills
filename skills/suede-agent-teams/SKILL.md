@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: "Suede Labs agent-team orchestrator: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-ship); findings-only review of a diff (use suede-code-review) or an A-F ship grade (use suede-code-grader); CI, branch protection, or merge-gate wiring (use suede-ci-gate); branch and worktree setup on a stale mirror (a private Suede Labs companion, not in this pack)."
+description: "Suede Labs agent-team orchestrator: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); findings-only review of a diff (use suede-code-review) or an A-F ship grade (use suede-code-grader); CI, branch protection, or merge-gate wiring (use suede-ci-gate); branch and worktree setup on a stale mirror (a private Suede Labs companion, not in this pack)."
 ---
 
 # Agent Team Orchestrator
@@ -411,10 +411,10 @@ Cue Suede:
 ## Routing
 
 - The work is one repo's change and a bundled DAG can run it end to end →
-  **suede-ship**. Precedence: one repo, one change, research-through-release in a
+  **suede-graph-flo-xr**. Precedence: one repo, one change, research-through-release in a
   single scripted run goes there; orchestration that is manual, ongoing, cross-repo,
   or a public-contribution program stays here. A single lane inside a program here
-  that needs the full research-and-refute treatment can be handed to **suede-ship**
+  that needs the full research-and-refute treatment can be handed to **suede-graph-flo-xr**
   for that lane alone.
 - A recurring owned/public-repository contribution program needs issue leases,
   isolated worktrees, review, and an authority-gated packet → read

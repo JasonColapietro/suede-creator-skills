@@ -278,7 +278,7 @@ const printHtml = `<!doctype html>
       <p>Every claim in this book points at a file in a public repository. Checking claims is most of what the book argues for, so the citations are paths rather than footnotes: open the repo and read the skill.</p>
       <p>The prose was written against the same anti-slop rules the pack enforces, which is why it contains no em dashes. Quoted repo material keeps its own punctuation.</p>
       <p>Thirty-eight of the marketing and growth skills referenced here are adapted from <b>marketingskills</b> by Corey Haines under the MIT Licence. That project is the origin of the material and the credit belongs there.</p>
-      <p>The <b>suede-ship</b> operation graph and thought-state model adapt Graph of Thoughts by ETH Zurich: Maciej Besta et al. (2024), <i>Graph of Thoughts: Solving Elaborate Problems with Large Language Models</i>, AAAI 38(16), 17682-17690, doi:10.1609/aaai.v38i16.29720.</p>
+      <p>The <b>suede-graph-flo-xr</b> operation graph and thought-state model adapt Graph of Thoughts by ETH Zurich: Maciej Besta et al. (2024), <i>Graph of Thoughts: Solving Elaborate Problems with Large Language Models</i>, AAAI 38(16), 17682-17690, doi:10.1609/aaai.v38i16.29720.</p>
     </section>
 
     <section class="contents">

@@ -7,7 +7,7 @@ By Jason Colapietro, Suede Labs AI
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
 a 71-skill open-source pack for Claude Code and OpenAI Codex.
 
-The `suede-ship` operation graph and thought-state model discussed in this book
+The `suede-graph-flo-xr` operation graph and thought-state model discussed in this book
 adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
 Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
 Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
@@ -104,5 +104,5 @@ upstream notices beside the source. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
 and the credit belongs there. The adapted Graph of Thoughts workflow carries
-its upstream BSD terms at `skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`.
+its upstream BSD terms at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
 Full notice: `NOTICE.md`.
