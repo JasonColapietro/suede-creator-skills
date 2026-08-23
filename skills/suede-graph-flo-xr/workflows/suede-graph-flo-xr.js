@@ -207,7 +207,7 @@ const SCOUT = {
 
 const WORKTREE_ATTESTATION = {
   type: 'object',
-  required: ['repoRoot', 'worktreePath', 'commonDir', 'registered', 'commonDirMatches', 'headSha', 'headMatchesOriginMain', 'clean', 'realPathWithinAllowedFamily', 'unsafeCandidateFiles'],
+  required: ['repoRoot', 'worktreePath', 'commonDir', 'registered', 'commonDirMatches', 'headSha', 'headMatchesOriginMain', 'clean', 'realPathWithinAllowedFamily', 'unsafeCandidateFiles', 'trackedCandidateFiles'],
   additionalProperties: false,
   properties: {
     repoRoot: { type: 'string' },
@@ -220,6 +220,7 @@ const WORKTREE_ATTESTATION = {
     clean: { type: 'boolean' },
     realPathWithinAllowedFamily: { type: 'boolean' },
     unsafeCandidateFiles: { type: 'array', items: { type: 'string' } },
+    trackedCandidateFiles: { type: 'array', items: { type: 'string' } },
   },
 }
 
@@ -335,6 +336,11 @@ const REDTEAM = {
   },
 }
 
+// Lane names double as scope-map keys, prune labels, and clamp-safe report text. The
+// tool layer enforces this pattern so a generator that reaches for an em dash or colon
+// retries in-flight instead of forfeiting the candidate — 6 of 8 generated plans died
+// that way in a real run, before the pattern was stated anywhere a generator could see.
+const SAFE_LANE_NAME_PATTERN = '^[A-Za-z0-9][A-Za-z0-9._ -]{0,63}$'
 const PLAN = {
   type: 'object',
   required: ['summary', 'coverage', 'lanes', 'scopeMap', 'externalActions'],
@@ -349,7 +355,7 @@ const PLAN = {
         additionalProperties: false,
         required: ['name', 'files', 'tier', 'acceptance'],
         properties: {
-          name: { type: 'string' },
+          name: { type: 'string', pattern: SAFE_LANE_NAME_PATTERN },
           files: { type: 'array', items: { type: 'string' } },
           tier: { type: 'string', enum: ['mechanical', 'integration', 'judgment'] },
           acceptance: { type: 'string', description: 'One or more allowlisted local validation commands; no redirection, substitution, network command, or external write.' },
@@ -896,7 +902,26 @@ evidence.runKey = normalizedRunKey
 evidence.worktree = scout.worktreePath
 evidence.baseSha = scout.baseSha
 evidence.hazards = scout.hazards
-const candidatePathAuditCommand = `${helperCommand('candidate-audit.cjs')} ${REPO_SHELL} ${WORKTREE_SHELL} '${encodeBase64(JSON.stringify(scout.candidateFiles))}'`
+// The clamp verifier parses every admitted command, and a single command carrying the
+// whole candidate manifest inline blew past its parseable length on a 60-file scout:
+// 6,864 chars was admitted, 10,640 was denied as structure the clamp cannot verify,
+// which failed the attestation closed on a perfectly clean worktree. The manifest
+// therefore travels as multiple exact-pinned audit commands, each carrying a bounded
+// slice of the list; the verifier runs all of them and unions the outputs.
+const candidateAuditCommandFor = files => `${helperCommand('candidate-audit.cjs')} ${REPO_SHELL} ${WORKTREE_SHELL} '${encodeBase64(JSON.stringify(files))}'`
+const CANDIDATE_AUDIT_COMMAND_BUDGET = 2048
+const candidateAuditBatches = [[]]
+for (const file of scout.candidateFiles) {
+  const current = candidateAuditBatches.at(-1)
+  if (current.length && candidateAuditCommandFor([...current, file]).length > CANDIDATE_AUDIT_COMMAND_BUDGET) candidateAuditBatches.push([file])
+  else current.push(file)
+}
+const oversizedCandidateBatch = candidateAuditBatches.find(batch => candidateAuditCommandFor(batch).length > CANDIDATE_AUDIT_COMMAND_BUDGET)
+if (oversizedCandidateBatch) {
+  graph.dropped.push({ operation: 'ScoutVerify', inputs: { candidates: oversizedCandidateBatch }, reason: 'Scout candidate path exceeds the audit command budget' })
+  return { halted: true, reason: 'unauditable scout candidate path', graph, ...evidence }
+}
+const candidatePathAuditCommands = candidateAuditBatches.map(candidateAuditCommandFor)
 // macOS ships realpath at /bin/realpath, not the Linux /usr/bin path — and this
 // workflow is macOS-only (scout-setup probes /usr/bin/sandbox-exec first), so the
 // /usr/bin pin exited 127 on every supported host and failed each attestation closed.
@@ -909,7 +934,7 @@ const worktreeAuditCommands = [
   `git -C ${REPO_SHELL} rev-parse origin/main`,
   `git -C ${WORKTREE_SHELL} rev-parse HEAD`,
   `git -C ${WORKTREE_SHELL} status --porcelain`,
-  candidatePathAuditCommand,
+  ...candidatePathAuditCommands,
 ]
 const worktreeAttestation = await callAgent(
   `Repo path data: ${JSON.stringify(REPO)}
@@ -925,8 +950,11 @@ ${worktreeAuditCommands.map(command => `- ${command}`).join('\n')}
 Require an exact registered worktree path. Compare the Git common directories after
 realpath normalization and return that canonical absolute path as commonDir. Require
 origin/main, Expected HEAD, and worktree HEAD to be the
-same exact SHA, and require empty porcelain status. The final Node command performs the
-no-follow candidate path audit; copy its unsafeCandidateFiles exactly. Return false for
+same exact SHA, and require empty porcelain status. The Node candidate-audit commands
+perform the no-follow candidate path audit and the tracked-at-base audit over bounded
+slices of the candidate list; run every one of them, then union their unsafeCandidateFiles
+outputs into unsafeCandidateFiles and union their trackedCandidateFiles outputs into
+trackedCandidateFiles, copying every entry exactly. Return false for
 any check you could not actually complete.`,
   {
     label: 'scout:worktree-attestation', phase: 'ScoutVerify', schema: WORKTREE_ATTESTATION, effort: 'low', authority: 'read-only',
@@ -947,7 +975,12 @@ const attestationValid = attestedRepoRoot === REPO &&
   worktreeAttestation.clean === true &&
   worktreeAttestation.realPathWithinAllowedFamily === true &&
   Array.isArray(worktreeAttestation.unsafeCandidateFiles) &&
-  worktreeAttestation.unsafeCandidateFiles.length === 0
+  worktreeAttestation.unsafeCandidateFiles.length === 0 &&
+  // Fail closed on invention: a tracked claim may only name paths the scout nominated.
+  // The tracked set relaxes the artifact-segment ban, so an entry from outside the
+  // audited candidate list is a fabricated attestation, not a transcription slip.
+  Array.isArray(worktreeAttestation.trackedCandidateFiles) &&
+  worktreeAttestation.trackedCandidateFiles.every(file => scout.candidateFiles.includes(file))
 evidence.worktreeAttestation = worktreeAttestation
 if (!attestationValid) {
   graph.dropped.push({ operation: 'ScoutVerify', inputs: { worktree: scout.worktreePath }, reason: 'worktree Git attestation failed' })
@@ -1223,7 +1256,14 @@ const SCORE_DIMENSIONS = ['coverage', 'evidence', 'feasibility', 'safety', 'effi
 const SCORE_TOTAL_TOLERANCE = 1e-9
 const nonEmptyString = value => typeof value === 'string' && value.trim().length > 0
 const nonEmptyStringArray = value => Array.isArray(value) && value.length > 0 && value.every(nonEmptyString)
-const safeLaneName = value => typeof value === 'string' && /^[A-Za-z0-9][A-Za-z0-9._ -]{0,63}$/.test(value)
+const SAFE_LANE_NAME = new RegExp(SAFE_LANE_NAME_PATTERN)
+const safeLaneName = value => typeof value === 'string' && SAFE_LANE_NAME.test(value)
+// Stated verbatim in every plan-producing prompt. The schema pattern already forces a
+// retry on a bad lane name; the prompt keeps generators from burning those retries, and
+// the file rule has no schema equivalent — a bad path silently forfeits the candidate.
+const PLAN_FORMAT_RULES = `Hard format rules — a candidate violating any of these is discarded before scoring:
+- Every lane name must match ${SAFE_LANE_NAME_PATTERN} — letters, digits, dots, underscores, spaces, and plain ASCII hyphens only, 64 characters max. No em dashes, colons, slashes, commas, parentheses, or quotes.
+- Every lanes[].files entry must be one repo-relative file path copied verbatim from the candidate file list — never a directory, glob, absolute path, or invented variant, and never a path under .git, node_modules, a dot-directory, or an untracked build/dist/coverage/target/tmp artifact directory.`
 const PLAN_DEFECT_KINDS = new Set(['missing-scope', 'constraint-break', 'collision', 'unverifiable', 'rollback', 'security', 'test-gap', 'integration-order', 'other'])
 const validPlan = plan => plan && nonEmptyString(plan.summary) && nonEmptyStringArray(plan.coverage) &&
   Array.isArray(plan.lanes) && plan.lanes.length > 0 && plan.lanes.every(lane => lane &&
@@ -1268,23 +1308,35 @@ const rel = raw => {
   }
   return segments.length ? segments.join('/') : null
 }
-const PROTECTED_PLAN_SEGMENTS = new Set([
-  '.git', 'node_modules', '.next', '.vercel', 'dist', 'build', '.build', 'coverage', '.cache',
-  '.gradle', '.swiftpm', '.turbo', 'target', '.pytest_cache', '.mypy_cache', '.ruff_cache', 'tmp', '.tmp',
+// Dot-directories, node_modules, and .git can never hold plannable source; they are
+// banned at any depth, tracked or not. The non-dot artifact names are legitimate source
+// directories in some ecosystems — a Next.js App Router repo routes its /build page from
+// the tracked file src/app/build/page.tsx, and a blanket ban on the segment pruned every
+// finalist of a real run as structurally unsafe. Those names are therefore banned only
+// when the exact path is NOT tracked at the scout's base commit: git's own index is what
+// separates a tracked route from a generated artifact.
+const HARD_PROTECTED_PLAN_SEGMENTS = new Set([
+  '.git', 'node_modules', '.next', '.vercel', '.build', '.cache',
+  '.gradle', '.swiftpm', '.turbo', '.pytest_cache', '.mypy_cache', '.ruff_cache', '.tmp',
 ])
+const ARTIFACT_PLAN_SEGMENTS = new Set(['dist', 'build', 'coverage', 'target', 'tmp'])
 const SAFE_EXTENSIONLESS_FILES = new Set(['README', 'LICENSE', 'Makefile', 'Dockerfile', 'Procfile', 'Gemfile', 'Rakefile', 'Justfile', 'CMakeLists.txt', 'CODEOWNERS'])
+const pathKey = value => String(value || '').normalize('NFC').toLocaleLowerCase('en-US')
+// Attested by the clamped candidate-audit commands and validated against the scout's
+// own candidate list, so the exemption can never reach past the audited manifest.
+const trackedBaseFileKeys = new Set(worktreeAttestation.trackedCandidateFiles.map(rel).filter(Boolean).map(pathKey))
 const safePlanFile = raw => {
   if (typeof raw !== 'string' || UNSAFE_PATH_TEXT.test(raw)) return null
   const file = rel(raw)
   if (!file) return null
   const segments = file.split('/')
   const leaf = segments.at(-1)
-  if (segments.some(segment => PROTECTED_PLAN_SEGMENTS.has(segment.toLowerCase()))) return null
+  if (segments.some(segment => HARD_PROTECTED_PLAN_SEGMENTS.has(segment.toLowerCase()))) return null
+  if (segments.some(segment => ARTIFACT_PLAN_SEGMENTS.has(segment.toLowerCase())) && !trackedBaseFileKeys.has(pathKey(file))) return null
   if (segments.some(segment => /^\.env(?:\.|$)/i.test(segment))) return null
   if (!leaf.includes('.') && !SAFE_EXTENSIONLESS_FILES.has(leaf)) return null
   return file
 }
-const pathKey = value => String(value || '').normalize('NFC').toLocaleLowerCase('en-US')
 const validatedPatchBundle = (results, allowedFiles) => {
   const allowed = new Map(allowedFiles.map(file => [pathKey(file), file]))
   const patches = results.flatMap(result => Array.isArray(result.patches) ? result.patches : [])
@@ -1614,7 +1666,7 @@ addOperation(operations, createOperation({
         `Worktree: ${scout.worktreePath} (read-only — do not edit source)
 Scope: ${SCOPE}
 Candidate ${index + 1} of ${BUDGET.generatedPlans}. Produce an independent complete lane plan.
-Candidate files: ${scout.candidateFiles.join(', ')}
+Candidate files: ${scoutCandidateFiles.join(', ')}
 Research: ${JSON.stringify(research)}
 Constraints: ${JSON.stringify(constraints)}
 Unread sources: ${JSON.stringify(stillUnread)}
@@ -1623,7 +1675,8 @@ Return a plan with a summary, explicit disjoint lane ownership, observable accep
 and scopeMap entries that assign every lane at least one exact checklist item from ${JSON.stringify(scopeChecklist)}.
 An item may map to multiple lanes when the implementation is split; every item must map at least once.
 Each entry includes lane, exact acceptance, and a source from "user scope" or the audited research.
-Return an explicit empty externalActions array.`,
+Return an explicit empty externalActions array.
+${PLAN_FORMAT_RULES}`,
         { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
         )
       } catch (error) {
@@ -1804,9 +1857,12 @@ Adversarial objections: ${JSON.stringify(thought.state.objections || [])}
 Research: ${JSON.stringify(research)}
 Constraints: ${JSON.stringify(constraints)}
 
+Candidate files: ${scoutCandidateFiles.join(', ')}
+
 Improve the complete plan without editing source. Preserve supported evidence, address every
 reproducible objection, keep file ownership disjoint, return observable acceptance commands,
-scopeMap entries for every checklist item ${JSON.stringify(scopeChecklist)}, and externalActions: [].`,
+scopeMap entries for every checklist item ${JSON.stringify(scopeChecklist)}, and externalActions: [].
+${PLAN_FORMAT_RULES}`,
             { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
             )
           } catch (error) {
@@ -1894,10 +1950,13 @@ addOperation(operations, createOperation({
 Scope: ${SCOPE}
 Surviving plans: ${JSON.stringify(survivors.map(thought => ({ id: thought.id, plan: thought.state.plan, score: thought.score })))}
 
+Candidate files: ${scoutCandidateFiles.join(', ')}
+
 Aggregate the strongest compatible lanes into one complete plan. Preserve full scope coverage,
 give every file exactly one owner, keep every acceptance command observable, and use scopeMap to
 assign every lane at least one exact checklist item from ${JSON.stringify(scopeChecklist)} with its acceptance and known source.
-An item may map to multiple lanes; every item must map at least once. Return externalActions: []. Do not edit source.`,
+An item may map to multiple lanes; every item must map at least once. Return externalActions: []. Do not edit source.
+${PLAN_FORMAT_RULES}`,
         { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
       )
     } catch (error) {
