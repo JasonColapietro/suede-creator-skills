@@ -481,9 +481,13 @@ const deepFreeze = value => {
   return Object.freeze(value)
 }
 
+// Not structuredClone: the Workflow VM does not provide it, and thought state is
+// always JSON-shaped (it comes from schema-validated agent output).
+const jsonClone = value => value === undefined ? undefined : JSON.parse(JSON.stringify(value))
+
 const createThought = ({ id, parentIds = [], operationId, operation, depth, state, score = null, status = 'active' }) =>
   Object.freeze({ id, parentIds: Object.freeze([...parentIds]), operationId, operation, depth,
-    state: deepFreeze(structuredClone(state)), score: score && deepFreeze({ ...score }), status })
+    state: deepFreeze(jsonClone(state)), score: score && deepFreeze({ ...score }), status })
 
 const createOperation = ({ id, type, predecessorIds = [], execute }) => ({
   id, type, predecessorIds: [...predecessorIds], successorIds: [], execute,
