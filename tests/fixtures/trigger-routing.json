@@ -1111,7 +1111,7 @@
           "skill": "suede-graph-flo-xr",
           "positive": [
             "shipping dag",
-            "graph-of-thoughts shipping search",
+            "suede thought graph shipping search",
             "score and prune",
             "aggregate the best lanes",
             "multi-file repository change",
@@ -1128,7 +1128,7 @@
             "stems"
           ],
           "metadataMustContain": [
-            "graph-of-thoughts shipping search"
+            "suede thought graph shipping search"
           ]
         },
         {
@@ -1139,7 +1139,7 @@
             "do not change code"
           ],
           "negative": [
-            "graph-of-thoughts shipping search",
+            "suede thought graph shipping search",
             "score and prune",
             "branch protection",
             "release folders"
@@ -1216,7 +1216,7 @@
         {
           "id": "suede-graph-flo-xr-multifile-positive",
           "mode": "positive",
-          "prompt": "Use a Graph-of-Thoughts shipping search for this multi-file repository change, then select one implementation plan to build.",
+          "prompt": "Use a Suede Thought Graph shipping search for this multi-file repository change, then select one implementation plan to build.",
           "expected": "suede-graph-flo-xr"
         },
         {
@@ -1237,7 +1237,7 @@
         {
           "id": "suede-graph-flo-xr-ci-negative",
           "mode": "negative",
-          "prompt": "Configure branch protection and required checks for this repository, but do not run a Graph-of-Thoughts shipping search.",
+          "prompt": "Configure branch protection and required checks for this repository, but do not run a Suede Thought Graph shipping search.",
           "expected": "suede-ci-gate",
           "forbidden": [
             "suede-graph-flo-xr"
