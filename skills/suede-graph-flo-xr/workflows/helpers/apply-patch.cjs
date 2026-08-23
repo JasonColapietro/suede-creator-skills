@@ -1,0 +1,4 @@
+// Auto-extracted from suede-graph-flo-xr.js inline node -e scripts. The splice keeps the
+// original -e argv convention: process.argv[1] is the first user argument.
+process.argv.splice(1,1);
+const {spawnSync}=require("node:child_process");const root=process.argv[1];const patch=Buffer.from(process.argv[2],"base64");const run=(extra)=>spawnSync("git",["-C",root,"apply",...extra,"--whitespace=nowarn","-"],{input:patch,encoding:"utf8"});const checked=run(["--check"]);if(checked.error||checked.status!==0){process.stderr.write(checked.stderr||String(checked.error||"git apply --check failed"));process.exit(checked.status||1)}const applied=run([]);process.stdout.write(applied.stdout||"");process.stderr.write(applied.stderr||String(applied.error||""));process.exit(applied.error||applied.status!==0?applied.status||1:0)
