@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-ship)."
+description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr)."
 ---
 
 # Suede Workflow Skills
@@ -234,7 +234,7 @@ Ship lane:
 
 - A change to one repo touching more than one file or surface, run as a single
   researched, decomposed, adversarially reviewed, release-checked DAG:
-  `suede-ship`. This is the default for nontrivial repo work and outranks the
+  `suede-graph-flo-xr`. This is the default for nontrivial repo work and outranks the
   copy or design lane when the request also names one.
 - One high-stakes public text surface that strangers will read and that has to
   be true — landing page, launch post, docs page, README, store listing:
@@ -304,7 +304,7 @@ Consumer recovery lane:
 Precedence when several routers match at once:
 
 - A multi-file or multi-surface change to one repo that should be built and
-  reviewed as one DAG routes to `suede-ship`, even when the request also names
+  reviewed as one DAG routes to `suede-graph-flo-xr`, even when the request also names
   a copy or design lane.
 - Otherwise, use this umbrella workflow when the user wants the whole Suede
   stack or when the task crosses several lanes, and route straight to the

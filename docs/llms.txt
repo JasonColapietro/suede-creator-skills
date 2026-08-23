@@ -27,7 +27,7 @@ Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/s
 - [Suede Code](https://skills.suedeai.ai/skills/suede-code.html): Review and grade code in one pass.
 - [Suede Code Review](https://skills.suedeai.ai/skills/suede-code-review.html): Deep diff review with TS/React/Next.js/Swift-iOS/OWASP/DB checklists, iOS traps, and native contract drift checks.
 - [Suede Code Grader](https://skills.suedeai.ai/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
-- [Suede Ship](https://skills.suedeai.ai/skills/suede-ship.html): Canonical shipping DAG: scout, research, lane plan, disjoint parallel build, adversarial review, release verification.
+- [Suede Graph Flo XR](https://skills.suedeai.ai/skills/suede-graph-flo-xr.html): Graph-of-Thoughts shipping search: generate competing plans, score them, refute and improve the survivors, then select one evidence-gated winner before any build.
 - [Suede Ship Copy](https://skills.suedeai.ai/skills/suede-ship-copy.html): The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, deslop pass, and a publish-readiness gate. Never audits what the requester supplied.
 - [Suede CI Gate](https://skills.suedeai.ai/skills/suede-ci-gate.html): Wire any repo so CI actually gates the merge.
 - [Suede Clip to Guide](https://skills.suedeai.ai/skills/suede-clip-to-guide.html): Turn a clip or transcript into a clip-to-guide funnel package with rights routing.

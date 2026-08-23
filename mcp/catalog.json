@@ -51,7 +51,7 @@
         "suede-deslop",
         "suede-agent-teams",
         "suede-ai-eval",
-        "suede-ship",
+        "suede-graph-flo-xr",
         "suede-ship-copy",
         "suede-ci-gate",
         "suede-seo-audit",
@@ -266,7 +266,7 @@
       ],
       "count": 4,
       "skills": [
-        "suede-ship",
+        "suede-graph-flo-xr",
         "suede-agent-teams",
         "suede-workflow-skills",
         "suede-recommend-next-action"
@@ -747,11 +747,11 @@
       "useWhen": "Audit Suede pages, GitHub Pages, README files, skill docs, launch pages, copy banks, install pages, and AI-result surfaces."
     },
     {
-      "name": "suede-ship",
+      "name": "suede-graph-flo-xr",
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Canonical Suede shipping DAG: scout, multi-lens research, gap critic, lane plan with explicit file ownership, disjoint parallel build, dual-lens review, adversarial refute, integration gate, and release verification. Use for any nontrivial change to a repo that touches more than one file or surface and deserves roughly fifty agents of surgical, research-heavy fan-out. BUILT FOR TOKENMAXING AND BURNS HARD: every agent bills to the user's model allocation and a deep run reaches ~150. Ask which agent range and which model before launching; never Fable unless the user said Fable. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate).",
+      "description": "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. NOT FOR: high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
       "useWhen": "Take a nontrivial multi-file change through a research-heavy agent graph that halts on hazards and gates on real tests."
     },
     {
@@ -759,7 +759,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet).",
+      "description": "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet).",
       "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied."
     },
     {
@@ -839,7 +839,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-ship).",
+      "description": "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr).",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact."
     }
   ],

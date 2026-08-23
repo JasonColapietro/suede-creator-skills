@@ -1,9 +1,9 @@
-// The suede-ship DAG is fan-out billed to a model allocation, and its advertised cost
-// ("roughly fifty agents") is a promise the script has to keep on a bad day, not only on
-// an average one. Every stage but one has an agent count fixed by the graph. The refute
-// stage does not: it spawns verifiers per REVIEW FINDING, so a change that reviews badly
-// multiplies the whole run. This drives the real script with stubbed agents and counts
-// the spawns under the worst input the schemas permit.
+// The Suede Graph Flo XR graph is fan-out billed to a model allocation, and each agent
+// budget it advertises ("light", "standard", "deep") is a promise the script has to keep
+// on a bad day, not only on an average one. Two things can break that promise: a stage
+// whose agent count scales with model output rather than with the graph, and a retry path
+// that spends beyond what the budget reserved. This drives the real script with stubbed
+// agents under the worst input the schemas permit and counts the spawns.
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
@@ -11,31 +11,72 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const SOURCE = readFileSync(path.join(ROOT, 'skills/suede-ship/workflows/suede-ship.js'), 'utf8')
+const SOURCE = readFileSync(
+  path.join(ROOT, 'skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js'), 'utf8')
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 
-// Worst case the schemas allow: the maximum lane count, both review lenses returning a
-// full findings array, every finding distinct (so dedupe cannot help) and severity
-// blocker (so nothing is filtered by severity and every survivor also wants a fix agent).
-const LANES = 8
+// Each range's documented ceiling, from BUDGETS in the workflow. These are the numbers the
+// operator is quoted before launch, so they are the numbers under test.
+const CEILINGS = { light: 55, standard: 110, deep: 200 }
+// maxLanes per range, from BUDGETS. A plan over its range's cap is rejected outright,
+// so worst case is the biggest plan the range actually accepts.
+const MAX_LANES = { light: 3, standard: 5, deep: 8 }
+
+const REPO = '/tmp/graph-flo-cost-repo'
+const RUN_KEY = 'ship-aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
+const WORKTREE = `${REPO}.worktrees/${RUN_KEY}`
+const BASE_SHA = 'a'.repeat(40)
+const SCOPE = 'Reconcile the docs\nRefresh the verification date'
+
+// Worst case the schemas allow: the maximum lane count for the range, both review lenses
+// returning a full findings array, every finding distinct (so dedupe cannot help) and
+// severity blocker (so nothing is filtered and every survivor also wants a fix agent).
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = FINDINGS_PER_LENS } = {}) {
+function runGraph ({ agentBudget = 'deep', lanes = 8, findingsPerLens = FINDINGS_PER_LENS, scoreScript } = {}) {
   const calls = []
   const logs = []
   let findingSeq = 0
+
+  const plan = () => ({
+    summary: 'reconcile the docs',
+    coverage: ['index.md'],
+    lanes: Array.from({ length: lanes }, (_, i) => ({
+      name: `lane${i}`, files: [`src/lane${i}.ts`], tier: 'integration', acceptance: 'npm test',
+    })),
+    // Every lane needs a canonical scope mapping or planEligibility rejects the plan, and
+    // every checklist item needs a lane. One item may own several lanes.
+    scopeMap: [
+      ...Array.from({ length: lanes }, (_, i) => (
+        { item: 'Reconcile the docs', lane: `lane${i}`, acceptance: 'npm test', source: 'user scope' })),
+      { item: 'Refresh the verification date', lane: 'lane0', acceptance: 'npm test', source: 'user scope' },
+    ],
+    externalActions: [],
+  })
+  const score = () => ({
+    coverage: 17, evidence: 17, feasibility: 17, safety: 17, efficiency: 17,
+    total: 85, rationale: 'verified against the worktree files',
+  })
 
   const fixture = (opts) => {
     const label = opts.label || ''
     switch (opts.phase) {
       case 'Scout':
         return {
-          worktreePath: '/tmp/repo.worktrees/ship-test',
-          baseSha: 'deadbeef',
+          worktreePath: WORKTREE, tempRoot: `/private/tmp/${RUN_KEY}`, baseSha: BASE_SHA,
           dirtyFiles: [],
-          candidateFiles: ['src/a.ts'],
+          // Every planned lane file has to appear here or planEligibility rejects the plan
+          // for claiming a path Scout never saw.
+          candidateFiles: Array.from({ length: lanes }, (_, i) => `${WORKTREE}/src/lane${i}.ts`),
           siblingClaims: [],
+          liveCwds: [], manifestOverflow: false,
           hazards: [{ kind: 'secret', blocking: false, detail: 'no secrets found' }],
+        }
+      case 'ScoutVerify':
+        return {
+          repoRoot: REPO, worktreePath: WORKTREE, commonDir: `${REPO}/.git`, registered: true,
+          commonDirMatches: true, headSha: BASE_SHA, headMatchesOriginMain: true, clean: true,
+          realPathWithinAllowedFamily: true, unsafeCandidateFiles: [],
         }
       case 'Research':
         return { lens: label, facts: [], constraints: [], unread: [] }
@@ -43,38 +84,28 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
         if (label.startsWith('gap:')) return { lens: label, facts: [], constraints: [], unread: [] }
         if (label === 'skeptic:constraints') return { audited: [] }
         return { gaps: [] }
-      case 'Plan':
-        if (label === 'redteam:plan') return { objections: [] }
-        return {
-          lanes: Array.from({ length: lanes }, (_, i) => ({
-            name: `lane${i}`,
-            task: 'do the thing',
-            files: [`src/lane${i}.ts`],
-            tier: 'integration',
-            acceptance: 'npm test',
-          })),
-        }
-      case 'Build':
-        return { state: 'done', changed: ['src/x.ts'], notes: '' }
+      case 'Generate': case 'Improve': case 'Aggregate':
+        return plan()
+      case 'Score':
+        return scoreScript ? scoreScript(label) : score()
+      case 'RefutePlan':
+        return { defects: [], notes: 'no defect reproduced' }
+      case 'Build': case 'Fix':
+        return { state: 'done', changed: ['src/lane0.ts'], patches: [], notes: '' }
       case 'Review':
         return {
           findings: Array.from({ length: findingsPerLens }, () => {
             const n = findingSeq++
             return {
-              file: `src/finding${n}.ts`,
-              line: n + 1,
-              claim: `distinct defect ${n}`,
-              failureScenario: 'concrete input triggers it',
-              severity: 'blocker',
+              file: 'src/lane0.ts', line: n + 1, claim: `distinct defect ${n}`,
+              failureScenario: 'concrete input triggers it', severity: 'blocker',
             }
           }),
         }
       case 'Refute':
         return { refuted: false, why: 'reproduced with a concrete input' }
-      case 'Fix':
-        return { state: 'done', changed: ['src/x.ts'], notes: '' }
       case 'Gate':
-        return { passed: true, commands: ['npm test'], output: 'ok' }
+        return { passed: true, commands: [], output: 'ok' }
       case 'Release':
         return { lens: label, risks: [], readback: 'not attempted' }
       default:
@@ -99,12 +130,9 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
     'agent', 'parallel', 'pipeline', 'phase', 'log', 'args', 'budget', 'workflow', body)
 
   return run(
-    agent,
-    parallel,
-    pipeline,
-    () => {},
-    (m) => logs.push(m),
-    { repo: '/tmp/repo', scope: 'change the thing', deploys: true, agentBudget },
+    agent, parallel, pipeline, () => {}, (m) => logs.push(m),
+    { repo: REPO, scope: SCOPE, deploys: false, agentBudget,
+      agentNamespace: '', helperDir: '/tmp/graph-flo-helpers' },
     { total: null, spent: () => 0, remaining: () => Infinity },
     async () => {},
   ).then((result) => ({ result, calls, logs }))
@@ -112,73 +140,58 @@ function runShip ({ agentBudget = 'standard', lanes = LANES, findingsPerLens = F
 
 const countPhase = (calls, phase) => calls.filter((c) => c.phase === phase).length
 
-test('refutation fan-out stays bounded when every review lens returns a full findings array', async () => {
-  const { calls } = await runShip()
-  const refute = countPhase(calls, 'Refute')
-  // Two verifiers per finding, at most four findings per lane reach one at all.
-  const ceiling = LANES * 4 * 2
-  assert.ok(
-    refute <= ceiling,
-    `refute spawned ${refute} agents; the per-lane cap puts the ceiling at ${ceiling}. ` +
-    'Uncapped, this stage is 3 verifiers x every finding x every lane.')
-})
-
-test('the fix stage does not scale with however many blockers survived', async () => {
-  const { calls } = await runShip()
-  assert.ok(
-    countPhase(calls, 'Fix') <= 8,
-    `fix spawned ${countPhase(calls, 'Fix')} agents; the cap is 8.`)
-})
-
-test('a worst-case run stays within the cost the skill advertises', async () => {
-  const { calls } = await runShip()
-  // The doc promises ~50 for a typical run and names ~115 as the ceiling. Worst case is
-  // 8 lanes with both lenses at maxItems — the shape that used to reach several hundred.
-  assert.ok(
-    calls.length <= 120,
-    `the DAG spawned ${calls.length} agents on worst-case input; the documented ceiling is ~115.`)
-})
-
-test('each agent-budget range holds its documented ceiling', async () => {
-  // The user picks one of these three before launch, so each has to mean something.
-  // Worst-case input: 8 lanes, both review lenses at maxItems, every finding a blocker.
-  // Each range caps the lane count it asks the planner for, so the ceiling is measured
-  // against a plan that respects it — worst-case findings, blockers throughout.
-  const ranges = [
-    { range: 'light', lanes: 3, ceiling: 45 },
-    { range: 'standard', lanes: 5, ceiling: 80 },
-    { range: 'deep', lanes: 8, ceiling: 150 },
-  ]
+test('each agent budget holds the ceiling it is quoted at', async () => {
+  // The operator picks one of these three before launch, so each has to mean something.
   const counts = {}
-  for (const { range, lanes, ceiling } of ranges) {
-    const { calls } = await runShip({ agentBudget: range, lanes })
+  for (const [range, ceiling] of Object.entries(CEILINGS)) {
+    const { calls, result } = await runGraph({ agentBudget: range, lanes: MAX_LANES[range] })
     counts[range] = calls.length
-    assert.ok(
-      calls.length <= ceiling,
-      `${range} spawned ${calls.length} agents; its documented ceiling is ${ceiling}.`)
+    assert.ok(calls.length <= ceiling,
+      `${range} spawned ${calls.length} agents; its quoted ceiling is ${ceiling}.`)
+    assert.equal(result.graph.budget.ceiling, ceiling,
+      `${range} must enforce the ceiling it advertises`)
   }
-  // The ranges must actually separate — three names for one cost is a lie.
-  assert.ok(
-    counts.deep > counts.standard && counts.standard > counts.light,
-    `ranges must be distinct, got ${JSON.stringify(counts)}`)
+  assert.ok(counts.deep > counts.standard && counts.standard > counts.light,
+    `ranges must actually separate, got ${JSON.stringify(counts)}`)
 })
 
-test('a plan that exceeds its range says so out loud instead of dropping a lane', async () => {
-  // Lanes are deliberately not truncated to fit the budget: dropping one drops scope the
-  // user asked for. The guarantee is that going over is announced with a new projection.
-  const { logs, result } = await runShip({ agentBudget: 'light', lanes: 8 })
-  assert.ok(
-    logs.some((l) => l.startsWith('OVER BUDGET')),
-    'an over-budget plan must log OVER BUDGET with a revised projection')
-  assert.equal(result.lanes.length, 8, 'every planned lane must still be built')
+test('a worst-case run finishes the search instead of dying of budget exhaustion', async () => {
+  // The failure this guards is subtler than going over the ceiling — callAgent throws at
+  // the ceiling, so "over" is impossible. The real risk is a fan-out big enough that the
+  // run halts on AGENT_BUDGET_EXHAUSTED before it ever picks a plan.
+  for (const range of Object.keys(CEILINGS)) {
+    const { result } = await runGraph({ agentBudget: range, lanes: MAX_LANES[range] })
+    assert.notEqual(result.reason, 'agent budget exhausted',
+      `${range} ran out of agents mid-run with ${JSON.stringify(result.graph.budget)}`)
+    const select = result.graph.operations.find((o) => o.id === 'select-plan')
+    assert.equal(select.outputThoughtIds.length, 1,
+      `${range} must reach a selected plan on healthy input`)
+  }
 })
 
-test('everything dropped before refutation is reported, never silently discarded', async () => {
-  const { result, logs } = await runShip()
-  assert.ok(
-    logs.some((l) => /carried unverified|per-lane cap/.test(l)),
-    'the run log must name the findings that no verifier ever saw')
-  assert.ok(
-    Array.isArray(result.unverifiedFindings) && result.unverifiedFindings.length > 0,
-    'unverified findings must ride out in the result for the handoff to carry as caveats')
+test('the plan search does not scale with however many findings a review returns', async () => {
+  // Review findings are model output. If a search stage keyed off them the whole graph
+  // would multiply on a change that reviews badly.
+  const few = await runGraph({ findingsPerLens: 0 })
+  const many = await runGraph({ findingsPerLens: FINDINGS_PER_LENS })
+  const searchPhases = ['Generate', 'Score', 'RefutePlan', 'Improve', 'Aggregate']
+  for (const phase of searchPhases) {
+    assert.equal(countPhase(few.calls, phase), countPhase(many.calls, phase),
+      `${phase} changed with the findings count; the search must be fixed by the graph`)
+  }
+})
+
+test('Score retries cannot spend a run past its ceiling', async () => {
+  // Retries added for transport deaths are extra agent calls on top of the reserved batch.
+  // Bounded three ways — attempts, a run-wide cap, and a reserved floor — so a total
+  // scoring outage still cannot exhaust the budget or exceed the ceiling.
+  for (const [range, ceiling] of Object.entries(CEILINGS)) {
+    const { calls, result } = await runGraph({ agentBudget: range, lanes: MAX_LANES[range], scoreScript: () => null })
+    assert.ok(calls.length <= ceiling,
+      `${range} spawned ${calls.length} agents while every score died; ceiling is ${ceiling}.`)
+    assert.ok(result.graph.scoreRetries.used <= result.graph.scoreRetries.cap,
+      `${range} exceeded its run-wide retry cap`)
+    assert.notEqual(result.reason, 'agent budget exhausted',
+      `${range} burned its budget on retries instead of halting on the evidence`)
+  }
 })

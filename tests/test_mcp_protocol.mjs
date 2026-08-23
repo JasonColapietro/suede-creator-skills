@@ -388,16 +388,16 @@ test("skill bodies are served from the pack and cannot escape skills/", async ()
     await session.initialize();
     const withBody = await session.request("tools/call", {
       name: "get_suede_skill",
-      arguments: { name: "$suede-ship", includeBody: true }
+      arguments: { name: "$suede-graph-flo-xr", includeBody: true }
     });
     const structured = withBody.result.structuredContent;
     assert.equal(structured.found, true);
-    assert.match(structured.body, /^---\nname: suede-ship/);
+    assert.match(structured.body, /^---\nname: suede-graph-flo-xr/);
     assert.equal(structured.bodyTruncated, false);
 
     const withoutBody = await session.request("tools/call", {
       name: "get_suede_skill",
-      arguments: { name: "suede-ship" }
+      arguments: { name: "suede-graph-flo-xr" }
     });
     assert.equal(withoutBody.result.structuredContent.body, undefined);
 
@@ -410,7 +410,7 @@ test("skill bodies are served from the pack and cannot escape skills/", async ()
 
     const badType = await session.request("tools/call", {
       name: "get_suede_skill",
-      arguments: { name: "suede-ship", includeBody: "yes" }
+      arguments: { name: "suede-graph-flo-xr", includeBody: "yes" }
     });
     assert.equal(badType.error.code, -32602);
   }, "workflow");
@@ -483,7 +483,7 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     });
     assert.ok(response.result.structuredContent.skills.length > 0);
     assert.ok(response.result.structuredContent.skills.every((skill) => ["artist", "creator"].includes(skill.area)));
-    assert.ok(!response.result.structuredContent.skills.some((skill) => skill.name === "suede-ship"));
+    assert.ok(!response.result.structuredContent.skills.some((skill) => skill.name === "suede-graph-flo-xr"));
   }, "creator");
 
   await withSession(async (session) => {
@@ -499,12 +499,12 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     assert.ok(
       response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
     );
-    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-ship"));
+    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-graph-flo-xr"));
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "amazon-returns-recovery"));
 
     const ship = await session.request("tools/call", {
       name: "get_suede_skill",
-      arguments: { name: "suede-ship" }
+      arguments: { name: "suede-graph-flo-xr" }
     });
     assert.equal(ship.result.structuredContent.found, true);
     assert.match(

@@ -11,7 +11,7 @@ describing the work in the words its description was written to catch.
 
 | Skill | Use it when |
 |---|---|
-| `suede-ship` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
+| `suede-graph-flo-xr` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |

@@ -201,12 +201,12 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 71 skills fit
 
 Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,031,180 bytes. Loading all of them into every conversation would
+repo total 1,033,592 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 42,249 bytes. That is roughly a
-twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
+all 71 descriptions together come to 41,757 bytes. That is roughly a
+twenty-fifth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
@@ -338,8 +338,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 files total 1,031,180 bytes;
-the 71 descriptions together are 42,249. The agent holds the small number and
+when the skill is not running. In this repo the 71 files total 1,033,592 bytes;
+the 71 descriptions together are 41,757. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -630,7 +630,7 @@ Forty-eight of the 71 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
-`suede-ship` refuses three specific neighbors: high-volume work that splits into
+`suede-graph-flo-xr` refuses three specific neighbors: high-volume work that splits into
 independent worker tasks goes to `suede-codex-fleet`, findings-only review with
 no code change goes to `suede-code-review`, and CI and branch-protection wiring
 goes to `suede-ci-gate`. Read that as a routing table written from the point of
@@ -669,7 +669,7 @@ Two costs follow, and they are asymmetric.
 
 A description that oversells gets the skill loaded for work it cannot do. The
 skill fires, the body loads, the agent starts executing a procedure built for a
-different shape of problem, and it produces something. `suede-ship` running
+different shape of problem, and it produces something. `suede-graph-flo-xr` running
 against a one-line typo fix will happily scout, research across multiple lenses,
 plan lanes, and gate the release. You burn real time and real context, and at the
 end you have a correct one-line fix wrapped in ceremony. The failure is expensive
@@ -1018,7 +1018,7 @@ coordination problem to solve, it is a thing you do not do.
 Isolated worktrees make ownership physical rather than advisory. A worktree per
 lane, cut from `origin/main` rather than from your local mirror, means an agent
 cannot reach another lane's files even by accident, and cannot touch your dirty
-main checkout at all. `suede-ship` treats a violation of this as a halt
+main checkout at all. `suede-graph-flo-xr` treats a violation of this as a halt
 condition: it stops on a lane collision or on a file held by a live sibling
 worktree, and its own documentation says the fix is a re-plan, not a retry. An
 orchestrator that retries a collision is just rolling the dice again.
@@ -1151,7 +1151,7 @@ fleet and a very expensive way to generate material nobody will check.
 ## The stack, formally
 
 The six skills this chapter and the last keep circling — `suede-full-send`,
-`suede-ship`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
+`suede-graph-flo-xr`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
 `suede-recommend-next-action` — ship as a named group: the Agentic Adderall
 Stack, sold with a straight face at `/cracked.html` on the docs site. The label
 is a joke. The contract underneath is not, and it is worth stating precisely
@@ -1175,7 +1175,7 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
+model unless told otherwise, `suede-graph-flo-xr` states its own 35-to-150-agent range
 on the label, and the fleet skill exists precisely so volume can leave the
 Anthropic meter. Extended release is the other scheduling regime: between
 passes, `suede-recommend-next-action` scores candidate moves on goal fit,
@@ -1230,7 +1230,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. It reads production and never
+`suede-graph-flo-xr` enforces the same boundary on itself. It reads production and never
 deploys, so its instructions forbid it from claiming `deployed`, `verified live`,
 or `released` under any circumstances. Those states require a deploy that has not
 happened. A skill that will not overclaim on its own behalf is the only kind
@@ -1336,7 +1336,7 @@ do.
 One exception, and it is narrow. Extremely risky findings, data loss, security or
 credential exposure, legal or rights violations, payment mistakes, irreversible
 public damage, cause a pause: state the risk, state the options, let the user
-pick. Their choice is final. `suede-ship` applies the same carve-out to live
+pick. Their choice is final. `suede-graph-flo-xr` applies the same carve-out to live
 production exposure it observed independently of the change at hand, such as a
 real secret or an unauthenticated `200` that should not exist. That goes to the
 user immediately, because it was true before you arrived and will be true after
@@ -3159,7 +3159,7 @@ describing the work in the words its description was written to catch.
 
 | Skill | Use it when |
 |---|---|
-| `suede-ship` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
+| `suede-graph-flo-xr` | A repo change spans several files or surfaces and should be researched, decomposed, reviewed adversarially, and release-checked in one pass |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |

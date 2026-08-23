@@ -458,7 +458,7 @@ and hands it back as a runnable prompt.
 Stacks are a cross-cutting overlay on the specialty partition, not a seventh
 specialty. The partition stays total, the validator fails CI when the stack's
 catalog membership and its page drift, and the MCP server scopes membership per
-profile. Cost stays on the label: suede-ship states its own 35-to-150-agent
+profile. Cost stays on the label: suede-graph-flo-xr states its own 35-to-150-agent
 range and asks for the range and model before it launches.
 
 ## Social Copy

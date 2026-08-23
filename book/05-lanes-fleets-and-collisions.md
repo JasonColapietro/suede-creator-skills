@@ -63,7 +63,7 @@ coordination problem to solve, it is a thing you do not do.
 Isolated worktrees make ownership physical rather than advisory. A worktree per
 lane, cut from `origin/main` rather than from your local mirror, means an agent
 cannot reach another lane's files even by accident, and cannot touch your dirty
-main checkout at all. `suede-ship` treats a violation of this as a halt
+main checkout at all. `suede-graph-flo-xr` treats a violation of this as a halt
 condition: it stops on a lane collision or on a file held by a live sibling
 worktree, and its own documentation says the fix is a re-plan, not a retry. An
 orchestrator that retries a collision is just rolling the dice again.
@@ -196,7 +196,7 @@ fleet and a very expensive way to generate material nobody will check.
 ## The stack, formally
 
 The six skills this chapter and the last keep circling — `suede-full-send`,
-`suede-ship`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
+`suede-graph-flo-xr`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
 `suede-recommend-next-action` — ship as a named group: the Agentic Adderall
 Stack, sold with a straight face at `/cracked.html` on the docs site. The label
 is a joke. The contract underneath is not, and it is worth stating precisely
@@ -220,7 +220,7 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, `suede-ship` states its own 35-to-150-agent range
+model unless told otherwise, `suede-graph-flo-xr` states its own 35-to-150-agent range
 on the label, and the fleet skill exists precisely so volume can leave the
 Anthropic meter. Extended release is the other scheduling regime: between
 passes, `suede-recommend-next-action` scores candidate moves on goal fit,

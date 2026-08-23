@@ -105,7 +105,7 @@ Use suede-code to review my staged diff and give it an A-F ship grade.
 For a nontrivial multi-file change, run the ship DAG:
 
 ```text
-Use suede-ship to take this change through the canonical Suede DAG: research it, build it in disjoint lanes, refute the review findings, and hand back evidence.
+Use suede-graph-flo-xr to search competing plans for this change: generate several, score them, refute and improve the survivors, then build only the selected winner.
 ```
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
@@ -114,7 +114,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
-- [`suede-ship`](skills/suede-ship) runs the canonical orchestration DAG on a repo: scout, multi-lens research, a red-teamed lane plan, disjoint build lanes, dual-lens review, adversarial refutation, an integration gate, and a release verifier with an evidence handoff.
+- [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) searches competing plans for one repo change instead of committing to the first one: scout, multi-lens research, several generated plans, scoring, paired refutation, improvement rounds, aggregation, and one deterministic Select. Only the selected plan is allowed to touch files.
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship-copy`](skills/suede-ship-copy) is the same DAG rebuilt for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 
@@ -135,7 +135,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | Skill | What it does |
 |---|---|
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
-| [`suede-ship`](skills/suede-ship) | The canonical orchestration DAG for repo changes: research, red-teamed planning, disjoint lanes, adversarial review, release verification |
+| [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) | Graph-of-Thoughts plan search for repo changes: generate, score, refute, improve, aggregate, select one evidence-gated winner |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
 | [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |

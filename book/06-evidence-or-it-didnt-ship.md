@@ -37,7 +37,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. It reads production and never
+`suede-graph-flo-xr` enforces the same boundary on itself. It reads production and never
 deploys, so its instructions forbid it from claiming `deployed`, `verified live`,
 or `released` under any circumstances. Those states require a deploy that has not
 happened. A skill that will not overclaim on its own behalf is the only kind
@@ -143,7 +143,7 @@ do.
 One exception, and it is narrow. Extremely risky findings, data loss, security or
 credential exposure, legal or rights violations, payment mistakes, irreversible
 public damage, cause a pause: state the risk, state the options, let the user
-pick. Their choice is final. `suede-ship` applies the same carve-out to live
+pick. Their choice is final. `suede-graph-flo-xr` applies the same carve-out to live
 production exposure it observed independently of the change at hand, such as a
 real secret or an unauthenticated `200` that should not exist. That goes to the
 user immediately, because it was true before you arrived and will be true after

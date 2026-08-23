@@ -117,7 +117,7 @@ that need to build, package, explain, audit, and ship.
 Use this for product and website work:
 
 - Suede Workflow Skills: the umbrella skill that carries the whole stack from agent to agent, computer to computer, and harness to harness.
-- Suede Ship: run a nontrivial repo change through the canonical DAG —
+- Suede Graph Flo XR: run a nontrivial repo change through the canonical DAG —
   research, red-teamed lane plan, disjoint build lanes, adversarial review,
   and a release verifier with an evidence handoff.
 - Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/GEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
@@ -334,7 +334,7 @@ Suede Agent Teams can run scout and constraints loops, safe parallel build loops
 ```text
 Maximum effort still needs one controller.
 
-Suede Ship freezes the outcome and authority, researches the repo, plans
+Suede Graph Flo XR freezes the outcome and authority, researches the repo, plans
 disjoint lanes with explicit file ownership, builds them in parallel,
 refutes its own review findings, and closes with proof. It spends compute
 on uncertainty, not page count.
@@ -435,7 +435,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --repo JasonColapietro/suede-creator-skills \
   --path skills/johnny-suede-write \
   skills/johnny-suede-design \
-  skills/suede-ship \
+  skills/suede-graph-flo-xr \
   skills/suede-code \
   skills/suede-ci-gate \
   skills/suede-seo-audit \

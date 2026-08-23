@@ -49,7 +49,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-deslop \
   skills/suede-design \
   skills/suede-agent-teams \
-  skills/suede-ship \
+  skills/suede-graph-flo-xr \
   skills/suede-ship-copy \
   skills/suede-ai-eval \
   skills/suede-recommend-next-action \

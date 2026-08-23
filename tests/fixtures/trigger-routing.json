@@ -1099,7 +1099,7 @@
     {
       "id": "ship-release",
       "skills": [
-        "suede-ship",
+        "suede-graph-flo-xr",
         "suede-ci-gate",
         "suede-launch-packaging",
         "suede-release-linter"
@@ -1107,13 +1107,13 @@
       "fallback": "clarify",
       "routes": [
         {
-          "skill": "suede-ship",
+          "skill": "suede-graph-flo-xr",
           "positive": [
-            "shipping dag",
-            "lane plan",
-            "integration gate",
-            "release verification",
-            "disjoint parallel build"
+            "graph-of-thoughts",
+            "shipping search",
+            "competing implementation plans",
+            "evidence-gated selection",
+            "multi-file repo change"
           ],
           "negative": [
             "branch protection",
@@ -1123,7 +1123,7 @@
             "stems"
           ],
           "metadataMustContain": [
-            "shipping dag"
+            "graph-of-thoughts"
           ]
         },
         {
@@ -1135,8 +1135,8 @@
             "duplicate pipeline"
           ],
           "negative": [
-            "shipping dag",
-            "lane plan",
+            "graph-of-thoughts",
+            "shipping search",
             "install commands",
             "release folders",
             "stems"
@@ -1154,7 +1154,7 @@
             "release copy"
           ],
           "negative": [
-            "shipping dag",
+            "graph-of-thoughts",
             "branch protection",
             "release folders",
             "stems",
@@ -1198,7 +1198,7 @@
           "expected": "suede-release-linter",
           "forbidden": [
             "suede-launch-packaging",
-            "suede-ship"
+            "suede-graph-flo-xr"
           ]
         },
         {
@@ -1212,10 +1212,10 @@
           ]
         },
         {
-          "id": "suede-ship-dag-negative",
+          "id": "suede-graph-flo-xr-search-negative",
           "mode": "negative",
-          "prompt": "Run the shipping dag with a lane plan, integration gate, and release verification.",
-          "expected": "suede-ship",
+          "prompt": "Search competing implementation plans for this multi-file repo change and select one evidence-gated winner before any build.",
+          "expected": "suede-graph-flo-xr",
           "forbidden": [
             "suede-ci-gate",
             "suede-launch-packaging"
