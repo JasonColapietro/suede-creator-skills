@@ -1442,10 +1442,18 @@ const withinAllowed = (candidate, allowed) => Boolean(candidate && allowed) && p
 const scopeChecklist = SCOPE.split(/\r?\n/)
   .map(item => item.replace(/^\s*(?:[-*+]\s+|\d+[.)]\s+)/, '').trim())
   .filter(Boolean)
+// A composite citation is a set of locations, and planners recombine them: a real
+// research source "grade.ts:83-121; grade.test.ts:11-43" came back from a finalist as
+// "grade.test.ts:11-43; grade.ts:19-25,40-44" — same files, reordered segments, drifted
+// line ranges — and exact membership rejected it (third live run dead at this check).
+// Compare sources as spelling-normalized, order-insensitive segment sets instead; the
+// planner's original source string still travels with the plan.
+const normalizeSourceKey = value => normalizeProvenancePart(value)
+  .split(';').map(part => part.trim()).filter(Boolean).sort().join('; ')
 const knownPlanSources = new Set(['user scope',
   ...research.flatMap(item => (item.facts || []).map(fact => fact.source)).filter(nonEmptyString),
   ...constraints.map(constraint => constraint.source).filter(nonEmptyString),
-])
+].map(normalizeSourceKey))
 const EXTERNAL_COMMAND_POLICY = Object.freeze({
   deny: Object.freeze([
     { id: 'external-cli', pattern: /\b(?:curl|wget|httpie|gh|vercel|supabase|aws|gcloud|kubectl|helm|terraform|pulumi|flyctl|heroku|wrangler|firebase|railway|netlify|stripe|doctl|oci|scp|sftp|ssh|psql|mysql|mongosh|redis-cli)\b/i },
@@ -1571,7 +1579,7 @@ const planEligibility = (plan, score) => {
       mappingPairs.add(pair)
       if (normalizeText(mapping.acceptance) !== normalizeText(lane.acceptance)) reasons.push(`scope mapping for ${mapping.item} does not name an existing lane acceptance command`)
     }
-    if (!knownPlanSources.has(mapping.source)) reasons.push('scope mapping cites an unknown source')
+    if (!knownPlanSources.has(normalizeSourceKey(mapping.source))) reasons.push('scope mapping cites an unknown source')
   }
   if (scopeChecklist.some(item => !mappedItems.has(item))) reasons.push('scope checklist is incomplete')
   if (plan.lanes.some(lane => !mappedLanes.has(lane.name))) reasons.push('lane has no canonical scope mapping')
