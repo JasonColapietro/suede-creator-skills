@@ -7,7 +7,7 @@ By Jason Colapietro, Suede Labs AI
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
 a 71-skill open-source pack for Claude Code and OpenAI Codex.
 
-The `suede-ship` operation graph and thought-state model discussed in this book
+The `suede-graph-flo-xr` operation graph and thought-state model discussed in this book
 adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
 Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
 Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
@@ -104,7 +104,7 @@ upstream notices beside the source. Forty of the marketing and growth skills are
 adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines under the MIT License. That project is the origin of the material,
 and the credit belongs there. The adapted Graph of Thoughts workflow carries
-its upstream BSD terms at `skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`.
+its upstream BSD terms at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
 Full notice: `NOTICE.md`.
 
 ---
@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 71 skills fit
 
 Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,031,259 bytes. Loading all of them into every conversation would
+repo total 1,033,294 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 41,775 bytes. That is roughly a
+all 71 descriptions together come to 41,799 bytes. That is roughly a
 twenty-fifth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -349,8 +349,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 files total 1,031,259 bytes;
-the 71 descriptions together are 41,775. The agent holds the small number and
+when the skill is not running. In this repo the 71 files total 1,033,294 bytes;
+the 71 descriptions together are 41,799. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -642,7 +642,7 @@ Forty-eight of the 71 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
-`suede-ship` refuses three specific neighbors: high-volume work that splits into
+`suede-graph-flo-xr` refuses three specific neighbors: high-volume work that splits into
 independent worker tasks goes to `suede-codex-fleet`, findings-only review with
 no code change goes to `suede-code-review`, and CI and branch-protection wiring
 goes to `suede-ci-gate`. Read that as a routing table written from the point of
@@ -681,7 +681,7 @@ Two costs follow, and they are asymmetric.
 
 A description that oversells gets the skill loaded for work it cannot do. The
 skill fires, the body loads, the agent starts executing a procedure built for a
-different shape of problem, and it produces something. `suede-ship` running
+different shape of problem, and it produces something. `suede-graph-flo-xr` running
 against a one-line typo fix will happily scout, research across multiple lenses,
 plan lanes, and gate the release. You burn real time and real context, and at the
 end you have a correct one-line fix wrapped in ceremony. The failure is expensive
@@ -1030,7 +1030,7 @@ coordination problem to solve, it is a thing you do not do.
 Isolated worktrees make ownership physical rather than advisory. A worktree per
 lane, cut from `origin/main` rather than from your local mirror, means an agent
 cannot reach another lane's files even by accident, and cannot touch your dirty
-main checkout at all. `suede-ship` treats a violation of this as a halt
+main checkout at all. `suede-graph-flo-xr` treats a violation of this as a halt
 condition: it stops on a lane collision or on a file held by a live sibling
 worktree, and its own documentation says the fix is a re-plan, not a retry. An
 orchestrator that retries a collision is just rolling the dice again.
@@ -1163,7 +1163,7 @@ fleet and a very expensive way to generate material nobody will check.
 ## The stack, formally
 
 The six skills this chapter and the last keep circling — `suede-full-send`,
-`suede-ship`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
+`suede-graph-flo-xr`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
 `suede-recommend-next-action` — ship as a named group: the Agentic Adderall
 Stack, sold with a straight face at `/cracked.html` on the docs site. The label
 is a joke. The contract underneath is not, and it is worth stating precisely
@@ -1187,7 +1187,7 @@ because nothing ever waits on a timer — work is event-driven off lane
 completion, adversarial refutation runs inside the pass rather than as a
 follow-up session, and the close is an evidence gate, not a summary. Its cost
 model is the one this chapter already priced: subagents inherit the session
-model unless told otherwise, and `suede-ship` states its exact light, standard,
+model unless told otherwise, and `suede-graph-flo-xr` states its exact light, standard,
 and deep ceilings of 55, 110, and 200 total calls before launch. It generates
 competing plans, scores and prunes them, refutes and improves the survivors,
 aggregates compatible lanes, and lets only the selected plan mutate. The fleet
@@ -1245,7 +1245,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. Its Graph-of-Thoughts search
+`suede-graph-flo-xr` enforces the same boundary on itself. Its Graph-of-Thoughts search
 generates competing plans, scores and prunes them, refutes and improves the
 survivors, aggregates compatible lanes, and permits only the selected plan to
 mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
@@ -1354,7 +1354,7 @@ do.
 One exception, and it is narrow. Extremely risky findings, data loss, security or
 credential exposure, legal or rights violations, payment mistakes, irreversible
 public damage, cause a pause: state the risk, state the options, let the user
-pick. Their choice is final. `suede-ship` applies the same carve-out to live
+pick. Their choice is final. `suede-graph-flo-xr` applies the same carve-out to live
 production exposure it observed independently of the change at hand, such as a
 real secret or an unauthenticated `200` that should not exist. That goes to the
 user immediately, because it was true before you arrived and will be true after
@@ -3177,7 +3177,7 @@ describing the work in the words its description was written to catch.
 
 | Skill | Use it when |
 |---|---|
-| `suede-ship` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
+| `suede-graph-flo-xr` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
 | `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
 | `suede-workflow-skills` | You want the umbrella that loads the pack |

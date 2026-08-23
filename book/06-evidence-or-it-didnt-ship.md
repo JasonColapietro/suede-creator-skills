@@ -37,7 +37,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. Its Graph-of-Thoughts search
+`suede-graph-flo-xr` enforces the same boundary on itself. Its Graph-of-Thoughts search
 generates competing plans, scores and prunes them, refutes and improves the
 survivors, aggregates compatible lanes, and permits only the selected plan to
 mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
@@ -146,7 +146,7 @@ do.
 One exception, and it is narrow. Extremely risky findings, data loss, security or
 credential exposure, legal or rights violations, payment mistakes, irreversible
 public damage, cause a pause: state the risk, state the options, let the user
-pick. Their choice is final. `suede-ship` applies the same carve-out to live
+pick. Their choice is final. `suede-graph-flo-xr` applies the same carve-out to live
 production exposure it observed independently of the change at hand, such as a
 real secret or an unauthenticated `200` that should not exist. That goes to the
 user immediately, because it was true before you arrived and will be true after

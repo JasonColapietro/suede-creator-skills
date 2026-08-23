@@ -1,11 +1,11 @@
 ---
-name: suede-ship
+name: suede-graph-flo-xr
 description: "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
 ---
 
-# Suede Ship
+# Suede Graph Flo XR
 
-Use the bundled `workflows/suede-ship.js` workflow to search competing plans for
+Use the bundled `workflows/suede-graph-flo-xr.js` workflow to search competing plans for
 one multi-file repository change. It makes an evidence-backed selection before
 any implementation lane mutates the worktree.
 
@@ -35,16 +35,16 @@ scope or silently raise a ceiling. If the user has not chosen one, ask and wait.
 ## Runtime prerequisites
 
 The bundled JavaScript workflow is a Claude Code workflow for macOS. It requires
-`sandbox-exec` and the six registered `suede-ship-*` agent profiles. Install the
+`sandbox-exec` and the six registered `suede-graph-flo-xr-*` agent profiles. Install the
 full `suede-skills` plugin, the `suede-agent-workflows` plugin, or use this
 repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
 
 Claude Workflow exposes no Node `process` global, so the workflow cannot infer
 its package namespace. The calling skill must derive it from the invoked skill
 name and pass it on every launch: `suede-skills` for
-`$suede-skills:suede-ship`, `suede-agent-workflows` for
-`$suede-agent-workflows:suede-ship`, or the empty string for a bare
-`$suede-ship` installed by `install.sh` or manual copy. This is runtime context,
+`$suede-skills:suede-graph-flo-xr`, `suede-agent-workflows` for
+`$suede-agent-workflows:suede-graph-flo-xr`, or the empty string for a bare
+`$suede-graph-flo-xr` installed by `install.sh` or manual copy. This is runtime context,
 not a user choice. A missing or unknown value fails before the first agent call.
 
 A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
@@ -52,7 +52,7 @@ not by themselves register or execute Claude Workflow agent profiles. In those
 environments, treat this file as the orchestration contract and route the change
 to direct implementation; do not claim the bundled workflow ran. To enable it in
 Claude Code after a manual single-skill copy, also copy this repository's
-`agents/suede-ship-*.md` files into `~/.claude/agents` and restart Claude Code.
+`agents/suede-graph-flo-xr-*.md` files into `~/.claude/agents` and restart Claude Code.
 
 The requested Scout setup command probes `/usr/bin/sandbox-exec` as its first
 subprocess, before fetch or worktree creation. If that command is invoked and
@@ -67,7 +67,7 @@ Invoke:
 
 ```js
 Workflow({
-  scriptPath: "skills/suede-ship/workflows/suede-ship.js",
+  scriptPath: "skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js",
   args: { repo, scope, agentBudget, agentNamespace, deploys, liveUrl, vault }
 })
 ```
@@ -108,6 +108,35 @@ blocker in one line and offer 2–4 applicable
 resolutions (for example: narrow scope, exempt protected WIP, resolve the
 collision, choose a higher budget, or provide missing context), and wait. Do
 not relaunch or mutate while halted.
+
+### Reading a search halt
+
+An empty search used to report `no safe graph winner` however it ended, so an
+infrastructure flake and a genuine evidence conflict printed the same line. The
+halt now names which happened, and `haltDetail` carries the counts behind it:
+
+| Reason | What it means |
+|---|---|
+| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence — rerun. |
+| `no candidate reached Select` | The search emptied upstream for some other reason; read `graph.dropped`. |
+| `every finalist lost its score before Select` | Finalists existed and were pruned as unscored. |
+| `every finalist was pruned before Select` | Finalists were pruned for a non-score reason. |
+| `every finalist carries a degraded or missing score` | Finalists reached Select without a valid score. |
+| `every finalist failed deterministic plan eligibility` | Real rejection. `haltDetail.eligibilityRejections` lists every reason. |
+| `no safe graph winner` | None of the above fits — read the graph. |
+
+`haltDetail.infrastructureDegraded` is independent of the reason: both can be
+true at once. Read the reason for what stopped Select and that flag for what
+degraded the pool feeding it.
+
+Score calls are read-only and idempotent, so a transport-level death is retried:
+twice per call, capped run-wide at 5% of the agent ceiling, and refused entirely
+once the remaining budget falls to the reserved floor (20% of the ceiling). A
+malformed score is never retried — the schema is enforced at the tool layer, so
+an invalid score is a judgment to keep, not a connection to redial. Every
+attempt and every refused retry lands in `graph.scoreRetries`, and
+`scoreReliability` rides out in the result on every run, halted or not: a flake
+that costs two finalists still degrades a run that goes on to ship.
 
 Claude's registered agent profiles enforce tool separation: local readers have
 no shell, write, or web tools; public-web readers have no local-file or shell
@@ -164,10 +193,10 @@ result and graph trace without spending another agent call; include any Build
 or Fix lanes that completed before the halt. If Scout returns an invalid path
 before `runKey` validation, report the halt without writing a run-keyed
 handoff. Otherwise, save it to
-`.suede-ship/${runKey}/handoff.md` at the target repo root, then verify it exists:
+`.suede-graph-flo-xr/${runKey}/handoff.md` at the target repo root, then verify it exists:
 
 ```bash
-test -f ".suede-ship/${runKey}/handoff.md"
+test -f ".suede-graph-flo-xr/${runKey}/handoff.md"
 ```
 
 Report that path, the selected plan if any, gate result, changed files, commands
@@ -175,7 +204,7 @@ run, and explicit caveats. A completed local graph does not prove a deployment.
 
 ## Third-party license
 
-The operation graph and thought-state model in `workflows/suede-ship.js` adapt
+The operation graph and thought-state model in `workflows/suede-graph-flo-xr.js` adapt
 Graph of Thoughts by ETH Zurich. The complete upstream BSD notice, conditions,
 disclaimer, and requested citation travel with this skill at
 `LICENSE.graph-of-thoughts-BSD.txt`. Keep that file with every source or binary
@@ -190,4 +219,4 @@ redistribution of the workflow.
 - Copy-only search and publication readiness → `suede-ship-copy`.
 - From `suede-code-review`, `suede-ci-gate`, or `suede-ship-copy`: route a
   multi-file implementation-plan search with one
-  selected mutating winner back to `suede-ship`.
+  selected mutating winner back to `suede-graph-flo-xr`.

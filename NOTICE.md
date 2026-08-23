@@ -85,19 +85,19 @@ and scored by the stack's existing 70-point ship gate.
 ## Graph of Thoughts — ETH Zurich
 
 The operation graph and thought-state model in
-`skills/suede-ship/workflows/suede-ship.js` are adapted from
+`skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js` are adapted from
 [Graph of Thoughts](https://github.com/spcl/graph-of-thoughts) by ETH Zurich,
 pinned at commit `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`.
 
 **Upstream:** https://github.com/spcl/graph-of-thoughts at
 `3d9d9dbd8937d47a4441f681b8b40e3c5b054f16`
 
-**Adapted operation file:** `skills/suede-ship/workflows/suede-ship.js`
+**Adapted operation file:** `skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js`
 
 **Upstream license:** BSD terms in
 [`licenses/graph-of-thoughts-BSD.txt`](licenses/graph-of-thoughts-BSD.txt)
 and the byte-identical traveling copy at
-[`skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt`](skills/suede-ship/LICENSE.graph-of-thoughts-BSD.txt).
+[`skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`](skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt).
 The traveling copy is included by single-skill installers with the adapted
 workflow source.
 

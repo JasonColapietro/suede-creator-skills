@@ -1099,7 +1099,7 @@
     {
       "id": "ship-release",
       "skills": [
-        "suede-ship",
+        "suede-graph-flo-xr",
         "suede-code-review",
         "suede-ci-gate",
         "suede-launch-packaging",
@@ -1108,7 +1108,7 @@
       "fallback": "clarify",
       "routes": [
         {
-          "skill": "suede-ship",
+          "skill": "suede-graph-flo-xr",
           "positive": [
             "shipping dag",
             "graph-of-thoughts shipping search",
@@ -1208,39 +1208,39 @@
       ],
       "cases": [
         {
-          "id": "suede-ship-graph-positive",
+          "id": "suede-graph-flo-xr-graph-positive",
           "mode": "positive",
           "prompt": "Search several implementation plans, score and prune them, have adversarial agents attack the survivors, aggregate the best lanes, then build and gate the winner.",
-          "expected": "suede-ship"
+          "expected": "suede-graph-flo-xr"
         },
         {
-          "id": "suede-ship-multifile-positive",
+          "id": "suede-graph-flo-xr-multifile-positive",
           "mode": "positive",
           "prompt": "Use a Graph-of-Thoughts shipping search for this multi-file repository change, then select one implementation plan to build.",
-          "expected": "suede-ship"
+          "expected": "suede-graph-flo-xr"
         },
         {
-          "id": "suede-ship-search-positive",
+          "id": "suede-graph-flo-xr-search-positive",
           "mode": "positive",
           "prompt": "Generate alternatives for this repo change, score and prune the plans, refute the survivors, and aggregate the best lanes before shipping the selected winner.",
-          "expected": "suede-ship"
+          "expected": "suede-graph-flo-xr"
         },
         {
-          "id": "suede-ship-findings-negative",
+          "id": "suede-graph-flo-xr-findings-negative",
           "mode": "negative",
           "prompt": "Review this existing diff and report findings, but do not change code.",
           "expected": "suede-code-review",
           "forbidden": [
-            "suede-ship"
+            "suede-graph-flo-xr"
           ]
         },
         {
-          "id": "suede-ship-ci-negative",
+          "id": "suede-graph-flo-xr-ci-negative",
           "mode": "negative",
           "prompt": "Configure branch protection and required checks for this repository, but do not run a Graph-of-Thoughts shipping search.",
           "expected": "suede-ci-gate",
           "forbidden": [
-            "suede-ship"
+            "suede-graph-flo-xr"
           ]
         },
         {
@@ -1256,7 +1256,7 @@
           "expected": "suede-release-linter",
           "forbidden": [
             "suede-launch-packaging",
-            "suede-ship"
+            "suede-graph-flo-xr"
           ]
         },
         {
@@ -1270,10 +1270,10 @@
           ]
         },
         {
-          "id": "suede-ship-dag-negative",
+          "id": "suede-graph-flo-xr-dag-negative",
           "mode": "negative",
           "prompt": "Run the shipping dag with a lane plan, integration gate, and release verification.",
-          "expected": "suede-ship",
+          "expected": "suede-graph-flo-xr",
           "forbidden": [
             "suede-ci-gate",
             "suede-launch-packaging"

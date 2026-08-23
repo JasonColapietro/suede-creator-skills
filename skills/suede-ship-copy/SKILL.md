@@ -1,6 +1,6 @@
 ---
 name: suede-ship-copy
-description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-ship); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
+description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
 ---
 
 # Suede Ship Copy
@@ -8,7 +8,7 @@ description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes pi
 The copy side of the canonical Suede DAG. One brief in, one publishable draft out,
 with about thirty agents in between arranged as a graph rather than a chain.
 
-`suede-ship` decomposes work by **file ownership**: two lanes may never write the
+`suede-graph-flo-xr` decomposes work by **file ownership**: two lanes may never write the
 same file. This decomposes by **message ownership**: two sections may never make
 the same point, and no section may assert a fact an agent invented. Same graph,
 different collision rule.
@@ -379,7 +379,7 @@ re-run.
 
 ## Routing
 
-- The change is code rather than copy -> use `suede-ship`, which searches
+- The change is code rather than copy -> use `suede-graph-flo-xr`, which searches
   competing implementation plans and mutates only the selected winner.
 - One surface, one pass, facts already established -> use `suede-copy`.
 - Text already written that only needs AI patterns stripped -> use `suede-deslop`.

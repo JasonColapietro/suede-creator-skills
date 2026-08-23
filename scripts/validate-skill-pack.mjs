@@ -461,15 +461,15 @@ const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
 const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
 const graphLicensePath = path.join(repoRoot, "licenses", "graph-of-thoughts-BSD.txt");
-const travelingGraphLicensePath = path.join(repoRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+const travelingGraphLicensePath = path.join(repoRoot, "skills", "suede-graph-flo-xr", "LICENSE.graph-of-thoughts-BSD.txt");
 if (!fs.existsSync(travelingGraphLicensePath)) {
-  fail.push("Suede Ship traveling Graph of Thoughts BSD license is missing");
+  fail.push("Suede Graph Flo XR traveling Graph of Thoughts BSD license is missing");
 } else if (!fs.existsSync(graphLicensePath) || readText(travelingGraphLicensePath) !== readText(graphLicensePath)) {
-  fail.push("Suede Ship traveling Graph of Thoughts BSD license does not match licenses/graph-of-thoughts-BSD.txt");
+  fail.push("Suede Graph Flo XR traveling Graph of Thoughts BSD license does not match licenses/graph-of-thoughts-BSD.txt");
 }
-const shipWorkflowPath = path.join(repoRoot, "skills", "suede-ship", "workflows", "suede-ship.js");
+const shipWorkflowPath = path.join(repoRoot, "skills", "suede-graph-flo-xr", "workflows", "suede-graph-flo-xr.js");
 if (!fs.existsSync(shipWorkflowPath) || !readText(shipWorkflowPath).includes("../LICENSE.graph-of-thoughts-BSD.txt")) {
-  fail.push("Suede Ship workflow does not point single-skill installs to the traveling Graph of Thoughts BSD license");
+  fail.push("Suede Graph Flo XR workflow does not point single-skill installs to the traveling Graph of Thoughts BSD license");
 }
 const codexPluginPath = path.join(repoRoot, ".codex-plugin", "plugin.json");
 const codexPluginJson = fs.existsSync(codexPluginPath)
