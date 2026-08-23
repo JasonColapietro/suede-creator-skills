@@ -168,18 +168,21 @@ results to authoritative government and health sites.
 **Goal:** help people and automated systems understand and source the page
 accurately without inventing facts. Run the Lane 6 checklist in
 `references/lane-checklists.md`: clear opening answer, plain definitions,
-explicit subjects, verified entity signals, accessible primary content, source
-links, and hallucination-risk claims. Google Search ignores `llms.txt`; record
-one only when another named consumer documents support, and never grade its
-presence as a search signal. `suede-ai-seo` is the canonical owner of the
-extractability standard behind this lane and of the reconciliation between
-Google's published stance and what the non-Google answer engines actually
-reward — cite it rather than re-deriving either, and land any threshold change
-there first.
+contrast statements where real alternatives exist, explicit subjects, verified
+entity signals, accessible primary content, source links, and
+hallucination-risk claims. Google Search ignores `llms.txt`; record one only
+when another named consumer documents support, and never grade its presence as
+a search signal. `suede-ai-seo` is the canonical owner of the extractability
+standard behind this lane and of the reconciliation between Google's published
+stance and what the non-Google answer engines actually reward — cite it rather
+than re-deriving either, and land any threshold change there first.
 
 Lane 6 grade drops to C or below if: the opening section cannot state the
-page's subject and answer clearly, material claims lack sources, or primary
-content is inaccessible without JavaScript and has no crawlable fallback.
+page's subject and answer clearly, material claims lack sources, primary
+content is inaccessible without JavaScript and has no crawlable fallback, or
+the title, H1, or URL promises a comparison the body never makes. A page that
+promises no comparison and has no named alternatives does not drop for
+carrying no contrast content.
 
 ### Lane 7: Copy and Conversion Quality
 
