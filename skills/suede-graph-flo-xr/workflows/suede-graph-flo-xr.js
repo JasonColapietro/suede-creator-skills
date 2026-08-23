@@ -1674,7 +1674,11 @@ Unread sources: ${JSON.stringify(stillUnread)}
 Return a plan with a summary, explicit disjoint lane ownership, observable acceptance commands,
 and scopeMap entries that assign every lane at least one exact checklist item from ${JSON.stringify(scopeChecklist)}.
 An item may map to multiple lanes when the implementation is split; every item must map at least once.
-Each entry includes lane, exact acceptance, and a source from "user scope" or the audited research.
+Each entry includes lane, exact acceptance, and a source. The source field must be EITHER
+exactly the complete string "user scope" OR one source string copied verbatim from
+the Research facts or Constraints above — never a paraphrase, never with commentary appended;
+selection deterministically rejects any mapping whose source is not an exact member of that set.
+Put justification in the plan summary, not in the source field.
 Return an explicit empty externalActions array.
 ${PLAN_FORMAT_RULES}`,
         { label: `Generate:${index}`, phase: 'Generate', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
@@ -1861,7 +1865,9 @@ Candidate files: ${scoutCandidateFiles.join(', ')}
 
 Improve the complete plan without editing source. Preserve supported evidence, address every
 reproducible objection, keep file ownership disjoint, return observable acceptance commands,
-scopeMap entries for every checklist item ${JSON.stringify(scopeChecklist)}, and externalActions: [].
+scopeMap entries for every checklist item ${JSON.stringify(scopeChecklist)} (each entry's source
+EITHER exactly the complete string "user scope" OR one source string copied verbatim from
+Research or Constraints — never a paraphrase, never with commentary appended), and externalActions: [].
 ${PLAN_FORMAT_RULES}`,
             { label: `Improve:${round}:${thought.id}`, phase: 'Improve', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
             )
@@ -1954,7 +1960,9 @@ Candidate files: ${scoutCandidateFiles.join(', ')}
 
 Aggregate the strongest compatible lanes into one complete plan. Preserve full scope coverage,
 give every file exactly one owner, keep every acceptance command observable, and use scopeMap to
-assign every lane at least one exact checklist item from ${JSON.stringify(scopeChecklist)} with its acceptance and known source.
+assign every lane at least one exact checklist item from ${JSON.stringify(scopeChecklist)} with its acceptance and a source
+that is EITHER exactly the complete string "user scope" OR one source string copied verbatim from a surviving
+plan's scopeMap or its evidence — never a paraphrase, never with commentary appended.
 An item may map to multiple lanes; every item must map at least once. Return externalActions: []. Do not edit source.
 ${PLAN_FORMAT_RULES}`,
         { label: 'Aggregate:survivors', phase: 'Aggregate', schema: PLAN, effort: 'high', authority: 'read-only', agentType: CODE_READER_AGENT }
