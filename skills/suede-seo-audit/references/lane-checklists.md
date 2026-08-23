@@ -264,6 +264,36 @@ Natural-language check: [clear | repetitive | stuffed] | evidence: [quoted text]
 - [ ] Definitions are written as `[Term] is [concise definition].` not buried in
       nested clauses
 
+**Contrast and comparison**
+- [ ] Where the subject has named alternatives, a competing approach, or a
+      do-nothing option, the page states at least one difference in its own
+      words. Google's Discovery Engine (Vertex AI Search) ranks with a
+      cross-attention model that reads negation and contrast directly, so
+      "unlike X, this does Y" carries meaning that embedding similarity alone
+      flattens away. Quote the sentence as evidence; the presence of the word
+      "unlike" is not the check.
+- [ ] Comparative framing the page already promises is delivered in the body. A
+      title, H1, or URL containing "vs", "alternative to", "best ... for", or
+      "without ..." commits the page to naming the other option and the
+      difference. This is the most common way the gap survives an audit: the
+      framing sits in the metadata and nowhere in the prose.
+- [ ] Segment framing ("best for {segment}") and constraint framing ("without
+      {constraint}") appear where the page genuinely serves a narrower reader
+      than its category does. Do not add a segment the product does not serve
+      or a constraint it does not remove.
+- [ ] A page whose subject has no alternatives and no competitors passes with no
+      contrast content at all. Mark it N/A and name why in one line. No
+      comparison quota is applied, and a page does not improve by acquiring a
+      rival it does not compete with.
+
+Contrast check output format:
+```
+Alternatives in scope: [named list | none — reason]
+Contrast statement: [quoted sentence | absent] | location: [section or selector]
+Comparison promised by title/H1/URL: [quoted phrase | none] | delivered: [yes/no]
+Segment or constraint framing: [quoted | not applicable]
+```
+
 **Answer and source quality**
 - [ ] Answers use the format that best serves the content: prose, steps, table,
       or list. Do not claim one format receives automatic citation preference.
