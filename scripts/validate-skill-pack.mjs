@@ -1751,9 +1751,16 @@ if (indexJsonLdItemMatches.length !== totalSkillCount) {
 }
 
 // Ship-log guard: released entries cite their reachable landing commits. One
-// newest prepared entry may instead cite the current origin/main merge base,
-// but it must remain visibly unreleased. A fabricated hash, stale version pill,
-// or out-of-order entry would make the page lie about its history.
+// newest prepared entry may instead cite a recent origin/main commit as its
+// base, but it must remain visibly unreleased. A fabricated hash, stale version
+// pill, or out-of-order entry would make the page lie about its history.
+//
+// How far behind origin/main a prepared base may fall before the ship log
+// counts as stale. Observed release cycles in this repo run 3 to 22 commits, so
+// 40 is roughly two of the longest ones: wide enough that an ordinary cycle
+// never trips it, narrow enough that a genuinely abandoned stamp does. Refresh
+// with `npm run build:shiplog`.
+const PREPARED_BASE_MAX_DRIFT = 40;
 const clogItemMatches = [...docsRootText.matchAll(/<li class="clog-item"([^>]*)>([\s\S]*?)<\/li>/g)];
 const clogItems = clogItemMatches.map((match) => match[2]);
 if (clogItems.length === 0) {
@@ -1835,25 +1842,19 @@ if (clogItems.length === 0) {
         fail.push("docs/index.html prepared changelog validation requires origin/main in a full-history checkout");
         continue;
       }
-      const mergeBaseProbe = spawnSync(
-        "git",
-        ["-C", repoRoot, "merge-base", "HEAD", "origin/main"],
-        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
-      );
       const baseProbe = spawnSync(
         "git",
         ["-C", repoRoot, "rev-parse", `${entry.base}^{commit}`],
         { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
       );
-      if (mergeBaseProbe.status !== 0 || baseProbe.status !== 0) {
+      if (baseProbe.status !== 0) {
         fail.push("docs/index.html could not resolve the prepared changelog merge base");
         continue;
       }
-      const expectedBase = mergeBaseProbe.stdout.trim();
-      const citedBase = baseProbe.stdout.trim();
-      if (citedBase !== expectedBase) {
-        fail.push(`docs/index.html prepared changelog base ${entry.base} does not match current branch merge-base ${expectedBase.slice(0, 7)} with origin/main`);
-      }
+      // Published, first. A base that is not on origin/main is the failure that
+      // actually misleads a reader: the commit link either 404s or points at a
+      // pre-squash branch object nobody else can see. Nothing downstream is
+      // meaningful until this holds, so stop here when it does not.
       const reachable = spawnSync(
         "git",
         ["-C", repoRoot, "merge-base", "--is-ancestor", entry.base, "origin/main"],
@@ -1861,6 +1862,42 @@ if (clogItems.length === 0) {
       );
       if (reachable.status !== 0) {
         fail.push(`docs/index.html prepared changelog base ${entry.base} is not reachable from origin/main`);
+        continue;
+      }
+      // The entry claims the prepared work sits on top of this commit, so the
+      // checkout under validation has to contain it. On main and on the merge
+      // ref CI builds for a pull request this is free; on a feature branch it
+      // means the stamp cannot jump ahead to a commit the branch was not cut
+      // from.
+      const onThisBranch = spawnSync(
+        "git",
+        ["-C", repoRoot, "merge-base", "--is-ancestor", entry.base, "HEAD"],
+        { stdio: "ignore" }
+      );
+      if (onThisBranch.status !== 0) {
+        fail.push(`docs/index.html prepared changelog base ${entry.base} is not an ancestor of HEAD — the prepared entry does not sit on the commit it cites`);
+      }
+      // Staleness, not equality. This check used to require the cited base to
+      // equal `merge-base HEAD origin/main`, which on main is main's own tip —
+      // so the first merge after any ship-log refresh turned main red, and
+      // every branch cut from it inherited the failure whether or not it
+      // touched docs. It could not hold on a repo that takes more than one pull
+      // request between refreshes, and the repo shipping the check could not
+      // pass it. What the guard is really for is that the ship log is not badly
+      // stale, which is a commit-distance question and only ever changes when
+      // something merges. A calendar bound is deliberately absent: it would
+      // turn main red on a date with no change behind it, which is the same
+      // self-breaking shape in slower clothing.
+      const driftProbe = spawnSync(
+        "git",
+        ["-C", repoRoot, "rev-list", "--count", `${entry.base}..origin/main`],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+      );
+      const drift = driftProbe.status === 0 ? Number.parseInt(driftProbe.stdout.trim(), 10) : Number.NaN;
+      if (!Number.isInteger(drift)) {
+        fail.push(`docs/index.html could not measure how far prepared changelog base ${entry.base} is behind origin/main`);
+      } else if (drift > PREPARED_BASE_MAX_DRIFT) {
+        fail.push(`docs/index.html prepared changelog base ${entry.base} is ${drift} commits behind origin/main (limit ${PREPARED_BASE_MAX_DRIFT}) — refresh the ship log with \`npm run build:shiplog\``);
       }
     }
   } else if (gitHistory.state === "packaged" || gitHistory.state === "shallow") {
