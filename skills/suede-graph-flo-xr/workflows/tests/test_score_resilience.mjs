@@ -77,7 +77,7 @@ function runShip ({
           repoRoot: REPO, worktreePath: WORKTREE, commonDir: `${REPO}/.git`,
           registered: true, commonDirMatches: true, headSha: BASE_SHA,
           headMatchesOriginMain: true, clean: true, realPathWithinAllowedFamily: true,
-          unsafeCandidateFiles: [],
+          unsafeCandidateFiles: [], trackedCandidateFiles: [],
         }
       case 'Research':
         return { lens: label, facts: [], constraints: [], unread: [] }

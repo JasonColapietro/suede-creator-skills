@@ -14,7 +14,7 @@
     "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
     "test:triggers": "node --test tests/test_trigger_routing.mjs",
-    "test:ship-cost": "node --test tests/test_ship_workflow_cost.mjs tests/test_ship_copy_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/tests/test_score_resilience.mjs",
+    "test:ship-cost": "node --test tests/test_ship_workflow_cost.mjs tests/test_ship_copy_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/tests/test_score_resilience.mjs skills/suede-graph-flo-xr/workflows/tests/test_plan_path_safety.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
     "test": "npm run validate && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:ship-cost && npm run test:contributions && npm run test:python",
     "audit:dependencies": "npm audit --omit=dev --audit-level=high",
