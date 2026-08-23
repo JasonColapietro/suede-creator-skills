@@ -99,7 +99,7 @@ For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and o
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources including `suede://specialties`, and 5 prompts over JSON-RPC.
+Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources, and 5 prompts over JSON-RPC.
 
 </details>
 
@@ -238,9 +238,9 @@ The repo ships a dependency-free stdio MCP server at [`mcp/`](mcp/). It implemen
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-| Tools (7) | Resources (6) | Prompts (5) |
+| Tools (9) | Resources (7) | Prompts (5) |
 |---|---|---|
-| `list_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist` | catalog, plugins, copy-seo-audit, visibility-grade, code-grade, qa-checklist | discovery and audit prompts |
+| `list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist` | catalog, specialties, plugins, copy-seo-audit, visibility-grade, code-grade, qa-checklist | discovery and audit prompts |
 
 ## Safety
 

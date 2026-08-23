@@ -79,7 +79,7 @@
       <p>The second half is suitability, and it's the part most packs skip. Every Suede description carries an explicit <code>NOT FOR</code> line that routes the request somewhere else when the fit is wrong:</p>
 
       <div class="panel" aria-label="Routing example">
-        <p><code>suede-ship</code> &mdash; NOT FOR: high-volume, well-specified work that splits into independent worker-sized tasks (use <code>suede-codex-fleet</code>); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
+        <p><code>suede-ship</code> &mdash; NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
       </div>
 
       <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a deep-budget Graph-of-Thoughts shipping search at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request. More on why that gets <em>better</em> as the pack grows: <a href="not-for-the-line-that-makes-a-pack-work.html">NOT FOR: the two words that make a big skill pack work</a>.</p>
@@ -98,7 +98,7 @@
       <p><code>suede-clip-to-guide</code> turns a video moment into a long-form asset, with rights routing, moment scoring, a clip brief, exact post copy, and a publishing sequence that requires visible-identity approval before anything goes out.</p>
 
       <h2>Seven read-only MCP tools, optional</h2>
-      <p>The pack ships an optional MCP server. It's read-only by design and it exists for the moments when structure beats prose: <code>list_suede_skills</code> and <code>get_suede_skill</code> for discovery, <code>suede_install_options</code> for install paths, then <code>suede_code_grade</code>, <code>suede_visibility_grade</code>, <code>suede_copy_seo_audit</code>, and <code>suede_qa_checklist</code> for scaffolded audits.</p>
+      <p>The pack ships an optional MCP server. It's read-only by design and it exists for the moments when structure beats prose: <code>list_suede_skills</code>, <code>list_suede_specialties</code>, <code>search_suede_skills</code>, and <code>get_suede_skill</code> for discovery, <code>suede_install_options</code> for install paths, then <code>suede_code_grade</code>, <code>suede_visibility_grade</code>, <code>suede_copy_seo_audit</code>, and <code>suede_qa_checklist</code> for scaffolded audits.</p>
       <p>You don't need it. The skills work on their own, with no accounts, API keys, or configuration. Add the MCP when you want a catalog, a checklist, or an audit scaffold returned as data instead of paragraphs.</p>
 
       <h2>Design, code, and a refund Amazon already denied</h2>
