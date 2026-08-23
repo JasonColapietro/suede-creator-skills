@@ -48,12 +48,13 @@ full `suede-skills` plugin, the `suede-agent-workflows` plugin, or use this
 repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
 
 Claude Workflow exposes no Node `process` global, so the workflow cannot infer
-its package namespace. The calling skill must derive it from the invoked skill
-name and pass it on every launch: `suede-skills` for
-`$suede-skills:suede-graph-flo-xr`, `suede-agent-workflows` for
-`$suede-agent-workflows:suede-graph-flo-xr`, or the empty string for a bare
-`$suede-graph-flo-xr` installed by `install.sh` or manual copy. This is runtime context,
-not a user choice. A missing or unknown value fails before the first agent call.
+its package namespace. The calling skill must derive it from how this skill was
+invoked and pass it on every launch. When the invoked name carries a plugin
+prefix, `agentNamespace` is that prefix verbatim — `suede-skills` from the full
+plugin, `suede-agent-workflows` from the focused orchestration plugin. A bare
+invoked name with no prefix, installed by `install.sh` or copied by hand, takes
+the empty string. This is runtime context, not a user choice. A missing or
+unknown value fails before the first agent call.
 
 A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
 not by themselves register or execute Claude Workflow agent profiles. In those
