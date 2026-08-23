@@ -373,10 +373,13 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
 
   const citationPath = path.join(packagedRoot, "CITATION.cff");
   const citationOriginal = fs.readFileSync(citationPath, "utf8");
-  const citation = citationOriginal.replace(
-    /^(version:\s*[^\n]+)$/m,
-    "$1\ndate-released: 2099-01-01"
-  );
+  // Replace the date rather than only inserting one: a released checkout
+  // already carries date-released, and a second key would leave the fixture
+  // asserting against whichever copy the validator's regex happened to reach
+  // first.
+  const citation = /^date-released:/m.test(citationOriginal)
+    ? citationOriginal.replace(/^date-released:[^\n]*$/m, "date-released: 2099-01-01")
+    : citationOriginal.replace(/^(version:\s*[^\n]+)$/m, "$1\ndate-released: 2099-01-01");
   assert.notEqual(citation, citationOriginal, "test fixture must add a false prepared-release date");
   fs.writeFileSync(citationPath, citation);
 
@@ -385,10 +388,15 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const catalog = JSON.parse(
     fs.readFileSync(path.join(packagedRoot, "mcp", "catalog.json"), "utf8")
   );
-  const poisonedDocs = docs.replace(
-    `<p class="clog-detail">Version ${catalog.version}`,
-    `<p class="clog-detail">Release ${catalog.version}`
-  );
+  const poisonedDocs = docs
+    .replace(
+      `<p class="clog-detail">Version ${catalog.version}`,
+      `<p class="clog-detail">Release ${catalog.version}`
+    )
+    // The date-released assertion below is the prepared-state rule, and the
+    // version pill is where the validator reads that state from. Inheriting it
+    // from the repo meant this case only ran while a release was in flight.
+    .replace(/(<p class="clog-fresh[^"]*">Version \S+ )released/, "$1prepared");
   assert.notEqual(poisonedDocs, docs, "test fixture must remove the release-version marker");
   fs.writeFileSync(docsPath, poisonedDocs);
 
@@ -520,11 +528,7 @@ test(
   }
 );
 
-// The prepared base the site currently advertises. Tests poison THIS value
-// rather than whatever `merge-base HEAD origin/main` resolves to: the two are
-// no longer required to be equal, so deriving the search string from git would
-// make these fixtures silently match nothing the first time the site's stamp
-// and the merge base diverged.
+// The prepared base the pages advertise, read back as a post-condition.
 function preparedBaseIn(checkoutRoot) {
   const docs = fs.readFileSync(path.join(checkoutRoot, "docs", "index.html"), "utf8");
   const base = docs.match(/class="[^"]*\bclog-base\b[^"]*"[^>]*>base ([0-9a-f]{7,40})</)?.[1];
@@ -532,22 +536,92 @@ function preparedBaseIn(checkoutRoot) {
   return base;
 }
 
-// Idempotent on purpose: a fixture may ask for the base the pages already
-// advertise. The post-condition, not the presence of a diff, is what proves the
-// fixture landed.
-function restampPreparedBase(checkoutRoot, replacement) {
-  const current = preparedBaseIn(checkoutRoot);
+// Anchored on markup that must already exist. A rewrite that silently matches
+// nothing would leave the checkout in a state the test does not describe, and
+// then fail somewhere unrelated to the rule under test.
+function rewriteFixture(text, label, pattern, replacement) {
+  const next = text.replace(pattern, replacement);
+  assert.notEqual(next, text, `test fixture must rewrite ${label}`);
+  return next;
+}
+
+// Build the whole prepared state instead of flipping one attribute and
+// inheriting the rest from the repo. The validator cross-checks the newest
+// changelog entry, the version pill, the tiny ship-log box on all three pages,
+// and CITATION.cff against each other, so a fixture that sets data-status alone
+// leaves the page internally inconsistent and fails on that mismatch rather
+// than on the rule it means to exercise.
+//
+// These fixtures used to inherit the prepared state from whatever the repo
+// happened to be in. That only holds while a release is in flight: the suite
+// was green because nothing had shipped, and every prepared case would have
+// broken on the next release whatever else changed. Constructing the state here
+// is what makes them independent of the repo's own release cycle.
+function makePreparedChangelog(checkoutRoot, baseHash) {
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
+  let index = fs.readFileSync(indexPath, "utf8");
+
+  // Only the first .clog-item moves. A prepared entry below the newest one is a
+  // different fixture, and a rule of its own.
+  index = rewriteFixture(
+    index,
+    "the newest changelog entry's status",
+    /<li class="clog-item"([^>]*)>/,
+    (_match, attrs) => `<li class="clog-item"${attrs.replace(/\s*data-status="[^"]*"/, "")} data-status="prepared">`
+  );
+  // A prepared entry cites a merge base and must not claim a landing hash. The
+  // two classes together are what the validator reads as "base, not hash":
+  // `class="clog-hash"` stops matching once `clog-base` follows it.
+  index = rewriteFixture(
+    index,
+    "the newest entry's commit anchor",
+    /<a class="clog-hash(?: clog-base)?" href="([^"]*\/commit\/)[0-9a-f]{7,40}"([^>]*?)aria-label="View (?:base )?commit [0-9a-f]{7,40} on GitHub">(?:base )?[0-9a-f]{7,40}<\/a>/,
+    (_match, hrefLead, middle) =>
+      `<a class="clog-hash clog-base" href="${hrefLead}${baseHash}"${middle}aria-label="View base commit ${baseHash} on GitHub">base ${baseHash}</a>`
+  );
+  index = rewriteFixture(
+    index,
+    "the version pill",
+    /(<p class="clog-fresh[^"]*">Version \S+ )released/,
+    "$1prepared"
+  );
+  fs.writeFileSync(indexPath, index);
+
   for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
     const file = path.join(checkoutRoot, relative);
-    const original = fs.readFileSync(file, "utf8");
-    const restamped = current === replacement ? original : original.replaceAll(current, replacement);
-    if (current !== replacement) {
-      assert.notEqual(restamped, original, `test fixture must replace the prepared base in ${relative}`);
-    }
-    assert.ok(restamped.includes(replacement), `test fixture must stamp ${replacement} into ${relative}`);
-    fs.writeFileSync(file, restamped);
+    let text = fs.readFileSync(file, "utf8");
+    text = rewriteFixture(
+      text,
+      `the ${relative} card status`,
+      /(<a id="hero-shiplog"[^>]*\bdata-status=")[^"]*(")/,
+      "$1prepared$2"
+    );
+    text = rewriteFixture(
+      text,
+      `the ${relative} card aria-label`,
+      /(<a id="hero-shiplog"[^>]*\baria-label="Ship log\. )Released( entry )/,
+      "$1Prepared$2"
+    );
+    text = rewriteFixture(
+      text,
+      `the ${relative} card stamp`,
+      /(<span class="hero-shiplog-top">)(?:Released|Prepared) ([A-Z][a-z]{2} \d{1,2}) <b>&middot; (?:base )?[0-9a-f]{7,40}(<\/b>)/,
+      `$1Prepared $2 <b>&middot; base ${baseHash}$3`
+    );
+    fs.writeFileSync(file, text);
   }
-  assert.equal(preparedBaseIn(checkoutRoot), replacement, "test fixture must leave the pages advertising the new base");
+
+  // An unreleased version carries no release date, so CITATION.cff is part of
+  // the prepared state too.
+  const citationPath = path.join(checkoutRoot, "CITATION.cff");
+  const citation = fs.readFileSync(citationPath, "utf8");
+  fs.writeFileSync(citationPath, citation.replace(/^date-released:[^\n]*\n/m, ""));
+
+  assert.equal(
+    preparedBaseIn(checkoutRoot),
+    baseHash,
+    "test fixture must leave the pages advertising the prepared base"
+  );
 }
 
 // Points the fixture's origin/main at its own HEAD, which is the state these
@@ -631,7 +705,7 @@ test("validator accepts a prepared changelog anchored to the current merge base"
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-");
   // Exactly what `npm run build:shiplog` writes: the merge base, which in this
   // fixture is HEAD itself. Drift is zero, the strictest case the guard allows.
-  restampPreparedBase(checkoutRoot, shortRev(checkoutRoot, "HEAD"));
+  makePreparedChangelog(checkoutRoot, shortRev(checkoutRoot, "HEAD"));
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -651,7 +725,7 @@ test("validator accepts a prepared changelog base that origin/main has moved pas
     overtaken.distance >= 1 && overtaken.distance <= 40,
     `fixture must sit behind origin/main but inside the bound (${overtaken.distance})`
   );
-  restampPreparedBase(checkoutRoot, overtaken.rev);
+  makePreparedChangelog(checkoutRoot, overtaken.rev);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -670,7 +744,7 @@ test("validator rejects a prepared changelog base that has fallen far behind ori
   assert.ok(available > 41, `history is too short to exercise the drift bound (${available} commits)`);
   const stale = baseBehindOriginMain(checkoutRoot, 41);
   assert.ok(stale.distance > 40, `fixture must sit past the limit (${stale.distance})`);
-  restampPreparedBase(checkoutRoot, stale.rev);
+  makePreparedChangelog(checkoutRoot, stale.rev);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -704,7 +778,7 @@ test("validator rejects a prepared changelog base unreachable from origin/main",
     }
   );
   assert.equal(unreachable.status, 0, unreachable.stderr);
-  restampPreparedBase(checkoutRoot, unreachable.stdout.trim().slice(0, 7));
+  makePreparedChangelog(checkoutRoot, unreachable.stdout.trim().slice(0, 7));
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -714,7 +788,7 @@ test("validator rejects a prepared changelog base unreachable from origin/main",
 
 test("validator rejects an unresolvable prepared changelog base", completeSourceHistoryTest, (t) => {
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-missing-");
-  restampPreparedBase(checkoutRoot, "0000001");
+  makePreparedChangelog(checkoutRoot, "0000001");
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -729,6 +803,10 @@ test("validator rejects an unresolvable prepared changelog base", completeSource
 test("build-shiplog propagates one changelog edit to every ship-log card", completeSourceHistoryTest, (t) => {
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-build-shiplog-");
   const indexPath = path.join(checkoutRoot, "docs", "index.html");
+  // The prepared path is the one worth pinning here — it is the state where the
+  // generator, not the author, decides the stamp. Construct it rather than
+  // inheriting whatever the repo last shipped.
+  makePreparedChangelog(checkoutRoot, shortRev(checkoutRoot, "HEAD"));
 
   // A title carrying an internal period, because the card's aria-label reads as
   // a sentence and a naive anchor on the first ". " truncates it there.
@@ -1021,13 +1099,20 @@ test("validator rejects a prepared changelog item below the newest entry", compl
   const docsPath = path.join(checkoutRoot, "docs", "index.html");
   const docs = fs.readFileSync(docsPath, "utf8");
   let seen = 0;
-  const poisoned = docs.replace(/<li class="clog-item" data-type="new">/g, (match) => {
+  // Mark the second entry, never the first. The rule under test is that a
+  // prepared item may not sit below the newest one, so the fixture has to leave
+  // a released entry above it. Marking the first entry only exercised that rule
+  // while the repo's own newest entry was already prepared and this replace
+  // therefore skipped it; once one shipped, this marked the newest entry, which
+  // is legal, and the case stopped testing anything.
+  const poisoned = docs.replace(/<li class="clog-item"([^>]*)>/g, (match, attrs) => {
     seen += 1;
-    return seen === 1
-      ? '<li class="clog-item" data-type="new" data-status="prepared">'
+    return seen === 2 && !attrs.includes("data-status")
+      ? `<li class="clog-item"${attrs} data-status="prepared">`
       : match;
   });
-  assert.ok(seen >= 1, "test fixture must contain a released changelog item after the prepared entry");
+  assert.ok(seen >= 2, "test fixture must contain a changelog item below the newest entry");
+  assert.notEqual(poisoned, docs, "test fixture must mark a lower changelog item prepared");
   fs.writeFileSync(docsPath, poisoned);
 
   const validation = runValidator(checkoutRoot);
