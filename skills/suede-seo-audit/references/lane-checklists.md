@@ -140,6 +140,29 @@ A-F grade.
 - [ ] Headings are concise enough to scan and specific enough to identify their
       section; no universal word cutoff is applied
 
+**Retrieval chunking**
+- [ ] No heading section exceeds ~375 words (500 tokens), the largest chunk
+      Google's Discovery Engine (Vertex AI Search) retrieves. Measure the prose
+      between one heading and the next, excluding `<nav>` and `<footer>` chrome.
+- [ ] An accordion, tab set, or FAQ whose items are marked up with `<summary>`,
+      `<button>`, or `<div>` rather than headings counts as ONE block, however
+      many items it holds. Valid FAQPage JSON-LD does not fix this: the schema
+      can describe a structure the prose does not have, and a schema-only pass
+      is the most common way this defect survives an audit.
+- [ ] Each claim worth citing sits inside one chunk together with the heading
+      that identifies it. A claim split across a boundary can be retrieved
+      without the heading that gives it meaning.
+- [ ] Record the largest block's word count and its heading as evidence, not a
+      pass/fail alone. A section within ~10% of the limit is worth flagging,
+      since routine copy edits push it over.
+
+Chunking check output format:
+```
+Largest block: [N] words under "[heading]" | limit ~375 | [within/over]
+Blocks over limit: [count] of [total headings]
+Accordion/FAQ items marked up as headings: [yes/no — N items]
+```
+
 **Section coverage and order**
 - [ ] Opening: what the page is and who it serves
 - [ ] Evidence appears near the claims it supports

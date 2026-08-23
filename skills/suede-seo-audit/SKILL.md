@@ -138,9 +138,12 @@ links, optional FAQ quality, and natural topic/entity coverage. Do not apply a
 universal page template, word count, or keyword-density quota.
 
 Lane 4 grade drops to C or below if: H1 is missing, the page omits information
-required to satisfy its primary reader intent, or internal links use
-non-descriptive anchor text throughout. Missing an exact-match phrase is not a
-failure when the page clearly covers the subject with natural language.
+required to satisfy its primary reader intent, internal links use
+non-descriptive anchor text throughout, or three or more heading sections run
+past the ~375-word retrieval chunk limit. A page whose entire body sits under
+one heading cannot earn above C in this lane, however clean its markup is.
+Missing an exact-match phrase is not a failure when the page clearly covers the
+subject with natural language.
 
 ### Lane 5: Schema Markup
 
