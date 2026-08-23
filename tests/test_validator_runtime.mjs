@@ -520,140 +520,201 @@ test(
   }
 );
 
-test("validator accepts a prepared changelog anchored to the current merge base", completeSourceHistoryTest, (t) => {
-  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-"));
+// The prepared base the site currently advertises. Tests poison THIS value
+// rather than whatever `merge-base HEAD origin/main` resolves to: the two are
+// no longer required to be equal, so deriving the search string from git would
+// make these fixtures silently match nothing the first time the site's stamp
+// and the merge base diverged.
+function preparedBaseIn(checkoutRoot) {
+  const docs = fs.readFileSync(path.join(checkoutRoot, "docs", "index.html"), "utf8");
+  const base = docs.match(/class="[^"]*\bclog-base\b[^"]*"[^>]*>base ([0-9a-f]{7,40})</)?.[1];
+  assert.ok(base, "docs/index.html must advertise a prepared .clog-base commit");
+  return base;
+}
+
+// Idempotent on purpose: a fixture may ask for the base the pages already
+// advertise. The post-condition, not the presence of a diff, is what proves the
+// fixture landed.
+function restampPreparedBase(checkoutRoot, replacement) {
+  const current = preparedBaseIn(checkoutRoot);
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const file = path.join(checkoutRoot, relative);
+    const original = fs.readFileSync(file, "utf8");
+    const restamped = current === replacement ? original : original.replaceAll(current, replacement);
+    if (current !== replacement) {
+      assert.notEqual(restamped, original, `test fixture must replace the prepared base in ${relative}`);
+    }
+    assert.ok(restamped.includes(replacement), `test fixture must stamp ${replacement} into ${relative}`);
+    fs.writeFileSync(file, restamped);
+  }
+  assert.equal(preparedBaseIn(checkoutRoot), replacement, "test fixture must leave the pages advertising the new base");
+}
+
+// Points the fixture's origin/main at its own HEAD, which is the state these
+// tests are about: main, just after something merged. Deriving it from the real
+// remote instead makes the fixtures depend on a branch other people are pushing
+// to — `origin/main~1` stops being an ancestor of the checkout the moment two
+// pull requests land while the suite is running, and the test fails for a
+// reason that has nothing to do with the validator. That happened.
+function checkoutWithOriginMainAtHead(t, prefix) {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), prefix));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
 
   const checkoutRoot = path.join(tempRoot, "checkout");
   cloneWithCurrentValidator(checkoutRoot);
-  const sourceOriginMain = spawnSync(
-    "git",
-    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
-    { encoding: "utf8" }
-  );
-  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
+  const head = spawnSync("git", ["-C", checkoutRoot, "rev-parse", "HEAD^{commit}"], { encoding: "utf8" });
+  assert.equal(head.status, 0, head.stderr);
   const alignOriginMain = spawnSync(
     "git",
-    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
+    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", head.stdout.trim()],
     { encoding: "utf8" }
   );
   assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
-  const mergeBase = spawnSync(
+  return checkoutRoot;
+}
+
+function commitsBehindOriginMain(checkoutRoot, revision) {
+  const probe = spawnSync(
     "git",
-    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
+    ["-C", checkoutRoot, "rev-list", "--count", `${revision}..origin/main`],
     { encoding: "utf8" }
   );
-  assert.equal(mergeBase.status, 0, mergeBase.stderr);
-  const baseHash = mergeBase.stdout.trim().slice(0, 7);
+  assert.equal(probe.status, 0, probe.stderr);
+  return Number.parseInt(probe.stdout.trim(), 10);
+}
 
-  const docsPath = path.join(checkoutRoot, "docs", "index.html");
-  const docs = fs.readFileSync(docsPath, "utf8");
-  let prepared = docs;
-  if (!prepared.includes('class="clog-item" data-type="new" data-status="prepared"')) {
-    prepared = prepared.replace(
-      '<li class="clog-item" data-type="new">',
-      '<li class="clog-item" data-type="new" data-status="prepared">'
-    );
+// `HEAD~N` is N commits behind HEAD only when the history is linear. GitHub
+// builds a pull request from a MERGE ref, so in CI HEAD is a merge commit:
+// HEAD~1 is main's tip, and reaching HEAD from it costs the merge commit plus
+// every commit on the branch. `HEAD~1` measured 2 behind and `HEAD~41` measured
+// 42, and both fixtures below failed on every pull request while passing on a
+// linear local checkout.
+//
+// Nor can a fixture demand a literal distance: no ancestor of a merge commit is
+// exactly 1 behind it, because dropping either parent still leaves the other
+// reachable. So ask for the nearest commit at least this far back, and let the
+// test assert against the distance it actually got.
+function baseBehindOriginMain(checkoutRoot, minimum) {
+  const listing = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-list", "--topo-order", "origin/main"],
+    { encoding: "utf8" }
+  );
+  assert.equal(listing.status, 0, listing.stderr);
+  const commits = listing.stdout.trim().split("\n").filter(Boolean);
+  // Topological order lists a commit before every one of its ancestors, and
+  // distance to origin/main only grows as you walk back, so the first candidate
+  // that clears the minimum is the closest one worth using.
+  for (const candidate of commits) {
+    const distance = commitsBehindOriginMain(checkoutRoot, candidate);
+    if (distance >= minimum) {
+      return { rev: shortRev(checkoutRoot, candidate), distance };
+    }
   }
-  if (!/class="[^"]*\bclog-base\b[^"]*"/.test(prepared)) {
-    prepared = prepared.replace(
-      '<span class="clog-tag">Orchestration</span>',
-      `<span class="clog-tag">Orchestration</span>\n            <a class="clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/${baseHash}">base ${baseHash}</a>`
-    );
-  }
-  assert.match(prepared, /data-status="prepared"/);
-  assert.match(prepared, new RegExp(`class="[^"]*\\bclog-base\\b[^"]*"[^>]*>base ${baseHash}<`));
-  fs.writeFileSync(docsPath, prepared);
+  assert.fail(
+    `no commit sits at least ${minimum} commits behind origin/main ` +
+    `(${commits.length} reachable) — the fixture cannot exercise this distance`
+  );
+}
+
+function shortRev(checkoutRoot, revision) {
+  const probe = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-parse", "--short=7", revision],
+    { encoding: "utf8" }
+  );
+  assert.equal(probe.status, 0, probe.stderr);
+  return probe.stdout.trim();
+}
+
+test("validator accepts a prepared changelog anchored to the current merge base", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-");
+  // Exactly what `npm run build:shiplog` writes: the merge base, which in this
+  // fixture is HEAD itself. Drift is zero, the strictest case the guard allows.
+  restampPreparedBase(checkoutRoot, shortRev(checkoutRoot, "HEAD"));
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.equal(validation.status, 0, diagnostics);
 });
 
-test("validator rejects a prepared changelog anchored before the current merge base", completeSourceHistoryTest, (t) => {
-  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-base-"));
-  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+// The regression this whole guard was rebuilt around. The check used to demand
+// the cited base equal `merge-base HEAD origin/main`, which on main is main's
+// own tip — so the first merge after any ship-log refresh turned main red and
+// every branch cut from it inherited the failure. A base origin/main has since
+// moved past is normal, not a defect, and must pass.
+test("validator accepts a prepared changelog base that origin/main has moved past", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-behind-");
+  const overtaken = baseBehindOriginMain(checkoutRoot, 1);
+  assert.notEqual(overtaken.rev, shortRev(checkoutRoot, "origin/main"));
+  assert.ok(
+    overtaken.distance >= 1 && overtaken.distance <= 40,
+    `fixture must sit behind origin/main but inside the bound (${overtaken.distance})`
+  );
+  restampPreparedBase(checkoutRoot, overtaken.rev);
 
-  const checkoutRoot = path.join(tempRoot, "checkout");
-  cloneWithCurrentValidator(checkoutRoot);
-  const sourceOriginMain = spawnSync(
-    "git",
-    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
-    { encoding: "utf8" }
-  );
-  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
-  const alignOriginMain = spawnSync(
-    "git",
-    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
-    { encoding: "utf8" }
-  );
-  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.equal(validation.status, 0, diagnostics);
+});
 
-  const mergeBase = spawnSync(
+test("validator rejects a prepared changelog base that has fallen far behind origin/main", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-stale-");
+  const depth = spawnSync(
     "git",
-    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
+    ["-C", checkoutRoot, "rev-list", "--count", "origin/main"],
     { encoding: "utf8" }
   );
-  assert.equal(mergeBase.status, 0, mergeBase.stderr);
-  const currentBase = mergeBase.stdout.trim().slice(0, 7);
-  const priorBase = spawnSync(
-    "git",
-    ["-C", checkoutRoot, "rev-parse", "origin/main^"],
-    { encoding: "utf8" }
-  );
-  assert.equal(priorBase.status, 0, priorBase.stderr);
-  const wrongBase = priorBase.stdout.trim().slice(0, 7);
-  assert.notEqual(wrongBase, currentBase);
-
-  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
-    const file = path.join(checkoutRoot, relative);
-    const original = fs.readFileSync(file, "utf8");
-    const poisoned = original.replaceAll(currentBase, wrongBase);
-    assert.notEqual(poisoned, original, `test fixture must replace the prepared base in ${relative}`);
-    fs.writeFileSync(file, poisoned);
-  }
+  assert.equal(depth.status, 0, depth.stderr);
+  const available = Number.parseInt(depth.stdout.trim(), 10);
+  assert.ok(available > 41, `history is too short to exercise the drift bound (${available} commits)`);
+  const stale = baseBehindOriginMain(checkoutRoot, 41);
+  assert.ok(stale.distance > 40, `fixture must sit past the limit (${stale.distance})`);
+  restampPreparedBase(checkoutRoot, stale.rev);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
-  assert.match(validation.stderr, /does not match current branch merge-base/);
+  assert.match(
+    validation.stderr,
+    new RegExp(`is ${stale.distance} commits behind origin/main \\(limit 40\\)`)
+  );
+});
+
+test("validator rejects a prepared changelog base unreachable from origin/main", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-unreachable-");
+  const tree = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-parse", "HEAD^{tree}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(tree.status, 0, tree.stderr);
+  const unreachable = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "commit-tree", tree.stdout.trim(), "-m", "unreachable prepared base fixture"],
+    {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GIT_AUTHOR_EMAIL: "validator@example.invalid",
+        GIT_AUTHOR_NAME: "Validator Fixture",
+        GIT_COMMITTER_EMAIL: "validator@example.invalid",
+        GIT_COMMITTER_NAME: "Validator Fixture"
+      }
+    }
+  );
+  assert.equal(unreachable.status, 0, unreachable.stderr);
+  restampPreparedBase(checkoutRoot, unreachable.stdout.trim().slice(0, 7));
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /prepared changelog base [0-9a-f]{7} is not reachable from origin\/main/);
 });
 
 test("validator rejects an unresolvable prepared changelog base", completeSourceHistoryTest, (t) => {
-  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-missing-"));
-  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
-
-  const checkoutRoot = path.join(tempRoot, "checkout");
-  cloneWithCurrentValidator(checkoutRoot);
-  const sourceOriginMain = spawnSync(
-    "git",
-    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
-    { encoding: "utf8" }
-  );
-  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
-  const alignOriginMain = spawnSync(
-    "git",
-    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
-    { encoding: "utf8" }
-  );
-  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
-
-  const mergeBase = spawnSync(
-    "git",
-    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
-    { encoding: "utf8" }
-  );
-  assert.equal(mergeBase.status, 0, mergeBase.stderr);
-  const currentBase = mergeBase.stdout.trim().slice(0, 7);
-  const missingBase = "0000001";
-
-  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
-    const file = path.join(checkoutRoot, relative);
-    const original = fs.readFileSync(file, "utf8");
-    const poisoned = original.replaceAll(currentBase, missingBase);
-    assert.notEqual(poisoned, original, `test fixture must replace the prepared base in ${relative}`);
-    fs.writeFileSync(file, poisoned);
-  }
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-prepared-missing-");
+  restampPreparedBase(checkoutRoot, "0000001");
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -661,24 +722,96 @@ test("validator rejects an unresolvable prepared changelog base", completeSource
   assert.match(validation.stderr, /changelog cites commit 0000001 which does not resolve to a commit in this repo/);
 });
 
-test("validator rejects an existing released hash unreachable from the default branch", completeSourceHistoryTest, (t) => {
-  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-released-unreachable-"));
-  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+// The ship-log generator. These assertions are deliberately markup-level rather
+// than a validator round trip: the point is that one hand edit to the newest
+// changelog entry propagates to all three cards intact, which is the step that
+// used to be four hand edits and drifted.
+test("build-shiplog propagates one changelog edit to every ship-log card", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-build-shiplog-");
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
 
-  const checkoutRoot = path.join(tempRoot, "checkout");
-  cloneWithCurrentValidator(checkoutRoot);
-  const sourceOriginMain = spawnSync(
+  // A title carrying an internal period, because the card's aria-label reads as
+  // a sentence and a naive anchor on the first ". " truncates it there.
+  const newTitle = "Ship logs stop chasing main. Again";
+  const source = fs.readFileSync(indexPath, "utf8");
+  const dated = source.replace(/(<span class="clog-date">)\d{4}-\d{2}-\d{2}(<)/, "$12026-09-04$2");
+  assert.notEqual(dated, source, "fixture must restamp the newest entry date");
+  const retitled = dated.replace(/(<h3 class="clog-title">)[^<]*(<\/h3>)/, `$1${newTitle}$2`);
+  assert.notEqual(retitled, dated, "fixture must retitle the newest entry");
+  fs.writeFileSync(indexPath, retitled);
+
+  const build = spawnSync(process.execPath, [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")], {
+    cwd: checkoutRoot,
+    encoding: "utf8"
+  });
+  assert.equal(build.status, 0, `${build.stdout}\n${build.stderr}`);
+
+  const mergeBase = spawnSync(
     "git",
-    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
+    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
     { encoding: "utf8" }
   );
-  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
-  const alignOriginMain = spawnSync(
-    "git",
-    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
-    { encoding: "utf8" }
+  assert.equal(mergeBase.status, 0, mergeBase.stderr);
+  const expectedBase = shortRev(checkoutRoot, mergeBase.stdout.trim());
+
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const text = fs.readFileSync(path.join(checkoutRoot, relative), "utf8");
+    const card = text.match(/id="hero-shiplog"[\s\S]*?<\/a>/)?.[0];
+    assert.ok(card, `${relative} must still carry a ship-log card`);
+    assert.match(card, new RegExp(`class="hero-shiplog-top">Prepared Sep 4 <b>&middot; base ${expectedBase}</b>`));
+    assert.match(card, new RegExp(`class="hero-shiplog-title">${newTitle}<`));
+    // The date is the changelog ENTRY date, not the base commit's date.
+    assert.match(card, new RegExp(`aria-label="Ship log\\. Prepared entry September 4, 2026: ${newTitle}\\.`));
+    // Each page keeps its own closing sentence.
+    assert.match(card, /aria-label="[^"]*(Jump to the full changelog\.|Jump to the changelog\.|Read the full changelog on the homepage\.)"/);
+    // No doubled terminal punctuation from appending a period to a title.
+    assert.doesNotMatch(card, /\.\.\s/, `${relative} aria-label must not double the sentence period`);
+  }
+
+  // The homepage entry itself must now advertise the generated base.
+  assert.equal(preparedBaseIn(checkoutRoot), expectedBase);
+
+  // Idempotent: a second run changes nothing and --check agrees.
+  const before = ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]
+    .map((relative) => fs.readFileSync(path.join(checkoutRoot, relative), "utf8"));
+  const rerun = spawnSync(process.execPath, [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")], {
+    cwd: checkoutRoot,
+    encoding: "utf8"
+  });
+  assert.equal(rerun.status, 0, `${rerun.stdout}\n${rerun.stderr}`);
+  const after = ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]
+    .map((relative) => fs.readFileSync(path.join(checkoutRoot, relative), "utf8"));
+  assert.deepEqual(after, before, "a second build-shiplog run must be a no-op");
+
+  const checked = spawnSync(
+    process.execPath,
+    [path.join(checkoutRoot, "scripts", "build-shiplog.mjs"), "--check"],
+    { cwd: checkoutRoot, encoding: "utf8" }
   );
-  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+  assert.equal(checked.status, 0, `${checked.stdout}\n${checked.stderr}`);
+});
+
+// Loud failure is the whole safety model: the generator rewrites by anchoring on
+// markup, so an anchor that stops matching must abort rather than silently leave
+// a page stale.
+test("build-shiplog refuses to run when a ship-log card is missing", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-build-shiplog-missing-");
+  const guidePath = path.join(checkoutRoot, "docs", "guide.html");
+  const guide = fs.readFileSync(guidePath, "utf8");
+  const stripped = guide.replace('id="hero-shiplog"', 'id="hero-shiplog-renamed"');
+  assert.notEqual(stripped, guide, "fixture must break the guide's card anchor");
+  fs.writeFileSync(guidePath, stripped);
+
+  const build = spawnSync(process.execPath, [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")], {
+    cwd: checkoutRoot,
+    encoding: "utf8"
+  });
+  assert.notEqual(build.status, 0, `${build.stdout}\n${build.stderr}`);
+  assert.match(build.stderr, /docs\/guide\.html: expected exactly one .*found 0 — the markup changed/);
+});
+
+test("validator rejects an existing released hash unreachable from the default branch", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-released-unreachable-");
 
   const tree = spawnSync(
     "git",

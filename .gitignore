@@ -6,7 +6,7 @@ venv/
 release-lint-output/
 suede-transfer-package/
 *.tmp
-node_modules/
+node_modules
 
 # Internal working documents — never publish
 audits/

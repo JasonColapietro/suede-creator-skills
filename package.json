@@ -9,6 +9,7 @@
   "scripts": {
     "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check",
     "build:book": "node scripts/build-book.mjs && node scripts/build-book-pdf.mjs && node scripts/build-book-site.mjs",
+    "build:shiplog": "node scripts/build-shiplog.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
     "test:contributions": "node --test tests/test_contribution_ledger.mjs",
     "test:validator-runtime": "node --test tests/test_validator_runtime.mjs",
