@@ -10,6 +10,12 @@ page and the real artifacts it describes:
      (book/01..14, and llms.txt says "14 chapters").
   3. "29,102 words of documentation" -- a figure that appears nowhere else on the
      page and counts nothing a reader can verify. An orphan.
+  4. "282 commits in 10 weeks" left standing after the repo reached 14 weeks --
+     and this file's own assertion pinned "10 weeks" as a literal, so once the
+     ship log moved on the pattern matched nothing and the failure surfaced as
+     "no ship-log commit count found elsewhere on the page" rather than as the
+     drift it was. The claim is now read as (commits, weeks) on both sides.
+     `npm run build:shiplog` writes the strip along with the rest of the stamp.
 
 These assertions are on the CLAIM, not on the fixed strings a grep found:
 
@@ -142,18 +148,26 @@ class ProofTapeNumbersAreSourced(unittest.TestCase):
         self.changelog_entries = self.html.count('class="clog-item"')
 
     def test_commit_count_reconciles_with_the_ship_log(self):
-        # Fails if the strip says 270 again: the ship log elsewhere says 282.
-        tape = re.search(r"<b>(\d+)</b>\s*commits in 10 weeks", self.block)
+        # Fails if the strip says 270 again while the ship log says something
+        # else. Both halves of the claim are read as variables, never as the
+        # literal span that happened to be true when this was written: pinning
+        # "10 weeks" into the pattern made the test go silent-then-red the first
+        # time the repo outgrew ten weeks -- it stopped finding a ship log at
+        # all and reported that as "nothing to source it from", which is a very
+        # different failure from the drift it exists to catch. The week span is
+        # part of the claim, so it is asserted, not assumed.
+        tape = re.search(r"<b>(\d+)</b>\s*commits in (\d+) weeks", self.block)
         self.assertIsNotNone(tape, "no commit count on the proof-tape")
-        shiplog = re.findall(r"(\d+)\s*commits\s*&middot;\s*10 weeks", self.rest)
+        shiplog = re.findall(r"(\d+)\s*commits\s*&middot;\s*(\d+) weeks", self.rest)
         self.assertTrue(
             shiplog, "no ship-log commit count found elsewhere on the page to source it"
         )
-        for n in shiplog:
+        for commits, weeks in shiplog:
             self.assertEqual(
-                int(n),
-                int(tape.group(1)),
-                "proof-tape commit count disagrees with the ship log on the same page",
+                (int(commits), int(weeks)),
+                (int(tape.group(1)), int(tape.group(2))),
+                "proof-tape commit claim disagrees with the ship log on the same "
+                "page -- run `npm run build:shiplog`",
             )
 
     def test_chapter_count_equals_the_real_book(self):

@@ -168,8 +168,15 @@
       transition: border-color 0.15s ease, background 0.15s ease;
     }
     #hero-shiplog:hover { border-color: var(--gold); background: #141414; }
-    .hero-spark { display: flex; align-items: flex-end; gap: 3px; height: 34px; flex-shrink: 0; }
-    .hero-spark span { width: 5px; min-height: 2px; border-radius: 1px; background: var(--gold); opacity: 0.45; }
+    /* Fixed track, flexible bars: build-shiplog emits one bar per week of
+       history, so the fixed 5px bar this used to draw would have widened the
+       card every week until it crowded out the text beside it. The bars now
+       share a 100px track and thin as weeks accrue. Their separator rides on
+       each bar as a transparent border rather than sitting in a flex gap, so
+       that it shrinks along with them -- but it still floors at 2px, so the
+       track holds to roughly 50 weeks and wants a rethink after that. */
+    .hero-spark { display: flex; align-items: flex-end; height: 34px; width: 100px; flex-shrink: 0; }
+    .hero-spark span { flex: 1 1 0; min-width: 0; min-height: 2px; border-right: 2px solid transparent; border-radius: 1px; background: var(--gold); background-clip: padding-box; opacity: 0.45; }
     .hero-spark span:last-child { opacity: 1; }
     .hero-shiplog-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
     .hero-shiplog-top {
@@ -562,21 +569,25 @@
 
     <a id="hero-shiplog" data-status="prepared" href="#changelog" aria-label="Ship log. Prepared entry August 21, 2026: Graph search replaces the fixed shipping DAG. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
+        <span style="height:8%"></span>
+        <span style="height:0%"></span>
         <span style="height:2%"></span>
+        <span style="height:3%"></span>
         <span style="height:100%"></span>
-        <span style="height:98%"></span>
-        <span style="height:51%"></span>
-        <span style="height:51%"></span>
-        <span style="height:51%"></span>
-        <span style="height:88%"></span>
+        <span style="height:39%"></span>
+        <span style="height:52%"></span>
+        <span style="height:28%"></span>
+        <span style="height:30%"></span>
+        <span style="height:45%"></span>
+        <span style="height:42%"></span>
+        <span style="height:50%"></span>
         <span style="height:56%"></span>
-        <span style="height:63%"></span>
-        <span style="height:67%"></span>
+        <span style="height:33%"></span>
       </span>
       <span class="hero-shiplog-text">
-        <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base 1626d1c</b></span>
+        <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base 1280b11</b></span>
         <span class="hero-shiplog-title">Graph search replaces the fixed shipping DAG</span>
-        <span class="hero-shiplog-more">282 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
+        <span class="hero-shiplog-more">312 commits &middot; 14 weeks &middot; read the full ship log -&gt;</span>
       </span>
     </a>
 

@@ -810,6 +810,164 @@ test("build-shiplog refuses to run when a ship-log card is missing", completeSou
   assert.match(build.stderr, /docs\/guide\.html: expected exactly one .*found 0 — the markup changed/);
 });
 
+function originMainCommitCount(checkoutRoot) {
+  const probe = spawnSync("git", ["-C", checkoutRoot, "rev-list", "--count", "origin/main"], { encoding: "utf8" });
+  assert.equal(probe.status, 0, probe.stderr);
+  return Number.parseInt(probe.stdout.trim(), 10);
+}
+
+// Restates the whole advertised claim at `total` while keeping the four
+// surfaces agreeing with each other, so that a validator failure can only come
+// from the comparison against git and not from one of the internal
+// cross-checks. The delta lands on the busiest week because that is the one
+// with the headroom to absorb it without going negative.
+function restateAdvertisedTotal(checkoutRoot, total) {
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
+  let text = fs.readFileSync(indexPath, "utf8");
+  const spoken = text.match(/oldest to newest: ([^"]*?) commits\./);
+  assert.ok(spoken, "fixture must carry a spoken sparkline series");
+  const weekly = spoken[1].split(/,\s*(?:and\s*)?/).map(Number);
+  const busiest = weekly.indexOf(Math.max(...weekly));
+  weekly[busiest] += total - weekly.reduce((sum, n) => sum + n, 0);
+  assert.ok(weekly[busiest] >= 0, `cannot restate the series at ${total} commits`);
+  const series = `${weekly.slice(0, -1).join(", ")}, and ${weekly[weekly.length - 1]}`;
+  text = text.replace(spoken[0], `oldest to newest: ${series} commits.`);
+  fs.writeFileSync(indexPath, text.replace(/>\d+ commits &middot; (\d+) weeks/g, `>${total} commits &middot; $1 weeks`));
+  for (const relative of ["docs/skills/index.html", "docs/guide.html"]) {
+    const page = path.join(checkoutRoot, relative);
+    const card = fs.readFileSync(page, "utf8");
+    fs.writeFileSync(page, card.replace(/>\d+ commits &middot; (\d+) weeks/g, `>${total} commits &middot; $1 weeks`));
+  }
+}
+
+// The count, the week span and the bars were three hand-copied numbers with no
+// common source, so they did not merely go stale together -- they disagreed.
+// The cards read "282 commits, 10 weeks" against a repo that had shipped 308
+// over 14, above ten bars fitted to that caption by dropping three opening
+// weeks and folding their commits onto the newest bar. Generating all of it
+// from one measurement is the fix; this asserts the surfaces come out agreeing.
+test("build-shiplog regenerates the commit-activity series on every ship-log surface", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-activity-");
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
+
+  // Stale the fixture the way the real thing was found: a caption describing a
+  // repo that no longer exists, over a bar column matching neither.
+  const staleChart = fs.readFileSync(indexPath, "utf8").replace(
+    /(<div class="clog-spark[^>]*>)[\s\S]*?(\n[ \t]*<\/div>)/,
+    '$1\n        <span style="height:40%"></span>\n        <span style="height:100%"></span>$2'
+  );
+  assert.match(staleChart, /<span style="height:40%"><\/span>/, "fixture must shorten the chart");
+  fs.writeFileSync(indexPath, staleChart);
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const page = path.join(checkoutRoot, relative);
+    const before = fs.readFileSync(page, "utf8");
+    const after = before.replace(/>\d+ commits &middot; \d+ weeks/g, ">282 commits &middot; 10 weeks");
+    assert.notEqual(after, before, `fixture must stale ${relative}`);
+    fs.writeFileSync(page, after);
+  }
+
+  const build = spawnSync(process.execPath, [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")], {
+    cwd: checkoutRoot,
+    encoding: "utf8"
+  });
+  assert.equal(build.status, 0, `${build.stdout}\n${build.stderr}`);
+
+  const text = fs.readFileSync(indexPath, "utf8");
+  const caption = text.match(/class="clog-spark-caption[^"]*">(\d+) commits &middot; (\d+) weeks/);
+  assert.ok(caption, "the homepage caption must survive the rewrite");
+  const total = Number(caption[1]);
+  const weeks = Number(caption[2]);
+  assert.equal(total, originMainCommitCount(checkoutRoot), "the caption must advertise what origin/main carries");
+  assert.ok(weeks > 10, `the fixture's history should span more than the stale ten weeks (${weeks})`);
+
+  // The chart, the series a screen reader hears, and the caption are one claim.
+  const chart = text.match(/<div class="clog-spark[^>]*>[\s\S]*?<\/div>/)[0];
+  assert.equal((chart.match(/style="height:\d+%"/g) || []).length, weeks, "one bar per advertised week");
+  const spoken = chart.match(/oldest to newest: ([^"]*?) commits\./);
+  assert.ok(spoken, "the chart must restate its series for screen readers");
+  const weekly = spoken[1].split(/,\s*(?:and\s*)?/).map(Number);
+  assert.equal(weekly.length, weeks, "the spoken series must name every week");
+  assert.equal(weekly.reduce((sum, n) => sum + n, 0), total, "the spoken series must total the advertised count");
+  // Normalized to the busiest week, so exactly one bar reaches full height.
+  assert.equal((chart.match(/style="height:100%"/g) || []).length, 1);
+
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const card = fs.readFileSync(path.join(checkoutRoot, relative), "utf8").match(/id="hero-shiplog"[\s\S]*?<\/a>/)[0];
+    assert.match(card, new RegExp(`class="hero-shiplog-more">${total} commits &middot; ${weeks} weeks`));
+    const bars = card.match(/<span class="hero-spark"[\s\S]*?<\/span>\s*<\/span>/)[0];
+    assert.equal((bars.match(/style="height:\d+%"/g) || []).length, weeks, `${relative} must draw one bar per week`);
+  }
+
+  const validation = runValidator(checkoutRoot);
+  assert.equal(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+});
+
+test("validator rejects a sparkline drawing fewer bars than the weeks it advertises", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-bars-");
+  const guidePath = path.join(checkoutRoot, "docs", "guide.html");
+  const guide = fs.readFileSync(guidePath, "utf8");
+  const dropped = guide.replace(/[ \t]*<span style="height:\d+%"><\/span>\n/, "");
+  assert.notEqual(dropped, guide, "fixture must drop one bar");
+  fs.writeFileSync(guidePath, dropped);
+
+  const validation = runValidator(checkoutRoot);
+  assert.notEqual(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+  assert.match(validation.stderr, /docs\/guide\.html: tiny ship-log sparkline draws \d+ bars but the card advertises \d+ weeks/);
+});
+
+test("validator rejects a spoken sparkline series that does not total the advertised count", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-spoken-");
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
+  const text = fs.readFileSync(indexPath, "utf8");
+  // Speak one week louder than it shipped. The bars still match the weeks, so
+  // only the total can catch this -- and a screen reader is the one reader who
+  // would be told the wrong history.
+  const skewed = text.replace(/(oldest to newest: )(\d+)/, (_, lead, first) => `${lead}${Number(first) + 7}`);
+  assert.notEqual(skewed, text, "fixture must skew the spoken series");
+  fs.writeFileSync(indexPath, skewed);
+
+  const validation = runValidator(checkoutRoot);
+  assert.notEqual(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+  assert.match(validation.stderr, /sparkline aria-label totals \d+ commits but the caption advertises \d+/);
+});
+
+// The anti-regression control. The advertised count moves on every merge, so a
+// check that failed here would turn main red the next time anything landed --
+// which is the exact failure the prepared-base guard was rewritten to remove.
+// Sitting the fixture squarely ON the bound is the point: it must pass.
+test("validator accepts an advertised commit count the default branch has moved past", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-count-lag-");
+  const shipped = originMainCommitCount(checkoutRoot);
+  assert.ok(shipped > 41, `history is too short to exercise the tolerance (${shipped} commits)`);
+  restateAdvertisedTotal(checkoutRoot, shipped - 40);
+
+  const validation = runValidator(checkoutRoot);
+  assert.equal(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+});
+
+test("validator rejects an advertised commit count past the drift tolerance", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-count-stale-");
+  const shipped = originMainCommitCount(checkoutRoot);
+  assert.ok(shipped > 42, `history is too short to exercise the tolerance (${shipped} commits)`);
+  restateAdvertisedTotal(checkoutRoot, shipped - 41);
+
+  const validation = runValidator(checkoutRoot);
+  assert.notEqual(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+  assert.match(validation.stderr, /41 behind, past the 40 tolerance/);
+});
+
+// The other direction of the same tolerance. A page may lag the branch it
+// describes; it may not describe a history that does not exist.
+test("validator rejects an advertised commit count far above what has shipped", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-count-invented-");
+  const shipped = originMainCommitCount(checkoutRoot);
+  restateAdvertisedTotal(checkoutRoot, shipped + 41);
+
+  const validation = runValidator(checkoutRoot);
+  assert.notEqual(validation.status, 0, `${validation.stdout}\n${validation.stderr}`);
+  assert.match(validation.stderr, /41 more than have shipped, past the 40 tolerance/);
+});
+
 test("validator rejects an existing released hash unreachable from the default branch", completeSourceHistoryTest, (t) => {
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-validator-released-unreachable-");
 
