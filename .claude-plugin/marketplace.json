@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Agent skills for Claude Code and Codex: multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. MIT-licensed skills.",
+  "description": "Open-source agent skills for Claude Code and Codex: Graph-of-Thoughts shipping, multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. Original work is MIT licensed; adapted components retain their upstream notices.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -9,11 +9,22 @@
     {
       "name": "suede-skills",
       "source": "./",
-      "description": "Complete Suede workflow: reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
+      "strict": false,
+      "skills": "./skills/",
+      "agents": [
+        "./agents/suede-ship-scout.md",
+        "./agents/suede-ship-code-reader.md",
+        "./agents/suede-ship-web-reader.md",
+        "./agents/suede-ship-patch-author.md",
+        "./agents/suede-ship-applier.md",
+        "./agents/suede-ship-verifier.md"
+      ],
+      "description": "Complete Suede workflow: Graph-of-Thoughts shipping, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
     },
     {
       "name": "suede-agent-workflows",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-ship",
         "./skills/suede-ship-copy",
@@ -21,11 +32,20 @@
         "./skills/suede-workflow-skills",
         "./skills/suede-ai-eval"
       ],
-      "description": "Multi-agent orchestration subset: run one repo change through the canonical ship DAG (suede-ship), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+      "agents": [
+        "./agents/suede-ship-scout.md",
+        "./agents/suede-ship-code-reader.md",
+        "./agents/suede-ship-web-reader.md",
+        "./agents/suede-ship-patch-author.md",
+        "./agents/suede-ship-applier.md",
+        "./agents/suede-ship-verifier.md"
+      ],
+      "description": "Multi-agent orchestration subset: search competing plans and ship one selected repo change through the Graph-of-Thoughts DAG (suede-ship), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-code",
         "./skills/suede-code-review",
@@ -37,6 +57,7 @@
     {
       "name": "suede-marketing",
       "source": "./",
+      "strict": false,
       "skills": [
         "./skills/suede-ab-testing",
         "./skills/suede-ad-creative",

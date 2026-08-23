@@ -1,191 +1,193 @@
 ---
 name: suede-ship
-description: "Canonical Suede Labs shipping DAG for repo changes. Use for any nontrivial change to a Suede repo that touches more than one file or surface and deserves researched, adversarially reviewed, release-checked fan-out in one pass. Halts on a blocking hazard (a tracked secret, a live worktree) or a lane collision rather than plowing through. Reads production; never deploys. BUILT FOR TOKENMAXING AND BURNS HARD: 35 to 150 agents, all billed to the user's model allocation. Ask which agent range and which model before launching; up to 4 Fable subagents are allowed without asking, but every range here far exceeds 4, so never run the fan-out on Fable unless the user said Fable. NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use suede-code-review); CI and branch-protection wiring (use suede-ci-gate)."
+description: "Suede Labs Graph-of-Thoughts shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
 ---
 
 # Suede Ship
 
-> **Designed for tokenmaxing; it burns hard.** The most expensive skill in the pack: 35
-> agents at the narrowest range, about 150 at the widest, every one billed to the user's
-> model allocation. "Ask for the agent budget" and "Model selection" below are not optional.
+Use the bundled `workflows/suede-ship.js` workflow to search competing plans for
+one multi-file repository change. It makes an evidence-backed selection before
+any implementation lane mutates the worktree.
 
-The canonical Suede DAG. One prompt in, one shipped change out, with about fifty
-agents in between arranged as a graph rather than a chain.
+## Intake and budget gate
 
-Invoke the workflow bundled at `skills/suede-ship/workflows/suede-ship.js`. If
-you keep a personal copy, `~/.claude/workflows/suede-ship.js` works the same way.
+Before launch, require all three inputs:
 
-## Confirm the job deserves the DAG first
+- **Repo** — an absolute repository path. Relative paths and `~` fail closed.
+- **Scope** — the requested multi-file change, including any protected paths or
+  constraints.
+- **Budget** — `light`, `standard`, or `deep`.
 
-`suede-ship` is the surgical instrument and it is an expensive one:
-35 to 150 agents depending on the range the user picks, research-heavy and
-front-loaded, all of it billed to their model allocation.
+Also detect and pass optional context when available: `deploys` (whether the
+repo has a deploy surface), `liveUrl` (the read-only production surface), and
+`vault` (the external decision/handoff context path). Their absence does not
+block a non-deploying repository, but do not silently discard known values.
 
-The middle range — `standard`, around fifty to eighty — is what the rest of this
-document means by a typical run, and the user chooses it before launch (see "Ask
-for the agent budget" below). Verification and fix caps are per-range, they
-announce themselves in the run log when they bite, and anything they skip rides
-to the handoff as a named unverified caveat rather than being silently dropped.
+If repo or scope is missing, halt. Report the missing input in one line, offer
+to provide the repo path, describe the desired change, or route a one-file edit
+to direct implementation, then wait for the user's choice.
 
-Every one of those agents inherits the session model (see "Model selection" below).
+State the selected range and projected worst-case calls before launching:
+`light` projects and permits **55**, `standard` projects and permits **110**, and
+`deep` projects and permits **200** total agent calls. Do not infer a budget from
+scope or silently raise a ceiling. If the user has not chosen one, ask and wait.
 
-If the job is actually high-volume, well-specified, and splits into independent
-worker-sized tasks (content batches, test generation, bulk refactors), say so and
-run it as a separate worker-fleet pass instead of this DAG (private Suede Labs
-companion, not in this pack: suede-codex-fleet). Brute force beats surgery when
-the work is genuinely parallel and shallow.
+## Runtime prerequisites
 
-## Parse the invocation
+The bundled JavaScript workflow is a Claude Code workflow for macOS. It requires
+`sandbox-exec` and the six registered `suede-ship-*` agent profiles. Install the
+full `suede-skills` plugin, the `suede-agent-workflows` plugin, or use this
+repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
 
-The argument is free-form. Extract:
+Claude Workflow exposes no Node `process` global, so the workflow cannot infer
+its package namespace. The calling skill must derive it from the invoked skill
+name and pass it on every launch: `suede-skills` for
+`$suede-skills:suede-ship`, `suede-agent-workflows` for
+`$suede-agent-workflows:suede-ship`, or the empty string for a bare
+`$suede-ship` installed by `install.sh` or manual copy. This is runtime context,
+not a user choice. A missing or unknown value fails before the first agent call.
 
-- **repo** — required. An absolute path. Resolve a bare name against `~/code/<name>`.
-  If no repo is named and the cwd is inside a git repo, use that repo's root.
-- **scope** — required. What to change, in the user's own words, kept verbatim
-  where possible. Do not compress it into a slogan; the planner decomposes it
-  into lanes and the detail is what makes lanes separable.
-- **deploys** — true if the repo has a `vercel.json`, a platform project link, or
-  a known live URL. Check rather than assume.
-- **liveUrl** — the production URL if you know it or can read it from
-  `vercel.json`, `package.json`, or the README. Optional; the release verifier
-  discovers it otherwise.
-- **agentBudget** — `light`, `standard`, or `deep`. Required, and you must ask
-  rather than pick it (see below). Omitting it defaults to `standard`.
-- **vault** — optional absolute path to an external decision store (a synced
-  notes vault, an ADR archive, a handoff directory). Omitted by default. When
-  present, the prior-decisions lens reads it as context, never as source truth.
+A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
+not by themselves register or execute Claude Workflow agent profiles. In those
+environments, treat this file as the orchestration contract and route the change
+to direct implementation; do not claim the bundled workflow ran. To enable it in
+Claude Code after a manual single-skill copy, also copy this repository's
+`agents/suede-ship-*.md` files into `~/.claude/agents` and restart Claude Code.
 
-If **scope** is missing, ask for it. Do not invent a change to a production
-repo. This workflow writes code.
+The requested Scout setup command probes `/usr/bin/sandbox-exec` as its first
+subprocess, before fetch or worktree creation. If that command is invoked and
+the probe fails, Scout reports failure before its setup mutation. The returned
+Scout evidence is still a model attestation, not a host execution receipt. Gate
+also holds on any later reported sandbox rejection. Never retry an acceptance
+command outside the sandbox to turn that hold into a pass.
 
-## Ask for the agent budget before launching
+## Run the graph search
 
-This is Claude-model fan-out against the user's limit, so the size of the run is
-the user's call, not yours. **Ask which of these three ranges they want and wait
-for an answer before the `Workflow` call.** Do not pick one for them, and do not
-infer one from how big the scope sounds.
+Invoke:
 
-| Range | Lanes | Total agents | What it buys |
-|---|---|---|---|
-| `light` | up to 3 | **35–45** | Two verifiers on at most 2 findings per lane. A focused change you mostly trust. |
-| `standard` | up to 5 | **50–80** | The documented default. Verification depth that catches real defects without a long tail. |
-| `deep` | up to 8 | **70–150** | Up to 6 findings per lane verified, 12 fixes. Auth, payment, schema, or anything you cannot easily revert. |
-
-Those numbers are measured, not estimated — `tests/test_ship_workflow_cost.mjs`
-executes the DAG against stubbed agents and counts the spawns at each range.
-
-State the range and its ceiling in one line when you launch, plus which model the
-agents will run on, so the spend is a decision rather than a surprise.
-
-Two things the budget deliberately does **not** do. It never drops a lane: an
-over-budget plan logs `OVER BUDGET` with a revised projection and builds every
-lane anyway, because silently shipping less than the user asked for is worse than
-costing more than planned. And it never hides what it skipped — capped
-verification rides to the handoff as named unverified caveats.
-
-## Model selection — Fable capped at 4 without asking
-
-Subagents inherit the session model unless the spawning call names one. Nothing in
-this skill picks a model, so every agent it fans out lands on whatever the session
-happens to be set to. That is how a run sized against one allocation gets billed to
-another without anyone choosing it.
-
-**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
-instruction. Beyond that, Fable must be specified** — and every range this skill
-offers (35 at the narrowest) is far beyond 4, so its fan-out never runs on Fable
-unless the user named Fable for this run. An inherited session model is not a
-specification — "the session was already on it" is not the user asking. Absent an
-explicit Fable instruction, do one of two things before launching: name a different
-model on the agent calls, or state plainly that the run will bill to the Fable
-allocation and get an answer. Silence is not consent to spend it.
-
-## Launch
-
-```
+```js
 Workflow({
   scriptPath: "skills/suede-ship/workflows/suede-ship.js",
-  args: { repo, scope, deploys, liveUrl, vault, agentBudget }
+  args: { repo, scope, agentBudget, agentNamespace, deploys, liveUrl, vault }
 })
 ```
 
-Pass `args` as a real object. If the harness stringifies it the script recovers,
-but an object is correct.
+The workflow executes these operations in dependency order:
 
-## The graph
+1. **Generate** independent implementation plans from the scout and research
+   evidence.
+2. **Score** each plan for coverage, evidence, feasibility, safety, and
+   efficiency.
+3. **KeepBestN** deterministically prunes the scored beam.
+4. **Refute** attacks the surviving plans with evidence-backed objections.
+5. **Improve** repairs plans whose refutations are not fatal.
+6. **Aggregate** combines compatible surviving lanes without merging conflicting
+   file ownership.
+7. **Select** chooses one deterministic winner.
 
-Nine phases, parallel wherever the edges are not real:
+Only the plan selected by **Select** may mutate files. Rejected, pruned, and
+unselected thoughts remain evidence only; never build them speculatively.
 
-1. **Scout** — fetch origin, dirty files, worktrees, deploy-time landmines. Manifest only.
-2. **Research** — multi-modal sweep. Each lens searches a different way and is blind
-   to the others, because one angle never finds everything. Every claim carries a
-   `file:line`, sha, PR, or doc url.
-3. **Gaps** — a completeness critic names what went unread, then one bounded fill round.
-4. **Plan** — the lane map, with explicit file ownership. High effort by design.
-5. **Build** — disjoint lanes, each pipelined straight into its own review.
-6. **Refute** — two adversarial verifiers per finding, refute-by-default, and both
-   must fail to refute for it to survive. Deduped and capped per
-   lane at `standard`, blockers first; minors skip this stage and ride out as caveats.
-7. **Gate** — a real barrier: typecheck, build, and tests on the integrated worktree.
-8. **Release** — adversarial release verification: config drift, public surface,
-   irreversibility, live baseline.
-9. **Handoff** — the evidence record: changed files, commands run, verification, caveats.
-   The workflow returns it; you write it to disk (see "When it returns").
+## Boundaries
 
-## While it runs
+The workflow halts before the next agent call or entire mutating batch when its
+budget is exhausted; it does not undo mutations that completed earlier. It
+halts before any mutation unless an independent read-only verifier confirms a
+clean, registered origin/main worktree at one direct `${REPO}.worktrees/ship-*`
+child with the same Git common directory and non-symlink candidate files whose
+realpaths remain inside it. Case-folded or Unicode-normalized path aliases fail
+closed before graph search. It also halts for
+a tracked secret, a live target worktree, a protected-WIP collision, a duplicate
+file owner, an overflowed safety manifest, or no selectable plan. Scout parses
+NUL-delimited Git porcelain so both sides of renames remain protected, parses
+`lsof -Fn` CWD fields with path-component boundaries, and never discards fresh
+dirty or live claims merely because committed history was cherry-landed. A
+selected Build or Fix result that is blocked, missing context, reports concerns,
+fails, or reports no changed path also halts before the next verification stage. On a halt, name the
+blocker in one line and offer 2–4 applicable
+resolutions (for example: narrow scope, exempt protected WIP, resolve the
+collision, choose a higher budget, or provide missing context), and wait. Do
+not relaunch or mutate while halted.
 
-Do not predict results or narrate progress you cannot see. The workflow returns a
-notification when it completes; `/workflows` shows live progress.
+Claude's registered agent profiles enforce tool separation: local readers have
+no shell, write, or web tools; public-web readers have no local-file or shell
+tools; patch authors have no mutation tools; and appliers/verifiers have only
+Bash plus structured output. Patch authors return unified diffs, one clamped
+applier applies them, and a separately budget-reserved clamped verifier compares
+the exact path set and diff digest immediately after every Build or Fix Apply,
+before any reader or Gate call. Patch validation rejects symlinks, gitlinks,
+binary patches, renames, copies, and file-type transitions before Apply. Gate
+runs only allowlisted local validation
+commands under macOS `sandbox-exec`, with no network, host reads limited to
+runtime/system roots, the worktree, its `.git` common directory derived again
+inside the exact Gate clamp, and the run's private temp root. The model-reported
+common directory is never interpolated into sandbox permissions. Writes are limited to known generated artifacts
+and that private temp root. The allowlist includes bounded project-local checks
+for Node, Python, Go, Rust, Make, Swift Package Manager, Xcode simulator builds
+with derived data under the private temp root, and offline Gradle validation.
+Nested module `build` roots are derived only from selected files under that
+module's `src` tree and are rejected if a symlink or realpath can escape the
+worktree. A second diff attestation runs after Gate and hashes
+the binary Git diff plus every reported file's mode, size, and bytes, including
+untracked additions.
 
-## When it returns
+A successfully applied blocker patch is not treated as semantically cleared.
+The original blocker remains in `fixedBlockersPendingVerification`. The Gate
+attempt records its exact command set and reported output, but it cannot prove
+those commands ran because the Workflow API exposes no trusted required-tool
+execution receipt. The workflow therefore sets `claimedPassed` from the agent
+report, forces `passed:false`, sets `gateVerified:false`, and keeps the verdict
+and handoff status at `hold`. Only a trusted outer runner with immutable
+execution receipts can promote that evidence.
 
-First, write the returned `handoff` markdown to `.suede-ship/<runId>/handoff.md` at the
-repo root — never inside a path a lane owns, which collides on the next run. A run this
-size outlives context windows, and a record that lives only in a message is one
-compaction from gone. Then report the path and the verdict fields, not the contents.
+These controls have a precise trust boundary. `bashCommandClamp` constrains a
+Bash command when an agent invokes it; Claude Workflow does not provide a
+required-tool-call receipt, so a structured verifier response remains a model
+attestation rather than cryptographic proof that Bash ran. Likewise,
+`authority`, `allowedRepo`, `allowedFiles`, and `allowedCommands` are audit
+metadata, not filesystem permissions. Local reader tools are separated from web
+tools but are not path-sandboxed by the Workflow API. Report these facts in any
+security-sensitive handoff and do not describe the result as host-certified.
 
-Report faithfully, including the failure shapes:
+Production inspection is read-only. This skill never deploys, publishes,
+releases, pushes, merges, changes credentials, deletes or reverts protected
+work, or claims live verification. It does not choose the user's budget or
+decide that missing scope can be skipped. Its ship verdict is evidence for the
+user, not authority to perform an external action.
 
-- `halted: true, reason: "blocking hazard at scout"` — a real secret in a tracked
-  file, or a live process holding a worktree this run would touch. Name the hazard,
-  then stop and offer: rotate or remove the tracked secret and re-run, exclude the held
-  path from scope, or wait out the live worktree's process. Wait for the user's pick.
-- `halted: true, reason: "lane collision"` — the lane map claimed a protected dirty
-  file, gave one file two owners, or hit a file held by a **live** sibling worktree.
-  Report the collisions. The fix is a re-plan, not a retry: stop and offer to merge the
-  double-owned lanes, stash or exempt the protected WIP, or narrow the scope, then
-  re-launch with `resumeFromRunId` so completed phases replay from cache. Wait for the
-  choice; never relaunch cold, which pays for every completed phase twice.
-- Completed — lead with `shipVerdict` and `gatePassed`, then confirmed findings, then
-  `crossWorktree` overlap (files this work will need rebasing against other branches),
-  then `droppedConstraints` (what the skeptic rejected) and `unread`.
+## Handoff and completion
 
-Naming what went unread is most of the honesty.
+Read the workflow's returned `runKey`, the validated unique `ship-<UUID>` leaf
+from its isolated worktree. On a completed run, use the returned handoff
+markdown. On a post-Scout halt, write a factual halt handoff from the structured
+result and graph trace without spending another agent call; include any Build
+or Fix lanes that completed before the halt. If Scout returns an invalid path
+before `runKey` validation, report the halt without writing a run-keyed
+handoff. Otherwise, save it to
+`.suede-ship/${runKey}/handoff.md` at the target repo root, then verify it exists:
 
-## Verdict is advisory
+```bash
+test -f ".suede-ship/${runKey}/handoff.md"
+```
 
-The `shipVerdict` changes what you report, never what you do. The single exception
-is live production exposure the verifier observed independent of this change, such
-as a real secret or an unauthenticated `200` that should not exist. That goes to the
-user immediately.
+Report that path, the selected plan if any, gate result, changed files, commands
+run, and explicit caveats. A completed local graph does not prove a deployment.
 
-**Do not claim `deployed`, `verified live`, or `released`.** This workflow only reads
-production. Those states require a deploy that has not happened.
+## Third-party license
 
-## Iterating
-
-Edit the script and re-invoke with the same `scriptPath`. Add
-`resumeFromRunId: "<run id>"` to replay unchanged agents from cache. Changing an
-agent's prompt or schema re-runs that agent and everything downstream of it.
+The operation graph and thought-state model in `workflows/suede-ship.js` adapt
+Graph of Thoughts by ETH Zurich. The complete upstream BSD notice, conditions,
+disclaimer, and requested citation travel with this skill at
+`LICENSE.graph-of-thoughts-BSD.txt`. Keep that file with every source or binary
+redistribution of the workflow.
 
 ## Routing
 
-- High-volume, well-specified work that splits into independent worker-sized tasks →
-  a separate worker-fleet pass (private Suede Labs companion, not in this pack:
-  suede-codex-fleet).
-- Manual, ongoing, cross-repo, or public-repository-contribution orchestration →
-  **suede-agent-teams**. Precedence: one repo, one change, a bundled DAG that runs it
-  end to end stays here; a single lane inside an agent-teams program that needs the
-  full research-and-refute treatment comes back here for that lane.
-- Findings on a diff with no code change → **suede-code-review**; an A-F ship verdict →
-  **suede-code-grader**. Merge gate or branch protection → **suede-ci-gate**.
-- Copy rather than code → **suede-ship-copy**, the same graph with message ownership as its collision rule.
+- High-volume, well-specified, independent worker tasks → a separate private
+  worker-fleet pass.
+- Findings-only review of an existing diff → `suede-code-review`.
+- CI, required checks, or branch-protection wiring → `suede-ci-gate`.
+- Copy-only search and publication readiness → `suede-ship-copy`.
+- From `suede-code-review`, `suede-ci-gate`, or `suede-ship-copy`: route a
+  multi-file implementation-plan search with one
+  selected mutating winner back to `suede-ship`.

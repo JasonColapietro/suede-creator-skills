@@ -39,6 +39,14 @@ EO, scores visibility at the schema and answer-engine layer, grades code and
 project readiness, packages music/IP material, and uses MCP only when structured
 discovery or QA actually helps.
 
+### Suede Ship explanation
+
+Suede Ship searches competing implementation plans for one multi-file repo
+change. It generates, scores, prunes, refutes, improves, aggregates, and
+selects a single evidence-backed winner before that winner alone can change
+files. The user chooses a `light` (55), `standard` (110), or `deep` (200)
+agent ceiling before launch. It reads production for evidence but never deploys
+or claims a live release.
 ### Short component line
 
 Linked preferences, Suedify, iOS packaging, communicating agent teams,
@@ -458,8 +466,11 @@ and hands it back as a runnable prompt.
 Stacks are a cross-cutting overlay on the specialty partition, not a seventh
 specialty. The partition stays total, the validator fails CI when the stack's
 catalog membership and its page drift, and the MCP server scopes membership per
-profile. Cost stays on the label: suede-ship states its own 35-to-150-agent
-range and asks for the range and model before it launches.
+profile. Cost and authority stay on the label: suede-ship's Graph-of-Thoughts
+search generates competing plans, caps light/standard/deep at 55/110/200 calls,
+and lets only the selected winner mutate. Production inspection is read-only
+and it never deploys. High-volume independent work stays in a separate private
+worker-fleet pass.
 
 ## Social Copy
 

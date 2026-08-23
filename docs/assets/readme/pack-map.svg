@@ -7,7 +7,7 @@
   <text x="56" y="64" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="3">THE PACK AT A GLANCE</text>
   <text x="56" y="104" fill="#f0ece4" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Seven lanes, one install</text>
 
-  <!-- rows: label right-aligned at 340, bars from 360, scale 640px = 39 skills -->
+  <!-- rows: label right-aligned at 340, bars from 360, scale 640px = 41 skills -->
   <g font-family="Arial, Helvetica, sans-serif">
     <!-- Marketing & growth -->
     <text x="340" y="169" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Marketing &amp; growth</text>
@@ -16,8 +16,8 @@
 
     <!-- Design, copy & SEO -->
     <text x="340" y="221" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Design, copy &amp; SEO</text>
-    <rect x="360" y="202" width="164" height="28" rx="6" fill="#c8a96e"/>
-    <text x="538" y="222" fill="#f0ece4" font-size="17" font-weight="800">10</text>
+    <rect x="360" y="202" width="156" height="28" rx="6" fill="#c8a96e"/>
+    <text x="530" y="222" fill="#f0ece4" font-size="17" font-weight="800">10</text>
 
     <!-- Orchestration & workflows -->
     <text x="340" y="273" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Orchestration &amp; workflows</text>
@@ -26,23 +26,23 @@
 
     <!-- Code quality & shipping -->
     <text x="340" y="325" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Code quality &amp; shipping</text>
-    <rect x="360" y="306" width="82" height="28" rx="6" fill="#c8a96e"/>
-    <text x="456" y="326" fill="#f0ece4" font-size="17" font-weight="800">5</text>
+    <rect x="360" y="306" width="78" height="28" rx="6" fill="#c8a96e"/>
+    <text x="452" y="326" fill="#f0ece4" font-size="17" font-weight="800">5</text>
 
     <!-- Creator rights & release -->
     <text x="340" y="377" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Creator rights &amp; release</text>
-    <rect x="360" y="358" width="82" height="28" rx="6" fill="#c8a96e"/>
-    <text x="456" y="378" fill="#f0ece4" font-size="17" font-weight="800">5</text>
+    <rect x="360" y="358" width="78" height="28" rx="6" fill="#c8a96e"/>
+    <text x="452" y="378" fill="#f0ece4" font-size="17" font-weight="800">5</text>
 
     <!-- Mobile app factories -->
     <text x="340" y="429" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Mobile app factories</text>
-    <rect x="360" y="410" width="38" height="28" rx="6" fill="#c8a96e"/>
-    <text x="412" y="430" fill="#f0ece4" font-size="17" font-weight="800">2</text>
+    <rect x="360" y="410" width="31" height="28" rx="6" fill="#c8a96e"/>
+    <text x="405" y="430" fill="#f0ece4" font-size="17" font-weight="800">2</text>
 
     <!-- Consumer recovery -->
     <text x="340" y="481" text-anchor="end" fill="#f0ece4" font-size="17" font-weight="700">Consumer recovery</text>
-    <rect x="360" y="462" width="38" height="28" rx="6" fill="#c8a96e"/>
-    <text x="412" y="482" fill="#f0ece4" font-size="17" font-weight="800">2</text>
+    <rect x="360" y="462" width="31" height="28" rx="6" fill="#c8a96e"/>
+    <text x="405" y="482" fill="#f0ece4" font-size="17" font-weight="800">2</text>
   </g>
 
   <text x="56" y="516" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="13.5">38 of the marketing skills are adapted from Corey Haines&#8217; marketingskills, MIT licensed. Losses and credits stay visible.</text>

@@ -1100,6 +1100,7 @@
       "id": "ship-release",
       "skills": [
         "suede-ship",
+        "suede-code-review",
         "suede-ci-gate",
         "suede-launch-packaging",
         "suede-release-linter"
@@ -1110,6 +1111,10 @@
           "skill": "suede-ship",
           "positive": [
             "shipping dag",
+            "graph-of-thoughts shipping search",
+            "score and prune",
+            "aggregate the best lanes",
+            "multi-file repository change",
             "lane plan",
             "integration gate",
             "release verification",
@@ -1123,7 +1128,24 @@
             "stems"
           ],
           "metadataMustContain": [
-            "shipping dag"
+            "graph-of-thoughts shipping search"
+          ]
+        },
+        {
+          "skill": "suede-code-review",
+          "positive": [
+            "review this existing diff",
+            "report findings",
+            "do not change code"
+          ],
+          "negative": [
+            "graph-of-thoughts shipping search",
+            "score and prune",
+            "branch protection",
+            "release folders"
+          ],
+          "metadataMustContain": [
+            "findings"
           ]
         },
         {
@@ -1185,6 +1207,42 @@
         }
       ],
       "cases": [
+        {
+          "id": "suede-ship-graph-positive",
+          "mode": "positive",
+          "prompt": "Search several implementation plans, score and prune them, have adversarial agents attack the survivors, aggregate the best lanes, then build and gate the winner.",
+          "expected": "suede-ship"
+        },
+        {
+          "id": "suede-ship-multifile-positive",
+          "mode": "positive",
+          "prompt": "Use a Graph-of-Thoughts shipping search for this multi-file repository change, then select one implementation plan to build.",
+          "expected": "suede-ship"
+        },
+        {
+          "id": "suede-ship-search-positive",
+          "mode": "positive",
+          "prompt": "Generate alternatives for this repo change, score and prune the plans, refute the survivors, and aggregate the best lanes before shipping the selected winner.",
+          "expected": "suede-ship"
+        },
+        {
+          "id": "suede-ship-findings-negative",
+          "mode": "negative",
+          "prompt": "Review this existing diff and report findings, but do not change code.",
+          "expected": "suede-code-review",
+          "forbidden": [
+            "suede-ship"
+          ]
+        },
+        {
+          "id": "suede-ship-ci-negative",
+          "mode": "negative",
+          "prompt": "Configure branch protection and required checks for this repository, but do not run a Graph-of-Thoughts shipping search.",
+          "expected": "suede-ci-gate",
+          "forbidden": [
+            "suede-ship"
+          ]
+        },
         {
           "id": "ci-gate-positive",
           "mode": "positive",

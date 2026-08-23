@@ -46,7 +46,8 @@ Current surface: 9 tools (`list_suede_skills`, `list_suede_specialties`,
 (`suede-copy-seo-audit`, `suede-plugin-install`, `suede-visibility-grade`,
 `suede-code-grade`, `suede-full-qa`).
 
-The plugin manifest registers both `suede_creator_mcp` (`creator` profile) and
-`suede_workflow_mcp` (`workflow` profile). Catalog additions are exposed through
+The plugin manifest registers `suede_creator_mcp` (`creator` profile),
+`suede_workflow_mcp` (`workflow` profile), and `suede_marketing_mcp`
+(`marketing` profile). Catalog additions are exposed through
 the generic discovery tool and `suede://catalog`; adding a skill does not add a
 new tool, resource, or prompt.

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="t d">
   <title id="t">Suede Creator Skills</title>
-  <desc id="d">71 open-source agent skills for Claude Code and Codex. One install command.</desc>
+  <desc id="d">73 open-source agent skills for Claude Code and Codex. One install command.</desc>
   <rect width="1200" height="400" rx="16" fill="#080808"/>
   <rect x="1" y="1" width="1198" height="398" rx="15" fill="none" stroke="#222222" stroke-width="2"/>
 
@@ -25,7 +25,7 @@
 
   <!-- big 71 -->
   <text x="1144" y="290" text-anchor="end" fill="#c8a96e" font-family="Arial, Helvetica, sans-serif" font-size="200" font-weight="900" letter-spacing="-12">71</text>
-  <text x="1138" y="330" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">SKILLS &#183; MIT &#183; OPEN SOURCE</text>
+  <text x="1138" y="330" text-anchor="end" fill="#888880" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="3">SKILLS &#183; LICENSES INCLUDED &#183; OPEN SOURCE</text>
 
   <!-- footer ticks -->
   <path d="M56 364H1144" stroke="#222222" stroke-width="1"/>

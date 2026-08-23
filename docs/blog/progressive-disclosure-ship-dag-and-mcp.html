@@ -27,7 +27,7 @@
         "description": "Suede Creator Skills is now 71 skills. Progressive disclosure keeps them all installed and silent until one actually fits, an optional MCP server adds seven read-only tools, and the pack now spans design, shipping code, and getting a denied Amazon refund back.",
         "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
         "datePublished": "2026-08-07",
-        "dateModified": "2026-08-07",
+        "dateModified": "2026-08-21",
         "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
         "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
         "about": ["Suede Creator Skills", "Claude Code skills", "Codex skills", "progressive disclosure", "Agent Skills", "MCP server", "CI ship gate", "agent orchestration"],
@@ -82,7 +82,7 @@
         <p><code>suede-ship</code> &mdash; NOT FOR: a one-file edit (just make it); high-volume well-specified work that splits into independent worker-sized tasks (run those as a separate worker-fleet pass); findings-only review with no code change (use <code>suede-code-review</code>); CI and branch-protection wiring (use <code>suede-ci-gate</code>).</p>
       </div>
 
-      <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a fifty-agent shipping DAG at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request. More on why that gets <em>better</em> as the pack grows: <a href="not-for-the-line-that-makes-a-pack-work.html">NOT FOR: the two words that make a big skill pack work</a>.</p>
+      <p>That line does real work. Without it, a broad pack degrades into whichever skill has the most eager description, and the agent fires a deep-budget Graph-of-Thoughts shipping search at a one-line typo fix. The negative boundary is what keeps a 71-skill pack from becoming 71 competing claims on the same request. More on why that gets <em>better</em> as the pack grows: <a href="not-for-the-line-that-makes-a-pack-work.html">NOT FOR: the two words that make a big skill pack work</a>.</p>
       <p>You can read every one of those rules before you run them. That's the point of shipping Markdown instead of a binary.</p>
 
       <h2>Where your memory file should have been all along</h2>
@@ -91,9 +91,9 @@
       <p>Moving it into a skill saves the context. The part I didn't expect is that it also improves the knowledge. Memory forces you to write "always use worktrees" because that's what fits. A skill can carry the six paragraphs you actually know: the two places worktrees hide, why the session registry lies about which ones are live, what a squash-merged branch looks like when you're deciding whether to delete it. Behind a trigger, length is nearly free, so the rule finally gets to be complete.</p>
       <p>Longer version of that argument: <a href="memory-belongs-in-skills.html">Your memory file is a tax you pay on every prompt</a>.</p>
 
-      <h2>What shipped since the last update</h2>
-      <p><code>suede-ship</code> is the canonical shipping DAG: scout, multi-lens research, a gap critic, a lane plan with explicit file ownership, disjoint parallel build lanes, dual-lens review, adversarial refutation, an integration gate, and release verification. Roughly fifty agents arranged as a graph instead of a chain. It halts on a blocking hazard, a real secret in a tracked file or a live process holding a target worktree, rather than plowing through. It reads production and never deploys.</p>
-      <p><code>suede-ship-copy</code> is the same idea for writing, decomposed differently. <code>suede-ship</code> splits work by file ownership, so two lanes never write the same file. <code>suede-ship-copy</code> splits by message ownership, so two sections never make the same argument. It runs five blind research lenses, an audit that closes the set of assertable claims, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. It reads the live surface and never publishes.</p>
+      <h2>What changed since the last update</h2>
+      <p><code>suede-ship</code> is a Graph-of-Thoughts shipping search: it generates competing plans, scores and prunes them, adversarially refutes and improves survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep are capped at 55, 110, and 200 total agent calls. It halts on a blocking hazard, a real secret in a tracked file, a live process holding the target worktree, budget exhaustion, or no safe winner. It reads production and never deploys.</p>
+      <p><code>suede-ship-copy</code> is a separate copy-only DAG, decomposed by message ownership rather than implementation-plan search. It runs five blind research lenses, an audit that closes the set of assertable claims, disjoint section writers, four-lens review, adversarial refutation, a deslop pass, and a publish-readiness gate. It reads the live surface and never publishes.</p>
       <p><code>suede-ci-gate</code> makes CI actually hold the line: path-aware builds, required checks, branch protection, duplicate pipeline repair, and merge gates that don't deadlock.</p>
       <p><code>suede-clip-to-guide</code> turns a video moment into a long-form asset, with rights routing, moment scoring, a clip brief, exact post copy, and a publishing sequence that requires visible-identity approval before anything goes out.</p>
 

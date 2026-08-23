@@ -162,6 +162,19 @@ function digestText(value) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+test("PDF builder stages output and verifies a stable input snapshot", () => {
+  const builder = fs.readFileSync(path.join(repoRoot, "scripts", "build-book-pdf.mjs"), "utf8");
+  const before = builder.indexOf("const inputDigestBefore = bookPdfInputDigest(repoRoot)");
+  const snapshot = builder.indexOf("const sources = loadSources()")
+  const after = builder.indexOf("const inputDigestAfter = bookPdfInputDigest(repoRoot)");
+  const rename = builder.indexOf("fs.renameSync(tempPdf, outPdf)");
+  assert.ok(before >= 0 && before < snapshot);
+  assert.ok(after > snapshot && rename > after);
+  assert.match(builder, /--print-to-pdf=\$\{tempPdf\}/);
+  assert.match(builder, /inputDigestAfter !== inputDigestBefore/);
+  assert.match(builder, /inputSha256: inputDigestBefore/);
+});
+
 test("validator rejects a reserved semantic sequence before normal validation", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-reserved-");
   const encodedPath = [115, 117, 101, 100, 101, 45, 112, 117, 98, 108, 105, 99, 45, 99, 108, 97, 105, 109, 45, 99, 104, 101, 99, 107]
@@ -242,6 +255,23 @@ test("packaged validation rejects plugin and catalog version drift", (t) => {
     validation.stderr,
     new RegExp(`plugin\\.json version \\(9\\.9\\.9\\) does not match catalog\\.json version \\(${catalogVersion.replace(/\./g, "\\.")}\\)`)
   );
+});
+
+test("packaged validation requires the exact traveling Graph of Thoughts BSD license", (t) => {
+  const missingRoot = createPackagedFixture(t, "suede-validator-got-license-missing-");
+  const travelingPath = path.join(missingRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  fs.rmSync(travelingPath, { force: true });
+  const missing = runValidator(missingRoot);
+  assert.notEqual(missing.status, 0, `${missing.stdout}\n${missing.stderr}`);
+  assert.match(missing.stderr, /traveling Graph of Thoughts BSD license is missing/);
+
+  const driftRoot = createPackagedFixture(t, "suede-validator-got-license-drift-");
+  const driftPath = path.join(driftRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+  fs.mkdirSync(path.dirname(driftPath), { recursive: true });
+  fs.writeFileSync(driftPath, "truncated license fixture\n");
+  const drift = runValidator(driftRoot);
+  assert.notEqual(drift.status, 0, `${drift.stdout}\n${drift.stderr}`);
+  assert.match(drift.stderr, /traveling Graph of Thoughts BSD license does not match/);
 });
 
 test("packaged validation rejects package-lock version drift", (t) => {
@@ -342,10 +372,12 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   fs.writeFileSync(mcpQaPath, mcpQa);
 
   const citationPath = path.join(packagedRoot, "CITATION.cff");
-  const citation = fs.readFileSync(citationPath, "utf8").replace(
-    /^date-released:\s*\d{4}-\d{2}-\d{2}$/m,
-    "date-released: 2099-01-01"
+  const citationOriginal = fs.readFileSync(citationPath, "utf8");
+  const citation = citationOriginal.replace(
+    /^(version:\s*[^\n]+)$/m,
+    "$1\ndate-released: 2099-01-01"
   );
+  assert.notEqual(citation, citationOriginal, "test fixture must add a false prepared-release date");
   fs.writeFileSync(citationPath, citation);
 
   const docsPath = path.join(packagedRoot, "docs", "index.html");
@@ -364,8 +396,21 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
   assert.match(validation.stderr, /suede-mcp-qa manual readback version \(9\.9\.9\)/);
-  assert.match(validation.stderr, /CITATION\.cff date-released \(2099-01-01\)/);
-  assert.match(validation.stderr, /changelog has no release entry for catalog version/);
+  assert.match(validation.stderr, /CITATION\.cff must omit date-released while catalog version .* is prepared/);
+  assert.match(validation.stderr, /changelog has no entry for catalog version/);
+});
+
+test("packaged validation rejects stale or replaced book PDF bytes", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-validator-book-pdf-");
+  fs.appendFileSync(path.join(packagedRoot, "docs", "book", "s-tier.pdf"), "stale-pdf-fixture");
+  fs.appendFileSync(path.join(packagedRoot, "scripts", "build-book-pdf.mjs"), "\n// stale-input-fixture\n");
+  fs.appendFileSync(path.join(packagedRoot, "skills", "suede-ship", "SKILL.md"), "\nStale corpus fixture.\n");
+
+  const validation = runValidator(packagedRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /Book PDF input digest is stale/);
+  assert.match(validation.stderr, /Book PDF digest does not match its provenance/);
 });
 
 test("packaged validation rejects additional Codex marketplace entries", (t) => {
@@ -474,6 +519,231 @@ test(
     assert.ok(launchPackaging.interface.defaultPrompt.length <= 1024);
   }
 );
+
+test("validator accepts a prepared changelog anchored to the current merge base", completeSourceHistoryTest, (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-"));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+
+  const checkoutRoot = path.join(tempRoot, "checkout");
+  cloneWithCurrentValidator(checkoutRoot);
+  const sourceOriginMain = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
+  const alignOriginMain = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
+    { encoding: "utf8" }
+  );
+  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+  const mergeBase = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
+    { encoding: "utf8" }
+  );
+  assert.equal(mergeBase.status, 0, mergeBase.stderr);
+  const baseHash = mergeBase.stdout.trim().slice(0, 7);
+
+  const docsPath = path.join(checkoutRoot, "docs", "index.html");
+  const docs = fs.readFileSync(docsPath, "utf8");
+  let prepared = docs;
+  if (!prepared.includes('class="clog-item" data-type="new" data-status="prepared"')) {
+    prepared = prepared.replace(
+      '<li class="clog-item" data-type="new">',
+      '<li class="clog-item" data-type="new" data-status="prepared">'
+    );
+  }
+  if (!/class="[^"]*\bclog-base\b[^"]*"/.test(prepared)) {
+    prepared = prepared.replace(
+      '<span class="clog-tag">Orchestration</span>',
+      `<span class="clog-tag">Orchestration</span>\n            <a class="clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/${baseHash}">base ${baseHash}</a>`
+    );
+  }
+  assert.match(prepared, /data-status="prepared"/);
+  assert.match(prepared, new RegExp(`class="[^"]*\\bclog-base\\b[^"]*"[^>]*>base ${baseHash}<`));
+  fs.writeFileSync(docsPath, prepared);
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.equal(validation.status, 0, diagnostics);
+});
+
+test("validator rejects a prepared changelog anchored before the current merge base", completeSourceHistoryTest, (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-base-"));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+
+  const checkoutRoot = path.join(tempRoot, "checkout");
+  cloneWithCurrentValidator(checkoutRoot);
+  const sourceOriginMain = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
+  const alignOriginMain = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
+    { encoding: "utf8" }
+  );
+  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+
+  const mergeBase = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
+    { encoding: "utf8" }
+  );
+  assert.equal(mergeBase.status, 0, mergeBase.stderr);
+  const currentBase = mergeBase.stdout.trim().slice(0, 7);
+  const priorBase = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-parse", "origin/main^"],
+    { encoding: "utf8" }
+  );
+  assert.equal(priorBase.status, 0, priorBase.stderr);
+  const wrongBase = priorBase.stdout.trim().slice(0, 7);
+  assert.notEqual(wrongBase, currentBase);
+
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const file = path.join(checkoutRoot, relative);
+    const original = fs.readFileSync(file, "utf8");
+    const poisoned = original.replaceAll(currentBase, wrongBase);
+    assert.notEqual(poisoned, original, `test fixture must replace the prepared base in ${relative}`);
+    fs.writeFileSync(file, poisoned);
+  }
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /does not match current branch merge-base/);
+});
+
+test("validator rejects an unresolvable prepared changelog base", completeSourceHistoryTest, (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-missing-"));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+
+  const checkoutRoot = path.join(tempRoot, "checkout");
+  cloneWithCurrentValidator(checkoutRoot);
+  const sourceOriginMain = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
+  const alignOriginMain = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
+    { encoding: "utf8" }
+  );
+  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+
+  const mergeBase = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "merge-base", "HEAD", "origin/main"],
+    { encoding: "utf8" }
+  );
+  assert.equal(mergeBase.status, 0, mergeBase.stderr);
+  const currentBase = mergeBase.stdout.trim().slice(0, 7);
+  const missingBase = "0000001";
+
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const file = path.join(checkoutRoot, relative);
+    const original = fs.readFileSync(file, "utf8");
+    const poisoned = original.replaceAll(currentBase, missingBase);
+    assert.notEqual(poisoned, original, `test fixture must replace the prepared base in ${relative}`);
+    fs.writeFileSync(file, poisoned);
+  }
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /changelog cites commit 0000001 which does not resolve to a commit in this repo/);
+});
+
+test("validator rejects an existing released hash unreachable from the default branch", completeSourceHistoryTest, (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-released-unreachable-"));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+
+  const checkoutRoot = path.join(tempRoot, "checkout");
+  cloneWithCurrentValidator(checkoutRoot);
+  const sourceOriginMain = spawnSync(
+    "git",
+    ["-C", repoRoot, "rev-parse", "origin/main^{commit}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(sourceOriginMain.status, 0, sourceOriginMain.stderr);
+  const alignOriginMain = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", sourceOriginMain.stdout.trim()],
+    { encoding: "utf8" }
+  );
+  assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+
+  const tree = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "rev-parse", "HEAD^{tree}"],
+    { encoding: "utf8" }
+  );
+  assert.equal(tree.status, 0, tree.stderr);
+  const unreachable = spawnSync(
+    "git",
+    ["-C", checkoutRoot, "commit-tree", tree.stdout.trim(), "-m", "unreachable release fixture"],
+    {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GIT_AUTHOR_EMAIL: "validator@example.invalid",
+        GIT_AUTHOR_NAME: "Validator Fixture",
+        GIT_COMMITTER_EMAIL: "validator@example.invalid",
+        GIT_COMMITTER_NAME: "Validator Fixture"
+      }
+    }
+  );
+  assert.equal(unreachable.status, 0, unreachable.stderr);
+  const unreachableHash = unreachable.stdout.trim().slice(0, 7);
+
+  const docsPath = path.join(checkoutRoot, "docs", "index.html");
+  const docs = fs.readFileSync(docsPath, "utf8");
+  const poisoned = docs.replace(
+    /(class="clog-hash"[^>]*>)[0-9a-f]{7,40}(<)/,
+    `$1${unreachableHash}$2`
+  );
+  assert.notEqual(poisoned, docs, "test fixture must replace a released landing hash");
+  fs.writeFileSync(docsPath, poisoned);
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(
+    validation.stderr,
+    new RegExp(`changelog cites commit ${unreachableHash}, which exists but is not reachable from origin/main`)
+  );
+});
+
+test("validator rejects a prepared changelog item below the newest entry", completeSourceHistoryTest, (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-prepared-order-"));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+
+  const checkoutRoot = path.join(tempRoot, "checkout");
+  cloneWithCurrentValidator(checkoutRoot);
+  const docsPath = path.join(checkoutRoot, "docs", "index.html");
+  const docs = fs.readFileSync(docsPath, "utf8");
+  let seen = 0;
+  const poisoned = docs.replace(/<li class="clog-item" data-type="new">/g, (match) => {
+    seen += 1;
+    return seen === 1
+      ? '<li class="clog-item" data-type="new" data-status="prepared">'
+      : match;
+  });
+  assert.ok(seen >= 1, "test fixture must contain a released changelog item after the prepared entry");
+  fs.writeFileSync(docsPath, poisoned);
+
+  const validation = runValidator(checkoutRoot);
+  const diagnostics = `${validation.stdout}\n${validation.stderr}`;
+  assert.notEqual(validation.status, 0, diagnostics);
+  assert.match(validation.stderr, /prepared item must be the newest entry/);
+});
 
 test("validator rejects a nonexistent changelog hash in a full-history checkout", completeSourceHistoryTest, (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "suede-validator-full-"));

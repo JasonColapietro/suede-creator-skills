@@ -6,6 +6,7 @@ import { createRequire } from "node:module";
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { measureBookFacts, measureSkillFile } from "./lib/book-facts.mjs";
+import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
 
@@ -459,6 +460,17 @@ const catalog = JSON.parse(readText(path.join(repoRoot, "mcp", "catalog.json")))
 const catalogSkillNames = [...catalog.skills.map((skill) => skill.name)].sort();
 const packageJson = JSON.parse(readText(path.join(repoRoot, "package.json")));
 const pluginJson = JSON.parse(readText(path.join(repoRoot, ".claude-plugin", "plugin.json")));
+const graphLicensePath = path.join(repoRoot, "licenses", "graph-of-thoughts-BSD.txt");
+const travelingGraphLicensePath = path.join(repoRoot, "skills", "suede-ship", "LICENSE.graph-of-thoughts-BSD.txt");
+if (!fs.existsSync(travelingGraphLicensePath)) {
+  fail.push("Suede Ship traveling Graph of Thoughts BSD license is missing");
+} else if (!fs.existsSync(graphLicensePath) || readText(travelingGraphLicensePath) !== readText(graphLicensePath)) {
+  fail.push("Suede Ship traveling Graph of Thoughts BSD license does not match licenses/graph-of-thoughts-BSD.txt");
+}
+const shipWorkflowPath = path.join(repoRoot, "skills", "suede-ship", "workflows", "suede-ship.js");
+if (!fs.existsSync(shipWorkflowPath) || !readText(shipWorkflowPath).includes("../LICENSE.graph-of-thoughts-BSD.txt")) {
+  fail.push("Suede Ship workflow does not point single-skill installs to the traveling Graph of Thoughts BSD license");
+}
 const codexPluginPath = path.join(repoRoot, ".codex-plugin", "plugin.json");
 const codexPluginJson = fs.existsSync(codexPluginPath)
   ? JSON.parse(readText(codexPluginPath))
@@ -470,6 +482,8 @@ const codexMarketplaceJson = fs.existsSync(codexMarketplacePath)
 const citationText = readText(path.join(repoRoot, "CITATION.cff"));
 const citationVersion = citationText.match(/^version:\s*["']?([^"'#\s]+)["']?\s*$/m)?.[1] ?? null;
 const citationReleaseDate = citationText.match(/^date-released:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m)?.[1] ?? null;
+const releaseStateText = readText(path.join(repoRoot, "docs", "index.html"));
+const catalogVersionIsPrepared = releaseStateText.includes(`Version ${catalog.version} prepared`);
 
 if (typeof catalog.version !== "string" || !SEMVER_RE.test(catalog.version)) {
   fail.push(`catalog.json version is not valid semantic versioning: ${catalog.version}`);
@@ -503,7 +517,9 @@ if (pluginJson.version !== catalog.version) {
 if (citationVersion !== catalog.version) {
   fail.push(`CITATION.cff version (${citationVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
 }
-if (citationReleaseDate !== catalog.updated) {
+if (catalogVersionIsPrepared && citationReleaseDate !== null) {
+  fail.push(`CITATION.cff must omit date-released while catalog version ${catalog.version} is prepared`);
+} else if (!catalogVersionIsPrepared && citationReleaseDate !== catalog.updated) {
   fail.push(`CITATION.cff date-released (${citationReleaseDate || "missing"}) does not match catalog.json updated (${catalog.updated})`);
 }
 if (!codexPluginJson) {
@@ -1035,6 +1051,7 @@ const countChecks = [
   { file: "docs/index.html", label: "JSON-LD numberOfItems", re: /"numberOfItems":\s*(\d+)/, expected: totalSkillCount },
   { file: "docs/index.html", label: "stat counter data-count", re: /<span class="count" data-count="(\d+)">/, expected: totalSkillCount },
   { file: "docs/index.html", label: "stat counter no-JS text", re: /<span class="count" data-count="\d+">(\d+)<\/span>/, expected: totalSkillCount },
+  { file: "docs/plugins.html", label: "install path-map skill count", re: /<text x="644" y="146"[^>]*>(\d+)<\/text>/, expected: totalSkillCount },
   // The shields.io badge is the first thing a visitor sees on the GitHub
   // landing page, and its URL value once drifted to 29 while every other
   // surface said 67. Guard both halves — the rendered number lives in the URL,
@@ -1079,6 +1096,35 @@ if (fs.existsSync(bookDir)) {
 // scripts/lib/book-facts.mjs, whose definitions reproduce the figures the book
 // shipped with. Run `node scripts/measure-book-facts.mjs` to see them.
 const bookFacts = measureBookFacts();
+
+// Chrome PDF bytes are not reproducible because the renderer stamps metadata,
+// so freshness is carried by a checked provenance record. It binds the PDF to
+// the exact book sources, PDF template, shared renderer, and skill inventory.
+const bookPdfPath = path.join(repoRoot, "docs", "book", "s-tier.pdf");
+const bookPdfProvenancePath = path.join(repoRoot, PDF_PROVENANCE_RELATIVE);
+if (!fs.existsSync(bookPdfPath) || !fs.existsSync(bookPdfProvenancePath)) {
+  fail.push(`Book PDF or provenance is missing; run \`node scripts/build-book-pdf.mjs\``);
+} else {
+  let provenance;
+  try {
+    provenance = JSON.parse(readText(bookPdfProvenancePath));
+  } catch (error) {
+    fail.push(`Book PDF provenance is invalid JSON: ${error.message}`);
+  }
+  if (provenance) {
+    if (provenance.schemaVersion !== 1 || !/^[0-9a-f]{64}$/.test(provenance.inputSha256 || "") ||
+      !/^[0-9a-f]{64}$/.test(provenance.pdfSha256 || "")) {
+      fail.push(`Book PDF provenance has an invalid schema; run \`node scripts/build-book-pdf.mjs\``);
+    } else {
+      if (provenance.inputSha256 !== bookPdfInputDigest(repoRoot)) {
+        fail.push(`Book PDF input digest is stale; run \`node scripts/build-book-pdf.mjs\``);
+      }
+      if (provenance.pdfSha256 !== bookPdfDigest(repoRoot)) {
+        fail.push(`Book PDF digest does not match its provenance; run \`node scripts/build-book-pdf.mjs\``);
+      }
+    }
+  }
+}
 const grader = measureSkillFile("suede-code-grader");
 const deslop = measureSkillFile("suede-deslop");
 const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
@@ -1096,7 +1142,7 @@ function wordOrdinal(word) {
 }
 
 countChecks.push(
-  { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, MIT licensed/, expected: totalSkillCount },
+  { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, under documented open-source licenses/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "progressive-disclosure heading", re: /why (\d+) skills fit/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "corpus file count", re: /The (\d+) `SKILL\.md` files in this/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "corpus byte total", re: /repo total ([\d,]+) bytes/, expected: bookFacts.totalBytes, parse: commaNumber },
@@ -1704,21 +1750,44 @@ if (indexJsonLdItemMatches.length !== totalSkillCount) {
   fail.push(`docs/index.html JSON-LD ItemList has ${indexJsonLdItemMatches.length} entries, expected ${totalSkillCount}`);
 }
 
-// Release-log guard: the homepage #changelog section cites real commits by
-// short hash and stamps the current version's release date. A fabricated hash,
-// stale release pill, or out-of-order entry would ship a page that quietly lies
-// about the repo's own history — fail the build instead.
-const clogItems = [...docsRootText.matchAll(/<li class="clog-item"[^>]*>([\s\S]*?)<\/li>/g)].map((m) => m[1]);
+// Ship-log guard: released entries cite their reachable landing commits. One
+// newest prepared entry may instead cite the current origin/main merge base,
+// but it must remain visibly unreleased. A fabricated hash, stale version pill,
+// or out-of-order entry would make the page lie about its history.
+const clogItemMatches = [...docsRootText.matchAll(/<li class="clog-item"([^>]*)>([\s\S]*?)<\/li>/g)];
+const clogItems = clogItemMatches.map((match) => match[2]);
 if (clogItems.length === 0) {
   fail.push("docs/index.html: no .clog-item entries found — the #changelog ship-log is missing or its markup changed");
 } else {
   const clogEntries = clogItems.map((item, i) => {
+    const attributes = clogItemMatches[i][1];
+    const status = attributes.match(/\bdata-status="([^"]+)"/)?.[1] ?? "released";
     const date = item.match(/class="clog-date">(\d{4}-\d{2}-\d{2})</);
     const hash = item.match(/class="clog-hash"[^>]*>([0-9a-f]{7,40})</);
+    const base = item.match(/class="[^"]*\bclog-base\b[^"]*"[^>]*>base ([0-9a-f]{7,40})</);
+    if (!new Set(["prepared", "released"]).has(status)) {
+      fail.push(`docs/index.html changelog entry ${i + 1}: unsupported data-status ${JSON.stringify(status)}`);
+    }
     if (!date) fail.push(`docs/index.html changelog entry ${i + 1}: missing or malformed .clog-date (expected YYYY-MM-DD)`);
-    if (!hash) fail.push(`docs/index.html changelog entry ${i + 1}: missing .clog-hash short commit hash`);
-    return { date: date ? date[1] : null, hash: hash ? hash[1] : null };
+    if (status === "released" && !hash) {
+      fail.push(`docs/index.html changelog entry ${i + 1}: released item is missing .clog-hash landing commit`);
+    }
+    if (status === "prepared") {
+      if (i !== 0) fail.push(`docs/index.html changelog entry ${i + 1}: prepared item must be the newest entry`);
+      if (!base) fail.push(`docs/index.html changelog entry ${i + 1}: prepared item is missing .clog-base merge-base commit`);
+      if (hash) fail.push(`docs/index.html changelog entry ${i + 1}: prepared item must not claim a .clog-hash landing commit`);
+    }
+    return {
+      base: base ? base[1] : null,
+      date: date ? date[1] : null,
+      hash: hash ? hash[1] : null,
+      status,
+    };
   });
+
+  if (clogEntries.filter((entry) => entry.status === "prepared").length > 1) {
+    fail.push("docs/index.html changelog may contain at most one prepared item");
+  }
 
   const gitHistory = inspectGitHistory(repoRoot);
   // Prefer the remote-tracking ref: in a worktree cut from origin/main, local
@@ -1728,28 +1797,70 @@ if (clogItems.length === 0) {
   ) ?? "HEAD";
   if (gitHistory.state === "complete") {
     for (const entry of clogEntries) {
-      if (!entry.hash) continue;
-      const probe = spawnSync("git", ["-C", repoRoot, "cat-file", "-e", `${entry.hash}^{commit}`], { stdio: "ignore" });
+      const reference = entry.status === "prepared" ? entry.base : entry.hash;
+      if (!reference) continue;
+      const probe = spawnSync("git", ["-C", repoRoot, "cat-file", "-e", `${reference}^{commit}`], { stdio: "ignore" });
       if (probe.error) {
         warn.push(`Changelog hash check skipped — could not run git (${probe.error.code || probe.error.message})`);
         break;
       }
       if (probe.status !== 0) {
-        fail.push(`docs/index.html changelog cites commit ${entry.hash} which does not resolve to a commit in this repo`);
+        fail.push(`docs/index.html changelog cites commit ${reference} which does not resolve to a commit in this repo`);
         continue;
       }
-      // Object existence is not enough. Every PR here lands squashed, so a
-      // pre-squash branch commit still resolves in the maintainer's clone
-      // (the branch object is right there) while being unreachable from the
-      // published history — a reader following the link gets nothing. 0.13.0
-      // shipped exactly that. Require reachability from the default branch.
+
+      if (entry.status === "released") {
+        // Object existence is not enough. Every PR here lands squashed, so a
+        // pre-squash branch commit still resolves in the maintainer's clone
+        // (the branch object is right there) while being unreachable from the
+        // published history — a reader following the link gets nothing. 0.13.0
+        // shipped exactly that. Require reachability from the default branch.
+        const reachable = spawnSync(
+          "git",
+          ["-C", repoRoot, "merge-base", "--is-ancestor", entry.hash, defaultBranchRef],
+          { stdio: "ignore" }
+        );
+        if (reachable.status !== 0) {
+          fail.push(`docs/index.html changelog cites commit ${entry.hash}, which exists but is not reachable from ${defaultBranchRef} — a squash merge rewrites branch commits, so cite the commit that landed`);
+        }
+        continue;
+      }
+
+      const originMainProbe = spawnSync(
+        "git",
+        ["-C", repoRoot, "rev-parse", "--verify", "--quiet", "origin/main^{commit}"],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+      );
+      if (originMainProbe.status !== 0) {
+        fail.push("docs/index.html prepared changelog validation requires origin/main in a full-history checkout");
+        continue;
+      }
+      const mergeBaseProbe = spawnSync(
+        "git",
+        ["-C", repoRoot, "merge-base", "HEAD", "origin/main"],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+      );
+      const baseProbe = spawnSync(
+        "git",
+        ["-C", repoRoot, "rev-parse", `${entry.base}^{commit}`],
+        { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+      );
+      if (mergeBaseProbe.status !== 0 || baseProbe.status !== 0) {
+        fail.push("docs/index.html could not resolve the prepared changelog merge base");
+        continue;
+      }
+      const expectedBase = mergeBaseProbe.stdout.trim();
+      const citedBase = baseProbe.stdout.trim();
+      if (citedBase !== expectedBase) {
+        fail.push(`docs/index.html prepared changelog base ${entry.base} does not match current branch merge-base ${expectedBase.slice(0, 7)} with origin/main`);
+      }
       const reachable = spawnSync(
         "git",
-        ["-C", repoRoot, "merge-base", "--is-ancestor", entry.hash, defaultBranchRef],
+        ["-C", repoRoot, "merge-base", "--is-ancestor", entry.base, "origin/main"],
         { stdio: "ignore" }
       );
       if (reachable.status !== 0) {
-        fail.push(`docs/index.html changelog cites commit ${entry.hash}, which exists but is not reachable from ${defaultBranchRef} — a squash merge rewrites branch commits, so cite the commit that landed`);
+        fail.push(`docs/index.html prepared changelog base ${entry.base} is not reachable from origin/main`);
       }
     }
   } else if (gitHistory.state === "packaged" || gitHistory.state === "shallow") {
@@ -1766,19 +1877,26 @@ if (clogItems.length === 0) {
     }
   }
 
-  const freshMatch = docsRootText.match(/Version ([^\s]+) released ([^<]+?)\s*<span id="clog-fresh-rel"[^>]*data-iso="(\d{4}-\d{2}-\d{2})"/);
+  const freshMatch = docsRootText.match(/Version ([^\s]+) (released|prepared) ([^<]+?)\s*<span id="clog-fresh-rel"[^>]*data-iso="(\d{4}-\d{2}-\d{2})"/);
   if (!freshMatch) {
-    fail.push('docs/index.html: could not find the versioned release pill (id="clog-fresh-rel" with a data-iso date)');
+    fail.push('docs/index.html: could not find the versioned released/prepared pill (id="clog-fresh-rel" with a data-iso date)');
   } else {
     const pillVersion = freshMatch[1].trim();
-    const pillText = freshMatch[2].trim();
-    const pillIso = freshMatch[3];
+    const pillStatus = freshMatch[2].trim();
+    const pillText = freshMatch[3].trim();
+    const pillIso = freshMatch[4];
     const newestDate = clogEntries.map((e) => e.date).filter(Boolean).sort().at(-1);
     if (pillVersion !== catalog.version) {
       fail.push(`docs/index.html release pill version (${pillVersion}) does not match catalog version (${catalog.version})`);
     }
     if (newestDate && pillIso !== newestDate) {
       fail.push(`docs/index.html release pill data-iso (${pillIso}) does not match the newest changelog entry date (${newestDate})`);
+    }
+    if (pillStatus !== clogEntries[0]?.status) {
+      fail.push(`docs/index.html version pill says ${pillStatus} but the newest changelog entry is ${clogEntries[0]?.status || "missing"}`);
+    }
+    if (pillStatus === "prepared" && pillIso !== catalog.updated) {
+      fail.push(`docs/index.html prepared version pill date (${pillIso}) does not match catalog updated date (${catalog.updated})`);
     }
     const monthAbbr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const [y, m, d] = pillIso.split("-").map(Number);
@@ -1797,6 +1915,8 @@ if (clogItems.length === 0) {
   const newestClogTitle = (newestClogItem.match(/class="clog-title">([^<]+)</) || [])[1]?.trim() ?? null;
   const newestClogDate = clogEntries[0]?.date ?? null;
   const newestClogHash = clogEntries[0]?.hash ?? null;
+  const newestClogBase = clogEntries[0]?.base ?? null;
+  const newestClogStatus = clogEntries[0]?.status ?? null;
   const monthAbbrBox = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let expectedBoxDate = null;
   if (newestClogDate) {
@@ -1815,17 +1935,26 @@ if (clogItems.length === 0) {
       fail.push(`${page.file}: tiny ship-log box (id="hero-shiplog") is missing`);
       continue;
     }
-    const top = box[0].match(/class="hero-shiplog-top">Released ([A-Z][a-z]{2} \d{1,2}) <b>&middot; ([0-9a-f]{7,40})<\/b>/);
+    const cardStatus = box[0].match(/\bdata-status="([^"]+)"/)?.[1] ?? "released";
+    const top = box[0].match(/class="hero-shiplog-top">(Released|Prepared) ([A-Z][a-z]{2} \d{1,2}) <b>&middot; (?:(base) )?([0-9a-f]{7,40})<\/b>/);
     const title = (box[0].match(/class="hero-shiplog-title">([^<]+)</) || [])[1]?.trim() ?? null;
     const commits = (box[0].match(/class="hero-shiplog-more">(\d+) commits/) || [])[1] ?? null;
     if (!top) {
-      fail.push(`${page.file}: tiny release-log box header is malformed (expected 'Released Mon D <b>&middot; hash</b>')`);
+      fail.push(`${page.file}: tiny ship-log box header is malformed`);
     } else {
-      if (expectedBoxDate && top[1] !== expectedBoxDate) {
-        fail.push(`${page.file}: tiny release-log box says "Released ${top[1]}" but the newest changelog entry is ${newestClogDate} (expected "Released ${expectedBoxDate}")`);
+      const visibleStatus = top[1].toLowerCase();
+      if (visibleStatus !== newestClogStatus || cardStatus !== newestClogStatus) {
+        fail.push(`${page.file}: tiny ship-log box status does not match newest ${newestClogStatus || "missing"} changelog entry`);
       }
-      if (newestClogHash && top[2] !== newestClogHash) {
-        fail.push(`${page.file}: tiny ship-log box cites ${top[2]} but the newest changelog entry is ${newestClogHash}`);
+      if (expectedBoxDate && top[2] !== expectedBoxDate) {
+        fail.push(`${page.file}: tiny ship-log box says "${top[1]} ${top[2]}" but the newest changelog entry is ${newestClogDate} (expected "${top[1]} ${expectedBoxDate}")`);
+      }
+      if (newestClogStatus === "prepared") {
+        if (top[3] !== "base" || top[4] !== newestClogBase) {
+          fail.push(`${page.file}: prepared tiny ship-log box must cite merge base ${newestClogBase || "missing"}`);
+        }
+      } else if (top[3] || top[4] !== newestClogHash) {
+        fail.push(`${page.file}: released tiny ship-log box must cite landing hash ${newestClogHash || "missing"}`);
       }
     }
     if (!title) {
@@ -1847,13 +1976,13 @@ if (clogItems.length === 0) {
     fail.push(`docs/index.html sparkline caption says ${sparkCaption} commits but the tiny ship-log boxes say ${boxCounts[0].commits}`);
   }
 
-  const releaseClogItem = clogItems.find((item) => item.includes(`Version ${catalog.version}`));
-  if (!releaseClogItem) {
-    fail.push(`docs/index.html changelog has no release entry for catalog version ${catalog.version}`);
+  const versionClogItem = clogItems.find((item) => item.includes(`Version ${catalog.version}`));
+  if (!versionClogItem) {
+    fail.push(`docs/index.html changelog has no entry for catalog version ${catalog.version}`);
   } else {
-    const releaseDate = releaseClogItem.match(/class="clog-date">(\d{4}-\d{2}-\d{2})</)?.[1] ?? null;
-    if (releaseDate !== catalog.updated) {
-      fail.push(`docs/index.html release entry for ${catalog.version} is dated ${releaseDate || "missing"}, expected catalog updated date ${catalog.updated}`);
+    const versionDate = versionClogItem.match(/class="clog-date">(\d{4}-\d{2}-\d{2})</)?.[1] ?? null;
+    if (versionDate !== catalog.updated) {
+      fail.push(`docs/index.html entry for ${catalog.version} is dated ${versionDate || "missing"}, expected catalog updated date ${catalog.updated}`);
     }
   }
 }

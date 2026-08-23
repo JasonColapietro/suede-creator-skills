@@ -560,7 +560,7 @@
     <h1>Every skill. One honest line each.</h1>
     <p class="lead">Every skill in the pack is a plain-Markdown <code>SKILL.md</code> folder you can read before an agent runs it. <strong>Six specialities:</strong> ship (13), craft (9), get found (12), demand channels (8), revenue &amp; retention (15), and strategy &amp; rights (14). Each one breaks down further into sub-lanes, so no bucket is a wall of names. This catalog links each skill to its deep docs and its source folder on GitHub. No sign-up, no telemetry, nothing to uninstall but a folder.</p>
 
-    <a id="hero-shiplog" href="#changelog" aria-label="Ship log. Latest entry August 15, 2026: the entire skill pack gets its first major redesign. Jump to the changelog.">
+    <a id="hero-shiplog" data-status="prepared" href="#changelog" aria-label="Ship log. Prepared entry August 21, 2026: Graph search replaces the fixed shipping DAG. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
         <span style="height:2%"></span>
         <span style="height:100%"></span>
@@ -574,8 +574,8 @@
         <span style="height:67%"></span>
       </span>
       <span class="hero-shiplog-text">
-        <span class="hero-shiplog-top">Released Aug 16 <b>&middot; 1e2d70e</b></span>
-        <span class="hero-shiplog-title">Six specialities, and an MCP that navigates them</span>
+        <span class="hero-shiplog-top">Prepared Aug 21 <b>&middot; base f6250e1</b></span>
+        <span class="hero-shiplog-title">Graph search replaces the fixed shipping DAG</span>
         <span class="hero-shiplog-more">282 commits &middot; 10 weeks &middot; read the full ship log -&gt;</span>
       </span>
     </a>
@@ -705,8 +705,8 @@
         <div class="lane-head"><h4>Orchestration &amp; routing</h4><span class="lane-count">5</span></div>
         <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
         <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-ship.html"><b>suede-ship</b><span>Canonical shipping DAG: scout, multi-lens research, lane plan with file ownership, parallel build, adversarial refute, and an integration gate. Halts on hazards and collisions.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>The same graph for copy: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <a class="row" href="suede-ship.html"><b>suede-ship</b><span>Graph-of-Thoughts shipping search: generate competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan. 55/110/200-call caps; production reads only, never deploys.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>A separate copy-only DAG: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
         <a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
       </div>
       <div class="lane" id="lane-code">
@@ -842,13 +842,13 @@
 
   <section class="shell" aria-labelledby="field-notes">
     <h2 id="field-notes">Field notes</h2>
-    <p class="section-sub">Why the pack is shaped this way: how 71 skills stay cheap to carry, how they route without colliding, and what the ship DAG is actually doing.</p>
+    <p class="section-sub">Why the pack is shaped this way: how 71 skills stay cheap to carry, how they route without colliding, and what the Graph-of-Thoughts shipping search is actually doing.</p>
     <div class="notes">
       <a class="note-row" href="../blog/progressive-disclosure-ship-dag-and-mcp.html">
         <span class="note-date">Aug 2026</span>
         <span class="note-copy">
           <span class="note-title">71 skills installed. Your agent reads almost none of them.</span>
-          <span class="note-hook">Progressive disclosure, the ship DAG, and the MCP layer</span>
+          <span class="note-hook">Progressive disclosure, Graph-of-Thoughts shipping search, and the MCP layer</span>
         </span>
         <span class="note-arrow" aria-hidden="true">-&gt;</span>
       </a>

@@ -37,11 +37,14 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-ship` enforces the same boundary on itself. It reads production and never
-deploys, so its instructions forbid it from claiming `deployed`, `verified live`,
-or `released` under any circumstances. Those states require a deploy that has not
-happened. A skill that will not overclaim on its own behalf is the only kind
-whose reports are worth anything.
+`suede-ship` enforces the same boundary on itself. Its Graph-of-Thoughts search
+generates competing plans, scores and prunes them, refutes and improves the
+survivors, aggregates compatible lanes, and permits only the selected plan to
+mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
+production and never deploys, so its instructions forbid it from claiming
+`deployed`, `verified live`, or `released` under any circumstances. Those states
+require a deploy that has not happened. A skill that will not overclaim on its
+own behalf is the only kind whose reports are worth anything.
 
 ## What counts
 

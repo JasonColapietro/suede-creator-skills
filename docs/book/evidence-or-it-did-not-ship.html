@@ -32,7 +32,7 @@
   "description": "The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.",
   "url": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html",
   "position": 7,
-  "wordCount": 1662,
+  "wordCount": 1700,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -87,7 +87,7 @@
       <p class="eyebrow">Part II &middot; Chapter 6</p>
       <h1>Evidence or It Did Not Ship</h1>
       <p class="post-meta">The verification discipline the rest of the book rests on, built from three real failures: a truncated test log, a page that passed a colour check while rendering unreadable, and a test file serving traffic in production.</p>
-      <div class="book-meta"><span>1,662 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,700 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>An agent finishes a task and reports: "Fixed the failing test. The suite is green." It ran the suite. It read the output. It is not lying. What it did was pipe the run through <code>head</code>, see a wall of passing lines, and stop reading before the line that said FAILED.</p>
       <p>That happened in this repo. It is in the memory file, under <code>never-truncate-test-output-before-claiming-green</code>. The claim was confident, the work looked like the work, and the conclusion was wrong by one scrolled screen.</p>
@@ -98,7 +98,7 @@
       <p>"Added error handling for the webhook." Did you replay a webhook?</p>
       <p>"The build should pass now." Should is not a verb that belongs in a status report.</p>
       <p><code>suede-agent-teams</code> handles this with a status vocabulary that has no shortcuts: <code>scoped</code>, <code>planned</code>, <code>executing</code>, <code>changed locally</code>, <code>verified locally</code>, <code>reviewed</code>, <code>committed</code>, <code>pushed</code>, <code>deployed</code>, <code>verified live</code>, <code>released</code>. The two adjacent pairs are where every optimistic report dies. Changed locally is not verified locally. Deployed is not verified live. The vocabulary exists because the gap between those states is invisible in a transcript and expensive in production. Its Red Flags section names the sentence that skips them: "Mark it done, the code is written."</p>
-      <p><code>suede-ship</code> enforces the same boundary on itself. It reads production and never deploys, so its instructions forbid it from claiming <code>deployed</code>, <code>verified live</code>, or <code>released</code> under any circumstances. Those states require a deploy that has not happened. A skill that will not overclaim on its own behalf is the only kind whose reports are worth anything.</p>
+      <p><code>suede-ship</code> enforces the same boundary on itself. Its Graph-of-Thoughts search generates competing plans, scores and prunes them, refutes and improves the survivors, aggregates compatible lanes, and permits only the selected plan to mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads production and never deploys, so its instructions forbid it from claiming <code>deployed</code>, <code>verified live</code>, or <code>released</code> under any circumstances. Those states require a deploy that has not happened. A skill that will not overclaim on its own behalf is the only kind whose reports are worth anything.</p>
       <h2 id="what-counts">What counts</h2>
       <p>Evidence is an artifact produced by the system, not by you, that would have looked different if the work had failed. That is the whole definition, and it disqualifies most of what gets pasted into status updates.</p>
       <p>Counts:</p>
@@ -148,7 +148,7 @@
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 71-skill, MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <p class="footer-note">Suede Creator Skills is a 71-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
