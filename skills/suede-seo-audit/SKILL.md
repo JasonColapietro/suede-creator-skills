@@ -148,18 +148,30 @@ subject with natural language.
 ### Lane 5: Schema Markup
 
 **Goal:** decide whether structured data is warranted, then ensure every JSON-LD
-block is valid, eligible for its stated search feature, and matches visible
-content. Run the Lane 5 checklist in
-`references/schema-templates.md`, which also holds the page-type → `@type`
-mapping and minimum JSON-LD templates (Organization, SoftwareApplication,
-FAQPage, Article).
+block is valid, eligible for its stated search feature, matches visible content,
+and describes a structure the visible prose actually has. Run the Lane 5
+checklist in `references/schema-templates.md`, which also holds the
+retrievability lens, the page-type → `@type` mapping, and minimum JSON-LD
+templates (Organization, SoftwareApplication, FAQPage, Article).
 
 When schema is missing or broken, provide the exact corrected JSON-LD block
 inline in the findings. Do not describe it in prose.
 
+Validity and truthfulness are necessary and not sufficient. Correct markup can
+still describe a structure the prose does not have — a `FAQPage` whose questions
+are `<summary>` elements is one retrieval block however many entries it
+declares, and its text can match the visible text character for character while
+that stays true. Lane 4 measures the block; Lane 5 decides whether the schema
+claimed a structure the prose lacks. Run the retrievability lens to classify
+each property against evidence you can quote, and never name a Discovery Engine
+flag as observed Google Search behavior.
+
 Lane 5 grade drops to D or below if: markup is misleading, invalid, hidden from
 users, or uses a type/property combination that is ineligible for the claimed
-Google feature. A page does not fail merely because no schema is warranted.
+Google feature. It drops to C or below if schema declares a structure the
+visible prose does not carry, or if a material claim's only machine-readable
+form is JSON-LD with no prose counterpart. A page does not fail merely because
+no schema is warranted.
 FAQ markup never earns a visibility promise; Google generally limits FAQ rich
 results to authoritative government and health sites.
 
@@ -261,6 +273,9 @@ Hard caps:
 - Cannot earn A if primary CTA is broken or absent
 - Cannot earn A if any published statement is false, unverifiable, or invented
 - Cannot earn A in Lane 5 if present or warranted schema does not validate
+- Cannot earn A in Lane 5 if schema declares a structure (`FAQPage`,
+  `HowTo`, `ItemList`, `BreadcrumbList`) that the visible prose does not
+  carry
 - Cannot earn A in Lane 6 if primary content was unavailable to the tested
   intended clients and the audit cannot evaluate it
 - Cannot earn A in Lane 8 if contact, privacy policy, or HTTPS is absent
@@ -324,6 +339,9 @@ Competitor content gap:
 --- SCHEMA ---
 Schema changes:
   [Paste corrected or new JSON-LD block here]
+Retrievability: [property path] — [prose-backed | indexable-only | decorative | unclassified] — evidence: [quoted prose | feature doc URL | none]
+Schema-only claims: [property = value with no prose counterpart | none]
+Structure claim vs prose: [@type] declares [N] | visible headings [N] | [match/mismatch]
 
 --- AI EO NOTES ---
 Clear opening summary:
@@ -381,6 +399,7 @@ Remove entirely:
 [ ] Primary CTA destination loads correctly
 [ ] og:image loads at full resolution
 [ ] JSON-LD blocks contain no fabricated content
+[ ] Structure declared by FAQPage/HowTo/ItemList/BreadcrumbList is carried by visible page structure
 
 --- SHIP GATE ---
 ship | ship-with-caveats | hold
