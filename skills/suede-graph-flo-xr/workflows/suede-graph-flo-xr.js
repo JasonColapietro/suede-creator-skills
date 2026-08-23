@@ -897,9 +897,12 @@ evidence.worktree = scout.worktreePath
 evidence.baseSha = scout.baseSha
 evidence.hazards = scout.hazards
 const candidatePathAuditCommand = `${helperCommand('candidate-audit.cjs')} ${REPO_SHELL} ${WORKTREE_SHELL} '${encodeBase64(JSON.stringify(scout.candidateFiles))}'`
+// macOS ships realpath at /bin/realpath, not the Linux /usr/bin path — and this
+// workflow is macOS-only (scout-setup probes /usr/bin/sandbox-exec first), so the
+// /usr/bin pin exited 127 on every supported host and failed each attestation closed.
 const worktreeAuditCommands = [
-  `/usr/bin/realpath ${REPO_SHELL}`,
-  `/usr/bin/realpath ${WORKTREE_SHELL}`,
+  `/bin/realpath ${REPO_SHELL}`,
+  `/bin/realpath ${WORKTREE_SHELL}`,
   `git -C ${REPO_SHELL} worktree list --porcelain`,
   `git -C ${REPO_SHELL} rev-parse --path-format=absolute --git-common-dir`,
   `git -C ${WORKTREE_SHELL} rev-parse --path-format=absolute --git-common-dir`,
