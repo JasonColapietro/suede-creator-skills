@@ -162,6 +162,52 @@ function digestText(value) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+// Rewrite a checkout's ship-log surfaces so the newest entry is prepared at
+// baseHash. The validator cross-checks the entry, the version pill, and the tiny
+// ship-log box on all three pages against each other, so a fixture that flips
+// only the <li> leaves the page internally inconsistent and fails on the
+// mismatch rather than on the rule under test. These fixtures used to inherit
+// the prepared state from the repo itself, which meant they passed only while a
+// release happened to be in flight and broke the moment one shipped.
+function makePreparedChangelog(checkoutRoot, baseHash) {
+  const indexPath = path.join(checkoutRoot, "docs", "index.html");
+  let index = fs.readFileSync(indexPath, "utf8");
+  index = index.replace(/<li class="clog-item"([^>]*)>/, (match, attrs) =>
+    attrs.includes("data-status")
+      ? match
+      : `<li class="clog-item"${attrs} data-status="prepared">`
+  );
+  // A prepared entry cites a merge base and must not claim a landing hash. The
+  // two classes together are what the validator reads as "base, not hash".
+  index = index.replace(
+    /<a class="clog-hash" href="([^"]*\/commit\/)[0-9a-f]{7,40}"([^>]*)>[0-9a-f]{7,40}<\/a>/,
+    `<a class="clog-hash clog-base" href="$1${baseHash}"$2>base ${baseHash}</a>`
+  );
+  index = index.replace(/(<p class="clog-fresh[^"]*">Version [^\s]+ )released/, "$1prepared");
+  fs.writeFileSync(indexPath, index);
+
+  for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
+    const file = path.join(checkoutRoot, relative);
+    let text = fs.readFileSync(file, "utf8");
+    text = text.replace(/<a id="hero-shiplog"([^>]*)>/, (match, attrs) =>
+      attrs.includes("data-status")
+        ? match
+        : `<a id="hero-shiplog"${attrs} data-status="prepared">`
+    );
+    text = text.replace(
+      /(<span class="hero-shiplog-top">)Released ([A-Z][a-z]{2} \d{1,2}) <b>&middot; (?:base )?[0-9a-f]{7,40}<\/b>/,
+      `$1Prepared $2 <b>&middot; base ${baseHash}</b>`
+    );
+    fs.writeFileSync(file, text);
+  }
+
+  // An unreleased version carries no release date, so CITATION.cff is part of
+  // the prepared state too.
+  const citationPath = path.join(checkoutRoot, "CITATION.cff");
+  const citation = fs.readFileSync(citationPath, "utf8");
+  fs.writeFileSync(citationPath, citation.replace(/^date-released:[^\n]*\n/m, ""));
+}
+
 test("PDF builder stages output and verifies a stable input snapshot", () => {
   const builder = fs.readFileSync(path.join(repoRoot, "scripts", "build-book-pdf.mjs"), "utf8");
   const before = builder.indexOf("const inputDigestBefore = bookPdfInputDigest(repoRoot)");
@@ -385,10 +431,14 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const catalog = JSON.parse(
     fs.readFileSync(path.join(packagedRoot, "mcp", "catalog.json"), "utf8")
   );
-  const poisonedDocs = docs.replace(
-    `<p class="clog-detail">Version ${catalog.version}`,
-    `<p class="clog-detail">Release ${catalog.version}`
-  );
+  const poisonedDocs = docs
+    .replace(
+      `<p class="clog-detail">Version ${catalog.version}`,
+      `<p class="clog-detail">Release ${catalog.version}`
+    )
+    // The date-released assertion below is the prepared-state rule, and the
+    // version pill is where the validator reads that state from.
+    .replace(/(<p class="clog-fresh[^"]*">Version [^\s]+ )released/, "$1prepared");
   assert.notEqual(poisonedDocs, docs, "test fixture must remove the release-version marker");
   fs.writeFileSync(docsPath, poisonedDocs);
 
@@ -546,24 +596,10 @@ test("validator accepts a prepared changelog anchored to the current merge base"
   assert.equal(mergeBase.status, 0, mergeBase.stderr);
   const baseHash = mergeBase.stdout.trim().slice(0, 7);
 
-  const docsPath = path.join(checkoutRoot, "docs", "index.html");
-  const docs = fs.readFileSync(docsPath, "utf8");
-  let prepared = docs;
-  if (!prepared.includes('class="clog-item" data-type="new" data-status="prepared"')) {
-    prepared = prepared.replace(
-      '<li class="clog-item" data-type="new">',
-      '<li class="clog-item" data-type="new" data-status="prepared">'
-    );
-  }
-  if (!/class="[^"]*\bclog-base\b[^"]*"/.test(prepared)) {
-    prepared = prepared.replace(
-      '<span class="clog-tag">Orchestration</span>',
-      `<span class="clog-tag">Orchestration</span>\n            <a class="clog-base" href="https://github.com/JasonColapietro/suede-creator-skills/commit/${baseHash}">base ${baseHash}</a>`
-    );
-  }
+  makePreparedChangelog(checkoutRoot, baseHash);
+  const prepared = fs.readFileSync(path.join(checkoutRoot, "docs", "index.html"), "utf8");
   assert.match(prepared, /data-status="prepared"/);
   assert.match(prepared, new RegExp(`class="[^"]*\\bclog-base\\b[^"]*"[^>]*>base ${baseHash}<`));
-  fs.writeFileSync(docsPath, prepared);
 
   const validation = runValidator(checkoutRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
@@ -605,6 +641,7 @@ test("validator rejects a prepared changelog anchored before the current merge b
   const wrongBase = priorBase.stdout.trim().slice(0, 7);
   assert.notEqual(wrongBase, currentBase);
 
+  makePreparedChangelog(checkoutRoot, currentBase);
   for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
     const file = path.join(checkoutRoot, relative);
     const original = fs.readFileSync(file, "utf8");
@@ -647,6 +684,7 @@ test("validator rejects an unresolvable prepared changelog base", completeSource
   const currentBase = mergeBase.stdout.trim().slice(0, 7);
   const missingBase = "0000001";
 
+  makePreparedChangelog(checkoutRoot, currentBase);
   for (const relative of ["docs/index.html", "docs/skills/index.html", "docs/guide.html"]) {
     const file = path.join(checkoutRoot, relative);
     const original = fs.readFileSync(file, "utf8");
@@ -730,13 +768,17 @@ test("validator rejects a prepared changelog item below the newest entry", compl
   const docsPath = path.join(checkoutRoot, "docs", "index.html");
   const docs = fs.readFileSync(docsPath, "utf8");
   let seen = 0;
-  const poisoned = docs.replace(/<li class="clog-item" data-type="new">/g, (match) => {
+  // Mark the second entry, never the first: the rule under test is that a
+  // prepared item may not sit below the newest one, so the fixture has to leave
+  // a released entry above it.
+  const poisoned = docs.replace(/<li class="clog-item"([^>]*)>/g, (match, attrs) => {
     seen += 1;
-    return seen === 1
-      ? '<li class="clog-item" data-type="new" data-status="prepared">'
+    return seen === 2 && !attrs.includes("data-status")
+      ? `<li class="clog-item"${attrs} data-status="prepared">`
       : match;
   });
-  assert.ok(seen >= 1, "test fixture must contain a released changelog item after the prepared entry");
+  assert.ok(seen >= 2, "test fixture must contain a changelog item below the newest entry");
+  assert.notEqual(poisoned, docs, "test fixture must mark a lower changelog item prepared");
   fs.writeFileSync(docsPath, poisoned);
 
   const validation = runValidator(checkoutRoot);
