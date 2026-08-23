@@ -1146,9 +1146,20 @@ An over-broad constraint invented from a real file is still a misread.`,
     )
   : null
 
+// The skeptic re-cites each constraint from the file it actually opened, so the same
+// source arrives spelled through the worktree or the repo root, with or without :line
+// suffixes — two of three live runs halted here on that spelling drift alone. Match on
+// a spelling-normalized identity; the original claimed constraint objects, not these
+// keys, are what survive into evidence, and strings equal before normalization remain
+// equal after it.
+const normalizeProvenancePart = value => String(value)
+  .split(scout.worktreePath + '/').join('')
+  .split(REPO + '/').join('')
+  .replace(/:\d+(?:[-,]\d+)*(?!\w)/g, '')
+  .trim().toLowerCase().replace(/\s+/g, ' ')
 const constraintIdentity = item => item && [item.rule, item.source, item.breakingItMeans]
   .every(value => typeof value === 'string')
-  ? `${item.rule}\u0000${item.source}\u0000${item.breakingItMeans}`
+  ? [item.rule, item.source, item.breakingItMeans].map(normalizeProvenancePart).join('\u0000')
   : null
 const identityCounts = items => {
   const counts = new Map()
