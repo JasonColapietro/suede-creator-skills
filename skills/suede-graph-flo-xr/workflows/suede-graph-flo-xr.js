@@ -6,7 +6,7 @@
 
 export const meta = {
   name: 'suede-graph-flo-xr',
-  description: 'Bounded Graph-of-Thoughts shipping search: Generate -> Score -> KeepBestN -> paired Refute -> Improve -> Aggregate -> Select -> winner-only Build -> Gate -> Handoff',
+  description: 'Bounded Suede Thought Graph shipping search: Generate -> Score -> KeepBestN -> paired Refute -> Improve -> Aggregate -> Select -> winner-only Build -> Gate -> Handoff',
   whenToUse: 'Any nontrivial change to a Suede repo that touches more than one file or surface. The bundled runner requires Claude Code on macOS, registered Suede Graph Flo XR agents, and sandbox-exec. Pass args: { repo, scope, agentBudget, agentNamespace, workerModel?, deploys?, liveUrl?, vault? }',
   phases: [
     { title: 'Scout', detail: 'fetch origin, dirty files, worktree, Vercel api/ landmines — manifest only' },

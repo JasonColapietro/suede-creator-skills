@@ -1,7 +1,7 @@
 # Chapter 3. The Description Contract
 
 Five skills in this pack mention code in their first sentence. A review skill, a
-grader, a combined pass, a CI gate, and a Graph-of-Thoughts shipping search
+grader, a combined pass, a CI gate, and a Suede Thought Graph shipping search
 capped at 55, 110, or 200 calls. You type
 "can you look at this PR," and exactly one of them is correct. Nothing in the
 system errors if the wrong one runs. You get output either way, and the output

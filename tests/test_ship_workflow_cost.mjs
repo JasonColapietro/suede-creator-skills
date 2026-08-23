@@ -1,4 +1,4 @@
-// Suede Graph Flo XR's Graph-of-Thoughts search is fan-out billed to a model allocation. Its
+// Suede Graph Flo XR's Suede Thought Graph search is fan-out billed to a model allocation. Its
 // exact 55/110/200 call ceilings are hard contracts, including adversarial review and
 // bounded repair. This drives the real script with deterministic agents and checks the
 // search, mutation, failure, and budget boundaries at the workflow ABI.
@@ -553,7 +553,7 @@ test('porcelain -z parsing preserves both sides of renames and special-character
   assert.equal(parsePorcelainZ('R  src/new.ts\u0000').malformed, true)
 })
 
-test('Graph of Thoughts generates independent plans and deterministically prunes to the configured beam', async () => {
+test('Suede Thought Graph generates independent plans and deterministically prunes to the configured beam', async () => {
   // Catches collapsed branching: one plan must not stand in for the candidate set.
   const { result } = await runShip({ agentBudget: 'standard', lanes: 1, findingsPerLens: 0 })
   assert.equal(result.graph.thoughts.filter(t => t.operation === 'Generate').length, 5)
@@ -2045,7 +2045,7 @@ test('a worst-case run stays within the cost the skill advertises', async () => 
   const { result, calls } = await runShip({ lanes: 5, aggregateLanes: 5 })
   assert.ok(
     calls.length <= 110,
-    `the Graph-of-Thoughts workflow spawned ${calls.length} agents; the standard ceiling is 110.`)
+    `the Suede Thought Graph workflow spawned ${calls.length} agents; the standard ceiling is 110.`)
   assert.notEqual(result.reason, 'agent budget exhausted')
 })
 

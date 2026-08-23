@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 71 skills fit
 
 Here is the objection that arrives immediately. The 71 `SKILL.md` files in this
-repo total 1,036,589 bytes. Loading all of them into every conversation would
+repo total 1,036,580 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 71 descriptions together come to 41,799 bytes. That is roughly a
+all 71 descriptions together come to 41,790 bytes. That is roughly a
 twenty-fifth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -349,8 +349,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 71 files total 1,036,589 bytes;
-the 71 descriptions together are 41,799. The agent holds the small number and
+when the skill is not running. In this repo the 71 files total 1,036,580 bytes;
+the 71 descriptions together are 41,790. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -582,7 +582,7 @@ not, write the output block first and rebuild the body around it.
 # Chapter 3. The Description Contract
 
 Five skills in this pack mention code in their first sentence. A review skill, a
-grader, a combined pass, a CI gate, and a Graph-of-Thoughts shipping search
+grader, a combined pass, a CI gate, and a Suede Thought Graph shipping search
 capped at 55, 110, or 200 calls. You type
 "can you look at this PR," and exactly one of them is correct. Nothing in the
 system errors if the wrong one runs. You get output either way, and the output
@@ -1245,7 +1245,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-graph-flo-xr` enforces the same boundary on itself. Its Graph-of-Thoughts search
+`suede-graph-flo-xr` enforces the same boundary on itself. Its Suede Thought Graph search
 generates competing plans, scores and prunes them, refutes and improves the
 survivors, aggregates compatible lanes, and permits only the selected plan to
 mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads
