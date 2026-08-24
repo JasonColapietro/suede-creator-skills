@@ -37,7 +37,7 @@ gap between those states is invisible in a transcript and expensive in
 production. Its Red Flags section names the sentence that skips them: "Mark it
 done, the code is written."
 
-`suede-graph-flo-xr` enforces the same boundary on itself. Its Graph-of-Thoughts search
+`suede-graph-flo-xr` enforces the same boundary on itself. Its Suede Thought Graph search
 generates competing plans, scores and prunes them, refutes and improves the
 survivors, aggregates compatible lanes, and permits only the selected plan to
 mutate. Light, standard, and deep runs stop at 55, 110, and 200 calls. It reads

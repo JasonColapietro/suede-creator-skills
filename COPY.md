@@ -466,7 +466,7 @@ and hands it back as a runnable prompt.
 Stacks are a cross-cutting overlay on the specialty partition, not a seventh
 specialty. The partition stays total, the validator fails CI when the stack's
 catalog membership and its page drift, and the MCP server scopes membership per
-profile. Cost and authority stay on the label: suede-graph-flo-xr's Graph-of-Thoughts
+profile. Cost and authority stay on the label: suede-graph-flo-xr's Suede Thought Graph
 search generates competing plans, caps light/standard/deep at 55/110/200 calls,
 and lets only the selected winner mutate. Production inspection is read-only
 and it never deploys. High-volume independent work stays in a separate private

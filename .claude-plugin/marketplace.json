@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Open-source agent skills for Claude Code and Codex: Graph-of-Thoughts shipping, multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. Original work is MIT licensed; adapted components retain their upstream notices.",
+  "description": "Open-source agent skills for Claude Code and Codex: Suede Thought Graph shipping, multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. Original work is MIT licensed; adapted components retain their upstream notices.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -19,7 +19,7 @@
         "./agents/suede-graph-flo-xr-applier.md",
         "./agents/suede-graph-flo-xr-verifier.md"
       ],
-      "description": "Complete Suede workflow: Graph-of-Thoughts shipping, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
+      "description": "Complete Suede workflow: Suede Thought Graph shipping, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
     },
     {
       "name": "suede-agent-workflows",
@@ -40,7 +40,7 @@
         "./agents/suede-graph-flo-xr-applier.md",
         "./agents/suede-graph-flo-xr-verifier.md"
       ],
-      "description": "Multi-agent orchestration subset: search competing plans and ship one selected repo change through the Graph-of-Thoughts DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+      "description": "Multi-agent orchestration subset: search competing plans and ship one selected repo change through the Suede Thought Graph DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",

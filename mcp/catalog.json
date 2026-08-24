@@ -250,7 +250,7 @@
     {
       "key": "adderall",
       "label": "The Agentic Adderall Stack",
-      "summary": "Cracked devs only: four Suede skills for supercharging an agent — Graph-of-Thoughts shipping search, agent-team orchestration, the umbrella router, and the next-move loop.",
+      "summary": "Cracked devs only: four Suede skills for supercharging an agent — Suede Thought Graph shipping search, agent-team orchestration, the umbrella router, and the next-move loop.",
       "page": "https://skills.suedeai.ai/cracked.html",
       "formulations": [
         {
@@ -751,8 +751,8 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede Labs Graph-of-Thoughts shipping search contract for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Its executable workflow requires Claude Code on macOS plus six registered suede-graph-flo-xr agent profiles. Codex and generic skill installs follow the contract through direct implementation and must not claim the bundled Claude Workflow ran. Claude Workflow runs require repo, scope, and light|standard|deep with exact 55|110|200 ceilings. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
-      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Graph-of-Thoughts workflow only in its supported Claude Code/macOS environment."
+      "description": "Suede Thought Graph shipping search contract for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Its executable workflow requires Claude Code on macOS plus six registered suede-graph-flo-xr agent profiles. Codex and generic skill installs follow the contract through direct implementation and must not claim the bundled Claude Workflow ran. Claude Workflow runs require repo, scope, and light|standard|deep with exact 55|110|200 ceilings. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
+      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment."
     },
     {
       "name": "suede-ship-copy",
