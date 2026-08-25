@@ -1,10 +1,21 @@
 {
   "name": "suede-codex",
   "description": "Codex catalog for the complete public Suede skill pack.",
+  "interface": {
+    "displayName": "Suede Creator Skills"
+  },
   "plugins": [
     {
       "name": "suede-skills",
-      "source": "./",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
       "description": "All public Suede skills and three read-only MCP discovery servers."
     }
   ]

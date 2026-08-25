@@ -427,7 +427,7 @@ test("packaged validation rejects additional Codex marketplace entries", (t) => 
   const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
   marketplace.plugins.push({
     name: "suede-code",
-    source: "./",
+    source: { source: "local", path: "./" },
     skills: ["./skills/suede-code"]
   });
   fs.writeFileSync(marketplacePath, `${JSON.stringify(marketplace, null, 2)}\n`);
