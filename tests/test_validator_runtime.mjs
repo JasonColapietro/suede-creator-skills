@@ -822,7 +822,7 @@ test("build-shiplog propagates one changelog edit to every ship-log card", compl
     cwd: checkoutRoot,
     encoding: "utf8"
   });
-  assert.equal(build.status, 0, `${build.stdout}\n${build.stderr}`);
+  assert.equal(build.status, 0, [build.stdout, build.stderr].join("\n"));
 
   const mergeBase = spawnSync(
     "git",
