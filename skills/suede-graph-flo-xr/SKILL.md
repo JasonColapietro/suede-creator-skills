@@ -188,6 +188,11 @@ worktree. A second diff attestation runs after Gate and hashes
 the binary Git diff plus every reported file's mode, size, and bytes, including
 untracked additions.
 
+Gate removes credential-like and interpreter-injection environment variables,
+then redirects home, temporary, and cache paths before an acceptance command
+starts. If a check depends on removed credentials, report it as unverified;
+never rerun it outside the sandbox merely to obtain a pass.
+
 A successfully applied blocker patch is not treated as semantically cleared.
 The original blocker remains in `fixedBlockersPendingVerification`. The Gate
 attempt records its exact command set and reported output, but it cannot prove

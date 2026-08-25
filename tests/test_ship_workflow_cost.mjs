@@ -7,9 +7,11 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import gateEnvironment from '../skills/suede-graph-flo-xr/workflows/helpers/gate-environment.cjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SOURCE = readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js'), 'utf8')
+const SKILL = readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/SKILL.md'), 'utf8')
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 const BASE_SHA = 'd'.repeat(40)
 const DIFF_DIGEST = 'a'.repeat(64)
@@ -20,6 +22,43 @@ const HELPER_DIR = '/tmp/graph-flo-xr-helpers'
 // assertions about what those payloads do read the helper file, while assertions
 // about what the agent may run read the pinned invocation in the clamp.
 const helperSource = name => readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/workflows/helpers', name), 'utf8')
+const { sanitizeGateEnvironment } = gateEnvironment
+
+test('Gate removes credentials and interpreter injection without dropping toolchains', () => {
+  const retained = {
+    PATH: '/usr/bin:/bin',
+    CI: 'true',
+    DEVELOPER_DIR: '/Applications/Xcode.app',
+    JAVA_HOME: '/opt/java',
+    ANDROID_SDK_ROOT: '/opt/android',
+    CARGO_HOME: '/opt/cargo',
+    VIRTUAL_ENV: '/tmp/venv',
+  }
+  const joinedName = (...parts) => parts.join('_')
+  const sensitiveNames = [
+    joinedName('OPENAI', 'API', 'KEY'),
+    joinedName('AWS', 'SECRET', 'ACCESS', 'KEY'),
+    joinedName('GITHUB', 'TOKEN'),
+    joinedName('NPM', 'CONFIG', 'USERCONFIG'),
+    joinedName('DATABASE', 'URL'),
+    joinedName('SSH', 'AUTH', 'SOCK'),
+    joinedName('HTTPS', 'PROXY'),
+    joinedName('NODE', 'OPTIONS'),
+    joinedName('DYLD', 'INSERT', 'LIBRARIES'),
+    joinedName('GIT', 'CONFIG', 'KEY', '0'),
+  ]
+  const fixtureValue = ['fixture', 'value'].join('-')
+  const environment = {
+    ...retained,
+    ...Object.fromEntries(sensitiveNames.map(name => [name, fixtureValue])),
+  }
+
+  const sanitized = sanitizeGateEnvironment(environment)
+  for (const name of sensitiveNames) assert.equal(Object.hasOwn(sanitized, name), false, name)
+
+  assert.deepEqual(sanitized, retained)
+  assert.equal(environment[sensitiveNames[0]], fixtureValue, 'the pure sanitizer must not mutate its input')
+})
 
 // Worst case the schemas allow: the maximum lane count, both review lenses returning a
 // full findings array, every finding distinct (so dedupe cannot help) and severity
@@ -1763,6 +1802,9 @@ test('release verification receives read-only authority and never a deployment a
   assert.match(gateCall.bashCommandClamp[0], /\/private\/tmp\/ship-test/)
   assert.match(helperSource('gate-sandbox.cjs'), /\/var\/select/)
   assert.match(helperSource('gate-sandbox.cjs'), /"\/bin\/sh","-c",payload/)
+  assert.match(helperSource('gate-sandbox.cjs'), /sanitizeGateEnvironment\(process\.env\)/)
+  assert.match(helperSource('gate-sandbox.cjs'), /delete process\.env\[name\]/)
+  assert.match(SKILL, /If a check depends on removed credentials, report it as unverified/)
   assert.match(gateCall.bashCommandClamp[0], /cd .*\/tmp\/repo\.worktrees\/ship-test.*&& node --test/)
   assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/tmp"\)/)
   assert.doesNotMatch(helperSource('gate-sandbox.cjs'), /\(subpath "\/private\/var\/folders"\)/)
