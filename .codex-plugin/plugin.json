@@ -66,11 +66,19 @@
       "Code Review"
     ],
     "websiteURL": "https://skills.suedeai.ai/",
+    "privacyPolicyURL": "https://suedeai.ai/privacy",
+    "termsOfServiceURL": "https://suedeai.ai/terms",
     "defaultPrompt": [
       "Take this authorized outcome through useful lanes and close with concise proof.",
       "Audit this surface with independent adversarial lanes.",
       "Find the strongest next move, execute it, and prove it."
     ],
-    "brandColor": "#C8A96E"
+    "brandColor": "#C8A96E",
+    "composerIcon": "./docs/assets/favicon-64.png",
+    "logo": "./docs/assets/suede-ai-logo-transparent.png",
+    "screenshots": [
+      "./docs/assets/release-linter-preview.png",
+      "./docs/assets/rights-passport-preview.png"
+    ]
   }
 }
