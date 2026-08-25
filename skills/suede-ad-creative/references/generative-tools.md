@@ -103,7 +103,7 @@ Open-weight image generation models with API access through Replicate and BFL's 
 - Style-match to existing brand assets using reference images
 - Rapid A/B test image variations
 
-**Docs:** [Replicate Flux](https://replicate.com/black-forest-labs/flux-2-pro), [BFL API](https://docs.bfl.ml/)
+**Docs:** [Replicate Flux](https://replicate.com/black-forest-labs/flux-2-pro), [BFL API](https://docs.bfl.ai/)
 
 ---
 

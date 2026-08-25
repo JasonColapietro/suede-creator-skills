@@ -141,7 +141,7 @@ not relaunch or mutate while halted.
 
 An empty search used to report `no safe graph winner` however it ended, so an
 infrastructure flake and a genuine evidence conflict printed the same line. The
-halt now names which happened, and `haltDetail` carries the counts behind it:
+halt output now names which happened, and `haltDetail` carries the counts behind it:
 
 | Reason | What it means |
 |---|---|
