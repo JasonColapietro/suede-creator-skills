@@ -180,13 +180,14 @@ Verify your robots.txt allows AI crawlers. Each AI platform has its own bot, and
 - **Google-Extended** — Google Gemini and AI Overviews
 - **Bingbot** — Microsoft Copilot (via Bing)
 
-Fetch the file and read the rules — do not assume:
+Fetch the file with the host's approved read-only HTTP or browser tool and read
+the rules — do not assume. Use a verified public HTTPS hostname and refuse
+loopback, link-local, or private-network destinations. Do not attach ambient
+cookies or authentication headers, and do not send local files, credentials, or
+workspace content. Record the final URL, HTTP status, and response body before
+classifying access.
 
-```bash
-curl -sS -w '\nHTTP %{http_code}\n' https://<domain>/robots.txt | grep -inE 'GPTBot|ChatGPT-User|PerplexityBot|ClaudeBot|anthropic-ai|Google-Extended|Bingbot|CCBot|^User-agent|^Disallow|^HTTP'
-```
-
-Read the grep output as blocks: a `Disallow:` line belongs to the `User-agent:` above it, and a `User-agent: *` block applies to every bot with no block of its own. If robots.txt returns anything other than 200, or the fetch fails, report AI bot access as **unverified with the reason** — never as open. Report per bot: allowed, blocked, or unverified.
+Read the response as blocks: a `Disallow:` line belongs to the `User-agent:` above it, and a `User-agent: *` block applies to every bot with no block of its own. If robots.txt returns anything other than 200, redirects away from a verified public HTTPS destination, or the fetch fails, report AI bot access as **unverified with the reason** — never as open. Report per bot: allowed, blocked, or unverified.
 
 If bots are blocked, that is a business decision: blocking prevents AI training on your content but also prevents citation. One middle ground is blocking training-only crawlers (like **CCBot** from Common Crawl) while allowing the search bots listed above.
 
