@@ -32,7 +32,25 @@ def load_validator_module():
     return module
 
 
+def load_creator_module():
+    spec = importlib.util.spec_from_file_location("suede_rights_creator", CREATE)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Could not load {CREATE}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 class RightsPassportSchemaTests(unittest.TestCase):
+    def test_duplicate_asset_destination_search_is_bounded(self) -> None:
+        creator = load_creator_module()
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            for name in ("master.wav", "master-2.wav", "master-3.wav"):
+                (directory / name).write_bytes(b"fixture")
+            with self.assertRaisesRegex(SystemExit, "after 2 suffix attempts"):
+                creator.unique_destination(directory, "master.wav", max_suffix_attempts=2)
+
     def test_formal_schema_declares_current_interoperability_contract(self) -> None:
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
         self.assertEqual(schema["$schema"], "https://json-schema.org/draft/2020-12/schema")
