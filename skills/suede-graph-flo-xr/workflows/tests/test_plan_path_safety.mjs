@@ -13,7 +13,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, symlinkSync, rmSync } from 'node:fs'
-import { spawnSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -244,15 +244,22 @@ test('plan-producing prompts state the lane-name and file-path constraints that 
 })
 
 test('candidate-audit.cjs reports tracked-at-base candidates and still flags unsafe paths', async (t) => {
-  const gitAvailable = spawnSync('git', ['--version'], { encoding: 'utf8' }).status === 0
+  let gitAvailable = true
+  try {
+    execFileSync('git', ['--version'], { encoding: 'utf8' })
+  } catch {
+    gitAvailable = false
+  }
   if (!gitAvailable) return t.skip('git is not available on this host')
 
   const repo = mkdtempSync(path.join(os.tmpdir(), 'gfx-candidate-audit-'))
   t.after(() => rmSync(repo, { recursive: true, force: true }))
   const git = (...args) => {
-    const result = spawnSync('git', ['-C', repo, ...args], { encoding: 'utf8' })
-    assert.equal(result.status, 0, `git ${args.join(' ')} failed: ${result.stderr}`)
-    return result.stdout
+    try {
+      return execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8' })
+    } catch (error) {
+      assert.fail(`git ${args.join(' ')} failed: ${error.stderr || error}`)
+    }
   }
   git('init', '-q')
   mkdirSync(path.join(repo, 'src/app/build'), { recursive: true })
@@ -274,11 +281,51 @@ test('candidate-audit.cjs reports tracked-at-base candidates and still flags uns
   ]
   const helper = path.join(HERE, '..', 'helpers', 'candidate-audit.cjs')
   const payload = Buffer.from(JSON.stringify(candidates), 'utf8').toString('base64')
-  const audit = spawnSync('node', [helper, repo, repo, payload], { encoding: 'utf8' })
-  assert.equal(audit.status, 0, `candidate-audit failed: ${audit.stderr}`)
-  const report = JSON.parse(audit.stdout)
+  let audit
+  try {
+    audit = execFileSync('node', [helper, repo, repo, payload], { encoding: 'utf8' })
+  } catch (error) {
+    assert.fail(`candidate-audit failed: ${error.stderr || error}`)
+  }
+  const report = JSON.parse(audit)
   assert.deepEqual(report.unsafeCandidateFiles, ['evil-link'],
     'the symlink audit must be unchanged by the tracked-ness addition')
   assert.deepEqual(report.trackedCandidateFiles, ['src/app/build/page.tsx', 'README.md'],
     'exactly the committed files are tracked — untracked artifacts, new files, and unsafe paths are not')
+})
+
+test('diff-digest.cjs rejects a file reached through a symlinked worktree ancestor', async (t) => {
+  let gitAvailable = true
+  try {
+    execFileSync('git', ['--version'], { encoding: 'utf8' })
+  } catch {
+    gitAvailable = false
+  }
+  if (!gitAvailable) return t.skip('git is not available on this host')
+
+  const repo = mkdtempSync(path.join(os.tmpdir(), 'gfx-diff-digest-'))
+  const outside = mkdtempSync(path.join(os.tmpdir(), 'gfx-diff-digest-outside-'))
+  t.after(() => rmSync(repo, { recursive: true, force: true }))
+  t.after(() => rmSync(outside, { recursive: true, force: true }))
+
+  execFileSync('git', ['init', '-q', repo], { encoding: 'utf8' })
+  writeFileSync(path.join(repo, 'README.md'), '# fixture\n')
+  execFileSync('git', ['-C', repo, 'add', 'README.md'], { encoding: 'utf8' })
+  execFileSync('git', [
+    '-C', repo, '-c', 'user.email=fixture@example.com', '-c', 'user.name=Fixture',
+    'commit', '-q', '-m', 'fixture',
+  ], { encoding: 'utf8' })
+
+  writeFileSync(path.join(outside, 'secret.txt'), 'outside\n')
+  symlinkSync(outside, path.join(repo, 'outside'), 'dir')
+
+  const helper = path.join(HERE, '..', 'helpers', 'diff-digest.cjs')
+  const payload = Buffer.from(JSON.stringify(['outside/secret.txt']), 'utf8').toString('base64')
+  assert.throws(
+    () => execFileSync('node', [helper, repo, 'HEAD', payload], { encoding: 'utf8' }),
+    error => {
+      assert.match(String(error.stderr), /reported file resolves outside worktree/)
+      return true
+    },
+  )
 })
