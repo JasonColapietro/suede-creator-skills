@@ -164,9 +164,9 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 
 | Skill | What it does |
 |---|---|
-| [`johnny-suede-design`](skills/johnny-suede-design) | Full design lane: brand and product surfaces, tokens, visual QA |
+| [`johnny-suede-design`](skills/johnny-suede-design) | Full design lane: brand and product surfaces, tokens, visual QA, vetted component sources with an adoption checklist |
 | [`johnny-suede-write`](skills/johnny-suede-write) | Full writing lane: structure, persuasion frameworks, anti-slop gate, copy score |
-| [`suede-design`](skills/suede-design) | Design laws, dark-mode tokens, fluid type, component rules |
+| [`suede-design`](skills/suede-design) | Design laws, dark-mode tokens, fluid type, component rules, vetted component sources with an adoption checklist |
 | [`suede-copy`](skills/suede-copy) | Conversion copy: headline formulas, A/B variants, anti-slop gate |
 | [`suede-deslop`](skills/suede-deslop) | Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate |
 | [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/AI-EO, metadata, schema, internal-link, and intent audit |
