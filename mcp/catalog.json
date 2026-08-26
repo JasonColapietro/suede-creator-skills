@@ -1,7 +1,7 @@
 {
   "name": "Suede Skills MCP",
-  "version": "0.15.0",
-  "updated": "2026-08-21",
+  "version": "0.16.0",
+  "updated": "2026-08-26",
   "homepage": "https://skills.suedeai.ai/",
   "repository": "https://github.com/JasonColapietro/suede-creator-skills",
   "summary": "Local MCP access to an open-source Suede skill pack: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, one-pass code review+grade, any-repo CI ship-gate, agent-team orchestration, install and launch packaging, MCP QA, artist campaign tools, and creator rights utilities.",
