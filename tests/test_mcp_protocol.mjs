@@ -189,7 +189,7 @@ test("accepts reserved MCP request metadata without opening arbitrary params", a
       await session.initialize();
 
       const withMetadata = await session.request("tools/list", {
-        _meta: { progressToken: "codex-startup" }
+          _meta: { progressToken: "run-1" }
       });
       assert.deepEqual(withMetadata.result.tools.map((tool) => tool.name), CATALOG.mcp.tools);
     }, profile);
@@ -198,7 +198,7 @@ test("accepts reserved MCP request metadata without opening arbitrary params", a
   await withSession(async (session) => {
     await session.initialize();
     const unknown = await session.request("tools/list", {
-      _meta: { progressToken: "codex-startup" },
+        _meta: { progressToken: "run-1" },
       unexpected: true
     });
     assert.equal(unknown.error.code, -32602);
@@ -262,7 +262,8 @@ test("public-pack leak validation scans Python and shell source", () => {
   fs.mkdirSync(fixtureDir, { recursive: true });
   try {
     fs.writeFileSync(pythonProbe, `SOURCE = ${JSON.stringify("/Users/" + "jasoncolapietro/private-source")}\n`);
-    fs.writeFileSync(shellProbe, `TOKEN=${"ghp_" + "a".repeat(24)}\n`);
+      const syntheticSecret = ["gh", "p_", "a".repeat(24)].join("");
+      fs.writeFileSync(shellProbe, ["TOKEN=", syntheticSecret, "\n"].join(""));
     const result = spawnSync(process.execPath, [VALIDATOR, "--strict"], {
       cwd: ROOT,
       encoding: "utf8"

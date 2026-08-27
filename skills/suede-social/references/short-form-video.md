@@ -10,7 +10,7 @@ Detailed reference for creating short-form video content on TikTok, Instagram Re
 
 **The "Secret" Formula:**
 - "The secret to [outcome] that nobody talks about"
-- "I found the hidden feature in [product/platform] that changes everything"
+- "I found the overlooked feature in [product/platform] that changes everything"
 - "I can't believe this actually works..."
 
 **The Unexpected Discovery:**

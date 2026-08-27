@@ -585,6 +585,9 @@ if (!codexMarketplaceJson) {
   if (codexMarketplaceJson.name !== "suede-codex") {
     fail.push('Codex marketplace name must be "suede-codex"');
   }
+  if (codexMarketplaceJson.interface?.displayName !== "Suede Creator Skills") {
+    fail.push('Codex marketplace interface.displayName must be "Suede Creator Skills"');
+  }
   if (
     !Array.isArray(codexMarketplaceJson.plugins) ||
     codexMarketplaceJson.plugins.length !== 1
@@ -598,8 +601,20 @@ if (!codexMarketplaceJson) {
       if (codexMarketplacePlugin.name !== codexPluginJson?.name) {
         fail.push("Codex marketplace plugin must match .codex-plugin/plugin.json");
       }
-      if (codexMarketplacePlugin.source !== "./") {
-        fail.push('Codex marketplace plugin source must be "./"');
+      const source = codexMarketplacePlugin.source;
+      if (!isObject(source) || source.source !== "local" || source.path !== "./") {
+        fail.push('Codex marketplace plugin source must be local path "./"');
+      }
+      const policy = codexMarketplacePlugin.policy;
+      if (
+        !isObject(policy) ||
+        policy.installation !== "AVAILABLE" ||
+        policy.authentication !== "ON_INSTALL"
+      ) {
+        fail.push("Codex marketplace plugin policy must be AVAILABLE with ON_INSTALL authentication");
+      }
+      if (codexMarketplacePlugin.category !== "Developer Tools") {
+        fail.push('Codex marketplace plugin category must be "Developer Tools"');
       }
       if ("skills" in codexMarketplacePlugin || "mcpServers" in codexMarketplacePlugin) {
         fail.push("Codex marketplace must defer component discovery to the root plugin manifest");

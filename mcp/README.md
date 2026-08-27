@@ -27,11 +27,12 @@ node mcp/suede-skills-mcp.mjs --profile all
 
 Profiles:
 
-- `all`: expose workflow, artist, and creator utility skill context.
-- `workflow`: expose the ship DAG, Suedify, design, anti-slop copywriting,
-  SEO/AEO/AI EO, QA, and public workflow context.
-- `artist`: expose artist campaign skill context.
-- `creator`: expose public artist and creator utility context.
+- `all`: expose the full public catalog.
+- Area profiles `workflow`, `creator`, `marketing`, and `consumer` narrow the
+  server to the corresponding plugin-bundle context. `artist` remains a legacy
+  alias for the creator context.
+- Specialty profiles `ship`, `craft`, `found`, `demand`, `revenue`, and
+  `position` narrow the server to one catalog specialty.
 
 The server is dependency-free and speaks newline-delimited JSON-RPC over stdio.
 It supports `initialize`, `ping`, `tools/list`, `tools/call`,

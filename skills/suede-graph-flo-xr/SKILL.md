@@ -141,7 +141,7 @@ not relaunch or mutate while halted.
 
 An empty search used to report `no safe graph winner` however it ended, so an
 infrastructure flake and a genuine evidence conflict printed the same line. The
-halt now names which happened, and `haltDetail` carries the counts behind it:
+halt output now names which happened, and `haltDetail` carries the counts behind it:
 
 | Reason | What it means |
 |---|---|
@@ -187,6 +187,11 @@ module's `src` tree and are rejected if a symlink or realpath can escape the
 worktree. A second diff attestation runs after Gate and hashes
 the binary Git diff plus every reported file's mode, size, and bytes, including
 untracked additions.
+
+Gate removes credential-like and interpreter-injection environment variables,
+then redirects home, temporary, and cache paths before an acceptance command
+starts. If a check depends on removed credentials, report it as unverified;
+never rerun it outside the sandbox merely to obtain a pass.
 
 A successfully applied blocker patch is not treated as semantically cleared.
 The original blocker remains in `fixedBlockersPendingVerification`. The Gate

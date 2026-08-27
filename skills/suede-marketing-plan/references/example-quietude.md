@@ -370,7 +370,7 @@ Per kickoff decision. Topics: events, app updates, somatics & nervous system, ey
 Most powerful retention move medium-term. After a session, Mira asks *"What did you notice?"* Optional preset chips + free text. Two payoffs: (a) gives Mira priors for personalization on session 2+, (b) reflection responses become a content + segmentation goldmine for the team. Scope question for Devon — does Mira currently support this, or is it new build?
 
 **Move 6 — Hardware → app activation flow.**
-The eye-mask-buyer-becomes-Premium-subscriber path is hinted in the seed deck (blended CAC via hardware) but isn't visible in the App Store dashboard. Audit the existing flow: does an eye mask Shopify purchase actually deliver a free Premium code? How is it redeemed? What's the conversion rate? This is foundational to the "B2C wedge" thesis.
+The eye mask buyer to Premium subscriber path is hinted in the seed deck (blended CAC via hardware) but isn't visible in the App Store dashboard. Audit the existing flow: does an eye mask Shopify purchase actually deliver a free Premium code? How is it redeemed? What's the conversion rate? This is foundational to the "B2C wedge" thesis.
 
 **Move 7 — Reconcile the retention metric.**
 What's the actual definition of "38% 12-month retention"? Cohort? Plan type (monthly vs. annual)? Survives this even if the answer is uncomfortable — the team and investors need to be talking about the same metric.

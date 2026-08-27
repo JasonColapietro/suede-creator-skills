@@ -15,6 +15,7 @@ from typing import Any
 
 
 AUDIO_EXTS = {".wav", ".mp3", ".aiff", ".aif", ".flac", ".m4a", ".aac", ".ogg", ".opus"}
+MAX_DESTINATION_SUFFIX_ATTEMPTS = 10_000
 VIDEO_EXTS = {".mp4", ".mov", ".m4v", ".webm", ".avi", ".mkv"}
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".tif", ".tiff"}
 LYRIC_EXTS = {".lrc", ".srt", ".vtt"}
@@ -713,18 +714,27 @@ def asset_subdir(category: str) -> str:
     }.get(category, "assets/other")
 
 
-def unique_destination(directory: Path, filename: str) -> Path:
+def unique_destination(
+    directory: Path,
+    filename: str,
+    *,
+    max_suffix_attempts: int = MAX_DESTINATION_SUFFIX_ATTEMPTS,
+) -> Path:
     candidate = directory / filename
     if not candidate.exists():
         return candidate
+    if max_suffix_attempts < 1:
+        raise ValueError("max_suffix_attempts must be positive")
     stem = candidate.stem
     suffix = candidate.suffix
-    index = 2
-    while True:
+    for index in range(2, max_suffix_attempts + 2):
         next_candidate = directory / f"{stem}-{index}{suffix}"
         if not next_candidate.exists():
             return next_candidate
-        index += 1
+    raise SystemExit(
+        f"Could not find an unused destination for {filename!r} after "
+        f"{max_suffix_attempts} suffix attempts."
+    )
 
 
 def display_source_root(source: Path, include_absolute: bool) -> str:

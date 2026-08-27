@@ -6,9 +6,9 @@
 // coverage, target, tmp) only for paths absent from that tracked set, which is what
 // separates a tracked route like src/app/build/page.tsx from a generated artifact.
 process.argv.splice(1,1);
-const {spawnSync}=require("node:child_process");
+const {execFileSync}=require("node:child_process");
 const fs=require("node:fs"),path=require("node:path");const repo=fs.realpathSync(process.argv[1]),root=fs.realpathSync(process.argv[2]),candidates=JSON.parse(Buffer.from(process.argv[3],"base64").toString("utf8")),inside=value=>value===root||value.startsWith(root+path.sep),unsafe=[],auditable=new Map();for(const raw of candidates){if(typeof raw!=="string"||!raw.trim()||raw.includes("\0")){unsafe.push(String(raw));continue}const full=path.resolve(root,raw);if(!inside(full)){unsafe.push(raw);continue}try{if(fs.existsSync(full)){const stat=fs.lstatSync(full);if(stat.isSymbolicLink()||stat.isDirectory()||!inside(fs.realpathSync(full))){unsafe.push(raw);continue}}else{let parent=path.dirname(full);while(!fs.existsSync(parent)&&parent!==path.dirname(parent))parent=path.dirname(parent);if(!inside(fs.realpathSync(parent))){unsafe.push(raw);continue}}}catch{unsafe.push(raw);continue}if(!auditable.has(raw))auditable.set(raw,path.relative(root,full))}
 const rels=[...new Set([...auditable.values()])].filter(Boolean);let tracked=new Set();
-if(rels.length){const result=spawnSync("git",["-C",root,"ls-files","-z","--",...rels.map(rel=>":(literal)"+rel)],{encoding:"utf8",maxBuffer:8*1024*1024});if(result.error||result.status!==0){process.stderr.write(result.stderr||String(result.error||"git ls-files failed"));process.exit(result.status||1)}tracked=new Set(result.stdout.split("\0").filter(Boolean))}
+if(rels.length){let stdout;try{stdout=execFileSync("git",["-C",root,"ls-files","-z","--",...rels.map(rel=>":(literal)"+rel)],{encoding:"utf8",maxBuffer:8*1024*1024})}catch(error){process.stderr.write(error.stderr||String(error||"git ls-files failed"));process.exit(Number.isInteger(error.status)?error.status:1)}tracked=new Set(stdout.split("\0").filter(Boolean))}
 const trackedCandidateFiles=candidates.filter(raw=>auditable.has(raw)&&tracked.has(auditable.get(raw)));
 process.stdout.write(JSON.stringify({repoRoot:repo,worktreePath:root,unsafeCandidateFiles:unsafe,trackedCandidateFiles}))

@@ -310,10 +310,14 @@ mogrify -format webp -quality 80 *.png
 
 # Optimize JPEG (using jpegoptim)
 jpegoptim --max=80 --strip-all *.jpg
-
-# Check image sizes on a page
-curl -s https://yoursite.com | rg -o 'src="[^"]+\\.(jpg|png|webp)"' | head -20
 ```
+
+To inspect image references on a page, use the host's approved read-only HTTP
+or browser tool against a verified public HTTPS URL. Refuse loopback,
+link-local, or private-network destinations; do not attach ambient cookies or
+authentication headers; and do not send local files, credentials, or workspace
+content. Inspect the returned HTML for image `src` values and report a failed or
+unsafe fetch as unverified.
 
 ---
 

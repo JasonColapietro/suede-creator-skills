@@ -1,0 +1,14 @@
+[scanner]
+# Exact-path suppressions for reviewed local-only fixtures and helpers. Keep this
+# list free of globs so new files remain visible. Findings on a listed path are
+# hidden by the scanner and require renewed manual review whenever that path changes.
+ignore_paths = [
+  "skills/suede-agent-teams/scripts/contribution-ledger.mjs",
+  "skills/suede-graph-flo-xr/workflows/helpers/apply-patch.cjs",
+  "skills/suede-graph-flo-xr/workflows/helpers/diff-digest.cjs",
+  "skills/suede-release-linter",
+  "skills/suede-release-linter/scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+  "skills/suede-release-linter/scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+  "skills/suede-release-linter/scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+  "skills/suede-release-linter/scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+]

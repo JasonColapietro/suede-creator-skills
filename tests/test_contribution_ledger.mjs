@@ -733,26 +733,26 @@ test("task history is capped while preserving a trimmed-event count", (t) => {
 
 test("explicit lock recovery removes only a verifiably stale local process lock", (t) => {
   const { ledger } = workspace(t);
-  const lockPath = `${ledger}.lock`;
+  const lockPath = ledger + ".lock";
   const processStartedAt = spawnSync("ps", ["-p", String(process.pid), "-o", "lstart="], {
     encoding: "utf8",
   }).stdout.trim();
   fs.writeFileSync(lockPath, `${JSON.stringify({
     pid: process.pid,
     host: os.hostname(),
-    token: "live-token",
+      token: "live",
     processStartedAt,
     createdAt: "2001-01-01T00:00:00.000Z",
   })}\n`);
 
   const wrongToken = cli([
-    "recover-lock", "--ledger", ledger, "--expected-token", "wrong-token",
+    "recover-lock", "--ledger", ledger, "--expected-token", "wrong",
   ]);
   assert.equal(wrongToken.status, 1);
   assert.match(wrongToken.stderr, /does not match --expected-token/);
   assert.equal(fs.existsSync(lockPath), true);
 
-  const live = cli(["recover-lock", "--ledger", ledger, "--expected-token", "live-token"]);
+  const live = cli(["recover-lock", "--ledger", ledger, "--expected-token", "live"]);
   assert.equal(live.status, 1);
   assert.match(live.stderr, /still running/);
   assert.equal(fs.existsSync(lockPath), true);
@@ -760,12 +760,12 @@ test("explicit lock recovery removes only a verifiably stale local process lock"
   fs.writeFileSync(lockPath, `${JSON.stringify({
     pid: 999_999_999,
     host: os.hostname(),
-    token: "stale-token",
+      token: "stale",
     processStartedAt: "Mon Jan  1 00:00:00 2001",
     createdAt: "2001-01-01T00:00:00.000Z",
   })}\n`);
   const recovered = success([
-    "recover-lock", "--ledger", ledger, "--expected-token", "stale-token",
+    "recover-lock", "--ledger", ledger, "--expected-token", "stale",
   ]);
   assert.equal(recovered.recovered, true);
   assert.equal(fs.existsSync(lockPath), false);

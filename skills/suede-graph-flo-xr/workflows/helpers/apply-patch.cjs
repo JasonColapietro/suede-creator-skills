@@ -7,14 +7,14 @@
 //   <worktree> --append <tempRoot> <offset> <fnv1a8> <b64chunk>  verified chunk append
 //   <worktree> --apply <tempRoot> <totalLen> <fnv1a8>  verify, decode, check, apply, remove
 process.argv.splice(1,1);
-const {spawnSync}=require("node:child_process");
+const {execFileSync}=require("node:child_process");
 const fs=require("node:fs"),path=require("node:path");
 const fail=m=>{process.stderr.write(String(m)+"\n");process.exit(1)};
 const root=process.argv[1];
 if(!root)fail("worktree path required");
 let rootReal;try{rootReal=fs.realpathSync(root)}catch{fail("worktree does not exist")}
 if(!fs.statSync(rootReal).isDirectory())fail("worktree is not a directory");
-const applyPatch=patch=>{const run=extra=>spawnSync("git",["-C",rootReal,"apply",...extra,"--whitespace=nowarn","-"],{input:patch,encoding:"utf8"});const checked=run(["--check"]);if(checked.error||checked.status!==0){process.stderr.write(checked.stderr||String(checked.error||"git apply --check failed"));process.exit(checked.status||1)}const applied=run([]);process.stdout.write(applied.stdout||"");process.stderr.write(applied.stderr||String(applied.error||""));process.exit(applied.error||applied.status!==0?applied.status||1:0)};
+const applyPatch=patch=>{const run=extra=>{try{return {stdout:execFileSync("git",["-C",rootReal,"apply",...extra,"--whitespace=nowarn","-"],{input:patch,encoding:"utf8",stdio:["pipe","pipe","inherit"]}),stderr:"",status:0,error:null}}catch(error){return {stdout:error.stdout||"",stderr:error.stderr||"",status:Number.isInteger(error.status)?error.status:1,error}}};const checked=run(["--check"]);if(checked.error||checked.status!==0){process.stderr.write(checked.stderr||String(checked.error||"git apply --check failed"));process.exit(checked.status||1)}const applied=run([]);process.stdout.write(applied.stdout||"");process.stderr.write(applied.stderr||String(applied.error||""));process.exit(applied.error||applied.status!==0?applied.status||1:0)};
 const mode=process.argv[2];
 if(mode!=="--start"&&mode!=="--append"&&mode!=="--apply"){
   if(!mode)fail("payload or mode required");

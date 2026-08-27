@@ -427,7 +427,7 @@ test("packaged validation rejects additional Codex marketplace entries", (t) => 
   const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
   marketplace.plugins.push({
     name: "suede-code",
-    source: "./",
+    source: { source: "local", path: "./" },
     skills: ["./skills/suede-code"]
   });
   fs.writeFileSync(marketplacePath, `${JSON.stringify(marketplace, null, 2)}\n`);
@@ -822,7 +822,7 @@ test("build-shiplog propagates one changelog edit to every ship-log card", compl
     cwd: checkoutRoot,
     encoding: "utf8"
   });
-  assert.equal(build.status, 0, `${build.stdout}\n${build.stderr}`);
+  assert.equal(build.status, 0, [build.stdout, build.stderr].join("\n"));
 
   const mergeBase = spawnSync(
     "git",
