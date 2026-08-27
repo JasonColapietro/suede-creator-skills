@@ -48,6 +48,30 @@ The above is about not asking permission. It is not license to skip proof.
   merge rewrites the SHA, so "unmerged commits" does not mean unmerged work.
 - If something couldn't be verified, say so plainly rather than implying it was.
 
+## Adding or removing a skill: run `npm run fix:counts`
+
+The book quotes measurements of the pack in prose — how many `SKILL.md` files
+there are, what they total in bytes, how many descriptions close with a
+`NOT FOR:` clause. `scripts/validate-skill-pack.mjs` guards every one of them
+against a live measurement, so changing the skill set turns dozens of those
+checks red at once. Adding a single skill produced 45 failures.
+
+Do not hand-edit the figures. Run:
+
+```
+npm run fix:counts     # rewrites every stale count from the live measurement
+npm run build:book     # regenerates BOOK.md, the PDF and docs/book from those sources
+```
+
+`--fix` refuses to write a value its own check could no longer read — several
+patterns match only a hyphenated number word, so writing a round one
+("Seventy") would produce correct prose the guard can no longer see. When it
+refuses it names the sentence: reword the prose and update the regex together.
+
+**Counts inside dated posts under `docs/blog/` are deliberately frozen.** They
+are historical statements at stable URLs and they carry SEO weight in `<title>`,
+`meta description`, `og:` tags and JSON-LD. Do not "correct" them.
+
 ## Agent skills
 
 ### Issue tracker

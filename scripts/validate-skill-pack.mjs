@@ -7,6 +7,7 @@ import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { measureBookFacts, measureSkillFile } from "./lib/book-facts.mjs";
 import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
+import { wordNumber, wordOrdinal, numberToWords, numberToOrdinalWords, matchCase } from "./lib/number-words.mjs";
 const require = createRequire(import.meta.url);
 const { load: yamlLoad } = require("js-yaml");
 
@@ -1029,23 +1030,6 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-const numberWords = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
-const tensWords = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
-
-// Accepts "sixty-seven" or a bare "sixty". Previously hard-coded to 20 + n,
-// which silently capped the pack at twenty-nine skills.
-function wordNumber(word) {
-  const parts = String(word).toLowerCase().split("-");
-  // Bare single digits ("three") for small counts such as the number of
-  // focused subset plugins. Tens callers are unaffected.
-  if (parts.length === 1 && numberWords[parts[0]] !== undefined) return numberWords[parts[0]];
-  const tens = tensWords[parts[0]];
-  if (tens === undefined) return null;
-  if (parts.length === 1) return tens;
-  const ones = numberWords[parts[1]];
-  return ones === undefined ? null : tens + ones;
-}
-
 const countChecks = [
   // The pack size used to be pinned in 102 places across 24 files — every
   // README line, every marketing sentence, every manifest description — so a
@@ -1145,16 +1129,6 @@ const deslop = measureSkillFile("suede-deslop");
 const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
 // "twenty-fourth" -> 24. The corpus-to-description ratio is written as an
 // ordinal, which wordNumber() cannot read.
-const ORDINAL_ONES = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9 };
-function wordOrdinal(word) {
-  const parts = String(word).toLowerCase().split("-");
-  const last = parts.pop();
-  const ones = ORDINAL_ONES[last];
-  const tens = tensWords[last.replace(/ieth$/, "y")];
-  const base = parts.length ? wordNumber(parts.join("-")) : 0;
-  if (ones !== undefined) return base === null ? null : base + ones;
-  return tens === undefined ? null : tens;
-}
 
 countChecks.push(
   { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, under documented open-source licenses/, expected: totalSkillCount },
@@ -1240,25 +1214,56 @@ for (const spec of specialtyIndex) {
   );
 }
 
+// --- Writer side of the count guard -----------------------------------------
+// Every check above pairs a regex whose first capture group is a printed number
+// with the live measurement that number must equal. That is enough to WRITE the
+// number as well as read it, and writing it is the point. Before this, adding a
+// single skill turned a dozen of these checks red at once and the only way to
+// clear them was to retype figures — including seven-digit byte totals — by hand
+// across eight prose files. The guard was real; the missing half was the writer.
+// `--fix` inverts each check's own parser and rewrites the capture group in place.
+const fixMode = process.argv.includes("--fix");
+const fixed = [];
+
+
+
+
+
+// Chosen by the same fields the reader dispatches on, so a check can never be
+// read one way and written another. An unrecognized parser yields null, which
+// the loop reports as a failure instead of writing a guess.
+function formatExpected(check, sample) {
+  if (check.parse === wordOrdinal) return matchCase(sample, numberToOrdinalWords(check.expected));
+  if (check.parse === commaNumber) return check.expected.toLocaleString("en-US");
+  if (check.parse) return null;
+  if (check.wordNumber) return matchCase(sample, numberToWords(check.expected));
+  return Number.isInteger(check.expected) ? String(check.expected) : null;
+}
+
 for (const check of countChecks) {
   const filePath = path.join(repoRoot, check.file);
   if (!fs.existsSync(filePath)) {
     warn.push(`Count check skipped — ${check.file} does not exist (${check.label})`);
     continue;
   }
-  const text = readText(filePath);
+  let text = readText(filePath);
   // Most checks guard a phrase that appears once. `every: true` guards a phrase
   // that repeats — every occurrence is validated, not just the first. Without
   // it, a repeated sentence drifts silently past the first hit: README said
   // "71" in three places and "all 70 skills" in five others, and a first-match
   // check on either phrasing would have reported the file clean.
+  // The `d` flag records each group's exact offsets, so --fix replaces the
+  // captured number where it actually sits instead of searching the match for
+  // a substring that may well appear twice in the same sentence.
+  const baseFlags = `${check.re.flags.replace(/g/g, "")}d`;
   const matches = check.every
-    ? [...text.matchAll(new RegExp(check.re.source, `${check.re.flags.replace(/g/g, "")}g`))]
-    : [text.match(check.re)].filter(Boolean);
+    ? [...text.matchAll(new RegExp(check.re.source, `${baseFlags}g`))]
+    : [text.match(new RegExp(check.re.source, baseFlags))].filter(Boolean);
   if (matches.length === 0) {
     warn.push(`Count check pattern not found in ${check.file} (${check.label}) — copy may have moved; update scripts/validate-skill-pack.mjs`);
     continue;
   }
+  const edits = [];
   matches.forEach((match, i) => {
     const where = check.every ? ` [occurrence ${i + 1} of ${matches.length}]` : "";
     const found = check.parse ? check.parse(match[1]) : check.wordNumber ? wordNumber(match[1]) : parseInt(match[1], 10);
@@ -1266,10 +1271,50 @@ for (const check of countChecks) {
       warn.push(`Count check could not parse a number in ${check.file} (${check.label})${where}: "${match[1]}"`);
       return;
     }
-    if (found !== check.expected) {
+    if (found === check.expected) return;
+    if (!fixMode) {
       fail.push(`Stale skill count in ${check.file} (${check.label})${where}: says ${found}, expected ${check.expected}`);
+      return;
     }
+    const replacement = formatExpected(check, match[1]);
+    if (replacement === null) {
+      fail.push(`Stale skill count in ${check.file} (${check.label})${where}: says ${found}, expected ${check.expected} — --fix has no writer for this check's parser`);
+      return;
+    }
+    const [start, end] = match.indices[1];
+    edits.push({ start, end, replacement });
+    fixed.push(`${check.file} (${check.label})${where}: ${match[1]} -> ${replacement}`);
   });
+  if (edits.length) {
+    // Apply right-to-left so an earlier edit never shifts a later offset.
+    edits.sort((a, b) => b.start - a.start);
+    let candidate = text;
+    for (const edit of edits) candidate = candidate.slice(0, edit.start) + edit.replacement + candidate.slice(edit.end);
+    // Several of these patterns constrain the SHAPE of the word, not just its
+    // value — `([A-Z][a-z]+-[a-z]+) of the \d+ descriptions` only matches a
+    // hyphenated number word. Writing a round one ("Seventy") into that slot
+    // produces correct prose that the guard can no longer see: the check
+    // degrades from a failure to a "pattern not found" warning and that
+    // sentence goes unguarded from then on. Caught in testing when the NOT FOR:
+    // count crossed 69 -> 70. So prove the rewrite is still readable before
+    // committing it to disk, and refuse the write rather than silently blind
+    // the guard.
+    const recheck = [...candidate.matchAll(new RegExp(check.re.source, `${baseFlags}g`))];
+    const readable = recheck.length >= matches.length
+      && recheck.slice(0, matches.length).every((m) => {
+        const value = check.parse ? check.parse(m[1]) : check.wordNumber ? wordNumber(m[1]) : parseInt(m[1], 10);
+        return value === check.expected;
+      });
+    if (!readable) {
+      fail.push(
+        `Cannot rewrite ${check.file} (${check.label}): the correct value ${check.expected} does not fit the pattern this check matches on, `
+        + `so writing it would silence the guard. Reword the sentence and update the regex in scripts/validate-skill-pack.mjs.`
+      );
+      for (let i = 0; i < edits.length; i += 1) fixed.pop();
+      continue;
+    }
+    fs.writeFileSync(filePath, candidate);
+  }
 }
 
 // Structural guard for the book's skill index. book/README.md calls the
@@ -2178,6 +2223,12 @@ if (sitemapCheck.error) {
   warn.push(`Sitemap freshness check skipped — could not run generate-sitemap.mjs (${sitemapCheck.error.code || sitemapCheck.error.message})`);
 } else if (sitemapCheck.status !== 0) {
   fail.push("docs/sitemap.xml is out of date — run `node scripts/generate-sitemap.mjs` and commit the result");
+}
+
+if (fixed.length) {
+  console.log(`Rewrote ${fixed.length} stale count${fixed.length === 1 ? "" : "s"}:`);
+  for (const item of fixed) console.log(`- ${item}`);
+  console.log("Run `npm run build:book` to regenerate BOOK.md, the PDF and docs/book from these sources.");
 }
 
 if (fail.length || warn.length) {
