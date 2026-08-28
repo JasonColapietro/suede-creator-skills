@@ -56,7 +56,7 @@ From "Boundaries":
 
 ## Skill Output
 
-Markdown analysis and recommendations returned in the agent's response. Any externally visible action — publishing, posting, sending, submitting, deploying — happens only with the user's explicit authorization; by default the skill hands its work back in the response.
+Markdown analysis and recommendations returned in the agent's response. The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 
