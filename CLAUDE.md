@@ -61,6 +61,7 @@ Do not hand-edit the figures. Run:
 ```
 npm run fix:counts     # rewrites every stale count from the live measurement
 npm run build:book     # regenerates BOOK.md, the PDF and docs/book from those sources
+npm run build:cards    # regenerates the per-skill CARD.md release records and SKILL-CARDS.md
 ```
 
 `--fix` refuses to write a value its own check could no longer read — several
