@@ -255,6 +255,8 @@ The creator skills generate private drafts by default — reports and packages c
 
 CLI flags on the creator scripts: `--include-hidden`, `--include-other`, `--include-absolute-paths`, and `--force`. Scripts skip hidden files, secret-like files, dependency folders, and build outputs by default, and refuse to write a package into or under its source folder.
 
+Every skill ships with a [skill card](SKILL-CARDS.md) — a release record following the [NVIDIA skill-card template](https://docs.nvidia.com/skills/skill-cards) that states the skill's purpose, owner, license, dependencies, known risks and mitigations, output, and release evidence, so a reviewer can evaluate it without opening the source first.
+
 ## Status
 
 The creator scripts are dependency-light Python and run on the standard library. Optional enhancements use installed packages when available — Pillow for artwork dimension checks, PyYAML for YAML metadata:

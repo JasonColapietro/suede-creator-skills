@@ -7,7 +7,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check",
+    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check && node scripts/build-skill-cards.mjs --check",
+    "build:cards": "node scripts/build-skill-cards.mjs",
     "build:book": "node scripts/build-book.mjs && node scripts/build-book-pdf.mjs && node scripts/build-book-site.mjs",
     "build:shiplog": "node scripts/build-shiplog.mjs",
     "test:mcp": "node --test tests/test_mcp_protocol.mjs",
