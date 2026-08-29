@@ -40,7 +40,7 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 71 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
+- 72 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
   MIT licensed; adapted components retain their upstream notices.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,

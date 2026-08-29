@@ -24,6 +24,7 @@ Runner boundary for Suede Graph Flo XR: its bundled Suede Thought Graph workflow
 
 - [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
 - [Suede Agent Teams](https://skills.suedeai.ai/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
+- [Suede Ops Architecture](https://skills.suedeai.ai/skills/suede-ops-architecture.html): Fix the shape of a system before anyone builds it: entity schema, one write path per entity, every unit of work routed to an automation, an agent, or a human, and each tool marked absorb, keep, or kill with a proof path.
 - [Suede AI Eval](https://skills.suedeai.ai/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
 - [Suede Recommend Next Action](https://skills.suedeai.ai/skills/suede-recommend-next-action.html): Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.
 - [Suede Code](https://skills.suedeai.ai/skills/suede-code.html): Review and grade code in one pass.

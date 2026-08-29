@@ -50,6 +50,7 @@
         "suede-design",
         "suede-deslop",
         "suede-agent-teams",
+        "suede-ops-architecture",
         "suede-ai-eval",
         "suede-graph-flo-xr",
         "suede-ship-copy",
@@ -141,11 +142,11 @@
       "key": "ship",
       "label": "Ship",
       "summary": "Get the change built, reviewed, and merged.",
-      "count": 13,
+      "count": 14,
       "lanes": [
         {
           "label": "Orchestration & routing",
-          "count": 5
+          "count": 6
         },
         {
           "label": "Code review & CI",
@@ -633,6 +634,14 @@
       "lane": "Money & funnel",
       "description": "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls).",
       "useWhen": "The user has people signing up but not activating, or wants to design the first session in a product."
+    },
+    {
+      "name": "suede-ops-architecture",
+      "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
+      "description": "Suede-owned operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code-review).",
+      "useWhen": "The user is scoping an automation or agent build and needs the schema, write paths, work triage, tool verdicts, migration path, and gated phase order decided before anyone writes code."
     },
     {
       "name": "suede-paywalls",

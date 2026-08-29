@@ -24,7 +24,7 @@ Four things change in the artifact when you optimize for the second one.
 
 Claims carry sources. A page that says "faster than the alternatives" gives a
 model nothing to quote, because quoting it would be quoting an opinion with a
-confident font. A page that says "the pack ships 71 skill folders, MIT
+confident font. A page that says "the pack ships 72 skill folders, MIT
 licensed" and links the repo gives the model a fact with a provenance trail
 attached.
 
