@@ -73,7 +73,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 73 of them, under documented open-source licenses. The file opens with YAML
+`skills/<name>/SKILL.md`, 74 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -98,14 +98,14 @@ phrases with replacements, ten formulaic structures with their fixes, and a
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 73 skills fit
+## Progressive disclosure, or why 74 skills fit
 
-Here is the objection that arrives immediately. The 73 `SKILL.md` files in this
-repo total 1,065,888 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 74 `SKILL.md` files in this
+repo total 1,078,611 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 73 descriptions together come to 43,777 bytes. That is roughly a
+all 74 descriptions together come to 44,801 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -113,7 +113,7 @@ This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 71 of the 73 descriptions in this repo use to push work toward a better
+that 72 of the 74 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs

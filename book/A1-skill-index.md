@@ -26,6 +26,7 @@ match, and the page must list exactly these four.
 
 | Skill | Use it when |
 |---|---|
+| `suede-ops-assessment` | Nobody can say what to automate, and the operation needs mapping from the floor up: performer interviews, a silo inventory, friction priced in the operation's own numbers, and opportunities ranked before anything is designed |
 | `suede-ops-architecture` | The schema, the write paths, and the automation-versus-agent-versus-human call have to be settled on paper before a build starts, and every existing tool needs an absorb, keep, or kill verdict with a proof path |
 
 ## I want to know if this code is safe to ship
