@@ -1141,6 +1141,11 @@ countChecks.push(
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: description count", re: /that (\d+) of the \d+ descriptions in this repo use/, expected: bookFacts.notForColonCount },
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: denominator", re: /that \d+ of the (\d+) descriptions in this repo use/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "suede-code-grader line count", re: /`skills\/suede-code-grader\/SKILL\.md` is\s+(\d+) lines/, expected: grader.lines },
+  // The "stay cheap to carry" stamps sit outside every generator, so they went
+  // stale on both of the last two skill additions and were caught only by the
+  // Python proof-tape suite, after validate had already passed. Owned here now.
+  { file: "docs/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "frontmatter survey skill count", re: /Across all (\d+) skills, the frontmatter carries/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "name key count", re: /carries `name` (\d+) times/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "description key count", re: /and `description`\s+(\d+) times/, expected: totalSkillCount },
