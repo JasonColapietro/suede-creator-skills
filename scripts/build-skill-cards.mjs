@@ -40,6 +40,11 @@ function countFiles(dir) {
   let n = 0;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (entry.name === ".DS_Store") continue;
+    // Interpreter caches are build residue, not bundled files. Counting them
+    // makes the card depend on whether the Python suite has been run in this
+    // checkout, so a second `npm test` fails `build:cards --check` locally
+    // while CI's fresh clone disagrees.
+    if (entry.name === "__pycache__") continue;
     if (entry.isDirectory()) n += countFiles(path.join(dir, entry.name));
     else n += 1;
   }

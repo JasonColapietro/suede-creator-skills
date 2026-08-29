@@ -22,6 +22,12 @@ a cross-cutting overlay on the specialty partition, and the validator pins its
 membership: every member must be a real catalog skill, the claimed count must
 match, and the page must list exactly these four.
 
+## I want to decide what to build, before building it
+
+| Skill | Use it when |
+|---|---|
+| `suede-ops-architecture` | The schema, the write paths, and the automation-versus-agent-versus-human call have to be settled on paper before a build starts, and every existing tool needs an absorb, keep, or kill verdict with a proof path |
+
 ## I want to know if this code is safe to ship
 
 | Skill | Use it when |

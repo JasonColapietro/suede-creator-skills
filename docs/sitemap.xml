@@ -349,6 +349,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/skills/suede-ops-architecture.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/skills/suede-paywalls.html</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>

@@ -1141,6 +1141,11 @@ countChecks.push(
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: description count", re: /that (\d+) of the \d+ descriptions in this repo use/, expected: bookFacts.notForColonCount },
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: denominator", re: /that \d+ of the (\d+) descriptions in this repo use/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "suede-code-grader line count", re: /`skills\/suede-code-grader\/SKILL\.md` is\s+(\d+) lines/, expected: grader.lines },
+  // The "stay cheap to carry" stamps sit outside every generator, so they went
+  // stale on both of the last two skill additions and were caught only by the
+  // Python proof-tape suite, after validate had already passed. Owned here now.
+  { file: "docs/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
+  { file: "docs/skills/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "frontmatter survey skill count", re: /Across all (\d+) skills, the frontmatter carries/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "name key count", re: /carries `name` (\d+) times/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "description key count", re: /and `description`\s+(\d+) times/, expected: totalSkillCount },
@@ -1155,10 +1160,10 @@ countChecks.push(
   { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: denominator", re: /[A-Z][a-z]+(?:-[a-z]+)? of the (\d+) descriptions in this repo end with/, expected: totalSkillCount },
   // The pairwise figure the sentence quotes is a floor ("more than two thousand
   // six hundred"), which only breaks if the pack shrinks. Guard the count.
-  { file: "book/03-the-description-contract.md", label: "namespace collision skill count", re: /([A-Z][a-z]+-[a-z]+) have more\s+than two thousand/, expected: totalSkillCount, wordNumber: true },
+  { file: "book/03-the-description-contract.md", label: "namespace collision skill count", re: /([A-Z][a-z]+(?:-[a-z]+)?) have more\s+than two thousand/, expected: totalSkillCount, wordNumber: true },
   { file: "book/14-the-first-ninety-days.md", label: "anti-goal skill count", re: /Do not read all (\d+) skills/, expected: totalSkillCount },
   { file: "book/README.md", label: "skill index appendix count", re: /all (\d+) skills, grouped by/, expected: totalSkillCount },
-  { file: "book/00-front-matter.md", label: "progressive-disclosure pack size", re: /grow to ([a-z]+-[a-z]+) skills/, expected: totalSkillCount, wordNumber: true },
+  { file: "book/00-front-matter.md", label: "progressive-disclosure pack size", re: /grow to ([a-z]+(?:-[a-z]+)?) skills/, expected: totalSkillCount, wordNumber: true },
   { file: "book/00-front-matter.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the marketing and growth skills are/, expected: bookFacts.marketingAdapted, wordNumber: true },
   { file: "book/A1-skill-index.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of these are adapted from/, expected: bookFacts.marketingAdapted, wordNumber: true },
   // STYLE.md is the brief the book is written against, so a stale fact there
