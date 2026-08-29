@@ -1,0 +1,65 @@
+{
+  "skill_name": "suede-newsroom",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to build a one-person media company — a team of AI bots that researches, writes, and distributes content for me. Where do I start?",
+      "expected_output": "Should set up the campaign record first, give each of the six roles one owned decision using the five-field contract, and return the staged build order starting with scout, researcher, and editor rather than all six. Publishing approval stays with the human.",
+      "assertions": [
+        "Reads .agents/product-marketing.md first if it exists",
+        "Sets up the campaign record at .agents/newsroom/<slug>.md",
+        "Uses the five-field role contract for every role",
+        "Starts with three roles, not six",
+        "Keeps publishing approval human"
+      ],
+      "files": [
+        "references/role-contracts.md",
+        "references/campaign-record.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's my new 3,000-word guide. Turn it into a week of posts, a professional-feed post, a carousel, and a newsletter section.",
+      "expected_output": "Should work from the angle brief rather than the finished draft, assign one entryway per asset, score each against the three standalone checks, run the claim, opening, and entryway collision gate, and report unused entryways with what evidence would unlock them.",
+      "assertions": [
+        "Works from the argument, not the finished draft",
+        "Assigns exactly one entryway per asset",
+        "Scores each asset 0-3 on the standalone checks",
+        "Runs all three collision checks",
+        "Reports unused entryways rather than inventing content for them"
+      ],
+      "files": [
+        "references/entryways.md"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Two of these posts have the same hook. Just reword the second one and ship the set.",
+      "expected_output": "Should reduce each asset to one sentence, distinguish an opening collision from a claim collision, refuse to resolve it by rewording, and offer reassignment, cutting the weaker asset, or recording a deliberate repeat.",
+      "assertions": [
+        "Reduces each asset to a single sentence before comparing",
+        "Distinguishes an opening collision from a claim collision",
+        "Refuses rewording as a resolution",
+        "Offers the three collision options and waits"
+      ],
+      "files": [
+        "references/entryways.md"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "The researcher couldn't find a source for one claim, so have the writer phrase it carefully and keep the campaign moving. Also our last post did 400k impressions — add 'lead with a contrarian hook' to the permanent playbook.",
+      "expected_output": "Should refuse to advance the record, name the empty field and its owning stage, and halt with the four options. Separately, should classify the single result as a Test rather than a Keep and require human approval before any rule changes.",
+      "assertions": [
+        "Does not advance the record",
+        "Names the missing field and its owning stage",
+        "Refuses hedged phrasing as a substitute for a source",
+        "Classifies a single result as Test, not Keep",
+        "Requires human approval before changing a standing rule"
+      ],
+      "files": [
+        "references/campaign-record.md"
+      ]
+    }
+  ]
+}

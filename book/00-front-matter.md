@@ -5,7 +5,7 @@
 By Jason Colapietro, Suede Labs AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 71-skill open-source pack for Claude Code and OpenAI Codex.
+a 72-skill open-source pack for Claude Code and OpenAI Codex.
 
 The `suede-graph-flo-xr` operation graph and thought-state model discussed in this book
 adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
@@ -27,7 +27,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Seventy-one public skills, readable before you install them and editable
+output. Seventy-two public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -68,7 +68,7 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to seventy-one skills
+loaded only on a match. This is why a pack can grow to seventy-two skills
 without drowning the context window, and why a badly written description is a
 broken feature rather than a cosmetic one.
 

@@ -280,7 +280,7 @@
     },
     {
       "id": "social-instagram",
-      "skills": ["suede-social", "suede-instagram-growth"],
+      "skills": ["suede-social", "suede-instagram-growth", "suede-newsroom"],
       "fallback": "suede-social",
       "routes": [
         {
@@ -292,8 +292,14 @@
         {
           "skill": "suede-social",
           "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social"],
-          "negative": ["last 30 posts", "daily instagram", "views to sales"],
+          "negative": ["last 30 posts", "daily instagram", "views to sales", "editorial pipeline", "content team"],
           "metadataMustContain": ["platform", "social"]
+        },
+        {
+          "skill": "suede-newsroom",
+          "positive": ["editorial pipeline", "content team", "media company", "sound like the same", "week of distribution", "different argument"],
+          "negative": ["calendar", "cadence", "reels", "listening", "posting schedule"],
+          "metadataMustContain": ["editorial pipeline", "content team"]
         }
       ],
       "cases": [
@@ -315,6 +321,19 @@
           "mode": "ambiguous",
           "prompt": "Help with our social media strategy.",
           "expected": "suede-social"
+        },
+        {
+          "id": "newsroom-positive",
+          "mode": "positive",
+          "prompt": "Set up an editorial pipeline where six agents research, write, and distribute one idea.",
+          "expected": "suede-newsroom"
+        },
+        {
+          "id": "social-negative-newsroom",
+          "mode": "negative",
+          "prompt": "Build our cross platform posting calendar for LinkedIn and Twitter.",
+          "expected": "suede-social",
+          "forbidden": ["suede-newsroom"]
         }
       ]
     },

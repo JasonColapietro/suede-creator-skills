@@ -116,6 +116,7 @@
         "suede-marketing-loops",
         "suede-marketing-plan",
         "suede-marketing-psychology",
+        "suede-newsroom",
         "suede-offers",
         "suede-onboarding",
         "suede-paywalls",
@@ -177,7 +178,7 @@
       "key": "found",
       "label": "Get found",
       "summary": "Be discoverable by search, by AI answers, and by an audience.",
-      "count": 12,
+      "count": 13,
       "lanes": [
         {
           "label": "Search & AI visibility",
@@ -185,7 +186,7 @@
         },
         {
           "label": "Content & audience",
-          "count": 6
+          "count": 7
         }
       ]
     },
@@ -617,6 +618,14 @@
       "lane": "Code review & CI",
       "description": "Suede Labs AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server — initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get — plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging).",
       "useWhen": "Validate the Suede Skills MCP, catalog, tool schemas, prompts, resources, install guidance, and docs."
+    },
+    {
+      "name": "suede-newsroom",
+      "area": "marketing",
+      "specialty": "found",
+      "lane": "Content & audience",
+      "description": "Suede-owned editorial pipeline for agent-run content: six roles with written contracts, one inspectable record that travels between them, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when repurposed posts all sound like the same post, when one flagship piece has to carry a week of distribution, or when someone asks to build an AI content team, an editorial pipeline, or a one-person media company. NOT FOR: choosing which topics, pillars, or clusters to cover (use suede-content-strategy); platform mix, cadence, calendars, or listening (use suede-social); an Instagram-specific program (use suede-instagram-growth); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy).",
+      "useWhen": "The user wants an AI content team, an editorial pipeline, or a one-person media company, or their content agents return generic, duplicated, or unsourced work, or one idea has to fill several surfaces without every asset arguing the same thing."
     },
     {
       "name": "suede-offers",

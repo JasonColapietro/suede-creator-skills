@@ -76,6 +76,7 @@ Runner boundary for Suede Graph Flo XR: its bundled Suede Thought Graph workflow
 - [Suede Marketing Loops](https://skills.suedeai.ai/skills/suede-marketing-loops.html): Turn marketing into a recurring loop an agent runs on a cadence.
 - [Suede Marketing Plan](https://skills.suedeai.ai/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.
 - [Suede Marketing Psychology](https://skills.suedeai.ai/skills/suede-marketing-psychology.html): Apply behavioural science honestly.
+- [Suede Newsroom](https://skills.suedeai.ai/skills/suede-newsroom.html): Run one idea through a six-role content pipeline.
 - [Suede Offers](https://skills.suedeai.ai/skills/suede-offers.html): Construct the thing you actually sell.
 - [Suede Onboarding](https://skills.suedeai.ai/skills/suede-onboarding.html): Get a new user to first value fast.
 - [Suede Paywalls](https://skills.suedeai.ai/skills/suede-paywalls.html): Design in-app upgrade moments that convert without resentment.
