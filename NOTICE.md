@@ -105,6 +105,41 @@ workflow source.
 Problems with Large Language Models,” _Proceedings of the AAAI Conference on
 Artificial Intelligence_, 38(16), 17682–17690.
 
+## One-person media company write-up — J.B. (@VibeMarketer_)
+
+The six-role editorial pipeline and the distribution-as-re-argumentation premise
+in `suede-newsroom` are adapted from "How to Build a One-Person Media Company
+With Hermes Bots" by **J.B. ([@VibeMarketer_](https://x.com/VibeMarketer_))**,
+published 2026-08-28.
+
+**Upstream:** https://x.com/VibeMarketer_/status/2093330541177352217
+
+No text from that article is reproduced here. What Suede took is the structure:
+the loop from idea through research, angle, flagship, distribution, review, and
+performance back into the playbooks; the split into six roles with one owned
+decision each; a single record that travels between them; the argument that
+reformatting is not distribution; and the keep/test/stop review that converts
+measured results into rules.
+
+### What changed in adaptation
+
+- rewritten as one Suede skill with this pack's `description` and `NOT FOR`
+  routing convention, so the router can tell it apart from `suede-social`,
+  `suede-content-strategy`, and `suede-marketing-loops`
+- the vendor-specific setup (one named desktop agent product, its bot mode,
+  profiles, and kanban, plus a note-app vault) generalized into a host-agnostic
+  model with a mapping table for four hosts, including no agents at all
+- every role contract given checkable acceptance thresholds, `must not` and
+  `done when` clauses, and a halt format, in place of prose descriptions
+- the handoff record specified as a file with per-stage completion rules and a
+  return-to-sender rule rather than a field list
+- the distribution premise developed into a seven-entryway taxonomy with a
+  three-check standalone score and a three-way collision gate
+- Suede boundaries added throughout: nothing publishes, no claim outruns its
+  source, and no entryway is filled with an invented artifact
+
+---
+
 ---
 
 Except for the third-party adaptations listed above, everything else in this

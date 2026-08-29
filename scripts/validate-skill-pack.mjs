@@ -1151,8 +1151,8 @@ countChecks.push(
   { file: "book/02-anatomy-of-a-skill.md", label: "resident description bytes", re: /descriptions together are ([\d,]+)\./, expected: bookFacts.descriptionBytes, parse: commaNumber },
   { file: "book/02-anatomy-of-a-skill.md", label: "suede-code-grader description length", re: /does with ([\d,]+) characters/, expected: grader.descriptionCharacters, parse: commaNumber },
   { file: "book/02-anatomy-of-a-skill.md", label: "suede-deslop description length", re: /same job in ([\d,]+) characters/, expected: deslop.descriptionCharacters, parse: commaNumber },
-  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: description count", re: /([A-Z][a-z]+-[a-z]+) of the \d+ descriptions in this repo end with/, expected: bookFacts.notForColonCount, wordNumber: true },
-  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: denominator", re: /[A-Z][a-z]+-[a-z]+ of the (\d+) descriptions in this repo end with/, expected: totalSkillCount },
+  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: description count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the \d+ descriptions in this repo end with/, expected: bookFacts.notForColonCount, wordNumber: true },
+  { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: denominator", re: /[A-Z][a-z]+(?:-[a-z]+)? of the (\d+) descriptions in this repo end with/, expected: totalSkillCount },
   // The pairwise figure the sentence quotes is a floor ("more than two thousand
   // six hundred"), which only breaks if the pack shrinks. Guard the count.
   { file: "book/03-the-description-contract.md", label: "namespace collision skill count", re: /([A-Z][a-z]+-[a-z]+) have more\s+than two thousand/, expected: totalSkillCount, wordNumber: true },

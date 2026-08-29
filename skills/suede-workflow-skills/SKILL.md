@@ -267,7 +267,8 @@ the whole group:
 - Organic and social: `suede-social`, `suede-instagram-growth` (account-specific
   Instagram audit and daily loops), `suede-video`, `suede-image`,
   `suede-clip-to-guide` (turn a clip into a written guide),
-  `suede-content-strategy`.
+  `suede-content-strategy`, `suede-newsroom` (six-role content pipeline with a
+  handoff record and one argument per distributed asset).
 - Search and programmatic reach: `suede-programmatic-seo`, `suede-ai-seo`,
   `suede-directory-submissions`.
 - Outbound and pipeline: `suede-cold-email`, `suede-prospecting`,

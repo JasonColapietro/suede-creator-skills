@@ -56,6 +56,7 @@ match, and the page must list exactly these four.
 | `suede-site-alchemy` | You want the page turned into a conversion path: friction, proof, CTA, pricing, quick wins |
 | `suede-programmatic-seo` | You are building data-backed keyword, location, directory, integration, or comparison pages at scale |
 | `suede-content-strategy` | You need pillars, clusters, cadence, distribution, and refresh priorities |
+| `suede-newsroom` | You want a content pipeline staffed as six roles, with a handoff record and one argument per asset |
 | `suede-competitors` | You are writing honest alternative, versus, and comparison pages for evaluators |
 | `suede-directory-submissions` | You are selecting listings, sequencing submissions, and verifying backlinks |
 | `suede-free-tools` | You want engineering-as-marketing: calculators, graders, generators, scored and scoped |
