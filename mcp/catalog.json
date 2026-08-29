@@ -51,6 +51,7 @@
         "suede-deslop",
         "suede-agent-teams",
         "suede-ops-architecture",
+        "suede-ops-assessment",
         "suede-ai-eval",
         "suede-graph-flo-xr",
         "suede-ship-copy",
@@ -143,11 +144,11 @@
       "key": "ship",
       "label": "Ship",
       "summary": "Get the change built, reviewed, and merged.",
-      "count": 14,
+      "count": 15,
       "lanes": [
         {
           "label": "Orchestration & routing",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Code review & CI",
@@ -651,6 +652,14 @@
       "lane": "Orchestration & routing",
       "description": "Suede-owned operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code-review).",
       "useWhen": "The user is scoping an automation or agent build and needs the schema, write paths, work triage, tool verdicts, migration path, and gated phase order decided before anyone writes code."
+    },
+    {
+      "name": "suede-ops-assessment",
+      "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
+      "description": "Suede-owned operations-assessment discipline that maps how work actually happens before anyone designs a system: floor-level interviews with the people who do the work, an inventory of every silo including spreadsheets and inboxes used as databases, friction quantified in the requester's own numbers, opportunities ranked by annual value against build complexity, and adoption watched for the thirty days after launch. Use when nobody can answer what to automate, when an operation needs auditing before a build, when tribal-knowledge and key-person risk has to surface, or when a shipped system is quietly being routed around. NOT FOR: deciding what to build and in what order once the map exists (use suede-ops-architecture); researching external customers rather than internal operators (use suede-customer-research); lead lifecycle, scoring, and CRM routing rules (use suede-revops); product instrumentation and dashboards (use suede-analytics); getting a new user to first value (use suede-onboarding).",
+      "useWhen": "The user cannot say what to automate, wants their operation mapped and costed before a build, needs tribal-knowledge and key-person risk surfaced, or has a shipped system the team is quietly routing around."
     },
     {
       "name": "suede-paywalls",

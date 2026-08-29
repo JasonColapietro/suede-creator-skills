@@ -1,7 +1,7 @@
 # S-Tier: The Builder's Book Behind the Suede Skills
 
 A book about how agent skills actually work and how a person becomes an
-exceptional builder using them. Companion to the 73-skill
+exceptional builder using them. Companion to the 74-skill
 [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills)
 pack, and readable without installing it.
 
@@ -59,7 +59,7 @@ four ideas it repeats.
 
 ### Appendices
 
-- [A. The Skill Index, by Intent](A1-skill-index.md) — all 73 skills, grouped by
+- [A. The Skill Index, by Intent](A1-skill-index.md) — all 74 skills, grouped by
   what you are trying to do.
 - [B. The Rules, on One Page](A2-the-rules.md) — 29 rules, compressed.
 
