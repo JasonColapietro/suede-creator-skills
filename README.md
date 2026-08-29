@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 72](https://img.shields.io/badge/skills-72-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 73](https://img.shields.io/badge/skills-73-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -210,6 +210,15 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 
 Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
 under the MIT License — see [NOTICE.md](NOTICE.md).
+
+One more sits alongside them, adapted from a public write-up rather than the set above:
+
+| Skill | What it does |
+|---|---|
+| [`suede-newsroom`](skills/suede-newsroom) | Runs one idea through a six-role content pipeline — written role contracts, an inspectable campaign record, seven distribution entryways so no two assets argue the same thing, and a keep/test/stop review |
+
+Adapted from a write-up by J.B. ([@VibeMarketer_](https://x.com/VibeMarketer_)) —
+see [NOTICE.md](NOTICE.md).
 
 ## From the blog
 
