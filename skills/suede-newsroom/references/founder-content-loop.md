@@ -8,15 +8,76 @@ Keep/Test/Stop review in `SKILL.md`.
 
 ## Contents
 
-1. [Mode contract](#mode-contract)
-2. [Founder intake](#founder-intake)
-3. [Weekly operating rhythm](#weekly-operating-rhythm)
-4. [Account lanes](#account-lanes)
-5. [Distribution and collision rules](#distribution-and-collision-rules)
-6. [Measurement](#measurement)
-7. [Routing boundaries](#routing-boundaries)
-8. [Pilot size](#pilot-size)
-9. [Output contract](#output-contract)
+1. [Intended use](#intended-use)
+2. [How it works](#how-it-works)
+3. [Mode contract](#mode-contract)
+4. [Founder intake](#founder-intake)
+5. [Weekly operating rhythm](#weekly-operating-rhythm)
+6. [Account lanes](#account-lanes)
+7. [Distribution and collision rules](#distribution-and-collision-rules)
+8. [Measurement](#measurement)
+9. [Worked examples](#worked-examples)
+10. [Routing boundaries](#routing-boundaries)
+11. [Pilot size](#pilot-size)
+12. [Output contract](#output-contract)
+
+## Intended use
+
+Use founder-led mode to install a repeatable editorial loop when the most useful
+raw material lives in a founder's weekly judgment rather than in a backlog of
+finished drafts. Use it when one or more of these apply:
+
+- a founder can supply a recurring interview, voice note, or operator debrief;
+- personal and company accounts need distinct editorial jobs;
+- the team needs a written system that survives restarts and handoffs;
+- claims, approvals, and performance lessons must stay inspectable; and
+- the desired result is recognition, qualified inbound, product adoption, or
+  community depth rather than content volume by itself.
+
+Use the standard newsroom without this mode when neither a recurring founder
+source nor an account-lane distinction applies. Route topic pillars to
+`suede-content-strategy`, platform listening and calendars to `suede-social`,
+stateful or retrying scheduled stages to `suede-marketing-loops`, analytics
+instrumentation to `suede-analytics`, and platform publishing or scheduling to
+`suede-social` or the applicable platform-specific skill.
+
+This mode prepares an approval-ready editorial package. It does not choose a
+public identity, publish a post, invent proof, or turn one successful campaign
+into a permanent rule.
+
+## How it works
+
+The loop converts one recurring source into a sequence of written decisions:
+
+```text
+setup -> founder intake -> signal -> research -> angle -> flagship
+      -> distinct account assets -> human approval -> measurement -> playbook
+```
+
+1. **Setup fixes the operating constraints.** The primary outcome, account
+   lanes, source format, approval owner, measurement window, and review capacity
+   live in `.agents/newsroom/founder-loop.md`.
+2. **Intake extracts judgment without treating it as proof.** Firsthand
+   observations, decisions, voice markers, proof leads, and claims to verify are
+   separated in the campaign record.
+3. **The newsroom narrows the material.** The scout selects at most three
+   candidates, research verifies consequential claims, and strategy chooses one
+   angle.
+4. **Distribution gives every asset a different job.** The founder lane earns
+   recognition through a mechanism, workflow, risk, critique, or lesson. The
+   company lane makes the work inspectable through proof, a scoped result, a
+   documented workflow, or a grounded model.
+5. **The editor checks the set together.** Every asset must stand alone, use one
+   supported entryway, and pass claim, opening, and entryway collision checks.
+6. **A human releases the work.** The package names the exact copy, source,
+   media, visible identity, and approval decision. The newsroom does not publish
+   or schedule it.
+7. **Measured results update the playbook.** One promising result becomes a
+   Test. A Keep requires support from at least two campaigns and human approval.
+
+The durable setup file carries the rules for the whole loop. Each campaign file
+carries one idea through the stages. Source recordings, transcripts, drafts,
+and media live beside those records and are linked by path.
 
 ## Mode contract
 
@@ -220,6 +281,96 @@ primary outcome.
 Compare by campaign, account lane, entryway, and surface. A Keep needs two or
 more campaigns and continued strategy fit. One promising result is a Test. A
 Stop requires the thresholds in `SKILL.md` Step 6.
+
+## Worked examples
+
+These examples are illustrative. They show the decisions and artifacts the mode
+returns; they are not claims about a real campaign.
+
+### Example 1 — Weekly voice note for qualified inbound
+
+**Request:** "The founder and company accounts are already approved in the mode
+setup. I approve every asset, can review two public assets per week, and review
+results after seven days. The goal is qualified product inquiries. This week's
+voice note says we saw teams diagnose onboarding symptoms without a decision
+rule, and I attached the checklist we use."
+
+**What the mode does:**
+
+1. Writes `qualified product inquiries` as the primary outcome and records the
+   approved accounts, approval owner, seven-day measurement window, and two-
+   asset review capacity in the setup file.
+2. Classifies the founder's diagnosis as firsthand observation and judgment.
+   The checklist is a proof lead until the researcher verifies that the shared
+   artifact matches the description.
+3. Selects one angle: onboarding fails when teams diagnose symptoms without a
+   decision rule.
+4. Gives the founder asset a **mechanism** entryway: explain the decision rule
+   and why it changes the diagnosis.
+5. Gives the company asset a **proof** entryway: show the inspectable checklist,
+   its scope, and what it does not establish.
+6. Rejects a second post claiming the checklist improved conversion unless a
+   measurement source, comparison period, and conditions are available.
+7. Sends both assets to one approval queue, then measures qualified replies,
+   introductions, demos, or inquiries before using reach as a diagnostic.
+
+**Result:** two assets share one evidence packet but make different central
+claims. The founder is recognizable for a decision method; the company makes
+the method inspectable.
+
+### Example 2 — A time-sensitive industry conversation
+
+**Request:** "Use the existing approved mode setup. A new industry policy is
+being debated this week. I attached the policy source, my operator debrief on
+the operational risk, and the company's documented workflow. Build the package
+while the conversation is current."
+
+**What the mode does:**
+
+1. The scout records the conversation source and decay window. If the window
+   expires before research and approval finish, the timely angle is rejected or
+   reframed as durable analysis.
+2. The researcher separates what the policy text proves from the founder's
+   interpretation and verifies the company workflow independently.
+3. The founder asset takes the **risk** entryway: name the failure condition and
+   the operator decision it changes.
+4. The company asset takes the **workflow** entryway: show the ordered process
+   and the evidence for each consequential claim.
+5. The collision gate compares both central claims and openings. Rephrasing the
+   founder warning as company copy does not count as a distinct asset.
+6. The human approves the final wording, visible identity, sources, and media
+   before any publishing skill receives the package.
+
+**Result:** the system participates while the topic is live without converting
+speed into unsupported claims or duplicated account posts.
+
+### Example 3 — Solo founder with one public account
+
+**Request:** "I have one approved founder account and no company account. The
+goal is category recognition, I approve every asset, I can review one public
+asset per week, and performance becomes reviewable after seven days. Start from
+the attached operator debrief."
+
+**What the mode does:**
+
+1. Activates only the supplied founder recognition lane; one valid lane
+   satisfies the mode contract, and the absent company lane stays unavailable.
+2. Records category recognition, the founder as approval owner, the one-asset
+   weekly review capacity, and the seven-day measurement window.
+3. Runs the debrief through intake, research, one selected angle, one supported
+   entryway, standalone scoring, and human approval.
+4. Records company-grade proof objects as possible evidence, not as instructions
+   to create another public account.
+5. Logs the campaign as measured or explicitly `unmeasured`; it does not promote
+   a lesson into Keep until the threshold is met.
+
+**Result:** the smallest valid installation is one accountable lane and one
+inspectable record. The system expands only after the missing operating fields
+are supplied and approved.
+
+If any example omitted its primary outcome, approval owner, usable account lane,
+or actual source, setup would halt at that field. A hypothetical description of
+a future voice note or debrief is not campaign evidence.
 
 ## Routing boundaries
 
