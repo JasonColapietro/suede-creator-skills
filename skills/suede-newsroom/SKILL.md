@@ -1,8 +1,8 @@
 ---
 name: suede-newsroom
-description: "Suede-owned editorial pipeline for agent-run content: six roles with written contracts, one inspectable record that travels between them, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when repurposed posts all sound like the same post, when one flagship piece has to carry a week of distribution, or when someone asks to build an AI content team, an editorial pipeline, or a one-person media company. NOT FOR: choosing which topics, pillars, or clusters to cover (use suede-content-strategy); platform mix, cadence, calendars, or listening (use suede-social); an Instagram-specific program (use suede-instagram-growth); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy)."
+description: "Suede-owned editorial pipeline for agent-run content: six roles with written contracts, one inspectable record that travels between them, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts. NOT FOR: choosing which topics, pillars, or clusters to cover (use suede-content-strategy); platform mix, cadence, calendars, or listening (use suede-social); an Instagram-specific program (use suede-instagram-growth); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy)."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Suede Newsroom
@@ -27,6 +27,14 @@ This skill owns the pipeline: who decides what, what travels between them, and
 how one idea becomes several assets that argue different things. Read
 `.agents/product-marketing.md` first if it exists — it holds product, audience,
 positioning, and proof, and nothing here restates it.
+
+**Founder-led mode.** When the recurring source is a founder interview, voice
+note, or operator debrief, or when personal and company accounts need different
+jobs, read
+[references/founder-content-loop.md](references/founder-content-loop.md) before
+Step 1. It adds an intake contract and account lanes to this pipeline; the six
+role contracts, evidence gates, collision checks, approval boundary, and
+Keep/Test/Stop thresholds below remain unchanged.
 
 ## Step 1 — Put the campaign in a file, not a conversation
 

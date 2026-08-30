@@ -490,8 +490,10 @@ useful and do not imply the blocker was resolved.
 - Use `suede-content-strategy` for the broader editorial system.
 - Use `suede-newsroom` when one approved idea has to fill several surfaces and
   each asset needs its own argument, or when the pipeline itself needs roles,
-  handoff contracts, and a campaign record. This skill decides where and when;
-  that one decides what each asset argues.
+  handoff contracts, and a campaign record. Route a recurring founder interview
+  or voice note with separate founder-account and company-account jobs to that
+  skill's founder-led mode. This skill decides where and when; that one decides
+  what each asset argues.
 - Use `suede-video` for full video generation and production, including caption
   tooling, export specs, and edit execution.
 - Use `suede-clip-to-guide` to turn a clip, interview moment, or talk excerpt

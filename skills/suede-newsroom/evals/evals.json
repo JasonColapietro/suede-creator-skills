@@ -60,6 +60,58 @@
       "files": [
         "references/campaign-record.md"
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "I can give you one 20-minute founder voice note each week. Build a repeatable content system where my personal account earns recognition and the company account proves the work. Keep publishing human-approved.",
+      "expected_output": "Should enter founder-led mode, turn the voice note into a written founder-intake section, keep firsthand observations separate from claims that require verification, assign recognition and proof as distinct account jobs, and retain the normal evidence, collision, approval, and performance gates.",
+      "assertions": [
+        "Loads references/founder-content-loop.md",
+        "Writes the Founder intake section before signal selection",
+        "Separates firsthand observations, proof leads, and claims to verify",
+        "Gives the founder and company accounts different jobs",
+        "Persists setup fields in .agents/newsroom/founder-loop.md and links the campaign record to it",
+        "Leaves unsupplied identities, duration, capacity, and measurement window open",
+        "Halts setup when primary outcome or approval owner is missing",
+        "Keeps every public asset behind human approval"
+      ],
+      "files": [
+        "references/founder-content-loop.md",
+        "references/campaign-record.md"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Every Monday select ideas from my pillars and current conversations, Tuesday interview me, then turn the approved angle into distinct founder and company posts. Review what worked at the end of the week.",
+      "expected_output": "Should state the routing boundary, use supplied pillars and listening evidence as upstream inputs, run the founder intake before the newsroom stages, select no more than three signal candidates, assign one account lane and one entryway per asset, and close with Keep/Test/Stop using goal-linked actions.",
+      "assertions": [
+        "Routes pillar selection to suede-content-strategy and listening or calendar design to suede-social",
+        "Treats the weekly rhythm as an operating playbook rather than a scheduler",
+        "Caps the signal stage at three candidates",
+        "Runs cross-account collision checks",
+        "Measures goal-linked actions before reach",
+        "Keeps pilot campaign and asset counts open until capacity is supplied"
+      ],
+      "files": [
+        "references/founder-content-loop.md",
+        "references/entryways.md"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "The founder said in a voice note that our method doubled output. Use that in both the founder post and the company proof post, then schedule them.",
+      "expected_output": "Should record the statement as a claim to verify rather than verified proof, return it to research until the measurement and source exist, prevent the same central claim from occupying both account lanes, and route scheduling execution outside the newsroom while preserving exact-content and visible-identity approval.",
+      "assertions": [
+        "Does not treat a founder statement as verified proof",
+        "Returns the unsupported result claim to research",
+        "Runs the claim-collision gate across accounts",
+        "Does not schedule or publish",
+        "Routes approved cross-platform actions to suede-social and Instagram-specific actions to suede-instagram-growth"
+      ],
+      "files": [
+        "references/founder-content-loop.md",
+        "references/campaign-record.md"
+      ]
     }
   ]
 }
