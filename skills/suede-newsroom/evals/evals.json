@@ -112,6 +112,24 @@
         "references/founder-content-loop.md",
         "references/campaign-record.md"
       ]
+    },
+    {
+      "id": 8,
+      "prompt": "Explain the founder-led newsroom mode in plain language. When should I use it, and show me examples for a weekly founder voice note, a time-sensitive industry conversation, and a solo founder with one public account.",
+      "expected_output": "Should load the founder-mode reference, explain the setup-to-playbook operating sequence, distinguish appropriate use from routed capabilities, and use the worked examples without turning illustrative details into real campaign claims.",
+      "assertions": [
+        "Loads references/founder-content-loop.md",
+        "Explains the setup, intake, newsroom, distribution, approval, and measurement sequence",
+        "States the intended-use conditions and routing boundaries",
+        "Uses all three worked scenarios",
+        "Keeps illustrative examples separate from verified campaign evidence",
+        "Preserves the setup halt when primary outcome, approval owner, usable account lane, or actual source is missing",
+        "Does not treat a hypothetical future voice note or debrief as received evidence",
+        "Allows one supplied founder lane without inventing a company identity"
+      ],
+      "files": [
+        "references/founder-content-loop.md"
+      ]
     }
   ]
 }
