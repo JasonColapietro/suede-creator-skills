@@ -4,10 +4,10 @@ SKILL.md carries the 25 highest-frequency offenders. This file is the complete
 sweep. Run it when the text goes to press, investors, or customers, or when the
 SKILL.md table comes back clean and the text still reads generated.
 
-Phrase and structure inventory folded from stop-slop by Hardik Pandya
-(https://hvpandya.com, MIT, github.com/hardikpandya/stop-slop) on 2026-07-27,
-merged with the original Suede kill list. Where the two disagreed on a fix, the
-stricter cut won.
+Treat every entry as a contextual signal, not a token ban. Preserve wording
+that carries technical meaning, quotation fidelity, deliberate voice, genre,
+or the supplied house style. Apply the minimum edit that fixes the actual
+problem in the supplied piece.
 
 ## Throat-clearing openers
 
@@ -67,10 +67,11 @@ Delete; they add no meaning.
 | robust / seamless / powerful | name the capability or prove it |
 | elevate / empower / transform | say what changes, before and after |
 
-## Adverbs — the blanket rule
+## Adverbs that add no information
 
-Kill every adverb, not just the named ones. No -ly words. No softeners, no
-intensifiers, no hedges. Named repeat offenders:
+Cut an adverb when it merely intensifies, softens, or announces importance.
+Keep it when it carries factual, technical, legal, quoted, or voice-specific
+meaning. Common low-information candidates:
 
 really, just, very, literally, genuinely, honestly, simply, actually, deeply,
 truly, fundamentally, essentially, ultimately, inherently, inevitably,
@@ -216,7 +217,7 @@ Fix: find the actor, put them at the front of the sentence.
 - Three-item lists: use two items or one, unless the count is really three.
 - Questions answered in the same breath: let the question breathe or cut it.
 - Every paragraph ending punchy: vary endings.
-- Em dashes: none, anywhere, ever. Commas or periods.
+- Em dashes: follow the supplied house style. Suede-owned public copy uses commas, parentheses, colons, or periods instead.
 - Staccato fragments stacked for effect: merge them.
 - "Not always. Not perfectly.": hedging dressed as reassurance. Cut it.
 
