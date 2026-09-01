@@ -35,8 +35,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 74 files total 1,079,356 bytes;
-the 74 descriptions together are 44,820. The agent holds the small number and
+when the skill is not running. In this repo the 74 files total 1,081,390 bytes;
+the 74 descriptions together are 44,847. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -53,16 +53,17 @@ sentence exists because `suede-code-review` lives next door and produces
 something different, and without it an agent would pick between them by coin
 flip.
 
-`suede-deslop` does the same job in 512 characters:
+`suede-deslop` does the same job in 539 characters:
 
 ```text
-description: "Suede Labs anti-slop pass: strip AI writing patterns from prose
-before anything goes public. Em dashes, filler openers, manufactured enthusiasm,
-false agency, passive voice, formulaic structures, all of it. Use when copy, a
-README, an email, a social post, or a doc is about to ship, after a long
-AI-assisted writing session, or when text sounds fine but feels generated. NOT
-FOR: writing new copy (use suede-copy); changing or certifying facts, which must
-be checked against primary evidence before publication."
+description: "Suede Labs context-aware anti-slop pass for finished prose: find
+or remove generic filler, manufactured emphasis, false agency, and formulaic
+structure without flattening the author's voice. Use before copy, a README, an
+email, a social post, or a doc ships; after a long assisted-writing session; or
+when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use
+suede-copy); deciding whether a person or model wrote text; changing or
+certifying facts, which must be checked against primary evidence before
+publication."
 ```
 
 Three parts. What it does, the trigger conditions in the vocabulary a user

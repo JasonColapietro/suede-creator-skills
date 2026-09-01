@@ -7,7 +7,7 @@ Release record for the `suede-deslop` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public.
+Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.16.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated.
-
-Out of scope — writing new copy (use suede-copy); changing or certifying facts, which must be checked against primary evidence before publication.
+Out of scope — writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which must be checked against primary evidence before publication.
 
 ## Deployment Geography
 
@@ -44,8 +42,11 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries" — This skill edits style only. It must NOT:
 
-- Change any fact, number, date, name, price, or claim. If a rewrite requires a specific the source text does not contain (a metric, an actor, a step count), insert `[AUTHOR: supply X]` instead of inventing one.
-- Verify or vouch for the truth of any claim. Require primary evidence for factual wording; otherwise preserve an explicit `[AUTHOR: supply source]` marker or qualify or remove the claim.
+- Change any fact, number, date, name, price, claim, qualifier, quotation, code, command, link, citation, or path.
+- Infer or report whether a human or model wrote the text. Findings describe the prose and its effect only.
+- Flatten deliberate voice traits merely because they resemble a common pattern.
+- Invent a metric, actor, anecdote, customer, quote, or first-person experience.
+- Verify or vouch for the truth of any claim. Flag missing support separately; never qualify, remove, or otherwise alter supplied factual wording during this style pass.
 - Publish, post, send, commit, or overwrite the original file/message. Return cleaned prose in the response; the author decides where it lands.
 - Decide whether the piece should ship at all: the CLEAN/REVISE verdict is about slop, not content approval.
 

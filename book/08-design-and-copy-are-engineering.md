@@ -158,24 +158,26 @@ thing."), and the permission grant ("And that's okay.").
 paragraph landing on a punchy one-liner. The prose has a pulse you can set a
 watch to, which is what happens when nothing is being worked out on the page.
 
-This book was written under those bans. No em dashes appear in it, the triads
-were cut, and every paragraph that ended too neatly got a longer sentence
-appended until it stopped sounding like a slogan. Whether that produced better
-prose is yours to judge. It did produce prose that can be checked, which is a
-different property from being good and a necessary one if you want the quality
-to survive contact with an agent, a deadline, and a bad night.
+This book was written under a house style with no em dashes. Automatic triads
+were cut, and paragraphs that ended too neatly were varied until they stopped
+sounding like slogans. Those are contextual choices, not proof of authorship and
+not universal punctuation laws. Whether they produced better prose is yours to
+judge. They did produce prose that can be checked, which is a different property
+from being good and a necessary one if you want the quality to survive contact
+with an agent, a deadline, and a bad night.
 
 One boundary matters and the skill is strict about it: deslop edits style only.
-It never changes a fact, a number, a date, a name, or a price, and when a rewrite
-needs a specific the source did not contain, it inserts `[AUTHOR: supply X]`
-rather than inventing one. Style passes that quietly improve your statistics are
-how false claims enter a public page wearing better sentences.
+It never changes a fact, number, date, name, price, claim, qualifier, quotation,
+code sample, command, link, citation, or path. Missing evidence is flagged
+separately, never fixed by inventing or silently changing the supplied wording.
+Style passes that quietly improve your statistics are how false claims enter a
+public page wearing better sentences.
 
 ## The standard
 
 Every rule in this chapter started as somebody's preference. The 44px target,
-the 65 to 75 character measure, the reserved red, the ban on em dashes: none of
-them descended from first principles. Someone made a call.
+the 65 to 75 character measure, the reserved red, and this book's no-em-dash
+house style did not descend from first principles. Someone made a call.
 
 The difference is that the call got written down with a number attached, so it
 can be applied by a person who was not in the room, enforced by a validator, and

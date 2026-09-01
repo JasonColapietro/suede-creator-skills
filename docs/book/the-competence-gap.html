@@ -32,7 +32,7 @@
   "description": "A capable model plus a vague prompt produces confident mediocrity. The gap is not intelligence, it is procedure, and procedure is now a file you own.",
   "url": "https://skills.suedeai.ai/book/the-competence-gap.html",
   "position": 2,
-  "wordCount": 1690,
+  "wordCount": 1694,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -87,7 +87,7 @@
       <p class="eyebrow">Part I &middot; Chapter 1</p>
       <h1>The Competence Gap</h1>
       <p class="post-meta">A capable model plus a vague prompt produces confident mediocrity. The gap is not intelligence, it is procedure, and procedure is now a file you own.</p>
-      <div class="book-meta"><span>1,690 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,694 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>You paste a diff into Claude Code and type "review my diff." Thirty seconds later you get a tidy response. Two naming suggestions, one note about extracting a helper, a closing line that the change looks solid. You merge it.</p>
       <p>The diff added a <code>role</code> check to an API route. The agent never opened the middleware that route sits behind. It never checked whether the role came from the session or from a request parameter. It never ran your test suite, and it never said it hadn't. It read the changed lines, pattern-matched them against a general sense of what good code looks like, and reported back with the tone of someone who checked.</p>
@@ -109,13 +109,13 @@
       <p>It is a folder with a <code>SKILL.md</code> file inside. In this repo they live at <code>skills/&lt;name&gt;/SKILL.md</code>, 74 of them, under documented open-source licenses. The file opens with YAML frontmatter carrying a <code>name</code> and a <code>description</code>. Everything after the closing <code>---</code> is the body: the procedure the agent reads when the skill fires.</p>
       <pre><code>---
 name: suede-deslop
-description: "Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public. ..."
+description: "Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler without flattening the author's voice. ..."
 ---</code></pre>
       <p>That is the whole mechanism. No plugin API, no compilation step, no runtime. A skill is a document, and it works because the agent reading it is a competent reader who follows written instructions.</p>
       <p>The body is where the specialist lives. <code>skills/suede-code-grader/SKILL.md</code> is 212 lines. It contains a list of instant-F triggers checked before any lane is scored, seven grading lanes, grade caps that hold auth and payment changes at C without named bypass-path evidence, and a fixed output block ending in a ship gate. <code>skills/suede-deslop/SKILL.md</code> carries a 25-row kill list of filler phrases with replacements, ten formulaic structures with their fixes, and a 50-point score with a threshold below which the text does not ship. None of that is clever. All of it is written down, which means it runs the same way on a Tuesday afternoon as it does at midnight.</p>
       <h2 id="progressive-disclosure-or-why-74-skills-fit">Progressive disclosure, or why 74 skills fit</h2>
-      <p>Here is the objection that arrives immediately. The 74 <code>SKILL.md</code> files in this repo total 1,079,356 bytes. Loading all of them into every conversation would crowd out the thing you actually came to do.</p>
-      <p>They are not all loaded. Only the frontmatter descriptions stay resident, and all 74 descriptions together come to 44,820 bytes. That is roughly a twenty-fourth of the corpus. The agent holds a catalog of what exists and reads a body only when a description matches the task in front of it.</p>
+      <p>Here is the objection that arrives immediately. The 74 <code>SKILL.md</code> files in this repo total 1,081,390 bytes. Loading all of them into every conversation would crowd out the thing you actually came to do.</p>
+      <p>They are not all loaded. Only the frontmatter descriptions stay resident, and all 74 descriptions together come to 44,847 bytes. That is roughly a twenty-fourth of the corpus. The agent holds a catalog of what exists and reads a body only when a description matches the task in front of it.</p>
       <p>This is progressive disclosure, and it changes what a description is for. The description is not marketing copy for the skill. It is the router. It carries the entire burden of deciding whether 400 lines of procedure load or stay on disk. Chapter 2 takes that apart in detail, including the <code>NOT FOR:</code> convention that 72 of the 74 descriptions in this repo use to push work toward a better match.</p>
       <p>The consequence for you is direct: a skill you install and never trigger costs you almost nothing, and a skill with a sloppy description is invisible no matter how good its body is.</p>
       <h2 id="the-before-and-after">The before and after</h2>

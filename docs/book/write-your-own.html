@@ -32,7 +32,7 @@
   "description": "Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.",
   "url": "https://skills.suedeai.ai/book/write-your-own.html",
   "position": 14,
-  "wordCount": 1908,
+  "wordCount": 1912,
   "datePublished": "2026-08-10",
   "dateModified": "2026-08-10",
   "inLanguage": "en",
@@ -87,7 +87,7 @@
       <p class="eyebrow">Part IV &middot; Chapter 13</p>
       <h1>Write Your Own</h1>
       <p class="post-meta">Authoring skills: when to write one, what goes in the body versus references, the competent-stranger test, and how to lint an estate before a dead route bites.</p>
-      <div class="book-meta"><span>1,908 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,912 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>The third time you paste the same release checklist into a chat window, stop typing and open a file instead.</p>
       <p>That is the whole trigger. Not a strategy, not an assessment of whether your process is "mature enough to systematize." You have explained a procedure to an agent three times, or you keep a checklist in your head that you half-remember and half-improvise, and the parts you forget are always the same parts. Those are the two signals. Everything in <code>skills/</code> in this repo started as one of them.</p>
@@ -97,7 +97,7 @@
       <p>The frontmatter is two fields.</p>
       <pre><code>---
 name: suede-deslop
-description: "Strip AI writing patterns from prose before anything goes public. Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice, formulaic structures, all of it. Use when copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated. NOT FOR: writing new copy (use suede-copy); changing or certifying facts, which must be checked against primary evidence before publication."
+description: "Context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which must be checked against primary evidence before publication."
 ---</code></pre>
       <p>Read that description as three parts doing three jobs. The first sentence names the durable job. The middle names the use-when conditions in the words a user would actually type: "about to ship," "sounds fine but feels generated." The last part is <code>NOT FOR</code>, and it hands the near-miss cases to a named neighbor.</p>
       <p>Write the use-when clause in your trigger words, not your taxonomy. This is the single most common authoring failure. You know the skill as "prose quality normalization," so you write that, and then you type "this reads like ChatGPT wrote it" and nothing loads. The description is the router and the router matches on the language of the request. Before you write it, write down three to five prompts you would realistically type, verbatim, and two or three that should go somewhere else. The description has to cover the first set and the <code>NOT FOR</code> has to cover the second.</p>
