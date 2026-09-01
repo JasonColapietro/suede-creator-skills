@@ -86,15 +86,15 @@ output when they are not in the room.
 
 ## A note on the prose
 
-This repo ships `suede-deslop`, a skill that strips AI writing patterns from text
-before it goes public: filler openers, manufactured enthusiasm, false agency,
-formulaic contrast, metronomic rhythm, and em dashes. It would be strange to ship
-that skill and then publish a book that trips every rule in it.
+This repo ships `suede-deslop`, a context-aware skill that finds or removes
+generic filler, manufactured emphasis, false agency, formulaic contrast, and
+metronomic rhythm without flattening deliberate voice. It would be strange to
+ship that skill and then publish a book that trips every rule in it.
 
-So the book was written under those constraints. The prose carries no em dashes.
-Quoted material from the repo keeps its own punctuation, because changing a
-quotation to fit a style rule is the kind of small dishonesty this pack exists to
-catch. If you find a violation anywhere else, the file to check is
+The book's house style uses no em dashes. Quoted material from the repo keeps its
+own punctuation, because changing a quotation to fit a style rule is the kind of
+small dishonesty this pack exists to catch. If you find a violation anywhere
+else, the file to check is
 `skills/suede-deslop/SKILL.md`.
 
 ## License and credit

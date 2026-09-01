@@ -303,8 +303,8 @@ ${toc}
       <div class="divider"></div>
 
       <h2 id="about">About the prose</h2>
-      <p>The pack ships <code>suede-deslop</code>, a skill that strips AI writing patterns out of text before it goes public: filler openers, manufactured enthusiasm, false agency, formulaic contrast, metronomic rhythm, and em dashes. Publishing a book that tripped every rule in it would have been a poor advertisement.</p>
-      <p>So the book was written against those constraints, and the prose carries no em dashes. Quoted repo material keeps its own punctuation, because editing a quotation to fit a style rule is the kind of small dishonesty this pack exists to catch.</p>
+      <p>The pack ships <code>suede-deslop</code>, a context-aware skill that finds or removes generic filler, manufactured emphasis, false agency, formulaic contrast, and metronomic rhythm without flattening deliberate voice. Publishing a book that tripped every rule in it would have been a poor advertisement.</p>
+      <p>The book's house style uses no em dashes. Quoted repo material keeps its own punctuation, because editing a quotation to fit a style rule is the kind of small dishonesty this pack exists to catch.</p>
       <p>Source lives in <a href="${REPO}/tree/main/book" target="_blank" rel="noopener">book/</a>. Skill counts written into the prose are guarded by the repo's validator, so a chapter that goes stale fails the same way a stale meta tag does.</p>`;
 
 written.set(

@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Suede Deslop | Suede Creator Skills</title>
-    <meta name="description" content="Use Suede Deslop in Claude Code or Codex to strip AI writing patterns from prose before it ships: a merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.">
+    <meta name="description" content="Use Suede Deslop in Claude Code or Codex for context-aware prose cleanup or a findings-only audit that preserves facts, voice, and house style.">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-deslop.html">
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Suede Deslop - Suede Creator Skills">
-    <meta property="og:description" content="Use Suede Deslop in Claude Code or Codex to strip AI writing patterns from prose before it ships: a merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.">
+    <meta property="og:description" content="Use Suede Deslop in Claude Code or Codex for context-aware prose cleanup or a findings-only audit that preserves facts, voice, and house style.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-deslop.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Suede Deslop - Suede Creator Skills">
-    <meta name="twitter:description" content="Use Suede Deslop in Claude Code or Codex to strip AI writing patterns from prose before it ships: a merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate.">
+    <meta name="twitter:description" content="Use Suede Deslop in Claude Code or Codex for context-aware prose cleanup or a findings-only audit that preserves facts, voice, and house style.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -24,7 +24,7 @@
         "@type": "TechArticle",
         "@id": "https://skills.suedeai.ai/skills/suede-deslop.html#article",
         "headline": "Suede Deslop - Suede Creator Skills",
-        "description": "Suede Deslop strips AI writing patterns from prose before it ships: throat-clearing openers, false agency, formulaic contrasts, passive voice, and metronomic rhythm, all cut against a merged kill list, then scored 1-10 on directness, rhythm, trust, authenticity, and density with a revise line at 35 of 50.",
+        "description": "Suede Deslop finds or removes generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. It supports findings-only audits, protects supplied facts and exact spans, follows the active house style, invents nothing, and never treats writing patterns as proof of authorship.",
         "url": "https://skills.suedeai.ai/skills/suede-deslop.html",
         "author": {"@type": "Person", "name": "Jason Colapietro", "url": "https://github.com/JasonColapietro"},
         "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
@@ -74,7 +74,7 @@
     <main id="main" tabindex="-1" class="shell">
       <div class="eyebrow">/suede-deslop &middot; Copy &amp; writing; the pack's anti-slop pass</div>
       <h1>Cut the slop before it ships.</h1>
-      <p class="lead">AI prose has tells: throat-clearing before the point, inanimate things doing human work, contrasts that announce the insight instead of delivering it, rhythm that never varies. This skill runs your text against a merged kill list, unwinds the formulaic structures, forces active voice, then scores what remains 1-10 on directness, rhythm, trust, authenticity, and density. Below 35 of 50 it says revise. It edits style only: facts, numbers, names, and claims stay exactly as you wrote them.</p>
+      <p class="lead">Generic prose has patterns: throat-clearing before the point, inanimate things doing human work, contrasts that announce the insight instead of delivering it, and rhythm that never varies. This skill can identify those issues without rewriting or make the minimum effective cleanup. It protects facts, numbers, quotes, code, links, house style, and deliberate voice, invents nothing, and never treats a prose pattern as proof of authorship. A cleaning pass still scores directness, rhythm, trust, authenticity, and density, with revision below 35 of 50.</p>
       <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-deslop">View skill folder</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
 
       <div class="plain-ask" aria-label="Example request that routes to this skill">
@@ -91,9 +91,9 @@
         </div>
         <div class="skill-term-body">
           <span class="t-line"><span class="t-warn">$ </span><span class="t-cmd">/suede-deslop clean this launch email</span></span>
-          <span class="t-line">6 filler phrases cut &middot; 3 contrasts unwound &middot; em dashes: 0</span>
+          <span class="t-line">6 filler phrases cut &middot; 3 contrasts unwound &middot; protected spans unchanged</span>
           <span class="t-line"><span class="term-grade">SCORE 41/50 &middot; CLEAN</span><span class="term-cursor" aria-hidden="true"></span></span>
-          <span class="t-line">Facts untouched &middot; [AUTHOR: supply metric] marks what needs you</span>
+          <span class="t-line">Facts untouched &middot; deliberate voice and house style preserved</span>
         </div>
       </div>
 
@@ -118,12 +118,12 @@ cp -R /tmp/suede-creator-skills/skills/suede-deslop .claude/skills/</code></pre>
               <tr><th>Rule</th><th>What it kills</th></tr>
             </thead>
             <tbody>
-              <tr><td>Cut filler phrases</td><td>Throat-clearing openers, emphasis crutches, business jargon, every adverb</td></tr>
+              <tr><td>Cut filler phrases</td><td>Throat-clearing openers, emphasis crutches, business jargon, and adverbs that add no meaning</td></tr>
               <tr><td>Break formulaic structures</td><td>Binary contrasts, negative listing, dramatic fragments, rhetorical setups, false agency</td></tr>
-              <tr><td>Active voice, every sentence</td><td>Passive constructions and inanimate things doing human work</td></tr>
+              <tr><td>Name the actor when it matters</td><td>Passive constructions that hide responsibility; useful technical passive voice stays</td></tr>
               <tr><td>Be specific</td><td>Vague declaratives and lazy extremes: every, always, never, everyone, nobody</td></tr>
-              <tr><td>Put the reader in the room</td><td>Narrator-from-a-distance voice; "you" beats "people"</td></tr>
-              <tr><td>Vary rhythm</td><td>Metronomic sentence lengths, triad lists, punchy endings, em dashes</td></tr>
+              <tr><td>Match the genre</td><td>Use direct address where it helps; preserve academic, legal, technical, and documentary register</td></tr>
+              <tr><td>Vary rhythm</td><td>Metronomic sentence lengths, automatic triads, and repetitive punchy endings; punctuation follows house style</td></tr>
               <tr><td>Trust the reader</td><td>Softening, justification, hand-holding</td></tr>
               <tr><td>Cut quotables</td><td>Sentences written to be screenshotted</td></tr>
             </tbody>
@@ -154,10 +154,11 @@ cp -R /tmp/suede-creator-skills/skills/suede-deslop .claude/skills/</code></pre>
         <article class="card">
           <h2>What it covers</h2>
           <ul>
-            <li>A merged kill list: 19 throat-clearing openers, 18 jargon swaps, 24 named adverbs plus a blanket no-adverb rule, meta-commentary, performative sincerity, and vague declaratives.</li>
+            <li>A merged kill list treated as contextual signals rather than token bans: throat-clearing openers, jargon, low-information adverbs, meta-commentary, performative sincerity, and vague declaratives.</li>
             <li>Every binary-contrast spelling, negative listing, reveal fragments, formulaic templates, permission grants, and lecturer-voice tells, each with its fix.</li>
-            <li>A 16-item pre-ship checklist and a counted report: filler removed, structures fixed, passive flipped, em dashes cut.</li>
-            <li>Style edits only. A rewrite that needs a specific the source lacks gets an [AUTHOR: supply X] placeholder, never an invented fact.</li>
+            <li>A 16-item pre-ship checklist and a counted report for cleaning passes, plus a findings-only mode that quotes issues without rewriting.</li>
+            <li>Style edits only. Facts, numbers, dates, names, claims, qualifiers, quotes, code, commands, links, citations, and paths stay unchanged; missing support is flagged separately.</li>
+            <li>Minimum effective edits preserve deliberate fragments, humor, technical vocabulary, useful passive voice, and the active house style.</li>
             <li>Returns cleaned prose in the response; the author decides where it lands. It never publishes, posts, or overwrites the original.</li>
           </ul>
         </article>
@@ -176,7 +177,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-deslop .claude/skills/</code></pre>
 
       <section class="panel">
         <h2>Best prompt</h2>
-        <pre><code>Use $suede-deslop to clean [paste text]. Return the cleaned prose, the counted deslop report, and the 50-point score. Never change a fact; mark missing specifics with [AUTHOR: supply X].</code></pre>
+        <pre><code>Use $suede-deslop on [paste text]. If I ask for findings only, quote and explain the issues without rewriting. Otherwise make the minimum effective style edits, preserve facts, exact spans, voice, and house style, invent nothing, and return the cleaned prose with the deslop report and 50-point score.</code></pre>
       </section>
 
       <section class="panel">
@@ -223,7 +224,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-deslop .claude/skills/</code></pre>
     </section>
     <footer>
       <div class="shell">
-        <p class="footer-note">Suede Deslop is part of Suede Creator Skills: it strips the AI tells from finished prose, counts every cut, and scores the result before anything goes public. Facts stay yours; only the style changes.</p>
+        <p class="footer-note">Suede Deslop is part of Suede Creator Skills: it finds or removes slop without flattening voice, changing protected source material, inventing details, or making authorship claims.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">

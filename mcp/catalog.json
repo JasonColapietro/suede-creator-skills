@@ -514,8 +514,8 @@
       "area": "workflow",
       "specialty": "craft",
       "lane": "Design & copy",
-      "description": "Strip AI writing patterns from prose before it ships: throat-clearing, false agency, formulaic contrasts, passive voice, and metronomic rhythm, all scored against a merged kill list with a 50-point gate.",
-      "useWhen": "Copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated."
+      "description": "Context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Supports findings-only audits, protects supplied facts and exact spans, follows the active house style, invents nothing, and never treats writing patterns as proof of authorship.",
+      "useWhen": "Finished copy, a README, an email, a social post, or a doc needs a minimum-edit cleanup or a findings-only slop audit before it ships."
     },
     {
       "name": "suede-directory-submissions",

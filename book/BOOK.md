@@ -86,15 +86,15 @@ output when they are not in the room.
 
 ## A note on the prose
 
-This repo ships `suede-deslop`, a skill that strips AI writing patterns from text
-before it goes public: filler openers, manufactured enthusiasm, false agency,
-formulaic contrast, metronomic rhythm, and em dashes. It would be strange to ship
-that skill and then publish a book that trips every rule in it.
+This repo ships `suede-deslop`, a context-aware skill that finds or removes
+generic filler, manufactured emphasis, false agency, formulaic contrast, and
+metronomic rhythm without flattening deliberate voice. It would be strange to
+ship that skill and then publish a book that trips every rule in it.
 
-So the book was written under those constraints. The prose carries no em dashes.
-Quoted material from the repo keeps its own punctuation, because changing a
-quotation to fit a style rule is the kind of small dishonesty this pack exists to
-catch. If you find a violation anywhere else, the file to check is
+The book's house style uses no em dashes. Quoted material from the repo keeps its
+own punctuation, because changing a quotation to fit a style rule is the kind of
+small dishonesty this pack exists to catch. If you find a violation anywhere
+else, the file to check is
 `skills/suede-deslop/SKILL.md`.
 
 ## License and credit
@@ -191,7 +191,7 @@ frontmatter carrying a `name` and a `description`. Everything after the closing
 ```yaml
 ---
 name: suede-deslop
-description: "Suede Labs anti-slop pass: strip AI writing patterns from prose before anything goes public. ..."
+description: "Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler without flattening the author's voice. ..."
 ---
 ```
 
@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 74 skills fit
 
 Here is the objection that arrives immediately. The 74 `SKILL.md` files in this
-repo total 1,079,356 bytes. Loading all of them into every conversation would
+repo total 1,081,390 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 74 descriptions together come to 44,820 bytes. That is roughly a
+all 74 descriptions together come to 44,847 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -349,8 +349,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 74 files total 1,079,356 bytes;
-the 74 descriptions together are 44,820. The agent holds the small number and
+when the skill is not running. In this repo the 74 files total 1,081,390 bytes;
+the 74 descriptions together are 44,847. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -367,16 +367,17 @@ sentence exists because `suede-code-review` lives next door and produces
 something different, and without it an agent would pick between them by coin
 flip.
 
-`suede-deslop` does the same job in 512 characters:
+`suede-deslop` does the same job in 539 characters:
 
 ```text
-description: "Suede Labs anti-slop pass: strip AI writing patterns from prose
-before anything goes public. Em dashes, filler openers, manufactured enthusiasm,
-false agency, passive voice, formulaic structures, all of it. Use when copy, a
-README, an email, a social post, or a doc is about to ship, after a long
-AI-assisted writing session, or when text sounds fine but feels generated. NOT
-FOR: writing new copy (use suede-copy); changing or certifying facts, which must
-be checked against primary evidence before publication."
+description: "Suede Labs context-aware anti-slop pass for finished prose: find
+or remove generic filler, manufactured emphasis, false agency, and formulaic
+structure without flattening the author's voice. Use before copy, a README, an
+email, a social post, or a doc ships; after a long assisted-writing session; or
+when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use
+suede-copy); deciding whether a person or model wrote text; changing or
+certifying facts, which must be checked against primary evidence before
+publication."
 ```
 
 Three parts. What it does, the trigger conditions in the vocabulary a user
@@ -1757,24 +1758,26 @@ thing."), and the permission grant ("And that's okay.").
 paragraph landing on a punchy one-liner. The prose has a pulse you can set a
 watch to, which is what happens when nothing is being worked out on the page.
 
-This book was written under those bans. No em dashes appear in it, the triads
-were cut, and every paragraph that ended too neatly got a longer sentence
-appended until it stopped sounding like a slogan. Whether that produced better
-prose is yours to judge. It did produce prose that can be checked, which is a
-different property from being good and a necessary one if you want the quality
-to survive contact with an agent, a deadline, and a bad night.
+This book was written under a house style with no em dashes. Automatic triads
+were cut, and paragraphs that ended too neatly were varied until they stopped
+sounding like slogans. Those are contextual choices, not proof of authorship and
+not universal punctuation laws. Whether they produced better prose is yours to
+judge. They did produce prose that can be checked, which is a different property
+from being good and a necessary one if you want the quality to survive contact
+with an agent, a deadline, and a bad night.
 
 One boundary matters and the skill is strict about it: deslop edits style only.
-It never changes a fact, a number, a date, a name, or a price, and when a rewrite
-needs a specific the source did not contain, it inserts `[AUTHOR: supply X]`
-rather than inventing one. Style passes that quietly improve your statistics are
-how false claims enter a public page wearing better sentences.
+It never changes a fact, number, date, name, price, claim, qualifier, quotation,
+code sample, command, link, citation, or path. Missing evidence is flagged
+separately, never fixed by inventing or silently changing the supplied wording.
+Style passes that quietly improve your statistics are how false claims enter a
+public page wearing better sentences.
 
 ## The standard
 
 Every rule in this chapter started as somebody's preference. The 44px target,
-the 65 to 75 character measure, the reserved red, the ban on em dashes: none of
-them descended from first principles. Someone made a call.
+the 65 to 75 character measure, the reserved red, and this book's no-em-dash
+house style did not descend from first principles. Someone made a call.
 
 The difference is that the call got written down with a number attached, so it
 can be applied by a person who was not in the room, enforced by a validator, and
@@ -2771,7 +2774,7 @@ The frontmatter is two fields.
 ```yaml
 ---
 name: suede-deslop
-description: "Strip AI writing patterns from prose before anything goes public. Em dashes, filler openers, manufactured enthusiasm, false agency, passive voice, formulaic structures, all of it. Use when copy, a README, an email, a social post, or a doc is about to ship, after a long AI-assisted writing session, or when text sounds fine but feels generated. NOT FOR: writing new copy (use suede-copy); changing or certifying facts, which must be checked against primary evidence before publication."
+description: "Context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which must be checked against primary evidence before publication."
 ---
 ```
 

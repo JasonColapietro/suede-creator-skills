@@ -168,7 +168,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | [`johnny-suede-write`](skills/johnny-suede-write) | Full writing lane: structure, persuasion frameworks, anti-slop gate, copy score |
 | [`suede-design`](skills/suede-design) | Design laws, dark-mode tokens, fluid type, component rules, vetted component sources with an adoption checklist |
 | [`suede-copy`](skills/suede-copy) | Conversion copy: headline formulas, A/B variants, anti-slop gate |
-| [`suede-deslop`](skills/suede-deslop) | Strips AI writing patterns from prose before it ships: merged kill list, structure fixes, active voice, varied rhythm, and a 50-point score gate |
+| [`suede-deslop`](skills/suede-deslop) | Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, with a 50-point score gate |
 | [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/AI-EO, metadata, schema, internal-link, and intent audit |
 | [`suede-visibility-grader`](skills/suede-visibility-grader) | A–F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |
 | [`suede-site-alchemy`](skills/suede-site-alchemy) | Funnel analysis, friction audit, conversion math, ranked quick-wins |
