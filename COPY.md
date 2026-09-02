@@ -1,79 +1,61 @@
 # Suede Creator Skills Copy Bank
 
-Use this copy when linking, sharing, explaining, or documenting Suede Creator
-Skills. Lead with the real mechanism: portable agent context, linked
-preferences, Suedify reference-site restyling,
-coordinated agent teams, anti-slop copywriting, SEO/AEO/AI EO, visibility
-grading, A-F code grading, GitHub Pages polish, AI evals, launch packaging,
-optional MCP, iOS/product checks, artist campaigns, music/IP metadata, and
-creator rights utilities. Keep claims public-safe. The skills do not upload
-files by default, clear rights, write to a registry, distribute music, approve
-payouts, or promise outcomes.
+Paste any block here into a post or a README and it will hold. Every claim
+points at something you can open on main: a skill folder, or the commit that
+changed it. Lead with the mechanism rather than the adjective. Keep claims
+public-safe: the skills do not upload files by default, clear rights, write to
+a registry, distribute music, approve payouts, or promise outcomes.
 
 ## Repo Copy
 
 ### One-line description
 
-Free Codex and Claude Code skills for portable
-agent context, Suedify website restyling, design, anti-slop copywriting,
-SEO/AEO/AI EO, GitHub Pages polish, visibility grading, A-F code grading,
-coordinated agent teams, AI evals, QA, iOS/product checks, artist campaigns,
-music/IP metadata, and creator utility workflows.
+MIT-licensed agent skills for Claude Code and Codex. One of them grades a
+staged diff A-F across seven lanes, where the weakest lane caps the grade.
+Another argued $448.31 back out of a real Amazon account.
 
 ### Short description
 
-Suede Creator Skills help agents carry preferences across sessions, take broad
-outcomes end to end, improve websites, rewrite copy, audit SEO/AEO/AI EO, polish
-GitHub Pages, grade visibility and CTA strength, adapt reference-site style
-safely, review code A-F, coordinate agent teams with shared context, design AI
-evals, package public docs, run evidence-backed rights utilities, and support
-creator workflows.
+Suede Creator Skills is the folder of skills that runs Suede Labs, published as
+is. Every skill is a plain SKILL.md file you read before you run it, and every
+description carries a NOT FOR line naming the sibling that should win instead.
 
 ### Component stack copy
 
-Suede is the agent workflow that evolves while you use it. It links to your
-preferences instead of bloating one giant memory page, Suedifies a target site
-from a reference URL, turns web/product work into iOS-ready copy and App Store
-metadata, coordinates agent teams through shared evidence, audits SEO/AEO/GEO/AI
-EO, scores visibility at the schema and answer-engine layer, grades code and
-project readiness, packages music/IP material, and uses MCP only when structured
-discovery or QA actually helps.
+Suede evolves while you use it. Capabilities load as inspectable SKILL.md
+folders instead of piling into one memory page that every prompt has to carry.
+An installed skill costs its name and its description. The body loads only when
+a request matches, so adding a skill makes the pack sharper instead of heavier.
 
 ### Suede Graph Flo XR explanation
 
-Suede Graph Flo XR searches competing implementation plans for one multi-file repo
-change. It generates, scores, prunes, refutes, improves, aggregates, and
-selects a single evidence-backed winner before that winner alone can change
-files. The user chooses a `light` (55), `standard` (110), or `deep` (200)
-agent ceiling before launch. It reads production for evidence but never deploys
-or claims a live release.
+Use Suede Graph Flo XR when the outcome is broad, authorized, and worth maximum
+useful effort. It writes competing plans for one multi-file repo change, scores
+them, prunes, refutes the survivors, and lets only the winner change files. The
+user picks a `light` (55), `standard` (110), or `deep` (200) call ceiling before
+launch. It reads production for evidence and never deploys, and it does not
+expand permissions, spend authority, or model limits.
 ### Short component line
 
-Linked preferences, Suedify, iOS packaging, communicating agent teams,
-SEO/AEO/GEO/AI EO, schema visibility scoring, A-F code and project grades,
-music/IP utilities, split notes, MCP tools, and Cue Suede feedback loops in one
-portable skill pack.
+Inspectable SKILL.md folders, NOT FOR routing lines, an A-F ship grade with
+Instant-F triggers, agent lanes that will not hand off without evidence, and a
+dependency-free MCP server. One pack, readable before you run it.
 
 ### Full description
 
-Suede Creator Skills is a public skill pack for builders, designers, founders,
-creators, agencies, and AI power users. It ships public `SKILL.md` folders:
-one umbrella workflow (`suede-workflow-skills`), the workflow skills
-(`johnny-suede-write`, `johnny-suede-design`, `suede-code`,
-`suede-code-grader`, `suede-code-review`, `suede-copy`, `suede-design`, `suede-deslop`,
-`suede-agent-teams`, `suede-ci-gate`,
-`suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`,
-`suede-ai-eval`, `suede-recommend-next-action`, `suede-launch-packaging`,
-`suede-mcp-qa`, `site-to-ios-app`, `android-app-factory`), 5 creator skills
-(`suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`,
-`suede-rights-passport`, `suede-rights-audit`), and 2 consumer-recovery skills
-(`amazon-returns-recovery`, `subscription-recovery`).
+Suede Creator Skills is the folder of skills that runs Suede Labs, published as
+is. Every skill is a plain `SKILL.md` file for Claude Code and Codex, so you
+read the method before you run it, and every description carries a NOT FOR line
+naming the sibling that should win instead. The range is the point: the same
+pack grades a staged diff A-F across seven lanes and argued $448.31 back out of
+a real Amazon account, including a refund denied after the return window closed.
+It is free under MIT for the original work, with no binaries and no telemetry.
 
 ## GitHub Pages Copy
 
 ### Page title
 
-Suede Creator Skills | 70 Open-Source Agent Skills
+Suede Creator Skills | 74 Open-Source Agent Skills
 
 ### Meta description
 
@@ -87,19 +69,15 @@ Stop prompting your agent like it has amnesia.
 
 ### Subhead
 
-Install the Suede pack that gives agents portable context:
-linked preferences, reference-site Suedify, GitHub Pages polish, sharper copy,
-SEO/AEO/AI EO, AI evals, a scored next-action recommender, visibility and
-CTA grades, A-F code review, coordinated agent teams, install-path checks,
-iOS/Android app shipping, artist campaigns, and music/IP workflows.
+Your agent holds every skill name and opens one body at a time. Every
+description names the sibling skill that should win instead, so the pack routes
+itself instead of guessing.
 
 ### Hero proof line
 
-Invoke `suede-workflow-skills` when the agent should route across the whole
-workflow: taste, copy, SEO/AEO/GEO/AI EO, schema checks, code review, project
-grades, MCP scaffolds, iOS packaging, music/IP prep, and the Cue Suede feedback
-loop. Invoke Johnny Suede Write, Design/Create, or Suede Code when you want one
-exact lane.
+Invoke `suede-workflow-skills` when the work crosses lanes, and name one skill
+when it does not. Routing is not guesswork: every skill description carries a
+NOT FOR line that hands the request to the sibling that should beat it.
 
 ### Primary CTA
 
@@ -107,42 +85,38 @@ Install the skills
 
 ### Secondary CTAs
 
-- Read the docs
-- Open the GitHub repo
-- Install the public skill
-- Use the MCP
-- Run Suedify
-- Audit SEO/AEO/AI EO
-- Improve a site
-- Rewrite public copy
+- Use suede-code to review my staged diff and give it an A-F ship grade
+- List the Suede skills that match this task and name the one that should lose
+- Run a copy audit on this page and return the exact rewrites
+- Open the skill folder and read the file before you trust it
+- Build a QA checklist and stop at the first gate I cannot prove
 
 ## Public Installs And MCP Copy
 
 ### One-line description
 
-Install Suede skills from the public GitHub repo, or use the Suede Skills MCP
-for structured skill discovery, install guidance, SEO/AEO/AI EO copy audits,
-visibility and code grading scaffolds, GitHub Pages QA, and repeatable
-checklists.
+Install the skills from the public GitHub repo. The MCP server is optional: a
+dependency-free stdio server with 9 tools, 7 resources, and 5 prompts, and it
+ships no binaries and no telemetry.
 
 ### Page hero
 
-Install public Suede skills from GitHub. Use MCP when it helps.
+Add the marketplace. Install the pack. The folder that runs Suede Labs is on
+your machine in about 30 seconds.
 
 ### Page subhead
 
-The Suede Skills MCP gives agents structured access to the skill catalog,
-public install options, full SEO/AEO/AI EO copy audit scaffolds, and multi-lane
-QA checklists without turning MCP into a checkbox.
+The MCP server gives an agent structured access to the catalog, the public
+install paths, the copy audit scaffolds, and the QA checklists. It speaks
+JSON-RPC over stdio, with no dependencies and no network calls.
 
 ### CTA options
 
-- Install the public skill
-- Use the MCP
-- List Suede skills
-- Run an SEO/AEO/AI EO copy audit
-- Grade visibility and CTA clarity
-- Build a QA checklist
+- Use suede-code to review my staged diff and give it an A-F ship grade
+- List the Suede skills that match this task and name the one that should lose
+- Run a copy audit on this page and return the exact rewrites
+- Grade this page A-F and tell me which cap decided the letter
+- Build a QA checklist and stop at the first gate I cannot prove
 
 ### Safety note
 
@@ -156,19 +130,17 @@ Canonical source: [`PROMO.md`](PROMO.md)
 
 ### Core explanation
 
-Suede gives AI agents a portable product workflow: preferences, linked context,
-design, copywriting, SEO/AEO/AI EO, Suedify reference-site restyling, GitHub
-Pages polish, visibility grading, A-F code review, QA, public skill installs,
-local plugin notes, and MCP-assisted discovery.
+Suede gives an agent a method instead of a prompt. Each capability is a plain
+SKILL.md folder the agent opens only when a request matches it, which is why the
+pack can grow without costing more context on every turn.
 
 ### Best overall explanation
 
-Suede is the workflow layer for AI agents that need to ship better public
-product work. It packages linked preferences, Suedify, design direction,
-copywriting, SEO/AEO/AI EO, GitHub Pages polish, site alchemy, visibility
-grading, A-F code grading, coordinated agent teams, AI evals, QA, public skill
-installs, progressive feedback handling, and optional MCP support into one
-portable Suede system.
+Suede Creator Skills is the folder of skills that runs Suede Labs, published as
+is. The range is the point: the same pack grades a staged diff A-F across seven
+lanes and argued $448.31 back out of a real Amazon account, including a refund
+denied after the return window closed. It is free under MIT for the original
+work, with no binaries and no telemetry.
 
 ### Suedify explanation
 
@@ -179,33 +151,37 @@ checks.
 
 ### GitHub Pages proof
 
-The Suede Creator Skills site is not a plain docs dump. The GitHub Pages
-surface is part of the product proof: a polished public landing page, install
-guide, skill catalog, copy bank, MCP page, sitemap, schema, Open Graph metadata,
-mobile-tested layout, and visible Jason Colapietro attribution generated from
-the same repo as the skills.
+This site is the GitHub Pages surface generated from the public
+suede-creator-skills repo, not a separate marketing site. The page itself is the
+proof. It ships from the same history as the skills it describes: one author, and every change is a commit on main.
 
 ### Visibility grader explanation
 
-Suede Visibility Grader checks whether a public page can be found, understood,
-trusted, cited by AI systems, and acted on. It returns A-F grades for
-findability, first-screen clarity, CTA pull, proof, AI readability, design
-signal, and the next fixes.
+Suede Visibility Grader ends in a letter. It reads a public page the way a
+person and an answer engine both would, grading findability, first-screen
+clarity, CTA pull, proof, and AI readability. Caps beat the average: no live
+inspection holds the page at C, and a broken primary CTA holds it at D.
 
 ### Code grade explanation
 
-Suede Code Grader gives A-F grades for correctness, security, data and
-state handling, UX and release behavior, tests, deploy readiness,
-and ship risk. The grade includes why it landed there and the required upgrades
-before ship. Suede Code Review is the deeper findings and fix-brief workflow.
+Use suede-code when a diff needs more than a polite review. It grades a staged
+diff A-F across seven lanes, from correctness and security through tests and
+deploy readiness, and the weakest lane caps the grade. A hardcoded secret, or an
+auth check you can walk around with a request param, locks it at F with the file
+and the line, and no other lane lifts it. Suede Code Review is the deeper
+findings and fix-brief workflow.
 
 ### Founder context
 
-Suede was built from live pressure, not theory. The workflow grew out of
-repeated agent failures that got turned into reusable rules. The core
-conviction: public work is not done until it is findable across Google, Gemini,
-and AI result surfaces, readable to AI systems, backed by proof, and clear
-enough for a real visitor to act. Suede's founder is
+Jason hired and fired six marketing firms over Suede's life. Not one registered
+Suede's property in Google Search Console, and he did not even know the tool
+existed until he got close enough to the work to see what had been skipped. You
+learn how poorly things were done when you can finally get involved, and no one
+will ever care as much as the founder/operator who has to live with the result.
+Suede Creator Skills are those misses written down as methods, and they now run
+30+ live sites and 8 iOS apps from one terminal with zero employees.
+
+Suede's founder is
 [Jason Colapietro](https://suedeai.ai/founder), a published author and Forbes
 contributor building programmable IP and creator ownership infrastructure.
 
@@ -245,33 +221,34 @@ Choose a skill
 
 ### One-line description
 
-Package a creator folder into a Suede-ready rights passport with provenance,
-credits, splits, license notes, intake JSON, and missing-info reports.
+Package a creator folder into a local rights and provenance bundle: credits,
+splits, license notes, and a report of what is missing. It runs offline, writes
+local files, and leaves an unknown rights fact marked unknown.
 
 ### Page hero
 
-Create a rights passport before the work leaves your machine.
+Create a local rights package before the work leaves your machine.
 
 ### Page subhead
 
-Suede Rights Passport turns messy creator materials into a structured transfer
-package for rights review, provenance, registry readiness, royalty routing,
-licensing, and agent commerce prep.
+It turns a messy creator folder into one structured package for rights review:
+credits, splits, license notes, and provenance, with every unknown left marked
+unknown. It organizes evidence and does not clear rights.
 
 ### Best for
 
-- Artists preparing a catalog for Suede intake.
+- Artists packaging a catalog before it goes anywhere.
 - Labels cleaning up credits, splits, samples, and provenance.
-- Managers packaging a release for review.
+- Managers assembling a release for review.
 - Developers building agent-readable music workflows.
 
 ### CTA options
 
-- Create a rights passport
-- View the skill folder
-- Run the package script
-- Read the intake schema
-- Pair with the release linter
+- Create a rights package for this folder and list what is missing
+- Open the skill folder and read the file before you trust it
+- Run the package script against a real release
+- Read the schema the package writes
+- Pair it with the release linter and close the gaps it names
 
 ### Safety note
 
@@ -282,8 +259,9 @@ upload files, write to a registry, or confirm ownership without creator proof.
 
 ### One-line description
 
-Audit a release folder for missing metadata, artwork, masters, lyrics, stems,
-credits, splits, sample status, provenance notes, and Suede intake blockers.
+A release with missing splits or an unclear sample status becomes a rights
+problem after it ships, not before. The linter reads the folder and writes the
+gap list while the release is still yours to fix.
 
 ### Page hero
 
@@ -291,9 +269,9 @@ Find release gaps before they become rights problems.
 
 ### Page subhead
 
-Suede Release Linter scans a song, album, catalog, stem pack, or media
-folder and writes a human-readable report plus JSON output for release cleanup,
-licensing prep, and Suede intake.
+It scans a song, album, catalog, stem pack, or media folder and writes a
+human-readable report plus JSON output for release cleanup and licensing prep.
+A clean report is a draft until an operator reviews it.
 
 ### Best for
 
@@ -304,10 +282,10 @@ licensing prep, and Suede intake.
 
 ### CTA options
 
-- Audit a release folder
-- View the lint script
-- Read the lint rules
-- Create a passport package
+- Audit this release folder and rank the gaps by what blocks the release
+- Read the lint rules in the repo and disagree with them before you run the lint
+- Open the lint script and see exactly what it reads
+- Create a rights package once the gaps are closed
 - Open the report templates
 
 ### Safety note
@@ -330,8 +308,8 @@ The pack's contract negotiator, proven outside a repo.
 
 Amazon Returns Recovery scans order history and Amazon-billed subscriptions
 for money quietly held or billed, reports every find, and drives Amazon's
-live chat to get fees waived, refunds issued, or subscriptions canceled —
-only after the account owner confirms.
+live chat to get fees waived, refunds issued, or subscriptions canceled, only
+after the account owner confirms.
 
 ### Best for
 
@@ -354,7 +332,7 @@ only after the account owner confirms.
 
 This skill surfaces charges and drafts the case; it does not dispute or
 cancel anything without the account owner confirming first. Real recoveries
-documented, not guaranteed — Amazon associates can and do decline an ask.
+documented, not guaranteed: Amazon associates can and do decline an ask.
 
 ## Subscription Recovery Copy
 
@@ -370,10 +348,10 @@ The same contract negotiator, generalized beyond Amazon.
 
 ### Page subhead
 
-Subscription Recovery checks the highest-leverage subscription hubs first,
-then a shared statement and a direct ask, to find what's still being
-charged — then cancels what's unused or negotiates a refund for a
-genuinely forgotten charge.
+Subscription Recovery checks the biggest subscription hubs first, then a shared
+statement and a direct ask, to find what is still being charged. It cancels what
+is unused or negotiates a refund for a forgotten charge, once the account owner
+confirms.
 
 ### Best for
 
@@ -416,11 +394,10 @@ CTA: Install for Claude Code
 
 ### What are Suede Creator Skills?
 
-Suede Creator Skills are public `SKILL.md` folders for design, copywriting,
-mobile and product surfaces, Suede SEO/AEO/AI EO, Suedify website restyling,
-visibility grading, A-F code grading, QA, artist campaign, and creator
-workflows. They help agents work from a repeatable Suede process instead of a
-blank prompt.
+Suede Creator Skills are public `SKILL.md` folders for Claude Code and Codex.
+They are the same files that run Suede Labs, published as is, so an agent works
+from a written method instead of a blank prompt. Every description carries a NOT
+FOR line naming the sibling skill that should win instead.
 
 ### Do these skills upload my music?
 
@@ -434,24 +411,20 @@ manager, label, or legal reviewer still needs to confirm rights.
 
 ### Which skill should I run first?
 
-Run `johnny-suede-write` when you want the whole writing stack in one mode:
-copy, company voice, product and mobile copy, product listing copy, SEO/AEO/AI EO, CTAs,
-launch copy, and anti-slop line editing. Run
-`johnny-suede-design` when you want the whole design stack, including Suedify,
-mobile and product surfaces, product screenshots, visual QA, company voice, and
-copy. Run `suede-seo-audit` for search, answer intent, and metadata. Run
-`suede-visibility-grader` when a page needs A-F visibility and CTA grades. Run
-`suede-code` when a change needs code review and A-F grading. Prompted only.
-Run `suede-ci-gate` when you need a CI gate that blocks merges on failing
-checks. Run `suede-campaign-in-a-box` for a full artist campaign from one skill.
+Run `suede-code` when a change needs review and an A-F ship grade. Run
+`johnny-suede-write` for the whole writing stack, or `johnny-suede-design` for
+the whole design stack including Suedify and visual QA. Run `suede-seo-audit`
+for search and answer intent, and `suede-visibility-grader` when a page needs an
+A-F visibility read. Run `suede-ci-gate` when the verdict has to block a merge,
+and `suede-campaign-in-a-box` for a full artist campaign from one skill.
 
 ## Cracked Devs Page Copy
 
 ### One-line description
 
-The Agentic Adderall Stack: four orchestration skills — ship, agent-teams,
-workflow-skills, recommend-next-action — indexed as a validator-pinned
-`stacks` entry in the catalog and served per-profile over MCP.
+The Agentic Adderall Stack: four orchestration skills (ship, agent-teams,
+workflow-skills, recommend-next-action) indexed as a validator-pinned `stacks`
+entry in the catalog and served per-profile over MCP.
 
 ### Page subhead
 
@@ -463,34 +436,35 @@ and hands it back as a runnable prompt.
 
 ### Technical note
 
-Stacks are a cross-cutting overlay on the specialty partition, not a seventh
-specialty. The partition stays total, the validator fails CI when the stack's
-catalog membership and its page drift, and the MCP server scopes membership per
-profile. Cost and authority stay on the label: suede-graph-flo-xr's Suede Thought Graph
-search generates competing plans, caps light/standard/deep at 55/110/200 calls,
-and lets only the selected winner mutate. Production inspection is read-only
-and it never deploys. High-volume independent work stays in a separate private
-worker-fleet pass.
+Cost and authority stay on the label. The Suede Thought Graph search inside
+suede-graph-flo-xr writes competing plans, caps light, standard, and deep at 55,
+110, and 200 calls, and lets only the selected winner mutate. Production
+inspection is read-only and it never deploys. Stacks are a cross-cutting overlay
+on the specialty partition, not a seventh specialty: the partition stays total,
+the validator fails CI when the stack's catalog membership and its page drift,
+and the MCP server scopes membership per profile. High-volume independent work
+stays in a separate private worker-fleet pass.
 
 ## Social Copy
 
 ### Short post
 
-Suede Creator Skills are live: public agent skills for design,
-copywriting, AI evals, SEO/AEO/AI EO, Suedify website restyling, visibility
-grading, code review, CI gating, iOS/Android app shipping, launch packaging,
-artist campaigns, and creator rights workflows.
+Suede Creator Skills: open-source agent skills for Claude Code and Codex. One of
+them grades a staged diff A-F across seven lanes, and the weakest lane caps the
+grade. One author, and every skill folder gets edited when the practice changes.
 
 Docs: https://skills.suedeai.ai/skills/
 
 ### Builder post
 
-I published Suede Creator Skills, a public `SKILL.md` pack for Codex and Claude
-Code. It includes an umbrella workflow plus focused skills for design QA,
-copywriting, SEO/AEO/AI EO audits, site alchemy, visibility grading, code
-review, CI gating, launch packaging, artist campaigns, and creator rights tools.
-The utility tools run offline, write local reports, and keep private files off
-the network.
+I published Suede Creator Skills, the public `SKILL.md` pack for Codex and
+Claude Code. It is the same folder that runs Suede Labs, published as is.
+
+One skill grades a staged diff A-F across seven lanes, and a hardcoded secret
+locks the whole thing at F with the file and the line. Another argued $448.31
+back out of a real Amazon account, including a refund denied after the return
+window closed. The utility tools run offline, write local reports, and keep
+private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills
 
@@ -503,12 +477,13 @@ worked or missed.
 
 ### Cracked stack post
 
-New in Suede Creator Skills: the Agentic Adderall Stack — the pack's four
+The label is a joke. The mechanism is a DAG.
+
+New in Suede Creator Skills: the Agentic Adderall Stack, the pack's four
 orchestration skills (ship, agent-teams, workflow-skills,
-recommend-next-action) indexed as a validator-pinned `stacks`
-entry in the catalog. The label is a joke; the mechanism is a DAG: one
-controller, disjoint lanes, adversarial refute inside the pass, an evidence
-gate at the close.
+recommend-next-action) indexed as a validator-pinned `stacks` entry in the
+catalog. One controller, disjoint lanes, adversarial refute inside the pass, an
+evidence gate at the close.
 
 Page: https://skills.suedeai.ai/cracked.html
 
@@ -547,7 +522,8 @@ Page: https://skills.suedeai.ai/cracked.html
 
 Use these lines when the copy needs a safety guard:
 
-- Public v1 runs offline and writes local files.
+- Public v1 runs offline and writes local files. It ships no binaries and no
+  telemetry.
 - MCP returns structured context and checklists. It does not perform release,
   registry, payout, legal, or publishing actions on its own.
 - Generated reports are drafts until a creator or operator reviews them.

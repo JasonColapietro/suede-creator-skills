@@ -1,0 +1,15 @@
+# pip constraints for the HOL Plugin Scanner workflow (.github/workflows/hol-plugin-scanner.yml).
+# The workflow exports PIP_CONSTRAINT pointing here, so pip applies these pins inside the
+# action's own "Install scanner" step.
+#
+# Why: the action bundle installs plugin-scanner by exact version and SHA256, but that wheel
+# declares its Cisco dependency as the open range `cisco-ai-skill-scanner~=2.0.12`, so every
+# run resolved whatever 2.0.x release PyPI served that day. Cisco 2.0.14 (published
+# 2026-09-01) added the UNICODE_OBFUSCATED_INSTRUCTION rule, which treats three or more
+# non-ASCII characters in a Markdown file as obfuscation and reported HIGH findings on em
+# dashes, arrows and multiplication signs in four prose files. Pull requests went red with
+# no content change. 2.0.13 is the release this tree was last reviewed against.
+#
+# Moving this pin is a deliberate change: re-run the scan locally against the new release
+# and review each new finding before editing the version below. See SECURITY.md.
+cisco-ai-skill-scanner==2.0.13
