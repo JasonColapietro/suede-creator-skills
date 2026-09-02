@@ -24,6 +24,16 @@ jobs:
 
       - name: HOL Plugin Scanner
         uses: hashgraph-online/ai-plugin-scanner-action@dbc0fe534ab46276bf8f9edacd51ebd8e23378fe # v1.2.561
+        # This bundle pins plugin-scanner 3.0.30 by version and SHA256, but the
+        # wheel leaves cisco-ai-skill-scanner as an open ~=2.0.12 range, so the
+        # deep skill scan silently tracked PyPI. PIP_CONSTRAINT pins it to the
+        # release this tree was reviewed against; see the constraints file and
+        # SECURITY.md. When bumping the action, re-run the scan locally first:
+        # newer bundles install the Cisco scanner only with install_cisco: true,
+        # carry their own hash lock, and ignore the repository's
+        # .plugin-scanner.toml exceptions unless trust_repository_policy: true.
+        env:
+          PIP_CONSTRAINT: ${{ github.workspace }}/.github/hol-scanner-constraints.txt
         with:
           plugin_dir: "."
           mode: scan
