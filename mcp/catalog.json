@@ -514,7 +514,7 @@
       "area": "workflow",
       "specialty": "craft",
       "lane": "Design & copy",
-      "description": "Context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Supports findings-only audits, protects supplied facts and exact spans, follows the active house style, invents nothing, and never treats writing patterns as proof of authorship.",
+      "description": "Suede Slop Stop: Suede Labs context-aware anti-slop pass for finished prose. Find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which require primary evidence.",
       "useWhen": "Finished copy, a README, an email, a social post, or a doc needs a minimum-edit cleanup or a findings-only slop audit before it ships."
     },
     {

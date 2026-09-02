@@ -1,7 +1,7 @@
 export const meta = {
   name: 'suede-ship-copy',
   description: 'Copy-only DAG: intake -> multi-lens research -> claim audit -> angle panel -> section map with message ownership -> disjoint section writers -> assemble -> four-lens review -> adversarial refute -> deslop -> graphic spec + channel package -> publish-readiness gate -> evidence handoff',
-  whenToUse: 'A piece of copy strangers will read and that has to be true. Pass args: { piece, surface, sources?, given?, audience?, liveUrl?, outDir?, mustSay?, wordBudget? }. `given` is an array of facts the requester states themselves; they enter the permitted claim set and are never audited.',
+  whenToUse: 'A piece of copy strangers will read and that has to be true. Pass args: { piece, surface, sources?, given?, audience?, liveUrl?, outDir?, mustSay?, wordBudget?, houseStyle? }. houseStyle accepts guidance and emDashes (allow or avoid). `given` is an array of facts the requester states themselves; they enter the permitted claim set and are never audited.',
   phases: [
     { title: 'Intake', detail: 'resolve sources, capture the currently published text, voice refs, format law, hazards' },
     { title: 'Research', detail: 'five blind lenses: product truth, audience, market, voice, surface law' },
@@ -36,6 +36,20 @@ const LIVE = (A && A.liveUrl) || null
 const OUT = (A && A.outDir) || null
 const MUST_SAY = (A && A.mustSay) || []
 const BUDGET = (A && A.wordBudget) || null
+const HOUSE_STYLE = (A && A.houseStyle) ?? {}
+if (!HOUSE_STYLE || typeof HOUSE_STYLE !== 'object' || Array.isArray(HOUSE_STYLE) ||
+    (HOUSE_STYLE.guidance !== undefined && typeof HOUSE_STYLE.guidance !== 'string') ||
+    (HOUSE_STYLE.emDashes !== undefined && !['allow', 'avoid'].includes(HOUSE_STYLE.emDashes))) {
+  throw new Error('houseStyle must be { guidance?: string, emDashes?: "allow" | "avoid" }')
+}
+const EM_DASH_POLICY = HOUSE_STYLE.emDashes || 'avoid'
+const STYLE_INSTRUCTIONS = `Active house style: ${JSON.stringify(HOUSE_STYLE)}.
+Supplied guidance overrides inferred voice and Suede defaults. Em dashes: ${EM_DASH_POLICY}
+in newly written prose. Preserve all protected strings, quotes, code, commands, links,
+citations, paths, and requester-supplied wording regardless of punctuation policy.
+Preserve deliberate fragments, humor, technical vocabulary, and meaning-bearing adverbs;
+use passive voice when the actor is unknown, immaterial, or conventional for this genre.
+Writing patterns describe quality, never evidence of human or machine authorship.`
 // Total AGENT budget — distinct from the word budget above. The caller is required to
 // ask the user which range they want before launching (see SKILL.md); this default
 // exists so a caller that forgets gets the middle range rather than the widest.
@@ -444,6 +458,7 @@ ${LIVE ? `Live surface: ${LIVE}` : 'Live surface: not supplied — discover it i
 ${MUST_SAY.length ? `Strings that must survive byte-exact: ${JSON.stringify(MUST_SAY)}` : ''}
 ${GIVEN.length ? `Facts the requester states as given: ${JSON.stringify(GIVEN)}` : ''}
 ${OUT ? `Requested output directory: ${OUT}` : ''}
+${STYLE_INSTRUCTIONS}
 
 You are INTAKE. Read-only reconnaissance. Write nothing except by reporting where output will go.
 
@@ -477,7 +492,8 @@ You are INTAKE. Read-only reconnaissance. Write nothing except by reporting wher
 
 5. PROTECTED VERBATIM. Strings that must survive byte-exact into the final draft: the legal
    product name, trademark forms, price strings, license lines, disclaimer sentences, plus
-   anything the requester listed above.
+   anything the requester listed above. Include quotations, qualifiers attached to exact
+   claims, code, commands, links, citations, and paths that the piece must reproduce.
 
 6. SURFACE LAW. The hard format limits for a ${SURFACE}: every field and its real limit
    (chars/words/lines). Meta description, subject line, preview text, App Store subtitle,
@@ -665,8 +681,9 @@ sell. Constraints here are: do not claim X, three rivals already own that senten
 ${intake.voiceRefs.join(', ') || '(none found by intake — search the repo and the live site for shipped copy before giving up)'}
 Measure, do not describe: typical sentence length and its range, paragraph length, whether it
 uses contractions, second person, questions, lists, headers, humor. Find the recurring house
-constructions and the words this brand never uses. Record punctuation law — this estate uses
-NO em dashes anywhere, ever. Facts are "average sentence 13 words, range 4-26 (index.html:40-70)".
+constructions and the words this brand never uses. Record punctuation law.
+${STYLE_INSTRUCTIONS}
+Facts are "average sentence 13 words, range 4-26 (index.html:40-70)".
 Constraints are the constructions that would read as someone else writing.`,
   },
   {
@@ -823,7 +840,8 @@ Rules for every angle:
   set competitorCanSayThis:true and say why you could not do better. That is a failing grade,
   not a formatting field.
 - Name the objection that actually kills this decision, and answer it with a claim from the list.
-- No em dashes. No superlatives you cannot source.`
+- ${STYLE_INSTRUCTIONS}
+- No superlatives you cannot source.`
 
 const ANGLE_POSTURES = [
   `Posture: PROBLEM FIRST. Open on the reader's current failing situation and the cost of
@@ -1012,15 +1030,10 @@ ${JSON.stringify(plan.sections.filter((_, j) => j !== i).map(x => ({ name: x.nam
 VOICE — measured from this brand's shipped copy:
 ${JSON.stringify(voiceRules)}
 
-House rules, non-negotiable:
-- No em dashes anywhere.
-- No filler openers: "Here's the thing", "Let's be honest", "In today's", "At its core",
-  "It's worth noting", "Picture this".
-- No jargon verbs: leverage, utilize, unlock, unleash, empower, elevate, transform, delve,
-  navigate, seamless, robust, powerful, journey, landscape, ecosystem.
-- Active voice. Vary sentence length; a metronome is a tell.
-- No line written to be screenshotted. If it sounds quotable, it sounds written.
-- Specifics over adjectives: the number, the name, the step count.
+${STYLE_INSTRUCTIONS}
+Write concrete actions supported by the permitted claims, with varied sentence lengths.
+The later Suede Slop Stop pass owns pattern cleanup; do not force word substitutions
+that alter technical meaning, source wording, or the supplied voice.
 
 Return only the prose in "text". No headings-about-headings, no commentary, no "in this section".
 
@@ -1037,7 +1050,10 @@ Also return:
 
 const sections = plan.sections.map((s, i) => ({ section: s, out: drafted[i] }))
 const stalled = sections.filter(x => !x.out || (x.out.state !== 'done' && x.out.state !== 'done-with-concerns'))
-const placeholders = sections.flatMap(x => (x.out && x.out.placeholders) || [])
+const placeholders = sections.flatMap(x => [
+  ...((x.out && x.out.placeholders) || []),
+  ...(((x.out && x.out.text) || '').match(/\[AUTHOR[^\]]*\]/gi) || []),
+])
 if (stalled.length) log(`${stalled.length} section(s) stalled: ${stalled.map(x => `${x.section.name}(${x.out ? x.out.state : 'no return'})`).join(', ')}`)
 if (placeholders.length) log(`${placeholders.length} author placeholder(s) left by writers`)
 
@@ -1053,6 +1069,7 @@ Order and jobs: ${JSON.stringify(plan.sections.map(s => ({ name: s.name, job: s.
 ${BUDGET ? `Total word budget: ${BUDGET}` : ''}
 Surface law: ${JSON.stringify(intake.surfaceLaw)}
 Must survive byte-exact: ${JSON.stringify(protectedVerbatim)}
+${STYLE_INSTRUCTIONS}
 
 Sections:
 ${sections.map(x => `--- ${x.section.name} ---\n${(x.out && x.out.text) || '[SECTION MISSING — writer returned ' + ((x.out && x.out.state) || 'nothing') + ']'}`).join('\n\n')}
@@ -1139,19 +1156,20 @@ publish verbatim? Quote that too.`,
   {
     key: 'slop',
     effort: 'medium',
-    prompt: `Lens: SLOP AND VOICE. Machine tells and house-voice violations.
-Quote every one: em dashes, filler openers, "the truth is", "it's worth noting", "at its
-core", "let that sink in"; jargon verbs (leverage, utilize, unlock, unleash, empower, elevate,
-transform, delve, navigate); blanket adjectives (robust, seamless, powerful, comprehensive);
-adverb crutches (genuinely, truly, literally, incredibly, seamlessly, fundamentally); the
-rule-of-three triad; the "not just X, but Y" construction; the manufactured contrast; the
-line written to be screenshotted; meta-commentary that announces the piece's own structure;
-passive voice where an actor exists; metronomic sentence rhythm.
+    prompt: `Lens: SLOP AND VOICE. Use Suede Slop Stop in findings-only mode.
+Load the canonical suede-deslop/SKILL.md and its references/kill-list.md from the installed
+Suede pack (repository paths: skills/suede-deslop/SKILL.md and
+skills/suede-deslop/references/kill-list.md). Apply that method; do not invent a substitute
+if it is unavailable. Report the missing reference as a review limitation.
+Quote actual weaknesses in context, distinguish clear defects from voice judgment calls,
+and leave the draft unchanged. Return this workflow's findings schema.
+${STYLE_INSTRUCTIONS}
 
 Against this brand's measured voice: ${JSON.stringify(voiceRules)}
 And the phrases the market has worn out, per the market lens: ${JSON.stringify(constraints.filter(c => /competitor|rival|everyone|table stakes|category/i.test(c.rule)))}
 
-Severity: a fabricated-sounding specific is a blocker. Everything else here is major or minor.`,
+Severity: style findings are major or minor. A factual objection requires source evidence
+and belongs to the assertion audit; sounding generated is not evidence of fabrication.`,
   },
 ]
 
@@ -1244,6 +1262,7 @@ ${JSON.stringify(blockers.map(b => ({ quote: b.quote, problem: b.whyItFails, sug
 
 Claims you may assert (unchanged and still closed): ${JSON.stringify(claims)}
 Protected strings that must survive byte-exact: ${JSON.stringify(protectedVerbatim)}
+${STYLE_INSTRUCTIONS}
 
 Minimum viable edit. Do not restructure, do not improve adjacent lines you happen to dislike,
 do not resolve an [AUTHOR: supply X] placeholder by inventing the value. If a blocker can only
@@ -1257,25 +1276,25 @@ be fixed by asserting something not on the claims list, replace the line with an
 // Deslop runs after the fixes, because a fix written under deadline is exactly
 // where the filler comes back.
 const deslopped = await agent(
-  `Run a full deslop pass on this ${SURFACE}. Style only.
+  `Run Suede Slop Stop on this ${SURFACE}. Style only.
+Load the canonical suede-deslop/SKILL.md and its references/kill-list.md from the installed
+Suede pack (repository paths: skills/suede-deslop/SKILL.md and
+skills/suede-deslop/references/kill-list.md). Use that method, not a separate cleanup recipe.
+If unavailable, preserve the input, return REVISE with total 0, and name the missing
+reference in stillGenerating; do not pretend the pass ran.
 
 """
 ${text}
 """
 
-The eight rules: cut filler phrases; break formulaic structures (the triad, "not just X but Y",
-the manufactured contrast, the one-line-paragraph drumbeat); active voice in every sentence;
-be specific (the number, the name, the step count); put the reader in the room; vary rhythm;
-trust the reader (cut the explanation of the joke, the restatement, the "in other words");
-cut quotables (any line built to be screenshotted).
-
-No em dashes. Kill every adverb, not only the famous ones. Cut meta-commentary that announces
-the piece's own structure. Cut performative sincerity: "I promise", "this is genuinely hard",
-"what X actually looks like".
-
-BOUNDARY, absolute: change no fact, number, date, name, price, or claim. If a rewrite needs a
-specific the text does not contain, leave [AUTHOR: supply X] rather than inventing it — and
-leave every existing placeholder exactly as it is. Preserve these byte-exact:
+${STYLE_INSTRUCTIONS}
+Measured voice: ${JSON.stringify(voiceRules)}
+Make the minimum effective edit. Preserve facts, numbers, dates, names, prices, claims,
+qualifiers, and all source spans covered by the canonical method. If a style edit would
+need a missing specific, leave the factual wording unchanged and report the gap in
+stillGenerating. Invent no actor, metric, anecdote, customer, quote, or experience.
+Leave every existing [AUTHOR: supply X] placeholder exactly as it is.
+Preserve these byte-exact:
 ${JSON.stringify(protectedVerbatim)}
 
 Score out of 50: directness, rhythm, trust, authenticity, density, 1-10 each. Below 35 is
@@ -1308,8 +1327,8 @@ an image model executes, and you write the words that appear in them.
 
 For each visual this piece actually needs — and "none" is a legitimate answer for a docs page:
 - concept: one sentence a designer could execute without asking a question
-- onImageText: the exact words on the image. This is copy. Same voice, no em dashes, no
-  filler, and it may assert ONLY claims from this list: ${JSON.stringify(claims)}
+- onImageText: the exact words on the image. Same voice and active house style as the body;
+  it may assert ONLY claims from this list: ${JSON.stringify(claims)}
 - aspect: the real ratio and pixel size THIS surface requires, not a generic 16:9
 - sourceAsset: if a real screenshot or photo already exists, its path. A real product
   screenshot beats a generated illustration on every surface where the product is the subject.
@@ -1317,6 +1336,7 @@ For each visual this piece actually needs — and "none" is a legitimate answer 
 - buildWith: screenshot | existing asset | suede-image | media-use | designer
 
 A visual that repeats a section's sentence in a box is not a visual. Cut it.
+${STYLE_INSTRUCTIONS}
 
 THE SUEDE MARK, hard rule: never redraw, trace, typeset, recolor, distort, or generate a
 replacement Suede S. The only permitted mark is the approved asset at
@@ -1352,7 +1372,7 @@ Rules:
   mattered.
 - Three headline variants, genuinely different in approach rather than three rewordings.
 - The CTA names the action and what happens after it.
-- Same voice as the body. No em dashes, no filler, no jargon verbs.`,
+- Same voice as the body. ${STYLE_INSTRUCTIONS}`,
     { schema: PACKAGE, phase: 'Polish', label: 'channel-package', effort: 'medium' }
   ),
 ])
@@ -1385,6 +1405,7 @@ const requesterText = [...protectedVerbatim, ...userClaims.map(c => c.claim)].fi
 let scrubbed = text
 for (const r of requesterText) scrubbed = scrubbed.split(r).join(' ')
 const emDashes = (scrubbed.match(/—/g) || []).length
+const emDashViolations = EM_DASH_POLICY === 'avoid' ? emDashes : 0
 const finalWords = text.trim().split(/\s+/).filter(Boolean).length
 const overBudget = BUDGET ? finalWords > BUDGET * 1.1 : false
 const failedFields = ((pack && pack.fields) || []).filter(f => !f.passes)
@@ -1394,6 +1415,8 @@ const mechanical = {
   vanishedPlaceholderText: vanishedList,
   missingProtectedStrings: missingVerbatim,
   emDashes,
+  emDashPolicy: EM_DASH_POLICY,
+  emDashViolations,
   words: finalWords,
   budget: BUDGET,
   agentBudget: AGENT_BUDGET_NAME,
@@ -1466,7 +1489,7 @@ const hardMechanical =
   vanishedPlaceholders > 0 ||
   missingVerbatim.length > 0 ||
   failedFields.length > 0 ||
-  emDashes > 0 ||
+  emDashViolations > 0 ||
   overBudget ||
   stalled.length > 0 ||
   !pack ||

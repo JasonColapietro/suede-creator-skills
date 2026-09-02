@@ -13,7 +13,8 @@ const SOURCE = readFileSync(
   path.join(ROOT, 'skills/suede-ship-copy/workflows/suede-ship-copy.js'), 'utf8')
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor
 
-function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens = 12 } = {}) {
+function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens = 12,
+  workflowArgs = {}, finalText = 't', deslopScore = 0, draftText } = {}) {
   const calls = []
   const logs = []
   let seq = 0
@@ -51,10 +52,11 @@ function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens 
           sections: Array.from({ length: sections }, (_, i) => ({
             name: `sec${i}`, job: 'j', ownsMessage: `m${i}`, cites: [],
             wordBudget: 50, acceptance: 'a', tier: 'craft',
+            mustSayVerbatim: i === 0 ? (workflowArgs.mustSay || []) : [],
           })),
         }
       case 'Draft':
-        return { state: 'done', text: `body ${seq++}`, claimsUsed: [], placeholders: [] }
+        return { state: 'done', text: draftText || `body ${seq++}`, claimsUsed: [], placeholders: [] }
       case 'Assemble':
         return { text: 'assembled draft', wordCount: 200, notes: '' }
       case 'Review':
@@ -67,7 +69,7 @@ function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens 
       case 'Refute':
         return { refuted: false, why: 'reproduced' }
       case 'Polish':
-        if (label === 'deslop') return { text: 't', total: 0, verdict: 'clean', removed: [] }
+        if (label === 'deslop') return { text: finalText, total: deslopScore, verdict: 'clean', removed: [] }
         if (label === 'graphic-spec') return { visuals: [], suedeMark: { needed: false, approvedAssetPresent: false } }
         if (label === 'channel-package') return { fields: [], headlineVariants: [], cta: 'c' }
         return { text: 'revised', wordCount: 200, notes: '' }
@@ -79,7 +81,7 @@ function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens 
   }
 
   const agent = async (prompt, opts = {}) => {
-    calls.push({ phase: opts.phase, label: opts.label })
+    calls.push({ phase: opts.phase, label: opts.label, prompt })
     return fixture(opts)
   }
   const parallel = (thunks) => Promise.all(thunks.map((t) => t()))
@@ -96,11 +98,81 @@ function runShipCopy ({ agentBudget = 'standard', sections = 6, findingsPerLens 
 
   return run(
     agent, parallel, pipeline, () => {}, (m) => logs.push(m),
-    { piece: 'write the page', surface: 'landing page', agentBudget },
+    { piece: 'write the page', surface: 'landing page', agentBudget, ...workflowArgs },
     { total: null, spent: () => 0, remaining: () => Infinity },
     async () => {},
   ).then((result) => ({ result, calls, logs }))
 }
+
+test('Slop Stop accepts house-style dashes without adding agents or changing the score gate', async () => {
+  const base = { findingsPerLens: 0, finalText: 'Keep it dry — quietly useful.', deslopScore: 42 }
+  const standard = await runShipCopy(base)
+  const custom = await runShipCopy({ ...base, workflowArgs: {
+    houseStyle: { guidance: 'Dry humor; keep deliberate fragments.', emDashes: 'allow' },
+  } })
+  assert.equal(standard.result.copyVerdict, 'hold')
+  assert.equal(custom.result.copyVerdict, 'ship')
+  assert.equal(custom.result.mechanical.emDashes, 1)
+  assert.equal(custom.result.mechanical.emDashViolations, 0)
+  assert.equal(custom.calls.length, standard.calls.length)
+  assert.match(custom.calls.find(c => c.label === 'deslop').prompt, /suede-deslop\/SKILL\.md/)
+  assert.match(custom.calls.find(c => c.label === 'deslop').prompt, /Dry humor/)
+})
+
+test('protected source punctuation survives the default Slop Stop policy', async () => {
+  const quote = '"Carefully — not quickly."'
+  const { result } = await runShipCopy({ findingsPerLens: 0, deslopScore: 42,
+    finalText: quote, workflowArgs: { mustSay: [quote] },
+  })
+  assert.equal(result.copyVerdict, 'ship')
+  assert.deepEqual(result.mechanical.missingProtectedStrings, [])
+  assert.equal(result.mechanical.emDashViolations, 0)
+})
+
+test('missing protected wording is still a hold when the house permits dashes', async () => {
+  const { result } = await runShipCopy({ findingsPerLens: 0, deslopScore: 42,
+    finalText: 'Changed the quotation.', workflowArgs: {
+      mustSay: ['"Carefully — not quickly."'], houseStyle: { emDashes: 'allow' },
+    },
+  })
+  assert.equal(result.copyVerdict, 'hold')
+  assert.deepEqual(result.mechanical.missingProtectedStrings, ['"Carefully — not quickly."'])
+})
+
+test('Slop Stop score remains advisory below 35', async () => {
+  const { result } = await runShipCopy({ findingsPerLens: 0, deslopScore: 22,
+    finalText: 'Plain copy.',
+  })
+  assert.equal(result.copyVerdict, 'ship-with-caveats')
+})
+
+test('house-style overrides cannot hide an unresolved or vanished author placeholder', async () => {
+  for (const finalText of ['Results: [AUTHOR: supply time].', 'Results arrived instantly.']) {
+    const { result } = await runShipCopy({ findingsPerLens: 0, deslopScore: 42,
+      draftText: 'Results: [AUTHOR: supply time].', finalText,
+      workflowArgs: { houseStyle: { emDashes: 'allow' } },
+    })
+    assert.equal(result.copyVerdict, 'hold')
+    assert.ok(result.mechanical.openPlaceholders || result.mechanical.vanishedPlaceholders)
+  }
+})
+
+test('unsupported house-style values fail before spending agents', async () => {
+  for (const houseStyle of ['allow', [], { emDashes: 'sometimes' }, { guidance: 5 }]) {
+    await assert.rejects(runShipCopy({ workflowArgs: { houseStyle } }), /houseStyle must be/)
+  }
+})
+
+test('review and cleanup share Slop Stop while findings-only review stays read-only', async () => {
+  const { calls } = await runShipCopy({ findingsPerLens: 0 })
+  const review = calls.find(c => c.label === 'review:slop').prompt
+  const cleanup = calls.find(c => c.label === 'deslop').prompt
+  assert.match(review, /suede-deslop\/SKILL\.md/)
+  assert.match(review, /leave the draft unchanged/)
+  assert.match(cleanup, /suede-deslop\/references\/kill-list\.md/)
+  assert.match(cleanup, /qualifiers/)
+  assert.match(cleanup, /stillGenerating/)
+})
 
 test('each agent-budget range holds its documented ceiling and the ranges separate', async () => {
   const ceilings = { light: 36, standard: 45, deep: 50 }

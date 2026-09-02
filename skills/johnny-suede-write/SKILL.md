@@ -97,7 +97,7 @@ Identify the mode before writing. Each mode has a different structure, length, a
 
 **Social** (Twitter/X, LinkedIn, Instagram, Discord, launch post)
 - Open with the most specific claim or result, not the setup.
-- No "excited to announce." No "thrilled to share." No em dashes.
+- Use the supplied voice and the shared Slop Stop pass for empty announcement language.
 - Deliver: main post + short variant + CTA + 3 hook variants.
 - Platform structures and limits: read `references/email-and-social-formats.md`.
 
@@ -158,7 +158,8 @@ Replace vague claims with artifacts.
 
 No invented proof. Do not write stats, testimonials, partner names, pricing, or legal clearance that has not been confirmed. If proof is unavailable, write around the gap or flag it for the human to supply.
 
-No em dashes in public copy. No exclamation points. No rhetorical questions that answer themselves.
+Use Suede punctuation defaults unless the company brief says otherwise. Slop Stop
+owns the contextual line-edit rules; preserve protected source spans and voice.
 
 ## Persuasion Frameworks
 
@@ -347,26 +348,18 @@ When the copy workflow includes an SEO pass (metadata, structure, or copy qualit
 
 ## Anti-Slop Pass
 
-Run this as a line-edit gate before delivery, not a vibe check.
+Run Suede Slop Stop (use suede-deslop) on the finished draft. Load its canonical
+method and full kill list; do not run a second word-substitution recipe. Keep the
+supplied house style, deliberate voice, and protected source spans. A findings-only
+request leaves the draft unchanged. Factual verification stays in the evidence
+pass, never hidden inside a style edit.
 
-### Word Substitution Gate
-Apply every swap in `references/word-substitution-list.md` (29 entries: utilize→use, leverage→run, seamless/powerful/innovative/robust→prove or cut, and the rest). Non-negotiable, on every draft, including drafts that feel clean.
+Then run the readability check below and this writer's 70-point score. Slop Stop's
+/50 diagnostic does not replace the conversion, specificity, or discoverability
+dimensions in this stack.
 
 ### Readability Gate
 Flesch-Kincaid Grade 8-10 for B2B general audiences; Grade 6-8 for consumer/onboarding; Grade 10-14 for technical/developer copy where precision requires complexity. Average sentence length under 18 words for consumer, under 22 for B2B. Flag paragraphs over 4 sentences.
-
-### Structure Gate
-Rewrite: binary setup lines; negative listing that defines the product by what it is not; formulaic "not X, but Y" pivots; false transformation arcs; dramatic fragments; rhetorical questions that answer themselves; three-item cadence when two items work; repeated punchy paragraph endings; Wh-starter crutches when a direct actor and verb work better.
-
-### Actor Gate
-Name who does the action. Prefer the creator, operator, buyer, agent, page, repo, workflow, file, command, route, or proof artifact.
-- Weak: `The page converts traffic.` → Better: `The page routes visitors to the audit, the proof link, or the build request.`
-
-### Rhythm Gate
-One idea per sentence. Vary sentence length without em dashes. Do not stack slogans where a concrete sentence would build more trust. Cut lazy extremes (`always`, `never`, `everything`, `nothing`) unless the claim is literally true.
-
-### Pull-Quote Gate
-If a line sounds manufactured for a quote card, rewrite it with a real artifact, action, or proof point. Weak: `The future of creator ownership is here.` Better: `Suede turns a release folder into rights, provenance, split, and licensing evidence an agent can read.` More weak/better pairs live in `references/word-substitution-list.md`.
 
 ## Evidence Boundaries
 
@@ -387,7 +380,7 @@ When a claim is borderline, rewrite it as a testable behavior ("X happens when y
 5. **Write the outcome first.** Lead with what the reader can do, not a list of features. Apply the persuasion framework that fits the surface (AIDA, PAS, Before-After-Bridge, JTBD, or StoryBrand 7-Part). State which framework was applied.
 6. **Build the proof stack.** Use real files, links, screenshots, commands, docs, installs, live URLs, or product artifacts. No invented proof.
 7. **Run the discoverability pass.** Add SEO/AEO/AI EO title, meta description, H1, subhead, FAQ, answer-ready summary, internal links, schema notes, and app-store wording when relevant. Skip only what the format cannot hold; state what was skipped and why.
-8. **Run the full anti-slop gate.** Word substitution list, readability gate, structure gate, actor gate, rhythm gate, pull-quote gate. No em dashes.
+8. **Run Suede Slop Stop.** Use the shared method, then this lane's readability check. Preserve facts and voice during cleanup.
 9. **Validate every statement.** Apply the Evidence Boundaries inline on every public output.
 10. **Generate variants.** For any headline, CTA, or subject line, deliver 3 variants per the Variant Protocol. Label each; recommend one.
 11. **Score before handoff.** See Score section. Revise before delivering if below threshold. Then package the output in the right shape and deliver copy that can be used directly.
@@ -450,7 +443,7 @@ Revised: yes / no
 
 If any of these thoughts appear, stop and run the gate you were about to skip:
 
-- "This draft is clean, skip the word list." Run it anyway; the gate exists because clean-feeling drafts hide slop.
+- "This draft feels clean, skip Slop Stop." Run the contextual pass; keep wording that already works.
 - "The mode is obvious, no need to state it." Stating mode, persona, and framework is what keeps the structure honest.
 - "It's one button label, skip the score." Microcopy ships to more readers than the blog post.
 - "That claim is close enough." Close enough is invented proof. Cut it or flag it.
@@ -469,6 +462,7 @@ Recommend against shipping copy — and say why, leaving the call to the user �
 
 ## Routing
 
+- Finished prose needs style cleanup or a findings-only slop audit → suede-deslop (Suede Slop Stop)
 - One standalone conversion surface, no SEO pass → suede-copy
 - High-stakes public piece that needs research, angles, and an adversarial pass before publication → suede-ship-copy
 - The surface needs design or layout work too → johnny-suede-design
