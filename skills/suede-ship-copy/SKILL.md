@@ -149,6 +149,10 @@ The argument is free-form. Extract:
 - **mustSay** — strings that must survive byte-exact: legal product name,
   trademark forms, price strings, disclaimer sentences.
 - **wordBudget** — total words. Optional; the surface law supplies limits per field.
+- **houseStyle** — optional `{ guidance, emDashes }`. `guidance` is the supplied
+  author/company voice brief; `emDashes` is `allow` or `avoid` (Suede default).
+  Translate an explicit punctuation preference into this field so prompts and
+  deterministic checks agree. Protected source spans remain byte-exact either way.
 - **agentBudget** — `light`, `standard`, or `deep`. Required, and you must ask the
   user rather than pick it (see below). Omitting it defaults to `standard`.
 
@@ -185,7 +189,7 @@ Then state the choice in one line when you launch, this shape:
 ```
 Workflow({
   scriptPath: "skills/suede-ship-copy/workflows/suede-ship-copy.js",
-  args: { piece, surface, sources, given, audience, liveUrl, outDir, mustSay, wordBudget, agentBudget }
+  args: { piece, surface, sources, given, audience, liveUrl, outDir, mustSay, wordBudget, houseStyle, agentBudget }
 })
 ```
 
@@ -241,10 +245,10 @@ called "Claim audit" in `/workflows`.
     real cost in a short piece.
 11. **Polish** — one reviser for confirmed blockers (prose has no file-level
     disjointness, so parallel editors of one string produce a conflict with no
-    merge tool), then the deslop pass scored out of 50, then the graphic spec and
+    merge tool), then Suede Slop Stop scored out of 50, then the graphic spec and
     the channel package in parallel.
 12. **Gate and handoff** — deterministic checks (open placeholders, missing
-    protected strings, em dashes, word count, fields over limit) run in the script
+    protected strings, house-style dash violations, word count, fields over limit) run in the script
     where no agent can argue with them, then a read-only publish-readiness verifier
     for drift, truth at the source, rights, and reversibility. Drift and truth-at-the-source
     are scoped to agent-generated claims; the rights check is scoped to third-party material,
@@ -263,22 +267,32 @@ Every gate in this workflow resolves to a number or a command:
 | Findings refuted per run | First 4 blockers/majors; the remainder are logged, never silently dropped |
 | Gap fills | First 2; the rest are reported as unread |
 | Sections | 3-5 preferred, 7 ceiling |
-| Deslop score | 35/50 or the piece is `REVISE` |
+| Slop Stop score | 35/50 or the piece is `REVISE`; advisory score only |
 | Channel field | `chars <= limit` per field, counted and reported individually |
 | Word count | `<= wordBudget × 1.1` when a budget was supplied; unenforced when it was not |
-| Em dashes | 0 |
+| Em-dash violations | 0 in newly written prose when `houseStyle.emDashes` is `avoid`; permitted when `allow`. Protected strings and givens are exempt |
 | Open placeholders | 0, or Status is "ready for author", never "reviewed" |
 | Placeholders vanished since draft | 0. A placeholder the assembler or deslop pass resolved away is a fabrication |
 | Stalled sections | 0. A writer returning `blocked`, `needs-context`, or nothing leaves a hole in the piece |
 
-The last seven rows are **hard gates**: any one of them fails and `hardMechanical`
-forces `copyVerdict: hold`. Two more hard gates have no row because they are
+The six rows from Channel field through Stalled sections are **hard gates**:
+any one fails and `hardMechanical` forces `copyVerdict: hold`.
+Two more hard gates have no row because they are
 liveness rather than quality — a channel-package agent or a deslop agent that
 returned nothing also forces `hold`.
 
-The first five rows are **not** hard gates. They bound how the run behaves, and the
-deslop score in particular only moves the verdict to `ship-with-caveats`, never to
-`hold`. Do not report a 22/50 deslop score as a hold.
+The preceding rows describe claim scope, review, and planning constraints.
+The Slop Stop score alone only moves the verdict to `ship-with-caveats`, never to
+`hold`. Do not report a 22/50 score as a hold.
+
+## Shared cleanup method
+
+The slop review uses Suede Slop Stop (use suede-deslop) in findings-only mode;
+the final cleanup uses the same canonical skill and full kill list in edit mode.
+Make the minimum effective edit, preserve factual wording and exact source spans,
+and keep deliberate voice and the supplied house style. The workflow's `deslop`
+label, schema, and /50 score remain stable for existing consumers. Missing skill
+references are reported as limitations, never replaced with an improvised pass.
 
 ## What halts it, and what to do
 
@@ -358,7 +372,9 @@ This workflow must NOT:
   record. The audit is aimed at machine output.
 - **Assert outside the permitted set.** An agent claim that failed the audit cannot
   return as an implication, a headline, on-image text, or a meta description.
-- **Change a fact during a style pass.** Deslop edits style only.
+- **Change a fact during a style pass.** Slop Stop edits style only, including
+  preservation of qualifiers, quotations, code, commands, links, citations, paths,
+  and every author placeholder. It does not infer authorship from prose.
 - **Redraw the Suede S.** The only permitted mark is the approved asset at
   `docs/assets/suede-ai-logo-transparent.png` (sha256
   `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never
@@ -382,7 +398,7 @@ re-run.
 - The change is code rather than copy -> use `suede-graph-flo-xr`, which searches
   competing implementation plans and mutates only the selected winner.
 - One surface, one pass, facts already established -> use `suede-copy`.
-- Text already written that only needs AI patterns stripped -> use `suede-deslop`.
+- Text already written that needs cleanup or a findings-only audit -> use `suede-deslop` (Suede Slop Stop).
 - The house voice needs defining rather than extracting from shipped copy ->
   private Suede Labs companion, not in this pack: suede-brand-voice. Without it,
   put a few pieces of already-shipped copy in `sources` and let the voice lens

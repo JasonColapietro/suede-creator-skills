@@ -33,6 +33,7 @@ counts.
 - "At its core" / "At the end of the day"
 - "When it comes to"
 - "In a world where"
+- "Excited to announce" / "Thrilled to share" (empty launch setup; lead with the news)
 
 ## Emphasis crutches
 
@@ -66,6 +67,26 @@ Delete; they add no meaning.
 | unlock / unleash | say what was blocked |
 | robust / seamless / powerful | name the capability or prove it |
 | elevate / empower / transform | say what changes, before and after |
+| innovative / revolutionary / next-generation | name the actual change, or cut empty praise |
+| game-changing / cutting-edge | name the change or capability |
+| solution | name the product or action |
+| streamline | name the removed step or supported time reduction |
+| intuitive / simple / easy | use a supplied interaction detail or step count |
+| best-in-class / world-class | use a supplied benchmark or credential, or cut empty praise |
+| end-to-end / holistic | name the actual start, end, or scope |
+| scalable | name the supported load and conditions |
+| synergy / synergistic / value-add | name the cooperation or concrete value |
+| best practices | name the practice |
+| in order to | to |
+| due to the fact that | because |
+| at this point in time | now |
+| going forward | state the new behavior |
+
+Keep "we believe" or "we think" when it marks an opinion or necessary uncertainty.
+Cut it only when it is empty throat-clearing, not a factual qualifier. Proof-based
+replacements use supplied evidence only; never borrow a sample metric or product
+claim to make a sentence sound specific. Preserve unsupported factual wording and
+report the evidence gap separately during a style-only pass.
 
 ## Adverbs that add no information
 
@@ -171,6 +192,7 @@ preview; give the answer.
 
 - "By the time X, I was Y." (narrative template; state the fact)
 - "X that isn't Y" (indirect; say "X is broken")
+- False transformation arcs (a routine change narrated as a revolution; state the actual change)
 
 ## False agency
 

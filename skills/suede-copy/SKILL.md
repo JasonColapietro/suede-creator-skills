@@ -78,7 +78,8 @@ Replace vague claims with artifacts.
 
 No invented proof. Do not write stats, testimonials, partner names, pricing, or legal clearance that has not been confirmed. If proof is unavailable, write around the gap or flag it for the human to supply.
 
-No em dashes. No exclamation points. No rhetorical questions that answer themselves.
+Use Suede punctuation defaults unless the company brief says otherwise. Slop Stop
+owns the contextual line-edit rules; preserve protected source spans and voice.
 
 ## Persuasion Frameworks And Personas
 
@@ -151,9 +152,12 @@ For a deep, standalone SEO audit (technical access, keyword research, schema mar
 
 ## Anti-Slop Pass
 
-The line-edit pass — patterns to cut and the scored dimensions — is in
-`references/anti-slop-pass.md`. Run it against every draft before handing it over.
-For a standalone pass over text this skill did not write, route to suede-deslop.
+Run Suede Slop Stop (use suede-deslop) on the finished draft. Load its canonical
+method and full kill list; do not maintain a separate substitution recipe here.
+Then apply this writer's readability guidance in `references/anti-slop-pass.md`
+and the 70-point Ship Gate below. The Slop Stop score is a separate /50 diagnostic,
+not a replacement for the conversion score. Findings-only requests leave the
+supplied copy unchanged. Keep factual verification separate from style cleanup.
 
 ## Boundaries
 
@@ -207,7 +211,7 @@ Ready: yes | with caveats | no
 
 If any of these thoughts appear, stop and run the gate you were about to skip:
 
-- "This draft is already clean, skip the word list." Run the substitution table anyway; slop hides in clean-feeling drafts.
+- "This draft feels clean, skip Slop Stop." Run the contextual pass; keep wording that already works.
 - "It's only microcopy, no need to score it." Buttons and empty states get more reads than blog posts. Score everything that ships.
 - "That stat is probably right." Probably is not proof. Cut it or flag it for the human.
 - "The score feels like a 60." Score each dimension in writing or the total is fiction.

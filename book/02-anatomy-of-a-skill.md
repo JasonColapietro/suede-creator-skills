@@ -35,8 +35,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 74 files total 1,081,390 bytes;
-the 74 descriptions together are 44,847. The agent holds the small number and
+when the skill is not running. In this repo the 74 files total 1,082,325 bytes;
+the 74 descriptions together are 44,810. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -53,7 +53,7 @@ sentence exists because `suede-code-review` lives next door and produces
 something different, and without it an agent would pick between them by coin
 flip.
 
-`suede-deslop` does the same job in 539 characters:
+`suede-deslop` does the same job in 502 characters:
 
 ```text
 description: "Suede Labs context-aware anti-slop pass for finished prose: find
@@ -220,9 +220,9 @@ outside Claude Code:
 
 ```yaml
 interface:
-  display_name: "Suede Deslop — AI Pattern Removal"
-  short_description: "Strip AI writing tells before prose ships"
-  default_prompt: "Use $suede-deslop to clean [text]. Run the merged kill list, ..."
+  display_name: "Suede Slop Stop"
+  short_description: "Remove slop without flattening the author's voice"
+  default_prompt: "Use $suede-deslop (Suede Slop Stop) on [text]. Preserve facts and voice, ..."
 policy:
   allow_implicit_invocation: true
 ```

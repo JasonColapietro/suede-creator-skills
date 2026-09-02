@@ -48,7 +48,7 @@ From "Boundaries" — This workflow must NOT:
 - **Invent a specific.** No number, date, price, customer name, or result that no source supports. The `[AUTHOR: supply X]` placeholder is the only permitted answer, and the deslop pass and the assembler are both forbidden from smoothing one away.
 - **Audit, hedge, gate on, or argue with the requester's own claims.** Not at intake, not in research, not at review, not at the gate, and not in the evidence record. The audit is aimed at machine output.
 - **Assert outside the permitted set.** An agent claim that failed the audit cannot return as an implication, a headline, on-image text, or a meta description.
-- **Change a fact during a style pass.** Deslop edits style only.
+- **Change a fact during a style pass.** Slop Stop edits style only, including preservation of qualifiers, quotations, code, commands, links, citations, paths, and every author placeholder. It does not infer authorship from prose.
 - **Redraw the Suede S.** The only permitted mark is the approved asset at `docs/assets/suede-ai-logo-transparent.png` (sha256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never trace, typeset, recolor, distort, or generate a replacement. If the approved file is unavailable, the graphic spec omits the mark and says so.
 - **Generate images.** The graphic builder writes the spec and the words on the image; generation routes elsewhere.
 - **Decide whether the piece should exist.** The verdict is about evidence and slop, not content approval.

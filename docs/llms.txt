@@ -39,7 +39,7 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Johnny Suede Design](https://skills.suedeai.ai/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, Suedify restyling, and visual QA.
 - [Suede Design](https://skills.suedeai.ai/skills/suede-design.html): Evolve any interface from generic to intentional with design laws and tokens.
 - [Suede Copy](https://skills.suedeai.ai/skills/suede-copy.html): Click-earning copy with headline formulas and persuasion frameworks.
-- [Suede Deslop](https://skills.suedeai.ai/skills/suede-deslop.html): Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, invents nothing, and never claims to identify authorship.
+- [Suede Slop Stop](https://skills.suedeai.ai/skills/suede-deslop.html): Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, invents nothing, and never claims to identify authorship.
 - [Suede SEO Audit](https://skills.suedeai.ai/skills/suede-seo-audit.html): SEO, AEO, GEO, AI EO, metadata, schema, link, and crawlability audit.
 - [Suede Visibility Grader](https://skills.suedeai.ai/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
 - [Suede Site Alchemy](https://skills.suedeai.ai/skills/suede-site-alchemy.html): Turn a page into a conversion engine with funnel and friction analysis.

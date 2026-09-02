@@ -1,9 +1,12 @@
 ---
 name: suede-deslop
-description: "Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which must be checked against primary evidence before publication."
+description: "Suede Slop Stop: Suede Labs context-aware anti-slop pass for finished prose. Find or remove generic filler, manufactured emphasis, false agency, and formulaic structure without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which require primary evidence."
 ---
 
-# Suede Deslop
+# Suede Slop Stop
+
+The canonical anti-slop method for the writing stack. The existing `suede-deslop`
+command and folder remain stable for compatibility; there is no second method.
 
 ## Gate policy — advisory, not blocking
 
@@ -179,6 +182,8 @@ Mix sentence lengths. Two items often beat three. End paragraphs differently.
 Follow the supplied house style for em dashes. For Suede-owned public copy,
 replace them with commas, parentheses, colons, or periods. Do not treat
 punctuation as evidence of authorship.
+Suede-owned public copy also avoids promotional exclamation points; preserve
+them in protected source spans or when the supplied house style calls for them.
 
 Three consecutive sentences at the same length: break one. Every paragraph ending with a punchy one-liner: vary it. Staccato fragments stacked for effect: merge them. A question answered in the same breath: let it breathe or cut it. Hedging dressed as reassurance ("Not always. Not perfectly."): cut it.
 
@@ -302,7 +307,7 @@ Do not include cleaned prose in a findings-only audit.
 For a cleaning pass, return the cleaned prose first. Then append:
 
 ```
-Deslop pass
+Slop Stop pass
 ──────────────────────────────
 Filler phrases removed:      [count]
 Structural patterns fixed:   [count]
