@@ -1,0 +1,6 @@
+interface:
+  display_name: "Voice-Preserving Line Edit"
+  short_description: "Remove AI writing patterns without flattening the author's voice, with a findings-only audit mode"
+  default_prompt: "Use $voice-preserving-line-edit on [text]. If I ask for findings only, quote and explain the issues without rewriting. Otherwise make the minimum effective style edits, preserve facts, numbers, quotes, code, links, house style, and deliberate voice, invent nothing, then return the cleaned prose with the change report and 50-point score. Never infer authorship from writing patterns."
+policy:
+  allow_implicit_invocation: true
