@@ -274,7 +274,7 @@ const indexBody = `      <p class="eyebrow">Book &middot; August 10, 2026</p>
       <h1>S-Tier</h1>
       <p class="post-meta">The builder's book behind the Suede Skills. Free, open source, and written against the same anti-slop rules the pack enforces.</p>
 
-      <p class="lead">Most advice about building with agents stops at prompting. This goes past it: what a skill is mechanically, how an agent decides to load one, how to run several without them colliding, what counts as evidence, and what separates a builder who produces output from one who builds systems that keep producing verified output without them.</p>
+      <p class="lead">Most advice about building with agents stops at prompting. This goes past it: what a skill is mechanically, and how to run several without them colliding. Then evidence, which decides whether any of it counts. The last question is whether the work still comes back verified when you are not in the room.</p>
 
       <div class="stat-row">
         <div class="stat"><b>${totalWords.toLocaleString()}</b><span>words</span></div>
