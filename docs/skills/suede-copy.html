@@ -98,15 +98,16 @@
       </div>
 
       <section class="panel">
-        <h2>Copy just this skill</h2>
+        <h2>Install the writer and shared cleanup skill</h2>
+        <p>Suede Slop Stop supplies the shared cleanup method. Install both folders; full-pack installs already include them.</p>
         <p><strong>Claude Code</strong> project-level copy:</p>
         <pre><code>git clone https://github.com/JasonColapietro/suede-creator-skills.git /tmp/suede-creator-skills
 mkdir -p .claude/skills
-cp -R /tmp/suede-creator-skills/skills/suede-copy .claude/skills/</code></pre>
+cp -R /tmp/suede-creator-skills/skills/suede-copy /tmp/suede-creator-skills/skills/suede-deslop .claude/skills/</code></pre>
         <p><strong>Codex</strong> installer:</p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo JasonColapietro/suede-creator-skills \
-    --path skills/suede-copy</code></pre>
+    --path skills/suede-copy skills/suede-deslop</code></pre>
       </section>
 
       <section class="grid">
