@@ -37,157 +37,578 @@
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://skills.suedeai.ai/#website",
-        "name": "Suede Creator Skills",
-        "url": "https://skills.suedeai.ai/",
-        "description": "Public, open-source pack of installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server for discovery, audits, and QA. The pack carries preferences, linked context, quality gates, and reusable workflow rules across agents and computers.",
-        "publisher": { "@id": "https://suedeai.ai/#org" }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://suedeai.ai/#org",
-        "name": "Suede Labs AI",
-        "alternateName": "Suede AI",
-        "url": "https://suedeai.ai",
-        "sameAs": ["https://github.com/JasonColapietro", "https://twitter.com/johnnysuede"]
-      },
-      {
-        "@type": "Person",
-        "@id": "https://suedeai.ai/founder#person",
-        "name": "Jason Colapietro",
-        "url": "https://suedeai.ai/founder",
-        "sameAs": ["https://github.com/JasonColapietro", "https://twitter.com/johnnysuede"]
-      },
-      {
-        "@type": "SoftwareSourceCode",
-        "name": "Suede Creator Skills",
-        "description": "Public, open-source pack of installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. Original work is MIT licensed; adapted components retain their upstream license notices, including BSD-3-Clause terms for Graph of Thoughts. One install gives an AI coding agent a reusable engineering workflow: Suede Thought Graph shipping for broad, authorized outcome-bound work, coordinated multi-agent build lanes with quality gates and a signed handoff, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs and acceptance gates, account-specific Instagram growth, and design, copy, SEO, and visibility lanes for shipping public work. Also includes a small creator toolkit for music rights and release prep. Users can bring their own company, repo, page, or product.",
-        "url": "https://skills.suedeai.ai/",
-        "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills",
-        "programmingLanguage": ["Markdown", "JavaScript", "Python", "HTML"],
-        "runtimePlatform": ["Claude Code", "OpenAI Codex", "Model Context Protocol"],
-        "author": { "@id": "https://suedeai.ai/#org" },
-        "creator": { "@id": "https://suedeai.ai/founder#person" },
-        "license": ["https://opensource.org/licenses/MIT", "https://opensource.org/licenses/BSD-3-Clause"],
-        "keywords": ["Claude Code skills", "Codex skills", "Agent Skills", "MCP server", "multi-agent orchestration", "Codex CLI orchestration", "AI code review", "A-F ship grade", "CI ship gate", "AI eval", "design system", "Suedify", "iOS app packaging", "SEO AEO GEO AI EO audit", "developer tools"]
-      },
-      {
-        "@type": "ItemList",
-        "name": "Suede Creator Skills catalog",
-        "description": "The public skills in the Suede Creator Skills pack.",
-        "numberOfItems": 74,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Suede Workflow Skills", "url": "https://skills.suedeai.ai/skills/suede-workflow-skills.html" },
-          { "@type": "ListItem", "position": 2, "name": "Johnny Suede Write", "url": "https://skills.suedeai.ai/skills/johnny-suede-write.html" },
-          { "@type": "ListItem", "position": 3, "name": "Johnny Suede Design", "url": "https://skills.suedeai.ai/skills/johnny-suede-design.html" },
-          { "@type": "ListItem", "position": 4, "name": "Suede Code Grader", "url": "https://skills.suedeai.ai/skills/suede-code-grader.html" },
-          { "@type": "ListItem", "position": 5, "name": "Suede Visibility Grader", "url": "https://skills.suedeai.ai/skills/suede-visibility-grader.html" },
-          { "@type": "ListItem", "position": 6, "name": "Suede AI Eval", "url": "https://skills.suedeai.ai/skills/suede-ai-eval.html" },
-          { "@type": "ListItem", "position": 7, "name": "Suede Agent Teams", "url": "https://skills.suedeai.ai/skills/suede-agent-teams.html" },
-          { "@type": "ListItem", "position": 8, "name": "Suede Code", "url": "https://skills.suedeai.ai/skills/suede-code.html" },
-          { "@type": "ListItem", "position": 9, "name": "Suede Code Review", "url": "https://skills.suedeai.ai/skills/suede-code-review.html" },
-          { "@type": "ListItem", "position": 10, "name": "Suede Copy", "url": "https://skills.suedeai.ai/skills/suede-copy.html" },
-          { "@type": "ListItem", "position": 11, "name": "Suede Design", "url": "https://skills.suedeai.ai/skills/suede-design.html" },
-          { "@type": "ListItem", "position": 12, "name": "Suede SEO Audit", "url": "https://skills.suedeai.ai/skills/suede-seo-audit.html" },
-          { "@type": "ListItem", "position": 13, "name": "Suede Site Alchemy", "url": "https://skills.suedeai.ai/skills/suede-site-alchemy.html" },
-          { "@type": "ListItem", "position": 14, "name": "Suede Graph Flo XR", "url": "https://skills.suedeai.ai/skills/suede-graph-flo-xr.html" },
-          { "@type": "ListItem", "position": 15, "name": "Suede Ship Copy", "url": "https://skills.suedeai.ai/skills/suede-ship-copy.html" },
-          { "@type": "ListItem", "position": 16, "name": "Suede CI Gate", "url": "https://skills.suedeai.ai/skills/suede-ci-gate.html" },
-          { "@type": "ListItem", "position": 17, "name": "Suede Launch Packaging", "url": "https://skills.suedeai.ai/skills/suede-launch-packaging.html" },
-          { "@type": "ListItem", "position": 18, "name": "Suede MCP QA", "url": "https://skills.suedeai.ai/skills/suede-mcp-qa.html" },
-          { "@type": "ListItem", "position": 19, "name": "Suede Rights Passport", "url": "https://skills.suedeai.ai/skills/suede-rights-passport.html" },
-          { "@type": "ListItem", "position": 20, "name": "Suede Release Linter", "url": "https://skills.suedeai.ai/skills/suede-release-linter.html" },
-          { "@type": "ListItem", "position": 21, "name": "Suede Campaign in a Box", "url": "https://skills.suedeai.ai/skills/suede-campaign-in-a-box.html" },
-          { "@type": "ListItem", "position": 22, "name": "Suede Rights Audit", "url": "https://skills.suedeai.ai/skills/suede-rights-audit.html" },
-          { "@type": "ListItem", "position": 23, "name": "Suede Sync Packaging", "url": "https://skills.suedeai.ai/skills/suede-sync-packaging.html" },
-          { "@type": "ListItem", "position": 24, "name": "Site to iOS App", "url": "https://skills.suedeai.ai/skills/site-to-ios-app.html" },
-          { "@type": "ListItem", "position": 25, "name": "Amazon Returns Recovery", "url": "https://skills.suedeai.ai/skills/amazon-returns-recovery.html" },
-          { "@type": "ListItem", "position": 26, "name": "Subscription Recovery", "url": "https://skills.suedeai.ai/skills/subscription-recovery.html" },
-          { "@type": "ListItem", "position": 27, "name": "Android App Factory", "url": "https://skills.suedeai.ai/skills/android-app-factory.html" },
-          { "@type": "ListItem", "position": 28, "name": "Suede Recommend Next Action", "url": "https://skills.suedeai.ai/skills/suede-recommend-next-action.html" },
-          { "@type": "ListItem", "position": 29, "name": "Suede Deslop", "url": "https://skills.suedeai.ai/skills/suede-deslop.html" },
-          { "@type": "ListItem", "position": 30, "name": "Suede Ab Testing", "url": "https://skills.suedeai.ai/skills/suede-ab-testing.html" },
-          { "@type": "ListItem", "position": 31, "name": "Suede Ad Creative", "url": "https://skills.suedeai.ai/skills/suede-ad-creative.html" },
-          { "@type": "ListItem", "position": 32, "name": "Suede Ads", "url": "https://skills.suedeai.ai/skills/suede-ads.html" },
-          { "@type": "ListItem", "position": 33, "name": "Suede Analytics", "url": "https://skills.suedeai.ai/skills/suede-analytics.html" },
-          { "@type": "ListItem", "position": 34, "name": "Suede Aso", "url": "https://skills.suedeai.ai/skills/suede-aso.html" },
-          { "@type": "ListItem", "position": 35, "name": "Suede Churn Prevention", "url": "https://skills.suedeai.ai/skills/suede-churn-prevention.html" },
-          { "@type": "ListItem", "position": 36, "name": "Suede Co Marketing", "url": "https://skills.suedeai.ai/skills/suede-co-marketing.html" },
-          { "@type": "ListItem", "position": 37, "name": "Suede Cold Email", "url": "https://skills.suedeai.ai/skills/suede-cold-email.html" },
-          { "@type": "ListItem", "position": 38, "name": "Suede Community Marketing", "url": "https://skills.suedeai.ai/skills/suede-community-marketing.html" },
-          { "@type": "ListItem", "position": 39, "name": "Suede Competitor Profiling", "url": "https://skills.suedeai.ai/skills/suede-competitor-profiling.html" },
-          { "@type": "ListItem", "position": 40, "name": "Suede Competitors", "url": "https://skills.suedeai.ai/skills/suede-competitors.html" },
-          { "@type": "ListItem", "position": 41, "name": "Suede Content Strategy", "url": "https://skills.suedeai.ai/skills/suede-content-strategy.html" },
-          { "@type": "ListItem", "position": 42, "name": "Suede Customer Research", "url": "https://skills.suedeai.ai/skills/suede-customer-research.html" },
-          { "@type": "ListItem", "position": 43, "name": "Suede Directory Submissions", "url": "https://skills.suedeai.ai/skills/suede-directory-submissions.html" },
-          { "@type": "ListItem", "position": 44, "name": "Suede Emails", "url": "https://skills.suedeai.ai/skills/suede-emails.html" },
-          { "@type": "ListItem", "position": 45, "name": "Suede Free Tools", "url": "https://skills.suedeai.ai/skills/suede-free-tools.html" },
-          { "@type": "ListItem", "position": 46, "name": "Suede Image", "url": "https://skills.suedeai.ai/skills/suede-image.html" },
-          { "@type": "ListItem", "position": 47, "name": "Suede Lead Magnets", "url": "https://skills.suedeai.ai/skills/suede-lead-magnets.html" },
-          { "@type": "ListItem", "position": 48, "name": "Suede Marketing Council", "url": "https://skills.suedeai.ai/skills/suede-marketing-council.html" },
-          { "@type": "ListItem", "position": 49, "name": "Suede Marketing Ideas", "url": "https://skills.suedeai.ai/skills/suede-marketing-ideas.html" },
-          { "@type": "ListItem", "position": 50, "name": "Suede Marketing Loops", "url": "https://skills.suedeai.ai/skills/suede-marketing-loops.html" },
-          { "@type": "ListItem", "position": 51, "name": "Suede Marketing Plan", "url": "https://skills.suedeai.ai/skills/suede-marketing-plan.html" },
-          { "@type": "ListItem", "position": 52, "name": "Suede Marketing Psychology", "url": "https://skills.suedeai.ai/skills/suede-marketing-psychology.html" },
-          { "@type": "ListItem", "position": 53, "name": "Suede Offers", "url": "https://skills.suedeai.ai/skills/suede-offers.html" },
-          { "@type": "ListItem", "position": 54, "name": "Suede Onboarding", "url": "https://skills.suedeai.ai/skills/suede-onboarding.html" },
-          { "@type": "ListItem", "position": 55, "name": "Suede Paywalls", "url": "https://skills.suedeai.ai/skills/suede-paywalls.html" },
-          { "@type": "ListItem", "position": 56, "name": "Suede Pricing", "url": "https://skills.suedeai.ai/skills/suede-pricing.html" },
-          { "@type": "ListItem", "position": 57, "name": "Suede Product Marketing", "url": "https://skills.suedeai.ai/skills/suede-product-marketing.html" },
-          { "@type": "ListItem", "position": 58, "name": "Suede Programmatic Seo", "url": "https://skills.suedeai.ai/skills/suede-programmatic-seo.html" },
-          { "@type": "ListItem", "position": 59, "name": "Suede Prospecting", "url": "https://skills.suedeai.ai/skills/suede-prospecting.html" },
-          { "@type": "ListItem", "position": 60, "name": "Suede Public Relations", "url": "https://skills.suedeai.ai/skills/suede-public-relations.html" },
-          { "@type": "ListItem", "position": 61, "name": "Suede Referrals", "url": "https://skills.suedeai.ai/skills/suede-referrals.html" },
-          { "@type": "ListItem", "position": 62, "name": "Suede Revops", "url": "https://skills.suedeai.ai/skills/suede-revops.html" },
-          { "@type": "ListItem", "position": 63, "name": "Suede Sales Enablement", "url": "https://skills.suedeai.ai/skills/suede-sales-enablement.html" },
-          { "@type": "ListItem", "position": 64, "name": "Suede Signup", "url": "https://skills.suedeai.ai/skills/suede-signup.html" },
-          { "@type": "ListItem", "position": 65, "name": "Suede Sms", "url": "https://skills.suedeai.ai/skills/suede-sms.html" },
-          { "@type": "ListItem", "position": 66, "name": "Suede Social", "url": "https://skills.suedeai.ai/skills/suede-social.html" },
-          { "@type": "ListItem", "position": 67, "name": "Suede Video", "url": "https://skills.suedeai.ai/skills/suede-video.html" },
-          { "@type": "ListItem", "position": 68, "name": "Suede Instagram Growth", "url": "https://skills.suedeai.ai/skills/suede-instagram-growth.html" },
-          { "@type": "ListItem", "position": 69, "name": "Suede Clip to Guide", "url": "https://skills.suedeai.ai/skills/suede-clip-to-guide.html" },
-          { "@type": "ListItem", "position": 70, "name": "Suede AI SEO", "url": "https://skills.suedeai.ai/skills/suede-ai-seo.html" },
-          { "@type": "ListItem", "position": 71, "name": "Suede Attribution", "url": "https://skills.suedeai.ai/skills/suede-attribution.html" },
-          { "@type": "ListItem", "position": 72, "name": "Suede Newsroom", "url": "https://skills.suedeai.ai/skills/suede-newsroom.html" },
-          { "@type": "ListItem", "position": 73, "name": "Suede Ops Architecture", "url": "https://skills.suedeai.ai/skills/suede-ops-architecture.html" },
-          { "@type": "ListItem", "position": 74, "name": "Suede Ops Assessment", "url": "https://skills.suedeai.ai/skills/suede-ops-assessment.html" }
-
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://skills.suedeai.ai/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are Agent Skills?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. Original work in this pack is MIT licensed, and adapted components retain their upstream notices, including BSD-3-Clause terms for Graph of Thoughts. The pack covers outcome-bound orchestration, code review and grading, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, marketing and growth, iOS and Android app shipping, and creator rights and release prep. Every folder is plain Markdown you can read before you install it." }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I install the Suede Creator Skills pack?",
-            "acceptedAnswer": { "@type": "Answer", "text": "In Claude Code, run /plugin marketplace add JasonColapietro/suede-creator-skills, then /plugin install suede-skills@suede. In Codex, run codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main, then codex plugin add suede-skills@suede-codex. The direct Codex skill installer remains available when you want one selected skill." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does it work with both Claude Code and Codex?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each skill is a standard SKILL.md folder. Claude Code and Codex both install the full pack through their native plugin marketplaces; direct folder and single-skill installs remain available." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is it safe to run?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The skills inspect local files and pages and write local reports. They do not upload files by default, write to any registry, request secrets, or claim legal clearance. Original work is MIT licensed; adapted components retain their upstream notices. The pack is inspectable before you enable anything." }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://skills.suedeai.ai/#website",
+      "name": "Suede Creator Skills",
+      "url": "https://skills.suedeai.ai/",
+      "description": "Public, open-source pack of installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server for discovery, audits, and QA. The pack carries preferences, linked context, quality gates, and reusable workflow rules across agents and computers.",
+      "publisher": {
+        "@id": "https://suedeai.ai/#org"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://suedeai.ai/#org",
+      "name": "Suede Labs AI",
+      "alternateName": "Suede AI",
+      "url": "https://suedeai.ai",
+      "sameAs": [
+        "https://github.com/JasonColapietro",
+        "https://twitter.com/johnnysuede"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://suedeai.ai/founder#person",
+      "name": "Jason Colapietro",
+      "url": "https://suedeai.ai/founder",
+      "sameAs": [
+        "https://github.com/JasonColapietro",
+        "https://twitter.com/johnnysuede"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Suede Creator Skills",
+      "description": "Public, open-source pack of installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. Original work is MIT licensed; adapted components retain their upstream license notices, including BSD-3-Clause terms for Graph of Thoughts. One install gives an AI coding agent a reusable engineering workflow: Suede Thought Graph shipping for broad, authorized outcome-bound work, coordinated multi-agent build lanes with quality gates and a signed handoff, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs and acceptance gates, account-specific Instagram growth, and design, copy, SEO, and visibility lanes for shipping public work. Also includes a small creator toolkit for music rights and release prep. Users can bring their own company, repo, page, or product.",
+      "url": "https://skills.suedeai.ai/",
+      "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills",
+      "programmingLanguage": [
+        "Markdown",
+        "JavaScript",
+        "Python",
+        "HTML"
+      ],
+      "runtimePlatform": [
+        "Claude Code",
+        "OpenAI Codex",
+        "Model Context Protocol"
+      ],
+      "author": {
+        "@id": "https://suedeai.ai/#org"
+      },
+      "creator": {
+        "@id": "https://suedeai.ai/founder#person"
+      },
+      "license": [
+        "https://opensource.org/licenses/MIT",
+        "https://opensource.org/licenses/BSD-3-Clause"
+      ],
+      "keywords": [
+        "Claude Code skills",
+        "Codex skills",
+        "Agent Skills",
+        "MCP server",
+        "multi-agent orchestration",
+        "Codex CLI orchestration",
+        "AI code review",
+        "A-F ship grade",
+        "CI ship gate",
+        "AI eval",
+        "design system",
+        "Suedify",
+        "iOS app packaging",
+        "SEO AEO GEO AI EO audit",
+        "developer tools"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Suede Creator Skills catalog",
+      "description": "The public skills in the Suede Creator Skills pack.",
+      "numberOfItems": 74,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Suede Workflow Skills",
+          "url": "https://skills.suedeai.ai/skills/suede-workflow-skills.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Johnny Suede Write",
+          "url": "https://skills.suedeai.ai/skills/johnny-suede-write.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Johnny Suede Design",
+          "url": "https://skills.suedeai.ai/skills/johnny-suede-design.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Suede Code Grader",
+          "url": "https://skills.suedeai.ai/skills/suede-code-grader.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Suede Visibility Grader",
+          "url": "https://skills.suedeai.ai/skills/suede-visibility-grader.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Suede AI Eval",
+          "url": "https://skills.suedeai.ai/skills/suede-ai-eval.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Suede Agent Teams",
+          "url": "https://skills.suedeai.ai/skills/suede-agent-teams.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Suede Code",
+          "url": "https://skills.suedeai.ai/skills/suede-code.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Suede Code Review",
+          "url": "https://skills.suedeai.ai/skills/suede-code-review.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Suede Copy",
+          "url": "https://skills.suedeai.ai/skills/suede-copy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Suede Design",
+          "url": "https://skills.suedeai.ai/skills/suede-design.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Suede SEO Audit",
+          "url": "https://skills.suedeai.ai/skills/suede-seo-audit.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Suede Site Alchemy",
+          "url": "https://skills.suedeai.ai/skills/suede-site-alchemy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Suede Graph Flo XR",
+          "url": "https://skills.suedeai.ai/skills/suede-graph-flo-xr.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Suede Ship Copy",
+          "url": "https://skills.suedeai.ai/skills/suede-ship-copy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Suede CI Gate",
+          "url": "https://skills.suedeai.ai/skills/suede-ci-gate.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Suede Launch Packaging",
+          "url": "https://skills.suedeai.ai/skills/suede-launch-packaging.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Suede MCP QA",
+          "url": "https://skills.suedeai.ai/skills/suede-mcp-qa.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Suede Rights Passport",
+          "url": "https://skills.suedeai.ai/skills/suede-rights-passport.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Suede Release Linter",
+          "url": "https://skills.suedeai.ai/skills/suede-release-linter.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Suede Campaign in a Box",
+          "url": "https://skills.suedeai.ai/skills/suede-campaign-in-a-box.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Suede Rights Audit",
+          "url": "https://skills.suedeai.ai/skills/suede-rights-audit.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Suede Sync Packaging",
+          "url": "https://skills.suedeai.ai/skills/suede-sync-packaging.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Site to iOS App",
+          "url": "https://skills.suedeai.ai/skills/site-to-ios-app.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "Amazon Returns Recovery",
+          "url": "https://skills.suedeai.ai/skills/amazon-returns-recovery.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Subscription Recovery",
+          "url": "https://skills.suedeai.ai/skills/subscription-recovery.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "Android App Factory",
+          "url": "https://skills.suedeai.ai/skills/android-app-factory.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "Suede Recommend Next Action",
+          "url": "https://skills.suedeai.ai/skills/suede-recommend-next-action.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "Suede Deslop",
+          "url": "https://skills.suedeai.ai/skills/suede-deslop.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "name": "Suede Ab Testing",
+          "url": "https://skills.suedeai.ai/skills/suede-ab-testing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "name": "Suede Ad Creative",
+          "url": "https://skills.suedeai.ai/skills/suede-ad-creative.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "name": "Suede Ads",
+          "url": "https://skills.suedeai.ai/skills/suede-ads.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "name": "Suede Analytics",
+          "url": "https://skills.suedeai.ai/skills/suede-analytics.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "name": "Suede Aso",
+          "url": "https://skills.suedeai.ai/skills/suede-aso.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "name": "Suede Churn Prevention",
+          "url": "https://skills.suedeai.ai/skills/suede-churn-prevention.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "name": "Suede Co Marketing",
+          "url": "https://skills.suedeai.ai/skills/suede-co-marketing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "name": "Suede Cold Email",
+          "url": "https://skills.suedeai.ai/skills/suede-cold-email.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "name": "Suede Community Marketing",
+          "url": "https://skills.suedeai.ai/skills/suede-community-marketing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "name": "Suede Competitor Profiling",
+          "url": "https://skills.suedeai.ai/skills/suede-competitor-profiling.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "name": "Suede Competitors",
+          "url": "https://skills.suedeai.ai/skills/suede-competitors.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "name": "Suede Content Strategy",
+          "url": "https://skills.suedeai.ai/skills/suede-content-strategy.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 42,
+          "name": "Suede Customer Research",
+          "url": "https://skills.suedeai.ai/skills/suede-customer-research.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 43,
+          "name": "Suede Directory Submissions",
+          "url": "https://skills.suedeai.ai/skills/suede-directory-submissions.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 44,
+          "name": "Suede Emails",
+          "url": "https://skills.suedeai.ai/skills/suede-emails.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 45,
+          "name": "Suede Free Tools",
+          "url": "https://skills.suedeai.ai/skills/suede-free-tools.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 46,
+          "name": "Suede Image",
+          "url": "https://skills.suedeai.ai/skills/suede-image.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 47,
+          "name": "Suede Lead Magnets",
+          "url": "https://skills.suedeai.ai/skills/suede-lead-magnets.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 48,
+          "name": "Suede Marketing Council",
+          "url": "https://skills.suedeai.ai/skills/suede-marketing-council.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 49,
+          "name": "Suede Marketing Ideas",
+          "url": "https://skills.suedeai.ai/skills/suede-marketing-ideas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 50,
+          "name": "Suede Marketing Loops",
+          "url": "https://skills.suedeai.ai/skills/suede-marketing-loops.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 51,
+          "name": "Suede Marketing Plan",
+          "url": "https://skills.suedeai.ai/skills/suede-marketing-plan.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 52,
+          "name": "Suede Marketing Psychology",
+          "url": "https://skills.suedeai.ai/skills/suede-marketing-psychology.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 53,
+          "name": "Suede Offers",
+          "url": "https://skills.suedeai.ai/skills/suede-offers.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 54,
+          "name": "Suede Onboarding",
+          "url": "https://skills.suedeai.ai/skills/suede-onboarding.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 55,
+          "name": "Suede Paywalls",
+          "url": "https://skills.suedeai.ai/skills/suede-paywalls.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 56,
+          "name": "Suede Pricing",
+          "url": "https://skills.suedeai.ai/skills/suede-pricing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 57,
+          "name": "Suede Product Marketing",
+          "url": "https://skills.suedeai.ai/skills/suede-product-marketing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 58,
+          "name": "Suede Programmatic Seo",
+          "url": "https://skills.suedeai.ai/skills/suede-programmatic-seo.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 59,
+          "name": "Suede Prospecting",
+          "url": "https://skills.suedeai.ai/skills/suede-prospecting.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 60,
+          "name": "Suede Public Relations",
+          "url": "https://skills.suedeai.ai/skills/suede-public-relations.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 61,
+          "name": "Suede Referrals",
+          "url": "https://skills.suedeai.ai/skills/suede-referrals.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 62,
+          "name": "Suede Revops",
+          "url": "https://skills.suedeai.ai/skills/suede-revops.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 63,
+          "name": "Suede Sales Enablement",
+          "url": "https://skills.suedeai.ai/skills/suede-sales-enablement.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 64,
+          "name": "Suede Signup",
+          "url": "https://skills.suedeai.ai/skills/suede-signup.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 65,
+          "name": "Suede Sms",
+          "url": "https://skills.suedeai.ai/skills/suede-sms.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 66,
+          "name": "Suede Social",
+          "url": "https://skills.suedeai.ai/skills/suede-social.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 67,
+          "name": "Suede Video",
+          "url": "https://skills.suedeai.ai/skills/suede-video.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 68,
+          "name": "Suede Instagram Growth",
+          "url": "https://skills.suedeai.ai/skills/suede-instagram-growth.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 69,
+          "name": "Suede Clip to Guide",
+          "url": "https://skills.suedeai.ai/skills/suede-clip-to-guide.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 70,
+          "name": "Suede AI SEO",
+          "url": "https://skills.suedeai.ai/skills/suede-ai-seo.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 71,
+          "name": "Suede Attribution",
+          "url": "https://skills.suedeai.ai/skills/suede-attribution.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 72,
+          "name": "Suede Newsroom",
+          "url": "https://skills.suedeai.ai/skills/suede-newsroom.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 73,
+          "name": "Suede Ops Architecture",
+          "url": "https://skills.suedeai.ai/skills/suede-ops-architecture.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 74,
+          "name": "Suede Ops Assessment",
+          "url": "https://skills.suedeai.ai/skills/suede-ops-assessment.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://skills.suedeai.ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are Agent Skills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. An installed skill costs your context its name and its description, and the body loads only when a request matches it, so the pack sits cheap and runs narrow. Original work in this pack is MIT licensed, and adapted components retain their upstream notices, including BSD-3-Clause terms for Graph of Thoughts. Every folder is plain Markdown you can read before you install it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install the pack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Claude Code, run /plugin marketplace add JasonColapietro/suede-creator-skills, then /plugin install suede-skills@suede. In Codex, run codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main, then codex plugin add suede-skills@suede-codex. The direct Codex skill installer remains available for one selected skill. Full paths live on the install page. The first thing worth running: use suede-code to review your staged diff and give it an A-F ship grade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with both Claude Code and Codex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each skill is a standard SKILL.md folder. Claude Code and Codex both install the full pack through their native plugin marketplaces. Cursor, Copilot, Windsurf, and other agents that read skills take the same pack through one npx skills add command; direct folder and single-skill installs remain available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to run?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The skills inspect local files and pages and write local reports. They do not upload files by default, write to any registry, request secrets, or claim legal clearance. Original work is MIT licensed; adapted components retain their upstream notices. The pack is inspectable before you enable anything."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <style>
     /* ============================================================
@@ -3643,11 +4064,11 @@
 
     <div id="hero-grid">
       <div id="hero-copy">
-        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT + BSD<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 26</a></span>
+        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT + BSD &middot; One author<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 26</a></span>
 
         <h1 id="hero-headline" class="hero-anim">Your coding agent is one install away from <em class="hh-risk">being a company</em>.</h1>
 
-        <p id="hero-subline" class="hero-anim">Suede is the operating doctrine for agents that ship. A build DAG that researches your repo, fans out disjoint lanes, and refutes its own review before anything lands. A blunt <strong>A-F ship grade</strong> that blocks the bad merge instead of complimenting it. Then the lanes nobody prompts for: design, copy, SEO, growth, and <strong>native iOS and Android shipping</strong>. One skill argued Amazon out of <strong>$448.31</strong>. It is the pettiest thing in the pack.</p>
+        <p id="hero-subline" class="hero-anim">One terminal runs all of it, and these are the files it runs on. A build DAG researches your repo, fans out disjoint lanes, and refutes its own review before anything lands. A blunt <strong>A-F ship grade</strong> that blocks the bad merge instead of complimenting it. The same folder designs the page, writes the copy, and ships <strong>native iOS and Android</strong> builds. One skill argued Amazon out of <strong>$448.31</strong>. It is the pettiest thing in the pack.</p>
 
         <div id="hero-ctas" class="hero-anim">
           <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
@@ -3655,7 +4076,7 @@
             Star on GitHub
             <span id="hero-star-count" data-star-count hidden></span>
           </a>
-          <a id="hero-cta-secondary" href="#scorecard">See the benchmarks</a>
+          <a id="hero-cta-secondary" href="#scorecard">See where we lose</a>
         </div>
 
         <a id="hero-shiplog" class="hero-anim" data-status="released" href="#changelog" aria-label="Ship log. Released entry August 26, 2026: Both design skills get a vetted component source. Jump to the full changelog.">
@@ -3718,7 +4139,7 @@
             <span class="term-line"><span class="term-grade">SHIP GRADE: A- &middot; MERGE UNBLOCKED</span><span class="term-cursor" aria-hidden="true"></span></span>
           </div>
         </div>
-        <p id="hero-term-note">Every skill is a plain-Markdown SKILL.md folder you can read before you enable it. Core local workflows do not upload by default or grant new authority. <a href="#install">More install paths</a> for Codex, Cursor, and other supported agents.</p>
+        <p id="hero-term-note">Every skill is a plain-Markdown SKILL.md folder you can read before you enable it, and every line of it is on disk. Core local workflows do not upload by default or grant new authority. <a href="#install">More install paths</a> for Codex, Cursor, and other supported agents.</p>
       </div>
     </div>
 
@@ -3746,7 +4167,7 @@
           <span class="bench-vs">GSD B &middot; Superpowers C</span>
         </a>
       </div>
-      <p class="bench-caption">Graded on the same ship-gate rubric, run on all three packs. Losses published too: <a href="#scorecard">see the full scorecard</a>.</p>
+      <p class="bench-caption">One rubric, three packs, read from their published files on 2026-07-05: <a href="#scorecard">see every row</a>.</p>
     </div>
 
   </div>
@@ -4205,9 +4626,9 @@
 <!-- LANE INDEX -->
 <section id="lanes" aria-labelledby="lanes-headline">
   <div class="lanes-inner">
-    <p class="lanes-eyebrow reveal">One pack, six specialities</p>
-    <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">Code review is just the opening act.</h2>
-    <p class="lanes-sub reveal reveal-d1">The same discipline that grades your diffs also designs the page, writes the copy, runs the whole marketing engine, ships the iOS and Android app, packages the release rights, and argues your money back. Six specialities, one install.</p>
+    <p class="lanes-eyebrow reveal">Six specialities, one install</p>
+    <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">The folder that grades your diff also argues with Amazon.</h2>
+    <p class="lanes-sub reveal reveal-d1">The same discipline that grades your diffs also designs the page, writes the copy, runs the whole marketing engine, ships the iOS and Android app, packages the release rights, and argues your money back. Amazon reversed a denied refund after the return window had already closed.</p>
     <div class="lanes-list reveal reveal-d2">
       <a class="lane-row" href="#lane-ship">
         <span class="lane-name">Ship</span>
@@ -4247,8 +4668,8 @@
 <section id="flow" aria-labelledby="flow-headline">
   <div class="flow-inner">
     <p class="flow-eyebrow reveal">The Ship DAG</p>
-    <h2 id="flow-headline" class="flow-headline reveal reveal-d1">Enthusiasm in. Proof out.</h2>
-    <p class="flow-sub reveal reveal-d1">Tell most agents "max effort, fix everything" and you get vibes. <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a> turns that intent into a structure: one authorized controller, every useful non-colliding lane in parallel, adversarial reconciliation where lanes attack each other's claims, and a close that is either concise proof or one named blocker.</p>
+    <h2 id="flow-headline" class="flow-headline reveal reveal-d1">Max effort in. Proof or one blocker out.</h2>
+    <p class="flow-sub reveal reveal-d1">Tell most agents "max effort, fix everything" and you get vibes. <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a> turns that intent into a structure: one authorized controller, every useful non-colliding lane in parallel, adversarial reconciliation where lanes attack each other's claims, a call budget the file caps at 55, 110, or 200, and a close that is either concise proof or one named blocker. It reads production and never deploys.</p>
     <div class="flow-scroll reveal reveal-d2">
       <svg class="flow-svg" viewBox="0 0 1200 360" role="img" aria-labelledby="flow-svg-title flow-svg-desc" xmlns="http://www.w3.org/2000/svg">
         <title id="flow-svg-title">The ship pipeline</title>
@@ -4473,83 +4894,83 @@
 <!-- FEATURES GRID -->
 <section id="skills" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="features-inner">
-    <h2 class="features-headline reveal">What your agent learns.</h2>
+    <h2 class="features-headline reveal">A pack that only reviews code is a linter with better manners.</h2>
     <div class="features-grid reveal-group">
       <div class="feature-card feature-card--wide feature-card--red">
         <span class="feature-num">01</span>
         <span class="feature-label">Code review → ship verdict</span>
         <h3 class="feature-title">Review that ends in<br>a blunt A-F grade.</h3>
-        <p class="feature-copy">Deep findings across TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists, then a letter verdict across 7 evidence-backed lanes. A hardcoded secret is an instant F with the exact file and line — no other lane can raise it. iOS gets its own traps list: force unwraps, main-thread violations, and native contract drift that crashes shipped apps.</p>
+        <p class="feature-copy">Deep findings across TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists, then a letter verdict across 7 evidence-backed lanes. A hardcoded secret is an instant F with the exact file and line. No other lane can raise it. iOS gets its own traps list: force unwraps, main-thread violations, and native contract drift that crashes shipped apps.</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">02</span>
-        <span class="feature-label">Skills, not prompts</span>
-        <p class="feature-copy">Every capability is an inspectable SKILL.md folder the agent loads on demand, so context stays lean and the job stays in focus</p>
+        <span class="feature-label">Cheap to carry</span>
+        <p class="feature-copy">An installed skill costs your context its name and its description. The body loads only when a request matches it, so you carry the whole folder for about the price of its table of contents</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">03</span>
         <span class="feature-label">Agent teams</span>
-        <p class="feature-copy">Runs scout, build, review, verifier, and release lanes that share context instead of acting like siloed subagents — with WIP collision detection and a signed handoff</p>
+        <p class="feature-copy">The handoff will not close without evidence. Scout, build, review, verifier, and release lanes share one context instead of acting like siloed subagents, with WIP collision detection and rollback trees underneath</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">04</span>
         <span class="feature-label">AI evals</span>
-        <p class="feature-copy">Turns LLM, RAG, classifier, and agent surfaces into measurable AI-SPECs with failure-mode rubrics, eval cases, and acceptance gates you can fail a release on</p>
+        <p class="feature-copy">A release that fails its own eval gate does not ship, and the spec names the case that killed it. LLM, RAG, classifier, and agent surfaces each become a measurable AI-SPEC with failure-mode rubrics and eval cases</p>
       </div>
       <div class="feature-card feature-card--red">
         <span class="feature-num">05</span>
         <span class="feature-label">CI ship gate</span>
-        <p class="feature-copy">Writes CI that actually gates the merge: stack and lockfile detection, one required check that can't deadlock, and branch protection that holds</p>
+        <p class="feature-copy">One required check that cannot deadlock, which is the failure mode every branch-protection setup hits. It reads your stack and your lockfile, writes the CI, and wires the protection rule to that single check</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">06</span>
         <span class="feature-label">Suedify</span>
-        <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language — your own copy, your own assets, nothing traced or copied</p>
+        <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language, with your own copy and your own assets. Nothing traced, nothing copied</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">07</span>
         <span class="feature-label">Conversion copy</span>
-        <p class="feature-copy">Runs the same persuasion frameworks agencies bill five figures to teach — AIDA, PAS, StoryBrand, JTBD — plus 12 headline formulas and a 29-point anti-slop gate before a word ships</p>
+        <p class="feature-copy">Twelve headline formulas, and the framework that fits the reader's state: AIDA, PAS, StoryBrand, or JTBD. Every draft is scored out of 70 across seven dimensions, and below 58 it goes back before a word ships, below 62 for a launch surface</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">08</span>
         <span class="feature-label">SEO, AEO &amp; AI EO</span>
-        <p class="feature-copy">Nine audit lanes in one pass — technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, topic clusters — wider than any single-purpose SEO skill in the wild</p>
+        <p class="feature-copy">Nine audit lanes in one pass: technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters. It hands back the exact rewrites, not a list of complaints</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">09</span>
         <span class="feature-label">Visibility grade</span>
-        <p class="feature-copy">Scores brand and page visibility A-F across first-screen clarity, CTA pull, proof, AI readability, schema depth, and search result fit</p>
+        <p class="feature-copy">Tells you whether a page is worth the traffic you are about to buy, A to F, and names the screen that lost the grade: first-screen clarity, CTA pull, proof, AI readability, schema depth, search result fit</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">10</span>
         <span class="feature-label">Site to iOS app</span>
-        <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and screenshots polished enough for a downtown agency pitch deck, not a template generator</p>
+        <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and the store screenshots. The same terminal that runs this pack has archived and uploaded 8 iOS apps</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">11</span>
         <span class="feature-label">Design, from first principles</span>
-        <p class="feature-copy">Commits to a named aesthetic lane, rejects the first reflex and the second-order trap, and builds color, type, and motion up from that decision — never a template with your logo dropped in</p>
+        <p class="feature-copy">Never a template with your logo dropped in. It commits to a named aesthetic lane and writes that choice into the file before it picks a single color, then builds color, type, and motion up from it</p>
       </div>
       <div class="feature-card feature-card--red">
         <span class="feature-num">12</span>
         <span class="feature-label">Consumer recovery</span>
-        <p class="feature-copy">The same negotiation discipline pointed at your own accounts: one skill argued Amazon into refunding $448.31, the other audits Netflix, gyms, and every App Store subscription you forgot you had</p>
+        <p class="feature-copy">The same negotiation discipline pointed at your own accounts: one skill argued Amazon into refunding $448.31, the other audits Netflix, gyms, and every App Store subscription you forgot you had. One of those refunds had already been denied after the return window closed</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">13</span>
         <span class="feature-label">Taste memory</span>
-        <p class="feature-copy">Say &quot;Cue Suede&quot; mid-run and choose: change something, preserve what worked, or accept as-is. The skill mimics what worked on every pass after — across design, copy, agent-team, and launch-packaging lanes</p>
+        <p class="feature-copy">Say &quot;Cue Suede&quot; mid-run and choose: change something, preserve what worked, or accept as-is. The choice carries into every pass after it, so the pack accumulates judgment: what to do, what not to do, and when to stop</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">14</span>
         <span class="feature-label">Android app factory</span>
-        <p class="feature-copy">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing copy sized to Play's character limits, and a signed release gated the same way as everything else in this pack</p>
+        <p class="feature-copy">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing copy sized to Play's character limits, and a signed release</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">15</span>
         <span class="feature-label">Recommend next action</span>
-        <p class="feature-copy">Ask &quot;what's next&quot; and get one recommended move — scored on goal fit, urgency, and leverage — packaged as a short prompt you paste and run, expandable into a full operator brief only when you ask</p>
+        <p class="feature-copy">Ask &quot;what's next&quot; and get one move, written as a short prompt you can paste and run. It is scored against the goal, the clock, and the rework it prevents, and it opens into a full operator brief only when you ask for one</p>
       </div>
     </div>
   </div>
@@ -4561,8 +4982,8 @@
     <div class="reveal">
       <p class="router-eyebrow">The router</p>
       <h2 id="router-headline" class="router-headline">Don't memorize a command list.</h2>
-      <p class="router-sub">Ask in plain words. The umbrella skill, <code>/suede-workflow-skills</code>, reads the request and loads the right lane — one install, every skill reachable. Agents that speak MCP get the same routing as structured tools: <code>list_suede_skills</code> finds the skill, <code>get_suede_skill</code> loads it.</p>
-      <p class="router-note">The optional MCP server ships in the repo, runs local with zero dependencies, and adds install options, audit scaffolds, grading, and QA checklists on top of discovery. Wire-up lives on the <a href="plugins.html" style="color:#888880;border-bottom:1px solid rgba(136,136,128,0.35);">install page</a>.</p>
+      <p class="router-sub">Ask in plain words. The umbrella skill, <code>/suede-workflow-skills</code>, reads the request and loads the right lane: one install, every skill reachable. Every description also carries a NOT FOR line naming the sibling that should win instead, which is why breadth does not turn into an argument inside one prompt. Agents that speak MCP get the same routing as structured tools: <code>list_suede_skills</code> finds the skill, <code>get_suede_skill</code> loads it.</p>
+      <p class="router-note">The optional MCP server ships in the repo and runs local with no dependencies: 9 tools, 7 resources, and 5 prompts over stdio. Wire-up lives on the <a href="plugins.html" style="color:#888880;border-bottom:1px solid rgba(136,136,128,0.35);">install page</a>.</p>
     </div>
     <div class="router-table reveal reveal-d1" role="list" aria-label="Example requests and the skill each one routes to">
       <a class="router-row" role="listitem" href="skills/suede-code.html">
@@ -4625,8 +5046,8 @@
 <section id="install" style="background:#080808;padding:84px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
 
   <div class="install-inner">
-    <h2 class="install-headline reveal">Install the open-source pack.</h2>
-    <p class="install-sub reveal reveal-d1">Two lines in Claude Code install the full pack. Prefer less? <code>suede-marketing@suede</code> (42 growth skills), <code>suede-agent-workflows@suede</code>, and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Either way the agent gets orchestration, code review with A-F grading, AI evals, Instagram growth, design, copy, SEO, and CI rails it can reuse across your own work. Bring your own company, repo, page, or product.</p>
+    <h2 class="install-headline reveal">Install the open-source pack in two commands.</h2>
+    <p class="install-sub reveal reveal-d1">Two lines in Claude Code, about thirty seconds, and the whole pack is on disk. Prefer less? <code>suede-marketing@suede</code> (42 growth skills), <code>suede-agent-workflows@suede</code>, and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Bring your own company, repo, page, or product.</p>
 
     <div class="install-terminal reveal reveal-d1">
       <div class="install-terminal-bar" aria-hidden="true">
@@ -4655,11 +5076,11 @@
 
     <div class="install-alts reveal reveal-d2">
       <div class="install-alt">
-        <span class="install-alt-label">Supported agents — Cursor, Copilot, Windsurf, and more</span>
+        <span class="install-alt-label">Supported agents: Cursor, Copilot, Windsurf, and more</span>
         <code>npx skills add JasonColapietro/suede-creator-skills</code>
       </div>
       <div class="install-alt">
-        <span class="install-alt-label">Prefer a clone — copies the pack into ~/.claude/skills/</span>
+        <span class="install-alt-label">Prefer a clone: it copies the pack into ~/.claude/skills/</span>
         <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
       </div>
     </div>
@@ -4672,7 +5093,7 @@
       <a class="install-link" href="guide.html">Read the full guide</a>
     </div>
 
-    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 0;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a> — stars are how other builders find it.</p>
+    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 0;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a>. Stars are how other builders find it.</p>
   </div>
 
 </section>
@@ -4681,8 +5102,8 @@
 <section id="catalog" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="catalog-inner">
     <p class="catalog-eyebrow reveal">The full pack</p>
-    <h2 class="catalog-headline reveal reveal-d1">Every skill in the pack.</h2>
-    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder you can read before you install it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
+    <h2 class="catalog-headline reveal reveal-d1">Every line of every skill, readable before you trust one.</h2>
+    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
 
     <div class="catalog-lane reveal" id="lane-ship">
       <div class="catalog-lane-head">
@@ -4959,8 +5380,8 @@
 <section id="essays" aria-labelledby="essays-headline">
   <div class="essays-inner">
     <p class="essays-eyebrow reveal">Field notes</p>
-    <h2 id="essays-headline" class="essays-headline reveal reveal-d1">Why it's built this way.</h2>
-    <p class="essays-sub reveal reveal-d1">The design decisions behind the pack, written up as essays: how 74 skills stay cheap to carry, how they route without colliding, and why your memory file should be jealous.</p>
+    <h2 id="essays-headline" class="essays-headline reveal reveal-d1">Why memory belongs in a skill, not a prompt.</h2>
+    <p class="essays-sub reveal reveal-d1">The design decisions behind the pack, written up as essays: how 74 skills stay cheap to carry, how they route without colliding, and where judgment should live when a prompt is the wrong place for it.</p>
     <div class="essays-list reveal reveal-d2">
       <a class="essay-row" href="blog/progressive-disclosure-ship-dag-and-mcp.html">
         <span class="essay-date">Aug 2026</span>
@@ -5011,7 +5432,7 @@
   <div class="ship-band-inner reveal">
     <p class="ship-band-kicker">Two commands from here</p>
     <h2 id="ship-band-headline">Proof is part of the release.</h2>
-    <p class="ship-band-sub">Give your agent review with a spine, CI that holds the door, and copy that earns the click. Open source with MIT and BSD notices, plain Markdown, readable before you run it.</p>
+    <p class="ship-band-sub">Give your agent a grade that blocks the merge, and a folder you can open before you run it. Open source, MIT and BSD notices, plain Markdown all the way down.</p>
     <div class="ship-band-ctas">
       <button class="ship-band-btn" id="band-copy-btn" onclick="
         var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
@@ -5030,19 +5451,19 @@
 <!-- FAQ -->
 <section id="faq" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="faq-inner">
-    <h2 class="faq-headline reveal">Questions, answered.</h2>
+    <h2 class="faq-headline reveal">What it costs you, and what it will not do.</h2>
     <div class="reveal reveal-d1">
       <details class="faq-item" open>
         <summary>What are Agent Skills?</summary>
-        <p>Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. Original work in this pack is MIT licensed, and adapted components retain their upstream notices, including BSD-3-Clause terms for Graph of Thoughts. The pack covers outcome-bound orchestration, code review and grading for web stacks and Swift/iOS, a site-to-iOS app conversion workflow, a one-prompt Android app factory, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, marketing and growth, and creator rights and release prep. Every folder is plain Markdown you can read before you install it.</p>
+        <p>Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. An installed skill costs your context its name and its description, and the body loads only when a request matches it, so the pack sits cheap and runs narrow. Original work in this pack is MIT licensed, and adapted components retain their upstream notices, including BSD-3-Clause terms for Graph of Thoughts. Every folder is plain Markdown you can read before you install it.</p>
       </details>
       <details class="faq-item">
         <summary>How do I install the pack?</summary>
-        <p>In Claude Code, run <code>/plugin marketplace add JasonColapietro/suede-creator-skills</code>, then <code>/plugin install suede-skills@suede</code>. In Codex, run <code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main</code>, then <code>codex plugin add suede-skills@suede-codex</code>. The direct Codex skill installer remains available for one selected skill. Full paths live on the <a href="plugins.html">install page</a>.</p>
+        <p>In Claude Code, run <code>/plugin marketplace add JasonColapietro/suede-creator-skills</code>, then <code>/plugin install suede-skills@suede</code>. In Codex, run <code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main</code>, then <code>codex plugin add suede-skills@suede-codex</code>. The direct Codex skill installer remains available for one selected skill. Full paths live on the <a href="plugins.html">install page</a>. The first thing worth running: use suede-code to review your staged diff and give it an A-F ship grade.</p>
       </details>
       <details class="faq-item">
         <summary>Does it work with both Claude Code and Codex?</summary>
-        <p>Yes. Each skill is a standard <code>SKILL.md</code> folder. Claude Code and Codex both install the full pack through their native plugin marketplaces; direct folder and single-skill installs remain available.</p>
+        <p>Yes. Each skill is a standard <code>SKILL.md</code> folder. Claude Code and Codex both install the full pack through their native plugin marketplaces. Cursor, Copilot, Windsurf, and other agents that read skills take the same pack through one npx skills add command; direct folder and single-skill installs remain available.</p>
       </details>
       <details class="faq-item">
         <summary>Is it safe to run?</summary>
