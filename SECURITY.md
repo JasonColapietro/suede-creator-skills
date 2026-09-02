@@ -30,3 +30,7 @@ Security reports may cover plugin manifests and installation paths, bundled exec
 - The four listed WAV files under `skills/suede-release-linter/scripts/fixtures/sample-clean-project/` are identical 16,044-byte PCM test fixtures (SHA-256 `56d4af65701c26df20bd4021eda95b6e830348ce3a746086079fe89285548dc9`). The exact skill-directory exception accounts only for the scanner's aggregate analyzability finding; each binary path is also listed explicitly.
 
 These exceptions are not a security certification. Changes to an excepted path require renewed review, and reports about those paths remain in scope.
+
+## Scanner version pin
+
+The HOL Plugin Scanner workflow installs `plugin-scanner` by exact version and SHA256, but that wheel leaves its `cisco-ai-skill-scanner` dependency as an open `~=2.0.12` range. `.github/hol-scanner-constraints.txt` pins that dependency to `2.0.13`, the release the current tree was reviewed against, so a new scanner release cannot change the verdict on an unchanged tree. Cisco `2.0.14` (2026-09-01) added a `UNICODE_OBFUSCATED_INSTRUCTION` rule that treats three or more non-ASCII characters in a Markdown file as obfuscation; it reported HIGH findings on em dashes, arrows and multiplication signs in four prose files that contain no homoglyphs. Moving the pin forward is a deliberate change: re-run the scan against the new release, then review each new finding on its own terms before editing the constraint.
