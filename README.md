@@ -282,7 +282,7 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 
 ## License and contributions
 
-Released under the [MIT License](LICENSE).
+The original work is released under the [MIT License](LICENSE). Adapted components retain their upstream licenses, listed in [NOTICE.md](NOTICE.md).
 
 Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
 
