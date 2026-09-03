@@ -13,7 +13,7 @@ Status: production. Ships in the `suede-skills` plugin (the full pack) at releas
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.org` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 
