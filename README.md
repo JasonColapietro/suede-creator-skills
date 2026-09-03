@@ -23,6 +23,10 @@ Your coding agent is fast, capable, and completely unsupervised. It will happily
 
 This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
+**Independent registry signals:** [HOL — Trust 92 · Security 100](https://hol.org/registry/plugins/suede-labs-ai%2Fsuede-skills) · [PluginWorld — Security A · Score 90](https://pluginworld.ai/plugins/claude-code/jasoncolapietro/suede-creator-skills)
+
+<sub>Third-party registry scores are external assessments, not security certifications.</sub>
+
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
 ## Install in 30 seconds
