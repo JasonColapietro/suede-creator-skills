@@ -1,0 +1,57 @@
+name: Apply external trust signals
+
+on:
+  push:
+    branches:
+      - feat/external-trust-signals
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: feat/external-trust-signals
+          fetch-depth: 0
+
+      - name: Patch public trust signals
+        shell: python
+        run: |
+          from pathlib import Path
+
+          hol = "https://hol.org/registry/plugins/suede-labs-ai%2Fsuede-skills"
+          pluginworld = "https://pluginworld.ai/plugins/claude-code/jasoncolapietro/suede-creator-skills"
+
+          def replace_once(path, needle, replacement):
+              p = Path(path)
+              text = p.read_text(encoding="utf-8")
+              if text.count(needle) != 1:
+                  raise SystemExit(f"{path}: expected exactly one patch marker, found {text.count(needle)}")
+              p.write_text(text.replace(needle, replacement, 1), encoding="utf-8")
+
+          readme_marker = "This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts."
+          readme_block = readme_marker + f'''\n\n**Independent registry signals:** [HOL — Trust 92 · Security 100]({hol}) · [PluginWorld — Security A · Score 90]({pluginworld})\n\n<sub>Third-party registry scores are external assessments, not security certifications.</sub>'''
+          replace_once("README.md", readme_marker, readme_block)
+
+          home_marker = '<h2 class="scorecard-headline reveal reveal-d1">Suede against GSD and Superpowers, losses included.</h2>'
+          home_block = home_marker + f'''\n    <div class="reveal reveal-d2" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 28px">\n      <a class="badge badge-gold" href="{hol}" rel="noopener">HOL · Trust 92 · Security 100</a>\n      <a class="badge badge-gold" href="{pluginworld}" rel="noopener">PluginWorld · Security A · Score 90</a>\n      <span style="font-size:12px;color:#888880">Independent registry scores · not certifications</span>\n    </div>'''
+          replace_once("docs/index.html", home_marker, home_block)
+
+          plugins_marker = '<h1>Install Suede once. Stop rebuilding the agent brief.</h1>'
+          plugins_block = plugins_marker + f'''\n    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 12px">\n      <a class="badge badge-gold" href="{hol}" rel="noopener">HOL · Trust 92 · Security 100</a>\n      <a class="badge badge-gold" href="{pluginworld}" rel="noopener">PluginWorld · Security A · Score 90</a>\n      <span style="font-size:12px;color:var(--muted)">Independent registry scores · not certifications</span>\n    </div>'''
+          replace_once("docs/plugins.html", plugins_marker, plugins_block)
+
+      - name: Verify trust-signal regression test
+        run: python3 -m unittest tests/test_external_trust_signals.py -v
+
+      - name: Commit generated patch
+        run: |
+          git config user.name "Suede-AI"
+          git config user.email "193284465+Suede-AI@users.noreply.github.com"
+          git add README.md docs/index.html docs/plugins.html
+          git commit -m "docs: surface independent registry trust scores"
+          git push origin HEAD:feat/external-trust-signals
