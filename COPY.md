@@ -182,8 +182,7 @@ Suede Creator Skills are those misses written down as methods, and they now run
 30+ live sites and 8 iOS apps from one terminal with zero employees.
 
 Suede's founder is
-[Jason Colapietro](https://suedeai.ai/founder), a published author and Forbes
-contributor building programmable IP and creator ownership infrastructure.
+[Jason Colapietro](https://suedeai.ai/founder), a published author building programmable IP and creator ownership infrastructure.
 
 ### Progressive updating note
 
