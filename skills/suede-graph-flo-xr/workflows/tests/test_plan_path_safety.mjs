@@ -329,3 +329,41 @@ test('diff-digest.cjs rejects a file reached through a symlinked worktree ancest
     },
   )
 })
+
+// Run wf_13062fd6-bf3 (2026-09-04, seven-line scope, three finalists): every finalist
+// mapped each checklist line to its owning lane two or three times — one scopeMap
+// entry per cited source — and Select rejected all of them for "a duplicate item-lane
+// pair", ending the run with zero mutations. A repeated pair is one mapping with more
+// sources, not a defect; every entry still has to name the lane's acceptance and a
+// known source.
+const planWithRepeatedPair = (target, extra) => {
+  const plan = planFor(target)
+  plan.scopeMap.push({ item: 'Reconcile the docs', lane: 'target-lane', acceptance: 'npm test', source: 'user scope', ...extra })
+  return plan
+}
+
+test('a scopeMap that repeats an item-lane pair with a second source is still selectable', async () => {
+  const route = 'src/a.ts'
+  const { result } = await runShip({
+    source: CURRENT,
+    candidateFiles: [route, 'README.md'],
+    trackedCandidateFiles: [route, 'README.md'],
+    planScript: () => planWithRepeatedPair(route),
+  })
+  assert.ok(result.selectedPlan,
+    `a repeated (item, lane) mapping is one mapping cited twice and must reach Select; run ended with ${JSON.stringify(result.reason)} ${JSON.stringify(result.haltDetail && result.haltDetail.eligibilityRejections)}`)
+})
+
+test('folding repeated pairs does not skip the per-entry acceptance check', async () => {
+  const route = 'src/a.ts'
+  const { result } = await runShip({
+    source: CURRENT,
+    candidateFiles: [route, 'README.md'],
+    trackedCandidateFiles: [route, 'README.md'],
+    planScript: () => planWithRepeatedPair(route, { acceptance: 'npm run build' }),
+  })
+  assert.equal(result.selectedPlan, null,
+    'a repeated entry naming an acceptance the lane does not run must still reject the plan')
+  assert.ok((result.haltDetail.eligibilityRejections || []).some(r => /does not name an existing lane acceptance/.test(r)),
+    `the rejection must be the acceptance mismatch; got ${JSON.stringify(result.haltDetail.eligibilityRejections)}`)
+})

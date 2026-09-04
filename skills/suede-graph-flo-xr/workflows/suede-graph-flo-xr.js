@@ -1574,9 +1574,13 @@ const planEligibility = (plan, score) => {
     if (!lane || mapping.lane !== lane.name) reasons.push('scope mapping lane is not canonical')
     else {
       mappedLanes.add(lane.name)
-      const pair = `${mapping.item}\u0000${lane.name}`
-      if (mappingPairs.has(pair)) reasons.push('scope mapping contains a duplicate item-lane pair')
-      mappingPairs.add(pair)
+      // A repeated (item, lane) pair is one mapping cited from several sources, not
+      // two mappings: the planner prompts ask for "a source" per entry, so every
+      // finalist of run wf_13062fd6-bf3 split one line's mapping into one entry per
+      // cited source (27-32 entries over 7 items) and Select rejected all three for
+      // it. Each entry still has to name the lane's acceptance and a known source
+      // below; the repetition itself is folded, never a defect.
+      mappingPairs.add(`${mapping.item}\u0000${lane.name}`)
       if (normalizeText(mapping.acceptance) !== normalizeText(lane.acceptance)) reasons.push(`scope mapping for ${mapping.item} does not name an existing lane acceptance command`)
     }
     if (!knownPlanSources.has(normalizeSourceKey(mapping.source))) reasons.push('scope mapping cites an unknown source')
