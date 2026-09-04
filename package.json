@@ -18,7 +18,7 @@
     "test:ship-cost": "node --test tests/test_ship_workflow_cost.mjs tests/test_ship_copy_workflow_cost.mjs skills/suede-graph-flo-xr/workflows/tests/test_score_resilience.mjs skills/suede-graph-flo-xr/workflows/tests/test_plan_path_safety.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
     "test": "npm run validate && npm run test:number-words && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:ship-cost && npm run test:contributions && npm run test:python",
-    "audit:dependencies": "npm audit --omit=dev --audit-level=high",
+    "audit:dependencies": "npm audit --package-lock-only --omit=dev --audit-level=high",
     "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test",
     "build:pdf": "node scripts/build-book-pdf.mjs",
     "fix:counts": "node scripts/validate-skill-pack.mjs --fix",
