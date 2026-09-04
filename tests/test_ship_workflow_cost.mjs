@@ -862,7 +862,6 @@ test('deterministic plan eligibility rejects unsafe or incomplete winners before
     { eligibilityMode: 'duplicate-lane-name-case', reason: 'malformed generated plan' },
     { eligibilityMode: 'duplicate-lane-name-unicode', reason: 'malformed generated plan' },
     { eligibilityMode: 'orphan-lane', reason: 'lane has no canonical scope mapping' },
-    { eligibilityMode: 'duplicate-scope-mapping', reason: 'scope mapping contains a duplicate item-lane pair' },
     { scopeMapLaneAlias: ' A ', reason: 'scope mapping lane is not canonical' },
     { eligibilityMode: 'external-action', reason: 'plan requests external actions' },
     { eligibilityMode: 'prohibited-command', reason: 'plan contains a prohibited external command' },
@@ -873,6 +872,18 @@ test('deterministic plan eligibility rejects unsafe or incomplete winners before
     assert.equal(calls.some(call => call.phase === 'Build'), false, scenario.reason)
     assert.ok(result.graph.dropped.some(item => String(item.reason).includes(scenario.reason)), scenario.reason)
   }
+})
+
+test('a repeated item-lane mapping is folded into one mapping, not refused', async () => {
+  // Run wf_13062fd6-bf3 (2026-09-04): every finalist mapped each checklist line to its
+  // lane once per cited source, and Select rejected all three for the repetition alone.
+  // A repeated pair is one mapping with more sources; the per-entry acceptance and
+  // source checks still apply, so this plan must reach Build like a clean one.
+  const { result, calls } = await runShip({ eligibilityMode: 'duplicate-scope-mapping', findingsPerLens: 0 })
+  assert.equal(result.graph.dropped.some(item => String(item.reason).includes('duplicate item-lane pair')), false,
+    'a repeated (item, lane) pair must not be a rejection reason')
+  assert.equal(calls.some(call => call.phase === 'Build'), true,
+    `a plan whose only oddity is a repeated mapping must build; run ended with ${JSON.stringify(result.reason)}`)
 })
 
 test('agent-supplied task fields cannot carry executable or external instructions into Build', async () => {
