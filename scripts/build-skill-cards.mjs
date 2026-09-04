@@ -176,7 +176,7 @@ function buildCard(name) {
   lines.push("");
   lines.push("## Owner");
   lines.push("");
-  lines.push(`${plugin.author.name}, Suede Labs AI (<${plugin.author.url}>). Security contact: \`info@suedeai.org\` per [SECURITY.md](../../SECURITY.md).`);
+  lines.push(`${plugin.author.name}, Suede Labs AI (<${plugin.author.url}>). Security contact: \`info@suedeai.ai\` per [SECURITY.md](../../SECURITY.md).`);
   lines.push("");
   lines.push("## License / Terms of Use");
   lines.push("");

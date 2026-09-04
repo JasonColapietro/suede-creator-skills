@@ -6,7 +6,7 @@ Security reports are evaluated against the current `main` branch and the latest 
 
 ## Reporting a vulnerability
 
-Do not open a public issue for a suspected vulnerability. Email `info@suedeai.org` with:
+Do not open a public issue for a suspected vulnerability. Email `info@suedeai.ai` with:
 
 - the affected version or commit;
 - a concise impact description;
