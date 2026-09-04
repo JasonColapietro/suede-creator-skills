@@ -211,7 +211,7 @@ sources.forEach((page, index) => {
       dateModified: PUBLISHED,
       inLanguage: "en",
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
-      author: { "@type": "Person", name: "Jason Colapietro", url: "https://github.com/JasonColapietro" },
+      author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: { "@type": "Organization", name: "Suede Labs AI", url: "https://suedeai.ai" },
       mainEntityOfPage: canonical,
     },
@@ -326,7 +326,7 @@ written.set(
       license: "https://opensource.org/licenses/MIT",
       numberOfPages: sources.length,
       datePublished: PUBLISHED,
-      author: { "@type": "Person", name: "Jason Colapietro", url: "https://github.com/JasonColapietro" },
+      author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: { "@type": "Organization", name: "Suede Labs AI", url: "https://suedeai.ai" },
       hasPart: sources.map((p, i) => ({
         "@type": "Chapter",
