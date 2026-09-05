@@ -4079,7 +4079,7 @@
           <a id="hero-cta-secondary" href="#scorecard">See where we lose</a>
         </div>
 
-        <a id="hero-shiplog" class="hero-anim" data-status="released" href="#changelog" aria-label="Ship log. Released entry August 26, 2026: Both design skills get a vetted component source. Jump to the full changelog.">
+        <a id="hero-shiplog" class="hero-anim" data-status="released" href="#changelog" aria-label="Ship log. Released Aug 26 &middot; ae08836 Both design skills get a vetted component source 324 commits &middot; 14 weeks &middot; read the full ship log -&gt;. Jump to the full changelog.">
           <span class="hero-spark" aria-hidden="true">
             <span style="height:8%"></span>
             <span style="height:0%"></span>
@@ -4301,7 +4301,7 @@
             <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/1e2d70e" target="_blank" rel="noopener" aria-label="View commit 1e2d70e on GitHub">1e2d70e</a>
           </p>
           <h3 class="clog-title">Six specialities, and an MCP that navigates them</h3>
-          <p class="clog-detail">Version 0.14.0 splits the lopsided specialty and gives the MCP a way through the whole pack. The five-way cut shipped hours earlier left <em>Convert &amp; earn</em> at 23 while every other bucket sat between 9 and 15, so it splits on its real seam: Demand channels 8 and Revenue &amp; retention 15, alongside Ship 15, Craft 9, Get found 12, and Strategy &amp; rights 14. Largest bucket 23 to 15. The MCP could previously only be pointed at the three bundle areas; it now ships <code>list_suede_specialties</code> and a <code>suede://specialties</code> resource so a client picks a group before asking for skills, accepts <code>--profile</code> for any one specialty, and advertises only the specialities a given profile can serve. Closes a real hole on the way: <code>amazon-returns-recovery</code> and <code>subscription-recovery</code> sat in the catalog and on the site behind no registered server, unreachable by any MCP client, because <code>consumer</code> was a valid profile that <code>.mcp.json</code> never registered.</p>
+          <p class="clog-detail">Version 0.14.0 splits the lopsided specialty and gives the MCP a way through the whole pack. The five-way cut shipped hours earlier left <em>Convert &amp; earn</em> at 23 while every other bucket sat between 9 and 15, so it splits on its real seam: Demand channels 8 and Revenue &amp; retention 15, alongside Ship 15, Craft 9, Get found 12, and Strategy &amp; rights 14. Largest bucket 23 to 15. The MCP could previously only be pointed at the three bundle areas; it now ships <code>list_suede_specialties</code> and a <code>suede://specialties</code> resource so a client picks a group before asking for skills, accepts <code>--profile</code> for any one specialty, and advertises only the specialities a given profile can serve. Closes a real hole on the way: <code>amazon-returns-recovery</code> and <code>subscription-recovery</code> sat in the catalog and on the site behind no registered server, unreachable by any MCP client. <code>consumer</code> was a valid profile that <code>.mcp.json</code> did not register.</p>
         </li>
 
         <li class="clog-item" data-type="fix">
@@ -4311,7 +4311,7 @@
             <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/67c4c7f" target="_blank" rel="noopener" aria-label="View commit 67c4c7f on GitHub">67c4c7f</a>
           </p>
           <h3 class="clog-title">The pack gets five specialities</h3>
-          <p class="clog-detail">Version 0.13.0 re-cuts how the pack is browsed. The 73 skills were grouped four ways by <code>area</code> — marketing 41, workflow 25, creator 5, consumer 2 — and separately eight ways on the catalog page, with two more inconsistent cuts on the homepage. Marketing was a 41-name wall in every one of them. There are now five specialities, each with named sub-lanes: Ship 15, Craft 9, Get found 12, Convert &amp; earn 23, Strategy &amp; rights 14. The largest bucket goes 41 to 23. <code>area</code> is deliberately unchanged — it still decides which plugin bundle and MCP profile ships a skill, so nothing moved between install surfaces. <code>list_suede_skills</code> and <code>search_suede_skills</code> take a <code>specialty</code> filter, and the per-specialty counts on all three site surfaces are generated guards, not hand-typed numbers.</p>
+          <p class="clog-detail">Version 0.13.0 re-cuts how the pack is browsed. The 73 skills were grouped four ways by <code>area</code> (marketing 41, workflow 25, creator 5, consumer 2) and separately eight ways on the catalog page, with two more inconsistent cuts on the homepage. Marketing was a 41-name wall in every one of them. There are now five specialities, each with named sub-lanes: Ship 15, Craft 9, Get found 12, Convert &amp; earn 23, Strategy &amp; rights 14. The largest bucket goes 41 to 23. <code>area</code> is deliberately unchanged. It still decides which plugin bundle and MCP profile ships a skill, so nothing moved between install surfaces. <code>list_suede_skills</code> and <code>search_suede_skills</code> take a <code>specialty</code> filter, and the per-specialty counts on all three site surfaces are generated guards, not hand-typed numbers.</p>
         </li>
 
         <li class="clog-item" data-type="site">
@@ -5102,7 +5102,7 @@
 <section id="catalog" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="catalog-inner">
     <p class="catalog-eyebrow reveal">The full pack</p>
-    <h2 class="catalog-headline reveal reveal-d1">Every line of every skill, readable before you trust one.</h2>
+    <h2 class="catalog-headline reveal reveal-d1">Read the source of any skill before you trust it.</h2>
     <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
 
     <div class="catalog-lane reveal" id="lane-ship">
