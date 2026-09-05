@@ -1545,7 +1545,11 @@
       margin: 0 0 14px;
     }
 
+    /* A heading, so each card is its own retrievable chunk instead of one
+       600-word block under the section title. Type values are set here,
+       which keeps the promoted element looking exactly as the span did. */
     .feature-label {
+      font-family: inherit;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -1621,12 +1625,17 @@
       border-bottom: 1px solid #222222;
     }
 
+    /* A heading, so each lane is its own retrievable chunk instead of one
+       700-word block under the section title. Type is fully specified here so
+       the promoted element sits on the same baseline the span did. */
     .catalog-lane-name {
+      font-family: inherit;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: .14em;
       text-transform: uppercase;
       color: #f0ece4;
+      margin: 0;
     }
 
     .catalog-sublane {
@@ -2725,6 +2734,10 @@
     .faq-item { border: 1px solid #222222; border-radius: 4px; background: #111111; margin-bottom: 12px; }
     .faq-item summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; font-size: 16px; font-weight: 600; color: #f0ece4; }
     .faq-item summary::-webkit-details-marker { display: none; }
+    /* The question is a real heading so the visible page carries the same four
+       headed Q&A entries the FAQPage schema declares. Type comes from the
+       summary, which keeps the row looking exactly as it did as a span. */
+    .faq-q { font: inherit; color: inherit; letter-spacing: inherit; margin: 0; text-align: left; }
     .faq-item summary::after { content: '+'; color: #c8a96e; font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform 0.2s ease; }
     .faq-item[open] summary::after { transform: rotate(45deg); }
     .faq-item p { padding: 0 22px 20px; margin: 0; font-size: 15px; line-height: 1.7; color: #888880; }
@@ -4068,7 +4081,7 @@
 
         <h1 id="hero-headline" class="hero-anim">Your coding agent is one install away from <em class="hh-risk">being a company</em>.</h1>
 
-        <p id="hero-subline" class="hero-anim">One terminal runs all of it, and these are the files it runs on. A build DAG researches your repo, fans out disjoint lanes, and refutes its own review before anything lands. A blunt <strong>A-F ship grade</strong> that blocks the bad merge instead of complimenting it. The same folder designs the page, writes the copy, and ships <strong>native iOS and Android</strong> builds. One skill argued Amazon out of <strong>$448.31</strong>. It is the pettiest thing in the pack.</p>
+        <p id="hero-subline" class="hero-anim"><strong>Suede Creator Skills is a free, open-source pack of Agent Skills for Claude Code and OpenAI Codex.</strong> One terminal runs all of it, and these are the files it runs on. A build DAG researches your repo, fans out disjoint lanes, and refutes its own review before anything lands. A blunt <strong>A-F ship grade</strong> that blocks the bad merge instead of complimenting it. The same folder designs the page, writes the copy, and ships <strong>native iOS and Android</strong> builds. One skill argued Amazon out of <strong>$448.31</strong>. It is the pettiest thing in the pack.</p>
 
         <div id="hero-ctas" class="hero-anim">
           <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
@@ -4904,72 +4917,72 @@
       </div>
       <div class="feature-card">
         <span class="feature-num">02</span>
-        <span class="feature-label">Cheap to carry</span>
+        <h3 class="feature-label">Cheap to carry</h3>
         <p class="feature-copy">An installed skill costs your context its name and its description. The body loads only when a request matches it, so you carry the whole folder for about the price of its table of contents</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">03</span>
-        <span class="feature-label">Agent teams</span>
+        <h3 class="feature-label">Agent teams</h3>
         <p class="feature-copy">The handoff will not close without evidence. Scout, build, review, verifier, and release lanes share one context instead of acting like siloed subagents, with WIP collision detection and rollback trees underneath</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">04</span>
-        <span class="feature-label">AI evals</span>
+        <h3 class="feature-label">AI evals</h3>
         <p class="feature-copy">A release that fails its own eval gate does not ship, and the spec names the case that killed it. LLM, RAG, classifier, and agent surfaces each become a measurable AI-SPEC with failure-mode rubrics and eval cases</p>
       </div>
       <div class="feature-card feature-card--red">
         <span class="feature-num">05</span>
-        <span class="feature-label">CI ship gate</span>
+        <h3 class="feature-label">CI ship gate</h3>
         <p class="feature-copy">One required check that cannot deadlock, which is the failure mode every branch-protection setup hits. It reads your stack and your lockfile, writes the CI, and wires the protection rule to that single check</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">06</span>
-        <span class="feature-label">Suedify</span>
+        <h3 class="feature-label">Suedify</h3>
         <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language, with your own copy and your own assets. Nothing traced, nothing copied</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">07</span>
-        <span class="feature-label">Conversion copy</span>
+        <h3 class="feature-label">Conversion copy</h3>
         <p class="feature-copy">Twelve headline formulas, and the framework that fits the reader's state: AIDA, PAS, StoryBrand, or JTBD. Every draft is scored out of 70 across seven dimensions, and below 58 it goes back before a word ships, below 62 for a launch surface</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">08</span>
-        <span class="feature-label">SEO, AEO &amp; AI EO</span>
+        <h3 class="feature-label">SEO, AEO &amp; AI EO</h3>
         <p class="feature-copy">Nine audit lanes in one pass: technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters. It hands back the exact rewrites, not a list of complaints</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">09</span>
-        <span class="feature-label">Visibility grade</span>
+        <h3 class="feature-label">Visibility grade</h3>
         <p class="feature-copy">Tells you whether a page is worth the traffic you are about to buy, A to F, and names the screen that lost the grade: first-screen clarity, CTA pull, proof, AI readability, schema depth, search result fit</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">10</span>
-        <span class="feature-label">Site to iOS app</span>
+        <h3 class="feature-label">Site to iOS app</h3>
         <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and the store screenshots. The same terminal that runs this pack has archived and uploaded 8 iOS apps</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">11</span>
-        <span class="feature-label">Design, from first principles</span>
+        <h3 class="feature-label">Design, from first principles</h3>
         <p class="feature-copy">Never a template with your logo dropped in. It commits to a named aesthetic lane and writes that choice into the file before it picks a single color, then builds color, type, and motion up from it</p>
       </div>
       <div class="feature-card feature-card--red">
         <span class="feature-num">12</span>
-        <span class="feature-label">Consumer recovery</span>
+        <h3 class="feature-label">Consumer recovery</h3>
         <p class="feature-copy">The same negotiation discipline pointed at your own accounts: one skill argued Amazon into refunding $448.31, the other audits Netflix, gyms, and every App Store subscription you forgot you had. One of those refunds had already been denied after the return window closed</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">13</span>
-        <span class="feature-label">Taste memory</span>
+        <h3 class="feature-label">Taste memory</h3>
         <p class="feature-copy">Say &quot;Cue Suede&quot; mid-run and choose: change something, preserve what worked, or accept as-is. The choice carries into every pass after it, so the pack accumulates judgment: what to do, what not to do, and when to stop</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">14</span>
-        <span class="feature-label">Android app factory</span>
+        <h3 class="feature-label">Android app factory</h3>
         <p class="feature-copy">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing copy sized to Play's character limits, and a signed release</p>
       </div>
       <div class="feature-card">
         <span class="feature-num">15</span>
-        <span class="feature-label">Recommend next action</span>
+        <h3 class="feature-label">Recommend next action</h3>
         <p class="feature-copy">Ask &quot;what's next&quot; and get one move, written as a short prompt you can paste and run. It is scored against the goal, the clock, and the rework it prevents, and it opens into a full operator brief only when you ask for one</p>
       </div>
     </div>
@@ -5107,7 +5120,7 @@
 
     <div class="catalog-lane reveal" id="lane-ship">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Ship</span>
+        <h3 class="catalog-lane-name">Ship</h3>
         <span class="catalog-lane-count">15 skills</span>
       </div>
       <p class="catalog-lane-lead">Get the change built, reviewed, and merged.</p>
@@ -5182,7 +5195,7 @@
     </div>
     <div class="catalog-lane reveal" id="lane-craft">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Craft</span>
+        <h3 class="catalog-lane-name">Craft</h3>
         <span class="catalog-lane-count">9 skills</span>
       </div>
       <p class="catalog-lane-lead">Make the thing look and read like someone built it on purpose.</p>
@@ -5226,7 +5239,7 @@
     </div>
     <div class="catalog-lane reveal" id="lane-found">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Get found</span>
+        <h3 class="catalog-lane-name">Get found</h3>
         <span class="catalog-lane-count">13 skills</span>
       </div>
       <p class="catalog-lane-lead">Be discoverable by search, by AI answers, and by an audience.</p>
@@ -5260,7 +5273,7 @@
     </div>
     <div class="catalog-lane reveal" id="lane-demand">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Demand channels</span>
+        <h3 class="catalog-lane-name">Demand channels</h3>
         <span class="catalog-lane-count">8 skills</span>
       </div>
       <p class="catalog-lane-lead">Reach people who have not heard of you yet.</p>
@@ -5284,7 +5297,7 @@
     </div>
     <div class="catalog-lane reveal" id="lane-revenue">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Revenue &amp; retention</span>
+        <h3 class="catalog-lane-name">Revenue &amp; retention</h3>
         <span class="catalog-lane-count">15 skills</span>
       </div>
       <p class="catalog-lane-lead">Convert the attention, then keep what it earned.</p>
@@ -5329,7 +5342,7 @@
     </div>
     <div class="catalog-lane reveal" id="lane-position">
       <div class="catalog-lane-head">
-        <span class="catalog-lane-name">Strategy &amp; rights</span>
+        <h3 class="catalog-lane-name">Strategy &amp; rights</h3>
         <span class="catalog-lane-count">14 skills</span>
       </div>
       <p class="catalog-lane-lead">Know the market you are in and own what you make.</p>
@@ -5454,19 +5467,19 @@
     <h2 class="faq-headline reveal">What it costs you, and what it will not do.</h2>
     <div class="reveal reveal-d1">
       <details class="faq-item" open>
-        <summary>What are Agent Skills?</summary>
+        <summary><h3 class="faq-q">What are Agent Skills?</h3></summary>
         <p>Agent Skills are SKILL.md folders that Claude Code and OpenAI Codex load on demand to follow a documented workflow. An installed skill costs your context its name and its description, and the body loads only when a request matches it, so the pack sits cheap and runs narrow. Original work in this pack is MIT licensed, and adapted components retain their upstream notices, including BSD-3-Clause terms for Graph of Thoughts. Every folder is plain Markdown you can read before you install it.</p>
       </details>
       <details class="faq-item">
-        <summary>How do I install the pack?</summary>
+        <summary><h3 class="faq-q">How do I install the pack?</h3></summary>
         <p>In Claude Code, run <code>/plugin marketplace add JasonColapietro/suede-creator-skills</code>, then <code>/plugin install suede-skills@suede</code>. In Codex, run <code>codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main</code>, then <code>codex plugin add suede-skills@suede-codex</code>. The direct Codex skill installer remains available for one selected skill. Full paths live on the <a href="plugins.html">install page</a>. The first thing worth running: use suede-code to review your staged diff and give it an A-F ship grade.</p>
       </details>
       <details class="faq-item">
-        <summary>Does it work with both Claude Code and Codex?</summary>
+        <summary><h3 class="faq-q">Does it work with both Claude Code and Codex?</h3></summary>
         <p>Yes. Each skill is a standard <code>SKILL.md</code> folder. Claude Code and Codex both install the full pack through their native plugin marketplaces. Cursor, Copilot, Windsurf, and other agents that read skills take the same pack through one npx skills add command; direct folder and single-skill installs remain available.</p>
       </details>
       <details class="faq-item">
-        <summary>Is it safe to run?</summary>
+        <summary><h3 class="faq-q">Is it safe to run?</h3></summary>
         <p>The skills inspect local files and pages and write local reports. They do not upload files by default, write to any registry, request secrets, or claim legal clearance. Original work is MIT licensed; adapted components retain their upstream notices. The pack is inspectable before you enable anything.</p>
       </details>
     </div>
@@ -5492,6 +5505,10 @@
       <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
       <span class="footer-divider" aria-hidden="true">|</span>
       <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+      <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
     </div>
   </div>
 </footer>
