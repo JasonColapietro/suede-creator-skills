@@ -847,7 +847,7 @@ const publicSkillFiles = publicFiles.filter((file) => {
     rel.startsWith("scripts/") ||
     rel.startsWith("tests/") ||
     rel.startsWith(".github/") ||
-    ["README.md", "COPY.md", "PROMO.md", "PASSPORT.md", "package.json", "package-lock.json"].includes(rel);
+    ["README.md", "COPY.md", "PROMO.md", "PASSPORT.md", "DISTRIBUTION.md", "package.json", "package-lock.json"].includes(rel);
 });
 
 for (const file of publicSkillFiles) {
@@ -1146,6 +1146,9 @@ countChecks.push(
   // Python proof-tape suite, after validate had already passed. Owned here now.
   { file: "docs/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
   { file: "docs/skills/index.html", label: "essays stamp: pack size", re: /how (\d+) skills stay cheap to carry/, expected: totalSkillCount },
+  // The #proof-tape marquee repeats its whole track for a seamless loop, so the
+  // pack-size claim appears twice; both copies said 71 after the pack reached 74.
+  { file: "docs/index.html", label: "proof-tape: pack size", re: /<li><b>(\d+)<\/b> skills, open source<\/li>/, expected: totalSkillCount, every: true },
   { file: "book/02-anatomy-of-a-skill.md", label: "frontmatter survey skill count", re: /Across all (\d+) skills, the frontmatter carries/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "name key count", re: /carries `name` (\d+) times/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "description key count", re: /and `description`\s+(\d+) times/, expected: totalSkillCount },
