@@ -599,8 +599,8 @@ function makePreparedChangelog(checkoutRoot, baseHash) {
     text = rewriteFixture(
       text,
       `the ${relative} card aria-label`,
-      /(<a id="hero-shiplog"[^>]*\baria-label="Ship log\. )Released( entry )/,
-      "$1Prepared$2"
+      /(<a id="hero-shiplog"[^>]*\baria-label="Ship log\. )Released /,
+      "$1Prepared "
     );
     text = rewriteFixture(
       text,
@@ -838,11 +838,30 @@ test("build-shiplog propagates one changelog edit to every ship-log card", compl
     assert.ok(card, `${relative} must still carry a ship-log card`);
     assert.match(card, new RegExp(`class="hero-shiplog-top">Prepared Sep 4 <b>&middot; base ${expectedBase}</b>`));
     assert.match(card, new RegExp(`class="hero-shiplog-title">${newTitle}<`));
-    // The date is the changelog ENTRY date, not the base commit's date.
-    assert.match(card, new RegExp(`aria-label="Ship log\\. Prepared entry September 4, 2026: ${newTitle}\\.`));
+    // The spoken name has to CONTAIN what the card shows, or a screen reader is
+    // told a different story than the page tells, which is what Lighthouse
+    // reports as `label-content-name-mismatch`. The stamp, the title and the
+    // counts are all part of what it shows, so assert containment against the
+    // card's own lines rather than against a sentence retyped here.
+    const shown = ["top", "title", "more"]
+      .map((line) =>
+        card
+          .match(new RegExp(`class="hero-shiplog-${line}">([\\s\\S]*?)<\\/span>`))[1]
+          .replace(/<[^>]*>/g, " ")
+          .replace(/\s+/g, " ")
+          .trim()
+      )
+      .join(" ");
+    const spoken = card.match(/aria-label="([^"]*)"/)[1];
+    assert.ok(
+      spoken.includes(shown),
+      `${relative} aria-label ${JSON.stringify(spoken)} must contain the card's visible text ${JSON.stringify(shown)}`
+    );
+    // The date it speaks is the changelog ENTRY date, not the base commit's.
+    assert.match(card, /aria-label="Ship log\. Prepared Sep 4 &middot; base /);
     // Each page keeps its own closing sentence.
     assert.match(card, /aria-label="[^"]*(Jump to the full changelog\.|Jump to the changelog\.|Read the full changelog on the homepage\.)"/);
-    // No doubled terminal punctuation from appending a period to a title.
+    // No doubled terminal punctuation where a line already ends in a period.
     assert.doesNotMatch(card, /\.\.\s/, `${relative} aria-label must not double the sentence period`);
   }
 

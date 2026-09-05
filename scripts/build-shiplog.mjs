@@ -35,10 +35,6 @@ import { spawnSync } from "node:child_process";
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
 const MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const MONTHS_LONG = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
 
 function die(message) {
   console.error(`build-shiplog: ${message}`);
@@ -80,13 +76,9 @@ if (status === "prepared") {
   if (!stamp) die("newest changelog entry is released but carries no .clog-hash landing commit");
 }
 
-const [year, month, day] = entryDate.split("-").map(Number);
+const [, month, day] = entryDate.split("-").map(Number);
 const shortDate = `${MONTHS_SHORT[month - 1]} ${day}`;
-const longDate = `${MONTHS_LONG[month - 1]} ${day}, ${year}`;
 const statusWord = status === "prepared" ? "Prepared" : "Released";
-// The aria-label reads as a sentence, so the title needs terminal punctuation —
-// but only if it does not already end in some.
-const spokenTitle = /[.!?]$/.test(title) ? title : `${title}.`;
 const citation = status === "prepared" ? `base ${stamp}` : stamp;
 
 // ---- Commit activity -------------------------------------------------------
@@ -182,10 +174,6 @@ function rewrite(file, label, pattern, replacer, expected = 1) {
   file.text = file.text.replace(global, replacer);
 }
 
-function escapeRegExp(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function loadPage(relative) {
   const absolute = path.join(repoRoot, relative);
   return { relative, absolute, text: fs.readFileSync(absolute, "utf8"), original: fs.readFileSync(absolute, "utf8") };
@@ -236,30 +224,42 @@ if (status === "prepared") {
   );
 }
 
-// 3. The tiny card on all three pages. Its aria-label tail differs per page
-//    ("Jump to the full changelog." / "Jump to the changelog." / "Read the full
-//    changelog on the homepage."), so only the sentence carrying the stamp is
-//    rewritten and the tail is preserved.
+// 3. The tiny card on all three pages. The card is one link, so its accessible
+//    name has to CONTAIN the text a sighted reader sees. It did not: the label
+//    named the entry and its date and stopped, while the card on screen also
+//    carries the landing commit and the commit count, so a screen reader was
+//    handed different facts than the page shows and Lighthouse failed the page
+//    on `label-content-name-mismatch`. The label is therefore composed from the
+//    card's own rendered lines instead of being written a second time in other
+//    words, which makes the two unable to drift rather than merely checked for
+//    drift. Only the closing call to action is written per page.
+const SHIPLOG_TAIL = {
+  "docs/index.html": "Jump to the full changelog.",
+  "docs/skills/index.html": "Jump to the changelog.",
+  "docs/guide.html": "Read the full changelog on the homepage."
+};
+
+// The card's three visible lines, in the order a reader meets them, with the
+// markup inside them (the <b> around the commit) flattened to a space the way a
+// browser flattens it when it works out the element's text.
+function spokenCard(page) {
+  const card = page.text.match(/<a id="hero-shiplog"[\s\S]*?<\/a>/);
+  if (!card) die(`${page.relative}: no #hero-shiplog card to read back`);
+  return ["top", "title", "more"]
+    .map((line) => {
+      const shown = card[0].match(new RegExp(`class="hero-shiplog-${line}">([\\s\\S]*?)<\\/span>`));
+      if (!shown) die(`${page.relative}: #hero-shiplog card has no .hero-shiplog-${line} line`);
+      return shown[1].replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    })
+    .join(" ");
+}
+
 for (const page of pages) {
   rewrite(
     page,
     'hero-shiplog data-status',
     /(<a id="hero-shiplog"[^>]*?\bdata-status=")[^"]*(")/,
     (_, lead, tail) => `${lead}${status}${tail}`
-  );
-  // Anchored on the title the card currently shows, not on the first ". " in
-  // the label: each page ends the label with its own sentence ("Jump to the
-  // full changelog.", "Read the full changelog on the homepage."), and a title
-  // containing a period would otherwise cut the match short and leave a
-  // mangled label behind. Requiring the exact previous title also means a card
-  // whose label and heading have already drifted apart fails loudly here
-  // instead of being half-rewritten.
-  const previousTitle = page.text.match(/class="hero-shiplog-title">([^<]*)</)?.[1] ?? "";
-  rewrite(
-    page,
-    'hero-shiplog aria-label',
-    new RegExp(`(<a id="hero-shiplog"[^>]*\\baria-label=")Ship log\\. (?:Prepared|Released) entry [^:]*: ${escapeRegExp(previousTitle)}\\.?`),
-    (_, lead) => `${lead}Ship log. ${statusWord} entry ${longDate}: ${spokenTitle}`
   );
   rewrite(
     page,
@@ -280,6 +280,17 @@ for (const page of pages) {
     'hero-shiplog-more line',
     /(<span class="hero-shiplog-more">)\d+ commits &middot; \d+ weeks( &middot; [^<]*<\/span>)/,
     (_, lead, tail) => `${lead}${activityLine}${tail}`
+  );
+  // Last, so it reads back lines that are already current. Replacing the whole
+  // attribute rather than one sentence inside it is what keeps the spoken name
+  // from carrying a hash or a count the rewrites above have just moved on.
+  const closing = SHIPLOG_TAIL[page.relative];
+  if (!closing) die(`${page.relative}: no ship-log call to action registered for this page`);
+  rewrite(
+    page,
+    'hero-shiplog aria-label',
+    /(<a id="hero-shiplog"[^>]*\baria-label=")[^"]*(")/,
+    (_, lead, close) => `${lead}Ship log. ${spokenCard(page)}. ${closing}${close}`
   );
   if (page.text !== page.original) edits.push(page);
 }
