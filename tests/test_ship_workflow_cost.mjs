@@ -1384,15 +1384,39 @@ test('mutating batches reserve their full cost before any Build or Fix call star
   assert.equal(fixBoundary.result.reason, 'agent budget exhausted')
 })
 
-test('incomplete or concerned selected Build lanes halt before review and gate', async () => {
-  // Catches a partial or qualified selected plan being handed to a passing integration gate as if every lane completed.
-  for (const buildState of ['blocked', 'needs-context', 'done-with-concerns']) {
+test('incomplete selected Build lanes halt before review and gate', async () => {
+  // Catches a partial selected plan being handed to a passing integration gate as if every lane completed.
+  for (const buildState of ['blocked', 'needs-context']) {
     const { result, calls } = await runShip({ buildState, buildNotes: `lane is ${buildState}`, findingsPerLens: 0 })
     assert.equal(result.halted, true, buildState)
     assert.equal(result.reason, 'selected build lane stalled', buildState)
     assert.ok(result.builds.every(build => build.state === buildState), buildState)
     assert.ok(result.stalled.every(lane => lane.state === buildState), buildState)
     assert.equal(calls.some(call => ['Review', 'Fix', 'Gate', 'Release', 'Handoff'].includes(call.phase)), false, buildState)
+  }
+})
+
+test('a Build lane done with stated concerns proceeds to review and its concerns travel', async () => {
+  // Run wf_626feb50-75d (2026-09-04): two lanes returned done-with-concerns for names another
+  // lane's patch would add, and the run halted with every patch unapplied. Concerns are what
+  // the review and refute stages weigh; only blocked, missing-context and empty results halt.
+  const { result, calls } = await runShip({ buildState: 'done-with-concerns', buildNotes: 'the Auto toggle is not gated on controlsEnabled', findingsPerLens: 0 })
+  assert.notEqual(result.reason, 'selected build lane stalled')
+  assert.equal(calls.some(call => call.phase === 'Review'), true, 'a concerned lane must still be reviewed')
+  assert.ok(result.buildConcerns.length > 0 && result.buildConcerns.every(c => /Auto toggle/.test(c.notes)),
+    `the author's concern must reach the evidence; got ${JSON.stringify(result.buildConcerns)}`)
+})
+
+test('patch authors receive the whole scope checklist as contract context', async () => {
+  // Same run: the runtime and results lanes returned needs-context because the core lane's
+  // pinned exports lived in a checklist line mapped to another lane, which they never saw.
+  const { calls } = await runShip({ scope: '- change api\n- change docs', findingsPerLens: 0 })
+  const builds = calls.filter(call => call.phase === 'Build')
+  assert.ok(builds.length > 0)
+  for (const call of builds) {
+    assert.match(call.prompt, /FULL USER SCOPE/)
+    assert.match(call.prompt, /change api/)
+    assert.match(call.prompt, /change docs/)
   }
 })
 
@@ -1444,9 +1468,9 @@ test('a Fix agent failure returns completed sibling evidence and halts before ga
   assert.equal(calls.some(call => ['Gate', 'Release', 'Handoff'].includes(call.phase)), false)
 })
 
-test('incomplete or concerned Fix results preserve blockers and halt before gate', async () => {
+test('incomplete Fix results preserve blockers and halt before gate', async () => {
   // Catches a schema-valid but unfinished repair being treated as if the confirmed blocker was fixed.
-  for (const fixState of ['blocked', 'needs-context', 'done-with-concerns']) {
+  for (const fixState of ['blocked', 'needs-context']) {
     const { result, calls } = await runShip({ findingsPerLens: 1, fixState, fixNotes: `repair is ${fixState}` })
     assert.equal(result.halted, true, fixState)
     assert.equal(result.reason, 'selected fix stalled', fixState)
@@ -1455,6 +1479,14 @@ test('incomplete or concerned Fix results preserve blockers and halt before gate
     assert.ok(result.unfixedBlockers.length > 0, fixState)
     assert.equal(calls.some(call => ['Gate', 'Release', 'Handoff'].includes(call.phase)), false, fixState)
   }
+})
+
+test('a Fix done with stated concerns proceeds and its concerns travel', async () => {
+  const { result, calls } = await runShip({ findingsPerLens: 1, fixState: 'done-with-concerns', fixNotes: 'the fix narrows the guard rather than removing it' })
+  assert.notEqual(result.reason, 'selected fix stalled')
+  assert.equal(calls.some(call => call.phase === 'Gate'), true, 'a concerned fix must still reach the gate')
+  assert.ok(result.fixConcerns.length > 0 && result.fixConcerns.every(c => /narrows the guard/.test(c.notes)),
+    `the fix author's concern must reach the evidence; got ${JSON.stringify(result.fixConcerns)}`)
 })
 
 test('read-only research fan-outs reserve their whole cost before any sibling starts', async () => {
