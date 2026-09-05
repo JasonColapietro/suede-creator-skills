@@ -7,7 +7,7 @@ Release record for the `suede-marketing-ideas` skill, following the NVIDIA skill
 
 ## Description
 
-Suede-affiliated marketing ideation using a structured tactic library organized by stage, budget, and timeline.
+Suede-affiliated marketing ideation using a structured tactic library scored for stage, audience fit, evidence, capacity, cost, and risk.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.16.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 

@@ -232,9 +232,10 @@ SHIP GATE: ship | ship-with-caveats | hold — reason
 
 - Do not generate, publish, submit, or index a full page set before a bounded
   sample passes the quality checks in this skill. When the sample fails or was
-  never run, halt in this format: name the blocking gate and the failing count,
-  give 2-4 options (fix the template, narrow the page set, add data, publish the
-  passing subset only), and wait for the user to choose.
+  never run, report it in this format: name the blocking gate and the failing
+  count, give 2-4 options (fix the template, narrow the page set, add data,
+  publish the passing subset only), and recommend one. Proceeding past the gate
+  is the user's call, per the gate policy above.
 - Do not invent source data, claim rankings or traffic, scrape restricted
   sources, or treat keyword volume as user value.
 - Do not alter production routes, templates, canonicals, sitemaps, or internal

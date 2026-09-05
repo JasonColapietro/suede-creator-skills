@@ -1,6 +1,6 @@
 ---
 name: suede-ai-seo
-description: "Suede-affiliated AI search optimization discipline. Use when the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' 'optimize for Claude/Gemini,' 'llms.txt,' 'OKF,' 'Open Knowledge Format,' 'knowledge bundle,' or 'agent-readable site.' The durable job: make content structurally extractable, citable, and agent-readable so AI systems surface and cite it. NOT FOR traditional technical SEO audit (use suede-seo-audit) or launch-appeal grading (use suede-visibility-grader)."
+description: "Suede-affiliated AI search optimization discipline. Use when the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' 'optimize for Claude/Gemini,' 'llms.txt,' 'OKF,' 'Open Knowledge Format,' 'knowledge bundle,' or 'agent-readable site.' The durable job: make content structurally extractable, citable, and agent-readable so AI systems surface and cite it. NOT FOR: traditional technical SEO audit (use suede-seo-audit) or launch-appeal grading (use suede-visibility-grader)."
 metadata:
   version: 2.2.0
 ---
@@ -357,7 +357,7 @@ Structured data helps AI systems understand your content. Key schemas:
 | Reviews | `Review`, `AggregateRating` | Trust signals |
 | Organization | `Organization` | Entity recognition |
 
-Content with proper schema shows 30-40% higher AI visibility on non-Google AI engines. **Google's note**: structured data is "not required for generative AI search" but is recommended for overall SEO strategy. For schema validation and implementation, use `suede-seo-audit`.
+Structured data is associated with higher AI visibility on non-Google AI engines; the percentages in circulation are undated and unsourced, so do not quote them. **Google's note**: structured data is "not required for generative AI search" but is recommended for overall SEO strategy. For schema validation and implementation, use `suede-seo-audit`.
 
 ---
 

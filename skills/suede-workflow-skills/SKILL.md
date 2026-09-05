@@ -46,7 +46,7 @@ This skill is the public entry point for:
   auto-fires.
 - **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
   retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
-- **Suede Ship Gate:** any-repo CI gate that blocks a merge when required
+- **Suede CI Gate:** any-repo CI gate that blocks a merge when required
   checks fail — prompted only, plugs into any CI or workflow system.
 - **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
   AI EO, internal links, sitemap fit, and discoverability.
