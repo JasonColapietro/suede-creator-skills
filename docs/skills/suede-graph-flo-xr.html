@@ -109,7 +109,7 @@
 mkdir -p .claude/skills
 mkdir -p ~/.claude/agents
 cp -R /tmp/suede-creator-skills/skills/suede-graph-flo-xr .claude/skills/
-cp /tmp/suede-creator-skills/agents/suede-graph-flo-xr-*.md ~/.claude/agents/</code></pre>
+cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-*.md ~/.claude/agents/</code></pre>
         <p>For this manual copy, pass an empty <code>agentNamespace</code> string in the workflow args. The caller must pass <code>agentNamespace: "suede-skills"</code> for the full plugin or <code>agentNamespace: "suede-agent-workflows"</code> for the focused plugin. Missing and unknown values fail before the first agent call.</p>
         <p><strong>Codex contract only</strong></p>
         <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \

@@ -97,7 +97,7 @@ jobs:
           expected="$(find skills -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
           manifests="$(find "$SANDBOX/.claude/skills" -name SKILL.md | wc -l | tr -d ' ')"
           agents="$(find "$SANDBOX/.claude/agents" -mindepth 1 -maxdepth 1 -name 'suede-graph-flo-xr-*.md' | wc -l | tr -d ' ')"
-          expected_agents="$(find agents -mindepth 1 -maxdepth 1 -name 'suede-graph-flo-xr-*.md' | wc -l | tr -d ' ')"
+          expected_agents="$(find skills/suede-graph-flo-xr/agents -mindepth 1 -maxdepth 1 -name 'suede-graph-flo-xr-*.md' | wc -l | tr -d ' ')"
           echo "installed=$installed expected=$expected SKILL.md=$manifests agents=$agents expected_agents=$expected_agents"
           if [ "$installed" != "$expected" ]; then
             echo "::error::install.sh installed $installed skills, repository has $expected"

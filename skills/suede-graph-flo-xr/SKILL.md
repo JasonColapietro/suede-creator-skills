@@ -79,7 +79,7 @@ A skill-folder-only install, a generic skills-CLI install, and the Codex plugin 
 not by themselves register or execute Claude Workflow agent profiles. In those
 environments, treat this file as the orchestration contract and route the change
 to direct implementation; do not claim the bundled workflow ran. To enable it in
-Claude Code after a manual single-skill copy, also copy this repository's
+Claude Code after a manual single-skill copy, also copy the skill's bundled
 `agents/suede-graph-flo-xr-*.md` files into `~/.claude/agents` and restart Claude Code.
 
 The requested Scout setup command probes `/usr/bin/sandbox-exec` as its first

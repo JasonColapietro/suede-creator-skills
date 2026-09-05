@@ -1584,8 +1584,11 @@ for (const check of countChecks) {
       if (advertised && Number(advertised[1]) !== bundled) {
         fail.push(`docs/plugins.html says ${plugin.name} bundles ${advertised[1]} skills; the manifest lists ${bundled}`);
       }
+      // Subset entries are rooted at plugin.source (./skills), where no plugin.json
+      // exists; the umbrella keeps the repo root. Resolve every entry against its
+      // own root or a subset that lists ./suede-code reads as a missing folder.
       for (const entry of plugin.skills) {
-        const dir = path.join(repoRoot, entry.replace(/^\.\//, ""));
+        const dir = path.join(repoRoot, plugin.source ?? "./", entry);
         if (!fs.existsSync(dir)) {
           fail.push(`${plugin.name} bundles a skill that does not exist: ${entry}`);
         }

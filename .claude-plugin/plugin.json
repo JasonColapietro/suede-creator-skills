@@ -24,5 +24,14 @@
     "developer-tools",
     "seo",
     "mcp"
+  ],
+  "skills": "./skills/",
+  "agents": [
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-scout.md",
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-code-reader.md",
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-web-reader.md",
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-patch-author.md",
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-applier.md",
+    "./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-verifier.md"
   ]
 }
