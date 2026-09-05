@@ -147,6 +147,10 @@
     .link-row:hover span { color: var(--cream); }
     footer { border-top: 1px solid var(--line); padding: 32px 0 44px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+    .footer-links { display: flex; align-items: center; gap: 14px; }
+    .footer-links a { color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-divider { color: var(--line); }
     @media (max-width: 820px) {
       .evidence { grid-template-columns: 1fr; }
       .evidence div { border-right: 0; border-bottom: 1px solid var(--line); min-height: auto; }
@@ -403,7 +407,7 @@
   </main>
 
   <footer>
-    <div class="shell footer-inner"><span>Built by Jason Colapietro / Suede Labs AI</span><span>MIT licensed. Plain Markdown. Read before you install.</span></div>
+    <div class="shell footer-inner"><span>Built by Jason Colapietro / Suede Labs AI</span><span class="footer-links"><a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a><span class="footer-divider" aria-hidden="true">|</span><a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a></span><span>MIT licensed. Plain Markdown. Read before you install.</span></div>
   </footer>
 <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit

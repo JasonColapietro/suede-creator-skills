@@ -120,6 +120,10 @@ ${body}
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="${REPO}" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
           </div>
         </div>
       </div>

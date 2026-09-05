@@ -92,7 +92,7 @@
         "AI EO"
       ],
       "breadcrumb": {
-        "@id": "https://skills.suedeai.ai/#breadcrumb"
+        "@id": "https://skills.suedeai.ai/guide.html#breadcrumb"
       },
       "mainEntity": {
         "@id": "https://skills.suedeai.ai/guide.html#faq"
@@ -328,19 +328,19 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://skills.suedeai.ai/#breadcrumb",
+      "@id": "https://skills.suedeai.ai/guide.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "GitHub",
-          "item": "https://github.com/JasonColapietro"
+          "name": "Home",
+          "item": "https://skills.suedeai.ai/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Suede Creator Skills",
-          "item": "https://skills.suedeai.ai/"
+          "name": "Guide",
+          "item": "https://skills.suedeai.ai/guide.html"
         }
       ]
     }
@@ -426,6 +426,20 @@
 
       #main { scroll-margin-top: 96px; }
       #main:focus { outline: none; }
+
+      /* Breadcrumb trail. Backs the BreadcrumbList in the page's JSON-LD, so
+         the visible path and the declared path stay the same two steps. */
+      .crumbs { padding: 20px 0 0; }
+      .crumbs ol {
+        list-style: none; display: flex; flex-wrap: wrap; align-items: center;
+        gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+        color: var(--muted);
+      }
+      .crumbs li { display: flex; align-items: center; gap: 8px; }
+      .crumbs a { color: var(--muted); border-bottom: 1px solid transparent; }
+      .crumbs a:hover { color: var(--gold); border-bottom-color: rgba(200, 169, 110, 0.4); }
+      .crumbs [aria-current="page"] { color: var(--cream); }
+      .crumbs .crumb-sep { color: var(--border); }
 
       .hero { padding: 80px 0 0; }
       .hero-grid {
@@ -844,6 +858,15 @@
     </nav>
 
     <main id="main" tabindex="-1">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <div class="shell">
+          <ol>
+            <li><a href="./">Home</a></li>
+            <li><span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Guide</span></li>
+          </ol>
+        </div>
+      </nav>
+
       <section class="hero" aria-labelledby="hero-headline">
         <div class="shell">
           <div class="hero-grid">
@@ -1349,6 +1372,10 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
           <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
           <span class="footer-divider" aria-hidden="true">|</span>
           <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+          <span class="footer-divider" aria-hidden="true">|</span>
+          <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+          <span class="footer-divider" aria-hidden="true">|</span>
+          <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
         </div>
       </div>
     </footer>
