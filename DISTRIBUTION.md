@@ -15,6 +15,7 @@ Ground truth on the audit date: 74 skills, repository `JasonColapietro/suede-cre
 | awesomeclaude.ai/awesome-claude-skills (backed by webfuse-com/awesome-claude) | Listed under "Development & Code Tools" | Entry reads "23-skill pack for agent orchestration with WIP collision detection and rollback trees" | Description is from the first release and describes one skill, not the pack | PR to webfuse-com/awesome-claude replacing the description |
 | BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR to that repo, same replacement |
 | ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open with no review as of the audit date | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
+| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Submitted, awaiting review | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement; no public acknowledgement URL yet) | Not listed until Anthropic accepts it | Watch `anthropics/claude-plugins-official` for the entry; nothing else to file |
 | SaaSHub | Listed, wrong product | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here |
 
 ## Not listed
@@ -23,7 +24,6 @@ Reach is inferred from stars or self-reported traffic. "Owner action" means an a
 
 | Directory | Reach | How to get listed | Owner action |
 | --- | --- | --- | --- |
-| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Every Claude Code install | Submission form linked from https://code.claude.com/docs/en/plugins (the `clau.de/plugin-directory-submission` redirect) | Form |
 | hesreallyhim/awesome-claude-code | 74.5k stars | PR per CONTRIBUTING.md | PR to a third-party repo |
 | ComposioHQ/awesome-claude-skills (pack entry) | 53.6k stars | PR with their template | PR to a third-party repo |
 | punkpeye/awesome-mcp-servers | 94.3k stars | PR against README | PR to a third-party repo; needs a runnable install line |
@@ -69,4 +69,4 @@ For the pack's own name, the GitHub repository outranks the site in general web 
 
 Agent-side, no external mutation: keep the count stamps on the site current; keep this file current when a listing changes.
 
-Owner-side, in order of reach per minute of effort: the Anthropic marketplace form, a Show HN, the three awesome-list PRs (two stale descriptions, one new entry on hesreallyhim), then an npm publish of the MCP followed by `mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
+Owner-side, in order of reach per minute of effort: a Show HN, the three awesome-list PRs (two stale descriptions, one new entry on hesreallyhim), then an npm publish of the MCP followed by `mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
