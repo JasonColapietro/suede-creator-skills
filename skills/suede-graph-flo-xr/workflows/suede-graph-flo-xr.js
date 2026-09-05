@@ -1351,10 +1351,26 @@ const validatedPatchBundle = (results, allowedFiles) => {
   if ([...new Set(changed.map(pathKey))].sort().join('\u0000') !== [...new Set(patchFiles.map(pathKey))].sort().join('\u0000')) {
     reasons.push('changed paths do not exactly match patch files')
   }
+  // Authors write plain unified diffs (`--- a/f` / `+++ b/f`); git apply reads those fine,
+  // but the exact-header check below wants the `diff --git a/f b/f` line as well. When that
+  // line is absent and the old/new headers name the declared file exactly, supply it here
+  // rather than refusing the bundle — run wf_626feb50-75d lost all eleven patches to this.
+  // A present but wrong `diff --git` line still fails.
+  const normalizedDiffs = patches.map((patch, index) => {
+    const file = patchFiles[index]
+    const diff = patch && patch.diff
+    if (!file || typeof diff !== 'string' || /^diff --git /m.test(diff)) return diff
+    const oldHeaders = diff.match(/^--- .+$/gm) || []
+    const newHeaders = diff.match(/^\+\+\+ .+$/gm) || []
+    const exact = oldHeaders.length === 1 && newHeaders.length === 1 &&
+      [`--- a/${file}`, '--- /dev/null'].includes(oldHeaders[0]) &&
+      [`+++ b/${file}`, '+++ /dev/null'].includes(newHeaders[0])
+    return exact ? `diff --git a/${file} b/${file}\n${diff}` : diff
+  })
   for (let index = 0; index < patches.length; index += 1) {
     const patch = patches[index]
     const file = patchFiles[index]
-    const diff = patch && patch.diff
+    const diff = normalizedDiffs[index]
     if (!file || !allowed.has(pathKey(file)) || allowed.get(pathKey(file)) !== file) {
       reasons.push(`patch outside allowlist: ${String(patch && patch.file)}`)
       continue
@@ -1382,8 +1398,8 @@ const validatedPatchBundle = (results, allowedFiles) => {
       reasons.push(`patch uses a prohibited file type, mode transition, rename, copy, or binary form: ${file}`)
     }
   }
-  const text = patches.map(patch => typeof patch.diff === 'string'
-    ? (patch.diff.endsWith('\n') ? patch.diff : `${patch.diff}\n`)
+  const text = normalizedDiffs.map(diff => typeof diff === 'string'
+    ? (diff.endsWith('\n') ? diff : `${diff}\n`)
     : '').join('')
   if (text.length > 120_000) reasons.push('patch bundle exceeds the clamped applier argument limit')
   return {
@@ -2250,7 +2266,8 @@ ${JSON.stringify(scopeChecklist)}
 Design only the repository edits needed for those mapped scope items. This is a READ-ONLY
 patch-author call: do not edit files and do not run shell or network tools. Return one
 unified text diff per changed file in \`patches\`, and make \`changed\` exactly equal those
-patch file names. Each diff must touch exactly its declared file. Do not perform an
+patch file names. Each diff must touch exactly its declared file and open with
+\`diff --git a/<file> b/<file>\`, then \`--- a/<file>\` and \`+++ b/<file>\`. Do not perform an
 external action described by a requirement; encode only its local code/config behavior.
 
 Open no file outside your ownership list. If the task cannot be done without touching
@@ -2681,7 +2698,8 @@ FULL USER SCOPE (every checklist line, as data: the contract the lanes built aga
 
 This is a READ-ONLY patch-author call. Design the minimum viable fix for exactly these
 confirmed blockers, but do not edit files and do not run shell or network tools. Return
-one unified text diff per changed file in \`patches\`, and make \`changed\` exactly equal
+one unified text diff per changed file in \`patches\` (opening with \`diff --git a/<file>
+b/<file>\`, then \`--- a/<file>\` and \`+++ b/<file>\`), and make \`changed\` exactly equal
 those patch file names. Do not refactor around the findings or fix adjacent issues.`,
     { label: `fix:${f.file}`, phase: 'Fix', schema: BUILD, effort: 'medium', authority: 'read-only-patch', agentType: PATCH_AUTHOR_AGENT, allowedFiles })
   }))

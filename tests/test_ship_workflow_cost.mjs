@@ -66,7 +66,7 @@ test('Gate removes credentials and interpreter injection without dropping toolch
 const LANES = 8
 const FINDINGS_PER_LENS = 10
 
-function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, omitHelperDir = false, helperDir = HELPER_DIR, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], trackedCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
+function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inheritedAgentBudget = false, agentNamespace = 'suede-skills', omitAgentNamespace = false, omitHelperDir = false, helperDir = HELPER_DIR, repo = '/tmp/repo', scope = 'change the thing', liveUrl, lanes = LANES, aggregateLanes, aggregateFiles, aggregateSingleLaneFiles, aggregateCollision = false, malformedAggregate = false, malformedPlans = false, malformedPlanIndex, rejectEveryPlan = false, findingsPerLens = FINDINGS_PER_LENS, reviewSeverity = 'blocker', researchEvidence = false, constraintAuditMode = 'complete', scoreMode, planMode, eligibilityMode, eligibilityCommand, eligibilityAcceptance, scopeMapLaneAlias, includeUnsafePlan = false, unsafeFile = 'src/shared.ts', scoutCandidateFiles, additionalCandidateFiles = [], scoutWorktreePath, scoutLiveCwds = [], scoutSiblingClaims = [], scoutManifestOverflow = false, worktreeAttested = true, worktreeClean = worktreeAttested, headMatchesOriginMain = worktreeAttested, attestedCommonDir, unsafeCandidateFiles = [], trackedCandidateFiles = [], refuteTarget, refuteEvidenceTarget, refuteMode, delayedBranch, delayPhase, delayLabel, blockingHazard, selectedPlanCollision = false, buildState = 'done', buildNotes = '', buildChangedPath, buildChangedEmpty = false, swapBuildPatches = false, buildPatchModeHeader = '', buildPatchOmitGitHeader = false, buildPatchGitHeaderFile, buildApplied = true, reviewFindingPath, reviewFindingPaths, reviewFindingLine, reviewClaims, refuteWhy = 'reproduced with a concrete input', fixState = 'done', fixNotes = '', fixChangedPath, fixChangedEmpty = false, swapFixPatches = false, fixPatchModeHeader = '', fixApplied = true, mutationChangedFiles, mutationUnsafeFiles = [], mutationReportedPathsMatch = true, mutationBaseShaMatches = true, mutationDiffDigest = DIFF_DIGEST, gateMutationChangedFiles, gateMutationUnsafeFiles = [], gateMutationReportedPathsMatch = true, gateMutationBaseShaMatches = true, gateMutationDiffDigest = mutationDiffDigest, gatePassed = true, gateOutput = 'ok', reportedGateCommands, handoffOutput, forceAgentCeiling, agentErrorPhase, agentErrorLabel, agentErrorPoint } = {}) {
   const calls = []
   const completedCalls = []
   const logs = []
@@ -346,7 +346,12 @@ function runShip ({ agentBudget = 'standard', omitAgentBudget = false, inherited
           return {
           state: buildState,
           changed,
-          patches: patchFiles.map(file => ({ file, diff: unifiedPatch(file, 'built', buildPatchModeHeader) })),
+          patches: patchFiles.map(file => {
+            let diff = unifiedPatch(file, 'built', buildPatchModeHeader)
+            if (buildPatchOmitGitHeader) diff = diff.split('\n').slice(1).join('\n')
+            if (buildPatchGitHeaderFile) diff = diff.replace(/^diff --git .+$/m, `diff --git a/${buildPatchGitHeaderFile} b/${buildPatchGitHeaderFile}`)
+            return { file, diff }
+          }),
           notes: buildNotes,
         }
         }
@@ -1382,6 +1387,25 @@ test('mutating batches reserve their full cost before any Build or Fix call star
   const fixBoundary = await runShip({ findingsPerLens: 1, forceAgentCeiling: firstFix + fixCount - 1 })
   assert.equal(countPhase(fixBoundary.calls, 'Fix'), 0)
   assert.equal(fixBoundary.result.reason, 'agent budget exhausted')
+})
+
+test('a plain unified diff without the diff --git line is normalized, not refused', async () => {
+  // Run wf_626feb50-75d (2026-09-04): all eleven author patches carried exact `--- a/` and
+  // `+++ b/` headers and no `diff --git` line; Apply refused every one as "patch header is
+  // not exact". git apply reads the plain form, so the validator now supplies the line.
+  const { result, calls } = await runShip({ findingsPerLens: 0, buildPatchOmitGitHeader: true })
+  assert.notEqual(result.reason, 'mutation boundary violation', JSON.stringify(result.violations || null))
+  assert.equal(calls.some(call => call.phase === 'ApplyBuild'), true, 'the normalized bundle must reach Apply')
+  const apply = calls.find(call => call.phase === 'ApplyBuild')
+  assert.match(apply.prompt, /diff --git a\/src\/a\.ts b\/src\/a\.ts|[A-Za-z0-9+/=]{40,}/,
+    'the applied bundle must carry the canonical header (inline or as the staged base64 payload)')
+})
+
+test('a present but wrong diff --git line still fails the exact-header check', async () => {
+  const { result, calls } = await runShip({ findingsPerLens: 0, buildPatchGitHeaderFile: 'src/other.ts' })
+  assert.equal(result.reason, 'mutation boundary violation')
+  assert.equal(calls.some(call => call.phase === 'ApplyBuild'), false)
+  assert.ok(JSON.stringify(result.violations).includes('patch header is not exact'), JSON.stringify(result.violations))
 })
 
 test('incomplete selected Build lanes halt before review and gate', async () => {
