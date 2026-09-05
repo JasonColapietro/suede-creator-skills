@@ -10,6 +10,7 @@ or references to sibling skills they do not have.
 
 | Folder | Derived from | Notes |
 | --- | --- | --- |
+| `frontend-design-review` | `skills/suede-design` | Renamed. Brand-free description, sibling routing removed, `CARD.md` omitted. The copy submitted to ComposioHQ/awesome-claude-skills (PR #1803), whose validator now accepts README-only entries linking to an external repo, so this is the folder that link must resolve to |
 | `site-to-ios-app` | `skills/site-to-ios-app` | `CARD.md` omitted (release metadata, repo-relative links) |
 | `voice-preserving-line-edit` | `skills/suede-deslop` | Renamed. Leads on the voice-preserving and audit-mode differentiators |
 
