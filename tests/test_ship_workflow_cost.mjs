@@ -4,7 +4,7 @@
 // search, mutation, failure, and budget boundaries at the workflow ABI.
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import gateEnvironment from '../skills/suede-graph-flo-xr/workflows/helpers/gate-environment.cjs'
@@ -808,31 +808,47 @@ test('each Build and Fix patch bundle stays inside its own lane before aggregate
 test('critical workflow agent types are registered only by the full and workflow plugins', () => {
   const manifest = JSON.parse(readFileSync(path.join(ROOT, '.claude-plugin/plugin.json'), 'utf8'))
   const marketplace = JSON.parse(readFileSync(path.join(ROOT, '.claude-plugin/marketplace.json'), 'utf8'))
-  const expected = [
-    './agents/suede-graph-flo-xr-scout.md',
-    './agents/suede-graph-flo-xr-code-reader.md',
-    './agents/suede-graph-flo-xr-web-reader.md',
-    './agents/suede-graph-flo-xr-patch-author.md',
-    './agents/suede-graph-flo-xr-applier.md',
-    './agents/suede-graph-flo-xr-verifier.md',
-  ]
-  assert.equal(Object.hasOwn(manifest, 'agents'), false)
-  assert.ok(marketplace.plugins.every(plugin => plugin.strict === false))
+  const profiles = ['scout', 'code-reader', 'web-reader', 'patch-author', 'applier', 'verifier']
+  // The profiles live inside the skill they serve so a subset rooted at ./skills
+  // can ship them. plugin.json is the authority for the full plugin (strict: true).
+  // With strict: false the loader treats the repo-root skills/ and agents/ folders
+  // as plugin.json component declarations, so any subset that shares the repo
+  // root fails to load with "conflicting manifests" — which is how every plugin
+  // in this marketplace was failing until 2026-09-05. Subsets therefore root at
+  // ./skills, where no plugin.json exists, and list their components themselves.
+  const manifestAgents = profiles.map(name => `./skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-${name}.md`)
+  const subsetAgents = profiles.map(name => `./suede-graph-flo-xr/agents/suede-graph-flo-xr-${name}.md`)
+  assert.equal(manifest.skills, './skills/')
+  assert.deepEqual(manifest.agents, manifestAgents)
   const full = marketplace.plugins.find(plugin => plugin.name === 'suede-skills')
   const workflows = marketplace.plugins.find(plugin => plugin.name === 'suede-agent-workflows')
   const code = marketplace.plugins.find(plugin => plugin.name === 'suede-code')
   const marketing = marketplace.plugins.find(plugin => plugin.name === 'suede-marketing')
-  assert.equal(full.skills, './skills/')
-  assert.deepEqual(full.agents, expected)
-  assert.deepEqual(workflows.agents, expected)
+  assert.equal(full.source, './')
+  assert.equal(full.strict, true)
+  assert.equal(Object.hasOwn(full, 'skills'), false)
+  assert.equal(Object.hasOwn(full, 'agents'), false)
+  for (const subset of [workflows, code, marketing]) {
+    assert.equal(subset.source, './skills', subset.name)
+    assert.equal(subset.strict, false, subset.name)
+    assert.ok(Array.isArray(subset.skills) && subset.skills.length > 0, subset.name)
+    assert.ok(subset.skills.every(entry => /^\.\/[a-z0-9-]+$/.test(entry)), `${subset.name} lists a skill outside its ./skills root`)
+    for (const entry of subset.skills) {
+      assert.ok(existsSync(path.join(ROOT, 'skills', entry.slice(2), 'SKILL.md')), `${subset.name} references missing ${entry}`)
+    }
+  }
+  assert.deepEqual(workflows.agents, subsetAgents)
   assert.equal(Object.hasOwn(code, 'agents'), false)
   assert.equal(Object.hasOwn(marketing, 'agents'), false)
-  const scout = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-scout.md'), 'utf8')
-  const reader = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-code-reader.md'), 'utf8')
-  const web = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-web-reader.md'), 'utf8')
-  const author = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-patch-author.md'), 'utf8')
-  const applier = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-applier.md'), 'utf8')
-  const verifier = readFileSync(path.join(ROOT, 'agents/suede-graph-flo-xr-verifier.md'), 'utf8')
+  for (const entry of manifestAgents) assert.ok(existsSync(path.join(ROOT, entry)), `missing ${entry}`)
+  assert.equal(existsSync(path.join(ROOT, 'agents')), false, 'the profiles have one home: skills/suede-graph-flo-xr/agents')
+  const read = name => readFileSync(path.join(ROOT, 'skills/suede-graph-flo-xr/agents', `suede-graph-flo-xr-${name}.md`), 'utf8')
+  const scout = read('scout')
+  const reader = read('code-reader')
+  const web = read('web-reader')
+  const author = read('patch-author')
+  const applier = read('applier')
+  const verifier = read('verifier')
   assert.match(author, /^tools: Glob, Grep, LS, Read, NotebookRead, StructuredOutput$/m)
   assert.doesNotMatch(author, /^tools:.*(?:Bash|Edit|Write|ToolSearch|Web)/m)
   assert.match(scout, /^tools: Bash, Glob, Grep, LS, Read, NotebookRead, StructuredOutput$/m)

@@ -11,7 +11,7 @@
 # Both steps are best-effort: failures never break the file install.
 set -euo pipefail
 SKILLS_DIR="$(cd "$(dirname "$0")/skills" && pwd)"
-AGENTS_DIR="$(cd "$(dirname "$0")/agents" && pwd)"
+AGENTS_DIR="$(cd "$(dirname "$0")/skills/suede-graph-flo-xr/agents" && pwd)"
 TARGET="$HOME/.claude/skills"
 AGENT_TARGET="$HOME/.claude/agents"
 mkdir -p "$TARGET"

@@ -59,7 +59,7 @@ git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash su
 
 You can also copy individual skill folders into `.claude/skills/` (project) or
 `~/.claude/skills/` (user). One exception: the hardened `suede-graph-flo-xr` JavaScript
-workflow also requires the repository's `agents/suede-graph-flo-xr-*.md` profiles in
+workflow also requires the skill's bundled `agents/suede-graph-flo-xr-*.md` profiles in
 `~/.claude/agents` and macOS `sandbox-exec`. The `suede-skills` and
 `suede-agent-workflows` Claude plugins, plus `install.sh`, install those profiles;
 a skill-folder-only or generic skills-CLI install does

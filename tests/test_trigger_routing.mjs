@@ -57,7 +57,8 @@ test("retired orchestration skills stay out of the routing contract and plugin s
   );
   for (const plugin of marketplace.plugins) {
     for (const name of retired) {
-      assert.ok(!(plugin.skills ?? []).includes(`./skills/${name}`), `${plugin.name} still lists ${name}`);
+      const listed = Array.isArray(plugin.skills) ? plugin.skills : [];
+      assert.ok(!listed.some((entry) => entry === `./skills/${name}` || entry === `./${name}`), `${plugin.name} still lists ${name}`);
     }
   }
 });
