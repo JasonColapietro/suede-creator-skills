@@ -1213,7 +1213,7 @@ for (const spec of specialtyIndex) {
     {
       file: "docs/index.html",
       label: `homepage catalog badge: ${spec.key}`,
-      re: new RegExp(`<span class="catalog-lane-name">${escapeRegExp(label)}</span>\\s*<span class="catalog-lane-count">(\\d+) skills</span>`),
+      re: new RegExp(`<h3 class="catalog-lane-name">${escapeRegExp(label)}</h3>\\s*<span class="catalog-lane-count">(\\d+) skills</span>`),
       expected: spec.count
     }
   );
