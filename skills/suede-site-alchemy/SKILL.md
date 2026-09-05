@@ -203,7 +203,7 @@ Default stack for a fast polish pass:
 1. `/vibe-scan` - name the current feeling and the feeling the page should sell.
 2. `/hero-voltage` - make the first viewport impossible to misunderstand.
 3. `/offer-spine` - lock the page to one promise, one buyer, one action.
-4. `/proof-stack` - turn trust from decoration into a conversion argument.
+4. `/trust-lacquer` - turn trust from decoration into a conversion argument.
 5. `/cta-magnet` - make the next click feel obvious and worth it.
 6. `/mobile-seduction` - make the small-screen version feel composed, not
    collapsed.

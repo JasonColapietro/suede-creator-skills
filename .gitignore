@@ -11,3 +11,6 @@ node_modules
 # Internal working documents — never publish
 audits/
 .claude/
+
+# Suede Graph Flo XR run artifacts (handoffs written at the repo root by the workflow)
+.suede-graph-flo-xr/
