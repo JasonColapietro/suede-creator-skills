@@ -130,8 +130,11 @@ file owner, an overflowed safety manifest, or no selectable plan. Scout parses
 NUL-delimited Git porcelain so both sides of renames remain protected, parses
 `lsof -Fn` CWD fields with path-component boundaries, and never discards fresh
 dirty or live claims merely because committed history was cherry-landed. A
-selected Build or Fix result that is blocked, missing context, reports concerns,
-fails, or reports no changed path also halts before the next verification stage. On a halt, name the
+selected Build or Fix result that is blocked, missing context, fails, or reports
+no changed path also halts before the next verification stage; a result that is
+done with stated concerns proceeds, and its concerns travel into the review
+stage and the handoff. Patch authors receive the whole scope checklist as
+contract context, so a name another lane pins is imported, not guessed. On a halt, name the
 blocker in one line and offer 2–4 applicable
 resolutions (for example: narrow scope, exempt protected WIP, resolve the
 collision, choose a higher budget, or provide missing context), and wait. Do
