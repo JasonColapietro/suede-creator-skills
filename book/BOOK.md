@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 74 skills fit
 
 Here is the objection that arrives immediately. The 74 `SKILL.md` files in this
-repo total 1,082,548 bytes. Loading all of them into every conversation would
+repo total 1,082,716 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 74 descriptions together come to 44,810 bytes. That is roughly a
+all 74 descriptions together come to 44,838 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -224,7 +224,7 @@ This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 72 of the 74 descriptions in this repo use to push work toward a better
+that 74 of the 74 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs
@@ -349,8 +349,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 74 files total 1,082,548 bytes;
-the 74 descriptions together are 44,810. The agent holds the small number and
+when the skill is not running. In this repo the 74 files total 1,082,716 bytes;
+the 74 descriptions together are 44,838. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -385,7 +385,7 @@ actually types ("sounds fine but feels generated"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Seventy-two of the 74 descriptions in this repo end with a `NOT FOR:` clause,
+Seventy-four of the 74 descriptions in this repo end with a `NOT FOR:` clause,
 and it is the highest-leverage sentence in the file. The remaining two close the
 same way without the colon, which is drift rather than a second convention.
 
