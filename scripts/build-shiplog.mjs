@@ -222,6 +222,19 @@ if (status === "prepared") {
     (_, lead, middle, tail) => `${lead}${activity.total}${middle}${activity.weeks}${tail}`,
     2
   );
+  // The strip also tallies the changelog itself ("N changelog entries: L landed
+  // + P prepared"). That line was hand-copied and went stale on every release
+  // (the 0.17.0 entry turned CI red), so it is now counted from the entries on
+  // this page: every .clog-item, and how many of them carry data-status="prepared".
+  const entryTotal = (home.text.match(/class="clog-item"/g) || []).length;
+  const entryPrepared = (home.text.match(/class="clog-item"[^>]*data-status="prepared"/g) || []).length;
+  rewrite(
+    home,
+    "proof-tape changelog tally",
+    /(<li><b>)\d+(<\/b> changelog entries: )\d+( landed \+ )\d+( prepared<\/li>)/,
+    (_, lead, middle, plus, tail) => `${lead}${entryTotal}${middle}${entryTotal - entryPrepared}${plus}${entryPrepared}${tail}`,
+    2
+  );
 }
 
 // 3. The tiny card on all three pages. The card is one link, so its accessible
