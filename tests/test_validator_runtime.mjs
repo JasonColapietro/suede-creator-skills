@@ -943,6 +943,53 @@ function restateAdvertisedTotal(checkoutRoot, total) {
 // over 14, above ten bars fitted to that caption by dropping three opening
 // weeks and folding their commits onto the newest bar. Generating all of it
 // from one measurement is the fix; this asserts the surfaces come out agreeing.
+test("build-shiplog buckets by calendar day when log order and day order disagree", completeSourceHistoryTest, (t) => {
+  const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-offsets-");
+  const headStamp = spawnSync("git", ["-C", checkoutRoot, "log", "-1", "--pretty=format:%cI"], { encoding: "utf8" }).stdout.trim();
+  // A squash merge stamped by GitHub in UTC just after midnight, then a local
+  // commit one hour later whose -07:00 offset still reads the previous calendar
+  // day. The later commit is the last line of the log but not the newest day,
+  // which is exactly what an evening merge followed by a Pacific commit produces.
+  const mergeInstant = new Date(Date.parse(headStamp) + 2 * 86400000);
+  mergeInstant.setUTCHours(1, 0, 0, 0);
+  const mergeStamp = mergeInstant.toISOString().replace(/\.\d{3}Z$/, "+00:00");
+  const localDay = new Date(mergeInstant.getTime() + 3600000 - 7 * 3600000).toISOString().slice(0, 10);
+  const localStamp = `${localDay}T19:00:00-07:00`;
+  const commit = (message, stamp) => {
+    const result = spawnSync("git", ["-C", checkoutRoot, "commit", "--allow-empty", "--no-gpg-sign", "--quiet", "-m", message], {
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GIT_AUTHOR_DATE: stamp,
+        GIT_COMMITTER_DATE: stamp,
+        GIT_AUTHOR_NAME: "fixture",
+        GIT_AUTHOR_EMAIL: "fixture@example.com",
+        GIT_COMMITTER_NAME: "fixture",
+        GIT_COMMITTER_EMAIL: "fixture@example.com"
+      }
+    });
+    assert.equal(result.status, 0, result.stderr);
+  };
+  commit("squash merge stamped in UTC", mergeStamp);
+  commit("local commit dated the previous calendar day", localStamp);
+  const head = spawnSync("git", ["-C", checkoutRoot, "rev-parse", "HEAD"], { encoding: "utf8" }).stdout.trim();
+  spawnSync("git", ["-C", checkoutRoot, "update-ref", "refs/remotes/origin/main", head]);
+
+  const build = spawnSync(process.execPath, [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")], {
+    cwd: checkoutRoot,
+    encoding: "utf8"
+  });
+  assert.equal(build.status, 0, `${build.stdout}\n${build.stderr}`);
+
+  const text = fs.readFileSync(path.join(checkoutRoot, "docs", "index.html"), "utf8");
+  const chart = text.match(/<div class="clog-spark[^>]*>[\s\S]*?<\/div>/)[0];
+  assert.doesNotMatch(chart, /NaN/, "a day newer than the log's last line must not overflow the week buckets");
+  const weeks = Number(text.match(/class="clog-spark-caption[^"]*">\d+ commits &middot; (\d+) weeks/)[1]);
+  assert.equal((chart.match(/style="height:\d+%"/g) || []).length, weeks, "one bar per advertised week");
+  const spoken = chart.match(/oldest to newest: ([^"]*?) commits\./)[1].split(/,\s*(?:and\s*)?/).map(Number);
+  assert.equal(spoken.length, weeks, "the spoken series must name every week");
+});
+
 test("build-shiplog regenerates the commit-activity series on every ship-log surface", completeSourceHistoryTest, (t) => {
   const checkoutRoot = checkoutWithOriginMainAtHead(t, "suede-shiplog-activity-");
   const indexPath = path.join(checkoutRoot, "docs", "index.html");
