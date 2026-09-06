@@ -7,7 +7,7 @@ Release record for the `suede-play-release` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Suede Labs Google Play delivery skill: set up publishing credentials, upload an AAB, promote between tracks, stage a rollout, and prove against the Play Developer API what is actually live.
+Suede Labs Google Play delivery skill: ship an Android release end to end from the agent interface, without opening the Play Console.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.18.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes for the first time, writing or fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what version and rollout fraction production is really serving.
+Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what version and fraction production is really serving.
 
-Out of scope — planning, building, or policy-checking the app itself (use android-app-factory); live Play listing and keyword audits on a shipped app (use suede-aso); wiring CI required checks around the release (use suede-ci-gate); iOS archive, upload, or App Store review submission (a private Suede Labs companion, not in this pack: ios-app-store-release).
+Out of scope — planning or building the app itself (use android-app-factory); live listing and keyword audits (use suede-aso); CI required checks (use suede-ci-gate); iOS release (a private Suede Labs companion, not in this pack: ios-app-store-release).
 
 ## Deployment Geography
 
