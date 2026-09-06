@@ -11,10 +11,10 @@ Ground truth on the audit date: 74 skills, repository `JasonColapietro/suede-cre
 | Directory | Status | Evidence | Staleness | Fix |
 | --- | --- | --- | --- | --- |
 | skills.sh (Vercel `npx skills`) | Listed, automatic | https://www.skills.sh/jasoncolapietro/suede-creator-skills shows 992 installs; top installs are suede-agent-teams, suede-ai-eval, suede-code, suede-code-grader, suede-code-review | Shows "79 skills" against 74 | No claim mechanism exists. The count refreshes on re-crawl or install traffic. Nothing to file. |
-| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive Skill Collections" | README entry reads "67 MIT-licensed skills for Claude Code and Codex" | 67 vs 74 | PR to that repo updating the line |
+| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive Skill Collections" | README entry reads "67 MIT-licensed skills for Claude Code and Codex" | 67 vs 74 | PR opened 2026-09-06: GetBindu/awesome-claude-code-and-skills#194 |
 | awesomeclaude.ai/awesome-claude-skills (backed by webfuse-com/awesome-claude) | Listed under "Development & Code Tools" | Entry reads "23-skill pack for agent orchestration with WIP collision detection and rollback trees" | Description is from the first release and describes one skill, not the pack | PR to webfuse-com/awesome-claude replacing the description |
-| BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR to that repo, same replacement |
-| ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open with no review as of the audit date | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
+| BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR opened 2026-09-06: BehiSecc/awesome-claude-skills#677 |
+| ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open; rewritten 2026-09-05 to a README-only entry linking to the vendorable copy, and its validate check now passes | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
 | Anthropic official marketplace (`anthropics/claude-plugins-official`) | Submitted, awaiting review | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement; no public acknowledgement URL yet) | Not listed until Anthropic accepts it | Watch `anthropics/claude-plugins-official` for the entry; nothing else to file |
 | SaaSHub | Listed, wrong product | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here |
 
