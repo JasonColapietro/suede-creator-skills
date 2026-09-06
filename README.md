@@ -224,6 +224,7 @@ see [NOTICE.md](NOTICE.md).
 
 Essays on why the pack is built the way it is:
 
+- [**Two skills, and the bugs that wrote them**](https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html) — Google Play publishing from the terminal, and a parity contract that keeps four surfaces of one product honest
 - [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, Suede Thought Graph shipping search, and the MCP layer
 - [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of broad skill packs
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
