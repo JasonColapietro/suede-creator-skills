@@ -9,7 +9,7 @@ Release record for the `johnny-suede-design` skill, following the NVIDIA skill-c
 
 Suede Labs AI full-stack surface builder that runs design, copy, and visual QA as one pass: landing pages, brand surfaces, product UI, dashboards, campaigns, launch pages, and reference-to-target restyles (suedify).
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.17.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.18.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -62,7 +62,7 @@ Structured Markdown returned in the agent's response, shaped by the output contr
 
 ## Skill Version
 
-0.17.0 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.18.0 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 
