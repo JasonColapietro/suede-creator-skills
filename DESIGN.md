@@ -70,9 +70,28 @@ evidence-led, and easy to scan.
   Fraunces italic plus a red underline for the single risk phrase; red stays
   a border/fill color and the text remains cream. Film grain at low opacity
   keeps the near-black canvas from reading as a flat fill.
-- Catalog live filter on the skills index: hidden until JS reveals it, mono
-  input, gold focus ring, `/` focuses, lanes collapse while filtering, and
-  the result count announces via `aria-live`.
+- Catalog toolbar on the skills index: hidden until JS reveals it, then a
+  bordered panel that sticks under the nav at desktop and stays static on
+  phones so it never eats the viewport. Search glyph, mono input with a `/`
+  hint, clear button, live count via `aria-live`, and six specialty chips that
+  track the section under the bar (`aria-current="location"`). Every query
+  term must match; matches wrap in `<mark class="hl">`; empty lanes and
+  specialties collapse; the query round-trips through `?q=`; `/` or Ctrl/Cmd+K
+  focuses, Esc clears, Enter opens a lone match, and the arrow keys walk the
+  visible rows.
+- Catalog ledger: each specialty carries a fixed two-digit ordinal and a
+  Fraunces head; each row carries a running mono index from a CSS counter, a
+  gold inset rule on hover and focus, and a `src` link to its GitHub folder
+  that appears on hover, focus-within, or touch.
+- Lane map: one SVG bar per specialty, each a link to its section, filling
+  from the axis on first view (`.js-on` gated, so no-JS and reduced-motion
+  visits see full bars). Bar length is proportional to skill count.
+- Scroll reveal and entrance: `.reveal` / `.reveal-group` translate into place
+  on first intersection; the hero rises in on load. Both are transform and
+  blur only, never opacity, and both switch off under reduced motion.
+- Back-to-top pill after the first screen of catalog; the nav gains a shadow
+  once scrolled; the catalog changelog carries the homepage ledger's
+  type-coded spine nodes via `:has()`.
 - Mobile navigation is one `<details class="nav-disclosure">` pattern on every
   page, including the generated book. The markup ships `open`, so a visit with
   JavaScript disabled still reaches every link; JS collapses it at 768px and
