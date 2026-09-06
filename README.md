@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 74](https://img.shields.io/badge/skills-74-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 76](https://img.shields.io/badge/skills-76-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
