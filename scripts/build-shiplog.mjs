@@ -114,8 +114,14 @@ function measureCommitActivity(ref) {
     return Date.UTC(y, m - 1, d) / 86400000;
   };
   const days = stamps.map(dayOf);
-  const newest = days[days.length - 1];
-  const weeks = Math.floor((newest - days[0]) / 7) + 1;
+  // Each day is read in its own commit's offset, so the log order is not the
+  // day order: a squash merge GitHub stamps in UTC after 17:00 Pacific carries
+  // tomorrow's date while the local commit on top of it still says today. Take
+  // the extremes, not the ends, or that local commit indexes one bucket past
+  // the array and every bar renders as NaN.
+  const newest = Math.max(...days);
+  const oldest = Math.min(...days);
+  const weeks = Math.floor((newest - oldest) / 7) + 1;
   const perWeek = new Array(weeks).fill(0);
   // Seven-day windows counted back from the newest commit, so the last bar is
   // always the current week and the partial window is the oldest one.
