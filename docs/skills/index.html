@@ -75,6 +75,15 @@
       font-display: swap;
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
+    /* Italic cut: reserved for the one risk word in the headline. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("../assets/fonts/fraunces-var-italic.woff2") format("woff2");
+      font-weight: 300 900;
+      font-style: italic;
+      font-display: swap;
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
 
     .skip-link {
       position: fixed; top: 12px; left: 12px; z-index: 1000;
@@ -526,11 +535,309 @@
     .nav-cracked:hover { color: #ffb3ab; border-color: #c6625a; }
     @keyframes cracked-breathe { 0%, 100% { box-shadow: 0 0 0 rgba(198, 98, 90, 0); } 50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); } }
     @media (prefers-reduced-motion: reduce) { .nav-cracked { animation: none; } }
+
+    /* ============================================================
+       Polish pass: material, depth, motion, ledger index, sticky toolbar.
+       Grouped after the display retune so nothing above re-wins the cascade.
+    ============================================================ */
+
+    /* Film grain over the canvas (the homepage recipe) so near-black reads as
+       material rather than a flat fill. Pure texture: no meaning, no pointer. */
+    .noise-overlay {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* Nav: one row at laptop widths. The 1100px shell wrapped the links under
+       the wordmark at 1280px, doubling the bar's height on the commonest
+       desktop viewport. Wider shell, tighter tracking, a shadow once scrolled. */
+    .nav .shell { width: min(1280px, 100%); padding: 0 32px; }
+    .nav-inner { gap: 4px 16px; }
+    .nav-links { gap: 6px 16px; }
+    .nav-links a { letter-spacing: 0.06em; }
+    .nav { transition: box-shadow 0.25s ease; }
+    .nav.is-scrolled { box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45); }
+    @media (max-width: 720px) { .nav .shell { padding: 0 20px; } }
+
+    /* Hero: the italic cut and a red rule carry the one risk word, the way the
+       homepage headline does. Red stays a fill; the text stays cream. */
+    .page-head { position: relative; padding-top: 80px; }
+    .hero-risk {
+      position: relative; font-style: italic; font-weight: 560; color: var(--cream);
+      white-space: nowrap;
+    }
+    .hero-risk::after {
+      content: ""; position: absolute; left: 0.02em; right: 0.04em; bottom: 0.05em;
+      height: 0.055em; border-radius: 2px; background: var(--red);
+    }
+
+    /* Hero band: lead and ship log on the left, install terminal on the right,
+       so the fold shows the words and the command at once instead of a stack. */
+    .hero-band { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 4px; }
+    @media (min-width: 980px) {
+      .hero-band { grid-template-columns: minmax(0, 1fr) minmax(400px, 470px); gap: 32px 56px; align-items: start; }
+      .hero-band .term { margin-top: 0; max-width: none; }
+      .hero-band .term-code {
+        font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; overflow-x: visible;
+        mask-image: none; -webkit-mask-image: none;
+      }
+      .hero-band .term-note { max-width: none; }
+      /* The card sits in a narrower column here, so the title clamps to two
+         lines instead of ellipsizing the release name at one. */
+      .hero-band .hero-shiplog-title {
+        white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      }
+    }
+    .term {
+      background: #0d0d0c;
+      box-shadow: 0 0 0 1px rgba(200, 169, 110, 0.10), 0 24px 70px rgba(0, 0, 0, 0.55), 0 0 90px rgba(200, 169, 110, 0.05);
+    }
+    .term-cursor {
+      display: inline-block; width: 8px; height: 15px; margin-left: 3px;
+      vertical-align: -2px; background: var(--gold);
+      animation: term-blink 1.1s steps(1) infinite;
+    }
+    @keyframes term-blink { 50% { opacity: 0; } }
+
+    /* Entrance: the hero settles into place on load. Transform and blur only,
+       so nothing is ever invisible while the animation runs. */
+    @keyframes rise-in {
+      from { transform: translateY(18px); filter: blur(2px); }
+      to   { transform: translateY(0); filter: blur(0); }
+    }
+    .page-head > .eyebrow, .page-head > h1, .hero-band, .lanemap {
+      animation: rise-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .page-head > h1 { animation-delay: 0.06s; }
+    .hero-band { animation-delay: 0.14s; }
+    .lanemap { animation-delay: 0.22s; }
+
+    /* Lane map: every bar is a live link to its specialty, the bars fill in
+       from the axis on first view, and a hairline axis anchors the scale. */
+    .lanemap-row { cursor: pointer; }
+    .lanemap-row text { transition: fill 0.15s; }
+    .lanemap-bar {
+      transform-box: fill-box; transform-origin: left center;
+      transition: fill 0.15s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lanemap-row:hover .lanemap-bar { fill: #e3c98f; }
+    .lanemap-row:hover .lanemap-label { fill: #ffffff; }
+    .js-on .lanemap-bar { transform: scaleX(0); }
+    .js-on .lanemap.in-view .lanemap-bar { transform: scaleX(1); }
+    a.lanemap-row:nth-of-type(2) .lanemap-bar { transition-delay: 0.07s; }
+    a.lanemap-row:nth-of-type(3) .lanemap-bar { transition-delay: 0.14s; }
+    a.lanemap-row:nth-of-type(4) .lanemap-bar { transition-delay: 0.21s; }
+    a.lanemap-row:nth-of-type(5) .lanemap-bar { transition-delay: 0.28s; }
+    a.lanemap-row:nth-of-type(6) .lanemap-bar { transition-delay: 0.35s; }
+
+    /* Scroll reveal: opt-in offset only when JS can undo it (.js-on), so a
+       no-JS or reduced-motion visit sees everything in place. */
+    .reveal { transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1); }
+    .js-on .reveal { transform: translateY(14px); }
+    .js-on .reveal.in-view { transform: translateY(0); }
+    .js-on .reveal-group > .cell { transform: translateY(10px); transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s; }
+    .js-on .reveal-group.in-view > .cell { transform: translateY(0); }
+    .reveal-group > .cell:nth-child(2) { transition-delay: 0.05s; }
+    .reveal-group > .cell:nth-child(3) { transition-delay: 0.10s; }
+    .reveal-group > .cell:nth-child(4) { transition-delay: 0.15s; }
+    .reveal-group > .cell:nth-child(5) { transition-delay: 0.20s; }
+
+    /* Router cells: an inner gold rule on hover, red for the red cells. */
+    .cell { position: relative; transition: background 0.2s; }
+    .cell::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      border: 1px solid transparent; transition: border-color 0.2s;
+    }
+    .cell:hover { background: #1a1a19; }
+    .cell:hover::after { border-color: rgba(200, 169, 110, 0.35); }
+    .cell--red:hover::after { border-color: rgba(198, 98, 90, 0.4); }
+
+    /* Catalog toolbar: sticky under the nav at desktop, static on phones so it
+       never eats the viewport. Search glyph, "/" hint, clear, live count, and
+       six specialty chips that track the section under the bar. */
+    .catalog-bar-sentinel { height: 1px; margin-top: 22px; }
+    .catalog-bar {
+      position: sticky; top: calc(var(--nav-h, 65px) + 8px); z-index: 40;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+      margin: 0 0 4px; padding: 8px 10px;
+      background: rgba(12, 12, 12, 0.94);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border: 1px solid var(--border); border-radius: 6px;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .catalog-bar.is-stuck { box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55); border-color: #2a2a28; }
+    .filter-field { position: relative; order: 1; flex: 1 1 100%; display: flex; align-items: center; min-width: 0; }
+    .filter-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .filter-icon { position: absolute; left: 13px; width: 14px; height: 14px; color: var(--muted); pointer-events: none; transition: color 0.15s; }
+    .filter-field:focus-within .filter-icon { color: var(--gold); }
+    .filter-input { width: 100%; padding-left: 38px; padding-right: 48px; }
+    .filter-input::-webkit-search-cancel-button, .filter-input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+    .filter-kbd {
+      position: absolute; right: 10px; padding: 2px 7px; pointer-events: none;
+      font-family: var(--mono); font-size: 11px; line-height: 1.4; color: var(--muted);
+      border: 1px solid var(--border); border-radius: 3px; transition: opacity 0.15s;
+    }
+    .filter-field:focus-within .filter-kbd, .filter-field.has-value .filter-kbd { opacity: 0; }
+    .filter-clear {
+      position: absolute; right: 6px; width: 32px; height: 32px; border: 0; border-radius: 4px;
+      background: transparent; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+    }
+    .filter-clear:hover { color: var(--cream); background: var(--surface); }
+    .filter-count { order: 3; flex: 0 0 auto; margin-left: auto; padding-right: 6px; min-width: 0; text-align: right; }
+    .catalog-chips {
+      order: 2; display: flex; gap: 6px; flex: 1 1 0; min-width: 0;
+      overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+      /* Fade the clipped edge so an overflowing chip row reads as scrollable
+         instead of cut off against the count. */
+      mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 22px), transparent 100%);
+      padding-right: 22px;
+    }
+    .catalog-chips::-webkit-scrollbar { display: none; }
+    .catalog-chips a {
+      flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 30px;
+      padding: 3px 10px; border: 1px solid transparent; border-radius: 999px;
+      font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .catalog-chips a:hover { color: var(--cream); border-color: var(--border); }
+    .catalog-chips a[aria-current] { color: var(--gold); border-color: rgba(200, 169, 110, 0.45); background: rgba(200, 169, 110, 0.08); }
+    .filter-empty {
+      margin: 28px 0 8px; padding: 22px 24px;
+      border: 1px dashed var(--border); border-radius: 6px;
+      font-size: 14.5px; line-height: 1.6; color: var(--muted);
+    }
+    .filter-empty b { font-family: var(--mono); font-weight: 500; color: var(--cream); }
+    .filter-empty-clear {
+      border: 0; background: none; padding: 0; cursor: pointer;
+      color: var(--gold); font: inherit; border-bottom: 1px solid rgba(200, 169, 110, 0.35);
+    }
+    .filter-empty-clear:hover { border-color: var(--gold); }
+    mark.hl { background: rgba(200, 169, 110, 0.22); color: var(--cream); border-radius: 2px; padding: 0 1px; }
+    .row b mark.hl { color: #ffe1a6; }
+    @media (max-width: 720px) {
+      .catalog-bar { position: static; }
+    }
+
+    /* Catalog ledger: specialties are set in the display face and numbered,
+       every row carries a running index, and the sticky bar is accounted for
+       in anchor and focus scrolling. */
+    section[aria-labelledby="catalog"] { counter-reset: skill; }
+    /* The generic section rule above pads every <section> 80px, which put the
+       first specialty far below the toolbar; margins already space them. */
+    .spec { padding-top: 0; }
+    /* Ordinals come from DOM position, not a counter, so a filter that hides
+       the first specialty does not renumber the rest. */
+    .spec:nth-of-type(1)::before { content: "01"; }
+    .spec:nth-of-type(2)::before { content: "02"; }
+    .spec:nth-of-type(3)::before { content: "03"; }
+    .spec:nth-of-type(4)::before { content: "04"; }
+    .spec:nth-of-type(5)::before { content: "05"; }
+    .spec:nth-of-type(6)::before { content: "06"; }
+    .spec::before {
+      display: block; margin-bottom: 10px;
+      font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; color: var(--muted);
+    }
+    .spec-head h3 {
+      font-family: "Fraunces", Georgia, "Times New Roman", serif; font-optical-sizing: auto;
+      font-size: 30px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1;
+    }
+    .row-wrap { position: relative; }
+    a.row {
+      grid-template-columns: 44px 250px minmax(0, 1fr) auto; gap: 24px;
+      margin: 0 -12px; padding: 15px 96px 15px 12px; border-radius: 4px;
+      counter-increment: skill;
+      scroll-margin-top: calc(var(--nav-h, 65px) + var(--bar-h, 98px) + 24px); scroll-margin-bottom: 96px;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+    a.row::before {
+      content: counter(skill, decimal-leading-zero); padding-top: 2px;
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: #5e5a52;
+      font-variant-numeric: tabular-nums; transition: color 0.15s;
+    }
+    a.row:hover, a.row:focus-visible { background: var(--surface); box-shadow: inset 2px 0 0 var(--gold); }
+    a.row:hover::before, a.row:focus-visible::before { color: var(--gold); }
+    a.row:focus-visible { outline-offset: -2px; }
+    .row-src {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 4px 10px;
+      border: 1px solid var(--border); border-radius: 4px; background: var(--card);
+      font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--muted);
+      opacity: 0; transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .row-wrap:hover .row-src, .row-wrap:focus-within .row-src { opacity: 1; }
+    .row-src:hover { color: var(--gold); border-color: var(--gold); }
+    .row-src svg { width: 11px; height: 11px; }
+    @media (hover: none) { .row-src { opacity: 0.75; } .filter-kbd { display: none; } }
+    @media (min-width: 721px) {
+      .spec, .lane { scroll-margin-top: calc(var(--nav-h, 65px) + var(--bar-h, 98px) + 28px); }
+    }
+    @media (max-width: 820px) {
+      a.row { grid-template-columns: 44px 200px minmax(0, 1fr) auto; }
+    }
+    @media (max-width: 720px) {
+      a.row { grid-template-columns: 36px minmax(0, 1fr); row-gap: 6px; padding: 16px 12px; margin: 0 -12px; }
+      a.row > b { grid-column: 2; padding-right: 72px; }
+      a.row > span:not(.arrow) { grid-column: 2; }
+      a.row .arrow { display: none; }
+      .row-src { top: 12px; transform: none; opacity: 0.75; }
+      .spec-head h3 { font-size: 26px; }
+    }
+
+    /* Changelog: a spine with a node per entry, coded by tag like the homepage
+       ledger. The newest node carries a halo. */
+    ol.clog { position: relative; padding-left: 26px; border-top: 0; }
+    ol.clog::before { content: ""; position: absolute; left: 4px; top: 10px; bottom: 10px; width: 1px; background: var(--border); }
+    .clog li { position: relative; }
+    .clog li::before {
+      content: ""; position: absolute; left: -26px; top: 28px; width: 9px; height: 9px;
+      border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px var(--bg);
+    }
+    .clog li:first-child::before { box-shadow: 0 0 0 3px var(--bg), 0 0 0 6px rgba(200, 169, 110, 0.3); }
+    .clog li:has(.clog-tag--fix)::before { background: var(--red-text); }
+    .clog li:has(.clog-tag--guard)::before { background: #3a3835; box-shadow: 0 0 0 1px var(--muted), 0 0 0 4px var(--bg); }
+    .clog-rail .clog-more { display: block; width: max-content; }
+
+    /* Gold strip: the same grain, multiplied, so the flat gold reads as paper. */
+    .ship-strip { position: relative; overflow: hidden; }
+    .ship-strip::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.22;
+      mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px 256px;
+    }
+    .ship-strip > .shell { position: relative; z-index: 1; }
+
+    /* Back to top: appears after the first screen of catalog, mono pill. */
+    .to-top {
+      position: fixed; right: 22px; bottom: 22px; z-index: 45;
+      display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 999px;
+      background: rgba(12, 12, 12, 0.94); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--muted);
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s, color 0.15s, border-color 0.15s;
+    }
+    .to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .to-top:hover { color: var(--gold); border-color: var(--gold); }
+    .to-top svg { width: 12px; height: 12px; }
+
+    /* Footer links never wrapped, which was the one row pushing phones into
+       horizontal scroll. */
+    .footer-links { flex-wrap: wrap; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-head > .eyebrow, .page-head > h1, .hero-band, .lanemap { animation: none; }
+      .term-cursor { animation: none; }
+      .reveal, .reveal-group > .cell, .lanemap-bar, .to-top, .nav { transition: none; }
+    }
   </style>
   <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/fraunces-var-italic.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="noise-overlay" aria-hidden="true"></div>
 
 
 <nav class="nav" aria-label="Main navigation">
@@ -564,7 +871,9 @@
 <main id="main" tabindex="-1">
   <div class="shell page-head">
     <p class="eyebrow">Skill catalog. One author.</p>
-    <h1>Every skill. One honest line each.</h1>
+    <h1>Every skill. One <em class="hero-risk">honest</em> line each.</h1>
+    <div class="hero-band">
+      <div class="hero-band-text">
     <p class="lead">Every skill is a plain-Markdown <code>SKILL.md</code> file you can read before your agent runs it, every line of it on GitHub. <strong>Six specialities:</strong> ship (17), craft (9), get found (13), demand channels (8), revenue &amp; retention (15), and strategy &amp; rights (14). Each splits into sub-lanes, and every row links to its deep docs and its source folder on GitHub. Nothing to uninstall but a folder.</p>
 
     <a id="hero-shiplog" data-status="released" href="#changelog" aria-label="Ship log. Released Sep 6 &middot; 317f6d5 Google Play delivery and cross-surface parity join the pack 366 commits &middot; 16 weeks &middot; read the full ship log -&gt;. Jump to the changelog.">
@@ -593,6 +902,8 @@
       </span>
     </a>
 
+      </div>
+      <div class="hero-band-term">
     <div class="term">
       <div class="term-bar">
         <span class="term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -600,13 +911,15 @@
       </div>
       <div class="term-body">
         <pre class="term-code" id="install-code"><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills
-<span class="prompt">$</span> /plugin install suede-skills@suede</pre>
+<span class="prompt">$</span> /plugin install suede-skills@suede<span class="term-cursor" aria-hidden="true"></span></pre>
         <button class="term-copy" type="button" data-copy aria-label="Copy install commands">Copy</button>
       </div>
     </div>
     <p class="term-note">Codex installs the same pack natively with <code>codex plugin add suede-skills@suede-codex</code>; Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+      </div>
+    </div>
 
-    <div class="lanemap">
+    <div class="lanemap reveal">
       <div class="lanemap-head">
         <span class="lanemap-title">Where the weight sits</span>
         <span class="lanemap-hint">Jump to a specialty</span>
@@ -615,24 +928,43 @@
         <title id="lanemap-t">Skills per specialty</title>
         <desc id="lanemap-d">Ship 17, Craft 9, Get found 13, Demand channels 8, Revenue and retention 15, Strategy and rights 14.</desc>
         <g font-family="system-ui, -apple-system, sans-serif">
-          <text x="250" y="30" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Ship</text>
-          <rect x="264" y="17" width="206" height="18" rx="4" fill="#c8a96e"/>
-          <text x="484" y="31" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">17</text>
-          <text x="250" y="66" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Craft</text>
-          <rect x="264" y="53" width="143" height="18" rx="4" fill="#c8a96e"/>
-          <text x="421" y="67" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">9</text>
-          <text x="250" y="102" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Get found</text>
-          <rect x="264" y="89" width="206" height="18" rx="4" fill="#c8a96e"/>
-          <text x="484" y="103" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">13</text>
-          <text x="250" y="138" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Demand channels</text>
-          <rect x="264" y="125" width="127" height="18" rx="4" fill="#c8a96e"/>
-          <text x="405" y="139" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">8</text>
-          <text x="250" y="174" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Revenue &amp; retention</text>
-          <rect x="264" y="161" width="238" height="18" rx="4" fill="#c8a96e"/>
-          <text x="516" y="175" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">15</text>
-          <text x="250" y="210" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Strategy &amp; rights</text>
-          <rect x="264" y="197" width="222" height="18" rx="4" fill="#c8a96e"/>
-          <text x="500" y="211" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">14</text>
+          <line x1="264" y1="6" x2="264" y2="222" stroke="#222222" stroke-width="1"/>
+          <a class="lanemap-row" href="#spec-ship" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="8" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="30" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Ship</text>
+            <rect class="lanemap-bar" x="264" y="17" width="442" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="720" y="31" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">17</text>
+          </a>
+          <a class="lanemap-row" href="#spec-craft" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="44" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="66" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Craft</text>
+            <rect class="lanemap-bar" x="264" y="53" width="234" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="512" y="67" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">9</text>
+          </a>
+          <a class="lanemap-row" href="#spec-found" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="80" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="102" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Get found</text>
+            <rect class="lanemap-bar" x="264" y="89" width="338" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="616" y="103" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">13</text>
+          </a>
+          <a class="lanemap-row" href="#spec-demand" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="116" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="138" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Demand channels</text>
+            <rect class="lanemap-bar" x="264" y="125" width="208" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="486" y="139" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">8</text>
+          </a>
+          <a class="lanemap-row" href="#spec-revenue" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="152" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="174" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Revenue &amp; retention</text>
+            <rect class="lanemap-bar" x="264" y="161" width="390" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="668" y="175" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">15</text>
+          </a>
+          <a class="lanemap-row" href="#spec-position" tabindex="-1" focusable="false">
+            <rect class="lanemap-hit" x="0" y="188" width="1000" height="36" fill="#000" fill-opacity="0"/>
+            <text class="lanemap-label" x="250" y="210" text-anchor="end" fill="#f0ece4" font-size="14.5" font-weight="600">Strategy &amp; rights</text>
+            <rect class="lanemap-bar" x="264" y="197" width="364" height="18" rx="4" fill="#c8a96e"/>
+            <text class="lanemap-count" x="642" y="211" fill="#c8a96e" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">14</text>
+          </a>
         </g>
       </svg></div>
       <nav class="lanemap-jump" aria-label="Jump to a catalog specialty">
@@ -649,7 +981,7 @@
   <section class="shell" aria-labelledby="start-here">
     <h2 id="start-here">Start with the routers</h2>
     <p class="section-sub">Five entry points cover most sessions. Everything else is one lane down.</p>
-    <div class="grid-2">
+    <div class="grid-2 reveal-group">
       <article class="cell cell--red">
         <span class="cell-label">The ship DAG</span>
         <h3>Suede Graph Flo XR</h3>
@@ -705,40 +1037,55 @@
     <h2 id="catalog">All skill folders. Markdown, top to bottom.</h2>
     <p class="section-sub">Grouped by lane. Rows link to the deep docs page; every folder is inspectable on GitHub before you install it.</p>
 
-    <div class="catalog-filter" hidden>
-      <label class="filter-label" for="catalog-search">Filter</label>
-      <input id="catalog-search" class="filter-input" type="search" placeholder="Type to filter the pack: review, seo, instagram, rights&hellip;" autocomplete="off" spellcheck="false" aria-describedby="filter-count">
+    <div class="catalog-bar-sentinel" aria-hidden="true"></div>
+    <div class="catalog-bar catalog-filter" hidden>
+      <div class="filter-field">
+        <label class="filter-label" for="catalog-search">Filter</label>
+        <svg class="filter-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+        <input id="catalog-search" class="filter-input" type="search" placeholder="Type to filter the pack: review, seo, instagram, rights&hellip;" autocomplete="off" spellcheck="false" aria-describedby="filter-count">
+        <kbd class="filter-kbd" aria-hidden="true">/</kbd>
+        <button class="filter-clear" type="button" aria-label="Clear the filter" hidden>&times;</button>
+      </div>
       <span class="filter-count" id="filter-count" aria-live="polite">All skills</span>
+      <nav class="catalog-chips" aria-label="Catalog specialties">
+        <a href="#spec-ship">Ship</a>
+        <a href="#spec-craft">Craft</a>
+        <a href="#spec-found">Get found</a>
+        <a href="#spec-demand">Demand channels</a>
+        <a href="#spec-revenue">Revenue &amp; retention</a>
+        <a href="#spec-position">Strategy &amp; rights</a>
+      </nav>
     </div>
+    <p class="filter-empty" id="filter-empty" hidden>No skill matches <b class="filter-empty-q"></b>. <button type="button" class="filter-empty-clear">Clear the filter</button> or pick a specialty above.</p>
 
     <section class="spec" id="spec-ship" aria-labelledby="spec-ship-h">
       <div class="spec-head"><h3 id="spec-ship-h">Ship</h3><span class="spec-count">17</span></div>
       <p class="spec-sub">Build the change, then let a letter decide whether it merges. The weakest of seven lanes caps the grade.</p>
       <div class="lane" id="lane-orchestration">
         <div class="lane-head"><h4>Orchestration &amp; routing</h4><span class="lane-count">7</span></div>
-        <a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-ops-architecture.html"><b>suede-ops-architecture</b><span>Fix the shape of a system before anyone builds it: entity schema, one write path per entity, and every unit of work routed to an automation, an agent, or a human.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-ops-assessment.html"><b>suede-ops-assessment</b><span>Map how work actually happens before anyone designs a system: floor-level interviews, an inventory of every silo, and friction quantified in the operation's own numbers.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-graph-flo-xr.html"><b>suede-graph-flo-xr</b><span>Suede Thought Graph shipping search: generate competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan. 55/110/200-call caps; production reads only, never deploys.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>A separate copy-only DAG: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="suede-agent-teams.html"><b>suede-agent-teams</b><span>Coordinate complex changes across agent lanes with collision detection, quality gates, and a signed handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams" target="_blank" rel="noopener" aria-label="suede-agent-teams source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-ops-architecture.html"><b>suede-ops-architecture</b><span>Fix the shape of a system before anyone builds it: entity schema, one write path per entity, and every unit of work routed to an automation, an agent, or a human.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ops-architecture" target="_blank" rel="noopener" aria-label="suede-ops-architecture source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-ops-assessment.html"><b>suede-ops-assessment</b><span>Map how work actually happens before anyone designs a system: floor-level interviews, an inventory of every silo, and friction quantified in the operation's own numbers.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ops-assessment" target="_blank" rel="noopener" aria-label="suede-ops-assessment source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-recommend-next-action.html"><b>suede-recommend-next-action</b><span>Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-recommend-next-action" target="_blank" rel="noopener" aria-label="suede-recommend-next-action source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-graph-flo-xr.html"><b>suede-graph-flo-xr</b><span>Suede Thought Graph shipping search: generate competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan. 55/110/200-call caps; production reads only, never deploys.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr" target="_blank" rel="noopener" aria-label="suede-graph-flo-xr source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-ship-copy.html"><b>suede-ship-copy</b><span>A separate copy-only DAG: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, and a deslop pass. Never audits what you supplied.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ship-copy" target="_blank" rel="noopener" aria-label="suede-ship-copy source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-workflow-skills.html"><b>suede-workflow-skills</b><span>Umbrella workflow for the full public Suede stack.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-workflow-skills" target="_blank" rel="noopener" aria-label="suede-workflow-skills source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-code">
         <div class="lane-head"><h4>Code review &amp; CI</h4><span class="lane-count">7</span></div>
-        <a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-ci-gate.html"><b>suede-ci-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-parity-contract.html"><b>suede-parity-contract</b><span>One domain on many surfaces: generate the contract from the reference's live constants, assert on every follower, pin the divergences.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="suede-ai-eval.html"><b>suede-ai-eval</b><span>AI-SPECs, failure-mode rubrics, eval cases, acceptance gates, and coverage audits for AI-powered product surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ai-eval" target="_blank" rel="noopener" aria-label="suede-ai-eval source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-code.html"><b>suede-code</b><span>Unified code review and A-F grading for correctness, security, data/state, deploy readiness, and ship risk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code" target="_blank" rel="noopener" aria-label="suede-code source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-code-grader.html"><b>suede-code-grader</b><span>A blunt A-F ship verdict across seven evidence-backed lanes, with instant-F triggers and surface grade caps.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-grader" target="_blank" rel="noopener" aria-label="suede-code-grader source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-code-review.html"><b>suede-code-review</b><span>Deep diff review with TypeScript, React, Next.js, Swift/mobile, OWASP, and database checklists plus fix briefs and a grade.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code-review" target="_blank" rel="noopener" aria-label="suede-code-review source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-mcp-qa.html"><b>suede-mcp-qa</b><span>MCP tools, resources, prompts, catalog output, and docs alignment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-mcp-qa" target="_blank" rel="noopener" aria-label="suede-mcp-qa source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-ci-gate.html"><b>suede-ci-gate</b><span>Any-repo CI gate that blocks a merge when required checks fail. Prompted only, plugs into any CI or workflow system.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ci-gate" target="_blank" rel="noopener" aria-label="suede-ci-gate source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-parity-contract.html"><b>suede-parity-contract</b><span>One domain on many surfaces: generate the contract from the reference's live constants, assert on every follower, pin the divergences.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-parity-contract" target="_blank" rel="noopener" aria-label="suede-parity-contract source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-apps">
         <div class="lane-head"><h4>Apps: iOS &amp; Android</h4><span class="lane-count">3</span></div>
-        <a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-play-release.html"><b>suede-play-release</b><span>Google Play delivery: credential preflight, AAB verification, promote instead of re-upload, staged rollout, and a track readback that proves what shipped.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./android-app-factory.html"><b>android-app-factory</b><span>One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/android-app-factory" target="_blank" rel="noopener" aria-label="android-app-factory source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./site-to-ios-app.html"><b>site-to-ios-app</b><span>Website to App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, shell strategy, and release gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/site-to-ios-app" target="_blank" rel="noopener" aria-label="site-to-ios-app source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-play-release.html"><b>suede-play-release</b><span>Google Play delivery: credential preflight, AAB verification, promote instead of re-upload, staged rollout, and a track readback that proves what shipped.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-play-release" target="_blank" rel="noopener" aria-label="suede-play-release source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
     <section class="spec" id="spec-craft" aria-labelledby="spec-craft-h">
@@ -746,18 +1093,18 @@
       <p class="spec-sub">Make the thing look and read like someone built it on purpose.</p>
       <div class="lane" id="lane-design">
         <div class="lane-head"><h4>Design &amp; copy</h4><span class="lane-count">5</span></div>
-        <a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-copy.html"><b>suede-copy</b><span>Conversion copy with headline formulas, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-design.html"><b>suede-design</b><span>Design laws, component rules, dark-mode tokens, fluid type, motion sequencing, and visual QA for any Suede surface.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-deslop.html"><b>suede-deslop</b><span>Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="johnny-suede-design.html"><b>johnny-suede-design</b><span>Full design mode for Suede or a supplied company: Suedify, mobile and product surfaces, product screenshots, UI polish, design-system QA, visual QA, visibility grading, implementation handoff, company voice, and copy.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/johnny-suede-design" target="_blank" rel="noopener" aria-label="johnny-suede-design source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="johnny-suede-write.html"><b>johnny-suede-write</b><span>Full writing mode for Suede or a supplied company: copy, company voice, product and mobile copy, SEO/AEO/AI EO, CTAs, launch copy, and anti-slop line editing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/johnny-suede-write" target="_blank" rel="noopener" aria-label="johnny-suede-write source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-copy.html"><b>suede-copy</b><span>Conversion copy with headline formulas, persuasion frameworks, A/B variants, an anti-slop gate, and a copy score.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-copy" target="_blank" rel="noopener" aria-label="suede-copy source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-design.html"><b>suede-design</b><span>Design laws, component rules, dark-mode tokens, fluid type, motion sequencing, and visual QA for any Suede surface.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-design" target="_blank" rel="noopener" aria-label="suede-design source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-deslop.html"><b>suede-deslop</b><span>Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-deslop" target="_blank" rel="noopener" aria-label="suede-deslop source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-creative">
         <div class="lane-head"><h4>Creative assets</h4><span class="lane-count">4</span></div>
-        <a class="row" href="./suede-ad-creative.html"><b>suede-ad-creative</b><span>Produce ad creative at volume.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-image.html"><b>suede-image</b><span>Create and optimise marketing imagery.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-clip-to-guide.html"><b>suede-clip-to-guide</b><span>Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package with rights routing and an evidence gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-video.html"><b>suede-video</b><span>Plan and produce marketing video.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-ad-creative.html"><b>suede-ad-creative</b><span>Produce ad creative at volume.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ad-creative" target="_blank" rel="noopener" aria-label="suede-ad-creative source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-image.html"><b>suede-image</b><span>Create and optimise marketing imagery.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-image" target="_blank" rel="noopener" aria-label="suede-image source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-clip-to-guide.html"><b>suede-clip-to-guide</b><span>Turn a clip, talk moment, or transcript into a repeatable clip-to-guide funnel package with rights routing and an evidence gate.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-clip-to-guide" target="_blank" rel="noopener" aria-label="suede-clip-to-guide source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-video.html"><b>suede-video</b><span>Plan and produce marketing video.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-video" target="_blank" rel="noopener" aria-label="suede-video source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
     <section class="spec" id="spec-found" aria-labelledby="spec-found-h">
@@ -765,22 +1112,22 @@
       <p class="spec-sub">Get cited by search and by AI answers. suede-visibility-grader ends the pass with an A to F page grade, so findability stops being an opinion.</p>
       <div class="lane" id="lane-seo">
         <div class="lane-head"><h4>Search &amp; AI visibility</h4><span class="lane-count">6</span></div>
-        <a class="row" href="./suede-ai-seo.html"><b>suede-ai-seo</b><span>Get cited in AI-generated answers.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-aso.html"><b>suede-aso</b><span>Optimise an App Store or Play listing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-directory-submissions.html"><b>suede-directory-submissions</b><span>Work the directory layer deliberately.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-programmatic-seo.html"><b>suede-programmatic-seo</b><span>Build search pages at scale without building junk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-ai-seo.html"><b>suede-ai-seo</b><span>Get cited in AI-generated answers.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ai-seo" target="_blank" rel="noopener" aria-label="suede-ai-seo source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-aso.html"><b>suede-aso</b><span>Optimise an App Store or Play listing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-aso" target="_blank" rel="noopener" aria-label="suede-aso source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-directory-submissions.html"><b>suede-directory-submissions</b><span>Work the directory layer deliberately.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-directory-submissions" target="_blank" rel="noopener" aria-label="suede-directory-submissions source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-programmatic-seo.html"><b>suede-programmatic-seo</b><span>Build search pages at scale without building junk.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-programmatic-seo" target="_blank" rel="noopener" aria-label="suede-programmatic-seo source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-seo-audit.html"><b>suede-seo-audit</b><span>Search intent, answer intent, metadata, schema, links, and trust checks.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-seo-audit" target="_blank" rel="noopener" aria-label="suede-seo-audit source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-visibility-grader.html"><b>suede-visibility-grader</b><span>A-F grading for findability, first-screen clarity, CTA pull, proof, AI readability, rendered design signal, evidence, grade caps, and Google and Gemini result surfaces.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-visibility-grader" target="_blank" rel="noopener" aria-label="suede-visibility-grader source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-content">
         <div class="lane-head"><h4>Content &amp; audience</h4><span class="lane-count">7</span></div>
-        <a class="row" href="./suede-co-marketing.html"><b>suede-co-marketing</b><span>Find and run partner campaigns.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-community-marketing.html"><b>suede-community-marketing</b><span>Build a community that compounds.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-content-strategy.html"><b>suede-content-strategy</b><span>Decide what to publish and why.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-instagram-growth.html"><b>suede-instagram-growth</b><span>Audit an Instagram account, map views to qualified action, and create account-specific Reels, carousels, Stories, and daily approval-ready content.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-newsroom.html"><b>suede-newsroom</b><span>Run one idea through a six-role content pipeline.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-public-relations.html"><b>suede-public-relations</b><span>Earn coverage without a retainer.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-social.html"><b>suede-social</b><span>Run social as a channel rather than a chore.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-co-marketing.html"><b>suede-co-marketing</b><span>Find and run partner campaigns.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-co-marketing" target="_blank" rel="noopener" aria-label="suede-co-marketing source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-community-marketing.html"><b>suede-community-marketing</b><span>Build a community that compounds.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-community-marketing" target="_blank" rel="noopener" aria-label="suede-community-marketing source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-content-strategy.html"><b>suede-content-strategy</b><span>Decide what to publish and why.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-content-strategy" target="_blank" rel="noopener" aria-label="suede-content-strategy source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-instagram-growth.html"><b>suede-instagram-growth</b><span>Audit an Instagram account, map views to qualified action, and create account-specific Reels, carousels, Stories, and daily approval-ready content.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-instagram-growth" target="_blank" rel="noopener" aria-label="suede-instagram-growth source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-newsroom.html"><b>suede-newsroom</b><span>Run one idea through a six-role content pipeline.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-newsroom" target="_blank" rel="noopener" aria-label="suede-newsroom source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-public-relations.html"><b>suede-public-relations</b><span>Earn coverage without a retainer.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-public-relations" target="_blank" rel="noopener" aria-label="suede-public-relations source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-social.html"><b>suede-social</b><span>Run social as a channel rather than a chore.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-social" target="_blank" rel="noopener" aria-label="suede-social source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
     <section class="spec" id="spec-demand" aria-labelledby="spec-demand-h">
@@ -788,20 +1135,20 @@
       <p class="spec-sub">Reach people who have not heard of you yet. Paid, outbound, and lifecycle messaging, each with a budget, a consent check, or a cadence limit before anything sends.</p>
       <div class="lane" id="lane-paid">
         <div class="lane-head"><h4>Paid &amp; outbound</h4><span class="lane-count">3</span></div>
-        <a class="row" href="./suede-ads.html"><b>suede-ads</b><span>Run paid acquisition that pays back.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-cold-email.html"><b>suede-cold-email</b><span>Write B2B cold outreach that gets replies.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-prospecting.html"><b>suede-prospecting</b><span>Build and qualify a target list before you write a word.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-ads.html"><b>suede-ads</b><span>Run paid acquisition that pays back.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ads" target="_blank" rel="noopener" aria-label="suede-ads source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-cold-email.html"><b>suede-cold-email</b><span>Write B2B cold outreach that gets replies.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-cold-email" target="_blank" rel="noopener" aria-label="suede-cold-email source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-prospecting.html"><b>suede-prospecting</b><span>Build and qualify a target list before you write a word.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-prospecting" target="_blank" rel="noopener" aria-label="suede-prospecting source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-lifecycle">
         <div class="lane-head"><h4>Lifecycle messaging</h4><span class="lane-count">2</span></div>
-        <a class="row" href="./suede-emails.html"><b>suede-emails</b><span>Design lifecycle email that runs itself.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-sms.html"><b>suede-sms</b><span>Run SMS without getting blocked or resented.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-emails.html"><b>suede-emails</b><span>Design lifecycle email that runs itself.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-emails" target="_blank" rel="noopener" aria-label="suede-emails source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-sms.html"><b>suede-sms</b><span>Run SMS without getting blocked or resented.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-sms" target="_blank" rel="noopener" aria-label="suede-sms source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-assets">
         <div class="lane-head"><h4>Acquisition assets</h4><span class="lane-count">3</span></div>
-        <a class="row" href="./suede-free-tools.html"><b>suede-free-tools</b><span>Engineering as marketing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-lead-magnets.html"><b>suede-lead-magnets</b><span>Decide what to give away for an email.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-referrals.html"><b>suede-referrals</b><span>Turn customers into a channel.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-free-tools.html"><b>suede-free-tools</b><span>Engineering as marketing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-free-tools" target="_blank" rel="noopener" aria-label="suede-free-tools source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-lead-magnets.html"><b>suede-lead-magnets</b><span>Decide what to give away for an email.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-lead-magnets" target="_blank" rel="noopener" aria-label="suede-lead-magnets source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-referrals.html"><b>suede-referrals</b><span>Turn customers into a channel.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-referrals" target="_blank" rel="noopener" aria-label="suede-referrals source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
     <section class="spec" id="spec-revenue" aria-labelledby="spec-revenue-h">
@@ -809,27 +1156,27 @@
       <p class="spec-sub">Convert the attention, then keep what it earned. The same specialty holds the pricing skill and the one that argued $448.31 back out of Amazon.</p>
       <div class="lane" id="lane-funnel">
         <div class="lane-head"><h4>Money &amp; funnel</h4><span class="lane-count">8</span></div>
-        <a class="row" href="./suede-churn-prevention.html"><b>suede-churn-prevention</b><span>Keep subscribers who are leaving and recover the ones you lose to billing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-launch-packaging.html"><b>suede-launch-packaging</b><span>Public launch copy, proof links, install paths, QA, and handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-offers.html"><b>suede-offers</b><span>Construct the thing you actually sell.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-onboarding.html"><b>suede-onboarding</b><span>Get a new user to first value fast.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-paywalls.html"><b>suede-paywalls</b><span>Design in-app upgrade moments that convert without resentment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-pricing.html"><b>suede-pricing</b><span>Decide what to charge and how to package it.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-signup.html"><b>suede-signup</b><span>Cut friction out of registration.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-site-alchemy.html"><b>suede-site-alchemy</b><span>Landing page, CTA routing, conversion, and site polish workflow.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-churn-prevention.html"><b>suede-churn-prevention</b><span>Keep subscribers who are leaving and recover the ones you lose to billing.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-churn-prevention" target="_blank" rel="noopener" aria-label="suede-churn-prevention source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-launch-packaging.html"><b>suede-launch-packaging</b><span>Public launch copy, proof links, install paths, QA, and handoff.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-launch-packaging" target="_blank" rel="noopener" aria-label="suede-launch-packaging source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-offers.html"><b>suede-offers</b><span>Construct the thing you actually sell.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-offers" target="_blank" rel="noopener" aria-label="suede-offers source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-onboarding.html"><b>suede-onboarding</b><span>Get a new user to first value fast.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-onboarding" target="_blank" rel="noopener" aria-label="suede-onboarding source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-paywalls.html"><b>suede-paywalls</b><span>Design in-app upgrade moments that convert without resentment.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-paywalls" target="_blank" rel="noopener" aria-label="suede-paywalls source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-pricing.html"><b>suede-pricing</b><span>Decide what to charge and how to package it.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-pricing" target="_blank" rel="noopener" aria-label="suede-pricing source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-signup.html"><b>suede-signup</b><span>Cut friction out of registration.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-signup" target="_blank" rel="noopener" aria-label="suede-signup source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-site-alchemy.html"><b>suede-site-alchemy</b><span>Landing page, CTA routing, conversion, and site polish workflow.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-site-alchemy" target="_blank" rel="noopener" aria-label="suede-site-alchemy source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-measure">
         <div class="lane-head"><h4>Measure &amp; operate</h4><span class="lane-count">5</span></div>
-        <a class="row" href="./suede-ab-testing.html"><b>suede-ab-testing</b><span>Test so the result means something.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-analytics.html"><b>suede-analytics</b><span>Know whether any of it worked.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-attribution.html"><b>suede-attribution</b><span>Know which marketing actually drove revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-revops.html"><b>suede-revops</b><span>Wire marketing to revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-sales-enablement.html"><b>suede-sales-enablement</b><span>Arm the people doing the selling.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-ab-testing.html"><b>suede-ab-testing</b><span>Test so the result means something.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ab-testing" target="_blank" rel="noopener" aria-label="suede-ab-testing source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-analytics.html"><b>suede-analytics</b><span>Know whether any of it worked.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-analytics" target="_blank" rel="noopener" aria-label="suede-analytics source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-attribution.html"><b>suede-attribution</b><span>Know which marketing actually drove revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-attribution" target="_blank" rel="noopener" aria-label="suede-attribution source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-revops.html"><b>suede-revops</b><span>Wire marketing to revenue.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-revops" target="_blank" rel="noopener" aria-label="suede-revops source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-sales-enablement.html"><b>suede-sales-enablement</b><span>Arm the people doing the selling.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-sales-enablement" target="_blank" rel="noopener" aria-label="suede-sales-enablement source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-recovery">
         <div class="lane-head"><h4>Consumer recovery</h4><span class="lane-count">2</span></div>
-        <a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./amazon-returns-recovery.html"><b>amazon-returns-recovery</b><span><b>Bezos's worst nightmare:</b> scans Amazon order history for restocking fees and short refunds, then drives Amazon live chat until they're waived. $448.31 recovered in real cases, including a denial overturned after the return window closed.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/amazon-returns-recovery" target="_blank" rel="noopener" aria-label="amazon-returns-recovery source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./subscription-recovery.html"><b>subscription-recovery</b><span>Audits any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancels or negotiates a refund through that service's own support.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/subscription-recovery" target="_blank" rel="noopener" aria-label="subscription-recovery source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
     <section class="spec" id="spec-position" aria-labelledby="spec-position-h">
@@ -837,23 +1184,23 @@
       <p class="spec-sub">Own what you make: provenance, credits, splits, and samples audited on your own machine, with nothing uploaded. Then know the market you are shipping into.</p>
       <div class="lane" id="lane-strategy">
         <div class="lane-head"><h4>Strategy &amp; research</h4><span class="lane-count">9</span></div>
-        <a class="row" href="./suede-competitor-profiling.html"><b>suede-competitor-profiling</b><span>Research competitors from their public surfaces and turn the findings into structured profiles.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-competitors.html"><b>suede-competitors</b><span>Write comparison and alternative pages that rank and convert without misrepresenting anyone.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-customer-research.html"><b>suede-customer-research</b><span>Find out what customers actually think.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-marketing-council.html"><b>suede-marketing-council</b><span>Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-marketing-ideas.html"><b>suede-marketing-ideas</b><span>Get unstuck with a structured idea library rather than a blank page.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-marketing-loops.html"><b>suede-marketing-loops</b><span>Turn marketing into a recurring loop an agent runs on a cadence.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-marketing-plan.html"><b>suede-marketing-plan</b><span>Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-marketing-psychology.html"><b>suede-marketing-psychology</b><span>Apply behavioural science honestly.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-product-marketing.html"><b>suede-product-marketing</b><span>Establish the product context every other marketing lane reads from.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-competitor-profiling.html"><b>suede-competitor-profiling</b><span>Research competitors from their public surfaces and turn the findings into structured profiles.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-competitor-profiling" target="_blank" rel="noopener" aria-label="suede-competitor-profiling source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-competitors.html"><b>suede-competitors</b><span>Write comparison and alternative pages that rank and convert without misrepresenting anyone.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-competitors" target="_blank" rel="noopener" aria-label="suede-competitors source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-customer-research.html"><b>suede-customer-research</b><span>Find out what customers actually think.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-customer-research" target="_blank" rel="noopener" aria-label="suede-customer-research source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-marketing-council.html"><b>suede-marketing-council</b><span>Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-marketing-council" target="_blank" rel="noopener" aria-label="suede-marketing-council source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-marketing-ideas.html"><b>suede-marketing-ideas</b><span>Get unstuck with a structured idea library rather than a blank page.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-marketing-ideas" target="_blank" rel="noopener" aria-label="suede-marketing-ideas source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-marketing-loops.html"><b>suede-marketing-loops</b><span>Turn marketing into a recurring loop an agent runs on a cadence.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-marketing-loops" target="_blank" rel="noopener" aria-label="suede-marketing-loops source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-marketing-plan.html"><b>suede-marketing-plan</b><span>Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-marketing-plan" target="_blank" rel="noopener" aria-label="suede-marketing-plan source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-marketing-psychology.html"><b>suede-marketing-psychology</b><span>Apply behavioural science honestly.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-marketing-psychology" target="_blank" rel="noopener" aria-label="suede-marketing-psychology source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-product-marketing.html"><b>suede-product-marketing</b><span>Establish the product context every other marketing lane reads from.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-product-marketing" target="_blank" rel="noopener" aria-label="suede-product-marketing source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
       <div class="lane" id="lane-creator">
         <div class="lane-head"><h4>Creator toolkit</h4><span class="lane-count">5</span></div>
-        <a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-release-linter.html"><b>suede-release-linter</b><span>Release metadata, files, credits, splits, samples, provenance, and readiness audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-rights-audit.html"><b>suede-rights-audit</b><span>Ownership, contributor, sample, license, split, and intake gap audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="suede-rights-passport.html"><b>suede-rights-passport</b><span>Local creator rights package with provenance, credits, split notes, license notes, and structured metadata.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
-        <a class="row" href="./suede-sync-packaging.html"><b>suede-sync-packaging</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span><span class="arrow" aria-hidden="true">-&gt;</span></a>
+        <div class="row-wrap"><a class="row" href="./suede-campaign-in-a-box.html"><b>suede-campaign-in-a-box</b><span>Packages rollout phases, copy, content calendar, fan actions, page sections, and next moves.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-campaign-in-a-box" target="_blank" rel="noopener" aria-label="suede-campaign-in-a-box source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-release-linter.html"><b>suede-release-linter</b><span>Release metadata, files, credits, splits, samples, provenance, and readiness audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter" target="_blank" rel="noopener" aria-label="suede-release-linter source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-rights-audit.html"><b>suede-rights-audit</b><span>Ownership, contributor, sample, license, split, and intake gap audit.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-audit" target="_blank" rel="noopener" aria-label="suede-rights-audit source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="suede-rights-passport.html"><b>suede-rights-passport</b><span>Local creator rights package with provenance, credits, split notes, license notes, and structured metadata.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rights-passport" target="_blank" rel="noopener" aria-label="suede-rights-passport source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
+        <div class="row-wrap"><a class="row" href="./suede-sync-packaging.html"><b>suede-sync-packaging</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span><span class="arrow" aria-hidden="true">-&gt;</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-sync-packaging" target="_blank" rel="noopener" aria-label="suede-sync-packaging source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
   </section>
@@ -861,7 +1208,7 @@
   <section class="shell" aria-labelledby="field-notes">
     <h2 id="field-notes">Field notes</h2>
     <p class="section-sub">Why the pack is shaped this way: how 76 skills stay cheap to carry, how they route without colliding, and what the Suede Thought Graph shipping search is doing.</p>
-    <div class="notes">
+    <div class="notes reveal">
       <a class="note-row" href="../blog/progressive-disclosure-ship-dag-and-mcp.html">
         <span class="note-date">Aug 2026</span>
         <span class="note-copy">
@@ -907,14 +1254,103 @@
 
   <section class="shell" id="changelog" aria-labelledby="changelog-headline">
     <div class="clog-grid">
-      <div class="clog-rail">
+      <div class="clog-rail reveal">
         <h2 id="changelog-headline">Changelog. Straight from main.</h2>
         <p class="section-sub">Every entry is a real commit: what changed, when it landed, and the hash that proves it. No "various improvements."</p>
-        <p class="clog-fresh">Version 0.12.0 released 2026-08-15</p>
-        <br>
+        <p class="clog-fresh">Version 0.18.0 released 2026-09-06</p>
         <a class="clog-more" href="https://github.com/JasonColapietro/suede-creator-skills/commits/main" target="_blank" rel="noopener">Full history on GitHub -&gt;</a>
       </div>
-      <ol class="clog">
+      <ol class="clog reveal">
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-09-06</span>
+            <span class="clog-tag">New skills</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/317f6d5" target="_blank" rel="noopener" aria-label="View commit 317f6d5 on GitHub">317f6d5</a>
+          </p>
+          <h3>Google Play delivery and cross-surface parity join the pack</h3>
+          <p class="clog-detail">Version 0.18.0 adds two skills. <code>suede-play-release</code> takes an Android build from credential preflight through AAB upload, track promotion, and a staged rollout, then reads back from the Play Developer API what production is actually serving. <code>suede-parity-contract</code> generates a machine-readable contract from one surface's live constants and makes every other surface assert against it, so a threshold that drifts between web, iOS, and Android fails a test instead of reaching a user. Both ship in the full plugin; the pack now counts 76 skills.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-09-05</span>
+            <span class="clog-tag clog-tag--fix">Fix</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/d8ba14d" target="_blank" rel="noopener" aria-label="View commit d8ba14d on GitHub">d8ba14d</a>
+          </p>
+          <h3>The marketplace loads again, and the 74 skills pass an audit</h3>
+          <p class="clog-detail">Version 0.17.0 fixes the plugin manifests so the four marketplace entries load in Claude Code 2.1: the full pack is a strict manifest, the three subsets root at <code>skills/</code>, and the Graph Flo XR agent profiles ship inside their skill folder. A read-through of the 74 skills repaired 19 defects, among them two truncated Codex descriptions, two stale Suede Ship Gate names, a dead slash-tool reference, an advisory-gate contradiction, two <code>NOT FOR</code> clauses the validator could not see, and nine catalog descriptions resynced to their skills. <code>DISTRIBUTION.md</code> records where the pack is listed and where it is not, the homepage proof tape says 74 and is now guarded, and a vendorable <code>frontend-design-review</code> copy gives single-skill directories a stable link.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-26</span>
+            <span class="clog-tag">Design</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/ae08836" target="_blank" rel="noopener" aria-label="View commit ae08836 on GitHub">ae08836</a>
+          </p>
+          <h3>Both design skills get a vetted component source</h3>
+          <p class="clog-detail">Version 0.16.0 gives <code>suede-design</code> and <code>johnny-suede-design</code> one vetted UI component-source reference each, listing only sources that cleared a live load, a license read, and a threat-reputation scan, each pinned to its source repository. A seven-check adoption checklist governs every import, one evaluated source is held as not-yet-vetted with its promotion conditions stated, and the reference loads only during component imports.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-21</span>
+            <span class="clog-tag">Orchestration</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/d8a6ae8" target="_blank" rel="noopener" aria-label="View commit d8a6ae8 on GitHub">d8a6ae8</a>
+          </p>
+          <h3>Graph search replaces the fixed shipping DAG</h3>
+          <p class="clog-detail">Version 0.15.0 replaces <code>suede-graph-flo-xr</code>'s fixed single-plan DAG with a bounded Graph-of-Thoughts search. It generates competing plans, scores and prunes them, adversarially refutes and improves survivors, aggregates compatible lanes, then builds, reviews, and gates only the selected plan. Light, standard, and deep stop at 55, 110, and 200 total agent calls. Production access remains read-only; the skill never deploys.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag">MCP</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/1e2d70e" target="_blank" rel="noopener" aria-label="View commit 1e2d70e on GitHub">1e2d70e</a>
+          </p>
+          <h3>Six specialities, and an MCP that navigates them</h3>
+          <p class="clog-detail">Version 0.14.0 splits the lopsided specialty and gives the MCP a way through the whole pack. The five-way cut shipped hours earlier left <em>Convert &amp; earn</em> at 23 while every other bucket sat between 9 and 15, so it splits on its real seam: Demand channels 8 and Revenue &amp; retention 15, alongside Ship 15, Craft 9, Get found 12, and Strategy &amp; rights 14. Largest bucket 23 to 15. The MCP could previously only be pointed at the three bundle areas; it now ships <code>list_suede_specialties</code> and a <code>suede://specialties</code> resource so a client picks a group before asking for skills, accepts <code>--profile</code> for any one specialty, and advertises only the specialities a given profile can serve. Closes a real hole on the way: <code>amazon-returns-recovery</code> and <code>subscription-recovery</code> sat in the catalog and on the site behind no registered server, unreachable by any MCP client. <code>consumer</code> was a valid profile that <code>.mcp.json</code> did not register.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag clog-tag--fix">Rework</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/67c4c7f" target="_blank" rel="noopener" aria-label="View commit 67c4c7f on GitHub">67c4c7f</a>
+          </p>
+          <h3>The pack gets five specialities</h3>
+          <p class="clog-detail">Version 0.13.0 re-cuts how the pack is browsed. The 73 skills were grouped four ways by <code>area</code> (marketing 41, workflow 25, creator 5, consumer 2) and separately eight ways on the catalog page, with two more inconsistent cuts on the homepage. Marketing was a 41-name wall in every one of them. There are now five specialities, each with named sub-lanes: Ship 15, Craft 9, Get found 12, Convert &amp; earn 23, Strategy &amp; rights 14. The largest bucket goes 41 to 23. <code>area</code> is deliberately unchanged. It still decides which plugin bundle and MCP profile ships a skill, so nothing moved between install surfaces. <code>list_suede_skills</code> and <code>search_suede_skills</code> take a <code>specialty</code> filter, and the per-specialty counts on all three site surfaces are generated guards, not hand-typed numbers.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag clog-tag--guard">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/687d7b9" target="_blank" rel="noopener" aria-label="View commit 687d7b9 on GitHub">687d7b9</a>
+          </p>
+          <h3>Every page in the estate shares one mobile nav</h3>
+          <p class="clog-detail">The last page still carrying its own navigation markup moves onto the shared no-JS-safe <code>&lt;details&gt;</code> disclosure, and a drift guard now covers all 101 pages, so a page added later cannot ship a nav that behaves differently from the rest of the estate.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag clog-tag--guard">Perf</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/51bcfd0" target="_blank" rel="noopener" aria-label="View commit 51bcfd0 on GitHub">51bcfd0</a>
+          </p>
+          <h3>Interior pages stop re-downloading their stylesheet</h3>
+          <p class="clog-detail">The interior-page CSS was inlined into every page, so a reader moving between skill pages paid for the same bytes on every navigation. It is now one extracted stylesheet the browser caches once and reuses across the estate.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag clog-tag--guard">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/f7ca90b" target="_blank" rel="noopener" aria-label="View commit f7ca90b on GitHub">f7ca90b</a>
+          </p>
+          <h3>All 73 skill pages get the same install block</h3>
+          <p class="clog-detail">Install instructions differed page to page in wording and placement. Every skill page now carries an identical install block with a copy button, so the path from reading a skill to running it is the same everywhere.</p>
+        </li>
+        <li>
+          <p class="clog-meta">
+            <span class="clog-date">2026-08-16</span>
+            <span class="clog-tag clog-tag--guard">Site</span>
+            <a class="clog-hash" href="https://github.com/JasonColapietro/suede-creator-skills/commit/86f7c99" target="_blank" rel="noopener" aria-label="View commit 86f7c99 on GitHub">86f7c99</a>
+          </p>
+          <h3>The estate gets a display face and a truth sweep</h3>
+          <p class="clog-detail">Fraunces lands as the display face, the hero gains contrast, and every stated pack figure is re-measured against the real count after the pack moved 71 to 73 — the growth had left stale numbers on pages the existing guards did not cover. Ships with a set of mobile P0 fixes found in the same pass.</p>
+        </li>
         <li>
           <p class="clog-meta">
             <span class="clog-date">2026-08-15</span>
@@ -1128,6 +1564,8 @@
   </div>
 </section>
 
+<a class="to-top" href="#main" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10V2"/><path d="m2.5 5.5 3.5-3.5 3.5 3.5"/></svg>Top</a>
+
 <footer>
   <div class="shell footer-inner">
     <div class="footer-brand">
@@ -1204,29 +1642,84 @@
   })();
 </script>
 <script>
-  // Progressive enhancement: without JS the filter stays hidden and the
-  // catalog renders as the full plain list. With JS, rows filter live on
-  // name + description text, empty lanes collapse, and "/" focuses the box.
+  // Catalog toolbar. Progressive enhancement: without JS the bar stays hidden
+  // and the catalog renders as the full plain list. With JS: rows filter live
+  // on name + description (every term must match), matches are highlighted,
+  // empty lanes and specialties collapse, the query round-trips through ?q=,
+  // "/" or Ctrl/Cmd+K focuses the box, Esc clears it, Enter opens a lone
+  // match, and the arrow keys walk the visible rows.
   (function () {
-    var box = document.querySelector(".catalog-filter");
+    var bar = document.querySelector(".catalog-filter");
     var input = document.getElementById("catalog-search");
     var count = document.getElementById("filter-count");
-    if (!box || !input || !count) return;
+    var empty = document.getElementById("filter-empty");
+    if (!bar || !input || !count) return;
+    var field = input.parentNode;
+    var clear = bar.querySelector(".filter-clear");
+    var emptyQ = empty ? empty.querySelector(".filter-empty-q") : null;
+    var emptyClear = empty ? empty.querySelector(".filter-empty-clear") : null;
     var lanes = [].slice.call(document.querySelectorAll(".lane"));
     var specs = [].slice.call(document.querySelectorAll(".spec"));
     var rows = [].slice.call(document.querySelectorAll(".lane .row"));
     if (!rows.length) return;
-    rows.forEach(function (r) { r.setAttribute("data-text", r.textContent.toLowerCase()); });
-    box.hidden = false;
-    function apply() {
-      var q = input.value.trim().toLowerCase();
+    rows.forEach(function (r) {
+      r.setAttribute("data-text", r.textContent.toLowerCase());
+      [].slice.call(r.children).forEach(function (c) {
+        if (!c.classList.contains("arrow")) c.setAttribute("data-html", c.innerHTML);
+      });
+    });
+    function wrapOf(r) { return r.parentNode.classList.contains("row-wrap") ? r.parentNode : r; }
+    function isShown(r) { return wrapOf(r).style.display !== "none"; }
+    function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+    function restore(r) {
+      [].slice.call(r.children).forEach(function (c) {
+        var h = c.getAttribute("data-html");
+        if (h !== null && c.innerHTML !== h) c.innerHTML = h;
+      });
+    }
+    function mark(r, re) {
+      [].slice.call(r.children).forEach(function (c) {
+        if (c.getAttribute("data-html") === null) return;
+        var walker = document.createTreeWalker(c, NodeFilter.SHOW_TEXT, null);
+        var nodes = [];
+        var n;
+        while ((n = walker.nextNode())) nodes.push(n);
+        nodes.forEach(function (node) {
+          var text = node.nodeValue;
+          re.lastIndex = 0;
+          if (!re.test(text)) return;
+          var frag = document.createDocumentFragment();
+          var last = 0;
+          var m;
+          re.lastIndex = 0;
+          while ((m = re.exec(text))) {
+            if (!m[0].length) { re.lastIndex++; continue; }
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            var hl = document.createElement("mark");
+            hl.className = "hl";
+            hl.textContent = m[0];
+            frag.appendChild(hl);
+            last = m.index + m[0].length;
+          }
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          node.parentNode.replaceChild(frag, node);
+        });
+      });
+    }
+    function apply(syncUrl) {
+      var raw = input.value.trim();
+      var q = raw.toLowerCase();
+      var terms = q ? q.split(/\s+/) : [];
+      var re = terms.length ? new RegExp(terms.map(escapeRe).join("|"), "gi") : null;
       var shown = 0;
       lanes.forEach(function (lane) {
         var any = false;
         [].slice.call(lane.querySelectorAll(".row")).forEach(function (r) {
-          var hit = !q || r.getAttribute("data-text").indexOf(q) !== -1;
-          r.style.display = hit ? "" : "none";
-          if (hit) { any = true; shown++; }
+          var text = r.getAttribute("data-text");
+          var hit = terms.every(function (t) { return text.indexOf(t) !== -1; });
+          wrapOf(r).style.display = hit ? "" : "none";
+          restore(r);
+          if (hit) { any = true; shown++; if (re) mark(r, re); }
         });
         lane.style.display = any ? "" : "none";
       });
@@ -1239,16 +1732,68 @@
         spec.style.display = live ? "" : "none";
       });
       count.textContent = q ? shown + " of " + rows.length + " skills" : rows.length + " skills";
+      field.classList.toggle("has-value", !!q);
+      if (clear) clear.hidden = !q;
+      if (empty) {
+        empty.hidden = !(q && shown === 0);
+        if (emptyQ) emptyQ.textContent = raw;
+      }
+      if (syncUrl && window.history && history.replaceState) {
+        try {
+          var url = new URL(window.location.href);
+          if (raw) url.searchParams.set("q", raw); else url.searchParams.delete("q");
+          history.replaceState(null, "", url.pathname + url.search + url.hash);
+        } catch (err) {}
+      }
     }
-    input.addEventListener("input", apply);
-    document.addEventListener("keydown", function (e) {
-      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
-      var el = document.activeElement;
-      if (el === input || (el && /^(input|textarea|select)$/i.test(el.tagName))) return;
-      e.preventDefault();
-      input.focus();
+    function reset() { input.value = ""; apply(true); }
+    function shownRows() { return rows.filter(isShown); }
+    input.addEventListener("input", function () { apply(true); });
+    if (clear) clear.addEventListener("click", function () { reset(); input.focus(); });
+    if (emptyClear) emptyClear.addEventListener("click", function () { reset(); input.focus(); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        if (input.value) reset(); else input.blur();
+      } else if (e.key === "ArrowDown") {
+        var first = shownRows()[0];
+        if (first) { e.preventDefault(); first.focus(); }
+      } else if (e.key === "Enter") {
+        var only = shownRows();
+        if (only.length === 1) { e.preventDefault(); window.location.href = only[0].href; }
+      }
     });
-    apply();
+    document.addEventListener("keydown", function (e) {
+      // The input handles its own keys above; the same event bubbles here
+      // after focus has already moved, so it must not be walked twice.
+      if (e.target === input) return;
+      var el = document.activeElement;
+      var typing = el && /^(input|textarea|select)$/i.test(el.tagName);
+      var slash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey;
+      var cmdk = (e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !e.altKey;
+      if ((slash && !typing) || (cmdk && (!typing || el === input))) {
+        e.preventDefault();
+        input.focus();
+        input.select();
+        return;
+      }
+      var onRow = el && el.classList && el.classList.contains("row");
+      if (e.key === "Escape" && onRow) { e.preventDefault(); input.focus(); return; }
+      if ((e.key === "ArrowDown" || e.key === "ArrowUp") && onRow) {
+        var vis = shownRows();
+        var i = vis.indexOf(el);
+        if (i === -1) return;
+        e.preventDefault();
+        if (e.key === "ArrowDown") { if (vis[i + 1]) vis[i + 1].focus(); }
+        else if (i === 0) input.focus();
+        else vis[i - 1].focus();
+      }
+    });
+    bar.hidden = false;
+    var initial = "";
+    try { initial = new URLSearchParams(window.location.search).get("q") || ""; } catch (err) {}
+    if (initial) input.value = initial;
+    apply(false);
   })();
 </script>
 <script>
@@ -1272,6 +1817,111 @@
     box.querySelectorAll('.nav-links a').forEach(function (link) {
       link.addEventListener('click', function () { if (mq.matches) box.open = false; });
     });
+  })();
+</script>
+<script>
+  // Depth and orientation: the nav's true height feeds the sticky toolbar and
+  // anchor offsets; sections settle into place on first view; the toolbar
+  // gains a shadow once it sticks and its chips track the specialty under it;
+  // a back-to-top pill appears after the first screen of catalog. Every branch
+  // degrades to the plain page when the observer or motion is unavailable.
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var root = document.documentElement;
+    var nav = document.querySelector(".nav");
+    var hasIO = "IntersectionObserver" in window;
+    var bar = document.querySelector(".catalog-bar");
+    function measure() {
+      if (nav) root.style.setProperty("--nav-h", nav.offsetHeight + "px");
+      if (bar && bar.offsetHeight) root.style.setProperty("--bar-h", bar.offsetHeight + "px");
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    window.addEventListener("load", measure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+
+    var els = [].slice.call(document.querySelectorAll(".reveal, .reveal-group"));
+    if (els.length && !reduce && hasIO) {
+      root.classList.add("js-on");
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      els.forEach(function (el) { io.observe(el); });
+      // Failsafe for webviews where the observer never fires: nothing may stay
+      // offset, so reveal everything after a short grace period.
+      setTimeout(function () {
+        if (!document.querySelector(".in-view")) els.forEach(function (el) { el.classList.add("in-view"); });
+      }, 1800);
+    }
+
+    var sentinel = document.querySelector(".catalog-bar-sentinel");
+    if (bar && sentinel && hasIO) {
+      new IntersectionObserver(function (entries) {
+        var e = entries[0];
+        bar.classList.toggle("is-stuck", !e.isIntersecting && e.boundingClientRect.top < 0);
+      }, { threshold: 0 }).observe(sentinel);
+    }
+
+    var chips = [].slice.call(document.querySelectorAll(".catalog-chips a"));
+    var specs = [].slice.call(document.querySelectorAll(".spec"));
+    var catalog = document.querySelector('section[aria-labelledby="catalog"]');
+    var current = null;
+    function setCurrent(id) {
+      if (id === current) return;
+      current = id;
+      chips.forEach(function (c) {
+        if (id && c.getAttribute("href") === "#" + id) {
+          c.setAttribute("aria-current", "location");
+          var p = c.parentNode;
+          if (p.scrollWidth > p.clientWidth) {
+            var left = c.offsetLeft - p.offsetLeft - 8;
+            if (p.scrollTo) p.scrollTo({ left: left, behavior: reduce ? "auto" : "smooth" });
+            else p.scrollLeft = left;
+          }
+        } else {
+          c.removeAttribute("aria-current");
+        }
+      });
+    }
+    var ticking = false;
+    function spy() {
+      ticking = false;
+      if (!bar || !chips.length) return;
+      var line = (nav ? nav.offsetHeight : 0) + bar.offsetHeight + 40;
+      var active = null;
+      for (var i = 0; i < specs.length; i++) {
+        if (specs[i].style.display === "none") continue;
+        if (specs[i].getBoundingClientRect().top <= line) active = specs[i].id;
+        else break;
+      }
+      if (catalog && catalog.getBoundingClientRect().bottom < line) active = null;
+      setCurrent(active);
+    }
+
+    var top = document.querySelector(".to-top");
+    function onScroll() {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (nav) nav.classList.toggle("is-scrolled", y > 8);
+      if (top) {
+        var show = y > 1200;
+        top.classList.toggle("is-visible", show);
+        top.setAttribute("tabindex", show ? "0" : "-1");
+        top.setAttribute("aria-hidden", show ? "false" : "true");
+      }
+      if (!ticking) { ticking = true; window.requestAnimationFrame(spy); }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    if (top) {
+      top.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+        var main = document.getElementById("main");
+        if (main) main.focus({ preventScroll: true });
+      });
+    }
   })();
 </script>
 </body>
