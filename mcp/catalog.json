@@ -40,37 +40,39 @@
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "mcpServer": "suede_workflow_mcp",
       "skills": [
-        "suede-workflow-skills",
+        "amazon-returns-recovery",
+        "android-app-factory",
         "johnny-suede-design",
         "johnny-suede-write",
+        "site-to-ios-app",
+        "subscription-recovery",
+        "suede-agent-teams",
+        "suede-ai-eval",
+        "suede-campaign-in-a-box",
+        "suede-ci-gate",
         "suede-code",
-        "suede-code-review",
         "suede-code-grader",
+        "suede-code-review",
         "suede-copy",
         "suede-design",
         "suede-deslop",
-        "suede-agent-teams",
-        "suede-ops-architecture",
-        "suede-ops-assessment",
-        "suede-ai-eval",
         "suede-graph-flo-xr",
-        "suede-ship-copy",
-        "suede-ci-gate",
-        "suede-seo-audit",
-        "suede-visibility-grader",
-        "suede-site-alchemy",
         "suede-launch-packaging",
         "suede-mcp-qa",
-        "suede-campaign-in-a-box",
-        "suede-sync-packaging",
-        "suede-release-linter",
-        "suede-rights-passport",
-        "suede-rights-audit",
-        "site-to-ios-app",
-        "android-app-factory",
+        "suede-ops-architecture",
+        "suede-ops-assessment",
+        "suede-parity-contract",
+        "suede-play-release",
         "suede-recommend-next-action",
-        "amazon-returns-recovery",
-        "subscription-recovery"
+        "suede-release-linter",
+        "suede-rights-audit",
+        "suede-rights-passport",
+        "suede-seo-audit",
+        "suede-ship-copy",
+        "suede-site-alchemy",
+        "suede-sync-packaging",
+        "suede-visibility-grader",
+        "suede-workflow-skills"
       ]
     },
     {
@@ -144,7 +146,7 @@
       "key": "ship",
       "label": "Ship",
       "summary": "Get the change built, reviewed, and merged.",
-      "count": 15,
+      "count": 17,
       "lanes": [
         {
           "label": "Orchestration & routing",
@@ -152,11 +154,11 @@
         },
         {
           "label": "Code review & CI",
-          "count": 6
+          "count": 7
         },
         {
           "label": "Apps: iOS & Android",
-          "count": 2
+          "count": 3
         }
       ]
     },
@@ -414,6 +416,22 @@
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments."
     },
     {
+      "name": "suede-ci-gate",
+      "area": "workflow",
+      "specialty": "ship",
+      "lane": "Code review & CI",
+      "description": "Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack).",
+      "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
+    },
+    {
+      "name": "suede-clip-to-guide",
+      "area": "workflow",
+      "specialty": "craft",
+      "lane": "Creative assets",
+      "description": "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable package that bridges attention to an X Article, LinkedIn article, newsletter, blog guide, or playbook, or when third-party footage needs a rights route before reuse. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval.",
+      "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate."
+    },
+    {
       "name": "suede-co-marketing",
       "area": "marketing",
       "specialty": "found",
@@ -542,6 +560,14 @@
       "useWhen": "The user is weighing or building a free calculator, grader, generator, or other interactive tool for lead generation or links."
     },
     {
+      "name": "suede-graph-flo-xr",
+      "area": "workflow",
+      "specialty": "ship",
+      "lane": "Orchestration & routing",
+      "description": "Suede Thought Graph shipping search contract for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Its executable workflow requires Claude Code on macOS plus six registered suede-graph-flo-xr agent profiles. Codex and generic skill installs follow the contract through direct implementation and must not claim the bundled Claude Workflow ran. Claude Workflow runs require repo, scope, and light|standard|deep with exact 55|110|200 ceilings. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
+      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment."
+    },
+    {
       "name": "suede-image",
       "area": "marketing",
       "specialty": "craft",
@@ -550,20 +576,20 @@
       "useWhen": "The user needs marketing images, graphics, mockups, or help getting better output from an image model."
     },
     {
-      "name": "suede-launch-packaging",
-      "area": "workflow",
-      "specialty": "revenue",
-      "lane": "Money & funnel",
-      "description": "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).",
-      "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
-    },
-    {
       "name": "suede-instagram-growth",
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
       "description": "Suede-owned Instagram growth operating system for account-specific audits, Reels, carousels, Stories, conversion mapping, calendars, and daily candidate-production loops. Use when the user names Instagram, IG, Reels, Stories, asks to analyze recent posts, grow a handle, run a daily workflow, create or repurpose Instagram content, or distinguish views from follows, leads, and sales. NOT FOR: multi-platform organic strategy (use suede-social), full video rendering or editing (use suede-video), paid Meta campaigns (use suede-ads or suede-ad-creative), analytics instrumentation (use suede-analytics), or any publish, comment, follow, like, or DM action without exact approval.",
       "useWhen": "The user wants an Instagram account audit, growth plan, Reels, carousels, Stories, content calendar, daily workflow, or a map from views to qualified actions and sales."
+    },
+    {
+      "name": "suede-launch-packaging",
+      "area": "workflow",
+      "specialty": "revenue",
+      "lane": "Money & funnel",
+      "description": "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).",
+      "useWhen": "Package a skill, repo, site, MCP server, feature, docs update, failed install, or public launch so a stranger can use it."
     },
     {
       "name": "suede-lead-magnets",
@@ -662,12 +688,28 @@
       "useWhen": "The user cannot say what to automate, wants their operation mapped and costed before a build, needs tribal-knowledge and key-person risk surfaced, or has a shipped system the team is quietly routing around."
     },
     {
+      "name": "suede-parity-contract",
+      "area": "workflow",
+      "lane": "Code review & CI",
+      "specialty": "ship",
+      "description": "Suede Labs cross-surface parity discipline: when one domain is implemented on more than one surface (web, iOS, Android, a second service), generate a machine-readable contract from the reference surface's live constants and make every other surface assert against it, so a divergence fails a test instead of reaching a user. Use when the same rule, threshold, ladder, or scoring table exists in two or more languages; when constants are being copied by hand out of a handoff, spec, or PR description; when two surfaces already disagree and the fix must stay fixed; or when asked to audit where surfaces have silently drifted. NOT FOR: deciding which surface's value is correct (that is a product call this skill records rather than makes); reviewing a diff for defects (use suede-code-review); wiring required checks or merge gates around the resulting tests (use suede-ci-gate); one surface's internal refactor with no second implementation (just make the change).",
+      "useWhen": "Hold one domain's constants identical across web, iOS, Android, or a second service, and pin the divergences you already have."
+    },
+    {
       "name": "suede-paywalls",
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
       "description": "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).",
       "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt."
+    },
+    {
+      "name": "suede-play-release",
+      "area": "workflow",
+      "lane": "Apps: iOS & Android",
+      "specialty": "ship",
+      "description": "Suede Labs Google Play delivery skill: set up publishing credentials, upload an AAB, promote between tracks, stage a rollout, and prove against the Play Developer API what is actually live. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes for the first time, writing or fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what version and rollout fraction production is really serving. NOT FOR: planning, building, or policy-checking the app itself (use android-app-factory); live Play listing and keyword audits on a shipped app (use suede-aso); wiring CI required checks around the release (use suede-ci-gate); iOS archive, upload, or App Store review submission (a private Suede Labs companion, not in this pack: ios-app-store-release).",
+      "useWhen": "Upload or promote an Android build on Google Play, stage a rollout, and prove from the API what production is serving."
     },
     {
       "name": "suede-pricing",
@@ -774,36 +816,12 @@
       "useWhen": "Audit Suede pages, GitHub Pages, README files, skill docs, launch pages, copy banks, install pages, and AI-result surfaces."
     },
     {
-      "name": "suede-graph-flo-xr",
-      "area": "workflow",
-      "specialty": "ship",
-      "lane": "Orchestration & routing",
-      "description": "Suede Thought Graph shipping search contract for a multi-file repo change: Generate, Score, KeepBestN, Refute, Improve, Aggregate, then Select one plan before it alone builds. Its executable workflow requires Claude Code on macOS plus six registered suede-graph-flo-xr agent profiles. Codex and generic skill installs follow the contract through direct implementation and must not claim the bundled Claude Workflow ran. Claude Workflow runs require repo, scope, and light|standard|deep with exact 55|110|200 ceilings. Halt on missing context, hazards, collisions, budget exhaustion, or no winner. Production reads only; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
-      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment."
-    },
-    {
       "name": "suede-ship-copy",
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
       "description": "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet).",
       "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied."
-    },
-    {
-      "name": "suede-ci-gate",
-      "area": "workflow",
-      "specialty": "ship",
-      "lane": "Code review & CI",
-      "description": "Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack).",
-      "useWhen": "Add CI, protect main, repair duplicate or hanging pipelines, and make required checks hold."
-    },
-    {
-      "name": "suede-clip-to-guide",
-      "area": "workflow",
-      "specialty": "craft",
-      "lane": "Creative assets",
-      "description": "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable package that bridges attention to an X Article, LinkedIn article, newsletter, blog guide, or playbook, or when third-party footage needs a rights route before reuse. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval.",
-      "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate."
     },
     {
       "name": "suede-signup",

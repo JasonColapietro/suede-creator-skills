@@ -37,6 +37,7 @@ match, and the page must list exactly these four.
 | `suede-code-review` | You want the bugs, not a verdict: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, deploy risk |
 | `suede-code-grader` | You want the blunt letter grade only, with instant-F triggers and auth and payment caps |
 | `suede-ci-gate` | You want CI that actually holds the line: path-aware builds, one required check, branch protection, no deadlock |
+| `suede-parity-contract` | The same rule lives in two or more languages and the numbers are kept in step by hand |
 | `suede-ai-eval` | The surface is an LLM, RAG, classifier, or agent, and you need rubrics, failure modes, eval cases, and acceptance gates |
 | `suede-mcp-qa` | You ship an MCP server and want drift caught before release |
 
@@ -76,6 +77,7 @@ match, and the page must list exactly these four.
 | `suede-launch-packaging` | Finished work needs a README, docs, install commands, proof links, QA, and release copy |
 | `site-to-ios-app` | A website, PWA, dashboard, or marketplace should become an App Store app, past the 4.2 wrapper gate |
 | `android-app-factory` | You want a native Kotlin and Compose app taken from idea to a signed staged Play rollout |
+| `suede-play-release` | You are uploading or promoting an Android build and want proof of what production is actually serving |
 | `suede-aso` | You need store keyword fields, titles, subtitles, descriptions, screenshots, and competitor listings |
 | `suede-public-relations` | You need a media list, a validated story angle, a pitch, or a press kit |
 | `suede-campaign-in-a-box` | A song or release needs a full rollout: hooks, rituals, visuals, merch, calendar, email, site copy |

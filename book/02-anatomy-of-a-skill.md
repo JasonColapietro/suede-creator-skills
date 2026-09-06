@@ -19,8 +19,8 @@ description: "Suede Labs AI blunt A-F ship grade for a code change across correc
 ---
 ```
 
-Across all 74 skills, the frontmatter carries `name` 74 times and `description`
-74 times. Forty-eight of them add a `metadata` block with a version string, a
+Across all 76 skills, the frontmatter carries `name` 76 times and `description`
+76 times. Forty-eight of them add a `metadata` block with a version string, a
 convention inherited from the marketing skills adapted from Corey Haines's
 `marketingskills` under MIT. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
@@ -35,8 +35,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 74 files total 1,082,716 bytes;
-the 74 descriptions together are 44,838. The agent holds the small number and
+when the skill is not running. In this repo the 76 files total 1,100,127 bytes;
+the 76 descriptions together are 46,664. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -71,7 +71,7 @@ actually types ("sounds fine but feels generated"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Seventy-four of the 74 descriptions in this repo end with a `NOT FOR:` clause,
+Seventy-six of the 76 descriptions in this repo end with a `NOT FOR:` clause,
 and it is the highest-leverage sentence in the file. The remaining two close the
 same way without the colon, which is drift rather than a second convention.
 
