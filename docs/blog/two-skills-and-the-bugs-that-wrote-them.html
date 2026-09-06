@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two skills, and the bugs that wrote them | Suede Creator Skills</title>
+    <meta name="description" content="Two new Suede skills: Google Play publishing from the terminal, and a generated contract that stops one product's four surfaces from disagreeing. Both came out of bugs that had already shipped.">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Two skills, and the bugs that wrote them">
+    <meta property="og:description" content="Two new Suede skills: Google Play publishing from the terminal, and a generated contract that stops one product's four surfaces from disagreeing. Both came out of bugs that had already shipped.">
+    <meta property="og:url" content="https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Two skills, and the bugs that wrote them">
+    <meta name="twitter:description" content="Two new Suede skills: Google Play publishing from the terminal, and a generated contract that stops one product's four surfaces from disagreeing. Both came out of bugs that had already shipped.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html#article",
+        "headline": "Two skills, and the bugs that wrote them",
+        "description": "Suede Creator Skills adds suede-play-release, which publishes Android builds to Google Play from the agent interface, and suede-parity-contract, which generates a contract from one reference surface and makes the others assert against it. Both came out of shipping one app to two stores in one session.",
+        "url": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html",
+        "datePublished": "2026-09-06",
+        "dateModified": "2026-09-06",
+        "author": {"@type": "Person", "@id": "https://suedeai.ai/founder#person", "name": "Jason Colapietro"},
+        "publisher": {"@type": "Organization", "name": "Suede Labs AI", "url": "https://suedeai.ai"},
+        "about": ["Suede Creator Skills", "Google Play publishing", "fastlane", "cross-surface parity", "generative search", "Claude Code skills", "Codex skills"],
+        "mainEntityOfPage": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html"
+      }
+    </script>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/site.css">
+    <link rel="stylesheet" href="../assets/prose.css">
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../skills/">Skills</a>
+          <a href="../guide.html">Guide</a>
+          <a href="../book/">Book</a>
+          <a href="./" aria-current="page">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+      <a href="../cracked.html" class="nav-cracked">Cracked Devs</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <p class="eyebrow">Product update &middot; September 6, 2026</p>
+      <h1>Two skills, and the bugs that wrote them</h1>
+      <p class="post-meta">Two skills went into the pack tonight: <code>suede-play-release</code> and <code>suede-parity-contract</code>. Both came out of shipping the same app to two stores in one session.</p>
+
+      <p class="lead">Tonight I shipped one app to both stores and built two skills out of what went wrong on the way.</p>
+
+      <h2>Canon is a shipping problem now</h2>
+      <p>Suede Voice's vocal domain is implemented four times: a TypeScript reference, a companion web app, a SwiftUI app, an Android app. The constants had been travelling between them by hand, copied out of handoff documents into a second language.</p>
+      <p>Nothing ever failed. That is the whole problem. A wrong copy does not crash. The two surfaces simply start scoring the same performance differently, and nobody finds out until a singer does.</p>
+      <p>Writing the contract surfaced three divergences. The iOS app clamped song transpose to two octaves where the web clamped one. Every drill in the shipped app counted in three beats where the web counted four, and no production call site overrode the default. Both had shipped. None of the four surfaces had a test that could notice.</p>
+      <p>The engineering fix is ordinary: generate a contract from one reference surface's live constants, vendor it to the others, assert against it. What makes it worth a skill is the discipline around the edges. Assert through public behaviour, because a follower that reimplements the reference formula only proves you can write the same bug twice. Check a threshold at its boundary and one step below, because one asserted only from above still passes after it moves down. Pin the divergences you already have rather than erasing them, and guard the pin list itself, or an entry added elsewhere is a silence instead of a failure.</p>
+      <p>And treat finding a divergence as a stop, not a fix. Which surface is right is a product call. Changing a shipped constant changes behaviour for people who did not ask for it.</p>
+      <p>There is a second reason this matters that did not exist a few years ago. AI search decides what to quote, and it quotes sources that agree with themselves. Facts scattered across a site, two store listings and a docs page are four chances to contradict yourself in a way a model can read. Canon consistency stopped being tidiness and became a distribution property.</p>
+
+      <h2>The Console was the slow part</h2>
+      <p>The Android half of the night started with no way to talk to Google Play at all. Releases ended with a signed file handed over by hand.</p>
+      <p>The skill closes that. Credentials, upload, track promotion, staged rollout, per-locale release notes, and verification all run from the agent interface. You open the Play Console exactly once, to grant the service account release access, because that grant has no API.</p>
+      <p>Every rule in it is there because something bit:</p>
+      <ul>
+        <li>A new service account returns 403 until that grant lands, so the skill preflights with a real API call before anything else.</li>
+        <li>The <code>security</code> tool hex-encodes multi-line secrets on read, so the credential is stored base64 and comes back in one shape instead of two.</li>
+        <li>The publishing identity is separate from the billing one, because a credential that can push releases should not also be able to void purchases.</li>
+        <li>fastlane reads the working tree, so a stale checkout produced a run that reported success and did nothing.</li>
+        <li>A missing changelog is a silent skip, so three languages nearly shipped reading the previous version's notes.</li>
+        <li>Play rejects a duplicate versionCode, so you promote the artifact your test track already validated rather than re-uploading.</li>
+        <li>A staged rollout at 100 percent and a completed release look the same in a success message, so the last step reads the track back from the API and says which one you got.</li>
+      </ul>
+      <p>That last rule is the shape of both skills. A green summary is a claim. The readback is the evidence.</p>
+
+      <h2>Getting them</h2>
+      <p>Both ship in the Suede Creator Skills pack, which is public.</p>
+      <pre><code>/plugin marketplace add JasonColapietro/suede-creator-skills</code></pre>
+      <pre><code>/plugin install suede-skills@suede</code></pre>
+      <p>Then ask in plain words. "Ship the android build" or "stop the app and the website disagreeing" routes to the right one.</p>
+
+      <div class="divider"></div>
+
+      <p><a class="button" href="../skills/suede-play-release.html">Read the Play release docs</a> <a class="button secondary" href="../skills/suede-parity-contract.html">Read the parity contract docs</a></p>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="ship-strip-shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-shell">
+        <p class="footer-note">Suede Creator Skills is an MIT-licensed pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+</body>
+</html>

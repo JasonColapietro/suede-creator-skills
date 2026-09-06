@@ -494,7 +494,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/blog/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -519,6 +519,12 @@
   <url>
     <loc>https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
