@@ -105,11 +105,16 @@ class NeutralOssPositioningTests(unittest.TestCase):
         # The pack size is no longer restated in prose. It survives only on the
         # surfaces where the number is the point, and those are what this test
         # pins: the README badge (URL value and alt text, because the rendered
-        # number lives in the URL) and the homepage title a searcher reads.
+        # number lives in the URL). The homepage title stopped printing the
+        # count when it was rewritten around the phrases the page is searched
+        # for, so it is pinned here as an exact string, not as a number.
         readme = read("README.md")
         self.assertIn(f"skills-{count}-c8a96e", readme)
         self.assertIn(f"![Skills: {count}]", readme)
-        self.assertIn(f"| {count} Open-Source Agent Skills", read("docs/index.html"))
+        self.assertIn(
+            "<title>Suede Creator Skills: Agent Skills for Claude Code and Codex</title>",
+            read("docs/index.html"),
+        )
         stale_counts = [f"{n} skills" for n in range(20, 40) if n != count]
         stale_counts += [f"{n}-skill" for n in range(20, 40) if n != count]
         # A focused subset plugin advertises how many skills *it* bundles, which
