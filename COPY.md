@@ -55,7 +55,7 @@ It is free under MIT for the original work, with no binaries and no telemetry.
 
 ### Page title
 
-Suede Creator Skills | 74 Open-Source Agent Skills
+Suede Creator Skills: Agent Skills for Claude Code and Codex
 
 ### Meta description
 

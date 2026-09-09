@@ -1037,12 +1037,10 @@ const countChecks = [
   // shipped stale (29, 39, 67, 69, 70, and 71 all reached production that way).
   // The prose now describes the pack instead of counting it. What remains here
   // is the short list of surfaces where the number is the point: the homepage
-  // title a searcher reads, its structured-data twin, the hero stat, the README
-  // badge, and the two graphics that render the figure as art. Those stay
-  // guarded. Everywhere else, do not add a count back — describe the pack.
-  { file: "docs/index.html", label: "title tag", re: /<title>Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "og:title", re: /property="og:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
-  { file: "docs/index.html", label: "twitter:title", re: /name="twitter:title" content="Suede Creator Skills \| (\d+) Open-Source Agent Skills/, expected: totalSkillCount },
+  // description a searcher reads, the structured-data item total, the hero
+  // stat, the README badge, and the two graphics that render the figure as art.
+  // Those stay guarded. Everywhere else, do not add a count back — describe the
+  // pack. The homepage title prints no number; it is pinned below the array.
   // The homepage description, repeated verbatim across the meta, og, and
   // twitter tags. `every` because the ad-hoc check this replaced read only
   // the first of the three, leaving the two social copies free to drift.
@@ -1062,6 +1060,30 @@ const countChecks = [
   { file: "docs/assets/readme/hero.svg", label: "hero graphic skill count", re: /letter-spacing="-12">(\d+)<\/text>/, expected: totalSkillCount },
   { file: "docs/assets/og-image-v2.svg", label: "social card headline number", re: /letter-spacing="-18">(\d+)<\/text>/, expected: totalSkillCount },
 ];
+
+// The homepage title, and its og and twitter twins. The pack size used to ride
+// in this title, which is why the three tags were count checks; the title now
+// leads with the phrases the page is searched for, so no number is printed
+// there and the three tags are pinned as one exact string instead. They must
+// stay byte-identical to each other, which is how the two social copies drifted
+// from the <title> before.
+const HOMEPAGE_TITLE = "Suede Creator Skills: Agent Skills for Claude Code and Codex";
+const homepageTitlePath = path.join(repoRoot, "docs", "index.html");
+if (!fs.existsSync(homepageTitlePath)) {
+  fail.push("docs/index.html is missing — the homepage title guard cannot run");
+} else {
+  const homepageTitleText = readText(homepageTitlePath);
+  const homepageTitleTags = [
+    ["title tag", `<title>${HOMEPAGE_TITLE}</title>`],
+    ["og:title", `property="og:title" content="${HOMEPAGE_TITLE}"`],
+    ["twitter:title", `name="twitter:title" content="${HOMEPAGE_TITLE}"`]
+  ];
+  for (const [label, needle] of homepageTitleTags) {
+    if (!homepageTitleText.includes(needle)) {
+      fail.push(`docs/index.html ${label} must read exactly "${HOMEPAGE_TITLE}"`);
+    }
+  }
+}
 
 // book/ is prose, so its counts are written inline rather than in a fixed
 // template. Enumerate the files at validation time and guard every numeric
