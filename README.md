@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jasoncolapietro-suede-creator-skills-badge.png)](https://mseep.ai/app/jasoncolapietro-suede-creator-skills)
+
 <div align="center">
 
 <img src="docs/assets/readme/hero.svg" alt="Suede Creator Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
