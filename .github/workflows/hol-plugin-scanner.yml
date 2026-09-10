@@ -23,7 +23,7 @@ jobs:
           persist-credentials: false
 
       - name: HOL Plugin Scanner
-        uses: hashgraph-online/ai-plugin-scanner-action@dbc0fe534ab46276bf8f9edacd51ebd8e23378fe # v1.2.561
+        uses: hashgraph-online/ai-plugin-scanner-action@bbcc6382e7ef9904286b8d6ad3115cf7318a9738 # v1.2.640
         # This bundle pins plugin-scanner 3.0.30 by version and SHA256, but the
         # wheel leaves cisco-ai-skill-scanner as an open ~=2.0.12 range, so the
         # deep skill scan silently tracked PyPI. PIP_CONSTRAINT pins it to the
