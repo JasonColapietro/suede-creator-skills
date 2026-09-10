@@ -2,11 +2,7 @@
 
 ## Product
 
-An open-source pack of inspectable Agent Skills for Claude Code, OpenAI Codex,
-and compatible agents. It gives builders reusable workflows for outcome-bound
-orchestration through the Suede ship DAG, code review, ship gates, AI evaluation,
-design, copy, SEO, iOS conversion, native Android app shipping, and
-creator-rights work.
+Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. The pack also includes code review, app delivery, and creator-rights workflows.
 
 ## Founder
 
@@ -18,8 +14,9 @@ attribution deliberately — this is founder-led work, not a faceless tool.
 
 ## Audience
 
-Builders, AI engineers, product teams, and creators who want a capable agent
-workflow they can inspect before installation.
+Founders, marketers, and small business teams who want reusable SEO, marketing,
+and operations workflows. Builders and product teams can use the same pack
+for implementation and delivery.
 
 ## Register
 
@@ -28,8 +25,9 @@ technical, and trustworthy rather than like a generic documentation template.
 
 ## First Three Seconds
 
-The visitor should understand that this is a serious, open-source agent
-workflow pack with a clear install path and unusually strong ship discipline.
+The visitor should understand that these are open-source AI skills for SEO,
+marketing, and business operations, with a clear install path and inspectable
+workflows for Claude Code and Codex.
 
 ## Brand Anchors
 

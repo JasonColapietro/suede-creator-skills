@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Open-source agent skills for Claude Code and Codex: Suede Thought Graph shipping, multi-agent orchestration, code review with an A-F ship grade, CI ship gates, AI evals, and design/copy/SEO lanes. Original work is MIT licensed; adapted components retain their upstream notices.",
+  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -10,7 +10,7 @@
       "name": "suede-skills",
       "source": "./",
       "strict": true,
-      "description": "Complete Suede workflow: Suede Thought Graph shipping, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack."
+      "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Installs the complete pack, including code review, app delivery, and creator workflows."
     },
     {
       "name": "suede-agent-workflows",
