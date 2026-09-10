@@ -53,7 +53,7 @@ Install 76 free open-source Claude Code and Codex skills for SEO, AI search visi
 
 ### Hero
 
-AI skills for SEO and business growth.
+Suede Creator Skills for SEO and business growth.
 
 ### Subhead
 
