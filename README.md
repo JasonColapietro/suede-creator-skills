@@ -31,6 +31,10 @@ Suede Creator Skills gives founders, marketers, and small teams reusable workflo
 
 These are **public, broadly reusable, open-source skill folders**. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and creator-rights work. Original work is MIT licensed; adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
+**Independent registry signals:** [HOL — Trust 92 · Security 100](https://hol.org/registry/plugins/suede-labs-ai%2Fsuede-skills) · [PluginWorld — Security A · Score 90](https://pluginworld.ai/plugins/claude-code/jasoncolapietro/suede-creator-skills)
+
+<sub>Third-party registry scores are external assessments, not security certifications.</sub>
+
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
 ## Install in 30 seconds
