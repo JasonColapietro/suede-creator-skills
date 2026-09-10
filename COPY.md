@@ -10,15 +10,11 @@ a registry, distribute music, approve payouts, or promise outcomes.
 
 ### One-line description
 
-MIT-licensed agent skills for Claude Code and Codex. One of them grades a
-staged diff A-F across seven lanes, where the weakest lane caps the grade.
-Another argued $448.31 back out of a real Amazon account.
+Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex.
 
 ### Short description
 
-Suede Creator Skills is the folder of skills that runs Suede Labs, published as
-is. Every skill is a plain SKILL.md file you read before you run it, and every
-description carries a NOT FOR line naming the sibling that should win instead.
+Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 ### Component stack copy
 
@@ -43,13 +39,7 @@ dependency-free MCP server. One pack, readable before you run it.
 
 ### Full description
 
-Suede Creator Skills is the folder of skills that runs Suede Labs, published as
-is. Every skill is a plain `SKILL.md` file for Claude Code and Codex, so you
-read the method before you run it, and every description carries a NOT FOR line
-naming the sibling that should win instead. The range is the point: the same
-pack grades a staged diff A-F across seven lanes and argued $448.31 back out of
-a real Amazon account, including a refund denied after the return window closed.
-It is free under MIT for the original work, with no binaries and no telemetry.
+Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices.
 
 ## GitHub Pages Copy
 
@@ -59,25 +49,19 @@ Suede Creator Skills: Agent Skills for Claude Code and Codex
 
 ### Meta description
 
-Install free open-source Claude Code and Codex skills for code
-review, CI ship-gates, AI evals, design, copy, SEO, MCP, iOS/Android, and
-creator workflows.
+Install 76 free open-source Claude Code and Codex skills for SEO, AI search visibility, conversion copy, marketing, and business operations.
 
 ### Hero
 
-Stop prompting your agent like it has amnesia.
+AI skills for SEO and business growth.
 
 ### Subhead
 
-Your agent holds every skill name and opens one body at a time. Every
-description names the sibling skill that should win instead, so the pack routes
-itself instead of guessing.
+Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 ### Hero proof line
 
-Invoke `suede-workflow-skills` when the work crosses lanes, and name one skill
-when it does not. Routing is not guesswork: every skill description carries a
-NOT FOR line that hands the request to the sibling that should beat it.
+Read the SEO audit, product marketing, and operations assessment workflows before you install. Each skill names its inputs, deliverables, and scope.
 
 ### Primary CTA
 

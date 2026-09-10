@@ -1,7 +1,7 @@
 {
   "name": "suede-skills",
   "version": "0.18.0",
-  "description": "Public Suede skills and a read-only MCP for decisive agent workflows, code review, design, copy, SEO, app shipping, and creator work.",
+  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Includes code review, app delivery, creator tools, and reusable workflows.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -55,8 +55,8 @@
   },
   "interface": {
     "displayName": "Suede Creator Skills",
-    "shortDescription": "Suede agent skills with MCP discovery",
-    "longDescription": "Public Suede skills for coordinated agent teams, code quality, design, copy, SEO, app shipping, creator workflows, and structured MCP discovery.",
+    "shortDescription": "AI skills for SEO and business growth",
+    "longDescription": "Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices.",
     "developerName": "Suede Labs AI",
     "category": "Developer Tools",
     "capabilities": [

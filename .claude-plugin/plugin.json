@@ -1,7 +1,7 @@
 {
   "name": "suede-skills",
   "version": "0.18.0",
-  "description": "Complete Suede workflow for Claude Code and Codex: Suede Thought Graph shipping, reviewed multi-agent execution, code and release gates, design, copy, SEO, app shipping, and creator utilities. Installs every skill in the pack.",
+  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Includes code review, app delivery, creator tools, and reusable workflows.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"

@@ -1,6 +1,6 @@
 {
   "name": "suede-codex",
-  "description": "Codex catalog for the complete public Suede skill pack.",
+  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex.",
   "interface": {
     "displayName": "Suede Creator Skills"
   },
@@ -16,7 +16,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Developer Tools",
-      "description": "All public Suede skills and three read-only MCP discovery servers."
+      "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Installs the complete pack, including code review, app delivery, and creator workflows."
     }
   ]
 }

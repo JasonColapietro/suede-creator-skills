@@ -19,9 +19,17 @@
 
 ---
 
-Your coding agent is fast, capable, and completely unsupervised. It will happily ship the bug, skip the test, publish the slop, and tell you everything went great.
+## AI skills for SEO and business growth
 
-This pack is the supervision: **public, broadly reusable, open-source skill folders** for Claude Code, OpenAI Codex, and any skills-compatible agent. Outcome-bound orchestration, multi-agent teams, code review with a blunt A–F ship grade, AI evals, design, conversion copy, SEO, marketing lanes, mobile app factories, and creator-rights tooling. Every skill is a plain `skills/<name>/SKILL.md` file you can read before you trust it. The original work is MIT licensed, and adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
+Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
+
+**Start with the business task:**
+
+- **Search visibility:** audit a page with `suede-seo-audit`, or plan content for AI search with `suede-ai-seo`.
+- **Positioning and conversion:** define your audience and offer with `suede-product-marketing`, then write page copy with `suede-copy`.
+- **Business operations:** map bottlenecks with `suede-ops-assessment` and define the system with `suede-ops-architecture`.
+
+These are **public, broadly reusable, open-source skill folders**. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and creator-rights work. Original work is MIT licensed; adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
 
@@ -105,10 +113,10 @@ Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_sk
 
 ## Try it right now
 
-Install the pack, then ask for a code review with a ship grade on your current changes:
+Install the pack, then give your agent a page to audit:
 
 ```text
-Use suede-code to review my staged diff and give it an A-F ship grade.
+Use suede-seo-audit to audit this page for search visibility and return prioritized findings with exact copy fixes: [your page URL]
 ```
 
 For a nontrivial multi-file change, run the ship DAG:
