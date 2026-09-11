@@ -823,6 +823,7 @@ const publicFiles = repoFiles.filter((file) => {
 const privatePathPatterns = [
   /\/Users\/(jason|jasoncolapietro)\//,
   /GoogleDrive-jasoncola1@gmail\.com/,
+  /jasoncola1@gmail\.com/,
   /johnnysuedes@gmail\.com/,
   /team_[A-Za-z0-9]{8,}/
 ];
