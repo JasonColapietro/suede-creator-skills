@@ -3,7 +3,7 @@
 You are writing one or two chapters of a book called **S-Tier: The Builder's Book
 Behind the Suede Skills**. It is a real book about how agent skills work and how a
 person becomes an exceptional builder using them. Repo root:
-`/Users/jasoncolapietro/code/suede-creator-skills`.
+`~/code/suede-creator-skills`.
 
 ## Audience
 
