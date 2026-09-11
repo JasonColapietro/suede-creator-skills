@@ -12,6 +12,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import {
   BASE,
   REPO,
@@ -25,6 +26,43 @@ import {
 } from "./lib/book.mjs";
 
 const outDir = path.join(repoRoot, "docs", "book");
+
+// A chapter's dateModified is decided at write time, not render time: it is
+// the date its rendered content last changed. Every chapter used to carry
+// PUBLISHED as dateModified, so the skill index and the chapters that quote
+// skill descriptions kept claiming 2026-08-10 through every release that
+// changed them (record-audit.py in suede-seo, 2026-09-11). The rule: when
+// the page renders identically to the committed page apart from this one
+// field, the committed date stands; when its content changed, the date is
+// today. --check therefore passes on a clean tree and fails, as it should,
+// when a chapter needs regenerating. BOOK_DATES_FROM_GIT=1 seeds the dates
+// once from each page's last commit, for the migration off the constant.
+const DATE_MODIFIED_PLACEHOLDER = "__DATE_MODIFIED__";
+const DATE_MODIFIED_RE = /"dateModified":\s*"([^"]*)"/;
+const undated = (html) => html.replace(DATE_MODIFIED_RE, '"dateModified": ""');
+
+function localToday() {
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+function lastCommitDate(file) {
+  const rel = path.relative(repoRoot, file);
+  const log = spawnSync("git", ["-C", repoRoot, "log", "-1", "--format=%cs", "--", rel], { encoding: "utf8" });
+  const date = (log.stdout || "").trim();
+  return /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : localToday();
+}
+
+function dateModifiedFor(file, html, existing) {
+  if (!DATE_MODIFIED_RE.test(html)) return null;
+  if (process.env.BOOK_DATES_FROM_GIT) return lastCommitDate(file);
+  if (existing !== null && undated(existing) === undated(html)) {
+    const m = existing.match(DATE_MODIFIED_RE);
+    if (m && m[1]) return m[1];
+  }
+  return localToday();
+}
 const checkOnly = process.argv.includes("--check");
 
 // ------------------------------------------------------------------ shell
@@ -212,7 +250,7 @@ sources.forEach((page, index) => {
       position: index + 1,
       wordCount: page.words,
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: DATE_MODIFIED_PLACEHOLDER,
       inLanguage: "en",
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
@@ -349,8 +387,10 @@ written.set(
 
 fs.mkdirSync(outDir, { recursive: true });
 let changed = 0;
-for (const [file, html] of written) {
+for (const [file, rendered] of written) {
   const existing = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null;
+  const date = dateModifiedFor(file, rendered, existing);
+  const html = date ? rendered.replace(DATE_MODIFIED_RE, `"dateModified": "${date}"`) : rendered;
   if (existing === html) continue;
   changed += 1;
   if (!checkOnly) fs.writeFileSync(file, html);

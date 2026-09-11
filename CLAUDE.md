@@ -77,12 +77,12 @@ are historical statements at stable URLs and they carry SEO weight in `<title>`,
 
 ### Issue tracker
 
-Issues are tracked in this repository's GitHub Issues using the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Issues are tracked in this repository's GitHub Issues using the `gh` CLI. See `.agents/docs/issue-tracker.md`.
 
 ### Triage labels
 
-Use the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` labels. See `docs/agents/triage-labels.md`.
+Use the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, and `wontfix` labels. See `.agents/docs/triage-labels.md`.
 
 ### Domain docs
 
-This is a single-context repository using root `CONTEXT.md` and `docs/adr/`. See `docs/agents/domain.md`.
+This is a single-context repository using root `CONTEXT.md` and `docs/adr/`. See `.agents/docs/domain.md`.
