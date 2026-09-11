@@ -114,7 +114,21 @@ function localToday() {
   return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
 }
 
+// The page's own dateModified is the editorial claim about when it last
+// changed; the sitemap follows it. Git dates only pages that make no claim
+// (skill cards). Before this, blog essays declaring 2026-08-07 sat in a
+// sitemap saying 2026-09-05 because a schema tweak had touched the file
+// (record-audit.py in suede-seo, 2026-09-11).
+function declaredDate(relPath) {
+  const abs = path.join(repoRoot, relPath);
+  if (!fs.existsSync(abs)) return null;
+  const m = readText(abs).match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})"/);
+  return m ? m[1] : null;
+}
+
 function lastCommitDate(relPath) {
+  const declared = declaredDate(relPath);
+  if (declared) return declared;
   if (!hasOwnGitHistory) {
     return localToday();
   }

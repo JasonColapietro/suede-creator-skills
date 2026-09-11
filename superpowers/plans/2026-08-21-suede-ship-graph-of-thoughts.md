@@ -10,7 +10,7 @@
 
 **Tech Stack:** Node.js 22, JavaScript workflow scripts, `node:test`, JSON schemas, Markdown/HTML skill catalog, repository validation scripts.
 
-**Spec:** `docs/superpowers/specs/2026-08-21-suede-ship-graph-of-thoughts-design.md`
+**Spec:** `superpowers/specs/2026-08-21-suede-ship-graph-of-thoughts-design.md`
 
 ## Global Constraints
 
