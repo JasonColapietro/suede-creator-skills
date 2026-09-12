@@ -2,20 +2,34 @@
 
 Where the Suede skill pack is listed, where it is not, what is stale, and what it takes to close each gap. Keep this file current when a listing changes. Numbers below are as of the last audit date and are not maintained by the validator.
 
-Last audit: 2026-09-05. Read-only research by four web-reader agents plus local checks. Nothing was submitted, claimed, or posted during the audit.
+Last audit: 2026-09-12, a read-only refresh of the 2026-09-05 pass that created this
+file. Both were read-only: nothing was submitted, claimed, or posted during either.
 
-Ground truth on the audit date: 74 skills, repository `JasonColapietro/suede-creator-skills`, homepage `https://skills.suedeai.ai`, GitHub description already states 74, 20 GitHub topics set (including `claude-code-plugin`, `claude-skills`, `agent-skills`, `codex`, `mcp-server`).
+One row could not be re-checked. skills.sh is blocked by the egress proxy of the
+environment the refresh ran in, so that row still carries its 2026-09-05 figures and
+says so. Everything else below was read from its live source on 2026-09-12.
+
+Two of the changes are corrections, not drift. The pack is at 76 skills, not the 74
+this file was written around. And the two largest star counts under "Not listed" were
+transposed: 74.5k was Composio's number and 53.6k was hesreallyhim's, not the reverse.
+
+Ground truth on 2026-09-12: 76 skills (`find skills -maxdepth 2 -name SKILL.md`),
+version 0.18.0, repository `JasonColapietro/suede-creator-skills` at 135 stars, 10
+forks, 1 watcher, homepage `https://skills.suedeai.ai`, 20 GitHub topics set
+(including `claude-code-plugin`, `claude-skills`, `agent-skills`, `codex`,
+`mcp-server`). The GitHub description no longer states a skill count - it now leads on
+SEO and business positioning - so there is no number there to keep current.
 
 ## Listed
 
 | Directory | Status | Evidence | Staleness | Fix |
 | --- | --- | --- | --- | --- |
-| skills.sh (Vercel `npx skills`) | Listed, automatic | https://www.skills.sh/jasoncolapietro/suede-creator-skills shows 992 installs; top installs are suede-agent-teams, suede-ai-eval, suede-code, suede-code-grader, suede-code-review | Shows "79 skills" against 74 | No claim mechanism exists. The count refreshes on re-crawl or install traffic. Nothing to file. |
-| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive Skill Collections" | README entry reads "67 MIT-licensed skills for Claude Code and Codex" | 67 vs 74 | PR opened 2026-09-06: GetBindu/awesome-claude-code-and-skills#194 |
+| skills.sh (Vercel `npx skills`) | Listed, automatic | https://www.skills.sh/jasoncolapietro/suede-creator-skills showed 992 installs on 2026-09-05; top installs were suede-agent-teams, suede-ai-eval, suede-code, suede-code-grader, suede-code-review | Figures are 2026-09-05 and were not re-checked on 2026-09-12: the refreshing environment's egress proxy blocks the host. Showed "79 skills" against a pack that is now 76 | No claim mechanism exists. The count refreshes on re-crawl or install traffic. Nothing to file; re-check from a machine that can reach skills.sh. |
+| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive Skill Collections" | README entry reads "67 MIT-licensed skills for Claude Code and Codex" | 67 vs 76 | PR opened 2026-09-06: GetBindu/awesome-claude-code-and-skills#194. Still open, unmerged, no reviews on 2026-09-12 |
 | awesomeclaude.ai/awesome-claude-skills (backed by webfuse-com/awesome-claude) | Listed under "Development & Code Tools" | Entry reads "23-skill pack for agent orchestration with WIP collision detection and rollback trees" | Description is from the first release and describes one skill, not the pack | PR to webfuse-com/awesome-claude replacing the description |
-| BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR opened 2026-09-06: BehiSecc/awesome-claude-skills#677 |
-| ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open; rewritten 2026-09-05 to a README-only entry linking to the vendorable copy, and its validate check now passes | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
-| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Submitted, awaiting review | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement; no public acknowledgement URL yet) | Not listed until Anthropic accepts it | Watch `anthropics/claude-plugins-official` for the entry; nothing else to file |
+| BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR opened 2026-09-06: BehiSecc/awesome-claude-skills#677. Still open, unmerged, no reviews on 2026-09-12 |
+| ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open; rewritten 2026-09-05 to a README-only entry linking to the vendorable copy, and its validate check now passes. Still open and unmerged on 2026-09-12, now carrying a `ready-to-merge` label, with no review comments | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
+| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Submitted, not listed | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement; no public acknowledgement URL). Checked 2026-09-12 against the marketplace repo at HEAD `3deb821`, dated 2026-09-11: `.claude-plugin/marketplace.json` carries 295 entries and `external_plugins/` holds 14; no `suede` or `colapietro` match anywhere in the repo | Seven days submitted, no entry and no acknowledgement | Watch `anthropics/claude-plugins-official` for the entry; nothing else to file. The form returns no status URL, so an entry appearing in that repo is the only signal there is |
 | SaaSHub | Listed, wrong product | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here |
 
 ## Not listed
@@ -24,9 +38,9 @@ Reach is inferred from stars or self-reported traffic. "Owner action" means an a
 
 | Directory | Reach | How to get listed | Owner action |
 | --- | --- | --- | --- |
-| hesreallyhim/awesome-claude-code | 74.5k stars | PR per CONTRIBUTING.md | PR to a third-party repo |
-| ComposioHQ/awesome-claude-skills (pack entry) | 53.6k stars | PR with their template | PR to a third-party repo |
-| punkpeye/awesome-mcp-servers | 94.3k stars | PR against README | PR to a third-party repo; needs a runnable install line |
+| hesreallyhim/awesome-claude-code | 53.9k stars (2026-09-12) | PR per CONTRIBUTING.md | PR to a third-party repo |
+| ComposioHQ/awesome-claude-skills (pack entry) | 74.9k stars (2026-09-12) | PR with their template | PR to a third-party repo |
+| punkpeye/awesome-mcp-servers | 94.9k stars (2026-09-12) | PR against README | PR to a third-party repo; needs a runnable install line |
 | SkillsMP (skillsmp.com) | Tens of thousands of skills indexed | Automatic GitHub crawl; no form found | None known; wait for crawl |
 | claudemarketplaces.com | Claims 380k monthly visitors | Crawl-based; no form found | Unknown |
 | claudemarketplace.net | Claims 150k monthly visitors | Not stated | Unknown |
@@ -63,10 +77,26 @@ For the pack's own name, the GitHub repository outranks the site in general web 
 
 ## Draft replacement line for the awesome lists
 
-`[suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) - 74 open-source Agent Skills for Claude Code and Codex: AI SEO, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, iOS and Android app shipping, and creator rights. MIT.`
+`[suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) - 76 open-source Agent Skills for Claude Code and Codex: AI SEO, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, iOS and Android app shipping, and creator rights. MIT.`
+
+Both open count PRs already carry this number. Verified 2026-09-12 by reading their
+head branch `update-suede-creator-skills-entry` on each fork: GetBindu#194 writes "76
+MIT-licensed skills" (its top commit is "Update the skill count to 76") and BehiSecc#677
+writes the line above verbatim. Only their titles still say "74-skill pack", and a title
+merges into nothing - there is nothing to edit on either, and neither carries a review or
+approval to reset. (Composio#1803 is the single `frontend-design-review` entry and
+carries no pack count.) What moved the number was 0.18.0 on 2026-09-06 - suede-parity-
+contract and suede-play-release - landing the day after this file was written around 74
+and the same day both PRs were opened. Any count published to a third-party list goes
+stale on the next release, which is why the own-surface counts are validator-guarded and
+these are not.
 
 ## Next actions
 
 Agent-side, no external mutation: keep the count stamps on the site current; keep this file current when a listing changes.
 
-Owner-side, in order of reach per minute of effort: a Show HN, the three awesome-list PRs (two stale descriptions, one new entry on hesreallyhim), then an npm publish of the MCP followed by `mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
+Owner-side, in order of reach per minute of effort: a Show HN; then the awesome-list work
+still outstanding - a new entry on hesreallyhim (53.9k) and the description fix on
+webfuse-com/awesome-claude, since GetBindu#194 and BehiSecc#677 are already open and
+waiting on their maintainers, not on us; then an npm publish of the MCP followed by
+`mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
