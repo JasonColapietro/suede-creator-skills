@@ -1,0 +1,80 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  :root{--clay:#D97757;--kraft:#D4A27F;--manilla:#EBDBBC;--gold:#F5D69A;--ivory:#F0EEE6;--muted:#8E867E;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .card{position:relative;width:1080px;height:1350px;overflow:hidden;
+    background:radial-gradient(66% 38% at 50% 26%,rgba(217,119,87,.26) 0%,rgba(217,119,87,0) 68%),
+      radial-gradient(120% 70% at 50% -8%,#2B2320 0%,rgba(43,35,32,0) 62%),
+      linear-gradient(180deg,#1C1917 0%,#141211 55%,#0F0D0C 100%);}
+  .arcs{position:absolute;left:50%;top:520px;transform:translateX(-50%);width:1500px;height:1500px;opacity:.36}
+  .arcs i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(245,214,154,.10)}
+  .arcs i:nth-child(1){width:640px;height:640px}
+  .arcs i:nth-child(2){width:960px;height:960px;border-color:rgba(245,214,154,.07)}
+  .arcs i:nth-child(3){width:1280px;height:1280px;border-color:rgba(245,214,154,.045)}
+  .vig{position:absolute;inset:0;background:radial-gradient(78% 58% at 50% 40%,rgba(0,0,0,0) 38%,rgba(0,0,0,.66) 100%)}
+  .grain{position:absolute;inset:0;opacity:.15;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .inner{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;
+    justify-content:space-between;padding:64px 78px 62px;text-align:center}
+  .grp{display:flex;flex-direction:column;align-items:center;width:100%}
+  .mark{width:74px;height:74px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.55))}
+  .cmdtag{margin-top:16px;font-family:"SF Mono",Menlo,monospace;font-size:25px;color:#CFC8C0;letter-spacing:-.015em}
+  .cmdtag .s{color:var(--clay)}
+  .kick{margin-top:34px;font-size:14px;letter-spacing:.44em;text-transform:uppercase;color:var(--kraft);font-weight:600;text-indent:.44em}
+  .h{margin-top:16px;font-family:Georgia,serif;font-size:62px;line-height:1.12;color:var(--ivory);letter-spacing:-.018em}
+  .h em{font-style:italic;color:var(--kraft)}
+
+  .rows{width:100%;display:flex;flex-direction:column}
+  .row{display:flex;gap:30px;align-items:flex-start;text-align:left;width:100%;
+    padding:30px 4px;border-top:1px solid rgba(240,238,230,.13)}
+  .row:last-child{border-bottom:1px solid rgba(240,238,230,.13)}
+  .num{font-family:Georgia,serif;font-size:40px;line-height:1;color:var(--clay);width:70px;flex:none;padding-top:4px}
+  .rt{display:flex;flex-direction:column;gap:9px}
+  .rl{font-size:33px;color:var(--ivory);font-weight:600;letter-spacing:.01em}
+  .rd{font-size:23px;line-height:1.45;color:var(--muted)}
+
+  .cta{font-family:Georgia,serif;font-size:44px;line-height:1.2;color:var(--ivory);letter-spacing:-.015em}
+  .cta b{color:var(--gold);font-weight:400;font-style:italic}
+  .ctasub{margin-top:18px;font-size:22px;color:var(--muted)}
+  .foot{margin-top:26px;font-size:18px;letter-spacing:.05em;color:#7C746C}
+  .foot b{color:var(--manilla);font-weight:600}
+</style>
+<div class="card">
+  <div class="arcs"><i></i><i></i><i></i></div><div class="vig"></div><div class="grain"></div>
+  <div class="inner">
+
+    <div class="grp">
+      <img class="mark" src="../suede-ai-logo-transparent.png" alt="">
+      <div class="cmdtag"><span class="s">/</span>suede-ai-seo</div>
+      <div class="kick">Three pillars</div>
+      <div class="h">How you get cited by<br><em>an answer engine</em></div>
+    </div>
+
+    <div class="grp"><div class="rows">
+      <div class="row">
+        <div class="num">01</div>
+        <div class="rt"><div class="rl">Structure</div>
+          <div class="rd">Make the content extractable, so a model can lift a clean answer out of the page.</div></div>
+      </div>
+      <div class="row">
+        <div class="num">02</div>
+        <div class="rt"><div class="rl">Authority</div>
+          <div class="rd">Make the content citable, so the model has a reason to name you as the source.</div></div>
+      </div>
+      <div class="row">
+        <div class="num">03</div>
+        <div class="rt"><div class="rl">Presence</div>
+          <div class="rd">Be where AI looks, across the surfaces these engines actually retrieve from.</div></div>
+      </div>
+    </div></div>
+
+    <div class="grp">
+      <div class="cta">Cohort starts tomorrow.<br><b>Books out tonight.</b></div>
+      <div class="ctasub">Accepted so far? You'll hear from us by Monday afternoon.</div>
+      <div class="foot"><b>Free</b> &nbsp;&middot;&nbsp; <b>MIT open source</b> &nbsp;&middot;&nbsp; on GitHub</div>
+    </div>
+
+  </div>
+</div>
