@@ -9,6 +9,10 @@ that carries technical meaning, quotation fidelity, deliberate voice, genre,
 or the supplied house style. Apply the minimum edit that fixes the actual
 problem in the supplied piece.
 
+Sections marked *weak alone* describe choices a careful writer makes on purpose.
+Act on one of those only when other tells share the passage. Every other section
+justifies an edit on a single sighting.
+
 ## Throat-clearing openers
 
 Cut the opener; state the point. Any "here's what/this/that/why" construction
@@ -247,3 +251,182 @@ Fix: find the actor, put them at the front of the sentence.
 
 every, always, never, everyone, everybody, nobody. False authority doing vague
 work. Replace the sweeping claim with the specific.
+
+---
+
+The sections below cover chat residue, borrowed authority, and formatting applied
+by rule. They matter most in READMEs, documentation, agent instruction files, and
+reference prose, where they do more damage than any phrase above.
+
+## Chat and draft leftovers
+
+A wrapper meant for one conversation, left in text that has to stand on its own.
+The most certain signal in this file, and the easiest to miss when it surrounds
+real content. Delete the wrapper; keep what is inside it.
+
+- "Great question!" / "Of course!" / "Certainly!" / "Absolutely!"
+- "You're absolutely right" / "Good catch"
+- "I hope this helps" / "Hope that clarifies"
+- "Let me know if you'd like me to expand" / "let me know if you need anything else"
+- "Would you like...?" / "Want me to...?" / "Should I continue?"
+- "Here is a..." / "Below is a..." opening a document that is the thing itself
+
+## Knowledge-limit disclaimers and guesses
+
+The text names where the model's knowledge stopped, or admits it found nothing
+and then fills the hole with something plausible. State what the source does not
+show, or cut the sentence. Never present a guess as a fact.
+
+- "as of my last training update" / "as of [date]" (when the date is the cutoff, not a fact about the subject)
+- "while specific details are limited" / "based on available information"
+- "in the provided sources" / "not widely documented" / "not publicly available"
+- "maintains a low profile" / "keeps personal details private" (inferred from absence)
+- "likely grew up" / "likely studied" / "it is believed that" (a guess dressed as a finding)
+
+## Arguing with no one
+
+The text answers an objection or rejects an option that appears nowhere else,
+usually a leftover from an earlier draft. Cut the defense; if it carries a real
+claim, state the claim. Keep an objection the text attributes and answers in
+full, and keep an option a reader would genuinely weigh.
+
+- "I'm not saying" / "This is not to say" / "Don't get me wrong"
+- "To be clear," (as a standalone opener)
+- "Some might say... but"
+- "A tempting approach would be" / "One might be tempted to" / "An obvious approach would be"
+- "You might think... but" / "It would be easy to just"
+
+Several unrelated rejections in a row are a stronger signal than one.
+
+## Borrowed authority
+
+An unnamed authority props up a claim, or a list of prestigious outlets props up
+a person. Use the real source and what it said when the text supplies one.
+Otherwise cut the claim or the list. Never invent a source. A missing citation by
+itself is not a signal; most writing is unsourced.
+
+- "experts argue" / "experts believe" / "researchers say" (unnamed)
+- "observers have cited" / "some critics" / "industry reports suggest"
+- "cited in [list of outlets]" / "featured in" / "profiled by" as a credential
+- "independent coverage" / "trade publications"
+- "active social media presence" / "over N followers" as evidence of standing
+
+## Vague connection
+
+Two things are said to be related without saying how, which hides whether the
+person was the CEO, a board member, or a consultant. Name the relationship the
+source gives. If the source does not say, keep the vague wording rather than
+inventing a role.
+
+- "associated with" / "in association with"
+- "connected to" / "in connection with"
+- "linked to" / "tied to"
+- "involved with" / "part of" (when the role is knowable and omitted)
+
+## Avoiding is, are, and has
+
+A simple verb replaced with a longer phrase. Use is, are, has.
+
+| Kill | Fix |
+|------|-----|
+| serves as | is |
+| stands as | is |
+| functions as / operates as | is, works as |
+| represents a / marks a | is |
+| boasts | has |
+| features / offers / maintains (a) | has |
+| refers to | is, means |
+
+## Overused AI words
+
+Models reach for these far more often than people do, and they cluster. One
+formal word is not a signal; four in a paragraph is. Keep every technical sense.
+
+Actually, additionally, align with, bolstered, crucial, deep dive, delve,
+emphasizing, enduring, enhance, fostering, garner, gated (figurative),
+highlight (verb), interplay, intricate, key (adjective), landscape (abstract),
+meticulous, pivotal, quietly, robust (figurative), showcase, tapestry,
+testament, underscore (verb), valuable, vibrant.
+
+## Inflated significance
+
+An ordinary detail is said to mark a turning point, prove a legacy, or promise a
+future. It appears at three scales: a phrase, a stock section, and a send-off
+paragraph. Keep the fact; drop the significance. End on the last concrete fact.
+If the source states real plans, use those.
+
+- "stands as a testament to" / "underscores its importance"
+- "a pivotal moment" / "a crucial turning point" / "plays a key role"
+- "marking the" / "shaping the" / "setting the stage for"
+- "reflects a broader" / "an enduring legacy" / "left an indelible mark"
+- "the evolving landscape of"
+- "Despite these challenges, X continues to thrive"
+- Stock sections titled "Challenges and Legacy", "Future Outlook", "Awards and recognition"
+- "the future looks bright" / "exciting times ahead" / "a step in the right direction"
+
+## Shallow -ing riders
+
+An -ing phrase bolted onto a plain fact to make it sound deeper. Attaching it to
+a named source does not make it true. Keep the fact; keep the rider only when the
+source supports what it claims.
+
+highlighting, underscoring, emphasizing, ensuring, reflecting, symbolizing,
+contributing to, cultivating, fostering, encompassing, showcasing,
+demonstrating, illustrating (when no demonstration is given).
+
+## Sales language
+
+The text reads like an advertisement, most often for a place, a product, a
+culture, or an organization. State what the thing is.
+
+boasts, vibrant, rich (figurative), profound, enhancing, exemplifies,
+commitment to, natural beauty, nestled, in the heart of, groundbreaking
+(figurative), renowned, featuring, diverse array, breathtaking, must-visit,
+stunning, seamlessly integrated, unparalleled.
+
+## Sayings that sound deep
+
+An ordinary point dressed as a hidden truth, with no detail added by the dress.
+Replace the saying with the specific claim.
+
+- "the real question is" / "what really matters"
+- "at its core" / "fundamentally" / "in reality"
+- "the deeper issue" / "the heart of the matter"
+- "X is the Y of Z" ("symmetry is the language of trust")
+- "X becomes a trap" / "X is not a tool but a mirror"
+- "the language of" / "the currency of" / "the architecture of" (abstract)
+
+## Formatting by rule
+
+Decoration on every item is the signal, not decoration anywhere. Templates and
+visual editors produce clean formatting too, so judge across the document.
+
+- Bold on terms carrying no more weight than their neighbors: remove the bold.
+- Every bullet opening `**Label:**` and then restating the label: turn the list into prose.
+- Title Case Headings: use sentence case.
+- An emoji or an arrow on each heading or bullet: strip the ornament.
+- A horizontal rule between every section: remove the rules.
+- The document title repeated as a heading under itself: let it stand once.
+- A heading restated in the one-line paragraph below it: delete the restatement.
+- Documentation describing the version it replaced: describe current behavior. Prior-version talk belongs in changelogs, release notes, and migration guides.
+
+## Weak alone
+
+Each of these is a normal writing choice on its own. Act only when other tells
+share the passage, or when the supplied house style settles it.
+
+- **Hyphenated pairs everywhere** (third-party, cross-functional, client-facing, data-driven, decision-making, well-known, high-quality, real-time, long-term, end-to-end). Keep the hyphen before a noun where grammar needs it (`a high-quality report`); drop it after (`the report is high quality`).
+- **Repeated sentence openings.** Three sentences in a row starting with the same subject. Merge them, change the subject, or lead with the action. Do not ban the word; writers also repeat an opening on purpose.
+- **Stacked qualifiers** (to be fair, it's also possible, could potentially, might arguably, in some cases it may). Keep a qualifier the source supports and the meaning needs. Keep scope statements, legal and safety notices, and real corrections. Ordinary hedges such as *perhaps* or *tends to* are human habits.
+- **Curly quotation marks** where the writer or target format uses straight quotes. Most editors auto-curl.
+- **A single em dash.** Many editors and journalists use them. A text full of them is a different matter; follow the supplied house style.
+
+## Sources
+
+The phrase and structure inventory above comes from the Suede kill list merged
+with `stop-slop` by Hardik Pandya (<https://hvpandya.com>, MIT). The sections
+from "Chat and draft leftovers" onward are adapted from
+[Humanizer](https://github.com/blader/humanizer) by blader (MIT), which draws its
+pattern set from Wikipedia's
+["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
+maintained by WikiProject AI Cleanup.
