@@ -1,0 +1,104 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  :root{--clay:#D97757;--kraft:#D4A27F;--manilla:#EBDBBC;--gold:#F5D69A;--ivory:#F0EEE6;--muted:#8E867E;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden}
+  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .card{position:relative;width:1080px;height:1350px;overflow:hidden;
+    background:radial-gradient(70% 40% at 50% 30%,rgba(217,119,87,.30) 0%,rgba(217,119,87,0) 68%),
+      radial-gradient(120% 70% at 50% -8%,#2B2320 0%,rgba(43,35,32,0) 62%),
+      linear-gradient(180deg,#1C1917 0%,#141211 55%,#0F0D0C 100%);}
+  .arcs{position:absolute;left:50%;top:430px;transform:translateX(-50%);width:1500px;height:1500px;opacity:.4}
+  .arcs i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(245,214,154,.12)}
+  .arcs i:nth-child(1){width:600px;height:600px}
+  .arcs i:nth-child(2){width:900px;height:900px;border-color:rgba(245,214,154,.085)}
+  .arcs i:nth-child(3){width:1200px;height:1200px;border-color:rgba(245,214,154,.05)}
+  .vig{position:absolute;inset:0;background:radial-gradient(78% 58% at 50% 40%,rgba(0,0,0,0) 38%,rgba(0,0,0,.66) 100%)}
+  .grain{position:absolute;inset:0;opacity:.15;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .inner{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;
+    justify-content:space-between;padding:62px 76px 60px;text-align:center}
+  .grp{display:flex;flex-direction:column;align-items:center;width:100%}
+  .mark{width:78px;height:78px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.55))}
+  .wordmark{margin-top:14px;font-size:13px;letter-spacing:.46em;text-transform:uppercase;color:var(--kraft);font-weight:600;text-indent:.46em}
+  .award{display:flex;align-items:center;justify-content:center;gap:10px;width:100%}
+  .laurel{width:132px;height:172px;flex:none}
+  .laurel.r{transform:scaleX(-1)}
+  .est{font-size:13px;letter-spacing:.44em;text-transform:uppercase;color:var(--kraft);font-weight:600;text-indent:.44em}
+  .winner{margin-top:6px;font-family:Georgia,serif;font-size:96px;line-height:1;letter-spacing:-.012em;color:var(--ivory);
+    text-shadow:0 0 54px rgba(245,214,154,.40),0 6px 28px rgba(0,0,0,.6)}
+  .rule{margin-top:16px;width:290px;height:1px;background:linear-gradient(90deg,transparent,rgba(245,214,154,.62),transparent)}
+  .contest{margin-top:16px;font-size:23px;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);font-weight:600;text-indent:.17em;line-height:1.35}
+  .bignum{font-family:Georgia,serif;font-size:184px;line-height:.92;color:var(--ivory);letter-spacing:-.03em;
+    text-shadow:0 0 66px rgba(245,214,154,.32),0 8px 34px rgba(0,0,0,.6)}
+  .biglabel{margin-top:26px;font-size:23px;letter-spacing:.46em;text-transform:uppercase;color:var(--kraft);font-weight:600;text-indent:.46em}
+  .cmdlist{margin-top:38px;display:flex;flex-direction:column;gap:14px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:30px;color:#D8D2CA;letter-spacing:-.015em}
+  .cmdlist .s{color:var(--clay)}
+  .more{margin-top:20px;font-size:19px;color:var(--muted)}
+  .stats{width:100%;display:flex;border-top:1px solid rgba(240,238,230,.14);padding-top:32px}
+  .stat{flex:1;display:flex;flex-direction:column;gap:9px;position:relative}
+  .stat+.stat::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:1px;background:rgba(240,238,230,.14)}
+  .n{font-family:Georgia,serif;font-size:60px;line-height:1;color:var(--clay);letter-spacing:-.02em}
+  .l{font-size:13.5px;letter-spacing:.23em;text-transform:uppercase;color:var(--muted);font-weight:600;text-indent:.23em}
+  .foot{margin-top:28px;font-size:18px;letter-spacing:.05em;color:#7C746C}
+  .foot b{color:var(--manilla);font-weight:600}
+</style>
+<div class="card">
+  <div class="arcs"><i></i><i></i><i></i></div><div class="vig"></div><div class="grain"></div>
+  <div class="inner">
+
+    <div class="grp">
+      <img class="mark" src="../suede-ai-logo-transparent.png" alt="">
+      <div class="wordmark">Suede Creator SEO</div>
+    </div>
+
+    <div class="grp"><div class="award">
+      <svg class="laurel" viewBox="-18 -16 210 274">
+        <defs><path id="la" d="M0,0 C9,-9 11,-26 0,-42 C-11,-26 -9,-9 0,0 Z"/></defs>
+        <g fill="#D4A27F" fill-opacity=".36" stroke="#F5D69A" stroke-opacity=".92" stroke-width="2" stroke-linejoin="round">
+          <path d="M146 240 C100 224 56 194 48 142 C40 90 66 40 100 8" fill="none" stroke-width="3.4" stroke-linecap="round"/>
+          <use href="#la" transform="translate(125,229) rotate(-118)"/><use href="#la" transform="translate(101,215) rotate(-109)"/>
+          <use href="#la" transform="translate(79,196) rotate(-99)"/><use href="#la" transform="translate(61,172) rotate(-87)"/>
+          <use href="#la" transform="translate(50,145) rotate(-73)"/><use href="#la" transform="translate(47,115) rotate(-58)"/>
+          <use href="#la" transform="translate(53,86) rotate(-43) scale(.95)"/><use href="#la" transform="translate(66,58) rotate(-28) scale(.9)"/>
+          <use href="#la" transform="translate(83,33) rotate(-14) scale(.84)"/><use href="#la" transform="translate(102,13) rotate(-1) scale(.76)"/>
+        </g></svg>
+      <div>
+        <div class="est">2026</div><div class="winner">WINNER</div>
+        <div class="rule" style="margin-left:auto;margin-right:auto"></div>
+        <div class="contest">Anthropic<br>Skills Competition</div>
+      </div>
+      <svg class="laurel r" viewBox="-18 -16 210 274">
+        <defs><path id="lb" d="M0,0 C9,-9 11,-26 0,-42 C-11,-26 -9,-9 0,0 Z"/></defs>
+        <g fill="#D4A27F" fill-opacity=".36" stroke="#F5D69A" stroke-opacity=".92" stroke-width="2" stroke-linejoin="round">
+          <path d="M146 240 C100 224 56 194 48 142 C40 90 66 40 100 8" fill="none" stroke-width="3.4" stroke-linecap="round"/>
+          <use href="#lb" transform="translate(125,229) rotate(-118)"/><use href="#lb" transform="translate(101,215) rotate(-109)"/>
+          <use href="#lb" transform="translate(79,196) rotate(-99)"/><use href="#lb" transform="translate(61,172) rotate(-87)"/>
+          <use href="#lb" transform="translate(50,145) rotate(-73)"/><use href="#lb" transform="translate(47,115) rotate(-58)"/>
+          <use href="#lb" transform="translate(53,86) rotate(-43) scale(.95)"/><use href="#lb" transform="translate(66,58) rotate(-28) scale(.9)"/>
+          <use href="#lb" transform="translate(83,33) rotate(-14) scale(.84)"/><use href="#lb" transform="translate(102,13) rotate(-1) scale(.76)"/>
+        </g></svg>
+    </div></div>
+
+    <div class="grp">
+      <div class="bignum">76</div>
+      <div class="biglabel">Skills</div>
+      <div class="cmdlist">
+        <div><span class="s">/</span>suede-ai-seo</div>
+        <div><span class="s">/</span>suede-seo-audit</div>
+        <div><span class="s">/</span>suede-programmatic-seo</div>
+      </div>
+      <div class="more">+ 73 more, one command each</div>
+    </div>
+
+    <div class="grp">
+      <div class="stats">
+        <div class="stat"><div class="n">50k+</div><div class="l">Invocations</div></div>
+        <div class="stat"><div class="n">40+</div><div class="l">SEO firms</div></div>
+      </div>
+      <div class="foot"><b>Free</b> &nbsp;&middot;&nbsp; <b>MIT open source</b> &nbsp;&middot;&nbsp; on GitHub</div>
+    </div>
+
+  </div>
+</div>
