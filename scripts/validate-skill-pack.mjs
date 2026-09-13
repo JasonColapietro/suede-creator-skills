@@ -1158,8 +1158,8 @@ const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
 // The PNG cannot be regex-checked; re-render it when one of these fails:
 //   docs/assets/social/README.md documents the headless-Chrome command.
 countChecks.push(
-  { file: "docs/assets/social/card-125.html", label: "social card hero skill count", re: /<div class="bignum">(\d+)<\/div>/, expected: totalSkillCount },
-  { file: "docs/assets/social/card-125.html", label: "social card remainder count", re: /\+ (\d+) more, one command each/, expected: totalSkillCount - 3 },
+  { file: "docs/assets/social/card-pack.html", label: "social card hero skill count", re: /<div class="bignum">(\d+)<\/div>/, expected: totalSkillCount },
+  { file: "docs/assets/social/card-pack.html", label: "social card remainder count", re: /\+ (\d+) more, one command each/, expected: totalSkillCount - 3 },
   { file: "docs/assets/social/card.html", label: "social card stat skill count", re: /<div class="n">(\d+)<\/div>/, expected: totalSkillCount },
 );
 

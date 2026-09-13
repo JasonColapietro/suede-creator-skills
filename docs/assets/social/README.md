@@ -7,7 +7,7 @@ are text-heavy and an image model garbles command strings like
 
 | Source | Export | Use |
 | --- | --- | --- |
-| `card-125.html` | `award-76-skills.png` | The pack — skill count, three sample commands |
+| `card-pack.html` | `award-76-skills.png` | The pack — skill count, three sample commands |
 | `card.html` | `award-ai-seo.png` | One skill — `/suede-ai-seo` as the hero |
 | `card-3.html` | `award-three-pillars.png` | Structure / Authority / Presence, then the CTA |
 
@@ -22,7 +22,7 @@ All three are 1080×1350 (Instagram 4:5). From this directory:
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
   --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
-  --window-size=1080,1350 --screenshot=out.png "file://$PWD/card-125.html"
+  --window-size=1080,1350 --screenshot=out.png "file://$PWD/card-pack.html"
 ```
 
 ## House rules baked in
