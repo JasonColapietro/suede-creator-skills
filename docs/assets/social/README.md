@@ -7,12 +7,12 @@ are text-heavy and an image model garbles command strings like
 
 | Source | Export | Use |
 | --- | --- | --- |
-| `card-125.html` | `award-125-skills.png` | The pack — 125 skills, three sample commands |
+| `card-125.html` | `award-76-skills.png` | The pack — skill count, three sample commands |
 | `card.html` | `award-ai-seo.png` | One skill — `/suede-ai-seo` as the hero |
 | `card-3.html` | `award-three-pillars.png` | Structure / Authority / Presence, then the CTA |
 
 Built for the Anthropic Skills Competition announcement. As an Instagram
-carousel the order is 125 → ai-seo → three-pillars: the news, the thing to run,
+carousel the order is pack → ai-seo → three-pillars: the news, the thing to run,
 then the ask.
 
 ## Rendering
@@ -41,7 +41,12 @@ All three are 1080×1350 (Instagram 4:5). From this directory:
 
 ## Claims on the cards
 
-Every figure is either counted or supplied by the owner. `125` is the count of
-`suede-*` skills in the pack. `50k+` invocations and `40+` SEO firms are
-Jason's figures. Update the HTML when any of them moves — two cards carry the
-numbers and both need the edit.
+The skill count is the pack's `totalSkillCount`, the number of `SKILL.md`
+packages under `skills/`. Do **not** count `~/.claude/skills/suede-*` — that
+lists installed skills from every source and is a much larger, wrong number.
+All three count occurrences are registered in `countChecks` in
+`scripts/validate-skill-pack.mjs`, so adding or removing a skill fails
+validation; re-render both PNGs when it does.
+
+`50k+` invocations and `40+` SEO firms are owner-supplied and are not
+validated.
