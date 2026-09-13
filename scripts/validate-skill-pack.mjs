@@ -1153,6 +1153,16 @@ const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
 // "twenty-fourth" -> 24. The corpus-to-description ratio is written as an
 // ordinal, which wordNumber() cannot read.
 
+// Social cards are public count surfaces too. They are HTML sources that get
+// rendered to PNG, so a stale number here ships as an image nobody re-reads.
+// The PNG cannot be regex-checked; re-render it when one of these fails:
+//   docs/assets/social/README.md documents the headless-Chrome command.
+countChecks.push(
+  { file: "docs/assets/social/card-125.html", label: "social card hero skill count", re: /<div class="bignum">(\d+)<\/div>/, expected: totalSkillCount },
+  { file: "docs/assets/social/card-125.html", label: "social card remainder count", re: /\+ (\d+) more, one command each/, expected: totalSkillCount - 3 },
+  { file: "docs/assets/social/card.html", label: "social card stat skill count", re: /<div class="n">(\d+)<\/div>/, expected: totalSkillCount },
+);
+
 countChecks.push(
   { file: "book/01-the-competence-gap.md", label: "SKILL.md folder count", re: /SKILL\.md`, (\d+) of them, under documented open-source licenses/, expected: totalSkillCount },
   { file: "book/01-the-competence-gap.md", label: "progressive-disclosure heading", re: /why (\d+) skills fit/, expected: totalSkillCount },
