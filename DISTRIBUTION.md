@@ -49,6 +49,28 @@ Reach is inferred from stars or self-reported traffic. "Owner action" means an a
 
 Not verified either way because the site blocked automated reads: mcp.so, LobeHub (market.lobehub.com), mcp-get.com, There's An AI For That, Toolify, cursor.directory (rate limited).
 
+## Hermes Agent (Nous Research)
+
+Checked 2026-09-16 against `NousResearch/hermes-agent` at `main` (`tools/skills_hub_github.py`,
+`website/docs/user-guide/features/skills.md`). The Hermes CLI is not installed on this machine, so
+every line below is read from the Hermes source and docs, not from a completed install.
+
+| Route | Status | What it takes |
+| --- | --- | --- |
+| GitHub tap (`hermes skills tap add JasonColapietro/suede-creator-skills`) | Works with no Hermes-side change | The tap contract is `skills/<name>/SKILL.md` under the default path `skills/`, which is the layout this pack already had. `tests/test_hermes_tap.mjs` pins the parts Hermes fails quietly on: `.`/`_` directory names, unparsable frontmatter, a frontmatter name that disagrees with its directory, symlinks, dotfiles. |
+| Single-skill install (`hermes skills install JasonColapietro/suede-creator-skills/skills/<name>`) | Works, no tap needed | Same contract. `_collect_tree_files` pulls the whole skill directory from the pinned tree, so `references/`, `agents/`, and `evals/` come with it. |
+| Category pills in the Skills Hub | Shipped 2026-09-16 | `_get_skillsh_groupings` fetches `skills.sh.json` from the repo root of any tap and flattens `groupings` to one title per skill. Generated from `mcp/catalog.json` by `scripts/build-skills-sh-json.mjs`; the same file gives the skills.sh repo page real sections. |
+| skills.sh source (`--source skills-sh`) | Already reachable | Hermes searches the skills.sh directory, where the pack is listed. Nothing to file. |
+| Well-known endpoint (`well-known:https://skills.suedeai.ai/...`) | Not served | `https://skills.suedeai.ai/.well-known/skills/index.json` returned 404 on 2026-09-16. Serving it means mirroring every `SKILL.md` in the pack into `docs/` (about 1.1 MB) so the static site can answer `/.well-known/skills/<name>/SKILL.md`. Three Hermes routes already work without it; open question, not a gap. |
+| Default taps | Not listed | `GitHubSource.DEFAULT_TAPS` ships openai, anthropics, huggingface, NVIDIA, gstack and the science repos. Adding one is a PR to Hermes core. Owner action. |
+| Trust level | `community` | Every tap starts at `community`: security-scanned, with the third-party panel on first install. `trusted` requires the repo in `TRUSTED_REPOS` in `tools/skills_guard.py`, also a Hermes core PR. Owner action. |
+| Community directories | Not listed | `0xNyk/awesome-hermes-agent` and `ZeroPointRepo/awesome-hermes-skills` both index Hermes skills and plugins. PRs to third-party repos. Owner action. |
+
+Not done and deliberately so: a `.hermes-plugin/` Python plugin. That format exists for plugins that
+register tools or lifecycle hooks, and its bundled skills are read-only, excluded from the system
+prompt's skill index, and loadable only by explicit `skill_view`. A tap install lands in
+`~/.hermes/skills/` and becomes a `/skill-name` command, which is what this pack wants.
+
 ## npm
 
 No package exists for the skills MCP. These names returned 404 from the npm registry API on the audit date: `suede-skills-mcp`, `suede-creator-skills`, `suede-mcp`, `@suede/skills-mcp`. The `@suedeai` scope is in use by the sibling media product (`@suedeai/mcp-server`, `@suedeai/plugin-suede`), which is a different codebase; do not conflate the two in any listing.
@@ -70,3 +92,5 @@ For the pack's own name, the GitHub repository outranks the site in general web 
 Agent-side, no external mutation: keep the count stamps on the site current; keep this file current when a listing changes.
 
 Owner-side, in order of reach per minute of effort: a Show HN, the three awesome-list PRs (two stale descriptions, one new entry on hesreallyhim), then an npm publish of the MCP followed by `mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
+
+Owner-side on Hermes, once the tap has been installed at least once and the pills render: PRs to `0xNyk/awesome-hermes-agent` and `ZeroPointRepo/awesome-hermes-skills`, then a Hermes core PR proposing the repo for `DEFAULT_TAPS`. The install routes above need none of them.

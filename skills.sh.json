@@ -1,0 +1,172 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Orchestration & routing",
+      "description": "Ship: Get the change built, reviewed, and merged.",
+      "skills": [
+        "suede-agent-teams",
+        "suede-graph-flo-xr",
+        "suede-ops-architecture",
+        "suede-ops-assessment",
+        "suede-recommend-next-action",
+        "suede-ship-copy",
+        "suede-workflow-skills"
+      ]
+    },
+    {
+      "title": "Code review & CI",
+      "description": "Ship: Get the change built, reviewed, and merged.",
+      "skills": [
+        "suede-ai-eval",
+        "suede-ci-gate",
+        "suede-code",
+        "suede-code-grader",
+        "suede-code-review",
+        "suede-mcp-qa",
+        "suede-parity-contract"
+      ]
+    },
+    {
+      "title": "Apps: iOS & Android",
+      "description": "Ship: Get the change built, reviewed, and merged.",
+      "skills": [
+        "android-app-factory",
+        "site-to-ios-app",
+        "suede-play-release"
+      ]
+    },
+    {
+      "title": "Design & copy",
+      "description": "Craft: Make the thing look and read like someone built it on purpose.",
+      "skills": [
+        "johnny-suede-design",
+        "johnny-suede-write",
+        "suede-copy",
+        "suede-design",
+        "suede-deslop"
+      ]
+    },
+    {
+      "title": "Creative assets",
+      "description": "Craft: Make the thing look and read like someone built it on purpose.",
+      "skills": [
+        "suede-ad-creative",
+        "suede-clip-to-guide",
+        "suede-image",
+        "suede-video"
+      ]
+    },
+    {
+      "title": "Search & AI visibility",
+      "description": "Get found: Be discoverable by search, by AI answers, and by an audience.",
+      "skills": [
+        "suede-ai-seo",
+        "suede-aso",
+        "suede-directory-submissions",
+        "suede-programmatic-seo",
+        "suede-seo-audit",
+        "suede-visibility-grader"
+      ]
+    },
+    {
+      "title": "Content & audience",
+      "description": "Get found: Be discoverable by search, by AI answers, and by an audience.",
+      "skills": [
+        "suede-co-marketing",
+        "suede-community-marketing",
+        "suede-content-strategy",
+        "suede-instagram-growth",
+        "suede-newsroom",
+        "suede-public-relations",
+        "suede-social"
+      ]
+    },
+    {
+      "title": "Paid & outbound",
+      "description": "Demand channels: Reach people who have not heard of you yet.",
+      "skills": [
+        "suede-ads",
+        "suede-cold-email",
+        "suede-prospecting"
+      ]
+    },
+    {
+      "title": "Lifecycle messaging",
+      "description": "Demand channels: Reach people who have not heard of you yet.",
+      "skills": [
+        "suede-emails",
+        "suede-sms"
+      ]
+    },
+    {
+      "title": "Acquisition assets",
+      "description": "Demand channels: Reach people who have not heard of you yet.",
+      "skills": [
+        "suede-free-tools",
+        "suede-lead-magnets",
+        "suede-referrals"
+      ]
+    },
+    {
+      "title": "Money & funnel",
+      "description": "Revenue & retention: Convert the attention, then keep what it earned.",
+      "skills": [
+        "suede-churn-prevention",
+        "suede-launch-packaging",
+        "suede-offers",
+        "suede-onboarding",
+        "suede-paywalls",
+        "suede-pricing",
+        "suede-signup",
+        "suede-site-alchemy"
+      ]
+    },
+    {
+      "title": "Measure & operate",
+      "description": "Revenue & retention: Convert the attention, then keep what it earned.",
+      "skills": [
+        "suede-ab-testing",
+        "suede-analytics",
+        "suede-attribution",
+        "suede-revops",
+        "suede-sales-enablement"
+      ]
+    },
+    {
+      "title": "Consumer recovery",
+      "description": "Revenue & retention: Convert the attention, then keep what it earned.",
+      "skills": [
+        "amazon-returns-recovery",
+        "subscription-recovery"
+      ]
+    },
+    {
+      "title": "Strategy & research",
+      "description": "Strategy & rights: Know the market you are in and own what you make.",
+      "skills": [
+        "suede-competitor-profiling",
+        "suede-competitors",
+        "suede-customer-research",
+        "suede-marketing-council",
+        "suede-marketing-ideas",
+        "suede-marketing-loops",
+        "suede-marketing-plan",
+        "suede-marketing-psychology",
+        "suede-product-marketing"
+      ]
+    },
+    {
+      "title": "Creator toolkit",
+      "description": "Strategy & rights: Know the market you are in and own what you make.",
+      "skills": [
+        "suede-campaign-in-a-box",
+        "suede-release-linter",
+        "suede-rights-audit",
+        "suede-rights-passport",
+        "suede-sync-packaging"
+      ]
+    }
+  ]
+}

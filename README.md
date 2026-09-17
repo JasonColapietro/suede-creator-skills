@@ -53,6 +53,16 @@ codex plugin add suede-skills@suede-codex
 
 The Codex plugin loads every skill and registers three read-only MCP discovery profiles. Restart Codex after installing or updating.
 
+**Hermes Agent** ([Nous Research](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)) — this repo is a skills tap. Subscribe to browse and search the whole pack, or install one skill without subscribing:
+
+```bash
+hermes skills tap add JasonColapietro/suede-creator-skills
+hermes skills search seo
+hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audit
+```
+
+Hermes installs the whole skill folder — `references/`, `agents/`, `evals/` — into `~/.hermes/skills/`, security-scans it first, and shows it as `/suede-seo-audit` in chat. It carries the skills only: the MCP discovery profiles and the bundled Suede Thought Graph workflow are Claude Code and Codex surfaces.
+
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
