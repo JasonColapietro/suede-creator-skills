@@ -8,6 +8,8 @@ Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-
 
 Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
+Install on Hermes Agent (Nous Research): the repository is a skills tap. `hermes skills tap add JasonColapietro/suede-creator-skills` subscribes to all of it; `hermes skills install JasonColapietro/suede-creator-skills/skills/<name>` takes one skill without subscribing. Hermes downloads the whole skill folder, scans it, and exposes it as a `/skill-name` command. The MCP profiles and the executable Suede Thought Graph workflow do not travel to Hermes; the skill contracts do.
+
 Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on Claude Code for macOS and nowhere else. It needs six registered `suede-graph-flo-xr-*` agent profiles, which the full Claude Code plugin, the `suede-agent-workflows` subset, and `install.sh` register for you. Codex, generic skills-CLI, and single-folder installs load the orchestration contract but do not execute the bundled Claude Workflow unless those six profiles are installed separately in Claude Code.
 
 ## Start here

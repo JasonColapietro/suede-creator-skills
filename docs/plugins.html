@@ -627,6 +627,28 @@ codex plugin add suede-skills@suede-codex</code></pre>
     </div>
   </section>
 
+  <section class="shell" id="hermes">
+    <h2>Hermes Agent: one tap, then take what you need</h2>
+    <p class="section-sub">This repo is a Hermes skills tap: a GitHub repo laid out as <code>skills/&lt;name&gt;/SKILL.md</code>, which is what it already was. Subscribe to browse and search the pack inside Hermes, or install a single skill without subscribing at all.</p>
+
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true">
+        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        <span class="terminal-title">hermes skills</span>
+      </div>
+      <div class="terminal-body">
+        <pre><code>hermes skills tap add JasonColapietro/suede-creator-skills
+hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audit</code></pre>
+        <button class="copy-btn" data-copy="hermes skills tap add JasonColapietro/suede-creator-skills&#10;hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audit">Copy</button>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Hermes downloads the whole skill folder, not just the contract: <code>references/</code>, <code>agents/</code>, and <code>evals/</code> come with it. Every install runs through Hermes' own security scan first, and the skill lands in <code>~/.hermes/skills/</code> as a <code>/skill-name</code> command. The repo ships a <code>skills.sh.json</code> grouping sidecar, so the hub files each skill under its lane — Code review &amp; CI, Search &amp; AI visibility, Money &amp; funnel — instead of guessing from tags.</p>
+      <p>What does not travel: the three MCP discovery profiles and the executable Suede Thought Graph workflow, which are Claude Code and Codex surfaces. The orchestration contracts install and read normally.</p>
+    </div>
+  </section>
+
   <section class="shell" id="mcp">
     <h2>The Suede Skills MCP: zero dependencies</h2>
     <p class="section-sub">A dependency-free stdio MCP server ships in the repo at <a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid rgba(200,169,110,0.3);">mcp/</a>. Open it and read it before you point an agent at it, then run the one line below.</p>
