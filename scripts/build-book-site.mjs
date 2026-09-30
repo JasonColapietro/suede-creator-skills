@@ -24,6 +24,7 @@ import {
   renderMarkdown,
   repoRoot,
 } from "./lib/book.mjs";
+import { SEO_KEYWORDS } from "./lib/seo-keywords.mjs";
 
 const outDir = path.join(repoRoot, "docs", "book");
 
@@ -75,7 +76,17 @@ const checkOnly = process.argv.includes("--check");
 // broke if that one post was ever restyled.
 const STYLESHEETS = ["assets/site.css", "assets/prose.css", "assets/book.css"];
 
-function shell({ title, description, canonical, jsonLd, body, depth }) {
+// Every book page must have an entry in scripts/lib/seo-keywords.mjs; a
+// chapter added without one fails the build instead of shipping untagged.
+function bookKeywords(file) {
+  const list = SEO_KEYWORDS[`book/${file}`];
+  if (!list || list.length === 0) {
+    throw new Error(`scripts/lib/seo-keywords.mjs has no keywords for book/${file}`);
+  }
+  return list;
+}
+
+function shell({ title, description, keywords, canonical, jsonLd, body, depth }) {
   const up = depth === 0 ? "../" : "../";
   return `<!doctype html>
 <html lang="en">
@@ -84,6 +95,7 @@ function shell({ title, description, canonical, jsonLd, body, depth }) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${title}</title>
     <meta name="description" content="${description}">
+    <meta name="keywords" content="${keywords.join(", ")}">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="${canonical}">
@@ -235,9 +247,11 @@ sources.forEach((page, index) => {
         ${pager.join("\n        ")}
       </nav>`;
 
+  const keywords = bookKeywords(`${page.slug}.html`);
   const html = shell({
     title: `${page.label}. ${page.title} | S-Tier, the builder's book`,
     description: page.dek,
+    keywords,
     canonical,
     jsonLd: {
       "@context": "https://schema.org",
@@ -246,6 +260,7 @@ sources.forEach((page, index) => {
       name: `${page.label}. ${page.title}`,
       headline: page.title,
       description: page.dek,
+      keywords: keywords.join(", "),
       url: canonical,
       position: index + 1,
       wordCount: page.words,
@@ -354,6 +369,7 @@ written.set(
   shell({
     title: "S-Tier: The Builder's Book Behind the Suede Skills",
     description: indexDek,
+    keywords: bookKeywords("index.html"),
     canonical: `${BASE}/book/`,
     jsonLd: {
       "@context": "https://schema.org",
@@ -361,6 +377,7 @@ written.set(
       "@id": `${BASE}/book/#book`,
       name: "S-Tier: The Builder's Book Behind the Suede Skills",
       description: indexDek,
+      keywords: bookKeywords("index.html").join(", "),
       url: `${BASE}/book/`,
       inLanguage: "en",
       bookFormat: "https://schema.org/EBook",
