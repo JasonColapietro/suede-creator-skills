@@ -7,13 +7,13 @@ Release record for the `suede-design` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede Labs AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA.
+Suede AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

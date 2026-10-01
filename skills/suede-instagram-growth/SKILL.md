@@ -322,7 +322,7 @@ Change one meaningful variable per test whenever practical.
 
 ## Suede-Owned Account Mode
 
-When the target account belongs to Suede Labs AI, Jason Colapietro, or a named
+When the target account belongs to Suede AI, Jason Colapietro, or a named
 Suede product:
 
 - Anchor public positioning in creator ownership infrastructure,

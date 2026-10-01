@@ -7,13 +7,13 @@ Release record for the `suede-ci-gate` skill, following the NVIDIA skill-card te
 
 ## Description
 
-Suede Labs AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings.
+Suede AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

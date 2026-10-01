@@ -46,7 +46,7 @@ future is exciting.
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
   and a Codex-native plugin.
 - The MCP server at `mcp/` exposes 9 tools, 7 resources, 5 prompts.
-- Author: Jason Colapietro, founder of Suede Labs AI. Solo founder. The pack came
+- Author: Jason Colapietro, founder of Suede AI. Solo founder. The pack came
   out of watching hired marketing firms skip fundamentals on his own products.
 - House line of `suede-full-send`: "Never end your allocation above zero." It is
   a dry joke about already-authorized compute, not a literal token counter.

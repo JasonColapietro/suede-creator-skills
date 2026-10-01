@@ -6,7 +6,7 @@ Suede Creator Skills gives founders, marketers, and small teams reusable workflo
 
 ## Founder
 
-Built by Jason Colapietro (Suede Labs AI), a solo founder who spent years
+Built by Jason Colapietro (Suede AI), a solo founder who spent years
 watching hired marketing firms skip basic fundamentals on his own products.
 This pack turns those misses into reusable, inspectable agent workflows
 instead of one-off fixes. The public site and repo carry his name and

@@ -7,13 +7,13 @@ Release record for the `suede-code-review` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede Labs AI findings-only code review with full context: changed files, callers, contracts, and deploy surface.
+Suede AI findings-only code review with full context: changed files, callers, contracts, and deploy surface.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 
