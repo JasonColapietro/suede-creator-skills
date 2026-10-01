@@ -7,13 +7,13 @@ Release record for the `suede-ai-eval` skill, following the NVIDIA skill-card te
 
 ## Description
 
-Suede Labs AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates.
+Suede AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

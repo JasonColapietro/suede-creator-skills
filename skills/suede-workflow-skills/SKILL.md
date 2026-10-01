@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Suede Labs AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr)."
+description: "Suede AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr)."
 ---
 
 # Suede Workflow Skills

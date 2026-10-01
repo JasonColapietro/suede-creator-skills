@@ -2,7 +2,7 @@
 
 ### The Builder's Book Behind the Suede Skills
 
-By Jason Colapietro, Suede Labs AI
+By Jason Colapietro, Suede AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
 a 76-skill open-source pack for Claude Code and OpenAI Codex.
@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 76 skills fit
 
 Here is the objection that arrives immediately. The 76 `SKILL.md` files in this
-repo total 1,107,041 bytes. Loading all of them into every conversation would
+repo total 1,106,991 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 76 descriptions together come to 46,847 bytes. That is roughly a
+all 76 descriptions together come to 46,802 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -329,7 +329,7 @@ Every `SKILL.md` in this repo opens the same way:
 ```yaml
 ---
 name: suede-code-grader
-description: "Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
+description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 ```
 
@@ -349,15 +349,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 76 files total 1,107,041 bytes;
-the 76 descriptions together are 46,847. The agent holds the small number and
+when the skill is not running. In this repo the 76 files total 1,106,991 bytes;
+the 76 descriptions together are 46,802. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 686 characters. "Suede Labs AI blunt
+Look at what `suede-code-grader` does with 681 characters. "Suede AI blunt
 A-F ship grade for a code change" states the artifact. The lane list names the
 surfaces it covers. The trigger list catches the request in the words a caller
 actually types: "give it a letter", "is this an A", "should this merge". Then

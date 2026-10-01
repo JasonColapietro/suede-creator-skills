@@ -143,4 +143,4 @@ measured results into rules.
 ---
 
 Except for the third-party adaptations listed above, everything else in this
-repository is © 2026 Suede Labs AI, MIT licensed — see [`LICENSE`](LICENSE).
+repository is © 2026 Suede AI, MIT licensed — see [`LICENSE`](LICENSE).

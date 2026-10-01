@@ -1,6 +1,6 @@
 ---
 name: suede-code-grader
-description: "Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
+description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 
 # Suede Code Grader

@@ -7,13 +7,13 @@ Release record for the `suede-code-grader` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede Labs AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces.
+Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

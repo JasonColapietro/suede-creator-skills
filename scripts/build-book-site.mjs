@@ -162,7 +162,7 @@ ${body}
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
-            <span>Built by <strong>Jason Colapietro</strong> / Suede Labs AI</span>
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">
             <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
@@ -269,7 +269,7 @@ sources.forEach((page, index) => {
       inLanguage: "en",
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", name: "Suede Labs AI", url: "https://suedeai.ai" },
+      publisher: { "@type": "Organization", name: "Suede AI", url: "https://suedeai.ai" },
       mainEntityOfPage: canonical,
     },
     body,
@@ -386,7 +386,7 @@ written.set(
       numberOfPages: sources.length,
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", name: "Suede Labs AI", url: "https://suedeai.ai" },
+      publisher: { "@type": "Organization", name: "Suede AI", url: "https://suedeai.ai" },
       hasPart: sources.map((p, i) => ({
         "@type": "Chapter",
         "@id": `${BASE}/book/${p.slug}.html#chapter`,

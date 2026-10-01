@@ -7,13 +7,13 @@ Release record for the `suede-code` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Suede Labs AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs.
+Suede AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

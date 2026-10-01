@@ -2,7 +2,7 @@
 
 ### The Builder's Book Behind the Suede Skills
 
-By Jason Colapietro, Suede Labs AI
+By Jason Colapietro, Suede AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
 a 76-skill open-source pack for Claude Code and OpenAI Codex.

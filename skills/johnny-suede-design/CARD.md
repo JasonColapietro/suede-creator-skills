@@ -7,13 +7,13 @@ Release record for the `johnny-suede-design` skill, following the NVIDIA skill-c
 
 ## Description
 
-Suede Labs AI full-stack surface builder that runs design, copy, and visual QA as one pass: landing pages, brand surfaces, product UI, dashboards, campaigns, launch pages, and reference-to-target restyles (suedify).
+Suede AI full-stack surface builder that runs design, copy, and visual QA as one pass: landing pages, brand surfaces, product UI, dashboards, campaigns, launch pages, and reference-to-target restyles (suedify).
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

@@ -7,13 +7,13 @@ Release record for the `suede-mcp-qa` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede Labs AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface.
+Suede AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.0; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
-Jason Colapietro, Suede Labs AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
+Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security contact: `info@suedeai.ai` per [SECURITY.md](../../SECURITY.md).
 
 ## License / Terms of Use
 

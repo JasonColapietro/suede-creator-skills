@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Suede Labs AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs. Use when asked to review this, grade this, security-check this, is this safe to ship, or check this PR before merge — whenever the caller wants both what is wrong and whether it ships. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: findings only with accessibility and SEO lanes (use suede-code-review); the letter grade alone (use suede-code-grader); making CI enforce the verdict on merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval)."
+description: "Suede AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs. Use when asked to review this, grade this, security-check this, is this safe to ship, or check this PR before merge — whenever the caller wants both what is wrong and whether it ships. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: findings only with accessibility and SEO lanes (use suede-code-review); the letter grade alone (use suede-code-grader); making CI enforce the verdict on merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval)."
 ---
 
 # Suede Code
