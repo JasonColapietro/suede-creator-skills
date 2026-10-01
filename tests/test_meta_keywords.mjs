@@ -62,10 +62,16 @@ test("every map entry points at an indexable page", () => {
   assert.deepEqual(orphans, [], `map entries with no indexable page: ${orphans.join(", ")}`);
 });
 
-test("keyword lists follow the rules: 4-10 unique, non-empty terms", () => {
+// Brand terms: the pack, the company, and the book's own title.
+const isBrand = (term) => /suede/i.test(term) || /s-tier builder's book/i.test(term);
+
+test("keyword lists follow the rules: 3-10 unique, non-empty terms, at most one brand term", () => {
   const failures = [];
   for (const [rel, list] of Object.entries(SEO_KEYWORDS)) {
-    if (list.length < 4 || list.length > 10) failures.push(`${rel}: ${list.length} terms (want 4-10)`);
+    if (list.length < 3 || list.length > 10) failures.push(`${rel}: ${list.length} terms (want 3-10)`);
+    const brands = list.filter(isBrand);
+    if (brands.length > 1) failures.push(`${rel}: ${brands.length} brand terms (${brands.join(" / ")}), want at most one`);
+    if (isBrand(list[0])) failures.push(`${rel}: leads with a brand term "${list[0]}"`);
     const seen = new Set();
     for (const term of list) {
       if (!term.trim() || term !== term.trim()) failures.push(`${rel}: blank or padded term "${term}"`);
@@ -75,6 +81,52 @@ test("keyword lists follow the rules: 4-10 unique, non-empty terms", () => {
       seen.add(key);
       if (/suede labs ai/i.test(term)) failures.push(`${rel}: use "Suede AI", not "${term}"`);
     }
+  }
+  assert.deepEqual(failures, [], `\n${failures.join("\n")}`);
+});
+
+// One owner page per head term. Anything not listed may repeat, but no page's
+// lead term may be another page's lead term.
+const HEAD_TERM_OWNERS = {
+  "claude code skills": "index.html", // 12,100/mo
+  "claude code skills guide": "guide.html",
+  "codex skills": "index.html",
+  "agent skills marketplace": "index.html",
+};
+// Owned by another Suede property, so no page here carries them.
+const OWNED_ELSEWHERE = ["generative engine optimization"];
+
+test("each head term appears only on its owner page", () => {
+  const failures = [];
+  for (const [rel, list] of Object.entries(SEO_KEYWORDS)) {
+    for (const term of list) {
+      const key = term.toLowerCase();
+      const owner = HEAD_TERM_OWNERS[key];
+      if (owner && owner !== rel) failures.push(`${rel}: carries "${term}", owned by ${owner}`);
+      if (OWNED_ELSEWHERE.includes(key)) failures.push(`${rel}: carries "${term}", owned by another Suede site`);
+    }
+  }
+  const leads = new Map();
+  for (const [rel, list] of Object.entries(SEO_KEYWORDS)) {
+    const lead = list[0].toLowerCase();
+    if (leads.has(lead)) failures.push(`${rel}: lead term "${list[0]}" is also the lead of ${leads.get(lead)}`);
+    leads.set(lead, rel);
+  }
+  assert.deepEqual(failures, [], `\n${failures.join("\n")}`);
+});
+
+test("skill pages lead with a term that is in both the <title> and the <h1>", () => {
+  const failures = [];
+  const text = (s) => decode(s.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").toLowerCase();
+  for (const { rel, html } of pages) {
+    if (!rel.startsWith("skills/") || rel === "skills/index.html") continue;
+    const lead = SEO_KEYWORDS[rel]?.[0]?.toLowerCase();
+    if (!lead) continue;
+    const title = text((html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "");
+    const h1 = text((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || "");
+    if (!title.includes(lead)) failures.push(`${rel}: lead term "${lead}" is not in the <title>`);
+    if (!h1.includes(lead)) failures.push(`${rel}: lead term "${lead}" is not in the <h1>`);
+    if (title.length > 66) failures.push(`${rel}: <title> is ${title.length} chars`);
   }
   assert.deepEqual(failures, [], `\n${failures.join("\n")}`);
 });

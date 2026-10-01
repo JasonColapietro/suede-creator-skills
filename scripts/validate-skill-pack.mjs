@@ -1068,7 +1068,8 @@ const countChecks = [
 // there and the three tags are pinned as one exact string instead. They must
 // stay byte-identical to each other, which is how the two social copies drifted
 // from the <title> before.
-const HOMEPAGE_TITLE = "Suede Creator Skills: Agent Skills for Claude Code and Codex";
+// Stored HTML-escaped, exactly as the three tags carry it.
+const HOMEPAGE_TITLE = "Claude Code Skills &amp; Codex Skills: Suede Creator Skills";
 const homepageTitlePath = path.join(repoRoot, "docs", "index.html");
 if (!fs.existsSync(homepageTitlePath)) {
   fail.push("docs/index.html is missing — the homepage title guard cannot run");
