@@ -112,7 +112,7 @@ class NeutralOssPositioningTests(unittest.TestCase):
         self.assertIn(f"skills-{count}-c8a96e", readme)
         self.assertIn(f"![Skills: {count}]", readme)
         self.assertIn(
-            "<title>Suede Creator Skills: Agent Skills for Claude Code and Codex</title>",
+            "<title>Claude Code Skills &amp; Codex Skills: Suede Creator Skills</title>",
             read("docs/index.html"),
         )
         stale_counts = [f"{n} skills" for n in range(20, 40) if n != count]

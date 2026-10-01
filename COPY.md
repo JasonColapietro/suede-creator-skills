@@ -45,7 +45,7 @@ Suede Creator Skills gives founders, marketers, and small teams reusable workflo
 
 ### Page title
 
-Suede Creator Skills: Agent Skills for Claude Code and Codex
+Claude Code Skills & Codex Skills: Suede Creator Skills
 
 ### Meta description
 

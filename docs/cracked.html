@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cracked Devs Only | The Agentic Adderall Stack</title>
   <meta name="description" content="The Agentic Adderall Stack: four Suede skills for the runs that have to finish. One controller, the lanes hot at once, and adversarial review inside the run.">
-  <meta name="keywords" content="agentic coding stack, multi-agent orchestration, claude code skills, adversarial code review, codex skills, Suede Creator Skills, Suede AI">
+  <meta name="keywords" content="agentic coding stack, multi-agent orchestration, adversarial code review, Suede Creator Skills">
   <meta name="author" content="Jason Colapietro">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://skills.suedeai.ai/cracked.html">
@@ -460,7 +460,10 @@
     }
     @keyframes crt-flicker { 0%, 93%, 100% { opacity: 1 } 94% { opacity: 0.84 } 95% { opacity: 1 } 97% { opacity: 0.91 } 98% { opacity: 1 } }
     .page-head h1 { position: relative; animation: crt-flicker 7s steps(1) infinite; }
-    .glitch-ghost {
+    /* The glitch ghost is a pseudo-element, not a second text node, so the
+       heading reads once to crawlers and to "copy text". */
+    .page-head h1[data-ghost]::after {
+      content: attr(data-ghost);
       position: absolute; inset: 0; z-index: -1; color: var(--red-text);
       opacity: 0; pointer-events: none; user-select: none;
       animation: glitch-slice 7s steps(1) infinite;
@@ -510,9 +513,9 @@
       50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .page-head h1, .glitch-ghost, .procmon-track, .terminal-body pre::after,
+      .page-head h1, .page-head h1[data-ghost]::after, .procmon-track, .terminal-body pre::after,
       .page-head .eyebrow::before, .nav-cracked { animation: none !important; }
-      .glitch-ghost { opacity: 0 !important; }
+      .page-head h1[data-ghost]::after { opacity: 0 !important; }
     }
   </style>
   <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -570,7 +573,7 @@
 <main id="main" tabindex="-1">
   <div class="shell page-head">
     <p class="eyebrow">Cracked devs only &middot; the unmarked door</p>
-    <h1>The Agentic Adderall Stack.<span class="glitch-ghost" aria-hidden="true">The Agentic Adderall Stack.</span></h1>
+    <h1 data-ghost="The Agentic Adderall Stack.">The Agentic Adderall Stack.</h1>
     <p class="lead">Four skills that dose your agent until it ships like it's late for something. One controller fans out every non-colliding lane. The deep search stops at 200 agent calls, and the review turns adversarial inside the run. This is the corner of the pack we reach for when the deadline is real.</p>
 
     <div class="rx" role="img" aria-label="Prescription-style label for the Agentic Adderall Stack">

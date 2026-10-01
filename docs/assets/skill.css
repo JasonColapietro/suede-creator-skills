@@ -240,3 +240,13 @@ html { scrollbar-color: #2e2c28 #0a0a0a; }
   .install-copy { width: 100%; }
   .install-code { font-size: 13px; }
 }
+
+/* Task kicker inside the h1: names the job the skill does (the page's primary
+ * search term) above the editorial headline, so the term is part of the h1. */
+.h1-task {
+  display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px; font-weight: 600; line-height: 1.4;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
