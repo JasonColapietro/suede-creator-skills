@@ -6,9 +6,6 @@ Forty skills in this pack cover paid acquisition, outbound, monetization, lifecy
 marketing operations. They are **adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
 by Corey Haines**, used and redistributed under the MIT License.
 
-The upstream project is the origin of this material. If these skills are useful to you, the
-credit belongs there — go look at the original.
-
 **Upstream:** https://github.com/coreyhaines31/marketingskills
 **Upstream license:** MIT, Copyright (c) 2025 Corey Haines — full text in
 [`licenses/marketingskills-MIT.txt`](licenses/marketingskills-MIT.txt)
