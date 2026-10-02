@@ -227,17 +227,11 @@ retention, and the measurement and operations layer — `suede-ads`, `suede-ad-c
 `suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`,
 `suede-ai-seo`, `suede-attribution`.
 
-Adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines
-under the MIT License — see [NOTICE.md](NOTICE.md).
-
-One more sits alongside them, adapted from a public write-up rather than the set above:
+The content-production lane adds one more workflow:
 
 | Skill | What it does |
 |---|---|
 | [`suede-newsroom`](skills/suede-newsroom) | Runs one idea through a six-role content pipeline — written role contracts, an inspectable campaign record, seven distribution entryways so no two assets argue the same thing, and a keep/test/stop review |
-
-Adapted from a write-up by J.B. ([@VibeMarketer_](https://x.com/VibeMarketer_)) —
-see [NOTICE.md](NOTICE.md).
 
 ## From the blog
 
@@ -305,11 +299,3 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 The original work is released under the [MIT License](LICENSE). Adapted components retain their upstream licenses, listed in [NOTICE.md](NOTICE.md).
 
 Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
-
-### Third-party credit
-
-Forty of the marketing and growth skills are adapted from
-**[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey Haines**, used under
-the MIT License. That project is the origin of the material — if these skills are useful, the credit
-belongs there. Full notice and licence: [NOTICE.md](NOTICE.md),
-[licenses/marketingskills-MIT.txt](licenses/marketingskills-MIT.txt).
