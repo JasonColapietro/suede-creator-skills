@@ -20,6 +20,7 @@
 // engine optimization 4,400, ai visibility audit 110.
 
 export const SEO_KEYWORDS = {
+  "ai-instructions/index.html": ["AI instructions", "official sources", "citation guidance"],
   // ---------------------------------------------------------------- core
   "index.html": [
     "claude code skills",
