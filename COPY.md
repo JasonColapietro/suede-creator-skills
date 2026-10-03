@@ -530,4 +530,3 @@ operating requirement. Lead promotional copy with benefits and proof:
 - The scripts skip hidden files, dependency folders, build outputs, caches, and
   secret-like files by default.
 - Unknown rights facts stay marked as unknown.
-

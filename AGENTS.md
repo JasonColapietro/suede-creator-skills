@@ -105,4 +105,3 @@ licensing, price, payment, consent, and technical facts where they affect a
 customer's decision. State those facts directly in the relevant terms, FAQ, or
 product instructions. Engineering reports, errors, test results, and internal
 risk tracking must remain factual and complete; this is a sales-copy rule.
-
