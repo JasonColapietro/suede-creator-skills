@@ -47,7 +47,7 @@ class PublicDiscoveryTests(unittest.TestCase):
     def test_marketing_subset_counts_match_manifest(self):
         manifest = json.loads((ROOT / '.claude-plugin/marketplace.json').read_text())
         count = len(next(p for p in manifest['plugins'] if p['name'] == 'suede-marketing')['skills'])
-        for name in ['README.md', 'docs/plugins.html', 'docs/llms.txt']:
+        for name in ['README.md', 'docs/index.html', 'docs/plugins.html', 'docs/llms.txt']:
             with self.subTest(surface=name):
                 claim = re.search(r'suede-marketing@suede`?\s*\((\d+)', visible_text(ROOT / name))
                 self.assertIsNotNone(claim)
