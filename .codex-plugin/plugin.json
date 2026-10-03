@@ -19,37 +19,15 @@
   ],
   "skills": "./skills/",
   "mcpServers": {
-    "suede_creator_mcp": {
-      "title": "Suede Creator Skills MCP",
-      "description": "Local read-only discovery for Suede creator skills, install options, SEO copy audits, and QA checklists.",
+    "suede_skills_mcp": {
+      "title": "Suede Skills MCP",
+      "description": "Local read-only MCP access to every Suede skill: discovery, install options, visibility and code grading, SEO copy audits, and QA checklists.",
       "cwd": ".",
       "command": "node",
       "args": [
         "./mcp/suede-skills-mcp.mjs",
         "--profile",
-        "creator"
-      ]
-    },
-    "suede_workflow_mcp": {
-      "title": "Suede Workflow Skills MCP",
-      "description": "Local read-only discovery for Suede workflow skills, audits, grading scaffolds, and QA checklists.",
-      "cwd": ".",
-      "command": "node",
-      "args": [
-        "./mcp/suede-skills-mcp.mjs",
-        "--profile",
-        "workflow"
-      ]
-    },
-    "suede_marketing_mcp": {
-      "title": "Suede Marketing Skills MCP",
-      "description": "Local read-only discovery for Suede marketing and growth skills, audits, grading scaffolds, and QA checklists.",
-      "cwd": ".",
-      "command": "node",
-      "args": [
-        "./mcp/suede-skills-mcp.mjs",
-        "--profile",
-        "marketing"
+        "all"
       ]
     }
   },

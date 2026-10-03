@@ -38,7 +38,7 @@
       "displayName": "Suede Workflow Skills",
       "description": "Public open-source workflow umbrella: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
-      "mcpServer": "suede_workflow_mcp",
+      "mcpServer": "suede_skills_mcp",
       "skills": [
         "amazon-returns-recovery",
         "android-app-factory",
@@ -80,7 +80,7 @@
       "displayName": "Suede Creator Skills",
       "description": "Public artist and creator skills: a full artist campaign builder, neutral sync review packaging, release linting, rights packages, and a rights-readiness audit with provenance, licensing, and royalty-routing lanes.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-campaign-in-a-box skills/suede-sync-packaging skills/suede-release-linter skills/suede-rights-passport skills/suede-rights-audit",
-      "mcpServer": "suede_creator_mcp",
+      "mcpServer": "suede_skills_mcp",
       "skills": [
         "suede-campaign-in-a-box",
         "suede-sync-packaging",
@@ -137,7 +137,7 @@
         "suede-social",
         "suede-video"
       ],
-      "mcpServer": "suede_marketing_mcp",
+      "mcpServer": "suede_skills_mcp",
       "localPluginInstall": "/plugin install suede-marketing@suede"
     }
   ],

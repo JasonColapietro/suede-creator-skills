@@ -327,7 +327,7 @@ test("packaged validation rejects Codex plugin version and MCP portability drift
   const pluginPath = path.join(packagedRoot, ".codex-plugin", "plugin.json");
   const plugin = JSON.parse(fs.readFileSync(pluginPath, "utf8"));
   plugin.version = "9.9.9";
-  plugin.mcpServers.suede_creator_mcp.cwd = "${CLAUDE_PLUGIN_ROOT}";
+  plugin.mcpServers.suede_skills_mcp.cwd = "${CLAUDE_PLUGIN_ROOT}";
   fs.writeFileSync(pluginPath, `${JSON.stringify(plugin, null, 2)}\n`);
 
   const catalogPath = path.join(packagedRoot, "mcp", "catalog.json");
@@ -518,7 +518,7 @@ test(
     );
     assert.deepEqual(
       [...plugin.mcpServers].sort(),
-      ["suede_creator_mcp", "suede_marketing_mcp", "suede_workflow_mcp"]
+      ["suede_skills_mcp"]
     );
     const launchPackaging = plugin.skills.find(
       ({ name }) => name === "suede-skills:suede-launch-packaging"
