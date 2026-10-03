@@ -212,7 +212,7 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 76 skills fit
 
 Here is the objection that arrives immediately. The 76 `SKILL.md` files in this
-repo total 1,101,757 bytes. Loading all of them into every conversation would
+repo total 1,101,756 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
@@ -349,7 +349,7 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 76 files total 1,101,757 bytes;
+when the skill is not running. In this repo the 76 files total 1,101,756 bytes;
 the 76 descriptions together are 46,778. The agent holds the small number and
 reaches for the large one only when a description matches.
 

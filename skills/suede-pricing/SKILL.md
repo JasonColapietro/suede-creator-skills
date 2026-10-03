@@ -201,7 +201,7 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 ## Output: Pricing Decision Brief
 
 Every pricing or packaging engagement that is not a teardown returns this exact
-structure. Use these headings verbatim; leave a heading in with "not decided, 
+structure. Use these headings verbatim; leave a heading in with "not decided,
 [what's missing]" rather than dropping it.
 
 ```markdown
