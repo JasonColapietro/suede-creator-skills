@@ -43,7 +43,7 @@ These are **public, broadly reusable, open-source skill folders**. Read each `sk
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (42 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (43 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -52,7 +52,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads every skill and registers three read-only MCP discovery profiles. Restart Codex after installing or updating.
+The Codex plugin loads every skill and registers 1 read-only MCP server with 9 tools. Restart Codex after installing or updating.
 
 **Hermes Agent** ([Nous Research](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)) — this repo is a skills tap. Subscribe to browse and search the whole pack, or install one skill without subscribing:
 
@@ -62,7 +62,7 @@ hermes skills search seo
 hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audit
 ```
 
-Hermes installs the whole skill folder — `references/`, `agents/`, `evals/` — into `~/.hermes/skills/`, security-scans it first, and shows it as `/suede-seo-audit` in chat. It carries the skills only: the MCP discovery profiles and the bundled Suede Thought Graph workflow are Claude Code and Codex surfaces.
+Hermes installs the whole skill folder — `references/`, `agents/`, `evals/` — into `~/.hermes/skills/`, security-scans it first, and shows it as `/suede-seo-audit` in chat. It carries the skills only: the MCP discovery server and the bundled Suede Thought Graph workflow are Claude Code and Codex surfaces.
 
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 

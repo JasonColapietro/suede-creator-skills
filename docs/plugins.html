@@ -561,7 +561,7 @@
 
   <section class="shell" id="codex">
     <h2>Codex: two lines and a restart</h2>
-    <p class="section-sub">The Codex-native plugin installs every skill contract and registers three read-only MCP discovery profiles. They answer questions about the pack and write nothing. Add the repo marketplace, install the pack, restart Codex.</p>
+    <p class="section-sub">The Codex-native plugin installs every skill contract and registers 1 read-only MCP server with 9 tools. It answers questions about the pack and writes nothing. Add the repo marketplace, install the pack, restart Codex.</p>
 
     <div class="terminal">
       <div class="terminal-bar" aria-hidden="true">
@@ -646,7 +646,7 @@ hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audi
 
     <div class="prose">
       <p>Hermes downloads the whole skill folder, not just the contract: <code>references/</code>, <code>agents/</code>, and <code>evals/</code> come with it. Every install runs through Hermes' own security scan first, and the skill lands in <code>~/.hermes/skills/</code> as a <code>/skill-name</code> command. The repo ships a <code>skills.sh.json</code> grouping sidecar, so the hub files each skill under its lane — Code review &amp; CI, Search &amp; AI visibility, Money &amp; funnel — instead of guessing from tags.</p>
-      <p>What does not travel: the three MCP discovery profiles and the executable Suede Thought Graph workflow, which are Claude Code and Codex surfaces. The orchestration contracts install and read normally.</p>
+      <p>What does not travel: the MCP discovery server and the executable Suede Thought Graph workflow, which are Claude Code and Codex surfaces. The orchestration contracts install and read normally.</p>
     </div>
   </section>
 

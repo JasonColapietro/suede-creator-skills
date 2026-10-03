@@ -58,6 +58,7 @@ const FIXED_PAGES = [
   // Indexable, self-canonical, linked from the global nav as "Cracked Devs"
   // and from llms.txt, but was never in the sitemap.
   { file: "cracked.html", loc: "/cracked.html", priority: "0.7", changefreq: "weekly" },
+  { file: "ai-instructions/index.html", loc: "/ai-instructions/", priority: "0.5", changefreq: "monthly" },
 ];
 
 const FLAGSHIP_SKILLS = [
