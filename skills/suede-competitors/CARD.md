@@ -7,7 +7,7 @@ Release record for the `suede-competitors` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede-owned comparison-page discipline for honest alternative, versus, and competitor-comparison content that serves evaluators and search intent.
+Suede-owned comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.1; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -47,7 +47,7 @@ From "Boundaries":
 - Do not invent, cherry-pick, or present stale competitor claims, prices, features, testimonials, or rankings as current fact.
 - Do not publish, deploy, index, or update comparison pages without explicit authorization and a final claim review.
 - Do not use competitor trademarks in a way that implies affiliation or reuse protected creative assets without rights.
-- Do not decide that an option is universally best; state audience, criteria, tradeoffs, sources, and checked dates.
+- Do not claim universal superiority; tie each advantage to its audience, criteria, source, and checked date.
 
 ## References
 

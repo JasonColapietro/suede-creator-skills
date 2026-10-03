@@ -1,6 +1,6 @@
 ---
 name: suede-competitors
-description: "Suede-owned comparison-page discipline for honest alternative, versus, and competitor-comparison content that serves evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
+description: "Suede-owned comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
 metadata:
   version: 2.0.1
 ---
@@ -11,9 +11,9 @@ Use this Suede comparison-page playbook to serve competitive search intent while
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — your value proposition, ICP, pricing model, and honest weaknesses decide which comparisons are even defensible, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your value proposition, ICP, pricing model, differentiators, and proof decide which comparisons you can win on the evidence, and they are usually already written down there.
 
-Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer. Current competitor evidence — pricing, features, ratings — comes from `suede-competitor-profiling`, not from memory.
+Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer. Current competitor evidence, pricing, features, ratings, comes from `suede-competitor-profiling`, not from memory.
 
 ---
 
@@ -31,7 +31,7 @@ Then work the intake list under Task-Specific Questions below; ask only what the
 1. Why people look for alternatives (validate their pain)
 2. Summary: You as the alternative (quick positioning)
 3. Detailed comparison (features, service, pricing)
-4. Who should switch (and who shouldn't)
+4. Who switches, and what they gain
 5. Migration path
 6. Social proof from switchers
 7. CTA
@@ -74,10 +74,9 @@ Then work the intake list under Task-Specific Questions below; ask only what the
 2. At-a-glance comparison table
 3. Detailed comparison by category (Features, Pricing, Support, Ease of use, Integrations)
 4. Who [You] is best for
-5. Who [Competitor] is best for (be honest)
-6. What customers say (testimonials from switchers)
-7. Migration support
-8. CTA
+5. What customers say (testimonials from switchers)
+6. Migration support
+7. CTA
 
 ---
 
@@ -102,39 +101,39 @@ Then work the intake list under Task-Specific Questions below; ask only what the
 ## Cliches to Refuse
 
 A comparison page written on autopilot arrives with these already in it. Each one
-tells an evaluator the page is marketing, not research — refuse them by name:
+tells an evaluator the page is marketing, not research, refuse them by name:
 
 - **The strawman competitor.** A weakness stated as caricature ("clunky", "built for 2015") rather than a specific, sourced limitation a user would actually hit.
 - **A "Winner" row.** No verdict row, no trophy, no score-out-of-10 that resolves to you. The reader decides; the page supplies evidence.
-- **Fake balance.** "They're great for enterprise, we're great for everyone else" concedes nothing. A real concession names a case where the competitor is the better buy for a reader you want.
-- **A table where every row favors you.** If the dimensions were chosen honestly, some rows go the other way. If none do, the dimensions were chosen to win, not to inform.
+- **Vague superiority.** "Better in every way" or "the obvious choice" with nothing behind it. Every advantage names the specific capability, the reader it serves, and its source.
+- **A table built on dimensions nobody shops on.** Pick the rows the reader's decision actually turns on (price, the job to be done, integrations, migration effort) and fill every cell with a sourced fact, so the advantages you show are ones the reader cares about.
 
-For the two remaining defaults — the ✓/✗ feature table and a migration section with no real friction — use the concrete before/after in [references/templates.md](references/templates.md): "Comparison Table Best Practices" and "Migration Section".
+For the two remaining defaults, the ✓/✗ feature table and a migration section with no real friction, use the concrete before/after in [references/templates.md](references/templates.md): "Comparison Table Best Practices" and "Migration Section".
 
 ---
 
 ## Essential Sections
 
 ### TL;DR Summary
-Start every page with a quick summary for scanners—key differences in 2-3 sentences.
+Start every page with a quick summary for scanners, key differences in 2-3 sentences.
 
 ### Paragraph Comparisons
 Go beyond tables. For each dimension, write a paragraph explaining the differences and when each matters.
 
 ### Feature Comparison
-For each category: describe how each handles it, list strengths and limitations, give bottom line recommendation.
+For each category: describe how each handles it, cite the competitor's documented limitations with sources, and state the specific advantage your product delivers.
 
 ### Pricing Comparison
 Include tier-by-tier comparison, what's included, hidden costs, and total cost calculation for sample team size.
 
 ### Who It's For
-Be explicit about ideal customer for each option. Honest recommendations build trust.
+Name the reader your product is built for and the outcome they get: the use
+case, the team, the workflow, and the result. Specific beats broad, and a
+sourced outcome beats an adjective.
 
-Every page names at least one dimension where the competitor genuinely wins and
-the reader should not switch — sourced like any other claim, with a URL and a
-checked date. Not a hedge ("some teams prefer..."), a concession: the specific
-reader, the specific reason. A page with no such dimension is not finished; it
-means the comparison was scoped to guarantee the answer.
+Keep material facts in plain view where they decide the purchase: price, plan
+limits, platform requirements, and migration effort. State them directly in the
+pricing, FAQ, and migration sections rather than as caveats on the pitch.
 
 ### Migration Section
 Cover what transfers, what needs reconfiguration, support offered, and quotes from customers who switched.
@@ -203,30 +202,30 @@ Consider FAQ schema for common questions like "What is the best alternative to [
 ## Before You Hand It Over
 
 Boundaries below requires a final claim review before any comparison page ships.
-This is that review — run it as a second pass over the finished draft, not while
+This is that review, run it as a second pass over the finished draft, not while
 drafting:
 
 1. Re-read every claim about a competitor: pricing, tier contents, feature
    availability, ratings, review counts, testimonials, headcount, funding.
 2. Each one carries a source URL and the date you checked it. A claim without
-   both is **cut, or explicitly marked unverified in the page** — never softened
+   both is **cut, or explicitly marked unverified in the page**: never softened
    into hedged prose ("reportedly", "many users find", "known for"). Hedging an
    unsourced claim keeps the claim and loses the accountability.
 3. Anything sourced more than a quarter ago gets re-checked before publication,
    not carried forward. Pricing pages move.
 4. Claims about your own live visibility or how AI answers cite the page are not
-   verifiable from here — route those to `suede-seo-audit`.
+   verifiable from here, route those to `suede-seo-audit`.
 
 ---
 
 ## Output Format
 
-Three deliverables, all with their schemas in the references — do not invent a
+Three deliverables, all with their schemas in the references: do not invent a
 shape for them:
 
-- **Competitor data file** — the centralized per-competitor record; structure in [references/content-architecture.md](references/content-architecture.md).
-- **Page content** — URL, meta tags, full copy by section, tables, CTAs; section templates in [references/templates.md](references/templates.md).
-- **Page set plan** — which pages to create, in priority order by search volume and evidence readiness.
+- **Competitor data file**: the centralized per-competitor record; structure in [references/content-architecture.md](references/content-architecture.md).
+- **Page content**: URL, meta tags, full copy by section, tables, CTAs; section templates in [references/templates.md](references/templates.md).
+- **Page set plan**: which pages to create, in priority order by search volume and evidence readiness.
 
 ---
 
@@ -244,7 +243,7 @@ shape for them:
 - Do not invent, cherry-pick, or present stale competitor claims, prices, features, testimonials, or rankings as current fact.
 - Do not publish, deploy, index, or update comparison pages without explicit authorization and a final claim review.
 - Do not use competitor trademarks in a way that implies affiliation or reuse protected creative assets without rights.
-- Do not decide that an option is universally best; state audience, criteria, tradeoffs, sources, and checked dates.
+- Do not claim universal superiority; tie each advantage to its audience, criteria, source, and checked date.
 
 ## Routing
 
@@ -253,4 +252,4 @@ shape for them:
 - Need scaled comparison-page architecture -> use `suede-programmatic-seo`.
 - Need final page copy or organic QA -> use `suede-copy` or `suede-seo-audit`.
 - Need internal battle cards -> use `suede-sales-enablement`.
-- From those skills, route honest public alternative and versus-page composition back to `suede-competitors`.
+- From those skills, route evidence-backed public alternative and versus-page composition back to `suede-competitors`.

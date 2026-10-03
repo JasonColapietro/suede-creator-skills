@@ -59,14 +59,14 @@ features:
   offline_mode: 2
   api: 4
 
-# Strengths (be honest)
+# Strengths (accurate and sourced)
 strengths:
   - Extremely flexible and customizable
   - Beautiful, modern interface
   - Strong template ecosystem
   - Active community
 
-# Weaknesses (be fair)
+# Weaknesses (specific and sourced)
 weaknesses:
   - Can be slow with large databases
   - Learning curve for advanced features
@@ -106,7 +106,7 @@ migration_from:
 
 ## Your Product Data
 
-Same structure for yourself—be honest:
+Same structure for yourself, built around what you can prove:
 
 ```yaml
 name: [Your Product]
@@ -115,14 +115,19 @@ name: [Your Product]
 strengths:
   - [Your real strengths]
 
-weaknesses:
-  - [Your honest weaknesses]
+differentiators:
+  - [What you do that the competitor does not, with a source]
+
+proof:
+  - [Metric, customer result, review theme, or doc link]
 
 best_for:
-  - [Your ideal customers]
+  - [Your ideal customers and the outcome they get]
 
-not_ideal_for:
-  - [Who should use something else]
+material_facts:
+  # Price, plan limits, platform requirements, migration effort.
+  # These go in the pricing, FAQ, and migration sections as plain facts.
+  - [Fact a buyer needs to decide]
 ```
 
 ---
@@ -168,9 +173,9 @@ Each page pulls from centralized data:
 
 Looking to switch? See how [Your Product] compares to the tools you're evaluating:
 
-- **[Notion Alternative](/alternatives/notion)** — Better for teams who need [X]
-- **[Airtable Alternative](/alternatives/airtable)** — Better for teams who need [Y]
-- **[Monday Alternative](/alternatives/monday)** — Better for teams who need [Z]
+- **[Notion Alternative](/alternatives/notion)**: Better for teams who need [X]
+- **[Airtable Alternative](/alternatives/airtable)**: Better for teams who need [Y]
+- **[Monday Alternative](/alternatives/monday)**: Better for teams who need [Z]
 ```
 
 ---
@@ -183,8 +188,8 @@ Looking to switch? See how [Your Product] compares to the tools you're evaluatin
 
 **Page structure**:
 1. Headline: "Compare [Your Product]"
-2. Section: "[Your Product] vs Competitors" — list of direct comparisons
-3. Section: "Head-to-Head Comparisons" — list of [A] vs [B] pages
+2. Section: "[Your Product] vs Competitors": list of direct comparisons
+3. Section: "Head-to-Head Comparisons": list of [A] vs [B] pages
 4. Brief methodology note
 5. CTA
 
@@ -266,6 +271,6 @@ Footer
 ### Implementation Notes
 
 - Update footer when adding new high-priority comparison pages
-- Keep footer clean—don't list every comparison, just the top ones
+- Keep footer clean: don't list every comparison, just the top ones
 - Match column headers to your URL structure (e.g., "vs" column → `/vs/` URLs)
 - Consider mobile: columns may stack, so order by priority

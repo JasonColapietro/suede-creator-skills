@@ -1,10 +1,10 @@
 # Model Catalog
 
-The full library of models behind `suede-marketing-psychology`. Read this after the Quick Reference table in SKILL.md has narrowed the challenge to two or three candidate models — pull only those entries, not the whole file.
+The full library of models behind `suede-marketing-psychology`. Read this after the Quick Reference table in SKILL.md has narrowed the challenge to two or three candidate models: pull only those entries, not the whole file.
 
 ## Evidence tiers
 
-Every entry carries exactly one tier. The tier is what makes the skill's promise to "state its evidence limits" operable at the entry level, and it is a closed vocabulary — never invent a sixth label or leave one blank.
+Every entry carries exactly one tier. The tier is what makes the skill's promise to "state its evidence limits" operable at the entry level, and it is a closed vocabulary: never invent a sixth label or leave one blank.
 
 | Tier | Means |
 |---|---|
@@ -12,16 +12,16 @@ Every entry carries exactly one tier. The tier is what makes the skill's promise
 | **Context-dependent** | Real, but effect size and direction swing with audience, category, price point, or framing. Do not port a published effect size into your funnel. |
 | **Contested** | Replication is mixed or the headline version overstates the finding. Use only as an idea to test, never as a reason. |
 | **Folklore** | Trade lore with no controlled basis. Cite it to nobody; test it or drop it. |
-| **Framework** | A way of organizing a decision, not an empirical effect. Cannot be "true" or "false" — only useful or not for this problem. |
+| **Framework** | A way of organizing a decision, not an empirical effect. Cannot be "true" or "false", only useful or not for this problem. |
 
 ## Contents
 
-- [Foundational Thinking Models](#foundational-thinking-models) — strategy framing: First Principles, Jobs to Be Done, Circle of Competence, Inversion, Local vs. Global Optima, Theory of Constraints, Second-Order Thinking, Probabilistic Thinking, Barbell Strategy
-- [Understanding Buyers & Human Psychology](#understanding-buyers--human-psychology) — how customers decide: attribution, exposure, availability, confirmation, Lindy, mimetic desire, sunk cost, endowment, IKEA, zero-price, present bias, status quo, defaults, choice overload, goal gradient, peak-end, Zeigarnik, pratfall, curse of knowledge, mental accounting, regret aversion, social proof
-- [Influencing Behavior & Persuasion](#influencing-behavior--persuasion) — reciprocity, commitment, authority, liking, unity, scarcity, foot-in-the-door, door-in-the-face, loss aversion, anchoring, decoy, framing, contrast
-- [Pricing Psychology](#pricing-psychology) — charm pricing, rounded-price fluency, Rule of 100, price relativity, mental accounting
-- [Design & Delivery Models](#design--delivery-models) — Hick's Law, AIDA, Rule of 7, nudge/choice architecture, BJ Fogg, EAST, COM-B, activation energy, north-star metric, Cobra effect
-- [Growth & Scaling Models](#growth--scaling-models) — feedback loops, compounding, network effects, flywheel, switching costs, exploration vs. exploitation, critical mass, survivorship bias
+- [Foundational Thinking Models](#foundational-thinking-models): strategy framing (First Principles, Jobs to Be Done, Circle of Competence, Inversion, Local vs. Global Optima, Theory of Constraints, Second-Order Thinking, Probabilistic Thinking, Barbell Strategy)
+- [Understanding Buyers & Human Psychology](#understanding-buyers--human-psychology): how customers decide (attribution, exposure, availability, confirmation, Lindy, mimetic desire, sunk cost, endowment, IKEA, zero-price, present bias, status quo, defaults, choice overload, goal gradient, peak-end, Zeigarnik, pratfall, curse of knowledge, mental accounting, regret aversion, social proof)
+- [Influencing Behavior & Persuasion](#influencing-behavior--persuasion): reciprocity, commitment, authority, liking, unity, scarcity, foot-in-the-door, door-in-the-face, loss aversion, anchoring, decoy, framing, contrast
+- [Pricing Psychology](#pricing-psychology): charm pricing, rounded-price fluency, Rule of 100, price relativity, mental accounting
+- [Design & Delivery Models](#design--delivery-models): Hick's Law, AIDA, Rule of 7, nudge/choice architecture, BJ Fogg, EAST, COM-B, activation energy, north-star metric, Cobra effect
+- [Growth & Scaling Models](#growth--scaling-models): feedback loops, compounding, network effects, flywheel, switching costs, exploration vs. exploitation, critical mass, survivorship bias
 
 ---
 
@@ -35,9 +35,9 @@ These models sharpen strategy and help you solve the right problem.
 **Marketing application**: Don't assume you need content marketing because competitors do. Ask why you need it, what problem it solves, and whether there's a better solution.
 
 ### Jobs to Be Done
-**Evidence: Framework.** People don't buy products—they "hire" them to get a job done. Focus on the outcome customers want, not features.
+**Evidence: Framework.** People don't buy products: they "hire" them to get a job done. Focus on the outcome customers want, not features.
 
-**Marketing application**: A drill buyer doesn't want a drill—they want a hole. Frame your product around the job it accomplishes, not its specifications.
+**Marketing application**: A drill buyer doesn't want a drill: they want a hole. Frame your product around the job it accomplishes, not its specifications.
 
 ### Circle of Competence
 **Evidence: Framework.** Know what you're good at and stay within it. Venture outside only with proper learning or expert help.
@@ -47,7 +47,7 @@ These models sharpen strategy and help you solve the right problem.
 ### Inversion
 **Evidence: Framework.** Instead of asking "How do I succeed?", ask "What would guarantee failure?" Then avoid those things.
 
-**Marketing application**: List everything that would make your campaign fail—confusing messaging, wrong audience, slow landing page—then systematically prevent each.
+**Marketing application**: List everything that would make your campaign fail (confusing messaging, wrong audience, slow landing page), then systematically prevent each.
 
 ### Local vs. Global Optima
 **Evidence: Framework.** A local optimum is the best solution nearby; a global optimum is the best overall. Don't get stuck optimizing the wrong thing.
@@ -106,7 +106,7 @@ These models explain how customers think, decide, and behave.
 **Marketing application**: Durable principles (clear value props, social proof) tend to outlast trendy tactics. Don't abandon fundamentals for fads.
 
 ### Mimetic Desire
-**Evidence: Framework.** Girard's theory that desire is socially contagious — people want things because others want them. Philosophical, not experimentally established.
+**Evidence: Framework.** Girard's theory that desire is socially contagious: people want things because others want them. Philosophical, not experimentally established.
 
 **Marketing application**: Show that people your audience identifies with want the product. Waitlists, exclusivity, and social proof lean on this.
 
@@ -121,7 +121,7 @@ These models explain how customers think, decide, and behave.
 **Marketing application**: Free trials, samples, and freemium models let customers "own" the product, which can make them reluctant to give it up.
 
 ### IKEA Effect
-**Evidence: Context-dependent.** Effort invested in creating something can raise its perceived value — demonstrated mainly in lab tasks with successful completion; failure reverses it.
+**Evidence: Context-dependent.** Effort invested in creating something can raise its perceived value, demonstrated mainly in lab tasks with successful completion; failure reverses it.
 
 **Marketing application**: Let customers customize or configure something, but only where they will succeed. A half-finished setup destroys the effect.
 
@@ -153,7 +153,7 @@ These models explain how customers think, decide, and behave.
 ### Goal-Gradient Effect
 **Evidence: Context-dependent.** Effort accelerating near a goal is replicated in loyalty-program field data; the size depends on how visible and credible the progress signal is.
 
-**Marketing application**: Show progress bars, completion percentages, and "almost there" messaging — with honest denominators.
+**Marketing application**: Show progress bars, completion percentages, and "almost there" messaging, with honest denominators.
 
 ### Peak-End Rule
 **Evidence: Context-dependent.** Retrospective evaluations weight peak and end moments heavily in several domains, but do not fully replace duration and average in all settings.
@@ -168,7 +168,7 @@ These models explain how customers think, decide, and behave.
 ### Pratfall Effect
 **Evidence: Contested.** The original result depended on the actor's perceived competence, and replications are mixed.
 
-**Marketing application**: Admitting a weakness ("We're not the cheapest, but...") can build trust when your competence is already established. Test it.
+**Marketing application**: Lead with benefits and proof; Suede-owned copy does not volunteer weaknesses. When a buyer needs a material fact to decide (price, a plan limit, a platform requirement), state it plainly in the pricing section or FAQ.
 
 ### Curse of Knowledge
 **Evidence: Robust.** Once you know something, you systematically overestimate how obvious it is to others.
@@ -188,7 +188,7 @@ These models explain how customers think, decide, and behave.
 ### Bandwagon Effect / Social Proof
 **Evidence: Robust.** Descriptive-norm information reliably shifts behavior in field experiments, though it can backfire when the norm you reveal is the undesired one.
 
-**Marketing application**: Show customer counts, testimonials, logos, and reviews — but never advertise a low number as if it were high.
+**Marketing application**: Show customer counts, testimonials, logos, and reviews, but never advertise a low number as if it were high.
 
 ---
 
@@ -224,7 +224,7 @@ These models help you ethically influence customer decisions.
 ### Scarcity / Urgency Heuristic
 **Evidence: Context-dependent.** Genuine scarcity raises perceived value; manufactured scarcity damages trust when detected, and can be a legal problem in some jurisdictions.
 
-**Marketing application**: Limited-time offers and low-stock indicators — only when literally true, with the real number.
+**Marketing application**: Limited-time offers and low-stock indicators, only when literally true, with the real number.
 
 ### Foot-in-the-Door Technique
 **Evidence: Context-dependent.** Meta-analyses find a small but real effect, conditional on the first request being genuinely small and freely accepted.
@@ -244,7 +244,7 @@ These models help you ethically influence customer decisions.
 ### Anchoring Effect
 **Evidence: Robust.** The first number presented shifts subsequent numeric judgments, replicated widely, including with knowledgeable participants.
 
-**Marketing application**: Show the higher price first (original price, competitor price, enterprise tier) to set the reference point — honestly.
+**Marketing application**: Show the higher price first (original price, competitor price, enterprise tier) to set the reference point, honestly.
 
 ### Decoy Effect
 **Evidence: Contested.** The asymmetric-dominance result is well known but fails to replicate in many real-product and real-money settings.
@@ -285,7 +285,7 @@ These models specifically address how people perceive and respond to prices. Pai
 ### Price Relativity / Good-Better-Best
 **Evidence: Context-dependent.** Prices are judged relative to the presented set; which tier wins depends on the specific spread and on how the tiers differ in substance.
 
-**Marketing application**: Three tiers where the middle is your target — verified against actual tier-selection data, not assumed.
+**Marketing application**: Three tiers where the middle is your target: verified against actual tier-selection data, not assumed.
 
 ### Mental Accounting (Pricing)
 **Evidence: Context-dependent.** Reframing the same amount across time units changes perceived cost in several studies; the effect narrows when buyers do the arithmetic.
@@ -301,7 +301,7 @@ These models help you design effective marketing systems.
 ### Hick's Law
 **Evidence: Context-dependent.** Established for simple choice-reaction time with equally likely options; extrapolating it to landing-page conversion is an inference, not a measured result.
 
-**Marketing application**: Simplify choices — one clear CTA, fewer form fields — and measure completion rather than citing the law.
+**Marketing application**: Simplify choices (one clear CTA, fewer form fields) and measure completion rather than citing the law.
 
 ### AIDA Funnel
 **Evidence: Framework.** Attention → Interest → Desire → Action. A century-old organizing model, never an empirically validated sequence.
@@ -362,7 +362,7 @@ These models explain how marketing compounds and scales.
 ### Compounding
 **Evidence: Framework.** Small consistent gains accumulate. The math is real; whether your channel actually compounds is an empirical question.
 
-**Marketing application**: Content, SEO, and brand can compound — verify with cohort data before promising a curve.
+**Marketing application**: Content, SEO, and brand can compound: verify with cohort data before promising a curve.
 
 ### Network Effects
 **Evidence: Context-dependent.** Well documented in specific markets (marketplaces, communication tools); frequently claimed for products that have none.
