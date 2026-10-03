@@ -2,9 +2,27 @@
 
 Paste any block here into a post or a README and it will hold. Every claim
 points at something you can open on main: a skill folder, or the commit that
-changed it. Lead with the mechanism rather than the adjective. Keep claims
-public-safe: the skills do not upload files by default, clear rights, write to
-a registry, distribute music, approve payouts, or promise outcomes.
+changed it. Lead with customer value and the mechanism that delivers it. Keep claims
+specific and grounded in the workflows and evidence available on main.
+
+## Suede sales-copy standard (all repositories)
+
+For Suede marketing, landing pages, product descriptions, metadata, sales
+materials, and reusable copy, lead with the customer benefit, concrete
+capability, available proof, offer, and next action.
+
+Do not introduce unsolicited weaknesses, hedging, apology, self-disqualification,
+or reasons to choose someone else. Ban "honest limits", "not the first choice",
+"not for everyone", "we may not be the best fit", and semantic equivalents;
+replacing a banned phrase with the same undermining message is not a fix.
+Replace that framing with supported benefits, useful scope, or a clear next step.
+
+Keep claims accurate and specific. Never invent results, guarantees, customer
+proof, approvals, capabilities, or availability. Preserve material legal,
+licensing, price, payment, consent, and technical facts where they affect a
+customer's decision. State those facts directly in the relevant terms, FAQ, or
+product instructions. Engineering reports, errors, test results, and internal
+risk tracking must remain factual and complete; this is a sales-copy rule.
 
 ## Repo Copy
 
@@ -70,10 +88,10 @@ Install the skills
 ### Secondary CTAs
 
 - Use suede-code to review my staged diff and give it an A-F ship grade
-- List the Suede skills that match this task and name the one that should lose
+- Choose the Suede skills that match this task
 - Run a copy audit on this page and return the exact rewrites
-- Open the skill folder and read the file before you trust it
-- Build a QA checklist and stop at the first gate I cannot prove
+- Explore the skill workflow
+- Build a QA checklist with evidence for each release gate
 
 ## Public Installs And MCP Copy
 
@@ -97,16 +115,15 @@ JSON-RPC over stdio, with no dependencies and no network calls.
 ### CTA options
 
 - Use suede-code to review my staged diff and give it an A-F ship grade
-- List the Suede skills that match this task and name the one that should lose
+- Choose the Suede skills that match this task
 - Run a copy audit on this page and return the exact rewrites
 - Grade this page A-F and tell me which cap decided the letter
-- Build a QA checklist and stop at the first gate I cannot prove
+- Build a QA checklist with evidence for each release gate
 
-### Safety note
+### How it works
 
-The MCP returns catalog, install, audit, and QA context. It does not upload
-files, clear rights, write to a registry, distribute music, approve payouts, or
-publish unsupported statements on its own.
+The MCP gives agents catalog, installation, audit, and QA context for the next
+step in your workflow. You control authorization for any external actions.
 
 ## Public Explainer Copy
 
@@ -120,8 +137,7 @@ pack can grow without costing more context on every turn.
 
 ### Best overall explanation
 
-Suede Creator Skills is the folder of skills that runs Suede Labs, published as
-is. The range is the point: the same pack grades a staged diff A-F across seven
+Suede Creator Skills is the folder of skills that runs Suede Labs, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
 lanes and argued $448.31 back out of a real Amazon account, including a refund
 denied after the return window closed. It is free under MIT for the original
 work, with no binaries and no telemetry.
@@ -228,7 +244,7 @@ unknown. It organizes evidence and does not clear rights.
 ### CTA options
 
 - Create a rights package for this folder and list what is missing
-- Open the skill folder and read the file before you trust it
+- Explore the skill workflow
 - Run the package script against a real release
 - Read the schema the package writes
 - Pair it with the release linter and close the gaps it names
@@ -266,7 +282,7 @@ A clean report is a draft until an operator reviews it.
 ### CTA options
 
 - Audit this release folder and rank the gaps by what blocks the release
-- Read the lint rules in the repo and disagree with them before you run the lint
+- Explore the release checks
 - Open the lint script and see exactly what it reads
 - Create a rights package once the gaps are closed
 - Open the report templates
@@ -314,8 +330,8 @@ after the account owner confirms.
 ### Safety note
 
 This skill surfaces charges and drafts the case; it does not dispute or
-cancel anything without the account owner confirming first. Real recoveries
-documented, not guaranteed: Amazon associates can and do decline an ask.
+cancel anything without the account owner confirming first. Recovery requests are supported by documented account evidence; Amazon
+makes the refund decision.
 
 ## Subscription Recovery Copy
 
@@ -354,8 +370,7 @@ confirms.
 ### Safety note
 
 This skill surfaces subscriptions and drafts the case; it does not cancel
-or dispute anything without the account owner confirming first. Most
-service click-paths are discovered live and are not pre-validated.
+or dispute anything without the account owner confirming first. It follows each service's current account and support flow.
 
 ## Install Copy
 
@@ -378,7 +393,7 @@ CTA: Install for Claude Code
 ### What are Suede Creator Skills?
 
 Suede Creator Skills are public `SKILL.md` folders for Claude Code and Codex.
-They are the same files that run Suede Labs, published as is, so an agent works
+They are the same files that run Suede Labs, published for you to inspect and adapt, so an agent works
 from a written method instead of a blank prompt. Every description carries a NOT
 FOR line naming the sibling skill that should win instead.
 
@@ -441,7 +456,7 @@ Docs: https://skills.suedeai.ai/skills/
 ### Builder post
 
 I published Suede Creator Skills, the public `SKILL.md` pack for Codex and
-Claude Code. It is the same folder that runs Suede Labs, published as is.
+Claude Code. It is the same folder that runs Suede Labs, published for you to inspect and adapt.
 
 One skill grades a staged diff A-F across seven lanes, and a hardcoded secret
 locks the whole thing at F with the file and the line. Another argued $448.31
@@ -501,9 +516,10 @@ Page: https://skills.suedeai.ai/cracked.html
 - suede-ai
 - x402
 
-## Evidence Boundaries
+## Product facts for terms, FAQs, and workflow instructions
 
-Use these lines when the copy needs a safety guard:
+Use the relevant fact where it answers a customer question or explains an
+operating requirement. Lead promotional copy with benefits and proof:
 
 - Public v1 runs offline and writes local files. It ships no binaries and no
   telemetry.
@@ -514,3 +530,4 @@ Use these lines when the copy needs a safety guard:
 - The scripts skip hidden files, dependency folders, build outputs, caches, and
   secret-like files by default.
 - Unknown rights facts stay marked as unknown.
+

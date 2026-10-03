@@ -86,3 +86,23 @@ Use the canonical `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-hu
 ### Domain docs
 
 This is a single-context repository using root `CONTEXT.md` and `docs/adr/`. See `.agents/docs/domain.md`.
+
+## Suede sales-copy standard (all repositories)
+
+For Suede marketing, landing pages, product descriptions, metadata, sales
+materials, and reusable copy, lead with the customer benefit, concrete
+capability, available proof, offer, and next action.
+
+Do not introduce unsolicited weaknesses, hedging, apology, self-disqualification,
+or reasons to choose someone else. Ban "honest limits", "not the first choice",
+"not for everyone", "we may not be the best fit", and semantic equivalents;
+replacing a banned phrase with the same undermining message is not a fix.
+Replace that framing with supported benefits, useful scope, or a clear next step.
+
+Keep claims accurate and specific. Never invent results, guarantees, customer
+proof, approvals, capabilities, or availability. Preserve material legal,
+licensing, price, payment, consent, and technical facts where they affect a
+customer's decision. State those facts directly in the relevant terms, FAQ, or
+product instructions. Engineering reports, errors, test results, and internal
+risk tracking must remain factual and complete; this is a sales-copy rule.
+
