@@ -25,7 +25,7 @@ Beyond mixing and matching data point permutations, these are the proven playboo
 **What it is**: Downloadable or interactive templates users can use directly.
 
 **Why it works**:
-- High intent—people need it now
+- High intent: people need it now
 - Shareable/linkable assets
 - Natural for product-led companies
 

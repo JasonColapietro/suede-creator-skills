@@ -1,6 +1,6 @@
 # Co-Marketing Campaign Formats
 
-Read this when selecting the format for a joint campaign — the output skeleton
+Read this when selecting the format for a joint campaign: the output skeleton
 requires the selected format to be named from one of the four families below.
 
 ## Content Partnerships
@@ -47,7 +47,7 @@ requires the selected format to be named from one of the four families below.
 Two arrangements cover almost every format above, and the campaign plan must
 state which one applies:
 
-- **Gated / split** — one shared form, leads delivered to both parties under an
+- **Gated / split**: one shared form, leads delivered to both parties under an
   agreed split. Requires a written data-handling and consent arrangement.
-- **Each keeps own** — no shared list; each side keeps whoever it brought.
+- **Each keeps own**: no shared list; each side keeps whoever it brought.
   Simpler, and the default when the parties have not agreed data terms.

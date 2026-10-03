@@ -287,7 +287,7 @@ Stop requires the thresholds in `SKILL.md` Step 6.
 These examples are illustrative. They show the decisions and artifacts the mode
 returns; they are not claims about a real campaign.
 
-### Example 1 — Weekly voice note for qualified inbound
+### Example 1: Weekly voice note for qualified inbound
 
 **Request:** "The founder and company accounts are already approved in the mode
 setup. I approve every asset, can review two public assets per week, and review
@@ -318,7 +318,7 @@ rule, and I attached the checklist we use."
 claims. The founder is recognizable for a decision method; the company makes
 the method inspectable.
 
-### Example 2 — A time-sensitive industry conversation
+### Example 2: A time-sensitive industry conversation
 
 **Request:** "Use the existing approved mode setup. A new industry policy is
 being debated this week. I attached the policy source, my operator debrief on
@@ -344,7 +344,7 @@ while the conversation is current."
 **Result:** the system participates while the topic is live without converting
 speed into unsupported claims or duplicated account posts.
 
-### Example 3 — Solo founder with one public account
+### Example 3: Solo founder with one public account
 
 **Request:** "I have one approved founder account and no company account. The
 goal is category recognition, I approve every asset, I can review one public

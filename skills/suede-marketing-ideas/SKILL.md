@@ -60,7 +60,7 @@ Score every candidate 0–3 on all six dimensions. 0 means "no evidence either w
 | **Cost** | Unknown total cost | Over the approved bounded amount | Within it, but consumes most of it | Within it with headroom |
 | **Risk** | No stop condition definable | Reversible only at cost, gates unchecked | Reversible, gates identified | Reversible, cheap to stop, no legal/platform/brand exposure |
 
-**Decision rule** — apply in order, first match wins:
+**Decision rule**, apply in order, first match wins:
 
 1. Any dimension scored 0 → **Skip** or **Conditional**, never a test this cycle. Name the zeroed dimension.
 2. Total ≥ 14/18 **and** Evidence ≥ 2 **and** Capacity ≥ 2 → **Approved test**. State the test, the success metric, the review date, and the stop condition.
@@ -68,9 +68,9 @@ Score every candidate 0–3 on all six dimensions. 0 means "no evidence either w
 4. Total ≥ 10 with no capacity in this window → **Deferred**. State the review date.
 5. Total < 10, or Risk ≤ 1 → **Skip**. State the disqualifying dimension.
 
-A tactic the user is already running is **Current** — score it, but do not present it as a new idea. These five statuses are the same set `suede-marketing-plan` Section 12 uses, so a shortlist drops into a plan without relabeling.
+A tactic the user is already running is **Current**, score it, but do not present it as a new idea. These five statuses are the same set `suede-marketing-plan` Section 12 uses, so a shortlist drops into a plan without relabeling.
 
-**Caps.** Score at most 8 candidates; surface at most 5; at most 3 carry Approved test at once. If more than 3 clear rule 2, rank by Capacity then Cost and move the rest to Deferred — capacity, not enthusiasm, is the binding constraint.
+**Caps.** Score at most 8 candidates; surface at most 5; at most 3 carry Approved test at once. If more than 3 clear rule 2, rank by Capacity then Cost and move the rest to Deferred: capacity, not enthusiasm, is the binding constraint.
 
 **Required rejection.** Every shortlist must name at least one tactic that is *not* recommended, drawn from the record rather than invented: something the user named under Task-Specific Questions 3 or 4 (already tried, or a competitor tactic they admire), or the highest-scoring candidate that still fails a dimension. Do not construct a strawman the user never raised. If the user named nothing and every scored candidate clears, say that explicitly instead of manufacturing a rejection.
 
@@ -89,7 +89,7 @@ When recommending ideas, provide for each:
 
 Close every shortlist with the required rejection, in this form:
 
-**Not recommended:** [tactic] — fails [dimension] because [current evidence, or the absence of it].
+**Not recommended:** [tactic], fails [dimension] because [current evidence, or the absence of it].
 
 ---
 

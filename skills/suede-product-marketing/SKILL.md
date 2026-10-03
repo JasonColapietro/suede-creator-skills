@@ -18,17 +18,17 @@ The document is stored at `.agents/product-marketing.md`.
 
 ### Step 1: Check for Existing Context
 
-First, check if `.agents/product-marketing.md` already exists. Also check `.claude/product-marketing.md` and the legacy filename `product-marketing-context.md` (in either `.agents/` or `.claude/`) for older setups — if found anywhere other than `.agents/product-marketing.md`, offer to move it to the canonical location.
+First, check if `.agents/product-marketing.md` already exists. Also check `.claude/product-marketing.md` and the legacy filename `product-marketing-context.md` (in either `.agents/` or `.claude/`) for older setups, if found anywhere other than `.agents/product-marketing.md`, offer to move it to the canonical location.
 
 **If it exists:**
-- Read it and summarize what's captured — note its current **Document version** and the last few **Changelog** entries so the user sees where the doc stands and what's changed recently
+- Read it and summarize what's captured: note its current **Document version** and the last few **Changelog** entries so the user sees where the doc stands and what's changed recently
 - Ask which sections they want to update
 - Only gather info for those sections
 - On any substantive save, bump the version and add a changelog entry (see Step 4). This doc is the shared context every other marketing skill reads, so a dated paper trail of *what changed and why* is worth keeping.
 
 **If it doesn't exist, offer two options:**
 
-1. **Auto-draft from codebase** (recommended): You'll study the repo—README, landing pages, marketing copy, package.json, etc.—and draft a V1 of the context document. The user then reviews, corrects, and fills gaps. This is faster than starting from scratch.
+1. **Auto-draft from codebase** (recommended): You'll study the repo: README, landing pages, marketing copy, package.json, etc., and draft a V1 of the context document. The user then reviews, corrects, and fills gaps. This is faster than starting from scratch.
 
 2. **Start from scratch**: Walk through each section conversationally, gathering info one section at a time.
 
@@ -38,8 +38,8 @@ Most users prefer option 1. After presenting the draft, ask: "What needs correct
 
 **If auto-drafting:**
 1. Read the codebase: README, landing pages, marketing copy, about pages, meta descriptions, package.json, any existing docs
-2. Draft only what the sources actually say. **Every auto-drafted field carries its source** in the form `[src: path/to/file.md]` — the file the claim came from. A field with no source is not drafted: leave it empty and mark it `[unverified]`.
-3. Never source a field from inference. If the README implies a differentiator without stating it, if a competitor is guessed from the category, or if a testimonial-shaped sentence in marketing copy has no attributed customer, that field is `[unverified]` — not a draft with a hedge. Differentiation, Competitive Landscape, Proof Points, and Customer Language are where this rule earns its keep; a fabricated entry there propagates to every skill that reads this doc.
+2. Draft only what the sources actually say. **Every auto-drafted field carries its source** in the form `[src: path/to/file.md]`, the file the claim came from. A field with no source is not drafted: leave it empty and mark it `[unverified]`.
+3. Never source a field from inference. If the README implies a differentiator without stating it, if a competitor is guessed from the category, or if a testimonial-shaped sentence in marketing copy has no attributed customer, that field is `[unverified]`, not a draft with a hedge. Differentiation, Competitive Landscape, Proof Points, and Customer Language are where this rule earns its keep; a fabricated entry there propagates to every skill that reads this doc.
 4. Present the draft and say plainly how many fields are sourced versus `[unverified]`, then ask what needs correcting or is missing
 5. Iterate until the user is satisfied. A field the user confirms in conversation is sourced as `[src: user]`
 
@@ -52,7 +52,7 @@ For each section:
 3. Confirm accuracy
 4. Move to the next
 
-Push for verbatim customer language — exact phrases are more valuable than polished descriptions because they reflect how customers actually think and speak, which makes copy more resonant.
+Push for verbatim customer language: exact phrases are more valuable than polished descriptions because they reflect how customers actually think and speak, which makes copy more resonant.
 
 ---
 
@@ -61,7 +61,7 @@ Push for verbatim customer language — exact phrases are more valuable than pol
 ### 1. Product Overview
 - One-line description
 - What it does (2-3 sentences)
-- Product category (what "shelf" you sit on—how customers search for you)
+- Product category (what "shelf" you sit on: how customers search for you)
 - Product type (SaaS, marketplace, e-commerce, service, etc.)
 - Business model and pricing
 
@@ -140,10 +140,10 @@ After gathering information, create `.agents/product-marketing.md` with this str
 
 **Document version:** v1
 **Last updated:** [date]
-**Status:** complete | partial — missing: [required sections still empty]
+**Status:** complete | partial: missing: [required sections still empty]
 
-*Every field ends with its source — `[src: README.md]`, `[src: interview
-2026-05-04]`, `[src: user]` — or the marker `[unverified]` if nothing on record
+*Every field ends with its source: `[src: README.md]`, `[src: interview
+2026-05-04]`, `[src: user]`, or the marker `[unverified]` if nothing on record
 supports it. An unsourced field is empty by definition; do not fill it to make
 the document look finished.*
 
@@ -176,9 +176,9 @@ the document look finished.*
 **Emotional tension:**
 
 ## Competitive Landscape
-**Direct:** [Competitor] — falls short because...
-**Secondary:** [Approach] — falls short because...
-**Indirect:** [Alternative] — falls short because...
+**Direct:** [Competitor]: falls short because...
+**Secondary:** [Approach]: falls short because...
+**Indirect:** [Alternative]: falls short because...
 
 ## Differentiation
 **Key differentiators:**
@@ -220,8 +220,8 @@ the document look finished.*
 ## Proof Points
 **Metrics:**
 **Customers:**
-**Testimonials:** *(verbatim only — a quote with no attributable source is `[unverified]`, never paraphrased into existence)*
-> "[quote]" — [who] [src: where this quote was published or collected]
+**Testimonials:** *(verbatim only: a quote with no attributable source is `[unverified]`, never paraphrased into existence)*
+> "[quote]": [who] [src: where this quote was published or collected]
 **Value themes:**
 | Theme | Proof |
 |-------|-------|
@@ -234,7 +234,7 @@ the document look finished.*
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
-- v1 ([date]) — Initial context.
+- v1 ([date]): Initial context.
 ```
 
 ---
@@ -245,24 +245,24 @@ the document look finished.*
 - Ask if anything needs adjustment
 - **Check the v1 floor before saving.** Six sections must be non-empty and sourced for the document to be trustworthy as shared context: Product Overview, Target Audience, Problems & Pain Points, Differentiation, Customer Language, and Goals. Everything else is optional by product type. If any of the six is empty or entirely `[unverified]`, set `Status: partial` and list exactly which ones on that line. Never save a partial document as `complete`.
 - **What a partial document means downstream.** A consuming skill that reads `.agents/product-marketing.md` and finds `Status: partial` must ask the user for the named missing sections before generating anything that depends on them, and must not infer them from the rest of the doc. Say this in the save message so the user knows why they will be asked again.
-- **Set the version and changelog** — this is the paper trail for a doc every other skill reads:
-  - **New document:** set `Document version: v1` and a single Changelog entry — `- v1 ([today]) — Initial context.`
+- **Set the version and changelog**: this is the paper trail for a doc every other skill reads:
+  - **New document:** set `Document version: v1` and a single Changelog entry: `- v1 ([today]), Initial context.`
   - **Updating an existing document:** increment the version (v2 → v3 …), update `Last updated` to today, and **prepend a new Changelog entry** at the top of the list (newest first) summarizing *what changed and why* in one line. Never rewrite or reorder past entries.
   - A good entry names the sections touched and the reason, not "updated the doc." Examples:
-    - `- v3 (2026-07-16) — Repositioned from "email tool" to "deliverability platform"; added RevOps to the ICP.`
-    - `- v2 (2026-06-02) — Rewrote value prop and objections after 5 customer interviews; added competitor Acme.`
+    - `- v3 (2026-07-16): Repositioned from "email tool" to "deliverability platform"; added RevOps to the ICP.`
+    - `- v2 (2026-06-02): Rewrote value prop and objections after 5 customer interviews; added competitor Acme.`
   - Use today's date in ISO form (YYYY-MM-DD) for the entry and `Last updated`.
-  - **Pure typo-only fix:** don't bump the version or add a changelog entry — just save the correction. Every other change bumps the version and gets an entry. When the change is a real repositioning, say so plainly — downstream skills will now generate against the new context.
+  - **Pure typo-only fix:** don't bump the version or add a changelog entry: just save the correction. Every other change bumps the version and gets an entry. When the change is a real repositioning, say so plainly, downstream skills will now generate against the new context.
 - Save to `.agents/product-marketing.md`
 - Tell them: "The Suede growth suite will now use this context automatically.
-  The Changelog at the bottom tracks every revision — check it to see how your
+  The Changelog at the bottom tracks every revision, check it to see how your
   positioning has evolved. Run `/suede-product-marketing` anytime to update it."
 
 ---
 
 ## Tips
 
-- **Skip what doesn't apply**, outside the six-section v1 floor in Step 4: not every product needs Personas (B2C), Switching Dynamics, or a Glossary. Skipping one of the six is not a skip — it is a `partial` document.
+- **Skip what doesn't apply**, outside the six-section v1 floor in Step 4: not every product needs Personas (B2C), Switching Dynamics, or a Glossary. Skipping one of the six is not a skip: it is a `partial` document.
 
 ## Boundaries
 

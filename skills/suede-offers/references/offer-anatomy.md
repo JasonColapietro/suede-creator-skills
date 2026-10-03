@@ -1,6 +1,6 @@
 # Offer Anatomy
 
-A complete offer has six components. Skip any one and conversion suffers — usually noticeably.
+A complete offer has six components. Skip any one and conversion suffers, usually noticeably.
 
 ## The six components
 
@@ -22,9 +22,9 @@ The thing they actually get.
 ### Define it as an outcome, not a feature list
 
 - **Feature-pitched (weak):** "6 modules, 24 lessons, weekly calls, private community."
-- **Outcome-pitched (strong):** "A working customer-acquisition system that brings 5 qualified leads per week within 60 days — built with you, not handed to you."
+- **Outcome-pitched (strong):** "A working customer-acquisition system that brings 5 qualified leads per week within 60 days, built with you, not handed to you."
 
-The features still matter — buyers want to know what they're getting — but the *frame* is the outcome. Features support the outcome, they don't replace it.
+The features still matter (buyers want to know what they're getting), but the *frame* is the outcome. Features support the outcome, they don't replace it.
 
 ### Define the scope explicitly
 
@@ -56,8 +56,8 @@ What you add to make the core feel undervalued at the asking price.
 
 Bonuses do three jobs at once:
 1. **Raise perceived value** of the total offer
-2. **Lower perceived risk** — even if the core underdelivers, "I got X for free"
-3. **Close specific objections** — each bonus can target a different buying objection
+2. **Lower perceived risk**: even if the core underdelivers, "I got X for free"
+3. **Close specific objections**: each bonus can target a different buying objection
 
 ### How to construct bonuses
 
@@ -106,8 +106,8 @@ The right type depends on your business model, refund risk tolerance, and buyer 
 The reason to buy now, not later.
 
 Two flavors:
-- **Scarcity** — limited *quantity* (cohort size, seats, inventory, batch)
-- **Urgency** — limited *time* (cohort deadline, season, bonus expiry)
+- **Scarcity**: limited *quantity* (cohort size, seats, inventory, batch)
+- **Urgency**: limited *time* (cohort deadline, season, bonus expiry)
 
 The bar: **the scarcity has to be real.** Fake countdown timers and "only 3 spots left" lies work once and torch trust permanently. The internet is small; you will be caught.
 
@@ -127,23 +127,23 @@ For full guidance on creating real scarcity, see [scarcity-urgency.md](scarcity-
 What this thing is called.
 
 A named offer beats an unnamed offer for three reasons:
-1. **Repeatability** — buyers can tell their friend about it
-2. **Distinction** — a name makes it a *thing*, not a generic service
-3. **Pricing power** — branded offers can charge more than the same delivery sold as a service
+1. **Repeatability**: buyers can tell their friend about it
+2. **Distinction**: a name makes it a *thing*, not a generic service
+3. **Pricing power**: branded offers can charge more than the same delivery sold as a service
 
 ### Naming patterns that work
 
-- **Outcome-named:** "The 30-Day Activation Sprint" — names what they get
-- **Methodology-named:** "The VAULT Framework" — names how you do it
-- **Identity-named:** "Founder Marketing OS" — names who it's for
-- **Compression-named:** "5-Day Cohort" — names the timing/structure
+- **Outcome-named:** "The 30-Day Activation Sprint", names what they get
+- **Methodology-named:** "The VAULT Framework": names how you do it
+- **Identity-named:** "Founder Marketing OS": names who it's for
+- **Compression-named:** "5-Day Cohort": names the timing/structure
 
 ### Naming patterns that don't work
 
-- **Generic descriptors:** "Marketing Coaching Program" — forgettable
-- **Internal jargon:** "Tier 2 Standard" — buyer can't repeat
-- **Course-bro:** "The Money-Making Machine" — pattern-matches to scam
-- **Pun-overload:** "GrowthGoGetter" — reads as low-status
+- **Generic descriptors:** "Marketing Coaching Program", forgettable
+- **Internal jargon:** "Tier 2 Standard", buyer can't repeat
+- **Course-bro:** "The Money-Making Machine": pattern-matches to scam
+- **Pun-overload:** "GrowthGoGetter": reads as low-status
 
 ### Practical test
 
@@ -181,7 +181,7 @@ Same total price, different structures convert very differently:
 | **Down payment + balance on delivery** | Services with milestone-based delivery | Balance risk on backend |
 | **Free trial → paid** | Low-friction SaaS, info products | Conversion drop-off |
 
-Often the right move isn't lowering price — it's adding a payment plan. Same $6K price, "$6K today" vs "$2K × 3 monthly" converts very differently.
+Often the right move isn't lowering price: it's adding a payment plan. Same $6K price, "$6K today" vs "$2K × 3 monthly" converts very differently.
 
 ---
 
@@ -194,7 +194,7 @@ A B2B fractional CMO service.
 | **Core** | "Fractional CMO services" | "8-week marketing audit + 90-day execution plan, delivered by a CMO who's done it for 3+ similar companies" |
 | **Bonuses** | None | (1) 1:1 weekly check-ins for 90 days; (2) pre-vetted execution-partner introductions; (3) board-deck for marketing strategy section |
 | **Guarantee** | None | "If after the 8-week audit you don't have a clear 90-day plan you'd run yourself, you don't pay the audit fee" |
-| **Scarcity** | None | "We take 2 engagements per quarter — next slot opens [date]" |
+| **Scarcity** | None | "We take 2 engagements per quarter: next slot opens [date]" |
 | **Name** | "fCMO Consulting" | "The 90-Day Marketing Reset" |
 | **Price** | "$15K, paid up front" | "$15K → $5K to start, $5K at week 8, $5K at week 16" |
 

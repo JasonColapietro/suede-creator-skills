@@ -8,14 +8,14 @@ For the cross-cutting strategy, see [SKILL.md](../SKILL.md).
 
 ## SaaS Product Pages
 
-**Goal:** Get cited in "What is [category]?" and "Best [category]" queries. (Citation is the realistic goal here; being *recommended* in the answer depends on offsite consensus — see [citations-vs-recommendations.md](citations-vs-recommendations.md).)
+**Goal:** Get cited in "What is [category]?" and "Best [category]" queries. (Citation is the realistic goal here; being *recommended* in the answer depends on offsite consensus, see [citations-vs-recommendations.md](citations-vs-recommendations.md).)
 
 **Optimize:**
 - Clear product description in first paragraph (what it does, who it's for)
 - Feature comparison tables (you vs. category, not just competitors)
 - Specific metrics ("processes 10,000 transactions/sec" not "blazing fast")
 - Customer count or social proof with numbers
-- Pricing transparency (AI cites pages with visible pricing) — add a `/pricing.md` file so AI agents can parse your plans without rendering your page (see "Machine-Readable Files" in the main skill)
+- Pricing transparency (AI cites pages with visible pricing): add a `/pricing.md` file so AI agents can parse your plans without rendering your page (see "Machine-Readable Files" in the main skill)
 - FAQ section addressing common buyer questions
 
 ---
@@ -66,6 +66,6 @@ Google's AI features pull from product feeds and business profiles for local + e
 
 - **Merchant Center feeds** kept current with accurate inventory, pricing, attributes
 - **Google Business Profile** complete with hours, services, photos, posts, Q&A answered
-- **Reviews** — recent + sufficient volume; respond to reviews to signal active management
+- **Reviews**: recent + sufficient volume; respond to reviews to signal active management
 - **Service area schema** for local services
 - **Business Agent** (where available) for conversational customer engagement

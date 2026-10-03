@@ -1,10 +1,10 @@
-# Suede Code Grader — Worked Example
+# Suede Code Grader: Worked Example
 
-One change graded end to end, showing how the lanes combine into an overall letter and what the required upgrades look like. Illustration only — the rules live in SKILL.md.
+One change graded end to end, showing how the lanes combine into an overall letter and what the required upgrades look like. Illustration only: the rules live in SKILL.md.
 
 ## Worked Example
 
-A real grade, not a fictional one — this is `suede-code-grader` actually grading a real file from this repo: `mcp/suede-skills-mcp.mjs` (715 lines, the stdio JSON-RPC MCP server this skill pack ships). Read in full, then exercised at runtime (spawned the process, sent real JSON-RPC requests over stdin, read the stdout responses) before scoring. This is what the Output Format block looks like filled in, not a template.
+A real grade, not a fictional one: this is `suede-code-grader` actually grading a real file from this repo: `mcp/suede-skills-mcp.mjs` (715 lines, the stdio JSON-RPC MCP server this skill pack ships). Read in full, then exercised at runtime (spawned the process, sent real JSON-RPC requests over stdin, read the stdout responses) before scoring. This is what the Output Format block looks like filled in, not a template.
 
 ```text
 Simple explanation:
@@ -18,10 +18,10 @@ can't be used to attack anything.
 Usual breakdown:
 Target: mcp/suede-skills-mcp.mjs (715 lines), suede-creator-skills repo,
 branch main, clean working tree.
-Change reviewed: full file (no diff — graded as a standing artifact, not a
+Change reviewed: full file (no diff, graded as a standing artifact, not a
 PR), since the task was to grade a real file rather than a specific change.
 Runtime surfaces: local stdio JSON-RPC MCP server. No network listener, no
-auth, no payment, no database, no user-facing production route — it talks
+auth, no payment, no database, no user-facing production route: it talks
 to an MCP client over stdin/stdout on the machine that spawns it.
 
 Grades:
@@ -33,7 +33,7 @@ UX and release behavior: A
 Tests and verification: B
 Deploy readiness: A
 Overall: A
-Grade cap applied: none — surface is a local stdio MCP server, not
+Grade cap applied: none, surface is a local stdio MCP server, not
 auth/payment/migration/public-API, so no cap lane applies.
 
 Why:
@@ -41,7 +41,7 @@ Correctness: A. Traced every JSON-RPC method by hand and confirmed at
 runtime: `initialize`, `ping`, `tools/list`, `tools/call`, `resources/list`,
 `resources/read`, `prompts/list`, and `prompts/get` all returned the
 expected shape. Unknown tool name, unknown resource URI, and unknown skill
-name each produced correct, distinct error handling — `get_suede_skill`
+name each produced correct, distinct error handling, `get_suede_skill`
 with a bad name returns a tool-level `isError: true` result (per MCP spec,
 since the tool ran but found nothing), while `resources/read` and
 `tools/call` on to a genuinely unregistered name throw a JSON-RPC
@@ -58,7 +58,7 @@ a clean `-32603` error, then confirmed the very next well-formed request
 overflow path.
 
 Security and permissions: A. No secrets, no injected shell/SQL, no auth
-surface to bypass (there is no auth — this is a local dev tool spawned by
+surface to bypass (there is no auth: this is a local dev tool spawned by
 an MCP client, same trust boundary as the process that starts it). No
 user-controlled path construction; `catalogPath` is built from
 `__dirname`, not request input. `boundedString` (line 27-30) caps every
@@ -68,7 +68,7 @@ server that will eventually take arguments from less-trusted callers.
 
 Data and state: A. No database, no migration, no cache. `catalog.json` is
 read once at module load (line 22-23) and treated as immutable static
-data for the life of the process — no write path exists anywhere in this
+data for the life of the process: no write path exists anywhere in this
 file.
 
 Suede truth: B. Minor inconsistency, not a false claim: `get_suede_skill`
@@ -78,7 +78,7 @@ straight from `catalog.json` into both `content` text and
 while every other tool handler in the same function (lines 507-548) bounds
 every argument-derived string it echoes back. Confirmed by reading: the
 longest live `catalog.json` description is 1016 chars (suede-campaign-in-a-box),
-so nothing is actually breaking today — this is a consistency gap that
+so nothing is actually breaking today: this is a consistency gap that
 would only bite if a future catalog entry grew past a client's tolerance
 for an unbounded field, or if catalog.json ever stopped being pure
 repo-controlled data. Named as a Required Upgrade below, not a blocker.
@@ -97,11 +97,11 @@ manually spawning the process and sending real requests this session, not
 by an automated suite that runs in CI. The repo does have
 `scripts/validate-skill-pack.mjs` and the `suede-mcp-qa` skill, which
 cover catalog/skill-folder alignment but not this file's JSON-RPC
-behavior directly. That's a real, bounded gap — not a blocker, since the
+behavior directly. That's a real, bounded gap: not a blocker, since the
 runtime behavior checked out clean by hand, but there's no regression net
 if a future change breaks `tools/call` error shaping.
 
-Deploy readiness: A. No env vars, no config, no build step — it's a
+Deploy readiness: A. No env vars, no config, no build step: it's a
 single `.mjs` file with one dependency (`js-yaml`, used indirectly via
 the shared catalog tooling, not by this file itself... actually unused
 by this file: confirmed no `js-yaml` import in suede-skills-mcp.mjs
@@ -112,7 +112,7 @@ install docs describe.
 Required upgrades:
 1. Route `get_suede_skill`'s `content`/`structuredContent.skill` output
    through `boundedString` (or an equivalent bound on `description` and
-   `useWhen`) for consistency with every other tool handler in the file —
+   `useWhen`) for consistency with every other tool handler in the file:
    currently harmless since catalog.json is trusted static data, but the
    inconsistency is worth closing before this server's argument surface
    changes.
@@ -120,7 +120,7 @@ Required upgrades:
    JSON-RPC exercise run for this grade) so `tools/call`, `resources/read`,
    and error-path shaping have a regression net instead of relying on
    manual verification each time.
-3. No third required upgrade — nothing else surfaced.
+3. No third required upgrade: nothing else surfaced.
 
 Verification:
 Checked: full file read; live process spawn with real JSON-RPC requests
@@ -130,7 +130,7 @@ error), prompts/list; 1 MiB buffer-overflow guard exercised directly and
 confirmed recovery; catalog.json's longest description measured against
 the unbounded echo path; grep confirmed no `js-yaml` import in this file.
 Not checked: behavior under a real MCP client (Claude Code, Codex, etc.)
-end to end — only raw stdio JSON-RPC was exercised directly; concurrent/
+end to end, only raw stdio JSON-RPC was exercised directly; concurrent/
 overlapping request handling under load; the `prompts/get` argument-
 substitution paths for all five prompts (spot-checked `suede-copy-seo-audit`
 only).

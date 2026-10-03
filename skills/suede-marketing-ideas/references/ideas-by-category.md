@@ -1,6 +1,6 @@
 # The 139 Marketing Ideas
 
-Complete list of candidate marketing approaches organized by category. Nothing here is claimed to be proven — each entry is a candidate to score against the rubric in SKILL.md before it is recommended. The numbering is a cross-skill contract (`suede-marketing-plan` Section 12 cites these numbers); do not renumber.
+Complete list of candidate marketing approaches organized by category. Nothing here is claimed to be proven: each entry is a candidate to score against the rubric in SKILL.md before it is recommended. The numbering is a cross-skill contract (`suede-marketing-plan` Section 12 cites these numbers); do not renumber.
 
 ## Contents
 - Content & SEO (1-10)
@@ -23,13 +23,13 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 ## Content & SEO (1-10)
 
-1. **Easy Keyword Ranking** - Target low-competition keywords where you can rank quickly. Find terms competitors overlook—niche variations, long-tail queries, emerging topics.
+1. **Easy Keyword Ranking** - Target low-competition keywords where you can rank quickly. Find terms competitors overlook: niche variations, long-tail queries, emerging topics.
 
 2. **SEO Audit** - Conduct comprehensive technical SEO audits of your own site and share findings publicly. Document fixes and improvements to build authority.
 
 3. **Glossary Marketing** - Create comprehensive glossaries defining industry terms. Each term becomes an SEO-optimized page targeting "what is X" searches.
 
-4. **Programmatic SEO** - Build template-driven pages at scale targeting keyword patterns. Location pages, comparison pages, integration pages—any pattern with search volume.
+4. **Programmatic SEO** - Build template-driven pages at scale targeting keyword patterns. Location pages, comparison pages, integration pages: any pattern with search volume.
 
 5. **Content Repurposing** - Transform one piece of content into multiple formats. Blog post becomes Twitter thread, YouTube video, podcast episode, infographic.
 
@@ -59,13 +59,13 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 14. **Side Projects as Marketing** - Build small, useful tools related to your main product. Side projects attract users who may later convert.
 
-15. **Engineering as Marketing** - Build free tools that solve real problems. Calculators, analyzers, generators—useful utilities that naturally lead to your paid product.
+15. **Engineering as Marketing** - Build free tools that solve real problems. Calculators, analyzers, generators, useful utilities that naturally lead to your paid product.
 
 16. **Importers as Marketing** - Build import tools for competitor data. "Import from [Competitor]" reduces switching friction.
 
 17. **Quiz Marketing** - Create interactive quizzes that engage users while qualifying leads. Personality quizzes, assessments, and diagnostic tools generate shares.
 
-18. **Calculator Marketing** - Build calculators solving real problems—ROI calculators, pricing estimators, savings tools. Calculators attract links and rank well.
+18. **Calculator Marketing** - Build calculators solving real problems. ROI calculators, pricing estimators, savings tools. Calculators attract links and rank well.
 
 19. **Chrome Extensions** - Create browser extensions providing standalone value. Chrome Web Store becomes another distribution channel.
 
@@ -307,7 +307,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 118. **Cameo Marketing** - Use Cameo celebrities for personalized messages.
 
-119. **OOH Advertising** - Out-of-home advertising—billboards, transit ads.
+119. **OOH Advertising** - Out-of-home advertising, billboards, transit ads.
 
 120. **Marketing Stunts** - Bold, attention-grabbing marketing moments.
 

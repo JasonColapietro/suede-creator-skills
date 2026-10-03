@@ -2,7 +2,7 @@
 
 The four lane playbooks. A run executes one. The shared evidence and severity gate in SKILL.md applies to all of them.
 
-## Lane A — Rights-gap audit
+## Lane A: Rights-gap audit
 
 Identify rights and intake gaps before packaging. Sweep all seven audit lanes:
 
@@ -34,7 +34,7 @@ Next lane / skill: suede-rights-passport | Lane B provenance | Lane C licensing 
 
 Do not treat the audit as legal clearance.
 
-## Lane B — Provenance map
+## Lane B: Provenance map
 
 Make the origin trail readable without overclaiming what is known.
 
@@ -61,7 +61,7 @@ Do-not-share items:
 Next questions:
 ```
 
-## Lane C — Licensing-discussion readiness
+## Lane C: Licensing-discussion readiness
 
 Prepare creator materials for licensing review while keeping evidence boundaries
 visible. Does NOT claim rights are cleared.
@@ -88,7 +88,7 @@ Unsafe claims removed:
 Next step:
 ```
 
-## Lane D — Royalty-routing readiness
+## Lane D: Royalty-routing readiness
 
 Summarize whether a project is ready for royalty-routing discussion. Readiness,
 not approval. Public-safe. Moves no money.

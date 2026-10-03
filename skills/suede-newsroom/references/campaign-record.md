@@ -1,7 +1,7 @@
 # The campaign record
 
 One file per campaign at `.agents/newsroom/<slug>.md`. It carries decisions and
-the evidence behind them — drafts live beside it, not in it.
+the evidence behind them, drafts live beside it, not in it.
 
 ## Contents
 
@@ -110,7 +110,7 @@ readable by the next role.
 
 When a needed field is empty, set `owner-stage` back to the previous role, append
 a line to `## Returns`, and halt with the format in `SKILL.md` Step 3. Two returns
-on the same field means the pipeline cannot supply it — escalate to the human.
+on the same field means the pipeline cannot supply it, escalate to the human.
 
 ## Filled example
 
@@ -122,15 +122,15 @@ owner-stage: strategist
 opened: 2026-08-28
 
 ## Signal
-event: Three teams described the same failure — multi-agent content setups
+event: Three teams described the same failure, multi-agent content setups
   producing near-identical posts across platforms.
 source-url: support ticket cluster #4411, #4460, #4472
-decay-window: weeks — a workflow complaint, not a news cycle
+decay-window: weeks: a workflow complaint, not a news cycle
 reader-question: "why does my AI content team keep writing the same post?"
 proof-object: side-by-side of four platform posts from one ticket, hooks near-identical
 rejected-candidates:
-  - vendor pricing change — no reader outcome, decays in days
-  - a model release — already covered by every newsletter this audience reads
+  - vendor pricing change: no reader outcome, decays in days
+  - a model release: already covered by every newsletter this audience reads
 
 ## Research
 current-source: the ticket cluster above, plus two public write-ups of the pattern
@@ -139,7 +139,7 @@ verified-claims:
      repurposing step. [ticket #4411 transcript]
   2. Three of four used one shared memory across roles. [ticket #4460]
   3. None recorded which claims the assets relied on. [audit notes]
-inference: shared memory is *likely* the larger cause — not established here
+inference: shared memory is *likely* the larger cause: not established here
 contradictions: one public write-up blames prompt length, which this sample
   does not support
 not-proven: that separating memory alone fixes duplication; no controlled comparison
@@ -148,4 +148,4 @@ mechanisms:
   - shared memory removes the difference between specialists
 ```
 
-The angle stage then picks one thesis from that — and names what it rejected.
+The angle stage then picks one thesis from that, and names what it rejected.

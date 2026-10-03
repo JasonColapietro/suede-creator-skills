@@ -1,4 +1,4 @@
-# Team and Agency Model — Ownership Before Org Charts
+# Team and Agency Model: Ownership Before Org Charts
 
 This reference helps assign work. It does not prescribe a first hire, title,
 agency type, or in-house/outsourced ratio from funding stage or company size.
@@ -83,23 +83,23 @@ access before signing or provisioning anything.
 
 ## Applying It to the Plan
 
-### Section 3 — Current State
+### Section 3: Current State
 
 Map every current owner, capacity limit, open role, contractor, vendor, and
 approval boundary.
 
-### Section 9 — 90-Day Roadmap
+### Section 9: 90-Day Roadmap
 
 Assign approved work to named owners. Hiring or agency selection appears as a
 decision task with evidence and authority, not as an assumed unlock.
 
-### Section 11 — Operations Stack
+### Section 11: Operations Stack
 
 For each workflow, show accountable owner, reviewer, tool access, and fallback.
 A public Suede skill can structure work; it does not replace accountable
 ownership or prove staffing capacity.
 
-### Section 13 — Open Decisions
+### Section 13: Open Decisions
 
 List unresolved ownership gaps, evidence needed, decision owner, maximum
 exposure, and next review date.

@@ -110,8 +110,8 @@ say which one and mark the go/no-go unresolved rather than filling it in.
 - Show preview of what they'll get
 - Optional: Segment by asking one qualifying question
 
-The gating trade-off itself — per-field conversion cost and how to frame the
-exchange — is owned by `suede-lead-magnets`. Use its gating tables when deciding
+The gating trade-off itself (per-field conversion cost and how to frame the
+exchange) is owned by `suede-lead-magnets`. Use its gating tables when deciding
 what to ask for; the table above only covers where the gate sits in a tool.
 
 ---
@@ -148,9 +148,9 @@ When: Something good exists, white-label available, not core differentiator
 ## MVP Scope
 
 ### Minimum Viable Tool
-1. Core functionality only—does the one thing, works reliably
-2. Essential UX—clear input, obvious output, mobile works
-3. Basic lead capture—email collection, leads go somewhere useful
+1. Core functionality only: does the one thing, works reliably
+2. Essential UX: clear input, obvious output, mobile works
+3. Basic lead capture: email collection, leads go somewhere useful
 
 ### What to Skip Initially
 Account creation, saving results, advanced features, perfect design, every edge case
@@ -174,7 +174,7 @@ Rate each factor 1-5:
 
 **25+**: Strong candidate | **15-24**: Promising | **<15**: Reconsider
 
-Anchors for the three decisive factors — score these against the anchor, not on
+Anchors for the three decisive factors: score these against the anchor, not on
 impression, and cite the evidence used:
 
 | Factor | 1 | 3 | 5 |

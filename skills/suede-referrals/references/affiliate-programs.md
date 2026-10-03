@@ -59,11 +59,11 @@ How long after click does affiliate get credit?
 
 ### Outreach template:
 ```
-Subject: Partnership opportunity — [Your Product]
+Subject: Partnership opportunity: [Your Product]
 
 Hi [Name],
 
-I've been following your content on [topic] — particularly [specific piece] — and think there could be a great fit for a partnership.
+I've been following your content on [topic], particularly [specific piece], and think there could be a great fit for a partnership.
 
 [Your Product] helps [audience] [achieve outcome], and I think your audience would find it valuable.
 
@@ -97,12 +97,12 @@ Provide affiliates with:
 ### Referral Program Tools
 
 **Full-featured platforms:**
-- ReferralCandy — E-commerce focused
-- Ambassador — Enterprise referral programs
-- Friendbuy — E-commerce and subscription
-- GrowSurf — SaaS and tech companies
-- Mention Me — AI-powered referral marketing
-- Viral Loops — Template-based campaigns
+- ReferralCandy: E-commerce focused
+- Ambassador: Enterprise referral programs
+- Friendbuy: E-commerce and subscription
+- GrowSurf: SaaS and tech companies
+- Mention Me: AI-powered referral marketing
+- Viral Loops: Template-based campaigns
 
 **Built-in options:**
 - Stripe (basic referral tracking)
@@ -112,20 +112,20 @@ Provide affiliates with:
 ### Affiliate Program Tools
 
 **Affiliate networks:**
-- ShareASale — Large merchant network
-- Impact — Enterprise partnerships
-- PartnerStack — SaaS focused
-- Tapfiliate — Simple SaaS affiliate tracking
-- FirstPromoter — SaaS affiliate management
+- ShareASale: Large merchant network
+- Impact: Enterprise partnerships
+- PartnerStack: SaaS focused
+- Tapfiliate: Simple SaaS affiliate tracking
+- FirstPromoter: SaaS affiliate management
 
 **Partner Relationship Management (PRM):**
-- Introw — Full PRM with deal registration, commissions, tiers, QBRs, and
+- Introw: Full PRM with deal registration, commissions, tiers, QBRs, and
   partner engagement tracking. Verify current vendor documentation, account
   access, pricing, and payout controls before use.
 
 **Self-hosted:**
-- Rewardful — Stripe-integrated affiliates
-- Refersion — E-commerce affiliates
+- Rewardful: Stripe-integrated affiliates
+- Refersion: E-commerce affiliates
 
 ### Choosing a Tool
 

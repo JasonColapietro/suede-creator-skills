@@ -1,11 +1,11 @@
 ---
 name: suede-copy
-description: "Suede Labs conversion-copy writer: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass — a hero, a button set, an email subject, a README section, a product blurb — or when copy on a single surface needs sharpening before it ships. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy)."
+description: "Suede Labs conversion-copy writer: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass (a hero, a button set, an email subject, a README section, a product blurb) or when copy on a single surface needs sharpening before it ships. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy)."
 ---
 
 # Suede Copy
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -20,9 +20,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
@@ -91,7 +91,7 @@ an argument or writing for a buyer you have not written for before.
 
 The headline and CTA formula banks are in
 `references/headline-and-cta-formulas.md`. Read it when you are generating variants
-or a line is not landing — not when you already have a headline that works.
+or a line is not landing: not when you already have a headline that works.
 
 ## Page And Docs Structure
 
@@ -207,7 +207,7 @@ Score (each dimension named below, then the total): /70
 Ready: yes | with caveats | no
 ```
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If any of these thoughts appear, stop and run the gate you were about to skip:
 
@@ -232,7 +232,7 @@ Search/AI readability: /10
 Total: /70
 ```
 
-Recommend against shipping copy — and say why, leaving the call to the user — when:
+Recommend against shipping copy (and say why, leaving the call to the user) when:
 
 - the primary action is unclear
 - the page promises a feature the product does not implement

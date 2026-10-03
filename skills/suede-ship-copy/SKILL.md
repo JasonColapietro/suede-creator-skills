@@ -1,6 +1,6 @@
 ---
 name: suede-ship-copy
-description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing — researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
+description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing, researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
 ---
 
 # Suede Ship Copy
@@ -13,7 +13,7 @@ same file. This decomposes by **message ownership**: two sections may never make
 the same point, and no section may assert a fact an agent invented. Same graph,
 different collision rule.
 
-## Model selection — Fable capped at 4 without asking
+## Model selection: Fable capped at 4 without asking
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
@@ -21,10 +21,10 @@ happens to be set to. That is how a run sized against one allocation gets billed
 another without anyone choosing it.
 
 **Up to 4 concurrent Fable subagents are allowed without an explicit Fable
-instruction. Beyond that, Fable must be specified** — every range this skill offers
+instruction. Beyond that, Fable must be specified**: every range this skill offers
 (30 at the narrowest) is far beyond 4, so its fan-out never runs on Fable unless the
 user named Fable for this run. An inherited session model is not a
-specification — "the session was already on it" is not the user asking. Absent an
+specification: "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
 allocation and get an answer. Silence is not consent to spend it.
@@ -40,13 +40,13 @@ thing in the brief is the person who owns the product telling you a fact about
 it. Those are not the same input and this workflow never treats them as the same
 input.
 
-Anything the requester supplies — the brief, the `given` list, `mustSay` strings —
+Anything the requester supplies (the brief, the `given` list, `mustSay` strings)
 enters the permitted claim set marked `origin: "user"` and is **exempt at every
 stage**:
 
 - Intake transcribes it. It does not verify, source, soften, or flag it.
 - The audit never sees it. A research fact that merely restates a given is
-  removed before the audit rather than checked — the given itself already carries
+  removed before the audit rather than checked: the given itself already carries
   that content into the permitted set, so nothing is lost. The run log and the
   evidence record both say "removed", not "passed through".
 - **Protected strings are not claims.** A `mustSay` product name or legal line is
@@ -64,7 +64,7 @@ stage**:
   and the quoted text must be contained in the longer *and* be at least 60% of it,
   with a 6-character minimum. A lens quoting most of a given is out of scope; a
   lens quoting two words that happen to appear inside one is not. That matters in
-  both directions — a flat floor would let a compound sentence (something you said
+  both directions: a flat floor would let a compound sentence (something you said
   **and** something an agent invented) launder the invented half behind the true
   half.
 - The refute prompt says out-of-scope **at every severity**, not only for blockers.
@@ -85,7 +85,7 @@ script downgrades it to advisory and logs the overreach.
 Invoke the workflow bundled at `skills/suede-ship-copy/workflows/suede-ship-copy.js`.
 If you keep a personal copy, `~/.claude/workflows/suede-ship-copy.js` works the same way.
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -100,9 +100,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage): pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 **That exception never applies to a claim the requester supplied.** A
@@ -116,44 +116,44 @@ finding.
 
 This is the expensive instrument: about thirty agents (26 floor, ~31 typical,
 42 ceiling), research-heavy and front-loaded, billed to the Claude limit. When the
-work is genuinely parallel and shallow instead, brute force beats surgery — the
+work is genuinely parallel and shallow instead, brute force beats surgery: the
 Routing section at the end says where each of those jobs goes.
 
 ## Parse the invocation
 
 The argument is free-form. Extract:
 
-- **piece** — required. What to write, in the user's own words, kept verbatim.
+- **piece**: required. What to write, in the user's own words, kept verbatim.
   Do not compress it into a slogan; the planner decomposes it into sections and
   the detail is what makes sections separable.
-- **surface** — required. Where it goes: landing page, email, email sequence, X
+- **surface**: required. Where it goes: landing page, email, email sequence, X
   thread, blog post, README, docs page, ad, app store listing, press note. The
   surface sets hard character limits, so a wrong guess is a rewrite.
-- **sources** — paths and URLs that ground the facts: the repo, the pricing
+- **sources**: paths and URLs that ground the facts: the repo, the pricing
   config, the changelog, the live site, transcripts, support threads. Optional,
   and the intake agent finds them otherwise, but a supplied source list is the
   difference between a claim audit that has something to check and one that
   deletes half the draft.
-- **given** — facts the user states themselves, as an array of plain strings (an
+- **given**: facts the user states themselves, as an array of plain strings (an
   object with a `claim` key also works). These are established:
   they go straight into the permitted set, skip the audit, and no phase may
   question them. Use this whenever the user tells you something about the product
-  that no file will confirm — a launch date, a customer result, a decision not yet
+  that no file will confirm: a launch date, a customer result, a decision not yet
   written down.
-- **audience** — who reads it. Optional; intake infers it and says what it inferred.
-- **liveUrl** — the published surface, if one exists. The baseline capture and the
+- **audience**: who reads it. Optional; intake infers it and says what it inferred.
+- **liveUrl**: the published surface, if one exists. The baseline capture and the
   drift check both use it.
-- **outDir** — where the draft lands. Defaults to a `.suede-copy/<slug>/`
+- **outDir**: where the draft lands. Defaults to a `.suede-copy/<slug>/`
   directory. Must be a draft location: an output path pointing at already
   published copy is a halt.
-- **mustSay** — strings that must survive byte-exact: legal product name,
+- **mustSay**: strings that must survive byte-exact: legal product name,
   trademark forms, price strings, disclaimer sentences.
-- **wordBudget** — total words. Optional; the surface law supplies limits per field.
-- **houseStyle** — optional `{ guidance, emDashes }`. `guidance` is the supplied
+- **wordBudget**: total words. Optional; the surface law supplies limits per field.
+- **houseStyle**: optional `{ guidance, emDashes }`. `guidance` is the supplied
   author/company voice brief; `emDashes` is `allow` or `avoid` (Suede default).
   Translate an explicit punctuation preference into this field so prompts and
   deterministic checks agree. Protected source spans remain byte-exact either way.
-- **agentBudget** — `light`, `standard`, or `deep`. Required, and you must ask the
+- **agentBudget**: `light`, `standard`, or `deep`. Required, and you must ask the
   user rather than pick it (see below). Omitting it defaults to `standard`.
 
 If **piece** or **surface** is missing, ask. Do not invent a brief for something
@@ -174,7 +174,7 @@ for an answer before the `Workflow` call.** Do not pick one for them.
 Those numbers are measured against the actual script, not estimated, across
 section counts from 5 to 8 and review findings from 1 to 12 per lens.
 
-Sections are never cut to fit a range — they are the deliverable. The budget
+Sections are never cut to fit a range: they are the deliverable. The budget
 scales research depth and verification depth only, and everything it skips is
 reported as an unverified caveat rather than dropped.
 
@@ -201,53 +201,53 @@ but an object is correct.
 Twelve phases, parallel wherever the edges are not real. This is the logical DAG;
 the script's twelve `phase()` labels fold **Claim audit** into `Gaps` and **Collision
 check** into `Outline`, and split **Review and refute** and **Gate and handoff** into
-two each. When narrating live progress use the script's labels — there is no phase
+two each. When narrating live progress use the script's labels: there is no phase
 called "Claim audit" in `/workflows`.
 
-1. **Intake** — sources, the requester's own statements transcribed into the
+1. **Intake**: sources, the requester's own statements transcribed into the
    permitted set untouched, the currently published text captured verbatim, voice
    references drawn from shipped copy, protected strings, the surface's hard
    limits, hazards. Manifest only.
-2. **Research** — five blind lenses: product truth, audience, market, voice,
+2. **Research**: five blind lenses: product truth, audience, market, voice,
    surface law. Each searches a different way because one angle never finds
    everything. Every fact carries a `file:line`, URL, sha, or timestamp.
-3. **Gaps** — a completeness critic names what went unread, then one bounded fill
+3. **Gaps**: a completeness critic names what went unread, then one bounded fill
    round (first 2 gaps; the rest ride to the handoff as unread).
-4. **Claim audit** — the load-bearing skeptic, pointed only at agent output. Every
+4. **Claim audit**: the load-bearing skeptic, pointed only at agent output. Every
    agent-generated fact is opened against its source and returns `holds`,
    `overstated`, `unsourceable`, or `stale`. Dropped claims leave the set;
    overstated ones are narrowed to what the source supports. The requester's
    givens are not in this list and a verdict returned against one is discarded
    unread. **Nothing downstream may assert a claim outside the permitted set:
    surviving agent claims plus every given.**
-5. **Angles** — three postures generated blind to each other: problem-first,
+5. **Angles**: three postures generated blind to each other: problem-first,
    outcome-first, wedge. Each declares whether a competitor could publish its
    headline verbatim, which is a failing grade rather than a formatting field.
-6. **Outline** — the planner judges the three angles, grafts the best of the
+6. **Outline**: the planner judges the three angles, grafts the best of the
    runners-up, and writes a section map: one message per section, citations drawn
    only from the surviving claims, an observable acceptance question per section.
    High effort by design. Then a red team. One revision round follows **only** if the
    red team returned a fatal objection or two serious ones; otherwise the map stands
    and the objections ride to the handoff. Do not narrate a revision that did not run.
-7. **Collision check** — a pure function, no agent. Duplicate message ownership,
+7. **Collision check**: a pure function, no agent. Duplicate message ownership,
    a citation outside the claim set, a protected string assigned zero or twice, or
    budgets over the ceiling all halt the run.
-8. **Draft** — one writer per section, in parallel. Each sees its neighbours' jobs
+8. **Draft**: one writer per section, in parallel. Each sees its neighbours' jobs
    so transitions are possible, and never their text. A fact outside its citation
    list becomes `[AUTHOR: supply X]`, never an invention.
-9. **Assemble** — a barrier. Transitions written, repetition cut, one voice,
+9. **Assemble**: a barrier. Transitions written, repetition cut, one voice,
    budget enforced, placeholders and protected strings preserved byte-exact.
-10. **Review and refute** — four lenses on the whole piece (cold read, assertion
+10. **Review and refute**: four lenses on the whole piece (cold read, assertion
     audit, conversion, slop). Findings aimed at a given are dropped by a pure
     function first, then two independent verifiers take each surviving blocker or
     major, refute by default. **Both must fail to refute** for a finding to
     survive; unanimity, not majority, because rewriting a line that was fine has a
     real cost in a short piece.
-11. **Polish** — one reviser for confirmed blockers (prose has no file-level
+11. **Polish**: one reviser for confirmed blockers (prose has no file-level
     disjointness, so parallel editors of one string produce a conflict with no
     merge tool), then Suede Slop Stop scored out of 50, then the graphic spec and
     the channel package in parallel.
-12. **Gate and handoff** — deterministic checks (open placeholders, missing
+12. **Gate and handoff**: deterministic checks (open placeholders, missing
     protected strings, house-style dash violations, word count, fields over limit) run in the script
     where no agent can argue with them, then a read-only publish-readiness verifier
     for drift, truth at the source, rights, and reversibility. Drift and truth-at-the-source
@@ -278,7 +278,7 @@ Every gate in this workflow resolves to a number or a command:
 The six rows from Channel field through Stalled sections are **hard gates**:
 any one fails and `hardMechanical` forces `copyVerdict: hold`.
 Two more hard gates have no row because they are
-liveness rather than quality — a channel-package agent or a deslop agent that
+liveness rather than quality: a channel-package agent or a deslop agent that
 returned nothing also forces `hold`.
 
 The preceding rows describe claim scope, review, and planning constraints.
@@ -298,12 +298,12 @@ references are reported as limitations, never replaced with an improvised pass.
 
 Two conditions stop the run. Neither is a judgement about anything the user said:
 
-**`halted: true, reason: "output path points at published copy"`** — the requested
+**`halted: true, reason: "output path points at published copy"`**: the requested
 `outDir` points at a live page source, a shipped README, or a sent template rather
 than a draft location. Name the path, then offer: write to a draft path beside it,
 write to `.suede-copy/<slug>/`, or confirm the user wants to place it themselves.
 
-**`halted: true, reason: "section map collision"`** — two sections own the same
+**`halted: true, reason: "section map collision"`**: two sections own the same
 message, a section cites a claim that failed the audit, a protected string is
 unassigned or double-assigned, or the section budgets total more than
 `wordBudget × 1.1`. Report the collisions. The fix is a re-plan, not a retry:
@@ -315,7 +315,7 @@ carry forward: intake returned no manifest, the planner returned no section map,
 or assembly returned no text. Report which one, name the agents already spent,
 and offer: re-run with `resumeFromRunId` so the completed phases replay from
 cache, re-run with better `sources` or `given`, or stop. Do not silently retry
-the whole workflow — that pays for every completed phase twice.
+the whole workflow: that pays for every completed phase twice.
 
 ## While it runs
 
@@ -327,25 +327,25 @@ notification when it completes; `/workflows` shows live progress.
 Report faithfully, in this order:
 
 1. `copyVerdict` and the deliverable path.
-2. `stalled` — any section whose writer returned nothing usable. The assembled
+2. `stalled`: any section whose writer returned nothing usable. The assembled
    piece has a hole where that section's message should be. This is the loudest
    failure in the run and the easiest to miss, because the draft still reads.
-3. `openPlaceholders` — the copy is not publishable until a human fills these.
+3. `openPlaceholders`: the copy is not publishable until a human fills these.
    Lead with them; they are the honest measure of what nobody could source.
-4. `droppedClaims` and `narrowedClaims` — what the **research agents** asserted and
+4. `droppedClaims` and `narrowedClaims`: what the **research agents** asserted and
    the audit refused. Anyone editing this copy later must not put them back. Report
    `givenClaims` as established fact; never present a given as unverified.
-5. `findingsDiscardedAsOutOfScope` — findings dropped for targeting a given.
+5. `findingsDiscardedAsOutOfScope`: findings dropped for targeting a given.
    Report the count. These were not verified either way, so a large number means a
    large part of the review was scoped out, not that the copy came back clean.
 6. `confirmedFindings`, then `mechanical`, then the deslop score.
-7. `unread` — naming what went unread is most of the honesty.
+7. `unread`: naming what went unread is most of the honesty.
 
 ## Verdict is advisory
 
 `copyVerdict` changes what you report, never what the run produced. The single
 exception is a problem in **already published** copy that the verifier observed
-independent of this draft — one live page contradicting another, a claim that has
+independent of this draft: one live page contradicting another, a claim that has
 gone stale on the site. That goes to the user immediately.
 
 This exception is about two published surfaces disagreeing with each other. It is
@@ -389,7 +389,7 @@ This workflow must NOT:
 
 Edit the script and re-invoke with the same `scriptPath`. Add
 `resumeFromRunId: "<run id>"` to replay unchanged agents from cache. Changing an
-agent's prompt or schema re-runs that agent and everything downstream of it — so
+agent's prompt or schema re-runs that agent and everything downstream of it, so
 a tweak to the deslop prompt is cheap, and a tweak to the intake prompt is a full
 re-run.
 

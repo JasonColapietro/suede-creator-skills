@@ -49,7 +49,7 @@ From "Boundaries":
 - State only true facts to an associate: order number or subscription name, item, price, fee amount. Never invent a prior contact attempt, a return reason, or a cancellation reason.
 - Make a goodwill ask once. Do not push past a single polite counter if declined.
 - Never promise recovery, and never report a promised amount as recovered money.
-- Price-protection refunds are out of scope and unvalidated — do not attempt one without discussing it with the user first.
+- Price-protection refunds are out of scope and unvalidated: do not attempt one without discussing it with the user first.
 
 ## References
 

@@ -46,7 +46,7 @@ From "Red flags" — If any of these appear in your reasoning, stop and re-read 
 
 - "The artist says it's cleared." A claim is not clearance. Status stays UNCONFIRMED with a clearance question attached.
 - "We'll sort splits later." Splits sort before pitching, or the gap ships as an open question. Never silently.
-- "The supervisor is waiting — skip the instrumental check." The checklist is the package. Skipping it ships a track no one can license.
+- "The supervisor is waiting: skip the instrumental check." The checklist is the package. Skipping it ships a track no one can license.
 - "It's a small indie film, nobody checks samples." Sample status is binary: cleared with proof, or OPEN.
 - "Soften the sample note so the one-sheet reads better." Hidden risk reads worse in a licensing call.
 

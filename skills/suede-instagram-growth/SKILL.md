@@ -13,7 +13,7 @@ audience, offer, voice, production capacity, or a clearly labeled experiment.
 Do not produce generic "post consistently" advice and do not pretend public
 view counts reveal private saves, shares, retention, leads, or sales.
 
-## Red Flags — Correct These First
+## Red Flags: Correct These First
 
 - **"Lock this context forever."** Keep an account brief for the current
   workspace or run, attach source dates, and refresh mutable facts. Never claim
@@ -81,7 +81,7 @@ Use this exact format when authorized evidence, asset rights, identity, or
 external-action approval blocks the requested result:
 
 ```text
-HALT — <one-line blocker>
+HALT: <one-line blocker>
 Why it blocks: <specific missing authority or evidence>
 Resolve with:
 1. <option>
@@ -245,7 +245,7 @@ Return:
 4. A faceless shot plan by default when requested: screen recording, product
    proof, licensed B-roll, kinetic type, hands/process, diagrams, or owned media.
 5. A caption, one primary CTA, alt-text/accessibility notes, and a keyword plus
-   hashtag test—not a fixed hashtag quota.
+   hashtag test: not a fixed hashtag quota.
 6. A rights and claim checklist.
 7. One-variable test card and post-publication readback fields.
 
@@ -259,8 +259,8 @@ Pick the narrative before writing: `problem-proof`, `mistake-fix`,
 count from the number of necessary beats; 8–10 is a starting range only when the
 idea genuinely has that many beats.
 
-The canonical slide-by-slide framework library — per-slide copy slots and a
-production checklist — is owned by `suede-social`, in its carousel-frameworks
+The canonical slide-by-slide framework library (per-slide copy slots and a
+production checklist) is owned by `suede-social`, in its carousel-frameworks
 reference. Read it whenever slide-level copy slots are needed rather than
 inventing a competing structure here.
 
@@ -331,7 +331,7 @@ Suede product:
   music app.
 - Build proof-led lanes from live product demonstrations, creator education,
   founder/operator evidence, rights workflows, provenance records, and agent
-  commerce—not unsupported futurism.
+  commerce: not unsupported futurism.
 - Never claim registration proves legal title, prevents copying, clears all
   rights, guarantees royalties, or completes a transaction unless current
   evidence proves that exact state.

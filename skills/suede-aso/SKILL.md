@@ -16,7 +16,7 @@ prioritized action plan.
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
-## Phase 1 — Identify Store & Fetch
+## Phase 1: Identify Store & Fetch
 
 ### Detect store type from URL
 
@@ -34,10 +34,10 @@ Use WebFetch to retrieve the listing page. Extract every available field:
 
 **Apple App Store fields:**
 
-- App name (title) — 30 char limit
-- Subtitle — 30 char limit
-- Description (long) — not indexed for search, but matters for conversion
-- Promotional text — 170 chars, updatable without new release
+- App name (title): 30 char limit
+- Subtitle: 30 char limit
+- Description (long): not indexed for search, but matters for conversion
+- Promotional text: 170 chars, updatable without new release
 - Category (primary + secondary)
 - Screenshots (count, order, caption text)
 - Preview video (presence, duration)
@@ -54,9 +54,9 @@ Use WebFetch to retrieve the listing page. Extract every available field:
 
 **Google Play fields:**
 
-- App name (title) — 30 char limit
-- Short description — 80 char limit
-- Full description — 4,000 char limit, IS indexed for search
+- App name (title): 30 char limit
+- Short description: 80 char limit
+- Full description: 4,000 char limit, IS indexed for search
 - Category + tags
 - Feature graphic (presence)
 - Screenshots (count, order)
@@ -92,10 +92,10 @@ its presence, note this and recommend the user check App Store Connect.
 
 ---
 
-## Phase 1.5 — Assess Brand Maturity
+## Phase 1.5: Assess Brand Maturity
 
 Before scoring, classify the app into one of three tiers. This determines how
-you interpret "textbook ASO" deviations — a deliberate brand choice by a
+you interpret "textbook ASO" deviations: a deliberate brand choice by a
 household name is not the same as a missed opportunity by an unknown app.
 
 ### Tier definitions
@@ -108,7 +108,7 @@ household name is not the same as a missed opportunity by an unknown app.
 
 Classification happens here, before any scoring. The per-dimension adjustments
 each tier earns live under "Brand Maturity Adjustments" in
-`references/scoring-criteria.md`, which Phase 2 loads before scoring — do not
+`references/scoring-criteria.md`, which Phase 2 loads before scoring: do not
 restate or re-derive them here.
 
 **Key principle:** Before docking points, ask: "Is this a mistake or a deliberate
@@ -117,16 +117,16 @@ dedicated ASO team, assume their choices are data-informed unless clearly wrong.
 
 ---
 
-## Phase 2 — Score Each Dimension
+## Phase 2: Score Each Dimension
 
 Score each dimension 0-10 using the criteria in `references/scoring-criteria.md`.
 Apply the brand maturity tier adjustments from Phase 1.5.
 
 Reference files for platform specs and benchmarks:
 
-- `references/apple-specs.md` — Official Apple character limits, screenshot/video specs, CPP/PPO rules, rejection triggers
-- `references/google-play-specs.md` — Official Google Play limits, screenshot specs, Android Vitals thresholds, policies
-- `references/benchmarks.md` — Conversion data, rating impact, video lift, screenshot behavior, CPP/event benchmarks
+- `references/apple-specs.md`: Official Apple character limits, screenshot/video specs, CPP/PPO rules, rejection triggers
+- `references/google-play-specs.md`: Official Google Play limits, screenshot specs, Android Vitals thresholds, policies
+- `references/benchmarks.md`: Conversion data, rating impact, video lift, screenshot behavior, CPP/event benchmarks
 
 ### Dimensions and Weights
 
@@ -144,7 +144,7 @@ Reference files for platform specs and benchmarks:
 ### Unassessable dimensions (read before computing any score)
 
 `references/scoring-criteria.md` defines score 0 as "cannot assess (data
-unavailable)". Missing data is the normal case here, not the exception —
+unavailable)". Missing data is the normal case here, not the exception:
 WebFetch cannot extract screenshots or caption text, and promotional text is
 indistinguishable in scraped HTML. A 0 for unfetched data is not a bad listing;
 scoring it as one fabricates a failing grade (an unobserved Visual Assets
@@ -174,34 +174,34 @@ House rule:
 
 ---
 
-## Phase 3 — Competitor Comparison (Optional)
+## Phase 3: Competitor Comparison (Optional)
 
 If the user provides competitor URLs or asks for comparison:
 
 1. Fetch 2-3 top competitors in the same category
 2. Run the same scoring on each
 3. Build a comparison table highlighting where the user's app is weaker/stronger
-4. Identify keyword gaps — terms competitors rank for that the user's app doesn't target
+4. Identify keyword gaps: terms competitors rank for that the user's app doesn't target
 
 If no competitors are specified, suggest the user provide 2-3 or offer to search
 for top apps in their category.
 
 ---
 
-## Phase 4 — Generate Report
+## Phase 4: Generate Report
 
 Use the template in `references/report-template.md` to structure the output.
 
 The report must include:
 
-1. **Score card** — table with all 6 dimensions, scores, the weighted denominator
+1. **Score card**: table with all 6 dimensions, scores, the weighted denominator
    actually used, and the grade (withheld per the unassessable-dimension rule
    when more than 25% of weight went unassessed)
-2. **Top 3 quick wins** — changes that take <1 hour and have highest impact
-3. **Detailed findings** — per-dimension breakdown with specific issues and fixes
-4. **Keyword suggestions** — based on title/description analysis and competitor gaps
-5. **Visual asset recommendations** — specific screenshot/video improvements
-6. **Priority action plan** — ordered list of changes by impact vs effort
+2. **Top 3 quick wins**: changes that take <1 hour and have highest impact
+3. **Detailed findings**: per-dimension breakdown with specific issues and fixes
+4. **Keyword suggestions**: based on title/description analysis and competitor gaps
+5. **Visual asset recommendations**: specific screenshot/video improvements
+6. **Priority action plan**: ordered list of changes by impact vs effort
 
 ### Report rules
 
@@ -218,7 +218,7 @@ The report must include:
 Character limits, screenshot and video specs, CPP and experiment rules, policy
 prohibitions, Android Vitals thresholds, editorial curation, and rejection
 triggers are versioned in the three reference files listed in Phase 2. Read the
-one for the store being audited before scoring any dimension against a spec —
+one for the store being audited before scoring any dimension against a spec:
 they are the source of truth, and dated platform facts are not repeated here.
 
 The one comparison that drives scoring on every audit stays inline:
@@ -241,7 +241,7 @@ The one comparison that drives scoring on every audit stays inline:
 ## Common Issues Checklist
 
 Flag these if found. Items marked _(tier-dependent)_ should be evaluated against
-the app's brand maturity tier — they may be deliberate choices for Dominant apps.
+the app's brand maturity tier: they may be deliberate choices for Dominant apps.
 
 Every flag carries an **author action**, so the reader knows what to do with it:
 
@@ -253,31 +253,31 @@ Every flag carries an **author action**, so the reader knows what to do with it:
 
 **Always flag (all tiers):**
 
-- [ ] Rating below 4.0 — **required**
-- [ ] Last update > 3 months ago — **required**
-- [ ] Google Play description has no keyword strategy (under 1% density) — **required**
-- [ ] Google Play missing feature graphic — **blocks the listing** (no featured placement without it)
-- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle) — **required**
-- [ ] Category mismatch — app would face less competition in a different category — **required**
-- [ ] Fewer than 5 screenshots — **required**
+- [ ] Rating below 4.0: **required**
+- [ ] Last update > 3 months ago: **required**
+- [ ] Google Play description has no keyword strategy (under 1% density): **required**
+- [ ] Google Play missing feature graphic: **blocks the listing** (no featured placement without it)
+- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle): **required**
+- [ ] Category mismatch (app would face less competition in a different category): **required**
+- [ ] Fewer than 5 screenshots: **required**
 
 **Flag for Challenger/Established only** _(not mistakes for Dominant apps):_
 
-- [ ] Title wastes characters on brand name only (no keywords) — **required** _(Dominant: brand IS the keyword)_
-- [ ] Subtitle/short description duplicates title keywords — **required**
-- [ ] Description first 3 lines are generic — **required** _(Dominant: may be brand-voice choice)_
-- [ ] No preview video — **optional** _(Dominant: may be rational if product is hard to demo)_
-- [ ] Screenshots are just UI dumps with no messaging/captions — **required** _(Dominant: lifestyle/brand shots may convert better)_
-- [ ] Only 1-2 localizations — **optional** _(score relative to actual market, not absolute count)_
-- [ ] No in-app events or promotional content — **optional** _(Dominant utility apps may not need discovery help)_
+- [ ] Title wastes characters on brand name only (no keywords): **required** _(Dominant: brand IS the keyword)_
+- [ ] Subtitle/short description duplicates title keywords: **required**
+- [ ] Description first 3 lines are generic: **required** _(Dominant: may be brand-voice choice)_
+- [ ] No preview video: **optional** _(Dominant: may be rational if product is hard to demo)_
+- [ ] Screenshots are just UI dumps with no messaging/captions: **required** _(Dominant: lifestyle/brand shots may convert better)_
+- [ ] Only 1-2 localizations: **optional** _(score relative to actual market, not absolute count)_
+- [ ] No in-app events or promotional content: **optional** _(Dominant utility apps may not need discovery help)_
 
 **Flag for all tiers but note context:**
 
-- [ ] No developer responses to negative reviews — **required** _(note volume — responding at 10M+ reviews is a different challenge than at 1K)_
-- [ ] Generic "What's New" text — **optional** _(Apple 2.3.12 makes it **blocks the listing** when the release carries significant changes)_
+- [ ] No developer responses to negative reviews: **required** _(note volume: responding at 10M+ reviews is a different challenge than at 1K)_
+- [ ] Generic "What's New" text: **optional** _(Apple 2.3.12 makes it **blocks the listing** when the release carries significant changes)_
 
 Prohibited title metadata (emojis, ALL CAPS, "best"/"#1"/"free", CTAs on Google
-Play) is always **blocks the listing** — see `references/google-play-specs.md`.
+Play) is always **blocks the listing**: see `references/google-play-specs.md`.
 
 ---
 

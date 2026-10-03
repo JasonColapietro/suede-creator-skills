@@ -11,7 +11,7 @@ is evidence for a test, not proof that it will transfer.
 
 ## The 6-Step Framework
 
-### 1. COMPARABLE SET — Find Relevant Accounts
+### 1. COMPARABLE SET: Find Relevant Accounts
 
 Build a bounded set of accounts with similar audience, offer, maturity, and
 format access. Start with enough accounts to represent more than one style, then
@@ -30,7 +30,7 @@ add another batch only while it changes the leading patterns.
   user-supplied URLs
 - Look at who gets featured in industry newsletters
 
-### 2. COLLECT — Build a Lawful Bounded Sample
+### 2. COLLECT: Build a Lawful Bounded Sample
 
 Before collection, discover the currently callable tools, verify authorization
 and platform terms, and record which metrics are actually visible. Collect only
@@ -54,7 +54,7 @@ Do not bypass access controls or bulk-scrape a platform that prohibits it.
 - CTA used
 - Topic/theme
 
-### 3. ANALYZE — Extract What Actually Works
+### 3. ANALYZE: Extract What Actually Works
 
 Sort and analyze the data to find patterns:
 
@@ -78,7 +78,7 @@ Sort and analyze the data to find patterns:
 - What CTAs drive most comments?
 - What topics get saved/shared most?
 
-### 4. PLAYBOOK — Codify Patterns
+### 4. PLAYBOOK: Codify Patterns
 
 Document repeatable patterns you can use:
 
@@ -108,7 +108,7 @@ Why it works: Pattern interrupt + invites debate
 - Share: "Tag someone who needs this"
 - Save: "Save this for later"
 
-### 5. LAYER VOICE — Apply Direct Response Principles
+### 5. LAYER VOICE: Apply Direct Response Principles
 
 Turn the strongest observed hypotheses into original tests with these voice
 principles:
@@ -166,7 +166,7 @@ My hands were shaking when I sent the email.
 Here's what happened..."
 ```
 
-### 6. CONVERT — Turn Attention into Action
+### 6. CONVERT: Turn Attention into Action
 
 Bridge from engagement to business results:
 

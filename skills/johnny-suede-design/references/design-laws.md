@@ -9,11 +9,11 @@ Dark mode is not an inversion. Specific rules:
 - **Shadows:** Shadows disappear on dark surfaces. Replace elevation cues with border-based layering: 1px border at `oklch(1 0 0 / 0.08)` on elevated surfaces, `oklch(1 0 0 / 0.12)` on modals. Drop-shadows only appear in dark mode when the element is physically "lifted" (a draggable card, a tooltip, a floating toolbar).
 - **Contrast minimums:** body text on dark background minimum 7:1 (WCAG AAA); secondary text 4.5:1; disabled text 3:1. Do not use near-black text on dark surfaces. Use light text with opacity adjustments (`oklch(1 0 0 / 0.45)` secondary, `oklch(1 0 0 / 0.25)` disabled).
 - **Chroma:** In dark mode, reduce saturated color chroma by 15–25%. `oklch(0.65 0.22 260)` in light → `oklch(0.72 0.17 260)` in dark. Fully saturated accents on dark backgrounds feel neon. Pull back.
-- **Semantic tokens:** define light and dark values for every semantic token at design time — `--color-surface-base`, `--color-surface-elevated`, `--color-border-subtle`, `--color-text-primary`, `--color-text-secondary`, `--color-text-disabled`. Never hardcode hex in component CSS.
+- **Semantic tokens:** define light and dark values for every semantic token at design time: `--color-surface-base`, `--color-surface-elevated`, `--color-border-subtle`, `--color-text-primary`, `--color-text-secondary`, `--color-text-disabled`. Never hardcode hex in component CSS.
 
 ## Typography
 
-- Pair typefaces deliberately. Display, body, and utility text should have distinct jobs: one font earns the display role (personality, brand signal), one earns the body role (readability, neutrality). They should contrast — a geometric display pairs with a humanist body; a serif display pairs with a sans body.
+- Pair typefaces deliberately. Display, body, and utility text should have distinct jobs: one font earns the display role (personality, brand signal), one earns the body role (readability, neutrality). They should contrast: a geometric display pairs with a humanist body; a serif display pairs with a sans body.
 - Use scale and weight for hierarchy; keep at least a 1.25 ratio between major type steps.
 - Keep body copy around 65–75 characters per line.
 - Keep letter spacing at 0 by default. Do not use negative letter spacing.
@@ -40,8 +40,8 @@ Min is the floor at ~375px; max is the ceiling at ~1440px; the vw value controls
 ## Layout
 
 - Make structure explain the product. Use bands, rails, timelines, consoles, grids, tabs, and split panes because the content needs them.
-- Spatial composition — intentional layouts use asymmetry (column grids that don't divide evenly, intentional weight on one side), overlap (elements breaking their rows to create depth), diagonal flow (content leading the eye along a non-horizontal axis), and generous negative space OR controlled density, not an accidental middle ground.
-- Never use a card where a row would do. Use cards only for items that must be independently scannable, draggable, or selected — not as a visual wrapper for sections, tabs, or form groups. One card inside another card means the information architecture is wrong. Fix the hierarchy, not the nesting.
+- Spatial composition: intentional layouts use asymmetry (column grids that don't divide evenly, intentional weight on one side), overlap (elements breaking their rows to create depth), diagonal flow (content leading the eye along a non-horizontal axis), and generous negative space OR controlled density, not an accidental middle ground.
+- Never use a card where a row would do. Use cards only for items that must be independently scannable, draggable, or selected, not as a visual wrapper for sections, tabs, or form groups. One card inside another card means the information architecture is wrong. Fix the hierarchy, not the nesting.
 - Stable UI elements need stable dimensions: boards, grids, icon buttons, counters, tiles, canvases, and toolbars should not resize when labels, hover states, loading text, or data changes.
 - On landing pages, the first viewport must show the brand, product, or offer clearly and leave a hint of the next section visible on mobile and desktop.
 - Text must not overlap, clip, or fight its container at any viewport.
@@ -54,7 +54,7 @@ Min is the floor at ~375px; max is the ceiling at ~1440px; the vw value controls
 
 ## Component Laws
 
-**Forms:** Every form field shows its label above the input, never as placeholder text. Placeholder is hint text only — it disappears on focus and must not carry required information. Error messages appear below the field they belong to, not as a toast. Required fields are marked; optional fields are not (the default expectation is required). A submit button is always the primary action; it is disabled only when the form is provably incomplete, never as the default initial state.
+**Forms:** Every form field shows its label above the input, never as placeholder text. Placeholder is hint text only: it disappears on focus and must not carry required information. Error messages appear below the field they belong to, not as a toast. Required fields are marked; optional fields are not (the default expectation is required). A submit button is always the primary action; it is disabled only when the form is provably incomplete, never as the default initial state.
 BEFORE: `<input placeholder="Email address" />` with no visible label
 AFTER: `<label>Email address</label><input placeholder="e.g. you@studio.com" />`
 
@@ -66,9 +66,9 @@ AFTER: clicking "details" expands an inline panel or navigates to a detail route
 BEFORE: `[Icon] No tracks yet.` with a disabled button
 AFTER: `Register your first work to start building your rights ledger. [Register a Work →]`
 
-**Data tables:** Column headers are left-aligned except numeric columns, which are right-aligned. Rows are 40–48px tall for data-dense tables, 56–64px when each row needs a secondary line. Alternating row fills are a last resort for wide tables with more than 8 columns — prefer generous column padding and strong header contrast. Sort indicators are visible on hover for all sortable columns, not just the active one. Pagination controls live below the table, right-aligned, with total count visible at all times.
+**Data tables:** Column headers are left-aligned except numeric columns, which are right-aligned. Rows are 40–48px tall for data-dense tables, 56–64px when each row needs a secondary line. Alternating row fills are a last resort for wide tables with more than 8 columns: prefer generous column padding and strong header contrast. Sort indicators are visible on hover for all sortable columns, not just the active one. Pagination controls live below the table, right-aligned, with total count visible at all times.
 
-**Navigation:** Primary navigation shows the user's current location at all times with a visible active state that is not just color — use weight, underline, or background shape so it survives grayscale. Depth beyond three levels means the information architecture needs restructuring, not another nav level. Mobile nav collapses to a bottom tab bar (max 5 items) or a full-screen drawer. Never a hamburger that reveals a sidebar on a phone.
+**Navigation:** Primary navigation shows the user's current location at all times with a visible active state that is not just color: use weight, underline, or background shape so it survives grayscale. Depth beyond three levels means the information architecture needs restructuring, not another nav level. Mobile nav collapses to a bottom tab bar (max 5 items) or a full-screen drawer. Never a hamburger that reveals a sidebar on a phone.
 
 ## Assets
 
@@ -78,7 +78,7 @@ AFTER: `Register your first work to start building your rights ledger. [Register
 
 ## Motion
 
-- Motion posture by register: brand surfaces earn motion as premium signal (entrance reveals, parallax subtlety, micro-transitions); product surfaces use motion only to clarify state change or sequence (no decorative animation in dashboards or settings); docs surfaces use no motion; campaign surfaces use motion only on the primary CTA or hero transformation. Motion that cannot be explained as "this clarifies X for the user" is decorative — cut it.
+- Motion posture by register: brand surfaces earn motion as premium signal (entrance reveals, parallax subtlety, micro-transitions); product surfaces use motion only to clarify state change or sequence (no decorative animation in dashboards or settings); docs surfaces use no motion; campaign surfaces use motion only on the primary CTA or hero transformation. Motion that cannot be explained as "this clarifies X for the user" is decorative: cut it.
 - Every animation must justify its CPU cost. If removing it makes the UI clearer, remove it. If keeping it makes an action legible (a row sliding out when deleted, a panel expanding from its trigger, a success state settling into place), keep it.
 - Never animate width, height, top, left, or margin. Animate `transform` and `opacity` only.
 - Exit curve: `ease-out-expo` (`cubic-bezier(0.16, 1, 0.3, 1)`), duration 220–280ms. The UI should feel like it arrives, not drifts.
@@ -88,7 +88,7 @@ AFTER: `Register your first work to start building your rights ledger. [Register
 
 ## Aesthetic Direction Menu
 
-Tonal spectrum — choose one and execute it with precision:
+Tonal spectrum: choose one and execute it with precision:
 - **Refined minimal**: restraint, negative space, weight as the only accent, no ornamentation.
 - **Editorial**: strong typography hierarchy, asymmetry, text as structure, headline-first layout.
 - **Brutalist**: raw grids, exposed structure, high contrast, deliberate anti-polish.
@@ -100,7 +100,7 @@ Tonal spectrum — choose one and execute it with precision:
 
 Bold maximalism and refined minimalism both work. The failure mode is neither: a design with no committed direction reads as generic. Pick one tone and execute it fully.
 
-**Background and atmosphere** — gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, and decorative borders are all legitimate tools when they serve the aesthetic. Do not substitute generic gradient blobs, bokeh orbs, or CSS-only approximations for real art direction.
+**Background and atmosphere**: gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, grain overlays, and decorative borders are all legitimate tools when they serve the aesthetic. Do not substitute generic gradient blobs, bokeh orbs, or CSS-only approximations for real art direction.
 
 ## Scoped Bans And Exceptions
 
@@ -112,13 +112,13 @@ These are not blanket bans. Keep or recreate a pattern when source fidelity, pla
 
 **Colored side-stripe borders on cards, alerts, or list items.** BEFORE: a card with a 4px left border in `--color-warning`. AFTER: an icon + label in the semantic color inside the card; or a full-width top-of-card banner strip carrying text.
 
-**The hero-metric template (big number, tiny label, support stats, gradient accent).** BEFORE: `$2.4M` in 80px weight-900 with "Revenue generated" in 12px below. AFTER: a metric placed inside a real workflow context — the royalty total shown inside the rights ledger column it belongs to, not isolated as a hero number.
+**The hero-metric template (big number, tiny label, support stats, gradient accent).** BEFORE: `$2.4M` in 80px weight-900 with "Revenue generated" in 12px below. AFTER: a metric placed inside a real workflow context: the royalty total shown inside the rights ledger column it belongs to, not isolated as a hero number.
 
 **Identical icon-card grids as main page structure.** BEFORE: 3×2 grid of cards each with icon + title + one-line description. AFTER: a task-driven layout where each row or section maps to a specific user action, not a product category.
 
 **Modal as the first answer to every interaction.** BEFORE: every "view details" → modal. AFTER: inline expansion, side panel, or dedicated route; modal reserved for destructive confirmation or focused isolated actions.
 
-**Decorative orbs, bokeh blobs, generic gradient backgrounds.** BEFORE: three radial gradients at 30% opacity behind the hero. AFTER: a concrete art-direction choice — a noise texture, a geometric system, a real product screenshot, an illustrated scene, or a typographic lock-up that IS the background.
+**Decorative orbs, bokeh blobs, generic gradient backgrounds.** BEFORE: three radial gradients at 30% opacity behind the hero. AFTER: a concrete art-direction choice: a noise texture, a geometric system, a real product screenshot, an illustrated scene, or a typographic lock-up that IS the background.
 
 **Centered hero copy over a stock-feeling gradient with no real artifact.** BEFORE: "Own Your Music" centered on dark purple, no visual content below. AFTER: a hero containing a real product artifact (a partial rights registry UI, an animated waveform ledger, a claim receipt) with copy anchored to it.
 

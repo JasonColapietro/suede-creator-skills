@@ -16,13 +16,13 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 Understand the situation (ask if not provided):
 
-1. **Who are you writing to?** — Role, company, why them specifically
-2. **What do you want?** — The outcome (meeting, reply, intro, demo)
-3. **What's the value?** — The specific problem you solve for people like them
-4. **What's your proof?** — A result, case study, or credibility signal
-5. **Any research signals?** — Funding, hiring, LinkedIn posts, company news, tech stack changes
+1. **Who are you writing to?** Role, company, why them specifically
+2. **What do you want?** The outcome (meeting, reply, intro, demo)
+3. **What's the value?** The specific problem you solve for people like them
+4. **What's your proof?** A result, case study, or credibility signal
+5. **Any research signals?** Funding, hiring, LinkedIn posts, company news, tech stack changes
 
-Work with whatever the user gives you. If they have a strong signal and a clear value prop, that's enough to write. Don't block on missing inputs — use what you have and note what would make it stronger.
+Work with whatever the user gives you. If they have a strong signal and a clear value prop, that's enough to write. Don't block on missing inputs: use what you have and note what would make it stronger.
 
 ---
 
@@ -30,7 +30,7 @@ Work with whatever the user gives you. If they have a strong signal and a clear 
 
 ### Write like a peer, not a vendor
 
-The email should read like it came from someone who understands their world — not someone trying to sell them something. Use contractions. Read it aloud. If it sounds like marketing copy, rewrite it.
+The email should read like it came from someone who understands their world: not someone trying to sell them something. Use contractions. Read it aloud. If it sounds like marketing copy, rewrite it.
 
 ### Every sentence must earn its place
 
@@ -77,10 +77,10 @@ There's no single right structure. Choose a framework that fits the situation, o
 
 **Common shapes that work:**
 
-- **Observation → Problem → Proof → Ask** — You noticed X, which usually means Y challenge. We helped Z with that. Interested?
-- **Question → Value → Ask** — Struggling with X? We do Y. Company Z saw [result]. Worth a look?
-- **Trigger → Insight → Ask** — Congrats on X. That usually creates Y challenge. We've helped similar companies with that. Curious?
-- **Story → Bridge → Ask** — [Similar company] had [problem]. They [solved it this way]. Relevant to you?
+- **Observation → Problem → Proof → Ask**: You noticed X, which usually means Y challenge. We helped Z with that. Interested?
+- **Question → Value → Ask**: Struggling with X? We do Y. Company Z saw [result]. Worth a look?
+- **Trigger → Insight → Ask**: Congrats on X. That usually creates Y challenge. We've helped similar companies with that. Curious?
+- **Story → Bridge → Ask**: [Similar company] had [problem]. They [solved it this way]. Relevant to you?
 
 For the full catalog of frameworks with examples, see [frameworks.md](references/frameworks.md).
 
@@ -88,7 +88,7 @@ For the full catalog of frameworks with examples, see [frameworks.md](references
 
 ## Subject Lines
 
-Short, boring, internal-looking. The subject line's only job is to get the email opened — not to sell.
+Short, boring, internal-looking. The subject line's only job is to get the email opened: not to sell.
 
 - 2-4 words, lowercase, no punctuation tricks
 - Should look like it came from a colleague ("reply rates," "hiring ops," "Q2 forecast")
@@ -100,11 +100,11 @@ See [subject-lines.md](references/subject-lines.md) for the full data.
 
 ## Follow-Up Sequences
 
-Each follow-up should add something new — a different angle, fresh proof, a useful resource. "Just checking in" gives the reader no reason to respond.
+Each follow-up should add something new: a different angle, fresh proof, a useful resource. "Just checking in" gives the reader no reason to respond.
 
 - 3-5 total emails, increasing gaps between them
 - Each email should stand alone (they may not have read the previous ones)
-- The breakup email is your last touch — honor it
+- The breakup email is your last touch: honor it
 
 See [follow-up-sequences.md](references/follow-up-sequences.md) for cadence, angle rotation, and breakup email templates.
 
@@ -118,7 +118,7 @@ Run this pass on the draft before presenting it. Every item resolves to somethin
 - [ ] Deleting the personalization sentence breaks the sentence that follows it
 - [ ] Exactly one ask, answerable with a one-line reply
 - [ ] Body is under 75 words
-- [ ] Zero strings from What to Avoid appear in the draft — check that list term by term, not by impression
+- [ ] Zero strings from What to Avoid appear in the draft: check that list term by term, not by impression
 - [ ] Read aloud it uses contractions, and no sentence reads as marketing copy
 
 Any item that fails means rewrite before presenting. Do not hand over a draft with a caveat attached to it.
@@ -132,13 +132,13 @@ Deliver every email in this shape, with these field labels verbatim.
 ```
 Subject: [2-4 words, lowercase]
 
-Body: (NN words — target under 75)
+Body: (NN words, target under 75)
 [the email exactly as it would be pasted into the send tool]
 
 CTA: [the single ask, quoted from the body]
 
-Personalization source: [the specific signal this email traces to — the post, the filing,
-the job ad, the release — with enough detail that the user can confirm it is real]
+Personalization source: [the specific signal this email traces to (the post, the filing,
+the job ad, the release) with enough detail that the user can confirm it is real]
 ```
 
 `Personalization source:` is required on every email. It is what makes the "do not invent personalization" boundary auditable. If you cannot name a real source, you do not have personalization, and the opening line has to change.
@@ -150,7 +150,7 @@ Emit the follow-up table only when the user asked for a sequence rather than a s
 | 1 | 0 | ... | ... |
 | 2 | +3 | ... | ... |
 
-3-5 emails total — see [follow-up-sequences.md](references/follow-up-sequences.md) for cadence and angle rotation. Omit the table entirely for a single-message request.
+3-5 emails total: see [follow-up-sequences.md](references/follow-up-sequences.md) for cadence and angle rotation. Omit the table entirely for a single-message request.
 
 ---
 
@@ -158,7 +158,7 @@ Emit the follow-up table only when the user asked for a sequence rather than a s
 
 - Opening with "I hope this email finds you well" or "My name is X and I work at Y"
 - Jargon: "synergy," "leverage," "circle back," "best-in-class," "leading provider"
-- Feature dumps — one proof point beats ten features
+- Feature dumps: one proof point beats ten features
 - HTML, images, or multiple links
 - Fake "Re:" or "Fwd:" subject lines
 - Identical templates with only {{FirstName}} swapped
@@ -171,13 +171,13 @@ Emit the follow-up table only when the user asked for a sequence rather than a s
 
 The references contain performance data if you need to make informed choices:
 
-- [benchmarks.md](references/benchmarks.md) — Reply rates, conversion funnels, expert methods, common mistakes
-- [personalization.md](references/personalization.md) — 4-level personalization system, research signals
-- [subject-lines.md](references/subject-lines.md) — Subject line data and optimization
-- [follow-up-sequences.md](references/follow-up-sequences.md) — Cadence, angles, breakup emails
-- [frameworks.md](references/frameworks.md) — All copywriting frameworks with examples
+- [benchmarks.md](references/benchmarks.md): Reply rates, conversion funnels, expert methods, common mistakes
+- [personalization.md](references/personalization.md): 4-level personalization system, research signals
+- [subject-lines.md](references/subject-lines.md): Subject line data and optimization
+- [follow-up-sequences.md](references/follow-up-sequences.md): Cadence, angles, breakup emails
+- [frameworks.md](references/frameworks.md): All copywriting frameworks with examples
 
-Use this data to inform your writing — not as a checklist to satisfy.
+Use this data to inform your writing: not as a checklist to satisfy.
 
 ---
 

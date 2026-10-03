@@ -4,7 +4,7 @@ Swift and SwiftUI failure catalog plus the native contract drift checks that cat
 
 ## Swift / iOS Traps
 
-Check on every Swift file in the diff. iOS ships on a release cycle with no hot-fix — a crash here is live for days.
+Check on every Swift file in the diff. iOS ships on a release cycle with no hot-fix: a crash here is live for days.
 
 - **Force operations (`!`, `try!`, `as!`):** each crashes when the optional is nil or the cast fails. Flag unless the failure case is provably eliminated immediately above. `try!` on anything that throws at runtime (decoding, file I/O) is P1.
 - **Retain cycles in closures:** an escaping closure that strongly captures `self` inside a stored property, `Task`, Combine sink, or callback leaks the owner. Require `[weak self]` (or `[unowned self]` only when lifetime is provably bound).
@@ -21,7 +21,7 @@ Pair with iOS / Native Contract Drift below: crash risk here, contract break the
 Check on any API route, response shape, auth header, or shared type that iOS or other native consumers depend on:
 
 - **Response shape change:** field renamed, field removed, field type changed (string → number, nullable → required), or new required field added without a default. Flag any change to an API route's return value that is not purely additive and backward-compatible.
-- **Route path or method change:** endpoint renamed, HTTP method changed (POST → PUT), or path parameters reordered. iOS has no hot-reload — a renamed route is a hard crash until the app ships an update.
+- **Route path or method change:** endpoint renamed, HTTP method changed (POST → PUT), or path parameters reordered. iOS has no hot-reload: a renamed route is a hard crash until the app ships an update.
 - **Auth header or token format change:** changes to how `Authorization`, `X-Session-Token`, or similar headers are validated server-side. If the server changes the expected format, the iOS app gets 401s on every request.
 - **Error response shape change:** iOS likely pattern-matches on `{ error: string }` or `{ code: number }`. Changing the error envelope silently breaks native error handling with no visible failure on the web surface.
 - **New required query param or body field:** adding a required field that old app versions don't send causes the new server to reject requests from users who haven't updated yet.

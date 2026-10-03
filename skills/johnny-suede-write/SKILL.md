@@ -5,7 +5,7 @@ description: "Suede Labs full writing stack: sharper copy for docs, pages, email
 
 # Johnny Suede Write
 
-## Model selection — never Fable by default
+## Model selection: never Fable by default
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
@@ -14,12 +14,12 @@ another without anyone choosing it.
 
 **Fable must be specified to be used. This skill's subagents never run on Fable
 unless the user named Fable for this run.** An inherited session model is not a
-specification — "the session was already on it" is not the user asking. Absent an
+specification: "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
 allocation and get an answer. Silence is not consent to spend it.
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -34,9 +34,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -50,7 +50,7 @@ Read the request, then pick the lane. Most jobs are one lane; some chain.
 
 | You want to... | Lane |
 |---|---|
-| Write or rewrite any copy surface from scratch | **Write Modes** (below) — pick the mode |
+| Write or rewrite any copy surface from scratch | **Write Modes** (below): pick the mode |
 | Generate headlines, CTAs, or email subjects | **Headline Formulas / CTA Formulas / Variant Protocol** |
 | Tune existing copy to sound like Suede, not generic AI | **Brand-Voice Alignment** lane |
 | Hand a public user words to explain Suede to someone else | **Public Explainer Talk-Track** lane |
@@ -66,7 +66,7 @@ If the request is a full standalone SEO/AEO audit with a scored report, a landin
 
 ## Multi-Agent Default
 
-If a job is large or risky enough to run as a coordinated agent team (for example a full launch package spanning many surfaces, or a writing job chained with audits and reviews across several skills), **ask the user up front before spawning anything**: "Run this as a multi-agent team (more thorough) or single-agent?" Never silently spawn a fleet. Note plainly that multi-agent mode may use slightly more tokens than most. For a single writing surface, just write it — no need to ask.
+If a job is large or risky enough to run as a coordinated agent team (for example a full launch package spanning many surfaces, or a writing job chained with audits and reviews across several skills), **ask the user up front before spawning anything**: "Run this as a multi-agent team (more thorough) or single-agent?" Never silently spawn a fleet. Note plainly that multi-agent mode may use slightly more tokens than most. For a single writing surface, just write it: no need to ask.
 
 ## Write Modes
 
@@ -80,7 +80,7 @@ Identify the mode before writing. Each mode has a different structure, length, a
 
 **Short-form** (tagline, hero headline, CTA, product description, social caption, onboarding screen)
 - One concrete noun + one buyer-visible outcome + one verb. No filler.
-- Deliver 3 variants at different lengths. Character counts matter for mobile, social, and ads — state them.
+- Deliver 3 variants at different lengths. Character counts matter for mobile, social, and ads: state them.
 - Score target: 65/70 (density and specificity weighted higher).
 
 **GitHub / Docs** (README, SKILL.md, API docs, changelog, contributing guide)
@@ -168,7 +168,7 @@ Match framework to surface and reader temperature. State the chosen framework an
 - Reader arrives cold, no prior awareness: **AIDA** (Awareness → Interest → Desire → Action). Lead with the category problem, build specificity, make the outcome concrete, drive a single action.
 - Reader has a named pain and is actively searching: **PAS** (Problem → Agitate → Solution). Name the problem, surface the cost of inaction, position the product as the specific relief.
 - Hero section, social post, launch email: **Before-After-Bridge**. Describe life before the product, paint life after, bridge with the product as the mechanism.
-- Product page, onboarding, in-app copy: **JTBD** (Jobs-to-be-Done). Write around what the reader is trying to accomplish — the job they hired the product to do, not the features.
+- Product page, onboarding, in-app copy: **JTBD** (Jobs-to-be-Done). Write around what the reader is trying to accomplish: the job they hired the product to do, not the features.
 - Homepage, About, long-form brand page: **StoryBrand 7-Part**. Character (customer) → Problem → Guide (your brand) → Plan → CTA → Avoid failure → Achieve success.
 
 ## Headline Formulas
@@ -258,7 +258,7 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 
 ## Public Explainer Talk-Track Lane
 
-Use this lane when a public user needs *words to explain Suede to someone else* — not to audit public copy or fix a failing install. Hype-free, evidence-backed, outcome-first. Use "explain" language, not "pitch" language.
+Use this lane when a public user needs *words to explain Suede to someone else*, not to audit public copy or fix a failing install. Hype-free, evidence-backed, outcome-first. Use "explain" language, not "pitch" language.
 
 **Explain:**
 1. Start with the outcome: agents ship better public work with less setup.
@@ -292,7 +292,7 @@ bad/good pairs for each: read `references/writing-for-agents.md`.
    context and encodes the condition for reaching it. Front-load its leading
    word, give each branch exactly one trigger, and cut identity the body already
    carries. Must-reach material behind a vague pointer is a variance defect, not
-   a style problem — sharpen the wording before inlining the material.
+   a style problem: sharpen the wording before inlining the material.
 2. **Name the budget.** Always-loaded material spends *context load*; material
    the human has to remember spends *cognitive load*. Say which one an addition
    spends before making it.
@@ -439,7 +439,7 @@ Two lowest dimensions: [name them]
 Revised: yes / no
 ```
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If any of these thoughts appear, stop and run the gate you were about to skip:
 
@@ -452,7 +452,7 @@ If any of these thoughts appear, stop and run the gate you were about to skip:
 
 ## Ship Gate
 
-Recommend against shipping copy — and say why, leaving the call to the user — when:
+Recommend against shipping copy (and say why, leaving the call to the user) when:
 - the primary action is unclear
 - the page promises a feature the product does not implement
 - proof is fake or unverified
@@ -483,9 +483,9 @@ Caveats:
 Status:
 
 Cue Suede:
-1. Revise something — tell me what to change and I will adjust it.
-2. Preserve something — tell me what worked so I can match it.
-3. Accept as-is — say nothing and I will treat it as approved.
+1. Revise something: tell me what to change and I will adjust it.
+2. Preserve something: tell me what worked so I can match it.
+3. Accept as-is: say nothing and I will treat it as approved.
 ```
 
 End with the exact copy, not a long explanation of the copy.

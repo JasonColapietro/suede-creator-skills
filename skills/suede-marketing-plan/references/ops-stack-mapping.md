@@ -1,4 +1,4 @@
-# Marketing Operations Stack — Skills + MCPs per AARRR Stage
+# Marketing Operations Stack: Skills + MCPs per AARRR Stage
 
 This doc maps every marketing-skill and every relevant MCP/API integration to the AARRR stage(s) it primarily serves. It's the source for Section 11 of every plan.
 
@@ -35,7 +35,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-analytics` | Set up tracking, GA4, conversion events | Funnel instrumentation |
 | `suede-free-tools` | Plan engineering-as-marketing free tools | Build tools that generate links + leads |
 | `suede-site-alchemy` | Design marketing sites with intention | Pillar/landing page design |
-| `suede-launch-packaging` | Plan and execute launches (Product Hunt, GA, feature launches) | GTM moments — strategy + tactical execution |
+| `suede-launch-packaging` | Plan and execute launches (Product Hunt, GA, feature launches) | GTM moments: strategy + tactical execution |
 
 ### Activation skills
 
@@ -56,7 +56,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-emails` | Design email sequences | Customer.io / Mailchimp / Resend flow building |
 | `suede-churn-prevention` | Build cancellation flows, save offers, win-back | Reduce churn, recover failed payments |
 | `suede-copy` | Email copy production | Lifecycle email content |
-| `suede-paywalls` | (cross-cuts) — upgrade prompts in retention emails | Upsell within lifecycle |
+| `suede-paywalls` | (cross-cuts): upgrade prompts in retention emails | Upsell within lifecycle |
 | `suede-ab-testing` | Test email variants | Subject line, CTA, timing tests |
 
 ### Referral skills
@@ -83,7 +83,7 @@ The plan's Section 11 makes this thesis explicit by:
 
 | Skill | What it does | Primary use |
 |---|---|---|
-| `suede-product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational — run first; every section of the plan references this |
+| `suede-product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational: run first; every section of the plan references this |
 | `suede-customer-research` | Conduct customer interviews + surveys | Section 2 + Section 3 (Current state) |
 | `suede-marketing-psychology` | Apply behavioral science | Cross-cuts copy, CRO, paywalls |
 | `suede-marketing-ideas` | The 139-idea library | Section 12 of plan (Idea bank) |
@@ -120,7 +120,7 @@ The plan's Section 11 makes this thesis explicit by:
 
 | Tool | What it provides |
 |---|---|
-| **Customer.io MCP** | The retention infrastructure — flow building, segmentation, sending |
+| **Customer.io MCP** | The retention infrastructure: flow building, segmentation, sending |
 | **Shopify** | Hardware buyer events as lifecycle triggers |
 | **Stripe MCP** | Subscription state, churn cohorts, plan changes |
 | **GA4 MCP** | Session events, retention curves |
@@ -186,7 +186,7 @@ Use this evidence format:
 - *"On [date], [owner] used [verified skill/tool] to complete [specific workflow]. [Reviewer] approved [artifact or deployment]. The recorded result was [measured observation], according to [source]."*
 - If the result is only an illustrative planning scenario, label every number as an assumption and state that it is not an expected outcome.
 
-If the client has no verified example yet, frame it as the *first test* — "Here is the workflow the team will run in week one, the artifact it will produce, and the metric it will observe." Do not present the test as proof or forecast its result.
+If the client has no verified example yet, frame it as the *first test*, "Here is the workflow the team will run in week one, the artifact it will produce, and the metric it will observe." Do not present the test as proof or forecast its result.
 
 ## When the stack doesn't apply (yet)
 

@@ -46,7 +46,7 @@ Document:
 
 ### Conditional Unlock
 
-Work that becomes possible only after a named condition is confirmed—for
+Work that becomes possible only after a named condition is confirmed, for
 example, financing closes, an owner is hired, tracking is verified, or a test
 meets its decision rule.
 
@@ -71,28 +71,28 @@ reason and the smallest new evidence that could change the decision.
 
 ## Applying It to the Plan
 
-### Section 3 — Current State
+### Section 3: Current State
 
 List verified resources, owners, contracts, constraints, and approval status.
 Do not assign a standardized tier.
 
-### Sections 4–8 — AARRR
+### Sections 4–8: AARRR
 
 Mark every move `current`, `approved test`, `conditional unlock`, or `deferred`.
 Tie it to evidence and an owner.
 
-### Section 9 — 90-Day Roadmap
+### Section 9: 90-Day Roadmap
 
 Include only current work and approved tests. Conditional work may appear as a
 decision checkpoint, never as an assumed execution task.
 
-### Section 10 — Outlook
+### Section 10: Outlook
 
 Show scenarios tied to explicit conditions. Use dated low/base/high assumptions
 from `budget-planning.md`; do not present a funding-stage benchmark as a
 forecast.
 
-### Section 11 — Operations Stack
+### Section 11: Operations Stack
 
 Map approved tools and public Suede skills to accountable owners. A tool route
 does not prove capacity or replace headcount.

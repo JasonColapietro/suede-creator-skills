@@ -11,7 +11,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 **Actions:**
 1. Rotate contact owner among sales team (round-robin)
 2. Send internal email notification to contact owner with lead context
-3. Create task: "Follow up with [Contact Name]" — due in 4 hours
+3. Create task: "Follow up with [Contact Name]": due in 4 hours
 4. Send Slack notification to #sales-alerts channel
 5. Enroll in "MQL Follow-Up" sequence (if using HubSpot Sequences)
 **Outcome:** Every MQL gets assigned instantly with a clear SLA
@@ -27,7 +27,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 1. Send internal email to contact owner: "SLA warning: [Contact Name] has not been contacted"
 2. If still no activity after 24 hours → send alert to sales manager
 3. If still no activity after 48 hours → reassign contact owner via rotation
-4. Create task for new owner: "Urgent: Contact [Contact Name] — reassigned due to SLA breach"
+4. Create task for new owner: "Urgent: Contact [Contact Name]: reassigned due to SLA breach"
 **Outcome:** No MQL goes unworked for more than 48 hours
 **Notes:** Exclude contacts where last activity type is "Call" or "Meeting" (already engaged)
 
@@ -55,7 +55,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 1. Send internal email to contact owner with meeting details
 2. Update contact property "Last Meeting Booked" to current date
 3. If lifecycle stage is "Lead" → update to "MQL"
-4. Create task: "Prepare for meeting with [Contact Name]" — due 1 hour before meeting
+4. Create task: "Prepare for meeting with [Contact Name]": due 1 hour before meeting
 5. Send Slack notification to #meetings channel
 **Outcome:** AEs are prepared for every meeting with full context
 **Notes:** Include recent page views and content downloads in notification email
@@ -70,7 +70,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 1. Update associated contact lifecycle stage to "Customer"
 2. Set "Customer Since" date to current date
 3. Assign contact owner to CS team member (based on segment/territory)
-4. Create task for CS: "Schedule kickoff call with [Company Name]" — due in 2 business days
+4. Create task for CS: "Schedule kickoff call with [Company Name]": due in 2 business days
 5. Enroll contact in "Customer Onboarding" email sequence
 6. Send internal notification to CS manager
 7. Remove from all sales sequences
@@ -81,11 +81,11 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 
 ### 6. Stale Deal Alert
 
-**Name:** Pipeline Hygiene — Stale Deal Detection
+**Name:** Pipeline Hygiene: Stale Deal Detection
 **Trigger:** Deal property "Days in current stage" is greater than [2x average for that stage]
 **Actions:**
 1. Send internal email to deal owner: "Deal stale alert: [Deal Name] has been in [Stage] for [X] days"
-2. Create task: "Update or close [Deal Name]" — due in 3 business days
+2. Create task: "Update or close [Deal Name]": due in 3 business days
 3. If no update after 7 days → alert sales manager
 4. Add to "Stale Deals" dashboard list
 **Outcome:** Pipeline stays clean and forecast stays accurate
@@ -111,7 +111,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 ### 8. Lead Activity Digest
 
 **Name:** Daily Lead Activity Summary
-**Trigger:** Scheduled — daily at 8:00 AM local time
+**Trigger:** Scheduled: daily at 8:00 AM local time
 **Actions:**
 1. Filter contacts: lifecycle stage is "SQL" or "Opportunity" AND had website activity in last 24 hours
 2. Send digest email to each contact owner with their leads' activity
@@ -131,7 +131,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 **Flow steps:**
 1. Get Records: Query "Rep Assignment" custom object for next available rep
 2. Update Records: Set Lead Owner to assigned rep
-3. Create Records: Create Task — "Contact MQL: {Lead.Name}" with due date = NOW + 4 hours
+3. Create Records: Create Task: "Contact MQL: {Lead.Name}" with due date = NOW + 4 hours
 4. Action: Send email alert to new lead owner
 5. Update Records: Update "Rep Assignment" last-assigned timestamp
 **Notes:** Use a custom "Rep Assignment" object to manage round-robin state
@@ -227,7 +227,7 @@ Booking form submitted
 2. Check: Was a call or meeting logged?
    - YES → No action
    - NO → Send "Sorry we missed you" email to prospect
-3. Create task: "Reschedule with [Contact Name]" — due next business day
+3. Create task: "Reschedule with [Contact Name]": due next business day
 4. If second no-show → flag contact and alert manager
 
 ---
@@ -282,7 +282,7 @@ Booking form submitted
 
 ### 6. Weekly Pipeline Digest
 
-**Trigger:** Schedule — every Monday at 8:00 AM
+**Trigger:** Schedule: every Monday at 8:00 AM
 **Actions:**
 1. Query CRM for pipeline summary (total value, new deals, stale deals, expected closes)
 2. Format as summary

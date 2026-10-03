@@ -87,7 +87,7 @@ Trigger Moment → Share Action → Convert Referred → Reward → (Loop)
 
 **Prompt cadence for customers who have not referred:** day 7, day 30, day 60,
 and after any milestone. The timing is this skill's call; the message copy is
-not — hand that to `suede-emails`.
+not: hand that to `suede-emails`.
 
 ### Step 2: Design Share Mechanism
 
@@ -146,7 +146,7 @@ not — hand that to `suede-emails`.
 ### Fraud Controls
 
 Read [references/affiliate-programs.md](references/affiliate-programs.md)
-§Fraud Prevention before designing rewards or writing program terms — it carries
+§Fraud Prevention before designing rewards or writing program terms: it carries
 the technical, policy, and structural control set (delayed payout after
 activation, device and IP signals, clawback on refunds, per-period caps,
 manual review of suspicious patterns). Every program in this skill uses it,

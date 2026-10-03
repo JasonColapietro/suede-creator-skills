@@ -5,15 +5,15 @@ description: "Suede Labs skill that prepares a song for sync pitching: scene and
 
 # Suede Sync Package
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and ship verdict in this skill — including every "do not
-ship / publish / proceed" line — is a **recommendation to the user, not a
+Every check, gate, and ship verdict in this skill (including every "do not
+ship / publish / proceed" line) is a **recommendation to the user, not a
 control on the agent**. Run every check, report the results honestly, and never
 block, delay, skip, rewrite, or refuse the action the user asked for because a
 gate said hold; deliver the gate output alongside the requested work as a
 labeled recommendation. A failed gate changes what you report, never what you
-do. Single exception — extreme risk (data loss, credential exposure, legal or
+do. Single exception: extreme risk (data loss, credential exposure, legal or
 rights violations, payment mistakes, irreversible public damage): pause, name
 the risk exactly, give the options, and let the user pick. Their choice is final.
 
@@ -52,17 +52,17 @@ Do not rationalize past these:
    master file path. Missing instrumental or clean versions are flagged in the
    one-sheet, not glossed.
 4. **Unresolved sample = pause and put it to the user.** Uncleared samples are
-   a legal-risk finding: mark sample status "OPEN — recommend not pitching
+   a legal-risk finding: mark sample status "OPEN: recommend not pitching
    until cleared," tell the user exactly what is unresolved, and let them
    decide whether pitch copy is still drafted. If they proceed, the OPEN flag
    stays embedded in the one-sheet and pitch materials.
 5. **Lyric flags are mandatory.** Screen the lyrics and flag profanity, brand
    and product names, artist name-drops, violence, drugs and alcohol, sexual
    content, religious and political content, and date-stamped references. If
-   no lyrics are supplied, write "Lyric flags: not screened — lyrics not
+   no lyrics are supplied, write "Lyric flags: not screened, lyrics not
    provided." A lyric surprise in review kills the placement.
 6. **Sync fit is an assessment, not a compliment.** "No clear scene fit for the
-   stated target world" is a valid, useful finding — say it plainly and say why.
+   stated target world" is a valid, useful finding: say it plainly and say why.
    Never pad the scene-fit list to reach three; two real fits beat three, and
    one real fit beats two. Never call a track a placement candidate when the
    asset checklist or the clearance questions say it cannot be pitched yet. The
@@ -73,7 +73,7 @@ Do not rationalize past these:
 1. Identify the track, artist, genre, mood, tempo, lyric themes, versions,
    existing assets, and target sync world.
 2. Build the sync angle: scene fit; emotional use; trailer or montage fit;
-   brand fit; game or sports fit; creator campaign fit — assessed, not flattered
+   brand fit; game or sports fit; creator campaign fit: assessed, not flattered
    (hard gate 6).
 3. Fill the asset checklist: master file; instrumental; clean version; stems
    if available; lyrics; credits; splits; sample status; contact path;
@@ -82,7 +82,7 @@ Do not rationalize past these:
 5. Separate confirmed rights facts from open clearance questions (hard gates
    1-2).
 6. Write the one-sheet and pitch email only if gates 3-4 pass.
-7. Second pass — re-read the draft against the one-sheet contract, field by
+7. Second pass: re-read the draft against the one-sheet contract, field by
    field, before it ships. Confirm every field is present; confirm the
    rights-status line contains only facts the user supplied; confirm every OPEN
    or UNKNOWN item from the checklist survived into the copy verbatim rather
@@ -119,19 +119,19 @@ questions. Never compress "unknown" into silence.
 - **Missing master or instrumental**: flag in the asset checklist as a blocker.
   Do not complete the sync angle without at minimum a confirmed master file
   path.
-- **Unresolved sample**: sample status is "OPEN — do not pitch until cleared."
+- **Unresolved sample**: sample status is "OPEN, do not pitch until cleared."
   No pitch copy (hard gate 4).
 - **Unknown splits or ownership**: flag in clearance questions. The package can
   be built but must carry the caveat: "Rights holder confirmation required
   before placement."
 - **No contact path**: the package is complete but note: "No contact path
-  identified — supervisor cannot follow up."
+  identified: supervisor cannot follow up."
 - **Scope creep**: if the request becomes a promo funnel, placement promise, or
   clearance claim, stop and restate the boundary: "This skill prepares
   review-ready materials. It does not clear rights, confirm placement, or
   generate outreach."
 
-## Red flags — stop
+## Red flags: stop
 
 If any of these appear in your reasoning, stop and re-read the hard gates:
 
@@ -139,7 +139,7 @@ If any of these appear in your reasoning, stop and re-read the hard gates:
   UNCONFIRMED with a clearance question attached.
 - "We'll sort splits later." Splits sort before pitching, or the gap ships as
   an open question. Never silently.
-- "The supervisor is waiting — skip the instrumental check." The checklist is
+- "The supervisor is waiting: skip the instrumental check." The checklist is
   the package. Skipping it ships a track no one can license.
 - "It's a small indie film, nobody checks samples." Sample status is binary:
   cleared with proof, or OPEN.
@@ -149,12 +149,12 @@ If any of these appear in your reasoning, stop and re-read the hard gates:
 ## Public copy gate
 
 Before outputting one-sheet copy, pitch email, captions, DMs, press angles,
-site copy, bios, CTAs, or review language, run the Suede anti-slop line edit —
+site copy, bios, CTAs, or review language, run the Suede anti-slop line edit:
 suede-deslop owns that pattern list in full; name the actor and keep the
 concrete track artifact.
 
 Sync copy has its own cliché attractor that a general anti-slop pass does not
-catch, because the sentences are clean — they just say nothing. These are
+catch, because the sentences are clean: they just say nothing. These are
 banned in one-sheet and pitch copy:
 
 `cinematic` · `anthemic` · `haunting` · `soaring` · `driving` · `epic` ·
@@ -162,10 +162,10 @@ banned in one-sheet and pitch copy:
 `builds to an emotional payoff` · `perfect for the moment when the hero…`
 
 Replace a banned word with a **concrete musical fact drawn from the facts the
-user supplied** — tempo, key, instrumentation, an arrangement turn ("drums drop
+user supplied**: tempo, key, instrumentation, an arrangement turn ("drums drop
 out at 1:48, vocal and room noise only"), or a quoted lyric line. Never a
 synonym, and never a fact you inferred: if the input contract did not supply it,
-leave it out rather than invent it. The substitution is descriptive copy only —
+leave it out rather than invent it. The substitution is descriptive copy only:
 it may never introduce rights, ownership, or clearance language, which stays
 governed by hard gates 1-2 and 5. A supervisor skims twelve one-sheets an hour;
 the concrete one is the one they can picture against a scene.

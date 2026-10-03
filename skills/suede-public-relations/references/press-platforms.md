@@ -1,4 +1,4 @@
-# Press Request Platforms — Inbound PR
+# Press Request Platforms: Inbound PR
 
 Journalists post source requests and may select a useful response. This reference
 produces research-backed drafts only. Every platform submission runs the
@@ -19,10 +19,10 @@ any external action.
 
 | Platform | What it is | Cost | Quality |
 |----------|-----------|------|---------|
-| **[Connectively](https://www.connectively.us)** (formerly HARO) | Daily email digest of journalist queries | Free tier; paid for filters | Mixed — high volume, lots of noise |
-| **[Qwoted](https://www.qwoted.com)** | Web app with journalist requests | Free; paid for outreach | Good — better-quality outlets |
+| **[Connectively](https://www.connectively.us)** (formerly HARO) | Daily email digest of journalist queries | Free tier; paid for filters | Mixed: high volume, lots of noise |
+| **[Qwoted](https://www.qwoted.com)** | Web app with journalist requests | Free; paid for outreach | Good: better-quality outlets |
 | **[Featured](https://featured.com)** | Web app, expert profiles, journalist requests | Free tier; paid pro | Good for thought-leadership snippets |
-| **[Help A B2B Writer](https://helpab2bwriter.com)** | Twice-weekly email of B2B queries | Free | High — B2B-focused, low spam |
+| **[Help A B2B Writer](https://helpab2bwriter.com)** | Twice-weekly email of B2B queries | Free | High: B2B-focused, low spam |
 | **[SourceBottle](https://www.sourcebottle.com)** | Australia-focused but global queries | Free | Variable |
 | **[Terkel](https://terkel.io)** | Roundup-style ("we asked 50 experts…") | Free | Volume-heavy, low effort |
 | **[JournoRequests](https://twitter.com/journorequests)** | X account aggregating tweets | Free | UK-skewed, real-time |
@@ -38,7 +38,7 @@ Treat platform volume, deadline pressure, and match rate as current-account
 variables. Review only the authorized feed and size the triage pass to the
 user's capacity.
 
-### Step 1 — Filter (5 min)
+### Step 1: Filter (5 min)
 
 For each digest / request feed:
 - Drop everything where you don't have **direct experience or data**
@@ -49,15 +49,15 @@ For each digest / request feed:
 Record the current feed volume and match rate; do not import a universal
 conversion assumption.
 
-### Step 2 — Draft a response
+### Step 2: Draft a response
 
 For each keeper:
-- Read the request 3 times — what's the *actual* angle?
-- Look up the journalist if possible — recent coverage, beat
+- Read the request 3 times: what's the *actual* angle?
+- Look up the journalist if possible: recent coverage, beat
 - Write a custom response (see [template](#response-template))
 - Record the stated deadline and return the exact response draft for approval
 
-### Step 3 — Log
+### Step 3: Log
 
 Track in a spreadsheet:
 - Date
@@ -82,11 +82,11 @@ Hi [name],
 
 Quick response to your request about [topic].
 
-[Specific credential — 1 sentence. "Built X for 5 years" / "Led marketing at Y" / "Have analyzed N companies in space"]
+[Specific credential: 1 sentence. "Built X for 5 years" / "Led marketing at Y" / "Have analyzed N companies in space"]
 
 The most important thing about [topic]: [your actual point in 2 sentences].
 
-[A specific example, story, or data point — this is what gets quoted.]
+[A specific example, story, or data point: this is what gets quoted.]
 
 [If applicable: a contrarian or surprising angle that differentiates from typical answers.]
 
@@ -151,12 +151,12 @@ and let no deadline shortcut the send-approval handover in SKILL.md.
 - **Pitching your product** when they asked for expert commentary
 - **Generic advice** that could come from any expert
 - **Multiple "experts" from your company** responding to the same request (looks coordinated, often is)
-- **Hiring a PR firm to spam responses** — journalists smell it
-- **Demanding a link back** to your site — most can't promise links
+- **Hiring a PR firm to spam responses**: journalists smell it
+- **Demanding a link back** to your site: most can't promise links
 - **Ignoring the deadline** by 1+ days
 - **Long bio sections** before the actual answer
-- **Asking to "see the article before publication"** — you don't get to do that
-- **Asking what other experts said** so you can differentiate — they won't tell you
+- **Asking to "see the article before publication"**: you don't get to do that
+- **Asking what other experts said** so you can differentiate: they won't tell you
 
 ---
 

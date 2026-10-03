@@ -21,17 +21,17 @@ Detailed creation guidance for each lead magnet format.
 **Structure**:
 1. Title page with professional design
 2. Table of contents
-3. Introduction — frame the problem, set expectations
-4. 3-7 chapters — one key concept per chapter
-5. Summary — recap key takeaways
-6. CTA — next step toward your product
+3. Introduction: frame the problem, set expectations
+4. 3-7 chapters: one key concept per chapter
+5. Summary: recap key takeaways
+6. CTA: next step toward your product
 
 **Guidelines**:
 - Ideal length: 10-25 pages (shorter is fine if valuable)
 - Include visuals: charts, diagrams, screenshots
 - Use callout boxes for key stats or quotes
 - End each chapter with a quick takeaway
-- Don't pad — density beats length
+- Don't pad: density beats length
 
 **Tools**: Canva, Google Docs → PDF, Notion export, Designrr, Beacon.by
 
@@ -51,7 +51,7 @@ Detailed creation guidance for each lead magnet format.
 - Keep to 1-2 pages
 - Use actionable language ("Verify X", "Set up Y", "Remove Z")
 - Order by workflow sequence or priority
-- Make it printable — clean layout, generous spacing
+- Make it printable: clean layout, generous spacing
 - Include a "done" checkbox for each item
 
 **What works**: Step-by-step processes, audit criteria, launch checklists, setup guides
@@ -96,7 +96,7 @@ Detailed creation guidance for each lead magnet format.
 - Include a getting-started guide
 - Pre-populate with example content
 - Use Notion's database features (views, filters, relations)
-- Keep it simple — don't over-engineer
+- Keep it simple: don't over-engineer
 
 ### Document Templates
 - Provide in multiple formats (Google Doc, Word, PDF)
@@ -121,7 +121,7 @@ Detailed creation guidance for each lead magnet format.
   - How to adapt it (1-2 sentences)
 
 **Guidelines**:
-- Quality over quantity — curate ruthlessly
+- Quality over quantity: curate ruthlessly
 - Add your analysis, don't just collect
 - Organize for browsing (categories, tags)
 - Update periodically with fresh examples
@@ -145,7 +145,7 @@ Detailed creation guidance for each lead magnet format.
 - Host on unlisted YouTube, Loom, or course platform
 - Deliver links via email drip
 - Include worksheets or exercises per lesson
-- More personal — builds stronger connection
+- More personal: builds stronger connection
 
 **Cadence**: Every 1-2 days. Don't stretch too thin or compress too tight.
 
@@ -159,7 +159,7 @@ Detailed creation guidance for each lead magnet format.
 
 **Question Design**:
 - 5-10 questions (sweet spot: 7)
-- Multiple choice only — no open-ended
+- Multiple choice only: no open-ended
 - Questions should feel insightful, not obvious
 - Progress indicator ("Question 3 of 7")
 
@@ -169,7 +169,7 @@ Detailed creation guidance for each lead magnet format.
 - Tailor follow-up emails by result type
 - Share-worthy result format ("I got: Growth Stage Marketer!")
 
-**Implementation**: Gate results behind email capture. The quiz itself is ungated — the personalized results require an email.
+**Implementation**: Gate results behind email capture. The quiz itself is ungated: the personalized results require an email.
 
 **For building interactive quizzes**: route technical tool strategy to `suede-free-tools`.
 

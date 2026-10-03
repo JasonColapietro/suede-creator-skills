@@ -27,7 +27,7 @@ Before scoring, determine the app's tier: **Dominant**, **Established**, or **Ch
 
 **Challenger apps (most apps):**
 
-- Scored strictly against textbook ASO — every character and feature matters
+- Scored strictly against textbook ASO: every character and feature matters
 
 **Key principle:** Before docking points, ask: "Is this a mistake or a data-informed
 choice by a team with more information than I have?"

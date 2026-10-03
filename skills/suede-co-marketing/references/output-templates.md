@@ -1,12 +1,12 @@
 # Co-Marketing Output Templates
 
 Read this before writing either deliverable, and copy the matching skeleton
-verbatim — headings included.
+verbatim, headings included.
 
 ## A. Scored partner shortlist
 
 ```
-# Partner shortlist — <user's product>
+# Partner shortlist: <user's product>
 
 ## Shortlist (max 5, ranked)
 
@@ -27,13 +27,13 @@ verbatim — headings included.
 ## Recommended first move
 - Partner: <name>
 - Proposed format: <format named from references/campaign-formats.md>
-- Outreach status: draft only, nothing sent — awaiting approve / revise / drop
+- Outreach status: draft only, nothing sent: awaiting approve / revise / drop
 ```
 
 ## B. Joint campaign plan
 
 ```
-# Joint campaign — <your company> x <partner>
+# Joint campaign: <your company> x <partner>
 
 ## Campaign
 - Format: <named from references/campaign-formats.md>

@@ -229,10 +229,10 @@ The goal is not to present features. The goal is to make the buyer feel understo
 ### Champion Deck
 
 **Add:**
-- "Internal selling" slide — key points for them to present to their team
-- Quick-win slide — what success looks like in 30 days
-- Peer proof — companies like theirs who succeeded
-- Objection pre-handling — common pushback they'll face internally
+- "Internal selling" slide: key points for them to present to their team
+- Quick-win slide: what success looks like in 30 days
+- Peer proof: companies like theirs who succeeded
+- Objection pre-handling: common pushback they'll face internally
 
 **Remove or minimize:**
 - Deep technical or financial detail
@@ -251,7 +251,7 @@ Every slide is a feature with a screenshot. No story, no "so what," no connectio
 Slides with 200+ words. Nobody reads them during a presentation. If the slide requires reading, it belongs in a leave-behind.
 
 ### The Missing Story Arc
-Slides exist in isolation — no narrative flow from problem to solution to proof. The deck feels like a brochure, not a conversation.
+Slides exist in isolation: no narrative flow from problem to solution to proof. The deck feels like a brochure, not a conversation.
 
 ### The Generic Screenshot
 Product screenshots without callouts, annotations, or context. The prospect can't tell what they're looking at or why it matters.

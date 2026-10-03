@@ -1,4 +1,4 @@
-# Client Types — Evidence Questions by Business Model
+# Client Types: Evidence Questions by Business Model
 
 The 13-section plan structure stays consistent across client types. Use the
 closest archetype to generate questions and risks, never to assume channels,
@@ -14,7 +14,7 @@ Before adopting any candidate, record:
 
 If these inputs are missing, keep the candidate `Conditional` or `Deferred`.
 
-## Archetype 1 — B2B SaaS
+## Archetype 1: B2B SaaS
 
 ### Model questions
 
@@ -48,7 +48,7 @@ If these inputs are missing, keep the candidate `Conditional` or `Deferred`.
 
 Route only after the candidate's evidence and authority gates pass.
 
-## Archetype 2 — Consumer App
+## Archetype 2: Consumer App
 
 ### Model questions
 
@@ -79,7 +79,7 @@ Route only after the candidate's evidence and authority gates pass.
 `suede-emails`, `suede-referrals`, `suede-pricing`, `suede-ad-creative`, and
 `suede-ads`.
 
-## Archetype 3 — Hybrid Hardware and Software
+## Archetype 3: Hybrid Hardware and Software
 
 ### Model questions
 
@@ -111,7 +111,7 @@ Route only after the candidate's evidence and authority gates pass.
 `suede-referrals`, `suede-pricing`, `suede-seo-audit`, `suede-ads`, and
 `suede-ad-creative`.
 
-## Archetype 4 — Marketplace
+## Archetype 4: Marketplace
 
 ### Model questions
 
@@ -141,7 +141,7 @@ Route only after the candidate's evidence and authority gates pass.
 `suede-customer-research`, `suede-cold-email`, `suede-programmatic-seo`,
 `suede-onboarding`, `suede-emails`, `suede-referrals`, and `suede-pricing`.
 
-## Archetype 5 — Developer Tool or Open Source
+## Archetype 5: Developer Tool or Open Source
 
 ### Model questions
 
@@ -175,7 +175,7 @@ Route only after the candidate's evidence and authority gates pass.
 `suede-sales-enablement`, `suede-cold-email`, `suede-onboarding`, and
 `suede-pricing`.
 
-## Archetype 6 — Scientific, Clinical, or Regulated
+## Archetype 6: Scientific, Clinical, or Regulated
 
 ### Model questions
 
@@ -207,7 +207,7 @@ Route only after the candidate's evidence and authority gates pass.
 `suede-sales-enablement`, `suede-public-relations`, `suede-cold-email`,
 `suede-pricing`, and `suede-emails`.
 
-## Archetype 7 — Transactional Commerce
+## Archetype 7: Transactional Commerce
 
 ### Model questions
 

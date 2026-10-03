@@ -15,7 +15,7 @@ Silent drift is the failure this prevents. Nothing crashes when a threshold is
 copied wrong into a second language. The two surfaces simply start answering the
 same question differently, and a user finds out before you do.
 
-## Step 1 — Name one reference surface
+## Step 1: Name one reference surface
 
 Exactly one surface is the reference. Every other surface is a follower that
 asserts against it. Two references is two sources of truth with extra steps.
@@ -23,7 +23,7 @@ asserts against it. Two references is two sources of truth with extra steps.
 Pick the surface where the domain is most complete and most exercised, and write
 that choice into the contract's `reference` field so nobody re-litigates it.
 
-## Step 2 — Build the contract by importing, never retyping
+## Step 2: Build the contract by importing, never retyping
 
 The builder imports the constants from the modules the application actually runs
 on and serializes them. Retyping a value into the builder reintroduces exactly
@@ -35,7 +35,7 @@ one-line change and it keeps the count of definitions at one.
 Serialize with stable key order and a trailing newline, because followers vendor
 the file verbatim and a reformat shows up as a spurious diff.
 
-## Step 3 — Make staleness fail on the reference side
+## Step 3: Make staleness fail on the reference side
 
 One test rebuilds the contract in memory and compares it to the committed file.
 Without it the JSON is a snapshot someone took once.
@@ -50,7 +50,7 @@ CONTRACT_WRITE=1 <test runner> <contract test>
 Compare parsed objects first so the failure names the key that moved, then
 compare raw bytes so a reformat is caught too.
 
-## Step 4 — Vendor byte-identical to each follower
+## Step 4: Vendor byte-identical to each follower
 
 Followers keep a copy at the same relative path. Prove it matches rather than
 assuming:
@@ -62,20 +62,20 @@ shasum -a 256 <reference>/contracts/<name>.json <follower>/contracts/<name>.json
 Two identical hashes, or the copy is stale. Record the re-sync command in the
 follower's README so the next person does not invent one.
 
-## Step 5 — Assert through public behavior, not private internals
+## Step 5: Assert through public behavior, not private internals
 
 A follower test that reimplements the reference formula proves only that you can
 write the same bug twice.
 
 Assert what a user experiences. For a ladder, feed the contract's rung values to
 the public accessor and check the level it returns. For a threshold, check the
-boundary **and one step below it** — a threshold asserted only from above still
+boundary **and one step below it**: a threshold asserted only from above still
 passes after it moves down.
 
 Start the follower suite with a test that the contract loaded and is non-empty.
 A file that fails to load makes every assertion after it vacuously true.
 
-## Step 6 — Pin the divergences you already have
+## Step 6: Pin the divergences you already have
 
 You will find existing differences. The contract's job on day one is to make
 them visible and hold them still, not to erase them.
@@ -89,7 +89,7 @@ Each pinned divergence gets two assertions on the follower: that it still
 differs by the recorded amount, and that it does **not** equal the reference. The
 second one fires when someone closes the divergence and forgets the contract.
 
-### Halt format — a divergence found mid-build
+### Halt format: a divergence found mid-build
 
 Changing a shipped constant changes behavior for real users, and which surface is
 right is a product decision. At the moment you find one, stop and report:
@@ -105,7 +105,7 @@ Both shipped. <one line on what a user feels>.
 Then wait. Do not pick for the user, and do not change either side as a side
 effect of writing a contract.
 
-## Step 7 — Prove non-vacuity on both sides, in this run
+## Step 7: Prove non-vacuity on both sides, in this run
 
 A parity test that cannot fail is worse than none, because it reads as evidence.
 
@@ -116,7 +116,7 @@ copy, watch exactly the matching assertion fail, restore.
 Paste both the failing and the passing output. "The tests pass" is not proof
 that they can fail.
 
-## Step 8 — Closing a divergence is a two-repo operation
+## Step 8: Closing a divergence is a two-repo operation
 
 Both halves land or neither does:
 

@@ -1,7 +1,7 @@
-# Condensed Workflows — umbrella-only fallback
+# Condensed Workflows: umbrella-only fallback
 
 Read this file **only when the individual Suede skills named in SKILL.md are
-not installed** — for example the Codex install path that installs
+not installed**, for example the Codex install path that installs
 `suede-workflow-skills` alone. When the pack is installed (Claude Code
 `/plugin install suede-skills@suede`, `install.sh`, or the per-skill Codex
 install), route to the named specialist instead: it owns the current version of

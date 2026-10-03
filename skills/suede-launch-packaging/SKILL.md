@@ -1,13 +1,13 @@
 ---
 name: suede-launch-packaging
-description: "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package — README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy — or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy)."
+description: "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy)."
 metadata:
   version: 1.0.0
 ---
 
 # Suede Launch Packaging
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -22,9 +22,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -36,9 +36,9 @@ Ship Suede work as a launch, not a loose drop. This skill turns finished work in
 
 **Core principle:** a release nobody can install is not a launch. Nothing is "live" until you fetched it yourself, and no install path ships until the exact command ran from a clean temporary directory.
 
-## Step 0 — Inventory the launch (detect first)
+## Step 0: Inventory the launch (detect first)
 
-Before picking a lane, name exactly what is being launched. Do not assume from the request; check the repo, branch, and live surface. One request often spans several rows (a skill launch = repo + README + install command + social copy). List every row that applies — each needs its own verification.
+Before picking a lane, name exactly what is being launched. Do not assume from the request; check the repo, branch, and live surface. One request often spans several rows (a skill launch = repo + README + install command + social copy). List every row that applies: each needs its own verification.
 
 | Launch surface | Verify before writing copy | Proof artifact |
 |---|---|---|
@@ -58,16 +58,16 @@ you past one, proceed as directed and label the output with exactly which
 verification is missing.
 
 1. **No launch copy until the live surface is verified.** Fetch the live URL or public artifact and confirm the expected status or render first. Copy drafted against "it should be live" is a violation.
-2. **No install doc until the install command was run from a clean temporary directory after pushing.** Success from inside the local repo does not count — the local checkout masks missing pushes and private paths.
-3. **Set the ship gate before recommending any announcement.** A `hold` verdict is your recommendation that nothing goes out yet, including "soft" posts — state it plainly with the reasons, then let the user decide.
+2. **No install doc until the install command was run from a clean temporary directory after pushing.** Success from inside the local repo does not count: the local checkout masks missing pushes and private paths.
+3. **Set the ship gate before recommending any announcement.** A `hold` verdict is your recommendation that nothing goes out yet, including "soft" posts: state it plainly with the reasons, then let the user decide.
 4. **`@personal` and local plugin aliases never appear in public docs, READMEs, MCP catalog output, or explainer copy.** They are local operator notes only.
 
 ## Pick the lane
 
 Most launches use both lanes in order: package the release, then prove the install. Pick what the request is asking for.
 
-- **Lane A — Package the launch.** Work is ready to leave the local machine and needs a clean public package: a repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Start here for "ship this," "write the release," "package this drop."
-- **Lane B — Install support.** An install fails, a public user cannot add a skill, `@personal` leaks into public copy, or a README, docs, MCP catalog, or public explainer step needs a simpler, public-first path. Start here for "the install is broken," "fix the install command," "why can't they add this skill," "the marketplace is confusing." Lane A always runs Lane B's command-test step before publishing.
+- **Lane A: Package the launch.** Work is ready to leave the local machine and needs a clean public package: a repo, live URL, docs page, README section, install command, release note, GitHub Pages update, skill-pack release, MCP server, feature, or social/email copy. Start here for "ship this," "write the release," "package this drop."
+- **Lane B: Install support.** An install fails, a public user cannot add a skill, `@personal` leaks into public copy, or a README, docs, MCP catalog, or public explainer step needs a simpler, public-first path. Start here for "the install is broken," "fix the install command," "why can't they add this skill," "the marketplace is confusing." Lane A always runs Lane B's command-test step before publishing.
 
 When both apply (most full launches), run Lane A to assemble the package, then run Lane B to verify and correct every install path inside it before you ship.
 
@@ -86,16 +86,16 @@ boundaries below and the Suede S mark rules apply to either lane.
 - Keep `@personal` and any local-only plugin commands out of all public copy. They are local operator notes.
 - No competitor product names in any public copy.
 
-## Red flags — stop
+## Red flags: stop
 
 If you catch yourself thinking any of these, stop and run the gate:
 
-- "The README says it works." — The README is a claim, not a test. Run the command.
-- "I'll test the install after publishing." — Test from a clean temp dir first, or the launch holds.
-- "It installed fine on this machine." — The local checkout masks missing pushes. Clean temp dir only.
-- "The raw URL is obviously right." — Fetch it. Blob-vs-raw catches everyone eventually.
-- "Everyone reading this doc is internal, `@personal` is fine." — Public docs are public. Keep it out.
-- "We can announce now and fix the install path after." — The first-touch install IS the launch.
+- "The README says it works.": The README is a claim, not a test. Run the command.
+- "I'll test the install after publishing.": Test from a clean temp dir first, or the launch holds.
+- "It installed fine on this machine.": The local checkout masks missing pushes. Clean temp dir only.
+- "The raw URL is obviously right.": Fetch it. Blob-vs-raw catches everyone eventually.
+- "Everyone reading this doc is internal, `@personal` is fine.": Public docs are public. Keep it out.
+- "We can announce now and fix the install path after.": The first-touch install IS the launch.
 
 ## Routing
 
@@ -108,6 +108,6 @@ If you catch yourself thinking any of these, stop and run the gate:
 
 ## Simple explanation (plain, for a 10-year-old)
 
-Think of it like putting out a record instead of leaving a demo tape on the floor. First you make sure the song is really finished and you know where the master copy lives. Then you write the back-of-the-album note so a fan gets what the song is about, not how you wired the amps. Then you hand people the exact way to actually play it — the real link, the real install steps — and you try those steps yourself on a clean machine first, so nobody gets a broken download. You keep the messy backstage notes (like the private `@personal` shortcut) off the public sleeve. And you only say "it's out now" once you've clicked the link yourself and heard it play.
+Think of it like putting out a record instead of leaving a demo tape on the floor. First you make sure the song is really finished and you know where the master copy lives. Then you write the back-of-the-album note so a fan gets what the song is about, not how you wired the amps. Then you hand people the exact way to actually play it (the real link, the real install steps) and you try those steps yourself on a clean machine first, so nobody gets a broken download. You keep the messy backstage notes (like the private `@personal` shortcut) off the public sleeve. And you only say "it's out now" once you've clicked the link yourself and heard it play.
 
 End every meaningful launch with the simple explanation above, then the usual breakdown (Lane A output and, when an install is involved, Lane B output), then `Cue Suede` so the operator can request a change, preserve what worked, or say nothing to keep it as-is.

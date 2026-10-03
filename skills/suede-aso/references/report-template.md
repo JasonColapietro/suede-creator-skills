@@ -11,7 +11,7 @@ Use this structure for all ASO audit reports.
 **Store:** {Apple App Store / Google Play}
 **URL:** {listing URL}
 **Audit date:** {date}
-**Brand tier:** {Dominant / Established / Challenger} — {one-line justification}
+**Brand tier:** {Dominant / Established / Challenger}: {one-line justification}
 **Overall Score:** {score}/100 (Grade: {A/B/C/D/F})
 ```
 
@@ -40,7 +40,7 @@ Grade scale per dimension: 9-10 = A, 7-8 = B, 5-6 = C, 3-4 = D, 1-2 = F
 Highest-impact changes that take under 1 hour:
 
 ```
-### 1. {Action verb} — {specific change}
+### 1. {Action verb}: {specific change}
 **Impact:** {High/Medium} | **Effort:** {<15 min / <30 min / <1 hour}
 **Current:** {what it is now}
 **Recommended:** {exact replacement, with character count}
@@ -64,8 +64,8 @@ Highest-impact changes that take under 1 hour:
 - {issue 1}
 - {issue 2}
 
-**Recommended title:** "{new title}" ({X}/30 chars) — {rationale}
-**Recommended subtitle:** "{new subtitle}" ({X}/30 or /80 chars) — {rationale}
+**Recommended title:** "{new title}" ({X}/30 chars): {rationale}
+**Recommended subtitle:** "{new subtitle}" ({X}/30 or /80 chars): {rationale}
 ```
 
 ### Description Analysis
@@ -78,7 +78,7 @@ Highest-impact changes that take under 1 hour:
 - {issue 1}
 - {issue 2}
 
-**Keyword density (Google Play only):** {X}% — target: 2-3%
+**Keyword density (Google Play only):** {X}% (target: 2-3%)
 **Top keywords found:** {keyword1} (Xn), {keyword2} (Xn), ...
 **Missing high-value keywords:** {keyword1}, {keyword2}, ...
 
@@ -95,8 +95,8 @@ Highest-impact changes that take under 1 hour:
 **Feature graphic (Google Play):** {Yes/No}
 
 **Screenshot audit:**
-1. {screenshot 1 description} — {pass/issue}
-2. {screenshot 2 description} — {pass/issue}
+1. {screenshot 1 description}: {pass/issue}
+2. {screenshot 2 description}: {pass/issue}
 ...
 
 **Recommendations:**
@@ -136,7 +136,7 @@ Highest-impact changes that take under 1 hour:
 **Price model:** {Free / Freemium / Paid}
 **IAP count:** {count}
 **Downloads (Google Play):** {range}
-**Social proof visible:** {awards, press, badges — or "none"}
+**Social proof visible:** {awards, press, badges, or "none"}
 
 **Recommendations:**
 - {specific action 1}
@@ -182,16 +182,16 @@ Ordered by impact (high to low), grouped by effort:
 
 ```
 ### Do This Week (Quick Wins)
-1. {action} — {expected impact}
-2. {action} — {expected impact}
+1. {action}: {expected impact}
+2. {action}: {expected impact}
 
 ### Do This Month (Medium Effort)
-3. {action} — {expected impact}
-4. {action} — {expected impact}
+3. {action}: {expected impact}
+4. {action}: {expected impact}
 
 ### Plan for Next Quarter (High Effort)
-5. {action} — {expected impact}
-6. {action} — {expected impact}
+5. {action}: {expected impact}
+6. {action}: {expected impact}
 ```
 
 ---

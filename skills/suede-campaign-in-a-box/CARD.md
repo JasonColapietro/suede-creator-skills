@@ -44,12 +44,12 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Evidence boundaries" — These lanes organize and prepare campaign material. They do NOT:
 
-- clear rights, confirm ownership, or resolve sample/contributor/clearance questions — flag stale or uncertain rights, samples, contributors, and likeness instead of asserting they are cleared;
+- clear rights, confirm ownership, or resolve sample/contributor/clearance questions: flag stale or uncertain rights, samples, contributors, and likeness instead of asserting they are cleared;
 - confirm ownership or write anything to a registry;
 - approve, route, or guarantee payouts, payments, or fulfillment;
-- secure placements, sync, endorsements, partnerships, or cosigns — never imply partnership, endorsement, or access that is not confirmed;
+- secure placements, sync, endorsements, partnerships, or cosigns: never imply partnership, endorsement, or access that is not confirmed;
 - invent streams, press, traction, biography, or cultural status;
-- promise virality, sales, or any outcome — say why something might work and what to test;
+- promise virality, sales, or any outcome: say why something might work and what to test;
 - use fake hype, fake scarcity, manipulative claims, or unsafe fan behavior;
 - copy another artist's protected identity or assets; no competitor product names.
 

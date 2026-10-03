@@ -212,11 +212,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 76 skills fit
 
 Here is the objection that arrives immediately. The 76 `SKILL.md` files in this
-repo total 1,106,991 bytes. Loading all of them into every conversation would
+repo total 1,101,756 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 76 descriptions together come to 46,802 bytes. That is roughly a
+all 76 descriptions together come to 46,778 bytes. That is roughly a
 twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -349,15 +349,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 76 files total 1,106,991 bytes;
-the 76 descriptions together are 46,802. The agent holds the small number and
+when the skill is not running. In this repo the 76 files total 1,101,756 bytes;
+the 76 descriptions together are 46,778. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 681 characters. "Suede AI blunt
+Look at what `suede-code-grader` does with 680 characters. "Suede AI blunt
 A-F ship grade for a code change" states the artifact. The lane list names the
 surfaces it covers. The trigger list catches the request in the words a caller
 actually types: "give it a letter", "is this an A", "should this merge". Then

@@ -7,29 +7,29 @@ description: "Suede-affiliated comprehensive marketing planning across acquisiti
 
 Suede produces a comprehensive marketing operating plan across Acquisition, Activation, Retention, Referral, and Revenue. Build the 12-month plan from the client's verified budget, team, stage, evidence, constraints, and public Suede execution routes, then cross-reference the `suede-marketing-ideas` library and embedded 17-section current-state rubric.
 
-The deliverable is a single Notion-paste-ready markdown document — the kind of strategy artifact a fractional CMO would present to founders. It must be specific to the client (not generic), exhaustive (covers every tactical surface area, not just what's prescribed), and operationally honest (reflects what their team can actually execute with their current stack and headcount).
+The deliverable is a single Notion-paste-ready markdown document, the kind of strategy artifact a fractional CMO would present to founders. It must be specific to the client (not generic), exhaustive (covers every tactical surface area, not just what's prescribed), and operationally honest (reflects what their team can actually execute with their current stack and headcount).
 
 ## How this skill is invoked
 
-`/suede-marketing-plan {client-name-or-domain}` — the argument is the client name
+`/suede-marketing-plan {client-name-or-domain}`: the argument is the client name
 or domain; with no argument, prompt for it.
 
 Read `.agents/product-marketing.md` first if it exists and ask only for what it
 does not cover; see `suede-product-marketing` for path fallbacks.
 
-On invocation, the skill reads `.agents/suede-marketing-plans/{client-slug}/progress.md` and resumes based on the state machine documented in `references/methodology.md` Step 1.1.2 (fresh → INIT → REVIEW → FINALIZE → finalized). Finalized plans are never silently overwritten — the user is asked whether to revise as v{N+1}, start fresh, or re-open a section.
+On invocation, the skill reads `.agents/suede-marketing-plans/{client-slug}/progress.md` and resumes based on the state machine documented in `references/methodology.md` Step 1.1.2 (fresh → INIT → REVIEW → FINALIZE → finalized). Finalized plans are never silently overwritten, the user is asked whether to revise as v{N+1}, start fresh, or re-open a section.
 
 ## The three phases
 
 The full workflow lives in `references/methodology.md`. Quick summary:
 
-### Phase 1 — INIT (research + intake)
+### Phase 1: INIT (research + intake)
 
 Read all available materials about the client. Pull data from any wired tools (Ahrefs, GA4 MCP, Stripe MCP, etc.). Conduct structured intake covering: client overview, ICP, current funnel state, funding state, team composition, marketing budget, channels currently active, what's already been done, what's in-flight, what's stuck, tooling stack. Save to `research.md`.
 
-Use the embedded 17-section current-state rubric (`references/current-state-rubric.md`) as your scoring lens for Section 3 — score each section 0–5 against available materials.
+Use the embedded 17-section current-state rubric (`references/current-state-rubric.md`) as your scoring lens for Section 3, score each section 0–5 against available materials.
 
-### Phase 2 — REVIEW (walk through each of 13 sections interactively)
+### Phase 2: REVIEW (walk through each of 13 sections interactively)
 
 Present each section's draft in chat. For each section you can:
 - Approve as-is ("good," "next")
@@ -43,7 +43,7 @@ Persist each confirmed section with the recoverable write-intent transaction in
 metadata, verify, then clear the intent. If interrupted, run
 `/suede-marketing-plan client-name` to reconcile the intent before continuing.
 
-### Phase 3 — FINALIZE (compile + verify + publish)
+### Phase 3: FINALIZE (compile + verify + publish)
 
 Compile all 13 sections into `final_plan.md`. Run a verification pass: confirm `suede-marketing-ideas` idea numbers, public Suede routes, and named integrations are accurate; check for machine-specific paths that should not ship; ensure the brand voice matches what was captured in the strategic frame.
 
@@ -53,19 +53,19 @@ Optionally offer to publish to a shared GitHub repo (e.g., `{client-org}/{client
 
 Full template lives in `references/plan-template.md`. The structure:
 
-1. **Executive summary** — 3 big bets, 90-day priorities, 12-month outcome. Written so it can be lifted into an investor or board update.
-2. **Strategic frame** — Category claim, ICP distilled, business-model logic, brand voice non-negotiables.
-3. **Current state** — Team, budget, what's done, what's in-flight, what's stuck. Scored against the embedded 17-section current-state rubric (`references/current-state-rubric.md`).
-4. **Acquisition** — How strangers become aware. Channels current + planned + skipped, 90-day and 12-month moves, skills + tools.
-5. **Activation** — How a new user has an experience that converts. Onboarding, first session, App Store / signup, paywall, lifecycle setup.
-6. **Retention** — How a converted user stays and deepens. Lifecycle flows, churn prevention, win-back, support-as-marketing.
-7. **Referral** — How retained users bring more users. Ambassador / affiliate / Guides / WOM mechanics.
-8. **Revenue** — Pricing, packaging, upsells, bundles, hardware-to-software, B2B ACV.
-9. **90-day roadmap** — Weeks 1–2 (Unblock), 3–4 (Foundation), 5–8 (Velocity), 9–12 (Compound). AARRR-tagged, owner-assigned.
-10. **12-month outlook** — Quarterly decision checkpoints tied to verified resource, evidence, owner, and approval conditions.
-11. **Marketing operations stack** — Available marketing skills and authorized integrations mapped to each AARRR stage, owner, review gate, and fallback.
-12. **Tactical idea bank** — Every idea in the tactic library owned by `suede-marketing-ideas`, cross-referenced to AARRR + an evidence-based status: Current / Approved test / Conditional / Deferred / Skip.
-13. **Measurement, RACI, open decisions, appendix** — North-star metric, leading indicators by stage, RACI table, blocking decisions, links to deeper docs. Read `references/measurement-framework.md` before writing this section — it holds the north-star selection patterns, leading indicators by AARRR stage, review cadence, KPI target setting, kill criteria, and guardrail metrics this section compiles from.
+1. **Executive summary**: 3 big bets, 90-day priorities, 12-month outcome. Written so it can be lifted into an investor or board update.
+2. **Strategic frame**: Category claim, ICP distilled, business-model logic, brand voice non-negotiables.
+3. **Current state**: Team, budget, what's done, what's in-flight, what's stuck. Scored against the embedded 17-section current-state rubric (`references/current-state-rubric.md`).
+4. **Acquisition**: How strangers become aware. Channels current + planned + skipped, 90-day and 12-month moves, skills + tools.
+5. **Activation**: How a new user has an experience that converts. Onboarding, first session, App Store / signup, paywall, lifecycle setup.
+6. **Retention**: How a converted user stays and deepens. Lifecycle flows, churn prevention, win-back, support-as-marketing.
+7. **Referral**: How retained users bring more users. Ambassador / affiliate / Guides / WOM mechanics.
+8. **Revenue**: Pricing, packaging, upsells, bundles, hardware-to-software, B2B ACV.
+9. **90-day roadmap**: Weeks 1–2 (Unblock), 3–4 (Foundation), 5–8 (Velocity), 9–12 (Compound). AARRR-tagged, owner-assigned.
+10. **12-month outlook**: Quarterly decision checkpoints tied to verified resource, evidence, owner, and approval conditions.
+11. **Marketing operations stack**: Available marketing skills and authorized integrations mapped to each AARRR stage, owner, review gate, and fallback.
+12. **Tactical idea bank**: Every idea in the tactic library owned by `suede-marketing-ideas`, cross-referenced to AARRR + an evidence-based status: Current / Approved test / Conditional / Deferred / Skip.
+13. **Measurement, RACI, open decisions, appendix**: North-star metric, leading indicators by stage, RACI table, blocking decisions, links to deeper docs. Read `references/measurement-framework.md` before writing this section, it holds the north-star selection patterns, leading indicators by AARRR stage, review cadence, KPI target setting, kill criteria, and guardrail metrics this section compiles from.
 
 ## The AARRR framing
 
@@ -79,28 +79,28 @@ Full primer in `references/aarrr-framework.md`. Quick rule:
 - **Referral** = retained users → bring more users (programs, viral mechanics)
 - **Revenue** = monetization (pricing, upsells, bundles, ACV expansion)
 
-Brand and content are **cross-cutting**, not their own AARRR stage — they serve every stage.
+Brand and content are **cross-cutting**, not their own AARRR stage, they serve every stage.
 
 ## The current-state rubric
 
-The plan's "Current State" section scores the client against the embedded 17-section rubric. Full rubric in `references/current-state-rubric.md` — it's the source of truth, not a derivative of any external skill.
+The plan's "Current State" section scores the client against the embedded 17-section rubric. Full rubric in `references/current-state-rubric.md`, it's the source of truth, not a derivative of any external skill.
 
 If the user already has a separately scored audit, preserve it as dated
 evidence and reuse only scores whose sources, scope, cohort/window, and
 definitions still match the current state. Otherwise, score from current
 materials using the rubric's evidence gate; mark unsupported rows `Unknown`.
 
-## Cross-references — skills this plan integrates with
+## Cross-references: skills this plan integrates with
 
-1. **`suede-marketing-ideas`** — owns the tactic library and its numbering. Section 12 of the plan cross-references every tactic to AARRR + client status; that skill's reference owns the count and the evidence stance. Detail in `references/idea-cross-reference.md`.
-2. **`suede-product-marketing`** — Sets up the foundational `.agents/product-marketing.md` context file (positioning, ICP, voice). Read this first; Section 2 (Strategic frame) builds on it.
-3. **AARRR-stage-specific skills** — `suede-onboarding`, `suede-signup`, `suede-emails`, `suede-referrals`, `suede-pricing`, etc. The "Marketing operations stack" (Section 11) maps these to AARRR stages.
+1. **`suede-marketing-ideas`**: owns the tactic library and its numbering. Section 12 of the plan cross-references every tactic to AARRR + client status; that skill's reference owns the count and the evidence stance. Detail in `references/idea-cross-reference.md`.
+2. **`suede-product-marketing`**: Sets up the foundational `.agents/product-marketing.md` context file (positioning, ICP, voice). Read this first; Section 2 (Strategic frame) builds on it.
+3. **AARRR-stage-specific skills**: `suede-onboarding`, `suede-signup`, `suede-emails`, `suede-referrals`, `suede-pricing`, etc. The "Marketing operations stack" (Section 11) maps these to AARRR stages.
 
 The plan is **opinionated about which skills serve which stages.** Full mapping in `references/ops-stack-mapping.md`.
 
 ## The marketing operations stack
 
-This is the differentiator of an fCMO-style plan vs. a generic marketing plan. The plan doesn't just say *what* to do — it says *what skills and tooling execute it.*
+This is the differentiator of an fCMO-style plan vs. a generic marketing plan. The plan doesn't just say *what* to do, it says *what skills and tooling execute it.*
 
 The public Suede skill pack and verified integrations can make approved workflows more repeatable for a small team. The plan must show the stack explicitly, AARRR-stage by AARRR-stage, without claiming that tooling replaces headcount or guarantees throughput; capacity still depends on the client's data, owners, review process, and operating constraints.
 
@@ -120,9 +120,9 @@ Use the client's dated finance and funnel inputs to build scenarios, then have
 the accountable finance owner approve the maximum spend, review date, and stop
 conditions. Full limitations live in `references/budget-planning.md`:
 
-1. **Capacity-based** — start from the approved cash/runway ceiling and measured
+1. **Capacity-based**: start from the approved cash/runway ceiling and measured
    channel capacity; model an outcome range.
-2. **Goal-based scenario** — work backward from a target using sourced ARPC,
+2. **Goal-based scenario**: work backward from a target using sourced ARPC,
    retention, gross margin, blended CAC, and delivery capacity. Treat the result
    as a sensitivity model, not a forecast or funding recommendation.
 
@@ -130,7 +130,7 @@ Do not append a universal experiment percentage or stage-based growth multiple.
 The accountable owner chooses a bounded test amount the company can lose without
 breaching runway.
 
-## Growth patterns — the real shape of SaaS growth
+## Growth patterns: the real shape of SaaS growth
 
 Use `references/growth-patterns.md` to compare linear, step-function, and layered
 curve hypotheses against dated client evidence. ARR and funding stage are
@@ -148,20 +148,20 @@ or outsource ratio from stage or company size.
 
 A generic plan is a failed plan. Every plan must explicitly customize for:
 
-1. **Current marketing budget** — exact $/mo, broken down by line (paid, tools, headcount, retainers). Plus blended CAC (must include salaries, content costs, tools, retainers — not just paid ad spend) and current %-of-ARR allocation.
-2. **Unit economics** — ARPC, annual retention rate, LTV. These feed the budget math in Section 8 and Section 10.
-3. **Team composition and surface area** — every person who touches marketing,
+1. **Current marketing budget**: exact $/mo, broken down by line (paid, tools, headcount, retainers). Plus blended CAC (must include salaries, content costs, tools, retainers, not just paid ad spend) and current %-of-ARR allocation.
+2. **Unit economics**: ARPC, annual retention rate, LTV. These feed the budget math in Section 8 and Section 10.
+3. **Team composition and surface area**: every person who touches marketing,
    their outcome, capacity, skills, access, and approval boundary.
-4. **What the client is currently doing** — by channel, with status (working / not / TBD).
-5. **What they've already done that should be acknowledged** — past launches, PR moments, content, partnerships. Don't write a plan that ignores work they're proud of.
-6. **Observed growth pattern** — evidence for linear, step-function, or layered
+4. **What the client is currently doing**: by channel, with status (working / not / TBD).
+5. **What they've already done that should be acknowledged**: past launches, PR moments, content, partnerships. Don't write a plan that ignores work they're proud of.
+6. **Observed growth pattern**: evidence for linear, step-function, or layered
    behavior, plus uncertainty and the current constraint.
-7. **Conditional capability milestones** — the exact evidence, resources,
+7. **Conditional capability milestones**: the exact evidence, resources,
    approval, and stop conditions that would unlock a hire, channel, or vendor.
-8. **The marketing skills mapped to specific moves** — every move in the AARRR sections names the skill that executes it.
-9. **The execution method and access state** — every move names its owner, current capacity, manual or tool-assisted method, review gate, and fallback. A tool is optional and never evidence that hiring is unnecessary.
+8. **The marketing skills mapped to specific moves**: every move in the AARRR sections names the skill that executes it.
+9. **The execution method and access state**: every move names its owner, current capacity, manual or tool-assisted method, review gate, and fallback. A tool is optional and never evidence that hiring is unnecessary.
 
-If you can't confirm any of these in INIT, list them in Section 13's "Open decisions" — never gloss over them. **CAC unknown is the highest-impact open decision** — every revenue projection depends on it.
+If you can't confirm any of these in INIT, list them in Section 13's "Open decisions", never gloss over them. **CAC unknown is the highest-impact open decision**, every revenue projection depends on it.
 
 ## Common client-type variations
 
@@ -187,7 +187,7 @@ What separates a good plan from a generic one:
 - Conditional capabilities name the verified resource, evidence, owner, approval, review date, and stop conditions required to unlock them
 - The ops stack section names specific skills + MCPs per move
 - The idea bank shows what we're *not* doing and why (skipped ideas with rationale)
-- The exec summary can stand alone — could be lifted into an investor update
+- The exec summary can stand alone: could be lifted into an investor update
 - Open decisions are explicit, not glossed over
 
 **Failure modes to avoid:**
@@ -197,7 +197,7 @@ What separates a good plan from a generic one:
   evidence and an accountable decision confirm it
 - Glossing over uncomfortable metrics (e.g., churn) instead of naming them as open decisions
 - Generic language ("build a community," "improve SEO") without specific moves
-- Ignoring brand voice — every plan section must respect the client's voice rules
+- Ignoring brand voice: every plan section must respect the client's voice rules
 - Padding the plan with skills/ideas the client doesn't actually need
 - Not acknowledging work the team has already done
 
@@ -216,7 +216,7 @@ Length expectation: ~8,000–12,000 words for a comprehensive plan. Shorter is f
 └── {client-slug}/
     ├── materials/         # Client-provided files (decks, audit output, brand-voice doc, etc.)
     ├── research.md        # Research record written during INIT
-    ├── progress.md        # State machine — phase, current_section, approved artifacts, plan_version
+    ├── progress.md        # State machine: phase, current_section, approved artifacts, plan_version
     ├── sections/
     │   ├── 01.md          # Each approved section saved as a canonical artifact
     │   └── ...            # Zero-padded so they sort in order
@@ -229,25 +229,25 @@ The full schema for `progress.md` and the resumption decision tree live in `refe
 
 The full intake questionnaire lives in `references/methodology.md`. The most important questions:
 
-1. **Financial context** — What cash, runway floor, approved burn, commitments, financing conditions, and decision dates constrain the plan? A round label is context only.
-2. **Team** — Who are all the people who touch marketing? What does each own? Where are the gaps?
-3. **Budget** — What's the current monthly marketing spend, broken down by paid acquisition, tools, retainers, and headcount? What exact evidence, capacity, approval, maximum exposure, review date, and stop conditions govern any increase?
-4. **Current channels** — Which dated source, cohort, metric definition, and
+1. **Financial context**: What cash, runway floor, approved burn, commitments, financing conditions, and decision dates constrain the plan? A round label is context only.
+2. **Team**: Who are all the people who touch marketing? What does each own? Where are the gaps?
+3. **Budget**: What's the current monthly marketing spend, broken down by paid acquisition, tools, retainers, and headcount? What exact evidence, capacity, approval, maximum exposure, review date, and stop conditions govern any increase?
+4. **Current channels**: Which dated source, cohort, metric definition, and
    attribution window support "working," "not working," or "unknown"? Which
    untried channel hypotheses have audience evidence and an approved test?
-5. **Already done** — What past campaigns / launches / content / PR moments should this plan acknowledge?
-6. **In-flight** — What's drafted but not shipped? What's blocking each item?
-7. **Tooling stack** — What's wired? Customer.io / Mailchimp / Resend? Shopify / Stripe / App Store Connect? GA4 / Mixpanel / Amplitude? GitHub / Notion / Figma?
-8. **Beta or GA?** — If product is in beta, what's the GA timeline? Throttling? What gates exist?
-9. **The most important thing to fix this quarter** — founder's read.
-10. **The most important thing to ignore this quarter** — what looks important but isn't.
+5. **Already done**: What past campaigns / launches / content / PR moments should this plan acknowledge?
+6. **In-flight**: What's drafted but not shipped? What's blocking each item?
+7. **Tooling stack**: What's wired? Customer.io / Mailchimp / Resend? Shopify / Stripe / App Store Connect? GA4 / Mixpanel / Amplitude? GitHub / Notion / Figma?
+8. **Beta or GA?**: If product is in beta, what's the GA timeline? Throttling? What gates exist?
+9. **The most important thing to fix this quarter**: founder's read.
+10. **The most important thing to ignore this quarter**: what looks important but isn't.
 
 ## How exhaustive should the plan be?
 
 Default to comprehensive. Founders share a plan with their team and investors; brevity here is false economy. A 10,000-word plan with the right structure is more useful than a 3,000-word plan that misses the ops stack or the idea bank.
 
 That said: don't pad. Every section should be **dense, not bloated**. If a
-section has nothing to say, write that explicitly — "Deferred — no approved
+section has nothing to say, write that explicitly, "Deferred, no approved
 test or owner in the current planning window" is honest and useful.
 
 ## A note on tone
@@ -268,7 +268,7 @@ The exec summary should be short enough to read in 60 seconds. The rest should r
 
 - Use `suede-product-marketing` for positioning and `suede-customer-research` for voice-of-customer evidence.
 - Use `suede-marketing-ideas` for a wider option set and `suede-marketing-loops` for approved recurring operations.
-- Use `suede-marketing-council` when a strategic bet is contested — two defensible directions, an irreversible commitment, or a bet the user cannot revisit for months.
+- Use `suede-marketing-council` when a strategic bet is contested, two defensible directions, an irreversible commitment, or a bet the user cannot revisit for months.
 - Use `suede-marketing-psychology` for the behavioral mechanism behind an Activation or Revenue move, stated as a testable hypothesis.
 - Use `suede-onboarding`, `suede-emails`, `suede-referrals`, or `suede-pricing` for lifecycle execution.
 - Use `suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, or `suede-ad-creative` for acquisition execution.

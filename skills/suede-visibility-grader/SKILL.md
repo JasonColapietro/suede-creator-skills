@@ -5,14 +5,14 @@ description: "Suede-owned launch-appeal grader for public pages. Grades findabil
 
 # Suede Visibility Grader
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+Every check, gate, and verdict in this skill (`ship`, `ship-with-caveats`,
 `hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below — is a **recommendation to the user, not a control on the
+proceed" line below) is a **recommendation to the user, not a control on the
 agent**. Run every check, report the results honestly, and complete the
 requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception — if a finding is extremely risky (data loss,
+you do.** Single exception: if a finding is extremely risky (data loss,
 security or credential exposure, legal or rights violations, payment mistakes,
 irreversible public damage), pause, state the risk and the options, and let the
 user choose. Their choice is final.
@@ -57,14 +57,14 @@ Score each lane A-F, then give one overall grade:
 
 - **Findability:** status, canonical, robots, sitemap, title, description,
   durable keywords, and duplicate URL risk.
-- **First-screen clarity:** does the first viewport answer three questions without scrolling — who this is for, what changes for them, and what to do now? Grade on the rendered first viewport, not the document structure.
+- **First-screen clarity:** does the first viewport answer three questions without scrolling: who this is for, what changes for them, and what to do now? Grade on the rendered first viewport, not the document structure.
 - **CTA pull:** primary action, secondary proof action, button text, link
   targets, and whether the visitor has a reason to click now.
 - **Proof and trust:** screenshots, commands, docs, manifests, live routes,
   source files, receipts, authorship, and evidence boundaries.
 - **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Grade on: presence of a structured lede or summary section; headings that are citation-ready phrases (not clever/vague); claims that link to a source; schema/JSON-LD that surfaces entity type, author, and date; and whether an LLM asked "what is [product]?" would return a correct, attributable answer from this page.
 
-  AI readability sub-rubric — start at `A`, drop one letter per failed item,
+  AI readability sub-rubric: start at `A`, drop one letter per failed item,
   floor at `F` (six items, so four or more failures land at `F`). `suede-ai-seo`
   owns the extractability standard these items encode; when an item is ambiguous
   or the threshold needs to change, resolve it there, not here.
@@ -75,7 +75,7 @@ Score each lane A-F, then give one overall grade:
   - Entity schema: JSON-LD or OpenGraph declares entity type, author/organization, and published date.
   - Internal link density: at least one link to a more-detailed resource per major section.
   - AI test: if an LLM were asked "what is [product/page topic]?" right now, would this page produce a correct, non-hallucinated answer? If no, cap AI readability at C.
-- **Design signal:** seven pass/fail axes. The grade is the pass count — 7 → `A`,
+- **Design signal:** seven pass/fail axes. The grade is the pass count: 7 → `A`,
   6 → `B`, 5 → `C`, 4 → `D`, 3 or fewer → `F`. A cap below overrides the count.
   1. Hierarchy: H1 > H2 > body weight is visually obvious at a glance.
   2. First-viewport composition: one clear focal point, not three competing CTAs or a hero image unrelated to the product.
@@ -85,7 +85,7 @@ Score each lane A-F, then give one overall grade:
   6. Contrast: primary CTA passes WCAG AA. Body text passes WCAG AA.
   7. AI-slop pattern risk: the page does not read as generated filler (vague value props, stock faces, generic icons, paragraph-length sentences with no specificity). If two or more slop signals are present, cap Design signal at C.
 
-Grade meaning — assign on evidence, not impression:
+Grade meaning: assign on evidence, not impression:
 
 - **A:** every lane is strong (no lane below B). Ship. Post this as a reference for the next build.
 - **B:** one or two lanes at C; none below C. Fix those; everything else is solid.
@@ -93,7 +93,7 @@ Grade meaning — assign on evidence, not impression:
 - **D:** two or more lanes at D, or any lane at F short of the overall-F conditions. Visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
 - **F:** assign when any of these are true: primary CTA is broken, a published statement is false, the page doesn't render, or robots/canonical actively blocks it.
 
-Grade caps — non-negotiable:
+Grade caps: non-negotiable:
 
 - No live inspection → Overall cap: `C`.
 - Broken primary CTA → Overall cap: `D`.
@@ -101,7 +101,7 @@ Grade caps — non-negotiable:
 - Design signal `D` or `F` → Recommended ship gate is **hold**, regardless of other lanes.
 - Mobile not inspected → `A` is blocked. State the caveat explicitly in Verification.
 
-Recommended ship gate — mechanical (a recommendation to the user, not a lock on any action):
+Recommended ship gate: mechanical (a recommendation to the user, not a lock on any action):
 
 - **ship:** Overall B or better, no grade cap triggered, no lane below C.
 - **ship-with-caveats:** Overall C, or a higher grade blocked only by uninspected surfaces (mobile, live URL). Name every caveat in Verification.
@@ -109,13 +109,13 @@ Recommended ship gate — mechanical (a recommendation to the user, not a lock o
 
 ## Surface-Type Standards
 
-Per-surface standards — landing page, docs, repo page, launch page, campaign page —
+Per-surface standards (landing page, docs, repo page, launch page, campaign page)
 are in `references/surface-type-standards.md`. Read the section for the surface you
 are grading; the lanes above apply to every surface.
 
 ## Grade Modes
 
-**Quick grade** — triggered when asked for a fast read, first impression, or "gut check":
+**Quick grade**: triggered when asked for a fast read, first impression, or "gut check":
 - Grade the first viewport only (rendered desktop).
 - Score all six lanes based on what is visible without scrolling.
 - Output: one paragraph + lane grades + ship gate. No top fixes list.
@@ -126,15 +126,15 @@ are grading; the lanes above apply to every surface.
 - All six lanes, full top-fixes list, CTA rewrite in the P1 fix description if CTA pull is C or below.
 - Ship gate is authoritative.
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If you catch yourself thinking any of these, stop and inspect:
 
-- "The repo description tells me enough to grade." — Inspect the live page or source. No inspection caps Overall at C.
-- "Desktop looks fine; mobile will match." — Mobile not inspected blocks A. Check it or state the caveat.
-- "That statement is probably true." — Unverified published statements cap the grade. Verify or flag them.
-- "Every other lane is strong; I'll round up." — Grades come from lane evidence and caps, not generosity.
-- "A quick look is enough for a deep grade." — Quick mode exists for that, and it caps at B.
+- "The repo description tells me enough to grade." Inspect the live page or source. No inspection caps Overall at C.
+- "Desktop looks fine; mobile will match." Mobile not inspected blocks A. Check it or state the caveat.
+- "That statement is probably true." Unverified published statements cap the grade. Verify or flag them.
+- "Every other lane is strong; I'll round up." Grades come from lane evidence and caps, not generosity.
+- "A quick look is enough for a deep grade." Quick mode exists for that, and it caps at B.
 
 ## Output Format
 
@@ -177,8 +177,8 @@ Ship gate: ship | ship-with-caveats | hold
 
 - Do not invent traffic, ranking, citation-frequency, or conversion numbers to
   support a lane grade. A lane grade rests on what was inspected on the page.
-- Grading is read-only. Do not edit the page, its metadata, or its schema —
-  report fixes as recommendations in the Top fixes list.
+- Grading is read-only. Do not edit the page, its metadata, or its schema.
+  Report fixes as recommendations in the Top fixes list.
 - Do not present a grade as a guaranteed Google ranking or AI-citation outcome.
   The grade describes the page, not the market's response to it.
 - Name what was inspected and what was not in Verification. Never imply full

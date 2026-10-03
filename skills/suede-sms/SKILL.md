@@ -1,6 +1,6 @@
 ---
 name: suede-sms
-description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement — TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification — this skill does not give legal advice and never sends, schedules, imports, or registers."
+description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement (TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification) this skill does not give legal advice and never sends, schedules, imports, or registers."
 metadata:
   version: 1.0.0
 ---
@@ -22,7 +22,7 @@ Gather this context (ask if not provided):
 ### 1. Business Type
 - B2C ecom / DTC, B2B SaaS, mobile app, services, fintech
 - Order volume or list size (SMS economics depend on scale)
-- Geographic mix (US, EU, both — compliance differs dramatically)
+- Geographic mix (US, EU, both: compliance differs dramatically)
 
 ### 2. Current State
 - Existing SMS program (platform, list size, opt-in rate, opt-out rate, revenue/send)
@@ -31,7 +31,7 @@ Gather this context (ask if not provided):
 - Sequences already running (so a new flow does not double-tap the same contact)
 
 ### 3. Compliance Posture
-- US: A2P 10DLC registration complete? (Required since 2022 — without it, your messages get filtered)
+- US: A2P 10DLC registration complete? (Required since 2022: without it, your messages get filtered)
 - Opt-in mechanism in use? (Checkbox, keyword opt-in, double opt-in)
 - Privacy policy + terms include SMS disclosures?
 
@@ -62,20 +62,20 @@ SMS is not "another email." Use it where the channel's properties win:
 
 ---
 
-## Compliance — Read First
+## Compliance: Read First
 
 **Compliance is the foundation, not an afterthought.** A single TCPA class-action settlement runs $5M–$40M. The basics:
 
-### US — TCPA (Telephone Consumer Protection Act)
+### US: TCPA (Telephone Consumer Protection Act)
 
 1. **Express written consent** required for marketing SMS. Implied consent doesn't count.
 2. **Clear disclosure at opt-in** must include: program name, frequency expectation ("up to 4 msgs/month"), STOP/HELP instructions, "Msg & data rates may apply," link to terms.
 3. **Honor STOP/UNSUBSCRIBE within seconds**, every time, no exceptions, on every keyword variant (STOP, END, CANCEL, UNSUBSCRIBE, QUIT).
 4. **Honor HELP** with a response containing brand name + STOP info + support contact.
-5. **Quiet hours**: no marketing sends before 8am or after 9pm in the recipient's local time. Carrier rules and state laws (e.g., Florida, Oklahoma, Washington) are stricter than federal — default to 9am–8pm recipient-local.
+5. **Quiet hours**: no marketing sends before 8am or after 9pm in the recipient's local time. Carrier rules and state laws (e.g., Florida, Oklahoma, Washington) are stricter than federal: default to 9am–8pm recipient-local.
 6. **Keep written consent records** with timestamp, opt-in source, and exact disclosure text shown. Auditable.
 
-### US — A2P 10DLC Registration (required since 2022)
+### US: A2P 10DLC Registration (required since 2022)
 
 Application-to-Person 10-digit long codes must be registered through The Campaign Registry (TCR) via your SMS platform. Without registration:
 - Throughput is throttled (or zero)
@@ -84,14 +84,14 @@ Application-to-Person 10-digit long codes must be registered through The Campaig
 
 **Registration covers**: brand identity verification, campaign use case (marketing, account notification, OTP, etc.), sample messages, opt-in mechanism, opt-out language. Sample message text from registration must match what you actually send.
 
-### EU/UK — GDPR-derived consent
+### EU/UK: GDPR-derived consent
 
 - Explicit opt-in required (no pre-checked boxes)
 - Right to withdraw consent must be as easy as giving it
 - Data subject access requests apply to SMS records
 - ePrivacy Directive layered on top of GDPR
 
-### Canada — CASL
+### Canada: CASL
 
 - Express consent + sender identification + unsubscribe in every message
 - Implied consent allowed for existing business relationships within 24 months
@@ -116,7 +116,7 @@ Application-to-Person 10-digit long codes must be registered through The Campaig
 ## Core Principles
 
 ### 1. Every send has a real cost
-SMS isn't free. At $0.0075–$0.04 per send + carrier fees, a 100K send costs $750–$4,000. This forces relevance — you can't "blast." Segment hard.
+SMS isn't free. At $0.0075–$0.04 per send + carrier fees, a 100K send costs $750–$4,000. This forces relevance: you can't "blast." Segment hard.
 
 ### 2. Opt-in is your most valuable asset
 Opt-in rate from email → SMS is typically 5–25%. A high-quality SMS list of 10K beats a low-quality list of 100K. Optimize opt-in quality, not volume.
@@ -131,7 +131,7 @@ The recipient gave you their phone number. Every send should pass: "would I be g
 Short links are mandatory (`klvy.co`, `txt.attn.tv`, branded short domain). Track UTM params on every link.
 
 ### 6. Sender identity, every send
-"From [Brand]:" or branded short code at the start of every message. Even on automated flows. Recipients can't see "from" address — they need it inline.
+"From [Brand]:" or branded short code at the start of every message. Even on automated flows. Recipients can't see "from" address: they need it inline.
 
 ---
 
@@ -186,27 +186,27 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 ## SMS Copy Guidelines
 
 ### Structure
-1. **Sender ID** ("From Acme:" or brand short code) — required
-2. **Hook** — first 5 words decide if they read on
-3. **Value** — what's in it for them, specifically
-4. **CTA + short link** — single action, single URL
-5. **Compliance footer** — "Reply STOP to opt out" (required on opt-in confirmation and at least quarterly thereafter; carrier-recommended on every promotional message)
+1. **Sender ID** ("From Acme:" or brand short code): required
+2. **Hook**: first 5 words decide if they read on
+3. **Value**: what's in it for them, specifically
+4. **CTA + short link**: single action, single URL
+5. **Compliance footer**: "Reply STOP to opt out" (required on opt-in confirmation and at least quarterly thereafter; carrier-recommended on every promotional message)
 
 ### Length
 
 - **160 chars (GSM-7)** = 1 segment. Aim here.
-- **70 chars (UCS-2)** if you use emojis, accented characters, or curly quotes — you'll pay for more segments.
+- **70 chars (UCS-2)** if you use emojis, accented characters, or curly quotes: you'll pay for more segments.
 - **161–306 chars** = 2 segments (concatenated SMS). Acceptable for richer messages, but you're paying double per send.
 - **MMS** (image + up to 1,600 chars) = 3–5× the SMS cost. Use sparingly for high-impact moments.
 
 ### Voice
 
-- Conversational, not corporate. SMS feels personal — write like you're texting a friend.
+- Conversational, not corporate. SMS feels personal: write like you're texting a friend.
 - No subject line, no formatting, no marketing-speak.
 - Emojis are fine in moderation (one per message, situationally).
 - ALL CAPS reads as shouting. Avoid except for explicit codes (e.g., "Use ACME10").
 
-**Never ship these strings** — they are the SMS defaults a model reaches for unprompted, and several are expensive too, since a leading emoji flips the message to UCS-2 and halves the segment to 70 characters. Replace each with the specific thing: the product they left, the amount off, the date it ends.
+**Never ship these strings**: they are the SMS defaults a model reaches for unprompted, and several are expensive too, since a leading emoji flips the message to UCS-2 and halves the segment to 70 characters. Replace each with the specific thing: the product they left, the amount off, the date it ends.
 
 - "Don't miss out!" / "Hurry, ends soon!" / "LAST CHANCE" / "Time is running out"
 - "Hey [Name]! 👋" / "Hey friend!" / "Psst..." / "We miss you 😢" / "It's been a while!"
@@ -223,7 +223,7 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 
 ## Platform Selection
 
-Evaluation examples, not guaranteed integrations — this pack ships no SMS connectors. Before recommending one, verify vendor
+Evaluation examples, not guaranteed integrations: this pack ships no SMS connectors. Before recommending one, verify vendor
 documentation, authenticated access, per-message cost, carrier support, consent storage, quiet hours, STOP/HELP behavior, and send limits.
 
 | Platform | Best For | Cost Tier | Verify Before Use |
@@ -299,13 +299,13 @@ Compliance footer: [STOP language present / not required here, and why]
 5. **Measurement plan**: KPIs, benchmarks, A/B test queue.
 6. **Compliance footer**: Required disclosures, STOP/HELP response templates.
 
-Keep recommendations specific. Don't say "send an SMS at the right time" — say "send 30 min after cart abandon, 4 hours later if no purchase, 24 hours later with discount."
+Keep recommendations specific. Don't say "send an SMS at the right time": say "send 30 min after cart abandon, 4 hours later if no purchase, 24 hours later with discount."
 
 ---
 
 ## Pre-delivery self-check
 
-Run this on the messages you just drafted, not on the user's program — section 1 above audits the program, and nothing else checks the copy. Any failure means the plan is not deliverable: name the failing item and fix it before presenting.
+Run this on the messages you just drafted, not on the user's program: section 1 above audits the program, and nothing else checks the copy. Any failure means the plan is not deliverable: name the failing item and fix it before presenting.
 
 - [ ] Every message carries the sender ID inline
 - [ ] Every message shows its character and segment count, and stays inside the segment budget you declared
@@ -318,9 +318,9 @@ Run this on the messages you just drafted, not on the user's program — section
 
 ## Common Mistakes
 
-1. **Treating SMS like email** — sending daily promotional blasts. Opt-out rates spike, list dies.
-2. **Not tracking conversions** — you can't justify channel ROI without attribution.
-3. **No throttling on bulk sends** — burst sends trigger carrier filtering. Use platform throttling.
+1. **Treating SMS like email**: sending daily promotional blasts. Opt-out rates spike, list dies.
+2. **Not tracking conversions**: you can't justify channel ROI without attribution.
+3. **No throttling on bulk sends**: burst sends trigger carrier filtering. Use platform throttling.
 
 ---
 

@@ -1,5 +1,5 @@
 interface:
-  display_name: "Suede Copy — Conversion & Launch Copy"
+  display_name: "Suede Copy, Conversion & Launch Copy"
   short_description: "Write conversion copy with anti-slop gate"
   default_prompt: "Use $suede-copy to write [surface type]. Choose a persuasion framework, generate headline and CTA variants, run the shared Suede Slop Stop method while preserving facts and house style, and apply the writer's separate 70-point score before delivery."
 policy:

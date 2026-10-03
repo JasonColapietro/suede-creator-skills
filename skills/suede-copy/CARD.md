@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to write or rewrite conversion copy for one surface in one pass — a hero, a button set, an email subject, a README section, a product blurb — or when copy on a single surface needs sharpening before it ships.
+Use when asked to write or rewrite conversion copy for one surface in one pass (a hero, a button set, an email subject, a README section, a product blurb) or when copy on a single surface needs sharpening before it ships.
 
 Out of scope — the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy).
 

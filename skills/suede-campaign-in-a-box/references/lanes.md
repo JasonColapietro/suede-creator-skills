@@ -1,8 +1,8 @@
 # Campaign Lanes
 
-The twelve lane playbooks. A run executes one. Read only the section for the lane the router selected — the Public Copy Gate and evidence boundaries in SKILL.md apply to all of them regardless.
+The twelve lane playbooks. A run executes one. Read only the section for the lane the router selected: the Public Copy Gate and evidence boundaries in SKILL.md apply to all of them regardless.
 
-## Lane 0 — Full Campaign Package (announce / teaser / release-week / post-drop)
+## Lane 0: Full Campaign Package (announce / teaser / release-week / post-drop)
 
 Use this to turn scattered release ideas into a campaign an artist can actually
 execute.
@@ -48,7 +48,7 @@ Build-next CTA:
 
 ---
 
-## Lane 1 — Identity Forge (artist identity / world spine)
+## Lane 1: Identity Forge (artist identity / world spine)
 
 Use this before writing bios, visuals, campaigns, or websites when the artist
 identity is still fuzzy. The artist must feel recognizable first.
@@ -82,10 +82,10 @@ Build-next CTA:
 
 ---
 
-## Lane 2 — Era Builder (era systems)
+## Lane 2: Era Builder (era systems)
 
 Use this to turn a release into a world people can recognize, repeat, and
-participate in — instead of a generic release plan.
+participate in, instead of a generic release plan.
 
 1. Identify the music, artist state, audience, release moment, and emotional
    voltage.
@@ -122,7 +122,7 @@ Build-next CTA:
 
 ---
 
-## Lane 3 — Song To Universe (single-song universe)
+## Lane 3: Song To Universe (single-song universe)
 
 Use this when one track has enough gravity to become more than a post.
 
@@ -158,7 +158,7 @@ Build-next CTA:
 
 ---
 
-## Lane 4 — Hook Hunter (shareable 5-15s hooks)
+## Lane 4: Hook Hunter (shareable 5-15s hooks)
 
 Use this to find the part of the work that travels.
 
@@ -191,7 +191,7 @@ Test plan:
 
 ---
 
-## Lane 5 — Release Stunt Lab (stunts / missions / unlocks)
+## Lane 5: Release Stunt Lab (stunts / missions / unlocks)
 
 Use this to make a release feel like an event.
 
@@ -226,7 +226,7 @@ Build-next CTA:
 
 ---
 
-## Lane 6 — Fan Rituals (repeatable fan behavior)
+## Lane 6: Fan Rituals (repeatable fan behavior)
 
 Use this to design behavior fans can repeat without needing a long explanation.
 
@@ -259,10 +259,10 @@ Next build:
 
 ---
 
-## Lane 7 — Visualizer Director (visualizer & lyric-video treatments)
+## Lane 7: Visualizer Director (visualizer & lyric-video treatments)
 
 Use this to turn a track into a visual treatment a designer, editor, or agent
-can build from — instead of generic waveform or stock-footage output.
+can build from, instead of generic waveform or stock-footage output.
 
 1. Identify the song, tempo, texture, emotional center, era world, and release
    platform.
@@ -295,9 +295,9 @@ Build-next CTA:
 
 ---
 
-## Lane 8 — Merch Object Lab (merch / collector objects)
+## Lane 8: Merch Object Lab (merch / collector objects)
 
-Use this to make merch feel like an artifact from the artist world — not generic
+Use this to make merch feel like an artifact from the artist world: not generic
 logo shirts.
 
 1. Identify the era, song, fan language, symbols, artwork, and budget
@@ -330,7 +330,7 @@ Build-next CTA:
 
 ---
 
-## Lane 9 — Setlist Theater (live setlist / show design)
+## Lane 9: Setlist Theater (live setlist / show design)
 
 Use this to turn a setlist into a show with shape.
 
@@ -365,7 +365,7 @@ Post-show CTA:
 
 ---
 
-## Lane 10 — Catalog Resurrection (catalog revival)
+## Lane 10: Catalog Resurrection (catalog revival)
 
 Use this to find new life in old material without pretending it is new.
 
@@ -397,7 +397,7 @@ Build-next CTA:
 
 ---
 
-## Lane 11 — Collab Matchmaker (collaborator matchmaking)
+## Lane 11: Collab Matchmaker (collaborator matchmaking)
 
 Use this to design collaboration lanes, not name-drop fantasies.
 

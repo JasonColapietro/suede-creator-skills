@@ -92,8 +92,8 @@ The action that correlates most strongly with retention:
 - 3-7 items (not overwhelming)
 - Order by value (most impactful first)
 - Start with quick wins
-- Progress bar/completion % — only where the remaining steps are the activation path
-- Celebration on completion — on the activation event, not on a two-step setup
+- Progress bar/completion %: only where the remaining steps are the activation path
+- Celebration on completion: on the activation event, not on a two-step setup
 - Dismiss option (don't trap users)
 
 ### Empty States
@@ -178,12 +178,12 @@ For each issue: Finding → Impact → Recommendation → Priority
 ### Onboarding Flow Design
 Emit these headings verbatim, in this order:
 
-**Activation Goal** — the event, plus the retention evidence behind it or "unverified"
-**Flow** — one entry per step, each carrying: trigger, user action, success signal, drop-off measurement
-**Checklist Items** — 3-7 value actions (omit the heading if no checklist)
-**Empty State Copy** — per surface
-**Email Triggers** — event and delay for each
-**Metrics Plan** — activation rate, time to activation, per-step drop-off
+**Activation Goal**: the event, plus the retention evidence behind it or "unverified"
+**Flow**: one entry per step, each carrying: trigger, user action, success signal, drop-off measurement
+**Checklist Items**, 3-7 value actions (omit the heading if no checklist)
+**Empty State Copy**, per surface
+**Email Triggers**, event and delay for each
+**Metrics Plan**: activation rate, time to activation, per-step drop-off
 
 ---
 

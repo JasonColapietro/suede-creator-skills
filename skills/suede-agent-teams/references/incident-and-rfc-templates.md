@@ -1,9 +1,9 @@
 # RFC and Post-Mortem Templates
 
 The stationery for the two documents this skill occasionally asks a lane to write.
-The rules that decide *whether* to write one — the RFC-required list, the
+The rules that decide *whether* to write one (the RFC-required list, the
 `accepted`-before-any-builder gate, the P0-P3 severity definitions, and the
-required/optional/skip rule for post-mortems — stay in the `suede-agent-teams`
+required/optional/skip rule for post-mortems) stay in the `suede-agent-teams`
 SKILL.md next to their triggers. Read this file when you are about to author one of
 the two documents, and fill every section.
 

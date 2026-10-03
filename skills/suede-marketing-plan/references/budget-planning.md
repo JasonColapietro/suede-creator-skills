@@ -1,4 +1,4 @@
-# Budget Planning — Traceable Scenario Methods
+# Budget Planning: Traceable Scenario Methods
 
 Marketing budgets need dated inputs, explicit assumptions, accountable approval,
 and downside stops. This reference helps build scenarios; it does not provide
@@ -16,7 +16,7 @@ If an input is missing, show a range and label it `unverified assumption`.
 Have the accountable finance owner approve the assumptions, maximum spend,
 review date, and stop conditions before any allocation becomes operational.
 
-## Method 1 — Capacity-Based Scenario
+## Method 1: Capacity-Based Scenario
 
 **Direction:** approved capacity → outcome range.
 
@@ -38,7 +38,7 @@ Produce low, base, and high cases. For every case, show which assumption creates
 the difference. A model that exceeds operational capacity is infeasible even if
 the arithmetic works.
 
-## Method 2 — Goal-Based Sensitivity Model
+## Method 2: Goal-Based Sensitivity Model
 
 **Direction:** target → implied capacity and spend.
 

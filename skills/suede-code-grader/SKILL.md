@@ -1,11 +1,11 @@
 ---
 name: suede-code-grader
-description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
+description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge: when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
 ---
 
 # Suede Code Grader
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -20,9 +20,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky, data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage, pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -45,24 +45,24 @@ Inspect:
 
 If live, test, or runtime checks are not practical, grade the source and mark those lanes as unverified.
 
-**Gate evidence is a command, not an impression.** Run what the repo already ships and cite the command and its exit status: the typecheck, the configured linter on changed files, the test suite, and — for a release grade — the production build. For per-stack syntax (web/Node, MCP server, iOS/Swift, generic API), use the Gate Commands by Stack table in **suede-code-review** rather than inventing a command. Detect what exists and run only that; never introduce a tool the repo does not use, and never report a gate result you did not execute.
+**Gate evidence is a command, not an impression.** Run what the repo already ships and cite the command and its exit status: the typecheck, the configured linter on changed files, the test suite, and, for a release grade, the production build. For per-stack syntax (web/Node, MCP server, iOS/Swift, generic API), use the Gate Commands by Stack table in **suede-code-review** rather than inventing a command. Detect what exists and run only that; never introduce a tool the repo does not use, and never report a gate result you did not execute.
 
 ## Instant-F Triggers
 
-Check these before scoring any lane. Any single match is an automatic F — no other lanes matter until it is fixed. This list mirrors suede-code's canonical Step 1 list — change both together.
+Check these before scoring any lane. Any single match is an automatic F, no other lanes matter until it is fixed. This list mirrors suede-code's canonical Step 1 list, change both together.
 
-**Secrets and credentials** — hardcoded API key/secret/token/password in committed source; private key or certificate committed; OAuth/signing secret outside a secret manager.
-**Injection** — SQL built by string concatenation with user input; shell command from user input via exec/spawn/eval; template rendered with unescaped user input where XSS is reachable.
-**Auth bypass** — auth middleware with a path that skips it (early return, swallowed exception, always-true condition); permission check bypassable via request param; JWT accepting `alg: none` or a hardcoded secret.
-**Payment and wallet** — payment handler swallowing errors silently; webhook with no signature verification; amount or recipient from untrusted input without server-side validation.
-**Data destruction** — migration with DROP/destructive ALTER, no rollback, no tested restore; bulk delete/update with no WHERE or user-controlled WHERE; cache invalidation that clears production stores with no restore path.
-**Plaintext sensitive data** — password stored or logged in plaintext; PII to an unencrypted log/analytics pipeline; SSN/payment card/health data in a non-encrypted field.
+**Secrets and credentials**: hardcoded API key/secret/token/password in committed source; private key or certificate committed; OAuth/signing secret outside a secret manager.
+**Injection**: SQL built by string concatenation with user input; shell command from user input via exec/spawn/eval; template rendered with unescaped user input where XSS is reachable.
+**Auth bypass**: auth middleware with a path that skips it (early return, swallowed exception, always-true condition); permission check bypassable via request param; JWT accepting `alg: none` or a hardcoded secret.
+**Payment and wallet**: payment handler swallowing errors silently; webhook with no signature verification; amount or recipient from untrusted input without server-side validation.
+**Data destruction**: migration with DROP/destructive ALTER, no rollback, no tested restore; bulk delete/update with no WHERE or user-controlled WHERE; cache invalidation that clears production stores with no restore path.
+**Plaintext sensitive data**: password stored or logged in plaintext; PII to an unencrypted log/analytics pipeline; SSN/payment card/health data in a non-encrypted field.
 
 If any Instant-F pattern is present: stop, report it, mark the grade F, list the specific file and line, and do not grade remaining lanes. The grade cannot be raised by other lane performance.
 
 ## Grade Lanes
 
-Score each lane A-F, then give one overall grade. When grading non-Suede work, substitute "domain truth" for "Suede truth" — use whatever domain invariants apply (API contract truth, published-statement accuracy, data model truth).
+Score each lane A-F, then give one overall grade. When grading non-Suede work, substitute "domain truth" for "Suede truth": use whatever domain invariants apply (API contract truth, published-statement accuracy, data model truth).
 
 - **Correctness:** intended behavior, edge cases, error paths, async behavior,
   routing, data flow, and regression risk.
@@ -141,13 +141,13 @@ Flag these patterns as part of the grade assessment:
 
 Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug. Name the debt in Required Upgrades and let the overall grade reflect it.
 
-## Red Flags — Stop
+## Red Flags: Stop
 
-- "CI passed, round up" — CI that never exercised the changed behavior raises nothing.
-- "The work was clearly hard" — effort never moves a grade; evidence does.
-- "It's just a refactor" — Instant-F triggers run on every grade, every time.
-- "Happy path works, call it an A" — the grade caps exist because happy paths are never where the risk lives.
-- "The PR description is clear enough" — grade the diff and its evidence, or mark the lane unverified.
+- "CI passed, round up", CI that never exercised the changed behavior raises nothing.
+- "The work was clearly hard": effort never moves a grade; evidence does.
+- "It's just a refactor": Instant-F triggers run on every grade, every time.
+- "Happy path works, call it an A": the grade caps exist because happy paths are never where the risk lives.
+- "The PR description is clear enough": grade the diff and its evidence, or mark the lane unverified.
 
 ## Output Format
 
@@ -169,7 +169,7 @@ UX and release behavior: A-F
 Tests and verification: A-F
 Deploy readiness: A-F
 Overall: A-F
-Grade cap applied: [surface type] — [what evidence would lift the cap] | none
+Grade cap applied: [surface type], [what evidence would lift the cap] | none
 
 Why:
 Evidence-backed explanation of why the overall grade landed there.

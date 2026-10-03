@@ -52,7 +52,7 @@ Detailed formulas and templates for writing high-converting ad copy.
 ```
 
 **Example:**
-> "We cut our reporting time by 75%." — Sarah K., Marketing Director
+> "We cut our reporting time by 75%." (Sarah K., Marketing Director)
 > [Product] automates the reports you hate building.
 > See how it works →
 

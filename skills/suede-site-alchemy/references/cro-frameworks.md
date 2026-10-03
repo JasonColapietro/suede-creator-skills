@@ -1,8 +1,8 @@
-# CRO Frameworks — Proof Type Taxonomy
+# CRO Frameworks: Proof Type Taxonomy
 
 Background taxonomy for suede-site-alchemy. The rules that change what you write
-— placement hypotheses, the proof-verifiability rule, pricing plan architecture,
-and the urgency tests — stay in SKILL.md. This file only holds the reference
+(placement hypotheses, the proof-verifiability rule, pricing plan architecture,
+and the urgency tests) stay in SKILL.md. This file only holds the reference
 table for matching a proof type to the objection it can actually answer.
 
 ## Proof types and when to use them

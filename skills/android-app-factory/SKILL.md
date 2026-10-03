@@ -7,10 +7,10 @@ description: "Suede Labs Android app factory: plan, build, test, and release a p
 
 ```
 Iron Law: no release-ready claim without a signed `bundleRelease` plus a live
-Play Console check — not a debug build, screenshot, source read, or upload.
+Play Console check, not a debug build, screenshot, source read, or upload.
 ```
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -25,9 +25,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -75,45 +75,45 @@ privacy URL, customer claim, or Play Console state.
 
 ## Production Pipeline
 
-1. **Validate the product** — define the user outcome and evidence of demand.
+1. **Validate the product**: define the user outcome and evidence of demand.
    Treat keyword research as one input, not proof of product-market fit.
-2. **Verify policy** — capture current target-SDK and form-factor rules, app
+2. **Verify policy**: capture current target-SDK and form-factor rules, app
    access requirements, Data Safety scope, content rating, account deletion,
    billing policy, and any permission-specific declarations.
-3. **Design architecture and risk** — use the smallest maintainable architecture
+3. **Design architecture and risk**: use the smallest maintainable architecture
    that preserves unidirectional state, lifecycle safety, offline/error/loading
    states, test seams, and a least-data/least-permission posture.
-4. **Scaffold** — native Kotlin + Jetpack Compose by default. Resolve current
+4. **Scaffold**: native Kotlin + Jetpack Compose by default. Resolve current
    stable Android/Jetpack versions from official sources, lock them in a version
    catalog, and prove a debug build before feature work.
-5. **Build the core loop** — implement one complete user outcome with real or
+5. **Build the core loop**: implement one complete user outcome with real or
    deterministic demo data. Add history, saved state, sync, or accounts only
    when the product contract requires them.
-6. **Prove quality** — unit, repository, ViewModel, Compose UI/instrumented,
+6. **Prove quality**: unit, repository, ViewModel, Compose UI/instrumented,
    accessibility, and end-to-end core-loop tests as applicable; static analysis,
    release build, device/API matrix, baseline profile, and Macrobenchmark.
-7. **Add monetization safely** — use Play Billing for covered digital goods,
+7. **Add monetization safely**: use Play Billing for covered digital goods,
    process pending purchases, verify and acknowledge purchases after entitlement
    handling, restore ownership, and keep secrets/server verification off-device.
-8. **Complete trust surfaces** — privacy policy, Data Safety, SDK data behavior,
+8. **Complete trust surfaces**: privacy policy, Data Safety, SDK data behavior,
    permission rationale, in-app and web account deletion when accounts exist,
    content rating, ads declarations, app access instructions, and Play Integrity
    only where abuse risk justifies it.
-9. **Build store artifacts** — truthful listing, icon/feature graphic,
+9. **Build store artifacts**: truthful listing, icon/feature graphic,
    screenshots for every declared form factor, localization, support contact,
    release notes, and reviewer instructions.
-10. **Release through evidence gates** — signed AAB and Play App Signing,
+10. **Release through evidence gates**: signed AAB and Play App Signing,
     internal/closed validation, pre-launch report, explicit confirmation before
     upload or promotion, staged production rollout, and post-release monitoring.
 
 Read these before building:
 
-- `references/android-factory-pipeline.md` — phase artifacts and release flow;
-- `references/architecture-and-quality.md` — architecture, tests,
+- `references/android-factory-pipeline.md`: phase artifacts and release flow;
+- `references/architecture-and-quality.md`: architecture, tests,
   accessibility, performance, and build checks;
-- `references/privacy-billing-integrity.md` — privacy, Data Safety, account
+- `references/privacy-billing-integrity.md`: privacy, Data Safety, account
   deletion, Billing, and Integrity controls;
-- `references/play-policy-baseline.md` — dated official-policy baseline.
+- `references/play-policy-baseline.md`: dated official-policy baseline.
 
 ## Public-Safe Defaults
 

@@ -16,7 +16,7 @@ A strong image prompt follows this formula:
 
 ### Example Prompts by Use Case
 
-**Blog hero — SaaS product:**
+**Blog hero (SaaS product):**
 ```
 A clean workspace with a laptop displaying a colorful analytics dashboard,
 minimalist desk with a coffee cup and notebook,
@@ -25,7 +25,7 @@ shallow depth of field, commercial photography style,
 1200x630, high resolution
 ```
 
-**Social media graphic — announcement:**
+**Social media graphic (announcement):**
 ```
 Abstract flowing gradient in deep purple and electric blue,
 geometric shapes forming a network pattern,
@@ -42,7 +42,7 @@ warm candid photography, natural lighting,
 medium shot, shallow depth of field, editorial style
 ```
 
-**Profile banner — professional:**
+**Profile banner (professional):**
 ```
 Wide panoramic abstract background in navy blue and teal,
 subtle geometric grid pattern with soft gradient,
@@ -50,7 +50,7 @@ clean corporate aesthetic, muted lighting,
 1584x396, no text, space for logo overlay on left third
 ```
 
-**Directory listing — Product Hunt:**
+**Directory listing (Product Hunt):**
 ```
 A supplied real product screenshot on a clean gradient background,
 soft shadow underneath, slight 3D perspective tilt,
@@ -172,7 +172,7 @@ When you need multiple images with consistent style (e.g., a blog series or soci
 3. **Save the exact prompt** as your template
 4. **Use a verified reference-input capability** when available and rights-safe
 5. **Batch generate** variations only within the approved cost ceiling
-6. **Post-process** — add text overlays, logos, crop to platform sizes
+6. **Post-process**: add text overlays, logos, crop to platform sizes
 
 ---
 

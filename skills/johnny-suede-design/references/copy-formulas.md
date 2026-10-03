@@ -46,25 +46,25 @@ For a page, README, or docs surface, build this spine (use only the pieces that 
 ## A/B Variant Generation
 
 For high-stakes copy (hero headline, primary CTA, email subject, ad copy), always generate variants and label each with its angle. Let the user pick rather than guessing.
-- **Headlines:** 3 variants — outcome-led (what the reader achieves), problem-led (what the reader escapes), mechanism-led (what makes this different).
+- **Headlines:** 3 variants: outcome-led (what the reader achieves), problem-led (what the reader escapes), mechanism-led (what makes this different).
 - **CTAs:** 2 variants minimum (see formulas below).
-- **Email subjects:** 3 variants — curiosity or benefit; social proof or number; direct question or challenge.
+- **Email subjects:** 3 variants: curiosity or benefit; social proof or number; direct question or challenge.
 
 ## CTA Formulas
 
 Every CTA answers: "What happens the moment I click this?"
-- **Formula A — Verb + immediate result:** "Run the audit. Get your grade in 60 seconds." / "Fork the skill. Live in your Codex in under a minute." / "Paste your folder path. See your rights gaps."
-- **Formula B — Verb + object + benefit:** "Register a release. Make it readable to licensing agents." / "Install the skill. Audit any repo from your terminal." / "Download the schema. Stop building it by hand."
-- **Formula C — Low-commitment framing** (skeptic / discovery): "See how rights routing works" / "Read the spec" / "Open the repo" / "Watch a 90-second demo."
-- **Formula D — Stakes-aware framing** (decision-maker): "Start the audit before the pitch" / "Get the split sheet the label actually needs" / "Ship the release with provenance attached."
+- **Formula A: Verb + immediate result:** "Run the audit. Get your grade in 60 seconds." / "Fork the skill. Live in your Codex in under a minute." / "Paste your folder path. See your rights gaps."
+- **Formula B: Verb + object + benefit:** "Register a release. Make it readable to licensing agents." / "Install the skill. Audit any repo from your terminal." / "Download the schema. Stop building it by hand."
+- **Formula C: Low-commitment framing** (skeptic / discovery): "See how rights routing works" / "Read the spec" / "Open the repo" / "Watch a 90-second demo."
+- **Formula D: Stakes-aware framing** (decision-maker): "Start the audit before the pitch" / "Get the split sheet the label actually needs" / "Ship the release with provenance attached."
 
 Anti-patterns to cut: "Get started" (started what?), "Learn more" (more about what?), "Sign up" (for what?), "Try for free" without naming what they're trying, any CTA with an exclamation point. The 3-word test: describe what happens after clicking in 3 words. If you cannot, the CTA is too vague.
 
 ## Email Copy
 
-**Subject lines** win opens on curiosity, self-interest, or specificity — pick one per line. Curiosity: "[Specific thing most people miss]" / "The [category] rule that [counterintuitive result]." Self-interest: "[Outcome] in [time] without [obstacle]" / "Your [specific thing] is [state]. Here's the fix." Specificity anchor: "[#] [specific mistakes/fields/steps] in your [thing]." Avoid rhetorical questions, all-caps words, "Re:" faking a reply thread, emojis for B2B/technical audiences.
+**Subject lines** win opens on curiosity, self-interest, or specificity: pick one per line. Curiosity: "[Specific thing most people miss]" / "The [category] rule that [counterintuitive result]." Self-interest: "[Outcome] in [time] without [obstacle]" / "Your [specific thing] is [state]. Here's the fix." Specificity anchor: "[#] [specific mistakes/fields/steps] in your [thing]." Avoid rhetorical questions, all-caps words, "Re:" faking a reply thread, emojis for B2B/technical audiences.
 
-**Preview text** is a second subject line — add information, don't echo. Subject: "12 metadata fields your release is missing." Preview: "The ones sync libraries check before they respond." Keep under 90 characters; the first 40 must stand alone.
+**Preview text** is a second subject line: add information, don't echo. Subject: "12 metadata fields your release is missing." Preview: "The ones sync libraries check before they respond." Keep under 90 characters; the first 40 must stand alone.
 
 **Body structure:**
 ```text
@@ -74,23 +74,23 @@ Bridge (1 sentence): Connect the proof to the offer.
 CTA (1 sentence + link): One action, one link. No secondary options in the primary CTA block.
 P.S. (optional): A single secondary offer or a time constraint. Not both.
 ```
-Unsubscribe-reduction: match content to the opt-in promise; segment before sending; run a re-engagement sequence before suppressing inactive subscribers (three emails over 30 days — one value, one direct question, one break-up; suppress non-openers after).
+Unsubscribe-reduction: match content to the opt-in promise; segment before sending; run a re-engagement sequence before suppressing inactive subscribers (three emails over 30 days: one value, one direct question, one break-up; suppress non-openers after).
 
 ## Social Post Formats
 
-**LinkedIn** — hook = the first two lines before "see more"; it is the post. Works: specific observation, counterintuitive claim, single concrete number, named failure mode. Fails: vague industry wisdom, rhetorical questions, inspirational openers, "I'm excited to share." Structure: hook → 2–4 line break → insight/story (3–6 short paragraphs, one idea each) → takeaway → one low-friction CTA. Rules: paragraphs 1–2 sentences max; no bullet lists over 5 items; one link max (in comments if the algo penalizes in-post links); 1–2 hashtags at the end.
+**LinkedIn**: hook = the first two lines before "see more"; it is the post. Works: specific observation, counterintuitive claim, single concrete number, named failure mode. Fails: vague industry wisdom, rhetorical questions, inspirational openers, "I'm excited to share." Structure: hook → 2–4 line break → insight/story (3–6 short paragraphs, one idea each) → takeaway → one low-friction CTA. Rules: paragraphs 1–2 sentences max; no bullet lists over 5 items; one link max (in comments if the algo penalizes in-post links); 1–2 hashtags at the end.
 
-**X / Twitter** — standalone tweet: [specific observation or fact] + [one implication or action], max 240 chars. Thread opener: [bold specific claim], blank line, "[Thread: number + what the reader gets]" — the opener must be the strongest tweet; do not save the best point for tweet 5. Reply to trend/news: acknowledge in 1 sentence, give a specific take from your vantage point, optional link.
+**X / Twitter**: standalone tweet: [specific observation or fact] + [one implication or action], max 240 chars. Thread opener: [bold specific claim], blank line, "[Thread: number + what the reader gets]": the opener must be the strongest tweet; do not save the best point for tweet 5. Reply to trend/news: acknowledge in 1 sentence, give a specific take from your vantage point, optional link.
 
-**Instagram** — product/feature reveal: hook (what it does in one sentence) → why it matters for this audience → one specific proof point → CTA in bio/link sticker. Behind-the-scenes: name the moment/decision → what you learned or chose and why → invitation. Testimonial: lead with the result (not the quote) → quote/paraphrase → bridge to offer → CTA. Rules: first line a complete thought (1–2 lines show before "more"); hashtags in first comment or after a line break, never inside body; no more than 10 hashtags.
+**Instagram**: product/feature reveal: hook (what it does in one sentence) → why it matters for this audience → one specific proof point → CTA in bio/link sticker. Behind-the-scenes: name the moment/decision → what you learned or chose and why → invitation. Testimonial: lead with the result (not the quote) → quote/paraphrase → bridge to offer → CTA. Rules: first line a complete thought (1–2 lines show before "more"); hashtags in first comment or after a line break, never inside body; no more than 10 hashtags.
 
 ## SEO And GitHub Copy Checklist
 
-For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella for search, AEO, and AI EO. Include: a search-ready title under 60 characters when practical; a meta description under 160 characters; repo description under GitHub's practical limit; 8–20 topic keywords when the surface supports them; a first paragraph that repeats durable entity names naturally; answer-ready definitions, FAQ copy, and proof links AI summaries can cite without inventing facts; links to install docs, manifests, scripts, references, examples, live Pages, and source; a safe evidence boundary. Use keywords because they help the right reader find the page — do not cram a keyword where a human would notice.
+For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella for search, AEO, and AI EO. Include: a search-ready title under 60 characters when practical; a meta description under 160 characters; repo description under GitHub's practical limit; 8–20 topic keywords when the surface supports them; a first paragraph that repeats durable entity names naturally; answer-ready definitions, FAQ copy, and proof links AI summaries can cite without inventing facts; links to install docs, manifests, scripts, references, examples, live Pages, and source; a safe evidence boundary. Use keywords because they help the right reader find the page: do not cram a keyword where a human would notice.
 
 Suede durable keywords (replace for non-Suede work): Suede Creator Skills, Suede Rights Passport, Suede Release Linter, Suedify, Suede Copy, AI EO, AEO, answer engine optimization, Codex skills, Claude Code skills, SKILL.md, music rights, creator rights, release readiness, provenance, royalty splits, licensing readiness, programmable IP, agent commerce, GitHub Pages.
 
-When the copy workflow includes an SEO pass (metadata, structure, or copy quality only): **Metadata** — title, meta description, Open Graph, Twitter card, image alt, author/publisher, durable entity names. **Structure** — one H1, useful H2/H3 hierarchy, FAQ fit, internal links, descriptive anchor text. **Copy quality** — directness, proof, evidence boundaries, CTA clarity, trust language, filler, vocabulary fit.
+When the copy workflow includes an SEO pass (metadata, structure, or copy quality only): **Metadata**: title, meta description, Open Graph, Twitter card, image alt, author/publisher, durable entity names. **Structure**: one H1, useful H2/H3 hierarchy, FAQ fit, internal links, descriptive anchor text. **Copy quality**: directness, proof, evidence boundaries, CTA clarity, trust language, filler, vocabulary fit.
 
 ## Word Substitution List (non-negotiable swaps)
 

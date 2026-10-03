@@ -4,15 +4,15 @@ Copy this structure to add an advisor to the bench. Save custom advisors to `.ag
 
 Two kinds of custom advisors, two grounding standards:
 
-- **Public figures** (a famous marketer not on the bench): every framework and position must trace to something they published or said — research before writing, cite sources, follow the same grounding rules as the built-in dossiers.
-- **Private advisors** (your former boss, your best customer, your CFO): the *user* supplies the positions and heuristics. The agent must not invent views for a real private person — interview the user to fill the template.
+- **Public figures** (a famous marketer not on the bench): every framework and position must trace to something they published or said: research before writing, cite sources, follow the same grounding rules as the built-in dossiers.
+- **Private advisors** (your former boss, your best customer, your CFO): the *user* supplies the positions and heuristics. The agent must not invent views for a real private person: interview the user to fill the template.
 
 ---
 
 ```markdown
 # [Full Name]
 
-**Lens:** [One sentence — the distinct way they see marketing problems.]
+**Lens:** [One sentence: the distinct way they see marketing problems.]
 
 ## Core frameworks
 
@@ -21,7 +21,7 @@ Two kinds of custom advisors, two grounding standards:
 
 ## Documented positions
 
-- [A strong opinion they actually hold] — *[source]*
+- [A strong opinion they actually hold]: *[source]*
 - …5-8 total. Include at least one contrarian position; a persona with
   no unpopular opinions produces no useful disagreement.
 
@@ -33,7 +33,7 @@ Two kinds of custom advisors, two grounding standards:
 ## Best for / blind spots
 
 **Best for:** [problem types their lens genuinely illuminates]
-**Blind spots:** [documented criticisms or acknowledged limits — this is
+**Blind spots:** [documented criticisms or acknowledged limits: this is
 what makes their dissent honest rather than decorative]
 
 ## Voice notes
@@ -43,9 +43,9 @@ to write in their register without fabricating quotes.]
 
 ## Key works
 
-- *[Title]* ([year]) — [one line on what it contributes to the persona]
+- *[Title]* ([year]): [one line on what it contributes to the persona]
 ```
 
 ---
 
-**Seating a custom advisor:** mention them by name when convening ("seat my advisor Maria on this council"). The agent loads the file from `.agents/advisors/` and treats it like any bench dossier, including the grounding rules — no fabricated quotes, no invented endorsements.
+**Seating a custom advisor:** mention them by name when convening ("seat my advisor Maria on this council"). The agent loads the file from `.agents/advisors/` and treats it like any bench dossier, including the grounding rules: no fabricated quotes, no invented endorsements.

@@ -8,7 +8,7 @@ description: "Suede Slop Stop: Suede Labs context-aware anti-slop pass for finis
 The canonical anti-slop method for the writing stack. The existing `suede-deslop`
 command and folder remain stable for compatibility; there is no second method.
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -23,9 +23,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky, data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage: pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -383,10 +383,10 @@ For a findings-only audit, return:
 
 ```text
 Clear issues
-- [exact quote] — [why it weakens this piece] — [minimum correction]
+- [exact quote], [why it weakens this piece], [minimum correction]
 
 Judgment calls
-- [exact quote] — [context or voice trade-off] — [optional correction]
+- [exact quote], [context or voice trade-off], [optional correction]
 
 Boundary: writing-quality signals do not establish authorship.
 ```

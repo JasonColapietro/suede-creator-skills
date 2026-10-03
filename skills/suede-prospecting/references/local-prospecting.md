@@ -1,6 +1,6 @@
 # Local SMB Prospecting Reference
 
-For when the user sells to local small businesses — shops, gyms, restaurants, salons, clinics, professional services, contractors, real estate, fitness studios, dental practices.
+For when the user sells to local small businesses: shops, gyms, restaurants, salons, clinics, professional services, contractors, real estate, fitness studios, dental practices.
 
 Adapted from and generalized beyond the local-client-prospector pattern (browser-assisted discovery + website status classification + proximity scoring).
 
@@ -10,26 +10,26 @@ Adapted from and generalized beyond the local-client-prospector pattern (browser
 
 ### Operational signals
 
-- **Active business** — Google Business Profile updated, recent reviews, recent hours updates
-- **Recent activity** — open right now, regular hours posted, recent photos uploaded by owner
-- **Customer engagement** — owner responding to reviews, posts on social, active calendar (for service businesses)
+- **Active business**: Google Business Profile updated, recent reviews, recent hours updates
+- **Recent activity**: open right now, regular hours posted, recent photos uploaded by owner
+- **Customer engagement**: owner responding to reviews, posts on social, active calendar (for service businesses)
 
 ### Online presence signals (the core SMB qualification axis)
 
-The reference local-client-prospector skill uses **website status** as the primary qualification — port this directly. Four classifications:
+The reference local-client-prospector skill uses **website status** as the primary qualification: port this directly. Four classifications:
 
 | Status | Definition | Typical outcome |
 |--------|-----------|-----------------|
 | **No site found** | No credible standalone website after cross-checked search | **Hot prospect** for web/marketing service |
-| **Social only** | Facebook, Instagram, WhatsApp, Linktree, booking portal, marketplace page only — no standalone site | **Hot prospect** for web/marketing service |
+| **Social only** | Facebook, Instagram, WhatsApp, Linktree, booking portal, marketplace page only: no standalone site | **Hot prospect** for web/marketing service |
 | **Weak site** | Standalone site exists but outdated, broken, very thin, non-mobile-friendly, or missing clear contact/conversion flow | **Warm prospect** for refresh / rebuild service |
 | **Has site** | Credible, modern standalone site exists | **Low prospect** unless other signals apply (e.g., poor SEO, weak conversion design) |
 
 ### Proximity signals
 
 - **Distance** from the user's location or service area
-- **Density** — clusters of similar businesses in one area = neighborhood targeting opportunity
-- **Travel time** — useful when in-person discovery, install, or service delivery is required
+- **Density**: clusters of similar businesses in one area = neighborhood targeting opportunity
+- **Travel time**: useful when in-person discovery, install, or service delivery is required
 
 ### Decay signals
 
@@ -43,10 +43,10 @@ The reference local-client-prospector skill uses **website status** as the prima
 
 ### Primary
 
-- **Google Maps** (browser, manual) — search "category near [location]" and walk the visible results. Cross-check details. Don't bulk-extract.
-- **Yelp** — secondary verification; complementary categories
-- **Bing Local / Apple Maps** — different coverage on smaller businesses
-- **Facebook Pages search** — many SMBs are Facebook-only
+- **Google Maps** (browser, manual): search "category near [location]" and walk the visible results. Cross-check details. Don't bulk-extract.
+- **Yelp**: secondary verification; complementary categories
+- **Bing Local / Apple Maps**: different coverage on smaller businesses
+- **Facebook Pages search**: many SMBs are Facebook-only
 
 ### Cross-verification
 
@@ -86,7 +86,7 @@ public website. Possible tools, only when discovered and authorized:
 If neither is available, open the public site manually or ask the user for the
 URL, screenshots, and visible business contact details.
 
-**Strict line**: use these on the individual business's URL. **Don't** point them at Google Maps, Yelp, or any platform whose ToS prohibits bulk extraction — discovery stays manual.
+**Strict line**: use these on the individual business's URL. **Don't** point them at Google Maps, Yelp, or any platform whose ToS prohibits bulk extraction: discovery stays manual.
 
 See [data-sources.md](data-sources.md) for selection and verification details.
 
@@ -161,7 +161,7 @@ Each top target rationale should be one sentence naming the gap and the signal: 
 The local branch is the most scraping-sensitive of the three motions. Specifically:
 
 - **Google Maps Terms of Service** prohibit bulk extraction. Treat browser visits as research, not as data acquisition.
-- **Don't store full Google Maps Place IDs in your CRM** — the ToS limits storage of Maps data.
+- **Don't store full Google Maps Place IDs in your CRM**: the ToS limits storage of Maps data.
 - **Public business contact channels only**: published phone, contact form, info@ email. Don't reach individual employees through their personal channels.
 - **Owner/operator name when published on the business's own site** is OK to use. If you only got it from LinkedIn, mark the source.
 
@@ -169,11 +169,11 @@ The local branch is the most scraping-sensitive of the three motions. Specifical
 
 ## Common Mistakes (Local SMB)
 
-1. **Bulk-scraping Google Maps** — fastest way to violate ToS and lose the research channel.
-2. **Treating Google Maps data as truth** — listings go stale. Cross-check hours, status, and reviews.
-3. **Skipping the website status cross-check** — finding "no site" on Maps doesn't mean no site exists; do an exact-name web search before classifying.
-4. **Assuming size predicts need** — verify the current service gap and buying
+1. **Bulk-scraping Google Maps**: fastest way to violate ToS and lose the research channel.
+2. **Treating Google Maps data as truth**: listings go stale. Cross-check hours, status, and reviews.
+3. **Skipping the website status cross-check**: finding "no site" on Maps doesn't mean no site exists; do an exact-name web search before classifying.
+4. **Assuming size predicts need**: verify the current service gap and buying
    context instead of treating any employee band as universally underserved.
-5. **Generic outreach drafts** — cite the verified gap and keep every send as a
+5. **Generic outreach drafts**: cite the verified gap and keep every send as a
    separate approved action.
-6. **Ignoring chains and franchises** as Skip — sometimes the franchisee is the buyer and they have local marketing authority. Verify before skipping.
+6. **Ignoring chains and franchises** as Skip: sometimes the franchisee is the buyer and they have local marketing authority. Verify before skipping.

@@ -1,4 +1,4 @@
-# Growth Patterns — Evidence-Driven Scenarios
+# Growth Patterns: Evidence-Driven Scenarios
 
 Growth rarely follows a smooth forecast. Use patterns to organize hypotheses,
 not to assign a company to a universal ARR phase or promise a timeline.
@@ -17,7 +17,7 @@ Before selecting a pattern, record dated evidence for:
 If the evidence is missing, say `unknown` and propose the smallest measurement
 or bounded test that resolves it.
 
-## Pattern 1 — Linear
+## Pattern 1: Linear
 
 A comparable unit is added at a roughly steady rate over a bounded period.
 
@@ -29,10 +29,10 @@ Use only when:
 
 Treat continuation as a hypothesis. Set a review date and stop condition.
 
-## Pattern 2 — Step Function
+## Pattern 2: Step Function
 
-A discrete change—such as a launch, segment, product capability, or distribution
-agreement—may shift the baseline.
+A discrete change: such as a launch, segment, product capability, or distribution
+agreement: may shift the baseline.
 
 Document:
 
@@ -43,7 +43,7 @@ Document:
 
 Do not label ordinary variance as a step function.
 
-## Pattern 3 — Layered Curves
+## Pattern 3: Layered Curves
 
 Channel, product, and market initiatives can mature at different times. The plan
 may prepare a second bounded test before the first plateaus, but it must not

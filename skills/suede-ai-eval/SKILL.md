@@ -5,7 +5,7 @@ description: "Suede AI eval design and coverage audit: AI-SPEC, failure-mode rub
 
 # Suede AI Eval
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -20,13 +20,13 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
-Make AI behavior testable before it becomes a vague product promise. **No eval plan, no `ship` recommendation: for an AI feature without one, the recommended verdict stays below `ship` — report that gap and let the user decide.**
+Make AI behavior testable before it becomes a vague product promise. **No eval plan, no `ship` recommendation: for an AI feature without one, the recommended verdict stays below `ship`: report that gap and let the user decide.**
 
 The deliverable is an eval plan or coverage audit, not a model benchmark leaderboard. Keep it grounded in the actual product surface, user promise, data sources, prompts, tools, logs, tests, and failure modes available now.
 
@@ -34,7 +34,7 @@ The deliverable is an eval plan or coverage audit, not a model benchmark leaderb
 
 - No AI-SPEC → no eval plan. Write the one-paragraph spec first; cases written without a spec test nothing.
 - No eval plan → no `ship` recommendation. Do not recommend `ship` or `ship-with-caveats` for an AI feature that lacks a failure-mode map and eval cases; name the gap and leave the ship decision with the user.
-- A failure mode without an eval case, an owner, and a gate is uncovered — regardless of how unlikely it feels.
+- A failure mode without an eval case, an owner, and a gate is uncovered, regardless of how unlikely it feels.
 - A live surface that was never sampled gets the output stamped `source-only`; do not present source-only review as runtime evidence.
 - A model grading its own output is not evidence. LLM-as-judge scores count only after spot-checked agreement with a human-reviewed sample.
 
@@ -60,7 +60,7 @@ When the surface is already live, sample real behavior with safe inputs and reco
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
 5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
 6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Score coverage and infrastructure using the method under Tooling and Infrastructure below. Name every uncovered high-risk behavior regardless of the numeric score.
-7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status — the repo's own eval script if one exists, otherwise the tool's invocation (e.g. `npx promptfoo eval -c <config>`) — and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string.
+7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status (the repo's own eval script if one exists, otherwise the tool's invocation, e.g. `npx promptfoo eval -c <config>`) and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string.
 
 ## Eval Dimensions By System Type
 
@@ -109,8 +109,8 @@ If nothing is detected, these are the default starting points, not a mandate to 
 
 ## Eval Case Design
 
-How to build the case set — golden cases, adversarial cases, failure-mode coverage,
-and what makes a case gradeable — is in `references/eval-case-design.md`. Read it
+How to build the case set (golden cases, adversarial cases, failure-mode coverage,
+and what makes a case gradeable) is in `references/eval-case-design.md`. Read it
 before writing cases. Skip it when you are only reviewing an existing suite or
 sizing infrastructure.
 
@@ -164,14 +164,14 @@ Coverage gaps:
 Next implementation step:
 ```
 
-## Red Flags — Stop
+## Red Flags: Stop
 
-- "It looked good in the demo" — a demo is one happy-path sample, not coverage.
-- "We'll eval after launch" — after launch, the eval set is your users.
-- "The model seems smart" — vibes are not a rubric row; write the failure mode down and score it.
-- "We tested the prompt by hand" — prompt review and happy-path poking are not eval coverage.
-- "It passed once" — a pass with no fixture or scripted check protects nothing on the next model or prompt change.
-- "The judge model approved it" — self-judgment without human-agreement spot checks is not evidence.
+- "It looked good in the demo": a demo is one happy-path sample, not coverage.
+- "We'll eval after launch": after launch, the eval set is your users.
+- "The model seems smart": vibes are not a rubric row; write the failure mode down and score it.
+- "We tested the prompt by hand": prompt review and happy-path poking are not eval coverage.
+- "It passed once": a pass with no fixture or scripted check protects nothing on the next model or prompt change.
+- "The judge model approved it": self-judgment without human-agreement spot checks is not evidence.
 
 ## Output
 

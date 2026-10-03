@@ -16,11 +16,11 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 Understand the situation (ask if not provided):
 
-1. **What is the product or brand?** — What problem does it solve, who uses it
-2. **What community platform(s) are in play?** — Discord, Slack, Circle, Reddit, Facebook Groups, forum, etc.
-3. **What stage is the community at?** — Pre-launch, 0–100 members, 100–1k, scaling, or established
-4. **What is the primary community goal?** — Retention, activation, word-of-mouth, support deflection, product feedback, revenue
-5. **Who is the ideal community member?** — Role, motivation, what they hope to get from joining
+1. **What is the product or brand?**: What problem does it solve, who uses it
+2. **What community platform(s) are in play?**: Discord, Slack, Circle, Reddit, Facebook Groups, forum, etc.
+3. **What stage is the community at?**: Pre-launch, 0–100 members, 100–1k, scaling, or established
+4. **What is the primary community goal?**: Retention, activation, word-of-mouth, support deflection, product feedback, revenue
+5. **Who is the ideal community member?**: Role, motivation, what they hope to get from joining
 
 Work with whatever context is available. If key details are missing, make reasonable assumptions and flag them.
 
@@ -30,9 +30,9 @@ Work with whatever context is available. If key details are missing, make reason
 
 ### Build around a shared identity, not just a product
 
-The strongest communities are built around who members *are* or aspire to be — not around your product. Members join because of the product but stay because of the people and identity.
+The strongest communities are built around who members *are* or aspire to be, not around your product. Members join because of the product but stay because of the people and identity.
 
-Example: r/homelab — the identity is tinkerers who self-host, and every ritual,
+Example: r/homelab: the identity is tinkerers who self-host, and every ritual,
 channel, and recognition mechanic in it reinforces that self-image.
 
 Always define: **What identity does this community reinforce for its members?**
@@ -53,37 +53,37 @@ Every community touchpoint should answer: *What does the member get from this?*
 
 ### Launching a Community from Zero
 
-1. **Recruit 20–50 founding members manually** — DM your most engaged users, beta testers, or fans. Don't open publicly until there is baseline activity.
-2. **Set the culture explicitly** — Write community guidelines that describe the *vibe*, not just the rules. What does great participation look like here?
-3. **Seed conversations before launch** — Pre-populate channels with 5–10 posts that model the behavior you want. Questions, wins, resources.
-4. **Do things that don't scale at first** — Reply to every post. Welcome every new member by name. Host a weekly call. You are buying social proof.
-5. **Define your core loop** — What action do you want members to take weekly? Make it easy and reward it publicly.
+1. **Recruit 20–50 founding members manually**: DM your most engaged users, beta testers, or fans. Don't open publicly until there is baseline activity.
+2. **Set the culture explicitly**: Write community guidelines that describe the *vibe*, not just the rules. What does great participation look like here?
+3. **Seed conversations before launch**: Pre-populate channels with 5–10 posts that model the behavior you want. Questions, wins, resources.
+4. **Do things that don't scale at first**: Reply to every post. Welcome every new member by name. Host a weekly call. You are buying social proof.
+5. **Define your core loop**: What action do you want members to take weekly? Make it easy and reward it publicly.
 
 ### Growing an Existing Community
 
-1. **Audit where members drop off** — Are people joining but not posting? Posting once and disappearing? Identify the leaky stage.
-2. **Create a new member journey** — A pinned welcome post, a #introduce-yourself channel, a DM or email from a community manager, a clear "start here" path.
-3. **Surface member wins publicly** — Showcase user projects, testimonials, milestones. This reinforces identity and signals that participation has rewards.
-4. **Run recurring community rituals** — Weekly threads (e.g., "What are you working on?"), monthly AMAs, seasonal challenges. Rituals create habit.
-5. **Identify and invest in power users** — participation is usually heavily
+1. **Audit where members drop off**: Are people joining but not posting? Posting once and disappearing? Identify the leaky stage.
+2. **Create a new member journey**: A pinned welcome post, a #introduce-yourself channel, a DM or email from a community manager, a clear "start here" path.
+3. **Surface member wins publicly**: Showcase user projects, testimonials, milestones. This reinforces identity and signals that participation has rewards.
+4. **Run recurring community rituals**: Weekly threads (e.g., "What are you working on?"), monthly AMAs, seasonal challenges. Rituals create habit.
+5. **Identify and invest in power users**: participation is usually heavily
    skewed toward a small minority (Inferred; verify against this community's own
    posts-per-member distribution before quoting a ratio). Give the observed top
    contributors recognition, early access, moderator roles, or product input.
 
 ### Building a Brand Ambassador / Advocate Program
 
-1. **Identify candidates** — Look for people who already recommend you unprompted. Check reviews, social mentions, community posts.
-2. **Make the ask personal** — Don't send a generic form. Reach out 1:1 and explain why you chose them specifically.
-3. **Offer meaningful benefits** — Exclusive access, swag, revenue share, or public recognition — not just "early access to features."
-4. **Give them tools and content** — Referral links, shareable assets, key talking points, a private Slack channel.
-5. **Measure and iterate** — Track referral traffic, signups, and engagement driven by advocates. Double down on what works.
+1. **Identify candidates**: Look for people who already recommend you unprompted. Check reviews, social mentions, community posts.
+2. **Make the ask personal**: Don't send a generic form. Reach out 1:1 and explain why you chose them specifically.
+3. **Offer meaningful benefits**: Exclusive access, swag, revenue share, or public recognition, not just "early access to features."
+4. **Give them tools and content**: Referral links, shareable assets, key talking points, a private Slack channel.
+5. **Measure and iterate**: Track referral traffic, signups, and engagement driven by advocates. Double down on what works.
 
 ### Community-Led Support (Deflection + Retention)
 
 1. **Create a searchable knowledge base** from top community questions
-2. **Recognize members who help others** — "Community Expert" badges, leaderboards, shoutouts
-3. **Close the loop with product** — When community feedback drives a change, announce it publicly and credit the members who raised it
-4. **Monitor sentiment weekly** — Look for patterns in complaints or confusion before they become churn signals
+2. **Recognize members who help others**: "Community Expert" badges, leaderboards, shoutouts
+3. **Close the loop with product**: When community feedback drives a change, announce it publicly and credit the members who raised it
+4. **Monitor sentiment weekly**: Look for patterns in complaints or confusion before they become churn signals
 
 ---
 
@@ -102,33 +102,33 @@ Every community touchpoint should answer: *What does the member get from this?*
 
 ## Community Health Metrics
 
-Track these signals weekly. Label every number by evidence class — Boundaries
+Track these signals weekly. Label every number by evidence class, Boundaries
 below forbids stating any of them without a source, window, and denominator:
 
-- **Observed** — read directly from the platform's admin view or export. Name
+- **Observed**: read directly from the platform's admin view or export. Name
   the view and the date pulled.
-- **Computed** — derived from observed values. Show the formula and the
+- **Computed**: derived from observed values. Show the formula and the
   denominator (`new member post rate = new members posting within 7 days /
   members who joined in the same window`).
-- **Inferred** — a hypothesis to test, including any benchmark taken from
+- **Inferred**: a hypothesis to test, including any benchmark taken from
   outside this community. Never word it as this community's fact.
-- **Unknown** — the platform does not expose the measure. State what would
+- **Unknown**: the platform does not expose the measure. State what would
   resolve it.
 
 Metrics:
 
-- **DAU/MAU ratio** — Stickiness (Computed: daily actives / monthly actives).
+- **DAU/MAU ratio**: Stickiness (Computed: daily actives / monthly actives).
   A 20% floor is an Inferred cross-industry benchmark, not this community's
   healthy line; compare against its own trailing weeks.
-- **New member post rate** — % of new members who post within 7 days of joining
-- **Thread reply rate** — % of posts that receive at least one reply
-- **Churn / lurker ratio** — Members who joined but haven't posted in 30+ days
-- **Content created by non-staff** — % of posts not written by the company team
+- **New member post rate**: % of new members who post within 7 days of joining
+- **Thread reply rate**: % of posts that receive at least one reply
+- **Churn / lurker ratio**: Members who joined but haven't posted in 30+ days
+- **Content created by non-staff**: % of posts not written by the company team
 
 **Warning signs:**
 - Most posts are from the company team, not members
 - Questions go unanswered for >24 hours
-- Engagement concentrates in a handful of accounts — compute the share of posts
+- Engagement concentrates in a handful of accounts: compute the share of posts
   from the top 5 posters over a stated window before calling it a warning
 - New members stop posting after their intro message
 
@@ -138,19 +138,19 @@ Metrics:
 
 Depending on what the user needs, produce one of:
 
-- **Community Strategy Doc** — Platform choice, identity definition, core loop, 90-day launch plan
-- **Channel Architecture** — Recommended channels/categories with purpose and posting guidelines for each
-- **New Member Journey** — Welcome sequence: pinned post, DM template, first-week prompts
-- **Community Ritual Calendar** — Weekly/monthly recurring events and threads
-- **Ambassador Program Brief** — Criteria, benefits, outreach template, tracking plan
-- **Health Audit Report** — Current metrics, diagnosis, top 3 priorities to fix
+- **Community Strategy Doc**: Platform choice, identity definition, core loop, 90-day launch plan
+- **Channel Architecture**: Recommended channels/categories with purpose and posting guidelines for each
+- **New Member Journey**: Welcome sequence: pinned post, DM template, first-week prompts
+- **Community Ritual Calendar**: Weekly/monthly recurring events and threads
+- **Ambassador Program Brief**: Criteria, benefits, outreach template, tracking plan
+- **Health Audit Report**: Current metrics, diagnosis, top 3 priorities to fix
 
 Always be specific. Generic advice ("be consistent," "provide value") is not useful. Give the user something they can act on today.
 
-### Community Strategy Doc — exact headings
+### Community Strategy Doc: exact headings
 
 ```markdown
-# <Community name> — Strategy
+# <Community name>: Strategy
 
 ## Identity
 Member identity reinforced: <who members are or aspire to be>
@@ -172,7 +172,7 @@ Pre-launch seed posts: <5–10 topics that model the behavior>
 Culture statement: <what great participation looks like here>
 
 ## 90-Day Plan
-Days 0–30 | Days 31–60 | Days 61–90 — for each: goal, rituals live,
+Days 0–30 | Days 31–60 | Days 61–90, for each: goal, rituals live,
 owner, primary metric with its denominator
 
 ## Measurement
@@ -185,23 +185,23 @@ Diagnostics (2–4): <metric + evidence class each>
 
 The other five deliverables use these headings:
 
-- **Channel Architecture** — Channel | Purpose | Who posts | Posting rules | Success signal
-- **New Member Journey** — Pinned post / DM template / Day 1–7 prompts / First-win definition / Drop-off checkpoint
-- **Community Ritual Calendar** — Ritual | Cadence | Owner | Member job | Kill condition
-- **Ambassador Program Brief** — Criteria / Benefits / Outreach template / Disclosure requirement / Tracking plan
-- **Health Audit Report** — Metrics with evidence class and denominator / Diagnosis / Top 3 priorities / What would disprove the diagnosis
+- **Channel Architecture**: Channel | Purpose | Who posts | Posting rules | Success signal
+- **New Member Journey**: Pinned post / DM template / Day 1–7 prompts / First-win definition / Drop-off checkpoint
+- **Community Ritual Calendar**: Ritual | Cadence | Owner | Member job | Kill condition
+- **Ambassador Program Brief**: Criteria / Benefits / Outreach template / Disclosure requirement / Tracking plan
+- **Health Audit Report**: Metrics with evidence class and denominator / Diagnosis / Top 3 priorities / What would disprove the diagnosis
 
 ---
 
 ## Halt Contract
 
 Use this exact format when authorization, evidence, or an enforcement decision
-blocks the requested result — including the space-creation, invite, role,
+blocks the requested result: including the space-creation, invite, role,
 moderation, removal, and announcement gate and the enforcement-outcome gate in
 Boundaries:
 
 ```text
-HALT — <one-line blocker>
+HALT: <one-line blocker>
 Why it blocks: <specific missing authority or evidence>
 Resolve with:
 1. <option>

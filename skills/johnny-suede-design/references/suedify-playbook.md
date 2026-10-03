@@ -4,10 +4,10 @@ Used by johnny-suede-design Lane B. Read when running a reference → target res
 
 ## Suedify Moves
 
-- **Style Fingerprint:** Capture the reference's grid, section rhythm, nav behavior, typography, color roles, imagery, motion, density, and responsive breakpoints. Required fields: (1) color strategy axis — Restrained / Committed / Full palette / Drenched; (2) aesthetic tone — refined minimal / editorial / brutalist / retro-technical / organic / maximalist / luxury refined / product-utilitarian; (3) unforgettable factor — the one design decision someone recalls after closing the tab; (4) font pairing analysis — identify the personality font (headlines/display, carries brand character) and the utility font (body/UI, optimized for readability), recording for each: name, weight range in use, optical size used at, and one sentence on why the pairing works (what contrast or tension creates the system). Example: "PP Neue Montreal (personality: geometric, confident, slightly wide) paired with Inter (utility: neutral, familiar, screen-optimized) — contrast is personality vs. disappearance."
+- **Style Fingerprint:** Capture the reference's grid, section rhythm, nav behavior, typography, color roles, imagery, motion, density, and responsive breakpoints. Required fields: (1) color strategy axis: Restrained / Committed / Full palette / Drenched; (2) aesthetic tone: refined minimal / editorial / brutalist / retro-technical / organic / maximalist / luxury refined / product-utilitarian; (3) unforgettable factor: the one design decision someone recalls after closing the tab; (4) font pairing analysis: identify the personality font (headlines/display, carries brand character) and the utility font (body/UI, optimized for readability), recording for each: name, weight range in use, optical size used at, and one sentence on why the pairing works (what contrast or tension creates the system). Example: "PP Neue Montreal (personality: geometric, confident, slightly wide) paired with Inter (utility: neutral, familiar, screen-optimized): contrast is personality vs. disappearance."
 - **Token Distiller:** Produce a token table with these rows: `--color-bg`, `--color-surface`, `--color-text-primary`, `--color-text-secondary`, `--color-accent`, `--color-accent-hover`, `--color-border`, `--font-personality` (with reason it works), `--font-utility` (with reason it pairs), `--text-base`, `--text-scale-ratio`, `--radius-sm/md/lg`, `--shadow-card`, `--shadow-elevated`, `--motion-fast`, `--motion-base`, `--motion-slow`, `--motion-easing`. Mark each token ADOPTED, ADAPTED (modified to fit target brand), or REJECTED (with reason). Output as a CSS custom properties block ready to drop into `:root {}`.
 - **Hero Lift:** Rebuild the first viewport so the target inherits the reference's hierarchy, pacing, media treatment, and CTA emphasis without stealing copy or assets.
-- **Section Rhythm:** Map the reference's page cadence into target sections — bands, reveals, product blocks, proof, comparison, closing CTA.
+- **Section Rhythm:** Map the reference's page cadence into target sections: bands, reveals, product blocks, proof, comparison, closing CTA.
 - **Voice Fingerprint:** Scrape 3–5 sentences from the reference's hero, subhead, and primary CTA. Record: (1) vocabulary register on Technical–Casual and Functional–Aspirational axes, (2) median sentence word count, (3) person/stance (second-person imperative / first-person brand / third-person observer), (4) claim type (feature-list / outcome-promise / identity-statement / provocative-question), (5) three words that recur or feel distinctly theirs. Output a voice brief: four parameters + three vocabulary anchors. Feeds Copy Reframe.
 - **Copy Reframe:** Apply the four voice parameters to target copy. Strip phrases that appear in 80% of SaaS sites: "powerful," "seamlessly," "effortless," "elevate your," "next-level," and any sentence beginning with "Whether you're."
 - **Asset Swap:** Replace reference assets with target-owned product, logo, creator, media, or generated bitmap assets that serve the same visual role.
@@ -23,12 +23,12 @@ Open the reference URL. Capture desktop, tablet when useful, and mobile screensh
 
 Screenshot capture: `npx playwright screenshot <reference_url> --viewport-size=1280,900 reference-desktop.png`, then repeat with `--viewport-size=768,1024` for tablet and `--viewport-size=390,844` for mobile (one-time setup: `npx playwright install chromium`). Substitute your environment's built-in preview/screenshot tool if one is available. Run the same command against `target_url` in Screenshot Diff (below) to produce the comparison pair.
 
-Motion capture: open DevTools, run `getComputedStyle(document.body).getPropertyValue('--transition-base')`, inspect active elements for `transition`/`animation` values; note cubic-bezier or named easing, duration in ms, which elements animate on hover vs. scroll, and whether scroll animation is CSS `@keyframes` + IntersectionObserver or a JS library (GSAP, Framer Motion, AOS — the library signals the perf budget). Save the analysis as `DESIGN.md` in the target repo root.
+Motion capture: open DevTools, run `getComputedStyle(document.body).getPropertyValue('--transition-base')`, inspect active elements for `transition`/`animation` values; note cubic-bezier or named easing, duration in ms, which elements animate on hover vs. scroll, and whether scroll animation is CSS `@keyframes` + IntersectionObserver or a JS library (GSAP, Framer Motion, AOS: the library signals the perf budget). Save the analysis as `DESIGN.md` in the target repo root.
 
 ## DESIGN.md Template
 
 ```md
-# Design System — [Target Name]
+# Design System: [Target Name]
 Extracted from: [reference_url] on [date]
 
 ## Identity
@@ -37,8 +37,8 @@ Extracted from: [reference_url] on [date]
 - Unforgettable factor: [one sentence]
 
 ## Typography
-- Personality font: [name] — [why it works for this brand]
-- Utility font: [name] — [why it pairs]
+- Personality font: [name]: [why it works for this brand]
+- Utility font: [name]: [why it pairs]
 - Type scale: H1 [size/weight], H2, H3, body, caption, label
 - Line-height base: [value]
 

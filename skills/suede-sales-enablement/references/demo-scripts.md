@@ -10,7 +10,7 @@ Scene-by-scene templates for different call types, with timing, talk tracks, and
 ### Scene 1: Opening (3 min)
 
 **Talk track:**
-> "Thanks for taking the time, [Name]. I've done some research on [Company] but I'd love to hear from you directly. My goal for today is to understand what you're working on and see if there's a fit — and if there's not, I'll tell you that too. Sound good?"
+> "Thanks for taking the time, [Name]. I've done some research on [Company] but I'd love to hear from you directly. My goal for today is to understand what you're working on and see if there's a fit, and if there's not, I'll tell you that too. Sound good?"
 
 **What to establish:**
 - Set the agenda and time expectation
@@ -87,7 +87,7 @@ Scene-by-scene templates for different call types, with timing, talk tracks, and
 ### Scene 6: Close (2 min)
 
 **Talk track:**
-> "Based on what you've shared, I think there's a strong fit — specifically around [pain point 1] and [pain point 2]. What I'd suggest as a next step is a 30-minute demo where I can show you exactly how we'd address those. I'll customize it to your workflow. Does [specific date/time] work?"
+> "Based on what you've shared, I think there's a strong fit, specifically around [pain point 1] and [pain point 2]. What I'd suggest as a next step is a 30-minute demo where I can show you exactly how we'd address those. I'll customize it to your workflow. Does [specific date/time] work?"
 
 **What to do:**
 - Summarize the 2-3 key pain points
@@ -113,7 +113,7 @@ Scene-by-scene templates for different call types, with timing, talk tracks, and
 
 ---
 
-### Scene 2: Workflow 1 — Primary Pain Point (10 min)
+### Scene 2: Workflow 1: Primary Pain Point (10 min)
 
 **Structure:**
 1. Restate the pain: "You mentioned [specific problem]..."
@@ -130,17 +130,17 @@ Scene-by-scene templates for different call types, with timing, talk tracks, and
 
 ---
 
-### Scene 3: Workflow 2 — Secondary Pain Point (8 min)
+### Scene 3: Workflow 2: Secondary Pain Point (8 min)
 
 **Structure:**
-Same as Workflow 1 — restate pain, show solution, highlight outcome.
+Same as Workflow 1: restate pain, show solution, highlight outcome.
 
 **Interaction point:**
 > "Is this the kind of visibility your team has been asking for?"
 
 ---
 
-### Scene 4: Workflow 3 — Differentiator (7 min)
+### Scene 4: Workflow 3: Differentiator (7 min)
 
 **Structure:**
 Show something they can't do today and can't get from competitors.
@@ -156,11 +156,11 @@ Show something they can't do today and can't get from competitors.
 ### Scene 5: Proof Point (3 min)
 
 **Talk track:**
-> "Let me share a quick example. [Customer similar to them] was in a similar situation — [brief challenge]. After implementing, they saw [specific metrics]. Their [role] said [quote]."
+> "Let me share a quick example. [Customer similar to them] was in a similar situation: [brief challenge]. After implementing, they saw [specific metrics]. Their [role] said [quote]."
 
 **What to do:**
 - Choose a case study that matches their industry, size, or use case
-- Keep it brief — this is reinforcement, not a presentation
+- Keep it brief: this is reinforcement, not a presentation
 
 ---
 
@@ -185,7 +185,7 @@ Show something they can't do today and can't get from competitors.
 ### Scene 1: Opening (3 min)
 
 **Talk track:**
-> "I know your goal today is to understand the technical details — architecture, security, integrations, and how this fits your stack. I'll walk through each area and leave plenty of time for questions. What's your top priority for this session?"
+> "I know your goal today is to understand the technical details: architecture, security, integrations, and how this fits your stack. I'll walk through each area and leave plenty of time for questions. What's your top priority for this session?"
 
 **Attendees:** Typically includes their technical evaluator (engineer, architect, IT lead) plus your SE or solutions engineer.
 
@@ -230,7 +230,7 @@ Show something they can't do today and can't get from competitors.
 - Live demo of relevant integration
 
 **Interaction point:**
-> "Walk me through your current stack — I want to map out exactly how we'd fit in."
+> "Walk me through your current stack: I want to map out exactly how we'd fit in."
 
 ---
 
@@ -254,7 +254,7 @@ Show something they can't do today and can't get from competitors.
 > "What questions do I need to answer for you to feel confident about the technical fit?"
 
 **What to do:**
-- Answer directly — if you don't know, say so and follow up
+- Answer directly: if you don't know, say so and follow up
 - Document all questions for follow-up
 - Propose next step (security review, proof of concept, pilot)
 - Send technical documentation summary within 24 hours
@@ -272,7 +272,7 @@ Show something they can't do today and can't get from competitors.
 > "Thanks for your time, [Name]. [Champion] has been evaluating [your product] and the results look strong. I'll keep this focused on the business impact and what a partnership looks like. I know your time is valuable so I'll aim to leave 10 minutes for questions."
 
 **What to do:**
-- Be concise — executives punish rambling
+- Be concise: executives punish rambling
 - Reference the champion and work done so far
 - Set a clear agenda
 
@@ -281,7 +281,7 @@ Show something they can't do today and can't get from competitors.
 ### Scene 2: The Problem & Cost (5 min)
 
 **Talk track:**
-> "Based on what [Champion] shared, your team is spending [X hours/$ amount] on [problem]. That's [annual cost]. It's also creating [secondary impact: risk, delays, churn]. This isn't unique to you — it's an industry-wide challenge, and the companies solving it are seeing [outcome]."
+> "Based on what [Champion] shared, your team is spending [X hours/$ amount] on [problem]. That's [annual cost]. It's also creating [secondary impact: risk, delays, churn]. This isn't unique to you. It's an industry-wide challenge, and the companies solving it are seeing [outcome]."
 
 **What to do:**
 - Use their numbers, not generic benchmarks
@@ -317,7 +317,7 @@ Show something they can't do today and can't get from competitors.
 ### Scene 5: Q&A and Decision (5-10 min)
 
 **Talk track:**
-> "What questions do you have? And — assuming the business case holds up, what does the decision process look like from here?"
+> "What questions do you have? And, assuming the business case holds up, what does the decision process look like from here?"
 
 **What to do:**
 - Listen more than talk
@@ -331,11 +331,11 @@ Show something they can't do today and can't get from competitors.
 
 ### When to Ask Questions During Demos
 
-- **After showing each workflow** — "How does this compare to your current process?"
-- **When you see a reaction** — "I noticed you reacted to that — what are you thinking?"
-- **Before moving to the next section** — "Any questions on this before we move on?"
-- **When showing a differentiator** — "How would your team use this?"
-- **At the midpoint** — "Are we covering the right things, or should we adjust?"
+- **After showing each workflow**: "How does this compare to your current process?"
+- **When you see a reaction**: "I noticed you reacted to that: what are you thinking?"
+- **Before moving to the next section**: "Any questions on this before we move on?"
+- **When showing a differentiator**: "How would your team use this?"
+- **At the midpoint**: "Are we covering the right things, or should we adjust?"
 
 ### Questions NOT to Ask During Demos
 
@@ -348,8 +348,8 @@ Show something they can't do today and can't get from competitors.
 
 When a prospect asks to see something during the demo:
 
-1. **If it's quick** — show it now, then return to your flow
-2. **If it's a tangent** — "Great question. Let me note that and show you after the main flow so we stay on track."
-3. **If it's not possible** — "We don't do that today. Here's how customers handle it: [alternative]."
+1. **If it's quick**: show it now, then return to your flow
+2. **If it's a tangent**: "Great question. Let me note that and show you after the main flow so we stay on track."
+3. **If it's not possible**: "We don't do that today. Here's how customers handle it: [alternative]."
 
 Never say "I'll get back to you" without writing it down and following up within 24 hours.

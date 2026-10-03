@@ -1,6 +1,6 @@
 # Prompt Levels
 
-The three prompt depths this skill can hand back — short copy/paste, full operator prompt, granular steps — with what each must contain.
+The three prompt depths this skill can hand back, short copy/paste, full operator prompt, granular steps, with what each must contain.
 
 ## Prompt Levels
 

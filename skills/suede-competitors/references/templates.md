@@ -18,9 +18,9 @@ Ready-to-use templates for each section of competitor comparison pages.
 Start every page with a quick summary for scanners:
 
 ```markdown
-**TL;DR**: [Competitor] excels at [strength] but struggles with [weakness].
-[Your product] is built for [your focus], offering [key differentiator].
-Choose [Competitor] if [their ideal use case]. Choose [You] if [your ideal use case].
+**TL;DR**: [Competitor] is built for [their focus]; teams switch when they hit [sourced limitation].
+[Your product] is built for [your focus], offering [key differentiator] and [proof point].
+Choose [You] when you need [your ideal use case].
 ```
 
 ---
@@ -37,8 +37,8 @@ Their strength is [specific strength], which works well for [use case].
 However, [limitation] can be challenging for [user type].
 
 [Your product] takes a different approach with [your approach].
-This means [benefit], though [honest tradeoff].
-Teams who [specific need] often find this more effective.
+This means [benefit], backed by [proof: metric, customer result, or doc link].
+Teams who [specific need] get [specific outcome].
 ```
 
 ---
@@ -58,9 +58,9 @@ Go beyond checkmarks:
 
 **[Your product]**: [2-3 sentence description]
 - Strengths: [specific]
-- Limitations: [specific]
+- Proof: [metric, customer result, or doc link]
 
-**Bottom line**: Choose [Competitor] if [scenario]. Choose [You] if [scenario].
+**Bottom line**: Choose [You] when [scenario], because [specific advantage].
 ```
 
 ---
@@ -116,16 +116,6 @@ response time, dedicated CSM, implementation help].
 ## Who It's For Section
 
 ```markdown
-## Who Should Choose [Competitor]
-
-[Competitor] is the right choice if:
-- [Specific use case or need]
-- [Team type or size]
-- [Workflow or requirement]
-- [Budget or priority]
-
-**Ideal [Competitor] customer**: [Persona description in 1-2 sentences]
-
 ## Who Should Choose [Your Product]
 
 [Your product] is built for teams who:
@@ -135,6 +125,8 @@ response time, dedicated CSM, implementation help].
 - [Priority or value]
 
 **Ideal [Your product] customer**: [Persona description in 1-2 sentences]
+
+**What they get**: [The specific outcome, with proof]
 ```
 
 ---
@@ -163,7 +155,7 @@ We offer [migration support details]:
 ### What customers say about switching
 
 > "[Quote from customer who switched]"
-> — [Name], [Role] at [Company]
+> [Name], [Role] at [Company]
 ```
 
 ---
@@ -178,10 +170,10 @@ Focus on switchers:
 ### Switched from [Competitor]
 
 > "[Specific quote about why they switched and outcome]"
-> — [Name], [Role] at [Company]
+> [Name], [Role] at [Company]
 
 > "[Another quote]"
-> — [Name], [Role] at [Company]
+> [Name], [Role] at [Company]
 
 ### Results after switching
 - [Company] saw [specific result]

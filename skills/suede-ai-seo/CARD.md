@@ -44,9 +44,9 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not claim a specific citation, ranking, or visibility outcome on any AI platform — cite mechanisms and published research, not guaranteed results.
+- Do not claim a specific citation, ranking, or visibility outcome on any AI platform: cite mechanisms and published research, not guaranteed results.
 - Do not edit production robots.txt, schema markup, or site content without showing the current live state first and getting explicit approval.
-- Do not fabricate AI Overview, ChatGPT, or Perplexity citation checks — report only what was actually queried and observed.
+- Do not fabricate AI Overview, ChatGPT, or Perplexity citation checks: report only what was actually queried and observed.
 
 ## References
 

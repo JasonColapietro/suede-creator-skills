@@ -25,7 +25,7 @@ Break one arrow and the failure is predictable, not mysterious:
 
 This skill owns the pipeline: who decides what, what travels between them, and
 how one idea becomes several assets that argue different things. Read
-`.agents/product-marketing.md` first if it exists — it holds product, audience,
+`.agents/product-marketing.md` first if it exists: it holds product, audience,
 positioning, and proof, and nothing here restates it.
 
 **Founder-led mode.** When the recurring source is a founder interview, voice
@@ -36,7 +36,7 @@ Step 1. It adds an intake contract and account lanes to this pipeline; the six
 role contracts, evidence gates, collision checks, approval boundary, and
 Keep/Test/Stop thresholds below remain unchanged.
 
-## Step 1 — Put the campaign in a file, not a conversation
+## Step 1: Put the campaign in a file, not a conversation
 
 One record per campaign at `.agents/newsroom/<slug>.md`. It is the only thing
 that has to survive between roles, sessions, and restarts.
@@ -46,11 +46,11 @@ on restart, and the next role has to infer which sentences were load-bearing. Th
 record gives each role a predictable input and lets a human audit a campaign
 without reopening six sessions.
 
-Keep it narrow — decisions and the evidence behind them. Drafts live beside it,
+Keep it narrow, decisions and the evidence behind them. Drafts live beside it,
 not in it. The template and per-stage completion rules are in
 [references/campaign-record.md](references/campaign-record.md).
 
-## Step 2 — Give each role one decision to own
+## Step 2: Give each role one decision to own
 
 The fastest way to ruin a multi-agent content team is to hand every role the same
 instruction: make great content. Each role gets one decision, one artifact, and a
@@ -65,7 +65,7 @@ named point where it stops.
 | Distribution | what each surface argues | asset set with entryways | editor |
 | Editor | whether the package holds together | approve, revise, or reject | human |
 
-Every contract fills five fields — **owns**, **reads**, **returns**, **must
+Every contract fills five fields: **owns**, **reads**, **returns**, **must
 not**, **done when**. Full text for all six, with the `must not` and `done when`
 clauses, is in [references/role-contracts.md](references/role-contracts.md). Copy
 them in verbatim; a paraphrased `must not` is how a writer starts picking angles.
@@ -83,10 +83,10 @@ them in verbatim; a paraphrased `must not` is how a writer starts picking angles
 - Distribution returns one entryway per asset and no entryway twice.
 - Editor reviews the assets together in one pass, never one at a time.
 
-## Step 3 — Gate every handoff
+## Step 3: Gate every handoff
 
 A stage is complete when every field it owns is filled and readable by the next
-role — not drafted, not discussed. Written into the record.
+role: not drafted, not discussed. Written into the record.
 
 **Return-to-sender.** When a field the current stage needs is empty, the role
 sends the record back and names the field. It does not fill the gap with a
@@ -101,16 +101,16 @@ field is unnecessary, or (4) kill it. Do not advance the record, and do not
 present a partial package as complete.
 
 Two returns on the same field means the pipeline cannot supply it. Escalate
-rather than attempting a third pass — a third attempt on the same gap is where
+rather than attempting a third pass: a third attempt on the same gap is where
 fabrication starts.
 
-## Step 4 — Distribute by argument, not by format
+## Step 4: Distribute by argument, not by format
 
 This is the stage that fails most often, and it fails quietly.
 
 An article does not become a short post by losing 1,500 words, and a newsletter
 does not become a carousel because its paragraphs were laid onto slides. Both
-moves produce assets carrying the same argument at different lengths — which is
+moves produce assets carrying the same argument at different lengths: which is
 why a week of them reads like one post repeated.
 
 **Work from the angle brief, not the finished draft.** A draft carries one
@@ -130,7 +130,7 @@ first is the mechanism that produces shortened articles.
 | **Compression** | here is the whole shape | the idea reduced to one line or image |
 
 One entryway per asset. An asset carrying two is a shortened article wearing a
-label. An entryway the source cannot supply is unavailable — report it and say
+label. An entryway the source cannot supply is unavailable, report it and say
 what evidence would unlock it, rather than inventing an artifact to fill it.
 
 Worked examples, surface fit, and the failure mode each entryway falls into are
@@ -147,27 +147,27 @@ Three checks, one point each, run against the whole set:
 | **Removal** | deleting it costs the campaign a specific, nameable thing |
 
 3 ships. 2 goes back for revision, naming the failed check. 0–1 gets cut, and say
-what the set loses — usually nothing.
+what the set loses, usually nothing.
 
 ### Run the collision gate
 
 Reduce each asset to one sentence first; comparing full drafts hides collisions.
 
-1. **Claim collision** — two assets whose central claim is the same sentence.
-2. **Opening collision** — the same story, statistic, or line opens two assets.
+1. **Claim collision**: two assets whose central claim is the same sentence.
+2. **Opening collision**: the same story, statistic, or line opens two assets.
    The most common, and the most visible to anyone following on two surfaces.
-3. **Entryway collision** — the same entryway used twice.
+3. **Entryway collision**: the same entryway used twice.
 
 **Halt format.** Stop. Name the two assets, the collision type, and the shared
 sentence. Offer: (1) reassign one to an unused entryway, (2) cut the weaker and
 say what the set loses, or (3) record it as a deliberate repeat with a reason.
-Wait. Do not resolve a collision by rewording — the claim underneath is what
+Wait. Do not resolve a collision by rewording: the claim underneath is what
 collides.
 
 Fewer surfaces than entryways is normal. Three assets with three distinct
 entryways beats seven assets with two.
 
-## Step 5 — Keep the human at the editorial boundary
+## Step 5: Keep the human at the editorial boundary
 
 The first version prepares everything and publishes nothing. The human approves
 the angle, the flagship draft, every consequential factual claim, every public
@@ -182,7 +182,7 @@ the editor's review rules so it is applied before the human sees the package.
 revisions for three consecutive campaigns, and a wrong post is recoverable by
 deleting it. Autonomy should remove repeated decisions, not remove taste.
 
-## Step 6 — Make performance rewrite the playbooks
+## Step 6: Make performance rewrite the playbooks
 
 Reporting numbers is not learning. After each campaign log the signal, angle,
 entryway, surface, reach, meaningful engagement, and the goal-linked action.
@@ -191,14 +191,14 @@ Then have the editor return three lists:
 | List | Bar to qualify |
 |---|---|
 | **Keep** | held across two or more campaigns and still matches strategy |
-| **Test** | one promising result — a hypothesis, run it again |
+| **Test** | one promising result: a hypothesis, run it again |
 | **Stop** | failed twice, duplicated another asset, or cost more than it returned |
 
 Every proposal names the campaigns supporting it. One strong result is a
 **Test**, never a **Keep**. The human approves before any rule changes. Without
 this arrow, every campaign starts from the same generic prompt forever.
 
-Log by entryway, not only by surface — over a few campaigns that reveals which
+Log by entryway, not only by surface, over a few campaigns that reveals which
 door the audience actually walks through, which is more useful than which
 platform performed.
 
@@ -208,13 +208,13 @@ Six roles is the model, not a hosting requirement.
 
 | Host | Roles map to | What breaks |
 |---|---|---|
-| One session | one pass per role, record reread between | role bleed — it edits its own draft |
+| One session | one pass per role, record reread between | role bleed: it edits its own draft |
 | Subagents | one per role, dispatched in stage order | cost, if each drags full context |
 | Separate profiles | one per role, isolated memory | drift, if they coordinate by chat |
 | One person | one sitting per role, in order | nothing; this is the honest first week |
 
 Two rules survive every host. **Conversation coordinates; files carry state.**
-And **isolate role memory** where the host allows it — one shared memory turns
+And **isolate role memory** where the host allows it: one shared memory turns
 six specialists back into one generalist that has read everything and
 distinguishes nothing.
 
@@ -231,16 +231,16 @@ content operations produce.
 
 ## Anti-patterns
 
-- **One shared memory for all six roles** — specialists collapse into one
+- **One shared memory for all six roles**: specialists collapse into one
   generalist with opinions about everything.
-- **Prose handoffs** — the next role guesses which sentences were load-bearing.
-- **Roles that fill each other's gaps** — confident output, no traceable source.
-- **Splitting the draft instead of the argument** — produces length variants.
-- **One hook rewritten seven ways** — the claim underneath is identical, so the
+- **Prose handoffs**: the next role guesses which sentences were load-bearing.
+- **Roles that fill each other's gaps**: confident output, no traceable source.
+- **Splitting the draft instead of the argument**: produces length variants.
+- **One hook rewritten seven ways**: the claim underneath is identical, so the
   reader sees the repeat even when the wording differs.
-- **Adding the writer first** — the most visible role, and the one that produces
+- **Adding the writer first**: the most visible role, and the one that produces
   least value without an evidence packet in front of it.
-- **A performance log nobody converts to rules** — analytics theatre.
+- **A performance log nobody converts to rules**: analytics theatre.
 
 ## Banned vocabulary
 

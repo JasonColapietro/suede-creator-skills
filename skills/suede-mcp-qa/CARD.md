@@ -44,7 +44,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Check and report only. Do not edit the server source, `mcp/catalog.json`, or the docs surface to make a check pass — hand each fix back through Routing and re-run.
+- Check and report only. Do not edit the server source, `mcp/catalog.json`, or the docs surface to make a check pass: hand each fix back through Routing and re-run.
 - Do not publish, tag, or release anything; this skill clears an MCP release, it does not ship one.
 - Never record a check as passed from a spec, a README, or a previous run. Only output captured from the live server in this session counts.
 - Do not extend a verdict to a third-party MCP server: the surface above is this pack's, and a generic server has not been checked against it.

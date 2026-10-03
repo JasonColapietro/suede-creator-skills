@@ -69,27 +69,27 @@ revise one variable at a time when it does not.
 Apply these throughout the run. Resolve rights, source, and claims before
 writing copy; resolve platform, certainty, and approval before a live action:
 
-1. **Rights gate** — classify the video as owned, licensed, permission-recorded,
+1. **Rights gate**: classify the video as owned, licensed, permission-recorded,
    native-repost-only, fair-use-review, or blocked. Public availability is not
    reuse permission.
-2. **Source gate** — obtain the video, transcript or exact timestamps, guide
+2. **Source gate**: obtain the video, transcript or exact timestamps, guide
    draft or URL, target platform, intended account, and desired next action.
-3. **Claim gate** — trace factual claims and quotations to the source. Label
+3. **Claim gate**: trace factual claims and quotations to the source. Label
    interpretations as interpretations.
-4. **Platform gate** — inspect current official requirements and the live
+4. **Platform gate**: inspect current official requirements and the live
    composer before promising that media, quote-posts, article cards, links, or
    replies can be combined.
-5. **Approval gate** — do not publish, schedule, repost, upload, reply, or edit
+5. **Approval gate**: do not publish, schedule, repost, upload, reply, or edit
    a live article until the user approves the exact media, copy, guide, account,
    and sequence.
-6. **Certainty gate** — when a max-effort or worker-fleet controller runs this
+6. **Certainty gate**: when a max-effort or worker-fleet controller runs this
    skill, require two distinct evidence checks before marking a package
    approved or published. A worker conclusion is not the second check.
 
 When a blocking gate fails, stop the affected action and return:
 
 ```text
-HALT — <one-line blocker>
+HALT, <one-line blocker>
 Options:
 1. <bounded resolution>
 2. <bounded resolution>
@@ -188,24 +188,24 @@ and request a better source instead of forcing a clip.
 Read [references/package-template.md](references/package-template.md) and
 produce:
 
-1. **Decision snapshot** — goal, audience, platform, identity, and chosen
+1. **Decision snapshot**: goal, audience, platform, identity, and chosen
    sequence.
-2. **Source and rights record** — owner, source, evidence, transcript excerpt,
+2. **Source and rights record**: owner, source, evidence, transcript excerpt,
    permitted route, jurisdiction, and any four-factor review.
-3. **Guide anchor** — exact title, promise, URL or draft state, and the question
+3. **Guide anchor**: exact title, promise, URL or draft state, and the question
    it answers after the clip.
-4. **Clip brief** — in/out timestamps, target duration, exact opening, subtitle
+4. **Clip brief**: in/out timestamps, target duration, exact opening, subtitle
    text, on-screen credit, ending bridge, and export owner.
-5. **Funnel post** — exact text with four jobs:
+5. **Funnel post**: exact text with four jobs:
    - hook the video moment;
    - explain why it matters;
    - bridge to the deeper guide;
    - give one specific next action.
-6. **Publish sequence** — one of the verified patterns below.
-7. **Measurement plan** — baseline, observation window, and decision rule.
-8. **Certainty record** — execution mode, two check owners or processes,
+6. **Publish sequence**: one of the verified patterns below.
+7. **Measurement plan**: baseline, observation window, and decision rule.
+8. **Certainty record**: execution mode, two check owners or processes,
    direct evidence, contradictions, and final verdict.
-9. **Approval bundle** — exact media, post copy, guide, identity, and sequence.
+9. **Approval bundle**: exact media, post copy, guide, identity, and sequence.
 
 Do not pad the post with generic setup, unsupported performance language, or
 multiple competing calls to action.
@@ -214,11 +214,11 @@ multiple competing calls to action.
 
 Use one:
 
-- **Anchor-first** — publish or verify the guide, then publish the clip-led post
+- **Anchor-first**: publish or verify the guide, then publish the clip-led post
   that references it.
-- **Clip-first** — publish the clip, then place the guide in the platform's
+- **Clip-first**: publish the clip, then place the guide in the platform's
   verified companion location, such as a first reply or supported link field.
-- **Native-repost** — quote or repost the third-party source with original
+- **Native-repost**: quote or repost the third-party source with original
   analysis and a guide bridge; do not re-upload the source media.
 
 Do not assume a quote-post can also carry new media. Verify the current composer
@@ -233,7 +233,7 @@ must run both checks and may not mark a package `approved` or `published` until
 `certainty_status: proved`. Record one package version, timestamp, or content
 hash so both checks evaluate the same unchanged artifact.
 
-**Check 1 — production proof**
+**Check 1: production proof**
 
 - Reopen the video or transcript at the selected timestamps.
 - Match the quotation, claim framing, rights evidence, moment score, guide
@@ -242,7 +242,7 @@ hash so both checks evaluate the same unchanged artifact.
 - In Fleet mode, the fleet worker's acceptance-criteria self-check may satisfy
   this check, but remains provisional.
 
-**Check 2 — independent proof**
+**Check 2: independent proof**
 
 - Inspect the source evidence and assembled package directly; do not review
   only Check 1's summary.
@@ -258,10 +258,10 @@ hash so both checks evaluate the same unchanged artifact.
 
 Use only:
 
-- `PROVED` — both checks pass with direct evidence and every contradiction is
+- `PROVED`: both checks pass with direct evidence and every contradiction is
   resolved;
-- `UNPROVED` — a check is incomplete, indirect, or disagrees with the other;
-- `BLOCKED` — access, authority, rights, or platform state prevents a required
+- `UNPROVED`: a check is incomplete, indirect, or disagrees with the other;
+- `BLOCKED`: access, authority, rights, or platform state prevents a required
   check.
 
 If either check is not `PROVED`, keep publication unapproved, use the halt

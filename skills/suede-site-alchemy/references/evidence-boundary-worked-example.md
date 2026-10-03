@@ -23,7 +23,7 @@ an attributable source, metric definition, date, and permission.
 ## After
 
 ```text
-[DRAFT — VERIFY PRODUCT BEHAVIOR]
+[DRAFT: VERIFY PRODUCT BEHAVIOR]
 Hero headline: "Match card and bank transactions in one review queue."
 Hero subhead: "[Describe only the integrations and automation visible in the
 current product and approved source.]"

@@ -1,4 +1,4 @@
-# Customer Research — Source Guides
+# Customer Research: Source Guides
 
 Detailed, source-by-source playbooks for gathering customer intelligence from online watering holes.
 
@@ -59,13 +59,13 @@ site:reddit.com "[competitor name]" "vs" OR "alternative" OR "switched"
 - The exact problem described in the post
 - Top-voted solutions (what do practitioners actually recommend?)
 - Complaints about existing solutions in comments
-- The language used — note specific words and phrases
-- Upvote patterns — consensus vs. controversy
+- The language used: note specific words and phrases
+- Upvote patterns: consensus vs. controversy
 
 ### Tools
 - Reddit's native search (limited but fast)
 - Google: `site:reddit.com [query]` (better results)
-- Pullpush.io — search archived Reddit posts (good for older threads)
+- Pullpush.io: search archived Reddit posts (good for older threads)
 
 ---
 
@@ -75,10 +75,10 @@ site:reddit.com "[competitor name]" "vs" OR "alternative" OR "switched"
 
 Read in this order for maximum signal:
 
-1. **3-star reviews** — these are the most honest. Customer liked it enough to stay but felt something was missing.
-2. **1-star reviews** — understand the failure modes. Separate product issues from support/onboarding issues.
-3. **5-star reviews** — extract the "what they love" language. These are your proof points.
-4. **4-star reviews** — often contain "the only thing I wish…" buried in praise.
+1. **3-star reviews**: these are the most honest. Customer liked it enough to stay but felt something was missing.
+2. **1-star reviews**: understand the failure modes. Separate product issues from support/onboarding issues.
+3. **5-star reviews**: extract the "what they love" language. These are your proof points.
+4. **4-star reviews**: often contain "the only thing I wish…" buried in praise.
 
 **What to extract:**
 - What they say they use it *for* (the job to be done)
@@ -88,7 +88,7 @@ Read in this order for maximum signal:
 
 ### Competitor Reviews on G2
 
-The 4-star competitor reviews are gold — customers who like the product but still have complaints.
+The 4-star competitor reviews are gold: customers who like the product but still have complaints.
 
 **G2 structure to exploit:**
 - "What do you like best?" → their strengths (your battlecard intel)
@@ -140,7 +140,7 @@ Strong signal for technical/developer ICP. Skews toward builders and skeptics.
 **High-value searches:**
 - `site:news.ycombinator.com "[competitor or category]"`
 - HN "Ask HN: best tools for X" threads
-- "Show HN" posts for competitors — read the skeptical comments
+- "Show HN" posts for competitors: read the skeptical comments
 
 **What's different about HN:**
 - Users are more likely to critique underlying architecture and business model
@@ -211,7 +211,7 @@ A job posting is a company's admission of a pain point.
 
 Google: `"[competitor 1] vs [competitor 2]"` or `"best [category] software [year]"`
 
-Read the comments on these posts — people who find comparison content are actively evaluating. Their comments are questions your sales process should answer.
+Read the comments on these posts: people who find comparison content are actively evaluating. Their comments are questions your sales process should answer.
 
 ### Niche Communities
 
@@ -224,22 +224,22 @@ Read the comments on these posts — people who find comparison content are acti
 
 ## B2C and Consumer App Research
 
-B2C research requires different sources than B2B SaaS. Consumer buyers don't congregate on LinkedIn or G2 — they leave traces in app stores, social media, and communities built around the activity your product serves.
+B2C research requires different sources than B2B SaaS. Consumer buyers don't congregate on LinkedIn or G2: they leave traces in app stores, social media, and communities built around the activity your product serves.
 
 ### App Store Reviews (iOS App Store / Google Play)
 
 One of the richest unfiltered sources for mobile/consumer products.
 
 **Read in this order:**
-1. **1-2 star reviews** — failure modes, unmet expectations, frustration peaks
-2. **3-star reviews** — honest tradeoffs and "it's good but…" feedback
-3. **5-star reviews** — what they love in their own words (proof points and positioning)
+1. **1-2 star reviews**: failure modes, unmet expectations, frustration peaks
+2. **3-star reviews**: honest tradeoffs and "it's good but…" feedback
+3. **5-star reviews**: what they love in their own words (proof points and positioning)
 
 **What to extract:**
 - What job they hired the app to do ("I use this to…")
 - The moment it stopped working for them
 - What they compared it to or switched from
-- Emotional language — "I love how…", "I'm so frustrated that…"
+- Emotional language: "I love how…", "I'm so frustrated that…"
 
 **Search tip:** Sort by "Most Recent" to get fresh signal, then "Most Critical" for pain themes.
 
@@ -251,7 +251,7 @@ Same priority order as app stores: 3-star reviews first.
 
 ### Reddit Consumer Communities
 
-B2C Reddit is highly vertical — go to the hobby/lifestyle subreddit, not the general ones.
+B2C Reddit is highly vertical: go to the hobby/lifestyle subreddit, not the general ones.
 
 **Examples by product type:**
 - Fitness apps: r/running, r/loseit, r/fitness, r/MyFitnessPal
@@ -268,7 +268,7 @@ High-signal for consumer products with visual/lifestyle appeal.
 
 **How to find signal:**
 - Search TikTok for "[product name] review" or "is [product] worth it"
-- Watch the top 5-10 videos; read ALL comments — not just likes
+- Watch the top 5-10 videos; read ALL comments, not just likes
 - On Instagram, check tagged posts from real users (not brand posts)
 
 **What to extract:**
@@ -285,7 +285,7 @@ Same approach as B2B but different video types:
 - "Best [category] apps [year]" comparison videos
 - Unboxing or "setup" videos for hardware/physical products
 
-Comments on review videos are especially valuable — these are people actively in the consideration phase.
+Comments on review videos are especially valuable: these are people actively in the consideration phase.
 
 ### Consumer Community Platforms
 
@@ -298,26 +298,26 @@ Comments on review videos are especially valuable — these are people actively 
 
 ## SparkToro (Audience Intelligence)
 
-SparkToro is a behavioral audience research tool. Instead of mining individual posts and comments, it aggregates clickstream, search, and social data to show what your audience does at scale — what they read, watch, listen to, follow, and search for.
+SparkToro is a behavioral audience research tool. Instead of mining individual posts and comments, it aggregates clickstream, search, and social data to show what your audience does at scale: what they read, watch, listen to, follow, and search for.
 
 ### When to Use SparkToro vs. Manual Research
 
-- **SparkToro first** when you need to understand where your ICP spends time, what content they consume, and which influencers they follow — it answers these questions in seconds with aggregated data
+- **SparkToro first** when you need to understand where your ICP spends time, what content they consume, and which influencers they follow: it answers these questions in seconds with aggregated data
 - **Manual research first** (Reddit, G2, communities) when you need raw language, exact quotes, emotional context, and the "why" behind behavior
 - **Best together**: Use SparkToro to identify which podcasts, subreddits, and websites matter, then go mine those sources manually for voice-of-customer language
 
 ### Key Queries to Run
 
 **By competitor:**
-- "People who follow @competitor" — reveals shared audience affinities
-- "People who visit competitor.com" — shows what else they consume
+- "People who follow @competitor": reveals shared audience affinities
+- "People who visit competitor.com": shows what else they consume
 
 **By audience description:**
-- "People who frequently talk about [topic]" — finds audience behaviors
-- "People whose bio contains [job title]" — profiles a role-based segment
+- "People who frequently talk about [topic]": finds audience behaviors
+- "People whose bio contains [job title]": profiles a role-based segment
 
 **By your own audience:**
-- "People who visit yourdomain.com" — understand your actual audience
+- "People who visit yourdomain.com": understand your actual audience
 - Compare against competitor audience profiles to find gaps
 
 ### What to Extract
@@ -335,7 +335,7 @@ SparkToro is a behavioral audience research tool. Instead of mining individual p
 
 ### Source Weighting
 
-SparkToro data is aggregated and anonymized — it shows patterns, not individual opinions. Treat it as:
+SparkToro data is aggregated and anonymized: it shows patterns, not individual opinions. Treat it as:
 - **High confidence** for behavioral data (what they visit, follow, search for)
 - **Medium confidence** for demographic data (self-reported, may be incomplete)
 - **Not a substitute** for qualitative research (doesn't capture language, emotions, or the "why")
@@ -343,9 +343,9 @@ SparkToro data is aggregated and anonymized — it shows patterns, not individua
 ### Limitations
 
 - Free tier: 5 reports/month, shallow results (top 5–10)
-- No public API — all research done through web interface
+- No public API: all research done through web interface
 - Skews English-language, US-centric
-- Shows what audiences do, not why — pair with qualitative sources
+- Shows what audiences do, not why: pair with qualitative sources
 
 This pack does not include a SparkToro integration guide. Verify current
 capabilities, limits, and pricing in SparkToro's official product documentation
@@ -369,7 +369,7 @@ Use a simple tagging system across all sources:
 
 Keep a running doc with columns: Source | Date | Quote | Tags | Notes
 
-After 20-30 entries, patterns will emerge. Look for quotes that appear in multiple unrelated sources — those are your highest-confidence insights.
+After 20-30 entries, patterns will emerge. Look for quotes that appear in multiple unrelated sources: those are your highest-confidence insights.
 
 ---
 
@@ -398,13 +398,13 @@ Not all sources carry equal weight. Use this guide when assigning confidence lab
 When presenting insights, lead with confidence:
 
 ```
-[HIGH CONFIDENCE] Customers feel overwhelmed by manual reporting — appears in 12 of 20 interviews,
+[HIGH CONFIDENCE] Customers feel overwhelmed by manual reporting: appears in 12 of 20 interviews,
 4 Reddit threads, and is the #1 complaint in 3-star G2 reviews. Consistent across SMB and mid-market.
 
-[MEDIUM CONFIDENCE] Customers compare us to spreadsheets more than to direct competitors —
+[MEDIUM CONFIDENCE] Customers compare us to spreadsheets more than to direct competitors:
 mentioned in 6 interviews and 3 Reddit threads, but not yet seen in review data.
 
-[LOW CONFIDENCE] Enterprise buyers may have procurement concerns — mentioned by 2 interviewees
+[LOW CONFIDENCE] Enterprise buyers may have procurement concerns: mentioned by 2 interviewees
 from companies 500+. Needs more signal before acting on it.
 ```
 

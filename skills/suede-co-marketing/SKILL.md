@@ -51,7 +51,7 @@ scored `?` and named as an open question, never guessed.
 
 **Pursue/drop rule:** pursue only partners scoring **4+ on both Audience fit and
 Reciprocity potential**. Anything below is reported as scored-and-dropped with
-the failing criterion named — it is not silently omitted.
+the failing criterion named: it is not silently omitted.
 
 **Shortlist cap: 5.** At the cap, rank the five and report; do not expand the
 list. Additional candidates go in a named "not pursued this round" line.
@@ -86,13 +86,13 @@ list. Additional candidates go in a named "not pursued this round" line.
 
 Four families, with per-format effort, lead sharing, and best-fit in
 [references/campaign-formats.md](references/campaign-formats.md). Open that file
-whenever a campaign format is being chosen — the campaign plan must name its
+whenever a campaign format is being chosen: the campaign plan must name its
 format from it.
 
-- **Content partnerships** — when both sides can produce and both audiences read.
-- **Webinars & events** — when the goal is gated lead generation or education.
-- **Product & integration marketing** — when a live integration or shared customer exists.
-- **Community & social** — when the goal is exposure or list growth, not pipeline.
+- **Content partnerships**: when both sides can produce and both audiences read.
+- **Webinars & events**: when the goal is gated lead generation or education.
+- **Product & integration marketing**: when a live integration or shared customer exists.
+- **Community & social**: when the goal is exposure or list growth, not pipeline.
 
 ---
 
@@ -125,8 +125,8 @@ campaign actually depends on.
 ### Outreach gate (draft-only, hard stop)
 
 Outreach drafts are produced; outreach is never sent. At the handover: stop, name
-the four variables in one line each — recipient, channel, visible sending
-identity, exact message — state that the outcome is a draft and nothing has been
+the four variables in one line each: recipient, channel, visible sending
+identity, exact message, state that the outcome is a draft and nothing has been
 sent, offer **approve / revise / drop**, and wait for the user's pick. The same
 gate covers sharing any customer or overlap data with the partner.
 
@@ -139,7 +139,7 @@ Hey [Name],
 
 I'm [Role] at [Your Company]. We [one-line description].
 
-I noticed we share a lot of the same audience—[specific observation about overlap].
+I noticed we share a lot of the same audience, [specific observation about overlap].
 
 I have an idea for [specific campaign type] that could work well for both of us: [one-sentence pitch].
 
@@ -163,7 +163,7 @@ Would you be open to a quick call to explore?
 ### Key Questions to Align On
 
 - **Lead ownership**: gated/split (one shared form, agreed split, written data
-  and consent terms) or each-keeps-own (no shared list — the default until data
+  and consent terms) or each-keeps-own (no shared list: the default until data
   terms are agreed). The format chosen from `references/campaign-formats.md`
   names which arrangement it assumes.
 - **Promotion commitments**: What will each party do to promote?
@@ -227,7 +227,7 @@ benchmark. Report only metrics both sides agreed to share.
 ## Output Format
 
 This skill returns one of two deliverables. Copy the matching skeleton verbatim
-from [references/output-templates.md](references/output-templates.md) — open that
+from [references/output-templates.md](references/output-templates.md), open that
 file before writing either one.
 
 **Scored partner shortlist** must contain:
@@ -243,7 +243,7 @@ file before writing either one.
 1. Campaign format (named from the formats reference), goal, and its one proving metric
 2. Value exchange on both sides
 3. Responsibilities and timeline with an owner and approver per phase
-4. Lead handling — gated/split or each-keeps-own, with the capture path
+4. Lead handling: gated/split or each-keeps-own, with the capture path
 5. Promotion commitments, branding approvals, and maximum approved cost
 6. Measurement plan with agreed shared metrics and a debrief date
 7. An approval-status line stating nothing has been sent, published, or committed

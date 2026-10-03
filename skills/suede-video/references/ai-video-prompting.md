@@ -48,7 +48,7 @@ clean corporate style, even lighting, 1080p
 
 ## Camera Movement Vocabulary
 
-Use these terms — video models understand them:
+Use these terms: video models understand them:
 
 | Term | Effect |
 |------|--------|
@@ -61,7 +61,7 @@ Use these terms — video models understand them:
 | **Crane/aerial** | Camera rises or descends |
 | **Handheld** | Subtle shake, documentary feel |
 | **Zoom** | Lens zoom (different from dolly) |
-| **Slow push** | Gradual dolly in — builds tension/focus |
+| **Slow push** | Gradual dolly in: builds tension/focus |
 
 ---
 
@@ -128,11 +128,11 @@ and a manual test matrix. Do not claim that generation occurred.
 
 ## Prompting Workflow
 
-1. **Reference first** — find a real video that looks like what you want
-2. **Describe it** — break down: subject, action, camera, style, mood
-3. **Generate a bounded comparison set** — same concept, one controlled variable
-4. **Iterate on the selected result** — refine from recorded evidence
-5. **Composite** — combine AI footage with programmatic text/overlays
+1. **Reference first**: find a real video that looks like what you want
+2. **Describe it**: break down: subject, action, camera, style, mood
+3. **Generate a bounded comparison set**: same concept, one controlled variable
+4. **Iterate on the selected result**: refine from recorded evidence
+5. **Composite**: combine AI footage with programmatic text/overlays
 
 ---
 

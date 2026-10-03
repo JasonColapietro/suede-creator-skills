@@ -37,15 +37,15 @@ references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
       JavaScript, verify the rendered result with an appropriate browser and,
       when available, Google URL Inspection rather than failing it merely for
       using JavaScript.
-- [ ] Core Web Vitals measurement protocol (see below — never enters the A-F
+- [ ] Core Web Vitals measurement protocol (see below: never enters the A-F
       grade)
 
-### Core Web Vitals (measure when possible — never part of the A-F grade)
+### Core Web Vitals (measure when possible: never part of the A-F grade)
 
 Measurement protocol:
 
 - [ ] Run `curl -o /dev/null -s -w "%{time_total}" <URL>` as a proxy for server
-      response time. curl measures server response, not browser rendering — on
+      response time. curl measures server response, not browser rendering: on
       its own it is never a CWV score.
 - [ ] If PageSpeed Insights is accessible at pagespeed.web.dev, fetch it.
       Report LCP, CLS, INP against these thresholds:
@@ -160,7 +160,7 @@ Chunking check output format:
 ```
 Largest block: [N] words under "[heading]" | limit ~375 | [within/over]
 Blocks over limit: [count] of [total headings]
-Accordion/FAQ items marked up as headings: [yes/no — N items]
+Accordion/FAQ items marked up as headings: [yes/no: N items]
 ```
 
 **Heading self-sufficiency**
@@ -169,13 +169,13 @@ Accordion/FAQ items marked up as headings: [yes/no — N items]
       its own immediate heading. This is NOT the hierarchy check above: a page
       can nest H1 > H2 > H3 perfectly and still have an H3 that identifies
       nothing once detached.
-- [ ] No heading is a bare stock phrase — How it works, Pricing, Features,
+- [ ] No heading is a bare stock phrase: How it works, Pricing, Features,
       Overview, Benefits, FAQ, Get started, Why us, Our process. An H3 reading
       "Pricing" is meaningless away from the H2 that named the subject;
       "How Suede Scan pricing works" survives alone.
 - [ ] Single-word headings get the hardest look, since they carry a subject only
       by accident. A heading already holding a proper noun, an acronym, or the
-      page's primary subject passes — do not rewrite it.
+      page's primary subject passes: do not rewrite it.
 - [ ] Record each finding with its parent heading, so the fix (folding the
       parent's subject into the child) is visible without opening the page.
 - [ ] Warn, never fail, and never drop a grade on this alone. It is a heuristic
@@ -197,7 +197,7 @@ Sub-headings not naming their own subject: [count] of [total]
       elements with a consistent child count, holding short cell-sized text.
       Confirm the content is genuinely tabular by eye before reporting it.
 - [ ] Class names are the weakest signal and prove nothing alone. `flex-row`,
-      `grid-rows-*`, `flex-col` and `grow-0` are layout utilities — measured
+      `grid-rows-*`, `flex-col` and `grow-0` are layout utilities, measured
       against live homepages on 2026-08-22, a substring match on grid|row|col
       fired on four of five.
 - [ ] Report as an informational observation, never as a scored failure. CSS
@@ -288,7 +288,7 @@ Natural-language check: [clear | repetitive | stuffed] | evidence: [quoted text]
 
 Contrast check output format:
 ```
-Alternatives in scope: [named list | none — reason]
+Alternatives in scope: [named list | none: reason]
 Contrast statement: [quoted sentence | absent] | location: [section or selector]
 Comparison promised by title/H1/URL: [quoted phrase | none] | delivered: [yes/no]
 Segment or constraint framing: [quoted | not applicable]
@@ -363,7 +363,7 @@ Segment or constraint framing: [quoted | not applicable]
 - [ ] Brand vocabulary matches the actual product (no generic AI-music-app
       language when the product does rights infrastructure)
 
-**Filler removal**: the test — if a sentence can be deleted without the reader
+**Filler removal**: the test: if a sentence can be deleted without the reader
 losing information, delete it. Apply to transitions, throat-clearing, hedging,
 adverb softeners, and exclamation marks.
 
@@ -434,9 +434,9 @@ When a cluster strategy is warranted, ask:
 Output a simple map:
 
 ```
-Pillar: [page] — [target keyword]
-  Cluster: [page] — [sub-topic keyword]
-  Cluster: [page] — [sub-topic keyword]
+Pillar: [page]: [target keyword]
+  Cluster: [page]: [sub-topic keyword]
+  Cluster: [page]: [sub-topic keyword]
 Orphan pages: [list or "none found"]
 Cannibalization risks: [list or "none found"]
 ```

@@ -1,4 +1,4 @@
-# Media Outlets — Where to Pitch
+# Media Outlets: Where to Pitch
 
 A starting discovery list for software/SaaS PR, not a current media database.
 Verify every outlet, byline, role, contact preference, and submission path from a
@@ -8,10 +8,10 @@ current first-party source before drafting. For startup/SaaS/AI directories, use
 ## How to use this list
 
 - **Don't pitch a publication. Pitch a journalist at that publication.** See [journalist-pitching.md](journalist-pitching.md) for the discovery workflow.
-- **Tier signals quality, not effort** — a small tier-3 outlet might be perfect for your niche
-- **Submission/tip URLs may be stale** — use the route the current outlet or
+- **Tier signals quality, not effort**: a small tier-3 outlet might be perfect for your niche
+- **Submission/tip URLs may be stale**: use the route the current outlet or
   journalist explicitly requests
-- **This list ages fast** — verify the outlet still exists and the journalist is still there before pitching
+- **This list ages fast**: verify the outlet still exists and the journalist is still there before pitching
 
 ---
 
@@ -51,7 +51,7 @@ Lower-profile than the consumer tech outlets but often higher ROI for B2B SaaS.
 
 ## AI / ML Press (Tier 1–2)
 
-The hottest beat right now. Reporters here are inundated — your angle has to be sharp.
+The hottest beat right now. Reporters here are inundated: your angle has to be sharp.
 
 | Outlet | Best for | Notes |
 |--------|----------|-------|
@@ -97,7 +97,7 @@ For pitching the business / marketing angle of your story.
 
 ## Newsletters (Reporter-Driven)
 
-Newsletters are increasingly the most valuable PR placement — small audiences, but high-intent.
+Newsletters are increasingly the most valuable PR placement: small audiences, but high-intent.
 
 | Newsletter | Audience | How to pitch |
 |-----------|---------|--------------|
@@ -127,15 +127,15 @@ Newsletters are increasingly the most valuable PR placement — small audiences,
 
 ## Podcasts
 
-A podcast appearance is often higher leverage than a press hit — longer engagement, evergreen replay, audience trust transfer.
+A podcast appearance is often higher leverage than a press hit: longer engagement, evergreen replay, audience trust transfer.
 
 ### Top SaaS / startup podcasts
-- **Lenny's Podcast** — product/growth
-- **My First Million** — founder stories, business ideas
-- **The Twenty Minute VC** — funding angle
-- **SaaStr Podcast** — B2B SaaS
-- **Acquired** — deep-dive company stories (don't pitch unless you're a unicorn)
-- **The All-In Podcast** — broad tech/business (very hard to get on)
+- **Lenny's Podcast**: product/growth
+- **My First Million**: founder stories, business ideas
+- **The Twenty Minute VC**: funding angle
+- **SaaStr Podcast**: B2B SaaS
+- **Acquired**: deep-dive company stories (don't pitch unless you're a unicorn)
+- **The All-In Podcast**: broad tech/business (very hard to get on)
 
 ### Top AI podcasts
 - **No Priors** (Sarah Guo, Elad Gil)
@@ -151,17 +151,17 @@ A podcast appearance is often higher leverage than a press hit — longer engage
 
 ### How to pitch a podcast
 
-1. **Listen to 3 episodes** — non-negotiable
+1. **Listen to 3 episodes**: non-negotiable
 2. **Find the host's preferred channel** (X DM, email, guest form)
-3. **Pitch a topic, not yourself** — "I'd love to come on and talk about [specific angle]" not "I'd love to be a guest"
-4. **Bring evidence** — links to other appearances, your unique angle, what listeners will learn
-5. **Make it easy** — bio, headshot, suggested questions in the pitch
+3. **Pitch a topic, not yourself**: "I'd love to come on and talk about [specific angle]" not "I'd love to be a guest"
+4. **Bring evidence**: links to other appearances, your unique angle, what listeners will learn
+5. **Make it easy**: bio, headshot, suggested questions in the pitch
 
 ---
 
 ## Industry / Vertical Press
 
-Don't overlook trade press — smaller audience, much higher intent.
+Don't overlook trade press: smaller audience, much higher intent.
 
 | Vertical | Outlets to investigate |
 |----------|----------------------|
@@ -184,19 +184,19 @@ For your specific vertical: Google `"top publications" + "[your industry]"` and 
 
 If your company has a regional angle (HQ location, customer concentration, government contract), local press is underrated.
 
-- **Local business journals** — Bizjournals network covers 40+ US cities
-- **Local NPR affiliates** — high-quality, business angle welcomed
-- **Local TV business segments** — high reach, easy to get
-- **State / regional tech news** — e.g., Built In (Chicago, Austin, etc.), TechBuzz (Utah)
+- **Local business journals**: Bizjournals network covers 40+ US cities
+- **Local NPR affiliates**: high-quality, business angle welcomed
+- **Local TV business segments**: high reach, easy to get
+- **State / regional tech news**: e.g., Built In (Chicago, Austin, etc.), TechBuzz (Utah)
 
 ---
 
 ## What's NOT On This List (And Why)
 
-- **Product Hunt, BetaList, Indie Hackers** — these are directories, not press. Use the suede-directory-submissions skill.
-- **Press release wires** (PRNewswire, BusinessWire, GlobeNewswire) — overpriced for early-stage; journalists ignore them. Skip until you have IR / SEC requirements.
-- **"As featured in" badge mills** — paid "media coverage" services. Worthless and damaging.
-- **Random "guest post" SEO link networks** — Google penalizes these. Don't.
+- **Product Hunt, BetaList, Indie Hackers**: these are directories, not press. Use the suede-directory-submissions skill.
+- **Press release wires** (PRNewswire, BusinessWire, GlobeNewswire): overpriced for early-stage; journalists ignore them. Skip until you have IR / SEC requirements.
+- **"As featured in" badge mills**: paid "media coverage" services. Worthless and damaging.
+- **Random "guest post" SEO link networks**: Google penalizes these. Don't.
 
 ---
 

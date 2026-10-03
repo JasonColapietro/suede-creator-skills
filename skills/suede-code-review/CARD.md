@@ -45,9 +45,9 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 From "Boundaries":
 
 - Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files; apply fixes only on `--fix` or an explicit instruction.
-- Never introduce a tool the repo does not use, and never report a gate, test, screenshot, or live readback you did not actually run — say so in Verification instead.
+- Never introduce a tool the repo does not use, and never report a gate, test, screenshot, or live readback you did not actually run, say so in Verification instead.
 - No rule from silence: a style choice not governed by a project rule, a formatter, or a real cost is not a finding.
-- Emit findings and a ship-gate recommendation only. This skill assigns no letter grade and no lane scores — that is suede-code and suede-code-grader.
+- Emit findings and a ship-gate recommendation only. This skill assigns no letter grade and no lane scores: that is suede-code and suede-code-grader.
 
 ## References
 

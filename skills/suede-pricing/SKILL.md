@@ -55,7 +55,7 @@ perceived value (the ceiling). Cost to serve is a baseline, never the basis.
 
 ### What is a Value Metric?
 
-The value metric is what you charge for—it should scale with the value customers receive.
+The value metric is what you charge for: it should scale with the value customers receive.
 
 **Good value metrics:**
 - Align price with value delivered
@@ -83,7 +83,7 @@ Ask: "As a customer uses more of [metric], do they get more value?"
 ### Defaults to Beat
 
 These are the answers a model reaches for unprompted. Each is allowed, but only
-once you state why it beats the alternative for this product — never by default:
+once you state why it beats the alternative for this product: never by default:
 **$9/$29/$99** (or any flat 3x ladder); **Starter/Pro/Enterprise** names that
 carry no product meaning; **exactly three tiers** when the buyer set is two or
 four; **20% off annual** as the reflex discount; **"Contact us"** on the top
@@ -103,10 +103,10 @@ track value better.
 
 ### Tier Differentiation
 
-- **Feature gating** — Basic vs. advanced features
-- **Usage limits** — Same features, different limits
-- **Support level** — Email → Priority → Dedicated
-- **Access** — API, SSO, custom branding
+- **Feature gating**: Basic vs. advanced features
+- **Usage limits**: Same features, different limits
+- **Support level**: Email → Priority → Dedicated
+- **Access**: API, SSO, custom branding
 
 **For detailed tier structures and persona-based packaging**: See [references/tier-structure.md](references/tier-structure.md)
 
@@ -155,10 +155,10 @@ Identifies which features customers value most:
 
 ### Price Increase Strategies
 
-1. **Grandfather existing** — New price for new customers only
-2. **Delayed increase** — Announce 3-6 months out
-3. **Tied to value** — Raise price but add features
-4. **Plan restructure** — Change plans entirely
+1. **Grandfather existing**: New price for new customers only
+2. **Delayed increase**: Announce 3-6 months out
+3. **Tied to value**: Raise price but add features
+4. **Plan restructure**: Change plans entirely
 
 ---
 
@@ -185,12 +185,12 @@ Identifies which features customers value most:
 
 ## Pricing Page Teardown
 
-When someone wants to audit an existing pricing *page* for **clarity, transparency, and AI-readability** (not the pricing strategy itself, and not conversion-rate optimization — that's `suede-site-alchemy`), run a **teardown** that scores it across two axes and returns prioritized fixes:
+When someone wants to audit an existing pricing *page* for **clarity, transparency, and AI-readability** (not the pricing strategy itself, and not conversion-rate optimization, that's `suede-site-alchemy`), run a **teardown** that scores it across two axes and returns prioritized fixes:
 
-- **Human buyer experience** — value-prop clarity, plan differentiation, cognitive load, trust signals, pricing psychology, and price transparency.
-- **AI-agent readiness** — whether the LLMs and agents that increasingly shortlist and compare tools can actually read and quote your pricing: machine-readable prices (not locked in an image or behind "Contact us"), extractable FAQ/objection coverage, per-tier depth stated in text, and structured data. Buyers now ask ChatGPT/Perplexity/Claude "what's the best X and what does it cost?" *before* visiting — a pricing page an agent can't parse loses deals you never see.
+- **Human buyer experience**: value-prop clarity, plan differentiation, cognitive load, trust signals, pricing psychology, and price transparency.
+- **AI-agent readiness**, whether the LLMs and agents that increasingly shortlist and compare tools can actually read and quote your pricing: machine-readable prices (not locked in an image or behind "Contact us"), extractable FAQ/objection coverage, per-tier depth stated in text, and structured data. Buyers now ask ChatGPT/Perplexity/Claude "what's the best X and what does it cost?" *before* visiting, a pricing page an agent can't parse loses deals you never see.
 
-**Fast check — the "paste test":** give the pricing URL to a browsing-capable AI (Perplexity, ChatGPT with search, Claude with web) — or paste the rendered page text — and ask "what are the plans and prices?" A clean miss means agents fetching your page will struggle too (a heuristic, not proof every agent fails).
+**Fast check, the "paste test":** give the pricing URL to a browsing-capable AI (Perplexity, ChatGPT with search, Claude with web), or paste the rendered page text, and ask "what are the plans and prices?" A clean miss means agents fetching your page will struggle too (a heuristic, not proof every agent fails).
 
 The AI-readiness fixes are usually high-impact, low-effort (put prices in text, add `Offer` schema). Hand implementation to **suede-seo-audit** (Product/Offer JSON-LD and supported-schema checks) and **suede-ai-seo** (extractability, AI-bot access, `llms.txt`).
 
@@ -201,11 +201,11 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 ## Output: Pricing Decision Brief
 
 Every pricing or packaging engagement that is not a teardown returns this exact
-structure. Use these headings verbatim; leave a heading in with "not decided —
+structure. Use these headings verbatim; leave a heading in with "not decided,
 [what's missing]" rather than dropping it.
 
 ```markdown
-# Pricing Decision Brief — [product]
+# Pricing Decision Brief: [product]
 
 ## Value metric
 [What you charge for, and the one sentence proving usage of it tracks value.]

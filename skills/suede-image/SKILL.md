@@ -130,10 +130,10 @@ clean commercial photography style, 16:9 aspect ratio, 4K
 ```
 
 **Common mistakes:**
-- Too vague ("a business image") — add specific details
-- Forgetting aspect ratio — always specify dimensions
-- Requesting complex text — use overlays instead for anything beyond short headlines
-- No style direction — "photorealistic," "flat illustration," "3D render"
+- Too vague ("a business image"): add specific details
+- Forgetting aspect ratio: always specify dimensions
+- Requesting complex text: use overlays instead for anything beyond short headlines
+- No style direction: "photorealistic," "flat illustration," "3D render"
 
 For detailed prompting guides per model, see [references/ai-image-prompting.md](references/ai-image-prompting.md).
 
@@ -176,8 +176,8 @@ because a connector exists.
 
 The image at the top of every post. Sets tone, improves shareability, required for OG/social previews.
 
-1. **Define the concept** — what visual metaphor represents the topic?
-2. **Choose the verified method** — callable generator, approved media, or a
+1. **Define the concept**: what visual metaphor represents the topic?
+2. **Choose the verified method**: callable generator, approved media, or a
    deterministic local/design template
 3. **Confirm dimensions** from the actual site component and current social
    preview requirements
@@ -214,12 +214,12 @@ file limits, and format rules.
 
 ### Product Mockups & Screenshots
 
-Showcase your product UI in context. AI models hallucinate UI — don't use them for this.
+Showcase your product UI in context. AI models hallucinate UI: don't use them for this.
 
 1. **Capture real screenshots** of your product at 2x resolution
-2. **Frame in device mockups** — use browser frame, laptop, or phone templates
-3. **Add context** — callout arrows, verified feature labels, before/after comparisons
-4. **Annotate deterministically** — use a callable local layout workflow or an
+2. **Frame in device mockups**: use browser frame, laptop, or phone templates
+3. **Add context**: callout arrows, verified feature labels, before/after comparisons
+4. **Annotate deterministically**: use a callable local layout workflow or an
    authorized design tool
 
 Possible capture surfaces include browser tooling or an installed OS capture
@@ -245,19 +245,19 @@ cropping behavior, safe zones, file limits, and format rules before production.
 | Google Play feature graphic | 1024x500 | ~2:1, required for store listing |
 
 **Best practices:**
-- **Keep text minimal** — banners are seen at small sizes on mobile
-- **Center critical content** — edges get cropped differently per device
-- **Show the product truthfully** — use real UI screenshots when the listing is
+- **Keep text minimal**: banners are seen at small sizes on mobile
+- **Center critical content**: edges get cropped differently per device
+- **Show the product truthfully**: use real UI screenshots when the listing is
   meant to demonstrate the interface
-- **Match your brand** — use consistent colors, fonts, logo placement
-- **Update deliberately** — refresh when the product, campaign, or positioning changes
+- **Match your brand**: use consistent colors, fonts, logo placement
+- **Update deliberately**: refresh when the product, campaign, or positioning changes
 
 **Workflow:**
 1. Pick the platform(s) and note exact dimensions
 2. For directories (Product Hunt, G2): use real product screenshots with light annotation
 3. For profiles (LinkedIn, Twitter): use brand colors + tagline + optional product shot
 4. Produce with a verified callable template workflow; add text deterministically
-5. Test at actual display size — zoom out to check readability
+5. Test at actual display size: zoom out to check readability
 
 ### Brand Assets
 
@@ -265,7 +265,7 @@ Logos, icons, and illustrations. AI generation has limits here.
 
 | Asset | AI Generation | Design Tool | Notes |
 |-------|:-:|:-:|-------|
-| Logo | Poor — inconsistent, not vector | Yes | Always design or commission logos |
+| Logo | Poor: inconsistent, not vector | Yes | Always design or commission logos |
 | App icon | Concept exploration only | Yes | Refine manually and verify store rules |
 | Illustrations | Good for style exploration | Depends | AI for concepts, finalize in design tool |
 | Favicons | No | Yes | Derive from logo |
@@ -291,12 +291,12 @@ before attributing search or conversion results to image changes.
 ### Optimization Checklist
 
 - [ ] **Use a supported delivery format** and fallback strategy for the target browser matrix
-- [ ] **Resize to display size** — don't serve 4000px images in 800px containers
-- [ ] **Compress** — choose quality from visual review and the page's measured byte budget
+- [ ] **Resize to display size**: don't serve 4000px images in 800px containers
+- [ ] **Compress**: choose quality from visual review and the page's measured byte budget
 - [ ] **Lazy load** below-the-fold images (`loading="lazy"`)
-- [ ] **Set explicit dimensions** — `width` and `height` attributes prevent layout shift (CLS)
+- [ ] **Set explicit dimensions**: `width` and `height` attributes prevent layout shift (CLS)
 - [ ] **Use verified CDN optimization** when the current stack supports it
-- [ ] **Add alt text** — descriptive, keyword-relevant, not stuffed
+- [ ] **Add alt text**: descriptive, keyword-relevant, not stuffed
 
 ### Quick Optimization Commands
 
@@ -354,9 +354,9 @@ preview correctness and production time; do not promise a search outcome.
 
 ## Common Mistakes
 
-1. **Skipping image optimization** — oversized images can materially hurt page performance
-2. **No preview image** — platforms may fall back to a less useful preview
-3. **Inconsistent brand visuals** — use locked, approved templates for consistency
+1. **Skipping image optimization**: oversized images can materially hurt page performance
+2. **No preview image**: platforms may fall back to a less useful preview
+3. **Inconsistent brand visuals**: use locked, approved templates for consistency
 
 ---
 
@@ -366,7 +366,7 @@ Use this exact format when a callable tool, cost approval, rights confirmation,
 or the approved brand asset blocks the requested result:
 
 ```text
-HALT — <one-line blocker>
+HALT: <one-line blocker>
 Why it blocks: <specific missing authority or evidence>
 Resolve with:
 1. <option>
@@ -394,6 +394,6 @@ and do not imply an image was produced.
 
 - Use `suede-ad-creative` for paid-ad production and `suede-video` for motion.
 - Use `suede-social` for channel strategy and `suede-site-alchemy` for conversion placement.
-- Use `suede-instagram-growth` for Instagram format contracts — Reel covers, carousel slide counts, Story dimensions — before producing those assets here.
+- Use `suede-instagram-growth` for Instagram format contracts (Reel covers, carousel slide counts, Story dimensions) before producing those assets here.
 - Use `suede-seo-audit` for image-search checks and `suede-aso` for app-store screenshots.
 - Use `suede-directory-submissions` for directory gallery planning.

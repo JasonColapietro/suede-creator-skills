@@ -2,7 +2,7 @@
 
 Two synthetic release folders that sanity-check whether `scripts/lint_release.py`
 still categorizes correctly after any change to it. All names, contributors, and
-metadata in both fixtures are fake — no real personal data. This is maintainer
+metadata in both fixtures are fake: no real personal data. This is maintainer
 documentation: an agent linting a real user folder never needs it.
 
 - `sample-clean-project/`: a small release folder (metadata, a WAV master,
@@ -10,7 +10,7 @@ documentation: an agent linting a real user folder never needs it.
   against `references/lint-rules.md`.
 - `sample-blocked-project/`: a release folder deliberately missing title,
   artist, primary media, artwork, ownership confirmation, and valid split
-  totals, with samples indicated but clearance unconfirmed — it triggers real
+  totals, with samples indicated but clearance unconfirmed: it triggers real
   `error`-severity findings.
 - `sample-clean-project.expected.md` / `.expected.json` and
   `sample-blocked-project.expected.md` / `.expected.json`: the actual

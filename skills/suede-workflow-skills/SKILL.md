@@ -5,7 +5,7 @@ description: "Suede AI umbrella router for the public Suede pack: selects the ri
 
 # Suede Workflow Skills
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -20,9 +20,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -42,12 +42,12 @@ This skill is the public entry point for:
   mobile and product surfaces, product screenshots, design-system QA,
   responsive checks, visibility grading, and the writing stack.
 - **Suede Code:** unified code review and A-F grading for correctness,
-  security, data/state, deploy readiness, and ship risk — prompted only, never
+  security, data/state, deploy readiness, and ship risk, prompted only, never
   auto-fires.
 - **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
   retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
 - **Suede CI Gate:** any-repo CI gate that blocks a merge when required
-  checks fail — prompted only, plugs into any CI or workflow system.
+  checks fail, prompted only, plugs into any CI or workflow system.
 - **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
   AI EO, internal links, sitemap fit, and discoverability.
 - **Suede Visibility Grader:** grade public pages, GitHub Pages sites, docs,
@@ -62,7 +62,7 @@ This skill is the public entry point for:
 - **Suede Instagram Growth:** audit an Instagram account from authorized
   evidence, map views to qualified actions, and produce account-specific Reels,
   carousels, Stories, calendars, and approval-ready daily loops.
-- **Suede Campaign in a Box:** package a full artist campaign — rollout phases,
+- **Suede Campaign in a Box:** package a full artist campaign: rollout phases,
   copy, content calendar, fan actions, page sections, and next moves.
 - **Suede Sync Packaging:** prepare clean sync review notes without placement
   promises, clearance claims, outreach claims, or a Suede promo CTA.
@@ -73,7 +73,7 @@ This skill is the public entry point for:
 - **Suede Rights Audit:** identify ownership, contributor, split, sample,
   license, and intake gaps.
 - **Amazon Returns Recovery:** scan Amazon order/return history for restocking
-  fees and short refunds, then drive Amazon live chat to get them waived —
+  fees and short refunds, then drive Amazon live chat to get them waived;
   requires the Claude in Chrome extension logged into the target Amazon
   account.
 
@@ -109,7 +109,7 @@ their names match the task:
 - `subscription-recovery`
 
 Read `references/condensed-workflows.md` in this skill's `references/` folder
-when the individual skills named above are not installed — the Codex path that
+when the individual skills named above are not installed: the Codex path that
 installs `suede-workflow-skills` alone is the common case. It carries a frozen
 fallback version of the Suedify, design, copy/SEO, visibility, site-alchemy,
 code-review, and agent-team workflows. Skip it entirely when the pack is
@@ -134,16 +134,16 @@ copy, design, design-system, visual QA, and continuous team-loop gates.
 Fix-loop cap (applies to every lane, in this skill or any it routes to): if a
 loop churns or repeats the same failure, stop broad work, isolate the failing
 unit, and replay it with explicit acceptance criteria, rerunning only the
-failed check. Budget recovery at up to three genuinely different fixes — each
+failed check. Budget recovery at up to three genuinely different fixes: each
 must change the diagnosis or the strategy, never rerun the last attempt. Stop
 early when the same root cause repeats, surface that cause to the user, and
 let them pick the next move instead of grinding.
 
-Red flags — stop:
+Red flags, stop:
 
-- "I'll summarize the request for the sub-skill." — Pass the original request verbatim; paraphrase loses the trigger.
-- "This crosses three lanes; faster to wing it inline." — Crossing lanes is exactly when this umbrella workflow runs.
-- "The live URL is probably unchanged since last time." — Start from current truth; inspect before claiming.
+- "I'll summarize the request for the sub-skill.": Pass the original request verbatim; paraphrase loses the trigger.
+- "This crosses three lanes; faster to wing it inline.": Crossing lanes is exactly when this umbrella workflow runs.
+- "The live URL is probably unchanged since last time.": Start from current truth; inspect before claiming.
 
 ## Progressive Calibration
 
@@ -217,13 +217,13 @@ Design lane:
 
 Build and quality lane:
 
-- Code review and A-F grade in one pass: `suede-code` — prompted only, never
+- Code review and A-F grade in one pass: `suede-code`: prompted only, never
   auto-fires.
 - Findings-only deep review: `suede-code-review`. Grade-only verdict:
   `suede-code-grader`.
 - AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
   retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
-- CI merge gate: `suede-ci-gate` — prompted only.
+- CI merge gate: `suede-ci-gate`: prompted only.
 - Large, risky, cross-surface, or release-bound coordination:
   `suede-agent-teams`. If it is not installed, use the Agent Team Workflow in
   `references/condensed-workflows.md`.
@@ -237,7 +237,7 @@ Ship lane:
   `suede-graph-flo-xr`. This is the default for nontrivial repo work and outranks the
   copy or design lane when the request also names one.
 - One high-stakes public text surface that strangers will read and that has to
-  be true — landing page, launch post, docs page, README, store listing:
+  be true: landing page, launch post, docs page, README, store listing:
   `suede-ship-copy`.
 
 Launch lane, in pipeline order:
@@ -251,7 +251,7 @@ Launch lane, in pipeline order:
 - Native Android app build, from keyword to Play Store release:
   `android-app-factory`.
 
-Growth and marketing lane — route to the narrowest skill that matches, not to
+Growth and marketing lane: route to the narrowest skill that matches, not to
 the whole group:
 
 - Plan, strategy, and idea generation: `suede-marketing-plan`,
@@ -296,10 +296,10 @@ Creator lane:
 Consumer recovery lane:
 
 - Amazon restocking-fee, short-refund, and Amazon-billed subscription recovery
-  via Amazon live chat: `amazon-returns-recovery` — requires the Claude in
+  via Amazon live chat: `amazon-returns-recovery`; requires the Claude in
   Chrome extension logged into the target Amazon account.
 - Any other recurring subscription (Netflix, Spotify, gyms, App Store, Google
-  Play, PayPal): `subscription-recovery` — hands Amazon-billed subscriptions
+  Play, PayPal): `subscription-recovery`; hands Amazon-billed subscriptions
   back to `amazon-returns-recovery` instead of duplicating that flow.
 
 Precedence when several routers match at once:
@@ -315,7 +315,7 @@ Precedence when several routers match at once:
 
 The pack ships every skill listed below. Install commands for Claude Code (marketplace,
 plugin subsets, `install.sh` clone) and for Codex (umbrella-only or per-skill)
-are in `references/install.md` in this skill's `references/` folder — read it
+are in `references/install.md` in this skill's `references/` folder: read it
 only when the user asks how to install, update, or subset the pack. The Suede
 MCP's `suede_install_options` tool answers the same question live and is the
 better source when it is available.

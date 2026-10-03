@@ -3,12 +3,12 @@
 Worked classifications for the Written Rule Test in Step 3. Read the row whose
 shape matches the work unit, not the row whose industry matches.
 
-- [Automation](#automation) — the rule is complete and inputs are structured
-- [Automation with extraction](#automation-with-extraction) — the rule is complete, inputs are prose
-- [Agent](#agent) — the rule resists writing, competent people agree
-- [Human decides](#human-decides) — competent people disagree
-- [Blast-radius overrides](#blast-radius-overrides) — verdicts the override changes
-- [Misclassifications](#misclassifications) — the four that recur
+- [Automation](#automation): the rule is complete and inputs are structured
+- [Automation with extraction](#automation-with-extraction): the rule is complete, inputs are prose
+- [Agent](#agent): the rule resists writing, competent people agree
+- [Human decides](#human-decides): competent people disagree
+- [Blast-radius overrides](#blast-radius-overrides): verdicts the override changes
+- [Misclassifications](#misclassifications): the four that recur
 
 ## Automation
 

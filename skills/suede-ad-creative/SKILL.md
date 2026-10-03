@@ -61,7 +61,7 @@ Pull performance data → Identify winning patterns → Generate new variations 
 ```
 
 ### Mode 3: Scaled Static Batches (Grounded)
-For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material — see "Grounded Inputs" below. To run this on a daily or weekly cadence, route the production loop to `suede-marketing-loops`. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
+For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the [static ad template library](references/static-ad-templates.md). Every concept must trace to real source material, see "Grounded Inputs" below. To run this on a daily or weekly cadence, route the production loop to `suede-marketing-loops`. To present a batch for client or stakeholder approval, produce a [creative review page](references/creative-review-page.md).
 
 ### Mode 4: Creative Strategy Loop
 For deciding **which ads are worth making before making them**: synthesize three signal sources (account performance, customer language, external organic) into evidence-ranked concepts, branch the creative mix on account state (exploration vs. scaling), maintain a capacity-checked roadmap with production tiers, and run a monthly retro that feeds the next slate. The full system lives in [references/creative-roadmap.md](references/creative-roadmap.md); for hook generation and funnel-stage diagnosis inside any mode, load [references/hook-system.md](references/hook-system.md).
@@ -76,19 +76,19 @@ Most AI ad generation fails on input grounding, not output quality: ungrounded g
 inputs/
   winning-ads/   10-20 screenshots of the highest-performing ads from the last 90 days
   reviews/       50-100 customer reviews (Trustpilot, G2, Amazon, App Store) as .md/.txt
-  comments/      Top comments from existing ad campaigns — objections, unprompted praise, customer-raised angles
+  comments/      Top comments from existing ad campaigns: objections, unprompted praise, customer-raised angles
 brand/           Brand voice doc, hex codes, logo, product/screenshot assets
 outputs/         Dated batch folders (outputs/YYYY-MM-DD/)
 ```
 
 **Why each input matters:**
 - **Winning ads** carry the hooks, structures, and angles already proven for this brand
-- **Reviews** carry the exact language buyers use for pain, transformation, and unexpected benefits — pull copy from them verbatim rather than paraphrasing
+- **Reviews** carry the exact language buyers use for pain, transformation, and unexpected benefits, pull copy from them verbatim rather than paraphrasing
 - **Ad comments** are the most-skipped and highest-value input: objections ("but does it work for X?") become FAQ Card ads, and unprompted praise surfaces angles you didn't write
 
 **Grounding rules:**
 - Every concept cites its source (which review, winning ad, or comment it traces to)
-- No invented claims, stats, or testimonials — ever
+- No invented claims, stats, or testimonials: ever
 - If `inputs/winning-ads/` or `inputs/reviews/` is empty, stop and ask the user to populate it before generating. Do not generate ungrounded concepts as a fallback.
 - Inputs decay: refresh `inputs/winning-ads/` as new ads scale; refresh `inputs/reviews/` and `inputs/comments/` monthly
 
@@ -112,7 +112,7 @@ Platforms reject or truncate creative that exceeds these limits, so verify every
 - Include at least one keyword-focused headline
 - Include at least one benefit-focused headline
 - Include at least one CTA headline
-- The quantities above are Google's ceiling. When the request came through `suede-ads`, its RSA output spec mandates the full 15 headlines and 4 descriptions — ship all of them.
+- The quantities above are Google's ceiling. When the request came through `suede-ads`, its RSA output spec mandates the full 15 headlines and 4 descriptions, ship all of them.
 
 ### Meta Ads (Facebook/Instagram)
 
@@ -152,19 +152,19 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 ## Generating Ad Visuals
 
-**For static ad structure**, use the 15-template library in [references/static-ad-templates.md](references/static-ad-templates.md) — layout frameworks (Us vs. Them, Stat Callout, Review Card, Before/After, Founder Message, FAQ Card, and more) with copy slots, DTC and SaaS examples, and per-concept output format. Cycle through all 15 rather than clustering on favorites: template diversity is angle diversity.
+**For static ad structure**, use the 15-template library in [references/static-ad-templates.md](references/static-ad-templates.md), layout frameworks (Us vs. Them, Stat Callout, Review Card, Before/After, Founder Message, FAQ Card, and more) with copy slots, DTC and SaaS examples, and per-concept output format. Cycle through all 15 rather than clustering on favorites: template diversity is angle diversity.
 
-**When the concept is an iOS-native reveal video** — an iMessage thread, a ChatGPT answer, an Apple Notes confessional, or an AirDrop share, where the screen surface itself is the ad — read [references/imessage-video-ads.md](references/imessage-video-ads.md) before scripting. It carries surface selection, concept angles, pacing rules, production routes, and the compliance rules for dramatized conversations.
+**When the concept is an iOS-native reveal video**, an iMessage thread, a ChatGPT answer, an Apple Notes confessional, or an AirDrop share, where the screen surface itself is the ad, read [references/imessage-video-ads.md](references/imessage-video-ads.md) before scripting. It carries surface selection, concept angles, pacing rules, production routes, and the compliance rules for dramatized conversations.
 
 **When the concept is a faceless motion/explainer video** (15–45s, generated stills → image-to-video motion → TTS → captions), read [references/motion-video-ads.md](references/motion-video-ads.md) before writing prompts. It carries the pipeline, the visual-style library with fill-in prompt formulas, the brand-slots contract, and the QC gotchas.
 
-**When you need to pick an image, video, voice, or code-based generation tool** — or price a batch — read [references/generative-tools.md](references/generative-tools.md). It owns the vendor roster, per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
+**When you need to pick an image, video, voice, or code-based generation tool**, or price a batch, read [references/generative-tools.md](references/generative-tools.md). It owns the vendor roster, per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
 
 **Recommended workflow for scaled production:**
 1. Generate hero creative with AI tools (exploratory, high-quality)
 2. Build Remotion templates based on winning patterns
 3. Batch produce variations with Remotion using data feeds
-4. Iterate — AI for new angles, Remotion for scale
+4. Iterate: AI for new angles, Remotion for scale
 
 ---
 
@@ -172,7 +172,7 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 ### Step 1: Define Your Angles
 
-Before writing individual headlines, establish 3-5 distinct **angles** — different reasons someone would click. Each angle should tap into a different motivation.
+Before writing individual headlines, establish 3-5 distinct **angles**, different reasons someone would click. Each angle should tap into a different motivation.
 
 **Common angle categories:**
 
@@ -190,12 +190,12 @@ Before writing individual headlines, establish 3-5 distinct **angles** — diffe
 ### Step 2: Generate Variations per Angle
 
 For each angle, generate multiple variations. Vary:
-- **Word choice** — synonyms, active vs. passive
-- **Specificity** — numbers vs. general claims
-- **Tone** — direct vs. question vs. command
-- **Structure** — short punch vs. full benefit statement
+- **Word choice**: synonyms, active vs. passive
+- **Specificity**: numbers vs. general claims
+- **Tone**: direct vs. question vs. command
+- **Structure**: short punch vs. full benefit statement
 
-At volume (10+ variations), close with a wild-card pass: 3-5 concepts on angles nobody asked for — contrarian, emotional, uncomfortably specific. These are where the outliers come from, and they cost one extra pass.
+At volume (10+ variations), close with a wild-card pass: 3-5 concepts on angles nobody asked for: contrarian, emotional, uncomfortably specific. These are where the outliers come from, and they cost one extra pass.
 
 ### Step 3: Validate Against Specs
 
@@ -213,21 +213,21 @@ When the user provides performance data, follow this process:
 
 ### Step 1: Analyze Winners
 
-Look at the top-performing creative (by CTR, conversion rate, or ROAS — ask which metric matters most) and identify:
+Look at the top-performing creative (by CTR, conversion rate, or ROAS, ask which metric matters most) and identify:
 
-- **Winning themes** — What topics or pain points appear in top performers?
-- **Winning structures** — Questions? Statements? Commands? Numbers?
-- **Winning word patterns** — Specific words or phrases that recur?
-- **Character utilization** — Are top performers shorter or longer?
+- **Winning themes**: What topics or pain points appear in top performers?
+- **Winning structures**: Questions? Statements? Commands? Numbers?
+- **Winning word patterns**: Specific words or phrases that recur?
+- **Character utilization**: Are top performers shorter or longer?
 
 ### Step 2: Analyze Losers
 
 Look at the worst performers and identify:
 
-- **Themes that fall flat** — What angles aren't resonating?
-- **Common patterns in low performers** — Too generic? Too long? Wrong tone?
+- **Themes that fall flat**: What angles aren't resonating?
+- **Common patterns in low performers**: Too generic? Too long? Wrong tone?
 
-Name the underperformers explicitly and say why the angle failed. Do not open by praising the existing set, and do not soften a losing angle into "needs more testing" when the declared metric has already resolved it at sufficient volume — say it lost, and retire it.
+Name the underperformers explicitly and say why the angle failed. Do not open by praising the existing set, and do not soften a losing angle into "needs more testing" when the declared metric has already resolved it at sufficient volume, say it lost, and retire it.
 
 ### Step 3: Generate New Variations
 
@@ -270,7 +270,7 @@ Track what was learned and what's being tested:
 - All caps or excessive punctuation
 - Clickbait that the landing page can't deliver on
 
-**Never ship these strings.** They are the ad-copy defaults a model produces unprompted, and each is generic across every product in every category — the definition of a wasted slot. The fix is always the same: substitute the specific number, the specific verb, or the specific customer sentence from the grounding inputs. If a headline would be true of a competitor's product too, it is one of these in disguise.
+**Never ship these strings.** They are the ad-copy defaults a model produces unprompted, and each is generic across every product in every category: the definition of a wasted slot. The fix is always the same: substitute the specific number, the specific verb, or the specific customer sentence from the grounding inputs. If a headline would be true of a competitor's product too, it is one of these in disguise.
 
 - "Unlock your potential" / "Unlock the power of..." / "Unleash..." / "Revolutionize your..." / "Transform the way you [work/build/sell]"
 - "Say goodbye to [problem]" / "Tired of [problem]?"
@@ -297,7 +297,7 @@ Descriptions should complement headlines, not repeat them. Use descriptions to:
 Organize by angle, with character counts:
 
 ```
-## Angle: [Pain Point — Manual Reporting]
+## Angle: [Pain Point: Manual Reporting]
 
 ### Headlines (30 char max)
 1. "Stop Building Reports by Hand" (29)
@@ -330,11 +330,11 @@ outputs/YYYY-MM-DD/
   images/         # generated images, if an image tool is configured
 ```
 
-Per-concept format is defined in [references/static-ad-templates.md](references/static-ad-templates.md). The human workflow this supports: open the folder, scan INDEX.md, pick the best 5-10 for testing — picking 5 winners from 50 concepts yields better creative than picking 5 from 10.
+Per-concept format is defined in [references/static-ad-templates.md](references/static-ad-templates.md). The human workflow this supports: open the folder, scan INDEX.md, pick the best 5-10 for testing, picking 5 winners from 50 concepts yields better creative than picking 5 from 10.
 
 ### Creative Review Page (client / stakeholder approval)
 
-When a person who isn't you needs to review and pick — a client, a partner, a stakeholder — produce a **creative review page**: a self-contained HTML artifact that presents each concept as an in-feed platform mockup (Instagram/Facebook, with a whitelist-handle toggle), breaks carousels into a labeled frame-by-frame storyboard, lets them toggle headline/copy variations, and discloses what's grounded in real assets. It's the visual upgrade to INDEX.md — a decision made off one link instead of by reading markdown. The template ships at [assets/creative-review-template.html](assets/creative-review-template.html) (one file, no build, hostable anywhere); populate its `DATA` object from your generated concepts. Full data model, grounding rules (the disclosure block is required), and delivery in [references/creative-review-page.md](references/creative-review-page.md).
+When a person who isn't you needs to review and pick, a client, a partner, a stakeholder, produce a **creative review page**: a self-contained HTML artifact that presents each concept as an in-feed platform mockup (Instagram/Facebook, with a whitelist-handle toggle), breaks carousels into a labeled frame-by-frame storyboard, lets them toggle headline/copy variations, and discloses what's grounded in real assets. It's the visual upgrade to INDEX.md, a decision made off one link instead of by reading markdown. The template ships at [assets/creative-review-template.html](assets/creative-review-template.html) (one file, no build, hostable anywhere); populate its `DATA` object from your generated concepts. Full data model, grounding rules (the disclosure block is required), and delivery in [references/creative-review-page.md](references/creative-review-page.md).
 
 ### Iteration Report
 
@@ -343,8 +343,8 @@ When iterating, include a summary:
 ```
 ## Performance Summary
 - Analyzed: [X] headlines, [Y] descriptions
-- Top performer: "[headline]" — [metric]: [value]
-- Worst performer: "[headline]" — [metric]: [value]
+- Top performer: "[headline]": [metric]: [value]
+- Worst performer: "[headline]": [metric]: [value]
 - Pattern: [observation]
 
 ## New Creative
@@ -361,7 +361,7 @@ When iterating, include a summary:
 Every mode clears this gate before anything is handed over. It is not mode-specific and it is not optional.
 
 - [ ] Every headline and description renders its character count inline
-- [ ] No variant exceeds its platform's limit — anything over is trimmed, with the trimmed version shown
+- [ ] No variant exceeds its platform's limit: anything over is trimmed, with the trimmed version shown
 - [ ] At least 2-3 CTA headlines are present in every RSA
 - [ ] No two variants share an angle; near-duplicates are removed
 - [ ] Every Mode 3 concept cites its grounding source (which review, winning ad, or comment)
@@ -374,12 +374,12 @@ Any failure means fix it before delivering. Do not ship a batch with the failure
 
 ## Common Mistakes
 
-- **Writing headlines that only work together** — RSA headlines get combined randomly
-- **All variations sound the same** — Vary angles, not just word choice
-- **No CTA headlines** — RSAs need action-oriented headlines to drive clicks; include at least 2-3
-- **Generic descriptions** — "Learn more about our solution" wastes the slot
-- **Testing too many things at once** — Change one variable per test cycle
-- **Retiring creative too early** — Allow 1,000+ impressions before judging
+- **Writing headlines that only work together**: RSA headlines get combined randomly
+- **All variations sound the same**: Vary angles, not just word choice
+- **No CTA headlines**: RSAs need action-oriented headlines to drive clicks; include at least 2-3
+- **Generic descriptions**: "Learn more about our solution" wastes the slot
+- **Testing too many things at once**: Change one variable per test cycle
+- **Retiring creative too early**: Allow 1,000+ impressions before judging
 
 ---
 

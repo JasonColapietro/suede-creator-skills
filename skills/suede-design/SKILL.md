@@ -113,14 +113,14 @@ document only the relevant contract items instead of forcing a full spec.
 
 ## Design Laws
 
-The numeric rules — spacing, type scale, color, contrast, density, motion, state —
+The numeric rules (spacing, type scale, color, contrast, density, motion, state)
 are in `references/design-laws.md`. Read it whenever you are writing or reviewing
 actual styles. You do not need it to route a request or scope the work.
 
 ## Component Sources
 
-When a build needs a piece the local system lacks — a base primitive, an
-animated set-piece, or an AI-chat surface — pull it from the vetted registries
+When a build needs a piece the local system lacks, a base primitive, an
+animated set-piece, or an AI-chat surface: pull it from the vetted registries
 in `references/ui-component-sources.md` and run that file's adoption checklist
 (local first, retokenize, motion law, license tier, render proof) before the
 import lands. Read it when importing a component; auditing or restyling
@@ -236,7 +236,7 @@ Bold maximalism and refined minimalism both work. The failure mode is neither: a
 7. **Handoff:** for meaningful work, record target, files changed, commands,
    verification, caveats, and the next step.
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If any of these thoughts appear, stop and run the check you were about to skip:
 

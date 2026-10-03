@@ -44,7 +44,7 @@ Gather this context (ask if not provided):
 
 ## Reference Routing
 
-This skill's depth lives in references — load by intent. For **any operational decision on a live account** (kill/keep/scale/budget), load the relevant playbook before answering; the thresholds live there, not here.
+This skill's depth lives in references: load by intent. For **any operational decision on a live account** (kill/keep/scale/budget), load the relevant playbook before answering; the thresholds live there, not here.
 
 | User intent | Load | Covers |
 |---|---|---|
@@ -53,7 +53,7 @@ This skill's depth lives in references — load by intent. For **any operational
 | LinkedIn operations: bidding, audience sizing, scaling, benchmarks, TLAs, formats | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) | Bidding progression, penetration scaling, sizing rules, funnel benchmarks, document/conversation ads, audit shortlist |
 | Google Search: what to spend on first, structure, match types, negatives, PMax | [google-search-playbook.md](references/google-search-playbook.md) | Intent ladder, account structure, match-type gates, negatives, bidding by volume, offline conversions, PMax guardrails |
 | Named-account targeting, pipeline acceleration, cross-channel retargeting | [abm-playbook.md](references/abm-playbook.md) | LinkedIn/Meta ABM, list mechanics, acceleration campaigns, UTM cross-channel remarketing, ABM measurement |
-| Generating Google RSAs | [rsa-output-spec.md](references/rsa-output-spec.md) | Mandatory output spec — limits, sidecars, template, self-check |
+| Generating Google RSAs | [rsa-output-spec.md](references/rsa-output-spec.md) | Mandatory output spec: limits, sidecars, template, self-check |
 | Audience setup, tracking setup, launch checklists, copy formulas | [audience-targeting.md](references/audience-targeting.md) · [conversion-tracking.md](references/conversion-tracking.md) · [platform-setup-checklists.md](references/platform-setup-checklists.md) · [ad-copy-templates.md](references/ad-copy-templates.md) | Existing foundations |
 
 ---
@@ -104,7 +104,7 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_[MMMYY]
 
 **Scaling phase:**
 - Consolidate budget into winning combinations
-- Increase budgets ~20% at a time — never 30%+ in one move (resets platform learning)
+- Increase budgets ~20% at a time: never 30%+ in one move (resets platform learning)
 - Wait 3-5 days between increases for algorithm learning
 
 ---
@@ -128,7 +128,7 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_[MMMYY]
 
 ## Audience Understanding & Targeting
 
-Knowing your audience deeply is still the highest-leverage work in paid ads — demographics, job titles, pain points, fears, hopes, the exact language they use, who they follow, what they've tried, why they failed, what they buy. **Gather every identifier you can.**
+Knowing your audience deeply is still the highest-leverage work in paid ads: demographics, job titles, pain points, fears, hopes, the exact language they use, who they follow, what they've tried, why they failed, what they buy. **Gather every identifier you can.**
 
 What has changed is **where you apply that knowledge.** As ad-platform algorithms have gotten dramatically better at finding the right person, jamming all your audience identifiers into the platform's *targeting filters* underperforms feeding those same identifiers into the *creative* (headlines, copy, visuals, hooks, examples).
 
@@ -138,35 +138,35 @@ The discipline now: **audience knowledge → creative first, targeting filters s
 
 | Platform | Audience knowledge → creative | Audience knowledge → targeting filters | Notes |
 |----------|------------------------------|-------------------------------------|-------|
-| **Meta** (post-Andromeda) | **80%+** | 20% | Algorithm rewards broad + specific creative. See [[#Modern Meta playbook (Andromeda era — 2026+)]] below for the full reframe. Interest-stacking now actively hurts. |
-| **Google Search** | 40% | **60%** | Keywords are still the dominant signal — match-types, search-intent layering, and negative keywords still drive performance. Creative (RSA headlines) matters but is downstream of the keyword. |
+| **Meta** (post-Andromeda) | **80%+** | 20% | Algorithm rewards broad + specific creative. See [[#Modern Meta playbook (Andromeda era: 2026+)]] below for the full reframe. Interest-stacking now actively hurts. |
+| **Google Search** | 40% | **60%** | Keywords are still the dominant signal: match-types, search-intent layering, and negative keywords still drive performance. Creative (RSA headlines) matters but is downstream of the keyword. |
 | **Google Performance Max / Demand Gen** | **70%** | 30% | Audience signals are advisory, not deterministic. Creative + product feed quality dominate. |
 | **LinkedIn** | 40% | **60%** | Job-title / company / industry filters still produce real precision because LinkedIn's identity data is high-quality. Creative makes the click; firmographics make the *right person* see it. |
-| **TikTok** | **70%** | 30% | Algorithm is closer to Meta's model — broad targeting + native-feeling creative wins. Some audience interests help but creative dominates. |
+| **TikTok** | **70%** | 30% | Algorithm is closer to Meta's model: broad targeting + native-feeling creative wins. Some audience interests help but creative dominates. |
 | **Twitter/X** | 50% | 50% | Interest + follower targeting still meaningful, but creative differentiation is high-leverage given lower competition. |
 
 These ratios are directional, not precise. Test in your actual account.
 
-For how each identifier becomes a headline, hook, or angle, use `suede-ad-creative` — it owns the angle-to-copy mapping.
+For how each identifier becomes a headline, hook, or angle, use `suede-ad-creative`: it owns the angle-to-copy mapping.
 
 ### Key Concepts (still apply)
 
 - **Lookalikes**: Base on best customers (by LTV), not all customers. Still high-value across platforms.
 - **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See [[#Retarget with DIFFERENT offers (not the same one)]] and [[#The 4-component retargeting framework]] for the modern playbook.
-- **Exclusions**: Exclude existing customers and recent converters — showing ads to people who already bought wastes spend.
+- **Exclusions**: Exclude existing customers and recent converters: showing ads to people who already bought wastes spend.
 
 **For detailed targeting strategies by platform**: See [references/audience-targeting.md](references/audience-targeting.md)
 
 ---
 
-## Modern Meta playbook (Andromeda era — 2026+)
+## Modern Meta playbook (Andromeda era: 2026+)
 
 Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed Meta ads. The old playbook (interest stacking, polished video creative, single-winner scaling) underperforms. The new playbook:
 
 ### Creative volume is the constraint (statics > polished video)
-- Andromeda is "a hungry panda" — it needs constant fresh creative or it fatigues
+- Andromeda is "a hungry panda": it needs constant fresh creative or it fatigues
 - **Statics often outperform video in 2026** because:
-  - Meta's algorithm has a bias toward statics — it can show more statics per session per user, so they're cheaper to deliver
+  - Meta's algorithm has a bias toward statics: it can show more statics per session per user, so they're cheaper to deliver
   - Static creative is 10x cheaper and faster to produce than video, enabling the volume Andromeda needs
   - Even top advertisers running 17+ VSLs report that down-and-dirty native statics often beat 2.5-month-production VSLs
 - **Dedicate 1 hour per week** to producing fresh creatives for your winning offer. Volume > polish.
@@ -174,7 +174,7 @@ Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed M
 ### Creative IS the targeting (broad audience + specific creative)
 - The old playbook: stack interests, narrow the audience, hope to find the right buyer
 - The new playbook: target broadly (just the country) and let the creative do the targeting
-- **Long-form ad copy works better than short-form** in 2026 — gives Meta a wider context window to understand who to show the ad to
+- **Long-form ad copy works better than short-form** in 2026: gives Meta a wider context window to understand who to show the ad to
 - Test it: take your best winning ad with interest-stacked targeting, duplicate it, remove all targeting (just pick the country), run side-by-side for 7 days. Check CPAs. Broad typically wins.
 
 ### The one-keyword hack (identity-trigger keywords)
@@ -199,10 +199,10 @@ Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed M
 - Typically resurrects 20% as winners that Meta's first allocation passed over
 
 ### Don't make ads look like ads
-- Hundreds of millions of people have ad blockers — the polished-ad aesthetic kills performance
+- Hundreds of millions of people have ad blockers: the polished-ad aesthetic kills performance
 - Study what content **natively performs** in your niche on TikTok/Instagram/YouTube → produce ads that match that aesthetic
 - **Burner account technique:** create a clean Instagram/TikTok account, follow all influencers and pages in your niche, like their content. Your feed becomes a curated view of what's natively winning. Produce ads that match.
-- If you have an organic video with millions of views, **run that exact video as a paid ad** — proven content + paid distribution = the highest-leverage move
+- If you have an organic video with millions of views, **run that exact video as a paid ad**: proven content + paid distribution = the highest-leverage move
 
 ## Creative Best Practices
 
@@ -248,7 +248,7 @@ For hard kill/keep/scale thresholds, use the platform playbooks (see Reference R
 
 ### Optimization Levers
 
-"Too high" and "low" below are not opinions. **Too high** means above the break-even CPA / ROAS ceiling computed in Scaling discipline, and **low** means below the funnel benchmark in the platform playbook for that channel. Compute the ceiling before you pull any lever — and for hard kill/scale thresholds, use the playbooks routed at the top of Campaign Optimization.
+"Too high" and "low" below are not opinions. **Too high** means above the break-even CPA / ROAS ceiling computed in Scaling discipline, and **low** means below the funnel benchmark in the platform playbook for that channel. Compute the ceiling before you pull any lever, and for hard kill/scale thresholds, use the playbooks routed at the top of Campaign Optimization.
 
 **If CPA is too high:**
 1. Check landing page (is the problem post-click?)
@@ -308,16 +308,16 @@ Instead, retarget with **different** products, services, or offers from your cat
 - Visitor downloaded a lead magnet, didn't book a call → retarget with a different lead magnet on a related topic
 - Visitor viewed pricing, didn't sign up → retarget with a free audit or assessment instead
 
-The lift from this is often dramatic — a 2-3 ROAS audience on the original offer can hit 6+ ROAS on a different offer.
+The lift from this is often dramatic: a 2-3 ROAS audience on the original offer can hit 6+ ROAS on a different offer.
 
 ### The 4-component retargeting framework
 
 Build out your retargeting layer with these 4 ad types running simultaneously:
 
-1. **Objection-handling ad** — directly addresses the most common reasons people didn't buy. To find these, **outbound call every lead** who didn't convert and ask why. The verbatim objections become the headline of this ad.
-2. **Proof testimonial carousel** — multi-image/multi-slide carousel of testimonials and proof that supports the claims of your original ad
-3. **Other-offers CBO** — your other best-performing ads for other products/services in one CBO, retargeted to the same audience
-4. **Value-first audit/assessment ad** — wraps your call in a free piece of value. Whether they buy or not, they leave with something useful. Lowers the friction to engage.
+1. **Objection-handling ad**: directly addresses the most common reasons people didn't buy. To find these, **outbound call every lead** who didn't convert and ask why. The verbatim objections become the headline of this ad.
+2. **Proof testimonial carousel**: multi-image/multi-slide carousel of testimonials and proof that supports the claims of your original ad
+3. **Other-offers CBO**: your other best-performing ads for other products/services in one CBO, retargeted to the same audience
+4. **Value-first audit/assessment ad**: wraps your call in a free piece of value. Whether they buy or not, they leave with something useful. Lowers the friction to engage.
 
 These four together, retargeting the same audience that didn't convert from the top-of-funnel ad, dramatically lift the ROAS of the entire funnel.
 
@@ -332,7 +332,7 @@ The ad platform tests headlines against far more people than ever reach the land
 3. **Mirror the winning headline verbatim** in the landing page H1, sub-headline, and lead-in copy
 4. Expect a **15-20% minimum lift** in landing-page conversion rate from that change alone
 
-Keep at least 3 split tests running somewhere in the funnel — creative, page, offer, or post-conversion flow — at any given time.
+Keep at least 3 split tests running somewhere in the funnel (creative, page, offer, or post-conversion flow) at any given time.
 
 Post-click page work itself belongs to `suede-site-alchemy`.
 
@@ -372,7 +372,7 @@ The most common scaling failure: a business at a 40 ROAS spending $5k/month, ref
 **The 3-hour founder review:**
 - Block out **3 hours per month** in the calendar to physically review the numbers yourself
 - Not what your data analyst says. Not what your media buyer says. You, going through the actual data
-- The confidence this generates is irreplaceable — and confidence is what lets you scale with conviction
+- The confidence this generates is irreplaceable: and confidence is what lets you scale with conviction
 - "Data gives you confidence. Confidence gives you speed."
 
 **Outbound-call your leads who didn't convert:**
@@ -395,12 +395,12 @@ Before launching campaigns, ensure proper tracking and account setup.
 
 Each box names the artifact that proves it. A box is checked when the artifact exists, not when it sounds true.
 
-- [ ] Conversion tracking fired — the test conversion is visible in the platform's event manager with a timestamp
-- [ ] Landing page loads in <3 sec — cite the PageSpeed / Lighthouse number and the test date
-- [ ] Landing page mobile-friendly — a mobile render of the page, not a desktop assumption
-- [ ] UTM parameters working — paste the resolved destination URL with parameters intact
-- [ ] Budget set correctly — the daily/lifetime figure, against the cap the user stated
-- [ ] Targeting matches intended audience — the saved audience definition, read back
+- [ ] Conversion tracking fired: the test conversion is visible in the platform's event manager with a timestamp
+- [ ] Landing page loads in <3 sec: cite the PageSpeed / Lighthouse number and the test date
+- [ ] Landing page mobile-friendly: a mobile render of the page, not a desktop assumption
+- [ ] UTM parameters working: paste the resolved destination URL with parameters intact
+- [ ] Budget set correctly: the daily/lifetime figure, against the cap the user stated
+- [ ] Targeting matches intended audience: the saved audience definition, read back
 
 Any unchecked box means do not recommend launch. Name the box and what is missing.
 
@@ -408,16 +408,16 @@ Any unchecked box means do not recommend launch. Name the box and what is missin
 
 ## Google RSA Output Spec (mandatory when generating RSAs)
 
-When the user requests Google Ads RSAs, load [references/rsa-output-spec.md](references/rsa-output-spec.md) and follow it exactly — hard character limits, required sidecar artifacts (ad groups, negatives, sitelinks, callouts), output order, template shape, CFM medical compliance, and the pre-send self-check. Do not output any RSA that violates it.
+When the user requests Google Ads RSAs, load [references/rsa-output-spec.md](references/rsa-output-spec.md) and follow it exactly: hard character limits, required sidecar artifacts (ad groups, negatives, sitelinks, callouts), output order, template shape, CFM medical compliance, and the pre-send self-check. Do not output any RSA that violates it.
 
 ---
 
 ## Common Mistakes to Avoid
 
-- **Too many campaigns** — fragmenting budget across campaigns none of which exit learning
-- **Optimizing for the wrong metric** — clicks or CTR when the objective is conversions
-- **Only one ad per ad set** — the algorithm has nothing to allocate between
-- **Overlapping audiences competing** — the same account bidding against itself
+- **Too many campaigns**: fragmenting budget across campaigns none of which exit learning
+- **Optimizing for the wrong metric**: clicks or CTR when the objective is conversions
+- **Only one ad per ad set**: the algorithm has nothing to allocate between
+- **Overlapping audiences competing**: the same account bidding against itself
 
 ---
 
@@ -447,7 +447,7 @@ route implementation and firing checks to `suede-analytics`.
 - Do not recommend spend above the stated cap; if no cap exists, provide a bounded test budget and wait for approval.
 - Do not target sensitive traits, evade platform policy, or present inferred audience attributes as verified facts.
 
-**When authorization is missing.** If an authorized account or connector is present and the user asks for a mutation you have no approval for, stop before the call. Name the exact mutation and the account, campaign, or ad set it would hit. Offer: a draft-only change list they can apply themselves, a request for written approval on that specific change, or continuing read-only with an audit instead. Then wait — do not execute on assumed consent. (For the spend-cap case, the standing rule in the third boundary above already applies; don't restate it.)
+**When authorization is missing.** If an authorized account or connector is present and the user asks for a mutation you have no approval for, stop before the call. Name the exact mutation and the account, campaign, or ad set it would hit. Offer: a draft-only change list they can apply themselves, a request for written approval on that specific change, or continuing read-only with an audit instead. Then wait, do not execute on assumed consent. (For the spend-cap case, the standing rule in the third boundary above already applies; don't restate it.)
 
 ## Routing
 

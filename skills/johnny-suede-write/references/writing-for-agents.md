@@ -1,4 +1,4 @@
-# Writing for agents — the full lever set
+# Writing for agents: the full lever set
 
 Reference for the Agent-Facing Docs lane in `SKILL.md`. Read it when writing or
 editing a document an agent consumes: a `SKILL.md`, a `CLAUDE.md`, an
@@ -30,7 +30,7 @@ tokens on every turn whether or not it fires, and the goal is not a better
 sentence but a predictable **process**: the agent takes the same route through
 the document on run 12 as it did on run 1.
 
-The packaging varies — skill, `CLAUDE.md`, `AGENTS.md`, bundled reference — and
+The packaging varies (skill, `CLAUDE.md`, `AGENTS.md`, bundled reference) and
 the levers below do not.
 
 ## 2. Context pointers
@@ -62,9 +62,9 @@ Good: "Use when authoring a skill, tuning a trigger that misfires, or splitting 
 Every document and pointer spends one of two budgets. Name which before adding
 either.
 
-- **Context load** — always-loaded material on the agent's window: a skill
+- **Context load**: always-loaded material on the agent's window: a skill
   description, an `AGENTS.md` line, anything resident every turn.
-- **Cognitive load** — the cost on the human: knowing which documents exist and
+- **Cognitive load**: the cost on the human: knowing which documents exist and
   when to reach for each. The human is the index.
 
 Cognitive load is not a cost to drive to zero. It is the price of human agency:
@@ -78,10 +78,10 @@ line. Material with no pointer rides entirely on cognitive load.
 A document mixes **steps** (ordered actions) and **reference** (facts consulted
 on demand) freely. The decision for each piece is which rung it sits on:
 
-1. **In-file step** — the primary tier: what the agent does, in order.
-2. **In-file reference** — consulted on demand. A flat peer-set here is often
+1. **In-file step**: the primary tier: what the agent does, in order.
+2. **In-file reference**: consulted on demand. A flat peer-set here is often
    correct, not a smell.
-3. **Disclosed reference** — a separate file behind a pointer, loaded only when
+3. **Disclosed reference**: a separate file behind a pointer, loaded only when
    the pointer fires.
 
 **Progressive disclosure** is the move down the ladder. It protects the
@@ -105,7 +105,7 @@ keep it inline unless it pushes `SKILL.md` past the 500-line ceiling.
 
 ## 5. Completion criteria
 
-Each step ends on a **completion criterion** — the condition that says the work
+Each step ends on a **completion criterion**: the condition that says the work
 is done. Two properties make it a lever.
 
 **Clarity.** Can the agent tell done from not-done? A vague bound ("once the code
@@ -117,13 +117,13 @@ criterion's clarity is the resistance. Defend in order:
 2. Only if the bound is irreducibly fuzzy **and** you have watched the agent rush
    it, hide the later steps by splitting the sequence.
 
-Hiding works only across a real context boundary — a hand-off or a subagent
+Hiding works only across a real context boundary: a hand-off or a subagent
 dispatch. An inline call leaves the later steps in context and clears nothing.
 
 **Demand.** How much the criterion requires. "Every modified model accounted for"
 forces thorough work where "produce a change list" does not. Demand drives
 **legwork**: the digging done inside the work, latent in the wording rather than
-written as its own step. It is not step-bound — "every rule applied" binds flat
+written as its own step. It is not step-bound: "every rule applied" binds flat
 reference exactly as "every step done" binds a sequence.
 
 The strongest criteria are both checkable and exhaustive.
@@ -155,15 +155,15 @@ no priors: you pay in definition tokens what a pretrained word gives free.
 
 It anchors twice:
 
-- **In the body — execution.** The agent reaches for the same behavior every time
+- **In the body: execution.** The agent reaches for the same behavior every time
   the word appears.
-- **In a pointer — invocation.** When the same word lives in your prompts, docs,
+- **In a pointer: invocation.** When the same word lives in your prompts, docs,
   and codebase, the agent links that shared language to the material.
 
 Collapse restatements into one token:
 
 - "fast, deterministic, low-overhead" → *tight* (a *tight* loop)
-- "a loop you believe in" → *red* — a fuzzy gate becomes a binary observable
+- "a loop you believe in" → *red*: a fuzzy gate becomes a binary observable
   state: the loop goes red on the bug, or it does not
 
 ## 8. Prompt the positive
@@ -187,7 +187,7 @@ tokens, and inflates a meaning's prominence past its real rank. It is the
 accidental inverse of a leading word, which repeats a token on purpose and never
 the meaning.
 
-**The environment is a source of truth too** — `package.json` scripts, config
+**The environment is a source of truth too**: `package.json` scripts, config
 files, directory layout, `--help` output. A document restating them is a
 **cache**: a copy of a lookup, earning its load only when the lookup is
 expensive. Cache what the agent cannot find by looking: the unwritten convention,
@@ -199,7 +199,7 @@ pruning discipline is **sediment**: stale layers that settle because adding feel
 safe and removing feels risky.
 
 **No-ops.** An instruction the model already obeys by default pays load to say
-nothing. The test — does this change behavior versus the default? — is
+nothing. The test (does this change behavior versus the default?) is
 model-relative, not reader-relative. Two people who disagree about a no-op
 disagree about the model's default, and settle it by running the document, not by
 arguing. When a sentence fails, delete the whole sentence rather than trimming

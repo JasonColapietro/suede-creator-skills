@@ -7,11 +7,11 @@ The subject line determines whether the email gets read. The data is counterintu
 - 2-word subject lines get **60% more opens** than 5-word (Lavender).
 - Going from 2 to 4 words reduces replies by **17.5%**.
 - 2–4 words yield **46% open rates** vs 34% for 10 words (Belkins, 5.5M emails).
-- Mobile truncates at 30–35 characters — brevity is practical necessity.
+- Mobile truncates at 30–35 characters: brevity is practical necessity.
 
 ## Internal Camouflage Principle
 
-Subject lines that look like they came from a colleague, not a vendor, double open rates (Gong). Buyers mentally categorize before opening — if it looks like sales, it's filtered.
+Subject lines that look like they came from a colleague, not a vendor, double open rates (Gong). Buyers mentally categorize before opening: if it looks like sales, it's filtered.
 
 **High-performing examples:** "reply rates" · "trial delays" · "hiring ops" · "employee turnover" · "Q2 forecast" · "new patients" · "personalization issue" · "second page"
 
@@ -25,7 +25,7 @@ Personalized subject lines boost opens **26–50%**, but type matters:
 
 - **First name in subject line → 12% fewer replies.** Signals automation.
 - **Contextual personalization works:** pain points, competitors, trigger events, industry challenges.
-- Use {{painPoint}}, {{competitor}}, {{commonGround}} — not {{firstName}}.
+- Use {{painPoint}}, {{competitor}}, {{commonGround}}: not {{firstName}}.
 
 ## Questions: only when highly specific
 

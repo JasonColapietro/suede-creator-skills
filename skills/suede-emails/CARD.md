@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan — drip campaigns, welcome series, win-back flows, or trigger-based automations.
+Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan: drip campaigns, welcome series, win-back flows, or trigger-based automations.
 
 Out of scope — cold prospecting (use suede-cold-email), SMS as part of the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops).
 

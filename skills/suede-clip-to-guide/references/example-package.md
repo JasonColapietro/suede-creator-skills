@@ -60,7 +60,7 @@ certainty_status: "not-required"
 - Moment score: 10/10.
 - Exact opening: "A timestamp is evidence. It is not automatic ownership."
 - Subtitle text: Match the verified transcript.
-- On-screen source credit: Original interview — Example Creator.
+- On-screen source credit: Original interview: Example Creator.
 - Ending bridge: "The full evidence checklist is in the guide."
 - Export owner: Example Creator.
 - Media file: not available.

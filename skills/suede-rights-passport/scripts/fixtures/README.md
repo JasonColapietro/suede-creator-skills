@@ -2,7 +2,7 @@
 
 Two reference example packages, generated end-to-end by
 `create_transfer_package.py` against synthetic (non-real) creator projects. All
-names, contributors, splits, and metadata in both are fake — no real personal
+names, contributors, splits, and metadata in both are fake: no real personal
 data. They exist to sanity-check `create_transfer_package.py` and
 `validate_transfer_package.py` after any change, and to show both ends of the
 risk range.
@@ -17,7 +17,7 @@ cleanly.
 
 Disputed ownership, unconfirmed contributors and splits, an uncleared sample.
 Three high-severity and one medium-severity risk flag, four open
-missing-information items — still structurally valid, but clearly not ready for
+missing-information items: still structurally valid, but clearly not ready for
 registry, licensing, or royalty routing.
 
 ## The point

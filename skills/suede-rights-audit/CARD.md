@@ -48,7 +48,7 @@ From "Red flags" — If any of these appear in your reasoning, stop and re-read 
 - "The split sheet is probably right." Probably is not a status. Confirmed needs the sheet plus every party's confirmation.
 - "It's obviously their song." Obviousness is inference. Record what the evidence shows.
 - "Mark it confirmed so routing can move." Blocked means blocked. Unblocking is the rights holder's job, not yours.
-- "Skip the provenance lane — nobody will check." Thin provenance is exactly what Lane B exists to expose.
+- "Skip the provenance lane: nobody will check." Thin provenance is exactly what Lane B exists to expose.
 
 ## References
 

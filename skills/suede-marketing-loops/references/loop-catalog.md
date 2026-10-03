@@ -12,15 +12,15 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ## Contents
 
-- **SEO & Content** — keyword-gap, ranking-drop watch, content-decay, internal-linking, programmatic-SEO quality, content-repurposing, content-calendar refill
-- **Paid** — ad-fatigue, daily-creative-drop, monthly-creative-retro, paid-search query-mining, retargeting-hygiene, landing-page regression
-- **Earned, Social & Partnerships** — newsjacking, social-listening, community-engagement, competitor-watch, backlink-prospecting, directory-submission, partner-pipeline
-- **Activation** — onboarding drop-off, signup-funnel-leak, lead-capture-asset, feature-adoption
-- **Retention** — churn-signal, lifecycle-email-refresh, re-engagement, email-deliverability, voice-of-customer
-- **Revenue** — trial-conversion, PQL / upgrade-intent, pricing-page-experiment, paywall-optimization, expansion / upsell, failed-payment / dunning
-- **Referral & Advocacy** — referral-nudge, review-and-UGC-harvest, review-site-management, case-study-sourcing
-- **Ongoing Ops / Meta** — weekly-marketing-review, experiment-backlog, analytics-anomaly, brand-mention / reputation, tracking-QA, campaign-postmortem
-- **Adapting and authoring loops** — how to tune an entry or write a new one
+- **SEO & Content**: keyword-gap, ranking-drop watch, content-decay, internal-linking, programmatic-SEO quality, content-repurposing, content-calendar refill
+- **Paid**: ad-fatigue, daily-creative-drop, monthly-creative-retro, paid-search query-mining, retargeting-hygiene, landing-page regression
+- **Earned, Social & Partnerships**, newsjacking, social-listening, community-engagement, competitor-watch, backlink-prospecting, directory-submission, partner-pipeline
+- **Activation**: onboarding drop-off, signup-funnel-leak, lead-capture-asset, feature-adoption
+- **Retention**: churn-signal, lifecycle-email-refresh, re-engagement, email-deliverability, voice-of-customer
+- **Revenue**: trial-conversion, PQL / upgrade-intent, pricing-page-experiment, paywall-optimization, expansion / upsell, failed-payment / dunning
+- **Referral & Advocacy**: referral-nudge, review-and-UGC-harvest, review-site-management, case-study-sourcing
+- **Ongoing Ops / Meta**: weekly-marketing-review, experiment-backlog, analytics-anomaly, brand-mention / reputation, tracking-QA, campaign-postmortem
+- **Adapting and authoring loops**: how to tune an entry or write a new one
 
 ---
 
@@ -140,15 +140,15 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   2. Flag fatiguing ads and clear winners.
   3. Generate 3–5 fresh variants off the winning angle.
   4. Stage variants; recommend budget shift fatigued → winning.
-- **Self-check**: Enough spend, impressions, and conversions to read CPA past the attribution window, and the ad is out of the learning phase. Rising frequency alone with thin conversion data is not fatigue evidence — wait.
+- **Self-check**: Enough spend, impressions, and conversions to read CPA past the attribution window, and the ad is out of the learning phase. Rising frequency alone with thin conversion data is not fatigue evidence, wait.
 - **State / idempotency**: Track per-ad last-refresh date; don't regenerate variants for an ad refreshed within the cooldown.
 - **Stop / bail-out**: Never auto-shift budget or publish without a human checkpoint unless spend caps + an allowlist are explicitly authorized. Halt if daily spend exceeds its cap.
 - **Output**: Staged creative drafts + a recommended budget move.
 
 ### The daily-creative-drop loop
 - **Check cadence**: Daily (early morning, so the batch is ready when the media buyer sits down)
-- **Acts when**: The grounded inputs corpus exists and the required inputs are populated — `inputs/winning-ads/` and `inputs/reviews/` (required; `inputs/comments/` and `brand/` strongly recommended, matching `suede-ad-creative` grounding rules). If a required input is empty, the loop asks for inputs instead of generating.
-- **Purpose**: Keep creative volume ahead of fatigue — a standing batch of fresh static concepts to test, so scaling never stalls waiting on production.
+- **Acts when**: The grounded inputs corpus exists and the required inputs are populated, `inputs/winning-ads/` and `inputs/reviews/` (required; `inputs/comments/` and `brand/` strongly recommended, matching `suede-ad-creative` grounding rules). If a required input is empty, the loop asks for inputs instead of generating.
+- **Purpose**: Keep creative volume ahead of fatigue: a standing batch of fresh static concepts to test, so scaling never stalls waiting on production.
 - **Skills used**: `suede-ad-creative` (Mode 3 + static ad template library), `suede-customer-research`
 - **Loop body**:
   1. Read the inputs corpus: `inputs/winning-ads/`, `inputs/reviews/`, `inputs/comments/`, and `brand/`.
@@ -156,24 +156,24 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Generate images if an image tool is configured; otherwise deliver concepts + image prompts.
   4. Save to `outputs/YYYY-MM-DD/` with an `INDEX.md` (template type + grounding per concept).
 - **Self-check**: Are concepts actually grounded (spot-check citations against sources)? Is template coverage spread across the library, not clustered on 2-3? Does copy match the brand voice doc rather than generic DR voice?
-- **State / idempotency**: One batch per day — skip if today's output folder already exists. Track angle/headline hashes across recent batches to avoid regenerating near-duplicates of concepts already delivered.
-- **Stop / bail-out**: Missing or empty required inputs → stop and request them; never generate ungrounded. Human picks the 5-10 to upload — this loop stages creative and **never publishes to the ad account**. If batches go unreviewed for a week, pause and ask whether to continue (unpicked batches are a vanity loop).
+- **State / idempotency**: One batch per day: skip if today's output folder already exists. Track angle/headline hashes across recent batches to avoid regenerating near-duplicates of concepts already delivered.
+- **Stop / bail-out**: Missing or empty required inputs → stop and request them; never generate ungrounded. Human picks the 5-10 to upload: this loop stages creative and **never publishes to the ad account**. If batches go unreviewed for a week, pause and ask whether to continue (unpicked batches are a vanity loop).
 - **Output**: A dated folder of grounded static ad concepts + index, ready for human selection.
-- **Input freshness (companion cadence)**: Weekly, refresh `inputs/winning-ads/` with anything that scaled and prune stale examples; monthly, refresh `inputs/reviews/` and `inputs/comments/` and re-check the voice doc. Stale inputs are this loop's failure mode — output quality tracks input freshness, not run count.
+- **Input freshness (companion cadence)**: Weekly, refresh `inputs/winning-ads/` with anything that scaled and prune stale examples; monthly, refresh `inputs/reviews/` and `inputs/comments/` and re-check the voice doc. Stale inputs are this loop's failure mode, output quality tracks input freshness, not run count.
 
 ### The monthly-creative-retro loop
 - **Check cadence**: Monthly (first business day, reading the prior month)
-- **Acts when**: The account had meaningful creative activity last month — new concepts launched with enough delivery to judge (respect the impression/spend thresholds in `suede-ads`). If nothing launched or nothing cleared thresholds, note that and skip.
-- **Purpose**: Close the creative strategy loop — turn last month's results into next month's evidence-ranked slate, so the roadmap learns instead of drifting.
+- **Acts when**: The account had meaningful creative activity last month, new concepts launched with enough delivery to judge (respect the impression/spend thresholds in `suede-ads`). If nothing launched or nothing cleared thresholds, note that and skip.
+- **Purpose**: Close the creative strategy loop: turn last month's results into next month's evidence-ranked slate, so the roadmap learns instead of drifting.
 - **Skills used**: `suede-ad-creative` (Mode 4 + creative-roadmap reference), `suede-ads` (decision thresholds), `suede-analytics`
 - **Loop body**:
   1. Pull last month's ad performance via the platform CLIs; map results to the month's roadmap concepts.
   2. Draft the retro artifact (`retros/YYYY-MM.md`): winners with the why, losers with funnel-stage diagnosis, single-metric wins, learnings, kills.
   3. Update the roadmap: re-rank icebox evidence, write learnings in as new/revised concepts, draft next month's capacity-checked slate.
-  4. Flag the account-state call (exploration vs. scaling) for human confirmation — the mix recommendation depends on it.
-- **Self-check**: Are verdicts on concepts (not single executions)? Did every learning land somewhere — icebox update, re-rank, or kill? Did anything clear thresholds, or is this month a skip?
-- **State / idempotency**: One retro per month — skip if `retros/YYYY-MM.md` exists. The roadmap file is the shared state; never fork it.
-- **Stop / bail-out**: Stages analysis and a draft slate only — the human approves the slate and the account-state call; the loop **never launches or pauses ads**. If retros go unread for two cycles, pause and ask.
+  4. Flag the account-state call (exploration vs. scaling) for human confirmation: the mix recommendation depends on it.
+- **Self-check**: Are verdicts on concepts (not single executions)? Did every learning land somewhere, icebox update, re-rank, or kill? Did anything clear thresholds, or is this month a skip?
+- **State / idempotency**: One retro per month: skip if `retros/YYYY-MM.md` exists. The roadmap file is the shared state; never fork it.
+- **Stop / bail-out**: Stages analysis and a draft slate only: the human approves the slate and the account-state call; the loop **never launches or pauses ads**. If retros go unread for two cycles, pause and ask.
 - **Output**: The monthly retro artifact + an updated roadmap with a draft slate for the coming month.
 
 ### The paid-search query-mining loop
@@ -213,7 +213,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   1. Monitor top acquisition pages: conversion rate, load speed, form submits, tracking fires.
   2. Flag regressions vs. baseline; correlate with recent deploys/changes.
   3. Diagnose and propose a fix.
-- **Self-check**: Rule out tracking breakage vs. a real conversion drop before raising an alarm — and vice versa.
+- **Self-check**: Rule out tracking breakage vs. a real conversion drop before raising an alarm, and vice versa.
 - **State / idempotency**: Track open regressions; update rather than re-file.
 - **Stop / bail-out**: No regression → log "stable." Escalate a live-revenue-page break immediately, don't wait for the next run.
 - **Output**: A regression alert with cause + fix.
@@ -231,10 +231,10 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   1. Scan news/HN/Reddit/X for stories intersecting the product's space.
   2. Score newsworthiness + fit + reach.
   3. Run the veto list. For a surviving top story, draft an angle (post, pitch, or commentary).
-- **Self-check**: Is the angle genuinely additive, or forced? Kill forced takes — they cost credibility.
+- **Self-check**: Is the angle genuinely additive, or forced? Kill forced takes: they cost credibility.
 - **Veto list (skip immediately)**: tragedies, deaths, disasters, active crises; politically or socially charged stories unless the brand explicitly takes such stances; legal/medical/financial-sensitive topics; anything sourced from an unverified/single unreliable source.
 - **State / idempotency**: Dedupe on story ID; one angle per story; never re-pitch a covered story.
-- **Stop / bail-out**: Any veto trip → skip. Always require human approval before pitching/posting. Most days will skip — that's correct.
+- **Stop / bail-out**: Any veto trip → skip. Always require human approval before pitching/posting. Most days will skip: that's correct.
 - **Output**: A staged post/pitch for human approval, or nothing.
 
 ### The social-listening loop
@@ -248,7 +248,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Draft comments/replies for the top handful.
 - **Self-check**: Would a human recognize each reply as genuinely useful, not promotional?
 - **State / idempotency**: Track already-engaged threads; never double-reply. Respect a per-account interaction cooldown.
-- **Stop / bail-out**: Nothing clears the threshold → skip. Stage replies for human post (don't auto-post — bot-detection + brand risk).
+- **Stop / bail-out**: Nothing clears the threshold → skip. Stage replies for human post (don't auto-post, bot-detection + brand risk).
 - **Output**: A short list of threads with drafted, on-brand replies.
 
 ### The community-engagement loop
@@ -405,12 +405,12 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Purpose**: Keep automated sequences performing as the product and audience evolve.
 - **Skills used**: `suede-emails`, `suede-analytics`, `suede-copy`
 - **Loop body**:
-  1. Pull per-email performance — clicks, conversions, replies, unsubscribes, spam complaints, bounces (**not opens** — open tracking is unreliable post-privacy-changes).
+  1. Pull per-email performance: clicks, conversions, replies, unsubscribes, spam complaints, bounces (**not opens**, open tracking is unreliable post-privacy-changes).
   2. Flag weak performers and stale references (old features, dates, pricing).
   3. Draft rewrites or subject-line tests for the bottom performers.
 - **Self-check**: Enough sends per email for rates to be meaningful?
 - **State / idempotency**: Track last-revised date per email; cooldown before re-testing.
-- **Stop / bail-out**: All sequences healthy → skip. **Pause and escalate any sequence with rising complaint/bounce rates — that's a deliverability emergency, not a copy tweak.**
+- **Stop / bail-out**: All sequences healthy → skip. **Pause and escalate any sequence with rising complaint/bounce rates: that's a deliverability emergency, not a copy tweak.**
 - **Output**: Staged email rewrites + subject-line tests.
 
 ### The re-engagement loop
@@ -424,7 +424,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Draft the message; set suppression so they aren't re-hit next week.
 - **Self-check**: Truly dormant, or just low-frequency-by-design users? Don't nag healthy accounts.
 - **State / idempotency**: Track win-back attempts per user; suppress after each send for the cooldown.
-- **Stop / bail-out**: After N unsuccessful attempts, move to sunset — not another email.
+- **Stop / bail-out**: After N unsuccessful attempts, move to sunset: not another email.
 - **Output**: A staged win-back message + updated suppression list.
 
 ### The email-deliverability loop
@@ -438,7 +438,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Recommend actions: suppress hard bounces, sunset chronically unengaged, fix auth, throttle.
 - **Self-check**: Is a spike a one-off send or a trend? Correlate with recent campaigns.
 - **State / idempotency**: Track already-suppressed addresses + last hygiene sweep date.
-- **Stop / bail-out**: All metrics healthy → log and skip. **Escalate a complaint-rate spike immediately** — reputation damage compounds fast.
+- **Stop / bail-out**: All metrics healthy → log and skip. **Escalate a complaint-rate spike immediately**, reputation damage compounds fast.
 - **Output**: A deliverability report + a suppression/hygiene action list.
 
 ### The voice-of-customer loop
@@ -489,28 +489,28 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ### The pricing-page-experiment loop
 - **Check cadence**: Monthly (tests run longer)
-- **Acts when**: No test is running on the page and there's a worthwhile hypothesis — or a running test has concluded.
+- **Acts when**: No test is running on the page and there's a worthwhile hypothesis, or a running test has concluded.
 - **Purpose**: Improve pricing-page conversion **and revenue quality**, continuously.
 - **Skills used**: `suede-pricing`, `suede-ab-testing`, `suede-site-alchemy`
 - **Loop body**:
   1. Review pricing-page conversion, plan mix, and revenue-per-visitor.
   2. Generate one pricing/packaging/copy hypothesis, or read a concluded test.
   3. Hand design/analysis to `suede-ab-testing`; promote a clean winner.
-- **Self-check**: Judge winners on **revenue per visitor, plan mix, refunds, downgrades, churn, and support load — not conversion rate alone.** Is the running test statistically done before you call it?
+- **Self-check**: Judge winners on **revenue per visitor, plan mix, refunds, downgrades, churn, and support load: not conversion rate alone.** Is the running test statistically done before you call it?
 - **State / idempotency**: Track the running test + concluded-test log; never start a conflicting test on the same page.
 - **Stop / bail-out**: A test is in flight → hold. **Do not promote a variant that lifts conversion but lowers revenue-per-visitor or raises refunds/churn.**
 - **Output**: A test result + next hypothesis.
 
 ### The paywall-optimization loop
 - **Check cadence**: Monthly
-- **Acts when**: No paywall test is running and there's a hypothesis — or one has concluded.
+- **Acts when**: No paywall test is running and there's a hypothesis, or one has concluded.
 - **Purpose**: Improve in-app upgrade conversion without degrading revenue quality.
 - **Skills used**: `suede-paywalls`, `suede-ab-testing`, `suede-analytics`
 - **Loop body**:
   1. Pull paywall view → upgrade conversion and bounce points.
   2. Form one hypothesis (trigger timing, framing, plan anchor), or read a concluded test.
   3. Hand execution to `suede-ab-testing`.
-- **Self-check**: Segment by plan/cohort — an aggregate number can hide a segment that's tanking. Watch refunds/downgrades alongside conversion.
+- **Self-check**: Segment by plan/cohort: an aggregate number can hide a segment that's tanking. Watch refunds/downgrades alongside conversion.
 - **State / idempotency**: Track running/concluded tests; no conflicting tests.
 - **Stop / bail-out**: Test in flight → hold. Don't promote a conversion win that raises refunds or churn.
 - **Output**: A test result + next hypothesis.
@@ -524,7 +524,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   1. Score paid accounts on expansion signals.
   2. Surface newly expansion-ready accounts.
   3. Stage the right motion (usage-based upgrade prompt, CSM outreach, cross-sell offer).
-- **Self-check**: Is the account healthy enough that an upsell won't sour the relationship? Don't upsell an at-risk account — that's a churn loop's job.
+- **Self-check**: Is the account healthy enough that an upsell won't sour the relationship? Don't upsell an at-risk account: that's a churn loop's job.
 - **State / idempotency**: Track upsell touches per account; enforce cadence.
 - **Stop / bail-out**: No expansion-ready accounts → skip. Route strategic accounts to a human.
 - **Output**: A prioritized expansion list with staged motions.
@@ -532,7 +532,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 ### The failed-payment / dunning loop
 - **Check cadence**: Daily
 - **Acts when**: A payment fails or a card is about to expire.
-- **Purpose**: Recover involuntary churn — often the highest-ROI retention work.
+- **Purpose**: Recover involuntary churn: often the highest-ROI retention work.
 - **Skills used**: `suede-revops`, `suede-emails`
 - **Loop body**:
   1. Detect failed payments and upcoming card expirations.
@@ -540,7 +540,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Route persistent failures to a human/CS.
 - **Self-check**: Is the failure involuntary (card issue) vs. an intentional cancel? Don't dun someone who chose to leave.
 - **State / idempotency**: Track dunning stage per account; follow the retry schedule; stop on recovery.
-- **Stop / bail-out**: After the final retry, escalate/deactivate per policy — don't loop forever.
+- **Stop / bail-out**: After the final retry, escalate/deactivate per policy: don't loop forever.
 - **Output**: An active dunning queue + recovery status.
 
 ---
@@ -557,7 +557,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   2. Match to the right ask (share link, incentive, review request).
   3. Stage the ask.
 - **Self-check**: Genuinely a happy moment, or just any event? A bad-timing ask erodes goodwill.
-- **State / idempotency**: Enforce a cooldown — never ask the same user twice in the window.
+- **State / idempotency**: Enforce a cooldown: never ask the same user twice in the window.
 - **Stop / bail-out**: No one at a happy moment → skip.
 - **Output**: A staged, well-timed referral ask.
 
@@ -610,7 +610,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ### The weekly-marketing-review loop
 - **Check cadence**: Weekly (Mon 9am)
-- **Acts when**: Always runs — this is the heartbeat. It "acts" by flagging the week's notable movers.
+- **Acts when**: Always runs: this is the heartbeat. It "acts" by flagging the week's notable movers.
 - **Purpose**: One standing full-funnel pulse so nothing drifts unnoticed.
 - **Skills used**: `suede-analytics`, `suede-marketing-plan`, `suede-marketing-ideas`
 - **Loop body**:
@@ -619,13 +619,13 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Tie each flag to the loop or skill that should act on it; surface 1–2 experiment ideas.
 - **Self-check**: Distinguish trend from noise before raising an alarm.
 - **State / idempotency**: Store each week's snapshot for accurate week-over-week deltas.
-- **Stop / bail-out**: Manual disable + error-halt. On a data-source outage, report "stale data," never fabricated movement. (Not "n/a" — even the heartbeat needs an off switch and an error path.)
+- **Stop / bail-out**: Manual disable + error-halt. On a data-source outage, report "stale data," never fabricated movement. (Not "n/a", even the heartbeat needs an off switch and an error path.)
 - **Output**: A one-page weekly digest with owners/next actions.
 
 ### The experiment-backlog loop
 - **Check cadence**: Weekly
 - **Acts when**: New hypotheses exist to log, the backlog needs re-ranking, or a test slot is free.
-- **Purpose**: Keep the experiment pipeline full and prioritized. **Thin wrapper — defer all test design, statistical analysis, and velocity management to `suede-ab-testing`.**
+- **Purpose**: Keep the experiment pipeline full and prioritized. **Thin wrapper, defer all test design, statistical analysis, and velocity management to `suede-ab-testing`.**
 - **Skills used**: `suede-ab-testing` (owner), `suede-site-alchemy`, `suede-analytics`
 - **Loop body**:
   1. Harvest new hypotheses from the week (data, research, competitors, support, other loops).
@@ -639,7 +639,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 ### The analytics-anomaly loop
 - **Check cadence**: Daily
 - **Acts when**: A tracked metric breaks its expected band (spike or drop beyond normal variance).
-- **Purpose**: Catch anything breaking — good or bad — before it runs for days unnoticed.
+- **Purpose**: Catch anything breaking: good or bad, before it runs for days unnoticed.
 - **Skills used**: `suede-analytics`
 - **Loop body**:
   1. Check key metrics (traffic, signups, conversion, revenue, spend) against their normal range.
@@ -661,13 +661,13 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Route: positive → amplify/thank; negative/risky → drafted response for human review; unlinked mention → backlink-prospecting.
 - **Self-check**: Does a negative mention need a response, or would engaging amplify it? Judge reach + legitimacy.
 - **State / idempotency**: Dedupe on mention ID; track handled mentions.
-- **Stop / bail-out**: No meaningful mentions → skip. **Always human-approve responses to negative/crisis mentions** — never auto-reply to a complaint.
+- **Stop / bail-out**: No meaningful mentions → skip. **Always human-approve responses to negative/crisis mentions**: never auto-reply to a complaint.
 - **Output**: A mention digest with routed actions.
 
 ### The tracking-QA loop
 - **Check cadence**: Weekly (and on deploy / campaign launch)
 - **Acts when**: Analytics, pixels, UTMs, or conversion events are missing, misfiring, or misconfigured.
-- **Purpose**: Keep the measurement layer trustworthy — every other loop depends on it.
+- **Purpose**: Keep the measurement layer trustworthy: every other loop depends on it.
 - **Skills used**: `suede-analytics`
 - **Loop body**:
   1. Verify key events fire correctly, pixels are present, UTMs are consistent, and conversions attribute.
@@ -675,7 +675,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
   3. Recommend fixes.
 - **Self-check**: Is it truly broken, or an expected change? Confirm against a known-good baseline.
 - **State / idempotency**: Track open tracking issues; update rather than re-file.
-- **Stop / bail-out**: All tracking healthy → log "clean." **Escalate a broken revenue/conversion event immediately** — every downstream loop is blind until it's fixed.
+- **Stop / bail-out**: All tracking healthy → log "clean." **Escalate a broken revenue/conversion event immediately**: every downstream loop is blind until it's fixed.
 - **Output**: A tracking-QA report with prioritized fixes.
 
 ### The campaign-postmortem loop
@@ -696,4 +696,4 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ## Adapting and authoring loops
 
-To adapt a loop: keep all nine anatomy parts, swap skills/thresholds for the user's stack, and re-tune cadence to signal speed. To author a brand-new one: use `loop-template.md` (copy-paste template + fill-in prompts + worked example + ship checklist). Either way, do not ship a loop until every part is filled — especially **State / idempotency**, **Self-check**, and **Stop / bail-out**. A loop without those isn't a system; it's a way to do the wrong thing on a schedule, repeatedly, to the same people.
+To adapt a loop: keep all nine anatomy parts, swap skills/thresholds for the user's stack, and re-tune cadence to signal speed. To author a brand-new one: use `loop-template.md` (copy-paste template + fill-in prompts + worked example + ship checklist). Either way, do not ship a loop until every part is filled, especially **State / idempotency**, **Self-check**, and **Stop / bail-out**. A loop without those isn't a system; it's a way to do the wrong thing on a schedule, repeatedly, to the same people.

@@ -3,7 +3,7 @@
 Pre-built rosters, lane maps, and rollout mechanics for common high-risk work.
 Read the scenario that matches the objective before opening lanes; adjust only the
 named target. Every roster, gate, and status word used here is defined in the
-`suede-agent-teams` SKILL.md — these are instantiations, not new machinery.
+`suede-agent-teams` SKILL.md: these are instantiations, not new machinery.
 
 ## Contents
 
@@ -98,13 +98,13 @@ Done signal: LCP < 2.5s or measurable improvement documented; no regression on p
 
 Roster: Scout, Builder (fix lane only), Release Verifier, Handoff Writer
 RFC required: no (incident is already in progress; run the Rollback Decision Tree, not an RFC)
-Flag required: n/a — this scenario reacts to an existing deploy, it does not introduce one
+Flag required: n/a: this scenario reacts to an existing deploy, it does not introduce one
 
 Lane map:
 - Scout: identify what shipped, when, and what changed; walk the Rollback Decision Tree (data loss/corruption, security exposure, primary path broken, degraded-but-functional, or cosmetic) and name which branch applies
-- Scout: if the branch is "ROLLBACK IMMEDIATELY" (data loss/corruption or security exposure), say so and stop — do not investigate further before rollback, per the Rollback Decision Tree
+- Scout: if the branch is "ROLLBACK IMMEDIATELY" (data loss/corruption or security exposure), say so and stop: do not investigate further before rollback, per the Rollback Decision Tree
 - Builder: executes the rollback, or the <15-minute fix, or the hot-fix-forward, per the branch Scout named. No opportunistic changes outside the incident scope.
-- Builder: after rollback, write the immediate summary — what rolled back, what was affected, who was notified — and open a follow-up issue, per the Rollback Decision Tree's post-rollback steps
+- Builder: after rollback, write the immediate summary (what rolled back, what was affected, who was notified) and open a follow-up issue, per the Rollback Decision Tree's post-rollback steps
 - Release Verifier: confirm the primary path is restored in production before any other lane closes
 - Handoff Writer: run the post-mortem for any P0 or P1 incident (required) or P2 (optional but encouraged); skip for P3. Populate Timeline, Impact, Root Cause, Contributing Factors, What Went Well, and Action Items with owners and due dates.
 
@@ -112,7 +112,7 @@ Done signal: primary path verified restored in production; for P0/P1, a complete
 
 ## Feature Flag Strategy
 
-The trigger list — when to flag — stays in SKILL.md. This is the mechanics once a
+The trigger list, when to flag, stays in SKILL.md. This is the mechanics once a
 lane is flagged.
 
 **Flag lifecycle:**

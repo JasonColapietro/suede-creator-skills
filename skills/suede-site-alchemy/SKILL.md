@@ -5,14 +5,14 @@ description: "Suede-owned conversion-path discipline for pages. Turns a page int
 
 # Suede Site Alchemy
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+Every check, gate, and verdict in this skill (`ship`, `ship-with-caveats`,
 `hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below — is a **recommendation to the user, not a control on the
+proceed" line below) is a **recommendation to the user, not a control on the
 agent**. Run every check, report the results honestly, and complete the
 requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception — if a finding is extremely risky (data loss,
+you do.** Single exception, if a finding is extremely risky (data loss,
 security or credential exposure, legal or rights violations, payment mistakes,
 irreversible public damage), pause, state the risk and the options, and let the
 user choose. Their choice is final.
@@ -83,7 +83,7 @@ Handle as Suede Site Alchemy:
 - Conversion fixes tied to an active campaign.
 - Suede Sites positioning, cross-sells, CTAs, and module menus.
 
-Route out of this skill to the Suede app-builder workflow — a private Suede Labs
+Route out of this skill to the Suede app-builder workflow: a private Suede Labs
 companion, not in this pack: Suede app-builder. Do not attempt these here:
 
 - Open-ended custom apps.
@@ -107,17 +107,17 @@ URL, CTA to `https://suedeai.ai` or use the current verified Suede app route.
 
 Map the page's role in the buyer journey before optimizing it. A page that serves the wrong funnel stage will fail regardless of CRO polish.
 
-**TOFU (Top of Funnel — Awareness)**
+**TOFU (Top of Funnel: Awareness)**
 Reader: doesn't know about the product yet. Needs: problem education, category definition, credibility signal.
 Copy job: make the problem vivid, not the solution. Don't ask for commitment.
 CTA: download, read, explore, learn.
 
-**MOFU (Middle of Funnel — Consideration)**
+**MOFU (Middle of Funnel: Consideration)**
 Reader: aware of the problem, comparing solutions. Needs: differentiation, proof, objection handling.
 Copy job: show why THIS solution, not just any solution. Comparison content, case studies, deep dives.
 CTA: demo, trial, detailed docs, comparison guide.
 
-**BOFU (Bottom of Funnel — Decision)**
+**BOFU (Bottom of Funnel: Decision)**
 Reader: ready to buy, looking for permission to pull the trigger. Needs: risk reduction, guarantee, testimonials, pricing clarity.
 Copy job: remove friction and doubt. Urgency if genuine, guarantee if real, social proof from peers.
 CTA: start now, get started, buy, talk to sales.
@@ -242,8 +242,8 @@ it.
 
 1. Identify the surface: live URL, source folder, route, deploy target, current
    git branch, dirty files, and relevant handoff/spec docs.
-2. Run **Funnel Analysis** — name the page's funnel stage (TOFU/MOFU/BOFU). Optimize for that stage throughout.
-3. Run **Friction Audit** — inventory cognitive, physical, and trust friction,
+2. Run **Funnel Analysis**: name the page's funnel stage (TOFU/MOFU/BOFU). Optimize for that stage throughout.
+3. Run **Friction Audit**: inventory cognitive, physical, and trust friction,
    then attach evidence and severity. Fix launch blockers before visual work.
 4. Read the page like a buyer. Capture the current offer, primary CTA, trust
    evidence, visual system, remaining friction points, and dead links.
@@ -266,7 +266,7 @@ it.
 8. Build the CTA ladder. Every page needs three exits:
    - **Primary action**: the one thing this page was built to earn. One button. Obvious placement. No competing CTA at the same visual weight.
    - **Secondary action**: proof, demo, or deeper content for visitors not ready to convert. Lower visual weight, same screen.
-   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors — it loses them.
+   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors: it loses them.
 9. Verify like the page is already public:
    - Local preview.
    - Desktop and mobile browser QA.
@@ -332,8 +332,8 @@ uncertainty, and guardrails have been checked.
 Match proof to the claim or objection it can actually support. Placement is a
 testable design choice, not a universal conversion rule.
 
-Read `references/cro-frameworks.md` when you need the proof-type table — which
-type answers which objection, with examples — before choosing what proof to ask
+Read `references/cro-frameworks.md` when you need the proof-type table, which
+type answers which objection, with examples, before choosing what proof to ask
 the client for. Skip it when the page's proof is already chosen.
 
 **Placement hypotheses:**
@@ -369,13 +369,13 @@ cancellation, refund terms, eligibility, and feature truth.
 
 ## Scarcity and Urgency Framework
 
-Urgency works when it is true. It backfires when the visitor realizes it's manufactured — trust recovers slowly.
+Urgency works when it is true. It backfires when the visitor realizes it's manufactured: trust recovers slowly.
 
 **Ethical urgency (use):**
 - Real deadlines: event date, price increase date, enrollment close date. State the date explicitly: "Price increases July 1" not "Offer ends soon."
 - Real inventory: "4 spots remaining in the June cohort" when the cohort has a verified seat cap.
 - Real time-sensitivity: early-access pricing that provably expires, seasonal promotions tied to actual calendar events.
-- Behavioral triggers: "You've been looking at this for a while — here's the case study that usually answers the last question."
+- Behavioral triggers: "You've been looking at this for a while: here's the case study that usually answers the last question."
 
 **Dark patterns (never use):**
 - Countdown timers that reset on page refresh.
@@ -384,23 +384,23 @@ Urgency works when it is true. It backfires when the visitor realizes it's manuf
 - Implied scarcity with no mechanism: "limited slots" without a seat cap.
 - Urgency language in automated email sequences with no actual deadline.
 
-**Test:** Before adding urgency to a page, answer: "If a visitor waited 30 days and came back, would this urgency claim still be accurate?" If no — it's a dark pattern. Cut it or make the deadline real.
+**Test:** Before adding urgency to a page, answer: "If a visitor waited 30 days and came back, would this urgency claim still be accurate?" If no: it's a dark pattern. Cut it or make the deadline real.
 
-When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1" — it explains why the scarcity is real.
+When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1": it explains why the scarcity is real.
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If you catch yourself thinking any of these, stop and run the required step:
 
-- "The page just needs visual polish." — Run the Friction Audit and render the
+- "The page just needs visual polish.": Run the Friction Audit and render the
   current experience before deciding what kind of change is warranted.
-- "This change feels high-impact." — Identify the evidence, affected
+- "This change feels high-impact.": Identify the evidence, affected
   population, primary metric, guardrails, and decision the evidence would
   change.
-- "Urgency will lift conversions." — Only use truthful urgency, and treat any
+- "Urgency will lift conversions.": Only use truthful urgency, and treat any
   effect as a hypothesis with trust and post-purchase guardrails.
-- "Source inspection is enough for visual work." — Render the page; check desktop and mobile.
-- "I'll estimate their traffic to fill in the model." — Ask for analytics exports; never invent numbers.
+- "Source inspection is enough for visual work.": Render the page; check desktop and mobile.
+- "I'll estimate their traffic to fill in the model.": Ask for analytics exports; never invent numbers.
 
 ## Output Contract
 
@@ -414,7 +414,7 @@ Changed: [files or sections touched]
 Measurement readiness: [events/denominators/assignment/exposure verified or gaps]
 Hypotheses: [1–3, prioritized by evidence, population, decision value, effort, risk]
 Experiment plan: [primary metric, guardrails, MDE, sample/duration, SRM check, or not applicable]
-Verification: [exact status words — inspected, changed locally, verified locally, deployed, verified live, blocked]
+Verification: [exact status words: inspected, changed locally, verified locally, deployed, verified live, blocked]
 Caveats: [or "none"]
 Ship gate: ship | ship-with-caveats | hold
 ```
@@ -423,7 +423,7 @@ Ship gate: ship | ship-with-caveats | hold
 
 - Page needs an A-F promotion-readiness verdict → `suede-visibility-grader` before any paid or public promotion.
 - Search, schema, crawl, or index access → `suede-seo-audit`.
-- Getting the page cited by ChatGPT, Perplexity, or AI Overviews — extractability, AI-bot access, `llms.txt` → `suede-ai-seo`.
+- Getting the page cited by ChatGPT, Perplexity, or AI Overviews: extractability, AI-bot access, `llms.txt` → `suede-ai-seo`.
 - Page needs fresh headlines, subheads, CTA labels, or copy variants → `suede-copy`.
 - Page converts and the release is ready to announce → `suede-launch-packaging`.
 - Suede projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.

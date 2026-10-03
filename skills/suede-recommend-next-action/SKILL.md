@@ -20,7 +20,7 @@ until the user asks to expand it.
    `git -C <target-repo> status --short --branch` for dirty files and
    ahead/behind, `git -C <target-repo> log --oneline -5` for what actually
    landed, a direct read of the named plan/STATE/handoff file at its exact
-   path, and — when a live surface is in scope — a fetch of the URL itself
+   path, and, when a live surface is in scope, a fetch of the URL itself
    (`curl -sS -o /dev/null -w '%{http_code}' <url>`) instead of trusting the
    last recorded deploy. Skip any read that cannot change which candidate wins.
 3. Generate 2-4 candidate actions internally. Exclude work already verified as
@@ -49,7 +49,7 @@ until the user asks to expand it.
 
 - If a repo or task already has its own plan, progress doc, issue tracker, or
   project board, do not create a second one. Treat its recorded next step as
-  one candidate, verify it against current source, and recommend the winner —
+  one candidate, verify it against current source, and recommend the winner:
   don't replace the existing tracker.
 - If the user needs options explored before a commitment can be made, say so
   and offer to brainstorm instead of forcing a single recommendation.
@@ -58,7 +58,7 @@ until the user asks to expand it.
 
 ## Prompt Levels
 
-The three prompt depths — short copy/paste, full operator prompt, granular steps —
+The three prompt depths, short copy/paste, full operator prompt, granular steps,
 are in `references/prompt-levels.md`. The default is the short prompt; read this
 only when the user asks to expand or make it granular.
 

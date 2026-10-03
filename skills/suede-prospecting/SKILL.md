@@ -18,7 +18,7 @@ or it does not ship. No exceptions, no "verify later," no placeholder rows.
 ```
 
 That single rule is what makes the downstream GDPR / CAN-SPAM lineage real. A row
-without it is not a low-confidence lead — it is not a lead.
+without it is not a low-confidence lead: it is not a lead.
 
 ## Before Starting
 
@@ -41,7 +41,7 @@ authenticated, authorized, and permitted by its terms. If no research connector
 or browser is available, give the user a manual source checklist and work from
 URLs, exports, screenshots, or source text they provide.
 
-If the user describes a hybrid motion (e.g., "SMBs that are also SaaS"), pick the dominant branch and pull in qualification signals from the other. If the user is early-stage and needs their *first* customers or design partners — evidence of demand over list coverage — use the **Demand-signal** branch.
+If the user describes a hybrid motion (e.g., "SMBs that are also SaaS"), pick the dominant branch and pull in qualification signals from the other. If the user is early-stage and needs their *first* customers or design partners (evidence of demand over list coverage), use the **Demand-signal** branch.
 
 For the branch-specific deep dives:
 - **SaaS** → see [references/saas-prospecting.md](references/saas-prospecting.md)
@@ -55,19 +55,19 @@ For the branch-specific deep dives:
 
 Every prospecting engagement follows the same five phases. Tools and qualification signals change per branch; the phases don't.
 
-### Phase 1 — Define the ICP
+### Phase 1: Define the ICP
 
 Pull from `product-marketing.md` if available. Otherwise, gather:
 
-1. **Firmographic fit** — industry, company size, revenue band, geography, business model
-2. **Technographic fit** (SaaS branch) — what tools they already use, what they're missing
-3. **Buying signal** — why now? (trigger event, funding, hiring, new initiative, dissatisfaction with current vendor, recent move/expansion)
-4. **Decision-maker profile** — role, seniority, what they care about
-5. **Disqualifiers** — what makes a prospect a clear "skip"
+1. **Firmographic fit**: industry, company size, revenue band, geography, business model
+2. **Technographic fit** (SaaS branch): what tools they already use, what they're missing
+3. **Buying signal**: why now? (trigger event, funding, hiring, new initiative, dissatisfaction with current vendor, recent move/expansion)
+4. **Decision-maker profile**: role, seniority, what they care about
+5. **Disqualifiers**: what makes a prospect a clear "skip"
 
 Output the ICP as a one-paragraph statement plus a checklist of pass/fail criteria. Don't move to discovery without this.
 
-### Phase 2 — Build the candidate list (discovery)
+### Phase 2: Build the candidate list (discovery)
 
 Start at 2-3x the requested output count, adjusted down for thin source access or
 review capacity. Expand only when the observed disqualification rate shows another
@@ -86,14 +86,14 @@ A smaller evidence-complete list is preferable to padding the output with
 unverified candidates. Don't start qualification until every candidate has its
 source URL captured.
 
-### Phase 3 — Qualify each candidate
+### Phase 3: Qualify each candidate
 
-Score every candidate against the ICP checklist. Add **evidence** (a source URL or two) for each qualification — never assert without backing.
+Score every candidate against the ICP checklist. Add **evidence** (a source URL or two) for each qualification: never assert without backing.
 
 **Confidence levels** (used across all branches):
 - **High**: confirmed by at least two independent sources or official business page
 - **Medium**: one credible source plus consistent search evidence
-- **Low**: incomplete or ambiguous evidence — flag what remains uncertain
+- **Low**: incomplete or ambiguous evidence: flag what remains uncertain
 
 For email contacts, discover whether an authorized validator is callable and
 read its current result semantics before use. If none is available, label the
@@ -101,9 +101,9 @@ address `unverified`, keep it out of send-ready exports, and provide a
 user-operated validation checklist. Never claim that validation guarantees
 delivery. Don't move to scoring until every candidate carries a confidence level.
 
-### Phase 4 — Score and prioritize
+### Phase 4: Score and prioritize
 
-Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-signal** branch scores differently — 0–100 demand-fit, not Hot/Warm/Cold — see [references/demand-signals.md](references/demand-signals.md).
+Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-signal** branch scores differently: 0–100 demand-fit, not Hot/Warm/Cold. See [references/demand-signals.md](references/demand-signals.md).
 
 | Score | Definition |
 |-------|------------|
@@ -112,14 +112,14 @@ Apply this rubric for the **SaaS, B2B, and Local SMB** branches. The **Demand-si
 | **Cold** | Loose ICP fit OR no clear signal OR contact unverified |
 | **Skip** | Disqualifier hit (out of ICP, closed business, duplicate, irrelevant, low confidence) |
 
-Branch-specific signals refine the scoring — see each reference file. Let the
+Branch-specific signals refine the scoring: see each reference file. Let the
 evidence determine the number in each label; never force a Hot/Warm/Cold quota.
 No row leaves this phase labeled Hot without both a buying signal and a verified
-contact — downgrade it to Warm instead.
+contact: downgrade it to Warm instead.
 
-### Phase 5 — Output the lead sheet
+### Phase 5: Output the lead sheet
 
-(SaaS / B2B / Local SMB. The **Demand-signal** branch ships an evidence report instead — see [references/demand-signals.md](references/demand-signals.md).)
+(SaaS / B2B / Local SMB. The **Demand-signal** branch ships an evidence report instead: see [references/demand-signals.md](references/demand-signals.md).)
 
 Default to a markdown table in chat. Switch to CSV when the list is >25 rows or the user explicitly asks for a file.
 
@@ -141,11 +141,11 @@ These apply to every branch. **Read first, every engagement.**
 1. **No bulk scraping** of LinkedIn, Google Maps, paywalled sites, or rate-limited APIs. Browser is an assisted research tool, not a scraper.
 2. **No CAPTCHA, login wall, or bot protection bypass.** If a site requires it, work with what's publicly visible.
 3. **Public business contact channels only.** Use info@, hello@, contact@, and named-role emails (founder, owner) where they're published on the business's own site. Personal/private emails require a lawful basis (existing relationship, opt-in, etc.).
-4. **GDPR / CAN-SPAM / CASL aware.** Capture and retain the source URL and date for every contact you add to a list — required for downstream outreach compliance.
+4. **GDPR / CAN-SPAM / CASL aware.** Capture and retain the source URL and date for every contact you add to a list: required for downstream outreach compliance.
 5. **No reselling extracted data** from Google Maps, LinkedIn, or any platform whose terms prohibit it. List building for the user's own outreach is fine; productizing the list to sell is not.
 6. **Rate limit yourself.** Even on public sources, space requests. Don't fingerprint as a bot.
-7. **No breached, leaked, or unprovenanced data.** Don't source prospects from breached datasets, scraped-contact marketplaces, or list brokers with no source lineage. Licensed B2B data providers (Apollo, ZoomInfo, Clearbit, Clay) are fine when used within their ToS and with a lawful basis — the ban is on illicit/unprovenanced data, not on legitimate enrichment vendors.
-8. **Never target or infer sensitive traits.** Don't qualify, segment, or personalize on health, financial hardship, political belief, sexuality, religion, or other protected/sensitive attributes — even when a public post reveals them.
+7. **No breached, leaked, or unprovenanced data.** Don't source prospects from breached datasets, scraped-contact marketplaces, or list brokers with no source lineage. Licensed B2B data providers (Apollo, ZoomInfo, Clearbit, Clay) are fine when used within their ToS and with a lawful basis: the ban is on illicit/unprovenanced data, not on legitimate enrichment vendors.
+8. **Never target or infer sensitive traits.** Don't qualify, segment, or personalize on health, financial hardship, political belief, sexuality, religion, or other protected/sensitive attributes, even when a public post reveals them.
 
 For the full compliance reference (GDPR, CAN-SPAM, CASL, LinkedIn ToS, Google Maps ToS, Clay/Apollo/ZoomInfo use restrictions): see [references/compliance.md](references/compliance.md).
 
@@ -155,22 +155,22 @@ For the full compliance reference (GDPR, CAN-SPAM, CASL, LinkedIn ToS, Google Ma
 
 If missing, ask once, then infer reasonable defaults and continue:
 
-- **Branch** (SaaS / B2B / Local SMB / Demand-signal) — usually inferable from context; pick Demand-signal for early-stage first-customer discovery
-- **ICP description** — pull from `product-marketing.md` if present
-- **Target count** — use the requested count or propose a bounded pilot justified
+- **Branch** (SaaS / B2B / Local SMB / Demand-signal): usually inferable from context; pick Demand-signal for early-stage first-customer discovery
+- **ICP description**: pull from `product-marketing.md` if present
+- **Target count**: use the requested count or propose a bounded pilot justified
   by source coverage and review capacity
 - **Geography** (essential for Local SMB; useful for B2B; less critical for SaaS)
-- **Tools the user has access to** — discover current callable tools and
+- **Tools the user has access to**: discover current callable tools and
   authenticated accounts; never assume a vendor connector or browser exists
-- **Output format** — chat table (default) or CSV
-- **Buying signal preference** — what triggers should they prioritize? (funding rounds, hiring, recent move, etc.)
+- **Output format**: chat table (default) or CSV
+- **Buying signal preference**: what triggers should they prioritize? (funding rounds, hiring, recent move, etc.)
 
 ---
 
 ## Tool Selection
 
 Treat every named product below as a candidate, not an available capability. These
-are selection examples, not guaranteed integrations — discover what is currently
+are selection examples, not guaranteed integrations: discover what is currently
 callable and verify the user's authenticated access, license, source terms, data
 freshness, export rights, and cost before using one. Full breakdown in
 [references/data-sources.md](references/data-sources.md).
@@ -190,7 +190,7 @@ freshness, export rights, and cost before using one. Full breakdown in
 | **Google Maps + browser** | Local SMB discovery | Terms; assisted review only, no bulk extract |
 | **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
 | **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
-| **Firecrawl / Browserbase** | Single prospect websites — never platforms | Target terms, scope, and session access |
+| **Firecrawl / Browserbase** | Single prospect websites: never platforms | Target terms, scope, and session access |
 
 **If the user has no enrichment or browser tools**: provide exact public-source
 queries and a qualification worksheet, then work from URLs, exports, or
@@ -200,7 +200,7 @@ screenshots the user supplies.
 
 ## Output Formats
 
-### Default — chat table
+### Default: chat table
 
 For SaaS / B2B (≤25 rows):
 
@@ -209,14 +209,14 @@ For SaaS / B2B (≤25 rows):
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ```
 
-For Local SMB (≤15 rows) — port from the local-prospector reference:
+For Local SMB (≤15 rows): port from the local-prospector reference:
 
 ```
 | Score | Business | Category | Area | Website status | Website/Social | Phone | Why it's a prospect | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ```
 
-### CSV — when >25 rows or user requests a file
+### CSV: when >25 rows or user requests a file
 
 SaaS / B2B columns:
 
@@ -247,7 +247,7 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
       result semantics, or is explicitly `unverified`; failed results stay in a
       separate invalid bucket
 - [ ] No lead labeled "Hot" lacks a clear buying signal
-- [ ] Confidence levels honest — "High" requires 2 independent sources, not just two of your own searches
+- [ ] Confidence levels honest: "High" requires 2 independent sources, not just two of your own searches
 - [ ] No leads sourced from prohibited scraping (LinkedIn at scale, Google Maps bulk extract, etc.)
 - [ ] Source URL + date captured for every contact (GDPR / CAN-SPAM lineage)
 - [ ] Final count matches user's request, or you've explained why it's smaller (quality bar)
