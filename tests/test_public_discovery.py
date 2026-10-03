@@ -60,6 +60,23 @@ class PublicDiscoveryTests(unittest.TestCase):
             with self.subTest(template=path.name):
                 self.assertTrue(any('noindex' in value.lower() for value in Page(path.read_text()).meta('robots')))
 
+    def test_every_indexable_self_canonical_page_is_in_sitemap(self):
+        urls = {node.text for node in ET.parse(DOCS / 'sitemap.xml').findall('.//{*}loc')}
+        for path in DOCS.rglob('*.html'):
+            page = Page(path.read_text())
+            if any('noindex' in value.lower() for value in page.meta('robots')):
+                continue
+            canonicals = [a.get('href') for tag, a in page.tags
+                          if tag == 'link' and a.get('rel') == 'canonical']
+            # Verification stubs and image templates are not content pages.
+            if not canonicals:
+                continue
+            rel = path.relative_to(DOCS).as_posix()
+            own_url = BASE + (rel[:-10] if path.name == 'index.html' else rel)
+            with self.subTest(page=rel):
+                self.assertEqual(canonicals, [own_url])
+                self.assertIn(own_url, urls, 'indexable content omitted from sitemap')
+
     def test_sitemap_pages_have_consistent_search_metadata_and_working_links(self):
         sitemap = ET.parse(DOCS / 'sitemap.xml')
         urls = [node.text for node in sitemap.findall('.//{*}loc')]
