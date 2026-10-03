@@ -7,8 +7,9 @@ const PROTOCOL_VERSION = "2025-06-18";
 const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
 const SPECIALTY_KEYS = ["ship", "craft", "found", "demand", "revenue", "position"];
 // Profiles come in two flavours now. The area profiles (workflow/creator/
-// marketing/consumer) mirror the plugin bundles and are what .mcp.json
-// registers. The specialty profiles mirror how the pack is browsed, so a client
+// marketing/consumer) mirror the plugin bundles; .mcp.json registers a single
+// server on the default `all` profile, and these stay available to anyone
+// passing --profile by hand. The specialty profiles mirror how the pack is browsed, so a client
 // that wants only the revenue surface can register one server against it
 // without the pack shipping six of them by default.
 const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator", "marketing", "consumer", ...SPECIALTY_KEYS]);
@@ -293,8 +294,8 @@ function installMarkdown(data, surface = "all") {
     lines.push("");
     lines.push("## MCP option");
     lines.push("Use the MCP when structured skill discovery, install options, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists materially help the task.");
-    for (const plugin of data.plugins) {
-      lines.push(`- ${plugin.displayName} MCP server: \`${plugin.mcpServer}\``);
+    for (const server of new Set(data.plugins.map((plugin) => plugin.mcpServer).filter(Boolean))) {
+      lines.push(`- MCP server: \`${server}\``);
     }
   }
   if (surface === "all" || surface === "claude") {

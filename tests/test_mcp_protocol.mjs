@@ -304,7 +304,7 @@ test("every catalog area is reachable through a shipped profile", async () => {
   assert.deepEqual([...areas].sort(), [...reached].sort());
 
   const registered = Object.values(MCP_CONFIG.mcpServers).map((server) => server.args.at(-1)).sort();
-  assert.deepEqual(registered, ["creator", "marketing", "workflow"]);
+  assert.deepEqual(registered, ["all"]);
 });
 
 test("search ranks skills by task intent and refuses to guess", async () => {
@@ -515,43 +515,17 @@ test("catalog, resources, prompts, and profile filters match the live server", a
   }, "workflow");
 });
 
-test("Claude and Codex MCP registrations retain both portable profiles", () => {
-  const creator = MCP_CONFIG.mcpServers.suede_creator_mcp;
-  const workflow = MCP_CONFIG.mcpServers.suede_workflow_mcp;
-  assert.ok(creator);
-  assert.ok(workflow);
-  assert.deepEqual(creator.args.slice(-2), ["--profile", "creator"]);
-  assert.deepEqual(workflow.args.slice(-2), ["--profile", "workflow"]);
-  assert.equal(creator.command, "node");
-  assert.equal(workflow.command, "node");
-  assert.equal(creator.cwd, "${CLAUDE_PLUGIN_ROOT}");
-  assert.equal(workflow.cwd, "${CLAUDE_PLUGIN_ROOT}");
+test("Claude and Codex plugins register exactly one full-catalog MCP server", () => {
+  assert.deepEqual(Object.keys(MCP_CONFIG.mcpServers), ["suede_skills_mcp"]);
+  const server = MCP_CONFIG.mcpServers.suede_skills_mcp;
+  assert.equal(server.command, "node");
+  assert.equal(server.cwd, "${CLAUDE_PLUGIN_ROOT}");
+  assert.deepEqual(server.args, ["${CLAUDE_PLUGIN_ROOT}/mcp/suede-skills-mcp.mjs", "--profile", "all"]);
 
-  const marketing = MCP_CONFIG.mcpServers.suede_marketing_mcp;
-  assert.ok(marketing);
-  assert.deepEqual(marketing.args.slice(-2), ["--profile", "marketing"]);
-  assert.equal(marketing.command, "node");
-  assert.equal(marketing.cwd, "${CLAUDE_PLUGIN_ROOT}");
-
-  const codexCreator = CODEX_PLUGIN.mcpServers.suede_creator_mcp;
-  const codexWorkflow = CODEX_PLUGIN.mcpServers.suede_workflow_mcp;
-  assert.deepEqual(CODEX_PLUGIN.mcpServers.suede_marketing_mcp.args, [
-    "./mcp/suede-skills-mcp.mjs",
-    "--profile",
-    "marketing"
-  ]);
-  assert.deepEqual(codexCreator.args, [
-    "./mcp/suede-skills-mcp.mjs",
-    "--profile",
-    "creator"
-  ]);
-  assert.deepEqual(codexWorkflow.args, [
-    "./mcp/suede-skills-mcp.mjs",
-    "--profile",
-    "workflow"
-  ]);
-  assert.equal(codexCreator.cwd, ".");
-  assert.equal(codexWorkflow.cwd, ".");
+  assert.deepEqual(Object.keys(CODEX_PLUGIN.mcpServers), ["suede_skills_mcp"]);
+  const codexServer = CODEX_PLUGIN.mcpServers.suede_skills_mcp;
+  assert.deepEqual(codexServer.args, ["./mcp/suede-skills-mcp.mjs", "--profile", "all"]);
+  assert.equal(codexServer.cwd, ".");
   assert.doesNotMatch(JSON.stringify(CODEX_PLUGIN.mcpServers), /CLAUDE_PLUGIN_ROOT/);
 
   for (const [serverName, server] of Object.entries(CODEX_PLUGIN.mcpServers)) {

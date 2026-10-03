@@ -536,10 +536,10 @@ if (!codexPluginJson) {
     fail.push('Codex plugin skills path must be "./skills/"');
   }
   const codexMcpServers = codexPluginJson.mcpServers;
+  // One server with the full catalog. Area and specialty profiles stay in the
+  // script for anyone passing --profile by hand; the plugin registers one copy.
   const expectedCodexMcpProfiles = {
-    suede_creator_mcp: "creator",
-    suede_workflow_mcp: "workflow",
-    suede_marketing_mcp: "marketing",
+    suede_skills_mcp: "all",
   };
   if (!isObject(codexMcpServers)) {
     fail.push("Codex plugin mcpServers must be an inline object with root-relative paths");

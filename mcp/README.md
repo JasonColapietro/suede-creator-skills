@@ -47,8 +47,10 @@ Current surface: 9 tools (`list_suede_skills`, `list_suede_specialties`,
 (`suede-copy-seo-audit`, `suede-plugin-install`, `suede-visibility-grade`,
 `suede-code-grade`, `suede-full-qa`).
 
-The plugin manifest registers `suede_creator_mcp` (`creator` profile),
-`suede_workflow_mcp` (`workflow` profile), and `suede_marketing_mcp`
-(`marketing` profile). Catalog additions are exposed through
+The plugin manifests (`.mcp.json` for Claude Code, `.codex-plugin/plugin.json`
+for Codex) register one server, `suede_skills_mcp`, on the `all` profile, so an
+install starts one process and exposes each tool once. The area and specialty
+profiles above remain available to anyone who registers the script by hand with
+`--profile`. Catalog additions are exposed through
 the generic discovery tool and `suede://catalog`; adding a skill does not add a
 new tool, resource, or prompt.
