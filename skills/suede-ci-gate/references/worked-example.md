@@ -1,21 +1,21 @@
-# Suede CI Gate — Worked Example
+# Suede CI Gate: Worked Example
 
-One repository taken from a green-looking pipeline that gates nothing to a merge that genuinely cannot land broken. Illustration only — the rules live in SKILL.md.
+One repository taken from a green-looking pipeline that gates nothing to a merge that genuinely cannot land broken. Illustration only: the rules live in SKILL.md.
 
 ## Worked Example
 
-Fictional repo `acme-notes` — a single Next.js 14 app at the repo root, npm, no CI yet. This is what Step 0 through Output actually produce.
+Fictional repo `acme-notes`: a single Next.js 14 app at the repo root, npm, no CI yet. This is what Step 0 through Output actually produce.
 
-**Step 0 — Detect (inventory)**
+**Step 0: Detect (inventory)**
 
-- **Apps:** one — repo root has `package.json` with `"next": "14.2.3"`. No monorepo, no `apps/*` split.
-- **Package manager:** `package-lock.json` present. No `pnpm-lock.yaml` or `yarn.lock` alongside it — clean.
+- **Apps:** one: repo root has `package.json` with `"next": "14.2.3"`. No monorepo, no `apps/*` split.
+- **Package manager:** `package-lock.json` present. No `pnpm-lock.yaml` or `yarn.lock` alongside it: clean.
 - **Existing CI:** `.github/workflows/` does not exist. Nothing to extend or duplicate.
 - **Runtime version:** `package.json` has `"engines": { "node": ">=20.9.0" }`. No `.nvmrc`. Pin CI to `20.9.0`.
-- **Deploy platform:** `vercel.json` present with the standing `ignoreCommand` that kills preview builds (`[ "$VERCEL_ENV" != "production" ] && exit 0 || exit 1`). Previews never build on Vercel — CI is the only pre-merge build signal. Build job is mandatory, not optional.
-- **Real scripts:** `package.json` scripts are `build`, `lint` (`next lint`), and `test` (`vitest run`). No `test:run` alias, no separate typecheck script — `tsc --noEmit` is not wired up as its own script, so it's added as a CI step directly.
+- **Deploy platform:** `vercel.json` present with the standing `ignoreCommand` that kills preview builds (`[ "$VERCEL_ENV" != "production" ] && exit 0 || exit 1`). Previews never build on Vercel: CI is the only pre-merge build signal. Build job is mandatory, not optional.
+- **Real scripts:** `package.json` scripts are `build`, `lint` (`next lint`), and `test` (`vitest run`). No `test:run` alias, no separate typecheck script: `tsc --noEmit` is not wired up as its own script, so it's added as a CI step directly.
 
-**Deliverable 1 — workflow file** (`.github/workflows/ci.yml`)
+**Deliverable 1: workflow file** (`.github/workflows/ci.yml`)
 
 ```yaml
 name: CI
@@ -72,9 +72,9 @@ jobs:
           done
 ```
 
-One app, so path-filtering exists mainly as the escape hatch (doc-only edits skip the `app` job; workflow-file edits always run it). `ci-success` is still required, not `app` directly — a single-app repo can still deadlock if `app` ever gains its own `paths:` filter later, so the aggregator habit holds even here.
+One app, so path-filtering exists mainly as the escape hatch (doc-only edits skip the `app` job; workflow-file edits always run it). `ci-success` is still required, not `app` directly: a single-app repo can still deadlock if `app` ever gains its own `paths:` filter later, so the aggregator habit holds even here.
 
-**Deliverable 2 — branch-protection settings**
+**Deliverable 2: branch-protection settings**
 
 Apply to `main`:
 
@@ -98,14 +98,14 @@ gh api repos/acme/acme-notes/branches/main/protection \
   -f 'allow_deletions=false'
 ```
 
-**Deliverable 3 — short report**
+**Deliverable 3: short report**
 
 > **Repo:** `acme-notes` (single Next.js app, npm, Vercel).
 > **Package manager:** npm, one lockfile, `npm ci` matches.
-> **CI added:** `.github/workflows/ci.yml` — one path-filtered `app` job (lint, typecheck, test, build) behind a `ci-success` aggregator.
+> **CI added:** `.github/workflows/ci.yml`, one path-filtered `app` job (lint, typecheck, test, build) behind a `ci-success` aggregator.
 > **Required check:** `ci-success` only.
 > **Node pinned:** 20.9.0, from `package.json` `engines` (no `.nvmrc` found).
-> **Fix first:** nothing blocking — no dual lockfiles, no existing workflow to reconcile, no runtime mismatch.
+> **Fix first:** nothing blocking, no dual lockfiles, no existing workflow to reconcile, no runtime mismatch.
 > **Note:** Vercel previews are disabled by `ignoreCommand`, so this CI build is the only pre-merge proof the app compiles. Do not treat "Vercel deployed" as a build signal for PRs.
 >
 > **Simple explanation:** Before any change joins the main project, a robot installs it, checks the code style, checks the types, runs the tests, and builds it. If any step fails, the merge button locks. Nothing reaches the live site without passing through the robot first.

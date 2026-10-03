@@ -44,9 +44,9 @@ A headless CMS separates content management from presentation. Content is stored
 
 ### Core Principles
 
-1. **Think in types, not pages.** A "Landing Page" is a content type with fields — not an HTML file. This lets you reuse components across pages.
+1. **Think in types, not pages.** A "Landing Page" is a content type with fields: not an HTML file. This lets you reuse components across pages.
 2. **Separate content from presentation.** Store the headline text, not the styled headline. Presentation belongs in the frontend.
-3. **Design for reuse.** If testimonials appear on 5 pages, create a Testimonial type and reference it — don't duplicate.
+3. **Design for reuse.** If testimonials appear on 5 pages, create a Testimonial type and reference it: don't duplicate.
 4. **Keep models flat.** Deeply nested structures are hard to query and maintain. Prefer references over nesting.
 
 ### Common Marketing Content Types
@@ -65,13 +65,13 @@ A headless CMS separates content management from presentation. Content is stored
 
 Every page-level content type needs:
 
-- `metaTitle` — 50-60 characters
-- `metaDescription` — 150-160 characters
-- `ogImage` — 1200x630px social preview
-- `slug` — URL path segment
-- `canonicalUrl` — optional override
-- `noIndex` — boolean for excluding from search
-- `structuredData` — optional JSON-LD override
+- `metaTitle`: 50-60 characters
+- `metaDescription`: 150-160 characters
+- `ogImage`: 1200x630px social preview
+- `slug`: URL path segment
+- `canonicalUrl`: optional override
+- `noIndex`: boolean for excluding from search
+- `structuredData`: optional JSON-LD override
 
 ---
 
@@ -79,11 +79,11 @@ Every page-level content type needs:
 
 ### Draft → Review → Publish Cycle
 
-1. **Draft** — Author creates or edits content
-2. **Review** — Editor reviews for accuracy, brand voice, SEO
-3. **Approve** — Stakeholder signs off
-4. **Schedule** — Set publish date/time
-5. **Publish** — Content goes live via API
+1. **Draft**: Author creates or edits content
+2. **Review**: Editor reviews for accuracy, brand voice, SEO
+3. **Approve**: Stakeholder signs off
+4. **Schedule**: Set publish date/time
+5. **Publish**: Content goes live via API
 
 ### Preview APIs
 
@@ -145,11 +145,11 @@ Exact permission models vary by platform. Sanity uses role-based access. Content
 
 ### Others Worth Knowing
 
-- **Hygraph** — GraphQL-native, strong for federation and multi-source content
-- **Keystatic** — Git-based, good for developer-content hybrid workflows
-- **Payload** — TypeScript-first, self-hosted, code-configured like Sanity
-- **Builder.io** — Visual editor with headless backend, good for non-technical marketers
-- **Prismic** — Slice-based content modeling, strong Next.js integration
+- **Hygraph**: GraphQL-native, strong for federation and multi-source content
+- **Keystatic**: Git-based, good for developer-content hybrid workflows
+- **Payload**: TypeScript-first, self-hosted, code-configured like Sanity
+- **Builder.io**: Visual editor with headless backend, good for non-technical marketers
+- **Prismic**: Slice-based content modeling, strong Next.js integration
 
 ---
 

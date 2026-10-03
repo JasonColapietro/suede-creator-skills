@@ -7,14 +7,14 @@ metadata:
 
 # Suede Programmatic SEO
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+Every check, gate, and verdict in this skill, `ship`, `ship-with-caveats`,
 `hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below — is a **recommendation to the user, not a control on the
+proceed" line below, is a **recommendation to the user, not a control on the
 agent**. Run every check, report the results honestly, and complete the
 requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception — if a finding is extremely risky (data loss,
+you do.** Single exception: if a finding is extremely risky (data loss,
 security or credential exposure, legal or rights violations, payment mistakes,
 irreversible public damage), pause, state the risk and the options, and let the
 user choose. Their choice is final.
@@ -59,7 +59,7 @@ Before designing a programmatic SEO strategy, understand:
 ### 1. Unique Value Per Page
 - Every page must provide value specific to that page
 - Not just swapped variables in a template
-- Maximize unique content—the more differentiated, the better
+- Maximize unique content: the more differentiated, the better
 
 ### 2. Proprietary Data Wins
 Hierarchy of data defensibility:
@@ -67,10 +67,10 @@ Hierarchy of data defensibility:
 2. Product-derived (from your users)
 3. User-generated (your community)
 4. Licensed (exclusive access)
-5. Public (anyone can use—weakest)
+5. Public (anyone can use, weakest)
 
 ### 3. Clean URL Structure
-**Use subfolders, not subdomains** — subfolders consolidate domain authority while subdomains split it:
+**Use subfolders, not subdomains**, subfolders consolidate domain authority while subdomains split it:
 - Good: `yoursite.com/templates/resume/`
 - Bad: `templates.yoursite.com/resume/`
 
@@ -160,7 +160,7 @@ the combinations worth layering, and per-playbook implementation detail.
 ### Pre-Launch Checklist
 
 Run this on a **bounded sample of 10 pages, or 5% of the planned set, whichever
-is larger** — drawn across the data range (best-populated, median, and thinnest
+is larger**, drawn across the data range (best-populated, median, and thinnest
 rows), never only the showcase pages. **At least 90% of the sample must pass
 every gate below** before any page beyond the sample is generated, published, or
 submitted for indexing. A failing sample means fix the template or narrow the
@@ -175,7 +175,7 @@ page set; it never means ship the rest and watch.
 - [ ] A reader who cannot use the product still gets something from the page
 
 **Technical SEO:**
-- [ ] Unique titles and meta descriptions — no two pages share either string
+- [ ] Unique titles and meta descriptions: no two pages share either string
 - [ ] Proper heading structure (one H1 carrying the page's variables)
 - [ ] Schema markup implemented and validating
 - [ ] Largest Contentful Paint measured on a real sample page, not assumed
@@ -194,8 +194,8 @@ page set; it never means ship the rest and watch.
 
 Check indexation rate in Search Console (indexed ÷ submitted, per page-type
 sitemap) 30 days after each phase: **below 60% means stop expanding the set and
-re-run the sample gates.** Hand the rest of the rollout metrics — rankings,
-traffic, engagement, conversion, and thin-content or manual-action warnings — to
+re-run the sample gates.** Hand the rest of the rollout metrics, rankings,
+traffic, engagement, conversion, and thin-content or manual-action warnings, to
 `suede-analytics`, which owns rollout performance.
 
 ---
@@ -213,17 +213,17 @@ traffic, engagement, conversion, and thin-content or manual-action warnings — 
 ## Output Contract
 
 Close every programmatic SEO pass with this block, filled in. Write the literal
-templates — do not describe them.
+templates: do not describe them.
 
 ```text
-PLAYBOOK: [name] — chosen because [pattern + data fit]
-DATA DEFENSIBILITY: [tier 1-5] — source, provenance, refresh cadence
+PLAYBOOK: [name], chosen because [pattern + data fit]
+DATA DEFENSIBILITY: [tier 1-5], source, provenance, refresh cadence
 PAGE-COUNT BOUND: sample [N] → phase 1 [N] → ceiling [N], unlocked by [condition]
 URL: [literal pattern]   TITLE: [literal]   META: [literal]   H1: [literal]
 UNIQUENESS: [page-unique fields, count per page] | template-shared body text: [N%]
 LINK PLAN: hub [URL] → spokes [pattern] | cross-links [rule] | sitemap [file]
-SAMPLE VERDICT: [N of N sample pages pass] — failing gates: [list or "none"]
-SHIP GATE: ship | ship-with-caveats | hold — reason
+SAMPLE VERDICT: [N of N sample pages pass], failing gates: [list or "none"]
+SHIP GATE: ship | ship-with-caveats | hold, reason
 ```
 
 ---
@@ -246,5 +246,5 @@ SHIP GATE: ship | ship-with-caveats | hold — reason
 - Use `suede-seo-audit` to audit shipped pages and technical search health.
 - Use `suede-content-strategy` for non-templated editorial planning.
 - Use `suede-competitors` for comparison-page evidence and framing.
-- Use `suede-ai-seo` to make the generated pages extractable and citable by AI answer engines — it owns the extractability standard.
+- Use `suede-ai-seo` to make the generated pages extractable and citable by AI answer engines: it owns the extractability standard.
 - Use `suede-analytics` to define and read rollout performance.

@@ -19,7 +19,7 @@ manual, source-linked research worksheet or a user-supplied export.
 | **Decision-maker mapping** | LinkedIn Sales Navigator (manual), Apollo, ZoomInfo | Compare current coverage on a representative sample. Never bulk scrape restricted sources. |
 | **Tech stack qualification (SaaS)** | BuiltWith, Wappalyzer | BuiltWith has wider coverage + paid plans for bulk; Wappalyzer is lighter + free for small use |
 | **Funding signals (SaaS)** | Crunchbase, Pitchbook | Crunchbase free tier sufficient for early signals; Pitchbook for deeper investor data |
-| **Email pattern discovery** | Hunter, Snov, Apollo | Pattern guessing — followed by verification |
+| **Email pattern discovery** | Hunter, Snov, Apollo | Pattern guessing: followed by verification |
 | **Email deliverability verification** | Any currently authorized validator | Read current result semantics; otherwise label addresses unverified and use a manual handoff |
 | **Visitor identification (warm intent)** | RB2B, Clearbit Reveal | Anonymous traffic → company identification |
 | **Intent data** | ZoomInfo Intent, 6sense, Bombora | Pre-warmed signals; mid-market+ pricing |
@@ -40,8 +40,8 @@ current sample supports coverage for the target market.
 - Current export, quota, and pricing terms
 
 **Watch out for**:
-- Data freshness varies — re-verify before scoring as "Hot"
-- Email accuracy varies by segment and date — validate on a current sample
+- Data freshness varies: re-verify before scoring as "Hot"
+- Email accuracy varies by segment and date: validate on a current sample
 - Bulk export limits apply
 
 **Verification**: confirm Apollo's current documentation, account access,
@@ -63,7 +63,7 @@ freshness, export limits, and terms before use.
 
 **Watch out for**:
 - Per-credit pricing can spike on large lists
-- Complexity overhead — easy to over-engineer workflows
+- Complexity overhead: easy to over-engineer workflows
 
 **Verification**: confirm Clay's current providers, credit model, field
 provenance, account access, and terms before use.
@@ -125,7 +125,7 @@ coverage, and terms before use.
 - Compare current total cost at the intended volume
 
 **Watch out for**:
-- Both are pattern-guessing tools — accuracy depends on the target company's email pattern being inferable
+- Both are pattern-guessing tools: accuracy depends on the target company's email pattern being inferable
 - Use a currently callable, authorized validator when available and read its
   result semantics. Otherwise label results `unverified` and keep them out of
   send-ready exports.
@@ -170,8 +170,8 @@ terms, and a representative sample support it.
 
 **Hard rules**:
 - **Never bulk scrape**. LinkedIn aggressively bans scrapers. Account ban risk is real and permanent.
-- Use Sales Nav as a research interface — open profiles, read, take notes, capture key data manually.
-- Apollo and other tools claim LinkedIn data via partnerships / public mirroring — verify the source legitimacy before assuming compliance.
+- Use Sales Nav as a research interface: open profiles, read, take notes, capture key data manually.
+- Apollo and other tools claim LinkedIn data via partnerships / public mirroring: verify the source legitimacy before assuming compliance.
 
 **Access rule**: default to manual research unless a currently callable,
 authorized connector is discovered and its terms permit this use.
@@ -207,13 +207,13 @@ Cross-reference both for high-confidence tech stack signals.
 
 **Watch out for**:
 - Coverage is best for VC-backed companies; bootstrapped + small businesses underrepresented
-- Self-reported data — verify funding amounts independently
+- Self-reported data: verify funding amounts independently
 
 ---
 
 ## GitHub (stargazers / forks / watchers)
 
-**Use for**: Developer-intent prospecting. Especially powerful for dev-tool SaaS — stargazers of competitor or category-defining repos are in-market signal.
+**Use for**: Developer-intent prospecting. Especially powerful for dev-tool SaaS: stargazers of competitor or category-defining repos are in-market signal.
 
 **Strengths**:
 - Public API may be available; confirm current authentication, rate limits,
@@ -229,7 +229,7 @@ Cross-reference both for high-confidence tech stack signals.
   assumed; never infer or fabricate private addresses
 - Define repository relevance from product fit and a sampled signal-quality
   review, not a universal star-count band
-- Most prospects are individuals, not company contacts directly — need to figure out their company from `company` field or LinkedIn
+- Most prospects are individuals, not company contacts directly: need to figure out their company from `company` field or LinkedIn
 
 **Verification**: confirm GitHub's current API documentation, authentication,
 rate limits, and applicable terms before use.
@@ -242,7 +242,7 @@ rate limits, and applicable terms before use.
 
 ### Firecrawl
 
-- **Best for**: "Just give me the page as markdown" — Local SMB website status checks, B2B company about/team page extraction, structured field extraction
+- **Best for**: "Just give me the page as markdown": Local SMB website status checks, B2B company about/team page extraction, structured field extraction
 - **Strengths to verify**: source extraction and structured output for
   individual public sites
 - **Access**: discover whether an authorized API, connector, or manual browser
@@ -250,7 +250,7 @@ rate limits, and applicable terms before use.
 
 ### Browserbase
 
-- **Best for**: When you need real Chromium — JS-heavy pages, cookie consent dialogs, form submission to reach a contact page, session state
+- **Best for**: When you need real Chromium: JS-heavy pages, cookie consent dialogs, form submission to reach a contact page, session state
 - **Strengths**: Full browser control via Playwright/Puppeteer; Stagehand provides AI-friendly natural-language extraction; session recordings for debugging
 - **Access**: discover whether an authorized browser, API, or connector is
   currently available
@@ -279,7 +279,7 @@ session access, pricing, and target-site terms before use.
 - Slack / email alerts on key visits
 
 **Watch out for**:
-- Privacy/GDPR considerations — verify your privacy policy disclosures
+- Privacy/GDPR considerations: verify your privacy policy disclosures
 - Person-level identification raises higher concerns than company-level
 
 **Verification**: confirm RB2B's current identification grain, account access,
@@ -291,16 +291,16 @@ privacy requirements, and terms before use.
 
 When the user has no callable or paid tools, give them a manual checklist using:
 
-- **Google Search** — exact business name + city + role searches
-- **LinkedIn** (manual, no scraping) — company pages, employee lookups
-- **Crunchbase or another current source** — funding events, when access and
+- **Google Search**: exact business name + city + role searches
+- **LinkedIn** (manual, no scraping): company pages, employee lookups
+- **Crunchbase or another current source**: funding events, when access and
   terms are verified
-- **Wappalyzer browser extension** — tech stack at a glance
-- **Authorized contact-data source** — verify current allowance, terms, and
+- **Wappalyzer browser extension**: tech stack at a glance
+- **Authorized contact-data source**: verify current allowance, terms, and
   permitted use before each run
-- **Google Maps** — for Local SMB discovery
-- **Business websites + About pages** — primary source for any claim
-- **News sites + press releases** — trigger event monitoring via Google Alerts
+- **Google Maps**: for Local SMB discovery
+- **Business websites + About pages**: primary source for any claim
+- **News sites + press releases**: trigger event monitoring via Google Alerts
 
 Slower than tooled-up workflows, but produces high-quality smaller lists if the user is willing to do the work.
 

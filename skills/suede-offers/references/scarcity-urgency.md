@@ -13,7 +13,7 @@ The repo voice: **only ship real scarcity.** If the scarcity is fake, take it of
 | **Scarcity** | Quantity | Cohort size, seats, inventory, batch, capacity |
 | **Urgency** | Time | Cohort deadline, season, bonus expiry, price increase |
 
-Both work via the same mechanism — they convert "I'll think about it" into "decide now." The difference is what enforces the decision: a limit on how many, or a limit on when.
+Both work via the same mechanism: they convert "I'll think about it" into "decide now." The difference is what enforces the decision: a limit on how many, or a limit on when.
 
 ---
 
@@ -41,7 +41,7 @@ Works for: courses, programs, group coaching, anything synchronous.
 
 The first N buyers get a different price. After that, the price goes up.
 
-> "Founding pricing — $497/mo for the first 50 members. After we hit 50, the price moves to $797/mo."
+> "Founding pricing: $497/mo for the first 50 members. After we hit 50, the price moves to $797/mo."
 
 Works for: SaaS, communities, memberships. Critical: actually raise the price when you hit 50. Otherwise it was a lie.
 
@@ -87,7 +87,7 @@ Pattern-match and rip these off your page:
 
 The timer hits 0:00 and refreshes. The buyer comes back tomorrow, same timer, same urgency. Every buyer who notices loses trust.
 
-If you use a countdown, it ends on a real date. After that date, the discount or bonus actually ends — verifiably.
+If you use a countdown, it ends on a real date. After that date, the discount or bonus actually ends, verifiably.
 
 ### "Only 3 spots left"
 
@@ -103,7 +103,7 @@ These can be honest on some platforms (Booking.com etc.) when they reflect actua
 
 ### Bonus "stacking" that's always available
 
-"This bonus expires at midnight!" — but every page on the site says the same thing at midnight every night.
+"This bonus expires at midnight!", but every page on the site says the same thing at midnight every night.
 
 The bonus has to actually expire, or the line is a lie.
 
@@ -125,7 +125,7 @@ Buyers compare notes. The internet is small.
 
 Real scarcity converts ~the same as fake scarcity at the moment of purchase. The difference shows up at month 6, when fake-scarcity offers are facing trust collapse and real-scarcity offers are still compounding.
 
-If you have to fake it, you don't have an offer-design problem — you have a value-equation problem. Go back to [value-equation.md](value-equation.md).
+If you have to fake it, you don't have an offer-design problem: you have a value-equation problem. Go back to [value-equation.md](value-equation.md).
 
 ---
 
@@ -133,10 +133,10 @@ If you have to fake it, you don't have an offer-design problem — you have a va
 
 Some offers don't need scarcity:
 
-- **Subscription products** that customers can cancel anytime — the natural friction is low enough
-- **Low-priced impulse products** ($5–30) — the deliberation is short; scarcity feels forced
-- **Premium / luxury brands** — scarcity is implicit in the positioning; explicit scarcity reads as low-status
-- **High-trust audiences** who already know they'll buy — scarcity is unnecessary friction
+- **Subscription products** that customers can cancel anytime: the natural friction is low enough
+- **Low-priced impulse products** ($5–30): the deliberation is short; scarcity feels forced
+- **Premium / luxury brands**: scarcity is implicit in the positioning; explicit scarcity reads as low-status
+- **High-trust audiences** who already know they'll buy: scarcity is unnecessary friction
 
 Don't force scarcity into offers that don't need it. The forced version is worse than no scarcity.
 
@@ -152,7 +152,7 @@ For an existing offer with weak or no scarcity:
 4. **Are you willing to actually enforce it?** When the constraint hits, do you have the discipline to actually close the door / raise the price / remove the bonus?
 5. **Where on the page does the scarcity appear?** It should be next to the buy button, not buried.
 
-If you can't find a real constraint, don't ship scarcity. The "trick" of fake scarcity is one of the most expensive shortcuts in marketing. The honest version is usually cheaper than people think — every business has *some* real constraint (capacity, calendar, batch, attention).
+If you can't find a real constraint, don't ship scarcity. The "trick" of fake scarcity is one of the most expensive shortcuts in marketing. The honest version is usually cheaper than people think: every business has *some* real constraint (capacity, calendar, batch, attention).
 
 ---
 

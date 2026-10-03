@@ -147,7 +147,7 @@ with the specific thing.
 - "The stakes are high"
 - "The consequences are real"
 
-## Binary contrasts — all variants
+## Binary contrasts: all variants
 
 Telegraphed reversals. Fix: state Y directly and drop the negation.
 

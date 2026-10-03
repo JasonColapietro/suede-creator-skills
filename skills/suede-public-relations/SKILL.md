@@ -33,15 +33,15 @@ value must be measured against the current audience, story, and sales motion.
 
 ### When PR is worth it
 
-- You have **a real story** — proprietary data, a strong opinion, a milestone, a customer with a sharp before/after, or a fresh angle on a trending topic
-- You have **founder/exec time** — journalists want quotes from people with skin in the game, not from a PR rep
-- You have **a destination** — a press page, blog post, or product launch that converts attention into something useful
+- You have **a real story**: proprietary data, a strong opinion, a milestone, a customer with a sharp before/after, or a fresh angle on a trending topic
+- You have **founder/exec time**: journalists want quotes from people with skin in the game, not from a PR rep
+- You have **a destination**: a press page, blog post, or product launch that converts attention into something useful
 
 ### When to skip PR (for now)
 
 - Pre-launch with no story beyond "we exist"
 - No one on the team can sustain the approved, measured test window
-- You don't have a clear ICP — journalists ask "who reads my piece because of this?" and if you can't answer, neither can they
+- You don't have a clear ICP: journalists ask "who reads my piece because of this?" and if you can't answer, neither can they
 
 ---
 
@@ -57,13 +57,13 @@ capacity, and current source access.
 | **Inbound (press requests)** | Respond to journalist queries on HARO/Qwoted/Featured | Low | Days to weeks |
 | **Owned (press page + media kit)** | Make it easy for journalists to find you | One-time setup | N/A |
 
-**For the reactive newsjacking workflow** — see [references/newsjacking.md](references/newsjacking.md)
+**For the reactive newsjacking workflow**: see [references/newsjacking.md](references/newsjacking.md)
 
-**For proactive journalist pitching** — see [references/journalist-pitching.md](references/journalist-pitching.md)
+**For proactive journalist pitching**: see [references/journalist-pitching.md](references/journalist-pitching.md)
 
-**For inbound press-request platforms (HARO, Qwoted, etc.)** — see [references/press-platforms.md](references/press-platforms.md)
+**For inbound press-request platforms (HARO, Qwoted, etc.)**: see [references/press-platforms.md](references/press-platforms.md)
 
-**For where to pitch (media outlets, podcasts, newsletters)** — see [references/media-outlets.md](references/media-outlets.md). For startup/SaaS/AI directories, use the separate `suede-directory-submissions` skill — different intent, different list.
+**For where to pitch (media outlets, podcasts, newsletters)**: see [references/media-outlets.md](references/media-outlets.md). For startup/SaaS/AI directories, use the separate `suede-directory-submissions` skill: different intent, different list.
 
 ---
 
@@ -93,10 +93,10 @@ the team's real service level rather than a universal 24-hour promise.
 Before presenting any draft for send approval, resolve these checks:
 
 - [ ] Does a bounded recent sample show that this journalist covers the beat?
-- [ ] Is there a clear news hook — something that just happened or is about to?
+- [ ] Is there a clear news hook: something that just happened or is about to?
 - [ ] Could this journalist write a complete story from this email alone? (Data, quotes, customer name, contact.)
 - [ ] Is the subject line specific enough to predict the article's headline?
-- [ ] Is the pitch within the outlet's published word or character limit — or,
+- [ ] Is the pitch within the outlet's published word or character limit, or,
       if the outlet publishes none, within the limit the user stated?
 - [ ] Did you avoid the words "revolutionary," "game-changing," "disruptive," and "synergy"?
 - [ ] Is the ask clear? (Interview? Embargo? Exclusive? Quote?)
@@ -136,7 +136,7 @@ What to track:
 | **AI citation rate** (ChatGPT, Perplexity quote your brand?) | The new measurement that matters |
 | **Sales conversations citing the article** | One revenue-influence signal to reconcile with attribution limits |
 
-What not to obsess over: AVE (advertising value equivalency) — it's a vanity metric PR firms invented.
+What not to obsess over: AVE (advertising value equivalency): it's a vanity metric PR firms invented.
 
 ---
 
@@ -162,7 +162,7 @@ Go to [press-platforms.md](references/press-platforms.md), use the response
 template, follow current outlet limits, and keep the result draft-only.
 
 ### "Build my press page"
-Use the checklist above. Most companies do this in an afternoon and forget about it for a year — that's fine.
+Use the checklist above. Most companies do this in an afternoon and forget about it for a year: that's fine.
 
 ## Boundaries
 

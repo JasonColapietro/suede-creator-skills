@@ -1,6 +1,6 @@
 # Surface-Type Standards
 
-What a good result looks like per surface — landing page, docs, repo page, launch page, campaign page — and which lanes get capped for each.
+What a good result looks like per surface (landing page, docs, repo page, launch page, campaign page) and which lanes get capped for each.
 
 ## Surface-Type Standards
 
@@ -25,5 +25,5 @@ Grade each page against its surface type. Caps and expectations differ:
 **Documentation page**
 - AI readability is the primary gate. Docs are the most-cited content by AI systems.
 - Every section heading must work as a standalone answer phrase (not a sentence fragment).
-- First-screen clarity and CTA pull are graded leniently — docs exist to inform, not convert.
+- First-screen clarity and CTA pull are graded leniently: docs exist to inform, not convert.
 - Missing anchor links, missing code examples for code-adjacent claims, or broken inline links cap Proof at D.

@@ -94,10 +94,10 @@ Intent: [informational | navigational | commercial | transactional | mixed]
 Evidence source: [source, market, device scope, checked date]
 Demand: [sourced value/range | unknown]
 Visible competition: [observations with URLs | not checked]
-Supporting query themes: [query — observed/inferred — evidence]
+Supporting query themes: [query, observed/inferred, evidence]
 Related topics and entities: [grouped list]
-Content gaps: [subject — evidence — reader value — priority]
-Search-feature eligibility: [feature — eligible/validated/observed/not verified]
+Content gaps: [subject, evidence, reader value, priority]
+Search-feature eligibility: [feature: eligible/validated/observed/not verified]
 Content brief: [reader-first section and source plan]
 ```
 

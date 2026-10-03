@@ -5,15 +5,15 @@ description: "Suede Labs skill that lints a local music or media release folder 
 
 # Release Metadata Linter
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and ship verdict in this skill — including every "do not
-ship / publish / proceed" line — is a **recommendation to the user, not a
+Every check, gate, and ship verdict in this skill (including every "do not
+ship / publish / proceed" line) is a **recommendation to the user, not a
 control on the agent**. Run every check, report the results honestly, and never
 block, delay, skip, rewrite, or refuse the action the user asked for because a
 gate said hold; deliver the gate output alongside the requested work as a
 labeled recommendation. A failed gate changes what you report, never what you
-do. Single exception — extreme risk (data loss, credential exposure, legal or
+do. Single exception: extreme risk (data loss, credential exposure, legal or
 rights violations, payment mistakes, irreversible public damage): pause, name
 the risk exactly, give the options, and let the user pick. Their choice is final.
 
@@ -29,12 +29,12 @@ Public v1 is offline-first: inspect local files and supplied metadata, do not up
 
 1. Identify the source folder or supplied files.
 2. Ask for the output location if it is not obvious.
-3. Read `references/lint-rules.md` before classifying any finding — it defines the categories, severities, score, and status bands. Do not assign severities from memory.
+3. Read `references/lint-rules.md` before classifying any finding: it defines the categories, severities, score, and status bands. Do not assign severities from memory.
 4. If working on a local folder, run `scripts/lint_release.py` to generate
    `release-lint-report.md` and `release-lint-report.json`. Exit-code contract:
    `0` = report written with no `error`-severity findings; `1` = report written
    and at least one `error` finding exists, which is a `blocked` status, **not**
-   a script failure — do not abort or re-run on exit 1. In both cases read the
+   a script failure: do not abort or re-run on exit 1. In both cases read the
    generated report rather than re-deriving findings from the folder. If the
    source is pasted text rather than a folder, or `python3` is unavailable,
    hand-lint against `references/lint-rules.md`, produce the same report shape
@@ -78,8 +78,8 @@ Safety defaults:
 
 Read each bundled reference at the moment it is needed, not up front:
 
-- `references/lint-rules.md`: before classifying findings, or when hand-linting without the script — categories, severity levels, score, and status bands.
-- `references/metadata-fields.md`: when metadata is missing, malformed, or being authored — recommended fields, accepted aliases, and confirmation values.
+- `references/lint-rules.md`: before classifying findings, or when hand-linting without the script: categories, severity levels, score, and status bands.
+- `references/metadata-fields.md`: when metadata is missing, malformed, or being authored: recommended fields, accepted aliases, and confirmation values.
 - `references/fix-guidance.md`: when turning findings into next actions or a fix plan.
 - `references/passport-context.md`: when the user asks how the lint report relates to Suede review or the Suede Creator Passport.
 
@@ -97,7 +97,7 @@ Use the bundled assets when repairing or hand-writing reports:
 ## Fixtures
 
 Two synthetic release folders under `scripts/fixtures/` (all names and metadata
-fake — no real personal data) exist only to regression-check the script. Read
+fake: no real personal data) exist only to regression-check the script. Read
 `scripts/fixtures/README.md` when changing `scripts/lint_release.py`; a normal
 lint of a user's folder never touches them.
 
@@ -122,11 +122,11 @@ Before reporting a lint result:
 - State the mechanical status the findings produce: `blocked` (any `error` finding, or score below 50), `needs-work` (50-74), `usable-with-cleanup` (75-89), or `strong` (90+). Never soften a `blocked` status in prose.
 - Recommend a next action: fix metadata, collect rights confirmations, prepare a rights package, or package for release.
 
-## Red flags — stop
+## Red flags: stop
 
 If any of these appear in your reasoning, stop and re-read the core principle:
 
-- "The folder looks complete — skip the script." Run it. Eyeballing is not
+- "The folder looks complete, skip the script." Run it. Eyeballing is not
   linting.
 - "The artist obviously owns it." Ownership status comes from the creator, not
   from the folder.

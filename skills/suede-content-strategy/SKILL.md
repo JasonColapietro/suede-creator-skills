@@ -40,7 +40,7 @@ Gather this context (ask if not provided):
 
 ## Searchable vs Shareable
 
-Every piece of content must be searchable, shareable, or both. Searchable is the default first priority because search demand is measurable; treat that as a starting rule, not a universal truth, and reverse it when the user's goal or evidence says otherwise (a category with no search volume, a brand-led launch). Record which order you chose and why — it feeds the weights in "Prioritizing Content Ideas."
+Every piece of content must be searchable, shareable, or both. Searchable is the default first priority because search demand is measurable; treat that as a starting rule, not a universal truth, and reverse it when the user's goal or evidence says otherwise (a category with no search volume, a brand-led launch). Record which order you chose and why: it feeds the weights in "Prioritizing Content Ideas."
 
 **Searchable content** captures existing demand. Optimized for people actively looking for answers.
 
@@ -49,7 +49,7 @@ Every piece of content must be searchable, shareable, or both. Searchable is the
 ### When Writing Searchable Content
 
 - Target a specific keyword or question
-- Match search intent exactly—answer what the searcher wants
+- Match search intent exactly, answer what the searcher wants
 - Use clear titles that match search queries
 - Structure with headings that mirror search patterns
 - Place keywords in title, headings, first paragraph, URL
@@ -290,18 +290,18 @@ record the chosen decision rule.
 
 ## Refreshes and Stop-Doing Decisions
 
-A portfolio compounds only if something leaves it. Every strategy must name what stops, not just what starts. Audit existing assets against dated evidence — traffic, conversions, rankings, and last-updated date — and assign each one of four outcomes:
+A portfolio compounds only if something leaves it. Every strategy must name what stops, not just what starts. Audit existing assets against dated evidence, traffic, conversions, rankings, and last-updated date, and assign each one of four outcomes:
 
 | Outcome | When | What it means |
 |---|---|---|
 | **Keep** | Still ranking or converting against its goal, and the claims are current | No action; next audit at the normal cadence |
-| **Refresh** | The topic still matters and the URL still has authority, but the piece has decayed — stale data, dated claims, or a slipping position | Rewrite in place, keep the URL, record the new last-updated date |
+| **Refresh** | The topic still matters and the URL still has authority, but the piece has decayed: stale data, dated claims, or a slipping position | Rewrite in place, keep the URL, record the new last-updated date |
 | **Consolidate** | Two or more pieces target the same intent and split their own signal | Merge into the strongest URL, redirect the others, fold the unique sections in |
-| **Kill** | The topic no longer serves a pillar, or two consecutive review windows show no traffic, no conversions, and no strategic use | Propose removal or de-indexing — and stop there, because Boundaries forbids executing it |
+| **Kill** | The topic no longer serves a pillar, or two consecutive review windows show no traffic, no conversions, and no strategic use | Propose removal or de-indexing, and stop there, because Boundaries forbids executing it |
 
-Decision rule, in order: duplicated intent → Consolidate; else topic still maps to a live pillar → Refresh; else → Kill. Never refresh a piece whose pillar was retired — that is sunk cost wearing an editorial hat. Every row names the evidence that triggered it (metric, window, source) and the accountable owner; recommending is the whole job, since publishing, deleting, redirecting, and de-indexing all need explicit authorization.
+Decision rule, in order: duplicated intent → Consolidate; else topic still maps to a live pillar → Refresh; else → Kill. Never refresh a piece whose pillar was retired: that is sunk cost wearing an editorial hat. Every row names the evidence that triggered it (metric, window, source) and the accountable owner; recommending is the whole job, since publishing, deleting, redirecting, and de-indexing all need explicit authorization.
 
-Hand the recurring cadence that keeps this audit running — decay watch, ranking-drop watch, refresh queue — to `suede-marketing-loops`. This skill decides what gets refreshed or killed; that one decides how often the check runs.
+Hand the recurring cadence that keeps this audit running, decay watch, ranking-drop watch, refresh queue, to `suede-marketing-loops`. This skill decides what gets refreshed or killed; that one decides how often the check runs.
 
 ---
 
@@ -309,9 +309,9 @@ Hand the recurring cadence that keeps this audit running — decay watch, rankin
 
 The generic content strategy writes itself, which is exactly the problem. Do not ship:
 
-- **Pillars that are category nouns** — "Productivity," "Marketing," "Growth." A pillar is a claim the brand can own, in the customer's words.
+- **Pillars that are category nouns**: "Productivity," "Marketing," "Growth." A pillar is a claim the brand can own, in the customer's words.
 - **A cluster map that is the pillar list re-indented.** If every spoke is the pillar name plus a modifier, no clustering happened.
-- **"The Ultimate Guide to X," "Everything You Need to Know About X," "X 101"** — titles that could sit on any competitor's blog.
+- **"The Ultimate Guide to X," "Everything You Need to Know About X," "X 101"**: titles that could sit on any competitor's blog.
 - **"10 Best Tools for Y" with the user's product at #1.** That is not a comparison.
 - **A cadence with no owner.** "Publish 2x/week" with nobody named is a wish.
 - **Topics sourced from the model's general knowledge** rather than the research surfaces above. If none was callable, say so and label the ideas hypotheses.
@@ -330,9 +330,9 @@ Emit the strategy in exactly this shape:
 
 ## Priority topics
 ### [Topic title]
-- **Type:** searchable / shareable / both — [use-case, hub-and-spoke, thought
+- **Type:** searchable / shareable / both: [use-case, hub-and-spoke, thought
   leadership, data-driven, case study, meta]
-- **Target query + buyer stage:** [query] — [awareness / consideration /
+- **Target query + buyer stage:** [query]: [awareness / consideration /
   decision / implementation]
 - **Why this topic:** [the customer-research evidence, with its source and date]
 - **Score and owner:** [Impact / Fit / Search / Resources] = [total]; [owner,

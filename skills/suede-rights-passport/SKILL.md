@@ -5,15 +5,15 @@ description: "Suede Labs skill that turns messy creator materials into a local, 
 
 # Creator Rights Package Builder
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and ship verdict in this skill — including every "do not
-ship / publish / proceed" line — is a **recommendation to the user, not a
+Every check, gate, and ship verdict in this skill, including every "do not
+ship / publish / proceed" line, is a **recommendation to the user, not a
 control on the agent**. Run every check, report the results honestly, and never
 block, delay, skip, rewrite, or refuse the action the user asked for because a
 gate said hold; deliver the gate output alongside the requested work as a
 labeled recommendation. A failed gate changes what you report, never what you
-do. Single exception — extreme risk (data loss, credential exposure, legal or
+do. Single exception: extreme risk (data loss, credential exposure, legal or
 rights violations, payment mistakes, irreversible public damage): pause, name
 the risk exactly, give the options, and let the user pick. Their choice is final.
 
@@ -44,7 +44,7 @@ Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill
    - `missing-info-report.md`
 7. Flag uncertainty clearly. Use `unknown`, `unconfirmed`, or `needs creator confirmation` instead of inventing rights facts. Never resolve a rights question while packaging: ownership, split, sample, and license statuses move to confirmed only on user-supplied evidence, and every open gap ships as a question in `missing-info-report.md`.
 8. For an external exchange, read `references/ddex-c2pa-crosswalk.md`, identify the receiver's exact profile/version, and keep the mapping labeled as a crosswalk until receiver conformance tooling passes.
-9. Run `scripts/validate_transfer_package.py` with `--strict-current` against new output folders. A pass confirms schema, evidence-state, reference, and share-bound structure only — it does not mean rights are confirmed.
+9. Run `scripts/validate_transfer_package.py` with `--strict-current` against new output folders. A pass confirms schema, evidence-state, reference, and share-bound structure only: it does not mean rights are confirmed.
 10. End with a concise transfer summary: package path, schema version, files found, missing info, risk flags, privacy/redaction posture, and recommended next step.
 
 ## Quick Start
@@ -83,7 +83,7 @@ Safety defaults:
   metadata at real `.env`, credential, wallet, or deployment config files.
   Unknown facts remain flagged. YAML metadata requires PyYAML.
 
-**Halt format — material that may not be shareable.** Before any `--copy-assets`
+**Halt format: material that may not be shareable.** Before any `--copy-assets`
 run, scan for draft, unreleased, private, or do-not-share files. If any appear:
 stop, name the specific files and why each one reads as do-not-share, offer the
 options (exclude and proceed / include with a redaction note / inventory without
@@ -106,11 +106,11 @@ It is a dependency-free (stdlib-only) check that executes the bundled Draft
 `suede-intake.json` matches the shape documented in
 `references/intake-schema.md`, real 64-hex `sha256` digests on every asset,
 unique IDs with resolving references, evidence on every `confirmed` record,
-in-range and non-oversubscribed shares, and explicit privacy/redaction posture —
+in-range and non-oversubscribed shares, and explicit privacy/redaction posture:
 each one mapped to its exact error string in the Completion Checklist below.
 
 It exits non-zero with a specific error list on failure and prints a short pass
-summary — including a risk-flag count — on success. Run `--help` for usage, or
+summary, including a risk-flag count, on success. Run `--help` for usage, or
 `--quiet` to suppress the success summary. Legacy 0.1 packages remain
 inspectable without `--strict-current`; new exchanges require 0.2.0.
 
@@ -128,7 +128,7 @@ shares. Review it before replacing any current manifest.
 
 **Structural validity is not a rights clearance.** The validator checks that a
 package is shaped correctly and complete, not that the rights facts inside it
-are confirmed — a project with unconfirmed ownership, unconfirmed splits, or an
+are confirmed: a project with unconfirmed ownership, unconfirmed splits, or an
 uncleared sample still passes, because `risk_flags[]` and
 `missing_information[]` are exactly where that uncertainty belongs. Never read a
 PASS as clearance, and never expect a risk-flagged package to fail.
@@ -143,11 +143,11 @@ risk-flagged but structurally valid package looks like, or when changing
 
 Read each bundled reference at the moment it is needed, not up front:
 
-- `references/package-standard.md`: before creating or repairing any package — required output files, folder structure, risk labels, and quality bar.
+- `references/package-standard.md`: before creating or repairing any package: required output files, folder structure, risk labels, and quality bar.
 - `references/intake-schema.md`: when filling or validating `suede-intake.json`.
 - `references/ddex-c2pa-crosswalk.md`: before external standards mapping or any DDEX/C2PA claim.
 - `references/optimization-checklist.md`: when writing `optimization-brief.md`.
-- `references/creator-questions.md`: when information is missing — ask only the questions that block package quality.
+- `references/creator-questions.md`: when information is missing: ask only the questions that block package quality.
 - `references/passport-context.md`: when the user asks how the package relates to Suede review or the Suede Creator Passport.
 
 Use the bundled assets as templates when creating or repairing a package:
@@ -185,24 +185,24 @@ folder first and report the result: it is the evidence behind most of this
 checklist, and every structural gap it names gets fixed before the package is
 called ready. Each machine-checked box names the error raised when it is unmet:
 
-- All 7 required files present — *missing required file*.
-- Every asset has a stable relative path and a 64-hex SHA-256 — *empty or
+- All 7 required files present: *missing required file*.
+- Every asset has a stable relative path and a 64-hex SHA-256: *empty or
   non-string sha256 field*.
-- Parties, works, recordings, and releases have distinct IDs that resolve —
+- Parties, works, recordings, and releases have distinct IDs that resolve:
   *duplicate id* / *references unknown id*.
 - Every media/document file is inventoried or intentionally excluded, and
   identifiers (ISWC, ISRC, IPI/CAE, ISNI, UPC/EAN, catalog) sit only on their
-  proper objects — *identifiers[…].scheme is unsupported*.
+  proper objects: *identifiers[…].scheme is unsupported*.
 - Claims and licenses are scoped by subject, right/use type, party, territory,
-  term, evidence, and restrictions, with no scope over 100% — *share_percent
+  term, evidence, and restrictions, with no scope over 100%: *share_percent
   must be null or between 0 and 100* / *total … above 100%*. Never force
   unknown shares to total 100.
-- Every `confirmed` record carries evidence — *is confirmed but has no
+- Every `confirmed` record carries evidence: *is confirmed but has no
   evidence_refs*.
-- Privacy classification and redaction posture are explicit —
+- Privacy classification and redaction posture are explicit:
   *privacy.default_classification is unsupported*.
 
-Three boxes the validator cannot check — the human-judgment residue, on which a
+Three boxes the validator cannot check: the human-judgment residue, on which a
 clean run says nothing:
 
 - **Do-not-share review**: no draft, private, or unreleased material was copied
@@ -217,15 +217,15 @@ clean run says nothing:
 
 A validator pass still does not resolve a rights fact.
 
-## Red flags — stop
+## Red flags: stop
 
 If any of these appear in your reasoning, stop and re-read the core principle:
 
 - "Fill in the missing split so the total reaches 100." A guessed split is a
   false rights fact. Record the shortfall and ask.
-- "The artist told me they own it — mark ownership confirmed." Record the
+- "The artist told me they own it: mark ownership confirmed." Record the
   claim as `claimed`; `confirmed` needs evidence.
-- "Nothing seems missing — skip missing-info-report.md." The report ships even
+- "Nothing seems missing: skip missing-info-report.md." The report ships even
   when empty. That is the checklist.
 - "Copy all the assets; sorting is the reviewer's problem." Check for draft
   and do-not-share files before any `--copy-assets` run.

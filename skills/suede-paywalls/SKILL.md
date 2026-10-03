@@ -122,7 +122,7 @@ Do not hand over a drafted paywall until you have re-read it against
 Anti-Patterns to Avoid and Boundaries below, and answered these out loud:
 
 1. Where is the close/dismiss control, and is it visible without scrolling or hovering?
-2. Is the price — including what renews, when, and at what amount — stated on the screen?
+2. Is the price (including what renews, when, and at what amount) stated on the screen?
 3. Does any urgency claim ("ends today", a countdown) correspond to a real deadline?
 4. Can the user reach the free path in one tap from this screen?
 5. Does any copy assign blame, shame, or loss the user did not actually incur?
@@ -146,7 +146,7 @@ draft, don't ship it with a caveat.
 
 ### Frequency Rules
 
-Defaults unless a running experiment says otherwise — ship these numbers, and
+Defaults unless a running experiment says otherwise: ship these numbers, and
 say so when a test moves them:
 
 - Max **1** paywall impression per session.
@@ -163,10 +163,10 @@ experiment reference tracks.
 ## Upgrade Flow and Testing
 
 Keep the path from paywall to payment in-context and pre-filled, and grant
-access the moment payment clears — the checkout and post-upgrade activation flow
+access the moment payment clears: the checkout and post-upgrade activation flow
 itself belongs to `suede-onboarding`.
 
-**For frequency, trigger-timing, copy, and price-presentation experiments** —
+**For frequency, trigger-timing, copy, and price-presentation experiments**:
 including which of the above defaults are worth testing first: See
 [references/experiments.md](references/experiments.md). Use `suede-ab-testing`
 to design and read out the test.

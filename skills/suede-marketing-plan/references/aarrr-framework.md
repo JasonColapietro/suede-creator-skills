@@ -1,4 +1,4 @@
-# AARRR Framework — Primer for Plan Sequencing
+# AARRR Framework: Primer for Plan Sequencing
 
 AARRR (Dave McClure's "pirate metrics") is the spine of every plan produced by this skill. This doc is the primer + the decision rules for when each stage gets prioritized.
 
@@ -26,16 +26,16 @@ test should repair a downstream loss or add acquisition.
 
 **3. The Revenue / Referral conversation is honest.** Most marketing plans bury monetization under "growth" and treat referral as wishful thinking. AARRR forces explicit treatment of both.
 
-## Brand and content — not a stage, cross-cutting
+## Brand and content: not a stage, cross-cutting
 
-A common mistake: making "Brand" or "Content" the sixth bucket. They're not — they serve every stage.
+A common mistake: making "Brand" or "Content" the sixth bucket. They're not, they serve every stage.
 
 - **Brand voice** governs every piece of copy across every stage
 - **Content** feeds Acquisition (SEO, social), Activation (onboarding copy), Retention (email lifecycle), Referral (ambassador talking points), Revenue (pricing pages, sales material)
 
-In the plan, brand/content shows up as the strategic frame (Section 2) and cross-cutting in Section 11's ops stack — never as its own AARRR section.
+In the plan, brand/content shows up as the strategic frame (Section 2) and cross-cutting in Section 11's ops stack, never as its own AARRR section.
 
-## Diagnosing the binding constraint — which AARRR stage is highest leverage?
+## Diagnosing the binding constraint: which AARRR stage is highest leverage?
 
 Treat every proposed binding constraint as a hypothesis. Never select a stage
 from company age, business model, traffic volume, or a single benchmark.
@@ -153,7 +153,7 @@ running a bounded pilot.
 - Hardware → software bundling formalization
 - Storefront / commerce page optimization
 - B2B case studies + sales material
-- Long-term value pool flags (data, expansion, enterprise) — flagged not executed
+- Long-term value pool flags (data, expansion, enterprise): flagged not executed
 
 **Sequencing principle:** Reconcile listed and realized pricing, discounts,
 trials, plan mix, margin, retention, and cohort definitions before approving a
@@ -167,10 +167,10 @@ Some moves clearly belong to one stage. Others span. The rule:
 **Assign to the stage where the move's primary measurable impact lands.**
 
 Examples:
-- "Rewrite App Store listing in voice" — spans Acquisition (organic discovery) and Activation (threshold to trial). Primary impact = Activation (trial conversion rate). Assign to Activation, mention crossover.
-- "Eye mask Shopify page rewrite" — spans Acquisition (organic search for sleep mask) and Revenue (sale conversion). Primary impact = Revenue (transaction). Assign to Revenue, mention crossover.
-- "Alex's LinkedIn cadence" — Acquisition (top of funnel for D2C subscribers).
-- "Customer.io Flow 6 (eye mask post-purchase)" — Retention (deepens hardware buyer engagement) with crossover to Activation (hardware → app premium activation path).
+- "Rewrite App Store listing in voice": spans Acquisition (organic discovery) and Activation (threshold to trial). Primary impact = Activation (trial conversion rate). Assign to Activation, mention crossover.
+- "Eye mask Shopify page rewrite": spans Acquisition (organic search for sleep mask) and Revenue (sale conversion). Primary impact = Revenue (transaction). Assign to Revenue, mention crossover.
+- "Alex's LinkedIn cadence": Acquisition (top of funnel for D2C subscribers).
+- "Customer.io Flow 6 (eye mask post-purchase)": Retention (deepens hardware buyer engagement) with crossover to Activation (hardware → app premium activation path).
 
 When in doubt: where would removing this move hurt the most? Assign there.
 

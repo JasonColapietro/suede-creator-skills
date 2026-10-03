@@ -13,13 +13,13 @@ Use this branch when the user is pre-product-market-fit, launching something new
 |---|---|---|
 | Starts from | A firmographic ICP | A described problem |
 | Sources | Contact databases (Apollo, ZoomInfo, Clay) | Public discourse (forums, reviews, issues, posts) |
-| Contact step | Enrich + verify email deliverability | None — reach them where they already posted |
+| Contact step | Enrich + verify email deliverability | None: reach them where they already posted |
 | Wins on | Coverage at scale | 10 strong evidence-backed matches over a long list |
 | Output | A scored lead sheet | An evidence report + manual outreach plan |
 
-A prospect here without a cited pain, need, or timing signal is a speculative fit — it does **not** belong in the primary shortlist. Evidence is the entry ticket.
+A prospect here without a cited pain, need, or timing signal is a speculative fit: it does **not** belong in the primary shortlist. Evidence is the entry ticket.
 
-## Step 1 — Product brief (before any searching)
+## Step 1: Product brief (before any searching)
 
 Define, specifically enough to *reject* weak matches:
 
@@ -33,17 +33,17 @@ Define, specifically enough to *reject* weak matches:
 
 Don't start broad collection until the brief is sharp. Pull from `.agents/product-marketing.md` if it exists.
 
-## Step 2 — Mine the five signal buckets
+## Step 2: Mine the five signal buckets
 
 Search several angles, not one query repeated. Adapt wording to how the audience
 actually talks; use the organic-language method in `suede-ad-creative` and
 [hook-system.md](../../suede-ad-creative/references/hook-system.md).
 
-1. **Explicit demand** — "looking for," "recommend a tool for," "alternative to [X]," "does anything exist that," "how do you all handle."
-2. **Pain** — "takes hours," "so manual," "hate that," "keeps breaking," "biggest frustration with," "why is there no."
-3. **Workaround** — spreadsheets, copy-paste, a VA, a Zapier chain, a script, a template, any repeated manual step that your product would replace.
-4. **Switching** — cancellation, migration, "moving off [competitor]," a missing feature, a pricing complaint, competitor frustration.
-5. **Timing** — a public launch, a new hire for the relevant function, expansion, a new workflow or regulation, an integration announcement — a *current* event that makes the product relevant now.
+1. **Explicit demand**: "looking for," "recommend a tool for," "alternative to [X]," "does anything exist that," "how do you all handle."
+2. **Pain**: "takes hours," "so manual," "hate that," "keeps breaking," "biggest frustration with," "why is there no."
+3. **Workaround**: spreadsheets, copy-paste, a VA, a Zapier chain, a script, a template, any repeated manual step that your product would replace.
+4. **Switching**: cancellation, migration, "moving off [competitor]," a missing feature, a pricing complaint, competitor frustration.
+5. **Timing**: a public launch, a new hire for the relevant function, expansion, a new workflow or regulation, an integration announcement: a *current* event that makes the product relevant now.
 
 **Discover the current research surface before searching.**
 
@@ -62,19 +62,19 @@ actually talks; use the organic-language method in `suede-ad-creative` and
 Never qualify from a search snippet alone, and never describe an unavailable
 tool as installed, connected, or authoritative.
 
-## Step 3 — Source mix (public only)
+## Step 3: Source mix (public only)
 
 Forums and public community threads · public social posts and replies · product and app-marketplace reviews · GitHub issues and feature requests · public company pages, job posts, changelogs, launch announcements · "looking for a tool" posts and directories.
 
-Avoid private groups, gated communities, data brokers, leaked datasets, and any source whose terms prohibit access — the same compliance guardrails as every other branch (see SKILL.md), including the no-sensitive-traits rule.
+Avoid private groups, gated communities, data brokers, leaked datasets, and any source whose terms prohibit access: the same compliance guardrails as every other branch (see SKILL.md), including the no-sensitive-traits rule.
 
-**Business/professional context only.** Qualify and reach out only where someone is posting in a professional or business capacity about a work problem (a founder in an indie-hackers thread, a developer in a GitHub issue, an ops lead in a subreddit for their role). Exclude personal-distress contexts entirely — health, financial hardship, addiction, grief, or any consumer support forum where people are venting personal problems, even if your product is tangentially relevant. When the motion is genuinely consumer (B2C), a public pain post is not on its own a lawful basis for cold outreach — reach people through the channel's own norms (reply publicly where replying is expected) and never DM a stranger off a personal post.
+**Business/professional context only.** Qualify and reach out only where someone is posting in a professional or business capacity about a work problem (a founder in an indie-hackers thread, a developer in a GitHub issue, an ops lead in a subreddit for their role). Exclude personal-distress contexts entirely: health, financial hardship, addiction, grief, or any consumer support forum where people are venting personal problems, even if your product is tangentially relevant. When the motion is genuinely consumer (B2C), a public pain post is not on its own a lawful basis for cold outreach, reach people through the channel's own norms (reply publicly where replying is expected) and never DM a stranger off a personal post.
 
 Quote minimally, paraphrase by default, and link every material pain or timing signal.
 
-## Step 4 — Score on demand-fit (not ICP-fit)
+## Step 4: Score on demand-fit (not ICP-fit)
 
-The list-building branches score Hot/Warm/Cold on ICP fit. This branch scores 0–100 on **demand fit** — how strongly the evidence says this specific prospect wants this specific thing now. Score each dimension 0–5:
+The list-building branches score Hot/Warm/Cold on ICP fit. This branch scores 0–100 on **demand fit**: how strongly the evidence says this specific prospect wants this specific thing now. Score each dimension 0–5:
 
 | Dimension | Weight | What it measures |
 |---|---|---|
@@ -91,24 +91,24 @@ score = pain/5*25 + fit/5*25 + timing/5*20 + reachability/5*15 + evidence/5*15
 | Band | Meaning |
 |---|---|
 | **80–100** | Strong first-customer candidate |
-| **65–79** | Promising — validate fast |
+| **65–79** | Promising: validate fast |
 | **50–64** | Plausible but missing a material signal |
 | **Below 50** | Do not include in the primary shortlist |
 
-An old explicit request can still count — but lower the timing score and label the date. A company that merely matches the industry with no evidenced trigger is *not* a qualified prospect here.
+An old explicit request can still count, but lower the timing score and label the date. A company that merely matches the industry with no evidenced trigger is *not* a qualified prospect here.
 
 ### Prospect stages
 
-- **High intent** — publicly requesting a solution or actively switching
-- **Problem aware** — clearly describing the pain or an expensive workaround
-- **Trigger present** — a current business event makes the product relevant
-- **Potential fit** — ICP match, incomplete evidence → keep *outside* the primary shortlist
+- **High intent**: publicly requesting a solution or actively switching
+- **Problem aware**: clearly describing the pain or an expensive workaround
+- **Trigger present**: a current business event makes the product relevant
+- **Potential fit**: ICP match, incomplete evidence → keep *outside* the primary shortlist
 
 ### Evidence ledger (per qualified prospect)
 
 Displayed name (company/project/public professional) · source title + URL · visible publication date or "date unavailable" · source type · the concise pain/timing signal · observed evidence vs. inference (label which) · score breakdown · freshness warning when the signal is stale.
 
-## Step 5 — Draft outreach, never send it
+## Step 5: Draft outreach, never send it
 
 Recommend the most natural channel *already associated with the source*, and only where a reply is a normal part of that channel (reply in the public thread, respond via a public professional profile). Don't turn a public post into a private DM the poster didn't invite, and never contact someone off a personal-distress post. Draft one opener, under ~90 words, in this shape:
 
@@ -119,17 +119,17 @@ Recommend the most natural channel *already associated with the source*, and onl
 
 Never claim familiarity you don't have, never fabricate personal details, and never auto-send: no messages, connects, follows, comments, form submissions, or CRM records unless the user separately authorizes that action. This is the manual/gated posture from the marketing-loops guardrails.
 
-## Step 6 — Ship the evidence report
+## Step 6: Ship the evidence report
 
 Lead with the most actionable evidence, in this order:
 
-1. **Verdict** — does the product have reachable early-customer signal, or not yet? (An honest "not yet, here's why" is a valid answer.)
-2. **ICP** — buyer, job, trigger, disqualifiers.
-3. **Top prospect** — the single strongest evidence-backed candidate and why now.
-4. **Prospect shortlist** — per prospect: source, pain signal, demand-fit score, stage, why-now, channel, opener.
-5. **Repeated patterns** — pains and triggers recurring across prospects (these are your positioning and messaging gold).
-6. **Seven-day manual outreach plan** — a low-volume validation sequence (e.g., contact the top 3 with one source-based question; share a mockup only after they confirm the pain; target three conversations and one design-partner commitment).
-7. **Limits** — what evidence is missing and what must be confirmed through real conversations.
+1. **Verdict**: does the product have reachable early-customer signal, or not yet? (An honest "not yet, here's why" is a valid answer.)
+2. **ICP**: buyer, job, trigger, disqualifiers.
+3. **Top prospect**: the single strongest evidence-backed candidate and why now.
+4. **Prospect shortlist**: per prospect: source, pain signal, demand-fit score, stage, why-now, channel, opener.
+5. **Repeated patterns**: pains and triggers recurring across prospects (these are your positioning and messaging gold).
+6. **Seven-day manual outreach plan**: a low-volume validation sequence (e.g., contact the top 3 with one source-based question; share a mockup only after they confirm the pain; target three conversations and one design-partner commitment).
+7. **Limits**: what evidence is missing and what must be confirmed through real conversations.
 
 For a shareable standalone HTML version of this report, use the JSON-to-HTML
 generator pattern in `suede-ad-creative`:
@@ -139,7 +139,7 @@ Escape every value and keep the output self-contained.
 ## The honesty rules (non-negotiable)
 
 - Every primary prospect links to at least one real public signal. No signal, no shortlist.
-- Label the output **"potential customer based on public signals"** — never "interested," "will buy," or "has consented."
+- Label the output **"potential customer based on public signals"**: never "interested," "will buy," or "has consented."
 - Prefer ten strong matches over a long generic list. Make uncertainty and stale evidence visible.
 - Personalize from the cited source, not from invented assumptions.
 - Treat the shortlist as a research hypothesis to validate through conversations, not a customer database.

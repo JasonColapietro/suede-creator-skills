@@ -8,7 +8,7 @@ Full copy templates with character counts, timing, and segmentation logic for ev
 
 ## Welcome / Opt-In Confirmation
 
-### Send 1 — Immediate (after opt-in)
+### Send 1: Immediate (after opt-in)
 
 ```
 From [Brand]: Welcome! Here's your 10% off code: WELCOME10. Shop now: [short.link]
@@ -16,14 +16,14 @@ Reply STOP to opt out, HELP for help. Msg & data rates may apply.
 ```
 ~155 chars / 1 segment (just). Footer required on first send.
 
-### Send 2 — 24 hours later (optional)
+### Send 2: 24 hours later (optional)
 
 ```
-From [Brand]: Don't forget your code WELCOME10 — expires in 48hrs. Top picks: [short.link]
+From [Brand]: Don't forget your code WELCOME10, expires in 48hrs. Top picks: [short.link]
 ```
 ~108 chars / 1 segment.
 
-### Send 3 — 7 days later (optional, conditional on no purchase)
+### Send 3: 7 days later (optional, conditional on no purchase)
 
 ```
 From [Brand]: Last chance for 10% off with WELCOME10. Expires tonight at midnight: [short.link]
@@ -34,21 +34,21 @@ From [Brand]: Last chance for 10% off with WELCOME10. Expires tonight at midnigh
 
 ## Abandoned Cart (highest-ROI flow for ecom)
 
-### Send 1 — 30 minutes after abandon
+### Send 1: 30 minutes after abandon
 
 ```
 From [Brand]: Hey [FirstName], you left something behind! Your cart's here: [short.link]
 ```
 ~95 chars / 1 segment.
 
-### Send 2 — 4 hours after abandon (if no purchase)
+### Send 2: 4 hours after abandon (if no purchase)
 
 ```
 From [Brand]: Items in your cart are selling fast. Reserved for you for 24hrs: [short.link]
 ```
 ~98 chars / 1 segment.
 
-### Send 3 — 24 hours after abandon (if no purchase, discount allowed)
+### Send 3: 24 hours after abandon (if no purchase, discount allowed)
 
 ```
 From [Brand]: Still thinking? Here's 10% off to seal the deal: SAVE10. Shop: [short.link]
@@ -64,7 +64,7 @@ From [Brand]: Still thinking? Here's 10% off to seal the deal: SAVE10. Shop: [sh
 
 ## Browse Abandonment
 
-### Send 1 — 1 hour after browse (single product or category)
+### Send 1: 1 hour after browse (single product or category)
 
 ```
 From [Brand]: Still thinking about [product]? Take another look: [short.link]
@@ -79,35 +79,35 @@ From [Brand]: Still thinking about [product]? Take another look: [short.link]
 
 ## Post-Purchase Flow
 
-### Send 1 — Immediately after purchase (transactional, separate consent)
+### Send 1: Immediately after purchase (transactional, separate consent)
 
 ```
 From [Brand]: Order #12345 confirmed! We'll text shipping updates here. Track: [short.link]
 ```
 ~95 chars / 1 segment.
 
-### Send 2 — Day of shipment
+### Send 2: Day of shipment
 
 ```
 From [Brand]: Your order's on the way. Estimated delivery: [date]. Track: [short.link]
 ```
 ~92 chars / 1 segment.
 
-### Send 3 — Day of delivery
+### Send 3: Day of delivery
 
 ```
 From [Brand]: Your order should arrive today! Questions? Reply or visit [short.link]
 ```
 ~88 chars / 1 segment.
 
-### Send 4 — 2 days after delivery (marketing consent required)
+### Send 4: 2 days after delivery (marketing consent required)
 
 ```
 From [Brand]: How are you liking your [product]? Share a review for 15% off next order: [short.link]
 ```
 ~108 chars / 1 segment.
 
-### Send 5 — 14 days after delivery (cross-sell, marketing consent)
+### Send 5: 14 days after delivery (cross-sell, marketing consent)
 
 ```
 From [Brand]: Goes great with your [product]: [related-item]. 10% off bundle: [short.link]
@@ -118,24 +118,24 @@ From [Brand]: Goes great with your [product]: [related-item]. 10% off bundle: [s
 
 ## Win-Back (Lapsed Customers)
 
-### Send 1 — 60-90 days after last purchase
+### Send 1: 60-90 days after last purchase
 
 ```
 From [Brand]: [FirstName], we miss you! Picks we think you'll love: [short.link]
 ```
 ~84 chars / 1 segment.
 
-### Send 2 — 14 days later (if no purchase)
+### Send 2: 14 days later (if no purchase)
 
 ```
 From [Brand]: Come back for 15% off your next order: COMEBACK15. Expires in 7 days: [short.link]
 ```
 ~106 chars / 1 segment.
 
-### Send 3 — 14 days after Send 2 (final, if no purchase)
+### Send 3: 14 days after Send 2 (final, if no purchase)
 
 ```
-From [Brand]: Last chance — 20% off ends tonight: COMEBACK20. We'll stop texting if you'd rather: reply STOP. [short.link]
+From [Brand]: Last chance, 20% off ends tonight: COMEBACK20. We'll stop texting if you'd rather: reply STOP. [short.link]
 ```
 ~130 chars / 1 segment.
 
@@ -163,13 +163,13 @@ From [Brand]: New drop just landed: [product-name]. Limited stock, members get e
 
 ### Holiday / BFCM (2-send sequence)
 
-Send 1 — Day of launch:
+Send 1: Day of launch:
 ```
-From [Brand]: Black Friday is LIVE — up to 50% off sitewide. Shop now: [short.link]
+From [Brand]: Black Friday is LIVE, up to 50% off sitewide. Shop now: [short.link]
 ```
 ~92 chars / 1 segment.
 
-Send 2 — Day of (or evening, expiration push):
+Send 2: Day of (or evening, expiration push):
 ```
 From [Brand]: Last 6 hours of BFCM savings. Don't miss out: [short.link]
 ```
@@ -215,14 +215,14 @@ From [Brand]: Last 6 hours of BFCM savings. Don't miss out: [short.link]
 
 For SMS subscribers who haven't engaged with any send in 60+ days.
 
-### Send 1 — Soft reactivation
+### Send 1: Soft reactivation
 
 ```
 From [Brand]: We've missed you, [FirstName]! Here's what's new: [short.link]
 ```
 ~80 chars / 1 segment.
 
-### Send 2 — Confirm interest (if no engagement)
+### Send 2: Confirm interest (if no engagement)
 
 ```
 From [Brand]: Want to keep hearing from us? Reply YES to stay on the list, or STOP to opt out.
@@ -237,14 +237,14 @@ After no reply: suppress for 60 days, then remove from active list. This protect
 
 For products with predictable usage cycles (skincare, supplements, coffee, pet food).
 
-### Send 1 — At expected reorder window (e.g., 28 days for a 30-day supply)
+### Send 1: At expected reorder window (e.g., 28 days for a 30-day supply)
 
 ```
 From [Brand]: Running low on [product]? Reorder in one tap: [short.link]
 ```
 ~73 chars / 1 segment.
 
-### Send 2 — 7 days later (if no purchase)
+### Send 2: 7 days later (if no purchase)
 
 ```
 From [Brand]: Don't run out! 10% off your reorder of [product]: REFILL10 [short.link]
@@ -255,7 +255,7 @@ From [Brand]: Don't run out! 10% off your reorder of [product]: REFILL10 [short.
 
 ## VIP / Loyalty Members
 
-Higher frequency, exclusive offers, early access — different cadence rules apply but quiet hours and STOP still required.
+Higher frequency, exclusive offers, early access: different cadence rules apply but quiet hours and STOP still required.
 
 ### Early access
 

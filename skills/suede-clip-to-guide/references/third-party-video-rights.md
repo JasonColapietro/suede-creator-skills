@@ -46,10 +46,10 @@ changes.
 
 ## Decision states
 
-- `native-repost-only` — use only the platform's built-in sharing route.
-- `fair-use-review` — analysis is prepared; publication remains blocked until
+- `native-repost-only`: use only the platform's built-in sharing route.
+- `fair-use-review`: analysis is prepared; publication remains blocked until
   the accountable owner records a decision.
-- `blocked` — the review does not support proceeding, the source owner objects,
+- `blocked`: the review does not support proceeding, the source owner objects,
   a prior takedown exists, or the decision owner is unavailable.
 
 ## Hard stops

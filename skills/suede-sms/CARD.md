@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement — TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts.
+Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement (TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts.
 
-Out of scope — email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification — this skill does not give legal advice and never sends, schedules, imports, or registers.
+Out of scope — email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification) this skill does not give legal advice and never sends, schedules, imports, or registers.
 
 ## Deployment Geography
 

@@ -37,16 +37,16 @@ theirs, or record the line as missing.
 
 ## Before Starting
 
-1. **Scope** — which processes, departments, or surfaces are in the assessment.
-2. **Access** — what the requester has authorized you to read. Work inside it.
-3. **Who does the work** — names or roles per process, separated into people who
+1. **Scope**: which processes, departments, or surfaces are in the assessment.
+2. **Access**: what the requester has authorized you to read. Work inside it.
+3. **Who does the work**: names or roles per process, separated into people who
    perform it and people who manage it.
-4. **Self-applied or on behalf** — a founder assessing their own operation reads
+4. **Self-applied or on behalf**: a founder assessing their own operation reads
    Step 5 differently from an outside team assessing a client's.
 
 Read `references/interview-guide.md` before the first interview.
 
-## Step 1 — Interview the floor
+## Step 1: Interview the floor
 
 Interview at least one person **per process** who performs it, not only the
 person who manages it. Where the two descriptions differ, record both and mark
@@ -75,7 +75,7 @@ spreadsheet, and the quarterly exception once the interview has settled.
 
 **Gate.** Every in-scope process has at least one performer interview. When the
 requester performs the process themselves, their own walkthrough is the performer
-interview — record it as such and move on rather than halting for a second
+interview: record it as such and move on rather than halting for a second
 person who does not exist.
 
 **Halt format.** Stop. Name each process covered only by management description.
@@ -83,7 +83,7 @@ Offer: schedule the performer interview, proceed and mark that process
 `[leadership map only]` throughout the blueprint, or drop it from scope. Wait for
 the choice.
 
-## Step 2 — Inventory every silo
+## Step 2: Inventory every silo
 
 A silo is any place operational information lives that other systems cannot see.
 Catalog all of them: software, spreadsheets, shared drives, inboxes used as
@@ -92,7 +92,7 @@ databases, and the messaging channels where decisions actually get made.
 Record per entry: what it holds, who writes to it, who reads from it, what it
 overlaps with, and its monthly cost.
 
-Cite a proof path for anything claimed to be live — a last-write timestamp, a
+Cite a proof path for anything claimed to be live: a last-write timestamp, a
 seat count, an invoice line, or a recent export. A tool nobody can produce
 evidence for is recorded **unknown**, never assumed dead or alive.
 
@@ -106,7 +106,7 @@ named tribal-knowledge holder, or manual work that depends on no system at all.
 Physical and judgment work belongs in the third bucket; recording it as tribal
 knowledge invents a risk that is not there.
 
-## Step 3 — Quantify the friction in their numbers
+## Step 3: Quantify the friction in their numbers
 
 Attach a figure to each bottleneck, built from three components. Show the inputs
 beside each result so a reader can check the arithmetic.
@@ -130,20 +130,20 @@ $40,000 a year", never "Dana wastes eight hours a week". The same arithmetic
 becomes a performance review the moment a name is attached to it, which is not
 what the requester asked for and not what the interviews were given under.
 
-## Step 4 — Rank the opportunities
+## Step 4: Rank the opportunities
 
 Generating forty opportunities is easy. Knowing which six matter, which three
 come first, and which ten sound impressive and return little is the deliverable.
 
 Score each opportunity:
 
-- **Value** — the annual figure from Step 3.
-- **Complexity** — start at 1 for the build itself, then add one point each for:
+- **Value**: the annual figure from Step 3.
+- **Complexity**: start at 1 for the build itself, then add one point each for:
   every system touched beyond the first, every write path that changes, every
   exception branch from Step 1, and every human approval gate that stays. The
   floor of 1 is what keeps the simplest opportunity from dividing by zero.
-- **Rank** — value divided by complexity, sorted high to low.
-- **Confidence** — `measured` when the requester supplied the figure from their
+- **Rank**: value divided by complexity, sorted high to low.
+- **Confidence**: `measured` when the requester supplied the figure from their
   own records, `stated` when they supplied it from memory, `missing` when Step 3
   could not fill it.
 
@@ -151,7 +151,7 @@ Report three groups explicitly: what to do first, what is real but later, and
 what looks impressive and returns little. The third group is the one that earns
 the assessment its fee, because it is the work nobody would otherwise decline.
 
-## Step 5 — Read the engagement signal
+## Step 5: Read the engagement signal
 
 How an operation behaves during the assessment predicts whether it will use what
 gets built. This is an observation reported to the requester, never a reason to
@@ -166,7 +166,7 @@ Report what was observed and what it predicts. When the assessment is
 self-applied, read the same signals against the requester's own participation
 and say so plainly rather than scoring a team that was never involved.
 
-## Step 6 — Watch adoption for thirty days
+## Step 6: Watch adoption for thirty days
 
 Runs after a system built on this assessment goes live. One metric leads:
 **Adoption Rate**, the share of the workflows **the system was built to carry**

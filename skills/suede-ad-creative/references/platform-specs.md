@@ -20,7 +20,7 @@ Complete character limits, format requirements, and best practices for each ad p
 - Google selects up to 3 headlines and 2 descriptions to show
 - Headlines appear separated by " | " or stacked
 - Any headline can appear in any position unless pinned
-- Pinning reduces Google's ability to optimize — use sparingly
+- Pinning reduces Google's ability to optimize: use sparingly
 
 **Pinning strategy:**
 - Pin your brand name to position 1 if brand guidelines require it
@@ -81,7 +81,7 @@ Complete character limits, format requirements, and best practices for each ad p
 **Best practices:**
 - Front-load the hook in primary text (first 125 chars)
 - Use line breaks for readability in longer primary text
-- Emojis: test, but don't overuse — 1-2 per ad max
+- Emojis: test, but don't overuse: 1-2 per ad max
 - Questions in primary text increase engagement
 - Headline should be a clear CTA or value statement
 
@@ -196,7 +196,7 @@ Complete character limits, format requirements, and best practices for each ad p
 - **Emojis** count as 1-2 characters depending on platform
 - **Special characters** (|, &, etc.) count as 1 character
 - **URLs** in body text count against limits
-- **Dynamic keyword insertion** (`{KeyWord:default}`) can exceed limits — set safe defaults
+- **Dynamic keyword insertion** (`{KeyWord:default}`) can exceed limits, set safe defaults
 - Always verify in the platform's ad preview before launching
 
 ---
@@ -205,9 +205,9 @@ Complete character limits, format requirements, and best practices for each ad p
 
 When creating for multiple platforms simultaneously, start with the most restrictive format:
 
-1. **Google Search headlines** (30 chars) — forces the tightest messaging
-2. **Expand to Meta headlines** (40 chars) — add a word or two
-3. **Expand to LinkedIn intro text** (150 chars) — add context and proof
-4. **Expand to Meta primary text** (125+ chars) — full hook and value prop
+1. **Google Search headlines** (30 chars): forces the tightest messaging
+2. **Expand to Meta headlines** (40 chars): add a word or two
+3. **Expand to LinkedIn intro text** (150 chars): add context and proof
+4. **Expand to Meta primary text** (125+ chars): full hook and value prop
 
 This cascading approach ensures your core message works everywhere, then gets enriched for platforms that allow more space.

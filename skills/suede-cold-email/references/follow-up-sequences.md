@@ -35,13 +35,13 @@ Each follow-up must stand alone while building toward the goal. Never just "bump
 | Follow-up 1 | Different angle, new value piece (stat, insight, resource) | Show additional benefit    |
 | Follow-up 2 | Social proof / case study from similar company             | Build credibility          |
 | Follow-up 3 | New insight, industry trend, or relevant resource          | Demonstrate expertise      |
-| Follow-up 4 | Breakup — acknowledge silence, leave door open             | Trigger loss aversion      |
+| Follow-up 4 | Breakup: acknowledge silence, leave door open             | Trigger loss aversion      |
 
 Add only **one new value proposition per email** (SalesBread). This naturally forces different angles.
 
 ## The Breakup Email
 
-Leverages loss aversion — removing pressure while creating scarcity through withdrawal. Close.com reports **10–15% response rates** from breakup emails with cold prospects.
+Leverages loss aversion: removing pressure while creating scarcity through withdrawal. Close.com reports **10–15% response rates** from breakup emails with cold prospects.
 
 **Structure:**
 
@@ -52,15 +52,15 @@ Leverages loss aversion — removing pressure while creating scarcity through wi
 
 **Example:**
 
-> I haven't heard back, so I'll assume now isn't the right time. Before I close the loop: [1-sentence insight or resource]. If that changes things, feel free to reply. Otherwise, no hard feelings — good luck with [their goal].
+> I haven't heard back, so I'll assume now isn't the right time. Before I close the loop: [1-sentence insight or resource]. If that changes things, feel free to reply. Otherwise, no hard feelings: good luck with [their goal].
 
 **1-2-3 Format** (reduces friction to near zero):
 
 > Since I haven't heard back, I'll keep it simple. Reply with a number:
 >
-> 1 — Interested, let's talk
-> 2 — Not now, check back in 3 months
-> 3 — Not interested, please stop
+> 1: Interested, let's talk
+> 2: Not now, check back in 3 months
+> 3: Not interested, please stop
 
 **Critical rule:** If you send a breakup email, honor it. Do not contact the prospect again.
 

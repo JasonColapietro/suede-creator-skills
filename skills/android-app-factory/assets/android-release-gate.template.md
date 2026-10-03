@@ -28,7 +28,7 @@ or dated test notes without copying credentials or private customer data.
 - Developer verification and package registration status: TBD
 - Other applicable policy URLs/check times: TBD
 - Play Console policy status/notices: TBD
-- Extension requested/approved: N/A — TBD
+- Extension requested/approved: N/A: TBD
 
 ## Build and Artifact
 
@@ -138,7 +138,7 @@ or dated test notes without copying credentials or private customer data.
 
 Allowed gates:
 
-- `ship` — all required evidence passes;
-- `ship-with-caveats` — only named non-critical caveats remain;
-- `hold` — any policy, security, privacy, billing, crash, core-task,
+- `ship`: all required evidence passes;
+- `ship-with-caveats`: only named non-critical caveats remain;
+- `hold`: any policy, security, privacy, billing, crash, core-task,
   accessibility, signing, claim-truth, or confirmation blocker remains.

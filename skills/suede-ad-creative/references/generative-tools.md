@@ -93,7 +93,7 @@ Open-weight image generation models with API access through Replicate and BFL's 
 
 **Strengths:**
 - Multi-image reference (up to 8 images) for consistent identity across ads
-- Product consistency — same product in different contexts
+- Product consistency: same product in different contexts
 - Style transfer from reference images
 - Open-weight Dev model for self-hosting
 
@@ -303,11 +303,11 @@ For layering realistic voiceovers onto video ads, adding narration to product de
 
 Many video generators (Veo, Kling, Sora, Seedance) now include native audio. Use standalone voice tools when you need:
 
-- **Voiceover on silent video** — Runway Gen-4 and Remotion produce silent output
-- **Brand voice consistency** — Clone a specific voice for all ads
-- **Multi-language versions** — Same ad script in 20+ languages
-- **Script iteration** — Re-record voiceover without reshooting video
-- **Precise control** — Exact timing, emotion, and pacing
+- **Voiceover on silent video**: Runway Gen-4 and Remotion produce silent output
+- **Brand voice consistency**: Clone a specific voice for all ads
+- **Multi-language versions**: Same ad script in 20+ languages
+- **Script iteration**: Re-record voiceover without reshooting video
+- **Precise control**: Exact timing, emotion, and pacing
 
 ---
 
@@ -361,7 +361,7 @@ Simple, affordable text-to-speech built into the OpenAI API.
 - Multiple languages
 - Real-time streaming
 - HD quality option
-- Simple API — same SDK you already use for GPT
+- Simple API: same SDK you already use for GPT
 
 **Ad creative use cases:**
 - Fast, cheap voiceover for draft/test ad versions
@@ -411,7 +411,7 @@ Free, local-first voice synthesis studio powered by Qwen3-TTS. The open-source a
 - Multi-track timeline editor for composing conversations
 - 4-5x faster inference on Apple Silicon via MLX Metal acceleration
 - Local REST API for programmatic generation
-- No cloud dependency — all processing on-device
+- No cloud dependency: all processing on-device
 
 **Ad creative use cases:**
 - Free voice cloning for brand spokesperson across all ad variations
@@ -628,10 +628,10 @@ Need image ads?
 
 ### Recommended Workflow for Scaled Ad Production
 
-1. **Generate hero creative** with AI (Nano Banana, Flux, Veo) — high-quality, exploratory
+1. **Generate hero creative** with AI (Nano Banana, Flux, Veo): high-quality, exploratory
 2. **Build templates** in Remotion based on winning creative patterns
 3. **Batch produce variations** with Remotion using data (products, headlines, CTAs)
-4. **Iterate** — use AI tools for new angles, Remotion for scale
+4. **Iterate**: use AI tools for new angles, Remotion for scale
 
 This hybrid approach gives you the creative exploration of AI generators and the consistency and scale of code-based rendering.
 

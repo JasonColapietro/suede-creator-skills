@@ -35,22 +35,22 @@ different.
 A repeatable triage loop sized to the user's selected lookback, source volume,
 and review capacity.
 
-1. **Pull** — fetch new posts from defined sources (target accounts, keywords, subreddits, hashtags). See [tooling](#sources--light-tooling-curl-recipes).
-2. **Filter** — remove off-topic or stale items using a lookback justified by
+1. **Pull**: fetch new posts from defined sources (target accounts, keywords, subreddits, hashtags). See [tooling](#sources--light-tooling-curl-recipes).
+2. **Filter**: remove off-topic or stale items using a lookback justified by
    current platform velocity and the campaign goal.
-3. **Score** — apply the [rubric](#scoring-rubric) and retain only the bounded
+3. **Score**: apply the [rubric](#scoring-rubric) and retain only the bounded
    review set the user can assess.
-4. **Draft** — for each, draft a comment matched to the post's tier.
-5. **Approval gate** — return drafts for review. Each comment is a separate
+4. **Draft**: for each, draft a comment matched to the post's tier.
+5. **Approval gate**: return drafts for review. Each comment is a separate
    external action and requires exact-content and identity approval before post.
-6. **Log** — track what you commented on and what got replies. This is your engagement loop dataset.
+6. **Log**: track what you commented on and what got replies. This is your engagement loop dataset.
 
 Output format Suede should produce:
 
 ```
-RANKED ENGAGEMENT DRAFTS — 2026-06-05
+RANKED ENGAGEMENT DRAFTS: 2026-06-05
 
-1. [Score 9/10] @author — LinkedIn — 2h ago
+1. [Score 9/10] @author: LinkedIn: 2h ago
    "We just rolled out X and the team is loving it…"
    Why: ICP fit (B2B SaaS, 50–200 employees), buying-intent signal
    Suggested comment: [draft]
@@ -75,7 +75,7 @@ Score each post 1–10 across five dimensions, then sum and rank.
 - "Looking for a tool that does X"
 - "Why is [category] so painful?"
 - "We just switched from [competitor] because…"
-- "Anyone use [competitor] — is it worth it?"
+- "Anyone use [competitor]: is it worth it?"
 - A complaint about a known competitor
 
 **Drop if any of these are true:**
@@ -93,18 +93,18 @@ Score each post 1–10 across five dimensions, then sum and rank.
 
 Match the comment to the post. Don't waste a tier-1 draft on a tier-3 opportunity.
 
-**Tier 1 — Relationship builder (target accounts, ICP, high intent)**
+**Tier 1. Relationship builder (target accounts, ICP, high intent)**
 - Add a specific insight or counter-example
 - Reference your own experience with specifics (numbers, names, outcomes)
 - Ask a thoughtful follow-up that invites a reply
 - Length: 2–4 sentences, no link
 
-**Tier 2 — Visibility test (observed reach when visible, adjacent topic)**
+**Tier 2. Visibility test (observed reach when visible, adjacent topic)**
 - Add one sharp insight in one sentence
-- Pattern: "Agreed — and the part most miss is [X]"
+- Pattern: "Agreed: and the part most miss is [X]"
 - Length: 1–2 sentences
 
-**Tier 3 — Light touch (relationship maintenance)**
+**Tier 3. Light touch (relationship maintenance)**
 - Specific reaction, not "Love this"
 - Quote a specific line and react to it
 - Length: 1 sentence
@@ -181,7 +181,7 @@ curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID"
 curl -s "https://example.com/feed/" | xmllint --xpath "//item[position()<6]" - 2>/dev/null
 ```
 
-### LinkedIn & X — discover access, then review
+### LinkedIn & X: discover access, then review
 
 First discover whether an authorized browser or source-reading connector is
 currently callable. Confirm the signed-in identity, user authorization, and
@@ -248,14 +248,14 @@ searches manually or ask for a user export. Do not route around access controls.
 - Test quote posts, replies, and original commentary against the intended
   outcome rather than ranking them universally.
 - Use a multi-post reply only when the content needs the space.
-- Don't pile on dunks — relationships > clout
+- Don't pile on dunks: relationships > clout
 
 ### Reddit
 - Read the subreddit rules before commenting (some ban self-promotion outright)
 - Earn karma in the sub before linking to anything you own
 - Prefer specific answers that resolve the question; compare response quality
   rather than assuming length earns distribution.
-- Never lead with your product — answer the question first
+- Never lead with your product: answer the question first
 
 ### Hacker News
 - Comment quality bar is high; low-effort gets downvoted fast

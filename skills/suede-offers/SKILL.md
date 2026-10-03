@@ -7,7 +7,7 @@ metadata:
 
 # Suede Offer Architecture
 
-Suede separates the offer underneath the page from the copy used to present it. Improve the real value exchange—outcome, proof, effort, time, scope, bonuses, guarantee, price structure, and honest constraints—before polishing language around a weak proposition.
+Suede separates the offer underneath the page from the copy used to present it. Improve the real value exchange (outcome, proof, effort, time, scope, bonuses, guarantee, price structure, and honest constraints) before polishing language around a weak proposition.
 
 ## Before Starting
 
@@ -25,18 +25,18 @@ This skill owns the offer underneath the expression. Route sales-page language t
 ### When this skill matters
 
 You sell:
-- **Services** — consulting, freelance, agency retainers, productized services
-- **Courses** — async, cohort-based, live
-- **Coaching** — 1:1, group, mastermind
-- **Info products** — guides, swipe files, templates, communities
-- **High-ticket B2B** — $5K+ ACV with a sales conversation
-- **Direct-response** — e-com promo offers, infomercial-style, paid-traffic-to-VSL
+- **Services**: consulting, freelance, agency retainers, productized services
+- **Courses**: async, cohort-based, live
+- **Coaching**: 1:1, group, mastermind
+- **Info products**: guides, swipe files, templates, communities
+- **High-ticket B2B**: $5K+ ACV with a sales conversation
+- **Direct-response**: e-com promo offers, infomercial-style, paid-traffic-to-VSL
 
 ### When `suede-pricing` does more of the work
 
 You sell:
-- **Self-serve SaaS** with tiered subscriptions — the levers are mostly tier structure, value metric, and packaging; offer construction (bonuses, guarantees) is secondary
-- **Marketplaces** — the offer is structural, not constructed
+- **Self-serve SaaS** with tiered subscriptions: the levers are mostly tier structure, value metric, and packaging; offer construction (bonuses, guarantees) is secondary
+- **Marketplaces**: the offer is structural, not constructed
 
 Skim this skill in those cases for the value equation framing, then route to `suede-pricing`.
 
@@ -95,8 +95,8 @@ Most weak offers fail on bonuses (none), guarantees (none or wrong type), or sca
 | [guarantee-design.md](references/guarantee-design.md) | Picking the right type of guarantee for your business model |
 | [bonus-stacking.md](references/bonus-stacking.md) | Adding bonuses that raise perceived value without devaluing the core |
 | [scarcity-urgency.md](references/scarcity-urgency.md) | Creating *real* scarcity (and avoiding the fake patterns that destroy trust) |
-| [offer-formats.md](references/offer-formats.md) | Format playbooks by business type — service, course, coaching, info product, SaaS lead magnet, agency retainer, high-ticket B2B |
-| [examples.md](references/examples.md) | Anonymized worked examples — before/after for each business type |
+| [offer-formats.md](references/offer-formats.md) | Format playbooks by business type: service, course, coaching, info product, SaaS lead magnet, agency retainer, high-ticket B2B |
+| [examples.md](references/examples.md) | Anonymized worked examples: before/after for each business type |
 
 ---
 
@@ -104,21 +104,21 @@ Most weak offers fail on bonuses (none), guarantees (none or wrong type), or sca
 
 When the user says "my offer isn't converting" or "I want to improve my offer":
 
-1. **Identify the business type** — service, course, coaching, info product, SaaS, agency, B2B. The right playbook is type-specific.
-2. **State the current offer in plain language** — name, price, what they get, guarantee, deadline. Write it down even if it lives in scattered places now.
-3. **Run the value equation** — score each of the four levers 1–10. The lowest is the binding constraint. Say the lowest lever out loud, with the specific evidence gap behind its score ("perceived likelihood: 4 — no named customer, no before/after number"). Do not score all four above 6; if the offer genuinely looks that strong, the score is not the finding — name what would have to be true for the current conversion rate to make sense, and go get that instead. A flattering scorecard produces no binding constraint, which means step 5 has nothing to work on.
-4. **Audit the anatomy** — which of the six components is missing or weak?
-5. **Pick one lever to fix this iteration** — don't rebuild everything. The biggest lever is usually the one currently scoring lowest.
-6. **Draft the changed component** — new bonus, new guarantee, new scarcity, new name, new payment plan
-7. **Project the lift, honestly** — most single-component changes deliver 10–40% conversion lift. Anyone promising 5x is selling something. Two consecutive iterations on different levers can stack to 2–3x.
+1. **Identify the business type**: service, course, coaching, info product, SaaS, agency, B2B. The right playbook is type-specific.
+2. **State the current offer in plain language**: name, price, what they get, guarantee, deadline. Write it down even if it lives in scattered places now.
+3. **Run the value equation**: score each of the four levers 1–10. The lowest is the binding constraint. Say the lowest lever out loud, with the specific evidence gap behind its score ("perceived likelihood: 4, no named customer, no before/after number"). Do not score all four above 6; if the offer genuinely looks that strong, the score is not the finding: name what would have to be true for the current conversion rate to make sense, and go get that instead. A flattering scorecard produces no binding constraint, which means step 5 has nothing to work on.
+4. **Audit the anatomy**: which of the six components is missing or weak?
+5. **Pick one lever to fix this iteration**: don't rebuild everything. The biggest lever is usually the one currently scoring lowest.
+6. **Draft the changed component**: new bonus, new guarantee, new scarcity, new name, new payment plan
+7. **Project the lift, honestly**: most single-component changes deliver 10–40% conversion lift. Anyone promising 5x is selling something. Two consecutive iterations on different levers can stack to 2–3x.
 
 ### Output: Offer Brief
 
-Return the result of the loop in this exact structure — the same headings whether
+Return the result of the loop in this exact structure: the same headings whether
 the offer is new or being repaired:
 
 ```markdown
-# Offer Brief — [offer name]
+# Offer Brief: [offer name]
 
 ## Name
 ## Core deliverable
@@ -127,7 +127,7 @@ the offer is new or being repaired:
 ## Guarantee + conditions
 [Type, the exact conditions, and who eats the cost when it's claimed.]
 ## Real constraint behind the deadline
-[The actual reason now beats later — capacity, cohort start, price change.
+[The actual reason now beats later: capacity, cohort start, price change.
  If there is no real constraint, write "none" and drop the deadline.]
 ## Price + payment structure
 ## Lever changed this iteration
@@ -141,10 +141,10 @@ the offer is new or being repaired:
 
 Some offer patterns work but cost more than they're worth:
 
-- **Manipulative scarcity** — fake countdown timers, "only 3 spots left" lies. Short-term lift, long-term trust collapse. Don't.
-- **Over-promising guarantees** — "double your revenue or refund + $1,000." Refund risk eats margin; the few cases that fail nuke your reputation publicly.
-- **Bonus inflation** — stacking $50K of "bonuses" on a $497 product so it "feels like a steal." Sophisticated buyers see this. Treat bonuses as additive, not exaggerated.
-- **Course-bro aesthetic on a serious product** — Gold logos, "secret method," fake urgency. Pattern-matches to scam. Wrong room.
+- **Manipulative scarcity**: fake countdown timers, "only 3 spots left" lies. Short-term lift, long-term trust collapse. Don't.
+- **Over-promising guarantees**: "double your revenue or refund + $1,000." Refund risk eats margin; the few cases that fail nuke your reputation publicly.
+- **Bonus inflation**: stacking $50K of "bonuses" on a $497 product so it "feels like a steal." Sophisticated buyers see this. Treat bonuses as additive, not exaggerated.
+- **Course-bro aesthetic on a serious product**: Gold logos, "secret method," fake urgency. Pattern-matches to scam. Wrong room.
 
 The Suede voice is direct, specific, and honest. Building offers well does not mean building offers loud.
 
@@ -154,11 +154,11 @@ The Suede voice is direct, specific, and honest. Building offers well does not m
 
 When drafting offer language (sales pages, emails, headlines), avoid:
 
-- **"Game-changing," "revolutionary," "disruptive," "next-level," "10x"** — pattern-matches to AI slop / course-bro
-- **"Secret," "hidden," "what they don't want you to know"** — clickbait
-- **"Limited time" with no actual time limit** — lying
-- **"Worth $X" or "$Y value" with no comparable** — inflation
-- **"100% guaranteed" without specifying conditions** — legally and brand-wise risky
+- **"Game-changing," "revolutionary," "disruptive," "next-level," "10x"**: pattern-matches to AI slop / course-bro
+- **"Secret," "hidden," "what they don't want you to know"**: clickbait
+- **"Limited time" with no actual time limit**: lying
+- **"Worth $X" or "$Y value" with no comparable**: inflation
+- **"100% guaranteed" without specifying conditions**: legally and brand-wise risky
 
 Use specific numbers, named customers, concrete outcomes, real timelines. Specificity beats superlatives.
 

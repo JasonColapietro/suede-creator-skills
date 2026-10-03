@@ -5,7 +5,7 @@ description: "Suede Labs agent-team orchestrator: split complex work into coordi
 
 # Agent Team Orchestrator
 
-## Model selection — Fable capped at 4 without asking
+## Model selection: Fable capped at 4 without asking
 
 Subagents inherit the session model unless the spawning call names one. Nothing in
 this skill picks a model, so every agent it fans out lands on whatever the session
@@ -13,15 +13,15 @@ happens to be set to. That is how a run sized against one allocation gets billed
 another without anyone choosing it.
 
 **Up to 4 concurrent Fable subagents are allowed without an explicit Fable
-instruction. Beyond that, Fable must be specified** — any roster past a scout, a
+instruction. Beyond that, Fable must be specified**: any roster past a scout, a
 builder, and a handoff writer passes 4, so this skill's fan-out does not run on Fable
 unless the user named Fable for this run. An inherited session model is not a
-specification — "the session was already on it" is not the user asking. Absent an
+specification: "the session was already on it" is not the user asking. Absent an
 explicit Fable instruction, do one of two things before launching: name a different
 model on the agent calls, or state plainly that the run will bill to the Fable
 allocation and get an answer. Silence is not consent to spend it.
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -36,9 +36,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -118,7 +118,7 @@ RFC status vocabulary: `draft | accepted | superseded | withdrawn`.
 
 Before authoring one, read
 [`references/incident-and-rfc-templates.md`](references/incident-and-rfc-templates.md)
-and fill every section it lists — problem statement, proposed solution, alternatives
+and fill every section it lists: problem statement, proposed solution, alternatives
 considered, risks, success criteria, decision record.
 
 Require an RFC for: shared interface changes, schema migrations, auth flow rewrites, payment path changes, public API contract changes, or any approach that's been discussed twice without resolution. No builder lane opens until RFC status is `accepted`.
@@ -249,7 +249,7 @@ Wrap the roster with these gates:
 5. **Execute wave:** parallel lanes only when outputs do not collide.
 6. **Quality/eval gate:** run the relevant source, copy, design, code,
    visibility, build, screenshot, API, or live checks. A failing check earns
-   up to three genuinely different fixes — each attempt must change the
+   up to three genuinely different fixes: each attempt must change the
    diagnosis or the strategy. Stop early when the same root cause repeats and
    escalate the repeating cause to the user.
 7. **Adversarial review:** ask how the result fails in production, release,
@@ -329,7 +329,7 @@ Six pre-built configurations exist for common high-risk deployments: (a) Auth Re
 (b) Payment Integration, (c) Public Launch Review, (d) Data Migration, (e) Performance
 Audit, (f) Recovery / Incident Response. When the objective matches one, read
 [`references/scenario-templates.md`](references/scenario-templates.md) completely
-before opening lanes and adjust only the named target — each template carries its own
+before opening lanes and adjust only the named target: each template carries its own
 roster, lane map, RFC and flag requirements, grader tolerances, and done signal.
 
 ## Escalation Protocol
@@ -346,14 +346,14 @@ Stop the loop, surface the condition, and wait for human sign-off before continu
 
 No agent may override an escalation threshold by re-scoping the task or declaring the condition resolved without human confirmation.
 
-## Red Flags — Stop
+## Red Flags: Stop
 
-- "The lanes probably won't touch the same files" — probably is not a lane map. Run WIP collision detection first.
-- "The approach is obvious, skip the RFC" — if it has been discussed twice without resolution, it is not obvious.
-- "Mark it done, the code is written" — `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
-- "Leave that caveat out so the handoff looks clean" — a handoff missing a field is status `held`, not done.
-- "One more fix cycle will crack it" — past 3 cycles on the same failing check, stop and run the loop stall protocol.
-- "The builder can review its own lane" — for high-risk work, builder and reviewer stay separate.
+- "The lanes probably won't touch the same files": probably is not a lane map. Run WIP collision detection first.
+- "The approach is obvious, skip the RFC": if it has been discussed twice without resolution, it is not obvious.
+- "Mark it done, the code is written": `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
+- "Leave that caveat out so the handoff looks clean": a handoff missing a field is status `held`, not done.
+- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol.
+- "The builder can review its own lane": for high-risk work, builder and reviewer stay separate.
 
 ## Handoff Quality Checklist
 

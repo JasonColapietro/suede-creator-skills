@@ -26,20 +26,20 @@ when it fails.
 Collect these. Work with what exists and name what is missing in the Output
 Contract rather than blocking on it.
 
-1. **Entities** — the nouns the operation runs on (client, project, order, job,
+1. **Entities**: the nouns the operation runs on (client, project, order, job,
    track, release, patient).
-2. **Work units** — the recurring things people do, one line each, in the words
+2. **Work units**: the recurring things people do, one line each, in the words
    the person doing them uses.
-3. **Tool list** — every system holding operational data, including
+3. **Tool list**: every system holding operational data, including
    spreadsheets, shared drives, and any inbox used as a database.
-4. **Cycle length** — median days for one unit of work to go from open to done.
-5. **Blast radius per work unit** — what a wrong output costs, and whether it
+4. **Cycle length**: median days for one unit of work to go from open to done.
+5. **Blast radius per work unit**: what a wrong output costs, and whether it
    can be undone.
 
 Read `references/triage-examples.md` for worked classifications before running
 Step 3 on unfamiliar work.
 
-## Step 1 — Schema before surfaces
+## Step 1: Schema before surfaces
 
 Name the entities, their fields, and their relationships before designing a
 screen, an automation, or an agent.
@@ -54,7 +54,7 @@ entity. A work unit touching no entity means the schema is incomplete.
 missing entity, fold the work unit into an existing entity, or mark it
 out of scope in writing. Wait for the choice.
 
-## Step 2 — One write path per entity
+## Step 2: One write path per entity
 
 Each entity gets exactly one place a record is created and one path it is
 updated. Everything else reads.
@@ -72,14 +72,14 @@ apiece. Offer: designate one canonical writer and make the others read, put ever
 writer behind one service that owns the write, or split into two entities with
 separate lifecycles. Wait for the choice.
 
-## Step 3 — Triage every work unit
+## Step 3: Triage every work unit
 
 Route each work unit to an automation, an agent, or a human. Apply the Written
 Rule Test in order and stop at the first match.
 
 | Test | Verdict | Build as |
 |---|---|---|
-| The complete rule can be written down, every branch included, with no "it depends", "usually", or "as appropriate" — and inputs already arrive structured | **Automation** | Deterministic code. No model. |
+| The complete rule can be written down, every branch included, with no "it depends", "usually", or "as appropriate", and inputs already arrive structured | **Automation** | Deterministic code. No model. |
 | The rule can be written down, but inputs arrive as prose, audio, or images | **Automation with one extraction step** | Model parses input into the schema; the written rule decides. |
 | The rule cannot be fully written, and two competent people given the same context would agree on the answer | **Agent** | Model interprets, drafts, or answers, against the schema from Step 1. |
 | The rule cannot be fully written, and two competent people would disagree | **Human decides** | System assembles the full context and presents it; the person chooses. |
@@ -100,13 +100,13 @@ Notifications into a channel the team already owns do not reach outside it and
 keep their table verdict: a routing automation that posts to an internal channel
 stays a plain automation.
 
-**Halt format.** When a work unit cannot be classified — its rule was never
+**Halt format.** When a work unit cannot be classified (its rule was never
 written down, or the two people needed to settle the agreement question are not
-available — stop. Name the work unit in one line. Offer: write the rule now and
+available), stop. Name the work unit in one line. Offer: write the rule now and
 reclassify, run the three-case comparison with whoever does the work, ship it as
 human-decides until either lands, or mark it out of scope. Wait for the choice.
 
-## Step 4 — Absorb, keep, or kill every tool
+## Step 4: Absorb, keep, or kill every tool
 
 Each tool from the list gets one verdict and one proof path. Presence in a config
 is not evidence that a tool is live: cite a last-write timestamp, a seat count,
@@ -116,21 +116,21 @@ an invoice line, or a recent export.
 |---|---|---|
 | **Absorb** | The tool performs a function the new system's schema already owns, and it is system of record for nothing regulated or financial | Rebuild the function, cancel the tool |
 | **Keep** | System of record for regulated, financial, or legally retained data, or it holds an integration surface that would cost more to rebuild than the build budget allows | Integrate and read from it |
-| **Kill** | No writes across a full usage cycle — ninety days for a continuously used tool, a full year for anything on an annual or seasonal cycle such as tax, audit, insurance, or renewal software — or its function is already fully covered by a kept or absorbed tool | Cancel, rebuild nothing |
+| **Kill** | No writes across a full usage cycle (ninety days for a continuously used tool, a full year for anything on an annual or seasonal cycle such as tax, audit, insurance, or renewal software) or its function is already fully covered by a kept or absorbed tool | Cancel, rebuild nothing |
 
 A tool with no proof path is unclassified, not killed. Report it as unknown and
 name what evidence would settle it.
 
-## Step 5 — Choose the migration path in writing
+## Step 5: Choose the migration path in writing
 
 Decided here, during architecture, and never improvised mid-build. Apply in
 order and stop at the first match.
 
 | Condition | Path |
 |---|---|
-| History is read daily in the ordinary course of work | **Full migration** — clean, map, backfill, run parallel for one cycle, dated cutover, read-only window, retire |
-| Reference records outlive the work; closed transactions are rarely reopened | **Hybrid** — migrate clients, contacts, vendors, catalogs; leave transactional history read-only in place |
-| Cycle length is short and closed records are rarely reopened | **Cutover date** — no backfill; new work opens in the new system, in-flight work finishes in the old one, which empties itself in one cycle |
+| History is read daily in the ordinary course of work | **Full migration**: clean, map, backfill, run parallel for one cycle, dated cutover, read-only window, retire |
+| Reference records outlive the work; closed transactions are rarely reopened | **Hybrid**: migrate clients, contacts, vendors, catalogs; leave transactional history read-only in place |
+| Cycle length is short and closed records are rarely reopened | **Cutover date**: no backfill; new work opens in the new system, in-flight work finishes in the old one, which empties itself in one cycle |
 
 A retention requirement on its own does not force a full migration. Read the
 requirement's wording: most are satisfied by a read-only archive held for the
@@ -146,13 +146,13 @@ weeks ahead with training delivered before it arrives. The old tools are
 cancelled on a dated line in the plan, because a backup kept alive becomes a
 competing system inside a month.
 
-## Step 6 — Sequence into commanded phases
+## Step 6: Sequence into commanded phases
 
 Order the build so nothing lands on a moving foundation: schema, then workflows,
 then agents.
 
 Each phase carries a completion standard that a command proves. A phase whose
-standard reads as a judgment ("the schema looks stable") has no gate — replace it
+standard reads as a judgment ("the schema looks stable") has no gate: replace it
 with a command, a readback, or a file check whose output decides.
 
 | Phase | Completion proved by |

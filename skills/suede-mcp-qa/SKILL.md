@@ -1,11 +1,11 @@
 ---
 name: suede-mcp-qa
-description: "Suede AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server — initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get — plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging)."
+description: "Suede AI MCP release QA, scoped to this pack's own server (mcp/suede-skills-mcp.mjs) and its catalog, install, and docs surface. Runs the full JSON-RPC lifecycle against a live server (initialize, notifications/initialized, ping, tools/list, tools/call, resources/list, resources/read, prompts/list, prompts/get), plus protocol negotiation, closed input and output schemas, tool annotations, structuredContent with text fallbacks, malformed-input probes, clean stdio, catalog-to-folder agreement, and install-path language. Use when the MCP server, mcp/catalog.json, a tool, resource, or prompt definition, or the MCP install docs change, or before publishing an MCP release. A check that did not run against the live server is a FAIL, not a skip. NOT FOR: a generic third-party MCP server, which this skill's hardcoded surface does not describe; fixing or testing the public install path itself (use suede-launch-packaging)."
 ---
 
 # Suede MCP QA
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Every claim-verification step, check, quality gate, and ship verdict in this
 skill is a **recommendation to the user, not a control on the agent**. This
@@ -20,9 +20,9 @@ proceed" line elsewhere in this skill:
   as asked, and deliver the gate output alongside it as a clearly labeled
   recommendation.
 - A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
+- Single exception: if a finding is extremely risky (data loss, security or
   credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
+  irreversible public damage), pause, tell the user exactly what the risk is
   and what the options are, and let them pick. Their choice is final.
 
 
@@ -36,7 +36,7 @@ happen.
 - Run against a live MCP server, not a spec document. If the server is not running, start it before checking.
 - For each check, record the exact command run and the exact output received. Do not summarize.
 - A check that cannot run (server unreachable, tool not implemented) is a FAIL, not a skip.
-- Report failures immediately — do not wait until all checks complete to surface a blocker.
+- Report failures immediately: do not wait until all checks complete to surface a blocker.
 - Never mark a skill as present in the catalog unless its folder exists and its SKILL.md is readable.
 - Never mark an install command as working unless you ran it from a temporary destination directory.
 
@@ -69,14 +69,14 @@ happen.
 ## This Server's Real Surface
 
 `mcp/suede-skills-mcp.mjs` is the only server this skill QAs. Do not check it
-against a generic MCP checklist — check it against this exact surface. Read
+against a generic MCP checklist: check it against this exact surface. Read
 `mcp/catalog.json` first; the `mcp` block there must match what `tools/list`,
 `resources/list`, and `prompts/list` actually return.
 
 Derive that surface, never recite it: `scripts/mcp-surface-snapshot.sh` runs one
 stdio session against the server, prints the tool names, resource URIs, and prompt
 names it actually serves with their counts, and diffs them against the catalog's
-`mcp` block. Exit 1 means drift — the server's own `tools`/`resources`/`prompts`
+`mcp` block. Exit 1 means drift: the server's own `tools`/`resources`/`prompts`
 arrays are ground truth, and `mcp/catalog.json` is what gets corrected.
 
 ## Stdio Test Blocks
@@ -120,16 +120,16 @@ Fixes:
 Ship gate: ship | ship-with-caveats | hold
 ```
 
-## Red Flags — Stop
+## Red Flags: Stop
 
-- "The server ran fine last week; no need to restart it for this." — Run every check against the live server now.
-- "The catalog parses, so the folders are surely there." — Open every listed folder and read its SKILL.md.
-- "That check can't run, I'll mark it skipped." — A check that cannot run is a FAIL.
-- "The output looked right, close enough." — Record the exact command and exact output, verbatim.
+- "The server ran fine last week; no need to restart it for this.": Run every check against the live server now.
+- "The catalog parses, so the folders are surely there.": Open every listed folder and read its SKILL.md.
+- "That check can't run, I'll mark it skipped.": A check that cannot run is a FAIL.
+- "The output looked right, close enough.": Record the exact command and exact output, verbatim.
 
 ## Boundaries
 
-- Check and report only. Do not edit the server source, `mcp/catalog.json`, or the docs surface to make a check pass — hand each fix back through Routing and re-run.
+- Check and report only. Do not edit the server source, `mcp/catalog.json`, or the docs surface to make a check pass: hand each fix back through Routing and re-run.
 - Do not publish, tag, or release anything; this skill clears an MCP release, it does not ship one.
 - Never record a check as passed from a spec, a README, or a previous run. Only output captured from the live server in this session counts.
 - Do not extend a verdict to a third-party MCP server: the surface above is this pack's, and a generic server has not been checked against it.

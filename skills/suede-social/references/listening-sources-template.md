@@ -1,10 +1,10 @@
-# Listening Sources — Template
+# Listening Sources: Template
 
 Copy this file to `.agents/listening-sources.md` in your project (or
 `.claude/listening-sources.md`) and fill in the brackets. Suede reads it when
 running the [listening workflow](listening.md).
 
-Delete sections you don't use. Keep this short and current — stale sources are worse than no sources.
+Delete sections you don't use. Keep this short and current: stale sources are worse than no sources.
 
 ---
 
@@ -32,8 +32,8 @@ relevance, risk, and human review capacity. Draft only the highest-priority
 responses; never engage automatically or treat the whole list as a quota.
 
 ### LinkedIn (authorized browser or manual review)
-- [Name] — `linkedin.com/in/handle`
-- [Name] — `linkedin.com/in/handle`
+- [Name]: `linkedin.com/in/handle`
+- [Name]: `linkedin.com/in/handle`
 
 ### X / Twitter (browser-driven)
 - [@handle]
@@ -47,11 +47,11 @@ responses; never engage automatically or treat the whole list as a quota.
 - [handle.bsky.social]
 
 ### Blogs / Newsletters (RSS)
-- [Name] — `https://example.com/feed/`
-- [Name] — `https://example.substack.com/feed`
+- [Name]: `https://example.com/feed/`
+- [Name]: `https://example.substack.com/feed`
 
 ### YouTube channels (RSS)
-- [Name] — channel ID `UCxxxxxxxx`
+- [Name]: channel ID `UCxxxxxxxx`
 
 ---
 
@@ -100,13 +100,13 @@ Review through a currently authorized API, browser, or manual user export.
 URLs for an authorized browser or manual user review.
 
 ### LinkedIn Sales Navigator
-- [Search name] — `https://linkedin.com/sales/search/people?...`
+- [Search name]: `https://linkedin.com/sales/search/people?...`
 
 ### LinkedIn (regular)
-- Posts hashtag — `https://linkedin.com/feed/hashtag/yourtopic/`
+- Posts hashtag: `https://linkedin.com/feed/hashtag/yourtopic/`
 
 ### X advanced search
-- [Search name] — `https://x.com/search?q=...&f=live`
+- [Search name]: `https://x.com/search?q=...&f=live`
 
 ---
 
@@ -131,4 +131,4 @@ Save yourself the regret.
   recipes in [listening.md](listening.md#sources--light-tooling-curl-recipes).
 - Ask for a lookback that matches source volume and decision urgency; if the
   user delegates, start with 24 hours and label it a starting hypothesis.
-- Always ask before posting — output drafts, user approves and posts manually
+- Always ask before posting: output drafts, user approves and posts manually

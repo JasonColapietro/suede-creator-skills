@@ -123,12 +123,12 @@ Different customers have different:
 | Feature | Freelancer | Small Team | Growing | Enterprise |
 |---------|------------|------------|---------|------------|
 | Core features | ✓ | ✓ | ✓ | ✓ |
-| Collaboration | — | ✓ | ✓ | ✓ |
-| Integrations | — | Limited | Full | Full |
-| API access | — | — | ✓ | ✓ |
-| SSO/SAML | — | — | — | ✓ |
-| Audit logs | — | — | — | ✓ |
-| Custom contract | — | — | — | ✓ |
+| Collaboration | None | ✓ | ✓ | ✓ |
+| Integrations | None | Limited | Full | Full |
+| API access | None | None | ✓ | ✓ |
+| SSO/SAML | None | None | None | ✓ |
+| Audit logs | None | None | None | ✓ |
+| Custom contract | None | None | None | ✓ |
 
 **Step 3: Price to value for each persona**
 - Research willingness to pay per segment

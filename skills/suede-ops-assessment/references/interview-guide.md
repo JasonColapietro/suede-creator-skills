@@ -67,13 +67,13 @@ not produce the floor map.
 
 ## Turning answers into a floor map
 
-Each interview yields four record types. Keep them separate — they rank
+Each interview yields four record types. Keep them separate: they rank
 differently in Step 4.
 
-- **Steps** — what happens, in order, with who does it and what system it touches.
-- **Waits** — where work sits, what it waits on, and for how long.
-- **Re-entry** — the same information typed into more than one place.
-- **Workarounds** — the unofficial spreadsheet, the private checklist, the
+- **Steps**: what happens, in order, with who does it and what system it touches.
+- **Waits**: where work sits, what it waits on, and for how long.
+- **Re-entry**: the same information typed into more than one place.
+- **Workarounds**: the unofficial spreadsheet, the private checklist, the
   personal folder. These name the silos that no software inventory will find.
 
 A step that maps to no system is tribal knowledge. Record the holder, because

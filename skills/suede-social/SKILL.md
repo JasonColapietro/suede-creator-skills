@@ -104,7 +104,7 @@ The first line determines whether anyone reads the rest.
 ### Curiosity Hooks
 - "I was wrong about [common belief]."
 - "The real reason [outcome] happens isn't what you think."
-- "[Impressive result] — and it only took [surprisingly short time]."
+- "[Impressive result], and it only took [surprisingly short time]."
 
 ### Story Hooks
 - "Last week, [unexpected thing] happened."
@@ -128,18 +128,18 @@ that contains any of them and rewrite from the claim's actual evidence:
 
 - Engagement-bait questions with no stake ("Thoughts?", "Agree?", "Who else?").
 - Manufactured awe ("Let that sink in", "This changes everything").
-- Contrarianism with no evidence — an "unpopular opinion" the account cannot
+- Contrarianism with no evidence: an "unpopular opinion" the account cannot
   defend with an observed result or a named source.
 - A hook wrapped around an unproven claim. If the payoff has no owned metric,
   named source, or demonstrable artifact behind it, fix the claim, not the hook.
-- Fake specificity — invented percentages, round-number results, or timelines
+- Fake specificity: invented percentages, round-number results, or timelines
   the account did not measure.
 
 Run final copy through `suede-deslop` before it goes out for approval.
 
 **For post templates and more hooks**: See [references/post-templates.md](references/post-templates.md)
 
-**For carousels** (Instagram carousels, LinkedIn document posts): See [references/carousel-frameworks.md](references/carousel-frameworks.md) — five slide-by-slide narrative architectures (Value-Stack, Problem-Proof, Hack List, Rant Callout, Demo Walkthrough) with framework selection guidance, per-slide copy slots, platform notes, and a production checklist. Pick the framework before writing slides.
+**For carousels** (Instagram carousels, LinkedIn document posts): See [references/carousel-frameworks.md](references/carousel-frameworks.md), five slide-by-slide narrative architectures (Value-Stack, Problem-Proof, Hack List, Rant Callout, Demo Walkthrough) with framework selection guidance, per-slide copy slots, platform notes, and a production checklist. Pick the framework before writing slides.
 
 ---
 
@@ -160,7 +160,7 @@ without stretching the evidence or repeating the same point.
 
 ### Podcast / Video → Social Content
 
-Extract "content atoms" — self-contained moments from any long-form content that work on their own:
+Extract "content atoms": self-contained moments from any long-form content that work on their own:
 
 | Atom Type | What to Look For | Candidate Formats to Test |
 |-----------|-----------------|---------------------------|
@@ -172,13 +172,13 @@ Extract "content atoms" — self-contained moments from any long-form content th
 | Behind-the-scenes | Authentic, unpolished moments | Instagram Stories, TikTok |
 
 **Podcast repurposing workflow:**
-1. **Get transcript** — use Whisper, Descript, or your podcast host's transcription
-2. **Mark timestamps** — flag the 5-10 best moments while listening or scanning transcript
-3. **Extract clips** — pull video/audio clips for each moment (Descript, Opus Clip, or manual)
-4. **Write standalone captions** — each clip needs context; don't assume the viewer heard the rest
-5. **Add subtitles** — make the clip accessible without assuming a universal
+1. **Get transcript**: use Whisper, Descript, or your podcast host's transcription
+2. **Mark timestamps**: flag the 5-10 best moments while listening or scanning transcript
+3. **Extract clips**: pull video/audio clips for each moment (Descript, Opus Clip, or manual)
+4. **Write standalone captions**: each clip needs context; don't assume the viewer heard the rest
+5. **Add subtitles**: make the clip accessible without assuming a universal
    sound-off rate
-6. **Plan a distribution test** — choose timing from current cadence, source
+6. **Plan a distribution test**: choose timing from current cadence, source
    volume, approval capacity, and account evidence
 
 **Starting extraction hypothesis, only when the source supports enough distinct
@@ -211,7 +211,7 @@ moments and the team can review them:**
 ### Repurposing Workflow
 
 1. **Create pillar content** (blog, video, podcast, webinar, newsletter)
-2. **Extract content atoms** (5-10 per piece — quotes, stories, tips, data)
+2. **Extract content atoms** (5-10 per piece: quotes, stories, tips, data)
 3. **Adapt to each platform** (format, length, and tone)
 4. **Write standalone captions** (each post must work without context)
 5. **Plan distribution** from current cadence and approval capacity
@@ -265,7 +265,7 @@ Evidence source | one variable under test | primary metric
 Asset owner | production status | approval status
 ```
 
-For the post draft itself, do not restate a template here — write it from
+For the post draft itself, do not restate a template here: write it from
 [references/post-templates.md](references/post-templates.md), which owns the
 exact LinkedIn, X thread, carousel, and Reel skeletons.
 
@@ -375,16 +375,16 @@ according to the campaign objective rather than a universal hierarchy
 
 Instead of guessing, analyze a lawful, recent sample from comparable accounts:
 
-1. **Define comparables** — Similar audience, offer, account maturity, and
+1. **Define comparables**: Similar audience, offer, account maturity, and
    platform; record why each account belongs in the sample.
-2. **Collect a bounded sample** — Use only data the current platform and account
+2. **Collect a bounded sample**: Use only data the current platform and account
    access lawfully expose. Set the count from available volume and stop when
    another batch no longer changes the leading patterns.
-3. **Analyze patterns** — Compare hooks, formats, CTAs, reach, retention, saves,
+3. **Analyze patterns**: Compare hooks, formats, CTAs, reach, retention, saves,
    and replies only where the platform exposes those measures.
-4. **Codify playbook** — Document repeatable patterns
-5. **Layer your voice** — Apply patterns with authenticity
-6. **Convert** — Bridge attention to business results
+4. **Codify playbook**: Document repeatable patterns
+5. **Layer your voice**: Apply patterns with authenticity
+6. **Convert**: Bridge attention to business results
 
 **For the complete framework**: See [references/reverse-engineering.md](references/reverse-engineering.md)
 
@@ -424,8 +424,8 @@ baseline before standardizing the pattern.
 
 ### Video Structures
 
-Pick the beat sheet before scripting. All five structures — Problem-Solution,
-List Format, Tutorial, Story Arc, POV/Skit — with timings and fit hypotheses,
+Pick the beat sheet before scripting. All five structures (Problem-Solution,
+List Format, Tutorial, Story Arc, POV/Skit) with timings and fit hypotheses,
 plus the caption spec below, live in
 [references/short-form-video.md](references/short-form-video.md); read it
 whenever a short-form script or its on-screen text is actually being written.
@@ -438,14 +438,14 @@ tooling, export specs, and edit execution belong to `suede-video`.
 
 ### Common Mistakes
 
-1. **Unclear opening** — test whether the premise is understood in the first
+1. **Unclear opening**: test whether the premise is understood in the first
    1–3 seconds
-2. **No accessible captions** — provide captions independent of sound-off-rate
+2. **No accessible captions**: provide captions independent of sound-off-rate
    assumptions
-3. **Unusable audio** — verify speech intelligibility on target devices
-4. **Unsupported length** — compare length bands against retention and the idea
-5. **Missing next step** — include a CTA only when the objective needs one
-6. **Unreviewed comments** — choose response priority from relevance and account
+3. **Unusable audio**: verify speech intelligibility on target devices
+4. **Unsupported length**: compare length bands against retention and the idea
+5. **Missing next step**: include a CTA only when the objective needs one
+6. **Unreviewed comments**: choose response priority from relevance and account
    evidence, not a universal first-hour rule
 
 **For video hook formulas and scripting templates**: See [references/short-form-video.md](references/short-form-video.md)
@@ -455,11 +455,11 @@ tooling, export specs, and edit execution belong to `suede-video`.
 ## Halt Contract
 
 Use this exact format when account access, asset rights, visible identity, or
-exact-content approval blocks the requested result — including when the
+exact-content approval blocks the requested result, including when the
 publish/engagement gate in Boundaries fires:
 
 ```text
-HALT — <one-line blocker>
+HALT: <one-line blocker>
 Why it blocks: <specific missing authority or evidence>
 Resolve with:
 1. <option>

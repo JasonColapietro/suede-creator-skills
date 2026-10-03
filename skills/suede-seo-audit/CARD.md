@@ -44,12 +44,12 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Red flags" — If you catch yourself thinking any of these, stop and run the check for real:
 
-- "I know this page; I can grade it from memory." — Fetch it. Source Truth first.
-- "curl was fast, that covers Core Web Vitals." — curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
-- "I'll describe the schema fix; they can write the JSON." — Write the literal JSON-LD block.
-- "The title or description crossed a magic character limit." — Count it for preview diagnostics, then judge accuracy and likely truncation in context. Google publishes no fixed character limit.
-- "A traffic estimate will make this finding land harder." — Never invent traffic, rankings, or ROI.
-- "The lane mostly passes; I'll skip the rest of the checklist." — Every item gets pass, fail, or N/A.
+- "I know this page; I can grade it from memory.": Fetch it. Source Truth first.
+- "curl was fast, that covers Core Web Vitals.": curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
+- "I'll describe the schema fix; they can write the JSON.": Write the literal JSON-LD block.
+- "The title or description crossed a magic character limit.": Count it for preview diagnostics, then judge accuracy and likely truncation in context. Google publishes no fixed character limit.
+- "A traffic estimate will make this finding land harder.": Never invent traffic, rankings, or ROI.
+- "The lane mostly passes; I'll skip the rest of the checklist.": Every item gets pass, fail, or N/A.
 
 ## References
 

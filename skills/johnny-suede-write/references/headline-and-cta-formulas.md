@@ -23,18 +23,18 @@ Used by johnny-suede-write. Read when generating hero headlines, email subjects,
 
 CTAs fail when they describe the button, not the outcome. Every CTA answers: "What happens the moment I click this?"
 
-**Formula A: Verb + immediate result** — [Action verb] + [what they get or see right now]
+**Formula A: Verb + immediate result**: [Action verb] + [what they get or see right now]
 - "Run the audit. Get your grade in 60 seconds."
 - "Fork the skill. Live in your Codex in under a minute."
 - "Paste your folder path. See your rights gaps."
 
-**Formula B: Verb + object + benefit** — [Verb] + [specific object] + [value unlocked]
+**Formula B: Verb + object + benefit**: [Verb] + [specific object] + [value unlocked]
 - "Register a release. Make it readable to licensing agents."
 - "Install the skill. Audit any repo from your terminal."
 - "Download the schema. Stop building it by hand."
 
-**Formula C: Low-commitment framing** (skeptic / discovery stage) — [Passive discovery verb] + [what they'll see, not what they'll do]
+**Formula C: Low-commitment framing** (skeptic / discovery stage): [Passive discovery verb] + [what they'll see, not what they'll do]
 - "See how rights routing works" / "Read the spec" / "Open the repo" / "Watch a 90-second demo"
 
-**Formula D: Stakes-aware framing** (decision-maker) — [Verb] + [outcome in their language]
+**Formula D: Stakes-aware framing** (decision-maker): [Verb] + [outcome in their language]
 - "Start the audit before the pitch" / "Get the split sheet the label actually needs" / "Ship the release with provenance attached"

@@ -54,9 +54,9 @@ Voluntary churn is typically 50-70% of total churn. Involuntary churn is 30-50% 
 
 This skill supports three modes:
 
-1. **Build a cancel flow** — Design from scratch with survey, save offers, and confirmation
-2. **Optimize an existing flow** — Analyze cancel data and improve save rates
-3. **Set up dunning** — Failed payment recovery with retries and email sequences
+1. **Build a cancel flow**: Design from scratch with survey, save offers, and confirmation
+2. **Optimize an existing flow**: Analyze cancel data and improve save rates
+3. **Set up dunning**: Failed payment recovery with retries and email sequences
 
 ---
 
@@ -121,7 +121,7 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 | Switching to competitor | Competitive comparison + discount | Feedback session |
 | Technical issues | Escalate to support immediately | Credit + priority fix |
 | Temporary / seasonal | Pause subscription | Downgrade temporarily |
-| Business closed | Skip offer (respect the situation) | — |
+| Business closed | Skip offer (respect the situation) | n/a |
 
 ### Save Offer Types
 
@@ -216,7 +216,7 @@ Health Score = (
 | Trigger | Intervention |
 |---------|-------------|
 | Usage drop >50% for 2 weeks | "We noticed you haven't used [feature]. Need help?" email |
-| Approaching plan limit | Upgrade nudge (not a wall — paywalls handles this) |
+| Approaching plan limit | Upgrade nudge (not a wall, paywalls handles this) |
 | No login for 14 days | Re-engagement email with recent product updates |
 | NPS detractor (0-6) | Personal follow-up within 24 hours |
 | Support ticket unresolved >48h | Escalation + proactive status update |
@@ -248,10 +248,10 @@ Not all failures are the same. Retry strategy by decline type:
 | Decline Type | Examples | Retry Strategy |
 |-------------|----------|----------------|
 | Soft decline (temporary) | Insufficient funds, processor timeout | Retry on the canonical schedule below |
-| Hard decline (permanent) | Card stolen, account closed | Don't retry — ask for new card |
+| Hard decline (permanent) | Card stolen, account closed | Don't retry: ask for new card |
 | Authentication required | 3D Secure, SCA | Send customer to update payment |
 
-**Canonical retry schedule:** one schedule governs this skill — the manual retry
+**Canonical retry schedule:** one schedule governs this skill: the manual retry
 table in [references/dunning-playbook.md](references/dunning-playbook.md)
 §Retry Schedule by Provider (Day 1 / 3 / 5 / 7 / 10, fifth attempt last before
 the grace period ends). Read it before configuring retries and do not restate a
@@ -261,7 +261,7 @@ different schedule anywhere.
 
 Four emails on Day 0 / 3 / 7 / 10. The timing, tone, and full copy for each live
 in [references/dunning-playbook.md](references/dunning-playbook.md) §Dunning
-Email Sequence — read it before writing or configuring the sequence.
+Email Sequence: read it before writing or configuring the sequence.
 
 **Dunning email best practices:**
 - Direct link to payment update page (no login required if possible)
@@ -303,11 +303,11 @@ For the complete dunning playbook with provider-specific setup, see [references/
 ### Cohort Analysis
 
 Segment churn by:
-- **Acquisition channel** — Which channels bring stickier customers?
-- **Plan type** — Which plans churn most?
-- **Tenure** — When do most cancellations happen? (30, 60, 90 days?)
-- **Cancel reason** — Which reasons are growing?
-- **Save offer type** — Which offers work best for which segments?
+- **Acquisition channel**: Which channels bring stickier customers?
+- **Plan type**: Which plans churn most?
+- **Tenure**: When do most cancellations happen? (30, 60, 90 days?)
+- **Cancel reason**: Which reasons are growing?
+- **Save offer type**: Which offers work best for which segments?
 
 ### Cancel Flow A/B Tests
 
@@ -331,9 +331,9 @@ implementation guidance, assignment behavior, and event readback before launch.
 
 ## Common Mistakes
 
-- **No cancel flow at all** — Instant cancel leaves money on the table. Even a simple survey + one offer saves 10-15%
-- **Not tracking save offer LTV** — A "saved" customer who churns 30 days later wasn't really saved
-- **No post-cancel path** — Make reactivation easy and trigger win-back emails, because some churned users will want to come back
+- **No cancel flow at all**: Instant cancel leaves money on the table. Even a simple survey + one offer saves 10-15%
+- **Not tracking save offer LTV**: A "saved" customer who churns 30 days later wasn't really saved
+- **No post-cancel path**: Make reactivation easy and trigger win-back emails, because some churned users will want to come back
 
 ---
 
@@ -361,14 +361,14 @@ documentation, account plan, test mode, and rollback path before configuration.
 
 ### Halt Format for Billing Mutations
 
-Before any change to a live billing object — retry rules, discounts, plan
+Before any change to a live billing object (retry rules, discounts, plan
 changes, pauses, cancellations, subscription state, or customer-facing billing
-messages — stop and emit this block, then wait. Inferred consent is not
+messages), stop and emit this block, then wait. Inferred consent is not
 authorization, and "the user asked for a cancel flow" is not authorization to
 configure one.
 
 ```
-HALT — billing mutation requires authorization
+HALT: billing mutation requires authorization
 
 Mutation: <the exact change, e.g. "enable 5-attempt retry rule">
 Objects touched: <provider, environment, subscriptions/customers/coupons affected, count>

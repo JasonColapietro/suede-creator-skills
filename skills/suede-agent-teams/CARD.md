@@ -44,12 +44,12 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Red flags":
 
-- "The lanes probably won't touch the same files" — probably is not a lane map. Run WIP collision detection first.
-- "The approach is obvious, skip the RFC" — if it has been discussed twice without resolution, it is not obvious.
-- "Mark it done, the code is written" — `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
-- "Leave that caveat out so the handoff looks clean" — a handoff missing a field is status `held`, not done.
-- "One more fix cycle will crack it" — past 3 cycles on the same failing check, stop and run the loop stall protocol.
-- "The builder can review its own lane" — for high-risk work, builder and reviewer stay separate.
+- "The lanes probably won't touch the same files": probably is not a lane map. Run WIP collision detection first.
+- "The approach is obvious, skip the RFC": if it has been discussed twice without resolution, it is not obvious.
+- "Mark it done, the code is written": `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
+- "Leave that caveat out so the handoff looks clean": a handoff missing a field is status `held`, not done.
+- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol.
+- "The builder can review its own lane": for high-risk work, builder and reviewer stay separate.
 
 ## References
 

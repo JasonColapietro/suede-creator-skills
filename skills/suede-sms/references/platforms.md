@@ -1,6 +1,6 @@
 # SMS Platform Reference
 
-Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC support, and integration paths.
+Deep-dive on the major SMS marketing platforms: features, pricing, A2P 10DLC support, and integration paths.
 
 > Pricing is approximate and changes regularly. Always confirm at the vendor's site before committing.
 
@@ -120,7 +120,7 @@ Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC 
 
 ### Integration paths
 - API-first (REST + SDKs in Node, Python, Ruby, Go, etc.)
-- No native ecom integrations — you build them
+- No native ecom integrations: you build them
 
 ### Compliance
 - A2P 10DLC registration in-platform but you do the work
@@ -128,7 +128,7 @@ Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC 
 - Quiet hours and STOP/HELP handling must be implemented by you
 
 ### Watch out for
-- You're responsible for compliance — no hand-holding
+- You're responsible for compliance: no hand-holding
 - No native segmentation, deliverability dashboards, or marketing UI
 - Best paired with Customer.io, Segment, or a custom orchestration layer
 
@@ -212,11 +212,11 @@ Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC 
 
 ### Integration paths
 - API-first (REST + SDKs)
-- No native ecom integrations — you build them
+- No native ecom integrations: you build them
 
 ### Compliance
 - A2P 10DLC managed in-platform
-- Compliance plumbing (STOP/HELP, quiet hours) is your responsibility — same model as Twilio
+- Compliance plumbing (STOP/HELP, quiet hours) is your responsibility: same model as Twilio
 
 ### Watch out for
 - Smaller ecosystem than Twilio (fewer ancillary products, integrations, community resources)
@@ -228,7 +228,7 @@ Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC 
 
 **Best for**: DTC brands wanting AI-forward creative tooling or on-pack QR opt-in as a primary acquisition channel.
 
-> Newer platform — verify current capabilities, pricing, and API surface before committing.
+> Newer platform: verify current capabilities, pricing, and API surface before committing.
 
 ### Key features
 - SMS + email on one platform (similar combined model to Klaviyo)
@@ -249,11 +249,11 @@ Deep-dive on the major SMS marketing platforms — features, pricing, A2P 10DLC 
 
 ### Compliance
 - A2P 10DLC handled in-platform
-- TCPA tooling — verify enterprise-scale depth before committing for large lists
+- TCPA tooling: verify enterprise-scale depth before committing for large lists
 
 ### Watch out for
-- Newer entrant — fewer reference customers, less battle-tested at high volume than incumbents
-- Some features rolled out recently — confirm what's GA vs beta before relying on them
+- Newer entrant: fewer reference customers, less battle-tested at high volume than incumbents
+- Some features rolled out recently: confirm what's GA vs beta before relying on them
 
 ---
 

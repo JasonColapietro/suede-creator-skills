@@ -10,7 +10,7 @@ Iron Law: the Play API decides what shipped, not a green fastlane summary.
 Every claim about a live release is a readback or it is a guess.
 ```
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
 Run every check and report results honestly. Verdicts are advice attached to the
 work, never a control that changes it. A failed check changes what you report,
@@ -18,7 +18,7 @@ never what you do. The one exception is the production halt in Step 7: a public
 release is irreversible for the users who get it, so present the options and let
 the user pick.
 
-## Step 0 — Preflight the credential before anything else
+## Step 0: Preflight the credential before anything else
 
 Never assume publishing works. Prove it with a real API call that changes
 nothing: open an edit and delete it.
@@ -37,7 +37,7 @@ Three outcomes, three different actions:
 
 A 403 here is the normal state of a brand-new service account, not a bug.
 
-## Step 1 — Credentials
+## Step 1: Credentials
 
 Use a **dedicated publishing service account**, separate from any billing or
 purchase-verification account. A credential that can push releases should not
@@ -62,7 +62,7 @@ invite the service-account email under Users and permissions with release
 permissions on the app. Report this to the user as a step only they can take,
 with the exact email and permissions, then re-run Step 0.
 
-## Step 2 — Pull before every command
+## Step 2: Pull before every command
 
 `fastlane` reads the working tree, not the remote. A stale checkout produces a
 run that succeeds and does nothing, because a missing changelog is a skip rather
@@ -75,7 +75,7 @@ git -C <repo> pull --ff-only && git -C <repo> log --oneline -1
 If fastlane offers to set itself up, the Fastfile is not on disk. Answer no and
 pull; accepting scaffolds an empty config over the real one.
 
-## Step 3 — Write the changelog first
+## Step 3: Write the changelog first
 
 Release notes live at
 `fastlane/metadata/android/<locale>/changelogs/<versionCode>.txt`, one file per
@@ -94,7 +94,7 @@ done
 Match each locale's existing register rather than translating the English word
 for word. Check the limit: 500 characters.
 
-## Step 4 — Verify the artifact, never the source tree
+## Step 4: Verify the artifact, never the source tree
 
 A source read is not evidence that a change reached the binary.
 
@@ -114,7 +114,7 @@ shasum -a 256 app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
 `jarsigner` reporting a self-signed certificate is correct under Play App
 Signing, which re-signs with the real release key.
 
-## Step 5 — Upload to a testing track first
+## Step 5: Upload to a testing track first
 
 ```bash
 fastlane android internal
@@ -124,7 +124,7 @@ Build uploads carry the binary and its changelogs only. Listing text, icon,
 feature graphic and screenshots move through a separate lane, so a routine
 upload cannot rewrite what the store says about the app.
 
-## Step 6 — Promote, never re-upload
+## Step 6: Promote, never re-upload
 
 Play rejects a second bundle carrying a versionCode it already has. Re-uploading
 is not a slower path to the same place, it is an error.
@@ -141,7 +141,7 @@ upload_to_play_store(
 )
 ```
 
-## Step 7 — Production halt
+## Step 7: Production halt
 
 A production rollout is irreversible for the users who receive it. Stop and
 present:
@@ -158,7 +158,7 @@ Currently live: versionCode <m>. <one line on what users will notice>.
 Then wait. Proceed on an explicit answer, and treat a standing instruction to
 ship as that answer.
 
-## Step 8 — Read back what is actually live
+## Step 8: Read back what is actually live
 
 The fastlane summary reports that the request succeeded, not what the release
 became. Parameters like `track_promote_release_status` can differ from the
@@ -170,9 +170,9 @@ GET /androidpublisher/v3/applications/<pkg>/edits/<id>/tracks/production
 
 Check three fields and say them plainly:
 
-- `versionCodes` — the build users get.
-- `status` — `inProgress` is a staged rollout; `completed` is everyone.
-- `userFraction` — absent when `completed`.
+- `versionCodes`: the build users get.
+- `status`: `inProgress` is a staged rollout; `completed` is everyone.
+- `userFraction`: absent when `completed`.
 
 A 100% rollout should land as `status: completed` with **no** `userFraction`. A
 release sitting at `inProgress` with `userFraction: 1.0` is a different state

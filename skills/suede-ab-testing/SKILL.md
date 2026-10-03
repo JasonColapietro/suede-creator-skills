@@ -12,15 +12,15 @@ Use this Suede experimentation playbook to design tests that produce statistical
 ## The Iron Law
 
 ```
-Predeclare three things before a test launches — sample per variant,
-minimum duration, and the decision rule — and read the result only once
+Predeclare three things before a test launches: sample per variant,
+minimum duration, and the decision rule: and read the result only once
 all three are satisfied. A result read before then is preliminary.
 Never a winner.
 ```
 
 - **Sample per variant**: the Sample Size table below, or a calculator run on your actual baseline.
-- **Minimum duration**: 1 full week (day-of-week variation), 2 business cycles (B2B), through paydays (e-commerce) — see the "Minimum Duration Rules" section of [references/sample-size-guide.md](references/sample-size-guide.md).
-- **Decision rule**: which metric, at which threshold, decides the call — written down before launch, not after.
+- **Minimum duration**: 1 full week (day-of-week variation), 2 business cycles (B2B), through paydays (e-commerce): see the "Minimum Duration Rules" section of [references/sample-size-guide.md](references/sample-size-guide.md).
+- **Decision rule**: which metric, at which threshold, decides the call: written down before launch, not after.
 
 Two carve-outs, and only these two:
 
@@ -29,7 +29,7 @@ Two carve-outs, and only these two:
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — baseline conversion rate, traffic volume, and available tooling decide whether a test is even powerable, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present, baseline conversion rate, traffic volume, and available tooling decide whether a test is even powerable, and they are usually already written down there.
 
 Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 
@@ -161,12 +161,12 @@ Each box names the artifact that closes it. An unchecked box means the test is
 running unvalidated: any result it produces is reportable only as unverified,
 and a silently broken variant invalidates the entire run's traffic.
 
-- [ ] **Hypothesis documented** — written in the framework structure above, saved with the test record
-- [ ] **Primary metric defined** — the metric name plus the predeclared decision rule
-- [ ] **Sample size calculated** — n per variant and the projected end date, from the table or a calculator
-- [ ] **Variants implemented correctly** — a screenshot or recording of each variant exactly as served
-- [ ] **Tracking verified** — a fired-event readback showing the exposure and conversion events with correct properties (use `suede-analytics` for the instrumentation and the readback)
-- [ ] **QA completed on all variants** — a pass on every browser and device class the test will serve
+- [ ] **Hypothesis documented**: written in the framework structure above, saved with the test record
+- [ ] **Primary metric defined**: the metric name plus the predeclared decision rule
+- [ ] **Sample size calculated**: n per variant and the projected end date, from the table or a calculator
+- [ ] **Variants implemented correctly**: a screenshot or recording of each variant exactly as served
+- [ ] **Tracking verified**: a fired-event readback showing the exposure and conversion events with correct properties (use `suede-analytics` for the instrumentation and the readback)
+- [ ] **QA completed on all variants**: a pass on every browser and device class the test will serve
 
 ### During the Test
 
@@ -190,7 +190,7 @@ Looking at results before reaching sample size and stopping early leads to false
 ### Statistical Significance
 - 95% confidence = p-value < 0.05
 - Means <5% chance result is random
-- Not a guarantee—just a threshold
+- Not a guarantee: just a threshold
 
 ### Analysis Checklist
 
@@ -247,8 +247,8 @@ Feed your experiment backlog from multiple sources:
 | Source | What to Look For |
 |--------|-----------------|
 | Analytics | Drop-off points, low-converting pages, underperforming segments |
-| Customer research | Pain points, confusion, unmet expectations — use `suede-customer-research` to produce these |
-| Competitor analysis | Features, messaging, or UX patterns they use that you don't — use `suede-competitor-profiling` to produce these |
+| Customer research | Pain points, confusion, unmet expectations: use `suede-customer-research` to produce these |
+| Competitor analysis | Features, messaging, or UX patterns they use that you don't: use `suede-competitor-profiling` to produce these |
 | Support tickets | Recurring questions or complaints about conversion flows |
 | Heatmaps/recordings | Where users hesitate, rage-click, or abandon |
 | Past experiments | "Significant loser" tests often reveal new angles to try |
@@ -281,18 +281,18 @@ Track your experimentation rate as a leading indicator of growth:
 
 ### The Experiment Playbook
 
-When a test wins, don't just implement it — document the pattern:
+When a test wins, don't just implement it, document the pattern:
 
 ```
 ## [Experiment Name]
 **Date**: [date]
 **Hypothesis**: [the hypothesis]
 **Sample size**: [n per variant]
-**Result**: [winner/loser/inconclusive] — [primary metric] changed by [X%] (95% CI: [range], p=[value])
+**Result**: [winner/loser/inconclusive]: [primary metric] changed by [X%] (95% CI: [range], p=[value])
 **Guardrails**: [any guardrail metrics and their outcomes]
 **Segment deltas**: [notable differences by device, segment, or cohort]
 **Why it worked/failed**: [analysis]
-**Pattern**: [the reusable insight — e.g., "social proof near pricing CTAs increases plan selection"]
+**Pattern**: [the reusable insight: e.g., "social proof near pricing CTAs increases plan selection"]
 **Apply to**: [other pages/flows where this pattern might work]
 **Status**: [implemented / parked / needs follow-up test]
 ```
@@ -301,7 +301,7 @@ Over time, your playbook becomes a library of proven growth patterns specific to
 
 ### Experiment Cadence
 
-**Weekly (30 min)**: Review running experiments for technical issues and guardrail metrics. Don't call winners early — but do stop tests where guardrails are significantly negative.
+**Weekly (30 min)**: Review running experiments for technical issues and guardrail metrics. Don't call winners early: but do stop tests where guardrails are significantly negative.
 
 **Bi-weekly**: Conclude completed experiments. Analyze results, update playbook, launch next experiment from backlog.
 
@@ -314,14 +314,14 @@ Over time, your playbook becomes a library of proven growth patterns specific to
 ## Rationalizations
 
 The failure this skill exists to prevent is calling a result early under
-pressure. When one of these lines shows up — from a stakeholder or from you —
+pressure. When one of these lines shows up, from a stakeholder or from you,
 the answer is already in this file.
 
 | Excuse | Reality |
 |--------|---------|
 | "It's already significant at 95%" | 95% is a threshold, not a guarantee. Significance checked before the predeclared sample is a peek, and peeking inflates false positives. Analysis Checklist item 1 still stands: preliminary. |
 | "We've been running it two weeks" | Duration is one of three conditions, not the condition. Check n per variant against the sample-size table before reading anything. |
-| "The trend is obvious" | Early trends reverse routinely — that is exactly what The Peeking Problem describes. An obvious trend at 30% of sample is a reason to wait, not to stop. |
+| "The trend is obvious" | Early trends reverse routinely: that is exactly what The Peeking Problem describes. An obvious trend at 30% of sample is a reason to wait, not to stop. |
 | "Leadership needs an answer Friday" | Then report it as preliminary, with the sample reached and the stopped-early status disclosed (Boundaries). A stopped-early result sold as a winner is what costs credibility two quarters from now. |
 | "The losing variant is clearly bad, why keep serving it" | Stopping for a significantly negative guardrail is legitimate (Experiment Cadence). But a stop for harm is a stop, not a winner call for the control. |
 | "The mobile segment won" | A segment that was not predeclared is a hypothesis for the next test, not a result. Post-hoc segment selection manufactures significance out of noise. |

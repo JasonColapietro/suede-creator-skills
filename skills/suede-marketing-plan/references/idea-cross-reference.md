@@ -1,4 +1,4 @@
-# Idea Cross-Reference — 139 Marketing Ideas Mapped to AARRR
+# Idea Cross-Reference: 139 Marketing Ideas Mapped to AARRR
 
 The `suede-marketing-ideas` skill catalogs 139 marketing tactics. This doc is
 the source-of-truth mapping: every idea is assigned to a primary AARRR stage.
@@ -176,7 +176,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 93 | Viral Loops | Product-Led | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 137 | Two-Sided Referrals | Audience-Specific | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 
-### Revenue (2 entries — most monetization is strategy not tactic)
+### Revenue (2 entries: most monetization is strategy not tactic)
 
 | # | Idea | Category | Decision requirement |
 |---|---|---|---|
@@ -203,52 +203,52 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 
 For Section 12 of the plan:
 
-### Step 1 — Filter for category fit
+### Step 1: Filter for category fit
 
 For each idea, ask:
 - Does this idea apply to the client's category? (e.g., #16 Importers only for SaaS; #19 Chrome Extensions only for browser-relevant; #136 DevRel only for dev tools)
 - Skip ideas that don't apply, with a note
 
-### Step 2 — Filter for brand voice
+### Step 2: Filter for brand voice
 
 For each idea, ask:
 - Does this idea conflict with the client's brand voice?
 - Common conflicts:
-  - **Lifetime Deals (#86)** — conflicts with premium positioning
-  - **Twitter Giveaways (#83)** — often off-brand for serious / clinical / luxury voices
-  - **Humor Marketing (#122)** — off-brand for serious / clinical voices
-  - **Cameo Marketing (#118)** — off-brand for most voices
-  - **Reality TV Marketing (#112)** — off-brand for most voices
+  - **Lifetime Deals (#86)**: conflicts with premium positioning
+  - **Twitter Giveaways (#83)**: often off-brand for serious / clinical / luxury voices
+  - **Humor Marketing (#122)**: off-brand for serious / clinical voices
+  - **Cameo Marketing (#118)**: off-brand for most voices
+  - **Reality TV Marketing (#112)**: off-brand for most voices
 
 If conflict, place in Skip list with explicit rationale.
 
-### Step 3 — Set evidence-and-authority status
+### Step 3: Set evidence-and-authority status
 
 For ideas that pass filters, set status:
-- **Current** — already approved, owned, resourced, and within present constraints
-- **Approved test** — bounded exposure with source-backed hypothesis, owner,
+- **Current**: already approved, owned, resourced, and within present constraints
+- **Approved test**: bounded exposure with source-backed hypothesis, owner,
   review date, and stop conditions
-- **Conditional unlock** — exact evidence/resource/dependency and authorization
+- **Conditional unlock**: exact evidence/resource/dependency and authorization
   are named but not yet satisfied
-- **Deferred** — does not fit current evidence, capacity, risk, or strategy; name
+- **Deferred**: does not fit current evidence, capacity, risk, or strategy; name
   what could change the decision
-- **Skip** — conflicts with category, brand, legal, ethical, or business-model
+- **Skip**: conflicts with category, brand, legal, ethical, or business-model
   constraints; record the reason
 
 The Decision requirement column is a checklist, not a default status. For every
 non-skip idea, record source/as-of date, owner and capacity, dependency state,
 maximum cash/time exposure, approval, review date, and pause/stop rule.
 
-### Step 4 — Write the client-specific note
+### Step 4: Write the client-specific note
 
 Every `Current`, `Approved test`, or `Conditional unlock` idea gets a one-line
 client-specific note plus its evidence/authority record. Examples below are
 illustrative prompts, not recommendations:
-- For idea #11 Competitor Comparison Pages: "Quietude vs. Calm / Headspace / Brain.fm / Endel / Wavepaths — high-intent SERPs"
-- For idea #133 Investor Marketing: "Alex's seed raise — leverage angel backchannel for PR + intros"
+- For idea #11 Competitor Comparison Pages: "Quietude vs. Calm / Headspace / Brain.fm / Endel / Wavepaths, high-intent SERPs"
+- For idea #133 Investor Marketing: "Alex's seed raise, leverage angel backchannel for PR + intros"
 - For idea #15 Engineering as Marketing: "HRV interpretation guide; nervous system self-assessment; sound bath finder directory"
 
-### Step 5 — Sum the bank
+### Step 5: Sum the bank
 
 After all five AARRR tables + skip list:
 
@@ -270,7 +270,7 @@ review date, and stop conditions are satisfied.
 
 ## How to maintain this doc
 
-If `suede-marketing-ideas` adds new ideas (it's a living skill — the 139 may become 145 or 160 over time):
+If `suede-marketing-ideas` adds new ideas (it's a living skill, the 139 may become 145 or 160 over time):
 1. Read `skills/suede-marketing-ideas/references/ideas-by-category.md` in the public Suede skill pack
 2. Assign each new idea to a primary AARRR stage using the rules above
 3. Add to this doc's tables

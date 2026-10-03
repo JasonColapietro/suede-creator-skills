@@ -172,14 +172,14 @@ Source: Lead Connect, InsideSales.com
 
 ### Implementing Speed-to-Lead
 
-1. **Instant notification** — Push notification + email to rep on MQL creation
-2. **Auto-task with timer** — Create task with 5-minute SLA countdown
+1. **Instant notification**: Push notification + email to rep on MQL creation
+2. **Auto-task with timer**: Create task with 5-minute SLA countdown
 3. **Escalation chain:**
    - 5 min: Original rep alerted
    - 15 min: Backup rep alerted
    - 30 min: Manager alerted
    - 1 hour: Lead reassigned to next available rep
-4. **Measure and report** — Track actual response times weekly; recognize fast responders
+4. **Measure and report**: Track actual response times weekly; recognize fast responders
 
 ### Speed-to-Lead Automation
 
@@ -187,7 +187,7 @@ Source: Lead Connect, InsideSales.com
 **Actions:**
 1. Assign to rep via routing rules (instant)
 2. Send push notification + email to rep
-3. Create task: "Contact [Lead Name] — 5 min SLA"
+3. Create task: "Contact [Lead Name]: 5 min SLA"
 4. Start SLA timer
 5. If no activity logged in 15 min → alert backup rep
 6. If no activity in 30 min → alert manager

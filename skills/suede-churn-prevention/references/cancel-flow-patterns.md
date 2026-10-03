@@ -17,7 +17,7 @@ Cancel button → Exit survey (1 question) → Dynamic offer → Confirm → Pos
 
 **Characteristics:**
 - Fully automated, no human in the loop
-- Quick — 2-3 screens maximum
+- Quick: 2-3 screens maximum
 - One offer + one fallback, not a menu of options
 - Mobile-optimized (significant cancellations on mobile)
 - Clear "continue cancelling" at every step
@@ -45,7 +45,7 @@ Cancel button → Exit survey → Offer (or route to CS) → Confirm → Post-ca
 - Route accounts above MRR threshold to customer success
 - Show team impact ("Your 8 team members will lose access")
 - Offer admin-to-admin call for enterprise accounts
-- Longer consideration — allow "schedule a call" as a save option
+- Longer consideration: allow "schedule a call" as a save option
 - Require admin/owner role to cancel (not any team member)
 
 **Typical save rate:** 30-45% (higher because of personal touch)
@@ -63,7 +63,7 @@ Cancel button → Exit survey → Offer (or route to CS) → Confirm → Post-ca
 
 ### Freemium / Free-to-Paid
 
-Users cancelling paid to return to free tier. Different psychology — they're not leaving, they're downgrading.
+Users cancelling paid to return to free tier. Different psychology: they're not leaving, they're downgrading.
 
 **Flow structure:**
 ```
@@ -108,7 +108,7 @@ Cancel button → "Switch to Free?" prompt → Exit survey (if still cancelling)
 **Refund handling:**
 - Offer prorated refund if significant time remaining
 - "Pause until renewal" if less than 3 months left
-- Be generous — bad refund experiences create vocal detractors
+- Be generous: bad refund experiences create vocal detractors
 
 ---
 
@@ -126,7 +126,7 @@ Cancel click → 15% off → Still cancelling → 25% off → Still cancelling �
 - Maximum 2 discount offers per cancel session
 - Never exceed 30% (higher trains cancel-for-discount behavior)
 - Time-limit discounts (2-3 months, then full price resumes)
-- Track discount accepters — if they cancel again at full price, don't re-offer
+- Track discount accepters: if they cancel again at full price, don't re-offer
 
 ### The Pause Playbook
 
@@ -144,7 +144,7 @@ Pause is often better than a discount because it doesn't devalue your product.
 | Repeat pauses | Allow 1 pause per 12-month period |
 
 **Pause reactivation sequence:**
-- Day -7: "Your pause ends in 7 days. We've been busy — here's what's new."
+- Day -7: "Your pause ends in 7 days. We've been busy: here's what's new."
 - Day -1: "Welcome back tomorrow! Here's what's waiting for you."
 - Day 0: "You're back! Here's a quick tour of what's new."
 
@@ -220,7 +220,7 @@ from customers like you.
 | Timing | Action |
 |--------|--------|
 | Immediately | Confirmation email with access end date |
-| Day 1 | (Nothing — don't be desperate) |
+| Day 1 | (Nothing: don't be desperate) |
 | Day 7 | NPS/satisfaction survey about overall experience |
 | Day 30 | "What's new" email with recent improvements |
 | Day 60 | Address their specific cancel reason if resolved |
@@ -260,12 +260,12 @@ The most effective cancel flows use segmentation to show different offers to dif
 **Dormant customer (no login 30+ days):**
 - They forgot about you. A discount won't bring them back.
 - Offer: Pause subscription, "what changed?" conversation
-- Low save potential — focus on learning why
+- Low save potential: focus on learning why
 
 **Power user switching to competitor:**
 - They're actively choosing something else.
 - Offer: Competitive match, feedback call, roadmap preview
-- Medium save potential — depends on reason
+- Medium save potential: depends on reason
 
 ---
 
@@ -298,7 +298,7 @@ The most effective cancel flows use segmentation to show different offers to dif
 ## Screen Mockups
 
 Reference rendering of the survey screen and the "Too expensive" offer screen the
-SKILL.md tables specify. Illustration only — the reason list is the exit-survey
+SKILL.md tables specify. Illustration only: the reason list is the exit-survey
 table and the offer is the offer-to-reason mapping, so where this drawing and
 those tables disagree, the tables win.
 

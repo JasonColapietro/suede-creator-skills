@@ -108,7 +108,7 @@ renderer.
 Read
 [references/programmatic-renderers.md](references/programmatic-renderers.md)
 when the repo already uses React, or when the choice between the HTML/CSS and
-React paths has to be justified — it carries the React component sample and the
+React paths has to be justified: it carries the React component sample and the
 renderer selection table.
 
 ---
@@ -146,10 +146,10 @@ cinematic color grading, 4K
 ```
 
 **Common mistakes:**
-- Too vague ("a person working") — add specifics
-- Ignoring camera movement — specify dolly, pan, static
-- Forgetting style — "cinematic," "documentary," "commercial"
-- Requesting text in video — AI models struggle with readable text
+- Too vague ("a person working"): add specifics
+- Ignoring camera movement: specify dolly, pan, static
+- Forgetting style: "cinematic," "documentary," "commercial"
+- Requesting text in video: AI models struggle with readable text
 
 **For detailed prompting guides**: See [references/ai-video-prompting.md](references/ai-video-prompting.md)
 
@@ -247,19 +247,19 @@ music. Full method: [references/edit-anatomy.md](references/edit-anatomy.md).
 
 1. **Script** the key features and value props (use suede-copy skill)
 2. **Screen record** the product flow
-3. **Programmatic overlay** — use an available authorized renderer for titles,
+3. **Programmatic overlay**: use an available authorized renderer for titles,
    callouts, and transitions, or provide manual editor instructions
-4. **AI B-roll** — only with a discovered authorized generator and verified
+4. **AI B-roll**: only with a discovered authorized generator and verified
    rights; otherwise use licensed stock or original footage
-5. **Voiceover** — record yourself or use AI avatar for narration
+5. **Voiceover**: record yourself or use AI avatar for narration
 6. **Export** at platform-appropriate specs
 
 ### Explainer Video
 
 1. **Script** the problem → solution → CTA arc
-2. **Choose presenter** — an approved avatar workflow when available, or
+2. **Choose presenter**: an approved avatar workflow when available, or
    recorded voiceover plus visuals
-3. **Build visuals** — programmatic slides, screen recordings, AI-generated scenes
+3. **Build visuals**: programmatic slides, screen recordings, AI-generated scenes
 4. **Add captions** as an accessibility default and verify their accuracy
 5. **Export** only after checking current destination requirements and previewing
    the authenticated composer; do not assume a universal orientation
@@ -268,8 +268,8 @@ music. Full method: [references/edit-anatomy.md](references/edit-anatomy.md).
 
 1. **Create master template** in an available authorized renderer or a manual
    editor project
-2. **Feed data** — product features, testimonials, stats
-3. **Render batch** — one template, many variations
+2. **Feed data**: product features, testimonials, stats
+3. **Render batch**: one template, many variations
 4. **Add platform-specific captions** with an available editor
 5. **Return approved export candidates** to `suede-social` for channel strategy;
    scheduling remains a separate explicit action
@@ -327,21 +327,21 @@ against (current spec source + date)
 
 For the beat sheet and its style summary, read
 [references/edit-anatomy.md](references/edit-anatomy.md) before writing the
-handoff — it owns that row schema.
+handoff: it owns that row schema.
 
 ---
 
 ## Common Mistakes
 
-1. **Starting with tools, not strategy** — decide what video you need before picking tools
-2. **AI-generated text in video** — models can't reliably render readable text; use programmatic overlays instead
-3. **Unverified avatar quality** — test a short consented sample before paying
+1. **Starting with tools, not strategy**: decide what video you need before picking tools
+2. **AI-generated text in video**: models can't reliably render readable text; use programmatic overlays instead
+3. **Unverified avatar quality**: test a short consented sample before paying
    for or producing a batch
-4. **Inaccessible cut** — provide accurate captions without asserting a
+4. **Inaccessible cut**: provide accurate captions without asserting a
    universal sound-off viewing rate
-5. **Unverified export spec** — read current destination requirements and
+5. **Unverified export spec**: read current destination requirements and
    preview the actual composer before choosing ratio, resolution, or duration
-6. **Unsupported production-style claim** — compare polished and informal
+6. **Unsupported production-style claim**: compare polished and informal
    treatments on the current account instead of claiming one universally wins
 
 ---
@@ -349,11 +349,11 @@ handoff — it owns that row schema.
 ## Halt Contract
 
 Use this exact format when tool authorization, cost approval, rights, consent,
-or an approved brand asset blocks the requested result — including the install
+or an approved brand asset blocks the requested result, including the install
 and scaffold gates above and the brand-mark gate in Boundaries:
 
 ```text
-HALT — <one-line blocker>
+HALT: <one-line blocker>
 Why it blocks: <specific missing authority or evidence>
 Resolve with:
 1. <option>

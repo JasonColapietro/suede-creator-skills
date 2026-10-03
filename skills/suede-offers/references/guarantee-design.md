@@ -82,7 +82,7 @@ Decision tree:
 
 **Strong:** Free trial *or* annual-prepay-with-money-back-in-first-30-days. Reduces friction without locking in unhappy users.
 
-**Weak:** "Cancel anytime" alone — not a guarantee, just standard SaaS terms.
+**Weak:** "Cancel anytime" alone, not a guarantee, just standard SaaS terms.
 
 ### Direct response / paid traffic
 
@@ -107,10 +107,10 @@ The guarantee text matters. Patterns that work:
 
 **Patterns that don't work:**
 
-- "100% satisfaction guaranteed!" — generic, low-trust
-- "Lifetime guarantee" — meaningless without conditions
-- Multiple stacked guarantees — sophistication-collapsing
-- Guarantees full of legalese — buyers skim and assume the worst
+- "100% satisfaction guaranteed!": generic, low-trust
+- "Lifetime guarantee": meaningless without conditions
+- Multiple stacked guarantees: sophistication-collapsing
+- Guarantees full of legalese: buyers skim and assume the worst
 
 ---
 
@@ -169,4 +169,4 @@ When auditing an offer with no guarantee (or a weak one), ask:
 3. **What's your honest refund tolerance?** Calculate refund rate × refund cost; can you sustain it?
 4. **Does the guarantee match your audience sophistication?** Premium buyers want anti-guarantee; first-time buyers want unconditional.
 
-Most offers don't have the wrong guarantee — they have *no* guarantee at all. Adding any guarantee is almost always a lift. Adding the right one is the lever.
+Most offers don't have the wrong guarantee: they have *no* guarantee at all. Adding any guarantee is almost always a lift. Adding the right one is the lever.

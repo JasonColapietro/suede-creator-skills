@@ -124,7 +124,7 @@ We'll know this is true when [metrics].
 ### Primary Metric: [Metric Name]
 | Variant | Value | 95% CI | vs. Control |
 |---------|-------|--------|-------------|
-| Control | X% | [X%, Y%] | — |
+| Control | X% | [X%, Y%] | n/a |
 | Variant | X% | [X%, Y%] | +X% |
 
 **Statistical significance**: p = X.XX (95% = sig / not sig)

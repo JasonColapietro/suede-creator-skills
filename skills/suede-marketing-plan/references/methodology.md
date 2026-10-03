@@ -1,12 +1,12 @@
-# Methodology — How a Marketing Plan Gets Made
+# Methodology: How a Marketing Plan Gets Made
 
 The three-phase workflow that produces a comprehensive marketing plan. SKILL.md is the orchestration layer; this is the operational detail.
 
-## Phase 1 — INIT (research + intake)
+## Phase 1: INIT (research + intake)
 
 **Goal:** Walk into Phase 2 with enough context to draft every section without guessing.
 
-### Step 1.1 — Set up the plan folder
+### Step 1.1: Set up the plan folder
 
 Canonical file layout for every plan:
 
@@ -14,7 +14,7 @@ Canonical file layout for every plan:
 .agents/suede-marketing-plans/{client-slug}/
 ├── materials/         # Client-provided files (decks, audit output, brand-voice doc, etc.)
 ├── research.md        # Written in Phase 1 (INIT)
-├── progress.md        # State machine — see Step 1.1.1 for schema
+├── progress.md        # State machine: see Step 1.1.1 for schema
 ├── sections/
 │   ├── 01.md          # Executive summary (written last, ordered first)
 │   ├── 02.md          # Strategic frame
@@ -23,12 +23,12 @@ Canonical file layout for every plan:
 └── final_plan.md      # Compiled deliverable (Phase 3 output)
 ```
 
-### Step 1.1.1 — `progress.md` state schema
+### Step 1.1.1: `progress.md` state schema
 
 Every plan tracks a single `progress.md` file at the plan root. It's the source of truth for resumption. Schema:
 
 ```markdown
-# {Client} — Marketing Plan Progress
+# {Client}: Marketing Plan Progress
 
 phase: init
 # Replace the value above with exactly one of: init, review, finalize, finalized.
@@ -99,7 +99,7 @@ commit_url: none
 <any open decisions, blockers, or out-of-band context that aren't in research.md>
 ```
 
-### Step 1.1.2 — Resumption decision tree
+### Step 1.1.2: Resumption decision tree
 
 On every invocation, check state in this order:
 
@@ -163,7 +163,7 @@ changes. Write the new state before beginning the next step so interruption
 always resumes safely. Never advance a phase while its required artifacts or
 receipts are absent.
 
-### Step 1.2 — Read existing materials
+### Step 1.2: Read existing materials
 
 If `materials/` has files, read all of them. Common drops:
 - Pitch deck / investor deck
@@ -179,7 +179,7 @@ If `materials/` has files, read all of them. Common drops:
 Read everything. Capture key facts to `research.md` as you go.
 After all available materials are reviewed, set `init_step: live_data`.
 
-### Step 1.3 — Pull live data where wired
+### Step 1.3: Pull live data where wired
 
 If MCPs/APIs are wired for this client, pull:
 
@@ -196,7 +196,7 @@ Don't ask the user to copy/paste data that can be pulled directly.
 After the available authorized data sources are exhausted or explicitly
 deferred, set `init_step: intake`.
 
-### Step 1.4 — Conduct structured intake
+### Step 1.4: Conduct structured intake
 
 For every gap in the materials, ask the user. The minimum intake covers ten topics:
 
@@ -205,26 +205,26 @@ and unresolved fields to `research.md`, then update `last_updated` while keeping
 `phase: init` and `init_step: intake`. Read this record before the next question
 so an interruption never causes repeated intake or lost answers.
 
-#### Intake 1 — Client overview
+#### Intake 1: Client overview
 - What does the company do, in one sentence (founder's words)?
 - What's the primary product?
 - What other products / SKUs / tiers exist?
 - Is the product live, beta, or pre-launch?
 - If beta: throttling? GA timeline?
 
-#### Intake 2 — ICP
+#### Intake 2: ICP
 - Who are you for, in one sentence?
 - What do they say they want?
 - What do they actually want?
 - What's their stated problem? Their real problem?
 - Demographics / firmographics: who fits the ICP exactly?
 
-#### Intake 3 — Funnel state today
+#### Intake 3: Funnel state today
 - What are the current funnel numbers? (signups, activations, paid, retention)
-- What's the funnel *shape* — is it bottle-necked at top, middle, or bottom?
+- What's the funnel *shape*: is it bottle-necked at top, middle, or bottom?
 - What's the biggest leak?
 
-#### Intake 4 — Funding state
+#### Intake 4: Funding state
 - Current round label, if relevant context (never a budget, channel, or hiring rule)?
 - Total raised to date?
 - Current burn / runway?
@@ -232,7 +232,7 @@ so an interruption never causes repeated intake or lost answers.
 - Investors of note?
 - Permission to mention fCMO engagement in pitches?
 
-#### Intake 5 — Team
+#### Intake 5: Team
 - Founders and what each owns (product, marketing, sales, etc.)?
 - Other roles on the team and their marketing surface area?
 - Advisors who touch marketing?
@@ -242,22 +242,22 @@ so an interruption never causes repeated intake or lost answers.
   approval boundary do they have? See `team-and-agency-model.md` for the
   evidence-driven ownership map used in Sections 9 and 11.
 
-#### Intake 6 — Budget
+#### Intake 6: Budget
 - Current monthly marketing spend, broken down: paid acquisition, tools, retainers, headcount?
 - Current approved exposure, runway floor, review date, and stop conditions?
 - Which capabilities are current, approved tests, conditional unlocks, or
   deferred (see `funding-stage-unlocks.md`)?
-- Blended CAC if known (including salaries, content costs, tools, retainers — not just paid ad spend). If unknown, flag as the top Section 13 open decision — every revenue projection depends on it.
+- Blended CAC if known (including salaries, content costs, tools, retainers, not just paid ad spend). If unknown, flag as the top Section 13 open decision, every revenue projection depends on it.
 - ARPC, annual retention rate (or churn rate), so the budget math in `budget-planning.md` can be applied to Section 8 (Revenue) and Section 10 (12-month outlook).
 
-#### Intake 7 — Channels currently active
-- Acquisition: organic SEO, paid search, paid social, content, social, partnerships, events, PR, ambassadors, etc. — for each, status (live / paused / never tried)
+#### Intake 7: Channels currently active
+- Acquisition: organic SEO, paid search, paid social, content, social, partnerships, events, PR, ambassadors, etc., for each, status (live / paused / never tried)
 - Activation: onboarding state, signup flow, paywall, first-session experience, app store listing
 - Retention: lifecycle email state, in-app upsells, churn cohort
 - Referral: program existence, attribution, inbound interest
 - Revenue: pricing structure, plan mix, recent experiments
 
-#### Intake 8 — Already done
+#### Intake 8: Already done
 What past work should this plan acknowledge?
 - Major launches and dates
 - PR moments and who covered
@@ -267,33 +267,33 @@ What past work should this plan acknowledge?
 - Notable customers / users (if consumer-named users)
 - Past advisors / fractionals
 
-#### Intake 9 — In-flight and stuck
+#### Intake 9: In-flight and stuck
 - What's drafted but not shipped? Why?
 - What's been "almost ready" for months?
 - What's blocking each?
 - What's broken or actively harmful?
 
-#### Intake 10 — Strategic posture
+#### Intake 10: Strategic posture
 - The most important thing to fix this quarter (founder's read)
 - The most important thing to ignore this quarter (founder's read)
 - What investors / board are asking about most
 - Any constraints not visible elsewhere (legal, partnership-related, brand-related)
 
-### Step 1.5 — Score current state against the rubric
+### Step 1.5: Score current state against the rubric
 
 Use the 17-section rubric in `references/current-state-rubric.md` as your scoring lens. Two modes:
 
-- **From rich materials.** When the team has shared decks, prior content audits, an existing brand voice doc, recent positioning work, or a kickoff call transcript — score from those. Mark "scored from materials" in the section heading.
+- **From rich materials.** When the team has shared decks, prior content audits, an existing brand voice doc, recent positioning work, or a kickoff call transcript: score from those. Mark "scored from materials" in the section heading.
 - **From a separately scored audit.** If the team already has a scored current-state assessment (in any format), ingest those numbers directly. Don't redo the work.
 
 Either way, the output is the scored 17-row table that becomes Section 3 of the plan, followed by a 2–4 sentence "shape interpretation" calling out where strengths and gaps cluster.
 
-### Step 1.6 — Write research.md
+### Step 1.6: Write research.md
 
 Compile everything into `research.md` with this structure:
 
 ```markdown
-# {Client} — Marketing Plan Research Record
+# {Client}: Marketing Plan Research Record
 
 **Date:** YYYY-MM-DD
 **Author:** (fCMO / planner name)
@@ -357,24 +357,24 @@ state transition: `init_step: complete`, `phase: review`,
 
 ---
 
-## Phase 2 — REVIEW (section-by-section drafting)
+## Phase 2: REVIEW (section-by-section drafting)
 
 **Goal:** Walk through all 13 sections of the plan template (`references/plan-template.md`), drafting each, getting user confirmation, saving as you go.
 
-### Step 2.1 — Transition progress.md
+### Step 2.1: Transition progress.md
 
 Use the existing `progress.md` created at fresh-start initialization. Confirm
 `init_step: complete`, set `phase: review` and `current_section: 02`, preserve
 the existing `plan_version` (initialize `v1` only for a new plan), and stamp
 `last_updated`. Never replace the file or discard its notes.
 
-### Step 2.2 — Walk each section in this order: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, then 1
+### Step 2.2: Walk each section in this order: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, then 1
 
 Section 1 (Executive Summary) is drafted **last** because it depends on every other section's conclusions. Walk Sections 2 → 13 in numeric order, then synthesize Section 1 from the others. The final compiled `final_plan.md` is always presented in canonical order 1 → 13.
 
 For each section, use the template at `references/plan-template.md` to draft. Then in chat:
 
-1. Present the draft (or key bullets — short sections inline, long sections as bullet outline first)
+1. Present the draft (or key bullets: short sections inline, long sections as bullet outline first)
 2. Ask: *"Approve, adjust, or expand?"*
 3. Iterate until user confirms
 4. Stage the confirmed text as `sections/.NN.md.tmp`, validate that it is the
@@ -397,13 +397,13 @@ For each section, use the template at `references/plan-template.md` to draft. Th
    compiling. This leaves no legal all-complete REVIEW state to replay after an
    interruption.
 
-### Step 2.3 — Section-specific guidance
+### Step 2.3: Section-specific guidance
 
 **Section 1 (Executive summary)** is synthesized from Sections 2–13 after they're all approved. Draft it last; present it first in the output document.
 
 **Section 3 (Current state)** uses the embedded 17-section rubric in `references/current-state-rubric.md`. If a prior scored audit exists, paste those scores in. If not, score from available materials.
 
-**Sections 4–8 (AARRR)** each follow the same internal structure: current state, the plan (numbered moves), 90-day moves, 12-month outlook, skills + tools. Don't skip the skills + tools sub-section — it's what makes the plan operationally honest.
+**Sections 4–8 (AARRR)** each follow the same internal structure: current state, the plan (numbered moves), 90-day moves, 12-month outlook, skills + tools. Don't skip the skills + tools sub-section: it's what makes the plan operationally honest.
 
 **Section 11 (Marketing operations stack)** is auto-generatable from `references/ops-stack-mapping.md` plus the specific moves named in Sections 4–8.
 
@@ -414,7 +414,7 @@ never a funding label.
 
 **Section 13** lives at the end. Open decisions should be ranked by impact. Appendix should reference only files the team can access (warn about machine-local paths).
 
-### Step 2.4 — Brand voice consistency
+### Step 2.4: Brand voice consistency
 
 If the client has documented brand voice rules (captured in research.md / Section 2), every section must respect them. Common voice constraints:
 - Vocabulary rules (YES / NO lists)
@@ -426,11 +426,11 @@ If a section's draft violates the brand voice, redo it before showing it to the 
 
 ---
 
-## Phase 3 — FINALIZE (compile + verify + publish)
+## Phase 3: FINALIZE (compile + verify + publish)
 
 **Goal:** Produce `final_plan.md` and optionally publish to a shared repo.
 
-### Step 3.1 — Compile
+### Step 3.1: Compile
 
 Before compilation, verify all 13 checkboxes, all 13 matching Approved artifacts,
 and readable `sections/01.md` through `sections/13.md`. Halt with the first
@@ -451,21 +451,21 @@ recorded hash disagree, regenerate from the 13 approved section files and
 promote only after the deterministic output verifies; never advance a
 mismatched artifact.
 
-### Step 3.2 — Verification pass
+### Step 3.2: Verification pass
 
 Before printing:
 
-- **Cross-reference check** — every `suede-marketing-ideas` number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
-- **MCP/API check** — every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
-- **Path check** — no machine-specific paths in the output. Prove it by running `grep -nE '/Users/|/home/|/private/tmp' final_plan.md` and requiring zero matches; replace any hit with a descriptive reference.
-- **Voice check** — final read against brand voice rules. Flag and fix violations.
-- **Open-decisions check** — every "TBD" or unanswered question from intake is listed in Section 13's open decisions, not hidden in the body.
-- **Acknowledge check** — every item from "already done" in research.md is acknowledged somewhere in the plan.
+- **Cross-reference check**: every `suede-marketing-ideas` number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
+- **MCP/API check**: every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
+- **Path check**: no machine-specific paths in the output. Prove it by running `grep -nE '/Users/|/home/|/private/tmp' final_plan.md` and requiring zero matches; replace any hit with a descriptive reference.
+- **Voice check**: final read against brand voice rules. Flag and fix violations.
+- **Open-decisions check**: every "TBD" or unanswered question from intake is listed in Section 13's open decisions, not hidden in the body.
+- **Acknowledge check**: every item from "already done" in research.md is acknowledged somewhere in the plan.
 
 **Halt format for a failed check.** On any check that does not pass: stop
 finalize, name the failed check and the specific artifact that failed it (the
 idea number, the tool, the grep hit, the voice rule, the missing open decision),
-then offer these options and wait for the user's choice — (1) fix the source
+then offer these options and wait for the user's choice, (1) fix the source
 section and re-run the full verification pass, (2) accept as-is with the
 mismatch recorded in Section 13's open decisions, (3) re-open that section in
 REVIEW, or (4) abort finalize and keep the current `phase`. Never advance
@@ -477,13 +477,13 @@ check after interruption and advance only when all still pass. Then set
 `finalize_step: publish_offer`. Preserve
 `plan_version`; do not reset it to `v1`.
 
-### Step 3.3 — Print
+### Step 3.3: Print
 
 Output `final_plan.md` to the plan folder. Print a summary to chat:
 
 > *"Marketing Plan {plan_version} saved to `.agents/suede-marketing-plans/{client-slug}/final_plan.md`. ~X,XXX words across 13 sections. Ready to paste into Notion or share with the team."*
 
-### Step 3.4 — Publish (optional)
+### Step 3.4: Publish (optional)
 
 If the publication receipt is `status: published` with a target, matching
 content hash, remote commit, and verified commit URL, do not publish again. If
@@ -522,7 +522,7 @@ If no: record `status: declined`, clear any target/hash/key/commit fields, and
 leave it local. Declined is terminal for this plan version and must not
 re-prompt.
 
-### Step 3.5 — Mark finalized
+### Step 3.5: Mark finalized
 
 Only after `final_plan.md` passes readback and publication is either declined,
 has a verified receipt, or remains `not_requested` because publication was
@@ -535,7 +535,7 @@ prevents silent overwrite.
 
 ## Resuming a plan
 
-Resumption is governed entirely by the decision tree in Step 1.1.2 above — always check state in that order on every invocation.
+Resumption is governed entirely by the decision tree in Step 1.1.2 above, always check state in that order on every invocation.
 
 If the user chooses **revise as v{N+1}**, start a clean review cycle rather
 than copying approved sections. Scan `{client-slug}-v{N+1}` and numbered
@@ -599,7 +599,7 @@ after the review-state transition.
 ## Failure modes to watch for
 
 - **Skipping intake.** A plan written without proper intake is generic and won't survive contact with the founder. Always do the full ten-topic intake unless the user explicitly waives it.
-- **Pretending data exists.** If you can't confirm a number (current MRR, retention rate, etc.), don't guess. Mark it `[TBD — to confirm with team]` in the plan and add to open decisions.
+- **Pretending data exists.** If you can't confirm a number (current MRR, retention rate, etc.), don't guess. Mark it `[TBD: to confirm with team]` in the plan and add to open decisions.
 - **Ignoring the brand voice.** If the client has a strong voice (most do), every section must respect it. Read the voice rules before drafting any copy-adjacent text.
 - **Padding the idea bank.** Section 12 is comprehensive only if it includes the skip list with reasons. Don't pad with ideas that clearly don't fit just to hit the 139.
 - **Glossing over uncomfortable metrics.** If churn is high or activation is low, name it in Current State. Founders read past sugar-coating.

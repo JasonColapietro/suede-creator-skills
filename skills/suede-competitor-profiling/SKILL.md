@@ -11,7 +11,7 @@ Use this Suede competitive-intelligence playbook to turn current public evidence
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — your own positioning and ICP decide which competitors are actually comparable and which dimensions are worth profiling, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your own positioning and ICP decide which competitors are actually comparable and which dimensions are worth profiling, and they are usually already written down there.
 
 Then work the intake list under Task-Specific Questions below. If the user gave URLs and the context file covers the rest, proceed without asking.
 
@@ -40,7 +40,7 @@ competitor-profiles/
 Rules:
 
 - `<competitor-slug>` is lowercase, hyphenated (e.g. `responsehub`, `safe-base`)
-- `<YYYY-MM-DD>` is the date the data was pulled — supports re-running and diffing snapshots over time
+- `<YYYY-MM-DD>` is the date the data was pulled: supports re-running and diffing snapshots over time
 - Save each browser, manual, or authorized-fetch page capture as raw markdown
   to `scrapes/<page-name>.md`
 - Save each authorized SEO response or user-supplied export to
@@ -71,10 +71,10 @@ public sitemap or search results when accessible, record the exact URLs and
 access date, and capture only evidence visible to the user. Respect access
 controls, site terms, robots directives where applicable, and rate limits.
 
-**When the gate blocks you** — a source needs an account you were not given, a
+**When the gate blocks you**: a source needs an account you were not given, a
 platform is not connected, a site's terms or robots directives put a page out of
 bounds, or the user wants a dossier published or sent onward without having
-authorized it — halt in four parts:
+authorized it, halt in four parts:
 
 1. Stop. Do not collect the blocked source or publish the dossier.
 2. Name the blocker in one line ("G2 reviews for <competitor> require a signed-in
@@ -220,7 +220,7 @@ ls -R competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/
   `reviews/` or `seo/` file it was read from; an `[inference]` field traces to
   the scrape file it was inferred from, not to a separate artifact.
 - Any field that traces to nothing gets re-collected or re-marked `[unknown]`.
-  It is never softened into confident prose — that is exactly what Boundaries
+  It is never softened into confident prose: that is exactly what Boundaries
   forbids below.
 - The `## Raw Data Sources` block names the date folder the profile was built
   from, so the same check is repeatable by someone else later.
@@ -238,7 +238,7 @@ Generate one markdown file per competitor, saved to a `competitor-profiles/` dir
 **Read [references/templates.md](references/templates.md) before writing the first
 profile of a run**: it holds the evidence-marker legend that every field uses, the
 full Deep Profile Template, the Quick Scan Template, and the summary, positioning-map,
-SWOT and changelog templates. Do not reconstruct a profile structure from memory —
+SWOT and changelog templates. Do not reconstruct a profile structure from memory:
 consistency across profiles is what makes them comparable.
 
 The deep profile runs these sections in order: At a Glance, Positioning & Messaging,
@@ -251,11 +251,11 @@ Strengths & Weaknesses, Competitive Implications, Raw Data Sources.
 
 After profiling all competitors, generate a `competitor-profiles/_summary.md` that includes:
 
-1. **Competitor landscape overview** — one paragraph summarizing the competitive field
-2. **Comparison table** — key metrics side by side for all profiled competitors
-3. **Positioning map** — where each competitor sits (e.g., simple↔complex, cheap↔premium)
-4. **Key takeaways** — 3-5 strategic observations from the research
-5. **Gaps and opportunities** — where the market is underserved
+1. **Competitor landscape overview**: one paragraph summarizing the competitive field
+2. **Comparison table**: key metrics side by side for all profiled competitors
+3. **Positioning map**: where each competitor sits (e.g., simple↔complex, cheap↔premium)
+4. **Key takeaways**: 3-5 strategic observations from the research
+5. **Gaps and opportunities**: where the market is underserved
 
 ---
 
@@ -282,14 +282,14 @@ Default to **quick scan** unless the user requests deep profiling or specifies a
 
 When profiling more than one competitor:
 
-1. **Parallelize only when supported** — capture independent homepages or
+1. **Parallelize only when supported**: capture independent homepages or
    pricing pages concurrently only when the available tool supports it and its
    quota allows it; otherwise work sequentially
-2. **Use consistent metrics** — use the same available provider, market,
+2. **Use consistent metrics**: use the same available provider, market,
    device, database, date window, and metric definitions for every competitor;
    otherwise mark the comparison unavailable
-3. **Build the summary last** — after all individual profiles are complete
-4. **Prioritize by relevance** — if the user has 10+ competitors, suggest profiling the top 5 first based on domain overlap or market similarity
+3. **Build the summary last**: after all individual profiles are complete
+4. **Prioritize by relevance**: if the user has 10+ competitors, suggest profiling the top 5 first based on domain overlap or market similarity
 
 ---
 

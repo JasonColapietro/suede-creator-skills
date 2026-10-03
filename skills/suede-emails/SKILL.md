@@ -1,6 +1,6 @@
 ---
 name: suede-emails
-description: "Suede-owned lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan — drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS as part of the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
+description: "Suede-owned lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan: drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS as part of the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
 metadata:
   version: 2.0.0
 ---
@@ -43,7 +43,7 @@ Before creating a sequence, understand:
 
 ## Core Principle
 
-One email, one job: a single purpose and a single primary CTA per email. Everything downstream — sequence length, roles, copy — follows from that.
+One email, one job: a single purpose and a single primary CTA per email. Everything downstream, sequence length, roles, copy, follows from that.
 
 ---
 
@@ -127,7 +127,7 @@ Key emails:
 ### Onboarding Sequence (Product Users)
 **Length**: 5-7 emails over 14 days
 **Goal**: Activate, drive to aha moment, upgrade
-**Note**: Coordinate with in-app onboarding—email supports, doesn't duplicate
+**Note**: Coordinate with in-app onboarding: email supports, doesn't duplicate
 
 Key emails:
 1. Welcome + first step (immediate)
@@ -146,7 +146,7 @@ Key emails:
 
 Six categories: Onboarding · Retention · Billing · Usage · Win-Back · Campaigns.
 
-Read [references/email-types.md](references/email-types.md) when you need to pick or design an individual email type — it carries the trigger, timing, role, and copy pattern for each one, plus an email audit checklist.
+Read [references/email-types.md](references/email-types.md) when you need to pick or design an individual email type: it carries the trigger, timing, role, and copy pattern for each one, plus an email audit checklist.
 
 ---
 
@@ -170,7 +170,7 @@ Read [references/email-types.md](references/email-types.md) when you need to pic
 - Conversational, not formal
 - First-person (I/we) and second-person (you)
 - Active voice
-- Read it out loud—does it sound human?
+- Read it out loud: does it sound human?
 
 **Never ship these strings.** They are the lifecycle-email defaults a model reaches for unprompted, and every one of them is a slot where a specific sentence should be:
 
@@ -239,12 +239,12 @@ Review point: [when to read results and what number would trigger a rewrite]
 Run this on the drafted sequence before presenting it. Each box checks a rule this skill already states, against the copy you just wrote.
 
 - [ ] Every email has exactly one primary CTA
-- [ ] Every subject line is 40-60 characters — count them, do not estimate
+- [ ] Every subject line is 40-60 characters: count them, do not estimate
 - [ ] No preview text repeats its subject line
 - [ ] Every body is inside the word band for its type (50-125 transactional / 150-300 educational / 300-500 story-driven)
 - [ ] Exit conditions are specified for the sequence
 - [ ] No string from the Tone blocklist appears anywhere in the copy
-- [ ] The consent and suppression assumption is stated explicitly rather than assumed — say which list, which opt-in, and what excludes a contact
+- [ ] The consent and suppression assumption is stated explicitly rather than assumed: say which list, which opt-in, and what excludes a contact
 
 Any box that fails means fix it before presenting. Do not deliver the sequence with the failure noted as a caveat.
 
@@ -276,6 +276,6 @@ Before implementation, return:
 - Use `suede-churn-prevention` for cancellation, save, and dunning strategy.
 - Use `suede-onboarding` for in-product activation and `suede-copy` for destination-page copy.
 - Use `suede-ab-testing` for sequence experiments and `suede-revops` for lifecycle-stage orchestration.
-- Use `suede-sms` when the same lifecycle program should also reach people by text — SMS layers on top of email, it does not replace it.
+- Use `suede-sms` when the same lifecycle program should also reach people by text: SMS layers on top of email, it does not replace it.
 - Use `suede-deslop` before any email in the sequence goes to a real recipient.
 - From those skills, route lifecycle sequence design, cadence, and message roles back to `suede-emails`.

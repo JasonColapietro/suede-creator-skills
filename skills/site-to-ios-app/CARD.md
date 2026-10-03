@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user has a live site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native — covers URL audit, shell-vs-native strategy, App Store 4.2 wrapper risk, native value requirements, screenshots, metadata, privacy answers, and the release gate.
+Use when the user has a live site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native, covers URL audit, shell-vs-native strategy, App Store 4.2 wrapper risk, native value requirements, screenshots, metadata, privacy answers, and the release gate.
 
 Out of scope — building a native iOS app with no existing site (private Suede Labs companion, not in this pack: ios-swiftui-product); repairing or releasing an existing Capacitor shell (private Suede Labs companion, not in this pack: ios-capacitor-shell); Android conversions (use android-app-factory); live listing and keyword audits on a shipped app (use suede-aso).
 

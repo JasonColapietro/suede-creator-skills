@@ -190,7 +190,7 @@ Apply Bonferroni correction or use tools that handle this automatically.
 
 ### 2. Overpowered tests
 **Problem**: Waiting for sample size when you already have significance
-**Fix**: This is actually fine—you committed to sample size, honor it
+**Fix**: This is actually fine: you committed to sample size, honor it
 
 ### 3. Wrong baseline rate
 **Problem**: Using wrong conversion rate for calculation

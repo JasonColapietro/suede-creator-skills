@@ -20,12 +20,12 @@ THE SOLUTION
 2-3 sentences describing how your product solves it.
 
 WHY [YOUR PRODUCT]
-• Differentiator 1 — One sentence explaining the benefit
-• Differentiator 2 — One sentence explaining the benefit
-• Differentiator 3 — One sentence explaining the benefit
+• Differentiator 1: One sentence explaining the benefit
+• Differentiator 2: One sentence explaining the benefit
+• Differentiator 3: One sentence explaining the benefit
 
 PROOF
-"Customer quote with specific result." — Name, Title, Company
+"Customer quote with specific result." Name, Title, Company
 [Optional: 2-3 metric callouts: "X% improvement", "Y hours saved"]
 
 [CTA Button/Link]                    [Contact: name@company.com]
@@ -55,9 +55,9 @@ When [persona] needs to [task], they face [specific pain].
 This leads to [consequence]: [time wasted / money lost / risk].
 
 HOW IT WORKS
-1. [Step 1] — What happens and why it matters
-2. [Step 2] — What happens and why it matters
-3. [Step 3] — What happens and why it matters
+1. [Step 1]: What happens and why it matters
+2. [Step 2]: What happens and why it matters
+3. [Step 3]: What happens and why it matters
 
 RESULTS
 • [Metric 1]: Before → After
@@ -65,7 +65,7 @@ RESULTS
 • [Metric 3]: Before → After
 
 CUSTOMER SPOTLIGHT
-"Quote about this specific use case." — Name, Title, Company
+"Quote about this specific use case." Name, Title, Company
 
 [CTA: "See it in action" or "Start a pilot"]       [Contact info]
 ```
@@ -95,12 +95,12 @@ WHAT WE DISCUSSED
 • [Goal they're trying to achieve]
 
 HOW [YOUR PRODUCT] HELPS
-• [Solution to pain 1] — [Specific capability or workflow]
-• [Solution to pain 2] — [Specific capability or workflow]
+• [Solution to pain 1]: [Specific capability or workflow]
+• [Solution to pain 2]: [Specific capability or workflow]
 • [How you help them reach their goal]
 
 RELEVANT PROOF
-"Quote from a similar customer." — Name, Title, Company
+"Quote from a similar customer." Name, Title, Company
 [1-2 metrics from a similar customer]
 
 PROPOSED NEXT STEPS
@@ -139,9 +139,9 @@ WHAT [YOUR PRODUCT] DOES
 [1-2 sentences. Plain language, no jargon.]
 
 WHY THIS SOLUTION
-• [Reason 1] — How it solves our specific problem
-• [Reason 2] — How it compares to what we do today
-• [Reason 3] — How it compares to alternatives we evaluated
+• [Reason 1]: How it solves our specific problem
+• [Reason 2]: How it compares to what we do today
+• [Reason 3]: How it compares to alternatives we evaluated
 
 EXPECTED IMPACT
 • [Metric]: Current state → Expected state
@@ -150,7 +150,7 @@ EXPECTED IMPACT
 
 WHO ELSE USES IT
 [2-3 recognizable company names in their industry]
-"Relevant customer quote." — Name, Title, Company
+"Relevant customer quote." Name, Title, Company
 
 NEXT STEPS
 • [What we're doing next]
@@ -173,11 +173,11 @@ Questions? Talk to [Champion name] or [Your name at email].
 
 ### Visual Hierarchy
 
-1. **Headline** — Largest text, top of page, immediately communicates value
-2. **Section headers** — Bold, clear, act as scannable anchors
-3. **Body text** — Short sentences, bullet points preferred over paragraphs
-4. **Proof elements** — Metrics and quotes should visually stand out (larger font, color, or callout box)
-5. **CTA** — Prominent placement, bottom of page or bottom-right
+1. **Headline**: Largest text, top of page, immediately communicates value
+2. **Section headers**: Bold, clear, act as scannable anchors
+3. **Body text**: Short sentences, bullet points preferred over paragraphs
+4. **Proof elements**: Metrics and quotes should visually stand out (larger font, color, or callout box)
+5. **CTA**: Prominent placement, bottom of page or bottom-right
 
 ### Whitespace
 
@@ -205,4 +205,4 @@ Questions? Talk to [Champion name] or [Your name at email].
 
 - **PDF** for email attachments and leave-behinds
 - **Google Slides / PowerPoint** for editable versions reps can customize
-- Always include both — reps will customize, prospects want clean PDFs
+- Always include both: reps will customize, prospects want clean PDFs

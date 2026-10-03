@@ -11,7 +11,7 @@ Use this Suede measurement playbook to build tracking that supports auditable ma
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present — the key conversions, the decisions the data has to serve, and the tools already in place drive every recommendation here.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: the key conversions, the decisions the data has to serve, and the tools already in place drive every recommendation here.
 
 Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 
@@ -203,15 +203,15 @@ dataLayer.push({
 
 Each box closes on an artifact from the tools above, matched to the tool
 category's "Required current proof" in Tool Integrations below. An unchecked box
-does not mean "probably fine" — it means the tracking is reported as
+does not mean "probably fine": it means the tracking is reported as
 **unverified**, never as done. Inspecting the tag config is not proof; a readback is.
 
-- [ ] **Events firing on correct triggers** — a DebugView/live-events capture showing each event on the intended action
-- [ ] **Property values populating correctly** — a property readback per event, values matched against the tracking plan
-- [ ] **No duplicate events** — the same capture inspected for repeat fires (multiple containers, trigger firing twice)
-- [ ] **Works across browsers and mobile** — the readback repeated on at least one non-primary browser and one mobile session
-- [ ] **Conversions recorded correctly** — a source receipt plus a destination receipt for the conversion, not the source alone
-- [ ] **No PII leaking** — the payload of a real captured event read field by field, plus masking/sampling settings for session replay
+- [ ] **Events firing on correct triggers**: a DebugView/live-events capture showing each event on the intended action
+- [ ] **Property values populating correctly**: a property readback per event, values matched against the tracking plan
+- [ ] **No duplicate events**: the same capture inspected for repeat fires (multiple containers, trigger firing twice)
+- [ ] **Works across browsers and mobile**: the readback repeated on at least one non-primary browser and one mobile session
+- [ ] **Conversions recorded correctly**: a source receipt plus a destination receipt for the conversion, not the source alone
+- [ ] **No PII leaking**: the payload of a real captured event read field by field, plus masking/sampling settings for session replay
 
 Report what was proven and what was not. "Instrumented" and "verified" are
 different claims; only the second one may cite this checklist.

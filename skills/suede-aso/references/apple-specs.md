@@ -1,4 +1,4 @@
-# Apple App Store — Official Specs & Guidelines
+# Apple App Store: Official Specs & Guidelines
 
 All data from developer.apple.com as of March 2026.
 
@@ -37,7 +37,7 @@ keyword count significantly.
 - Apple auto-scales from required base sizes to smaller devices
 - **First 3 screenshots** are the ones visible in search results
 - **Caption text on screenshots is indexed since June 2025**, extracted by Apple's
-  AI from the image itself — on-image copy is searchable text, not decoration
+  AI from the image itself: on-image copy is searchable text, not decoration
 
 ## App Preview Video Specs
 
@@ -94,7 +94,7 @@ keyword count significantly.
 
 Apple runs human editorial curation (Today tab, category features, collections)
 alongside algorithmic ranking. Design quality, screenshot craft, and a coherent
-product story therefore carry weight beyond keyword indexing — Google Play has
+product story therefore carry weight beyond keyword indexing; Google Play has
 no equivalent human-curated surface at the same scale.
 
 ## Metadata Rejection Triggers (App Review Guidelines)

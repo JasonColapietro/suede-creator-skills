@@ -56,7 +56,7 @@ From "Boundaries":
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contracts defined in the skill body: "Phase 5 — Output the lead sheet", "Output Formats". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contracts defined in the skill body: "Phase 5: Output the lead sheet", "Output Formats". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

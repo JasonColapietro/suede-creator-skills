@@ -6,7 +6,7 @@ Comprehensive compliance reference for SMS marketing across major jurisdictions,
 
 ---
 
-## United States — TCPA
+## United States: TCPA
 
 ### What it is
 
@@ -74,13 +74,13 @@ You're unsubscribed from [Brand] alerts. No more messages will be sent. Reply HE
 
 ### Sample TCPA-compliant footer language by sequence type
 
-- **Opt-in confirmation**: "Reply HELP for help, STOP to cancel. Msg & data rates may apply." — required
-- **Recurring promotional**: "Reply STOP to opt out" — required quarterly minimum; carrier-recommended every send
+- **Opt-in confirmation**: "Reply HELP for help, STOP to cancel. Msg & data rates may apply.": required
+- **Recurring promotional**: "Reply STOP to opt out": required quarterly minimum; carrier-recommended every send
 - **Transactional**: Not required by TCPA but carriers expect it; include for safety
 
 ---
 
-## United States — A2P 10DLC
+## United States: A2P 10DLC
 
 ### What it is
 
@@ -122,7 +122,7 @@ Application-to-Person 10-Digit Long Code registration, run by The Campaign Regis
 
 ---
 
-## EU / UK — GDPR + ePrivacy Directive
+## EU / UK: GDPR + ePrivacy Directive
 
 ### Consent requirements
 
@@ -145,12 +145,12 @@ GDPR fines up to €20M or 4% of global revenue, whichever is higher.
 
 ---
 
-## Canada — CASL
+## Canada: CASL
 
 ### Consent
 
 - **Express consent**: explicit opt-in (same standard as US TCPA express written consent)
-- **Implied consent**: existing business relationship within 24 months — limited use, expires
+- **Implied consent**: existing business relationship within 24 months: limited use, expires
 
 ### Every message must include
 
@@ -165,7 +165,7 @@ Up to CAD $10M per violation. Enforced by the CRTC.
 
 ---
 
-## Australia — Spam Act 2003
+## Australia: Spam Act 2003
 
 - Express or inferred consent (inferred has narrow application)
 - Sender ID required

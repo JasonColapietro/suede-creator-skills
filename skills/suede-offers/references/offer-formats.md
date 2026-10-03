@@ -2,7 +2,7 @@
 
 The right offer format depends on what you sell. The same six components (core, bonuses, guarantee, scarcity, name, price) get assembled differently by business type.
 
-This reference is organized by business type. Find yours, then use the format as a starting point — not a fixed recipe.
+This reference is organized by business type. Find yours, then use the format as a starting point, not a fixed recipe.
 
 ---
 
@@ -23,9 +23,9 @@ You sell your time and skill.
 
 ### What to watch
 
-- **Naming matters disproportionately** — services without named offers compete on price; named services compete on positioning
-- **Scope creep is the offer killer** — define what's in, out, and optional, *in writing*, before the engagement starts
-- **Bonuses should compound the deliverable** — templates and frameworks that make the buyer self-sufficient after the engagement, not during
+- **Naming matters disproportionately**: services without named offers compete on price; named services compete on positioning
+- **Scope creep is the offer killer**: define what's in, out, and optional, *in writing*, before the engagement starts
+- **Bonuses should compound the deliverable**: templates and frameworks that make the buyer self-sufficient after the engagement, not during
 
 ### Productizing the offer
 
@@ -69,9 +69,9 @@ You sell structured learning.
 
 ### What to watch
 
-- **Completion is the marketing asset** — every completer is a case study. Engineer the first win in week 1.
-- **Cohort scarcity must be real** — if "doors close Friday" is followed by "doors reopen Monday because we extended the cohort," the trick gets noticed
-- **Refund design matters more than refund rate** — a generous-sounding guarantee with smart conditions converts well and refunds rarely
+- **Completion is the marketing asset**: every completer is a case study. Engineer the first win in week 1.
+- **Cohort scarcity must be real**: if "doors close Friday" is followed by "doors reopen Monday because we extended the cohort," the trick gets noticed
+- **Refund design matters more than refund rate**: a generous-sounding guarantee with smart conditions converts well and refunds rarely
 
 ---
 
@@ -102,9 +102,9 @@ You sell access to your expertise applied to their specific situation.
 
 ### What to watch
 
-- **Identity is the offer** — group coaching is often more about being in the room with peers than about the coach's instruction. Name the room, not the coach.
-- **Onboarding is part of the offer** — a sloppy intake destroys perceived likelihood
-- **Renewal is the real conversion event** — design for the 6-month decision, not the first-month decision
+- **Identity is the offer**: group coaching is often more about being in the room with peers than about the coach's instruction. Name the room, not the coach.
+- **Onboarding is part of the offer**: a sloppy intake destroys perceived likelihood
+- **Renewal is the real conversion event**: design for the 6-month decision, not the first-month decision
 
 ---
 
@@ -125,9 +125,9 @@ You sell packaged knowledge or assets.
 
 ### What to watch
 
-- **The first-impression matters disproportionately** — the buyer opens it once. If the first 5 minutes don't feel premium, they don't engage with the rest
-- **Quick-start is a bonus** — pair the asset with a 10-minute "do this first" walkthrough
-- **Lifetime access is implicit pricing** — clarify what "lifetime" means (yours, the product's, until you sunset it)
+- **The first-impression matters disproportionately**: the buyer opens it once. If the first 5 minutes don't feel premium, they don't engage with the rest
+- **Quick-start is a bonus**: pair the asset with a 10-minute "do this first" walkthrough
+- **Lifetime access is implicit pricing**: clarify what "lifetime" means (yours, the product's, until you sunset it)
 
 ---
 
@@ -148,10 +148,10 @@ You sell to companies with a sales conversation.
 
 ### What to watch
 
-- **Buying committee, not buyer** — the offer has to land with the champion, the economic buyer, and the influencer simultaneously
-- **Procurement is the offer** — your terms (payment, NET 60, security review, MSA) are part of the offer; rigid terms lose deals
-- **Pilot offers convert sophisticated buyers** — "30-day paid pilot, decide to continue at end" reduces decision risk
-- **The CSM is part of the offer** — buyers consistently rate post-sale relationship as part of the offer-perceived-value
+- **Buying committee, not buyer**: the offer has to land with the champion, the economic buyer, and the influencer simultaneously
+- **Procurement is the offer**: your terms (payment, NET 60, security review, MSA) are part of the offer; rigid terms lose deals
+- **Pilot offers convert sophisticated buyers**: "30-day paid pilot, decide to continue at end" reduces decision risk
+- **The CSM is part of the offer**: buyers consistently rate post-sale relationship as part of the offer-perceived-value
 
 ---
 
@@ -172,9 +172,9 @@ You sell ongoing service delivery.
 
 ### What to watch
 
-- **Onboarding velocity is the offer** — agencies that take 6 weeks to start delivering lose to agencies that deliver something in week 1
-- **Reporting is part of the offer** — clean, monthly, action-oriented reporting reduces churn more than additional deliverables
-- **Tier upgrades are the easiest revenue** — design tiers with clear value-step-ups so upgrade conversations are obvious
+- **Onboarding velocity is the offer**: agencies that take 6 weeks to start delivering lose to agencies that deliver something in week 1
+- **Reporting is part of the offer**: clean, monthly, action-oriented reporting reduces churn more than additional deliverables
+- **Tier upgrades are the easiest revenue**: design tiers with clear value-step-ups so upgrade conversations are obvious
 
 ---
 
@@ -195,9 +195,9 @@ You sell a tool with tiered subscriptions.
 
 ### What to watch
 
-- **Pricing tier > offer construction** — for self-serve SaaS, packaging and value metric do more work than guarantees and bonuses. Route to `suede-pricing`.
-- **Free trial design IS offer design** — length, gated features, credit-card-required vs not, automatic conversion. Each is an offer decision.
-- **Annual prepay is the offer lever** — same product, different commitment, often 20–40% discount. Many SaaS conversion lifts come from improving the annual offer, not the monthly.
+- **Pricing tier > offer construction**: for self-serve SaaS, packaging and value metric do more work than guarantees and bonuses. Route to `suede-pricing`.
+- **Free trial design IS offer design**: length, gated features, credit-card-required vs not, automatic conversion. Each is an offer decision.
+- **Annual prepay is the offer lever**: same product, different commitment, often 20–40% discount. Many SaaS conversion lifts come from improving the annual offer, not the monthly.
 
 For SaaS, this skill is supplemental. Read [`suede-pricing`](../../suede-pricing/SKILL.md) first.
 
@@ -220,9 +220,9 @@ You sell from a sales page or VSL to cold traffic.
 
 ### What to watch
 
-- **Direct-response buyers expect aggression** — quiet, premium-feeling offers convert badly on cold paid traffic. The aesthetic of the page matters as much as the offer.
-- **Refund rates can be 10–20%** — bake this into the math. If margin can't survive 15% refunds, restructure.
-- **The first 7 seconds determine the rest** — hook, then offer
+- **Direct-response buyers expect aggression**: quiet, premium-feeling offers convert badly on cold paid traffic. The aesthetic of the page matters as much as the offer.
+- **Refund rates can be 10–20%**: bake this into the math. If margin can't survive 15% refunds, restructure.
+- **The first 7 seconds determine the rest**: hook, then offer
 
 This format is high-skill. If you're not from a direct-response background, hire someone or partner with someone who is.
 
@@ -230,7 +230,7 @@ This format is high-skill. If you're not from a direct-response background, hire
 
 ## Choosing your format
 
-If you're not sure which format applies, pick the closest match and adapt. The biggest mistake is borrowing a format from a different business type (e.g., applying direct-response bonus stacking to a premium B2B service — wrong audience, wrong aesthetic).
+If you're not sure which format applies, pick the closest match and adapt. The biggest mistake is borrowing a format from a different business type (e.g., applying direct-response bonus stacking to a premium B2B service, wrong audience, wrong aesthetic).
 
 Two diagnostic questions:
 

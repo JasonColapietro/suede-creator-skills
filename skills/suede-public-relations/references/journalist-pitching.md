@@ -1,4 +1,4 @@
-# Journalist Pitching — Proactive PR Workflow
+# Journalist Pitching: Proactive PR Workflow
 
 Building a media list, scoring journalist fit, and crafting draft pitches for
 review. Set the test duration from current story flow, team capacity, and
@@ -28,11 +28,11 @@ For each candidate journalist:
 
 - [ ] Review a bounded recent sample from the author page; stop when the sample
       is enough to establish or reject current beat fit
-- [ ] Note their **publication** — does it reach your ICP?
-- [ ] Check their **bio** on the outlet site — what topics do they own?
+- [ ] Note their **publication**: does it reach your ICP?
+- [ ] Check their **bio** on the outlet site: what topics do they own?
 - [ ] Check **X/LinkedIn** for what they're posting about this week
 - [ ] Note their **email** (usually on outlet author page, Muck Rack, or company About page)
-- [ ] Check **Muck Rack** if available — it shows recent topics and pitch preferences
+- [ ] Check **Muck Rack** if available: it shows recent topics and pitch preferences
 
 ### Where to find candidates
 
@@ -41,16 +41,16 @@ For each candidate journalist:
 | **Reverse lookup from coverage you want** | Review a bounded recent article sample and note relevant bylines |
 | **Topic search on Muck Rack** | Free tier shows journalists by topic |
 | **X / Twitter lists** | "[your niche] reporters" lists already exist |
-| **LinkedIn search** | "Journalist" + "[your category]" — filter by recent activity |
+| **LinkedIn search** | "Journalist" + "[your category]": filter by recent activity |
 | **Newsletter author pages** | Beehiiv, Substack, ConvertKit creators are pitchable |
 | **Podcast host research** | Review a recent episode or transcript when it is needed to verify topic and format fit |
 
 ### Don't waste time on
 
-- **Mass media databases** (Cision, Meltwater) for early-stage — overkill and expensive
-- **Journalists who haven't posted in 6+ months** — they may have left
-- **"Editor-in-chief" generic addresses** — pitches there get ignored or routed to interns
-- **Journalists who explicitly state "no PR pitches" in bio** — respect it
+- **Mass media databases** (Cision, Meltwater) for early-stage: overkill and expensive
+- **Journalists who haven't posted in 6+ months**: they may have left
+- **"Editor-in-chief" generic addresses**: pitches there get ignored or routed to interns
+- **Journalists who explicitly state "no PR pitches" in bio**: respect it
 
 ---
 
@@ -81,11 +81,11 @@ preferences, and outlet format.
 ### 1. Data story
 
 ```
-Subject: [Specific stat] — [implication]
+Subject: [Specific stat]: [implication]
 
 Hi [name],
 
-I noticed you covered [recent article] — wanted to share data that might
+I noticed you covered [recent article]. Wanted to share data that might
 be relevant.
 
 We [analyzed N / surveyed N / tracked N] and found:
@@ -113,10 +113,10 @@ Hi [name],
 I have an exclusive on [milestone] that I think fits your [beat] coverage.
 
 The story: [one sentence]
-Why it matters: [one sentence — for their readers, not for you]
+Why it matters: [one sentence: for their readers, not for you]
 What's new: [the actual news, not the marketing line]
 
-Embargo until [day, time, timezone] — would love to give you first
+Embargo until [day, time, timezone]. Would love to give you first
 window. Press kit + assets: [link]
 
 Free to talk [two specific time options].
@@ -131,17 +131,17 @@ Subject: Op-ed pitch: [provocative thesis]
 
 Hi [name],
 
-I read your piece on [recent article] — sharp take on [specific point].
+I read your piece on [recent article]: sharp take on [specific point].
 
 I'd like to pitch a 700-word op-ed: "[Thesis as a headline]"
 
 Core argument:
 • [Point 1]
 • [Point 2]
-• [Point 3 — the surprising one]
+• [Point 3: the surprising one]
 
-Why me: [1 sentence — credential or unique vantage]
-Why now: [1 sentence — the news hook]
+Why me: [1 sentence: credential or unique vantage]
+Why now: [1 sentence: the news hook]
 
 Can have a draft to you by [date]. Happy to adapt to your house style.
 
@@ -151,7 +151,7 @@ Can have a draft to you by [date]. Happy to adapt to your house style.
 ### 4. Customer story
 
 ```
-Subject: Customer story for [their beat] — [specific outcome]
+Subject: Customer story for [their beat]: [specific outcome]
 
 Hi [name],
 
@@ -175,7 +175,7 @@ Happy to coordinate the intro.
 ### 5. Trend piece / connector
 
 ```
-Subject: Trend forming in [space] — three signals
+Subject: Trend forming in [space]: three signals
 
 Hi [name],
 
@@ -183,7 +183,7 @@ Three things in [space] this month that I think connect:
 
 1. [Signal 1 with link]
 2. [Signal 2 with link]
-3. [Signal 3 — yours, briefly]
+3. [Signal 3: yours, briefly]
 
 The pattern: [one sentence].
 
@@ -197,11 +197,11 @@ with others seeing the same.
 ### 6. Newsjack response
 
 ```
-Subject: Re: [their article headline] — quick data point
+Subject: Re: [their article headline]: quick data point
 
 Hi [name],
 
-Saw your piece on [story] this morning — wanted to add a relevant
+Saw your piece on [story] this morning. Wanted to add a relevant
 data point in case you do a follow-up.
 
 [One-sentence stat or insight].
@@ -223,19 +223,19 @@ If useful for a follow-up, I'm around all day at this number: [phone].
 The subject line affects comprehension and may affect opens. Treat these as
 drafting hypotheses and verify outlet preferences where published:
 
-- **Concise enough for the current inbox preview** — verify the relevant client
+- **Concise enough for the current inbox preview**: verify the relevant client
   or test multiple readable lengths
-- **Lead with the specific** — "73% of devs deploy to prod on Fridays" beats "New data on developer workflows"
-- **Promise a story, not a product** — "Why [trend]" beats "[Company] launches [thing]"
-- **Use prefixes that signal value** — "Exclusive:", "Data:", "Op-ed pitch:", "Re: [their article]"
+- **Lead with the specific**: "73% of devs deploy to prod on Fridays" beats "New data on developer workflows"
+- **Promise a story, not a product**: "Why [trend]" beats "[Company] launches [thing]"
+- **Use prefixes that signal value**: "Exclusive:", "Data:", "Op-ed pitch:", "Re: [their article]"
 
 **Test against this question:** would *you* open this in a 200-email inbox?
 
 **Patterns to test:**
-- "[Specific stat] — [implication]" — "73% of agents fail this test"
-- "Exclusive: [milestone]" — "Exclusive: Anthropic launches AgentOS"
-- "Re: [their headline]" — direct response to recent coverage
-- "[Provocative thesis]" — "Why VC funding is bad for AI safety"
+- "[Specific stat]: [implication]": "73% of agents fail this test"
+- "Exclusive: [milestone]": "Exclusive: Anthropic launches AgentOS"
+- "Re: [their headline]": direct response to recent coverage
+- "[Provocative thesis]": "Why VC funding is bad for AI safety"
 
 **Patterns that get deleted:**
 - "Press release: [boring]"
@@ -255,18 +255,18 @@ complexity. Do not treat 150 words as a universal maximum.
 
 ### Structure
 
-1. **One-line context** — why you're emailing them specifically (their recent article, their beat)
-2. **The story** — what it is, in one sentence
-3. **Why it matters to their readers** — not why it matters to you
-4. **Proof** — data, customer, quote, link
-5. **The ask** — interview, embargo, quote, link
+1. **One-line context**: why you're emailing them specifically (their recent article, their beat)
+2. **The story**: what it is, in one sentence
+3. **Why it matters to their readers**: not why it matters to you
+4. **Proof**: data, customer, quote, link
+5. **The ask**: interview, embargo, quote, link
 
 ### Voice
 
 - Sound like a person, not a press release
-- Reference their actual recent work — proves you read them
+- Reference their actual recent work: proves you read them
 - Don't use emoji unless they do
-- Don't open with "I hope this finds you well" — burn it
+- Don't open with "I hope this finds you well": burn it
 - Don't ask "did you get my email?" follow-ups (see [Follow-up](#embargoes-exclusives-and-follow-up-etiquette))
 
 ### Banned vocabulary
@@ -288,12 +288,12 @@ An embargo is "you can write this story, but don't publish until [time]."
 
 ### Exclusives
 
-"Only you get this story" — powerful tool, use sparingly.
+"Only you get this story": powerful tool, use sparingly.
 
 - Evaluate exclusivity from audience fit, story value, terms, and opportunity
   cost rather than outlet tier alone
-- **Be honest about scope** — "exclusive to [outlet] in the US" is fine
-- **Have a parallel plan** — what you publish/pitch the next day after the exclusive runs
+- **Be honest about scope**: "exclusive to [outlet] in the US" is fine
+- **Have a parallel plan**: what you publish/pitch the next day after the exclusive runs
 
 ### Follow-up cadence hypothesis
 
@@ -358,7 +358,7 @@ was performed when only the checklist was produced.
 Output what you find as:
 
 ```
-JOURNALIST PROFILE — [name]
+JOURNALIST PROFILE: [name]
 Outlet: [name]
 Beat: [topics from bounded recent sample]
 Recent angle: [pattern you noticed]

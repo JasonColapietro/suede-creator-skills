@@ -36,10 +36,10 @@ Day 14+:       Win-back sequence begins
 |--------|--------|
 | 30 days before expiry | Email: "Your card ending in 4242 expires next month" |
 | 15 days before expiry | Email: "Update your payment method to avoid interruption" |
-| 7 days before expiry | Email: "Your card expires in 7 days — update now" |
+| 7 days before expiry | Email: "Your card expires in 7 days, update now" |
 | 3 days before expiry | In-app banner: "Payment method expiring soon" |
 
-**Email template — Card expiring:**
+**Email template. Card expiring:**
 ```
 Subject: Your card ending in 4242 expires soon
 
@@ -53,7 +53,7 @@ Update your payment method now to avoid any interruption:
 
 This takes less than 30 seconds.
 
-— [Product] Team
+[Product] Team
 ```
 
 ### Card Updater Services
@@ -69,7 +69,7 @@ Major card networks offer automatic card update programs:
 **Impact:** Reduces hard declines from expired/replaced cards by 30-50%.
 
 **How to enable:**
-- **Stripe**: Automatic — enabled by default
+- **Stripe**: Automatic: enabled by default
 - **Chargebee**: Enabled through gateway settings
 - **Recurly**: Built-in, enabled by default
 - **Braintree**: Contact processor to enable
@@ -79,7 +79,7 @@ Major card networks offer automatic card update programs:
 Prompt for a second payment method:
 - During signup: "Add a backup payment method" (low conversion)
 - After first successful payment: "Protect your account with a backup card" (better timing)
-- After a failed payment is recovered: "Add a backup to prevent future interruptions" (best timing — they felt the pain)
+- After a failed payment is recovered: "Add a backup to prevent future interruptions" (best timing: they felt the pain)
 
 ### Pre-Billing Notifications
 
@@ -97,23 +97,23 @@ For annual plans or high-value subscriptions:
 
 | Code | Type | Meaning | Retry? |
 |------|------|---------|--------|
-| `insufficient_funds` | Soft | Temporarily low balance | Yes — retry in 2-3 days |
-| `card_declined` (generic) | Soft | Various temporary reasons | Yes — retry 3-4 times |
-| `processing_error` | Soft | Gateway/network issue | Yes — retry within 24h |
-| `expired_card` | Hard | Card is expired | No — request new card |
-| `stolen_card` | Hard | Card reported stolen | No — request new card |
+| `insufficient_funds` | Soft | Temporarily low balance | Yes: retry in 2-3 days |
+| `card_declined` (generic) | Soft | Various temporary reasons | Yes: retry 3-4 times |
+| `processing_error` | Soft | Gateway/network issue | Yes: retry within 24h |
+| `expired_card` | Hard | Card is expired | No: request new card |
+| `stolen_card` | Hard | Card reported stolen | No: request new card |
 | `do_not_honor` | Soft/Hard | Bank refused (ambiguous) | Try once more, then ask for new card |
 | `authentication_required` | Auth | SCA/3DS needed | Send customer to authenticate |
 
 ### Retry Schedule by Provider
 
-**Stripe (Smart Retries — recommended):**
+**Stripe (Smart Retries, recommended):**
 - Enable "Smart Retries" in Stripe Dashboard → Billing → Settings
 - Stripe's ML model picks optimal retry timing based on billions of transactions
 - Typically 4-8 retry attempts over 3-4 weeks
 - Recovers ~15% more than fixed-schedule retries
 
-**Manual retry schedule (if no smart retries) — canonical.** This table is the
+**Manual retry schedule (if no smart retries), canonical.** This table is the
 single retry schedule for the churn-prevention skill; every other retry
 configuration, including the provider blocks below, follows it.
 
@@ -140,14 +140,14 @@ configuration, including the provider blocks below, follows it.
 **Tone:** Friendly, matter-of-fact. No alarm.
 
 ```
-Subject: Action needed — your payment didn't go through
+Subject: Action needed: your payment didn't go through
 
 Hi [Name],
 
 We tried to charge your [card type] ending in [last 4] for your
 [Product] subscription ($[amount]), but it didn't go through.
 
-This happens sometimes — usually a quick card update fixes it.
+This happens sometimes: usually a quick card update fixes it.
 
 [Update Payment Method →]
 
@@ -156,7 +156,7 @@ updating your card is the fastest fix.
 
 Need help? Just reply to this email.
 
-— [Product] Team
+[Product] Team
 ```
 
 ### Email 2: Reminder (Day 3)
@@ -164,11 +164,11 @@ Need help? Just reply to this email.
 **Tone:** Helpful, slightly more urgent.
 
 ```
-Subject: Quick reminder — update your payment for [Product]
+Subject: Quick reminder: update your payment for [Product]
 
 Hi [Name],
 
-Just a heads-up — we still haven't been able to process your
+Just a heads-up: we still haven't been able to process your
 $[amount] payment for [Product].
 
 [Update Payment Method →]
@@ -179,7 +179,7 @@ account active.
 
 Questions? Reply here and we'll help.
 
-— [Product] Team
+[Product] Team
 ```
 
 ### Email 3: Urgency (Day 7)
@@ -203,10 +203,10 @@ paused and you'll lose access to:
 
 [Update Payment Method Now →]
 
-Your data won't be deleted — you can reactivate anytime by
+Your data won't be deleted: you can reactivate anytime by
 updating your payment method.
 
-— [Product] Team
+[Product] Team
 ```
 
 ### Email 4: Final Warning (Day 10)
@@ -228,10 +228,10 @@ After pausing:
 • You can reactivate anytime
 • Just update your card to restore access
 
-If you intended to cancel, no action needed — your account
+If you intended to cancel, no action needed: your account
 will be paused automatically.
 
-— [Product] Team
+[Product] Team
 ```
 
 ---
@@ -244,7 +244,7 @@ will be paused automatically.
 |---------|---------------|
 | Duration | 7-14 days after final retry |
 | Access | Degraded (read-only) or full access |
-| Visibility | In-app banner: "Payment past due — update to continue" |
+| Visibility | In-app banner: "Payment past due, update to continue" |
 | Retry | Continue background retries during grace |
 | Communication | Dunning emails continue |
 
@@ -287,7 +287,7 @@ will be paused automatically.
 2. Enable "Smart Retries" under retry rules
 3. Set failed payment emails in Dashboard → Settings → Emails
 
-**Custom retry rules (if not using Smart Retries)** — the canonical schedule
+**Custom retry rules (if not using Smart Retries)**: the canonical schedule
 above, entered as Stripe retry rules:
 ```
 Retry 1: 1 day after failure
@@ -299,10 +299,10 @@ Final:   Mark subscription as unpaid after last retry
 ```
 
 **Webhook events to handle:**
-- `invoice.payment_failed` — trigger dunning
-- `invoice.paid` — cancel dunning, restore access
-- `customer.subscription.updated` — status changes
-- `customer.subscription.deleted` — final cancellation
+- `invoice.payment_failed`: trigger dunning
+- `invoice.paid`: cancel dunning, restore access
+- `customer.subscription.updated`: status changes
+- `customer.subscription.deleted`: final cancellation
 
 ### Chargebee
 
@@ -354,7 +354,7 @@ Don't rely on email alone. Show payment failures in the app:
 - Show on every page load during dunning period
 - Allow dismiss (but show again next session)
 - Direct link to payment update (fewest clicks possible)
-- Don't block the product — let them continue using it
+- Don't block the product: let them continue using it
 
 ### Modal Pattern (for final warning)
 ```

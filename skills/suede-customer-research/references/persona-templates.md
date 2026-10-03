@@ -11,7 +11,7 @@ a field, leave it blank; a blank field is information, an invented one is not
 ## Persona Document
 
 ```
-## [Persona Name] — [Role/Title]
+## [Persona Name]: [Role/Title]
 
 **Profile**
 - Title range: [e.g., "Marketing Manager to VP of Marketing"]
@@ -29,7 +29,7 @@ What causes them to start looking for a solution like yours?
 - [trigger 2]
 
 **Top Pains**
-1. [Pain — in their words if possible]
+1. [Pain: in their words if possible]
 2. [Pain]
 3. [Pain]
 

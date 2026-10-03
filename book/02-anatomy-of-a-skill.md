@@ -35,15 +35,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 76 files total 1,106,991 bytes;
-the 76 descriptions together are 46,802. The agent holds the small number and
+when the skill is not running. In this repo the 76 files total 1,101,757 bytes;
+the 76 descriptions together are 46,778. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 681 characters. "Suede AI blunt
+Look at what `suede-code-grader` does with 680 characters. "Suede AI blunt
 A-F ship grade for a code change" states the artifact. The lane list names the
 surfaces it covers. The trigger list catches the request in the words a caller
 actually types: "give it a letter", "is this an A", "should this merge". Then

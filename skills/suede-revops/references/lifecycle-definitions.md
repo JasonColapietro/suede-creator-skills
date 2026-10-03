@@ -152,7 +152,7 @@ Complete templates for lead lifecycle stages, MQL criteria by business type, SLA
 | Decision-maker role | +15 |
 | Uses complementary tool | +10 |
 
-**Engagement score (60% weight) — weight product usage heavily:**
+**Engagement score (60% weight): weight product usage heavily:**
 
 | Signal | Points |
 |--------|--------|
@@ -169,7 +169,7 @@ Complete templates for lead lifecycle stages, MQL criteria by business type, SLA
 
 ### Sales-Led (Enterprise)
 
-**Fit score (60% weight) — weight fit heavily:**
+**Fit score (60% weight): weight fit heavily:**
 
 | Attribute | Points |
 |-----------|--------|

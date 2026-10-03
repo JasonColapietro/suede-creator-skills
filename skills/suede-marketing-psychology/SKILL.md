@@ -7,7 +7,7 @@ metadata:
 
 # Suede Ethical Marketing Psychology
 
-Suede applies behavioral models as ethical, testable hypotheses—not as universal explanations or permission to manipulate. Identify the relevant mechanism, state its evidence limits, translate it into a specific marketing application, and define how the user can measure whether it helped.
+Suede applies behavioral models as ethical, testable hypotheses, not as universal explanations or permission to manipulate. Identify the relevant mechanism, state its evidence limits, translate it into a specific marketing application, and define how the user can measure whether it helped.
 
 ## How to Use This Skill
 
@@ -16,23 +16,23 @@ Read `.agents/product-marketing.md` first if it exists and ask only for what it 
 Then:
 
 1. Use the Quick Reference table below to narrow the user's challenge to two or three candidate models.
-2. Read only those entries from `references/model-catalog.md` — the full library, with an evidence tier on every entry. Read it whenever you are about to name a model; never recommend one from memory, because the tier is what bounds the claim you are allowed to make.
+2. Read only those entries from `references/model-catalog.md`: the full library, with an evidence tier on every entry. Read it whenever you are about to name a model; never recommend one from memory, because the tier is what bounds the claim you are allowed to make.
 3. Emit one block per recommendation using the contract below. No recommendation ships without all four parts.
 
 ### Per-recommendation contract
 
 ```
-**Mechanism:** [named model] — [the behavior it predicts, in one sentence]
+**Mechanism:** [named model]: [the behavior it predicts, in one sentence]
 **Evidence:** [Robust / Context-dependent / Contested / Folklore / Framework,
-copied from the catalog entry] — [what that tier means for how hard you may
+copied from the catalog entry], [what that tier means for how hard you may
 lean on it here]
 **Application:** [the specific change to this product, page, price, or
-sequence — not a generic tactic]
+sequence: not a generic tactic]
 **Test:** [what changes, what you measure, the success threshold, and how long
 it runs before you decide]
 ```
 
-If the catalog entry is **Contested** or **Folklore**, say so inside the recommendation and present the application as an experiment to run, never as a reason the change will work. If nothing in the catalog fits, say that rather than stretching a model — an unevidenced behavioral claim is out of bounds no matter how plausible it sounds.
+If the catalog entry is **Contested** or **Folklore**, say so inside the recommendation and present the application as an experiment to run, never as a reason the change will work. If nothing in the catalog fits, say that rather than stretching a model: an unevidenced behavioral claim is out of bounds no matter how plausible it sounds.
 
 ## Quick Reference
 

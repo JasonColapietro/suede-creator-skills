@@ -1,6 +1,6 @@
 # Loop Orchestration & Rollout
 
-Loops aren't independent scripts — they compose into a marketing operating system. This reference covers how they fit together and the order to adopt them so you never build 45 at once.
+Loops aren't independent scripts: they compose into a marketing operating system. This reference covers how they fit together and the order to adopt them so you never build 45 at once.
 
 ## The system view
 
@@ -10,7 +10,7 @@ Loops fall into four layers. Data flows down and learnings flow back up.
 SENSING        analytics-anomaly · tracking-QA · weekly-marketing-review
                   │  (detect what changed; trust the numbers first)
                   ▼
-DIAGNOSTIC     per-stage watchers — onboarding drop-off, churn-signal,
+DIAGNOSTIC     per-stage watchers, onboarding drop-off, churn-signal,
                ranking-drop, landing-page regression, ad-fatigue, …
                   │  (figure out what to do about it)
                   ▼
@@ -29,33 +29,33 @@ Key connective tissue:
 - **voice-of-customer is a source.** Customer language it mines feeds copy for ad-fatigue, lifecycle-email, landing-page, and pricing loops.
 - **campaign-postmortem closes the loop.** Its learnings become next quarter's hypotheses and plan inputs.
 
-Avoid duplicate ownership: when two loops could act on the same signal, one owns the action and the other just flags. (E.g., an at-risk account belongs to churn-signal, not expansion/upsell — never upsell an account that's churning.)
+Avoid duplicate ownership: when two loops could act on the same signal, one owns the action and the other just flags. (E.g., an at-risk account belongs to churn-signal, not expansion/upsell: never upsell an account that's churning.)
 
 ## Rollout path (adopt in this order)
 
 Add a loop only when the loops before it are running and earning their keep. Each stage assumes the previous one is solid.
 
-**Stage 0 — Foundation (trust the data + see the board).**
+**Stage 0: Foundation (trust the data + see the board).**
 `tracking-QA`, `weekly-marketing-review`.
 You cannot run any loop responsibly on untrustworthy data or without a full-funnel pulse. This is non-negotiable and comes first.
 
-**Stage 1 — Plug the leaks (highest ROI, protects existing revenue).**
+**Stage 1: Plug the leaks (highest ROI, protects existing revenue).**
 `failed-payment/dunning`, `churn-signal`, `lifecycle-email-refresh`.
 Recovering customers you already have is cheaper than acquiring new ones. Dunning alone often pays for the whole system.
 
-**Stage 2 — Convert what you already get (fix the bucket before adding water).**
+**Stage 2: Convert what you already get (fix the bucket before adding water).**
 `onboarding drop-off`, `signup-funnel-leak`, `trial-conversion`.
 More traffic into a leaky funnel is waste. Seal activation and conversion next.
 
-**Stage 3 — Grow the top (now scale acquisition).**
+**Stage 3: Grow the top (now scale acquisition).**
 `keyword-gap`, `content-repurposing`, `ad-fatigue`, `social-listening`, `analytics-anomaly`.
 With the bucket sealed, turn on demand generation and the safety-net anomaly watcher.
 
-**Stage 4 — Optimize monetization.**
+**Stage 4: Optimize monetization.**
 `pricing-page-experiment`, `paywall-optimization`, `PQL/upgrade-intent`, `expansion/upsell`.
-Once volume is healthy, tune revenue per user — judged on revenue quality, not conversion alone.
+Once volume is healthy, tune revenue per user, judged on revenue quality, not conversion alone.
 
-**Stage 5 — Compounding & advocacy.**
+**Stage 5: Compounding & advocacy.**
 `referral-nudge`, `review-and-UGC-harvest`, `review-site-management`, `case-study-sourcing`, `partner-pipeline`, `brand-mention/reputation`, `experiment-backlog`, `campaign-postmortem`.
 The flywheel: happy customers and earned media that feed back into acquisition, plus the learning loops that make everything compound.
 

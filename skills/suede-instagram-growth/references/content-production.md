@@ -67,11 +67,11 @@ Objective:
 Audience tension:
 Slide count and why every slide is needed:
 
-Slide 1 — exact hook / visual anchor
-Slide 2 — problem or stakes / evidence
-Slide 3 — idea, step, or proof / visual
+Slide 1: exact hook / visual anchor
+Slide 2: problem or stakes / evidence
+Slide 3: idea, step, or proof / visual
 ...
-Final slide — earned summary / one CTA
+Final slide: earned summary / one CTA
 
 Caption:
 Alt text:

@@ -1,7 +1,7 @@
-# Service playbook — validated click-paths per subscription
+# Service playbook: validated click-paths per subscription
 
 This file grows over time. Each entry should only be added after the flow has been
-run live and confirmed — don't pre-fill entries from general knowledge without
+run live and confirmed: don't pre-fill entries from general knowledge without
 marking them clearly as unvalidated. Until a service has an entry here, treat its
 flow as unknown and discover it live during Phase 3.
 

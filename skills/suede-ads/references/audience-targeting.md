@@ -16,9 +16,9 @@ Detailed targeting strategies for each major ad platform.
 ### Search Campaign Targeting
 
 **Keywords:**
-- Exact match: [keyword] — most precise, lower volume
-- Phrase match: "keyword" — moderate precision and volume
-- Broad match: keyword — highest volume, use with smart bidding
+- Exact match: [keyword]: most precise, lower volume
+- Phrase match: "keyword": moderate precision and volume
+- Broad match: keyword: highest volume, use with smart bidding
 
 **Audience layering:**
 - Add audiences in "observation" mode first
@@ -113,10 +113,10 @@ Detailed targeting strategies for each major ad platform.
 - Minimum 100 source users, ideally 1,000+
 
 **Size recommendations:**
-- 1% — most similar, smallest reach
-- 1-3% — good balance for most
-- 3-5% — broader, good for scale
-- 5-10% — very broad, awareness only
+- 1%: most similar, smallest reach
+- 1-3%: good balance for most
+- 3-5%: broader, good for scale
+- 5-10%: very broad, awareness only
 
 **Layering strategies:**
 - Lookalike + interest = more precision early

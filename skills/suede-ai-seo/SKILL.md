@@ -7,14 +7,14 @@ metadata:
 
 # Suede AI SEO
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+Every check, gate, and verdict in this skill (`ship`, `ship-with-caveats`,
 `hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below — is a **recommendation to the user, not a control on the
+proceed" line below) is a **recommendation to the user, not a control on the
 agent**. Run every check, report the results honestly, and complete the
 requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception — if a finding is extremely risky (data loss,
+you do.** Single exception: if a finding is extremely risky (data loss,
 security or credential exposure, legal or rights violations, payment mistakes,
 irreversible public damage), pause, state the risk and the options, and let the
 user choose. Their choice is final.
@@ -22,13 +22,13 @@ user choose. Their choice is final.
 ## Boundaries
 
 - Do not claim a specific citation, ranking, or visibility outcome on any AI
-  platform — cite mechanisms and published research, not guaranteed results.
+  platform: cite mechanisms and published research, not guaranteed results.
 - Do not edit production robots.txt, schema markup, or site content without
   showing the current live state first and getting explicit approval.
-- Do not fabricate AI Overview, ChatGPT, or Perplexity citation checks —
+- Do not fabricate AI Overview, ChatGPT, or Perplexity citation checks:
   report only what was actually queried and observed.
 
-You are an expert in AI search optimization — the practice of making content discoverable, extractable, and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
+You are an expert in AI search optimization: the practice of making content discoverable, extractable, and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
 
 ## Before Starting
 
@@ -79,7 +79,7 @@ For a deep dive on how each platform selects sources and what to optimize per pl
 
 Traditional SEO gets you ranked. AI SEO gets you **cited**.
 
-In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3 — AI systems select sources based on content quality, structure, and relevance, not just rank position.
+In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3: AI systems select sources based on content quality, structure, and relevance, not just rank position.
 
 The widely-circulated market statistics (AI Overview prevalence, click loss, third-party citation multiples) are undated and unsourced; they live in [references/platform-ranking-factors.md](references/platform-ranking-factors.md) under "Market statistics" with that caveat attached. Read them for orientation, never quote them as evidence in a deliverable.
 
@@ -92,32 +92,32 @@ This is important to read once before doing anything else.
 
 Google explicitly says:
 - **No special markup or files are required** for AI Overviews or AI Mode
-- **Don't chunk content for AI** — write for people, organize with normal headings and paragraphs
-- **Don't write separate content for AI** — that risks "scaled content abuse" spam policy
-- **Helpful, reliable, people-first content** wins — same E-E-A-T standards as regular Search
-- **No AI-specific Search Console reporting** — use standard SEO metrics
+- **Don't chunk content for AI**: write for people, organize with normal headings and paragraphs
+- **Don't write separate content for AI**: that risks "scaled content abuse" spam policy
+- **Helpful, reliable, people-first content** wins: same E-E-A-T standards as regular Search
+- **No AI-specific Search Console reporting**: use standard SEO metrics
 
 **Other AI engines (ChatGPT, Claude, Perplexity, Copilot) behave differently:**
-- They actively reward extractable structure — passages, FAQs, comparison tables, definition blocks
+- They actively reward extractable structure: passages, FAQs, comparison tables, definition blocks
 - They parse `llms.txt`, structured pricing pages, and machine-readable files when present
 - They cite third-party sources (Reddit, Wikipedia, review sites) more heavily than top-ranked pages
 
 **What this means for the work:**
-- The structural patterns in this skill (40–60 word answer blocks, FAQ schema, comparison tables) help **non-Google AI engines** materially. They also don't hurt Google — they're just normal good content organization.
+- The structural patterns in this skill (40–60 word answer blocks, FAQ schema, comparison tables) help **non-Google AI engines** materially. They also don't hurt Google: they're just normal good content organization.
 - For Google AI Overviews / AI Mode specifically: optimize for people and core Search, full stop. Strong E-E-A-T, original information, semantic HTML, clean indexability.
 - For ChatGPT/Claude/Perplexity: layer on the extractable structure + llms.txt + machine-readable files.
 
-When in doubt, default to "write for people, organize for clarity" — that satisfies both camps.
+When in doubt, default to "write for people, organize for clarity": that satisfies both camps.
 
 ### Query Fan-Out (Google AI Search)
 
-Google's AI features don't just answer the one query a user typed — they generate **concurrent, related queries** under the hood and retrieve results for each.
+Google's AI features don't just answer the one query a user typed: they generate **concurrent, related queries** under the hood and retrieve results for each.
 
 Google's own example: a user asking "how to fix lawns" triggers fan-out queries about herbicides, chemical-free removal, weed prevention, etc. The AI synthesizes across all of them.
 
 **Implications:**
 - Single-page-per-keyword targeting is less effective. Cover the **full topical cluster** so you're retrievable for the fan-out variants too.
-- Long-tail intent matters less than topical authority — Google's AI systems understand synonyms and semantic equivalence.
+- Long-tail intent matters less than topical authority: Google's AI systems understand synonyms and semantic equivalence.
 - A page that comprehensively answers a parent topic (with sub-questions covered) will be retrieved more often than narrow per-query pages.
 
 **Action**: when planning content, brainstorm the 5–10 related queries the AI is likely to fan out to and make sure your content (or your site as a whole) covers them.
@@ -147,11 +147,11 @@ Test 10-20 of your most important queries across platforms:
 ### Step 2: Analyze Citation Patterns
 
 When your competitors get cited and you don't, examine:
-- **Content structure** — Is their content more extractable?
-- **Authority signals** — Do they have more citations, stats, expert quotes?
-- **Freshness** — Is their content more recently updated?
-- **Schema markup** — Do they have structured data you're missing?
-- **Third-party presence** — Are they cited via Wikipedia, Reddit, review sites?
+- **Content structure**: Is their content more extractable?
+- **Authority signals**: Do they have more citations, stats, expert quotes?
+- **Freshness**: Is their content more recently updated?
+- **Schema markup**: Do they have structured data you're missing?
+- **Third-party presence**: Are they cited via Wikipedia, Reddit, review sites?
 
 ### Step 3: Content Extractability Check
 
@@ -174,20 +174,20 @@ For each priority page, verify:
 
 Verify your robots.txt allows AI crawlers. Each AI platform has its own bot, and blocking it means that platform can't cite you:
 
-- **GPTBot** and **ChatGPT-User** — OpenAI (ChatGPT)
-- **PerplexityBot** — Perplexity
-- **ClaudeBot** and **anthropic-ai** — Anthropic (Claude)
-- **Google-Extended** — Google Gemini and AI Overviews
-- **Bingbot** — Microsoft Copilot (via Bing)
+- **GPTBot** and **ChatGPT-User**: OpenAI (ChatGPT)
+- **PerplexityBot**: Perplexity
+- **ClaudeBot** and **anthropic-ai**: Anthropic (Claude)
+- **Google-Extended**: Google Gemini and AI Overviews
+- **Bingbot**: Microsoft Copilot (via Bing)
 
 Fetch the file with the host's approved read-only HTTP or browser tool and read
-the rules — do not assume. Use a verified public HTTPS hostname and refuse
+the rules: do not assume. Use a verified public HTTPS hostname and refuse
 loopback, link-local, or private-network destinations. Do not attach ambient
 cookies or authentication headers, and do not send local files, credentials, or
 workspace content. Record the final URL, HTTP status, and response body before
 classifying access.
 
-Read the response as blocks: a `Disallow:` line belongs to the `User-agent:` above it, and a `User-agent: *` block applies to every bot with no block of its own. If robots.txt returns anything other than 200, redirects away from a verified public HTTPS destination, or the fetch fails, report AI bot access as **unverified with the reason** — never as open. Report per bot: allowed, blocked, or unverified.
+Read the response as blocks: a `Disallow:` line belongs to the `User-agent:` above it, and a `User-agent: *` block applies to every bot with no block of its own. If robots.txt returns anything other than 200, redirects away from a verified public HTTPS destination, or the fetch fails, report AI bot access as **unverified with the reason**, never as open. Report per bot: allowed, blocked, or unverified.
 
 If bots are blocked, that is a business decision: blocking prevents AI training on your content but also prevents citation. One middle ground is blocking training-only crawlers (like **CCBot** from Common Crawl) while allowing the search bots listed above.
 
@@ -205,7 +205,7 @@ See [references/platform-ranking-factors.md](references/platform-ranking-factors
 3. Presence (be where AI looks)
 ```
 
-### Pillar 1: Structure — Make Content Extractable
+### Pillar 1: Structure: Make Content Extractable
 
 AI systems extract passages, not pages. Every key claim should work as a standalone statement.
 
@@ -227,7 +227,7 @@ For detailed templates for each block type, see [references/content-patterns.md]
 - Numbered lists beat paragraphs for process content
 - Each paragraph should convey one clear idea
 
-### Pillar 2: Authority — Make Content Citable
+### Pillar 2: Authority: Make Content Citable
 
 AI systems prefer sources they can trust. Build citation-worthiness.
 
@@ -245,7 +245,7 @@ AI systems prefer sources they can trust. Build citation-worthiness.
 | **Fluency optimization** | +15-30% | Improve readability and flow |
 | ~~Keyword stuffing~~ | **-10%** | **Actively hurts AI visibility** |
 
-**Best combination:** Fluency + Statistics = maximum boost. Low-ranking sites benefit even more — up to 115% visibility increase with citations.
+**Best combination:** Fluency + Statistics = maximum boost. Low-ranking sites benefit even more, up to 115% visibility increase with citations.
 
 **Statistics and data** (+37-40% citation boost)
 - Include specific numbers with sources
@@ -271,9 +271,9 @@ AI systems prefer sources they can trust. Build citation-worthiness.
 - Transparent sourcing and methodology
 - Clear author expertise for the topic
 
-### Pillar 3: Presence — Be Where AI Looks
+### Pillar 3: Presence: Be Where AI Looks
 
-AI systems don't just cite your website — they cite where you appear.
+AI systems don't just cite your website: they cite where you appear.
 
 **Third-party sources matter more than your own site:**
 - Wikipedia mentions (7.8% of all ChatGPT citations)
@@ -297,14 +297,14 @@ AI systems don't just cite your website — they cite where you appear.
 >
 > **Why include them anyway**: non-Google AI engines (ChatGPT, Claude, Perplexity) and autonomous buying agents do reward extractable structure. The files below help with those engines without harming Google.
 
-AI agents aren't just answering questions — they're becoming buyers. When an AI agent evaluates tools on behalf of a user, it needs structured, parseable information. If your pricing is locked in a JavaScript-rendered page or a "contact sales" wall, agents will skip you and recommend competitors whose information they can actually read.
+AI agents aren't just answering questions: they're becoming buyers. When an AI agent evaluates tools on behalf of a user, it needs structured, parseable information. If your pricing is locked in a JavaScript-rendered page or a "contact sales" wall, agents will skip you and recommend competitors whose information they can actually read.
 
 Add these machine-readable files to your site root:
 
-**`/pricing.md` or `/pricing.txt`** — Structured pricing data for AI agents
+**`/pricing.md` or `/pricing.txt`**: Structured pricing data for AI agents
 
 ```markdown
-# Pricing — [Your Product Name]
+# Pricing: [Your Product Name]
 
 ## Free
 - Price: $0/month
@@ -317,7 +317,7 @@ Add these machine-readable files to your site root:
 - Features: Custom domains, analytics, priority support
 
 ## Enterprise
-- Price: Custom — contact sales@example.com
+- Price: Custom (contact sales@example.com)
 - Limits: Unlimited emails, unlimited users
 - Features: SSO, SLA, dedicated account manager
 ```
@@ -325,23 +325,23 @@ Add these machine-readable files to your site root:
 **Why this matters now:**
 - AI agents increasingly compare products programmatically before a human ever visits your site
 - Opaque pricing gets filtered out of AI-mediated buying journeys
-- A simple markdown file is trivially parseable by any LLM — no rendering, no JavaScript, no login walls
+- A simple markdown file is trivially parseable by any LLM: no rendering, no JavaScript, no login walls
 - Same principle as `robots.txt` (for crawlers), `llms.txt` (for AI context), and `AGENTS.md` (for agent capabilities)
 
 **Best practices:**
 - Use consistent units (monthly vs. annual, per-seat vs. flat)
 - Include specific limits and thresholds, not just feature names
 - List what's included at each tier, not just what's different
-- Keep it updated — stale pricing is worse than no file
+- Keep it updated: stale pricing is worse than no file
 - Link to it from your sitemap and main pricing page
 
-**`/llms.txt`** — Context file for AI systems (see [llmstxt.org](https://llmstxt.org))
+**`/llms.txt`**: Context file for AI systems (see [llmstxt.org](https://llmstxt.org))
 
 If you don't have one yet, add an `llms.txt` that gives AI systems a quick overview of what your product does, who it's for, and links to key pages (including your pricing).
 
-**`/okf/` — Open Knowledge Format bundle (Google-backed, v0.1)**
+**`/okf/`: Open Knowledge Format bundle (Google-backed, v0.1)**
 
-Google [introduced OKF](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) in June 2026 — a markdown spec for representing site content as a directory of cross-linked files with YAML frontmatter, agent-readable without scraping. Built primarily for data-team catalog metadata; the site-readable-by-agents repurposing was popularized by Suganthan Mohanadasan. No confirmed AI-search ranking signal today — treat it as protocol-layer registration like early schema.org. **For the full breakdown, implementation paths (free generator, WordPress plugin, by-hand), hosting guidance, and when to skip, see [references/okf.md](references/okf.md).**
+Google [introduced OKF](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) in June 2026: a markdown spec for representing site content as a directory of cross-linked files with YAML frontmatter, agent-readable without scraping. Built primarily for data-team catalog metadata; the site-readable-by-agents repurposing was popularized by Suganthan Mohanadasan. No confirmed AI-search ranking signal today; treat it as protocol-layer registration like early schema.org. **For the full breakdown, implementation paths (free generator, WordPress plugin, by-hand), hosting guidance, and when to skip, see [references/okf.md](references/okf.md).**
 
 ### Schema Markup for AI
 
@@ -363,21 +363,21 @@ Structured data is associated with higher AI visibility on non-Google AI engines
 
 ## Agentic Experiences
 
-Beyond AI search engines summarizing content, autonomous agents are starting to access sites directly — clicking, reading, comparing, even buying on behalf of users. Google's guide flags this as an emerging category to plan for.
+Beyond AI search engines summarizing content, autonomous agents are starting to access sites directly: clicking, reading, comparing, even buying on behalf of users. Google's guide flags this as an emerging category to plan for.
 
 **How agents access your site:**
-- **Visual rendering** — they screenshot/read the page like a user would
-- **DOM inspection** — they parse the page's HTML structure
-- **Accessibility tree** — they rely on the same semantic information assistive tech uses (labels, roles, landmarks, headings)
+- **Visual rendering**: they screenshot/read the page like a user would
+- **DOM inspection**: they parse the page's HTML structure
+- **Accessibility tree**: they rely on the same semantic information assistive tech uses (labels, roles, landmarks, headings)
 
 **What to do:**
-- **Render meaningful content without heavy JS gymnastics** — if the page is blank until 4 frameworks finish loading, agents see blank
-- **Semantic HTML** — use `<main>`, `<nav>`, `<article>`, `<button>`, proper heading hierarchy, `alt` text on images
-- **Clean accessibility tree** — every interactive element labelled; ARIA used correctly (or not at all when native HTML suffices)
-- **Stable selectors / predictable layouts** — agents struggle with sites that re-render every interaction
-- **Visible pricing, specs, contact info** — anything an agent would need to make a buying recommendation should be on a public, indexable page (this is where `/pricing.md` and similar files help)
+- **Render meaningful content without heavy JS gymnastics**: if the page is blank until 4 frameworks finish loading, agents see blank
+- **Semantic HTML**: use `<main>`, `<nav>`, `<article>`, `<button>`, proper heading hierarchy, `alt` text on images
+- **Clean accessibility tree**: every interactive element labelled; ARIA used correctly (or not at all when native HTML suffices)
+- **Stable selectors / predictable layouts**: agents struggle with sites that re-render every interaction
+- **Visible pricing, specs, contact info**: anything an agent would need to make a buying recommendation should be on a public, indexable page (this is where `/pricing.md` and similar files help)
 
-**Emerging — Universal Commerce Protocol (UCP):**
+**Emerging: Universal Commerce Protocol (UCP):**
 Google references UCP as a forthcoming protocol that will give agents standardized hooks for commerce interactions (catalog discovery, pricing, checkout). Watch for adoption; for now, the structural recommendations above are the precursor.
 
 For ecom and local business specifically, Google highlights:
@@ -407,7 +407,7 @@ Not all content is equally citable. Prioritize these formats:
 - Content without dates or author attribution
 - PDF-only content (harder for AI to parse)
 
-**Citation ≠ recommendation.** Getting cited means your content was useful to consult; getting *recommended* — onto the buyer's actual shortlist — is governed by web-wide consensus (reviews, forums, analysts, press) and is largely independent of your own content. Self-promotional "best [category]" listicles can even backfire for emerging brands: in one 100-query B2B study, 69% of the AI Overview citations that self-promotional listicles earned came in answers that recommended competitors instead of the publishing brand. See [references/citations-vs-recommendations.md](references/citations-vs-recommendations.md) for the visibility ladder (retrieved → cited → mentioned → recommended), stage-dependent buyer's-guide strategy, what earns recommendations, and the attribution blind spot.
+**Citation ≠ recommendation.** Getting cited means your content was useful to consult; getting *recommended*, onto the buyer's actual shortlist, is governed by web-wide consensus (reviews, forums, analysts, press) and is largely independent of your own content. Self-promotional "best [category]" listicles can even backfire for emerging brands: in one 100-query B2B study, 69% of the AI Overview citations that self-promotional listicles earned came in answers that recommended competitors instead of the publishing brand. See [references/citations-vs-recommendations.md](references/citations-vs-recommendations.md) for the visibility ladder (retrieved → cited → mentioned → recommended), stage-dependent buyer's-guide strategy, what earns recommendations, and the attribution blind spot.
 
 ---
 
@@ -424,7 +424,7 @@ Not all content is equally citable. Prioritize these formats:
 | Recommendation rate | Whether you're on the shortlist, not just cited (see [citations-vs-recommendations.md](references/citations-vs-recommendations.md)) | Prompt tracking + mention framing |
 | Source attribution | Which of your pages get cited | Track referral traffic from AI sources |
 
-Vendor tools (Otterly, Peec, ZipTie, LLMrefs) and their current platform coverage are in [references/platform-ranking-factors.md](references/platform-ranking-factors.md) — read that table only when the query set is too large to check by hand, and verify coverage on the vendor's own site before recommending one.
+Vendor tools (Otterly, Peec, ZipTie, LLMrefs) and their current platform coverage are in [references/platform-ranking-factors.md](references/platform-ranking-factors.md): read that table only when the query set is too large to check by hand, and verify coverage on the vendor's own site before recommending one.
 
 ### DIY Monitoring (No Tools)
 
@@ -448,27 +448,27 @@ For tactical guidance on SaaS product pages, blog content, comparison/alternativ
 
 ## Common Mistakes and What NOT to Do
 
-The first seven are called out explicitly in Google's guide — they hurt across both traditional Search and AI features.
+The first seven are called out explicitly in Google's guide: they hurt across both traditional Search and AI features.
 
-1. **Write separate content "for AI"**. Same content should serve people and AI. Writing variants targeted at AI systems risks the **scaled content abuse spam policy** — Google's words. If content reads like it was written to game an algorithm, it won't get cited or convert.
+1. **Write separate content "for AI"**. Same content should serve people and AI. Writing variants targeted at AI systems risks the **scaled content abuse spam policy** (Google's words). If content reads like it was written to game an algorithm, it won't get cited or convert.
 2. **Chunk pages into AI-bait fragments**. Google's guide is direct: *"Don't break your content into tiny pieces for AI to better understand it."* Use normal paragraph + heading structure.
 3. **Generate at scale for ranking manipulation**. AI-generated content is fine *if* it meets Search Essentials and spam policies. Mass-producing thin variations does not.
 4. **Pursue inauthentic mentions**. Don't fabricate citations or bulk-spam Reddit/Wikipedia for AI visibility. Real participation only.
 5. **Block AI crawlers if you want citation**. Blocking GPTBot, PerplexityBot, ClaudeBot, Google-Extended means those engines literally cannot cite you. Block training-only crawlers (CCBot) if you must, not the search-and-cite ones.
 6. **Hide your main content behind JS that doesn't render**. Both core Search and AI agents need to see your content; JS-only rendering loses both audiences.
-7. **Skip E-E-A-T fundamentals**. Author identity, first-hand experience, expertise signals, transparent sourcing — Google's guide leans heavily on these for AI features.
+7. **Skip E-E-A-T fundamentals**. Author identity, first-hand experience, expertise signals, transparent sourcing. Google's guide leans heavily on these for AI features.
 
 The rest are field mistakes, not policy violations:
-- **Ignoring AI search entirely** — AI Overviews now appear on a large share of Google searches, and ChatGPT/Perplexity are growing fast
-- **Treating AI SEO as separate from SEO** — Good traditional SEO is the foundation; AI SEO adds structure and authority on top
-- **No freshness signals** — Undated content loses to dated content because AI systems weight recency heavily. Show when content was last updated
-- **Gating all content** — AI can't access gated content. Keep your most authoritative content open
-- **Ignoring third-party presence** — You may get more AI citations from a Wikipedia mention than from your own blog
-- **No structured data** — Schema markup gives AI systems structured context about your content
-- **Keyword stuffing** — Unlike traditional SEO where it's just ineffective, keyword stuffing actively reduces AI visibility by 10% (Princeton GEO study)
-- **Hiding pricing behind "contact sales" or JS-rendered pages** — AI agents evaluating your product on behalf of buyers can't parse what they can't read. Add a `/pricing.md` file
-- **Generic content without data** — "We're the best" won't get cited. "Our customers see 3x improvement in [metric]" will
-- **Forgetting to monitor** — You can't improve what you don't measure. Check AI visibility monthly at minimum
+- **Ignoring AI search entirely**: AI Overviews now appear on a large share of Google searches, and ChatGPT/Perplexity are growing fast
+- **Treating AI SEO as separate from SEO**: Good traditional SEO is the foundation; AI SEO adds structure and authority on top
+- **No freshness signals**: Undated content loses to dated content because AI systems weight recency heavily. Show when content was last updated
+- **Gating all content**: AI can't access gated content. Keep your most authoritative content open
+- **Ignoring third-party presence**: You may get more AI citations from a Wikipedia mention than from your own blog
+- **No structured data**: Schema markup gives AI systems structured context about your content
+- **Keyword stuffing**: Unlike traditional SEO where it's just ineffective, keyword stuffing actively reduces AI visibility by 10% (Princeton GEO study)
+- **Hiding pricing behind "contact sales" or JS-rendered pages**: AI agents evaluating your product on behalf of buyers can't parse what they can't read. Add a `/pricing.md` file
+- **Generic content without data**: "We're the best" won't get cited. "Our customers see 3x improvement in [metric]" will
+- **Forgetting to monitor**: You can't improve what you don't measure. Check AI visibility monthly at minimum
 
 ---
 
@@ -478,14 +478,14 @@ Close every AI visibility pass with this block. Fill every field; write "not che
 
 ```text
 === AI SEARCH VISIBILITY REPORT ===   Site / pages:        Date:
-QUERIES RUN (Step 1) — one row per query actually executed, "not queried" for any platform skipped:
+QUERIES RUN (Step 1): one row per query actually executed, "not queried" for any platform skipped:
   Query | AI Overview | ChatGPT | Perplexity | You cited | Competitors cited
-BOT ACCESS (Step 4) — robots.txt fetch: 200 | other code | failed (reason)
+BOT ACCESS (Step 4): robots.txt fetch: 200 | other code | failed (reason)
   Per bot (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, Bingbot): allowed | blocked | unverified
-EXTRACTABILITY (Step 3) — [page]: N of 10 checks pass | failing checks: [names]
-PRIORITIZED FIXES — 1. [P1] Page | What is wrong | The exact change to make
-COVERAGE — Queried and observed: [...] | Not checked, and why: [...]
-SHIP GATE — ship | ship-with-caveats | hold — reason
+EXTRACTABILITY (Step 3): [page]: N of 10 checks pass | failing checks: [names]
+PRIORITIZED FIXES: 1. [P1] Page | What is wrong | The exact change to make
+COVERAGE: Queried and observed: [...] | Not checked, and why: [...]
+SHIP GATE: ship | ship-with-caveats | hold: reason
 ```
 
 ---

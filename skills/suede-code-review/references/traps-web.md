@@ -53,7 +53,7 @@ Check these on every Next.js file in the diff:
 Check on any file that touches routes, layouts, metadata, or public-facing content:
 
 - **Metadata regression:** changes to `generateMetadata`, `<Head>`, `<title>`, `description`, `og:title`, `og:description`, `og:image`, `twitter:card`. Any removal or blanking of previously populated fields is a regression. Flag if `generateMetadata` now returns fewer keys than before the change.
-- **Canonical drift:** `canonical` URL changed, removed, or now pointing to a different domain. Flag any change to canonical logic — canonical changes can consolidate or fragment link equity unintentionally.
+- **Canonical drift:** `canonical` URL changed, removed, or now pointing to a different domain. Flag any change to canonical logic, canonical changes can consolidate or fragment link equity unintentionally.
 - **Robots / noindex added unintentionally:** `noindex`, `nofollow`, or `X-Robots-Tag: noindex` appearing on pages that were previously indexable. Flag any new `robots` metadata that restricts crawling on a route that wasn't restricted before.
 - **Sitemap impact:** new routes not added to sitemap; removed routes not pruned; `sitemap.ts` / `sitemap.xml` not updated when routes change. Flag route additions or removals without a corresponding sitemap change.
 - **OG image regression:** `og:image` URLs broken, pointing to localhost, missing dimension params, or removed from previously covered pages. Flag layout-level changes that remove OG image generation entirely.

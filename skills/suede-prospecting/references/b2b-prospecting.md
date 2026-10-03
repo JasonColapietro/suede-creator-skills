@@ -1,6 +1,6 @@
 # B2B Prospecting Reference
 
-For when the user sells to non-SaaS B2B — services, agencies, manufacturers, mid-market and enterprise companies, professional services firms.
+For when the user sells to non-SaaS B2B: services, agencies, manufacturers, mid-market and enterprise companies, professional services firms.
 
 ---
 
@@ -8,11 +8,11 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
 
 ### Firmographic signals
 
-- **Industry / vertical** — NAICS or SIC codes if precision matters
-- **Company size** — headcount band, revenue band, location count
-- **Geography** — relevant for time zones, regulations, on-site requirements
-- **Business model** — service vs product vs distribution; B2B vs B2B2C
-- **Ownership** — independent, PE-backed, public, family-owned — affects buying motion
+- **Industry / vertical**: NAICS or SIC codes if precision matters
+- **Company size**: headcount band, revenue band, location count
+- **Geography**: relevant for time zones, regulations, on-site requirements
+- **Business model**: service vs product vs distribution; B2B vs B2B2C
+- **Ownership**: independent, PE-backed, public, family-owned: affects buying motion
 
 ### Buying signals
 
@@ -33,7 +33,7 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
 
 ## Discovery Sources (B2B branch)
 
-### Tier 1 — primary discovery
+### Tier 1: primary discovery
 
 - **Apollo**: candidate for general B2B firmographic and contact discovery;
   verify current coverage on the target segment
@@ -42,7 +42,7 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
   research; verify current coverage and terms
 - **Clay**: when you need custom waterfall lookups (e.g., enrich Apollo records with Hunter + Clearbit)
 
-### Tier 2 — industry-specific directories
+### Tier 2: industry-specific directories
 
 - **Crunchbase / Pitchbook**: funded businesses
 - **D&B Hoovers**: large traditional B2B firmographics
@@ -51,7 +51,7 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
 - **Trade show exhibitor lists**: signals active participation in a vertical
 - **Procurement databases** (Procore for construction, e.g.): vertical-specific signals
 
-### Tier 3 — trigger event monitoring
+### Tier 3: trigger event monitoring
 
 - **Google Alerts / Feedly**: trigger keywords ("acquired," "hires," "expansion," "raises," "announces")
 - **PR Newswire / Business Wire**: company-controlled announcements
@@ -66,7 +66,7 @@ For when the user sells to non-SaaS B2B — services, agencies, manufacturers, m
 - [ ] Company size within range (employees or revenue)
 - [ ] Geography fits
 - [ ] At least one trigger event in last 90–180 days
-- [ ] Decision-maker role exists (CEO, COO, VP Operations, Director of X — match buyer profile)
+- [ ] Decision-maker role exists (CEO, COO, VP Operations, Director of X: match buyer profile)
 - [ ] Email contact verifiable (named role > info@ catchall)
 - [ ] Source URLs captured for firmographic claims
 - [ ] No disqualifiers (closed, acquired-paused, multi-bankrupt, off-ICP)
@@ -89,13 +89,13 @@ For chat table, condense to: Score | Company | Industry | Size | Trigger | Conta
 
 Prioritize a bounded review set when the evidence supports it:
 
-1. **Trigger event recency** — compare current and older events without imposing
+1. **Trigger event recency**: compare current and older events without imposing
    a universal expiry window
-2. **Trigger specificity** — prefer a cited event tied to the buyer's problem
+2. **Trigger specificity**: prefer a cited event tied to the buyer's problem
    over general company news
-3. **Decision-maker evidence** — distinguish a confirmed professional contact
+3. **Decision-maker evidence**: distinguish a confirmed professional contact
    from a role-only inference
-4. **Vertical fit precision** — use the taxonomy the current ICP and source data
+4. **Vertical fit precision**: use the taxonomy the current ICP and source data
    can support
 
 Each top target rationale names the trigger and decision-maker: "Hired new VP of Marketing 14 days ago; verified email; mid-market manufacturer matching ICP."
@@ -104,11 +104,11 @@ Each top target rationale names the trigger and decision-maker: "Hired new VP of
 
 ## Common Mistakes (B2B)
 
-1. **Treating B2B like SaaS** — funding rounds matter less; PE ownership and acquisition activity matter more.
-2. **Trying to verify private company revenue precisely** — most public databases approximate. Use size bands, not point estimates.
-3. **Ignoring procurement complexity** at enterprise scale — your prospect contact list may not include the actual approver.
-4. **Cold-emailing executive assistants** — they're not the buyer and they will flag your outreach as spam.
-5. **Source URL hygiene** — without source lineage, you can't defend a contact under GDPR DSAR or CAN-SPAM challenge.
-6. **Stopping at one source** — provider accuracy varies by segment and date.
+1. **Treating B2B like SaaS**: funding rounds matter less; PE ownership and acquisition activity matter more.
+2. **Trying to verify private company revenue precisely**: most public databases approximate. Use size bands, not point estimates.
+3. **Ignoring procurement complexity** at enterprise scale: your prospect contact list may not include the actual approver.
+4. **Cold-emailing executive assistants**: they're not the buyer and they will flag your outreach as spam.
+5. **Source URL hygiene**: without source lineage, you can't defend a contact under GDPR DSAR or CAN-SPAM challenge.
+6. **Stopping at one source**: provider accuracy varies by segment and date.
    Cross-verify important claims with a current first-party or independent
    source.

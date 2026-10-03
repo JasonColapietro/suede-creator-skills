@@ -45,7 +45,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 From "Boundaries":
 
 - Do not invent traffic, ranking, citation-frequency, or conversion numbers to support a lane grade. A lane grade rests on what was inspected on the page.
-- Grading is read-only. Do not edit the page, its metadata, or its schema — report fixes as recommendations in the Top fixes list.
+- Grading is read-only. Do not edit the page, its metadata, or its schema. Report fixes as recommendations in the Top fixes list.
 - Do not present a grade as a guaranteed Google ranking or AI-citation outcome. The grade describes the page, not the market's response to it.
 - Name what was inspected and what was not in Verification. Never imply full coverage of surfaces, viewports, or states that were skipped.
 

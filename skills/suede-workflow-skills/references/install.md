@@ -34,7 +34,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 
 That path is the umbrella-only configuration: the individual specialists are
 absent, so the umbrella falls back to `references/condensed-workflows.md`.
-Install the individual skills whenever direct triggering matters — pass any
+Install the individual skills whenever direct triggering matters: pass any
 number of `skills/<name>` paths after `--path`:
 
 ```bash
@@ -64,7 +64,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 ```
 
 Growth, marketing, and creator
-skills install the same way — substitute their directory names from
+skills install the same way: substitute their directory names from
 [the repository skill index](https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills),
 which is the current source of truth for the full list.
 

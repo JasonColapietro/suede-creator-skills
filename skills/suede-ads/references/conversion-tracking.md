@@ -1,6 +1,6 @@
 # Conversion Tracking Setup
 
-How to set up conversion tracking pixels across ad platforms. This guide covers installation, event configuration, and validation — everything a marketer needs to ensure ad spend is properly attributed.
+How to set up conversion tracking pixels across ad platforms. This guide covers installation, event configuration, and validation: everything a marketer needs to ensure ad spend is properly attributed.
 
 ---
 
@@ -161,9 +161,9 @@ fbq('track', 'AddToCart', {
 Server-side tracking that works alongside the pixel. Required for accurate tracking after iOS 14+ and cookie restrictions.
 
 Set up via:
-- **Direct integration** — send events from your server to Meta's API
-- **Partner integrations** — Shopify, WooCommerce, Segment, etc. have built-in CAPI support
-- **Conversions API Gateway** — Meta's managed solution via AWS
+- **Direct integration**: send events from your server to Meta's API
+- **Partner integrations**: Shopify, WooCommerce, Segment, etc. have built-in CAPI support
+- **Conversions API Gateway**: Meta's managed solution via AWS
 
 Key: send the same events from both pixel (browser) AND CAPI (server), with a shared `event_id` for deduplication.
 
@@ -284,7 +284,7 @@ ttq.track('AddToCart', {
 
 ### Events API (server-side)
 
-TikTok's Events API works like Meta's CAPI — send the same events from your server for better attribution. Use `event_id` for deduplication with browser pixel events.
+TikTok's Events API works like Meta's CAPI: send the same events from your server for better attribution. Use `event_id` for deduplication with browser pixel events.
 
 ### Advanced Matching
 
@@ -332,13 +332,13 @@ After installing any pixel, verify before going live:
 
 ## Common Mistakes
 
-- **Firing purchase events on button click instead of confirmed payment** — always fire on the success/thank-you page or after server confirmation
-- **Missing deduplication between pixel and server events** — without a shared `event_id`, you'll double-count conversions
-- **Not testing on mobile** — many pixels break on mobile browsers or in-app webviews
-- **Hardcoded test values** — remove test transaction amounts before going live
-- **Forgetting to exclude internal traffic** — your team's visits inflate conversion data
-- **Installing pixels without consent management** — GDPR/CCPA require user consent before firing tracking pixels in applicable regions
-- **Pixel installed but no conversion actions created** — the pixel collects data, but the ad platform won't optimize without defined conversion actions
+- **Firing purchase events on button click instead of confirmed payment**: always fire on the success/thank-you page or after server confirmation
+- **Missing deduplication between pixel and server events**: without a shared `event_id`, you'll double-count conversions
+- **Not testing on mobile**: many pixels break on mobile browsers or in-app webviews
+- **Hardcoded test values**: remove test transaction amounts before going live
+- **Forgetting to exclude internal traffic**: your team's visits inflate conversion data
+- **Installing pixels without consent management**: GDPR/CCPA require user consent before firing tracking pixels in applicable regions
+- **Pixel installed but no conversion actions created**: the pixel collects data, but the ad platform won't optimize without defined conversion actions
 
 ---
 

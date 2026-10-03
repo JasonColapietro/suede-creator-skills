@@ -48,7 +48,7 @@ From "Boundaries":
 - Never promise a refund amount, a refund timeline, or that a dispute will succeed.
 - Never act on a service the user has not named, and never batch several services under one approval.
 - Never dispute or cancel a charge the user recognizes as intentional.
-- Never escalate with a fact the user did not supply — no invented prior contact, cancellation date, or usage claim.
+- Never escalate with a fact the user did not supply: no invented prior contact, cancellation date, or usage claim.
 
 ## References
 

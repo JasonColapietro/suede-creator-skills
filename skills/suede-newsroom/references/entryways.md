@@ -23,14 +23,14 @@ surfaces it survives on, the failure mode, and a worked line.
 
 **Argues:** this is real, and here is the thing you can check yourself.
 
-**Requires:** an artifact a stranger can inspect without trusting you — a
+**Requires:** an artifact a stranger can inspect without trusting you: a
 screenshot, dataset, receipt, before-and-after, or public URL.
 
 **Failure mode:** posting the artifact with a caption that describes it. The
 artifact is the argument; the caption says what it settles.
 
 **Worked line:** "Four platform posts from one campaign. Same hook, four times.
-Nobody chose that — the pipeline fed the finished draft to the repurposing step."
+Nobody chose that: the pipeline fed the finished draft to the repurposing step."
 
 ---
 
@@ -46,7 +46,7 @@ guessed from the name is a definition wearing a lab coat.
 
 **Worked line:** "A finished draft carries exactly one argument. Anything derived
 from it inherits that argument. That is why your five platform posts say the same
-thing — not prompt quality, not model choice."
+thing: not prompt quality, not model choice."
 
 ---
 
@@ -84,7 +84,7 @@ nothing."
 
 **Argues:** here is what it produced, and the conditions that produced it.
 
-**Requires:** an outcome with context — what was measured, over what period,
+**Requires:** an outcome with context: what was measured, over what period,
 under what conditions.
 
 **Failure mode:** the naked number. A result with no conditions invites the
@@ -99,7 +99,7 @@ two. The first took four returns to get the claims traced."
 
 **Argues:** the common approach is worse than it looks, and here is how it fails.
 
-**Requires:** the actual default — what most people do — plus the mechanism of
+**Requires:** the actual default, what most people do, plus the mechanism of
 its failure. Critique without a named default is posturing.
 
 **Failure mode:** attacking a strawman nobody runs, or naming a competitor rather
@@ -139,20 +139,20 @@ decides, not character count.
 | Long-form | all of them, combined | the flagship is where they meet |
 
 Where the project's own surface playbook contradicts this table, the project
-wins — say which one you followed.
+wins, say which one you followed.
 
 ## Sequencing
 
-Two rules. **Lead with the largest outcome** — result or proof opens, compression
+Two rules. **Lead with the largest outcome**, result or proof opens, compression
 closes, and a reader arriving at any point can work backward to the flagship.
-**Space the demanding entryways** — mechanism and risk ask more of a reader than
+**Space the demanding entryways**, mechanism and risk ask more of a reader than
 proof or compression, so alternate rather than stacking them.
 
 A full set in order: result, mechanism, proof, workflow, critique, risk,
 compression. Critique and risk sit late because both ask the reader to
 reconsider something, which lands better once the week has shown the thing works.
 
-In a short set, drop critique and risk first — they depend on context the set has
+In a short set, drop critique and risk first: they depend on context the set has
 not built yet.
 
 ## When the source is thin
@@ -162,7 +162,7 @@ proof asset, and inventing one is fabrication.
 
 | Inventory rows filled | Realistic set size |
 |---|---|
-| 2–3 | two assets — take the strongest, skip the rest |
+| 2–3 | two assets, take the strongest, skip the rest |
 | 4–5 | three to four assets |
 | 6–8 | up to seven |
 

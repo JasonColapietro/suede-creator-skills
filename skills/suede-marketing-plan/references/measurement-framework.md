@@ -1,52 +1,52 @@
-# Measurement Framework — KPIs, North Stars, Cadence
+# Measurement Framework: KPIs, North Stars, Cadence
 
 Every plan needs a measurement section that tells the team how to know if the plan is working. This doc is the source for Section 13's measurement subsection.
 
 **Related docs:**
-- `growth-patterns.md` — linear, step-function, and layered-curve scenarios
-- `budget-planning.md` — blended-CAC evidence and low/base/high scenario limits
+- `growth-patterns.md`: linear, step-function, and layered-curve scenarios
+- `budget-planning.md`: blended-CAC evidence and low/base/high scenario limits
 
 ## The north-star principle
 
 A north star is one metric that captures the business-model thesis at the highest level. It should:
 - Be derivable from the funnel + revenue model
 - Move slowly enough to be a strategic compass (not whipsawed by weekly noise)
-- Trade off correctly against other metrics — improving the north star should generally improve the business
+- Trade off correctly against other metrics: improving the north star should generally improve the business
 
 Don't default to "ARR" or "MRR" alone. Those are outcomes, not norths. Pick something that captures the business model.
 
 ## North-star patterns by business model
 
 ### B2B SaaS (subscription)
-- **Net Revenue Retention (NRR)** — keeps existing customers + expansion in focus
+- **Net Revenue Retention (NRR)**: keeps existing customers + expansion in focus
 - Alternative: "Logo retention × expansion ARR"
 - Why: ARR alone hides churn / lets gross-add growth mask product fit problems
 
 ### D2C consumer app (subscription)
-- **Blended LTV / blended CAC** — keeps unit economics honest as paid layer scales
+- **Blended LTV / blended CAC**: keeps unit economics honest as paid layer scales
 - Alternative: "Day-35 paid users from cohort × LTV"
 - Why: monthly subscription metrics are volatile; cohort × LTV smooths it
 
 ### Hybrid hardware + software (e.g., Quietude)
-- **Blended LTV / blended CAC across hardware + software** — captures the wedge thesis
+- **Blended LTV / blended CAC across hardware + software**: captures the wedge thesis
 - Alternative: "Hardware-buyers-to-subscriber conversion × blended margin"
 - Why: hardware revenue isn't free (cost to make); subscription revenue isn't expensive to acquire if hardware funds it
 
 ### Marketplace (two-sided)
-- **Liquidity ratio × take-rate** — captures both sides + monetization
+- **Liquidity ratio × take-rate**: captures both sides + monetization
 - Alternative: "Monthly transacting users × take-rate × repeat frequency"
 - Why: GMV alone doesn't capture whether the marketplace is becoming a habit
 
 ### Developer tool / open source
-- **Weekly active developers × paid-conversion** — captures both adoption and monetization
+- **Weekly active developers × paid-conversion**: captures both adoption and monetization
 - Alternative: "Weekly active orgs × seats per org × ARPU"
 
 ### Content / media business
-- **Daily active readers / listeners × ad revenue per session** — captures both reach and monetization
+- **Daily active readers / listeners × ad revenue per session**: captures both reach and monetization
 - Alternative: "Subscriber count × retention × ARPU"
 
 ### Commerce (DTC, non-subscription)
-- **Repeat purchase rate × AOV × frequency** — captures monetization layered on quality of customer
+- **Repeat purchase rate × AOV × frequency**: captures monetization layered on quality of customer
 - Alternative: "Customer LTV / CAC × payback period"
 
 ## Leading indicators by AARRR stage
@@ -122,11 +122,11 @@ labels for consideration, not mandatory frequencies.
 
 For each planning interval in Section 10, include 3–5 source-backed KPI decision
 rules only when a baseline exists. These should be:
-- **Specific** — name metric definition, cohort, baseline, source, and as-of date
-- **Measurable** — pull from a wired data source
-- **Scenario-bounded** — show low/base/high cases from historical patterns or
+- **Specific**: name metric definition, cohort, baseline, source, and as-of date
+- **Measurable**: pull from a wired data source
+- **Scenario-bounded**: show low/base/high cases from historical patterns or
   label assumptions unverified
-- **Decision-triggering** — name owner, review date, and hit/miss action
+- **Decision-triggering**: name owner, review date, and hit/miss action
 
 ### KPI target patterns by decision state
 
@@ -156,7 +156,7 @@ and explicit note that they are context rather than a target.
 A plan derives a budget and an annual goal. It does not produce a 12-month month-by-month forecast that's reliably accurate to the dollar.
 
 Forecast confidence depends on the model, data history, input stability, and
-operating process—not listing status or ARR. Label every projection with its
+operating process: not listing status or ARR. Label every projection with its
 source dates, assumptions, range, limitations, owner, and recalibration rule.
 Treat unsupported point estimates as illustrative scenarios.
 
@@ -166,7 +166,7 @@ What the plan commits to honestly:
 - The 90-day roadmap (Section 9) is what's actionable now
 - Month-to-month projection is illustrative, not promised
 
-Founders who over-engineer the forecast end up explaining variance every month instead of executing. The plan should resist this — name the annual target, the quarterly KPIs, and the kill criteria. Don't promise the month.
+Founders who over-engineer the forecast end up explaining variance every month instead of executing. The plan should resist this, name the annual target, the quarterly KPIs, and the kill criteria. Don't promise the month.
 
 Full context in `budget-planning.md`.
 
@@ -229,4 +229,4 @@ Where possible, discover currently callable, authorized data sources and
 automate a review only after confirming schemas, owners, and data boundaries.
 Otherwise produce a manual Markdown review from user-supplied exports. Choose an
 email, sheet, or dashboard from audience, decision cadence, maintenance
-capacity, and approved tooling—not from funding stage.
+capacity, and approved tooling: not from funding stage.

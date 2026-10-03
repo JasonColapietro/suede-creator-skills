@@ -13,10 +13,10 @@ any implementation lane mutates the worktree.
 
 Before launch, require all three inputs:
 
-- **Repo** — an absolute repository path. Relative paths and `~` fail closed.
-- **Scope** — the requested multi-file change, including any protected paths or
+- **Repo**: an absolute repository path. Relative paths and `~` fail closed.
+- **Scope**: the requested multi-file change, including any protected paths or
   constraints.
-- **Budget** — `light`, `standard`, or `deep`.
+- **Budget**: `light`, `standard`, or `deep`.
 
 Also detect and pass optional context when available: `deploys` (whether the
 repo has a deploy surface), `liveUrl` (the read-only production surface), and
@@ -24,7 +24,7 @@ repo has a deploy surface), `liveUrl` (the read-only production surface), and
 block a non-deploying repository, but do not silently discard known values.
 
 When the user names a model for the workers (`workerModel`: `sonnet`, `opus`,
-`haiku`, or `fable`), pass it — every worker call then runs on that model while
+`haiku`, or `fable`), pass it: every worker call then runs on that model while
 orchestration stays on the session model. Omitted, workers inherit the session
 model silently; if the session sits on an expensive model and the user did not
 choose it for workers, say so before launch instead of letting the default
@@ -50,7 +50,7 @@ repository's `install.sh`, which copies the profiles into `~/.claude/agents`.
 Claude Workflow exposes no Node `process` global, so the workflow cannot infer
 its package namespace. The calling skill must derive it from how this skill was
 invoked and pass it on every launch. When the invoked name carries a plugin
-prefix, `agentNamespace` is that prefix verbatim — `suede-skills` from the full
+prefix, `agentNamespace` is that prefix verbatim: `suede-skills` from the full
 plugin, `suede-agent-workflows` from the focused orchestration plugin. A bare
 invoked name with no prefix, installed by `install.sh` or copied by hand, takes
 the empty string. This is runtime context, not a user choice. A missing or
@@ -59,13 +59,13 @@ unknown value fails before the first agent call.
 The workflow also cannot locate its own bundled helper scripts. Pass `helperDir`:
 the absolute path of the invoked skill's `workflows/helpers` directory (for this
 install, `<skill base directory>/workflows/helpers`). The clamped Bash commands
-run these `.cjs` helpers — the per-spawn clamp cannot verify a rule that is
+run these `.cjs` helpers: the per-spawn clamp cannot verify a rule that is
 multi-line or longer than roughly 400 characters, so inline `node -e` payloads
 are not usable. A missing or whitespace-containing path fails before the first
 agent call; a missing helper file surfaces as the Scout setup failure.
 Payload-carrying helper invocations are admitted by pinned prefixes (helper
 path plus worktree, temp root, or base SHA) rather than exact strings; each
-helper validates its remaining argv, and the diff attestations — not the clamp —
+helper validates its remaining argv, and the diff attestations, not the clamp,
 remain the check that what was applied matches the selected bundle.
 
 The selected patch reaches the applier as bounded base64 chunks staged into the
@@ -148,13 +148,13 @@ halt output now names which happened, and `haltDetail` carries the counts behind
 
 | Reason | What it means |
 |---|---|
-| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence — rerun. |
+| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence: rerun. |
 | `no candidate reached Select` | The search emptied upstream for some other reason; read `graph.dropped`. |
 | `every finalist lost its score before Select` | Finalists existed and were pruned as unscored. |
 | `every finalist was pruned before Select` | Finalists were pruned for a non-score reason. |
 | `every finalist carries a degraded or missing score` | Finalists reached Select without a valid score. |
 | `every finalist failed deterministic plan eligibility` | Real rejection. `haltDetail.eligibilityRejections` lists every reason. |
-| `no safe graph winner` | None of the above fits — read the graph. |
+| `no safe graph winner` | None of the above fits: read the graph. |
 
 `haltDetail.infrastructureDegraded` is independent of the reason: both can be
 true at once. Read the reason for what stopped Select and that flag for what
@@ -163,7 +163,7 @@ degraded the pool feeding it.
 Score calls are read-only and idempotent, so a transport-level death is retried:
 twice per call, capped run-wide at 5% of the agent ceiling, and refused entirely
 once the remaining budget falls to the reserved floor (20% of the ceiling). A
-malformed score is never retried — the schema is enforced at the tool layer, so
+malformed score is never retried: the schema is enforced at the tool layer, so
 an invalid score is a judgment to keep, not a connection to redial. Every
 attempt and every refused retry lands in `graph.scoreRetries`, and
 `scoreReliability` rides out in the result on every run, halted or not: a flake

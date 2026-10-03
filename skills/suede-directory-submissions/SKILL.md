@@ -9,7 +9,7 @@ metadata:
 
 Suede treats directory distribution as a verifiable discovery layer, not a submission-count contest. Build the user's backlink and buyer-discovery foundation by selecting the right directories, sequencing them around real launch moments, adapting truthful positioning, and checking that each listing and backlink actually landed.
 
-**Iron Law — approval is per destination:**
+**Iron Law, approval is per destination:**
 
 ```
 No external submission, account creation, paid placement, or review request
@@ -65,7 +65,7 @@ evidence. See `references/positioning-variations.md` for templates.
 | Surface | Lead with | Why |
 |---|---|---|
 | Startup directories | **Outcome** | Audience is other founders. They care what it does. |
-| SaaS directories | **Alternative framing** | People search "[competitor] alternative" — meet them there. |
+| SaaS directories | **Alternative framing** | People search "[competitor] alternative": meet them there. |
 | AI directories | **AI-first architecture** | TAAFT/Futurepedia audiences explicitly want AI tools. |
 | Agent/MCP directories | **Agent/MCP angle** | Use only for a live compatible capability. |
 | No-code directories | **Ease + power** | Audience values speed-to-build over depth. |
@@ -151,7 +151,7 @@ Per submission:
 8. Once live, fetch the canonical listing URL, locate the anchor pointing at the
    destination in the rendered HTML, and record its `rel` value, redirect
    behavior, resolved destination, and the check date in the tracker. Absence of
-   `rel` in response headers does not prove link attributes — inspect the
+   `rel` in response headers does not prove link attributes: inspect the
    rendered page, and log the method used.
 
 **Reporting rule:** a listing is reported **live** only when the tracker's Live
@@ -295,15 +295,15 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 3. **Don't treat directories as your entire GTM.** Compare them with content, community, reviews, partnerships, and other measured channels.
 4. **Don't churn listings without evidence.** Set a review cadence from product
    changes, platform notices, and observed listing issues.
-5. **Don't over-index on launch-day spike.** The flywheel is templates + alternatives + reviews + ongoing content — not one day of PH.
+5. **Don't over-index on launch-day spike.** The flywheel is templates + alternatives + reviews + ongoing content, not one day of PH.
 
 ---
 
 ## Task-Specific Questions
 
-1. **What are you launching?** (Category changes tier mix — AI vs traditional SaaS vs no-code vs dev tool.)
+1. **What are you launching?** (Category changes tier mix. AI vs traditional SaaS vs no-code vs dev tool.)
 2. **When is launch day?** (Work backward from verified platform requirements.)
-3. **Do you have destination pages built?** (Alternatives, use cases, templates — if not, build first.)
+3. **Do you have destination pages built?** (Alternatives, use cases, templates: if not, build first.)
 4. **Which flagship surface is being considered, and what do its current rules require?**
 5. **How many eligible users could receive a policy-compliant review request?**
 6. **Do you have a live tested MCP or agent capability?** (If yes, verify compatible registries.)
@@ -317,15 +317,15 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 
 When the user asks for a directory plan, return:
 
-1. **Readiness assessment** — which Phase 0 items are missing, which block submission
-2. **Tier selection** — which tiers apply, which to skip, why
-3. **Submission order** — evidence-backed batches mapped to current requirements
-4. **Destination page list** — what to build first if missing
-5. **Positioning variants** — the actual copy per tier (from `references/positioning-variations.md`)
-6. **Flagship listing timeline** — mapped from current rules to calendar dates
-7. **Policy-compliant review plan** — eligible audience, authorization, copy, cadence
-8. **Weekly measurement plan** — baselines and user-approved goals
-9. **Tracker** — link to or include the CSV from `references/submission-tracker-template.csv`
+1. **Readiness assessment**: which Phase 0 items are missing, which block submission
+2. **Tier selection**: which tiers apply, which to skip, why
+3. **Submission order**: evidence-backed batches mapped to current requirements
+4. **Destination page list**: what to build first if missing
+5. **Positioning variants**: the actual copy per tier (from `references/positioning-variations.md`)
+6. **Flagship listing timeline**: mapped from current rules to calendar dates
+7. **Policy-compliant review plan**: eligible audience, authorization, copy, cadence
+8. **Weekly measurement plan**: baselines and user-approved goals
+9. **Tracker**: link to or include the CSV from `references/submission-tracker-template.csv`
 
 Keep the plan actionable. Every item should be something the user can do today.
 

@@ -5,14 +5,14 @@ description: "Suede-owned SEO and generative-search audit discipline. Runs a nin
 
 # Suede SEO Audit
 
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill — `ship`, `ship-with-caveats`,
+Every check, gate, and verdict in this skill (`ship`, `ship-with-caveats`,
 `hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below — is a **recommendation to the user, not a control on the
+proceed" line below) is a **recommendation to the user, not a control on the
 agent**. Run every check, report the results honestly, and complete the
 requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception — if a finding is extremely risky (data loss,
+you do.** Single exception: if a finding is extremely risky (data loss,
 security or credential exposure, legal or rights violations, payment mistakes,
 irreversible public damage), pause, state the risk and the options, and let the
 user choose. Their choice is final.
@@ -61,7 +61,7 @@ accessible.
 
 Run all lanes. Score each A-F at the end. State explicitly when a check was
 skipped and why. The detailed per-lane checklists live in this skill's
-`references/` folder — read the relevant file when you run the lane:
+`references/` folder. Read the relevant file when you run the lane:
 
 | Lanes | Checklist file |
 |---|---|
@@ -158,7 +158,7 @@ When schema is missing or broken, provide the exact corrected JSON-LD block
 inline in the findings. Do not describe it in prose.
 
 Validity and truthfulness are necessary and not sufficient. Correct markup can
-still describe a structure the prose does not have — a `FAQPage` whose questions
+still describe a structure the prose does not have: a `FAQPage` whose questions
 are `<summary>` elements is one retrieval block however many entries it
 declares, and its text can match the visible text character for character while
 that stays true. Lane 4 measures the block; Lane 5 decides whether the schema
@@ -186,7 +186,7 @@ hallucination-risk claims. Google Search ignores `llms.txt`; record one only
 when another named consumer documents support, and never grade its presence as
 a search signal. `suede-ai-seo` is the canonical owner of the extractability
 standard behind this lane and of the reconciliation between Google's published
-stance and what the non-Google answer engines actually reward — cite it rather
+stance and what the non-Google answer engines actually reward: cite it rather
 than re-deriving either, and land any threshold change there first.
 
 Lane 6 grade drops to C or below if: the opening section cannot state the
@@ -257,7 +257,7 @@ Severity guide:
 
 ## 4. Scoring
 
-Grade each lane A-F. Grades are mechanical — derived from finding counts, not
+Grade each lane A-F. Grades are mechanical: derived from finding counts, not
 impression:
 
 | Grade | Rule |
@@ -301,13 +301,13 @@ Audited URL:
 Audit date:
 Source checked: [live URL | source file | both]
 
---- KEYWORD BRIEF (Lane 0 — omit if not requested) ---
-Primary query theme: [query family] — [intent] — [evidence source/date]
+--- KEYWORD BRIEF (Lane 0: omit if not requested) ---
+Primary query theme: [query family], [intent], [evidence source/date]
 Demand: [sourced value/range | unknown]
-Supporting query themes: [query — observed/inferred — evidence]
+Supporting query themes: [query, observed/inferred, evidence]
 Related topics and entities: [list grouped by reader need]
-Content gaps: [subject — checked URL/source — reader value — priority]
-Search-feature eligibility: [feature — eligible/validated/observed/not verified]
+Content gaps: [subject, checked URL/source, reader value, priority]
+Search-feature eligibility: [feature: eligible/validated/observed/not verified]
 Content brief: [reader-first section, entity, link, and source plan]
 
 --- METADATA ---
@@ -321,25 +321,25 @@ Primary CTA (text and destination):
 Secondary CTA (text and destination):
 
 --- CONTENT ADDITIONS ---
-Content brief (from Lane 0 — omit if not requested):
+Content brief (from Lane 0: omit if not requested):
   Length: [reader-driven scope; no universal word-count target]
   Required subjects: [list derived from intent and verified source gaps]
   Topic/entity coverage:
-    Primary subject: [clear/unclear] — evidence: [locations]
-    Supporting subjects: [covered/missing] — evidence: [locations]
+    Primary subject: [clear/unclear], evidence: [locations]
+    Supporting subjects: [covered/missing], evidence: [locations]
 FAQ additions:
-  Q: [real reader/searcher question — cite observed wording when available]
+  Q: [real reader/searcher question: cite observed wording when available]
   A: [complete answer in the length the reader needs; subject explicit]
 Internal links to add (anchor text → destination URL):
 External links to add (anchor text → destination URL):
 Competitor content gap:
   Competitor: [URL or "derived from niche"]
-  Missing sections: [H2 text — target query — priority: CRITICAL|IMPORTANT|INFORMATIONAL]
+  Missing sections: [H2 text, target query, priority: CRITICAL|IMPORTANT|INFORMATIONAL]
 
 --- SCHEMA ---
 Schema changes:
   [Paste corrected or new JSON-LD block here]
-Retrievability: [property path] — [prose-backed | indexable-only | decorative | unclassified] — evidence: [quoted prose | feature doc URL | none]
+Retrievability: [property path], [prose-backed | indexable-only | decorative | unclassified], evidence: [quoted prose | feature doc URL | none]
 Schema-only claims: [property = value with no prose counterpart | none]
 Structure claim vs prose: [@type] declares [N] | visible headings [N] | [match/mismatch]
 
@@ -356,15 +356,15 @@ Authoritativeness signals:
 Trustworthiness gaps:
 
 --- TOPIC CLUSTER MAP (omit for single-page audits) ---
-Pillar: [page] — [target keyword]
-  Cluster: [page] — [sub-topic keyword]
+Pillar: [page]: [target keyword]
+  Cluster: [page]: [sub-topic keyword]
 Orphan pages:
 Cannibalization risks:
 
 --- CORE WEB VITALS (never part of the A-F grade) ---
-LCP: [score or "not measurable" — reason]
-CLS: [score or "not measurable" — reason]
-INP: [score or "not measurable" — reason]
+LCP: [score or "not measurable": reason]
+CLS: [score or "not measurable": reason]
+INP: [score or "not measurable": reason]
 Lighthouse score (if available): Performance [N] | Accessibility [N] | Best Practices [N] | SEO [N]
 CWV Risk: low / medium / high
 CWV risk factors observed: [list or "none"]
@@ -451,18 +451,18 @@ through 3.
 
 ---
 
-## Red Flags — Stop
+## Red Flags: Stop
 
 If you catch yourself thinking any of these, stop and run the check for real:
 
-- "I know this page; I can grade it from memory." — Fetch it. Source Truth first.
-- "curl was fast, that covers Core Web Vitals." — curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
-- "I'll describe the schema fix; they can write the JSON." — Write the literal JSON-LD block.
-- "The title or description crossed a magic character limit." — Count it for
+- "I know this page; I can grade it from memory.": Fetch it. Source Truth first.
+- "curl was fast, that covers Core Web Vitals.": curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
+- "I'll describe the schema fix; they can write the JSON.": Write the literal JSON-LD block.
+- "The title or description crossed a magic character limit.": Count it for
   preview diagnostics, then judge accuracy and likely truncation in context.
   Google publishes no fixed character limit.
-- "A traffic estimate will make this finding land harder." — Never invent traffic, rankings, or ROI.
-- "The lane mostly passes; I'll skip the rest of the checklist." — Every item gets pass, fail, or N/A.
+- "A traffic estimate will make this finding land harder.": Never invent traffic, rankings, or ROI.
+- "The lane mostly passes; I'll skip the rest of the checklist.": Every item gets pass, fail, or N/A.
 
 ---
 
