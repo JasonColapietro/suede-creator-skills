@@ -151,9 +151,7 @@ checks.
 
 ### GitHub Pages proof
 
-This site is the GitHub Pages surface generated from the public
-suede-creator-skills repo, not a separate marketing site. The page itself is the
-proof. It ships from the same history as the skills it describes: one author, and every change is a commit on main.
+Trace the docs and skills through the same public repository. This GitHub Pages site ships from the suede-creator-skills history: one author, with every change recorded as a commit on main.
 
 ### Visibility grader explanation
 
@@ -164,7 +162,7 @@ inspection holds the page at C, and a broken primary CTA holds it at D.
 
 ### Code grade explanation
 
-Use suede-code when a diff needs more than a polite review. It grades a staged
+Use suede-code to identify release risks in a staged diff. It grades a staged
 diff A-F across seven lanes, from correctness and security through tests and
 deploy readiness, and the weakest lane caps the grade. A hardcoded secret, or an
 auth check you can walk around with a request param, locks it at F with the file
@@ -175,11 +173,7 @@ findings and fix-brief workflow.
 
 Jason hired and fired six marketing firms over Suede's life. Not one registered
 Suede's property in Google Search Console, and he did not even know the tool
-existed until he got close enough to the work to see what had been skipped. You
-learn how poorly things were done when you can finally get involved, and no one
-will ever care as much as the founder/operator who has to live with the result.
-Suede Creator Skills are those misses written down as methods, and they now run
-30+ live sites and 8 iOS apps from one terminal with zero employees.
+existed until he got close enough to the work to see what had been skipped. Suede Creator Skills turns that operating experience into reusable methods for search visibility and business operations. The skills now run 30+ live sites and 8 iOS apps from one terminal with zero employees.
 
 Suede's founder is
 [Jason Colapietro](https://suedeai.ai/founder), a published author building programmable IP and creator ownership infrastructure.
@@ -475,7 +469,7 @@ worked or missed.
 
 ### Cracked stack post
 
-The label is a joke. The mechanism is a DAG.
+Coordinate complex changes with a DAG of planning, review, and delivery steps.
 
 New in Suede Creator Skills: the Agentic Adderall Stack, the pack's four
 orchestration skills (ship, agent-teams, workflow-skills,

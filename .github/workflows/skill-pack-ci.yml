@@ -50,6 +50,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Guard copy-bank wording and clipboard parity
+        run: python3 -m unittest discover -s tests -p 'test_public_copy.py' -v
+
       - name: Install locked dependencies
         run: npm ci --ignore-scripts
 
