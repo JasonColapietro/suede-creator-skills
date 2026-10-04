@@ -5,6 +5,10 @@ run live and confirmed: don't pre-fill entries from general knowledge without
 marking them clearly as unvalidated. Until a service has an entry here, treat its
 flow as unknown and discover it live during Phase 3.
 
+Record generic navigation only. Do not retain account identifiers, billing amounts,
+customer contacts, personal circumstances, or conversation excerpts in this public
+playbook. Use placeholders for any account-specific URL components.
+
 ## Format for new entries
 
 ```

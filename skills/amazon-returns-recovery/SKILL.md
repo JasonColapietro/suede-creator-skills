@@ -19,7 +19,7 @@ confirmation. Discovery is read-only; every action phase is gated.
 1. **Money like this doesn't announce itself.** Restocking fees, short refunds, and forgotten subscription charges sit unannounced in order history unless something checks.
 2. **Overturning an already-denied refund after the return window closed is the realistic ceiling of a well-reasoned exception ask**, so ask for more than a waiver when the facts support it.
 
-Read [references/example-cases.md](references/example-cases.md) before drafting a dispute: three real resolved cases with the exact wording that worked.
+Read [references/example-cases.md](references/example-cases.md) before drafting a dispute: three synthetic scenarios for practicing the workflow, not evidence of customer outcomes.
 
 ## Prerequisites
 
@@ -157,6 +157,8 @@ the same kind of money).
 - If the readback shows the waiver never posted, reopen it as a new case with the transcript quote as evidence.
 
 ## Boundaries
+
+- Keep account records, personal reasons, household details, and support transcripts in the user's private session. Never append them to skill files, public examples, or repository notes.
 
 - Nothing is disputed, canceled, or sent without the account owner's per-item confirmation; approval for one item never transfers to another. Phases 1a and 1b are read-only.
 - On a shared login, flag orders belonging to other people instead of folding them into the batch.

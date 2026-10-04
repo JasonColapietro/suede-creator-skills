@@ -1,8 +1,8 @@
 # Amazon dispute chat: click path and gotchas
 
-This is the exact flow validated live: it recovered a $44.99 restocking fee and,
-separately in the same account, a $28.50 restocking fee. Both went through this same
-path with a human associate.
+This reference records the navigation and popup-handling method for reaching a
+human associate. Account details and customer outcomes do not belong in this
+public guide. Confirm the current interface during use.
 
 ## The popup-window gotcha (read this first)
 

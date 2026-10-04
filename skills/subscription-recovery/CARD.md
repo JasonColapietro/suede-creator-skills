@@ -44,6 +44,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
+- Keep billing records, customer identifiers, personal reasons, and support transcripts in the user's private session. Public playbook updates may contain generic navigation only.
 - Never enter, store, or transcribe payment credentials, card numbers, or bank logins, and never connect a financial account.
 - Never promise a refund amount, a refund timeline, or that a dispute will succeed.
 - Never act on a service the user has not named, and never batch several services under one approval.

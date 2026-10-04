@@ -46,7 +46,7 @@ At every conversion moment, call `identify()` with a stable id, and set person p
 
 ```js
 // Normalize before use as a distinct_id, analytics tools match exact strings,
-// so "Corey@x.com" and "corey@x.com" split into two people otherwise.
+// so "Corey@example.com" and "corey@example.com" split into two people otherwise.
 export function identifyUser(email) {
   const normalized = email.trim().toLowerCase();
   window.posthog?.identify(normalized, { email: normalized });
@@ -231,7 +231,7 @@ A channel breakdown living in your analytics tool is a *report*. The thing sales
 ## Verification checklist
 
 - Click a booking CTA → URL shows `metadata[<id_param>]=<anon-uuid>`.
-- In console: `posthog.identify('test@x.com')` → click again → the param must **NOT** appear (guard works). `posthog.reset()` after.
+- In console: `posthog.identify('test@example.com')` → click again → the param must **NOT** appear (guard works). `posthog.reset()` after.
 - Hand-POST a webhook `/batch/` payload → expect `{"status":"Ok"}`, person appears merged.
 - Post-ship: first real webhook log shows `journey_linked: true`.
 - Confirm first-touch survives cross-subdomain: start on marketing site, sign up in app, check the person carries the original `$initial_utm_source`.

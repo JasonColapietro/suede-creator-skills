@@ -44,6 +44,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
+- Keep account records, personal reasons, household details, and support transcripts in the user's private session. Never append them to skill files, public examples, or repository notes.
 - Nothing is disputed, canceled, or sent without the account owner's per-item confirmation; approval for one item never transfers to another. Phases 1a and 1b are read-only.
 - On a shared login, flag orders belonging to other people instead of folding them into the batch.
 - State only true facts to an associate: order number or subscription name, item, price, fee amount. Never invent a prior contact attempt, a return reason, or a cancellation reason.

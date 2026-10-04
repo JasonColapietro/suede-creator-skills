@@ -41,3 +41,23 @@ jobs:
           fail_on_severity: high
           format: sarif
           upload_sarif: true
+
+      - name: Show scanner finding locations after failure
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report = Path("ai-plugin-scanner.sarif")
+          if report.is_file():
+              for run in json.loads(report.read_text()).get("runs", []):
+                  for result in run.get("results", []):
+                      print(json.dumps({
+                          "rule": result.get("ruleId"),
+                          "level": result.get("level"),
+                          "locations": [{
+                              "file": location.get("physicalLocation", {}).get("artifactLocation", {}).get("uri"),
+                              "line": location.get("physicalLocation", {}).get("region", {}).get("startLine"),
+                          } for location in result.get("locations", [])],
+                      }))
+          PY
