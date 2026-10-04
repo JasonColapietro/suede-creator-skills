@@ -31,11 +31,22 @@ BANNED_SALES_PHRASES = [
 ]
 
 
+# Reusable copy ships as Markdown, agent metadata, and HTML or CSV templates a
+# user opens or adapts. Fixture data files are script test inputs and LICENSE
+# files are upstream legal text, so neither is house copy; Markdown inside a
+# fixtures folder is documentation and stays covered.
+COPY_SUFFIXES = {".md", ".html", ".csv"}
+
+
 def skill_text_files():
     for path in sorted((ROOT / "skills").rglob("*")):
         if not path.is_file() or path.name == "CARD.md":
             continue
-        if path.suffix == ".md" or path.name == "openai.yaml":
+        if path.name.startswith("LICENSE"):
+            continue
+        if "fixtures" in path.parts and path.suffix != ".md":
+            continue
+        if path.suffix in COPY_SUFFIXES or path.name == "openai.yaml":
             yield path
 
 
