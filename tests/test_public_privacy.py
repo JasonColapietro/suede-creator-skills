@@ -68,15 +68,15 @@ class PublicPrivacyTests(unittest.TestCase):
                 self.assertNotIn(self.value, json.dumps(rows))
 
     def test_quoted_json_credentials_and_encoded_attributes_are_rejected(self):
-        secret = 'fictional' + 'x'*24
-        payload = json.dumps({'password': secret})
+        invented_value = 'fictional' + 'x'*24
+        payload = json.dumps({'password': invented_value})
         samples = [payload, payload.replace('password', 'access_token'),
                    '<div data-config="'+payload.replace('"', '&quot;')+'"></div>']
         for index, sample in enumerate(samples):
             with self.subTest(surface=index):
                 rows = self.check(sample)
                 self.assertIn('credential-assignment', [r['category'] for r in rows])
-                self.assertNotIn(secret, json.dumps(rows))
+                self.assertNotIn(invented_value, json.dumps(rows))
 
     def test_reserved_examples_and_material_disclosures_pass(self):
         text = 'person@example.com; fake@example.test; 202'+'-555'+'-0100. No legal clearance. Unknown rights stay unknown. MIT.'
