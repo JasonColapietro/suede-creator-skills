@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
-  Creative Review Page — a shareable ad-creative approval artifact.
+  Creative Review Page: a shareable ad-creative approval artifact.
 
   HOW TO USE (agents): replace the JSON inside <script id="review-data"> below
   with the real project. Everything else renders from it. The file is
-  self-contained — no build, no network, no dependencies. Open it in a browser,
+  self-contained: no build, no network, no dependencies. Open it in a browser,
   host it on any static host (Vercel/Netlify/GitHub Pages), or hand off the
   single .html file.
 
@@ -15,10 +15,10 @@
       value like "</script>" can never break out of the tag. All values are
       also HTML-escaped again at render time.
 
-  DATA SHAPE — see references/creative-review-page.md for the annotated spec.
+  DATA SHAPE: see references/creative-review-page.md for the annotated spec.
   Images: each frame's "image" may be a URL, a relative path, or a data URI.
   If omitted (or the file is missing), a placeholder shows the frame label +
-  the image prompt — use this for concepts not yet rendered to image.
+  the image prompt. Use this for concepts not yet rendered to image.
 -->
 <html lang="en">
 <head>
@@ -101,7 +101,7 @@
   .caption .h { font-weight: 650; }
   .caption .more { color: var(--muted); }
 
-  /* Facebook chrome — link card below image + text actions */
+  /* Facebook chrome: link card below image + text actions */
   .fb-card { display: flex; align-items: center; gap: 12px; padding: 12px; background: #f3f4f6; border-top: 1px solid var(--line); }
   .fb-card .meta { min-width: 0; flex: 1; }
   .fb-card .dom { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
@@ -144,7 +144,7 @@
 </head>
 <body>
 
-<!-- DATA — replace this JSON with your project (see the comment at the top of the file). -->
+<!-- DATA: replace this JSON with your project (see the comment at the top of the file). -->
 <script type="application/json" id="review-data">
 {
   "project": {
@@ -163,27 +163,27 @@
         { "name": "Light Labs", "partner": "Paid partnership with truvani", "initials": "LL" }
       ],
       "frames": [
-        { "label": "Hook", "prompt": "Product bag hero on soft pink, gold-lace overlay", "headline": "Finally — a plant-based protein that's third-party tested for heavy metals.", "headlineTheme": "dark" },
+        { "label": "Hook", "prompt": "Product bag hero on soft pink, gold-lace overlay", "headline": "Finally, a plant-based protein that's third-party tested for heavy metals.", "headlineTheme": "dark" },
         { "label": "The problem", "prompt": "Editorial card: 'Plants absorb more than nutrients' + Pb/As/Cd chips" },
         { "label": "Enter Light Labs", "prompt": "Clean card: 'So we sent it to Light Labs' + independent-lab note" },
         { "label": "The results", "prompt": "Results table: Arsenic / Cadmium / Lead, all within limits, green check" },
         { "label": "For context", "prompt": "'Less arsenic than your breakfast' comparison bar" },
-        { "label": "The ask", "prompt": "Product you can finally trust — CTA frame", "headline": "Protein you can finally trust." }
+        { "label": "The ask", "prompt": "Product you can finally trust (CTA frame)", "headline": "Protein you can finally trust." }
       ],
       "headlines": [
-        "Finally — a plant-based protein that's third-party tested for heavy metals.",
+        "Finally, a plant-based protein that's third-party tested for heavy metals.",
         "We tested our protein for heavy metals. Here's what an independent lab found.",
         "Most protein powders are never tested for heavy metals. Ours is."
       ],
-      "primaryText": "We tested our Plant-Based Protein for the heavy metals that hide in “clean” powders — lead, arsenic and cadmium. Here's exactly what an independent lab measured.",
+      "primaryText": "We tested our Plant-Based Protein for the heavy metals that hide in “clean” powders: lead, arsenic and cadmium. Here's exactly what an independent lab measured.",
       "destination": { "url": "shop.truvani.com", "cta": "Shop now", "offer": "72% OFF Protein Starter Kit" },
       "rollout": {
         "title": "How the whitelist runs",
         "steps": [
-          "Truvani reviews and approves the creative — Light Labs builds it.",
+          "Truvani reviews and approves the creative. Light Labs builds it.",
           "Truvani sends a Meta partnership request granting Light Labs access to this ad only.",
           "Light Labs launches it under the co-branded handle.",
-          "We report performance back — framed as a free, mutually beneficial first test."
+          "We report performance back, framed as a free, mutually beneficial first test."
         ]
       },
       "grounding": "Results are Truvani's actual Light Labs panel (Vanilla, tested Nov 13, 2025). Imagery is Truvani's own product & lifestyle photography."
@@ -234,7 +234,7 @@
 
 <script>
 /* ============================================================================
-   RENDER — generic; no need to edit when swapping the DATA JSON above.
+   RENDER: generic; no need to edit when swapping the DATA JSON above.
    ========================================================================== */
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, c => (
   { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -245,7 +245,7 @@ try {
   DATA = JSON.parse(document.getElementById("review-data").textContent);
 } catch (e) {
   document.querySelector(".wrap").innerHTML =
-    '<div class="err"><b>Couldn\'t read the review data.</b><br/>The <code>#review-data</code> block must be valid JSON — double-quoted keys and strings, no comments, no trailing commas. Parser said: ' + esc(e.message) + '</div>';
+    '<div class="err"><b>Couldn\'t read the review data.</b><br/>The <code>#review-data</code> block must be valid JSON: double-quoted keys and strings, no comments, no trailing commas. Parser said: ' + esc(e.message) + '</div>';
   throw e;
 }
 
@@ -268,7 +268,7 @@ function renderProject() {
     `<div class="eyebrow">Creative review${p.date ? " · " + esc(p.date) : ""}</div>
      <h1>${esc(line || "Ad creative")}</h1>${p.note ? `<div class="sub">${esc(p.note)}</div>` : ""}`;
   document.getElementById("footer").innerHTML =
-    `Creative review${p.agency ? " · " + esc(p.agency) : ""} — concepts for approval. Nothing here is live until you pick.`;
+    `Creative review${p.agency ? " · " + esc(p.agency) : ""}: concepts for approval. Nothing here is live until you pick.`;
 }
 
 function renderConcepts() {
@@ -371,7 +371,7 @@ function renderCopy() {
   const c = concept(), dest = c.destination || {};
   let html = "";
   if (c.headlines?.length) {
-    html += `<div class="block"><div class="eyebrow">Headline — tap to preview</div>${c.headlines.map((h, i) =>
+    html += `<div class="block"><div class="eyebrow">Headline (tap to preview)</div>${c.headlines.map((h, i) =>
       `<button class="headline-opt" aria-pressed="${i === state.headline}" data-i="${i}">
         <span class="n">${String(i + 1).padStart(2, "0")}</span><span class="t">${esc(h)}</span></button>`).join("")}</div>`;
   }
