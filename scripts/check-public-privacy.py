@@ -24,10 +24,10 @@ PATTERNS = {
     'personal-path': re.compile(r'(?:/Us' r'ers/|/ho' r'me/)[A-Za-z0-9._-]+|[A-Za-z]:\\Us' r'ers\\[^\s"\x27<>`]+'),
     'order-identifier': re.compile(r'\b\d{3}-\d{7}-\d{7}\b'),
     'ssn-shaped-identifier': re.compile(r'(?<!\d)\d{3}-\d{2}-\d{4}(?!\d)'),
-    'credential-assignment': re.compile(r'''(?i)\b(?:api[_-]?key|secret|password|access[_-]?token|auth[_-]?token)\s*[:=]\s*["']([^"'\n]{12,})["']'''),
+    'credential-assignment': re.compile(r'''(?i)\b(?:api[_-]?key|secret|password|access[_-]?token|auth[_-]?token)["']?\s*[:=]\s*["']([^"'\n]{12,})["']'''),
 }
 MONEY = re.compile(r'(?<![\w.])\d[\d,]*\.\d{2}(?!\d)')
-RECOVERY_PROOF = re.compile(r'(?:\$\d[\d,.]*.{0,100}\b(?:recovered|refunded|restocking|argued)\b|\b(?:recovered|refunded|restocking|argued)\b.{0,100}\$\d)', re.I)
+RECOVERY_PROOF = re.compile(r'(?:\$\d[\d,.]*.{0,100}\b(?:recover(?:ed|ies)|refunded|restocking|argued)\b|\b(?:recover(?:ed|ies)|refunded|restocking|argued)\b.{0,100}\$\d)', re.I | re.S)
 PHONE = re.compile(r'(?<![\w\d])(?:\+1[ .-]?)?\(?([2-9]\d{2})\)?[ .-]([2-9]\d{2})[ .-](\d{4})(?!\d)')
 
 

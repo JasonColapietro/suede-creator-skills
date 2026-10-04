@@ -55,6 +55,29 @@ class PublicPrivacyTests(unittest.TestCase):
                 self.assertIn(category, [r['category'] for r in rows])
                 self.assertNotIn(sample, json.dumps(rows))
 
+    def test_wrapped_recovery_claims_are_rejected(self):
+        samples = ['Recovered\n$'+self.value,
+                   '$'+self.value+'\nwas recovered',
+                   'Real recoveries:\n$'+self.value,
+                   '<p>Real recoveries:</p>\n<p>$'+self.value+'</p>',
+                   '<p>$'+self.value+'</p>\n<p>refunded</p>']
+        for index, sample in enumerate(samples):
+            with self.subTest(surface=index):
+                rows = self.check(sample)
+                self.assertIn('account-recovery-financial-example', [r['category'] for r in rows])
+                self.assertNotIn(self.value, json.dumps(rows))
+
+    def test_quoted_json_credentials_and_encoded_attributes_are_rejected(self):
+        secret = 'fictional' + 'x'*24
+        payload = json.dumps({'password': secret})
+        samples = [payload, payload.replace('password', 'access_token'),
+                   '<div data-config="'+payload.replace('"', '&quot;')+'"></div>']
+        for index, sample in enumerate(samples):
+            with self.subTest(surface=index):
+                rows = self.check(sample)
+                self.assertIn('credential-assignment', [r['category'] for r in rows])
+                self.assertNotIn(secret, json.dumps(rows))
+
     def test_reserved_examples_and_material_disclosures_pass(self):
         text = 'person@example.com; fake@example.test; 202'+'-555'+'-0100. No legal clearance. Unknown rights stay unknown. MIT.'
         self.assertEqual(self.check(text), [])
