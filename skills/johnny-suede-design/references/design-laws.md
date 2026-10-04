@@ -56,7 +56,7 @@ Min is the floor at ~375px; max is the ceiling at ~1440px; the vw value controls
 
 **Forms:** Every form field shows its label above the input, never as placeholder text. Placeholder is hint text only: it disappears on focus and must not carry required information. Error messages appear below the field they belong to, not as a toast. Required fields are marked; optional fields are not (the default expectation is required). A submit button is always the primary action; it is disabled only when the form is provably incomplete, never as the default initial state.
 BEFORE: `<input placeholder="Email address" />` with no visible label
-AFTER: `<label>Email address</label><input placeholder="e.g. you@studio.com" />`
+AFTER: `<label>Email address</label><input placeholder="e.g. you@example.com" />`
 
 **Modals:** A modal is for a destructive action, a focused sub-task that needs temporary full attention, or a preview that shouldn't break navigation context. It is not the first answer to "the user needs more information." Use inline expansion, a side drawer, or a dedicated route when the content is browseable or the action is reversible. Every modal has one primary action and one escape (keyboard Escape + backdrop click). Never stack modals.
 BEFORE: clicking "details" opens a modal with a scrollable list of 12 items

@@ -136,17 +136,11 @@ announcement, including a soft one.
 
 The sharpest example in the pack does not touch a repo at all.
 
-`amazon-returns-recovery` started as a test of a general-purpose
-contract-negotiation procedure. The question was whether the discipline held up
-in a dispute. Pointed at a live Amazon account, it surfaced two restocking fees
-of $44.99 and $28.50 on returns processed weeks earlier, charges the account
-owner did not know existed. Both were waived in one sitting. The first refunded
-exactly $44.99, the second came back at $30.63 because the associate rounded up
-past the fee. Then a third case outside the skill's default scope: a $372.69
-electric shaver on which a refund had already been denied once, while still
-inside the return window. Re-disputed two days after the window closed, it
-ended in a full $372.69 refund with no return required. Total across the
-documented cases: $448.31.
+`amazon-returns-recovery` applies a contract-negotiation procedure to account
+reviews: gather refund evidence, confirm the requested action with the account
+owner, and report the support response without treating a promise as a posted
+refund. Its public reference uses synthetic scenarios. Personal transaction
+details and support transcripts stay in the account owner's private session.
 
 Notice what carried over. Not domain knowledge about Amazon. The procedure
 knew nothing about restocking fees before it went looking. What carried over

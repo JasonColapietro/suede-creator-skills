@@ -1,0 +1,16 @@
+{
+  "description": "Review numerical recovery claims on public recovery surfaces; retain private case details only in private sessions. No private amounts or amount fingerprints are stored here. Contact exceptions are value- and path-scoped. Binary media require separate review.",
+  "intentional_public_contacts": [
+    {
+      "sha256": "93d3e368ab589016d5cb2d0582f583ea48aa9b9b1c2fac8586dff7adbb484e7a",
+      "path_pattern": "SECURITY\\.md|scripts/build-skill-cards\\.mjs|skills/[^/]+/CARD\\.md",
+      "reason": "Documented public security contact and generated skill cards."
+    },
+    {
+      "sha256": "cd29c5ac348a026a3ec5286890908fffb5bf6ab77f20672171be323a70c95026",
+      "path_pattern": "tests/test_contribution_ledger\\.mjs",
+      "reason": "Public provider coauthor attribution in contribution-ledger tests."
+    }
+  ],
+  "recovery_surface_path_pattern": "COPY\\.md|README\\.md|book/.*|docs/.*|https://skills\\.suedeai\\.ai/.*|(?:dist-npm/)?mcp/catalog\\.json|skills/(?:amazon-returns-recovery|subscription-recovery)/.*"
+}

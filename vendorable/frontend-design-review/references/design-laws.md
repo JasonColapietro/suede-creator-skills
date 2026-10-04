@@ -179,7 +179,7 @@ action, and it is disabled only when the form is provably incomplete, never as
 the default initial state.
 
 BEFORE: `<input placeholder="Email address" />` with no visible label
-AFTER: `<label>Email address</label><input placeholder="e.g. you@company.com" />`
+AFTER: `<label>Email address</label><input placeholder="e.g. you@example.com" />`
 
 **Modals.** A modal is for a destructive action, a focused sub-task that needs
 temporary full attention, or a preview that should not break navigation context.

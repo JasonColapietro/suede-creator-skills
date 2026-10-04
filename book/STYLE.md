@@ -52,7 +52,7 @@ future is exciting.
   a dry joke about already-authorized compute, not a literal token counter.
 - 40 of the marketing skills are adapted from `marketingskills` by Corey Haines
   under MIT. Credit belongs there. Say so if marketing skills come up.
-- `amazon-returns-recovery` has recovered $448.31 against a real account.
+- `amazon-returns-recovery` separates read-only discovery, per-item approval, and refund verification. Public examples are synthetic.
 - Design palette: background `#080808`, gold `#c8a96e`, risk red `#8b1a1a`.
 
 Anything else numeric, verify by reading the repo before you write it.

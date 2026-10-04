@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chapter 10. Shipping Into the Real World | S-Tier, the builder's book</title>
-    <meta name="description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta name="description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.">
     <meta name="keywords" content="app store release, release evidence gates, S-Tier builder's book">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="../assets/book.css">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Chapter 10. Shipping Into the Real World | S-Tier, the builder's book">
-    <meta property="og:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta property="og:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.">
     <meta property="og:url" content="https://skills.suedeai.ai/book/shipping-into-the-real-world.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chapter 10. Shipping Into the Real World | S-Tier, the builder's book">
-    <meta name="twitter:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.">
+    <meta name="twitter:description" content="The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
 {
@@ -30,13 +30,13 @@
   "@id": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html#chapter",
   "name": "Chapter 10. Shipping Into the Real World",
   "headline": "Shipping Into the Real World",
-  "description": "The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.",
+  "description": "The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.",
   "keywords": "app store release, release evidence gates, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html",
   "position": 11,
-  "wordCount": 1834,
+  "wordCount": 1759,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-09-30",
+  "dateModified": "2026-10-04",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -88,8 +88,8 @@
     <main id="main" tabindex="-1" class="shell">
       <p class="eyebrow">Part III &middot; Chapter 10</p>
       <h1>Shipping Into the Real World</h1>
-      <p class="post-meta">The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.</p>
-      <div class="book-meta"><span>1,834 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <p class="post-meta">The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.</p>
+      <div class="book-meta"><span>1,759 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>The last mile is where builders stall, and it is almost never for lack of skill. It stalls because the last mile is the first place your assumptions meet an institution that does not care about them. A compiler tells you immediately. App Review tells you in four days. Google Play tells you after the staged rollout has already reached 5% of users. The feedback loop stretches from seconds to days, and every unverified assumption you carried through the build gets billed at the new exchange rate.</p>
       <p>You can feel this the first time you wrap a website in a shell and submit it. The build works. The app runs. Rejection arrives citing guideline 4.2, minimum functionality, and now you are two weeks out from a launch date because the thing you shipped was a bookmark with an icon.</p>
@@ -111,7 +111,7 @@
       <p>The skill starts with an inventory, because one launch is usually several surfaces. A skill launch is a repo plus a README plus an install command plus social copy, and each row needs its own proof artifact: repo URL and commit hash, live URL and screenshot, install command transcript, MCP <code>tools/list</code> output, live route readback, link sweep results. Its hard gates are ordering rules. No launch copy until the live surface is verified. No install doc until the command ran from a clean temp dir after pushing. Ship gate set before any announcement, including a soft one.</p>
       <h2 id="the-lane-that-proves-the-point">The lane that proves the point</h2>
       <p>The sharpest example in the pack does not touch a repo at all.</p>
-      <p><code>amazon-returns-recovery</code> started as a test of a general-purpose contract-negotiation procedure. The question was whether the discipline held up in a dispute. Pointed at a live Amazon account, it surfaced two restocking fees of $44.99 and $28.50 on returns processed weeks earlier, charges the account owner did not know existed. Both were waived in one sitting. The first refunded exactly $44.99, the second came back at $30.63 because the associate rounded up past the fee. Then a third case outside the skill's default scope: a $372.69 electric shaver on which a refund had already been denied once, while still inside the return window. Re-disputed two days after the window closed, it ended in a full $372.69 refund with no return required. Total across the documented cases: $448.31.</p>
+      <p><code>amazon-returns-recovery</code> applies a contract-negotiation procedure to account reviews: gather refund evidence, confirm the requested action with the account owner, and report the support response without treating a promise as a posted refund. Its public reference uses synthetic scenarios. Personal transaction details and support transcripts stay in the account owner's private session.</p>
       <p>Notice what carried over. Not domain knowledge about Amazon. The procedure knew nothing about restocking fees before it went looking. What carried over was the shape: read the evidence first, itemize before arguing, build the case from facts you can point at, ask for one specific outcome, confirm the result in writing. That is the same shape as a code review, a release gate, and an SEO audit. A procedure that works outside its home domain is evidence that the procedure, not the domain knowledge, was doing the work.</p>
       <p><code>subscription-recovery</code> is the generalization, pointed at App Store, Google Play, PayPal, bank statements, and direct-bill services. It exists because somebody noticed the discipline had nothing to do with Amazon.</p>
       <h2 id="safety-stated-plainly">Safety, stated plainly</h2>

@@ -138,8 +138,7 @@ pack can grow without costing more context on every turn.
 ### Best overall explanation
 
 Suede Creator Skills is the folder of skills that runs Suede Labs, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
-lanes and argued $448.31 back out of a real Amazon account, including a refund
-denied after the return window closed. It is free under MIT for the original
+lanes and guides Amazon refund reviews using account evidence and per-item confirmation. It is free under MIT for the original
 work, with no binaries and no telemetry.
 
 ### Suedify explanation
@@ -453,9 +452,7 @@ I published Suede Creator Skills, the public `SKILL.md` pack for Codex and
 Claude Code. It is the same folder that runs Suede Labs, published for you to inspect and adapt.
 
 One skill grades a staged diff A-F across seven lanes, and a hardcoded secret
-locks the whole thing at F with the file and the line. Another argued $448.31
-back out of a real Amazon account, including a refund denied after the return
-window closed. The utility tools run offline, write local reports, and keep
+locks the whole thing at F with the file and the line. Another guides Amazon refund reviews using account evidence and per-item confirmation. The utility tools run offline, write local reports, and keep
 private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills

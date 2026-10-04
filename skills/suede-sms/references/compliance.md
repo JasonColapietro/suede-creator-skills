@@ -63,7 +63,7 @@ You're unsubscribed from [Brand] alerts. No more messages will be sent. Reply HE
 
 **HELP response**:
 ```
-[Brand] alerts: For help, visit [URL] or email [support@brand.com]. Msg & data rates may apply. Reply STOP to cancel.
+[Brand] alerts: For help, visit [URL] or email [support@example.com]. Msg & data rates may apply. Reply STOP to cancel.
 ```
 
 **Critical rules**:

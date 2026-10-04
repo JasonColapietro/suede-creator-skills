@@ -112,7 +112,7 @@ export const PAGES = [
     part: 3,
     label: "Chapter 10",
     title: "Shipping Into the Real World",
-    dek: "The last mile: App Store and Play Store gauntlets, release evidence gates, and a procedure that recovered $448.31 by running outside a repo entirely.",
+    dek: "The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.",
   },
   {
     file: "11-the-s-tier-ladder.md",

@@ -28,7 +28,7 @@ PROOF
 "Customer quote with specific result." Name, Title, Company
 [Optional: 2-3 metric callouts: "X% improvement", "Y hours saved"]
 
-[CTA Button/Link]                    [Contact: name@company.com]
+[CTA Button/Link]                    [Contact: name@example.com]
 ```
 
 ### Copy Prompts

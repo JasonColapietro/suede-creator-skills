@@ -43,7 +43,7 @@ four ideas it repeats.
 9. [Getting Found](09-getting-found.md) — distribution as an engineering surface,
    from ranking to being cited.
 10. [Shipping Into the Real World](10-shipping-into-the-real-world.md) — the last
-    mile: app stores, launch packaging, and a procedure that recovered $448.31
+    mile: app stores, launch packaging, and an account-review procedure
     outside a repo.
 
 ### Part IV. Becoming S-Tier

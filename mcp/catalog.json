@@ -284,7 +284,7 @@
       "area": "consumer",
       "specialty": "revenue",
       "lane": "Consumer recovery",
-      "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. The documented cases recovered $448.31, but never promise recovery. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
+      "description": "Use when the user wants to audit Amazon returns or Amazon-billed subscriptions, mentions a restocking fee, short or denied refund, forgotten Prime Video Channel, Audible, Kindle Unlimited, or Prime charge, or asks whether Amazon still owes or bills them. Read order, refund, and subscription evidence first; report findings and require confirmation before chat, cancellation, or dispute. Public examples are synthetic; never promise recovery or publish account details. Requires an authenticated Claude in Chrome session. NOT FOR: bank chargebacks, marketplace A-to-z seller claims, price-protection claims, or subscriptions billed outside Amazon — use subscription-recovery for those.",
       "useWhen": "The user mentions Amazon returns, restocking fees, a refund that looks short, or wants to check whether Amazon still owes them money on a past return."
     },
     {

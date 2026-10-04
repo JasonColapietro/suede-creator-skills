@@ -205,7 +205,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 
 | Skill | What it does |
 |---|---|
-| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Real recoveries: $448.31, including a previously denied refund overturned after the return window closed |
+| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Uses synthetic examples and requires per-item confirmation |
 | [`subscription-recovery`](skills/subscription-recovery) | Audit recurring charges outside Amazon across App Store, Google Play, PayPal, bank/card evidence, and direct-bill services; report findings first and require confirmation before cancellation or refund contact |
 
 ### Creator rights & release
