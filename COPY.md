@@ -70,9 +70,9 @@ Install the skills
 ### Secondary CTAs
 
 - Use suede-code to review my staged diff and give it an A-F ship grade
-- List the Suede skills that match this task and name the one that should lose
+- List the Suede skills that match this task and recommend the best fit
 - Run a copy audit on this page and return the exact rewrites
-- Open the skill folder and read the file before you trust it
+- Open the skill folder to review its inputs, workflow, and scope
 - Build a QA checklist and stop at the first gate I cannot prove
 
 ## Public Installs And MCP Copy
@@ -97,7 +97,7 @@ JSON-RPC over stdio, with no dependencies and no network calls.
 ### CTA options
 
 - Use suede-code to review my staged diff and give it an A-F ship grade
-- List the Suede skills that match this task and name the one that should lose
+- List the Suede skills that match this task and recommend the best fit
 - Run a copy audit on this page and return the exact rewrites
 - Grade this page A-F and tell me which cap decided the letter
 - Build a QA checklist and stop at the first gate I cannot prove
@@ -135,9 +135,7 @@ checks.
 
 ### GitHub Pages proof
 
-This site is the GitHub Pages surface generated from the public
-suede-creator-skills repo, not a separate marketing site. The page itself is the
-proof. It ships from the same history as the skills it describes: one author, and every change is a commit on main.
+Trace the docs and skills through the same public repository. This GitHub Pages site ships from the suede-creator-skills history: one author, with every change recorded as a commit on main.
 
 ### Visibility grader explanation
 
@@ -148,7 +146,7 @@ inspection holds the page at C, and a broken primary CTA holds it at D.
 
 ### Code grade explanation
 
-Use suede-code when a diff needs more than a polite review. It grades a staged
+Use suede-code to identify release risks in a staged diff. It grades a staged
 diff A-F across seven lanes, from correctness and security through tests and
 deploy readiness, and the weakest lane caps the grade. A hardcoded secret, or an
 auth check you can walk around with a request param, locks it at F with the file
@@ -159,11 +157,7 @@ findings and fix-brief workflow.
 
 Jason hired and fired six marketing firms over Suede's life. Not one registered
 Suede's property in Google Search Console, and he did not even know the tool
-existed until he got close enough to the work to see what had been skipped. You
-learn how poorly things were done when you can finally get involved, and no one
-will ever care as much as the founder/operator who has to live with the result.
-Suede Creator Skills are those misses written down as methods, and they now run
-30+ live sites and 8 iOS apps from one terminal with zero employees.
+existed until he got close enough to the work to see what had been skipped. Suede Creator Skills turns that operating experience into reusable methods for search visibility and business operations. The skills now run 30+ live sites and 8 iOS apps from one terminal with zero employees.
 
 Suede's founder is
 [Jason Colapietro](https://suedeai.ai/founder), a published author building programmable IP and creator ownership infrastructure.
@@ -228,7 +222,7 @@ unknown. It organizes evidence and does not clear rights.
 ### CTA options
 
 - Create a rights package for this folder and list what is missing
-- Open the skill folder and read the file before you trust it
+- Open the skill folder to review its inputs, workflow, and scope
 - Run the package script against a real release
 - Read the schema the package writes
 - Pair it with the release linter and close the gaps it names
@@ -266,7 +260,7 @@ A clean report is a draft until an operator reviews it.
 ### CTA options
 
 - Audit this release folder and rank the gaps by what blocks the release
-- Read the lint rules in the repo and disagree with them before you run the lint
+- Review the lint rules to see which release gaps the report checks
 - Open the lint script and see exactly what it reads
 - Create a rights package once the gaps are closed
 - Open the report templates
@@ -460,7 +454,7 @@ worked or missed.
 
 ### Cracked stack post
 
-The label is a joke. The mechanism is a DAG.
+Coordinate complex changes with a DAG of planning, review, and delivery steps.
 
 New in Suede Creator Skills: the Agentic Adderall Stack, the pack's four
 orchestration skills (ship, agent-teams, workflow-skills,
