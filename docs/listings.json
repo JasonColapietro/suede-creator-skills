@@ -1,0 +1,62 @@
+{
+  "$comment": "Single source for every third-party page that lists Suede Creator Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry.",
+  "verified": "2026-10-08",
+  "groups": [
+    {
+      "id": "directories",
+      "title": "Skill directories and registries",
+      "intro": "Pages built for this pack: install counts, per-skill pages, and trust scores.",
+      "items": [
+        { "name": "skills.sh", "url": "https://www.skills.sh/jasoncolapietro/suede-creator-skills", "note": "Pack page on the Vercel skills directory, grouped by lane", "featured": true },
+        { "name": "SkillsMP", "url": "https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills", "note": "Pack page with every skill collected", "featured": true },
+        { "name": "SkillsLLM", "url": "https://skillsllm.com/skill/suede-creator-skills", "note": "Verified pack listing", "featured": true },
+        { "name": "HOL Plugin Registry", "url": "https://hol.org/registry/plugins/suede-ai%2Fsuede-skills", "note": "Plugin page with a published trust score", "featured": true },
+        { "name": "Skills Directory", "url": "https://www.skillsdirectory.com/authors/jasoncolapietro", "note": "Author page with a graded page for each skill", "featured": true },
+        { "name": "ClaudSkills", "url": "https://claudskills.com/author/jasoncolapietro/", "note": "Author page in the ClaudSkills registry", "featured": true },
+        { "name": "skills.sh author page", "url": "https://www.skills.sh/jasoncolapietro", "note": "Author profile on skills.sh" },
+        { "name": "Skills Directory: suede-seo-audit", "url": "https://www.skillsdirectory.com/skills/jasoncolapietro-suede-seo-audit", "note": "Skill page for the SEO, AEO and AI EO audit" },
+        { "name": "ClaudSkills: suede-seo-audit", "url": "https://claudskills.com/skills/suede-seo-audit/", "note": "Skill page for the SEO, AEO and AI EO audit" },
+        { "name": "SkillHub: suede-seo-audit", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-seo-audit", "note": "Skill page on SkillHub" },
+        { "name": "SkillHub: suede-code", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-code", "note": "Skill page for review plus the A-F ship grade" }
+      ]
+    },
+    {
+      "id": "mcp",
+      "title": "MCP server and package registries",
+      "intro": "Where the Suede Skills MCP server is published and indexed.",
+      "items": [
+        { "name": "Official MCP Registry", "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest", "note": "io.github.JasonColapietro/suede-skills-mcp", "featured": true },
+        { "name": "npm", "url": "https://www.npmjs.com/package/suede-skills-mcp", "note": "suede-skills-mcp package", "featured": true },
+        { "name": "MCP Market", "url": "https://mcpmarket.com/server/suede-creator-skills", "note": "MCP server listing", "featured": true },
+        { "name": "npmx", "url": "https://npmx.dev/package/suede-skills-mcp", "note": "Package page" },
+        { "name": "Libraries.io", "url": "https://libraries.io/npm/suede-skills-mcp", "note": "Package and dependency page" },
+        { "name": "Socket", "url": "https://socket.dev/npm/package/suede-skills-mcp", "note": "Supply-chain security report for the package" }
+      ]
+    },
+    {
+      "id": "lists",
+      "title": "Curated lists",
+      "intro": "Community lists that include the pack.",
+      "items": [
+        { "name": "Awesome Claude Skills (awesomeclaude.ai)", "url": "https://awesomeclaude.ai/awesome-claude-skills", "note": "Development and code tools", "featured": true },
+        { "name": "VoltAgent/awesome-agent-skills", "url": "https://github.com/VoltAgent/awesome-agent-skills", "note": "Community skills", "featured": true },
+        { "name": "GetBindu/awesome-claude-code-and-skills", "url": "https://github.com/GetBindu/awesome-claude-code-and-skills", "note": "Comprehensive skill collections" },
+        { "name": "BehiSecc/awesome-claude-skills", "url": "https://github.com/BehiSecc/awesome-claude-skills", "note": "Development and code tools" },
+        { "name": "karanb192/awesome-claude-skills", "url": "https://github.com/karanb192/awesome-claude-skills", "note": "Skill collections" },
+        { "name": "hashgraph-online/awesome-ai-plugins", "url": "https://github.com/hashgraph-online/awesome-ai-plugins", "note": "Development and workflow" },
+        { "name": "gmh5225/awesome-skills", "url": "https://github.com/gmh5225/awesome-skills", "note": "Skill collections" },
+        { "name": "JackyST0/awesome-agent-skills", "url": "https://github.com/JackyST0/awesome-agent-skills", "note": "Skills collections" },
+        { "name": "Chat2AnyLLM/awesome-claude-skills", "url": "https://github.com/Chat2AnyLLM/awesome-claude-skills", "note": "Source catalog" }
+      ]
+    },
+    {
+      "id": "tracking",
+      "title": "Open-source tracking",
+      "intro": "Indexes that track the repository itself.",
+      "items": [
+        { "name": "Trendshift", "url": "https://trendshift.io/repositories/82031", "note": "Repository trend page", "featured": true },
+        { "name": "ecosyste.ms", "url": "https://awesome.ecosyste.ms/projects/github.com%2FJasonColapietro%2Fsuede-creator-skills", "note": "Project page in the ecosyste.ms awesome index" }
+      ]
+    }
+  ]
+}

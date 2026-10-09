@@ -122,6 +122,14 @@ Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_sk
 
 </details>
 
+## Find it on
+
+<!-- listings:start -->
+Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
+
+All 28 directories, registries and curated lists, verified October 8, 2026: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
+<!-- listings:end -->
+
 ## Try it right now
 
 Install the pack, then give your agent a page to audit:
@@ -290,7 +298,7 @@ python3 -m pip install PyYAML
 
 ## About the creator
 
-**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes.
+**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede Labs is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
 
