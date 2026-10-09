@@ -70,6 +70,12 @@ Hermes installs the whole skill folder â€” `references/`, `agents/`, `evals/` â€
 npx skills add JasonColapietro/suede-creator-skills
 ```
 
+**Python (pip route):** install the package from PyPI, then load the pack into your agent. `--target codex` installs into Codex, and existing folders are kept unless you pass `--force`:
+
+```bash
+pipx install suede-creator-skills && suede-skills install
+```
+
 **Prefer a clone?** `install.sh` copies every skill into `~/.claude/skills/` and prints the installed count:
 
 ```bash

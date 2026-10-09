@@ -1,0 +1,6 @@
+graft src/suede_creator_skills/skills
+include src/suede_creator_skills/VERSION src/suede_creator_skills/catalog.json src/suede_creator_skills/py.typed
+include LICENSE NOTICE.md README.md
+graft licenses
+prune dist
+global-exclude __pycache__ *.py[cod] .DS_Store
