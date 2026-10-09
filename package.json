@@ -30,6 +30,6 @@
     "test:indexnow": "node --test scripts/indexnow-submit.test.mjs"
   },
   "dependencies": {
-    "js-yaml": "5.4.1"
+    "js-yaml": "5.4.3"
   }
 }
