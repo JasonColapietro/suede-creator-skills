@@ -21,7 +21,10 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build:
+  # Not named `build`: that context is the required check produced by
+  # skill-pack-ci.yml, and a second job with the same name would blur it.
+  pypi-build:
+    name: pypi-build
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -86,7 +89,7 @@ jobs:
           retention-days: 7
 
   publish:
-    needs: build
+    needs: pypi-build
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
