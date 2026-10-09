@@ -86,6 +86,15 @@ function bookKeywords(file) {
   return list;
 }
 
+// <title> stays within 60 characters: full brand suffix, else short, else none.
+function chapterTitle(page) {
+  const base = `${page.label}. ${page.title}`;
+  for (const suffix of [" | S-Tier, the builder's book", " | S-Tier", ""]) {
+    if ((base + suffix).length <= 60) return base + suffix;
+  }
+  return base;
+}
+
 function shell({ title, description, keywords, canonical, jsonLd, body, depth }) {
   const up = depth === 0 ? "../" : "../";
   return `<!doctype html>
@@ -249,7 +258,7 @@ sources.forEach((page, index) => {
 
   const keywords = bookKeywords(`${page.slug}.html`);
   const html = shell({
-    title: `${page.label}. ${page.title} | S-Tier, the builder's book`,
+    title: chapterTitle(page),
     description: page.dek,
     keywords,
     canonical,
