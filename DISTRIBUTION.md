@@ -2,44 +2,67 @@
 
 Where the Suede skill pack is listed, where it is not, what is stale, and what it takes to close each gap. Keep this file current when a listing changes. Numbers below are as of the last audit date and are not maintained by the validator.
 
-Last audit: 2026-09-05. Read-only research by four web-reader agents plus local checks. Nothing was submitted, claimed, or posted during the audit.
+Last audit: 2026-10-08. Every listing below was loaded and its entry seen on that date. Nothing was submitted, claimed, or posted during the audit. The previous audit was 2026-09-05.
 
-Ground truth on the audit date: 74 skills, repository `JasonColapietro/suede-creator-skills`, homepage `https://skills.suedeai.ai`, GitHub description already states 74, 20 GitHub topics set (including `claude-code-plugin`, `claude-skills`, `agent-skills`, `codex`, `mcp-server`).
+Ground truth on the audit date: 76 skills, repository `JasonColapietro/suede-creator-skills`, homepage `https://skills.suedeai.ai`, MCP package `suede-skills-mcp` on npm and `io.github.JasonColapietro/suede-skills-mcp` in the official MCP Registry. The GitHub description no longer states a count, so it cannot go stale; 20 GitHub topics set.
+
+**Linked listings live in [`docs/listings.json`](docs/listings.json).** That file is the single source for every third-party page the site links to: `scripts/build-listings.mjs` renders it into [`docs/listings.html`](https://skills.suedeai.ai/listings.html), the README "Find it on" block, the homepage "Listed on" strip, and the homepage `SoftwareSourceCode` `sameAs`, and `npm run validate` fails when any of them drifts. Add a URL there only after loading it and seeing the entry, then run `npm run build:listings`. This ledger tracks status, staleness, and gaps; it does not replace the JSON.
 
 ## Listed
 
+Every row here is also in `docs/listings.json` unless marked otherwise. Staleness is what the third-party page said on 2026-10-08 against the true count of 76.
+
 | Directory | Status | Evidence | Staleness | Fix |
 | --- | --- | --- | --- | --- |
-| skills.sh (Vercel `npx skills`) | Listed, automatic | https://www.skills.sh/jasoncolapietro/suede-creator-skills shows 992 installs; top installs are suede-agent-teams, suede-ai-eval, suede-code, suede-code-grader, suede-code-review | Shows "79 skills" against 74 | No claim mechanism exists. The count refreshes on re-crawl or install traffic. Nothing to file. |
-| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive Skill Collections" | README entry reads "67 MIT-licensed skills for Claude Code and Codex" | 67 vs 74 | PR opened 2026-09-06: GetBindu/awesome-claude-code-and-skills#194 |
-| awesomeclaude.ai/awesome-claude-skills (backed by webfuse-com/awesome-claude) | Listed under "Development & Code Tools" | Entry reads "23-skill pack for agent orchestration with WIP collision detection and rollback trees" | Description is from the first release and describes one skill, not the pack | PR to webfuse-com/awesome-claude replacing the description |
-| BehiSecc/awesome-claude-skills | Listed | Same "23-skill pack" line as above | Same | PR opened 2026-09-06: BehiSecc/awesome-claude-skills#677 |
-| ComposioHQ/awesome-claude-skills | Pending | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design) is open; rewritten 2026-09-05 to a README-only entry linking to the vendorable copy, and its validate check now passes | The pack itself is not listed there | Nudge or wait; a pack entry is a separate submission |
-| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Submitted, awaiting review | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement; no public acknowledgement URL yet) | Not listed until Anthropic accepts it | Watch `anthropics/claude-plugins-official` for the entry; nothing else to file |
-| SaaSHub | Listed, wrong product | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here |
+| skills.sh (Vercel `npx skills`) | Listed, automatic | https://www.skills.sh/jasoncolapietro/suede-creator-skills (pack page, grouped by lane via `skills.sh.json`) and the author page https://www.skills.sh/jasoncolapietro | Says 81 skills against 76 | No claim mechanism. The count refreshes on re-crawl or install traffic. |
+| SkillsMP (skillsmp.com) | Listed, automatic (was Not listed on 2026-09-05) | https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills | Says 79 against 76 | Crawl-based; wait for the next crawl. |
+| SkillsLLM | Listed | https://skillsllm.com/skill/suede-creator-skills (verified pack listing) | None noted | Nothing to do. |
+| HOL Plugin Registry (hol.org) | Listed | https://hol.org/registry/plugins/suede-ai%2Fsuede-skills with a published trust score | Says 79 against 76 | Re-scan through the HOL scanner this repo already runs in CI. |
+| Skills Directory (skillsdirectory.com) | Listed | Author page https://www.skillsdirectory.com/authors/jasoncolapietro, a graded page per skill (for example `jasoncolapietro-suede-seo-audit`), and the Grade A badge in the README | Says 80 against 76 | Crawl-based. |
+| ClaudSkills (claudskills.com) | Listed | Author page https://claudskills.com/author/jasoncolapietro/ and skill page `suede-seo-audit` | Says 77 against 76, and links the old `jasoncolapietro.github.io` homepage instead of `skills.suedeai.ai` | Ask for the homepage URL to be updated; the count follows the crawl. |
+| SkillHub (skillhub.club) | Listed (was in the "smaller, crawl GitHub" row on 2026-09-05) | Skill pages for `suede-seo-audit` and `suede-code` | None noted | Nothing to do. |
+| Official MCP Registry | Listed (was Not listed on 2026-09-05) | `io.github.JasonColapietro/suede-skills-mcp`, latest version at https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest | `server.json` description said "71 Suede skills" and `websiteUrl` pointed at the old github.io homepage; both fixed in this change and live on the next `mcp-publisher` run | Republish `server.json` with the next release. PulseMCP ingests from here. |
+| npm | Listed (was Not listed on 2026-09-05) | https://www.npmjs.com/package/suede-skills-mcp, also indexed by npmx.dev, Libraries.io, and Socket (supply-chain report) | None noted | Nothing to do. |
+| MCP Market (mcpmarket.com) | Listed | https://mcpmarket.com/server/suede-creator-skills | Says 23 skills, and the page carries a "Claim this listing" link | Owner action: claim the listing, then correct the description. |
+| Awesome Claude Skills (awesomeclaude.ai, backed by webfuse-com/awesome-claude) | Listed under "Development and code tools" | https://awesomeclaude.ai/awesome-claude-skills | Still the first-release "23-skill pack" line | PR to webfuse-com/awesome-claude replacing the description. |
+| BehiSecc/awesome-claude-skills | Listed | https://github.com/BehiSecc/awesome-claude-skills | Same "23-skill pack" line | PR opened 2026-09-06: BehiSecc/awesome-claude-skills#677. Status not rechecked from this session. |
+| GetBindu/awesome-claude-code-and-skills | Listed under "Comprehensive skill collections" | https://github.com/GetBindu/awesome-claude-code-and-skills | Says 67 against 76 | PR opened 2026-09-06: GetBindu/awesome-claude-code-and-skills#194. Status not rechecked from this session. |
+| gmh5225/awesome-skills | Listed (new) | https://github.com/gmh5225/awesome-skills | Says 67 against 76 | PR to the repo with the replacement line below. |
+| VoltAgent/awesome-agent-skills | Listed (new), community skills | https://github.com/VoltAgent/awesome-agent-skills | None noted | Nothing to do. |
+| karanb192/awesome-claude-skills | Listed (new), skill collections | https://github.com/karanb192/awesome-claude-skills | None noted | Nothing to do. |
+| hashgraph-online/awesome-ai-plugins | Listed (new), development and workflow | https://github.com/hashgraph-online/awesome-ai-plugins | None noted | Nothing to do. |
+| JackyST0/awesome-agent-skills | Listed (new), skills collections | https://github.com/JackyST0/awesome-agent-skills | None noted | Nothing to do. |
+| Chat2AnyLLM/awesome-claude-skills | Listed (new), source catalog | https://github.com/Chat2AnyLLM/awesome-claude-skills | None noted | Nothing to do. |
+| Trendshift | Listed (new) | https://trendshift.io/repositories/82031 | None noted | Nothing to do. |
+| ecosyste.ms awesome index | Listed (new) | https://awesome.ecosyste.ms/projects/github.com%2FJasonColapietro%2Fsuede-creator-skills | None noted | Nothing to do. |
+| ComposioHQ/awesome-claude-skills | Pending, not in `docs/listings.json` | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design), README-only entry linking the vendorable copy | The pack itself is not listed there; checked again 2026-10-08 | A pack entry is a separate submission (see Not listed). |
+| SaaSHub | Listed, wrong product; not in `docs/listings.json` | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here. |
 
 ## Not listed
 
-Reach is inferred from stars or self-reported traffic. "Owner action" means an account, form, or login only the owner can operate.
+Checked 2026-10-08 unless the row says otherwise. Reach is inferred from stars or self-reported traffic. "Owner action" means an account, form, or login only the owner can operate.
 
 | Directory | Reach | How to get listed | Owner action |
 | --- | --- | --- | --- |
 | hesreallyhim/awesome-claude-code | 74.5k stars | PR per CONTRIBUTING.md | PR to a third-party repo |
 | ComposioHQ/awesome-claude-skills (pack entry) | 53.6k stars | PR with their template | PR to a third-party repo |
-| punkpeye/awesome-mcp-servers | 94.3k stars | PR against README | PR to a third-party repo; needs a runnable install line |
-| SkillsMP (skillsmp.com) | Tens of thousands of skills indexed | Automatic GitHub crawl; no form found | None known; wait for crawl |
-| claudemarketplaces.com | Claims 380k monthly visitors | Crawl-based; no form found | Unknown |
+| punkpeye/awesome-mcp-servers | 94.3k stars | PR against README; the npm package now gives it the runnable install line it asks for (`npx suede-skills-mcp`) | PR to a third-party repo |
+| travisvn/awesome-claude-skills | Large awesome list | PR against README | PR to a third-party repo |
+| RankSpotAI/awesome-seo-agent-skills | SEO-specific list, high fit for `suede-seo-audit` and `suede-ai-seo` | PR against README | PR to a third-party repo |
+| Anthropic official marketplace (`anthropics/claude-plugins-official`) | Default Claude Code marketplace | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement); not in the repo as of 2026-10-08 | Watch for the entry; nothing else to file |
+| claudemarketplaces.com | Claims 380k monthly visitors | Crawl-based; no form found | Lists only the sibling `agentic-commerce-catalog` MCP, not this pack. Unknown route for the pack. |
+| Glama (glama.ai/mcp/servers) | 82k servers indexed | Auto-crawl plus owner claim; "Add Server" button | Add or claim after crawl; the npm package and registry entry should help the crawl |
+| Smithery (smithery.ai) | One-click installs in several clients | https://smithery.ai/servers/new behind GitHub login, or `smithery mcp publish` | GitHub login |
+| mcp.so | Large MCP index | Submit form on the site | Form |
 | claudemarketplace.net | Claims 150k monthly visitors | Not stated | Unknown |
 | aitmpl.com (davila7/claude-code-templates) | Popular catalog | PR to the repo, or the "Promote your component" Google Form | Form or PR |
-| claudepluginhub.com, claudedirectory.org (tmcpa/claudedirectory), claudeskills.info, skillhub.club, agenticskills.io | Smaller | skillhub.club and claudeskills.info crawl GitHub; agenticskills.io has a "Submit a Skill" form; claudedirectory has a contributing guide | Form for agenticskills.io; otherwise wait |
+| claudepluginhub.com | Plugin index | Crawl or submit; route not confirmed | Unknown |
 | ClawHub (clawhub.ai) | OpenClaw users | `clawhub skill publish <path>` from the CLI; GitHub account must be at least one week old | CLI login |
-| Official Codex plugin directory | Codex users | Not open for public submission yet per developers.openai.com/codex/plugins | Not possible yet |
 | codex-marketplace.com | Third-party Codex list | `/submit` | Form |
-| hashgraph-online/awesome-codex-plugins | Backs hol.org/plugins | Fork, run the HOL plugin scanner, add one README line, PR with the score. This repo already runs the HOL scanner in CI. | PR to a third-party repo |
-| Official MCP Registry (registry.modelcontextprotocol.io) | Feeds PulseMCP and others automatically | `mcp-publisher` CLI, a `server.json`, and a namespace verified by GitHub OAuth (`io.github.jasoncolapietro/*`) or by DNS/HTTP for `skills.suedeai.ai`. The registry expects an installable package; the MCP is clone-and-run only today. | Publish an npm package first, then GitHub OAuth login |
-| Glama (glama.ai/mcp/servers) | 82k servers indexed | Auto-crawl plus owner claim; "Add Server" button | Claim after crawl |
-| Smithery (smithery.ai) | One-click installs in several clients | https://smithery.ai/servers/new behind GitHub login, or `smithery mcp publish` | GitHub login |
-| PulseMCP | Large index | Submissions paused; it ingests the official MCP Registry automatically | None; publish to the registry |
+| claudedirectory.org (tmcpa/claudedirectory), claudeskills.info, agenticskills.io | Smaller | Not rechecked 2026-10-08. claudeskills.info crawls GitHub; agenticskills.io has a "Submit a Skill" form; claudedirectory has a contributing guide | Form for agenticskills.io; otherwise wait |
+| Official Codex plugin directory | Codex users | Not open for public submission yet per developers.openai.com/codex/plugins (as of 2026-09-05) | Not possible yet |
+| hashgraph-online/awesome-codex-plugins | Backs hol.org/plugins | Fork, run the HOL plugin scanner, add one README line, PR with the score. The pack is already in the HOL Plugin Registry and in hashgraph-online/awesome-ai-plugins. | PR to a third-party repo |
+| PulseMCP | Large index | Submissions paused; it ingests the official MCP Registry automatically, where the server is now listed | None; confirm it appears after ingest |
 | mcpservers.org, Cline MCP marketplace (cline/mcp-marketplace), Cursor Directory plugins | Medium | PR (Cline), `cursor.directory/plugins/new` | PR or form |
 | Hacker News | Largest developer audience | Show HN at https://news.ycombinator.com/submit | Account |
 | Product Hunt | Large launch audience | https://www.producthunt.com/posts/new | Account |
@@ -47,7 +70,7 @@ Reach is inferred from stars or self-reported traffic. "Owner action" means an a
 | dev.to, Hashnode, Medium | Writeup readership | Post | Account |
 | There's An AI For That, Futurepedia, Toolify | Broad, low fit | Submission forms; two sites blocked automated checks, so listing status is unconfirmed | Form |
 
-Not verified either way because the site blocked automated reads: mcp.so, LobeHub (market.lobehub.com), mcp-get.com, There's An AI For That, Toolify, cursor.directory (rate limited).
+Not verified either way because the site blocked automated reads (as of 2026-09-05): LobeHub (market.lobehub.com), mcp-get.com, There's An AI For That, Toolify, cursor.directory (rate limited).
 
 ## Hermes Agent (Nous Research)
 
@@ -73,9 +96,9 @@ prompt's skill index, and loadable only by explicit `skill_view`. A tap install 
 
 ## npm
 
-No package exists for the skills MCP. These names returned 404 from the npm registry API on the audit date: `suede-skills-mcp`, `suede-creator-skills`, `suede-mcp`, `@suede/skills-mcp`. The `@suedeai` scope is in use by the sibling media product (`@suedeai/mcp-server`, `@suedeai/plugin-suede`), which is a different codebase; do not conflate the two in any listing.
+Published: https://www.npmjs.com/package/suede-skills-mcp, built from `scripts/build-mcp-package.mjs` into `dist-npm/` and registered in the official MCP Registry under `io.github.JasonColapietro/suede-skills-mcp` (the `mcpName` field in the package ties the two). npmx.dev, Libraries.io, and Socket index the package automatically. On 2026-09-05 these names returned 404 from the npm registry: `suede-skills-mcp`, `suede-creator-skills`, `suede-mcp`, `@suede/skills-mcp`; the first is now taken by this package.
 
-The MCP Registry, Glama, and Smithery index GitHub repositories directly, so npm is not a prerequisite for them. The official MCP Registry is the one place where a packaged distribution matters, and PulseMCP now ingests only from that registry.
+The `@suedeai` scope is in use by the sibling media product (`@suedeai/mcp-server`, `@suedeai/plugin-suede`), which is a different codebase; do not conflate the two in any listing.
 
 ## Own surfaces
 
@@ -85,12 +108,14 @@ For the pack's own name, the GitHub repository outranks the site in general web 
 
 ## Draft replacement line for the awesome lists
 
-`[suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) - 74 open-source Agent Skills for Claude Code and Codex: AI SEO, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, iOS and Android app shipping, and creator rights. MIT.`
+Count-free, so it cannot go stale the next time a skill lands:
+
+`[suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) - Open-source Agent Skills for Claude Code and Codex: AI SEO, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, iOS and Android app shipping, and creator rights. MIT.`
 
 ## Next actions
 
-Agent-side, no external mutation: keep the count stamps on the site current; keep this file current when a listing changes.
+Agent-side, no external mutation: keep `docs/listings.json` current when a listing appears or disappears, run `npm run build:listings`, and keep this file current when a status changes.
 
-Owner-side, in order of reach per minute of effort: a Show HN, the three awesome-list PRs (two stale descriptions, one new entry on hesreallyhim), then an npm publish of the MCP followed by `mcp-publisher` for the registry, which unlocks PulseMCP without a second submission.
+Owner-side, in order of reach per minute of effort: claim the MCP Market listing and fix its 23-skill description; a Show HN; the stale-description PRs (webfuse-com/awesome-claude, gmh5225/awesome-skills, plus the open GetBindu and BehiSecc PRs); new entries on hesreallyhim/awesome-claude-code, punkpeye/awesome-mcp-servers (the npm install line now exists), travisvn/awesome-claude-skills, and RankSpotAI/awesome-seo-agent-skills; ask ClaudSkills to point at `skills.suedeai.ai`; then Glama and Smithery for the MCP server.
 
 Owner-side on Hermes, once the tap has been installed at least once and the pills render: PRs to `0xNyk/awesome-hermes-agent` and `ZeroPointRepo/awesome-hermes-skills`, then a Hermes core PR proposing the repo for `DEFAULT_TAPS`. The install routes above need none of them.
