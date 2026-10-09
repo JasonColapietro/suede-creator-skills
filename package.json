@@ -22,11 +22,12 @@
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
     "test": "npm run validate && npm run test:number-words && npm run test:meta-keywords && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:hermes-tap && npm run test:ship-cost && npm run test:contributions && npm run test:python",
     "audit:dependencies": "npm audit --package-lock-only --omit=dev --audit-level=high",
-    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test && node scripts/build-mcp-package.mjs --check",
+    "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test && npm run test:indexnow && node scripts/build-mcp-package.mjs --check",
     "build:pdf": "node scripts/build-book-pdf.mjs",
     "fix:counts": "node scripts/validate-skill-pack.mjs --fix",
     "test:number-words": "node --test tests/test_number_words.mjs",
-    "test:meta-keywords": "node --test tests/test_meta_keywords.mjs"
+    "test:meta-keywords": "node --test tests/test_meta_keywords.mjs",
+    "test:indexnow": "node --test scripts/indexnow-submit.test.mjs"
   },
   "dependencies": {
     "js-yaml": "5.4.1"
