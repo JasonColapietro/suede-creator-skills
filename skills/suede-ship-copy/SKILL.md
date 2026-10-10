@@ -400,8 +400,8 @@ re-run.
 - One surface, one pass, facts already established -> use `suede-copy`.
 - Text already written that needs cleanup or a findings-only audit -> use `suede-deslop` (Suede Slop Stop).
 - The house voice needs defining rather than extracting from shipped copy ->
-  private Suede Labs companion, not in this pack: suede-brand-voice. Without it,
-  put a few pieces of already-shipped copy in `sources` and let the voice lens
+  use the Brand-Voice Alignment lane in `johnny-suede-write`. Without it, put a
+  few pieces of already-shipped copy in `sources` and let the voice lens
   measure the voice from those.
 - The graphic spec needs executing -> use `suede-image`.
 - The piece needs search and answer-engine treatment after it is written -> use

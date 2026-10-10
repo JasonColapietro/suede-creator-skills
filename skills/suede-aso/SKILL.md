@@ -1,6 +1,6 @@
 ---
 name: suede-aso
-description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), writing store metadata fields for an app that has not shipped yet (private Suede Labs companion, not in this pack: ios-aso-launch), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
+description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
 metadata:
   version: 2.0.0
 ---
@@ -236,6 +236,38 @@ The one comparison that drives scoring on every audit stays inline:
 | Developer name        | No               | Partial                |
 | IAP names             | Yes              | Yes                    |
 
+## Pre-Launch Metadata Mode
+
+Use this mode when the app has no live listing yet, so there is no URL to audit.
+Search language belongs in the keyword surfaces; product differentiation belongs
+in screenshots, the description body, and promo text.
+
+1. Pick one winnable target keyword before the listing is written: users
+   plausibly search it, competitors exist but are not all dominant incumbents,
+   recent apps show the niche is alive, the app satisfies the searcher's job
+   directly, and the term is not a competitor trademark.
+2. Write name, subtitle, and keyword field inside the hard App Store limits
+   below. Do not repeat a word across the three fields, use no spaces after
+   commas in the keyword field, keep one of singular or plural, and front-load
+   the highest-value terms.
+3. Plan screenshots outcome first: screenshot 1 sells the result, screenshot 2
+   sells the differentiator, captions use the searcher's words.
+4. Run every claim through a feature-truth check. Never advertise a feature the
+   build does not have.
+5. Set a 2 to 4 week measurement plan for rankings, impressions, product page
+   conversion, and promo text or caption rotation.
+
+Hard limits (confirm against the dated Apple reference file before shipping):
+app name 30 characters, subtitle 30, keyword field 100 (comma-separated),
+promotional text 170.
+
+Output artifacts:
+
+- `aso/keywords.md` and `aso/aso-doc.md`
+- `fastlane/metadata/<locale>/name.txt`, `subtitle.txt`, `keywords.txt`,
+  `description.txt`, and `promotional_text.txt`
+- a screenshot title plan and the ordered screenshot asset list
+
 ---
 
 ## Common Issues Checklist
@@ -305,5 +337,5 @@ Play) is always **blocks the listing**: see `references/google-play-specs.md`.
 - Need install attribution or in-app events -> use `suede-analytics`.
 - Need customer language for listing copy -> use `suede-customer-research`.
 - Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`; native iOS from scratch is a private Suede Labs companion, not in this pack: ios-app-factory.
-- Need App Store metadata authored for an app being shipped through the iOS factory pipeline -> private Suede Labs companion, not in this pack: ios-aso-launch. Precedence: `suede-aso` audits and scores a live listing from its URL; `ios-aso-launch` authors the metadata fields for a release in flight. Only one of the two owns a given field at a time.
+- Need App Store metadata authored for an app that has not shipped yet -> stay in `suede-aso` and run Pre-Launch Metadata Mode.
 - From those skills, route listing audits, metadata strategy, and screenshot sequencing back to `suede-aso`.
