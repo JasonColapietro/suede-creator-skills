@@ -61,9 +61,10 @@ Choose one route and write down why:
 - Full native rebuild: use when the site is mostly content, has weak mobile UX,
   or carries high wrapper rejection risk.
 
-Deeper shell internals, native architecture, ASO, and App Store submission live
-in private Suede Labs companions, not in this pack: ios-capacitor-shell,
-ios-swiftui-product, ios-aso-launch, ios-app-store-release. None are required.
+Store listing and pre-launch ASO live in `suede-aso`. Deeper shell internals,
+native architecture, and App Store submission live in private Suede Labs
+companions, not in this pack: ios-capacitor-shell, ios-swiftui-product,
+ios-app-store-release. None are required.
 
 ## App Store 4.2 Gate
 
