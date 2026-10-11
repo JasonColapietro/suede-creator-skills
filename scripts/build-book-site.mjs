@@ -392,7 +392,9 @@ written.set(
       bookFormat: "https://schema.org/EBook",
       isAccessibleForFree: true,
       license: "https://opensource.org/licenses/MIT",
-      numberOfPages: sources.length,
+      // Chapter files are sections, not paginated book pages. Match the PDF
+      // offered to readers; omit the count when no print edition is built.
+      ...(pdfPages ? { numberOfPages: pdfPages } : {}),
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
