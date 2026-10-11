@@ -32,6 +32,19 @@ def visible_text(path):
 
 
 class PublicDiscoveryTests(unittest.TestCase):
+    def test_book_page_count_matches_the_published_pdf(self):
+        source = (DOCS / 'book/index.html').read_text()
+        schemas = [json.loads(block) for block in re.findall(
+            r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', source, re.S)]
+        book = next(schema for schema in schemas if schema.get('@type') == 'Book')
+        download = re.search(r'Download the PDF \((\d+) pages\)', source)
+        if download:
+            self.assertEqual(book.get('numberOfPages'), int(download[1]),
+                             'Book schema must count PDF pages, not HTML chapter files')
+        else:
+            self.assertNotIn('numberOfPages', book,
+                             'An unpaginated web book must not invent a page count')
+
     def test_install_copy_matches_registered_mcp_surface(self):
         manifest = json.loads((ROOT / '.codex-plugin/plugin.json').read_text())
         catalog = json.loads((ROOT / 'mcp/catalog.json').read_text())
