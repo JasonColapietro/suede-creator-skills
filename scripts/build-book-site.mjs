@@ -86,6 +86,15 @@ function bookKeywords(file) {
   return list;
 }
 
+// <title> stays within 60 characters: full brand suffix, else short, else none.
+function chapterTitle(page) {
+  const base = `${page.label}. ${page.title}`;
+  for (const suffix of [" | S-Tier, the builder's book", " | S-Tier", ""]) {
+    if ((base + suffix).length <= 60) return base + suffix;
+  }
+  return base;
+}
+
 function shell({ title, description, keywords, canonical, jsonLd, body, depth }) {
   const up = depth === 0 ? "../" : "../";
   return `<!doctype html>
@@ -249,7 +258,7 @@ sources.forEach((page, index) => {
 
   const keywords = bookKeywords(`${page.slug}.html`);
   const html = shell({
-    title: `${page.label}. ${page.title} | S-Tier, the builder's book`,
+    title: chapterTitle(page),
     description: page.dek,
     keywords,
     canonical,
@@ -269,7 +278,7 @@ sources.forEach((page, index) => {
       inLanguage: "en",
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", name: "Suede AI", url: "https://suedeai.ai" },
+      publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
       mainEntityOfPage: canonical,
     },
     body,
@@ -383,10 +392,12 @@ written.set(
       bookFormat: "https://schema.org/EBook",
       isAccessibleForFree: true,
       license: "https://opensource.org/licenses/MIT",
-      numberOfPages: sources.length,
+      // Chapter files are sections, not paginated book pages. Match the PDF
+      // offered to readers; omit the count when no print edition is built.
+      ...(pdfPages ? { numberOfPages: pdfPages } : {}),
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", name: "Suede AI", url: "https://suedeai.ai" },
+      publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
       hasPart: sources.map((p, i) => ({
         "@type": "Chapter",
         "@id": `${BASE}/book/${p.slug}.html#chapter`,

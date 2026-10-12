@@ -158,7 +158,7 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 **When the concept is a faceless motion/explainer video** (15–45s, generated stills → image-to-video motion → TTS → captions), read [references/motion-video-ads.md](references/motion-video-ads.md) before writing prompts. It carries the pipeline, the visual-style library with fill-in prompt formulas, the brand-slots contract, and the QC gotchas.
 
-**When you need to pick an image, video, voice, or code-based generation tool**, or price a batch, read [references/generative-tools.md](references/generative-tools.md). It owns the vendor roster, per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
+**When you need to pick an image, video, voice, or code-based generation tool**, or price a batch, read [references/generative-tools.md](references/generative-tools.md). It owns the tool-class roster (described by capability, not brand), per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
 
 **Recommended workflow for scaled production:**
 1. Generate hero creative with AI tools (exploratory, high-quality)

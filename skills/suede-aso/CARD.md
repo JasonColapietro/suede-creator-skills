@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence.
+Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet.
 
-Out of scope — building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), writing store metadata fields for an app that has not shipped yet (private Suede Labs companion, not in this pack: ios-aso-launch), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).
+Out of scope — building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).
 
 ## Deployment Geography
 

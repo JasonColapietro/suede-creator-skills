@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -30,8 +31,18 @@ def main() -> None:
             f"({actual_hash})."
         )
 
+    if shutil.which("sips"):
+        render_command = ["sips", "-s", "format", "png", str(SVG), "--out", str(OUTPUT)]
+    elif shutil.which("inkscape"):
+        render_command = [
+            "inkscape", str(SVG), "--export-type=png", "--export-area-page",
+            f"--export-filename={OUTPUT}",
+        ]
+    else:
+        raise SystemExit("Install Inkscape or use macOS sips to render the social card.")
+
     subprocess.run(
-        ["sips", "-s", "format", "png", str(SVG), "--out", str(OUTPUT)],
+        render_command,
         check=True,
         stdout=subprocess.DEVNULL,
     )

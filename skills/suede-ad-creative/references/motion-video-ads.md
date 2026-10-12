@@ -29,18 +29,18 @@ video do the storytelling: this is animated poster design, not filmmaking.
 3. **Animate** each approved still with an image-to-video model (5–8s per beat).
    Motion belongs to the objects in the frame; the composition must not change.
 4. **VO + captions**: one continuous TTS take, transcribe with word timestamps
-   (whisper), cut beats at sentence boundaries, burn 2–3-word caption groups.
+   (speech-to-text), cut beats at sentence boundaries, burn 2–3-word caption groups.
 5. **Assemble**: concat beats trimmed to their VO spans (hold the last frame to pad),
    loudness-normalize to `I=-16:TP=-1.5:LRA=11`, export per-placement aspect.
 
 **Provider options** (any combination works; the recipe is model-agnostic):
 
-| Stage | One-key Gemini path | Alternatives |
+| Stage | One-key path (single provider account) | Alternatives |
 |---|---|---|
-| Stills | Nano Banana Pro (`gemini-3-pro-image-preview`): excellent label typography | GPT-Image, Flux, Ideogram |
-| Motion | Veo 3.1 fast image-to-video (note: 1080p requires 8s clips) | Seedance 2.0 via fal.ai, Kling, Runway |
-| VO | Gemini TTS (calm voices: Charon/Kore) | ElevenLabs, OpenAI TTS |
-| Captions | whisper word timings + PIL/ASS burn-in | CapCut, platform auto-captions |
+| Stills | Premium image model with native editing: excellent label typography | Chat-integrated image model, multi-reference image model, typography-specialist image model |
+| Motion | Native-audio video model, fast image-to-video tier (note: 1080p may require 8s clips) | Low-cost high-volume video model, long-form cinematic model, controllable video model |
+| VO | The same provider's TTS (pick calm voices) | Premium voice model, low-cost TTS API |
+| Captions | speech-to-text word timings + PIL/ASS burn-in | CapCut, platform auto-captions |
 
 ## The style library
 
@@ -110,7 +110,7 @@ belongs to existing elements, composition never changes.
 - **Always QC each clip's final 2 seconds**: that's where intruding objects and style
   drift appear. Trim before them or regenerate; never ship a "realified" frame.
 - **One dominant motion per beat.** Two motions read as chaos at feed speed.
-- **TTS + whisper disagree on sound-alikes** ("laws" → "loss"). Read the transcript
+- **TTS + speech-to-text disagree on sound-alikes** ("laws" → "loss"). Read the transcript
   against the script before burning captions; prefer phoneme-unambiguous CTA wording.
 - **Keep captions clear of the label band** (captions ~60% height, label ~80%).
   Clamp caption groups so two never overlap; shrink-to-fit long groups.
