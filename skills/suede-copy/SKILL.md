@@ -150,6 +150,13 @@ Use keywords because they help the right reader find the page. Do not cram a key
 
 For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use suede-seo-audit instead.
 
+## Edit Mode
+
+When the job is editing copy that already exists, read
+`references/seven-sweeps.md` and run its seven sweeps (clarity, voice, so what,
+prove it, specificity, emotion, zero risk) before the Anti-Slop Pass. Add its
+Expert Panel Score on launch, pricing, and high-traffic surfaces.
+
 ## Anti-Slop Pass
 
 Run Suede Slop Stop (use suede-deslop) on the finished draft. Load its canonical

@@ -38,6 +38,9 @@ preserving useful domain substance. The adaptation includes:
 `suede-revops`, `suede-sales-enablement`, `suede-signup`, `suede-sms`, `suede-social`,
 `suede-video`
 
+`suede-copy/references/seven-sweeps.md` adapts the Seven Sweeps and Expert Panel
+method from the same project's copy-editing skill.
+
 ---
 
 ## skills — Matt Pocock

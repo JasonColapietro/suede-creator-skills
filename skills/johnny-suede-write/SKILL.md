@@ -242,6 +242,7 @@ Use this lane to tune *existing* copy to the house voice without flattening it i
 - Avoid vague "AI music app" framing.
 - Avoid unsupported metrics, partner claims, legal clearance, payout claims, or guaranteed outcomes.
 - Make CTAs verbs: install, audit, create, read, verify, open, package.
+- Call the company Suede AI. "Suede Labs AI" is a retired name; replace it on sight.
 
 **Edit pass:**
 1. Cut filler and throat clearing.

@@ -82,4 +82,4 @@ Dimensions 7 and 10 hand off to **`suede-seo-audit`** (Product/Offer JSON-LD) an
 - `suede-seo-audit`: Product/Offer JSON-LD so machines read your tiers and prices.
 - `suede-ai-seo`: extractability, AI-bot access, `llms.txt`, getting cited by AI answers.
 - `suede-site-alchemy`: converting the human once the page is clear.
-- `copywriting`: the value-prop and tier copy the teardown flags.
+- `suede-copy`: the value-prop and tier copy the teardown flags.

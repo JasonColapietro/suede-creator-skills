@@ -1,0 +1,64 @@
+name: IndexNow
+
+# Tells the IndexNow network which URLs are live once a production deploy has
+# finished. IndexNow reaches Bing (which ChatGPT search and Copilot draw on),
+# plus Yandex, Seznam, Naver and Yep. Google does not take part; the sitemap in
+# Search Console covers Google.
+#
+# skills.suedeai.ai is served by GitHub Pages from docs/, so a deploy is the
+# pages-build-deployment run, not a Vercel event. Four triggers, because no
+# single one is guaranteed to fire:
+#   workflow_run       pages-build-deployment completed successfully
+#   deployment_status  the github-pages deployment reached success
+#   schedule           weekly safety net, in case neither deploy event arrives
+#   workflow_dispatch  run it by hand from the Actions tab
+# The two deploy triggers usually both fire for one deploy. Whichever runs
+# second resubmits the same URLs, which IndexNow treats as a no-op.
+#
+# scripts/indexnow-submit.mjs reads the LIVE sitemap and checks the LIVE key
+# file before it posts, so a run that fires early or twice cannot submit
+# anything wrong; at worst it resubmits unchanged URLs, which IndexNow ignores.
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  deployment_status:
+  schedule:
+    - cron: "41 8 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    # Deploy events count only when the Pages deploy succeeded; the schedule
+    # and manual runs always submit.
+    if: >-
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      (github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'github-pages') ||
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Submit live sitemap URLs to IndexNow
+        run: >-
+          node scripts/indexnow-submit.mjs
+          --site https://skills.suedeai.ai
+          --sitemap /sitemap.xml
+          --key-file docs/333af61b5cb0a1ed159ec1b12ecf4d99.txt
