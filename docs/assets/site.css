@@ -119,7 +119,7 @@ footer { border-top: 1px solid var(--border); padding: 32px 0 48px; }
 .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
 .footer-brand img { width: 24px; height: 24px; }
 .footer-brand strong { color: var(--cream); font-weight: 600; }
-.footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
 .footer-links a:hover { color: var(--gold); }
 .footer-divider { color: var(--border); }
 .ship-strip-head {

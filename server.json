@@ -2,9 +2,9 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.JasonColapietro/suede-skills-mcp",
   "title": "Suede Skills MCP",
-  "description": "Read-only access to 71 Suede skills: discovery, install options, SEO audits, A-F grading.",
+  "description": "Read-only access to the Suede skill pack: discovery, install options, SEO audits, A-F grading.",
   "version": "0.19.1",
-  "websiteUrl": "https://jasoncolapietro.github.io/suede-creator-skills/",
+  "websiteUrl": "https://skills.suedeai.ai/",
   "repository": {
     "url": "https://github.com/JasonColapietro/suede-creator-skills",
     "source": "github",
