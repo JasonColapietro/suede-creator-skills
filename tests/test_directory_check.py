@@ -83,25 +83,28 @@ class ListingPolicyTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        import yaml
-
         cls.policy_rule = staticmethod(load_policy())
-        cls.yaml = yaml
 
     def test_suede_skills_pass_the_directory_listing_policy(self):
+        # mcp/catalog.json carries each skill's name and SKILL.md description
+        # (scripts/validate-skill-pack.mjs keeps them in step), so no YAML
+        # parser is needed here.
+        import json
+
+        catalog = json.loads((ROOT / "mcp/catalog.json").read_text(encoding="utf-8"))["skills"]
+        self.assertGreater(len(catalog), 50)
         failures = []
-        for path in sorted((ROOT / "skills").glob("*/SKILL.md")):
-            text = path.read_text(encoding="utf-8")
-            front = self.yaml.safe_load(text.split("---", 2)[1])
+        for entry in catalog:
+            folder = ROOT / "skills" / entry["name"]
             record = {
-                "name": front.get("name"),
-                "description": str(front.get("description")),
+                "name": entry["name"],
+                "description": entry["description"],
                 "repo": "JasonColapietro/suede-creator-skills",
-                "captcha_files": any("captcha" in f.name.lower() for f in path.parent.rglob("*")),
+                "captcha_files": any("captcha" in f.name.lower() for f in folder.rglob("*")),
             }
             rule = self.policy_rule(record)
             if rule:
-                failures.append(f"{path.parent.name}: {rule}")
+                failures.append(f"{entry['name']}: {rule}")
         self.assertEqual(failures, [])
 
     def test_policy_catches_the_behaviors_it_publishes(self):
