@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How the Agent Skills Directory Lists Skills</title>
+    <meta name="description" content="The full method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules and how to change a listing.">
+    <meta name="keywords" content="agent skill quality check, SKILL.md best practices, agent skills specification, skill grading, Suede Skill Check">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/directory/methodology/">
+    <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:title" content="How the Agent Skills Directory Lists Skills">
+    <meta property="og:description" content="The full method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules and how to change a listing.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/methodology/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How the Agent Skills Directory Lists Skills">
+    <meta name="twitter:description" content="The full method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules and how to change a listing.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://skills.suedeai.ai/directory/methodology/#page",
+        "name": "How the Agent Skills Directory Lists Skills",
+        "description": "The full method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules and how to change a listing.",
+        "url": "https://skills.suedeai.ai/directory/methodology/",
+        "dateModified": "2026-10-16",
+        "isPartOf": {
+          "@id": "https://skills.suedeai.ai/directory/#directory"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/methodology/#breadcrumb"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Methodology",
+            "item": "https://skills.suedeai.ai/directory/methodology/"
+          }
+        ],
+        "@id": "https://skills.suedeai.ai/directory/methodology/#breadcrumb"
+      }
+    </script>
+    <link rel="preload" href="../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../assets/site.css">
+    <link rel="stylesheet" href="../../assets/skill.css">
+    <link rel="stylesheet" href="../../assets/directory.css">
+    <script src="../../assets/directory.js" defer></script>
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../../">Home</a>
+          <a href="../../skills/">Skills</a>
+          <a href="../">Directory</a>
+          <a href="../../guide.html">Guide</a>
+          <a href="../../book/">Book</a>
+          <a href="../../blog/">Blog</a>
+          <a href="../../copy.html">Copy Bank</a>
+          <a href="../../cracked.html">Cracked Devs</a>
+          <a href="../../plugins.html" class="nav-cta">Install</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Suede Skills Directory &middot; Method</div>
+      <h1>How skills are listed and graded</h1>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Methodology</span></nav>
+      <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
+      <section class="panel" aria-labelledby="sources-title">
+        <h2 id="sources-title">Where the skills come from</h2>
+        <p>The directory starts from the repositories cited in 8 curated lists of agent skills: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">hesreallyhim/awesome-claude-code</a>, <a href="https://github.com/karanb192/awesome-claude-skills" target="_blank" rel="noopener">karanb192/awesome-claude-skills</a>, <a href="https://github.com/skillmatic-ai/awesome-agent-skills" target="_blank" rel="noopener">skillmatic-ai/awesome-agent-skills</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>, plus the official skill collections those lists name. Every SKILL.md file in those repositories is read from the default branch. Nothing is executed. The current snapshot was taken on October 16, 2026.</p>
+      </section>
+      <section class="panel" aria-labelledby="check-title">
+        <h2 id="check-title">The Suede Skill Check</h2>
+        <p>Eight checks against the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>. The first is required; the grade counts the other seven.</p>
+        <div class="table-wrap">
+          <table class="checks">
+            <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
+            <tbody>
+            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>3,025 of 3,025</td></tr>
+            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>3,025 of 3,025</td></tr>
+            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>2,916 of 3,025</td></tr>
+            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>3,016 of 3,025</td></tr>
+            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,223 of 3,025</td></tr>
+            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>2,955 of 3,025</td></tr>
+            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>3,025 of 3,025</td></tr>
+            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>3,025 of 3,025</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li><b>Grade A</b>: all seven graded checks pass (2,035 listed skills).</li>
+          <li><b>Grade B</b>: six of seven pass (990 listed skills).</li>
+          <li>Grades C and below are not listed.</li>
+        </ul>
+        <p>The check measures structure, not usefulness: a well-formed skill can still be the wrong tool for your task. Read the SKILL.md before you install.</p>
+      </section>
+      <section class="panel" aria-labelledby="rules-title">
+        <h2 id="rules-title">Listing rules</h2>
+        <ul>
+          <li>Grade A or B on the Suede Skill Check.</li>
+          <li>A license declared in the SKILL.md frontmatter or the repository. Every page states it; 97% of listed skills use an open-source or open-content license, and pages for the rest say so next to the license.</li>
+          <li>A description written mainly in English, so the directory's pages read consistently.</li>
+          <li>Templates, examples and test fixtures are skipped.</li>
+          <li>When the same skill (same name and description) appears in several repositories, the copy in the most-cited repository is listed and the copies are dropped, so the original author keeps the listing.</li>
+          <li>Skills built for scraping, evading platform rules or adult content are not listed.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="pages-title">
+        <h2 id="pages-title">Which skills get a full page</h2>
+        <p>Every listed skill appears on its repository's page and in its category directory. Grade A skills get a page of their own with install commands, the check results and a README badge, up to twelve per repository, chosen by how much the skill ships with it: reference files, scripts, assets and a structured SKILL.md. 740 skills have a full page in this snapshot.</p>
+      </section>
+      <section class="panel" aria-labelledby="cat-title">
+        <h2 id="cat-title">Categories</h2>
+        <p>Each skill sits in one of 16 categories, chosen from its name and description by what the skill is mainly for. A category is a browsing aid, not a claim about the author's intent.</p>
+      </section>
+      <section class="panel" aria-labelledby="change-title">
+        <h2 id="change-title">Changing a listing</h2>
+        <p>The directory is rebuilt from the source repositories. Push a change to your SKILL.md and it appears at the next refresh. To request a listing, a correction or a removal, use the <a href="../submit/">listing request page</a>.</p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">The Suede Skill Check is a structural check of public SKILL.md files. It runs on published files only and executes nothing.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../">Directory</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="./">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

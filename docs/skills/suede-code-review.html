@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI Code Review Skill: Findings With File and Line | Suede</title>
-    <meta name="description" content="It runs the gates your repo already ships and refuses to invent new ones. It reads the changed files with their callers, contracts, and deploy surface, then ranks every finding P0 to P3. TypeScript, React, Next.js, Swift and iOS, database queries, OWASP, accessibility, SEO, and commit hygiene each get a lane. It ends at a ship gate, not a letter; the letter is suede-code-grader&#x27;s job.">
+    <meta name="description" content="AI code review that reads changed files with their callers and contracts, ranks every finding P0 to P3, runs your repo's own gates and ends at a ship gate.">
     <meta name="keywords" content="ai code review, claude code review skill, deploy safety, findings-only review, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="AI Code Review Skill: Findings With File and Line | Suede">
-    <meta property="og:description" content="It runs the gates your repo already ships and refuses to invent new ones. It reads the changed files with their callers, contracts, and deploy surface, then ranks every finding P0 to P3. TypeScript, React, Next.js, Swift and iOS, database queries, OWASP, accessibility, SEO, and commit hygiene each get a lane. It ends at a ship gate, not a letter; the letter is suede-code-grader&#x27;s job.">
+    <meta property="og:description" content="AI code review that reads changed files with their callers and contracts, ranks every finding P0 to P3, runs your repo's own gates and ends at a ship gate.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-code-review.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Code Review Skill: Findings With File and Line | Suede">
-    <meta name="twitter:description" content="It runs the gates your repo already ships and refuses to invent new ones. It reads the changed files with their callers, contracts, and deploy surface, then ranks every finding P0 to P3. TypeScript, React, Next.js, Swift and iOS, database queries, OWASP, accessibility, SEO, and commit hygiene each get a lane. It ends at a ship gate, not a letter; the letter is suede-code-grader&#x27;s job.">
+    <meta name="twitter:description" content="AI code review that reads changed files with their callers and contracts, ranks every finding P0 to P3, runs your repo's own gates and ends at a ship gate.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -186,7 +187,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-code-review .claude/skills/</code><
         <p class="footer-note">Suede Code Review is part of Suede Creator Skills: it runs findings-only code reviews with evidence-ranked findings, repo gates, deploy safety, and a ship gate.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">

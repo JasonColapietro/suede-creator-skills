@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CI Merge Gate Skill: One Required Check That Never Hangs</title>
-    <meta name="description" content="Path-filtered jobs are where required checks deadlock; this one aggregates them so a bad merge is blocked and a good one never waits on a job that did not run. The skill detects the stack, writes the workflow files, pins the runtime from the repo, and hands you the exact branch-protection settings to apply. It does not touch your repository access.">
+    <meta name="description" content="CI merge gate: one required check aggregates path-filtered jobs, blocking bad merges while good ones never wait on a job that did not run.">
     <meta name="keywords" content="ci merge gate, github actions required checks, branch protection, path-filtered ci, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="CI Merge Gate Skill: One Required Check That Never Hangs">
-    <meta property="og:description" content="Path-filtered jobs are where required checks deadlock; this one aggregates them so a bad merge is blocked and a good one never waits on a job that did not run. The skill detects the stack, writes the workflow files, pins the runtime from the repo, and hands you the exact branch-protection settings to apply. It does not touch your repository access.">
+    <meta property="og:description" content="CI merge gate: one required check aggregates path-filtered jobs, blocking bad merges while good ones never wait on a job that did not run.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-ci-gate.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CI Merge Gate Skill: One Required Check That Never Hangs">
-    <meta name="twitter:description" content="Path-filtered jobs are where required checks deadlock; this one aggregates them so a bad merge is blocked and a good one never waits on a job that did not run. The skill detects the stack, writes the workflow files, pins the runtime from the repo, and hands you the exact branch-protection settings to apply. It does not touch your repository access.">
+    <meta name="twitter:description" content="CI merge gate: one required check aggregates path-filtered jobs, blocking bad merges while good ones never wait on a job that did not run.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -189,7 +190,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-ci-gate .claude/skills/</code></pre
         <p class="footer-note">Suede Ship Gate is part of Suede Creator Skills: it generates CI workflow files and exact branch-protection settings for a merge gate.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">

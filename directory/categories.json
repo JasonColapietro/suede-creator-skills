@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "ai-agents-llm",
+    "title": "AI Agents and LLM Engineering",
+    "label": "AI agents",
+    "short": "AI agent",
+    "intro": "Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it."
+  },
+  {
+    "slug": "developer-tools",
+    "title": "Developer Tools and Frameworks",
+    "label": "Dev tools",
+    "short": "developer tools",
+    "intro": "Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter and Rust to GraphQL, Git and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt."
+  },
+  {
+    "slug": "marketing-seo",
+    "title": "Marketing and SEO",
+    "label": "Marketing",
+    "short": "marketing and SEO",
+    "intro": "Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time."
+  },
+  {
+    "slug": "product-management",
+    "title": "Product Management",
+    "label": "Product",
+    "short": "product management",
+    "intro": "Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask."
+  },
+  {
+    "slug": "science-research",
+    "title": "Science and Research",
+    "label": "Science",
+    "short": "science and research",
+    "intro": "Skills for scientific and academic work: bioinformatics, chemistry, materials, literature search and research statistics. They give an agent the domain procedures and library knowledge a lab or research team would otherwise explain in every prompt."
+  },
+  {
+    "slug": "devops-cloud",
+    "title": "DevOps and Cloud",
+    "label": "DevOps",
+    "short": "DevOps and cloud",
+    "intro": "Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance."
+  },
+  {
+    "slug": "media-creative",
+    "title": "Video, Image, Audio and Creative",
+    "label": "Media",
+    "short": "video, image and audio",
+    "intro": "Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs."
+  },
+  {
+    "slug": "productivity-knowledge",
+    "title": "Productivity and Knowledge Work",
+    "label": "Productivity",
+    "short": "productivity",
+    "intro": "Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them."
+  },
+  {
+    "slug": "business-finance",
+    "title": "Business, Sales and Finance",
+    "label": "Business",
+    "short": "business and finance",
+    "intro": "Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable."
+  },
+  {
+    "slug": "testing-qa",
+    "title": "Testing and QA",
+    "label": "Testing",
+    "short": "testing and QA",
+    "intro": "Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it."
+  },
+  {
+    "slug": "data-databases",
+    "title": "Data, Analytics and Databases",
+    "label": "Data",
+    "short": "data and database",
+    "intro": "Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions."
+  },
+  {
+    "slug": "security",
+    "title": "Security",
+    "label": "Security",
+    "short": "security",
+    "intro": "Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure configuration. They give an agent a methodical checklist for the parts of a codebase or system where mistakes cost the most."
+  },
+  {
+    "slug": "frontend-design",
+    "title": "Frontend and Design",
+    "label": "Design",
+    "short": "frontend and design",
+    "intro": "Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates."
+  },
+  {
+    "slug": "writing-content",
+    "title": "Writing and Editing",
+    "label": "Writing",
+    "short": "writing and editing",
+    "intro": "Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against."
+  },
+  {
+    "slug": "code-review-quality",
+    "title": "Code Review and Code Quality",
+    "label": "Code quality",
+    "short": "code review",
+    "intro": "Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change."
+  },
+  {
+    "slug": "documents-office",
+    "title": "Documents and Office Files",
+    "label": "Documents",
+    "short": "document and office file",
+    "intro": "Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to read, create and edit office documents that open cleanly in the apps people use."
+  }
+]

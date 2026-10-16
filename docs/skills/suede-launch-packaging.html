@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Launch Packaging Skill: Verified Installs Before Launch</title>
-    <meta name="description" content="Nothing is called live until the exact install command runs from a clean temporary directory, never from inside the checkout that built it. Any @personal alias or local-only path is stripped before the copy goes public. README, docs page, release note, GitHub Pages update, MCP server, or skill-pack release: same gate, same handoff notes.">
+    <meta name="description" content="Launch packaging that runs the exact install command from a clean temporary directory before anything is called live, and strips local-only paths.">
     <meta name="keywords" content="launch packaging, install verification, README launch, MCP setup, public release QA, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Launch Packaging Skill: Verified Installs Before Launch">
-    <meta property="og:description" content="Nothing is called live until the exact install command runs from a clean temporary directory, never from inside the checkout that built it. Any @personal alias or local-only path is stripped before the copy goes public. README, docs page, release note, GitHub Pages update, MCP server, or skill-pack release: same gate, same handoff notes.">
+    <meta property="og:description" content="Launch packaging that runs the exact install command from a clean temporary directory before anything is called live, and strips local-only paths.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-launch-packaging.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Launch Packaging Skill: Verified Installs Before Launch">
-    <meta name="twitter:description" content="Nothing is called live until the exact install command runs from a clean temporary directory, never from inside the checkout that built it. Any @personal alias or local-only path is stripped before the copy goes public. README, docs page, release note, GitHub Pages update, MCP server, or skill-pack release: same gate, same handoff notes.">
+    <meta name="twitter:description" content="Launch packaging that runs the exact install command from a clean temporary directory before anything is called live, and strips local-only paths.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -191,7 +192,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-launch-packaging .claude/skills/</c
         <p class="footer-note">Suede Launch Packaging is part of Suede Creator Skills: it packages public releases and verifies install paths before launch.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">
