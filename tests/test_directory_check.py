@@ -131,5 +131,29 @@ class ListingPolicyTests(unittest.TestCase):
         self.assertIsNone(self.policy_rule(record))
 
 
+class PrivacyGuardTests(unittest.TestCase):
+    """CI runs scripts/check-public-privacy.py over every published file, so
+    curate.py drops a listing whose author text would fail it. A listing that
+    quoted /home/<user>/... in its description once failed the build."""
+
+    @classmethod
+    def setUpClass(cls):
+        namespace = {"__file__": str(ROOT / "scripts/directory/curate.py")}
+        exec(compile(CURATE_SRC[: CURATE_SRC.index("def main():")], "curate.py", "exec"), namespace)
+        cls.hit = staticmethod(namespace["privacy_guard"]())
+
+    def test_author_text_that_fails_the_privacy_check_is_caught(self):
+        # Split like the guard's own pattern, so this file passes the guard it tests.
+        self.assertIn("personal-path", self.hit('{"description":"Agents working in /ho' 'me/ubuntu/RL on Brev."}'))
+        self.assertEqual(self.hit('{"description":"Agents working in ~/RL on Brev."}'), [])
+
+    def test_every_listing_passes_the_privacy_check(self):
+        import json
+
+        data = json.loads((ROOT / "directory/skills.json").read_text(encoding="utf-8"))
+        failures = [f"{s['repo']}/{s['slug']}" for s in data["skills"] if self.hit(json.dumps(s, ensure_ascii=False))]
+        self.assertEqual(failures, [])
+
+
 if __name__ == "__main__":
     unittest.main()

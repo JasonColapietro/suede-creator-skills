@@ -107,19 +107,19 @@
           <table class="checks">
             <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
             <tbody>
-            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>2,973 of 2,973</td></tr>
-            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>2,973 of 2,973</td></tr>
-            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>2,863 of 2,973</td></tr>
-            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>2,965 of 2,973</td></tr>
-            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,205 of 2,973</td></tr>
-            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>2,903 of 2,973</td></tr>
-            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>2,973 of 2,973</td></tr>
-            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>2,973 of 2,973</td></tr>
+            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>2,972 of 2,972</td></tr>
+            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>2,972 of 2,972</td></tr>
+            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>2,862 of 2,972</td></tr>
+            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>2,964 of 2,972</td></tr>
+            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,204 of 2,972</td></tr>
+            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>2,902 of 2,972</td></tr>
+            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>2,972 of 2,972</td></tr>
+            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>2,972 of 2,972</td></tr>
             </tbody>
           </table>
         </div>
         <ul>
-          <li><b>Grade A</b>: all seven graded checks pass (2,017 listed skills).</li>
+          <li><b>Grade A</b>: all seven graded checks pass (2,016 listed skills).</li>
           <li><b>Grade B</b>: six of seven pass (956 listed skills).</li>
           <li>Grades C and below are not listed.</li>
         </ul>
@@ -142,7 +142,7 @@
             </ul>
             A vendor's skills for its own service are listed under the second and third rules. A repository whose product is one of these behaviors is left out as a whole.
           </li>
-          <li>Skills are also left out when their name or description trips the site's content filters: adult content, malware terms, jailbreaks outside a defensive context, the short list of terms the site's own public-copy guard rejects, and descriptions that carry an email address or phone number. The exact terms are in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/curate.py" target="_blank" rel="noopener">curate.py</a>. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
+          <li>Skills are also left out when their name or description trips the site's content filters: adult content, malware terms, jailbreaks outside a defensive context, the short list of terms the site's own public-copy guard rejects, and listing text that fails the site's public-privacy check (an email address, a phone number or a home-directory path). The exact terms are in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/curate.py" target="_blank" rel="noopener">curate.py</a>. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
           <li>Suede's own skills are catalogued separately on this site and pass the same rules; a test in the repository checks every one of them against the policy.</li>
         </ul>
       </section>

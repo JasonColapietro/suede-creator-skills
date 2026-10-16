@@ -21,6 +21,7 @@ import argparse
 import collections
 import datetime as dt
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -28,6 +29,21 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from grade import CHECKS, grade, run_checks  # noqa: E402
+
+REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
+
+
+def privacy_guard():
+    """The repository's public-privacy check (scripts/check-public-privacy.py)
+    as a function of one listing's text. CI runs that check over every
+    published file, so a listing whose author text carries a home-directory
+    path, an email address or a phone number is dropped here rather than
+    failing the build. Checked with a docs/ label, the strictest surface."""
+    spec = importlib.util.spec_from_file_location("public_privacy", os.path.join(REPO_ROOT, "scripts", "check-public-privacy.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    policy = json.load(open(os.path.join(REPO_ROOT, "scripts", "public-privacy-policy.json")))
+    return lambda text: [f["category"] for f in module.check_text(text, "docs/directory/index.html", policy)]
 
 CATEGORIES = [
     ("documents-office", [r"\bdocx?\b", r"\bpdf", r"\bpptx?\b", r"\bxlsx?\b", r"spreadsheet", r"powerpoint", r"\bexcel\b", r"word document", r"\bslides?\b", r"presentation"]),
@@ -374,6 +390,8 @@ def main():
         by_repo[r["repo"]].append(r)
     out = []
     repo_meta = {}
+    privacy_hit = privacy_guard()
+    privacy_dropped = []
     unlabeled = 0
     needs_summary = []
     needs_label = []
@@ -443,6 +461,9 @@ def main():
                     "mcp_tools": r.get("mcp_tools") or [],
                     "runs": r.get("run_commands") or [],
                 }
+            if privacy_hit(json.dumps(rec, ensure_ascii=False)):
+                privacy_dropped.append(sid)
+                continue
             out.append((sid, rec))
             repo_meta[repo] = {
                 "withheld": withheld.get(repo.lower(), 0),
@@ -451,8 +472,10 @@ def main():
                 "lists": [l.replace("_", "/", 1) for l in r["lists"]],
                 "official": owner.lower() in OFFICIAL_OWNERS,
             }
+    if privacy_dropped:
+        print("dropped by the public-privacy check:", *privacy_dropped, file=sys.stderr)
     out.sort(key=lambda pair: pair[0])
-    sources = sorted({l for m in repo_meta.values() for l in m["lists"]})
+    sources =sorted({l for m in repo_meta.values() for l in m["lists"]})
     head = {"generated": generated, "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}
     text = "{\n" + ",\n".join(f" {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k, v in head.items())
     text += ',\n "repos": {\n' + ",\n".join(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(repo_meta.items())) + "\n }"
