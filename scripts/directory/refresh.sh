@@ -87,7 +87,7 @@ for r in "${LISTS[@]}"; do
 done
 
 python3 -I "$TOOLS/extract_links.py" "$WORK/lists" "$WORK/candidates.json" > /dev/null
-python3 -I "$TOOLS/select_repos.py" "$WORK/candidates.json" "$WORK/lists/VoltAgent_awesome-agent-skills/README.md" "$REPO_ROOT/directory/inclusions.json" > "$WORK/repos.txt"
+python3 -I "$TOOLS/select_repos.py" "$WORK/candidates.json" "$WORK/lists/VoltAgent_awesome-agent-skills/README.md" "$REPO_ROOT/directory/inclusions.json" "$REPO_ROOT/directory/exclusions.json" > "$WORK/repos.txt"
 
 clone_one() {
   local r="$1" d="$2/src/${1/\//__}"

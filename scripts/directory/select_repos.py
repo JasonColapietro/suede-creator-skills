@@ -1,12 +1,13 @@
 """Pick the repositories the directory reads, from the links the curated lists cite.
 
-    python3 -I select_repos.py candidates.json VoltAgent-README.md [inclusions.json] > repos.txt
+    python3 -I select_repos.py candidates.json VoltAgent-README.md [inclusions.json] [exclusions.json] > repos.txt
 
 A repository qualifies when two or more curated lists cite it, or when it is an
 official collection the VoltAgent list names (its officialskills.sh links map
 to github.com/<owner>/skills), or when an author asked for a listing and it was
 accepted into directory/inclusions.json. The lists themselves and asset hosts
-are skipped.
+are skipped. Repository exclusions take precedence over every selection route
+and are applied before cloning; skill-level exclusions remain curation rules.
 """
 import json
 import re
@@ -16,6 +17,9 @@ candidates = json.load(open(sys.argv[1]))
 voltagent = open(sys.argv[2], encoding="utf-8", errors="ignore").read()
 
 SKIP = {"user-attachments/assets", "jasoncolapietro/suede-creator-skills"}
+if len(sys.argv) > 4:
+    for entry in json.load(open(sys.argv[4])).get("repositories", []):
+        SKIP.add((entry["id"] if isinstance(entry, dict) else entry).strip().lower())
 
 
 def wanted(repo):

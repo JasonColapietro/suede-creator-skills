@@ -1,5 +1,114 @@
 {
- "repositories": [],
+ "repositories": [
+  {
+   "id": "addyosmani/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "auth0/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "binance/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "brave/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "callstackincubator/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "clickhouse/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "coinbase/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "crawlbase/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "datadog-labs/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "duckdb/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "figma/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "garrytan/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "google-gemini/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "google-labs-code/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "googleworkspace/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "greensock/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "hashicorp/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "jthack/threat-hunting-with-sigma-rules-skill",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "mongodb/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "neondatabase/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "netlify/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "sanity-io/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "stripe/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "supabase/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "tinybirdco/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "typefully/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  },
+  {
+   "id": "wordpress/skills",
+   "reason": "GitHub returned API 404 for this repository URL, and cloning failed on 2026-10-16. It has no existing directory listing. Recheck availability before restoring selection."
+  }
+ ],
  "skills": [
   {
    "id": "salespeak-ai/buyer-eval-skill/buyer-eval-skill",

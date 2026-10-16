@@ -22,6 +22,7 @@ class DirectoryRefreshTests(unittest.TestCase):
         shutil.copytree(ROOT / "scripts/directory", self.project / "scripts/directory")
         (self.project / "directory").mkdir()
         (self.project / "directory/inclusions.json").write_text('{"repositories": []}')
+        (self.project / "directory/exclusions.json").write_text('{"repositories": [], "skills": []}')
         self.work = self.root / "cache with spaces"
         self.remotes = self.root / "remotes"
         self.upstream = self.root / "upstream"
@@ -136,6 +137,23 @@ elif not any(a.endswith("curate.py") for a in args):
         self.refresh()
         (self.remotes / "fixture/skills").rename(self.remotes / "fixture/unavailable")
         self.refresh(succeeds=False)
+
+    def test_repository_exclusions_prevent_fetching_and_parsing_cached_sources(self):
+        self.refresh()
+        (self.remotes / "fixture/skills").rename(self.remotes / "fixture/unavailable")
+        # Exclusions win even over an accepted inclusion, and support both
+        # documented string IDs and records carrying a removal reason.
+        (self.project / "directory/inclusions.json").write_text('{"repositories": ["fixture/skills"]}')
+        for entry in ("FIXTURE/skills", {"id": "fixture/SKILLS", "reason": "Removed by publisher"}):
+            (self.project / "directory/exclusions.json").write_text(json.dumps({"repositories": [entry]}))
+            self.assertEqual(self.refresh(), {})
+            self.assertTrue((self.work / "src/fixture__skills/.git").is_dir())
+
+    def test_skill_exclusions_do_not_skip_the_whole_repository(self):
+        (self.project / "directory/exclusions.json").write_text(json.dumps({
+            "repositories": [], "skills": [{"id": "fixture/skills/old-skill", "reason": "Removed"}]
+        }))
+        self.assertIn("fixture__skills", self.refresh())
 
     def test_default_branch_namespace_renames_preserve_old_local_refs(self):
         self.refresh()

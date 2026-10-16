@@ -21,6 +21,8 @@ scripts/directory/refresh.sh     # re-read the source repositories, then rebuild
 
 `refresh.sh` clones the curated lists and the repositories they cite, reads every SKILL.md, applies the [published method](https://skills.suedeai.ai/directory/methodology/) and rewrites `skills.json`. It reads files only and never executes anything from a clone. Skills that are new since the last refresh get a keyword category and no page of their own until `labels.json` gives them a category and a summary.
 
+Repository entries in `exclusions.json` are applied before downloading, including repositories also named in `inclusions.json`. Skill-level exclusions are applied during curation. A confirmed unavailable public repository can be recorded with its reason and verification date; transient fetch failures still abort the refresh and never silently drop a selected source.
+
 Pass an optional work directory to reuse downloads: `scripts/directory/refresh.sh /tmp/suede-directory`. Every run fetches the current default branch of both the curated lists and selected repositories before parsing. Reused repositories become detached snapshots; `suede.directoryDefaultBranch` in their local Git configuration records the branch used for source links and install commands. Cached repositories no longer selected are retained but excluded from parsing. A clone/fetch failure or a dirty checkout stops the refresh before it changes the published dataset; preserve or move local edits before retrying.
 
 ## Listing requests
