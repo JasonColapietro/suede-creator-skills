@@ -1,0 +1,40 @@
+name: Directory listing request
+description: Add, correct or remove a skill in the Agent Skills Directory at skills.suedeai.ai/directory/
+title: "Directory: "
+labels: ["directory", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [Agent Skills Directory](https://skills.suedeai.ai/directory/) lists public skills that pass the [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). One request covers every skill in a repository.
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request
+      options:
+        - Add my skills
+        - Correct a listing
+        - Remove a listing
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public GitHub repository
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: For a correction, name the skill and what should change. For a removal, name the skills to remove or say "all".
+    validations:
+      required: false
+  - type: checkboxes
+    id: maintainer
+    attributes:
+      label: Confirmation
+      options:
+        - label: I maintain this repository, or I am requesting a listing for a public repository on its maintainers' behalf.
+          required: true

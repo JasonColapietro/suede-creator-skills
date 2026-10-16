@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cross-Surface Parity Skill: One Rule on Web, iOS, Android</title>
-    <meta name="description" content="When one domain is implemented on web, iOS, Android, and a second service, the numbers get copied between them by hand and nothing fails when a copy is wrong. The surfaces just start answering the same question differently. This generates a contract from the reference surface's live constants and makes every other surface assert against it, so a divergence fails a test instead of reaching a user. It records divergences; it never decides which surface is right.">
+    <meta name="description" content="Cross-surface parity contract generated from the reference surface's live constants, so a divergence between web, iOS and Android fails a test.">
     <meta name="keywords" content="cross-surface parity, shared constants across platforms, web ios android parity, generated contract, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Cross-Surface Parity Skill: One Rule on Web, iOS, Android">
-    <meta property="og:description" content="When one domain is implemented on web, iOS, Android, and a second service, the numbers get copied between them by hand and nothing fails when a copy is wrong. The surfaces just start answering the same question differently. This generates a contract from the reference surface's live constants and makes every other surface assert against it, so a divergence fails a test instead of reaching a user. It records divergences; it never decides which surface is right.">
+    <meta property="og:description" content="Cross-surface parity contract generated from the reference surface's live constants, so a divergence between web, iOS and Android fails a test.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-parity-contract.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cross-Surface Parity Skill: One Rule on Web, iOS, Android">
-    <meta name="twitter:description" content="When one domain is implemented on web, iOS, Android, and a second service, the numbers get copied between them by hand and nothing fails when a copy is wrong. The surfaces just start answering the same question differently. This generates a contract from the reference surface's live constants and makes every other surface assert against it, so a divergence fails a test instead of reaching a user. It records divergences; it never decides which surface is right.">
+    <meta name="twitter:description" content="Cross-surface parity contract generated from the reference surface's live constants, so a divergence between web, iOS and Android fails a test.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -191,7 +192,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-parity-contract .claude/skills/</co
         <p class="footer-note">Suede Parity Contract is part of Suede Creator Skills: it generates CI workflow files and exact branch-protection settings for a merge gate.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">

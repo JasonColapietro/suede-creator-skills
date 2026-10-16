@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>yara-rule-authoring Agent Skill by trailofbits</title>
+    <meta name="description" content="Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection… From trailofbits/skills, CC-BY-SA-4.0.">
+    <meta name="keywords" content="yara-rule-authoring skill by trailofbits, yara-rule-authoring skill, yara-rule-authoring agent skill, yara-rule-authoring claude skill, trailofbits skills, security agent skills, SKILL.md">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/">
+    <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:title" content="yara-rule-authoring Agent Skill by trailofbits">
+    <meta property="og:description" content="Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection… From trailofbits/skills, CC-BY-SA-4.0.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="yara-rule-authoring Agent Skill by trailofbits">
+    <meta name="twitter:description" content="Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection… From trailofbits/skills, CC-BY-SA-4.0.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/#page",
+        "name": "yara-rule-authoring Agent Skill by trailofbits",
+        "description": "Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection… From trailofbits/skills, CC-BY-SA-4.0.",
+        "url": "https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/",
+        "dateModified": "2026-10-16",
+        "isPartOf": {
+          "@id": "https://skills.suedeai.ai/directory/#directory"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/#breadcrumb"
+        },
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "yara-rule-authoring",
+          "description": "Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection, performance optimization, migration from legacy YARA, and false positive reduction.",
+          "codeRepository": "https://github.com/trailofbits/skills/tree/main/plugins/yara-authoring/skills/yara-rule-authoring",
+          "programmingLanguage": "Markdown",
+          "license": "https://github.com/trailofbits/skills/blob/main/LICENSE",
+          "dateModified": "2026-10-15",
+          "keywords": [
+            "Security",
+            "Agent Skills",
+            "SKILL.md"
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "Trail of Bits",
+            "url": "https://github.com/trailofbits"
+          }
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Security",
+            "item": "https://skills.suedeai.ai/directory/security/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "trailofbits/skills",
+            "item": "https://skills.suedeai.ai/directory/trailofbits/skills/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "yara-rule-authoring",
+            "item": "https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/"
+          }
+        ]
+      }
+    </script>
+    <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../../assets/site.css">
+    <link rel="stylesheet" href="../../../../assets/skill.css">
+    <link rel="stylesheet" href="../../../../assets/directory.css">
+    <script src="../../../../assets/directory.js" defer></script>
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../../../../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../../../../">Home</a>
+          <a href="../../../">Directory</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../blog/">Blog</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Agent skill &middot; Security &middot; trailofbits</div>
+      <h1>yara-rule-authoring <span class="h1-sub">agent skill</span></h1>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../security/">Security</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">trailofbits/skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">yara-rule-authoring</span></nav>
+      <p class="lead">Guides authoring of YARA-X detection rules for malware identification, covering naming conventions, string selection, performance optimization, migration from legacy YARA, and false positive reduction.</p>
+      <p><a class="button" href="https://github.com/trailofbits/skills/tree/main/plugins/yara-authoring/skills/yara-rule-authoring" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/trailofbits/skills/blob/main/plugins/yara-authoring/skills/yara-rule-authoring/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <section class="panel" aria-labelledby="facts-title">
+        <h2 id="facts-title">At a glance</h2>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/trailofbits" target="_blank" rel="noopener">Trail of Bits</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Repository</th><td><a href="../">trailofbits/skills</a> (83 listed skills)</td></tr>
+            <tr><th scope="row">Category</th><td><a href="../../../security/">Security</a></td></tr>
+            <tr><th scope="row">License</th><td><a href="https://github.com/trailofbits/skills/blob/main/LICENSE" target="_blank" rel="noopener">CC-BY-SA-4.0</a></td></tr>
+            <tr><th scope="row">Last commit</th><td>October 15, 2026 (repository)</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>441 lines, 3,456 words</td></tr>
+            <tr><th scope="row">Bundled files</th><td>22 files, including references, scripts, assets or templates</td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> 5 script files (4 Python, 1 Shell). Your agent may run them, so read them first.</li>
+          <li><b>License:</b> <a href="https://github.com/trailofbits/skills/blob/main/LICENSE" target="_blank" rel="noopener">CC-BY-SA-4.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install yara-rule-authoring</h2>
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/trailofbits/skills/tree/main/plugins/yara-authoring/skills/yara-rule-authoring</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/trailofbits/skills.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/plugins/yara-authoring/skills/yara-rule-authoring&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo trailofbits/skills \
+    --path plugins/yara-authoring/skills/yara-rule-authoring</code></pre>
+        </div>
+        <p class="muted">trailofbits/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
+      </section>
+      <section class="panel" aria-labelledby="author-title">
+        <h2 id="author-title">How the author describes it</h2>
+        <blockquote class="author-quote" cite="https://github.com/trailofbits/skills/blob/main/plugins/yara-authoring/skills/yara-rule-authoring/SKILL.md">
+          <p>Guides authoring of high-quality YARA-X detection rules for malware identification. Use when writing, reviewing, or optimizing YARA rules. Covers naming conventions, string selection, performance optimization, migration from legacy YARA, and false positive reduction. Triggers on: YARA, YARA-X, malware detection, threat hunting, IOC, signature, crx module, dex module.</p>
+        </blockquote>
+        <p class="muted">From the <code>description</code> field of <a href="https://github.com/trailofbits/skills/blob/main/plugins/yara-authoring/skills/yara-rule-authoring/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
+        <h3>Sections in SKILL.md</h3>
+        <ul class="outline">
+          <li class="lvl-2">Core Principles</li>
+          <li class="lvl-2">When to Use</li>
+          <li class="lvl-2">When NOT to Use</li>
+          <li class="lvl-2">Platform Considerations</li>
+          <li class="lvl-3">macOS Malware Detection</li>
+          <li class="lvl-3">JavaScript Detection</li>
+          <li class="lvl-2">String Selection</li>
+          <li class="lvl-3">Choosing a String Type</li>
+          <li class="lvl-2">Condition Design</li>
+          <li class="lvl-3">all of vs any of</li>
+          <li class="lvl-3">Grouping by Confidence</li>
+          <li class="lvl-3">Modules vs Byte Checks</li>
+          <li class="lvl-3">Performance</li>
+          <li class="lvl-2">Before Writing: Is the Sample Packed?</li>
+          <li class="lvl-3">When Strings Fail, Pivot to Structure</li>
+          <li class="lvl-2">Debugging False Positives</li>
+        </ul>
+        <h3>Files in the skill folder</h3>
+        <ul class="file-list">
+          <li><code>SKILL.md</code></li>
+          <li><code>agents/openai.yaml</code></li>
+          <li><code>assets/trail-of-bits-mark.svg</code></li>
+          <li><code>examples/MAL_Mac_ProtonRAT_Jan25.yar</code></li>
+          <li><code>examples/MAL_NPM_SupplyChain_Jan25.yar</code></li>
+          <li><code>examples/MAL_Win_Remcos_Jan25.yar</code></li>
+          <li><code>examples/SUSP_CRX_SuspiciousPermissions.yar</code></li>
+          <li><code>examples/SUSP_JS_Obfuscation_Jan25.yar</code></li>
+          <li><code>references/crx-module.md</code></li>
+          <li><code>references/dex-module.md</code></li>
+          <li><code>references/performance.md</code></li>
+          <li><code>references/strings.md</code></li>
+          <li><code>references/style-guide.md</code></li>
+          <li><code>references/testing.md</code></li>
+          <li><code>scripts/atom_analyzer.py</code></li>
+          <li><code>scripts/pyproject.toml</code></li>
+          <li><code>scripts/review.sh</code></li>
+          <li><code>scripts/test_yara_rules.py</code></li>
+          <li><code>scripts/uv.lock</code></li>
+          <li><code>scripts/yara_lint.py</code></li>
+          <li><code>scripts/yara_rules.py</code></li>
+          <li><code>workflows/rule-development.md</code></li>
+        </ul>
+      </section>
+      <section class="panel" id="check" aria-labelledby="check-title">
+        <h2 id="check-title">Suede Skill Check: grade A</h2>
+        <p>yara-rule-authoring passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Badge for yara-rule-authoring</h2>
+        <p>Maintainers of trailofbits/skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/badge.svg)](https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/trailofbits/skills/yara-rule-authoring/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="cited-title">
+        <h2 id="cited-title">Where this skill is cited</h2>
+        <p>trailofbits/skills appears in 4 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">hesreallyhim/awesome-claude-code</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="related-title">
+        <h2 id="related-title">More security skills</h2>
+        <div class="links">
+          <a class="link-row" href="../../../getsentry/skills/gha-security-review/"><b>gha-security-review</b><span>getsentry/skills</span></a>
+          <a class="link-row" href="../../../google/skills/assuredworkloads-environment-assessor/"><b>assuredworkloads-environment-assessor</b><span>google/skills</span></a>
+        </div>
+        <p><a href="../../../security/">All security skills</a></p>
+      </section>
+      <section class="panel" aria-labelledby="siblings-title">
+        <h2 id="siblings-title">More from trailofbits/skills</h2>
+        <div class="links">
+          <a class="link-row" href="../agentic-actions-auditor/"><b>agentic-actions-auditor</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../audit-augmentation/"><b>audit-augmentation</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../codeql/"><b>codeql</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../crypto-protocol-diagram/"><b>crypto-protocol-diagram</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../diagramming-code/"><b>diagramming-code</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../dimensional-analysis/"><b>dimensional-analysis</b><span>trailofbits/skills</span></a>
+        </div>
+        <p><a href="../">All 83 skills in trailofbits/skills</a></p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">yara-rule-authoring is published by trailofbits in trailofbits/skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../../../">Directory</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

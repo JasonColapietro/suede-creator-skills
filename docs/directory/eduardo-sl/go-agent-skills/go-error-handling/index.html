@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>go-error-handling Agent Skill by eduardo-sl</title>
+    <meta name="description" content="Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for… From eduardo-sl/go-agent-skills, MIT.">
+    <meta name="keywords" content="go-error-handling skill by eduardo-sl, go-error-handling skill, go-error-handling agent skill, go-error-handling claude skill, eduardo-sl skills, developer tools agent skills, SKILL.md">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/">
+    <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:title" content="go-error-handling Agent Skill by eduardo-sl">
+    <meta property="og:description" content="Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for… From eduardo-sl/go-agent-skills, MIT.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="go-error-handling Agent Skill by eduardo-sl">
+    <meta name="twitter:description" content="Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for… From eduardo-sl/go-agent-skills, MIT.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/#page",
+        "name": "go-error-handling Agent Skill by eduardo-sl",
+        "description": "Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for… From eduardo-sl/go-agent-skills, MIT.",
+        "url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/",
+        "dateModified": "2026-10-16",
+        "isPartOf": {
+          "@id": "https://skills.suedeai.ai/directory/#directory"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/#breadcrumb"
+        },
+        "mainEntity": {
+          "@type": "SoftwareSourceCode",
+          "name": "go-error-handling",
+          "description": "Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for implementing, designing, debugging, and reviewing error handling.",
+          "codeRepository": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-error-handling",
+          "programmingLanguage": "Markdown",
+          "license": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+          "dateModified": "2026-10-15",
+          "keywords": [
+            "Developer Tools and Frameworks",
+            "Agent Skills",
+            "SKILL.md"
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Developer Tools and Frameworks",
+            "item": "https://skills.suedeai.ai/directory/developer-tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "eduardo-sl/go-agent-skills",
+            "item": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "go-error-handling",
+            "item": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/"
+          }
+        ]
+      }
+    </script>
+    <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../../assets/site.css">
+    <link rel="stylesheet" href="../../../../assets/skill.css">
+    <link rel="stylesheet" href="../../../../assets/directory.css">
+    <script src="../../../../assets/directory.js" defer></script>
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../../../../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../../../../">Home</a>
+          <a href="../../../">Directory</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../blog/">Blog</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Agent skill &middot; Dev tools &middot; eduardo-sl</div>
+      <h1>go-error-handling <span class="h1-sub">agent skill</span></h1>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../developer-tools/">Developer Tools and Frameworks</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">eduardo-sl/go-agent-skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">go-error-handling</span></nav>
+      <p class="lead">Covers Go error handling patterns including wrapping, sentinel errors, custom error types, and the errors package, for implementing, designing, debugging, and reviewing error handling.</p>
+      <p><a class="button" href="https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-error-handling" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-error-handling/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <section class="panel" aria-labelledby="facts-title">
+        <h2 id="facts-title">At a glance</h2>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/eduardo-sl" target="_blank" rel="noopener">eduardo-sl</a></td></tr>
+            <tr><th scope="row">Repository</th><td><a href="../">eduardo-sl/go-agent-skills</a> (31 listed skills)</td></tr>
+            <tr><th scope="row">Category</th><td><a href="../../../developer-tools/">Developer Tools and Frameworks</a></td></tr>
+            <tr><th scope="row">License</th><td><a href="https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
+            <tr><th scope="row">Last commit</th><td>October 15, 2026 (repository)</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>227 lines, 1,106 words</td></tr>
+            <tr><th scope="row">Bundled files</th><td>2 files, including references</td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none.</li>
+          <li><b>Tool permissions requested:</b> <code>Read Edit Write Glob Grep Bash(go:*) Bash(gofmt:*)</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
+          <li><b>License:</b> <a href="https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install go-error-handling</h2>
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-error-handling'</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/eduardo-sl/go-agent-skills.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/skills/(code-quality)/go-error-handling&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo eduardo-sl/go-agent-skills \
+    --path 'skills/(code-quality)/go-error-handling'</code></pre>
+        </div>
+        <p class="muted">eduardo-sl/go-agent-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
+      </section>
+      <section class="panel" aria-labelledby="author-title">
+        <h2 id="author-title">How the author describes it</h2>
+        <blockquote class="author-quote" cite="https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-error-handling/SKILL.md">
+          <p>Go error handling patterns, wrapping, sentinel errors, custom error types, and the errors package. Grounded in Effective Go, Go Code Review Comments, and production-proven idioms. Use when implementing error handling, designing error types, debugging error chains, or reviewing error handling patterns. Trigger examples: &quot;handle errors&quot;, &quot;error wrapping&quot;, &quot;custom error type&quot;, &quot;sentinel errors&quot;, &quot;errors.Is&quot;, &quot;errors.As&quot;. Not for: panic/recover in middleware (go-api-design), test assertions (go-test-quality).</p>
+        </blockquote>
+        <p class="muted">From the <code>description</code> field of <a href="https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-error-handling/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+        <h3>Compatibility, from SKILL.md</h3>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Compatibility</th><td>Designed for Claude Code or similar AI coding agents working on Go projects. Requires the Go toolchain.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Sections in SKILL.md</h3>
+        <ul class="outline">
+          <li class="lvl-2">1. Error Decision Tree</li>
+          <li class="lvl-2">2. Sentinel Errors</li>
+          <li class="lvl-2">3. Custom Error Types</li>
+          <li class="lvl-2">4. Error Wrapping</li>
+          <li class="lvl-3">When NOT to use %w</li>
+          <li class="lvl-2">5. Handle Errors Exactly Once</li>
+          <li class="lvl-2">6. Error Naming Conventions</li>
+          <li class="lvl-2">7. Panic Rules</li>
+          <li class="lvl-2">8. Error Checking Patterns</li>
+          <li class="lvl-2">9. Errors at Boundaries</li>
+          <li class="lvl-2">Executable Verification</li>
+          <li class="lvl-2">Verification Checklist</li>
+        </ul>
+        <h3>Files in the skill folder</h3>
+        <ul class="file-list">
+          <li><code>SKILL.md</code></li>
+          <li><code>references/patterns-and-boundaries.md</code></li>
+        </ul>
+      </section>
+      <section class="panel" id="check" aria-labelledby="check-title">
+        <h2 id="check-title">Suede Skill Check: grade A</h2>
+        <p>go-error-handling passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Badge for go-error-handling</h2>
+        <p>Maintainers of eduardo-sl/go-agent-skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/badge.svg)](https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="cited-title">
+        <h2 id="cited-title">Where this skill is cited</h2>
+        <p>eduardo-sl/go-agent-skills appears in 3 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="related-title">
+        <h2 id="related-title">More developer tools skills</h2>
+        <div class="links">
+          <a class="link-row" href="../../../apollographql/skills/apollo-connectors/"><b>apollo-connectors</b><span>apollographql/skills</span></a>
+          <a class="link-row" href="../../../apollographql/skills/graphos-factory/"><b>graphos-factory</b><span>apollographql/skills</span></a>
+          <a class="link-row" href="../../../firebase/skills/firebase-auth-basics/"><b>firebase-auth-basics</b><span>firebase/skills</span></a>
+          <a class="link-row" href="../../../flutter/skills/dart-use-pattern-matching/"><b>dart-use-pattern-matching</b><span>flutter/skills</span></a>
+          <a class="link-row" href="../../../jeffallan/claude-skills/kotlin-specialist/"><b>kotlin-specialist</b><span>jeffallan/claude-skills</span></a>
+          <a class="link-row" href="../../../necmttn/ax/ship-checklist/"><b>ship-checklist</b><span>Necmttn/ax</span></a>
+        </div>
+        <p><a href="../../../developer-tools/">All developer tools and frameworks skills</a></p>
+      </section>
+      <section class="panel" aria-labelledby="siblings-title">
+        <h2 id="siblings-title">More from eduardo-sl/go-agent-skills</h2>
+        <div class="links">
+          <a class="link-row" href="../go-ci/"><b>go-ci</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../go-coding-standards/"><b>go-coding-standards</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../go-concurrency-review/"><b>go-concurrency-review</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../go-context/"><b>go-context</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../go-defensive-coding/"><b>go-defensive-coding</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../go-interface-design/"><b>go-interface-design</b><span>eduardo-sl/go-agent-skills</span></a>
+        </div>
+        <p><a href="../">All 31 skills in eduardo-sl/go-agent-skills</a></p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">go-error-handling is published by eduardo-sl in eduardo-sl/go-agent-skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../../../">Directory</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

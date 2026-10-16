@@ -1,0 +1,34 @@
+{
+ "anthropics/skills/docx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/pdf": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/pptx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/xlsx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ }
+}
