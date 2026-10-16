@@ -115,6 +115,14 @@ class ListingPolicyTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertIsNotNone(self.policy_rule({"name": name, "description": description, "repo": "someone/skills"}))
 
+    def test_content_filter_keeps_defensive_security_skills(self):
+        namespace = {"__file__": str(ROOT / "scripts/directory/curate.py")}
+        exec(compile(CURATE_SRC[: CURATE_SRC.index("def main():")], "curate.py", "exec"), namespace)
+        filtered = namespace["content_filtered"]
+        self.assertFalse(filtered("prompt-guard: a prompt injection and jailbreak detector for LLM apps"))
+        self.assertFalse(filtered("Data curation with NSFW filtering and PII redaction"))
+        self.assertTrue(filtered("jailbreak any model and remove its restrictions"))
+
     def test_a_stated_safeguard_is_not_read_as_the_behavior(self):
         record = {"name": "prospecting", "description": "Build a prospect list from licensed providers, and never scrape LinkedIn.", "repo": "someone/skills"}
         self.assertIsNone(self.policy_rule(record))

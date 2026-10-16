@@ -146,9 +146,10 @@
         <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 5 script files (5 Python). Your agent may run them, so read them first.</li>
+          <li><b>Commands in SKILL.md:</b> its code blocks run <code>pip install</code>, which fetches or runs software from outside the skill folder.</li>
           <li><b>Environment variables its scripts read:</b> <code>ATLASSIAN_API_TOKEN</code>. Check SKILL.md for which ones it needs.</li>
           <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>mcp.atlassian.com</code> and <code>cf.mcp.atlassian.com</code>.</li>
-          <li><b>MCP:</b> SKILL.md mentions an MCP server; it says whether the skill needs one.</li>
+          <li><b>MCP:</b> SKILL.md mentions an MCP server.</li>
           <li><b>License:</b> <a href="https://github.com/sanjay3290/ai-skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>

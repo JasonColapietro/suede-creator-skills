@@ -146,6 +146,7 @@
         <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 1 script file (1 Shell). Your agent may run them, so read them first.</li>
+          <li><b>Commands in SKILL.md:</b> its code blocks run <code>npm install</code>, which fetches or runs software from outside the skill folder.</li>
           <li><b>MCP:</b> SKILL.md calls tools from the <code>aws-mcp</code> MCP server.</li>
           <li><b>Tool permissions requested:</b> <code>mcp__cdk__*, mcp__aws-mcp__*, mcp__awsdocs__*, Bash(cdk *), Bash(npm *), Bash(npx *), Bash(aws cloudformation *), Bash(aws sts get-caller-identity)</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/zxkane/aws-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>

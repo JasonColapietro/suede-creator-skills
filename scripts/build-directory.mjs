@@ -65,6 +65,7 @@ data.skills = data.skills.map((c) => {
     commit_date: meta.commit_date,
     lists: meta.lists,
     official: meta.official,
+    repo_withheld: meta.withheld || 0,
     body_lines: c.size[0],
     body_words: c.size[1],
     file_count: c.size[2],
@@ -152,6 +153,7 @@ const DISPLAY_NAMES = {
   wordpress: "WordPress", greensock: "GSAP", "fal-ai-community": "fal", "minimax-ai": "MiniMax", callstackincubator: "Callstack",
   firecrawl: "Firecrawl", composiohq: "Composio", binance: "Binance", crawlbase: "Crawlbase", voltagent: "VoltAgent",
   qdrant: "Qdrant", transloadit: "Transloadit", mailtrap: "Mailtrap", trycourier: "Courier", "video-db": "VideoDB",
+  angular: "Angular", "cypress-io": "Cypress", lambdatest: "LambdaTest", veniceai: "Venice",
 };
 const publisherName = (owner, official) => (official && DISPLAY_NAMES[owner.toLowerCase()]) || owner;
 
@@ -192,11 +194,17 @@ for (const r of repos.values()) {
   // page, so the two never restate each other. A one-skill repository without
   // one still gets a page (and a badge to link to), kept out of the index
   // because it would hold a single quoted row.
-  r.hasPage = r.skills.length >= 2 || !r.skills[0].featured;
+  // A repository page, once published, stays while the repository is listed,
+  // so a README badge that points at it keeps working.
+  r.hasPage = r.skills.length >= 2 || !r.skills[0].featured || fs.existsSync(path.join(outRoot, ...r.slug.split("/"), "index.html"));
   r.indexable = r.skills.length >= 2;
   r.target = r.hasPage ? `directory/${r.slug}/` : skillPath(r.skills[0]);
   r.publisher = publisherName(r.owner, r.official);
   r.hasRootSkill = r.skills.some((s) => s.dir === ".");
+  r.withheld = r.skills[0].repo_withheld;
+  const licCounts = new Map();
+  for (const s of r.skills) licCounts.set(s.license, (licCounts.get(s.license) || 0) + 1);
+  r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
 const RESERVED = new Set(["methodology", "submit", ...categories.map((c) => c.slug)]);
@@ -491,7 +499,7 @@ ${rows
         </div>`;
 }
 
-function skillRow(here, s, { showRepo }) {
+function skillRow(here, s, { showRepo, showLicense = false }) {
   const cat = catBySlug.get(s.category);
   const nameCell = s.featured
     ? `<a href="${rel(here, skillPath(s))}">${esc(s.name)}</a>`
@@ -503,18 +511,18 @@ function skillRow(here, s, { showRepo }) {
     ? repoTarget
       ? `<a href="${repoTarget}">${esc(s.repo)}</a>`
       : `<a href="${esc(`https://github.com/${s.repo}`)}" target="_blank" rel="noopener">${esc(s.repo)}</a>`
-    : `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.label)}</a>`;
+    : `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.label)}</a>${showLicense ? `<br><span class="row-license">${esc(s.license)}</span>` : ""}`;
   const id = showRepo ? "" : ` id="${esc(s.slug)}"`;
   return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s.grade)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}</td></tr>`;
 }
 
-function skillTable(here, rows, { id, showRepo, caption }) {
+function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
   const head = `<thead><tr><th scope="col">Skill</th><th scope="col">${showRepo ? "Repository" : "Category"}</th><th scope="col">What it does</th></tr></thead>`;
   const render = (list, tid) => `        <div class="table-wrap">
           <table class="skill-table" id="${tid}" data-filter-group="${id}">
             ${head}
             <tbody>
-${list.map((s) => skillRow(here, s, { showRepo })).join("\n")}
+${list.map((s) => skillRow(here, s, { showRepo, showLicense })).join("\n")}
             </tbody>
           </table>
         </div>`;
@@ -572,13 +580,16 @@ function beforeInstall(s) {
     const total = langs.reduce((n, [, c]) => n + c, 0);
     items.push(`<b>Bundled scripts:</b> ${plural(total, "script file")} (${langs.map(([l, c]) => `${fmt(c)} ${esc(l)}`).join(", ")}). Your agent may run them, so read them first.`);
   } else {
-    items.push(`<b>Bundled scripts:</b> none. The skill is instructions and reference files only.`);
+    items.push(`<b>Bundled scripts:</b> none.`);
+  }
+  if (i.runs && i.runs.length) {
+    items.push(`<b>Commands in SKILL.md:</b> its code blocks run ${listPhrase(i.runs.map((c) => `<code>${esc(c)}</code>`))}, which ${i.runs.length === 1 ? "fetches or runs" : "fetch or run"} software from outside the skill folder.`);
   }
   if (i.env_read && i.env_read.length) {
     items.push(`<b>Environment variables its scripts read:</b> ${codeList(i.env_read)}. Check SKILL.md for which ones it needs.`);
   }
   if (i.env_docs && i.env_docs.length) {
-    items.push(`<b>Credential names SKILL.md mentions:</b> ${codeList(i.env_docs)}. SKILL.md says when, or whether, each one is needed.`);
+    items.push(`<b>Credential names SKILL.md mentions:</b> ${codeList(i.env_docs)}.`);
   }
   if (i.net) {
     items.push(`<b>Network:</b> its scripts use an HTTP client or a cloud SDK${i.hosts && i.hosts.length ? `, and name ${listPhrase(i.hosts.map((h) => `<code>${esc(h)}</code>`))}` : ""}.`);
@@ -586,7 +597,7 @@ function beforeInstall(s) {
   if (i.mcp_tools && i.mcp_tools.length) {
     items.push(`<b>MCP:</b> SKILL.md calls tools from the ${listPhrase(i.mcp_tools.map((t) => `<code>${esc(t)}</code>`))} MCP server${i.mcp_tools.length > 1 ? "s" : ""}.`);
   } else if (i.mcp) {
-    items.push(`<b>MCP:</b> SKILL.md mentions an MCP server; it says whether the skill needs one.`);
+    items.push(`<b>MCP:</b> SKILL.md mentions an MCP server.`);
   }
   if (s.allowed_tools) {
     items.push(`<b>Tool permissions requested:</b> <code>${esc(trimTo(s.allowed_tools, 160))}</code> (the <code>allowed-tools</code> field of SKILL.md).`);
@@ -628,7 +639,7 @@ function installSection(s) {
       ? `        <p>${esc(note.text)}</p>
 ${codeBlock({ label: "Claude Code", key: "install-publisher" }, note.commands.join("\n"))}
         <p class="muted">Source: <a href="${esc(note.source)}" target="_blank" rel="noopener">${esc(who)}'s documentation</a>.</p>`
-      : `        <p>Read the <a href="${esc(s.license_url)}" target="_blank" rel="noopener">license</a> for how ${esc(who)} makes the skill available.</p>`;
+      : `        <p>The directory shows no install commands for it. Read the <a href="${esc(s.license_url)}" target="_blank" rel="noopener">license terms</a> before you use the skill.</p>`;
     return `      <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">How to use ${esc(s.name)}</h2>
         <p>${esc(who)} publishes ${esc(s.name)} under its own license terms, which restrict copying the files.</p>
@@ -806,7 +817,7 @@ ${relatedRows(here, siblings)}
   };
   // The publisher is named as an author only where it is a company: a GitHub
   // owner name alone does not say whether it is a person or an organization.
-  if (s.official) code.author = { "@type": "Organization", name: s.owner, url: `https://github.com/${s.owner}` };
+  if (s.official) code.author = { "@type": "Organization", name: publisherName(s.owner, true), url: `https://github.com/${s.owner}` };
   const title = skillTitle(s);
   files.set(`${here}index.html`, page({
     here,
@@ -844,7 +855,7 @@ function renderRepo(r) {
   const primary = catBySlug.get(r.primary);
   const bc = crumbs(here, [["directory/", "Directory"], [catPath(primary.slug), primary.title], [null, r.repo]]);
   const catLinks = r.categories.map((c) => `<a href="${rel(here, catPath(c))}">${esc(catBySlug.get(c).title)}</a>`);
-  const licenseText = r.licenses.length === 1 ? r.licenses[0] : `${r.licenses.slice(0, 3).join(", ")}${r.licenses.length > 3 ? " and others" : ""}`;
+  const licenseText = r.licenseCounts.length === 1 ? r.licenseCounts[0][0] : r.licenseCounts.map(([l, n]) => `${l} (${fmt(n)})`).join(", ");
   const where = r.categories.length === 1 ? `in ${catBySlug.get(r.primary).lower}` : `across ${plural(r.categories.length, "category", "categories")}`;
   const lead = `${plural(r.skills.length, "skill")} from ${r.repo} ${r.skills.length === 1 ? "is" : "are"} listed in the directory, ${where}.${r.featuredCount ? ` ${plural(r.featuredCount, "skill")} ${r.featuredCount === 1 ? "has" : "have"} a full page with install steps and a pre-install summary.` : ""}`;
   const facts = factsTable([
@@ -856,7 +867,9 @@ function renderRepo(r) {
     ["Last commit", longDate(r.commit)],
     // A root SKILL.md hides the nested skills from the skills CLI, so a
     // whole-repository install would bring only that one.
-    ["Install every skill", r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
+    // Hidden when it would also install a skill the directory withholds, one
+    // whose license restricts copying, or only a root skill that hides the rest.
+    ["Install every skill", r.withheld || r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
     ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
   ]);
   const relatedRepos = linkedRepos.filter((o) => o.primary === r.primary && o.slug !== r.slug && (o.indexable || !o.hasPage)).slice(0, 6);
@@ -872,13 +885,13 @@ ${badgeBlock(here, {
   value: "listed",
   target: url(here),
   heading: "Show the listing in your README",
-  lede: `Maintainers of ${esc(r.repo)} can add this badge to the repository README. It links to this page, where visitors see every listed skill and how to install it.`,
+  lede: `Maintainers of ${esc(r.repo)} can add this badge to the repository README. It links to this page, where visitors see every listed skill, its license and its source.`,
 })}
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in ${esc(r.repo)}</h2>
         <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
 ${r.skills.length > 30 ? filterField("repo-skills", r.skills.length, "skills") : ""}
-${skillTable(here, r.skills, { id: "repo-skills", showRepo: false, caption: "skills" })}
+${skillTable(here, r.skills, { id: "repo-skills", showRepo: false, caption: "skills", showLicense: r.licenseCounts.length > 1 })}
       </section>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this repository is cited</h2>
@@ -911,7 +924,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
       itemListElement: r.skills.slice(0, 50).map((s, i) => ({ "@type": "ListItem", position: i + 1, name: s.name, url: s.featured ? url(skillPath(s)) : s.folder_url })),
     },
   };
-  if (r.official) collection.about.author = { "@type": "Organization", name: r.owner, url: `https://github.com/${r.owner}` };
+  if (r.official) collection.about.author = { "@type": "Organization", name: r.publisher, url: `https://github.com/${r.owner}` };
   files.set(`${here}index.html`, page({
     here,
     title,
@@ -1063,11 +1076,11 @@ const FAQ = [
   ],
   [
     "How do I install a skill from this directory?",
-    "Each skill page lists up to three routes: the skills CLI (npx skills add with the repository and skill name), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder from the author's GitHub repository. Skills published under restrictive license terms show the license instead.",
+    "Each skill page lists up to three routes: the skills CLI (npx skills add with the skill folder's GitHub URL), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder from the author's GitHub repository. Skills published under license terms that restrict copying show those terms instead.",
   ],
   [
     "How are skills chosen and graded?",
-    "The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: six checks on the SKILL.md format, plus a declared license and a commit in the last year. Skills that pass at least seven checks are listed.",
+    "The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: six checks on the SKILL.md format, plus a declared license and a commit in the last year. Skills that pass at least seven checks, declare a license and meet the listing rules are listed.",
   ],
   [
     "How do I get my skill listed?",
@@ -1130,7 +1143,7 @@ ${badgeBlock(here, {
   value: "listed",
   target: DIR_URL,
   heading: "For skill authors: show your listing",
-  lede: `Every listed repository has a page with its own README badge, and so does every skill with a full page; find it under <b>README badge</b> on the page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
+  lede: `Every listing has a page with its own README badge: the repository's page, or the skill's page when a repository's single listed skill has one. Find it under <b>README badge</b> on the page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
 })}
       <section class="panel" aria-labelledby="all-repos-title">
         <h2 id="all-repos-title">All listed repositories</h2>
@@ -1199,7 +1212,7 @@ function renderMethodology() {
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
       <section class="panel" aria-labelledby="sources-title">
         <h2 id="sources-title">Where the skills come from</h2>
-        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, and nothing in them is executed. This snapshot was taken on ${longDate(data.generated)}.</p>
+        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. This snapshot was taken on ${longDate(data.generated)}.</p>
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
@@ -1217,15 +1230,15 @@ ${rows}
           <li><b>Grade B</b>: six of seven pass (${fmt(gradeCounts.B)} listed skills).</li>
           <li>Grades C and below are not listed.</li>
         </ul>
-        <p>The check confirms a skill is well-formed, licensed and maintained. Read its SKILL.md to confirm it fits your task.</p>
+        <p>A skill that passes all eight is well-formed, licensed and maintained. Read its SKILL.md to confirm it fits your task.</p>
       </section>
       <section class="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Listing rules</h2>
         <ul>
           <li>Grade A or B on the Suede Skill Check.</li>
-          <li>A license declared in the SKILL.md frontmatter or the repository. Every page states it; ${openPct}% of listed skills use an open-source or open-content license, and pages for the rest say what their terms allow.</li>
+          <li>A license declared in the SKILL.md frontmatter or the repository. Every listing states it; ${openPct}% of listed skills use an open-source or open-content license, and pages for the rest flag the terms next to the license.</li>
           <li>A description written mainly in English, so the directory's pages read consistently.</li>
-          <li>Templates, examples, drafts and test fixtures are skipped.</li>
+          <li>Templates, examples, drafts, test fixtures and folders named archive, deprecated, internal or prompts, or starting with an underscore, are skipped.</li>
           <li>One listing per skill. A copy is the same skill name with a mostly matching description, or a description repeated word for word under another name. When copies appear in several repositories, the copy in the repository cited by the most lists keeps the listing.</li>
           <li>Skills are not listed when they:
             <ul>
@@ -1233,13 +1246,13 @@ ${POLICY_RULES.map((r) => `              <li>${esc(r)}</li>`).join("\n")}
             </ul>
             A vendor's skills for its own service are listed under the second and third rules. A repository whose product is one of these behaviors is left out as a whole.
           </li>
-          <li>Skills are also left out when their name or description trips the site's public-content filters: crypto promotion, adult content, jailbreaks, a short list of brand-safety terms including the name Telegram, and descriptions that carry an email address or phone number. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
+          <li>Skills are also left out when their name or description trips the site's content filters: adult content, malware terms, jailbreaks outside a defensive context, the short list of terms the site's own public-copy guard rejects, and descriptions that carry an email address or phone number. The exact terms are in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/curate.py" target="_blank" rel="noopener">curate.py</a>. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
           <li>Suede's own skills are catalogued separately on this site and pass the same rules; a test in the repository checks every one of them against the policy.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="pages-title">
         <h2 id="pages-title">Which skills get a full page</h2>
-        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, environment variables and network use found in the skill's files, install steps, and a README badge. ${fmt(featured.length)} skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
+        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. ${fmt(featured.length)} skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
       </section>
       <section class="panel" aria-labelledby="cat-title">
         <h2 id="cat-title">Categories</h2>

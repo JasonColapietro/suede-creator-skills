@@ -21,11 +21,11 @@
     "label": "Dev tools",
     "short": "developer tools",
     "seo_title": "Developer Tool and Framework Skills for Claude and Codex",
-    "meta": "Framework, language, SDK and CLI skills for Claude Code and Codex, many from the teams that build the tools: Flutter, Rust, GraphQL, Git and more.",
-    "intro": "Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter and Rust to GraphQL, Git and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.",
+    "meta": "Framework, language, SDK and CLI skills for Claude Code and Codex, many from the teams behind the tools: Flutter, Angular, Expo, Apollo GraphQL and more.",
+    "intro": "Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.",
     "guide": [
       "Match skills to the stack you actually ship. A framework skill earns its place by encoding the version-specific rules your agent would otherwise guess at, so prefer one written for the version you run.",
-      "Look for the Official tag. Skills published by the company behind a framework or SDK track its current APIs, and the directory marks them on every page.",
+      "Look for the Official tag. Skills published by the company behind a framework or SDK track its current APIs, and the directory tags their collections Official.",
       "Several collections ship one skill per framework task. Installing the whole repository is one command; installing only the skills for your stack keeps the agent's routing list short."
     ]
   },
@@ -116,7 +116,7 @@
     "guide": [
       "Workspace skills act on your accounts. Check the tool permissions and environment variables listed on each page before you install, and prefer skills that read before they write.",
       "Thinking and planning skills are plain Markdown with no scripts, so they are the quickest to try and the easiest to adapt to your own process.",
-      "When a skill works through an MCP server, its Before you install panel says so; set up and authorize that server before you run the skill."
+      "Some skills work through an MCP server. When SKILL.md mentions one, the Before you install panel says so; read SKILL.md for the server to set up and authorize."
     ]
   },
   {
@@ -206,7 +206,7 @@
     "guide": [
       "Editing skills work best on a draft you supply. Give them your text and your audience, and ask for changes with reasons so you can accept them one by one.",
       "Documentation skills follow a house format. Pick one whose structure matches your docs site, or adapt its template once and keep it.",
-      "Writing skills are plain Markdown, so you can read the whole standard in the SKILL.md before you install it."
+      "Most writing skills are plain Markdown, so you can read the whole standard in the SKILL.md before you install it; the scripts line on each page shows the ones that bundle code."
     ]
   },
   {

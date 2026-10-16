@@ -48,7 +48,12 @@
             "Testing and QA",
             "Agent Skills",
             "SKILL.md"
-          ]
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "LambdaTest",
+            "url": "https://github.com/LambdaTest"
+          }
         }
       }
     </script>
@@ -128,7 +133,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/LambdaTest" target="_blank" rel="noopener">LambdaTest</a></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/LambdaTest" target="_blank" rel="noopener">LambdaTest</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">LambdaTest/agent-skills</a> (73 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../testing-qa/">Testing and QA</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/LambdaTest/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
@@ -146,7 +151,9 @@
         <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 4 script files (2 TypeScript, 1 Python, 1 Shell). Your agent may run them, so read them first.</li>
+          <li><b>Commands in SKILL.md:</b> its code blocks run <code>npx</code>, which fetches or runs software from outside the skill folder.</li>
           <li><b>Environment variables its scripts read:</b> <code>LT_ACCESS_KEY</code>. Check SKILL.md for which ones it needs.</li>
+          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK.</li>
           <li><b>License:</b> <a href="https://github.com/LambdaTest/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>

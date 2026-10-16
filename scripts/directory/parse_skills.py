@@ -24,7 +24,7 @@ SKIP_DIRS = {".git", "node_modules", "vendor", "dist", "build", ".venv", "__pyca
 
 LICENSE_PATTERNS = [
     ("MIT", re.compile(r"\bMIT License\b|Permission is hereby granted, free of charge", re.I)),
-    ("Apache-2.0", re.compile(r"Apache License,?\s+Version 2\.0", re.I)),
+    ("Apache-2.0", re.compile(r"Apache License,?\s+(Version\s+)?2\.0", re.I)),
     ("BSD-3-Clause", re.compile(r"Redistribution and use in source and binary forms.*?Neither the name", re.I | re.S)),
     ("BSD-2-Clause", re.compile(r"Redistribution and use in source and binary forms", re.I)),
     ("GPL-3.0", re.compile(r"GNU GENERAL PUBLIC LICENSE\s+Version 3", re.I)),
@@ -33,6 +33,9 @@ LICENSE_PATTERNS = [
     ("MPL-2.0", re.compile(r"Mozilla Public License,?\s+(v\.\s*|Version\s+)2\.0", re.I)),
     ("ISC", re.compile(r"\bISC License\b|Permission to use, copy, modify, and/or distribute", re.I)),
     ("CC-BY-4.0", re.compile(r"Creative Commons Attribution 4\.0", re.I)),
+    ("CC-BY-NC-SA-4.0", re.compile(r"Attribution-NonCommercial-ShareAlike", re.I)),
+    ("CC-BY-NC-ND-4.0", re.compile(r"Attribution-NonCommercial-NoDerivatives", re.I)),
+    ("CC-BY-ND-4.0", re.compile(r"Attribution-NoDerivatives", re.I)),
     ("CC-BY-SA-4.0", re.compile(r"Attribution-ShareAlike 4\.0", re.I)),
     ("CC-BY-NC-4.0", re.compile(r"Attribution-NonCommercial", re.I)),
     ("Unlicense", re.compile(r"This is free and unencumbered software released into the public domain", re.I)),
@@ -100,6 +103,7 @@ CONST_RE = re.compile(rf"""^\s*(?:export\s+)?(?:const\s+|let\s+|var\s+)?({CRED_N
 NET_RE = re.compile(
     r"\b(requests\.(get|post|put|patch|delete|head|request|Session)|httpx\.|urllib\.request|urlopen\(|aiohttp|fetch\(|axios|got\(|node-fetch|http\.client|net/http|reqwest"
     r"|import boto3|boto3\.client|from openai|import openai|from anthropic|import anthropic|@anthropic-ai/sdk|from google\.cloud|google-cloud-|new OpenAI\(|websocket"
+    r"|from google import genai|google\.genai|google\.generativeai|page\.goto\(|driver\.get\(|chromium\.launch|puppeteer\.launch"
     r"|\bcurl\s+-|\bcurl\s+https?:|\bwget\s+https?:)"
 )
 COMMENT_RE = {
@@ -123,6 +127,25 @@ def strip_comments(text, ext):
     if ext in HASH_COMMENT_EXT:
         return COMMENT_RE["hash"].sub("", text)
     return COMMENT_RE["slash"].sub(r"\1", COMMENT_RE["block"].sub("", text))
+
+
+RUN_PATTERNS = [
+    ("curl | sh", re.compile(r"\bcurl\b[^\n|]*\|\s*(sudo\s+)?(ba)?sh\b")),
+    ("npx", re.compile(r"(^|[\s;&|(])npx\s")),
+    ("pip install", re.compile(r"\bpip3?\s+install\b|\buv\s+pip\s+install\b")),
+    ("uvx", re.compile(r"(^|[\s;&|(])uvx\s")),
+    ("npm install", re.compile(r"\b(npm|pnpm|yarn|bun)\s+(install|i|add)\b")),
+    ("brew install", re.compile(r"\bbrew\s+install\b")),
+    ("docker run", re.compile(r"\bdocker\s+(run|compose)\b")),
+    ("go install", re.compile(r"\bgo\s+install\b")),
+    ("cargo install", re.compile(r"\bcargo\s+install\b")),
+]
+FENCE_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+
+
+def run_commands(body: str):
+    code = "\n".join(FENCE_RE.findall(body))
+    return [label for label, pat in RUN_PATTERNS if pat.search(code)]
 
 
 def install_facts(skill_dir: Path, body: str):
@@ -182,6 +205,10 @@ def install_facts(skill_dir: Path, body: str):
         "mcp": bool(MCP_RE.search(body)),
         "mcp_tools": mcp_tools,
         "captcha_files": captcha_files,
+        "run_commands": run_commands(body),
+        # Kept for the listing-policy scan in curate.py, not published.
+        "policy_text": body[:8000],
+        "file_names": sorted({fn for _, _, fns in os.walk(skill_dir) for fn in fns})[:200],
     }
 
 

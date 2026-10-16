@@ -5246,15 +5246,6 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
- "directory/openweb-org/openweb/openweb/index.html": [
-  "openweb skill by openweb-org",
-  "openweb skill",
-  "openweb agent skill",
-  "openweb claude skill",
-  "openweb-org skills",
-  "developer tools agent skills",
-  "SKILL.md"
- ],
  "directory/orchestra-research/ai-research-skills/academic-plotting/index.html": [
   "academic-plotting skill by Orchestra-Research",
   "academic-plotting skill",
@@ -6377,15 +6368,6 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
- "directory/socai-io/jev-social/jev-social/index.html": [
-  "jev-social skill by socai-io",
-  "jev-social skill",
-  "jev-social agent skill",
-  "jev-social claude skill",
-  "socai-io skills",
-  "marketing and SEO agent skills",
-  "SKILL.md"
- ],
  "directory/submit/index.html": [
   "submit agent skill",
   "list claude skill",
@@ -6516,6 +6498,23 @@
   "swarmclawai skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/tencent/ai-infra-guard/aig-scanner/index.html": [
+  "aig-scanner skill by Tencent",
+  "aig-scanner skill",
+  "aig-scanner agent skill",
+  "aig-scanner claude skill",
+  "Tencent skills",
+  "security agent skills",
+  "SKILL.md"
+ ],
+ "directory/tencent/ai-infra-guard/index.html": [
+  "Tencent/AI-Infra-Guard skills",
+  "AI-Infra-Guard skills",
+  "Tencent agent skills",
+  "AI-Infra-Guard claude skills",
+  "security agent skills",
+  "agent skills directory"
  ],
  "directory/testdino-hq/playwright-skill/index.html": [
   "testdino-hq/playwright-skill skills",
@@ -6878,24 +6877,6 @@
   "unbrowse claude skill",
   "unbrowse-ai skills",
   "AI agent agent skills",
-  "SKILL.md"
- ],
- "directory/vaibhavarora14/job-application-agent/job-application-agent/index.html": [
-  "job-application-agent skill by vaibhavarora14",
-  "job-application-agent skill",
-  "job-application-agent agent skill",
-  "job-application-agent claude skill",
-  "vaibhavarora14 skills",
-  "business and finance agent skills",
-  "SKILL.md"
- ],
- "directory/vanshyadav1408/omentir/linkedin-outreach/index.html": [
-  "linkedin-outreach skill by vanshyadav1408",
-  "linkedin-outreach skill",
-  "linkedin-outreach agent skill",
-  "linkedin-outreach claude skill",
-  "vanshyadav1408 skills",
-  "business and finance agent skills",
   "SKILL.md"
  ],
  "directory/veniceai/skills/index.html": [

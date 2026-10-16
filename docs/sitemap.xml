@@ -1213,6 +1213,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/tencent/ai-infra-guard/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -4411,12 +4417,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://skills.suedeai.ai/directory/openweb-org/openweb/openweb/</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://skills.suedeai.ai/directory/orchestra-research/ai-research-skills/academic-plotting/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -5077,12 +5077,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://skills.suedeai.ai/directory/socai-io/jev-social/jev-social/</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://skills.suedeai.ai/directory/supabase/agent-skills/supabase/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -5150,6 +5144,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/swarmclawai/swarmvault/swarmvault/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/tencent/ai-infra-guard/aig-scanner/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5366,18 +5366,6 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/unbrowse-ai/unbrowse/unbrowse/</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://skills.suedeai.ai/directory/vaibhavarora14/job-application-agent/job-application-agent/</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://skills.suedeai.ai/directory/vanshyadav1408/omentir/linkedin-outreach/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

@@ -49,13 +49,29 @@ CATEGORIES = [
 ]
 CAT_RES = [(slug, [re.compile(k, re.I) for k in kws]) for slug, kws in CATEGORIES]
 
-# Phrases the site's public-copy guards reject anywhere under docs/, plus
-# content no directory of this kind should carry.
-REJECT_TERMS = re.compile(
-    r"telegram|join discord|follow on x|airdrop|passport stamp|suede|jailbreak|nsfw|porn|onlyfans|keylogger|\bcrack(ed|ing)?\b|"
-    r"honest limits|not the first choice|not for everyone|may not be the best fit",
+# Content filters. ALWAYS_TERMS are phrases the site's public-copy guard
+# (tests/test_neutral_oss_positioning.py) rejects anywhere under docs/, plus
+# adult and malware terms. CONTEXT_TERMS count only outside a defensive
+# context, so a skill that detects jailbreaks or filters NSFW content stays.
+ALWAYS_TERMS = re.compile(
+    r"telegram|join discord|follow on x|token airdrop|airdrop eligibility|passport stamp|stampable|points-ready|future rewards"
+    r"|suede holder|suede-ready|suede intake|suede transfer|stamping api|passport signal|patented signing device|suede ambassador"
+    r"|\bporn|onlyfans|keylogger|\bcrack(ed|ing)\b",
     re.I,
 )
+CONTEXT_TERMS = re.compile(r"jailbreak\w*|\bnsfw\b", re.I)
+DEFENSIVE = re.compile(r"detect|guard|filter|block|classif|moderat|safety|safe\b|screen|prevent|defen|protect|red[- ]team|evaluat|scan", re.I)
+
+
+def content_filtered(text):
+    if ALWAYS_TERMS.search(text):
+        return True
+    for m in CONTEXT_TERMS.finditer(text):
+        window = text[max(0, m.start() - 60) : m.end() + 60]
+        if not DEFENSIVE.search(window):
+            return True
+    return False
+
 
 # The published listing policy (/directory/methodology/). Each rule reads the
 # name, the whole description and the repository name. The bare word "scrape"
@@ -97,9 +113,24 @@ POLICY = {
         re.I,
     )),
 }
+# Strong signals inside SKILL.md or the skill's file names. Each maps to the
+# rule it evidences; negated mentions ("never use 2captcha") do not count.
+BODY_SIGNALS = [
+    ("automates posting, messaging or account activity on a social platform", re.compile(r"\bunipile\b|phantombuster|\bdripify\b|\bexpandi\b|\bbotdog\b|\bwaalaxy\b", re.I)),
+    ("works around a site's blocks, CAPTCHAs or official API", re.compile(r"capsolver|2captcha|anti-captcha|captcha[- ]?(solver|solving)|bot[- ]detection[^.\n]{0,60}(workaround|bypass|evad)|\bwarmSession\b", re.I)),
+    # Scraper actors aimed at a social network's people data, or a skill whose
+    # declared data source is a social-media scraping API.
+    ("collects people's personal data by scraping a social network or map listings", re.compile(
+        r"\b[a-z0-9_-]+[~/][a-z0-9_-]*(linkedin|instagram|tiktok|twitter|facebook|threads)[a-z0-9_-]*scraper[a-z0-9_-]*\b"
+        r"|^\s*source:\s*scrapecreators\b", re.I | re.M)),
+]
+
 # Repositories whose product is the excluded behavior: listing them skill by
 # skill would only list what rule 3 excludes.
 POLICY_REPOS = {
+    "openweb-org/openweb": "site access that documents bot-detection workarounds",
+    "vanshyadav1408/omentir": "LinkedIn outreach automation",
+    "socai-io/jev-social": "browser-automated extraction of social posts, profiles and comments",
     "browser-act/skills": "a browser-automation toolkit for extracting data from third-party sites",
     "xquik-dev/x-twitter-scraper": "a third-party X data scraping service",
     "xquik-dev/tweetclaw": "X automation through a third-party scraping service",
@@ -118,7 +149,7 @@ OFFICIAL_OWNERS = {
     "nvidia", "figma", "makenotion", "apollographql", "auth0", "better-auth", "browserbase", "brave", "coinbase",
     "datadog-labs", "remotion-dev", "replicate", "sanity-io", "serpapi", "tinybirdco", "typefully", "wordpress",
     "greensock", "fal-ai-community", "minimax-ai", "callstackincubator", "firecrawl", "composiohq", "binance",
-    "crawlbase", "voltagent", "qdrant", "transloadit", "mailtrap", "trycourier", "video-db",
+    "crawlbase", "voltagent", "qdrant", "angular", "cypress-io", "lambdatest", "veniceai", "transloadit", "mailtrap", "trycourier", "video-db",
 }
 
 
@@ -187,6 +218,13 @@ def policy_rule(r):
         return "has scraping a third-party site as its main job"
     if r.get("captcha_files") and not official:
         return "works around a site's blocks, CAPTCHAs or official API"
+    body = f"{r.get('policy_text') or ''}\n{' '.join(r.get('file_names') or [])}"
+    for rule, pattern in BODY_SIGNALS:
+        if official and not rule.startswith("automates"):
+            continue
+        for m in pattern.finditer(body):
+            if not NEGATION.search(body[max(0, m.start() - 30) : m.start()]):
+                return rule
     return None
 
 
@@ -277,7 +315,7 @@ def main():
             reasons["not English"] += 1
         elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(r["dir"]):
             reasons["template, example or draft"] += 1
-        elif REJECT_TERMS.search(f"{name} {desc} {r['repo']}") or EMAIL_RE.search(desc) or PHONE_RE.search(desc):
+        elif content_filtered(f"{name} {desc} {r['repo']}") or EMAIL_RE.search(desc) or PHONE_RE.search(desc):
             reasons["content rule"] += 1
         elif r["repo"].lower() in POLICY_REPOS:
             reasons["listing policy (repository)"] += 1
@@ -287,6 +325,13 @@ def main():
         else:
             eligible.append(r)
 
+    policy_keys = {(repo.lower(), nm) for repo, nm, _ in policy_hits}
+    withheld = collections.Counter(repo.lower() for repo, _, _ in policy_hits)
+    before = len(eligible)
+    eligible = [r for r in eligible if (r["repo"].lower(), r["name"]) not in policy_keys]
+    reasons["listing policy (another copy excluded)"] += before - len(eligible)
+    for repo_l in POLICY_REPOS:
+        withheld[repo_l] += 1
     # Same skill name shipped in several harness folders of one repository: keep one.
     by_name = collections.defaultdict(list)
     for r in eligible:
@@ -396,9 +441,11 @@ def main():
                     "hosts": (r.get("api_hosts") or []) if r.get("network") else [],
                     "mcp": bool(r.get("mcp")),
                     "mcp_tools": r.get("mcp_tools") or [],
+                    "runs": r.get("run_commands") or [],
                 }
             out.append((sid, rec))
             repo_meta[repo] = {
+                "withheld": withheld.get(repo.lower(), 0),
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
                 "lists": [l.replace("_", "/", 1) for l in r["lists"]],

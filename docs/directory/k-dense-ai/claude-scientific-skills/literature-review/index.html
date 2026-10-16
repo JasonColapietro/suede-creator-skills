@@ -146,8 +146,9 @@
         <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 5 script files (5 Python). Your agent may run them, so read them first.</li>
+          <li><b>Commands in SKILL.md:</b> its code blocks run <code>brew install</code>, which fetches or runs software from outside the skill folder.</li>
           <li><b>Environment variables its scripts read:</b> <code>OPENROUTER_API_KEY</code>. Check SKILL.md for which ones it needs.</li>
-          <li><b>Credential names SKILL.md mentions:</b> <code>PARALLEL_API_KEY</code>. SKILL.md says when, or whether, each one is needed.</li>
+          <li><b>Credential names SKILL.md mentions:</b> <code>PARALLEL_API_KEY</code>.</li>
           <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>doi.org</code>, <code>api.crossref.org</code> and <code>openrouter.ai</code>.</li>
           <li><b>Tool permissions requested:</b> <code>Read Write Edit Bash</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/LICENSE.md" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
