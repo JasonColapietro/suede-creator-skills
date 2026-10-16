@@ -6,7 +6,6 @@
     <title>agent-experience Agent Skill by browserbase</title>
     <meta name="description" content="Audits the developer experience of a product, SDK, or docs site by sending Claude subagents at it with only a tiny task prompt. From browserbase/skills, MIT.">
     <meta name="keywords" content="agent-experience skill by browserbase, agent-experience skill, agent-experience agent skill, agent-experience claude skill, browserbase skills, AI agent agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="agent-experience Agent Skill by browserbase">
     <meta property="og:description" content="Audits the developer experience of a product, SDK, or docs site by sending Claude subagents at it with only a tiny task prompt. From browserbase/skills, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="agent-experience Agent Skill by browserbase">
     <meta name="twitter:description" content="Audits the developer experience of a product, SDK, or docs site by sending Claude subagents at it with only a tiny task prompt. From browserbase/skills, MIT.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +48,12 @@
             "AI Agents and LLM Engineering",
             "Agent Skills",
             "SKILL.md"
-          ]
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "browserbase",
+            "url": "https://github.com/browserbase"
+          }
         }
       }
     </script>
@@ -55,6 +61,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +87,7 @@
             "name": "agent-experience",
             "item": "https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +113,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -131,18 +134,43 @@
           <table class="facts">
             <tbody>
             <tr><th scope="row">Publisher</th><td><a href="https://github.com/browserbase" target="_blank" rel="noopener">browserbase</a> <span class="tag">Official</span></td></tr>
-            <tr><th scope="row">Repository</th><td><a href="../">browserbase/skills</a> (15 listed skills)</td></tr>
+            <tr><th scope="row">Repository</th><td><a href="../">browserbase/skills</a> (18 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../ai-agents-llm/">AI Agents and LLM Engineering</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/browserbase/skills/blob/main/skills/agent-experience/LICENSE.txt" target="_blank" rel="noopener">MIT</a></td></tr>
             <tr><th scope="row">Last commit</th><td>September 1, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>438 lines, 5,203 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>6 files, including references, assets or templates</td></tr>
-            <tr><th scope="row">Allowed tools</th><td><code>Read WebFetch Write Bash AskUserQuestion Agent</code></td></tr>
-            <tr><th scope="row">Compatibility</th><td>Requires an agent harness with subagent (Agent tool), WebFetch, and Bash support, plus network access. No CLI install needed; audited products may require their own credentials at runtime.</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials named in its files:</b> <code>BROWSERBASE_API_KEY</code>, <code>EXA_API_KEY</code>, <code>STRIPE_SECRET_KEY</code>, <code>FOOBAR_API_KEY</code>. Expect to supply these keys before it can run.</li>
+          <li><b>Tool permissions requested:</b> <code>Read WebFetch Write Bash AskUserQuestion Agent</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
+          <li><b>License:</b> <a href="https://github.com/browserbase/skills/blob/main/skills/agent-experience/LICENSE.txt" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install agent-experience</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/browserbase/skills --skill agent-experience</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/browserbase/skills.git &quot;$tmp/skills&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/skills/skills/agent-experience&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo browserbase/skills \
+    --path skills/agent-experience</code></pre>
+        <p class="muted">browserbase/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -150,6 +178,14 @@
           <p>Audit the developer experience of a product, SDK, docs site, or SKILL.md by dropping multiple Claude subagents at it with only a tiny task prompt and real tools (WebFetch, Bash, Write). Agents must discover the docs themselves, install deps, ask for credentials if needed, and attempt real execution. The skill captures each agent's trace — tool calls, retries, wall time, errors — and scores on Setup Friction, Speed, Efficiency, Error Recovery, and Doc Quality, then emits an HTML report with an A–F grade and concrete fixes. Use when the user asks to audit agent experience, test a skill, audit docs for agents, check if a SDK is agent-friendly, validate a SKILL.md, measure agent DX, or benchmark how painful onboarding is for an AI agent. Triggers: 'audit agent experience', 'test this skill', 'audit docs for agents', 'is my SDK agent-friendly', 'run a DX audit', 'agent experience test', 'test my docs', 'how do agents do with my product'.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/browserbase/skills/blob/main/skills/agent-experience/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+        <h3>Compatibility, from SKILL.md</h3>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Compatibility</th><td>Requires an agent harness with subagent (Agent tool), WebFetch, and Bash support, plus network access. No CLI install needed; audited products may require their own credentials at runtime.</td></tr>
+            </tbody>
+          </table>
+        </div>
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Core principle</li>
@@ -179,79 +215,68 @@
           <li><code>references/subagent-brief.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install agent-experience</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/browserbase/skills --skill agent-experience</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/browserbase/skills.git /tmp/skills
-mkdir -p .claude/skills
-cp -R /tmp/skills/skills/agent-experience .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo browserbase/skills \
-    --path skills/agent-experience</code></pre>
-        <p class="muted">browserbase/skills is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>agent-experience passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for agent-experience</h2>
-        <p>Maintainers of browserbase/skills can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of browserbase/skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/badge.svg)](https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
-        <p>browserbase/skills was added from the directory's own review.</p>
+        <p>browserbase/skills is listed from its publisher's official collection or a listing request.</p>
       </section>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More AI agent skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/latent-briefing/"><b>latent-briefing</b><span>Guides sharing memory between agents with KV cache compaction, reducing worker tokens in orchestrator-worker…</span></a>
-          <a class="link-row" href="../../../necmttn/ax/retro/"><b>retro</b><span>Walks the user through an ax retrospective, triaging open proposals, confirming or overriding pending…</span></a>
-          <a class="link-row" href="../../../yusufkaraaslan/skill-seekers/skill-builder/"><b>skill-builder</b><span>Detects source types automatically and builds AI skills with Skill Seekers from documentation, repos, PDFs…</span></a>
-          <a class="link-row" href="../../../huggingface/skills/huggingface-community-evals/"><b>huggingface-community-evals</b><span>Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including…</span></a>
-          <a class="link-row" href="../../../maksim-burtsev/simple-man/simple-man/"><b>simple-man</b><span>Switches to a compact communication mode with no filler, giving terse technical answers and short…</span></a>
-          <a class="link-row" href="../../../orchestra-research/ai-research-skills/knowledge-distillation/"><b>knowledge-distillation</b><span>Compresses large language models into smaller student models using knowledge distillation, covering…</span></a>
+          <a class="link-row" href="../../../necmttn/ax/retro-meta/"><b>retro-meta</b><span>Necmttn/ax</span></a>
+          <a class="link-row" href="../../../google/skills/agent-platform-deploy/"><b>agent-platform-deploy</b><span>google/skills</span></a>
+          <a class="link-row" href="../../../huggingface/skills/huggingface-lora-space-builder/"><b>huggingface-lora-space-builder</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../../../mcollina/skills/init/"><b>init</b><span>mcollina/skills</span></a>
+          <a class="link-row" href="../../../orchestra-research/ai-research-skills/llava/"><b>llava</b><span>Orchestra-Research/AI-Research-SKILLs</span></a>
+          <a class="link-row" href="../../../product-on-purpose/pm-skills/utility-pm-skill-iterate/"><b>utility-pm-skill-iterate</b><span>product-on-purpose/pm-skills</span></a>
         </div>
-        <p><a href="../../../ai-agents-llm/">All ai agents and llm engineering skills</a></p>
+        <p><a href="../../../ai-agents-llm/">All AI agent and LLM engineering skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from browserbase/skills</h2>
         <div class="links">
-          <a class="link-row" href="../add-webmcp/"><b>add-webmcp</b><span>Analyzes an existing web application for safe user-visible capabilities, implements first-party WebMCP…</span></a>
-          <a class="link-row" href="../autobrowse/"><b>autobrowse</b><span>Improves browser automation through an iterative loop that runs a browsing task, reads the trace, and…</span></a>
-          <a class="link-row" href="../browser/"><b>browser</b><span>Automates web browser interactions through natural-language CLI commands, such as browsing sites, extracting…</span></a>
-          <a class="link-row" href="../browser-to-api/"><b>browser-to-api</b><span>Turns a website's observable HTTP traffic into a best-effort OpenAPI 3.1 spec by analyzing a browser-trace…</span></a>
-          <a class="link-row" href="../browser-trace/"><b>browser-trace</b><span>Captures a DevTools-protocol trace of browser automation, including CDP events, screenshots, and DOM dumps…</span></a>
-          <a class="link-row" href="../browser-use-to-stagehand/"><b>browser-use-to-stagehand</b><span>Migrates browser-use Python automation scripts to Stagehand v3 TypeScript on Browserbase, mapping…</span></a>
+          <a class="link-row" href="../add-webmcp/"><b>add-webmcp</b><span>browserbase/skills</span></a>
+          <a class="link-row" href="../autobrowse/"><b>autobrowse</b><span>browserbase/skills</span></a>
+          <a class="link-row" href="../browser-to-api/"><b>browser-to-api</b><span>browserbase/skills</span></a>
+          <a class="link-row" href="../browser-trace/"><b>browser-trace</b><span>browserbase/skills</span></a>
+          <a class="link-row" href="../browser-use-to-stagehand/"><b>browser-use-to-stagehand</b><span>browserbase/skills</span></a>
+          <a class="link-row" href="../company-research/"><b>company-research</b><span>browserbase/skills</span></a>
         </div>
-        <p><a href="../">All 15 skills in browserbase/skills</a></p>
+        <p><a href="../">All 18 skills in browserbase/skills</a></p>
       </section>
     </main>
     <footer>

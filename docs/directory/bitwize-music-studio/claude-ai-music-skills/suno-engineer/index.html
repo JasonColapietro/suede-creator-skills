@@ -6,7 +6,6 @@
     <title>suno-engineer Agent Skill by bitwize-music-studio</title>
     <meta name="description" content="Constructs technical Suno style prompts for the current model family, selects models and… From bitwize-music-studio/claude-ai-music-skills, CC0-1.0.">
     <meta name="keywords" content="suno-engineer skill by bitwize-music-studio, suno-engineer skill, suno-engineer agent skill, suno-engineer claude skill, bitwize-music-studio skills, video image and audio agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="suno-engineer Agent Skill by bitwize-music-studio">
     <meta property="og:description" content="Constructs technical Suno style prompts for the current model family, selects models and… From bitwize-music-studio/claude-ai-music-skills, CC0-1.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="suno-engineer Agent Skill by bitwize-music-studio">
     <meta name="twitter:description" content="Constructs technical Suno style prompts for the current model family, selects models and… From bitwize-music-studio/claude-ai-music-skills, CC0-1.0.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,6 +56,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +82,7 @@
             "name": "suno-engineer",
             "item": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +108,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,11 +135,37 @@
             <tr><th scope="row">Last commit</th><td>October 13, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>390 lines, 3,312 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>2 files</td></tr>
-            <tr><th scope="row">Allowed tools</th><td><code>Read, Edit, Write, Grep, Glob, Bash, bitwize-music-mcp</code></td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>Tool permissions requested:</b> <code>Read, Edit, Write, Grep, Glob, Bash, bitwize-music-mcp</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
+          <li><b>License:</b> <a href="https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE" target="_blank" rel="noopener">CC0-1.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install suno-engineer</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills --skill suno-engineer</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git &quot;$tmp/claude-ai-music-skills&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/claude-ai-music-skills/skills/suno-engineer&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo bitwize-music-studio/claude-ai-music-skills \
+    --path skills/suno-engineer</code></pre>
+        <p class="muted">bitwize-music-studio/claude-ai-music-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -149,6 +173,7 @@
           <p>Constructs technical Suno style prompts for the current model family (v6, v6-wild, v6-mini), selects models and generation settings, and optimizes prompts. Use when creating or refining Suno prompts for track generation.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/suno-engineer/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Your Task</li>
@@ -174,50 +199,39 @@
           <li><code>genre-practices.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install suno-engineer</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills --skill suno-engineer</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git /tmp/claude-ai-music-skills
-mkdir -p .claude/skills
-cp -R /tmp/claude-ai-music-skills/skills/suno-engineer .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo bitwize-music-studio/claude-ai-music-skills \
-    --path skills/suno-engineer</code></pre>
-        <p class="muted">bitwize-music-studio/claude-ai-music-skills is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>suno-engineer passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for suno-engineer</h2>
-        <p>Maintainers of bitwize-music-studio/claude-ai-music-skills can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of bitwize-music-studio/claude-ai-music-skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/badge.svg)](https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -227,24 +241,24 @@ cp -R /tmp/claude-ai-music-skills/skills/suno-engineer .claude/skills/</code></p
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More video, image and audio skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../muthuishere/hand-drawn-diagrams/hand-drawn-diagrams/"><b>hand-drawn-diagrams</b><span>Creates hand-drawn Excalidraw diagrams, flows, explainers, wireframes, and page mockups, defaulting to…</span></a>
-          <a class="link-row" href="../../../swarmclawai/swarmclaw/openai-image-gen/"><b>openai-image-gen</b><span>Generates images through the OpenAI Images API with GPT Image, DALL-E 3, or DALL-E 2, supporting batch…</span></a>
-          <a class="link-row" href="../../../nvidia/skills/physical-ai-defect-image-generation/"><b>physical-ai-defect-image-generation</b><span>Orchestrates defect image generation with NVIDIA Cosmos AnomalyGen on OSMO for PCBA, metal surface, and…</span></a>
-          <a class="link-row" href="../../../alisa0808/vox-director/vox-director/"><b>vox-director</b><span>Turns one topic into a Vox-style paper-collage explainer or ad video, automating script, motion, voice-over…</span></a>
-          <a class="link-row" href="../../../bria-ai/bria-skill/remove-background/"><b>remove-background</b><span>Removes backgrounds from images to produce transparent PNGs, cutouts, and masks by segmenting foreground…</span></a>
-          <a class="link-row" href="../../../gooseworks-ai/goose-skills/render-chatgpt-chat/"><b>render-chatgpt-chat</b><span>Assembles a ChatGPT chat-reveal video ad from thread and timeline JSON, using a recorded mobile chat and a…</span></a>
+          <a class="link-row" href="../../../anthropics/skills/canvas-design/"><b>canvas-design</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../../../bria-ai/bria-skill/bria-ai/"><b>bria-ai</b><span>Bria-AI/bria-skill</span></a>
+          <a class="link-row" href="../../../gooseworks-ai/goose-skills/create-image-fal/"><b>create-image-fal</b><span>gooseworks-ai/goose-skills</span></a>
+          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/flowchart-creator/"><b>flowchart-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/blog-image/"><b>blog-image</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
+          <a class="link-row" href="../../../renezander030/capcut-cli/capcut-edit/"><b>capcut-edit</b><span>renezander030/capcut-cli</span></a>
         </div>
         <p><a href="../../../media-creative/">All video, image, audio and creative skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from bitwize-music-studio/claude-ai-music-skills</h2>
         <div class="links">
-          <a class="link-row" href="../album-conceptualizer/"><b>album-conceptualizer</b><span>Designs album concepts, tracklist architecture, and thematic planning through seven structured phases, for…</span></a>
-          <a class="link-row" href="../album-dashboard/"><b>album-dashboard</b><span>Shows a structured album progress dashboard with percentage complete per phase, blocking items, and status…</span></a>
-          <a class="link-row" href="../clipboard/"><b>clipboard</b><span>Copies track content such as lyrics, style prompts, and streaming lyrics to the system clipboard for pasting…</span></a>
-          <a class="link-row" href="../document-hunter/"><b>document-hunter</b><span>Searches and retrieves primary source documents, such as court filings, government reports, and public…</span></a>
-          <a class="link-row" href="../import-audio/"><b>import-audio</b><span>Moves downloaded audio files, such as WAV files from Suno, to the correct album location with the proper…</span></a>
-          <a class="link-row" href="../pre-generation-check/"><b>pre-generation-check</b><span>Validates pre-generation gates before tracks go to Suno, checking sources, lyrics review, pronunciation…</span></a>
+          <a class="link-row" href="../album-conceptualizer/"><b>album-conceptualizer</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../album-dashboard/"><b>album-dashboard</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../clipboard/"><b>clipboard</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../document-hunter/"><b>document-hunter</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../import-audio/"><b>import-audio</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../pre-generation-check/"><b>pre-generation-check</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
         </div>
         <p><a href="../">All 52 skills in bitwize-music-studio/claude-ai-music-skills</a></p>
       </section>

@@ -6,7 +6,6 @@
     <title>code-transfer Agent Skill by mhattingpete | Suede Directory</title>
     <meta name="description" content="Copies or moves code between files with line-based precision, including moving functions or… From mhattingpete/claude-skills-marketplace, Apache-2.0.">
     <meta name="keywords" content="code-transfer skill by mhattingpete, code-transfer skill, code-transfer agent skill, code-transfer claude skill, mhattingpete skills, developer tools agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="code-transfer Agent Skill by mhattingpete | Suede Directory">
     <meta property="og:description" content="Copies or moves code between files with line-based precision, including moving functions or… From mhattingpete/claude-skills-marketplace, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="code-transfer Agent Skill by mhattingpete | Suede Directory">
     <meta name="twitter:description" content="Copies or moves code between files with line-based precision, including moving functions or… From mhattingpete/claude-skills-marketplace, Apache-2.0.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,6 +56,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +82,7 @@
             "name": "code-transfer",
             "item": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +108,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,10 +135,37 @@
             <tr><th scope="row">Last commit</th><td>July 25, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>133 lines, 459 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>2 files, including scripts</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> 1 script file (1 Python). Your agent may run them, so read them first.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>Network:</b> no HTTP calls found in its scripts.</li>
+          <li><b>License:</b> <a href="https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install code-transfer</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/mhattingpete/claude-skills-marketplace --skill code-transfer</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/mhattingpete/claude-skills-marketplace.git &quot;$tmp/claude-skills-marketplace&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/claude-skills-marketplace/code-operations-plugin/skills/code-transfer&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo mhattingpete/claude-skills-marketplace \
+    --path code-operations-plugin/skills/code-transfer</code></pre>
+        <p class="muted">mhattingpete/claude-skills-marketplace is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -148,6 +173,7 @@
           <p>Transfer code between files with line-based precision. Use when users request copying code from one location to another, moving functions or classes between files, extracting code blocks, or inserting code at specific line numbers.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-transfer/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Operation Modes</li>
@@ -172,50 +198,39 @@
           <li><code>scripts/line_insert.py</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install code-transfer</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/mhattingpete/claude-skills-marketplace --skill code-transfer</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/mhattingpete/claude-skills-marketplace.git /tmp/claude-skills-marketplace
-mkdir -p .claude/skills
-cp -R /tmp/claude-skills-marketplace/code-operations-plugin/skills/code-transfer .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo mhattingpete/claude-skills-marketplace \
-    --path code-operations-plugin/skills/code-transfer</code></pre>
-        <p class="muted">mhattingpete/claude-skills-marketplace is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>code-transfer passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for code-transfer</h2>
-        <p>Maintainers of mhattingpete/claude-skills-marketplace can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of mhattingpete/claude-skills-marketplace can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/badge.svg)](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -225,24 +240,24 @@ cp -R /tmp/claude-skills-marketplace/code-operations-plugin/skills/code-transfer
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More developer tools skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../mailtrap/mailtrap-skills/authorizing-api-requests/"><b>authorizing-api-requests</b><span>Guides authenticating and authorizing requests to Mailtrap APIs, including picking the auth header, choosing…</span></a>
-          <a class="link-row" href="../../../mcollina/skills/octocat/"><b>octocat</b><span>Handles git and GitHub operations with the gh CLI for github.com links, including creating and reviewing…</span></a>
-          <a class="link-row" href="../../../resend/resend-skills/resend-cli/"><b>resend-cli</b><span>Operates the Resend platform from the terminal with the resend CLI, covering sending emails, domains…</span></a>
-          <a class="link-row" href="../../../getsentry/skills/triage-frontend-issues/"><b>triage-frontend-issues</b><span>Triages new issues in the Sentry javascript project by archiving non-actionable noise, always archiving with…</span></a>
-          <a class="link-row" href="../../../minimax-ai/skills/react-native-dev/"><b>react-native-dev</b><span>Guides React Native and Expo development, covering components, styling, animations, navigation, state…</span></a>
-          <a class="link-row" href="../../../apollographql/skills/apollo-connectors/"><b>apollo-connectors</b><span>Guides integrating REST APIs into GraphQL supergraphs using Apollo Connectors with @source and @connect…</span></a>
+          <a class="link-row" href="../../../mailtrap/mailtrap-skills/authorizing-api-requests/"><b>authorizing-api-requests</b><span>mailtrap/mailtrap-skills</span></a>
+          <a class="link-row" href="../../../mcollina/skills/octocat/"><b>octocat</b><span>mcollina/skills</span></a>
+          <a class="link-row" href="../../../resend/resend-skills/resend-cli/"><b>resend-cli</b><span>resend/resend-skills</span></a>
+          <a class="link-row" href="../../../ykdojo/claude-code-tips/version-check/"><b>version-check</b><span>ykdojo/claude-code-tips</span></a>
+          <a class="link-row" href="../../../minimax-ai/skills/ios-application-dev/"><b>ios-application-dev</b><span>MiniMax-AI/skills</span></a>
+          <a class="link-row" href="../../../apollographql/skills/apollo-client/"><b>apollo-client</b><span>apollographql/skills</span></a>
         </div>
         <p><a href="../../../developer-tools/">All developer tools and frameworks skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from mhattingpete/claude-skills-marketplace</h2>
         <div class="links">
-          <a class="link-row" href="../architecture-diagram-creator/"><b>architecture-diagram-creator</b><span>Creates HTML architecture diagrams showing data flows, business objectives, features, technical…</span></a>
-          <a class="link-row" href="../code-auditor/"><b>code-auditor</b><span>Audits a codebase across architecture, code quality, security, performance, testing, and maintainability to…</span></a>
-          <a class="link-row" href="../code-refactor/"><b>code-refactor</b><span>Performs bulk refactoring such as renaming variables and functions across files, replacing deprecated code…</span></a>
-          <a class="link-row" href="../codebase-documenter/"><b>codebase-documenter</b><span>Generates documentation explaining how a codebase works, including architecture, key components, data flow…</span></a>
-          <a class="link-row" href="../conversation-analyzer/"><b>conversation-analyzer</b><span>Analyzes Claude Code conversation history to identify patterns, common mistakes, and opportunities for…</span></a>
-          <a class="link-row" href="../dashboard-creator/"><b>dashboard-creator</b><span>Creates HTML dashboards with KPI metric cards, bar, pie, and line charts, progress indicators, and other…</span></a>
+          <a class="link-row" href="../architecture-diagram-creator/"><b>architecture-diagram-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../code-auditor/"><b>code-auditor</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../code-refactor/"><b>code-refactor</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../codebase-documenter/"><b>codebase-documenter</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../conversation-analyzer/"><b>conversation-analyzer</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../dashboard-creator/"><b>dashboard-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
         </div>
         <p><a href="../">All 18 skills in mhattingpete/claude-skills-marketplace</a></p>
       </section>

@@ -6,7 +6,6 @@
     <title>redis-search Agent Skill by redis | Suede Directory</title>
     <meta name="description" content="Guides Redis Search work, including FT.CREATE schema design, field types, query syntax, command selection, vector similarity… From redis/agent-skills, MIT.">
     <meta name="keywords" content="redis-search skill by redis, redis-search skill, redis-search agent skill, redis-search claude skill, redis skills, data and database agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="redis-search Agent Skill by redis | Suede Directory">
     <meta property="og:description" content="Guides Redis Search work, including FT.CREATE schema design, field types, query syntax, command selection, vector similarity… From redis/agent-skills, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="redis-search Agent Skill by redis | Suede Directory">
     <meta name="twitter:description" content="Guides Redis Search work, including FT.CREATE schema design, field types, query syntax, command selection, vector similarity… From redis/agent-skills, MIT.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +48,12 @@
             "Data, Analytics and Databases",
             "Agent Skills",
             "SKILL.md"
-          ]
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "redis",
+            "url": "https://github.com/redis"
+          }
         }
       }
     </script>
@@ -55,6 +61,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +87,7 @@
             "name": "redis-search",
             "item": "https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +113,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,10 +140,36 @@
             <tr><th scope="row">Last commit</th><td>September 8, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>211 lines, 1,267 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>23 files, including references</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials named in its files:</b> <code>OPENAI_API_KEY</code>, <code>COHERE_API_KEY</code>. Expect to supply these keys before it can run.</li>
+          <li><b>License:</b> <a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install redis-search</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/redis/agent-skills --skill redis-search</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/redis/agent-skills.git &quot;$tmp/agent-skills&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/agent-skills/skills/redis-search&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo redis/agent-skills \
+    --path skills/redis-search</code></pre>
+        <p class="muted">redis/agent-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -148,6 +177,7 @@
           <p>Redis Search guidance covering FT.CREATE schema design, field type selection (TEXT, TAG, NUMERIC, GEO, GEOSHAPE, VECTOR, JSON path), DIALECT 2 query syntax, FT.SEARCH / FT.AGGREGATE / FT.HYBRID command selection, vector similarity with HNSW or FLAT, hybrid retrieval combining lexical and vector ranking, RAG pipelines, zero-downtime index updates via aliases, and debugging with FT.PROFILE and FT.EXPLAIN. Use when defining a search index on Hash or JSON documents, writing FT.SEARCH queries with filters, sorting, aggregation, or vector KNN, tuning HNSW parameters, building a RAG retrieval pipeline, or troubleshooting slow or empty search results.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/redis/agent-skills/blob/main/skills/redis-search/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">When to apply</li>
@@ -189,50 +219,39 @@
           <li><code>references/vector-query.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install redis-search</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/redis/agent-skills --skill redis-search</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/redis/agent-skills.git /tmp/agent-skills
-mkdir -p .claude/skills
-cp -R /tmp/agent-skills/skills/redis-search .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo redis/agent-skills \
-    --path skills/redis-search</code></pre>
-        <p class="muted">redis/agent-skills is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>redis-search passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for redis-search</h2>
-        <p>Maintainers of redis/agent-skills can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of redis/agent-skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/badge.svg)](https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/redis-search/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -242,24 +261,23 @@ cp -R /tmp/agent-skills/skills/redis-search .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More data and database skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../cloudflare/skills/basin/"><b>basin</b><span>Builds and troubleshoots Cloudflare Basin analytics workflows with Basin Pipelines, Catalog, and SQL, such…</span></a>
-          <a class="link-row" href="../../../jeffallan/claude-skills/pandas-pro/"><b>pandas-pro</b><span>Performs pandas DataFrame operations for data analysis, such as cleaning, joins, pivots, groupby…</span></a>
-          <a class="link-row" href="../../../qdrant/skills/qdrant-model-migration/"><b>qdrant-model-migration</b><span>Guides migrating to a new embedding model in Qdrant without downtime, including re-embedding data, changing…</span></a>
-          <a class="link-row" href="../../../google/skills/dbt-sf-to-bq-translator/"><b>dbt-sf-to-bq-translator</b><span>Translates Snowflake dbt SQL models to BigQuery SQL, handling SQL compilation, Jinja macro masking, BigQuery…</span></a>
-          <a class="link-row" href="../../../honeydew-ai/honeydew-ai-coding-agents-plugins/query-debugging/"><b>query-debugging</b><span>Inspects past Honeydew query executions, including client, semantic definition, compiled SQL, and who ran…</span></a>
-          <a class="link-row" href="../../../firebase/skills/firebase-firestore/"><b>firebase-firestore</b><span>Sets up, queries, and configures Cloud Firestore databases, including data modeling, security rules…</span></a>
+          <a class="link-row" href="../../../qdrant/skills/qdrant-migration-tool/"><b>qdrant-migration-tool</b><span>qdrant/skills</span></a>
+          <a class="link-row" href="../../../avelikiy/great-cto/migration-ready-schema/"><b>migration-ready-schema</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../../../honeydew-ai/honeydew-ai-coding-agents-plugins/query/"><b>query</b><span>honeydew-ai/honeydew-ai-coding-agents-plugins</span></a>
+          <a class="link-row" href="../../../cloudflare/skills/basin/"><b>basin</b><span>cloudflare/skills</span></a>
+          <a class="link-row" href="../../../sanjay3290/ai-skills/postgres/"><b>postgres</b><span>sanjay3290/ai-skills</span></a>
         </div>
         <p><a href="../../../data-databases/">All data, analytics and databases skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from redis/agent-skills</h2>
         <div class="links">
-          <a class="link-row" href="../iris-development/"><b>iris-development</b><span>Guides work with the Iris Redis Agent Memory data plane on Redis Cloud, covering session events, long-term…</span></a>
-          <a class="link-row" href="../redis-clustering/"><b>redis-clustering</b><span>Guides Redis Cluster and replication design, including hash tags for multi-key operations, avoiding…</span></a>
-          <a class="link-row" href="../redis-connections/"><b>redis-connections</b><span>Guides Redis client and connection setup, covering pooling, multiplexing, pipelining, client-side caching…</span></a>
-          <a class="link-row" href="../redis-core/"><b>redis-core</b><span>Guides Redis data modeling, including choosing the right data structure and using consistent colon-separated…</span></a>
-          <a class="link-row" href="../redis-observability/"><b>redis-observability</b><span>Guides Redis monitoring, covering which metrics to track, built-in commands for incident triage such as…</span></a>
-          <a class="link-row" href="../redis-security/"><b>redis-security</b><span>Guides Redis security, covering authentication with requirepass and ACL users, TLS, least-privilege access…</span></a>
+          <a class="link-row" href="../iris-development/"><b>iris-development</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../redis-clustering/"><b>redis-clustering</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../redis-connections/"><b>redis-connections</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../redis-core/"><b>redis-core</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../redis-observability/"><b>redis-observability</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../redis-security/"><b>redis-security</b><span>redis/agent-skills</span></a>
         </div>
         <p><a href="../">All 8 skills in redis/agent-skills</a></p>
       </section>

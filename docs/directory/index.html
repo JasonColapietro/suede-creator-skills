@@ -4,22 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agent Skills Directory: Claude and Codex Skills</title>
-    <meta name="description" content="Browse 3,025 agent skills for Claude Code, Codex and Cursor from 144 GitHub repositories, sorted into 16 categories with install commands.">
+    <meta name="description" content="Browse 3,002 agent skills for Claude Code, Codex and Cursor from 146 GitHub repositories, in 16 categories, each graded and linked to its source.">
     <meta name="keywords" content="agent skills directory, claude skills directory, SKILL.md directory, best claude skills, ai agent skills list, Suede Skills Directory">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/">
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Suede Skills Directory">
     <meta property="og:title" content="Agent Skills Directory: Claude and Codex Skills">
-    <meta property="og:description" content="Browse 3,025 agent skills for Claude Code, Codex and Cursor from 144 GitHub repositories, sorted into 16 categories with install commands.">
+    <meta property="og:description" content="Browse 3,002 agent skills for Claude Code, Codex and Cursor from 146 GitHub repositories, in 16 categories, each graded and linked to its source.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Agent Skills Directory: Claude and Codex Skills">
-    <meta name="twitter:description" content="Browse 3,025 agent skills for Claude Code, Codex and Cursor from 144 GitHub repositories, sorted into 16 categories with install commands.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:description" content="Browse 3,002 agent skills for Claude Code, Codex and Cursor from 146 GitHub repositories, in 16 categories, each graded and linked to its source.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -27,7 +28,7 @@
         "@id": "https://skills.suedeai.ai/directory/#directory",
         "name": "Suede Skills Directory",
         "headline": "Agent Skills Directory: Claude and Codex Skills",
-        "description": "Browse 3,025 agent skills for Claude Code, Codex and Cursor from 144 GitHub repositories, sorted into 16 categories with install commands.",
+        "description": "Browse 3,002 agent skills for Claude Code, Codex and Cursor from 146 GitHub repositories, in 16 categories, each graded and linked to its source.",
         "url": "https://skills.suedeai.ai/directory/",
         "dateModified": "2026-10-16",
         "inLanguage": "en",
@@ -154,6 +155,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -167,8 +169,7 @@
             "name": "Directory",
             "item": "https://skills.suedeai.ai/directory/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/#breadcrumb"
+        ]
       }
     </script>
     <script type="application/ld+json">
@@ -190,7 +191,7 @@
             "name": "How do I install a skill from this directory?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Every skill page lists three routes: the skills CLI (npx skills add with the repository and skill name), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder straight from the author's GitHub repository."
+              "text": "Each skill page lists up to three routes: the skills CLI (npx skills add with the repository and skill name), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder from the author's GitHub repository. Skills published under restrictive license terms show the license instead."
             }
           },
           {
@@ -198,15 +199,15 @@
             "name": "How are skills chosen and graded?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Skills are read from public GitHub repositories cited in the major curated skill lists, then run through the Suede Skill Check: eight structural checks covering the frontmatter, name, description, length, license and maintenance. Skills that pass at least seven checks and declare a license are listed."
+              "text": "The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: six checks on the SKILL.md format, plus a declared license and a commit in the last year. Skills that pass at least seven checks are listed."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I get my skill listed or updated?",
+            "name": "How do I get my skill listed?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open a listing request on GitHub with the repository URL. The directory is rebuilt from the source repositories, so changes you push to SKILL.md appear at the next refresh."
+              "text": "Open a listing request on GitHub with the repository URL. Requests are reviewed by hand; an accepted repository is read at the next directory refresh, and its skills are listed if they pass the check."
             }
           },
           {
@@ -214,7 +215,7 @@
             "name": "Can I remove my skill from the directory?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Open a removal request on GitHub and the skill comes out of the next build."
+              "text": "Yes. Open a removal request on GitHub and the skill comes out at the next build."
             }
           }
         ]
@@ -243,14 +244,11 @@
       </summary>
       <div class="nav-links">
           <a href="../">Home</a>
-          <a href="../skills/">Skills</a>
           <a href="./">Directory</a>
-          <a href="../guide.html">Guide</a>
-          <a href="../book/">Book</a>
+          <a href="methodology/">How listing works</a>
+          <a href="../skills/">Suede skills</a>
           <a href="../blog/">Blog</a>
-          <a href="../copy.html">Copy Bank</a>
-          <a href="../cracked.html">Cracked Devs</a>
-          <a href="../plugins.html" class="nav-cta">Install</a>
+          <a href="submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -259,12 +257,11 @@
       <div class="eyebrow">Suede Skills Directory</div>
       <h1>Agent Skills Directory</h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Directory</span></nav>
-      <p class="lead">3,025 skills for Claude Code, Codex, Cursor and every agent that reads SKILL.md, from 144 public GitHub repositories. Each one passed the Suede Skill Check, links straight to its source, states its license, and installs with one command.</p>
+      <p class="lead">3,002 skills for Claude Code, Codex, Cursor and every agent that reads SKILL.md, from 146 public GitHub repositories, sorted into 16 directories by what they do. Every listing passed the Suede Skill Check, links straight to its source, states its license and shows what it will need before you install it.</p>
       <ul class="stat-row" aria-label="Directory size">
-        <li><b>3,025</b> listed skills</li>
-        <li><b>144</b> repositories</li>
-        <li><b>16</b> category directories</li>
-        <li><b>740</b> full skill pages</li>
+        <li><b>3,002</b> listed skills</li>
+        <li><b>146</b> repositories</li>
+        <li><b>738</b> full skill pages</li>
         <li><b>97%</b> openly licensed</li>
       </ul>
       <p><a class="button" href="#categories">Browse by category</a> <a class="button secondary" href="submit/">List your skill</a></p>
@@ -272,68 +269,68 @@
         <h2 id="categories">Skill directories by category</h2>
         <div class="dir-cards">
           <a class="dir-card cat-card" href="ai-agents-llm/">
-            <span class="dir-card-head"><b>AI Agents and LLM Engineering</b><span class="count-chip">484</span></span>
-            <span class="dir-card-text">Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers…</span>
+            <span class="dir-card-head"><b>AI Agents and LLM Engineering</b><span class="count-chip">459</span></span>
+            <span class="dir-card-text">AI agent and LLM engineering skills: prompt and context engineering, MCP servers, evals, subagents and model training.</span>
           </a>
           <a class="dir-card cat-card" href="developer-tools/">
-            <span class="dir-card-head"><b>Developer Tools and Frameworks</b><span class="count-chip">379</span></span>
-            <span class="dir-card-text">Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter and Rust…</span>
+            <span class="dir-card-head"><b>Developer Tools and Frameworks</b><span class="count-chip">385</span></span>
+            <span class="dir-card-text">Framework, language, SDK and CLI skills, many from the teams that build the tools: Flutter, Rust, GraphQL, Git and more.</span>
           </a>
           <a class="dir-card cat-card" href="marketing-seo/">
-            <span class="dir-card-head"><b>Marketing and SEO</b><span class="count-chip">324</span></span>
-            <span class="dir-card-text">Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and…</span>
+            <span class="dir-card-head"><b>Marketing and SEO</b><span class="count-chip">303</span></span>
+            <span class="dir-card-text">Marketing and SEO skills: SEO audits, keyword and content briefs, ad creative, launch plans and conversion work.</span>
           </a>
           <a class="dir-card cat-card" href="product-management/">
-            <span class="dir-card-head"><b>Product Management</b><span class="count-chip">235</span></span>
-            <span class="dir-card-text">Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get…</span>
+            <span class="dir-card-head"><b>Product Management</b><span class="count-chip">233</span></span>
+            <span class="dir-card-text">Product management skills: PRDs, discovery interviews, roadmaps, OKRs, prioritization and strategy frameworks.</span>
           </a>
           <a class="dir-card cat-card" href="science-research/">
-            <span class="dir-card-head"><b>Science and Research</b><span class="count-chip">209</span></span>
-            <span class="dir-card-text">Skills for scientific and academic work: bioinformatics, chemistry, materials, literature search and research…</span>
+            <span class="dir-card-head"><b>Science and Research</b><span class="count-chip">210</span></span>
+            <span class="dir-card-text">Science and research skills: bioinformatics, chemistry, materials, literature search, scientific Python and statistics.</span>
           </a>
           <a class="dir-card cat-card" href="devops-cloud/">
-            <span class="dir-card-head"><b>DevOps and Cloud</b><span class="count-chip">196</span></span>
-            <span class="dir-card-text">Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and…</span>
+            <span class="dir-card-head"><b>DevOps and Cloud</b><span class="count-chip">199</span></span>
+            <span class="dir-card-text">DevOps and cloud skills, many from the platform vendors: deployment, infrastructure as code, CI/CD and monitoring.</span>
           </a>
           <a class="dir-card cat-card" href="media-creative/">
-            <span class="dir-card-head"><b>Video, Image, Audio and Creative</b><span class="count-chip">190</span></span>
-            <span class="dir-card-text">Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and…</span>
+            <span class="dir-card-head"><b>Video, Image, Audio and Creative</b><span class="count-chip">191</span></span>
+            <span class="dir-card-text">Video, image and audio skills: video production, image generation and editing, music, voice, diagrams and generative art.</span>
           </a>
           <a class="dir-card cat-card" href="productivity-knowledge/">
-            <span class="dir-card-head"><b>Productivity and Knowledge Work</b><span class="count-chip">179</span></span>
-            <span class="dir-card-text">Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research…</span>
+            <span class="dir-card-head"><b>Productivity and Knowledge Work</b><span class="count-chip">202</span></span>
+            <span class="dir-card-text">Productivity skills: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.</span>
           </a>
           <a class="dir-card cat-card" href="business-finance/">
-            <span class="dir-card-head"><b>Business, Sales and Finance</b><span class="count-chip">169</span></span>
-            <span class="dir-card-text">Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks…</span>
+            <span class="dir-card-head"><b>Business, Sales and Finance</b><span class="count-chip">152</span></span>
+            <span class="dir-card-text">Business, sales and finance skills: outreach, prospecting, financial analysis, contracts, e-commerce and payments.</span>
           </a>
           <a class="dir-card cat-card" href="testing-qa/">
-            <span class="dir-card-head"><b>Testing and QA</b><span class="count-chip">126</span></span>
-            <span class="dir-card-text">Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an…</span>
+            <span class="dir-card-head"><b>Testing and QA</b><span class="count-chip">127</span></span>
+            <span class="dir-card-text">Testing and QA skills: test writing, Playwright and browser automation, visual regression and systematic debugging.</span>
           </a>
           <a class="dir-card cat-card" href="data-databases/">
-            <span class="dir-card-head"><b>Data, Analytics and Databases</b><span class="count-chip">125</span></span>
-            <span class="dir-card-text">Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors…</span>
+            <span class="dir-card-head"><b>Data, Analytics and Databases</b><span class="count-chip">132</span></span>
+            <span class="dir-card-text">Data and database skills, many from the database vendors: SQL, schema design, vector stores, analytics and pipelines.</span>
           </a>
           <a class="dir-card cat-card" href="security/">
-            <span class="dir-card-head"><b>Security</b><span class="count-chip">103</span></span>
-            <span class="dir-card-text">Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure…</span>
+            <span class="dir-card-head"><b>Security</b><span class="count-chip">104</span></span>
+            <span class="dir-card-text">Security skills: code security review, vulnerability analysis, threat detection, auth hardening and secure configuration.</span>
           </a>
           <a class="dir-card cat-card" href="frontend-design/">
-            <span class="dir-card-head"><b>Frontend and Design</b><span class="count-chip">111</span></span>
-            <span class="dir-card-text">Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help…</span>
+            <span class="dir-card-head"><b>Frontend and Design</b><span class="count-chip">112</span></span>
+            <span class="dir-card-text">Frontend and design skills: UI systems, CSS, components, motion, accessibility and design tokens.</span>
           </a>
           <a class="dir-card cat-card" href="writing-content/">
-            <span class="dir-card-head"><b>Writing and Editing</b><span class="count-chip">90</span></span>
-            <span class="dir-card-text">Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding…</span>
+            <span class="dir-card-head"><b>Writing and Editing</b><span class="count-chip">88</span></span>
+            <span class="dir-card-text">Writing and editing skills: line editing, technical documentation, fiction craft and removing machine-sounding prose.</span>
           </a>
           <a class="dir-card cat-card" href="code-review-quality/">
             <span class="dir-card-head"><b>Code Review and Code Quality</b><span class="count-chip">65</span></span>
-            <span class="dir-card-text">Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a…</span>
+            <span class="dir-card-text">Code review and code quality skills: pull request review, refactoring, linting and code standards with named checks.</span>
           </a>
           <a class="dir-card cat-card" href="documents-office/">
             <span class="dir-card-head"><b>Documents and Office Files</b><span class="count-chip">40</span></span>
-            <span class="dir-card-text">Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to…</span>
+            <span class="dir-card-text">Document skills: read, create and edit Word, PDF, PowerPoint and Excel files, fill forms and convert formats.</span>
           </a>
         </div>
       </section>
@@ -344,73 +341,73 @@
           <a class="link-row" href="anthropics/skills/"><b>anthropics/skills</b><span>17 skills &middot; Documents &middot; in 7 lists</span></a>
           <a class="link-row" href="obra/superpowers/"><b>obra/superpowers</b><span>15 skills &middot; AI agents &middot; in 6 lists</span></a>
           <a class="link-row" href="trailofbits/skills/"><b>trailofbits/skills</b><span>83 skills &middot; Security &middot; in 4 lists</span></a>
-          <a class="link-row" href="coreyhaines31/marketingskills/"><b>coreyhaines31/marketingskills</b><span>48 skills &middot; Marketing &middot; in 4 lists</span></a>
-          <a class="link-row" href="sanjay3290/ai-skills/"><b>sanjay3290/ai-skills</b><span>23 skills &middot; Productivity &middot; in 4 lists</span></a>
+          <a class="link-row" href="coreyhaines31/marketingskills/"><b>coreyhaines31/marketingskills</b><span>49 skills &middot; Marketing &middot; in 4 lists</span></a>
+          <a class="link-row" href="sanjay3290/ai-skills/"><b>sanjay3290/ai-skills</b><span>22 skills &middot; Productivity &middot; in 4 lists</span></a>
           <a class="link-row" href="sergebulaev/linkedin-skills/"><b>sergebulaev/linkedin-skills</b><span>13 skills &middot; Marketing &middot; in 4 lists</span></a>
-          <a class="link-row" href="zeropointrepo/youtube-skills/"><b>zeropointrepo/youtube-skills</b><span>12 skills &middot; Productivity &middot; in 4 lists</span></a>
+          <a class="link-row" href="zeropointrepo/youtube-skills/"><b>ZeroPointRepo/youtube-skills</b><span>12 skills &middot; Productivity &middot; in 4 lists</span></a>
           <a class="link-row" href="zxkane/aws-skills/"><b>zxkane/aws-skills</b><span>6 skills &middot; DevOps &middot; in 4 lists</span></a>
-          <a class="link-row" href="conorluddy/ios-simulator-skill/"><b>conorluddy/ios-simulator-skill</b><span>1 skill &middot; Testing &middot; in 4 lists</span></a>
-          <a class="link-row" href="continuum-ai-corp/orcareplay/"><b>continuum-ai-corp/orcareplay</b><span>1 skill &middot; AI agents &middot; in 4 lists</span></a>
-          <a class="link-row" href="digidai/product-manager-skills/"><b>digidai/product-manager-skills</b><span>1 skill &middot; Product &middot; in 4 lists</span></a>
-          <a class="link-row" href="lackeyjb/playwright-skill/"><b>lackeyjb/playwright-skill</b><span>1 skill &middot; Testing &middot; in 4 lists</span></a>
-          <a class="link-row" href="gooseworks-ai/goose-skills/"><b>gooseworks-ai/goose-skills</b><span>239 skills &middot; Media &middot; in 3 lists</span></a>
-          <a class="link-row" href="deanpeters/product-manager-skills/"><b>deanpeters/product-manager-skills</b><span>77 skills &middot; Product &middot; in 3 lists</span></a>
+          <a class="link-row" href="continuum-ai-corp/orcareplay/orca-replay/"><b>Continuum-AI-Corp/OrcaReplay</b><span>1 skill &middot; AI agents &middot; in 4 lists</span></a>
+          <a class="link-row" href="lackeyjb/playwright-skill/playwright-skill/"><b>lackeyjb/playwright-skill</b><span>1 skill &middot; Testing &middot; in 4 lists</span></a>
+          <a class="link-row" href="gooseworks-ai/goose-skills/"><b>gooseworks-ai/goose-skills</b><span>245 skills &middot; Media &middot; in 3 lists</span></a>
+          <a class="link-row" href="deanpeters/product-manager-skills/"><b>deanpeters/Product-Manager-Skills</b><span>77 skills &middot; Product &middot; in 3 lists</span></a>
           <a class="link-row" href="phuryn/pm-skills/"><b>phuryn/pm-skills</b><span>69 skills &middot; Product &middot; in 3 lists</span></a>
           <a class="link-row" href="jeffallan/claude-skills/"><b>jeffallan/claude-skills</b><span>67 skills &middot; Dev tools &middot; in 3 lists</span></a>
-          <a class="link-row" href="neolabhq/context-engineering-kit/"><b>neolabhq/context-engineering-kit</b><span>54 skills &middot; AI agents &middot; in 3 lists</span></a>
-          <a class="link-row" href="qdrant/skills/"><b>qdrant/skills</b><span>32 skills &middot; Data &middot; in 3 lists</span></a>
+          <a class="link-row" href="neolabhq/context-engineering-kit/"><b>NeoLabHQ/context-engineering-kit</b><span>53 skills &middot; AI agents &middot; in 3 lists</span></a>
+          <a class="link-row" href="qdrant/skills/"><b>qdrant/skills</b><span>33 skills &middot; Data &middot; in 3 lists</span></a>
+          <a class="link-row" href="eduardo-sl/go-agent-skills/"><b>eduardo-sl/go-agent-skills</b><span>31 skills &middot; Dev tools &middot; in 3 lists</span></a>
+          <a class="link-row" href="mblode/agent-skills/"><b>mblode/agent-skills</b><span>28 skills &middot; AI agents &middot; in 3 lists</span></a>
         </div>
       </section>
       <section class="panel" aria-labelledby="official-title">
-        <h2 id="official-title">Skills published by the platform teams</h2>
-        <p>Collections maintained by the company behind the product the skill works with.</p>
+        <h2 id="official-title">Skills from the companies behind the tools</h2>
+        <p>Collections published by the company that makes the product, framework or service the skills work with.</p>
         <div class="links">
-          <a class="link-row" href="nvidia/skills/"><b>nvidia/skills</b><span>390 skills &middot; AI agents &middot; in 1 list</span></a>
-          <a class="link-row" href="google/skills/"><b>google/skills</b><span>162 skills &middot; DevOps &middot; in 2 lists</span></a>
+          <a class="link-row" href="nvidia/skills/"><b>NVIDIA/skills</b><span>391 skills &middot; AI agents &middot; in 1 list</span></a>
+          <a class="link-row" href="google/skills/"><b>google/skills</b><span>163 skills &middot; DevOps &middot; in 2 lists</span></a>
           <a class="link-row" href="trailofbits/skills/"><b>trailofbits/skills</b><span>83 skills &middot; Security &middot; in 4 lists</span></a>
           <a class="link-row" href="googleworkspace/cli/"><b>googleworkspace/cli</b><span>74 skills &middot; Productivity &middot; in 2 lists</span></a>
-          <a class="link-row" href="qdrant/skills/"><b>qdrant/skills</b><span>32 skills &middot; Data &middot; in 3 lists</span></a>
+          <a class="link-row" href="qdrant/skills/"><b>qdrant/skills</b><span>33 skills &middot; Data &middot; in 3 lists</span></a>
+          <a class="link-row" href="firecrawl/skills/"><b>firecrawl/skills</b><span>29 skills &middot; Data</span></a>
           <a class="link-row" href="getsentry/skills/"><b>getsentry/skills</b><span>29 skills &middot; Code quality &middot; in 1 list</span></a>
           <a class="link-row" href="expo/skills/"><b>expo/skills</b><span>25 skills &middot; Dev tools &middot; in 2 lists</span></a>
           <a class="link-row" href="flutter/skills/"><b>flutter/skills</b><span>24 skills &middot; Dev tools</span></a>
           <a class="link-row" href="huggingface/skills/"><b>huggingface/skills</b><span>24 skills &middot; AI agents &middot; in 2 lists</span></a>
-          <a class="link-row" href="garrytan/gstack/"><b>garrytan/gstack</b><span>22 skills &middot; Dev tools &middot; in 2 lists</span></a>
-          <a class="link-row" href="firecrawl/skills/"><b>firecrawl/skills</b><span>21 skills &middot; Data</span></a>
-          <a class="link-row" href="minimax-ai/skills/"><b>minimax-ai/skills</b><span>21 skills &middot; Documents &middot; in 1 list</span></a>
+          <a class="link-row" href="minimax-ai/skills/"><b>MiniMax-AI/skills</b><span>21 skills &middot; Documents &middot; in 1 list</span></a>
           <a class="link-row" href="cloudflare/skills/"><b>cloudflare/skills</b><span>19 skills &middot; DevOps &middot; in 1 list</span></a>
           <a class="link-row" href="hashicorp/agent-skills/"><b>hashicorp/agent-skills</b><span>19 skills &middot; DevOps &middot; in 2 lists</span></a>
+          <a class="link-row" href="browserbase/skills/"><b>browserbase/skills</b><span>18 skills &middot; AI agents</span></a>
           <a class="link-row" href="anthropics/skills/"><b>anthropics/skills</b><span>17 skills &middot; Documents &middot; in 7 lists</span></a>
           <a class="link-row" href="makenotion/notion-cookbook/"><b>makenotion/notion-cookbook</b><span>17 skills &middot; Dev tools &middot; in 1 list</span></a>
           <a class="link-row" href="apollographql/skills/"><b>apollographql/skills</b><span>15 skills &middot; Dev tools</span></a>
-          <a class="link-row" href="browserbase/skills/"><b>browserbase/skills</b><span>15 skills &middot; AI agents</span></a>
-          <a class="link-row" href="firebase/skills/"><b>firebase/skills</b><span>10 skills &middot; Dev tools</span></a>
+          <a class="link-row" href="firebase/skills/"><b>firebase/skills</b><span>11 skills &middot; Dev tools</span></a>
           <a class="link-row" href="redis/agent-skills/"><b>redis/agent-skills</b><span>8 skills &middot; Data &middot; in 1 list</span></a>
           <a class="link-row" href="mailtrap/mailtrap-skills/"><b>mailtrap/mailtrap-skills</b><span>7 skills &middot; Dev tools &middot; in 2 lists</span></a>
           <a class="link-row" href="replicate/skills/"><b>replicate/skills</b><span>7 skills &middot; AI agents &middot; in 1 list</span></a>
           <a class="link-row" href="resend/resend-skills/"><b>resend/resend-skills</b><span>5 skills &middot; Dev tools &middot; in 2 lists</span></a>
-          <a class="link-row" href="voltagent/skills/"><b>voltagent/skills</b><span>3 skills &middot; AI agents &middot; in 1 list</span></a>
+          <a class="link-row" href="voltagent/skills/"><b>VoltAgent/skills</b><span>3 skills &middot; AI agents &middot; in 1 list</span></a>
+          <a class="link-row" href="coderabbitai/skills/"><b>coderabbitai/skills</b><span>2 skills &middot; Code quality &middot; in 2 lists</span></a>
         </div>
       </section>
       <section class="panel" aria-labelledby="how-title">
         <h2 id="how-title">How a skill gets listed</h2>
-        <p>The directory reads every SKILL.md in the repositories cited by 8 curated lists, including <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>. Each skill runs through eight structural checks. Skills with a license and at least seven passing checks are listed; exact copies of a skill already listed are dropped, so the original author keeps the listing. <a href="methodology/">Read the full method</a>.</p>
+        <p>The directory reads every SKILL.md in the repositories cited by at least two of 8 curated lists, including <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, plus the official collections those lists name and accepted listing requests. Each skill runs through eight checks. Skills with a license and at least seven passing checks are listed, one listing per skill: when a copy of a skill appears in several repositories, the copy in the most-cited repository keeps the listing. <a href="methodology/">Read the full method</a>.</p>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">For skill authors: show your listing</h2>
-        <p>Every listed repository and skill page carries a ready-made README badge that links to its listing. <a href="submit/">Request a listing</a> if your skill is not here yet.</p>
-        <p class="badge-preview"><img src="badge.svg" alt="Listed on Suede Skills Directory" width="193" height="20"></p>
+        <p>Every listed repository and every skill with a full page has its own README badge that links to its listing; find it under <b>README badge</b> on the page. <a href="submit/">Request a listing</a> if your skill is not here yet.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Listed on Suede Skills Directory](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Listed on Suede Skills Directory&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="all-repos-title">
-        <h2 id="all-repos-title">All 144 listed repositories</h2>
-        <p class="repo-index"><a href="1nickpappas/move-code-quality-skill/">1nickpappas/move-code-quality-skill</a> &middot; <a href="activeloopai/hivemind/">activeloopai/hivemind</a> &middot; <a href="agentrhq/authsome/">agentrhq/authsome</a> &middot; <a href="agiwhitelist/auteur/">agiwhitelist/auteur</a> &middot; <a href="agricidaniel/claude-seo/">agricidaniel/claude-seo</a> &middot; <a href="alisa0808/vibe-creating-skill/">alisa0808/vibe-creating-skill</a> &middot; <a href="alisa0808/vox-director/">alisa0808/vox-director</a> &middot; <a href="alonw0/web-asset-generator/">alonw0/web-asset-generator</a> &middot; <a href="angular/skills/">angular/skills</a> &middot; <a href="anthropics/skills/">anthropics/skills</a> &middot; <a href="antonbabenko/terraform-skill/">antonbabenko/terraform-skill</a> &middot; <a href="apitube/news-api-skills/">apitube/news-api-skills</a> &middot; <a href="apollographql/skills/">apollographql/skills</a> &middot; <a href="avelikiy/great-cto/">avelikiy/great_cto</a> &middot; <a href="bitwize-music-studio/claude-ai-music-skills/">bitwize-music-studio/claude-ai-music-skills</a> &middot; <a href="bluzername/claude-code-terminal-title/">bluzername/claude-code-terminal-title</a> &middot; <a href="bria-ai/bria-skill/">bria-ai/bria-skill</a> &middot; <a href="browser-act/skills/">browser-act/skills</a> &middot; <a href="browserbase/skills/">browserbase/skills</a> &middot; <a href="buildshipgrowrepeat/nextjs-sanity-blog-skill/">buildshipgrowrepeat/nextjs-sanity-blog-skill</a> &middot; <a href="cloudflare/security-audit-skill/">cloudflare/security-audit-skill</a> &middot; <a href="cloudflare/skills/">cloudflare/skills</a> &middot; <a href="coderabbitai/skills/">coderabbitai/skills</a> &middot; <a href="coinpaprika/skills/">coinpaprika/skills</a> &middot; <a href="composiohq/skills/">composiohq/skills</a> &middot; <a href="conorbronsdon/avoid-ai-writing/">conorbronsdon/avoid-ai-writing</a> &middot; <a href="conorluddy/ios-simulator-skill/">conorluddy/ios-simulator-skill</a> &middot; <a href="continuum-ai-corp/orcareplay/">continuum-ai-corp/orcareplay</a> &middot; <a href="coreyhaines31/marketingskills/">coreyhaines31/marketingskills</a> &middot; <a href="csthink/dashmotion/">csthink/dashmotion</a> &middot; <a href="cypress-io/ai-toolkit/">cypress-io/ai-toolkit</a> &middot; <a href="danjdewhurst/story-skills/">danjdewhurst/story-skills</a> &middot; <a href="deanpeters/product-manager-skills/">deanpeters/product-manager-skills</a> &middot; <a href="digidai/product-manager-skills/">digidai/product-manager-skills</a> &middot; <a href="eduardo-sl/go-agent-skills/">eduardo-sl/go-agent-skills</a> &middot; <a href="emblemcompany/agent-skills/">emblemcompany/agent-skills</a> &middot; <a href="ericyoung-183/alpha-insights/">ericyoung-183/alpha-insights</a> &middot; <a href="expo/skills/">expo/skills</a> &middot; <a href="fal-ai-community/skills/">fal-ai-community/skills</a> &middot; <a href="firebase/skills/">firebase/skills</a> &middot; <a href="firecrawl/skills/">firecrawl/skills</a> &middot; <a href="flutter/skills/">flutter/skills</a> &middot; <a href="garrytan/gstack/">garrytan/gstack</a> &middot; <a href="getsentry/skills/">getsentry/skills</a> &middot; <a href="glacierphonk/naming/">glacierphonk/naming</a> &middot; <a href="google/skills/">google/skills</a> &middot; <a href="googleworkspace/cli/">googleworkspace/cli</a> &middot; <a href="gooseworks-ai/goose-skills/">gooseworks-ai/goose-skills</a> &middot; <a href="hashicorp/agent-skills/">hashicorp/agent-skills</a> &middot; <a href="heshamfs/materials-simulation-skills/">heshamfs/materials-simulation-skills</a> &middot; <a href="honeydew-ai/honeydew-ai-coding-agents-plugins/">honeydew-ai/honeydew-ai-coding-agents-plugins</a> &middot; <a href="hqhq1025/skill-optimizer/">hqhq1025/skill-optimizer</a> &middot; <a href="huangchihhungleo/claude-real-video/">huangchihhungleo/claude-real-video</a> &middot; <a href="huggingface/skills/">huggingface/skills</a> &middot; <a href="humanpen/humanpen-skill/">humanpen/humanpen-skill</a> &middot; <a href="ilyautov/humanizer-ru/">ilyautov/humanizer-ru</a> &middot; <a href="infrasity-labs/dev-gtm-claude-skills/">infrasity-labs/dev-gtm-claude-skills</a> &middot; <a href="inhouseseo/superseo-skills/">inhouseseo/superseo-skills</a> &middot; <a href="jakedahn/pomodoro/">jakedahn/pomodoro</a> &middot; <a href="jeffallan/claude-skills/">jeffallan/claude-skills</a> &middot; <a href="k-dense-ai/claude-scientific-skills/">k-dense-ai/claude-scientific-skills</a> &middot; <a href="k-kolomeitsev/data-structure-protocol/">k-kolomeitsev/data-structure-protocol</a> &middot; <a href="lackeyjb/playwright-skill/">lackeyjb/playwright-skill</a> &middot; <a href="lambdatest/agent-skills/">lambdatest/agent-skills</a> &middot; <a href="leonxlnx/taste-skill/">leonxlnx/taste-skill</a> &middot; <a href="linked-api/linkedin-skills/">linked-api/linkedin-skills</a> &middot; <a href="lukstei/slop-grader/">lukstei/slop-grader</a> &middot; <a href="luoyuctl/agenttrace/">luoyuctl/agenttrace</a> &middot; <a href="mailtrap/mailtrap-skills/">mailtrap/mailtrap-skills</a> &middot; <a href="makenotion/notion-cookbook/">makenotion/notion-cookbook</a> &middot; <a href="makenotion/skills/">makenotion/skills</a> &middot; <a href="maksim-burtsev/simple-man/">maksim-burtsev/simple-man</a> &middot; <a href="massimodeluisa/recursive-decomposition-skill/">massimodeluisa/recursive-decomposition-skill</a> &middot; <a href="mblode/agent-skills/">mblode/agent-skills</a> &middot; <a href="mcollina/skills/">mcollina/skills</a> &middot; <a href="metalbear-co/skills/">metalbear-co/skills</a> &middot; <a href="metcalfsolutions/satori/">metcalfsolutions/satori</a> &middot; <a href="mhattingpete/claude-skills-marketplace/">mhattingpete/claude-skills-marketplace</a> &middot; <a href="michalparkola/tapestry-skills-for-claude-code/">michalparkola/tapestry-skills-for-claude-code</a> &middot; <a href="minimax-ai/skills/">minimax-ai/skills</a> &middot; <a href="modem-dev/skills/">modem-dev/skills</a> &middot; <a href="mohamedabdallah-14/unslop/">mohamedabdallah-14/unslop</a> &middot; <a href="muratcankoylan/agent-skills-for-context-engineering/">muratcankoylan/agent-skills-for-context-engineering</a> &middot; <a href="muthuishere/hand-drawn-diagrams/">muthuishere/hand-drawn-diagrams</a> &middot; <a href="necmttn/ax/">necmttn/ax</a> &middot; <a href="neolabhq/context-engineering-kit/">neolabhq/context-engineering-kit</a> &middot; <a href="nowork-studio/notfair/">nowork-studio/notfair</a> &middot; <a href="nvidia/skills/">nvidia/skills</a> &middot; <a href="obra/superpowers/">obra/superpowers</a> &middot; <a href="obra/superpowers-lab/">obra/superpowers-lab</a> &middot; <a href="octav-labs/octav-api-skill/">octav-labs/octav-api-skill</a> &middot; <a href="ohad6k/emulo/">ohad6k/emulo</a> &middot; <a href="openweb-org/openweb/">openweb-org/openweb</a> &middot; <a href="orchestra-research/ai-research-skills/">orchestra-research/ai-research-skills</a> &middot; <a href="orkas-ai/orkas-videostudio/">orkas-ai/orkas-videostudio</a> &middot; <a href="phuryn/pm-skills/">phuryn/pm-skills</a> &middot; <a href="praneybehl/llm-wiki-plugin/">praneybehl/llm-wiki-plugin</a> &middot; <a href="product-on-purpose/pm-skills/">product-on-purpose/pm-skills</a> &middot; <a href="pspdfkit-labs/nutrient-agent-skill/">pspdfkit-labs/nutrient-agent-skill</a> &middot; <a href="qdrant/skills/">qdrant/skills</a> &middot; <a href="qiuner/birdview/">qiuner/birdview</a> &middot; <a href="realkimbarrett/advertising-skills/">realkimbarrett/advertising-skills</a> &middot; <a href="redis/agent-skills/">redis/agent-skills</a> &middot; <a href="renezander030/capcut-cli/">renezander030/capcut-cli</a> &middot; <a href="replicate/skills/">replicate/skills</a> &middot; <a href="resend/resend-skills/">resend/resend-skills</a> &middot; <a href="sanjay3290/ai-skills/">sanjay3290/ai-skills</a> &middot; <a href="sergebulaev/linkedin-skills/">sergebulaev/linkedin-skills</a> &middot; <a href="serpapi/skills/">serpapi/skills</a> &middot; <a href="shepsci/kaggle-skill/">shepsci/kaggle-skill</a> &middot; <a href="smixs/creative-director-skill/">smixs/creative-director-skill</a> &middot; <a href="socai-io/jev-social/">socai-io/jev-social</a> &middot; <a href="supabase/agent-skills/">supabase/agent-skills</a> &middot; <a href="superdesigndev/superdesign-skill/">superdesigndev/superdesign-skill</a> &middot; <a href="swarmclawai/swarmclaw/">swarmclawai/swarmclaw</a> &middot; <a href="swarmclawai/swarmvault/">swarmclawai/swarmvault</a> &middot; <a href="takechanman1228/claude-ecom/">takechanman1228/claude-ecom</a> &middot; <a href="takechanman1228/claude-persona/">takechanman1228/claude-persona</a> &middot; <a href="tencent/ai-infra-guard/">tencent/ai-infra-guard</a> &middot; <a href="testdino-hq/playwright-skill/">testdino-hq/playwright-skill</a> &middot; <a href="tjboudreaux/cc-thinking-skills/">tjboudreaux/cc-thinking-skills</a> &middot; <a href="trailofbits/skills/">trailofbits/skills</a> &middot; <a href="tronghieu/agent-skills/">tronghieu/agent-skills</a> &middot; <a href="trycourier/courier-skills/">trycourier/courier-skills</a> &middot; <a href="tt-a1i/archify/">tt-a1i/archify</a> &middot; <a href="tubeagentkit/youtube-transcript-skills/">tubeagentkit/youtube-transcript-skills</a> &middot; <a href="unbrowse-ai/unbrowse/">unbrowse-ai/unbrowse</a> &middot; <a href="vaibhavarora14/job-application-agent/">vaibhavarora14/job-application-agent</a> &middot; <a href="vanshyadav1408/omentir/">vanshyadav1408/omentir</a> &middot; <a href="veniceai/skills/">veniceai/skills</a> &middot; <a href="vercel-labs/skills/">vercel-labs/skills</a> &middot; <a href="voltagent/skills/">voltagent/skills</a> &middot; <a href="vonarmen-wq/forward-deployed-selling/">vonarmen-wq/forward-deployed-selling</a> &middot; <a href="vostride/agent-qa/">vostride/agent-qa</a> &middot; <a href="wgwtest/novel-writing/">wgwtest/novel-writing</a> &middot; <a href="wondelai/skills/">wondelai/skills</a> &middot; <a href="wrsmith108/varlock-claude-skill/">wrsmith108/varlock-claude-skill</a> &middot; <a href="xquik-dev/tweetclaw/">xquik-dev/tweetclaw</a> &middot; <a href="ykdojo/claude-code-tips/">ykdojo/claude-code-tips</a> &middot; <a href="yusufkaraaslan/skill-seekers/">yusufkaraaslan/skill_seekers</a> &middot; <a href="yzfly/mind-cloning-engineering/">yzfly/mind-cloning-engineering</a> &middot; <a href="zarazhangrui/frontend-slides/">zarazhangrui/frontend-slides</a> &middot; <a href="zeropointrepo/youtube-skills/">zeropointrepo/youtube-skills</a> &middot; <a href="zxkane/aws-skills/">zxkane/aws-skills</a></p>
+        <h2 id="all-repos-title">All listed repositories</h2>
+        <p class="repo-index"><a href="activeloopai/hivemind/">activeloopai/hivemind</a> &middot; <a href="agentrhq/authsome/authsome/">agentrhq/authsome</a> &middot; <a href="agiwhitelist/auteur/auteur/">agiwhitelist/auteur</a> &middot; <a href="agricidaniel/claude-seo/">AgriciDaniel/claude-seo</a> &middot; <a href="alisa0808/vibe-creating-skill/vibe-creating-prompt/">Alisa0808/vibe-creating-skill</a> &middot; <a href="alisa0808/vox-director/vox-director/">Alisa0808/vox-director</a> &middot; <a href="angular/skills/">angular/skills</a> &middot; <a href="anthropics/skills/">anthropics/skills</a> &middot; <a href="antonbabenko/terraform-skill/terraform-skill/">antonbabenko/terraform-skill</a> &middot; <a href="apitube/news-api-skills/apitube-news-api/">apitube/news-api-skills</a> &middot; <a href="apollographql/skills/">apollographql/skills</a> &middot; <a href="avelikiy/great-cto/">avelikiy/great_cto</a> &middot; <a href="bitwize-music-studio/claude-ai-music-skills/">bitwize-music-studio/claude-ai-music-skills</a> &middot; <a href="bluzername/claude-code-terminal-title/terminal-title/">bluzername/claude-code-terminal-title</a> &middot; <a href="bria-ai/bria-skill/">Bria-AI/bria-skill</a> &middot; <a href="browserbase/skills/">browserbase/skills</a> &middot; <a href="buildshipgrowrepeat/nextjs-sanity-blog-skill/building-blog/">BuildShipGrowRepeat/nextjs-sanity-blog-skill</a> &middot; <a href="cloudflare/security-audit-skill/security-audit/">cloudflare/security-audit-skill</a> &middot; <a href="cloudflare/skills/">cloudflare/skills</a> &middot; <a href="coderabbitai/skills/">coderabbitai/skills</a> &middot; <a href="coinpaprika/skills/">coinpaprika/skills</a> &middot; <a href="conorbronsdon/avoid-ai-writing/">conorbronsdon/avoid-ai-writing</a> &middot; <a href="continuum-ai-corp/orcareplay/orca-replay/">Continuum-AI-Corp/OrcaReplay</a> &middot; <a href="coreyhaines31/marketingskills/">coreyhaines31/marketingskills</a> &middot; <a href="csthink/dashmotion/dashmotion/">csthink/dashmotion</a> &middot; <a href="cypress-io/ai-toolkit/">cypress-io/ai-toolkit</a> &middot; <a href="danjdewhurst/story-skills/">danjdewhurst/story-skills</a> &middot; <a href="deanpeters/product-manager-skills/">deanpeters/Product-Manager-Skills</a> &middot; <a href="eduardo-sl/go-agent-skills/">eduardo-sl/go-agent-skills</a> &middot; <a href="emblemcompany/agent-skills/">EmblemCompany/Agent-skills</a> &middot; <a href="expo/skills/">expo/skills</a> &middot; <a href="fal-ai-community/skills/fal-redesign/">fal-ai-community/skills</a> &middot; <a href="firebase/skills/">firebase/skills</a> &middot; <a href="firecrawl/skills/">firecrawl/skills</a> &middot; <a href="flutter/skills/">flutter/skills</a> &middot; <a href="garrytan/gstack/">garrytan/gstack</a> &middot; <a href="getsentry/skills/">getsentry/skills</a> &middot; <a href="glacierphonk/naming/naming/">glacierphonk/naming</a> &middot; <a href="google/skills/">google/skills</a> &middot; <a href="googleworkspace/cli/">googleworkspace/cli</a> &middot; <a href="gooseworks-ai/goose-skills/">gooseworks-ai/goose-skills</a> &middot; <a href="hashicorp/agent-skills/">hashicorp/agent-skills</a> &middot; <a href="heshamfs/materials-simulation-skills/">HeshamFS/materials-simulation-skills</a> &middot; <a href="honeydew-ai/honeydew-ai-coding-agents-plugins/">honeydew-ai/honeydew-ai-coding-agents-plugins</a> &middot; <a href="hqhq1025/skill-optimizer/">hqhq1025/skill-optimizer</a> &middot; <a href="huangchihhungleo/claude-real-video/">HUANGCHIHHUNGLeo/claude-real-video</a> &middot; <a href="huggingface/skills/">huggingface/skills</a> &middot; <a href="infrasity-labs/dev-gtm-claude-skills/">infrasity-labs/dev-gtm-claude-skills</a> &middot; <a href="inhouseseo/superseo-skills/">inhouseseo/superseo-skills</a> &middot; <a href="jeffallan/claude-skills/">jeffallan/claude-skills</a> &middot; <a href="k-dense-ai/claude-scientific-skills/">K-Dense-AI/claude-scientific-skills</a> &middot; <a href="k-kolomeitsev/data-structure-protocol/data-structure-protocol/">k-kolomeitsev/data-structure-protocol</a> &middot; <a href="lackeyjb/playwright-skill/playwright-skill/">lackeyjb/playwright-skill</a> &middot; <a href="lambdatest/agent-skills/">LambdaTest/agent-skills</a> &middot; <a href="leonxlnx/taste-skill/">Leonxlnx/taste-skill</a> &middot; <a href="luoyuctl/agenttrace/agenttrace-session-audit/">luoyuctl/agenttrace</a> &middot; <a href="mailtrap/mailtrap-skills/">mailtrap/mailtrap-skills</a> &middot; <a href="makenotion/notion-cookbook/">makenotion/notion-cookbook</a> &middot; <a href="makenotion/skills/">makenotion/skills</a> &middot; <a href="maksim-burtsev/simple-man/simple-man/">Maksim-Burtsev/simple-man</a> &middot; <a href="massimodeluisa/recursive-decomposition-skill/recursive-decomposition/">massimodeluisa/recursive-decomposition-skill</a> &middot; <a href="mblode/agent-skills/">mblode/agent-skills</a> &middot; <a href="mcollina/skills/">mcollina/skills</a> &middot; <a href="metalbear-co/skills/">metalbear-co/skills</a> &middot; <a href="metcalfsolutions/satori/satori/">MetcalfSolutions/Satori</a> &middot; <a href="mhattingpete/claude-skills-marketplace/">mhattingpete/claude-skills-marketplace</a> &middot; <a href="michalparkola/tapestry-skills-for-claude-code/">michalparkola/tapestry-skills-for-claude-code</a> &middot; <a href="minimax-ai/skills/">MiniMax-AI/skills</a> &middot; <a href="modem-dev/skills/write-discoverable-code/">modem-dev/skills</a> &middot; <a href="mohamedabdallah-14/unslop/">MohamedAbdallah-14/unslop</a> &middot; <a href="muratcankoylan/agent-skills-for-context-engineering/">muratcankoylan/Agent-Skills-for-Context-Engineering</a> &middot; <a href="muthuishere/hand-drawn-diagrams/hand-drawn-diagrams/">muthuishere/hand-drawn-diagrams</a> &middot; <a href="necmttn/ax/">Necmttn/ax</a> &middot; <a href="neolabhq/context-engineering-kit/">NeoLabHQ/context-engineering-kit</a> &middot; <a href="nowork-studio/notfair/">nowork-studio/NotFair</a> &middot; <a href="nvidia/skills/">NVIDIA/skills</a> &middot; <a href="obra/superpowers/">obra/superpowers</a> &middot; <a href="obra/superpowers-lab/">obra/superpowers-lab</a> &middot; <a href="ohad6k/emulo/">ohad6k/emulo</a> &middot; <a href="openweb-org/openweb/openweb/">openweb-org/openweb</a> &middot; <a href="orchestra-research/ai-research-skills/">Orchestra-Research/AI-Research-SKILLs</a> &middot; <a href="orkas-ai/orkas-videostudio/">Orkas-AI/Orkas-VideoStudio</a> &middot; <a href="phuryn/pm-skills/">phuryn/pm-skills</a> &middot; <a href="praneybehl/llm-wiki-plugin/llm-wiki/">praneybehl/llm-wiki-plugin</a> &middot; <a href="product-on-purpose/pm-skills/">product-on-purpose/pm-skills</a> &middot; <a href="pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing/">PSPDFKit-labs/nutrient-agent-skill</a> &middot; <a href="qdrant/skills/">qdrant/skills</a> &middot; <a href="qiuner/birdview/">Qiuner/birdview</a> &middot; <a href="realkimbarrett/advertising-skills/">realkimbarrett/advertising-skills</a> &middot; <a href="redis/agent-skills/">redis/agent-skills</a> &middot; <a href="renezander030/capcut-cli/capcut-edit/">renezander030/capcut-cli</a> &middot; <a href="replicate/skills/">replicate/skills</a> &middot; <a href="resend/resend-skills/">resend/resend-skills</a> &middot; <a href="sanjay3290/ai-skills/">sanjay3290/ai-skills</a> &middot; <a href="sawyerhood/dev-browser/dev-browser/">SawyerHood/dev-browser</a> &middot; <a href="sergebulaev/linkedin-skills/">sergebulaev/linkedin-skills</a> &middot; <a href="serpapi/skills/">serpapi/skills</a> &middot; <a href="shepsci/kaggle-skill/kaggle/">shepsci/kaggle-skill</a> &middot; <a href="smixs/creative-director-skill/creative-director/">smixs/creative-director-skill</a> &middot; <a href="socai-io/jev-social/jev-social/">socai-io/jev-social</a> &middot; <a href="supabase/agent-skills/">supabase/agent-skills</a> &middot; <a href="superdesigndev/superdesign-skill/superdesign/">superdesigndev/superdesign-skill</a> &middot; <a href="swarmclawai/swarmclaw/">swarmclawai/swarmclaw</a> &middot; <a href="swarmclawai/swarmvault/swarmvault/">swarmclawai/swarmvault</a> &middot; <a href="tencent/ai-infra-guard/">Tencent/AI-Infra-Guard</a> &middot; <a href="testdino-hq/playwright-skill/">testdino-hq/playwright-skill</a> &middot; <a href="tjboudreaux/cc-thinking-skills/">tjboudreaux/cc-thinking-skills</a> &middot; <a href="trailofbits/skills/">trailofbits/skills</a> &middot; <a href="tronghieu/agent-skills/">tronghieu/agent-skills</a> &middot; <a href="trycourier/courier-skills/courier/">trycourier/courier-skills</a> &middot; <a href="tt-a1i/archify/archify/">tt-a1i/archify</a> &middot; <a href="tubeagentkit/youtube-transcript-skills/youtube-transcript/">tubeagentkit/youtube-transcript-skills</a> &middot; <a href="unbrowse-ai/unbrowse/unbrowse/">unbrowse-ai/unbrowse</a> &middot; <a href="vaibhavarora14/job-application-agent/job-application-agent/">vaibhavarora14/job-application-agent</a> &middot; <a href="vanshyadav1408/omentir/linkedin-outreach/">vanshyadav1408/Omentir</a> &middot; <a href="veniceai/skills/">veniceai/skills</a> &middot; <a href="vercel-labs/skills/find-skills/">vercel-labs/skills</a> &middot; <a href="voltagent/skills/">VoltAgent/skills</a> &middot; <a href="vonarmen-wq/forward-deployed-selling/forward-deployed-selling/">vonarmen-wq/forward-deployed-selling</a> &middot; <a href="vostride/agent-qa/">vostride/agent-qa</a> &middot; <a href="wgwtest/novel-writing/novel-writing/">wgwtest/novel-writing</a> &middot; <a href="wondelai/skills/">wondelai/skills</a> &middot; <a href="wrsmith108/varlock-claude-skill/varlock/">wrsmith108/varlock-claude-skill</a> &middot; <a href="xquik-dev/x-twitter-scraper/xquik-mcp/">Xquik-dev/x-twitter-scraper</a> &middot; <a href="ykdojo/claude-code-tips/">ykdojo/claude-code-tips</a> &middot; <a href="yusufkaraaslan/skill-seekers/skill-builder/">yusufkaraaslan/Skill_Seekers</a> &middot; <a href="zarazhangrui/frontend-slides/frontend-slides/">zarazhangrui/frontend-slides</a> &middot; <a href="zeropointrepo/youtube-skills/">ZeroPointRepo/youtube-skills</a> &middot; <a href="zxkane/aws-skills/">zxkane/aws-skills</a></p>
       </section>
       <section class="panel" aria-labelledby="pack-title">
         <h2 id="pack-title">Suede's own skills</h2>
@@ -421,13 +418,13 @@
         <h3>What is an agent skill?</h3>
         <p>An agent skill is a folder with a SKILL.md file: a name, a one-line description of when to use it, and instructions the agent loads on demand. Claude Code, Codex, Cursor and other agents that support the Agent Skills format can install the same folder.</p>
         <h3>How do I install a skill from this directory?</h3>
-        <p>Every skill page lists three routes: the skills CLI (npx skills add with the repository and skill name), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder straight from the author's GitHub repository.</p>
+        <p>Each skill page lists up to three routes: the skills CLI (npx skills add with the repository and skill name), a project-level copy into .claude/skills for Claude Code, and the Codex skill installer. Each route installs the folder from the author's GitHub repository. Skills published under restrictive license terms show the license instead.</p>
         <h3>How are skills chosen and graded?</h3>
-        <p>Skills are read from public GitHub repositories cited in the major curated skill lists, then run through the Suede Skill Check: eight structural checks covering the frontmatter, name, description, length, license and maintenance. Skills that pass at least seven checks and declare a license are listed.</p>
-        <h3>How do I get my skill listed or updated?</h3>
-        <p>Open a listing request on GitHub with the repository URL. The directory is rebuilt from the source repositories, so changes you push to SKILL.md appear at the next refresh.</p>
+        <p>The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: six checks on the SKILL.md format, plus a declared license and a commit in the last year. Skills that pass at least seven checks are listed.</p>
+        <h3>How do I get my skill listed?</h3>
+        <p>Open a listing request on GitHub with the repository URL. Requests are reviewed by hand; an accepted repository is read at the next directory refresh, and its skills are listed if they pass the check.</p>
         <h3>Can I remove my skill from the directory?</h3>
-        <p>Yes. Open a removal request on GitHub and the skill comes out of the next build.</p>
+        <p>Yes. Open a removal request on GitHub and the skill comes out at the next build.</p>
       </section>
     </main>
     <footer>

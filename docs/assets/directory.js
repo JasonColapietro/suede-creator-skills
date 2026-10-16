@@ -13,18 +13,29 @@ document.querySelectorAll('[data-copy-target]').forEach(function (btn) {
   });
 });
 document.querySelectorAll('[data-filter-for]').forEach(function (input) {
-  var table = document.getElementById(input.getAttribute('data-filter-for'));
+  // A long table is split: the first rows render open, the rest sit in a
+  // <details> with the same data-filter-group. Filtering searches both and
+  // opens the overflow when it holds a match.
+  var group = input.getAttribute('data-filter-for');
   var status = document.getElementById(input.getAttribute('data-filter-status'));
-  if (!table) return;
-  var rows = Array.prototype.slice.call(table.querySelectorAll('tbody tr'));
+  var tables = Array.prototype.slice.call(document.querySelectorAll('table[data-filter-group="' + group + '"]'));
+  var more = document.querySelector('details[data-filter-group="' + group + '"]');
+  var rows = [];
+  tables.forEach(function (t) { rows = rows.concat(Array.prototype.slice.call(t.querySelectorAll('tbody tr'))); });
+  if (!rows.length) return;
   input.addEventListener('input', function () {
     var q = input.value.trim().toLowerCase();
     var shown = 0;
+    var hiddenHit = false;
     rows.forEach(function (row) {
       var hit = !q || row.textContent.toLowerCase().indexOf(q) !== -1;
       row.hidden = !hit;
-      if (hit) shown++;
+      if (hit) {
+        shown++;
+        if (more && more.contains(row)) hiddenHit = true;
+      }
     });
+    if (more && q && hiddenHit) more.open = true;
     if (status) status.textContent = q ? shown + ' of ' + rows.length + ' shown' : '';
   });
 });

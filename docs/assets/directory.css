@@ -63,13 +63,27 @@
 .count-chip { font-family: var(--mono); font-size: 12px; color: var(--gold); }
 
 .facts th { width: 180px; color: var(--muted); font-weight: 500; }
-.facts td, .skill-table td { overflow-wrap: anywhere; }
+.facts td { overflow-wrap: break-word; }
 .checks td.pass { color: var(--gold); font-weight: 600; }
 .checks td.miss { color: var(--red-text); font-weight: 600; }
-.skill-table td.name { font-family: var(--mono); white-space: nowrap; }
-.skill-table td.g { text-align: center; }
+
+/* Skill tables: name and grade, a repository or category link, a description.
+   Desktop keeps three columns with a capped name column; phones get one card
+   per row (see the media query at the end). */
+.skill-table td { overflow-wrap: break-word; }
+.skill-table td.name { font-family: var(--mono); width: 30%; max-width: 28ch; word-break: normal; overflow-wrap: anywhere; }
+.skill-table td.name .grade { margin-left: 6px; vertical-align: 1px; }
+.skill-table td.meta { width: 22%; font-size: 13px; color: var(--muted); }
 .skill-table tr[hidden] { display: none; }
 .skill-table tr:target td { background: rgba(200, 169, 110, 0.08); }
+.more-rows { margin-top: 16px; }
+.more-rows > summary, .check-details > summary {
+  cursor: pointer; color: var(--gold); font-size: 14px; font-weight: 600;
+  padding: 10px 0; min-height: 44px; display: flex; align-items: center;
+}
+.check-details { margin-top: 8px; }
+.before-list li { margin-top: 10px; }
+.before-list code { font-size: 0.85em; }
 
 .author-quote {
   margin: 16px 0 10px; padding: 14px 18px;
@@ -101,7 +115,16 @@
 .faq h3 { margin-top: 22px; }
 .steps li { margin-top: 8px; }
 
+.directory > .eyebrow:first-child { margin-top: 20px; }
+
 @media (max-width: 720px) {
   .facts th { width: 120px; }
-  .skill-table td.name { white-space: normal; }
+  .skill-table thead { display: none; }
+  .skill-table, .skill-table tbody, .skill-table tr, .skill-table td,
+  .skill-table td.name, .skill-table td.meta, .skill-table td.desc { display: block; width: auto; max-width: none; }
+  .skill-table tr { padding: 12px 14px; border-bottom: 1px solid var(--hairline); }
+  .skill-table td { padding: 0; border: none; }
+  .skill-table td.name { font-size: 15px; }
+  .skill-table td.meta { margin-top: 2px; }
+  .skill-table td.desc { margin-top: 6px; font-size: 14px; }
 }

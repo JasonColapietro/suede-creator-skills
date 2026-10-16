@@ -6,7 +6,6 @@
     <title>huggingface-trackio Agent Skill by huggingface</title>
     <meta name="description" content="Tracks and visualizes ML training experiments with Trackio, including metric logging, training alerts with webhooks… From huggingface/skills, Apache-2.0.">
     <meta name="keywords" content="huggingface-trackio skill by huggingface, huggingface-trackio skill, huggingface-trackio agent skill, huggingface-trackio claude skill, huggingface skills, AI agent agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="huggingface-trackio Agent Skill by huggingface">
     <meta property="og:description" content="Tracks and visualizes ML training experiments with Trackio, including metric logging, training alerts with webhooks… From huggingface/skills, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="huggingface-trackio Agent Skill by huggingface">
     <meta name="twitter:description" content="Tracks and visualizes ML training experiments with Trackio, including metric logging, training alerts with webhooks… From huggingface/skills, Apache-2.0.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +48,12 @@
             "AI Agents and LLM Engineering",
             "Agent Skills",
             "SKILL.md"
-          ]
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "huggingface",
+            "url": "https://github.com/huggingface"
+          }
         }
       }
     </script>
@@ -55,6 +61,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +87,7 @@
             "name": "huggingface-trackio",
             "item": "https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +113,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,10 +140,36 @@
             <tr><th scope="row">Last commit</th><td>October 8, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>112 lines, 605 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>4 files, including references</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>License:</b> <a href="https://github.com/huggingface/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install huggingface-trackio</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/huggingface/skills --skill huggingface-trackio</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/huggingface/skills.git &quot;$tmp/skills&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/skills/skills/huggingface-trackio&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo huggingface/skills \
+    --path skills/huggingface-trackio</code></pre>
+        <p class="muted">huggingface/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -148,6 +177,7 @@
           <p>Track and visualize ML training experiments with Trackio. Use when logging metrics during training (Python API), firing alerts for training diagnostics, or retrieving/analyzing logged metrics (CLI). Supports real-time dashboard visualization, alerts with webhooks, HF Space syncing, and JSON output for automation.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/huggingface/skills/blob/main/skills/huggingface-trackio/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Three Interfaces</li>
@@ -167,50 +197,39 @@
           <li><code>references/retrieving_metrics.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install huggingface-trackio</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/huggingface/skills --skill huggingface-trackio</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/huggingface/skills.git /tmp/skills
-mkdir -p .claude/skills
-cp -R /tmp/skills/skills/huggingface-trackio .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo huggingface/skills \
-    --path skills/huggingface-trackio</code></pre>
-        <p class="muted">huggingface/skills is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>huggingface-trackio passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for huggingface-trackio</h2>
-        <p>Maintainers of huggingface/skills can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of huggingface/skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/badge.svg)](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/huggingface/skills/huggingface-trackio/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -220,24 +239,24 @@ cp -R /tmp/skills/skills/huggingface-trackio .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More AI agent skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../necmttn/ax/dojo/"><b>dojo</b><span>Runs a self-improvement loop over the ax graph using surplus plan quota, locking pending verdicts…</span></a>
-          <a class="link-row" href="../../../neolabhq/context-engineering-kit/subagent-driven-development/"><b>subagent-driven-development</b><span>Executes implementation plans by dispatching a fresh subagent per independent task, with code review between…</span></a>
-          <a class="link-row" href="../../../hqhq1025/skill-optimizer/skill-miner/"><b>skill-miner</b><span>Mines coding-agent session history, archived transcripts, memories, and repeated local work to discover…</span></a>
-          <a class="link-row" href="../../../nowork-studio/notfair/gemini/"><b>gemini</b><span>Gets a cross-model second opinion from Google Gemini by reviewing changes, stress-testing them, or answering…</span></a>
-          <a class="link-row" href="../../../orchestra-research/ai-research-skills/model-merging/"><b>model-merging</b><span>Merges multiple fine-tuned models with mergekit to combine capabilities without retraining, using methods…</span></a>
-          <a class="link-row" href="../../../product-on-purpose/pm-skills/utility-pm-workflow-builder/"><b>utility-pm-workflow-builder</b><span>Guides a contributor from a workflow idea to a Workflow Implementation Packet, running overlap analysis…</span></a>
+          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/"><b>advanced-evaluation</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
+          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/hosted-agents/"><b>hosted-agents</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
+          <a class="link-row" href="../../../necmttn/ax/efficient-dispatch/"><b>efficient-dispatch</b><span>Necmttn/ax</span></a>
+          <a class="link-row" href="../../../yusufkaraaslan/skill-seekers/skill-builder/"><b>skill-builder</b><span>yusufkaraaslan/Skill_Seekers</span></a>
+          <a class="link-row" href="../../../k-kolomeitsev/data-structure-protocol/data-structure-protocol/"><b>data-structure-protocol</b><span>k-kolomeitsev/data-structure-protocol</span></a>
+          <a class="link-row" href="../../../ohad6k/emulo/work/"><b>work</b><span>ohad6k/emulo</span></a>
         </div>
-        <p><a href="../../../ai-agents-llm/">All ai agents and llm engineering skills</a></p>
+        <p><a href="../../../ai-agents-llm/">All AI agent and LLM engineering skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from huggingface/skills</h2>
         <div class="links">
-          <a class="link-row" href="../hf-cloud-python-env-setup/"><b>hf-cloud-python-env-setup</b><span>Sets up an isolated Python environment with the right Python version and current boto3 for SageMaker and…</span></a>
-          <a class="link-row" href="../hf-cloud-sagemaker-iam-preflight/"><b>hf-cloud-sagemaker-iam-preflight</b><span>Ensures a usable SageMaker execution role exists before deploying or training, checking for existing roles…</span></a>
-          <a class="link-row" href="../hf-cloud-sagemaker-production-defaults/"><b>hf-cloud-sagemaker-production-defaults</b><span>Creates SageMaker endpoints (real-time, scale-to-zero, or async) with autoscaling, CloudWatch alarms, and…</span></a>
-          <a class="link-row" href="../hf-cloud-serving-image-selection/"><b>hf-cloud-serving-image-selection</b><span>Picks the right serving container for a SageMaker model deployment and finds its current image URI…</span></a>
-          <a class="link-row" href="../huggingface-community-evals/"><b>huggingface-community-evals</b><span>Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including…</span></a>
-          <a class="link-row" href="../huggingface-local-models/"><b>huggingface-local-models</b><span>Selects models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm, covering quant…</span></a>
+          <a class="link-row" href="../hf-cloud-python-env-setup/"><b>hf-cloud-python-env-setup</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../hf-cloud-sagemaker-iam-preflight/"><b>hf-cloud-sagemaker-iam-preflight</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../hf-cloud-sagemaker-production-defaults/"><b>hf-cloud-sagemaker-production-defaults</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../hf-cloud-serving-image-selection/"><b>hf-cloud-serving-image-selection</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../huggingface-community-evals/"><b>huggingface-community-evals</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../huggingface-local-models/"><b>huggingface-local-models</b><span>huggingface/skills</span></a>
         </div>
         <p><a href="../">All 24 skills in huggingface/skills</a></p>
       </section>

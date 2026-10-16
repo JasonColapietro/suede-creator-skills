@@ -6,7 +6,6 @@
     <title>secrets-rotation Agent Skill by avelikiy | Suede Directory</title>
     <meta name="description" content="Handles exposed secrets, such as ones pasted into chat or committed, by treating them as compromised and making revocation and… From avelikiy/great_cto, MIT.">
     <meta name="keywords" content="secrets-rotation skill by avelikiy, secrets-rotation skill, secrets-rotation agent skill, secrets-rotation claude skill, avelikiy skills, security agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="secrets-rotation Agent Skill by avelikiy | Suede Directory">
     <meta property="og:description" content="Handles exposed secrets, such as ones pasted into chat or committed, by treating them as compromised and making revocation and… From avelikiy/great_cto, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="secrets-rotation Agent Skill by avelikiy | Suede Directory">
     <meta name="twitter:description" content="Handles exposed secrets, such as ones pasted into chat or committed, by treating them as compromised and making revocation and… From avelikiy/great_cto, MIT.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,6 +56,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +82,7 @@
             "name": "secrets-rotation",
             "item": "https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +108,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,11 +135,37 @@
             <tr><th scope="row">Last commit</th><td>October 15, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>45 lines, 434 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>1 file</td></tr>
-            <tr><th scope="row">Allowed tools</th><td><code>Read, Bash, Grep</code></td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>Tool permissions requested:</b> <code>Read, Bash, Grep</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
+          <li><b>License:</b> <a href="https://github.com/avelikiy/great_cto/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install secrets-rotation</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/avelikiy/great_cto --skill secrets-rotation</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/avelikiy/great_cto.git &quot;$tmp/great_cto&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/great_cto/skills/secrets-rotation&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo avelikiy/great_cto \
+    --path skills/secrets-rotation</code></pre>
+        <p class="muted">avelikiy/great_cto is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -149,6 +173,7 @@
           <p>What to do the moment a secret is exposed — pasted into chat, committed, logged, shown in a transcript or a screenshot. The secret is compromised; only revoking and rotating it helps. Turns it into one tracked task with an escalation, not a reminder repeated every session. Use when you see a key, token, password or private key anywhere it should not be (&quot;ключ в чате&quot;, &quot;токен в логах&quot;, &quot;закоммитил .env&quot;). Loaded by security-officer, l3-support, devops.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/avelikiy/great_cto/blob/main/skills/secrets-rotation/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">The moment you see one</li>
@@ -160,50 +185,39 @@
           <li><code>SKILL.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install secrets-rotation</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/avelikiy/great_cto --skill secrets-rotation</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/avelikiy/great_cto.git /tmp/great_cto
-mkdir -p .claude/skills
-cp -R /tmp/great_cto/skills/secrets-rotation .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo avelikiy/great_cto \
-    --path skills/secrets-rotation</code></pre>
-        <p class="muted">avelikiy/great_cto is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>secrets-rotation passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for secrets-rotation</h2>
-        <p>Maintainers of avelikiy/great_cto can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of avelikiy/great_cto can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/badge.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -213,24 +227,24 @@ cp -R /tmp/great_cto/skills/secrets-rotation .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More security skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../tencent/ai-infra-guard/indirect-injection-detection/"><b>indirect-injection-detection</b><span>Detects indirect prompt injection, where instructions hidden in documents, RAG, or web content hijack an…</span></a>
-          <a class="link-row" href="../../../getsentry/skills/django-access-review/"><b>django-access-review</b><span>Reviews Django views, DRF viewsets, and ORM queries for access control, authorization, IDOR, tenant…</span></a>
-          <a class="link-row" href="../../../trailofbits/skills/audit-augmentation/"><b>audit-augmentation</b><span>Augments Trailmark code graphs with audit findings from SARIF results, weAudit annotations, and…</span></a>
-          <a class="link-row" href="../../../google/skills/assuredworkloads-environment-assessor/"><b>assuredworkloads-environment-assessor</b><span>Discovers Google Cloud resource telemetry and effective Org Policies, evaluates workloads against sovereign…</span></a>
-          <a class="link-row" href="../../../tencent/ai-infra-guard/web-exfiltration-detection/"><b>web-exfiltration-detection</b><span>Detects data exfiltration through URL path encoding and chained web_fetch navigation, including fake trusted…</span></a>
-          <a class="link-row" href="../../../getsentry/skills/skill-scanner/"><b>skill-scanner</b><span>Scans agent skills for prompt injection, malicious scripts, excessive permissions, secret exposure, and…</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/crypto-protocol-diagram/"><b>crypto-protocol-diagram</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../mcollina/skills/oauth/"><b>oauth</b><span>mcollina/skills</span></a>
+          <a class="link-row" href="../../../wrsmith108/varlock-claude-skill/varlock/"><b>varlock</b><span>wrsmith108/varlock-claude-skill</span></a>
+          <a class="link-row" href="../../../redis/agent-skills/redis-security/"><b>redis-security</b><span>redis/agent-skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/semgrep/"><b>semgrep</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../tencent/ai-infra-guard/indirect-injection-detection/"><b>indirect-injection-detection</b><span>Tencent/AI-Infra-Guard</span></a>
         </div>
         <p><a href="../../../security/">All security skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from avelikiy/great_cto</h2>
         <div class="links">
-          <a class="link-row" href="../aesthetic-instrument/"><b>aesthetic-instrument</b><span>Defines great_cto's visual style, a dark surface ladder with one accent and two typefaces, as twelve…</span></a>
-          <a class="link-row" href="../anti-patterns/"><b>anti-patterns</b><span>Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or…</span></a>
-          <a class="link-row" href="../anydesign/"><b>anydesign</b><span>Analyzes images, websites, and Figma files to extract their design and generate a design.md with a token…</span></a>
-          <a class="link-row" href="../committed-aesthetic/"><b>committed-aesthetic</b><span>Explains how to write and use a skill that commits to one checkable aesthetic rather than a catalogue, so…</span></a>
-          <a class="link-row" href="../migration-ready-schema/"><b>migration-ready-schema</b><span>Sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import…</span></a>
-          <a class="link-row" href="../opportunity-solution-tree/"><b>opportunity-solution-tree</b><span>Builds an Opportunity Solution Tree that maps a desired outcome to customer opportunities, possible…</span></a>
+          <a class="link-row" href="../aesthetic-instrument/"><b>aesthetic-instrument</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../anti-patterns/"><b>anti-patterns</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../anydesign/"><b>anydesign</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../committed-aesthetic/"><b>committed-aesthetic</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../migration-ready-schema/"><b>migration-ready-schema</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../opportunity-solution-tree/"><b>opportunity-solution-tree</b><span>avelikiy/great_cto</span></a>
         </div>
         <p><a href="../">All 30 skills in avelikiy/great_cto</a></p>
       </section>

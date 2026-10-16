@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        The [Agent Skills Directory](https://skills.suedeai.ai/directory/) lists open-source skills that pass the [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). One request covers every skill in a repository.
+        The [Agent Skills Directory](https://skills.suedeai.ai/directory/) lists public skills that pass the [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). One request covers every skill in a repository.
   - type: dropdown
     id: request
     attributes:

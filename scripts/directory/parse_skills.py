@@ -2,6 +2,7 @@
 
 Runs with `python3 -I`; it only reads files from the clones, never executes them.
 """
+import collections
 import json
 import os
 import re
@@ -16,6 +17,8 @@ CANDIDATES = json.load(open(sys.argv[2]))
 OUT = sys.argv[3]
 
 lists_by_repo = {c["repo"]: c["lists"] for c in CANDIDATES}
+# The lists spell owner/repo the way GitHub does ("NVIDIA/skills"); keys are lowercase.
+case_by_repo = {c["repo"]: c.get("case") or c["repo"] for c in CANDIDATES}
 
 SKIP_DIRS = {".git", "node_modules", "vendor", "dist", "build", ".venv", "__pycache__"}
 
@@ -66,6 +69,68 @@ def git(repo_root, *args):
         return subprocess.run(["git", "-C", str(repo_root), *args], capture_output=True, text=True, timeout=30).stdout.strip()
     except Exception:
         return ""
+
+
+# Facts a reader wants before installing, read from the files themselves.
+SCRIPT_LANGS = {
+    ".py": "Python", ".js": "JavaScript", ".mjs": "JavaScript", ".cjs": "JavaScript", ".ts": "TypeScript",
+    ".sh": "Shell", ".bash": "Shell", ".zsh": "Shell", ".ps1": "PowerShell", ".rb": "Ruby", ".go": "Go",
+    ".rs": "Rust", ".java": "Java", ".kt": "Kotlin", ".swift": "Swift", ".php": "PHP", ".r": "R", ".R": "R",
+}
+ENV_RE = re.compile(r"\b([A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*_(?:API_KEY|APIKEY|TOKEN|SECRET|SECRET_KEY|ACCESS_KEY|ACCESS_TOKEN|CLIENT_ID|CLIENT_SECRET|PASSWORD|AUTH_TOKEN))\b")
+ENV_IGNORE = {"YOUR_API_KEY", "API_KEY", "MY_API_KEY", "SOME_TOKEN", "EXAMPLE_API_KEY", "ACCESS_TOKEN", "AUTH_TOKEN", "SECRET_KEY"}
+NET_RE = re.compile(r"\b(requests\.(get|post|put|patch|delete|request|Session)|httpx\.|urllib\.request|urlopen\(|aiohttp|fetch\(|axios|got\(|node-fetch|curl\s|wget\s|http\.client|net/http|reqwest)")
+URL_RE = re.compile(r"https?://([A-Za-z0-9.-]+\.[A-Za-z]{2,})")
+HOST_IGNORE = re.compile(r"(^|\.)(github\.com|githubusercontent\.com|example\.(com|org)|localhost|w3\.org|schema\.org|json-schema\.org|creativecommons\.org|opensource\.org|apache\.org|mozilla\.org|python\.org|npmjs\.com|pypi\.org|stackoverflow\.com|wikipedia\.org|docs\.[a-z.]+)$")
+MCP_TOOL_RE = re.compile(r"\bmcp__([a-z0-9][a-z0-9_-]*?)__")
+MCP_RE = re.compile(r"\bMCP server|\bmcpServers\b|\bmcp__", re.I)
+
+
+def install_facts(skill_dir: Path, body: str):
+    langs = collections.Counter()
+    env = []
+    hosts = collections.Counter()
+    network = False
+    scanned = 0
+    for dp, dns, fns in os.walk(skill_dir):
+        dns[:] = [d for d in dns if d not in SKIP_DIRS and not d.startswith(".")]
+        for fn in fns:
+            ext = os.path.splitext(fn)[1]
+            path = Path(dp) / fn
+            is_code = ext in SCRIPT_LANGS
+            if is_code:
+                langs[SCRIPT_LANGS[ext]] += 1
+            if not (is_code or fn == "SKILL.md" or ext in (".md", ".json", ".yaml", ".yml", ".toml", ".env", ".example")):
+                continue
+            if scanned > 200:
+                continue
+            try:
+                if path.stat().st_size > 300_000:
+                    continue
+                text = path.read_text(errors="ignore")
+            except OSError:
+                continue
+            scanned += 1
+            for m in ENV_RE.finditer(text):
+                v = m.group(1)
+                if v not in ENV_IGNORE and not v.startswith(("YOUR_", "MY_", "EXAMPLE_")) and v not in env:
+                    env.append(v)
+            if is_code:
+                if NET_RE.search(text):
+                    network = True
+                for h in URL_RE.findall(text):
+                    h = h.lower().rstrip(".")
+                    if not HOST_IGNORE.search(h):
+                        hosts[h] += 1
+    mcp_tools = sorted(set(MCP_TOOL_RE.findall(body)))[:6]
+    return {
+        "script_langs": dict(langs.most_common()),
+        "env_vars": env[:8],
+        "network": network,
+        "api_hosts": [h for h, _ in hosts.most_common(4)],
+        "mcp": bool(MCP_RE.search(body)),
+        "mcp_tools": mcp_tools,
+    }
 
 
 FM_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*(?:\n|\Z)", re.S)
@@ -144,6 +209,7 @@ def parse_skill(path: Path, repo_root: Path):
     rec["has_scripts"] = any(f.startswith("scripts/") for f in files)
     rec["has_references"] = any(f.startswith(("references/", "reference/", "docs/")) for f in files)
     rec["has_assets"] = any(f.startswith(("assets/", "templates/")) for f in files)
+    rec.update(install_facts(skill_dir, body))
     lic, lic_file = find_license(skill_dir, repo_root)
     rec["repo_license"] = lic
     rec["license_file"] = lic_file
@@ -170,7 +236,7 @@ def main():
                 if rec is None:
                     continue
                 rec.update({
-                    "repo": f"{real_owner}/{real_name}",
+                    "repo": case_by_repo.get(slug.lower()) or f"{real_owner}/{real_name}",
                     "repo_key": slug,
                     "branch": branch,
                     "commit_date": commit_date,

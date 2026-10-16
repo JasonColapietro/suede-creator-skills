@@ -1,10 +1,12 @@
 """Pick the repositories the directory reads, from the links the curated lists cite.
 
-    python3 -I select_repos.py candidates.json VoltAgent-README.md > repos.txt
+    python3 -I select_repos.py candidates.json VoltAgent-README.md [inclusions.json] > repos.txt
 
 A repository qualifies when two or more curated lists cite it, or when it is an
 official collection the VoltAgent list names (its officialskills.sh links map
-to github.com/<owner>/skills). The lists themselves and asset hosts are skipped.
+to github.com/<owner>/skills), or when an author asked for a listing and it was
+accepted into directory/inclusions.json. The lists themselves and asset hosts
+are skipped.
 """
 import json
 import re
@@ -26,6 +28,10 @@ for m in re.finditer(r"https?://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)"
     repos.append(f"{m.group(1)}/{re.sub(r'.git$', '', m.group(2))}".lower())
 for owner in sorted({m.group(1).lower() for m in re.finditer(r"officialskills\.sh/([A-Za-z0-9_.-]+)/skills/", voltagent)}):
     repos.append(f"{owner}/skills")
+
+if len(sys.argv) > 3:
+    for r in json.load(open(sys.argv[3])).get("repositories", []):
+        repos.append(r.strip().lower())
 
 seen = []
 for r in repos:

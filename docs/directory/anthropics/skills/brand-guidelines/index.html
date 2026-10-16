@@ -6,7 +6,6 @@
     <title>brand-guidelines Agent Skill by anthropics | Suede Directory</title>
     <meta name="description" content="Applies Anthropic's official brand colors and typography to artifacts that should carry Anthropic's look and feel. From anthropics/skills, Apache-2.0.">
     <meta name="keywords" content="brand-guidelines skill by anthropics, brand-guidelines skill, brand-guidelines agent skill, brand-guidelines claude skill, anthropics skills, frontend and design agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="brand-guidelines Agent Skill by anthropics | Suede Directory">
     <meta property="og:description" content="Applies Anthropic's official brand colors and typography to artifacts that should carry Anthropic's look and feel. From anthropics/skills, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="brand-guidelines Agent Skill by anthropics | Suede Directory">
     <meta name="twitter:description" content="Applies Anthropic's official brand colors and typography to artifacts that should carry Anthropic's look and feel. From anthropics/skills, Apache-2.0.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +48,12 @@
             "Frontend and Design",
             "Agent Skills",
             "SKILL.md"
-          ]
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "anthropics",
+            "url": "https://github.com/anthropics"
+          }
         }
       }
     </script>
@@ -55,6 +61,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +87,7 @@
             "name": "brand-guidelines",
             "item": "https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +113,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,10 +140,36 @@
             <tr><th scope="row">Last commit</th><td>October 9, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>67 lines, 285 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>2 files</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>License:</b> <a href="https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/LICENSE.txt" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install brand-guidelines</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/anthropics/skills --skill brand-guidelines</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/anthropics/skills.git &quot;$tmp/skills&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/skills/skills/brand-guidelines&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo anthropics/skills \
+    --path skills/brand-guidelines</code></pre>
+        <p class="muted">anthropics/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -148,6 +177,7 @@
           <p>Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Overview</li>
@@ -168,50 +198,39 @@
           <li><code>SKILL.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install brand-guidelines</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/anthropics/skills --skill brand-guidelines</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/anthropics/skills.git /tmp/skills
-mkdir -p .claude/skills
-cp -R /tmp/skills/skills/brand-guidelines .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo anthropics/skills \
-    --path skills/brand-guidelines</code></pre>
-        <p class="muted">anthropics/skills is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>brand-guidelines passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for brand-guidelines</h2>
-        <p>Maintainers of anthropics/skills can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of anthropics/skills can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/badge.svg)](https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/anthropics/skills/brand-guidelines/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -221,24 +240,24 @@ cp -R /tmp/skills/skills/brand-guidelines .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More frontend and design skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../jeffallan/claude-skills/nextjs-developer/"><b>nextjs-developer</b><span>Guides building Next.js 14+ applications with App Router, server components, and server actions, including…</span></a>
-          <a class="link-row" href="../../../expo/skills/expo-design-system/"><b>expo-design-system</b><span>Builds and maintains a design system in an Expo app, covering design tokens, components with variant, size…</span></a>
-          <a class="link-row" href="../../../mblode/agent-skills/ui-animation/"><b>ui-animation</b><span>Builds, reviews, and measures UI motion, including springs, gestures, scroll effects, curve fitting from…</span></a>
-          <a class="link-row" href="../../../ohad6k/emulo/design/"><b>design</b><span>Guides UI, UX, visual hierarchy, redesign, and design critique work so that it follows the user's Emulo taste.</span></a>
-          <a class="link-row" href="../../../mblode/agent-skills/ui-design/"><b>ui-design</b><span>Designs and builds React, Next, and Tailwind UI, audits visual and interaction defects, and stress-tests…</span></a>
-          <a class="link-row" href="../../../superdesigndev/superdesign-skill/superdesign/"><b>superdesign</b><span>Designs or redesigns frontend UI, presentations, and graphics on the Superdesign canvas using a choice of AI…</span></a>
+          <a class="link-row" href="../../../fal-ai-community/skills/fal-redesign/"><b>fal-redesign</b><span>fal-ai-community/skills</span></a>
+          <a class="link-row" href="../../../avelikiy/great-cto/aesthetic-instrument/"><b>aesthetic-instrument</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../../../angular/skills/angular-new-app/"><b>angular-new-app</b><span>angular/skills</span></a>
+          <a class="link-row" href="../../../agiwhitelist/auteur/auteur/"><b>auteur</b><span>agiwhitelist/auteur</span></a>
+          <a class="link-row" href="../../../angular/skills/angular-developer/"><b>angular-developer</b><span>angular/skills</span></a>
+          <a class="link-row" href="../../../mblode/agent-skills/ui-design/"><b>ui-design</b><span>mblode/agent-skills</span></a>
         </div>
         <p><a href="../../../frontend-design/">All frontend and design skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from anthropics/skills</h2>
         <div class="links">
-          <a class="link-row" href="../algorithmic-art/"><b>algorithmic-art</b><span>Creates original generative art with p5.js using seeded randomness and interactive parameter exploration…</span></a>
-          <a class="link-row" href="../canvas-design/"><b>canvas-design</b><span>Creates original visual art, posters, and other static designs as .png and .pdf files, guided by a design…</span></a>
-          <a class="link-row" href="../discernment-nudge/"><b>discernment-nudge</b><span>Appends two or three short follow-up questions after substantive answers, helping users check key facts…</span></a>
-          <a class="link-row" href="../docx/"><b>docx</b><span>Creates, reads, edits, and manipulates Word documents and templates, including formatting, tables of…</span></a>
-          <a class="link-row" href="../mcp-builder/"><b>mcp-builder</b><span>Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or…</span></a>
-          <a class="link-row" href="../pdf/"><b>pdf</b><span>Handles PDF tasks including extracting text and tables, merging, splitting, watermarking, creating PDFs…</span></a>
+          <a class="link-row" href="../algorithmic-art/"><b>algorithmic-art</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../canvas-design/"><b>canvas-design</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../discernment-nudge/"><b>discernment-nudge</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../docx/"><b>docx</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../mcp-builder/"><b>mcp-builder</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../pdf/"><b>pdf</b><span>anthropics/skills</span></a>
         </div>
         <p><a href="../">All 17 skills in anthropics/skills</a></p>
       </section>

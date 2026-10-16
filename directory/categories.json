@@ -2,113 +2,241 @@
   {
     "slug": "ai-agents-llm",
     "title": "AI Agents and LLM Engineering",
+    "lower": "AI agent and LLM engineering",
     "label": "AI agents",
     "short": "AI agent",
-    "intro": "Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it."
+    "seo_title": "AI Agent and LLM Engineering Skills for Claude and Codex",
+    "meta": "AI agent and LLM engineering skills for Claude Code and Codex: prompt and context engineering, MCP servers, evals, subagents and model training.",
+    "intro": "Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.",
+    "guide": [
+      "Start from the system you are building. Skills for a specific framework or model provider carry that provider's conventions, so they beat general prompting advice when you already know your stack.",
+      "Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the credentials and scripts its files mention.",
+      "For agent workflow skills (planning, subagents, review loops), read the SKILL.md body first. They change how your agent works on every task, so pick one method and stay with it rather than stacking overlapping ones."
+    ]
   },
   {
     "slug": "developer-tools",
     "title": "Developer Tools and Frameworks",
+    "lower": "developer tools and frameworks",
     "label": "Dev tools",
     "short": "developer tools",
-    "intro": "Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter and Rust to GraphQL, Git and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt."
+    "seo_title": "Developer Tool and Framework Skills for Claude and Codex",
+    "meta": "Framework, language, SDK and CLI skills for Claude Code and Codex, many from the teams that build the tools: Flutter, Rust, GraphQL, Git and more.",
+    "intro": "Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter and Rust to GraphQL, Git and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.",
+    "guide": [
+      "Match skills to the stack you actually ship. A framework skill earns its place by encoding the version-specific rules your agent would otherwise guess at, so prefer one written for the version you run.",
+      "Look for the Official tag. Skills published by the company behind a framework or SDK track its current APIs, and the directory marks them on every page.",
+      "Several collections ship one skill per framework task. Installing the whole repository is one command; installing only the skills for your stack keeps the agent's routing list short."
+    ]
   },
   {
     "slug": "marketing-seo",
     "title": "Marketing and SEO",
+    "lower": "marketing and SEO",
     "label": "Marketing",
     "short": "marketing and SEO",
-    "intro": "Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time."
+    "seo_title": "Marketing and SEO Skills for Claude Code and Codex",
+    "meta": "Marketing and SEO skills for Claude Code and Codex: SEO audits, keyword and content briefs, ad creative, launch plans and conversion work.",
+    "intro": "Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time.",
+    "guide": [
+      "Decide whether you need a method or a data source. Some marketing skills are pure procedure (briefs, positioning, copy frameworks); others call a paid data API for rankings or ad libraries and list its key under Before you install.",
+      "For SEO work, pair an audit skill with a content skill from the same collection when you can. Collections share vocabulary, so the brief the audit produces is the input the writing skill expects.",
+      "Read the output format in each SKILL.md. Skills that end in a checklist, a scored audit or a ready-to-paste draft are easy to review; open-ended ones need a clearer prompt from you."
+    ]
   },
   {
     "slug": "product-management",
     "title": "Product Management",
+    "lower": "product management",
     "label": "Product",
     "short": "product management",
-    "intro": "Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask."
+    "seo_title": "Product Management Skills for Claude Code and Codex",
+    "meta": "Product management skills for Claude Code and Codex: PRDs, discovery interviews, roadmaps, OKRs, prioritization and strategy frameworks.",
+    "intro": "Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask.",
+    "guide": [
+      "Product skills are mostly frameworks in Markdown: no scripts, no credentials. That makes them safe to try, and the real test is whether the template matches how your team writes documents.",
+      "Several large PM collections cover the same ground (PRDs, interviews, OKRs). Pick the collection whose structure fits your process and install it whole, so its skills hand work to each other cleanly.",
+      "Check the license on each page. A few product collections use Creative Commons non-commercial terms, and the directory flags those next to the install commands."
+    ]
   },
   {
     "slug": "science-research",
     "title": "Science and Research",
+    "lower": "science and research",
     "label": "Science",
     "short": "science and research",
-    "intro": "Skills for scientific and academic work: bioinformatics, chemistry, materials, literature search and research statistics. They give an agent the domain procedures and library knowledge a lab or research team would otherwise explain in every prompt."
+    "seo_title": "Science and Research Skills for Claude Code and Codex",
+    "meta": "Science and research skills for Claude Code and Codex: bioinformatics, chemistry, materials, literature search, scientific Python and statistics.",
+    "intro": "Skills for scientific and academic work: bioinformatics, chemistry, materials, literature search and research statistics. They give an agent the domain procedures and library knowledge a lab or research team would otherwise explain in every prompt.",
+    "guide": [
+      "Most science skills wrap a specific library or database. Choose by the tool your lab already uses, and check the bundled scripts list on each page, since these skills often run Python against your data.",
+      "Database and literature skills may need an API key for the service they query. The Before you install panel shows the credentials each skill's files name.",
+      "Treat outputs as a starting analysis. The skills encode procedure; your data, controls and domain judgment decide whether a result holds."
+    ]
   },
   {
     "slug": "devops-cloud",
     "title": "DevOps and Cloud",
+    "lower": "DevOps and cloud",
     "label": "DevOps",
     "short": "DevOps and cloud",
-    "intro": "Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance."
+    "seo_title": "DevOps and Cloud Skills for Claude Code and Codex",
+    "meta": "DevOps and cloud skills for Claude Code and Codex, many from the platform vendors: deployment, infrastructure as code, CI/CD and monitoring.",
+    "intro": "Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.",
+    "guide": [
+      "Prefer the platform's own skills. Cloud and infrastructure vendors publish skills that follow their current CLI and API, and the directory marks them Official.",
+      "These skills act on real infrastructure. Check the tool permissions and credentials listed under Before you install, and run them first against a staging account.",
+      "For infrastructure as code, keep the skill and your module versions in step; a skill written for an older provider version can suggest arguments that no longer exist."
+    ]
   },
   {
     "slug": "media-creative",
     "title": "Video, Image, Audio and Creative",
+    "lower": "video, image, audio and creative",
     "label": "Media",
     "short": "video, image and audio",
-    "intro": "Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs."
+    "seo_title": "Video, Image and Audio Skills for Claude Code and Codex",
+    "meta": "Video, image and audio skills for Claude Code and Codex: video production, image generation and editing, music, voice, diagrams and generative art.",
+    "intro": "Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.",
+    "guide": [
+      "Separate the skills that generate media through a hosted model from the ones that edit files locally. Hosted ones list an API key under Before you install, and usage is billed by that provider.",
+      "Local editing skills usually call tools such as FFmpeg or a rendering library from bundled scripts. Check the scripts list and make sure those tools are installed.",
+      "For brand work, pick skills that accept your own assets and specs as input, so results stay consistent across a campaign."
+    ]
   },
   {
     "slug": "productivity-knowledge",
     "title": "Productivity and Knowledge Work",
+    "lower": "productivity and knowledge work",
     "label": "Productivity",
     "short": "productivity",
-    "intro": "Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them."
+    "seo_title": "Productivity and Knowledge Work Skills for Claude and Codex",
+    "meta": "Productivity skills for Claude Code and Codex: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.",
+    "intro": "Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.",
+    "guide": [
+      "Workspace skills act on your accounts. Check which credentials and tool permissions a skill needs before you install it, and prefer ones that read before they write.",
+      "Thinking and planning skills are plain Markdown with no scripts, so they are the quickest to try and the easiest to adapt to your own process.",
+      "If a skill connects through an MCP server, the Before you install panel names it; install and authorize that server first."
+    ]
   },
   {
     "slug": "business-finance",
     "title": "Business, Sales and Finance",
+    "lower": "business, sales and finance",
     "label": "Business",
     "short": "business and finance",
-    "intro": "Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable."
+    "seo_title": "Business, Sales and Finance Skills for Claude and Codex",
+    "meta": "Business, sales and finance skills for Claude Code and Codex: outreach, prospecting, financial analysis, contracts, e-commerce and payments.",
+    "intro": "Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.",
+    "guide": [
+      "Payment and commerce skills from the platform vendors follow the vendor's current API; check the Official tag and use test-mode keys first.",
+      "Finance and legal skills structure analysis and drafts. Keep a qualified person's review in the loop for anything that commits money or signs an agreement.",
+      "Sales skills vary between pure playbooks and ones that call a paid data provider. The credentials list on each page tells you which is which."
+    ]
   },
   {
     "slug": "testing-qa",
     "title": "Testing and QA",
+    "lower": "testing and QA",
     "label": "Testing",
     "short": "testing and QA",
-    "intro": "Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it."
+    "seo_title": "Testing and QA Skills for Claude Code and Codex",
+    "meta": "Testing and QA skills for Claude Code and Codex: test writing, Playwright and browser automation, visual regression and systematic debugging.",
+    "intro": "Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it.",
+    "guide": [
+      "Pick by test runner. A skill written for your framework (Playwright, Jest, pytest and so on) produces tests that run in your CI without translation.",
+      "Debugging skills that prescribe a method, such as reproducing first and tracing to the root cause, pay off across every task, not just one.",
+      "Browser and device-cloud skills may need a vendor account; the Before you install panel lists the keys their files name."
+    ]
   },
   {
     "slug": "data-databases",
     "title": "Data, Analytics and Databases",
+    "lower": "data, analytics and databases",
     "label": "Data",
     "short": "data and database",
-    "intro": "Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions."
+    "seo_title": "Data, Analytics and Database Skills for Claude and Codex",
+    "meta": "Data and database skills for Claude Code and Codex, many from the database vendors: SQL, schema design, vector stores, analytics and pipelines.",
+    "intro": "Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions.",
+    "guide": [
+      "Start with the vendor's own skill for the database you run. It knows the dialect, the limits and the migration tooling that generic SQL advice gets wrong.",
+      "Skills that connect to a live database list their credentials under Before you install. Give them a read-only role until you trust their output.",
+      "For analytics, check whether a skill produces a query, a chart or a report, and pick the one whose output drops into your existing workflow."
+    ]
   },
   {
     "slug": "security",
     "title": "Security",
+    "lower": "security",
     "label": "Security",
     "short": "security",
-    "intro": "Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure configuration. They give an agent a methodical checklist for the parts of a codebase or system where mistakes cost the most."
+    "seo_title": "Security Skills for Claude Code and Codex",
+    "meta": "Security skills for Claude Code and Codex: code security review, vulnerability analysis, threat detection, auth hardening and secure configuration.",
+    "intro": "Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure configuration. They give an agent a methodical checklist for the parts of a codebase or system where mistakes cost the most.",
+    "guide": [
+      "Use review skills as a second pass, not the only one. They are strongest at covering a checklist consistently across a large codebase.",
+      "Some security skills run scanners or analysis scripts. Read the scripts list and run them in a sandbox or CI job rather than on a production host.",
+      "Prefer skills from security teams and vendors for the platform you are hardening; the directory marks published-by-vendor collections Official."
+    ]
   },
   {
     "slug": "frontend-design",
     "title": "Frontend and Design",
+    "lower": "frontend and design",
     "label": "Design",
     "short": "frontend and design",
-    "intro": "Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates."
+    "seo_title": "Frontend and Design Skills for Claude Code and Codex",
+    "meta": "Frontend and design skills for Claude Code and Codex: UI systems, CSS, components, motion, accessibility and design tokens.",
+    "intro": "Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates.",
+    "guide": [
+      "Choose one design skill as the source of visual rules. Several design skills set strong opinions on type, color and spacing, and stacking two produces mixed results.",
+      "Framework skills (React, Angular, Flutter and others) belong with your stack; design skills sit above them and work across frameworks.",
+      "Ask for screenshots or renders as output. Skills that verify their own UI in a browser catch layout problems before you review."
+    ]
   },
   {
     "slug": "writing-content",
     "title": "Writing and Editing",
+    "lower": "writing and editing",
     "label": "Writing",
     "short": "writing and editing",
-    "intro": "Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against."
+    "seo_title": "Writing and Editing Skills for Claude Code and Codex",
+    "meta": "Writing and editing skills for Claude Code and Codex: line editing, technical documentation, fiction craft and removing machine-sounding prose.",
+    "intro": "Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against.",
+    "guide": [
+      "Editing skills work best on a draft you supply. Give them your text and your audience, and ask for changes with reasons so you can accept them one by one.",
+      "Documentation skills follow a house format. Pick one whose structure matches your docs site, or adapt its template once and keep it.",
+      "Writing skills are plain Markdown, so you can read the whole standard in the SKILL.md before you install it."
+    ]
   },
   {
     "slug": "code-review-quality",
     "title": "Code Review and Code Quality",
+    "lower": "code review and code quality",
     "label": "Code quality",
     "short": "code review",
-    "intro": "Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change."
+    "seo_title": "Code Review and Code Quality Skills for Claude and Codex",
+    "meta": "Code review and code quality skills for Claude Code and Codex: pull request review, refactoring, linting and code standards with named checks.",
+    "intro": "Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change.",
+    "guide": [
+      "Pick a review skill whose checks match what your team blocks merges on. A review that reports what you would fix is more useful than a long generic list.",
+      "Language-specific review skills catch idioms a general reviewer misses; pair one with a general review skill rather than replacing it.",
+      "Refactoring skills change many files. Run them on a branch with tests, and ask for the change in small, reviewable steps."
+    ]
   },
   {
     "slug": "documents-office",
     "title": "Documents and Office Files",
+    "lower": "documents and office files",
     "label": "Documents",
     "short": "document and office file",
-    "intro": "Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to read, create and edit office documents that open cleanly in the apps people use."
+    "seo_title": "Document and Office File Skills for Claude Code and Codex",
+    "meta": "Document skills for Claude Code and Codex: read, create and edit Word, PDF, PowerPoint and Excel files, fill forms and convert formats.",
+    "intro": "Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to read, create and edit office documents that open cleanly in the apps people use.",
+    "guide": [
+      "Check the license first. Some widely used document skills are published under proprietary terms that restrict copying, and their pages say so in place of install commands.",
+      "Document skills rely on bundled scripts and Python or Node libraries; the scripts list on each page shows what will run.",
+      "Ask the agent to open and check the file it produced. Skills that verify output catch formatting problems a text-only answer hides."
+    ]
   }
 ]

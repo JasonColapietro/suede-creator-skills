@@ -13,7 +13,17 @@ import sys
 # The snapshot date, so a rebuild of an old snapshot grades "maintained" the same way.
 NOW = dt.datetime.fromisoformat(os.environ.get("SUEDE_DIRECTORY_DATE", dt.date.today().isoformat())).replace(tzinfo=dt.timezone.utc)
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-WHEN_RE = re.compile(r"\b(use\b[^.]{0,30}?\b(when|whenever)\b|use (it |this )?(when|for|to|whenever|if)|when (the )?(user|you|asked|working|creating|building|writing|debugging|reviewing|a user)|triggers? (on|when)|invoke when|use whenever|activate when|helps? (you|users|with)|for (creating|building|writing|generating|analy[sz]ing|reviewing|managing|working))", re.I)
+WHEN_RE = re.compile(
+    r"\b("
+    r"use\b[^.]{0,30}?\b(when|whenever)\b"  # "Use when", "Use only when", "Use this skill when"
+    r"|use (it |this |this skill )?(when|for|to|whenever|if)\b"  # "Use for ...", "Use this skill to ..."
+    r"|should be used (when|whenever|for|if|to)\b"  # "This skill should be used when ..."
+    r"|when (the )?(user|you|asked|working|creating|building|writing|debugging|reviewing|a user)"
+    r"|triggers? (on|when)|invoke when|activate when|helps? (you|users|with)"
+    r"|for (creating|building|writing|generating|analy[sz]ing|reviewing|managing|working)"
+    r")",
+    re.I,
+)
 
 CHECKS = [
     ("frontmatter", "Frontmatter parses and declares a name and a description"),

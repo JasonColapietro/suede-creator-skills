@@ -6,7 +6,6 @@
     <title>huggingface/skills Agent Skills (24) | Suede Directory</title>
     <meta name="description" content="24 agent skills from huggingface/skills, including hf-cloud-python-env-setup, hf-cloud-sagemaker-iam-preflight, hf-cloud-sagemaker-production-defaults…">
     <meta name="keywords" content="huggingface/skills skills, skills skills, huggingface agent skills, skills claude skills, AI agent agent skills, agent skills directory">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/huggingface/skills/">
     <link rel="icon" href="../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="huggingface/skills Agent Skills (24) | Suede Directory">
     <meta property="og:description" content="24 agent skills from huggingface/skills, including hf-cloud-python-env-setup, hf-cloud-sagemaker-iam-preflight, hf-cloud-sagemaker-production-defaults…">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/huggingface/skills/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="huggingface/skills Agent Skills (24) | Suede Directory">
     <meta name="twitter:description" content="24 agent skills from huggingface/skills, including hf-cloud-python-env-setup, hf-cloud-sagemaker-iam-preflight, hf-cloud-sagemaker-production-defaults…">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -38,7 +39,12 @@
         "about": {
           "@type": "SoftwareSourceCode",
           "name": "huggingface/skills",
-          "codeRepository": "https://github.com/huggingface/skills"
+          "codeRepository": "https://github.com/huggingface/skills",
+          "author": {
+            "@type": "Organization",
+            "name": "huggingface",
+            "url": "https://github.com/huggingface"
+          }
         },
         "mainEntity": {
           "@type": "ItemList",
@@ -196,6 +202,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/huggingface/skills/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -215,8 +222,7 @@
             "name": "huggingface/skills",
             "item": "https://skills.suedeai.ai/directory/huggingface/skills/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/huggingface/skills/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -242,14 +248,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../">Home</a>
-          <a href="../../../skills/">Skills</a>
           <a href="../../">Directory</a>
-          <a href="../../../guide.html">Guide</a>
-          <a href="../../../book/">Book</a>
+          <a href="../../methodology/">How listing works</a>
+          <a href="../../../skills/">Suede skills</a>
           <a href="../../../blog/">Blog</a>
-          <a href="../../../copy.html">Copy Bank</a>
-          <a href="../../../cracked.html">Cracked Devs</a>
-          <a href="../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -258,7 +261,7 @@
       <div class="eyebrow">Skill collection &middot; huggingface</div>
       <h1>skills <span class="h1-sub">agent skills by huggingface</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">huggingface/skills</span></nav>
-      <p class="lead">24 skills from huggingface/skills are listed in the directory, across 5 categories. 12 skills have a full page with install commands and check results.</p>
+      <p class="lead">24 skills from huggingface/skills are listed in the directory, across 5 categories. 12 skills have a full page with install steps and a pre-install summary.</p>
       <p><a class="button" href="https://github.com/huggingface/skills" target="_blank" rel="noopener">View huggingface/skills on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -271,57 +274,59 @@
             <tr><th scope="row">Categories</th><td><a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a>, <a href="../../devops-cloud/">DevOps and Cloud</a>, <a href="../../data-databases/">Data, Analytics and Databases</a>, <a href="../../developer-tools/">Developer Tools and Frameworks</a>, <a href="../../science-research/">Science and Research</a></td></tr>
             <tr><th scope="row">License</th><td>Apache-2.0</td></tr>
             <tr><th scope="row">Last commit</th><td>October 8, 2026</td></tr>
-            <tr><th scope="row">Install all</th><td><code>npx skills add https://github.com/huggingface/skills</code></td></tr>
+            <tr><th scope="row">Install every skill</th><td><code>npx skills add https://github.com/huggingface/skills</code></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
+        </div>
+      </section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing in your README</h2>
+        <p>Maintainers of huggingface/skills can add this badge to the repository README. It links to this page, where visitors see every listed skill and how to install it.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/huggingface/skills/badge.svg)](https://skills.suedeai.ai/directory/huggingface/skills/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/huggingface/skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/huggingface/skills/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in huggingface/skills</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on pageless rows come from each SKILL.md.</p>
+        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
+
         <div class="table-wrap">
-          <table class="skill-table">
-            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th><th scope="col">Grade</th></tr></thead>
+          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
             <tbody>
-            <tr id="hf-cloud-python-env-setup"><td class="name"><a href="hf-cloud-python-env-setup/">hf-cloud-python-env-setup</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Sets up an isolated Python environment with the right Python version and current boto3 for SageMaker and other AWS automation work.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cloud-sagemaker-iam-preflight"><td class="name"><a href="hf-cloud-sagemaker-iam-preflight/">hf-cloud-sagemaker-iam-preflight</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Ensures a usable SageMaker execution role exists before deploying or training, checking for existing roles first rather than blindly creating IAM roles.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cloud-sagemaker-production-defaults"><td class="name"><a href="hf-cloud-sagemaker-production-defaults/">hf-cloud-sagemaker-production-defaults</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Creates SageMaker endpoints (real-time, scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by default, using provided deploy scripts.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cloud-serving-image-selection"><td class="name"><a href="hf-cloud-serving-image-selection/">hf-cloud-serving-image-selection</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Picks the right serving container for a SageMaker model deployment and finds its current image URI, preferring HuggingFace Deep Learning Containers.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-community-evals"><td class="name"><a href="huggingface-community-evals/">huggingface-community-evals</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including backend selection and choosing between vLLM, Transformers, and accelerate.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-local-models"><td class="name"><a href="huggingface-local-models/">huggingface-local-models</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Selects models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm, covering quant selection, conversion, and OpenAI-compatible serving.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-lora-space-builder"><td class="name"><a href="huggingface-lora-space-builder/">huggingface-lora-space-builder</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Builds and publishes a Gradio demo on Hugging Face Spaces for a user-provided LoRA, including the base pipeline and a task-specific UI.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-spaces"><td class="name"><a href="huggingface-spaces/">huggingface-spaces</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Builds, deploys, and maintains applications on Hugging Face Spaces, including Gradio, Docker, and Static SDKs, ZeroGPU, debugging build failures, and inference providers.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-tool-builder"><td class="name"><a href="huggingface-tool-builder/">huggingface-tool-builder</a></td><td><a href="../../developer-tools/">Dev tools</a></td><td>Builds reusable scripts that fetch, enrich, or process data from the Hugging Face API, especially when chaining API calls or automating repeated tasks.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-trackio"><td class="name"><a href="huggingface-trackio/">huggingface-trackio</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Tracks and visualizes ML training experiments with Trackio, including metric logging, training alerts with webhooks, real-time dashboards, and metric retrieval through the CLI.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-zerogpu"><td class="name"><a href="huggingface-zerogpu/">huggingface-zerogpu</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Guides writing and reviewing Gradio code for Hugging Face ZeroGPU Spaces, covering @spaces.GPU usage, requirements configuration, and ZeroGPU-specific constraints like pickle isolation.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="train-sentence-transformers"><td class="name"><a href="train-sentence-transformers/">train-sentence-transformers</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Trains and fine-tunes sentence-transformers models, including bi-encoders, cross-encoders, sparse encoders, and multi-vector encoders, with guidance on loss selection, hard-negative mining, evaluators, and Hub publishing.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cli"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cli" target="_blank" rel="noopener">hf-cli</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cloud-aws-context-discovery"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cloud-aws-context-discovery" target="_blank" rel="noopener">hf-cloud-aws-context-discovery</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Discover the user's local AWS context (active profile, region, account ID, caller identity) at the start of any AWS task. Use this skill before any…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-cloud-sagemaker-deployment-planner"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cloud-sagemaker-deployment-planner" target="_blank" rel="noopener">hf-cloud-sagemaker-deployment-planner</a></td><td><a href="../../devops-cloud/">DevOps</a></td><td>Plan and coordinate the deployment of a model to Amazon SageMaker AI. Use this skill whenever the user wants to deploy, host, serve, or expose a…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="hf-mcp"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/hf-mcp/skills/hf-mcp" target="_blank" rel="noopener">hf-mcp</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use…</td><td class="g"><span class="grade grade-b" title="Suede Skill Check grade B">B</span></td></tr>
-            <tr id="hf-mem"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-mem" target="_blank" rel="noopener">hf-mem</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub</td><td class="g"><span class="grade grade-b" title="Suede Skill Check grade B">B</span></td></tr>
-            <tr id="huggingface-best"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-best" target="_blank" rel="noopener">huggingface-best</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Use when the user asks about finding the best, top, or recommended model for a task, wants to know what AI model to use, or wants to compare models…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-datasets"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-datasets" target="_blank" rel="noopener">huggingface-datasets</a></td><td><a href="../../data-databases/">Data</a></td><td>Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download…</td><td class="g"><span class="grade grade-b" title="Suede Skill Check grade B">B</span></td></tr>
-            <tr id="huggingface-gradio"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-gradio" target="_blank" rel="noopener">huggingface-gradio</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-llm-trainer"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-llm-trainer" target="_blank" rel="noopener">huggingface-llm-trainer</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure…</td><td class="g"><span class="grade grade-b" title="Suede Skill Check grade B">B</span></td></tr>
-            <tr id="huggingface-papers"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-papers" target="_blank" rel="noopener">huggingface-papers</a></td><td><a href="../../science-research/">Science</a></td><td>Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
-            <tr id="huggingface-vision-trainer"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-vision-trainer" target="_blank" rel="noopener">huggingface-vision-trainer</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3…</td><td class="g"><span class="grade grade-b" title="Suede Skill Check grade B">B</span></td></tr>
-            <tr id="trl-training"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/trl-training" target="_blank" rel="noopener">trl-training</a></td><td><a href="../../ai-agents-llm/">AI agents</a></td><td>Post-train LLMs with TRL (Transformers Reinforcement Learning) — SFT, DPO, GRPO, KTO, and reward-model training. Use when writing or debugging…</td><td class="g"><span class="grade grade-a" title="Suede Skill Check grade A">A</span></td></tr>
+            <tr id="hf-cloud-python-env-setup"><td class="name"><a href="hf-cloud-python-env-setup/">hf-cloud-python-env-setup</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Sets up an isolated Python environment with the right Python version and current boto3 for SageMaker and other AWS automation work.</td></tr>
+            <tr id="hf-cloud-sagemaker-iam-preflight"><td class="name"><a href="hf-cloud-sagemaker-iam-preflight/">hf-cloud-sagemaker-iam-preflight</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Ensures a usable SageMaker execution role exists before deploying or training, checking for existing roles first rather than blindly creating IAM roles.</td></tr>
+            <tr id="hf-cloud-sagemaker-production-defaults"><td class="name"><a href="hf-cloud-sagemaker-production-defaults/">hf-cloud-sagemaker-production-defaults</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Creates SageMaker endpoints (real-time, scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by default, using provided deploy scripts.</td></tr>
+            <tr id="hf-cloud-serving-image-selection"><td class="name"><a href="hf-cloud-serving-image-selection/">hf-cloud-serving-image-selection</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Picks the right serving container for a SageMaker model deployment and finds its current image URI, preferring HuggingFace Deep Learning Containers.</td></tr>
+            <tr id="huggingface-community-evals"><td class="name"><a href="huggingface-community-evals/">huggingface-community-evals</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including backend selection and choosing between vLLM, Transformers, and accelerate.</td></tr>
+            <tr id="huggingface-local-models"><td class="name"><a href="huggingface-local-models/">huggingface-local-models</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Selects models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm, covering quant selection, conversion, and OpenAI-compatible serving.</td></tr>
+            <tr id="huggingface-lora-space-builder"><td class="name"><a href="huggingface-lora-space-builder/">huggingface-lora-space-builder</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Builds and publishes a Gradio demo on Hugging Face Spaces for a user-provided LoRA, including the base pipeline and a task-specific UI.</td></tr>
+            <tr id="huggingface-spaces"><td class="name"><a href="huggingface-spaces/">huggingface-spaces</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Builds, deploys, and maintains applications on Hugging Face Spaces, including Gradio, Docker, and Static SDKs, ZeroGPU, debugging build failures, and inference providers.</td></tr>
+            <tr id="huggingface-tool-builder"><td class="name"><a href="huggingface-tool-builder/">huggingface-tool-builder</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Builds reusable scripts that fetch, enrich, or process data from the Hugging Face API, especially when chaining API calls or automating repeated tasks.</td></tr>
+            <tr id="huggingface-trackio"><td class="name"><a href="huggingface-trackio/">huggingface-trackio</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Tracks and visualizes ML training experiments with Trackio, including metric logging, training alerts with webhooks, real-time dashboards, and metric retrieval through the CLI.</td></tr>
+            <tr id="huggingface-zerogpu"><td class="name"><a href="huggingface-zerogpu/">huggingface-zerogpu</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Guides writing and reviewing Gradio code for Hugging Face ZeroGPU Spaces, covering @spaces.GPU usage, requirements configuration, and ZeroGPU-specific constraints like pickle isolation.</td></tr>
+            <tr id="train-sentence-transformers"><td class="name"><a href="train-sentence-transformers/">train-sentence-transformers</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Trains and fine-tunes sentence-transformers models, including bi-encoders, cross-encoders, sparse encoders, and multi-vector encoders, with guidance on loss selection, hard-negative mining, evaluators, and Hub publishing.</td></tr>
+            <tr id="hf-cli"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cli" target="_blank" rel="noopener">hf-cli</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging…</td></tr>
+            <tr id="hf-cloud-aws-context-discovery"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cloud-aws-context-discovery" target="_blank" rel="noopener">hf-cloud-aws-context-discovery</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Discover the user's local AWS context (active profile, region, account ID, caller identity) at the start of any AWS task. Use this skill before any…</td></tr>
+            <tr id="hf-cloud-sagemaker-deployment-planner"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-cloud-sagemaker-deployment-planner" target="_blank" rel="noopener">hf-cloud-sagemaker-deployment-planner</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../devops-cloud/">DevOps</a></td><td class="desc">Plan and coordinate the deployment of a model to Amazon SageMaker AI. Use this skill whenever the user wants to deploy, host, serve, or expose a…</td></tr>
+            <tr id="hf-mcp"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/hf-mcp/skills/hf-mcp" target="_blank" rel="noopener">hf-mcp</a> <span class="grade grade-b" title="Suede Skill Check grade B">B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Use Hugging Face Hub via MCP server tools. Search models, datasets, Spaces, papers. Get repo details, fetch documentation, run compute jobs, and use…</td></tr>
+            <tr id="hf-mem"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/hf-mem" target="_blank" rel="noopener">hf-mem</a> <span class="grade grade-b" title="Suede Skill Check grade B">B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Hugging Face CLI to estimate the required memory to load Safetensors or GGUF model weights for inference from the Hugging Face Hub</td></tr>
+            <tr id="huggingface-best"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-best" target="_blank" rel="noopener">huggingface-best</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Use when the user asks about finding the best, top, or recommended model for a task, wants to know what AI model to use, or wants to compare models…</td></tr>
+            <tr id="huggingface-datasets"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-datasets" target="_blank" rel="noopener">huggingface-datasets</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../data-databases/">Data</a></td><td class="desc">Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download…</td></tr>
+            <tr id="huggingface-gradio"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-gradio" target="_blank" rel="noopener">huggingface-gradio</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Build Gradio web UIs and demos in Python. Use when creating or editing Gradio apps, components, event listeners, layouts, or chatbots.</td></tr>
+            <tr id="huggingface-llm-trainer"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-llm-trainer" target="_blank" rel="noopener">huggingface-llm-trainer</a> <span class="grade grade-b" title="Suede Skill Check grade B">B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure…</td></tr>
+            <tr id="huggingface-papers"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-papers" target="_blank" rel="noopener">huggingface-papers</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../science-research/">Science</a></td><td class="desc">Look up and read Hugging Face paper pages in markdown, and use the papers API for structured metadata such as authors, linked…</td></tr>
+            <tr id="huggingface-vision-trainer"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/huggingface-vision-trainer" target="_blank" rel="noopener">huggingface-vision-trainer</a> <span class="grade grade-b" title="Suede Skill Check grade B">B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Trains and fine-tunes vision models for object detection (D-FINE, RT-DETR v2, DETR, YOLOS), image classification (timm models — MobileNetV3…</td></tr>
+            <tr id="trl-training"><td class="name"><a href="https://github.com/huggingface/skills/tree/main/skills/trl-training" target="_blank" rel="noopener">trl-training</a> <span class="grade grade-a" title="Suede Skill Check grade A">A</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Post-train LLMs with TRL (Transformers Reinforcement Learning) — SFT, DPO, GRPO, KTO, and reward-model training. Use when writing or debugging…</td></tr>
             </tbody>
           </table>
-        </div>
-      </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing in your README</h2>
-        <p>Maintainers of huggingface/skills can add this badge to the repository README. It links to this page, where visitors see every listed skill and how to install it.</p>
-        <p class="badge-preview"><img src="../../badge.svg" alt="Listed on Suede Skills Directory" width="193" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Listed on Suede Skills Directory](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/huggingface/skills/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/huggingface/skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Listed on Suede Skills Directory&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -332,11 +337,11 @@
         <h2 id="related-title">More AI agent collections</h2>
         <div class="links">
           <a class="link-row" href="../../obra/superpowers/"><b>obra/superpowers</b><span>15 listed skills</span></a>
-          <a class="link-row" href="../../continuum-ai-corp/orcareplay/"><b>continuum-ai-corp/orcareplay</b><span>1 listed skill</span></a>
-          <a class="link-row" href="../../neolabhq/context-engineering-kit/"><b>neolabhq/context-engineering-kit</b><span>54 listed skills</span></a>
+          <a class="link-row" href="../../continuum-ai-corp/orcareplay/orca-replay/"><b>Continuum-AI-Corp/OrcaReplay</b><span>1 listed skill</span></a>
+          <a class="link-row" href="../../neolabhq/context-engineering-kit/"><b>NeoLabHQ/context-engineering-kit</b><span>53 listed skills</span></a>
           <a class="link-row" href="../../mblode/agent-skills/"><b>mblode/agent-skills</b><span>28 listed skills</span></a>
-          <a class="link-row" href="../../muratcankoylan/agent-skills-for-context-engineering/"><b>muratcankoylan/agent-skills-for-context-engineering</b><span>19 listed skills</span></a>
-          <a class="link-row" href="../../necmttn/ax/"><b>necmttn/ax</b><span>11 listed skills</span></a>
+          <a class="link-row" href="../../muratcankoylan/agent-skills-for-context-engineering/"><b>muratcankoylan/Agent-Skills-for-Context-Engineering</b><span>19 listed skills</span></a>
+          <a class="link-row" href="../../necmttn/ax/"><b>Necmttn/ax</b><span>11 listed skills</span></a>
         </div>
       </section>
     </main>

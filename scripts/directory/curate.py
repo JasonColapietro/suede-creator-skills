@@ -49,11 +49,48 @@ CATEGORIES = [
 ]
 CAT_RES = [(slug, [re.compile(k, re.I) for k in kws]) for slug, kws in CATEGORIES]
 
+# Phrases the site's public-copy guards reject anywhere under docs/, plus
+# content no directory of this kind should carry.
 REJECT_TERMS = re.compile(
-    r"telegram|join discord|follow on x|airdrop|passport stamp|suede|jailbreak|bypass|nsfw|porn|onlyfans|keylogger|\bcrack(ed|ing)?\b|"
-    r"honest limits|not the first choice|not for everyone|may not be the best fit|scrap(e|er|ing)",
+    r"telegram|join discord|follow on x|airdrop|passport stamp|suede|jailbreak|nsfw|porn|onlyfans|keylogger|\bcrack(ed|ing)?\b|"
+    r"honest limits|not the first choice|not for everyone|may not be the best fit",
     re.I,
 )
+
+# The published listing policy (/directory/methodology/). Each rule tests a
+# skill's main job, read from its name and the start of its description, so a
+# skill that only mentions scraping or email among other uses stays listed.
+# Rules 2 and 3 exempt vendors' own skills for their own service.
+POLICY = {
+    "automates posting, messaging or account activity on a social platform": (False, re.compile(
+        r"auto-?(comment|post|posting|dm|like|follow|engage)\w*"
+        r"|\b(dms?|direct messages?)\b[^.]{0,30}\bautomat|automat\w*[^.]{0,40}\b(dms?|direct messages?|connection (requests|invites))\b"
+        r"|keyword-based reply posting|\bwarm-?up\b[^.]{0,40}\baccounts?\b|\baccounts?\b[^.]{0,40}\bwarm-?up"
+        r"|multiple [\w-]+ accounts|multi-account|round-robin[^.]{0,40}\baccounts|plant(s|ing)? brand content|astroturf",
+        re.I,
+    )),
+    "works around a site's blocks, CAPTCHAs or official API": (True, re.compile(
+        r"\b(403|blocked|blocks)\b[^.]{0,40}\b(unlock|work(ing)? around|get around|bypass)"
+        r"|\b(unlock|work(ing)? around|get around)\b[^.]{0,40}\b(403|block)"
+        r"|\bbypass\w*[^.]{0,30}\b(blocks?|blocking|captchas?|rate limits?|bot detection|ip bans?)"
+        r"|unofficial[^.]{0,25}\b(client|api|wrapper)|captcha[^.]{0,20}(solv|bypass)|(solv|bypass)\w*[^.]{0,20}captcha"
+        r"|avoid (detection|bans?)|undetect|evade (detection|bans?|limits)|supplement restricted web access"
+        r"|returns? (a )?(403|blocked)\b|-hop unlock",
+        re.I,
+    )),
+    "has scraping a third-party site as its main job": (True, re.compile(
+        r"^\W*(scrap|scraping)|\bapify\b|scraper (service|api)|\bscraper\b", re.I
+    )),
+    "looks up an individual's email, phone number or personal profiles": (False, re.compile(
+        r"email[- ]finder|contact[- ]finder|find[- ]emails?|person[- ]lookup|people[- ]search|profile[- ]finder|social[- ]media[- ]finder|contact[- ]extract"
+        r"|^\W*(find (emails?|someone'?s email|phone numbers?)|look up information about a person|enrich any person)",
+        re.I,
+    )),
+}
+# Repositories whose product is the excluded behavior: listing them skill by
+# skill would only list what rule 3 excludes.
+POLICY_REPOS = {"browser-act/skills": "a browser-automation toolkit for extracting data from third-party sites"}
+
 TEMPLATE_RE = re.compile(r"^(template|example|example-skill|sample|test|my-skill|skill-template|hello-world|your-skill-name)$", re.I)
 TEMPLATE_PATH_RE = re.compile(r"(^|/)(templates?|examples?|fixtures?|tests?|__tests__|testdata|archive|deprecated|drafts?|internal|_[a-z-]+|\.github)(/|$)", re.I)
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
@@ -66,7 +103,7 @@ OFFICIAL_OWNERS = {
     "nvidia", "figma", "makenotion", "apollographql", "auth0", "better-auth", "browserbase", "brave", "coinbase",
     "datadog-labs", "remotion-dev", "replicate", "sanity-io", "serpapi", "tinybirdco", "typefully", "wordpress",
     "greensock", "fal-ai-community", "minimax-ai", "callstackincubator", "firecrawl", "composiohq", "binance",
-    "crawlbase", "voltagent", "addyosmani", "garrytan", "qdrant", "transloadit", "mailtrap", "trycourier", "video-db",
+    "crawlbase", "voltagent", "qdrant", "transloadit", "mailtrap", "trycourier", "video-db",
 }
 
 
@@ -112,6 +149,22 @@ def normalize_license(raw, repo_license, license_file):
     return t
 
 
+def policy_rule(r):
+    """The first listing-policy rule a skill's main job trips, or None."""
+    name = r["name"] or ""
+    desc = r["description"] or ""
+    official = r["repo"].split("/")[0].lower() in OFFICIAL_OWNERS
+    for i, (rule, (vendor_exempt, pattern)) in enumerate(POLICY.items()):
+        if vendor_exempt and official:
+            continue
+        # Rules 1 and 2 describe behavior wherever the description states it;
+        # rules 3 and 4 must be the main job, so they read the name and opening.
+        text = desc if i < 2 else desc[:160]
+        if pattern.search(name) or pattern.search(text):
+            return rule
+    return None
+
+
 def mostly_english(text):
     letters = [c for c in text or "" if c.isalpha()]
     return bool(letters) and sum(1 for c in letters if ord(c) < 128) / len(letters) >= 0.9
@@ -121,6 +174,15 @@ def classify(name, desc):
     hay = f"{name.replace('-', ' ')} {desc}"
     best = max((sum(len(p.findall(hay)) for p in pats), -i, slug) for i, (slug, pats) in enumerate(CAT_RES))
     return best[2] if best[0] > 0 else "developer-tools"
+
+
+def shingles(text, n=3):
+    words = re.findall(r"[a-z0-9]+", (text or "").lower())
+    return {" ".join(words[i : i + n]) for i in range(max(0, len(words) - n + 1))}
+
+
+def jaccard(a, b):
+    return len(a & b) / len(a | b) if a and b else 0.0
 
 
 def slugify(s):
@@ -166,6 +228,7 @@ def main():
     excluded_skills = {s.lower() for s in excl.get("skills", [])}
     reasons = collections.Counter()
     eligible = []
+    policy_hits = []
     for r in raw:
         r["checks"] = run_checks(r)
         r["grade"] = grade(r["checks"])
@@ -182,6 +245,11 @@ def main():
             reasons["template, example or draft"] += 1
         elif REJECT_TERMS.search(f"{name} {desc} {r['repo']}") or EMAIL_RE.search(desc) or PHONE_RE.search(desc):
             reasons["content rule"] += 1
+        elif r["repo"].lower() in POLICY_REPOS:
+            reasons["listing policy (repository)"] += 1
+        elif policy_rule(r):
+            reasons["listing policy"] += 1
+            policy_hits.append((r["repo"], name, policy_rule(r)))
         else:
             eligible.append(r)
 
@@ -197,16 +265,30 @@ def main():
 
     # Exact copies across repositories: the most-cited repository keeps the listing.
     single.sort(key=lambda r: (-len(r["lists"]), r["repo"].split("/")[0].lower() not in OFFICIAL_OWNERS, r["repo"].lower(), r["dir"]))
-    seen = set()
+    # A copy is the same skill name with mostly the same description (word
+    # 3-gram Jaccard >= 0.6), or a description repeated word for word under
+    # another name.
+    seen_exact = set()
+    seen_desc = set()
+    by_skill_name = collections.defaultdict(list)
     kept = []
     for r in single:
         key = hashlib.sha1(f"{norm(r['name'])}|{norm(r['description'])}".encode()).hexdigest()
-        if key in seen:
+        desc_key = hashlib.sha1(norm(r["description"]).encode()).hexdigest() if len(r["description"] or "") >= 80 else None
+        grams = shingles(r["description"])
+        near = any(jaccard(grams, g) >= 0.6 for g in by_skill_name[norm(r["name"])])
+        if key in seen_exact or near or (desc_key and desc_key in seen_desc):
             reasons["copy of a listed skill"] += 1
             continue
-        seen.add(key)
+        seen_exact.add(key)
+        if desc_key:
+            seen_desc.add(desc_key)
+        by_skill_name[norm(r["name"])].append(grams)
         kept.append(r)
     print("excluded:", dict(reasons), file=sys.stderr)
+    if os.environ.get("SUEDE_DIRECTORY_POLICY_REPORT"):
+        for hit in sorted(policy_hits):
+            print("policy:", *hit, sep="\t", file=sys.stderr)
 
     by_repo = collections.defaultdict(list)
     for r in kept:
@@ -214,6 +296,8 @@ def main():
     out = []
     repo_meta = {}
     unlabeled = 0
+    needs_summary = []
+    needs_label = []
     for repo, items in by_repo.items():
         owner, name = repo.split("/", 1)
         repo_slug = f"{slugify(owner)}/{slugify(name)}"
@@ -227,13 +311,18 @@ def main():
                 slug, n = f"{base}-{n}", n + 1
             used.add(slug)
             ids[id(r)] = (slug, f"{repo_slug}/{slug}")
-        candidates = [r for r in items if r["grade"] == "A" and (labels.get(ids[id(r)][1]) or {}).get("summary")]
-        featured = {id(r) for r in sorted(candidates, key=lambda r: (-richness(r), r["name"]))[: args.cap]}
+        ranked = sorted([r for r in items if r["grade"] == "A"], key=lambda r: (-richness(r), r["name"]))
+        for r in ranked[: args.cap]:
+            if not (labels.get(ids[id(r)][1]) or {}).get("summary"):
+                needs_summary.append({"id": ids[id(r)][1], "name": r["name"], "repo": repo, "description": r["description"]})
+        candidates = [r for r in ranked if (labels.get(ids[id(r)][1]) or {}).get("summary")]
+        featured = {id(r) for r in candidates[: args.cap]}
         for r in items:
             slug, sid = ids[id(r)]
             label = labels.get(sid) or {}
             if not label:
                 unlabeled += 1
+                needs_label.append({"id": sid, "name": r["name"], "repo": repo, "description": r["description"]})
             license_label = normalize_license(r["fm_license"], r["repo_license"], r["license_file"])
             # Compact record: per-repository facts live in "repos", URLs and
             # slugs are derived by scripts/build-directory.mjs. The validator
@@ -262,6 +351,15 @@ def main():
                 rec["summary"] = label["summary"]
                 rec["headings"] = [h for h in r["headings"] if h[0] in (2, 3)][:16]
                 rec["files_sample"] = r["files_sample"][:24]
+                # Facts for the "Before you install" panel, read from the files.
+                rec["install"] = {
+                    "langs": r.get("script_langs") or {},
+                    "env": r.get("env_vars") or [],
+                    "net": bool(r.get("network")),
+                    "hosts": r.get("api_hosts") or [],
+                    "mcp": bool(r.get("mcp")),
+                    "mcp_tools": r.get("mcp_tools") or [],
+                }
             out.append((sid, rec))
             repo_meta[repo] = {
                 "branch": r["branch"],
@@ -277,7 +375,20 @@ def main():
     text += ',\n "skills": [\n' + ",\n".join(json.dumps(rec, ensure_ascii=False, separators=(",", ":")) for _, rec in out) + "\n ]\n}\n"
     json.loads(text)
     open(args.out, "w").write(text)
+    if os.environ.get("SUEDE_DIRECTORY_PRUNE_LABELS"):
+        listed = {sid for sid, _ in out}
+        kept_labels = {k: v for k, v in labels.items() if k in listed}
+        text_l = "{\n" + ",\n".join(f" {json.dumps(k)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(kept_labels.items())) + "\n}\n"
+        open(args.labels, "w").write(text_l)
+        print(f"labels: kept {len(kept_labels)}, pruned {len(labels) - len(kept_labels)}", file=sys.stderr)
     out = [rec for _, rec in out]
+    if os.environ.get("SUEDE_DIRECTORY_LABEL_QUEUE"):
+        # Skills an editor should label next: a category for every unlabeled
+        # skill, a summary for grade A skills that would earn a page.
+        queue = {r["id"]: r for r in needs_label}
+        for r in needs_summary:
+            queue[r["id"]] = {**r, "needs_summary": True}
+        json.dump(list(queue.values()), open(os.environ["SUEDE_DIRECTORY_LABEL_QUEUE"], "w"), indent=1, ensure_ascii=False)
     print(f"listed {len(out)} skills from {len(by_repo)} repositories; {sum(1 for s in out if s.get('featured'))} featured; {unlabeled} without labels", file=sys.stderr)
 
 

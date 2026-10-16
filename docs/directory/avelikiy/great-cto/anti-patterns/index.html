@@ -6,7 +6,6 @@
     <title>anti-patterns Agent Skill by avelikiy | Suede Directory</title>
     <meta name="description" content="Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or post-mortems, used by the… From avelikiy/great_cto, MIT.">
     <meta name="keywords" content="anti-patterns skill by avelikiy, anti-patterns skill, anti-patterns agent skill, anti-patterns claude skill, avelikiy skills, code review agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="anti-patterns Agent Skill by avelikiy | Suede Directory">
     <meta property="og:description" content="Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or post-mortems, used by the… From avelikiy/great_cto, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="anti-patterns Agent Skill by avelikiy | Suede Directory">
     <meta name="twitter:description" content="Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or post-mortems, used by the… From avelikiy/great_cto, MIT.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,6 +56,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +82,7 @@
             "name": "anti-patterns",
             "item": "https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +108,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,11 +135,37 @@
             <tr><th scope="row">Last commit</th><td>October 15, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>143 lines, 905 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>1 file</td></tr>
-            <tr><th scope="row">Allowed tools</th><td><code>Read, Grep, Glob</code></td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>Tool permissions requested:</b> <code>Read, Grep, Glob</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
+          <li><b>License:</b> <a href="https://github.com/avelikiy/great_cto/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install anti-patterns</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/avelikiy/great_cto --skill anti-patterns</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/avelikiy/great_cto.git &quot;$tmp/great_cto&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/great_cto/skills/anti-patterns&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo avelikiy/great_cto \
+    --path skills/anti-patterns</code></pre>
+        <p class="muted">avelikiy/great_cto is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -149,6 +173,7 @@
           <p>Catalogue of known SDLC anti-patterns that great_cto agents must actively reject when reviewing architecture, plans, code, or post-mortems. Used by architect (pre-impl), pm (planning), senior-dev (impl), l3-support (post-incident).</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/avelikiy/great_cto/blob/main/skills/anti-patterns/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Architecture anti-patterns</li>
@@ -173,50 +198,39 @@
           <li><code>SKILL.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install anti-patterns</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/avelikiy/great_cto --skill anti-patterns</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/avelikiy/great_cto.git /tmp/great_cto
-mkdir -p .claude/skills
-cp -R /tmp/great_cto/skills/anti-patterns .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo avelikiy/great_cto \
-    --path skills/anti-patterns</code></pre>
-        <p class="muted">avelikiy/great_cto is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>anti-patterns passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for anti-patterns</h2>
-        <p>Maintainers of avelikiy/great_cto can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of avelikiy/great_cto can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/badge.svg)](https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -226,24 +240,24 @@ cp -R /tmp/great_cto/skills/anti-patterns .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More code review skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../wondelai/skills/architecture-optimization/"><b>architecture-optimization</b><span>Guides a slow, tangled codebase toward being measurably fast, cleanly bounded, and readable, orchestrating…</span></a>
-          <a class="link-row" href="../../../eduardo-sl/go-agent-skills/go-coding-standards/"><b>go-coding-standards</b><span>Applies Go coding standards and style conventions from Effective Go and Go Code Review Comments, including…</span></a>
-          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/code-auditor/"><b>code-auditor</b><span>Audits a codebase across architecture, code quality, security, performance, testing, and maintainability to…</span></a>
-          <a class="link-row" href="../../../coderabbitai/skills/code-review/"><b>code-review</b><span>Runs CodeRabbit CLI reviews, retrieves saved local or GitHub PR fix prompts, and interprets CodeRabbit…</span></a>
-          <a class="link-row" href="../../../modem-dev/skills/write-discoverable-code/"><b>write-discoverable-code</b><span>Sets rules for writing and renaming functions, types, constants, files, and error messages so coding agents…</span></a>
-          <a class="link-row" href="../../../jeffallan/claude-skills/code-reviewer/"><b>code-reviewer</b><span>Reviews code diffs and files for bugs, security vulnerabilities, code smells, N+1 queries, and naming…</span></a>
+          <a class="link-row" href="../../../neolabhq/context-engineering-kit/traiage-review/"><b>traiage-review</b><span>NeoLabHQ/context-engineering-kit</span></a>
+          <a class="link-row" href="../../../wondelai/skills/architecture-optimization/"><b>architecture-optimization</b><span>wondelai/skills</span></a>
+          <a class="link-row" href="../../../eduardo-sl/go-agent-skills/go-coding-standards/"><b>go-coding-standards</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/code-auditor/"><b>code-auditor</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../../../qiuner/birdview/birdview/"><b>birdview</b><span>Qiuner/birdview</span></a>
+          <a class="link-row" href="../../../getsentry/skills/iterate-pr/"><b>iterate-pr</b><span>getsentry/skills</span></a>
         </div>
         <p><a href="../../../code-review-quality/">All code review and code quality skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from avelikiy/great_cto</h2>
         <div class="links">
-          <a class="link-row" href="../aesthetic-instrument/"><b>aesthetic-instrument</b><span>Defines great_cto's visual style, a dark surface ladder with one accent and two typefaces, as twelve…</span></a>
-          <a class="link-row" href="../anydesign/"><b>anydesign</b><span>Analyzes images, websites, and Figma files to extract their design and generate a design.md with a token…</span></a>
-          <a class="link-row" href="../committed-aesthetic/"><b>committed-aesthetic</b><span>Explains how to write and use a skill that commits to one checkable aesthetic rather than a catalogue, so…</span></a>
-          <a class="link-row" href="../migration-ready-schema/"><b>migration-ready-schema</b><span>Sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import…</span></a>
-          <a class="link-row" href="../opportunity-solution-tree/"><b>opportunity-solution-tree</b><span>Builds an Opportunity Solution Tree that maps a desired outcome to customer opportunities, possible…</span></a>
-          <a class="link-row" href="../outcome-roadmap/"><b>outcome-roadmap</b><span>Rewrites an output-focused feature roadmap as outcome statements reflecting user and business impact, making…</span></a>
+          <a class="link-row" href="../aesthetic-instrument/"><b>aesthetic-instrument</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../anydesign/"><b>anydesign</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../committed-aesthetic/"><b>committed-aesthetic</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../migration-ready-schema/"><b>migration-ready-schema</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../opportunity-solution-tree/"><b>opportunity-solution-tree</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../outcome-roadmap/"><b>outcome-roadmap</b><span>avelikiy/great_cto</span></a>
         </div>
         <p><a href="../">All 30 skills in avelikiy/great_cto</a></p>
       </section>

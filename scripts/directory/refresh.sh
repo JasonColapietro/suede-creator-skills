@@ -7,7 +7,8 @@
 # Steps:
 #   1. shallow-clone the curated skill lists named in LISTS
 #   2. collect every github.com/<owner>/<repo> they cite (repositories cited by
-#      two or more lists, plus the official collections the lists name)
+#      two or more lists, plus the official collections the lists name, plus
+#      accepted listing requests in directory/inclusions.json)
 #   3. shallow-clone those repositories into their own directories
 #   4. parse every SKILL.md (parse_skills.py), grade it (grade.py) and apply
 #      the listing rules and editorial labels (curate.py)
@@ -41,7 +42,7 @@ for r in "${LISTS[@]}"; do
 done
 
 python3 -I "$TOOLS/extract_links.py" "$WORK/lists" "$WORK/candidates.json" > /dev/null
-python3 -I "$TOOLS/select_repos.py" "$WORK/candidates.json" "$WORK/lists/VoltAgent_awesome-agent-skills/README.md" > "$WORK/repos.txt"
+python3 -I "$TOOLS/select_repos.py" "$WORK/candidates.json" "$WORK/lists/VoltAgent_awesome-agent-skills/README.md" "$REPO_ROOT/directory/inclusions.json" > "$WORK/repos.txt"
 
 clone_one() {
   local r="$1" d="$2/src/${1/\//__}"

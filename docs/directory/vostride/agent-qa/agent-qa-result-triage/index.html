@@ -6,7 +6,6 @@
     <title>agent-qa-result-triage Agent Skill by vostride</title>
     <meta name="description" content="Investigates failed agent-qa runs by inspecting artifacts, classifying failures, and comparing recent runs, using… From vostride/agent-qa, Apache-2.0.">
     <meta name="keywords" content="agent-qa-result-triage skill by vostride, agent-qa-result-triage skill, agent-qa-result-triage agent skill, agent-qa-result-triage claude skill, vostride skills, testing and QA agent skills, SKILL.md">
-    <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
@@ -15,11 +14,13 @@
     <meta property="og:title" content="agent-qa-result-triage Agent Skill by vostride">
     <meta property="og:description" content="Investigates failed agent-qa runs by inspecting artifacts, classifying failures, and comparing recent runs, using… From vostride/agent-qa, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/">
-    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="agent-qa-result-triage Agent Skill by vostride">
     <meta name="twitter:description" content="Investigates failed agent-qa runs by inspecting artifacts, classifying failures, and comparing recent runs, using… From vostride/agent-qa, Apache-2.0.">
-    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,6 +56,7 @@
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -80,8 +82,7 @@
             "name": "agent-qa-result-triage",
             "item": "https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/"
           }
-        ],
-        "@id": "https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/#breadcrumb"
+        ]
       }
     </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -107,14 +108,11 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../../skills/">Skills</a>
           <a href="../../../">Directory</a>
-          <a href="../../../../guide.html">Guide</a>
-          <a href="../../../../book/">Book</a>
+          <a href="../../../methodology/">How listing works</a>
+          <a href="../../../../skills/">Suede skills</a>
           <a href="../../../../blog/">Blog</a>
-          <a href="../../../../copy.html">Copy Bank</a>
-          <a href="../../../../cracked.html">Cracked Devs</a>
-          <a href="../../../../plugins.html" class="nav-cta">Install</a>
+          <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
       </nav>
@@ -137,10 +135,36 @@
             <tr><th scope="row">Last commit</th><td>August 4, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>34 lines, 167 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>3 files, including references</td></tr>
-            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">See the eight checks</a></td></tr>
+            <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" aria-labelledby="before-title">
+        <h2 id="before-title">Before you install</h2>
+        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <ul class="before-list">
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
+          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
+          <li><b>License:</b> <a href="https://github.com/vostride/agent-qa/blob/main/LICENSE.md" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">Install agent-qa-result-triage</h2>
+        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
+        <pre><code>npx skills add https://github.com/vostride/agent-qa --skill agent-qa-result-triage</code></pre>
+        <p><strong>Claude Code</strong>, project-level copy:</p>
+        <pre><code>tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/vostride/agent-qa.git &quot;$tmp/agent-qa&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/agent-qa/skills/agent-qa-result-triage&quot; .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
+        <p><strong>Codex</strong> installer:</p>
+        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+    --repo vostride/agent-qa \
+    --path skills/agent-qa-result-triage</code></pre>
+        <p class="muted">vostride/agent-qa is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -148,6 +172,7 @@
           <p>Use when investigating failed agent-qa runs, inspecting artifacts, classifying failures, or comparing recent runs. Prefer agent-qa MCP run/artifact tools and produce evidence-backed triage.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/vostride/agent-qa/blob/main/skills/agent-qa-result-triage/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Workflow</li>
@@ -161,50 +186,39 @@
           <li><code>references/triage-categories.md</code></li>
         </ul>
       </section>
-      <section class="panel" aria-labelledby="install-title">
-        <h2 id="install-title">Install agent-qa-result-triage</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/vostride/agent-qa --skill agent-qa-result-triage</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>git clone --depth 1 https://github.com/vostride/agent-qa.git /tmp/agent-qa
-mkdir -p .claude/skills
-cp -R /tmp/agent-qa/skills/agent-qa-result-triage .claude/skills/</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo vostride/agent-qa \
-    --path skills/agent-qa-result-triage</code></pre>
-        <p class="muted">vostride/agent-qa is third-party code. Suede lists it and links to the source; read SKILL.md and any bundled scripts before you install it.</p>
-      </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>Eight structural checks against the Agent Skills format, run on the published SKILL.md. This skill passes every check. <a href="../../../methodology/">How the check works</a>.</p>
-        <div class="table-wrap">
-          <table class="checks">
-            <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-            <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
-            <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
-            <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
-            <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
-            <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
-            <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
-            <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p>agent-qa-result-triage passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <details class="check-details">
+          <summary>See the eight checks</summary>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+              <tr><td>Frontmatter parses and declares a name and a description</td><td class="pass">Pass</td></tr>
+              <tr><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>Name matches the skill's folder name</td><td class="pass">Pass</td></tr>
+              <tr><td>Description is between 50 and 1,024 characters</td><td class="pass">Pass</td></tr>
+              <tr><td>Description says when an agent should use the skill</td><td class="pass">Pass</td></tr>
+              <tr><td>SKILL.md body is 500 lines or fewer</td><td class="pass">Pass</td></tr>
+              <tr><td>A license is declared in the frontmatter or the repository</td><td class="pass">Pass</td></tr>
+              <tr><td>Repository has a commit in the last 12 months</td><td class="pass">Pass</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
-      <section class="panel badge-panel" aria-labelledby="badge-title">
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Badge for agent-qa-result-triage</h2>
-        <p>Maintainers of vostride/agent-qa can show this listing in the skill's README. The badge links back to this page.</p>
-        <p class="badge-preview"><img src="../../../badge-grade-a.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
+        <p>Maintainers of vostride/agent-qa can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede Skills Directory: Grade A" width="208" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/badge-grade-a.svg)](https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/)</code></pre>
+          <pre><code id="badge-md">[![Suede Skills Directory: Grade A](https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/badge.svg)](https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge-grade-a.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/vostride/agent-qa/agent-qa-result-triage/badge.svg&quot; alt=&quot;Suede Skills Directory: Grade A&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
@@ -214,19 +228,19 @@ cp -R /tmp/agent-qa/skills/agent-qa-result-triage .claude/skills/</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More testing and QA skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../cypress-io/ai-toolkit/cypress-author/"><b>cypress-author</b><span>Creates, updates, and fixes Cypress end-to-end and component tests, including writing new specs and…</span></a>
-          <a class="link-row" href="../../../lambdatest/agent-skills/detox-skill/"><b>detox-skill</b><span>Generates Detox end-to-end tests in JavaScript for React Native apps, running on local simulators and…</span></a>
-          <a class="link-row" href="../../../lambdatest/agent-skills/xcuitest-skill/"><b>xcuitest-skill</b><span>Generates XCUITest UI tests in Swift for iOS and iPadOS apps, supporting local simulators and TestMu AI…</span></a>
-          <a class="link-row" href="../../../eduardo-sl/go-agent-skills/go-test-quality/"><b>go-test-quality</b><span>Guides Go testing for production code, including subtests, helpers, fixtures, golden files, httptest…</span></a>
-          <a class="link-row" href="../../../hashicorp/agent-skills/provider-test-patterns/"><b>provider-test-patterns</b><span>Guides writing, reviewing, and debugging Terraform provider acceptance tests with terraform-plugin-testing…</span></a>
-          <a class="link-row" href="../../../cypress-io/ai-toolkit/cypress-cloud-cli/"><b>cypress-cloud-cli</b><span>Runs the cy-cloud CLI to inspect Cypress Cloud organizations, projects, runs, specs, tests, failure…</span></a>
+          <a class="link-row" href="../../../cypress-io/ai-toolkit/cypress-author/"><b>cypress-author</b><span>cypress-io/ai-toolkit</span></a>
+          <a class="link-row" href="../../../lambdatest/agent-skills/detox-skill/"><b>detox-skill</b><span>LambdaTest/agent-skills</span></a>
+          <a class="link-row" href="../../../lambdatest/agent-skills/xcuitest-skill/"><b>xcuitest-skill</b><span>LambdaTest/agent-skills</span></a>
+          <a class="link-row" href="../../../eduardo-sl/go-agent-skills/go-test-quality/"><b>go-test-quality</b><span>eduardo-sl/go-agent-skills</span></a>
+          <a class="link-row" href="../../../hashicorp/agent-skills/provider-test-patterns/"><b>provider-test-patterns</b><span>hashicorp/agent-skills</span></a>
+          <a class="link-row" href="../../../cypress-io/ai-toolkit/cypress-cloud-cli/"><b>cypress-cloud-cli</b><span>cypress-io/ai-toolkit</span></a>
         </div>
-        <p><a href="../../../testing-qa/">All testing and qa skills</a></p>
+        <p><a href="../../../testing-qa/">All testing and QA skills</a></p>
       </section>
       <section class="panel" aria-labelledby="siblings-title">
         <h2 id="siblings-title">More from vostride/agent-qa</h2>
         <div class="links">
-          <a class="link-row" href="../agent-qa-authoring/"><b>agent-qa-authoring</b><span>Guides creating, editing, validating, and running agent-qa tests, suites, and hooks, preferring agent-qa MCP…</span></a>
+          <a class="link-row" href="../agent-qa-authoring/"><b>agent-qa-authoring</b><span>vostride/agent-qa</span></a>
         </div>
         <p><a href="../">All 3 skills in vostride/agent-qa</a></p>
       </section>
