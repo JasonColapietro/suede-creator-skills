@@ -37,6 +37,8 @@ LICENSE_PATTERNS = [
     ("CC-BY-NC-4.0", re.compile(r"Attribution-NonCommercial", re.I)),
     ("Unlicense", re.compile(r"This is free and unencumbered software released into the public domain", re.I)),
     ("CC0-1.0", re.compile(r"CC0 1\.0", re.I)),
+    # Checked last: permissive licenses often carry the phrase too.
+    ("All rights reserved", re.compile(r"all rights reserved", re.I)),
 ]
 
 
@@ -77,33 +79,73 @@ SCRIPT_LANGS = {
     ".sh": "Shell", ".bash": "Shell", ".zsh": "Shell", ".ps1": "PowerShell", ".rb": "Ruby", ".go": "Go",
     ".rs": "Rust", ".java": "Java", ".kt": "Kotlin", ".swift": "Swift", ".php": "PHP", ".r": "R", ".R": "R",
 }
-ENV_RE = re.compile(r"\b([A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*_(?:API_KEY|APIKEY|TOKEN|SECRET|SECRET_KEY|ACCESS_KEY|ACCESS_TOKEN|CLIENT_ID|CLIENT_SECRET|PASSWORD|AUTH_TOKEN))\b")
-ENV_IGNORE = {"YOUR_API_KEY", "API_KEY", "MY_API_KEY", "SOME_TOKEN", "EXAMPLE_API_KEY", "ACCESS_TOKEN", "AUTH_TOKEN", "SECRET_KEY"}
-NET_RE = re.compile(r"\b(requests\.(get|post|put|patch|delete|request|Session)|httpx\.|urllib\.request|urlopen\(|aiohttp|fetch\(|axios|got\(|node-fetch|curl\s|wget\s|http\.client|net/http|reqwest)")
-URL_RE = re.compile(r"https?://([A-Za-z0-9.-]+\.[A-Za-z]{2,})")
-HOST_IGNORE = re.compile(r"(^|\.)(github\.com|githubusercontent\.com|example\.(com|org)|localhost|w3\.org|schema\.org|json-schema\.org|creativecommons\.org|opensource\.org|apache\.org|mozilla\.org|python\.org|npmjs\.com|pypi\.org|stackoverflow\.com|wikipedia\.org|docs\.[a-z.]+)$")
+CRED_NAME = r"[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*_(?:API_KEY|APIKEY|TOKEN|SECRET|SECRET_KEY|ACCESS_KEY|ACCESS_TOKEN|CLIENT_ID|CLIENT_SECRET|PASSWORD|AUTH_TOKEN)"
+ENV_RE = re.compile(rf"\b({CRED_NAME})\b")
+# A credential counts as read only where code reads it from the environment.
+ENV_READ_RE = re.compile(
+    rf"""(?:os\.environ(?:\.get)?\s*[\[(]\s*["']({CRED_NAME})["']"""
+    rf"""|os\.getenv\(\s*["']({CRED_NAME})["']"""
+    rf"""|process\.env(?:\.|\[\s*["'])({CRED_NAME})\b"""
+    rf"""|(?:Deno|Bun)\.env(?:\.get\(\s*["']|\.)({CRED_NAME})\b"""
+    rf"""|os\.Getenv\(\s*"({CRED_NAME})"|ENV\[\s*["']({CRED_NAME})["']|env::var\(\s*"({CRED_NAME})\""""
+    rf"""|\$\{{?({CRED_NAME})\b)"""
+)
+JUNK_CRED = re.compile(
+    r"^(EXAMPLE|FOO|FAKE|DUMMY|PLACEHOLDER|SAMPLE|MOCK|XXX)"
+    r"|^(BAR|BAZ|DEMO|TEST|MISSING|INVALID|REDACTED|NEW|DEV|PROD|DEFAULT|YOUR|MY|SOME)(_|$)"
+    r"|^(API_KEY|ACCESS_TOKEN|AUTH_TOKEN|SECRET_KEY|SECRET|TOKEN)$"
+)
+CONST_RE = re.compile(rf"""^\s*(?:export\s+)?(?:const\s+|let\s+|var\s+)?({CRED_NAME})\s*[:=]\s*(?:r?["'/]|re\.compile|\d)""", re.M)
+# Network use: HTTP libraries and cloud SDKs in code, comments stripped first.
+NET_RE = re.compile(
+    r"\b(requests\.(get|post|put|patch|delete|head|request|Session)|httpx\.|urllib\.request|urlopen\(|aiohttp|fetch\(|axios|got\(|node-fetch|http\.client|net/http|reqwest"
+    r"|import boto3|boto3\.client|from openai|import openai|from anthropic|import anthropic|@anthropic-ai/sdk|from google\.cloud|google-cloud-|new OpenAI\(|websocket"
+    r"|\bcurl\s+-|\bcurl\s+https?:|\bwget\s+https?:)"
+)
+COMMENT_RE = {
+    "hash": re.compile(r"(?m)^\s*#.*$|\s#\s.*$"),
+    "block": re.compile(r"/\*.*?\*/", re.S),
+    "slash": re.compile(r"(^|[^:])//[^\n]*", re.M),
+}
+URL_RE = re.compile(r"""["'`(]https?://([A-Za-z0-9.-]+\.[A-Za-z]{2,})""")
+HOST_IGNORE = re.compile(
+    r"(^|\.)(github\.com|githubusercontent\.com|github\.io|localhost|w3\.org|schema\.org|json-schema\.org|purl\.org|xmlns\.com|creativecommons\.org"
+    r"|opensource\.org|apache\.org|mozilla\.org|python\.org|npmjs\.com|pypi\.org|stackoverflow\.com|wikipedia\.org|docs\.[a-z.]+)$"
+    r"|\.(example|invalid|test|local|localhost)$|^example\.(com|org|net)$|(^|\.)your[a-z-]*\.|^127\.|^0\.0\.0\.0"
+)
 MCP_TOOL_RE = re.compile(r"\bmcp__([a-z0-9][a-z0-9_-]*?)__")
 MCP_RE = re.compile(r"\bMCP server|\bmcpServers\b|\bmcp__", re.I)
+SKIP_SCAN_DIRS = re.compile(r"(^|/)(tests?|__tests__|spec|examples?|fixtures?|samples?|testdata|mocks?)(/|$)", re.I)
+HASH_COMMENT_EXT = {".py", ".sh", ".bash", ".zsh", ".rb", ".r", ".R", ".ps1"}
+
+
+def strip_comments(text, ext):
+    if ext in HASH_COMMENT_EXT:
+        return COMMENT_RE["hash"].sub("", text)
+    return COMMENT_RE["slash"].sub(r"\1", COMMENT_RE["block"].sub("", text))
 
 
 def install_facts(skill_dir: Path, body: str):
     langs = collections.Counter()
-    env = []
+    env_read, env_docs, consts = [], [], set()
     hosts = collections.Counter()
     network = False
+    captcha_files = False
     scanned = 0
     for dp, dns, fns in os.walk(skill_dir):
         dns[:] = [d for d in dns if d not in SKIP_DIRS and not d.startswith(".")]
+        rel_dir = str(Path(dp).relative_to(skill_dir))
+        in_tests = bool(SKIP_SCAN_DIRS.search(rel_dir)) if rel_dir != "." else False
         for fn in fns:
             ext = os.path.splitext(fn)[1]
-            path = Path(dp) / fn
             is_code = ext in SCRIPT_LANGS
             if is_code:
                 langs[SCRIPT_LANGS[ext]] += 1
-            if not (is_code or fn == "SKILL.md" or ext in (".md", ".json", ".yaml", ".yml", ".toml", ".env", ".example")):
+            if "captcha" in fn.lower():
+                captcha_files = True
+            if not is_code or in_tests or re.search(r"\.(test|spec)\.", fn) or scanned > 200:
                 continue
-            if scanned > 200:
-                continue
+            path = Path(dp) / fn
             try:
                 if path.stat().st_size > 300_000:
                     continue
@@ -111,25 +153,35 @@ def install_facts(skill_dir: Path, body: str):
             except OSError:
                 continue
             scanned += 1
-            for m in ENV_RE.finditer(text):
-                v = m.group(1)
-                if v not in ENV_IGNORE and not v.startswith(("YOUR_", "MY_", "EXAMPLE_")) and v not in env:
-                    env.append(v)
-            if is_code:
-                if NET_RE.search(text):
-                    network = True
-                for h in URL_RE.findall(text):
-                    h = h.lower().rstrip(".")
-                    if not HOST_IGNORE.search(h):
-                        hosts[h] += 1
+            consts.update(CONST_RE.findall(text))
+            code = strip_comments(text, ext)
+            for m in ENV_READ_RE.finditer(code):
+                v = next(g for g in m.groups() if g)
+                if v not in env_read:
+                    env_read.append(v)
+            if NET_RE.search(code):
+                network = True
+            for h in URL_RE.findall(code):
+                h = h.lower().rstrip(".")
+                if not HOST_IGNORE.search(h):
+                    hosts[h] += 1
+    for m in ENV_RE.finditer(body):
+        v = m.group(1)
+        if v not in env_docs:
+            env_docs.append(v)
+    keep = lambda v: not JUNK_CRED.search(v) and v not in consts
+    env_read = [v for v in env_read if keep(v)]
+    env_docs = [v for v in env_docs if keep(v) and v not in env_read]
     mcp_tools = sorted(set(MCP_TOOL_RE.findall(body)))[:6]
     return {
         "script_langs": dict(langs.most_common()),
-        "env_vars": env[:8],
+        "env_read": env_read[:8],
+        "env_docs": env_docs[:8],
         "network": network,
         "api_hosts": [h for h, _ in hosts.most_common(4)],
         "mcp": bool(MCP_RE.search(body)),
         "mcp_tools": mcp_tools,
+        "captcha_files": captcha_files,
     }
 
 

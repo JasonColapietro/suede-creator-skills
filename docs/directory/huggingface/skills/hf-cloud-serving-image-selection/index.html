@@ -133,7 +133,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/huggingface" target="_blank" rel="noopener">huggingface</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/huggingface" target="_blank" rel="noopener">Hugging Face</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">huggingface/skills</a> (24 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../devops-cloud/">DevOps and Cloud</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/huggingface/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a></td></tr>
@@ -148,28 +148,34 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 1 script file (1 Python). Your agent may run them, so read them first.</li>
-          <li><b>Credentials named in its files:</b> <code>HUGGING_FACE_HUB_TOKEN</code>, <code>HF_TOKEN</code>. Expect to supply these keys before it can run.</li>
-          <li><b>Network:</b> no HTTP calls found in its scripts.</li>
+          <li><b>Credential names SKILL.md mentions:</b> <code>HUGGING_FACE_HUB_TOKEN</code>, <code>HF_TOKEN</code>. SKILL.md says when, or whether, each one is needed.</li>
           <li><b>License:</b> <a href="https://github.com/huggingface/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install hf-cloud-serving-image-selection</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/huggingface/skills --skill hf-cloud-serving-image-selection</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/huggingface/skills.git &quot;$tmp/skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/huggingface/skills/tree/main/skills/hf-cloud-serving-image-selection</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/huggingface/skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/skills/skills/hf-cloud-serving-image-selection&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/hf-cloud-serving-image-selection&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo huggingface/skills \
     --path skills/hf-cloud-serving-image-selection</code></pre>
+        </div>
         <p class="muted">huggingface/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -207,7 +213,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>hf-cloud-serving-image-selection passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>hf-cloud-serving-image-selection passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">

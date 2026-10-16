@@ -57,42 +57,57 @@ REJECT_TERMS = re.compile(
     re.I,
 )
 
-# The published listing policy (/directory/methodology/). Each rule tests a
-# skill's main job, read from its name and the start of its description, so a
-# skill that only mentions scraping or email among other uses stays listed.
-# Rules 2 and 3 exempt vendors' own skills for their own service.
+# The published listing policy (/directory/methodology/). Each rule reads the
+# name, the whole description and the repository name. The bare word "scrape"
+# counts only when it opens the description or sits in the name, because a
+# general browser or crawling tool that lists scraping among other uses stays
+# listed. A vendor's skills for its own service are exempt from rules 2 and 3.
+SOCIAL = r"(linkedin|instagram|facebook|tiktok|twitter|\bx\b|x\.com|reddit|threads|xiaohongshu|youtube|discord|whatsapp)"
 POLICY = {
-    "automates posting, messaging or account activity on a social platform": (False, re.compile(
+    "automates posting, messaging or account activity on a social platform": (False, False, re.compile(
         r"auto-?(comment|post|posting|dm|like|follow|engage)\w*"
         r"|\b(dms?|direct messages?)\b[^.]{0,30}\bautomat|automat\w*[^.]{0,40}\b(dms?|direct messages?|connection (requests|invites))\b"
         r"|keyword-based reply posting|\bwarm-?up\b[^.]{0,40}\baccounts?\b|\baccounts?\b[^.]{0,40}\bwarm-?up"
-        r"|multiple [\w-]+ accounts|multi-account|round-robin[^.]{0,40}\baccounts|plant(s|ing)? brand content|astroturf",
+        r"|multiple [\w-]+ accounts|multi-account|round-robin[^.]{0,40}\baccounts|plant(s|ing)? brand content|astroturf"
+        rf"|{SOCIAL}[^.]{{0,25}}\b(automation|bot)\b|\b(send|sending) (messages|dms|connection requests|invites)[^.]{{0,40}}{SOCIAL}"
+        rf"|{SOCIAL}[^.]{{0,60}}\b(send|sending) (messages|dms|connection requests|invites)|\bmanage connections\b|\bexport followers\b",
         re.I,
     )),
-    "works around a site's blocks, CAPTCHAs or official API": (True, re.compile(
+    "works around a site's blocks, CAPTCHAs or official API": (True, False, re.compile(
         r"\b(403|blocked|blocks)\b[^.]{0,40}\b(unlock|work(ing)? around|get around|bypass)"
         r"|\b(unlock|work(ing)? around|get around)\b[^.]{0,40}\b(403|block)"
         r"|\bbypass\w*[^.]{0,30}\b(blocks?|blocking|captchas?|rate limits?|bot detection|ip bans?)"
-        r"|unofficial[^.]{0,25}\b(client|api|wrapper)|captcha[^.]{0,20}(solv|bypass)|(solv|bypass)\w*[^.]{0,20}captcha"
+        r"|unofficial[^.]{0,25}\b(client|api|wrapper)|captcha[^.]{0,20}(solv|bypass)|(solv|bypass)\w*[^.]{0,20}captcha|capsolver|2captcha"
         r"|avoid (detection|bans?)|undetect|evade (detection|bans?|limits)|supplement restricted web access"
-        r"|returns? (a )?(403|blocked)\b|-hop unlock",
+        r"|returns? (a )?(403|blocked)\b|-hop unlock|not affiliated with x corp",
         re.I,
     )),
-    "has scraping a third-party site as its main job": (True, re.compile(
-        r"^\W*(scrap|scraping)|\bapify\b|scraper (service|api)|\bscraper\b", re.I
+    "has scraping a third-party site as its main job": (True, False, re.compile(
+        rf"\bapify\b[\s\S]{{0,200}}{SOCIAL}|{SOCIAL}[\s\S]{{0,200}}\bapify\b|scraper (service|api)"
+        r"|\b(people|users|accounts) who (liked|commented|reacted|engaged)"
+        rf"|scrap\w*[^.]{{0,40}}\b(engagers|commenters|likers|followers|profiles|{SOCIAL}|google maps|amazon)"
+        rf"|\b(engagers|commenters|likers)\b[^.]{{0,40}}\b(scrap|extract|export|pull)",
+        re.I,
     )),
-    "looks up an individual's email, phone number or personal profiles": (False, re.compile(
-        r"email[- ]finder|contact[- ]finder|find[- ]emails?|person[- ]lookup|people[- ]search|profile[- ]finder|social[- ]media[- ]finder|contact[- ]extract"
-        r"|^\W*(find (emails?|someone'?s email|phone numbers?)|look up information about a person|enrich any person)",
+    "collects people's personal data by scraping a social network or map listings": (False, False, re.compile(
+        rf"{SOCIAL}[^.]{{0,40}}\b(profiles?|engagers|commenters|followers|attendees|speakers|members)\b[^.]{{0,40}}\b(scrap\w*|harvest\w*|extract\w*|export\w*)"
+        rf"|\b(scrap\w*|harvest\w*|extract\w*|export\w*)\b[^.]{{0,40}}{SOCIAL}[^.]{{0,40}}\b(profiles?|engagers|commenters|followers|attendees|speakers|members|contact)"
+        r"|google maps[^.]{0,40}\b(contact|emails?|phones?)\b|\b(contact|emails?|phones?)\b[^.]{0,60}\bgoogle maps"
+        r"|\bpeople search\b[^.]{0,30}\bscrap",
         re.I,
     )),
 }
 # Repositories whose product is the excluded behavior: listing them skill by
 # skill would only list what rule 3 excludes.
-POLICY_REPOS = {"browser-act/skills": "a browser-automation toolkit for extracting data from third-party sites"}
+POLICY_REPOS = {
+    "browser-act/skills": "a browser-automation toolkit for extracting data from third-party sites",
+    "xquik-dev/x-twitter-scraper": "a third-party X data scraping service",
+    "xquik-dev/tweetclaw": "X automation through a third-party scraping service",
+    "linked-api/linkedin-skills": "LinkedIn account automation (messages, connections, posts)",
+}
 
 TEMPLATE_RE = re.compile(r"^(template|example|example-skill|sample|test|my-skill|skill-template|hello-world|your-skill-name)$", re.I)
-TEMPLATE_PATH_RE = re.compile(r"(^|/)(templates?|examples?|fixtures?|tests?|__tests__|testdata|archive|deprecated|drafts?|internal|_[a-z-]+|\.github)(/|$)", re.I)
+TEMPLATE_PATH_RE = re.compile(r"(^|/)(templates?|examples?|fixtures?|tests?|__tests__|testdata|archive|deprecated|drafts?|internal|prompts?|_[a-z-]+|\.github)(/|$)", re.I)
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"\(?\b[2-9]\d{2}\)?[ .-][2-9]\d{2}[ .-]\d{4}\b")
 
@@ -141,6 +156,8 @@ def normalize_license(raw, repo_license, license_file):
         t = ""
     if re.match(r"^(nvidia )?proprietary", low):
         t = "Proprietary"
+    if repo_license == "All rights reserved" and (not t or t == repo_license):
+        t = "All rights reserved"
     if not t:
         if repo_license and repo_license != "Other":
             t = repo_license
@@ -149,19 +166,27 @@ def normalize_license(raw, repo_license, license_file):
     return t
 
 
+NEGATION = re.compile(r"\b(never|not|no|don't|do not|without|avoid|instead of)\b[^.]*$", re.I)
+
+
 def policy_rule(r):
-    """The first listing-policy rule a skill's main job trips, or None."""
-    name = r["name"] or ""
+    """The first listing-policy rule a skill trips, or None."""
+    name = (r["name"] or "").replace("-", " ")
     desc = r["description"] or ""
     official = r["repo"].split("/")[0].lower() in OFFICIAL_OWNERS
-    for i, (rule, (vendor_exempt, pattern)) in enumerate(POLICY.items()):
+    whole = f"{name} {desc} {r['repo'].replace('-', ' ')}"
+    for rule, (vendor_exempt, _, pattern) in POLICY.items():
         if vendor_exempt and official:
             continue
-        # Rules 1 and 2 describe behavior wherever the description states it;
-        # rules 3 and 4 must be the main job, so they read the name and opening.
-        text = desc if i < 2 else desc[:160]
-        if pattern.search(name) or pattern.search(text):
-            return rule
+        for m in pattern.finditer(whole):
+            # "never scrape LinkedIn" states a rule the skill follows.
+            if not NEGATION.search(whole[max(0, m.start() - 30) : m.start()]):
+                return rule
+    # Scraping named as the opening job ("Scrape the front page ...").
+    if not official and (re.match(r"\W*scrap", desc, re.I) or re.search(r"\bscrap", name, re.I)):
+        return "has scraping a third-party site as its main job"
+    if r.get("captcha_files") and not official:
+        return "works around a site's blocks, CAPTCHAs or official API"
     return None
 
 
@@ -220,12 +245,21 @@ def main():
     generated = os.environ.get("SUEDE_DIRECTORY_DATE", dt.date.today().isoformat())
 
     raw = json.load(open(args.raw))
+    # Skills with a page in the previous dataset keep it (see "Sticky pages").
+    previous_pages = set()
+    if os.path.exists(args.out):
+        prev = json.load(open(args.out))
+        for rec in prev.get("skills", []):
+            if rec.get("featured"):
+                o, n = rec["repo"].split("/", 1)
+                previous_pages.add(f"{slugify(o)}/{slugify(n)}/{rec['slug']}")
     labels = json.load(open(args.labels))
     # Removals: author requests, and skills whose text the pack's public-source guards reject.
     # Whole repositories ("owner/repo") or single skills ("owner/repo/skill-name").
     excl = json.load(open(args.exclusions)) if os.path.exists(args.exclusions) else {}
-    excluded_repos = {r.lower() for r in excl.get("repositories", [])}
-    excluded_skills = {s.lower() for s in excl.get("skills", [])}
+    key_of = lambda e: (e["id"] if isinstance(e, dict) else e).lower()
+    excluded_repos = {key_of(e) for e in excl.get("repositories", [])}
+    excluded_skills = {key_of(e) for e in excl.get("skills", [])}
     reasons = collections.Counter()
     eligible = []
     policy_hits = []
@@ -311,12 +345,14 @@ def main():
                 slug, n = f"{base}-{n}", n + 1
             used.add(slug)
             ids[id(r)] = (slug, f"{repo_slug}/{slug}")
-        ranked = sorted([r for r in items if r["grade"] == "A"], key=lambda r: (-richness(r), r["name"]))
-        for r in ranked[: args.cap]:
+        had_page = [r for r in items if ids[id(r)][1] in previous_pages and (labels.get(ids[id(r)][1]) or {}).get("summary")]
+        ranked = sorted([r for r in items if r["grade"] == "A" and r not in had_page], key=lambda r: (-richness(r), r["name"]))
+        open_slots = max(0, args.cap - len(had_page))
+        for r in ranked[:open_slots]:
             if not (labels.get(ids[id(r)][1]) or {}).get("summary"):
                 needs_summary.append({"id": ids[id(r)][1], "name": r["name"], "repo": repo, "description": r["description"]})
         candidates = [r for r in ranked if (labels.get(ids[id(r)][1]) or {}).get("summary")]
-        featured = {id(r) for r in candidates[: args.cap]}
+        featured = {id(r) for r in had_page} | {id(r) for r in candidates[: max(0, args.cap - len(had_page))]}
         for r in items:
             slug, sid = ids[id(r)]
             label = labels.get(sid) or {}
@@ -354,9 +390,10 @@ def main():
                 # Facts for the "Before you install" panel, read from the files.
                 rec["install"] = {
                     "langs": r.get("script_langs") or {},
-                    "env": r.get("env_vars") or [],
+                    "env_read": r.get("env_read") or [],
+                    "env_docs": r.get("env_docs") or [],
                     "net": bool(r.get("network")),
-                    "hosts": r.get("api_hosts") or [],
+                    "hosts": (r.get("api_hosts") or []) if r.get("network") else [],
                     "mcp": bool(r.get("mcp")),
                     "mcp_tools": r.get("mcp_tools") or [],
                 }

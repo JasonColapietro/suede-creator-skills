@@ -148,29 +148,34 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 4 script files (4 Python). Your agent may run them, so read them first.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
-          <li><b>Network:</b> no HTTP calls found in its scripts.</li>
           <li><b>Tool permissions requested:</b> <code>Read Bash Write</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/NVIDIA/skills/blob/main/skills/tao-validate-recipe-transfer/SKILL.md" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install tao-validate-recipe-transfer</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/NVIDIA/skills --skill tao-validate-recipe-transfer</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/NVIDIA/skills.git &quot;$tmp/skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/NVIDIA/skills/tree/main/skills/tao-validate-recipe-transfer</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/NVIDIA/skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/skills/skills/tao-validate-recipe-transfer&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/tao-validate-recipe-transfer&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo NVIDIA/skills \
     --path skills/tao-validate-recipe-transfer</code></pre>
+        </div>
         <p class="muted">NVIDIA/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -227,7 +232,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>tao-validate-recipe-transfer passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>tao-validate-recipe-transfer passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -267,12 +272,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More AI agent skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../swarmclawai/swarmclaw/coding-agent/"><b>coding-agent</b><span>swarmclawai/swarmclaw</span></a>
-          <a class="link-row" href="../../../getsentry/skills/skill-writer/"><b>skill-writer</b><span>getsentry/skills</span></a>
-          <a class="link-row" href="../../../voltagent/skills/create-voltagent/"><b>create-voltagent</b><span>VoltAgent/skills</span></a>
-          <a class="link-row" href="../../../firebase/skills/firebase-ai-logic-basics/"><b>firebase-ai-logic-basics</b><span>firebase/skills</span></a>
-          <a class="link-row" href="../../../obra/superpowers/verification-before-completion/"><b>verification-before-completion</b><span>obra/superpowers</span></a>
-          <a class="link-row" href="../../../zxkane/aws-skills/aws-agentic-ai/"><b>aws-agentic-ai</b><span>zxkane/aws-skills</span></a>
+          <a class="link-row" href="../../../mblode/agent-skills/agent-skills-creator/"><b>agent-skills-creator</b><span>mblode/agent-skills</span></a>
+          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/context-fundamentals/"><b>context-fundamentals</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
+          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/project-development/"><b>project-development</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
+          <a class="link-row" href="../../../necmttn/ax/tune/"><b>tune</b><span>Necmttn/ax</span></a>
+          <a class="link-row" href="../../../google/skills/google-cloud-solution-rag-enterprise-search-gke-sqldb/"><b>google-cloud-solution-rag-enterprise-search-gke-sqldb</b><span>google/skills</span></a>
+          <a class="link-row" href="../../../huggingface/skills/huggingface-trackio/"><b>huggingface-trackio</b><span>huggingface/skills</span></a>
         </div>
         <p><a href="../../../ai-agents-llm/">All AI agent and LLM engineering skills</a></p>
       </section>

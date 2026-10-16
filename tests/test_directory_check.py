@@ -69,5 +69,56 @@ class LicenseCheckTests(unittest.TestCase):
         self.assertTrue(checks["license"])
 
 
+CURATE_SRC = (ROOT / "scripts/directory/curate.py").read_text(encoding="utf-8")
+
+
+def load_policy():
+    namespace = {"__file__": str(ROOT / "scripts/directory/curate.py")}
+    exec(compile(CURATE_SRC[: CURATE_SRC.index("def main():")], "curate.py", "exec"), namespace)
+    return namespace["policy_rule"]
+
+
+class ListingPolicyTests(unittest.TestCase):
+    """The methodology page says Suede's own pack passes the rules it applies."""
+
+    @classmethod
+    def setUpClass(cls):
+        import yaml
+
+        cls.policy_rule = staticmethod(load_policy())
+        cls.yaml = yaml
+
+    def test_suede_skills_pass_the_directory_listing_policy(self):
+        failures = []
+        for path in sorted((ROOT / "skills").glob("*/SKILL.md")):
+            text = path.read_text(encoding="utf-8")
+            front = self.yaml.safe_load(text.split("---", 2)[1])
+            record = {
+                "name": front.get("name"),
+                "description": str(front.get("description")),
+                "repo": "JasonColapietro/suede-creator-skills",
+                "captcha_files": any("captcha" in f.name.lower() for f in path.parent.rglob("*")),
+            }
+            rule = self.policy_rule(record)
+            if rule:
+                failures.append(f"{path.parent.name}: {rule}")
+        self.assertEqual(failures, [])
+
+    def test_policy_catches_the_behaviors_it_publishes(self):
+        cases = {
+            "x-keyword-comment": "X (Twitter) keyword-based reply posting: search tweets by keyword and post replies.",
+            "reddit-fetch": "Fetch content from Reddit. Use when Reddit returns 403/blocked errors.",
+            "engager-export": "Pull the people who liked or commented on LinkedIn posts. Powered by Apify.",
+            "maps-contacts": "Extracts business contact emails and phones from Google Maps listings.",
+        }
+        for name, description in cases.items():
+            with self.subTest(name=name):
+                self.assertIsNotNone(self.policy_rule({"name": name, "description": description, "repo": "someone/skills"}))
+
+    def test_a_stated_safeguard_is_not_read_as_the_behavior(self):
+        record = {"name": "prospecting", "description": "Build a prospect list from licensed providers, and never scrape LinkedIn.", "repo": "someone/skills"}
+        self.assertIsNone(self.policy_rule(record))
+
+
 if __name__ == "__main__":
     unittest.main()

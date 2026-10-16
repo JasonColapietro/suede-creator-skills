@@ -137,22 +137,26 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 19 script files (17 Python, 2 Shell). Your agent may run them, so read them first.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
-          <li><b>Network:</b> its scripts make HTTP requests (hosts named: <code>esm.sh</code>, <code>youruser.github.io</code>, <code>muthuishere.github.io</code>).</li>
+          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>esm.sh</code>.</li>
           <li><b>License:</b> <a href="https://github.com/muthuishere/hand-drawn-diagrams/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install hand-drawn-diagrams</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/muthuishere/hand-drawn-diagrams --skill hand-drawn-diagrams</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>mkdir -p .claude/skills
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/muthuishere/hand-drawn-diagrams</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">mkdir -p .claude/skills
 git clone --depth 1 https://github.com/muthuishere/hand-drawn-diagrams.git .claude/skills/hand-drawn-diagrams
 rm -rf .claude/skills/hand-drawn-diagrams/.git</code></pre>
+        </div>
         <p>For Codex, the skills CLI line above installs it.</p>
         <p class="muted">muthuishere/hand-drawn-diagrams is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
@@ -201,7 +205,7 @@ rm -rf .claude/skills/hand-drawn-diagrams/.git</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>hand-drawn-diagrams passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>hand-drawn-diagrams passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -241,12 +245,12 @@ rm -rf .claude/skills/hand-drawn-diagrams/.git</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More video, image and audio skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../anthropics/skills/algorithmic-art/"><b>algorithmic-art</b><span>anthropics/skills</span></a>
-          <a class="link-row" href="../../../bria-ai/bria-skill/automotive/"><b>automotive</b><span>Bria-AI/bria-skill</span></a>
-          <a class="link-row" href="../../../gooseworks-ai/goose-skills/create-creator-takes-h3/"><b>create-creator-takes-h3</b><span>gooseworks-ai/goose-skills</span></a>
-          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/architecture-diagram-creator/"><b>architecture-diagram-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
-          <a class="link-row" href="../../../bitwize-music-studio/claude-ai-music-skills/import-audio/"><b>import-audio</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
-          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/blog-audio/"><b>blog-audio</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
+          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/flowchart-creator/"><b>flowchart-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../../../bitwize-music-studio/claude-ai-music-skills/pre-generation-check/"><b>pre-generation-check</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/blog-image/"><b>blog-image</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
+          <a class="link-row" href="../../../swarmclawai/swarmclaw/nano-banana-pro/"><b>nano-banana-pro</b><span>swarmclawai/swarmclaw</span></a>
+          <a class="link-row" href="../../../minimax-ai/skills/vision-analysis/"><b>vision-analysis</b><span>MiniMax-AI/skills</span></a>
+          <a class="link-row" href="../../../alisa0808/vibe-creating-skill/vibe-creating-prompt/"><b>vibe-creating-prompt</b><span>Alisa0808/vibe-creating-skill</span></a>
         </div>
         <p><a href="../../../media-creative/">All video, image, audio and creative skills</a></p>
       </section>

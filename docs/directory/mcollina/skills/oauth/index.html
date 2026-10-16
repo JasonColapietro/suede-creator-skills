@@ -143,27 +143,34 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials named in its files:</b> <code>CLIENT_SECRET</code>. Expect to supply this key before it can run.</li>
+          <li><b>Credential names SKILL.md mentions:</b> <code>CLIENT_SECRET</code>. SKILL.md says when, or whether, each one is needed.</li>
           <li><b>License:</b> <a href="https://github.com/mcollina/skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install oauth</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/mcollina/skills --skill oauth</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/mcollina/skills/tree/main/skills/oauth</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/skills/skills/oauth&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/oauth&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo mcollina/skills \
     --path skills/oauth</code></pre>
+        </div>
         <p class="muted">mcollina/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -195,7 +202,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>oauth passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>oauth passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -235,12 +242,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More security skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../trailofbits/skills/audit-augmentation/"><b>audit-augmentation</b><span>trailofbits/skills</span></a>
-          <a class="link-row" href="../../../avelikiy/great-cto/secrets-rotation/"><b>secrets-rotation</b><span>avelikiy/great_cto</span></a>
-          <a class="link-row" href="../../../tencent/ai-infra-guard/tool-abuse-detection/"><b>tool-abuse-detection</b><span>Tencent/AI-Infra-Guard</span></a>
-          <a class="link-row" href="../../../getsentry/skills/security-review/"><b>security-review</b><span>getsentry/skills</span></a>
-          <a class="link-row" href="../../../trailofbits/skills/crypto-protocol-diagram/"><b>crypto-protocol-diagram</b><span>trailofbits/skills</span></a>
-          <a class="link-row" href="../../../google/skills/iam-helper-for-privileged-access-management/"><b>iam-helper-for-privileged-access-management</b><span>google/skills</span></a>
+          <a class="link-row" href="../../../firebase/skills/firebase-security-rules-auditor/"><b>firebase-security-rules-auditor</b><span>firebase/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/trailmark-finding-triage/"><b>trailmark-finding-triage</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../getsentry/skills/django-access-review/"><b>django-access-review</b><span>getsentry/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/agentic-actions-auditor/"><b>agentic-actions-auditor</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/yara-rule-authoring/"><b>yara-rule-authoring</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../getsentry/skills/gha-security-review/"><b>gha-security-review</b><span>getsentry/skills</span></a>
         </div>
         <p><a href="../../../security/">All security skills</a></p>
       </section>

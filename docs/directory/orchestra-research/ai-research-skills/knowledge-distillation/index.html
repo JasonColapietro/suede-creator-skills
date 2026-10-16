@@ -143,27 +143,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>License:</b> <a href="https://github.com/Orchestra-Research/AI-Research-SKILLs/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install knowledge-distillation</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill knowledge-distillation</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/Orchestra-Research/AI-Research-SKILLs.git &quot;$tmp/AI-Research-SKILLs&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs/tree/main/19-emerging-techniques/knowledge-distillation</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/Orchestra-Research/AI-Research-SKILLs.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/AI-Research-SKILLs/19-emerging-techniques/knowledge-distillation&quot; .claude/skills/
+cp -R &quot;$tmp/repo/19-emerging-techniques/knowledge-distillation&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo Orchestra-Research/AI-Research-SKILLs \
     --path 19-emerging-techniques/knowledge-distillation</code></pre>
+        </div>
         <p class="muted">Orchestra-Research/AI-Research-SKILLs is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -200,7 +206,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>knowledge-distillation passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>knowledge-distillation passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -240,12 +246,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More AI agent skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/conversation-analyzer/"><b>conversation-analyzer</b><span>mhattingpete/claude-skills-marketplace</span></a>
-          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/evaluation/"><b>evaluation</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
-          <a class="link-row" href="../../../necmttn/ax/ax-extract-workflow/"><b>ax-extract-workflow</b><span>Necmttn/ax</span></a>
-          <a class="link-row" href="../../../neolabhq/context-engineering-kit/subagent-driven-development/"><b>subagent-driven-development</b><span>NeoLabHQ/context-engineering-kit</span></a>
           <a class="link-row" href="../../../hqhq1025/skill-optimizer/skill-miner/"><b>skill-miner</b><span>hqhq1025/skill-optimizer</span></a>
           <a class="link-row" href="../../../huggingface/skills/train-sentence-transformers/"><b>train-sentence-transformers</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../../../ohad6k/emulo/mine/"><b>mine</b><span>ohad6k/emulo</span></a>
+          <a class="link-row" href="../../../swarmclawai/swarmclaw/coding-agent/"><b>coding-agent</b><span>swarmclawai/swarmclaw</span></a>
+          <a class="link-row" href="../../../nvidia/skills/physical-ai-video-data-augmentation/"><b>physical-ai-video-data-augmentation</b><span>NVIDIA/skills</span></a>
+          <a class="link-row" href="../../../replicate/skills/build-models/"><b>build-models</b><span>replicate/skills</span></a>
         </div>
         <p><a href="../../../ai-agents-llm/">All AI agent and LLM engineering skills</a></p>
       </section>

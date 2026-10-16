@@ -2521,6 +2521,15 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/gooseworks-ai/goose-skills/create-image-gpt-image-fal/index.html": [
+  "create-image-gpt-image-fal skill by gooseworks-ai",
+  "create-image-gpt-image-fal skill",
+  "create-image-gpt-image-fal agent skill",
+  "create-image-gpt-image-fal claude skill",
+  "gooseworks-ai skills",
+  "video image and audio agent skills",
+  "SKILL.md"
+ ],
  "directory/gooseworks-ai/goose-skills/index.html": [
   "gooseworks-ai/goose-skills skills",
   "goose-skills skills",
@@ -2528,15 +2537,6 @@
   "goose-skills claude skills",
   "video image and audio agent skills",
   "agent skills directory"
- ],
- "directory/gooseworks-ai/goose-skills/kol-engager-icp/index.html": [
-  "kol-engager-icp skill by gooseworks-ai",
-  "kol-engager-icp skill",
-  "kol-engager-icp agent skill",
-  "kol-engager-icp claude skill",
-  "gooseworks-ai skills",
-  "business and finance agent skills",
-  "SKILL.md"
  ],
  "directory/gooseworks-ai/goose-skills/meta-ad-manager/index.html": [
   "meta-ad-manager skill by gooseworks-ai",
@@ -6288,15 +6288,6 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
- "directory/sergebulaev/linkedin-skills/linkedin-engager-analytics/index.html": [
-  "linkedin-engager-analytics skill by sergebulaev",
-  "linkedin-engager-analytics skill",
-  "linkedin-engager-analytics agent skill",
-  "linkedin-engager-analytics claude skill",
-  "sergebulaev skills",
-  "marketing and SEO agent skills",
-  "SKILL.md"
- ],
  "directory/sergebulaev/linkedin-skills/linkedin-hook-extractor/index.html": [
   "linkedin-hook-extractor skill by sergebulaev",
   "linkedin-hook-extractor skill",
@@ -6347,15 +6338,6 @@
   "linkedin-repurposer skill",
   "linkedin-repurposer agent skill",
   "linkedin-repurposer claude skill",
-  "sergebulaev skills",
-  "marketing and SEO agent skills",
-  "SKILL.md"
- ],
- "directory/sergebulaev/linkedin-skills/linkedin-thread-monitor/index.html": [
-  "linkedin-thread-monitor skill by sergebulaev",
-  "linkedin-thread-monitor skill",
-  "linkedin-thread-monitor agent skill",
-  "linkedin-thread-monitor claude skill",
   "sergebulaev skills",
   "marketing and SEO agent skills",
   "SKILL.md"
@@ -6533,68 +6515,6 @@
   "swarmvault claude skill",
   "swarmclawai skills",
   "productivity agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/authorization-bypass-detection/index.html": [
-  "authorization-bypass-detection skill by Tencent",
-  "authorization-bypass-detection skill",
-  "authorization-bypass-detection agent skill",
-  "authorization-bypass-detection claude skill",
-  "Tencent skills",
-  "security agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/index.html": [
-  "Tencent/AI-Infra-Guard skills",
-  "AI-Infra-Guard skills",
-  "Tencent agent skills",
-  "AI-Infra-Guard claude skills",
-  "security agent skills",
-  "agent skills directory"
- ],
- "directory/tencent/ai-infra-guard/indirect-injection-detection/index.html": [
-  "indirect-injection-detection skill by Tencent",
-  "indirect-injection-detection skill",
-  "indirect-injection-detection agent skill",
-  "indirect-injection-detection claude skill",
-  "Tencent skills",
-  "security agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/memory-rag-poisoning-detection/index.html": [
-  "memory-rag-poisoning-detection skill by Tencent",
-  "memory-rag-poisoning-detection skill",
-  "memory-rag-poisoning-detection agent skill",
-  "memory-rag-poisoning-detection claude skill",
-  "Tencent skills",
-  "security agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/owasp-asi/index.html": [
-  "owasp-asi skill by Tencent",
-  "owasp-asi skill",
-  "owasp-asi agent skill",
-  "owasp-asi claude skill",
-  "Tencent skills",
-  "security agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/tool-abuse-detection/index.html": [
-  "tool-abuse-detection skill by Tencent",
-  "tool-abuse-detection skill",
-  "tool-abuse-detection agent skill",
-  "tool-abuse-detection claude skill",
-  "Tencent skills",
-  "security agent skills",
-  "SKILL.md"
- ],
- "directory/tencent/ai-infra-guard/web-exfiltration-detection/index.html": [
-  "web-exfiltration-detection skill by Tencent",
-  "web-exfiltration-detection skill",
-  "web-exfiltration-detection agent skill",
-  "web-exfiltration-detection claude skill",
-  "Tencent skills",
-  "security agent skills",
   "SKILL.md"
  ],
  "directory/testdino-hq/playwright-skill/index.html": [
@@ -7213,15 +7133,6 @@
   "varlock claude skill",
   "wrsmith108 skills",
   "security agent skills",
-  "SKILL.md"
- ],
- "directory/xquik-dev/x-twitter-scraper/xquik-mcp/index.html": [
-  "xquik-mcp skill by Xquik-dev",
-  "xquik-mcp skill",
-  "xquik-mcp agent skill",
-  "xquik-mcp claude skill",
-  "Xquik-dev skills",
-  "AI agent agent skills",
   "SKILL.md"
  ],
  "directory/ykdojo/claude-code-tips/hn-summarize/index.html": [

@@ -102,25 +102,25 @@
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
-        <p>Eight checks: six on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit in the last year. The first check is required; the grade counts the other seven.</p>
+        <p>Eight checks: six on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. The first check is required; the grade counts the other seven.</p>
         <div class="table-wrap">
           <table class="checks">
             <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
             <tbody>
-            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>3,002 of 3,002</td></tr>
-            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>3,002 of 3,002</td></tr>
-            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>2,891 of 3,002</td></tr>
-            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>2,994 of 3,002</td></tr>
-            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,224 of 3,002</td></tr>
-            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>2,932 of 3,002</td></tr>
-            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>3,002 of 3,002</td></tr>
-            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>3,002 of 3,002</td></tr>
+            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>2,980 of 2,980</td></tr>
+            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>2,980 of 2,980</td></tr>
+            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>2,869 of 2,980</td></tr>
+            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>2,972 of 2,980</td></tr>
+            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,210 of 2,980</td></tr>
+            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>2,910 of 2,980</td></tr>
+            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>2,980 of 2,980</td></tr>
+            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>2,980 of 2,980</td></tr>
             </tbody>
           </table>
         </div>
         <ul>
-          <li><b>Grade A</b>: all seven graded checks pass (2,035 listed skills).</li>
-          <li><b>Grade B</b>: six of seven pass (967 listed skills).</li>
+          <li><b>Grade A</b>: all seven graded checks pass (2,021 listed skills).</li>
+          <li><b>Grade B</b>: six of seven pass (959 listed skills).</li>
           <li>Grades C and below are not listed.</li>
         </ul>
         <p>The check confirms a skill is well-formed, licensed and maintained. Read its SKILL.md to confirm it fits your task.</p>
@@ -135,17 +135,20 @@
           <li>One listing per skill. A copy is the same skill name with a mostly matching description, or a description repeated word for word under another name. When copies appear in several repositories, the copy in the repository cited by the most lists keeps the listing.</li>
           <li>Skills are not listed when they:
             <ul>
-              <li>automate posting, messaging or account activity on a social platform;</li>
+              <li>automate posting, messaging or account activity on a social platform (skills that draft posts or replies for a person to approve are listed);</li>
               <li>work around a site's blocks, CAPTCHAs or official API;</li>
-              <li>have scraping a third-party site as their main job (a vendor's skills for its own service are listed);</li>
-              <li>look up an individual's email address, phone number or personal profiles.</li>
+              <li>have scraping a third-party site as their main job;</li>
+              <li>collect people's personal data by scraping a social network or map listings (skills that use licensed B2B data providers within their terms are listed).</li>
             </ul>
+            A vendor's skills for its own service are listed under the second and third rules. A repository whose product is one of these behaviors is left out as a whole.
           </li>
+          <li>Skills are also left out when their name or description trips the site's public-content filters: crypto promotion, adult content, jailbreaks, a short list of brand-safety terms including the name Telegram, and descriptions that carry an email address or phone number. Removals at an author's request, and skills whose text matches the pack's reserved-text guard, are recorded with their reason in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/directory/exclusions.json" target="_blank" rel="noopener">exclusions.json</a>.</li>
+          <li>Suede's own skills are catalogued separately on this site and pass the same rules; a test in the repository checks every one of them against the policy.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="pages-title">
         <h2 id="pages-title">Which skills get a full page</h2>
-        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. Each page carries a one-sentence summary written by the directory, a pre-install summary of the scripts, credentials and network calls found in the skill's files, install steps, and a README badge. 738 skills have a full page in this snapshot. A repository with a single listed skill is listed through that skill's page.</p>
+        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, environment variables and network use found in the skill's files, install steps, and a README badge. 729 skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
       </section>
       <section class="panel" aria-labelledby="cat-title">
         <h2 id="cat-title">Categories</h2>

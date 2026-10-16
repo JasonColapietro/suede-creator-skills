@@ -127,7 +127,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/cloudflare" target="_blank" rel="noopener">cloudflare</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/cloudflare" target="_blank" rel="noopener">Cloudflare</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">github.com/cloudflare/security-audit-skill</a></td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../security/">Security</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/cloudflare/security-audit-skill/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
@@ -142,28 +142,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 4 script files (4 JavaScript). Your agent may run them, so read them first.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
-          <li><b>Network:</b> no HTTP calls found in its scripts.</li>
           <li><b>License:</b> <a href="https://github.com/cloudflare/security-audit-skill/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install security-audit</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/cloudflare/security-audit-skill.git &quot;$tmp/security-audit-skill&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/cloudflare/security-audit-skill/tree/main/skills/security-audit</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/cloudflare/security-audit-skill.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/security-audit-skill/skills/security-audit&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/security-audit&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo cloudflare/security-audit-skill \
     --path skills/security-audit</code></pre>
+        </div>
         <p class="muted">cloudflare/security-audit-skill is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -218,7 +223,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>security-audit passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>security-audit passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -258,12 +263,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More security skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../wrsmith108/varlock-claude-skill/varlock/"><b>varlock</b><span>wrsmith108/varlock-claude-skill</span></a>
-          <a class="link-row" href="../../../firebase/skills/firebase-security-rules-auditor/"><b>firebase-security-rules-auditor</b><span>firebase/skills</span></a>
-          <a class="link-row" href="../../../trailofbits/skills/trailmark-finding-triage/"><b>trailmark-finding-triage</b><span>trailofbits/skills</span></a>
-          <a class="link-row" href="../../../tencent/ai-infra-guard/indirect-injection-detection/"><b>indirect-injection-detection</b><span>Tencent/AI-Infra-Guard</span></a>
-          <a class="link-row" href="../../../getsentry/skills/gha-security-review/"><b>gha-security-review</b><span>getsentry/skills</span></a>
-          <a class="link-row" href="../../../trailofbits/skills/audit-augmentation/"><b>audit-augmentation</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../getsentry/skills/security-review/"><b>security-review</b><span>getsentry/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/crypto-protocol-diagram/"><b>crypto-protocol-diagram</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../google/skills/iam-helper-for-privileged-access-management/"><b>iam-helper-for-privileged-access-management</b><span>google/skills</span></a>
+          <a class="link-row" href="../../../getsentry/skills/skill-scanner/"><b>skill-scanner</b><span>getsentry/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/graph-evolution/"><b>graph-evolution</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../mcollina/skills/oauth/"><b>oauth</b><span>mcollina/skills</span></a>
         </div>
         <p><a href="../../../security/">All security skills</a></p>
       </section>

@@ -137,27 +137,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>License:</b> <a href="https://github.com/socai-io/jev-social/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install jev-social</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/socai-io/jev-social --skill jev-social</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/socai-io/jev-social.git &quot;$tmp/jev-social&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/socai-io/jev-social/tree/main/skills/jev-social</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/socai-io/jev-social.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/jev-social/skills/jev-social&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/jev-social&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo socai-io/jev-social \
     --path skills/jev-social</code></pre>
+        </div>
         <p class="muted">socai-io/jev-social is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -183,7 +189,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>jev-social passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>jev-social passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -223,12 +229,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More marketing and SEO skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../agricidaniel/claude-seo/seo-flow/"><b>seo-flow</b><span>AgriciDaniel/claude-seo</span></a>
-          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/blog-google/"><b>blog-google</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
-          <a class="link-row" href="../../../nowork-studio/notfair/content-writer/"><b>content-writer</b><span>nowork-studio/NotFair</span></a>
-          <a class="link-row" href="../../../nowork-studio/notfair/keyword-research/"><b>keyword-research</b><span>nowork-studio/NotFair</span></a>
-          <a class="link-row" href="../../../realkimbarrett/advertising-skills/conversion-path-builder/"><b>conversion-path-builder</b><span>realkimbarrett/advertising-skills</span></a>
-          <a class="link-row" href="../../../realkimbarrett/advertising-skills/schwartz-awareness-mapper/"><b>schwartz-awareness-mapper</b><span>realkimbarrett/advertising-skills</span></a>
+          <a class="link-row" href="../../../agricidaniel/claude-seo/seo-hreflang/"><b>seo-hreflang</b><span>AgriciDaniel/claude-seo</span></a>
+          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/content-brief/"><b>content-brief</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
+          <a class="link-row" href="../../../nowork-studio/notfair/geo-optimizer/"><b>geo-optimizer</b><span>nowork-studio/NotFair</span></a>
+          <a class="link-row" href="../../../wondelai/skills/contagious/"><b>contagious</b><span>wondelai/skills</span></a>
+          <a class="link-row" href="../../../realkimbarrett/advertising-skills/headline-matrix/"><b>headline-matrix</b><span>realkimbarrett/advertising-skills</span></a>
+          <a class="link-row" href="../../../coreyhaines31/marketingskills/ab-testing/"><b>ab-testing</b><span>coreyhaines31/marketingskills</span></a>
         </div>
         <p><a href="../../../marketing-seo/">All marketing and SEO skills</a></p>
       </section>

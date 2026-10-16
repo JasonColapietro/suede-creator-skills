@@ -133,7 +133,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/replicate" target="_blank" rel="noopener">replicate</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/replicate" target="_blank" rel="noopener">Replicate</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">replicate/skills</a> (7 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../media-creative/">Video, Image, Audio and Creative</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/replicate/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a></td></tr>
@@ -148,27 +148,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>License:</b> <a href="https://github.com/replicate/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install prompt-videos</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/replicate/skills --skill prompt-videos</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/replicate/skills.git &quot;$tmp/skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/replicate/skills/tree/main/skills/prompt-videos</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/replicate/skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/skills/skills/prompt-videos&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/prompt-videos&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo replicate/skills \
     --path skills/prompt-videos</code></pre>
+        </div>
         <p class="muted">replicate/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -204,7 +210,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>prompt-videos passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>prompt-videos passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -244,12 +250,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More video, image and audio skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../gooseworks-ai/goose-skills/render-proof-points-overlay/"><b>render-proof-points-overlay</b><span>gooseworks-ai/goose-skills</span></a>
-          <a class="link-row" href="../../../bitwize-music-studio/claude-ai-music-skills/album-dashboard/"><b>album-dashboard</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
-          <a class="link-row" href="../../../huangchihhungleo/claude-real-video/claude-real-video/"><b>claude-real-video</b><span>HUANGCHIHHUNGLeo/claude-real-video</span></a>
-          <a class="link-row" href="../../../orkas-ai/orkas-videostudio/stage-consistency/"><b>stage-consistency</b><span>Orkas-AI/Orkas-VideoStudio</span></a>
-          <a class="link-row" href="../../../minimax-ai/skills/gif-sticker-maker/"><b>gif-sticker-maker</b><span>MiniMax-AI/skills</span></a>
-          <a class="link-row" href="../../../anthropics/skills/canvas-design/"><b>canvas-design</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../../../gooseworks-ai/goose-skills/render-hook-replacement/"><b>render-hook-replacement</b><span>gooseworks-ai/goose-skills</span></a>
+          <a class="link-row" href="../../../bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/"><b>album-conceptualizer</b><span>bitwize-music-studio/claude-ai-music-skills</span></a>
+          <a class="link-row" href="../../../csthink/dashmotion/dashmotion/"><b>dashmotion</b><span>csthink/dashmotion</span></a>
+          <a class="link-row" href="../../../orkas-ai/orkas-videostudio/gate-control/"><b>gate-control</b><span>Orkas-AI/Orkas-VideoStudio</span></a>
+          <a class="link-row" href="../../../tt-a1i/archify/archify/"><b>archify</b><span>tt-a1i/archify</span></a>
+          <a class="link-row" href="../../../anthropics/skills/algorithmic-art/"><b>algorithmic-art</b><span>anthropics/skills</span></a>
         </div>
         <p><a href="../../../media-creative/">All video, image, audio and creative skills</a></p>
       </section>

@@ -10,7 +10,7 @@
     "intro": "Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.",
     "guide": [
       "Start from the system you are building. Skills for a specific framework or model provider carry that provider's conventions, so they beat general prompting advice when you already know your stack.",
-      "Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the credentials and scripts its files mention.",
+      "Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the scripts it bundles and the environment variables its code reads.",
       "For agent workflow skills (planning, subagents, review loops), read the SKILL.md body first. They change how your agent works on every task, so pick one method and stay with it rather than stacking overlapping ones."
     ]
   },
@@ -54,7 +54,7 @@
     "meta": "Product management skills for Claude Code and Codex: PRDs, discovery interviews, roadmaps, OKRs, prioritization and strategy frameworks.",
     "intro": "Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask.",
     "guide": [
-      "Product skills are mostly frameworks in Markdown: no scripts, no credentials. That makes them safe to try, and the real test is whether the template matches how your team writes documents.",
+      "Most product skills are frameworks in Markdown, so they are quick to try; the scripts line on each page shows the few that bundle code. The real test is whether the template matches how your team writes documents.",
       "Several large PM collections cover the same ground (PRDs, interviews, OKRs). Pick the collection whose structure fits your process and install it whole, so its skills hand work to each other cleanly.",
       "Check the license on each page. A few product collections use Creative Commons non-commercial terms, and the directory flags those next to the install commands."
     ]
@@ -70,7 +70,7 @@
     "intro": "Skills for scientific and academic work: bioinformatics, chemistry, materials, literature search and research statistics. They give an agent the domain procedures and library knowledge a lab or research team would otherwise explain in every prompt.",
     "guide": [
       "Most science skills wrap a specific library or database. Choose by the tool your lab already uses, and check the bundled scripts list on each page, since these skills often run Python against your data.",
-      "Database and literature skills may need an API key for the service they query. The Before you install panel shows the credentials each skill's files name.",
+      "Database and literature skills may need an API key for the service they query. The Before you install panel shows the environment variables each skill's code reads.",
       "Treat outputs as a starting analysis. The skills encode procedure; your data, controls and domain judgment decide whether a result holds."
     ]
   },
@@ -85,7 +85,7 @@
     "intro": "Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.",
     "guide": [
       "Prefer the platform's own skills. Cloud and infrastructure vendors publish skills that follow their current CLI and API, and the directory marks them Official.",
-      "These skills act on real infrastructure. Check the tool permissions and credentials listed under Before you install, and run them first against a staging account.",
+      "These skills act on real infrastructure. Check the tool permissions and environment variables listed under Before you install, and run them first against a staging account.",
       "For infrastructure as code, keep the skill and your module versions in step; a skill written for an older provider version can suggest arguments that no longer exist."
     ]
   },
@@ -99,7 +99,7 @@
     "meta": "Video, image and audio skills for Claude Code and Codex: video production, image generation and editing, music, voice, diagrams and generative art.",
     "intro": "Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.",
     "guide": [
-      "Separate the skills that generate media through a hosted model from the ones that edit files locally. Hosted ones list an API key under Before you install, and usage is billed by that provider.",
+      "Separate the skills that generate media through a hosted model from the ones that edit files locally. Hosted ones usually read an API key, shown under Before you install, and usage is billed by that provider.",
       "Local editing skills usually call tools such as FFmpeg or a rendering library from bundled scripts. Check the scripts list and make sure those tools are installed.",
       "For brand work, pick skills that accept your own assets and specs as input, so results stay consistent across a campaign."
     ]
@@ -114,9 +114,9 @@
     "meta": "Productivity skills for Claude Code and Codex: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.",
     "intro": "Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.",
     "guide": [
-      "Workspace skills act on your accounts. Check which credentials and tool permissions a skill needs before you install it, and prefer ones that read before they write.",
+      "Workspace skills act on your accounts. Check the tool permissions and environment variables listed on each page before you install, and prefer skills that read before they write.",
       "Thinking and planning skills are plain Markdown with no scripts, so they are the quickest to try and the easiest to adapt to your own process.",
-      "If a skill connects through an MCP server, the Before you install panel names it; install and authorize that server first."
+      "When a skill works through an MCP server, its Before you install panel says so; set up and authorize that server before you run the skill."
     ]
   },
   {
@@ -131,7 +131,7 @@
     "guide": [
       "Payment and commerce skills from the platform vendors follow the vendor's current API; check the Official tag and use test-mode keys first.",
       "Finance and legal skills structure analysis and drafts. Keep a qualified person's review in the loop for anything that commits money or signs an agreement.",
-      "Sales skills vary between pure playbooks and ones that call a paid data provider. The credentials list on each page tells you which is which."
+      "Sales skills range from pure playbooks to ones that call a licensed data provider. The Before you install panel shows which ones read a provider's API key."
     ]
   },
   {
@@ -146,7 +146,7 @@
     "guide": [
       "Pick by test runner. A skill written for your framework (Playwright, Jest, pytest and so on) produces tests that run in your CI without translation.",
       "Debugging skills that prescribe a method, such as reproducing first and tracing to the root cause, pay off across every task, not just one.",
-      "Browser and device-cloud skills may need a vendor account; the Before you install panel lists the keys their files name."
+      "Browser and device-cloud skills may need a vendor account; the Before you install panel lists the environment variables their code reads."
     ]
   },
   {
@@ -160,7 +160,7 @@
     "intro": "Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions.",
     "guide": [
       "Start with the vendor's own skill for the database you run. It knows the dialect, the limits and the migration tooling that generic SQL advice gets wrong.",
-      "Skills that connect to a live database list their credentials under Before you install. Give them a read-only role until you trust their output.",
+      "Skills that connect to a live database show the variables they read under Before you install. Give them a read-only role until you trust their output.",
       "For analytics, check whether a skill produces a query, a chart or a report, and pick the one whose output drops into your existing workflow."
     ]
   },

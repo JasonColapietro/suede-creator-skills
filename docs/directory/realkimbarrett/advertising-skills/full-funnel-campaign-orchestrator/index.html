@@ -143,27 +143,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>License:</b> <a href="https://github.com/realkimbarrett/advertising-skills/blob/main/skills/orchestrators/full-funnel-campaign-orchestrator/SKILL.md" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install full-funnel-campaign-orchestrator</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/realkimbarrett/advertising-skills --skill full-funnel-campaign-orchestrator</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/realkimbarrett/advertising-skills.git &quot;$tmp/advertising-skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/orchestrators/full-funnel-campaign-orchestrator</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/realkimbarrett/advertising-skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/advertising-skills/skills/orchestrators/full-funnel-campaign-orchestrator&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/orchestrators/full-funnel-campaign-orchestrator&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo realkimbarrett/advertising-skills \
     --path skills/orchestrators/full-funnel-campaign-orchestrator</code></pre>
+        </div>
         <p class="muted">realkimbarrett/advertising-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -181,7 +187,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>full-funnel-campaign-orchestrator passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>full-funnel-campaign-orchestrator passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -221,12 +227,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More marketing and SEO skills</h2>
         <div class="links">
+          <a class="link-row" href="../../../coreyhaines31/marketingskills/community-marketing/"><b>community-marketing</b><span>coreyhaines31/marketingskills</span></a>
+          <a class="link-row" href="../../../sergebulaev/linkedin-skills/linkedin-profile-optimizer/"><b>linkedin-profile-optimizer</b><span>sergebulaev/linkedin-skills</span></a>
           <a class="link-row" href="../../../gooseworks-ai/goose-skills/meta-ads-analyzer/"><b>meta-ads-analyzer</b><span>gooseworks-ai/goose-skills</span></a>
           <a class="link-row" href="../../../inhouseseo/superseo-skills/page-audit/"><b>page-audit</b><span>inhouseseo/superseo-skills</span></a>
           <a class="link-row" href="../../../agricidaniel/claude-seo/seo-cluster/"><b>seo-cluster</b><span>AgriciDaniel/claude-seo</span></a>
           <a class="link-row" href="../../../agricidaniel/claude-seo/seo-plan/"><b>seo-plan</b><span>AgriciDaniel/claude-seo</span></a>
-          <a class="link-row" href="../../../mailtrap/mailtrap-skills/managing-contacts/"><b>managing-contacts</b><span>mailtrap/mailtrap-skills</span></a>
-          <a class="link-row" href="../../../nowork-studio/notfair/google-ads-copy/"><b>google-ads-copy</b><span>nowork-studio/NotFair</span></a>
         </div>
         <p><a href="../../../marketing-seo/">All marketing and SEO skills</a></p>
       </section>

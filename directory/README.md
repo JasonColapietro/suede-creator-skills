@@ -8,7 +8,8 @@ Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directo
 | `labels.json` | The editorial layer: a category for every skill and a one-sentence summary, in the directory's own words, for skills with a page | Reviewed by hand or by an agent, keyed by skill id |
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests; read on the next refresh even when no curated list cites them | Hand-written |
-| `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
+| `notes.json` | Install routes a publisher documents for a skill whose license restricts copying, shown on that skill's page with a link to the source | Hand-written |
+| `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
 
 ## Commands
 

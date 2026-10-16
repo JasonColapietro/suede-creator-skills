@@ -143,28 +143,34 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>Tool permissions requested:</b> <code>Read, Glob, Grep, bitwize-music-mcp</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE" target="_blank" rel="noopener">CC0-1.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install pre-generation-check</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills --skill pre-generation-check</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git &quot;$tmp/claude-ai-music-skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/pre-generation-check</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/bitwize-music-studio/claude-ai-music-skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/claude-ai-music-skills/skills/pre-generation-check&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/pre-generation-check&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo bitwize-music-studio/claude-ai-music-skills \
     --path skills/pre-generation-check</code></pre>
+        </div>
         <p class="muted">bitwize-music-studio/claude-ai-music-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -198,7 +204,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>pre-generation-check passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>pre-generation-check passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -238,12 +244,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More video, image and audio skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../swarmclawai/swarmclaw/nano-banana-pro/"><b>nano-banana-pro</b><span>swarmclawai/swarmclaw</span></a>
-          <a class="link-row" href="../../../minimax-ai/skills/vision-analysis/"><b>vision-analysis</b><span>MiniMax-AI/skills</span></a>
-          <a class="link-row" href="../../../alisa0808/vibe-creating-skill/vibe-creating-prompt/"><b>vibe-creating-prompt</b><span>Alisa0808/vibe-creating-skill</span></a>
-          <a class="link-row" href="../../../bria-ai/bria-skill/image-utils/"><b>image-utils</b><span>Bria-AI/bria-skill</span></a>
-          <a class="link-row" href="../../../gooseworks-ai/goose-skills/render-chatgpt-chat/"><b>render-chatgpt-chat</b><span>gooseworks-ai/goose-skills</span></a>
-          <a class="link-row" href="../../../agricidaniel/claude-seo/seo-image-gen/"><b>seo-image-gen</b><span>AgriciDaniel/claude-seo</span></a>
+          <a class="link-row" href="../../../minimax-ai/skills/minimax-music-playlist/"><b>minimax-music-playlist</b><span>MiniMax-AI/skills</span></a>
+          <a class="link-row" href="../../../anthropics/skills/canvas-design/"><b>canvas-design</b><span>anthropics/skills</span></a>
+          <a class="link-row" href="../../../bria-ai/bria-skill/bria-ai/"><b>bria-ai</b><span>Bria-AI/bria-skill</span></a>
+          <a class="link-row" href="../../../gooseworks-ai/goose-skills/create-image-fal/"><b>create-image-fal</b><span>gooseworks-ai/goose-skills</span></a>
+          <a class="link-row" href="../../../mhattingpete/claude-skills-marketplace/architecture-diagram-creator/"><b>architecture-diagram-creator</b><span>mhattingpete/claude-skills-marketplace</span></a>
+          <a class="link-row" href="../../../infrasity-labs/dev-gtm-claude-skills/blog-audio/"><b>blog-audio</b><span>infrasity-labs/dev-gtm-claude-skills</span></a>
         </div>
         <p><a href="../../../media-creative/">All video, image, audio and creative skills</a></p>
       </section>

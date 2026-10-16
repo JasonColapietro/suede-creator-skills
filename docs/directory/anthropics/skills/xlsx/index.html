@@ -133,7 +133,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/anthropics" target="_blank" rel="noopener">anthropics</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/anthropics" target="_blank" rel="noopener">Anthropic</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">anthropics/skills</a> (17 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../documents-office/">Documents and Office Files</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/anthropics/skills/blob/main/skills/xlsx/LICENSE.txt" target="_blank" rel="noopener">Proprietary</a></td></tr>
@@ -148,17 +148,22 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 12 script files (12 Python). Your agent may run them, so read them first.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
-          <li><b>Network:</b> no HTTP calls found in its scripts.</li>
           <li><b>License:</b> <a href="https://github.com/anthropics/skills/blob/main/skills/xlsx/LICENSE.txt" target="_blank" rel="noopener">Proprietary</a>. Its terms restrict copying the files; read them before you use the skill.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">How to use xlsx</h2>
-        <p>anthropics publishes xlsx under its own license terms, which restrict copying the files. Read the <a href="https://github.com/anthropics/skills/blob/main/skills/xlsx/LICENSE.txt" target="_blank" rel="noopener">license</a> for how the publisher makes the skill available.</p>
+        <p>Anthropic publishes xlsx under its own license terms, which restrict copying the files.</p>
+        <p>Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code</span><button type="button" class="snippet-copy" data-copy-target="install-publisher">Copy</button></div>
+          <pre><code id="install-publisher">/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills</code></pre>
+        </div>
+        <p class="muted">Source: <a href="https://github.com/anthropics/skills/blob/main/README.md" target="_blank" rel="noopener">Anthropic's documentation</a>.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
@@ -207,7 +212,7 @@
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>xlsx passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>xlsx passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">

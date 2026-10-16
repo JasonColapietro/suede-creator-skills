@@ -1,6 +1,9 @@
 {
  "repositories": [],
  "skills": [
-  "salespeak-ai/buyer-eval-skill/buyer-eval-skill"
+  {
+   "id": "salespeak-ai/buyer-eval-skill/buyer-eval-skill",
+   "reason": "Its description matches the pack's reserved-text guard (scripts/reserved-signatures.json), which every file published from this repository must pass."
+  }
  ]
 }

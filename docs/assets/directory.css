@@ -62,8 +62,10 @@
 .dir-card-text { font-size: 14px; color: var(--muted); line-height: 1.5; }
 .count-chip { font-family: var(--mono); font-size: 12px; color: var(--gold); }
 
+.facts { table-layout: fixed; }
 .facts th { width: 180px; color: var(--muted); font-weight: 500; }
-.facts td { overflow-wrap: break-word; }
+.facts td { overflow-wrap: anywhere; }
+.facts code { white-space: normal; word-break: break-all; }
 .checks td.pass { color: var(--gold); font-weight: 600; }
 .checks td.miss { color: var(--red-text); font-weight: 600; }
 

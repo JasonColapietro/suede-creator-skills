@@ -133,7 +133,7 @@
         <div class="table-wrap">
           <table class="facts">
             <tbody>
-            <tr><th scope="row">Publisher</th><td><a href="https://github.com/getsentry" target="_blank" rel="noopener">getsentry</a> <span class="tag">Official</span></td></tr>
+            <tr><th scope="row">Publisher</th><td><a href="https://github.com/getsentry" target="_blank" rel="noopener">Sentry</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">getsentry/skills</a> (29 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../security/">Security</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/getsentry/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a></td></tr>
@@ -148,28 +148,34 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>Tool permissions requested:</b> <code>Read Grep Glob Bash Task</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/getsentry/skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install django-access-review</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/getsentry/skills --skill django-access-review</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/getsentry/skills.git &quot;$tmp/skills&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/getsentry/skills/tree/main/skills/django-access-review</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/getsentry/skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/skills/skills/django-access-review&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/django-access-review&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo getsentry/skills \
     --path skills/django-access-review</code></pre>
+        </div>
         <p class="muted">getsentry/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -209,7 +215,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>django-access-review passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>django-access-review passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -249,12 +255,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More security skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../tencent/ai-infra-guard/web-exfiltration-detection/"><b>web-exfiltration-detection</b><span>Tencent/AI-Infra-Guard</span></a>
+          <a class="link-row" href="../../../mcollina/skills/oauth/"><b>oauth</b><span>mcollina/skills</span></a>
           <a class="link-row" href="../../../trailofbits/skills/codeql/"><b>codeql</b><span>trailofbits/skills</span></a>
           <a class="link-row" href="../../../google/skills/assuredworkloads-environment-assessor/"><b>assuredworkloads-environment-assessor</b><span>google/skills</span></a>
-          <a class="link-row" href="../../../tencent/ai-infra-guard/tool-abuse-detection/"><b>tool-abuse-detection</b><span>Tencent/AI-Infra-Guard</span></a>
-          <a class="link-row" href="../../../trailofbits/skills/audit-augmentation/"><b>audit-augmentation</b><span>trailofbits/skills</span></a>
-          <a class="link-row" href="../../../avelikiy/great-cto/secrets-rotation/"><b>secrets-rotation</b><span>avelikiy/great_cto</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/agentic-actions-auditor/"><b>agentic-actions-auditor</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../trailofbits/skills/yara-rule-authoring/"><b>yara-rule-authoring</b><span>trailofbits/skills</span></a>
+          <a class="link-row" href="../../../redis/agent-skills/redis-security/"><b>redis-security</b><span>redis/agent-skills</span></a>
         </div>
         <p><a href="../../../security/">All security skills</a></p>
       </section>

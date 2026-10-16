@@ -40,7 +40,7 @@
           "@type": "SoftwareSourceCode",
           "name": "job-application-agent",
           "description": "Finds, evaluates, fills, submits, and tracks a candidate's own job applications using a verified resume, evidence-based targeting, secure local profile storage, and browser automation.",
-          "codeRepository": "https://github.com/vaibhavarora14/job-application-agent/tree/main/job-application-agent",
+          "codeRepository": "https://github.com/vaibhavarora14/job-application-agent/tree/main/skills/job-application-agent",
           "programmingLanguage": "Markdown",
           "license": "https://github.com/vaibhavarora14/job-application-agent/blob/main/LICENSE",
           "dateModified": "2026-10-16",
@@ -116,7 +116,7 @@
       <h1>job-application-agent <span class="h1-sub">agent skill</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../business-finance/">Business, Sales and Finance</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">job-application-agent</span></nav>
       <p class="lead">Finds, evaluates, fills, submits, and tracks a candidate's own job applications using a verified resume, evidence-based targeting, secure local profile storage, and browser automation.</p>
-      <p><a class="button" href="https://github.com/vaibhavarora14/job-application-agent/tree/main/job-application-agent" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/vaibhavarora14/job-application-agent/blob/main/job-application-agent/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <p><a class="button" href="https://github.com/vaibhavarora14/job-application-agent/tree/main/skills/job-application-agent" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/vaibhavarora14/job-application-agent/blob/main/skills/job-application-agent/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
         <div class="table-wrap">
@@ -127,8 +127,8 @@
             <tr><th scope="row">Category</th><td><a href="../../../business-finance/">Business, Sales and Finance</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/vaibhavarora14/job-application-agent/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
             <tr><th scope="row">Last commit</th><td>October 16, 2026 (repository)</td></tr>
-            <tr><th scope="row">SKILL.md</th><td>155 lines, 2,508 words</td></tr>
-            <tr><th scope="row">Bundled files</th><td>79 files, including references, scripts</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>120 lines, 2,089 words</td></tr>
+            <tr><th scope="row">Bundled files</th><td>1 file</td></tr>
             <tr><th scope="row">Suede Skill Check</th><td><span class="grade grade-a" title="Suede Skill Check grade A">A</span> <a href="#check">Passes all eight checks</a></td></tr>
             <tr><th scope="row">README badge</th><td><a href="#badge">Get the badge for this listing</a></td></tr>
             </tbody>
@@ -137,45 +137,47 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
-          <li><b>Bundled scripts:</b> 53 script files (52 JavaScript, 1 PowerShell). Your agent may run them, so read them first.</li>
-          <li><b>Credentials named in its files:</b> <code>ATTENTION_NOTIFY_SECRET</code>, <code>ATTENTION_NOVNC_PASSWORD</code>, <code>FREE_AI_API_KEY</code>, <code>CAPTCHA_VENDOR_API_KEY</code>, <code>FAKE_TOKEN</code>, <code>STATE_TOKEN</code>. Expect to supply these keys before it can run.</li>
-          <li><b>Network:</b> its scripts make HTTP requests (hosts named: <code>jobs.ashbyhq.com</code>, <code>jobappagent.com</code>, <code>linkedin.com</code>, <code>company.example</code>).</li>
+          <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
           <li><b>License:</b> <a href="https://github.com/vaibhavarora14/job-application-agent/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install job-application-agent</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/vaibhavarora14/job-application-agent --skill job-application-agent</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/vaibhavarora14/job-application-agent.git &quot;$tmp/job-application-agent&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/vaibhavarora14/job-application-agent/tree/main/skills/job-application-agent</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/vaibhavarora14/job-application-agent.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/job-application-agent/job-application-agent&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/job-application-agent&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo vaibhavarora14/job-application-agent \
-    --path job-application-agent</code></pre>
+    --path skills/job-application-agent</code></pre>
+        </div>
         <p class="muted">vaibhavarora14/job-application-agent is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
-        <blockquote class="author-quote" cite="https://github.com/vaibhavarora14/job-application-agent/blob/main/job-application-agent/SKILL.md">
+        <blockquote class="author-quote" cite="https://github.com/vaibhavarora14/job-application-agent/blob/main/skills/job-application-agent/SKILL.md">
           <p>Finds, evaluates, fills, submits, and tracks a candidate's own job applications using a verified resume, evidence-based targeting, secure local profile storage, and browser automation. Use for onboarding or migrating a job-search profile, searching active roles, assessing a posting, applying to an authorized URL or batch, recording outcomes, or reviewing application effectiveness.</p>
         </blockquote>
-        <p class="muted">From the <code>description</code> field of <a href="https://github.com/vaibhavarora14/job-application-agent/blob/main/job-application-agent/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+        <p class="muted">From the <code>description</code> field of <a href="https://github.com/vaibhavarora14/job-application-agent/blob/main/skills/job-application-agent/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
 
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
           <li class="lvl-2">Stay current</li>
           <li class="lvl-2">Initialize or migrate</li>
-          <li class="lvl-2">Optional outreach companion</li>
-          <li class="lvl-2">Accounting</li>
           <li class="lvl-2">Discover and assess</li>
-          <li class="lvl-2">Optional LLM assist</li>
           <li class="lvl-2">Apply</li>
           <li class="lvl-2">Outcomes and reviews</li>
           <li class="lvl-2">Commands</li>
@@ -183,35 +185,11 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <h3>Files in the skill folder</h3>
         <ul class="file-list">
           <li><code>SKILL.md</code></li>
-          <li><code>capabilities.json</code></li>
-          <li><code>fixtures/README.md</code></li>
-          <li><code>fixtures/ashby/confirmation.html</code></li>
-          <li><code>fixtures/ashby/index.html</code></li>
-          <li><code>fixtures/greenhouse/confirmation.html</code></li>
-          <li><code>fixtures/greenhouse/index.html</code></li>
-          <li><code>fixtures/lever/confirmation.html</code></li>
-          <li><code>fixtures/lever/index.html</code></li>
-          <li><code>fixtures/test-jobs.json</code></li>
-          <li><code>platforms.json</code></li>
-          <li><code>references/ACCOUNTING.md</code></li>
-          <li><code>references/ANALYTICS.md</code></li>
-          <li><code>references/APPLICATION_GUIDANCE.md</code></li>
-          <li><code>references/AUTONOMY.md</code></li>
-          <li><code>references/BROWSER_UPLOADS.md</code></li>
-          <li><code>references/CLOUD_STATE.md</code></li>
-          <li><code>references/FREE_AI.md</code></li>
-          <li><code>references/OUTREACH.md</code></li>
-          <li><code>references/RUNS.md</code></li>
-          <li><code>references/SCHEMAS.md</code></li>
-          <li><code>references/SOURCES.json</code></li>
-          <li><code>references/SOURCES.md</code></li>
-          <li><code>references/VPS_CLIENTS.md</code></li>
         </ul>
-        <p class="muted">Showing 24 of 79 files. <a href="https://github.com/vaibhavarora14/job-application-agent/tree/main/job-application-agent" target="_blank" rel="noopener">Browse the folder on GitHub</a>.</p>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>job-application-agent passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>job-application-agent passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -251,12 +229,9 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More business and finance skills</h2>
         <div class="links">
+          <a class="link-row" href="../../../emblemcompany/agent-skills/emblem-ai-prompt-examples/"><b>emblem-ai-prompt-examples</b><span>EmblemCompany/Agent-skills</span></a>
+          <a class="link-row" href="../../../tronghieu/agent-skills/market-researcher/"><b>market-researcher</b><span>tronghieu/agent-skills</span></a>
           <a class="link-row" href="../../../browserbase/skills/event-prospecting/"><b>event-prospecting</b><span>browserbase/skills</span></a>
-          <a class="link-row" href="../../../emblemcompany/agent-skills/emblem-ai-agent-wallet/"><b>emblem-ai-agent-wallet</b><span>EmblemCompany/Agent-skills</span></a>
-          <a class="link-row" href="../../../k-dense-ai/claude-scientific-skills/iso-standards-readiness/"><b>iso-standards-readiness</b><span>K-Dense-AI/claude-scientific-skills</span></a>
-          <a class="link-row" href="../../../browserbase/skills/competitor-analysis/"><b>competitor-analysis</b><span>browserbase/skills</span></a>
-          <a class="link-row" href="../../../coinpaprika/skills/dexpaprika-api/"><b>dexpaprika-api</b><span>coinpaprika/skills</span></a>
-          <a class="link-row" href="../../../emblemcompany/agent-skills/emblem-token-swap/"><b>emblem-token-swap</b><span>EmblemCompany/Agent-skills</span></a>
         </div>
         <p><a href="../../../business-finance/">All business, sales and finance skills</a></p>
       </section>

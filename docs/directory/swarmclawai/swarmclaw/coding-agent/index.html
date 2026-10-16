@@ -143,27 +143,33 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the time of the directory's October 16, 2026 snapshot.</p>
+        <p class="muted">Read from the skill's files at the directory's October 16, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none. The skill is instructions and reference files only.</li>
-          <li><b>Credentials:</b> no API keys or tokens are named in its files.</li>
           <li><b>License:</b> <a href="https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install coding-agent</h2>
-        <p><strong>Skills CLI</strong> (Claude Code, Codex, Cursor and other agents):</p>
-        <pre><code>npx skills add https://github.com/swarmclawai/swarmclaw --skill coding-agent</code></pre>
-        <p><strong>Claude Code</strong>, project-level copy:</p>
-        <pre><code>tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 https://github.com/swarmclawai/swarmclaw.git &quot;$tmp/swarmclaw&quot;
+        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
+          <pre><code id="install-cli">npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/coding-agent</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
+          <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/swarmclawai/swarmclaw.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
-cp -R &quot;$tmp/swarmclaw/skills/coding-agent&quot; .claude/skills/
+cp -R &quot;$tmp/repo/skills/coding-agent&quot; .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
-        <p><strong>Codex</strong> installer:</p>
-        <pre><code>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
     --repo swarmclawai/swarmclaw \
     --path skills/coding-agent</code></pre>
+        </div>
         <p class="muted">swarmclawai/swarmclaw is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -192,7 +198,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: grade A</h2>
-        <p>coding-agent passes all eight checks: six on the SKILL.md format, plus a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
+        <p>coding-agent passes all eight checks: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="../../../methodology/">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
           <div class="table-wrap">
@@ -232,12 +238,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More AI agent skills</h2>
         <div class="links">
-          <a class="link-row" href="../../../mblode/agent-skills/agent-ready/"><b>agent-ready</b><span>mblode/agent-skills</span></a>
-          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/context-degradation/"><b>context-degradation</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
-          <a class="link-row" href="../../../muratcankoylan/agent-skills-for-context-engineering/multi-agent-patterns/"><b>multi-agent-patterns</b><span>muratcankoylan/Agent-Skills-for-Context-Engineering</span></a>
-          <a class="link-row" href="../../../necmttn/ax/retro-meta/"><b>retro-meta</b><span>Necmttn/ax</span></a>
-          <a class="link-row" href="../../../google/skills/agent-platform-deploy/"><b>agent-platform-deploy</b><span>google/skills</span></a>
-          <a class="link-row" href="../../../huggingface/skills/huggingface-lora-space-builder/"><b>huggingface-lora-space-builder</b><span>huggingface/skills</span></a>
+          <a class="link-row" href="../../../ohad6k/emulo/work/"><b>work</b><span>ohad6k/emulo</span></a>
+          <a class="link-row" href="../../../orchestra-research/ai-research-skills/sentence-transformers/"><b>sentence-transformers</b><span>Orchestra-Research/AI-Research-SKILLs</span></a>
+          <a class="link-row" href="../../../resend/resend-skills/agent-email-inbox/"><b>agent-email-inbox</b><span>resend/resend-skills</span></a>
+          <a class="link-row" href="../../../nvidia/skills/tao-run-deft-cr-its-mining/"><b>tao-run-deft-cr-its-mining</b><span>NVIDIA/skills</span></a>
+          <a class="link-row" href="../../../veniceai/skills/venice-text-routing/"><b>venice-text-routing</b><span>veniceai/skills</span></a>
+          <a class="link-row" href="../../../browserbase/skills/optimize-agent-prompt/"><b>optimize-agent-prompt</b><span>browserbase/skills</span></a>
         </div>
         <p><a href="../../../ai-agents-llm/">All AI agent and LLM engineering skills</a></p>
       </section>
