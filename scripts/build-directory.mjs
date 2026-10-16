@@ -656,7 +656,7 @@ rm -rf .claude/skills/${shq(s.name)}/.git`
       : `tmp="$(mktemp -d)"
 git clone --depth 1${s.branch === "main" ? "" : ` --branch ${shq(s.branch)}`} https://github.com/${s.repo}.git "$tmp/repo"
 mkdir -p .claude/skills
-cp -R "$tmp/repo/${s.dir.replace(/"/g, '\\"')}" .claude/skills/
+cp -R "$tmp/repo/"${shq(s.dir)} .claude/skills/
 rm -rf "$tmp"`;
   const codex =
     s.dir === "."

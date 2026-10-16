@@ -302,7 +302,10 @@ def main():
             continue
         owner, _, name = repo_root.name.partition("__")
         slug = f"{owner}/{name}"
-        branch = git(repo_root, "rev-parse", "--abbrev-ref", "HEAD") or "main"
+        # refresh.sh uses detached snapshots to avoid collisions when a remote
+        # renames its default branch; retain that branch in generated URLs.
+        branch = (git(repo_root, "config", "--get", "suede.directoryDefaultBranch")
+                  or git(repo_root, "rev-parse", "--abbrev-ref", "HEAD") or "main")
         commit_date = git(repo_root, "log", "-1", "--format=%cI")
         sha = git(repo_root, "rev-parse", "HEAD")
         canonical = git(repo_root, "config", "--get", "remote.origin.url")
