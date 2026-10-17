@@ -40,6 +40,30 @@ class EmbeddingTests(unittest.TestCase):
         proxied = HTML.replace('src="', 'src="https://camo.githubusercontent.com/example" data-canonical-src="')
         self.assertEqual(mod.embedded_badges(proxied, TARGET, IMAGES), sorted(IMAGES))
 
+    def test_open_details_are_visible_but_collapsed_details_are_not(self):
+        for attribute in ['open', 'open=""', 'open="false"']:
+            with self.subTest(attribute=attribute):
+                rendered = f'<details {attribute}><summary>Badges</summary>{HTML}</details>'
+                self.assertEqual(mod.embedded_badges(rendered, TARGET, IMAGES), sorted(IMAGES))
+        self.assertEqual(mod.embedded_badges('<details><summary>Badges</summary>' + HTML + '</details>', TARGET, IMAGES), [])
+        nested = '<details open><details open>' + HTML + '</details></details>'
+        self.assertEqual(mod.embedded_badges(nested, TARGET, IMAGES), sorted(IMAGES))
+
+    def test_open_details_do_not_override_hidden_ancestors_or_descendants(self):
+        for wrapper in ['<details open hidden>{}</details>',
+                        '<details open aria-hidden="true">{}</details>',
+                        '<details open style="display:none">{}</details>',
+                        '<div hidden><details open>{}</details></div>',
+                        '<details><details open>{}</details></details>',
+                        '<details open><details>{}</details></details>',
+                        '<details open><div hidden>{}</div></details>']:
+            with self.subTest(wrapper=wrapper):
+                self.assertEqual(mod.embedded_badges(wrapper.format(HTML), TARGET, IMAGES), [])
+        # Closing a collapsed ancestor must not hide a later expanded sibling.
+        one, two = [f'<a href="{TARGET}"><img src="{src}"></a>' for src in IMAGES]
+        siblings = f'<details>{one}</details><details open>{two}</details>'
+        self.assertEqual(mod.embedded_badges(siblings, TARGET, IMAGES), [IMAGES[1]])
+
 
 class VerificationTests(unittest.TestCase):
     def verify(self, rendered, concurrent_refresh=False, fail_fetch=False):
@@ -97,6 +121,17 @@ class VerificationTests(unittest.TestCase):
         self.assertEqual(result, 1)
         self.assertEqual(record['status'], 'fetch_failed')
         self.assertEqual(record['badges'], [])
+
+    def test_expanded_details_verify_while_collapsed_or_hidden_details_fail_closed(self):
+        cases = [('<details open>{}</details>', True),
+                 ('<details>{}</details>', False),
+                 ('<div hidden><details open>{}</details></div>', False)]
+        for wrapper, visible in cases:
+            with self.subTest(wrapper=wrapper):
+                result, record, _ = self.verify(wrapper.format(HTML))
+                self.assertEqual(result, 0 if visible else 1)
+                self.assertEqual(record['status'], 'verified' if visible else 'missing_badges')
+                self.assertEqual(record['badges'], sorted(IMAGES) if visible else [])
 
     def test_verification_binds_to_dataset_read_before_network_requests(self):
         result, record, current_hash = self.verify(HTML, concurrent_refresh=True)

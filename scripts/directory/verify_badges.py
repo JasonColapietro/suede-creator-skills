@@ -29,7 +29,8 @@ class BadgeParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         parent_hidden = any(entry[2] for entry in self.stack)
-        hidden = parent_hidden or tag in {'pre', 'code', 'script', 'style', 'template', 'details', 'picture'} or 'hidden' in attrs or (attrs.get('aria-hidden') or '').lower() == 'true'
+        collapsed_details = tag == 'details' and 'open' not in attrs
+        hidden = parent_hidden or collapsed_details or tag in {'pre', 'code', 'script', 'style', 'template', 'picture'} or 'hidden' in attrs or (attrs.get('aria-hidden') or '').lower() == 'true'
         # GitHub sanitizes arbitrary styles. Reject any remaining style rather
         # than attempting to interpret CSS visibility, dimensions or clipping.
         hidden = hidden or bool(attrs.get('style'))
