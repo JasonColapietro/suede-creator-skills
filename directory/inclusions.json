@@ -1,3 +1,6 @@
 {
- "repositories": []
+ "repositories": ["appierun/appie-mcp"],
+ "skills": {
+  "appierun/appie-mcp": ["appie-article-writer", "appie-chatbot", "appie-url-shortener"]
+ }
 }

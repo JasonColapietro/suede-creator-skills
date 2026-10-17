@@ -460,6 +460,41 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/appierun/appie-mcp/appie-article-writer/index.html": [
+  "appie-article-writer skill by appierun",
+  "appie-article-writer skill",
+  "appie-article-writer agent skill",
+  "appie-article-writer claude skill",
+  "appierun skills",
+  "writing and editing agent skills",
+  "SKILL.md"
+ ],
+ "directory/appierun/appie-mcp/appie-chatbot/index.html": [
+  "appie-chatbot skill by appierun",
+  "appie-chatbot skill",
+  "appie-chatbot agent skill",
+  "appie-chatbot claude skill",
+  "appierun skills",
+  "AI agent agent skills",
+  "SKILL.md"
+ ],
+ "directory/appierun/appie-mcp/appie-url-shortener/index.html": [
+  "appie-url-shortener skill by appierun",
+  "appie-url-shortener skill",
+  "appie-url-shortener agent skill",
+  "appie-url-shortener claude skill",
+  "appierun skills",
+  "marketing and SEO agent skills",
+  "SKILL.md"
+ ],
+ "directory/appierun/appie-mcp/index.html": [
+  "appierun/appie-mcp skills",
+  "appie-mcp skills",
+  "appierun agent skills",
+  "appie-mcp claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
+ ],
  "directory/avelikiy/great-cto/aesthetic-instrument/index.html": [
   "aesthetic-instrument skill by avelikiy",
   "aesthetic-instrument skill",

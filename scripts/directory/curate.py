@@ -295,6 +295,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--cap", type=int, default=12, help="featured pages per repository")
     ap.add_argument("--exclusions", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "directory", "exclusions.json"))
+    ap.add_argument("--inclusions", default=os.path.join(REPO_ROOT, "directory", "inclusions.json"))
     args = ap.parse_args()
     generated = os.environ.get("SUEDE_DIRECTORY_DATE", dt.date.today().isoformat())
 
@@ -314,6 +315,11 @@ def main():
     key_of = lambda e: (e["id"] if isinstance(e, dict) else e).lower()
     excluded_repos = {key_of(e) for e in excl.get("repositories", [])}
     excluded_skills = {key_of(e) for e in excl.get("skills", [])}
+    # A publisher can request selected skills. Apply that scope even if another
+    # source list also cites the repository, and keep future additions unlisted.
+    inclusions = json.load(open(args.inclusions))
+    scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
+    outside_scope = set()
     reasons = collections.Counter()
     eligible = []
     policy_hits = []
@@ -323,6 +329,9 @@ def main():
         name, desc = r["name"] or "", r["description"] or ""
         if r["repo"].lower() in excluded_repos or f"{r['repo']}/{name}".lower() in excluded_skills:
             reasons["listed in directory/exclusions.json"] += 1
+        elif r["repo"].lower() in scopes and name not in scopes[r["repo"].lower()]:
+            reasons["outside accepted listing request"] += 1
+            outside_scope.add((r["repo"].lower(), name))
         elif r["grade"] not in ("A", "B"):
             reasons["grade C or below"] += 1
         elif not r["checks"]["license"]:
@@ -343,6 +352,8 @@ def main():
 
     policy_keys = {(repo.lower(), nm) for repo, nm, _ in policy_hits}
     withheld = collections.Counter(repo.lower() for repo, _, _ in policy_hits)
+    # Hide the whole-repository install route when it includes unaccepted skills.
+    withheld.update(repo for repo, _ in outside_scope)
     before = len(eligible)
     eligible = [r for r in eligible if (r["repo"].lower(), r["name"]) not in policy_keys]
     reasons["listing policy (another copy excluded)"] += before - len(eligible)
