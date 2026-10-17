@@ -130,6 +130,15 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 1)
         self.assertNotIn("unavailable-skill", {s["name"] for s in data["skills"]})
 
+    def test_removal_overrides_prior_scope_for_repository_install(self):
+        scopes = {"publisher/skills": ["accepted-one", "accepted-two", "not-requested", "future-skill"]}
+        data = self.curate(scopes, {"skills": ["publisher/skills/accepted-two"]})
+        page = self.repository_page(data)
+        self.assertNotIn("npx skills add https://github.com/publisher/skills</code>", page)
+        self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 1)
+        self.assertEqual({s["name"] for s in data["skills"]},
+                         {"accepted-one", "not-requested", "future-skill", "existing-skill"})
+
 
 if __name__ == "__main__":
     unittest.main()
