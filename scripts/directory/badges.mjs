@@ -45,12 +45,14 @@ export function shieldSvg(score, kind) {
   if (kind === 'score') svg = svg.replace(/<!-- Replace SCORE[\s\S]*?-->/, '').replace('SCORE / 100', `${score} / 100`);
   return svg;
 }
-export function promotionActive(s, record, config, snapshotDate, now = new Date()) {
+export function promotionActive(s, record, config, snapshot, now = new Date()) {
   if (!config.enabled || !qualifies(s) || record?.status !== 'verified') return false;
+  if (!/^[a-f0-9]{64}$/.test(snapshot?.sha256 || '') || record.dataset_sha256 !== snapshot.sha256) return false;
   if (config.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(config.ends_at) || !Number.isFinite(Date.parse(config.ends_at)) || now >= new Date(config.ends_at))) return false;
   const verified = Date.parse(record.verified_at);
+  const generated = Date.parse(snapshot.date);
   const readme = record.readme_path;
-  if (!Number.isFinite(verified) || verified > now.getTime() || verified < Date.parse(snapshotDate)) return false;
+  if (!Number.isFinite(generated) || !Number.isFinite(verified) || verified > now.getTime() || verified < generated) return false;
   if (typeof readme !== 'string' || !/(^|\/)README(?:\.(?:md|markdown|rst))?$/i.test(readme) || readme.split('/').some((p) => p === '..' || !p)) return false;
   const expected = badgePair(s).map((b) => b.src);
   return record.repo === s.repo && record.score === s.score && record.target === listingTarget(s) &&

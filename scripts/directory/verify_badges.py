@@ -71,7 +71,8 @@ def main():
     args = parser.parse_args()
     if not re.fullmatch(r'(?:[^/]+/)*README(?:\.(?:md|markdown|rst))?', args.readme, re.I) or any(p in ('.', '..') for p in args.readme.split('/')):
         parser.error('--readme must name a README inside the repository')
-    data = json.loads((ROOT / 'directory/skills.json').read_text())
+    dataset_bytes = (ROOT / 'directory/skills.json').read_bytes()
+    data = json.loads(dataset_bytes)
     slugify = lambda s: re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-') or 'skill'
     matches = [s for s in data['skills'] if '/'.join(map(slugify, s['repo'].split('/'))) + '/' + s['slug'] == args.skill_id]
     if len(matches) != 1:
@@ -84,6 +85,7 @@ def main():
     config_path = ROOT / 'directory/promotion.json'
     config = json.loads(config_path.read_text())
     record = {'repo': skill['repo'], 'score': skill['score'], 'target': contract['target'], 'readme_path': args.readme,
+              'dataset_sha256': hashlib.sha256(dataset_bytes).hexdigest(),
               'verified_at': datetime.now(timezone.utc).isoformat(), 'status': 'fetch_failed', 'badges': []}
     from urllib.parse import quote
     try:

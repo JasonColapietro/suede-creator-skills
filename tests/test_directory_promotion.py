@@ -1,6 +1,11 @@
 import importlib.util
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 spec = importlib.util.spec_from_file_location('verify_badges', Path(__file__).resolve().parents[1] / 'scripts/directory/verify_badges.py')
 mod = importlib.util.module_from_spec(spec)
@@ -32,6 +37,32 @@ class EmbeddingTests(unittest.TestCase):
     def test_github_image_proxy_preserves_canonical_source(self):
         proxied = HTML.replace('src="', 'src="https://camo.githubusercontent.com/example" data-canonical-src="')
         self.assertEqual(mod.embedded_badges(proxied, TARGET, IMAGES), sorted(IMAGES))
+
+    def test_verification_binds_to_dataset_read_before_network_requests(self):
+        with tempfile.TemporaryDirectory(prefix='directory-verification-') as tmp:
+            root = Path(tmp)
+            (root / 'directory').mkdir()
+            dataset = root / 'directory/skills.json'
+            original = json.dumps({'snapshot_id': 'a' * 32, 'skills': [
+                {'repo': 'example/skills', 'slug': 'sample', 'score': 86}]}).encode()
+            dataset.write_bytes(original)
+            ledger = root / 'directory/promotion.json'
+            ledger.write_text(json.dumps({'enabled': True, 'ends_at': None, 'verifications': {}}))
+            responses = iter([json.dumps({'default_branch': 'main'}), json.dumps({'sha': 'a' * 40}), HTML])
+
+            def fetch(*args):
+                # A concurrent refresh cannot bind old verification to new data.
+                dataset.write_bytes(original.replace(b'a' * 32, b'b' * 32))
+                return next(responses)
+
+            contract = SimpleNamespace(stdout=json.dumps({'target': TARGET, 'badges': IMAGES}))
+            with mock.patch.object(mod, 'ROOT', root), mock.patch.object(mod, 'gh', side_effect=fetch), \
+                 mock.patch.object(mod.subprocess, 'run', return_value=contract), \
+                 mock.patch('sys.argv', ['verify_badges.py', 'example/skills/sample']):
+                self.assertEqual(mod.main(), 0)
+            record = json.loads(ledger.read_text())['verifications']['example/skills/sample']
+            self.assertEqual(record['dataset_sha256'], hashlib.sha256(original).hexdigest())
+            self.assertNotEqual(record['dataset_sha256'], hashlib.sha256(dataset.read_bytes()).hexdigest())
 
 
 if __name__ == '__main__':

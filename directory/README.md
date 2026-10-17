@@ -93,12 +93,16 @@ and rendered README at that commit. GitHub renders Markdown and HTML embeds;
 code examples, comments, hidden images, duplicate numeric badges and links to
 other pages do not qualify. Both expected image URLs must link to the skill's
 exact Suede listing. The ledger stores the commit, README path, timestamp,
-rendered-content hash and matched badge URLs, without copying the README.
+rendered-content hash, dataset SHA-256 and matched badge URLs, without copying
+the README. The dataset hash is captured before fetching verification evidence.
 
 A failed fetch or missing badge replaces any prior verification with a non-active
 status. The builder independently validates eligibility, score, target, badge
 URLs, evidence fields and the admin window before rendering a placement.
-Verification predating a new dataset snapshot does not activate promotion;
+Verification must match the exact saved dataset bytes. Every curation refresh
+rotates `snapshot_id`, including unchanged data refreshed on the same day, so
+old verification cannot activate promotion. Ordinary builds keep the snapshot
+stable. Legacy records without a matching `dataset_sha256` fail closed;
 re-run the verifier after refresh and after a README change. Verification is a
 recorded snapshot, not continuous monitoring. Review ledger changes before
 publishing. Never hand-mark an unverified publisher as verified.

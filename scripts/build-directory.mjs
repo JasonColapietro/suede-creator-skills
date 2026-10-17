@@ -14,6 +14,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { qualityScore, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 
@@ -30,7 +31,10 @@ const OG_IMAGE = `${BASE}/assets/social/directory-card.png`;
 const ISSUE_URL = "https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml";
 const FULL_TABLE_ROWS = 100;
 
-const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "skills.json"), "utf8"));
+const datasetBytes = fs.readFileSync(path.join(repoRoot, "directory", "skills.json"));
+const data = JSON.parse(datasetBytes.toString("utf8"));
+const snapshot = { date: data.generated, sha256: createHash("sha256").update(datasetBytes).digest("hex") };
+if (!/^[a-f0-9]{32}$/.test(data.snapshot_id || "")) throw new Error("skills.json: missing refresh snapshot_id");
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
 const CHECKS = data.checks;
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
@@ -221,7 +225,7 @@ for (const r of repos.values()) {
 }
 
 const featured = data.skills.filter((s) => s.featured);
-const promoted = data.skills.filter((s) => promotionActive(s, PROMOTION.verifications[s.id], PROMOTION, data.generated));
+const promoted = data.skills.filter((s) => promotionActive(s, PROMOTION.verifications[s.id], PROMOTION, snapshot));
 const openPct = Math.round((100 * data.skills.filter((s) => s.open_license).length) / data.skills.length);
 const skillsByCat = new Map(categories.map((c) => [c.slug, data.skills.filter((s) => s.category === c.slug)]));
 const reposByScore = [...repos.values()].sort(

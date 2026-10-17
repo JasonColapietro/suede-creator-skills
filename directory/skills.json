@@ -1,5 +1,6 @@
 {
  "generated": "2026-10-17",
+ "snapshot_id": "1c5d31c02932496c8278e4df84b5dd4e",
  "score_method": "seven-checks-v1",
  "sources": ["BehiSecc/awesome-claude-skills", "ComposioHQ/awesome-claude-skills", "VoltAgent/awesome-agent-skills", "heilcheng/awesome-agent-skills", "hesreallyhim/awesome-claude-code", "karanb192/awesome-claude-skills", "skillmatic-ai/awesome-agent-skills", "travisvn/awesome-claude-skills"],
  "checks": [{"id": "frontmatter", "label": "Frontmatter parses and declares a name and a description"}, {"id": "name_format", "label": "Name uses lowercase letters, digits and hyphens, 64 characters or fewer"}, {"id": "name_matches_folder", "label": "Name matches the skill's folder name"}, {"id": "description_length", "label": "Description is between 50 and 1,024 characters"}, {"id": "description_trigger", "label": "Description says when an agent should use the skill"}, {"id": "concise_body", "label": "SKILL.md body is 500 lines or fewer"}, {"id": "license", "label": "A license is declared in the frontmatter or the repository"}, {"id": "maintained", "label": "Repository has a commit in the last 12 months"}],

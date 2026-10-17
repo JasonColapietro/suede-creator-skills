@@ -1,6 +1,7 @@
 """Inspect generated install commands as data; never execute publisher text."""
 
 import copy
+import hashlib
 import html
 import json
 import re
@@ -111,11 +112,14 @@ class DirectoryInstallTests(unittest.TestCase):
     def test_verified_promotion_links_to_listing_and_preserves_editorial_page(self):
         path = self.root / 'directory/promotion.json'
         original = path.read_text()
+        dataset_path = self.root / 'directory/skills.json'
+        dataset_original = dataset_path.read_bytes()
         from datetime import datetime, timezone
         target = 'https://skills.suedeai.ai/directory/fixture/skills/skill-0/'
         record = {'repo': 'fixture/skills', 'score': 100, 'status': 'verified',
                   'target': target, 'readme_path': 'README.md', 'commit': 'a' * 40,
                   'rendered_sha256': 'b' * 64, 'verified_at': datetime.now(timezone.utc).isoformat(),
+                  'dataset_sha256': hashlib.sha256(dataset_original).hexdigest(),
                   'badges': ['https://skills.suedeai.ai/directory/fixture/skills/skill-0/score.svg',
                              'https://skills.suedeai.ai/directory/fixture/skills/skill-0/badge.svg']}
         try:
@@ -130,8 +134,20 @@ class DirectoryInstallTests(unittest.TestCase):
                     self.assertIn('href="' + target + '"', section)
                     self.assertNotIn('href="https://github.com/', section)
                 self.assertTrue((self.root / 'docs/directory/fixture/skills/skill-0/index.html').is_file())
+            # The README was verified at 10am, then a later refresh on the same
+            # calendar date found no skill changes. Its old evidence must expire.
+            data = json.loads(dataset_original)
+            data['snapshot_id'] = 'd' * 32
+            dataset_path.write_text(json.dumps(data))
+            subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
+            self.assertNotIn('id="badge-partners"', (self.root / 'docs/directory/index.html').read_text())
+            record['dataset_sha256'] = hashlib.sha256(dataset_path.read_bytes()).hexdigest()
+            path.write_text(json.dumps({'enabled': True, 'ends_at': None, 'verifications': {'fixture/skills/skill-0': record}}))
+            subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
+            self.assertIn('id="badge-partners"', (self.root / 'docs/directory/index.html').read_text())
         finally:
             path.write_text(original)
+            dataset_path.write_bytes(dataset_original)
             subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
 
     def snippet(self, index, route):
