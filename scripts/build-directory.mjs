@@ -477,14 +477,14 @@ function badgeBlock(here, { badgePath, value, target, heading, lede }) {
 function qualityBadgeContent(s, suffix = "") {
   const id = `badge${suffix}`;
   return `<div class="shield-pair">${badgePair(s).map((b) => `<a href="${listingTarget(s)}"><img src="${b.src.replace(BASE, "")}" alt="${esc(b.alt)}" width="160" height="175" loading="lazy"></a>`).join("")}</div>
-        <p>Two separate badges: a quality score and a letter grade. Both link to this skill’s Suede listing.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="${id}-md">Copy both badges</button></div><pre><code id="${id}-md">${esc(badgeMarkdown(s))}</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="${id}-html">Copy both badges</button></div><pre><code id="${id}-html">${esc(badgeHtml(s))}</code></pre></div>`;
 }
 function promotionOffer(here) {
   const ended = PROMOTION.ends_at && Date.now() >= Date.parse(PROMOTION.ends_at);
   if (!PROMOTION.enabled || ended) return "";
-  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: display both badges in your repository or skill README, then <a href="${rel(here, "directory/submit/")}">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies both linked badges.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : " Suede has not announced an end date."}</p>`;
+  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="${rel(here, "directory/submit/")}">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : " Suede has not announced an end date."}</p>`;
 }
 function qualityBadgeBlock(here, s) {
   return `<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ${esc(s.name)}</h2>
@@ -550,7 +550,7 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
       : `<a href="${esc(`https://github.com/${s.repo}`)}" target="_blank" rel="noopener">${esc(s.repo)}</a>`
     : `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.label)}</a>${showLicense ? `<br><span class="row-license">${esc(s.license)}</span>` : ""}`;
   const id = showRepo ? "" : ` id="${esc(s.slug)}"`;
-  const badges = showRepo ? "" : s.featured ? `<p><a href="${rel(here, skillPath(s))}#badge">Get both badges</a></p>` : `<details class="row-badges"><summary>Get both badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
+  const badges = showRepo ? "" : s.featured ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>` : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
   return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}</td></tr>`;
 }
 
@@ -920,7 +920,7 @@ ${badgeBlock(here, {
   value: "listed",
   target: url(here),
   heading: "Show the listing in your README",
-  lede: `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get both badges</b> beside a skill below. Each skill keeps its own score and grade.`,
+  lede: `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.`,
 })}
 ${promotionOffer(here)}
       <section class="panel" aria-labelledby="skills-title">
@@ -1179,7 +1179,7 @@ ${badgeBlock(here, {
   value: "listed",
   target: DIR_URL,
   heading: "For skill authors: show your listing",
-  lede: `Every eligible skill has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get both badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
+  lede: `Every eligible skill has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
 })}
 ${promotionOffer(here)}
 ${promotionSection(here, promoted)}
@@ -1276,7 +1276,7 @@ ${rows}
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
         <p>Skills scoring 80–100 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–100 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields.</p>
-        <p>Display both linked badges in your repository or skill README, then request verification. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, missing badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
+        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
         <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. <a href="${rel(here, "directory/submit/")}">Send your repository and the checks you want help with</a>, then request a new review after updating the skill.</p>
       </section>
@@ -1341,7 +1341,7 @@ function renderSubmit() {
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules; skills graded A or B are listed.</li>
-          <li><b>Add both badges.</b> Eligible skills scoring 80–100 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Copy them from the listing and request README verification for the limited-time feature offer.</li>
+          <li><b>Add either badge.</b> Eligible skills scoring 80–100 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
       <section class="panel" aria-labelledby="pass-title">
@@ -1432,7 +1432,7 @@ files.set("directory/badge.svg", badgeSvg("listed").svg);
 
 // llms.txt carries one line about the directory, with live counts.
 const llmsPath = path.join(docsRoot, "llms.txt");
-const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, has a quality score of 80–100 and grade A or B on the Suede Skill Check, states its license and has two linked README badges; security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
+const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, has a quality score of 80–100 and grade A or B on the Suede Skill Check, states its license and offers numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
 const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");

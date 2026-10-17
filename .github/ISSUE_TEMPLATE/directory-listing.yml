@@ -13,7 +13,7 @@ body:
       label: Request
       options:
         - Add my skills
-        - Verify my two README badges for featured placement
+        - Verify my README badge for featured placement
         - Help improve my quality score
         - Correct a listing
         - Remove a listing
@@ -30,7 +30,7 @@ body:
     id: details
     attributes:
       label: Details
-      description: For badge verification, give the Suede listing URL and README path containing both linked badges. For score help, name the failed checks. For a correction, describe the change. For a removal, name the skills or say "all".
+      description: For badge verification, give the Suede listing URL and README path displaying either the linked numeric badge or letter badge (both also qualify). For score help, name the failed checks. For a correction, describe the change. For a removal, name the skills or say "all".
     validations:
       required: false
   - type: checkboxes

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the two displayed README badges before enabling a feature placement.
+"""Verify a displayed numeric or letter README badge before a feature placement.
 
 Fetches one accepted repository's README through GitHub's HTML renderer at a
 pinned commit. No clone, publisher code execution, or security claim is involved.
@@ -96,7 +96,8 @@ def main():
         rendered = gh(f"repos/{skill['repo']}/contents/{quote(args.readme, safe='/')}?ref={commit}", 'application/vnd.github.html+json')
         record.update(commit=commit, rendered_sha256=hashlib.sha256(rendered.encode()).hexdigest(),
                       badges=embedded_badges(rendered, contract['target'], contract['badges']))
-        record['status'] = 'verified' if set(record['badges']) == set(contract['badges']) else 'missing_badges'
+        # The parser only returns expected badge images linked to this listing.
+        record['status'] = 'verified' if record['badges'] else 'missing_badges'
     except (subprocess.SubprocessError, ValueError, KeyError) as exc:
         # Do not copy upstream error content, credentials or README text into
         # the public ledger. A failed fetch cannot retain a prior promotion.

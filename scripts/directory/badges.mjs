@@ -57,5 +57,5 @@ export function promotionActive(s, record, config, snapshot, now = new Date()) {
   const expected = badgePair(s).map((b) => b.src);
   return record.repo === s.repo && record.score === s.score && record.target === listingTarget(s) &&
     /^[a-f0-9]{40}$/.test(record.commit || '') && /^[a-f0-9]{64}$/.test(record.rendered_sha256 || '') &&
-    Array.isArray(record.badges) && expected.every((b) => record.badges.includes(b));
+    Array.isArray(record.badges) && expected.some((b) => record.badges.includes(b));
 }

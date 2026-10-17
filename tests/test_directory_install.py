@@ -85,6 +85,7 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIn('100/100 · A', page)
         self.assertIn('Security scan: not scanned.', page)
         self.assertIn('Not scanned', page)
+        self.assertIn('display either the numeric or letter badge', page)
         snippets = [html.unescape(re.search(rf'<code id="badge-{kind}">([\s\S]*?)</code>', page)[1]) for kind in ('md', 'html')]
         for snippet in snippets:
             self.assertEqual(snippet.count('](https://skills.suedeai.ai/directory/fixture/skills/skill-0/)') if snippet.startswith('[!') else snippet.count('href="https://skills.suedeai.ai/directory/fixture/skills/skill-0/"'), 2)
@@ -123,8 +124,11 @@ class DirectoryInstallTests(unittest.TestCase):
                   'badges': ['https://skills.suedeai.ai/directory/fixture/skills/skill-0/score.svg',
                              'https://skills.suedeai.ai/directory/fixture/skills/skill-0/badge.svg']}
         try:
-            for state, visible in [('pending', False), ('verified', True)]:
+            both = record['badges']
+            for state, badges, visible in [('pending', both, False), ('verified', both[:1], True),
+                                           ('verified', both[1:], True), ('verified', both, True)]:
                 record['status'] = state
+                record['badges'] = badges
                 path.write_text(json.dumps({'enabled': True, 'ends_at': None, 'verifications': {'fixture/skills/skill-0': record}}))
                 subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
                 home = (self.root / 'docs/directory/index.html').read_text()

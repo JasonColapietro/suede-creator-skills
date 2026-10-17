@@ -56,7 +56,8 @@ pipeline. The builder rejects unsupported security status claims.
 
 Every qualifying skill offers two linked shields: numeric and letter grade.
 Both links point to its full skill page, or its repository-page row when it has
-no full page. `scripts/directory/badges.mjs` owns validation, URLs, snippets and
+no full page. Authors may display either badge or both; one valid linked badge
+is enough to request promotion verification. `scripts/directory/badges.mjs` owns validation, URLs, snippets and
 SVG generation. The supplied Suede S paths are preserved. Grade A and scores
 90–100 are gold; B and 80–89 are cool metallic. Per-skill `badge.svg` and `score.svg` URLs update on each build, including
 skills without a full HTML page; existing `badge.svg` URLs remain valid. Shared
@@ -90,13 +91,13 @@ npm run build:directory
 The verifier uses the already configured `gh` CLI for read-only requests. It
 fetches only that accepted repository's metadata, current default-branch commit,
 and rendered README at that commit. GitHub renders Markdown and HTML embeds;
-code examples, comments, hidden images, duplicate numeric badges and links to
-other pages do not qualify. Both expected image URLs must link to the skill's
-exact Suede listing. The ledger stores the commit, README path, timestamp,
+code examples, comments, hidden images and links to other pages do not qualify.
+At least one expected image URL (numeric or letter) must link to the skill's
+exact Suede listing; displaying both also qualifies. The ledger stores the commit, README path, timestamp,
 rendered-content hash, dataset SHA-256 and matched badge URLs, without copying
 the README. The dataset hash is captured before fetching verification evidence.
 
-A failed fetch or missing badge replaces any prior verification with a non-active
+A failed fetch or no valid badge replaces any prior verification with a non-active
 status. The builder independently validates eligibility, score, target, badge
 URLs, evidence fields and the admin window before rendering a placement.
 Verification must match the exact saved dataset bytes. Every curation refresh

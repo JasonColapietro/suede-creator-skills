@@ -32,16 +32,28 @@ test('two distinct README badges link to the actual listing, including table row
   }
   assert.match(listingTarget({ ...skill, featured: false }), /skills\/#sample$/);
 });
-test('promotion requires verified pair, current score, gates, and admin window', () => {
+test('promotion requires verified badge evidence, current score, gates, and admin window', () => {
   const active = (s = skill, r = verified, c = config) => promotionActive(s, r, c, snapshot, now);
   assert.equal(active(), true);
   assert.equal(active(skill, null), false);
-  for (const patch of [{status:'pending'}, {badges:verified.badges.slice(0,1)}, {score:86}, {repo:'other/skills'}, {target:'https://example.com'}, {commit:null}, {verified_at:'2026-10-16T12:00:00Z'}, {verified_at:'2026-10-18T12:00:00Z'}, {readme_path:'SKILL.md'}]) assert.equal(active(skill, {...verified,...patch}),false);
+  for (const patch of [{status:'pending'}, {badges:[]}, {score:86}, {repo:'other/skills'}, {target:'https://example.com'}, {commit:null}, {verified_at:'2026-10-16T12:00:00Z'}, {verified_at:'2026-10-18T12:00:00Z'}, {readme_path:'SKILL.md'}]) assert.equal(active(skill, {...verified,...patch}),false);
   assert.equal(active(skill, verified, { ...config, enabled: false }), false);
   assert.equal(active(skill, verified, { ...config, ends_at: '2026-10-17T12:00:00Z' }), false);
   assert.equal(active(skill, verified, { ...config, ends_at: 'invalid' }), false);
   for (const patch of [{checks:'01111111'}, {checks:'11111101',score:86,grade:'B'}, {score:null}, {score:101}, {score:86}]) assert.equal(active({...skill,...patch}),false);
   assert.equal(qualifies({...skill, checks:'11111110',score:86,grade:'B'}),true);
+});
+test('either numeric or letter badge qualifies, while invalid targets and stale evidence do not', () => {
+  for (const badges of [[verified.badges[0]], [verified.badges[1]], verified.badges]) {
+    const record = { ...verified, badges };
+    assert.equal(promotionActive(skill, record, config, snapshot, now), true);
+    assert.equal(promotionActive(skill, { ...record, target: 'https://example.com' }, config, snapshot, now), false);
+    assert.equal(promotionActive(skill, { ...record, dataset_sha256: 'd'.repeat(64) }, config, snapshot, now), false);
+    assert.equal(promotionActive(skill, { ...record, status: 'fetch_failed' }, config, snapshot, now), false);
+  }
+  for (const badges of [[], null, ['https://example.com/invalid.svg']]) {
+    assert.equal(promotionActive(skill, { ...verified, badges }, config, snapshot, now), false);
+  }
 });
 test('a later same-day dataset snapshot invalidates earlier README verification', () => {
   const refreshed = { ...snapshot, sha256: 'd'.repeat(64) };
