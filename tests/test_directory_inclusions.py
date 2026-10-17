@@ -33,7 +33,8 @@ class DirectoryInclusionTests(unittest.TestCase):
             records.append(record("other/skills", "existing-skill"))
             records.extend(extra_records)
             labels = {f"{r['repo']}/{r['name']}": {
-                "category": "writing-content", "summary": r["description"]} for r in records}
+                "category": "writing-content", "summary": r["description"]} for r in records
+                if r.get("description")}
             inputs = {
                 "raw": records, "labels": labels,
                 "inclusions": {"repositories": ["publisher/skills"], "skills": scopes},
@@ -121,10 +122,11 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertIn(bulk_command, complete_page)
 
     def test_unavailable_out_of_scope_skill_still_blocks_repository_install(self):
-        unavailable = record("publisher/skills", "unavailable-skill")
-        unavailable["fetch_error"] = "Source could not be fetched"
+        unavailable = {"repo": "publisher/skills", "name": "unavailable-skill",
+                       "fetch_error": "Source could not be fetched"}
         scopes = {"publisher/skills": ["accepted-one", "accepted-two", "not-requested", "future-skill"]}
-        data = self.curate(scopes, {"skills": ["publisher/skills/unavailable-skill"]}, [unavailable])
+        data = self.curate(scopes, {"skills": ["publisher/skills/unavailable-skill"]},
+                           [unavailable, {"fetch_error": "Source could not be fetched"}])
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 1)
         self.assertNotIn("unavailable-skill", {s["name"] for s in data["skills"]})
 
