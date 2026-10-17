@@ -1291,7 +1291,7 @@ function renderSubmit() {
         <h2 id="steps-title">How it works</h2>
         <ol class="steps">
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
-          <li><b>Open a listing request</b> with the repository URL. One request covers every skill in the repository.</li>
+          <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules; skills graded A or B are listed.</li>
           <li><b>Add the badge.</b> Every listing page has a README badge that links back to it: your repository's page, or your skill's page when the repository holds a single skill with a page of its own.</li>
         </ol>
