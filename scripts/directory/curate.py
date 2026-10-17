@@ -325,18 +325,22 @@ def main():
     eligible = []
     policy_hits = []
     for r in raw:
+        name, desc = r["name"] or "", r["description"] or ""
+        out_of_scope = r["repo"].lower() in scopes and name not in scopes[r["repo"].lower()]
+        # Scope is independent of the rejection reason: an excluded or
+        # unavailable skill still makes a whole-repository install too broad.
+        if out_of_scope:
+            outside_scope.add((r["repo"].lower(), name))
         r["checks"] = run_checks(r)
         r["grade"] = grade(r["checks"])
         r["score"] = quality_score(r["checks"])
         if r["score"] is None:
             reasons["source unavailable (unscored)"] += 1
             continue
-        name, desc = r["name"] or "", r["description"] or ""
         if r["repo"].lower() in excluded_repos or f"{r['repo']}/{name}".lower() in excluded_skills:
             reasons["listed in directory/exclusions.json"] += 1
-        elif r["repo"].lower() in scopes and name not in scopes[r["repo"].lower()]:
+        elif out_of_scope:
             reasons["outside accepted listing request"] += 1
-            outside_scope.add((r["repo"].lower(), name))
         elif r["grade"] not in ("A", "B"):
             reasons["grade C or below"] += 1
         elif not r["checks"]["license"]:

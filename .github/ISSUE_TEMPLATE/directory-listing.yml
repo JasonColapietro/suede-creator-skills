@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        The [Agent Skills Directory](https://skills.suedeai.ai/directory/) lists public skills that pass the [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). One request covers every skill in a repository.
+        The [Agent Skills Directory](https://skills.suedeai.ai/directory/) lists public skills that pass the [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). You can request selected skills by name or explicitly request the whole repository. A selected-skill request covers only the named skills; other skills and future additions require a separate review.
   - type: dropdown
     id: request
     attributes:
@@ -27,10 +27,20 @@ body:
     validations:
       required: true
   - type: textarea
+    id: skill-scope
+    attributes:
+      label: Skill names or listing scope
+      description: For additions, list the exact names from SKILL.md, one per line. Write "all" only to request every skill in the repository. For other requests, name the affected skills or write "all" if the request applies to every listing.
+      placeholder: |
+        article-writer
+        url-shortener
+    validations:
+      required: true
+  - type: textarea
     id: details
     attributes:
       label: Details
-      description: For badge verification, give the Suede listing URL and README path displaying either the linked numeric badge or letter badge (both also qualify). For score help, name the failed checks. For a correction, describe the change. For a removal, name the skills or say "all".
+      description: For additions, include any review context for the requested skills. For badge verification, give the Suede listing URL and README path displaying either the linked numeric badge or letter badge (both also qualify). For score help, name the failed checks. For a correction, describe the change. For a removal, add any relevant context.
     validations:
       required: false
   - type: checkboxes

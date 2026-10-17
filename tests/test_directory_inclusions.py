@@ -2,6 +2,7 @@
 
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -24,12 +25,13 @@ def record(repo, name):
 
 
 class DirectoryInclusionTests(unittest.TestCase):
-    def curate(self, scopes, exclusions=None):
+    def curate(self, scopes, exclusions=None, extra_records=()):
         with tempfile.TemporaryDirectory(prefix="directory-inclusions-") as tmp:
             work = Path(tmp)
             records = [record("publisher/skills", name) for name in
                        ("accepted-one", "accepted-two", "not-requested", "future-skill")]
             records.append(record("other/skills", "existing-skill"))
+            records.extend(extra_records)
             labels = {f"{r['repo']}/{r['name']}": {
                 "category": "writing-content", "summary": r["description"]} for r in records}
             inputs = {
@@ -48,6 +50,23 @@ class DirectoryInclusionTests(unittest.TestCase):
             )
             self.assertEqual(result.returncode, 0, result.stderr)
             return json.loads((work / "out.json").read_text())
+
+    def repository_page(self, data):
+        with tempfile.TemporaryDirectory(prefix="directory-scoped-install-") as tmp:
+            work = Path(tmp)
+            for name in ("scripts/build-directory.mjs", "scripts/directory/badges.mjs",
+                         "directory/categories.json", "directory/notes.json",
+                         "directory/promotion.json", "docs/llms.txt"):
+                target = work / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(ROOT / name, target)
+            shutil.copytree(ROOT / "scripts/directory/badges", work / "scripts/directory/badges")
+            (work / "scripts/lib").mkdir()
+            (work / "directory/skills.json").write_text(json.dumps(data))
+            result = subprocess.run(["node", str(work / "scripts/build-directory.mjs")],
+                                    text=True, capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            return (work / "docs/directory/publisher/skills/index.html").read_text()
 
     def test_scoped_acceptance_keeps_only_requested_skills_and_existing_classifications(self):
         data = self.curate({"Publisher/Skills": ["accepted-one", "accepted-two"]})
@@ -73,6 +92,41 @@ class DirectoryInclusionTests(unittest.TestCase):
         data = self.curate({"publisher/skills": ["accepted-one", "accepted-two"]},
                            {"skills": [{"id": "publisher/skills/accepted-two", "reason": "Removed by author."}]})
         self.assertEqual({s["name"] for s in data["skills"]}, {"accepted-one", "existing-skill"})
+
+    def test_excluded_out_of_scope_skills_are_counted_once_across_harness_copies(self):
+        duplicate = record("Publisher/Skills", "not-requested")
+        duplicate["dir"] = ".claude/skills/not-requested"
+        data = self.curate({"Publisher/Skills": ["accepted-one", "accepted-two"]},
+                           {"skills": [{"id": "PUBLISHER/SKILLS/not-requested", "reason": "Removed by author."}]},
+                           [duplicate])
+        self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 2)
+        self.assertEqual({s["name"] for s in data["skills"]},
+                         {"accepted-one", "accepted-two", "existing-skill"})
+
+    def test_only_unaccepted_skill_is_excluded_and_blocks_repository_install(self):
+        exclusions = {"skills": ["publisher/skills/future-skill"]}
+        scoped = self.curate({"publisher/skills": ["accepted-one", "accepted-two", "not-requested"]},
+                             exclusions)
+        page = self.repository_page(scoped)
+        bulk_command = "npx skills add https://github.com/publisher/skills</code>"
+        self.assertNotIn("Install every skill", page)
+        self.assertNotIn(bulk_command, page)
+        self.assertEqual(scoped["repos"]["publisher/skills"]["withheld"], 1)
+        self.assertEqual({s["name"] for s in scoped["skills"]},
+                         {"accepted-one", "accepted-two", "not-requested", "existing-skill"})
+        # Positive control: the builder still offers bulk installation when
+        # every skill is accepted and no exclusion applies.
+        complete_page = self.repository_page(self.curate({}))
+        self.assertIn("Install every skill", complete_page)
+        self.assertIn(bulk_command, complete_page)
+
+    def test_unavailable_out_of_scope_skill_still_blocks_repository_install(self):
+        unavailable = record("publisher/skills", "unavailable-skill")
+        unavailable["fetch_error"] = "Source could not be fetched"
+        scopes = {"publisher/skills": ["accepted-one", "accepted-two", "not-requested", "future-skill"]}
+        data = self.curate(scopes, {"skills": ["publisher/skills/unavailable-skill"]}, [unavailable])
+        self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 1)
+        self.assertNotIn("unavailable-skill", {s["name"] for s in data["skills"]})
 
 
 if __name__ == "__main__":
