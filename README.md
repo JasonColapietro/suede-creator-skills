@@ -249,7 +249,7 @@ Essays on why the pack is built the way it is:
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [GitHub Pages site](https://skills.suedeai.ai/) — public documentation generated from this repo
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
-- [Agent Skills Directory](https://skills.suedeai.ai/directory/) ([data](directory/)) — other authors' public skills in sixteen category directories, each graded by the published [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/) and linked to its source; authors can [request a listing](https://skills.suedeai.ai/directory/submit/)
+- [Agent Skills Directory](https://skills.suedeai.ai/directory/) ([data](directory/)) — other authors' public skills in sixteen category directories, each scored 0–100 by the published [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/) and linked to its source; eligible 80–100 listings offer separate numeric and A/B README shields, both linking to their listing. Authors can [request a listing, score help or badge verification](https://skills.suedeai.ai/directory/submit/); verified badge users can receive a limited-time feature placement. Security scan status is separate from the structural score
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
 - [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them
