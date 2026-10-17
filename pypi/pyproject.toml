@@ -1,0 +1,84 @@
+# PyPI distribution of Suede Creator Skills.
+#
+# The skill folders, catalog, VERSION and license files are staged into this
+# directory from the repository root by `node scripts/build-pypi-package.mjs`
+# (gitignored copies), so build from the repo root:
+#
+#   node scripts/build-pypi-package.mjs && python3 -m build pypi/
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "suede-creator-skills"
+dynamic = ["version"]
+description = "SEO audits, AI search visibility, conversion copy and business-operations workflows for Claude Code and Codex, installed in one command."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = "MIT AND BSD-3-Clause"
+license-files = ["LICENSE", "NOTICE.md", "licenses/*"]
+authors = [{ name = "Jason Colapietro" }]
+maintainers = [{ name = "Jason Colapietro" }]
+dependencies = []
+keywords = [
+  "agent-skills",
+  "claude-code",
+  "claude-skills",
+  "codex",
+  "openai-codex",
+  "ai-agents",
+  "seo",
+  "seo-audit",
+  "aeo",
+  "geo",
+  "ai-search",
+  "conversion-copywriting",
+  "marketing",
+  "code-review",
+  "skills",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Site Management",
+  "Topic :: Office/Business",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Utilities",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://skills.suedeai.ai"
+Repository = "https://github.com/JasonColapietro/suede-creator-skills"
+Documentation = "https://skills.suedeai.ai/plugins.html"
+Changelog = "https://skills.suedeai.ai/#changelog"
+Issues = "https://github.com/JasonColapietro/suede-creator-skills/issues"
+
+[project.scripts]
+suede-skills = "suede_creator_skills.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["suede_creator_skills"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+suede_creator_skills = ["VERSION", "catalog.json", "py.typed", "skills/**/*"]
+
+[tool.setuptools.exclude-package-data]
+suede_creator_skills = ["**/__pycache__/*", "**/*.pyc", "**/.DS_Store"]
+
+[tool.setuptools.dynamic]
+version = { file = "src/suede_creator_skills/VERSION" }

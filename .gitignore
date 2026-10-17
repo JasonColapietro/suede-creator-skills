@@ -17,3 +17,14 @@ audits/
 
 # Generated npm package for the MCP registry
 dist-npm/
+
+# PyPI package: staged from the repo root by scripts/build-pypi-package.mjs
+pypi/src/suede_creator_skills/skills/
+pypi/src/suede_creator_skills/catalog.json
+pypi/src/suede_creator_skills/VERSION
+pypi/LICENSE
+pypi/NOTICE.md
+pypi/licenses/
+pypi/dist/
+pypi/build/
+*.egg-info/
