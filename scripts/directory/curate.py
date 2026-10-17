@@ -26,9 +26,10 @@ import json
 import os
 import re
 import sys
+import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from grade import CHECKS, grade, run_checks  # noqa: E402
+from grade import CHECKS, grade, quality_score, run_checks  # noqa: E402
 
 REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 
@@ -326,6 +327,10 @@ def main():
     for r in raw:
         r["checks"] = run_checks(r)
         r["grade"] = grade(r["checks"])
+        r["score"] = quality_score(r["checks"])
+        if r["score"] is None:
+            reasons["source unavailable (unscored)"] += 1
+            continue
         name, desc = r["name"] or "", r["description"] or ""
         if r["repo"].lower() in excluded_repos or f"{r['repo']}/{name}".lower() in excluded_skills:
             reasons["listed in directory/exclusions.json"] += 1
@@ -444,6 +449,8 @@ def main():
                 "description": re.sub(r"\s+", " ", r["description"]).strip(),
                 "category": label.get("category") or classify(r["name"], r["description"]),
                 "grade": r["grade"],
+                "score": r["score"],
+                "security_scan_status": "not_scanned",
                 "checks": "".join("1" if r["checks"][k] else "0" for k, _ in CHECKS),
                 "dir": r["dir"],
                 "license": license_label,
@@ -487,7 +494,9 @@ def main():
         print("dropped by the public-privacy check:", *privacy_dropped, file=sys.stderr)
     out.sort(key=lambda pair: pair[0])
     sources =sorted({l for m in repo_meta.values() for l in m["lists"]})
-    head = {"generated": generated, "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}
+    # Rotate even for unchanged same-day data: a README may have changed while
+    # its skill metadata stayed identical, so every refresh needs fresh evidence.
+    head = {"generated": generated, "snapshot_id": uuid.uuid4().hex, "score_method": "seven-checks-v1", "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}
     text = "{\n" + ",\n".join(f" {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k, v in head.items())
     text += ',\n "repos": {\n' + ",\n".join(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(repo_meta.items())) + "\n }"
     text += ',\n "skills": [\n' + ",\n".join(json.dumps(rec, ensure_ascii=False, separators=(",", ":")) for _, rec in out) + "\n ]\n}\n"

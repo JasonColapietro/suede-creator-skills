@@ -35,3 +35,78 @@ reviewed. Repositories without an allowlist keep the existing listing rules.
 The repository page omits its whole-repository install command when it would
 also install skills outside the accepted scope. Skill-specific install routes
 are unchanged.
+
+## Quality scores and the two README badges
+
+`score_method: "seven-checks-v1"` adds `score` (integer 0–100) to each record.
+The score is `round(100 * passed / 7)`, using the seven checks after required
+frontmatter. Missing check evidence earns zero points for that check, with a
+fixed denominator. The eight possible scores are 0, 14, 29, 43, 57, 71, 86 and
+100. A = 90–100, B = 80–89, C = 70–79, D = 0–69. Failed frontmatter is F and
+ineligible regardless of numeric score. Fetch failures are unscored (`None` in
+the grader), never a measured zero; the refresh aborts before replacing the
+published snapshot. Existing license, policy, language, duplication and
+editorial page gates remain in force. The score measures structural evidence,
+not runtime performance.
+
+`security_scan_status: "not_scanned"` is separate from quality. HOL/Cisco CI
+scans Suede's repository only; it supplies no security result for external
+listings. Introducing per-skill security results requires a reviewed evidence
+pipeline. The builder rejects unsupported security status claims.
+
+Every qualifying skill offers two linked shields: numeric and letter grade.
+Both links point to its full skill page, or its repository-page row when it has
+no full page. Authors may display either badge or both; one valid linked badge
+is enough to request promotion verification. `scripts/directory/badges.mjs` owns validation, URLs, snippets and
+SVG generation. The supplied Suede S paths are preserved. Grade A and scores
+90–100 are gold; B and 80–89 are cool metallic. Per-skill `badge.svg` and `score.svg` URLs update on each build, including
+skills without a full HTML page; existing `badge.svg` URLs remain valid. Shared
+score/grade previews also live under `docs/directory/badges/`. Repository-level `badge.svg` remains
+the general listing badge, because a repository can contain different grades.
+Do not average a repository's skills into an invented grade.
+
+## Limited-time featured placement
+
+This offer is separate from `featured` in `skills.json`, which controls existing
+editorial full pages and their cap/stickiness rules. Nothing receives a badge
+partner placement merely by scoring 80–100 or receiving an editorial page.
+
+`promotion.json` is the admin control and verification ledger:
+
+- `enabled` switches the offer and placements on or off.
+- `ends_at` is an optional UTC timestamp such as `YYYY-MM-DDTHH:mm:ssZ`. `null`
+  means Suede has not announced an end date; no expiry is invented. Set a real
+  admin-approved date when available, or disable the offer. Rebuild and deploy
+  after a configuration change. Placements also hide in the browser at the end.
+- `verifications` starts empty. No external publisher has been verified by this
+  change, and no promotional placement is active.
+
+After a maintainer requests verification, run:
+
+```sh
+python3 scripts/directory/verify_badges.py owner/repository/skill-slug --readme README.md
+npm run build:directory
+```
+
+The verifier uses the already configured `gh` CLI for read-only requests. It
+fetches only that accepted repository's metadata, current default-branch commit,
+and rendered README at that commit. GitHub renders Markdown and HTML embeds;
+code examples, comments, hidden images and links to other pages do not qualify.
+At least one expected image URL (numeric or letter) must link to the skill's
+exact Suede listing; displaying both also qualifies. The ledger stores the commit, README path, timestamp,
+rendered-content hash, dataset SHA-256 and matched badge URLs, without copying
+the README. The dataset hash is captured before fetching verification evidence.
+
+A failed fetch or no valid badge replaces any prior verification with a non-active
+status. The builder independently validates eligibility, score, target, badge
+URLs, evidence fields and the admin window before rendering a placement.
+Verification must match the exact saved dataset bytes. Every curation refresh
+rotates `snapshot_id`, including unchanged data refreshed on the same day, so
+old verification cannot activate promotion. Ordinary builds keep the snapshot
+stable. Legacy records without a matching `dataset_sha256` fail closed;
+re-run the verifier after refresh and after a README change. Verification is a
+recorded snapshot, not continuous monitoring. Review ledger changes before
+publishing. Never hand-mark an unverified publisher as verified.
+
+Authors below 80 are invited to request help through the listing form, improve
+the failed checks, and request another review.

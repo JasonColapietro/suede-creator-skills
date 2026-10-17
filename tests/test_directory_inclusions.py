@@ -63,6 +63,12 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
 
+    def test_same_day_refresh_rotates_snapshot_even_when_skill_data_is_unchanged(self):
+        first, second = self.curate({}), self.curate({})
+        self.assertRegex(first['snapshot_id'], r'^[a-f0-9]{32}$')
+        self.assertNotEqual(first.pop('snapshot_id'), second.pop('snapshot_id'))
+        self.assertEqual(first, second)
+
     def test_acceptance_does_not_override_exclusions(self):
         data = self.curate({"publisher/skills": ["accepted-one", "accepted-two"]},
                            {"skills": [{"id": "publisher/skills/accepted-two", "reason": "Removed by author."}]})

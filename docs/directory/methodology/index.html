@@ -119,11 +119,21 @@
           </table>
         </div>
         <ul>
-          <li><b>Grade A</b>: all seven graded checks pass (2,019 listed skills).</li>
-          <li><b>Grade B</b>: six of seven pass (956 listed skills).</li>
-          <li>Grades C and below are not listed.</li>
+          <li><b>Grade A: 90–100</b>. All seven graded checks currently produce 100/100 (2,019 listed skills).</li>
+          <li><b>Grade B: 80–89</b>. Six of seven currently produce 86/100 (956 listed skills).</li>
+          <li><b>Grade C: 70–79; grade D: 0–69</b>. Scores below 80 are not listed. Failed required frontmatter receives grade F and remains ineligible regardless of score.</li>
         </ul>
-        <p>A skill that passes all eight is well-formed, licensed and maintained. Read its SKILL.md to confirm it fits your task.</p>
+        <p>The quality score is <code>round(100 × passed / 7)</code>, with equal weight for each graded check. The possible scores are 0, 14, 29, 43, 57, 71, 86 and 100. Missing evidence fails its check; the denominator stays seven. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
+        <p>The score measures the recorded SKILL.md structure, license declaration and maintenance evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
+        <h3>Security scan status is separate</h3>
+        <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
+      </section>
+      <section class="panel" aria-labelledby="authors-title">
+        <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
+        <p>Skills scoring 80–100 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–100 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields.</p>
+        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../submit/">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p>
+        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. <a href="../submit/">Send your repository and the checks you want help with</a>, then request a new review after updating the skill.</p>
       </section>
       <section class="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Listing rules</h2>

@@ -14,7 +14,9 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { qualityScore, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -29,9 +31,16 @@ const OG_IMAGE = `${BASE}/assets/social/directory-card.png`;
 const ISSUE_URL = "https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml";
 const FULL_TABLE_ROWS = 100;
 
-const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "skills.json"), "utf8"));
+const datasetBytes = fs.readFileSync(path.join(repoRoot, "directory", "skills.json"));
+const data = JSON.parse(datasetBytes.toString("utf8"));
+const snapshot = { date: data.generated, sha256: createHash("sha256").update(datasetBytes).digest("hex") };
+if (!/^[a-f0-9]{32}$/.test(data.snapshot_id || "")) throw new Error("skills.json: missing refresh snapshot_id");
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
 const CHECKS = data.checks;
+const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
+if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
+if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PROMOTION.ends_at) || !Number.isFinite(Date.parse(PROMOTION.ends_at)))) throw new Error("promotion.json: ends_at must be null or a UTC timestamp");
+if (data.score_method !== "seven-checks-v1" || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
 
 for (const c of categories) {
@@ -44,6 +53,8 @@ for (const c of categories) {
 // Python one that keyed directory/labels.json.
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "skill";
 data.skills = data.skills.map((c) => {
+  if (c.score !== qualityScore(c.checks) || !qualifies(c)) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
+  if (c.security_scan_status !== "not_scanned") throw new Error("Per-skill security results require a separate reviewed evidence pipeline");
   const meta = data.repos[c.repo];
   if (!meta) throw new Error(`skills.json: no repos entry for ${c.repo}`);
   const [owner, name] = c.repo.split("/");
@@ -207,13 +218,14 @@ for (const r of repos.values()) {
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-const RESERVED = new Set(["methodology", "submit", ...categories.map((c) => c.slug)]);
+const RESERVED = new Set(["methodology", "submit", "badges", ...categories.map((c) => c.slug)]);
 for (const r of repos.values()) {
   const owner = r.slug.split("/")[0];
   if (RESERVED.has(owner)) throw new Error(`owner slug "${owner}" collides with a reserved directory path`);
 }
 
 const featured = data.skills.filter((s) => s.featured);
+const promoted = data.skills.filter((s) => promotionActive(s, PROMOTION.verifications[s.id], PROMOTION, snapshot));
 const openPct = Math.round((100 * data.skills.filter((s) => s.open_license).length) / data.skills.length);
 const skillsByCat = new Map(categories.map((c) => [c.slug, data.skills.filter((s) => s.category === c.slug)]));
 const reposByScore = [...repos.values()].sort(
@@ -401,7 +413,7 @@ function crumbs(here, items) {
   return { html: `      <nav class="crumbs" aria-label="Breadcrumb">${html}</nav>`, ld };
 }
 
-const gradeChip = (g) => `<span class="grade grade-${g.toLowerCase()}" title="Suede Skill Check grade ${g}">${g}</span>`;
+const gradeChip = (s) => `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
 const listLink = (l) => `<a href="https://github.com/${esc(l)}" target="_blank" rel="noopener">${esc(l)}</a>`;
 const officialTag = (yes) => (yes ? ' <span class="tag">Official</span>' : "");
 
@@ -460,6 +472,31 @@ function badgeBlock(here, { badgePath, value, target, heading, lede }) {
       </section>`;
 }
 
+// The two badges always point to the skill's listing, including a repository
+// table anchor when the editorial rules have not awarded a full skill page.
+function qualityBadgeContent(s, suffix = "") {
+  const id = `badge${suffix}`;
+  return `<div class="shield-pair">${badgePair(s).map((b) => `<a href="${listingTarget(s)}"><img src="${b.src.replace(BASE, "")}" alt="${esc(b.alt)}" width="160" height="175" loading="lazy"></a>`).join("")}</div>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="${id}-md">Copy both badges</button></div><pre><code id="${id}-md">${esc(badgeMarkdown(s))}</code></pre></div>
+        <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="${id}-html">Copy both badges</button></div><pre><code id="${id}-html">${esc(badgeHtml(s))}</code></pre></div>`;
+}
+function promotionOffer(here) {
+  const ended = PROMOTION.ends_at && Date.now() >= Date.parse(PROMOTION.ends_at);
+  if (!PROMOTION.enabled || ended) return "";
+  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="${rel(here, "directory/submit/")}">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : " Suede has not announced an end date."}</p>`;
+}
+function qualityBadgeBlock(here, s) {
+  return `<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ${esc(s.name)}</h2>
+        ${qualityBadgeContent(s)}
+        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="${rel(here, "directory/methodology/")}">methodology</a>.</p>
+        ${promotionOffer(here)}</section>`;
+}
+function promotionSection(here, skills) {
+  if (!skills.length) return "";
+  return `<section class="panel badge-promotion" id="badge-partners" aria-labelledby="badge-partners-title" data-promotion-end="${esc(PROMOTION.ends_at || "")}"><h2 id="badge-partners-title">Featured badge partners</h2><p>README badges verified by Suede. Quality scores follow the published structural checks.</p><div class="dir-cards">${skills.map((s) => `<a class="dir-card" href="${listingTarget(s)}"><span class="dir-card-head"><b>${esc(s.name)}</b>${gradeChip(s)}</span><span class="dir-card-repo">${esc(s.repo)}</span><span class="dir-card-text">${esc(s.summary || trimTo(s.description, 150))}</span></a>`).join("")}</div></section>`;
+}
+
 // ------------------------------------------------------------------ keywords
 
 const keywordMap = {};
@@ -513,7 +550,8 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
       : `<a href="${esc(`https://github.com/${s.repo}`)}" target="_blank" rel="noopener">${esc(s.repo)}</a>`
     : `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.label)}</a>${showLicense ? `<br><span class="row-license">${esc(s.license)}</span>` : ""}`;
   const id = showRepo ? "" : ` id="${esc(s.slug)}"`;
-  return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s.grade)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}</td></tr>`;
+  const badges = showRepo ? "" : s.featured ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>` : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
+  return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -711,7 +749,8 @@ function renderSkill(s) {
     ["Last commit", `${longDate(s.commit_date)} (repository)`],
     ["SKILL.md", `${plural(s.body_lines, "line")}, ${plural(s.body_words, "word")}`],
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
-    ["Suede Skill Check", `${gradeChip(s.grade)} <a href="#check">${checkSummary(s)}</a>`],
+    ["Quality score", `${gradeChip(s)} <a href="#check">${checkSummary(s)}</a>`],
+    ["Security scan", "Not scanned"],
     ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
   ]);
   const authorFacts = factsTable([
@@ -756,7 +795,7 @@ ${outline}
 ${fileList}
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
-        <h2 id="check-title">Suede Skill Check: grade ${s.grade}</h2>
+        <h2 id="check-title">Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>
         <p>${esc(s.name)} ${checkSummary(s).toLowerCase()}: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="${rel(here, "directory/methodology/")}">How the check works</a>.</p>
         <details class="check-details">
           <summary>See the eight checks</summary>
@@ -770,13 +809,7 @@ ${checks}
           </div>
         </details>
       </section>
-${badgeBlock(here, {
-  badgePath: `${here}badge.svg`,
-  value: `Grade ${s.grade}`,
-  target: url(here),
-  heading: `Badge for ${esc(s.name)}`,
-  lede: `Maintainers of ${esc(s.repo)} can show this listing in the skill's README. The badge links back to this page and shows the grade from the latest directory build.`,
-})}
+${qualityBadgeBlock(here, s)}
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>${s.lists.length ? `${esc(s.repo)} appears in ${plural(s.lists.length, "curated list")}: ${s.lists.map(listLink).join(", ")}.` : `${esc(s.repo)} is listed from its publisher's official collection or a listing request.`}</p>
@@ -808,7 +841,7 @@ ${relatedRows(here, siblings)}
   const code = {
     "@type": "SoftwareSourceCode",
     name: s.name,
-    description: ensureSentence(s.summary),
+    description: `${ensureSentence(s.summary)} Suede Skill Check: ${s.score}/100, grade ${s.grade}. Security scan: not scanned.`,
     codeRepository: s.folder_url,
     programmingLanguage: "Markdown",
     license: s.license_url,
@@ -845,7 +878,8 @@ ${relatedRows(here, siblings)}
     ],
     footerNote: `${esc(s.name)} is published by ${esc(s.owner)} in ${esc(s.repo)} and listed in the Suede Skills Directory, a curated index of public Agent Skills.`,
   }));
-  files.set(`${here}badge.svg`, badgeSvg(`Grade ${s.grade}`).svg);
+  files.set(`${here}badge.svg`, shieldSvg(s.score, "grade"));
+  files.set(`${here}score.svg`, shieldSvg(s.score, "score"));
 }
 
 // ------------------------------------------------------------------ repository pages
@@ -862,6 +896,7 @@ function renderRepo(r) {
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
+    ["Security scan", "Not scanned"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
     ["Last commit", longDate(r.commit)],
@@ -885,8 +920,9 @@ ${badgeBlock(here, {
   value: "listed",
   target: url(here),
   heading: "Show the listing in your README",
-  lede: `Maintainers of ${esc(r.repo)} can add this badge to the repository README. It links to this page, where visitors see every listed skill, its license and its source.`,
+  lede: `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.`,
 })}
+${promotionOffer(here)}
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in ${esc(r.repo)}</h2>
         <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
@@ -980,7 +1016,7 @@ function renderCategory(c) {
     .slice(0, 24)
     .map(
       (s) => `          <a class="dir-card" href="${rel(here, skillPath(s))}">
-            <span class="dir-card-head"><b>${esc(s.name)}</b>${gradeChip(s.grade)}</span>
+            <span class="dir-card-head"><b>${esc(s.name)}</b>${gradeChip(s)}</span>
             <span class="dir-card-repo">${esc(s.repo)}</span>
             <span class="dir-card-text">${esc(trimTo(s.summary, 140))}</span>
           </a>`
@@ -1143,8 +1179,10 @@ ${badgeBlock(here, {
   value: "listed",
   target: DIR_URL,
   heading: "For skill authors: show your listing",
-  lede: `Every listing has a page with its own README badge: the repository's page, or the skill's page when a repository's single listed skill has one. Find it under <b>README badge</b> on the page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
+  lede: `Every eligible skill has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
 })}
+${promotionOffer(here)}
+${promotionSection(here, promoted)}
       <section class="panel" aria-labelledby="all-repos-title">
         <h2 id="all-repos-title">All listed repositories</h2>
         <p class="repo-index">${allRepos.map((r) => `<a href="${rel(here, r.target)}">${esc(r.repo)}</a>`).join(" &middot; ")}</p>
@@ -1226,11 +1264,21 @@ ${rows}
           </table>
         </div>
         <ul>
-          <li><b>Grade A</b>: all seven graded checks pass (${fmt(gradeCounts.A)} listed skills).</li>
-          <li><b>Grade B</b>: six of seven pass (${fmt(gradeCounts.B)} listed skills).</li>
-          <li>Grades C and below are not listed.</li>
+          <li><b>Grade A: 90–100</b>. All seven graded checks currently produce 100/100 (${fmt(gradeCounts.A)} listed skills).</li>
+          <li><b>Grade B: 80–89</b>. Six of seven currently produce 86/100 (${fmt(gradeCounts.B)} listed skills).</li>
+          <li><b>Grade C: 70–79; grade D: 0–69</b>. Scores below 80 are not listed. Failed required frontmatter receives grade F and remains ineligible regardless of score.</li>
         </ul>
-        <p>A skill that passes all eight is well-formed, licensed and maintained. Read its SKILL.md to confirm it fits your task.</p>
+        <p>The quality score is <code>round(100 × passed / 7)</code>, with equal weight for each graded check. The possible scores are 0, 14, 29, 43, 57, 71, 86 and 100. Missing evidence fails its check; the denominator stays seven. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
+        <p>The score measures the recorded SKILL.md structure, license declaration and maintenance evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
+        <h3>Security scan status is separate</h3>
+        <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
+      </section>
+      <section class="panel" aria-labelledby="authors-title">
+        <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
+        <p>Skills scoring 80–100 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–100 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields.</p>
+        <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
+        ${promotionOffer(here)}
+        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. <a href="${rel(here, "directory/submit/")}">Send your repository and the checks you want help with</a>, then request a new review after updating the skill.</p>
       </section>
       <section class="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Listing rules</h2>
@@ -1293,11 +1341,13 @@ function renderSubmit() {
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules; skills graded A or B are listed.</li>
-          <li><b>Add the badge.</b> Every listing page has a README badge that links back to it: your repository's page, or your skill's page when the repository holds a single skill with a page of its own.</li>
+          <li><b>Add either badge.</b> Eligible skills scoring 80–100 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
       <section class="panel" aria-labelledby="pass-title">
-        <h2 id="pass-title">Pass the check on the first try</h2>
+        <h2 id="pass-title">Improve your score</h2>
+        <p>Below 80? Send your repository and ask for help with the checks. Authors are welcome to improve their skill and request a fresh review.</p>
+        ${promotionOffer(here)}
         <ul>
           <li>Start SKILL.md with YAML frontmatter that declares <code>name</code> and <code>description</code>.</li>
           <li>Use a lowercase, hyphenated name that matches the folder name, 64 characters or fewer.</li>
@@ -1372,11 +1422,17 @@ render404();
 for (const c of categories) renderCategory(c);
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
+for (const s of data.skills) {
+  files.set(`${skillPath(s)}score.svg`, shieldSvg(s.score, "score"));
+  files.set(`${skillPath(s)}badge.svg`, shieldSvg(s.score, "grade"));
+  files.set(`directory/badges/score-${s.score}.svg`, shieldSvg(s.score, "score"));
+  files.set(`directory/badges/grade-${s.grade.toLowerCase()}.svg`, shieldSvg(s.score, "grade"));
+}
 files.set("directory/badge.svg", badgeSvg("listed").svg);
 
 // llms.txt carries one line about the directory, with live counts.
 const llmsPath = path.join(docsRoot, "llms.txt");
-const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, is graded A or B on the eight-part Suede Skill Check, and states its license; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
+const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, has a quality score of 80–100 and grade A or B on the Suede Skill Check, states its license and offers numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
 const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");
