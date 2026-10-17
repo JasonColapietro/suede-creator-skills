@@ -49,10 +49,11 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.root = Path(cls.tmp.name)
         for name in ("scripts/build-directory.mjs", "directory/categories.json",
-                     "directory/notes.json", "docs/llms.txt"):
+                     "directory/notes.json", "directory/promotion.json", "scripts/directory/badges.mjs", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
+        shutil.copytree(ROOT / "scripts/directory/badges", cls.root / "scripts/directory/badges")
         (cls.root / "scripts/lib").mkdir()
         data = json.loads((ROOT / "directory/skills.json").read_text())
         template = next(s for s in data["skills"] if s.get("featured") and s["license"] == "MIT")
@@ -77,6 +78,61 @@ class DirectoryInstallTests(unittest.TestCase):
         (cls.root / "directory/skills.json").write_text(json.dumps(data))
         subprocess.run(["node", str(cls.root / "scripts/build-directory.mjs")],
                        check=True, capture_output=True, text=True)
+
+    def test_quality_badges_security_and_schema_render_together(self):
+        page = (self.root / 'docs/directory/fixture/skills/skill-0/index.html').read_text()
+        self.assertIn('100/100 · A', page)
+        self.assertIn('Security scan: not scanned.', page)
+        self.assertIn('Not scanned', page)
+        snippets = [html.unescape(re.search(rf'<code id="badge-{kind}">([\s\S]*?)</code>', page)[1]) for kind in ('md', 'html')]
+        for snippet in snippets:
+            self.assertEqual(snippet.count('](https://skills.suedeai.ai/directory/fixture/skills/skill-0/)') if snippet.startswith('[!') else snippet.count('href="https://skills.suedeai.ai/directory/fixture/skills/skill-0/"'), 2)
+            self.assertIn('/skill-0/score.svg', snippet)
+            self.assertIn('/skill-0/badge.svg', snippet)
+        legacy = (self.root / 'docs/directory/fixture/skills/skill-0/badge.svg').read_text()
+        self.assertIn('M86.40 202.96A113.10', legacy)
+        self.assertIn('Grade A', legacy)
+        home = (self.root / 'docs/directory/index.html').read_text()
+        self.assertNotIn('id="badge-partners"', home)
+
+    def test_builder_rejects_invented_score_or_security_result(self):
+        path = self.root / 'directory/skills.json'
+        original = path.read_text()
+        try:
+            for patch in ({'score': 99}, {'security_scan_status': 'passed'}):
+                data = json.loads(original)
+                data['skills'][0].update(patch)
+                path.write_text(json.dumps(data))
+                result = subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], capture_output=True, text=True)
+                self.assertNotEqual(result.returncode, 0)
+        finally:
+            path.write_text(original)
+
+    def test_verified_promotion_links_to_listing_and_preserves_editorial_page(self):
+        path = self.root / 'directory/promotion.json'
+        original = path.read_text()
+        from datetime import datetime, timezone
+        target = 'https://skills.suedeai.ai/directory/fixture/skills/skill-0/'
+        record = {'repo': 'fixture/skills', 'score': 100, 'status': 'verified',
+                  'target': target, 'readme_path': 'README.md', 'commit': 'a' * 40,
+                  'rendered_sha256': 'b' * 64, 'verified_at': datetime.now(timezone.utc).isoformat(),
+                  'badges': ['https://skills.suedeai.ai/directory/fixture/skills/skill-0/score.svg',
+                             'https://skills.suedeai.ai/directory/fixture/skills/skill-0/badge.svg']}
+        try:
+            for state, visible in [('pending', False), ('verified', True)]:
+                record['status'] = state
+                path.write_text(json.dumps({'enabled': True, 'ends_at': None, 'verifications': {'fixture/skills/skill-0': record}}))
+                subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
+                home = (self.root / 'docs/directory/index.html').read_text()
+                self.assertEqual('id="badge-partners"' in home, visible)
+                if visible:
+                    section = home.split('id="badge-partners"', 1)[1].split('</section>', 1)[0]
+                    self.assertIn('href="' + target + '"', section)
+                    self.assertNotIn('href="https://github.com/', section)
+                self.assertTrue((self.root / 'docs/directory/fixture/skills/skill-0/index.html').is_file())
+        finally:
+            path.write_text(original)
+            subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
 
     def snippet(self, index, route):
         page = (self.root / f"docs/directory/fixture/skills/skill-{index}/index.html").read_text()

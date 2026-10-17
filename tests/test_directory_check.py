@@ -59,6 +59,50 @@ class DescriptionTriggerTests(unittest.TestCase):
         self.assertEqual(grade.grade(checks), "A")
 
 
+class NumericScoreTests(unittest.TestCase):
+    def test_all_eight_scores_and_existing_eligibility(self):
+        from itertools import product
+        keys = [key for key, _ in grade.CHECKS[1:]]
+        expected = [0, 14, 29, 43, 57, 71, 86, 100]
+        for bits in product((False, True), repeat=7):
+            checks = dict(zip(keys, bits), frontmatter=True)
+            score = grade.quality_score(checks)
+            self.assertEqual(score, expected[sum(bits)])
+            self.assertEqual(grade.grade(checks) in ('A', 'B'), sum(bits) >= 6)
+            self.assertEqual(grade.eligible(checks), sum(bits) >= 6 and checks['license'])
+
+    def test_letter_boundaries_and_invalid_scores(self):
+        for score, letter in [(0, 'D'), (69, 'D'), (70, 'C'), (79, 'C'),
+                              (80, 'B'), (89, 'B'), (90, 'A'), (100, 'A')]:
+            self.assertEqual(grade.letter_grade(score), letter)
+        self.assertIsNone(grade.letter_grade(None))
+        for invalid in (-1, 101, 89.5, True, '90'):
+            with self.assertRaises(ValueError):
+                grade.letter_grade(invalid)
+
+    def test_missing_evidence_fails_with_fixed_denominator(self):
+        partial = record("Use when creating a thorough product launch checklist.")
+        partial.pop("fm_error")
+        self.assertFalse(grade.run_checks(partial)["frontmatter"])
+        checks = grade.run_checks({})
+        self.assertFalse(any(checks.values()))
+        self.assertEqual(grade.quality_score(checks), 0)
+        self.assertEqual(grade.quality_score({'name_format': True}), 14)
+        self.assertFalse(grade.run_checks(record('Use when preparing a launch.',
+                                               body_lines=None))['concise_body'])
+
+    def test_frontmatter_gate_and_fetch_failures(self):
+        checks = {key: True for key, _ in grade.CHECKS}
+        checks['frontmatter'] = False
+        self.assertEqual(grade.quality_score(checks), 100)
+        self.assertEqual(grade.grade(checks), 'F')
+        self.assertFalse(grade.eligible(checks))
+        self.assertIsNone(grade.run_checks({'fetch_error': 'timeout'}))
+        self.assertIsNone(grade.quality_score(None))
+        self.assertIsNone(grade.grade(None))
+        self.assertFalse(grade.eligible(None))
+
+
 class LicenseCheckTests(unittest.TestCase):
     def test_unknown_frontmatter_license_with_no_license_file_fails(self):
         checks = grade.run_checks(record("Use when drafting a press release for a launch.", fm_license="Unknown", repo_license=None))

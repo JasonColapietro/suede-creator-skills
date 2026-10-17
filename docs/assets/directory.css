@@ -108,6 +108,11 @@
 .filter:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 .badge-preview img { display: inline-block; height: 20px; width: auto; }
+.shield-pair { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+.shield-pair img { width: 160px; height: 175px; max-width: 100%; }
+.row-badges { margin-top: 10px; }
+.row-badges summary { cursor: pointer; color: var(--gold); padding: 8px 0; }
+.badge-offer { margin: 20px 0; line-height: 1.65; }
 .snippet { margin-top: 14px; }
 .snippet-head { display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .snippet-copy {

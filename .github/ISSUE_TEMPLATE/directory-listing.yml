@@ -13,6 +13,8 @@ body:
       label: Request
       options:
         - Add my skills
+        - Verify my two README badges for featured placement
+        - Help improve my quality score
         - Correct a listing
         - Remove a listing
     validations:
@@ -28,7 +30,7 @@ body:
     id: details
     attributes:
       label: Details
-      description: For a correction, name the skill and what should change. For a removal, name the skills to remove or say "all".
+      description: For badge verification, give the Suede listing URL and README path containing both linked badges. For score help, name the failed checks. For a correction, describe the change. For a removal, name the skills or say "all".
     validations:
       required: false
   - type: checkboxes
