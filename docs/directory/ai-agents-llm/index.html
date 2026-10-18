@@ -287,151 +287,10 @@
         <li><b>57</b> repositories</li>
         <li><b>105</b> with full pages</li>
       </ul>
-      <section class="panel" aria-labelledby="choose-title">
-        <h2 id="choose-title">How to choose AI agent and LLM engineering skills</h2>
-        <p>Start from the system you are building. Skills for a specific framework or model provider carry that provider's conventions, so they beat general prompting advice when you already know your stack.</p>
-        <p>Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the scripts it bundles and the environment variables its code reads.</p>
-        <p>For agent workflow skills (planning, subagents, review loops), read the SKILL.md body first. They change how your agent works on every task, so pick one method and stay with it rather than stacking overlapping ones.</p>
-      </section>
-      <section class="panel" aria-labelledby="picks-title">
-        <h2 id="picks-title">Where to start</h2>
-        <div class="links">
-          <a class="link-row" href="../anthropics/skills/mcp-builder/"><b>mcp-builder</b><span>Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or TypeScript… Published by Anthropic.</span></a>
-          <a class="link-row" href="../trailofbits/skills/let-fate-decide/"><b>let-fate-decide</b><span>Draws a Tarot spread to inject entropy into planning when prompts are vague or casually delegated, and interprets the… Published by Trail of Bits.</span></a>
-          <a class="link-row" href="../google/skills/agent-platform-deploy/"><b>agent-platform-deploy</b><span>Deploys open models or custom weights from Model Garden to Agent Platform endpoints, checks deployment status and… Published by Google.</span></a>
-          <a class="link-row" href="../huggingface/skills/huggingface-community-evals/"><b>huggingface-community-evals</b><span>Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including backend… Published by Hugging Face.</span></a>
-          <a class="link-row" href="../resend/resend-skills/agent-email-inbox/"><b>agent-email-inbox</b><span>Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and… Published by Resend.</span></a>
-        </div>
-      </section>
-      <section aria-labelledby="featured-title">
-        <h2 id="featured-title">Featured AI agent skills</h2>
-        <div class="dir-cards">
-          <a class="dir-card" href="../anthropics/skills/mcp-builder/">
-            <span class="dir-card-head"><b>mcp-builder</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">anthropics/skills</span>
-            <span class="dir-card-text">Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or TypeScript with the MCP SDK.</span>
-          </a>
-          <a class="dir-card" href="../anthropics/skills/skill-creator/">
-            <span class="dir-card-head"><b>skill-creator</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">anthropics/skills</span>
-            <span class="dir-card-text">Guides creating new skills, improving existing ones, running evals, benchmarking skill performance with variance analysis, and optimizing…</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/diagnosing-superpowers/">
-            <span class="dir-card-head"><b>diagnosing-superpowers</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Diagnoses why a superpowers session went wrong, such as repeated work or ignored plans, and helps build a bug report for maintainers.</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/dispatching-parallel-agents/">
-            <span class="dir-card-head"><b>dispatching-parallel-agents</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Guides splitting two or more independent tasks, with no shared state or sequential dependencies, across parallel agents.</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/executing-plans/">
-            <span class="dir-card-head"><b>executing-plans</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Guides executing an implementation plan inline in the current session as the implementer, when inline execution is chosen or no subagent…</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/using-superpowers/">
-            <span class="dir-card-head"><b>using-superpowers</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Establishes how to find and use skills at the start of any conversation, requiring skill invocation before any response, including…</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/verification-before-completion/">
-            <span class="dir-card-head"><b>verification-before-completion</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Requires running verification commands and confirming their output before claiming work is complete, fixed, or passing, and before…</span>
-          </a>
-          <a class="dir-card" href="../obra/superpowers/writing-plans/">
-            <span class="dir-card-head"><b>writing-plans</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">obra/superpowers</span>
-            <span class="dir-card-text">Guides writing a plan from a spec or requirements for a multi-step task, before touching any code.</span>
-          </a>
-          <a class="dir-card" href="../continuum-ai-corp/orcareplay/orca-replay/">
-            <span class="dir-card-head"><b>orca-replay</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">Continuum-AI-Corp/OrcaReplay</span>
-            <span class="dir-card-text">Answers questions about a past agent run from its recording rather than memory, and replays or forks that run.</span>
-          </a>
-          <a class="dir-card" href="../sanjay3290/ai-skills/grok-build/">
-            <span class="dir-card-head"><b>grok-build</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">sanjay3290/ai-skills</span>
-            <span class="dir-card-text">Delegates well-specified implementation tasks to xAI's Grok Build CLI running headlessly while the assistant writes task specs, reviews…</span>
-          </a>
-          <a class="dir-card" href="../sanjay3290/ai-skills/manus/">
-            <span class="dir-card-head"><b>manus</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">sanjay3290/ai-skills</span>
-            <span class="dir-card-text">Delegates complex, long-running tasks to the Manus AI agent for autonomous execution, such as deep web research, market analysis, product…</span>
-          </a>
-          <a class="dir-card" href="../trailofbits/skills/let-fate-decide/">
-            <span class="dir-card-head"><b>let-fate-decide</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">trailofbits/skills</span>
-            <span class="dir-card-text">Draws a Tarot spread to inject entropy into planning when prompts are vague or casually delegated, and interprets the spread to guide next…</span>
-          </a>
-          <a class="dir-card" href="../trailofbits/skills/slicing-code-context/">
-            <span class="dir-card-head"><b>slicing-code-context</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">trailofbits/skills</span>
-            <span class="dir-card-text">Selects bounded, graph-informed source slices with Trailmark and delegates focused code analysis or patch-proposal work to a smaller…</span>
-          </a>
-          <a class="dir-card" href="../zxkane/aws-skills/aws-agentic-ai/">
-            <span class="dir-card-head"><b>aws-agentic-ai</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">zxkane/aws-skills</span>
-            <span class="dir-card-text">Guides deploying and managing AI agents on AWS Bedrock AgentCore, covering Gateway, Runtime, Memory, Identity, Observability, Evaluations…</span>
-          </a>
-          <a class="dir-card" href="../zxkane/aws-skills/aws-mcp-setup/">
-            <span class="dir-card-head"><b>aws-mcp-setup</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">zxkane/aws-skills</span>
-            <span class="dir-card-text">Configures AWS MCP servers for documentation search and API access, covering both the full AWS MCP Server and the lightweight…</span>
-          </a>
-          <a class="dir-card" href="../deanpeters/product-manager-skills/autonomous-investigation/">
-            <span class="dir-card-head"><b>autonomous-investigation</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">deanpeters/Product-Manager-Skills</span>
-            <span class="dir-card-text">Defines the protocol behind investigation skills for unattended AI research, using a search-plan gate, Fact, Inference, and Assumption…</span>
-          </a>
-          <a class="dir-card" href="../luoyuctl/agenttrace/agenttrace-session-audit/">
-            <span class="dir-card-head"><b>agenttrace-session-audit</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">luoyuctl/agenttrace</span>
-            <span class="dir-card-text">Audits local AI coding-agent sessions from tools like Claude Code and Codex CLI with agenttrace, checking cost, tokens, tool failures…</span>
-          </a>
-          <a class="dir-card" href="../mblode/agent-skills/agent-ready/">
-            <span class="dir-card-head"><b>agent-ready</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">mblode/agent-skills</span>
-            <span class="dir-card-text">Implements agent-readiness on sites and docs from scorecards like Mintlify Agent Score or AFDocs, including llms.txt coverage and agents…</span>
-          </a>
-          <a class="dir-card" href="../mblode/agent-skills/agent-skills-creator/">
-            <span class="dir-card-head"><b>agent-skills-creator</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">mblode/agent-skills</span>
-            <span class="dir-card-text">Creates and improves portable Agent Skills using a validator and routing scenarios, with evidence-based decisions to keep, cut, merge, or…</span>
-          </a>
-          <a class="dir-card" href="../mblode/agent-skills/chat-history/">
-            <span class="dir-card-head"><b>chat-history</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">mblode/agent-skills</span>
-            <span class="dir-card-text">Recovers decisions, previous fixes, and research from past AI conversations with source evidence, reading local Claude Code, Codex, Grok…</span>
-          </a>
-          <a class="dir-card" href="../mhattingpete/claude-skills-marketplace/conversation-analyzer/">
-            <span class="dir-card-head"><b>conversation-analyzer</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">mhattingpete/claude-skills-marketplace</span>
-            <span class="dir-card-text">Analyzes Claude Code conversation history to identify patterns, common mistakes, and opportunities for workflow improvement and automation.</span>
-          </a>
-          <a class="dir-card" href="../mhattingpete/claude-skills-marketplace/ensemble-solving/">
-            <span class="dir-card-head"><b>ensemble-solving</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">mhattingpete/claude-skills-marketplace</span>
-            <span class="dir-card-text">Generates multiple diverse solutions in parallel and selects the best, for architecture decisions, code generation with several valid…</span>
-          </a>
-          <a class="dir-card" href="../muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/">
-            <span class="dir-card-head"><b>advanced-evaluation</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">muratcankoylan/Agent-Skills-for-Context-Engineering</span>
-            <span class="dir-card-text">Guides advanced LLM evaluation, including LLM-as-judge systems, direct scoring, pairwise comparison, rubric calibration, evaluator bias…</span>
-          </a>
-          <a class="dir-card" href="../muratcankoylan/agent-skills-for-context-engineering/context-compression/">
-            <span class="dir-card-head"><b>context-compression</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
-            <span class="dir-card-repo">muratcankoylan/Agent-Skills-for-Context-Engineering</span>
-            <span class="dir-card-text">Guides compression of long-running agent sessions through structured summarization, compaction, and durable handoff summaries that…</span>
-          </a>
-        </div>
-      </section>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">All 459 AI agent skills</h2>
-        <p><label class="filter-label" for="all-skills-filter">Filter by name, repository or task</label></p>
-        <p><input id="all-skills-filter" class="filter" type="search" placeholder="Filter 459 skills" data-filter-for="all-skills" data-filter-status="all-skills-status" autocomplete="off"> <span id="all-skills-status" class="muted" role="status" aria-live="polite"></span></p>
+        <div class="table-filter" hidden><label class="filter-label" for="all-skills-filter">Filter by name, repository or task</label>
+        <div class="search-line"><input id="all-skills-filter" class="filter" type="search" placeholder="Search 459 skills" data-filter-for="all-skills" data-filter-status="all-skills-status" autocomplete="off"><button type="button" data-table-clear>Clear</button></div><p id="all-skills-status" class="muted" role="status" aria-live="polite"></p><p data-table-empty hidden>No matching skills. Try fewer words or clear your search.</p></div>
         <div class="table-wrap">
           <table class="skill-table" id="all-skills" data-filter-group="all-skills">
             <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">What it does</th></tr></thead>
@@ -908,6 +767,147 @@
           </table>
         </div>
         </details>
+      </section>
+      <section class="panel" aria-labelledby="choose-title">
+        <h2 id="choose-title">How to choose AI agent and LLM engineering skills</h2>
+        <p>Start from the system you are building. Skills for a specific framework or model provider carry that provider's conventions, so they beat general prompting advice when you already know your stack.</p>
+        <p>Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the scripts it bundles and the environment variables its code reads.</p>
+        <p>For agent workflow skills (planning, subagents, review loops), read the SKILL.md body first. They change how your agent works on every task, so pick one method and stay with it rather than stacking overlapping ones.</p>
+      </section>
+      <section class="panel" aria-labelledby="picks-title">
+        <h2 id="picks-title">Where to start</h2>
+        <div class="links">
+          <a class="link-row" href="../anthropics/skills/mcp-builder/"><b>mcp-builder</b><span>Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or TypeScript… Published by Anthropic.</span></a>
+          <a class="link-row" href="../trailofbits/skills/let-fate-decide/"><b>let-fate-decide</b><span>Draws a Tarot spread to inject entropy into planning when prompts are vague or casually delegated, and interprets the… Published by Trail of Bits.</span></a>
+          <a class="link-row" href="../google/skills/agent-platform-deploy/"><b>agent-platform-deploy</b><span>Deploys open models or custom weights from Model Garden to Agent Platform endpoints, checks deployment status and… Published by Google.</span></a>
+          <a class="link-row" href="../huggingface/skills/huggingface-community-evals/"><b>huggingface-community-evals</b><span>Runs evaluations for Hugging Face Hub models on local hardware using inspect-ai and lighteval, including backend… Published by Hugging Face.</span></a>
+          <a class="link-row" href="../resend/resend-skills/agent-email-inbox/"><b>agent-email-inbox</b><span>Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and… Published by Resend.</span></a>
+        </div>
+      </section>
+      <section aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured AI agent skills</h2>
+        <div class="dir-cards">
+          <a class="dir-card" href="../anthropics/skills/mcp-builder/">
+            <span class="dir-card-head"><b>mcp-builder</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">anthropics/skills</span>
+            <span class="dir-card-text">Guides building MCP servers that let LLMs use external services through tools, in Python with FastMCP or TypeScript with the MCP SDK.</span>
+          </a>
+          <a class="dir-card" href="../anthropics/skills/skill-creator/">
+            <span class="dir-card-head"><b>skill-creator</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">anthropics/skills</span>
+            <span class="dir-card-text">Guides creating new skills, improving existing ones, running evals, benchmarking skill performance with variance analysis, and optimizing…</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/diagnosing-superpowers/">
+            <span class="dir-card-head"><b>diagnosing-superpowers</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Diagnoses why a superpowers session went wrong, such as repeated work or ignored plans, and helps build a bug report for maintainers.</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/dispatching-parallel-agents/">
+            <span class="dir-card-head"><b>dispatching-parallel-agents</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Guides splitting two or more independent tasks, with no shared state or sequential dependencies, across parallel agents.</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/executing-plans/">
+            <span class="dir-card-head"><b>executing-plans</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Guides executing an implementation plan inline in the current session as the implementer, when inline execution is chosen or no subagent…</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/using-superpowers/">
+            <span class="dir-card-head"><b>using-superpowers</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Establishes how to find and use skills at the start of any conversation, requiring skill invocation before any response, including…</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/verification-before-completion/">
+            <span class="dir-card-head"><b>verification-before-completion</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Requires running verification commands and confirming their output before claiming work is complete, fixed, or passing, and before…</span>
+          </a>
+          <a class="dir-card" href="../obra/superpowers/writing-plans/">
+            <span class="dir-card-head"><b>writing-plans</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">obra/superpowers</span>
+            <span class="dir-card-text">Guides writing a plan from a spec or requirements for a multi-step task, before touching any code.</span>
+          </a>
+          <a class="dir-card" href="../continuum-ai-corp/orcareplay/orca-replay/">
+            <span class="dir-card-head"><b>orca-replay</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">Continuum-AI-Corp/OrcaReplay</span>
+            <span class="dir-card-text">Answers questions about a past agent run from its recording rather than memory, and replays or forks that run.</span>
+          </a>
+          <a class="dir-card" href="../sanjay3290/ai-skills/grok-build/">
+            <span class="dir-card-head"><b>grok-build</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">sanjay3290/ai-skills</span>
+            <span class="dir-card-text">Delegates well-specified implementation tasks to xAI's Grok Build CLI running headlessly while the assistant writes task specs, reviews…</span>
+          </a>
+          <a class="dir-card" href="../sanjay3290/ai-skills/manus/">
+            <span class="dir-card-head"><b>manus</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">sanjay3290/ai-skills</span>
+            <span class="dir-card-text">Delegates complex, long-running tasks to the Manus AI agent for autonomous execution, such as deep web research, market analysis, product…</span>
+          </a>
+          <a class="dir-card" href="../trailofbits/skills/let-fate-decide/">
+            <span class="dir-card-head"><b>let-fate-decide</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">trailofbits/skills</span>
+            <span class="dir-card-text">Draws a Tarot spread to inject entropy into planning when prompts are vague or casually delegated, and interprets the spread to guide next…</span>
+          </a>
+          <a class="dir-card" href="../trailofbits/skills/slicing-code-context/">
+            <span class="dir-card-head"><b>slicing-code-context</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">trailofbits/skills</span>
+            <span class="dir-card-text">Selects bounded, graph-informed source slices with Trailmark and delegates focused code analysis or patch-proposal work to a smaller…</span>
+          </a>
+          <a class="dir-card" href="../zxkane/aws-skills/aws-agentic-ai/">
+            <span class="dir-card-head"><b>aws-agentic-ai</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">zxkane/aws-skills</span>
+            <span class="dir-card-text">Guides deploying and managing AI agents on AWS Bedrock AgentCore, covering Gateway, Runtime, Memory, Identity, Observability, Evaluations…</span>
+          </a>
+          <a class="dir-card" href="../zxkane/aws-skills/aws-mcp-setup/">
+            <span class="dir-card-head"><b>aws-mcp-setup</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">zxkane/aws-skills</span>
+            <span class="dir-card-text">Configures AWS MCP servers for documentation search and API access, covering both the full AWS MCP Server and the lightweight…</span>
+          </a>
+          <a class="dir-card" href="../deanpeters/product-manager-skills/autonomous-investigation/">
+            <span class="dir-card-head"><b>autonomous-investigation</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">deanpeters/Product-Manager-Skills</span>
+            <span class="dir-card-text">Defines the protocol behind investigation skills for unattended AI research, using a search-plan gate, Fact, Inference, and Assumption…</span>
+          </a>
+          <a class="dir-card" href="../luoyuctl/agenttrace/agenttrace-session-audit/">
+            <span class="dir-card-head"><b>agenttrace-session-audit</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">luoyuctl/agenttrace</span>
+            <span class="dir-card-text">Audits local AI coding-agent sessions from tools like Claude Code and Codex CLI with agenttrace, checking cost, tokens, tool failures…</span>
+          </a>
+          <a class="dir-card" href="../mblode/agent-skills/agent-ready/">
+            <span class="dir-card-head"><b>agent-ready</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">mblode/agent-skills</span>
+            <span class="dir-card-text">Implements agent-readiness on sites and docs from scorecards like Mintlify Agent Score or AFDocs, including llms.txt coverage and agents…</span>
+          </a>
+          <a class="dir-card" href="../mblode/agent-skills/agent-skills-creator/">
+            <span class="dir-card-head"><b>agent-skills-creator</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">mblode/agent-skills</span>
+            <span class="dir-card-text">Creates and improves portable Agent Skills using a validator and routing scenarios, with evidence-based decisions to keep, cut, merge, or…</span>
+          </a>
+          <a class="dir-card" href="../mblode/agent-skills/chat-history/">
+            <span class="dir-card-head"><b>chat-history</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">mblode/agent-skills</span>
+            <span class="dir-card-text">Recovers decisions, previous fixes, and research from past AI conversations with source evidence, reading local Claude Code, Codex, Grok…</span>
+          </a>
+          <a class="dir-card" href="../mhattingpete/claude-skills-marketplace/conversation-analyzer/">
+            <span class="dir-card-head"><b>conversation-analyzer</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">mhattingpete/claude-skills-marketplace</span>
+            <span class="dir-card-text">Analyzes Claude Code conversation history to identify patterns, common mistakes, and opportunities for workflow improvement and automation.</span>
+          </a>
+          <a class="dir-card" href="../mhattingpete/claude-skills-marketplace/ensemble-solving/">
+            <span class="dir-card-head"><b>ensemble-solving</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">mhattingpete/claude-skills-marketplace</span>
+            <span class="dir-card-text">Generates multiple diverse solutions in parallel and selects the best, for architecture decisions, code generation with several valid…</span>
+          </a>
+          <a class="dir-card" href="../muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/">
+            <span class="dir-card-head"><b>advanced-evaluation</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">muratcankoylan/Agent-Skills-for-Context-Engineering</span>
+            <span class="dir-card-text">Guides advanced LLM evaluation, including LLM-as-judge systems, direct scoring, pairwise comparison, rubric calibration, evaluator bias…</span>
+          </a>
+          <a class="dir-card" href="../muratcankoylan/agent-skills-for-context-engineering/context-compression/">
+            <span class="dir-card-head"><b>context-compression</b><span class="grade grade-a" title="Suede Skill Check: 100/100, grade A">100/100 · A</span></span>
+            <span class="dir-card-repo">muratcankoylan/Agent-Skills-for-Context-Engineering</span>
+            <span class="dir-card-text">Guides compression of long-running agent sessions through structured summarization, compaction, and durable handoff summaries that…</span>
+          </a>
+        </div>
       </section>
       <section class="panel" aria-labelledby="repos-title">
         <h2 id="repos-title">Top AI agent collections</h2>

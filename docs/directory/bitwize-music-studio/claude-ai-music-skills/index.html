@@ -449,8 +449,8 @@
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in bitwize-music-studio/claude-ai-music-skills</h2>
         <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
-        <p><label class="filter-label" for="repo-skills-filter">Filter by name, repository or task</label></p>
-        <p><input id="repo-skills-filter" class="filter" type="search" placeholder="Filter 52 skills" data-filter-for="repo-skills" data-filter-status="repo-skills-status" autocomplete="off"> <span id="repo-skills-status" class="muted" role="status" aria-live="polite"></span></p>
+        <div class="table-filter" hidden><label class="filter-label" for="repo-skills-filter">Filter by name, repository or task</label>
+        <div class="search-line"><input id="repo-skills-filter" class="filter" type="search" placeholder="Search 52 skills" data-filter-for="repo-skills" data-filter-status="repo-skills-status" autocomplete="off"><button type="button" data-table-clear>Clear</button></div><p id="repo-skills-status" class="muted" role="status" aria-live="polite"></p><p data-table-empty hidden>No matching skills. Try fewer words or clear your search.</p></div>
         <div class="table-wrap">
           <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
             <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>

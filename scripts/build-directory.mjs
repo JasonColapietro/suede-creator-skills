@@ -573,8 +573,8 @@ ${render(rows.slice(FULL_TABLE_ROWS), `${id}-more`)}
 }
 
 function filterField(id, total, noun) {
-  return `        <p><label class="filter-label" for="${id}-filter">Filter by name, repository or task</label></p>
-        <p><input id="${id}-filter" class="filter" type="search" placeholder="Filter ${fmt(total)} ${noun}" data-filter-for="${id}" data-filter-status="${id}-status" autocomplete="off"> <span id="${id}-status" class="muted" role="status" aria-live="polite"></span></p>`;
+  return `        <div class="table-filter" hidden><label class="filter-label" for="${id}-filter">Filter by name, repository or task</label>
+        <div class="search-line"><input id="${id}-filter" class="filter" type="search" placeholder="Search ${fmt(total)} ${noun}" data-filter-for="${id}" data-filter-status="${id}-status" autocomplete="off"><button type="button" data-table-clear>Clear</button></div><p id="${id}-status" class="muted" role="status" aria-live="polite"></p><p data-table-empty hidden>No matching skills. Try fewer words or clear your search.</p></div>`;
 }
 
 // ------------------------------------------------------------------ skill pages
@@ -1031,6 +1031,11 @@ function renderCategory(c) {
         <li><b>${fmt(repoCounts.size)}</b> repositories</li>
         <li><b>${fmt(feat.length)}</b> with full pages</li>
       </ul>
+      <section class="panel" aria-labelledby="all-title">
+        <h2 id="all-title">All ${fmt(all.length)} ${esc(c.short)} skills</h2>
+${filterField("all-skills", all.length, "skills")}
+${skillTable(here, sorted, { id: "all-skills", showRepo: true, caption: `${c.short} skills` })}
+      </section>
       <section class="panel" aria-labelledby="choose-title">
         <h2 id="choose-title">How to choose ${esc(c.lower)} skills</h2>
 ${c.guide.map((p) => `        <p>${esc(p)}</p>`).join("\n")}
@@ -1047,11 +1052,6 @@ ${feat.length ? `      <section aria-labelledby="featured-title">
 ${cards}
         </div>
       </section>` : ""}
-      <section class="panel" aria-labelledby="all-title">
-        <h2 id="all-title">All ${fmt(all.length)} ${esc(c.short)} skills</h2>
-${filterField("all-skills", all.length, "skills")}
-${skillTable(here, sorted, { id: "all-skills", showRepo: true, caption: `${c.short} skills` })}
-      </section>
 ${topRepos.length ? `      <section class="panel" aria-labelledby="repos-title">
         <h2 id="repos-title">Top ${esc(c.short)} collections</h2>
         <div class="links">
@@ -1128,32 +1128,35 @@ const FAQ = [
 function renderHub() {
   const here = "directory/";
   const bc = crumbs(here, [["", "Home"], [null, "Directory"]]);
-  const catCards = categories
-    .map((c) => {
-      const n = skillsByCat.get(c.slug).length;
-      return `          <a class="dir-card cat-card" href="${rel(here, catPath(c.slug))}">
-            <span class="dir-card-head"><b>${esc(c.title)}</b><span class="count-chip">${fmt(n)}</span></span>
-            <span class="dir-card-text">${esc(c.meta.replace(/ for Claude Code and Codex/, ""))}</span>
-          </a>`;
-    })
-    .join("\n");
+  const catCards = categories.map((c) => `<a href="${rel(here, catPath(c.slug))}" data-category="${esc(c.slug)}"><span>${esc(c.title)}</span><span class="count-chip">${fmt(skillsByCat.get(c.slug).length)}</span></a>`).join("\n");
+  const discovery = [...data.skills].sort((a, b) => b.lists.length - a.lists.length || Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name));
+  files.set("directory/search-index.json", JSON.stringify(discovery.map((s) => ({
+    name: s.name, repo: s.repo, description: s.summary || trimTo(s.description, 180),
+    category: s.category, label: catBySlug.get(s.category).label, license: s.license,
+    grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured,
+  }))) + "\n");
+  const starters = categories.slice(0, 8).map((c) => discovery.find((s) => s.featured && s.category === c.slug)).filter(Boolean);
+  const starterRows = starters.map((s) => `<article class="discovery-row"><div><p class="result-meta">${esc(catBySlug.get(s.category).label)} <span> / ${esc(s.repo)}</span></p><h3><a href="${rel(here, skillPath(s))}">${esc(s.name)}</a></h3><p>${esc(s.summary || trimTo(s.description, 180))}</p><p class="result-foot">${esc(s.license)} · Full skill page</p></div><div class="result-quality"><img class="result-shield" src="badges/score-${s.score}.svg" alt="Suede S shield" width="80" height="88" loading="lazy"><span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></div></article>`).join("\n");
   const official = linkedRepos.filter((r) => r.official).sort((a, b) => b.skills.length - a.skills.length || a.slug.localeCompare(b.slug));
   const repoRow = (r) =>
     `          <a class="link-row" href="${rel(here, r.target)}"><b>${esc(r.repo)}</b><span>${plural(r.skills.length, "skill")} &middot; ${esc(catBySlug.get(r.primary).label)}${r.lists.length ? ` &middot; in ${plural(r.lists.length, "list")}` : ""}</span></a>`;
   const allRepos = [...linkedRepos].sort((a, b) => a.repo.toLowerCase().localeCompare(b.repo.toLowerCase()));
   const body = `${bc.html}
-      <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and every agent that reads SKILL.md, from ${fmt(repos.size)} public GitHub repositories, sorted into ${categories.length} directories by what they do. Every listing passed the Suede Skill Check, links straight to its source and states its license, and every full skill page summarizes what the skill's files contain before you install it.</p>
-      <ul class="stat-row" aria-label="Directory size">
-        <li><b>${fmt(data.skills.length)}</b> listed skills</li>
-        <li><b>${fmt(repos.size)}</b> repositories</li>
-        <li><b>${fmt(featured.length)}</b> full skill pages</li>
-        <li><b>${openPct}%</b> openly licensed</li>
-      </ul>
-      <p><a class="button" href="#categories">Browse by category</a> <a class="button secondary" href="${rel(here, "directory/submit/")}">List your skill</a></p>
-      <section aria-labelledby="categories">
-        <h2 id="categories">Skill directories by category</h2>
-        <div class="dir-cards">
-${catCards}
+      <div class="directory-intro">
+        <div><p class="lead">Find the right skill for your next task.</p><p>Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor. Inspect the source. Choose what to install.</p><p class="directory-snapshot">${fmt(repos.size)} repositories <span aria-hidden="true"> / </span> ${categories.length} categories <span aria-hidden="true"> / </span> ${openPct}% openly licensed</p></div>
+        <aside class="grade-guide" aria-label="Suede quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–100" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. License. Maintenance.</b><br><a href="methodology/">What the scores measure →</a></p></aside>
+      </div>
+      <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
+        <div class="browse-heading"><h2 id="browse-title">Explore the directory</h2><span class="muted">Public source. Clear license.</span></div>
+        <form class="discovery-controls" role="search" hidden>
+          <label for="directory-query">Search skills</label>
+          <div class="search-line"><span aria-hidden="true" class="search-icon">⌕</span><input id="directory-query" name="q" type="search" placeholder="Try SEO audits, React, or code review" autocomplete="off" aria-describedby="search-help" aria-keyshortcuts="Control+k Meta+k"><button type="button" data-clear>Clear</button><kbd aria-hidden="true">Ctrl K</kbd></div>
+          <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
+          <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option><option value="A">A · 90–100</option><option value="B">B · 80–89</option></select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
+        </form>
+        <div class="discovery-layout">
+          <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
+          <div class="discovery-content"><div class="result-heading"><h3 data-result-title>Start exploring</h3><span class="muted" role="status" aria-live="polite" data-results-status>${starters.length} skills to explore</span></div><div data-search-error hidden><p>Search could not load. Try again, or browse a category.</p><button type="button" data-retry>Try again</button></div><div class="search-loading" hidden aria-hidden="true"><span></span><span></span><span></span></div><div data-search-results>${starterRows}</div><div class="search-empty" hidden><h3>No skills match these filters</h3><p>Try fewer words or a broader category.</p><button type="button" data-reset>Clear all filters</button></div><button type="button" class="load-more" data-load-more hidden>Show more skills</button><noscript><p>Choose a category to browse every listed skill. Search is available with JavaScript enabled.</p></noscript></div>
         </div>
       </section>
       <section class="panel" aria-labelledby="cited-title">
