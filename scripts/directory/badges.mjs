@@ -6,7 +6,7 @@ export const SCORE_METHOD = 'graded-v2';
 // Python re.I semantics: \b over Unicode \w ([\p{L}\p{N}_]); "i" also matches U+0130/U+0131; /u counts code points.
 const W = '[\\p{L}\\p{N}_]', I = '[i\\u0130\\u0131]';
 const BOUNDARY = new RegExp(`(?<!${W})(not for|do not use|don'?t use|not ${I}ntended for|use [^.]{0,60}(?<!${W})${I}nstead)(?!${W})`, 'iu');
-const EXAMPLE = /["“'‘][^"”'’]{3,60}["”'’]/iu;
+const EXAMPLE = new RegExp(`(?<!${W})["“'‘](?:[^"”'’]|(?<=${W})['’](?=${W})){3,60}["”'’](?!${W})`, 'iu');
 const bits = (checks) => CHECK_IDS.map((id, i) => typeof checks === 'string' ? checks[i] === '1' : checks?.[id] === true);
 const declared = (v) => v != null && v !== false && v !== 0 && v !== '' && !(typeof v === 'object' && !Object.keys(v).length);
 export function letterGrade(score) {

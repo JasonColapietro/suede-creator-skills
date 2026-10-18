@@ -125,10 +125,12 @@ class GradedScoreTests(unittest.TestCase):
 
     def test_example_phrase_hits_and_misses(self):
         for text in ['Try "make a chart".', "Say \u201cdraft a tweet\u201d.", "Triggers on 'release notes'.",
-                     "Say \u2018fix it now\u2019.", '"abc"', '"' + "x" * 60 + '"']:
+                     "Say \u2018fix it now\u2019.", '"abc"', '"' + "x" * 60 + '"',
+                     "when the user says 'let's work on a track.'", 'says "my Newton iterations aren\'t converging."']:
             with self.subTest(text=text):
                 self.assertEqual(signal(text), 3)
-        for text in ['"ab"', '"' + "x" * 61 + '"', 'An "unclosed quote', "Don't panic.", "No quotes at all"]:
+        for text in ['"ab"', '"' + "x" * 61 + '"', 'An "unclosed quote', "Don't panic.", "No quotes at all",
+                     "It doesn't fit the user's needs.", "it's working, what's next", "a 'quote'd word"]:
             with self.subTest(text=text):
                 self.assertEqual(signal(text), 0)
 

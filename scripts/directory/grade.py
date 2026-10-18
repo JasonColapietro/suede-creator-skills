@@ -30,7 +30,8 @@ WHEN_RE = re.compile(
 
 # Description signals for the graded score; same semantics as JavaScript /i.
 BOUNDARY_RE = re.compile(r"\b(not for|do not use|don'?t use|not intended for|use [^.]{0,60}\binstead)\b", re.I)
-EXAMPLE_RE = re.compile(r"[\"“'‘][^\"”'’]{3,60}[\"”'’]")
+# Quotes must open and close at word edges; an apostrophe between letters (a contraction) stays inside.
+EXAMPLE_RE = re.compile(r"(?<!\w)[\"“'‘](?:[^\"”'’]|(?<=\w)['’](?=\w)){3,60}[\"”'’](?!\w)")
 
 CHECKS = [
     ("frontmatter", "Frontmatter parses and declares a name and a description"),

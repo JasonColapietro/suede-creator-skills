@@ -40,7 +40,8 @@ test('boundary and example regexes match the Python patterns', () => {
     ['\u00e9not for', false], ['NOT \u0130NTENDED FOR', true], [`use ${'\u{1F600}'.repeat(59)} instead`, true], [`use ${'\u{1F600}'.repeat(60)} instead`, false]]) {
     assert.equal(sig(d), hit ? 4 : 0, d);
   }
-  for (const [d, hit] of [['ask "build it"', true], ['ask “build it”', true], ["say 'ship'", true], ['"ab"', false], [`"${'x'.repeat(60)}"`, true], [`"${'x'.repeat(61)}"`, false], ['"\u{1F600}\u{1F600}"', false], [`"${'\u{1F600}'.repeat(60)}"`, true]]) {
+  for (const [d, hit] of [['ask "build it"', true], ['ask “build it”', true], ["say 'ship'", true], ['"ab"', false], [`"${'x'.repeat(60)}"`, true], [`"${'x'.repeat(61)}"`, false], ['"\u{1F600}\u{1F600}"', false], [`"${'\u{1F600}'.repeat(60)}"`, true],
+    ["says 'let's work on a track.'", true], ['says "my Newton iterations aren\'t converging."', true], ["It doesn't fit the user's needs.", false], ["it's working, what's next", false], ["a 'quote'd word", false], ["\u00e9'quoted'", false]]) {
     assert.equal(sig(d), hit ? 3 : 0, d);
   }
 });
