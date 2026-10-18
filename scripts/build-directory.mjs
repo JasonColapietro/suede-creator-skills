@@ -16,7 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { SCORE_METHOD, qualityScore, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
+import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -49,15 +49,10 @@ for (const c of categories) {
 }
 
 // The graded-v2 rubric, component by component, so a skill page can show
-// where each point came from. badges.mjs owns the score itself; BOUNDARY and
-// EXAMPLE mirror its regular expressions, and the build fails if this
-// breakdown ever sums to anything other than the published score.
+// where each point came from. badges.mjs owns the points; the build fails if
+// they ever sum to anything other than the published score.
 const SCORE_CAP = 99;
 const RUBRIC_MAX = 100;
-const W = "[\\p{L}\\p{N}_]", I = "[i\\u0130\\u0131]";
-const BOUNDARY = new RegExp(`(?<!${W})(not for|do not use|don'?t use|not ${I}ntended for|use [^.]{0,60}(?<!${W})${I}nstead)(?!${W})`, "iu");
-const EXAMPLE = new RegExp(`(?<!${W})["“'‘](?:[^"”'’]|(?<=${W})['’](?=${W})){3,60}["”'’](?!${W})`, "iu");
-const declared = (v) => v != null && v !== false && v !== 0 && v !== "" && !(typeof v === "object" && !Object.keys(v).length);
 const RUBRIC = [
   { id: "structure", label: "Structural checks", max: 56, rule: "8 points for each of the seven graded checks" },
   { id: "description_length", label: "Description length", max: 5, rule: "5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024" },
@@ -73,23 +68,7 @@ const RUBRIC = [
 ];
 if (RUBRIC.reduce((n, r) => n + r.max, 0) !== RUBRIC_MAX) throw new Error("graded-v2 rubric must total 100 points");
 function scoreParts(c, repo, generated) {
-  const len = [...c.description].length;
-  const words = c.size[1];
-  const days = (Date.parse(generated.slice(0, 10)) - Date.parse(repo.commit_date.slice(0, 10))) / 864e5;
-  const n = repo.lists.length;
-  const points = {
-    structure: 8 * [...c.checks.slice(1, 8)].filter((b) => b === "1").length,
-    description_length: len >= 150 && len <= 600 ? 5 : len >= 100 && len <= 900 ? 3 : len >= 50 && len <= 1024 ? 1 : 0,
-    boundary: BOUNDARY.test(c.description) ? 4 : 0,
-    example: EXAMPLE.test(c.description) ? 3 : 0,
-    depth: words >= 500 && words <= 3000 ? 7 : words >= 250 && words <= 4500 ? 4 : words >= 100 ? 1 : 0,
-    references: c.kinds.includes("r") ? 3 : 0,
-    scripts: c.kinds.includes("s") ? 2 : 0,
-    recency: days <= 30 ? 9 : days <= 90 ? 6 : days <= 180 ? 3 : days <= 365 ? 1 : 0,
-    adoption: n >= 4 ? 7 : n === 3 ? 4 : n === 2 ? 3 : n === 1 ? 1 : 0,
-    allowed_tools: declared(c.allowed_tools) ? 2 : 0,
-    compatibility: declared(c.compatibility) ? 2 : 0,
-  };
+  const points = scorePoints(c, repo, generated);
   return RUBRIC.map((r) => ({ id: r.id, label: r.label, max: r.max, points: points[r.id] }));
 }
 

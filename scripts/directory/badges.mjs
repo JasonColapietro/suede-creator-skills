@@ -18,20 +18,28 @@ export function structuralPass(checks) {
   const b = bits(checks);
   return b[0] && b.slice(1).filter(Boolean).length >= 6;
 }
-export function qualityScore(s, repo, generated) {
-  if (s == null) return null;
+// Points per graded-v2 component; the score is their sum, capped at 99.
+export function scorePoints(s, repo, generated) {
   const desc = s.description, len = [...desc].length, words = s.size[1];
   const days = (Date.parse(generated.slice(0, 10)) - Date.parse(repo.commit_date.slice(0, 10))) / 864e5, n = repo.lists.length;
   if (!Number.isInteger(days)) throw new Error('Quality score needs YYYY-MM-DD generated and commit dates');
-  const pts = 8 * bits(s.checks).slice(1).filter(Boolean).length +
-    (len >= 150 && len <= 600 ? 5 : len >= 100 && len <= 900 ? 3 : len >= 50 && len <= 1024 ? 1 : 0) +
-    (BOUNDARY.test(desc) ? 4 : 0) + (EXAMPLE.test(desc) ? 3 : 0) +
-    (words >= 500 && words <= 3000 ? 7 : words >= 250 && words <= 4500 ? 4 : words >= 100 ? 1 : 0) +
-    (s.kinds.includes('r') ? 3 : 0) + (s.kinds.includes('s') ? 2 : 0) +
-    (days <= 30 ? 9 : days <= 90 ? 6 : days <= 180 ? 3 : days <= 365 ? 1 : 0) +
-    (n >= 4 ? 7 : n === 3 ? 4 : n === 2 ? 3 : n === 1 ? 1 : 0) +
-    (declared(s.allowed_tools) ? 2 : 0) + (declared(s.compatibility) ? 2 : 0);
-  return Math.min(pts, 99);
+  return {
+    structure: 8 * bits(s.checks).slice(1).filter(Boolean).length,
+    description_length: len >= 150 && len <= 600 ? 5 : len >= 100 && len <= 900 ? 3 : len >= 50 && len <= 1024 ? 1 : 0,
+    boundary: BOUNDARY.test(desc) ? 4 : 0,
+    example: EXAMPLE.test(desc) ? 3 : 0,
+    depth: words >= 500 && words <= 3000 ? 7 : words >= 250 && words <= 4500 ? 4 : words >= 100 ? 1 : 0,
+    references: s.kinds.includes('r') ? 3 : 0,
+    scripts: s.kinds.includes('s') ? 2 : 0,
+    recency: days <= 30 ? 9 : days <= 90 ? 6 : days <= 180 ? 3 : days <= 365 ? 1 : 0,
+    adoption: n >= 4 ? 7 : n === 3 ? 4 : n === 2 ? 3 : n === 1 ? 1 : 0,
+    allowed_tools: declared(s.allowed_tools) ? 2 : 0,
+    compatibility: declared(s.compatibility) ? 2 : 0,
+  };
+}
+export function qualityScore(s, repo, generated) {
+  if (s == null) return null;
+  return Math.min(Object.values(scorePoints(s, repo, generated)).reduce((a, b) => a + b, 0), 99);
 }
 export function listed(s) {
   return structuralPass(s.checks) && bits(s.checks)[CHECK_IDS.indexOf('license')];
