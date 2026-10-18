@@ -57,7 +57,12 @@ class DirectoryInstallTests(unittest.TestCase):
         shutil.copytree(ROOT / "scripts/directory/badges", cls.root / "scripts/directory/badges")
         (cls.root / "scripts/lib").mkdir()
         data = json.loads((ROOT / "directory/skills.json").read_text())
-        template = next(s for s in data["skills"] if s.get("featured") and s["license"] == "MIT")
+        # graded-v2 scores read the repository's commit date and citations, so
+        # each fixture keeps its template's repository facts and its score.
+        template = next(s for s in data["skills"] if s.get("featured") and s["license"] == "MIT" and s["grade"] == "A")
+        low = next(s for s in data["skills"] if s.get("featured") and s["license"] == "MIT" and s["score"] < 80)
+        cls.score = template["score"]
+        cls.low_score, cls.low_grade = low["score"], low["grade"]
         cls.paths = [
             "skills/plain", "parent with spaces/skill", "parent'quote/skill",
             'parent"quote/skill', "$(printf unexpected)/skill",
@@ -72,9 +77,15 @@ class DirectoryInstallTests(unittest.TestCase):
             entry = copy.deepcopy(template)
             entry.update(repo="fixture/skills", dir=directory, name=f"skill-{i}", slug=f"skill-{i}")
             data["skills"].append(entry)
-        meta = copy.deepcopy(next(iter(data["repos"].values())))
+        for name, featured in (("low-page", True), ("low-row", False)):
+            entry = copy.deepcopy(low)
+            entry.update(repo="fixture/low", dir=f"skills/{name}", name=name, slug=name)
+            if not featured:
+                entry.pop("featured", None)
+            data["skills"].append(entry)
+        meta = copy.deepcopy(data["repos"][template["repo"]])
         meta["branch"] = "release/$(printf unexpected)'`x`"
-        data["repos"] = {"fixture/skills": meta}
+        data["repos"] = {"fixture/skills": meta, "fixture/low": copy.deepcopy(data["repos"][low["repo"]])}
         cls.branch = meta["branch"]
         (cls.root / "directory/skills.json").write_text(json.dumps(data))
         subprocess.run(["node", str(cls.root / "scripts/build-directory.mjs")],
@@ -82,7 +93,8 @@ class DirectoryInstallTests(unittest.TestCase):
 
     def test_quality_badges_security_and_schema_render_together(self):
         page = (self.root / 'docs/directory/fixture/skills/skill-0/index.html').read_text()
-        self.assertIn('100/100 · A', page)
+        self.assertIn(f'{self.score}/100 · A', page)
+        self.assertIn('Two badges for skill-0', page)
         self.assertIn('Security scan: not scanned.', page)
         self.assertIn('Not scanned', page)
         self.assertIn('display either the numeric or letter badge', page)
@@ -94,14 +106,37 @@ class DirectoryInstallTests(unittest.TestCase):
         legacy = (self.root / 'docs/directory/fixture/skills/skill-0/badge.svg').read_text()
         self.assertIn('M86.40 202.96A113.10', legacy)
         self.assertIn('Grade A', legacy)
+        self.assertIn(f'{self.score} / 100', (self.root / 'docs/directory/fixture/skills/skill-0/score.svg').read_text())
+        self.assertTrue((self.root / f'docs/directory/badges/score-{self.score}.svg').is_file())
         home = (self.root / 'docs/directory/index.html').read_text()
         self.assertNotIn('id="badge-partners"', home)
+
+    def test_skills_below_80_keep_badge_urls_without_quality_shields(self):
+        listing = (self.root / 'docs/directory/badge.svg').read_text()
+        self.assertIn('Suede Skills Directory: listed', listing)
+        for name in ('low-page', 'low-row'):
+            for svg in ('badge.svg', 'score.svg'):
+                with self.subTest(skill=name, svg=svg):
+                    self.assertEqual((self.root / f'docs/directory/fixture/low/{name}/{svg}').read_text(), listing)
+        self.assertFalse((self.root / f'docs/directory/badges/score-{self.low_score}.svg').exists())
+        page = (self.root / 'docs/directory/fixture/low/low-page/index.html').read_text()
+        self.assertIn(f'{self.low_score}/100 · {self.low_grade}', page)
+        self.assertNotIn('Two badges for', page)
+        self.assertNotIn('low-page/score.svg', page)
+        self.assertIn('submit/#improve', page)
+        self.assertIn('Points', page)
+        repo = (self.root / 'docs/directory/fixture/low/index.html').read_text()
+        row = repo.split('<tr id="low-row">', 1)[1].split('</tr>', 1)[0]
+        self.assertIn('Improve this score', row)
+        self.assertNotIn('Get badges', row)
+        self.assertNotIn('Get badges', repo.split('<tr id="low-page">', 1)[1].split('</tr>', 1)[0])
 
     def test_builder_rejects_invented_score_or_security_result(self):
         path = self.root / 'directory/skills.json'
         original = path.read_text()
         try:
-            for patch in ({'score': 99}, {'security_scan_status': 'passed'}):
+            for patch in ({'score': 99}, {'score': 100}, {'score': self.score + 1},
+                          {'grade': 'B'}, {'checks': '11100111'}, {'security_scan_status': 'passed'}):
                 data = json.loads(original)
                 data['skills'][0].update(patch)
                 path.write_text(json.dumps(data))
@@ -117,7 +152,7 @@ class DirectoryInstallTests(unittest.TestCase):
         dataset_original = dataset_path.read_bytes()
         from datetime import datetime, timezone
         target = 'https://skills.suedeai.ai/directory/fixture/skills/skill-0/'
-        record = {'repo': 'fixture/skills', 'score': 100, 'status': 'verified',
+        record = {'repo': 'fixture/skills', 'score': self.score, 'status': 'verified',
                   'target': target, 'readme_path': 'README.md', 'commit': 'a' * 40,
                   'rendered_sha256': 'b' * 64, 'verified_at': datetime.now(timezone.utc).isoformat(),
                   'dataset_sha256': hashlib.sha256(dataset_original).hexdigest(),

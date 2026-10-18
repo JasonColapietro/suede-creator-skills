@@ -1,7 +1,8 @@
-"""The Suede Skill Check: eight structural checks on a parsed SKILL.md record.
+"""The Suede Skill Check: eight structural checks on a parsed SKILL.md record,
+and the graded quality score (score_method "graded-v2") of a published listing.
 
 Published on skills.suedeai.ai/directory/methodology/. Imported by curate.py;
-run directly to print the grade distribution of a parsed snapshot.
+run directly to print the score distribution of a published skills.json.
 """
 import collections
 import datetime as dt
@@ -12,6 +13,8 @@ import sys
 
 # The snapshot date, so a rebuild of an old snapshot grades "maintained" the same way.
 NOW = dt.datetime.fromisoformat(os.environ.get("SUEDE_DIRECTORY_DATE", dt.date.today().isoformat())).replace(tzinfo=dt.timezone.utc)
+SCORE_METHOD = "graded-v2"
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}")
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 WHEN_RE = re.compile(
     r"\b("
@@ -24,6 +27,11 @@ WHEN_RE = re.compile(
     r")",
     re.I,
 )
+
+# Description signals for the graded score; same semantics as JavaScript /i.
+BOUNDARY_RE = re.compile(r"\b(not for|do not use|don'?t use|not intended for|use [^.]{0,60}\binstead)\b", re.I)
+# Quotes must open and close at word edges; an apostrophe between letters (a contraction) stays inside.
+EXAMPLE_RE = re.compile(r"(?<!\w)[\"“'‘](?:[^\"”'’]|(?<=\w)['’](?=\w)){3,60}[\"”'’](?!\w)")
 
 CHECKS = [
     ("frontmatter", "Frontmatter parses and declares a name and a description"),
@@ -60,51 +68,100 @@ def run_checks(r):
     return res
 
 
-def quality_score(res):
-    """Seven equally weighted checks; missing evidence earns no points.
+def _graded(res):
+    """Graded checks passed: a run_checks dict or a published "checks" string."""
+    if isinstance(res, str):
+        res = {k: c == "1" for (k, _), c in zip(CHECKS, res)}
+    return sum(res.get(k) is True for k, _ in CHECKS[1:])
 
-    None means the source could not be fetched, not a measured zero.
-    Frontmatter remains a separate required eligibility gate.
-    """
-    if res is None:
+
+def structural_pass(res):
+    """The listing gate: frontmatter plus at least six of the seven graded checks."""
+    if isinstance(res, str):
+        return len(res) == len(CHECKS) and res[0] == "1" and _graded(res) >= 6
+    return bool(res) and res.get("frontmatter") is True and _graded(res) >= 6
+
+
+def all_checks_pass(res):
+    """Frontmatter plus all seven graded checks: the full-page candidate rule."""
+    if isinstance(res, str):
+        return res == "1" * len(CHECKS)
+    return bool(res) and res.get("frontmatter") is True and _graded(res) == 7
+
+
+def _date(value):
+    """The calendar date in a YYYY-MM-DD prefix, or None."""
+    try:
+        return dt.date.fromisoformat(value[:10]) if type(value) is str and DATE_RE.match(value) else None
+    except ValueError:
         return None
-    return round(100 * sum(res.get(k) is True for k, _ in CHECKS[1:]) / 7)
+
+
+def quality_score(rec, repo, generated):
+    """Graded quality score 0-99 from the published record, its repository
+    meta and the snapshot date (the builder recomputes it the same way).
+
+    None means the source could not be fetched, not a measured zero. A missing
+    signal earns no points, but a record without checks, size or valid dates
+    cannot be scored and raises. The scale tops out at 99 because structural
+    evidence cannot show a skill is perfect.
+    """
+    if rec is None:
+        return None
+    if repo is None:
+        raise ValueError(f"No repository metadata for {rec.get('repo')}")
+    checks = rec.get("checks")
+    if type(checks) is not str or len(checks) != len(CHECKS) or set(checks) - {"0", "1"}:
+        raise ValueError("checks must be a string of one 0/1 per check")
+    pts = 8 * _graded(checks)
+    desc = rec.get("description") or ""
+    n = len(desc)
+    pts += 5 if 150 <= n <= 600 else 3 if 100 <= n <= 900 else 1 if 50 <= n <= 1024 else 0
+    pts += 4 if BOUNDARY_RE.search(desc) else 0
+    pts += 3 if EXAMPLE_RE.search(desc) else 0
+    size = rec.get("size")
+    if type(size) is not list or len(size) < 2 or type(size[1]) is not int:
+        raise ValueError("size must be [body_lines, body_words, file_count]")
+    w = size[1]
+    pts += 7 if 500 <= w <= 3000 else 4 if 250 <= w <= 4500 else 1 if w >= 100 else 0
+    kinds = rec.get("kinds") or ""
+    pts += (3 if "r" in kinds else 0) + (2 if "s" in kinds else 0)
+    snapshot, commit = _date(generated), _date(repo.get("commit_date"))
+    if snapshot is None or commit is None:
+        raise ValueError("generated and commit_date must start with a YYYY-MM-DD date")
+    days = (snapshot - commit).days
+    pts += 9 if days <= 30 else 6 if days <= 90 else 3 if days <= 180 else 1 if days <= 365 else 0
+    lists = len(repo.get("lists") or [])
+    pts += 7 if lists >= 4 else 4 if lists == 3 else 3 if lists == 2 else 1 if lists == 1 else 0
+    pts += (2 if rec.get("allowed_tools") else 0) + (2 if rec.get("compatibility") else 0)
+    return min(pts, 99)
 
 
 def letter_grade(score):
     if score is None:
         return None
-    if type(score) is not int or not 0 <= score <= 100:
-        raise ValueError("Quality score must be an integer from 0 to 100")
+    if type(score) is not int or not 0 <= score <= 99:
+        raise ValueError("Quality score must be an integer from 0 to 99")
     return "A" if score >= 90 else "B" if score >= 80 else "C" if score >= 70 else "D"
 
 
-def grade(res):
+def grade(res, score):
     if res is None:
         return None
     if res.get("frontmatter") is not True:
         return "F"
-    return letter_grade(quality_score(res))
+    return letter_grade(score)
 
 
 def eligible(res):
-    return bool(res and res.get("frontmatter") is True and
-                res.get("license") is True and quality_score(res) >= 80)
+    return bool(res and structural_pass(res) and res.get("license") is True)
 
 
 if __name__ == "__main__":
+    # Score distribution of a published dataset: grade.py directory/skills.json
     d = json.load(open(sys.argv[1]))
-    g = collections.Counter()
-    fails = collections.Counter()
-    for r in d:
-        res = run_checks(r)
-        r["checks"] = res
-        r["grade"] = grade(res)
-        r["score"] = quality_score(res)
-        g[r["grade"]] += 1
-        for k, v in (res or {}).items():
-            if not v:
-                fails[k] += 1
-    print(g)
-    print(fails)
-    json.dump(d, open(sys.argv[2], "w"), indent=1)
+    scores = [quality_score(s, d["repos"].get(s["repo"]), d["generated"]) for s in d["skills"]]
+    print(SCORE_METHOD, "on", d["generated"], "-", len(scores), "skills")
+    print(collections.Counter(letter_grade(x) for x in scores))
+    print(dict(sorted(collections.Counter(scores).items(), reverse=True)))
+    print("max", max(scores), "median", sorted(scores)[len(scores) // 2])

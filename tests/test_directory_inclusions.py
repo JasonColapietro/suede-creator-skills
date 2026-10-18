@@ -89,6 +89,20 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertNotEqual(first.pop('snapshot_id'), second.pop('snapshot_id'))
         self.assertEqual(first, second)
 
+    def test_listing_gate_is_structural_and_scores_come_from_published_fields(self):
+        six = {**record("other/skills", "six-of-seven"), "folder": "renamed"}
+        five = {**record("other/skills", "five-of-seven"), "folder": "renamed", "body_lines": 600}
+        data = self.curate({}, extra_records=[six, five])
+        self.assertEqual(data["score_method"], "graded-v2")
+        by_name = {s["name"]: s for s in data["skills"]}
+        self.assertNotIn("five-of-seven", by_name)
+        # 7 checks x 8, description 50-99 chars 1, 100 body words 1, commit on the snapshot day 9.
+        self.assertEqual({(s["score"], s["grade"]) for n, s in by_name.items() if n != "six-of-seven"}, {(67, "D")})
+        # Six of seven stays listed below 80, but only all seven earn a page.
+        self.assertEqual((by_name["six-of-seven"]["score"], by_name["six-of-seven"]["grade"]), (59, "D"))
+        self.assertNotIn("featured", by_name["six-of-seven"])
+        self.assertTrue(by_name["existing-skill"]["featured"])
+
     def test_acceptance_does_not_override_exclusions(self):
         data = self.curate({"publisher/skills": ["accepted-one", "accepted-two"]},
                            {"skills": [{"id": "publisher/skills/accepted-two", "reason": "Removed by author."}]})

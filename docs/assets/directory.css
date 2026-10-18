@@ -44,6 +44,7 @@
 }
 .grade-a { background: var(--gold); color: var(--bg); }
 .grade-b { border: 1px solid var(--cool); color: var(--cool); background: var(--cool-surface); }
+.grade-c, .grade-d { border: 1px solid var(--muted); color: var(--cream); }
 
 .stat-row { display: flex; flex-wrap: wrap; gap: 10px 28px; list-style: none; margin: 0 0 24px; color: var(--muted); font-size: 14px; }
 .stat-row li::before { content: none; }

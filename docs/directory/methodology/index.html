@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>How the Agent Skills Directory Lists Skills</title>
-    <meta name="description" content="The method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules, full pages and how to change a listing.">
+    <meta name="description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
     <meta name="keywords" content="agent skill quality check, SKILL.md best practices, agent skills specification, skill grading, Suede Skill Check">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/methodology/">
@@ -12,14 +12,14 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Suede Skills Directory">
     <meta property="og:title" content="How the Agent Skills Directory Lists Skills">
-    <meta property="og:description" content="The method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules, full pages and how to change a listing.">
+    <meta property="og:description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/methodology/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How the Agent Skills Directory Lists Skills">
-    <meta name="twitter:description" content="The method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules, full pages and how to change a listing.">
+    <meta name="twitter:description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
@@ -27,9 +27,9 @@
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/methodology/#page",
         "name": "How the Agent Skills Directory Lists Skills",
-        "description": "The method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules, full pages and how to change a listing.",
+        "description": "The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.",
         "url": "https://skills.suedeai.ai/directory/methodology/",
-        "dateModified": "2026-10-17",
+        "dateModified": "2026-10-18",
         "isPartOf": {
           "@id": "https://skills.suedeai.ai/directory/#directory"
         },
@@ -102,7 +102,7 @@
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
-        <p>Eight checks: six on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. The first check is required; the grade counts the other seven.</p>
+        <p>Every SKILL.md runs through a required frontmatter check and seven graded checks: five on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. These checks decide the listing. The quality score then measures how much each listed skill gives an agent to work with.</p>
         <div class="table-wrap">
           <table class="checks">
             <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
@@ -118,27 +118,55 @@
             </tbody>
           </table>
         </div>
-        <ul>
-          <li><b>Grade A: 90–100</b>. All seven graded checks currently produce 100/100 (2,019 listed skills).</li>
-          <li><b>Grade B: 80–89</b>. Six of seven currently produce 86/100 (956 listed skills).</li>
-          <li><b>Grade C: 70–79; grade D: 0–69</b>. Scores below 80 are not listed. Failed required frontmatter receives grade F and remains ineligible regardless of score.</li>
-        </ul>
-        <p>The quality score is <code>round(100 × passed / 7)</code>, with equal weight for each graded check. The possible scores are 0, 14, 29, 43, 57, 71, 86 and 100. Missing evidence fails its check; the denominator stays seven. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
-        <p>The score measures the recorded SKILL.md structure, license declaration and maintenance evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
+        <h3 id="score">How the quality score is built</h3>
+        <p>The score adds whole points from eleven components, all read from published evidence: the SKILL.md frontmatter, description and body, the files in the skill folder, the repository’s last commit and the curated lists that cite it. The rubric totals 100 points.</p>
+        <div class="table-wrap">
+          <table class="checks">
+            <thead><tr><th scope="col">Component</th><th scope="col">Points</th><th scope="col">How the points are earned</th></tr></thead>
+            <tbody>
+            <tr><td>Structural checks</td><td>56</td><td>8 points for each of the seven graded checks</td></tr>
+            <tr><td>Description length</td><td>5</td><td>5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024</td></tr>
+            <tr><td>Boundary clause</td><td>4</td><td>4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”)</td></tr>
+            <tr><td>Example request</td><td>3</td><td>3 when the description quotes an example request (3–60 characters in quotation marks)</td></tr>
+            <tr><td>Instruction depth</td><td>7</td><td>7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more</td></tr>
+            <tr><td>Reference files</td><td>3</td><td>3 when the skill folder ships a references/, reference/ or docs/ folder</td></tr>
+            <tr><td>Bundled scripts</td><td>2</td><td>2 when the skill folder ships a scripts/ folder</td></tr>
+            <tr><td>Recent maintenance</td><td>9</td><td>9 for a repository commit within 30 days of the snapshot; 6 within 90; 3 within 180; 1 within 365</td></tr>
+            <tr><td>Curated-list citations</td><td>7</td><td>7 for a repository cited by four or more curated lists; 4 for three; 3 for two; 1 for one</td></tr>
+            <tr><td>Tool permissions declared</td><td>2</td><td>2 when the frontmatter declares allowed-tools</td></tr>
+            <tr><td>Compatibility declared</td><td>2</td><td>2 when the frontmatter declares compatibility</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The published score is the total, capped at 99. 100 is reserved: structural evidence can show that a skill is well formed, well described, documented and maintained, but it cannot prove a skill perfect, so the scale tops out at 99. All arithmetic uses whole numbers; nothing is rounded. Missing evidence earns zero points for its component. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
+        <h3 id="grades">Grades in this snapshot</h3>
+        <div class="table-wrap">
+          <table class="checks">
+            <thead><tr><th scope="col">Grade</th><th scope="col">Score</th><th scope="col">Listed skills</th></tr></thead>
+            <tbody>
+            <tr><td><span class="grade grade-a">A</span></td><td>90–99</td><td>123</td></tr>
+            <tr><td><span class="grade grade-b">B</span></td><td>80–89</td><td>1,373</td></tr>
+            <tr><td><span class="grade grade-c">C</span></td><td>70–79</td><td>999</td></tr>
+            <tr><td><span class="grade grade-d">D</span></td><td>0–69</td><td>480</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Across 2,975 listed skills, the highest score is 95 and the median is 80. No listed skill scores 96–99, and 1,496 score 80–99 and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
+        <p>The score measures the recorded SKILL.md structure and description, instruction depth, bundled files, license declaration, maintenance and citation evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
         <h3>Security scan status is separate</h3>
         <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
-        <p>Skills scoring 80–100 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–100 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields.</p>
+        <p>Skills scoring 80–99 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–99 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
         <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../submit/">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p>
-        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. <a href="../submit/">Send your repository and the checks you want help with</a>, then request a new review after updating the skill.</p>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p>
+        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. Each full skill page lists its points by component. <a href="../submit/#improve">Send your repository and the points you want to raise</a>, then request a new review after updating the skill.</p>
       </section>
       <section class="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Listing rules</h2>
         <ul>
-          <li>Grade A or B on the Suede Skill Check.</li>
+          <li>The required frontmatter check, a declared license and at least six of the seven graded checks on the Suede Skill Check. Every listed skill shows its quality score and grade.</li>
           <li>A license declared in the SKILL.md frontmatter or the repository. Every listing states it; 97% of listed skills use an open-source or open-content license, and pages for the rest flag the terms next to the license.</li>
           <li>A description written mainly in English, so the directory's pages read consistently.</li>
           <li>Templates, examples, drafts, test fixtures and folders named archive, deprecated, internal or prompts, or starting with an underscore, are skipped.</li>
@@ -158,7 +186,7 @@
       </section>
       <section class="panel" aria-labelledby="pages-title">
         <h2 id="pages-title">Which skills get a full page</h2>
-        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. 729 skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
+        <p>Every listed skill appears in its category directory and on its repository's page. Skills that pass all seven graded checks get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. 729 skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
       </section>
       <section class="panel" aria-labelledby="cat-title">
         <h2 id="cat-title">Categories</h2>
