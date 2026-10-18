@@ -1,6 +1,6 @@
-# Contribute to Awesome Agent Skills
+# Contribute to Suede Awesome Everything
 
-[Awesome index](README.md) · [Directory on Suede](https://skills.suedeai.ai/directory/)
+[Awesome Everything](README.md) · [Directory on Suede](https://skills.suedeai.ai/directory/)
 
 ## Request a listing, correction or removal
 

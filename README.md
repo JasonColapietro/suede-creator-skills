@@ -20,7 +20,9 @@
 
 ---
 
-## Awesome Agent Skills, scored 0–100
+## Suede Awesome Everything
+
+**AI agent skills, scored 0–100.**
 
 **[Compare skills by their 0–100 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
 

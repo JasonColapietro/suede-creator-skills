@@ -2,7 +2,9 @@
 
 <a href="https://suedeai.ai"><img src="../docs/assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="88"></a>
 
-# Awesome Agent Skills by Suede
+# Suede Awesome Everything
+
+**AI agent skills, scored 0–100.**
 
 Compare agent skills with **0–100 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 

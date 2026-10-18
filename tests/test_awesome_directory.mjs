@@ -14,6 +14,7 @@ const categories = [...pages].filter(([name]) => name.startsWith('categories/'))
 
 test('0–100 quality scoring leads the catalog and every listing, with higher scores first per publisher', () => {
   const index = pages.get('README.md');
+  assert.ok(index.includes('# Suede Awesome Everything\n\n**AI agent skills, scored 0–100.**'));
   assert.ok(index.indexOf('0–100 quality scores') >= 0 && index.indexOf('0–100 quality scores') < index.indexOf('## Contents'));
   assert.ok(index.includes('## Compare 0–100 quality scores'));
   assert.ok(index.includes('published scores are capped at 99; 100 is reserved'));

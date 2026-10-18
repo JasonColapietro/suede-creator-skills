@@ -92,7 +92,7 @@ export function generateCatalog(inputs) {
     return [repo, skills.length === 1 && skills[0].featured ? listingTarget(skills[0]) : `${SITE}${repoSlug(repo)}/`];
   }));
   const pages = new Map();
-  const nav = (prefix = '') => `${link('Awesome index', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-0100-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
+  const nav = (prefix = '') => `${link('Awesome Everything', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-0100-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
   const finish = (body) => `${GENERATED}\n\n${body.trim()}\n`;
   const stamp = `Snapshot: **${data.generated}** · Scores: **${SCORE_METHOD}** · [How scores work](${SITE}methodology/).`;
   const range = (skills) => `${Math.min(...skills.map((s) => s.score))}–${Math.max(...skills.map((s) => s.score))}`;
@@ -104,7 +104,9 @@ export function generateCatalog(inputs) {
   pages.set('README.md', finish(`
 <a href="https://suedeai.ai"><img src="../docs/assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="88"></a>
 
-# Awesome Agent Skills by Suede
+# Suede Awesome Everything
+
+**AI agent skills, scored 0–100.**
 
 Compare agent skills with **0–100 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
