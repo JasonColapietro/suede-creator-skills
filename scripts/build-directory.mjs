@@ -49,13 +49,14 @@ for (const c of categories) {
 }
 
 // The graded-v2 rubric, component by component, so a skill page can show
-// where each point came from. badges.mjs owns the score itself; the build
-// fails if this breakdown ever sums to anything else.
+// where each point came from. badges.mjs owns the score itself; BOUNDARY and
+// EXAMPLE mirror its regular expressions, and the build fails if this
+// breakdown ever sums to anything other than the published score.
 const SCORE_CAP = 99;
 const RUBRIC_MAX = 100;
 const W = "[\\p{L}\\p{N}_]", I = "[i\\u0130\\u0131]";
 const BOUNDARY = new RegExp(`(?<!${W})(not for|do not use|don'?t use|not ${I}ntended for|use [^.]{0,60}(?<!${W})${I}nstead)(?!${W})`, "iu");
-const EXAMPLE = /["“'‘][^"”'’]{3,60}["”'’]/iu;
+const EXAMPLE = new RegExp(`(?<!${W})["“'‘](?:[^"”'’]|(?<=${W})['’](?=${W})){3,60}["”'’](?!${W})`, "iu");
 const declared = (v) => v != null && v !== false && v !== 0 && v !== "" && !(typeof v === "object" && !Object.keys(v).length);
 const RUBRIC = [
   { id: "structure", label: "Structural checks", max: 56, rule: "8 points for each of the seven graded checks" },
