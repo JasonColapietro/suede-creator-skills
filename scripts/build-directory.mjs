@@ -16,7 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { qualityScore, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
+import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 import { featuredProjectsHtml } from "./directory/featured.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -41,7 +41,7 @@ const CHECKS = data.checks;
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
 if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
 if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PROMOTION.ends_at) || !Number.isFinite(Date.parse(PROMOTION.ends_at)))) throw new Error("promotion.json: ends_at must be null or a UTC timestamp");
-if (data.score_method !== "seven-checks-v1" || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
+if (SCORE_METHOD !== "graded-v2" || data.score_method !== SCORE_METHOD || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
 const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
 
@@ -50,15 +50,41 @@ for (const c of categories) {
   if (c.meta.length > 160) throw new Error(`categories.json: meta over 160 characters for ${c.slug}`);
 }
 
+// The graded-v2 rubric, component by component, so a skill page can show
+// where each point came from. badges.mjs owns the points; the build fails if
+// they ever sum to anything other than the published score.
+const SCORE_CAP = 99;
+const RUBRIC_MAX = 100;
+const RUBRIC = [
+  { id: "structure", label: "Structural checks", max: 56, rule: "8 points for each of the seven graded checks" },
+  { id: "description_length", label: "Description length", max: 5, rule: "5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024" },
+  { id: "boundary", label: "Boundary clause", max: 4, rule: "4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”)" },
+  { id: "example", label: "Example request", max: 3, rule: "3 when the description quotes an example request (3–60 characters in quotation marks)" },
+  { id: "depth", label: "Instruction depth", max: 7, rule: "7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more" },
+  { id: "references", label: "Reference files", max: 3, rule: "3 when the skill folder ships a references/, reference/ or docs/ folder" },
+  { id: "scripts", label: "Bundled scripts", max: 2, rule: "2 when the skill folder ships a scripts/ folder" },
+  { id: "recency", label: "Recent maintenance", max: 9, rule: "9 for a repository commit within 30 days of the snapshot; 6 within 90; 3 within 180; 1 within 365" },
+  { id: "adoption", label: "Curated-list citations", max: 7, rule: "7 for a repository cited by four or more curated lists; 4 for three; 3 for two; 1 for one" },
+  { id: "allowed_tools", label: "Tool permissions declared", max: 2, rule: "2 when the frontmatter declares allowed-tools" },
+  { id: "compatibility", label: "Compatibility declared", max: 2, rule: "2 when the frontmatter declares compatibility" },
+];
+if (RUBRIC.reduce((n, r) => n + r.max, 0) !== RUBRIC_MAX) throw new Error("graded-v2 rubric must total 100 points");
+function scoreParts(c, repo, generated) {
+  const points = scorePoints(c, repo, generated);
+  return RUBRIC.map((r) => ({ id: r.id, label: r.label, max: r.max, points: points[r.id] }));
+}
+
 // skills.json is stored compact (see scripts/directory/curate.py): expand each
 // record with its repository facts, slugs and GitHub URLs. slugify matches the
 // Python one that keyed directory/labels.json.
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "skill";
 data.skills = data.skills.map((c) => {
-  if (c.score !== qualityScore(c.checks) || !qualifies(c)) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
-  if (c.security_scan_status !== "not_scanned") throw new Error("Per-skill security results require a separate reviewed evidence pipeline");
   const meta = data.repos[c.repo];
   if (!meta) throw new Error(`skills.json: no repos entry for ${c.repo}`);
+  if (!listed(c) || c.score !== qualityScore(c, meta, data.generated) || letterGrade(c.score) !== c.grade) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
+  if (c.security_scan_status !== "not_scanned") throw new Error("Per-skill security results require a separate reviewed evidence pipeline");
+  const parts = scoreParts(c, meta, data.generated);
+  if (Math.min(SCORE_CAP, parts.reduce((n, p) => n + p.points, 0)) !== c.score) throw new Error(`skills.json: score breakdown disagrees with the published score for ${c.repo}/${c.slug}`);
   const [owner, name] = c.repo.split("/");
   const repoSlug = `${slugify(owner)}/${slugify(name)}`;
   const tree = c.dir === "." ? "" : `${c.dir}/`;
@@ -88,6 +114,9 @@ data.skills = data.skills.map((c) => {
     allowed_tools: c.allowed_tools || null,
     compatibility: c.compatibility || null,
     install: c.install || null,
+    score_parts: parts,
+    // Quality shields (numeric and letter) are for listed skills scoring 80-99.
+    shielded: qualifies(c),
   };
 });
 
@@ -227,6 +256,20 @@ for (const r of repos.values()) {
 }
 
 const featured = data.skills.filter((s) => s.featured);
+// Live score distribution, quoted on the methodology page and in llms.txt.
+const GRADE_BANDS = [["A", "90–99"], ["B", "80–89"], ["C", "70–79"], ["D", "0–69"]];
+const dist = (() => {
+  const scores = data.skills.map((s) => s.score).sort((a, b) => a - b);
+  const mid = scores.length >> 1;
+  return {
+    grades: Object.fromEntries(GRADE_BANDS.map(([g]) => [g, data.skills.filter((s) => s.grade === g).length])),
+    max: scores[scores.length - 1],
+    min: scores[0],
+    median: scores.length % 2 ? scores[mid] : Math.floor((scores[mid - 1] + scores[mid]) / 2),
+    top: data.skills.filter((s) => s.score >= 96).length,
+    shielded: data.skills.filter((s) => s.shielded).length,
+  };
+})();
 const promoted = data.skills.filter((s) => promotionActive(s, PROMOTION.verifications[s.id], PROMOTION, snapshot));
 const openPct = Math.round((100 * data.skills.filter((s) => s.open_license).length) / data.skills.length);
 const skillsByCat = new Map(categories.map((c) => [c.slug, data.skills.filter((s) => s.category === c.slug)]));
@@ -477,6 +520,7 @@ function badgeBlock(here, { badgePath, value, target, heading, lede }) {
 // The two badges always point to the skill's listing, including a repository
 // table anchor when the editorial rules have not awarded a full skill page.
 function qualityBadgeContent(s, suffix = "") {
+  if (!s.shielded) throw new Error(`${s.id} has no quality shields: only listed skills scoring 80–99 get them`);
   const id = `badge${suffix}`;
   return `<div class="shield-pair">${badgePair(s).map((b) => `<a href="${listingTarget(s)}"><img src="${b.src.replace(BASE, "")}" alt="${esc(b.alt)}" width="160" height="175" loading="lazy"></a>`).join("")}</div>
         <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
@@ -486,9 +530,23 @@ function qualityBadgeContent(s, suffix = "") {
 function promotionOffer(here) {
   const ended = PROMOTION.ends_at && Date.now() >= Date.parse(PROMOTION.ends_at);
   if (!PROMOTION.enabled || ended) return "";
-  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="${rel(here, "directory/submit/")}">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : " Suede has not announced an end date."}</p>`;
+  return `<p class="badge-offer" data-promotion-end="${esc(PROMOTION.ends_at || "")}">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="${rel(here, "directory/submit/")}">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing.${PROMOTION.ends_at ? ` Available until ${esc(PROMOTION.ends_at)}.` : " Suede has not announced an end date."}</p>`;
+}
+// The route for a listed skill below 80: the general listing badge (the same
+// SVG its per-skill badge.svg and score.svg URLs serve) and a review request.
+function improveBlock(here, s) {
+  // Citations come from curated lists, not the author, so they are not suggested.
+  const open = s.score_parts.filter((p) => p.points < p.max && p.id !== "adoption").sort((a, b) => b.max - b.points - (a.max - a.points) || a.label.localeCompare(b.label)).slice(0, 3);
+  return badgeBlock(here, {
+    badgePath: "directory/badge.svg",
+    value: "listed",
+    target: listingTarget(s),
+    heading: `Show the listing and raise the score`,
+    lede: `${esc(s.name)} is listed with ${s.score}/100 · ${s.grade}. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield${open.length ? `; the largest open points for ${esc(s.name)} are ${listPhrase(open.map((p) => `${esc(p.label.toLowerCase())} (${p.max - p.points})`))}` : ""}. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.`,
+  });
 }
 function qualityBadgeBlock(here, s) {
+  if (!s.shielded) return improveBlock(here, s);
   return `<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ${esc(s.name)}</h2>
         ${qualityBadgeContent(s)}
         <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="${rel(here, "directory/methodology/")}">methodology</a>.</p>
@@ -552,7 +610,13 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
       : `<a href="${esc(`https://github.com/${s.repo}`)}" target="_blank" rel="noopener">${esc(s.repo)}</a>`
     : `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.label)}</a>${showLicense ? `<br><span class="row-license">${esc(s.license)}</span>` : ""}`;
   const id = showRepo ? "" : ` id="${esc(s.slug)}"`;
-  const badges = showRepo ? "" : s.featured ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>` : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
+  const badges = showRepo
+    ? ""
+    : !s.shielded
+      ? `<p><a href="${s.featured ? `${rel(here, skillPath(s))}#badge` : `${rel(here, "directory/submit/")}#improve`}">Improve this score</a></p>`
+      : s.featured
+        ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>`
+        : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
   return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}</td></tr>`;
 }
 
@@ -725,8 +789,8 @@ function relatedRows(here, items) {
 }
 
 function checkSummary(s) {
-  const passed = CHECKS.filter((c) => s.checks[c.id]).length;
-  return passed === CHECKS.length ? "Passes all eight checks" : `Passes ${["zero", "one", "two", "three", "four", "five", "six", "seven"][passed]} of eight checks`;
+  const passed = CHECKS.slice(1).filter((c) => s.checks[c.id]).length;
+  return passed === CHECKS.length - 1 ? "Passes all seven graded checks" : `Passes ${["zero", "one", "two", "three", "four", "five", "six"][passed]} of seven graded checks`;
 }
 
 function renderSkill(s) {
@@ -753,7 +817,7 @@ function renderSkill(s) {
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
     ["Quality score", `${gradeChip(s)} <a href="#check">${checkSummary(s)}</a>`],
     ["Security scan", "Not scanned"],
-    ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
+    ["README badge", s.shielded ? `<a href="#badge">Get the badges for this listing</a>` : `<a href="#badge">Get the listing badge and raise the score</a>`],
   ]);
   const authorFacts = factsTable([
     ["Compatibility", s.compatibility ? esc(trimTo(s.compatibility, 200)) : ""],
@@ -771,6 +835,8 @@ ${fileNames.map((f) => `          <li><code>${esc(f)}</code></li>`).join("\n")}
         </ul>${s.file_count > fileNames.length ? `\n        <p class="muted">Showing ${fileNames.length} of ${fmt(s.file_count)} files. <a href="${esc(s.folder_url)}" target="_blank" rel="noopener">Browse the folder on GitHub</a>.</p>` : ""}`
     : "";
   const checks = CHECKS.map((c) => `              <tr><td>${esc(c.label)}</td><td class="${s.checks[c.id] ? "pass" : "miss"}">${s.checks[c.id] ? "Pass" : "Not met"}</td></tr>`).join("\n");
+  const rawPoints = s.score_parts.reduce((n, p) => n + p.points, 0);
+  const pointRows = s.score_parts.map((p) => `              <tr><td>${esc(p.label)}</td><td${p.points === p.max ? ' class="pass"' : p.points ? "" : ' class="miss"'}>${p.points} of ${p.max}</td></tr>`).join("\n");
   const sameCat = featured
     .filter((o) => o.category === s.category && o.repo_slug !== s.repo_slug)
     .sort((a, b) => b.lists.length - a.lists.length || a.id.localeCompare(b.id));
@@ -798,14 +864,22 @@ ${fileList}
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>
-        <p>${esc(s.name)} ${checkSummary(s).toLowerCase()}: the eight cover the SKILL.md format, a declared license and a commit in the last year. <a href="${rel(here, "directory/methodology/")}">How the check works</a>.</p>
+        <p>${esc(s.name)} passes the required frontmatter check and ${checkSummary(s).replace(/^Passes /, "")}, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn ${s.score_parts[0].points} of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations${rawPoints > SCORE_CAP ? `, capped at ${SCORE_CAP}` : ""}. <a href="${rel(here, "directory/methodology/")}">How the score works</a>.</p>
         <details class="check-details">
-          <summary>See the eight checks</summary>
+          <summary>See the checks and points</summary>
           <div class="table-wrap">
             <table class="checks">
               <thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
               <tbody>
 ${checks}
+              </tbody>
+            </table>
+          </div>
+          <div class="table-wrap">
+            <table class="checks">
+              <thead><tr><th scope="col">Score component</th><th scope="col">Points</th></tr></thead>
+              <tbody>
+${pointRows}
               </tbody>
             </table>
           </div>
@@ -880,8 +954,6 @@ ${relatedRows(here, siblings)}
     ],
     footerNote: `${esc(s.name)} is published by ${esc(s.owner)} in ${esc(s.repo)} and listed in the Suede Skills Directory, a curated index of public Agent Skills.`,
   }));
-  files.set(`${here}badge.svg`, shieldSvg(s.score, "grade"));
-  files.set(`${here}score.svg`, shieldSvg(s.score, "score"));
 }
 
 // ------------------------------------------------------------------ repository pages
@@ -922,7 +994,9 @@ ${badgeBlock(here, {
   value: "listed",
   target: url(here),
   heading: "Show the listing in your README",
-  lede: `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.`,
+  lede: r.skills.some((s) => s.shielded)
+    ? `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.`
+    : `This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> beside a skill below to request a fresh review.`,
 })}
 ${promotionOffer(here)}
       <section class="panel" aria-labelledby="skills-title">
@@ -1118,7 +1192,7 @@ const FAQ = [
   ],
   [
     "How are skills chosen and graded?",
-    "The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: six checks on the SKILL.md format, plus a declared license and a commit in the last year. Skills that pass at least seven checks, declare a license and meet the listing rules are listed.",
+    "The directory reads repositories cited by at least two of eight curated skill lists, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check: a required frontmatter check and seven graded checks (five on the SKILL.md format, a declared license and a commit in the last year). Skills that pass the frontmatter check, declare a license, pass at least six of the seven graded checks and meet the listing rules are listed. Each listed skill then receives a quality score from 0 to 99 that adds description quality, instruction depth, bundled files, maintenance and curated-list citations to the structural checks, and a letter grade from that score.",
   ],
   [
     "How do I get my skill listed?",
@@ -1138,7 +1212,7 @@ function renderHub() {
     grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured,
   }))) + "\n");
   const starters = categories.slice(0, 8).map((c) => discovery.find((s) => s.featured && s.category === c.slug)).filter(Boolean);
-  const starterRows = starters.map((s) => `<article class="discovery-row"><div><p class="result-meta">${esc(catBySlug.get(s.category).label)} <span> / ${esc(s.repo)}</span></p><h3><a href="${rel(here, skillPath(s))}">${esc(s.name)}</a></h3><p>${esc(s.summary || trimTo(s.description, 180))}</p><p class="result-foot">${esc(s.license)} · Full skill page</p></div><div class="result-quality"><img class="result-shield" src="badges/score-${s.score}.svg" alt="Suede S shield" width="80" height="88" loading="lazy"><span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></div></article>`).join("\n");
+  const starterRows = starters.map((s) => `<article class="discovery-row"><div><p class="result-meta">${esc(catBySlug.get(s.category).label)} <span> / ${esc(s.repo)}</span></p><h3><a href="${rel(here, skillPath(s))}">${esc(s.name)}</a></h3><p>${esc(s.summary || trimTo(s.description, 180))}</p><p class="result-foot">${esc(s.license)} · Full skill page</p></div><div class="result-quality">${s.shielded ? `<img class="result-shield" src="badges/score-${s.score}.svg" alt="Suede S shield" width="80" height="88" loading="lazy">` : ""}<span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></div></article>`).join("\n");
   const official = linkedRepos.filter((r) => r.official).sort((a, b) => b.skills.length - a.skills.length || a.slug.localeCompare(b.slug));
   const repoRow = (r) =>
     `          <a class="link-row" href="${rel(here, r.target)}"><b>${esc(r.repo)}</b><span>${plural(r.skills.length, "skill")} &middot; ${esc(catBySlug.get(r.primary).label)}${r.lists.length ? ` &middot; in ${plural(r.lists.length, "list")}` : ""}</span></a>`;
@@ -1146,7 +1220,7 @@ function renderHub() {
   const body = `${bc.html}
       <div class="directory-intro">
         <div><p class="lead">Find the right skill for your next task.</p><p>Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor. Inspect the source. Choose what to install.</p><p class="directory-snapshot">${fmt(repos.size)} repositories <span aria-hidden="true"> / </span> ${categories.length} categories <span aria-hidden="true"> / </span> ${openPct}% openly licensed</p></div>
-        <aside class="grade-guide" aria-label="Suede quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–100" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. License. Maintenance.</b><br><a href="methodology/">What the scores measure →</a></p></aside>
+        <aside class="grade-guide" aria-label="Suede quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–99" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. Description. Depth. Maintenance.</b><br>Scored 0–99. <a href="methodology/">What the scores measure →</a></p></aside>
       </div>
       <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${EDITORIAL.projects.map((p) => esc(p.name)).join(" &amp; ")} — meet the latest directory applicants.</span></span><span aria-hidden="true">↗</span></a>
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
@@ -1155,7 +1229,7 @@ function renderHub() {
           <label for="directory-query">Search skills</label>
           <div class="search-line"><span aria-hidden="true" class="search-icon">⌕</span><input id="directory-query" name="q" type="search" placeholder="Try SEO audits, React, or code review" autocomplete="off" aria-describedby="search-help" aria-keyshortcuts="Control+k Meta+k"><button type="button" data-clear>Clear</button><kbd aria-hidden="true">Ctrl K</kbd></div>
           <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
-          <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option><option value="A">A · 90–100</option><option value="B">B · 80–89</option></select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
+          <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option>${GRADE_BANDS.map(([g, band]) => `<option value="${g}">${g} · ${band}</option>`).join("")}</select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
         </form>
         <div class="discovery-layout">
           <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
@@ -1178,14 +1252,14 @@ ${official.slice(0, 24).map(repoRow).join("\n")}
       </section>
       <section class="panel" aria-labelledby="how-title">
         <h2 id="how-title">How a skill gets listed</h2>
-        <p>The directory reads every SKILL.md in the repositories cited by at least two of ${plural(data.sources.length, "curated list")}, including ${data.sources.slice(0, 3).map(listLink).join(", ")}, plus the official collections those lists name and accepted listing requests. Each skill runs through eight checks. Skills with a license and at least seven passing checks are listed, one listing per skill: when a copy of a skill appears in several repositories, the copy in the most-cited repository keeps the listing. <a href="${rel(here, "directory/methodology/")}">Read the full method</a>.</p>
+        <p>The directory reads every SKILL.md in the repositories cited by at least two of ${plural(data.sources.length, "curated list")}, including ${data.sources.slice(0, 3).map(listLink).join(", ")}, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check. Skills that pass the required frontmatter check, declare a license and pass at least six of seven graded checks are listed with a quality score from 0 to 99, one listing per skill: when a copy of a skill appears in several repositories, the copy in the most-cited repository keeps the listing. <a href="${rel(here, "directory/methodology/")}">Read the full method</a>.</p>
       </section>
 ${badgeBlock(here, {
   badgePath: "directory/badge.svg",
   value: "listed",
   target: DIR_URL,
   heading: "For skill authors: show your listing",
-  lede: `Every eligible skill has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
+  lede: `Every skill scoring 80–99 has two README shields: its numeric quality score and its A/B grade. Both link to its Suede listing. Find <b>Get badges</b> on a repository page or <b>README badge</b> on a full skill page. <a href="${rel(here, "directory/submit/")}">Request a listing</a> if your skill is not here yet.`,
 })}
 ${promotionOffer(here)}
 ${promotionSection(here, promoted)}
@@ -1276,7 +1350,8 @@ function renderMethodology() {
   const here = "directory/methodology/";
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Methodology"]]);
   const total = data.skills.length;
-  const gradeCounts = { A: data.skills.filter((s) => s.grade === "A").length, B: data.skills.filter((s) => s.grade === "B").length };
+  const rubricRows = RUBRIC.map((r) => `            <tr><td>${esc(r.label)}</td><td>${r.max}</td><td>${esc(r.rule)}</td></tr>`).join("\n");
+  const gradeRows = GRADE_BANDS.map(([g, band]) => `            <tr><td><span class="grade grade-${g.toLowerCase()}">${g}</span></td><td>${band}</td><td>${fmt(dist.grades[g])}</td></tr>`).join("\n");
   const rows = CHECKS.map((c) => `            <tr><td><code>${esc(c.id)}</code></td><td>${esc(c.label)}</td><td>${fmt(data.skills.filter((s) => s.checks[c.id]).length)} of ${fmt(total)}</td></tr>`).join("\n");
   const body = `${bc.html}
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
@@ -1286,7 +1361,7 @@ function renderMethodology() {
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
-        <p>Eight checks: six on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. The first check is required; the grade counts the other seven.</p>
+        <p>Every SKILL.md runs through a required frontmatter check and seven graded checks: five on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. These checks decide the listing. The quality score then measures how much each listed skill gives an agent to work with.</p>
         <div class="table-wrap">
           <table class="checks">
             <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
@@ -1295,27 +1370,42 @@ ${rows}
             </tbody>
           </table>
         </div>
-        <ul>
-          <li><b>Grade A: 90–100</b>. All seven graded checks currently produce 100/100 (${fmt(gradeCounts.A)} listed skills).</li>
-          <li><b>Grade B: 80–89</b>. Six of seven currently produce 86/100 (${fmt(gradeCounts.B)} listed skills).</li>
-          <li><b>Grade C: 70–79; grade D: 0–69</b>. Scores below 80 are not listed. Failed required frontmatter receives grade F and remains ineligible regardless of score.</li>
-        </ul>
-        <p>The quality score is <code>round(100 × passed / 7)</code>, with equal weight for each graded check. The possible scores are 0, 14, 29, 43, 57, 71, 86 and 100. Missing evidence fails its check; the denominator stays seven. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
-        <p>The score measures the recorded SKILL.md structure, license declaration and maintenance evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
+        <h3 id="score">How the quality score is built</h3>
+        <p>The score adds whole points from eleven components, all read from published evidence: the SKILL.md frontmatter, description and body, the files in the skill folder, the repository’s last commit and the curated lists that cite it. The rubric totals 100 points.</p>
+        <div class="table-wrap">
+          <table class="checks">
+            <thead><tr><th scope="col">Component</th><th scope="col">Points</th><th scope="col">How the points are earned</th></tr></thead>
+            <tbody>
+${rubricRows}
+            </tbody>
+          </table>
+        </div>
+        <p>The published score is the total, capped at ${SCORE_CAP}. 100 is reserved: structural evidence can show that a skill is well formed, well described, documented and maintained, but it cannot prove a skill perfect, so the scale tops out at ${SCORE_CAP}. All arithmetic uses whole numbers; nothing is rounded. Missing evidence earns zero points for its component. A source fetch failure is unscored and stops a refresh from replacing the published snapshot.</p>
+        <h3 id="grades">Grades in this snapshot</h3>
+        <div class="table-wrap">
+          <table class="checks">
+            <thead><tr><th scope="col">Grade</th><th scope="col">Score</th><th scope="col">Listed skills</th></tr></thead>
+            <tbody>
+${gradeRows}
+            </tbody>
+          </table>
+        </div>
+        <p>Across ${fmt(total)} listed skills, the highest score is ${dist.max} and the median is ${dist.median}. ${dist.top ? `${plural(dist.top, "listed skill")} ${dist.top === 1 ? "scores" : "score"} 96–${SCORE_CAP}` : `No listed skill scores 96–${SCORE_CAP}`}, and ${fmt(dist.shielded)} score 80–${SCORE_CAP} and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
+        <p>The score measures the recorded SKILL.md structure and description, instruction depth, bundled files, license declaration, maintenance and citation evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
         <h3>Security scan status is separate</h3>
         <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
-        <p>Skills scoring 80–100 receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–100 and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields.</p>
+        <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
         <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede listing, then request verification. Displaying both also qualifies. Suede checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
-        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. <a href="${rel(here, "directory/submit/")}">Send your repository and the checks you want help with</a>, then request a new review after updating the skill.</p>
+        <p><b>Scored below 80?</b> We welcome authors who want help improving their skills. Each full skill page lists its points by component. <a href="${rel(here, "directory/submit/")}#improve">Send your repository and the points you want to raise</a>, then request a new review after updating the skill.</p>
       </section>
       <section class="panel" aria-labelledby="rules-title">
         <h2 id="rules-title">Listing rules</h2>
         <ul>
-          <li>Grade A or B on the Suede Skill Check.</li>
+          <li>The required frontmatter check, a declared license and at least six of the seven graded checks on the Suede Skill Check. Every listed skill shows its quality score and grade.</li>
           <li>A license declared in the SKILL.md frontmatter or the repository. Every listing states it; ${openPct}% of listed skills use an open-source or open-content license, and pages for the rest flag the terms next to the license.</li>
           <li>A description written mainly in English, so the directory's pages read consistently.</li>
           <li>Templates, examples, drafts, test fixtures and folders named archive, deprecated, internal or prompts, or starting with an underscore, are skipped.</li>
@@ -1332,7 +1422,7 @@ ${POLICY_RULES.map((r) => `              <li>${esc(r)}</li>`).join("\n")}
       </section>
       <section class="panel" aria-labelledby="pages-title">
         <h2 id="pages-title">Which skills get a full page</h2>
-        <p>Every listed skill appears in its category directory and on its repository's page. Grade A skills get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. ${fmt(featured.length)} skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
+        <p>Every listed skill appears in its category directory and on its repository's page. Skills that pass all seven graded checks get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. ${fmt(featured.length)} skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
       </section>
       <section class="panel" aria-labelledby="cat-title">
         <h2 id="cat-title">Categories</h2>
@@ -1343,7 +1433,7 @@ ${POLICY_RULES.map((r) => `              <li>${esc(r)}</li>`).join("\n")}
         <p>Each refresh re-reads the source repositories, so quoted descriptions, file facts and check results follow the published SKILL.md. To request a listing, a correction or a removal, use the <a href="${rel(here, "directory/submit/")}">listing request page</a>; requests are reviewed by hand.</p>
       </section>`;
   const title = "How the Agent Skills Directory Lists Skills";
-  const description = "The method behind the Suede Skills Directory: source lists, the eight-part Suede Skill Check, grades, listing rules, full pages and how to change a listing.";
+  const description = "The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.";
   const keywords = setKeywords(here, ["agent skill quality check", "SKILL.md best practices", "agent skills specification", "skill grading", "Suede Skill Check"]);
   files.set(`${here}index.html`, page({
     here,
@@ -1372,21 +1462,23 @@ function renderSubmit() {
         <ol class="steps">
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
-          <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules; skills graded A or B are listed.</li>
-          <li><b>Add either badge.</b> Eligible skills scoring 80–100 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
+          <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules. Skills that pass the frontmatter check, declare a license and pass at least six of seven graded checks are listed with their quality score and grade.</li>
+          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
-      <section class="panel" aria-labelledby="pass-title">
+      <section class="panel" id="improve" aria-labelledby="pass-title">
         <h2 id="pass-title">Improve your score</h2>
-        <p>Below 80? Send your repository and ask for help with the checks. Authors are welcome to improve their skill and request a fresh review.</p>
+        <p>Below 80? Send your repository and ask for help with the points you want to raise. Authors are welcome to improve their skill and request a fresh review; skills that reach 80 add the numeric and letter quality shields.</p>
         ${promotionOffer(here)}
         <ul>
           <li>Start SKILL.md with YAML frontmatter that declares <code>name</code> and <code>description</code>.</li>
           <li>Use a lowercase, hyphenated name that matches the folder name, 64 characters or fewer.</li>
-          <li>Write a description between 50 and 1,024 characters that says what the skill does and when to use it, for example "Use when ...".</li>
-          <li>Keep SKILL.md to 500 lines or fewer; move long reference material into a <code>references/</code> folder.</li>
-          <li>Declare a license in the frontmatter or ship a LICENSE file in the repository.</li>
+          <li>Write a description of 150 to 600 characters that says what the skill does and when to use it, for example "Use when ...", names when not to use it ("Not for ..."), and quotes an example request.</li>
+          <li>Give the agent 500 to 3,000 words of instructions, in 500 lines or fewer; move long reference material into a <code>references/</code> folder and helper scripts into a <code>scripts/</code> folder.</li>
+          <li>Declare <code>allowed-tools</code> and <code>compatibility</code> in the frontmatter.</li>
+          <li>Declare a license in the frontmatter or ship a LICENSE file in the repository, and keep the repository maintained: recent commits earn up to 9 points.</li>
         </ul>
+        <p>The <a href="${rel(here, "directory/methodology/")}#score">scoring rubric</a> lists every component and its points.</p>
       </section>
 ${badgeBlock(here, {
   badgePath: "directory/badge.svg",
@@ -1455,17 +1547,28 @@ render404();
 for (const c of categories) renderCategory(c);
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
+// Quality shields only for listed skills scoring 80-99. A listed skill below
+// 80 keeps valid badge.svg and score.svg URLs, which serve the general listing
+// badge (the repository-level badge.svg) until its score qualifies.
+const listingBadge = badgeSvg("listed").svg;
 for (const s of data.skills) {
-  files.set(`${skillPath(s)}score.svg`, shieldSvg(s.score, "score"));
-  files.set(`${skillPath(s)}badge.svg`, shieldSvg(s.score, "grade"));
-  files.set(`directory/badges/score-${s.score}.svg`, shieldSvg(s.score, "score"));
-  files.set(`directory/badges/grade-${s.grade.toLowerCase()}.svg`, shieldSvg(s.score, "grade"));
+  if (s.shielded) {
+    files.set(`${skillPath(s)}score.svg`, shieldSvg(s.score, "score"));
+    files.set(`${skillPath(s)}badge.svg`, shieldSvg(s.score, "grade"));
+    files.set(`directory/badges/score-${s.score}.svg`, shieldSvg(s.score, "score"));
+  } else {
+    files.set(`${skillPath(s)}score.svg`, listingBadge);
+    files.set(`${skillPath(s)}badge.svg`, listingBadge);
+  }
 }
-files.set("directory/badge.svg", badgeSvg("listed").svg);
+// The shared grade previews on the directory home and in authors' docs.
+files.set("directory/badges/grade-a.svg", shieldSvg(90, "grade"));
+files.set("directory/badges/grade-b.svg", shieldSvg(80, "grade"));
+files.set("directory/badge.svg", listingBadge);
 
 // llms.txt carries one line about the directory, with live counts.
 const llmsPath = path.join(docsRoot, "llms.txt");
-const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, has a quality score of 80–100 and grade A or B on the Suede Skill Check, states its license and offers numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
+const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the ${fmt(dist.shielded)} skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/).`;
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
 const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");

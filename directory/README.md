@@ -6,6 +6,7 @@ Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directo
 | --- | --- | --- |
 | `skills.json` | One record per listed skill: source repository, SKILL.md metadata, Suede Skill Check results, license, category, and whether it gets its own page | `scripts/directory/curate.py` |
 | `labels.json` | The editorial layer: a category for every skill and a one-sentence summary, in the directory's own words, for skills with a page | Reviewed by hand or by an agent, keyed by skill id |
+| `featured-projects.json` | Editorial project selections, accepted scopes, pinned intake reviews and project-specific setup for `/directory/featured/`; independent of catalog scores and README-badge verification | Reviewed by hand or by an agent |
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests, with optional per-repository skill-name allowlists; read on the next refresh even when no curated list cites them | Hand-written |
 | `notes.json` | Install routes a publisher documents for a skill whose license restricts copying, shown on that skill's page with a link to the source | Hand-written |
@@ -38,38 +39,85 @@ are unchanged.
 
 ## Quality scores and the two README badges
 
-`score_method: "seven-checks-v1"` adds `score` (integer 0–100) to each record.
-The score is `round(100 * passed / 7)`, using the seven checks after required
-frontmatter. Missing check evidence earns zero points for that check, with a
-fixed denominator. The eight possible scores are 0, 14, 29, 43, 57, 71, 86 and
-100. A = 90–100, B = 80–89, C = 70–79, D = 0–69. Failed frontmatter is F and
-ineligible regardless of numeric score. Fetch failures are unscored (`None` in
-the grader), never a measured zero; the refresh aborts before replacing the
-published snapshot. Existing license, policy, language, duplication and
-editorial page gates remain in force. The score measures structural evidence,
-not runtime performance.
+`score_method: "graded-v2"` adds `score` (integer 0–99) to each record. The
+score is computed only from published fields — the record, its repository's
+`commit_date` and `lists` in `repos`, and the snapshot's `generated` date — so
+`scripts/directory/grade.py` (`quality_score`) and
+`scripts/directory/badges.mjs` (`qualityScore`) recompute the same value from
+`skills.json`. All arithmetic is integer, with no rounding:
+
+| Component | Points |
+| --- | --- |
+| Each of the seven graded checks after required frontmatter | 8 each, 56 total |
+| Description length in code points | 5 for 150–600; 3 for 100–900; 1 for 50–1024; else 0 |
+| Description states a boundary (`not for`, `do not use`, `use … instead`) | 4 |
+| Description quotes an example phrase (3–60 characters in quotation marks) | 3 |
+| Body depth by word count | 7 for 500–3,000; 4 for 250–4,500; 1 for 100 or more; else 0 |
+| Bundles reference files | 3 |
+| Bundles scripts | 2 |
+| Recency: days from the repository's last commit to the snapshot date | 9 within 30; 6 within 90; 3 within 180; 1 within 365; else 0 |
+| Adoption: number of curated lists citing the repository | 7 for four or more; 4 for three; 3 for two; 1 for one; else 0 |
+| Declares `allowed-tools` | 2 |
+| Declares `compatibility` | 2 |
+
+The raw maximum is 100. The published score is `min(raw, 99)`: 100 is reserved,
+because structural evidence cannot show that a skill is perfect. Missing check
+evidence earns zero points for that check. A = 90–99, B = 80–89, C = 70–79,
+D = 0–69. Failed frontmatter is F and ineligible regardless of numeric score.
+Fetch failures are unscored (`None` in the grader), never a measured zero; the
+refresh aborts before replacing the published snapshot. The score measures
+structural evidence, not runtime performance. The replaced `seven-checks-v1`
+method (`round(100 * passed / 7)`) could produce only eight values, and most
+listed skills tied at 100; the graded components spread scores across the
+range. At the current snapshot no listed skill scores above 95 and the median
+is 80.
+
+Listing eligibility does not depend on the numeric score. A skill is listed
+when it passes required frontmatter and at least six of the seven graded
+checks, passes the license check, and meets the existing license, policy,
+language, duplication and editorial rules. That is the same set the previous
+method listed at scores of 80 and above, so the method change delisted no
+skill. Editorial full-page candidates still require all seven graded checks to
+pass, independent of the score.
+
+To re-apply the current method to the existing snapshot without re-fetching any
+repository, run:
+
+```
+python3 scripts/directory/rescore.py
+npm run build:directory
+```
+
+`rescore.py` recomputes `score` and `grade` from the saved records, sets
+`score_method`, and rotates `snapshot_id`, so badge verification recorded
+against the earlier bytes must be re-run.
 
 `security_scan_status: "not_scanned"` is separate from quality. HOL/Cisco CI
 scans Suede's repository only; it supplies no security result for external
 listings. Introducing per-skill security results requires a reviewed evidence
 pipeline. The builder rejects unsupported security status claims.
 
-Every qualifying skill offers two linked shields: numeric and letter grade.
-Both links point to its full skill page, or its repository-page row when it has
-no full page. Authors may display either badge or both; one valid linked badge
-is enough to request promotion verification. `scripts/directory/badges.mjs` owns validation, URLs, snippets and
-SVG generation. The supplied Suede S paths are preserved. Grade A and scores
-90–100 are gold; B and 80–89 are cool metallic. Per-skill `badge.svg` and `score.svg` URLs update on each build, including
-skills without a full HTML page; existing `badge.svg` URLs remain valid. Shared
-score/grade previews also live under `docs/directory/badges/`. Repository-level `badge.svg` remains
-the general listing badge, because a repository can contain different grades.
-Do not average a repository's skills into an invented grade.
+Every listed skill scoring 80–99 offers two linked quality shields: numeric and
+letter grade. Both links point to its full skill page, or its repository-page
+row when it has no full page. Authors may display either badge or both; one
+valid linked badge is enough to request promotion verification.
+`scripts/directory/badges.mjs` owns validation, URLs, snippets and SVG
+generation. The supplied Suede S paths are preserved. Grade A and scores 90–99
+are gold; B and 80–89 are cool metallic. Per-skill `badge.svg` and `score.svg`
+URLs update on each build, including skills without a full HTML page, and stay
+valid for every listed skill: a listed skill scoring below 80 receives the
+general listing badge at those paths, and its page offers the route to improve
+the score and request another review in place of badge snippets. Shared
+score/grade previews also live under `docs/directory/badges/`.
+Repository-level `badge.svg` remains the general listing badge, because a
+repository can contain different grades. Do not average a repository's skills
+into an invented grade.
 
 ## Limited-time featured placement
 
 This offer is separate from `featured` in `skills.json`, which controls existing
 editorial full pages and their cap/stickiness rules. Nothing receives a badge
-partner placement merely by scoring 80–100 or receiving an editorial page.
+partner placement merely by scoring 80–99 or receiving an editorial page.
 
 `promotion.json` is the admin control and verification ledger:
 
