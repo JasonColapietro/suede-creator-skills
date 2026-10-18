@@ -92,30 +92,46 @@ export function generateCatalog(inputs) {
     return [repo, skills.length === 1 && skills[0].featured ? listingTarget(skills[0]) : `${SITE}${repoSlug(repo)}/`];
   }));
   const pages = new Map();
-  const nav = (prefix = '') => `${link('Awesome index', `${prefix}README.md`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search the website', SITE)}`;
+  const nav = (prefix = '') => `${link('Awesome index', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-0100-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
   const finish = (body) => `${GENERATED}\n\n${body.trim()}\n`;
   const stamp = `Snapshot: **${data.generated}** · Scores: **${SCORE_METHOD}** · [How scores work](${SITE}methodology/).`;
+  const range = (skills) => `${Math.min(...skills.map((s) => s.score))}–${Math.max(...skills.map((s) => s.score))}`;
+  const bands = [['90–99', 'A'], ['80–89', 'B'], ['70–79', 'C'], ['0–69', 'D']];
   const categoryRows = categories.map((c) => {
     const skills = data.skills.filter((s) => s.category === c.slug);
-    return `| ${link(c.title, `categories/${c.slug}.md`)} | ${number(skills.length)} | ${new Set(skills.map((s) => s.repo)).size} |`;
+    return `| ${link(c.title, `categories/${c.slug}.md`)} | **${range(skills)} / 100** | ${number(skills.length)} | ${new Set(skills.map((s) => s.repo)).size} |`;
   }).join('\n');
   pages.set('README.md', finish(`
 <a href="https://suedeai.ai"><img src="../docs/assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="88"></a>
 
 # Awesome Agent Skills by Suede
 
-Find a skill for the work in front of you. Browse **${number(data.skills.length)} accepted skills from ${repos.length} repositories**, organized into **${categories.length} categories**, with source links, publisher credits and verified structural quality scores.
+Compare agent skills with **0–100 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
+
+Browse **${number(data.skills.length)} scored skills from ${repos.length} repositories** across **${categories.length} categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
-**[Browse categories](#contents)** · **[Browse publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Search on Suede](${SITE})** · **[Contribute](CONTRIBUTING.md)**
+**[Compare scores](#compare-0100-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
 ${stamp}
 
+## Compare 0–100 quality scores
+
+Every displayed score is recomputed from the saved evidence using **graded-v2**. The rubric scores structural checks, description clarity, instruction depth, bundled resources, maintenance, curated-list citations and declared tool/compatibility fields. [See every component and point allocation](${SITE}methodology/).
+
+The rubric uses a **0–100 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **${range(data.skills)} / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
+
+| Quality score / 100 | Accepted skills | Browse |
+| --- | ---: | --- |
+${bands.map(([band, grade]) => `| **${band} · ${grade}** | ${number(data.skills.filter((s) => s.grade === grade).length)} | ${link('View scored skills on Suede', `${SITE}?sort=score&grade=${grade}`)} |`).join('\n')}
+
+For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
+
 ## Contents
 
-| Category | Accepted skills | Repositories |
-| --- | ---: | ---: |
+| Category | Quality scores / 100 | Accepted skills | Repositories |
+| --- | ---: | ---: | ---: |
 ${categoryRows}
 
 Each skill appears in one category. A repository can contribute to several categories. Within each category, browse by publisher and use GitHub’s page search to find a name or task.
@@ -163,10 +179,10 @@ These commands read local data only. CI rejects missing, stale or orphaned gener
     const publishers = repos.filter((repo) => skills.some((s) => s.repo === repo));
     const sections = publishers.map((repo) => {
       const owner = repo.split('/')[0], meta = data.repos[repo];
-      const entries = skills.filter((s) => s.repo === repo).sort((a, b) => alphabetical(a.name, b.name)).map((s) => {
+      const entries = skills.filter((s) => s.repo === repo).sort((a, b) => b.score - a.score || alphabetical(a.name, b.name)).map((s) => {
         const source = `${github(repo)}/blob/${encodedPath(meta.branch)}/${s.dir === '.' ? '' : `${encodedPath(s.dir)}/`}SKILL.md`;
         const license = s.open_license ? '' : ` · License: ${md(s.license)} (review terms)`;
-        return `- ${link(s.name, source)} — ${excerpt(s.summary || s.description)} **${s.score}/100 · ${s.grade}** · [Suede](${listingTarget(s)})${license}`;
+        return `- **${s.score}/100 · ${s.grade}** · ${link(s.name, source)} — ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}`;
       }).join('\n');
       return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(owner, github(owner))} · ${link('Suede listing', repoTargets.get(repo))}\n\n${entries}`;
     }).join('\n\n');
@@ -178,6 +194,8 @@ ${nav('../')}
 ${md(c.intro)}
 
 **${number(skills.length)} accepted skills · ${publishers.length} repositories.** ${stamp}
+
+**Compare on the 0–100 quality scale:** this category’s verified scores span **${range(skills)} / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](${SITE}?category=${c.slug}&sort=score) · [Rubric and the 99-point cap](../README.md#compare-0100-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 

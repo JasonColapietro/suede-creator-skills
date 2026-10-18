@@ -20,11 +20,11 @@
 
 ---
 
-## Awesome Agent Skills directory
+## Awesome Agent Skills, scored 0–100
 
-**[Browse the Awesome catalog](awesome/README.md)**: the accepted Agent Skills Directory in GitHub Markdown, organized by category and publisher, with source links, structural quality grades, and featured-project setup guides.
+**[Compare skills by their 0–100 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
 
-[Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Search the directory](https://skills.suedeai.ai/directory/) · [Contribute a listing](awesome/CONTRIBUTING.md)
+[Compare scores](awesome/README.md#compare-0100-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
 
 ## Suede Creator Skills for SEO and business growth
 

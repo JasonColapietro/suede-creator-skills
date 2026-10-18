@@ -12,6 +12,27 @@ const inputs = loadInputs(root);
 const pages = generateCatalog(inputs);
 const categories = [...pages].filter(([name]) => name.startsWith('categories/'));
 
+test('0–100 quality scoring leads the catalog and every listing, with higher scores first per publisher', () => {
+  const index = pages.get('README.md');
+  assert.ok(index.indexOf('0–100 quality scores') >= 0 && index.indexOf('0–100 quality scores') < index.indexOf('## Contents'));
+  assert.ok(index.includes('## Compare 0–100 quality scores'));
+  assert.ok(index.includes('published scores are capped at 99; 100 is reserved'));
+  for (const grade of ['A', 'B', 'C', 'D']) {
+    const count = inputs.data.skills.filter((s) => s.grade === grade).length;
+    const row = index.split('\n').find((l) => l.includes(`sort=score&grade=${grade}`));
+    assert.ok(row.includes(`| ${count.toLocaleString('en-US')} |`));
+  }
+  for (const [, body] of categories) {
+    assert.ok(body.includes('0–100 quality scale'));
+    for (const group of body.split(/^## /m).slice(1)) {
+      const entries = group.split('\n').filter((l) => l.includes('[Suede]('));
+      const scores = entries.map((line) => Number(line.match(/^- \*\*(\d+)\/100 · [ABCD]\*\*/)?.[1]));
+      assert.ok(scores.every(Number.isInteger));
+      assert.deepEqual(scores, [...scores].sort((a, b) => b - a));
+    }
+  }
+});
+
 test('every accepted skill appears exactly once in its category with its verified score and source', () => {
   const targets = categories.flatMap(([, body]) => [...body.matchAll(/\[Suede\]\(([^)]+)\)/g)].map((m) => m[1]));
   assert.equal(targets.length, inputs.data.skills.length);
