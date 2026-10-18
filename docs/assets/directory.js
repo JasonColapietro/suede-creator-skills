@@ -129,6 +129,7 @@ if (browser) {
     return article;
   }
   function render(writeUrl = true, focusIndex = -1) {
+    if (writeUrl) saveLocation();
     if (!skills) return;
     const terms = termsFor(query.value);
     const matches = skills.filter((skill) => (!category.value || skill.category === category.value) && (!grade.value || skill.grade === grade.value) && terms.every((term) => skill.search.includes(term)));
@@ -145,7 +146,6 @@ if (browser) {
     status.textContent = 'Showing ' + shown.toLocaleString() + ' of ' + matches.length.toLocaleString() + ' skills';
     more.textContent = 'Show ' + Math.min(12, matches.length - shown) + ' more skills';
     categoryLinks.forEach((link) => { if (link.dataset.category === category.value) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current'); });
-    if (writeUrl) saveLocation();
     if (focusIndex >= 0) results.querySelectorAll('h3 a')[focusIndex]?.focus();
   }
   async function load() {

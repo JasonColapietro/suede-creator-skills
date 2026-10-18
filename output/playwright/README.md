@@ -30,11 +30,13 @@ The initial audit found a page of category cards without global skill search, lo
 
 ## Verification
 
-- Three Node regression tests: every skill is indexed once with unchanged data; every result route/anchor exists; static category browsing and table recovery remain available. Negative control: removing one indexed skill makes the completeness test fail.
+- Four Node regression tests: every skill is indexed once with unchanged data; every result route/anchor exists; static category browsing and table recovery remain available; setting and clearing filters persists in the URL while the index loads. Negative controls: removing one indexed skill makes the completeness test fail, and the pending-load URL test fails on the original code.
 - Generated directory check passes (6,907 files), JavaScript parses, and diff whitespace is clean.
-- 29 isolated headless-browser assertions passed. These cover query and grade intersection, category and sorting, URL restoration, pagination focus, reset, Cmd+K, Escape, mobile focus, 320/390/680/768/1024/1440px overflow, links into collapsed repository rows, tablet table layout, category empty/clear states, reduced motion, fetch failure/retry, loading and no-JavaScript fallback. No page JavaScript errors.
+- 32 isolated headless-browser assertions passed. These cover query and grade intersection, category and sorting, URL restoration, pagination focus, reset, Cmd+K, Escape, mobile focus, 320/390/680/768/1024/1440px overflow, links into collapsed repository rows, tablet table layout, category empty/clear states, reduced motion, fetch failure/retry, loading and no-JavaScript fallback. Delayed-index coverage verifies all four filters persist before loading completes, apply to the loaded results, and survive a reload. No page JavaScript errors.
 - Fresh independent review: no remaining actionable findings. Its three earlier findings (601–720px cell widths, mobile category focus, global single-character shortcut) are resolved. Metadata, titles, canonical links and JSON-LD remain unchanged across the generated-page diff.
 - Full local `npm test` was attempted. Validation, number-word and metadata tests passed. The existing validator-runtime suite could not complete successfully: temporary checkout copies hit ENOSPC, and history-based fixtures could not clone missing objects from the local partial Git repository. Full clean-checkout verification belongs to PR CI.
+
+The subsequent PR review identified pending-load URL loss: `render()` returned before saving filter changes when the index had not arrived. URL saving now occurs before that loading guard. The new automated test failed on the old code and passes with the fix; a fresh independent review found no additional issues. The earlier PR commit passed full CI; the follow-up commit is checked separately before release.
 
 ## Reproduce the browser checks
 
@@ -50,4 +52,4 @@ Then run the smoke script, pointing `PLAYWRIGHT_MODULE` at an installed Playwrig
 node output/playwright/check-discovery.cjs
 ```
 
-The script creates and closes its own headless Chrome process with a temporary profile. `DIRECTORY_URL` can override the localhost origin. It never attaches to an existing browser.
+The script creates and closes its own headless Chrome process with a temporary profile. `DIRECTORY_URL` can override the localhost origin, and `DIRECTORY_SCREENSHOTS` can direct fresh screenshots to a temporary folder without replacing the committed evidence. It never attaches to an existing browser.
