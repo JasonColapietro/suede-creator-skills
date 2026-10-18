@@ -254,7 +254,7 @@ ${p.commands.join('\n')}
 **Hook behavior.** ${md(p.behavior)}
 
 **Guard coverage.** ${md(p.guard_scope)}
-` : '\nOnly the three linked Appie skills are in the accepted scope. Follow each skill’s individual setup instructions.\n'}
+` : p.skills ? `\nAccepted scope: **${p.skills.length} skills**. Follow each linked skill’s individual setup instructions.\n` : ''}
 ${link('Repository', github(p.repo))} · ${link('Intake review', `../${p.review}`)} · ${link(`Reviewed source ${p.commit.slice(0, 7)}`, `${github(p.repo)}/tree/${p.commit}`)} · ${link('Suede feature', `${SITE}featured/#${p.id}`)}`;
 }).join('\n\n---\n\n')}
 `));

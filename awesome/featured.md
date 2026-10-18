@@ -27,7 +27,7 @@ Bring Appie’s writing, chatbot and link tools into your agent workflow. Pick t
 
 Requires an Appie project, project API key and hosted MCP connection. The selected workflow sends its content to Appie; service operations may use credits. Each skill page covers its setup and data use.
 
-Only the three linked Appie skills are in the accepted scope. Follow each skill’s individual setup instructions.
+Accepted scope: **3 skills**. Follow each linked skill’s individual setup instructions.
 
 [Repository](https://github.com/appierun/appie-mcp) · [Intake review](../directory/reviews/2026-10-17-appie-mcp.md) · [Reviewed source 058385a](https://github.com/appierun/appie-mcp/tree/058385aa7dde6d74f84a64f12d4a00a4d03ae981) · [Suede feature](https://skills.suedeai.ai/directory/featured/#appie)
 

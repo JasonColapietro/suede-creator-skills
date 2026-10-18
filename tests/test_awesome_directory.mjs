@@ -22,8 +22,9 @@ test('every accepted skill appears exactly once in its category with its verifie
     const page = pages.get(`categories/${s.category}.md`);
     const line = page.split('\n').find((l) => l.includes(`[Suede](${listingTarget(s)})`));
     assert.ok(line.includes(`**${qualityScore(s, inputs.data.repos[s.repo], inputs.data.generated)}/100 · ${s.grade}**`));
-    assert.ok(line.includes(`https://github.com/${s.repo}/blob/`));
-    assert.ok(line.includes('/SKILL.md)'));
+    const encode = (p) => p.split('/').map(encodeURIComponent).join('/');
+    const source = `https://github.com/${s.repo}/blob/${encode(inputs.data.repos[s.repo].branch)}/${s.dir === '.' ? '' : `${encode(s.dir)}/`}SKILL.md`;
+    assert.ok(line.includes(`](${source})`), `${s.repo}/${s.slug}: source path`);
     if (!s.open_license) assert.ok(line.includes('review terms'), `${s.repo}/${s.slug}`);
   }
 });
@@ -83,6 +84,7 @@ test('featured Appie scope and CoalWash full-plugin instructions retain their ev
   assert.doesNotMatch(page, /appie-linkedin|appie-reddit|npx skills add|cp -R|score\.svg|badge\.svg/);
   for (const fact of ['claude plugin marketplace add TheColliery/CoalWash', 'claude plugin install coalwash@coalwash', 'SessionStart', 'PreToolUse', 'PostToolUse', 'without a new prompt', 'requires consent', 'Shell writes', 'semantic preservation']) assert.ok(page.includes(fact), fact);
   assert.ok(page.includes('Editorial selection'));
+  assert.ok(page.includes('Accepted scope: **3 skills**'));
   assert.ok(page.includes('security certification'));
   for (const p of inputs.editorial.projects) assert.ok(page.includes(`/tree/${p.commit}`));
   const invalid = structuredClone(inputs);
