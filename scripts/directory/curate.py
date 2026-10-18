@@ -4,7 +4,8 @@
         --raw skills-raw.json --labels directory/labels.json --out directory/skills.json
 
 Listing rules (published on /directory/methodology/):
-  * Suede Skill Check grade A or B, and a declared license
+  * frontmatter plus at least six of the seven graded Suede Skill Check
+    checks, and a declared license (the numeric score does not gate listing)
   * a description written mainly in English
   * not a template, example, draft or test fixture
   * one listing per skill: exact copies across repositories keep the copy in
@@ -29,7 +30,7 @@ import sys
 import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from grade import CHECKS, grade, quality_score, run_checks  # noqa: E402
+from grade import CHECKS, SCORE_METHOD, all_checks_pass, grade, quality_score, run_checks, structural_pass  # noqa: E402
 
 REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 
@@ -289,6 +290,25 @@ def harness_rank(r):
     return (0 if "claude" in d else 1, d.count("/"), d)
 
 
+def dataset_text(data):
+    """The byte format of skills.json: head fields, then sorted repos, then one skill per line."""
+    head = {k: v for k, v in data.items() if k not in ("repos", "skills")}
+    text = "{\n" + ",\n".join(f" {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k, v in head.items())
+    text += ',\n "repos": {\n' + ",\n".join(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(data["repos"].items())) + "\n }"
+    text += ',\n "skills": [\n' + ",\n".join(json.dumps(rec, ensure_ascii=False, separators=(",", ":")) for rec in data["skills"]) + "\n ]\n}\n"
+    json.loads(text)
+    return text
+
+
+def score_listing(rec, repo, generated):
+    """Score and letter for a published-shape record; listed skills always pass frontmatter."""
+    score = quality_score(rec, repo, generated)
+    letter = grade({"frontmatter": rec["checks"][:1] == "1"}, score)
+    if score is None or letter is None:
+        raise ValueError(f"Could not score {rec.get('repo')}/{rec.get('slug')}")
+    return score, letter
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", required=True)
@@ -334,9 +354,7 @@ def main():
         if out_of_scope or (repo_key in scopes and excluded):
             scoped_withheld.add((repo_key, name))
         r["checks"] = run_checks(r)
-        r["grade"] = grade(r["checks"])
-        r["score"] = quality_score(r["checks"])
-        if r["score"] is None:
+        if r["checks"] is None:
             reasons["source unavailable (unscored)"] += 1
             continue
         name, desc = r["name"] or "", r["description"] or ""
@@ -344,8 +362,8 @@ def main():
             reasons["listed in directory/exclusions.json"] += 1
         elif out_of_scope:
             reasons["outside accepted listing request"] += 1
-        elif r["grade"] not in ("A", "B"):
-            reasons["grade C or below"] += 1
+        elif not structural_pass(r["checks"]):
+            reasons["frontmatter failed or fewer than six of seven checks"] += 1
         elif not r["checks"]["license"]:
             reasons["no license"] += 1
         elif not mostly_english(desc):
@@ -432,7 +450,7 @@ def main():
             used.add(slug)
             ids[id(r)] = (slug, f"{repo_slug}/{slug}")
         had_page = [r for r in items if ids[id(r)][1] in previous_pages and (labels.get(ids[id(r)][1]) or {}).get("summary")]
-        ranked = sorted([r for r in items if r["grade"] == "A" and r not in had_page], key=lambda r: (-richness(r), r["name"]))
+        ranked = sorted([r for r in items if all_checks_pass(r["checks"]) and r not in had_page], key=lambda r: (-richness(r), r["name"]))
         open_slots = max(0, args.cap - len(had_page))
         for r in ranked[:open_slots]:
             if not (labels.get(ids[id(r)][1]) or {}).get("summary"):
@@ -455,8 +473,9 @@ def main():
                 "name": r["name"],
                 "description": re.sub(r"\s+", " ", r["description"]).strip(),
                 "category": label.get("category") or classify(r["name"], r["description"]),
-                "grade": r["grade"],
-                "score": r["score"],
+                # Filled in below, once the repository meta is final.
+                "grade": None,
+                "score": None,
                 "security_scan_status": "not_scanned",
                 "checks": "".join("1" if r["checks"][k] else "0" for k, _ in CHECKS),
                 "dir": r["dir"],
@@ -500,15 +519,14 @@ def main():
     if privacy_dropped:
         print("dropped by the public-privacy check:", *privacy_dropped, file=sys.stderr)
     out.sort(key=lambda pair: pair[0])
+    # The score reads only published fields, so the builder can recompute it.
+    for _, rec in out:
+        rec["score"], rec["grade"] = score_listing(rec, repo_meta[rec["repo"]], generated)
     sources =sorted({l for m in repo_meta.values() for l in m["lists"]})
     # Rotate even for unchanged same-day data: a README may have changed while
     # its skill metadata stayed identical, so every refresh needs fresh evidence.
-    head = {"generated": generated, "snapshot_id": uuid.uuid4().hex, "score_method": "seven-checks-v1", "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}
-    text = "{\n" + ",\n".join(f" {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k, v in head.items())
-    text += ',\n "repos": {\n' + ",\n".join(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False, separators=(',', ':'))}" for k, v in sorted(repo_meta.items())) + "\n }"
-    text += ',\n "skills": [\n' + ",\n".join(json.dumps(rec, ensure_ascii=False, separators=(",", ":")) for _, rec in out) + "\n ]\n}\n"
-    json.loads(text)
-    open(args.out, "w").write(text)
+    head = {"generated": generated, "snapshot_id": uuid.uuid4().hex, "score_method": SCORE_METHOD, "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}
+    open(args.out, "w").write(dataset_text({**head, "repos": repo_meta, "skills": [rec for _, rec in out]}))
     if os.environ.get("SUEDE_DIRECTORY_PRUNE_LABELS"):
         listed = {sid for sid, _ in out}
         kept_labels = {k: v for k, v in labels.items() if k in listed}
@@ -518,7 +536,7 @@ def main():
     out = [rec for _, rec in out]
     if os.environ.get("SUEDE_DIRECTORY_LABEL_QUEUE"):
         # Skills an editor should label next: a category for every unlabeled
-        # skill, a summary for grade A skills that would earn a page.
+        # skill, a summary for all-checks skills that would earn a page.
         queue = {r["id"]: r for r in needs_label}
         for r in needs_summary:
             queue[r["id"]] = {**r, "needs_summary": True}
@@ -526,4 +544,5 @@ def main():
     print(f"listed {len(out)} skills from {len(by_repo)} repositories; {sum(1 for s in out if s.get('featured'))} featured; {unlabeled} without labels", file=sys.stderr)
 
 
-main()
+if __name__ == "__main__":
+    main()

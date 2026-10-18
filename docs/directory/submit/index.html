@@ -29,7 +29,7 @@
         "name": "List Your Agent Skill | Suede Skills Directory",
         "description": "Request a free listing for your agent skill. Pass the Suede Skill Check to get a category placement and a README badge that links to your listing.",
         "url": "https://skills.suedeai.ai/directory/submit/",
-        "dateModified": "2026-10-17",
+        "dateModified": "2026-10-18",
         "isPartOf": {
           "@id": "https://skills.suedeai.ai/directory/#directory"
         },
@@ -102,21 +102,23 @@
         <ol class="steps">
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
-          <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="../methodology/">Suede Skill Check</a> and the listing rules; skills graded A or B are listed.</li>
-          <li><b>Add either badge.</b> Eligible skills scoring 80–100 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
+          <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="../methodology/">Suede Skill Check</a> and the listing rules. Skills that pass the frontmatter check, declare a license and pass at least six of seven graded checks are listed with their quality score and grade.</li>
+          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
-      <section class="panel" aria-labelledby="pass-title">
+      <section class="panel" id="improve" aria-labelledby="pass-title">
         <h2 id="pass-title">Improve your score</h2>
-        <p>Below 80? Send your repository and ask for help with the checks. Authors are welcome to improve their skill and request a fresh review.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="./">request badge verification</a>. Eligible skills scoring 80–100 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p>
+        <p>Below 80? Send your repository and ask for help with the points you want to raise. Authors are welcome to improve their skill and request a fresh review; skills that reach 80 add the numeric and letter quality shields.</p>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="./">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p>
         <ul>
           <li>Start SKILL.md with YAML frontmatter that declares <code>name</code> and <code>description</code>.</li>
           <li>Use a lowercase, hyphenated name that matches the folder name, 64 characters or fewer.</li>
-          <li>Write a description between 50 and 1,024 characters that says what the skill does and when to use it, for example "Use when ...".</li>
-          <li>Keep SKILL.md to 500 lines or fewer; move long reference material into a <code>references/</code> folder.</li>
-          <li>Declare a license in the frontmatter or ship a LICENSE file in the repository.</li>
+          <li>Write a description of 150 to 600 characters that says what the skill does and when to use it, for example "Use when ...", names when not to use it ("Not for ..."), and quotes an example request.</li>
+          <li>Give the agent 500 to 3,000 words of instructions, in 500 lines or fewer; move long reference material into a <code>references/</code> folder and helper scripts into a <code>scripts/</code> folder.</li>
+          <li>Declare <code>allowed-tools</code> and <code>compatibility</code> in the frontmatter.</li>
+          <li>Declare a license in the frontmatter or ship a LICENSE file in the repository, and keep the repository maintained: recent commits earn up to 9 points.</li>
         </ul>
+        <p>The <a href="../methodology/#score">scoring rubric</a> lists every component and its points.</p>
       </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">The directory badge</h2>

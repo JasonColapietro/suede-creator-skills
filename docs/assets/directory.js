@@ -119,12 +119,16 @@ if (browser) {
     link.href = skill.href;
     heading.append(link);
     body.append(meta, heading, node('p', '', skill.description), node('p', 'result-foot', skill.license + ' · ' + (skill.full ? 'Full skill page' : 'Repository listing')));
-    const shield = node('img', 'result-shield');
-    shield.src = 'badges/score-' + skill.score + '.svg';
-    shield.alt = 'Suede S shield';
-    shield.width = 80; shield.height = 88; shield.loading = 'lazy';
     const quality = node('div', 'result-quality');
-    quality.append(shield, node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    // Quality shields exist only for listed skills scoring 80-99.
+    if (skill.score >= 80) {
+      const shield = node('img', 'result-shield');
+      shield.src = 'badges/score-' + skill.score + '.svg';
+      shield.alt = 'Suede S shield';
+      shield.width = 80; shield.height = 88; shield.loading = 'lazy';
+      quality.append(shield);
+    }
+    quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
     article.append(body, quality);
     return article;
   }
@@ -134,7 +138,7 @@ if (browser) {
     const terms = termsFor(query.value);
     const matches = skills.filter((skill) => (!category.value || skill.category === category.value) && (!grade.value || skill.grade === grade.value) && terms.every((term) => skill.search.includes(term)));
     if (sort.value === 'name') matches.sort((a, b) => a.name.localeCompare(b.name) || a.repo.localeCompare(b.repo));
-    if (sort.value === 'score') matches.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+    if (sort.value === 'score') matches.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name) || a.repo.localeCompare(b.repo));
     const fragment = document.createDocumentFragment();
     matches.slice(0, limit).forEach((skill) => fragment.append(resultRow(skill)));
     results.replaceChildren(fragment);

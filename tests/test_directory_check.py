@@ -56,51 +56,241 @@ class DescriptionTriggerTests(unittest.TestCase):
     def test_all_checks_pass_for_a_well_formed_skill(self):
         checks = grade.run_checks(record("Use this skill to draft a launch checklist for a mobile app release."))
         self.assertTrue(all(checks.values()), checks)
-        self.assertEqual(grade.grade(checks), "A")
+        self.assertTrue(grade.all_checks_pass(checks) and grade.structural_pass(checks))
 
 
-class NumericScoreTests(unittest.TestCase):
-    def test_all_eight_scores_and_existing_eligibility(self):
+GENERATED = "2026-10-17"
+
+
+def listing(checks="10000000", description="", words=0, kinds="", commit_date="2020-01-01", lists=(), **extra):
+    """A published-shape record and its repository meta; the defaults earn no points."""
+    rec = {"repo": "someone/skills", "slug": "sample", "checks": checks, "description": description,
+           "size": [10, words, 1], "kinds": kinds, **extra}
+    return rec, {"commit_date": commit_date, "lists": list(lists)}
+
+
+def score(**kw):
+    rec, repo = listing(**kw)
+    return grade.quality_score(rec, repo, GENERATED)
+
+
+def signal(text):
+    """Points a description earns beyond its length band."""
+    return score(description=text) - score(description="x" * len(text))
+
+
+def days_ago(n):
+    import datetime as dt
+    return (dt.date.fromisoformat(GENERATED) - dt.timedelta(days=n)).isoformat()
+
+
+class GradedScoreTests(unittest.TestCase):
+    def test_no_signals_scores_zero_and_every_signal_is_capped_at_99(self):
+        self.assertEqual(score(), 0)
+        desc = 'Use when drafting release notes, e.g. "summarize this diff". Not for marketing copy. ' * 2
+        best = dict(checks="11111111", description=desc, words=1200, kinds="rsa", commit_date=GENERATED,
+                    lists=["a", "b", "c", "d"], allowed_tools="Read Bash", compatibility="Claude Code")
+        self.assertTrue(150 <= len(desc) <= 600)
+        self.assertEqual(score(**best), 99, "raw maximum is 100; the scale tops out at 99")
+        self.assertEqual(grade.letter_grade(score(**best)), "A")
+        best.pop("compatibility")
+        self.assertEqual(score(**best), 98)
+
+    def test_each_graded_check_is_worth_eight_and_frontmatter_none(self):
+        self.assertEqual(score(checks="00000000"), 0)
+        for i in range(1, 8):
+            with self.subTest(check=grade.CHECKS[i][0]):
+                self.assertEqual(score(checks="1" + "0" * (i - 1) + "1" + "0" * (7 - i)), 8)
+        self.assertEqual(score(checks="11111111"), 56)
+        self.assertEqual(score(checks="01111111"), 56)
+
+    def test_description_length_bands_count_code_points(self):
+        for n, pts in [(0, 0), (49, 0), (50, 1), (99, 1), (100, 3), (149, 3), (150, 5), (600, 5),
+                       (601, 3), (900, 3), (901, 1), (1024, 1), (1025, 0)]:
+            with self.subTest(n=n):
+                self.assertEqual(score(description="x" * n), pts)
+        # Code points, not UTF-16 units: JavaScript must use [...desc].length.
+        self.assertEqual(score(description="\U0001F600" * 150), 5)
+
+    def test_boundary_clause_hits_and_misses(self):
+        for text in ["Not for billing.", "NOT FOR: invoices", "Do not use on prod.", "Don't use for drafts.",
+                     "dont use for drafts", "Not intended for clinical use.", "Use the pdf skill instead.",
+                     "For big files use a streaming parser instead"]:
+            with self.subTest(text=text):
+                self.assertEqual(signal(text), 4)
+        for text in ["Notable for speed.", "Do not user-test.", "Use it. Instead, try the CLI.",
+                     "Cannot format.", "Use " + "x" * 61 + " instead"]:
+            with self.subTest(text=text):
+                self.assertEqual(signal(text), 0)
+
+    def test_example_phrase_hits_and_misses(self):
+        for text in ['Try "make a chart".', "Say \u201cdraft a tweet\u201d.", "Triggers on 'release notes'.",
+                     "Say \u2018fix it now\u2019.", '"abc"', '"' + "x" * 60 + '"']:
+            with self.subTest(text=text):
+                self.assertEqual(signal(text), 3)
+        for text in ['"ab"', '"' + "x" * 61 + '"', 'An "unclosed quote', "Don't panic.", "No quotes at all"]:
+            with self.subTest(text=text):
+                self.assertEqual(signal(text), 0)
+
+    def test_body_word_bands(self):
+        for w, pts in [(0, 0), (99, 0), (100, 1), (249, 1), (250, 4), (499, 4), (500, 7), (3000, 7),
+                       (3001, 4), (4500, 4), (4501, 1), (100000, 1)]:
+            with self.subTest(words=w):
+                self.assertEqual(score(words=w), pts)
+
+    def test_reference_and_script_files(self):
+        for kinds, pts in [("", 0), ("a", 0), ("r", 3), ("s", 2), ("rs", 5), ("rsa", 5)]:
+            with self.subTest(kinds=kinds):
+                self.assertEqual(score(kinds=kinds), pts)
+
+    def test_recency_boundary_days(self):
+        for n, pts in [(-3, 9), (0, 9), (30, 9), (31, 6), (90, 6), (91, 3), (180, 3), (181, 1),
+                       (365, 1), (366, 0), (2000, 0)]:
+            with self.subTest(days=n):
+                self.assertEqual(score(commit_date=days_ago(n)), pts)
+        self.assertEqual(score(commit_date=days_ago(30) + "T23:59:59+00:00"), 9, "whole calendar days")
+
+    def test_adoption_bands(self):
+        for n, pts in [(0, 0), (1, 1), (2, 3), (3, 4), (4, 7), (8, 7)]:
+            with self.subTest(lists=n):
+                self.assertEqual(score(lists=[f"list-{i}" for i in range(n)]), pts)
+
+    def test_declared_tools_and_compatibility(self):
+        self.assertEqual(score(allowed_tools="Read"), 2)
+        self.assertEqual(score(compatibility="Requires Python 3.11"), 2)
+        self.assertEqual(score(allowed_tools="Read", compatibility="Claude Code"), 4)
+        self.assertEqual(score(allowed_tools="", compatibility=None), 0)
+
+    def test_unscored_and_invalid_inputs(self):
+        self.assertIsNone(grade.quality_score(None, None, GENERATED))
+        rec, repo = listing()
+        for bad in (None, "", "2026-10", "20261017", "2026-1-17", "2026-02-30", "2026-13-01", "yesterday"):
+            with self.subTest(date=bad), self.assertRaises(ValueError):
+                grade.quality_score(rec, repo, bad)
+            with self.subTest(commit_date=bad), self.assertRaises(ValueError):
+                grade.quality_score(rec, {**repo, "commit_date": bad}, GENERATED)
+        with self.assertRaises(ValueError):
+            grade.quality_score(rec, None, GENERATED)
+        for checks in (None, "1111111", "111111111", "1111111x"):
+            with self.subTest(checks=checks), self.assertRaises(ValueError):
+                grade.quality_score({**rec, "checks": checks}, repo, GENERATED)
+        with self.assertRaises(ValueError):
+            grade.quality_score({**rec, "size": [10]}, repo, GENERATED)
+
+
+class ListingGateTests(unittest.TestCase):
+    def test_structural_pass_is_six_of_seven_plus_frontmatter(self):
         from itertools import product
         keys = [key for key, _ in grade.CHECKS[1:]]
-        expected = [0, 14, 29, 43, 57, 71, 86, 100]
-        for bits in product((False, True), repeat=7):
-            checks = dict(zip(keys, bits), frontmatter=True)
-            score = grade.quality_score(checks)
-            self.assertEqual(score, expected[sum(bits)])
-            self.assertEqual(grade.grade(checks) in ('A', 'B'), sum(bits) >= 6)
-            self.assertEqual(grade.eligible(checks), sum(bits) >= 6 and checks['license'])
+        for fm in (False, True):
+            for bits in product((False, True), repeat=7):
+                checks = dict(zip(keys, bits), frontmatter=fm)
+                text = "".join("1" if checks[k] else "0" for k, _ in grade.CHECKS)
+                self.assertEqual(grade.structural_pass(checks), fm and sum(bits) >= 6)
+                self.assertEqual(grade.structural_pass(text), fm and sum(bits) >= 6)
+                self.assertEqual(grade.all_checks_pass(checks), fm and all(bits))
+                self.assertEqual(grade.all_checks_pass(text), fm and all(bits))
+                self.assertEqual(grade.eligible(checks), fm and sum(bits) >= 6 and checks["license"])
+        self.assertFalse(grade.structural_pass(None))
+        self.assertFalse(grade.eligible(None))
+
+    def test_a_six_of_seven_skill_stays_listed_whatever_its_score(self):
+        checks = grade.run_checks(record("Use when drafting a launch checklist for a mobile app.", folder="other"))
+        self.assertFalse(checks["name_matches_folder"])
+        self.assertTrue(grade.structural_pass(checks) and grade.eligible(checks))
+        self.assertFalse(grade.all_checks_pass(checks))
+        low = score(checks="11011111")
+        self.assertEqual(low, 48)
+        self.assertEqual(grade.grade(checks, low), "D")
 
     def test_letter_boundaries_and_invalid_scores(self):
-        for score, letter in [(0, 'D'), (69, 'D'), (70, 'C'), (79, 'C'),
-                              (80, 'B'), (89, 'B'), (90, 'A'), (100, 'A')]:
-            self.assertEqual(grade.letter_grade(score), letter)
+        for value, letter in [(0, 'D'), (69, 'D'), (70, 'C'), (79, 'C'),
+                              (80, 'B'), (89, 'B'), (90, 'A'), (99, 'A')]:
+            self.assertEqual(grade.letter_grade(value), letter)
         self.assertIsNone(grade.letter_grade(None))
-        for invalid in (-1, 101, 89.5, True, '90'):
+        for invalid in (-1, 100, 101, 89.5, True, '90'):
             with self.assertRaises(ValueError):
                 grade.letter_grade(invalid)
-
-    def test_missing_evidence_fails_with_fixed_denominator(self):
-        partial = record("Use when creating a thorough product launch checklist.")
-        partial.pop("fm_error")
-        self.assertFalse(grade.run_checks(partial)["frontmatter"])
-        checks = grade.run_checks({})
-        self.assertFalse(any(checks.values()))
-        self.assertEqual(grade.quality_score(checks), 0)
-        self.assertEqual(grade.quality_score({'name_format': True}), 14)
-        self.assertFalse(grade.run_checks(record('Use when preparing a launch.',
-                                               body_lines=None))['concise_body'])
 
     def test_frontmatter_gate_and_fetch_failures(self):
         checks = {key: True for key, _ in grade.CHECKS}
         checks['frontmatter'] = False
-        self.assertEqual(grade.quality_score(checks), 100)
-        self.assertEqual(grade.grade(checks), 'F')
+        self.assertEqual(grade.grade(checks, 95), 'F')
+        self.assertFalse(grade.structural_pass(checks))
         self.assertFalse(grade.eligible(checks))
         self.assertIsNone(grade.run_checks({'fetch_error': 'timeout'}))
-        self.assertIsNone(grade.quality_score(None))
-        self.assertIsNone(grade.grade(None))
-        self.assertFalse(grade.eligible(None))
+        self.assertIsNone(grade.grade(None, None))
+
+    def test_missing_evidence_fails_checks(self):
+        partial = record("Use when creating a thorough product launch checklist.")
+        partial.pop("fm_error")
+        self.assertFalse(grade.run_checks(partial)["frontmatter"])
+        self.assertFalse(any(grade.run_checks({}).values()))
+        self.assertFalse(grade.run_checks(record('Use when preparing a launch.',
+                                               body_lines=None))['concise_body'])
+
+
+class PublishedScoreTests(unittest.TestCase):
+    """directory/skills.json carries the current method's scores (scripts/directory/rescore.py)."""
+
+    def test_every_listing_carries_its_recomputed_score(self):
+        import json
+
+        data = json.loads((ROOT / "directory/skills.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["score_method"], grade.SCORE_METHOD)
+        stale = [f"{s['repo']}/{s['slug']}" for s in data["skills"]
+                 if s["score"] != grade.quality_score(s, data["repos"][s["repo"]], data["generated"])
+                 or s["grade"] != grade.letter_grade(s["score"]) or not grade.structural_pass(s["checks"])]
+        self.assertEqual(stale, [])
+        self.assertLessEqual(max(s["score"] for s in data["skills"]), 99)
+
+
+class RescoreTests(unittest.TestCase):
+    def run_rescore(self, data):
+        import json, subprocess, sys, tempfile
+
+        spec = importlib.util.spec_from_file_location("directory_curate", ROOT / "scripts/directory/curate.py")
+        curate = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(curate)
+        with tempfile.TemporaryDirectory(prefix="directory-rescore-") as tmp:
+            path = Path(tmp) / "skills.json"
+            before = curate.dataset_text(data)
+            path.write_text(before, encoding="utf-8")
+            result = subprocess.run([sys.executable, "-I", str(ROOT / "scripts/directory/rescore.py"), str(path)],
+                                    capture_output=True, text=True)
+            return result, before, path.read_text(encoding="utf-8"), curate.dataset_text
+
+    def dataset(self):
+        rec, repo = listing(checks="11111111", description="Use when testing a rescore \u2014 caf\u00e9.", words=600,
+                            commit_date=GENERATED, lists=["a/list"])
+        rec.update(grade="A", score=100, security_scan_status="not_scanned")
+        return {"generated": GENERATED, "snapshot_id": "a" * 32, "score_method": "seven-checks-v1",
+                "sources": ["a/list"], "checks": [], "repos": {"someone/skills": repo}, "skills": [rec]}
+
+    def test_rescore_changes_only_score_grade_method_and_snapshot(self):
+        import json
+
+        result, before, after, dataset_text = self.run_rescore(self.dataset())
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(after)
+        self.assertEqual(data["skills"][0]["score"], 56 + 7 + 9 + 1)
+        self.assertEqual(data["skills"][0]["grade"], "C")
+        self.assertEqual(data["score_method"], "graded-v2")
+        self.assertRegex(data["snapshot_id"], r"^[a-f0-9]{32}$")
+        self.assertNotEqual(data["snapshot_id"], "a" * 32)
+        self.assertEqual(data["generated"], GENERATED)
+        self.assertEqual(dataset_text(data), after, "curate.py's byte format")
+        restored = {**data, "snapshot_id": "a" * 32, "score_method": "seven-checks-v1",
+                    "skills": [{**data["skills"][0], "grade": "A", "score": 100}]}
+        self.assertEqual(dataset_text(restored), before)
+
+    def test_an_unscorable_record_stops_before_writing(self):
+        data = self.dataset()
+        data["skills"].append({**data["skills"][0], "slug": "orphan", "repo": "missing/repo"})
+        result, before, after, _ = self.run_rescore(data)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("missing/repo/orphan", result.stderr)
+        self.assertEqual(after, before)
 
 
 class LicenseCheckTests(unittest.TestCase):
