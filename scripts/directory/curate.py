@@ -320,11 +320,19 @@ def main():
     # source list also cites the repository, and keep future additions unlisted.
     inclusions = json.load(open(args.inclusions))
     scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
-    outside_scope = set()
+    scoped_withheld = set()
     reasons = collections.Counter()
     eligible = []
     policy_hits = []
     for r in raw:
+        repo_key, name = (r.get("repo") or "").lower(), r.get("name") or ""
+        out_of_scope = repo_key in scopes and name not in scopes[repo_key]
+        excluded = repo_key in excluded_repos or f"{repo_key}/{name}".lower() in excluded_skills
+        # Scope is independent of the rejection reason: an excluded or
+        # unavailable skill still makes a whole-repository install too broad.
+        # An explicit removal also revokes a previously accepted skill.
+        if out_of_scope or (repo_key in scopes and excluded):
+            scoped_withheld.add((repo_key, name))
         r["checks"] = run_checks(r)
         r["grade"] = grade(r["checks"])
         r["score"] = quality_score(r["checks"])
@@ -332,11 +340,10 @@ def main():
             reasons["source unavailable (unscored)"] += 1
             continue
         name, desc = r["name"] or "", r["description"] or ""
-        if r["repo"].lower() in excluded_repos or f"{r['repo']}/{name}".lower() in excluded_skills:
+        if excluded:
             reasons["listed in directory/exclusions.json"] += 1
-        elif r["repo"].lower() in scopes and name not in scopes[r["repo"].lower()]:
+        elif out_of_scope:
             reasons["outside accepted listing request"] += 1
-            outside_scope.add((r["repo"].lower(), name))
         elif r["grade"] not in ("A", "B"):
             reasons["grade C or below"] += 1
         elif not r["checks"]["license"]:
@@ -358,7 +365,7 @@ def main():
     policy_keys = {(repo.lower(), nm) for repo, nm, _ in policy_hits}
     withheld = collections.Counter(repo.lower() for repo, _, _ in policy_hits)
     # Hide the whole-repository install route when it includes unaccepted skills.
-    withheld.update(repo for repo, _ in outside_scope)
+    withheld.update(repo for repo, _ in scoped_withheld)
     before = len(eligible)
     eligible = [r for r in eligible if (r["repo"].lower(), r["name"]) not in policy_keys]
     reasons["listing policy (another copy excluded)"] += before - len(eligible)
