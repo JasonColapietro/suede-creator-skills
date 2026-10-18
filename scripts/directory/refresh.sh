@@ -112,4 +112,5 @@ python3 -I "$TOOLS/curate.py" --raw "$WORK/skills-raw.json" --labels "$REPO_ROOT
 
 node "$REPO_ROOT/scripts/build-directory.mjs"
 node "$REPO_ROOT/scripts/generate-sitemap.mjs"
+node "$REPO_ROOT/scripts/build-awesome-directory.mjs"
 echo "Refreshed from $WORK"

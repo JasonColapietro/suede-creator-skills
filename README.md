@@ -20,6 +20,12 @@
 
 ---
 
+## Awesome Agent Skills directory
+
+**[Browse the Awesome catalog](awesome/README.md)**: the accepted Agent Skills Directory in GitHub Markdown, organized by category and publisher, with source links, structural quality grades, and featured-project setup guides.
+
+[Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Search the directory](https://skills.suedeai.ai/directory/) · [Contribute a listing](awesome/CONTRIBUTING.md)
+
 ## Suede Creator Skills for SEO and business growth
 
 Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
