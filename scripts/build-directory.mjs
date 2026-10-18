@@ -17,6 +17,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { qualityScore, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
+import { featuredProjectsHtml } from "./directory/featured.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -42,6 +43,7 @@ if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof
 if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PROMOTION.ends_at) || !Number.isFinite(Date.parse(PROMOTION.ends_at)))) throw new Error("promotion.json: ends_at must be null or a UTC timestamp");
 if (data.score_method !== "seven-checks-v1" || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
+const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
 
 for (const c of categories) {
   if (c.seo_title.length > 60) throw new Error(`categories.json: seo_title over 60 characters for ${c.slug}`);
@@ -218,7 +220,7 @@ for (const r of repos.values()) {
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-const RESERVED = new Set(["methodology", "submit", "badges", ...categories.map((c) => c.slug)]);
+const RESERVED = new Set(["methodology", "submit", "badges", "featured", ...categories.map((c) => c.slug)]);
 for (const r of repos.values()) {
   const owner = r.slug.split("/")[0];
   if (RESERVED.has(owner)) throw new Error(`owner slug "${owner}" collides with a reserved directory path`);
@@ -1146,6 +1148,7 @@ function renderHub() {
         <div><p class="lead">Find the right skill for your next task.</p><p>Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor. Inspect the source. Choose what to install.</p><p class="directory-snapshot">${fmt(repos.size)} repositories <span aria-hidden="true"> / </span> ${categories.length} categories <span aria-hidden="true"> / </span> ${openPct}% openly licensed</p></div>
         <aside class="grade-guide" aria-label="Suede quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–100" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. License. Maintenance.</b><br><a href="methodology/">What the scores measure →</a></p></aside>
       </div>
+      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${EDITORIAL.projects.map((p) => esc(p.name)).join(" &amp; ")} — meet the latest directory applicants.</span></span><span aria-hidden="true">↗</span></a>
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Explore the directory</h2><span class="muted">Public source. Clear license.</span></div>
         <form class="discovery-controls" role="search" hidden>
@@ -1242,6 +1245,32 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}</p>`).jo
 }
 
 // ------------------------------------------------------------------ methodology and submit
+
+function renderFeaturedProjects() {
+  const here = "directory/featured/";
+  const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
+  const title = "Featured Projects | Suede Skills Directory";
+  const description = "Meet Appie and CoalWash: agent workflows for articles, chatbots, short links and Claude Code memory maintenance. Explore the selected skills and plugin setup.";
+  const keywords = setKeywords(here, ["featured agent projects", "Appie agent skills", "CoalWash Claude Code plugin", "Suede Skills Directory"]);
+  files.set(`${here}index.html`, page({
+    here, title, description, keywords,
+    h1Html: `<div class="eyebrow">Suede Skills Directory · Editorial selection</div><h1>Featured projects</h1>`,
+    body: `${bc.html}
+      <div class="featured-intro"><p class="lead">Good tools deserve a closer look.</p><p>Meet the latest accepted applicants: three focused Appie workflows and CoalWash’s complete memory-maintenance plugin. Choose a project, inspect its source, and start with the right setup.</p></div>
+      <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
+      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here })}
+      <section class="panel featured-about" aria-labelledby="selection-title"><div><p class="featured-kind">How this page works</p><h2 id="selection-title">Selected for a closer look.</h2></div><div><p>These editorial features introduce accepted project submissions and their reviewed scope. Individual skill pages carry the directory’s quality scores. README-badge verification is tracked separately.</p><p><a href="../methodology/">How directory checks work →</a></p><a class="featured-submit" href="../submit/">Submit your project →</a></div></section>`,
+    jsonld: [{
+      "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${url(here)}#featured`,
+      name: "Featured projects", headline: title, description, url: url(here), dateModified: PAGE_DATE,
+      inLanguage: "en", breadcrumb: { "@id": `${url(here)}#breadcrumb` },
+      isPartOf: { "@type": "CollectionPage", "@id": `${DIR_URL}#directory`, url: DIR_URL, name: SITE_NAME },
+      mainEntity: { "@type": "ItemList", numberOfItems: EDITORIAL.projects.length,
+        itemListElement: EDITORIAL.projects.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name, url: `${url(here)}#${p.id}` })) },
+    }, bc.ld],
+    footerNote: "Editorial project selections from the Suede Skills Directory. Source and installation details belong to each publisher.",
+  }));
+}
 
 function renderMethodology() {
   const here = "directory/methodology/";
@@ -1419,6 +1448,7 @@ function render404() {
 // ------------------------------------------------------------------ run
 
 renderHub();
+renderFeaturedProjects();
 renderMethodology();
 renderSubmit();
 render404();

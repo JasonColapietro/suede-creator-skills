@@ -1899,6 +1899,12 @@
   "frontend and design agent skills",
   "SKILL.md"
  ],
+ "directory/featured/index.html": [
+  "featured agent projects",
+  "Appie agent skills",
+  "CoalWash Claude Code plugin",
+  "Suede Skills Directory"
+ ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
   "firebase-ai-logic-basics skill by firebase",
   "firebase-ai-logic-basics skill",

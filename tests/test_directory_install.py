@@ -50,7 +50,8 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.root = Path(cls.tmp.name)
         for name in ("scripts/build-directory.mjs", "directory/categories.json",
-                     "directory/notes.json", "directory/promotion.json", "scripts/directory/badges.mjs", "docs/llms.txt"):
+                     "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json",
+                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
