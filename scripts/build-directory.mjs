@@ -815,9 +815,13 @@ rm -rf "$tmp"`;
     kind === "noncommercial"
       ? `<p class="muted">${esc(s.license)} allows non-commercial use only. ${esc(s.repo)} is third-party code: read SKILL.md and any bundled scripts before you install it.</p>`
       : `<p class="muted">${esc(s.repo)} is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>`;
+  const setup = NOTES[s.id];
+  const prerequisites = setup
+    ? `        <p>${esc(setup.text)} <a href="${esc(setup.source)}" target="_blank" rel="noopener">Publisher setup instructions</a>.</p>\n`
+    : "";
   return `      <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install ${esc(s.name)}</h2>
-        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
+${prerequisites}        <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
 ${codeBlock({ label: "Skills CLI", key: "install-cli" }, npx)}
 ${codeBlock({ label: "Claude Code, project-level copy", key: "install-claude" }, claude)}
 ${codex ? codeBlock({ label: "Codex installer", key: "install-codex" }, codex) : "        <p>For Codex, the skills CLI line above installs it.</p>"}

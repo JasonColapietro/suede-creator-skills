@@ -75,4 +75,10 @@ test('Costory features only accepted upstream skills scoring above 80', () => {
   assert.match(feature, /OAuth/);
   assert.doesNotMatch(feature, /cost-change-investigation\/|virtual-dimensions\/|costory-finops\//);
   assert.match(page, /<meta name="description" content="[^"]*Costory/);
+  const listing = read('docs/directory/costory-io/costory-finops-mcp-skills/bigquery/index.html');
+  const installation = listing.split('id="install-title"')[1].split('</section>')[0];
+  assert.match(installation, /href="https:\/\/docs\.costory\.io\/features\/mcp"/);
+  assert.match(installation, /browser OAuth/);
+  assert.match(installation, /Costory workspace with billing data connected/);
+  assert.ok(installation.indexOf('docs.costory.io/features/mcp') < installation.indexOf('id="install-cli"'));
 });
