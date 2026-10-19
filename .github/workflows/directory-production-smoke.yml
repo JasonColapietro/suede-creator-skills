@@ -1,0 +1,45 @@
+name: Directory production smoke
+
+on:
+  push:
+    branches:
+      - codex/directory-production-verification-20261019
+
+permissions:
+  contents: read
+
+concurrency:
+  group: directory-production-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-live-directory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out verification source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Install the established browser test tooling
+        run: |
+          npm install --no-save --ignore-scripts --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Verify production data, links and interactive flows
+        env:
+          DIRECTORY_DEPLOYED_SHA: 8f4ccf914de505f6ec8c85597e521a13afe0eee7
+          DIRECTORY_SCREENSHOTS: ${{ runner.temp }}/directory-production-evidence
+        run: node scripts/verify-directory-production.mjs
+      - name: Save read-only verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: directory-production-evidence
+          path: ${{ runner.temp }}/directory-production-evidence
+          if-no-files-found: ignore
+          retention-days: 14
