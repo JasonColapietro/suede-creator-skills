@@ -274,6 +274,7 @@
  "coreyhaines31/marketingskills/sms": {"category":"marketing-seo"},
  "coreyhaines31/marketingskills/social": {"category":"marketing-seo"},
  "coreyhaines31/marketingskills/video": {"category":"media-creative"},
+ "costory-io/costory-finops-mcp-skills/bigquery": {"category":"data-databases","summary":"Investigate BigQuery compute and storage costs, compare billing models, and map spend through the hosted Costory MCP. Requires a Costory workspace, connected billing data and browser OAuth; review proposed changes before applying them."},
  "csthink/dashmotion/dashmotion": {"category":"media-creative","summary":"Creates dark-themed animated technical diagrams as self-contained HTML and SVG files, including flowcharts with flowing connectors and architecture diagrams with traveling light dots."},
  "cypress-io/ai-toolkit/cypress-author": {"category":"testing-qa","summary":"Creates, updates, and fixes Cypress end-to-end and component tests, including writing new specs and repairing failing or flaky tests."},
  "cypress-io/ai-toolkit/cypress-cloud-cli": {"category":"testing-qa","summary":"Runs the cy-cloud CLI to inspect Cypress Cloud organizations, projects, runs, specs, tests, failure screenshots, and Test Replay data."},

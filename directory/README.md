@@ -11,7 +11,7 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `featured-projects.json` | Editorial project selections, accepted scopes, pinned intake reviews and project-specific setup for `/directory/featured/`; independent of catalog scores and README-badge verification | Reviewed by hand or by an agent |
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests, with optional per-repository skill-name allowlists; read on the next refresh even when no curated list cites them | Hand-written |
-| `notes.json` | Install routes a publisher documents for a skill whose license restricts copying, shown on that skill's page with a link to the source | Hand-written |
+| `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
 
 ## Commands

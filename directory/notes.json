@@ -1,4 +1,8 @@
 {
+ "costory-io/costory-finops-mcp-skills/bigquery": {
+  "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the BigQuery skill below.",
+  "source": "https://docs.costory.io/features/mcp"
+ },
  "anthropics/skills/docx": {
   "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
   "commands": [

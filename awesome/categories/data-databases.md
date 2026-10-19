@@ -6,7 +6,7 @@
 
 Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions.
 
-**176 accepted skills · 27 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**177 accepted skills · 28 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **66–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=data-databases&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -18,6 +18,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 - [avelikiy/great\_cto](#avelikiy--great-cto)
 - [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [cloudflare/skills](#cloudflare--skills)
+- [costory-io/costory-finops-mcp-skills](#costory-io--costory-finops-mcp-skills)
 - [eduardo-sl/go-agent-skills](#eduardo-sl--go-agent-skills)
 - [firebase/skills](#firebase--skills)
 - [firecrawl/skills](#firecrawl--skills)
@@ -88,6 +89,14 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 [Repository](https://github.com/cloudflare/skills) · Publisher: [cloudflare](https://github.com/cloudflare) · [Suede listing](https://skills.suedeai.ai/directory/cloudflare/skills/)
 
 - **78/100 · C** · [basin](https://github.com/cloudflare/skills/blob/main/skills/basin/SKILL.md) — Builds and troubleshoots Cloudflare Basin analytics workflows with Basin Pipelines, Catalog, and SQL, such as streaming data into R2 Iceberg tables and querying them. [Suede](https://skills.suedeai.ai/directory/cloudflare/skills/basin/)
+
+<a id="costory-io--costory-finops-mcp-skills"></a>
+
+## costory-io/costory-finops-mcp-skills
+
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)
+
+- **84/100 · B** · [bigquery](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/bigquery/SKILL.md) — Investigate BigQuery compute and storage costs, compare billing models, and map spend through the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)
 
 <a id="eduardo-sl--go-agent-skills"></a>
 

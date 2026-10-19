@@ -6,10 +6,11 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-18**. [View on Suede](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-19**. [View on Suede](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
+- [Costory](#costory)
 
 <a id="appie"></a>
 
@@ -59,3 +60,23 @@ claude plugin install coalwash@coalwash
 **Guard coverage.** The edit guard snapshots supported Edit, Write and MultiEdit changes to memory and governance files and reports tracked-token drops. Shell writes are outside that edit guard. Token checks do not establish semantic preservation; inspect diffs and rollback results.
 
 [Repository](https://github.com/TheColliery/CoalWash) · [Intake review](../directory/reviews/2026-10-18-coalwash.md) · [Reviewed source 9cbe008](https://github.com/TheColliery/CoalWash/tree/9cbe008a90d2a9f25d892de8424852ac142f7909) · [Suede feature](https://skills.suedeai.ai/directory/featured/#coalwash)
+
+---
+
+<a id="costory"></a>
+
+## Costory
+
+**Hosted MCP · BigQuery cost investigation** · License: Apache-2.0 · Publisher: [costory-io](https://github.com/costory-io)
+
+Work through BigQuery compute, storage and allocation questions with an agent connected to Costory. Start with invoice evidence, compare on-demand and reserved capacity, and inspect the next action.
+
+- **[Investigate BigQuery costs](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)** (bigquery). Compare compute and storage billing, explore query and dataset costs, and review allocation options. Rated 84/100, grade B, under the directory’s published method.
+
+### Setup
+
+Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. The service queries workspace cost data. Preview cost-allocation changes and confirm before publishing or applying schema changes. The linked skill page covers the accepted BigQuery workflow.
+
+Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · [Intake review](../directory/reviews/2026-10-19-costory.md) · [Reviewed source 38438bd](https://github.com/costory-io/costory-finops-mcp-skills/tree/38438bd87c39b1df3f07ca80e6577579c4c039ba) · [Suede feature](https://skills.suedeai.ai/directory/featured/#costory)
