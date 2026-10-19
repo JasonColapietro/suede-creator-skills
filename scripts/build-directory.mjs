@@ -979,7 +979,7 @@ ${relatedRows(here, siblings)}
     keywords,
     ogType: "article",
     h1Html: `      <div class="eyebrow">Agent skill &middot; ${esc(cat.label)} &middot; ${esc(s.owner)}</div>
-      <h1>${esc(s.name)} <span class="h1-sub">agent skill</span></h1>`,
+      <h1>${esc(s.name)} <span class="h1-sub">agent skill ${esc(sharedName(s) ? `in ${s.repo}` : `by ${s.owner}`)}</span></h1>`,
     body,
     jsonld: [
       {
