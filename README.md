@@ -20,6 +20,14 @@
 
 ---
 
+## Suede Awesome Everything
+
+**AI agent skills, scored 0–99.**
+
+**[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
+
+[Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
+
 ## Suede Creator Skills for SEO and business growth
 
 Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
