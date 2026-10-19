@@ -4,23 +4,23 @@
 
 # Suede Awesome Everything
 
-**AI agent skills, scored 0–100.**
+**AI agent skills, scored 0–99.**
 
-Compare agent skills with **0–100 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
+Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
 Browse **2,975 scored skills from 140 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
-**[Compare scores](#compare-0100-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
+**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
 Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-## Compare 0–100 quality scores
+## Compare 0–99 quality scores
 
 Every displayed score is recomputed from the saved evidence using **graded-v2**. The rubric scores structural checks, description clarity, instruction depth, bundled resources, maintenance, curated-list citations and declared tool/compatibility fields. [See every component and point allocation](https://skills.suedeai.ai/directory/methodology/).
 
-The rubric uses a **0–100 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **53–95 / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
+The rubric uses a **0–99 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **53–95 / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
