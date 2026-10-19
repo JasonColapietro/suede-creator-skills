@@ -87,6 +87,36 @@ jobs:
             git show --check --format= --no-renames "$GITHUB_SHA"
           fi
 
+  directory-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Install browser test tooling
+        run: |
+          npm install --no-save --ignore-scripts --package-lock=false playwright@1.57.0
+          npx playwright install --with-deps chromium
+      - name: Exercise directory publisher and shortlist flows
+        run: npm run test:directory:browser
+        env:
+          DIRECTORY_SCREENSHOTS: ${{ runner.temp }}/directory-screenshots
+      - name: Save visual evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: directory-browser-screenshots
+          path: ${{ runner.temp }}/directory-screenshots
+          if-no-files-found: ignore
+          retention-days: 14
+
   # `build` is a required status check on main. It existed in branch protection
   # but no job produced it, so every pull request was permanently blocked and
   # merges only landed via admin bypass. Rather than drop the requirement, this

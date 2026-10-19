@@ -513,6 +513,7 @@ def main():
                 "withheld": withheld.get(repo.lower(), 0),
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
+                **({"commit_sha": r["commit_sha"]} if r.get("commit_sha") else {}),
                 "lists": [l.replace("_", "/", 1) for l in r["lists"]],
                 "official": owner.lower() in OFFICIAL_OWNERS,
             }

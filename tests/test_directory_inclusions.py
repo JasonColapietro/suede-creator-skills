@@ -84,6 +84,12 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
 
+    def test_refresh_keeps_recorded_source_revision_without_inventing_legacy_revisions(self):
+        revised = {**record("revision-publisher/skills", "recorded-skill"), "commit_sha": "a" * 40}
+        data = self.curate({}, extra_records=(revised,))
+        self.assertEqual(data["repos"]["revision-publisher/skills"]["commit_sha"], "a" * 40)
+        self.assertNotIn("commit_sha", data["repos"]["publisher/skills"])
+
     def test_same_day_refresh_rotates_snapshot_even_when_skill_data_is_unchanged(self):
         first, second = self.curate({}), self.curate({})
         self.assertRegex(first['snapshot_id'], r'^[a-f0-9]{32}$')
