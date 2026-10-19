@@ -1,20 +1,20 @@
 {
   "snapshot_date": "2026-10-19",
-  "snapshot_id": "4d8347b0080943e9b10a838745fb35c5",
-  "dataset_sha256": "8e3a3f7d45fe978fa23a08bf9f9c2281d0a045cabcfafcd7dce72e15ebf368f4",
+  "snapshot_id": "ada0c6157c754c7f8e78c4019690b7f7",
+  "dataset_sha256": "621a4d7f6e849345f01ed1ca13efe6b3dff34881980539c3fc19249d7c91aecd",
   "source_count": 158,
-  "skill_count": 3797,
+  "skill_count": 3794,
   "reviewed_new_project_count": 19,
   "projects": [
     {
       "repository": "anthropics/claude-plugins-official",
       "source_revision": "ea10b213686c90bb1984b2016937310e05336cf3",
-      "skill_count": 23,
-      "score_min": 64,
+      "skill_count": 22,
+      "score_min": 67,
       "score_max": 86,
       "licenses": {
         "All rights reserved": 1,
-        "Apache-2.0": 22
+        "Apache-2.0": 21
       },
       "canonical_roots": [
         "plugins"
@@ -117,17 +117,6 @@
           "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
           "score": 76,
           "grade": "C",
-          "security_scan_status": "not_scanned"
-        },
-        {
-          "name": "example-command",
-          "path": "plugins/example-plugin/skills/example-command",
-          "source_sha256": "d561981660827f3818b0daec456ae5b31894f68c22407d8c495a77b3105ba96d",
-          "license": "Apache-2.0",
-          "license_file": "plugins/example-plugin/LICENSE",
-          "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-          "score": 64,
-          "grade": "D",
           "security_scan_status": "not_scanned"
         },
         {
@@ -278,11 +267,11 @@
     {
       "repository": "apify/agent-skills",
       "source_revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
-      "skill_count": 4,
+      "skill_count": 3,
       "score_min": 61,
       "score_max": 84,
       "licenses": {
-        "Apache-2.0": 4
+        "Apache-2.0": 3
       },
       "canonical_roots": [
         "skills"
@@ -320,28 +309,17 @@
           "score": 80,
           "grade": "B",
           "security_scan_status": "not_scanned"
-        },
-        {
-          "name": "apify-ultimate-scraper",
-          "path": "skills/apify-ultimate-scraper",
-          "source_sha256": "4d4684383c7930c72a1e92dfee2f763da765a5ed342f560e873902ba31a74022",
-          "license": "Apache-2.0",
-          "license_file": "README.md",
-          "license_sha256": "64102eb02d1b1b005d03bd6bdc071087983b38aed784ce235f34b8d91f543059",
-          "score": 80,
-          "grade": "B",
-          "security_scan_status": "not_scanned"
         }
       ]
     },
     {
       "repository": "aws/agent-toolkit-for-aws",
       "source_revision": "44ba1a5451913998815111cc2d518f5c45f95ef7",
-      "skill_count": 142,
+      "skill_count": 141,
       "score_min": 66,
       "score_max": 89,
       "licenses": {
-        "Apache-2.0": 142
+        "Apache-2.0": 141
       },
       "canonical_roots": [
         "skills",
@@ -995,17 +973,6 @@
           "license_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
           "score": 68,
           "grade": "D",
-          "security_scan_status": "not_scanned"
-        },
-        {
-          "name": "aws-social-messaging",
-          "path": "skills/specialized-skills/customer-communications-skills/aws-social-messaging",
-          "source_sha256": "8e2cffc48247936955ff85ec42ad05bb3797a6400cc98fe44f31d8365ad2bbcb",
-          "license": "Apache-2.0",
-          "license_file": "LICENSE",
-          "license_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
-          "score": 80,
-          "grade": "B",
           "security_scan_status": "not_scanned"
         },
         {
@@ -9159,7 +9126,7 @@
     }
   ],
   "changes": {
-    "new_entries": 827,
+    "new_entries": 824,
     "removed_entries": [
       {
         "listing": "garrytan/gstack/eval-plan",
@@ -9182,7 +9149,7 @@
         "reason": "The current source no longer declares the previously listed skill name."
       }
     ],
-    "new_major_entries": 801
+    "new_major_entries": 798
   },
   "source_snapshots": {
     "1NickPappas/move-code-quality-skill": {
@@ -10047,5 +10014,70 @@
     ],
     "official_publisher_metadata_preserved": true,
     "quality_scoring_changed": false
+  },
+  "scope_review": {
+    "withheld_from_accepted_names": [
+      {
+        "repository": "anthropics/claude-plugins-official",
+        "source_revision": "ea10b213686c90bb1984b2016937310e05336cf3",
+        "reason": "A frontmatter/layout demonstration conflicts with the existing examples exclusion.",
+        "evidence_paths": [
+          "plugins/example-plugin/skills/example-command/SKILL.md"
+        ],
+        "prior_assessment": {
+          "name": "example-command",
+          "path": "plugins/example-plugin/skills/example-command",
+          "source_sha256": "d561981660827f3818b0daec456ae5b31894f68c22407d8c495a77b3105ba96d",
+          "license": "Apache-2.0",
+          "license_file": "plugins/example-plugin/LICENSE",
+          "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "score": 64,
+          "grade": "D",
+          "security_scan_status": "not_scanned"
+        }
+      },
+      {
+        "repository": "apify/agent-skills",
+        "source_revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
+        "reason": "Personal-data collection in required LinkedIn/Maps workflows conflicts with the existing listing rule.",
+        "evidence_paths": [
+          "skills/apify-ultimate-scraper/references/workflows/lead-generation.md",
+          "skills/apify-ultimate-scraper/references/workflows/contact-enrichment.md"
+        ],
+        "prior_assessment": {
+          "name": "apify-ultimate-scraper",
+          "path": "skills/apify-ultimate-scraper",
+          "source_sha256": "4d4684383c7930c72a1e92dfee2f763da765a5ed342f560e873902ba31a74022",
+          "license": "Apache-2.0",
+          "license_file": "README.md",
+          "license_sha256": "64102eb02d1b1b005d03bd6bdc071087983b38aed784ce235f34b8d91f543059",
+          "score": 80,
+          "grade": "B",
+          "security_scan_status": "not_scanned"
+        }
+      },
+      {
+        "repository": "aws/agent-toolkit-for-aws",
+        "source_revision": "44ba1a5451913998815111cc2d518f5c45f95ef7",
+        "reason": "Social-platform message sending conflicts with the existing listing rule.",
+        "evidence_paths": [
+          "skills/specialized-skills/customer-communications-skills/aws-social-messaging/SKILL.md"
+        ],
+        "prior_assessment": {
+          "name": "aws-social-messaging",
+          "path": "skills/specialized-skills/customer-communications-skills/aws-social-messaging",
+          "source_sha256": "8e2cffc48247936955ff85ec42ad05bb3797a6400cc98fe44f31d8365ad2bbcb",
+          "license": "Apache-2.0",
+          "license_file": "LICENSE",
+          "license_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "score": 80,
+          "grade": "B",
+          "security_scan_status": "not_scanned"
+        }
+      }
+    ],
+    "scoring_changed": false,
+    "policy_detection_changed": false,
+    "regression": "Real accepted scopes reject these names even with neutral, structurally valid metadata; approved positive controls remain listed."
   }
 }

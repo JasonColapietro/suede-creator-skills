@@ -626,7 +626,6 @@
    "claude-md-improver",
    "claude-security",
    "command-development",
-   "example-command",
    "hook-development",
    "m5-onboard",
    "math-olympiad",
@@ -728,7 +727,6 @@
    "aws-security",
    "aws-serverless",
    "aws-sms-voice",
-   "aws-social-messaging",
    "aws-step-functions",
    "aws-storage",
    "aws-transform",
@@ -846,8 +844,7 @@
    "apify-actor-development",
    "apify-actorization",
    "apify-generate-output-schema",
-   "apify-integration-development",
-   "apify-ultimate-scraper"
+   "apify-integration-development"
   ],
   "sanity-io/agent-toolkit": [
    "content-experimentation-best-practices",

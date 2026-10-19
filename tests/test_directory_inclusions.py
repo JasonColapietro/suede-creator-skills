@@ -84,6 +84,29 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
 
+    def test_reviewed_major_scopes_withhold_policy_and_demonstration_skills(self):
+        accepted = json.loads((ROOT / "directory/inclusions.json").read_text())
+        cases = [
+            ("apify/agent-skills", "apify-ultimate-scraper", "skills/apify-ultimate-scraper",
+             "apify-actor-development", "skills/apify-actor-development"),
+            ("aws/agent-toolkit-for-aws", "aws-social-messaging", "skills/specialized-skills/customer-communications-skills/aws-social-messaging",
+             "aws-serverless", "skills/core-skills/aws-serverless"),
+            ("anthropics/claude-plugins-official", "example-command", "plugins/example-plugin/skills/example-command",
+             "agent-development", "plugins/plugin-dev/skills/agent-development"),
+        ]
+        candidates = []
+        for repo, withheld, withheld_path, public, public_path in cases:
+            # Deliberately well-formed, neutral metadata: reviewed name scope
+            # must still hold these entries if upstream wording changes.
+            candidates.extend({**record(repo, name), "dir": path}
+                              for name, path in ((withheld, withheld_path), (public, public_path)))
+        data = self.curate(accepted["skills"], extra_records=candidates, roots=accepted["skill_roots"])
+        for repo, withheld, _, public, _ in cases:
+            with self.subTest(repo=repo):
+                self.assertEqual({s["name"] for s in data["skills"] if s["repo"] == repo}, {public})
+                self.assertGreaterEqual(data["repos"][repo]["withheld"], 1)
+                self.assertTrue(data["repos"][repo]["scoped_install"])
+
     def test_refresh_keeps_recorded_source_revision_without_inventing_legacy_revisions(self):
         revised = {**record("revision-publisher/skills", "recorded-skill"), "commit_sha": "a" * 40}
         data = self.curate({}, extra_records=(revised,))
