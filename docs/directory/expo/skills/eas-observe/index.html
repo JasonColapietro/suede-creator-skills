@@ -39,11 +39,11 @@
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "eas-observe",
-          "description": "Adds expo-observe to Expo projects, records per-route metrics, events, and errors, and queries or interprets the metrics with the EAS CLI. Suede Skill Check: 81/100, grade B. Security scan: not scanned.",
+          "description": "Adds expo-observe to Expo projects, records per-route metrics, events, and errors, and queries or interprets the metrics with the EAS CLI. Suede Skill Check: 76/100, grade C. Security scan: not scanned.",
           "codeRepository": "https://github.com/expo/skills/tree/main/plugins/expo/skills/eas-observe",
           "programmingLanguage": "Markdown",
           "license": "https://github.com/expo/skills/blob/main/plugins/expo/LICENSE",
-          "dateModified": "2026-10-05",
+          "dateModified": "2026-10-17",
           "keywords": [
             "DevOps and Cloud",
             "Agent Skills",
@@ -137,19 +137,19 @@
             <tr><th scope="row">Repository</th><td><a href="../">expo/skills</a> (25 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../devops-cloud/">DevOps and Cloud</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/expo/skills/blob/main/plugins/expo/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
-            <tr><th scope="row">Last commit</th><td>October 5, 2026 (repository)</td></tr>
-            <tr><th scope="row">SKILL.md</th><td>47 lines, 545 words</td></tr>
+            <tr><th scope="row">Last commit</th><td>October 17, 2026 (repository)</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>39 lines, 441 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>6 files, including references</td></tr>
-            <tr><th scope="row">Quality score</th><td><span class="grade grade-b" title="Suede Skill Check: 81/100, grade B">81/100 · B</span> <a href="#check">Passes all seven graded checks</a></td></tr>
+            <tr><th scope="row">Quality score</th><td><span class="grade grade-c" title="Suede Skill Check: 76/100, grade C">76/100 · C</span> <a href="#check">Passes all seven graded checks</a></td></tr>
             <tr><th scope="row">Security scan</th><td>Not scanned</td></tr>
-            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badges for this listing</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the listing badge and raise the score</a></td></tr>
             </tbody>
           </table>
         </div>
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 17, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 19, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none.</li>
           <li><b>Commands in SKILL.md:</b> its code blocks run <code>npx</code>, which fetches or runs software from outside the skill folder.</li>
@@ -182,7 +182,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
         <blockquote class="author-quote" cite="https://github.com/expo/skills/blob/main/plugins/expo/skills/eas-observe/SKILL.md">
-          <p>Use for anything related to EAS Observe - adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive and ObserveInteractiveMarker, the useObserve hook, the Expo Router / React Navigation integrations for per-route metrics, user-defined events via `Observe.logEvent`, error reporting via ObserveErrorBoundary and `Observe.reportError`, and runtime config such as sampleRate and dispatchInDebug), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:session`, `observe:versions`), interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate/device/network params for triaging slow startups), or shipping an Observe integration inside a third-party package.</p>
+          <p>Use for anything related to EAS Observe - adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive and ObserveInteractiveMarker, the useObserve hook, the Expo Router / React Navigation integrations for per-route metrics, user-defined events via `Observe.logEvent`, error reporting via ObserveErrorBoundary and `Observe.reportError`, native crash reporting, source map upload for symbolicated stack traces, and runtime config such as sampleRate and dispatchInDebug), querying via the EAS CLI (`eas observe:metrics-summary`, `observe:metrics`, `observe:routes`, `observe:events`, `observe:session`, `observe:versions`, `observe:errors`, `observe:event`), interpreting the resulting metrics (cold/warm launch, TTR, TTI, navigation cold/warm TTR, update download, and the TTI frameRate/device/network params for triaging slow startups), or shipping an Observe integration inside a third-party package.</p>
         </blockquote>
         <p class="muted">From the <code>description</code> field of <a href="https://github.com/expo/skills/blob/main/plugins/expo/skills/eas-observe/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
 
@@ -190,7 +190,6 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <ul class="outline">
           <li class="lvl-2">Which reference to read</li>
           <li class="lvl-2">Quick links to the docs</li>
-          <li class="lvl-2">Known gaps between the docs and the shipped code</li>
           <li class="lvl-2">Submitting Feedback</li>
         </ul>
         <h3>Files in the skill folder</h3>
@@ -204,13 +203,13 @@ rm -rf &quot;$tmp&quot;</code></pre>
         </ul>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
-        <h2 id="check-title">Suede Skill Check: 81/100 · B</h2>
+        <h2 id="check-title">Suede Skill Check: 76/100 · C</h2>
 <div class="report-summary">
-          <p class="report-kicker">Report snapshot · <time datetime="2026-10-17">October 17, 2026</time> · graded-v2</p>
+          <p class="report-kicker">Report snapshot · <time datetime="2026-10-19">October 19, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: not recorded in this snapshot. Report version <code>f3af66cf0de7</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
-          <p class="report-actions"><a href="report.json" download="eas-observe-suede-report-2026-10-17.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fexpo%2Fskills&amp;skill-scope=eas-observe&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fexpo%2Fskills%2Feas-observe%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fexpo%2Fskills%2Feas-observe%2Freport.json%0ASnapshot%3A+2026-10-17+%28e98e87c50fd840089ecdacbdc87d1fad%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
-          <h3>What to review next</h3><ul><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li><li><b>Description length</b>: 3 of 5 points. 5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024.</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
+          <p class="muted">Source revision: <a href="https://github.com/expo/skills/blob/7ddc1f5796996e5c7efe2fc3fa9168eb24e8dac1/plugins/expo/skills/eas-observe/SKILL.md" target="_blank" rel="noopener"><code>7ddc1f579699</code></a>. Report version <code>a71d2cd7634a</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="report-actions"><a href="report.json" download="eas-observe-suede-report-2026-10-19.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fexpo%2Fskills&amp;skill-scope=eas-observe&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fexpo%2Fskills%2Feas-observe%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fexpo%2Fskills%2Feas-observe%2Freport.json%0ASnapshot%3A+2026-10-19+%28ada0c6157c754c7f8e78c4019690b7f7%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
+          <h3>What to review next</h3><ul><li><b>Description length</b>: 1 of 5 points. 5 for 150–600 characters; 3 for 100–900; 1 for 50–1,024.</li><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
         <p>eas-observe passes the required frontmatter check and all seven graded checks, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn 56 of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations. <a href="../../../methodology/">How the score works</a>.</p>
         <details class="check-details">
@@ -235,10 +234,10 @@ rm -rf &quot;$tmp&quot;</code></pre>
               <thead><tr><th scope="col">Score component</th><th scope="col">Points</th></tr></thead>
               <tbody>
               <tr><td>Structural checks</td><td class="pass">56 of 56</td></tr>
-              <tr><td>Description length</td><td>3 of 5</td></tr>
+              <tr><td>Description length</td><td>1 of 5</td></tr>
               <tr><td>Boundary clause</td><td class="miss">0 of 4</td></tr>
               <tr><td>Example request</td><td class="miss">0 of 3</td></tr>
-              <tr><td>Instruction depth</td><td class="pass">7 of 7</td></tr>
+              <tr><td>Instruction depth</td><td>4 of 7</td></tr>
               <tr><td>Reference files</td><td class="pass">3 of 3</td></tr>
               <tr><td>Bundled scripts</td><td class="miss">0 of 2</td></tr>
               <tr><td>Recent maintenance</td><td class="pass">9 of 9</td></tr>
@@ -250,15 +249,19 @@ rm -rf &quot;$tmp&quot;</code></pre>
           </div>
         </details>
       </section>
-<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for eas-observe</h2>
-        <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/expo/skills/eas-observe/"><img src="/directory/expo/skills/eas-observe/score.svg" alt="Suede Skill Check: 81/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/expo/skills/eas-observe/"><img src="/directory/expo/skills/eas-observe/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
-        <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 81/100](https://skills.suedeai.ai/directory/expo/skills/eas-observe/score.svg)](https://skills.suedeai.ai/directory/expo/skills/eas-observe/)
-[![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/expo/skills/eas-observe/badge.svg)](https://skills.suedeai.ai/directory/expo/skills/eas-observe/)</code></pre></div>
-        <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/expo/skills/eas-observe/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/expo/skills/eas-observe/score.svg&quot; alt=&quot;Suede Skill Check: 81/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://skills.suedeai.ai/directory/expo/skills/eas-observe/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/expo/skills/eas-observe/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
-        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing and raise the score</h2>
+        <p>eas-observe is listed with 76/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for eas-observe are boundary clause (4), description length (4) and example request (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/expo/skills/eas-observe/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/expo/skills/eas-observe/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>expo/skills appears in 2 curated lists: <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>.</p>

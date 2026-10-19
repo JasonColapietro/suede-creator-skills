@@ -37,6 +37,15 @@ The repository page omits its whole-repository install command when it would
 also install skills outside the accepted scope. Skill-specific install routes
 are unchanged.
 
+Reviewed canonical distributions can also declare `skill_roots` in
+`inclusions.json`, keyed by repository, with a list of exact relative folders.
+Only those folders are parsed for that repository. This admits publisher
+distributions such as OpenAI's `skills/.curated` and an approved `.claude/skills`
+folder without admitting system skills, CLI mirrors or arbitrary hidden folders.
+Missing roots or roots outside the checkout stop parsing. Fixture, internal and
+template paths below a reviewed root still fail the listing rules. A named
+allowlist or reviewed-root scope always omits whole-repository install commands.
+
 ## Quality scores and the two README badges
 
 `score_method: "graded-v2"` adds `score` (integer 0–99) to each record. The

@@ -161,6 +161,7 @@ EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"\(?\b[2-9]\d{2}\)?[ .-][2-9]\d{2}[ .-]\d{4}\b")
 
 OFFICIAL_OWNERS = {
+    "github", "aws", "vercel", "apify", "langchain-ai", "browser-use", "heygen-com",
     "anthropics", "openai", "microsoft", "google", "google-gemini", "google-labs-code", "googleworkspace", "huggingface",
     "supabase", "vercel-labs", "cloudflare", "stripe", "hashicorp", "trailofbits", "getsentry", "expo", "resend",
     "coderabbitai", "firebase", "flutter", "netlify", "mongodb", "neondatabase", "clickhouse", "duckdb", "redis",
@@ -168,6 +169,16 @@ OFFICIAL_OWNERS = {
     "datadog-labs", "remotion-dev", "replicate", "sanity-io", "serpapi", "tinybirdco", "typefully", "wordpress",
     "greensock", "fal-ai-community", "minimax-ai", "callstackincubator", "firecrawl", "composiohq", "binance",
     "crawlbase", "voltagent", "qdrant", "angular", "cypress-io", "lambdatest", "veniceai", "transloadit", "mailtrap", "trycourier", "video-db",
+}
+
+# Listing ownership does not establish who provides an integration's service.
+# Only reviewed own-service repositories receive the rules 2/3 exemption;
+# community/plugin collections remain subject to the ordinary policy. Review
+# additions here separately from the official-publisher display label.
+POLICY_VENDOR_REPOS = {
+    "apify/agent-skills",
+    "browserbase/skills",
+    "firecrawl/skills",
 }
 
 
@@ -181,7 +192,7 @@ def normalize_license(raw, repo_license, license_file):
     table = [
         (r"^mit( license)?$", "MIT"),
         (r"^mit-0$", "MIT-0"),
-        (r"^apache(-| license,? version )2\.0( license)?$", "Apache-2.0"),
+        (r"^apache(-| | license,? version )2\.0( license)?$", "Apache-2.0"),
         (r"^(bsd-3-clause|3[- ]clause bsd)( license)?$", "BSD-3-Clause"),
         (r"^bsd-2-clause( license)?$", "BSD-2-Clause"),
         (r"^bsd( license)?$", "BSD"),
@@ -222,23 +233,23 @@ def policy_rule(r):
     """The first listing-policy rule a skill trips, or None."""
     name = (r["name"] or "").replace("-", " ")
     desc = r["description"] or ""
-    official = r["repo"].split("/")[0].lower() in OFFICIAL_OWNERS
+    own_service = r["repo"].lower() in POLICY_VENDOR_REPOS
     whole = f"{name} {desc} {r['repo'].replace('-', ' ')}"
     for rule, (vendor_exempt, _, pattern) in POLICY.items():
-        if vendor_exempt and official:
+        if vendor_exempt and own_service:
             continue
         for m in pattern.finditer(whole):
             # "never scrape LinkedIn" states a rule the skill follows.
             if not NEGATION.search(whole[max(0, m.start() - 30) : m.start()]):
                 return rule
     # Scraping named as the opening job ("Scrape the front page ...").
-    if not official and (re.match(r"\W*scrap", desc, re.I) or re.search(r"\bscrap", name, re.I)):
+    if not own_service and (re.match(r"\W*scrap", desc, re.I) or re.search(r"\bscrap", name, re.I)):
         return "has scraping a third-party site as its main job"
-    if r.get("captcha_files") and not official:
+    if r.get("captcha_files") and not own_service:
         return "works around a site's blocks, CAPTCHAs or official API"
     body = f"{r.get('policy_text') or ''}\n{' '.join(r.get('file_names') or [])}"
     for rule, pattern in BODY_SIGNALS:
-        if official and not rule.startswith("automates"):
+        if own_service and POLICY[rule][0]:
             continue
         for m in pattern.finditer(body):
             if not NEGATION.search(body[max(0, m.start() - 30) : m.start()]):
@@ -340,13 +351,25 @@ def main():
     # source list also cites the repository, and keep future additions unlisted.
     inclusions = json.load(open(args.inclusions))
     scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
+    source_roots = {repo.lower(): roots for repo, roots in inclusions.get("skill_roots", {}).items()}
+    def policy_path(r):
+        # Explicitly reviewed distribution roots may themselves be hidden.
+        # Fixture/internal/template folders below that root remain excluded.
+        directory = r["dir"]
+        for root in source_roots.get(r["repo"].lower(), []):
+            if directory == root:
+                return ""
+            if directory.startswith(root + "/"):
+                return directory[len(root) + 1:]
+        return directory
     scoped_withheld = set()
     reasons = collections.Counter()
     eligible = []
     policy_hits = []
     for r in raw:
         repo_key, name = (r.get("repo") or "").lower(), r.get("name") or ""
-        out_of_scope = repo_key in scopes and name not in scopes[repo_key]
+        out_of_roots = repo_key in source_roots and not any(root == "." or r["dir"] == root or r["dir"].startswith(root + "/") for root in source_roots[repo_key])
+        out_of_scope = (repo_key in scopes and name not in scopes[repo_key]) or out_of_roots
         excluded = repo_key in excluded_repos or f"{repo_key}/{name}".lower() in excluded_skills
         # Scope is independent of the rejection reason: an excluded or
         # unavailable skill still makes a whole-repository install too broad.
@@ -368,7 +391,7 @@ def main():
             reasons["no license"] += 1
         elif not mostly_english(desc):
             reasons["not English"] += 1
-        elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(r["dir"]):
+        elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(policy_path(r)):
             reasons["template, example or draft"] += 1
         elif content_filtered(f"{name} {desc} {r['repo']}") or EMAIL_RE.search(desc) or PHONE_RE.search(desc):
             reasons["content rule"] += 1
@@ -511,6 +534,7 @@ def main():
             out.append((sid, rec))
             repo_meta[repo] = {
                 "withheld": withheld.get(repo.lower(), 0),
+                **({"scoped_install": True} if repo.lower() in scopes or repo.lower() in source_roots else {}),
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
                 **({"commit_sha": r["commit_sha"]} if r.get("commit_sha") else {}),

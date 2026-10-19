@@ -210,6 +210,14 @@
   "frontend and design agent skills",
   "agent skills directory"
  ],
+ "directory/anthropics/claude-plugins-official/index.html": [
+  "anthropics/claude-plugins-official skills",
+  "claude-plugins-official skills",
+  "anthropics agent skills",
+  "claude-plugins-official claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
+ ],
  "directory/anthropics/skills/algorithmic-art/index.html": [
   "algorithmic-art skill by anthropics",
   "algorithmic-art skill",
@@ -334,6 +342,14 @@
   "antonbabenko skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/apify/agent-skills/index.html": [
+  "apify/agent-skills skills",
+  "agent-skills skills",
+  "apify agent skills",
+  "agent-skills claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
  ],
  "directory/apitube/news-api-skills/apitube-news-api/index.html": [
   "apitube-news-api skill by apitube",
@@ -584,6 +600,14 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/aws/agent-toolkit-for-aws/index.html": [
+  "aws/agent-toolkit-for-aws skills",
+  "agent-toolkit-for-aws skills",
+  "aws agent skills",
+  "agent-toolkit-for-aws claude skills",
+  "DevOps and cloud agent skills",
+  "agent skills directory"
+ ],
  "directory/bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/index.html": [
   "album-conceptualizer skill by bitwize-music-studio",
   "album-conceptualizer skill",
@@ -797,6 +821,14 @@
   "Bria-AI skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/browser-use/browser-use/index.html": [
+  "browser-use/browser-use skills",
+  "browser-use skills",
+  "browser-use agent skills",
+  "browser-use claude skills",
+  "developer tools agent skills",
+  "agent skills directory"
  ],
  "directory/browserbase/skills/add-webmcp/index.html": [
   "add-webmcp skill by browserbase",
@@ -1899,6 +1931,14 @@
   "frontend and design agent skills",
   "SKILL.md"
  ],
+ "directory/fal-ai-community/skills/index.html": [
+  "fal-ai-community/skills skills",
+  "skills skills",
+  "fal-ai-community agent skills",
+  "skills claude skills",
+  "video image and audio agent skills",
+  "agent skills directory"
+ ],
  "directory/featured/index.html": [
   "featured agent projects",
   "Appie agent skills",
@@ -2393,6 +2433,14 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/github/awesome-copilot/index.html": [
+  "github/awesome-copilot skills",
+  "awesome-copilot skills",
+  "github agent skills",
+  "awesome-copilot claude skills",
+  "developer tools agent skills",
+  "agent skills directory"
+ ],
  "directory/glacierphonk/naming/naming/index.html": [
   "naming skill by glacierphonk",
   "naming skill",
@@ -2401,6 +2449,14 @@
   "glacierphonk skills",
   "marketing and SEO agent skills",
   "SKILL.md"
+ ],
+ "directory/google-labs-code/stitch-skills/index.html": [
+  "google-labs-code/stitch-skills skills",
+  "stitch-skills skills",
+  "google-labs-code agent skills",
+  "stitch-skills claude skills",
+  "frontend and design agent skills",
+  "agent skills directory"
  ],
  "directory/google/skills/agent-platform-deploy/index.html": [
   "agent-platform-deploy skill by google",
@@ -2873,6 +2929,14 @@
   "HeshamFS skills",
   "science and research agent skills",
   "SKILL.md"
+ ],
+ "directory/heygen-com/hyperframes/index.html": [
+  "heygen-com/hyperframes skills",
+  "hyperframes skills",
+  "heygen-com agent skills",
+  "hyperframes claude skills",
+  "video image and audio agent skills",
+  "agent skills directory"
  ],
  "directory/honeydew-ai/honeydew-ai-coding-agents-plugins/conversation-review/index.html": [
   "conversation-review skill by honeydew-ai",
@@ -3710,6 +3774,14 @@
   "testing and QA agent skills",
   "SKILL.md"
  ],
+ "directory/langchain-ai/langchain-skills/index.html": [
+  "langchain-ai/langchain-skills skills",
+  "langchain-skills skills",
+  "langchain-ai agent skills",
+  "langchain-skills claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
+ ],
  "directory/leonxlnx/taste-skill/index.html": [
   "Leonxlnx/taste-skill skills",
   "taste-skill skills",
@@ -3865,6 +3937,14 @@
   "massimodeluisa skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/mattpocock/skills/index.html": [
+  "mattpocock/skills skills",
+  "skills skills",
+  "mattpocock agent skills",
+  "skills claude skills",
+  "developer tools agent skills",
+  "agent skills directory"
  ],
  "directory/mblode/agent-skills/agent-ready/index.html": [
   "agent-ready skill by mblode",
@@ -4167,15 +4247,6 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
- "directory/metcalfsolutions/satori/satori/index.html": [
-  "satori skill by MetcalfSolutions",
-  "satori skill",
-  "satori agent skill",
-  "satori claude skill",
-  "MetcalfSolutions skills",
-  "productivity agent skills",
-  "SKILL.md"
- ],
  "directory/methodology/index.html": [
   "agent skill quality check",
   "SKILL.md best practices",
@@ -4369,6 +4440,14 @@
   "michalparkola skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/microsoft/azure-skills/index.html": [
+  "microsoft/azure-skills skills",
+  "azure-skills skills",
+  "microsoft agent skills",
+  "azure-skills claude skills",
+  "DevOps and cloud agent skills",
+  "agent skills directory"
  ],
  "directory/minimax-ai/skills/design-style-skill/index.html": [
   "design-style-skill skill by MiniMax-AI",
@@ -4860,6 +4939,22 @@
   "testing and QA agent skills",
   "SKILL.md"
  ],
+ "directory/neondatabase/agent-skills/index.html": [
+  "neondatabase/agent-skills skills",
+  "agent-skills skills",
+  "neondatabase agent skills",
+  "agent-skills claude skills",
+  "data and database agent skills",
+  "agent skills directory"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/index.html": [
+  "nextlevelbuilder/ui-ux-pro-max-skill skills",
+  "ui-ux-pro-max-skill skills",
+  "nextlevelbuilder agent skills",
+  "ui-ux-pro-max-skill claude skills",
+  "frontend and design agent skills",
+  "agent skills directory"
+ ],
  "directory/nowork-studio/notfair/backlink-audit/index.html": [
   "backlink-audit skill by nowork-studio",
   "backlink-audit skill",
@@ -5287,6 +5382,14 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
+ "directory/openai/skills/index.html": [
+  "openai/skills skills",
+  "skills skills",
+  "openai agent skills",
+  "skills claude skills",
+  "frontend and design agent skills",
+  "agent skills directory"
+ ],
  "directory/orchestra-research/ai-research-skills/academic-plotting/index.html": [
   "academic-plotting skill by Orchestra-Research",
   "academic-plotting skill",
@@ -5445,6 +5548,15 @@
   "video-router claude skill",
   "Orkas-AI skills",
   "video image and audio agent skills",
+  "SKILL.md"
+ ],
+ "directory/pbakaus/impeccable/impeccable/index.html": [
+  "impeccable skill by pbakaus",
+  "impeccable skill",
+  "impeccable agent skill",
+  "impeccable claude skill",
+  "pbakaus skills",
+  "frontend and design agent skills",
   "SKILL.md"
  ],
  "directory/phuryn/pm-skills/ansoff-matrix/index.html": [
@@ -6146,6 +6258,14 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/sanity-io/agent-toolkit/index.html": [
+  "sanity-io/agent-toolkit skills",
+  "agent-toolkit skills",
+  "sanity-io agent skills",
+  "agent-toolkit claude skills",
+  "frontend and design agent skills",
+  "agent skills directory"
+ ],
  "directory/sanjay3290/ai-skills/apple-container/index.html": [
   "apple-container skill by sanjay3290",
   "apple-container skill",
@@ -6408,6 +6528,14 @@
   "smixs skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/stripe/ai/index.html": [
+  "stripe/ai skills",
+  "ai skills",
+  "stripe agent skills",
+  "ai claude skills",
+  "data and database agent skills",
+  "agent skills directory"
  ],
  "directory/submit/index.html": [
   "submit agent skill",
@@ -6946,6 +7074,14 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/vercel-labs/agent-skills/index.html": [
+  "vercel-labs/agent-skills skills",
+  "agent-skills skills",
+  "vercel-labs agent skills",
+  "agent-skills claude skills",
+  "frontend and design agent skills",
+  "agent skills directory"
+ ],
  "directory/vercel-labs/skills/find-skills/index.html": [
   "find-skills skill by vercel-labs",
   "find-skills skill",
@@ -6954,6 +7090,14 @@
   "vercel-labs skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/vercel/ai/index.html": [
+  "vercel/ai skills",
+  "ai skills",
+  "vercel agent skills",
+  "ai claude skills",
+  "developer tools agent skills",
+  "agent skills directory"
  ],
  "directory/voltagent/skills/create-voltagent/index.html": [
   "create-voltagent skill by VoltAgent",
