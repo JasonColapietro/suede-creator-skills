@@ -1379,13 +1379,13 @@ function renderFeaturedProjects() {
   const here = "directory/featured/";
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = "Featured Projects | Suede Skills Directory";
-  const description = "Meet Appie and CoalWash: agent workflows for articles, chatbots, short links and Claude Code memory maintenance. Explore the selected skills and plugin setup.";
-  const keywords = setKeywords(here, ["featured agent projects", "Appie agent skills", "CoalWash Claude Code plugin", "Suede Skills Directory"]);
+  const description = `Meet ${EDITORIAL.projects.map((p) => p.name).join(", ")}: explore selected agent workflows, reviewed source and setup in the Suede Skills Directory.`;
+  const keywords = setKeywords(here, ["featured agent projects", ...EDITORIAL.projects.map((p) => `${p.name} agent workflows`), "Suede Skills Directory"]);
   files.set(`${here}index.html`, page({
     here, title, description, keywords,
     h1Html: `<div class="eyebrow">Suede Skills Directory · Editorial selection</div><h1>Featured projects</h1>`,
     body: `${bc.html}
-      <div class="featured-intro"><p class="lead">Good tools deserve a closer look.</p><p>Meet the latest accepted applicants: three focused Appie workflows and CoalWash’s complete memory-maintenance plugin. Choose a project, inspect its source, and start with the right setup.</p></div>
+      <div class="featured-intro"><p class="lead">Good tools deserve a closer look.</p><p>Meet the latest accepted applicants and their selected workflows. Choose a project, inspect its reviewed source, and start with the right setup.</p></div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
       ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here })}
       <section class="panel featured-about" aria-labelledby="selection-title"><div><p class="featured-kind">How this page works</p><h2 id="selection-title">Selected for a closer look.</h2></div><div><p>These editorial features introduce accepted project submissions and their reviewed scope. Individual skill pages carry the directory’s quality scores. README-badge verification is tracked separately.</p><p><a href="../methodology/">How directory checks work →</a></p><a class="featured-submit" href="../submit/">Submit your project →</a></div></section>`,

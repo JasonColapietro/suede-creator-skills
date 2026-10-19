@@ -1288,6 +1288,15 @@
   "marketing and SEO agent skills",
   "agent skills directory"
  ],
+ "directory/costory-io/costory-finops-mcp-skills/bigquery/index.html": [
+  "bigquery skill by costory-io",
+  "bigquery skill",
+  "bigquery agent skill",
+  "bigquery claude skill",
+  "costory-io skills",
+  "data and database agent skills",
+  "SKILL.md"
+ ],
  "directory/csthink/dashmotion/dashmotion/index.html": [
   "dashmotion skill by csthink",
   "dashmotion skill",
@@ -1941,8 +1950,9 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
-  "Appie agent skills",
-  "CoalWash Claude Code plugin",
+  "Appie agent workflows",
+  "CoalWash agent workflows",
+  "Costory agent workflows",
   "Suede Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [

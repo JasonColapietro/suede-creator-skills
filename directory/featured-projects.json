@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "projects": [
     {
       "id": "appie",
@@ -12,9 +12,21 @@
       "review": "directory/reviews/2026-10-17-appie-mcp.md",
       "commit": "058385aa7dde6d74f84a64f12d4a00a4d03ae981",
       "skills": [
-        { "id": "appie-article-writer", "title": "Write articles", "description": "Create author profiles and generate articles through Appie’s hosted MCP service." },
-        { "id": "appie-chatbot", "title": "Build a chatbot", "description": "Supply knowledge sources, track training and chat with a bot through Appie." },
-        { "id": "appie-url-shortener", "title": "Shorten and track links", "description": "Create short links and retrieve their click statistics from your agent." }
+        {
+          "id": "appie-article-writer",
+          "title": "Write articles",
+          "description": "Create author profiles and generate articles through Appie’s hosted MCP service."
+        },
+        {
+          "id": "appie-chatbot",
+          "title": "Build a chatbot",
+          "description": "Supply knowledge sources, track training and chat with a bot through Appie."
+        },
+        {
+          "id": "appie-url-shortener",
+          "title": "Shorten and track links",
+          "description": "Create short links and retrieve their click statistics from your agent."
+        }
       ],
       "setup": "Requires an Appie project, project API key and hosted MCP connection. The selected workflow sends its content to Appie; service operations may use credits. Each skill page covers its setup and data use."
     },
@@ -29,9 +41,18 @@
       "review": "directory/reviews/2026-10-18-coalwash.md",
       "commit": "9cbe008a90d2a9f25d892de8424852ac142f7909",
       "capabilities": [
-        { "title": "Measure the overhead", "description": "Inspect always-loaded memory and governance files before choosing a maintenance pass." },
-        { "title": "Review the changes", "description": "Use snapshots and rollback tools to inspect and recover transaction changes." },
-        { "title": "Check structured tokens", "description": "Detect drops in tracked tokens such as paths, numbers and commands. Review prose meaning separately." }
+        {
+          "title": "Measure the overhead",
+          "description": "Inspect always-loaded memory and governance files before choosing a maintenance pass."
+        },
+        {
+          "title": "Review the changes",
+          "description": "Use snapshots and rollback tools to inspect and recover transaction changes."
+        },
+        {
+          "title": "Check structured tokens",
+          "description": "Detect drops in tracked tokens such as paths, numbers and commands. Review prose meaning separately."
+        }
       ],
       "commands": [
         "claude plugin marketplace add TheColliery/CoalWash",
@@ -40,6 +61,25 @@
       "setup": "Requires Claude Code and Node.js. Install the complete plugin so its commands, hooks and engine are available together.",
       "behavior": "The plugin registers SessionStart, Stop, PreToolUse and PostToolUse hooks. Default automatic mode can direct Quick maintenance without a new prompt; Full semantic work requires consent and uses your agent’s model. Stop hooks can hold session completion while maintenance is addressed.",
       "guard_scope": "The edit guard snapshots supported Edit, Write and MultiEdit changes to memory and governance files and reports tracked-token drops. Shell writes are outside that edit guard. Token checks do not establish semantic preservation; inspect diffs and rollback results."
+    },
+    {
+      "id": "costory",
+      "name": "Costory",
+      "repo": "costory-io/costory-finops-mcp-skills",
+      "kind": "Hosted MCP · BigQuery cost investigation",
+      "license": "Apache-2.0",
+      "headline": "Understand what is driving your BigQuery bill.",
+      "summary": "Work through BigQuery compute, storage and allocation questions with an agent connected to Costory. Start with invoice evidence, compare on-demand and reserved capacity, and inspect the next action.",
+      "review": "directory/reviews/2026-10-19-costory.md",
+      "commit": "38438bd87c39b1df3f07ca80e6577579c4c039ba",
+      "skills": [
+        {
+          "id": "bigquery",
+          "title": "Investigate BigQuery costs",
+          "description": "Compare compute and storage billing, explore query and dataset costs, and review allocation options. Rated 84/100, grade B, under the directory’s published method."
+        }
+      ],
+      "setup": "Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. The service queries workspace cost data. Preview cost-allocation changes and confirm before publishing or applying schema changes. The linked skill page covers the accepted BigQuery workflow."
     }
   ]
 }

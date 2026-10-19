@@ -6,6 +6,7 @@
   "appierun/appie-mcp",
   "aws/agent-toolkit-for-aws",
   "browser-use/browser-use",
+  "costory-io/costory-finops-mcp-skills",
   "github/awesome-copilot",
   "google-labs-code/stitch-skills",
   "heygen-com/hyperframes",
@@ -869,6 +870,9 @@
   ],
   "MetcalfSolutions/Satori": [
    "satori"
+  ],
+  "costory-io/costory-finops-mcp-skills": [
+   "bigquery"
   ]
  },
  "skill_roots": {
@@ -971,6 +975,9 @@
   ],
   "MetcalfSolutions/Satori": [
    ".agents/skills/satori"
+  ],
+  "costory-io/costory-finops-mcp-skills": [
+   "plugins/costory/skills/bigquery"
   ]
  }
 }
