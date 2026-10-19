@@ -111,6 +111,14 @@ elif not any(a.endswith("curate.py") for a in args):
         snapshot = self.refresh()
         self.assertEqual([r["dir"] for r in snapshot["fixture__skills"]["parsed"]], ["skills/.curated/public"])
 
+    def test_explicitly_accepted_skill_pack_can_have_awesome_in_its_name(self):
+        remote = self.remotes / "fixture/awesome-skill-pack"
+        self.git("clone", "-q", "--bare", str(self.upstream), str(remote))
+        (self.project / "directory/inclusions.json").write_text(json.dumps({"repositories": ["fixture/awesome-skill-pack"]}))
+        snapshot = self.refresh()
+        self.assertIn("fixture__awesome-skill-pack", snapshot)
+        self.assertNotIn("travisvn__awesome-claude-skills", snapshot)
+
     def test_reviewed_root_cannot_escape_source_checkout_or_disappear_silently(self):
         for root in ("../outside", "skills/.missing"):
             with self.subTest(root=root):
@@ -130,6 +138,16 @@ elif not any(a.endswith("curate.py") for a in args):
         self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
         parsed = self.refresh()["fixture__skills"]["parsed"][0]
         self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("Apache-2.0", "old-skill/LICENSE.TXT"))
+
+    def test_readme_license_requires_a_complete_explicit_declaration(self):
+        (self.upstream / "LICENSE").unlink()
+        for declaration, expected in (("[Apache-2.0](LICENSE)", "Apache-2.0"), ("MIT except for commercial use", None)):
+            with self.subTest(declaration=declaration):
+                (self.upstream / "README.md").write_text("https://github.com/fixture/skills\n\n## License\n\n" + declaration + "\n\n---\n\nProject footer\n")
+                self.commit("update declaration")
+                self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+                parsed = self.refresh()["fixture__skills"]["parsed"][0]
+                self.assertEqual(parsed["repo_license"], expected)
 
     def test_reused_checkouts_read_updates_deletions_and_new_default_branch(self):
         initial = self.refresh()

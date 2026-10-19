@@ -104,9 +104,10 @@ class DirectoryInclusionTests(unittest.TestCase):
         root = ".github/plugins/published/skills"
         public = {**record("reviewed/skills", "public-skill"), "dir": root + "/public-skill"}
         fixture = {**record("reviewed/skills", "fixture-skill"), "dir": root + "/tests/fixture-skill"}
+        outside = {**record("reviewed/skills", "outside-skill"), "dir": "unreviewed/outside-skill"}
         plain = self.curate({}, extra_records=(public, fixture))
         self.assertFalse(any(s["repo"] == "reviewed/skills" for s in plain["skills"]))
-        reviewed = self.curate({}, extra_records=(public, fixture), roots={"reviewed/skills": [root]})
+        reviewed = self.curate({}, extra_records=(public, fixture, outside), roots={"reviewed/skills": [root]})
         self.assertEqual([s["name"] for s in reviewed["skills"] if s["repo"] == "reviewed/skills"], ["public-skill"])
 
     def test_named_scope_never_offers_whole_repository_install_even_when_all_current_names_pass(self):

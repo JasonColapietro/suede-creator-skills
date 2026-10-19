@@ -366,6 +366,13 @@ class ListingPolicyTests(unittest.TestCase):
         record = {"name": "prospecting", "description": "Build a prospect list from licensed providers, and never scrape LinkedIn.", "repo": "someone/skills"}
         self.assertIsNone(self.policy_rule(record))
 
+    def test_reviewed_vendor_owner_keeps_social_account_and_personal_data_rules(self):
+        record = {"name": "actor-development", "description": "Use when developing an Apify scraper service for your own project.", "repo": "apify/agent-skills"}
+        self.assertIsNone(self.policy_rule(record))
+        self.assertIsNotNone(self.policy_rule({**record, "repo": "someone/skills"}))
+        self.assertIsNotNone(self.policy_rule({**record, "name": "reddit-automation", "description": "Use when sending messages on Reddit."}))
+        self.assertIsNotNone(self.policy_rule({**record, "description": "Use when scraping LinkedIn profiles."}))
+
 
 class PrivacyGuardTests(unittest.TestCase):
     """CI runs scripts/check-public-privacy.py over every published file, so

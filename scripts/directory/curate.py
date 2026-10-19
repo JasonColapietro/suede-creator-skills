@@ -161,6 +161,7 @@ EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE_RE = re.compile(r"\(?\b[2-9]\d{2}\)?[ .-][2-9]\d{2}[ .-]\d{4}\b")
 
 OFFICIAL_OWNERS = {
+    "github", "aws", "vercel", "apify", "langchain-ai", "browser-use", "heygen-com",
     "anthropics", "openai", "microsoft", "google", "google-gemini", "google-labs-code", "googleworkspace", "huggingface",
     "supabase", "vercel-labs", "cloudflare", "stripe", "hashicorp", "trailofbits", "getsentry", "expo", "resend",
     "coderabbitai", "firebase", "flutter", "netlify", "mongodb", "neondatabase", "clickhouse", "duckdb", "redis",
@@ -357,7 +358,8 @@ def main():
     policy_hits = []
     for r in raw:
         repo_key, name = (r.get("repo") or "").lower(), r.get("name") or ""
-        out_of_scope = repo_key in scopes and name not in scopes[repo_key]
+        out_of_roots = repo_key in source_roots and not any(root == "." or r["dir"] == root or r["dir"].startswith(root + "/") for root in source_roots[repo_key])
+        out_of_scope = (repo_key in scopes and name not in scopes[repo_key]) or out_of_roots
         excluded = repo_key in excluded_repos or f"{repo_key}/{name}".lower() in excluded_skills
         # Scope is independent of the rejection reason: an excluded or
         # unavailable skill still makes a whole-repository install too broad.

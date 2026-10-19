@@ -1,16 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="193" height="20" role="img" aria-label="Suede Skills Directory: listed">
-  <title>Suede Skills Directory: listed</title>
-  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
-  <clipPath id="r"><rect width="193" height="20" rx="3" fill="#fff"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="148" height="20" fill="#1c1c1a"/>
-    <rect x="148" width="45" height="20" fill="#c8a96e"/>
-    <rect width="193" height="20" fill="url(#s)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="700" viewBox="0 0 640 700" role="img" aria-label="Suede Skill Check: 80/100; structural quality">
+<title>Suede Skill Check: 80/100; structural quality</title>
+<defs>
+<linearGradient id="metal" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff9e8"/><stop offset=".24" stop-color="#c9bff3"/><stop offset=".45" stop-color="#91899f"/><stop offset=".63" stop-color="#e5e0ed"/><stop offset="1" stop-color="#71697f"/></linearGradient>
+<linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#38333e"/><stop offset="1" stop-color="#201d27"/></linearGradient>
+<radialGradient id="dark" cx=".3" cy=".15" r=".9"><stop stop-color="#38343f"/><stop offset="1" stop-color="#131219"/></radialGradient></defs>
+<path d="M144 40 H496 L574 102 L554 348 C548 485 460 588 320 661 C180 588 92 485 86 348 L66 102 Z" fill="url(#metal)"/>
+<path d="M151 60 H489 L552 111 L534 346 C528 474 447 569 320 638 C193 569 112 474 106 346 L88 111 Z" fill="#101016"/>
+<path d="M157 73 H483 L538 117 L521 346 C515 466 438 557 320 623 C202 557 125 466 119 346 L102 117 Z" fill="url(#dark)" stroke="#c9bff3" stroke-width="2"/>
+<path d="M166 91 H474 L519 126 L503 345 C497 453 427 539 320 601 C213 539 143 453 137 345 L121 126 Z" fill="none" stroke="#c9bff3" stroke-opacity=".22" stroke-width="1"/>
+<path d="M151 60H489L552 111" fill="none" stroke="#fff9ef" stroke-opacity=".6" stroke-width="1.5"/>
+<g transform="translate(64 -10) scale(1.28)">  <g fill="none" stroke="#eeebf3" stroke-linecap="round">
+    <path stroke-width="16.45" d="M86.40 202.96A113.10 113.10 0 0 1 282.03 122.32"/>
+    <path stroke-width="16.45" d="M312.50 196.24A113.10 113.10 0 0 1 116.87 276.88"/>
+    <path stroke-width="17.15" d="M113.44 203.02A86.08 86.08 0 0 1 262.12 140.59"/>
+    <path stroke-width="17.15" d="M285.46 196.18A86.08 86.08 0 0 1 136.78 258.61"/>
+    <path stroke-width="16.4" d="M141.49 203.35A58.08 58.08 0 0 1 242.36 160.46"/>
+    <path stroke-width="16.4" d="M257.41 195.85A58.08 58.08 0 0 1 156.54 238.74"/>
   </g>
-  <rect x=".5" y=".5" width="192" height="19" rx="2.5" fill="none" stroke="#c8a96e" stroke-opacity=".55"/>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
-    <text x="74" y="14" fill="#f0ece4">Suede Skills Directory</text>
-    <text x="170.5" y="15" fill="#010101" fill-opacity=".3">listed</text>
-    <text x="170.5" y="14" fill="#080808">listed</text>
-  </g>
+  <path fill="#eeebf3" d="M140.00 188.90H250.00V211.90H140.00Z"/>
+</g>
+<path d="M54 428H18L35 460 18 496H102V448Z M586 428H622L605 460 622 496H538V448Z" fill="#514a60" stroke="#c9bff3" stroke-width="1.5"/>
+<path d="M54 478L102 504V478Z M586 478L538 504V478Z" fill="#0c0b10"/>
+<path d="M54 413H586V478H54Z" fill="url(#ribbon)" stroke="url(#metal)" stroke-width="3"/>
+<path d="M61 421H579" stroke="#c9bff3" stroke-opacity=".35"/>
+<path d="M1227 1446V1130Q1104 1185 987.0 1213.0Q870 1241 766 1241Q628 1241 562.0 1203.0Q496 1165 496 1085Q496 1025 540.5 991.5Q585 958 702 934L866 901Q1115 851 1220.0 749.0Q1325 647 1325 459Q1325 212 1178.5 91.5Q1032 -29 731 -29Q589 -29 446.0 -2.0Q303 25 160 78V403Q303 327 436.5 288.5Q570 250 694 250Q820 250 887.0 292.0Q954 334 954 412Q954 482 908.5 520.0Q863 558 727 588L578 621Q354 669 250.5 774.0Q147 879 147 1057Q147 1280 291.0 1400.0Q435 1520 705 1520Q828 1520 958.0 1501.5Q1088 1483 1227 1446Z" transform="translate(155.6497 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H573V598Q573 413 633.5 333.5Q694 254 831 254Q969 254 1029.5 333.5Q1090 413 1090 598V1493H1475V598Q1475 281 1316.0 126.0Q1157 -29 831 -29Q506 -29 347.0 126.0Q188 281 188 598Z" transform="translate(179.5359 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(206.0842 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M573 1202V291H711Q947 291 1071.5 408.0Q1196 525 1196 748Q1196 970 1072.0 1086.0Q948 1202 711 1202ZM188 1493H594Q934 1493 1100.5 1444.5Q1267 1396 1386 1280Q1491 1179 1542.0 1047.0Q1593 915 1593 748Q1593 579 1542.0 446.5Q1491 314 1386 213Q1266 97 1098.0 48.5Q930 0 594 0H188Z" transform="translate(228.8943 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(255.9666 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="" transform="translate(278.7766 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M1372 82Q1266 27 1151.0 -1.0Q1036 -29 911 -29Q538 -29 320.0 179.5Q102 388 102 745Q102 1103 320.0 1311.5Q538 1520 911 1520Q1036 1520 1151.0 1492.0Q1266 1464 1372 1409V1100Q1265 1173 1161.0 1207.0Q1057 1241 942 1241Q736 1241 618.0 1109.0Q500 977 500 745Q500 514 618.0 382.0Q736 250 942 250Q1057 250 1161.0 284.0Q1265 318 1372 391Z" transform="translate(291.8728 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(316.1555 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M735,831Q856,831,908.5,876.0Q961,921,961,1024Q961,1126,908.5,1170.0Q856,1214,735,1214H573V831ZM573,565V0H188V1493H776Q1071,1493,1208.5,1394.0Q1346,1295,1346,1081Q1346,933,1274.5,838.0Q1203,743,1059,698Q1138,680,1200.5,616.5Q1263,553,1327,424L1536,0H1126L944,371Q889,483,832.5,524.0Q776,565,682,565Z" transform="translate(338.9656 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M10 1493H1386V1202H891V0H506V1202H10Z" transform="translate(364.2961 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H573V0H188Z" transform="translate(387.0779 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H1227V1202H573V924H1188V633H573V0H188Z" transform="translate(400.8679 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H573V0H188Z" transform="translate(423.6780 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M188 1493H1227V1202H573V924H1188V633H573V291H1249V0H188Z" transform="translate(437.4680 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/><path d="M573 1202V291H711Q947 291 1071.5 408.0Q1196 525 1196 748Q1196 970 1072.0 1086.0Q948 1202 711 1202ZM188 1493H594Q934 1493 1100.5 1444.5Q1267 1396 1386 1280Q1491 1179 1542.0 1047.0Q1593 915 1593 748Q1593 579 1542.0 446.5Q1491 314 1386 213Q1266 97 1098.0 48.5Q930 0 594 0H188Z" transform="translate(460.2781 456) scale(0.01416015625 -0.01416015625)" fill="#f2f0e8"/>
+
+<text id="score-value" x="320" y="539" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#c9bff3">80 / 100</text>
+<path d="M310 574l10-10 10 10-10 10z" fill="#c9bff3"/>
 </svg>

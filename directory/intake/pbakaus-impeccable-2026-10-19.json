@@ -97,8 +97,10 @@
   "publication": {
     "in_current_live_snapshot": false,
     "accepted_intake_only": true,
-    "full_refresh_required": true,
-    "badge_links_live": false
+    "full_refresh_required": false,
+    "badge_links_live": false,
+    "prepared_snapshot_id": "420caab01ced40ed9e0f0dd32aea2e4a",
+    "prepared_listing_url": "https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/"
   },
   "badge_assets": {
     "numeric": "pbakaus-impeccable/score-86.svg",

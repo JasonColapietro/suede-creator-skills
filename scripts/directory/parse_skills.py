@@ -71,8 +71,12 @@ def find_license(start: Path, repo_root: Path):
             readme = cur / "README.md"
             if readme.is_file():
                 section = re.search(r"(?im)^#{1,6}\s+License\s*\n([\s\S]*?)(?=^#{1,6}\s|\Z)", readme.read_text(errors="ignore"))
-                if section and section[1].strip() in ("MIT", "MIT License"):
-                    return "MIT", "README.md"
+                if section:
+                    paragraph = re.split(r"\n\s*\n", section[1].strip(), maxsplit=1)[0].strip()
+                    declaration = re.fullmatch(r"\[?(MIT(?: License)?|Apache[- ]2\.0)\]?(?:\(LICEN[CS]E(?:\.(?:md|txt))?\))?", paragraph, re.I)
+                    if declaration:
+                        label = "MIT" if declaration[1].lower().startswith("mit") else "Apache-2.0"
+                        return label, "README.md"
             return None, None
         cur = cur.parent
 

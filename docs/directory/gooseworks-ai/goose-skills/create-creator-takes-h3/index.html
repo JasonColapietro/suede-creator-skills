@@ -39,11 +39,11 @@
         "mainEntity": {
           "@type": "SoftwareSourceCode",
           "name": "create-creator-takes-h3",
-          "description": "Generates a continuous AI creator talking-to-camera video track from an approved script by planning takes and reusing the first take's voice. Suede Skill Check: 80/100, grade B. Security scan: not scanned.",
+          "description": "Generates a continuous AI creator talking-to-camera video track from an approved script by planning takes and reusing the first take's voice. Suede Skill Check: 77/100, grade C. Security scan: not scanned.",
           "codeRepository": "https://github.com/gooseworks-ai/goose-skills/tree/main/skills/ads/capabilities/create-creator-takes-h3",
           "programmingLanguage": "Markdown",
           "license": "https://github.com/gooseworks-ai/goose-skills/blob/main/LICENSE",
-          "dateModified": "2026-10-16",
+          "dateModified": "2026-10-17",
           "keywords": [
             "Video, Image, Audio and Creative",
             "Agent Skills",
@@ -132,21 +132,21 @@
             <tr><th scope="row">Repository</th><td><a href="../">gooseworks-ai/goose-skills</a> (238 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../media-creative/">Video, Image, Audio and Creative</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/gooseworks-ai/goose-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
-            <tr><th scope="row">Last commit</th><td>October 16, 2026 (repository)</td></tr>
-            <tr><th scope="row">SKILL.md</th><td>197 lines, 3,474 words</td></tr>
-            <tr><th scope="row">Bundled files</th><td>17 files, including scripts</td></tr>
-            <tr><th scope="row">Quality score</th><td><span class="grade grade-b" title="Suede Skill Check: 80/100, grade B">80/100 · B</span> <a href="#check">Passes all seven graded checks</a></td></tr>
+            <tr><th scope="row">Last commit</th><td>October 17, 2026 (repository)</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>235 lines, 4,676 words</td></tr>
+            <tr><th scope="row">Bundled files</th><td>19 files, including scripts</td></tr>
+            <tr><th scope="row">Quality score</th><td><span class="grade grade-c" title="Suede Skill Check: 77/100, grade C">77/100 · C</span> <a href="#check">Passes all seven graded checks</a></td></tr>
             <tr><th scope="row">Security scan</th><td>Not scanned</td></tr>
-            <tr><th scope="row">README badge</th><td><a href="#badge">Get the badges for this listing</a></td></tr>
+            <tr><th scope="row">README badge</th><td><a href="#badge">Get the listing badge and raise the score</a></td></tr>
             </tbody>
           </table>
         </div>
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 17, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 19, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
-          <li><b>Bundled scripts:</b> 13 script files (13 Python). Your agent may run them, so read them first.</li>
+          <li><b>Bundled scripts:</b> 15 script files (15 Python). Your agent may run them, so read them first.</li>
           <li><b>Environment variables its scripts read:</b> <code>GW_MEDIA_PROXY_TOKEN</code>. Check SKILL.md for which ones it needs.</li>
           <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK.</li>
           <li><b>License:</b> <a href="https://github.com/gooseworks-ai/goose-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
@@ -184,9 +184,12 @@ rm -rf &quot;$tmp&quot;</code></pre>
 
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
+          <li class="lvl-2">Quality tier: Standard or Best</li>
           <li class="lvl-2">Run</li>
           <li class="lvl-2">Action shots, skin condition and light (2.5.0)</li>
           <li class="lvl-2">Both hands, voice and pace (2.4.0)</li>
+          <li class="lvl-2">Measured take reviews and a voice across heritage (2.9.0)</li>
+          <li class="lvl-2">Realism check and a voice for every person (2.8.0)</li>
           <li class="lvl-2">Voice by ethnicity, chosen with the person (2.6.0)</li>
           <li class="lvl-2">Choices</li>
           <li class="lvl-2">Rules</li>
@@ -209,23 +212,25 @@ rm -rf &quot;$tmp&quot;</code></pre>
           <li><code>scripts/pair_voice.py</code></li>
           <li><code>scripts/plan_takes.py</code></li>
           <li><code>scripts/run_takes.py</code></li>
+          <li><code>scripts/tiers.py</code></li>
           <li><code>skill.meta.json</code></li>
           <li><code>tests/smoke-test.md</code></li>
           <li><code>tests/test_action_skin_light.py</code></li>
           <li><code>tests/test_hands_voice_pace.py</code></li>
           <li><code>tests/test_make_character.py</code></li>
+          <li><code>tests/test_quality_tier.py</code></li>
           <li><code>tests/test_run_takes_rejection.py</code></li>
           <li><code>tests/test_voice_ethnicity.py</code></li>
         </ul>
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
-        <h2 id="check-title">Suede Skill Check: 80/100 · B</h2>
+        <h2 id="check-title">Suede Skill Check: 77/100 · C</h2>
 <div class="report-summary">
-          <p class="report-kicker">Report snapshot · <time datetime="2026-10-17">October 17, 2026</time> · graded-v2</p>
+          <p class="report-kicker">Report snapshot · <time datetime="2026-10-19">October 19, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: not recorded in this snapshot. Report version <code>65a64c2ca936</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
-          <p class="report-actions"><a href="report.json" download="create-creator-takes-h3-suede-report-2026-10-17.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fgooseworks-ai%2Fgoose-skills&amp;skill-scope=create-creator-takes-h3&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fgooseworks-ai%2Fgoose-skills%2Fcreate-creator-takes-h3%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fgooseworks-ai%2Fgoose-skills%2Fcreate-creator-takes-h3%2Freport.json%0ASnapshot%3A+2026-10-17+%28e98e87c50fd840089ecdacbdc87d1fad%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
-          <h3>What to review next</h3><ul><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li><li><b>Instruction depth</b>: 4 of 7 points. 7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more.</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
+          <p class="muted">Source revision: <a href="https://github.com/gooseworks-ai/goose-skills/blob/70f3da5dc1ac1a8f6ede628733008643063624de/skills/ads/capabilities/create-creator-takes-h3/SKILL.md" target="_blank" rel="noopener"><code>70f3da5dc1ac</code></a>. Report version <code>c5972d3bbff2</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="report-actions"><a href="report.json" download="create-creator-takes-h3-suede-report-2026-10-19.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fgooseworks-ai%2Fgoose-skills&amp;skill-scope=create-creator-takes-h3&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fgooseworks-ai%2Fgoose-skills%2Fcreate-creator-takes-h3%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fgooseworks-ai%2Fgoose-skills%2Fcreate-creator-takes-h3%2Freport.json%0ASnapshot%3A+2026-10-19+%28420caab01ced40ed9e0f0dd32aea2e4a%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
+          <h3>What to review next</h3><ul><li><b>Instruction depth</b>: 1 of 7 points. 7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more.</li><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
         <p>create-creator-takes-h3 passes the required frontmatter check and all seven graded checks, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn 56 of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations. <a href="../../../methodology/">How the score works</a>.</p>
         <details class="check-details">
@@ -253,7 +258,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
               <tr><td>Description length</td><td class="pass">5 of 5</td></tr>
               <tr><td>Boundary clause</td><td class="miss">0 of 4</td></tr>
               <tr><td>Example request</td><td class="miss">0 of 3</td></tr>
-              <tr><td>Instruction depth</td><td>4 of 7</td></tr>
+              <tr><td>Instruction depth</td><td>1 of 7</td></tr>
               <tr><td>Reference files</td><td class="miss">0 of 3</td></tr>
               <tr><td>Bundled scripts</td><td class="pass">2 of 2</td></tr>
               <tr><td>Recent maintenance</td><td class="pass">9 of 9</td></tr>
@@ -265,15 +270,19 @@ rm -rf &quot;$tmp&quot;</code></pre>
           </div>
         </details>
       </section>
-<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for create-creator-takes-h3</h2>
-        <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/"><img src="/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/score.svg" alt="Suede Skill Check: 80/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/"><img src="/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
-        <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 80/100](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/score.svg)](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/)
-[![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/badge.svg)](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/)</code></pre></div>
-        <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/score.svg&quot; alt=&quot;Suede Skill Check: 80/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
-&lt;a href=&quot;https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
-        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing and raise the score</h2>
+        <p>create-creator-takes-h3 is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for create-creator-takes-h3 are instruction depth (6), boundary clause (4) and example request (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>gooseworks-ai/goose-skills appears in 3 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>.</p>
