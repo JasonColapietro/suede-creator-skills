@@ -67,16 +67,19 @@ claude plugin install coalwash@coalwash
 
 ## Costory
 
-**Hosted MCP · BigQuery cost investigation** · License: Apache-2.0 · Publisher: [costory-io](https://github.com/costory-io)
+**Hosted MCP · Four FinOps skills** · License: Apache-2.0 · Publisher: [costory-io](https://github.com/costory-io)
 
-Work through BigQuery compute, storage and allocation questions with an agent connected to Costory. Start with invoice evidence, compare on-demand and reserved capacity, and inspect the next action.
+Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
 
-- **[Investigate BigQuery costs](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)** (bigquery). Compare compute and storage billing, explore query and dataset costs, and review allocation options. Rated 84/100, grade B, under the directory’s published method.
+- **[Investigate BigQuery costs](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)** (bigquery). Compare compute and storage billing, explore query and dataset costs, and review allocation options.
+- **[Explain what changed](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/)** (cost-change-investigation). Trace contributors and timing, check usage and operational evidence, and separate supported explanations from assumptions.
+- **[Allocate shared costs](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/)** (virtual-dimensions). Draft custom cost axes, preview leftovers and rule overlap, then publish approved allocation rules.
+- **[Start with the right workflow](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/)** (costory-finops). Choose the Costory tools and detailed skills for spend queries, investigations, budgets, dashboards, reports and alerts.
 
 ### Setup
 
-Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. The service queries workspace cost data. Preview cost-allocation changes and confirm before publishing or applying schema changes. The linked skill page covers the accepted BigQuery workflow.
+Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. Queries use workspace cost data. Preview changes and confirm before publishing allocations, delivering reports or applying schema changes. Each linked skill page includes setup and source details.
 
-Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
+Accepted scope: **4 skills**. Follow each linked skill’s individual setup instructions.
 
 [Repository](https://github.com/costory-io/costory-finops-mcp-skills) · [Intake review](../directory/reviews/2026-10-19-costory.md) · [Reviewed source 38438bd](https://github.com/costory-io/costory-finops-mcp-skills/tree/38438bd87c39b1df3f07ca80e6577579c4c039ba) · [Suede feature](https://skills.suedeai.ai/directory/featured/#costory)

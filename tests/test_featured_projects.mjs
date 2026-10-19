@@ -54,31 +54,42 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.match(page, /href="\.\.\/methodology\/"/);
 });
 
-test('Costory features only accepted upstream skills scoring above 80', () => {
+test('Costory features the four requested upstream skills with their source-derived ratings', () => {
   const catalog = JSON.parse(read('directory/skills.json'));
   const project = data.projects.find((p) => p.id === 'costory');
   assert.ok(project, 'Costory editorial selection');
   const records = catalog.skills.filter((s) => s.repo === project.repo);
-  assert.deepEqual(records.map((s) => s.name), ['bigquery']);
-  assert.deepEqual(project.skills.map((s) => s.id), records.map((s) => s.slug));
+  const expected = { bigquery: 84, 'cost-change-investigation': 80, 'costory-finops': 79, 'virtual-dimensions': 80 };
+  assert.deepEqual(records.map((s) => s.name).sort(), Object.keys(expected).sort());
+  assert.deepEqual(project.skills.map((s) => s.id).sort(), records.map((s) => s.slug).sort());
   assert.equal(project.commit, catalog.repos[project.repo].commit_sha);
   for (const record of records) {
     const score = qualityScore(record, catalog.repos[project.repo], catalog.generated);
-    assert.ok(score > 80, `${record.name}: ${score}`);
+    assert.equal(score, expected[record.name], record.name);
     assert.equal(record.score, score);
+    assert.equal(record.checks, '11111111');
     assert.ok(record.featured);
   }
   const page = published();
   const feature = page.split('id="costory"')[1].split('</article>')[0];
-  assert.match(feature, /href="\.\.\/costory-io\/costory-finops-mcp-skills\/bigquery\/"/);
   assert.match(feature, /Costory workspace/);
   assert.match(feature, /OAuth/);
-  assert.doesNotMatch(feature, /cost-change-investigation\/|virtual-dimensions\/|costory-finops\//);
+  assert.doesNotMatch(feature, /model drift|compensation|proposed score|source improvement/i);
   assert.match(page, /<meta name="description" content="[^"]*Costory/);
-  const listing = read('docs/directory/costory-io/costory-finops-mcp-skills/bigquery/index.html');
-  const installation = listing.split('id="install-title"')[1].split('</section>')[0];
-  assert.match(installation, /href="https:\/\/docs\.costory\.io\/features\/mcp"/);
-  assert.match(installation, /browser OAuth/);
-  assert.match(installation, /Costory workspace with billing data connected/);
-  assert.ok(installation.indexOf('docs.costory.io/features/mcp') < installation.indexOf('id="install-cli"'));
+  for (const record of records) {
+    assert.ok(feature.includes(`href="../${project.repo}/${record.slug}/"`), record.name);
+    const listing = read(`docs/directory/${project.repo}/${record.slug}/index.html`);
+    const installation = listing.split('id="install-title"')[1].split('</section>')[0];
+    assert.match(installation, /href="https:\/\/docs\.costory\.io\/features\/mcp"/);
+    assert.match(installation, /browser OAuth/);
+    assert.match(installation, /Costory workspace with billing data connected/);
+    assert.ok(installation.indexOf('docs.costory.io/features/mcp') < installation.indexOf('id="install-cli"'));
+    const report = JSON.parse(read(`docs/directory/${project.repo}/${record.slug}/report.json`));
+    assert.equal(report.quality.score, expected[record.name]);
+    if (record.name === 'costory-finops') {
+      assert.deepEqual(report.badges.map((badge) => badge.kind), ['listing']);
+      assert.match(read(`docs/directory/${project.repo}/${record.slug}/score.svg`), /Suede Skills Directory: listed/);
+      assert.doesNotMatch(installation, /Suede Skill Check: Grade|Suede Skill Check: 79/);
+    }
+  }
 });
