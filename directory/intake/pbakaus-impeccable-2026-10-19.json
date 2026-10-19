@@ -1,0 +1,107 @@
+{
+  "assessment_date": "2026-10-19",
+  "methodology": "graded-v2",
+  "scope": {
+    "repository": "pbakaus/impeccable",
+    "skill_names": [
+      "impeccable"
+    ],
+    "canonical_path": "cursor-plugin/skills/impeccable",
+    "duplicate_distribution_paths": [
+      "plugin/skills/impeccable"
+    ],
+    "broader_repository_acceptance": false
+  },
+  "source_revision": "2f46b7a8b059af00d20dd13b64dbe165e7c6a742",
+  "source_url": "https://github.com/pbakaus/impeccable/blob/2f46b7a8b059af00d20dd13b64dbe165e7c6a742/cursor-plugin/skills/impeccable/SKILL.md",
+  "source_sha256": "cc2e0b6d8144f8e1a2e824353975a7aa0248fe3f9e8997f8051cbd7267106b3d",
+  "license_file": "cursor-plugin/LICENSE",
+  "license_sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+  "raw_license_declaration": "Apache 2.0",
+  "normalized_license": "Apache-2.0",
+  "open_license": true,
+  "checks": "11111111",
+  "score": 86,
+  "grade": "B",
+  "score_cap": 99,
+  "rubric_total": 100,
+  "components": {
+    "structure": 56,
+    "description_length": 5,
+    "boundary": 4,
+    "example": 0,
+    "depth": 7,
+    "references": 3,
+    "scripts": 2,
+    "recency": 9,
+    "adoption": 0,
+    "allowed_tools": 0,
+    "compatibility": 0
+  },
+  "metrics": {
+    "body_lines": 79,
+    "body_words": 1475,
+    "bundled_files": 57,
+    "bundles_references": true,
+    "bundles_scripts": true
+  },
+  "curated_citation_evidence": [
+    {
+      "repository": "travisvn/awesome-claude-skills",
+      "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "ComposioHQ/awesome-claude-skills",
+      "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "VoltAgent/awesome-agent-skills",
+      "commit": "3cd17ca9f40796a5dc564ebc6d76b4aa1303ff07",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "hesreallyhim/awesome-claude-code",
+      "commit": "664ad2e1c540f9e5924dd67274d2e0216ba59a34",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "BehiSecc/awesome-claude-skills",
+      "commit": "c368a0ae3c61e226af761fe975cf869c0f3a087d",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "karanb192/awesome-claude-skills",
+      "commit": "38d9631719d6411376bc7cb7b0fe041829f6c8bb",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "heilcheng/awesome-agent-skills",
+      "commit": "8e72a35bb24fca0323174591b9fc7268e60db2e1",
+      "cites_impeccable": false
+    },
+    {
+      "repository": "skillmatic-ai/awesome-agent-skills",
+      "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+      "cites_impeccable": false
+    }
+  ],
+  "security_scan_status": "not_scanned",
+  "verification": {
+    "python_and_javascript_agree": true,
+    "listing_policy_passed": true,
+    "exclusion_present": false,
+    "upstream_code_executed": false
+  },
+  "publication": {
+    "in_current_live_snapshot": false,
+    "accepted_intake_only": true,
+    "full_refresh_required": true,
+    "badge_links_live": false
+  },
+  "badge_assets": {
+    "numeric": "pbakaus-impeccable/score-86.svg",
+    "grade": "pbakaus-impeccable/grade-b.svg"
+  }
+}

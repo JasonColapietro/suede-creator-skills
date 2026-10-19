@@ -2446,6 +2446,7 @@
  "orkas-ai/orkas-videostudio/stage-generate": {"category":"media-creative"},
  "orkas-ai/orkas-videostudio/video-craft": {"category":"media-creative"},
  "orkas-ai/orkas-videostudio/video-router": {"category":"media-creative","summary":"Classifies a video-production brief and locks the primary path, either generating AI footage, composing designed HTML, editing real footage, or AUTO end-to-end."},
+ "pbakaus/impeccable/impeccable": {"category":"frontend-design","summary":"Guides frontend and native interface design through focused playbooks for hierarchy, typography, accessibility, responsive layouts, motion and UX copy."},
  "phuryn/pm-skills/ab-test-analysis": {"category":"product-management"},
  "phuryn/pm-skills/analyze-feature-requests": {"category":"product-management"},
  "phuryn/pm-skills/ansoff-matrix": {"category":"product-management","summary":"Generates an Ansoff Matrix analysis mapping growth strategies across market penetration, market development, product development, and diversification."},
