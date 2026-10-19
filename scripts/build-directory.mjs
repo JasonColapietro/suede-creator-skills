@@ -105,6 +105,7 @@ data.skills = data.skills.map((c) => {
     lists: meta.lists,
     official: meta.official,
     repo_withheld: meta.withheld || 0,
+    repo_scoped_install: Boolean(meta.scoped_install),
     body_lines: c.size[0],
     body_words: c.size[1],
     file_count: c.size[2],
@@ -244,6 +245,7 @@ for (const r of repos.values()) {
   r.publisher = publisherName(r.owner, r.official);
   r.hasRootSkill = r.skills.some((s) => s.dir === ".");
   r.withheld = r.skills[0].repo_withheld;
+  r.scopedInstall = r.skills[0].repo_scoped_install;
   const licCounts = new Map();
   for (const s of r.skills) licCounts.set(s.license, (licCounts.get(s.license) || 0) + 1);
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
@@ -1020,7 +1022,7 @@ function renderRepo(r) {
     // whole-repository install would bring only that one.
     // Hidden when it would also install a skill the directory withholds, one
     // whose license restricts copying, or only a root skill that hides the rest.
-    ["Install every skill", r.withheld || r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
+    ["Install every skill", r.scopedInstall || r.withheld || r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
     ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
   ]);
   const relatedRepos = linkedRepos.filter((o) => o.primary === r.primary && o.slug !== r.slug && (o.indexable || !o.hasPage)).slice(0, 6);
@@ -1410,7 +1412,7 @@ function renderMethodology() {
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
       <section class="panel" aria-labelledby="sources-title">
         <h2 id="sources-title">Where the skills come from</h2>
-        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. This snapshot was taken on ${longDate(data.generated)}.</p>
+        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. Accepted requests may name exact canonical skill folders, including a publisher’s hidden distribution folder; only those reviewed roots and skill names are included. System skills, unreviewed mirrors and fixtures remain excluded. This snapshot was taken on ${longDate(data.generated)}.</p>
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>

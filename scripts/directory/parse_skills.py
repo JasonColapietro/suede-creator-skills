@@ -15,6 +15,9 @@ import yaml
 SRC = Path(sys.argv[1])
 CANDIDATES = json.load(open(sys.argv[2]))
 OUT = sys.argv[3]
+inclusions_path = Path(__file__).resolve().parents[2] / "directory" / "inclusions.json"
+inclusions = json.load(open(inclusions_path)) if inclusions_path.exists() else {}
+SOURCE_ROOTS = {repo.lower(): roots for repo, roots in inclusions.get("skill_roots", {}).items()}
 
 lists_by_repo = {c["repo"]: c["lists"] for c in CANDIDATES}
 # The lists spell owner/repo the way GitHub does ("NVIDIA/skills"); keys are lowercase.
@@ -56,7 +59,7 @@ def find_license(start: Path, repo_root: Path):
     """Nearest LICENSE file walking up from the skill dir to the repo root."""
     cur = start
     while True:
-        for name in ("LICENSE", "LICENSE.md", "LICENSE.txt", "LICENCE", "LICENSE.MD", "license", "License.txt", "COPYING"):
+        for name in ("LICENSE", "LICENSE.md", "LICENSE.txt", "LICENSE.TXT", "LICENCE", "LICENSE.MD", "license", "License.txt", "COPYING"):
             p = cur / name
             if p.is_file():
                 try:
@@ -65,6 +68,11 @@ def find_license(start: Path, repo_root: Path):
                     lic = None
                 return lic or "Other", str(p.relative_to(repo_root))
         if cur == repo_root:
+            readme = cur / "README.md"
+            if readme.is_file():
+                section = re.search(r"(?im)^#{1,6}\s+License\s*\n([\s\S]*?)(?=^#{1,6}\s|\Z)", readme.read_text(errors="ignore"))
+                if section and section[1].strip() in ("MIT", "MIT License"):
+                    return "MIT", "README.md"
             return None, None
         cur = cur.parent
 
@@ -311,9 +319,19 @@ def main():
         canonical = git(repo_root, "config", "--get", "remote.origin.url")
         cm = re.match(r"https://github\.com/([^/]+)/([^/]+?)(?:\.git)?$", canonical)
         real_owner, real_name = (cm.group(1), cm.group(2)) if cm else (owner, name)
-        for dp, dns, fns in os.walk(repo_root):
-            dns[:] = [d for d in dns if d not in SKIP_DIRS and not d.startswith(".")]
-            if "SKILL.md" in fns:
+        roots = SOURCE_ROOTS.get(slug.lower(), ["."])
+        if not isinstance(roots, list) or not roots or any(not isinstance(root, str) or not root or Path(root).is_absolute() or ".." in Path(root).parts for root in roots):
+            raise ValueError(f"Invalid reviewed skill roots for {slug}")
+        visited = set()
+        for root in roots:
+            start = repo_root / root
+            if not start.is_dir() or not start.resolve().is_relative_to(repo_root.resolve()):
+                raise ValueError(f"Missing or invalid reviewed skill root for {slug}: {root}")
+            for dp, dns, fns in os.walk(start):
+                dns[:] = [d for d in dns if d not in SKIP_DIRS and not d.startswith(".")]
+                if "SKILL.md" not in fns or dp in visited:
+                    continue
+                visited.add(dp)
                 rec = parse_skill(Path(dp) / "SKILL.md", repo_root)
                 if rec is None:
                     continue

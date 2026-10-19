@@ -340,6 +340,17 @@ def main():
     # source list also cites the repository, and keep future additions unlisted.
     inclusions = json.load(open(args.inclusions))
     scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
+    source_roots = {repo.lower(): roots for repo, roots in inclusions.get("skill_roots", {}).items()}
+    def policy_path(r):
+        # Explicitly reviewed distribution roots may themselves be hidden.
+        # Fixture/internal/template folders below that root remain excluded.
+        directory = r["dir"]
+        for root in source_roots.get(r["repo"].lower(), []):
+            if directory == root:
+                return ""
+            if directory.startswith(root + "/"):
+                return directory[len(root) + 1:]
+        return directory
     scoped_withheld = set()
     reasons = collections.Counter()
     eligible = []
@@ -368,7 +379,7 @@ def main():
             reasons["no license"] += 1
         elif not mostly_english(desc):
             reasons["not English"] += 1
-        elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(r["dir"]):
+        elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(policy_path(r)):
             reasons["template, example or draft"] += 1
         elif content_filtered(f"{name} {desc} {r['repo']}") or EMAIL_RE.search(desc) or PHONE_RE.search(desc):
             reasons["content rule"] += 1
@@ -511,6 +522,7 @@ def main():
             out.append((sid, rec))
             repo_meta[repo] = {
                 "withheld": withheld.get(repo.lower(), 0),
+                **({"scoped_install": True} if repo.lower() in scopes or repo.lower() in source_roots else {}),
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
                 **({"commit_sha": r["commit_sha"]} if r.get("commit_sha") else {}),

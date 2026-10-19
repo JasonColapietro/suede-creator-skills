@@ -25,7 +25,7 @@ def record(repo, name):
 
 
 class DirectoryInclusionTests(unittest.TestCase):
-    def curate(self, scopes, exclusions=None, extra_records=()):
+    def curate(self, scopes, exclusions=None, extra_records=(), roots=None):
         with tempfile.TemporaryDirectory(prefix="directory-inclusions-") as tmp:
             work = Path(tmp)
             records = [record("publisher/skills", name) for name in
@@ -37,7 +37,7 @@ class DirectoryInclusionTests(unittest.TestCase):
                 if r.get("description")}
             inputs = {
                 "raw": records, "labels": labels,
-                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes},
+                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}},
                 "exclusions": exclusions or {},
             }
             for name, value in inputs.items():
@@ -84,7 +84,6 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
 
-
     def test_refresh_keeps_recorded_source_revision_without_inventing_legacy_revisions(self):
         revised = {**record("revision-publisher/skills", "recorded-skill"), "commit_sha": "a" * 40}
         data = self.curate({}, extra_records=(revised,))
@@ -101,6 +100,21 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertTrue(skill["open_license"])
         self.assertEqual(data["repos"]["license-publisher/skills"]["commit_sha"], "a" * 40)
 
+    def test_reviewed_hidden_distribution_root_still_excludes_fixtures(self):
+        root = ".github/plugins/published/skills"
+        public = {**record("reviewed/skills", "public-skill"), "dir": root + "/public-skill"}
+        fixture = {**record("reviewed/skills", "fixture-skill"), "dir": root + "/tests/fixture-skill"}
+        plain = self.curate({}, extra_records=(public, fixture))
+        self.assertFalse(any(s["repo"] == "reviewed/skills" for s in plain["skills"]))
+        reviewed = self.curate({}, extra_records=(public, fixture), roots={"reviewed/skills": [root]})
+        self.assertEqual([s["name"] for s in reviewed["skills"] if s["repo"] == "reviewed/skills"], ["public-skill"])
+
+    def test_named_scope_never_offers_whole_repository_install_even_when_all_current_names_pass(self):
+        names = ["accepted-one", "accepted-two", "not-requested", "future-skill"]
+        scoped = self.curate({"publisher/skills": names})
+        self.assertEqual(scoped["repos"]["publisher/skills"]["withheld"], 0)
+        self.assertNotIn("Install every skill", self.repository_page(scoped))
+        self.assertIn("Install every skill", self.repository_page(self.curate({})))
 
     def test_same_day_refresh_rotates_snapshot_even_when_skill_data_is_unchanged(self):
         first, second = self.curate({}), self.curate({})
