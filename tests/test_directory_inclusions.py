@@ -25,7 +25,7 @@ def record(repo, name):
 
 
 class DirectoryInclusionTests(unittest.TestCase):
-    def curate(self, scopes, exclusions=None, extra_records=(), roots=None):
+    def curate(self, scopes, exclusions=None, extra_records=(), roots=None, citations=None):
         with tempfile.TemporaryDirectory(prefix="directory-inclusions-") as tmp:
             work = Path(tmp)
             records = [record("publisher/skills", name) for name in
@@ -37,7 +37,7 @@ class DirectoryInclusionTests(unittest.TestCase):
                 if r.get("description")}
             inputs = {
                 "raw": records, "labels": labels,
-                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}},
+                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}, "citations": citations or {}},
                 "exclusions": exclusions or {},
             }
             for name, value in inputs.items():
@@ -83,6 +83,21 @@ class DirectoryInclusionTests(unittest.TestCase):
         data = self.curate({})
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
+
+    def test_reviewed_citation_adds_one_point_without_changing_discovery_or_other_repositories(self):
+        evidence = {"source": "community/awesome-skills", "commit": "a" * 40,
+                    "path": "docs/list.md", "target": "https://github.com/publisher/skills",
+                    "verified_at": "2026-10-17"}
+        baseline = self.curate({})
+        credited = self.curate({}, citations={"publisher/skills": [evidence]})
+        self.assertEqual(credited["sources"], baseline["sources"])
+        self.assertEqual(credited["repos"]["publisher/skills"]["supplementary_citations"], [evidence])
+        self.assertEqual(credited["repos"]["publisher/skills"]["lists"], [evidence["source"]])
+        for before, after in zip(baseline["skills"], credited["skills"]):
+            self.assertEqual(after["score"] - before["score"], int(after["repo"] == "publisher/skills"))
+        raw = {**record("publisher/skills", "cited-already"), "lists": ["Community_awesome-skills"]}
+        once = self.curate({}, extra_records=(raw,), citations={"publisher/skills": [evidence]})
+        self.assertEqual(len(once["repos"]["publisher/skills"]["lists"]), 1)
 
     def test_reviewed_major_scopes_withhold_policy_and_demonstration_skills(self):
         accepted = json.loads((ROOT / "directory/inclusions.json").read_text())

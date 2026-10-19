@@ -96,8 +96,8 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 [Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
 
-- **84/100 · B** · [bigquery](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/bigquery/SKILL.md) — Investigate BigQuery compute and storage costs, compare billing models, and map spend through the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)
-- **80/100 · B** · [virtual-dimensions](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/virtual-dimensions/SKILL.md) — Create and preview custom cost-allocation dimensions with ordered CEL rules, leftover analysis and overlap checks. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/)
+- **85/100 · B** · [bigquery](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/bigquery/SKILL.md) — Investigate BigQuery compute and storage costs, compare billing models, and map spend through the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/)
+- **81/100 · B** · [virtual-dimensions](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/virtual-dimensions/SKILL.md) — Create and preview custom cost-allocation dimensions with ordered CEL rules, leftover analysis and overlap checks. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/)
 
 <a id="eduardo-sl--go-agent-skills"></a>
 

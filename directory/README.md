@@ -50,6 +50,15 @@ allowlist or reviewed-root scope always omits whole-repository install commands.
 
 ## Quality scores and the two README badges
 
+Accepted listing requests can record supplementary independent curated-list
+citations in `inclusions.json` under `citations`, keyed by target repository.
+Each receipt records the source repository, full commit, document path, exact
+GitHub target and `verified_at` date. The direct link is verified against the
+source's current default branch on every refresh; missing links or unavailable
+sources stop publication. Curation requires receipts from the snapshot date,
+deduplicates source repositories and publishes the evidence with the listing.
+These citations share the existing rubric but do not expand the discovery pool.
+
 `score_method: "graded-v2"` adds `score` (integer 0–99) to each record. The
 score is computed only from published fields — the record, its repository's
 `commit_date` and `lists` in `repos`, and the snapshot's `generated` date — so

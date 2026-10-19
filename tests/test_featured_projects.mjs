@@ -59,7 +59,12 @@ test('Costory features the four requested upstream skills with their source-deri
   const project = data.projects.find((p) => p.id === 'costory');
   assert.ok(project, 'Costory editorial selection');
   const records = catalog.skills.filter((s) => s.repo === project.repo);
-  const expected = { bigquery: 84, 'cost-change-investigation': 80, 'costory-finops': 79, 'virtual-dimensions': 80 };
+  const expected = { bigquery: 85, 'cost-change-investigation': 81, 'costory-finops': 80, 'virtual-dimensions': 81 };
+  const evidence = catalog.repos[project.repo].supplementary_citations;
+  assert.equal(evidence.length, 1);
+  assert.equal(evidence[0].source, 'TensorBlock/awesome-mcp-servers');
+  assert.equal(evidence[0].verified_at, catalog.generated);
+  assert.ok(!catalog.sources.includes(evidence[0].source), 'supplementary evidence is not a discovery source');
   assert.deepEqual(records.map((s) => s.name).sort(), Object.keys(expected).sort());
   assert.deepEqual(project.skills.map((s) => s.id).sort(), records.map((s) => s.slug).sort());
   assert.equal(project.commit, catalog.repos[project.repo].commit_sha);
@@ -86,10 +91,9 @@ test('Costory features the four requested upstream skills with their source-deri
     assert.ok(installation.indexOf('docs.costory.io/features/mcp') < installation.indexOf('id="install-cli"'));
     const report = JSON.parse(read(`docs/directory/${project.repo}/${record.slug}/report.json`));
     assert.equal(report.quality.score, expected[record.name]);
-    if (record.name === 'costory-finops') {
-      assert.deepEqual(report.badges.map((badge) => badge.kind), ['listing']);
-      assert.match(read(`docs/directory/${project.repo}/${record.slug}/score.svg`), /Suede Skills Directory: listed/);
-      assert.doesNotMatch(installation, /Suede Skill Check: Grade|Suede Skill Check: 79/);
-    }
+    assert.deepEqual(report.supplementary_citations, evidence);
+    assert.deepEqual(report.badges.map((badge) => badge.kind), ['score', 'grade']);
+    assert.ok(listing.includes(`https://github.com/${evidence[0].source}/blob/${evidence[0].commit}/${evidence[0].path}`));
+    assert.match(read(`docs/directory/${project.repo}/${record.slug}/badge.svg`), /Suede Skill Check: Grade B/);
   }
 });

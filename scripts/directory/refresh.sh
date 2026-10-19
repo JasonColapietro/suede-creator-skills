@@ -108,7 +108,9 @@ while IFS= read -r r; do
   ln -s "$WORK/src/${r/\//__}" "$SELECTED/${r/\//__}"
 done < "$WORK/repos.txt"
 python3 -I "$TOOLS/parse_skills.py" "$SELECTED" "$WORK/candidates.json" "$WORK/skills-raw.json"
-python3 -I "$TOOLS/curate.py" --raw "$WORK/skills-raw.json" --labels "$REPO_ROOT/directory/labels.json" --out "$REPO_ROOT/directory/skills.json"
+python3 -I "$TOOLS/citations.py" --inclusions "$REPO_ROOT/directory/inclusions.json" --out "$WORK/inclusions-verified.json"
+python3 -I "$TOOLS/curate.py" --raw "$WORK/skills-raw.json" --labels "$REPO_ROOT/directory/labels.json" --inclusions "$WORK/inclusions-verified.json" --out "$REPO_ROOT/directory/skills.json"
+cp "$WORK/inclusions-verified.json" "$REPO_ROOT/directory/inclusions.json"
 
 node "$REPO_ROOT/scripts/build-directory.mjs"
 node "$REPO_ROOT/scripts/generate-sitemap.mjs"

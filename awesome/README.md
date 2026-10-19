@@ -25,8 +25,8 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
 | **90–99 · A** | 125 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,575 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
-| **70–79 · C** | 1,374 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
+| **80–89 · B** | 1,576 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **70–79 · C** | 1,373 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
 | **0–69 · D** | 724 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
@@ -86,7 +86,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `4bdd3bf4662d464b47b2e3ccc2bf710e6aed8d249b4b66a166001a58f3083d8e`.
+Dataset SHA-256: `5c47173743e1519da80ccdb141b4b40ba8e3fc87c4230cec3ee17204e66b20a4`.
 
 ## Contribute and update
 

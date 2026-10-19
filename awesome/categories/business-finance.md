@@ -91,8 +91,8 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 [Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
 
-- **80/100 · B** · [cost-change-investigation](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/cost-change-investigation/SKILL.md) — Explain cost changes using contributor, timing, usage and event evidence from the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/)
-- **79/100 · C** · [costory-finops](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/powers/costory/skills/costory-finops/SKILL.md) — Route cloud-spend questions to Costory cost queries, investigations, allocation, dashboards and reports. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/)
+- **81/100 · B** · [cost-change-investigation](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/cost-change-investigation/SKILL.md) — Explain cost changes using contributor, timing, usage and event evidence from the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/)
+- **80/100 · B** · [costory-finops](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/powers/costory/skills/costory-finops/SKILL.md) — Route cloud-spend questions to Costory cost queries, investigations, allocation, dashboards and reports. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/)
 
 <a id="deanpeters--product-manager-skills"></a>
 

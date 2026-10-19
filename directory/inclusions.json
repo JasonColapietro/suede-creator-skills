@@ -985,5 +985,16 @@
    "powers/costory/skills/costory-finops",
    "plugins/costory/skills/virtual-dimensions"
   ]
+ },
+ "citations": {
+  "costory-io/costory-finops-mcp-skills": [
+   {
+    "source": "TensorBlock/awesome-mcp-servers",
+    "commit": "0eaf3d154251efe8923c70dda758fc01bb9d48c0",
+    "path": "docs/cloud-platforms--services.md",
+    "target": "https://github.com/costory-io/costory-finops-mcp-skills",
+    "verified_at": "2026-10-19"
+   }
+  ]
  }
 }
