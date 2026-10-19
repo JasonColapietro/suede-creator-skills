@@ -92,7 +92,7 @@ export function generateCatalog(inputs) {
     return [repo, skills.length === 1 && skills[0].featured ? listingTarget(skills[0]) : `${SITE}${repoSlug(repo)}/`];
   }));
   const pages = new Map();
-  const nav = (prefix = '') => `${link('Awesome Everything', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-0100-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
+  const nav = (prefix = '') => `${link('Awesome Everything', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-099-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
   const finish = (body) => `${GENERATED}\n\n${body.trim()}\n`;
   const stamp = `Snapshot: **${data.generated}** · Scores: **${SCORE_METHOD}** · [How scores work](${SITE}methodology/).`;
   const range = (skills) => `${Math.min(...skills.map((s) => s.score))}–${Math.max(...skills.map((s) => s.score))}`;
@@ -106,23 +106,23 @@ export function generateCatalog(inputs) {
 
 # Suede Awesome Everything
 
-**AI agent skills, scored 0–100.**
+**AI agent skills, scored 0–99.**
 
-Compare agent skills with **0–100 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
+Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
 Browse **${number(data.skills.length)} scored skills from ${repos.length} repositories** across **${categories.length} categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
-**[Compare scores](#compare-0100-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
+**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
 ${stamp}
 
-## Compare 0–100 quality scores
+## Compare 0–99 quality scores
 
 Every displayed score is recomputed from the saved evidence using **graded-v2**. The rubric scores structural checks, description clarity, instruction depth, bundled resources, maintenance, curated-list citations and declared tool/compatibility fields. [See every component and point allocation](${SITE}methodology/).
 
-The rubric uses a **0–100 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **${range(data.skills)} / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
+The rubric uses a **0–99 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **${range(data.skills)} / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
@@ -197,7 +197,7 @@ ${md(c.intro)}
 
 **${number(skills.length)} accepted skills · ${publishers.length} repositories.** ${stamp}
 
-**Compare on the 0–100 quality scale:** this category’s verified scores span **${range(skills)} / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](${SITE}?category=${c.slug}&sort=score) · [Rubric and the 99-point cap](../README.md#compare-0100-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **${range(skills)} / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](${SITE}?category=${c.slug}&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
