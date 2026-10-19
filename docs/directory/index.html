@@ -30,7 +30,7 @@
         "headline": "Agent Skills Directory: Claude and Codex Skills",
         "description": "Browse 2,975 agent skills for Claude Code, Codex and Cursor from 140 GitHub repositories, in 16 categories, each graded and linked to its source.",
         "url": "https://skills.suedeai.ai/directory/",
-        "dateModified": "2026-10-18",
+        "dateModified": "2026-10-19",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "WebSite",
@@ -270,6 +270,15 @@
           <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
           <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option><option value="ai-agents-llm">AI Agents and LLM Engineering</option><option value="developer-tools">Developer Tools and Frameworks</option><option value="marketing-seo">Marketing and SEO</option><option value="product-management">Product Management</option><option value="science-research">Science and Research</option><option value="devops-cloud">DevOps and Cloud</option><option value="media-creative">Video, Image, Audio and Creative</option><option value="productivity-knowledge">Productivity and Knowledge Work</option><option value="business-finance">Business, Sales and Finance</option><option value="testing-qa">Testing and QA</option><option value="data-databases">Data, Analytics and Databases</option><option value="security">Security</option><option value="frontend-design">Frontend and Design</option><option value="writing-content">Writing and Editing</option><option value="code-review-quality">Code Review and Code Quality</option><option value="documents-office">Documents and Office Files</option></select></label><label>Quality grade<select name="grade"><option value="">All grades</option><option value="A">A · 90–99</option><option value="B">B · 80–89</option><option value="C">C · 70–79</option><option value="D">D · 0–69</option></select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
         </form>
+        <section class="task-shortlist" aria-labelledby="shortlist-title" data-shortlist hidden>
+          <div class="browse-heading"><h3 id="shortlist-title">Your task shortlist</h3><span class="muted" data-shortlist-count>0 of 5 skills</span></div>
+          <label for="shortlist-task">What are you working on?</label>
+          <input id="shortlist-task" type="text" maxlength="120" placeholder="For example: review a React checkout" data-shortlist-task>
+          <p class="muted">Choose up to five skills from the results. Your shortlist stays in this page’s URL, ready to bookmark or share.</p>
+          <ul data-shortlist-items></ul>
+          <p role="status" aria-live="polite" data-shortlist-status></p>
+          <details data-shortlist-export hidden><summary>Copy your shortlist as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Task, scores and report links</span><button type="button" data-copy-target="shortlist-markdown">Copy shortlist</button></div><pre><code id="shortlist-markdown"></code></pre></div></details>
+        </section>
         <div class="discovery-layout">
           <aside class="category-rail"><details open><summary id="categories">Browse 16 categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">2,975</span></a><a href="ai-agents-llm/" data-category="ai-agents-llm"><span>AI Agents and LLM Engineering</span><span class="count-chip">459</span></a>
 <a href="developer-tools/" data-category="developer-tools"><span>Developer Tools and Frameworks</span><span class="count-chip">384</span></a>

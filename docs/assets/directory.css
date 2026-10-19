@@ -160,6 +160,26 @@
 .directory p { max-width: 72ch; }
 .directory .panel { background: transparent; padding: 28px 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; }
 .directory .panel > h2 { margin-top: 0; }
+.directory .report-summary { padding: 20px 24px; margin: 20px 0; border-left: 3px solid var(--gold); background: var(--surface); }
+.directory .report-summary p { margin-bottom: 12px; }
+.directory .report-summary .report-kicker { color: var(--gold); font-size: 13px; font-weight: 600; }
+.report-summary code { overflow-wrap: anywhere; }
+.report-actions a, .row-report a { display: inline-block; padding: 8px 0; }
+.directory .task-shortlist { padding: 24px; margin: 0 0 28px; border: 1px solid var(--border); background: var(--surface); }
+.task-shortlist .browse-heading { margin-bottom: 12px; }
+.task-shortlist h3 { margin: 0; font-size: 22px; }
+.task-shortlist label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.task-shortlist input { width: 100%; min-height: 44px; border: 1px solid var(--border); border-radius: 3px; padding: 10px 12px; background: var(--bg); color: var(--cream); font: inherit; margin-bottom: 8px; }
+.task-shortlist input::placeholder { color: var(--muted); }
+.task-shortlist li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--hairline); }
+.task-shortlist li::before { content: none; }
+.task-shortlist li a, .task-shortlist li span { overflow-wrap: anywhere; }
+.task-shortlist li span { grid-row: 2; }
+.task-shortlist li button { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+.task-shortlist summary { cursor: pointer; min-height: 44px; padding: 10px 0; color: var(--gold); }
+.directory-browser button:disabled { cursor: default; opacity: 0.55; }
+.directory-browser button[aria-pressed="true"] { border-color: var(--gold); background: var(--card); }
+.result-quality .shortlist-add { padding: 8px; width: 100%; }
 .directory .dir-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .directory a.dir-card { border-radius: 4px; padding: 24px; gap: 10px; }
 .directory a.dir-card:hover { background: var(--surface); }

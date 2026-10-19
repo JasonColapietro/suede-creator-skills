@@ -75,6 +75,9 @@ if (browser) {
   const error = browser.querySelector('[data-search-error]');
   const more = browser.querySelector('[data-load-more]');
   const categoryLinks = [...browser.querySelectorAll('[data-category]')];
+  const shortlist = browser.querySelector('[data-shortlist]');
+  const task = shortlist?.querySelector('[data-shortlist-task]');
+  let selected = [];
   let skills = null;
   let limit = 12;
   let debounce;
@@ -88,6 +91,8 @@ if (browser) {
 
   function readLocation() {
     const params = new URL(location.href).searchParams;
+    selected = [...new Set(params.getAll('pick'))].slice(0, 5);
+    if (task) task.value = (params.get('task') || '').slice(0, 120);
     query.value = params.get('q') || '';
     for (const control of [category, grade, sort]) {
       const value = params.get(control.name) || control.options[0].value;
@@ -101,6 +106,10 @@ if (browser) {
       if (value && !(control === sort && value === 'curated')) url.searchParams.set(control.name, value);
       else url.searchParams.delete(control.name);
     }
+    url.searchParams.delete('pick');
+    selected.forEach((href) => url.searchParams.append('pick', href));
+    if (task?.value.trim()) url.searchParams.set('task', task.value.trim());
+    else url.searchParams.delete('task');
     history.replaceState(null, '', url);
   }
   function node(tag, className, text) {
@@ -108,6 +117,39 @@ if (browser) {
     element.className = className;
     if (text) element.textContent = text;
     return element;
+  }
+  function renderShortlist() {
+    if (!shortlist || !skills) return;
+    shortlist.hidden = false;
+    const picks = selected.map((href) => skills.find((skill) => skill.href === href)).filter(Boolean);
+    selected = picks.map((skill) => skill.href);
+    const list = shortlist.querySelector('[data-shortlist-items]');
+    list.replaceChildren();
+    for (const skill of picks) {
+      const item = node('li', '');
+      const link = node('a', '', skill.name + ' · ' + skill.score + '/100 · ' + skill.grade);
+      link.href = skill.href;
+      const remove = node('button', '', 'Remove');
+      remove.type = 'button';
+      remove.setAttribute('aria-label', 'Remove ' + skill.name + ' from shortlist');
+      remove.addEventListener('click', () => {
+        selected = selected.filter((href) => href !== skill.href);
+        render();
+        task.focus();
+      });
+      item.append(link, node('span', 'muted', skill.repo + ' · ' + skill.license), remove);
+      list.append(item);
+    }
+    shortlist.querySelector('[data-shortlist-count]').textContent = picks.length + ' of 5 skills';
+    shortlist.querySelector('[data-shortlist-status]').textContent = picks.length === 5 ? 'Shortlist full. Remove a skill to add another.' : '';
+    shortlist.querySelector('[data-shortlist-export]').hidden = !picks.length;
+    const markdown = (text) => text.replace(/[\\`*_{}\[\]()<>#!|]/g, '\\$&').replace(/[\r\n]+/g, ' ');
+    shortlist.querySelector('#shortlist-markdown').textContent = [
+      '# ' + markdown(task.value.trim() || 'My skill shortlist'), '',
+      ...picks.map((skill) => '- [' + markdown(skill.name) + '](' + new URL(skill.href, location.href).href + ') — ' + skill.score + '/100 · ' + skill.grade + ' · ' + markdown(skill.license) + '\n  ' + markdown(skill.repo) + ' · [Report](' + new URL(skill.report, location.href).href + ') · Snapshot ' + skill.snapshot + ' · ' + skill.method),
+      '', '100-point rubric; published scores capped at 99. Security scan: not scanned.',
+      'Report and badge links follow the latest listing. Download a report to preserve its version.',
+    ].join('\n');
   }
   function resultRow(skill) {
     const article = node('article', 'discovery-row');
@@ -129,10 +171,25 @@ if (browser) {
       quality.append(shield);
     }
     quality.append(node('span', 'grade grade-' + skill.grade.toLowerCase(), skill.score + '/100 · ' + skill.grade));
+    if (shortlist) {
+      const chosen = selected.includes(skill.href);
+      const add = node('button', 'shortlist-add', chosen ? 'Added' : 'Shortlist');
+      add.type = 'button'; add.disabled = !chosen && selected.length >= 5;
+      add.setAttribute('aria-pressed', String(chosen));
+      add.setAttribute('aria-label', (chosen ? 'Remove ' : 'Add ') + skill.name + (chosen ? ' from' : ' to') + ' shortlist');
+      add.setAttribute('data-shortlist-href', skill.href);
+      add.addEventListener('click', () => {
+        selected = chosen ? selected.filter((href) => href !== skill.href) : [...selected, skill.href];
+        render();
+        [...results.querySelectorAll('[data-shortlist-href]')].find((button) => button.getAttribute('data-shortlist-href') === skill.href)?.focus();
+      });
+      quality.append(add);
+    }
     article.append(body, quality);
     return article;
   }
   function render(writeUrl = true, focusIndex = -1) {
+    renderShortlist();
     if (writeUrl) saveLocation();
     if (!skills) return;
     const terms = termsFor(query.value);
@@ -172,6 +229,7 @@ if (browser) {
     }
   }
   const update = () => { limit = 12; render(); };
+  task?.addEventListener('input', () => { renderShortlist(); saveLocation(); });
   query.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(update, 100); });
   [category, grade, sort].forEach((control) => control.addEventListener('change', update));
   form.addEventListener('submit', (event) => { event.preventDefault(); clearTimeout(debounce); update(); });
