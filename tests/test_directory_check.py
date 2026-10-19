@@ -373,6 +373,27 @@ class ListingPolicyTests(unittest.TestCase):
         self.assertIsNotNone(self.policy_rule({**record, "name": "reddit-automation", "description": "Use when sending messages on Reddit."}))
         self.assertIsNotNone(self.policy_rule({**record, "description": "Use when scraping LinkedIn profiles."}))
 
+    def test_official_collections_do_not_exempt_third_party_integrations(self):
+        self.assertIn("github", self.policy_rule.__globals__["OFFICIAL_OWNERS"])
+        cases = [
+            ("x-twitter-scraper", "Build GitHub Copilot workflows with Xquik X API SDKs, REST endpoints, hosted Apify Actor runs, MCP tools, TweetClaw OpenClaw plugin installs, signed webhooks, tweet search, user lookup, follower exports, media actions, and agent automation."),
+            ("latchshot-page-capture", "Use this skill when a user needs a screenshot, website thumbnail, full-page capture, or PDF of a public HTTP(S) webpage saved as a local artifact through Latchshot, including report, QA, archive, and social-preview workflows. Do not use it for private or authenticated pages, raw HTML, scraping or extraction, arbitrary browser actions, CAPTCHA or anti-bot bypass, or local-file capture."),
+        ]
+        for repo in ("github/awesome-copilot", "anthropics/claude-plugins-official", "apify/community-integrations"):
+            for name, description in cases:
+                with self.subTest(repo=repo, name=name):
+                    self.assertIsNotNone(self.policy_rule({"repo": repo, "name": name, "description": description}))
+
+    def test_official_collections_do_not_exempt_file_or_body_signals(self):
+        record = {"repo": "github/awesome-copilot", "name": "page-capture", "description": "Use when capturing a webpage screenshot."}
+        self.assertIsNotNone(self.policy_rule({**record, "captcha_files": True}))
+        self.assertIsNotNone(self.policy_rule({**record, "policy_text": "Use 2captcha to solve the challenge."}))
+        self.assertIsNotNone(self.policy_rule({**record, "name": "scrape-page"}))
+
+    def test_vendor_exemption_does_not_skip_personal_data_body_signals(self):
+        record = {"repo": "apify/agent-skills", "name": "actor-development", "description": "Use when developing an Apify Actor.", "policy_text": "Run the example/twitter-scraper actor."}
+        self.assertEqual(self.policy_rule(record), "collects people's personal data by scraping a social network or map listings")
+
 
 class PrivacyGuardTests(unittest.TestCase):
     """CI runs scripts/check-public-privacy.py over every published file, so

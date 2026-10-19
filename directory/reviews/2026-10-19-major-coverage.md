@@ -1,6 +1,6 @@
 # Major-project directory coverage — October 19, 2026
 
-The proposed snapshot lists **3,800 skills from 158 repositories**, following read-only checks of 159 repository revisions and eight curated-list revisions. It adds 19 previously absent projects through 804 named entries. Source updates also add 26 entries from existing repositories and remove five whose current sources no longer satisfy the published rules. The current live snapshot remains unchanged until this PR is merged and deployed.
+The proposed snapshot lists **3,797 skills from 158 repositories**, following read-only checks of 159 repository revisions and eight curated-list revisions. It adds 19 previously absent projects through 801 named entries. Source updates also add 26 entries from existing repositories and remove five whose current sources no longer satisfy the published rules. The current live snapshot remains unchanged until this PR is merged and deployed.
 
 This coverage PR is stacked on distribution PR #240 so its generated pages use the same portable-report generator. Its diff covers source intake, canonical roots, license evidence, scoped installs and the refreshed dataset. PR #239 is not changed; if that catalog is merged first, regenerate it from the new snapshot with its own builder.
 
@@ -9,10 +9,10 @@ This coverage PR is stacked on distribution PR #240 so its generated pages use t
 | Project | Listed skills | Individual score range | License evidence |
 | --- | ---: | --- | --- |
 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/ea10b213686c90bb1984b2016937310e05336cf3) | 23 | 64–86 | Apache-2.0: 22, All rights reserved: 1 |
-| [apify/agent-skills](https://github.com/apify/agent-skills/tree/d522584df6d01746d76b0c674f375cc7d48a838f) | 5 | 61–84 | Apache-2.0: 5 |
+| [apify/agent-skills](https://github.com/apify/agent-skills/tree/d522584df6d01746d76b0c674f375cc7d48a838f) | 4 | 61–84 | Apache-2.0: 4 |
 | [aws/agent-toolkit-for-aws](https://github.com/aws/agent-toolkit-for-aws/tree/44ba1a5451913998815111cc2d518f5c45f95ef7) | 142 | 66–89 | Apache-2.0: 142 |
 | [browser-use/browser-use](https://github.com/browser-use/browser-use/tree/aa093a843da5edbf323c0b4145c9b6a0db3ecde8) | 6 | 66–85 | MIT: 6 |
-| [github/awesome-copilot](https://github.com/github/awesome-copilot/tree/cb64ad12e32737ae764becd6885462e9b4c7cb00) | 414 | 58–89 | MIT: 406, Apache-2.0: 8 |
+| [github/awesome-copilot](https://github.com/github/awesome-copilot/tree/cb64ad12e32737ae764becd6885462e9b4c7cb00) | 412 | 58–89 | MIT: 404, Apache-2.0: 8 |
 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills/tree/0337446dadde6f8c94210444e2aa9d546126480f) | 8 | 64–72 | Apache-2.0: 8 |
 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes/tree/cddb34feacf50f9637bf84893b5bd36a140385c9) | 20 | 69–84 | Apache-2.0: 20 |
 | [langchain-ai/langchain-skills](https://github.com/langchain-ai/langchain-skills/tree/16a992f09ab3ccfb642dd4f08d350d833d1990bf) | 21 | 63–82 | MIT: 21 |
@@ -35,8 +35,10 @@ This coverage PR is stacked on distribution PR #240 so its generated pages use t
 - Exact `skill_roots` admit reviewed canonical distributions, including OpenAI’s curated folder and published hidden harness folders. Defaults continue to skip hidden folders. System skills, fixtures, experimental/in-progress folders, registry examples, CLI mirrors and provider copies are excluded from the reviewed scope. AWS plugin-only skills are admitted individually alongside its canonical public skills.
 - Every new project has an explicit name allowlist. Future or unreviewed names remain excluded, and a scoped repository never offers a whole-repository install command. Individual skill install paths retain their actual source folders.
 - License detection recognizes `LICENSE.TXT`, the `Apache 2.0` spelling and complete MIT/Apache declarations in a README License section. Per-skill terms override repository defaults. OpenAI’s eight Figma skills keep their vendor-terms links and receive no copy/install commands. One Anthropic plugin declares All rights reserved and retains the existing restricted-license behavior.
-- Verified vendor owners receive the existing official-publisher treatment. The four listing-policy rules are unchanged; added tests preserve social-account and personal-data exclusions for vendor-owned collections.
+- Official-publisher metadata is separate from listing-policy exemptions. Only the reviewed own-service repositories `apify/agent-skills`, `browserbase/skills` and `firecrawl/skills` receive rules 2/3 exemptions. The social-account and personal-data rules always apply, including body/file signals. Regression tests reproduce both community integrations identified in the review and prove that an official collection cannot bypass these rules.
 - The `graded-v2` algorithm, 100-point rubric, published cap of 99, shield eligibility, exclusions and README verification gates are unchanged. No upstream code, skill, launcher or install command was executed.
+
+The policy review withholds three proposed additions: `github/awesome-copilot/x-twitter-scraper` (primary scraping), `github/awesome-copilot/latchshot-page-capture` (site-block/API rule), and `apify/agent-skills/apify-actorization` (personal-data body signal). These are ordinary policy results, not changes to quality scores or new intentional exclusions. GitHub retains its official-publisher label.
 
 ## Holds and upstream changes
 
@@ -57,4 +59,4 @@ Five prior entries leave this snapshot:
 
 ## Verification
 
-The existing directory/report tests pass against the proposed snapshot. Canonical-root, explicit-license, vendor-policy and install-scope regression tests pass and their new checks fail against the prior implementation. Browser checks cover the report/shortlist flows. Full local pack validation and hosted CI are being tracked in the PR; an in-progress check is not a pass. No merge, deployment, outreach, credentials or paid service is part of this change.
+The existing directory/report tests pass against the proposed snapshot. Canonical-root, explicit-license, vendor-policy and install-scope regression tests pass and their new checks fail against the prior implementation. Browser checks cover the report/shortlist flows. The corrected snapshot passes full local `npm test`: 333 Node tests and 148 Python tests, with no skips. Desktop/mobile browser checks and 12,401 generated-file freshness checks also pass. Hosted CI for the final commit is tracked in the PR; an in-progress check is not a pass. No merge, deployment, outreach, credentials or paid service is part of this change.

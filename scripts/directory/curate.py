@@ -171,6 +171,16 @@ OFFICIAL_OWNERS = {
     "crawlbase", "voltagent", "qdrant", "angular", "cypress-io", "lambdatest", "veniceai", "transloadit", "mailtrap", "trycourier", "video-db",
 }
 
+# Listing ownership does not establish who provides an integration's service.
+# Only reviewed own-service repositories receive the rules 2/3 exemption;
+# community/plugin collections remain subject to the ordinary policy. Review
+# additions here separately from the official-publisher display label.
+POLICY_VENDOR_REPOS = {
+    "apify/agent-skills",
+    "browserbase/skills",
+    "firecrawl/skills",
+}
+
 
 OPEN_LICENSE = re.compile(r"^(MIT(-0)?|Apache-2\.0|BSD(-[23]-Clause)?|0BSD|(A|L)?GPL-[23]\.0(-or-later|-only)?|MPL-2\.0|ISC|Unlicense|CC0-1\.0|CC-BY(-SA)?-4\.0)( AND (MIT|Apache-2\.0|CC-BY-4\.0|CC-BY-SA-4\.0))*$")
 
@@ -223,23 +233,23 @@ def policy_rule(r):
     """The first listing-policy rule a skill trips, or None."""
     name = (r["name"] or "").replace("-", " ")
     desc = r["description"] or ""
-    official = r["repo"].split("/")[0].lower() in OFFICIAL_OWNERS
+    own_service = r["repo"].lower() in POLICY_VENDOR_REPOS
     whole = f"{name} {desc} {r['repo'].replace('-', ' ')}"
     for rule, (vendor_exempt, _, pattern) in POLICY.items():
-        if vendor_exempt and official:
+        if vendor_exempt and own_service:
             continue
         for m in pattern.finditer(whole):
             # "never scrape LinkedIn" states a rule the skill follows.
             if not NEGATION.search(whole[max(0, m.start() - 30) : m.start()]):
                 return rule
     # Scraping named as the opening job ("Scrape the front page ...").
-    if not official and (re.match(r"\W*scrap", desc, re.I) or re.search(r"\bscrap", name, re.I)):
+    if not own_service and (re.match(r"\W*scrap", desc, re.I) or re.search(r"\bscrap", name, re.I)):
         return "has scraping a third-party site as its main job"
-    if r.get("captcha_files") and not official:
+    if r.get("captcha_files") and not own_service:
         return "works around a site's blocks, CAPTCHAs or official API"
     body = f"{r.get('policy_text') or ''}\n{' '.join(r.get('file_names') or [])}"
     for rule, pattern in BODY_SIGNALS:
-        if official and not rule.startswith("automates"):
+        if own_service and POLICY[rule][0]:
             continue
         for m in pattern.finditer(body):
             if not NEGATION.search(body[max(0, m.start() - 30) : m.start()]):

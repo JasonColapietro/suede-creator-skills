@@ -1,9 +1,9 @@
 {
   "snapshot_date": "2026-10-19",
-  "snapshot_id": "420caab01ced40ed9e0f0dd32aea2e4a",
-  "dataset_sha256": "1afb3f891aef39cdeb150b47c98d17b416b208634e4971bd4e0803d49c915f07",
+  "snapshot_id": "4d8347b0080943e9b10a838745fb35c5",
+  "dataset_sha256": "8e3a3f7d45fe978fa23a08bf9f9c2281d0a045cabcfafcd7dce72e15ebf368f4",
   "source_count": 158,
-  "skill_count": 3800,
+  "skill_count": 3797,
   "reviewed_new_project_count": 19,
   "projects": [
     {
@@ -13,8 +13,8 @@
       "score_min": 64,
       "score_max": 86,
       "licenses": {
-        "Apache-2.0": 22,
-        "All rights reserved": 1
+        "All rights reserved": 1,
+        "Apache-2.0": 22
       },
       "canonical_roots": [
         "plugins"
@@ -278,11 +278,11 @@
     {
       "repository": "apify/agent-skills",
       "source_revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
-      "skill_count": 5,
+      "skill_count": 4,
       "score_min": 61,
       "score_max": 84,
       "licenses": {
-        "Apache-2.0": 5
+        "Apache-2.0": 4
       },
       "canonical_roots": [
         "skills"
@@ -296,17 +296,6 @@
           "license_file": "README.md",
           "license_sha256": "64102eb02d1b1b005d03bd6bdc071087983b38aed784ce235f34b8d91f543059",
           "score": 84,
-          "grade": "B",
-          "security_scan_status": "not_scanned"
-        },
-        {
-          "name": "apify-actorization",
-          "path": "skills/apify-actorization",
-          "source_sha256": "d1412a74d17f5064f19958a8571a6030ddeeaa2fb46795a1cf022d9e03b75ff3",
-          "license": "Apache-2.0",
-          "license_file": "README.md",
-          "license_sha256": "64102eb02d1b1b005d03bd6bdc071087983b38aed784ce235f34b8d91f543059",
-          "score": 80,
           "grade": "B",
           "security_scan_status": "not_scanned"
         },
@@ -2040,12 +2029,12 @@
     {
       "repository": "github/awesome-copilot",
       "source_revision": "cb64ad12e32737ae764becd6885462e9b4c7cb00",
-      "skill_count": 414,
+      "skill_count": 412,
       "score_min": 58,
       "score_max": 89,
       "licenses": {
-        "MIT": 406,
-        "Apache-2.0": 8
+        "Apache-2.0": 8,
+        "MIT": 404
       },
       "canonical_roots": [
         "skills"
@@ -4516,17 +4505,6 @@
           "security_scan_status": "not_scanned"
         },
         {
-          "name": "latchshot-page-capture",
-          "path": "skills/latchshot-page-capture",
-          "source_sha256": "65d6fb69e6f74f55dfaf5e8f3aec2e320fe06cae1586d6aa04e94e653487b2ce",
-          "license": "MIT",
-          "license_file": "LICENSE",
-          "license_sha256": "e32449d23085399adc1222f7a17408b730550258e51627c153cb108ca9955823",
-          "score": 83,
-          "grade": "B",
-          "security_scan_status": "not_scanned"
-        },
-        {
           "name": "lean-comments",
           "path": "skills/lean-comments",
           "source_sha256": "bf10076ba6db8f1f7eff318edb6c7b5167b76c96a8bc6801923ac3f1aa1ef9c4",
@@ -6593,17 +6571,6 @@
           "score": 67,
           "grade": "D",
           "security_scan_status": "not_scanned"
-        },
-        {
-          "name": "x-twitter-scraper",
-          "path": "skills/x-twitter-scraper",
-          "source_sha256": "5203d59a9effb79eeeafb5532c04814648e6b4a4fc64cdcf7ee018f86d53e689",
-          "license": "MIT",
-          "license_file": "LICENSE",
-          "license_sha256": "e32449d23085399adc1222f7a17408b730550258e51627c153cb108ca9955823",
-          "score": 69,
-          "grade": "D",
-          "security_scan_status": "not_scanned"
         }
       ]
     },
@@ -8334,8 +8301,8 @@
       "score_max": 82,
       "licenses": {
         "Apache-2.0": 25,
-        "See LICENSE file": 8,
-        "MIT": 5
+        "MIT": 5,
+        "See LICENSE file": 8
       },
       "canonical_roots": [
         "skills/.curated"
@@ -9192,7 +9159,7 @@
     }
   ],
   "changes": {
-    "new_entries": 830,
+    "new_entries": 827,
     "removed_entries": [
       {
         "listing": "garrytan/gstack/eval-plan",
@@ -9215,7 +9182,7 @@
         "reason": "The current source no longer declares the previously listed skill name."
       }
     ],
-    "new_major_entries": 804
+    "new_major_entries": 801
   },
   "source_snapshots": {
     "1NickPappas/move-code-quality-skill": {
@@ -10056,5 +10023,29 @@
       "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
       "cites_impeccable": false
     }
-  ]
+  ],
+  "policy_review": {
+    "finding": "Official repository ownership must not grant vendor exemptions to third-party integrations.",
+    "vendor_service_repositories": [
+      "apify/agent-skills",
+      "browserbase/skills",
+      "firecrawl/skills"
+    ],
+    "withheld_from_proposed_snapshot": [
+      {
+        "listing": "github/awesome-copilot/x-twitter-scraper",
+        "rule": "has scraping a third-party site as its main job"
+      },
+      {
+        "listing": "github/awesome-copilot/latchshot-page-capture",
+        "rule": "works around a site's blocks, CAPTCHAs or official API"
+      },
+      {
+        "listing": "apify/agent-skills/apify-actorization",
+        "rule": "collects people's personal data by scraping a social network or map listings"
+      }
+    ],
+    "official_publisher_metadata_preserved": true,
+    "quality_scoring_changed": false
+  }
 }
