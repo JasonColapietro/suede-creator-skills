@@ -8,7 +8,7 @@
 
 Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
-Browse **3,795 scored skills from 159 repositories** across **16 categories**, with publisher credits and direct source links.
+Browse **3,798 scored skills from 159 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
@@ -25,7 +25,7 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
 | **90–99 · A** | 125 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,573 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **80–89 · B** | 1,576 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
 | **70–79 · C** | 1,373 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
 | **0–69 · D** | 724 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
@@ -43,9 +43,9 @@ For GitHub browsing, choose a category below. Numeric scores lead every listing,
 | [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 359 | 37 |
 | [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 230 | 37 |
 | [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–93 / 100** | 213 | 35 |
-| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 160 | 25 |
+| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 162 | 26 |
 | [Testing and QA](categories/testing-qa.md) | **56–95 / 100** | 190 | 34 |
-| [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 177 | 28 |
+| [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 178 | 28 |
 | [Security](categories/security.md) | **54–93 / 100** | 115 | 22 |
 | [Frontend and Design](categories/frontend-design.md) | **56–89 / 100** | 198 | 32 |
 | [Writing and Editing](categories/writing-content.md) | **59–95 / 100** | 112 | 39 |
@@ -58,7 +58,7 @@ Each skill appears in one category. A repository can contribute to several categ
 
 - **[Appie](featured.md#appie)** by [appierun](https://github.com/appierun). Bring Appie’s writing, chatbot and link tools into your agent workflow. Pick the skill for the job and follow its individual setup instructions.
 - **[CoalWash](featured.md#coalwash)** by [TheColliery](https://github.com/TheColliery). Measure memory and governance-file overhead, run maintenance, and inspect the changes. CoalWash pairs a structured-token guard with transaction snapshots and rollback tools.
-- **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Work through BigQuery compute, storage and allocation questions with an agent connected to Costory. Start with invoice evidence, compare on-demand and reserved capacity, and inspect the next action.
+- **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
 
 These 3 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
@@ -86,7 +86,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `40fa4f7fd4cf7e0d365f5900704a9049a8de79e139d8ea7c31b147b264b3f01c`.
+Dataset SHA-256: `5c47173743e1519da80ccdb141b4b40ba8e3fc87c4230cec3ee17204e66b20a4`.
 
 ## Contribute and update
 

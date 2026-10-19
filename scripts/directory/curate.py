@@ -31,6 +31,7 @@ import uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from grade import CHECKS, SCORE_METHOD, all_checks_pass, grade, quality_score, run_checks, structural_pass  # noqa: E402
+from citations import receipts  # noqa: E402
 
 REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 
@@ -350,6 +351,16 @@ def main():
     # A publisher can request selected skills. Apply that scope even if another
     # source list also cites the repository, and keep future additions unlisted.
     inclusions = json.load(open(args.inclusions))
+    citation_evidence = receipts(inclusions, generated)
+    discovery_lists = {r["repo"].lower(): {l.replace("_", "/", 1) for l in (r.get("lists") or [])}
+                       for r in raw if r.get("repo")}
+    for r in raw:
+        if not r.get("repo"):
+            continue
+        sources = {l.lower(): l for l in discovery_lists[r["repo"].lower()]}
+        for evidence in citation_evidence.get(r["repo"].lower(), []):
+            sources.setdefault(evidence["source"].lower(), evidence["source"])
+        r["lists"] = sorted(sources.values())
     scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
     source_roots = {repo.lower(): roots for repo, roots in inclusions.get("skill_roots", {}).items()}
     def policy_path(r):
@@ -538,7 +549,8 @@ def main():
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
                 **({"commit_sha": r["commit_sha"]} if r.get("commit_sha") else {}),
-                "lists": [l.replace("_", "/", 1) for l in r["lists"]],
+                "lists": r["lists"],
+                **({"supplementary_citations": citation_evidence[repo.lower()]} if repo.lower() in citation_evidence else {}),
                 "official": owner.lower() in OFFICIAL_OWNERS,
             }
     if privacy_dropped:
@@ -547,7 +559,7 @@ def main():
     # The score reads only published fields, so the builder can recompute it.
     for _, rec in out:
         rec["score"], rec["grade"] = score_listing(rec, repo_meta[rec["repo"]], generated)
-    sources =sorted({l for m in repo_meta.values() for l in m["lists"]})
+    sources = sorted({l for repo in repo_meta for l in discovery_lists[repo.lower()]})
     # Rotate even for unchanged same-day data: a README may have changed while
     # its skill metadata stayed identical, so every refresh needs fresh evidence.
     head = {"generated": generated, "snapshot_id": uuid.uuid4().hex, "score_method": SCORE_METHOD, "sources": sources, "checks": [{"id": k, "label": v} for k, v in CHECKS]}

@@ -6,7 +6,7 @@
 
 Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.
 
-**160 accepted skills · 25 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**162 accepted skills · 26 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -19,6 +19,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [browserbase/skills](#browserbase--skills)
 - [coinpaprika/skills](#coinpaprika--skills)
 - [coreyhaines31/marketingskills](#coreyhaines31--marketingskills)
+- [costory-io/costory-finops-mcp-skills](#costory-io--costory-finops-mcp-skills)
 - [deanpeters/Product-Manager-Skills](#deanpeters--product-manager-skills)
 - [EmblemCompany/Agent-skills](#emblemcompany--agent-skills)
 - [Ericyoung-183/alpha-insights](#ericyoung-183--alpha-insights)
@@ -83,6 +84,15 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - **88/100 · B** · [revops](https://github.com/coreyhaines31/marketingskills/blob/main/skills/revops/SKILL.md) — When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#revops)
 - **86/100 · B** · [prospecting](https://github.com/coreyhaines31/marketingskills/blob/main/skills/prospecting/SKILL.md) — When the user wants to find, qualify, and build a list of prospects to reach out to, across B2B SaaS, general B2B, or local small businesses. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#prospecting)
 - **83/100 · B** · [sales-enablement](https://github.com/coreyhaines31/marketingskills/blob/main/skills/sales-enablement/SKILL.md) — When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#sales-enablement)
+
+<a id="costory-io--costory-finops-mcp-skills"></a>
+
+## costory-io/costory-finops-mcp-skills
+
+[Repository](https://github.com/costory-io/costory-finops-mcp-skills) · Publisher: [costory-io](https://github.com/costory-io) · [Suede listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/)
+
+- **81/100 · B** · [cost-change-investigation](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/skills/cost-change-investigation/SKILL.md) — Explain cost changes using contributor, timing, usage and event evidence from the hosted Costory MCP. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/)
+- **80/100 · B** · [costory-finops](https://github.com/costory-io/costory-finops-mcp-skills/blob/main/powers/costory/skills/costory-finops/SKILL.md) — Route cloud-spend questions to Costory cost queries, investigations, allocation, dashboards and reports. [Suede](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/)
 
 <a id="deanpeters--product-manager-skills"></a>
 

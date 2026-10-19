@@ -895,6 +895,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -2150,6 +2156,24 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

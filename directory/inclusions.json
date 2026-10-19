@@ -872,7 +872,10 @@
    "satori"
   ],
   "costory-io/costory-finops-mcp-skills": [
-   "bigquery"
+   "bigquery",
+   "cost-change-investigation",
+   "costory-finops",
+   "virtual-dimensions"
   ]
  },
  "skill_roots": {
@@ -977,7 +980,21 @@
    ".agents/skills/satori"
   ],
   "costory-io/costory-finops-mcp-skills": [
-   "plugins/costory/skills/bigquery"
+   "plugins/costory/skills/bigquery",
+   "plugins/costory/skills/cost-change-investigation",
+   "powers/costory/skills/costory-finops",
+   "plugins/costory/skills/virtual-dimensions"
+  ]
+ },
+ "citations": {
+  "costory-io/costory-finops-mcp-skills": [
+   {
+    "source": "TensorBlock/awesome-mcp-servers",
+    "commit": "0eaf3d154251efe8923c70dda758fc01bb9d48c0",
+    "path": "docs/cloud-platforms--services.md",
+    "target": "https://github.com/costory-io/costory-finops-mcp-skills",
+    "verified_at": "2026-10-19"
+   }
   ]
  }
 }

@@ -462,6 +462,8 @@ function crumbs(here, items) {
 
 const gradeChip = (s) => `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
 const listLink = (l) => `<a href="https://github.com/${esc(l)}" target="_blank" rel="noopener">${esc(l)}</a>`;
+const citationEvidence = (repo) => (data.repos[repo].supplementary_citations || []).map((c) =>
+  `\n        <p>Verified citation: <a href="https://github.com/${esc(c.source)}/blob/${esc(c.commit)}/${esc(c.path)}" target="_blank" rel="noopener">${esc(c.source)}</a>, checked ${esc(c.verified_at)}.</p>`).join("");
 const officialTag = (yes) => (yes ? ' <span class="tag">Official</span>' : "");
 
 // ------------------------------------------------------------------ badges
@@ -610,6 +612,7 @@ function skillReport(s) {
       skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
+    ...(data.repos[s.repo].supplementary_citations ? { supplementary_citations: data.repos[s.repo].supplementary_citations } : {}),
     security_scan_status: "not_scanned",
     badges: s.shielded ? badgePair(s) : [{ kind: "listing", src: `${BASE}/${skillPath(s)}badge.svg`, alt: "Suede Skills Directory: listed" }],
   };
@@ -936,7 +939,7 @@ ${pointRows}
 ${qualityBadgeBlock(here, s)}
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
-        <p>${s.lists.length ? `${esc(s.repo)} appears in ${plural(s.lists.length, "curated list")}: ${s.lists.map(listLink).join(", ")}.` : `${esc(s.repo)} is listed from its publisher's official collection or a listing request.`}</p>
+        <p>${s.lists.length ? `${esc(s.repo)} appears in ${plural(s.lists.length, "curated list")}: ${s.lists.map(listLink).join(", ")}.` : `${esc(s.repo)} is listed from its publisher's official collection or a listing request.`}</p>${citationEvidence(s.repo)}
       </section>
 ${related.length ? `      <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More ${esc(cat.short)} skills</h2>
@@ -1055,7 +1058,7 @@ ${skillTable(here, r.skills, { id: "repo-skills", showRepo: false, caption: "ski
       </section>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this repository is cited</h2>
-        <p>${r.lists.length ? `${esc(r.repo)} appears in ${plural(r.lists.length, "curated list")}: ${r.lists.map(listLink).join(", ")}.` : `${esc(r.repo)} is listed as its publisher's official collection or from a listing request.`}</p>
+        <p>${r.lists.length ? `${esc(r.repo)} appears in ${plural(r.lists.length, "curated list")}: ${r.lists.map(listLink).join(", ")}.` : `${esc(r.repo)} is listed as its publisher's official collection or from a listing request.`}</p>${citationEvidence(r.repo)}
       </section>
 ${relatedRepos.length ? `      <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More ${esc(primary.short)} collections</h2>
@@ -1420,6 +1423,7 @@ function renderMethodology() {
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
+        <p>Reviewed listings may also supply supplementary citations from independent curated collections. Each document is pinned to a commit, checked for a direct repository link and reverified on refresh. These citations use the same scoring rubric and do not expand the discovery lists above.</p>
         <p>Every SKILL.md runs through a required frontmatter check and seven graded checks: five on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. These checks decide the listing. The quality score then measures how much each listed skill gives an agent to work with.</p>
         <div class="table-wrap">
           <table class="checks">

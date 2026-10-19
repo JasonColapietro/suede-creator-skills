@@ -102,19 +102,20 @@
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
+        <p>Reviewed listings may also supply supplementary citations from independent curated collections. Each document is pinned to a commit, checked for a direct repository link and reverified on refresh. These citations use the same scoring rubric and do not expand the discovery lists above.</p>
         <p>Every SKILL.md runs through a required frontmatter check and seven graded checks: five on the SKILL.md format, following the <a href="https://agentskills.io/specification" target="_blank" rel="noopener">Agent Skills format</a>, plus a declared license and a commit to the repository in the last year. These checks decide the listing. The quality score then measures how much each listed skill gives an agent to work with.</p>
         <div class="table-wrap">
           <table class="checks">
             <thead><tr><th scope="col">Check</th><th scope="col">What passes</th><th scope="col">Listed skills passing</th></tr></thead>
             <tbody>
-            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>3,795 of 3,795</td></tr>
-            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>3,795 of 3,795</td></tr>
-            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>3,679 of 3,795</td></tr>
-            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>3,786 of 3,795</td></tr>
-            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,731 of 3,795</td></tr>
-            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>3,693 of 3,795</td></tr>
-            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>3,795 of 3,795</td></tr>
-            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>3,795 of 3,795</td></tr>
+            <tr><td><code>frontmatter</code></td><td>Frontmatter parses and declares a name and a description</td><td>3,798 of 3,798</td></tr>
+            <tr><td><code>name_format</code></td><td>Name uses lowercase letters, digits and hyphens, 64 characters or fewer</td><td>3,798 of 3,798</td></tr>
+            <tr><td><code>name_matches_folder</code></td><td>Name matches the skill's folder name</td><td>3,682 of 3,798</td></tr>
+            <tr><td><code>description_length</code></td><td>Description is between 50 and 1,024 characters</td><td>3,789 of 3,798</td></tr>
+            <tr><td><code>description_trigger</code></td><td>Description says when an agent should use the skill</td><td>2,734 of 3,798</td></tr>
+            <tr><td><code>concise_body</code></td><td>SKILL.md body is 500 lines or fewer</td><td>3,696 of 3,798</td></tr>
+            <tr><td><code>license</code></td><td>A license is declared in the frontmatter or the repository</td><td>3,798 of 3,798</td></tr>
+            <tr><td><code>maintained</code></td><td>Repository has a commit in the last 12 months</td><td>3,798 of 3,798</td></tr>
             </tbody>
           </table>
         </div>
@@ -145,13 +146,13 @@
             <thead><tr><th scope="col">Grade</th><th scope="col">Score</th><th scope="col">Listed skills</th></tr></thead>
             <tbody>
             <tr><td><span class="grade grade-a">A</span></td><td>90–99</td><td>125</td></tr>
-            <tr><td><span class="grade grade-b">B</span></td><td>80–89</td><td>1,573</td></tr>
+            <tr><td><span class="grade grade-b">B</span></td><td>80–89</td><td>1,576</td></tr>
             <tr><td><span class="grade grade-c">C</span></td><td>70–79</td><td>1,373</td></tr>
             <tr><td><span class="grade grade-d">D</span></td><td>0–69</td><td>724</td></tr>
             </tbody>
           </table>
         </div>
-        <p>Across 3,795 listed skills, the highest score is 95 and the median is 78. No listed skill scores 96–99, and 1,698 score 80–99 and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
+        <p>Across 3,798 listed skills, the highest score is 95 and the median is 78. No listed skill scores 96–99, and 1,701 score 80–99 and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
         <p>The score measures the recorded SKILL.md structure and description, instruction depth, bundled files, license declaration, maintenance and citation evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
         <h3>Security scan status is separate</h3>
         <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
@@ -186,7 +187,7 @@
       </section>
       <section class="panel" aria-labelledby="pages-title">
         <h2 id="pages-title">Which skills get a full page</h2>
-        <p>Every listed skill appears in its category directory and on its repository's page. Skills that pass all seven graded checks get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. 730 skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
+        <p>Every listed skill appears in its category directory and on its repository's page. Skills that pass all seven graded checks get a page of their own once the directory's editors have written their one-sentence summary, up to twelve per repository, chosen by how much ships with the skill: reference files, scripts, assets and a structured SKILL.md. A skill keeps its page while it stays listed, so its README badge and link keep working. Each page carries the summary, a pre-install list of the scripts, commands, environment variables and network use found in the skill's files, install steps (or, where the license restricts copying, the publisher's terms), and a README badge. 733 skills have a full page in this snapshot. A repository whose single listed skill has a page is listed through that page.</p>
       </section>
       <section class="panel" aria-labelledby="cat-title">
         <h2 id="cat-title">Categories</h2>

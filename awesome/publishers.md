@@ -4,7 +4,7 @@
 
 # Publishers and repositories
 
-**159 repositories · 3,795 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
+**159 repositories · 3,798 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
 
 Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
@@ -43,7 +43,7 @@ Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://s
 | [conorluddy/ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill) | [conorluddy](https://github.com/conorluddy) | 1 | [Testing](categories/testing-qa.md#conorluddy--ios-simulator-skill) | [Listing](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/) |
 | [Continuum-AI-Corp/OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | [Continuum-AI-Corp](https://github.com/Continuum-AI-Corp) | 1 | [AI agents](categories/ai-agents-llm.md#continuum-ai-corp--orcareplay) | [Listing](https://skills.suedeai.ai/directory/continuum-ai-corp/orcareplay/orca-replay/) |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | [coreyhaines31](https://github.com/coreyhaines31) | 49 | [Marketing](categories/marketing-seo.md#coreyhaines31--marketingskills) · [Product](categories/product-management.md#coreyhaines31--marketingskills) · [Media](categories/media-creative.md#coreyhaines31--marketingskills) · [Business](categories/business-finance.md#coreyhaines31--marketingskills) | [Listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/) |
-| [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) | [costory-io](https://github.com/costory-io) | 1 | [Data](categories/data-databases.md#costory-io--costory-finops-mcp-skills) | [Listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/) |
+| [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) | [costory-io](https://github.com/costory-io) | 4 | [Business](categories/business-finance.md#costory-io--costory-finops-mcp-skills) · [Data](categories/data-databases.md#costory-io--costory-finops-mcp-skills) | [Listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/) |
 | [csthink/dashmotion](https://github.com/csthink/dashmotion) | [csthink](https://github.com/csthink) | 1 | [Media](categories/media-creative.md#csthink--dashmotion) | [Listing](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/) |
 | [cypress-io/ai-toolkit](https://github.com/cypress-io/ai-toolkit) | [cypress-io](https://github.com/cypress-io) | 5 | [Testing](categories/testing-qa.md#cypress-io--ai-toolkit) | [Listing](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/) |
 | [danjdewhurst/story-skills](https://github.com/danjdewhurst/story-skills) | [danjdewhurst](https://github.com/danjdewhurst) | 24 | [Writing](categories/writing-content.md#danjdewhurst--story-skills) | [Listing](https://skills.suedeai.ai/directory/danjdewhurst/story-skills/) |
