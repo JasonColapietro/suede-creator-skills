@@ -84,6 +84,16 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
 
+    def test_apache_space_version_label_keeps_its_open_license_and_source_revision(self):
+        revised = {**record("license-publisher/skills", "reviewed-skill"),
+                   "fm_license": "Apache 2.0", "repo_license": "Apache-2.0",
+                   "commit_sha": "a" * 40}
+        data = self.curate({}, extra_records=(revised,))
+        skill = next(s for s in data["skills"] if s["repo"] == "license-publisher/skills")
+        self.assertEqual(skill["license"], "Apache-2.0")
+        self.assertTrue(skill["open_license"])
+        self.assertEqual(data["repos"]["license-publisher/skills"]["commit_sha"], "a" * 40)
+
     def test_same_day_refresh_rotates_snapshot_even_when_skill_data_is_unchanged(self):
         first, second = self.curate({}), self.curate({})
         self.assertRegex(first['snapshot_id'], r'^[a-f0-9]{32}$')

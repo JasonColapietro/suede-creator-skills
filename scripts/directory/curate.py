@@ -181,7 +181,7 @@ def normalize_license(raw, repo_license, license_file):
     table = [
         (r"^mit( license)?$", "MIT"),
         (r"^mit-0$", "MIT-0"),
-        (r"^apache(-| license,? version )2\.0( license)?$", "Apache-2.0"),
+        (r"^apache(-| | license,? version )2\.0( license)?$", "Apache-2.0"),
         (r"^(bsd-3-clause|3[- ]clause bsd)( license)?$", "BSD-3-Clause"),
         (r"^bsd-2-clause( license)?$", "BSD-2-Clause"),
         (r"^bsd( license)?$", "BSD"),
@@ -513,6 +513,7 @@ def main():
                 "withheld": withheld.get(repo.lower(), 0),
                 "branch": r["branch"],
                 "commit_date": r["commit_date"][:10],
+                **({"commit_sha": r["commit_sha"]} if r.get("commit_sha") else {}),
                 "lists": [l.replace("_", "/", 1) for l in r["lists"]],
                 "official": owner.lower() in OFFICIAL_OWNERS,
             }

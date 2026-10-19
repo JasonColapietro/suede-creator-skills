@@ -1,6 +1,16 @@
 {
- "repositories": ["appierun/appie-mcp"],
+ "repositories": [
+  "appierun/appie-mcp",
+  "pbakaus/impeccable"
+ ],
  "skills": {
-  "appierun/appie-mcp": ["appie-article-writer", "appie-chatbot", "appie-url-shortener"]
+  "appierun/appie-mcp": [
+   "appie-article-writer",
+   "appie-chatbot",
+   "appie-url-shortener"
+  ],
+  "pbakaus/impeccable": [
+   "impeccable"
+  ]
  }
 }
