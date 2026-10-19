@@ -6,9 +6,9 @@
 
 Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change.
 
-**65 accepted skills · 22 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**93 accepted skills · 28 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **62–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **58–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede listing.
 
@@ -16,15 +16,19 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 <summary>Browse publishers in this category</summary>
 
 - [1NickPappas/move-code-quality-skill](#1nickpappas--move-code-quality-skill)
+- [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [coderabbitai/skills](#coderabbitai--skills)
 - [eduardo-sl/go-agent-skills](#eduardo-sl--go-agent-skills)
 - [flutter/skills](#flutter--skills)
 - [garrytan/gstack](#garrytan--gstack)
 - [getsentry/skills](#getsentry--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
+- [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
 - [mcollina/skills](#mcollina--skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
@@ -33,9 +37,11 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 - [NVIDIA/skills](#nvidia--skills)
 - [obra/superpowers](#obra--superpowers)
 - [obra/superpowers-lab](#obra--superpowers-lab)
+- [openai/skills](#openai--skills)
 - [phuryn/pm-skills](#phuryn--pm-skills)
 - [Qiuner/birdview](#qiuner--birdview)
 - [trailofbits/skills](#trailofbits--skills)
+- [vercel-labs/agent-skills](#vercel-labs--agent-skills)
 - [wondelai/skills](#wondelai--skills)
 
 </details>
@@ -48,6 +54,15 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 - **64/100 · D** · [move-code-quality](https://github.com/1NickPappas/move-code-quality-skill/blob/main/SKILL.md) — Analyzes Move language packages against the official Move Book Code Quality Checklist. [Suede](https://skills.suedeai.ai/directory/1nickpappas/move-code-quality-skill/#move-code-quality)
 
+<a id="anthropics--claude-plugins-official"></a>
+
+## anthropics/claude-plugins-official
+
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+
+- **76/100 · C** · [command-development](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/command-development/SKILL.md) — This skill should be used when the user asks to "create a slash command", "add a command", "write a custom command", "define command arguments", "use command frontmatter", "organize commands", "create command with file references",… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#command-development)
+- **73/100 · C** · [skill-development](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md) — This skill should be used when the user wants to "create a skill", "add a skill to plugin", "write a new skill", "improve skill description", "organize skill content", or needs guidance on skill structure, progressive disclosure, or… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#skill-development)
+
 <a id="avelikiy--great-cto"></a>
 
 ## avelikiy/great\_cto
@@ -56,6 +71,16 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 - **82/100 · B** · [anti-patterns](https://github.com/avelikiy/great_cto/blob/main/skills/anti-patterns/SKILL.md) — Lists known SDLC anti-patterns that agents must reject when reviewing architecture, plans, code, or post-mortems, used by the architect, pm, senior-dev, and l3-support agents. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/anti-patterns/)
 - **77/100 · C** · [archetype-review-base](https://github.com/avelikiy/great_cto/blob/main/skills/archetype-review-base/SKILL.md) — Shared review framework that every domain reviewer (pci, oracle, gov, edtech, healthcare, mlops, etc.) MUST follow. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#archetype-review-base)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **84/100 · B** · [securing-s3-buckets](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/storage-skills/securing-s3-buckets/SKILL.md) — Create and secure S3 buckets following AWS best practices for access control, encryption, monitoring, and remediation of misconfigurations. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#securing-s3-buckets)
+- **74/100 · C** · [creating-secrets-using-best-practices](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/security-and-identity-skills/creating-secrets-using-best-practices/SKILL.md) — Creates and manages secrets in AWS Secrets Manager following security best practices. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#creating-secrets-using-best-practices)
+- **74/100 · C** · [launching-ec2-instance-with-best-practices](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/ec2-skills/launching-ec2-instance-with-best-practices/SKILL.md) — Launches an EC2 instance with secure, cost-efficient defaults including AMI selection, burstable instance sizing, least-privilege IAM roles, hardened security groups, encrypted EBS volumes, and comprehensive tagging. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#launching-ec2-instance-with-best-practices)
 
 <a id="coderabbitai--skills"></a>
 
@@ -108,6 +133,32 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 - **75/100 · C** · [find-bugs](https://github.com/getsentry/skills/blob/main/skills/find-bugs/SKILL.md) — Find bugs, security vulnerabilities, and code quality issues in local branch changes. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#find-bugs)
 - **75/100 · C** · [typing-exclusion-worker](https://github.com/getsentry/skills/blob/main/skills/typing-exclusion-worker/SKILL.md) — Python typing exclusion worker: remove assigned mypy exclusion modules in small scoped batches, fix typing issues, run validation, and produce a structured completion summary. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#typing-exclusion-worker)
 
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **81/100 · B** · [slang-shader-engineer](https://github.com/github/awesome-copilot/blob/main/skills/slang-shader-engineer/SKILL.md) — Use when working with Slang shaders, shader modules, HLSL-compatible GPU code, graphics pipelines, compute shaders, tessellation, ray tracing, parameter blocks, generics, interfaces, capabilities, cross-compilation, shader optimization,… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#slang-shader-engineer)
+- **74/100 · C** · [refactor-plan](https://github.com/github/awesome-copilot/blob/main/skills/refactor-plan/SKILL.md) — Create a concrete plan before starting a multi-file refactor. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#refactor-plan)
+- **72/100 · C** · [geofeed-tuner](https://github.com/github/awesome-copilot/blob/main/skills/geofeed-tuner/SKILL.md) — Use this skill whenever the user mentions IP geolocation feeds, RFC 8805, geofeeds, or wants help creating, tuning, validating, or publishing a self-published IP geolocation feed in CSV format. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#geofeed-tuner)
+- **71/100 · C** · [make-repo-contribution](https://github.com/github/awesome-copilot/blob/main/skills/make-repo-contribution/SKILL.md) — All changes to code must follow the guidance documented in the repository. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#make-repo-contribution)
+- **69/100 · D** · [generate-custom-instructions-from-codebase](https://github.com/github/awesome-copilot/blob/main/skills/generate-custom-instructions-from-codebase/SKILL.md) — Migration and code evolution instructions generator for GitHub Copilot. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#generate-custom-instructions-from-codebase)
+- **69/100 · D** · [pr-screenshots](https://github.com/github/awesome-copilot/blob/main/skills/pr-screenshots/SKILL.md) — Embed before/after screenshots and annotated images in pull request descriptions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pr-screenshots)
+- **69/100 · D** · [refactor](https://github.com/github/awesome-copilot/blob/main/skills/refactor/SKILL.md) — Surgical code refactoring to improve maintainability without changing behavior. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#refactor)
+- **69/100 · D** · [refactor-method-complexity-reduce](https://github.com/github/awesome-copilot/blob/main/skills/refactor-method-complexity-reduce/SKILL.md) — Refactor given method \`$\{input:methodName\}\` to reduce its cognitive complexity to \`$\{input:complexityThreshold\}\` or below, by extracting helper methods. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#refactor-method-complexity-reduce)
+- **67/100 · D** · [semantic-kernel](https://github.com/github/awesome-copilot/blob/main/skills/semantic-kernel/SKILL.md) — Create, update, refactor, explain, or review Semantic Kernel solutions using shared guidance plus language-specific references for .NET and Python. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#semantic-kernel)
+- **65/100 · D** · [csharp-docs](https://github.com/github/awesome-copilot/blob/main/skills/csharp-docs/SKILL.md) — Ensure that C# types are documented with XML comments and follow best practices for documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#csharp-docs)
+- **65/100 · D** · [java-springboot](https://github.com/github/awesome-copilot/blob/main/skills/java-springboot/SKILL.md) — Get best practices for developing applications with Spring Boot. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-springboot)
+- **65/100 · D** · [kotlin-springboot](https://github.com/github/awesome-copilot/blob/main/skills/kotlin-springboot/SKILL.md) — Get best practices for developing applications with Spring Boot and Kotlin. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#kotlin-springboot)
+- **63/100 · D** · [comment-code-generate-a-tutorial](https://github.com/github/awesome-copilot/blob/main/skills/comment-code-generate-a-tutorial/SKILL.md) — Transform this Python script into a polished, beginner-friendly project by refactoring the code, adding clear instructional comments, and generating a complete markdown tutorial. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#comment-code-generate-a-tutorial)
+- **62/100 · D** · [dotnet-best-practices](https://github.com/github/awesome-copilot/blob/main/skills/dotnet-best-practices/SKILL.md) — Ensure .NET/C# code meets best practices for the solution/project. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#dotnet-best-practices)
+- **62/100 · D** · [java-refactoring-extract-method](https://github.com/github/awesome-copilot/blob/main/skills/java-refactoring-extract-method/SKILL.md) — Refactoring using Extract Methods in Java Language [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-refactoring-extract-method)
+- **62/100 · D** · [java-refactoring-remove-parameter](https://github.com/github/awesome-copilot/blob/main/skills/java-refactoring-remove-parameter/SKILL.md) — Refactoring using Remove Parameter in Java Language [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-refactoring-remove-parameter)
+- **61/100 · D** · [java-docs](https://github.com/github/awesome-copilot/blob/main/skills/java-docs/SKILL.md) — Ensure that Java types are documented with Javadoc comments and follow best practices for documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-docs)
+- **59/100 · D** · [arch-linux-triage](https://github.com/github/awesome-copilot/blob/main/skills/arch-linux-triage/SKILL.md) — Triage and resolve Arch Linux issues with pacman, systemd, and rolling-release best practices. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#arch-linux-triage)
+- **58/100 · D** · [review-and-refactor](https://github.com/github/awesome-copilot/blob/main/skills/review-and-refactor/SKILL.md) — Review and refactor code in your project according to defined instructions [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#review-and-refactor)
+
 <a id="hashicorp--agent-skills"></a>
 
 ## hashicorp/agent-skills
@@ -133,6 +184,15 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 - **84/100 · B** · [code-reviewer](https://github.com/jeffallan/claude-skills/blob/main/skills/code-reviewer/SKILL.md) — Reviews code diffs and files for bugs, security vulnerabilities, code smells, N+1 queries, and naming issues, then produces a prioritized, structured review report. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/code-reviewer/)
 - **84/100 · B** · [legacy-modernizer](https://github.com/jeffallan/claude-skills/blob/main/skills/legacy-modernizer/SKILL.md) — Designs incremental migration strategies, identifies service boundaries, produces dependency maps and migration roadmaps, and generates API facade designs for aging codebases. [Suede](https://skills.suedeai.ai/directory/jeffallan/claude-skills/#legacy-modernizer)
+
+<a id="mattpocock--skills"></a>
+
+## mattpocock/skills
+
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+
+- **81/100 · B** · [code-review](https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md) — Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#code-review)
+- **75/100 · C** · [scaffold-exercises](https://github.com/mattpocock/skills/blob/main/skills/misc/scaffold-exercises/SKILL.md) — Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#scaffold-exercises)
 
 <a id="mblode--agent-skills"></a>
 
@@ -169,7 +229,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 [Repository](https://github.com/modem-dev/skills) · Publisher: [modem-dev](https://github.com/modem-dev) · [Suede listing](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
 
-- **75/100 · C** · [write-discoverable-code](https://github.com/modem-dev/skills/blob/main/write-discoverable-code/SKILL.md) — Sets rules for writing and renaming functions, types, constants, files, and error messages so coding agents and humans can find code through plain-text search. [Suede](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
+- **72/100 · C** · [write-discoverable-code](https://github.com/modem-dev/skills/blob/main/write-discoverable-code/SKILL.md) — Sets rules for writing and renaming functions, types, constants, files, and error messages so coding agents and humans can find code through plain-text search. [Suede](https://skills.suedeai.ai/directory/modem-dev/skills/write-discoverable-code/)
 
 <a id="neolabhq--context-engineering-kit"></a>
 
@@ -211,6 +271,14 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 - **76/100 · C** · [finding-duplicate-functions](https://github.com/obra/superpowers-lab/blob/main/skills/finding-duplicate-functions/SKILL.md) — Audits a codebase for semantic duplication, finding functions that do the same thing under different names or implementations, especially in LLM-generated code. [Suede](https://skills.suedeai.ai/directory/obra/superpowers-lab/finding-duplicate-functions/)
 
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **72/100 · C** · [yeet](https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md) — Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (\`gh\`). [Suede](https://skills.suedeai.ai/directory/openai/skills/#yeet)
+
 <a id="phuryn--pm-skills"></a>
 
 ## phuryn/pm-skills
@@ -244,6 +312,14 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 - **84/100 · B** · [code-maturity-assessor](https://github.com/trailofbits/skills/blob/main/plugins/building-secure-contracts/skills/code-maturity-assessor/SKILL.md) — Systematic code maturity assessment using Trail of Bits' 9-category framework. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#code-maturity-assessor)
 - **84/100 · B** · [guidelines-advisor](https://github.com/trailofbits/skills/blob/main/plugins/building-secure-contracts/skills/guidelines-advisor/SKILL.md) — Smart contract development advisor based on Trail of Bits' best practices. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#guidelines-advisor)
 - **84/100 · B** · [review-walkthrough](https://github.com/trailofbits/skills/blob/main/plugins/review-walkthrough/skills/review-walkthrough/SKILL.md) — Generates an interactive HTML walkthrough for reviewing code changes. [Suede](https://skills.suedeai.ai/directory/trailofbits/skills/#review-walkthrough)
+
+<a id="vercel-labs--agent-skills"></a>
+
+## vercel-labs/agent-skills
+
+[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
+
+- **67/100 · D** · [vercel-react-best-practices](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md) — React and Next.js performance optimization guidelines from Vercel Engineering. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-react-best-practices)
 
 <a id="wondelai--skills"></a>
 

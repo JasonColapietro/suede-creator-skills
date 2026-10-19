@@ -17,6 +17,7 @@ test('0–99 quality scoring leads the catalog and every listing, with higher sc
   assert.ok(index.includes('# Suede Awesome Everything\n\n**AI agent skills, scored 0–99.**'));
   assert.ok(index.indexOf('0–99 quality scores') >= 0 && index.indexOf('0–99 quality scores') < index.indexOf('## Contents'));
   assert.ok(index.includes('## Compare 0–99 quality scores'));
+  assert.ok(index.includes('The rubric totals **100 points**'));
   assert.ok(index.includes('published scores are capped at 99; 100 is reserved'));
   for (const grade of ['A', 'B', 'C', 'D']) {
     const count = inputs.data.skills.filter((s) => s.grade === grade).length;

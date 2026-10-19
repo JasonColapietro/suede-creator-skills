@@ -100,6 +100,55 @@ elif not any(a.endswith("curate.py") for a in args):
         self.assertFalse(self.snapshot.exists(), "parser ran on stale data")
         return result
 
+    def test_reviewed_hidden_roots_skip_other_distribution_and_system_copies(self):
+        for relative in ("skills/.curated/public/SKILL.md", "skills/.system/internal/SKILL.md", "mirror/other/SKILL.md"):
+            target = self.upstream / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("published source data\n")
+        self.commit("add distributions")
+        self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+        (self.project / "directory/inclusions.json").write_text(json.dumps({"repositories": [], "skill_roots": {"fixture/skills": ["skills/.curated"]}}))
+        snapshot = self.refresh()
+        self.assertEqual([r["dir"] for r in snapshot["fixture__skills"]["parsed"]], ["skills/.curated/public"])
+
+    def test_explicitly_accepted_skill_pack_can_have_awesome_in_its_name(self):
+        remote = self.remotes / "fixture/awesome-skill-pack"
+        self.git("clone", "-q", "--bare", str(self.upstream), str(remote))
+        (self.project / "directory/inclusions.json").write_text(json.dumps({"repositories": ["fixture/awesome-skill-pack"]}))
+        snapshot = self.refresh()
+        self.assertIn("fixture__awesome-skill-pack", snapshot)
+        self.assertNotIn("travisvn__awesome-claude-skills", snapshot)
+
+    def test_reviewed_root_cannot_escape_source_checkout_or_disappear_silently(self):
+        for root in ("../outside", "skills/.missing"):
+            with self.subTest(root=root):
+                (self.project / "directory/inclusions.json").write_text(json.dumps({"repositories": [], "skill_roots": {"fixture/skills": [root]}}))
+                result = self.refresh(succeeds=False)
+                self.assertIn("reviewed skill root", result.stderr)
+
+    def test_explicit_readme_license_and_uppercase_per_skill_license_are_detected(self):
+        (self.upstream / "LICENSE").unlink()
+        (self.upstream / "README.md").write_text("https://github.com/fixture/skills\n\n## License\n\nMIT\n")
+        self.commit("declare README license")
+        self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+        parsed = self.refresh()["fixture__skills"]["parsed"][0]
+        self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("MIT", "README.md"))
+        (self.upstream / "old-skill/LICENSE.TXT").write_text("Apache License Version 2.0\n")
+        self.commit("declare per-skill license")
+        self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+        parsed = self.refresh()["fixture__skills"]["parsed"][0]
+        self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("Apache-2.0", "old-skill/LICENSE.TXT"))
+
+    def test_readme_license_requires_a_complete_explicit_declaration(self):
+        (self.upstream / "LICENSE").unlink()
+        for declaration, expected in (("[Apache-2.0](LICENSE)", "Apache-2.0"), ("MIT except for commercial use", None)):
+            with self.subTest(declaration=declaration):
+                (self.upstream / "README.md").write_text("https://github.com/fixture/skills\n\n## License\n\n" + declaration + "\n\n---\n\nProject footer\n")
+                self.commit("update declaration")
+                self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+                parsed = self.refresh()["fixture__skills"]["parsed"][0]
+                self.assertEqual(parsed["repo_license"], expected)
+
     def test_reused_checkouts_read_updates_deletions_and_new_default_branch(self):
         initial = self.refresh()
         self.assertIn("old-skill/SKILL.md", initial["fixture__skills"]["files"])

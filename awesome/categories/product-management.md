@@ -6,7 +6,7 @@
 
 Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask.
 
-**233 accepted skills · 15 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**237 accepted skills · 16 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–92 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -21,6 +21,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 - [Digidai/product-manager-skills](#digidai--product-manager-skills)
 - [firecrawl/skills](#firecrawl--skills)
 - [garrytan/gstack](#garrytan--gstack)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
@@ -155,6 +156,17 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 - **80/100 · B** · [gstack-openclaw-ceo-review](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md) — Reviews a plan or proposal CEO-style by poking holes in the approach, thinking bigger about scope, and deciding whether to expand or reduce it. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-ceo-review/)
 - **80/100 · B** · [gstack-openclaw-office-hours](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-office-hours/SKILL.md) — Brainstorms and evaluates whether a new product idea is worth building, and thinks through design direction before any code is written. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-office-hours/)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **78/100 · C** · [impediment-prioritization](https://github.com/github/awesome-copilot/blob/main/skills/impediment-prioritization/SKILL.md) — Ranks any list of impediments and their countermeasures using a value-stream scoring model (ROI, Cost to Implement, Ease of Deployment, Risk Factor) and a fixed prioritization formula. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#impediment-prioritization)
+- **74/100 · C** · [breakdown-epic-pm](https://github.com/github/awesome-copilot/blob/main/skills/breakdown-epic-pm/SKILL.md) — Prompt for creating an Epic Product Requirements Document (PRD) for a new epic. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#breakdown-epic-pm)
+- **69/100 · D** · [gen-specs-as-issues](https://github.com/github/awesome-copilot/blob/main/skills/gen-specs-as-issues/SKILL.md) — This workflow guides you through a systematic approach to identify missing features, prioritize them, and create detailed specifications for implementation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gen-specs-as-issues)
+- **69/100 · D** · [prd](https://github.com/github/awesome-copilot/blob/main/skills/prd/SKILL.md) — Generate high-quality Product Requirements Documents (PRDs) for software systems and AI-powered features. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#prd)
 
 <a id="gooseworks-ai--goose-skills"></a>
 

@@ -25,7 +25,7 @@ def record(repo, name):
 
 
 class DirectoryInclusionTests(unittest.TestCase):
-    def curate(self, scopes, exclusions=None, extra_records=()):
+    def curate(self, scopes, exclusions=None, extra_records=(), roots=None):
         with tempfile.TemporaryDirectory(prefix="directory-inclusions-") as tmp:
             work = Path(tmp)
             records = [record("publisher/skills", name) for name in
@@ -37,7 +37,7 @@ class DirectoryInclusionTests(unittest.TestCase):
                 if r.get("description")}
             inputs = {
                 "raw": records, "labels": labels,
-                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes},
+                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}},
                 "exclusions": exclusions or {},
             }
             for name, value in inputs.items():
@@ -83,6 +83,62 @@ class DirectoryInclusionTests(unittest.TestCase):
         data = self.curate({})
         self.assertEqual(len(data["skills"]), 5)
         self.assertEqual(data["repos"]["publisher/skills"]["withheld"], 0)
+
+    def test_reviewed_major_scopes_withhold_policy_and_demonstration_skills(self):
+        accepted = json.loads((ROOT / "directory/inclusions.json").read_text())
+        cases = [
+            ("apify/agent-skills", "apify-ultimate-scraper", "skills/apify-ultimate-scraper",
+             "apify-actor-development", "skills/apify-actor-development"),
+            ("aws/agent-toolkit-for-aws", "aws-social-messaging", "skills/specialized-skills/customer-communications-skills/aws-social-messaging",
+             "aws-serverless", "skills/core-skills/aws-serverless"),
+            ("anthropics/claude-plugins-official", "example-command", "plugins/example-plugin/skills/example-command",
+             "agent-development", "plugins/plugin-dev/skills/agent-development"),
+        ]
+        candidates = []
+        for repo, withheld, withheld_path, public, public_path in cases:
+            # Deliberately well-formed, neutral metadata: reviewed name scope
+            # must still hold these entries if upstream wording changes.
+            candidates.extend({**record(repo, name), "dir": path}
+                              for name, path in ((withheld, withheld_path), (public, public_path)))
+        data = self.curate(accepted["skills"], extra_records=candidates, roots=accepted["skill_roots"])
+        for repo, withheld, _, public, _ in cases:
+            with self.subTest(repo=repo):
+                self.assertEqual({s["name"] for s in data["skills"] if s["repo"] == repo}, {public})
+                self.assertGreaterEqual(data["repos"][repo]["withheld"], 1)
+                self.assertTrue(data["repos"][repo]["scoped_install"])
+
+    def test_refresh_keeps_recorded_source_revision_without_inventing_legacy_revisions(self):
+        revised = {**record("revision-publisher/skills", "recorded-skill"), "commit_sha": "a" * 40}
+        data = self.curate({}, extra_records=(revised,))
+        self.assertEqual(data["repos"]["revision-publisher/skills"]["commit_sha"], "a" * 40)
+        self.assertNotIn("commit_sha", data["repos"]["publisher/skills"])
+
+    def test_apache_space_version_label_keeps_its_open_license_and_source_revision(self):
+        revised = {**record("license-publisher/skills", "reviewed-skill"),
+                   "fm_license": "Apache 2.0", "repo_license": "Apache-2.0",
+                   "commit_sha": "a" * 40}
+        data = self.curate({}, extra_records=(revised,))
+        skill = next(s for s in data["skills"] if s["repo"] == "license-publisher/skills")
+        self.assertEqual(skill["license"], "Apache-2.0")
+        self.assertTrue(skill["open_license"])
+        self.assertEqual(data["repos"]["license-publisher/skills"]["commit_sha"], "a" * 40)
+
+    def test_reviewed_hidden_distribution_root_still_excludes_fixtures(self):
+        root = ".github/plugins/published/skills"
+        public = {**record("reviewed/skills", "public-skill"), "dir": root + "/public-skill"}
+        fixture = {**record("reviewed/skills", "fixture-skill"), "dir": root + "/tests/fixture-skill"}
+        outside = {**record("reviewed/skills", "outside-skill"), "dir": "unreviewed/outside-skill"}
+        plain = self.curate({}, extra_records=(public, fixture))
+        self.assertFalse(any(s["repo"] == "reviewed/skills" for s in plain["skills"]))
+        reviewed = self.curate({}, extra_records=(public, fixture, outside), roots={"reviewed/skills": [root]})
+        self.assertEqual([s["name"] for s in reviewed["skills"] if s["repo"] == "reviewed/skills"], ["public-skill"])
+
+    def test_named_scope_never_offers_whole_repository_install_even_when_all_current_names_pass(self):
+        names = ["accepted-one", "accepted-two", "not-requested", "future-skill"]
+        scoped = self.curate({"publisher/skills": names})
+        self.assertEqual(scoped["repos"]["publisher/skills"]["withheld"], 0)
+        self.assertNotIn("Install every skill", self.repository_page(scoped))
+        self.assertIn("Install every skill", self.repository_page(self.curate({})))
 
     def test_same_day_refresh_rotates_snapshot_even_when_skill_data_is_unchanged(self):
         first, second = self.curate({}), self.curate({})

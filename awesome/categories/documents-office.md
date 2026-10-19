@@ -6,7 +6,7 @@
 
 Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to read, create and edit office documents that open cleanly in the apps people use.
 
-**40 accepted skills · 17 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**55 accepted skills · 22 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=documents-office&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -15,16 +15,21 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 <details>
 <summary>Browse publishers in this category</summary>
 
+- [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [anthropics/skills](#anthropics--skills)
 - [firecrawl/skills](#firecrawl--skills)
 - [garrytan/gstack](#garrytan--gstack)
 - [getsentry/skills](#getsentry--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [googleworkspace/cli](#googleworkspace--cli)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
+- [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
 - [MiniMax-AI/skills](#minimax-ai--skills)
+- [nextlevelbuilder/ui-ux-pro-max-skill](#nextlevelbuilder--ui-ux-pro-max-skill)
+- [openai/skills](#openai--skills)
 - [Orchestra-Research/AI-Research-SKILLs](#orchestra-research--ai-research-skills)
 - [product-on-purpose/pm-skills](#product-on-purpose--pm-skills)
 - [PSPDFKit-labs/nutrient-agent-skill](#pspdfkit-labs--nutrient-agent-skill)
@@ -34,6 +39,14 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 - [zarazhangrui/frontend-slides](#zarazhangrui--frontend-slides)
 
 </details>
+
+<a id="anthropics--claude-plugins-official"></a>
+
+## anthropics/claude-plugins-official
+
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+
+- **84/100 · B** · [math-olympiad](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/math-olympiad/skills/math-olympiad/SKILL.md) — Solve competition math problems (IMO, Putnam, USAMO, AIME) with adversarial verification that catches the errors self-verification misses. [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#math-olympiad)
 
 <a id="anthropics--skills"></a>
 
@@ -69,6 +82,24 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 [Repository](https://github.com/getsentry/skills) · Publisher: [getsentry](https://github.com/getsentry) · [Suede listing](https://skills.suedeai.ai/directory/getsentry/skills/)
 
 - **84/100 · B** · [presentation-creator](https://github.com/getsentry/skills/blob/main/skills/presentation-creator/SKILL.md) — Creates data-driven presentation slides with React, Vite, and Recharts in Sentry branding, scaffolding a slide-based app with charts, animations, and single-file HTML output. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/presentation-creator/)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **81/100 · B** · [convert-excel-to-md](https://github.com/github/awesome-copilot/blob/main/skills/convert-excel-to-md/SKILL.md) — Converts Excel (.xlsx) workbooks into Markdown so their contents can be accurately analyzed, summarized, searched, or extracted from. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#convert-excel-to-md)
+- **81/100 · B** · [convert-pdf-to-md](https://github.com/github/awesome-copilot/blob/main/skills/convert-pdf-to-md/SKILL.md) — Converts PDF (.pdf) documents into Markdown so their contents can be accurately analyzed, summarized, searched, or extracted from. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#convert-pdf-to-md)
+- **81/100 · B** · [convert-word-to-md](https://github.com/github/awesome-copilot/blob/main/skills/convert-word-to-md/SKILL.md) — Converts Word (.docx) documents into Markdown so their contents can be accurately analyzed, summarized, searched, or extracted from. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#convert-word-to-md)
+- **80/100 · B** · [pdftk-server](https://github.com/github/awesome-copilot/blob/main/skills/pdftk-server/SKILL.md) — Skill for using the command-line tool pdftk (PDFtk Server) for working with PDF files. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pdftk-server)
+- **79/100 · C** · [publish-to-pages](https://github.com/github/awesome-copilot/blob/main/skills/publish-to-pages/SKILL.md) — Publish presentations and web content to GitHub Pages. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#publish-to-pages)
+- **77/100 · C** · [eyeball](https://github.com/github/awesome-copilot/blob/main/skills/eyeball/SKILL.md) — Document analysis with inline source screenshots. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#eyeball)
+- **77/100 · C** · [lean-comments](https://github.com/github/awesome-copilot/blob/main/skills/lean-comments/SKILL.md) — Audits, writes, and refines maintained first-party source-code comments and declaration-level documentation across languages. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#lean-comments)
+- **69/100 · D** · [exam-ready](https://github.com/github/awesome-copilot/blob/main/skills/exam-ready/SKILL.md) — Activate this skill when a student provides study material (PDF or pasted notes) and a syllabus, and wants to prepare for an exam. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#exam-ready)
+- **66/100 · D** · [md-to-docx](https://github.com/github/awesome-copilot/blob/main/skills/md-to-docx/SKILL.md) — Convert Markdown files to professionally formatted Word (.docx) documents with embedded PNG images — pure JavaScript, no external tools required [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#md-to-docx)
+- **65/100 · D** · [doc-and-modernize](https://github.com/github/awesome-copilot/blob/main/skills/doc-and-modernize/SKILL.md) — Two related workflows for a locally-cloned codebase, in one skill. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#doc-and-modernize)
+- **64/100 · D** · [drawio](https://github.com/github/awesome-copilot/blob/main/skills/drawio/SKILL.md) — Generate draw.io diagrams as .drawio files and export to PNG/SVG/PDF with embedded XML [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#drawio)
 
 <a id="googleworkspace--cli"></a>
 
@@ -112,6 +143,14 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 - **81/100 · B** · [scientific-slides](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/scientific-slides/SKILL.md) — Builds slide decks and presentations for research talks. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#scientific-slides)
 - **79/100 · C** · [markitdown](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/markitdown/SKILL.md) — Converts heterogeneous documents and selected URIs to Markdown with Microsoft MarkItDown for text analysis, search, and LLM/RAG ingestion. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#markitdown)
 
+<a id="mattpocock--skills"></a>
+
+## mattpocock/skills
+
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+
+- **70/100 · C** · [setup-matt-pocock-skills](https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md) — Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#setup-matt-pocock-skills)
+
 <a id="mblode--agent-skills"></a>
 
 ## mblode/agent-skills
@@ -135,6 +174,22 @@ Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an
 - **70/100 · C** · [slide-making-skill](https://github.com/MiniMax-AI/skills/blob/main/plugins/pptx-plugin/skills/slide-making-skill/SKILL.md) — Implement single-slide PowerPoint pages with PptxGenJS. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/#slide-making-skill)
 - **65/100 · D** · [pptx-generator](https://github.com/MiniMax-AI/skills/blob/main/skills/pptx-generator/SKILL.md) — Generate, edit, and read PowerPoint presentations. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/#pptx-generator)
 - **62/100 · D** · [ppt-orchestra-skill](https://github.com/MiniMax-AI/skills/blob/main/plugins/pptx-plugin/skills/ppt-orchestra-skill/SKILL.md) — Plan and orchestrate multi-slide PowerPoint creation from scratch. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/#ppt-orchestra-skill) · License: Proprietary (review terms)
+
+<a id="nextlevelbuilder--ui-ux-pro-max-skill"></a>
+
+## nextlevelbuilder/ui-ux-pro-max-skill
+
+[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
+
+- **65/100 · D** · [slides](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/slides/SKILL.md) — Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#slides)
+
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **71/100 · C** · [pdf](https://github.com/openai/skills/blob/main/skills/.curated/pdf/SKILL.md) — Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as \`reportlab\`, \`pdfplumber\`, and \`pypdf\` for generation and… [Suede](https://skills.suedeai.ai/directory/openai/skills/#pdf)
 
 <a id="orchestra-research--ai-research-skills"></a>
 

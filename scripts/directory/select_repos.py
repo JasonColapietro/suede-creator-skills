@@ -16,10 +16,11 @@ candidates = json.load(open(sys.argv[1]))
 voltagent = open(sys.argv[2], encoding="utf-8", errors="ignore").read()
 
 SKIP = {"user-attachments/assets", "jasoncolapietro/suede-creator-skills"}
+accepted = {repo.strip().lower() for repo in json.load(open(sys.argv[3])).get("repositories", [])} if len(sys.argv) > 3 else set()
 
 
 def wanted(repo):
-    return repo not in SKIP and "awesome" not in repo
+    return repo not in SKIP and ("awesome" not in repo or repo in accepted)
 
 
 repos = [c["repo"] for c in candidates if c["n"] >= 2 and wanted(c["repo"])]
@@ -30,8 +31,7 @@ for owner in sorted({m.group(1).lower() for m in re.finditer(r"officialskills\.s
     repos.append(f"{owner}/skills")
 
 if len(sys.argv) > 3:
-    for r in json.load(open(sys.argv[3])).get("repositories", []):
-        repos.append(r.strip().lower())
+    repos.extend(sorted(accepted))
 
 seen = []
 for r in repos:

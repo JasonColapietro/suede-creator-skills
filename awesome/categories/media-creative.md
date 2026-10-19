@@ -6,7 +6,7 @@
 
 Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.
 
-**192 accepted skills · 31 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**230 accepted skills · 37 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -20,12 +20,17 @@ Skills for making and editing media: video production, image generation and edit
 - [Alisa0808/vox-director](#alisa0808--vox-director)
 - [alonw0/web-asset-generator](#alonw0--web-asset-generator)
 - [anthropics/skills](#anthropics--skills)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [bitwize-music-studio/claude-ai-music-skills](#bitwize-music-studio--claude-ai-music-skills)
 - [Bria-AI/bria-skill](#bria-ai--bria-skill)
 - [coreyhaines31/marketingskills](#coreyhaines31--marketingskills)
 - [csthink/dashmotion](#csthink--dashmotion)
+- [fal-ai-community/skills](#fal-ai-community--skills)
 - [garrytan/gstack](#garrytan--gstack)
+- [github/awesome-copilot](#github--awesome-copilot)
+- [google-labs-code/stitch-skills](#google-labs-code--stitch-skills)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
+- [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [HUANGCHIHHUNGLeo/claude-real-video](#huangchihhungleo--claude-real-video)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
@@ -36,6 +41,7 @@ Skills for making and editing media: video production, image generation and edit
 - [muthuishere/hand-drawn-diagrams](#muthuishere--hand-drawn-diagrams)
 - [NVIDIA/skills](#nvidia--skills)
 - [ohad6k/emulo](#ohad6k--emulo)
+- [openai/skills](#openai--skills)
 - [Orchestra-Research/AI-Research-SKILLs](#orchestra-research--ai-research-skills)
 - [Orkas-AI/Orkas-VideoStudio](#orkas-ai--orkas-videostudio)
 - [product-on-purpose/pm-skills](#product-on-purpose--pm-skills)
@@ -90,6 +96,15 @@ Skills for making and editing media: video production, image generation and edit
 - **87/100 · B** · [slack-gif-creator](https://github.com/anthropics/skills/blob/main/skills/slack-gif-creator/SKILL.md) — Provides constraints, validation tools, and animation concepts for creating animated GIFs sized and optimized for Slack. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/slack-gif-creator/)
 - **84/100 · B** · [algorithmic-art](https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md) — Creates original generative art with p5.js using seeded randomness and interactive parameter exploration, such as flow fields and particle systems. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/algorithmic-art/)
 - **84/100 · B** · [canvas-design](https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md) — Creates original visual art, posters, and other static designs as .png and .pdf files, guided by a design philosophy. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/canvas-design/)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **82/100 · B** · [amazon-ec2-image-builder](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/ec2-skills/amazon-ec2-image-builder/SKILL.md) — Creates and automates custom image builds with EC2 Image Builder - Linux, Windows, and macOS AMIs, and container images to ECR. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-ec2-image-builder)
+- **68/100 · D** · [aws-compute](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/core-skills/aws-compute/SKILL.md) — Provisions, scales, and operates Amazon EC2 virtual-machine workloads: instance-type selection (Graviton/Arm64, burstable T credits, GPU, instance store vs EBS), launch templates, Auto Scaling groups (scaling policies, instance refresh,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-compute)
 
 <a id="bitwize-music-studio--claude-ai-music-skills"></a>
 
@@ -165,6 +180,21 @@ Skills for making and editing media: video production, image generation and edit
 
 - **80/100 · B** · [dashmotion](https://github.com/csthink/dashmotion/blob/main/skills/dashmotion/SKILL.md) — Creates dark-themed animated technical diagrams as self-contained HTML and SVG files, including flowcharts with flowing connectors and architecture diagrams with traveling light dots. [Suede](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/)
 
+<a id="fal-ai-community--skills"></a>
+
+## fal-ai-community/skills
+
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+
+- **75/100 · C** · [cinematography](https://github.com/fal-ai-community/skills/blob/main/skills/cinematography/SKILL.md) — Design cinematic image and video prompts for genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#cinematography)
+- **75/100 · C** · [commercial](https://github.com/fal-ai-community/skills/blob/main/skills/commercial/SKILL.md) — Plan and run commercial image or video production with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#commercial)
+- **75/100 · C** · [fal-models-catalog](https://github.com/fal-ai-community/skills/blob/main/skills/fal-models-catalog/SKILL.md) — Choose the right fal.ai endpoint for a given task. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fal-models-catalog)
+- **75/100 · C** · [fan-cam](https://github.com/fal-ai-community/skills/blob/main/skills/fan-cam/SKILL.md) — Create personalized live sports broadcast fan-cam videos with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fan-cam)
+- **75/100 · C** · [genmedia-workflow](https://github.com/fal-ai-community/skills/blob/main/skills/genmedia-workflow/SKILL.md) — Design and execute multi-step media workflows with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#genmedia-workflow)
+- **75/100 · C** · [storytelling](https://github.com/fal-ai-community/skills/blob/main/skills/storytelling/SKILL.md) — Build multi-shot narrative image, video, and audio workflows with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#storytelling)
+- **73/100 · C** · [fal-recipes](https://github.com/fal-ai-community/skills/blob/main/skills/fal-recipes/SKILL.md) — Use-case-driven multi-step pipelines on fal.ai. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fal-recipes)
+- **64/100 · D** · [fal-regenerate-3d](https://github.com/fal-ai-community/skills/blob/main/skills/fal-regenerate-3d/SKILL.md) — Build a fully-interactive 3D character-selector experience powered entirely by fal.ai. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fal-regenerate-3d)
+
 <a id="garrytan--gstack"></a>
 
 ## garrytan/gstack
@@ -172,6 +202,37 @@ Skills for making and editing media: video production, image generation and edit
 [Repository](https://github.com/garrytan/gstack) · Publisher: [garrytan](https://github.com/garrytan) · [Suede listing](https://skills.suedeai.ai/directory/garrytan/gstack/)
 
 - **74/100 · C** · [diagram](https://github.com/garrytan/gstack/blob/main/diagram/SKILL.md) — Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open on excalidraw.com, and rendered SVG + PNG. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#diagram)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **84/100 · B** · [efcore-d2-db-diagram](https://github.com/github/awesome-copilot/blob/main/skills/efcore-d2-db-diagram/SKILL.md) — Generate D2 database diagrams from Entity Framework Core models. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#efcore-d2-db-diagram)
+- **82/100 · B** · [draw-io-diagram-generator](https://github.com/github/awesome-copilot/blob/main/skills/draw-io-diagram-generator/SKILL.md) — Use when creating, editing, or generating draw.io diagram files (.drawio, .drawio.svg, .drawio.png). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#draw-io-diagram-generator)
+- **80/100 · B** · [game-engine](https://github.com/github/awesome-copilot/blob/main/skills/game-engine/SKILL.md) — Expert skill for building web-based game engines and games using HTML5, Canvas, WebGL, and JavaScript. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#game-engine)
+- **79/100 · C** · [image-manipulation-image-magick](https://github.com/github/awesome-copilot/blob/main/skills/image-manipulation-image-magick/SKILL.md) — Process and manipulate images using ImageMagick. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#image-manipulation-image-magick)
+- **79/100 · C** · [plantuml-ascii](https://github.com/github/awesome-copilot/blob/main/skills/plantuml-ascii/SKILL.md) — Generate ASCII art diagrams using PlantUML text mode. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#plantuml-ascii)
+- **79/100 · C** · [transloadit-media-processing](https://github.com/github/awesome-copilot/blob/main/skills/transloadit-media-processing/SKILL.md) — Process media files (video, audio, images, documents) using Transloadit. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#transloadit-media-processing)
+- **77/100 · C** · [gh-attach](https://github.com/github/awesome-copilot/blob/main/skills/gh-attach/SKILL.md) — Uploads a local file (screenshot, image, PDF, zip, video) to GitHub user-attachments, downloads GitHub user-attachments, and embeds local files in a PR, issue, or comment. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gh-attach)
+- **76/100 · C** · [nano-banana-pro-openrouter](https://github.com/github/awesome-copilot/blob/main/skills/nano-banana-pro-openrouter/SKILL.md) — Generate or edit images via OpenRouter with the Gemini 3 Pro Image model. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#nano-banana-pro-openrouter)
+- **74/100 · C** · [excalidraw-diagram-generator](https://github.com/github/awesome-copilot/blob/main/skills/excalidraw-diagram-generator/SKILL.md) — Generate Excalidraw diagrams from natural language descriptions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#excalidraw-diagram-generator)
+- **74/100 · C** · [generate-image](https://github.com/github/awesome-copilot/blob/main/skills/generate-image/SKILL.md) — Generate images using AI. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#generate-image)
+- **74/100 · C** · [resemble-detect](https://github.com/github/awesome-copilot/blob/main/skills/resemble-detect/SKILL.md) — Deepfake detection and media safety — detect AI-generated audio, images, video, and text, trace synthesis sources, apply watermarks, verify speaker identity, and analyze media intelligence using Resemble AI [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#resemble-detect)
+- **69/100 · D** · [architecture-blueprint-generator](https://github.com/github/awesome-copilot/blob/main/skills/architecture-blueprint-generator/SKILL.md) — Comprehensive project architecture blueprint generator that analyzes codebases to create detailed architectural documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#architecture-blueprint-generator)
+- **69/100 · D** · [automate-this](https://github.com/github/awesome-copilot/blob/main/skills/automate-this/SKILL.md) — Analyze a screen recording of a manual process and produce targeted, working automation scripts. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#automate-this)
+- **69/100 · D** · [java-add-graalvm-native-image-support](https://github.com/github/awesome-copilot/blob/main/skills/java-add-graalvm-native-image-support/SKILL.md) — GraalVM Native Image expert that adds native image support to Java applications, builds the project, analyzes build errors, applies fixes, and iterates until successful compilation using Oracle best practices. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-add-graalvm-native-image-support)
+- **69/100 · D** · [screen-recording](https://github.com/github/awesome-copilot/blob/main/skills/screen-recording/SKILL.md) — Create annotated animated GIF demos and screen recordings for pull requests and documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#screen-recording)
+- **69/100 · D** · [technology-stack-blueprint-generator](https://github.com/github/awesome-copilot/blob/main/skills/technology-stack-blueprint-generator/SKILL.md) — Comprehensive technology stack blueprint generator that analyzes codebases to create detailed architectural documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#technology-stack-blueprint-generator)
+
+<a id="google-labs-code--stitch-skills"></a>
+
+## google-labs-code/stitch-skills
+
+[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
+
+- **69/100 · D** · [remotion](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-build/skills/remotion/SKILL.md) — Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#remotion)
 
 <a id="gooseworks-ai--goose-skills"></a>
 
@@ -213,7 +274,6 @@ Skills for making and editing media: video production, image generation and edit
 - **81/100 · B** · [render-song-mv](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-song-mv/SKILL.md) — Assemble a song-driven music-video ad from a config — a generated sung track carries the whole narration across N tableaux (one keyframe -&gt; one i2v clip per lyric beat) with NO separate voiceover, captions synced to the song's OWN word… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-song-mv)
 - **81/100 · B** · [render-whiteboard-explainer](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-whiteboard-explainer/SKILL.md) — Assembles a whiteboard explainer video ad from a beats file, with narration, a hand-lettered title, bulleted rows and traced drawings. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-whiteboard-explainer/)
 - **80/100 · B** · [compose-creator-layer](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/compose-creator-layer/SKILL.md) — Composite a generated creator track into a product layer, per beat — in the creator's zone on split beats (either side of a seam), full frame on creator beats, hidden on product beats — with the creator's voice as the audio (loudness… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#compose-creator-layer)
-- **80/100 · B** · [create-creator-takes-h3](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/create-creator-takes-h3/SKILL.md) — Generates a continuous AI creator talking-to-camera video track from an approved script by planning takes and reusing the first take's voice. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/)
 - **80/100 · B** · [create-kinetic-typography](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/create-kinetic-typography/SKILL.md) — Render a deterministic text-only video ad from approved copy, font, colors, timing and CTA. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-kinetic-typography)
 - **80/100 · B** · [create-music-elevenlabs](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/create-music-elevenlabs/SKILL.md) — Generate an instrumental music bed via ElevenLabs Music, ROUTED THROUGH THE elevenlabs-proxy so it bills the Ads agent. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-music-elevenlabs)
 - **80/100 · B** · [render-podcast-skit](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-podcast-skit/SKILL.md) — Render a two-host podcast ad from a brand config and dialogue script. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-podcast-skit)
@@ -226,6 +286,7 @@ Skills for making and editing media: video production, image generation and edit
 - **78/100 · C** · [render-imessage-chat](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-imessage-chat/SKILL.md) — Render a configurable iMessage conversation inside a properly framed phone, then a brand end card. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-imessage-chat)
 - **78/100 · C** · [render-street-interview](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-street-interview/SKILL.md) — Write a street-interview ad from a complete inspected commercial interaction and current brand facts. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-street-interview)
 - **78/100 · C** · [video-production-harness](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/playbooks/video-production-harness/SKILL.md) — Full video production sequence with script review, actual ingredient choices, controlled generation, editing, evidence-based quality review, polish, captions and delivery. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#video-production-harness)
+- **77/100 · C** · [create-creator-takes-h3](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/create-creator-takes-h3/SKILL.md) — Generates a continuous AI creator talking-to-camera video track from an approved script by planning takes and reusing the first take's voice. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/create-creator-takes-h3/)
 - **77/100 · C** · [product-reel-generator](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/packs/video-production/product-reel-generator/SKILL.md) — Generates Instagram-ready product reels from any e-commerce product page URL. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#product-reel-generator)
 - **76/100 · C** · [create-chatgpt-mockup](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/video-ad-formats/create-chatgpt-mockup/SKILL.md) — Render pixel-accurate ChatGPT mobile (iOS) screen mockups in light mode from a thread JSON. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-chatgpt-mockup)
 - **76/100 · C** · [render-logo-equation-card](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-logo-equation-card/SKILL.md) — Render the logo-equation card ad (7s, 9:16) — partner icon + brand icon joined by a plus sign as an equation, a two-line "= outcome" headline, four numbered steps, and a CTA that hard-cuts in at 2s, on a static black card over timelapse… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-logo-equation-card)
@@ -248,7 +309,7 @@ Skills for making and editing media: video production, image generation and edit
 - **73/100 · C** · [render-narrated-ugc-wardrobe-stitch](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/render-narrated-ugc-wardrobe-stitch/SKILL.md) — Assemble a narrated-UGC "stitch reply" ad from a config — a single spoken VO carries a verbatim testimonial while ~30 per-cut i2v clips (one creator across ~5 wardrobes in ~3 worlds, plus product B-roll) are each trimmed to their EDL… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#render-narrated-ugc-wardrobe-stitch)
 - **73/100 · C** · [review-finished-ad](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/review-finished-ad/SKILL.md) — Final QC gate for a rendered 9:16 video ad, run before it is published. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#review-finished-ad)
 - **73/100 · C** · [watch](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/video-ad-formats/watch/SKILL.md) — Observe actual video and sound over the whole file or named ranges, with timestamped evidence and honest coverage. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#watch)
-- **72/100 · C** · [create-video-seedance-2-fal](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/ugc-video-formats/create-video-seedance-2-fal/SKILL.md) — Generate a single 4-15s vertical video clip with ByteDance Seedance 2.0 reference-to-video via fal.ai. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-video-seedance-2-fal)
+- **72/100 · C** · [create-video-seedance-2-fal](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/packs/ugc-video-formats/create-video-seedance-2-fal/SKILL.md) — Generate a single 4-15s vertical video clip with ByteDance Seedance 2.0 reference-to-video via fal.ai, for shots with no realistic face (a product hero, a product in motion, an empty set). [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#create-video-seedance-2-fal)
 - **72/100 · C** · [ugc-fixloop](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/capabilities/ugc-fixloop/SKILL.md) — the UGC fix-loop toolkit — surgically re-render a bad window/beat of a single-take UGC master (stitch\_replacement.py, pure FFmpeg) and GPT cross-model review a Seedance prompt before render (vet\_seedance\_prompt.py, routed through the… [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#ugc-fixloop)
 - **70/100 · C** · [goose-graphics](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/composites/goose-graphics/SKILL.md) — Portable visual skill pack for the Agent Skills ecosystem (Claude Code, Claude Desktop, Claude Cowork, Claude Design, Goose, Cursor, Codex). [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#goose-graphics)
 - **70/100 · C** · [product-photoshoot](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/ads/composites/product-photoshoot/SKILL.md) — Create faithful studio, lifestyle, and on-model product photography through the GooseWorks Product Photos workflow, then approve selected results for reuse in future creative work. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#product-photoshoot)
@@ -258,6 +319,22 @@ Skills for making and editing media: video production, image generation and edit
 - **66/100 · D** · [ai-video-calls-tavus](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/ai-video-calls-tavus/SKILL.md) — AI video conversations - create real-time video calls with AI personas [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#ai-video-calls-tavus)
 - **66/100 · D** · [image-analyzer](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/research-tools/capabilities/image-analyzer/SKILL.md) — Analyze images with AI - extract text, describe content, detect objects [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#image-analyzer)
 - **66/100 · D** · [remotion-best-practices](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/design/capabilities/remotion-best-practices/SKILL.md) — Best practices for Remotion - Video creation in React [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#remotion-best-practices)
+
+<a id="heygen-com--hyperframes"></a>
+
+## heygen-com/hyperframes
+
+[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
+
+- **83/100 · B** · [general-video](https://github.com/heygen-com/hyperframes/blob/main/skills/general-video/SKILL.md) — Author or edit a custom HyperFrames composition when no specialized workflow fits, or when BRIEF.md sets flow: companion. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#general-video)
+- **81/100 · B** · [hyperframes-audio](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-audio/SKILL.md) — Use when audio already placed in a HyperFrames composition needs to be mixed: fade-in/fade-out, crossfade, track gain or volume, volume automation, ducking, a music bed that fights a voiceover (voiceover carve), effects on a track (EQ,… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-audio)
+- **80/100 · B** · [media-use](https://github.com/heygen-com/hyperframes/blob/main/skills/media-use/SKILL.md) — Agent Media OS for a HyperFrames project. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#media-use)
+- **79/100 · C** · [faceless-explainer](https://github.com/heygen-com/hyperframes/blob/main/skills/faceless-explainer/SKILL.md) — Turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video: there is no site or footage to capture, so the visuals are invented per scene (typography, abstract graphics, diagrams, data-viz). [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#faceless-explainer)
+- **77/100 · C** · [remotion-to-hyperframes](https://github.com/heygen-com/hyperframes/blob/main/skills/remotion-to-hyperframes/SKILL.md) — Port an existing Remotion (React) composition's source to HyperFrames HTML. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#remotion-to-hyperframes)
+- **76/100 · C** · [product-launch-video](https://github.com/heygen-com/hyperframes/blob/main/skills/product-launch-video/SKILL.md) — Turn a product or marketing URL, pasted script, or brief into a product launch / promo video — SaaS promos, feature reveals, product demos, app and company launches. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#product-launch-video)
+- **74/100 · C** · [music-to-video](https://github.com/heygen-com/hyperframes/blob/main/skills/music-to-video/SKILL.md) — Turn a music track (an audio file, a video to pull audio from, or a track generated from a mood brief) into a beat-synced video — lyric video, slideshow, or kinetic promo. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#music-to-video)
+- **74/100 · C** · [pr-to-video](https://github.com/heygen-com/hyperframes/blob/main/skills/pr-to-video/SKILL.md) — Turn a GitHub pull request (a PR URL, owner/repo#N, or 'this PR' in a checked-out repo) into a code-change explainer video — changelog, feature reveal, fix, or refactor walkthrough built from the diff, commits, and files: the input is a… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#pr-to-video)
+- **69/100 · D** · [talking-head-recut](https://github.com/heygen-com/hyperframes/blob/main/skills/talking-head-recut/SKILL.md) — Package an existing talking-head / interview / podcast video with timed, designed GRAPHIC OVERLAY cards — kinetic titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture — synced to the transcript, on a 16:9 / 9:16… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#talking-head-recut)
 
 <a id="huangchihhungleo--claude-real-video"></a>
 
@@ -295,7 +372,7 @@ Skills for making and editing media: video production, image generation and edit
 
 [Repository](https://github.com/Leonxlnx/taste-skill) · Publisher: [Leonxlnx](https://github.com/Leonxlnx) · [Suede listing](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/)
 
-- **69/100 · D** · [brandkit](https://github.com/Leonxlnx/taste-skill/blob/main/skills/brandkit/SKILL.md) — Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#brandkit)
+- **61/100 · D** · [brandkit](https://github.com/Leonxlnx/taste-skill/blob/main/skills/brandkit/SKILL.md) — Moved to github.com/Leonxlnx/imagegen-skills. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#brandkit)
 
 <a id="mcollina--skills"></a>
 
@@ -356,6 +433,15 @@ Skills for making and editing media: video production, image generation and edit
 [Repository](https://github.com/ohad6k/emulo) · Publisher: [ohad6k](https://github.com/ohad6k) · [Suede listing](https://skills.suedeai.ai/directory/ohad6k/emulo/)
 
 - **70/100 · C** · [video](https://github.com/ohad6k/emulo/blob/main/skills/video/SKILL.md) — Use when a brief has to become a film. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/#video)
+
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **79/100 · C** · [speech](https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md) — Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (\`scripts/text\_to\_speech.py\`) with built-in voices and… [Suede](https://skills.suedeai.ai/directory/openai/skills/#speech)
+- **76/100 · C** · [transcribe](https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md) — Transcribe audio files to text with optional diarization and known-speaker hints. [Suede](https://skills.suedeai.ai/directory/openai/skills/#transcribe)
 
 <a id="orchestra-research--ai-research-skills"></a>
 

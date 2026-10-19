@@ -6,7 +6,7 @@
 
 Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions.
 
-**128 accepted skills · 23 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**176 accepted skills · 27 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **66–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=data-databases&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -16,10 +16,12 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 <summary>Browse publishers in this category</summary>
 
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [cloudflare/skills](#cloudflare--skills)
 - [eduardo-sl/go-agent-skills](#eduardo-sl--go-agent-skills)
 - [firebase/skills](#firebase--skills)
 - [firecrawl/skills](#firecrawl--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [google/skills](#google--skills)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [honeydew-ai/honeydew-ai-coding-agents-plugins](#honeydew-ai--honeydew-ai-coding-agents-plugins)
@@ -27,6 +29,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
+- [neondatabase/agent-skills](#neondatabase--agent-skills)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
 - [NVIDIA/skills](#nvidia--skills)
 - [Orchestra-Research/AI-Research-SKILLs](#orchestra-research--ai-research-skills)
@@ -35,6 +38,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 - [redis/agent-skills](#redis--agent-skills)
 - [sanjay3290/ai-skills](#sanjay3290--ai-skills)
 - [shepsci/kaggle-skill](#shepsci--kaggle-skill)
+- [stripe/ai](#stripe--ai)
 - [supabase/agent-skills](#supabase--agent-skills)
 - [tronghieu/agent-skills](#tronghieu--agent-skills)
 - [wondelai/skills](#wondelai--skills)
@@ -48,6 +52,34 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 [Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **77/100 · C** · [migration-ready-schema](https://github.com/avelikiy/great_cto/blob/main/skills/migration-ready-schema/SKILL.md) — Sets data-model rules, such as provenance and rollback fields on importable entities, so a schema can import customer data from incumbent products. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/migration-ready-schema/)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **84/100 · B** · [finding-data-lake-assets](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/finding-data-lake-assets/SKILL.md) — Resolve data lake and lakehouse asset references across Glue Data Catalog, S3, S3 Tables, and Redshift. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#finding-data-lake-assets)
+- **84/100 · B** · [querying-data-lake](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/querying-data-lake/SKILL.md) — Execute and manage Athena SQL queries across default and federated catalogs (Glue, S3 Tables, Redshift). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#querying-data-lake)
+- **82/100 · B** · [connecting-to-data-source](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/connecting-to-data-source/SKILL.md) — Create and troubleshoot AWS Glue connections to JDBC databases (Oracle, SQL Server, PostgreSQL, MySQL, RDS), Redshift, Snowflake, and BigQuery. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#connecting-to-data-source)
+- **82/100 · B** · [creating-data-lake-table](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/storage-skills/creating-data-lake-table/SKILL.md) — Create managed Iceberg tables using Amazon S3 Tables (s3tables API namespace) with automatic compaction and snapshot management. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#creating-data-lake-table)
+- **81/100 · B** · [aws-database](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/core-skills/aws-database/SKILL.md) — Routes any task involving AWS databases — choosing, comparing, recommending, getting started with, or operating a database — to the correct service-specific skill. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-database)
+- **80/100 · B** · [amazon-documentdb](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/amazon-documentdb/SKILL.md) — Manages Amazon DocumentDB end-to-end — serverless-on-8.0 cluster setup, TLS/VPC/driver config, flexible-schema and vector-search data modeling, MongoDB compatibility assessment, DMS-based migration, slow-query diagnosis, major version… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-documentdb)
+- **80/100 · B** · [ingesting-into-data-lake](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/ingesting-into-data-lake/SKILL.md) — Import data into the AWS data lake from S3 files, local uploads, JDBC databases (Oracle, SQL Server, PostgreSQL, MySQL, RDS, Aurora), Amazon Redshift, Snowflake, BigQuery, DynamoDB, or existing Glue catalog tables (migration). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#ingesting-into-data-lake)
+- **78/100 · C** · [amazon-aurora-mysql](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/amazon-aurora-mysql/SKILL.md) — Amazon Aurora MySQL — creates, modifies, and advises on Aurora MySQL clusters specifically (MySQL-compatible engine, Aurora serverless, parallel query). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-aurora-mysql)
+- **78/100 · C** · [amazon-aurora-postgresql](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/amazon-aurora-postgresql/SKILL.md) — Amazon Aurora PostgreSQL — creates, modifies, and advises on Aurora PostgreSQL clusters specifically (PostgreSQL-compatible engine, Aurora serverless, express configuration, pgvector, Babelfish). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-aurora-postgresql)
+- **78/100 · C** · [amazon-opensearch-service](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/amazon-opensearch-service/SKILL.md) — Guides migration, provisioning, search, log-analytics, trace-analytics, and Agentic AI Assistant workflows for Amazon OpenSearch Service and Serverless across six capabilities — migration (Solr/ES/self-managed into AOS/AOSS,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-opensearch-service)
+- **78/100 · C** · [rds-sqlserver](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/rds-sqlserver/SKILL.md) — Provides connectivity, authentication, and troubleshooting guidance for Amazon RDS for SQL Server. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#rds-sqlserver)
+- **76/100 · C** · [migrating-to-amazon-redshift](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/migrating-to-amazon-redshift/SKILL.md) — Guides an end-to-end data-warehouse migration to Amazon Redshift — discovery, schema/SQL/stored-procedure/macro/script conversion, data migration, validation, performance comparison, and reporting. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#migrating-to-amazon-redshift)
+- **76/100 · C** · [redshift-guide](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/redshift-guide/SKILL.md) — Amazon Redshift is NOT PostgreSQL; corrects LLM mistakes; covers SQL, metadata, connectivity/auth, storage, query performance, and operations. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#redshift-guide)
+- **74/100 · C** · [creating-amazon-aurora-db-cluster-with-instances](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/creating-amazon-aurora-db-cluster-with-instances/SKILL.md) — Creates a complete Amazon Aurora database cluster with instances, handling cluster creation, instance provisioning, and Secrets Manager password management in the proper sequence. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#creating-amazon-aurora-db-cluster-with-instances)
+- **74/100 · C** · [exporting-rds-to-s3](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/exporting-rds-to-s3/SKILL.md) — Exports Amazon RDS or Aurora database snapshots to Amazon S3 in Apache Parquet format for analytics, backup, or data migration. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#exporting-rds-to-s3)
+- **72/100 · C** · [amazon-neptune](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/amazon-neptune/SKILL.md) — Provides authoritative guidance on Amazon Neptune Database and Neptune Analytics for graph, knowledge-graph, and relationship-heavy workloads — fraud detection / fraud rings, agentic memory / chatbot context across sessions,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-neptune)
+- **69/100 · D** · [dms-schema-conversion](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/migration-and-modernization-skills/dms-schema-conversion/SKILL.md) — Handles the full DMS Schema Conversion lifecycle including creating migration projects, converting database schemas to a target engine, running compatibility assessments, navigating metadata trees, exporting converted DDL to S3,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#dms-schema-conversion)
+- **69/100 · D** · [querying-aws-sagemaker-catalog](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/system-table-skills/querying-aws-sagemaker-catalog/SKILL.md) — Runs SQL analytics on SageMaker Catalog asset metadata tables exported as Apache Iceberg in S3 Tables. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#querying-aws-sagemaker-catalog)
+- **68/100 · D** · [developing-applications-on-managed-service-for-apache-flink](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/developing-applications-on-managed-service-for-apache-flink/SKILL.md) — MANDATORY for Flink or Amazon Managed Service for Apache Flink (MSF) questions. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#developing-applications-on-managed-service-for-apache-flink)
+- **67/100 · D** · [querying-aws-cloudwatch](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/system-table-skills/querying-aws-cloudwatch/SKILL.md) — Runs SQL queries on CloudWatch Logs data exported as Apache Iceberg tables in S3 Tables. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#querying-aws-cloudwatch)
+- **67/100 · D** · [rds-oss](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/rds-oss/SKILL.md) — Advises on Amazon RDS open-source engines (MySQL, MariaDB, PostgreSQL) for instance creation, upgrade planning, commitment pricing, proxy evaluation, and Blue/Green deployments. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#rds-oss)
 
 <a id="cloudflare--skills"></a>
 
@@ -87,8 +119,33 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 - **74/100 · C** · [firecrawl-download](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-download/SKILL.md) — Save a site or section as local files (markdown, screenshots). [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-download)
 - **71/100 · C** · [firecrawl-company-directories](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-company-directories/SKILL.md) — Extracts structured company lists from directories such as YC, Crunchbase, Product Hunt, and G2 using Firecrawl, into JSON, CSV, or CRM-ready lists. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-company-directories/)
 - **71/100 · C** · [firecrawl-dashboard-reporting](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-dashboard-reporting/SKILL.md) — Pulls metrics from analytics dashboards and internal web tools with Firecrawl browser, including authenticated extraction, date-range reports, and cross-platform metric summaries. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-dashboard-reporting/)
-- **71/100 · C** · [firecrawl-knowledge-ingest](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-knowledge-ingest/SKILL.md) — Ingest public or authenticated knowledge bases and docs portals with Firecrawl browser. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-knowledge-ingest)
+- **71/100 · C** · [firecrawl-knowledge-ingest](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-knowledge-ingest/SKILL.md) — Export documentation portals, help centers and API reference sites into local markdown or JSON with Firecrawl browser, including pages that render with JavaScript, hide content behind collapsible navigation or paginate. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-knowledge-ingest)
 - **69/100 · D** · [firecrawl-alexandria](https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-alexandria/SKILL.md) — Find a direct path to structured data through ready-made workflows, data APIs, and indexes. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-alexandria)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **83/100 · B** · [upstash-redis](https://github.com/github/awesome-copilot/blob/main/skills/upstash-redis/SKILL.md) — Use Redis over HTTP from serverless and edge runtimes with @upstash/redis, and add rate limiting with @upstash/ratelimit. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#upstash-redis)
+- **82/100 · B** · [sql-object-impact-analysis](https://github.com/github/awesome-copilot/blob/main/skills/sql-object-impact-analysis/SKILL.md) — Before modifying a table, column, stored procedure, view, or trigger in a legacy codebase, trace every place that references it — across other SQL objects (procs, views, triggers) AND application code (C#, Angular/TypeScript, JS, or any… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#sql-object-impact-analysis)
+- **79/100 · C** · [pr-dashboard](https://github.com/github/awesome-copilot/blob/main/skills/pr-dashboard/SKILL.md) — Open a GitHub PR dashboard in the browser. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pr-dashboard)
+- **79/100 · C** · [sql-server-table-reconciliation](https://github.com/github/awesome-copilot/blob/main/skills/sql-server-table-reconciliation/SKILL.md) — Use when: comparing SQL Server tables across instances, data migration validation, ETL verification, row mismatch detection, schema drift, reconciliation report, production vs staging comparison. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#sql-server-table-reconciliation)
+- **77/100 · C** · [creating-oracle-to-postgres-migration-bug-report](https://github.com/github/awesome-copilot/blob/main/skills/creating-oracle-to-postgres-migration-bug-report/SKILL.md) — Creates structured bug reports for defects found during Oracle-to-PostgreSQL migration. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#creating-oracle-to-postgres-migration-bug-report)
+- **77/100 · C** · [migrating-oracle-to-postgres-data-access-code](https://github.com/github/awesome-copilot/blob/main/skills/migrating-oracle-to-postgres-data-access-code/SKILL.md) — Migrates .NET/C# data access code from Oracle to PostgreSQL (Npgsql). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#migrating-oracle-to-postgres-data-access-code)
+- **77/100 · C** · [reviewing-oracle-to-postgres-migration](https://github.com/github/awesome-copilot/blob/main/skills/reviewing-oracle-to-postgres-migration/SKILL.md) — Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting/collations, UNION ALL planner risks, materialized-view refresh… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#reviewing-oracle-to-postgres-migration)
+- **77/100 · C** · [ssma-console](https://github.com/github/awesome-copilot/blob/main/skills/ssma-console/SKILL.md) — Use when: SSMA console operations — create project, generate assessment report, convert schema, migrate data, Oracle to SQL Server migration, schema conversion, data migration [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#ssma-console)
+- **74/100 · C** · [acreadiness-assess](https://github.com/github/awesome-copilot/blob/main/skills/acreadiness-assess/SKILL.md) — Run the AgentRC readiness assessment on the current repository and produce a static HTML dashboard at reports/index.html. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#acreadiness-assess)
+- **74/100 · C** · [creating-oracle-to-postgres-master-migration-plan](https://github.com/github/awesome-copilot/blob/main/skills/creating-oracle-to-postgres-master-migration-plan/SKILL.md) — Discovers all projects in a .NET solution, classifies each for Oracle-to-PostgreSQL migration eligibility, and produces a persistent master migration plan. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#creating-oracle-to-postgres-master-migration-plan)
+- **74/100 · C** · [migrating-oracle-to-postgres-stored-procedures](https://github.com/github/awesome-copilot/blob/main/skills/migrating-oracle-to-postgres-stored-procedures/SKILL.md) — Migrates Oracle PL/SQL stored procedures to PostgreSQL PL/pgSQL. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#migrating-oracle-to-postgres-stored-procedures)
+- **69/100 · D** · [postgresql-code-review](https://github.com/github/awesome-copilot/blob/main/skills/postgresql-code-review/SKILL.md) — PostgreSQL-specific code review assistant focusing on PostgreSQL best practices, anti-patterns, and unique quality standards. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#postgresql-code-review)
+- **69/100 · D** · [postgresql-optimization](https://github.com/github/awesome-copilot/blob/main/skills/postgresql-optimization/SKILL.md) — PostgreSQL-specific development assistant focusing on unique PostgreSQL features, advanced data types, and PostgreSQL-exclusive capabilities. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#postgresql-optimization)
+- **69/100 · D** · [signal-write](https://github.com/github/awesome-copilot/blob/main/skills/signal-write/SKILL.md) — Emit structured agent signals — hands-up, blocked, done, checkpoint, partnership. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#signal-write)
+- **69/100 · D** · [sql-code-review](https://github.com/github/awesome-copilot/blob/main/skills/sql-code-review/SKILL.md) — Universal SQL code review assistant that performs comprehensive security, maintainability, and code quality analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#sql-code-review)
+- **69/100 · D** · [sql-optimization](https://github.com/github/awesome-copilot/blob/main/skills/sql-optimization/SKILL.md) — Universal SQL performance optimization assistant for comprehensive query tuning, indexing strategies, and database performance analysis across all SQL databases (MySQL, PostgreSQL, SQL Server, Oracle). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#sql-optimization)
+- **69/100 · D** · [winui3-migration-guide](https://github.com/github/awesome-copilot/blob/main/skills/winui3-migration-guide/SKILL.md) — UWP-to-WinUI 3 migration reference. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#winui3-migration-guide)
+- **67/100 · D** · [bigquery-pipeline-audit](https://github.com/github/awesome-copilot/blob/main/skills/bigquery-pipeline-audit/SKILL.md) — Audits Python + BigQuery pipelines for cost safety, idempotency, and production readiness. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#bigquery-pipeline-audit)
 
 <a id="google--skills"></a>
 
@@ -193,6 +250,19 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 [Repository](https://github.com/mhattingpete/claude-skills-marketplace) · Publisher: [mhattingpete](https://github.com/mhattingpete) · [Suede listing](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/)
 
 - **75/100 · C** · [dashboard-creator](https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/dashboard-creator/SKILL.md) — Creates HTML dashboards with KPI metric cards, bar, pie, and line charts, progress indicators, and other data visualizations. [Suede](https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/dashboard-creator/)
+
+<a id="neondatabase--agent-skills"></a>
+
+## neondatabase/agent-skills
+
+[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
+
+- **84/100 · B** · [neon-realtime](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-realtime/SKILL.md) — Neon Realtime makes any SQL query live. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-realtime)
+- **82/100 · B** · [neon-auth](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-auth/SKILL.md) — Add authentication to a new app. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-auth)
+- **82/100 · B** · [neon-postgres](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-postgres/SKILL.md) — Guides and best practices for working with Lakebase Postgres on Neon: connections, pooled vs direct, schema migrations, branching, autoscaling, scale-to-zero, instant restore, read replicas, IP allow lists, logical replication, and… [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-postgres)
+- **81/100 · B** · [neon-postgres-egress-optimizer](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-postgres-egress-optimizer/SKILL.md) — Diagnose and fix excessive Postgres egress (network data transfer) in a codebase. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-postgres-egress-optimizer)
+- **79/100 · C** · [neon-object-storage](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-object-storage/SKILL.md) — S3-compatible object storage that branches with your database, so each branch gets its own copy of the files and the rows that point at them. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-object-storage)
+- **74/100 · C** · [neon](https://github.com/neondatabase/agent-skills/blob/main/skills/neon/SKILL.md) — Overview of Neon, a complete set of cloud backend primitives around Lakebase Postgres: Auth, Object Storage, Functions, the AI Gateway, and Realtime. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon)
 
 <a id="nowork-studio--notfair"></a>
 
@@ -304,6 +374,16 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 [Repository](https://github.com/shepsci/kaggle-skill) · Publisher: [shepsci](https://github.com/shepsci) · [Suede listing](https://skills.suedeai.ai/directory/shepsci/kaggle-skill/kaggle/)
 
 - **90/100 · A** · [kaggle](https://github.com/shepsci/kaggle-skill/blob/main/skills/kaggle/SKILL.md) — Handles Kaggle tasks when explicitly requested, covering competitions, datasets, models, notebooks, forums, benchmarks, hackathons, badges, and account setup. [Suede](https://skills.suedeai.ai/directory/shepsci/kaggle-skill/kaggle/)
+
+<a id="stripe--ai"></a>
+
+## stripe/ai
+
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
+
+- **79/100 · C** · [stripe-projects](https://github.com/stripe/ai/blob/main/skills/stripe-projects/SKILL.md) — Use when the user wants to provision infrastructure or third-party services using Stripe Projects. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-projects)
+- **75/100 · C** · [connect-required-verification-information](https://github.com/stripe/ai/blob/main/skills/connect-required-verification-information/SKILL.md) — Use this skill when the user asks what information a Stripe Connect connected account must provide for verification, onboarding, KYC, or account requirements; when they need to compare requirements between connected-account setups; or… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#connect-required-verification-information)
+- **71/100 · C** · [stripe-directory](https://github.com/stripe/ai/blob/main/skills/stripe-directory/SKILL.md) — Identifies external providers, merchants, nonprofits, platforms, APIs, and software services, and resolves the documented way to engage them — to pay, donate, subscribe, book, provision, or integrate with them. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-directory)
 
 <a id="supabase--agent-skills"></a>
 

@@ -6,7 +6,7 @@
 
 Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure configuration. They give an agent a methodical checklist for the parts of a codebase or system where mistakes cost the most.
 
-**91 accepted skills · 18 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**115 accepted skills · 22 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=security&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -15,12 +15,15 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 <details>
 <summary>Browse publishers in this category</summary>
 
+- [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [cloudflare/security-audit-skill](#cloudflare--security-audit-skill)
 - [cloudflare/skills](#cloudflare--skills)
 - [firebase/skills](#firebase--skills)
 - [garrytan/gstack](#garrytan--gstack)
 - [getsentry/skills](#getsentry--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [google/skills](#google--skills)
 - [googleworkspace/cli](#googleworkspace--cli)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
@@ -28,6 +31,7 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
 - [mcollina/skills](#mcollina--skills)
 - [NVIDIA/skills](#nvidia--skills)
+- [openai/skills](#openai--skills)
 - [Orchestra-Research/AI-Research-SKILLs](#orchestra-research--ai-research-skills)
 - [redis/agent-skills](#redis--agent-skills)
 - [Tencent/AI-Infra-Guard](#tencent--ai-infra-guard)
@@ -36,6 +40,14 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 
 </details>
 
+<a id="anthropics--claude-plugins-official"></a>
+
+## anthropics/claude-plugins-official
+
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+
+- **80/100 · B** · [claude-security](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/claude-security/skills/claude-security/SKILL.md) — Claude Security: scan the codebase (the whole repository or a scoped part of it), scan changes (this branch's or a pull request's diff, or one commit), or suggest patches (findings turned into targeted patch files, each verified by a… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#claude-security) · License: All rights reserved (review terms)
+
 <a id="avelikiy--great-cto"></a>
 
 ## avelikiy/great\_cto
@@ -43,6 +55,22 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 [Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **82/100 · B** · [secrets-rotation](https://github.com/avelikiy/great_cto/blob/main/skills/secrets-rotation/SKILL.md) — Handles exposed secrets, such as ones pasted into chat or committed, by treating them as compromised and making revocation and rotation one tracked task. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/secrets-rotation/)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **80/100 · B** · [setup-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/setup-security-agent/SKILL.md) — Configure AWS Security Agent for the current workspace — provision or reuse an agent space, IAM service role, and S3 bucket. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#setup-security-agent)
+- **78/100 · C** · [remediating-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/remediating-with-aws-security-agent/SKILL.md) — Pull AWS Security Agent findings (penetration tests and code reviews) and drive remediation. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#remediating-with-aws-security-agent)
+- **77/100 · C** · [pentesting-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/pentesting-with-aws-security-agent/SKILL.md) — Run an AWS Security Agent penetration test against a live web application — registers and verifies the target domain, exercises the supplied endpoints with the managed Security Agent service, and returns verified runtime findings. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#pentesting-with-aws-security-agent)
+- **77/100 · C** · [scanning-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/scanning-with-aws-security-agent/SKILL.md) — Run an AWS Security Agent scan on the workspace — uploads the source to AWS, scans it with the managed Security Agent service, and returns ranked, verified findings with code locations and remediations. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#scanning-with-aws-security-agent)
+- **74/100 · C** · [connecting-vpcs-with-peering](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/networking-and-content-delivery-skills/connecting-vpcs-with-peering/SKILL.md) — Establishes VPC peering connections between two VPCs for direct private network connectivity. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#connecting-vpcs-with-peering)
+- **74/100 · C** · [diff-scanning-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/diff-scanning-with-aws-security-agent/SKILL.md) — Run a fast AWS Security Agent diff scan on only the changed code since a git ref. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#diff-scanning-with-aws-security-agent)
+- **74/100 · C** · [setting-up-cloudwatch-alarm-notifications](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/operations-skills/setting-up-cloudwatch-alarm-notifications/SKILL.md) — Sets up notification channels for CloudWatch alarms using SNS topics and subscriptions. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#setting-up-cloudwatch-alarm-notifications)
+- **74/100 · C** · [threat-modeling-with-aws-security-agent](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/threat-modeling-with-aws-security-agent/SKILL.md) — Run an AWS Security Agent threat model review on spec/design documents. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#threat-modeling-with-aws-security-agent)
+- **68/100 · D** · [aws-security](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/core-skills/aws-security/SKILL.md) — AWS security service suitability, coverage and cost recommendations: WAF/origin overlap, AWS Network Firewall inspection coverage and policy review, VPC endpoint, Transit Gateway/Cloud WAN segmentation and DNS Firewall security-control… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-security)
 
 <a id="cloudflare--security-audit-skill"></a>
 
@@ -89,6 +117,23 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 - **86/100 · B** · [gha-security-review](https://github.com/getsentry/skills/blob/main/skills/gha-security-review/SKILL.md) — Reviews GitHub Actions workflows for exploitation vulnerabilities such as pwn requests, expression injection, credential theft, and supply chain attacks, with concrete proof-of-concept scenarios. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/gha-security-review/)
 - **86/100 · B** · [secret-serialization](https://github.com/getsentry/skills/blob/main/skills/secret-serialization/SKILL.md) — Finds secrets, tokens, passwords, and API keys that can leak through generated serialization, structured logs, tracing spans, and error reports in Python and JavaScript. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/secret-serialization/)
 - **86/100 · B** · [security-review](https://github.com/getsentry/skills/blob/main/skills/security-review/SKILL.md) — Reviews code for security vulnerabilities including injection, XSS, authentication, authorization, and cryptography issues, using a systematic process with confidence-based reporting. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/security-review/)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **81/100 · B** · [security-review](https://github.com/github/awesome-copilot/blob/main/skills/security-review/SKILL.md) — AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#security-review)
+- **80/100 · B** · [agent-owasp-compliance](https://github.com/github/awesome-copilot/blob/main/skills/agent-owasp-compliance/SKILL.md) — Check any AI agent codebase against the OWASP Agentic Security Initiative (ASI) Top 10 risks. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#agent-owasp-compliance)
+- **80/100 · B** · [code-tour](https://github.com/github/awesome-copilot/blob/main/skills/code-tour/SKILL.md) — Use this skill to create CodeTour .tour files — persona-targeted, step-by-step walkthroughs that link to real files and line numbers. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#code-tour)
+- **80/100 · B** · [codeql](https://github.com/github/awesome-copilot/blob/main/skills/codeql/SKILL.md) — Comprehensive guide for setting up and configuring CodeQL code scanning via GitHub Actions workflows and the CodeQL CLI. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#codeql)
+- **80/100 · B** · [quarkus-application-development](https://github.com/github/awesome-copilot/blob/main/skills/quarkus-application-development/SKILL.md) — Write Quarkus application code: REST with Quarkus REST, validation, exception mappers, OpenAPI, configuration, CDI (ArC), Hibernate ORM with Panache, Mutiny and virtual threads, Reactive Messaging with Kafka, OIDC security, health,… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#quarkus-application-development)
+- **79/100 · C** · [github-actions-hardening](https://github.com/github/awesome-copilot/blob/main/skills/github-actions-hardening/SKILL.md) — Security hardening reviewer for GitHub Actions workflow files (.github/workflows/\*.yml). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#github-actions-hardening)
+- **78/100 · C** · [dependabot](https://github.com/github/awesome-copilot/blob/main/skills/dependabot/SKILL.md) — Comprehensive guide for configuring and managing GitHub Dependabot. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#dependabot)
+- **78/100 · C** · [threat-model-analyst](https://github.com/github/awesome-copilot/blob/main/skills/threat-model-analyst/SKILL.md) — Full STRIDE-A threat model analysis and incremental update skill for repositories and systems. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#threat-model-analyst)
+- **77/100 · C** · [audit-integrity](https://github.com/github/awesome-copilot/blob/main/skills/audit-integrity/SKILL.md) — Enforce output quality, evidence verification, and quality gates across security audits. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#audit-integrity)
+- **77/100 · C** · [tm7-threat-model](https://github.com/github/awesome-copilot/blob/main/skills/tm7-threat-model/SKILL.md) — Creates valid Microsoft Threat Modeling Tool (.tm7) files compatible with the Microsoft Threat Modeling Tool v7.3+. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#tm7-threat-model)
 
 <a id="google--skills"></a>
 
@@ -169,6 +214,17 @@ Skills for security review, vulnerability hunting, threat detection, authenticat
 [Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **79/100 · C** · [doca-argus](https://github.com/NVIDIA/skills/blob/main/skills/doca-argus/SKILL.md) — Use this skill when the user is deploying or operating the DOCA Argus Service — the packaged BlueField-side runtime-security container that watches the BlueField and attached host for suspicious activity, integrity violations, and… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#doca-argus)
+
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **79/100 · C** · [security-ownership-map](https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/SKILL.md) — Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. [Suede](https://skills.suedeai.ai/directory/openai/skills/#security-ownership-map)
+- **77/100 · C** · [security-best-practices](https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/SKILL.md) — Perform language and framework specific security best-practice reviews and suggest improvements. [Suede](https://skills.suedeai.ai/directory/openai/skills/#security-best-practices)
+- **77/100 · C** · [security-threat-model](https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/SKILL.md) — Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. [Suede](https://skills.suedeai.ai/directory/openai/skills/#security-threat-model)
+- **74/100 · C** · [define-goal](https://github.com/openai/skills/blob/main/skills/.curated/define-goal/SKILL.md) — Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. [Suede](https://skills.suedeai.ai/directory/openai/skills/#define-goal)
 
 <a id="orchestra-research--ai-research-skills"></a>
 

@@ -6,7 +6,7 @@
 
 Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against.
 
-**89 accepted skills · 32 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**112 accepted skills · 39 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **59–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=writing-content&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -15,17 +15,21 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 <details>
 <summary>Browse publishers in this category</summary>
 
+- [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [anthropics/skills](#anthropics--skills)
 - [appierun/appie-mcp](#appierun--appie-mcp)
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [bitwize-music-studio/claude-ai-music-skills](#bitwize-music-studio--claude-ai-music-skills)
 - [conorbronsdon/avoid-ai-writing](#conorbronsdon--avoid-ai-writing)
 - [danjdewhurst/story-skills](#danjdewhurst--story-skills)
 - [eduardo-sl/go-agent-skills](#eduardo-sl--go-agent-skills)
 - [flutter/skills](#flutter--skills)
 - [getsentry/skills](#getsentry--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
+- [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [humanpen/humanpen-skill](#humanpen--humanpen-skill)
 - [ilyautov/humanizer-ru](#ilyautov--humanizer-ru)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
@@ -33,7 +37,9 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
+- [langchain-ai/langchain-skills](#langchain-ai--langchain-skills)
 - [lukstei/slop-grader](#lukstei--slop-grader)
+- [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
 - [mcollina/skills](#mcollina--skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
@@ -45,10 +51,19 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - [realkimbarrett/advertising-skills](#realkimbarrett--advertising-skills)
 - [sergebulaev/linkedin-skills](#sergebulaev--linkedin-skills)
 - [tronghieu/agent-skills](#tronghieu--agent-skills)
+- [vercel-labs/agent-skills](#vercel-labs--agent-skills)
 - [wgwtest/novel-writing](#wgwtest--novel-writing)
 - [wondelai/skills](#wondelai--skills)
 
 </details>
+
+<a id="anthropics--claude-plugins-official"></a>
+
+## anthropics/claude-plugins-official
+
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+
+- **73/100 · C** · [writing-hookify-rules](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/hookify/skills/writing-rules/SKILL.md) — This skill should be used when the user asks to "create a hookify rule", "write a hook rule", "configure hookify", "add a hookify rule", or needs guidance on hookify rule syntax and patterns. [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#writing-hookify-rules)
 
 <a id="anthropics--skills"></a>
 
@@ -74,6 +89,14 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 
 - **71/100 · C** · [prose-style](https://github.com/avelikiy/great_cto/blob/main/skills/prose-style/SKILL.md) — Reusable writing-style contract for agent outputs (reports, ARCH docs, verdicts, threat models). [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#prose-style)
 
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **68/100 · D** · [querying-aws-redshift](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/system-table-skills/querying-aws-redshift/SKILL.md) — Enables Redshift system-table (SYS\_\*) log publishing to S3 Tables in Apache Iceberg format for both Provisioned clusters and Serverless namespaces, verifies publishing status, and queries the published logs via any Iceberg-compatible… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#querying-aws-redshift)
+
 <a id="bitwize-music-studio--claude-ai-music-skills"></a>
 
 ## bitwize-music-studio/claude-ai-music-skills
@@ -89,8 +112,8 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 [Repository](https://github.com/conorbronsdon/avoid-ai-writing) · Publisher: [conorbronsdon](https://github.com/conorbronsdon) · [Suede listing](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/)
 
 - **85/100 · B** · [avoid-ai-writing-router](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/avoid-ai-writing-router/SKILL.md) — Handles requests that combine AI-writing audit, rewrite, file editing, voice preservation, false-positive interpretation, or verification, including when the user names no mode. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing-router/)
-- **84/100 · B** · [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/SKILL.md) — Audits and rewrites content to remove AI writing patterns, and supports a detect-only mode. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing/)
 - **82/100 · B** · [ai-writing-detector](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/ai-writing-detector/SKILL.md) — Detects, scans, and scores AI-writing patterns in text without rewriting it, including a deterministic local detector result when the host can run Node. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/ai-writing-detector/)
+- **82/100 · B** · [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/SKILL.md) — Audits and rewrites content to remove AI writing patterns, and supports a detect-only mode. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing/)
 - **82/100 · B** · [preservation-verifier](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/preservation-verifier/SKILL.md) — Checks whether a rewrite preserved protected content such as code, frontmatter, quotes, tables, links, paths, numbers, and headings, and flags residual AI-pattern regressions. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/preservation-verifier/)
 - **80/100 · B** · [false-positive-reviewer](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/false-positive-reviewer/SKILL.md) — Interprets what AI-writing flags mean and whether detector output proves AI authorship, with careful handling of false positives in academic, hiring, and disciplinary decisions. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/false-positive-reviewer/)
 - **80/100 · B** · [file-edit-in-place](https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/file-edit-in-place/SKILL.md) — Cleans, rewrites, or humanizes a named local file in place to remove AI-writing patterns, using minimal targeted edits and post-edit verification. [Suede](https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/file-edit-in-place/)
@@ -154,6 +177,26 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - **78/100 · C** · [brand-guidelines](https://github.com/getsentry/skills/blob/main/skills/brand-guidelines/SKILL.md) — Write copy following Sentry brand guidelines. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#brand-guidelines)
 - **78/100 · C** · [doc-coauthoring](https://github.com/getsentry/skills/blob/main/skills/doc-coauthoring/SKILL.md) — Guides users through a structured workflow for co-authoring documentation, proposals, technical specs, and decision docs, including context transfer, iteration, and reader checks. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/doc-coauthoring/)
 
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **84/100 · B** · [make-blog-post](https://github.com/github/awesome-copilot/blob/main/skills/make-blog-post/SKILL.md) — Turn code from the current session into a blog post written in the voice of its author. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#make-blog-post)
+- **83/100 · B** · [finnish-humanizer](https://github.com/github/awesome-copilot/blob/main/skills/finnish-humanizer/SKILL.md) — Detect and remove AI-generated markers from Finnish text, making it sound like a native Finnish speaker wrote it. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#finnish-humanizer)
+- **82/100 · B** · [build-evidence-map](https://github.com/github/awesome-copilot/blob/main/skills/build-evidence-map/SKILL.md) — Build an auditable evidence map for a contested technical choice, research synthesis, proposal review, or consequential decision. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#build-evidence-map)
+- **82/100 · B** · [speak-summary](https://github.com/github/awesome-copilot/blob/main/skills/speak-summary/SKILL.md) — Convert text, markdown, or a summary produced by another skill into a listenable MP3 using local CPU-only neural text-to-speech. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#speak-summary)
+- **80/100 · B** · [gtm-board-and-investor-communication](https://github.com/github/awesome-copilot/blob/main/skills/gtm-board-and-investor-communication/SKILL.md) — Board meeting preparation, investor updates, and executive communication. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-board-and-investor-communication)
+- **80/100 · B** · [steno-mode](https://github.com/github/awesome-copilot/blob/main/skills/steno-mode/SKILL.md) — Shorthand-first response compression that cuts ~40% of response tokens while preserving technical precision and exact literals. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#steno-mode)
+- **78/100 · C** · [vardoger-analyze](https://github.com/github/awesome-copilot/blob/main/skills/vardoger-analyze/SKILL.md) — Use when the user asks to personalize the GitHub Copilot CLI assistant, adapt Copilot to their style, use vardoger, or analyze their Copilot CLI conversation history. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#vardoger-analyze)
+- **77/100 · C** · [em-dash](https://github.com/github/awesome-copilot/blob/main/skills/em-dash/SKILL.md) — Expert on the history, origin, and correct use of the em dash. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#em-dash)
+- **77/100 · C** · [technical-job-search](https://github.com/github/awesome-copilot/blob/main/skills/technical-job-search/SKILL.md) — Use this skill when a software engineer asks for help with job search tasks: parsing or analyzing a job description, tailoring a CV/resume, writing a cover letter, evaluating a job offer, or drafting a post-interview follow-up email. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#technical-job-search)
+- **73/100 · C** · [markdown-to-html](https://github.com/github/awesome-copilot/blob/main/skills/markdown-to-html/SKILL.md) — Convert Markdown files to HTML similar to \`marked.js\`, \`pandoc\`, \`gomarkdown/markdown\`, or similar tools; or writing custom script to convert markdown to html and/or working on web template systems like \`jekyll/jekyll\`, \`gohugoio/hugo\`,… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#markdown-to-html)
+- **69/100 · D** · [suggest-awesome-github-copilot-instructions](https://github.com/github/awesome-copilot/blob/main/skills/suggest-awesome-github-copilot-instructions/SKILL.md) — Suggest relevant GitHub Copilot instruction files from the awesome-copilot repository based on current repository context and chat history, avoiding duplicates with existing instructions in this repository, and identifying outdated… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#suggest-awesome-github-copilot-instructions)
+- **69/100 · D** · [suggest-awesome-github-copilot-skills](https://github.com/github/awesome-copilot/blob/main/skills/suggest-awesome-github-copilot-skills/SKILL.md) — Suggest relevant GitHub Copilot skills from the awesome-copilot repository based on current repository context and chat history, avoiding duplicates with existing skills in this repository, and identifying outdated skills that need updates. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#suggest-awesome-github-copilot-skills)
+- **65/100 · D** · [repo-story-time](https://github.com/github/awesome-copilot/blob/main/skills/repo-story-time/SKILL.md) — Generate a comprehensive repository summary and narrative story from commit history [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#repo-story-time)
+
 <a id="gooseworks-ai--goose-skills"></a>
 
 ## gooseworks-ai/goose-skills
@@ -169,6 +212,16 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 [Repository](https://github.com/hashicorp/agent-skills) · Publisher: [hashicorp](https://github.com/hashicorp) · [Suede listing](https://skills.suedeai.ai/directory/hashicorp/agent-skills/)
 
 - **80/100 · B** · [provider-docs](https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-docs/SKILL.md) — Creates, updates, and reviews Terraform provider documentation for the Terraform Registry using HashiCorp-recommended patterns and tfplugindocs templates. [Suede](https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-docs/)
+
+<a id="heygen-com--hyperframes"></a>
+
+## heygen-com/hyperframes
+
+[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
+
+- **83/100 · B** · [hyperframes-core](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-core/SKILL.md) — The HyperFrames composition contract — build one renderable project. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-core)
+- **82/100 · B** · [embedded-captions](https://github.com/heygen-com/hyperframes/blob/main/skills/embedded-captions/SKILL.md) — Add captions or subtitles to an existing single-subject talking-head video without editing the footage. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#embedded-captions)
+- **82/100 · B** · [hyperframes-studio](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-studio/SKILL.md) — Use when working with a person on a HyperFrames project in Studio: first, whether their message asks for a change at all (questions, loose ideas and "don't change anything" get an answer and a plan, not an edit); for a new film, the… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-studio)
 
 <a id="humanpen--humanpen-skill"></a>
 
@@ -241,6 +294,15 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 
 - **79/100 · C** · [api-documentation](https://github.com/LambdaTest/agent-skills/blob/main/api-skill/api-documentation/SKILL.md) — Generate comprehensive, professional API documentation from API designs, endpoint definitions, OpenAPI/Swagger specs, route lists, or raw endpoint descriptions. [Suede](https://skills.suedeai.ai/directory/lambdatest/agent-skills/#api-documentation)
 
+<a id="langchain-ai--langchain-skills"></a>
+
+## langchain-ai/langchain-skills
+
+[Repository](https://github.com/langchain-ai/langchain-skills) · Publisher: [langchain-ai](https://github.com/langchain-ai) · [Suede listing](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/)
+
+- **80/100 · B** · [langgraph-fundamentals](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-fundamentals/SKILL.md) — INVOKE THIS SKILL when writing ANY LangGraph code. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#langgraph-fundamentals)
+- **69/100 · D** · [langgraph-persistence](https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-persistence/SKILL.md) — INVOKE THIS SKILL when your LangGraph needs to persist state, remember conversations, travel through history, or configure subgraph checkpointer scoping. [Suede](https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/#langgraph-persistence)
+
 <a id="lukstei--slop-grader"></a>
 
 ## lukstei/slop-grader
@@ -248,6 +310,15 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 [Repository](https://github.com/lukstei/slop-grader) · Publisher: [lukstei](https://github.com/lukstei) · [Suede listing](https://skills.suedeai.ai/directory/lukstei/slop-grader/)
 
 - **67/100 · D** · [create-slop-grader-rules](https://github.com/lukstei/slop-grader/blob/main/skills/create-slop-grader-rules/SKILL.md) — Create custom slop-grader rulesets in Markdown based on user guidelines and SYNTAX.md specification. [Suede](https://skills.suedeai.ai/directory/lukstei/slop-grader/#create-slop-grader-rules)
+
+<a id="mattpocock--skills"></a>
+
+## mattpocock/skills
+
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+
+- **75/100 · C** · [domain-modeling](https://github.com/mattpocock/skills/blob/main/skills/engineering/domain-modeling/SKILL.md) — Build and sharpen a project's domain model. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#domain-modeling)
+- **65/100 · D** · [pr](https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md) — Use when writing a PR body. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#pr)
 
 <a id="mblode--agent-skills"></a>
 
@@ -346,6 +417,14 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 
 - **87/100 · B** · [diataxis-writer](https://github.com/tronghieu/agent-skills/blob/main/skills/diataxis-writer/SKILL.md) — Writes, restructures, classifies, and reviews documentation of any kind with the Diataxis framework, including knowledge bases, help centers, manuals, runbooks, tutorials, and references. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/diataxis-writer/)
 - **86/100 · B** · [fiction-studio](https://github.com/tronghieu/agent-skills/blob/main/skills/fiction-studio/SKILL.md) — Guides an author from a bare idea to a prose manuscript for a novel, novella, short story, or series, using specialist agents. [Suede](https://skills.suedeai.ai/directory/tronghieu/agent-skills/fiction-studio/)
+
+<a id="vercel-labs--agent-skills"></a>
+
+## vercel-labs/agent-skills
+
+[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
+
+- **72/100 · C** · [writing-guidelines](https://github.com/vercel-labs/agent-skills/blob/main/skills/writing-guidelines/SKILL.md) — Review docs/prose for Writing Guidelines compliance. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#writing-guidelines)
 
 <a id="wgwtest--novel-writing"></a>
 

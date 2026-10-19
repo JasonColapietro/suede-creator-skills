@@ -6,7 +6,7 @@
 
 Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates.
 
-**112 accepted skills · 19 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**198 accepted skills · 32 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–89 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=frontend-design&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -17,22 +17,35 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 - [agiwhitelist/auteur](#agiwhitelist--auteur)
 - [angular/skills](#angular--skills)
+- [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [anthropics/skills](#anthropics--skills)
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [cloudflare/skills](#cloudflare--skills)
 - [expo/skills](#expo--skills)
 - [fal-ai-community/skills](#fal-ai-community--skills)
 - [firecrawl/skills](#firecrawl--skills)
 - [flutter/skills](#flutter--skills)
 - [garrytan/gstack](#garrytan--gstack)
+- [github/awesome-copilot](#github--awesome-copilot)
+- [google-labs-code/stitch-skills](#google-labs-code--stitch-skills)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
+- [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [Leonxlnx/taste-skill](#leonxlnx--taste-skill)
+- [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
+- [microsoft/azure-skills](#microsoft--azure-skills)
 - [MiniMax-AI/skills](#minimax-ai--skills)
+- [nextlevelbuilder/ui-ux-pro-max-skill](#nextlevelbuilder--ui-ux-pro-max-skill)
 - [ohad6k/emulo](#ohad6k--emulo)
+- [openai/skills](#openai--skills)
+- [pbakaus/impeccable](#pbakaus--impeccable)
+- [sanity-io/agent-toolkit](#sanity-io--agent-toolkit)
+- [stripe/ai](#stripe--ai)
 - [superdesigndev/superdesign-skill](#superdesigndev--superdesign-skill)
+- [vercel-labs/agent-skills](#vercel-labs--agent-skills)
 - [wondelai/skills](#wondelai--skills)
 
 </details>
@@ -54,6 +67,14 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 - **81/100 · B** · [angular-developer](https://github.com/angular/skills/blob/main/angular-developer/SKILL.md) — Generates Angular code and gives architectural guidance on components, services, signals, forms, routing, server rendering, accessibility, styling, testing, and CLI tooling. [Suede](https://skills.suedeai.ai/directory/angular/skills/angular-developer/)
 - **80/100 · B** · [angular-new-app](https://github.com/angular/skills/blob/main/angular-new-app/SKILL.md) — Creates a new Angular application using the Angular CLI and provides guidelines for building a modern Angular app. [Suede](https://skills.suedeai.ai/directory/angular/skills/angular-new-app/)
 
+<a id="anthropics--claude-plugins-official"></a>
+
+## anthropics/claude-plugins-official
+
+[Repository](https://github.com/anthropics/claude-plugins-official) · Publisher: [anthropics](https://github.com/anthropics) · [Suede listing](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/)
+
+- **84/100 · B** · [plugin-structure](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md) — This skill should be used when the user asks to "create a plugin", "scaffold a plugin", "understand plugin structure", "organize plugin components", "set up plugin.json", "use $\{CLAUDE\_PLUGIN\_ROOT\}", "add commands/agents/skills/hooks",… [Suede](https://skills.suedeai.ai/directory/anthropics/claude-plugins-official/#plugin-structure)
+
 <a id="anthropics--skills"></a>
 
 ## anthropics/skills
@@ -74,6 +95,16 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 - **84/100 · B** · [anydesign](https://github.com/avelikiy/great_cto/blob/main/skills/anydesign/SKILL.md) — Analyzes images, websites, and Figma files to extract their design and generate a design.md with a token system, component inventory, and reconstruction notes. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/anydesign/)
 - **82/100 · B** · [aesthetic-instrument](https://github.com/avelikiy/great_cto/blob/main/skills/aesthetic-instrument/SKILL.md) — Defines great\_cto's visual style, a dark surface ladder with one accent and two typefaces, as twelve checkable rules for its board, site, and reports. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/aesthetic-instrument/)
 - **82/100 · B** · [committed-aesthetic](https://github.com/avelikiy/great_cto/blob/main/skills/committed-aesthetic/SKILL.md) — Explains how to write and use a skill that commits to one checkable aesthetic rather than a catalogue, so designs are executed consistently. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/committed-aesthetic/)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **80/100 · B** · [arc-region-switch](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/resilience-skills/arc-region-switch/SKILL.md) — Answers questions about Amazon Application Recovery Controller (ARC) Region switch including architecture, plans, execution blocks, workflows, triggers, active/active vs active/passive, cross-account support, recovery time, dashboards,… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#arc-region-switch)
+- **72/100 · C** · [resilience-program-design](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/resilience-skills/resilience-program-design/SKILL.md) — Designs a resilience program: how to structure and standardize resilience policies across an organization, team, or portfolio (tiered policy model with availability/RTO/RPO targets and DR approach selection), and how often to run… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#resilience-program-design)
+- **67/100 · D** · [amazon-dynamodb](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/database-skills/amazon-dynamodb/SKILL.md) — Designs, reviews, and debugs DynamoDB data layers from design axioms — enumerates access patterns, chooses partition/sort keys and GSIs, decides single-table vs. multi-table, configures Streams, Global Tables, TTL, vector indexes for… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#amazon-dynamodb)
 
 <a id="cloudflare--skills"></a>
 
@@ -98,9 +129,12 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 ## fal-ai-community/skills
 
-[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-redesign/)
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
 
+- **75/100 · C** · [character-design](https://github.com/fal-ai-community/skills/blob/main/skills/character-design/SKILL.md) — Build consistent character designs and character media with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#character-design)
 - **73/100 · C** · [fal-redesign](https://github.com/fal-ai-community/skills/blob/main/skills/fal-redesign/SKILL.md) — Redesigns a coded website by screenshotting it, generating a reference image with fal.ai, and writing a Markdown build-spec with hard constraints and tokens.json. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-redesign/)
+- **72/100 · C** · [model-routing](https://github.com/fal-ai-community/skills/blob/main/skills/model-routing/SKILL.md) — Choose default fal.ai endpoint IDs for genmedia production skills. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#model-routing)
+- **62/100 · D** · [fal-gamedev](https://github.com/fal-ai-community/skills/blob/main/skills/fal-gamedev/SKILL.md) — Generate 2D pixel art game assets, characters, sprite sheets, background removal, and game backgrounds. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#fal-gamedev)
 
 <a id="firecrawl--skills"></a>
 
@@ -108,7 +142,7 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 [Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
-- **77/100 · C** · [firecrawl-website-design-clone](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-website-design-clone/SKILL.md) — Extracts a website's design system into an agent-ready DESIGN.md covering colors, fonts, spacing, components, and layout patterns, using Firecrawl scrape evidence. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-website-design-clone/)
+- **80/100 · B** · [firecrawl-website-design-clone](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-website-design-clone/SKILL.md) — Extracts a website's design system into an agent-ready DESIGN.md covering colors, fonts, spacing, components, and layout patterns, using Firecrawl scrape evidence. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-website-design-clone/)
 
 <a id="flutter--skills"></a>
 
@@ -128,6 +162,62 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 - **64/100 · D** · [ios-design-review](https://github.com/garrytan/gstack/blob/main/ios-design-review/SKILL.md) — Visual design audit for iOS apps on real hardware. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#ios-design-review)
 
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **85/100 · B** · [poka-yoke](https://github.com/github/awesome-copilot/blob/main/skills/poka-yoke/SKILL.md) — Mistake-proof code so misuse cannot be expressed, rather than warning against it. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#poka-yoke)
+- **84/100 · B** · [batch-script-progress](https://github.com/github/awesome-copilot/blob/main/skills/batch-script-progress/SKILL.md) — Design and verify runtime output when creating or modifying Python, PowerShell, or Node.js scripts that process multiple files, records, or API requests. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#batch-script-progress)
+- **83/100 · B** · [daily-focus-board](https://github.com/github/awesome-copilot/blob/main/skills/daily-focus-board/SKILL.md) — Spin up a personal, motivating daily focus board that renders in a browser canvas and that the user drives by talking to their AI partner. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#daily-focus-board)
+- **83/100 · B** · [fluentui-blazor](https://github.com/github/awesome-copilot/blob/main/skills/fluentui-blazor/SKILL.md) — Guide for using the Microsoft Fluent UI Blazor component library (Microsoft.FluentUI.AspNetCore.Components NuGet package) in Blazor applications. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#fluentui-blazor)
+- **83/100 · B** · [web-design-reviewer](https://github.com/github/awesome-copilot/blob/main/skills/web-design-reviewer/SKILL.md) — This skill enables visual inspection of websites running locally or remotely to identify and fix design issues. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#web-design-reviewer)
+- **82/100 · B** · [d365-solution-blueprint](https://github.com/github/awesome-copilot/blob/main/skills/d365-solution-blueprint/SKILL.md) — Authors a Dynamics 365 Finance and Supply Chain Management Solution Blueprint from scratch through a structured, section-by-section architect interview, establishing scope, target operating model, application and data architecture,… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#d365-solution-blueprint)
+- **82/100 · B** · [markstream-install](https://github.com/github/awesome-copilot/blob/main/skills/markstream-install/SKILL.md) — Install and configure Markstream streaming Markdown renderers for Vue, React, Svelte, Angular, Nuxt, and Vue 2 applications. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#markstream-install)
+- **81/100 · B** · [gdpr-compliant](https://github.com/github/awesome-copilot/blob/main/skills/gdpr-compliant/SKILL.md) — Apply GDPR-compliant engineering practices across your codebase. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gdpr-compliant)
+- **81/100 · B** · [gsap-framer-scroll-animation](https://github.com/github/awesome-copilot/blob/main/skills/gsap-framer-scroll-animation/SKILL.md) — Use this skill whenever the user wants to build scroll animations, scroll effects, parallax, scroll-triggered reveals, pinned sections, horizontal scroll, text animations, or any motion tied to scroll position — in vanilla JS, React, or… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gsap-framer-scroll-animation)
+- **81/100 · B** · [penpot-uiux-design](https://github.com/github/awesome-copilot/blob/main/skills/penpot-uiux-design/SKILL.md) — Comprehensive guide for creating professional UI/UX designs in Penpot using MCP tools. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#penpot-uiux-design)
+- **80/100 · B** · [anti-ui-slop](https://github.com/github/awesome-copilot/blob/main/skills/anti-ui-slop/SKILL.md) — Stop coding agents from shipping generic UI. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#anti-ui-slop)
+- **80/100 · B** · [cloud-design-patterns](https://github.com/github/awesome-copilot/blob/main/skills/cloud-design-patterns/SKILL.md) — Cloud design patterns for distributed systems architecture covering 42 industry-standard patterns across reliability, performance, messaging, security, and deployment categories. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#cloud-design-patterns)
+- **80/100 · B** · [fabric-lakehouse](https://github.com/github/awesome-copilot/blob/main/skills/fabric-lakehouse/SKILL.md) — Use this skill to get context about Fabric Lakehouse and its features for software systems and AI-powered functions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#fabric-lakehouse)
+- **80/100 · B** · [legacy-circuit-mockups](https://github.com/github/awesome-copilot/blob/main/skills/legacy-circuit-mockups/SKILL.md) — Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas drawing techniques. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#legacy-circuit-mockups)
+- **80/100 · B** · [macos-golden-gate-design](https://github.com/github/awesome-copilot/blob/main/skills/macos-golden-gate-design/SKILL.md) — Design, implement, review, or refactor native macOS 27 Golden Gate interfaces in SwiftUI or AppKit. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#macos-golden-gate-design)
+- **80/100 · B** · [powerbi-modeling](https://github.com/github/awesome-copilot/blob/main/skills/powerbi-modeling/SKILL.md) — Power BI semantic modeling assistant for building optimized data models. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#powerbi-modeling)
+- **78/100 · C** · [rhino3d-scripts](https://github.com/github/awesome-copilot/blob/main/skills/rhino3d-scripts/SKILL.md) — Authoring and debugging scripts for Rhinoceros 3D (Rhino 8 and later). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#rhino3d-scripts)
+- **77/100 · C** · [arize-link](https://github.com/github/awesome-copilot/blob/main/skills/arize-link/SKILL.md) — Generates deep links to the Arize UI for traces, spans, sessions, datasets, labeling queues, evaluators, and annotation configs. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#arize-link)
+- **77/100 · C** · [gtm-developer-ecosystem](https://github.com/github/awesome-copilot/blob/main/skills/gtm-developer-ecosystem/SKILL.md) — Build and scale developer-led adoption through ecosystem programs. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-developer-ecosystem)
+- **77/100 · C** · [gtm-technical-product-pricing](https://github.com/github/awesome-copilot/blob/main/skills/gtm-technical-product-pricing/SKILL.md) — Pricing strategy for technical products. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-technical-product-pricing)
+- **77/100 · C** · [power-bi-report-design-consultation](https://github.com/github/awesome-copilot/blob/main/skills/power-bi-report-design-consultation/SKILL.md) — Power BI report visualization design prompt for creating effective, user-friendly, and accessible reports with optimal chart selection and layout design. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#power-bi-report-design-consultation)
+- **77/100 · C** · [power-platform-architect](https://github.com/github/awesome-copilot/blob/main/skills/power-platform-architect/SKILL.md) — Use this skill when the user needs to transform business requirements, use case descriptions, or meeting transcripts into a technical Power Platform solution architecture, including component selection and Mermaid.js diagrams. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#power-platform-architect)
+- **77/100 · C** · [react-container-presentation-component](https://github.com/github/awesome-copilot/blob/main/skills/react-container-presentation-component/SKILL.md) — Create a React component using the Container/Presentation pattern in src/components by asking for the component name and type (ui or features), then scaffold files that follow this repository's TypeScript, Storybook, and SCSS conventions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react-container-presentation-component)
+- **77/100 · C** · [react18-batching-patterns](https://github.com/github/awesome-copilot/blob/main/skills/react18-batching-patterns/SKILL.md) — Provides exact patterns for diagnosing and fixing automatic batching regressions in React 18 class components. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react18-batching-patterns)
+- **77/100 · C** · [react18-string-refs](https://github.com/github/awesome-copilot/blob/main/skills/react18-string-refs/SKILL.md) — Provides exact migration patterns for React string refs (ref="name" + this.refs.name) to React.createRef() in class components. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react18-string-refs)
+- **77/100 · C** · [salesforce-component-standards](https://github.com/github/awesome-copilot/blob/main/skills/salesforce-component-standards/SKILL.md) — Quality standards for Salesforce Lightning Web Components (LWC), Aura components, and Visualforce pages. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#salesforce-component-standards)
+- **77/100 · C** · [salesforce-flow-design](https://github.com/github/awesome-copilot/blob/main/skills/salesforce-flow-design/SKILL.md) — Salesforce Flow architecture decisions, flow type selection, bulk safety validation, and fault handling standards. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#salesforce-flow-design)
+- **75/100 · C** · [react18-lifecycle-patterns](https://github.com/github/awesome-copilot/blob/main/skills/react18-lifecycle-patterns/SKILL.md) — Provides exact before/after migration patterns for the three unsafe class component lifecycle methods - componentWillMount, componentWillReceiveProps, and componentWillUpdate - targeting React 18.3.1. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react18-lifecycle-patterns)
+- **73/100 · C** · [copilot-pr-autopilot](https://github.com/github/awesome-copilot/blob/main/skills/copilot-pr-autopilot/SKILL.md) — Copilot left 14 review comments on your PR — half are nits. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#copilot-pr-autopilot)
+- **70/100 · C** · [oo-component-documentation](https://github.com/github/awesome-copilot/blob/main/skills/oo-component-documentation/SKILL.md) — Create or update standardized object-oriented component documentation using a shared template plus mode-specific guidance for new and existing docs. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#oo-component-documentation)
+- **69/100 · D** · [premium-frontend-ui](https://github.com/github/awesome-copilot/blob/main/skills/premium-frontend-ui/SKILL.md) — A comprehensive guide for GitHub Copilot to craft immersive, high-performance web experiences with advanced motion, typography, and architectural craftsmanship. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#premium-frontend-ui)
+- **69/100 · D** · [ui-screenshots](https://github.com/github/awesome-copilot/blob/main/skills/ui-screenshots/SKILL.md) — Capture screenshots of web apps during development using Playwright and PIL. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#ui-screenshots)
+- **69/100 · D** · [update-implementation-plan](https://github.com/github/awesome-copilot/blob/main/skills/update-implementation-plan/SKILL.md) — Update an existing implementation plan file with new or update requirements to provide new features, refactoring existing code or upgrading packages, design, architecture or infrastructure. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#update-implementation-plan)
+- **67/100 · D** · [create-implementation-plan](https://github.com/github/awesome-copilot/blob/main/skills/create-implementation-plan/SKILL.md) — Create a new implementation plan file for new features, refactoring existing code or upgrading packages, design, architecture or infrastructure. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#create-implementation-plan)
+- **67/100 · D** · [power-bi-model-design-review](https://github.com/github/awesome-copilot/blob/main/skills/power-bi-model-design-review/SKILL.md) — Comprehensive Power BI data model design review prompt for evaluating model architecture, relationships, and optimization opportunities. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#power-bi-model-design-review)
+- **67/100 · D** · [resx-source-generator-migration](https://github.com/github/awesome-copilot/blob/main/skills/resx-source-generator-migration/SKILL.md) — Migrates a project that uses checked-in .designer.cs files behind .resx to using a source-generator instead [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#resx-source-generator-migration)
+- **62/100 · D** · [dotnet-design-pattern-review](https://github.com/github/awesome-copilot/blob/main/skills/dotnet-design-pattern-review/SKILL.md) — Review the C#/.NET code for design pattern implementation and suggest improvements. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#dotnet-design-pattern-review)
+
+<a id="google-labs-code--stitch-skills"></a>
+
+## google-labs-code/stitch-skills
+
+[Repository](https://github.com/google-labs-code/stitch-skills) · Publisher: [google-labs-code](https://github.com/google-labs-code) · [Suede listing](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/)
+
+- **72/100 · C** · [enhance-prompt](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-utilities/skills/enhance-prompt/SKILL.md) — Transforms vague UI ideas into polished, Stitch-optimized prompts. [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#enhance-prompt)
+- **71/100 · C** · [shadcn-ui](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-build/skills/shadcn-ui/SKILL.md) — Expert guidance for integrating and building applications with shadcn/ui components, including component discovery, installation, customization, and best practices. [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#shadcn-ui)
+- **69/100 · D** · [taste-design](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-utilities/skills/taste-design/SKILL.md) — Semantic Design System Skill for Google Stitch. [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#taste-design)
+- **66/100 · D** · [react-vite-dashboard](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-build/skills/react-vite-dashboard/SKILL.md) — Convert Stitch designs into production React + Vite dashboards with TanStack Query, accessible tokens from DESIGN.md, and Web3-ready patterns (ethers/viem). [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#react-vite-dashboard)
+- **65/100 · D** · [design-md](https://github.com/google-labs-code/stitch-skills/blob/main/plugins/stitch-utilities/skills/design-md/SKILL.md) — Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files [Suede](https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/#design-md)
+
 <a id="gooseworks-ai--goose-skills"></a>
 
 ## gooseworks-ai/goose-skills
@@ -135,6 +225,20 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 [Repository](https://github.com/gooseworks-ai/goose-skills) · Publisher: [gooseworks-ai](https://github.com/gooseworks-ai) · [Suede listing](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/)
 
 - **73/100 · C** · [visual-brand-extractor](https://github.com/gooseworks-ai/goose-skills/blob/main/skills/brand/capabilities/visual-brand-extractor/SKILL.md) — Extract visual branding (colors, typography, layout patterns) from a client's website and generate a style preset compatible with the HTML slides skill and a brand config JSON for the content asset creator. [Suede](https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/#visual-brand-extractor)
+
+<a id="heygen-com--hyperframes"></a>
+
+## heygen-com/hyperframes
+
+[Repository](https://github.com/heygen-com/hyperframes) · Publisher: [heygen-com](https://github.com/heygen-com) · [Suede listing](https://skills.suedeai.ai/directory/heygen-com/hyperframes/)
+
+- **84/100 · B** · [hyperframes-keyframes](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-keyframes/SKILL.md) — Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths,… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-keyframes)
+- **82/100 · B** · [hyperframes-creative](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/SKILL.md) — Non-animation creative direction for HyperFrames videos. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-creative)
+- **80/100 · B** · [hyperframes](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes/SKILL.md) — Mandatory entry point: read this first for any request to make, create, edit, animate, or render a video, animation, or motion graphic, including a promo, explainer, captioned clip, title card, overlay, slideshow or interactive deck,… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes)
+- **80/100 · B** · [hyperframes-animation](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-animation/SKILL.md) — All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-animation)
+- **80/100 · B** · [motion-graphics](https://github.com/heygen-com/hyperframes/blob/main/skills/motion-graphics/SKILL.md) — Use when creating a short, design-led motion graphic where motion is the message — kinetic typography, stat count-up, chart/data-viz hit, logo sting / brand lockup, lower-third / callout / social overlay, animated map (highlight… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#motion-graphics)
+- **79/100 · C** · [figma](https://github.com/heygen-com/hyperframes/blob/main/skills/figma/SKILL.md) — Import Figma content into a HyperFrames composition — rendered assets, brand tokens, components, storyboard sections → reconstructed motion (frames read as states, not slides) (REST/CLI), connector-assisted motion when available, and… [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#figma)
+- **78/100 · C** · [hyperframes-registry](https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-registry/SKILL.md) — Search, install, and wire registry blocks and components into HyperFrames compositions. [Suede](https://skills.suedeai.ai/directory/heygen-com/hyperframes/#hyperframes-registry)
 
 <a id="infrasity-labs--dev-gtm-claude-skills"></a>
 
@@ -226,9 +330,19 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 [Repository](https://github.com/Leonxlnx/taste-skill) · Publisher: [Leonxlnx](https://github.com/Leonxlnx) · [Suede listing](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/)
 
-- **76/100 · C** · [design-taste-frontend](https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md) — tasteskill v2, the anti-slop frontend skill. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#design-taste-frontend)
-- **64/100 · D** · [imagegen-frontend-mobile](https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-mobile/SKILL.md) — Elite mobile app image-generation skill for creating premium, app-native screen concepts and flows. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#imagegen-frontend-mobile)
-- **64/100 · D** · [imagegen-frontend-web](https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-web/SKILL.md) — Elite frontend image-direction skill for generating premium, conversion-aware website design references. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#imagegen-frontend-web)
+- **61/100 · D** · [imagegen-frontend-mobile](https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-mobile/SKILL.md) — Moved to github.com/Leonxlnx/imagegen-skills. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#imagegen-frontend-mobile)
+- **61/100 · D** · [imagegen-frontend-web](https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-web/SKILL.md) — Moved to github.com/Leonxlnx/imagegen-skills. [Suede](https://skills.suedeai.ai/directory/leonxlnx/taste-skill/#imagegen-frontend-web)
+
+<a id="mattpocock--skills"></a>
+
+## mattpocock/skills
+
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+
+- **78/100 · C** · [codebase-design](https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md) — Shared vocabulary for designing deep modules. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#codebase-design)
+- **75/100 · C** · [prototype](https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md) — Build a throwaway prototype to answer a design question. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#prototype)
+- **61/100 · D** · [grill-with-docs](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md) — A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#grill-with-docs)
+- **59/100 · D** · [grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) — A relentless interview to sharpen a plan or design. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#grill-me)
 
 <a id="mblode--agent-skills"></a>
 
@@ -241,6 +355,14 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 - **84/100 · B** · [typography-audit](https://github.com/mblode/agent-skills/blob/main/skills/typography-audit/SKILL.md) — Audits font loading, type scales, measure, spacing, OpenType, and rendered punctuation with 78 scoped rules. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#typography-audit)
 - **84/100 · B** · [ui-design](https://github.com/mblode/agent-skills/blob/main/skills/ui-design/SKILL.md) — Designs and builds React, Next, and Tailwind UI, audits visual and interaction defects, and stress-tests components with worst-case data. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/ui-design/)
 
+<a id="microsoft--azure-skills"></a>
+
+## microsoft/azure-skills
+
+[Repository](https://github.com/microsoft/azure-skills) · Publisher: [microsoft](https://github.com/microsoft) · [Suede listing](https://skills.suedeai.ai/directory/microsoft/azure-skills/)
+
+- **72/100 · C** · [azure-kusto-graph](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-graph/SKILL.md) — Build and query Kusto graphs from natural language. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-kusto-graph)
+
 <a id="minimax-ai--skills"></a>
 
 ## MiniMax-AI/skills
@@ -248,6 +370,18 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 [Repository](https://github.com/MiniMax-AI/skills) · Publisher: [MiniMax-AI](https://github.com/MiniMax-AI) · [Suede listing](https://skills.suedeai.ai/directory/minimax-ai/skills/)
 
 - **67/100 · D** · [frontend-dev](https://github.com/MiniMax-AI/skills/blob/main/skills/frontend-dev/SKILL.md) — Full-stack frontend development combining premium UI design, cinematic animations, AI-generated media assets, persuasive copywriting, and visual art. [Suede](https://skills.suedeai.ai/directory/minimax-ai/skills/#frontend-dev)
+
+<a id="nextlevelbuilder--ui-ux-pro-max-skill"></a>
+
+## nextlevelbuilder/ui-ux-pro-max-skill
+
+[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
+
+- **83/100 · B** · [design-system](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design-system/SKILL.md) — Token architecture, component specifications, and slide generation. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#design-system)
+- **83/100 · B** · [ui-styling](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-styling/SKILL.md) — Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#ui-styling)
+- **83/100 · B** · [ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/ui-ux-pro-max/SKILL.md) — UI/UX design intelligence for web, mobile, and desktop. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#ui-ux-pro-max)
+- **73/100 · C** · [banner-design](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/banner-design/SKILL.md) — Design banners for social media, ads, website heroes, creative assets, and print. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#banner-design)
+- **73/100 · C** · [design](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/design/SKILL.md) — Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner… [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#design)
 
 <a id="ohad6k--emulo"></a>
 
@@ -257,6 +391,52 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 - **77/100 · C** · [design](https://github.com/ohad6k/emulo/blob/main/skills/design/SKILL.md) — Guides UI, UX, visual hierarchy, redesign, and design critique work so that it follows the user's Emulo taste. [Suede](https://skills.suedeai.ai/directory/ohad6k/emulo/design/)
 
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **82/100 · B** · [figma-code-connect-components](https://github.com/openai/skills/blob/main/skills/.curated/figma-code-connect-components/SKILL.md) — Connects Figma design components to code components using Code Connect mapping tools. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-code-connect-components) · License: See LICENSE file (review terms)
+- **79/100 · C** · [chatgpt-apps](https://github.com/openai/skills/blob/main/skills/.curated/chatgpt-apps/SKILL.md) — Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. [Suede](https://skills.suedeai.ai/directory/openai/skills/#chatgpt-apps)
+- **79/100 · C** · [figma-generate-library](https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-library/SKILL.md) — Build or update a professional-grade design system in Figma from a codebase. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-generate-library) · License: See LICENSE file (review terms)
+- **77/100 · C** · [figma-implement-design](https://github.com/openai/skills/blob/main/skills/.curated/figma-implement-design/SKILL.md) — Translates Figma designs into production-ready application code with 1:1 visual fidelity. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-implement-design) · License: See LICENSE file (review terms)
+- **77/100 · C** · [figma-use](https://github.com/openai/skills/blob/main/skills/.curated/figma-use/SKILL.md) — \*\*MANDATORY prerequisite\*\* — you MUST invoke this skill BEFORE every \`use\_figma\` tool call. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-use) · License: See LICENSE file (review terms)
+- **77/100 · C** · [winui-app](https://github.com/openai/skills/blob/main/skills/.curated/winui-app/SKILL.md) — Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. [Suede](https://skills.suedeai.ai/directory/openai/skills/#winui-app)
+- **75/100 · C** · [figma-generate-design](https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-design/SKILL.md) — Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-generate-design) · License: See LICENSE file (review terms)
+- **74/100 · C** · [figma](https://github.com/openai/skills/blob/main/skills/.curated/figma/SKILL.md) — Use the Figma MCP server to fetch design context, screenshots, variables, and assets from Figma, and to translate Figma nodes into production code. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma) · License: See LICENSE file (review terms)
+- **74/100 · C** · [figma-create-design-system-rules](https://github.com/openai/skills/blob/main/skills/.curated/figma-create-design-system-rules/SKILL.md) — Generates custom design system rules for the user's codebase. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-create-design-system-rules) · License: See LICENSE file (review terms)
+- **71/100 · C** · [figma-create-new-file](https://github.com/openai/skills/blob/main/skills/.curated/figma-create-new-file/SKILL.md) — Create a new blank Figma file. [Suede](https://skills.suedeai.ai/directory/openai/skills/#figma-create-new-file) · License: See LICENSE file (review terms)
+
+<a id="pbakaus--impeccable"></a>
+
+## pbakaus/impeccable
+
+[Repository](https://github.com/pbakaus/impeccable) · Publisher: [pbakaus](https://github.com/pbakaus) · [Suede listing](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/)
+
+- **86/100 · B** · [impeccable](https://github.com/pbakaus/impeccable/blob/main/cursor-plugin/skills/impeccable/SKILL.md) — Guides frontend and native interface design through focused playbooks for hierarchy, typography, accessibility, responsive layouts, motion and UX copy. [Suede](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/)
+
+<a id="sanity-io--agent-toolkit"></a>
+
+## sanity-io/agent-toolkit
+
+[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
+
+- **81/100 · B** · [sanity-migration](https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-migration/SKILL.md) — Plans, implements, and reviews migrations from other CMSes and content systems into Sanity. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#sanity-migration)
+- **79/100 · C** · [sanity-best-practices](https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-best-practices/SKILL.md) — Sanity development best practices for schema design, GROQ queries, TypeGen, Visual Editing, images, Portable Text, Studio structure, localization, migrations, Sanity Functions, webhooks, Blueprints, and framework integrations such as… [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#sanity-best-practices)
+- **78/100 · C** · [portable-text-serialization](https://github.com/sanity-io/agent-toolkit/blob/main/skills/portable-text-serialization/SKILL.md) — Render and serialize Portable Text to React, Svelte, Vue, Astro, HTML, Markdown, and plain text. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#portable-text-serialization)
+- **75/100 · C** · [content-experimentation-best-practices](https://github.com/sanity-io/agent-toolkit/blob/main/skills/content-experimentation-best-practices/SKILL.md) — Content experimentation and A/B testing guidance covering experiment design, hypotheses, metrics, sample size, statistical foundations, CMS-managed variants, and common analysis pitfalls. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#content-experimentation-best-practices)
+- **75/100 · C** · [content-modeling-best-practices](https://github.com/sanity-io/agent-toolkit/blob/main/skills/content-modeling-best-practices/SKILL.md) — Structured content modeling guidance for schema design, content architecture, content reuse, references versus embedded objects, separation of concerns, and taxonomies across Sanity and other headless CMSes. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#content-modeling-best-practices)
+
+<a id="stripe--ai"></a>
+
+## stripe/ai
+
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
+
+- **81/100 · B** · [stripe-apps](https://github.com/stripe/ai/blob/main/skills/stripe-apps/SKILL.md) — Build, modify, or review Stripe Apps and extensions using the relevant documentation and reference guides. [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-apps)
+- **76/100 · C** · [metronome](https://github.com/stripe/ai/blob/main/skills/metronome/SKILL.md) — Guides Metronome usage-based billing integration decisions — event ingestion (single and batch, idempotency, billable metrics), contract design (rate cards, overrides, dimensional pricing, products), invoicing lifecycle (grace periods,… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#metronome)
+
 <a id="superdesigndev--superdesign-skill"></a>
 
 ## superdesigndev/superdesign-skill
@@ -264,6 +444,16 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 [Repository](https://github.com/superdesigndev/superdesign-skill) · Publisher: [superdesigndev](https://github.com/superdesigndev) · [Suede listing](https://skills.suedeai.ai/directory/superdesigndev/superdesign-skill/superdesign/)
 
 - **83/100 · B** · [superdesign](https://github.com/superdesigndev/superdesign-skill/blob/main/skills/superdesign/SKILL.md) — Designs or redesigns frontend UI, presentations, and graphics on the Superdesign canvas using a choice of AI models, comparing results and exploring visual variants. [Suede](https://skills.suedeai.ai/directory/superdesigndev/superdesign-skill/superdesign/)
+
+<a id="vercel-labs--agent-skills"></a>
+
+## vercel-labs/agent-skills
+
+[Repository](https://github.com/vercel-labs/agent-skills) · Publisher: [vercel-labs](https://github.com/vercel-labs) · [Suede listing](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/)
+
+- **68/100 · D** · [vercel-react-view-transitions](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-view-transitions/SKILL.md) — Guide for implementing smooth, native-feeling animations using React's View Transition API (\`&lt;ViewTransition&gt;\` component, \`addTransitionType\`, and CSS view transition pseudo-elements). [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-react-view-transitions)
+- **67/100 · D** · [vercel-react-native-skills](https://github.com/vercel-labs/agent-skills/blob/main/skills/react-native-skills/SKILL.md) — React Native and Expo best practices for building performant mobile apps. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-react-native-skills)
+- **64/100 · D** · [vercel-composition-patterns](https://github.com/vercel-labs/agent-skills/blob/main/skills/composition-patterns/SKILL.md) — React composition patterns that scale. [Suede](https://skills.suedeai.ai/directory/vercel-labs/agent-skills/#vercel-composition-patterns)
 
 <a id="wondelai--skills"></a>
 

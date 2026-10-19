@@ -6,7 +6,7 @@
 
 Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.
 
-**152 accepted skills · 23 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**160 accepted skills · 25 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -24,6 +24,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [Ericyoung-183/alpha-insights](#ericyoung-183--alpha-insights)
 - [firecrawl/skills](#firecrawl--skills)
 - [getsentry/skills](#getsentry--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [googleworkspace/cli](#googleworkspace--cli)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
@@ -32,6 +33,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [NVIDIA/skills](#nvidia--skills)
 - [Octav-Labs/octav-api-skill](#octav-labs--octav-api-skill)
 - [phuryn/pm-skills](#phuryn--pm-skills)
+- [stripe/ai](#stripe--ai)
 - [takechanman1228/claude-ecom](#takechanman1228--claude-ecom)
 - [trailofbits/skills](#trailofbits--skills)
 - [tronghieu/agent-skills](#tronghieu--agent-skills)
@@ -123,9 +125,11 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 [Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
-- **71/100 · C** · [firecrawl-lead-gen](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-gen/SKILL.md) — Generate structured lead lists from prospect databases and web directories with Firecrawl browser. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-lead-gen)
-- **71/100 · C** · [firecrawl-lead-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-research/SKILL.md) — Produces pre-meeting intelligence briefs with Firecrawl, covering company and person research, talking points, and pain points before sales calls, partnership meetings, or investor conversations. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-research/)
-- **71/100 · C** · [firecrawl-market-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-market-research/SKILL.md) — Extract market, financial, earnings, industry, and company metrics with Firecrawl. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-market-research)
+- **82/100 · B** · [firecrawl-lead-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-research/SKILL.md) — Produces pre-meeting intelligence briefs with Firecrawl, covering company and person research, talking points, and pain points before sales calls, partnership meetings, or investor conversations. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-research/)
+- **79/100 · C** · [firecrawl-lead-gen](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-gen/SKILL.md) — Find and qualify new prospects with Firecrawl Alexandria people and company data: people by role, seniority, company, industry, size, location or technology, target accounts that match criteria, or the right contacts at companies,… [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-lead-gen)
+- **76/100 · C** · [firecrawl-business-contacts](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-business-contacts/SKILL.md) — Find the published business contacts of companies with Firecrawl, whether the user names them or describes them by type and place: press and media, sales, partnerships and support inboxes, shared business phone numbers and official… [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-business-contacts)
+- **74/100 · C** · [firecrawl-job-postings](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-job-postings/SKILL.md) — Find current job postings on employer career pages and job boards. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-job-postings)
+- **71/100 · C** · [firecrawl-market-research](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-market-research/SKILL.md) — Research markets and companies with Firecrawl using current, cited figures: market size, growth, trends, financials and earnings. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-market-research)
 
 <a id="getsentry--skills"></a>
 
@@ -135,6 +139,17 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 
 - **71/100 · C** · [sred-project-organizer](https://github.com/getsentry/skills/blob/main/skills/sred-project-organizer/SKILL.md) — Take a list of projects and their related documentation, and organize them into the SRED format for submission. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#sred-project-organizer)
 - **70/100 · C** · [sred-work-summary](https://github.com/getsentry/skills/blob/main/skills/sred-work-summary/SKILL.md) — Go back through the previous year of work and create a Notion doc that groups relevant links into projects that can then be documented as SRED projects. [Suede](https://skills.suedeai.ai/directory/getsentry/skills/#sred-work-summary)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **80/100 · B** · [gtm-enterprise-account-planning](https://github.com/github/awesome-copilot/blob/main/skills/gtm-enterprise-account-planning/SKILL.md) — Strategic account planning and execution for enterprise deals. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-enterprise-account-planning)
+- **79/100 · C** · [data-breach-blast-radius](https://github.com/github/awesome-copilot/blob/main/skills/data-breach-blast-radius/SKILL.md) — Pre-breach impact analysis: inventories sensitive data (PII, PHI, PCI-DSS, credentials), traces data flows, scores exposure vectors, and produces a regulatory blast radius report with fine ranges sourced verbatim from GDPR Art. 83, CCPA… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#data-breach-blast-radius)
+- **77/100 · C** · [gtm-enterprise-onboarding](https://github.com/github/awesome-copilot/blob/main/skills/gtm-enterprise-onboarding/SKILL.md) — Four-phase framework for onboarding enterprise customers from contract to value realization. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-enterprise-onboarding)
+- **72/100 · C** · [brag-sheet](https://github.com/github/awesome-copilot/blob/main/skills/brag-sheet/SKILL.md) — Turn vague "what did I do?" into evidence-backed impact statements for performance reviews, self-reviews, promotion packets, and weekly updates. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#brag-sheet)
 
 <a id="googleworkspace--cli"></a>
 
@@ -297,6 +312,15 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - **81/100 · B** · [draft-nda](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/draft-nda/SKILL.md) — Draft a detailed Non-Disclosure Agreement between two parties covering information types, jurisdiction, and clauses needing legal review. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#draft-nda)
 - **81/100 · B** · [privacy-policy](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/privacy-policy/SKILL.md) — Draft a detailed privacy policy covering data types, jurisdiction, GDPR and compliance considerations, and clauses needing legal review. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/#privacy-policy)
 - **81/100 · B** · [review-resume](https://github.com/phuryn/pm-skills/blob/main/pm-toolkit/skills/review-resume/SKILL.md) — Reviews and tailors a PM resume against 10 best practices, including the XYZ+S formula, keyword optimization, job-specific tailoring, and structure. [Suede](https://skills.suedeai.ai/directory/phuryn/pm-skills/review-resume/)
+
+<a id="stripe--ai"></a>
+
+## stripe/ai
+
+[Repository](https://github.com/stripe/ai) · Publisher: [stripe](https://github.com/stripe) · [Suede listing](https://skills.suedeai.ai/directory/stripe/ai/)
+
+- **79/100 · C** · [stripe-best-practices](https://github.com/stripe/ai/blob/main/skills/stripe-best-practices/SKILL.md) — Guides Stripe integration decisions across development and test environment planning (separate sandboxes vs the shared test mode sandbox), API selection (Checkout Sessions vs PaymentIntents), Connect platform setup (Accounts v2,… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#stripe-best-practices)
+- **76/100 · C** · [connect-recommend](https://github.com/stripe/ai/blob/main/skills/connect-recommend/SKILL.md) — Use this skill when the user asks about Stripe Connect configuration, charge patterns, Dashboard access, or how to get started with Connect, is building a marketplace, platform, multi-vendor store, gig platform, or subscription… [Suede](https://skills.suedeai.ai/directory/stripe/ai/#connect-recommend)
 
 <a id="takechanman1228--claude-ecom"></a>
 

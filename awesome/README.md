@@ -8,26 +8,26 @@
 
 Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
-Browse **2,975 scored skills from 140 repositories** across **16 categories**, with publisher credits and direct source links.
+Browse **3,794 scored skills from 158 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
 **[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
-Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 ## Compare 0–99 quality scores
 
 Every displayed score is recomputed from the saved evidence using **graded-v2**. The rubric scores structural checks, description clarity, instruction depth, bundled resources, maintenance, curated-list citations and declared tool/compatibility fields. [See every component and point allocation](https://skills.suedeai.ai/directory/methodology/).
 
-The rubric uses a **0–99 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **53–95 / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
+The published quality scale is **0–99**. The rubric totals **100 points**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **53–95 / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
-| **90–99 · A** | 123 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,373 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
-| **70–79 · C** | 999 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
-| **0–69 · D** | 480 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
+| **90–99 · A** | 125 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
+| **80–89 · B** | 1,572 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **70–79 · C** | 1,373 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
+| **0–69 · D** | 724 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
 
@@ -35,22 +35,22 @@ For GitHub browsing, choose a category below. Numeric scores lead every listing,
 
 | Category | Quality scores / 100 | Accepted skills | Repositories |
 | --- | ---: | ---: | ---: |
-| [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–94 / 100** | 459 | 57 |
-| [Developer Tools and Frameworks](categories/developer-tools.md) | **54–95 / 100** | 384 | 48 |
-| [Marketing and SEO](categories/marketing-seo.md) | **62–94 / 100** | 293 | 19 |
-| [Product Management](categories/product-management.md) | **56–92 / 100** | 233 | 15 |
+| [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–94 / 100** | 599 | 68 |
+| [Developer Tools and Frameworks](categories/developer-tools.md) | **54–95 / 100** | 541 | 63 |
+| [Marketing and SEO](categories/marketing-seo.md) | **62–94 / 100** | 306 | 23 |
+| [Product Management](categories/product-management.md) | **56–92 / 100** | 237 | 16 |
 | [Science and Research](categories/science-research.md) | **66–93 / 100** | 210 | 8 |
-| [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 199 | 29 |
-| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 192 | 31 |
-| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–93 / 100** | 201 | 32 |
-| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 152 | 23 |
-| [Testing and QA](categories/testing-qa.md) | **56–95 / 100** | 127 | 27 |
-| [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 128 | 23 |
-| [Security](categories/security.md) | **54–93 / 100** | 91 | 18 |
-| [Frontend and Design](categories/frontend-design.md) | **56–89 / 100** | 112 | 19 |
-| [Writing and Editing](categories/writing-content.md) | **59–95 / 100** | 89 | 32 |
-| [Code Review and Code Quality](categories/code-review-quality.md) | **62–95 / 100** | 65 | 22 |
-| [Documents and Office Files](categories/documents-office.md) | **53–91 / 100** | 40 | 17 |
+| [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 359 | 37 |
+| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 230 | 37 |
+| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–93 / 100** | 213 | 35 |
+| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 160 | 25 |
+| [Testing and QA](categories/testing-qa.md) | **56–95 / 100** | 190 | 34 |
+| [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 176 | 27 |
+| [Security](categories/security.md) | **54–93 / 100** | 115 | 22 |
+| [Frontend and Design](categories/frontend-design.md) | **56–89 / 100** | 198 | 32 |
+| [Writing and Editing](categories/writing-content.md) | **59–95 / 100** | 112 | 39 |
+| [Code Review and Code Quality](categories/code-review-quality.md) | **58–95 / 100** | 93 | 28 |
+| [Documents and Office Files](categories/documents-office.md) | **53–91 / 100** | 55 | 22 |
 
 Each skill appears in one category. A repository can contribute to several categories. Within each category, browse by publisher and use GitHub’s page search to find a name or task.
 
@@ -85,7 +85,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `e97bb1ec22dfb84be10e36dc99615756e30dc63700336f09f605d9f3555296db`.
+Dataset SHA-256: `621a4d7f6e849345f01ed1ca13efe6b3dff34881980539c3fc19249d7c91aecd`.
 
 ## Contribute and update
 

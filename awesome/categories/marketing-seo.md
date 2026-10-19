@@ -6,7 +6,7 @@
 
 Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time.
 
-**293 accepted skills · 19 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**306 accepted skills · 23 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **62–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -20,7 +20,9 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - [avelikiy/great\_cto](#avelikiy--great-cto)
 - [bitwize-music-studio/claude-ai-music-skills](#bitwize-music-studio--claude-ai-music-skills)
 - [coreyhaines31/marketingskills](#coreyhaines31--marketingskills)
+- [fal-ai-community/skills](#fal-ai-community--skills)
 - [firecrawl/skills](#firecrawl--skills)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [glacierphonk/naming](#glacierphonk--naming)
 - [google/skills](#google--skills)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
@@ -28,10 +30,12 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - [inhouseseo/superseo-skills](#inhouseseo--superseo-skills)
 - [mailtrap/mailtrap-skills](#mailtrap--mailtrap-skills)
 - [mblode/agent-skills](#mblode--agent-skills)
+- [nextlevelbuilder/ui-ux-pro-max-skill](#nextlevelbuilder--ui-ux-pro-max-skill)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
 - [ohad6k/emulo](#ohad6k--emulo)
 - [phuryn/pm-skills](#phuryn--pm-skills)
 - [realkimbarrett/advertising-skills](#realkimbarrett--advertising-skills)
+- [sanity-io/agent-toolkit](#sanity-io--agent-toolkit)
 - [sergebulaev/linkedin-skills](#sergebulaev--linkedin-skills)
 - [wondelai/skills](#wondelai--skills)
 
@@ -148,13 +152,37 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - **83/100 · B** · [marketing-plan](https://github.com/coreyhaines31/marketingskills/blob/main/skills/marketing-plan/SKILL.md) — When the user needs a comprehensive marketing plan for a client, a company they advise, or their own product. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#marketing-plan)
 - **80/100 · B** · [ai-seo](https://github.com/coreyhaines31/marketingskills/blob/main/skills/ai-seo/SKILL.md) — Optimizes content for AI search engines so it gets cited by LLMs and appears in AI-generated answers, covering AEO, GEO, and LLM optimization. [Suede](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/ai-seo/)
 
+<a id="fal-ai-community--skills"></a>
+
+## fal-ai-community/skills
+
+[Repository](https://github.com/fal-ai-community/skills) · Publisher: [fal-ai-community](https://github.com/fal-ai-community) · [Suede listing](https://skills.suedeai.ai/directory/fal-ai-community/skills/)
+
+- **75/100 · C** · [marketing](https://github.com/fal-ai-community/skills/blob/main/skills/marketing/SKILL.md) — Plan and run campaign-level marketing asset production with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#marketing)
+- **75/100 · C** · [ugc](https://github.com/fal-ai-community/skills/blob/main/skills/ugc/SKILL.md) — Plan and run UGC-style creator ads and social proof videos with genmedia. [Suede](https://skills.suedeai.ai/directory/fal-ai-community/skills/#ugc)
+
 <a id="firecrawl--skills"></a>
 
 ## firecrawl/skills
 
 [Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
-- **74/100 · C** · [firecrawl-seo-audit](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-seo-audit/SKILL.md) — Audit a website's SEO with Firecrawl. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-seo-audit)
+- **77/100 · C** · [firecrawl-seo-audit](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-seo-audit/SKILL.md) — Inspect a website's titles, meta descriptions, headings, canonicals, structured data and internal links for on-page and technical SEO issues. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-seo-audit)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **82/100 · B** · [ad-campaign-analyzer](https://github.com/github/awesome-copilot/blob/main/skills/ad-campaign-analyzer/SKILL.md) — Use this skill when the user shares ad campaign performance data and asks what to cut, scale, or test. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#ad-campaign-analyzer)
+- **82/100 · B** · [competitor-ad-intelligence](https://github.com/github/awesome-copilot/blob/main/skills/competitor-ad-intelligence/SKILL.md) — Use this skill when the user asks to analyze, tear down, or reverse-engineer a competitor's paid ads. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#competitor-ad-intelligence)
+- **80/100 · B** · [landing-page-conversion-audit](https://github.com/github/awesome-copilot/blob/main/skills/landing-page-conversion-audit/SKILL.md) — Audit a landing page, sales page or checkout page for conversion leaks and return a fix list ordered by expected revenue impact. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#landing-page-conversion-audit)
+- **80/100 · B** · [linkedin-post-formatter](https://github.com/github/awesome-copilot/blob/main/skills/linkedin-post-formatter/SKILL.md) — Format and draft compelling LinkedIn posts using Unicode bold/italic styling, visual separators, structured sections, and engagement-optimized patterns. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#linkedin-post-formatter)
+- **77/100 · C** · [dotnet-timezone](https://github.com/github/awesome-copilot/blob/main/skills/dotnet-timezone/SKILL.md) — .NET timezone handling guidance for C# applications. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#dotnet-timezone)
+- **77/100 · C** · [gtm-0-to-1-launch](https://github.com/github/awesome-copilot/blob/main/skills/gtm-0-to-1-launch/SKILL.md) — Launch new products from idea to first customers. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-0-to-1-launch)
+- **77/100 · C** · [gtm-product-led-growth](https://github.com/github/awesome-copilot/blob/main/skills/gtm-product-led-growth/SKILL.md) — Build self-serve acquisition and expansion motions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-product-led-growth)
+- **77/100 · C** · [server-side-conversion-tracking](https://github.com/github/awesome-copilot/blob/main/skills/server-side-conversion-tracking/SKILL.md) — Set up server-side conversion tracking so purchases are reported accurately to Facebook, TikTok, Google and Bing despite iOS restrictions, ad blockers and cookie loss. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#server-side-conversion-tracking)
 
 <a id="glacierphonk--naming"></a>
 
@@ -337,6 +365,14 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 - **87/100 · B** · [seo](https://github.com/mblode/agent-skills/blob/main/skills/seo/SKILL.md) — Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#seo)
 
+<a id="nextlevelbuilder--ui-ux-pro-max-skill"></a>
+
+## nextlevelbuilder/ui-ux-pro-max-skill
+
+[Repository](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) · Publisher: [nextlevelbuilder](https://github.com/nextlevelbuilder) · [Suede listing](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/)
+
+- **72/100 · C** · [brand](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/.claude/skills/brand/SKILL.md) — Brand voice, visual identity, messaging frameworks, asset management, brand consistency. [Suede](https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/#brand)
+
 <a id="nowork-studio--notfair"></a>
 
 ## nowork-studio/NotFair
@@ -426,6 +462,15 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - **64/100 · D** · [objection-crusher](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/objection-crusher/SKILL.md) — Identifies and neutralizes buyer objections, covering reasons someone would not buy, hesitation, and conversion issues. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/objection-crusher/)
 - **64/100 · D** · [scroll-stopping-creative](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/scroll-stopping-creative/SKILL.md) — Creates ad concepts that stop attention in the first 3 seconds, for ad creative, thumbstoppers, and video ideas. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/scroll-stopping-creative/)
 - **62/100 · D** · [performance-diagnosis](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/performance-diagnosis/SKILL.md) — Diagnoses why campaigns are underperforming, such as low performance, high CPL, or bad ads. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/performance-diagnosis/)
+
+<a id="sanity-io--agent-toolkit"></a>
+
+## sanity-io/agent-toolkit
+
+[Repository](https://github.com/sanity-io/agent-toolkit) · Publisher: [sanity-io](https://github.com/sanity-io) · [Suede listing](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/)
+
+- **75/100 · C** · [portable-text-conversion](https://github.com/sanity-io/agent-toolkit/blob/main/skills/portable-text-conversion/SKILL.md) — Convert HTML and Markdown content into Portable Text blocks for Sanity. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#portable-text-conversion)
+- **75/100 · C** · [seo-aeo-best-practices](https://github.com/sanity-io/agent-toolkit/blob/main/skills/seo-aeo-best-practices/SKILL.md) — SEO and AEO best practices for metadata, Open Graph, sitemaps, robots.txt, hreflang, JSON-LD structured data, EEAT, and content optimized for search engines and AI answer surfaces. [Suede](https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/#seo-aeo-best-practices)
 
 <a id="sergebulaev--linkedin-skills"></a>
 

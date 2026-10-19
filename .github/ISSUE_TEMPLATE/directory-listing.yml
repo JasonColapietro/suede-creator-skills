@@ -15,6 +15,7 @@ body:
         - Add my skills
         - Verify my README badge for featured placement
         - Help improve my quality score
+        - Recheck my updated skill
         - Correct a listing
         - Remove a listing
     validations:
@@ -40,7 +41,7 @@ body:
     id: details
     attributes:
       label: Details
-      description: For additions, include any review context for the requested skills. For badge verification, give the Suede listing URL and README path displaying either the linked numeric badge or letter badge (both also qualify). For score help, name the failed checks. For a correction, describe the change. For a removal, add any relevant context.
+      description: For additions, include review context for the requested skills. For badge verification, give the listing URL and README path with the linked badge. For score help or a fresh review, give the listing URL, previous report or snapshot, changed commit or PR, and points to recheck. For a correction or removal, describe the change.
     validations:
       required: false
   - type: checkboxes

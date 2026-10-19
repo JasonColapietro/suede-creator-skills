@@ -105,6 +105,7 @@ data.skills = data.skills.map((c) => {
     lists: meta.lists,
     official: meta.official,
     repo_withheld: meta.withheld || 0,
+    repo_scoped_install: Boolean(meta.scoped_install),
     body_lines: c.size[0],
     body_words: c.size[1],
     file_count: c.size[2],
@@ -244,6 +245,7 @@ for (const r of repos.values()) {
   r.publisher = publisherName(r.owner, r.official);
   r.hasRootSkill = r.skills.some((s) => s.dir === ".");
   r.withheld = r.skills[0].repo_withheld;
+  r.scopedInstall = r.skills[0].repo_scoped_install;
   const licCounts = new Map();
   for (const s of r.skills) licCounts.set(s.license, (licCounts.get(s.license) || 0) + 1);
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
@@ -596,6 +598,46 @@ ${rows
         </div>`;
 }
 
+// Portable evidence describes the saved snapshot, never a fresh scan of upstream.
+function skillReport(s) {
+  const revision = data.repos[s.repo].commit_sha || null;
+  if (revision !== null && !/^[a-f0-9]{40}$/.test(revision)) throw new Error(`Invalid source revision for ${s.repo}`);
+  const report = {
+    schema_version: 1, skill: { name: s.name, repository: s.repo, path: s.dir, license: s.license },
+    listing_url: listingTarget(s),
+    snapshot: { date: snapshot.date, id: data.snapshot_id, dataset_sha256: snapshot.sha256 },
+    source: { branch: s.branch, revision, revision_status: revision ? "recorded" : "not_recorded_in_snapshot", repository_commit_date: s.commit_date,
+      skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
+    methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
+    quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
+    security_scan_status: "not_scanned",
+    badges: s.shielded ? badgePair(s) : [{ kind: "listing", src: `${BASE}/${skillPath(s)}badge.svg`, alt: "Suede Skills Directory: listed" }],
+  };
+  return { ...report, report_version: createHash("sha256").update(JSON.stringify(report)).digest("hex") };
+}
+function reviewRequest(s) {
+  const request = new URL(ISSUE_URL);
+  request.searchParams.set("request", "Recheck my updated skill");
+  request.searchParams.set("repository", `https://github.com/${s.repo}`);
+  request.searchParams.set("skill-scope", s.name);
+  request.searchParams.set("details", `Listing: ${listingTarget(s)}\nPrevious report: ${url(skillPath(s))}report.json\nSnapshot: ${snapshot.date} (${data.snapshot_id}); methodology: ${SCORE_METHOD}\n\nUpdated source commit or PR:\nChanges to review:\n`);
+  return request.toString();
+}
+function reportLinks(here, s) {
+  return `<a href="${rel(here, `${skillPath(s)}report.json`)}" download="${esc(s.slug)}-suede-report-${snapshot.date}.json">Download report</a> · <a href="${esc(reviewRequest(s))}" target="_blank" rel="noopener">Request a fresh review</a>`;
+}
+function reportPanel(here, s) {
+  const report = skillReport(s);
+  const open = s.score_parts.filter((p) => p.points < p.max && p.id !== "adoption").sort((a, b) => (b.max - b.points) - (a.max - a.points)).slice(0, 3);
+  return `<div class="report-summary">
+          <p class="report-kicker">Report snapshot · <time datetime="${snapshot.date}">${longDate(snapshot.date)}</time> · ${SCORE_METHOD}</p>
+          <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
+          <p class="muted">Source revision: ${report.source.revision ? `<a href="${esc(report.source.skill_md_url)}" target="_blank" rel="noopener"><code>${report.source.revision.slice(0, 12)}</code></a>` : "not recorded in this snapshot"}. Report version <code>${report.report_version.slice(0, 12)}</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="report-actions">${reportLinks(here, s)}</p>
+          ${open.length ? `<h3>What to review next</h3><ul>${open.map((p) => `<li><b>${esc(p.label)}</b>: ${p.points} of ${p.max} points. ${esc(RUBRIC.find((r) => r.id === p.id).rule)}.</li>`).join("")}</ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>` : ""}
+        </div>`;
+}
+
 function skillRow(here, s, { showRepo, showLicense = false }) {
   const cat = catBySlug.get(s.category);
   const nameCell = s.featured
@@ -617,7 +659,8 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
       : s.featured
         ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>`
         : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
-  return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}</td></tr>`;
+  const report = showRepo ? "" : `<p class="row-report">${reportLinks(here, s)}</p>`;
+  return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}${report}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -864,6 +907,7 @@ ${fileList}
       </section>
       <section class="panel" id="check" aria-labelledby="check-title">
         <h2 id="check-title">Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>
+${reportPanel(here, s)}
         <p>${esc(s.name)} passes the required frontmatter check and ${checkSummary(s).replace(/^Passes /, "")}, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn ${s.score_parts[0].points} of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations${rawPoints > SCORE_CAP ? `, capped at ${SCORE_CAP}` : ""}. <a href="${rel(here, "directory/methodology/")}">How the score works</a>.</p>
         <details class="check-details">
           <summary>See the checks and points</summary>
@@ -978,7 +1022,7 @@ function renderRepo(r) {
     // whole-repository install would bring only that one.
     // Hidden when it would also install a skill the directory withholds, one
     // whose license restricts copying, or only a root skill that hides the rest.
-    ["Install every skill", r.withheld || r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
+    ["Install every skill", r.scopedInstall || r.withheld || r.skills.some((s) => licenseKind(s) === "restricted") || (r.hasRootSkill && r.skills.length > 1) ? "" : `<code>npx skills add https://github.com/${esc(r.repo)}</code>`],
     ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
   ]);
   const relatedRepos = linkedRepos.filter((o) => o.primary === r.primary && o.slug !== r.slug && (o.indexable || !o.hasPage)).slice(0, 6);
@@ -1107,6 +1151,7 @@ function renderCategory(c) {
         <li><b>${fmt(repoCounts.size)}</b> repositories</li>
         <li><b>${fmt(feat.length)}</b> with full pages</li>
       </ul>
+      <p><a class="button secondary" href="${rel(here, "directory/")}?category=${esc(c.slug)}#browse">Build a shortlist for your task →</a></p>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">All ${fmt(all.length)} ${esc(c.short)} skills</h2>
 ${filterField("all-skills", all.length, "skills")}
@@ -1210,6 +1255,7 @@ function renderHub() {
     name: s.name, repo: s.repo, description: s.summary || trimTo(s.description, 180),
     category: s.category, label: catBySlug.get(s.category).label, license: s.license,
     grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured,
+    report: `/${skillPath(s)}report.json`, snapshot: snapshot.date, method: SCORE_METHOD,
   }))) + "\n");
   const starters = categories.slice(0, 8).map((c) => discovery.find((s) => s.featured && s.category === c.slug)).filter(Boolean);
   const starterRows = starters.map((s) => `<article class="discovery-row"><div><p class="result-meta">${esc(catBySlug.get(s.category).label)} <span> / ${esc(s.repo)}</span></p><h3><a href="${rel(here, skillPath(s))}">${esc(s.name)}</a></h3><p>${esc(s.summary || trimTo(s.description, 180))}</p><p class="result-foot">${esc(s.license)} · Full skill page</p></div><div class="result-quality">${s.shielded ? `<img class="result-shield" src="badges/score-${s.score}.svg" alt="Suede S shield" width="80" height="88" loading="lazy">` : ""}<span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></div></article>`).join("\n");
@@ -1231,6 +1277,15 @@ function renderHub() {
           <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
           <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option>${GRADE_BANDS.map(([g, band]) => `<option value="${g}">${g} · ${band}</option>`).join("")}</select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
         </form>
+        <section class="task-shortlist" aria-labelledby="shortlist-title" data-shortlist hidden>
+          <div class="browse-heading"><h3 id="shortlist-title">Your task shortlist</h3><span class="muted" data-shortlist-count>0 of 5 skills</span></div>
+          <label for="shortlist-task">What are you working on?</label>
+          <input id="shortlist-task" type="text" maxlength="120" placeholder="For example: review a React checkout" data-shortlist-task>
+          <p class="muted">Choose up to five skills from the results. Your shortlist stays in this page’s URL, ready to bookmark or share.</p>
+          <ul data-shortlist-items></ul>
+          <p role="status" aria-live="polite" data-shortlist-status></p>
+          <details data-shortlist-export hidden><summary>Copy your shortlist as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Task, scores and report links</span><button type="button" data-copy-target="shortlist-markdown">Copy shortlist</button></div><pre><code id="shortlist-markdown"></code></pre></div></details>
+        </section>
         <div class="discovery-layout">
           <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
           <div class="discovery-content"><div class="result-heading"><h3 data-result-title>Start exploring</h3><span class="muted" role="status" aria-live="polite" data-results-status>${starters.length} skills to explore</span></div><div data-search-error hidden><p>Search could not load. Try again, or browse a category.</p><button type="button" data-retry>Try again</button></div><div class="search-loading" hidden aria-hidden="true"><span></span><span></span><span></span></div><div data-search-results>${starterRows}</div><div class="search-empty" hidden><h3>No skills match these filters</h3><p>Try fewer words or a broader category.</p><button type="button" data-reset>Clear all filters</button></div><button type="button" class="load-more" data-load-more hidden>Show more skills</button><noscript><p>Choose a category to browse every listed skill. Search is available with JavaScript enabled.</p></noscript></div>
@@ -1357,7 +1412,7 @@ function renderMethodology() {
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
       <section class="panel" aria-labelledby="sources-title">
         <h2 id="sources-title">Where the skills come from</h2>
-        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. This snapshot was taken on ${longDate(data.generated)}.</p>
+        <p>The directory reads the repositories cited by at least two of these ${plural(data.sources.length, "curated list")}: ${data.sources.map(listLink).join(", ")}. It adds the official collections those lists name and repositories accepted through <a href="${rel(here, "directory/submit/")}">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. Accepted requests may name exact canonical skill folders, including a publisher’s hidden distribution folder; only those reviewed roots and skill names are included. System skills, unreviewed mirrors and fixtures remain excluded. This snapshot was taken on ${longDate(data.generated)}.</p>
       </section>
       <section class="panel" aria-labelledby="check-title">
         <h2 id="check-title">The Suede Skill Check</h2>
@@ -1479,6 +1534,9 @@ function renderSubmit() {
           <li>Declare a license in the frontmatter or ship a LICENSE file in the repository, and keep the repository maintained: recent commits earn up to 9 points.</li>
         </ul>
         <p>The <a href="${rel(here, "directory/methodology/")}#score">scoring rubric</a> lists every component and its points.</p>
+        <h3>Updated your skill?</h3>
+        <p>Choose <b>Request a fresh review</b> on the skill’s report or repository listing. The form carries the exact skill name and previous snapshot. Add the changed commit or pull request and the points you improved. Suede reviews requests by hand and rechecks accepted changes at a directory refresh.</p>
+        <p>Each listing offers a downloadable JSON report with its snapshot date, report version, score breakdown and methodology. Source commit IDs appear when recorded by the refresh; older snapshots say when the revision was not recorded. External skills remain marked <b>not scanned</b>.</p>
       </section>
 ${badgeBlock(here, {
   badgePath: "directory/badge.svg",
@@ -1547,6 +1605,7 @@ render404();
 for (const c of categories) renderCategory(c);
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
+for (const s of data.skills) files.set(`${skillPath(s)}report.json`, JSON.stringify(skillReport(s)) + "\n");
 // Quality shields only for listed skills scoring 80-99. A listed skill below
 // 80 keeps valid badge.svg and score.svg URLs, which serve the general listing
 // badge (the repository-level badge.svg) until its score qualifies.

@@ -6,7 +6,7 @@
 
 Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it.
 
-**127 accepted skills · 27 repositories.** Snapshot: **2026-10-17** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**190 accepted skills · 34 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=testing-qa&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -16,7 +16,10 @@ Skills for writing and running tests, browser automation, visual regression and 
 <summary>Browse publishers in this category</summary>
 
 - [anthropics/skills](#anthropics--skills)
+- [apify/agent-skills](#apify--agent-skills)
 - [avelikiy/great\_cto](#avelikiy--great-cto)
+- [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
+- [browser-use/browser-use](#browser-use--browser-use)
 - [browserbase/skills](#browserbase--skills)
 - [conorluddy/ios-simulator-skill](#conorluddy--ios-simulator-skill)
 - [cypress-io/ai-toolkit](#cypress-io--ai-toolkit)
@@ -24,6 +27,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 - [firecrawl/skills](#firecrawl--skills)
 - [flutter/skills](#flutter--skills)
 - [garrytan/gstack](#garrytan--gstack)
+- [github/awesome-copilot](#github--awesome-copilot)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
@@ -31,12 +35,15 @@ Skills for writing and running tests, browser automation, visual regression and 
 - [lackeyjb/playwright-skill](#lackeyjb--playwright-skill)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
 - [mailtrap/mailtrap-skills](#mailtrap--mailtrap-skills)
+- [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
 - [metalbear-co/skills](#metalbear-co--skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [NeoLabHQ/context-engineering-kit](#neolabhq--context-engineering-kit)
+- [neondatabase/agent-skills](#neondatabase--agent-skills)
 - [NVIDIA/skills](#nvidia--skills)
 - [obra/superpowers](#obra--superpowers)
+- [openai/skills](#openai--skills)
 - [phuryn/pm-skills](#phuryn--pm-skills)
 - [testdino-hq/playwright-skill](#testdino-hq--playwright-skill)
 - [trailofbits/skills](#trailofbits--skills)
@@ -53,6 +60,14 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 - **75/100 · C** · [webapp-testing](https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md) — Toolkit for interacting with and testing local web applications using Playwright. [Suede](https://skills.suedeai.ai/directory/anthropics/skills/#webapp-testing)
 
+<a id="apify--agent-skills"></a>
+
+## apify/agent-skills
+
+[Repository](https://github.com/apify/agent-skills) · Publisher: [apify](https://github.com/apify) · [Suede listing](https://skills.suedeai.ai/directory/apify/agent-skills/)
+
+- **84/100 · B** · [apify-actor-development](https://github.com/apify/agent-skills/blob/main/skills/apify-actor-development/SKILL.md) — Create, modify, debug, and deploy Apify Actors, and write their input and output schemas. [Suede](https://skills.suedeai.ai/directory/apify/agent-skills/#apify-actor-development)
+
 <a id="avelikiy--great-cto"></a>
 
 ## avelikiy/great\_cto
@@ -60,6 +75,29 @@ Skills for writing and running tests, browser automation, visual regression and 
 [Repository](https://github.com/avelikiy/great_cto) · Publisher: [avelikiy](https://github.com/avelikiy) · [Suede listing](https://skills.suedeai.ai/directory/avelikiy/great-cto/)
 
 - **77/100 · C** · [test-strategy](https://github.com/avelikiy/great_cto/blob/main/skills/test-strategy/SKILL.md) — Coverage-design method for qa-engineer — pyramid ratios per archetype, equivalence/boundary/property case selection, mutation score as the real coverage signal, and a flake-quarantine policy. [Suede](https://skills.suedeai.ai/directory/avelikiy/great-cto/#test-strategy)
+
+<a id="aws--agent-toolkit-for-aws"></a>
+
+## aws/agent-toolkit-for-aws
+
+[Repository](https://github.com/aws/agent-toolkit-for-aws) · Publisher: [aws](https://github.com/aws) · [Suede listing](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/)
+
+- **83/100 · B** · [aws-step-functions](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/serverless-skills/aws-step-functions/SKILL.md) — Authors and edits AWS Step Functions state machines: writes Amazon States Language (ASL) in JSONata, and chooses and structures state types (Task, Choice, Map, Parallel, Pass, Wait, Succeed, Fail). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#aws-step-functions)
+- **78/100 · C** · [debugging-mwaa-workflow](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/debugging-mwaa-workflow/SKILL.md) — Diagnoses and root-causes Amazon MWAA workflow failures across Provisioned (Python DAG) and Serverless (YAML workflow) environments. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#debugging-mwaa-workflow)
+- **78/100 · C** · [migrate-to-msk](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/migrate-to-msk/SKILL.md) — Helps migrate self-managed Apache Kafka workloads to Amazon MSK Express. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#migrate-to-msk)
+- **78/100 · C** · [testing-mwaa-workflow](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/testing-mwaa-workflow/SKILL.md) — Tests Amazon MWAA workflow execution end-to-end: trigger a run and monitor it to completion for Provisioned (Python DAG, via Airflow REST API) and Serverless (YAML workflow, via StartWorkflowRun). [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#testing-mwaa-workflow)
+- **77/100 · C** · [running-release-tests](https://github.com/aws/agent-toolkit-for-aws/blob/main/plugins/aws-agents-for-devsecops/skills/running-release-tests/SKILL.md) — Run automated release testing (UI or API) via the AWS DevOps Agent using a pre-configured test profile. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#running-release-tests)
+- **77/100 · C** · [upgrading-mwaa-environments](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/analytics-skills/upgrading-mwaa-environments/SKILL.md) — Upgrades an MWAA environment to a newer Airflow version — within 2.x, within 3.x, or across the 2.x-to-3.x boundary. [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#upgrading-mwaa-environments)
+- **74/100 · C** · [debugging-lambda-timeouts](https://github.com/aws/agent-toolkit-for-aws/blob/main/skills/specialized-skills/serverless-skills/debugging-lambda-timeouts/SKILL.md) — Debugs AWS Lambda function timeout failures by systematically analyzing function configuration, CloudWatch logs and metrics, VPC/networking, cold starts, memory constraints, and downstream dependencies to identify root causes with… [Suede](https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/#debugging-lambda-timeouts)
+
+<a id="browser-use--browser-use"></a>
+
+## browser-use/browser-use
+
+[Repository](https://github.com/browser-use/browser-use) · Publisher: [browser-use](https://github.com/browser-use) · [Suede listing](https://skills.suedeai.ai/directory/browser-use/browser-use/)
+
+- **85/100 · B** · [qa](https://github.com/browser-use/browser-use/blob/main/skills/qa/SKILL.md) — QA-test a website or web app and return a 1-5 quality score (5 = flawless, 1 = broken) with evidence. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#qa)
+- **69/100 · D** · [browser-use](https://github.com/browser-use/browser-use/blob/main/skills/browser-use/SKILL.md) — Direct browser control via CDP for web interaction: automation, scraping, testing, screenshots, and site/app work. [Suede](https://skills.suedeai.ai/directory/browser-use/browser-use/#browser-use)
 
 <a id="browserbase--skills"></a>
 
@@ -76,7 +114,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 [Repository](https://github.com/conorluddy/ios-simulator-skill) · Publisher: [conorluddy](https://github.com/conorluddy) · [Suede listing](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/)
 
-- **78/100 · C** · [ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill/blob/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md) — 29 production-ready scripts for iOS app testing, building, and automation. [Suede](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/#ios-simulator-skill)
+- **83/100 · B** · [ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill/blob/main/ios-simulator-skill/skills/ios-simulator-skill/SKILL.md) — Build, test, and drive iOS apps in the Simulator with 30 token-efficient scripts. [Suede](https://skills.suedeai.ai/directory/conorluddy/ios-simulator-skill/#ios-simulator-skill)
 
 <a id="cypress-io--ai-toolkit"></a>
 
@@ -106,7 +144,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 [Repository](https://github.com/firecrawl/skills) · Publisher: [firecrawl](https://github.com/firecrawl) · [Suede listing](https://skills.suedeai.ai/directory/firecrawl/skills/)
 
-- **74/100 · C** · [firecrawl-qa](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-qa/SKILL.md) — QA test a live website with Firecrawl browser and scrape evidence. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-qa)
+- **74/100 · C** · [firecrawl-qa](https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-qa/SKILL.md) — Test a live website with Firecrawl browser and write up what's broken: links, forms, mobile layout, performance and console errors. [Suede](https://skills.suedeai.ai/directory/firecrawl/skills/#firecrawl-qa)
 
 <a id="flutter--skills"></a>
 
@@ -130,6 +168,55 @@ Skills for writing and running tests, browser automation, visual regression and 
 - **80/100 · B** · [gstack-openclaw-investigate](https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-investigate/SKILL.md) — Debugs errors, fixes bugs, and performs root cause analysis when users report errors, stack traces, unexpected behavior, or something that stopped working. [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-investigate/)
 - **68/100 · D** · [browse](https://github.com/garrytan/gstack/blob/main/browse/SKILL.md) — Drive a real browser through Aside: open a page, read it, click through a flow, take screenshots, check console errors. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#browse)
 - **64/100 · D** · [test-audit](https://github.com/garrytan/gstack/blob/main/test-audit/SKILL.md) — Find low-value or duplicate tests and the test-only code they keep alive. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#test-audit)
+
+<a id="github--awesome-copilot"></a>
+
+## github/awesome-copilot
+
+[Repository](https://github.com/github/awesome-copilot) · Publisher: [github](https://github.com/github) · [Suede listing](https://skills.suedeai.ai/directory/github/awesome-copilot/)
+
+- **85/100 · B** · [cypress-flake-fixer](https://github.com/github/awesome-copilot/blob/main/skills/cypress-flake-fixer/SKILL.md) — Find and fix flake-prone anti-patterns in an existing Cypress suite, and APIs removed in Cypress 12 to 16. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#cypress-flake-fixer)
+- **83/100 · B** · [minecraft-plugin-development](https://github.com/github/awesome-copilot/blob/main/skills/minecraft-plugin-development/SKILL.md) — Use this skill when building or modifying Minecraft server plugins for Paper, Spigot, or Bukkit, including plugin.yml setup, commands, listeners, schedulers, player state, team or arena systems, persistent progression, economy or… [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#minecraft-plugin-development)
+- **82/100 · B** · [arize-dataset](https://github.com/github/awesome-copilot/blob/main/skills/arize-dataset/SKILL.md) — Creates, manages, and queries Arize datasets and examples. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#arize-dataset)
+- **82/100 · B** · [arize-experiment](https://github.com/github/awesome-copilot/blob/main/skills/arize-experiment/SKILL.md) — Creates, runs, and analyzes Arize experiments for evaluating and comparing model performance. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#arize-experiment)
+- **81/100 · B** · [autoresearch](https://github.com/github/awesome-copilot/blob/main/skills/autoresearch/SKILL.md) — Autonomous iterative experimentation loop for any programming task. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#autoresearch)
+- **80/100 · B** · [ai-team-orchestration](https://github.com/github/awesome-copilot/blob/main/skills/ai-team-orchestration/SKILL.md) — Bootstrap and run a lightweight multi-agent development team. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#ai-team-orchestration)
+- **80/100 · B** · [pester-migration](https://github.com/github/awesome-copilot/blob/main/skills/pester-migration/SKILL.md) — Pester migration skill for upgrading PowerShell Pester test suites across major versions — v3→v4, v4→v5, and v5→v6. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pester-migration)
+- **80/100 · B** · [pester-should-migration](https://github.com/github/awesome-copilot/blob/main/skills/pester-should-migration/SKILL.md) — Experimental (preview) Pester skill for migrating classic Should -Be (v5) assertion syntax to the new Should-\* (v6) assertions (note the hyphen, no space), e.g. \`Should -Be\` -&gt; \`Should-Be\`, \`Should -Not -Be\` -&gt; \`Should-NotBe\`. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pester-should-migration)
+- **80/100 · B** · [scoutqa-test](https://github.com/github/awesome-copilot/blob/main/skills/scoutqa-test/SKILL.md) — This skill should be used when the user asks to "test this website", "run exploratory testing", "check for accessibility issues", "verify the login flow works", "find bugs on this page", or requests automated QA testing. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#scoutqa-test)
+- **80/100 · B** · [unit-test-vue-pinia](https://github.com/github/awesome-copilot/blob/main/skills/unit-test-vue-pinia/SKILL.md) — Write and review unit tests for Vue 3 + TypeScript + Vitest + Pinia codebases. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#unit-test-vue-pinia)
+- **77/100 · C** · [chrome-devtools](https://github.com/github/awesome-copilot/blob/main/skills/chrome-devtools/SKILL.md) — Expert-level browser automation, debugging, and performance analysis using Chrome DevTools MCP. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#chrome-devtools)
+- **77/100 · C** · [gtm-positioning-strategy](https://github.com/github/awesome-copilot/blob/main/skills/gtm-positioning-strategy/SKILL.md) — Find and own a defensible market position. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#gtm-positioning-strategy)
+- **77/100 · C** · [java-helidon](https://github.com/github/awesome-copilot/blob/main/skills/java-helidon/SKILL.md) — Get best practices for developing applications with Helidon 4 (SE and MP). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-helidon)
+- **77/100 · C** · [quarkus-dev-services-and-testing](https://github.com/github/awesome-copilot/blob/main/skills/quarkus-dev-services-and-testing/SKILL.md) — Quarkus Dev Services and testing: zero-config containers, @QuarkusTest, @QuarkusIntegrationTest, test resources, RestAssured, @InjectMock, profiles and continuous testing. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#quarkus-dev-services-and-testing)
+- **77/100 · C** · [react18-enzyme-to-rtl](https://github.com/github/awesome-copilot/blob/main/skills/react18-enzyme-to-rtl/SKILL.md) — Provides exact Enzyme → React Testing Library migration patterns for React 18 upgrades. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react18-enzyme-to-rtl)
+- **77/100 · C** · [roslyn-analyzers](https://github.com/github/awesome-copilot/blob/main/skills/roslyn-analyzers/SKILL.md) — Build, review, debug, package, and test Roslyn diagnostic analyzers, code fix providers, and incremental source generators. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#roslyn-analyzers)
+- **77/100 · C** · [salesforce-apex-quality](https://github.com/github/awesome-copilot/blob/main/skills/salesforce-apex-quality/SKILL.md) — Apex code quality guardrails for Salesforce development. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#salesforce-apex-quality)
+- **77/100 · C** · [test-gap-audit](https://github.com/github/awesome-copilot/blob/main/skills/test-gap-audit/SKILL.md) — Run a read-only audit for missing, weak, stale, or mis-scoped test coverage. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#test-gap-audit)
+- **77/100 · C** · [v-development](https://github.com/github/awesome-copilot/blob/main/skills/v-development/SKILL.md) — Guide GitHub Copilot through V language development: installing the toolchain, project layout with v.mod, building, testing, formatting, and writing idiomatic V including Option/Result error handling. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#v-development)
+- **75/100 · C** · [batch-files](https://github.com/github/awesome-copilot/blob/main/skills/batch-files/SKILL.md) — Expert-level Windows batch file (.bat/.cmd) skill for writing, debugging, and maintaining CMD scripts. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#batch-files)
+- **74/100 · C** · [planning-oracle-to-postgres-migration-integration-testing](https://github.com/github/awesome-copilot/blob/main/skills/planning-oracle-to-postgres-migration-integration-testing/SKILL.md) — Creates an integration testing plan for .NET data access artifacts during Oracle-to-PostgreSQL database migrations. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#planning-oracle-to-postgres-migration-integration-testing)
+- **72/100 · C** · [mvvm-toolkit-di](https://github.com/github/awesome-copilot/blob/main/skills/mvvm-toolkit-di/SKILL.md) — Wire CommunityToolkit.Mvvm ViewModels into Microsoft.Extensions.DependencyInjection. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#mvvm-toolkit-di)
+- **72/100 · C** · [react-audit-grep-patterns](https://github.com/github/awesome-copilot/blob/main/skills/react-audit-grep-patterns/SKILL.md) — Provides the complete, verified grep scan command library for auditing React codebases before a React 18.3.1 or React 19 upgrade. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react-audit-grep-patterns)
+- **71/100 · C** · [adobe-illustrator-scripting](https://github.com/github/awesome-copilot/blob/main/skills/adobe-illustrator-scripting/SKILL.md) — Write, debug, and optimize Adobe Illustrator automation scripts using ExtendScript (JavaScript/JSX). [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#adobe-illustrator-scripting)
+- **70/100 · C** · [spring-boot-testing](https://github.com/github/awesome-copilot/blob/main/skills/spring-boot-testing/SKILL.md) — Expert Spring Boot 4 testing specialist that selects the best Spring Boot testing techniques for your situation with Junit 6 and AssertJ. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#spring-boot-testing)
+- **69/100 · D** · [breakdown-test](https://github.com/github/awesome-copilot/blob/main/skills/breakdown-test/SKILL.md) — Test Planning and Quality Assurance prompt that generates comprehensive test strategies, task breakdowns, and quality validation plans for GitHub projects. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#breakdown-test)
+- **69/100 · D** · [creating-oracle-to-postgres-migration-integration-tests](https://github.com/github/awesome-copilot/blob/main/skills/creating-oracle-to-postgres-migration-integration-tests/SKILL.md) — Creates integration test cases targeting Oracle for .NET data access artifacts. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#creating-oracle-to-postgres-migration-integration-tests)
+- **69/100 · D** · [javascript-typescript-jest](https://github.com/github/awesome-copilot/blob/main/skills/javascript-typescript-jest/SKILL.md) — Best practices for writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#javascript-typescript-jest)
+- **69/100 · D** · [project-workflow-analysis-blueprint-generator](https://github.com/github/awesome-copilot/blob/main/skills/project-workflow-analysis-blueprint-generator/SKILL.md) — Comprehensive technology-agnostic prompt generator for documenting end-to-end application workflows. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#project-workflow-analysis-blueprint-generator)
+- **69/100 · D** · [quality-playbook](https://github.com/github/awesome-copilot/blob/main/skills/quality-playbook/SKILL.md) — Run a complete quality engineering audit on any codebase. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#quality-playbook)
+- **68/100 · D** · [mentoring-juniors](https://github.com/github/awesome-copilot/blob/main/skills/mentoring-juniors/SKILL.md) — Socratic mentoring for junior developers and AI newcomers. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#mentoring-juniors)
+- **67/100 · D** · [csharp-mstest](https://github.com/github/awesome-copilot/blob/main/skills/csharp-mstest/SKILL.md) — Get best practices for MSTest 3.x/4.x unit testing, including modern assertion APIs and data-driven tests [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#csharp-mstest)
+- **66/100 · D** · [react19-test-patterns](https://github.com/github/awesome-copilot/blob/main/skills/react19-test-patterns/SKILL.md) — Provides before/after patterns for migrating test files to React 19 compatibility, including act() imports, Simulate removal, and StrictMode call count changes. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#react19-test-patterns)
+- **66/100 · D** · [readme-blueprint-generator](https://github.com/github/awesome-copilot/blob/main/skills/readme-blueprint-generator/SKILL.md) — Intelligent README.md generation prompt that analyzes project documentation structure and creates comprehensive repository documentation. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#readme-blueprint-generator)
+- **66/100 · D** · [scaffolding-oracle-to-postgres-migration-test-project](https://github.com/github/awesome-copilot/blob/main/skills/scaffolding-oracle-to-postgres-migration-test-project/SKILL.md) — Scaffolds an xUnit integration test project targeting Oracle in .NET solutions. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#scaffolding-oracle-to-postgres-migration-test-project)
+- **65/100 · D** · [csharp-tunit](https://github.com/github/awesome-copilot/blob/main/skills/csharp-tunit/SKILL.md) — Get best practices for TUnit unit testing, including data-driven tests [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#csharp-tunit)
+- **62/100 · D** · [csharp-nunit](https://github.com/github/awesome-copilot/blob/main/skills/csharp-nunit/SKILL.md) — Get best practices for NUnit unit testing, including data-driven tests [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#csharp-nunit)
+- **62/100 · D** · [csharp-xunit](https://github.com/github/awesome-copilot/blob/main/skills/csharp-xunit/SKILL.md) — Get best practices for XUnit unit testing, including data-driven tests [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#csharp-xunit)
+- **62/100 · D** · [java-junit](https://github.com/github/awesome-copilot/blob/main/skills/java-junit/SKILL.md) — Get best practices for JUnit 5 unit testing, including data-driven tests [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#java-junit)
+- **59/100 · D** · [playwright-generate-test](https://github.com/github/awesome-copilot/blob/main/skills/playwright-generate-test/SKILL.md) — Generate a Playwright test based on a scenario using Playwright MCP [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#playwright-generate-test)
+- **59/100 · D** · [pytest-coverage](https://github.com/github/awesome-copilot/blob/main/skills/pytest-coverage/SKILL.md) — Run pytest tests with coverage, discover lines missing coverage, and increase coverage to 100%. [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#pytest-coverage)
+- **58/100 · D** · [playwright-explore-website](https://github.com/github/awesome-copilot/blob/main/skills/playwright-explore-website/SKILL.md) — Website exploration for testing using Playwright MCP [Suede](https://skills.suedeai.ai/directory/github/awesome-copilot/#playwright-explore-website)
 
 <a id="gooseworks-ai--goose-skills"></a>
 
@@ -243,6 +330,18 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 - **80/100 · B** · [testing-with-sandbox](https://github.com/mailtrap/mailtrap-skills/blob/main/skills/testing-with-sandbox/SKILL.md) — Captures outbound email in development or staging without reaching real recipients, using Mailtrap Email Sandbox to inspect HTML and headers and automate tests. [Suede](https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/testing-with-sandbox/)
 
+<a id="mattpocock--skills"></a>
+
+## mattpocock/skills
+
+[Repository](https://github.com/mattpocock/skills) · Publisher: [mattpocock](https://github.com/mattpocock) · [Suede listing](https://skills.suedeai.ai/directory/mattpocock/skills/)
+
+- **83/100 · B** · [diagnosing-bugs](https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md) — Diagnosis loop for hard bugs and performance regressions. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#diagnosing-bugs)
+- **79/100 · C** · [tdd](https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md) — Test-driven development. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#tdd)
+- **78/100 · C** · [grilling](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md) — Grill the user relentlessly about a plan, decision, or idea. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#grilling)
+- **75/100 · C** · [migrate-to-shoehorn](https://github.com/mattpocock/skills/blob/main/skills/misc/migrate-to-shoehorn/SKILL.md) — Migrate test files from \`as\` type assertions to @total-typescript/shoehorn. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#migrate-to-shoehorn)
+- **75/100 · C** · [setup-pre-commit](https://github.com/mattpocock/skills/blob/main/skills/misc/setup-pre-commit/SKILL.md) — Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. [Suede](https://skills.suedeai.ai/directory/mattpocock/skills/#setup-pre-commit)
+
 <a id="mblode--agent-skills"></a>
 
 ## mblode/agent-skills
@@ -280,12 +379,21 @@ Skills for writing and running tests, browser automation, visual regression and 
 - **70/100 · C** · [test-driven-development](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/test-driven-development/SKILL.md) — Use when implementing any feature or bugfix, before writing implementation code - write the test first, watch it fail, write minimal code to pass; ensures tests actually verify behavior by requiring failure first [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/#test-driven-development)
 - **66/100 · D** · [fix-tests](https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/fix-tests/SKILL.md) — Systematically fix all failing tests after business logic changes or refactoring [Suede](https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/#fix-tests)
 
+<a id="neondatabase--agent-skills"></a>
+
+## neondatabase/agent-skills
+
+[Repository](https://github.com/neondatabase/agent-skills) · Publisher: [neondatabase](https://github.com/neondatabase) · [Suede listing](https://skills.suedeai.ai/directory/neondatabase/agent-skills/)
+
+- **81/100 · B** · [neon-postgres-branches](https://github.com/neondatabase/agent-skills/blob/main/skills/neon-postgres-branches/SKILL.md) — Choose and create the right Neon branch type for testing and development. [Suede](https://skills.suedeai.ai/directory/neondatabase/agent-skills/#neon-postgres-branches)
+
 <a id="nvidia--skills"></a>
 
 ## NVIDIA/skills
 
 [Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
+- **87/100 · B** · [tao-run-deft-od-aoi](https://github.com/NVIDIA/skills/blob/main/skills/tao-run-deft-od-aoi/SKILL.md) — Run a binary industrial-inspection DEFT loop with TAO RT-DETR: measure on frozen KPI/test roles, mine gap-similar real and clean images with SigLIP, accumulate admitted COCO data, retrain from one base checkpoint, and select by KPI AP50. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#tao-run-deft-od-aoi)
 - **86/100 · B** · [warp-debug-gradients](https://github.com/NVIDIA/skills/blob/main/skills/warp-debug-gradients/SKILL.md) — Use to diagnose and fix incorrect gradients in differentiable Warp programs. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#warp-debug-gradients)
 - **79/100 · C** · [doca-debug](https://github.com/NVIDIA/skills/blob/main/skills/doca-debug/SKILL.md) — Use this skill when the user is debugging any DOCA symptom — a build that won't compile, a link step that can't resolve a doca\_\* symbol, a runtime call returning DOCA\_ERROR\_\*, a silent service or tool, or a stack trace / valgrind / core… [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#doca-debug)
 - **79/100 · C** · [holohub-debug-build-run](https://github.com/NVIDIA/skills/blob/main/skills/holohub-debug-build-run/SKILL.md) — Use when a concrete ./holohub command fails, hangs, regresses, or returns wrong output and needs reproducible diagnosis and verification. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#holohub-debug-build-run)
@@ -300,6 +408,17 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 - **80/100 · B** · [systematic-debugging](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/SKILL.md) — Guides a systematic approach to any bug, test failure, or unexpected behavior, before proposing fixes. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/systematic-debugging/)
 - **80/100 · B** · [test-driven-development](https://github.com/obra/superpowers/blob/main/skills/test-driven-development/SKILL.md) — Guides test-driven development when implementing any feature or bugfix, applied before writing implementation code. [Suede](https://skills.suedeai.ai/directory/obra/superpowers/test-driven-development/)
+
+<a id="openai--skills"></a>
+
+## openai/skills
+
+[Repository](https://github.com/openai/skills) · Publisher: [openai](https://github.com/openai) · [Suede listing](https://skills.suedeai.ai/directory/openai/skills/)
+
+- **77/100 · C** · [aspnet-core](https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/SKILL.md) — Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. [Suede](https://skills.suedeai.ai/directory/openai/skills/#aspnet-core)
+- **76/100 · C** · [playwright](https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md) — Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via \`playwright-cli\` or the bundled wrapper script. [Suede](https://skills.suedeai.ai/directory/openai/skills/#playwright)
+- **73/100 · C** · [gh-fix-ci](https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md) — Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use \`gh\` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. [Suede](https://skills.suedeai.ai/directory/openai/skills/#gh-fix-ci)
+- **65/100 · D** · [hatch-pet](https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md) — Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. [Suede](https://skills.suedeai.ai/directory/openai/skills/#hatch-pet)
 
 <a id="phuryn--pm-skills"></a>
 

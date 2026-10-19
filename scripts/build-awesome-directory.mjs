@@ -122,7 +122,7 @@ ${stamp}
 
 Every displayed score is recomputed from the saved evidence using **graded-v2**. The rubric scores structural checks, description clarity, instruction depth, bundled resources, maintenance, curated-list citations and declared tool/compatibility fields. [See every component and point allocation](${SITE}methodology/).
 
-The rubric uses a **0–99 scale**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **${range(data.skills)} / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
+The published quality scale is **0–99**. The rubric totals **100 points**; published scores are capped at 99; 100 is reserved. This snapshot’s actual scores span **${range(data.skills)} / 100**. Scores measure structural quality evidence, not guaranteed safety or runtime performance.
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
