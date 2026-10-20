@@ -53,6 +53,13 @@ export const SEO_KEYWORDS = {
     "SEO copy",
     "Suede Creator Skills",
   ],
+  "listings.html": [
+    "claude code skills registry",
+    "skills.sh listing",
+    "mcp registry listing",
+    "awesome claude skills",
+    "Suede Creator Skills",
+  ],
   "cracked.html": [
     "agentic coding stack",
     "multi-agent orchestration",

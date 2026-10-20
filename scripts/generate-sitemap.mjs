@@ -58,6 +58,9 @@ const FIXED_PAGES = [
   // Indexable, self-canonical, linked from the global nav as "Cracked Devs"
   // and from llms.txt, but was never in the sitemap.
   { file: "cracked.html", loc: "/cracked.html", priority: "0.7", changefreq: "weekly" },
+  // Every third-party directory, registry and list that carries the pack,
+  // rendered from docs/listings.json by scripts/build-listings.mjs.
+  { file: "listings.html", loc: "/listings.html", priority: "0.6", changefreq: "monthly" },
   { file: "ai-instructions/index.html", loc: "/ai-instructions/", priority: "0.5", changefreq: "monthly" },
 ];
 
