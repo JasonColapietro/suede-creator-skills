@@ -100,6 +100,31 @@ Published: https://www.npmjs.com/package/suede-skills-mcp, built from `scripts/b
 
 The `@suedeai` scope is in use by the sibling media product (`@suedeai/mcp-server`, `@suedeai/plugin-suede`), which is a different codebase; do not conflate the two in any listing.
 
+## PyPI
+
+Package `suede-creator-skills` (import `suede_creator_skills`, command `suede-skills`) bundles every skill folder as package data and installs them into Claude Code, Codex, or any directory. The name returned 404 from `https://pypi.org/pypi/suede-creator-skills/json` on 2026-10-09, so it is unclaimed until the first publish. A published release adds a pypi.org project page linking the repository and homepage, and libraries.io, deps.dev, Socket, Snyk and pepy mirror it automatically.
+
+| Piece | Where |
+| --- | --- |
+| Python project | `pypi/` (`pyproject.toml`, `README.md` for the PyPI page, `src/suede_creator_skills/`) |
+| Staging | `npm run build:pypi` runs `scripts/build-pypi-package.mjs` (copies `skills/`, `mcp/catalog.json`, `VERSION`, `LICENSE`, `NOTICE.md`, `licenses/` into `pypi/`, all gitignored) then `python3 -m build pypi/` |
+| Tests | `tests/test_pypi_package.py`, run by `npm run test:python` |
+| Release workflow | `.github/workflows/pypi-publish.yml`: builds, `twine check`s and install-tests the wheel on every pull request; publishes only on a manual run or a `pypi-v*` tag |
+
+Publishing uses PyPI Trusted Publishing (OIDC). There is no API token in the repository or its secrets.
+
+One-time owner setup:
+
+1. Sign in at https://pypi.org, open **Your account > Publishing**, and add a **pending trusted publisher** for GitHub with: PyPI project name `suede-creator-skills`, owner `JasonColapietro`, repository `suede-creator-skills`, workflow `pypi-publish.yml`, environment `pypi`.
+2. In the GitHub repository settings, create the environment `pypi` (Settings > Environments). Add yourself as a required reviewer to approve every release by hand.
+
+Each release after that:
+
+- Run the **PyPI package** workflow from the Actions tab (`workflow_dispatch`), or
+- push a tag that matches `VERSION`: `git tag pypi-v$(cat VERSION) && git push origin pypi-v$(cat VERSION)`. The workflow refuses a tag that disagrees with `VERSION`.
+
+PyPI never accepts the same version twice, so bump `VERSION` before publishing again.
+
 ## Own surfaces
 
 All six checked URLs were reachable on the audit date: `/`, `/llms.txt`, `/sitemap.xml`, `/robots.txt`, `/plugins.html`, `/skills/suede-graph-flo-xr.html`. No "suede-ship" or "Suede Ship Gate" naming remains. `robots.txt` and `sitemap.xml` agree. The homepage proof tape said "71 skills, open source" against 74; that line is fixed in the same change that added this file, and the validator now guards it. Dated changelog and blog copy that says 71 or 73 is frozen on purpose and is not a defect.
@@ -116,6 +141,6 @@ Count-free, so it cannot go stale the next time a skill lands:
 
 Agent-side, no external mutation: keep `docs/listings.json` current when a listing appears or disappears, run `npm run build:listings`, and keep this file current when a status changes.
 
-Owner-side, in order of reach per minute of effort: claim the MCP Market listing and fix its 23-skill description; a Show HN; the stale-description PRs (webfuse-com/awesome-claude, gmh5225/awesome-skills, plus the open GetBindu and BehiSecc PRs); new entries on hesreallyhim/awesome-claude-code, punkpeye/awesome-mcp-servers (the npm install line now exists), travisvn/awesome-claude-skills, and RankSpotAI/awesome-seo-agent-skills; ask ClaudSkills to point at `skills.suedeai.ai`; then Glama and Smithery for the MCP server.
+Owner-side, in order of reach per minute of effort: the PyPI trusted-publisher setup and first publish (see "PyPI" above); claim the MCP Market listing and fix its 23-skill description; a Show HN; the stale-description PRs (webfuse-com/awesome-claude, gmh5225/awesome-skills, plus the open GetBindu and BehiSecc PRs); new entries on hesreallyhim/awesome-claude-code, punkpeye/awesome-mcp-servers (the npm install line now exists), travisvn/awesome-claude-skills, and RankSpotAI/awesome-seo-agent-skills; ask ClaudSkills to point at `skills.suedeai.ai`; then Glama and Smithery for the MCP server.
 
 Owner-side on Hermes, once the tap has been installed at least once and the pills render: PRs to `0xNyk/awesome-hermes-agent` and `ZeroPointRepo/awesome-hermes-skills`, then a Hermes core PR proposing the repo for `DEFAULT_TAPS`. The install routes above need none of them.
