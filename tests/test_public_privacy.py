@@ -82,6 +82,13 @@ class PublicPrivacyTests(unittest.TestCase):
         text = 'person@example.com; fake@example.test; 202'+'-555'+'-0100. No legal clearance. Unknown rights stay unknown. MIT.'
         self.assertEqual(self.check(text), [])
 
+    def test_directory_shield_coordinates_do_not_trigger_private_identifiers(self):
+        templates = sorted((ROOT / 'scripts/directory/badges').glob('*.svg'))
+        self.assertEqual(len(templates), 4)
+        for path in templates:
+            with self.subTest(template=path.name):
+                self.assertEqual(self.check(path.read_text(), path.relative_to(ROOT).as_posix()), [])
+
     def test_public_contact_exception_is_value_and_path_scoped(self):
         self.assertEqual(self.check(self.contact, 'SECURITY.md'), [])
         self.assertEqual(self.check(self.contact)[0]['category'], 'unreviewed-email')

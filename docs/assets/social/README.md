@@ -10,6 +10,7 @@ are text-heavy and an image model garbles command strings like
 | `card-pack.html` | `award-76-skills.png` | The pack — skill count, three sample commands |
 | `card.html` | `award-ai-seo.png` | One skill — `/suede-ai-seo` as the hero |
 | `card-3.html` | `award-three-pillars.png` | Structure / Authority / Presence, then the CTA |
+| `directory-card.html` | `directory-card.png` | Open Graph image for every page under `/directory/` (1200×630, render with `--window-size=1200,630`) |
 
 Built for the Anthropic Skills Competition announcement. As an Instagram
 carousel the order is pack → ai-seo → three-pillars: the news, the thing to run,

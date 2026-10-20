@@ -6,7 +6,7 @@
     <title>Suede Creator Skills Guide | Agent Skills</title>
     <meta
       name="description"
-      content="Read the guide to the open-source agent skills for Claude Code and Codex: agent orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools."
+      content="Read the guide to the open-source agent skills for Claude Code and Codex: agent orchestration, A-F code review, CI, AI evals, design, SEO and creator tools."
     >
     <meta name="keywords" content="claude code skills guide, claude code skills tutorial, agent orchestration, which agent skill to use, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
@@ -20,7 +20,7 @@
     <link rel="image_src" href="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Suede Creator Skills Guide | Agent Skills">
-    <meta property="og:description" content="Read the guide to the open-source agent skills for Claude Code and Codex: agent orchestration, A-F code review, CI, AI evals, Instagram growth, design, SEO, and creator tools.">
+    <meta property="og:description" content="Read the guide to the open-source agent skills for Claude Code and Codex: agent orchestration, A-F code review, CI, AI evals, design, SEO and creator tools.">
     <meta property="og:url" content="https://skills.suedeai.ai/guide.html">
     <meta property="og:site_name" content="Suede Creator Skills">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
@@ -33,7 +33,7 @@
     <meta name="twitter:site" content="@johnnysuede">
     <meta name="twitter:creator" content="@johnnysuede">
     <meta name="twitter:title" content="Suede Creator Skills">
-    <meta name="twitter:description" content="Open-source agent skills for Claude Code and Codex: Suede Thought Graph orchestration, A-F code review, CI ship-gates, AI evals, Instagram growth, design, copy, SEO, and creator tools.">
+    <meta name="twitter:description" content="Read the guide to the open-source agent skills for Claude Code and Codex: agent orchestration, A-F code review, CI, AI evals, design, SEO and creator tools.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:image:alt" content="Suede Creator Skills - Codex and Claude skills for Suedify, design, copywriting, SEO/AEO/AI EO, and QA.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -757,7 +757,7 @@
       .footer-brand img { width: 24px; height: 24px; }
       .footer-brand strong { color: var(--cream); font-weight: 600; }
       .footer-brand a:hover { color: var(--gold); }
-      .footer-links { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+      .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; color: var(--muted); }
       .footer-links a:hover { color: var(--gold); }
       .footer-divider { color: var(--border); }
 
@@ -891,6 +891,7 @@
       <div class="nav-links">
           <a href="./">Home</a>
           <a href="./skills/">Skills</a>
+          <a href="./directory/">Directory</a>
           <a href="./guide.html" aria-current="page">Guide</a>
           <a href="./book/">Book</a>
           <a href="./blog/">Blog</a>
@@ -1280,32 +1281,35 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
         <div class="shell">
           <h2 id="notes-headline">Field notes.</h2>
           <p class="section-sub">The design decisions behind the pack, written up in full: what a skill costs, how routing avoids collisions, and where memory belongs.</p>
-          <a id="hero-shiplog" data-status="released" href="./#changelog" aria-label="Ship log. Released Oct 2 &middot; c33dcf6 One MCP server instead of three 400 commits &middot; 19 weeks &middot; read the full ship log -&gt;. Read the full changelog on the homepage.">
+          <a id="hero-shiplog" data-status="released" href="./#changelog" aria-label="Ship log. Released Oct 2 &middot; c33dcf6 One MCP server instead of three 432 commits &middot; 22 weeks &middot; read the full ship log -&gt;. Read the full changelog on the homepage.">
             <span class="hero-spark" aria-hidden="true">
-              <span style="height:9%"></span>
-              <span style="height:2%"></span>
-              <span style="height:2%"></span>
-              <span style="height:57%"></span>
-              <span style="height:100%"></span>
-              <span style="height:40%"></span>
-              <span style="height:47%"></span>
-              <span style="height:42%"></span>
-              <span style="height:64%"></span>
-              <span style="height:38%"></span>
-              <span style="height:64%"></span>
-              <span style="height:47%"></span>
-              <span style="height:49%"></span>
-              <span style="height:57%"></span>
-              <span style="height:51%"></span>
-              <span style="height:47%"></span>
-              <span style="height:26%"></span>
+              <span style="height:8%"></span>
               <span style="height:0%"></span>
-              <span style="height:13%"></span>
+              <span style="height:2%"></span>
+              <span style="height:3%"></span>
+              <span style="height:100%"></span>
+              <span style="height:37%"></span>
+              <span style="height:51%"></span>
+              <span style="height:43%"></span>
+              <span style="height:45%"></span>
+              <span style="height:22%"></span>
+              <span style="height:37%"></span>
+              <span style="height:66%"></span>
+              <span style="height:37%"></span>
+              <span style="height:46%"></span>
+              <span style="height:17%"></span>
+              <span style="height:57%"></span>
+              <span style="height:28%"></span>
+              <span style="height:8%"></span>
+              <span style="height:0%"></span>
+              <span style="height:22%"></span>
+              <span style="height:11%"></span>
+              <span style="height:28%"></span>
             </span>
             <span class="hero-shiplog-text">
               <span class="hero-shiplog-top">Released Oct 2 <b>&middot; c33dcf6</b></span>
               <span class="hero-shiplog-title">One MCP server instead of three</span>
-              <span class="hero-shiplog-more">400 commits &middot; 19 weeks &middot; read the full ship log -&gt;</span>
+              <span class="hero-shiplog-more">432 commits &middot; 22 weeks &middot; read the full ship log -&gt;</span>
             </span>
           </a>
           <div class="notes">
@@ -1420,7 +1424,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-workflow-skills .claude/skills/</co
     <footer>
       <div class="shell footer-inner">
         <div class="footer-brand">
-          <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+          <img src="./assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
           <span>Built by <strong><a href="https://suedeai.ai/founder">Jason Colapietro</a></strong> / <a href="https://suedeai.ai">Suede AI</a></span>
         </div>
         <div class="footer-links">

@@ -20,6 +20,14 @@
 
 ---
 
+## Suede Awesome Everything
+
+**AI agent skills, scored 0–99.**
+
+**[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
+
+[Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
+
 ## Suede Creator Skills for SEO and business growth
 
 Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
@@ -127,6 +135,14 @@ node mcp/suede-skills-mcp.mjs --profile all
 Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources, and 5 prompts over JSON-RPC.
 
 </details>
+
+## Find it on
+
+<!-- listings:start -->
+Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
+
+All 28 directories, registries and curated lists, verified October 8, 2026: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
+<!-- listings:end -->
 
 ## Try it right now
 
@@ -255,6 +271,7 @@ Essays on why the pack is built the way it is:
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [GitHub Pages site](https://skills.suedeai.ai/) — public documentation generated from this repo
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
+- [Agent Skills Directory](https://skills.suedeai.ai/directory/) ([data](directory/)) — other authors' public skills in sixteen category directories, each scored 0–99 by the published, graded [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/) and linked to its source; listings scoring 80–99 offer separate numeric and A/B README shields, both linking to their listing. Authors can [request a listing, score help or badge verification](https://skills.suedeai.ai/directory/submit/); displaying either valid linked badge (or both) can qualify for a limited-time feature placement after verification. Security scan status is separate from the structural score
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
 - [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them
@@ -296,7 +313,7 @@ python3 -m pip install PyYAML
 
 ## About the creator
 
-**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes.
+**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede Labs is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
 

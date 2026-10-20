@@ -1,0 +1,31 @@
+{
+  "base": "http://127.0.0.1:8126",
+  "checks": 25,
+  "results": [
+    "directory entry opens featured page",
+    "exactly two accepted projects",
+    "Appie links exactly three skill pages",
+    "Appie route resolves: ../appierun/appie-mcp/appie-article-writer/",
+    "Appie route resolves: ../appierun/appie-mcp/appie-chatbot/",
+    "Appie route resolves: ../appierun/appie-mcp/appie-url-shortener/",
+    "keyboard activates command copy",
+    "copy handler receives only required plugin commands",
+    "keyboard opens coverage disclosure",
+    "coverage details visible",
+    "keyboard focus is visible",
+    "no horizontal overflow at 320",
+    "44px project controls at 320",
+    "no horizontal overflow at 390",
+    "44px project controls at 390",
+    "no horizontal overflow at 768",
+    "44px project controls at 768",
+    "no horizontal overflow at 1024",
+    "44px project controls at 1024",
+    "no horizontal overflow at 1440",
+    "44px project controls at 1440",
+    "content remains available with reduced motion",
+    "install text available without JavaScript",
+    "coverage disclosure works without JavaScript",
+    "no browser script errors"
+  ]
+}
