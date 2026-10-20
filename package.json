@@ -40,6 +40,6 @@
     "build:related": "node scripts/build-related-skills.mjs"
   },
   "dependencies": {
-    "js-yaml": "5.4.1"
+    "js-yaml": "5.5.0"
   }
 }
