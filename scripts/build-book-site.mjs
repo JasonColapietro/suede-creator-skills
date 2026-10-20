@@ -142,6 +142,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           <div class="nav-links">
           <a href="${up}">Home</a>
           <a href="${up}skills/">Skills</a>
+          <a href="${up}directory/">Directory</a>
           <a href="${up}guide.html">Guide</a>
           <a href="./" aria-current="page">Book</a>
           <a href="${up}blog/">Blog</a>
@@ -170,7 +171,7 @@ ${body}
         <p class="footer-note">Suede Creator Skills is a ${SKILL_COUNT}-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="${up}assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">
@@ -392,7 +393,9 @@ written.set(
       bookFormat: "https://schema.org/EBook",
       isAccessibleForFree: true,
       license: "https://opensource.org/licenses/MIT",
-      numberOfPages: sources.length,
+      // Chapter files are sections, not paginated book pages. Match the PDF
+      // offered to readers; omit the count when no print edition is built.
+      ...(pdfPages ? { numberOfPages: pdfPages } : {}),
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
       publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },

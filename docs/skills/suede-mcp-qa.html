@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MCP Server Testing Skill: Full JSON-RPC Lifecycle QA | Suede</title>
-    <meta name="description" content="Your agent runs the whole JSON-RPC lifecycle against the live Suede Skills MCP server, initialize through tools, resources, and prompts, and checks the answers against the source, the catalog, and the skill folders. Nine tools, seven resources, and five prompts each get exercised, with closed schemas and tool annotations verified. It is scoped to this pack&#x27;s own server and its install and docs surface, and it runs when any of that changes.">
+    <meta name="description" content="MCP server testing that runs the full JSON-RPC lifecycle against the live Suede Skills MCP server, exercising nine tools, seven resources and five prompts.">
     <meta name="keywords" content="MCP server testing, MCP quality assurance, JSON-RPC testing, MCP server, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="MCP Server Testing Skill: Full JSON-RPC Lifecycle QA | Suede">
-    <meta property="og:description" content="Your agent runs the whole JSON-RPC lifecycle against the live Suede Skills MCP server, initialize through tools, resources, and prompts, and checks the answers against the source, the catalog, and the skill folders. Nine tools, seven resources, and five prompts each get exercised, with closed schemas and tool annotations verified. It is scoped to this pack&#x27;s own server and its install and docs surface, and it runs when any of that changes.">
+    <meta property="og:description" content="MCP server testing that runs the full JSON-RPC lifecycle against the live Suede Skills MCP server, exercising nine tools, seven resources and five prompts.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-mcp-qa.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MCP Server Testing Skill: Full JSON-RPC Lifecycle QA | Suede">
-    <meta name="twitter:description" content="Your agent runs the whole JSON-RPC lifecycle against the live Suede Skills MCP server, initialize through tools, resources, and prompts, and checks the answers against the source, the catalog, and the skill folders. Nine tools, seven resources, and five prompts each get exercised, with closed schemas and tool annotations verified. It is scoped to this pack&#x27;s own server and its install and docs surface, and it runs when any of that changes.">
+    <meta name="twitter:description" content="MCP server testing that runs the full JSON-RPC lifecycle against the live Suede Skills MCP server, exercising nine tools, seven resources and five prompts.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -186,7 +187,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-mcp-qa .claude/skills/</code></pre>
         <p class="footer-note">Suede MCP QA is part of Suede Creator Skills: it checks the live Suede Skills MCP, catalog, install output, JSON-RPC paths, and docs alignment.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">

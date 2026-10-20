@@ -1,0 +1,50 @@
+{
+ "costory-io/costory-finops-mcp-skills/bigquery": {
+  "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the selected skill below.",
+  "source": "https://docs.costory.io/features/mcp"
+ },
+ "anthropics/skills/docx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/pdf": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/pptx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "anthropics/skills/xlsx": {
+  "text": "Anthropic distributes its document skills through its own Claude Code plugin marketplace. Its repository README gives these commands:",
+  "commands": [
+   "/plugin marketplace add anthropics/skills",
+   "/plugin install document-skills@anthropic-agent-skills"
+  ],
+  "source": "https://github.com/anthropics/skills/blob/main/README.md"
+ },
+ "costory-io/costory-finops-mcp-skills/cost-change-investigation": {
+  "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the selected skill below.",
+  "source": "https://docs.costory.io/features/mcp"
+ },
+ "costory-io/costory-finops-mcp-skills/costory-finops": {
+  "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the selected skill below.",
+  "source": "https://docs.costory.io/features/mcp"
+ },
+ "costory-io/costory-finops-mcp-skills/virtual-dimensions": {
+  "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the selected skill below.",
+  "source": "https://docs.costory.io/features/mcp"
+ }
+}

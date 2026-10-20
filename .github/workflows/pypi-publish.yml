@@ -1,0 +1,109 @@
+name: PyPI package
+
+# Builds the `suede-creator-skills` sdist and wheel on every pull request, and
+# publishes them to PyPI through Trusted Publishing (OIDC) when the owner runs
+# this workflow by hand or pushes a `pypi-v<version>` tag. No API token exists
+# anywhere: PyPI trusts this exact repository, workflow file and environment.
+# One-time setup is in DISTRIBUTION.md under "PyPI".
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - "pypi-v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pypi-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # Not named `build`: that context is the required check produced by
+  # skill-pack-ci.yml, and a second job with the same name would blur it.
+  pypi-build:
+    name: pypi-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Refuse a tag that disagrees with VERSION
+        if: startsWith(github.ref, 'refs/tags/pypi-v')
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          expected="pypi-v$(tr -d '[:space:]' < VERSION)"
+          if [ "$TAG" != "$expected" ]; then
+            echo "::error::Tag $TAG does not match VERSION; push $expected instead"
+            exit 1
+          fi
+
+      - name: Stage skills, VERSION and licenses into pypi/
+        run: node scripts/build-pypi-package.mjs --check
+
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install --disable-pip-version-check "build==1.6.1" "twine==7.0.0"
+          python -m build pypi/
+          python -m twine check --strict pypi/dist/*
+
+      - name: Install the wheel and run the CLI
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/venv"
+          "$RUNNER_TEMP/venv/bin/pip" install --disable-pip-version-check pypi/dist/*.whl
+          "$RUNNER_TEMP/venv/bin/suede-skills" --version
+          "$RUNNER_TEMP/venv/bin/suede-skills" list > /dev/null
+          target="$RUNNER_TEMP/skills"
+          "$RUNNER_TEMP/venv/bin/suede-skills" install --target "$target"
+          installed="$(find "$target" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+          expected="$(find skills -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+          if [ "$installed" != "$expected" ]; then
+            echo "::error::wheel installed $installed skills, repository has $expected"
+            exit 1
+          fi
+          ls -l pypi/dist
+
+      - name: Keep the distributions for the publish job
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: python-distributions
+          path: pypi/dist/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: pypi-build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: pypi
+      url: https://pypi.org/project/suede-creator-skills/
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the distributions
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: python-distributions
+          path: dist/
+
+      - name: Publish to PyPI with Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2

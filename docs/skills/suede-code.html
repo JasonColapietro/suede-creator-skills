@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Code Review and Ship Grade Skill: One Pass, One Verdict</title>
-    <meta name="description" content="One run returns both halves of a review: severity-ranked findings with file and line evidence, and the A to F ship grade where the weakest of seven lanes caps the letter. A hardcoded secret, or an auth check a request param can walk around, locks the grade at F and prints the file and the line. It runs only when you ask for a review, a grade, a security check, or a merge verdict.">
+    <meta name="description" content="Code review and ship grade in one run: severity-ranked findings with file and line evidence, plus an A to F grade capped by the weakest of seven lanes.">
     <meta name="keywords" content="code review and ship grade, code ship grade, OWASP review, Next.js review, TypeScript review, Suede Creator Skills">
     <meta name="author" content="Jason Colapietro">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -12,12 +12,12 @@
     <link rel="icon" href="../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Code Review and Ship Grade Skill: One Pass, One Verdict">
-    <meta property="og:description" content="One run returns both halves of a review: severity-ranked findings with file and line evidence, and the A to F ship grade where the weakest of seven lanes caps the letter. A hardcoded secret, or an auth check a request param can walk around, locks the grade at F and prints the file and the line. It runs only when you ask for a review, a grade, a security check, or a merge verdict.">
+    <meta property="og:description" content="Code review and ship grade in one run: severity-ranked findings with file and line evidence, plus an A to F grade capped by the weakest of seven lanes.">
     <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-code.html">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Code Review and Ship Grade Skill: One Pass, One Verdict">
-    <meta name="twitter:description" content="One run returns both halves of a review: severity-ranked findings with file and line evidence, and the A to F ship grade where the weakest of seven lanes caps the letter. A hardcoded secret, or an auth check a request param can walk around, locks the grade at F and prints the file and the line. It runs only when you ask for a review, a grade, a security check, or a merge verdict.">
+    <meta name="twitter:description" content="Code review and ship grade in one run: severity-ranked findings with file and line evidence, plus an A to F grade capped by the weakest of seven lanes.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
       {
@@ -62,6 +62,7 @@
       <div class="nav-links">
           <a href="../">Home</a>
           <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
           <a href="../guide.html">Guide</a>
           <a href="../book/">Book</a>
           <a href="../blog/">Blog</a>
@@ -188,7 +189,7 @@ cp -R /tmp/suede-creator-skills/skills/suede-code .claude/skills/</code></pre>
         <p class="footer-note">Suede Code is part of Suede Creator Skills: it combines evidence-based code review, A-F grading, and deploy safety gates.</p>
         <div class="footer-inner">
           <div class="footer-brand">
-            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" onerror="this.style.display='none'">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">
