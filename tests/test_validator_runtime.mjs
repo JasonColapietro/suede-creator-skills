@@ -644,6 +644,14 @@ function checkoutWithOriginMainAtHead(t, prefix) {
     { encoding: "utf8" }
   );
   assert.equal(alignOriginMain.status, 0, alignOriginMain.stderr);
+  // The fixture's main now includes this branch's history. Rebuild its activity
+  // series so prepared-base tests do not inherit an unrelated stale commit count.
+  const refreshActivity = spawnSync(
+    process.execPath,
+    [path.join(checkoutRoot, "scripts", "build-shiplog.mjs")],
+    { cwd: checkoutRoot, encoding: "utf8" }
+  );
+  assert.equal(refreshActivity.status, 0, `${refreshActivity.stdout}\n${refreshActivity.stderr}`);
   return checkoutRoot;
 }
 

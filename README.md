@@ -20,6 +20,14 @@
 
 ---
 
+## Suede Awesome Everything
+
+**AI agent skills, scored 0–99.**
+
+**[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
+
+[Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
+
 ## Suede Creator Skills for SEO and business growth
 
 Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
@@ -257,6 +265,7 @@ Essays on why the pack is built the way it is:
 - [GitHub repository](https://github.com/JasonColapietro/suede-creator-skills)
 - [GitHub Pages site](https://skills.suedeai.ai/) — public documentation generated from this repo
 - [Skill docs catalog](https://skills.suedeai.ai/skills/) — every skill with install and resource links
+- [Agent Skills Directory](https://skills.suedeai.ai/directory/) ([data](directory/)) — other authors' public skills in sixteen category directories, each scored 0–99 by the published, graded [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/) and linked to its source; listings scoring 80–99 offer separate numeric and A/B README shields, both linking to their listing. Authors can [request a listing, score help or badge verification](https://skills.suedeai.ai/directory/submit/); displaying either valid linked badge (or both) can qualify for a limited-time feature placement after verification. Security scan status is separate from the structural score
 - [Installs and MCP page](https://skills.suedeai.ai/plugins.html) — install commands plus the Suede Skills MCP
 - [Copy bank](https://skills.suedeai.ai/copy.html) ([source](COPY.md)) and [public explainer pack](PROMO.md)
 - [S-Tier: the builder's book](https://skills.suedeai.ai/book/) ([source](book/), [PDF](https://skills.suedeai.ai/book/s-tier.pdf)) — a free, roughly 29,900-word book on how Agent Skills work and how to get genuinely good with them

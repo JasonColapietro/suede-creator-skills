@@ -213,6 +213,14 @@ function containsReservedBodySignature(value) {
   return false;
 }
 
+// docs/directory/ is rendered by scripts/build-directory.mjs from directory/*.json
+// and the generator's own template, and `npm run validate` fails when the pages
+// drift from those sources (build-directory.mjs --check). The sources and the
+// generator are scanned below like every other file, so the rendered pages'
+// text is covered without hashing ~900 pages of repeated chrome on every run;
+// their paths are still checked.
+const GENERATED_FROM_SCANNED_SOURCES = /^docs\/directory\//;
+
 function runReservedSequencePreflight(files) {
   const findings = [];
   for (const file of files) {
@@ -222,6 +230,7 @@ function runReservedSequencePreflight(files) {
       continue;
     }
     if (!PUBLIC_TEXT_EXTENSIONS.has(path.extname(file).toLowerCase())) continue;
+    if (GENERATED_FROM_SCANNED_SOURCES.test(relative.split(path.sep).join("/"))) continue;
     let text;
     try {
       text = readText(file);

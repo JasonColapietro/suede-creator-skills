@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Writes <meta name="keywords"> into every hand-authored page listed in
 // scripts/lib/seo-keywords.mjs, directly after the page's meta description.
-// docs/book/ is skipped: scripts/build-book-site.mjs renders it from the map.
+// docs/book/ and docs/directory/ are skipped: their generators render the tag.
 //
 // Usage:
 //   node scripts/apply-seo-keywords.mjs          # write the tags
@@ -35,7 +35,7 @@ export function withKeywords(html, keywords) {
 const stale = [];
 const broken = [];
 for (const [page, keywords] of Object.entries(SEO_KEYWORDS)) {
-  if (page.startsWith("book/")) continue;
+  if (page.startsWith("book/") || page.startsWith("directory/")) continue;
   const file = path.join(docsRoot, page);
   if (!fs.existsSync(file)) {
     broken.push(`${page}: file not found`);

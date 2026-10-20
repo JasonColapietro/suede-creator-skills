@@ -15,6 +15,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const FILES = [
   "scripts/build-listings.mjs",
   "scripts/lib/seo-keywords.mjs",
+  "scripts/lib/directory-keywords.json",
   "docs/listings.json",
   "docs/listings.html",
   "docs/index.html",
