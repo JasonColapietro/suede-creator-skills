@@ -72,17 +72,21 @@ evidence-led, and easy to scan.
   keeps the near-black canvas from reading as a flat fill.
 - Catalog toolbar on the skills index: hidden until JS reveals it, then a
   bordered panel that sticks under the nav at desktop and stays static on
-  phones so it never eats the viewport. Search glyph, mono input with a `/`
-  hint, clear button, live count via `aria-live`, and six specialty chips that
-  track the section under the bar (`aria-current="location"`). Every query
-  term must match; matches wrap in `<mark class="hl">`; empty lanes and
-  specialties collapse; the query round-trips through `?q=`; `/` or Ctrl/Cmd+K
-  focuses, Esc clears, Enter opens a lone match, and the arrow keys walk the
-  visible rows.
-- Catalog ledger: each specialty carries a fixed two-digit ordinal and a
-  Fraunces head; each row carries a running mono index from a CSS counter, a
-  gold inset rule on hover and focus, and a `src` link to its GitHub folder
-  that appears on hover, focus-within, or touch.
+  phones so it never eats the viewport. One row at desktop: search glyph, a
+  short mono input with a `/` hint and clear button, the six specialty chips
+  that track the section under the bar (`aria-current="location"`), and a
+  live count via `aria-live`. Below 980px the input takes the full width and
+  the chips drop to a second line. Every query term must match; matches wrap
+  in `<mark class="hl">`; empty lanes and specialties collapse; the query
+  round-trips through `?q=`; `/` or Ctrl/Cmd+K focuses, Esc clears, Enter
+  opens a lone match, and the arrow keys walk the visible rows.
+- Catalog ledger: three heading sizes and nothing else. Each specialty has a
+  Fraunces head in cream, a muted "N skills" count, and a single gold rule;
+  each lane has a sans head with a muted count and a hairline; each row is
+  the skill name in cream mono beside its one-line description, with a quiet
+  `src` link to its GitHub folder always visible at the right. Gold appears
+  only on the specialty rule and on hover or focus, so a 76-row list does not
+  read as 76 accents. No ordinals, row numbers, or arrows.
 - Lane map: one SVG bar per specialty, each a link to its section, filling
   from the axis on first view (`.js-on` gated, so no-JS and reduced-motion
   visits see full bars). Bar length is proportional to skill count.
