@@ -315,6 +315,13 @@ def main(argv: Optional[Sequence[str]] = None, bundle: Optional[Bundle] = None, 
     except BundleError as error:
         print(f"suede-skills: {error}", file=sys.stderr)
         return 2
+    except BrokenPipeError:
+        # The reader closed the pipe early, as in `suede-skills list | head`.
+        # Point stdout at devnull so the interpreter's exit flush stays quiet.
+        if out is sys.stdout:
+            devnull = os.open(os.devnull, os.O_WRONLY)
+            os.dup2(devnull, sys.stdout.fileno())
+        return 0
     parser.print_help(out)
     return 0
 

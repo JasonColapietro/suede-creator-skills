@@ -10,6 +10,7 @@ import io
 import os
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import tomllib
@@ -67,6 +68,28 @@ class ListAndShowTests(unittest.TestCase):
                 self.assertEqual(code, 0)
                 listed = [line.split()[0] for line in out.splitlines() if line.startswith(("suede-", "johnny-"))]
                 self.assertEqual(listed, expected)
+
+    def test_list_exits_quietly_when_the_reader_closes_the_pipe(self):
+        # `suede-skills list | head` closes the pipe before the listing ends.
+        # Closing the read end first makes every write fail, so this is
+        # deterministic: the command must exit 0 with nothing on stderr.
+        script = (
+            "import sys; from pathlib import Path; "
+            f"sys.path.insert(0, {str(ROOT / 'pypi' / 'src')!r}); "
+            "from suede_creator_skills import cli; "
+            f"root = Path({str(ROOT)!r}); "
+            "sys.exit(cli.main(['list'], bundle=cli.Bundle(root / 'skills', root / 'mcp' / 'catalog.json', root)))"
+        )
+        read_end, write_end = os.pipe()
+        os.close(read_end)
+        try:
+            proc = subprocess.run(
+                [sys.executable, "-c", script], stdout=write_end, stderr=subprocess.PIPE, text=True, timeout=60
+            )
+        finally:
+            os.close(write_end)
+        self.assertEqual(proc.stderr, "")
+        self.assertEqual(proc.returncode, 0)
 
     def test_unknown_specialty_names_the_real_ones(self):
         code, _, err = run("list", "--specialty", "nope")
