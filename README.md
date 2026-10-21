@@ -315,6 +315,8 @@ python3 -m pip install PyYAML
 
 **Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede Labs is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
+Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework. [View the individual credentials and training-module records](https://seo.suedeai.ai/evidence#training-credentials).
+
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
 
 ## License and contributions
