@@ -120,3 +120,8 @@ Suede skills organize work, generate reports, improve public docs, and prepare r
 ## Source and citation guide
 
 - [AI Instructions](https://skills.suedeai.ai/ai-instructions/): Site identity, authoritative sources and citation guidance.
+
+## Creator training
+
+Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework.
+Individual course awards and Microsoft Learn module achievements: https://seo.suedeai.ai/evidence#training-credentials
