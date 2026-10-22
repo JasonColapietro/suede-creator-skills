@@ -302,16 +302,21 @@ def main(argv: Optional[Sequence[str]] = None, bundle: Optional[Bundle] = None, 
     parser = build_parser(read_version(bundle.version_dir))
     args = parser.parse_args(argv)
     try:
+        code = 0
         if args.command == "list":
-            return cmd_list(bundle, args.specialty, out)
-        if args.command == "show":
-            return cmd_show(bundle, args.name, out)
-        if args.command == "install":
+            code = cmd_list(bundle, args.specialty, out)
+        elif args.command == "show":
+            code = cmd_show(bundle, args.name, out)
+        elif args.command == "install":
             install(bundle, args.target, args.skill, args.force, out)
-            return 0
-        if args.command == "path":
+        elif args.command == "path":
             print(bundle.skills_dir, file=out)
-            return 0
+        else:
+            parser.print_help(out)
+        # Small responses can stay buffered until interpreter shutdown. Flush
+        # here so a closed reader is handled by the same quiet-exit path.
+        out.flush()
+        return code
     except BundleError as error:
         print(f"suede-skills: {error}", file=sys.stderr)
         return 2
@@ -320,10 +325,11 @@ def main(argv: Optional[Sequence[str]] = None, bundle: Optional[Bundle] = None, 
         # Point stdout at devnull so the interpreter's exit flush stays quiet.
         if out is sys.stdout:
             devnull = os.open(os.devnull, os.O_WRONLY)
-            os.dup2(devnull, sys.stdout.fileno())
+            try:
+                os.dup2(devnull, sys.stdout.fileno())
+            finally:
+                os.close(devnull)
         return 0
-    parser.print_help(out)
-    return 0
 
 
 if __name__ == "__main__":  # pragma: no cover
