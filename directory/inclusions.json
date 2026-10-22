@@ -1,6 +1,5 @@
 {
  "repositories": [
-  "MetcalfSolutions/Satori",
   "anthropics/claude-plugins-official",
   "apify/agent-skills",
   "appierun/appie-mcp",
@@ -12,6 +11,8 @@
   "heygen-com/hyperframes",
   "langchain-ai/langchain-skills",
   "mattpocock/skills",
+  "MelMayssonOwen/agent-skills",
+  "MetcalfSolutions/Satori",
   "microsoft/azure-skills",
   "neondatabase/agent-skills",
   "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -876,6 +877,14 @@
    "cost-change-investigation",
    "costory-finops",
    "virtual-dimensions"
+  ],
+  "MelMayssonOwen/agent-skills": [
+   "timetopost-social-scheduler",
+   "timetopost-autoseo-blog",
+   "toolfound-launch-kit",
+   "sheetfolk-budget-builder",
+   "amazon-listing-checker",
+   "clef-music-tools"
   ]
  },
  "skill_roots": {
@@ -990,10 +999,10 @@
   "costory-io/costory-finops-mcp-skills": [
    {
     "source": "TensorBlock/awesome-mcp-servers",
-    "commit": "0eaf3d154251efe8923c70dda758fc01bb9d48c0",
+    "commit": "9d8b67f2f48143e3576452a30fbe0a6b1a51e1a6",
     "path": "docs/cloud-platforms--services.md",
     "target": "https://github.com/costory-io/costory-finops-mcp-skills",
-    "verified_at": "2026-10-19"
+    "verified_at": "2026-10-22"
    }
   ]
  }

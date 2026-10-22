@@ -8,13 +8,13 @@
 
 Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
-Browse **3,798 scored skills from 159 repositories** across **16 categories**, with publisher credits and direct source links.
+Browse **3,804 scored skills from 160 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
 **[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
-Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 ## Compare 0–99 quality scores
 
@@ -24,9 +24,9 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
-| **90–99 · A** | 125 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,576 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
-| **70–79 · C** | 1,373 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
+| **90–99 · A** | 120 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
+| **80–89 · B** | 1,581 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **70–79 · C** | 1,379 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
 | **0–69 · D** | 724 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
@@ -37,13 +37,13 @@ For GitHub browsing, choose a category below. Numeric scores lead every listing,
 | --- | ---: | ---: | ---: |
 | [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–94 / 100** | 599 | 68 |
 | [Developer Tools and Frameworks](categories/developer-tools.md) | **54–95 / 100** | 541 | 63 |
-| [Marketing and SEO](categories/marketing-seo.md) | **62–94 / 100** | 306 | 23 |
+| [Marketing and SEO](categories/marketing-seo.md) | **62–94 / 100** | 310 | 24 |
 | [Product Management](categories/product-management.md) | **56–92 / 100** | 237 | 16 |
 | [Science and Research](categories/science-research.md) | **66–93 / 100** | 210 | 8 |
 | [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 359 | 37 |
-| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 230 | 37 |
-| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–93 / 100** | 213 | 35 |
-| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 162 | 26 |
+| [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 231 | 38 |
+| [Productivity and Knowledge Work](categories/productivity-knowledge.md) | **53–90 / 100** | 213 | 35 |
+| [Business, Sales and Finance](categories/business-finance.md) | **53–91 / 100** | 163 | 27 |
 | [Testing and QA](categories/testing-qa.md) | **56–95 / 100** | 190 | 34 |
 | [Data, Analytics and Databases](categories/data-databases.md) | **66–95 / 100** | 178 | 28 |
 | [Security](categories/security.md) | **54–93 / 100** | 115 | 22 |
@@ -59,8 +59,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Appie](featured.md#appie)** by [appierun](https://github.com/appierun). Bring Appie’s writing, chatbot and link tools into your agent workflow. Pick the skill for the job and follow its individual setup instructions.
 - **[CoalWash](featured.md#coalwash)** by [TheColliery](https://github.com/TheColliery). Measure memory and governance-file overhead, run maintenance, and inspect the changes. CoalWash pairs a structured-token guard with transaction snapshots and rollback tools.
 - **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
+- **[Opsibyte](featured.md#opsibyte)** by [MelMayssonOwen](https://github.com/MelMayssonOwen). Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.
 
-These 3 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 4 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Read a listing
 
@@ -86,7 +87,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `5c47173743e1519da80ccdb141b4b40ba8e3fc87c4230cec3ee17204e66b20a4`.
+Dataset SHA-256: `c947f0ea5cb1e5f5719f49bafa11e2a8ffbc59fad447df385b35e15f0cb14d96`.
 
 ## Contribute and update
 

@@ -6,7 +6,7 @@
 
 Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against.
 
-**112 accepted skills · 39 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**112 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **59–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=writing-content&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 

@@ -1988,6 +1988,7 @@
   "Appie agent workflows",
   "CoalWash agent workflows",
   "Costory agent workflows",
+  "Opsibyte agent workflows",
   "Suede Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
@@ -4211,6 +4212,68 @@
   "video image and audio skills for codex",
   "best video image and audio skills",
   "agent skills directory"
+ ],
+ "directory/melmayssonowen/agent-skills/amazon-listing-checker/index.html": [
+  "amazon-listing-checker skill by MelMayssonOwen",
+  "amazon-listing-checker skill",
+  "amazon-listing-checker agent skill",
+  "amazon-listing-checker claude skill",
+  "MelMayssonOwen skills",
+  "marketing and SEO agent skills",
+  "SKILL.md"
+ ],
+ "directory/melmayssonowen/agent-skills/clef-music-tools/index.html": [
+  "clef-music-tools skill by MelMayssonOwen",
+  "clef-music-tools skill",
+  "clef-music-tools agent skill",
+  "clef-music-tools claude skill",
+  "MelMayssonOwen skills",
+  "video image and audio agent skills",
+  "SKILL.md"
+ ],
+ "directory/melmayssonowen/agent-skills/index.html": [
+  "MelMayssonOwen/agent-skills skills",
+  "agent-skills skills",
+  "MelMayssonOwen agent skills",
+  "agent-skills claude skills",
+  "marketing and SEO agent skills",
+  "agent skills directory"
+ ],
+ "directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/index.html": [
+  "sheetfolk-budget-builder skill by MelMayssonOwen",
+  "sheetfolk-budget-builder skill",
+  "sheetfolk-budget-builder agent skill",
+  "sheetfolk-budget-builder claude skill",
+  "MelMayssonOwen skills",
+  "business and finance agent skills",
+  "SKILL.md"
+ ],
+ "directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/index.html": [
+  "timetopost-autoseo-blog skill by MelMayssonOwen",
+  "timetopost-autoseo-blog skill",
+  "timetopost-autoseo-blog agent skill",
+  "timetopost-autoseo-blog claude skill",
+  "MelMayssonOwen skills",
+  "marketing and SEO agent skills",
+  "SKILL.md"
+ ],
+ "directory/melmayssonowen/agent-skills/timetopost-social-scheduler/index.html": [
+  "timetopost-social-scheduler skill by MelMayssonOwen",
+  "timetopost-social-scheduler skill",
+  "timetopost-social-scheduler agent skill",
+  "timetopost-social-scheduler claude skill",
+  "MelMayssonOwen skills",
+  "marketing and SEO agent skills",
+  "SKILL.md"
+ ],
+ "directory/melmayssonowen/agent-skills/toolfound-launch-kit/index.html": [
+  "toolfound-launch-kit skill by MelMayssonOwen",
+  "toolfound-launch-kit skill",
+  "toolfound-launch-kit agent skill",
+  "toolfound-launch-kit claude skill",
+  "MelMayssonOwen skills",
+  "marketing and SEO agent skills",
+  "SKILL.md"
  ],
  "directory/metalbear-co/skills/index.html": [
   "metalbear-co/skills skills",

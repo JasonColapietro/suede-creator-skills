@@ -95,6 +95,50 @@
         }
       ],
       "setup": "Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. Queries use workspace cost data. Preview changes and confirm before publishing allocations, delivering reports or applying schema changes. Each linked skill page includes setup and source details."
+    },
+    {
+      "id": "opsibyte",
+      "name": "Opsibyte",
+      "repo": "MelMayssonOwen/agent-skills",
+      "kind": "Six skills · Publishing, budgets, listings, and music",
+      "license": "MIT",
+      "headline": "Prepare a post, a launch, a workbook, or a practice session.",
+      "summary": "Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.",
+      "review": "directory/reviews/2026-10-22-opsibyte.md",
+      "commit": "aebddbe40090c99fe0c5a1810536637186335502",
+      "skills": [
+        {
+          "id": "timetopost-social-scheduler",
+          "title": "Prepare a social schedule",
+          "description": "Draft distinct social posts, review account timing, and approve the exact content and schedule before publication."
+        },
+        {
+          "id": "timetopost-autoseo-blog",
+          "title": "Review blog drafts",
+          "description": "Connect a publishing destination, explore article topics, and prepare blog drafts for human review."
+        },
+        {
+          "id": "toolfound-launch-kit",
+          "title": "Prepare a product launch",
+          "description": "Research a product category, prepare an approved Toolfound submission, and track owner verification and launch status."
+        },
+        {
+          "id": "sheetfolk-budget-builder",
+          "title": "Create a budget workbook",
+          "description": "Create a local Excel budget workbook with household, sinking-fund, and side-hustle inputs."
+        },
+        {
+          "id": "amazon-listing-checker",
+          "title": "Review listing copy",
+          "description": "Review pasted listing copy for length, repeated terms, risky wording, and keyword coverage using a local Python helper."
+        },
+        {
+          "id": "clef-music-tools",
+          "title": "Practice and transpose chords",
+          "description": "Transpose chord symbols locally or use Clef MCP tools for piano chords, guitar-tab notes, and music practice."
+        }
+      ],
+      "setup": "Install one selected skill. TimeToPost needs its hosted MCP and browser OAuth; Toolfound and Clef document public discovery endpoints. Hosted services were not exercised in this review. Python 3 runs the local helpers. At the reviewed revision, use a new budget filename and calculate net cash flow separately; preserve existing campaign attribution manually. Upstream PR #1 supplies the tested corrections. Each skill page links its exact setup and source."
     }
   ]
 }

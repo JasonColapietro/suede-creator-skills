@@ -1394,7 +1394,7 @@ function renderFeaturedProjects() {
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">Good tools deserve a closer look.</p><p>Meet the latest accepted applicants and their selected workflows. Choose a project, inspect its reviewed source, and start with the right setup.</p></div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here })}
+      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, slugify })}
       <section class="panel featured-about" aria-labelledby="selection-title"><div><p class="featured-kind">How this page works</p><h2 id="selection-title">Selected for a closer look.</h2></div><div><p>These editorial features introduce accepted project submissions and their reviewed scope. Individual skill pages carry the directory’s quality scores. README-badge verification is tracked separately.</p><p><a href="../methodology/">How directory checks work →</a></p><a class="featured-submit" href="../submit/">Submit your project →</a></div></section>`,
     jsonld: [{
       "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${url(here)}#featured`,

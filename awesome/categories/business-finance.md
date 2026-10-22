@@ -6,7 +6,7 @@
 
 Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.
 
-**162 accepted skills · 26 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**163 accepted skills · 27 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -30,6 +30,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
+- [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
 - [NVIDIA/skills](#nvidia--skills)
 - [Octav-Labs/octav-api-skill](#octav-labs--octav-api-skill)
@@ -287,6 +288,14 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - **88/100 · B** · [fictiv](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/fictiv/SKILL.md) — Operates Fictiv (app.fictiv.com), the on-demand manufacturing platform, end to end in the user's browser. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#fictiv)
 - **87/100 · B** · [market-research-reports](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/market-research-reports/SKILL.md) — Builds evidence-traceable market research reports and assumption-driven market sizing or forecast scenarios. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#market-research-reports)
 - **87/100 · B** · [usfiscaldata](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/usfiscaldata/SKILL.md) — Queries the U.S. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#usfiscaldata)
+
+<a id="melmayssonowen--agent-skills"></a>
+
+## MelMayssonOwen/agent-skills
+
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+
+- **73/100 · C** · [sheetfolk-budget-builder](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/sheetfolk-budget-builder/SKILL.md) — Create a local Excel budget workbook with household, sinking-fund, and side-hustle inputs. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/)
 
 <a id="nowork-studio--notfair"></a>
 

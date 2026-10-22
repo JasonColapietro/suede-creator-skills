@@ -1,11 +1,12 @@
 // Editorial project selections are independent of skill scores and README-badge verification.
-export function featuredProjectsHtml(projects, { esc, rel, here }) {
+export function featuredProjectsHtml(projects, { esc, rel, here, slugify }) {
   return projects.map((project, index) => {
     const source = `https://github.com/${project.repo}`;
+    const route = project.repo.split('/').map(slugify).join('/');
     const review = `https://github.com/JasonColapietro/suede-creator-skills/blob/main/${project.review}`;
     const items = project.skills || project.capabilities;
     const work = items.map((item) => `<li>${project.skills
-      ? `<a href="${rel(here, `directory/${project.repo}/${item.id}/`)}"><span>${esc(item.title)}</span><span aria-hidden="true">↗</span></a>`
+      ? `<a href="${rel(here, `directory/${route}/${item.id}/`)}"><span>${esc(item.title)}</span><span aria-hidden="true">↗</span></a>`
       : `<h4>${esc(item.title)}</h4>`}<p>${esc(item.description)}</p></li>`).join("\n");
     const install = project.commands ? `<aside class="featured-install" aria-labelledby="${project.id}-install">
       <h3 id="${project.id}-install">Install the Claude Code plugin</h3>

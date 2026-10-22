@@ -6,7 +6,7 @@
 
 Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it.
 
-**190 accepted skills · 34 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**190 accepted skills · 34 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=testing-qa&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 

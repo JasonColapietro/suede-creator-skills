@@ -6,7 +6,7 @@
 
 Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask.
 
-**237 accepted skills · 16 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**237 accepted skills · 16 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–92 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 

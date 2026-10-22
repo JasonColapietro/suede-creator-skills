@@ -6,7 +6,7 @@
 
 Skills for Word, PDF, PowerPoint and Excel files, forms and slides. They give an agent the libraries and procedures to read, create and edit office documents that open cleanly in the apps people use.
 
-**55 accepted skills · 22 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**55 accepted skills · 22 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede](https://skills.suedeai.ai/directory/?category=documents-office&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
