@@ -1,6 +1,7 @@
 // Guards scripts/build-listings.mjs --check, the gate that keeps the homepage
 // JSON-LD sameAs, the README "Find it on" block and docs/listings.html in step
-// with docs/listings.json. Each test copies only the files the builder reads
+// with docs/listings.json, keeping editorial links separate from software
+// identity. Each test copies only the files the builder reads
 // into a temp dir, breaks exactly one thing, and requires --check to refuse it.
 
 import { test } from "node:test";
@@ -44,6 +45,10 @@ const listingUrls = () =>
   JSON.parse(fs.readFileSync(path.join(repoRoot, "docs", "listings.json"), "utf8")).groups.flatMap((group) =>
     group.items.map((item) => item.url)
   );
+const identityUrls = () =>
+  JSON.parse(fs.readFileSync(path.join(repoRoot, "docs", "listings.json"), "utf8")).groups.flatMap((group) =>
+    group.items.filter((item) => item.sameAs === true).map((item) => item.url)
+  );
 
 function editHomeSameAs(dir, edit) {
   const file = path.join(dir, "docs", "index.html");
@@ -60,19 +65,43 @@ test("the committed surfaces pass --check", (t) => {
   assert.equal(run.status, 0, run.stderr || run.stdout);
 });
 
-test("the homepage sameAs carries every listing URL", () => {
+test("software identity excludes author profiles and curated collections", () => {
+  const mismatchedEntities = [
+    "https://www.skillsdirectory.com/authors/jasoncolapietro",
+    "https://claudskills.com/author/jasoncolapietro/",
+    "https://github.com/VoltAgent/awesome-agent-skills",
+    "https://www.skillsdirectory.com/skills/jasoncolapietro-suede-seo-audit",
+    "https://www.npmjs.com/package/suede-skills-mcp",
+  ];
+  for (const page of ["index.html", "listings.html"]) {
+    const html = fs.readFileSync(path.join(repoRoot, "docs", page), "utf8");
+    const graph = JSON.parse(html.match(JSON_LD_RE)[2]);
+    const node = graph.mainEntity ?? graph["@graph"].find((entry) => entry["@type"] === "SoftwareSourceCode");
+    assert.equal(node.codeRepository, "https://github.com/JasonColapietro/suede-creator-skills");
+    assert.ok(node.sameAs.includes("https://pypi.org/project/suede-creator-skills/"));
+    for (const url of mismatchedEntities) {
+      assert.ok(!node.sameAs.includes(url), `${page} must not identify the pack as ${url}`);
+    }
+  }
+});
+
+test("the homepage sameAs carries only explicitly verified pack identities", () => {
   const html = fs.readFileSync(path.join(repoRoot, "docs", "index.html"), "utf8");
   const graph = JSON.parse(html.match(JSON_LD_RE)[2]);
   const node = graph["@graph"].find((entry) => entry["@type"] === "SoftwareSourceCode");
-  assert.deepEqual([...node.sameAs].sort(), [...listingUrls()].sort());
+  assert.deepEqual([...node.sameAs].sort(), [...identityUrls()].sort());
+  const listings = fs.readFileSync(path.join(repoRoot, "docs", "listings.html"), "utf8");
+  for (const url of listingUrls()) {
+    assert.ok(listings.includes(`href="${url.replace(/&/g, "&amp;")}"`), `editorial link must remain: ${url}`);
+  }
 });
 
-test("--check fails when a listing is removed from the homepage sameAs", (t) => {
+test("--check fails when a verified identity is removed from the homepage sameAs", (t) => {
   const dir = fixture(t);
-  const dropped = listingUrls()[3];
+  const dropped = identityUrls()[3];
   editHomeSameAs(dir, (sameAs) => sameAs.filter((url) => url !== dropped));
   const run = check(dir);
-  assert.equal(run.status, 1, "a sameAs missing a listing must fail the check");
+  assert.equal(run.status, 1, "a sameAs missing a verified identity must fail the check");
   assert.match(run.stderr, /sameAs disagrees with docs\/listings\.json/);
   assert.ok(run.stderr.includes(dropped), "the failure names the missing URL");
 });
@@ -89,7 +118,45 @@ test("--check fails when the homepage sameAs names a URL that is not a listing",
   editHomeSameAs(dir, (sameAs) => [...sameAs, "https://example.com/not-a-listing"]);
   const run = check(dir);
   assert.equal(run.status, 1);
-  assert.match(run.stderr, /not in docs\/listings\.json/);
+  assert.match(run.stderr, /not verified pack identities in docs\/listings\.json/);
+});
+
+test("--check rejects a curated collection even when it is an existing listing", (t) => {
+  const dir = fixture(t);
+  editHomeSameAs(dir, (sameAs) => [...sameAs, "https://github.com/VoltAgent/awesome-agent-skills"]);
+  const run = check(dir);
+  assert.equal(run.status, 1);
+  assert.match(run.stderr, /not verified pack identities/);
+});
+
+test("new listings remain editorial links unless explicitly identified as the pack", (t) => {
+  const dir = fixture(t);
+  const file = path.join(dir, "docs", "listings.json");
+  const data = JSON.parse(fs.readFileSync(file, "utf8"));
+  const url = "https://example.com/authors/new-author";
+  data.groups[0].items.push({ name: "Author directory", url, note: "An author profile", featured: true });
+  fs.writeFileSync(file, JSON.stringify(data, null, 2));
+  const run = spawnSync(process.execPath, [path.join(dir, "scripts", "build-listings.mjs")], { cwd: dir, encoding: "utf8" });
+  assert.equal(run.status, 0, run.stderr || run.stdout);
+  for (const page of ["index.html", "listings.html"]) {
+    const html = fs.readFileSync(path.join(dir, "docs", page), "utf8");
+    assert.ok(html.includes(`href="${url}"`), `${page} retains the editorial link`);
+    const graph = JSON.parse(html.match(JSON_LD_RE)[2]);
+    const node = graph.mainEntity ?? graph["@graph"].find((entry) => entry["@type"] === "SoftwareSourceCode");
+    assert.ok(!node.sameAs.includes(url), `${page} must not silently promote a citation to an identity`);
+  }
+  assert.equal(check(dir).status, 0);
+});
+
+test("sameAs opt-in must be an explicit boolean", (t) => {
+  const dir = fixture(t);
+  const file = path.join(dir, "docs", "listings.json");
+  const data = JSON.parse(fs.readFileSync(file, "utf8"));
+  data.groups[0].items[0].sameAs = "true";
+  fs.writeFileSync(file, JSON.stringify(data, null, 2));
+  const run = check(dir);
+  assert.equal(run.status, 1);
+  assert.match(run.stderr, /sameAs must be a boolean/);
 });
 
 test("--check fails when the README listings block is stale", (t) => {

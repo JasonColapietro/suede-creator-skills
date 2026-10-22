@@ -1,5 +1,5 @@
 {
-  "$comment": "Single source for every third-party page that lists Suede Creator Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry.",
+  "$comment": "Single source for every third-party page that lists Suede Creator Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry. Mark sameAs:true only for a page identifying this exact software pack; author profiles, individual skills, MCP components and multi-project collections remain editorial links.",
   "verified": "2026-10-08",
   "updated": "2026-10-22",
   "groups": [
@@ -8,10 +8,10 @@
       "title": "Skill directories and registries",
       "intro": "Pages built for this pack: install counts, per-skill pages, and trust scores.",
       "items": [
-        { "name": "skills.sh", "url": "https://www.skills.sh/jasoncolapietro/suede-creator-skills", "note": "Pack page on the Vercel skills directory, grouped by lane", "featured": true },
-        { "name": "SkillsMP", "url": "https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills", "note": "Pack page with every skill collected", "featured": true },
-        { "name": "SkillsLLM", "url": "https://skillsllm.com/skill/suede-creator-skills", "note": "Verified pack listing", "featured": true },
-        { "name": "HOL Plugin Registry", "url": "https://hol.org/registry/plugins/suede-ai%2Fsuede-skills", "note": "Plugin page with a published trust score", "featured": true },
+        { "name": "skills.sh", "url": "https://www.skills.sh/jasoncolapietro/suede-creator-skills", "sameAs": true, "note": "Pack page on the Vercel skills directory, grouped by lane", "featured": true },
+        { "name": "SkillsMP", "url": "https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills", "sameAs": true, "note": "Pack page with every skill collected", "featured": true },
+        { "name": "SkillsLLM", "url": "https://skillsllm.com/skill/suede-creator-skills", "sameAs": true, "note": "Verified pack listing", "featured": true },
+        { "name": "HOL Plugin Registry", "url": "https://hol.org/registry/plugins/suede-ai%2Fsuede-skills", "sameAs": true, "note": "Plugin page with a published trust score", "featured": true },
         { "name": "Skills Directory", "url": "https://www.skillsdirectory.com/authors/jasoncolapietro", "note": "Author page with a graded page for each skill", "featured": true },
         { "name": "ClaudSkills", "url": "https://claudskills.com/author/jasoncolapietro/", "note": "Author page in the ClaudSkills registry", "featured": true },
         { "name": "skills.sh author page", "url": "https://www.skills.sh/jasoncolapietro", "note": "Author profile on skills.sh" },
@@ -26,7 +26,7 @@
       "title": "Python package",
       "intro": "Install the skill pack from the Python Package Index.",
       "items": [
-        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "note": "suede-creator-skills: Python CLI and bundled skill folders; first release published October 22, 2026 with provenance for both distribution files", "featured": true }
+        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "sameAs": true, "note": "suede-creator-skills: Python CLI and bundled skill folders; first release published October 22, 2026 with provenance for both distribution files", "featured": true }
       ]
     },
     {
@@ -63,8 +63,8 @@
       "title": "Open-source tracking",
       "intro": "Indexes that track the repository itself.",
       "items": [
-        { "name": "Trendshift", "url": "https://trendshift.io/repositories/82031", "note": "Repository trend page", "featured": true },
-        { "name": "ecosyste.ms", "url": "https://awesome.ecosyste.ms/projects/github.com%2FJasonColapietro%2Fsuede-creator-skills", "note": "Project page in the ecosyste.ms awesome index" }
+        { "name": "Trendshift", "url": "https://trendshift.io/repositories/82031", "sameAs": true, "note": "Repository trend page", "featured": true },
+        { "name": "ecosyste.ms", "url": "https://awesome.ecosyste.ms/projects/github.com%2FJasonColapietro%2Fsuede-creator-skills", "sameAs": true, "note": "Project page in the ecosyste.ms awesome index" }
       ]
     }
   ]
