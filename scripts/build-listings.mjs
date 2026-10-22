@@ -76,6 +76,11 @@ if (fail.length) {
   process.exit(1);
 }
 
+const updated = data.updated ?? data.verified;
+if (!/^\d{4}-\d{2}-\d{2}$/.test(updated)) throw new Error("docs/listings.json updated must be a YYYY-MM-DD date");
+const updatedLong = new Date(`${updated}T00:00:00Z`).toLocaleDateString("en-US", {
+  year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
+});
 const allUrls = allItems.map((item) => item.url);
 const total = allItems.length;
 const [year, month, day] = data.verified.split("-").map(Number);
@@ -94,7 +99,7 @@ const esc = (s) =>
 const TITLE = "Suede Creator Skills listings: directories, registries and lists";
 const DESCRIPTION =
   `Every directory, registry and curated list that carries Suede Creator Skills: skills.sh, SkillsMP, ` +
-  `the official MCP Registry, npm, MCP Market and more. ${total} listings, verified ${verifiedLong}.`;
+  `the official MCP Registry, npm, PyPI, MCP Market and more. ${total} listings.`;
 
 function renderPage() {
   const jsonLd = {
@@ -104,7 +109,7 @@ function renderPage() {
     name: TITLE,
     description: DESCRIPTION,
     url: PAGE_URL,
-    dateModified: data.verified,
+    dateModified: updated,
     isPartOf: { "@id": `${BASE}#website` },
     author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
     mainEntity: {
@@ -196,11 +201,11 @@ ${jsonLdText}
       </nav>
     </header>
     <main id="main" tabindex="-1" class="shell">
-      <p class="eyebrow">Listings &middot; Verified ${esc(verifiedLong)}</p>
+      <p class="eyebrow">Listings &middot; Updated ${esc(updatedLong)}</p>
       <h1>Where to find Suede Creator Skills</h1>
-      <p class="post-meta">${total} third-party pages carry the pack. Every link below was loaded and checked on ${esc(verifiedLong)}.</p>
+      <p class="post-meta">${total} third-party pages carry the pack. Original directory review: ${esc(verifiedLong)}. New entries are checked when added.</p>
 
-      <p class="lead">Suede Creator Skills is listed in the skill directories that grade and count installs, the official MCP Registry and npm, the community awesome lists, and the open-source trackers. Pick the directory you already use, or install straight from GitHub with two commands.</p>
+      <p class="lead">Suede Creator Skills is listed in the skill directories that grade and count installs, the official MCP Registry, npm and PyPI, the community awesome lists, and the open-source trackers. Pick the directory you already use, or install from <a href="plugins.html">GitHub</a> or <a href="plugins.html#python">PyPI</a>.</p>
 
 ${sections}
 
@@ -276,7 +281,7 @@ function renderReadmeBlock() {
     START,
     `Listed on ${links}.`,
     "",
-    `All ${total} directories, registries and curated lists, verified ${verifiedLong}: [skills.suedeai.ai/listings.html](${PAGE_URL})`,
+    `All ${total} directories, registries and curated lists: [skills.suedeai.ai/listings.html](${PAGE_URL})`,
     END,
   ].join("\n");
 }
@@ -410,7 +415,7 @@ if (checkOnly) {
     );
     process.exit(1);
   }
-  console.log(`Listings are current: ${total} listings, ${featured.length} featured, verified ${data.verified}.`);
+  console.log(`Listings are current: ${total} listings, ${featured.length} featured, updated ${updated}.`);
 } else {
   for (const { file, next } of stale) fs.writeFileSync(file, next);
   console.log(

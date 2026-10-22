@@ -456,6 +456,8 @@
     <h1>Install Suede once. Stop rebuilding the agent brief.</h1>
     <p class="lead">Two commands, and your agent has the folder that runs Suede Labs. A hardcoded secret caps a staged diff at F, with the file and the line. The same folder guides Amazon refund reviews with per-item confirmation. <a href="./skills/suede-graph-flo-xr.html">Suede Graph Flo XR</a> writes competing plans for a repo change, refutes the survivors, and builds one.</p>
 
+    <p class="section-sub">Using Python? <a href="#python">Install from PyPI</a> with the Python CLI.</p>
+
     <div class="pathmap">
       <div class="pathmap-head">
         <span class="pathmap-title">Which install is yours</span>
@@ -563,22 +565,25 @@
     </div>
 
     <div class="prose">
-      <p>Working in Python? The pip route installs the same pack from PyPI. <code>suede-skills install</code> loads it into <code>~/.claude/skills/</code>, <code>--target codex</code> loads it into Codex, and existing folders stay untouched unless you pass <code>--force</code>:</p>
-    </div>
-
-    <div class="terminal">
-      <div class="terminal-bar" aria-hidden="true">
-        <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
-        <span class="terminal-title">pip</span>
-      </div>
-      <div class="terminal-body">
-        <pre><code>pipx install suede-creator-skills && suede-skills install</code></pre>
-        <button class="copy-btn" data-copy="pipx install suede-creator-skills && suede-skills install">Copy</button>
-      </div>
-    </div>
-
-    <div class="prose">
       <p>For a project-level copy of a single skill in Claude Code: <code>cp -R suede-creator-skills/skills/&lt;name&gt; .claude/skills/</code>. A single-folder copy of Suede Graph Flo XR installs its orchestration contract only. To run its bundled workflow, also copy <code>skills/suede-graph-flo-xr/agents/suede-graph-flo-xr-*.md</code> into <code>~/.claude/agents/</code> and restart Claude Code.</p>
+    </div>
+  </section>
+
+  <section class="shell" id="python" aria-labelledby="python-heading">
+    <h2 id="python-heading">Python: install from PyPI</h2>
+    <p class="section-sub">Use the <a href="https://pypi.org/project/suede-creator-skills/" rel="noopener">Suede Creator Skills Python package</a> to install the skill folders for Claude Code, Codex, or a project directory. The CLI supports Python 3.9 or newer and has no runtime dependencies. Current pipx releases require Python 3.11 or newer.</p>
+    <div class="terminal">
+      <div class="terminal-bar" aria-hidden="true"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="terminal-title">Python / pipx</span></div>
+      <div class="terminal-body">
+        <pre><code>pipx install suede-creator-skills
+suede-skills install</code></pre>
+        <button class="copy-btn" data-copy="pipx install suede-creator-skills&#10;suede-skills install">Copy</button>
+      </div>
+    </div>
+    <div class="prose">
+      <p><a href="https://pipx.pypa.io/latest/how-to/install-pipx.html" rel="noopener">Install pipx</a> first if needed. It keeps the CLI in its own Python environment. For Codex, use <code>suede-skills install --target codex</code>. For a project, use <code>suede-skills install --target ./.claude/skills</code>. Install one skill with <code>--skill suede-seo-audit</code>.</p>
+      <p>Restart your agent session after installation. Start with <code>suede-seo-audit</code> to review a page, <code>suede-product-marketing</code> to build a positioning brief, or <code>suede-code</code> to review a change. Browse the <a href="skills/">skill catalog</a> for the full pack.</p>
+      <p>To update: run <code>pipx upgrade suede-creator-skills</code>, then <code>suede-skills install --force</code> (add <code>--target codex</code> for Codex). Existing pack folders are refreshed only with <code>--force</code>; your other skills are left alone. Inspect the <a href="https://pypi.org/project/suede-creator-skills/#files" rel="noopener">release files and provenance on PyPI</a> before installing.</p>
     </div>
   </section>
 

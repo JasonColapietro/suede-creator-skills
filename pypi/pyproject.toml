@@ -60,6 +60,8 @@ classifiers = [
 ]
 
 [project.urls]
+Author = "https://jasoncolapietro.com/"
+Company = "https://suedeai.ai/"
 Homepage = "https://skills.suedeai.ai"
 Repository = "https://github.com/JasonColapietro/suede-creator-skills"
 Documentation = "https://skills.suedeai.ai/plugins.html"

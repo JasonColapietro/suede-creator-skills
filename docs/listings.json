@@ -1,6 +1,7 @@
 {
   "$comment": "Single source for every third-party page that lists Suede Creator Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry.",
   "verified": "2026-10-08",
+  "updated": "2026-10-22",
   "groups": [
     {
       "id": "directories",
@@ -18,6 +19,14 @@
         { "name": "ClaudSkills: suede-seo-audit", "url": "https://claudskills.com/skills/suede-seo-audit/", "note": "Skill page for the SEO, AEO and AI EO audit" },
         { "name": "SkillHub: suede-seo-audit", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-seo-audit", "note": "Skill page on SkillHub" },
         { "name": "SkillHub: suede-code", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-code", "note": "Skill page for review plus the A-F ship grade" }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python package",
+      "intro": "Install the skill pack from the Python Package Index.",
+      "items": [
+        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "note": "suede-creator-skills: Python CLI and bundled skill folders; first release published October 22, 2026 with provenance for both distribution files", "featured": true }
       ]
     },
     {
