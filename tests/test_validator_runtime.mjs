@@ -536,13 +536,12 @@ function preparedBaseIn(checkoutRoot) {
   return base;
 }
 
-// Anchored on markup that must already exist. A rewrite that silently matches
-// nothing would leave the checkout in a state the test does not describe, and
-// then fail somewhere unrelated to the rule under test.
+// Anchored on markup that must already exist. An already-prepared checkout can
+// already contain the desired value; require a match rather than a text change
+// so fixtures work in both phases of the release cycle.
 function rewriteFixture(text, label, pattern, replacement) {
-  const next = text.replace(pattern, replacement);
-  assert.notEqual(next, text, `test fixture must rewrite ${label}`);
-  return next;
+  assert.match(text, pattern, `test fixture must find ${label}`);
+  return text.replace(pattern, replacement);
 }
 
 // Build the whole prepared state instead of flipping one attribute and
@@ -582,7 +581,7 @@ function makePreparedChangelog(checkoutRoot, baseHash) {
   index = rewriteFixture(
     index,
     "the version pill",
-    /(<p class="clog-fresh[^"]*">Version \S+ )released/,
+    /(<p class="clog-fresh[^"]*">Version \S+ )(?:released|prepared)/,
     "$1prepared"
   );
   fs.writeFileSync(indexPath, index);
@@ -599,7 +598,7 @@ function makePreparedChangelog(checkoutRoot, baseHash) {
     text = rewriteFixture(
       text,
       `the ${relative} card aria-label`,
-      /(<a id="hero-shiplog"[^>]*\baria-label="Ship log\. )Released /,
+      /(<a id="hero-shiplog"[^>]*\baria-label="Ship log\. )(?:Released|Prepared) /,
       "$1Prepared "
     );
     text = rewriteFixture(

@@ -102,7 +102,7 @@ The `@suedeai` scope is in use by the sibling media product (`@suedeai/mcp-serve
 
 ## PyPI
 
-Package `suede-creator-skills` (import `suede_creator_skills`, command `suede-skills`) bundles every skill folder as package data and installs them into Claude Code, Codex, or any directory. The name returned 404 from `https://pypi.org/pypi/suede-creator-skills/json` on 2026-10-09, so it is unclaimed until the first publish. A published release adds a pypi.org project page linking the repository and homepage, and libraries.io, deps.dev, Socket, Snyk and pepy mirror it automatically.
+Package `suede-creator-skills` (import `suede_creator_skills`, command `suede-skills`) bundles every skill folder as package data and installs them into Claude Code, Codex, or any directory. Published: [suede-creator-skills on PyPI](https://pypi.org/project/suede-creator-skills/). First release `0.19.1` shipped October 22, 2026 through [workflow run 39716588283](https://github.com/JasonColapietro/suede-creator-skills/actions/runs/39716588283), with provenance for the wheel and source distribution. A clean PyPI install loaded all 76 skill folders; closed-pipe checks passed for `list`, `path` and `show`. The project links back to the homepage, installation guide, repository, changelog and issue tracker. Libraries.io still returned 404 on the release date; Socket returned 403, so its indexing status is unverified. Do not count downstream mirror listings until the actual package entry is visible.
 
 | Piece | Where |
 | --- | --- |

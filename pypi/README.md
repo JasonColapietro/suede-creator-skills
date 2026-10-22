@@ -1,5 +1,7 @@
 # Suede Creator Skills
 
+By [Jason Colapietro](https://jasoncolapietro.com/), founder of [Suede AI](https://suedeai.ai/).
+
 **SEO audits, AI search visibility, conversion copy and business-operations workflows for Claude Code, Codex and any skills-compatible agent.** One `pip` install puts the whole open-source pack on your machine, and one command loads it into your agent.
 
 ```bash

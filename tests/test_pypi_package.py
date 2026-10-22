@@ -233,9 +233,11 @@ class PackageMetadataTests(unittest.TestCase):
         self.assertEqual(
             project["urls"],
             {
+                "Author": "https://jasoncolapietro.com/",
+                "Company": "https://suedeai.ai/",
                 "Homepage": "https://skills.suedeai.ai",
                 "Repository": "https://github.com/JasonColapietro/suede-creator-skills",
-                "Documentation": "https://skills.suedeai.ai/plugins.html",
+                "Documentation": "https://skills.suedeai.ai/plugins.html#python",
                 "Changelog": "https://skills.suedeai.ai/#changelog",
                 "Issues": "https://github.com/JasonColapietro/suede-creator-skills/issues",
             },
