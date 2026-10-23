@@ -5,7 +5,7 @@ Detailed implementation guide for Google Analytics 4.
 ## Contents
 - Configuration (data streams, enhanced measurement events, recommended events)
 - Custom Events (gtag.js implementation, Google Tag Manager)
-- Conversions Setup (creating conversions, conversion values)
+- Key Events Setup (marking key events, values, Google Ads conversions)
 - Custom Dimensions and Metrics (when to use, setup steps, examples)
 - Audiences (creating audiences, audience examples)
 - Debugging (DebugView, real-time reports, common issues)
@@ -135,18 +135,23 @@ dataLayer.push({
 
 ---
 
-## Conversions Setup
+## Key Events Setup
 
-### Creating Conversions
+In March 2024 GA4 renamed "conversions" to **key events**. A key event is a GA4
+event marked as important to the business. It is not automatically a Google
+Ads conversion: bidding needs a Google Ads conversion created from the key event
+(or a native Google Ads tag), and in Google Ads each conversion action is
+either primary (used for bidding) or secondary (reporting only).
 
-1. **Collect the event** - Ensure event is firing in GA4
-2. **Mark as conversion** - Admin > Events > Mark as conversion
+1. **Collect the event**: confirm it fires in DebugView
+2. **Mark as key event**: Admin > Data display > Events (or Key events) > mark
 3. **Set counting method**:
    - Once per session (leads, signups)
    - Every event (purchases)
-4. **Import to Google Ads** - For conversion-optimized bidding
+4. **Create the Google Ads conversion** from the key event in the linked Google
+   Ads account, and set it primary only if bidding should optimize to it
 
-### Conversion Values
+### Key Event Values
 
 ```javascript
 // Event with conversion value
@@ -156,7 +161,7 @@ gtag('event', 'purchase', {
 });
 ```
 
-Or set default value in GA4 Admin when marking conversion.
+Or set a default value in GA4 Admin when marking the key event.
 
 ---
 
@@ -249,8 +254,8 @@ Reports > Real-time
 - Parameter name mismatch
 - Data still processing (24-48 hrs)
 
-**Conversions not recording:**
-- Event not marked as conversion
+**Key events or Google Ads conversions not recording:**
+- Event not marked as a key event, or no Google Ads conversion created from it
 - Event name doesn't match
 - Counting method (once vs. every)
 
@@ -290,11 +295,11 @@ Admin > Data streams > [Stream] > Configure tag settings
 
 1. Admin > Product links > Google Ads links
 2. Enable auto-tagging in Google Ads
-3. Import conversions in Google Ads
+3. Create Google Ads conversions from GA4 key events where bidding needs them
 
 ### Audience Export
 
-Audiences created in GA4 can be used in Google Ads for:
-- Remarketing campaigns
-- Customer match
-- Similar audiences
+Audiences created in GA4 can be used in Google Ads for remarketing and as
+audience signals. Similar audiences (lookalikes) were retired by Google Ads in
+2023. Remarketing and user-data features in the EEA require consent mode v2
+signals (see the GTM reference).

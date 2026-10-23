@@ -1,13 +1,13 @@
 ---
 name: suede-cold-email
-description: "Suede-owned B2B cold-email discipline for evidence-based personalization, subject lines, opening lines, concise bodies, one clear CTA, and bounded follow-up sequences. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
+description: "Suede AI B2B cold-email discipline: evidence-based personalization with a named source for every opening line, 2-to-4-word subject lines, bodies under 75 words, one low-friction ask, bounded 3-to-5-touch follow-up sequences, and a deliverability gate built on current Gmail, Yahoo, Microsoft, and CAN-SPAM rules. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email to opted-in contacts (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Cold Email Writing
+# Suede AI Cold Email Writing
 
-Use this Suede cold-email playbook to write concise, evidence-grounded outreach that sounds human and respects the recipient.
+Use this cold-email playbook to write concise, evidence-grounded outreach that sounds human and respects the recipient.
 
 ## Before Writing
 
@@ -167,17 +167,34 @@ Emit the follow-up table only when the user asked for a sequence rather than a s
 
 ---
 
-## Data & Benchmarks
+## Deliverability Gate
 
-The references contain performance data if you need to make informed choices:
+Copy that lands in spam earns nothing, and a burned domain takes months to
+recover. When the user asks for a sequence or a send plan, state these as
+recommendations alongside the copy:
 
-- [benchmarks.md](references/benchmarks.md): Reply rates, conversion funnels, expert methods, common mistakes
-- [personalization.md](references/personalization.md): 4-level personalization system, research signals
-- [subject-lines.md](references/subject-lines.md): Subject line data and optimization
-- [follow-up-sequences.md](references/follow-up-sequences.md): Cadence, angles, breakup emails
-- [frameworks.md](references/frameworks.md): All copywriting frameworks with examples
+- Send from a secondary domain or subdomain, never the primary domain that
+  carries invoices and password resets.
+- SPF, DKIM, and DMARC (p=none minimum, aligned) must pass. Gmail treats close
+  to 5,000 daily messages to personal accounts as bulk, and Microsoft enforces
+  authentication above 5,000 a day; both reject non-compliant mail.
+- Keep the spam-complaint rate under 0.1% and never near 0.3%.
+- Include a working opt-out and a postal address (CAN-SPAM); honor opt-outs
+  fast and permanently.
+- Verify addresses first; stop if hard bounces pass 2%.
+- Plain text, at most one link, no images or attachments on first touch.
 
-Use this data to inform your writing: not as a checklist to satisfy.
+Sources and detail: [benchmarks.md](references/benchmarks.md).
+
+## References
+
+- [benchmarks.md](references/benchmarks.md): directional reply and meeting ranges, deliverability rules with sources, mistakes ranked by damage
+- [personalization.md](references/personalization.md): four personalization depths and signal sources
+- [subject-lines.md](references/subject-lines.md): subject line defaults and what to avoid
+- [follow-up-sequences.md](references/follow-up-sequences.md): cadence, angle rotation, close-out emails
+- [frameworks.md](references/frameworks.md): email shapes with examples
+
+Use them to inform the writing, not as a checklist to satisfy.
 
 ---
 

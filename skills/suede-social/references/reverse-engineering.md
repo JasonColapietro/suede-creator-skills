@@ -119,17 +119,16 @@ principles:
 - Use "I found that..." not "You should..."
 - Be helpful, not preachy
 
-**Specific > Vague**
+**Specific > Vague, using the account's real numbers only**
 ```
 ❌ "I made good revenue"
-✅ "I made $47,329"
+✅ "I made $[exact verified figure]"
 
 ❌ "It took a while"
-✅ "It took 47 days"
-
-❌ "A lot of people"
-✅ "2,847 people"
+✅ "It took [measured number] days"
 ```
+Specificity is a strength only when the number is real. An invented figure is
+the fake specificity the hook rules ban.
 
 **Short. Breathe. Land.**
 - One idea per sentence

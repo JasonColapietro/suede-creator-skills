@@ -280,19 +280,13 @@
     },
     {
       "id": "social-instagram",
-      "skills": ["suede-social", "suede-instagram-growth", "suede-newsroom"],
+      "skills": ["suede-social", "suede-newsroom"],
       "fallback": "suede-social",
       "routes": [
         {
-          "skill": "suede-instagram-growth",
-          "positive": ["instagram", "ig", "reels", "stories", "last 30 posts", "views to sales", "daily instagram"],
-          "negative": ["multi platform", "cross platform", "linkedin", "twitter"],
-          "metadataMustContain": ["instagram", "reels", "views"]
-        },
-        {
           "skill": "suede-social",
-          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social"],
-          "negative": ["last 30 posts", "daily instagram", "views to sales", "editorial pipeline", "content team"],
+          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social", "instagram", "reels", "last 30 posts", "views to sales", "daily instagram"],
+          "negative": ["editorial pipeline", "content team"],
           "metadataMustContain": ["platform", "social"]
         },
         {
@@ -307,14 +301,15 @@
           "id": "instagram-audit-positive",
           "mode": "positive",
           "prompt": "Analyze the last 30 posts and Reels on our Instagram account, then map views to sales.",
-          "expected": "suede-instagram-growth"
+          "expected": "suede-social",
+          "forbidden": ["suede-newsroom"]
         },
         {
           "id": "social-negative-instagram",
           "mode": "negative",
           "prompt": "Plan one cross-platform calendar for LinkedIn, Twitter, and Instagram.",
           "expected": "suede-social",
-          "forbidden": ["suede-instagram-growth"]
+          "forbidden": ["suede-newsroom"]
         },
         {
           "id": "social-ambiguous-fallback",

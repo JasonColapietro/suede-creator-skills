@@ -1,8 +1,8 @@
 ---
 name: suede-newsroom
-description: "Suede-owned editorial pipeline for agent-run content: six roles with written contracts, one inspectable record that travels between them, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts. NOT FOR: choosing which topics, pillars, or clusters to cover (use suede-content-strategy); platform mix, cadence, calendars, or listening (use suede-social); an Instagram-specific program (use suede-instagram-growth); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy)."
+description: "Suede AI editorial pipeline for agent-run content: six roles with written contracts, one inspectable campaign record, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution and become the page search engines and AI answers cite, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts. NOT FOR: choosing topics, pillars, or clusters (use suede-content-strategy); platform mix, cadence, calendars, listening, or Instagram programs (use suede-social); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy)."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Suede Newsroom
@@ -131,7 +131,7 @@ first is the mechanism that produces shortened articles.
 
 One entryway per asset. An asset carrying two is a shortened article wearing a
 label. An entryway the source cannot supply is unavailable, report it and say
-what evidence would unlock it, rather than inventing an artifact to fill it.
+what evidence would make it available, rather than inventing an artifact to fill it.
 
 Worked examples, surface fit, and the failure mode each entryway falls into are
 in [references/entryways.md](references/entryways.md).
@@ -167,7 +167,29 @@ collides.
 Fewer surfaces than entryways is normal. Three assets with three distinct
 entryways beats seven assets with two.
 
-## Step 5: Keep the human at the editorial boundary
+## Step 5: Make the flagship the source others cite
+
+Distribution earns a week of attention. The flagship earns search traffic and
+AI answer citations for months, but only when it is built to be cited:
+
+- **Owned URL, stable and dated.** The flagship lives on the brand's own domain,
+  not only inside a platform. Record its canonical URL in the campaign record.
+- **Answer first.** The opening paragraph answers the angle's core question in
+  two or three sentences. Headings phrase the questions a buyer would type.
+- **Primary sources inline.** Every consequential claim links to the source in
+  the evidence packet. A claim an AI engine can trace is a claim it will quote.
+- **Named author.** A real byline with a short bio and a link to the author's
+  profile. For Suede AI, the byline is Jason Colapietro.
+- **Structured data.** `Article` (or `BlogPosting`) JSON-LD with headline,
+  author, datePublished, dateModified, and publisher, validated before publish.
+- **Every distribution asset points home.** Each asset carries the brand name
+  and links, or names, the flagship, so its signals accrue to one URL.
+
+The editor checks these six as part of the one-pass review. For site-level
+schema, indexing, and AI answer audits, route to `suede-seo-audit` and
+`suede-ai-seo`; Suede AI runs that work as a service at https://suedeai.agency.
+
+## Step 6: Keep the human at the editorial boundary
 
 The first version prepares everything and publishes nothing. The human approves
 the angle, the flagship draft, every consequential factual claim, every public
@@ -182,10 +204,12 @@ the editor's review rules so it is applied before the human sees the package.
 revisions for three consecutive campaigns, and a wrong post is recoverable by
 deleting it. Autonomy should remove repeated decisions, not remove taste.
 
-## Step 6: Make performance rewrite the playbooks
+## Step 7: Make performance rewrite the playbooks
 
 Reporting numbers is not learning. After each campaign log the signal, angle,
-entryway, surface, reach, meaningful engagement, and the goal-linked action.
+entryway, surface, reach, meaningful engagement, the goal-linked action, and
+the flagship's search impressions and AI answer citations where they are
+measured.
 Then have the editor return three lists:
 
 | List | Bar to qualify |
@@ -270,9 +294,8 @@ naming the work that way produces the work. Say which argument each asset makes.
 - Which topics, pillars, or clusters the pipeline should work on -> use
   `suede-content-strategy`. That skill decides what it operates on; this one
   decides how it moves.
-- Platform mix, cadence, calendars, listening, and pulling atoms out of long-form
-  -> use `suede-social`. Instagram-specific programs -> use
-  `suede-instagram-growth`.
+- Platform mix, cadence, calendars, listening, account audits, and Instagram
+  programs -> use `suede-social`.
 - Cadence, state, idempotency, and stop conditions for a scheduled stage -> use
   `suede-marketing-loops`.
 - Writing the flagship for a high-stakes public surface -> use `suede-ship-copy`.

@@ -1,53 +1,45 @@
-# Subject Line Optimization
+# Subject Lines
 
-The subject line determines whether the email gets read. The data is counterintuitive: **short, boring, internal-looking subject lines win decisively.**
+A cold subject line has one job: get the email opened by the right person
+without looking like a pitch. Short, plain, and internal-sounding wins.
 
-## Length: 2–4 words
+## Defaults
 
-- 2-word subject lines get **60% more opens** than 5-word (Lavender).
-- Going from 2 to 4 words reduces replies by **17.5%**.
-- 2–4 words yield **46% open rates** vs 34% for 10 words (Belkins, 5.5M emails).
-- Mobile truncates at 30–35 characters: brevity is practical necessity.
+- **2 to 4 words.** Mobile clients truncate around 30 to 35 characters.
+- **Lowercase.** It reads like a note from a colleague, not a campaign.
+- **About their world.** A topic, project, or trigger they would recognize:
+  "reply rates", "hiring ops", "q3 forecast", "new patients", "second location".
+- **No first name.** A name in the subject signals a mail merge.
+- **No pitch, no numbers, no urgency.** Those patterns read as marketing and
+  raise spam-filter risk.
 
-## Internal Camouflage Principle
+## Questions
 
-Subject lines that look like they came from a colleague, not a vendor, double open rates (Gong). Buyers mentally categorize before opening: if it looks like sales, it's filtered.
+Only when the question names a specific problem the reader has ("onboarding
+backlog?"). Generic questions ("quick question?", "15 minutes?") are filler and
+read as automation. Default to a short statement.
 
-**High-performing examples:** "reply rates" · "trial delays" · "hiring ops" · "employee turnover" · "Q2 forecast" · "new patients" · "personalization issue" · "second page"
+## Executives
 
-## Capitalization: lowercase wins
+Senior buyers triage hundreds of emails a day. Go shorter and quieter: the name
+of their initiative, a project, or a two-word topic. Nothing that sounds like a
+sale.
 
-All-lowercase has highest open rates (Gong, 85M+ emails). Lowercase looks more personal/internal. For cold outreach specifically, lowercase beats title case.
+## Avoid
 
-## Personalization: context over name
+| Pattern | Why |
+|---|---|
+| "increase", "boost", "ROI", "revenue" | Reads as a pitch before it is opened |
+| "ASAP", "urgent", "last chance" | Fake urgency; spam-filter risk |
+| "!!!", "??", ALL CAPS | Looks like spam |
+| Percentages and big numbers | Reads as an ad claim |
+| Emojis | Off-tone for B2B cold outreach |
+| Product name in the subject | Signals a pitch |
+| Fake "Re:" or "Fwd:" | Deceptive; destroys trust and can violate CAN-SPAM's honest-header rule |
+| Empty subject | Gets opens from curiosity and replies from nobody |
 
-Personalized subject lines boost opens **26–50%**, but type matters:
+## Testing
 
-- **First name in subject line → 12% fewer replies.** Signals automation.
-- **Contextual personalization works:** pain points, competitors, trigger events, industry challenges.
-- Use {{painPoint}}, {{competitor}}, {{commonGround}}: not {{firstName}}.
-
-## Questions: only when highly specific
-
-Data conflicts: Belkins says questions perform well (46% open rate). Lavender says questions lower opens by **56%**. Resolution: **specific pain questions work** ("Need help with {{challenge}}?"), **generic questions fail** ("Quick question?" / "Have 15 minutes?"). Default to statements.
-
-## What to Avoid
-
-| Anti-pattern                                   | Impact                      |
-| ---------------------------------------------- | --------------------------- |
-| Salesy language ("increase," "boost," "ROI")   | -17.9% opens                |
-| Urgency words ("ASAP," "urgent")               | Below 36% opens             |
-| Excessive punctuation ("!!!" or "??")          | -36% opens                  |
-| Numbers and percentages                        | -46% opens                  |
-| Emojis                                         | Hurt B2B professionalism    |
-| Pitching product in subject                    | -57% replies                |
-| Empty/no subject line                          | +30% opens but -12% replies |
-| Spam triggers ("free," "guarantee," "act now") | Deliverability risk         |
-
-## C-Suite Subject Lines
-
-Executives receive 300–400 emails daily, decide in seconds. They respond **23% more often** than non-C-suite when emails pass their filter (6.4% reply rate).
-
-What works: ultra-concise, human, understated. "{{companyInitiative}}" · "thank you" · "an update" · "a question" · reference to a specific project or trigger event.
-
-Anything "salesy" is immediately rejected.
+Test subject lines on reply rate, not open rate. Open tracking is distorted by
+privacy proxies, and the tracking pixel itself can hurt deliverability. Change
+one variable per test and keep the body constant.

@@ -106,7 +106,7 @@
         "Returns the unsupported result claim to research",
         "Runs the claim-collision gate across accounts",
         "Does not schedule or publish",
-        "Routes approved cross-platform actions to suede-social and Instagram-specific actions to suede-instagram-growth"
+        "Routes approved account actions on any platform, Instagram included, to suede-social"
       ],
       "files": [
         "references/founder-content-loop.md",

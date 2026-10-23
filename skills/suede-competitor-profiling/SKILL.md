@@ -1,13 +1,13 @@
 ---
 name: suede-competitor-profiling
-description: "Suede-owned competitive-intelligence discipline for evidence-backed profiles of positioning, pricing, messaging, product, proof, and public-market signals. Use when researching named competitors from current public URLs or refreshing a structured landscape. NOT FOR: publishing comparison pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing)."
+description: "Suede AI competitive-intelligence discipline: evidence-backed profiles of positioning, pricing, messaging, product, proof, reviews, organic search footprint, and AI answer visibility, built from current public URLs with raw captures saved and fact, inference, and unknowns kept separate. Use when researching named competitors or refreshing a structured view of the competitor set. NOT FOR: publishing comparison or alternative pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Competitor Profiling
+# Suede AI Competitor Profiling
 
-Use this Suede competitive-intelligence playbook to turn current public evidence into structured profiles with fact, inference, and unknowns kept separate.
+Use this competitive-intelligence playbook to turn current public evidence into structured profiles with fact, inference, and unknowns kept separate.
 
 ## Initial Assessment
 
@@ -201,6 +201,17 @@ When it exposes relevant-page estimates, collect:
 - Content that drives the most organic value
 
 ---
+
+#### AI Answer Visibility
+
+Buyers increasingly ask an assistant before they search. For each competitor,
+run the same fixed prompt set (category questions such as "best [category] for
+[ICP]", comparison questions, and "[competitor] alternatives") in each
+assistant the user cares about, on a recorded date, and save the raw answers
+under `seo/ai-answers-<assistant>.md`. Record whether each brand is named, its
+position, and which sources the answer cites. Answers vary run to run, so
+report counts over the prompt set, never a single answer as a ranking. Hand
+deeper visibility work to `suede-ai-seo`.
 
 ### Phase 3: Synthesis
 

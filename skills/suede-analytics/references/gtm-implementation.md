@@ -325,20 +325,33 @@ v15: Added purchase conversion tracking
 ### Consent Mode Integration
 
 ```javascript
-// Default state (before consent)
+// Default state (before consent): set all four consent mode v2 signals
 gtag('consent', 'default', {
   'analytics_storage': 'denied',
-  'ad_storage': 'denied'
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied'
 });
 
-// Update on consent
-function grantConsent() {
+// Update from the consent banner's actual choices
+function applyConsent(choice) {
   gtag('consent', 'update', {
-    'analytics_storage': 'granted',
-    'ad_storage': 'granted'
+    'analytics_storage': choice.analytics ? 'granted' : 'denied',
+    'ad_storage': choice.ads ? 'granted' : 'denied',
+    'ad_user_data': choice.ads ? 'granted' : 'denied',
+    'ad_personalization': choice.personalization ? 'granted' : 'denied'
   });
 }
 ```
+
+Consent mode v2 (required since March 2024 for Google advertising features
+used with EEA traffic) adds `ad_user_data` (may user data be sent to Google for
+advertising) and `ad_personalization` (may it be used for remarketing) to the
+original `ad_storage` and `analytics_storage`. **Basic** mode blocks Google tags
+until consent is granted; **advanced** mode sends cookieless pings when consent
+is denied so Google can model conversions. Advanced mode needs legal review
+before use. A certified consent management platform usually sets these
+signals; verify the defaults fire before any tag in Tag Assistant.
 
 ### GTM Consent Overview
 

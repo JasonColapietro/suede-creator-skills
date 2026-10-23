@@ -280,7 +280,7 @@ primary outcome.
 
 Compare by campaign, account lane, entryway, and surface. A Keep needs two or
 more campaigns and continued strategy fit. One promising result is a Test. A
-Stop requires the thresholds in `SKILL.md` Step 6.
+Stop requires the thresholds in `SKILL.md` Step 7.
 
 ## Worked examples
 
@@ -381,10 +381,9 @@ a future voice note or debrief is not campaign evidence.
 - Scheduled execution, state, retries, idempotency, and stop conditions belong
   to `suede-marketing-loops`.
 - Analytics instrumentation and attribution belong to `suede-analytics`.
-- Cross-platform publishing, scheduling, replies, and other account actions
-  route to `suede-social`; Instagram-specific actions route to
-  `suede-instagram-growth`. Each still requires approval of exact content and
-  visible identity, plus an authorized platform tool.
+- Publishing, scheduling, replies, and other account actions on any platform,
+  Instagram included, route to `suede-social`. Each still requires approval of
+  exact content and visible identity, plus an authorized platform tool.
 
 Route the missing capability; keep the founder intake, account lanes, evidence
 record, and editorial gates in this mode.

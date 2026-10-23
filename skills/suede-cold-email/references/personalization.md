@@ -1,79 +1,66 @@
-# Personalization at Scale
+# Personalization
 
-Personalization drives **50–250% more replies** (Lavender). The key insight: **if your personalization has nothing to do with the problem you solve, it's just an attention hack** (Clay).
+Personalization earns a reply only when it connects to the problem you solve.
+An observation that leads nowhere is an attention hack, and readers spot it.
 
-## Four Levels of Personalization
+## Four depths
 
-### Level 1: Basic (merge tags)
+| Depth | What it uses | Effort | When it is enough |
+|---|---|---|---|
+| 1. Merge fields | Name, company, title | None | Never on its own; table stakes |
+| 2. Segment | Industry pains, regulation, seasonality | Low, scales | High-volume campaigns to a tight segment |
+| 3. Role | What this role owns and worries about | Low, scales | Mid-level buyers with a common job |
+| 4. Individual | A specific, recent, verifiable fact about this person or company | High | Top accounts and senior buyers |
 
-First name, company name, job title. Table stakes, no longer differentiating. ~5% lift.
+Examples:
 
-### Level 2: Industry/segment
+- Segment: "Most dental groups adding a second location hit a scheduling
+  bottleneck before they hit a staffing one."
+- Role: "As head of sales with a two-person RevOps team, you're probably
+  building the forecast yourself."
+- Individual: "Noticed you're hiring three SDRs. Teams usually hit follow-up
+  fatigue during that ramp."
 
-Industry-specific pain points, trends, regulatory challenges. Scalable via micro-segmentation.
+## Signal sources
 
-> Most {{industry}} teams struggle with {{lead gen problem}}, which often leads to wasted effort.
+| Signal | Where it comes from | How it opens an email |
+|---|---|---|
+| Funding | Press release, company blog, public filings | Scaling pressure the round creates |
+| Hiring | Careers page, job boards | The work the new hires will run into |
+| Tech stack | The company's own site, public integration listings | A known ceiling of the tool they use |
+| Posts and talks | Their public posts, podcast appearances, conference talks | One specific point they made, tied to your problem |
+| Company news | Press, product changelog | The challenge the change usually creates |
+| Site changes | A direct look at their pricing, docs, or onboarding | A specific observation, framed as a question |
 
-### Level 3: Role-level
+Every signal must go in the `Personalization source:` field of the output so the
+user can confirm it is real. No source, no personalization.
 
-Challenges specific to their role and seniority.
+## A fast repeatable system
 
-> As Head of Sales, keeping pipeline steady is probably your biggest headache. Your RevOps team is small, so you're likely wearing multiple hats during scaling.
+1. List the ten buying signals that matter most for this product, plus five
+   company triggers and five person triggers. Rank them.
+2. Write one short bridge paragraph per trigger that moves from the signal to
+   the problem.
+3. Keep the problem, proof, and ask constant. Swap only the opening.
 
-### Level 4: Individual (gold standard)
+With the bridges written, a researched first touch takes a few minutes.
 
-Specific, timely observations about that person connected to the problem you solve.
+## Four lenses on the buyer
 
-> Noticed you're hiring 3 SDRs: sounds like you're scaling outbound fast. Most teams hit follow-up fatigue during onboarding.
+- **Demographic:** role, seniority, background.
+- **Technographic:** the tools they run.
+- **Firmographic:** size, stage, funding, industry, growth.
+- **Psychographic:** what they care about and argue for in public. Highest
+  impact and the hardest to fake, so use it only with a real source.
 
-## Research Signal Stack
+## What reads as fake
 
-| Signal            | Where to find it                   | How to use it                                                                |
-| ----------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
-| Recent funding    | Crunchbase, LinkedIn, press        | "Congrats on Series B, scaling teams fast usually creates X challenge"      |
-| Job postings      | LinkedIn Jobs, careers page        | "Noticed you're hiring 3 SDRs, sounds like you're scaling outbound"         |
-| Tech stack        | BuiltWith, Wappalyzer, HG Insights | "I see you're using HubSpot, most teams at your stage hit a ceiling with X" |
-| LinkedIn activity | Posts, comments, job changes       | "Really enjoyed your post about X"                                           |
-| Company news      | Google News, press releases        | "Congrats on acquiring X, integrating teams usually creates Y challenge"    |
-| Podcast/talks     | Google, YouTube, podcasts          | "Caught your talk at SaaStr on X, really insightful"                        |
-| Website changes   | Manual review                      | "Your new pricing page caught my eye, curious how it's converting"          |
+- "I hope this email finds you well" and other machine openers.
+- A compliment unrelated to the pitch ("Cool that you went to UCLA!").
+- "I came across your profile and wanted to reach out."
+- Detail so personal it feels like surveillance.
 
-## The 3-Minute Personalization System
+## The "so what?" test
 
-From "30 Minutes to President's Club":
-
-**Step 1:** Build a research stack of top 10 buying signals, 5 company triggers, 5 person triggers. Stack-rank by relevance.
-
-**Step 2:** Build a 3x3 template: (1) personalization attached to a problem, (2) problem you solve, (3) one-sentence solution + low-friction CTA.
-
-**Step 3:** Create 5 "trigger templates": pre-written personalization paragraphs for each trigger, with a smooth segue into the problem.
-
-The personalization must logically connect to the problem. This creates 5 reusable triggers with the rest of the email constant. A top SDR writes a personalized email in **under 3 minutes**.
-
-## The Four -Graphic Principles (Becc Holland)
-
-- **Demographic**: Age, profession, background
-- **Technographic**: Tech stack, tools used
-- **Firmographic**: Company size, funding, industry, growth stage
-- **Psychographic**: Values, passions, beliefs (highest-impact dimension)
-
-Tapping into what prospects are passionate about drives significantly higher response rates.
-
-## Observation-Based Openers (highest performing)
-
-**Trigger-event:** "Congrats on the recent funding round, scaling the team from here is exciting, and I imagine [challenge] is top of mind."
-
-**Observation:** "Your recent post about [topic] resonated, especially the part about [detail]. Got me thinking about how that applies to [challenge]."
-
-**Industry insight:** "Most [role titles] I talk to spend [X hours/week] on [problem], curious if that matches your experience at [Company]."
-
-## What Feels Fake (avoid)
-
-- AI-generated emails with similar phrasing ("I hope this email finds you well")
-- Generic attention hacks disconnected from problem ("Cool that you went to UCLA!" → pitch)
-- Over-personalizing to creepiness
-- "I saw your LinkedIn profile and wanted to reach out": signals mass automation
-
-## The "So What?" Test
-
-After writing any opening line, read from prospect's perspective: "So what? Why would I care?" If the answer is nothing, rewrite.
+Read the opening line as the prospect. If the honest reaction is "so what?",
+rewrite it until the line points at a problem they would admit to having.

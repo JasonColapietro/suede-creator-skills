@@ -1,13 +1,13 @@
 ---
 name: suede-emails
-description: "Suede-owned lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences. Use when the user needs a multi-email flow with entry criteria, cadence, message roles, and a measurement plan: drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS as part of the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
+description: "Suede AI lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences, with entry criteria, cadence, message roles, exact copy, deliverability checks against current Gmail, Yahoo, and Microsoft sender rules, and a measurement plan. Use when the user needs a multi-email flow: drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS in the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Lifecycle Email Systems
+# Suede AI Lifecycle Email Systems
 
-Suede designs lifecycle email as a consent-aware system of triggers, message roles, pacing, and measurable next actions. Create sequences that move a known audience toward value without inventing intent, exhausting the list, or confusing lifecycle messaging with cold outreach.
+Design lifecycle email as a consent-aware system of triggers, message roles, pacing, and measurable next actions. Create sequences that move a known audience toward value without inventing intent, exhausting the list, or confusing lifecycle messaging with cold outreach.
 
 ## Initial Assessment
 
@@ -66,8 +66,10 @@ Consider:
 - Clear > Clever
 - Specific > Vague
 - Benefit or curiosity-driven
-- 40-60 characters ideal
+- 40-60 characters, front-loading the words that matter for mobile truncation
 - Test emoji (they're polarizing)
+- Judge subject tests on clicks or conversions, not opens: Apple Mail Privacy
+  Protection preloads images and inflates open rates
 
 **Patterns that work:**
 - Question: "Still struggling with X?"
@@ -245,6 +247,8 @@ Run this on the drafted sequence before presenting it. Each box checks a rule th
 - [ ] Exit conditions are specified for the sequence
 - [ ] No string from the Tone blocklist appears anywhere in the copy
 - [ ] The consent and suppression assumption is stated explicitly rather than assumed: say which list, which opt-in, and what excludes a contact
+- [ ] Every marketing email is marked for one-click unsubscribe (RFC 8058 headers) and the plan says unsubscribes are honored within 48 hours
+- [ ] The re-engagement or win-back flow ends by suppressing contacts who never re-engage
 
 Any box that fails means fix it before presenting. Do not deliver the sequence with the failure noted as a caveat.
 
@@ -259,7 +263,13 @@ Before implementation, return:
 1. The required trigger, audience, fields, suppression rules, and exit criteria
 2. The provider-neutral sequence and event contract
 3. The exact account or integration that must be inspected
-4. A preview-and-approval checkpoint before any live change or send
+4. The deliverability checklist from
+   [references/deliverability.md](references/deliverability.md): SPF, DKIM,
+   DMARC alignment, one-click unsubscribe, complaint-rate monitoring below
+   0.1%, and separated transactional and marketing streams. Gmail began
+   rejecting non-compliant bulk mail more aggressively in November 2025, and
+   Microsoft has enforced its high-volume rules since May 2025.
+5. A preview-and-approval checkpoint before any live change or send
 
 ---
 

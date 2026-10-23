@@ -112,4 +112,4 @@ Before committing to a new channel, **run a ~$100 test campaign** to learn its r
 
 ---
 
-*Framework lineage: several operating rules in this file are adapted (re-expressed, restructured, and extended) from practitioner playbooks, notably Ivan Falco's ads-skills. Benchmarks and thresholds are practitioner-reported starting points: always recalibrate against your own account's first 30 days.*
+*Thresholds and benchmarks in this file are starting points from practitioner operating data, not platform guarantees. Recalibrate against the account's own first 30 days.*

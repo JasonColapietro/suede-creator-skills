@@ -140,4 +140,4 @@ B2B SaaS Meta ranges (practitioner-reported; recalibrate on your own first 30 da
 
 ---
 
-*Framework lineage: this decision system is adapted (re-expressed, reconciled, and restructured) from practitioner operating systems, notably Ivan Falco's ads-skills. All thresholds are starting points: recalibrate against your own account.*
+*Thresholds and benchmarks in this file are starting points from practitioner operating data, not platform guarantees. Recalibrate against the account's own first 30 days.*
