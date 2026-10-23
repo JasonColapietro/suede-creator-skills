@@ -171,7 +171,7 @@ Extract self-contained atoms from one approved source: a quotable claim, a
 complete mini-story, a tactical tip, a data point, a behind-the-scenes moment.
 Map each atom to the platform where its format fits, and give each asset its own
 point. When the source cannot support the requested count without repeating
-itself, say how many it supports and what extra input would unlock more.
+itself, say how many it supports and what extra input would support more.
 
 When the source is a third-party video, or the clip must lead to an article or
 guide, route to `suede-clip-to-guide`, which owns rights routes and the

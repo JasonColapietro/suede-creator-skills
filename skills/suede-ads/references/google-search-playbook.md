@@ -19,7 +19,7 @@ Intent-first operating rules for Google Ads: where to spend first, how to struct
 
 ## The intent ladder
 
-Spend opens rung by rung: each tier unlocks only after the one below proves it converts to *pipeline*:
+Spend opens rung by rung: each tier opens only after the one below proves it converts to *pipeline*:
 
 1. **Brand**: "they want you" (brand name, brand + pricing/login). Cheapest clicks, highest conversion. Always on.
 2. **High-intent non-brand**: ready to buy ("cold email software," "best CRM for agencies"). The profit center; most budget lives here.

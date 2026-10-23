@@ -1,13 +1,13 @@
 ---
 name: suede-ab-testing
-description: "Suede-owned experimentation discipline for hypotheses, sample sizing, test duration, significance, and repeatable experiment programs. Use when comparing variants, deciding whether a result is reliable, or building an experiment backlog and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), or writing the variant copy itself (use suede-copy)."
+description: "Suede AI experimentation discipline: hypotheses, sample size and power, test duration, guardrail metrics, significance and readouts, sequential designs, and an ICE-ranked experiment backlog with a reusable playbook. Use when comparing variants, deciding whether a result is reliable, or building an experiment program and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), writing the variant copy (use suede-copy), or channel-level incrementality and geo holdouts (use suede-attribution)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede A/B Test Setup
+# Suede AI A/B Test Setup
 
-Use this Suede experimentation playbook to design tests that produce statistically valid, actionable results.
+Use this experimentation playbook to design tests that produce statistically valid, actionable results.
 
 ## The Iron Law
 
@@ -72,10 +72,12 @@ We'll know this is true when [metrics].
 
 | Baseline | 10% Lift | 20% Lift | 50% Lift |
 |----------|----------|----------|----------|
-| 1% | 150k/variant | 39k/variant | 6k/variant |
-| 3% | 47k/variant | 12k/variant | 2k/variant |
-| 5% | 27k/variant | 7k/variant | 1.2k/variant |
-| 10% | 12k/variant | 3k/variant | 550/variant |
+| 1% | 170,000/variant | 43,000/variant | 7,800/variant |
+| 3% | 54,000/variant | 14,000/variant | 2,600/variant |
+| 5% | 32,000/variant | 8,200/variant | 1,500/variant |
+| 10% | 15,000/variant | 3,900/variant | 690/variant |
+
+Two-sided, 95% significance, 80% power, relative lift, rounded up.
 
 **Calculators:**
 - Two-proportion sample size calculator: https://www.evanmiller.org/ab-testing/sample-size.html

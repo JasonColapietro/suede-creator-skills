@@ -131,7 +131,7 @@ first is the mechanism that produces shortened articles.
 
 One entryway per asset. An asset carrying two is a shortened article wearing a
 label. An entryway the source cannot supply is unavailable, report it and say
-what evidence would unlock it, rather than inventing an artifact to fill it.
+what evidence would make it available, rather than inventing an artifact to fill it.
 
 Worked examples, surface fit, and the failure mode each entryway falls into are
 in [references/entryways.md](references/entryways.md).
