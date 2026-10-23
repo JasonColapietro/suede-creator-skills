@@ -49,14 +49,15 @@
     {
       "id": 4,
       "prompt": "We built a free website speed test tool 6 months ago but it's barely getting any traffic. What went wrong and how do we fix it?",
-      "expected_output": "Should diagnose why the tool isn't getting traffic. Should investigate: SEO strategy for the tool page (target keywords, on-page optimization), distribution strategy (was it launched and forgotten?), competitive landscape (are there dominant free tools already?), tool quality and UX (does it provide unique value?). Should apply the engineering as marketing principles. Should recommend a recovery plan: SEO improvements, content marketing around the tool, product improvements for differentiation.",
+      "expected_output": "Should diagnose why the tool isn't getting traffic. Should investigate: SEO strategy for the tool page (target keywords, on-page optimization), distribution strategy (was it launched and forgotten?), competing tools (are there dominant free tools already?), tool quality and UX (does it provide unique value?). Should apply the engineering as marketing principles. Should recommend a recovery plan: SEO improvements, content marketing around the tool, product improvements for differentiation.",
       "assertions": [
         "Diagnoses potential traffic issues",
         "Investigates SEO strategy for the tool",
-        "Assesses competitive landscape",
+        "Assesses competing free tools",
         "Questions unique value proposition",
         "Applies engineering as marketing principles",
-        "Recommends recovery plan with specific actions"
+        "Recommends recovery plan with specific actions",
+        "Checks that the tool page has crawlable method text and an opening answer, not only the widget"
       ],
       "files": []
     },
