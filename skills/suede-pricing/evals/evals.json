@@ -19,7 +19,7 @@
     {
       "id": 2,
       "prompt": "We want to raise our prices by 30%. We've been at $29/month for 2 years and we've added a lot of features. How do we do this without losing customers?",
-      "expected_output": "Should apply the 'when to raise prices' and price increase strategies sections. Should recommend a strategy: grandfather existing customers (or give them a grace period), tie the increase to new value, communicate the change clearly with advance notice, consider an annual billing discount as a softening measure. Should address different approaches (immediate for new customers, delayed for existing). Should recommend specific communication strategy. Should note that some churn is expected and acceptable.",
+      "expected_output": "Should apply the 'when to raise prices' and price increase strategies sections. Should recommend a strategy: grandfather existing customers (or give them a grace period), tie the increase to new value, communicate the change clearly with advance notice, consider an annual billing discount as a softening measure. Should address different approaches (immediate for new customers, delayed for existing). Should recommend specific communication strategy. Should note that some churn is expected and acceptable. Should note that auto-renewing customers need advance notice of the increase under state auto-renewal laws (California requires notice 7 to 30 days before the new price applies) and route subscription-law detail to suede-paywalls.",
       "assertions": [
         "Applies price increase strategies",
         "Recommends grandfathering or grace period approach",
@@ -27,7 +27,8 @@
         "Provides communication strategy",
         "Addresses new vs existing customer timing",
         "Suggests annual billing as softening measure",
-        "Notes some churn is expected"
+        "Notes some churn is expected",
+        "Flags advance-notice rules for auto-renewing customers"
       ],
       "files": []
     },
@@ -63,12 +64,12 @@
     {
       "id": 5,
       "prompt": "What pricing psychology tactics should we use on our pricing page? We want the $79 plan to be the most popular.",
-      "expected_output": "Should apply the pricing psychology section: anchoring, decoy design, visual emphasis, charm pricing, the Rule of 100, and loss framing as hypotheses rather than guaranteed effects. Should provide specific pricing-page recommendations and cross-reference `suede-site-alchemy` for broader conversion analysis.",
+      "expected_output": "Should apply the pricing psychology section with evidence tiers from the suede-offers behavioral-models catalog: anchoring (Robust), good-better-best relativity and visual emphasis (Context-dependent), decoy tier (Contested, test only), charm pricing (Context-dependent, weak for B2B subscriptions), and the percent-vs-dollar discount heuristic (Folklore), all as hypotheses rather than guaranteed effects. Should provide specific pricing-page recommendations for the $79 plan and cross-reference suede-site-alchemy for broader conversion analysis.",
       "assertions": [
-        "Applies pricing psychology tactics",
+        "Applies pricing psychology tactics with evidence tiers",
         "Applies anchoring effect",
-        "Applies decoy effect or visual emphasis",
-        "Applies charm pricing or Rule of 100",
+        "Frames the decoy tier as a test, not a reliable effect",
+        "Applies charm pricing or the percent-vs-dollar heuristic as a test",
         "Provides specific pricing page recommendations",
         "Cross-references suede-site-alchemy or the suede-offers behavioral-models catalog"
       ],
