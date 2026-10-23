@@ -118,13 +118,6 @@ class PublicPrivacyTests(unittest.TestCase):
         self.assertEqual(kind, 'unreadable')
         self.assertEqual(rows[0]['category'], 'pdf-extraction-unavailable')
 
-    def test_recovery_examples_are_synthetic_and_cannot_hold_money_records(self):
-        text = (ROOT/'skills/amazon-returns-recovery/references/example-cases.md').read_text()
-        self.assertIn('# Synthetic example cases', text)
-        self.assertIn('They are not customer records', text)
-        self.assertIsNone(privacy.MONEY.search(text))
-        for skill in ('amazon-returns-recovery', 'subscription-recovery'):
-            self.assertIn('private session', (ROOT/'skills'/skill/'SKILL.md').read_text())
 
 
 if __name__ == '__main__':

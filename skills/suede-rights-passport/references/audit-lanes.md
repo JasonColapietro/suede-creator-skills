@@ -1,10 +1,68 @@
 # Rights Audit Lanes
 
-The four lane playbooks. A run executes one. The shared evidence and severity gate in SKILL.md applies to all of them.
+Audit mode runs one or more of these lanes before (or instead of) building a
+package. State the lanes you run. For a broad request run A, B, C, D in order:
+B resolves provenance for C, and C surfaces the splits D needs.
+
+## Shared evidence table
+
+Every lane records each asset, claim, or fact as one row before giving any
+recommendation, brief, or routing status:
+
+```text
+Item / asset / claim / fact:
+Status: confirmed | inferred | unconfirmed | disputed | unknown | not-applicable
+Evidence:
+Hash or path:
+Risk: low | medium | high | unknown
+Blocks:
+Next action:
+```
+
+Severity:
+
+- `high`: blocks registry, licensing language, sync pitch language, royalty
+  routing readiness, a published statement, or agent-readable commerce until a
+  creator, legal, or rights-holder confirmation exists.
+- `medium`: can move with caveats, but needs confirmation before money,
+  licensing, registration, or public use.
+- `low`: cleanup or documentation that does not block review.
+- `unknown`: not enough evidence to rate.
+
+The ship gate is mechanical: any `high` item makes it `blocked`; otherwise any
+`unknown` risk or status makes it `unknown`; otherwise `ready-for-review`.
+
+Status promotion is mechanical too. An item becomes `confirmed` only when the
+user supplies the evidence (signed split sheet, executed license, registration
+record, rights-holder statement). When torn between two statuses, record the
+weaker one.
+
+## Coverage check before reporting
+
+- Every asset, contributor, and claim in the source is exactly one row: none
+  dropped, none duplicated.
+- Every `high` row names the missing document or confirmation behind it.
+- Anything you could not rate ships as `unknown`. An omitted row reads as a
+  clean row.
+
+If any check fails, say the audit is partial in the ship gate and name what was
+missed.
+
+## Audit output
+
+- Lanes run.
+- Confirmed facts and missing or unknown facts, in separate piles.
+- The evidence table.
+- Blockers (the `high` rows) and questions for the creator or rights holder.
+- Safe public wording, unsafe claims removed, and do-not-share items.
+- Ship gate: `ready-for-review` | `blocked` | `unknown`, plus the next step
+  (build the package, run `suede-release-linter`, or `suede-sync-packaging`).
+- A plain-language summary a non-lawyer can act on, and the reminder that this
+  is organized evidence, not legal clearance.
 
 ## Lane A: Rights-gap audit
 
-Identify rights and intake gaps before packaging. Sweep all seven audit lanes:
+Identify rights and intake gaps before packaging. Sweep all eight areas:
 
 1. **Ownership**: owner claim, ownership status, transfer status, and unresolved
    confirmations.
@@ -19,6 +77,14 @@ Identify rights and intake gaps before packaging. Sweep all seven audit lanes:
 6. **Provenance**: source sessions, masters, stems, artwork, lyrics, metadata,
    and evidence trail. (Hand off to Lane B when this is thin.)
 7. **Public context**: public URLs, release history, takedowns, and conflicts.
+8. **AI involvement**: which elements used generative AI (vocals,
+   instrumentation, composition, lyrics, artwork, post-production), the tool
+   and its terms, voice or likeness consent for any cloned or synthetic voice,
+   and evidence of human authorship. The US Copyright Office's position (Part 2
+   report, January 2025) is that purely AI-generated material is not
+   copyrightable and prompts alone are not authorship, so an AI-heavy track
+   with no human-authorship evidence is a `high` row for licensing and
+   registration.
 
 Run the shared evidence table per item. Output:
 
@@ -29,7 +95,7 @@ Evidence table:
 Blockers:
 Questions for creator:
 Safe public wording:
-Next lane / skill: suede-rights-passport | Lane B provenance | Lane C licensing | Lane D routing
+Next: build the package | Lane B provenance | Lane C licensing | Lane D routing
 ```
 
 Do not treat the audit as legal clearance.
@@ -45,7 +111,7 @@ Make the origin trail readable without overclaiming what is known.
 4. Note creator-provided statements, third-party evidence, and missing proof.
 5. Identify provenance conflicts, unclear dates, duplicate files, and files that
    should not be shared publicly.
-6. Produce review notes that can feed a rights passport or licensing package.
+6. Produce review notes that can feed the package or a licensing brief.
 
 High-risk provenance gaps block registry, licensing, royalty routing,
 published statements, or agent commerce until the origin trail is confirmed. Output:
@@ -64,7 +130,8 @@ Next questions:
 ## Lane C: Licensing-discussion readiness
 
 Prepare creator materials for licensing review while keeping evidence boundaries
-visible. Does NOT claim rights are cleared.
+visible. Does NOT claim rights are cleared. This is the brief for a rights
+conversation; the supervisor-facing one-sheet is `suede-sync-packaging`.
 
 1. Identify the work, owner claim, contributors, versions, and intended use.
 2. Collect rights status, split status, sample status, distribution history,
@@ -118,4 +185,6 @@ Safe summary:
 Ship gate: ready-for-review | blocked | unknown
 ```
 
----
+Source for lane A item 8: U.S. Copyright Office, *Copyright and Artificial
+Intelligence, Part 2: Copyrightability* (January 2025),
+<https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf>

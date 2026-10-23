@@ -20,7 +20,15 @@ execute.
 3. Include copy, content prompts, fan actions, proof links, and asset requests.
 4. Define the next build when the campaign needs a website, drop, unlock,
    collector action, agent, or app workflow.
-5. Keep claims grounded. Do not invent streams, press, cosigns, placements, or
+5. Make the release findable. One canonical release page on the artist's own
+   site, live before announce day: the exact song and artist name in the title
+   and H1, a two-sentence answer to "what is this song" at the top, credits,
+   lyrics (if licensed for display), release date, DSP links, and
+   `MusicRecording`/`MusicAlbum` JSON-LD with `sameAs` links to the artist's
+   DSP and social profiles. Use the same artist name spelling everywhere so
+   search engines and AI assistants resolve one entity. Hand deeper work to
+   `suede-seo-audit` and `suede-ai-seo`.
+6. Keep claims grounded. Do not invent streams, press, cosigns, placements, or
    legal clearance.
 
 Pull other lanes in as needed: identity (Lane 1) and era (Lane 2) feed the
@@ -42,6 +50,7 @@ Success metric / KPI to watch:
 Fan actions:
 Email or DM copy:
 Site sections:
+Release page (title, answer-first summary, credits, schema, sameAs links):
 Press angle:
 Build-next CTA:
 ```
@@ -64,7 +73,7 @@ identity is still fuzzy. The artist must feel recognizable first.
 3. Separate identity from hype. Do not invent biography, traction, cosigns, or
    cultural status.
 4. Turn the identity into copy, visual, content, and campaign rules.
-5. Route to Lane 2 (Era Builder), Lane 0 (Full Campaign Package), or Suede site
+5. Route to Lane 2 (Era Builder), Lane 0 (Full Campaign Package), or Suede AI site
    development when the identity needs execution.
 
 **Output**

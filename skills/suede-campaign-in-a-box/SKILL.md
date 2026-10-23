@@ -1,32 +1,20 @@
 ---
 name: suede-campaign-in-a-box
-description: "Suede-owned artist campaign rollout. Use when an artist, song, release, era, show, or catalog moment needs a complete campaign across surfaces: hooks, rituals, visuals, merch, rollout calendar, email, site copy, fan actions, setlists, and collaborator outreach. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); software, repo, or skill-pack releases (use suede-launch-packaging)."
+description: "Suede AI artist campaign rollout for a song, release, era, show, or catalog moment. Use when an artist needs a complete campaign across surfaces (identity, era world, hooks, release stunts, fan rituals, visualizers, merch, setlists, catalog revival, collaborator outreach) or the full announce, tease, release-week, and post-drop package with calendar, email, site copy, search-ready release page, and fan actions. Picks one of twelve lanes or stitches them together, and flags rights gaps instead of resolving them. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); rights gaps or a rights package (use suede-rights-passport); software, repo, or skill-pack releases (use suede-launch-packaging)."
 metadata:
   version: 1.0.0
 ---
 
-# Suede Campaign In A Box (Whole Enchilada)
+# Suede Campaign In A Box
 
-## Gate policy: advisory, not blocking
+## Gate policy
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky: data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage, pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check and verdict here is advice to the user, not a control on the agent.
+Run the checks, report results honestly, and complete what the user asked. A
+failed gate changes the report, never the work. The one exception: a finding
+that risks data loss, credential exposure, a legal or rights violation, a
+payment mistake, or irreversible public damage. Pause, name the risk, give the
+options, and let the user choose.
 
 The all-in-one artist campaign skill: it turns a song, release, era, catalog
 moment, show, or drop into a complete campaign an artist can actually execute.
@@ -93,7 +81,7 @@ evidence boundaries below apply to every lane and stay here.
 ## Public Copy Gate (applies to every lane)
 
 Before outputting captions, emails, DMs, press angles, site copy, bios, one
-sheets, CTAs, or pitch language, run the Suede anti-slop line edit. Name the
+sheets, CTAs, or pitch language, run the Suede AI anti-slop line edit (`suede-deslop`). Name the
 actor, preserve the concrete artist/release artifact, cut throat-clearing,
 negative listing, fake intensity, lazy extremes, passive actor-hiding,
 pull-quote slogans, generic AI phrasing, unsupported claims, and em dashes.
@@ -124,7 +112,7 @@ it rather than substituting artwork.
 
 Never resolve a rights question in-lane. When any lane touches ownership,
 samples, contributors, splits, likeness, or clearance, mark the item UNKNOWN or
-UNCONFIRMED and route it to `suede-rights-audit`: the campaign plans around
+UNCONFIRMED and route it to `suede-rights-passport` (audit mode): the campaign plans around
 the gap, never over it. When facts are unknown, mark them unknown. Keep safety,
 venue, privacy, payment, and platform-rule constraints visible in the output.
 
@@ -134,7 +122,7 @@ If any of these appear in your reasoning, stop and re-read the evidence
 boundaries:
 
 - "The artist says the sample is cleared." A claim is not clearance. Mark it
-  UNCONFIRMED and route to `suede-rights-audit`.
+  UNCONFIRMED and route to `suede-rights-passport`.
 - "Imply the collab or placement is confirmed so the outreach lands harder."
 - "Say 'only 500 made'; scarcity sells." Not unless the cap is real.
 - "Write 'as seen in'; press will probably come." Invented traction.
@@ -152,9 +140,13 @@ the lane Output blocks, the build-next CTA, and any flagged rights/safety gaps.
 
 ## Routing
 
-- Rights, sample, split, or clearance gaps surfaced in any lane →
-  **suede-rights-audit** to organize them, then **suede-rights-passport** to
-  package.
+- Rights, sample, split, AI-authorship, or clearance gaps surfaced in any lane
+  → **suede-rights-passport** (audit mode, then package).
+- Release page, artist site, or lyric/credits page needs to rank in search or
+  get cited in AI answers → **suede-seo-audit** for the page, **suede-ai-seo**
+  for AI-answer visibility.
+- An app tie-in (lesson app, companion app) needs a store listing →
+  **suede-aso**.
 - Track pitched for film/TV/ads/games → **suede-sync-packaging**.
 - Release folder and metadata readiness → **suede-release-linter**.
 - Standalone conversion copy outside this campaign → **suede-copy** or

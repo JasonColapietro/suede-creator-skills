@@ -1,4 +1,4 @@
-# Suede Optimization Checklist
+# Optimization Checklist
 
 Use this when writing `optimization-brief.md`.
 
@@ -40,4 +40,4 @@ Use concise bullets:
    Blocks: none.
 ```
 
-Never imply Suede can optimize around unclear rights. Rights blockers come first.
+Never imply anyone can optimize around unclear rights. Rights blockers come first.

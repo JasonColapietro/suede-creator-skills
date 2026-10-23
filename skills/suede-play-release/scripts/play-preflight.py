@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Prove Google Play publishing works, or say exactly what is missing.
 
-Opens a real Play edit and deletes it again, so it proves the whole path —
-credential, token exchange, and the Play Console grant — while changing nothing.
+Opens a real Play edit and deletes it again, so it proves the whole path
+(credential, token exchange, and the Play Console grant) while changing nothing.
 
     python3 play-preflight.py <package.name> [--service SERVICE] [--account ACCOUNT]
 

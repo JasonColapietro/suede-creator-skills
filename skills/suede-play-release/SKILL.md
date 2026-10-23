@@ -1,6 +1,6 @@
 ---
 name: suede-play-release
-description: "Suede Labs Google Play delivery skill: ship an Android release end to end from the agent interface, without opening the Play Console. Set up credentials, upload an AAB, promote between tracks, stage or complete a rollout, push per-locale release notes, and prove against the Play Developer API what is actually live. One step stays a Console action by design and the skill hands it to you: granting the service account release access the first time. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what version and fraction production is really serving. NOT FOR: planning or building the app itself (use android-app-factory); live listing and keyword audits (use suede-aso); CI required checks (use suede-ci-gate); iOS release (a private Suede Labs companion, not in this pack: ios-app-store-release)."
+description: "Suede AI Google Play delivery skill: ship an Android release from the agent interface and prove what is live. Preflight the publishing credential with a real Play API call, upload an AAB to a testing track, promote that exact versionCode, stage or complete a rollout, write per-locale release notes, and read back versionCode, status, and userFraction from the Play Developer API. One step stays a Play Console action the user takes: the first release-access grant for the service account. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what production is really serving. NOT FOR: planning, building, or policy-checking the app (use android-app-factory); Play listing, keyword, and screenshot work (use suede-aso); CI required checks (use suede-ci-gate)."
 ---
 
 # Suede Play Release
@@ -21,10 +21,12 @@ the user pick.
 ## Step 0: Preflight the credential before anything else
 
 Never assume publishing works. Prove it with a real API call that changes
-nothing: open an edit and delete it.
+nothing: open an edit and delete it. The script reads the key from the macOS
+login Keychain and needs `pyjwt` and `cryptography`; on Linux CI, load the same
+base64 JSON from the CI secret store and run the equivalent token exchange.
 
 ```bash
-python3 scripts/play-preflight.py
+python3 scripts/play-preflight.py <package.name> [--service NAME] [--account NAME]
 ```
 
 Three outcomes, three different actions:
@@ -211,14 +213,14 @@ Every line proven by a command in this run:
 
 - Need to plan, build, test, or policy-check the app itself -> use
   `android-app-factory`, then return here for delivery.
-- Need a live Play listing or keyword audit on a shipped app -> use
-  `suede-aso`.
+- Need listing text, keywords, screenshots, or ratings work -> use
+  `suede-aso`. Listing changes travel in their own deliberate step (Boundary 4),
+  so plan them there and ship them separately from the binary.
 - Need CI wiring, required checks, or merge gates around the release -> use
   `suede-ci-gate`.
-- Need branch, worktree, or stale-mirror handling for the release branch -> a
-  private Suede Labs companion, not in this pack: suede-git-hygiene.
-- Need the iOS half of the same release -> a private Suede Labs companion, not
-  in this pack: ios-app-store-release.
+- Need branch, worktree, or stale-mirror handling for the release branch, or
+  the iOS half of the same release -> private Suede AI companions, not in this
+  pack.
 - Need constants to match across the Android, iOS and web surfaces -> use
   `suede-parity-contract`.
 - From `android-app-factory`: route Play credential setup, upload,

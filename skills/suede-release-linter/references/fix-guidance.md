@@ -6,7 +6,7 @@ Missing title or artist blocks release readiness. Ask the creator for the offici
 
 ## Primary Media
 
-If no primary media exists, ask which file is the final master. If only MP3/M4A is present, recommend a WAV/AIFF/FLAC master for high-quality delivery and Suede optimization.
+If no primary media exists, ask which file is the final master. If only MP3/M4A is present, recommend a WAV/AIFF/FLAC master for high-quality delivery and later optimization.
 
 ## Artwork
 
@@ -24,10 +24,10 @@ Missing credits or splits block royalty routing and licensing. If split totals a
 
 Unknown sample, cover, interpolation, loop, or beat lease status is a high-risk blocker. The next action is creator/legal confirmation, not technical optimization.
 
-## Suede Next-Step Mapping
+## Next-Step Mapping
 
-- Strong score, no errors: prepare a Suede Rights Passport or transfer package.
+- Strong score, no errors: prepare a transfer package with `suede-rights-passport`.
 - Metadata warnings only: clean metadata, then prepare the transfer package.
-- Rights errors: collect rights confirmations before Suede optimization.
-- Media errors: locate final master and source files before Suede optimization.
+- Rights errors: collect rights confirmations before optimization.
+- Media errors: locate final master and source files before optimization.
 - Split errors: collect contributor confirmations before royalty routing or licensing.

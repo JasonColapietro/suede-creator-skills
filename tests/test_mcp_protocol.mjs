@@ -360,7 +360,7 @@ const ROUTING_EVAL = [
   ["audit my site for search visibility", "suede-seo-audit"],
   ["package a song for sync licensing pitches", "suede-sync-packaging"],
   ["build an iOS app from my website", "site-to-ios-app"],
-  ["find the rights gaps before I hand off a release", "suede-rights-audit"],
+  ["find the rights gaps before I hand off a release", "suede-rights-passport"],
   ["design evals that catch model regressions", "suede-ai-eval"],
   ["grow my instagram account", "suede-instagram-growth"]
 ];
@@ -501,7 +501,6 @@ test("catalog, resources, prompts, and profile filters match the live server", a
       response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
     );
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-graph-flo-xr"));
-    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "amazon-returns-recovery"));
 
     const ship = await session.request("tools/call", {
       name: "get_suede_skill",

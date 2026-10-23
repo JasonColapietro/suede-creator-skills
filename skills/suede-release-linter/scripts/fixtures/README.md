@@ -5,8 +5,9 @@ still categorizes correctly after any change to it. All names, contributors, and
 metadata in both fixtures are fake: no real personal data. This is maintainer
 documentation: an agent linting a real user folder never needs it.
 
-- `sample-clean-project/`: a small release folder (metadata, a WAV master,
-  square 1600x1600 artwork, a lyrics file, three stems) shaped to score cleanly
+- `sample-clean-project/`: a small release folder (metadata declaring no AI
+  involvement, a WAV master, square 1600x1600 artwork, a lyrics file, three
+  stems) shaped to score cleanly
   against `references/lint-rules.md`.
 - `sample-blocked-project/`: a release folder deliberately missing title,
   artist, primary media, artwork, ownership confirmation, and valid split
@@ -38,7 +39,7 @@ diff scripts/fixtures/sample-blocked-project.expected.md \
 The clean fixture should score `99` with `0` errors, `0` warnings, and the
 status `strong` (the single unavoidable `info` finding is the
 `rights-passport-candidate` note the script always appends), exiting `0`. The
-blocked fixture should score `0` with `7` errors, `11` warnings, `2` info
+blocked fixture should score `0` with `7` errors, `11` warnings, `3` info
 findings, and the status `blocked`, exiting `1`.
 
 The `.md` reports diff byte-for-byte on a clean re-run. The `.json` reports
