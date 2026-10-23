@@ -45,7 +45,8 @@ export function loadInputs(root = ROOT) {
   return {
     data: JSON.parse(bytes), sha256: createHash('sha256').update(bytes).digest('hex'),
     categories: read('categories'), inclusions: read('inclusions'), exclusions: read('exclusions'),
-    editorial: read('featured-projects'), guides, ctas: optional('editorial/cta', { placements: [], routing: {} }),
+    // One CTA source for the site and this catalog: directory/services-cta.json.
+    editorial: read('featured-projects'), guides, ctas: optional('services-cta', { campaigns: [], lead_by_category: {} }),
   };
 }
 
@@ -97,8 +98,8 @@ export function generateCatalog(inputs) {
   // Published guides link to the site; drafts link to their Markdown source in this repository.
   const guideHref = (g, prefix = '') => g.status === 'published' ? `https://skills.suedeai.ai/${g.path}` : `${prefix}../${g.source}`;
   const guideLink = (id, prefix = '') => { const g = guides.find((x) => x.id === id); return g ? link(g.h1, guideHref(g, prefix)) : ''; };
-  const cta = (placement, variant) => (inputs.ctas?.placements || []).find((p) => p.id === placement)?.variants.find((v) => v.id === variant);
-  const route = (slug) => (inputs.ctas?.routing?.agent_studio || []).includes(slug) ? 'agent-studio' : 'agency';
+  const cta = (placement, variant) => (Array.isArray(inputs.ctas?.campaigns) ? inputs.ctas.campaigns : []).find((p) => p.id === placement)?.variants.find((v) => v.id === variant && !v.confirm_offer);
+  const route = (slug) => inputs.ctas?.lead_by_category?.[slug] === 'agents' ? 'agent-studio' : 'agency';
   const ctaLine = (v) => v ? `**${md(v.headline)}.** ${md(v.body)} ${link(v.button, v.url)}` : '';
   const badgeSnippet = '[![Listed in the Agent Skills Directory by Suede AI](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)';
   const repos = [...new Set(data.skills.map((s) => s.repo))].sort(alphabetical);

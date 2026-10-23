@@ -385,6 +385,6 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 ---
 
-**Get your product cited in AI answers.** Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency) Listed here? [Add your badge](../README.md#add-your-badge).
+**Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio) Listed here? [Add your badge](../README.md#add-your-badge).
 
 [Awesome Everything](../README.md) · [Compare scores](../README.md#compare-099-quality-scores) · [Publishers](../publishers.md) · [Featured projects](../featured.md) · [Guides](../README.md#guides) · [Contribute](../CONTRIBUTING.md) · [Search by score](https://skills.suedeai.ai/directory/?sort=score)

@@ -1,5 +1,5 @@
 {
-  "_comment": "Conversion module shown on Agent Skills Directory pages. scripts/build-directory.mjs reads this file; edit copy, URLs, placement and category routing here, then run node scripts/build-directory.mjs. Copy follows the CLAUDE.md sales-copy standard: no em dashes, no invented proof, results or guarantees.",
+  "_comment": "The one source for every Suede AI call to action in the Agent Skills Directory and the Awesome catalog. scripts/build-directory.mjs and scripts/build-awesome-directory.mjs read this file; edit copy, URLs, placement and routing here, then rebuild. offers is the plain two-card services module, shown on the page kinds switched on in placements. campaigns holds placement-specific variants: each URL already carries utm_source, utm_medium, utm_campaign (the campaign id) and utm_content (the variant id), so keep them intact. Where a campaign has several variants for the same route, the build picks one per page from a stable hash of the page path, so variants rotate across pages and clicks can be compared by utm_content. A variant with a confirm_offer note names an offer suedeai.agency has not confirmed: the build never renders it and uses the plain services offer instead. Copy follows the CLAUDE.md sales-copy standard: no em dashes, no invented proof, results, prices or guarantees. CTAs never appear inside third-party descriptions, install commands, publisher credit or correction flows.",
   "enabled": true,
   "kicker": "From Suede AI, the publisher of this directory",
   "utm": {
@@ -48,5 +48,239 @@
     "methodology": true,
     "submit": false,
     "featured": false
-  }
+  },
+  "destinations": {
+    "search": "https://suedeai.agency/",
+    "agents": "https://suedeai.app/",
+    "check_tool": "https://skills.suedeai.ai/directory/check/",
+    "submit": "https://skills.suedeai.ai/directory/submit/",
+    "guides": "https://skills.suedeai.ai/directory/guides/"
+  },
+  "utm_medium_by_surface": {
+    "directory_home": "directory",
+    "category_page": "directory",
+    "skill_page": "directory",
+    "repository_page": "directory",
+    "guide": "guide",
+    "check_tool": "tool",
+    "submit_page": "directory",
+    "awesome_readme": "github"
+  },
+  "campaigns": [
+    {
+      "id": "home-hero-secondary",
+      "surface": "directory_home",
+      "where": "Below the directory search, as a quiet secondary row. Not above the search box.",
+      "variants": [
+        {
+          "id": "a-ai-answers",
+          "eyebrow": "From Suede AI",
+          "headline": "Want your product named when buyers ask ChatGPT?",
+          "body": "Suede AI's AEO, GEO and SEO team gets companies found in search and cited in AI answers.",
+          "button": "Talk to Suede AI",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=home-hero-secondary&utm_content=a-ai-answers"
+        },
+        {
+          "id": "b-skills-to-strategy",
+          "eyebrow": "From Suede AI",
+          "headline": "The skills run the checks. We run the strategy.",
+          "body": "Suede AI builds AEO, GEO and SEO programs measured against leads and revenue.",
+          "button": "See Suede AI services",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=home-hero-secondary&utm_content=b-skills-to-strategy"
+        }
+      ]
+    },
+    {
+      "id": "category-agency",
+      "surface": "category_page",
+      "where": "After the category's 'Where to start' section on categories routed to agency.",
+      "routes": "search",
+      "variants": [
+        {
+          "id": "a-done-for-you",
+          "headline": "Rather have it done for you?",
+          "body": "These skills give your agent a method. Suede AI's team pairs that method with a strategy tied to revenue, implementation on your site and ongoing measurement in Search Console and AI answers.",
+          "button": "Talk to Suede AI",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agency&utm_content=a-done-for-you"
+        },
+        {
+          "id": "b-ai-visibility",
+          "headline": "Show up in AI answers, not just search results",
+          "body": "Suede AI optimizes sites for Google, AI Overviews, ChatGPT, Perplexity and Claude with direct answers, clean entities and valid structured data.",
+          "button": "Get AI visibility help",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agency&utm_content=b-ai-visibility"
+        }
+      ]
+    },
+    {
+      "id": "category-agent-studio",
+      "surface": "category_page",
+      "where": "After the category's 'Where to start' section on categories routed to agent_studio.",
+      "routes": "agents",
+      "variants": [
+        {
+          "id": "a-team-of-agents",
+          "headline": "Ready for a team of agents, not one?",
+          "body": "Suede AI Agent Studio builds multi-agent automation for businesses, with handoffs between agents and approvals where your team wants them.",
+          "button": "Explore Agent Studio",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agent-studio&utm_content=a-team-of-agents"
+        },
+        {
+          "id": "b-from-skills-to-workflows",
+          "headline": "Turn these skills into a running workflow",
+          "body": "Agent Studio from Suede AI connects agents across your business systems so work moves from intake to delivery.",
+          "button": "See Agent Studio",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=category-agent-studio&utm_content=b-from-skills-to-workflows"
+        }
+      ]
+    },
+    {
+      "id": "skill-page-aside",
+      "surface": "skill_page",
+      "where": "Sidebar or after the install section on full skill pages. Choose the agency or agent_studio variant set by the skill's category routing. Never inside the third-party description, install commands or publisher credit.",
+      "variants": [
+        {
+          "id": "agency-a",
+          "routes": "search",
+          "headline": "Want this work done for your site?",
+          "body": "Suede AI's AEO, GEO and SEO team runs this kind of work as a managed program.",
+          "button": "Talk to Suede AI",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=agency-a"
+        },
+        {
+          "id": "agency-b",
+          "routes": "search",
+          "headline": "Get cited in AI answers",
+          "body": "Suede AI helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
+          "button": "See how",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=agency-b"
+        },
+        {
+          "id": "studio-a",
+          "routes": "agents",
+          "headline": "Running this across a team?",
+          "body": "Suede AI Agent Studio builds multi-agent automation for businesses.",
+          "button": "Explore Agent Studio",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=studio-a"
+        },
+        {
+          "id": "studio-b",
+          "routes": "agents",
+          "headline": "One agent is a start",
+          "body": "Agent Studio from Suede AI coordinates several agents across your business systems.",
+          "button": "See Agent Studio",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=skill-page-aside&utm_content=studio-b"
+        }
+      ]
+    },
+    {
+      "id": "publisher-claim",
+      "surface": "skill_page",
+      "where": "Next to the badge panel on every skill page and every repository page. Addressed to the skill's author.",
+      "variants": [
+        {
+          "id": "a-claim",
+          "headline": "Is this your skill?",
+          "body": "Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.",
+          "button": "Run the free check",
+          "url": "https://skills.suedeai.ai/directory/check/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=publisher-claim&utm_content=a-claim"
+        },
+        {
+          "id": "b-feature",
+          "headline": "Publishers: get featured",
+          "body": "Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.",
+          "button": "Request badge verification",
+          "url": "https://skills.suedeai.ai/directory/submit/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=publisher-claim&utm_content=b-feature"
+        }
+      ]
+    },
+    {
+      "id": "guide-footer",
+      "surface": "guide",
+      "where": "End of every guide, after the FAQ. The guide's pages.json entry names which set to use.",
+      "variants": [
+        {
+          "id": "agency",
+          "routes": "search",
+          "headline": "Want to be the answer AI assistants give?",
+          "body": "Suede AI's AEO, GEO and SEO team works on the pages, entities and structured data that search engines and AI assistants rely on, and measures what changes.",
+          "button": "Talk to Suede AI",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=guide-footer&utm_content=agency"
+        },
+        {
+          "id": "agent-studio",
+          "routes": "agents",
+          "headline": "Put a team of agents to work",
+          "body": "Suede AI Agent Studio builds multi-agent automation for businesses, from intake to delivery.",
+          "button": "Explore Agent Studio",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=guide-footer&utm_content=agent-studio"
+        },
+        {
+          "id": "publisher",
+          "headline": "Publish a skill?",
+          "body": "See how your skill scores, which points it is missing and what to fix on its README. Free, and it runs in your browser.",
+          "button": "Run the Skill AI-visibility check",
+          "url": "https://skills.suedeai.ai/directory/check/?utm_source=skills.suedeai.ai&utm_medium=guide&utm_campaign=guide-footer&utm_content=publisher",
+          "audience": "publisher"
+        }
+      ]
+    },
+    {
+      "id": "check-result",
+      "surface": "check_tool",
+      "where": "Below the Skill AI-visibility check results. The first variant shows when the skill is listed; the second when it is not found.",
+      "variants": [
+        {
+          "id": "a-listed",
+          "headline": "Your skill is listed. Is your product page ready for AI answers?",
+          "body": "The check covers your skill. Suede AI's team audits the site behind it: indexability, answer-first pages, entity consistency and structured data, then tracks which AI answers cite you.",
+          "button": "Get a full AI visibility audit",
+          "confirm_offer": "Use this label only once suedeai.agency confirms it sells or offers a full AI visibility audit; otherwise use \"Talk to Suede AI\".",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=tool&utm_campaign=check-result&utm_content=a-listed"
+        },
+        {
+          "id": "b-not-found",
+          "headline": "Not listed yet",
+          "body": "Request a free listing. Once it is accepted you get a listing page, a README badge and a score with the points you can still earn.",
+          "button": "Request a listing",
+          "url": "https://skills.suedeai.ai/directory/submit/?utm_source=skills.suedeai.ai&utm_medium=tool&utm_campaign=check-result&utm_content=b-not-found"
+        }
+      ]
+    },
+    {
+      "id": "submit-success",
+      "surface": "submit_page",
+      "where": "Confirmation state or the bottom of the submit page.",
+      "variants": [
+        {
+          "id": "a-next-step",
+          "headline": "While you wait: add the listing badge",
+          "body": "Your README badge links readers to your listing and tells search engines the two pages describe the same skill.",
+          "button": "Read the publisher guide",
+          "url": "https://skills.suedeai.ai/directory/guides/skill-ai-visibility/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=submit-success&utm_content=a-next-step"
+        }
+      ]
+    },
+    {
+      "id": "awesome-readme",
+      "surface": "awesome_readme",
+      "where": "Rendered by scripts/build-awesome-directory.mjs into awesome/README.md.",
+      "variants": [
+        {
+          "id": "agency",
+          "headline": "Get your product cited in AI answers",
+          "body": "Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude.",
+          "button": "suedeai.agency",
+          "url": "https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency"
+        },
+        {
+          "id": "agent-studio",
+          "headline": "Run a team of agents",
+          "body": "Suede AI Agent Studio builds multi-agent automation for businesses.",
+          "button": "suedeai.app",
+          "url": "https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio"
+        }
+      ]
+    }
+  ]
 }

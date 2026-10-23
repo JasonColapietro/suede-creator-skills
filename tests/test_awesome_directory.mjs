@@ -171,6 +171,6 @@ test('guides link drafts to their source and published pages to the site; servic
       } else assert.doesNotMatch(line, /—/, `${name}: em dash in catalog prose`);
     }
   }
-  const plain = generateCatalog({ ...structuredClone(inputs), guides: { pages: [] }, ctas: { placements: [], routing: {} } }).get('README.md');
+  const plain = generateCatalog({ ...structuredClone(inputs), guides: { pages: [] }, ctas: { campaigns: [], lead_by_category: {} } }).get('README.md');
   assert.doesNotMatch(plain, /## Guides|## Work with Suede AI|suedeai\.agency/);
 });
