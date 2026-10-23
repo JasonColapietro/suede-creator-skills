@@ -250,8 +250,12 @@ drafting hypotheses and verify outlet preferences where published:
 
 ### Length
 
-Start with a concise draft, then fit the verified outlet preference and story
-complexity. Do not treat 150 words as a universal maximum.
+Start under 200 words, then fit the verified outlet preference and story
+complexity. In Muck Rack's State of Journalism 2026 survey, 69% of journalists
+said they prefer pitches under 200 words, 62% prefer a one-to-one email over
+other channels, and 78% prefer pitches sent before noon in their time zone.
+Treat these as defaults, not laws; an individual journalist's stated preference
+wins. Source: [Muck Rack, State of Journalism 2026](https://muckrack.com/resources/research/state-of-journalism).
 
 ### Structure
 
