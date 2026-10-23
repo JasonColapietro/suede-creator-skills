@@ -1,0 +1,52 @@
+{
+  "_comment": "Conversion module shown on Agent Skills Directory pages. scripts/build-directory.mjs reads this file; edit copy, URLs, placement and category routing here, then run node scripts/build-directory.mjs. Copy follows the CLAUDE.md sales-copy standard: no em dashes, no invented proof, results or guarantees.",
+  "enabled": true,
+  "kicker": "From Suede AI, the publisher of this directory",
+  "utm": {
+    "utm_source": "skills.suedeai.ai",
+    "utm_medium": "directory",
+    "utm_campaign": "directory-services"
+  },
+  "offers": {
+    "search": {
+      "heading": "Get your business cited in AI answers and ranked in Google",
+      "body": "Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.",
+      "cta": "See AEO and SEO services",
+      "url": "https://suedeai.agency/"
+    },
+    "agents": {
+      "heading": "Put a team of agents on your recurring work",
+      "body": "Agent Studio from Suede AI builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.",
+      "cta": "Explore Agent Studio",
+      "url": "https://suedeai.app/"
+    }
+  },
+  "default_lead": "search",
+  "lead_by_category": {
+    "marketing-seo": "search",
+    "writing-content": "search",
+    "business-finance": "search",
+    "frontend-design": "search",
+    "ai-agents-llm": "agents",
+    "developer-tools": "agents",
+    "devops-cloud": "agents",
+    "productivity-knowledge": "agents",
+    "data-databases": "agents",
+    "documents-office": "agents",
+    "testing-qa": "agents",
+    "code-review-quality": "agents",
+    "security": "agents",
+    "product-management": "agents",
+    "science-research": "agents",
+    "media-creative": "search"
+  },
+  "placements": {
+    "hub": true,
+    "category": true,
+    "repository": true,
+    "skill": true,
+    "methodology": true,
+    "submit": false,
+    "featured": false
+  }
+}

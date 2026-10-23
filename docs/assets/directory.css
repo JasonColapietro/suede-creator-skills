@@ -368,3 +368,19 @@
   .featured-install .snippet-head { flex-wrap: wrap; }
   .directory .featured-about { grid-template-columns: 1fr; padding: 32px 0; }
 }
+
+/* Suede AI services module (copy and routing: directory/services-cta.json). */
+.directory .svc-cta { border-color: rgba(200, 169, 110, 0.35); }
+.directory .svc-cta .svc-kicker {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px; font-weight: 600; line-height: 1.4; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 16px;
+}
+.svc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.svc-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 6px; background: var(--card); padding: 20px; }
+.svc-card.svc-lead { border-color: rgba(200, 169, 110, 0.55); }
+.directory .svc-card h3 { font-size: 20px; line-height: 1.3; margin: 0 0 10px; }
+.svc-card p { font-size: 15px; }
+.svc-card p:last-child { margin-top: auto; padding-top: 14px; }
+.directory .byline { margin: -8px 0 24px; }
+.directory .answer { margin: -8px 0 20px; font-size: 15px; color: var(--muted); }
