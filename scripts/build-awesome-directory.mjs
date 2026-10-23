@@ -106,8 +106,6 @@ export function generateCatalog(inputs) {
 
 # Suede Awesome Everything
 
-<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
-
 **AI agent skills, scored 0–99.**
 
 Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](${SITE}methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
@@ -115,6 +113,8 @@ Compare agent skills with **0–99 quality scores**, verified against [Suede’s
 Browse **${number(data.skills.length)} scored skills from ${repos.length} repositories** across **${categories.length} categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
+
+<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
 **[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](${SITE}?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
 
