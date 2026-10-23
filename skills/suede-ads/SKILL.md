@@ -1,13 +1,13 @@
 ---
 name: suede-ads
-description: "Suede-owned paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, and kill-or-scale decisions. Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, or comparable platforms. NOT FOR: producing creative variants (use suede-ad-creative), implementing measurement (use suede-analytics), or optimizing the landing page (use suede-site-alchemy)."
+description: "Suede AI paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, B2B and ABM playbooks, and kill-or-scale decisions, with platform facts checked in October 2026 (Meta Andromeda and attribution windows, Performance Max controls). Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, TikTok, or comparable platforms. NOT FOR: producing ad copy or creative variants (use suede-ad-creative), implementing tracking (use suede-analytics), attribution models or reconciliation (use suede-attribution), or the landing page (use suede-site-alchemy)."
 metadata:
-  version: 2.2.0
+  version: 2.3.0
 ---
 
-# Suede Paid Ads
+# Suede AI Paid Ads
 
-Use this Suede paid-acquisition playbook to create, optimize, and scale campaigns against explicit acquisition economics. Never assume account access.
+Use this paid-acquisition playbook to create, optimize, and scale campaigns against explicit acquisition economics. Never assume account access.
 
 ## Before Starting
 
@@ -109,20 +109,12 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_[MMMYY]
 
 ---
 
-## Ad Copy Frameworks
+## Ad Copy
 
-### Key Formulas
-
-**Problem-Agitate-Solve (PAS):**
-> [Problem] → [Agitate the pain] → [Introduce solution] → [CTA]
-
-**Before-After-Bridge (BAB):**
-> [Current painful state] → [Desired future state] → [Your product as bridge]
-
-**Social Proof Lead:**
-> [Impressive stat or testimonial] → [What you do] → [CTA]
-
-**For detailed templates and headline formulas**: See [references/ad-copy-templates.md](references/ad-copy-templates.md)
+Copy formulas, angle libraries, and character limits belong to
+`suede-ad-creative`. This skill decides which campaign, audience, and offer the
+copy serves. Quick structures for a brief live in
+[references/ad-copy-templates.md](references/ad-copy-templates.md).
 
 ---
 
@@ -138,7 +130,7 @@ The discipline now: **audience knowledge → creative first, targeting filters s
 
 | Platform | Audience knowledge → creative | Audience knowledge → targeting filters | Notes |
 |----------|------------------------------|-------------------------------------|-------|
-| **Meta** (post-Andromeda) | **80%+** | 20% | Algorithm rewards broad + specific creative. See [[#Modern Meta playbook (Andromeda era: 2026+)]] below for the full reframe. Interest-stacking now actively hurts. |
+| **Meta** | **80%+** | 20% | Broad audiences plus distinct creative usually beat interest stacking. See "Meta in the Andromeda era" below. |
 | **Google Search** | 40% | **60%** | Keywords are still the dominant signal: match-types, search-intent layering, and negative keywords still drive performance. Creative (RSA headlines) matters but is downstream of the keyword. |
 | **Google Performance Max / Demand Gen** | **70%** | 30% | Audience signals are advisory, not deterministic. Creative + product feed quality dominate. |
 | **LinkedIn** | 40% | **60%** | Job-title / company / industry filters still produce real precision because LinkedIn's identity data is high-quality. Creative makes the click; firmographics make the *right person* see it. |
@@ -152,57 +144,56 @@ For how each identifier becomes a headline, hook, or angle, use `suede-ad-creati
 ### Key Concepts (still apply)
 
 - **Lookalikes**: Base on best customers (by LTV), not all customers. Still high-value across platforms.
-- **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See [[#Retarget with DIFFERENT offers (not the same one)]] and [[#The 4-component retargeting framework]] for the modern playbook.
+- **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See "Retarget with a different offer" and "The four-ad retargeting layer" below.
 - **Exclusions**: Exclude existing customers and recent converters: showing ads to people who already bought wastes spend.
 
 **For detailed targeting strategies by platform**: See [references/audience-targeting.md](references/audience-targeting.md)
 
 ---
 
-## Modern Meta playbook (Andromeda era: 2026+)
+## Meta in the Andromeda era
 
-Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed Meta ads. The old playbook (interest stacking, polished video creative, single-winner scaling) underperforms. The new playbook:
+**What is verified.** Andromeda is Meta's ad retrieval system. Meta Engineering
+described it on December 2, 2024: for each impression it narrows tens of
+millions of eligible ads to a few thousand candidates before the ranking models
+and the auction run. Meta's advertiser guidance in December 2025 called
+creative diversification a foundational practice: vary format, message, and
+persona instead of iterating on one concept. Everything else below is operating
+practice to test, not platform fact.
 
-### Creative volume is the constraint (statics > polished video)
-- Andromeda is "a hungry panda": it needs constant fresh creative or it fatigues
-- **Statics often outperform video in 2026** because:
-  - Meta's algorithm has a bias toward statics: it can show more statics per session per user, so they're cheaper to deliver
-  - Static creative is 10x cheaper and faster to produce than video, enabling the volume Andromeda needs
-  - Even top advertisers running 17+ VSLs report that down-and-dirty native statics often beat 2.5-month-production VSLs
-- **Dedicate 1 hour per week** to producing fresh creatives for your winning offer. Volume > polish.
+**Operating practice that follows:**
 
-### Creative IS the targeting (broad audience + specific creative)
-- The old playbook: stack interests, narrow the audience, hope to find the right buyer
-- The new playbook: target broadly (just the country) and let the creative do the targeting
-- **Long-form ad copy works better than short-form** in 2026: gives Meta a wider context window to understand who to show the ad to
-- Test it: take your best winning ad with interest-stacked targeting, duplicate it, remove all targeting (just pick the country), run side-by-side for 7 days. Check CPAs. Broad typically wins.
+- **Creative does most of the targeting.** Start broad (country plus customer
+  exclusions) and let distinct creative find distinct buyers. Test it: duplicate
+  a winning interest-stacked ad set, remove the interests, run both for 7 days
+  on equal budget, and compare CPA on the optimization event.
+- **Distinct concepts beat near-duplicates.** Ten color swaps of one ad teach
+  the system one thing. Ten different angles, formats, and personas teach it ten.
+  Track concept count, not ad count.
+- **Make statics part of the mix.** Statics are cheap and fast, so they make
+  concept volume affordable. Test them against video on cost per qualified
+  result; do not assume either format wins.
+- **Identity-keyword variants.** Duplicate a winner and insert the buyer's
+  identity into the headline or first line ("leads per week" becomes "dental
+  leads per week", "law firm leads per week"). The word works on the reader and
+  gives the system a clearer signal. Use only identities the offer truly serves.
+- **AI-assisted segment rewrites.** Give a model the winning ad and ask it to
+  rewrite for one named segment while keeping voice, structure, and claims
+  identical. Review every variant for invented claims, then route the batch
+  through `suede-ad-creative` for the pre-delivery self-check.
+- **Rescue test for unspent variants.** Budget optimization often gives most
+  variants little or no spend. Move the few you have strong evidence for into a
+  separate ad set and give them a fair read before discarding them.
+- **Look native.** Study what performs organically in the niche on Instagram,
+  TikTok, and YouTube and match that look. A proven organic post run as a
+  partnership or boosted ad is often the cheapest test available.
+- **Attribution windows changed.** Since January 12, 2026 the Ads Insights API
+  no longer returns 7-day view and 28-day view windows. Available windows are
+  1-day click, 7-day click, 28-day click, 1-day engaged-view, and 1-day view.
+  Update dashboards and any report that compared view-through windows.
 
-### The one-keyword hack (identity-trigger keywords)
-- Take your winning ad
-- Duplicate it with a niche/identity keyword inserted in the headline or body copy
-- *"Here's how to get 462 leads per week on autopilot"* → *"Here's how to get 462 **dental** leads per week on autopilot"* / *"...**lawyer** leads..."* / *"...**property investment** leads..."*
-- The keyword is an **identity trigger** for the viewer AND a targeting signal for Andromeda
-- Dramatically drops CPL and opens audience pockets you couldn't reach with a generic ad
-
-### AI variant farming (the 100-people test)
-- Take your winning ad
-- Feed to Claude/ChatGPT/Kong with the prompt:
-  > *"I want you to read this ad and be the author. If I show the next ad I'm going to ask you to write to 100 people, not 1 in 100 would be able to tell you it's written by a different person. Now write this for [demographic/niche]."*
-- The output should read essentially the same with subtle relevance shifts for the target
-- Apply in sequence: body copy → headlines → creative
-- Drop all variants in a CBO, let Meta's AI allocate spend
-
-### Zombie campaigns
-- After running a CBO, Meta will give 80% of variants no spend
-- Take the dead variants you have **high conviction** about
-- Launch them in a separate ad set ("zombie campaign")
-- Typically resurrects 20% as winners that Meta's first allocation passed over
-
-### Don't make ads look like ads
-- Hundreds of millions of people have ad blockers: the polished-ad aesthetic kills performance
-- Study what content **natively performs** in your niche on TikTok/Instagram/YouTube → produce ads that match that aesthetic
-- **Burner account technique:** create a clean Instagram/TikTok account, follow all influencers and pages in your niche, like their content. Your feed becomes a curated view of what's natively winning. Produce ads that match.
-- If you have an organic video with millions of views, **run that exact video as a paid ad**: proven content + paid distribution = the highest-leverage move
+The full kill, graduate, and scale rules live in
+[meta-decision-system.md](references/meta-decision-system.md).
 
 ## Creative Best Practices
 
@@ -211,7 +202,8 @@ Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed M
 - Before/after comparisons
 - Stats and numbers as focal point
 - Human faces (real, not stock)
-- Bold, readable text overlay (keep under 20%)
+- Short, legible text overlay. Meta retired its 20% text rule in 2020, but
+  text-heavy images can still deliver worse; test a lighter version
 
 ### Video Ads Structure (15-30 sec)
 1. Hook (0-3 sec): Pattern interrupt, question, or bold statement
@@ -220,7 +212,8 @@ Meta launched the **Andromeda** algorithm in 2025, which fundamentally changed M
 4. CTA (20-30 sec): Clear next step
 
 **Production tips:**
-- Captions always (85% watch without sound)
+- Captions by default: much feed video plays muted, and captions help
+  comprehension either way
 - Vertical for Stories/Reels, square for feed
 - Native feel outperforms polished
 - First 3 seconds determine if they watch
@@ -268,10 +261,11 @@ For hard kill/keep/scale thresholds, use the platform playbooks (see Reference R
 - Low relevance score → improve creative fit
 
 ### Bid Strategy Progression
-1. Start with manual or cost caps
-2. Gather conversion data (50+ conversions)
-3. Switch to automated with targets based on historical data
-4. Monitor and adjust targets based on results
+1. Start with maximize-conversions (no target) or cost caps while data is thin
+2. Gather conversion data: roughly 30 per month per campaign on Google, about
+   50 per week per ad set to leave Meta's learning phase
+3. Set targets (tCPA, tROAS, cost cap) at or slightly above trailing actuals
+4. Move targets in 10 to 15% steps and wait one to two weeks between moves
 
 ---
 
@@ -299,7 +293,7 @@ For hard kill/keep/scale thresholds, use the platform playbooks (see Reference R
 - Bounced visitors (<10 sec)
 - Irrelevant pages (careers, support)
 
-### Retarget with DIFFERENT offers (not the same one)
+### Retarget with a different offer
 
 The conventional retargeting playbook re-shows the same product/offer to people who didn't buy. Working premise: **the most common reason someone didn't buy is that the offer wasn't right for them.** Re-showing the same thing harder doesn't help.
 
@@ -308,9 +302,9 @@ Instead, retarget with **different** products, services, or offers from your cat
 - Visitor downloaded a lead magnet, didn't book a call → retarget with a different lead magnet on a related topic
 - Visitor viewed pricing, didn't sign up → retarget with a free audit or assessment instead
 
-The lift from this is often dramatic: a 2-3 ROAS audience on the original offer can hit 6+ ROAS on a different offer.
+Measure it as its own ad set against same-offer retargeting; the lift varies by catalog depth and margin.
 
-### The 4-component retargeting framework
+### The four-ad retargeting layer
 
 Build out your retargeting layer with these 4 ad types running simultaneously:
 
@@ -319,7 +313,7 @@ Build out your retargeting layer with these 4 ad types running simultaneously:
 3. **Other-offers CBO**: your other best-performing ads for other products/services in one CBO, retargeted to the same audience
 4. **Value-first audit/assessment ad**: wraps your call in a free piece of value. Whether they buy or not, they leave with something useful. Lowers the friction to engage.
 
-These four together, retargeting the same audience that didn't convert from the top-of-funnel ad, dramatically lift the ROAS of the entire funnel.
+Run the four together against the audience that did not convert, and judge the layer on blended CPA, not each ad alone.
 
 ---
 
@@ -330,7 +324,7 @@ The ad platform tests headlines against far more people than ever reach the land
 1. Run **20-40 different headlines** as ad variations
 2. Pick the winner by CTR **and** downstream conversion, not CTR alone
 3. **Mirror the winning headline verbatim** in the landing page H1, sub-headline, and lead-in copy
-4. Expect a **15-20% minimum lift** in landing-page conversion rate from that change alone
+4. Measure the landing-page conversion rate before and after with `suede-ab-testing`; message match usually helps, but the size of the lift is the account's to prove
 
 Keep at least 3 split tests running somewhere in the funnel (creative, page, offer, or post-conversion flow) at any given time.
 
@@ -349,10 +343,12 @@ Post-click page work itself belongs to `suede-site-alchemy`.
 - Landing page conversion rate
 
 ### Attribution Considerations
-- Platform attribution is inflated
-- Use UTM parameters consistently
-- Compare platform data to GA4
-- Look at blended CAC, not just platform CPA
+- Every platform counts the same sale; never sum platform-reported conversions
+- Use UTM parameters consistently and reconcile against the CRM or backend
+- Record each platform's attribution window with the number (Meta's API now
+  offers only 1-day view and click windows up to 28 days)
+- Judge on blended CAC and pipeline, not platform CPA alone; route model and
+  reconciliation work to `suede-attribution`
 
 ### Scaling discipline (net cash > ROAS percentage)
 
@@ -369,11 +365,10 @@ The most common scaling failure: a business at a 40 ROAS spending $5k/month, ref
 2. That's your break-even ROAS / CPA ceiling
 3. **Scale until you approach that ceiling**, not until your ad-account ROAS drops below an arbitrary preference
 
-**The 3-hour founder review:**
-- Block out **3 hours per month** in the calendar to physically review the numbers yourself
-- Not what your data analyst says. Not what your media buyer says. You, going through the actual data
-- The confidence this generates is irreplaceable: and confidence is what lets you scale with conviction
-- "Data gives you confidence. Confidence gives you speed."
+**The monthly owner review:**
+- Block about 3 hours a month for the budget owner to read the raw numbers
+  directly, not a summary from the analyst or media buyer
+- First-hand familiarity with the data is what makes fast scale decisions safe
 
 **Outbound-call your leads who didn't convert:**
 - Every lead that downloaded a lead magnet or hit your funnel but didn't buy gets a call
@@ -452,7 +447,8 @@ route implementation and firing checks to `suede-analytics`.
 ## Routing
 
 - Need ad copy or visual variants -> use `suede-ad-creative`.
-- Need conversion tracking and attribution -> use `suede-analytics`.
+- Need conversion tracking implementation -> use `suede-analytics`; attribution
+  models and cross-platform reconciliation -> use `suede-attribution`.
 - Need post-click conversion work -> use `suede-site-alchemy`.
 - Need CRM handoff or offline conversion design -> use `suede-revops`.
 - From those skills, route paid channel, budget, bid, and campaign decisions back to `suede-ads`.

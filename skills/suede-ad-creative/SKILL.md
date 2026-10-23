@@ -1,13 +1,13 @@
 ---
 name: suede-ad-creative
-description: "Suede-owned paid-media creative system for hooks, headlines, primary text, static and motion concepts, platform specs, review pages, and test-ready variant batches. Use when producing or iterating ad creative from grounded product and audience inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), or landing-page copy (use suede-copy)."
+description: "Suede AI paid-media creative system: angles, hooks, headlines, primary text, RSA and Performance Max assets, static and motion concepts, iOS-native reveal videos, grounded batch production, client review pages, and iteration from performance data, all checked against platform character limits. Use when producing or iterating ad creative for Google, Meta, LinkedIn, TikTok, or X from real product, review, and performance inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), organic social posts (use suede-social), general marketing images such as OG or hero graphics (use suede-image), or landing-page copy (use suede-copy)."
 metadata:
-  version: 2.8.0
+  version: 2.9.0
 ---
 
-# Suede Ad Creative
+# Suede AI Ad Creative
 
-Use this Suede performance-creative system to generate testable headlines, descriptions, primary text, and visual concepts, then iterate from real performance data.
+Use this performance-creative system to generate testable headlines, descriptions, primary text, and visual concepts, then iterate from real performance data.
 
 ## Before Starting
 
@@ -102,9 +102,14 @@ Platforms reject or truncate creative that exceeds these limits, so verify every
 
 | Element | Limit | Quantity |
 |---------|-------|----------|
-| Headline | 30 characters | Up to 15 |
-| Description | 90 characters | Up to 4 |
+| Headline | 30 characters | 3 to 15 |
+| Description | 90 characters | 2 to 4 |
 | Display URL path | 15 characters each | 2 paths |
+
+Performance Max asset groups take 3 to 15 headlines (30 chars, at least one of
+15 or fewer), 1 to 5 long headlines (90), 2 to 5 descriptions (90), and a
+25-character business name. Image and video counts are in
+[references/platform-specs.md](references/platform-specs.md).
 
 **RSA rules:**
 - Headlines must make sense independently and in any combination
@@ -160,11 +165,10 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 **When you need to pick an image, video, voice, or code-based generation tool**, or price a batch, read [references/generative-tools.md](references/generative-tools.md). It owns the tool-class roster (described by capability, not brand), per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
 
-**Recommended workflow for scaled production:**
-1. Generate hero creative with AI tools (exploratory, high-quality)
-2. Build Remotion templates based on winning patterns
-3. Batch produce variations with Remotion using data feeds
-4. Iterate: AI for new angles, Remotion for scale
+**Recommended workflow for scaled production:** generate hero concepts with an
+authorized image or video model, turn the winners into a code-rendered
+template, batch variations from a data feed, and return to generation only for
+new angles.
 
 ---
 
@@ -180,7 +184,7 @@ Before writing individual headlines, establish 3-5 distinct **angles**, differen
 |----------|---------------|
 | Pain point | "Stop wasting time on X" |
 | Outcome | "Achieve Y in Z days" |
-| Social proof | "Join 10,000+ teams who..." |
+| Social proof | "Join [verified count] teams who..." |
 | Curiosity | "The X secret top companies use" |
 | Comparison | "Unlike X, we do Y" |
 | Urgency | "Limited time: get X free" |
@@ -262,7 +266,7 @@ Track what was learned and what's being tested:
 - Specific ("Cut reporting time 75%") over vague ("Save time")
 - Benefits ("Ship code faster") over features ("CI/CD pipeline")
 - Active voice ("Automate your reports") over passive ("Reports are automated")
-- Include numbers when possible ("3x faster," "in 5 minutes," "10,000+ teams")
+- Include numbers when they are measured and sourced ("3x faster", "in 5 minutes")
 
 **Avoid:**
 - Jargon the audience won't recognize
@@ -379,7 +383,7 @@ Any failure means fix it before delivering. Do not ship a batch with the failure
 - **No CTA headlines**: RSAs need action-oriented headlines to drive clicks; include at least 2-3
 - **Generic descriptions**: "Learn more about our solution" wastes the slot
 - **Testing too many things at once**: Change one variable per test cycle
-- **Retiring creative too early**: Allow 1,000+ impressions before judging
+- **Retiring creative too early**: give each variant enough spend to judge on the declared metric; for Meta lead gen use the TCPL gates in `suede-ads`
 
 ---
 
