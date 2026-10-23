@@ -54,7 +54,7 @@ The plain-English version:
 So if journeys with a retargeting touch convert meaningfully more often than identical journeys without it, retargeting earns real credit. If adding a channel changes nothing, it earns ~zero, even if it appears on every path.
 
 **When it's worth it:**
-- You have **volume**: the counterfactuals need enough conversions to be stable. (Google Ads historically gated data-driven attribution behind ~3,000 ad interactions and ~300 conversions in 30 days; it has since relaxed the hard minimums and made data-driven the default model, but the underlying reality is unchanged: below real volume, DDA is noise dressed as science.) Use position-based instead when you're thin.
+- You have **volume**: the counterfactuals need enough conversions to be stable. (Data-driven is now the Google Ads and GA4 default with no published minimum, but below real volume it is noise dressed as science.) When you are thin, score position-based on your own touch-path data instead; Google retired rule-based models other than last-click from Google Ads and GA4 in 2023, so that comparison has to come from your own data.
 - Your journeys are **mostly digital and tracked**, Shapley can only weigh touches it was fed. Offline events, dark social, and cookie-lost touches are invisible to it, so a high-word-of-mouth B2B motion will get a confidently-wrong DDA. Pair it with self-reported (SKILL.md §4).
 
 **Its honest limitations:**
