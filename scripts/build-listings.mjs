@@ -6,6 +6,8 @@
 //   README.md                      the "Find it on" block between listings markers
 //   docs/index.html                the "Listed on" strip between listings markers,
 //                                  plus the SoftwareSourceCode node's `sameAs`
+// Only listings explicitly marked sameAs:true identify this exact software
+// pack. Author profiles, component packages and curated lists stay links.
 //
 // The site linked to none of the ~28 pages that list it, so every listing was
 // a one-way citation. Typing the links into three files by hand would be three
@@ -62,10 +64,16 @@ for (const group of data.groups ?? []) {
     }
     if (!/^https:\/\/[^\s"<>]+$/.test(item.url ?? "")) fail.push(`"${item.name}" has a non-https or malformed url`);
     if (seenUrls.has(item.url)) fail.push(`"${item.url}" is listed twice`);
+    if (item.sameAs !== undefined && typeof item.sameAs !== "boolean") {
+      fail.push(`"${item.name}" sameAs must be a boolean identifying the exact software pack`);
+    }
     seenUrls.add(item.url);
   }
 }
 const allItems = (data.groups ?? []).flatMap((group) => group.items ?? []);
+const identityUrls = allItems.filter((item) => item.sameAs === true).map((item) => item.url);
+const identitySet = new Set(identityUrls);
+if (!identityUrls.length) fail.push("docs/listings.json marks no verified pack identity with sameAs:true");
 const featured = allItems.filter((item) => item.featured === true);
 if (!featured.length) fail.push("docs/listings.json marks no listing as featured");
 if (!SEO_KEYWORDS["listings.html"]) fail.push("scripts/lib/seo-keywords.mjs has no entry for listings.html");
@@ -81,7 +89,6 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(updated)) throw new Error("docs/listings.json up
 const updatedLong = new Date(`${updated}T00:00:00Z`).toLocaleDateString("en-US", {
   year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
 });
-const allUrls = allItems.map((item) => item.url);
 const total = allItems.length;
 const [year, month, day] = data.verified.split("-").map(Number);
 const verifiedLong = new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-US", {
@@ -117,7 +124,7 @@ function renderPage() {
       name: "Suede Creator Skills",
       url: BASE,
       codeRepository: REPO,
-      sameAs: allUrls,
+      sameAs: identityUrls,
     },
   };
   const jsonLdText = JSON.stringify(jsonLd, null, 2)
@@ -348,15 +355,15 @@ function withSameAs(file, text) {
   for (const [key, value] of Object.entries(node)) {
     if (key === "sameAs") continue;
     rebuilt[key] = value;
-    if (key === "codeRepository") rebuilt.sameAs = allUrls;
+    if (key === "codeRepository") rebuilt.sameAs = identityUrls;
   }
   for (const key of Object.keys(node)) delete node[key];
   Object.assign(node, rebuilt);
   return text.replace(JSON_LD_RE, (_, open, __, close) => `${open}${JSON.stringify(graph, null, 2)}\n${close}`);
 }
 
-// Order-insensitive on purpose: the guard is about which listings the entity
-// claims, not the order the write path happened to emit them in.
+// Order-insensitive: only explicitly verified pack identities belong here,
+// regardless of the order the write path emits them in.
 function checkSameAs(file, text) {
   const match = text.match(JSON_LD_RE);
   let graph = null;
@@ -371,13 +378,13 @@ function checkSameAs(file, text) {
     return;
   }
   const actual = new Set(Array.isArray(node.sameAs) ? node.sameAs : []);
-  const missing = allUrls.filter((url) => !actual.has(url));
-  const extra = [...actual].filter((url) => !seenUrls.has(url));
+  const missing = identityUrls.filter((url) => !actual.has(url));
+  const extra = [...actual].filter((url) => !identitySet.has(url));
   const duplicated = Array.isArray(node.sameAs) && node.sameAs.length !== actual.size;
   if (missing.length || extra.length || duplicated) {
     const parts = [];
     if (missing.length) parts.push(`missing ${missing.join(", ")}`);
-    if (extra.length) parts.push(`not in docs/listings.json: ${extra.join(", ")}`);
+    if (extra.length) parts.push(`not verified pack identities in docs/listings.json: ${extra.join(", ")}`);
     if (duplicated) parts.push("duplicate entries");
     fail.push(`${rel(file)} SoftwareSourceCode sameAs disagrees with docs/listings.json (${parts.join("; ")})`);
   }
