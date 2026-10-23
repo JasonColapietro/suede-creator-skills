@@ -305,13 +305,43 @@ The creator scripts are dependency-light Python and run on the standard library.
 python3 -m pip install PyYAML
 ```
 
+## Frequently asked questions
+
+### What is Suede Creator Skills?
+
+Suede Creator Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates, app delivery and creator-rights work.
+
+### Who created Suede Creator Skills?
+
+Jason Colapietro, founder and CEO of Suede AI, created Suede Creator Skills and maintains it at [github.com/JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills).
+
+### How do I install Suede Creator Skills in Claude Code?
+
+Run `/plugin marketplace add JasonColapietro/suede-creator-skills`, then `/plugin install suede-skills@suede`. See [Install in 30 seconds](#install-in-30-seconds) for the focused subsets.
+
+### How do I install Suede Creator Skills in Codex?
+
+Run `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main`, then `codex plugin add suede-skills@suede-codex`, and restart Codex.
+
+### Is Suede Creator Skills free?
+
+Yes. Original work is MIT licensed, and adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). The pack has no binaries, no telemetry and no accounts.
+
+### Does Suede Creator Skills include an MCP server?
+
+Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published to npm as [`suede-skills-mcp`](https://www.npmjs.com/package/suede-skills-mcp) and listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest).
+
+### Which skills help with SEO, AEO and GEO?
+
+Start with `suede-seo-audit` to audit a page for search visibility, and `suede-ai-seo` to plan content for AI search and answer engines. The [skill catalog](https://skills.suedeai.ai/skills/) lists the rest.
+
 ## About the creator
 
-**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
+**Jason Colapietro** created and maintains Suede Creator Skills. He is an engineer, author, and the founder and CEO of [Suede AI](https://suedeai.ai), an agentic platform company in West Palm Beach, Florida, and wrote The Claude Code Bible and Codex in Production, operator's guides to the two coding agents this pack runs in. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework. [View the individual credentials and training-module records](https://seo.suedeai.ai/evidence#training-credentials).
 
-Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder)
+Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://suedeai.ai) · [suedeai.ai/founder](https://suedeai.ai/founder) · [jasoncolapietro.com](https://jasoncolapietro.com) · [GitHub](https://github.com/JasonColapietro)
 
 ## License and contributions
 
