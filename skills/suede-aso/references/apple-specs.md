@@ -1,6 +1,8 @@
 # Apple App Store: Official Specs & Guidelines
 
-All data from developer.apple.com as of March 2026.
+Compiled from developer.apple.com in March 2026 and re-checked against current
+secondary coverage on 2026-10-23 (Apple pages could not be fetched directly in
+that check). Confirm any limit in App Store Connect before shipping metadata.
 
 ## Character Limits
 
@@ -36,8 +38,10 @@ keyword count significantly.
 - Formats: JPEG, PNG
 - Apple auto-scales from required base sizes to smaller devices
 - **First 3 screenshots** are the ones visible in search results
-- **Caption text on screenshots is indexed since June 2025**, extracted by Apple's
-  AI from the image itself: on-image copy is searchable text, not decoration
+- **Screenshot caption indexing is not confirmed by Apple.** Some ASO vendors
+  reported it in 2025 and at least one has since withdrawn the claim. Write
+  captions for conversion in the searcher's words, and treat any ranking effect
+  as a hypothesis to test, not a field to optimize.
 
 ## App Preview Video Specs
 
@@ -55,8 +59,9 @@ keyword count significantly.
 - **Customizable:** Screenshots, promotional text, app previews, deep links (iOS 18+)
 - **Keywords:** Each keyword combo must be unique to a single CPP
 - **Review:** Submitted to App Review independently of app updates
-- **Organic search:** CPPs appear in organic search results since July 2025
-- **Performance:** +2.5 percentage points higher conversion on average vs default
+- **Organic search:** CPPs can be assigned keywords and shown in organic search
+  results (announced WWDC25, rolled out July 2025; limit raised from 35 to 70 in
+  October 2025, per secondary coverage)
 
 ## Product Page Optimization (A/B Testing)
 
@@ -89,6 +94,17 @@ keyword count significantly.
 - Do not use custom buttons to request reviews
 - Developers can respond to all reviews in App Store Connect
 - Summary rating is territory-specific
+
+## App Store Tags
+
+Announced at WWDC25: Apple generates feature tags for apps with large language
+models from app metadata, a human reviews them, and developers can manage or
+deselect tags in App Store Connect. Tags surface features buried in the
+description, category, and metadata, so clear, specific metadata gives the
+model better material. Check App Store Connect for the tags currently attached
+and remove any that misdescribe the app.
+
+Source (secondary): https://techcrunch.com/2025/06/11/at-wwdc-apple-says-it-will-use-ai-to-tag-apps-to-improve-discoverability-on-the-app-store
 
 ## Editorial Curation
 
