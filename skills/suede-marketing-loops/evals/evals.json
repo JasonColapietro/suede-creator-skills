@@ -86,7 +86,7 @@
     },
     {
       "id": 7,
-      "prompt": "I want a loop that keeps our A/B testing program running — generating hypotheses, running tests, and analyzing results every week.",
+      "prompt": "I want a loop that keeps our A/B testing program running: generating hypotheses, running tests, and analyzing results every week.",
       "expected_output": "Should recognize heavy overlap with suede-ab-testing and treat the experiment-backlog loop as a thin wrapper only. The loop should maintain and re-rank the hypothesis backlog and manage hand-off cadence, but defer test design, statistical analysis, and velocity management to suede-ab-testing rather than duplicating them. Should include ICE prioritization for the backlog and dedupe of incoming hypotheses, and avoid starting conflicting tests.",
       "assertions": [
         "Recognizes overlap with suede-ab-testing",

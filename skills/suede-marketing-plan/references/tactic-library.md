@@ -1,6 +1,6 @@
-# The 139 Marketing Ideas
+# Suede Tactic Library: 142 Marketing Ideas
 
-Complete list of candidate marketing approaches organized by category. Nothing here is claimed to be proven: each entry is a candidate to score against the rubric in SKILL.md before it is recommended. The numbering is a cross-skill contract (`suede-marketing-plan` Section 12 cites these numbers); do not renumber.
+Candidate marketing approaches organized by category. Nothing here is claimed to be proven: score each entry with the rubric in `tactic-scoring.md` before recommending it. The numbering is a contract with Section 12 of the plan and `idea-cross-reference.md`; append new ideas at the end and never renumber.
 
 ## Contents
 - Content & SEO (1-10)
@@ -20,6 +20,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 - International & Localization (131-132)
 - Developer & Technical (133-136)
 - Audience-Specific (137-139)
+- Search & AI Visibility (140-142)
 
 ## Content & SEO (1-10)
 
@@ -31,9 +32,9 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 4. **Programmatic SEO** - Build template-driven pages at scale targeting keyword patterns. Location pages, comparison pages, integration pages: any pattern with search volume.
 
-5. **Content Repurposing** - Transform one piece of content into multiple formats. Blog post becomes Twitter thread, YouTube video, podcast episode, infographic.
+5. **Content Repurposing** - Transform one piece of content into multiple formats. Blog post becomes X thread, LinkedIn post, YouTube video, podcast episode, infographic.
 
-6. **Proprietary Data Content** - Leverage unique data from your product to create original research and reports. Data competitors can't replicate creates linkable assets.
+6. **Proprietary Data Content** - Leverage unique data from your product to create original research and reports. Data competitors can't replicate creates linkable assets, and it is what journalists and AI answers cite.
 
 7. **Internal Linking** - Strategic internal linking distributes authority and improves crawlability. Build topical clusters connecting related content.
 
@@ -41,7 +42,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 9. **Knowledge Base SEO** - Optimize help documentation for search. Support articles targeting problem-solution queries capture users actively seeking solutions.
 
-10. **Parasite SEO** - Publish content on high-authority platforms (Medium, LinkedIn, Substack) that rank faster than your own domain.
+10. **Third-Party Platform Publishing** - Publish genuine, first-party expert content under your own name on platforms such as LinkedIn, Substack, Medium, or YouTube, where it can rank and be cited sooner than a new domain. Do not place content on another site to borrow its ranking signals: Google's spam policies treat that as site reputation abuse.
 
 ---
 
@@ -51,7 +52,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 12. **Marketing Jiu-Jitsu** - Turn competitor weaknesses into your strengths. When competitors raise prices, launch affordability campaigns.
 
-13. **Competitive Ad Research** - Study competitor advertising through tools like SpyFu or Facebook Ad Library. Learn what messaging resonates.
+13. **Competitive Ad Research** - Study competitor advertising through tools like the Meta Ad Library, Google Ads Transparency Center, or LinkedIn Ad Library. Learn what messaging resonates.
 
 ---
 
@@ -87,7 +88,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 26. **Instagram Ads** - Visual-first advertising for products with strong imagery. Stories and Reels ads capture attention.
 
-27. **Twitter Ads** - Reach engaged professionals discussing industry topics. Promoted tweets and follower campaigns.
+27. **X Ads** - Reach people discussing industry topics on X. Promoted posts and follower campaigns.
 
 28. **LinkedIn Ads** - Target by job title, company size, and industry. Premium CPMs justified by B2B purchase intent.
 
@@ -123,7 +124,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 42. **Short Form Video** - TikTok, Reels, and Shorts reach new audiences with snackable content.
 
-43. **Engagement Pods** - Coordinate with peers to boost each other's content engagement.
+43. **Engagement Pods** - Peers coordinating to boost each other's engagement. Default status Skip: coordinated inauthentic engagement breaks Instagram, LinkedIn, and X platform rules and can suppress reach.
 
 44. **Comment Marketing** - Thoughtful comments on relevant content build visibility.
 
@@ -163,9 +164,9 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 58. **Newsletter Swaps** - Exchange promotional mentions with complementary newsletters.
 
-59. **Article Quotes** - Contribute expert quotes to journalists. HARO connects experts with writers.
+59. **Article Quotes** - Answer journalist source requests with expert quotes (HARO, relaunched under Featured in 2025; Qwoted; Featured; Help A B2B Writer). Earned quotes build backlinks and the third-party mentions AI answers draw on.
 
-60. **Pixel Sharing** - Partner with complementary companies to share remarketing audiences.
+60. **Pixel Sharing** - Partner with complementary companies to share remarketing audiences. Only with a documented lawful basis, matching consent disclosures, and ad-platform policy review; sharing personal data with a partner triggers GDPR, CCPA, and state privacy obligations.
 
 61. **Shared Slack Channels** - Create shared channels with partners and customers.
 
@@ -223,7 +224,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 82. **Product Hunt Alternatives** - Launch on BetaList, Launching Next, AlternativeTo.
 
-83. **Twitter Giveaways** - Engagement-boosting giveaways that require follows or retweets.
+83. **X Giveaways** - Engagement-boosting giveaways on X. Follow platform promotion rules and sweepstakes law (no purchase requirement, official rules, eligibility limits).
 
 84. **Giveaways** - Strategic giveaways attract attention and capture leads.
 
@@ -333,7 +334,7 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 
 129. **Review Sites** - Actively manage presence on review platforms.
 
-130. **Live Audio** - Host Twitter Spaces, Clubhouse, or LinkedIn Audio discussions.
+130. **Live Audio and Video** - Host X Spaces, LinkedIn Live, or YouTube Live discussions.
 
 ---
 
@@ -364,3 +365,13 @@ Complete list of candidate marketing approaches organized by category. Nothing h
 138. **Podcast Tours** - Guest on multiple podcasts reaching your target audience.
 
 139. **Customer Language** - Use the exact words your customers use in marketing.
+
+---
+
+## Search & AI Visibility (140-142)
+
+140. **AI Answer Visibility (AEO/GEO)** - Pick the 20 to 50 questions buyers ask search engines and AI assistants about the category, record who gets cited in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, and Claude, and build or fix the page that should answer each one: a direct answer up top, question headings, checkable facts, clear authorship. Execute with `suede-ai-seo`.
+
+141. **Entity Consistency** - One company name, product name, short description, and founder byline everywhere, with Organization and Person schema and sameAs links to the same profiles. Consistent entities help search engines and AI systems attribute mentions to you. Execute with `suede-seo-audit`.
+
+142. **Pricing and Plan Pages as Search Assets** - Prices, limits, and plan differences in plain HTML text, with an on-page FAQ covering cost, trials, and cancellation, so buyers and AI assistants can quote them. Pair with comparison pages (#11). Execute with `suede-pricing` (teardown) and `suede-competitors`.

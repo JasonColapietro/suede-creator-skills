@@ -1,6 +1,6 @@
 # Guarantee Design
 
-A guarantee directly raises *perceived likelihood of achievement* (the buyer thinks: "they'll only offer this if they're confident") and lowers *effort & sacrifice* (less emotional risk). It's one of the highest-leverage levers in offer design.
+A guarantee directly raises *confidence* (the buyer thinks: "they'll only offer this if they're confident") and lowers *effort* (less emotional risk). It's one of the highest-leverage levers in offer design.
 
 The wrong guarantee hurts more than no guarantee. Pick the type that matches your business model.
 
@@ -132,7 +132,7 @@ Two conditions max. Three only if they're closely related (e.g., "completed the 
 
 ### Hiding the guarantee in the fine print
 
-If your guarantee is your strongest perceived-likelihood lever, *put it on the sales page in 24pt text*. Move it above the buy button.
+If your guarantee is your strongest confidence lever, *put it on the sales page in 24pt text*. Move it above the buy button.
 
 ### Forgetting to test it
 

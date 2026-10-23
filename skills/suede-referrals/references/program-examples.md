@@ -1,64 +1,58 @@
-# Referral Program Examples
+# Referral Program Patterns
 
-Real-world examples of successful referral programs.
+Four program shapes that recur across consumer and SaaS referral programs, described as patterns rather than company case studies (public programs change terms often, and their results are rarely published with methods). Pick the shape that matches how the product creates value, then test it.
 
 ## Contents
-- Dropbox (Classic)
-- Uber/Lyft
-- Morning Brew
-- Notion
+- Product-for-product (two-sided)
+- Credit-for-credit at a natural moment
+- Milestone tiers (newsletters and communities)
+- Segment-targeted credit
 - Incentive Types Comparison
 - Incentive Sizing Framework
 - Viral Coefficient & Metrics (Key Metrics, Calculating Referral Program ROI)
 
-## Dropbox (Classic)
+## Product-for-product (two-sided)
 
-**Program:** Give 500MB storage, get 500MB storage
+**Shape:** both people get more of the product itself, such as extra storage, seats, or usage.
 
-**Why it worked:**
-- Reward directly tied to product value
-- Low friction (just an email)
+**Why it can work:**
+- The reward is the product's own value, so it attracts users who want the product
+- Low friction (an email or link)
 - Both parties benefit equally
-- Gamified with progress tracking
+- Progress toward a cap can be shown in-product
 
 ---
 
-## Uber/Lyft
+## Credit-for-credit at a natural moment
 
-**Program:** Give $10 ride credit, get $10 when they ride
+**Shape:** a fixed credit for the new user and the referrer, released when the new user completes a first purchase or first use.
 
-**Why it worked:**
-- Immediate, clear value
-- Double-sided incentive
-- Easy to share (code/link)
-- Triggered at natural moments
-
----
-
-## Morning Brew
-
-**Program:** Tiered rewards for subscriber referrals
-- 3 referrals: Newsletter stickers
-- 5 referrals: T-shirt
-- 10 referrals: Mug
-- 25 referrals: Hoodie
-
-**Why it worked:**
-- Gamification drives ongoing engagement
-- Physical rewards are shareable (more referrals)
-- Low cost relative to subscriber value
-- Built status/identity
+**Why it can work:**
+- Immediate, clear value on both sides
+- Easy to share as a code or link
+- Prompted at moments of satisfaction (after a good delivery, ride, or result)
 
 ---
 
-## Notion
+## Milestone tiers (newsletters and communities)
 
-**Program:** $10 credit per referral (education)
+**Shape:** escalating rewards at referral counts (for example 3, 5, 10, 25), often physical goods or access.
 
-**Why it worked:**
-- Targeted high-sharing audience (students)
-- Product naturally spreads in teams
-- Credit keeps users engaged
+**Why it can work:**
+- Repeat motivation instead of a single action
+- Physical rewards get photographed and shared
+- Builds status inside the community
+- Watch sweepstakes, shipping, and fraud costs as tiers rise
+
+---
+
+## Segment-targeted credit
+
+**Shape:** a credit aimed at a group that shares heavily, such as students, team leads, or agency partners.
+
+**Why it can work:**
+- Concentrates spend on people with the widest networks
+- Fits products that already spread inside teams
 
 ---
 
@@ -88,7 +82,7 @@ Max Referral Reward = (Customer LTV × Gross Margin) - Target CAC
 - Target CAC: $200
 - Max reward: ($1,200 × 0.70) - $200 = $640
 
-**Typical referral rewards:**
+**Starting points to test (not benchmarks):**
 - B2C: $10-50 or 10-25% of first purchase
 - B2B SaaS: $50-500 or 1-3 months free
 - Enterprise: Higher, often custom
@@ -112,22 +106,12 @@ K < 1 = Amplified growth (referrals supplement other acquisition)
 - 15% of invitations convert
 - K = 3 × 0.15 = 0.45
 
-**Referral rate:**
+**Referral rate** (set targets from your own baseline; published benchmarks vary too widely to borrow):
 ```
 Referral Rate = (Customers who refer) / (Total customers)
 ```
 
-Benchmarks:
-- Good: 10-25% of customers refer
-- Great: 25-50%
-- Exceptional: 50%+
-
-**Referrals per referrer:**
-
-Benchmarks:
-- Average: 1-2 referrals per referrer
-- Good: 2-5
-- Exceptional: 5+
+**Referrals per referrer**: track the distribution; a few heavy referrers usually drive most volume.
 
 ### Calculating Referral Program ROI
 
@@ -139,5 +123,5 @@ Program costs = Rewards paid + Tool costs + Management time
 
 **Track separately:**
 - Cost per referred customer (CAC via referral)
-- LTV of referred customers (often higher than average)
+- LTV of referred customers vs. other customers (compare cohorts)
 - Payback period for referral rewards

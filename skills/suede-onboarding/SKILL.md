@@ -1,224 +1,142 @@
 ---
 name: suede-onboarding
-description: "Suede-affiliated onboarding and activation strategy for first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Use when users sign up but fail to reach first value or the product needs a new first-session flow. NOT FOR: registration optimization (use suede-signup), lifecycle email sequences (use suede-emails), or monetization prompts (use suede-paywalls)."
+description: "Suede AI activation path from signup conversion to first value: audits account creation, registration, and trial start (field friction, progressive profiling, passkeys and social sign-in, NIST-aligned password rules, verification, mobile), then designs first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Returns a ranked signup audit or an onboarding flow spec with metrics and up to 3 test hypotheses. Use when visitors start but don't finish signup, or users sign up but never reach first value. NOT FOR: lead-capture and non-account forms (use suede-site-alchemy), lifecycle email sequences (use suede-emails), upgrade prompts and paywalls (use suede-paywalls), cancel flows (use suede-churn-prevention), or deploying auth changes without review."
 metadata:
-  version: 2.0.0
+  version: 3.0.0
 ---
 
-# Suede Onboarding and Activation
+# Suede Activation: Signup to First Value
 
-Suede designs onboarding around verified first value and retention-linked activation, not decorative checklists or forced engagement. Define the activation evidence, remove unnecessary friction, sequence the first session, and instrument the path before claiming an "aha moment."
+Suede AI treats signup and onboarding as one path: the visitor who wants the product, the account that gets created, and the first moment the product proves itself. Remove friction at the registration boundary, define activation from retention evidence, sequence the first session, and instrument every step before claiming an "aha moment."
 
 ## Initial Assessment
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Read `.agents/product-marketing.md` first if it exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and ask only for what it does not cover.
 
-Before providing recommendations, understand:
+Then find where the path breaks:
 
-1. **Product Context** - What type of product? B2B or B2C? Core value proposition?
-2. **Activation Definition** - What's the "aha moment"? What action indicates a user "gets it"?
-3. **Current State** - What happens after signup? Where do users drop off? What activation rate are you targeting, and is there cohort analysis separating retained from churned users?
+1. **Product context:** B2B or B2C, web or mobile, trial, freemium, or paid.
+2. **Signup state:** steps, required fields, identity options, completion rate, and whether field-level analytics exist.
+3. **Activation definition:** the action that marks "gets it," and whether cohort data shows retained users do it more than churned users.
+4. **Post-signup state:** what happens in the first 30 seconds, where users stall, and current activation rate.
 
----
-
-## Core Principles
-
-### 1. Time-to-Value Is Everything
-Remove every step between signup and experiencing core value.
-
-### 2. One Goal Per Session
-Focus first session on one successful outcome. Save advanced features for later.
-
-### 3. Do, Don't Show
-Interactive > Tutorial. Doing the thing > Learning about the thing.
-
-### 4. Progress Creates Motivation
-Show advancement. Celebrate completions. Make the path visible.
-
-### Defaults to Refuse
-Named cliches this skill does not produce, however well they demo:
-- The modal product tour that runs before the user has done anything in the product.
-- The "Welcome! Let's get started" interstitial that sits between the user and the first action.
-- The checklist item that is a settings toggle rather than a value action.
+If the break is before the account exists, run the **Signup lane**. If after, run the **First-value lane**. Many audits need both.
 
 ---
 
-## Defining Activation
+## Signup lane
 
-### Find Your Aha Moment
+Full guidance (fields, identity options, mobile, verification, audit format, patterns by product type): [references/signup-flow.md](references/signup-flow.md).
 
-The action that correlates most strongly with retention:
+Core rules:
+- Every required field must earn its place before first use; defer the rest to progressive profiling.
+- Offer the identity options your audience already uses (passkeys, Google, Apple, Microsoft, GitHub, SSO for IT buyers) next to email.
+- Follow current NIST password guidance: length over composition rules, breached-password screening, paste allowed, no forced rotation.
+- Disclose card requirements and renewal terms at the button when a trial auto-converts; legal detail lives in `suede-paywalls`.
+- Let users into the product before verification when security allows.
+
+Signup audit output: top 8 findings ranked by effect on completion (Issue, Impact with funnel step, Fix, Priority), then quick wins, high-impact changes, and at most 3 test hypotheses. Do not open with what the flow does well.
+
+---
+
+## First-value lane
+
+### Principles
+
+1. **Time to value decides everything.** Remove every step between signup and the core outcome.
+2. **One goal per session.** The first session produces one successful outcome.
+3. **Do, don't show.** Doing the thing beats a tour about the thing.
+4. **Progress motivates when it is honest.** Show advancement toward the activation event, not toward busywork.
+
+**Refuse by default:** a modal tour before the user has done anything; a "Welcome! Let's get started" interstitial between the user and the first action; checklist items that are settings toggles rather than value actions.
+
+### Define activation
+
+The activation event is the earliest action that correlates with retention:
 - What do retained users do that churned users don't?
-- What's the earliest indicator of future engagement?
+- What is the earliest signal of continued use?
 
-**Examples by product type:**
-- Project management: Create first project + add team member
-- Analytics: Install tracking + see first report
-- Design tool: Create first design + export/share
-- Marketplace: Complete first transaction
+Examples: project tool, create a project and invite a teammate. Analytics, install tracking and see a first report. Design tool, create and export or share. Marketplace, complete a first transaction.
 
-### Activation Metrics
-- % of signups who reach activation
-- Time to activation
-- Steps to activation
-- Activation by cohort/source
+If no cohort data exists, mark the event "unverified" and plan the analysis with `suede-analytics`.
 
----
+### First 30 seconds
 
-## Onboarding Flow Design
+| Approach | Fits | Risk |
+|----------|------|------|
+| Product-first | Simple products, B2C, mobile | Blank-slate confusion |
+| Guided setup | Products that need configuration | Friction before value |
+| Value-first (sample data, templates) | Products that are empty on day one | Can feel unreal |
 
-### Immediate Post-Signup (First 30 Seconds)
+Whatever the approach: one clear next action, no dead ends, progress shown on multi-step setup.
 
-| Approach | Best For | Risk |
-|----------|----------|------|
-| Product-first | Simple products, B2C, mobile | Blank slate overwhelm |
-| Guided setup | Products needing personalization | Adds friction before value |
-| Value-first | Products with demo data | May not feel "real" |
+### Checklists
 
-**Whatever you choose:**
-- Clear single next action
-- No dead ends
-- Progress indication if multi-step
+Use for self-serve B2B and products with several setup steps. 3-7 items, ordered by value, quick wins first, dismissible, progress shown only where the remaining items are the activation path, celebration on the activation event.
 
-### Onboarding Checklist Pattern
+### Empty states
 
-**When to use:**
-- Multiple setup steps required
-- Product has several features to discover
-- Self-serve B2B products
+Explain what the area is for, show what it looks like with data, give one primary action, and offer sample data or a template.
 
-**Best practices:**
-- 3-7 items (not overwhelming)
-- Order by value (most impactful first)
-- Start with quick wins
-- Progress bar/completion %: only where the remaining steps are the activation path
-- Celebration on completion: on the activation event, not on a two-step setup
-- Dismiss option (don't trap users)
+### Tours and tooltips
 
-### Empty States
+Only for non-obvious or power features. 3-5 steps, dismissible anytime, never repeated for returning users.
 
-Empty states are onboarding opportunities, not dead ends.
+### Email and in-app together
 
-**Good empty state:**
-- Explains what this area is for
-- Shows what it looks like with data
-- Clear primary action to add first item
-- Optional: Pre-populate with example data
+Triggered email reinforces in-app progress rather than duplicating it: welcome (immediate), incomplete setup (24h, 72h), activation reached (next step), feature discovery (days 3, 7, 14). Sequence copy and deliverability go to `suede-emails`.
 
-### Tooltips and Guided Tours
+### Stalled users
 
-**When to use:** Complex UI, features that aren't self-evident, power features users might miss
-
-**Best practices:**
-- Max 3-5 steps per tour
-- Dismissable at any time
-- Don't repeat for returning users
-
----
-
-## Multi-Channel Onboarding
-
-### Email + In-App Coordination
-
-**Trigger-based emails:**
-- Welcome email (immediate)
-- Incomplete onboarding (24h, 72h)
-- Activation achieved (celebration + next step)
-- Feature discovery (days 3, 7, 14)
-
-**Email should:**
-- Reinforce in-app actions, not duplicate them
-- Drive back to product with specific CTA
-- Be personalized based on actions taken
-
----
-
-## Handling Stalled Users
-
-### Detection
-Define "stalled" criteria (X days inactive, incomplete setup)
-
-### Re-engagement Tactics
-
-1. **Email sequence** - Reminder of value, address blockers, offer help
-2. **In-app recovery** - Welcome back, pick up where left off
-3. **Human touch** - For high-value accounts, personal outreach
+Define "stalled" (days inactive, setup incomplete). Recover with a value reminder and blocker help by email, an in-app "pick up where you left off," and human outreach for high-value accounts.
 
 ---
 
 ## Measurement
 
-### Key Metrics
+| Stage | Metrics |
+|-------|---------|
+| Signup | Form start rate, completion rate (mobile vs. desktop), field-level drop-off, identity-option mix, verification completion |
+| Activation | Activation rate, time to activation, steps to activation, activation by cohort and source |
+| Early retention | Day 1, 7, 30 return rates by activated vs. not activated |
 
-| Metric | Description |
-|--------|-------------|
-| Activation rate | % reaching activation event |
-| Time to activation | How long to first value |
-| Onboarding completion | % completing setup |
-| Day 1/7/30 retention | Return rate by timeframe |
-
-### Funnel Analysis
-
-Track drop-off at each step:
-```
-Signup → Step 1 → Step 2 → Activation → Retention
-100%      80%       60%       40%         25%
-```
-
-Identify biggest drops and focus there.
-
----
+Track drop-off at every step from landing to retention and fix the largest loss first.
 
 ## Output Format
 
-### Onboarding Audit
-For each issue: Finding → Impact → Recommendation → Priority
+**Signup audit:** the ranked format above (details in `references/signup-flow.md`).
 
-### Onboarding Flow Design
-Emit these headings verbatim, in this order:
+**Onboarding flow design**, headings verbatim, in order:
 
-**Activation Goal**: the event, plus the retention evidence behind it or "unverified"
-**Flow**: one entry per step, each carrying: trigger, user action, success signal, drop-off measurement
-**Checklist Items**, 3-7 value actions (omit the heading if no checklist)
-**Empty State Copy**, per surface
-**Email Triggers**, event and delay for each
-**Metrics Plan**: activation rate, time to activation, per-step drop-off
+- **Activation Goal**: the event, plus the retention evidence behind it or "unverified"
+- **Flow**: one entry per step with trigger, user action, success signal, drop-off measurement
+- **Checklist Items**: 3-7 value actions (omit if no checklist)
+- **Empty State Copy**: per surface
+- **Email Triggers**: event and delay for each
+- **Metrics Plan**: activation rate, time to activation, per-step drop-off
+- **Test Hypotheses**: at most 3, from [references/experiments.md](references/experiments.md)
 
----
+## Patterns by product type
 
-## Common Patterns by Product Type
-
-| Product Type | Key Steps |
-|--------------|-----------|
-| B2B SaaS | Setup wizard → First value action → Team invite → Deep setup |
-| Marketplace | Complete profile → Browse → First transaction → Repeat loop |
-| Mobile App | Permissions → Quick win → Push setup → Habit loop |
-| Content Platform | Follow/customize → Consume → Create → Engage |
-
----
-
-## Experiment Ideas
-
-When recommending experiments, consider tests for:
-- Flow simplification (step count, ordering)
-- Progress and motivation mechanics
-- Personalization by role or goal
-- Support and help availability
-
-**For comprehensive experiment ideas**: See [references/experiments.md](references/experiments.md)
-
----
+| Product | Path |
+|---------|------|
+| B2B SaaS | Work-email or SSO signup → setup wizard → first value action → team invite → deeper setup |
+| Marketplace | Light signup → profile → browse → first transaction → repeat |
+| Mobile app | Apple, Google, or passkey → permissions in context → quick win → push opt-in after value |
+| Content platform | Signup → follow or customize → consume → create → engage |
 
 ## Boundaries
 
 - Do not invent an activation event, retention correlation, cohort result, or benchmark when product data is unavailable.
-- Do not change product flows, permissions, notifications, experiments, or analytics without explicit authorization.
-- Do not add friction, forced invitations, premature paywalls, or manipulative progress mechanics merely to improve a local metric.
-- Do not decide sensitive-data collection, consent, accessibility, or product-risk policy for the user.
+- Do not deploy signup, authentication, or onboarding changes, or alter stored user data, without explicit authorization and owner review.
+- Do not remove security, consent, age, identity, or legal controls to raise a conversion number.
+- Do not add forced invitations, premature paywalls, deceptive defaults, or manipulative progress mechanics.
+- Do not claim lift without a current baseline and completed experiment; keep personal data out of examples.
 
 ## Routing
 
-- Use `suede-signup` for registration before first-run onboarding.
-- Use `suede-emails` for onboarding email sequences and `suede-paywalls` for upgrade moments.
-- Use `suede-ab-testing` to validate onboarding changes and `suede-analytics` to measure activation.
+- `suede-site-alchemy` for landing pages, lead-capture, and non-account forms.
+- `suede-emails` for onboarding sequences; `suede-sms` for text-message opt-in.
+- `suede-paywalls` for upgrade moments and trial-expiry screens; `suede-pricing` for trial vs. freemium strategy.
+- `suede-churn-prevention` for cancel flows and win-back.
+- `suede-ab-testing` to size and read out tests; `suede-analytics` to instrument the funnel.

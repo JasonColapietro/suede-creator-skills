@@ -1,6 +1,6 @@
-# Model Catalog
+# Suede Behavioral Model Catalog
 
-The full library of models behind `suede-marketing-psychology`. Read this after the Quick Reference table in SKILL.md has narrowed the challenge to two or three candidate models: pull only those entries, not the whole file.
+The evidence-tiered library behind the Persuasion Mechanics section of `suede-offers`. Pull only the two or three entries the Quick Reference narrows to, not the whole file. Every entry is a hypothesis to test in the user's context, never a guarantee.
 
 ## Evidence tiers
 
@@ -18,9 +18,9 @@ Every entry carries exactly one tier. The tier is what makes the skill's promise
 
 - [Foundational Thinking Models](#foundational-thinking-models): strategy framing (First Principles, Jobs to Be Done, Circle of Competence, Inversion, Local vs. Global Optima, Theory of Constraints, Second-Order Thinking, Probabilistic Thinking, Barbell Strategy)
 - [Understanding Buyers & Human Psychology](#understanding-buyers--human-psychology): how customers decide (attribution, exposure, availability, confirmation, Lindy, mimetic desire, sunk cost, endowment, IKEA, zero-price, present bias, status quo, defaults, choice overload, goal gradient, peak-end, Zeigarnik, pratfall, curse of knowledge, mental accounting, regret aversion, social proof)
-- [Influencing Behavior & Persuasion](#influencing-behavior--persuasion): reciprocity, commitment, authority, liking, unity, scarcity, foot-in-the-door, door-in-the-face, loss aversion, anchoring, decoy, framing, contrast
-- [Pricing Psychology](#pricing-psychology): charm pricing, rounded-price fluency, Rule of 100, price relativity, mental accounting
-- [Design & Delivery Models](#design--delivery-models): Hick's Law, AIDA, Rule of 7, nudge/choice architecture, BJ Fogg, EAST, COM-B, activation energy, north-star metric, Cobra effect
+- [Influencing Behavior & Persuasion](#influencing-behavior--persuasion): reciprocity, commitment, authority, liking, shared identity, scarcity, foot-in-the-door, door-in-the-face, loss aversion, anchoring, decoy, framing, contrast
+- [Pricing Psychology](#pricing-psychology): charm pricing, rounded-price fluency, percent-vs-dollar discounts, price relativity, mental accounting
+- [Design & Delivery Models](#design--delivery-models): Hick's Law, AIDA, Rule of 7, nudge/choice architecture, motivation-ability-prompt, easy-attractive-social-timely, capability-opportunity-motivation, activation energy, north-star metric, Cobra effect
 - [Growth & Scaling Models](#growth--scaling-models): feedback loops, compounding, network effects, flywheel, switching costs, exploration vs. exploitation, critical mass, survivorship bias
 
 ---
@@ -106,7 +106,7 @@ These models explain how customers think, decide, and behave.
 **Marketing application**: Durable principles (clear value props, social proof) tend to outlast trendy tactics. Don't abandon fundamentals for fads.
 
 ### Mimetic Desire
-**Evidence: Framework.** Girard's theory that desire is socially contagious: people want things because others want them. Philosophical, not experimentally established.
+**Evidence: Framework.** A philosophical theory that desire is socially contagious: people want things because others want them. Philosophical, not experimentally established.
 
 **Marketing application**: Show that people your audience identifies with want the product. Waitlists, exclusivity, and social proof lean on this.
 
@@ -168,7 +168,7 @@ These models explain how customers think, decide, and behave.
 ### Pratfall Effect
 **Evidence: Contested.** The original result depended on the actor's perceived competence, and replications are mixed.
 
-**Marketing application**: Lead with benefits and proof; Suede-owned copy does not volunteer weaknesses. When a buyer needs a material fact to decide (price, a plan limit, a platform requirement), state it plainly in the pricing section or FAQ.
+**Marketing application**: Lead with benefits and proof; Suede AI copy does not volunteer weaknesses. When a buyer needs a material fact to decide (price, a plan limit, a platform requirement), state it plainly in the pricing section or FAQ.
 
 ### Curse of Knowledge
 **Evidence: Robust.** Once you know something, you systematically overestimate how obvious it is to others.
@@ -216,8 +216,8 @@ These models help you ethically influence customer decisions.
 
 **Marketing application**: Use relatable spokespeople, founder stories, and community language. "Built by marketers for marketers" signals similarity.
 
-### Unity Principle
-**Evidence: Context-dependent.** Shared-identity framing outperforms mere liking in Cialdini's later work; independent replication is thinner than for the classic six.
+### Shared Identity
+**Evidence: Context-dependent.** Shared-identity framing ("people like us") can outperform mere liking; independent replication is thinner than for reciprocity, authority, or social proof.
 
 **Marketing application**: Position the brand as part of the customer's group using language that group actually uses.
 
@@ -277,7 +277,7 @@ These models specifically address how people perceive and respond to prices. Pai
 
 **Marketing application**: Treat round versus charm pricing as an A/B test, not a rule about your brand's tier.
 
-### Rule of 100
+### Percent-vs-Dollar Discount Heuristic
 **Evidence: Folklore.** A widely repeated copywriting heuristic (percentages under $100, absolute amounts over) with no substantial controlled basis.
 
 **Marketing application**: Use it to generate two discount presentations to test. Do not cite it as a reason.
@@ -318,17 +318,17 @@ These models help you design effective marketing systems.
 
 **Marketing application**: Prefer structural nudges (defaults, ordering, friction removal) over persuasive ones, and measure each.
 
-### BJ Fogg Behavior Model
+### Motivation-Ability-Prompt (Suede Action Check)
 **Evidence: Framework.** Behavior = Motivation × Ability × Prompt. A design heuristic for diagnosing which factor is missing.
 
 **Marketing application**: High motivation but hard to do = won't happen. Easy to do but no prompt = won't happen. Design for all three.
 
-### EAST Framework
+### Easy-Attractive-Social-Timely Check
 **Evidence: Framework.** Make desired behaviors Easy, Attractive, Social, Timely. A checklist distilled from behavioral-insights practice.
 
 **Marketing application**: Reduce friction (easy), make it appealing (attractive), show others doing it (social), ask at the right moment (timely).
 
-### COM-B Model
+### Capability-Opportunity-Motivation Check
 **Evidence: Framework.** Behavior requires Capability, Opportunity, Motivation. Used as a diagnostic in behavior-change design.
 
 **Marketing application**: Can they do it (capability)? Is the path clear (opportunity)? Do they want to (motivation)? Address all three.

@@ -1,8 +1,9 @@
-# Onboarding Experiment Ideas
+# Activation Experiment Ideas
 
-Comprehensive list of A/B tests and experiments for user onboarding and activation.
+Candidate tests from signup through first value. Design, sizing, and stopping rules belong to `suede-ab-testing`; this file only supplies the candidates.
 
 ## Contents
+- Signup Experiments (form design, identity options, copy and trust, trial and commitment, post-submit)
 - Flow Simplification Experiments (reduce friction, step sequencing, progress & motivation)
 - Guided Experience Experiments (product tours, CTA optimization, UI guidance)
 - Personalization Experiments (user segmentation, dynamic content)
@@ -11,6 +12,39 @@ Comprehensive list of A/B tests and experiments for user onboarding and activati
 - Re-engagement Experiments (stalled user recovery, return experience)
 - Technical & UX Experiments (performance, mobile onboarding, accessibility)
 - Metrics to Track
+
+## Signup Experiments
+
+### Form design
+- Single-step vs. multi-step; multi-step with and without a progress bar
+- Minimum fields (email plus password or identity provider) vs. current set
+- Add or remove phone, company, and role fields
+- One "Full name" field vs. first/last split
+- Form embedded on the landing page vs. a separate signup page
+
+### Identity options
+- Add passkeys alongside password
+- Social or SSO buttons above vs. below the email form
+- Which providers to show for this audience (Google, Apple, Microsoft, GitHub)
+- Magic link or one-time code vs. password
+
+### Copy and trust
+- Headline and button text ("Create account" vs. "Start free trial" vs. "Get started")
+- Trial length stated in the button
+- Social proof or security note beside the form
+- Password requirements shown up front vs. on error
+
+### Trial and commitment
+- Card required vs. not required for trial (with renewal terms disclosed either way)
+- Trial length (7 vs. 14 vs. 30 days)
+- Full-access trial vs. feature-limited trial; freemium vs. trial
+- Email verification required up front vs. delayed vs. gated to specific actions
+- Invisible bot checks vs. puzzle CAPTCHA
+
+### Post-submit
+- Instant product access vs. confirm-email-first
+- Auto-login vs. separate login
+- Personalized welcome based on the use-case answer
 
 ## Flow Simplification Experiments
 

@@ -28,7 +28,7 @@ The features still matter (buyers want to know what they're getting), but the *f
 
 ### Define the scope explicitly
 
-What's in. What's out. What's optional. Buyers buy clarity; ambiguity erodes perceived likelihood.
+What's in. What's out. What's optional. Buyers buy clarity; ambiguity erodes confidence.
 
 Example scope statement:
 ```
@@ -46,7 +46,7 @@ Doesn't include:
 
 ### Match the depth to the buyer's stage of awareness
 
-Sophisticated buyers want the methodology and scope. New-to-category buyers want the dream outcome and proof. Read your audience.
+Sophisticated buyers want the methodology and scope. New-to-category buyers want the outcome and proof. Read your audience.
 
 ---
 
@@ -71,7 +71,7 @@ For each major objection your buyer has, add a bonus that closes it:
 | "I'm not sure my team will buy in" | Stakeholder pitch deck for your team |
 | "I've tried something like this before and it didn't work" | Case study of someone in your exact situation |
 
-A 4-bonus stack that closes 4 specific objections converts massively better than a 4-bonus stack of generic "extras."
+Four bonuses that each close a named objection do more work than four generic "extras." Test it: the objection each bonus targets should show up less often in sales calls and replies.
 
 ### Don't inflate
 
@@ -90,7 +90,7 @@ For the full bonus-stacking framework, see [bonus-stacking.md](bonus-stacking.md
 
 What happens if it doesn't work.
 
-A guarantee directly raises perceived likelihood of achievement (the buyer thinks: "they'll only offer this if they're sure"). It also lowers effort & sacrifice (less emotional risk).
+A guarantee directly raises confidence (the buyer thinks: "they'll only offer this if they're sure"). It also lowers effort (less emotional risk).
 
 The wrong guarantee can hurt:
 - Over-promising guarantees attract refund-seekers
@@ -158,7 +158,7 @@ The price is the obvious part. The structure is the underrated part.
 ### Price isn't a number, it's a comparison
 
 Buyers compare the price to:
-- The dream outcome (does this get me the result I want?)
+- The outcome (does this get me the result I want?)
 - The next-best alternative (what else could I buy?)
 - The cost of doing nothing (what does the status quo cost me?)
 - Other items in your own catalog (anchor pricing)

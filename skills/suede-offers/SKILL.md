@@ -1,121 +1,86 @@
 ---
 name: suede-offers
-description: "Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure. Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls)."
+description: "Suede AI offer design and persuasion mechanics: scores the offer on the Suede Value Levers (outcome, confidence, wait, effort), then builds bonuses that each remove an objection, guarantees and risk reversal matched to the buyer's real risk, honest scarcity and deadlines that meet FTC, UK, and EU consumer rules, naming, and payment structure, plus evidence-tiered behavioral models (anchoring, framing, social proof, loss aversion, defaults) stated as testable hypotheses. Returns an Offer Brief. Use when building or diagnosing a service, course, coaching, info-product, agency, or high ticket B2B offer, or when the user asks which psychological lever applies and how to test it. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), in-product upgrade prompts (use suede-paywalls), or clinical and mental-health advice."
 metadata:
-  version: 1.0.0
+  version: 2.0.0
 ---
 
 # Suede Offer Architecture
 
-Suede separates the offer underneath the page from the copy used to present it. Improve the real value exchange (outcome, proof, effort, time, scope, bonuses, guarantee, price structure, and honest constraints) before polishing language around a weak proposition.
+Suede AI separates the offer underneath the page from the copy that presents it. Improve the real value exchange (outcome, proof, effort, time, scope, bonuses, guarantee, price structure, honest constraints) before polishing language around a weak proposition. Behavioral levers come last, as tested hypotheses, never as tricks.
 
 ## Before Starting
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+Read `.agents/product-marketing.md` first if it exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and ask only for what it does not cover.
+
+## Where this skill fits
+
+**Strong fit:** services and productized services, agencies and retainers, courses and cohorts, coaching and masterminds, info products and communities, high-ticket B2B with a sales conversation, direct-response promotions.
+
+**Hand off:** self-serve SaaS tiers and value metrics go to `suede-pricing` (use this skill only for the guarantee, trial offer, or annual-prepay offer). Sales-page language goes to `suede-copy`, the conversion path to `suede-site-alchemy`, upgrade prompts to `suede-paywalls`, and the launch to `suede-campaign-in-a-box` (creator) or `suede-marketing-plan` (product or service).
 
 ---
 
-## Core Philosophy
-
-**The offer is the thing, not the page.** Better copy on a weak offer compounds slowly. A stronger offer with average copy converts immediately. Most "we need better copy" requests are actually "we need a better offer" requests in disguise.
-
-This skill owns the offer underneath the expression. Route sales-page language to `suede-copy`, conversion-path work to `suede-site-alchemy`, tier structure to `suede-pricing`, launch orchestration to `suede-campaign-in-a-box` (creator and artist launches) or `suede-marketing-plan` (product and service launches), and upgrade prompts to `suede-paywalls`.
-
-### When this skill matters
-
-You sell:
-- **Services**: consulting, freelance, agency retainers, productized services
-- **Courses**: async, cohort-based, live
-- **Coaching**: 1:1, group, mastermind
-- **Info products**: guides, swipe files, templates, communities
-- **High-ticket B2B**: $5K+ ACV with a sales conversation
-- **Direct-response**: e-com promo offers, infomercial-style, paid-traffic-to-VSL
-
-### When `suede-pricing` does more of the work
-
-You sell:
-- **Self-serve SaaS** with tiered subscriptions: the levers are mostly tier structure, value metric, and packaging; offer construction (bonuses, guarantees) is secondary
-- **Marketplaces**: the offer is structural, not constructed
-
-Skim this skill in those cases for the value equation framing, then route to `suede-pricing`.
-
----
-
-## The Value Equation
-
-Suede uses a four-lever value equation to diagnose whether the outcome, perceived likelihood, time delay, or required effort is constraining the offer.
+## The Suede Value Levers
 
 ```
-              Dream Outcome  ×  Perceived Likelihood of Achievement
-  Value  =  ─────────────────────────────────────────────────────────
-              Time Delay     ×   Effort & Sacrifice
+              Outcome  ×  Confidence
+  Value  =  ───────────────────────────
+              Wait     ×  Effort
 ```
 
-You move the four levers like this:
+| Lever | What it means | How to raise value |
+|-------|---------------|--------------------|
+| **Outcome** ↑ | The result the buyer wants, one level above the surface ask | Name it specifically. "Five qualified leads a week," not "a website." |
+| **Confidence** ↑ | Belief that it will work for them | Named proof, a specific method, a guarantee, people like them who got results |
+| **Wait** ↓ | Time to first win and full result | Engineer a first win in week one, front-load assets, compress the timeline you can actually hit |
+| **Effort** ↓ | Time, learning, decisions, willpower, social risk | Done-for-you options, defaults, templates, async over live |
 
-| Lever | What it means | How to increase value |
-|-------|---------------|-----------------------|
-| **Dream outcome** ↑ | What the customer actually wants | Connect to the bigger goal behind the surface ask. Specify and name it. |
-| **Perceived likelihood** ↑ | Do they believe they'll get it | Proof (case studies, named customers, data), guarantees, methodology specificity |
-| **Time delay** ↓ | How long until result | Faster onboarding, faster first win, faster end-to-end timeline |
-| **Effort & sacrifice** ↓ | What it costs them in time/work/risk besides money | Done-for-you, simpler process, fewer decisions, lower learning curve |
+Most "lower the price" requests are really "raise the top or shrink the bottom" requests. Price is the comparison, not the value. Full method and scoring prompts: [references/value-levers.md](references/value-levers.md).
 
-**Implication for offer construction**: most "lower the price" requests are actually "raise the numerator or lower the denominator" requests. Price is the comparison, not the value.
+## The six parts of a complete offer
 
-**For the full framework, examples, and how to diagnose which lever is broken:** see [references/value-equation.md](references/value-equation.md)
+| # | Part | Question it answers |
+|---|------|---------------------|
+| 1 | Core deliverable | What do they get, and what is out of scope? |
+| 2 | Bonus stack | Which objection does each bonus remove? |
+| 3 | Guarantee | What happens if it does not work? |
+| 4 | Real constraint | Why now, not later? |
+| 5 | Name | What is this thing called? |
+| 6 | Price and payment | What do they pay, and how? |
 
----
-
-## The Anatomy of a Complete Offer
-
-A complete offer has six components. Skip any one and conversion suffers.
-
-| # | Component | Question it answers |
-|---|-----------|---------------------|
-| 1 | **Core deliverable** | What do they get? |
-| 2 | **Bonus stack** | What else do they get that makes the core feel undervalued? |
-| 3 | **Guarantee** | What happens if it doesn't work? |
-| 4 | **Scarcity / urgency** | Why now, not later? |
-| 5 | **Name** | What is this thing called? |
-| 6 | **Price + payment structure** | What do they pay and how? |
-
-Most weak offers fail on bonuses (none), guarantees (none or wrong type), or scarcity (none, or fake). Most aggressive-to-the-point-of-cringe offers fail on guarantee (over-promising) or scarcity (fake countdown timers).
-
-**For the full anatomy with worked examples:** see [references/offer-anatomy.md](references/offer-anatomy.md)
-
----
+Weak offers usually fail on bonuses (none), guarantees (none or mismatched), or scarcity (none, or fake). Detail: [references/offer-anatomy.md](references/offer-anatomy.md).
 
 ## Reference Library
 
-| Reference | When to read |
-|-----------|--------------|
-| [value-equation.md](references/value-equation.md) | Diagnosing which lever is broken on a stuck offer |
-| [offer-anatomy.md](references/offer-anatomy.md) | Building a complete offer from scratch |
-| [guarantee-design.md](references/guarantee-design.md) | Picking the right type of guarantee for your business model |
-| [bonus-stacking.md](references/bonus-stacking.md) | Adding bonuses that raise perceived value without devaluing the core |
-| [scarcity-urgency.md](references/scarcity-urgency.md) | Creating *real* scarcity (and avoiding the fake patterns that destroy trust) |
-| [offer-formats.md](references/offer-formats.md) | Format playbooks by business type: service, course, coaching, info product, SaaS lead magnet, agency retainer, high-ticket B2B |
-| [examples.md](references/examples.md) | Anonymized worked examples: before/after for each business type |
+| Reference | Read when |
+|-----------|-----------|
+| [value-levers.md](references/value-levers.md) | Finding which lever is binding |
+| [offer-anatomy.md](references/offer-anatomy.md) | Building an offer from scratch |
+| [guarantee-design.md](references/guarantee-design.md) | Picking a guarantee type for the business model |
+| [bonus-stacking.md](references/bonus-stacking.md) | Adding bonuses without devaluing the core |
+| [scarcity-urgency.md](references/scarcity-urgency.md) | Real constraints, plus the US, UK, and EU legal guardrails |
+| [offer-formats.md](references/offer-formats.md) | Playbooks by business type |
+| [examples.md](references/examples.md) | Illustrative before/after composites |
+| [behavioral-models.md](references/behavioral-models.md) | Any time you are about to name a psychological model |
 
 ---
 
 ## The Diagnostic Loop
 
-When the user says "my offer isn't converting" or "I want to improve my offer":
+When the user says "my offer isn't converting" or "help me build an offer":
 
-1. **Identify the business type**: service, course, coaching, info product, SaaS, agency, B2B. The right playbook is type-specific.
-2. **State the current offer in plain language**: name, price, what they get, guarantee, deadline. Write it down even if it lives in scattered places now.
-3. **Run the value equation**: score each of the four levers 1–10. The lowest is the binding constraint. Say the lowest lever out loud, with the specific evidence gap behind its score ("perceived likelihood: 4, no named customer, no before/after number"). Do not score all four above 6; if the offer genuinely looks that strong, the score is not the finding: name what would have to be true for the current conversion rate to make sense, and go get that instead. A flattering scorecard produces no binding constraint, which means step 5 has nothing to work on.
-4. **Audit the anatomy**: which of the six components is missing or weak?
-5. **Pick one lever to fix this iteration**: don't rebuild everything. The biggest lever is usually the one currently scoring lowest.
-6. **Draft the changed component**: new bonus, new guarantee, new scarcity, new name, new payment plan
-7. **Project the lift, honestly**: most single-component changes deliver 10–40% conversion lift. Anyone promising 5x is selling something. Two consecutive iterations on different levers can stack to 2–3x.
+1. **Identify the business type.** The playbook is type-specific.
+2. **Write the current offer in plain language:** name, price, deliverables, guarantee, deadline.
+3. **Score the four levers 1-10.** Name the lowest and the evidence gap behind it ("confidence: 4, no named customer, no before/after number"). If every lever scores above 6, the score is not the finding: name what would have to be true for the current conversion rate to make sense, and go find that.
+4. **Audit the six parts.** Which is missing or weak?
+5. **Change one lever this iteration.** Usually the lowest.
+6. **Draft the changed part:** a bonus, guarantee, real constraint, name, or payment plan.
+7. **Set the measurement, not a forecast.** Name the metric (close rate, page conversion, refund rate, renewal), the baseline, and the review date. Do not promise a lift percentage; nobody knows it before the test.
 
 ### Output: Offer Brief
 
-Return the result of the loop in this exact structure: the same headings whether
-the offer is new or being repaired:
+Use these headings verbatim whether the offer is new or being repaired:
 
 ```markdown
 # Offer Brief: [offer name]
@@ -123,57 +88,88 @@ the offer is new or being repaired:
 ## Name
 ## Core deliverable
 ## Bonus stack
-[Each bonus, and the objection it removes. No invented "$ value" figures.]
+[Each bonus and the objection it removes. No invented "$ value" figures.]
 ## Guarantee + conditions
-[Type, the exact conditions, and who eats the cost when it's claimed.]
+[Type, exact conditions, and who carries the cost when it is claimed.]
 ## Real constraint behind the deadline
-[The actual reason now beats later: capacity, cohort start, price change.
- If there is no real constraint, write "none" and drop the deadline.]
+[Capacity, cohort start, price change, or inventory. If none, write
+ "none" and drop the deadline.]
 ## Price + payment structure
 ## Lever changed this iteration
-[Which of the four, its score before, and what evidence moves it.]
+[Which lever, its score before, and what evidence moves it.]
+## Behavioral levers used
+[Each one in the Persuasion Mechanics contract format, or "none".]
+## What to measure
+[Metric, baseline, review date.]
 ## What I did not change and why
 ```
 
 ---
 
-## When NOT to Use Offer-Design Tactics
+## Persuasion Mechanics
 
-Some offer patterns work but cost more than they're worth:
+Use behavioral science to remove confusion and fear, never to trap. Read the relevant entries in [references/behavioral-models.md](references/behavioral-models.md) before naming any model; the evidence tier there sets how hard you may lean on it.
 
-- **Manipulative scarcity**: fake countdown timers, "only 3 spots left" lies. Short-term lift, long-term trust collapse. Don't.
-- **Over-promising guarantees**: "double your revenue or refund + $1,000." Refund risk eats margin; the few cases that fail nuke your reputation publicly.
-- **Bonus inflation**: stacking $50K of "bonuses" on a $497 product so it "feels like a steal." Sophisticated buyers see this. Treat bonuses as additive, not exaggerated.
-- **Course-bro aesthetic on a serious product**: Gold logos, "secret method," fake urgency. Pattern-matches to scam. Wrong room.
+### Quick Reference
 
-The Suede voice is direct, specific, and honest. Building offers well does not mean building offers loud.
+| Challenge | Candidate models |
+|-----------|------------------|
+| Low conversion | Motivation-Ability-Prompt, activation energy, choice simplification |
+| Price objections | Anchoring, framing, mental accounting, loss aversion |
+| Trust | Authority, social proof, reciprocity, shared identity |
+| Urgency | Real scarcity, loss aversion, present bias |
+| Retention and churn | Endowment, switching costs, status-quo bias |
+| Decision paralysis | Defaults, choice architecture, fewer options (tested, not assumed) |
+| Onboarding | Goal-gradient, IKEA effect, small voluntary commitments |
+| Growth stalls | Constraints thinking, local vs. global optima, compounding |
+
+### Per-recommendation contract
+
+```
+**Mechanism:** [model]: [the behavior it predicts, one sentence]
+**Evidence:** [Robust / Context-dependent / Contested / Folklore / Framework,
+copied from the catalog], [what that tier allows you to claim here]
+**Application:** [the specific change to this offer, page, price, or sequence]
+**Test:** [what changes, the metric, the success threshold, how long it runs]
+```
+
+Contested and Folklore entries are experiments to run, never reasons a change will work. If nothing in the catalog fits, say so instead of stretching a model.
+
+### Ask before recommending
+
+1. What behavior are you trying to change?
+2. What does the buyer believe before they see this?
+3. Where are they: unaware, comparing, or deciding?
+4. What is stopping the action today?
+5. What have you already tested?
 
 ---
 
-## Banned Vocabulary
+## Patterns to refuse
 
-When drafting offer language (sales pages, emails, headlines), avoid:
+- **Manufactured scarcity:** resetting timers, "only 3 left" on unlimited digital goods, fake "N people viewing." Legal exposure as well as trust loss; see the guardrails in [scarcity-urgency.md](references/scarcity-urgency.md).
+- **Over-promising guarantees:** "double your revenue or a refund plus $1,000." The few failures become public.
+- **Bonus inflation:** $50K of "bonuses" on a $497 product.
+- **Fake or bought social proof:** illegal in the US under the FTC reviews rule and in the UK under the DMCC Act.
+- **Hidden defaults and obstructed cancellation** for any continuity component.
 
-- **"Game-changing," "revolutionary," "disruptive," "next-level," "10x"**: pattern-matches to AI slop / course-bro
-- **"Secret," "hidden," "what they don't want you to know"**: clickbait
-- **"Limited time" with no actual time limit**: lying
-- **"Worth $X" or "$Y value" with no comparable**: inflation
-- **"100% guaranteed" without specifying conditions**: legally and brand-wise risky
+## Banned vocabulary in offer language
 
-Use specific numbers, named customers, concrete outcomes, real timelines. Specificity beats superlatives.
-
----
+"Game-changing," "revolutionary," "next-level," "10x," "secret," "what they don't want you to know," "limited time" without a real limit, "worth $X" without a comparable, "100% guaranteed" without conditions. Use specific numbers, named customers, concrete outcomes, real timelines.
 
 ## Boundaries
 
-- Do not invent outcome evidence, comparable value, scarcity, deadlines, testimonials, guarantee economics, or refund terms.
+- Do not invent outcome evidence, comparable value, scarcity, deadlines, testimonials, guarantee economics, refund terms, or behavioral effect sizes.
 - Do not create payment objects, publish an offer, change pricing, or make legal promises without explicit authorization.
-- Do not recommend coercive urgency, inaccessible cancellation, or conditions hidden from the buyer.
+- Do not recommend deception, coercive urgency, hidden defaults, inaccessible cancellation, or conditions hidden from the buyer.
+- Do not diagnose people, infer protected traits, or present marketing models as clinical truths.
 - Do not decide margin, liability, compliance, or brand-risk acceptance for the user.
 
 ## Routing
 
-- Use `suede-pricing` for tiers, packaging, and value metrics.
-- Use `suede-copy` for the sales page and `suede-site-alchemy` for the conversion path.
-- Use `suede-campaign-in-a-box` (creator/artist) or `suede-marketing-plan` (product/service) to launch the offer; `suede-launch-packaging` only when the thing shipping is software and its install path. Use `suede-paywalls` for in-product upgrade prompts.
-- Use `suede-sales-enablement`, `suede-emails`, or `suede-marketing-psychology` for approved execution.
+- `suede-pricing` for tiers, packaging, and value metrics.
+- `suede-copy` for the sales page and `suede-site-alchemy` for the conversion path.
+- `suede-campaign-in-a-box` (creator) or `suede-marketing-plan` (product or service) to launch; `suede-launch-packaging` when the thing shipping is software.
+- `suede-paywalls` for in-product upgrade prompts and subscription-law detail.
+- `suede-ab-testing` to size and read out any offer or behavioral test.
+- `suede-sales-enablement` or `suede-emails` for approved execution.

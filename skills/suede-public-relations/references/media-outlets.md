@@ -1,212 +1,121 @@
 # Media Outlets: Where to Pitch
 
-A starting discovery list for software/SaaS PR, not a current media database.
-Verify every outlet, byline, role, contact preference, and submission path from a
-current first-party source before drafting. For startup/SaaS/AI directories, use
-`suede-directory-submissions`.
+A starting discovery list for software, SaaS, and AI PR, not a media database. Outlets launch, merge, and close every year, and journalists move. Verify every outlet, byline, role, contact preference, and submission path from a current first-party source before drafting. Last reviewed October 2026. For startup, SaaS, and AI directories, use `suede-directory-submissions`.
 
 ## How to use this list
 
-- **Don't pitch a publication. Pitch a journalist at that publication.** See [journalist-pitching.md](journalist-pitching.md) for the discovery workflow.
-- **Tier signals quality, not effort**: a small tier-3 outlet might be perfect for your niche
-- **Submission/tip URLs may be stale**: use the route the current outlet or
-  journalist explicitly requests
-- **This list ages fast**: verify the outlet still exists and the journalist is still there before pitching
+- **Pitch a journalist, not a publication.** See [journalist-pitching.md](journalist-pitching.md) for discovery and scoring.
+- **Check what AI assistants cite first.** Ask ChatGPT, Claude, Perplexity, and Google AI Mode the buyer's top category questions and record which outlets they cite. Those outlets earn a higher tier for this campaign, whatever their size.
+- **Tier signals reach, not fit.** A small trade newsletter can be the best placement for a niche product.
+- **Use the contact route the outlet or journalist asks for.** Tip forms and preferences change.
 
 ---
 
-## Tech & Startup Press (Tier 1)
+## Tech and startup press
 
-The big names. High bar to clear, high payoff when you do. Pitch the specific reporter, not the tip line.
+| Outlet | Best for |
+|--------|---------|
+| **TechCrunch** | Funding, launches, startup news |
+| **The Verge** | Consumer tech, products, policy |
+| **Wired** | Long-form tech, culture, business |
+| **Fast Company** | Innovation, design, business strategy |
+| **VentureBeat** | AI and enterprise tech |
+| **Ars Technica** | Deep tech, science, policy |
+| **The Information** | Subscriber scoops on the tech industry |
+| **Bloomberg, Reuters, WSJ, NYT tech desks** | Business-angle and mainstream tech stories |
 
-| Outlet | Best for | Tip URL |
-|--------|---------|---------|
-| **TechCrunch** | Funding, product launches, startup news | techcrunch.com/got-a-tip/ |
-| **The Verge** | Consumer tech, product reviews, policy | theverge.com/contact |
-| **Wired** | Long-form tech, culture, business | wired.com/about/feedback |
-| **Fast Company** | Innovation, design, business strategy | fastcompany.com/contact-us |
-| **VentureBeat** | AI, enterprise tech, gaming | venturebeat.com/contribute |
-| **Ars Technica** | Deep tech, science, policy | arstechnica.com/contact-us |
-| **The Information** | Subscription-gated, scoops on tech industry | theinformation.com/about |
-| **Bloomberg / Reuters** | Business, finance, big-picture stories | bloomberg.com/feedback |
-| **WSJ Tech** | Enterprise, business angle | wsj.com/tips |
-| **NYT Tech** | Mainstream tech, culture | nytimes.com/tips |
+Pitch the specific reporter whose recent bylines match; tip lines are for genuine news.
 
----
-
-## SaaS & B2B (Tier 1–2)
-
-Lower-profile than the consumer tech outlets but often higher ROI for B2B SaaS.
+## SaaS and B2B
 
 | Outlet | Best for | Notes |
 |--------|----------|-------|
-| **SaaStr** | B2B SaaS founders, growth, sales | Jason Lemkin's outlet; pitch contributed posts |
-| **First Round Review** | Operator-level B2B insights | High bar; original frameworks only |
-| **OpenView** | SaaS metrics, PLG, pricing | Often runs research-backed pieces |
-| **Lenny's Newsletter** | Product / growth | Subscriber-only; pitch via Lenny directly on X |
-| **Future (a16z)** | Tech + culture pieces | Long-form, original thinking required |
-| **Stratechery** | Tech strategy analysis | Don't pitch Ben Thompson; engage via responses |
+| **SaaStr** | B2B SaaS founders, growth, sales | Contributed posts and events |
+| **First Round Review** | Operator-level B2B insight | High bar; original frameworks and data |
+| **Lenny's Newsletter and podcast** | Product and growth | Guest posts and interviews by invitation; lead with original data |
+| **Growth Unhinged** | SaaS pricing, PLG, GTM | Research-backed angles |
+| **Demand Curve, Trends.vc** | Growth tactics, market trends | Newsletter features |
 
----
+## AI and machine learning
 
-## AI / ML Press (Tier 1–2)
+| Outlet | Best for |
+|--------|----------|
+| **MIT Technology Review** (and The Algorithm newsletter) | AI policy, capability, ethics; slower cycle |
+| **The Decoder** | Fast-turn AI news |
+| **Import AI, The Batch, Interconnects** | Research-heavy newsletters; pitch data, not launches |
+| **Latent Space** | Practitioner AI engineering (podcast and newsletter) |
+| **Hugging Face blog** | Open-source AI tools; community posts |
 
-The hottest beat right now. Reporters here are inundated: your angle has to be sharp.
+## Developer and DevTools
 
-| Outlet | Best for | Notes |
-|--------|----------|-------|
-| **The Decoder** | AI news, fast-turn | Daily AI news cycle |
-| **Import AI** (Jack Clark) | Weekly AI newsletter | Pitch research-backed angles |
-| **The Batch** (Andrew Ng) | AI industry analysis | Submitted by deeplearning.ai team |
-| **MIT Technology Review** | AI policy, capability, ethics | Higher bar, slower cycle |
-| **Hugging Face blog** | Open-source AI tools | Contributed posts welcome |
-| **Latent Space** | Practitioner-focused AI/ML | Podcast + newsletter |
+| Outlet | Notes |
+|--------|-------|
+| **The New Stack** | Contributor program; infra and cloud-native |
+| **InfoQ** | Enterprise software architecture |
+| **The Pragmatic Engineer** | Engineering leadership newsletter; original engineering insight only |
+| **Console, DevTools FM, The Changelog, Software Engineering Daily** | Newsletters and podcasts for tools and maintainers |
+| **DEV Community, Hacker Noon** | Self-published; useful for credibility, low signal on their own |
 
----
+## Business and marketing
 
-## Developer & DevTools Press
+| Outlet | Notes |
+|--------|-------|
+| **Inc., Entrepreneur** | Founder stories; contributor programs vary |
+| **HBR.org** | Original research and frameworks; long lead time |
+| **Marketing Brew, Adweek, Ad Age** | Marketing industry news; reporter-driven |
+| **Search Engine Land, Search Engine Journal** | SEO, paid search, AI search; high-intent audience for search and AEO stories |
+| **MarketingProfs** | B2B marketing; contributor-friendly |
 
-Where to pitch if your audience is engineers.
+## Business and tech newsletters
 
-| Outlet | Best for | Notes |
-|--------|----------|-------|
-| **The New Stack** | DevTools, infra, cloud-native | Active contributor program |
-| **InfoQ** | Enterprise dev, software architecture | Long-form technical pieces |
-| **DEV.to** | Self-published, community-driven | Build credibility before pitching |
-| **Hacker Noon** | Tech blogging platform | Easy to publish but low signal |
-| **Console** | DevTools newsletter | Curated weekly; submit projects |
-| **DevTools FM** | Podcast | Pitch as guest |
-
----
-
-## Business & Marketing Press
-
-For pitching the business / marketing angle of your story.
-
-| Outlet | Best for | Notes |
-|--------|----------|-------|
-| **Inc.** | Founder stories, business advice | Contributor program available |
-| **Entrepreneur** | Small business, growth | Volume publisher; quality varies |
-| **HBR.org** | Original research, frameworks | High bar; long lead time |
-| **MarketingProfs** | B2B marketing | Contributor-friendly |
-| **Marketing Brew (Morning Brew)** | Daily marketing newsletter | Reporter-driven, pitch directly |
-| **Marketing Land / Search Engine Journal** | SEO, SEM, channels | Niche but high-intent audience |
-| **Reforge** | Growth, product, retention | Original framework required |
-
----
-
-## Newsletters (Reporter-Driven)
-
-Newsletters are increasingly the most valuable PR placement: small audiences, but high-intent.
-
-| Newsletter | Audience | How to pitch |
-|-----------|---------|--------------|
-| **Lenny's Newsletter** | Product/growth, ~600k readers | DM Lenny on X with sharp angle |
-| **The Pragmatic Engineer** (Gergely Orosz) | Software eng leaders | Pitch via email; original engineering insights |
-| **The Generalist** (Mario Gabriele) | Tech business analysis | Pitch via email; deep angles |
-| **Stratechery** (Ben Thompson) | Tech strategy | Don't pitch; engage in replies |
-| **Newcomer** (Eric Newcomer) | Tech business + scoops | Tips welcome via email |
-| **Platformer** (Casey Newton) | Tech + policy | Pitch via Substack |
-| **Big Technology** (Alex Kantrowitz) | Big Tech analysis | Pitch via Substack |
-| **Not Boring** (Packy McCormick) | Tech + culture | Tough to crack; original takes only |
-
-**For B2B SaaS:**
-- **SaaStr Daily**
-- **Demand Curve**
-- **Growth Unhinged** (Kyle Poyar)
-- **Trends.vc**
-
-**For AI:**
-- **Import AI** (Jack Clark)
-- **The Batch** (Andrew Ng)
-- **The Algorithm** (MIT Tech Review)
-- **Interconnects** (Nathan Lambert)
-- **AI Tidbits**
-
----
+| Newsletter | Audience |
+|-----------|---------|
+| **The Generalist, Newcomer, Platformer, Big Technology, Not Boring** | Tech business analysis and scoops; original takes or genuine news only |
+| **Stratechery** | Tech strategy; does not take pitches |
 
 ## Podcasts
 
-A podcast appearance is often higher leverage than a press hit: longer engagement, evergreen replay, audience trust transfer.
+A podcast appearance often outlasts a press hit and produces transcripts that search engines and AI assistants can read.
 
-### Top SaaS / startup podcasts
-- **Lenny's Podcast**: product/growth
-- **My First Million**: founder stories, business ideas
-- **The Twenty Minute VC**: funding angle
-- **SaaStr Podcast**: B2B SaaS
-- **Acquired**: deep-dive company stories (don't pitch unless you're a unicorn)
-- **The All-In Podcast**: broad tech/business (very hard to get on)
+- **Startup and SaaS:** Lenny's Podcast, My First Million, The Twenty Minute VC, SaaStr Podcast
+- **AI:** No Priors, Latent Space, Practical AI, The TWIML AI Podcast, The Cognitive Revolution
+- **Developer:** The Changelog, Software Engineering Daily, DevTools FM
 
-### Top AI podcasts
-- **No Priors** (Sarah Guo, Elad Gil)
-- **Latent Space**
-- **Practical AI**
-- **The TWIML AI Podcast**
-- **The Cognitive Revolution**
+How to pitch a podcast:
+1. Listen to three recent episodes.
+2. Use the host's stated channel (guest form, email).
+3. Pitch a topic and what listeners will learn, not yourself.
+4. Bring evidence: prior appearances, your data, a clear angle.
+5. Include a short bio, headshot link, and suggested questions.
+6. Ask whether the show publishes transcripts or show notes; both help search visibility.
 
-### Top dev / engineering podcasts
-- **The Changelog**
-- **Software Engineering Daily**
-- **DevTools FM**
-
-### How to pitch a podcast
-
-1. **Listen to 3 episodes**: non-negotiable
-2. **Find the host's preferred channel** (X DM, email, guest form)
-3. **Pitch a topic, not yourself**: "I'd love to come on and talk about [specific angle]" not "I'd love to be a guest"
-4. **Bring evidence**: links to other appearances, your unique angle, what listeners will learn
-5. **Make it easy**: bio, headshot, suggested questions in the pitch
-
----
-
-## Industry / Vertical Press
-
-Don't overlook trade press: smaller audience, much higher intent.
+## Industry and vertical press
 
 | Vertical | Outlets to investigate |
 |----------|----------------------|
-| **Marketing** | Adweek, Marketing Brew, AdAge, Search Engine Land |
-| **Sales** | Sales Hacker, Modern Sales Pros |
-| **HR / People Ops** | HR Brew, SHRM, HR Dive |
-| **Finance / Fintech** | The Block, CoinDesk, Finextra |
-| **Healthcare tech** | STAT, MobiHealthNews, Healthcare IT News |
-| **Education tech** | EdSurge, EdScoop |
-| **Real estate tech** | Inman, The Real Deal |
-| **Legal tech** | Above the Law, Law360 |
-| **Climate tech** | Heatmap, Canary Media, Latitude Media |
-| **Devtools** | The New Stack, InfoQ, DevOps.com |
+| Marketing | Adweek, Marketing Brew, Ad Age, Search Engine Land |
+| HR and people | HR Brew, SHRM, HR Dive |
+| Finance and fintech | Finextra, The Block, CoinDesk |
+| Healthcare tech | STAT, MobiHealthNews, Healthcare IT News |
+| Education tech | EdSurge, EdScoop |
+| Real estate tech | Inman, The Real Deal |
+| Legal tech | Above the Law, Law360 |
+| Climate tech | Heatmap, Canary Media, Latitude Media |
+| Developer tools | The New Stack, InfoQ, DevOps.com |
 
-For your specific vertical: Google `"top publications" + "[your industry]"` and run the same scoring exercise from [journalist-pitching.md](journalist-pitching.md).
+For other verticals, search for the publications the category's buyers read, then score them with the rubric in [journalist-pitching.md](journalist-pitching.md).
 
----
+## Regional and local
 
-## Regional / Local
+Local business journals (the Bizjournals network), local public radio, local TV business segments, and regional tech news (for example Built In city editions) are underused for companies with a regional angle.
 
-If your company has a regional angle (HQ location, customer concentration, government contract), local press is underrated.
+## Not on this list
 
-- **Local business journals**: Bizjournals network covers 40+ US cities
-- **Local NPR affiliates**: high-quality, business angle welcomed
-- **Local TV business segments**: high reach, easy to get
-- **State / regional tech news**: e.g., Built In (Chicago, Austin, etc.), TechBuzz (Utah)
+- **Product Hunt, BetaList, Indie Hackers:** launch and directory platforms; use `suede-directory-submissions`.
+- **Press release wires:** useful for disclosure and indexable announcements, rarely a reason journalists cover you. Use them when there is a disclosure need or a dated record worth publishing, not as a substitute for pitching.
+- **Paid "as featured in" placements:** buying coverage presented as editorial misleads readers and, when undisclosed, breaks FTC endorsement rules.
+- **Guest-post link networks:** Google's spam policies target link schemes.
 
----
+## Maintaining the list
 
-## What's NOT On This List (And Why)
-
-- **Product Hunt, BetaList, Indie Hackers**: these are directories, not press. Use the suede-directory-submissions skill.
-- **Press release wires** (PRNewswire, BusinessWire, GlobeNewswire): overpriced for early-stage; journalists ignore them. Skip until you have IR / SEC requirements.
-- **"As featured in" badge mills**: paid "media coverage" services. Worthless and damaging.
-- **Random "guest post" SEO link networks**: Google penalizes these. Don't.
-
----
-
-## Maintaining This List
-
-This list will go stale. Refresh from current first-party sources:
-
-- **Periodic review:** choose the interval from campaign activity and source
-  volatility
-- **Campaign planning:** add relevant outlets only after current verification
-- **Per pitch:** confirm the journalist is still there before sending (check X / LinkedIn for "joined [new place]")
-
-Store your live, working version in `.agents/media-list.md` (per [journalist-pitching.md](journalist-pitching.md)).
+Store the working list in `.agents/media-list.md`. Before each pitch, confirm the journalist is still at the outlet and still on the beat. Refresh the whole list on a cadence that matches campaign activity.

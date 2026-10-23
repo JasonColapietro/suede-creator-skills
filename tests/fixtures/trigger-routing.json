@@ -716,7 +716,6 @@
       "id": "marketing-planning",
       "skills": [
         "suede-marketing-plan",
-        "suede-marketing-ideas",
         "suede-marketing-council",
         "suede-marketing-loops"
       ],
@@ -728,35 +727,19 @@
             "90 day plan",
             "12 month roadmap",
             "growth plan",
-            "go to market"
-          ],
-          "negative": [
-            "shortlist",
-            "tactic library",
-            "simulated advisors",
-            "recurring workflow",
-            "weekly review"
-          ],
-          "metadataMustContain": [
-            "marketing planning"
-          ]
-        },
-        {
-          "skill": "suede-marketing-ideas",
-          "positive": [
+            "go to market",
             "shortlist",
             "tactic library",
             "growth tactics",
             "stuck"
           ],
           "negative": [
-            "90 day plan",
-            "12 month roadmap",
             "simulated advisors",
-            "recurring workflow"
+            "recurring workflow",
+            "weekly review"
           ],
           "metadataMustContain": [
-            "marketing ideation"
+            "marketing planning"
           ]
         },
         {
@@ -804,12 +787,13 @@
           "expected": "suede-marketing-plan"
         },
         {
-          "id": "marketing-ideas-negative",
+          "id": "marketing-shortlist-negative",
           "mode": "negative",
           "prompt": "I am stuck — give me a shortlist of growth tactics from the tactic library.",
-          "expected": "suede-marketing-ideas",
+          "expected": "suede-marketing-plan",
           "forbidden": [
-            "suede-marketing-plan"
+            "suede-marketing-council",
+            "suede-marketing-loops"
           ]
         },
         {
@@ -818,8 +802,7 @@
           "prompt": "Design a recurring workflow for ad fatigue, content refresh, and weekly review.",
           "expected": "suede-marketing-loops",
           "forbidden": [
-            "suede-marketing-plan",
-            "suede-marketing-ideas"
+            "suede-marketing-plan"
           ]
         },
         {
@@ -1010,35 +993,19 @@
     {
       "id": "activation",
       "skills": [
-        "suede-signup",
         "suede-onboarding",
         "suede-churn-prevention"
       ],
       "fallback": "clarify",
       "routes": [
         {
-          "skill": "suede-signup",
+          "skill": "suede-onboarding",
           "positive": [
             "account creation",
             "registration",
             "field friction",
             "progressive profiling",
-            "trial start"
-          ],
-          "negative": [
-            "first value",
-            "empty states",
-            "setup checklists",
-            "cancel flows",
-            "win back"
-          ],
-          "metadataMustContain": [
-            "signup conversion"
-          ]
-        },
-        {
-          "skill": "suede-onboarding",
-          "positive": [
+            "trial start",
             "first value",
             "empty states",
             "setup checklists",
@@ -1046,9 +1013,6 @@
             "time to value"
           ],
           "negative": [
-            "account creation",
-            "registration",
-            "field friction",
             "cancel flows",
             "win back"
           ],
@@ -1078,10 +1042,10 @@
       ],
       "cases": [
         {
-          "id": "signup-positive",
+          "id": "onboarding-signup-positive",
           "mode": "positive",
           "prompt": "Audit account creation and registration for field friction and progressive profiling.",
-          "expected": "suede-signup"
+          "expected": "suede-onboarding"
         },
         {
           "id": "onboarding-negative",
@@ -1089,7 +1053,7 @@
           "prompt": "Users never reach first value — design empty states, setup checklists, and time to value.",
           "expected": "suede-onboarding",
           "forbidden": [
-            "suede-signup"
+            "suede-churn-prevention"
           ]
         },
         {
@@ -1098,7 +1062,6 @@
           "prompt": "Design cancel flows, pause paths, save offers, and failed payment recovery.",
           "expected": "suede-churn-prevention",
           "forbidden": [
-            "suede-signup",
             "suede-onboarding"
           ]
         },

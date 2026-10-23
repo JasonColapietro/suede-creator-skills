@@ -1,13 +1,13 @@
 ---
 name: suede-revops
-description: "Suede-owned revenue-operations discipline. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval."
+description: "Suede AI revenue operations: lifecycle stage definitions, fit and engagement lead scoring, MQL and SQL criteria, routing rules and speed-to-lead SLAs, pipeline stages and hygiene, CRM automation build lists for HubSpot, Salesforce, and Zapier, deal-desk approval tiers, enrichment and dedup, and a metrics dashboard spec, including where AI agents can safely run enrichment, routing, and follow-up steps. Returns implementation-ready documents the user can build from. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), building prospect lists (use suede-prospecting), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval."
 metadata:
   version: 2.0.0
 ---
 
 # Suede Revenue Operations
 
-Suede RevOps maps the lifecycle rules, data contracts, scoring, routing, and
+Suede AI RevOps maps the lifecycle rules, data contracts, scoring, routing, and
 handoffs that connect acquisition, sales, and customer success. It produces
 implementation-ready operating logic while keeping production CRM mutation
 behind live-schema review and approval.
@@ -142,13 +142,13 @@ Define response times and document them:
 
 ### Speed-to-Lead
 
-Response time is one of the largest controllable factors in lead conversion.
-Widely cited vendor studies (Lead Connect, InsideSales) report order-of-magnitude
-differences; treat the ordering as reliable and the multipliers as unverified
-until measured on your own data:
-- Contact within **5 minutes**: the target; qualification rates fall steeply after it
-- After **30 minutes**, conversion drops sharply
-- After **24 hours**, the lead is effectively cold
+Response time is one of the largest controllable factors in inbound conversion.
+Older vendor studies report order-of-magnitude differences with undisclosed
+methods; trust the direction, not the multipliers, and measure your own curve
+(method in `references/routing-rules.md`):
+- Default target: first touch within **5 minutes** during business hours
+- Expect a steep drop within the first hour
+- Treat leads untouched for **24 hours** as cooling and route them to nurture with a reason code
 
 Build routing rules that prioritize speed. Alert reps immediately. Escalate if SLA is missed.
 
@@ -269,7 +269,9 @@ proposing any of them.
 
 ### Key Metrics
 
-| Metric | Formula / Definition | Benchmark |
+Benchmark columns are illustrative starting ranges, not sourced industry figures. Replace each with the user's own trailing-quarter value before setting targets.
+
+| Metric | Formula / Definition | Illustrative range |
 |--------|---------------------|-----------|
 | Lead-to-MQL rate | MQLs / Total leads | 5-15% |
 | MQL-to-SQL rate | SQLs / MQLs | 30-50% |
@@ -315,10 +317,20 @@ documentation before proposing implementation.
 | Tool Category | Examples | Verify Before Use |
 |---------------|----------|-------------------|
 | CRM | HubSpot, Salesforce | Objects, fields, ownership, automation, permissions |
-| Scheduling | Calendly, SavvyCal | Routing logic, availability, privacy |
-| Enrichment | Clearbit, Apollo | Provenance, freshness, lawful basis, credit cost |
-| Automation | ActiveCampaign, Zapier | Trigger scope, retries, rollback, secrets |
-| Partner operations | Introw, Crossbeam | Account matching, deal rules, commissions |
+| Scheduling | Calendly, SavvyCal, Chili Piper | Routing logic, availability, privacy |
+| Enrichment | HubSpot Breeze Intelligence (formerly Clearbit, whose standalone product was retired), Apollo, Clay, ZoomInfo | Provenance, freshness, lawful basis, credit cost |
+| Automation | Zapier, Make, n8n, native CRM workflows | Trigger scope, retries, rollback, secrets |
+| AI agents | CRM-native agents (HubSpot Breeze agents, Salesforce Agentforce), custom multi-agent workflows | Which steps run unattended, what they can write, audit log, human checkpoint |
+| Partner operations | Crossbeam, partner-relationship tools | Account matching, deal rules, commissions |
+
+### Where AI agents fit
+
+Agents are good at the repetitive middle of revops: enriching a new lead, checking it against routing rules, drafting the first-touch email for rep approval, summarizing a call into CRM fields, and flagging stale deals. Keep three rules:
+1. Agents read and draft freely; they write to the CRM only within fields and objects the owner approved, with every write logged.
+2. Anything that contacts a prospect, changes ownership, or alters a deal amount stays behind a human checkpoint unless the user explicitly authorizes otherwise with caps.
+3. Measure the agent like a rep: speed-to-lead, routing accuracy, and error rate per week.
+
+Suede AI's Agent Studio (https://suedeai.app) builds and runs multi-agent workflows like these for teams that want them operated end to end; `suede-marketing-loops` designs the recurring checks and checkpoints either way.
 
 ---
 
