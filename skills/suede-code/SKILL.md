@@ -1,234 +1,428 @@
 ---
 name: suede-code
-description: "Suede AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs. Use when asked to review this, grade this, security-check this, is this safe to ship, or check this PR before merge: whenever the caller wants both what is wrong and whether it ships. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: findings only with accessibility and SEO lanes (use suede-code-review); the letter grade alone (use suede-code-grader); making CI enforce the verdict on merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval)."
+description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---
 
 # Suede Code
 
+One skill for judging code: what is wrong, and whether it ships. Every finding
+has a file, evidence, and a fix path. Every grade has the evidence that earned
+it. No finding without evidence; no volume without signal.
+
+**Runs only when asked.** Never fire this as a side effect of a diff, a save,
+or a commit.
+
 ## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
+Every check, grade, and ship verdict here is a recommendation to the user, not
+a control on the agent.
 
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky (data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage), pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+- Run every check and report results honestly. `ship`, `ship-with-caveats`,
+  `hold`, letter grades, and BLOCKED items are advice attached to the work.
+- Never block, delay, skip, or rewrite the action the user asked for because a
+  gate said hold. A failed gate changes what you report, never what you do.
+- Single exception: an extreme-risk finding (data loss, credential exposure,
+  legal or rights violation, payment mistake, irreversible public damage).
+  Pause, state the risk and the options, and let the user pick. Their choice
+  is final.
 
+## Pick the mode
 
-One pass for code: a deep, evidence-based review **and** a blunt A-F ship grade, together by default. Findings tell you what is wrong; the grade tells you whether it ships. Every finding has a file, evidence, and a fix path. No findings without evidence. No volume without signal.
+| Request sounds like | Mode | Emits |
+|---|---|---|
+| "review and grade", "is this safe to ship", "check this PR" | **full** (default) | Findings, grade, deploy safety, commit dirt, ship gate |
+| "findings only", "no grade", "line by line", "find the bugs" | **`--findings-only`** | Findings, deploy safety, commit dirt, ship gate. No letters. |
+| "grade only", "give it a letter", "A-F verdict", "should this merge" | **`--grade-only`** | Lane grades, caps, required upgrades, ship gate. No findings list. |
 
-**Runs only when asked.** This skill never auto-fires on a diff, a save, or a commit. Invoke it explicitly (review this, grade this, security-check this, is this safe to ship). Do not run it as a side effect of other work.
+Grade-only still runs Step 1 (Instant-F) and still reads the code. It skips
+the itemized findings output, not the investigation.
 
-## Model Routing
+Other modes that combine with any of the above:
 
-Default: Sonnet. Recommend Opus for auth, payments, and public API surface reviews.
+- **Plan review:** nothing built yet; check scope, sequencing, acceptance
+  criteria, test mapping, and missing decisions.
+- **Fix verification:** after fixes, rescan only the changed files and confirm
+  each original finding is gone.
+- **Release review:** add build, secrets, env, public copy, screenshots,
+  metadata, and live or API readback.
+- **`--fix`:** apply fixes (see Fix Mode).
+- **`--threat-verify`:** confirm declared threat-model mitigations exist.
+  Procedure in `references/threat-verify.md`; read it only in this mode.
 
-## Operating Stance
+**Depth** (state it at the top of every output):
 
-- Review current source, current diff, local docs, and relevant runtime behavior.
-- Keep code generation and review separate. If you authored the code, switch into review mode and look for what your implementation would miss.
-- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files.
-- Prefer high-signal findings over volume. Do not leave style nits when formatters or local conventions already handle them.
-- Every blocking finding needs evidence, impact, and a concrete fix path.
+- `--quick` (about 2 min): pattern scan for obvious bugs, secrets, missing null
+  checks, injection, broken error handling. No cross-file analysis.
+- `--standard` (default, about 10 min): per-file correctness on changed paths,
+  language traps, state handling, test coverage of changed behavior, call graph
+  within changed files, maintainability baseline.
+- `--deep` (about 25 min): full import graph, call-chain tracing, whole-repo and
+  history pass, critic lanes. Use for auth, payments, migrations, public APIs.
 
-## Review Contract
+Model: Sonnet by default. Recommend Opus for auth, payments, and public API
+surfaces.
 
-Before reviewing, identify:
+## Pre-flight
 
-- **target:** repo, branch, PR, commit range, diff, route, API, or release build;
-- **intent:** what the change claims to accomplish;
-- **risk lanes:** frontend, backend, data, auth, payments, contracts, iOS, release, public copy, analytics, secrets, deployment, docs.
+Name three things before analysis:
 
-## Context Graph
+- **Target:** repo, branch, PR, commit range, diff, route, API, or release build.
+- **Intent:** what the change claims to do. Find the spec in this order: issue
+  references in commits and PR body (`#123`, `Closes #45`), a path the caller
+  passed, a matching file under `docs/` or `specs/`. If none exists, write
+  "no spec available" and judge intent from the PR description alone. Never
+  invent requirements.
+- **Risk lanes:** frontend, backend, data, auth, payments, contracts, iOS,
+  release, public copy, analytics, secrets, deployment, docs.
 
-Build a lightweight graph before judging the diff:
+Pin the comparison point and prove it is reviewable: `git rev-parse <base>`
+resolves, diff with three dots (`git diff <base>...HEAD`) so the comparison
+runs against the merge-base, and the diff is non-empty. A bad ref or empty
+diff fails here in one line.
+
+## Context graph
+
+Build it before judging the diff:
 
 1. Changed files and generated files.
-2. Imports, callers, routes, API handlers, jobs, hooks, models, schemas, and config/env dependencies touched by the change.
-3. Tests, fixtures, migrations, release scripts, docs, and screenshots that should move with the behavior.
-4. Runtime surfaces: local route, live URL, API endpoint, simulator flow, dashboard, App Store metadata, or deployment target.
-5. Domain contracts: creator ownership, rights/provenance, registry-backed media, royalty routing, agent commerce, wallet/payment flows, and published-statement accuracy.
+2. Imports, callers, routes, handlers, jobs, hooks, models, schemas, and
+   config or env dependencies the change touches.
+3. Tests, fixtures, migrations, release scripts, docs, and screenshots that
+   should move with the behavior.
+4. Runtime surfaces: local route, live URL, API endpoint, simulator flow,
+   dashboard, store metadata, deploy target.
+5. Domain contracts: ownership, rights and provenance, payments and wallets,
+   agent commerce, and published-statement accuracy.
 
-Flag beyond-the-diff risks when related files, defaults, docs, env, or deploy requirements no longer agree.
+Flag beyond-the-diff risk when related files, defaults, docs, env, or deploy
+requirements no longer agree.
 
-## Run Gates and Honor Project Rules
+## Run the repo's own gates first
 
-Before manual analysis, run the gates the repo already ships and fold results in (typecheck, the configured linter on changed files, the test suite, the dependency auditor when deps changed, and a real secret scanner over the diff). Detect what exists; run only that; never fabricate a result you did not run, and note in Verification when a gate could not run. Then read the repo's own conventions, `CLAUDE.md`, `AGENTS.md`, linter/formatter config, nearest-ancestor rules, and treat them as binding: do not flag what a rule permits, do flag what it forbids, and do not re-raise a pattern the user already accepted.
+Do not hand-review what a tool already decides. Detect what the repo ships
+(`package.json` scripts, config files, lockfiles) and run only that. Never add
+a tool the repo does not use. Never report a result you did not run.
 
-## Review Modes
+| Stack | Type check | Lint | Test | Other |
+|---|---|---|---|---|
+| Web / Node | `npx tsc --noEmit` | `npm run lint` (changed files) | `npm test` | `npm audit` when deps changed |
+| MCP server (Node) | `node --check <server>.mjs` | configured linter | repo MCP tests | One stdio session: `initialize`, `notifications/initialized`, then list/call/read/get |
+| iOS / Swift | the build is the check | SwiftLint if configured | XCTest target | `xcodebuild -scheme X -destination 'platform=iOS Simulator,name=<device>' build` |
+| API / backend | compile step if any | configured linter | contract or schema tests | OpenAPI validation against the live route |
 
-- **Fast diff review:** small change, narrow blast radius, focused findings.
-- **Deep PR review:** multi-file behavior, public surface, data/auth/payment, release, or cross-repo risk.
-- **Plan review:** implementation has not started; inspect scope, sequencing, acceptance criteria, test mapping, missing decisions.
-- **Fix verification:** review after fixes; rescan changed files and confirm the original finding is gone.
-- **Release review:** validate build, secrets, env, public copy, screenshots, metadata, deployment, and live/API readback.
+Severity mapping: a type error on a changed line is P2 (P1 on a critical
+path); a failing test on changed behavior is P1; a test that silently stopped
+running is P2; a reachable, exploitable dependency CVE is P0 or P1; a verified
+live secret is P0; a broken production build in a release review is P0.
 
-### Depth Levels
+Cite command, exit status, and the file:line it implicates. A gate that cannot
+run goes in Verification as "not run" with the reason.
 
-Add a `--depth` modifier:
+**House rules bind.** Read `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`,
+`.editorconfig`, and formatter, linter, or review config. Do not flag what a
+rule permits; do flag what it forbids. The nearest-ancestor rule wins for files
+under its path. When the user dismisses a finding as deliberate, record it in
+one line (pattern, why allowed, path scope) and do not raise it again.
 
-- **`--quick`** (~2 min): pattern scan: obvious bugs, hardcoded secrets, missing null checks, injection patterns, broken error handling. No cross-file analysis.
-- **`--standard`** (default, ~10 min): per-file correctness on changed paths, language traps (below), state handling, test coverage on changed behavior, call graph within changed files.
-- **`--deep`** (~25 min): cross-file analysis with full import graph and call-chain tracing: semantic bugs that only appear when you follow data across module boundaries. Use for auth, payments, migrations, and public API changes.
+## Step 1: Instant-F triggers (always first, every mode)
 
-State the depth level at the top of every output.
+Any match is an automatic **F** and a P0 finding. Report file and line. Other
+lanes cannot raise the grade.
 
----
+- **Secrets:** hardcoded API key, token, or password in committed source; a
+  committed private key or certificate; a signing secret outside a secret
+  manager.
+- **Injection:** SQL built by string concatenation with user input; shell
+  command from user input via exec, spawn, or eval; unescaped user input
+  rendered where XSS is reachable.
+- **Auth bypass:** middleware with a skip path (early return, swallowed
+  exception, always-true condition); a permission check a request param can
+  bypass; JWT accepting `alg: none` or a hardcoded secret.
+- **Payments and wallets:** a handler that swallows errors; a webhook with no
+  signature verification; amount or recipient taken from untrusted input
+  without server-side validation.
+- **Data destruction:** a DROP or destructive ALTER with no rollback and no
+  tested restore; bulk delete or update with no WHERE or a user-controlled
+  WHERE; production cache wipes with no restore path.
+- **Plaintext sensitive data:** passwords stored or logged in plaintext; PII
+  sent to unencrypted logs or analytics; card, SSN, or health data in an
+  unencrypted field.
 
-## Step 1: Instant-F Triggers (check before scoring anything)
+## Step 2: Language and platform traps
 
-Any single match is an automatic **F**. Stop, report the file and line, and do not grade the remaining lanes, the grade cannot be raised by other lanes. This list is the canonical copy; suede-code-grader carries the identical list, change both together.
+Load only the sections that match the diff:
 
-**Secrets and credentials**: hardcoded API key/secret/token/password in committed source; private key or certificate committed; OAuth/signing secret outside a secret manager.
-**Injection**: SQL built by string concatenation with user input; shell command from user input via exec/spawn/eval; template rendered with unescaped user input where XSS is reachable.
-**Auth bypass**: auth middleware with a path that skips it (early return, swallowed exception, always-true condition); permission check bypassable via request param; JWT accepting `alg: none` or a hardcoded secret.
-**Payment and wallet**: payment handler swallowing errors silently; webhook with no signature verification; amount or recipient from untrusted input without server-side validation.
-**Data destruction**: migration with DROP/destructive ALTER, no rollback, no tested restore; bulk delete/update with no WHERE or user-controlled WHERE; cache invalidation that clears production stores with no restore path.
-**Plaintext sensitive data**: password stored or logged in plaintext; PII to an unencrypted log/analytics pipeline; SSN/payment card/health data in a non-encrypted field.
+- `references/traps-web.md`: TypeScript, React, accessibility, Next.js, SEO
+  impact, database (Drizzle, Prisma), performance and Core Web Vitals.
+- `references/traps-swift-ios.md`: Swift, SwiftUI, and client-server contract
+  drift for iOS.
+- `references/maintainability-baseline.md`: twelve structural checks for
+  `--standard` and `--deep`, diff-scoped and always labeled as judgment.
 
-## Step 2: Language Traps
+## Step 3: Security baseline
 
-**TypeScript**: `any` where `unknown` + a guard belongs; non-null `!` without a proving guard; non-exhaustive discriminated unions (missing `assertNever`); unsafe `as` casts without a preceding guard; `Object.keys()` without `keyof typeof`; `return someAsyncFn()` that should `await`.
+Runs automatically when the diff touches `auth/`, `api/`, `middleware/`,
+`routes/`, `pages/api/`, or imports crypto, session, or payment modules. Cite
+the category in each finding using the **OWASP Top 10:2025** numbering: A01
+Broken Access Control (now includes SSRF), A02 Security Misconfiguration, A03
+Software Supply Chain Failures, A04 Cryptographic Failures, A05 Injection, A06
+Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity
+Failures, A09 Security Logging and Alerting Failures, A10 Mishandling of
+Exceptional Conditions. API and mobile changes also map to the OWASP API
+Security Top 10 (2023) and MASVS. What counts as a finding per category is in
+`references/security-baselines.md`.
 
-**React**: missing/incomplete `useEffect` deps; stale closures (e.g. `setInterval` in `useEffect(fn, [])` reading state); missing/`index`-as-`key` on `.map()` with identity items; inline object/function props without `useMemo`/`useCallback` in hot paths; prop drilling past 2 levels (P3); state mutation without a setter (`arr.push` on state).
+**Observability delta** (any new handler, endpoint, job, cron, or consumer):
+flag `catch` blocks that only `console.error` or swallow silently; new paths
+with no log on entry or failure; React subtrees with no error boundary; new DB,
+external API, or model calls with no timing or trace span; analytics events
+the old code fired and the new code dropped; background jobs that finish
+without logging count, duration, or failure reason.
 
-**Next.js**: server/client boundary violations (`'use client'` importing server-only modules, or server files using browser globals); missing `Suspense` around async server components; missing `error.tsx`/`loading.tsx` on user-facing data routes (P2); non-`NEXT_PUBLIC_` secrets reachable in client bundle; uncached `generateMetadata`/`getServerSideProps` external fetches; `next/router` imported in App Router.
+## Step 4: Deep pass (`--deep` only)
 
-**Database (Drizzle/Prisma)**: N+1 queries in loops; missing index on filtered/sorted/join columns; multi-table writes without a transaction; missing unique constraints on logically-unique fields; unbounded selects with no `LIMIT` on growable tables.
+- **Reverse dependencies:** find every caller of a changed function, type,
+  route, or constant across the repo. Name the call sites you checked.
+- **Shared assumptions:** for a changed schema, env var, default, or
+  invariant, find other places that assume the old value.
+- **History:** `git log -L` or `git blame` the touched lines. A change that
+  reintroduces a previously fixed shape is a regression; cite the prior commit.
+- **Sibling pattern:** compare to the nearest analog (other handlers, other
+  migrations). A lone handler skipping the shared auth wrapper is P1 even if
+  it works.
+- **Critic lanes** for auth, payments, migrations, or public APIs: a change
+  mapper, runtime critic, security critic, product critic, and test critic,
+  each reporting separately. Collect consensus. If a high-severity concern
+  survives a fix cycle, keep `hold` and name the smallest next check.
 
-**Performance**: new >20 KB minzipped imports (flag with size, prefer tree-shaken); render-blocking `<script>` without `async`/`defer`; non-critical routes not lazy-loaded (`next/dynamic`); raw `<img>` instead of `next/image` for non-SVG assets.
+A whole-repo claim with no named symbols is not evidence.
 
-**Swift / iOS**: force `!`/`try!`/`as!` without a proving guard (P1 on runtime-throwing `try!`); escaping closures capturing `self` strongly (need `[weak self]`); UI/`@Published`/`@State` mutation off the main thread; actor reentrancy across suspension points; non-optional `Codable` fields the server may omit; `ForEach` over non-stable `id`; URLSession tasks/observers not cancelled.
+## Step 5: Intent and scope
 
-**Whole-repo (`--deep`)**: past the changed-file import graph, sweep every caller of a changed symbol across the repo, check shared assumptions (config/defaults/env mirrored elsewhere), `git log -L`/`blame` the touched lines for reintroduced regressions, and confirm the change matches its sibling pattern. Name what you traced.
+- **Claim vs diff:** map each acceptance criterion to a code path or test.
+  Claimed behavior with no matching change is a P1 truth gap.
+- **Scope creep:** flag unrelated refactors, bundled dependency bumps, and
+  formatting sweeps that bury the change. Recommend a split.
+- **Effort signal:** state files and net lines changed and rate the review
+  effort: trivial, moderate, heavy, or too large to review safely.
+- **Walkthrough** (four or more files): a table of file, what changed, risk
+  lane. Add a mermaid `sequenceDiagram` or `flowchart` only when data crosses
+  three or more boundaries or an async, auth, or payment path changes.
 
-## Step 3: OWASP Top 10 (auto-runs on auth/api/middleware/routes or crypto/session/payment imports)
+## Step 6: Grade (full and `--grade-only`)
 
-Cite the category in the finding. A01 Broken Access Control (authz at every data access, no horizontal escalation) · A02 Cryptographic Failures (encryption in transit/at rest, no MD5/SHA-1/DES, secrets in env) · A03 Injection (parameterize, escape output) · A04 Insecure Design (assume unauthenticated attacker, designed-in rate limits) · A05 Misconfiguration (changed defaults, safe errors, debug off) · A06 Vulnerable Components (current deps, no CVEs) · A07 Auth Failures (MFA, brute-force protection, session invalidation) · A08 Integrity Failures (protected CI/CD, verified checksums, validated deserialization) · A09 Logging/Monitoring Failures (auth/access/validation failures logged and tamper-protected) · A10 SSRF (URL allowlist, no internal fetches).
+Score each lane A-F, then one overall. For non-Suede work, read "domain truth"
+as whatever invariants the product publishes.
 
-## Step 4: Grade (A-F, runs by default)
+- **Correctness:** behavior, edge cases, error paths, async, routing, data
+  flow, regression risk.
+- **Security and permissions:** auth, secrets, payment, injection, SSRF,
+  permission, data exposure fail closed.
+- **Data and state:** schemas, migrations, caches, jobs, queues, webhooks,
+  retries, idempotency.
+- **Domain truth:** public copy, rights, provenance, licensing, product claims
+  match the implementation.
+- **UX and release behavior:** loading, empty, error, success, mobile, route
+  states hold together.
+- **Tests and verification:** changed behavior has meaningful tests, builds,
+  screenshots, simulator runs, or live readbacks.
+- **Deploy readiness:** env vars, flags, migrations, rollback notes, docs, and
+  release order are clear.
 
-Score each lane A-F, then one overall. For non-Suede work, substitute "domain truth" for "Suede truth."
+**What each letter means.** **A:** all lanes pass, runtime-verified, no
+follow-ups. **B:** no blockers; named, bounded follow-ups. **C:** a real defect
+or unverified risk that could reach production; recommend hold. **D:** a
+serious defect likely to cause data loss, auth bypass, broken payments, or a
+visible production failure; recommend against shipping and put the choice to
+the user. **F:** core behavior broken, an Instant-F hit, or no evidence on a
+critical surface.
 
-- **Correctness**: behavior, edge cases, error paths, async, routing, data flow, regression risk.
-- **Security and permissions**: auth, secrets, payment, wallet, injection, path, SSRF, permission, data exposure fail closed.
-- **Data and state**: schemas, migrations, caches, jobs, queues, webhooks, retries, idempotency, state transitions stay consistent.
-- **Suede truth**: public copy, rights, provenance, registry-backed media, royalty routing, licensing, agent-commerce, product claims match the implementation.
-- **UX and release behavior**: loading, empty, error, success, mobile/native, screenshot, metadata, route states hold together.
-- **Tests and verification**: changed behavior has meaningful tests, builds, screenshots, simulator runs, live/API readbacks, or named caveats.
-- **Deploy readiness**: env vars, flags, configs, migrations, rollback notes, install paths, docs, release sequencing are clear.
+**Gate follows the grade:** A → `ship`; B → `ship-with-caveats`; C, D, F →
+`hold`. A Deploy Safety block or a DIRTY commit rating also moves the gate to
+`hold`.
 
-**Grade meaning:** **A** all lanes pass, runtime-verified, no follow-ups. **B** no blockers, named bounded follow-ups. **C** a real defect or unverified risk that could surface in production, recommend hold until fixed. **D** a serious defect likely to cause data loss, auth bypass, broken payments, or user-visible failure, recommend against shipping and, because these are extreme-risk categories, pause and put the ship choice to the user. **F** breaks core behavior, hits an Instant-F, or critical-surface evidence is absent.
+**Grade caps by surface** (state them when they apply):
 
-**Recommended gate follows the grade, mechanically:** A → `ship`; B → `ship-with-caveats`; C, D, F → `hold`. A Deploy Safety finding (Step 5) also moves the recommended gate to `hold` regardless of grade. The gate is a recommendation the user acts on, not a lock on the agent.
+- **Auth** (login, session, token, middleware, roles): A needs the bypass or
+  escalation path tested; B needs happy path plus named caveats; otherwise
+  cap at C.
+- **Payments and wallets:** A needs failed charge, decline, and replay tested,
+  server-side amount and recipient validation, and no silent swallowing; B
+  needs happy path plus documented error-path risk; otherwise cap at C.
+- **Data migrations:** A needs a documented rollback and a restore tested on
+  production-like data (or a justified waiver); B needs a rollback plan; no
+  plan caps at D.
+- **Public API changes:** A needs verified backward compatibility or a
+  versioned migration path; a breaking change with no path caps at C.
 
-**Grade caps by surface** (state explicitly when they apply):
-- **Auth** (login, session, token, middleware, roles): A needs the bypass/escalation path tested, not just happy path; B needs happy-path + named caveats; else cap **C**.
-- **Payment/wallet** (checkout, subscription, refund, payout, transfer, webhook): A needs error paths tested (failed charge, declined, replay) + server-side amount/recipient validation + no silent swallowing; B needs happy-path + documented error-path risk; else cap **C**.
-- **Data migrations**: A needs a documented rollback + restore tested against prod-like data (or justified waiver); B needs a rollback plan, restore untested; no rollback plan caps at **D**.
-- **Public API changes**: A needs verified backward-compat or a versioned migration path; breaking with no path caps at **C**.
+**Technical debt** weighs by location. The same pattern costs more where the
+risk lives:
 
-**Tech debt**: grade impact depends on location, not just pattern. Debt in auth/payment/migration paths is one level stricter (a God object in a payment module is D, not C). Debt in core/high-traffic is standard. Debt in utilities/scripts is flagged as a Required Upgrade but does not lower the overall grade unless it bleeds into a critical path. Do not block a ship on tech debt alone unless it directly obscures a P0/P1 bug. For a named maintainability catalog, load the twelve-smell Design Smell Baseline reference bundled with suede-code-review: same binding rules: repo overrides, judgment-call severity, skip what tooling enforces.
+| Pattern | Location | Impact |
+|---|---|---|
+| Function or class doing 5+ unrelated jobs | Payment module | D in Correctness |
+| Same | Utility helper | B in Correctness |
+| Same 20-line block in 3+ places | Auth flow | C in Security |
+| Same | UI component | B in Correctness |
+| Reaching across 3+ abstraction layers | Data migration | C in Data and state |
+| Hidden module-level state | API handler | C in Correctness |
+| Unnamed magic number | Payment amount | C in Correctness |
+| Unnamed magic number | UI spacing | P3 only |
+| Dead code | Anywhere | Flag only, unless it shadows live code |
 
-## Step 5: Deploy Safety Gate (runs at the end, every time)
+Debt alone never blocks a ship unless it hides a P0 or P1. Name it in Required
+Upgrades. Never report a C, D, or F without the upgrade that would move it.
 
-Grade each pass/conditional/block: **breaking changes** (block if a contract changes with no migration), **rollback safety** (block if `git revert` can't undo it: migrations, charges, sent email, deletes), **blast radius** (state ~0% / ~partial / ~100%), **environment readiness** (block if a required env var isn't in prod yet), **dependency changes** (block on CVE or unpinned prod dep), **data mutations** (block on irreversible writes with no tested restore), **security delta** (block if new attack surface without mitigation), **automation coverage** (block if `.github/workflows/` or equivalent CI does not cover the changed surface, or required checks are not enforced on `main`, in a production-connected repo).
+## Step 7: Deploy safety (every mode, every run)
 
-## Step 6: Commit Dirt Score (runs at the end, every time)
+Rate each `pass | conditional | block`:
 
-Scan every added (`+`) line of the raw diff for content that must never reach git history, across seven dimensions: **secrets and credentials** (`sk_`, `pk_`, `ghp_`, `xoxb-`, `AKIA`, `-----BEGIN`, `password=`, `secret=`, `token=`, long hex/base64 next to a key-like name) · **debug artifacts** (`console.log`, `debugger`, `binding.pry`, `byebug`, `var_dump(`, `TODO: remove`, `FIXME: before merge`, commented-out real logic) · **conflict markers** (`<<<<<<<`, `=======`, `>>>>>>>`, `|||||||` in a `+` line means the file was never fully resolved) · **accidentally staged files** (`node_modules/`, `.next/`, `dist/`, `build/`, `__pycache__/`, `.DS_Store`, `*.log`, stray lockfiles) · **WIP breadcrumbs** (`[WIP]`, `DO NOT MERGE`, `TEMP:`, `lorem ipsum`/`asdf` in production-facing strings) · **oversized or binary blobs** (files >500 KB, fonts, compiled binaries, media outside a designated assets dir) · **exposed internal references** (internal IPs or hostnames, staging URLs in non-config files, personal email addresses in source).
+- **Breaking changes:** a public API, schema, config key, or interface changes
+  with no versioned migration or fallback → block.
+- **Rollback safety:** `git revert` cannot undo it (migrations, sent email,
+  charges, deletes, storage writes, queue publishes) → block.
+- **Blast radius:** state it as `~0%` (flagged), `~partial` (one flow), or
+  `~100%` (shared middleware, auth, hot query).
+- **Environment readiness:** a required env var, secret, or flag is not in
+  production yet → block.
+- **Dependency changes:** new dependency with a known CVE, or unpinned in
+  production → block.
+- **Data mutations:** irreversible writes with no tested restore → block.
+- **Security delta:** improved, neutral, or new attack surface without
+  mitigation → block.
+- **Automation coverage:** no CI covering the changed surface, or required
+  checks not enforced on the default branch, in a production-connected repo →
+  block.
 
-Rate each dimension `clean | suspicious | dirty` and emit an overall rating: **CLEAN** = no hits; **SUSPICIOUS** = a low-confidence hit that could be a fixture or a doc sample: name it and let the reviewer confirm; **DIRTY** = a high-confidence hit that must be removed before merge, reported as a P0 finding. A `DIRTY` overall rating moves the recommended gate to `hold`, exactly as a Deploy Safety block does.
+## Step 8: Commit dirt (every mode, every run)
 
-## Finding Format
+Run the bundled scanner from the target repo instead of eyeballing:
+`bash <skill-dir>/scripts/commit-dirt-scan.sh main...HEAD`, or pipe a diff
+with `-`. It is read-only and always exits 0. Confirm each hit against the
+diff before reporting. If it cannot run, check every added line by hand.
 
-Lead with findings, ordered by severity. Group repeated patterns once.
+Seven categories: secrets and credentials; debug artifacts; conflict markers;
+staged build output (`node_modules/`, `.next/`, `dist/`, `.DS_Store`, logs);
+WIP breadcrumbs (`DO NOT MERGE`, `TEMP:`, lorem ipsum); oversized or binary
+blobs over 500 KB; exposed internals (internal hosts, staging URLs, personal
+emails). Rate each `clean | suspicious | dirty`. Overall **DIRTY** is a P0
+finding and moves the gate to `hold`. **SUSPICIOUS** is named for the reviewer
+to confirm.
+
+## Findings: format and precision
+
+Lead with findings by severity. Group a repeated pattern once ("appears in 4
+files: ..."). If a structural defect exists, report it first and alone, and
+hold the line-level findings it governs as deferred.
+
+P0 and P1 use the full block:
 
 ```
 [P0] path/to/file.ts:142
 Issue: JWT secret falls back to empty string; any token is valid when SECRET is unset.
 Fix: process.env.JWT_SECRET ?? (() => { throw new Error('JWT_SECRET required') })()
 Verify: set JWT_SECRET="" and curl /api/me: expect 401, currently 200.
-OWASP: A02 Cryptographic Failures
+OWASP: A04:2025 Cryptographic Failures
 Confidence: high
 ```
-P2/P3 get one line each. **Severity:** P0 data loss/security/payment/broken release/unsafe public behavior · P1 likely prod regression, auth bug, broken primary path, false published statement, missing deploy requirement · P2 meaningful edge-case failure, incomplete state, test gap on changed behavior · P3 low-risk improvement, clarity, cleanup. If it can't be tied to a file/route/command/state/behavior, mark it an open question.
 
-## Fix Mode (only on `--fix` or explicit request)
+P2 and P3 get one line each:
 
-Auto-apply local P2/P3 fixes (single file, no contract change), each as its own commit with the finding ID. Present P0/P1 as confirmed fix briefs before applying, never auto-apply to auth, payment, or data-migration code without explicit confirmation. Re-run the relevant mode on changed files after fixing; cap at 3 cycles, then escalate as a design issue.
+```
+[P2] components/Feed.tsx:88, index used as key on .map(); use item.id.
+```
 
-## Suede-Specific Checks
+**Severity:** P0 data loss, security exposure, payment loss, broken release,
+or unsafe public behavior. P1 likely production regression, auth bug, broken
+primary path, false published statement, missing deploy requirement. P2
+real edge-case failure, incomplete state, test gap on changed behavior. P3
+low-risk cleanup. A concern that cannot be tied to a file, route, command, or
+behavior goes under Open Questions.
 
-Auth/session behavior across app, API, native shells, and server · creator rights/provenance/registry/licensing/royalty/agent-commerce claims match implemented behavior · payment/wallet/x402/checkout/credit flows fail closed · public pages invent no metrics, pricing, partners, testimonials, or release promises · Vercel/account/deploy assumptions match local guidance before prod claims · App Store/iOS screenshots, metadata, privacy answers, and build behavior match the app · migrations, env, flags, cron/jobs, queues, webhooks, secrets are documented and deployable · multi-surface contracts don't drift across web, backend, mobile, sites, docs.
+**Confidence is observable:** `high` = reproduced, traced across the call
+graph, or tied to a named failing input; `medium` = read, not executed;
+`low` = looks wrong, nothing proves it. Label every P0 and P1. A low-confidence
+security suspicion keeps its severity with the label attached; low-confidence
+style notes collapse into one "nitpicks" line.
 
-## Intent, Scope, and Precision
+**Before emitting, cut** anything with no file:line and fix, anything a gate
+already reports, and anything that would not change the ship decision or earn
+a human reviewer's comment.
 
-Confirm the diff delivers what it claims (map each acceptance criterion to code or a test; unbacked claims are a P1 truth gap) and flag scope creep (unrelated refactors, bundled dep bumps, formatting sweeps that bury the change); recommend splitting an over-large PR. Before emitting, self-check: every finding has a file:line + fix, nothing duplicates a gate's job, low-confidence style notes collapse into one "nitpicks" line, and anything that would not move the ship decision is cut.
+## Fix mode (`--fix` or an explicit request)
 
-**Confidence labels are observable, not vibes:** `high` = reproduced, traced across the call graph, or tied to a named failing input or command; `medium` = read from the code, not executed; `low` = the pattern looks wrong but no input, call path, or runtime state proves it. State the label on every P0/P1 finding; a low-confidence security suspicion is still reportable with its label attached, but a low-confidence *style* observation belongs in the nitpicks line.
+1. Auto-apply local P2 and P3 fixes (single file, no contract change), one
+   commit per finding ID.
+2. Present P0 and P1 as fix briefs first: failing behavior and evidence, files
+   to open, expected change, acceptance criteria, verification command, WIP to
+   preserve. Never auto-apply to auth, payment, or migration code without
+   explicit confirmation.
+3. Re-run the relevant mode on changed files and mark each finding resolved or
+   escalated.
+4. Stop after 3 cycles on the same finding and escalate it as a design issue.
 
-## Red Flags: Stop
+## Suede-specific checks
 
-Catch yourself thinking any of these and re-run the gate you were about to skip:
+Auth and session behavior across app, API, native shells, and server ·
+rights, provenance, licensing, royalty, and agent-commerce claims match
+implemented behavior · payment, wallet, x402, checkout, and credit flows fail
+closed · public pages invent no metrics, pricing, partners, testimonials, or
+release promises · deploy and account assumptions match local guidance before
+production claims · store screenshots, metadata, and privacy answers match the
+app · migrations, env, flags, cron, queues, webhooks, and secrets are
+documented · contracts do not drift across web, backend, mobile, and docs.
 
-- "CI is green, so it's fine": CI that never exercised the changed behavior is not evidence.
-- "The diff is small": small diffs touch auth and payments too; Instant-F triggers run every time.
-- "I wrote this, I know it works": switch into review mode and hunt what your implementation would miss.
-- "The author explains the intent well": intent is not a test, a readback, or a screenshot.
-- "It was hard work, round up to B": effort never moves a grade; evidence does.
-- "Skip the deploy gate, it's just a copy change": Step 5 runs at the end, every time.
+## Red flags: stop
 
-## Output Shape
+- "CI is green, so it's fine." CI that never exercised the change is not
+  evidence.
+- "The diff is small." Small diffs touch auth too. Step 1, 7, and 8 run every
+  time.
+- "I wrote this, I know it works." Switch to review mode and hunt what your
+  implementation would miss.
+- "The PR description explains it." Review the diff, not the story about it.
+- "It was hard work, round up to B." Effort never moves a grade; evidence does.
+- "Flag everything to be safe." Volume is noise. Run the precision cut.
 
-Lead with a **Simple explanation (plain, for a 10-year-old)**: one plain-English paragraph a 10-year-old follows: did it pass, and the single biggest reason. Then:
+## Output
+
+Open with **Simple explanation**: one plain paragraph a ten-year-old can follow
+covering whether it passed and the single biggest reason. Then, by mode:
 
 ```text
-Findings           (by severity, with evidence + fix)
-Code Grade         (7 lanes A-F + overall, grade cap if any, why, required upgrades)
-Deploy Safety      (the 8 dimensions + verdict)
-Commit Dirt        (7 dimensions + CLEAN | SUSPICIOUS | DIRTY)
+Depth:
+Findings            (full, --findings-only)
+Code Grade          (full, --grade-only: 7 lanes + overall, cap applied, why, required upgrades)
+Deploy Safety       (all modes: 8 dimensions + SAFE TO DEPLOY | DEPLOY WITH CONDITIONS | DO NOT DEPLOY)
+Commit Dirt         (all modes: 7 categories + CLEAN | SUSPICIOUS | DIRTY)
 Open Questions
-Verification       (checked / not checked)
+Verification        (checked / not checked, with commands and exit codes)
 SHIP GATE: hold | ship-with-caveats | ship: [one sentence naming the blocker or caveat]
 ```
 
-For no findings, say so clearly and name any residual risk or unrun checks. Do not invent tests, screenshots, live checks, or deploy status. To revise a grade, name what changed; to bank a pattern, name what worked; silence = accepted.
+For no findings, say so and name residual risk or unrun checks. To revise a
+grade, name what changed. Silence means accepted.
 
-## Worked Example
-
-A complete pass on one change (findings, lane scores, grade, and deploy gate) is in
-`references/worked-example.md`. Read it when you are calibrating a grade and want
-to see how the lanes resolve on a real diff, not on every run.
-
-## --threat-verify Mode
-
-Checks that mitigations declared in a threat model (an ADR threat table, a PLAN.md risk section, or free-form "Threat: X / Mitigation: Y" pairs) are actually implemented, classifying each as CLOSED / OPEN / UNREGISTERED into a THREAT-REVIEW.md table. It does not hunt new vulnerabilities: that is the OWASP lane's job. The full procedure and output shape are in `references/threat-verify.md`: read it when the caller passes `--threat-verify` or asks you to verify threat mitigations or check threat-model compliance, and not on an ordinary review.
+Worked examples, read only when calibrating: `references/worked-example.md`
+(a full pass on a real file) and `references/worked-example-grade-only.md`
+(lane arithmetic in grade-only mode).
 
 ## Boundaries
 
-- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files.
-- Do not invent tests, screenshots, live checks, deploy status, or gate results you did not run.
-- Never auto-apply a fix to auth, payment, or data-migration code without explicit user confirmation; P0/P1 fixes are presented as briefs first.
-- Do not block on style preferences that a formatter, the type checker, or a documented project rule already governs, and do not raise a grade for effort or for CI that never exercised the changed behavior.
+- Preserve user and other-agent WIP. Never stage, revert, or rewrite unrelated
+  files. Apply fixes only under Fix Mode.
+- Never invent tests, screenshots, live checks, deploy status, or gate results.
+- Never auto-apply fixes to auth, payment, or migration code without
+  confirmation.
+- A style choice no rule, formatter, or real cost governs is not a finding.
 
 ## Routing
 
-- Findings-only, with Accessibility and SEO lanes → **suede-code-review**
-- The letter grade alone, no findings → **suede-code-grader**
-- Verdict delivered; make CI enforce it on every merge → **suede-ci-gate**
-- The diff ships AI behavior with no eval coverage → **suede-ai-eval**
-- Fixes span multiple coordinated lanes → **suede-agent-teams**
-- Completion-claim law for saying a fix is done, live, merged, or ready →
-  private Suede Labs companion, not in this pack: suede-verification-law
+- Make CI enforce the verdict on every merge → **suede-ci-gate**
+- The diff ships LLM, RAG, or agent behavior with no eval coverage →
+  **suede-ai-eval**
+- Several implementation plans need comparing before one multi-file change is
+  built → **suede-graph-flo-xr**
+- Fixes span several coordinated lanes → **suede-agent-teams**
+- The same value is stated on two surfaces that can drift →
+  **suede-parity-contract**

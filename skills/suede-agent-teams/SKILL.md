@@ -1,6 +1,6 @@
 ---
 name: suede-agent-teams
-description: "Suede Labs agent-team orchestrator: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); findings-only review of a diff (use suede-code-review) or an A-F ship grade (use suede-code-grader); CI, branch protection, or merge-gate wiring (use suede-ci-gate); branch and worktree setup on a stale mirror (a private Suede Labs companion, not in this pack)."
+description: "Suede AI agent-team orchestrator, the method behind multi-agent automation: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); reviewing or grading a diff (use suede-code); CI, branch protection, or merge-gate wiring (use suede-ci-gate); picking which single skill fits a request (use suede-workflow-skills)."
 ---
 
 # Agent Team Orchestrator
@@ -87,7 +87,7 @@ The orchestrator writes the resolved lane map to the team ledger (`.suede-team/<
 
 ## Default Roster
 
-Start with Scout + Builder + Handoff Writer. Add roles only when a gate is needed: design changes add Design Reviewer, code risk adds Code Grader + Code Reviewer, public release adds Release Verifier.
+Start with Scout + Builder + Handoff Writer. Add roles only when a gate is needed: design changes add Design Reviewer, code risk adds Code Grader + Code Reviewer (both run suede-code, in `--grade-only` and `--findings-only` modes), public release adds Release Verifier.
 
 - **Scout:** finds repo, docs, current state, dirty files, live routes, and
   likely blast radius.
@@ -419,8 +419,7 @@ Cue Suede:
 - A recurring owned/public-repository contribution program needs issue leases,
   isolated worktrees, review, and an authority-gated packet → read
   `references/public-contribution-program.md` and keep this skill as controller
-- A code lane needs review or a ship grade → **suede-code** (combined), **suede-code-review** (findings only), or **suede-code-grader** (grade only)
+- A code lane needs review or a ship grade → **suede-code** (full, `--findings-only`, or `--grade-only`)
 - The repo's merge gate is weak or missing → **suede-ci-gate**
-- The work needs branch ownership, stale-mirror worktree setup, finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)
 - A lane ships AI behavior → **suede-ai-eval** before that lane's quality gate closes
 - The public launch lane needs a page verdict → **suede-visibility-grader**, then **suede-launch-packaging**

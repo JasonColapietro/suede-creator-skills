@@ -6,8 +6,8 @@
 # actually returned, and compares them to the `mcp` block in mcp/catalog.json.
 #
 # Usage (from the repo root):
-#   skills/suede-mcp-qa/scripts/mcp-surface-snapshot.sh
-#   skills/suede-mcp-qa/scripts/mcp-surface-snapshot.sh path/to/server.mjs path/to/catalog.json
+#   scripts/mcp-surface-snapshot.sh
+#   scripts/mcp-surface-snapshot.sh path/to/server.mjs path/to/catalog.json
 #
 # Read-only: it starts the server, reads it, and writes nothing. Exit 0 = live surface
 # and catalog agree; exit 1 = they drift (the server is ground truth, the catalog is not).

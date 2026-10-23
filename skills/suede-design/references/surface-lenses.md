@@ -1,6 +1,6 @@
-# Surface Modifier Moves
+# Surface Lenses
 
-Used by johnny-suede-design's House Process. These are lenses (notes, not shell commands) to name and apply while shaping a surface. Use them where useful; do not run all of them by default.
+Named lenses for shaping or critiquing a surface in suede-design. These are lenses (notes, not shell commands) to name and apply while shaping a surface. Use them where useful; do not run all of them by default.
 
 - `/vibe-scan`: name the current feeling, desired feeling, and the mismatch that blocks trust, desire, clarity, or action.
 - `/first-frame`: judge only the first viewport for brand, offer, proof, and primary action.
@@ -8,7 +8,7 @@ Used by johnny-suede-design's House Process. These are lenses (notes, not shell 
 - `/hero-voltage`: sharpen the hero around a concrete noun, buyer-visible outcome, proof hint, and one primary CTA.
 - `/offer-spine`: reduce the page to one buyer, one pain, one transformation, one proof stack, and one action.
 - `/cta-magnet`: turn vague buttons into specific actions with clear next-step value.
-- `/objection-burn`: answer the smart buyer's hesitation with proof, scope, limits, and risk reversal.
+- `/objection-burn`: answer the smart buyer's hesitation with proof, scope, terms, and risk reversal.
 - `/palette-pressure`: improve contrast, hierarchy, semantic roles, and palette richness without one-hue design.
 - `/type-chemistry`: tune display, body, mono, button, and caption type so the page feels deliberate and readable.
 - `/section-rhythm`: balance density and breathing room so proof, product, story, and action do not collapse into a wall of cards.

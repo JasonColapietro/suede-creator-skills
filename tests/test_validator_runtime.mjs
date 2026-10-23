@@ -348,24 +348,13 @@ test("packaged validation rejects Codex plugin version and MCP portability drift
 
 test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const packagedRoot = createPackagedFixture(t, "suede-validator-release-drift-");
-  // The readback lives wherever suede-mcp-qa currently keeps it. Pinning this
-  // to SKILL.md meant that splitting the skill turned the mutation into a
-  // silent no-op and the assertion below started passing vacuously.
-  const mcpQaDir = path.join(packagedRoot, "skills", "suede-mcp-qa");
-  const mcpQaCandidates = [
-    path.join(mcpQaDir, "SKILL.md"),
-    ...(fs.existsSync(path.join(mcpQaDir, "references"))
-      ? fs
-          .readdirSync(path.join(mcpQaDir, "references"))
-          .filter((entry) => entry.endsWith(".md"))
-          .sort()
-          .map((entry) => path.join(mcpQaDir, "references", entry))
-      : [])
-  ];
-  const mcpQaPath = mcpQaCandidates.find((candidate) =>
-    /server version\s*\n`[^`]+`/.test(fs.readFileSync(candidate, "utf8"))
+  // The readback lives in the repo-internal MCP QA checklist. Assert it is
+  // there first so a moved file cannot turn the mutation below into a no-op.
+  const mcpQaPath = path.join(packagedRoot, ".agents", "docs", "mcp-qa.md");
+  assert.ok(
+    fs.existsSync(mcpQaPath) && /server version\s*\n`[^`]+`/.test(fs.readFileSync(mcpQaPath, "utf8")),
+    "test fixture must contain the MCP QA version readback"
   );
-  assert.ok(mcpQaPath, "test fixture must contain the suede-mcp-qa version readback");
   const mcpQaOriginal = fs.readFileSync(mcpQaPath, "utf8");
   const mcpQa = mcpQaOriginal.replace(/server version\s*\n`[^`]+`/, "server version\n`9.9.9`");
   assert.notEqual(mcpQa, mcpQaOriginal, "test fixture must rewrite the version readback");
@@ -403,7 +392,7 @@ test("packaged validation rejects MCP QA and release metadata drift", (t) => {
   const validation = runValidator(packagedRoot);
   const diagnostics = `${validation.stdout}\n${validation.stderr}`;
   assert.notEqual(validation.status, 0, diagnostics);
-  assert.match(validation.stderr, /suede-mcp-qa manual readback version \(9\.9\.9\)/);
+  assert.match(validation.stderr, /MCP QA manual readback version \(9\.9\.9\)/);
   assert.match(validation.stderr, /CITATION\.cff must omit date-released while catalog version .* is prepared/);
   assert.match(validation.stderr, /changelog has no entry for catalog version/);
 });

@@ -3,47 +3,60 @@
   "groups": [
     {
       "id": "code-review-grader",
-      "skills": ["suede-code", "suede-code-review", "suede-code-grader"],
+      "skills": ["suede-code", "suede-ci-gate", "suede-ai-eval"],
       "fallback": "suede-code",
       "routes": [
         {
-          "skill": "suede-code-review",
-          "positive": ["deep review", "line by line", "concrete bugs", "findings only", "no grade"],
-          "negative": ["a f", "grade only", "ship verdict", "review and grade"],
-          "metadataMustContain": ["findings", "not a grade"]
-        },
-        {
-          "skill": "suede-code-grader",
-          "positive": ["a f", "grade only", "ship verdict", "verdict only", "no line by line"],
-          "negative": ["findings only", "no grade", "review and grade"],
-          "metadataMustContain": ["a f", "grade"]
-        },
-        {
           "skill": "suede-code",
-          "positive": ["review and grade", "findings and grade", "one pass"],
-          "negative": ["findings only", "grade only"],
+          "positive": ["review and grade", "findings and grade", "one pass", "deep review", "concrete bugs", "findings only", "no grade", "grade only", "ship verdict", "a f", "line by line"],
+          "negative": ["branch protection", "required checks", "merge gates", "eval cases", "failure mode rubric"],
           "metadataMustContain": ["review", "grade"]
+        },
+        {
+          "skill": "suede-ci-gate",
+          "positive": ["branch protection", "required checks", "merge gates", "enforce", "every merge"],
+          "negative": ["findings only", "grade only", "eval cases"],
+          "metadataMustContain": ["branch protection"]
+        },
+        {
+          "skill": "suede-ai-eval",
+          "positive": ["eval cases", "failure mode rubric", "rag", "llm", "eval coverage"],
+          "negative": ["branch protection", "findings only", "grade only"],
+          "metadataMustContain": ["eval"]
         }
       ],
       "cases": [
         {
-          "id": "code-review-positive",
+          "id": "code-findings-only-positive",
           "mode": "positive",
           "prompt": "Deep review this PR for concrete bugs and findings only; no grade.",
-          "expected": "suede-code-review"
+          "expected": "suede-code"
         },
         {
-          "id": "code-grader-negative-review",
-          "mode": "negative",
+          "id": "code-grade-only-positive",
+          "mode": "positive",
           "prompt": "Give this PR an A-F ship verdict only; no line-by-line review.",
-          "expected": "suede-code-grader",
-          "forbidden": ["suede-code-review"]
+          "expected": "suede-code"
         },
         {
           "id": "code-combined-positive",
           "mode": "positive",
           "prompt": "Review and grade this PR in one pass with findings and an A-F verdict.",
           "expected": "suede-code"
+        },
+        {
+          "id": "code-ci-negative",
+          "mode": "negative",
+          "prompt": "Make CI enforce the grade on every merge with branch protection and required checks.",
+          "expected": "suede-ci-gate",
+          "forbidden": ["suede-code"]
+        },
+        {
+          "id": "code-ai-eval-negative",
+          "mode": "negative",
+          "prompt": "Write eval cases and a failure mode rubric for the RAG answer path.",
+          "expected": "suede-ai-eval",
+          "forbidden": ["suede-code"]
         },
         {
           "id": "code-ambiguous-fallback",
@@ -66,7 +79,7 @@
         },
         {
           "skill": "suede-workflow-skills",
-          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills"],
+          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills", "next move", "give me the prompt", "expand prompt", "which suede skill"],
           "negative": ["shared change", "independent batches", "full send", "max effort", "max agents", "never end your allocation above zero"],
           "metadataMustContain": ["full public", "skill"]
         }
@@ -88,6 +101,12 @@
           "id": "workflow-pack-positive",
           "mode": "positive",
           "prompt": "Load the full public skill pack as an umbrella workflow.",
+          "expected": "suede-workflow-skills"
+        },
+        {
+          "id": "workflow-next-move-positive",
+          "mode": "positive",
+          "prompt": "What should I do next? Recommend the next move and give me the prompt.",
           "expected": "suede-workflow-skills"
         },
         {
@@ -894,66 +913,26 @@
     },
     {
       "id": "writing-surfaces",
-      "skills": [
-        "suede-copy",
-        "johnny-suede-write",
-        "suede-ship-copy"
-      ],
+      "skills": ["suede-copy", "suede-deslop", "suede-ship-copy"],
       "fallback": "clarify",
       "routes": [
         {
           "skill": "suede-copy",
-          "positive": [
-            "conversion copy",
-            "landing sections",
-            "microcopy",
-            "anti slop"
-          ],
-          "negative": [
-            "public explainers",
-            "product listings",
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses"
-          ],
-          "metadataMustContain": [
-            "conversion copy"
-          ]
+          "positive": ["conversion copy", "landing sections", "microcopy", "public explainers", "product listings", "sharper", "agents md"],
+          "negative": ["publish readiness", "adversarial refutation", "research lenses", "ai tells", "findings only slop"],
+          "metadataMustContain": ["conversion copy"]
         },
         {
-          "skill": "johnny-suede-write",
-          "positive": [
-            "public explainers",
-            "product listings",
-            "sharper"
-          ],
-          "negative": [
-            "conversion copy",
-            "landing sections",
-            "publish readiness",
-            "adversarial refutation"
-          ],
-          "metadataMustContain": [
-            "public explainers"
-          ]
+          "skill": "suede-deslop",
+          "positive": ["ai tells", "deslop", "slop audit", "findings only slop", "anti slop", "finished prose"],
+          "negative": ["conversion copy", "publish readiness", "research lenses", "public explainers"],
+          "metadataMustContain": ["finished prose"]
         },
         {
           "skill": "suede-ship-copy",
-          "positive": [
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses",
-            "high stakes"
-          ],
-          "negative": [
-            "conversion copy",
-            "microcopy",
-            "public explainers",
-            "product listings"
-          ],
-          "metadataMustContain": [
-            "publish readiness"
-          ]
+          "positive": ["publish readiness", "adversarial refutation", "research lenses", "high stakes"],
+          "negative": ["conversion copy", "microcopy", "public explainers", "product listings", "ai tells"],
+          "metadataMustContain": ["publish readiness"]
         }
       ],
       "cases": [
@@ -964,23 +943,24 @@
           "expected": "suede-copy"
         },
         {
+          "id": "copy-explainer-positive",
+          "mode": "positive",
+          "prompt": "Write sharper product listings and public explainers.",
+          "expected": "suede-copy"
+        },
+        {
           "id": "ship-copy-negative",
           "mode": "negative",
           "prompt": "Run the research lenses and adversarial refutation to a publish readiness gate for this high stakes page.",
           "expected": "suede-ship-copy",
-          "forbidden": [
-            "suede-copy"
-          ]
+          "forbidden": ["suede-copy"]
         },
         {
-          "id": "johnny-write-negative",
+          "id": "deslop-negative",
           "mode": "negative",
-          "prompt": "Write sharper product listings and public explainers.",
-          "expected": "johnny-suede-write",
-          "forbidden": [
-            "suede-copy",
-            "suede-ship-copy"
-          ]
+          "prompt": "Strip the AI tells from this finished prose and give me a findings only slop audit.",
+          "expected": "suede-deslop",
+          "forbidden": ["suede-copy", "suede-ship-copy"]
         },
         {
           "id": "writing-ambiguous-fallback",
@@ -1077,7 +1057,7 @@
       "id": "ship-release",
       "skills": [
         "suede-graph-flo-xr",
-        "suede-code-review",
+        "suede-code",
         "suede-ci-gate",
         "suede-launch-packaging",
         "suede-release-linter"
@@ -1109,7 +1089,7 @@
           ]
         },
         {
-          "skill": "suede-code-review",
+          "skill": "suede-code",
           "positive": [
             "review this existing diff",
             "report findings",
@@ -1206,7 +1186,7 @@
           "id": "suede-graph-flo-xr-findings-negative",
           "mode": "negative",
           "prompt": "Review this existing diff and report findings, but do not change code.",
-          "expected": "suede-code-review",
+          "expected": "suede-code",
           "forbidden": [
             "suede-graph-flo-xr"
           ]

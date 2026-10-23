@@ -1,332 +1,252 @@
 ---
 name: suede-workflow-skills
-description: "Suede AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work. Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed. NOT FOR: a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr)."
+description: "Suede AI umbrella router for the full public skill pack: picks the right specialist for any request across search visibility (SEO, AEO, GEO), agent and operations automation, code review and CI, copy and design, launch and app shipping, growth marketing, and creator rights, hands it the request verbatim, and recommends one next move with a ready-to-run prompt when the user asks what to do next. Use when a request crosses two or more lanes, when the user wants the full public skill pack loaded from one install path, when they ask which Suede skill fits, what's next, recommend the next move, give me the prompt, expand prompt, or make it granular, or when only this umbrella is installed. NOT FOR: a request that already names one lane (go straight to that specialist); a multi-file repo change that should be searched, built, and gated as one graph (use suede-graph-flo-xr); coordinating parallel lanes with file ownership and rollback (use suede-agent-teams)."
 ---
 
 # Suede Workflow Skills
 
+The entry point to the Suede AI skill pack. Two jobs:
+
+- **Route:** find the narrowest specialist for the request and hand it over
+  with the user's words intact.
+- **Next move:** when the user asks what to do next, inspect current state
+  read-only and return one recommended action plus a runnable prompt.
+
 ## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
+Every check and ship verdict across the pack is a recommendation to the user,
+not a control on the agent. A failed gate changes what you report, never what
+you do. Single exception: an extreme-risk finding (data loss, credential
+exposure, legal or rights violation, payment mistake, irreversible public
+damage). Pause, state the risk and the options, and let the user choose.
 
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky (data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage), pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+## Core rules
 
+- **Start from current truth.** Inspect the live URL, repo, docs, or rendered
+  output before making any design, copy, search, code, or QA claim.
+- **Pass the request verbatim.** The specialist has no memory of how it was
+  reached. Paraphrase loses the trigger words it routes on.
+- **Narrowest skill wins.** Route to one specialist, not a whole lane.
+- **Positioning:** for Suede AI's own public work, lead with search visibility
+  (AEO, GEO, SEO; https://suedeai.agency) and Agent Studio multi-agent
+  automation (https://suedeai.app) before other products. Never invent stats,
+  testimonials, partners, pricing, legal clearance, or release promises.
+- **Brand mark:** any Suede visual uses only
+  `docs/assets/suede-ai-logo-transparent.png` from this repository (SHA-256
+  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). If it is
+  unavailable or the checksum differs, omit the mark and say so.
+- **Fix-loop cap.** When a loop repeats the same failure, isolate the failing
+  unit and rerun only that check. Allow up to three genuinely different fixes,
+  each changing the diagnosis or strategy. Stop early if the same root cause
+  repeats and let the user pick the next move.
 
-## Approved Brand Asset
+## Route
 
-Any lane that creates or edits a Suede visual must use only `docs/assets/suede-ai-logo-transparent.png` from this repository as the Suede S mark (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never redraw, trace, approximate, typeset, recolor, distort, or generate a replacement Suede S. `suede-skill-icon.png` is not the brand mark. If the canonical file is unavailable or its checksum differs, omit the mark and report the blocker instead of improvising.
+### Precedence
 
-Use this public umbrella skill when a user wants the full Suede workflow loaded
-from one installable GitHub skill path.
+1. A multi-file or multi-surface change to one repo that should be planned,
+   built, and gated as one graph → `suede-graph-flo-xr`, even when the request
+   also names copy or design.
+2. Several specialists must work in parallel on one shared change →
+   `suede-agent-teams`.
+3. The request names one lane → that specialist, directly.
+4. The request crosses lanes → run each lane's specialist in dependency order
+   (for example: copy, then design, then visibility grade, then launch
+   packaging), and state the chain.
 
-This skill is the public entry point for:
+### Dispatch
 
-- **Johnny Suede Write:** one loadable writing mode for copy, brand voice,
-  Suede SEO discoverability, SEO/AEO/AI EO, product and mobile conversion
-  copy, CTAs, launch copy, and anti-slop editing.
-- **Johnny Suede Design:** one loadable design mode for Suedify, UI polish,
-  mobile and product surfaces, product screenshots, design-system QA,
-  responsive checks, visibility grading, and the writing stack.
-- **Suede Code:** unified code review and A-F grading for correctness,
-  security, data/state, deploy readiness, and ship risk, prompted only, never
-  auto-fires.
-- **Suede AI Eval:** design AI-SPEC artifacts, failure-mode rubrics, prompt and
-  retrieval eval cases, acceptance gates, and retroactive AI coverage audits.
-- **Suede CI Gate:** any-repo CI gate that blocks a merge when required
-  checks fail, prompted only, plugs into any CI or workflow system.
-- **Suede SEO Audit:** check metadata, schema, search intent, answer intent,
-  AI EO, internal links, sitemap fit, and discoverability.
-- **Suede Visibility Grader:** grade public pages, GitHub Pages sites, docs,
-  launch pages, and campaign pages for findability, first-screen clarity, CTA
-  pull, proof, AI readability, and design signal.
-- **Suede Site Alchemy:** sharpen a landing page, campaign page, microsite, or
-  conversion surface.
-- **Suede Launch Packaging:** prepare public releases, proof links, install
-  commands, QA, and handoff notes.
-- **Suede MCP QA:** validate Suede MCP tools, prompts, resources, catalog
-  output, install options, and docs alignment.
-- **Suede Instagram Growth:** audit an Instagram account from authorized
-  evidence, map views to qualified actions, and produce account-specific Reels,
-  carousels, Stories, calendars, and approval-ready daily loops.
-- **Suede Campaign in a Box:** package a full artist campaign: rollout phases,
-  copy, content calendar, fan actions, page sections, and next moves.
-- **Suede Sync Packaging:** prepare clean sync review notes without placement
-  promises, clearance claims, outreach claims, or a Suede promo CTA.
-- **Suede Release Linter:** audit release folders for missing metadata,
-  artwork, masters, lyrics, stems, credits, splits, samples, and provenance.
-- **Suede Rights Passport:** package creator folders into structured transfer
-  material with provenance, credits, splits, license notes, and intake JSON.
-- **Suede Rights Audit:** identify ownership, contributor, split, sample,
-  license, and intake gaps.
-- **Amazon Returns Recovery:** scan Amazon order/return history for restocking
-  fees and short refunds, then drive Amazon live chat to get them waived;
-  requires the Claude in Chrome extension logged into the target Amazon
-  account.
+For multi-lane work, send each lane to its own subagent carrying the verbatim
+request instead of loading every specialist into this context. Name the model
+on each dispatch, state a numeric lane cap before launching, and stop at the
+cap.
 
-If the individual public skills are also installed, use them directly when
-their names match the task:
+### Router table
 
-- `johnny-suede-write`
-- `johnny-suede-design`
-- `suede-code`
-- `suede-code-review`
-- `suede-code-grader`
-- `suede-copy`
-- `suede-design`
-- `suede-deslop`
-- `suede-agent-teams`
-- `suede-ai-eval`
-- `suede-recommend-next-action`
-- `suede-ci-gate`
-- `suede-seo-audit`
-- `suede-visibility-grader`
-- `suede-site-alchemy`
-- `suede-launch-packaging`
-- `suede-mcp-qa`
-- `suede-instagram-growth`
-- `site-to-ios-app`
-- `android-app-factory`
-- `suede-campaign-in-a-box`
-- `suede-sync-packaging`
-- `suede-release-linter`
-- `suede-rights-passport`
-- `suede-rights-audit`
-- `amazon-returns-recovery`
-- `subscription-recovery`
+**Search visibility (SEO, AEO, GEO)**
 
-Read `references/condensed-workflows.md` in this skill's `references/` folder
-when the individual skills named above are not installed: the Codex path that
-installs `suede-workflow-skills` alone is the common case. It carries a frozen
-fallback version of the Suedify, design, copy/SEO, visibility, site-alchemy,
-code-review, and agent-team workflows. Skip it entirely when the pack is
-installed: route to the specialist, which owns the current method.
+| Need | Skill |
+|---|---|
+| Scored technical and content SEO audit, schema, E-E-A-T | `suede-seo-audit` |
+| Visibility in AI answers (ChatGPT, Gemini, Perplexity, AI Overviews) | `suede-ai-seo` |
+| Template pages at scale from a dataset | `suede-programmatic-seo` |
+| A-F grade of one public page: findability, first screen, CTA, citation readiness | `suede-visibility-grader` |
+| Directory and listing submissions | `suede-directory-submissions` |
+| Topic plan and editorial calendar | `suede-content-strategy` |
+| Free tools and calculators that earn links | `suede-free-tools` |
+| Landing page that ranks but does not convert | `suede-site-alchemy` |
 
-## Core Rule
+**Agents, automation, and operations**
 
-Start from current truth. Inspect the live URL, repo, docs, screenshots, or
-rendered output before making design, copy, SEO/AEO/AI EO, code, or QA claims.
+| Need | Skill |
+|---|---|
+| Map how work happens today before designing a system | `suede-ops-assessment` |
+| Design the system: entities, write paths, agent vs. human routing | `suede-ops-architecture` |
+| Coordinate several agent lanes on one shared change | `suede-agent-teams` |
+| Search competing plans, then build and gate one multi-file change | `suede-graph-flo-xr` |
+| Eval cases and acceptance gates for LLM, RAG, or agent behavior | `suede-ai-eval` |
+| Keep one canonical value identical across web, app, docs, services | `suede-parity-contract` |
 
-Keep public Suede language anchored in creator ownership, programmable IP,
-rights, provenance, registry-backed media, royalty routing, licensing
-readiness, and agent commerce. Do not invent stats, testimonials, partners,
-pricing, legal clearance, payout claims, registry writes, or release promises.
+**Code and release quality**
 
-When the task touches copy, design, public visibility, Suedify, launch
-packaging, or agent-team delivery, also read
-`references/no-missed-quality-gates.md` in this skill's `references/` folder.
-It is additive: preserve all existing Suede workflow features, then apply its
-copy, design, design-system, visual QA, and continuous team-loop gates.
+| Need | Skill |
+|---|---|
+| Review, grade, or both (`--findings-only`, `--grade-only`); prompted only | `suede-code` |
+| CI jobs, required checks, branch protection | `suede-ci-gate` |
+| Install commands, proof links, release copy, handoff notes | `suede-launch-packaging` |
 
-Fix-loop cap (applies to every lane, in this skill or any it routes to): if a
-loop churns or repeats the same failure, stop broad work, isolate the failing
-unit, and replay it with explicit acceptance criteria, rerunning only the
-failed check. Budget recovery at up to three genuinely different fixes: each
-must change the diagnosis or the strategy, never rerun the last attempt. Stop
-early when the same root cause repeats, surface that cause to the user, and
-let them pick the next move instead of grinding.
+**Copy and design**
 
-Red flags, stop:
+| Need | Skill |
+|---|---|
+| Any copy surface, docs, explainers, agent docs, answer-first SEO pass | `suede-copy` |
+| Strip AI patterns from finished text, or a findings-only slop audit | `suede-deslop` |
+| One high-stakes public piece with research and an adversarial fact audit | `suede-ship-copy` |
+| Tokens, components, dark mode, full surface builds, restyles, visual QA | `suede-design` |
+| Image and graphic specs | `suede-image` |
+| Video scripts and edits | `suede-video` |
 
-- "I'll summarize the request for the sub-skill.": Pass the original request verbatim; paraphrase loses the trigger.
-- "This crosses three lanes; faster to wing it inline.": Crossing lanes is exactly when this umbrella workflow runs.
-- "The live URL is probably unchanged since last time.": Start from current truth; inspect before claiming.
+**Apps and stores**
 
-## Progressive Calibration
+| Need | Skill |
+|---|---|
+| Turn a website into an iOS app | `site-to-ios-app` |
+| Build a native Android app to Play Store release | `android-app-factory` |
+| Ship an Android release through the Play Developer API | `suede-play-release` |
+| App Store and Play listing keywords and screenshots | `suede-aso` |
 
-Accept feedback at any point in the workflow, not only after final handoff.
-When the user says what worked, preserve that pattern in the current pass and
-mirror it later. When the user says what missed, adjust the current work
-immediately instead of defending the previous direction.
+**Growth and marketing** (route to the narrowest match)
 
-At the end of meaningful Suede work, after verification, close in this order:
+| Need | Skill |
+|---|---|
+| Plan, ideas, loops, multi-role critique, persuasion mechanics | `suede-marketing-plan`, `suede-marketing-ideas`, `suede-marketing-loops`, `suede-marketing-council`, `suede-marketing-psychology` |
+| Competitor comparison pages; one rival in depth | `suede-competitors`; `suede-competitor-profiling` |
+| Buyer research, positioning, product messaging | `suede-customer-research`, `suede-product-marketing` |
+| Paid strategy; the ad units themselves | `suede-ads`; `suede-ad-creative` |
+| Organic social; Instagram account audit; content pipeline; clip to guide | `suede-social`; `suede-instagram-growth`; `suede-newsroom`; `suede-clip-to-guide` |
+| Outbound and pipeline | `suede-cold-email`, `suede-prospecting`, `suede-sales-enablement`, `suede-revops` |
+| PR, partners, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-community-marketing`, `suede-referrals` |
+| Lifecycle email and SMS | `suede-emails`, `suede-sms` |
+| Lead magnets | `suede-lead-magnets` |
+| Offers, pricing, paywalls | `suede-offers`, `suede-pricing`, `suede-paywalls` |
+| Signup, onboarding, churn | `suede-signup`, `suede-onboarding`, `suede-churn-prevention` |
+| Analytics, attribution, A/B tests | `suede-analytics`, `suede-attribution`, `suede-ab-testing` |
+
+**Creator and rights**
+
+| Need | Skill |
+|---|---|
+| Full artist campaign | `suede-campaign-in-a-box` |
+| Sync review package (no promo CTA, placement, or clearance claims) | `suede-sync-packaging` |
+| Release folder audit: stems, artwork, lyrics, metadata | `suede-release-linter` |
+| Ownership, split, sample, and license gaps; then package the transfer | `suede-rights-audit`, then `suede-rights-passport` |
+
+**Consumer recovery**
+
+| Need | Skill |
+|---|---|
+| Amazon restocking fees, short refunds, Amazon-billed subscriptions (needs Claude in Chrome logged in) | `amazon-returns-recovery` |
+| Any other recurring subscription | `subscription-recovery` |
+
+### Umbrella-only installs
+
+If the specialists are not installed (the common Codex path installs this skill
+alone), read `references/condensed-workflows.md`: a compact fallback for the
+design, copy and SEO, visibility, site, code review, and agent-team workflows.
+When the pack is installed, skip it and route to the specialist, which owns
+the current method. When the work touches copy, design, visual QA, or launch
+quality, also read `references/no-missed-quality-gates.md`.
+
+Install commands for Claude Code and Codex, including subsets, are in
+`references/install.md`. Read it only when the user asks how to install,
+update, or subset the pack. The Suede MCP's `suede_install_options` tool
+answers the same question live when it is connected.
+
+Use the Suede MCP only when it adds structure: listing skills, explaining
+install options, scaffolding an SEO and AEO copy audit, or generating a QA
+checklist. Skip it for small edits.
+
+## Next move
+
+Triggered by "what's next", "what should I do next", "recommend the next
+move", "give me the prompt", or a stalled task after a review, audit, or plan.
+Inspect read-only. Never execute the recommended action unless the user
+separately authorizes it.
+
+1. **Resolve the target and the done outcome** from the request, conversation,
+   handoff, plan, repo, or live surface.
+2. **Read only what can change the answer**, freshest first: `git -C <repo>
+   status --short --branch`, `git -C <repo> log --oneline -5`, the named plan
+   or handoff file at its exact path, and a live check
+   (`curl -sS -o /dev/null -w '%{http_code}' <url>`) when a public surface is
+   in scope.
+3. **Generate 2 to 4 candidates.** Drop work already verified complete,
+   adjacent cleanup, and anything outside the authorized scope. If the repo
+   already has a plan, issue tracker, or board, treat its recorded next step
+   as one candidate; never create a second tracker.
+4. **Score each 0 to 2 per row** and pick the highest total:
+
+| Criterion | 2 | 1 | 0 |
+|---|---|---|---|
+| Goal alignment | Produces the done signal | Required prerequisite | Adjacent |
+| Unblocking | Clears a core path or 2+ steps | Clears one step | Clears nothing known |
+| Evidence | Confirmed by current source | One read-only check away | Assumption |
+| Urgency | Active failure, deadline, security risk, release gate | Needed this milestone | No pressure |
+| Leverage | One focused session; prevents rework | Bounded, moderate payoff | Unscoped or low payoff |
+
+5. **Break ties** toward the prerequisite, then current-evidence verification,
+   then the more reversible action. Still within one point? Run up to three
+   more read-only checks; if still tied, show both and name the one fact that
+   decides.
+6. **If missing evidence is the real blocker,** the smallest read-only check
+   becomes the recommendation.
+
+Output:
 
 ```text
-Simple explanation:
-One or two plain sentences for a non-coder explaining what changed and why it
-matters.
+Recommended action: <one sentence>
+Why now: <one evidence-backed sentence>
 
-Usual breakdown:
-Changed:
-Verification:
-Caveats:
-Status:
+Quick prompt: <2-4 runnable sentences naming the skill, target, outcome, and done signal>
 
-Cue Suede:
-1. Change something - tell me what to revise and I will adjust it.
-2. Preserve this - tell me what worked so I can mimic it later.
-3. Keep as-is - say nothing and I will treat it as accepted.
+Say "expand prompt" for the full operator version or "make it granular" for exact steps and commands.
 ```
 
-If the user says `cue suede`, asks for feedback choices, or is calibrating the
-work mid-stream, offer the `Cue Suede` block on its own at the next safe
-checkpoint. Do not block completion waiting for an answer to it. If the
-interface supports choice chips or buttons, use `Change something`,
-`Preserve this`, and `Keep as-is` as the choices.
+The expanded and granular prompt formats are in
+`references/next-action-prompts.md`; load it only when the user asks for them.
+Show scores, evidence lists, or alternatives only when asked or when the tie
+rule requires them. Never recommend "keep working" or "do more research": name
+a command, artifact, decision, edit, or verification result.
 
-## When To Use MCP
+## Closing
 
-Use the Suede MCP only when it adds structure:
+After meaningful work, close with a one-sentence plain explanation for a
+non-coder, then Changed / Verification / Caveats / Status, then:
 
-- list available Suede skills;
-- explain install options;
-- scaffold a full SEO/AEO/AI EO copy audit;
-- generate a QA checklist;
-- help another agent understand the Suede stack quickly.
+```text
+Cue Suede:
+1. Change something: tell me what to revise.
+2. Preserve this: tell me what worked so I can match it.
+3. Keep as-is: say nothing and I will treat it as accepted.
+```
 
-Skip MCP for small edits, normal implementation, quick copy fixes, or anything
-where direct skill execution is faster.
+Never block completion waiting for that answer.
 
-## Specialized Lane Router
+## Red flags: stop
 
-Context handoff (required): When delegating to an individual skill, pass the original user request verbatim as the first input to that skill. Do not paraphrase or summarize. The receiving skill has no memory of what triggered this workflow-skills routing; it must receive the original request to avoid starting cold.
-
-Dispatch (required for multi-lane work): send each lane to its own subagent
-carrying that verbatim request, rather than loading every specialist body into
-this context on top of this router and its references. Name the model on each
-dispatch, state a numeric lane cap before launching, and stop at the cap
-instead of refilling.
-
-When the task names a narrower Suede lane, route directly.
-
-Copy lane:
-
-- Whole writing stack from one mode (including Suede SEO discoverability and
-  product or mobile copy): `johnny-suede-write`.
-- Standalone conversion copy, email, microcopy, or button labels: `suede-copy`.
-- Strip AI writing patterns from finished prose before it ships: `suede-deslop`.
-
-Design lane:
-
-- Full design stack (including Suedify, product and mobile surface design, and
-  visual QA): `johnny-suede-design`.
-- Design-system, token, and component-level decisions: `suede-design`.
-
-Build and quality lane:
-
-- Code review and A-F grade in one pass: `suede-code`: prompted only, never
-  auto-fires.
-- Findings-only deep review: `suede-code-review`. Grade-only verdict:
-  `suede-code-grader`.
-- AI evaluation strategy, failure-mode rubrics, AI-SPEC artifacts, prompt and
-  retrieval eval cases, or retroactive AI coverage audit: `suede-ai-eval`.
-- CI merge gate: `suede-ci-gate`: prompted only.
-- Large, risky, cross-surface, or release-bound coordination:
-  `suede-agent-teams`. If it is not installed, use the Agent Team Workflow in
-  `references/condensed-workflows.md`.
-- One scored recommendation for what to do next, packaged as a runnable
-  prompt: `suede-recommend-next-action`.
-
-Ship lane:
-
-- A change to one repo touching more than one file or surface, run as a single
-  researched, decomposed, adversarially reviewed, release-checked DAG:
-  `suede-graph-flo-xr`. This is the default for nontrivial repo work and outranks the
-  copy or design lane when the request also names one.
-- One high-stakes public text surface that strangers will read and that has to
-  be true: landing page, launch post, docs page, README, store listing:
-  `suede-ship-copy`.
-
-Launch lane, in pipeline order:
-
-- Launch or public packaging: `suede-launch-packaging`.
-- Search/discovery audit: `suede-seo-audit`.
-- Page visibility and CTA grade: `suede-visibility-grader`.
-- Page polish and conversion: `suede-site-alchemy`.
-- MCP changes: `suede-mcp-qa`.
-- Site-to-iOS conversion: `site-to-ios-app`.
-- Native Android app build, from keyword to Play Store release:
-  `android-app-factory`.
-
-Growth and marketing lane: route to the narrowest skill that matches, not to
-the whole group:
-
-- Plan, strategy, and idea generation: `suede-marketing-plan`,
-  `suede-marketing-ideas`, `suede-marketing-loops`, `suede-marketing-council`
-  (multi-perspective critique), `suede-marketing-psychology` (persuasion
-  mechanics behind a message).
-- Market and buyer research: `suede-competitors`, `suede-competitor-profiling`
-  (one named rival in depth), `suede-customer-research`.
-- Positioning and product-side messaging: `suede-product-marketing`; app-store
-  listing and keywords: `suede-aso`.
-- Paid and creative: `suede-ads` (strategy, channels, budget),
-  `suede-ad-creative` (the ad units themselves).
-- Organic and social: `suede-social`, `suede-instagram-growth` (account-specific
-  Instagram audit and daily loops), `suede-video`, `suede-image`,
-  `suede-clip-to-guide` (turn a clip into a written guide),
-  `suede-content-strategy`, `suede-newsroom` (six-role content pipeline with a
-  handoff record and one argument per distributed asset).
-- Search and programmatic reach: `suede-programmatic-seo`, `suede-ai-seo`,
-  `suede-directory-submissions`.
-- Outbound and pipeline: `suede-cold-email`, `suede-prospecting`,
-  `suede-sales-enablement`, `suede-revops`.
-- Earned and partner distribution: `suede-public-relations`,
-  `suede-co-marketing`, `suede-community-marketing`, `suede-referrals`.
-- Lifecycle messaging: `suede-emails`, `suede-sms`.
-- Top-of-funnel assets: `suede-lead-magnets`, `suede-free-tools`.
-- Offer, pricing, and monetization: `suede-offers`, `suede-pricing`,
-  `suede-paywalls`.
-- Activation and retention: `suede-signup`, `suede-onboarding`,
-  `suede-churn-prevention`.
-- Measurement and experiments: `suede-analytics`, `suede-attribution`,
-  `suede-ab-testing`.
-
-Creator lane:
-
-- Artist campaign work: `suede-campaign-in-a-box`.
-- Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
-  placement promise, clearance claim, or outreach claim to sync packaging.
-- Release folder audit: `suede-release-linter`.
-- Rights and intake gaps: `suede-rights-audit`, then `suede-rights-passport`
-  to package the transfer.
-
-Consumer recovery lane:
-
-- Amazon restocking-fee, short-refund, and Amazon-billed subscription recovery
-  via Amazon live chat: `amazon-returns-recovery`; requires the Claude in
-  Chrome extension logged into the target Amazon account.
-- Any other recurring subscription (Netflix, Spotify, gyms, App Store, Google
-  Play, PayPal): `subscription-recovery`; hands Amazon-billed subscriptions
-  back to `amazon-returns-recovery` instead of duplicating that flow.
-
-Precedence when several routers match at once:
-
-- A multi-file or multi-surface change to one repo that should be built and
-  reviewed as one DAG routes to `suede-graph-flo-xr`, even when the request also names
-  a copy or design lane.
-- Otherwise, use this umbrella workflow when the user wants the whole Suede
-  stack or when the task crosses several lanes, and route straight to the
-  specialist when the request names one lane.
-
-## Public Install Guidance
-
-The pack ships every skill listed below. Install commands for Claude Code (marketplace,
-plugin subsets, `install.sh` clone) and for Codex (umbrella-only or per-skill)
-are in `references/install.md` in this skill's `references/` folder: read it
-only when the user asks how to install, update, or subset the pack. The Suede
-MCP's `suede_install_options` tool answers the same question live and is the
-better source when it is available.
+- "I'll summarize the request for the specialist." Pass it verbatim.
+- "This crosses three lanes; faster to do it inline." Crossing lanes is when
+  this router earns its place.
+- "The live URL is probably unchanged." Inspect before claiming.
+- "I'll just do the recommended action too." Recommending is read-only.
 
 ## Boundaries
 
-- Do not expose private paths, credentials, secrets, tokens, unreleased assets,
-  private repos, or private Suede service details.
-- Do not copy protected site assets, exact UI copy, proprietary source code, or
-  trademarked identity when using Suedify.
-- Do not invent metrics, pricing, partner claims, testimonials, legal clearance,
-  payout claims, registry writes, or release/distribution outcomes.
-- Do not mark work done until the stated done signal has been checked or the
-  remaining caveat is explicitly named.
+- Never expose private paths, credentials, secrets, unreleased assets, or
+  private service details.
+- Never copy protected site assets, exact copy, proprietary code, or
+  trademarked identity during a restyle.
+- Never mark work done until the done signal has been checked or the remaining
+  caveat is named.
+- Never mutate files, repos, deployments, accounts, or messages while
+  recommending a next move.
