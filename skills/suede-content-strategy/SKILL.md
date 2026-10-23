@@ -1,6 +1,6 @@
 ---
 name: suede-content-strategy
-description: "Suede-owned content-strategy discipline for audience questions, content pillars, topic clusters, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds. NOT FOR: writing an individual asset (use suede-copy), technical or on-page SEO audits (use suede-seo-audit), or social-channel production (use suede-social)."
+description: "Suede AI content strategy for audience questions, content pillars, topic clusters, AI answer gaps, original-data assets, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions, each tied to a KPI. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds in search and AI answers. NOT FOR: writing an individual asset (use suede-copy); technical or on-page SEO audits (use suede-seo-audit); AI visibility measurement and crawler policy (use suede-ai-seo); social-channel production (use suede-social)."
 metadata:
   version: 2.0.0
 ---
@@ -32,7 +32,7 @@ Gather this context (ask if not provided):
 - What resources do you have? (writers, budget, time)
 - What content formats can you produce? (written, video, audio)
 
-### 4. Competitive Landscape
+### 4. Competitors
 - Who are your main competitors?
 - What content gaps exist in your market?
 
@@ -55,7 +55,7 @@ Every piece of content must be searchable, shareable, or both. Searchable is the
 - Place keywords in title, headings, first paragraph, URL
 - Provide comprehensive coverage (don't leave questions unanswered)
 - Include data, examples, and links to authoritative sources
-- Optimize for AI/LLM discovery: clear positioning, structured content, brand consistency across the web
+- Write for answer engines and readers at once: answer the question in the opening 40 to 80 words, use question headings that name their subject, state quotable facts with sources, and add one original data point or first-hand observation. The full standard lives in `suede-ai-seo`.
 
 ### When Writing Shareable Content
 
@@ -97,7 +97,7 @@ High-intent keywords + product adoption.
 **Data-Driven Content**
 - Product data analysis (anonymized insights)
 - Public data analysis (uncover patterns)
-- Original research (run experiments, share results)
+- Original research (run experiments, share results). Original data is the asset answer engines and journalists most need to cite, so give each finding a stable URL, method, sample, and date.
 
 **Expert Roundups**
 A selected set of relevant, verified experts answering one specific question.
@@ -239,7 +239,17 @@ do not invent page inventories, rankings, engagement, or gaps.
 - Angles they're missing
 - Outdated content to improve on, based on a visible date or stale claim
 
-### 6. Sales and Support Input
+### 6. AI Answer Gaps
+
+If `suede-ai-seo` has run a prompt panel, its results are a ranked topic list:
+prompts where competitors are cited and you are not, prompts where the answer
+gets a fact about you wrong, and third-party sources engines rely on. Each
+becomes a topic (answer the question better on a page you own) or an off-site
+task (earn a mention on the source engines already cite). Bing Webmaster
+Tools grounding queries and Search Console queries with impressions but low
+clicks serve the same purpose.
+
+### 7. Sales and Support Input
 
 Extract from customer-facing teams:
 - Common objections
@@ -337,6 +347,9 @@ Emit the strategy in exactly this shape:
 - **Why this topic:** [the customer-research evidence, with its source and date]
 - **Score and owner:** [Impact / Fit / Search / Resources] = [total]; [owner,
   rough effort]
+- **KPI:** [the metric this piece should move, e.g. impressions and clicks
+  for the query family, AI citation share for the matching prompt cluster,
+  assisted conversions] with its source and re-check date
 
 ## Topic cluster map
 [Pillar]
