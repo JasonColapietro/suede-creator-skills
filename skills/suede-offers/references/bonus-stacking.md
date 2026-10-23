@@ -33,7 +33,7 @@ For each major objection your buyer has, add a bonus that closes it.
 | "My situation is more complex than the average buyer" | 1:1 onboarding call to customize the plan |
 | "Will this work in [region/language]?" | Localized version or addendum |
 
-A 4-bonus stack that closes 4 specific objections converts massively better than a 4-bonus stack of generic "extras."
+Four bonuses that each close a named objection do more work than four generic "extras." Test it: the objection each bonus targets should show up less often in sales calls and replies.
 
 ### How to find your buyer's actual objections
 
@@ -67,11 +67,11 @@ A common structure:
 
 | # | Type | Purpose | Typical value |
 |---|------|---------|---------------|
-| 1 | **Speed bonus** | Removes time-delay objection | Templates, swipes, accelerators |
-| 2 | **Trust bonus** | Removes likelihood-of-failure objection | Case study, methodology doc, examples library |
+| 1 | **Speed bonus** | Removes the wait objection | Templates, swipes, accelerators |
+| 2 | **Trust bonus** | Removes the "will it work for me" objection | Case study, methodology doc, examples library |
 | 3 | **Stuck bonus** | Removes "what if I get stuck" objection | Office hours, Slack, on-demand support |
 | 4 | **Decision bonus** | Removes "I have to choose between X and Y" objection | Tool stack with discount codes, pre-vetted recommendations |
-| 5 (optional) | **Bigger-than-you-asked bonus** | Adds dream-outcome surface area | Adjacent deliverable, related framework, partner offer |
+| 5 (optional) | **Bigger-than-you-asked bonus** | Widens the outcome | Adjacent deliverable, related framework, partner offer |
 
 Example for a $2K B2B copywriting course:
 
@@ -81,7 +81,7 @@ Example for a $2K B2B copywriting course:
 | 2 | "9 case studies from agencies that hit $250K MRR using these frameworks", $0 (proof, not a saleable asset) | "Does this actually work for my situation?" |
 | 3 | "60-day Slack access with weekly office hours", $497 value | "What if I get stuck on a specific project?" |
 | 4 | "The tool stack: 5 tools we use + discount codes (saves ~$1,200/yr)", $1,200 value | "I don't know what to use" |
-| 5 | "Bonus session: How to charge $5K+ per project", $297 value | Pricing confidence (adjacent dream outcome) |
+| 5 | "Bonus session: How to charge $5K+ per project", $297 value | Pricing confidence (adjacent outcome) |
 
 Total stated value: ~$2,300 in bonuses on a $2K core. Math checks out (under 2x). Each bonus closes a real objection.
 

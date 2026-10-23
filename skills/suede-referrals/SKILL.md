@@ -254,6 +254,6 @@ controls, tax support, and data-export terms before recommending a platform.
 
 - Use `suede-launch-packaging` to coordinate the approved program launch.
 - Use `suede-emails` for referral invitation and nurture sequences.
-- Use `suede-marketing-psychology` to test incentive framing.
+- Use `suede-offers` (behavioral-models catalog) to frame incentive tests as evidence-tiered hypotheses.
 - Use `suede-ab-testing` to design and evaluate the incentive, messaging, and placement tests above.
 - Use `suede-analytics` to define and read referral attribution.

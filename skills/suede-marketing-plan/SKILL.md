@@ -269,7 +269,7 @@ The exec summary should be short enough to read in 60 seconds. The rest should r
 - Use `suede-product-marketing` for positioning and `suede-customer-research` for voice-of-customer evidence.
 - Use `suede-marketing-ideas` for a wider option set and `suede-marketing-loops` for approved recurring operations.
 - Use `suede-marketing-council` when a strategic bet is contested, two defensible directions, an irreversible commitment, or a bet the user cannot revisit for months.
-- Use `suede-marketing-psychology` for the behavioral mechanism behind an Activation or Revenue move, stated as a testable hypothesis.
+- Use `suede-offers` for offer design and for the behavioral mechanism behind an Activation or Revenue move, stated as a testable hypothesis.
 - Use `suede-onboarding`, `suede-emails`, `suede-referrals`, or `suede-pricing` for lifecycle execution.
 - Use `suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, or `suede-ad-creative` for acquisition execution.
 - Use `suede-launch-packaging` for the launch moment.
