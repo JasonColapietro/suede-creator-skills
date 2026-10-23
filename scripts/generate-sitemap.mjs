@@ -137,7 +137,20 @@ function declaredDate(relPath) {
   return m ? m[1] : null;
 }
 
+// A shallow clone answers `git log -1 -- <file>` with the graft commit for
+// every file, so its dates would stamp every unchanged page with the clone's
+// newest commit. There, a clean file keeps the lastmod already committed in
+// the sitemap; only a file with uncommitted changes moves to today.
+const committedLastmod = new Map(
+  [...parseSitemapEntries(fs.existsSync(sitemapPath) ? readText(sitemapPath) : "")].map(([loc, e]) => [loc, e.lastmod])
+);
+
+// docs/<p>/index.html is served at /<p>/; any other docs file at its own path.
+const locFor = (relPath) =>
+  `${BASE_URL}/${relPath.split(path.sep).join("/").replace(/^docs\//, "").replace(/(^|\/)index\.html$/, "$1")}`;
+
 function lastCommitDate(relPath) {
+  const loc = locFor(relPath);
   const declared = declaredDate(relPath);
   if (declared) return declared;
   if (!hasOwnGitHistory) {
@@ -150,6 +163,9 @@ function lastCommitDate(relPath) {
   );
   if (status.status === 0 && status.stdout.trim()) {
     return localToday();
+  }
+  if (!canVerifyGitDates && committedLastmod.has(loc)) {
+    return committedLastmod.get(loc);
   }
   const result = spawnSync(
     "git",

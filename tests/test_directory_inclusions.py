@@ -58,7 +58,7 @@ class DirectoryInclusionTests(unittest.TestCase):
             for name in ("scripts/build-directory.mjs", "scripts/directory/badges.mjs",
                          "scripts/directory/featured.mjs", "directory/featured-projects.json",
                          "directory/categories.json", "directory/notes.json",
-                         "directory/promotion.json", "docs/llms.txt"):
+                         "directory/promotion.json", "directory/services-cta.json", "docs/llms.txt"):
                 target = work / name
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(ROOT / name, target)

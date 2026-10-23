@@ -3,38 +3,91 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>How the Agent Skills Directory Lists Skills</title>
-    <meta name="description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
+    <title>How Agent Skills Are Scored and Listed | Suede Directory</title>
+    <meta name="description" content="How the Suede Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.">
     <meta name="keywords" content="agent skill quality check, SKILL.md best practices, agent skills specification, skill grading, Suede Skill Check">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/methodology/">
     <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="How the Agent Skills Directory Lists Skills">
-    <meta property="og:description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
+    <meta property="og:title" content="How Agent Skills Are Scored and Listed | Suede Directory">
+    <meta property="og:description" content="How the Suede Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/methodology/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How the Agent Skills Directory Lists Skills">
-    <meta name="twitter:description" content="The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="How Agent Skills Are Scored and Listed | Suede Directory">
+    <meta name="twitter:description" content="How the Suede Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/methodology/#page",
-        "name": "How the Agent Skills Directory Lists Skills",
-        "description": "The method behind the Suede Skills Directory: source lists, the Suede Skill Check, the 0–99 quality score, grades, listing rules and full pages.",
+        "name": "How Agent Skills Are Scored and Listed | Suede Directory",
+        "headline": "How skills are listed and graded",
+        "description": "How the Suede Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.",
         "url": "https://skills.suedeai.ai/directory/methodology/",
-        "dateModified": "2026-10-19",
+        "dateModified": "2026-10-23",
+        "inLanguage": "en",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/methodology/#breadcrumb"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://suedeai.ai/founder#person",
+          "name": "Jason Colapietro",
+          "url": "https://suedeai.ai/founder",
+          "jobTitle": "Founder and CEO, Suede AI",
+          "worksFor": {
+            "@id": "https://suedeai.ai/#organization"
+          },
+          "sameAs": [
+            "https://jasoncolapietro.com/",
+            "https://github.com/JasonColapietro",
+            "https://www.linkedin.com/in/jasoncolapietro",
+            "https://x.com/johnnysuede",
+            "https://www.crunchbase.com/person/jason-colapietro-d83e",
+            "https://www.wikidata.org/wiki/Q140235755"
+          ]
+        },
+        "editor": {
+          "@id": "https://suedeai.ai/founder#person"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai",
+          "logo": "https://skills.suedeai.ai/assets/suede-ai-logo-transparent.webp",
+          "founder": {
+            "@id": "https://suedeai.ai/founder#person"
+          },
+          "sameAs": [
+            "https://suedeai.agency/",
+            "https://suedeai.app/",
+            "https://suedeai.org/",
+            "https://github.com/Suede-AI",
+            "https://x.com/AISUEDE",
+            "https://www.youtube.com/@aisuede",
+            "https://www.linkedin.com/company/suede-labs",
+            "https://www.crunchbase.com/organization/suede-labs-ai",
+            "https://www.wikidata.org/wiki/Q141169484"
+          ]
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Agent Skills",
+          "url": "https://agentskills.io/specification"
         }
       }
     </script>
@@ -96,6 +149,7 @@
       <h1>How skills are listed and graded</h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Methodology</span></nav>
       <p class="lead">The directory lists public Agent Skills that pass a published, mechanical check. This page is the whole method: where skills come from, what is checked, what gets a page of its own, and how to change a listing.</p>
+      <p class="byline muted">Method written and maintained by <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of <a href="https://suedeai.ai">Suede AI</a>. Figures on this page come from the <time datetime="2026-10-19">October 19, 2026</time> snapshot.</p>
       <section class="panel" aria-labelledby="sources-title">
         <h2 id="sources-title">Where the skills come from</h2>
         <p>The directory reads the repositories cited by at least two of these 8 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">hesreallyhim/awesome-claude-code</a>, <a href="https://github.com/karanb192/awesome-claude-skills" target="_blank" rel="noopener">karanb192/awesome-claude-skills</a>, <a href="https://github.com/skillmatic-ai/awesome-agent-skills" target="_blank" rel="noopener">skillmatic-ai/awesome-agent-skills</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>. It adds the official collections those lists name and repositories accepted through <a href="../submit/">listing requests</a>. Every SKILL.md in those repositories is read from the default branch, except in hidden folders and dependency or build folders (node_modules, vendor, dist, build), and nothing in them is executed. Accepted requests may name exact canonical skill folders, including a publisher’s hidden distribution folder; only those reviewed roots and skill names are included. System skills, unreviewed mirrors and fixtures remain excluded. This snapshot was taken on October 19, 2026.</p>
@@ -197,6 +251,21 @@
         <h2 id="change-title">Refreshes and changes</h2>
         <p>Each refresh re-reads the source repositories, so quoted descriptions, file facts and check results follow the published SKILL.md. To request a listing, a correction or a removal, use the <a href="../submit/">listing request page</a>; requests are reviewed by hand.</p>
       </section>
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="methodology">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=methodology" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+          <div class="svc-card" data-offer="agents">
+            <h3>Put a team of agents on your recurring work</h3>
+            <p>Agent Studio from Suede AI builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.</p>
+            <p><a class="button secondary" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=methodology" data-cta="agents" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+          </div>
+        </div>
+      </aside>
     </main>
     <footer>
       <div class="shell">
