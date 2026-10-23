@@ -63,11 +63,11 @@ Ordered by business value toward agency leads first, then Agent Studio, then aut
 
 | # | Week of | Page | Path | Status | Primary route | Why now |
 | ---: | --- | --- | --- | --- | --- | --- |
-| 1 | Oct 26 | Best SEO, AEO and GEO skills for Claude Code | `/directory/guides/best-seo-skills/` | Drafted | Agency | Competitors already rank best-of SEO pages ranked only by installs; ours ranks by a published score and routes to the agency |
-| 2 | Oct 26 | How to get your agent skill found in search and cited by AI | `/directory/guides/skill-ai-visibility/` | Drafted | Agency | Talks directly to devtool companies, the agency's best-fit buyers, and feeds the badge loop |
-| 3 | Nov 2 | Skill AI-visibility check (free tool) | `/directory/check/` | Spec in section 5 | Agency | Lead magnet with a clear handoff to an AI visibility engagement |
-| 4 | Nov 2 | How to install agent skills in Claude Code, Codex and Cursor | `/directory/guides/install-agent-skills/` | Drafted | Agent Studio | Highest-volume question class; links from every skill page's install section |
-| 5 | Nov 9 | Agent skills vs MCP servers vs plugins | `/directory/guides/skills-vs-mcp-servers/` | Drafted | Agent Studio | Heavily covered by competitors; we add real paired examples from featured projects |
+| 1 | Oct 26 | Best SEO, AEO and GEO skills for Claude Code | `/directory/guides/best-seo-skills/` | Published Oct 23 | Agency | Competitors already rank best-of SEO pages ranked only by installs; ours ranks by a published score and routes to the agency |
+| 2 | Oct 26 | How to get your agent skill found in search and cited by AI | `/directory/guides/skill-ai-visibility/` | Published Oct 23 | Agency | Talks directly to devtool companies, the agency's best-fit buyers, and feeds the badge loop |
+| 3 | Nov 2 | Skill AI-visibility check (free tool) | `/directory/check/` | Live (v1, static) | Agency | Lead magnet with a clear handoff to an AI visibility engagement |
+| 4 | Nov 2 | How to install agent skills in Claude Code, Codex and Cursor | `/directory/guides/install-agent-skills/` | Published Oct 23 | Agent Studio | Highest-volume question class; links from every skill page's install section |
+| 5 | Nov 9 | Agent skills vs MCP servers vs plugins | `/directory/guides/skills-vs-mcp-servers/` | Published Oct 23 | Agent Studio | Heavily covered by competitors; we add real paired examples from featured projects |
 | 6 | Nov 16 | State of agent skills: October 2026 data report | `/directory/guides/state-of-agent-skills-2026/` | Planned | Agency | Original data is the strongest link magnet in this niche; we hold a full scored snapshot |
 | 7 | Nov 23 | How to write a SKILL.md that scores 90+ | `/directory/guides/write-a-skill-md/` | Planned | Agency | Pulls publishers into the score, badge and listing loop |
 | 8 | Nov 30 | Are agent skills safe? Review a skill before you install | `/directory/guides/are-agent-skills-safe/` | Planned | Agent Studio | Security questions are rising; we can answer from our own per-skill install records |
@@ -88,7 +88,7 @@ Every listed skill and repository has a listing badge (`badge.svg`) linked to it
 ### The loop
 
 1. **Find.** A publisher lands on their listing (from search, from a notification, or from our outreach).
-2. **Claim.** The listing page invites the author to "claim" it: add the badge, run the Skill AI-visibility check, and see the open points. (CTA placement `publisher-claim` in `directory/editorial/cta.json`.)
+2. **Claim.** The listing page invites the author to "claim" it: add the badge, run the Skill AI-visibility check, and see the open points. (Campaign `publisher-claim` in `directory/services-cta.json`.)
 3. **Improve.** The check shows the largest open points. Fixing them raises the score.
 4. **Embed.** The badge goes into the README, usually the first page people read about a skill. GitHub marks README links `nofollow`, so the value is referral traffic, discovery by crawlers and models that read READMEs, and one consistent description of the skill across both pages. Followed links come from the roundups, press and data report below.
 5. **Verify and feature.** The author requests verification; verified, eligible skills get a featured placement, which gives them a reason to share the listing.
@@ -132,7 +132,7 @@ Why this converts: the check is useful on its own, it shows the gap between a sk
 
 ## 6. CTA system
 
-Variants live in `directory/editorial/cta.json`, keyed by placement, each with UTM parameters (`utm_source=skills.suedeai.ai`, `utm_medium` by surface, `utm_campaign` = placement, `utm_content` = variant). Category routing decides whether a page promotes the agency or Agent Studio.
+Variants live in `directory/services-cta.json` under `campaigns`, next to the plain two-card services offer, so one file drives every CTA on the site and in the Awesome catalog. Each outbound URL carries UTM parameters (`utm_source=skills.suedeai.ai`, `utm_medium` by surface, `utm_campaign` = placement, `utm_content` = variant). Category routing decides whether a page promotes the agency or Agent Studio.
 
 Guardrails:
 
@@ -161,10 +161,11 @@ No baselines are stated here because none were measurable from this session. Rec
 
 **Analytics gap.** The site ships no analytics script today, so on-site page views and CTA click-through cannot be measured. Destination-side UTMs still measure leads. Adding privacy-friendly, cookieless analytics needs an owner decision and a privacy-copy update; until then, rely on Search Console and destination analytics.
 
-## 8. Notes for the template owner
+## 8. Template status (October 23, 2026)
 
-- Titles and footers say "Suede Skills Directory". Company style is "Suede AI"; consider "Agent Skills Directory by Suede AI".
-- FAQPage markup is still valid structured data, but Google limits FAQ rich results to well-known government and health sites. Emit it for machine readability, not for a SERP feature.
-- Codex now documents skills at `.agents/skills` (repository) and `$HOME/.agents/skills` (user), with `$skill-installer` as the in-app installer ([OpenAI docs](https://developers.openai.com/codex/skills)). Skill pages print `python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py`; confirm that path still exists in current Codex before the next build.
-- Add `/directory/guides/` and each published guide to the sitemap and `llms.txt`.
-- Link each guide from the places listed in its `link_from` field in `pages.json`.
+- The brand in titles, footers, badges and `og:site_name` is "Suede AI Skills Directory". The hub keeps its keyword-led title.
+- The four guides are published at `/directory/guides/` with Article, BreadcrumbList and (on the best-SEO guide) ItemList markup. FAQs stay visible but carry no FAQPage markup: Google limits FAQ rich results to well-known government and health sites, and the rest of skills.suedeai.ai does not use FAQPage consistently.
+- Codex documents skills at `.agents/skills` (repository) and `$HOME/.agents/skills` (user), with `$skill-installer` as the in-app installer ([OpenAI docs](https://developers.openai.com/codex/skills), checked October 23, 2026). Skill pages now print a project-level copy into `.agents/skills/` instead of the undocumented `~/.codex/skills/.system/...` installer script.
+- The Skill AI-visibility check (section 5, version 1) is live at `/directory/check/`.
+- Guides, the guides hub and the check are in the sitemap and `llms.txt`, and each guide is linked from the pages its `link_from` field names. The build fails on a `link_from` entry it cannot place and on any guide or CTA link to an internal page that does not exist.
+- CTA links to skills.suedeai.ai pages print as relative links without UTM tags; outbound links to suedeai.agency and suedeai.app keep theirs.
