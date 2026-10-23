@@ -41,7 +41,9 @@ Use search terms, competitor listings, support pain, reviews, existing audience,
 and first-party product data to shape the opportunity. Record source, region,
 language, date, and evidence limits. Do not call a phrase "winnable" from an
 autocomplete result or infer volume/difficulty without a dated source that
-defines those metrics.
+defines those metrics. `suede-aso` owns keyword research and listing
+optimization; run it here so the product name and core loop match how people
+search, not after the build.
 
 The product brief must include:
 
@@ -62,7 +64,7 @@ Kotlin + Jetpack Compose is the default; a Trusted Web Activity, Capacitor, or
 other wrapper must be an explicit product choice with offline, navigation,
 policy, performance, accessibility, and store-value risks assessed.
 
-For a general phone/tablet build on the 2026-07-19 baseline, start with API 36:
+For a general phone/tablet build on the 2026-10-23 baseline, target API 36:
 
 ```kotlin
 android {
