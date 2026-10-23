@@ -1,6 +1,6 @@
 ---
 name: suede-directory-submissions
-description: "Suede-affiliated directory distribution strategy for selecting listings, sequencing submissions, tailoring positioning, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions and a measurable tracker. NOT FOR: broader launch orchestration (use suede-launch-packaging), scalable destination-page production (use suede-programmatic-seo), or citation and search auditing (use suede-seo-audit)."
+description: "Suede AI directory distribution for selecting listings, sequencing submissions, tailoring positioning, keeping entity facts consistent, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions with a measurable tracker, or when directory and review-site presence should feed AI answer-engine recommendations. NOT FOR: broader launch orchestration (use suede-launch-packaging); scalable destination-page production (use suede-programmatic-seo); AI visibility measurement and on-page citation work (use suede-ai-seo)."
 metadata:
   version: 2.0.0
 ---
@@ -235,23 +235,31 @@ strategy belongs to `suede-competitors`.
 
 ---
 
-## GEO (Generative Engine Optimization)
+## Directories as AEO/GEO inputs
 
-Directories and destination pages may appear in search and answer engines. Treat
-visibility as an observable outcome, not a guaranteed effect of authority scores
-or markup.
+Answer engines recommend brands that the wider web corroborates, and they
+often cite review sites, marketplaces, and category directories when they
+build a shortlist. A directory plan is part of the off-site consensus layer
+in `suede-ai-seo`. Two rules stay this skill's own:
 
-On-page citation tactics (headings, schema, source-dated facts, comparison
-tables) are owned by `suede-seo-audit`. Two rules stay this skill's own: earn
-genuine third-party discussion rather than seeding or fabricating citations, and
-keep authorized company profiles and live-integration registry entries
-consistent with verified entity facts.
+1. **Entity consistency.** Every listing uses the canonical entity sheet from
+   `suede-ai-seo` (`references/entity-graph.md`): exact brand name, one-line
+   description, founder names, logo, category, and URL. A listing that
+   disagrees with the site is a finding, and fixing old listings often matters
+   more than adding new ones. Add each verified listing URL to the brand's
+   `sameAs` set only when the profile is controlled by the brand.
+2. **Genuine discussion only.** Earn reviews and community mentions; never
+   seed, script, or fabricate them.
+
+Which directories engines cite for your category is observable: when
+`suede-ai-seo` runs its prompt panel, the source gap list (domains cited for
+competitors but not for you) is a prioritized directory and review-site queue.
+Use it to rank tiers instead of guessing.
 
 ### Measurement
 
-Use authorized, currently callable tools or manual checks to sample relevant
-queries. Record engine, account context, prompt, locale, date, result, and whether
-the result is reproducible. Verify any tracking product and its cost before
+Record engine, account context, prompt, locale, date, result, and whether the
+result reproduced. Verify any tracking product and its cost before
 recommending it.
 
 ---
@@ -283,7 +291,9 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 | Directory referral sessions | | | |
 | Qualified conversions by listing | | | |
 | Review requests and published reviews | | | |
-| Search or answer-engine observations | | | |
+| Listings matching the canonical entity sheet | | | |
+| Directory domains cited in AI answers (prompt panel) | | | |
+| Referring domains (Search Console Links, Bing Webmaster Tools) | | | |
 | Cost and team time | | | |
 
 ---
@@ -341,7 +351,7 @@ Keep the plan actionable. Every item should be something the user can do today.
 ## Routing
 
 - Use `suede-launch-packaging` for the broader launch sequence.
-- Use `suede-programmatic-seo` for destination pages and `suede-seo-audit` for search or citation checks.
+- Use `suede-programmatic-seo` for destination pages, `suede-seo-audit` for technical checks on those pages, and `suede-ai-seo` for entity facts, the prompt-panel source gap list, and AI citation measurement.
 - Use `suede-competitors` for comparison-page strategy and `suede-content-strategy` for editorial support.
 - Use `suede-free-tools` for interactive destination assets, and `suede-community-marketing`, `suede-social`, or `suede-content-strategy` for community and social distribution.
 - Use `suede-public-relations` when a flagship launch also warrants earned media.
