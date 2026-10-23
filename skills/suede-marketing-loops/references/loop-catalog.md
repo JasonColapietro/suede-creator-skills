@@ -116,7 +116,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Check cadence**: Weekly
 - **Acts when**: The editorial pipeline has fewer than N weeks of planned content queued.
 - **Purpose**: Keep the content pipeline from running dry.
-- **Skills used**: `suede-content-strategy`, `suede-marketing-ideas`, `suede-seo-audit`
+- **Skills used**: `suede-content-strategy`, `suede-marketing-plan`, `suede-seo-audit`
 - **Loop body**:
   1. Count planned/drafted pieces remaining in the calendar.
   2. If below the buffer, generate new topic ideas from the keyword-gap output, customer questions, and pillar plan.
@@ -612,7 +612,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Check cadence**: Weekly (Mon 9am)
 - **Acts when**: Always runs: this is the heartbeat. It "acts" by flagging the week's notable movers.
 - **Purpose**: One standing full-funnel pulse so nothing drifts unnoticed.
-- **Skills used**: `suede-analytics`, `suede-marketing-plan`, `suede-marketing-ideas`
+- **Skills used**: `suede-analytics`, `suede-marketing-plan`, `suede-marketing-plan`
 - **Loop body**:
   1. Pull top-line AARRR metrics vs. last week and vs. plan.
   2. Flag the biggest mover (good and bad) per stage.

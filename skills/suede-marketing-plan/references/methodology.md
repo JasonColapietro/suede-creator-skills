@@ -455,7 +455,7 @@ mismatched artifact.
 
 Before printing:
 
-- **Cross-reference check**: every `suede-marketing-ideas` number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
+- **Cross-reference check**: every tactic-library number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
 - **MCP/API check**: every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
 - **Path check**: no machine-specific paths in the output. Prove it by running `grep -nE '/Users/|/home/|/private/tmp' final_plan.md` and requiring zero matches; replace any hit with a descriptive reference.
 - **Voice check**: final read against brand voice rules. Flag and fix violations.
@@ -601,7 +601,7 @@ after the review-state transition.
 - **Skipping intake.** A plan written without proper intake is generic and won't survive contact with the founder. Always do the full ten-topic intake unless the user explicitly waives it.
 - **Pretending data exists.** If you can't confirm a number (current MRR, retention rate, etc.), don't guess. Mark it `[TBD: to confirm with team]` in the plan and add to open decisions.
 - **Ignoring the brand voice.** If the client has a strong voice (most do), every section must respect it. Read the voice rules before drafting any copy-adjacent text.
-- **Padding the idea bank.** Section 12 is comprehensive only if it includes the skip list with reasons. Don't pad with ideas that clearly don't fit just to hit the 139.
+- **Padding the idea bank.** Section 12 is comprehensive only if it includes the skip list with reasons. Don't pad with ideas that clearly don't fit just to hit the 142.
 - **Glossing over uncomfortable metrics.** If churn is high or activation is low, name it in Current State. Founders read past sugar-coating.
 - **Treating financing as capability.** A round may be a conditional input, but
   every unlock still requires verified resources, evidence, an owner, approval,

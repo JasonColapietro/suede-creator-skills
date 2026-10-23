@@ -9,7 +9,7 @@ metadata:
 
 Suede turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
 
-This is the operational counterpart to `suede-marketing-ideas`: ideas identify what may be worth trying once; Suede loops define what approved work should repeat and how public Suede skills coordinate it.
+This is the operational counterpart to `suede-marketing-plan`: the plan identifies what may be worth trying; Suede loops define what approved work should repeat and how public Suede skills coordinate it.
 
 ## How to Use This Skill
 
@@ -112,7 +112,7 @@ Avoid: "set it and forget it," "fully autonomous marketing," "AI does everything
 
 ## Routing
 
-- Use `suede-marketing-ideas` for one-off tactics and `suede-ab-testing` for experimentation.
+- Use `suede-marketing-plan` for one-off tactics and plans, and `suede-ab-testing` for experimentation.
 - Use `suede-analytics` for measurement inputs.
 - Use `suede-content-strategy` for the portfolio decision behind a content loop, which pillars exist, and what should be refreshed, consolidated, or killed. This skill owns the recurring cadence; that skill owns what the cadence operates on.
 - Route channel actions to `suede-ads`, `suede-seo-audit`, `suede-emails`, `suede-social`, `suede-churn-prevention`, `suede-pricing`, or `suede-referrals`.

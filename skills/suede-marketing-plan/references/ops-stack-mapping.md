@@ -86,7 +86,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational: run first; every section of the plan references this |
 | `suede-customer-research` | Conduct customer interviews + surveys | Section 2 + Section 3 (Current state) |
 | `suede-offers` | Offer design and behavioral models | Cross-cuts copy, CRO, paywalls |
-| `suede-marketing-ideas` | The 139-idea library | Section 12 of plan (Idea bank) |
+| `suede-marketing-plan` (tactic library) | The 142-idea library and scoring rubric | Section 12 of plan (Idea bank) |
 
 ## MCPs and APIs mapped to AARRR
 

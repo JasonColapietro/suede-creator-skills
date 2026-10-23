@@ -683,7 +683,7 @@ The fCMO's job is to:
 | **Retention** | `suede-emails`, `suede-churn-prevention` | `suede-copy`, `suede-ab-testing`, `suede-paywalls` |
 | **Referral** | `suede-referrals`, `suede-social` | `suede-copy`, `suede-site-alchemy`, `suede-emails` |
 | **Revenue** | `suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops` | `suede-ab-testing`, `suede-copy` |
-| **Cross-cutting** (brand, intelligence) | `suede-product-marketing`, `suede-customer-research`, `suede-offers` | `suede-marketing-ideas`; optional tools only after availability and authority checks |
+| **Cross-cutting** (brand, intelligence) | `suede-product-marketing`, `suede-customer-research`, `suede-offers` | the tactic library; optional tools only after availability and authority checks |
 
 ### MCPs / APIs mapped to stages
 
@@ -718,7 +718,7 @@ The public Suede skill pack makes approved workflows repeatable across stages. C
 
 ## 12. Tactical idea bank: curated illustrative set
 
-The `suede-marketing-ideas` skill provides a broader tactical inventory.
+The tactic library (`references/tactic-library.md`) provides a broader tactical inventory.
 Sections 4–8 describe the example plan; this section shows how selected ideas
 could be annotated for one illustrative scenario.
 

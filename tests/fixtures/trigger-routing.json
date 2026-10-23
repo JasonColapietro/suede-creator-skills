@@ -721,7 +721,6 @@
       "id": "marketing-planning",
       "skills": [
         "suede-marketing-plan",
-        "suede-marketing-ideas",
         "suede-marketing-council",
         "suede-marketing-loops"
       ],
@@ -733,35 +732,19 @@
             "90 day plan",
             "12 month roadmap",
             "growth plan",
-            "go to market"
-          ],
-          "negative": [
-            "shortlist",
-            "tactic library",
-            "simulated advisors",
-            "recurring workflow",
-            "weekly review"
-          ],
-          "metadataMustContain": [
-            "marketing planning"
-          ]
-        },
-        {
-          "skill": "suede-marketing-ideas",
-          "positive": [
+            "go to market",
             "shortlist",
             "tactic library",
             "growth tactics",
             "stuck"
           ],
           "negative": [
-            "90 day plan",
-            "12 month roadmap",
             "simulated advisors",
-            "recurring workflow"
+            "recurring workflow",
+            "weekly review"
           ],
           "metadataMustContain": [
-            "marketing ideation"
+            "marketing planning"
           ]
         },
         {
@@ -809,12 +792,13 @@
           "expected": "suede-marketing-plan"
         },
         {
-          "id": "marketing-ideas-negative",
+          "id": "marketing-shortlist-negative",
           "mode": "negative",
           "prompt": "I am stuck — give me a shortlist of growth tactics from the tactic library.",
-          "expected": "suede-marketing-ideas",
+          "expected": "suede-marketing-plan",
           "forbidden": [
-            "suede-marketing-plan"
+            "suede-marketing-council",
+            "suede-marketing-loops"
           ]
         },
         {
@@ -823,8 +807,7 @@
           "prompt": "Design a recurring workflow for ad fatigue, content refresh, and weekly review.",
           "expected": "suede-marketing-loops",
           "forbidden": [
-            "suede-marketing-plan",
-            "suede-marketing-ideas"
+            "suede-marketing-plan"
           ]
         },
         {
