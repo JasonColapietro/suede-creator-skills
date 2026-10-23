@@ -88,7 +88,7 @@ jobs:
           fi
 
   directory-browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # playwright install --with-deps does not support the Ubuntu 26 image yet
     timeout-minutes: 10
     steps:
       - name: Check out repository
