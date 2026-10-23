@@ -13,6 +13,8 @@
 [![Skills Directory: Grade A](https://www.skillsdirectory.com/api/skills/jasoncolapietro-suede-design/badge)](https://www.skillsdirectory.com/skills/jasoncolapietro-suede-design)
 [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
+<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
+
 **[Install](#install-in-30-seconds)** · **[The skills](#the-skills)** · **[Docs site](https://skills.suedeai.ai/)** · **[Skill catalog](https://skills.suedeai.ai/skills/)** · **[Blog](https://skills.suedeai.ai/blog/)** · **[MCP](#mcp-server)** · **[@johnnysuede](https://x.com/johnnysuede)**
 
 <sub>By <a href="https://suedeai.ai/founder">Jason Colapietro</a> / <a href="https://suedeai.ai">Suede AI</a></sub>

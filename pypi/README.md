@@ -1,5 +1,7 @@
 # Suede Creator Skills
 
+<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
+
 By [Jason Colapietro](https://jasoncolapietro.com/), founder of [Suede AI](https://suedeai.ai/).
 
 **SEO audits, AI search visibility, conversion copy and business-operations workflows for Claude Code, Codex and any skills-compatible agent.** One `pip` install puts the whole open-source pack on your machine, and one command loads it into your agent.
