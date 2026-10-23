@@ -40,7 +40,7 @@ For when the user sells to non-SaaS B2B: services, agencies, manufacturers, mid-
 - **ZoomInfo**: enterprise B2B + intent signals (mid-market+)
 - **LinkedIn Sales Navigator**: candidate for manual industry, role, and signal
   research; verify current coverage and terms
-- **Clay**: when you need custom waterfall lookups (e.g., enrich Apollo records with Hunter + Clearbit)
+- **Clay**: when you need custom waterfall lookups (e.g., enrich Apollo records with Hunter and another licensed provider)
 
 ### Tier 2: industry-specific directories
 

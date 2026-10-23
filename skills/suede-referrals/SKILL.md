@@ -1,13 +1,13 @@
 ---
 name: suede-referrals
-description: "Suede-owned referral and affiliate program discipline. Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift."
+description: "Suede AI referral and affiliate program design: refer a friend and ambassador mechanics, incentive sizing from LTV and margin, affiliate commission structures, payout logic, fraud controls, attribution, FTC endorsement disclosure and incentivized-review rules, and viral loop measurement (K-factor, cohort LTV of referred customers). Returns a program spec with economics, rules, tooling options, and a launch checklist. Use when designing refer-a-friend mechanics, ambassador or partner incentives, affiliate programs, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, co-marketing with a partner brand (use suede-co-marketing), launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Suede Referral & Affiliate Programs
 
-Suede Referrals designs measurable customer, affiliate, and partner loops from
+Suede AI Referrals designs measurable customer, affiliate, and partner loops from
 incentive economics through attribution and fraud controls. It separates
 modeled loop performance from observed results and keeps activation and payouts
 behind approval.
@@ -106,7 +106,7 @@ not: hand that to `suede-emails`.
 
 **Tiered rewards**: Gamifies referral process, increases engagement
 
-**For examples and incentive sizing**: See [references/program-examples.md](references/program-examples.md)
+**For program patterns and incentive sizing**: See [references/program-examples.md](references/program-examples.md)
 
 ---
 
@@ -179,13 +179,24 @@ Set these thresholds explicitly, because the reference leaves them open:
 
 ### Typical Findings
 
-Industry-reported ranges, published by referral-platform vendors and not measured
-on this product. Use them to calibrate a recommendation; never assert them as a
-result this program will produce or has produced.
+Peer-reviewed field research (for example "Referral Programs and Customer
+Value," Journal of Marketing, 2011, a study of bank customers) found referred
+customers more valuable and less likely to churn than other customers; vendor
+reports claim a wide range of larger effects with undisclosed methods. Treat
+any figure as a hypothesis: compare referred and non-referred cohorts on
+retention, LTV, and onward referral rate in this product's own data before
+claiming an effect.
 
-- Referred customers have 16-25% higher LTV
-- Referred customers have 18-37% lower churn
-- Referred customers refer others at 2-3x rate
+### Disclosure and incentive rules
+
+- Referrers and affiliates who are paid or rewarded must clearly disclose that
+  connection where they recommend you (FTC Endorsement Guides, revised 2023:
+  [FTC guidance](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking)).
+- Do not reward reviews conditioned on positive sentiment, and do not suppress
+  negative ones (FTC Consumer Reviews and Testimonials Rule, effective October
+  21, 2024).
+- Contests and milestone giveaways can fall under sweepstakes law; payouts can
+  create tax reporting duties. Flag both for the user's counsel and finance owner.
 
 ---
 

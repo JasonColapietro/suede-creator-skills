@@ -21,7 +21,7 @@ manual, source-linked research worksheet or a user-supplied export.
 | **Funding signals (SaaS)** | Crunchbase, Pitchbook | Crunchbase free tier sufficient for early signals; Pitchbook for deeper investor data |
 | **Email pattern discovery** | Hunter, Snov, Apollo | Pattern guessing: followed by verification |
 | **Email deliverability verification** | Any currently authorized validator | Read current result semantics; otherwise label addresses unverified and use a manual handoff |
-| **Visitor identification (warm intent)** | RB2B, Clearbit Reveal | Anonymous traffic → company identification |
+| **Visitor identification (warm intent)** | RB2B, HubSpot Breeze Intelligence | Anonymous traffic → company identification |
 | **Intent data** | ZoomInfo Intent, 6sense, Bombora | Pre-warmed signals; mid-market+ pricing |
 | **Trigger event monitoring** | Google Alerts, Feedly, LinkedIn Sales Nav alerts | Free options are sufficient for most |
 | **Local business discovery** | Google Maps (manual), Yelp, Facebook Pages | Browser-assisted, not bulk-extracted |
@@ -54,7 +54,7 @@ freshness, export limits, and terms before use.
 **Use for**: Multi-source enrichment, waterfall lookups, custom scoring logic. When list quality matters more than list size.
 
 **Strengths**:
-- Waterfall logic: try Apollo first → fallback to ZoomInfo → fallback to Clearbit
+- Waterfall logic: try Apollo first, then ZoomInfo, then other licensed providers in the Clay catalog
 - Current provider set and field-level provenance
 - Any automated extraction behavior, source traceability, and review controls
 - Custom columns + scoring formulas
@@ -91,22 +91,21 @@ account access, and terms before use.
 
 ---
 
-## Clearbit
+## HubSpot Breeze Intelligence (formerly Clearbit)
 
-**Use for**: Email → company enrichment, anonymous visitor identification (Clearbit Reveal).
+**Status (checked October 2026)**: HubSpot acquired Clearbit in 2023 and folded it into Breeze Intelligence inside HubSpot. The standalone Clearbit products and free tools were retired; existing API access depends on the user's contract.
+
+**Use for**: Company and contact enrichment and company-level visitor intent, for teams already on HubSpot.
 
 **Strengths**:
-- Strong company enrichment (industry, size, funding, tech stack)
-- Email lookup by domain
-- Reveal: identify anonymous site visitors at company level
-- API-first
+- Company enrichment (industry, size, funding, tech stack) written straight to HubSpot records
+- Company-level identification of website visitors
 
 **Watch out for**:
-- Product ownership, packaging, API availability, and tier access can change;
-  verify them in current official documentation
+- Credits and tier access are part of HubSpot packaging and change; verify in current HubSpot documentation
+- Outside HubSpot, use Apollo, Clay, or ZoomInfo instead
 
-**Verification**: confirm the current Clearbit product surface, account access,
-coverage, and terms before use.
+**Verification**: confirm the user's HubSpot tier, credit balance, coverage, and terms before use.
 
 ---
 
@@ -269,7 +268,7 @@ session access, pricing, and target-site terms before use.
 
 ---
 
-## RB2B / Clearbit Reveal
+## RB2B and company-level visitor identification
 
 **Use for**: Identifying anonymous site visitors as warm intent signals.
 

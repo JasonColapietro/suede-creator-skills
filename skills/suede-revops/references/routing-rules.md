@@ -1,6 +1,6 @@
 # Lead Routing Rules
 
-Decision trees, platform-specific configurations, territory routing, ABM routing, and speed-to-lead benchmarks.
+Decision trees, platform-specific configurations, territory routing, ABM routing, and speed-to-lead measurement.
 
 ## Routing Decision Tree
 
@@ -159,16 +159,17 @@ When multiple contacts from the same account engage:
 
 ### Response Time Impact on Conversion
 
-| Response Time | Relative Qualification Rate | Notes |
-|---------------|---------------------------|-------|
-| Under 5 minutes | **21x** more likely to qualify | Gold standard |
-| 5-10 minutes | 10x more likely | Still strong |
-| 10-30 minutes | 4x more likely | Acceptable for most |
-| 30 min - 1 hour | 2x more likely | Below best practice |
-| 1-24 hours | Baseline | Industry average |
-| 24+ hours | 60% lower than baseline | Lead is effectively cold |
+Faster response consistently qualifies more inbound leads, and the drop is steepest in the first hour. Published multipliers come from older vendor studies with undisclosed methods, so do not quote them as facts. Measure your own curve instead:
 
-Source: Lead Connect, InsideSales.com
+| Response-time bucket | What to record from your CRM |
+|----------------------|------------------------------|
+| Under 5 minutes | Qualification rate, meeting-booked rate |
+| 5-30 minutes | Same |
+| 30 minutes - 1 hour | Same |
+| 1-24 hours | Same |
+| 24+ hours | Same, plus share that never respond |
+
+Pull a trailing quarter, compare buckets, and set the SLA where the curve flattens for your buyers. Default target until you have data: first human or approved automated touch within 5 minutes during business hours.
 
 ### Implementing Speed-to-Lead
 
