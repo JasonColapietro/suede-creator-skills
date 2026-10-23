@@ -7,7 +7,7 @@ Release record for the `suede-free-tools` skill, following the NVIDIA skill-card
 
 ## Description
 
-Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools.
+Suede AI engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 

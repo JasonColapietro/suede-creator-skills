@@ -1,90 +1,105 @@
-# Cold Email Copywriting Frameworks
+# Cold Email Shapes
 
-Frameworks beat templates: they teach thinking patterns, not copy-paste shortcuts.
+A shape is a thinking pattern, not a template. Pick the one that fits the
+evidence you actually have, then write in plain words. Every example below uses
+placeholder companies and numbers; replace them with real, checkable proof or
+cut the proof sentence.
 
-## PAS: Problem, Agitate, Solution (default)
+## Choosing a shape
 
-**Structure:** Identify pain → Amplify consequences → Present solution + soft CTA.
-**Best for:** Problem-aware but not solution-aware prospects. The workhorse framework.
+| You have... | Use |
+|---|---|
+| A strong trigger event (funding, hiring, launch, new exec) | Trigger Note |
+| A clear observation about their situation | Observation Question |
+| A problem-aware reader who has not shopped yet | Problem First |
+| A customer story from a similar company | Peer Story |
+| A senior reader and very little time | Two-Line Note |
+| An analytical reader (engineering, finance, ops) | Claim and Proof |
+| A clean before and after | Before, After, Bridge |
 
-> Most VP Sales at companies your size spend 5+ hours/week on manual CRM reporting. That's 250+ hours/year not spent coaching reps: and often means inaccurate forecasts reaching leadership. We built a tool that auto-generates CRM reports in real time. Teams like Datadog reduced reporting time by 80%. Would it make sense to see how?
+## Problem First (the default)
 
-## BAB: Before, After, Bridge
+Name the pain, show what it costs, offer the fix, ask softly.
 
-**Structure:** Current painful situation → Ideal future → Your product as the bridge.
-**Best for:** Transformation-driven offers with clear before/after. Emotional decision-makers.
+> Most sales leaders at your stage lose a day a week to manual CRM reports,
+> and the forecast that reaches the board is a week stale by the time it lands.
+> We generate those reports live from the CRM. [Customer] cut reporting time
+> by [verified %]. Worth seeing how?
 
-> Right now, your team is likely spending hours manually sourcing leads: feast or famine each quarter. Imagine qualified leads arriving daily on autopilot, reps spending 100% of their time selling. That's what our platform does. Companies like HubSpot saw a 40% pipeline increase within 90 days. Can I show you how?
+## Observation Question
 
-## QVC: Question, Value, CTA
+One observation, one yes-or-no value question. Two sentences.
 
-**Structure:** Targeted pain question → Brief value → Direct next step.
-**Best for:** C-suite prospects who prefer brevity. Qualify interest immediately.
+> Looks like you're hiring three SDRs. Would a weekly read on how each one is
+> ramping on email be useful?
 
-> Are your SDRs spending more time researching than selling? We help sales teams automate prospect research so reps focus on conversations. Clients see 3x more meetings per rep per week. Worth a 10-minute demo?
+## Trigger Note
 
-## AIDA: Attention, Interest, Desire, Action
+Trigger, the challenge it usually creates, a hint at the fix, a binary ask. No
+intro, no company description. One to three sentences.
 
-**Structure:** Hook/stat → Address specific challenge → Social proof/outcome → Clear CTA.
-**Best for:** Data-driven prospects, high-ticket pitches with strong stats.
+> Congrats on the Series B. Doubling the sales team usually breaks onboarding
+> first. We shorten ramp for new reps. Open to a look?
 
-> Companies in pharma lose 30% of leads due to manual outreach. Given {{Company}}'s growth this quarter, pipeline velocity is likely top of mind. Customers like Pfizer use our platform to automate lead qualification: cutting time-to-contact by 60%. Worth a 15-minute call?
+## Before, After, Bridge
 
-## PPP: Praise, Picture, Push
+The current painful state, the better state, your product as the path.
 
-**Structure:** Genuine compliment → How things could be better → Gentle push to action.
-**Best for:** Senior prospects who respond to relationship-building. Requires genuine trigger.
+> Right now your team is sourcing leads by hand, and pipeline swings every
+> quarter. The better version is qualified leads arriving daily and reps
+> selling all day. That's the gap we close. [Customer] saw [verified result].
+> Want the short version?
 
-> Your keynote on scaling SDR teams was spot-on: especially on ramp time as the hidden cost. What if you could cut that in half? Our in-inbox coach helps new reps write effective emails from day one with real-time scoring. Open to a quick chat about how this could support your growth?
+## Peer Story
 
-## Star-Story-Solution
+A customer as the main character, their problem, what changed.
 
-**Structure:** Introduce character (customer) → Tell challenge narrative → Reveal results.
-**Best for:** Strong customer success stories. Humanizes the pitch.
+> Last year the VP Sales at a Series B company had five SDRs up against a
+> competitor with twenty. They moved prospect research into our tool and
+> tripled personalized volume without losing quality. In 90 days they booked
+> more meetings than the bigger team. Happy to share how it could work for
+> [Company].
 
-> Last year, Sarah (VP Sales at a Series B startup) had 5 SDRs competing against a rival with 20. Her team was getting crushed on volume. They adopted our AI prospecting tool and sent hyper-personalized emails at 3x pace without losing quality. Within 90 days, they booked more meetings than their competitor's entire team. Happy to share how this could work for {{Company}}.
+Use only stories the user can verify and is allowed to share.
 
-## SCQ: Situation, Complication, Question
+## Situation, Complication, Question
 
-**Structure:** Current reality → Complicating challenge → Question that speaks to need → Optional answer.
-**Best for:** Consultative selling. Mirrors how professionals present to leadership.
+Mirrors how operators brief leadership. Good for consultative sales.
 
-> Your team doubled this year. That usually means onboarding is eating into selling time. How are you handling ramp for new hires?
+> Your team doubled this year. That usually means onboarding is eating into
+> selling time. How are you handling ramp for new hires?
 
-## ACCA: Awareness, Comprehension, Conviction, Action
+## Claim and Proof
 
-**Structure:** Contrarian hook → Explain benefit simply → Provide proof → Strong CTA.
-**Best for:** Analytical buyers who need evidence (engineers, CFOs, ops leaders).
+A contrarian claim, a plain explanation, a proof point, a clear ask.
 
-> Most sales teams measure rep activity. The top 5% measure rep efficiency instead. When Acme switched, they booked 40% more meetings with fewer emails. Worth seeing how?
+> Most sales teams measure rep activity. The best ones measure rep efficiency.
+> When [Customer] switched, they booked [verified %] more meetings with fewer
+> emails. Worth seeing the scorecard?
 
-## 3C's (Alex Berman)
+## Two-Line Note
 
-**Structure:** Compliment → Case Study → CTA.
-**Best for:** Agency/services cold outreach. Case study does the heavy lifting.
+For executives. Context in one line, the question in the next.
 
-> Big fan of [Company]. We just built an app for [Competitor] that does XYZ. I have a few more ideas. Interested?
+> Saw the expansion into Austin. Is staffing the second site on your plate
+> this quarter?
 
-## Mouse Trap (Lavender/Will Allred)
+## Compliment, Case, Ask (services and agencies)
 
-**Structure:** Observation + Binary value-prop question. 1–2 sentences total.
-**Best for:** Maximum brevity. Impulsive reply based on curiosity.
+A specific, earned compliment, a relevant piece of work, an ask.
 
-> Looks like you're hiring reps. Would it be helpful to get a more granular look at how they're ramping on email?
+> The new pricing page is sharp, especially the usage calculator. We just
+> rebuilt onboarding for [comparable company] and have two ideas for yours.
+> Interested?
 
-## Justin Michael Method
+## Five-Part Base
 
-**Structure:** Trigger/Pain → Solution hint → Binary CTA. 1–3 sentences, no intro.
-**Best for:** High-velocity SDR teams. Mobile-optimized. Deliberately polarizing.
+When nothing above fits: observation, problem or insight, credibility, the
+fix, an invitation to talk. Keep each part to one sentence.
 
-Spend max 1 minute on personalization. Use industry/persona-level signals. For top-tier prospects, quote their own words from interviews: they almost always respond.
+## Multi-touch arc
 
-## Vanilla Ice Cream (Lavender)
-
-**Structure:** Observation → Problem/Insight → Credibility → Solution → Call-to-Conversation.
-**Best for:** Universal "base" framework that works everywhere. Five parts.
-
-## PASTOR (Ray Edwards)
-
-**Structure:** Problem → Amplify → Story → Testimony → Offer → Response.
-**Best for:** Longer-form or multi-email sequences. Consulting, education, complex B2B services. Each element can be developed across separate touches.
+For a sequence, spread one argument across touches instead of repeating it:
+problem, then why it matters more than they think, then a short story, then
+proof, then the offer, then a final low-pressure ask. Each touch must stand
+alone. See [follow-up-sequences.md](follow-up-sequences.md).

@@ -35,22 +35,16 @@ Issue: extractNotForRedirects() uses the regex
   /NOT FOR:[^.]*?\(use ([a-z][a-z0-9-]+)(?: — private)?\)/g
   which anchors every match on the literal "NOT FOR:" string. When a single
   NOT FOR clause names multiple redirect targets separated by semicolons,
-  e.g. "NOT FOR: full findings+grade in one pass (use suede-code);
-  findings-only ... (use suede-code-review)", only the first "(use X)" is
+  e.g. "NOT FOR: CI enforcement (use suede-ci-gate); AI behavior
+  coverage (use suede-ai-eval)", only the first "(use X)" is
   captured, because the second is not preceded by another "NOT FOR:" and
   the non-greedy [^.]*? stops consuming at the first match. Confirmed live:
   16 of 21 skills in this pack (76%) have 2+ "(use X)" targets on one NOT
-  FOR line: johnny-suede-design, johnny-suede-write, suede-agent-teams,
-  suede-ai-eval, suede-campaign-in-a-box, suede-code (3 targets),
-  suede-code-grader, suede-code-review, suede-release-linter,
-  suede-rights-audit (3), suede-rights-passport, suede-seo-audit (3),
-  suede-ci-gate, suede-site-alchemy (3), suede-sync-packaging (3),
-  suede-visibility-grader: and for every one of them, the existence check
+  FOR line, several with 3 targets: and for every one of them, the existence check
   at line 258 ("named skill X does not exist in skill pack") only runs
   against the first target, never the second or third. Today this hasn't
   let a broken reference through: spot-checked suede-code's own 3 targets
-  (suede-code-review, suede-code-grader, suede-ai-eval per the file, though
-  the regex only actually verifies suede-code-review) and all named skills
+  (the regex only actually verified the first) and all named skills
   genuinely exist as folders, but the coverage gap is real: 2 of every 3
   redirect targets in a 3-target NOT FOR line ship with zero validation.
   A renamed or deleted skill referenced only as the 2nd/3rd target in
@@ -64,8 +58,7 @@ Fix: run the regex per-clause instead of per-line, e.g. split on
   this catches every parenthetical redirect in the clause, not just the
   first.
 Verify: after the fix, run extractNotForRedirects() against suede-code's
-  real frontmatter description and confirm it returns 3 matches
-  (suede-code-review, suede-code-grader, suede-ai-eval), not 1. Then rerun
+  real frontmatter description and confirm it returns 3 matches, not 1. Then rerun
   `node scripts/validate-skill-pack.mjs` and confirm it still exits 0 on
   the current, already-correct skill pack (a fixed regex should not
   introduce new failures against content that was already valid).

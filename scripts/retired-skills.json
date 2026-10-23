@@ -1,0 +1,21 @@
+{
+  "_comment": "Skill pages under docs/skills/ whose skill left the public pack. scripts/build-retired-skill-pages.mjs writes each one as a noindex redirect stub to its successor (null target means the /skills/ catalog). Keep entries forever: search engines and old links still request these URLs.",
+  "pages": {
+    "suede-ship": { "target": "suede-graph-flo-xr", "reason": "was renamed to" },
+    "suede-codex-fleet": { "target": null, "reason": "was retired from the public pack" },
+    "suede-full-send": { "target": null, "reason": "was retired from the public pack" },
+    "amazon-returns-recovery": { "target": null, "reason": "was retired from the public pack" },
+    "subscription-recovery": { "target": null, "reason": "was retired from the public pack" },
+    "suede-rights-audit": { "target": "suede-rights-passport", "reason": "now runs as the audit mode of" },
+    "suede-instagram-growth": { "target": "suede-social", "reason": "was merged into" },
+    "suede-marketing-psychology": { "target": "suede-offers", "reason": "now lives in the Persuasion Mechanics section of" },
+    "suede-marketing-ideas": { "target": "suede-marketing-plan", "reason": "now runs as the Shortlist mode of" },
+    "suede-signup": { "target": "suede-onboarding", "reason": "was merged into" },
+    "suede-code-review": { "target": "suede-code", "reason": "now runs as the findings-only mode of" },
+    "suede-code-grader": { "target": "suede-code", "reason": "now runs as the grade-only mode of" },
+    "johnny-suede-write": { "target": "suede-copy", "reason": "was merged into" },
+    "johnny-suede-design": { "target": "suede-design", "reason": "was merged into" },
+    "suede-recommend-next-action": { "target": "suede-workflow-skills", "reason": "now lives in the Next move section of" },
+    "suede-mcp-qa": { "target": null, "reason": "became an internal maintainer guide and left the public pack" }
+  }
+}

@@ -3,47 +3,60 @@
   "groups": [
     {
       "id": "code-review-grader",
-      "skills": ["suede-code", "suede-code-review", "suede-code-grader"],
+      "skills": ["suede-code", "suede-ci-gate", "suede-ai-eval"],
       "fallback": "suede-code",
       "routes": [
         {
-          "skill": "suede-code-review",
-          "positive": ["deep review", "line by line", "concrete bugs", "findings only", "no grade"],
-          "negative": ["a f", "grade only", "ship verdict", "review and grade"],
-          "metadataMustContain": ["findings", "not a grade"]
-        },
-        {
-          "skill": "suede-code-grader",
-          "positive": ["a f", "grade only", "ship verdict", "verdict only", "no line by line"],
-          "negative": ["findings only", "no grade", "review and grade"],
-          "metadataMustContain": ["a f", "grade"]
-        },
-        {
           "skill": "suede-code",
-          "positive": ["review and grade", "findings and grade", "one pass"],
-          "negative": ["findings only", "grade only"],
+          "positive": ["review and grade", "findings and grade", "one pass", "deep review", "concrete bugs", "findings only", "no grade", "grade only", "ship verdict", "a f", "line by line"],
+          "negative": ["branch protection", "required checks", "merge gates", "eval cases", "failure mode rubric"],
           "metadataMustContain": ["review", "grade"]
+        },
+        {
+          "skill": "suede-ci-gate",
+          "positive": ["branch protection", "required checks", "merge gates", "enforce", "every merge"],
+          "negative": ["findings only", "grade only", "eval cases"],
+          "metadataMustContain": ["branch protection"]
+        },
+        {
+          "skill": "suede-ai-eval",
+          "positive": ["eval cases", "failure mode rubric", "rag", "llm", "eval coverage"],
+          "negative": ["branch protection", "findings only", "grade only"],
+          "metadataMustContain": ["eval"]
         }
       ],
       "cases": [
         {
-          "id": "code-review-positive",
+          "id": "code-findings-only-positive",
           "mode": "positive",
           "prompt": "Deep review this PR for concrete bugs and findings only; no grade.",
-          "expected": "suede-code-review"
+          "expected": "suede-code"
         },
         {
-          "id": "code-grader-negative-review",
-          "mode": "negative",
+          "id": "code-grade-only-positive",
+          "mode": "positive",
           "prompt": "Give this PR an A-F ship verdict only; no line-by-line review.",
-          "expected": "suede-code-grader",
-          "forbidden": ["suede-code-review"]
+          "expected": "suede-code"
         },
         {
           "id": "code-combined-positive",
           "mode": "positive",
           "prompt": "Review and grade this PR in one pass with findings and an A-F verdict.",
           "expected": "suede-code"
+        },
+        {
+          "id": "code-ci-negative",
+          "mode": "negative",
+          "prompt": "Make CI enforce the grade on every merge with branch protection and required checks.",
+          "expected": "suede-ci-gate",
+          "forbidden": ["suede-code"]
+        },
+        {
+          "id": "code-ai-eval-negative",
+          "mode": "negative",
+          "prompt": "Write eval cases and a failure mode rubric for the RAG answer path.",
+          "expected": "suede-ai-eval",
+          "forbidden": ["suede-code"]
         },
         {
           "id": "code-ambiguous-fallback",
@@ -66,7 +79,7 @@
         },
         {
           "skill": "suede-workflow-skills",
-          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills"],
+          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills", "next move", "give me the prompt", "expand prompt", "which suede skill"],
           "negative": ["shared change", "independent batches", "full send", "max effort", "max agents", "never end your allocation above zero"],
           "metadataMustContain": ["full public", "skill"]
         }
@@ -88,6 +101,12 @@
           "id": "workflow-pack-positive",
           "mode": "positive",
           "prompt": "Load the full public skill pack as an umbrella workflow.",
+          "expected": "suede-workflow-skills"
+        },
+        {
+          "id": "workflow-next-move-positive",
+          "mode": "positive",
+          "prompt": "What should I do next? Recommend the next move and give me the prompt.",
           "expected": "suede-workflow-skills"
         },
         {
@@ -147,20 +166,20 @@
     },
     {
       "id": "rights-audit-passport",
-      "skills": ["suede-rights-audit", "suede-rights-passport"],
-      "fallback": "suede-rights-audit",
+      "skills": ["suede-release-linter", "suede-rights-passport"],
+      "fallback": "suede-rights-passport",
       "routes": [
         {
-          "skill": "suede-rights-audit",
-          "positive": ["audit", "find rights gaps", "ownership gaps", "split readiness", "samples", "before licensing"],
-          "negative": ["package the project", "transfer handoff", "rights passport"],
-          "metadataMustContain": ["rights gaps"]
+          "skill": "suede-release-linter",
+          "positive": ["lint", "release folder", "release readiness", "readiness score", "delivery rejection", "missing files"],
+          "negative": ["rights gaps", "ownership gaps", "package the project", "transfer handoff", "rights passport"],
+          "metadataMustContain": ["release folder", "metadata"]
         },
         {
           "skill": "suede-rights-passport",
-          "positive": ["package the project", "transfer handoff", "rights passport", "bundle the files"],
-          "negative": ["find rights gaps", "ownership gaps"],
-          "metadataMustContain": ["package", "handoff"]
+          "positive": ["audit", "find rights gaps", "ownership gaps", "split readiness", "samples", "before licensing", "package the project", "transfer handoff", "rights passport", "bundle the files"],
+          "negative": ["lint", "release folder", "readiness score"],
+          "metadataMustContain": ["rights gaps", "package", "handoff"]
         }
       ],
       "cases": [
@@ -168,20 +187,26 @@
           "id": "rights-audit-positive",
           "mode": "positive",
           "prompt": "Audit ownership gaps, samples, and split readiness before licensing.",
-          "expected": "suede-rights-audit"
+          "expected": "suede-rights-passport"
         },
         {
-          "id": "rights-passport-negative-audit",
-          "mode": "negative",
+          "id": "rights-passport-package-positive",
+          "mode": "positive",
           "prompt": "Package the project into a rights passport transfer handoff with all files and metadata.",
-          "expected": "suede-rights-passport",
-          "forbidden": ["suede-rights-audit"]
+          "expected": "suede-rights-passport"
+        },
+        {
+          "id": "release-linter-negative-passport",
+          "mode": "negative",
+          "prompt": "Lint this release folder and give me a readiness score before distribution.",
+          "expected": "suede-release-linter",
+          "forbidden": ["suede-rights-passport"]
         },
         {
           "id": "rights-ambiguous-audit-first",
           "mode": "ambiguous",
           "prompt": "Get this catalog rights-ready.",
-          "expected": "suede-rights-audit"
+          "expected": "suede-rights-passport"
         }
       ]
     },
@@ -280,19 +305,13 @@
     },
     {
       "id": "social-instagram",
-      "skills": ["suede-social", "suede-instagram-growth", "suede-newsroom"],
+      "skills": ["suede-social", "suede-newsroom"],
       "fallback": "suede-social",
       "routes": [
         {
-          "skill": "suede-instagram-growth",
-          "positive": ["instagram", "ig", "reels", "stories", "last 30 posts", "views to sales", "daily instagram"],
-          "negative": ["multi platform", "cross platform", "linkedin", "twitter"],
-          "metadataMustContain": ["instagram", "reels", "views"]
-        },
-        {
           "skill": "suede-social",
-          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social"],
-          "negative": ["last 30 posts", "daily instagram", "views to sales", "editorial pipeline", "content team"],
+          "positive": ["social media", "multi platform", "cross platform", "linkedin", "twitter", "organic social", "instagram", "reels", "last 30 posts", "views to sales", "daily instagram"],
+          "negative": ["editorial pipeline", "content team"],
           "metadataMustContain": ["platform", "social"]
         },
         {
@@ -307,14 +326,15 @@
           "id": "instagram-audit-positive",
           "mode": "positive",
           "prompt": "Analyze the last 30 posts and Reels on our Instagram account, then map views to sales.",
-          "expected": "suede-instagram-growth"
+          "expected": "suede-social",
+          "forbidden": ["suede-newsroom"]
         },
         {
           "id": "social-negative-instagram",
           "mode": "negative",
           "prompt": "Plan one cross-platform calendar for LinkedIn, Twitter, and Instagram.",
           "expected": "suede-social",
-          "forbidden": ["suede-instagram-growth"]
+          "forbidden": ["suede-newsroom"]
         },
         {
           "id": "social-ambiguous-fallback",
@@ -334,46 +354,6 @@
           "prompt": "Build our cross platform posting calendar for LinkedIn and Twitter.",
           "expected": "suede-social",
           "forbidden": ["suede-newsroom"]
-        }
-      ]
-    },
-    {
-      "id": "amazon-subscription",
-      "skills": ["amazon-returns-recovery", "subscription-recovery"],
-      "fallback": "subscription-recovery",
-      "routes": [
-        {
-          "skill": "amazon-returns-recovery",
-          "positive": ["amazon", "restocking fee", "prime video", "audible", "kindle unlimited"],
-          "negative": ["outside amazon", "netflix", "paypal", "google play", "app store"],
-          "metadataMustContain": ["amazon", "restocking fee"]
-        },
-        {
-          "skill": "subscription-recovery",
-          "positive": ["outside amazon", "netflix", "paypal", "google play", "app store", "recurring subscriptions"],
-          "negative": ["amazon", "restocking fee", "prime video", "audible"],
-          "metadataMustContain": ["outside amazon", "recurring charges"]
-        }
-      ],
-      "cases": [
-        {
-          "id": "amazon-positive",
-          "mode": "positive",
-          "prompt": "Audit my Amazon return for a restocking fee and check an Audible charge.",
-          "expected": "amazon-returns-recovery"
-        },
-        {
-          "id": "subscription-negative-amazon",
-          "mode": "negative",
-          "prompt": "Audit and cancel a Netflix charge billed directly through PayPal.",
-          "expected": "subscription-recovery",
-          "forbidden": ["amazon-returns-recovery"]
-        },
-        {
-          "id": "subscription-ambiguous-fallback",
-          "mode": "ambiguous",
-          "prompt": "Find all recurring subscriptions I am paying for.",
-          "expected": "subscription-recovery"
         }
       ]
     },
@@ -721,7 +701,6 @@
       "id": "marketing-planning",
       "skills": [
         "suede-marketing-plan",
-        "suede-marketing-ideas",
         "suede-marketing-council",
         "suede-marketing-loops"
       ],
@@ -733,35 +712,19 @@
             "90 day plan",
             "12 month roadmap",
             "growth plan",
-            "go to market"
-          ],
-          "negative": [
-            "shortlist",
-            "tactic library",
-            "simulated advisors",
-            "recurring workflow",
-            "weekly review"
-          ],
-          "metadataMustContain": [
-            "marketing planning"
-          ]
-        },
-        {
-          "skill": "suede-marketing-ideas",
-          "positive": [
+            "go to market",
             "shortlist",
             "tactic library",
             "growth tactics",
             "stuck"
           ],
           "negative": [
-            "90 day plan",
-            "12 month roadmap",
             "simulated advisors",
-            "recurring workflow"
+            "recurring workflow",
+            "weekly review"
           ],
           "metadataMustContain": [
-            "marketing ideation"
+            "marketing planning"
           ]
         },
         {
@@ -809,12 +772,13 @@
           "expected": "suede-marketing-plan"
         },
         {
-          "id": "marketing-ideas-negative",
+          "id": "marketing-shortlist-negative",
           "mode": "negative",
           "prompt": "I am stuck — give me a shortlist of growth tactics from the tactic library.",
-          "expected": "suede-marketing-ideas",
+          "expected": "suede-marketing-plan",
           "forbidden": [
-            "suede-marketing-plan"
+            "suede-marketing-council",
+            "suede-marketing-loops"
           ]
         },
         {
@@ -823,8 +787,7 @@
           "prompt": "Design a recurring workflow for ad fatigue, content refresh, and weekly review.",
           "expected": "suede-marketing-loops",
           "forbidden": [
-            "suede-marketing-plan",
-            "suede-marketing-ideas"
+            "suede-marketing-plan"
           ]
         },
         {
@@ -916,66 +879,26 @@
     },
     {
       "id": "writing-surfaces",
-      "skills": [
-        "suede-copy",
-        "johnny-suede-write",
-        "suede-ship-copy"
-      ],
+      "skills": ["suede-copy", "suede-deslop", "suede-ship-copy"],
       "fallback": "clarify",
       "routes": [
         {
           "skill": "suede-copy",
-          "positive": [
-            "conversion copy",
-            "landing sections",
-            "microcopy",
-            "anti slop"
-          ],
-          "negative": [
-            "public explainers",
-            "product listings",
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses"
-          ],
-          "metadataMustContain": [
-            "conversion copy"
-          ]
+          "positive": ["conversion copy", "landing sections", "microcopy", "public explainers", "product listings", "sharper", "agents md"],
+          "negative": ["publish readiness", "adversarial refutation", "research lenses", "ai tells", "findings only slop"],
+          "metadataMustContain": ["conversion copy"]
         },
         {
-          "skill": "johnny-suede-write",
-          "positive": [
-            "public explainers",
-            "product listings",
-            "sharper"
-          ],
-          "negative": [
-            "conversion copy",
-            "landing sections",
-            "publish readiness",
-            "adversarial refutation"
-          ],
-          "metadataMustContain": [
-            "public explainers"
-          ]
+          "skill": "suede-deslop",
+          "positive": ["ai tells", "deslop", "slop audit", "findings only slop", "anti slop", "finished prose"],
+          "negative": ["conversion copy", "publish readiness", "research lenses", "public explainers"],
+          "metadataMustContain": ["finished prose"]
         },
         {
           "skill": "suede-ship-copy",
-          "positive": [
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses",
-            "high stakes"
-          ],
-          "negative": [
-            "conversion copy",
-            "microcopy",
-            "public explainers",
-            "product listings"
-          ],
-          "metadataMustContain": [
-            "publish readiness"
-          ]
+          "positive": ["publish readiness", "adversarial refutation", "research lenses", "high stakes"],
+          "negative": ["conversion copy", "microcopy", "public explainers", "product listings", "ai tells"],
+          "metadataMustContain": ["publish readiness"]
         }
       ],
       "cases": [
@@ -986,23 +909,24 @@
           "expected": "suede-copy"
         },
         {
+          "id": "copy-explainer-positive",
+          "mode": "positive",
+          "prompt": "Write sharper product listings and public explainers.",
+          "expected": "suede-copy"
+        },
+        {
           "id": "ship-copy-negative",
           "mode": "negative",
           "prompt": "Run the research lenses and adversarial refutation to a publish readiness gate for this high stakes page.",
           "expected": "suede-ship-copy",
-          "forbidden": [
-            "suede-copy"
-          ]
+          "forbidden": ["suede-copy"]
         },
         {
-          "id": "johnny-write-negative",
+          "id": "deslop-negative",
           "mode": "negative",
-          "prompt": "Write sharper product listings and public explainers.",
-          "expected": "johnny-suede-write",
-          "forbidden": [
-            "suede-copy",
-            "suede-ship-copy"
-          ]
+          "prompt": "Strip the AI tells from this finished prose and give me a findings only slop audit.",
+          "expected": "suede-deslop",
+          "forbidden": ["suede-copy", "suede-ship-copy"]
         },
         {
           "id": "writing-ambiguous-fallback",
@@ -1015,35 +939,19 @@
     {
       "id": "activation",
       "skills": [
-        "suede-signup",
         "suede-onboarding",
         "suede-churn-prevention"
       ],
       "fallback": "clarify",
       "routes": [
         {
-          "skill": "suede-signup",
+          "skill": "suede-onboarding",
           "positive": [
             "account creation",
             "registration",
             "field friction",
             "progressive profiling",
-            "trial start"
-          ],
-          "negative": [
-            "first value",
-            "empty states",
-            "setup checklists",
-            "cancel flows",
-            "win back"
-          ],
-          "metadataMustContain": [
-            "signup conversion"
-          ]
-        },
-        {
-          "skill": "suede-onboarding",
-          "positive": [
+            "trial start",
             "first value",
             "empty states",
             "setup checklists",
@@ -1051,9 +959,6 @@
             "time to value"
           ],
           "negative": [
-            "account creation",
-            "registration",
-            "field friction",
             "cancel flows",
             "win back"
           ],
@@ -1083,10 +988,10 @@
       ],
       "cases": [
         {
-          "id": "signup-positive",
+          "id": "onboarding-signup-positive",
           "mode": "positive",
           "prompt": "Audit account creation and registration for field friction and progressive profiling.",
-          "expected": "suede-signup"
+          "expected": "suede-onboarding"
         },
         {
           "id": "onboarding-negative",
@@ -1094,7 +999,7 @@
           "prompt": "Users never reach first value — design empty states, setup checklists, and time to value.",
           "expected": "suede-onboarding",
           "forbidden": [
-            "suede-signup"
+            "suede-churn-prevention"
           ]
         },
         {
@@ -1103,7 +1008,6 @@
           "prompt": "Design cancel flows, pause paths, save offers, and failed payment recovery.",
           "expected": "suede-churn-prevention",
           "forbidden": [
-            "suede-signup",
             "suede-onboarding"
           ]
         },
@@ -1119,7 +1023,7 @@
       "id": "ship-release",
       "skills": [
         "suede-graph-flo-xr",
-        "suede-code-review",
+        "suede-code",
         "suede-ci-gate",
         "suede-launch-packaging",
         "suede-release-linter"
@@ -1151,7 +1055,7 @@
           ]
         },
         {
-          "skill": "suede-code-review",
+          "skill": "suede-code",
           "positive": [
             "review this existing diff",
             "report findings",
@@ -1248,7 +1152,7 @@
           "id": "suede-graph-flo-xr-findings-negative",
           "mode": "negative",
           "prompt": "Review this existing diff and report findings, but do not change code.",
-          "expected": "suede-code-review",
+          "expected": "suede-code",
           "forbidden": [
             "suede-graph-flo-xr"
           ]

@@ -103,7 +103,7 @@ ships no binaries and no telemetry.
 
 ### Page hero
 
-Add the marketplace. Install the pack. The folder that runs Suede Labs is on
+Add the marketplace. Install the pack. The folder that runs Suede AI is on
 your machine in about 30 seconds.
 
 ### Page subhead
@@ -137,8 +137,8 @@ pack can grow without costing more context on every turn.
 
 ### Best overall explanation
 
-Suede Creator Skills is the folder of skills that runs Suede Labs, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
-lanes and guides Amazon refund reviews using account evidence and per-item confirmation. It is free under MIT for the original
+Suede Creator Skills is the folder of skills that runs Suede AI, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
+lanes and audits a page for search and AI-answer visibility with the fixes ranked by impact. It is free under MIT for the original
 work, with no binaries and no telemetry.
 
 ### Suedify explanation
@@ -285,86 +285,6 @@ A clean report is a draft until an operator reviews it.
 A clean lint report is not legal clearance, distributor approval, registry
 write, or payout approval. The report flags gaps and points to the next fix.
 
-## Amazon Returns Recovery Copy
-
-### One-line description
-
-Scan an Amazon account for restocking fees, short refunds, and forgotten
-subscriptions, then negotiate them back through Amazon's own live chat.
-
-### Page hero
-
-The pack's contract negotiator, proven outside a repo.
-
-### Page subhead
-
-Amazon Returns Recovery scans order history and Amazon-billed subscriptions
-for money quietly held or billed, reports every find, and drives Amazon's
-live chat to get fees waived, refunds issued, or subscriptions canceled, only
-after the account owner confirms.
-
-### Best for
-
-- Anyone who has ever returned something to Amazon and wondered if the
-  refund was short.
-- Accounts with a long order history where fees and forgotten channel
-  subscriptions accumulate unnoticed.
-- Builders who want proof the pack's negotiation discipline holds up against
-  a real counterparty, not just a code review.
-
-### CTA options
-
-- Scan my Amazon returns
-- View the skill folder
-- Read the dispute chat flow
-- Read the real case writeups
-- Pair with Subscription Recovery
-
-### Safety note
-
-This skill surfaces charges and drafts the case; it does not dispute or
-cancel anything without the account owner confirming first. Recovery requests are supported by documented account evidence; Amazon
-makes the refund decision.
-
-## Subscription Recovery Copy
-
-### One-line description
-
-Audit recurring charges across App Store, Google Play, PayPal, and any
-direct-bill service, then cancel or negotiate a refund through that
-service's own support.
-
-### Page hero
-
-The same contract negotiator, generalized beyond Amazon.
-
-### Page subhead
-
-Subscription Recovery checks the biggest subscription hubs first, then a shared
-statement and a direct ask, to find what is still being charged. It cancels what
-is unused or negotiates a refund for a forgotten charge, once the account owner
-confirms.
-
-### Best for
-
-- Anyone who suspects they're still paying for something they forgot about.
-- Accounts with subscriptions scattered across App Store, Google Play,
-  PayPal, and direct-bill services with no single place to see them all.
-- Pairing with Amazon Returns Recovery for full coverage of recurring
-  charges, Amazon-billed or not.
-
-### CTA options
-
-- Audit my subscriptions
-- View the skill folder
-- Read the service playbook
-- Pair with Amazon Returns Recovery
-
-### Safety note
-
-This skill surfaces subscriptions and drafts the case; it does not cancel
-or dispute anything without the account owner confirming first. It follows each service's current account and support flow.
-
 ## Install Copy
 
 ### Codex
@@ -386,7 +306,7 @@ CTA: Install for Claude Code
 ### What are Suede Creator Skills?
 
 Suede Creator Skills are public `SKILL.md` folders for Claude Code and Codex.
-They are the same files that run Suede Labs, published for you to inspect and adapt, so an agent works
+They are the same files that run Suede AI, published for you to inspect and adapt, so an agent works
 from a written method instead of a blank prompt. Every description carries a NOT
 FOR line naming the sibling skill that should win instead.
 
@@ -403,8 +323,8 @@ manager, label, or legal reviewer still needs to confirm rights.
 ### Which skill should I run first?
 
 Run `suede-code` when a change needs review and an A-F ship grade. Run
-`johnny-suede-write` for the whole writing stack, or `johnny-suede-design` for
-the whole design stack including Suedify and visual QA. Run `suede-seo-audit`
+`suede-copy` for the whole writing stack, or `suede-design` for the whole
+design stack including Suedify and visual QA. Run `suede-seo-audit`
 for search and answer intent, and `suede-visibility-grader` when a page needs an
 A-F visibility read. Run `suede-ci-gate` when the verdict has to block a merge,
 and `suede-campaign-in-a-box` for a full artist campaign from one skill.
@@ -449,10 +369,10 @@ Docs: https://skills.suedeai.ai/skills/
 ### Builder post
 
 I published Suede Creator Skills, the public `SKILL.md` pack for Codex and
-Claude Code. It is the same folder that runs Suede Labs, published for you to inspect and adapt.
+Claude Code. It is the same folder that runs Suede AI, published for you to inspect and adapt.
 
 One skill grades a staged diff A-F across seven lanes, and a hardcoded secret
-locks the whole thing at F with the file and the line. Another guides Amazon refund reviews using account evidence and per-item confirmation. The utility tools run offline, write local reports, and keep
+locks the whole thing at F with the file and the line. Another audits a page for search and AI-answer visibility and ranks the fixes by impact. The utility tools run offline, write local reports, and keep
 private files off the network.
 
 Repo: https://github.com/JasonColapietro/suede-creator-skills

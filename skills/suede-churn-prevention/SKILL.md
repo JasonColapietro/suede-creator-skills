@@ -1,13 +1,13 @@
 ---
 name: suede-churn-prevention
-description: "Suede-owned retention discipline for voluntary and involuntary churn: cancel flows, pause paths, evidence-based save offers, failed-payment recovery, proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: lifecycle-email production (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics)."
+description: "Suede AI retention discipline for voluntary and involuntary churn: transparent cancel flows that meet current cancellation law, pause and downgrade paths, reason-matched save offers, failed payment recovery with smart retries and dunning, health scores and proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: writing the lifecycle emails themselves (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Churn Prevention
+# Suede AI Churn Prevention
 
-Use this Suede retention playbook to reduce voluntary and involuntary churn through transparent cancel flows, bounded save offers, proactive signals, and payment recovery.
+Use this retention playbook to reduce voluntary and involuntary churn through transparent cancel flows, bounded save offers, proactive signals, and payment recovery.
 
 ## Before Starting
 
@@ -36,7 +36,8 @@ Gather this context (ask if not provided):
 
 ### 4. Constraints
 - B2B or B2C? (Affects flow design)
-- Self-serve cancellation required? (Some regulations mandate easy cancel)
+- Which states and countries are customers in? (California and other automatic
+  renewal laws require online cancellation; see Cancellation law below)
 - Brand tone for offboarding? (Empathetic, direct, playful)
 
 ---
@@ -144,7 +145,7 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 - Easy path back up when ready
 
 **Feature unlock / extension**
-- Unlock a premium feature they haven't tried
+- Turn on a premium feature they haven't tried
 - Extend trial of a higher tier
 - Works best for "not getting enough value" reasons
 
@@ -152,6 +153,29 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 - For high-value accounts (top 10-20% by MRR)
 - Route to customer success for a call
 - Personal email from founder for smaller companies
+
+### Cancellation law (checked October 2026)
+
+- **Federal:** the FTC's 2024 "click-to-cancel" amendments to the Negative
+  Option Rule were vacated by the Eighth Circuit on July 8, 2025, before their
+  compliance date. The Restore Online Shoppers' Confidence Act (ROSCA) still
+  requires simple cancellation for online negative-option offers, and the FTC
+  keeps enforcing it.
+- **California:** the amended Automatic Renewal Law (AB 2863), effective
+  July 1, 2025, requires online cancellation through a prominent direct link or
+  button for subscriptions sold online, and a save offer may appear only if the
+  customer is told they can still cancel and can do so without engaging with it.
+- **Other states** have their own automatic renewal laws. Treat the strictest
+  one in your market as the floor.
+
+Design rule that satisfies all of the above: one save offer, a visible
+"continue to cancel" control on every screen, and a cancellation that completes
+online in the same session. Legal review decides edge cases, not this skill.
+
+Sources: Mayer Brown, "Click-to-Cancelled: Eighth Circuit Vacates FTC's
+Revised Negative Option Rule" (July 18, 2025); Lowenstein Sandler, "FTC
+Click-to-Cancel Rule on Hold, but California's Automatic Renewal Law Remains
+Intact" (July 16, 2025).
 
 ### Cancel Flow UI Patterns
 
@@ -398,5 +422,4 @@ Waiting for your choice.
 - Need plan structure or offer economics -> use `suede-pricing` or `suede-offers`.
 - Need paywall or trial-expiry UX -> use `suede-paywalls`.
 - Need churn events or a controlled retention test -> use `suede-analytics` or `suede-ab-testing`.
-- Acting as the subscriber to find, cancel, or dispute your own recurring charges -> use `subscription-recovery`. This skill is the merchant side only.
 - From those skills, route cancellation and payment-recovery strategy back to `suede-churn-prevention`.

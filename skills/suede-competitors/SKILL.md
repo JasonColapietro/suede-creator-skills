@@ -1,6 +1,6 @@
 ---
 name: suede-competitors
-description: "Suede-owned comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
+description: "Suede AI comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
 metadata:
   version: 2.0.1
 ---
@@ -57,7 +57,7 @@ Then work the intake list under Task-Specific Questions below; ask only what the
 
 **Important**: Include 4-7 real alternatives. Being genuinely helpful builds trust and ranks better.
 
-**AI-answer expectations by stage**: these pages can earn *citations* in AI answers, but whether AI *recommends* your brand from them also depends on offsite consensus (reviews, forums, analysts). For emerging brands, a self-ranked list may surface competitors while the brand receives only a citation. Treat that as a hypothesis and route current visibility evidence and claim validation to `suede-seo-audit`.
+**AI-answer expectations by stage**: these pages can earn *citations* in AI answers, but whether AI *recommends* your brand from them also depends on offsite consensus (reviews, forums, analysts). For emerging brands, a self-ranked list may surface competitors while the brand receives only a citation. Treat that as a hypothesis and test it on the `suede-ai-seo` prompt panel before building more.
 
 ---
 
@@ -194,8 +194,33 @@ For each competitor, gather:
 - Link from feature pages to relevant comparisons
 - Create hub page linking to all competitor content
 
+### Answer-Engine Readiness
+
+"[X] vs [Y]" and "[X] alternatives" are among the prompts buyers put to
+ChatGPT, Perplexity, Copilot, and AI Overviews, and comparison pages are a
+common source for those answers. Build every page so a passage can be lifted
+accurately:
+
+- The TL;DR answers the comparison in the first 40 to 80 words and names both
+  products.
+- Section headings are the questions buyers ask ("Is [You] cheaper than
+  [Competitor] for a 10-person team?").
+- The comparison is a real `<table>`, every cell sourced and dated.
+- Product and company names match each vendor's canonical spelling.
+- A visible "last checked" date reflects the actual claim review.
+
 ### Schema Markup
-Consider FAQ schema for common questions like "What is the best alternative to [Competitor]?"
+Article markup with `author`, `datePublished`, and `dateModified` that match
+the visible byline and dates; `BreadcrumbList` when a breadcrumb is shown.
+FAQPage markup no longer produces Google rich results (ended May 2026); use it
+only to mirror a visible FAQ. Never mark up a competitor's ratings or reviews as
+your own.
+
+### KPIs
+Impressions and clicks for the page's query family (Search Console), citation
+and recommendation share on the matching prompt cluster (`suede-ai-seo`),
+assisted sign-ups or demos from the page (analytics), and the claim-review
+date, which should never be older than a quarter.
 
 ---
 
@@ -214,7 +239,7 @@ drafting:
 3. Anything sourced more than a quarter ago gets re-checked before publication,
    not carried forward. Pricing pages move.
 4. Claims about your own live visibility or how AI answers cite the page are not
-   verifiable from here, route those to `suede-seo-audit`.
+   verifiable from here; measure them with the `suede-ai-seo` prompt panel.
 
 ---
 
@@ -251,5 +276,6 @@ shape for them:
 - Need review-mining or forum synthesis for the "common complaints" and switching-reason sections -> use `suede-customer-research`.
 - Need scaled comparison-page architecture -> use `suede-programmatic-seo`.
 - Need final page copy or organic QA -> use `suede-copy` or `suede-seo-audit`.
+- Need to know whether answer engines cite or recommend the page -> use `suede-ai-seo`.
 - Need internal battle cards -> use `suede-sales-enablement`.
 - From those skills, route evidence-backed public alternative and versus-page composition back to `suede-competitors`.

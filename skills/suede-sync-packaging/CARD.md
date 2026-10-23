@@ -7,7 +7,7 @@ Release record for the `suede-sync-packaging` skill, following the NVIDIA skill-
 
 ## Description
 
-Suede Labs skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, and the open clearance questions kept in their own labeled pile.
+Suede AI skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, AI-involvement disclosure, and the open clearance questions kept in their own labeled pile.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach.
 
-Out of scope — finding and organizing the rights gaps behind an open clearance question (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box).
+Out of scope — investigating the rights gaps behind an open clearance question or building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (1 file).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

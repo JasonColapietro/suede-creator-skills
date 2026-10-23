@@ -7,7 +7,7 @@ Release record for the `suede-aso` skill, following the NVIDIA skill-card templa
 
 ## Description
 
-Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits.
+Suede AI app-store optimization for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet.
 
-Out of scope — building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).
+Out of scope — building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede AI companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).
 
 ## Deployment Geography
 

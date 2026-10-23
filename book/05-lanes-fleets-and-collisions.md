@@ -195,10 +195,9 @@ fleet and a very expensive way to generate material nobody will check.
 
 ## The stack, formally
 
-The six skills this chapter and the last keep circling — `suede-full-send`,
-`suede-graph-flo-xr`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
-`suede-recommend-next-action` — ship as a named group: the Agentic Adderall
-Stack, sold with a straight face at `/cracked.html` on the docs site. The label
+Three of the skills this chapter and the last keep circling, `suede-graph-flo-xr`,
+`suede-agent-teams`, and `suede-workflow-skills`, ship as a named group: the
+Agentic Adderall Stack, sold with a straight face at `/cracked.html` on the docs site. The label
 is a joke. The contract underneath is not, and it is worth stating precisely
 because it demonstrates the pack's own discipline applied to itself.
 
@@ -226,9 +225,9 @@ competing plans, scores and prunes them, refutes and improves the survivors,
 aggregates compatible lanes, and lets only the selected plan mutate. The fleet
 skill exists precisely so well-specified volume can leave the Anthropic meter.
 Extended release is the other scheduling regime: between
-passes, `suede-recommend-next-action` scores candidate moves on goal fit,
-unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
-prompt, so the idle state between runs is a queued next action instead of a
+passes, the Next move section of `suede-workflow-skills` scores candidate moves
+on goal fit, unblocking, evidence, urgency, and leverage, and emits the winner as
+a runnable prompt, so the idle state between runs is a queued next action instead of a
 blank prompt box.
 
 ### The move

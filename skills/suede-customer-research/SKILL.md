@@ -1,13 +1,13 @@
 ---
 name: suede-customer-research
-description: "Suede-owned customer-research discipline for interview design, transcript and ticket synthesis, review and forum mining, quote banks, jobs, and evidence-backed personas. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing)."
+description: "Suede AI customer-research discipline: interview design, transcript, ticket, survey, and NPS synthesis, review and forum mining with saved captures, VOC quote banks, jobs to be done, evidence-backed personas, and the exact questions buyers type into search and AI assistants. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing)."
 metadata:
-  version: 2.0.1
+  version: 2.1.0
 ---
 
-# Suede Customer Research
+# Suede AI Customer Research
 
-Use this Suede customer-research playbook to ground positioning, product, and copy in traceable customer evidence rather than assumption.
+Use this customer-research playbook to ground positioning, product, and copy in traceable customer evidence rather than assumption.
 
 ## Before Starting
 
@@ -225,7 +225,10 @@ Default deliverable: a **research synthesis report** (themes, quotes, patterns,
 implications) plus a **VOC quote bank** organized by theme. Produce those unless
 the user asked for something else.
 
-Offer these instead or in addition when the goal calls for it: a **persona
+Offer these instead or in addition when the goal calls for it: a **question
+bank for search and AI answers** (the verbatim questions customers asked, in
+their words, grouped by theme and buying stage, ready for `suede-content-strategy`
+and `suede-ai-seo` to turn into headings, FAQs, and pages), a **persona
 document** (1-3 personas), a **jobs-to-be-done map** (functional, emotional,
 social jobs by segment), a **competitive intelligence summary** (what customers
 say about competitors vs. you), or a **research gap analysis** (what you still

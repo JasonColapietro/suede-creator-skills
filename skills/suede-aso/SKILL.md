@@ -1,6 +1,6 @@
 ---
 name: suede-aso
-description: "Suede-owned app-store optimization discipline for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede Labs companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
+description: "Suede AI app-store optimization for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede AI companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
 metadata:
   version: 2.0.0
 ---
@@ -126,14 +126,14 @@ Reference files for platform specs and benchmarks:
 
 - `references/apple-specs.md`: Official Apple character limits, screenshot/video specs, CPP/PPO rules, rejection triggers
 - `references/google-play-specs.md`: Official Google Play limits, screenshot specs, Android Vitals thresholds, policies
-- `references/benchmarks.md`: Conversion data, rating impact, video lift, screenshot behavior, CPP/event benchmarks
+- `references/benchmarks.md`: How to use (and not use) third-party benchmarks, directional patterns, and how to build a client baseline from console data
 
 ### Dimensions and Weights
 
 | #   | Dimension            | Weight | What It Covers                                                            |
 | --- | -------------------- | ------ | ------------------------------------------------------------------------- |
 | 1   | Title & Subtitle     | 20%    | Character usage, keyword presence, clarity, brand + keyword balance       |
-| 2   | Description          | 15%    | First 3 lines, keyword density (Google), CTA, structure, promotional text |
+| 2   | Description          | 15%    | First 3 lines, natural use of core terms (Google), CTA, structure, promotional text |
 | 3   | Visual Assets        | 25%    | Screenshot count/quality/messaging, video, icon, feature graphic          |
 | 4   | Ratings & Reviews    | 20%    | Average rating, volume, recency, developer responses                      |
 | 5   | Metadata & Freshness | 10%    | Category choice, update recency, localization count, data safety          |
@@ -231,10 +231,24 @@ The one comparison that drives scoring on every audit stays inline:
 | Subtitle / Short desc | Yes              | Yes                    |
 | Keyword field         | Yes (hidden)     | Does not exist         |
 | Long description      | No               | Yes (heavily)          |
-| Screenshot captions   | Yes (since 2025) | No                     |
+| Screenshot captions   | Unconfirmed      | No                     |
 | In-app events         | Yes              | N/A (LiveOps instead)  |
 | Developer name        | No               | Partial                |
 | IAP names             | Yes              | Yes                    |
+
+### Store listings outside the store
+
+App Store and Google Play pages are indexed by web search and often cited by
+AI assistants when someone asks "best app for [job]". Two checks on every
+audit:
+
+- **Entity match**: developer name, app name, and the one-line description
+  match the brand's canonical entity facts (see `suede-ai-seo`). A developer
+  name that still shows an old company name splits the entity.
+- **Web landing page**: the app has a crawlable page on the brand's site that
+  states what it does, links to both store listings, and carries
+  `SoftwareApplication` (or `MobileApplication`) JSON-LD matching the store
+  facts. Route the page itself to `suede-seo-audit`.
 
 ## Pre-Launch Metadata Mode
 
@@ -287,7 +301,7 @@ Every flag carries an **author action**, so the reader knows what to do with it:
 
 - [ ] Rating below 4.0: **required**
 - [ ] Last update > 3 months ago: **required**
-- [ ] Google Play description has no keyword strategy (under 1% density): **required**
+- [ ] Google Play description never names the core use-case terms in natural language, or stuffs them as keyword lists: **required**
 - [ ] Google Play missing feature graphic: **blocks the listing** (no featured placement without it)
 - [ ] Apple keyword field likely has repeated words (inferred from title+subtitle): **required**
 - [ ] Category mismatch (app would face less competition in a different category): **required**
@@ -336,6 +350,6 @@ Play) is always **blocks the listing**: see `references/google-play-specs.md`.
 - Need paid app-install creative -> use `suede-ad-creative`.
 - Need install attribution or in-app events -> use `suede-analytics`.
 - Need customer language for listing copy -> use `suede-customer-research`.
-- Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`; native iOS from scratch is a private Suede Labs companion, not in this pack: ios-app-factory.
+- Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`; native iOS from scratch is a private Suede AI companion, not in this pack: ios-app-factory.
 - Need App Store metadata authored for an app that has not shipped yet -> stay in `suede-aso` and run Pre-Launch Metadata Mode.
 - From those skills, route listing audits, metadata strategy, and screenshot sequencing back to `suede-aso`.

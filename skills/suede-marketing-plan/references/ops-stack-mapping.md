@@ -42,12 +42,12 @@ The plan's Section 11 makes this thesis explicit by:
 | Skill | What it does | Primary use in Activation |
 |---|---|---|
 | `suede-onboarding` | Optimize user onboarding flows | Onboarding rebuild, activation rate tests |
-| `suede-signup` | Optimize signup/registration | Reduce friction at top of activation |
+| `suede-onboarding` (Signup lane) | Optimize signup/registration | Reduce friction at top of activation |
 | `suede-site-alchemy` | Optimize marketing pages, forms, popups, and landing pages | Conversion testing across activation surfaces |
 | `suede-paywalls` | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
 | `suede-copy` | Write, edit, and iterate marketing copy | Onboarding screens, paywall copy, CTAs, and voice review |
 | `suede-ab-testing` | Plan A/B tests | Structure for onboarding variant tests |
-| `suede-marketing-psychology` | Apply behavioral science to copy and CRO | Persuasion principles in activation moments |
+| `suede-offers` | Offer design plus evidence-tiered behavioral models | Persuasion principles in activation moments |
 
 ### Retention skills
 
@@ -85,8 +85,8 @@ The plan's Section 11 makes this thesis explicit by:
 |---|---|---|
 | `suede-product-marketing` | Set up the `.agents/product-marketing.md` context file (positioning, ICP, voice) | Foundational: run first; every section of the plan references this |
 | `suede-customer-research` | Conduct customer interviews + surveys | Section 2 + Section 3 (Current state) |
-| `suede-marketing-psychology` | Apply behavioral science | Cross-cuts copy, CRO, paywalls |
-| `suede-marketing-ideas` | The 139-idea library | Section 12 of plan (Idea bank) |
+| `suede-offers` | Offer design and behavioral models | Cross-cuts copy, CRO, paywalls |
+| `suede-marketing-plan` (tactic library) | The 142-idea library and scoring rubric | Section 12 of plan (Idea bank) |
 
 ## MCPs and APIs mapped to AARRR
 

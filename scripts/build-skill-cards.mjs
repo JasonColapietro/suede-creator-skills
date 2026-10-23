@@ -33,7 +33,7 @@ const RISK_HEADINGS = [
   { pattern: /^## Evidence boundaries/i, label: "Evidence boundaries" },
   { pattern: /^## Public Safety Rules/i, label: "Public Safety Rules" },
   { pattern: /^## Red [Ff]lags/, label: "Red flags" },
-  { pattern: /^## App Store 4\.2 Gate/, label: "App Store 4.2 Gate" },
+  { pattern: /^## App Store 4\.2 gate/i, label: "App Store 4.2 Gate" },
 ];
 
 function countFiles(dir) {

@@ -472,8 +472,8 @@ const RELEASE = {
   },
 }
 
-// ------------------------------------------------------- graph-of-thoughts
-// Adapted from the Graph of Thoughts operation model (ETH Zurich, BSD-3-Clause).
+// ------------------------------------------------------- thought graph
+// Operation graph engine; BSD-3-Clause terms are in the file header.
 // The workflow runner evaluates this file with injected globals, so keeping the graph
 // engine here preserves its single-file ABI while still giving the operations pure seams.
 const OPERATION_TYPES = Object.freeze({

@@ -90,4 +90,4 @@ Judge ABM on account movement, not CPL:
 
 ---
 
-*Framework lineage: adapted (re-expressed and restructured) from practitioner playbooks, notably Ivan Falco's ads-skills. Thresholds are practitioner-reported starting points: recalibrate against your own accounts.*
+*Thresholds and benchmarks in this file are starting points from practitioner operating data, not platform guarantees. Recalibrate against the account's own first 30 days.*

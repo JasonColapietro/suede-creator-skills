@@ -1,5 +1,22 @@
 {
   "enabled": true,
   "ends_at": null,
+  "copy": {
+    "about": "Template copy for the feature offer and the badge-partner section. Keep the facts: either linked badge qualifies, eligibility is 80–99, verification checks the rendered README. Show no end date until ends_at is set.",
+    "offer_short": "Show your badge, get featured. Add the numeric or letter badge to your README, request verification, and an eligible skill scoring 80–99 can earn a featured placement.",
+    "offer_long": "Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open.",
+    "partners_intro": "Publishers who show their quality badge in their README, verified by Suede AI against the rendered page. Scores follow the published rubric.",
+    "button": "Request badge verification"
+  },
+  "outreach_priority": {
+    "about": "Order for inviting publishers to add badges. Messages are drafted for approval and never sent automatically. See directory/STRATEGY.md section 4.",
+    "categories": [
+      "marketing-seo",
+      "writing-content",
+      "ai-agents-llm",
+      "productivity-knowledge"
+    ],
+    "min_score": 80
+  },
   "verifications": {}
 }

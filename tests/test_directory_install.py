@@ -50,8 +50,9 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.root = Path(cls.tmp.name)
         for name in ("scripts/build-directory.mjs", "directory/categories.json",
-                     "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json",
-                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "docs/llms.txt"):
+                     "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
+                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs",
+                     "scripts/directory/check-client.js", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
@@ -98,7 +99,9 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIn('Two badges for skill-0', page)
         self.assertIn('Security scan: not scanned.', page)
         self.assertIn('Not scanned', page)
-        self.assertIn('display either the numeric or letter badge', page)
+        # The feature offer renders its copy from directory/promotion.json.
+        offer = json.loads((ROOT / 'directory/promotion.json').read_text())['copy']['offer_long']
+        self.assertIn(f'Limited-time feature offer: {offer}', page)
         snippets = [html.unescape(re.search(rf'<code id="badge-{kind}">([\s\S]*?)</code>', page)[1]) for kind in ('md', 'html')]
         for snippet in snippets:
             self.assertEqual(snippet.count('](https://skills.suedeai.ai/directory/fixture/skills/skill-0/)') if snippet.startswith('[!') else snippet.count('href="https://skills.suedeai.ai/directory/fixture/skills/skill-0/"'), 2)
@@ -114,7 +117,7 @@ class DirectoryInstallTests(unittest.TestCase):
 
     def test_skills_below_80_keep_badge_urls_without_quality_shields(self):
         listing = (self.root / 'docs/directory/badge.svg').read_text()
-        self.assertIn('Suede Skills Directory: listed', listing)
+        self.assertIn('Suede AI Skills Directory: listed', listing)
         for name in ('low-page', 'low-row'):
             for svg in ('badge.svg', 'score.svg'):
                 with self.subTest(skill=name, svg=svg):
@@ -196,17 +199,20 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIsNotNone(match)
         return html.unescape(match[1])
 
-    def test_claude_copy_paths_are_literal_shell_words(self):
-        for i, directory in enumerate(self.paths):
-            with self.subTest(directory=directory):
-                command = self.snippet(i, "claude")
-                source = re.search(r'\ncp -R ([\s\S]+?) \.claude/skills/\n', command)[1]
-                # Only the trusted temporary directory variable may expand.
-                prefix = '"$tmp/repo/"'
-                self.assertTrue(source.startswith(prefix), source)
-                self.assertEqual(literal_word(source[len(prefix):]), directory)
-                self.assertEqual(shlex.split("cp -R " + source + " .claude/skills/"),
-                                 ["cp", "-R", "$tmp/repo/" + directory, ".claude/skills/"])
+    def test_claude_and_codex_copy_paths_are_literal_shell_words(self):
+        # Codex reads repository skills from .agents/skills (OpenAI Codex docs).
+        for route, target in (("claude", ".claude/skills/"), ("codex", ".agents/skills/")):
+            for i, directory in enumerate(self.paths):
+                with self.subTest(route=route, directory=directory):
+                    command = self.snippet(i, route)
+                    source = re.search(r'\ncp -R ([\s\S]+?) ' + re.escape(target) + r'\n', command)[1]
+                    # Only the trusted temporary directory variable may expand.
+                    prefix = '"$tmp/repo/"'
+                    self.assertTrue(source.startswith(prefix), source)
+                    self.assertEqual(literal_word(source[len(prefix):]), directory)
+                    self.assertEqual(shlex.split("cp -R " + source + " " + target),
+                                     ["cp", "-R", "$tmp/repo/" + directory, target])
+                    self.assertNotIn(".codex/skills", command)
 
     def test_other_routes_and_branch_arguments_remain_literal(self):
         for i, directory in enumerate(self.paths):
@@ -214,20 +220,18 @@ class DirectoryInstallTests(unittest.TestCase):
                 cli = self.snippet(i, "cli")
                 self.assertEqual(literal_word(cli.removeprefix("npx skills add ")),
                                  f"https://github.com/fixture/skills/tree/{self.branch}/{directory}")
-                codex = self.snippet(i, "codex")
-                path_word, branch_word = codex.split("--path ", 1)[1].split(" \\\n    --ref ")
-                self.assertEqual(literal_word(path_word), directory)
-                self.assertEqual(literal_word(branch_word), self.branch)
-                claude = self.snippet(i, "claude")
-                branch_word = claude.split("--branch ", 1)[1].split(" https://github.com/", 1)[0]
-                self.assertEqual(literal_word(branch_word), self.branch)
+                for route in ("claude", "codex"):
+                    command = self.snippet(i, route)
+                    branch_word = command.split("--branch ", 1)[1].split(" https://github.com/", 1)[0]
+                    self.assertEqual(literal_word(branch_word), self.branch)
 
     def test_root_skill_and_all_rendered_commands_have_valid_syntax(self):
-        root = self.snippet(len(self.paths), "claude")
-        self.assertIn(f".claude/skills/skill-{len(self.paths)}", root)
-        self.assertNotIn("cp -R", root)
+        for route, target in (("claude", ".claude/skills"), ("codex", ".agents/skills")):
+            root = self.snippet(len(self.paths), route)
+            self.assertIn(f"{target}/skill-{len(self.paths)}", root)
+            self.assertNotIn("cp -R", root)
         for i in range(len(self.paths) + 1):
-            for route in ("cli", "claude", *(() if i == len(self.paths) else ("codex",))):
+            for route in ("cli", "claude", "codex"):
                 # -n parses only. No command, substitution, or cloned code runs.
                 result = subprocess.run(["bash", "--noprofile", "--norc", "-n"],
                                         input=self.snippet(i, route), text=True, capture_output=True)

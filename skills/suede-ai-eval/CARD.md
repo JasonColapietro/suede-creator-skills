@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict.
 
-Out of scope — reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); UAT of the built feature beyond the eval suite (a private Suede Labs companion, not in this pack).
+Out of scope — reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); coordinating the eval work as one lane of a larger build (use suede-agent-teams).
 
 ## Deployment Geography
 

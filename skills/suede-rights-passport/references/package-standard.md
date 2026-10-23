@@ -1,8 +1,8 @@
-# Suede Transfer Package Standard
+# Transfer Package Standard
 
 ## Goal
 
-Prepare a creator project for clean Suede intake. The package should let a Suede operator or agent quickly understand what the work is, where the files are, what rights data is known, what is missing, and what optimization should happen next.
+Prepare a creator project for clean downstream review. The package should let an operator, collaborator, label, or agent quickly understand what the work is, where the files are, what rights data is known, what is missing, and what optimization should happen next.
 
 ## Required Folder Shape
 
@@ -27,7 +27,7 @@ suede-transfer-package/
 
 ## Required Reports
 
-`RIGHTS_PASSPORT.md`: Human-readable summary of the work, creator, rights posture, ownership confidence, known contributors, known releases, and Suede intake readiness.
+`RIGHTS_PASSPORT.md`: Human-readable summary of the work, creator, rights posture, ownership confidence, known contributors, known releases, and review readiness.
 
 `suede-intake.json`: Agent-readable manifest. New packages use schema 0.2.0,
 the machine contract in `assets/suede-intake.schema.json`, and the field guide
@@ -39,7 +39,7 @@ in `references/intake-schema.md`.
 
 `license-notes.md`: Samples, interpolations, covers, beat leases, sync/master licenses, platform releases, takedown risks, and usage restrictions.
 
-`optimization-brief.md`: Recommended Suede next actions, such as mastering, stems, lyric sync, metadata cleanup, artwork polish, rights registration, licensing setup, or agent commerce packaging.
+`optimization-brief.md`: Recommended next actions, such as mastering, stems, lyric sync, metadata cleanup, artwork polish, rights registration, licensing setup, or agent commerce packaging.
 
 `missing-info-report.md`: Blockers and unresolved questions. Include this even when there are no blockers.
 
@@ -54,7 +54,7 @@ Use plain labels consistently:
 
 ## Language Rules
 
-Say "Suede-ready transfer package" or "prepared for Suede intake." Avoid saying "ownership transfer" unless the user is explicitly discussing legal assignment. The public skill prepares materials for Suede's workflow; it does not perform legal transfer or rights clearance.
+Say "transfer package" or "prepared for downstream review." Avoid saying "ownership transfer" unless the user is explicitly discussing legal assignment. The skill prepares materials for review; it does not perform legal transfer or rights clearance.
 
 Use "needs creator confirmation" instead of guessing.
 
@@ -68,7 +68,7 @@ A strong package answers:
 - Who contributed and what are their roles?
 - What rights are confirmed, disputed, licensed, or unknown?
 - What release history exists?
-- What should Suede optimize first?
+- What should be optimized first?
 - What facts must be confirmed before registry, licensing, royalty routing, or agent commerce?
 
 It also keeps unlike industry objects separate:
@@ -77,7 +77,8 @@ It also keeps unlike industry objects separate:
 - sound recording/master and its ISRC, performers, master controllers, and master shares;
 - release/product and its UPC/EAN or catalog number, recordings, label, distributor, date, and territories;
 - parties and their roles, IPI/CAE or ISNI identifiers, evidence, and privacy state;
-- licenses, third-party material, voice/likeness or AI-use consent, and chain-of-title evidence.
+- licenses, third-party material, voice/likeness or AI-use consent, and chain-of-title evidence;
+- AI involvement per element (vocals, instrumentation, composition, lyrics, post-production), the tools used, and the evidence of human authorship, since distributors and DSPs now ask for AI disclosure at delivery.
 
 Before an external exchange, run the current validator in strict mode and read
 `references/ddex-c2pa-crosswalk.md`. A crosswalk is not receiver conformance.

@@ -1,13 +1,13 @@
 ---
 name: suede-paywalls
-description: "Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments. Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value. NOT FOR: public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention)."
+description: "Suede AI in-product monetization: paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments, with trigger timing, frequency caps, screen copy, plan presentation, a dark-pattern self-check, and subscription-law checks current to October 2026 (ROSCA and state auto-renewal laws after the vacated FTC click-to-cancel rule, California's click-to-cancel and renewal notices, UK DMCC subscription rules, the EU withdrawal button, App Store and Google Play disclosure). Returns screen drafts, trigger rules, and an experiment plan. Use when users have experienced value and the next step is an upgrade prompt or paywall. NOT FOR: public pricing pages (use suede-pricing for the teardown or suede-site-alchemy for conversion), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention)."
 metadata:
   version: 2.0.0
 ---
 
 # Suede Paywalls and Upgrade Moments
 
-Suede designs in-product monetization around a truthful entitlement boundary and a value-aware moment, not interruption volume. Define when the user has enough context to evaluate an upgrade, what the paid change actually unlocks, and how to test the prompt without obscuring price, consent, or exit.
+Suede AI designs in-product monetization around a truthful entitlement boundary and a value-aware moment, not interruption volume. Define when the user has enough context to evaluate an upgrade, what the paid change actually unlocks, and how to test the prompt without obscuring price, consent, or exit.
 
 ## Initial Assessment
 
@@ -126,9 +126,21 @@ Anti-Patterns to Avoid and Boundaries below, and answered these out loud:
 3. Does any urgency claim ("ends today", a countdown) correspond to a real deadline?
 4. Can the user reach the free path in one tap from this screen?
 5. Does any copy assign blame, shame, or loss the user did not actually incur?
+6. If this screen starts or renews a subscription: are the renewal price, interval, trial end date, and cancel path shown before purchase, and is auto-renewal consent separate where the law requires it?
 
-Name every hit before delivering. A hit on 1, 3, or 4 is a blocker: fix the
+Name every hit before delivering. A hit on 1, 3, 4, or 6 is a blocker: fix the
 draft, don't ship it with a caveat.
+
+---
+
+## Subscription Law Check
+
+Any paywall that starts a trial, converts a trial, or renews a subscription must meet current auto-renewal rules. Status as of October 2026, with sources, in [references/subscription-rules.md](references/subscription-rules.md). The short version:
+
+- **US:** the FTC's 2024 click-to-cancel rule was vacated in July 2025 and the FTC is back at the advance-notice stage (March 2026), but ROSCA, FTC Act Section 5, and state laws still apply. California (since July 1, 2025) requires online click-to-cancel, limits save offers, and requires price-increase notices 7 to 30 days ahead.
+- **UK:** DMCC unfair-practice fines are live; subscription rules (trial and renewal reminders, cooling-off, easy exit) are planned for January 1, 2027.
+- **EU:** an online withdrawal function has been required since June 19, 2026.
+- **App stores:** disclose renewal price, period, and terms on the paywall; check current external-purchase rules before linking out.
 
 ---
 

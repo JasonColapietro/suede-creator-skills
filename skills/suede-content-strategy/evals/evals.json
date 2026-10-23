@@ -19,7 +19,7 @@
     },
     {
       "id": 2,
-      "prompt": "We have 200+ blog posts but traffic has been flat for a year. Our content feels random — no clear strategy. How do we fix this?",
+      "prompt": "We have 200+ blog posts but traffic has been flat for a year. Our content feels random, with no clear strategy. How do we fix this?",
       "expected_output": "Should diagnose the 'random content' problem. Should recommend a content audit process to evaluate existing posts. Should introduce content pillars and topical clustering to organize the existing library. Should identify hub-and-spoke opportunities from existing content. Should recommend which posts to update, consolidate, or retire. Should use the prioritization framework to plan next steps. Should address topical authority building through clusters.",
       "assertions": [
         "Diagnoses the 'random content' problem",
@@ -49,7 +49,7 @@
     },
     {
       "id": 4,
-      "prompt": "How should we prioritize which content to create first? We have a list of 50 blog post ideas but limited resources — one content marketer writing 2 posts per week.",
+      "prompt": "How should we prioritize which content to create first? We have a list of 50 blog post ideas but limited resources: one content marketer writing 2 posts per week.",
       "expected_output": "Should use customer impact, content-market fit, search potential, and resource requirements as decision factors; explain that the default weights are illustrative; adapt and record the weights for the user's goal; score the supplied ideas from evidence; consider buyer-stage distribution; and provide a practical workflow for the single content marketer.",
       "assertions": [
         "Applies prioritization scoring framework with weights",

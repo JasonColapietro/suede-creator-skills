@@ -7,7 +7,7 @@ Release record for the `suede-ship-copy` skill, following the NVIDIA skill-card 
 
 ## Description
 
-Suede Labs copy-only orchestration DAG.
+Suede AI copy-only orchestration DAG for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing, researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes.
-
-Out of scope — multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet).
+Out of scope — everyday or multi-surface copy written in one pass (use suede-copy); changing code (use suede-graph-flo-xr); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces from one spec.
 
 ## Deployment Geography
 

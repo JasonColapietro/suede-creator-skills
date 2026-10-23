@@ -1,13 +1,13 @@
 ---
 name: suede-analytics
-description: "Suede-owned measurement discipline for tracking plans, event and conversion instrumentation, UTM and campaign-parameter hygiene, and verification of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance decisions (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
+description: "Suede AI measurement discipline: tracking plans, event and key-event instrumentation in GA4 and GTM, consent mode v2, UTM hygiene, AI assistant and organic search channel grouping, and readback proof of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
 metadata:
-  version: 2.0.1
+  version: 2.1.0
 ---
 
-# Suede Analytics Tracking
+# Suede AI Analytics Tracking
 
-Use this Suede measurement playbook to build tracking that supports auditable marketing and product decisions.
+Use this measurement playbook to build tracking that supports auditable marketing and product decisions.
 
 ## Initial Assessment
 
@@ -127,10 +127,13 @@ checkout_payment_completed
 ### Quick Setup
 
 1. Create GA4 property and data stream
-2. Install gtag.js or GTM
+2. Install the Google tag (gtag.js) or GTM, with consent mode v2 defaults set
+   before any tag fires
 3. Enable enhanced measurement
 4. Configure custom events
-5. Mark conversions in Admin
+5. Mark key events in Admin (GA4 renamed "conversions" to key events in March
+   2024), then create Google Ads conversions from the key events that bidding
+   should use
 
 ### Custom Event Example
 
@@ -189,6 +192,25 @@ dataLayer.push({
 
 ---
 
+## Search and AI Assistant Traffic
+
+Organic search and AI answer engines now send traffic that default channel
+groups misfile. Add a custom channel group in GA4 (Admin > Data display >
+Channel groups) with an **AI assistants** channel placed above Referral:
+
+```text
+Session source matches regex:
+chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|you\.com
+```
+
+Many AI-assisted visits arrive with no referrer and land in Direct, so pair the
+channel with a "How did you hear about us?" field (see `suede-attribution`) and
+with Search Console data for organic queries. Review the regex quarterly as
+assistants change domains. For the visibility work itself, route to
+`suede-ai-seo` and `suede-seo-audit`.
+
+---
+
 ## Debugging and Validation
 
 ### Testing Tools
@@ -244,6 +266,11 @@ Before implementation:
 4. Collect only approved data, avoid direct personal identifiers unless the
    reviewed design expressly allows them, and test both allowed and denied
    consent paths.
+5. For Google tags, set all four consent mode v2 signals (`ad_storage`,
+   `analytics_storage`, `ad_user_data`, `ad_personalization`) before any tag
+   fires. Google requires them for advertising features used with EEA traffic.
+   Pattern and basic-versus-advanced trade-off:
+   [references/gtm-implementation.md](references/gtm-implementation.md).
 
 ---
 
@@ -272,9 +299,9 @@ Before implementation:
 
 ## Conversions
 
-| Conversion | Event | Counting |
-|------------|-------|----------|
-| Signup | signup_completed | Once per session |
+| Key event | Event | Counting | Google Ads conversion |
+|-----------|-------|----------|-----------------------|
+| Signup | signup_completed | Once per session | Primary / secondary / none |
 ```
 
 ---

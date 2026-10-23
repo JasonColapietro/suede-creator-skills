@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 76](https://img.shields.io/badge/skills-76-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 63](https://img.shields.io/badge/skills-63-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -41,9 +41,9 @@ Suede Creator Skills gives founders, marketers, and small teams reusable workflo
 - **Positioning and conversion:** define your audience and offer with `suede-product-marketing`, then write page copy with `suede-copy`.
 - **Business operations:** map bottlenecks with `suede-ops-assessment` and define the system with `suede-ops-architecture`.
 
-These are **public, broadly reusable, open-source skill folders**. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and creator-rights work. Original work is MIT licensed; adapted components carry their upstream notices beside the source. No binaries, no telemetry, no accounts.
+These are **public, broadly reusable, open-source skill folders**, installable from one path. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and creator-rights work. Original work is MIT licensed; adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). No binaries, no telemetry, no accounts.
 
-<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 41 marketing and growth skills, 10 design copy and SEO, 6 orchestration and workflows, 5 code quality and shipping, 5 creator rights and release, 2 mobile app factories, 2 consumer recovery." width="100%">
+<img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 38 marketing and growth skills, 7 design copy and SEO, 7 orchestration and workflows, 4 code quality and shipping, 4 creator rights and release, 3 mobile apps." width="100%">
 
 ## Install in 30 seconds
 
@@ -54,7 +54,7 @@ These are **public, broadly reusable, open-source skill folders**. Read each `sk
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (43 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (39 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -191,65 +191,56 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) | Suede Thought Graph repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
-| [`suede-recommend-next-action`](skills/suede-recommend-next-action) | Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt |
-| [`suede-workflow-skills`](skills/suede-workflow-skills) | Umbrella skill that loads the full pack |
+| [`suede-workflow-skills`](skills/suede-workflow-skills) | Umbrella router that loads the full pack, picks the specialist, and hands back one scored next move as a runnable prompt |
+| [`suede-ops-assessment`](skills/suede-ops-assessment) | Map how work actually happens before anyone designs a system: interviews with the people doing it, a silo inventory, friction measured in the operation's own numbers |
+| [`suede-ops-architecture`](skills/suede-ops-architecture) | Fix the shape of a system before anyone builds it: entity schema, one write path per entity, each unit of work routed to an automation, an agent, or a human |
 
 ### Code quality & shipping
 
 | Skill | What it does |
 |---|---|
-| [`suede-code`](skills/suede-code) | Review + A–F grade in one pass |
-| [`suede-code-review`](skills/suede-code-review) | Deep findings with Accessibility and SEO lanes, no letter grade |
-| [`suede-code-grader`](skills/suede-code-grader) | A–F ship verdict only, 7 lanes, instant-F triggers |
+| [`suede-code`](skills/suede-code) | Review + A–F grade in one pass, 7 lanes, instant-F triggers; findings-only and grade-only modes |
 | [`suede-ci-gate`](skills/suede-ci-gate) | Write CI that gates the merge — stack/lockfile detection, one required check, branch protection |
+| [`suede-parity-contract`](skills/suede-parity-contract) | Hold one domain consistent across web, iOS, Android, and docs with a contract generated from the reference surface |
 | [`suede-clip-to-guide`](skills/suede-clip-to-guide) | Turn a clip, talk moment, or transcript into a clip-to-guide funnel package with rights routing and an evidence gate |
 
 ### Design, copy & SEO
 
 | Skill | What it does |
 |---|---|
-| [`johnny-suede-design`](skills/johnny-suede-design) | Full design lane: brand and product surfaces, tokens, visual QA, vetted component sources with an adoption checklist |
-| [`johnny-suede-write`](skills/johnny-suede-write) | Full writing lane: structure, persuasion frameworks, anti-slop gate, copy score |
-| [`suede-design`](skills/suede-design) | Design laws, dark-mode tokens, fluid type, component rules, vetted component sources with an adoption checklist |
-| [`suede-copy`](skills/suede-copy) | Conversion copy: headline formulas, A/B variants, anti-slop gate |
+| [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/GEO, metadata, schema, internal-link, and intent audit |
+| [`suede-design`](skills/suede-design) | Full design lane: brand and product surfaces, design laws, dark-mode tokens, fluid type, visual QA, vetted component sources with an adoption checklist |
+| [`suede-copy`](skills/suede-copy) | Full writing lane: conversion and SEO copy, headline formulas, persuasion frameworks, A/B variants, anti-slop gate, copy score |
 | [`suede-deslop`](skills/suede-deslop) | Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, with a 50-point score gate |
-| [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/AI-EO, metadata, schema, internal-link, and intent audit |
 | [`suede-visibility-grader`](skills/suede-visibility-grader) | A–F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |
 | [`suede-site-alchemy`](skills/suede-site-alchemy) | Funnel analysis, friction audit, conversion math, ranked quick-wins |
 | [`suede-launch-packaging`](skills/suede-launch-packaging) | Package work as a launch: docs, install commands, proof links, QA |
-| [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
 
-### Mobile app factories
+### Mobile apps
 
 | Skill | What it does |
 |---|---|
 | [`site-to-ios-app`](skills/site-to-ios-app) | Convert any website into an App Store-ready iOS app: audit, 4.2 wrapper-risk gate, shell strategy, release gate |
 | [`android-app-factory`](skills/android-app-factory) | One prompt to a Play Store-ready native Android app: Kotlin + Jetpack Compose scaffold, Play Billing, ASO listing, signed release |
-
-### Consumer recovery — the negotiation lane, proven outside a repo
-
-| Skill | What it does |
-|---|---|
-| [`amazon-returns-recovery`](skills/amazon-returns-recovery) | The pack's contract negotiator, run against a real account instead of a repo: scan Amazon order/return history and digital subscriptions (Britbox, Starz, Audible, Kindle Unlimited, and more) for restocking fees, short refunds, and forgotten charges, then drive Amazon live chat to waive, refund, or cancel them — includes a validated click-path and popup workaround for the fee-dispute flow. Uses synthetic examples and requires per-item confirmation |
-| [`subscription-recovery`](skills/subscription-recovery) | Audit recurring charges outside Amazon across App Store, Google Play, PayPal, bank/card evidence, and direct-bill services; report findings first and require confirmation before cancellation or refund contact |
+| [`suede-play-release`](skills/suede-play-release) | Ship an Android release through the Play Developer API: credential preflight, AAB checks, staged rollout, and a track readback |
 
 ### Creator rights & release
 
-Rights and release-prep tooling for working musicians and creators — see the [skill catalog](https://skills.suedeai.ai/skills/) for each one: [`suede-campaign-in-a-box`](skills/suede-campaign-in-a-box), [`suede-sync-packaging`](skills/suede-sync-packaging), [`suede-release-linter`](skills/suede-release-linter), [`suede-rights-passport`](skills/suede-rights-passport), [`suede-rights-audit`](skills/suede-rights-audit).
+Rights and release-prep tooling for working musicians and creators — see the [skill catalog](https://skills.suedeai.ai/skills/) for each one: [`suede-campaign-in-a-box`](skills/suede-campaign-in-a-box), [`suede-sync-packaging`](skills/suede-sync-packaging), [`suede-release-linter`](skills/suede-release-linter), [`suede-rights-passport`](skills/suede-rights-passport) (rights gap audit, then the transfer package).
 
 ### Marketing & growth
 
-Forty-one skills covering paid acquisition and outbound, monetisation, lifecycle and
+Thirty-seven skills covering paid acquisition and outbound, monetization, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
 `suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
-`suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`, `suede-onboarding`,
+`suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-onboarding`,
 `suede-churn-prevention`, `suede-emails`, `suede-referrals`, `suede-co-marketing`,
 `suede-community-marketing`, `suede-lead-magnets`, `suede-free-tools`, `suede-sms`,
 `suede-marketing-loops`, `suede-analytics`, `suede-ab-testing`, `suede-revops`,
 `suede-sales-enablement`, `suede-programmatic-seo`, `suede-content-strategy`,
-`suede-marketing-plan`, `suede-marketing-psychology`, `suede-marketing-council`, `suede-instagram-growth`, `suede-social`,
+`suede-marketing-plan`, `suede-marketing-council`, `suede-social`,
 `suede-aso`, `suede-video`, `suede-image`, `suede-product-marketing`, `suede-competitors`,
-`suede-competitor-profiling`, `suede-customer-research`, `suede-marketing-ideas`,
+`suede-competitor-profiling`, `suede-customer-research`,
 `suede-ai-seo`, `suede-attribution`.
 
 The content-production lane adds one more workflow:
@@ -316,7 +307,7 @@ python3 -m pip install PyYAML
 
 ## About the creator
 
-**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede Labs is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
+**Jason Colapietro** is the founder and CEO of [Suede AI](https://suedeai.ai). He builds programmable IP and creator-ownership infrastructure for AI-native media. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework. [View the individual credentials and training-module records](https://seo.suedeai.ai/evidence#training-credentials).
 

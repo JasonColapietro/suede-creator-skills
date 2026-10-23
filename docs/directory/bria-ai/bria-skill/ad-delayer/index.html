@@ -3,22 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ad-delayer Agent Skill by Bria-AI | Suede Directory</title>
+    <title>ad-delayer Agent Skill by Bria-AI | Suede AI</title>
     <meta name="description" content="Turns a flat ad image back into editable layers, returning background, product shot, logo, headline, body copy, and CTA as… From Bria-AI/bria-skill, MIT.">
     <meta name="keywords" content="ad-delayer skill by Bria-AI, ad-delayer skill, ad-delayer agent skill, ad-delayer claude skill, Bria-AI skills, video image and audio agent skills, SKILL.md">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="ad-delayer Agent Skill by Bria-AI | Suede Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="ad-delayer Agent Skill by Bria-AI | Suede AI">
     <meta property="og:description" content="Turns a flat ad image back into editable layers, returning background, product shot, logo, headline, body copy, and CTA as… From Bria-AI/bria-skill, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ad-delayer Agent Skill by Bria-AI | Suede Directory">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="ad-delayer Agent Skill by Bria-AI | Suede AI">
     <meta name="twitter:description" content="Turns a flat ad image back into editable layers, returning background, product shot, logo, headline, body copy, and CTA as… From Bria-AI/bria-skill, MIT.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
@@ -26,12 +27,21 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/#page",
-        "name": "ad-delayer Agent Skill by Bria-AI | Suede Directory",
+        "name": "ad-delayer Agent Skill by Bria-AI | Suede AI",
         "description": "Turns a flat ad image back into editable layers, returning background, product shot, logo, headline, body copy, and CTA as… From Bria-AI/bria-skill, MIT.",
         "url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/",
-        "dateModified": "2026-10-19",
+        "dateModified": "2026-10-23",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/#breadcrumb"
@@ -110,7 +120,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -169,12 +179,14 @@ cp -R &quot;$tmp/repo/&quot;skills/ad-delayer .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo Bria-AI/bria-skill \
-    --path skills/ad-delayer \
-    --ref dev</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 --branch dev https://github.com/Bria-AI/bria-skill.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/ad-delayer .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">Bria-AI/bria-skill is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -259,17 +271,39 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
 <section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ad-delayer</h2>
         <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/"><img src="/directory/bria-ai/bria-skill/ad-delayer/score.svg" alt="Suede Skill Check: 86/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/"><img src="/directory/bria-ai/bria-skill/ad-delayer/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede AI listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 86/100](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/score.svg)](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/)
 [![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/badge.svg)](https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/)</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/score.svg&quot; alt=&quot;Suede Skill Check: 86/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
 &lt;a href=&quot;https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
         <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../../submit/">Request badge verification</a>.</p>
+        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-b-feature" data-cta-placement="publisher-claim" data-cta-variant="b-feature">
+        <h2 id="cta-publisher-claim-b-feature">Publishers: get featured</h2>
+        <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
+        <p><a class="button" href="../../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>Bria-AI/bria-skill appears in 3 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/karanb192/awesome-claude-skills" target="_blank" rel="noopener">karanb192/awesome-claude-skills</a>.</p>
       </section>
+
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="search">
+            <h3>Get cited in AI answers</h3>
+            <p>Suede AI helps companies get found in Google and named by ChatGPT, Perplexity and Claude.</p>
+            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=agency-b" data-cta="skill-page-aside:agency-b" target="_blank" rel="noopener">See how</a></p>
+          </div>
+          <div class="svc-card" data-offer="agents">
+            <h3>Put a team of agents on your recurring work</h3>
+            <p>Agent Studio from Suede AI builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.</p>
+            <p><a class="button secondary" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-media-creative" data-cta="agents" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+          </div>
+        </div>
+      </aside>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More video, image and audio skills</h2>
         <div class="links">
@@ -297,7 +331,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">ad-delayer is published by Bria-AI in Bria-AI/bria-skill and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">ad-delayer is published by Bria-AI in Bria-AI/bria-skill and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

@@ -7,7 +7,7 @@ Release record for the `suede-product-marketing` skill, following the NVIDIA ski
 
 ## Description
 
-Suede-owned product-marketing context discipline.
+Suede AI product-marketing context: drafts and versions the shared .agents/product-marketing.md record of product, audience, ICP, personas, positioning against real alternatives, objections, switching forces, verbatim customer language, sourced proof, goals, and canonical entity facts (official names, one-line description, sameAs profiles, the buyer questions search engines and AI assistants should answer).
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a project needs a shared record of product, audience, ICP, positioning, objections, customer language, proof, and goals, or when that record needs updating.
+Use when a project needs that shared record created, auto-drafted from a codebase, or updated.
 
-Out of scope — writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), or publishing brand claims.
+Out of scope — writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), debating a contested positioning bet (use suede-marketing-council), or publishing brand claims.
 
 ## Deployment Geography
 

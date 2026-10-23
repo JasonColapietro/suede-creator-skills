@@ -7,7 +7,7 @@ Release record for the `suede-referrals` skill, following the NVIDIA skill-card 
 
 ## Description
 
-Suede-owned referral and affiliate program discipline.
+Suede AI referral and affiliate program design: refer a friend and ambassador mechanics, incentive sizing from LTV and margin, affiliate commission structures, payout logic, fraud controls, attribution, FTC endorsement disclosure and incentivized-review rules, and viral loop measurement (K-factor, cohort LTV of referred customers).
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when designing refer-a-friend mechanics, ambassador or partner incentives, fraud controls, attribution, payout logic, or viral-loop measurement.
+Use when designing refer-a-friend mechanics, ambassador or partner incentives, affiliate programs, payout logic, or viral-loop measurement.
 
-Out of scope — executing payouts or changing billing, launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.
+Out of scope — executing payouts or changing billing, co-marketing with a partner brand (use suede-co-marketing), launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.
 
 ## Deployment Geography
 

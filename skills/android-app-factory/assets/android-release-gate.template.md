@@ -86,12 +86,13 @@ or dated test notes without copying credentials or private customer data.
 - In-app deletion path (if accounts): TBD
 - External deletion URL and no-reinstall test: TBD
 - Target audience/Families, content rating, ads, app access: TBD
+- Child-directed: personal data collected from children (expect none), Families SDK check, parental gates, AI content screening: TBD
 - Restricted-permission declarations: TBD
 
 ## Billing and Entitlements
 
 - Applicability or free-v1 rationale: TBD
-- Current supported Billing Library verified at: TBD
+- Billing Library major version (8+ required since 2026-08-31) and check date: TBD
 - Product/base-plan/offer IDs and environment: TBD
 - License tester / Play test-track evidence: TBD
 - Pending-to-purchased behavior: TBD

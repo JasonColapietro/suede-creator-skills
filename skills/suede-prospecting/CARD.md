@@ -7,7 +7,7 @@ Release record for the `suede-prospecting` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede-owned prospecting and qualification discipline.
+Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence.
+Use when defining an ICP, sourcing and enriching a lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence.
 
-Out of scope — sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).
+Out of scope — sending outreach (use suede-cold-email), changing CRM routing or scoring (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).
 
 ## Deployment Geography
 

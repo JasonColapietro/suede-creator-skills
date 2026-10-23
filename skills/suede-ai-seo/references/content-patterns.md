@@ -1,287 +1,184 @@
-# AEO and GEO Content Patterns
+# Citation-Worthy Content Patterns
 
-Reusable content block patterns optimized for answer engines and AI citation.
+Templates for passages answer engines can lift and attribute correctly. They
+serve readers first: Google states no special format is needed for its AI
+features, so use a pattern only when it is the clearest way to answer the
+question on the page.
 
----
+Every example below uses placeholders. Fill them with verified facts and
+sources; never ship a bracket or an invented number.
 
 ## Contents
-- Answer Engine Optimization (AEO) Patterns (Definition Block, Step-by-Step Block, Comparison Table Block, Pros and Cons Block, FAQ Block, Listicle Block)
-- Generative Engine Optimization (GEO) Patterns (Statistic Citation Block, Expert Quote Block, Authoritative Claim Block, Self-Contained Answer Block, Evidence Sandwich Block)
-- Domain-Specific GEO Tactics (Technology Content, Health/Medical Content, Financial Content, Legal Content, Business/Marketing Content)
-- Voice Search Optimization (Question Formats for Voice, Voice-Optimized Answer Structure)
 
-## Answer Engine Optimization (AEO) Patterns
+- Answer patterns: definition, direct answer, steps, comparison table,
+  pros and cons, FAQ, best-for list
+- Proof patterns: sourced statistic, original data, attributed quote,
+  evidence sandwich
+- Page-type playbooks: product, blog, comparison, docs, local and commerce
+- Domain notes: regulated topics
 
-These patterns help content appear in featured snippets, AI Overviews, voice search results, and answer boxes.
+## Answer patterns
 
-### Definition Block
-
-Use for "What is [X]?" queries.
-
-```markdown
-## What is [Term]?
-
-[Term] is [concise 1-sentence definition]. [Expanded 1-2 sentence explanation with key characteristics]. [Brief context on why it matters or how it's used].
-```
-
-**Example:**
-```markdown
-## What is Answer Engine Optimization?
-
-Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered systems can easily extract and present it as direct answers to user queries. Unlike traditional SEO that focuses on ranking in search results, AEO optimizes for featured snippets, AI Overviews, and voice assistant responses. This approach has become essential as over 60% of Google searches now end without a click.
-```
-
-### Step-by-Step Block
-
-Use for "How to [X]" queries. Optimal for list snippets.
+### Definition block ("What is X?")
 
 ```markdown
-## How to [Action/Goal]
+## What is [term]?
 
-[1-sentence overview of the process]
-
-1. **[Step Name]**: [Clear action description in 1-2 sentences]
-2. **[Step Name]**: [Clear action description in 1-2 sentences]
-3. **[Step Name]**: [Clear action description in 1-2 sentences]
-4. **[Step Name]**: [Clear action description in 1-2 sentences]
-5. **[Step Name]**: [Clear action description in 1-2 sentences]
-
-[Optional: Brief note on expected outcome or time estimate]
+[Term] is [one-sentence definition naming the category and what it does].
+[One or two sentences on how it works or who uses it]. [One sentence on why it
+matters, with a sourced fact if you have one].
 ```
 
-**Example:**
-```markdown
-## How to Optimize Content for Featured Snippets
-
-Earning featured snippets requires strategic formatting and direct answers to search queries.
-
-1. **Identify snippet opportunities**: Use tools like Semrush or Ahrefs to find keywords where competitors have snippets you could capture.
-2. **Match the snippet format**: Analyze whether the current snippet is a paragraph, list, or table, and format your content accordingly.
-3. **Answer the question directly**: Provide a clear, concise answer (40-60 words for paragraph snippets) immediately after the question heading.
-4. **Add supporting context**: Expand on your answer with examples, data, and expert insights in the following paragraphs.
-5. **Use proper heading structure**: Place your target question as an H2 or H3, with the answer immediately following.
-
-Most featured snippets appear within 2-4 weeks of publishing well-optimized content.
-```
-
-### Comparison Table Block
-
-Use for "[X] vs [Y]" queries. Optimal for table snippets.
+### Direct answer block (any question heading)
 
 ```markdown
-## [Option A] vs [Option B]: [Brief Descriptor]
+## How long does [process] take?
 
-| Feature | [Option A] | [Option B] |
-|---------|------------|------------|
-| [Criteria 1] | [Value/Description] | [Value/Description] |
-| [Criteria 2] | [Value/Description] | [Value/Description] |
-| [Criteria 3] | [Value/Description] | [Value/Description] |
-| [Criteria 4] | [Value/Description] | [Value/Description] |
-| Best For | [Use case] | [Use case] |
-
-**Bottom line**: [1-2 sentence recommendation based on different needs]
+[Direct answer with the number or range, conditions, and source]. [Context:
+what changes the answer]. [Next step or link to detail].
 ```
 
-### Pros and Cons Block
+Rules: answer in the first sentence; name the subject instead of "it"; keep
+the core answer to roughly 40 to 80 words so it survives being lifted alone.
 
-Use for evaluation queries: "Is [X] worth it?", "Should I [X]?"
+### Step block ("How to X")
 
 ```markdown
-## Advantages and Disadvantages of [Topic]
+## How to [goal]
 
-[1-sentence overview of the evaluation context]
+[One sentence on outcome and prerequisites.]
 
-### Pros
+1. **[Action verb + object]**: [what to do, with the exact setting or value].
+2. **[Action verb + object]**: [...].
+3. **[Action verb + object]**: [...].
 
-- **[Benefit category]**: [Specific explanation]
-- **[Benefit category]**: [Specific explanation]
-- **[Benefit category]**: [Specific explanation]
-
-### Cons
-
-- **[Drawback category]**: [Specific explanation]
-- **[Drawback category]**: [Specific explanation]
-- **[Drawback category]**: [Specific explanation]
-
-**Verdict**: [1-2 sentence balanced conclusion with recommendation]
+[Expected result and how to confirm it worked.]
 ```
 
-### FAQ Block
+Use an ordered list, one action per step, real UI labels and values.
 
-Use for topic pages with multiple common questions. Essential for FAQ schema.
+### Comparison table ("X vs Y")
 
 ```markdown
-## Frequently Asked Questions
+## [Option A] vs [Option B] for [use case]
 
-### [Question phrased exactly as users search]?
+| Criterion | [Option A] | [Option B] |
+|---|---|---|
+| Price (checked [date]) | [$ / interval, source] | [$ / interval, source] |
+| [Decision criterion] | [fact] | [fact] |
+| Best for | [segment] | [segment] |
 
-[Direct answer in first sentence]. [Supporting context in 2-3 additional sentences].
-
-### [Question phrased exactly as users search]?
-
-[Direct answer in first sentence]. [Supporting context in 2-3 additional sentences].
-
-### [Question phrased exactly as users search]?
-
-[Direct answer in first sentence]. [Supporting context in 2-3 additional sentences].
+**Summary:** [Who should pick A, who should pick B, in two sentences.]
 ```
 
-**Tips for FAQ questions:**
-- Use natural question phrasing ("How do I..." not "How does one...")
-- Include question words: what, how, why, when, where, who, which
-- Match "People Also Ask" queries from search results
-- Keep answers between 50-100 words
+Use real `<table>` markup. Rows are the criteria buyers decide on. No
+"winner" row. Date and source every price and limit.
 
-### Listicle Block
-
-Use for "Best [X]", "Top [X]", "[Number] ways to [X]" queries.
-
-**Caveat for self-promotional listicles:** ranking yourself #1 in your own "best [category]" guide gets the page *cited* far more reliably than it gets your brand *recommended*: for emerging brands, AI answers often harvest the competitor names from the guide and recommend them instead. See [citations-vs-recommendations.md](citations-vs-recommendations.md) before building these at scale.
+### Pros and cons ("Is X worth it?")
 
 ```markdown
-## [Number] Best [Items] for [Goal/Purpose]
+## Is [option] worth it for [segment]?
 
-[1-2 sentence intro establishing context and selection criteria]
+[One-sentence verdict with the condition it depends on.]
 
-### 1. [Item Name]
-
-[Why it's included in 2-3 sentences with specific benefits]
-
-### 2. [Item Name]
-
-[Why it's included in 2-3 sentences with specific benefits]
-
-### 3. [Item Name]
-
-[Why it's included in 2-3 sentences with specific benefits]
+**Strengths:** [specific capability, who it serves, evidence]
+**Trade-offs:** [specific limitation, who it affects, evidence]
 ```
 
----
-
-## Generative Engine Optimization (GEO) Patterns
-
-These patterns optimize content for citation by AI assistants like ChatGPT, Claude, Perplexity, and Gemini.
-
-### Statistic Citation Block
-
-Statistics increase AI citation rates by 15-30%. Always include sources.
+### FAQ block
 
 ```markdown
-[Claim statement]. According to [Source/Organization], [specific statistic with number and timeframe]. [Context for why this matters].
+## [Question phrased the way buyers ask it]?
+
+[Direct answer in the first sentence.] [Two or three sentences of context.]
 ```
 
-**Example:**
-```markdown
-Mobile optimization is no longer optional for SEO success. According to Google's 2024 Core Web Vitals report, 70% of web traffic now comes from mobile devices, and pages failing mobile usability standards see 24% higher bounce rates. This makes mobile-first indexing a critical ranking factor.
-```
+Each question gets a real heading, not a `<summary>` or button, so it stands as
+its own retrievable section. FAQPage markup no longer produces Google rich
+results (ended May 2026); keep it only if it accurately mirrors visible Q&A
+and serves other consumers.
 
-### Expert Quote Block
-
-Named expert attribution adds credibility and increases citation likelihood.
-
-```markdown
-"[Direct quote from expert]," says [Expert Name], [Title/Role] at [Organization]. [1 sentence of context or interpretation].
-```
-
-**Example:**
-```markdown
-"The shift from keyword-driven search to intent-driven discovery represents the most significant change in SEO since mobile-first indexing," says Rand Fishkin, Co-founder of SparkToro. This perspective highlights why content strategies must evolve beyond traditional keyword optimization.
-```
-
-### Authoritative Claim Block
-
-Structure claims for easy AI extraction with clear attribution.
+### Best-for list
 
 ```markdown
-[Topic] [verb: is/has/requires/involves] [clear, specific claim]. [Source] [confirms/reports/found] that [supporting evidence]. This [explains/means/suggests] [implication or action].
+## Best [category] for [segment] ([month year])
+
+How we evaluated: [criteria, method, date, disclosure of any affiliation].
+
+### [Option]: best for [specific need]
+[Why, with a checked fact. Where it falls short for other needs.]
 ```
 
-**Example:**
-```markdown
-E-E-A-T is the cornerstone of Google's content quality evaluation. Google's Search Quality Rater Guidelines confirm that trust is the most critical factor, stating that "untrustworthy pages have low E-E-A-T no matter how experienced, expert, or authoritative they may seem." This means content creators must prioritize transparency and accuracy above all other optimization tactics.
-```
+Read `citations-vs-recommendations.md` before publishing self-ranked lists.
 
-### Self-Contained Answer Block
+## Proof patterns
 
-Create quotable, standalone statements that AI can extract directly.
-
-```markdown
-**[Topic/Question]**: [Complete, self-contained answer that makes sense without additional context. Include specific details, numbers, or examples in 2-3 sentences.]
-```
-
-**Example:**
-```markdown
-**Ideal blog post length for SEO**: The optimal length for SEO blog posts is 1,500-2,500 words for competitive topics. This range allows comprehensive topic coverage while maintaining reader engagement. HubSpot research shows long-form content earns 77% more backlinks than short articles, directly impacting search rankings.
-```
-
-### Evidence Sandwich Block
-
-Structure claims with evidence for maximum credibility.
+### Sourced statistic
 
 ```markdown
-[Opening claim statement].
-
-Evidence supporting this includes:
-- [Data point 1 with source]
-- [Data point 2 with source]
-- [Data point 3 with source]
-
-[Concluding statement connecting evidence to actionable insight].
+[Claim]. [Source organization] reported [specific number, unit, scope] in
+[month year] ([link]). [What it means for the reader].
 ```
 
----
+### Original data (the strongest citation magnet)
 
-## Domain-Specific GEO Tactics
+```markdown
+## [Finding stated as a fact]
 
-Different content domains benefit from different authority signals.
+We [method: surveyed N, tested N, analyzed N records] between [dates].
+[Headline finding with number]. [Second finding]. Full methodology and data:
+[link].
+```
 
-### Technology Content
-- Emphasize technical precision and correct terminology
-- Include version numbers and dates for software/tools
-- Reference official documentation
-- Add code examples where relevant
+Publish method, sample size, dates, and limits. Give the finding a stable URL
+and a chart with alt text that states the number.
 
-### Health/Medical Content
-- Cite peer-reviewed studies with publication details
-- Include expert credentials (MD, RN, etc.)
-- Note study limitations and context
-- Add "last reviewed" dates
+### Attributed quote
 
-### Financial Content
-- Reference regulatory bodies (SEC, FTC, etc.)
-- Include specific numbers with timeframes
-- Note that information is educational, not advice
-- Cite recognized financial institutions
+```markdown
+"[Quote]," said [full name], [title] at [organization], [context of when and
+where].
+```
 
-### Legal Content
-- Cite specific laws, statutes, and regulations
-- Reference jurisdiction clearly
-- Include professional disclaimers
-- Note when professional consultation is advised
+Only real quotes with permission. Never fabricate an expert.
 
-### Business/Marketing Content
-- Include case studies with measurable results
-- Reference industry research and reports
-- Add percentage changes and timeframes
-- Quote recognized thought leaders
+### Evidence sandwich
 
----
+```markdown
+[Claim].
 
-## Voice Search Optimization
+- [Evidence 1 with source]
+- [Evidence 2 with source]
 
-Voice queries are conversational and question-based. Optimize for these patterns:
+[What the reader should do with this].
+```
 
-### Question Formats for Voice
-- "What is..."
-- "How do I..."
-- "Where can I find..."
-- "Why does..."
-- "When should I..."
-- "Who is..."
+## Page-type playbooks
 
-### Voice-Optimized Answer Structure
-- Lead with direct answer (under 30 words ideal)
-- Use natural, conversational language
-- Avoid jargon unless targeting expert audience
-- Include local context where relevant
-- Structure for single spoken response
+**Product page.** First paragraph: what it is, who it is for, what it does.
+Plans, prices, and limits as text on a crawlable page (mirror them in
+`/pricing.md` if you publish one). Specific capability numbers with conditions.
+FAQ for real buyer objections. Link to docs and comparisons.
+
+**Blog post.** One primary question per post, answered in the opening. Named
+author with an author page. Visible last-updated date. At least one original
+observation, test, or data point. Links to the product and related posts.
+
+**Comparison or alternative page.** Structured table, sourced cells, dated
+pricing, clear "best for" by segment, and no strawman. Build with
+`suede-competitors`.
+
+**Documentation.** Task-named headings ("Connect Acme to Slack"), numbered
+steps, copyable code, expected output, prerequisites, version and date. Docs
+are among the most retrieved pages for "how do I" prompts.
+
+**Local and commerce.** Google's AI features draw on Merchant Center feeds and
+Business Profiles. Keep inventory, price, hours, services, and attributes
+current; respond to reviews; match the site to the profile.
+
+## Regulated topics
+
+Health, finance, and legal pages need named qualified reviewers, review dates,
+citations to primary sources (statutes, regulators, peer-reviewed studies), the
+jurisdiction, and clear limits on what the page covers. Do not publish advice
+the business is not qualified to give.

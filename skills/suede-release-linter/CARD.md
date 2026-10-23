@@ -7,7 +7,7 @@ Release record for the `suede-release-linter` skill, following the NVIDIA skill-
 
 ## Description
 
-Suede Labs skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report.
+Suede AI skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, sample and rights blockers, unstated AI involvement, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance.
 
-Out of scope — organizing the evidence behind a rights or split gap the report surfaces (use suede-rights-audit); building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging).
+Out of scope — investigating the rights gaps the report surfaces or building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box).
 
 ## Deployment Geography
 

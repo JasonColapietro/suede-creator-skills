@@ -1,13 +1,13 @@
 ---
 name: suede-community-marketing
-description: "Suede-owned community-growth discipline for member purpose, platform choice, seeding, rituals, moderation, health metrics, and earned advocacy. Use when starting, auditing, or growing a Discord, Slack, forum, subreddit, or comparable product community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics (use suede-referrals), or customer-interview research (use suede-customer-research)."
+description: "Suede AI community-growth discipline: member identity and purpose, platform choice (Discord, Slack, Circle, Reddit, Discourse, Facebook Groups), founding-member seeding, rituals and core loop, moderation and enforcement paths, health metrics with denominators, ambassador programs, and public community content that search engines and AI answers surface. Use when starting, auditing, or growing a product or brand community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics and payouts (use suede-referrals), or customer-interview research (use suede-customer-research)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Community Marketing
+# Suede AI Community Marketing
 
-Use this Suede community-growth playbook to create genuine member value and measurable business outcomes without manufacturing engagement.
+Use this community-growth playbook to create genuine member value and measurable business outcomes without manufacturing engagement.
 
 ## Before You Start
 
@@ -94,9 +94,26 @@ Every community touchpoint should answer: *What does the member get from this?*
 | Discord | Developer, gaming, creator communities; real-time chat | High noise, hard to search, onboarding friction |
 | Slack | B2B / professional communities; familiar to SaaS buyers | Free tier limits history; feels like work |
 | Circle | Creator or course-based communities; clean UX | Less organic discovery; requires driving traffic |
-| Reddit | High-volume public communities; SEO benefit | You don't own it; moderation is hard |
+| Reddit | High-volume public communities; threads rank in Google and get quoted in AI answers | You don't own it; strict self-promotion rules |
 | Facebook Groups | Consumer brands; older demographics | Declining organic reach; algorithm dependent |
-| Forum (Discourse) | Long-form technical communities; SEO-rich | Slower velocity; higher effort to post |
+| Forum (Discourse) | Long-form technical communities; indexable, owned answers | Slower velocity; higher effort to post |
+
+### Searchable community knowledge
+
+Google shows forum and community threads in a "Discussions and forums" result
+block, and AI answer engines quote public threads. Chat platforms (Discord,
+Slack) are not indexed, so the answers members give there disappear from
+search.
+
+- Run support and how-to questions in an indexable space (a Discourse forum or
+  a public docs Q&A) and keep chat for real-time conversation.
+- Turn the best chat answers into public pages each week, with the helper's
+  permission and credit.
+- Thread titles phrase the question the way a buyer would search it; the
+  accepted answer comes first.
+- On Reddit and other communities the brand does not own, participate as a
+  named, disclosed employee, follow each subreddit's rules, and never seed
+  fake recommendations.
 
 ---
 

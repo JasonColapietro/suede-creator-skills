@@ -1,13 +1,13 @@
 ---
 name: suede-product-marketing
-description: "Suede-owned product-marketing context discipline. Use when a project needs a shared record of product, audience, ICP, positioning, objections, customer language, proof, and goals, or when that record needs updating. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), or publishing brand claims."
+description: "Suede AI product-marketing context: drafts and versions the shared .agents/product-marketing.md record of product, audience, ICP, personas, positioning against real alternatives, objections, switching forces, verbatim customer language, sourced proof, goals, and canonical entity facts (official names, one-line description, sameAs profiles, the buyer questions search engines and AI assistants should answer). Every other Suede marketing skill reads it first. Use when a project needs that shared record created, auto-drafted from a codebase, or updated. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), debating a contested positioning bet (use suede-marketing-council), or publishing brand claims."
 metadata:
-  version: 2.1.0
+  version: 2.2.0
 ---
 
 # Suede Product Marketing Context
 
-Suede Product Marketing maintains the shared evidence layer for audience,
+Suede AI Product Marketing maintains the shared evidence layer for audience,
 positioning, objections, customer language, and proof. The Suede growth suite
 reads this context so each downstream skill starts from the same verified
 product story.
@@ -100,7 +100,7 @@ If multiple stakeholders are involved in buying, capture for each:
 - Who is NOT a good fit (anti-persona)
 
 ### 8. Switching Dynamics
-The JTBD Four Forces:
+The four switching forces:
 - **Push**: What frustrations drive them away from current solution
 - **Pull**: What attracts them to you
 - **Habit**: What keeps them stuck with current approach
@@ -128,6 +128,15 @@ The JTBD Four Forces:
 - Primary business goal
 - Key conversion action (what you want people to do)
 - Current metrics (if known)
+
+### 13. Entity and Search Facts
+The canonical facts search engines and AI assistants should repeat about the company. Every downstream skill (site copy, schema, press, directories, comparison pages) reuses these exactly, so mentions accrue to one entity instead of several spellings.
+- Official company name and product names, exact spelling and capitalization
+- One-sentence description (under 30 words) used everywhere
+- Founder or spokesperson name and title for bylines and quotes
+- Official profile URLs for sameAs (LinkedIn, X, YouTube, GitHub, Crunchbase, app store listings, Wikidata if one exists)
+- The 10 to 20 questions buyers ask search engines and AI assistants about the category, in their words
+- Which pages currently answer each question, or "none"
 
 ---
 
@@ -231,6 +240,17 @@ the document look finished.*
 **Business goal:**
 **Conversion action:**
 **Current metrics:**
+
+## Entity and Search Facts
+**Official names:**
+**One-sentence description:**
+**Spokesperson / byline:**
+**sameAs profiles:**
+-
+**Buyer questions (search and AI assistants):**
+| Question | Page that answers it |
+|----------|---------------------|
+| | |
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*

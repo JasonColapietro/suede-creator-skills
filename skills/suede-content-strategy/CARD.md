@@ -7,7 +7,7 @@ Release record for the `suede-content-strategy` skill, following the NVIDIA skil
 
 ## Description
 
-Suede-owned content-strategy discipline for audience questions, content pillars, topic clusters, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions.
+Suede AI content strategy for audience questions, content pillars, topic clusters, AI answer gaps, original-data assets, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions, each tied to a KPI.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when deciding what to publish, why it deserves resources, and how the portfolio compounds.
+Use when deciding what to publish, why it deserves resources, and how the portfolio compounds in search and AI answers.
 
-Out of scope — writing an individual asset (use suede-copy), technical or on-page SEO audits (use suede-seo-audit), or social-channel production (use suede-social).
+Out of scope — writing an individual asset (use suede-copy); technical or on-page SEO audits (use suede-seo-audit); AI visibility measurement and crawler policy (use suede-ai-seo); social-channel production (use suede-social).
 
 ## Deployment Geography
 

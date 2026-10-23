@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "I'm starting a fractional CMO engagement with a Series A B2B SaaS doing $2M ARR, 12-person team with 1 marketer, $20K/month marketing budget. They want a marketing plan we can share with the team and the board. Build it.",
-      "expected_output": "Should check for the canonical product-marketing context first. Should ask for client name or use a slug. Should walk through three-phase workflow (INIT → REVIEW → FINALIZE), starting with intake covering financial constraints, team/owner capacity, budget/authority, channel evidence, what's done, in-flight, and available tooling. Should produce a 13-section AARRR-structured plan: executive summary, strategic frame, current state (scored against the embedded 17-section rubric), Acquisition, Activation, Retention, Referral, Revenue, 90-day roadmap with owner-assigned moves, 12-month outlook with conditional capabilities tied to verified evidence/resources/approval/review/stop rules, marketing operations stack mapping available public Suede skills and authorized tools to AARRR owners and fallbacks, tactical idea bank cross-referencing all current suede-marketing-ideas entries to AARRR + client-specific status, measurement framework with source-backed metrics + RACI + open decisions. Should be comprehensive and Notion-paste-ready. Should be specific to the client's dated evidence and authority, not generic.",
+      "expected_output": "Should check for the canonical product-marketing context first. Should ask for client name or use a slug. Should walk through three-phase workflow (INIT → REVIEW → FINALIZE), starting with intake covering financial constraints, team/owner capacity, budget/authority, channel evidence, what's done, in-flight, and available tooling. Should produce a 13-section AARRR-structured plan: executive summary, strategic frame, current state (scored against the embedded 17-section rubric), Acquisition, Activation, Retention, Referral, Revenue, 90-day roadmap with owner-assigned moves, 12-month outlook with conditional capabilities tied to verified evidence/resources/approval/review/stop rules, marketing operations stack mapping available public Suede skills and authorized tools to AARRR owners and fallbacks, tactical idea bank cross-referencing all 142 tactic-library entries to AARRR + client-specific status, measurement framework with source-backed metrics + RACI + open decisions. Should be comprehensive and Notion-paste-ready. Should be specific to the client's dated evidence and authority, not generic.",
       "assertions": [
         "Checks for product-marketing.md",
         "Asks for client name or uses a slug",
@@ -14,7 +14,7 @@
         "Section 9 (90-day roadmap) has owner-assigned moves, not just actions",
         "Section 10 names evidence/resource/owner/approval/review/stop conditions for every conditional capability",
         "Section 11 maps relevant Suede skills plus currently callable authorized tools or manual fallbacks to each AARRR stage",
-        "Section 12 cross-references all 139 suede-marketing-ideas entries with client-specific status",
+        "Section 12 cross-references all 142 tactic-library entries with client-specific status",
         "Output is Notion-paste-ready markdown",
         "Plan is specific to the client (their budget, team, current channels), not generic"
       ],
@@ -32,14 +32,14 @@
         "Accounts for product being in beta",
         "Identifies the binding AARRR stage from available evidence",
         "Executive summary can be lifted into an investor update",
-        "Plan is operationally honest — doesn't pretend paid budget exists"
+        "Plan is operationally honest: doesn't pretend paid budget exists"
       ],
       "files": []
     },
     {
       "id": 3,
-      "prompt": "we have an audit already done — can you take that and turn it into a real plan",
-      "expected_output": "Should ask for the audit output (file path or paste). Should recognize that current-state scoring already exists and ingest it directly into Section 3 — don't re-score. Should note scoring date in case material has shifted since. Should proceed with full 13-section plan generation using audit findings to inform 90-day roadmap and AARRR sections (gaps from audit become moves in the plan).",
+      "prompt": "we have an audit already done: can you take that and turn it into a real plan",
+      "expected_output": "Should ask for the audit output (file path or paste). Should recognize that current-state scoring already exists and ingest it directly into Section 3: don't re-score. Should note scoring date in case material has shifted since. Should proceed with full 13-section plan generation using audit findings to inform 90-day roadmap and AARRR sections (gaps from audit become moves in the plan).",
       "assertions": [
         "Asks for the audit output",
         "Ingests prior audit scoring directly into Section 3",
@@ -52,7 +52,7 @@
     },
     {
       "id": 4,
-      "prompt": "/suede-marketing-plan acme-saas — pick up where we left off",
+      "prompt": "/suede-marketing-plan acme-saas: pick up where we left off",
       "expected_output": "Should read .agents/suede-marketing-plans/acme-saas/progress.md to determine state machine phase. Should resume from the exact next unfinished section in REVIEW phase, or transition to FINALIZE only if all 13 checkboxes and approved section artifacts reconcile. Should NOT silently restart. If progress.md is missing, should initialize the complete legacy/interrupted INIT schema and preserve partial research. Only a finalized state should ask: revise as v{N+1}, start fresh, or re-open a section.",
       "assertions": [
         "Reads .agents/suede-marketing-plans/acme-saas/progress.md",
@@ -89,6 +89,48 @@
         "Recommends channel-specific skills for single-channel quick plans",
         "Offers alternatives clearly",
         "Does not silently produce a stripped-down plan"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I need marketing ideas for my SaaS product. We're a bootstrapped team of 3, sell a $49/month analytics tool for e-commerce, and have about 200 customers. Budget is tight: maybe $500/month for marketing.",
+      "expected_output": "Should check for product-marketing.md first. Should filter ideas by low budget and early-stage constraints. Should pull relevant ideas from the 142 marketing ideas organized by category. Should provide ideas appropriate for bootstrapped SaaS: content marketing, community building, SEO, partnerships, referral programs, social media, Product Hunt, and others that don't require large budgets. Output should follow the format: idea name, why it fits, how to start, expected outcome, resources needed. Should prioritize by likely impact given their stage.",
+      "assertions": [
+        "Checks for product-marketing.md",
+        "Filters ideas by low budget constraint",
+        "Pulls candidates from the 142-idea tactic library and runs Shortlist mode",
+        "Ideas are appropriate for bootstrapped SaaS stage",
+        "Output follows structured format per idea",
+        "Includes why it fits, how to start, metric, review date, and stop condition",
+        "Surfaces at most 5 and names one Not recommended tactic",
+        "Includes resources needed per idea"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "how do we grow without spending money on ads? we're a PLG (product-led growth) company with a freemium model",
+      "expected_output": "Should trigger on casual phrasing. Should score PLG-appropriate candidates against the rubric. Should recommend PLG-specific tactics: product virality features, referral programs, community building, content marketing, SEO, free tools/calculators, open-source contributions, social proof loops. Should avoid ad-dependent ideas given the constraint. Should provide structured output with implementation guidance.",
+      "assertions": [
+        "Triggers on casual phrasing",
+        "Scores candidates on the six rubric dimensions",
+        "Recommends PLG-specific tactics",
+        "Avoids ad-dependent ideas",
+        "Includes virality and referral tactics",
+        "Provides structured output with implementation guidance"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "We want to set up a referral program. How should we structure it?",
+      "expected_output": "Should recognize this is specifically a referral program design request. Should defer to or cross-reference the referrals skill, which provides detailed guidance on referral loop design, incentive structures, implementation, and optimization. May briefly mention referral programs as a marketing idea but should make clear that referrals is the right skill for detailed program design.",
+      "assertions": [
+        "Recognizes this as a referral program design request",
+        "References or defers to referrals skill",
+        "Does not attempt detailed referral program design",
+        "May briefly mention as a marketing idea"
       ],
       "files": []
     }

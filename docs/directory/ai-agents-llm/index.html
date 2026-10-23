@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://skills.suedeai.ai/directory/ai-agents-llm/">
     <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="AI Agent and LLM Engineering Skills for Claude and Codex">
     <meta property="og:description" content="AI agent and LLM engineering skills for Claude Code and Codex: prompt and context engineering, MCP servers, evals, subagents and model training.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/ai-agents-llm/">
@@ -18,6 +18,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="AI Agent and LLM Engineering Skills for Claude and Codex">
     <meta name="twitter:description" content="AI agent and LLM engineering skills for Claude Code and Codex: prompt and context engineering, MCP servers, evals, subagents and model training.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -29,9 +30,18 @@
         "name": "AI Agent and LLM Engineering Skills for Claude and Codex",
         "description": "AI agent and LLM engineering skills for Claude Code and Codex: prompt and context engineering, MCP servers, evals, subagents and model training.",
         "url": "https://skills.suedeai.ai/directory/ai-agents-llm/",
-        "dateModified": "2026-10-19",
+        "dateModified": "2026-10-23",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/ai-agents-llm/#breadcrumb"
@@ -270,7 +280,7 @@
           <a href="../../">Home</a>
           <a href="../">Directory</a>
           <a href="../methodology/">How listing works</a>
-          <a href="../../skills/">Suede skills</a>
+          <a href="../../skills/">Suede AI skills</a>
           <a href="../../blog/">Blog</a>
           <a href="../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -282,6 +292,7 @@
       <h1>AI Agents and LLM Engineering <span class="h1-sub">agent skills</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">AI Agents and LLM Engineering</span></nav>
       <p class="lead">Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.</p>
+      <p class="answer"><b>Highest-scoring AI agent skills</b> in the October 19, 2026 snapshot: <a href="../trailofbits/skills/let-fate-decide/">let-fate-decide</a> from trailofbits/skills (94/100), <a href="../nvidia/skills/tao-run-deft-object-detection/">tao-run-deft-object-detection</a> from NVIDIA/skills (92/100) and <a href="../mblode/agent-skills/agent-ready/">agent-ready</a> from mblode/agent-skills (91/100). Scores come from the <a href="../methodology/">Suede Skill Check</a>.</p>
       <ul class="stat-row" aria-label="Category size">
         <li><b>599</b> listed skills</li>
         <li><b>68</b> repositories</li>
@@ -915,6 +926,12 @@
         <p>Check what a skill expects to run. Training and inference skills often name GPU tooling, cloud credentials or a model hub token; the Before you install panel on each page lists the scripts it bundles and the environment variables its code reads.</p>
         <p>For agent workflow skills (planning, subagents, review loops), read the SKILL.md body first. They change how your agent works on every task, so pick one method and stay with it rather than stacking overlapping ones.</p>
       </section>
+      <section class="panel guide-links" aria-labelledby="guides-title">
+        <h2 id="guides-title">AI agent guides</h2>
+        <div class="links">
+          <a class="link-row" href="../guides/skills-vs-mcp-servers/"><b>Agent skills vs MCP servers vs plugins: which one do you need?</b><span>A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.</span></a>
+        </div>
+      </section>
       <section class="panel" aria-labelledby="picks-title">
         <h2 id="picks-title">Where to start</h2>
         <div class="links">
@@ -925,6 +942,21 @@
           <a class="link-row" href="../resend/resend-skills/agent-email-inbox/"><b>agent-email-inbox</b><span>Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and… Published by Resend.</span></a>
         </div>
       </section>
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="category">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="agents">
+            <h3>Turn these skills into a running workflow</h3>
+            <p>Agent Studio from Suede AI connects agents across your business systems so work moves from intake to delivery.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=category-agent-studio&amp;utm_content=b-from-skills-to-workflows" data-cta="category-agent-studio:b-from-skills-to-workflows" target="_blank" rel="noopener">See Agent Studio</a></p>
+          </div>
+          <div class="svc-card" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button secondary" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=category-ai-agents-llm" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+        </div>
+      </aside>
       <section aria-labelledby="featured-title">
         <h2 id="featured-title">Featured AI agent skills</h2>
         <div class="dir-cards">

@@ -15,7 +15,7 @@ Grade each page against its surface type. Caps and expectations differ:
 - Findability matters less (GitHub handles most of it). First-screen clarity and AI readability are the primary gates.
 - The H1 must match or closely shadow the repo name and primary use case. A generic "Welcome to [repo]" caps First-screen clarity at C.
 - Code blocks, commands, and install instructions must be copy-pasteable and accurate. One broken command caps Proof at D.
-- AI readability grade is elevated: LLMs frequently cite GitHub READMEs. A missing structured summary or absent "What is this?" section caps AI readability at C.
+- AI readability carries extra weight: assistants frequently retrieve GitHub READMEs. A missing structured summary or absent "What is this?" section caps AI readability at C.
 
 **Product page (within an existing product, not top-of-funnel)**
 - Proof and trust is the primary gate. The visitor already has intent; the page must close.

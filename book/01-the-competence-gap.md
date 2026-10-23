@@ -73,14 +73,14 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 76 of them, under documented open-source licenses. The file opens with YAML
+`skills/<name>/SKILL.md`, 63 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
 ```yaml
 ---
 name: suede-deslop
-description: "Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler without flattening the author's voice. ..."
+description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
 ---
 ```
 
@@ -88,32 +88,32 @@ That is the whole mechanism. No plugin API, no compilation step, no runtime. A
 skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
-The body is where the specialist lives. `skills/suede-code-grader/SKILL.md` is
-212 lines. It contains a list of instant-F triggers checked before any lane is
+The body is where the specialist lives. `skills/suede-code/SKILL.md` is
+428 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
-without named bypass-path evidence, and a fixed output block ending in a ship
+without tested bypass and error paths, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
 phrases with replacements, ten formulaic structures with their fixes, and a
 50-point score with a threshold below which the text does not ship. None of that
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 76 skills fit
+## Progressive disclosure, or why 63 skills fit
 
-Here is the objection that arrives immediately. The 76 `SKILL.md` files in this
-repo total 1,103,931 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 63 `SKILL.md` files in this
+repo total 915,176 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 76 descriptions together come to 46,743 bytes. That is roughly a
-twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
+all 63 descriptions together come to 49,381 bytes. That is roughly a
+nineteenth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 76 of the 76 descriptions in this repo use to push work toward a better
+that 63 of the 63 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs

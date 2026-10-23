@@ -1,35 +1,39 @@
 # Google Play Policy Baseline
 
-Verified against official Google sources on **2026-07-19**. This file is a
-dated starting point, not a substitute for a release-day check. Record the live
-result and timestamp in the release-gate artifact.
+Checked against official Google sources on **2026-10-23**. This file is a dated
+starting point, not a substitute for a release-day check. Record the live result
+and timestamp in the release-gate artifact.
 
-## Target API Timeline
+## Target API Requirements
 
-General phone/tablet apps:
+Phone and tablet apps:
 
-| Date | New app and update submission requirement | Factory action |
+| Scope | Requirement | Since |
 | --- | --- | --- |
-| Through 2026-08-30 | API 35 or higher | Build and migration-test with API 36 now |
-| Starting 2026-08-31 | Android 16 / API 36 or higher | `compileSdk = 36`, `targetSdk = 36` or later verified level |
+| New apps and updates | Android 16 / API 36 or higher | 2026-08-31 (extensions end 2026-11-01) |
+| Existing apps, to stay available to new users on newer Android versions | Android 15 / API 35 or higher | 2026-08-31 |
 
-Google's announced 2026 form-factor exceptions are:
+Form factors, new apps and updates:
 
-- Wear OS and Android Automotive OS: API 35 or higher for new apps/updates;
-- Android TV and Android XR: API 34 or higher for new apps/updates.
+- Wear OS and Android Automotive OS: API 35 or higher (since 2026-08-31).
+- Android XR: API 34 or higher (since 2026-08-31).
+- Android TV: API 34 or higher (since 2025-08-31).
 
-Existing-app availability and any extension use have separate rules. The
-official page says eligible developers can request an extension to
-2026-11-01. Do not assume the extension exists or applies; inspect the specific
-app in Play Console.
+Permanently private apps restricted to one organization are exempt. The
+extension window closes 2026-11-01; after that a phone/tablet update below API
+36 is rejected. Do not assume an extension applies; inspect the app's Policy
+status page in Play Console.
 
-Factory default on 2026-07-19: use API 36 for a general new app or update so the
-release does not immediately age into the announced deadline. Before raising
-`targetSdk`, review and test Android 16 behavior changes; changing the integer
-without migration testing is not compliance.
+Factory default: `compileSdk = 36`, `targetSdk = 36`. Google has moved the bar
+up one level every August; check the page below for the 2027 level before
+planning a release past mid-2027. Raise `targetSdk`
+only after testing the Android behavior changes for that level; changing the
+integer without migration testing is not compliance.
 
-Primary source:
-<https://developer.android.com/google/play/requirements/target-sdk>
+Primary sources:
+
+- <https://developer.android.com/google/play/requirements/target-sdk>
+- <https://support.google.com/googleplay/android-developer/answer/11926878>
 
 ## Policy and Console Checks
 
@@ -40,7 +44,8 @@ Complete for the exact release build:
   Android 15+; inspect direct and transitive native libraries and test the
   release in a 16 KB environment;
 - developer identity verification and package registration status in Play
-  Console, especially before the announced September 2026 regional rollout;
+  Console (enforced in Brazil, Indonesia, Singapore, and Thailand since
+  2026-09-30; global in 2027);
 - app category, target audience, Families applicability, ads, and content
   rating;
 - restricted permissions and declaration forms;
@@ -62,8 +67,8 @@ answer.
 
 ## 16 KB Page-Size Baseline
 
-Google's requirement applies to new apps and updates targeting Android 15+
-submitted to Play: the release must support 16 KB page sizes on 64-bit devices.
+In force for new apps and updates targeting Android 15+ submitted to Play: the
+release must support 16 KB page sizes on 64-bit devices.
 Pure Java/Kotlin code is compatible by default, but an app can inherit native
 code through an SDK. Inspect the final artifact, rebuild/update incompatible
 native libraries, run Android Studio/lint alignment checks, and test in a 16 KB
@@ -75,14 +80,20 @@ Primary source:
 
 ## Developer Verification Baseline
 
-Android's announced developer-verification rollout begins in select regions in
-September 2026 for participating stores and certified devices. Google says most
-Play apps are automatically registered, but developers should check Play
-Console for any remaining package registration. Record the live account and
-package state; never collect identity documents or private signing material in
-the project artifact.
+Since 2026-09-30, certified Android devices in Brazil, Indonesia, Singapore,
+and Thailand install and update only apps registered by verified developers,
+across participating stores and sideloading. Google expands this globally in
+2027. Play auto-registers eligible apps once the developer account passes
+identity verification; apps that fail auto-registration use the manual claim
+flow. Check the verification page in Play Console for each package. Apps
+distributed only outside Play register through the Android Developer Console.
+Never collect identity documents or private signing material in the project
+artifact.
 
-Primary source: <https://developer.android.com/developer-verification>
+Primary sources:
+
+- <https://developer.android.com/developer-verification>
+- <https://developer.android.com/blog/posts/android-developer-verification-rolling-out-to-all-developers-on-play-console-and-android-developer-console>
 
 ## Data Safety Baseline
 
@@ -123,9 +134,21 @@ Primary source:
 ## Billing Baseline
 
 For Play-distributed apps selling covered digital goods or subscriptions, use
-the current required Play Billing path. Resolve the current Billing Library
-version and deprecation deadline live; do not freeze a version number in this
-skill.
+the current required Play Billing path. Google's deprecation schedule:
+
+| Billing Library | New apps and updates must move off it by | Extension until |
+| --- | --- | --- |
+| 7 | 2026-08-31 | 2026-11-01 |
+| 8 | 2027-08-31 | 2027-11-01 |
+| 9 | 2028-08-31 | 2028-11-01 |
+
+So a release today ships on Billing Library 8 or later, and a new build should
+start on the newest stable major. Version 8 removed APIs that 7 still had
+(including purchase history queries); budget a migration, not a version bump.
+Recheck the table live before each release.
+
+Primary source:
+<https://developer.android.com/google/play/billing/deprecation-faq>
 
 Release evidence must cover:
 
@@ -163,6 +186,8 @@ build_target_sdk:
 form_factor_exception:
 supports_16kb_page_sizes_evidence:
 developer_verification_and_package_registration:
+billing_library_version:
+families_and_target_audience:
 data_safety_source_url:
 account_deletion_source_url:
 billing_source_url_and_library_status:

@@ -1,13 +1,13 @@
 ---
 name: suede-co-marketing
-description: "Suede-owned co-marketing discipline for partner fit, audience overlap, joint offers, shared distribution, operating roles, measurement, and fair credit. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement)."
+description: "Suede AI co-marketing discipline: partner fit scored on audience overlap and reciprocity, joint offers and campaign formats (content, webinars, integrations, community), operating roles, lead-sharing and consent terms, shared measurement, and joint content built to earn links and AI citations for both brands. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Co-Marketing
+# Suede AI Co-Marketing
 
-Use this Suede co-marketing playbook to identify credible partners and design measurable joint campaigns with explicit roles and value exchange.
+Use this co-marketing playbook to identify credible partners and design measurable joint campaigns with explicit roles and value exchange.
 
 ## Before Starting
 
@@ -93,6 +93,28 @@ format from it.
 - **Webinars & events**: when the goal is gated lead generation or education.
 - **Product & integration marketing**: when a live integration or shared customer exists.
 - **Community & social**: when the goal is exposure or list growth, not pipeline.
+
+---
+
+## Make Joint Content Work in Search and AI Answers
+
+Joint content can earn more than a shared list. Done right, it becomes the
+page that ranks and gets cited for the combined use case.
+
+- **Publish one canonical version.** Pick the host domain; the partner links
+  to it (or uses a rel="canonical" copy) instead of duplicating it.
+- **Target the combined query.** "[Tool A] + [Tool B] integration", "how to
+  [job] with [A] and [B]": queries neither brand ranks for alone.
+- **Ship original data when possible.** A joint survey or benchmark across both
+  customer bases is a link asset neither could produce alone. Publish method,
+  sample size, and date.
+- **Both brands named consistently** in title, byline, and copy so AI answers
+  attribute the claim to both.
+- **Integration pages:** list the partner in each side's integration
+  directory with a link, a short how-it-works, and the shared customer story.
+
+Technical checks route to `suede-seo-audit`; topic choice to
+`suede-content-strategy`.
 
 ---
 

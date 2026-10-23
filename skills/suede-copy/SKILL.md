@@ -1,232 +1,270 @@
 ---
 name: suede-copy
-description: "Suede Labs conversion-copy writer: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits. Use when asked to write or rewrite conversion copy for one surface in one pass (a hero, a button set, an email subject, a README section, a product blurb) or when copy on a single surface needs sharpening before it ships. NOT FOR: the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy)."
+description: "Suede AI writing skill for every copy surface: conversion copy for landing sections, heroes, headlines, CTAs, and microcopy; email and social posts; product listings, README and docs pages; public explainers; brand-voice retunes; and agent-facing docs such as SKILL.md, CLAUDE.md, and AGENTS.md. Includes an answer-first SEO and AEO pass (direct answer up top, question headings, quotable facts, FAQ, metadata), persona and framework selection, labeled variants, evidence boundaries, and a 70-point ship score. Use when asked to write, rewrite, sharpen, or retune copy on one surface or several, explain a product publicly, or tighten a doc an agent reads. NOT FOR: stripping AI patterns from text you are not otherwise rewriting (use suede-deslop); one high-stakes public piece that needs research and an adversarial fact audit before publishing (use suede-ship-copy); layout, tokens, or visual design (use suede-design); a scored standalone SEO audit (use suede-seo-audit)."
 ---
 
 # Suede Copy
 
+Write copy that earns its place with concrete nouns, outcomes a buyer can see,
+real proof, and one primary action. Default voice is Suede AI. A supplied
+company brief overrides every default here.
+
 ## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
+Every score and ship verdict in this skill is a recommendation to the user,
+not a control on the agent. Deliver the copy that was asked for and attach the
+verdict as advice. A failed gate changes what you report, never what you do.
+Single exception: an extreme-risk finding (legal or rights violation, payment
+mistake, irreversible public damage). Pause, state the risk and options, and
+let the user choose. Their choice is final.
 
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky (data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage), pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+## Pick the job
 
-Write conversion copy, page copy, GitHub docs, email, and social posts that are specific, proof-backed, and free of AI boilerplate. Default voice: Suede. Supply a company brief to override everything.
+| The request | Job | Where the method lives |
+|---|---|---|
+| Write or rewrite a page, section, button set, email, post, or listing | **Write** | Write Modes, below |
+| Improve copy that already exists | **Edit** | `references/edit-passes.md`, then Anti-Slop |
+| Make existing copy sound like the house voice | **Voice retune** | Brand-Voice Retune, below |
+| Give a user words to explain the product to someone else | **Public explainer** | Public Explainer, below |
+| Write or tighten a doc a model reads | **Agent doc** | `references/writing-for-agents.md` |
+| Review copy and return findings plus a score | **Audit** | Output: Copy audit |
 
-**Core principle:** every claim is verifiable or it gets cut, and nothing ships below its score threshold.
+Cross-job requests run in sequence on shared context (write the page, retune
+it, then spin variants). State the chain you ran.
 
-## Company Brief
+Large multi-surface jobs (a full launch package across a dozen surfaces) can
+run as a coordinated team. Ask first: "Run this as a multi-agent team (more
+thorough, more tokens) or single-agent?" Never spawn a fleet silently. For one
+surface, just write it.
 
-Supply a brief and all copy, voice, and claim logic applies to your company. Use natural language or this form:
+## Before writing
 
-```text
-Company:
-Product or offer:
-Audience:
-Voice:
-Terms to use:
-Terms to avoid:
-Proof:
-Allowed claims:
-Forbidden claims:
-Primary CTA:
-```
+Read what exists before asking: `PRODUCT.md`, `README.md`, `AGENTS.md`,
+`DESIGN.md`, brand notes, task docs, and the live page if there is one. Then
+ask only for what blocks accurate copy: surface type, primary reader, the one
+action the reader should take, the offer, proof that is safe to claim, claims
+or numbers that are not approved, and where the copy will be published.
 
-## Before Writing
-
-Read any available context files before asking questions: `PRODUCT.md`, `README.md`, `AGENTS.md`, `AI_HANDOFF.md`, `DESIGN.md`, product marketing or brand notes, task-specific docs.
-
-If context is missing after reading, ask only for what blocks accurate copy:
-
-- page or doc type
-- primary reader
-- one action the reader should take
-- product or skill being offered
-- proof that is safe to claim
-- claims, pricing, partners, or metrics that are not approved
-- traffic source or publication surface
-
-## Core Rules
-
-Name the outcome, not the feature.
-- Weak: "Suede supports multiple metadata formats."
-- Strong: "Export ISRC, ISWC, and split data in one command."
-
-Write buttons as actions with a result.
-- Weak: "Learn more"
-- Strong: "Read how rights routing works"
-- Weak: "Get started"
-- Strong: "Register your first release"
-
-Replace vague claims with artifacts.
-- Weak: "Suede makes rights management easy."
-- Strong: "Paste your folder path. Suede outputs your ISRC, split sheet, and licensing flags in under 10 seconds."
-
-No invented proof. Do not write stats, testimonials, partner names, pricing, or legal clearance that has not been confirmed. If proof is unavailable, write around the gap or flag it for the human to supply.
-
-Use Suede punctuation defaults unless the company brief says otherwise. Slop Stop
-owns the contextual line-edit rules; preserve protected source spans and voice.
-
-## Persuasion Frameworks And Personas
-
-The frameworks and the per-persona voice shifts are in
-`references/frameworks-and-personas.md`. Read it when you are choosing the shape of
-an argument or writing for a buyer you have not written for before.
-
-## Headline And CTA Formulas
-
-The headline and CTA formula banks are in
-`references/headline-and-cta-formulas.md`. Read it when you are generating variants
-or a line is not landing: not when you already have a headline that works.
-
-## Page And Docs Structure
-
-For a page, README, or docs surface, build this spine:
-
-1. **Hero:** one sentence that names the outcome.
-2. **Subhead:** one or two sentences that add the audience, workflow, and proof.
-3. **Primary CTA:** the action the reader can take now.
-4. **Proof:** files, scripts, docs, screenshots, URLs, live routes, examples, or commands.
-5. **How it works:** three or four steps, each with a verb and result.
-6. **Safety:** what the workflow does not claim or do.
-7. **FAQ:** direct answers for objections and search intent.
-8. **Final CTA:** repeat the action with less friction.
-
-For a small section, use only the pieces that fit.
-
-## A/B Variant Generation
-
-For high-stakes copy (hero headline, primary CTA, email subject, ad copy), always generate variants.
-
-**Headlines**: 3 variants, different angles:
-1. Outcome-led: what the reader achieves
-2. Problem-led: what the reader escapes
-3. Mechanism-led: what makes this different
-
-**CTAs**: 2 variants minimum. See `references/headline-and-cta-formulas.md`.
-
-**Email subjects**: 3 variants:
-1. Curiosity or benefit
-2. Social proof or number
-3. Direct question or challenge
-
-Label each variant with its angle. Let the user pick rather than guessing.
-
-## Email And Social Formats
-
-Email sequence structures and per-platform social formats are in
-`references/email-and-social-formats.md`. Read it when the deliverable is an email
-or a social post; skip it for landing-page and docs work.
-
-## Suede Voice
-
-Use this register: confident, not breathless; technical enough for builders; clear enough for creators; polished, not corporate; specific, not cute; operator-grade, not brochure-grade.
-
-Good Suede copy names what the reader controls: register a work, verify rights, route royalties, publish a claim, package a release folder, prepare licensing evidence, make a work readable to agents, compare provenance, ship a public skill page.
-
-(For non-Suede work, supply the equivalent domain vocabulary in the company brief.)
-
-## SEO And GitHub Copy
-
-For GitHub repositories, skill docs, and Pages sites, treat SEO as the umbrella for search, AEO, and AI EO. Include a search-ready title under 60 characters when practical, a meta description under 160, a repo description inside GitHub's practical limit, 8-20 topic keywords when the surface supports them, a first paragraph that repeats the durable entity names naturally, answer-ready definitions and FAQ copy and proof links that AI summaries can cite without inventing facts, links to install docs and skill manifests and scripts and references and examples and live Pages and source, and a safe evidence boundary. johnny-suede-write owns the SEO stack and the canonical Suede durable-keyword vocabulary; read that skill when the job needs the deeper pass or the keyword list, and use the company brief's equivalent vocabulary for non-Suede work.
-
-Use keywords because they help the right reader find the page. Do not cram a keyword where a human would notice.
-
-## SEO Audit Mode
-
-For a deep, standalone SEO audit (technical access, keyword research, schema markup, E-E-A-T signals, topic cluster architecture, AI EO optimization, and scored visibility grades), use suede-seo-audit instead.
-
-## Edit Mode
-
-When the job is editing copy that already exists, read
-`references/seven-sweeps.md` and run its seven sweeps (clarity, voice, so what,
-prove it, specificity, emotion, zero risk) before the Anti-Slop Pass. Add its
-Expert Panel Score on launch, pricing, and high-traffic surfaces.
-
-## Anti-Slop Pass
-
-Run Suede Slop Stop (use suede-deslop) on the finished draft. Load its canonical
-method and full kill list; do not maintain a separate substitution recipe here.
-Then apply this writer's readability guidance in `references/anti-slop-pass.md`
-and the 70-point Ship Gate below. The Slop Stop score is a separate /50 diagnostic,
-not a replacement for the conversion score. Findings-only requests leave the
-supplied copy unchanged. Keep factual verification separate from style cleanup.
-
-## Boundaries
-
-This skill writes copy and hands it back. It must not:
-- Publish, post, send, commit, or overwrite the file, page, repo, or message it writes for. Return the copy in the response; the human decides where it lands.
-- Clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
-- Ship competitor product names in delivered copy. The competitor-swap test in the Ship Gate is a diagnostic you run on the draft, never a line you hand over.
-
-## Output Shapes
-
-### Page Copy
+### Company brief
 
 ```text
-Title:
-Meta description:
-Hero:
-Subhead:
-Primary CTA:
-Sections:
-FAQ:
-Final CTA:
-Safety note:
+Company:            Product or offer:       Audience:
+Category:           Voice:                  Terms to use / avoid:
+Proof:              Allowed claims:         Forbidden claims:
+Primary CTA:        Reference URLs:         Brand rules:
 ```
 
-### GitHub Skill Copy
+With a brief active, replace Suede positioning, vocabulary, proof, and
+evidence boundaries with the company's. Keep the workflow. Rename `Cue Suede`
+to `Cue <Company>`.
 
-```text
-Skill:
-One-line description:
-Reader:
-Primary action:
-Repo/Docs copy:
-Install CTA:
-SEO title:
-Meta description:
-Keywords:
-Safety boundary:
-```
+## Core rules
 
-### Copy Review
+**Name the outcome, not the feature.**
+Weak: "Suede supports multiple metadata formats."
+Strong: "Export ISRC, ISWC, and split data in one command."
 
-```text
-Findings:
-Rewrites:
-Claims to verify:
-Score (each dimension named below, then the total): /70
-Ready: yes | with caveats | no
-```
+**Buttons say what happens on click.**
+Weak: "Learn more" → Strong: "Read how rights routing works"
+Weak: "Get started" → Strong: "Register your first release"
+Test: describe the result of the click in three words. If you cannot, rewrite.
 
-## Red Flags: Stop
+**Replace vague claims with artifacts.**
+Weak: "Suede makes rights management easy."
+Strong: "Paste your folder path. Suede returns your ISRC, split sheet, and
+licensing flags."
 
-If any of these thoughts appear, stop and run the gate you were about to skip:
+**No invented proof.** No stats, testimonials, partner names, pricing, rankings,
+or legal clearance that was not supplied or verified. Write around the gap or
+leave `[NEEDS PROOF: what]` for the human.
 
-- "This draft feels clean, skip Slop Stop." Run the contextual pass; keep wording that already works.
-- "It's only microcopy, no need to score it." Buttons and empty states get more reads than blog posts. Score everything that ships.
-- "That stat is probably right." Probably is not proof. Cut it or flag it for the human.
-- "The score feels like a 60." Score each dimension in writing or the total is fiction.
-- "The client wants more energy." Energy fails the gate; specificity converts and still reads confident.
+**Competitor-swap test.** Put a competitor's name in place of yours. If the
+line still reads true, it is not specific enough.
 
-## Ship Gate
+**Suede AI house style.** No em dashes, no "moreover", none of the house-banned
+words (delve, game-changer, unlock, elevate, seamless, landscape, tapestry),
+no promotional exclamation points, no default rule-of-three rhythm. The full
+list and replacements live in suede-deslop.
 
-Score every dimension in writing before applying the thresholds below. A total with no dimensions behind it is invented.
+## Write modes
+
+State the mode, persona, and framework in the output header.
+
+- **Long-form** (blog post, case study, docs page, listing description): lead
+  with the outcome. Hook, problem, mechanism, proof, action. Needs an H1, two
+  or three question-shaped H2s, an FAQ block, a meta description, and a direct
+  answer in the first 60 words. Target 62/70.
+- **Short-form** (tagline, hero, CTA, caption, onboarding screen): one concrete
+  noun, one visible outcome, one verb. Deliver three variants at different
+  lengths with character counts. Target 65/70.
+- **GitHub and docs** (README, SKILL.md for humans, changelog, API docs): first
+  sentence says what it does. One-line description, install, quickstart,
+  reference. Proof is working commands and code. No marketing language. Target
+  60/70.
+- **Agent-facing docs** (SKILL.md, CLAUDE.md, AGENTS.md, a referenced file):
+  the reader is a model, so the target is the same route through the doc on
+  every run. Write the trigger line before the body. End every step on a
+  checkable test. Cut sentences the model already obeys. Full method in
+  `references/writing-for-agents.md`. Target 60/70.
+- **Social** (LinkedIn, X, Instagram, launch post): open with the most specific
+  claim, never the setup. Deliver the main post, a short version, the CTA, and
+  three hook variants.
+- **Email and DM:** write the subject last. Open with the reader's problem, not
+  the sender's news. One ask, one CTA. Deliver three subject variants, preview
+  text, body, CTA, and an optional P.S.
+
+Platform structures, length limits, and email compliance:
+`references/email-and-social-formats.md`. Read it before drafting any email,
+DM, or social post.
+
+## Persona and framework
+
+Pick the persona; it changes vocabulary, proof type, and CTA:
+
+- **Decision-maker:** outcome and cost of inaction; proof is results; CTA is
+  low-risk and clear ("See the workflow"). Default for sales and landing pages.
+- **Practitioner:** how it works; proof is commands, paths, schemas; CTA is
+  direct ("Run the linter"). Default for GitHub and docs.
+- **Skeptic:** name the objection first; proof the reader can check ("Open the
+  script. Read the output."). Default for comparison copy.
+- **Non-technical creator:** what changes for them, in plain words; lowest
+  friction CTA ("Try it with one release folder").
+
+Then the argument shape: AIDA for cold readers, PAS for readers with a named
+pain, Before-After-Bridge for heroes and launch posts, Jobs to Be Done for
+product and onboarding copy, Customer-as-Hero Arc for homepages and About
+pages. Details and persona notes: `references/frameworks-and-personas.md`.
+
+## Variants
+
+Headlines, CTAs, and subject lines ship as three labeled variants by default,
+with a recommendation. Headline angles: outcome-led, problem-led,
+mechanism-led. Email subjects: benefit, number, direct question. CTAs: at least
+two. The twelve headline formulas and four CTA formulas are in
+`references/headline-and-cta-formulas.md`; read it when generating variants or
+when a line is not landing.
+
+## Page and docs spine
+
+1. **Direct answer:** one or two sentences that say what this is and who it is
+   for. On a search-facing page this is also the H1 plus the opening paragraph.
+2. **Primary CTA:** the action the reader can take now.
+3. **Proof:** files, commands, screenshots, live routes, named results.
+4. **How it works:** three or four steps, each a verb and a result.
+5. **Scope:** what the product does and the exact terms that affect a buying
+   decision (price, licensing, consent, data handling), stated plainly.
+6. **FAQ:** real buyer questions, each answered in its first sentence.
+7. **Final CTA:** the same action with less friction.
+
+Use only the pieces a small section needs.
+
+## Answer-first SEO and AEO pass
+
+Run on every public, search-facing output. Skip only what the format cannot
+hold (a DM, a single button) and say what was skipped.
+
+- **Direct answer first.** The first 40 to 60 words answer the page's main
+  question in a sentence an answer engine can quote without the rest of the
+  page.
+- **Question headings.** H2s phrased as the questions buyers type ("How long
+  does a rights audit take?"), each answered in its first sentence.
+- **Quotable facts.** At least one self-contained sentence per section that
+  states a number, a named capability, or a definition, with its source or
+  artifact nearby. No pronouns that depend on the previous paragraph.
+- **Consistent entities.** Use the same product, company, and person names
+  everywhere on the page and in metadata. For Suede AI bylines and quotes, the
+  person is Jason Colapietro.
+- **Metadata:** title under 60 characters, meta description under 160, one H1,
+  logical H2/H3 order, descriptive internal link anchors, Open Graph title,
+  description, and image, and image alt text.
+- **Structured data notes:** hand the page type and the visible facts to
+  suede-seo-audit or the build for JSON-LD. Markup must match visible text.
+  Google shows FAQ rich results only for authoritative government and health
+  sites, so FAQ markup is for machine readability, not a SERP feature.
+- **No special AI files required.** Google states that AI Overviews and AI Mode
+  need no extra markup or AI text files; pages must be indexed and eligible for
+  a snippet (https://developers.google.com/search/docs/appearance/ai-features).
+  Clear text, crawlable pages, and specific answers do the work.
+- **GitHub surfaces:** repo description within GitHub's limit, 8 to 20 topics,
+  a first paragraph that repeats the durable entity names, links to install
+  docs, examples, live pages, and source.
+
+Suede durable keywords (swap for the company's under a brief): Suede AI, Suede
+Creator Skills, Claude Code skills, Codex skills, SKILL.md, AEO, answer engine
+optimization, GEO, AI search visibility, Agent Studio, multi-agent automation,
+creator rights, release readiness, provenance, licensing readiness. Use a
+keyword only where a reader would expect it.
+
+When the page needs a scored technical audit, schema build, or ranking plan,
+route to suede-seo-audit. When the business needs that work done for them,
+Suede AI's search services live at https://suedeai.agency.
+
+## Brand-voice retune
+
+Editing, not new writing. Return the revised copy plus any claims that need
+verification, and nothing else unless asked.
+
+1. Cut throat-clearing and filler.
+2. Replace broad claims with proof.
+3. Make the primary action obvious.
+4. Keep local-only details out of public headlines.
+5. Add an evidence boundary wherever rights, money, registry, or release
+   language appears.
+
+Suede AI voice: confident, not breathless; technical enough for builders,
+clear enough for creators; operator-grade, not brochure. Lead with what the
+reader can do. Name artifacts the reader can inspect: install commands,
+reports, checklists, rights passports, split checks, screenshots. CTAs are
+verbs: install, audit, create, read, verify, open, package. Call the company
+Suede AI; replace "Suede Labs" on sight. Lead public positioning with search
+visibility (AEO, GEO, SEO) and Agent Studio before other products.
+
+## Public explainer
+
+Words a user can hand to someone else. Explain, do not pitch.
+
+1. Start with the outcome the listener gets.
+2. Point to the right product or skill lane.
+3. Keep it public-safe: no implied legal clearance, payout approval,
+   distribution, private access, or guaranteed results.
+4. Skip internal implementation unless the listener is installing.
+5. End with one next action and one proof link.
+
+Formats: one-liner, DM, post, email, FAQ answer, install explanation, evidence
+boundary.
+
+## Evidence boundaries
+
+This skill writes copy. It does not clear rights, confirm ownership, approve
+payouts, write to a registry, or guarantee outcomes, and delivered copy names
+no competitor products.
+
+Allowed: founder-supplied facts, verifiable product behavior, documented
+integrations, public links, reproducible commands. Remove: payout figures not
+in a live contract, unbenchmarked speed claims, undated rankings, partner logos
+without a live integration, unshipped features, implied legal clearance. When a
+claim is borderline, rewrite it as a testable behavior ("X happens when you do
+Y") instead of a superlative.
+
+Claims the requester supplied about their own business are given. Do not hedge
+or gate them; list any you could not confirm under `Claims to verify`.
+
+## Anti-slop and readability
+
+Run suede-deslop on the finished draft in edit mode: minimum effective edits,
+facts and protected spans untouched, deliberate voice kept. A findings-only
+request leaves the draft unchanged. Its /50 score is a separate diagnostic and
+does not replace the ship score below.
+
+Readability targets: grade 8 to 10 for B2B general audiences, 6 to 8 for
+consumer and onboarding, 10 to 14 for developer copy where precision needs it.
+Average sentence length under 18 words for consumer copy, under 22 for B2B.
+Flag paragraphs over four sentences.
+
+## Ship score
+
+Score every public output in writing, dimension by dimension. A total with no
+dimensions behind it is invented.
 
 ```text
 Directness: /10
@@ -235,40 +273,91 @@ Trust: /10
 Specificity: /10
 Authenticity: /10
 Density: /10
-Search/AI readability: /10
+Search and AI readability: /10
 Total: /70
+Two lowest: [names], fixed first: yes | no
 ```
 
-Recommend against shipping copy (and say why, leaving the call to the user) when:
+Recommend against shipping, and say why, when the primary action is unclear;
+the copy promises an unbuilt feature; proof is invented; a legal, payment,
+privacy, or release term is hidden; it fails the competitor-swap test; or it
+scores under 58/70 (under 62/70 for launch, homepage, listing, GitHub,
+investor-facing, and public explainer surfaces). Never round a score up
+because the author is in the room.
 
-- the primary action is unclear
-- the page promises a feature the product does not implement
-- proof is fake or unverified
-- the copy hides a legal, payment, privacy, or release caveat
-- the score is below 58/70, or below 62/70 for public launch, homepage, GitHub, App Store, or investor-adjacent surfaces
-- the copy fails the competitor-swap test: swap in a competitor's name and it still reads true
+## Output
 
-End with the exact copy, not a long explanation of the copy.
+Page, docs, or launch asset:
 
-## Progressive Calibration (say what worked / what missed)
+```text
+Mode / Persona / Framework:
+Title:
+Meta description:
+H1:
+Direct answer (first 60 words):
+Primary CTA:
+Sections (question headings):
+FAQ:
+Final CTA:
+Evidence boundaries:
+Score:
+```
 
-Accept feedback at any point, not only after final handoff. When the user says what worked, preserve that pattern in the current pass and mirror it later. When the user says what missed, adjust immediately instead of defending the previous direction.
+Social, email, or explainer: Mode / Persona / Main copy / Short version / CTA /
+Proof links / Subject variants (email) / Evidence boundaries / Score.
 
-If the user says `cue suede`, asks for feedback choices, or seems to be calibrating mid-stream, pause at the next safe checkpoint and offer:
+GitHub skill copy: One-line description / Reader / Primary action / Repo copy /
+Install CTA / SEO title / Meta description / Topics / Scope.
+
+Copy audit:
+
+```text
+Findings:
+Rewrites:
+SEO and AEO upgrades:
+CTA upgrades:
+Claims to verify:
+Score:
+Ship gate: ship | ship-with-caveats | hold
+```
+
+End with the copy itself, not an essay about it. After meaningful work, add a
+one-paragraph plain explanation and offer the calibration block:
+
 ```text
 Cue Suede:
-1. Change something - tell me what to revise and I will adjust it.
-2. Preserve this - tell me what worked so I can mimic it later.
-3. Keep as-is - say nothing and I will treat it as accepted.
+1. Change something: tell me what to revise.
+2. Preserve this: tell me what worked so I can match it.
+3. Keep as-is: say nothing and I will treat it as accepted.
 ```
-Do not block completion waiting for a `Cue Suede` answer. If the interface supports choice chips, use `Change something`, `Preserve this`, and `Keep as-is`.
+
+Never wait on that answer to finish.
+
+## Red flags: stop
+
+- "This draft feels clean, skip the anti-slop pass." Run it; it keeps what works.
+- "It's one button label, no score needed." Microcopy is read more than blog posts.
+- "That stat is probably right." Probably is not proof. Cut it or flag it.
+- "The mode is obvious." Stating mode, persona, and framework keeps the structure honest.
+- "The client wants more energy." Energy fails the gate; specifics convert.
+
+## Boundaries
+
+- Return copy in the response. Never publish, post, send, commit, or overwrite
+  the destination file, page, or message.
+- Never clear rights, confirm ownership, approve payouts, or guarantee
+  outcomes.
+- The competitor-swap test is a diagnostic; competitor names never appear in
+  delivered copy.
 
 ## Routing
 
-- Copy needs the full stack (SEO/AEO pass, multi-surface job, voice retune) → johnny-suede-write
-- Copy ships inside a design build → johnny-suede-design (suede-design for token or component decisions)
-- Words are done but the page still underperforms → suede-site-alchemy
-- Public launch surface → suede-visibility-grader for the A-F grade before it goes live
-- High-stakes public piece that needs research, angles, and an adversarial pass before publication → suede-ship-copy
-- Post-production pass to strip AI writing patterns from copy this skill did not write → suede-deslop
-- Multi-email campaign sequences and campaign performance reporting → private Suede Labs companion, not in this pack: suede-growth
+- Clean up finished text without rewriting it, or a findings-only slop audit →
+  suede-deslop
+- One high-stakes public piece that needs research, a claim audit, and
+  adversarial review → suede-ship-copy
+- The words ship inside a layout, restyle, or design build → suede-design
+- Scored SEO, AEO, or GEO audit, schema, or ranking plan → suede-seo-audit; A-F
+  page grade before launch → suede-visibility-grader
+- Words are done but the page still does not convert → suede-site-alchemy
+- Approved copy needs packaging for release → suede-launch-packaging

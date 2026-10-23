@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself.
 
-Out of scope — reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack).
+Out of scope — reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); post-merge release packaging (use suede-launch-packaging).
 
 ## Deployment Geography
 

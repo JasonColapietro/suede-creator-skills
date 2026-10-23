@@ -13,12 +13,12 @@ Each section is the minimum viable version of one specialist's workflow.
 
 | Workflow | Owning skill when installed |
 |---|---|
-| [Suedify Workflow](#suedify-workflow) | `johnny-suede-design` |
-| [Design Workflow](#design-workflow) | `johnny-suede-design`, `suede-design` |
-| [Copy And SEO Workflow](#copy-and-seo-workflow) | `johnny-suede-write`, `suede-copy`, `suede-seo-audit` |
+| [Suedify Workflow](#suedify-workflow) | `suede-design` (Restyle mode) |
+| [Design Workflow](#design-workflow) | `suede-design` |
+| [Copy And SEO Workflow](#copy-and-seo-workflow) | `suede-copy`, `suede-seo-audit` |
 | [Visibility Grading Workflow](#visibility-grading-workflow) | `suede-visibility-grader` |
 | [Site Alchemy Workflow](#site-alchemy-workflow) | `suede-site-alchemy` |
-| [Code Review Workflow](#code-review-workflow) | `suede-code-review`, `suede-code-grader`, `suede-code` |
+| [Code Review Workflow](#code-review-workflow) | `suede-code` |
 | [Agent Team Workflow](#agent-team-workflow) | `suede-agent-teams` |
 
 The Gate policy, Core Rule, Boundaries, and the fix-loop cap in SKILL.md govern
@@ -219,7 +219,7 @@ Overall: A-F
 ```
 
 When the user asks for a grade more than a full findings report, route to
-`suede-code-grader` and include the explanation for why the grade landed there.
+`suede-code --grade-only` and include the explanation for why the grade landed there.
 
 ## Agent Team Workflow
 

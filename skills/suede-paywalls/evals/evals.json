@@ -88,6 +88,19 @@
         "Does not attempt public pricing page optimization"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Design the paywall that starts our 7-day free trial, card required, then $12.99/month. We sell in the US, UK, and EU, web and iOS. Make it convert.",
+      "expected_output": "Drafts the trial-start paywall and runs the subscription law check: renewal price, interval, and trial end date on the screen before purchase; separate auto-renewal consent where required; trial-end reminder; online cancellation as easy as sign-up; notes the FTC click-to-cancel rule was vacated in 2025 so ROSCA and state laws (California's amended ARL) govern in the US, UK subscription rules planned for January 2027, the EU withdrawal function in force since June 2026, and App Store disclosure requirements. Runs the self-critique gate including item 6 and does not ship hidden terms.",
+      "assertions": [
+        "Shows renewal price, interval, and trial end date on the paywall",
+        "States the current FTC click-to-cancel status accurately (vacated, not in force)",
+        "Applies California click-to-cancel and reminder requirements",
+        "Mentions UK and EU subscription or withdrawal rules",
+        "Runs the self-critique gate including the subscription item"
+      ],
+      "files": []
     }
   ]
 }

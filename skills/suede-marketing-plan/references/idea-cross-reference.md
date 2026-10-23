@@ -1,6 +1,6 @@
-# Idea Cross-Reference: 139 Marketing Ideas Mapped to AARRR
+# Idea Cross-Reference: 142 Marketing Ideas Mapped to AARRR
 
-The `suede-marketing-ideas` skill catalogs 139 marketing tactics. This doc is
+The tactic library (`references/tactic-library.md`) catalogs 142 marketing tactics. This doc is
 the source-of-truth mapping: every idea is assigned to a primary AARRR stage.
 It does not prescribe timing, spend, or staffing.
 
@@ -11,13 +11,13 @@ the status.
 
 ## How to read this doc
 
-- **139 unique ideas, 143 entries.** Four ideas cross-cut multiple AARRR stages and appear under each stage they serve (#79 Early-Access Referrals, #91 In-App Upsells, #114 Moneyball Marketing, #117 Product Competitions). Each duplicate row carries a cross-cut note.
-- **"Entries" counts rows; idea IDs are unique.** Section header counts reflect rows in this doc, not unique ideas from `suede-marketing-ideas`.
-- **Numbers correspond exactly to the `suede-marketing-ideas` skill ordering.** If that source ordering changes or expands, update this doc.
+- **142 unique ideas, 146 entries.** Four ideas cross-cut multiple AARRR stages and appear under each stage they serve (#79 Early-Access Referrals, #91 In-App Upsells, #114 Moneyball Marketing, #117 Product Competitions). Each duplicate row carries a cross-cut note.
+- **"Entries" counts rows; idea IDs are unique.** Section header counts reflect rows in this doc, not unique ideas in the library.
+- **Numbers correspond exactly to the tactic-library ordering.** If the library expands, append and update this doc.
 
-## AARRR assignment for all 139 ideas
+## AARRR assignment for all 142 ideas
 
-### Acquisition (116 entries)
+### Acquisition (118 entries)
 
 These ideas primarily serve top-of-funnel awareness, traffic, and lead generation.
 
@@ -32,7 +32,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 7 | Internal Linking | Content & SEO | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 8 | Content Refreshing | Content & SEO | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 9 | Knowledge Base SEO | Content & SEO | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 10 | Parasite SEO | Content & SEO | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 10 | Third-Party Platform Publishing | Content & SEO | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 11 | Competitor Comparison Pages | Competitor | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 12 | Marketing Jiu-Jitsu | Competitor | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 13 | Competitive Ad Research | Competitor | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
@@ -49,7 +49,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 24 | Pre-targeting Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 25 | Facebook Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 26 | Instagram Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 27 | Twitter Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 27 | X Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 28 | LinkedIn Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 29 | Reddit Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 30 | Quora Ads | Paid Ads | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
@@ -65,7 +65,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 40 | Instagram Audience | Social & Community | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 41 | X Audience | Social & Community | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 42 | Short Form Video | Social & Community | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 43 | Engagement Pods | Social & Community | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 43 | Engagement Pods | Social & Community | Default Skip: platform manipulation rules |
 | 44 | Comment Marketing | Social & Community | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 49 | Monthly Newsletters | Email | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 54 | Affiliate Discovery via Backlinks | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
@@ -73,7 +73,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 56 | Reseller Programs | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 57 | Expert Networks | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 58 | Newsletter Swaps | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 59 | Article Quotes (HARO) | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 59 | Article Quotes (source requests) | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 60 | Pixel Sharing | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 61 | Shared Slack Channels | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 63 | Integration Marketing | Partnerships | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
@@ -96,7 +96,7 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 80 | New Year Promotions | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 81 | Early Access Pricing | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 82 | Product Hunt Alternatives | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 83 | Twitter Giveaways | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 83 | X Giveaways | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 84 | Giveaways | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 85 | Vacation Giveaways | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 86 | Lifetime Deals | Launches | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
@@ -135,10 +135,12 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 | 127 | YouTube Channel | Platforms | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 128 | Source Platforms | Platforms | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 129 | Review Sites | Platforms | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
-| 130 | Live Audio | Platforms | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 130 | Live Audio and Video | Platforms | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 131 | International Expansion | International | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 133 | Investor Marketing | Developer/etc | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 138 | Podcast Tours | Audience-Specific | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 140 | AI Answer Visibility (AEO/GEO) | Search & AI Visibility | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 142 | Pricing and Plan Pages as Search Assets | Search & AI Visibility | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 
 ### Activation (8 entries)
 
@@ -185,12 +187,13 @@ These ideas primarily serve top-of-funnel awareness, traffic, and lead generatio
 
 > **Skipped from Revenue:** #86 Lifetime Deals appears under Launches (Acquisition section) only. It's generally off-brand for subscription products because it damages LTV math; recommend in Section 12's Skip list with rationale, not in stage totals.
 
-### Cross-cutting / brand foundation (2 entries)
+### Cross-cutting / brand foundation (3 entries)
 
 | # | Idea | Category | Decision requirement |
 |---|---|---|---|
 | 114 | Moneyball Marketing | Unconventional | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 | 139 | Customer Language | Audience-Specific | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
+| 141 | Entity Consistency | Search & AI Visibility | Verify fit, evidence, owner, capacity, dependencies, approval, review, and stop conditions |
 
 ### Developer-specific / dev tool products (2 entries)
 
@@ -215,7 +218,7 @@ For each idea, ask:
 - Does this idea conflict with the client's brand voice?
 - Common conflicts:
   - **Lifetime Deals (#86)**: conflicts with premium positioning
-  - **Twitter Giveaways (#83)**: often off-brand for serious / clinical / luxury voices
+  - **X Giveaways (#83)**: often off-brand for serious / clinical / luxury voices
   - **Humor Marketing (#122)**: off-brand for serious / clinical voices
   - **Cameo Marketing (#118)**: off-brand for most voices
   - **Reality TV Marketing (#112)**: off-brand for most voices
@@ -270,13 +273,13 @@ review date, and stop conditions are satisfied.
 
 ## How to maintain this doc
 
-If `suede-marketing-ideas` adds new ideas (it's a living skill, the 139 may become 145 or 160 over time):
-1. Read `skills/suede-marketing-ideas/references/ideas-by-category.md` in the public Suede skill pack
+When the tactic library gains ideas (append only, never renumber):
+1. Read the new entries in `references/tactic-library.md`
 2. Assign each new idea to a primary AARRR stage using the rules above
 3. Add to this doc's tables
-4. Update SKILL.md's idea-count reference
+4. Update the idea count in this doc, `tactic-library.md`, and `plan-template.md`
 
 ## Sources
 
-- `skills/suede-marketing-ideas/SKILL.md` (in the public Suede skill pack)
-- `skills/suede-marketing-ideas/references/ideas-by-category.md` (in the public Suede skill pack)
+- `references/tactic-scoring.md`
+- `references/tactic-library.md`

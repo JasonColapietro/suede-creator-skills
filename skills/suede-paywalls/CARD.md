@@ -7,7 +7,7 @@ Release record for the `suede-paywalls` skill, following the NVIDIA skill-card t
 
 ## Description
 
-Suede-affiliated in-product monetization design for paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments.
+Suede AI in-product monetization: paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments, with trigger timing, frequency caps, screen copy, plan presentation, a dark-pattern self-check, and subscription-law checks current to October 2026 (ROSCA and state auto-renewal laws after the vacated FTC click-to-cancel rule, California's click-to-cancel and renewal notices, UK DMCC subscription rules, the EU withdrawal button, App Store and Google Play disclosure).
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user needs trigger timing, message structure, plan presentation, or experiment design after users have experienced value.
+Use when users have experienced value and the next step is an upgrade prompt or paywall.
 
-Out of scope — public pricing pages (use suede-site-alchemy), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).
+Out of scope — public pricing pages (use suede-pricing for the teardown or suede-site-alchemy for conversion), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (1 file).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (2 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

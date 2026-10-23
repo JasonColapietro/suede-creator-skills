@@ -19,10 +19,10 @@ const skillsArg = argv.indexOf("--skills");
 const skillsDir = skillsArg === -1 ? path.join(repoRoot, "skills") : path.resolve(argv[skillsArg + 1]);
 
 const facts = measureBookFacts({ skillsDir });
-const grader = measureSkillFile("suede-code-grader", { skillsDir });
+const grader = measureSkillFile("suede-code", { skillsDir });
 
 if (argv.includes("--json")) {
-  console.log(JSON.stringify({ ...facts, names: undefined, suedeCodeGrader: { lines: grader.lines, descriptionCharacters: grader.descriptionCharacters } }, null, 2));
+  console.log(JSON.stringify({ ...facts, names: undefined, suedeCode: { lines: grader.lines, descriptionCharacters: grader.descriptionCharacters } }, null, 2));
   process.exit(0);
 }
 
@@ -38,8 +38,8 @@ const rows = [
   ["frontmatter with a metadata block", n(facts.metadataBlocks)],
   ["pairwise routing collisions", n(facts.pairwiseCollisions)],
   ["skills adapted from marketingskills", n(facts.marketingAdapted)],
-  ["suede-code-grader SKILL.md lines", n(grader.lines)],
-  ["suede-code-grader description chars", n(grader.descriptionCharacters)],
+  ["suede-code SKILL.md lines", n(grader.lines)],
+  ["suede-code description chars", n(grader.descriptionCharacters)],
 ];
 
 const width = Math.max(...rows.map(([label]) => label.length));

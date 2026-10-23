@@ -1,7 +1,5 @@
 # Motion-Style Video Ads (Faceless, Fully Generated)
 
-> Format popularized by Borja ([@borjafat](https://x.com/borjafat)) and the open `super-video-maker` motion-collage recipe by [Bomx](https://github.com/Bomx/super-video-maker-skill); this guide is an original re-expression of the method, extended with a multi-style library and production lessons from building and shipping it end-to-end.
-
 Produce a 15–45s faceless video ad or explainer from nothing but a concept: a styled
 poster still (image model) → brought to life with subtle motion (image-to-video model)
 → narrated (TTS) → word-timed captions. No footage, no presenter, no editor. Cost per

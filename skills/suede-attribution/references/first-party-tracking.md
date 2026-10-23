@@ -2,7 +2,7 @@
 
 How to instrument and stitch attribution yourself when you control the site/app. This is the build track (Pillar B). It's distilled from real production builds and kept tool-agnostic, **PostHog + SavvyCal are the worked example**, but the pattern maps to any product-analytics tool with `identify()`/merge (Segment, Amplitude, GA4 user-id) and any third-party conversion domain with a metadata passthrough + webhook (Calendly, Cal.com, Stripe Checkout, Typeform).
 
-The core method, closing the `identify()` gap so conversions join to anonymous browsing history, is **adapted from Tessa Kriesel's PostHog attribution approach**. Several of the production refinements that make this operate at scale are also hers, credited inline: the full-touch-path capture that feeds the model track (Step 4), the CRM last-mile with source/confidence/basis and a Paid-vs-Organic read (Step 5), the account rollup, and the "expect ~zero until the stitch is verified, with a campaign-window fallback + backfill" window (Cross-subdomain stitching). Credit where due.
+The core method is closing the `identify()` gap so conversions join to anonymous browsing history. The production refinements that make it hold up at scale are covered in order: the full-touch-path capture that feeds the model track (Step 4), the CRM last mile with source, confidence, and basis plus a Paid-vs-Organic read (Step 5), the account rollup, and the near-zero window before the cross-subdomain stitch is verified, with a campaign-window fallback and backfill.
 
 ## Contents
 - The one idea
@@ -193,7 +193,7 @@ This is the **highest-trust-per-effort** fix in the whole runbook: no deploy, im
 
 Marketing site → app on a subdomain must share **one analytics project** and a **cross-subdomain cookie** (PostHog's `cross_subdomain_cookie` default handles `yourdomain.com` → `app.yourdomain.com`). Verify the journey survives the handoff, or every signup looks like it started at the app.
 
-**Expect near-zero numbers until the stitch is verified in prod, don't panic.** (Production note from Tessa Kriesel.) Before the cross-subdomain stitch is confirmed live, first-party attribution reads *basically nothing*, journeys break at the handoff and everything looks like direct. It flips from ~0 to real numbers the week the stitch actually ships. Two things get you through that window:
+**Expect near-zero numbers until the stitch is verified in prod, don't panic.** Before the cross-subdomain stitch is confirmed live, first-party attribution reads *basically nothing*, journeys break at the handoff and everything looks like direct. It flips from ~0 to real numbers the week the stitch actually ships. Two things get you through that window:
 
 - **A campaign-window heuristic fallback.** When a signup has no linked journey, attribute it to the campaign/channel that was live during its signup window (but only when **date + landing page + active UTMs uniquely narrow it to one source**. With overlapping campaigns, evergreen ads, email sends, branded/direct demand, or a shared landing page, the window can't isolate the cause) mark those `unknown` / low-confidence rather than falsely crediting whatever was live. Used narrowly, it's a real signal while the stitch stabilizes and beats a blank; used bluntly, it manufactures false attribution.
 - **Backfill only the pre-stitch records that are actually missing a source.** Many pre-stitch signups already have verified or self-reported attribution, **never overwrite a higher-confidence source with the heuristic.** Backfill only the blanks (campaign-window or self-reported), tag them as such, and keep the heuristic-backfilled history visually separate from verified trends so you don't read a cliff on launch day as a real shift.
@@ -213,11 +213,11 @@ Mark these fallback-attributed conversions with a lower-confidence `basis` (see 
 - **The payoff insight:** conversion event broken down by `$initial_utm_source` / `$initial_referring_domain`, "where does every signup/booking come from."
 - **Channel → revenue:** conversion event by channel, joined to revenue/MRR person properties. Note: some tools compute revenue props *at ingest* (person-on-events), so historical events may read 0: use the persons table for current MRR, or tier by plan.
 - **Track your own coverage:** the `journey_linked: false` rate tells you how many conversions bypassed the stitch. Watch it after launch.
-- **Store the full touch path, not just `$initial_*`.** (Refinement from Tessa Kriesel.) First-touch alone lets you break conversions down by *first* channel, but it can't run the multi-touch models from the interpretation track (SKILL.md §2: position-based, linear, time-decay). If you also persist the **ordered sequence of touches** per person (channel + timestamp for each, e.g. an events-table query or a `touch_path` array on the person), the build track *feeds* the interpretation track: you can now score the same journey six ways on your own data instead of only reading about the models. This is what makes Pillar A and Pillar B shake hands, capture first-touch to ship, capture the full path to model.
+- **Store the full touch path, not just `$initial_*`.** First-touch alone lets you break conversions down by *first* channel, but it can't run the multi-touch models from the interpretation track (SKILL.md §2: position-based, linear, time-decay). If you also persist the **ordered sequence of touches** per person (channel + timestamp for each, e.g. an events-table query or a `touch_path` array on the person), the build track *feeds* the interpretation track: you can now score the same journey six ways on your own data instead of only reading about the models. This is what makes Pillar A and Pillar B shake hands, capture first-touch to ship, capture the full path to model.
 
 ## Step 5: The last mile: get attribution into the CRM
 
-(This whole step is a production refinement from Tessa Kriesel: it's the thing that turned first-party attribution from a dashboard into an operating signal.)
+(This step is what turns first-party attribution from a dashboard into an operating signal.)
 
 A channel breakdown living in your analytics tool is a *report*. The thing sales and lifecycle actually act on is **attribution written onto the record in the CRM**, per account. Sync it out:
 

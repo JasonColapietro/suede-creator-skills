@@ -34,9 +34,9 @@
   "keywords": "code grading rubric, A-F ship grade, code review lanes, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/grading-your-own-work.html",
   "position": 8,
-  "wordCount": 1664,
+  "wordCount": 1676,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-16",
+  "dateModified": "2026-10-23",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -91,10 +91,10 @@
       <p class="eyebrow">Part III &middot; Chapter 7</p>
       <h1>Grading Your Own Work</h1>
       <p class="post-meta">Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and the actual skill: predicting the grade before you run it.</p>
-      <div class="book-meta"><span>1,664 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,676 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>A findings list is easy to ignore. You ask an agent to review a diff, it comes back with fourteen items ranked P0 through P3, you read the P0, decide it is really more of a P2, and merge. Nothing in the output stopped you, because nothing in the output was a decision. It was a menu.</p>
-      <p>A letter grade is harder to ignore. <code>suede-code-grader</code> ends with one character and a gate that follows it mechanically: A maps to <code>ship</code>, B maps to <code>ship-with-caveats</code>, and C, D, and F all map to <code>hold</code>. There is no arithmetic left to do at the end and no room to negotiate with yourself about severity. You either accept a C and hold, or you say out loud that you are shipping a C.</p>
+      <p>A letter grade is harder to ignore. <code>suede-code</code> ends with one character and a gate that follows it mechanically: A maps to <code>ship</code>, B maps to <code>ship-with-caveats</code>, and C, D, and F all map to <code>hold</code>. There is no arithmetic left to do at the end and no room to negotiate with yourself about severity. You either accept a C and hold, or you say out loud that you are shipping a C.</p>
       <p>That is the whole trick. The grade does not add information the findings lacked. It removes the option of reading the findings and doing nothing.</p>
       <h2 id="seven-lanes-scored-separately">Seven lanes, scored separately</h2>
       <p>The grader scores each of these A through F, then gives one overall:</p>
@@ -105,8 +105,8 @@
       <p>Before any lane is scored, the grader runs a fixed list of instant-F triggers. Six categories: secrets and credentials, injection, auth bypass, payment and wallet, data destruction, plaintext sensitive data. Two concrete examples the repo uses, because concrete is the point:</p>
       <p>A hardcoded API key, secret, token, or password in committed source. Not in <code>.env</code>, not in a config the deploy pipeline injects, but in the actual file that went into git history. That is an F.</p>
       <p>A role or permission check that can be bypassed by manipulating a request parameter. Someone sends <code>?role=admin</code> and the middleware believes them. That is an F.</p>
-      <p>The rule attached to those triggers is the part builders resist: <strong>no other lane can raise a locked F.</strong> Not a beautiful migration plan, not full test coverage everywhere else, not the fact that the key is for a staging account. The instruction to the agent is explicit: stop, report the file and line, mark the grade F, and do not grade the remaining lanes. Scoring the rest would imply those scores could matter. They cannot.</p>
-      <p>This list lives in two places, <code>suede-code</code> Step 1 and <code>suede-code-grader</code>, and both copies carry the same note: change both together. Duplicated rules drift. Saying so in the file is cheaper than discovering the drift during a review that mattered.</p>
+      <p>The rule attached to those triggers is the part builders resist: <strong>no other lane can raise a locked F.</strong> Not a beautiful migration plan, not full test coverage everywhere else, not the fact that the key is for a staging account. The instruction to the agent is explicit: report the file and line, mark the grade F, and treat it as a P0 finding. "Other lanes cannot raise the grade." Whatever the rest score, they cannot matter.</p>
+      <p>This list used to live in two places, a review skill and a separate grader, and both copies carried the same note: change both together. Merging the two into <code>suede-code</code> deleted the second copy. Duplicated rules drift, and one source is cheaper than discovering the drift during a review that mattered.</p>
       <h2 id="caps-so-a-happy-path-cannot-buy-an-a">Caps, so a happy path cannot buy an A</h2>
       <p>Some surfaces cannot earn a top grade on passing CI alone, because CI on those surfaces usually exercises the path that was never in danger.</p>
       <p><strong>Auth changes</strong> (login, session, token validation, middleware, role assignment). An A requires explicit coverage of the bypass or escalation path, named: "tested with expired token returns 401", "role escalation attempt returns 403." A B requires the happy path tested plus named caveats about what is not. Meet neither and the change caps at C no matter how the other six lanes scored.</p>
@@ -152,7 +152,7 @@
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 76-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Creator Skills is a 63-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

@@ -17,18 +17,18 @@ any external action.
 
 ## The Major Platforms
 
-| Platform | What it is | Cost | Quality |
-|----------|-----------|------|---------|
-| **[Connectively](https://www.connectively.us)** (formerly HARO) | Daily email digest of journalist queries | Free tier; paid for filters | Mixed: high volume, lots of noise |
-| **[Qwoted](https://www.qwoted.com)** | Web app with journalist requests | Free; paid for outreach | Good: better-quality outlets |
-| **[Featured](https://featured.com)** | Web app, expert profiles, journalist requests | Free tier; paid pro | Good for thought-leadership snippets |
-| **[Help A B2B Writer](https://helpab2bwriter.com)** | Twice-weekly email of B2B queries | Free | High: B2B-focused, low spam |
-| **[SourceBottle](https://www.sourcebottle.com)** | Australia-focused but global queries | Free | Variable |
-| **[Terkel](https://terkel.io)** | Roundup-style ("we asked 50 experts…") | Free | Volume-heavy, low effort |
-| **[JournoRequests](https://twitter.com/journorequests)** | X account aggregating tweets | Free | UK-skewed, real-time |
-| **#JournoRequest** (X hashtag) | Live journalist requests | Free | Real-time, fast-moving |
+Status checked October 2026. Plans, prices, and ownership change; confirm on each site before recommending a paid tier.
 
-**Recommended starter set:** Connectively + Qwoted + Help A B2B Writer + monitoring `#JournoRequest` on X.
+| Platform | What it is | Notes |
+|----------|-----------|-------|
+| **[HARO](https://www.helpareporter.com)** | Journalist query digest | Cision shut down its Connectively rebrand in December 2024; Featured bought HARO and relaunched it in April 2025. Expect high volume; filter hard. |
+| **[Qwoted](https://www.qwoted.com)** | Web app with journalist requests | Free and paid tiers; tends toward better-known outlets |
+| **[Featured](https://featured.com)** | Expert profiles and journalist questions | Formerly Terkel (rebranded 2023); roundup-style answers, also operates HARO |
+| **[Help A B2B Writer](https://helpab2bwriter.com)** | Email of B2B writer queries | B2B-focused |
+| **[SourceBottle](https://www.sourcebottle.com)** | Query digest | Australia-focused with global requests |
+| **#JournoRequest** (X and other social platforms) | Live journalist requests | Real-time, UK-skewed |
+
+**Starter set:** Qwoted and Help A B2B Writer for B2B, HARO or Featured for volume, plus a saved search for `#JournoRequest`. Prefer requests from outlets that AI assistants already cite for your category (see "PR as Citation and Entity Building" in SKILL.md).
 
 ---
 

@@ -7,7 +7,7 @@ Release record for the `suede-graph-flo-xr` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Suede Thought Graph shipping search for a multi-file repo change.
+Suede AI multi-file shipping workflow (Suede Thought Graph shipping search) for one repo change: generates competing implementation plans, scores and prunes them, refutes the survivors, aggregates compatible lanes, selects one winner, then builds it in an isolated worktree behind a sandboxed gate and writes a handoff file.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys.
 
-Out of scope — bulk independent work (use a separate private worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).
+Out of scope — bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).
 
 ## Deployment Geography
 

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Install Agent Skills: Claude Code, Codex, Cursor</title>
+    <meta name="description" content="Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.">
+    <meta name="keywords" content="how to install claude skills, claude code skills folder, install skills claude code, codex skills install, npx skills add, claude plugin marketplace add, where are claude skills stored">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/directory/guides/install-agent-skills/">
+    <link rel="icon" href="../../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="How to Install Agent Skills: Claude Code, Codex, Cursor">
+    <meta property="og:description" content="Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/guides/install-agent-skills/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="How to Install Agent Skills: Claude Code, Codex, Cursor">
+    <meta name="twitter:description" content="Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://skills.suedeai.ai/directory/guides/install-agent-skills/#article",
+        "headline": "How to install agent skills in Claude Code, Codex and Cursor",
+        "name": "How to Install Agent Skills: Claude Code, Codex, Cursor",
+        "description": "Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.",
+        "url": "https://skills.suedeai.ai/directory/guides/install-agent-skills/",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://skills.suedeai.ai/directory/guides/install-agent-skills/"
+        },
+        "datePublished": "2026-10-23",
+        "dateModified": "2026-10-23",
+        "inLanguage": "en",
+        "image": "https://skills.suedeai.ai/assets/social/directory-card.png",
+        "keywords": "how to install claude skills, claude code skills folder, install skills claude code, codex skills install, npx skills add, claude plugin marketplace add, where are claude skills stored",
+        "author": {
+          "@type": "Person",
+          "@id": "https://suedeai.ai/founder#person",
+          "name": "Jason Colapietro",
+          "url": "https://suedeai.ai/founder",
+          "jobTitle": "Founder and CEO, Suede AI",
+          "worksFor": {
+            "@id": "https://suedeai.ai/#organization"
+          },
+          "sameAs": [
+            "https://jasoncolapietro.com/",
+            "https://github.com/JasonColapietro",
+            "https://www.linkedin.com/in/jasoncolapietro",
+            "https://x.com/johnnysuede",
+            "https://www.crunchbase.com/person/jason-colapietro-d83e",
+            "https://www.wikidata.org/wiki/Q140235755"
+          ]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://skills.suedeai.ai/assets/suede-ai-logo-transparent.webp"
+          }
+        },
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/guides/install-agent-skills/#breadcrumb"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/guides/install-agent-skills/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://skills.suedeai.ai/directory/guides/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to install agent skills in Claude Code, Codex and Cursor",
+            "item": "https://skills.suedeai.ai/directory/guides/install-agent-skills/"
+          }
+        ]
+      }
+    </script>
+    <link rel="preload" href="../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../assets/site.css">
+    <link rel="stylesheet" href="../../../assets/skill.css">
+    <link rel="stylesheet" href="../../../assets/directory.css">
+    <script src="../../../assets/directory.js" defer></script>
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../../../" class="nav-logo" aria-label="Suede Creator Skills home">
+          <img src="../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../../../">Home</a>
+          <a href="../../">Directory</a>
+          <a href="../../methodology/">How listing works</a>
+          <a href="../../../skills/">Suede AI skills</a>
+          <a href="../../../blog/">Blog</a>
+          <a href="../../submit/" class="nav-cta">List your skill</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Guide &middot; Suede AI Skills Directory</div>
+      <h1>How to install agent skills in Claude Code, Codex and Cursor</h1>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">Guides</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">How to install agent skills in Claude Code, Codex and Cursor</span></nav>
+      <p class="byline muted">By <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of Suede AI. Author of <cite>Stake Your Claim</cite>, <cite>Proof as Infrastructure</cite> and <cite>The Human Authenticity Layer</cite>, holder of the VoicePrint patent, and a builder of companies for two decades.</p>
+      <p class="dateline muted">Reviewed <time datetime="2026-10-23">October 23, 2026</time>.</p>
+      <p class="answer guide-answer"><strong>Short answer:</strong> an agent skill is a folder with a <code>SKILL.md</code> file. Put the folder where your agent looks and it loads. In Claude Code that is <code>~/.claude/skills/&lt;skill-name&gt;/</code> for every project or <code>.claude/skills/&lt;skill-name&gt;/</code> for one repository. In Codex it is <code>.agents/skills/</code> in the repository or <code>$HOME/.agents/skills/</code> for your user. To install from GitHub in one line for Claude Code, Codex, Cursor and other agents, run <code>npx skills add &lt;skill-folder-url&gt;</code>.</p>
+      <section class="panel" aria-labelledby="what-is-an-agent-skill">
+        <h2 id="what-is-an-agent-skill">What is an agent skill?</h2>
+        <p>A skill is a set of instructions, plus optional reference files and scripts, that teaches an agent one job. The <code>SKILL.md</code> file opens with frontmatter that names the skill and describes when to use it. Claude Code and Codex both follow the <a href="https://agentskills.io" target="_blank" rel="noopener">Agent Skills open standard</a>, so one folder can work in several agents.</p>
+        <p>Claude Code loads every skill's description at the start of a session so it knows what is available. The full instructions load only when the skill is used. That is why a precise description matters more than anything else in the file.</p>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-install-a-skill-in-claude-code">
+        <h2 id="how-do-i-install-a-skill-in-claude-code">How do I install a skill in Claude Code?</h2>
+        <p>Copy the skill folder into one of these locations (<a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">Claude Code docs</a>):</p>
+        <div class="table-wrap">
+          <table class="guide-table">
+            <thead><tr><th scope="col">Scope</th><th scope="col">Path</th><th scope="col">Who gets it</th></tr></thead>
+            <tbody>
+              <tr><td>Personal</td><td><code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code></td><td>You, in every project on this machine</td></tr>
+              <tr><td>Project</td><td><code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code></td><td>Everyone who works in the repository, once you commit it</td></tr>
+              <tr><td>Plugin</td><td><code>&lt;plugin&gt;/skills/&lt;skill-name&gt;/SKILL.md</code></td><td>Anyone with the plugin enabled, as <code>/plugin-name:skill-name</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Claude uses a skill when your request matches its description. You can also call it directly with <code>/skill-name</code>.</p>
+        <p>Every skill page in the <a href="../../">Agent Skills Directory</a> includes a ready project-level copy command. For example:</p>
+        <div class="snippet"><pre><code class="language-sh">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git &quot;$tmp/repo&quot;
+mkdir -p .claude/skills
+cp -R &quot;$tmp/repo/&quot;skills/seo-schema .claude/skills/
+rm -rf &quot;$tmp&quot;</code></pre></div>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-install-a-claude-code-plugin-from-a-marketplace">
+        <h2 id="how-do-i-install-a-claude-code-plugin-from-a-marketplace">How do I install a Claude Code plugin from a marketplace?</h2>
+        <p>Plugins bundle skills with agents, hooks and MCP servers. Installing one takes two steps: add the marketplace, then install the plugin from it.</p>
+        <div class="snippet"><pre><code class="language-text">/plugin marketplace add anthropics/claude-plugins-community
+/plugin install &lt;plugin-name&gt;@claude-community</code></pre></div>
+        <p>Claude Code adds the official Anthropic marketplace, <code>claude-plugins-official</code>, automatically the first time you start it interactively. Install from it with <code>/plugin install &lt;name&gt;@claude-plugins-official</code>. To install from your shell without the interactive panel, use <code>claude plugin install &lt;name&gt;@&lt;marketplace&gt;</code>. Run <code>/plugin</code> and open the <strong>Discover</strong> tab to browse. (<a href="https://code.claude.com/docs/en/discover-plugins" target="_blank" rel="noopener">Claude Code docs: discover plugins</a>)</p>
+        <p>Anthropic's own warning is worth repeating: plugins and marketplaces can execute code on your machine with your user privileges, so install only from sources you trust.</p>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-install-a-skill-in-codex">
+        <h2 id="how-do-i-install-a-skill-in-codex">How do I install a skill in Codex?</h2>
+        <p>Codex reads skills from these folders (<a href="https://developers.openai.com/codex/skills" target="_blank" rel="noopener">OpenAI Codex docs</a>):</p>
+        <ul>
+          <li><strong>Repository:</strong> <code>.agents/skills</code> in the folder where you launch Codex, and in parent folders up to the repository root.</li>
+          <li><strong>User:</strong> <code>$HOME/.agents/skills</code>.</li>
+          <li><strong>Admin:</strong> <code>/etc/codex/skills</code>.</li>
+        </ul>
+        <p>Codex also ships a skill installer. Call <code>$skill-installer</code> and name a curated skill, or ask it to fetch a skill from another repository. In the CLI or IDE extension, run <code>/skills</code> or type <code>$</code> to mention a skill by name. Codex requires <code>name</code> and <code>description</code> in the frontmatter.</p>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-install-a-skill-with-the-skills-cli">
+        <h2 id="how-do-i-install-a-skill-with-the-skills-cli">How do I install a skill with the skills CLI?</h2>
+        <p>The skills CLI installs a skill folder from GitHub into the right place for the agent you choose. It supports Claude Code, Codex, Cursor, GitHub Copilot and many others.</p>
+        <div class="snippet"><pre><code class="language-sh">npx skills add https://github.com/&lt;owner&gt;/&lt;repo&gt;/tree/main/skills/&lt;skill-name&gt;</code></pre></div>
+        <p>It installs at project scope by default. Add <code>-g</code> for a user-level install and <code>-a</code> to pick the agent. The CLI sends anonymous install telemetry by default; set <code>DISABLE_TELEMETRY=1</code> to turn it off.</p>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-check-a-skill-before-i-install-it">
+        <h2 id="how-do-i-check-a-skill-before-i-install-it">How do I check a skill before I install it?</h2>
+        <p>Read it. A skill is plain text plus whatever scripts it bundles, and an agent will follow those instructions with the permissions you give it. Before you install:</p>
+        <ol>
+          <li>Open the <code>SKILL.md</code> and read what it tells the agent to do.</li>
+          <li>List the bundled scripts and what they run.</li>
+          <li>Look for environment variables, credentials and outside hosts the skill reads or calls.</li>
+          <li>Check the license.</li>
+        </ol>
+        <p>Every full skill page in the directory has a <strong>Before you install</strong> panel that summarizes the scripts, credentials and network calls found in the skill's files, plus its license. The directory's security status for external skills is &quot;not scanned&quot;, and the page says so, so the source review stays your call.</p>
+      </section>
+      <section class="panel" aria-labelledby="why-isn-t-my-skill-loading">
+        <h2 id="why-isn-t-my-skill-loading">Why isn't my skill loading?</h2>
+        <p>Work through these in order:</p>
+        <ul>
+          <li><strong>The frontmatter is not on line one.</strong> Claude Code reads frontmatter only when the opening <code>---</code> is the first line of the file.</li>
+          <li><strong>The description does not match how you ask.</strong> The agent decides from the description alone. Add the words you actually type, and a &quot;NOT FOR&quot; clause so it stops firing on near misses.</li>
+          <li><strong>The folder is in the wrong place.</strong> Personal skills go in <code>~/.claude/skills/</code>, project skills in <code>.claude/skills/</code>, Codex skills in <code>.agents/skills/</code>.</li>
+          <li><strong>The name and folder disagree.</strong> The directory's checks require the <code>name</code> field to match the folder name, and agents work best when they do.</li>
+          <li><strong>A plugin was installed but not reloaded.</strong> Run <code>/reload-plugins</code> in Claude Code.</li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="how-do-i-roll-skills-out-to-a-whole-team">
+        <h2 id="how-do-i-roll-skills-out-to-a-whole-team">How do I roll skills out to a whole team?</h2>
+        <p>Commit the skills to <code>.claude/skills/</code> (Claude Code) or <code>.agents/skills/</code> (Codex) in the shared repository, so everyone who clones it gets the same versions. For plugins, team admins can add a marketplace to the project's <code>.claude/settings.json</code> under <code>extraKnownMarketplaces</code>.</p>
+        <p>When a team needs several agents working together across business systems, with handoffs and approvals, that is the job <a href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=guide&amp;utm_campaign=install-agent-skills&amp;utm_content=team-section" target="_blank" rel="noopener">Suede AI Agent Studio</a> is built for: multi-agent automation for businesses.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq">
+        <h2 id="faq">FAQ</h2>
+        <h3 id="where-are-claude-code-skills-stored">Where are Claude Code skills stored?</h3>
+        <p>Personal skills are in <code>~/.claude/skills/&lt;skill-name&gt;/SKILL.md</code>. Project skills are in <code>.claude/skills/&lt;skill-name&gt;/SKILL.md</code> inside the repository.</p>
+        <h3 id="do-claude-skills-work-in-codex-and-cursor">Do Claude skills work in Codex and Cursor?</h3>
+        <p>Usually, yes. Claude Code and Codex both follow the Agent Skills open standard, and the skills CLI installs the same folder for Cursor and other agents. Check the skill for tool names or paths specific to one agent.</p>
+        <h3 id="is-a-skill-the-same-as-a-plugin">Is a skill the same as a plugin?</h3>
+        <p>No. A skill is one folder of instructions. A Claude Code plugin is a package that can contain skills along with agents, hooks, MCP servers and language servers. See <a href="../skills-vs-mcp-servers/">Agent skills vs MCP servers vs plugins</a>.</p>
+        <h3 id="how-do-i-update-an-installed-skill">How do I update an installed skill?</h3>
+        <p>Re-run the install command, or pull the latest copy into the same folder. For plugins, run <code>/plugin marketplace update &lt;marketplace-name&gt;</code> and reinstall.</p>
+        <h3 id="where-can-i-find-skills-to-install">Where can I find skills to install?</h3>
+        <p>The <a href="../../">Agent Skills Directory</a> lists 3,798 skills from 159 GitHub repositories in 16 categories (snapshot of October 19, 2026), each with a 0–99 quality score, its license, and copy-ready install commands.</p>
+      </section>
+      <section class="panel" aria-labelledby="quotable-facts">
+        <h2 id="quotable-facts">Quotable facts</h2>
+        <ul id="facts">
+          <li>Claude Code personal skills live in <code>~/.claude/skills/</code>; project skills live in <code>.claude/skills/</code>.</li>
+          <li>Codex reads repository skills from <code>.agents/skills</code> and user skills from <code>$HOME/.agents/skills</code>.</li>
+          <li>Claude Code adds the official <code>claude-plugins-official</code> marketplace automatically on first interactive start.</li>
+          <li>Claude Code loads skill descriptions at session start and the full skill body only when the skill is used.</li>
+        </ul>
+      </section>
+      <aside class="panel cta-placement" aria-labelledby="cta-guide-footer-agent-studio" data-cta-placement="guide-footer" data-cta-variant="agent-studio">
+        <h2 id="cta-guide-footer-agent-studio">Put a team of agents to work</h2>
+        <p>Suede AI Agent Studio builds multi-agent automation for businesses, from intake to delivery.</p>
+        <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=guide&amp;utm_campaign=guide-footer&amp;utm_content=agent-studio" data-cta="guide-footer:agent-studio" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+      </aside>
+      <section class="panel guide-links" aria-labelledby="guides-title">
+        <h2 id="guides-title">More guides</h2>
+        <div class="links">
+          <a class="link-row" href="../best-seo-skills/"><b>Best SEO, AEO and GEO skills for Claude Code and Codex</b><span>The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.</span></a>
+          <a class="link-row" href="../skills-vs-mcp-servers/"><b>Agent skills vs MCP servers vs plugins: which one do you need?</b><span>A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.</span></a>
+          <a class="link-row" href="../skill-ai-visibility/"><b>How to get your agent skill found in search and cited by AI assistants</b><span>How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.</span></a>
+        </div>
+      </section>
+      <p><a href="../">All guides</a> · <a href="../../">Browse the directory</a> · <a href="../../methodology/">How skills are scored</a></p>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">A guide from the Suede AI Skills Directory by Jason Colapietro. Third-party skills named here belong to their publishers and link to their source.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../../">Directory</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

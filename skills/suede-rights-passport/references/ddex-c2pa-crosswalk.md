@@ -5,14 +5,15 @@ label, distributor, publisher, PRO/CMO, marketplace, or provenance system.
 
 ## Boundary
 
-The Suede schema is an intake and evidence model. The mappings below are
+The package schema is an intake and evidence model. The mappings below are
 orientation aids, not a DDEX implementation profile, certified message, legal
 opinion, registry submission, or C2PA Content Credential. Do not say a package
 is DDEX- or C2PA-compliant merely because similarly named fields exist.
 
 Before an external exchange:
 
-1. identify the receiver and exact standard/profile/version it accepts;
+1. identify the receiver and exact standard/profile/version it accepts
+   (see "Versions to expect" below);
 2. validate identifiers with the responsible issuing or authoritative party;
 3. map controlled vocabularies using that receiver's rules;
 4. preserve source evidence and unknown/disputed status;
@@ -20,9 +21,32 @@ Before an external exchange:
    tooling; and
 6. obtain creator/operator approval before transmission.
 
+## Versions to expect (checked 2026-10-23)
+
+- **DDEX ERN**: DDEX advises implementing the most recent ERN 4.3.x; ERN 4.3.2
+  is the latest published. Some receivers may still ingest ERN 3.8.x
+  feeds. Ask the receiver which version and release profile it ingests; never
+  assume 4.3.
+- **C2PA**: the specification is on the 2.x line (2.2 shipped in 2025; later
+  2.x revisions followed in 2026). Record the spec version the verifier
+  reports alongside each `content_credentials[]` result rather than assuming
+  one.
+- **AI disclosure at delivery**: Spotify committed in September 2025 to an
+  industry AI-disclosure standard for music credits built through DDEX, with
+  credits covering vocals, instrumentation, and post-production. Distributors
+  roll out the matching delivery fields on their own schedules. Capture AI
+  involvement per element in the package (see `package-standard.md`) so it can
+  map to whichever field the distributor exposes.
+
+Sources:
+
+- [DDEX ERN knowledge base](https://kb.ddex.net/implementing-each-standard/electronic-release-notification-message-suite-(ern))
+- [C2PA specifications](https://spec.c2pa.org/specifications/)
+- [Spotify, "Spotify Strengthens AI Protections for Artists, Songwriters, and Producers" (2025-09-25)](https://newsroom.spotify.com/2025-09-25/spotify-strengthens-ai-protections/)
+
 ## Object and identifier separation
 
-| Suede object | Common identifier | What it identifies | Do not use it for |
+| Package object | Common identifier | What it identifies | Do not use it for |
 | --- | --- | --- | --- |
 | `works[]` | ISWC | A musical work/composition | A sound recording or release |
 | `recordings[]` | ISRC | A specific sound recording or music video recording | The underlying composition |
@@ -36,7 +60,7 @@ format is not proof that the identifier is valid or belongs to the object.
 
 ## DDEX-oriented mapping
 
-| Suede field | DDEX-oriented concept | Export note |
+| Package field | DDEX-oriented concept | Export note |
 | --- | --- | --- |
 | `parties[]` | Party | Map roles and identifiers to the selected DDEX allowed-value sets. |
 | `works[]` | Musical work | Preserve writers, publishers, ISWC, and evidence separately. |
@@ -63,7 +87,7 @@ Primary sources:
 `provenance.content_credentials[]` can record that a C2PA manifest was found
 or checked. It does not create or sign one.
 
-| Suede field | C2PA-oriented concept | Required handling |
+| Package field | C2PA-oriented concept | Required handling |
 | --- | --- | --- |
 | `asset_id` | Asset associated with a manifest | Resolve to a hashed asset in `assets[]`. |
 | `kind: c2pa` | Content Credential / manifest reference | Store a reference, not private signing material. |

@@ -1,6 +1,6 @@
 ---
 name: suede-parity-contract
-description: "Suede Labs cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine. Consistent canon is what makes a product citable: generative search quotes sources that do not contradict themselves, and a number that differs between your site and your app is a contradiction a model can see. Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted. NOT FOR: deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code-review); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit)."
+description: "Suede AI cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine. Consistent canon is what makes a product citable: generative search quotes sources that do not contradict themselves, and a number that differs between your site and your app is a contradiction a model can see. Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted. NOT FOR: deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit)."
 ---
 
 # Suede Parity Contract
@@ -163,15 +163,13 @@ Every line proven by a command in this run:
 
 ## Routing
 
-- Need branch, worktree, or stale-mirror handling for the two repos this touches
-  -> a private Suede Labs companion, not in this pack: suede-git-hygiene.
 - Need the resulting tests wired as required checks or merge gates -> use
   `suede-ci-gate`.
-- Need findings-only review of the contract diff -> use `suede-code-review`.
-- Need findings plus an A-F ship verdict -> use `suede-code`.
-- Need to root-cause why two surfaces behave differently when the constants
-  already match -> a private Suede Labs companion, not in this pack: suede-debug.
+- Need review of the contract diff -> use `suede-code` (`--findings-only` for
+  no letter grade).
+- Two surfaces behave differently even though the constants match -> the bug
+  is in behavior, not canon; debug the follower's code path directly.
 - Need to plan a multi-file rollout across surfaces -> use `suede-graph-flo-xr`,
   then return here for the contract itself.
-- From `suede-code-review`: route "these two surfaces hold the same constant
-  twice" findings back to `suede-parity-contract`.
+- From `suede-code`: route "these two surfaces hold the same constant twice"
+  findings back to `suede-parity-contract`.

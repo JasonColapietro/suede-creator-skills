@@ -1,6 +1,8 @@
 # Google Play Store: Official Specs & Guidelines
 
-All data from support.google.com and developer.android.com as of March 2026.
+Character limits and metadata policy re-checked on 2026-10-23 against Google's
+"Best practice for your store listing" page; asset specs compiled in March 2026.
+Confirm slot counts and dimensions in Play Console before producing assets.
 
 ## Character Limits
 
@@ -26,6 +28,15 @@ All data from support.google.com and developer.android.com as of March 2026.
 - Same performance claims as title
 - Calls-to-action
 - Unattributed testimonials
+
+**Full Description:**
+
+- Keyword stuffing: lists of loosely related search terms. Google asks for
+  everyday language that describes what the app does.
+- Comparisons with or misleading references to other apps, products, or people
+- Unattributed or anonymous user quotes
+- Pricing and promotional claims ("free", discounts) in the title or developer
+  name
 
 **Screenshots, Feature Graphic, Video:**
 
@@ -114,18 +125,20 @@ Apps exceeding these thresholds get **reduced visibility** in search and recomme
 **Consequences:** Reduced search visibility, warning labels on listing, quality alerts to users before install.
 **Recovery:** Google checks daily using 28-day rolling average.
 
-## Search Ranking: Official Factors
+## Search Ranking Inputs
 
-Google confirms these affect ranking:
+Google documents relevance, quality, and engagement as inputs; the list below
+is the working Suede model, not an official ranked list:
 
 1. **Metadata relevance**: Title carries most weight. NLP scans title + short desc + full desc.
 2. **App quality**: Android Vitals (crash/ANR rates)
-3. **Ratings and reviews**: Star rating + review text. 85% of featured apps have 4.0+
+3. **Ratings and reviews**: Star rating + review text
 4. **Install volume and velocity**: Total installs + daily/weekly frequency
 5. **Engagement and retention**: Session frequency, duration, retention rates
 6. **Update frequency**: Regular updates signal active maintenance
-7. **Localization**: Regional keyword/visual adaptation. 59% of US apps localize titles.
+7. **Localization**: Regional keyword/visual adaptation
 
-Sources: support.google.com/googleplay/android-developer/answer/4448378,
+Sources: support.google.com/googleplay/android-developer/answer/13393723,
+support.google.com/googleplay/android-developer/answer/4448378,
 support.google.com/googleplay/android-developer/answer/9898842,
 developer.android.com/topic/performance/vitals

@@ -7,7 +7,7 @@ Release record for the `suede-directory-submissions` skill, following the NVIDIA
 
 ## Description
 
-Suede-affiliated directory distribution strategy for selecting listings, sequencing submissions, tailoring positioning, and verifying backlinks.
+Suede AI directory distribution for selecting listings, sequencing submissions, tailoring positioning, keeping entity facts consistent, and verifying backlinks.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions and a measurable tracker.
+Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions with a measurable tracker, or when directory and review-site presence should feed AI answer-engine recommendations.
 
-Out of scope — broader launch orchestration (use suede-launch-packaging), scalable destination-page production (use suede-programmatic-seo), or citation and search auditing (use suede-seo-audit).
+Out of scope — broader launch orchestration (use suede-launch-packaging); scalable destination-page production (use suede-programmatic-seo); AI visibility measurement and on-page citation work (use suede-ai-seo).
 
 ## Deployment Geography
 

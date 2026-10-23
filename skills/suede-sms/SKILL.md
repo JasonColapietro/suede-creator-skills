@@ -1,13 +1,13 @@
 ---
 name: suede-sms
-description: "Suede-owned SMS and MMS marketing discipline. Use when evaluating SMS as a channel, designing consent-aware sequences, drafting messages, setting cadence, comparing number types or platforms, or defining measurement (TCPA consent, A2P 10DLC, quiet hours, cart-recovery and win-back texts. NOT FOR: email campaigns (use suede-emails), phone capture UX (use suede-site-alchemy), or legal certification) this skill does not give legal advice and never sends, schedules, imports, or registers."
+description: "Suede AI SMS and MMS marketing discipline: whether SMS fits, consent-aware flows (welcome, cart recovery, post-purchase, win-back), exact message copy with segment counts, cadence and quiet hours, number types and platforms, and measurement, checked against current TCPA opt-out rules and A2P 10DLC registration. Use when evaluating SMS as a channel, designing or auditing a text message program, or drafting texts. NOT FOR: email campaigns (use suede-emails), phone-number capture UX (use suede-site-alchemy), or legal certification of a program, which needs counsel; this skill never sends, schedules, imports, or registers anything."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
-# Suede SMS Programs
+# Suede AI SMS Programs
 
-Suede SMS designs consent-aware message programs for commerce, mobile, and SaaS
+Design consent-aware message programs for commerce, mobile, and SaaS
 use cases where immediacy can earn its interruption cost. It combines sequence
 logic, sender identity, cadence, carrier constraints, and measurement without
 claiming legal certification or sending messages.
@@ -31,7 +31,7 @@ Gather this context (ask if not provided):
 - Sequences already running (so a new flow does not double-tap the same contact)
 
 ### 3. Compliance Posture
-- US: A2P 10DLC registration complete? (Required since 2022: without it, your messages get filtered)
+- US: A2P 10DLC registration complete? (Carriers block unregistered 10DLC traffic outright since February 1, 2025)
 - Opt-in mechanism in use? (Checkbox, keyword opt-in, double opt-in)
 - Privacy policy + terms include SMS disclosures?
 
@@ -48,7 +48,7 @@ SMS is not "another email." Use it where the channel's properties win:
 
 | Use Case | SMS or Email? | Why |
 |----------|---------------|-----|
-| Abandoned cart recovery | **SMS first** | 98% open rate within 3 min vs 20% for email in 24h |
+| Abandoned cart recovery | **SMS first** | Texts are read within minutes; the cart is still top of mind |
 | Order/shipping updates | **SMS** | Customers want it now, on their phone |
 | Flash sale / limited drop | **SMS** | Urgency channel; immediate read |
 | Auth codes / 2FA | **SMS** (or app) | Latency-sensitive, must arrive in seconds |
@@ -64,23 +64,20 @@ SMS is not "another email." Use it where the channel's properties win:
 
 ## Compliance: Read First
 
-**Compliance is the foundation, not an afterthought.** A single TCPA class-action settlement runs $5M–$40M. The basics:
+**Compliance is the foundation, not an afterthought.** TCPA statutory damages run $500 per message, up to $1,500 when willful (47 U.S.C. 227(b)(3)), and class actions multiply that across every recipient. The basics:
 
 ### US: TCPA (Telephone Consumer Protection Act)
 
 1. **Express written consent** required for marketing SMS. Implied consent doesn't count.
 2. **Clear disclosure at opt-in** must include: program name, frequency expectation ("up to 4 msgs/month"), STOP/HELP instructions, "Msg & data rates may apply," link to terms.
-3. **Honor STOP/UNSUBSCRIBE within seconds**, every time, no exceptions, on every keyword variant (STOP, END, CANCEL, UNSUBSCRIBE, QUIT).
+3. **Honor opt-outs immediately and on any reasonable request.** Since April 11, 2025 the FCC requires honoring revocation made by any reasonable means, explicitly including replies of stop, quit, end, revoke, opt out, cancel, or unsubscribe, within 10 business days at the latest. Platforms should process keywords instantly; free-text requests ("please stop texting me") count too. One confirmation text is allowed within 5 minutes, with no marketing in it. The separate "revoke-all" provision (one opt-out covering unrelated message types) is delayed to January 31, 2027.
 4. **Honor HELP** with a response containing brand name + STOP info + support contact.
-5. **Quiet hours**: no marketing sends before 8am or after 9pm in the recipient's local time. Carrier rules and state laws (e.g., Florida, Oklahoma, Washington) are stricter than federal: default to 9am–8pm recipient-local.
+5. **Quiet hours**: federal rules bar telephone solicitations before 8am or after 9pm recipient-local. Several state laws are stricter (Florida, Oklahoma, and Washington use 8am to 8pm, and Texas brought marketing texts under its telephone solicitation law in September 2025): default to 9am to 8pm recipient-local and check each state in scope.
 6. **Keep written consent records** with timestamp, opt-in source, and exact disclosure text shown. Auditable.
 
-### US: A2P 10DLC Registration (required since 2022)
+### US: A2P 10DLC Registration
 
-Application-to-Person 10-digit long codes must be registered through The Campaign Registry (TCR) via your SMS platform. Without registration:
-- Throughput is throttled (or zero)
-- Carriers filter your messages
-- You'll see "delivered" status but recipients won't get them
+Application-to-Person 10-digit long codes must be registered through The Campaign Registry (TCR) via your SMS platform. Since February 1, 2025 US carriers block unregistered 10DLC traffic instead of throttling it; Twilio, for example, returns error 30034 (https://www.twilio.com/docs/api/errors/30034). Registration now also expects a privacy policy and SMS terms linked from the opt-in form, and carriers compare live traffic against the registered sample messages.
 
 **Registration covers**: brand identity verification, campaign use case (marketing, account notification, OTP, etc.), sample messages, opt-in mechanism, opt-out language. Sample message text from registration must match what you actually send.
 
@@ -138,6 +135,9 @@ Short links are mandatory (`klvy.co`, `txt.attn.tv`, branded short domain). Trac
 ## SMS Sequence Types
 
 ### Welcome / Opt-In Confirmation (immediate)
+
+The confirmation text must name the program, state message frequency, and
+carry "Msg & data rates may apply" plus HELP and STOP instructions.
 
 Send 1: Confirmation + reward (immediate)
 > From Acme: Thanks for joining! Here's 10% off: ACME10. Use at checkout: acme.co/sale. Reply STOP to opt out.

@@ -1,13 +1,13 @@
 ---
 name: suede-lead-magnets
-description: "Suede-affiliated lead-magnet strategy for choosing a downloadable format, defining useful depth, setting honest gating, planning delivery, and measuring qualified capture. Use when the user needs an ebook, checklist, template, content upgrade, or resource exchanged for contact details. NOT FOR: interactive free tools (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy)."
+description: "Suede AI lead-magnet strategy: choosing a format (checklist, template, swipe file, guide, quiz, mini-course, original data), setting useful depth, deciding what to gate and what to publish as an indexable page that earns links and AI citations, landing page and delivery, and measuring qualified capture. Use when the user needs a downloadable or gated resource exchanged for contact details, or wants a lead magnet that also ranks. NOT FOR: interactive calculators, graders, or generators (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy)."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
-# Suede Lead-Magnet Systems
+# Suede AI Lead-Magnet Systems
 
-Suede designs lead magnets as useful, rights-clear assets with an honest value exchange and a measurable path to product value. Choose the format, depth, gating, delivery, and follow-up based on audience need and qualification, not on maximizing raw email capture.
+Design lead magnets as useful, rights-clear assets with an honest value exchange and a measurable path to product value. Choose the format, depth, gating, delivery, and follow-up based on audience need and qualification, not on maximizing raw email capture.
 
 ## Before Planning
 
@@ -137,7 +137,7 @@ Goal: Help implement. Remove friction to purchase.
 |----------|-------------|-----------|
 | **Full gate** | High-value content, bottom-funnel | Max capture, lower reach |
 | **Partial gate** | Preview + full version | Balance of reach and capture |
-| **Ungated + optional** | Top-funnel education | Max reach, lower capture |
+| **Ungated + optional** | Top-funnel education, original data | Max reach, links, and citations; lower capture |
 | **Content upgrade** | Blog post + bonus | Contextual, high-intent |
 
 ### What to Ask For
@@ -153,11 +153,42 @@ Rule of thumb: Ask for the minimum needed. Every extra field reduces conversion 
 
 - Make the value obvious: "Get the full 25-page guide free"
 - Show a preview: table of contents, first page, sample results
-- Add social proof: "Downloaded by 5,000+ marketers"
+- Add social proof only when it is real: "Downloaded by [verified count] [role]"
 - Reduce risk: "No spam. Unsubscribe anytime."
 
 **For form optimization**: route to `suede-site-alchemy`.
 **For popup implementation**: route to `suede-site-alchemy`.
+
+---
+
+## Search, Links, and AI Citations
+
+A PDF behind a form is invisible to search engines and AI answer engines. The
+strongest lead magnets do double duty: an indexable page earns traffic, links,
+and citations, and the gated asset converts the readers who want more.
+
+- **Publish the substance, gate the convenience.** Put the core findings,
+  checklist items, or framework on an HTML page that ranks. Gate the editable
+  template, the full dataset, the spreadsheet, or the bonus that saves time.
+- **Original data is the link asset.** A survey, benchmark, or analysis of the
+  user's own anonymized product data gives other writers and AI answers a
+  number to cite. Publish the method, sample size, and date beside the
+  findings. Never invent or pad a dataset.
+- **Answer-first page structure.** Open with the headline finding in two or
+  three sentences, use question headings, and add a short FAQ that a buyer
+  would actually ask.
+- **Structured data.** `Article` JSON-LD for the page; `Dataset` when the data
+  is downloadable. If crawlers see content that users must sign up to read,
+  mark it with paywalled-content structured data (`isAccessibleForFree: false`
+  plus `hasPart` with the gated section's CSS selector) so Google does not
+  treat the gate as cloaking.
+- **Attribution-ready.** Name the author, date the data, and give the chart a
+  plain-language caption, so a journalist or an AI engine can quote it with the
+  brand name attached.
+
+Route keyword and topic choice to `suede-content-strategy`, technical checks to
+`suede-seo-audit`, and AI answer visibility to `suede-ai-seo`. Suede AI runs
+this as a managed service at https://suedeai.agency.
 
 ---
 

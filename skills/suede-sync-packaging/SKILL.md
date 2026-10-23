@@ -1,21 +1,18 @@
 ---
 name: suede-sync-packaging
-description: "Suede Labs skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: finding and organizing the rights gaps behind an open clearance question (use suede-rights-audit); building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box)."
+description: "Suede AI skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, AI-involvement disclosure, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: investigating the rights gaps behind an open clearance question or building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box)."
 ---
 
 # Suede Sync Package
 
-## Gate policy: advisory, not blocking
+## Gate policy
 
-Every check, gate, and ship verdict in this skill (including every "do not
-ship / publish / proceed" line) is a **recommendation to the user, not a
-control on the agent**. Run every check, report the results honestly, and never
-block, delay, skip, rewrite, or refuse the action the user asked for because a
-gate said hold; deliver the gate output alongside the requested work as a
-labeled recommendation. A failed gate changes what you report, never what you
-do. Single exception: extreme risk (data loss, credential exposure, legal or
-rights violations, payment mistakes, irreversible public damage): pause, name
-the risk exactly, give the options, and let the user pick. Their choice is final.
+Every check and verdict here is advice to the user, not a control on the agent.
+Run the checks, report results honestly, and complete what the user asked. A
+failed gate changes the report, never the work. The one exception: a finding
+that risks data loss, credential exposure, a legal or rights violation, a
+payment mistake, or irreversible public damage. Pause, name the risk, give the
+options, and let the user choose.
 
 **Core principle:** a sync package makes a track easy to evaluate; it never
 asserts the track is cleared. Confirmed facts and open clearance questions
@@ -28,12 +25,17 @@ Provide at minimum:
 - **Track**: title, artist, featuring credits if any
 - **Target world**: film / TV / ads / games / trailers / creator campaigns / brand brief (or "general sync")
 - **Available assets**: which of master, instrumental, clean, stems, lyrics, credits, splits currently exist
-- **Rights status**: what is confirmed vs. unknown (sample clearance, ownership splits, publishing assignment)
+- **Rights status**: what is confirmed vs. unknown (sample clearance, ownership splits, publishing assignment, one-stop or not)
+- **AI involvement**: none, or which elements used generative AI (vocals, instrumentation, composition, lyrics, post-production)
 
 Optional but useful: reference sync placements the artist admires, mood or
 scene keywords, existing pitches or supervisor feedback.
 
-If no rights status is provided, treat every clearance question as open.
+If no rights status is provided, treat every clearance question as open. If AI
+involvement is not stated, it is an open clearance question too.
+
+Read `references/sync-norms.md` for deliverable specs, one-stop, and why AI
+involvement now sits in the clearance pile.
 
 ## Hard gates
 
@@ -45,7 +47,7 @@ Do not rationalize past these:
    organize the questions; you never answer them.
 2. **Never resolve a rights question yourself.** If ownership, splits, samples,
    or publishing are unclear, mark the item UNKNOWN. Do not infer, average, or
-   assume. Route the gap to suede-rights-audit.
+   assume. Route the gap to suede-rights-passport (audit mode).
 3. **Asset checklist before pitch copy.** Do not write one-sheet or pitch-email
    copy until the instrumental/clean asset checklist is filled in: every
    version marked exists / missing / unknown, with at minimum a confirmed
@@ -105,7 +107,8 @@ Scene fits: (top 3, one line each)
 Lyric themes:
 Lyric flags:
 Versions available: (master / instrumental / clean / stems)
-Rights status: (one line, confirmed facts only)
+AI involvement: (none, or per element; only what the user supplied)
+Rights status: (one line, confirmed facts only; one-stop yes / no / unknown)
 Open clearance questions:
 Contact path:
 Public link:
@@ -149,8 +152,8 @@ If any of these appear in your reasoning, stop and re-read the hard gates:
 ## Public copy gate
 
 Before outputting one-sheet copy, pitch email, captions, DMs, press angles,
-site copy, bios, CTAs, or review language, run the Suede anti-slop line edit:
-suede-deslop owns that pattern list in full; name the actor and keep the
+site copy, bios, CTAs, or review language, run the Suede AI anti-slop line
+edit; `suede-deslop` owns that pattern list in full. Name the actor and keep the
 concrete track artifact.
 
 Sync copy has its own cliché attractor that a general anti-slop pass does not
@@ -179,6 +182,7 @@ Mood tags:
 Lyric flags:
 Asset checklist: (each item exists / missing / unknown)
 Confirmed rights facts:
+AI involvement:
 Clearance questions:
 One-sheet: (per the one-sheet contract above)
 Pitch email: (only if hard gates 3-4 pass)
@@ -187,12 +191,11 @@ Next review step:
 
 ## Routing
 
-- Rights gaps or missing provenance → **suede-rights-audit** to find and
-  organize the gaps, then **suede-rights-passport** to package.
+- Rights gaps, missing provenance, or undocumented human authorship →
+  **suede-rights-passport** (audit mode, then package).
 - This grows into a release campaign → **suede-campaign-in-a-box**.
 - Release folder or metadata gaps → **suede-release-linter**.
-- Standalone public copy beyond the one-sheet → **suede-copy** or
-  **johnny-suede-write**.
+- Standalone public copy beyond the one-sheet → **suede-copy**.
 
-Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
-→ suede-sync-packaging; this skill is step 4.
+Family order: suede-release-linter (files) → suede-rights-passport (audit, then
+package) → suede-sync-packaging (pitch); this skill is step 3.

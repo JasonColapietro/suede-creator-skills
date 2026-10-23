@@ -28,6 +28,8 @@ Subject lines win opens on three mechanics: curiosity, self-interest, or specifi
 - "Re:" faking a reply thread
 - Emojis in subject lines for B2B or technical audiences
 
+**Compliance that changes the copy:** commercial email in the US needs a working unsubscribe link and the sender's physical postal address (CAN-SPAM, https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business). Gmail and Yahoo require one-click unsubscribe (RFC 8058) for bulk senders. Subject lines must not mislead about the content.
+
 ### Preview Text
 
 Preview text is a second subject line. Write it to add information, not echo the subject.
@@ -81,7 +83,7 @@ The hook is the post. If the first two lines do not earn the click to expand, th
 ```text
 [Specific observation or fact] + [one implication or action]
 ```
-Max 240 characters. If it reads like a self-contained thought from someone who knows something, it is working.
+Aim for 240 characters even though standard posts allow 280 (Premium accounts allow longer posts, but the feed truncates them). If it reads like a self-contained thought from someone who knows something, it is working.
 
 **Thread opener:**
 ```text
@@ -129,4 +131,4 @@ Testimonial / social proof:
 **Caption rules:**
 - First line must read as a complete thought. Instagram shows 1-2 lines before "more."
 - Hashtags go in the first comment or at the end after a line break. Never inside body copy.
-- No more than 10 hashtags per post.
+- Five hashtags maximum: Instagram caps posts and Reels at 5 hashtags (enforced since December 2025). Three to five specific tags beat broad ones.

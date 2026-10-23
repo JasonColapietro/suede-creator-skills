@@ -74,7 +74,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 5. Enroll contact in "Customer Onboarding" email sequence
 6. Send internal notification to CS manager
 7. Remove from all sales sequences
-**Outcome:** Seamless handoff from sales to customer success
+**Outcome:** Clean handoff from sales to customer success
 **Notes:** Include deal notes, contract value, and key stakeholders in CS notification
 
 ---
@@ -239,7 +239,7 @@ Booking form submitted
 **Trigger:** New form submission (Typeform, HubSpot, Webflow)
 **Actions:**
 1. Create/update contact in CRM
-2. Enrich with Clearbit (if available)
+2. Enrich with the licensed enrichment source in use (for example HubSpot Breeze Intelligence, formerly Clearbit; Apollo; or Clay)
 3. Post to Slack #new-leads with enriched data
 4. Create task in project management tool (Asana, Linear)
 

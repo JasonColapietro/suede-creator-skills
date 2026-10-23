@@ -7,7 +7,7 @@ Release record for the `site-to-ios-app` skill, following the NVIDIA skill-card 
 
 ## Description
 
-Suede Labs workflow for turning a website, PWA, dashboard, or marketplace into an iOS app.
+Suede AI workflow for turning a live website, PWA, dashboard, or marketplace into an iOS app.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user has a live site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native, covers URL audit, shell-vs-native strategy, App Store 4.2 wrapper risk, native value requirements, screenshots, metadata, privacy answers, and the release gate.
+Use when the user has a site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native. Produces SITE_TO_IOS_AUDIT.md and SITE_TO_IOS_PLAN.md: URL audit, shell-vs-native strategy, App Store Guideline 4.2 wrapper risk and the native value that mitigates it, current SDK, privacy manifest, age rating, login and payment checks, kids-app rules, QA matrix, and a release gate.
 
-Out of scope — building a native iOS app with no existing site (private Suede Labs companion, not in this pack: ios-swiftui-product); repairing or releasing an existing Capacitor shell (private Suede Labs companion, not in this pack: ios-capacitor-shell); Android conversions (use android-app-factory); live listing and keyword audits on a shipped app (use suede-aso).
+Out of scope — Android builds or conversions (use android-app-factory); Google Play uploads and rollouts (use suede-play-release); App Store listing, keyword, and screenshot strategy (use suede-aso).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (1 file).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -42,13 +42,13 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 - Risk: an agent treats a quality gate as autonomous authority. Mitigation: every gate in the pack is advisory — it changes what is reported, never what the user decided; only extreme-risk findings (data loss, credential exposure, legal/rights violations, payment mistakes, irreversible public damage) pause for the user's explicit choice.
 - Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "App Store 4.2 Gate" section, quoted below.
 
-From "App Store 4.2 Gate" — Halt when the app is only a bookmark, content mirror, or unmodified website: name the exact 4.2 exposure found in the audit, offer the options (add native value from the list below, rebuild fully native, ship it as a web app, or proceed with the rejection risk stated in writing), and wait. Native value:
+From "App Store 4.2 Gate" — Halt when the app would be a bookmark, content mirror, or unmodified website. Name the exact 4.2 exposure from the audit, offer the options (add native value from the list below, rebuild natively, ship as a web app, or submit with the rejection risk on record), and wait for the user's pick. Native value that counts:
 
 - iOS-native onboarding, empty states, errors, offline, and retry.
-- Native settings with support, privacy, terms, account deletion, restore, and notification controls where applicable.
-- Universal links or deep links.
-- Share sheet, widgets, push notifications, camera/media/file pickers, Apple Wallet, StoreKit, or other native capabilities only when they serve the app.
-- Safe-area, keyboard, navigation, dark/light mode, and dynamic type handling.
+- Native settings with support, privacy, terms, account deletion, restore, and notification controls where they apply.
+- Universal links or deep links that work from a cold start.
+- Share sheet, widgets, push, camera/media/file pickers, Wallet, StoreKit, or other native capabilities, only where they serve the product.
+- Safe-area, keyboard, navigation, dark/light mode, and Dynamic Type handling.
 
 ## References
 

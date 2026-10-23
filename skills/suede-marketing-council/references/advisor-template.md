@@ -1,51 +1,49 @@
 # Custom Advisor Template
 
-Copy this structure to add an advisor to the bench. Save custom advisors to `.agents/advisors/<kebab-name>.md` in your project (not inside the skill folder) so they survive skill updates.
+Copy this structure to add a seat. Save custom advisors to `.agents/advisors/<kebab-name>.md` in the user's project (not inside the skill folder) so they survive skill updates.
 
-Two kinds of custom advisors, two grounding standards:
+Two kinds of custom seats:
 
-- **Public figures** (a famous marketer not on the bench): every framework and position must trace to something they published or said: research before writing, cite sources, follow the same grounding rules as the built-in dossiers.
-- **Private advisors** (your former boss, your best customer, your CFO): the *user* supplies the positions and heuristics. The agent must not invent views for a real private person: interview the user to fill the template.
+- **A role** the bench lacks (for example "Channel Partner Lead" or "Regulated-Industry Marketer"). Write it the way the built-in dossiers are written: a lens, Suede-named frameworks in your own words, default positions, and blind spots. Do not build a seat around a named public figure.
+- **A private advisor** the user knows (a CFO, a former boss, a top customer). The user supplies the positions and heuristics. Interview the user to fill the template; never invent views for a real person.
 
 ---
 
 ```markdown
-# [Full Name]
+# [Role or Advisor Name]
 
-**Lens:** [One sentence: the distinct way they see marketing problems.]
+**Lens:** [One sentence: the distinct way this seat sees marketing problems.]
 
-## Core frameworks
+## Frameworks
 
-- **[Framework name]** ([source, year]): [1-2 sentence accurate definition.]
-- …3-6 total. If it's borrowed from someone else, say so.
+- **[Framework name]**: [1-2 sentence working definition, in plain words.]
+- 3-6 total.
 
-## Documented positions
+## Default positions this seat argues
 
-- [A strong opinion they actually hold]: *[source]*
-- …5-8 total. Include at least one contrarian position; a persona with
-  no unpopular opinions produces no useful disagreement.
+- [A strong position the seat holds]
+- 4-6 total. Include at least one unpopular position; a seat with no
+  unpopular opinions produces no useful disagreement.
 
 ## Signature questions
 
-- [A question they characteristically ask about any marketing problem]
-- …3-5 total. These open the advisor's take in a session.
+- [A question this seat asks of any marketing problem]
+- 3-5 total. These open the seat's take.
 
 ## Best for / blind spots
 
-**Best for:** [problem types their lens genuinely illuminates]
-**Blind spots:** [documented criticisms or acknowledged limits: this is
-what makes their dissent honest rather than decorative]
+**Best for:** [problem types the lens illuminates]
+**Blind spots:** [where the lens fails; this keeps its dissent honest]
 
 ## Voice notes
 
-[2-3 sentences: sentence rhythm, favorite metaphors, tone, tics. Enough
-to write in their register without fabricating quotes.]
+[2-3 sentences on rhythm, tone, and habits.]
 
-## Key works
+## Natural opponents
 
-- *[Title]* ([year]): [one line on what it contributes to the persona]
+[Which bench roles this seat tends to argue with, and why.]
 ```
 
 ---
 
-**Seating a custom advisor:** mention them by name when convening ("seat my advisor Maria on this council"). The agent loads the file from `.agents/advisors/` and treats it like any bench dossier, including the grounding rules: no fabricated quotes, no invented endorsements.
+**Seating a custom advisor:** name them when convening ("seat our CFO on this"). The agent loads the file from `.agents/advisors/` and applies the same grounding rules as the built-in bench.

@@ -24,7 +24,8 @@
         "Adapts copy to verified fields and audience",
         "Avoids an unsupported AI penalty claim",
         "Does not invent features or outcomes",
-        "References positioning-variations.md"
+        "References positioning-variations.md",
+        "Keeps entity facts (name, description, founder, URL) identical to the canonical entity sheet"
       ],
       "files": []
     },
@@ -77,7 +78,8 @@
         "Inspects rendered links rather than response headers",
         "Reconciles analytics and qualified outcomes",
         "Requires authority for listing changes",
-        "Chooses next action from measured evidence"
+        "Chooses next action from measured evidence",
+        "Checks each live listing against the canonical entity sheet and flags mismatches"
       ],
       "files": []
     }

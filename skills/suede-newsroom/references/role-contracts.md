@@ -193,6 +193,7 @@ The cross-asset checklist:
 | Added value | an asset only quotes the flagship and adds nothing |
 | CTA fit | the call to action does not match that surface's reader stage |
 | Even effort | one surface received visibly less useful content than the others |
+| Citable flagship | the flagship lacks an owned canonical URL, an answer-first opening, inline primary sources, a named author, valid Article JSON-LD, or assets that point back to it (`SKILL.md` Step 5) |
 
 **Must not**: publish, schedule, approve on the human's behalf, rewrite an asset
 rather than returning it, or approve a package with an unsupported claim.
@@ -202,5 +203,5 @@ supporting source, target surface, media, and the decision required: without
 anyone needing to reconstruct how the team got there.
 
 **Weekly review**: the editor also runs the **Keep / Test / Stop** review in
-`SKILL.md` Step 6. Every proposal names its campaigns. One result is a **Test**,
+`SKILL.md` Step 7. Every proposal names its campaigns. One result is a **Test**,
 never a **Keep**.

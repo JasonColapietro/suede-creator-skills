@@ -171,8 +171,8 @@ Different customers have different:
 - Credit card optional vs. required trade-off
 
 **Credit card upfront:**
-- Higher trial-to-paid conversion (40-50% vs. 15-25%)
-- Lower trial volume
+- Usually higher trial-to-paid conversion and lower trial volume; measure both on your own funnel before choosing
+- Requires clear renewal disclosure and consent at signup (see `suede-paywalls` for current US, UK, and EU rules)
 - Better qualified leads
 
 ### Hybrid Approaches
@@ -180,7 +180,7 @@ Different customers have different:
 **Freemium + Trial:**
 - Free tier with limited features
 - Trial of premium features
-- Example: Zoom (free 40-min, trial of Pro)
+- Example: a free plan with a time or usage cap plus a time-boxed trial of the paid tier
 
 **Reverse trial:**
 - Start with full access

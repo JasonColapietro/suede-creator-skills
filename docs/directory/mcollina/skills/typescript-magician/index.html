@@ -3,22 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>typescript-magician Agent Skill by mcollina</title>
+    <title>typescript-magician Agent Skill by mcollina | Suede AI</title>
     <meta name="description" content="Designs complex generic types, refactors any types to strict alternatives, creates type guards and utility types, and resolves… From mcollina/skills, MIT.">
     <meta name="keywords" content="typescript-magician skill by mcollina, typescript-magician skill, typescript-magician agent skill, typescript-magician claude skill, mcollina skills, developer tools agent skills, SKILL.md">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="typescript-magician Agent Skill by mcollina">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="typescript-magician Agent Skill by mcollina | Suede AI">
     <meta property="og:description" content="Designs complex generic types, refactors any types to strict alternatives, creates type guards and utility types, and resolves… From mcollina/skills, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="typescript-magician Agent Skill by mcollina">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="typescript-magician Agent Skill by mcollina | Suede AI">
     <meta name="twitter:description" content="Designs complex generic types, refactors any types to strict alternatives, creates type guards and utility types, and resolves… From mcollina/skills, MIT.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
@@ -26,12 +27,21 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/#page",
-        "name": "typescript-magician Agent Skill by mcollina",
+        "name": "typescript-magician Agent Skill by mcollina | Suede AI",
         "description": "Designs complex generic types, refactors any types to strict alternatives, creates type guards and utility types, and resolves… From mcollina/skills, MIT.",
         "url": "https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/",
-        "dateModified": "2026-10-19",
+        "dateModified": "2026-10-23",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/#breadcrumb"
@@ -110,7 +120,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -166,11 +176,14 @@ cp -R &quot;$tmp/repo/&quot;skills/typescript-magician .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo mcollina/skills \
-    --path skills/typescript-magician</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/mcollina/skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/typescript-magician .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">mcollina/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -219,7 +232,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
 <div class="report-summary">
           <p class="report-kicker">Report snapshot · <time datetime="2026-10-19">October 19, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: <a href="https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/typescript-magician/SKILL.md" target="_blank" rel="noopener"><code>c75d70dbfbe9</code></a>. Report version <code>74ca08164693</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="muted">Source revision: <a href="https://github.com/mcollina/skills/blob/c75d70dbfbe991d8cec42aeda0b64ff14fbb9ac7/skills/typescript-magician/SKILL.md" target="_blank" rel="noopener"><code>c75d70dbfbe9</code></a>. Report version <code>bec33e519c42</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
           <p class="report-actions"><a href="report.json" download="typescript-magician-suede-report-2026-10-19.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fmcollina%2Fskills&amp;skill-scope=typescript-magician&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fmcollina%2Fskills%2Ftypescript-magician%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fmcollina%2Fskills%2Ftypescript-magician%2Freport.json%0ASnapshot%3A+2026-10-19+%2828db610eddee4b46be337d7df976fe0f%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
           <h3>What to review next</h3><ul><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li><li><b>Instruction depth</b>: 4 of 7 points. 7 for a SKILL.md body of 500–3,000 words; 4 for 250–4,500; 1 for 100 or more.</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
@@ -263,21 +276,42 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Show the listing and raise the score</h2>
-        <p>typescript-magician is listed with 77/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for typescript-magician are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.</p>
-        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <p>typescript-magician is listed with 77/100 · C. This badge links to its Suede AI listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for typescript-magician are boundary clause (4), example request (3) and instruction depth (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/)</code></pre>
+          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/mcollina/skills/typescript-magician/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-a-claim" data-cta-placement="publisher-claim" data-cta-variant="a-claim">
+        <h2 id="cta-publisher-claim-a-claim">Is this your skill?</h2>
+        <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
+        <p><a class="button" href="../../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>mcollina/skills appears in 2 curated lists: <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>.</p>
       </section>
+
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="agents">
+            <h3>Running this across a team?</h3>
+            <p>Suede AI Agent Studio builds multi-agent automation for businesses.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=studio-a" data-cta="skill-page-aside:studio-a" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+          </div>
+          <div class="svc-card" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button secondary" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-developer-tools" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+        </div>
+      </aside>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More developer tools skills</h2>
         <div class="links">
@@ -305,7 +339,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">typescript-magician is published by mcollina in mcollina/skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">typescript-magician is published by mcollina in mcollina/skills and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

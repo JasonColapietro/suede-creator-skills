@@ -2,9 +2,9 @@
 
 The reason to buy now, not later.
 
-This is the most misused offer lever in the industry. Done right, it's a meaningful conversion lift and a respect-the-buyer's-time gesture. Done wrong (fake countdown timers, lies about inventory), it converts once and torches trust permanently.
+This is the most misused offer lever. Done right, it gives buyers a real reason to decide and respects their time. Done wrong (fake countdown timers, lies about inventory), it converts once, burns trust, and creates legal exposure (see Legal guardrails below).
 
-The repo voice: **only ship real scarcity.** If the scarcity is fake, take it off the page.
+The Suede AI rule: **only ship real scarcity.** If the scarcity is fake, take it off the page.
 
 ## Scarcity vs urgency
 
@@ -123,9 +123,23 @@ Buyers compare notes. The internet is small.
 - One screenshot of "only 3 left" staying at 3 for a month becomes a viral thread
 - One "last chance" email that wasn't goes into a "marketing fails" newsletter
 
-Real scarcity converts ~the same as fake scarcity at the moment of purchase. The difference shows up at month 6, when fake-scarcity offers are facing trust collapse and real-scarcity offers are still compounding.
+Fake urgency can lift a single launch. The cost arrives later as refunds, complaints, unsubscribes, and search results about the trick.
 
-If you have to fake it, you don't have an offer-design problem: you have a value-equation problem. Go back to [value-equation.md](value-equation.md).
+If you have to fake it, you don't have an offer-design problem: you have a Value Levers problem. Go back to [value-levers.md](value-levers.md).
+
+---
+
+## Legal guardrails (checked October 2026)
+
+Fake scarcity is also a legal exposure, not only a trust one. These are the rules most offers touch. They are a checklist for the user's counsel, not legal advice.
+
+- **US, FTC Act Section 5.** False or misleading claims about limited time, limited stock, or "only N left" are deceptive practices. The FTC's 2022 staff report on dark patterns names false scarcity and false urgency (fake countdown timers, fake low-stock messages) as examples. Source: [FTC, Bringing Dark Patterns to Light (September 2022)](https://www.ftc.gov/news-events/news/press-releases/2022/09/ftc-report-shows-rise-sophisticated-dark-patterns-designed-trick-trap-consumers).
+- **US, fake reviews and social proof.** The FTC's Trade Regulation Rule on Consumer Reviews and Testimonials (16 CFR Part 465, effective October 21, 2024) bans fake or AI-generated reviews, undisclosed insider reviews, and buying positive reviews, with civil penalties per violation. Source: [FTC rule announcement](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials).
+- **US, subscriptions inside an offer.** A continuity or auto-renewing component brings in ROSCA (clear terms before billing, express informed consent, simple cancellation) and state auto-renewal laws. The FTC's 2024 click-to-cancel rule was vacated by the Eighth Circuit in July 2025; the FTC reopened the rulemaking with an advance notice in March 2026 and has not issued a new rule as of October 2026. California's amended Automatic Renewal Law (in force July 1, 2025) already requires online click-to-cancel and limits save offers. Details and sources: `suede-paywalls`.
+- **UK, DMCC Act 2024.** Since April 6, 2025 the CMA can fine directly for unfair commercial practices, including misleading urgency and fake reviews, up to 10% of global turnover. Source: [CMA guidance on unfair commercial practices (CMA207)](https://www.gov.uk/government/publications/unfair-commercial-practices-cma207).
+- **EU.** The Unfair Commercial Practices Directive blacklists falsely stating that a product is available only for a very limited time to force an immediate decision (Annex I, point 7). Source: [Directive 2005/29/EC](https://eur-lex.europa.eu/eli/dir/2005/29/oj).
+
+Practical rule: every deadline, count, and expiry on the page must be true when shown, enforced when it hits, and verifiable afterward. Keep a record of the real constraint (cohort start, seat count, price-change date) in case anyone asks.
 
 ---
 
@@ -163,13 +177,13 @@ Scarcity is the final lever. It only works if the rest of the offer is strong.
 - Strong offer + real scarcity = the buyer decides now
 - Weak offer + scarcity = the buyer decides not to buy, faster
 
-If conversions are bad, scarcity is rarely the first thing to fix. Run the diagnostic from [value-equation.md](value-equation.md) first.
+If conversions are bad, scarcity is rarely the first thing to fix. Run the diagnostic from [value-levers.md](value-levers.md) first.
 
 The order is:
-1. Strong dream outcome
-2. Specific perceived likelihood (proof + methodology + guarantee)
-3. Compressed time delay
-4. Reduced effort & sacrifice
+1. Strong outcome
+2. Specific confidence (proof + methodology + guarantee)
+3. Compressed wait
+4. Reduced effort
 5. *Then* scarcity to get the decision now
 
 Scarcity is the close, not the offer.

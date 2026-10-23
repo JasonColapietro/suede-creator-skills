@@ -1,3 +1,39 @@
+# skills.suedeai.ai: every page is public and open to search engines and AI
+# answer engines. The named groups below state that policy explicitly for the
+# search, answer and user-triggered fetchers that cite pages in AI answers.
+# A crawler that matches a named group reads only that group, so each one
+# carries its own Allow line.
+
+# Search engines
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search and answer engines
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: DuckAssistBot
+Allow: /
+
+# User-triggered fetches from AI assistants
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: MistralAI-User
+Allow: /
+
+# Model-training crawlers and control tokens: allowed, so the pack and the
+# directory stay current in the models people ask about agent skills.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
 

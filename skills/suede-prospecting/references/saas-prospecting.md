@@ -57,7 +57,7 @@ Combine 2+ sources for cross-verification.
 ### Tier 3: buying signals
 
 - **Job boards** (LinkedIn Jobs, Indeed, AngelList): role openings as signals
-- **RB2B / Clearbit Reveal**: visitor identification (warm anonymous traffic)
+- **RB2B or HubSpot Breeze Intelligence**: visitor identification (warm anonymous traffic)
 - **GitHub stars/forks of competitor or adjacent repos**: a possible
   developer-level intent signal when the current GitHub API and account access
   lawfully expose it. Confirm rate limits, source date, company mapping, and

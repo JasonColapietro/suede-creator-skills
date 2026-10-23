@@ -104,4 +104,4 @@ The highest-frequency findings when auditing LinkedIn accounts, in order: Audien
 
 ---
 
-*Framework lineage: adapted (re-expressed and restructured) from practitioner playbooks, notably Ivan Falco's ads-skills. Benchmarks are practitioner-reported starting points: recalibrate against your own account.*
+*Thresholds and benchmarks in this file are starting points from practitioner operating data, not platform guarantees. Recalibrate against the account's own first 30 days.*

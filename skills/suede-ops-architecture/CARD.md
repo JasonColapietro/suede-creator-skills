@@ -7,7 +7,7 @@ Release record for the `suede-ops-architecture` skill, following the NVIDIA skil
 
 ## Description
 
-Suede-owned operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command.
+Suede AI operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation.
 
-Out of scope — executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code-review).
+Out of scope — executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code).
 
 ## Deployment Geography
 
