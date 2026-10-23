@@ -929,66 +929,26 @@
     },
     {
       "id": "writing-surfaces",
-      "skills": [
-        "suede-copy",
-        "johnny-suede-write",
-        "suede-ship-copy"
-      ],
+      "skills": ["suede-copy", "suede-deslop", "suede-ship-copy"],
       "fallback": "clarify",
       "routes": [
         {
           "skill": "suede-copy",
-          "positive": [
-            "conversion copy",
-            "landing sections",
-            "microcopy",
-            "anti slop"
-          ],
-          "negative": [
-            "public explainers",
-            "product listings",
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses"
-          ],
-          "metadataMustContain": [
-            "conversion copy"
-          ]
+          "positive": ["conversion copy", "landing sections", "microcopy", "public explainers", "product listings", "sharper", "agents md"],
+          "negative": ["publish readiness", "adversarial refutation", "research lenses", "ai tells", "findings only slop"],
+          "metadataMustContain": ["conversion copy"]
         },
         {
-          "skill": "johnny-suede-write",
-          "positive": [
-            "public explainers",
-            "product listings",
-            "sharper"
-          ],
-          "negative": [
-            "conversion copy",
-            "landing sections",
-            "publish readiness",
-            "adversarial refutation"
-          ],
-          "metadataMustContain": [
-            "public explainers"
-          ]
+          "skill": "suede-deslop",
+          "positive": ["ai tells", "deslop", "slop audit", "findings only slop", "anti slop", "finished prose"],
+          "negative": ["conversion copy", "publish readiness", "research lenses", "public explainers"],
+          "metadataMustContain": ["finished prose"]
         },
         {
           "skill": "suede-ship-copy",
-          "positive": [
-            "publish readiness",
-            "adversarial refutation",
-            "research lenses",
-            "high stakes"
-          ],
-          "negative": [
-            "conversion copy",
-            "microcopy",
-            "public explainers",
-            "product listings"
-          ],
-          "metadataMustContain": [
-            "publish readiness"
-          ]
+          "positive": ["publish readiness", "adversarial refutation", "research lenses", "high stakes"],
+          "negative": ["conversion copy", "microcopy", "public explainers", "product listings", "ai tells"],
+          "metadataMustContain": ["publish readiness"]
         }
       ],
       "cases": [
@@ -999,23 +959,24 @@
           "expected": "suede-copy"
         },
         {
+          "id": "copy-explainer-positive",
+          "mode": "positive",
+          "prompt": "Write sharper product listings and public explainers.",
+          "expected": "suede-copy"
+        },
+        {
           "id": "ship-copy-negative",
           "mode": "negative",
           "prompt": "Run the research lenses and adversarial refutation to a publish readiness gate for this high stakes page.",
           "expected": "suede-ship-copy",
-          "forbidden": [
-            "suede-copy"
-          ]
+          "forbidden": ["suede-copy"]
         },
         {
-          "id": "johnny-write-negative",
+          "id": "deslop-negative",
           "mode": "negative",
-          "prompt": "Write sharper product listings and public explainers.",
-          "expected": "johnny-suede-write",
-          "forbidden": [
-            "suede-copy",
-            "suede-ship-copy"
-          ]
+          "prompt": "Strip the AI tells from this finished prose and give me a findings only slop audit.",
+          "expected": "suede-deslop",
+          "forbidden": ["suede-copy", "suede-ship-copy"]
         },
         {
           "id": "writing-ambiguous-fallback",

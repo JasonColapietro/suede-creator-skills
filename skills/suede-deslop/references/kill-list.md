@@ -1,6 +1,6 @@
 # Full Kill List
 
-SKILL.md carries the 25 highest-frequency offenders. This file is the complete
+SKILL.md carries the 27 highest-frequency offenders. This file is the complete
 sweep. Run it when the text goes to press, investors, or customers, or when the
 SKILL.md table comes back clean and the text still reads generated.
 
@@ -12,6 +12,28 @@ problem in the supplied piece.
 Sections marked *weak alone* describe choices a careful writer makes on purpose.
 Act on one of those only when other tells share the passage. Every other section
 justifies an edit on a single sighting.
+
+## Suede AI house bans
+
+For Suede AI public copy, these are hard bans, not contextual signals. They
+apply to newly written prose; protected source spans, quotations, and a
+supplied house style that says otherwise stay as they are.
+
+| Ban | Replace with |
+|---|---|
+| Em dash (U+2014) in new prose | A period, comma, colon, or parentheses |
+| moreover | Cut it, or "also" if the link is needed |
+| delve, delve into | cover, examine, get into |
+| game-changer | Name the change and its size |
+| unlock, unleash | Say what was blocked and what now works |
+| elevate | Say what changes, before and after |
+| seamless, seamlessly | Name the step count or the handoff that disappeared |
+| landscape (abstract) | The market, field, or named thing |
+| tapestry | Cut the metaphor; name the parts |
+| "it's important to note" | Cut it; state the point |
+| Rule-of-three rhythm by default | Two items, or a full sentence, unless the count really is three |
+| Heavy parallel structure (stacked "It means X. It means Y.") | One sentence with the strongest item and its proof |
+| Promotional exclamation points | A period |
 
 ## Throat-clearing openers
 
@@ -419,14 +441,4 @@ share the passage, or when the supplied house style settles it.
 - **Repeated sentence openings.** Three sentences in a row starting with the same subject. Merge them, change the subject, or lead with the action. Do not ban the word; writers also repeat an opening on purpose.
 - **Stacked qualifiers** (to be fair, it's also possible, could potentially, might arguably, in some cases it may). Keep a qualifier the source supports and the meaning needs. Keep scope statements, legal and safety notices, and real corrections. Ordinary hedges such as *perhaps* or *tends to* are human habits.
 - **Curly quotation marks** where the writer or target format uses straight quotes. Most editors auto-curl.
-- **A single em dash.** Many editors and journalists use them. A text full of them is a different matter; follow the supplied house style.
-
-## Sources
-
-The phrase and structure inventory above comes from the Suede kill list merged
-with `stop-slop` by Hardik Pandya (<https://hvpandya.com>, MIT). The sections
-from "Chat and draft leftovers" onward are adapted from
-[Humanizer](https://github.com/blader/humanizer) by blader (MIT), which draws its
-pattern set from Wikipedia's
-["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-maintained by WikiProject AI Cleanup.
+- **A single em dash** in text outside Suede AI house style. Many editors and journalists use them. A text full of them is a different matter; follow the supplied house style. Suede AI public copy bans them outright (see Suede AI house bans).
