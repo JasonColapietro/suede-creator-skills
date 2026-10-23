@@ -61,7 +61,7 @@ Source: <https://developer.apple.com/app-store/review/guidelines/#login-services
 
 ## Payments
 
-Digital goods and subscriptions unlocked inside the app fall under Guideline
+Digital goods and subscriptions sold for use inside the app fall under Guideline
 3.1. The rules for linking out to web checkout differ by storefront and, in the
 United States, have changed repeatedly through the Epic v. Apple litigation
 since 2025. Do not write review notes about Stripe or web checkout from memory:

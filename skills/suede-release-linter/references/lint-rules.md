@@ -2,7 +2,7 @@
 
 ## Severity Levels
 
-- `error`: Recommends blocking release, Suede intake, registry, licensing, royalty routing, or agent commerce. The status is a report to the creator, not an action lock; the creator decides what proceeds.
+- `error`: Recommends blocking release, downstream review, registry, licensing, royalty routing, or agent commerce. The status is a report to the creator, not an action lock; the creator decides what proceeds.
 - `warning`: Does not usually warrant a blocked recommendation, but should be fixed before public release or monetization.
 - `info`: Useful improvement or optional cleanup.
 
@@ -54,7 +54,7 @@ Warning when the release is clearly vocal music and no lyrics are present. Agent
 
 Info when no stems are present.
 
-Warning when the user intends remix, sync, licensing, agent commerce, or Suede optimization and no stems are present.
+Warning when the user intends remix, sync, licensing, agent commerce, or optimization and no stems are present.
 
 ### Credits And Splits
 
@@ -72,10 +72,27 @@ Error when a project claims samples exist but clearance status is missing or unc
 
 Warning when release/distribution history is unknown.
 
-### Suede Intake
+Info when AI involvement is not stated (`ai_involvement` missing or unknown).
+Use `none` when no generative AI was used.
+
+Warning when AI involvement is declared but `human_authorship` notes are
+missing. Spotify and other DSPs now carry AI credits supplied through
+distributors, and the US Copyright Office treats purely AI-generated material
+as uncopyrightable, so undocumented human authorship weakens registration and
+licensing.
+
+### Downstream Readiness
 
 Error when ownership, contributors, splits, or sample status blocks registry/licensing/royalty routing.
 
-Warning when provenance notes, file hashes, wallet/payment destinations, or intended Suede services are missing.
+Warning when provenance notes, file hashes, wallet/payment destinations, or intended services are missing.
 
 Info when the project is a good candidate for `suede-rights-passport`.
+
+## Sources
+
+- Spotify, AI protections and DDEX-based AI credits (2025-09-25):
+  <https://newsroom.spotify.com/2025-09-25/spotify-strengthens-ai-protections/>
+- U.S. Copyright Office, *Copyright and Artificial Intelligence, Part 2:
+  Copyrightability* (January 2025):
+  <https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf>

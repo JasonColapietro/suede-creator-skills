@@ -360,7 +360,7 @@ const ROUTING_EVAL = [
   ["audit my site for search visibility", "suede-seo-audit"],
   ["package a song for sync licensing pitches", "suede-sync-packaging"],
   ["build an iOS app from my website", "site-to-ios-app"],
-  ["find the rights gaps before I hand off a release", "suede-rights-audit"],
+  ["find the rights gaps before I hand off a release", "suede-rights-passport"],
   ["design evals that catch model regressions", "suede-ai-eval"],
   ["grow my instagram account", "suede-instagram-growth"]
 ];

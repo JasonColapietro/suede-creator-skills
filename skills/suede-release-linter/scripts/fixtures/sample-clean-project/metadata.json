@@ -28,7 +28,8 @@
     "contains_samples": "no",
     "sample_clearance_status": "not-needed",
     "cover_or_interpolation": "no",
-    "release_history": "unreleased"
+    "release_history": "unreleased",
+    "ai_involvement": "none"
   },
   "suede": {
     "intended_services": ["rights-review", "mastering", "registry-readiness"],

@@ -147,20 +147,20 @@
     },
     {
       "id": "rights-audit-passport",
-      "skills": ["suede-rights-audit", "suede-rights-passport"],
-      "fallback": "suede-rights-audit",
+      "skills": ["suede-release-linter", "suede-rights-passport"],
+      "fallback": "suede-rights-passport",
       "routes": [
         {
-          "skill": "suede-rights-audit",
-          "positive": ["audit", "find rights gaps", "ownership gaps", "split readiness", "samples", "before licensing"],
-          "negative": ["package the project", "transfer handoff", "rights passport"],
-          "metadataMustContain": ["rights gaps"]
+          "skill": "suede-release-linter",
+          "positive": ["lint", "release folder", "release readiness", "readiness score", "delivery rejection", "missing files"],
+          "negative": ["rights gaps", "ownership gaps", "package the project", "transfer handoff", "rights passport"],
+          "metadataMustContain": ["release folder", "metadata"]
         },
         {
           "skill": "suede-rights-passport",
-          "positive": ["package the project", "transfer handoff", "rights passport", "bundle the files"],
-          "negative": ["find rights gaps", "ownership gaps"],
-          "metadataMustContain": ["package", "handoff"]
+          "positive": ["audit", "find rights gaps", "ownership gaps", "split readiness", "samples", "before licensing", "package the project", "transfer handoff", "rights passport", "bundle the files"],
+          "negative": ["lint", "release folder", "readiness score"],
+          "metadataMustContain": ["rights gaps", "package", "handoff"]
         }
       ],
       "cases": [
@@ -168,20 +168,26 @@
           "id": "rights-audit-positive",
           "mode": "positive",
           "prompt": "Audit ownership gaps, samples, and split readiness before licensing.",
-          "expected": "suede-rights-audit"
+          "expected": "suede-rights-passport"
         },
         {
-          "id": "rights-passport-negative-audit",
-          "mode": "negative",
+          "id": "rights-passport-package-positive",
+          "mode": "positive",
           "prompt": "Package the project into a rights passport transfer handoff with all files and metadata.",
-          "expected": "suede-rights-passport",
-          "forbidden": ["suede-rights-audit"]
+          "expected": "suede-rights-passport"
+        },
+        {
+          "id": "release-linter-negative-passport",
+          "mode": "negative",
+          "prompt": "Lint this release folder and give me a readiness score before distribution.",
+          "expected": "suede-release-linter",
+          "forbidden": ["suede-rights-passport"]
         },
         {
           "id": "rights-ambiguous-audit-first",
           "mode": "ambiguous",
           "prompt": "Get this catalog rights-ready.",
-          "expected": "suede-rights-audit"
+          "expected": "suede-rights-passport"
         }
       ]
     },

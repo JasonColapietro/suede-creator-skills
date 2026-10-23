@@ -9,7 +9,7 @@
   "severity_counts": {
     "error": 7,
     "warning": 11,
-    "info": 2
+    "info": 3
   },
   "summary": {
     "title": "unknown",
@@ -161,6 +161,13 @@
       "code": "release-history-unknown",
       "message": "Prior release, registration, minting, or licensing history is unknown.",
       "fix": "Confirm whether the work has already been distributed, registered, minted, licensed, or sold."
+    },
+    {
+      "severity": "info",
+      "category": "rights",
+      "code": "ai-involvement-unstated",
+      "message": "AI involvement is not stated.",
+      "fix": "State whether generative AI was used for vocals, instrumentation, composition, lyrics, artwork, or post-production (use \"none\" if not); distributors increasingly require this at delivery."
     },
     {
       "severity": "warning",

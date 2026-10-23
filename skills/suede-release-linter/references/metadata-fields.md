@@ -28,7 +28,9 @@ The linter accepts partial metadata. Missing recommended fields become findings.
     "contains_samples": "no",
     "sample_clearance_status": "not-needed",
     "cover_or_interpolation": "no",
-    "release_history": "unreleased"
+    "release_history": "unreleased",
+    "ai_involvement": "none",
+    "human_authorship": ""
   },
   "suede": {
     "intended_services": ["rights-review", "mastering", "registry-readiness"],
@@ -50,6 +52,16 @@ The linter should treat common aliases as equivalent when possible:
 - `rights`, `license`, `licenses`
 - `contains_samples`, `samples`, `sample_status`
 - `cover_or_interpolation`, `cover`, `interpolation`
+- `ai_involvement`, `ai_disclosure`, `ai_generated`, `ai_use`
+- `human_authorship`, `human_authorship_notes`, `human_contribution`
+
+## AI Involvement
+
+`ai_involvement` is `none` or a short list of the elements that used generative
+AI: `vocals`, `instrumentation`, `composition`, `lyrics`, `artwork`,
+`post-production`. When it is anything but `none`, `human_authorship` says what
+a person wrote, performed, or arranged and where the evidence lives. Map these
+to the AI-disclosure fields your distributor exposes at delivery.
 
 ## Confirmation Values
 
