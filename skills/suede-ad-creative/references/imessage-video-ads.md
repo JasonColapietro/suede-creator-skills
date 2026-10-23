@@ -4,8 +4,6 @@ A family of 9:16 social-native video formats that recreate a familiar iOS surfac
 
 The format works because it borrows the most-read UI on earth. A chat thread is a familiar, high-attention dramatization: it mirrors how real recommendations happen, so the viewer leans in instead of scrolling past. The CTA arrives conversationally ("use code FREEPACK") instead of as a hard sell, which keeps the ad-skip reflex from firing until the pitch has already landed. Run it only as a clearly labeled paid placement (Meta's "Sponsored" tag does the disclosure work); never seed it organically as if it were a real leaked conversation.
 
-Credit: this reference distills the format popularized by Shiv Sakhuja and the Gooseworks team ([@shivsakhuja](https://x.com/shivsakhuja), [gooseworks-ai/gooseworks-ads-skills](https://github.com/gooseworks-ai/gooseworks-ads-skills)), who report the format performing strongly on Meta.
-
 ---
 
 ## When to Use This Format

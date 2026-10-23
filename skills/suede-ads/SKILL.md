@@ -301,7 +301,7 @@ For hard kill/keep/scale thresholds, use the platform playbooks (see Reference R
 
 ### Retarget with DIFFERENT offers (not the same one)
 
-The conventional retargeting playbook re-shows the same product/offer to people who didn't buy. The Sabri Suby principle: **the #1 reason someone didn't buy is the offer wasn't right for them.** Re-showing the same thing harder doesn't help.
+The conventional retargeting playbook re-shows the same product/offer to people who didn't buy. Working premise: **the most common reason someone didn't buy is that the offer wasn't right for them.** Re-showing the same thing harder doesn't help.
 
 Instead, retarget with **different** products, services, or offers from your catalog:
 - Visitor clicked on protein powder, didn't buy → retarget with creatine (totally different category)

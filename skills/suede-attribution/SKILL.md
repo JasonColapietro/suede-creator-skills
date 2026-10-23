@@ -162,7 +162,7 @@ First-party attribution is one idea: **join anonymous browsing to the eventual c
 
 ### Closing the `identify()` gap
 
-The most common first-party failure: **nothing ever calls `identify()`**, so conversions never join to browsing history and every customer looks like they appeared from nowhere. (Framing adapted from Tessa Kriesel's PostHog approach.) The fix is to call identify at each real conversion. **Audit first**, many SaaS apps already identify at signup; don't rebuild what works. Find the *specific* un-instrumented conversions and close only those.
+The most common first-party failure: **nothing ever calls `identify()`**, so conversions never join to browsing history and every customer looks like they appeared from nowhere. The fix is to call identify at each real conversion. **Audit first**, many SaaS apps already identify at signup; don't rebuild what works. Find the *specific* un-instrumented conversions and close only those.
 
 ### Stitching conversions on a third-party domain
 
@@ -184,7 +184,7 @@ The first payoff is one insight: your **conversion event broken down by first-to
 
 But first-touch alone can't run the multi-touch models from §2. **Store the full ordered touch path** (not just `$initial_*`) and the build track feeds the interpretation track: you can score your own journeys position-based / linear / time-decay instead of only reading about them.
 
-**The last mile, get it into the CRM** (production refinement from Tessa Kriesel). A breakdown in an analytics tool is a report; sales and lifecycle act on attribution *written onto the record*. Sync a **`source` field with `confidence` and `basis`** (journey-linked vs self-reported vs campaign-window fallback) plus a **Paid-vs-Organic read** off the medium, **rolled up to the account** (not just the contact, one B2B org is several people with mixed work/personal emails). How pipeline/lifecycle then *use* it is `suede-revops`'s job.
+**The last mile, get it into the CRM**. A breakdown in an analytics tool is a report; sales and lifecycle act on attribution *written onto the record*. Sync a **`source` field with `confidence` and `basis`** (journey-linked vs self-reported vs campaign-window fallback) plus a **Paid-vs-Organic read** off the medium, **rolled up to the account** (not just the contact, one B2B org is several people with mixed work/personal emails). How pipeline/lifecycle then *use* it is `suede-revops`'s job.
 
 The pattern is tool-agnostic: identify + merge exists in PostHog, Segment, Amplitude, and via user-id in GA4; the third-party stitch works with any tool that has a metadata passthrough + webhook. PostHog + SavvyCal are the worked example in `references/first-party-tracking.md`.
 

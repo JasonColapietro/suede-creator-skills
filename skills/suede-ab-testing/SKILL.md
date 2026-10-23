@@ -78,8 +78,8 @@ We'll know this is true when [metrics].
 | 10% | 12k/variant | 3k/variant | 550/variant |
 
 **Calculators:**
-- [Evan Miller's](https://www.evanmiller.org/ab-testing/sample-size.html)
-- [Optimizely's](https://www.optimizely.com/sample-size-calculator/)
+- Two-proportion sample size calculator: https://www.evanmiller.org/ab-testing/sample-size.html
+- Optimizely sample size calculator: https://www.optimizely.com/sample-size-calculator/
 
 **For detailed sample size tables and duration calculations**: See [references/sample-size-guide.md](references/sample-size-guide.md)
 

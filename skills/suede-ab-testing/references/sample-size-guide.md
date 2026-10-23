@@ -140,12 +140,12 @@ Avoid running tests longer than 4-8 weeks:
 
 ### Recommended Tools
 
-**Evan Miller's Calculator**
+**Two-proportion calculator (evanmiller.org)**
 https://www.evanmiller.org/ab-testing/sample-size.html
 - Simple interface
 - Bookmark-worthy
 
-**Optimizely's Calculator**
+**Optimizely sample size calculator**
 https://www.optimizely.com/sample-size-calculator/
 - Business-friendly language
 - Duration estimates
