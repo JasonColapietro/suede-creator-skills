@@ -11,9 +11,13 @@ Start with facts about the site:
 - Legal links: privacy, terms, support, contact, account deletion if accounts
   exist.
 - Sensitive flows: payments, subscriptions, user-generated content, messaging,
-  uploads, camera, microphone, location, health, finance, or minors.
-- Auth behavior: OAuth redirects, Sign in with Apple need, cookies, session
-  persistence, same-site restrictions, universal links.
+  uploads, camera, microphone, location, health, finance, or minors. Any
+  audience under 13 triggers the kids rules in `SKILL.md`.
+- Auth behavior: OAuth redirects, the Guideline 4.8 login-option need, cookies,
+  session persistence, same-site restrictions, universal links.
+- Search footprint: which routes rank or get cited today. An app does not
+  replace them, so keep the web pages indexable and link them to the App Store
+  listing (`suede-aso` covers the listing side).
 
 When a URL is reachable, write `SITE_TO_IOS_AUDIT.md` directly from current
 evidence. Include the URL checked, route map, auth and payment behavior, PWA
@@ -67,6 +71,10 @@ Check these before release:
 - Info.plist usage descriptions for every native permission.
 - Entitlements for Sign in with Apple, push, associated domains, iCloud, or
   Apple Pay only when implemented.
+- `PrivacyInfo.xcprivacy` for the app, plus a manifest from every bundled SDK
+  that Apple lists (see `app-store-requirements.md`).
+- Xcode and SDK version on the build machine or CI runner meet Apple's current
+  upload minimum.
 
 ## 6. QA Matrix
 
@@ -93,10 +101,10 @@ Produce:
   matrix, screenshots/metadata/privacy work, blockers, and release gate
 - build command output or CI link
 - simulator/device QA notes
-- screenshots and metadata
-- privacy questionnaire inputs
-- reviewer notes
+- screenshots and metadata (listing strategy from `suede-aso`)
+- privacy questionnaire inputs and age rating answers
+- reviewer notes, including demo credentials for gated routes
 
-Block release if the site cannot pass the wrapper-risk gate, if privacy/legal
+Recommend `hold` if the site cannot pass the wrapper-risk gate, if privacy/legal
 links are missing, if payments violate policy, if the app does not build, or if
 the user has not explicitly delegated public submission.
