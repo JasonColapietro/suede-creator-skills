@@ -1,8 +1,6 @@
-# Prompt Levels
+# Next-Move Prompt Levels
 
-The three prompt depths this skill can hand back, short copy/paste, full operator prompt, granular steps, with what each must contain.
-
-## Prompt Levels
+The three prompt depths the router's Next move mode can hand back (short copy/paste, full operator prompt, granular steps) and what each must contain.
 
 ### Quick Prompt (Default)
 

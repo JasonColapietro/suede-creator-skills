@@ -79,7 +79,7 @@
         },
         {
           "skill": "suede-workflow-skills",
-          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills"],
+          "positive": ["full public skill pack", "umbrella workflow", "load the full", "install workflow skills", "next move", "give me the prompt", "expand prompt", "which suede skill"],
           "negative": ["shared change", "independent batches", "full send", "max effort", "max agents", "never end your allocation above zero"],
           "metadataMustContain": ["full public", "skill"]
         }
@@ -101,6 +101,12 @@
           "id": "workflow-pack-positive",
           "mode": "positive",
           "prompt": "Load the full public skill pack as an umbrella workflow.",
+          "expected": "suede-workflow-skills"
+        },
+        {
+          "id": "workflow-next-move-positive",
+          "mode": "positive",
+          "prompt": "What should I do next? Recommend the next move and give me the prompt.",
           "expected": "suede-workflow-skills"
         },
         {
