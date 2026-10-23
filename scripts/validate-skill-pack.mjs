@@ -667,31 +667,22 @@ if (!fs.existsSync(versionFile)) {
 }
 
 const docsIndexText = readText(path.join(repoRoot, "docs", "skills", "index.html"));
-// Read the whole skill, not just its entrypoint. The readback moved into
-// references/ when suede-mcp-qa was split for progressive disclosure, and a
-// guard anchored to SKILL.md alone would have reported it missing rather than
-// stale — a gate that fails open the moment a skill is reorganized.
-const mcpQaDir = path.join(repoRoot, "skills", "suede-mcp-qa");
-const mcpQaText = [
-  path.join(mcpQaDir, "SKILL.md"),
-  ...(fs.existsSync(path.join(mcpQaDir, "references"))
-    ? fs
-        .readdirSync(path.join(mcpQaDir, "references"))
-        .filter((entry) => entry.endsWith(".md"))
-        .sort()
-        .map((entry) => path.join(mcpQaDir, "references", entry))
-    : [])
-].map((file) => readText(file)).join("\n");
+// The MCP release QA checklist is repo-internal documentation, not a public
+// skill: it describes only this pack's own server. Its manual readback quotes
+// the server version, so guard that quote against the catalog version. A
+// missing file reads as "missing" rather than passing silently.
+const mcpQaDoc = path.join(repoRoot, ".agents", "docs", "mcp-qa.md");
+const mcpQaText = fs.existsSync(mcpQaDoc) ? readText(mcpQaDoc) : "";
 const mcpQaExpectedVersion = mcpQaText.match(/server version\s*\n`([^`]+)`/)?.[1] ?? null;
 if (mcpQaExpectedVersion !== catalog.version) {
-  fail.push(`suede-mcp-qa manual readback version (${mcpQaExpectedVersion || "missing"}) does not match catalog.json version (${catalog.version})`);
+  fail.push(`MCP QA manual readback version (${mcpQaExpectedVersion || "missing"}) in .agents/docs/mcp-qa.md does not match catalog.json version (${catalog.version})`);
 }
 const requiredDocsPages = new Set([
-  "johnny-suede-design",
-  "johnny-suede-write",
+  "suede-design",
+  "suede-copy",
   "suede-release-linter",
   "suede-agent-teams",
-  "suede-code-grader",
+  "suede-code",
   "suede-rights-passport",
   "suede-visibility-grader",
   "suede-workflow-skills"
@@ -1157,7 +1148,7 @@ if (!fs.existsSync(bookPdfPath) || !fs.existsSync(bookPdfProvenancePath)) {
     }
   }
 }
-const grader = measureSkillFile("suede-code-grader");
+const grader = measureSkillFile("suede-code");
 const deslop = measureSkillFile("suede-deslop");
 const commaNumber = (value) => parseInt(String(value).replace(/,/g, ""), 10);
 // "twenty-fourth" -> 24. The corpus-to-description ratio is written as an
@@ -1183,7 +1174,7 @@ countChecks.push(
   { file: "book/01-the-competence-gap.md", label: "corpus-to-description ratio", re: /roughly a\s+([a-z]+(?:-[a-z]+)?) of the corpus/, expected: bookFacts.corpusToDescriptionRatio, parse: wordOrdinal },
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: description count", re: /that (\d+) of the \d+ descriptions in this repo use/, expected: bookFacts.notForColonCount },
   { file: "book/01-the-competence-gap.md", label: "NOT FOR: denominator", re: /that \d+ of the (\d+) descriptions in this repo use/, expected: totalSkillCount },
-  { file: "book/01-the-competence-gap.md", label: "suede-code-grader line count", re: /`skills\/suede-code-grader\/SKILL\.md` is\s+(\d+) lines/, expected: grader.lines },
+  { file: "book/01-the-competence-gap.md", label: "suede-code line count", re: /`skills\/suede-code\/SKILL\.md` is\s+(\d+) lines/, expected: grader.lines },
   // The "stay cheap to carry" stamps sit outside every generator, so they went
   // stale on both of the last two skill additions and were caught only by the
   // Python proof-tape suite, after validate had already passed. Owned here now.
@@ -1200,7 +1191,7 @@ countChecks.push(
   { file: "book/02-anatomy-of-a-skill.md", label: "corpus byte total", re: /files total ([\d,]+) bytes;/, expected: bookFacts.totalBytes, parse: commaNumber },
   { file: "book/02-anatomy-of-a-skill.md", label: "resident description count", re: /the (\d+) descriptions together are/, expected: totalSkillCount },
   { file: "book/02-anatomy-of-a-skill.md", label: "resident description bytes", re: /descriptions together are ([\d,]+)\./, expected: bookFacts.descriptionBytes, parse: commaNumber },
-  { file: "book/02-anatomy-of-a-skill.md", label: "suede-code-grader description length", re: /does with ([\d,]+) characters/, expected: grader.descriptionCharacters, parse: commaNumber },
+  { file: "book/02-anatomy-of-a-skill.md", label: "suede-code description length", re: /does with ([\d,]+) characters/, expected: grader.descriptionCharacters, parse: commaNumber },
   { file: "book/02-anatomy-of-a-skill.md", label: "suede-deslop description length", re: /same job in ([\d,]+) characters/, expected: deslop.descriptionCharacters, parse: commaNumber },
   { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: description count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the \d+ descriptions in this repo end with/, expected: bookFacts.notForColonCount, wordNumber: true },
   { file: "book/02-anatomy-of-a-skill.md", label: "NOT FOR: denominator", re: /[A-Z][a-z]+(?:-[a-z]+)? of the (\d+) descriptions in this repo end with/, expected: totalSkillCount },
