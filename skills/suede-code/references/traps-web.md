@@ -45,7 +45,7 @@ Check these on every Next.js file in the diff:
 - **Missing `Suspense` boundary:** Async server components that fetch data and are rendered inside a client component tree need a `<Suspense fallback={...}>` wrapper. Missing boundaries cause the entire parent tree to suspend without a fallback.
 - **Missing `error.tsx` / `loading.tsx`:** Any new route segment that fetches data or can throw should have both. Flag their absence as P2 when the route is user-facing.
 - **Server-only secrets in client bundle:** `process.env.SECRET_KEY` in a `'use client'` file or in a prop passed from server to client component is exposed in the browser bundle. Only `NEXT_PUBLIC_*` vars are safe client-side. Flag any non-`NEXT_PUBLIC_` env var referenced in client code.
-- **Unguarded `generateMetadata` / `getServerSideProps` fetches:** These run on every request. An uncached external fetch here is a latency and cost bomb. Flag missing `{ next: { revalidate: N } }` or `unstable_cache` wrapping.
+- **Unguarded `generateMetadata` / `getServerSideProps` fetches:** These run on every request. An uncached external fetch here is a latency and cost bomb. Flag missing `{ next: { revalidate: N } }`, a `'use cache'` directive (Next.js 16 Cache Components), or `unstable_cache` wrapping on older versions.
 - **`useRouter` from `next/router` in App Router:** App Router uses `next/navigation`. Importing from `next/router` in an App Router project silently fails or returns stale data. Flag the wrong import.
 
 ## SEO Impact
@@ -75,5 +75,6 @@ Check these on any file that touches DB queries:
 
 - **Large dependency import:** Any new `import` of a package not already in the bundle. If the package's minzipped size is >20 KB, flag as P3 with the size estimate. Prefer tree-shaken imports (`import { X } from 'pkg'` not `import pkg from 'pkg'`).
 - **Render-blocking scripts:** `<script src="...">` without `async` or `defer` in HTML head blocks page paint. Flag in any HTML template or `_document.tsx`.
-- **Missing lazy loading for non-critical routes:** Any page-level component imported with a static `import` at the top of `_app.tsx` or a layout file when it could be `next/dynamic` with `ssr: false`. Flag routes not in the critical path (settings pages, dashboards, modals).
+- **Missing lazy loading for non-critical routes:** Any page-level component imported with a static `import` at the top of `_app.tsx` or a layout file when it could be `next/dynamic` (`ssr: false` is only allowed inside a Client Component in the App Router). Flag routes not in the critical path (settings pages, dashboards, modals).
+- **Core Web Vitals regressions:** a change that adds layout shift (unsized media, late-injected banners), long main-thread tasks on interaction, or a heavier LCP element on a public route. Google's "good" thresholds are LCP at or under 2.5 s, INP at or under 200 ms, and CLS at or under 0.1 at the 75th percentile (https://web.dev/articles/vitals). Flag a likely regression on an indexed route as P2.
 - **Images without `next/image`:** `<img src="...">` bypasses Next.js image optimization. Flag raw `<img>` tags in Next.js files pointing to non-SVG assets.

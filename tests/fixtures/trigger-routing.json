@@ -3,47 +3,60 @@
   "groups": [
     {
       "id": "code-review-grader",
-      "skills": ["suede-code", "suede-code-review", "suede-code-grader"],
+      "skills": ["suede-code", "suede-ci-gate", "suede-ai-eval"],
       "fallback": "suede-code",
       "routes": [
         {
-          "skill": "suede-code-review",
-          "positive": ["deep review", "line by line", "concrete bugs", "findings only", "no grade"],
-          "negative": ["a f", "grade only", "ship verdict", "review and grade"],
-          "metadataMustContain": ["findings", "not a grade"]
-        },
-        {
-          "skill": "suede-code-grader",
-          "positive": ["a f", "grade only", "ship verdict", "verdict only", "no line by line"],
-          "negative": ["findings only", "no grade", "review and grade"],
-          "metadataMustContain": ["a f", "grade"]
-        },
-        {
           "skill": "suede-code",
-          "positive": ["review and grade", "findings and grade", "one pass"],
-          "negative": ["findings only", "grade only"],
+          "positive": ["review and grade", "findings and grade", "one pass", "deep review", "concrete bugs", "findings only", "no grade", "grade only", "ship verdict", "a f", "line by line"],
+          "negative": ["branch protection", "required checks", "merge gates", "eval cases", "failure mode rubric"],
           "metadataMustContain": ["review", "grade"]
+        },
+        {
+          "skill": "suede-ci-gate",
+          "positive": ["branch protection", "required checks", "merge gates", "enforce", "every merge"],
+          "negative": ["findings only", "grade only", "eval cases"],
+          "metadataMustContain": ["branch protection"]
+        },
+        {
+          "skill": "suede-ai-eval",
+          "positive": ["eval cases", "failure mode rubric", "rag", "llm", "eval coverage"],
+          "negative": ["branch protection", "findings only", "grade only"],
+          "metadataMustContain": ["eval"]
         }
       ],
       "cases": [
         {
-          "id": "code-review-positive",
+          "id": "code-findings-only-positive",
           "mode": "positive",
           "prompt": "Deep review this PR for concrete bugs and findings only; no grade.",
-          "expected": "suede-code-review"
+          "expected": "suede-code"
         },
         {
-          "id": "code-grader-negative-review",
-          "mode": "negative",
+          "id": "code-grade-only-positive",
+          "mode": "positive",
           "prompt": "Give this PR an A-F ship verdict only; no line-by-line review.",
-          "expected": "suede-code-grader",
-          "forbidden": ["suede-code-review"]
+          "expected": "suede-code"
         },
         {
           "id": "code-combined-positive",
           "mode": "positive",
           "prompt": "Review and grade this PR in one pass with findings and an A-F verdict.",
           "expected": "suede-code"
+        },
+        {
+          "id": "code-ci-negative",
+          "mode": "negative",
+          "prompt": "Make CI enforce the grade on every merge with branch protection and required checks.",
+          "expected": "suede-ci-gate",
+          "forbidden": ["suede-code"]
+        },
+        {
+          "id": "code-ai-eval-negative",
+          "mode": "negative",
+          "prompt": "Write eval cases and a failure mode rubric for the RAG answer path.",
+          "expected": "suede-ai-eval",
+          "forbidden": ["suede-code"]
         },
         {
           "id": "code-ambiguous-fallback",
@@ -1119,7 +1132,7 @@
       "id": "ship-release",
       "skills": [
         "suede-graph-flo-xr",
-        "suede-code-review",
+        "suede-code",
         "suede-ci-gate",
         "suede-launch-packaging",
         "suede-release-linter"
@@ -1151,7 +1164,7 @@
           ]
         },
         {
-          "skill": "suede-code-review",
+          "skill": "suede-code",
           "positive": [
             "review this existing diff",
             "report findings",
@@ -1248,7 +1261,7 @@
           "id": "suede-graph-flo-xr-findings-negative",
           "mode": "negative",
           "prompt": "Review this existing diff and report findings, but do not change code.",
-          "expected": "suede-code-review",
+          "expected": "suede-code",
           "forbidden": [
             "suede-graph-flo-xr"
           ]

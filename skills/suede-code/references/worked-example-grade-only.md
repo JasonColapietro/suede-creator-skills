@@ -1,10 +1,12 @@
-# Suede Code Grader: Worked Example
+# Suede Code: Grade-Only Worked Example
 
-One change graded end to end, showing how the lanes combine into an overall letter and what the required upgrades look like. Illustration only: the rules live in SKILL.md.
+One change graded end to end in `--grade-only` mode, showing how the lanes combine into an overall letter and what the required upgrades look like. Illustration only: the rules live in SKILL.md.
+
+**Historical snapshot:** written against an earlier release of this pack, when the grade-only pass shipped as its own skill. File sizes and line numbers below are frozen evidence from that run.
 
 ## Worked Example
 
-A real grade, not a fictional one: this is `suede-code-grader` actually grading a real file from this repo: `mcp/suede-skills-mcp.mjs` (715 lines, the stdio JSON-RPC MCP server this skill pack ships). Read in full, then exercised at runtime (spawned the process, sent real JSON-RPC requests over stdin, read the stdout responses) before scoring. This is what the Output Format block looks like filled in, not a template.
+A real grade, not a fictional one: this is the grade-only pass actually grading a real file from this repo: `mcp/suede-skills-mcp.mjs` (715 lines, the stdio JSON-RPC MCP server this skill pack ships). Read in full, then exercised at runtime (spawned the process, sent real JSON-RPC requests over stdin, read the stdout responses) before scoring. This is what the Output Format block looks like filled in, not a template.
 
 ```text
 Simple explanation:
@@ -95,7 +97,7 @@ exists for this MCP server specifically (`package.json` only lists the
 `js-yaml` dependency, no test runner). Correctness here was verified by
 manually spawning the process and sending real requests this session, not
 by an automated suite that runs in CI. The repo does have
-`scripts/validate-skill-pack.mjs` and the `suede-mcp-qa` skill, which
+`scripts/validate-skill-pack.mjs` and a manual MCP QA checklist, which
 cover catalog/skill-folder alignment but not this file's JSON-RPC
 behavior directly. That's a real, bounded gap: not a blocker, since the
 runtime behavior checked out clean by hand, but there's no regression net

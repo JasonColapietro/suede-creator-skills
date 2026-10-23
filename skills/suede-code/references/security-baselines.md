@@ -1,8 +1,6 @@
-# Current OWASP Security Baselines
+# Security Baselines
 
-The security baseline this review scores against, per OWASP category, with what counts as a finding in each.
-
-## Current OWASP Security Baselines
+The security baseline the review scores against, per OWASP category, with what counts as a finding in each. Last checked against the official lists in October 2026.
 
 Run the web baseline automatically on `auth/`, `api/`, `middleware/`, `routes/`,
 `pages/api/`, or code importing crypto, session, or payment modules. Cite the
@@ -32,7 +30,7 @@ do not remap a finding to an older category number.
 - **A10 Mishandling of Exceptional Conditions:** handle errors, timeouts,
   resource exhaustion, partial failure, and cleanup without failing open.
 
-Official list: https://owasp.org/Top10/
+Official list: https://owasp.org/Top10/2025/
 
 ### OWASP API Security Top 10 (2023)
 

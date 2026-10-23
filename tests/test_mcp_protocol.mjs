@@ -350,7 +350,7 @@ test("search ranks skills by task intent and refuses to guess", async () => {
 const ROUTING_EVAL = [
   ["my landing page is not converting", "suede-site-alchemy"],
   ["reduce churn when subscribers cancel", "suede-churn-prevention"],
-  ["review a pull request diff for security bugs", "suede-code-review"],
+  ["review a pull request diff for security bugs", "suede-code"],
   ["write a cold outbound email sequence", "suede-cold-email"],
   ["my app store listing needs better keywords", "suede-aso"],
   ["set up branch protection and required checks", "suede-ci-gate"],
