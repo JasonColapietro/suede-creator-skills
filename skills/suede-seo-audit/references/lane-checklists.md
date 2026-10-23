@@ -9,11 +9,11 @@ references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
 - [Lane 1: Technical Access](#lane-1-technical-access)
 - [Lane 2: Search and Answer Intent](#lane-2-search-and-answer-intent)
 - [Lane 3: Metadata](#lane-3-metadata)
-- [Lane 4: Structure](#lane-4-structure)
-- [Lane 6: AI EO (Answer Engine Optimization)](#lane-6-ai-eo-answer-engine-optimization)
+- [Lane 4: Structure and Internal Links](#lane-4-structure-and-internal-links)
+- [Lane 6: Answer Extractability (generative search)](#lane-6-answer-extractability-generative-search)
 - [Lane 7: Copy and Conversion Quality](#lane-7-copy-and-conversion-quality)
 - [Lane 8: E-E-A-T Signals](#lane-8-e-e-a-t-signals)
-- [Lane 9: Topic Cluster Architecture](#lane-9-topic-cluster-architecture)
+- [Lane 9: Topic Clusters and Site Architecture](#lane-9-topic-clusters-and-site-architecture)
 
 ---
 
@@ -37,6 +37,12 @@ references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
       JavaScript, verify the rendered result with an appropriate browser and,
       when available, Google URL Inspection rather than failing it merely for
       using JavaScript.
+- [ ] Bing: site verified in Bing Webmaster Tools (ask; cannot be checked from
+      outside), sitemap submitted, `Bingbot` allowed. Copilot grounds on the
+      Bing index, so a page missing from Bing cannot be cited there.
+- [ ] IndexNow: if the site publishes often, a key file is served at the root
+      and the CMS or deploy step pings on change. Optional; Google does not use
+      it.
 - [ ] Core Web Vitals measurement protocol (see below: never enters the A-F
       grade)
 
@@ -48,6 +54,8 @@ Measurement protocol:
       response time. curl measures server response, not browser rendering: on
       its own it is never a CWV score.
 - [ ] If PageSpeed Insights is accessible at pagespeed.web.dev, fetch it.
+      Prefer the field data (CrUX, 75th percentile, mobile and desktop
+      separately) over the lab run; say which one you report.
       Report LCP, CLS, INP against these thresholds:
       LCP ≤ 2.5s = Good, 2.5–4s = Needs Improvement, >4s = Poor.
       CLS ≤ 0.1 = Good, 0.1–0.25 = Needs Improvement, >0.25 = Poor.
@@ -129,7 +137,7 @@ A-F grade.
 
 ---
 
-## Lane 4: Structure
+## Lane 4: Structure and Internal Links
 
 **Headings**
 - [ ] One clear page-level heading or equivalent semantic main heading matches
@@ -140,10 +148,16 @@ A-F grade.
 - [ ] Headings are concise enough to scan and specific enough to identify their
       section; no universal word cutoff is applied
 
-**Retrieval chunking**
-- [ ] No heading section exceeds ~375 words (500 tokens), the largest chunk
-      Google's Discovery Engine (Vertex AI Search) retrieves. Measure the prose
-      between one heading and the next, excluding `<nav>` and `<footer>` chrome.
+**Retrieval chunking (warning only, never a grade drop)**
+
+Google states its Search AI features need no chunking. This check comes from
+Google Cloud's Vertex AI Search, a separate product whose largest configurable
+chunk is 500 tokens; Suede uses it as a proxy for how retrieval systems in
+general split pages. Report it as a heuristic, never as Google Search behavior.
+
+- [ ] Flag heading sections over ~375 words (about 500 tokens). Measure the
+      prose between one heading and the next, excluding `<nav>` and `<footer>`
+      chrome.
 - [ ] An accordion, tab set, or FAQ whose items are marked up with `<summary>`,
       `<button>`, or `<div>` rather than headings counts as ONE block, however
       many items it holds. Valid FAQPage JSON-LD does not fix this: the schema
@@ -219,11 +233,20 @@ Page uses <table> anywhere: [yes/no]
 - [ ] Objections or common questions are addressed when they materially help
 - [ ] CTA placement matches the page's funnel stage and does not hide the answer
 
-**Links**
-- [ ] Internal links use descriptive anchor text (not "click here" or "read more")
-- [ ] Internal links connect to relevant destinations where they help the user
-      or discovery; no arbitrary link quota is applied
+**Internal links**
+- [ ] Internal links use descriptive anchor text that names the destination's
+      subject (not "click here", "read more", or "learn more")
+- [ ] The page links to its pillar or parent and to the two or three most
+      useful next pages for this reader; no arbitrary link quota
+- [ ] At least one crawlable `<a href>` from another indexable page points here
+      (not only the sitemap, a JS click handler, or search)
+- [ ] Click depth from the home page recorded; priority pages within three or
+      four clicks
+- [ ] Links use the canonical URL (no redirect hops, no parameters, consistent
+      trailing slash)
 - [ ] No internal links are broken (verify with fetch or curl)
+- [ ] High-authority pages (most-linked, most-trafficked) pass links to the
+      pages the business most needs found
 - [ ] External links go to authoritative sources when making factual claims
 - [ ] Link behavior is accessible and predictable. Opening a new tab is a UX
       decision, not an SEO requirement; warn users when a new context opens.
@@ -253,7 +276,18 @@ Natural-language check: [clear | repetitive | stuffed] | evidence: [quoted text]
 
 ---
 
-## Lane 6: AI EO (Answer Engine Optimization)
+## Lane 6: Answer Extractability (generative search)
+
+Apply the nine-check extractability table owned by `suede-ai-seo` (direct
+answer up top, question headings, self-contained passages, quotable facts,
+original information, comparison tables, freshness, attribution, text not
+pixels). The items below are the audit-specific evidence for those checks.
+
+**Snippet and access controls**
+- [ ] No `nosnippet`, `max-snippet:0`, or `data-nosnippet` on the primary
+      answer unless the owner intends to keep it out of AI features
+- [ ] Primary answer is in server-rendered HTML text, not only an image,
+      canvas, PDF, or client-side widget
 
 **Summary and definitions**
 - [ ] The opening section contains a clear answer to the page's primary
@@ -267,11 +301,10 @@ Natural-language check: [clear | repetitive | stuffed] | evidence: [quoted text]
 **Contrast and comparison**
 - [ ] Where the subject has named alternatives, a competing approach, or a
       do-nothing option, the page states at least one difference in its own
-      words. Google's Discovery Engine (Vertex AI Search) ranks with a
-      cross-attention model that reads negation and contrast directly, so
-      "unlike X, this does Y" carries meaning that embedding similarity alone
-      flattens away. Quote the sentence as evidence; the presence of the word
-      "unlike" is not the check.
+      words. Buyers ask comparative questions, and an explicit "unlike X, this
+      does Y" sentence gives an answer engine a quotable difference instead of
+      leaving it to infer one. Quote the sentence as evidence; the presence of
+      the word "unlike" is not the check.
 - [ ] Comparative framing the page already promises is delivered in the body. A
       title, H1, or URL containing "vs", "alternative to", "best ... for", or
       "without ..." commits the page to naming the other option and the
@@ -303,6 +336,10 @@ Segment or constraint framing: [quoted | not applicable]
 **Entity signals**
 - [ ] Company/product identity is explicit and consistent in the places where
       readers and parsers need it; schema is included only when warranted
+- [ ] Organization and Person JSON-LD reuse one stable `@id` per entity across
+      the site; bylines link to an author page. Off-site consistency (social,
+      directories, knowledge bases) is a `suede-ai-seo` entity sweep, not part
+      of this lane.
 - [ ] Any `sameAs` links identify the same entity and point only to verified
       external profiles. Omit the property when no verified profile exists.
 - [ ] URL is stable and descriptive where practical; an opaque legacy URL is
@@ -408,11 +445,22 @@ Checklist:
 
 ---
 
-## Lane 9: Topic Cluster Architecture
+## Lane 9: Topic Clusters and Site Architecture
 
 Skip for single-page audits. Also mark N/A when the site's user journeys do not
 benefit from a pillar/cluster model; a site is not required to adopt this
 content architecture.
+
+**Link graph method.** Crawl from the home page (a crawler, the sitemap plus
+fetched pages, or the CMS link table). For each URL record inlinks, outlinks,
+and click depth. From that table:
+
+- Orphans: indexable URLs with zero internal inlinks.
+- Deep pages: priority URLs more than four clicks from home.
+- Hoarders: high-inlink pages that link nowhere useful.
+- Redirected or broken internal links: list source and target.
+- Search Console cross-check: pages with impressions but few inlinks are the
+  cheapest wins; add links from relevant high-inlink pages.
 
 **Pillar page**: one comprehensive page that owns the site's core topic and
 routes readers to deeper supporting material. Do not promise that it will rank
@@ -438,5 +486,7 @@ Pillar: [page]: [target keyword]
   Cluster: [page]: [sub-topic keyword]
   Cluster: [page]: [sub-topic keyword]
 Orphan pages: [list or "none found"]
+Pages deeper than 4 clicks: [list or "none found"]
 Cannibalization risks: [list or "none found"]
+Links to add: [anchor] from [source URL] -> [target URL]
 ```
